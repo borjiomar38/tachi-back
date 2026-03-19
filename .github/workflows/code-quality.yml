@@ -1,0 +1,62 @@
+name: 🔎 Code Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  linter:
+    name: 🧹 Linter
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
+
+      - name: Run oxlint
+        run: pnpm oxlint --deny-warnings .
+
+  typescriptChecker:
+    name: 🟦 TypeScript Checker
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24, 'lts/*']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Run Typescript checker
+        run: pnpm run lint:ts
+
+  tests:
+    name: 🔬 Tests
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    env:
+      VITE_BASE_URL: http://localhost:3000
+      VITE_S3_BUCKET_PUBLIC_URL: 'http://localhost:9000/default'
+    strategy:
+      matrix:
+        node: [22, 24, 'lts/*']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Setup Playwright
+        uses: ./.github/actions/setup-playwright
+
+      - name: Run tests
+        run: SKIP_ENV_VALIDATION=true pnpm run test:ci
