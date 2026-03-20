@@ -12,33 +12,51 @@ const statement = {
   ...defaultStatements,
   account: ['read', 'update'],
   apps: ['app', 'manager'],
-  book: ['read', 'create', 'update', 'delete'],
-  genre: ['read'],
+  staff: ['list', 'create', 'update', 'delete'],
+  license: ['read', 'manual-credit', 'revoke', 'generate-redeem-code'],
+  device: ['read', 'revoke'],
+  order: ['read', 'refund'],
+  job: ['read', 'retry', 'cancel'],
+  webhook: ['read', 'replay'],
+  provider: ['read'],
+  auditLog: ['read'],
 } as const;
 
 const ac = createAccessControl(statement);
 
-const user = ac.newRole({
+const support = ac.newRole({
   account: ['update'],
-  apps: ['app'],
-  book: ['read'],
-  genre: ['read'],
+  apps: ['manager'],
+  staff: ['list'],
+  license: ['read'],
+  device: ['read'],
+  order: ['read'],
+  job: ['read'],
+  provider: ['read'],
+  auditLog: ['read'],
+  session: ['list'],
 });
 
 const admin = ac.newRole({
   ...adminAc.statements,
-  account: ['update'],
+  account: ['read', 'update'],
   apps: ['app', 'manager'],
-  book: ['read', 'create', 'update', 'delete'],
-  genre: ['read'],
+  staff: ['list', 'create', 'update', 'delete'],
+  license: ['read', 'manual-credit', 'revoke', 'generate-redeem-code'],
+  device: ['read', 'revoke'],
+  order: ['read', 'refund'],
+  job: ['read', 'retry', 'cancel'],
+  webhook: ['read', 'replay'],
+  provider: ['read'],
+  auditLog: ['read'],
 });
 
-export const rolesNames = ['admin', 'user'] as const;
+export const rolesNames = ['admin', 'support'] as const;
 export const zRole: () => z.ZodType<Role> = () => z.enum(rolesNames);
 export type Role = keyof typeof roles;
 const roles = {
   admin,
-  user,
+  support,
 } satisfies Record<UserRole, BetterAuthRole>;
 
 export const permissions = {
@@ -49,3 +67,47 @@ export const permissions = {
 export type Permission = NonNullable<
   Parameters<typeof authClient.admin.checkRolePermission>['0']['permissions']
 >;
+
+export const permissionApps = {
+  app: ['app'],
+  manager: ['manager'],
+} as const satisfies Record<'app' | 'manager', Permission['apps']>;
+
+export const permissionStaff = {
+  list: { staff: ['list'] },
+  create: { staff: ['create'] },
+  update: { staff: ['update'] },
+  delete: { staff: ['delete'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionLicense = {
+  read: { license: ['read'] },
+  manualCredit: { license: ['manual-credit'] },
+  revoke: { license: ['revoke'] },
+  generateRedeemCode: { license: ['generate-redeem-code'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionDevice = {
+  read: { device: ['read'] },
+  revoke: { device: ['revoke'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionOrder = {
+  read: { order: ['read'] },
+  refund: { order: ['refund'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionJob = {
+  read: { job: ['read'] },
+  retry: { job: ['retry'] },
+  cancel: { job: ['cancel'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionProvider = {
+  read: { provider: ['read'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionSession = {
+  list: { session: ['list'] },
+  revoke: { session: ['revoke'] },
+} as const satisfies Record<string, Permission>;

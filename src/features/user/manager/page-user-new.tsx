@@ -14,6 +14,8 @@ import { PreventNavigation } from '@/components/prevent-navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
+import { GuardPermissions } from '@/features/auth/guard-permissions';
+import { permissionStaff } from '@/features/auth/permissions';
 import { FormUser } from '@/features/user/manager/form-user';
 import { zFormFieldsUser } from '@/features/user/schema';
 import {
@@ -32,7 +34,7 @@ export const PageUserNew = () => {
     values: {
       name: '',
       email: '',
-      role: 'user',
+      role: 'support',
     },
   });
 
@@ -66,7 +68,7 @@ export const PageUserNew = () => {
   );
 
   return (
-    <>
+    <GuardPermissions permissions={[permissionStaff.create]}>
       <PreventNavigation shouldBlock={form.formState.isDirty} />
       <Form
         {...form}
@@ -101,6 +103,6 @@ export const PageUserNew = () => {
           </PageLayoutContent>
         </PageLayout>
       </Form>
-    </>
+    </GuardPermissions>
   );
 };

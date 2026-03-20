@@ -12,7 +12,7 @@ const tags = ['users'];
 export default {
   getAll: protectedProcedure({
     permissions: {
-      user: ['list'],
+      staff: ['list'],
     },
   })
     .route({
@@ -85,7 +85,7 @@ export default {
 
   getById: protectedProcedure({
     permissions: {
-      user: ['list'],
+      staff: ['list'],
     },
   })
     .route({
@@ -115,7 +115,7 @@ export default {
 
   updateById: protectedProcedure({
     permissions: {
-      user: ['set-role'],
+      staff: ['update'],
     },
   })
     .route({
@@ -160,7 +160,7 @@ export default {
 
   create: protectedProcedure({
     permissions: {
-      user: ['create'],
+      staff: ['create'],
     },
   })
     .route({
@@ -183,14 +183,14 @@ export default {
           email: input.email,
           emailVerified: true,
           name: input.name ?? '',
-          role: input.role ?? 'user',
+          role: input.role ?? 'support',
         },
       });
     }),
 
   deleteById: protectedProcedure({
     permissions: {
-      user: ['delete'],
+      staff: ['delete'],
     },
   })
     .route({

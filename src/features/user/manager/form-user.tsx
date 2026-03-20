@@ -42,7 +42,7 @@ export const FormUser = (props: { userId?: string }) => {
           disabled={isCurrentUser}
           items={rolesNames.map((role) => ({
             value: role,
-            label: role,
+            label: t(`user:common.role.values.${role}`),
           }))}
         />
         {isCurrentUser && (

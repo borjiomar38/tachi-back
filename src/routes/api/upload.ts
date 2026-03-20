@@ -1,22 +1,10 @@
-import { handleRequest, type Router } from '@better-upload/server';
 import { createFileRoute } from '@tanstack/react-router';
 
 import { envClient } from '@/env/client';
-import { envServer } from '@/env/server';
-import { uploadClient } from '@/server/s3';
-import { bookCover } from '@/server/upload/book-cover';
-
-const router = {
-  client: uploadClient,
-  bucketName: envServer.S3_BUCKET_NAME,
-  routes: {
-    bookCover,
-  },
-} as const satisfies Router;
 
 // Used to type route param on UploadButton component
-// This is to prevent typo issues when specifying the uploadRoute prop
-export type UploadRoutes = keyof typeof router.routes;
+// Upload routes will be reintroduced with the real Tachiyomi Back job flow.
+export type UploadRoutes = string;
 
 export const Route = createFileRoute('/api/upload')({
   server: {
@@ -25,7 +13,13 @@ export const Route = createFileRoute('/api/upload')({
         if (envClient.VITE_IS_DEMO) {
           return new Response('Demo Mode', { status: 405 });
         }
-        return handleRequest(request, router);
+        void request;
+        return new Response(
+          'Upload routes are not available during Phase 1 cleanup.',
+          {
+            status: 501,
+          }
+        );
       },
     },
   },

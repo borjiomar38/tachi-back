@@ -4,7 +4,6 @@ import { createORPCReactQueryUtils } from '@orpc/react-query';
 import type { RouterClient } from '@orpc/server';
 
 import { envClient } from '@/env/client';
-import { openDemoModeDrawer } from '@/features/demo/demo-mode-drawer';
 
 import type { Router } from './types';
 
@@ -16,7 +15,7 @@ const link = new RPCLink({
   interceptors: [
     onError((error) => {
       if (error instanceof ORPCError && error.message === 'DEMO_MODE_ENABLED') {
-        openDemoModeDrawer();
+        throw error;
       }
     }),
   ],

@@ -1,8 +1,5 @@
 import { Logo } from '@/components/brand/logo';
 
-import { DemoAppSwitch } from '@/features/demo/demo-app-switch';
-import { DemoMarketingBento } from '@/features/demo/demo-marketing-bento';
-import { DemoWelcome } from '@/features/demo/demo-welcome';
 import {
   PageLayout,
   PageLayoutContent,
@@ -16,10 +13,22 @@ export const PageHome = () => {
         <Logo className="mx-auto w-24" />
       </PageLayoutTopBar>
       <PageLayoutContent>
-        <div className="flex flex-1 flex-col gap-4">
-          <DemoWelcome />
-          <DemoAppSwitch />
-          <DemoMarketingBento />
+        <div className="mx-auto flex max-w-3xl flex-1 flex-col gap-6">
+          <Logo className="h-12 w-auto" />
+          <div className="space-y-3">
+            <h1 className="text-2xl font-semibold tracking-tight">
+              Tachiyomi Back foundation
+            </h1>
+            <p className="text-sm text-muted-foreground">
+              The starter demo content has been removed. This app shell is now
+              reserved for future internal and hosted workflow screens tied to
+              payments, licenses, devices, and translation jobs.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              During Phase 1, the goal is to keep reusable infrastructure and
+              remove unrelated starter business domains.
+            </p>
+          </div>
         </div>
       </PageLayoutContent>
     </PageLayout>

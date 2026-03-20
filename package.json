@@ -1,29 +1,9 @@
 {
-  "name": "start-ui-web",
-  "version": "3.0.0",
+  "name": "tachi-back",
+  "version": "0.1.0",
   "private": true,
-  "description": "Opinionated UI starter from the 🐻 BearStudio Team",
-  "homepage": "https://github.com/bearstudio/start-ui-web#readme",
-  "bugs": {
-    "url": "https://github.com/bearstudio/start-ui-web/issues"
-  },
+  "description": "Backoffice, payments, and hosted translation backend for TachiyomiAT.",
   "license": "MIT",
-  "author": {
-    "name": "Ivan Dalmet",
-    "email": "ivan@dalmet.fr",
-    "url": "https://github.com/ivan-dalmet"
-  },
-  "contributors": [
-    {
-      "name": "Yoann Fleury",
-      "email": "yoannfleurydev@gmail.com",
-      "url": "https://github.com/yoannfleurydev"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bearstudio/start-ui-web.git"
-  },
   "type": "module",
   "scripts": {
     "postinstall": "run-p gen:prisma gen:build-info",
@@ -55,6 +35,9 @@
     "dk:stop": "docker compose stop",
     "dk:clear": "docker compose down --volumes",
     "db:init": "pnpm db:push && pnpm db:seed",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:status": "prisma migrate status",
     "db:push": "prisma db push",
     "db:ui": "prisma studio",
     "db:seed": "dotenv -- cross-env node ./run-jiti ./prisma/seed/index.ts"
@@ -62,7 +45,6 @@
   "dependencies": {
     "@base-ui/react": "1.2.0",
     "@bearstudio/ui-state": "1.1.0",
-    "@better-auth/expo": "1.5.2",
     "@better-upload/client": "3.0.12",
     "@better-upload/server": "3.0.12",
     "@fontsource-variable/inter": "5.2.8",
@@ -111,6 +93,7 @@
     "react-use-disclosure": "9.0.0",
     "remeda": "2.33.4",
     "sonner": "2.0.7",
+    "stripe": "^20.4.1",
     "tailwind-merge": "3.4.0",
     "tailwindcss": "4.1.18",
     "ts-pattern": "5.9.0",

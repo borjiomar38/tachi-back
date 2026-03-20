@@ -9,7 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LogoutRouteImport } from './routes/logout'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as DownloadRouteImport } from './routes/download'
 import { Route as ManagerRouteRouteImport } from './routes/manager/route'
 import { Route as LoginRouteRouteImport } from './routes/login/route'
 import { Route as AppRouteRouteImport } from './routes/app/route'
@@ -17,34 +21,71 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ManagerIndexRouteImport } from './routes/manager/index'
 import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as AppIndexRouteImport } from './routes/app/index'
+import { Route as LegalTermsRouteImport } from './routes/legal/terms'
+import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
+import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
+import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
+import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
 import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
+import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
+import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
+import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
-import { Route as ManagerBooksIndexRouteImport } from './routes/manager/books/index'
 import { Route as ManagerAccountIndexRouteImport } from './routes/manager/account.index'
 import { Route as LoginVerifyIndexRouteImport } from './routes/login/verify.index'
 import { Route as LoginErrorIndexRouteImport } from './routes/login/error.index'
-import { Route as AppBooksIndexRouteImport } from './routes/app/books/index'
 import { Route as AppAccountIndexRouteImport } from './routes/app/account.index'
+import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe/webhook'
+import { Route as ApiStripeCheckoutRouteImport } from './routes/api/stripe/checkout'
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
 import { Route as ApiRestSplatRouteImport } from './routes/api/rest.$'
 import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
+import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
+import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
+import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
 import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users/new.index'
 import { Route as ManagerUsersIdIndexRouteImport } from './routes/manager/users/$id.index'
-import { Route as ManagerBooksNewIndexRouteImport } from './routes/manager/books/new.index'
-import { Route as ManagerBooksIdIndexRouteImport } from './routes/manager/books/$id.index'
-import { Route as AppBooksIdIndexRouteImport } from './routes/app/books/$id.index'
+import { Route as ManagerLicensesKeyIndexRouteImport } from './routes/manager/licenses/$key.index'
+import { Route as ManagerJobsIdIndexRouteImport } from './routes/manager/jobs/$id.index'
+import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devices/$id.index'
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
+import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
+import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
+import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
 import { Route as ManagerUsersIdUpdateIndexRouteImport } from './routes/manager/users/$id.update.index'
-import { Route as ManagerBooksIdUpdateIndexRouteImport } from './routes/manager/books/$id.update.index'
+import { Route as ApiMobileJobsJobIdIndexRouteImport } from './routes/api/mobile/jobs/$jobId.index'
+import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobile/jobs/$jobId/result'
+import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/complete'
+import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LogoutRoute = LogoutRouteImport.update({
   id: '/logout',
   path: '/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadRoute = DownloadRouteImport.update({
+  id: '/download',
+  path: '/download',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManagerRouteRoute = ManagerRouteRouteImport.update({
@@ -82,6 +123,31 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const LegalTermsRoute = LegalTermsRouteImport.update({
+  id: '/legal/terms',
+  path: '/legal/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalPrivacyRoute = LegalPrivacyRouteImport.update({
+  id: '/legal/privacy',
+  path: '/legal/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
+  id: '/checkout/success',
+  path: '/checkout/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutCancelRoute = CheckoutCancelRouteImport.update({
+  id: '/checkout/cancel',
+  path: '/checkout/cancel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutTokenPackKeyRoute = CheckoutTokenPackKeyRouteImport.update({
+  id: '/checkout/$tokenPackKey',
+  path: '/checkout/$tokenPackKey',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiUploadRoute = ApiUploadRouteImport.update({
   id: '/api/upload',
   path: '/api/upload',
@@ -92,14 +158,24 @@ const ManagerUsersIndexRoute = ManagerUsersIndexRouteImport.update({
   path: '/users/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerProvidersIndexRoute = ManagerProvidersIndexRouteImport.update({
+  id: '/providers/',
+  path: '/providers/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
+const ManagerLicensesIndexRoute = ManagerLicensesIndexRouteImport.update({
+  id: '/licenses/',
+  path: '/licenses/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
+const ManagerJobsIndexRoute = ManagerJobsIndexRouteImport.update({
+  id: '/jobs/',
+  path: '/jobs/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerDashboardIndexRoute = ManagerDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
-  getParentRoute: () => ManagerRouteRoute,
-} as any)
-const ManagerBooksIndexRoute = ManagerBooksIndexRouteImport.update({
-  id: '/books/',
-  path: '/books/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
 const ManagerAccountIndexRoute = ManagerAccountIndexRouteImport.update({
@@ -117,15 +193,20 @@ const LoginErrorIndexRoute = LoginErrorIndexRouteImport.update({
   path: '/error/',
   getParentRoute: () => LoginRouteRoute,
 } as any)
-const AppBooksIndexRoute = AppBooksIndexRouteImport.update({
-  id: '/books/',
-  path: '/books/',
-  getParentRoute: () => AppRouteRoute,
-} as any)
 const AppAccountIndexRoute = AppAccountIndexRouteImport.update({
   id: '/account/',
   path: '/account/',
   getParentRoute: () => AppRouteRoute,
+} as any)
+const ApiStripeWebhookRoute = ApiStripeWebhookRouteImport.update({
+  id: '/api/stripe/webhook',
+  path: '/api/stripe/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStripeCheckoutRoute = ApiStripeCheckoutRouteImport.update({
+  id: '/api/stripe/checkout',
+  path: '/api/stripe/checkout',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
   id: '/api/rpc/$',
@@ -147,9 +228,24 @@ const ApiOpenapiAppRoute = ApiOpenapiAppRouteImport.update({
   path: '/api/openapi/app',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileJobsRoute = ApiMobileJobsRouteImport.update({
+  id: '/api/mobile/jobs',
+  path: '/api/mobile/jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMobileHeartbeatRoute = ApiMobileHeartbeatRouteImport.update({
+  id: '/api/mobile/heartbeat',
+  path: '/api/mobile/heartbeat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiActivationRedeemRoute = ApiActivationRedeemRouteImport.update({
+  id: '/api/activation/redeem',
+  path: '/api/activation/redeem',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManagerUsersNewIndexRoute = ManagerUsersNewIndexRouteImport.update({
@@ -162,20 +258,20 @@ const ManagerUsersIdIndexRoute = ManagerUsersIdIndexRouteImport.update({
   path: '/users/$id/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
-const ManagerBooksNewIndexRoute = ManagerBooksNewIndexRouteImport.update({
-  id: '/books/new/',
-  path: '/books/new/',
+const ManagerLicensesKeyIndexRoute = ManagerLicensesKeyIndexRouteImport.update({
+  id: '/licenses/$key/',
+  path: '/licenses/$key/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
-const ManagerBooksIdIndexRoute = ManagerBooksIdIndexRouteImport.update({
-  id: '/books/$id/',
-  path: '/books/$id/',
+const ManagerJobsIdIndexRoute = ManagerJobsIdIndexRouteImport.update({
+  id: '/jobs/$id/',
+  path: '/jobs/$id/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
-const AppBooksIdIndexRoute = AppBooksIdIndexRouteImport.update({
-  id: '/books/$id/',
-  path: '/books/$id/',
-  getParentRoute: () => AppRouteRoute,
+const ManagerDevicesIdIndexRoute = ManagerDevicesIdIndexRouteImport.update({
+  id: '/devices/$id/',
+  path: '/devices/$id/',
+  getParentRoute: () => ManagerRouteRoute,
 } as any)
 const ApiOpenapiAuthSchemaRoute = ApiOpenapiAuthSchemaRouteImport.update({
   id: '/schema',
@@ -186,6 +282,21 @@ const ApiOpenapiAppSchemaRoute = ApiOpenapiAppSchemaRouteImport.update({
   id: '/schema',
   path: '/schema',
   getParentRoute: () => ApiOpenapiAppRoute,
+} as any)
+const ApiMobileAuthSessionRoute = ApiMobileAuthSessionRouteImport.update({
+  id: '/api/mobile/auth/session',
+  path: '/api/mobile/auth/session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMobileAuthRefreshRoute = ApiMobileAuthRefreshRouteImport.update({
+  id: '/api/mobile/auth/refresh',
+  path: '/api/mobile/auth/refresh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMobileAuthActivateRoute = ApiMobileAuthActivateRouteImport.update({
+  id: '/api/mobile/auth/activate',
+  path: '/api/mobile/auth/activate',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiDevEmailTemplateRoute = ApiDevEmailTemplateRouteImport.update({
   id: '/api/dev/email/$template',
@@ -198,11 +309,28 @@ const ManagerUsersIdUpdateIndexRoute =
     path: '/users/$id/update/',
     getParentRoute: () => ManagerRouteRoute,
   } as any)
-const ManagerBooksIdUpdateIndexRoute =
-  ManagerBooksIdUpdateIndexRouteImport.update({
-    id: '/books/$id/update/',
-    path: '/books/$id/update/',
-    getParentRoute: () => ManagerRouteRoute,
+const ApiMobileJobsJobIdIndexRoute = ApiMobileJobsJobIdIndexRouteImport.update({
+  id: '/$jobId/',
+  path: '/$jobId/',
+  getParentRoute: () => ApiMobileJobsRoute,
+} as any)
+const ApiMobileJobsJobIdResultRoute =
+  ApiMobileJobsJobIdResultRouteImport.update({
+    id: '/$jobId/result',
+    path: '/$jobId/result',
+    getParentRoute: () => ApiMobileJobsRoute,
+  } as any)
+const ApiMobileJobsJobIdCompleteRoute =
+  ApiMobileJobsJobIdCompleteRouteImport.update({
+    id: '/$jobId/complete',
+    path: '/$jobId/complete',
+    getParentRoute: () => ApiMobileJobsRoute,
+  } as any)
+const ApiMobileJobsJobIdPagesPageNumberRoute =
+  ApiMobileJobsJobIdPagesPageNumberRouteImport.update({
+    id: '/$jobId/pages/$pageNumber',
+    path: '/$jobId/pages/$pageNumber',
+    getParentRoute: () => ApiMobileJobsRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -210,65 +338,107 @@ export interface FileRoutesByFullPath {
   '/app': typeof AppRouteRouteWithChildren
   '/login': typeof LoginRouteRouteWithChildren
   '/manager': typeof ManagerRouteRouteWithChildren
+  '/download': typeof DownloadRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
+  '/pricing': typeof PricingRoute
+  '/support': typeof SupportRoute
   '/api/upload': typeof ApiUploadRoute
+  '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
+  '/checkout/cancel': typeof CheckoutCancelRoute
+  '/checkout/success': typeof CheckoutSuccessRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/terms': typeof LegalTermsRoute
   '/app/': typeof AppIndexRoute
   '/login/': typeof LoginIndexRoute
   '/manager/': typeof ManagerIndexRoute
+  '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
+  '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
+  '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
+  '/api/stripe/webhook': typeof ApiStripeWebhookRoute
   '/app/account/': typeof AppAccountIndexRoute
-  '/app/books/': typeof AppBooksIndexRoute
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
   '/manager/account/': typeof ManagerAccountIndexRoute
-  '/manager/books/': typeof ManagerBooksIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
+  '/manager/jobs/': typeof ManagerJobsIndexRoute
+  '/manager/licenses/': typeof ManagerLicensesIndexRoute
+  '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
+  '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
+  '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
-  '/app/books/$id/': typeof AppBooksIdIndexRoute
-  '/manager/books/$id/': typeof ManagerBooksIdIndexRoute
-  '/manager/books/new/': typeof ManagerBooksNewIndexRoute
+  '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
+  '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
+  '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
-  '/manager/books/$id/update/': typeof ManagerBooksIdUpdateIndexRoute
+  '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
+  '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
+  '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
+  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/download': typeof DownloadRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
+  '/pricing': typeof PricingRoute
+  '/support': typeof SupportRoute
   '/api/upload': typeof ApiUploadRoute
+  '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
+  '/checkout/cancel': typeof CheckoutCancelRoute
+  '/checkout/success': typeof CheckoutSuccessRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/terms': typeof LegalTermsRoute
   '/app': typeof AppIndexRoute
   '/login': typeof LoginIndexRoute
   '/manager': typeof ManagerIndexRoute
+  '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
+  '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
+  '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
+  '/api/stripe/webhook': typeof ApiStripeWebhookRoute
   '/app/account': typeof AppAccountIndexRoute
-  '/app/books': typeof AppBooksIndexRoute
   '/login/error': typeof LoginErrorIndexRoute
   '/login/verify': typeof LoginVerifyIndexRoute
   '/manager/account': typeof ManagerAccountIndexRoute
-  '/manager/books': typeof ManagerBooksIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
+  '/manager/jobs': typeof ManagerJobsIndexRoute
+  '/manager/licenses': typeof ManagerLicensesIndexRoute
+  '/manager/providers': typeof ManagerProvidersIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
+  '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
+  '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
-  '/app/books/$id': typeof AppBooksIdIndexRoute
-  '/manager/books/$id': typeof ManagerBooksIdIndexRoute
-  '/manager/books/new': typeof ManagerBooksNewIndexRoute
+  '/manager/devices/$id': typeof ManagerDevicesIdIndexRoute
+  '/manager/jobs/$id': typeof ManagerJobsIdIndexRoute
+  '/manager/licenses/$key': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id': typeof ManagerUsersIdIndexRoute
   '/manager/users/new': typeof ManagerUsersNewIndexRoute
-  '/manager/books/$id/update': typeof ManagerBooksIdUpdateIndexRoute
+  '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
+  '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
+  '/api/mobile/jobs/$jobId': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update': typeof ManagerUsersIdUpdateIndexRoute
+  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -276,34 +446,55 @@ export interface FileRoutesById {
   '/app': typeof AppRouteRouteWithChildren
   '/login': typeof LoginRouteRouteWithChildren
   '/manager': typeof ManagerRouteRouteWithChildren
+  '/download': typeof DownloadRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
+  '/pricing': typeof PricingRoute
+  '/support': typeof SupportRoute
   '/api/upload': typeof ApiUploadRoute
+  '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
+  '/checkout/cancel': typeof CheckoutCancelRoute
+  '/checkout/success': typeof CheckoutSuccessRoute
+  '/legal/privacy': typeof LegalPrivacyRoute
+  '/legal/terms': typeof LegalTermsRoute
   '/app/': typeof AppIndexRoute
   '/login/': typeof LoginIndexRoute
   '/manager/': typeof ManagerIndexRoute
+  '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
+  '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
+  '/api/stripe/checkout': typeof ApiStripeCheckoutRoute
+  '/api/stripe/webhook': typeof ApiStripeWebhookRoute
   '/app/account/': typeof AppAccountIndexRoute
-  '/app/books/': typeof AppBooksIndexRoute
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
   '/manager/account/': typeof ManagerAccountIndexRoute
-  '/manager/books/': typeof ManagerBooksIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
+  '/manager/jobs/': typeof ManagerJobsIndexRoute
+  '/manager/licenses/': typeof ManagerLicensesIndexRoute
+  '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
+  '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
+  '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
-  '/app/books/$id/': typeof AppBooksIdIndexRoute
-  '/manager/books/$id/': typeof ManagerBooksIdIndexRoute
-  '/manager/books/new/': typeof ManagerBooksNewIndexRoute
+  '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
+  '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
+  '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
-  '/manager/books/$id/update/': typeof ManagerBooksIdUpdateIndexRoute
+  '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
+  '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
+  '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
+  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -312,99 +503,162 @@ export interface FileRouteTypes {
     | '/app'
     | '/login'
     | '/manager'
+    | '/download'
+    | '/how-it-works'
     | '/logout'
+    | '/pricing'
+    | '/support'
     | '/api/upload'
+    | '/checkout/$tokenPackKey'
+    | '/checkout/cancel'
+    | '/checkout/success'
+    | '/legal/privacy'
+    | '/legal/terms'
     | '/app/'
     | '/login/'
     | '/manager/'
+    | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/mobile/heartbeat'
+    | '/api/mobile/jobs'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/rest/$'
     | '/api/rpc/$'
+    | '/api/stripe/checkout'
+    | '/api/stripe/webhook'
     | '/app/account/'
-    | '/app/books/'
     | '/login/error/'
     | '/login/verify/'
     | '/manager/account/'
-    | '/manager/books/'
     | '/manager/dashboard/'
+    | '/manager/jobs/'
+    | '/manager/licenses/'
+    | '/manager/providers/'
     | '/manager/users/'
     | '/api/dev/email/$template'
+    | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/refresh'
+    | '/api/mobile/auth/session'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
-    | '/app/books/$id/'
-    | '/manager/books/$id/'
-    | '/manager/books/new/'
+    | '/manager/devices/$id/'
+    | '/manager/jobs/$id/'
+    | '/manager/licenses/$key/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
-    | '/manager/books/$id/update/'
+    | '/api/mobile/jobs/$jobId/complete'
+    | '/api/mobile/jobs/$jobId/result'
+    | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
+    | '/api/mobile/jobs/$jobId/pages/$pageNumber'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/download'
+    | '/how-it-works'
     | '/logout'
+    | '/pricing'
+    | '/support'
     | '/api/upload'
+    | '/checkout/$tokenPackKey'
+    | '/checkout/cancel'
+    | '/checkout/success'
+    | '/legal/privacy'
+    | '/legal/terms'
     | '/app'
     | '/login'
     | '/manager'
+    | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/mobile/heartbeat'
+    | '/api/mobile/jobs'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/rest/$'
     | '/api/rpc/$'
+    | '/api/stripe/checkout'
+    | '/api/stripe/webhook'
     | '/app/account'
-    | '/app/books'
     | '/login/error'
     | '/login/verify'
     | '/manager/account'
-    | '/manager/books'
     | '/manager/dashboard'
+    | '/manager/jobs'
+    | '/manager/licenses'
+    | '/manager/providers'
     | '/manager/users'
     | '/api/dev/email/$template'
+    | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/refresh'
+    | '/api/mobile/auth/session'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
-    | '/app/books/$id'
-    | '/manager/books/$id'
-    | '/manager/books/new'
+    | '/manager/devices/$id'
+    | '/manager/jobs/$id'
+    | '/manager/licenses/$key'
     | '/manager/users/$id'
     | '/manager/users/new'
-    | '/manager/books/$id/update'
+    | '/api/mobile/jobs/$jobId/complete'
+    | '/api/mobile/jobs/$jobId/result'
+    | '/api/mobile/jobs/$jobId'
     | '/manager/users/$id/update'
+    | '/api/mobile/jobs/$jobId/pages/$pageNumber'
   id:
     | '__root__'
     | '/'
     | '/app'
     | '/login'
     | '/manager'
+    | '/download'
+    | '/how-it-works'
     | '/logout'
+    | '/pricing'
+    | '/support'
     | '/api/upload'
+    | '/checkout/$tokenPackKey'
+    | '/checkout/cancel'
+    | '/checkout/success'
+    | '/legal/privacy'
+    | '/legal/terms'
     | '/app/'
     | '/login/'
     | '/manager/'
+    | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/mobile/heartbeat'
+    | '/api/mobile/jobs'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/rest/$'
     | '/api/rpc/$'
+    | '/api/stripe/checkout'
+    | '/api/stripe/webhook'
     | '/app/account/'
-    | '/app/books/'
     | '/login/error/'
     | '/login/verify/'
     | '/manager/account/'
-    | '/manager/books/'
     | '/manager/dashboard/'
+    | '/manager/jobs/'
+    | '/manager/licenses/'
+    | '/manager/providers/'
     | '/manager/users/'
     | '/api/dev/email/$template'
+    | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/refresh'
+    | '/api/mobile/auth/session'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
-    | '/app/books/$id/'
-    | '/manager/books/$id/'
-    | '/manager/books/new/'
+    | '/manager/devices/$id/'
+    | '/manager/jobs/$id/'
+    | '/manager/licenses/$key/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
-    | '/manager/books/$id/update/'
+    | '/api/mobile/jobs/$jobId/complete'
+    | '/api/mobile/jobs/$jobId/result'
+    | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
+    | '/api/mobile/jobs/$jobId/pages/$pageNumber'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -412,23 +666,68 @@ export interface RootRouteChildren {
   AppRouteRoute: typeof AppRouteRouteWithChildren
   LoginRouteRoute: typeof LoginRouteRouteWithChildren
   ManagerRouteRoute: typeof ManagerRouteRouteWithChildren
+  DownloadRoute: typeof DownloadRoute
+  HowItWorksRoute: typeof HowItWorksRoute
   LogoutRoute: typeof LogoutRoute
+  PricingRoute: typeof PricingRoute
+  SupportRoute: typeof SupportRoute
   ApiUploadRoute: typeof ApiUploadRoute
+  CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
+  CheckoutCancelRoute: typeof CheckoutCancelRoute
+  CheckoutSuccessRoute: typeof CheckoutSuccessRoute
+  LegalPrivacyRoute: typeof LegalPrivacyRoute
+  LegalTermsRoute: typeof LegalTermsRoute
+  ApiActivationRedeemRoute: typeof ApiActivationRedeemRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
+  ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
   ApiOpenapiAuthRoute: typeof ApiOpenapiAuthRouteWithChildren
   ApiRestSplatRoute: typeof ApiRestSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
+  ApiStripeCheckoutRoute: typeof ApiStripeCheckoutRoute
+  ApiStripeWebhookRoute: typeof ApiStripeWebhookRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
+  ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
+  ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
+  ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/logout': {
       id: '/logout'
       path: '/logout'
       fullPath: '/logout'
       preLoaderRoute: typeof LogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/download': {
+      id: '/download'
+      path: '/download'
+      fullPath: '/download'
+      preLoaderRoute: typeof DownloadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manager': {
@@ -480,6 +779,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRouteRoute
     }
+    '/legal/terms': {
+      id: '/legal/terms'
+      path: '/legal/terms'
+      fullPath: '/legal/terms'
+      preLoaderRoute: typeof LegalTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/privacy': {
+      id: '/legal/privacy'
+      path: '/legal/privacy'
+      fullPath: '/legal/privacy'
+      preLoaderRoute: typeof LegalPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/success': {
+      id: '/checkout/success'
+      path: '/checkout/success'
+      fullPath: '/checkout/success'
+      preLoaderRoute: typeof CheckoutSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/cancel': {
+      id: '/checkout/cancel'
+      path: '/checkout/cancel'
+      fullPath: '/checkout/cancel'
+      preLoaderRoute: typeof CheckoutCancelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/$tokenPackKey': {
+      id: '/checkout/$tokenPackKey'
+      path: '/checkout/$tokenPackKey'
+      fullPath: '/checkout/$tokenPackKey'
+      preLoaderRoute: typeof CheckoutTokenPackKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/upload': {
       id: '/api/upload'
       path: '/api/upload'
@@ -494,18 +828,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/providers/': {
+      id: '/manager/providers/'
+      path: '/providers'
+      fullPath: '/manager/providers/'
+      preLoaderRoute: typeof ManagerProvidersIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/licenses/': {
+      id: '/manager/licenses/'
+      path: '/licenses'
+      fullPath: '/manager/licenses/'
+      preLoaderRoute: typeof ManagerLicensesIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/jobs/': {
+      id: '/manager/jobs/'
+      path: '/jobs'
+      fullPath: '/manager/jobs/'
+      preLoaderRoute: typeof ManagerJobsIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/dashboard/': {
       id: '/manager/dashboard/'
       path: '/dashboard'
       fullPath: '/manager/dashboard/'
       preLoaderRoute: typeof ManagerDashboardIndexRouteImport
-      parentRoute: typeof ManagerRouteRoute
-    }
-    '/manager/books/': {
-      id: '/manager/books/'
-      path: '/books'
-      fullPath: '/manager/books/'
-      preLoaderRoute: typeof ManagerBooksIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
     '/manager/account/': {
@@ -529,19 +877,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginErrorIndexRouteImport
       parentRoute: typeof LoginRouteRoute
     }
-    '/app/books/': {
-      id: '/app/books/'
-      path: '/books'
-      fullPath: '/app/books/'
-      preLoaderRoute: typeof AppBooksIndexRouteImport
-      parentRoute: typeof AppRouteRoute
-    }
     '/app/account/': {
       id: '/app/account/'
       path: '/account'
       fullPath: '/app/account/'
       preLoaderRoute: typeof AppAccountIndexRouteImport
       parentRoute: typeof AppRouteRoute
+    }
+    '/api/stripe/webhook': {
+      id: '/api/stripe/webhook'
+      path: '/api/stripe/webhook'
+      fullPath: '/api/stripe/webhook'
+      preLoaderRoute: typeof ApiStripeWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/stripe/checkout': {
+      id: '/api/stripe/checkout'
+      path: '/api/stripe/checkout'
+      fullPath: '/api/stripe/checkout'
+      preLoaderRoute: typeof ApiStripeCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/rpc/$': {
       id: '/api/rpc/$'
@@ -571,11 +926,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOpenapiAppRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/jobs': {
+      id: '/api/mobile/jobs'
+      path: '/api/mobile/jobs'
+      fullPath: '/api/mobile/jobs'
+      preLoaderRoute: typeof ApiMobileJobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/heartbeat': {
+      id: '/api/mobile/heartbeat'
+      path: '/api/mobile/heartbeat'
+      fullPath: '/api/mobile/heartbeat'
+      preLoaderRoute: typeof ApiMobileHeartbeatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
       fullPath: '/api/auth/$'
       preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/activation/redeem': {
+      id: '/api/activation/redeem'
+      path: '/api/activation/redeem'
+      fullPath: '/api/activation/redeem'
+      preLoaderRoute: typeof ApiActivationRedeemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manager/users/new/': {
@@ -592,26 +968,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersIdIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
-    '/manager/books/new/': {
-      id: '/manager/books/new/'
-      path: '/books/new'
-      fullPath: '/manager/books/new/'
-      preLoaderRoute: typeof ManagerBooksNewIndexRouteImport
+    '/manager/licenses/$key/': {
+      id: '/manager/licenses/$key/'
+      path: '/licenses/$key'
+      fullPath: '/manager/licenses/$key/'
+      preLoaderRoute: typeof ManagerLicensesKeyIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
-    '/manager/books/$id/': {
-      id: '/manager/books/$id/'
-      path: '/books/$id'
-      fullPath: '/manager/books/$id/'
-      preLoaderRoute: typeof ManagerBooksIdIndexRouteImport
+    '/manager/jobs/$id/': {
+      id: '/manager/jobs/$id/'
+      path: '/jobs/$id'
+      fullPath: '/manager/jobs/$id/'
+      preLoaderRoute: typeof ManagerJobsIdIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
-    '/app/books/$id/': {
-      id: '/app/books/$id/'
-      path: '/books/$id'
-      fullPath: '/app/books/$id/'
-      preLoaderRoute: typeof AppBooksIdIndexRouteImport
-      parentRoute: typeof AppRouteRoute
+    '/manager/devices/$id/': {
+      id: '/manager/devices/$id/'
+      path: '/devices/$id'
+      fullPath: '/manager/devices/$id/'
+      preLoaderRoute: typeof ManagerDevicesIdIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
     }
     '/api/openapi/auth/schema': {
       id: '/api/openapi/auth/schema'
@@ -627,6 +1003,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOpenapiAppSchemaRouteImport
       parentRoute: typeof ApiOpenapiAppRoute
     }
+    '/api/mobile/auth/session': {
+      id: '/api/mobile/auth/session'
+      path: '/api/mobile/auth/session'
+      fullPath: '/api/mobile/auth/session'
+      preLoaderRoute: typeof ApiMobileAuthSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/auth/refresh': {
+      id: '/api/mobile/auth/refresh'
+      path: '/api/mobile/auth/refresh'
+      fullPath: '/api/mobile/auth/refresh'
+      preLoaderRoute: typeof ApiMobileAuthRefreshRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/auth/activate': {
+      id: '/api/mobile/auth/activate'
+      path: '/api/mobile/auth/activate'
+      fullPath: '/api/mobile/auth/activate'
+      preLoaderRoute: typeof ApiMobileAuthActivateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/dev/email/$template': {
       id: '/api/dev/email/$template'
       path: '/api/dev/email/$template'
@@ -641,12 +1038,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersIdUpdateIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
-    '/manager/books/$id/update/': {
-      id: '/manager/books/$id/update/'
-      path: '/books/$id/update'
-      fullPath: '/manager/books/$id/update/'
-      preLoaderRoute: typeof ManagerBooksIdUpdateIndexRouteImport
-      parentRoute: typeof ManagerRouteRoute
+    '/api/mobile/jobs/$jobId/': {
+      id: '/api/mobile/jobs/$jobId/'
+      path: '/$jobId'
+      fullPath: '/api/mobile/jobs/$jobId/'
+      preLoaderRoute: typeof ApiMobileJobsJobIdIndexRouteImport
+      parentRoute: typeof ApiMobileJobsRoute
+    }
+    '/api/mobile/jobs/$jobId/result': {
+      id: '/api/mobile/jobs/$jobId/result'
+      path: '/$jobId/result'
+      fullPath: '/api/mobile/jobs/$jobId/result'
+      preLoaderRoute: typeof ApiMobileJobsJobIdResultRouteImport
+      parentRoute: typeof ApiMobileJobsRoute
+    }
+    '/api/mobile/jobs/$jobId/complete': {
+      id: '/api/mobile/jobs/$jobId/complete'
+      path: '/$jobId/complete'
+      fullPath: '/api/mobile/jobs/$jobId/complete'
+      preLoaderRoute: typeof ApiMobileJobsJobIdCompleteRouteImport
+      parentRoute: typeof ApiMobileJobsRoute
+    }
+    '/api/mobile/jobs/$jobId/pages/$pageNumber': {
+      id: '/api/mobile/jobs/$jobId/pages/$pageNumber'
+      path: '/$jobId/pages/$pageNumber'
+      fullPath: '/api/mobile/jobs/$jobId/pages/$pageNumber'
+      preLoaderRoute: typeof ApiMobileJobsJobIdPagesPageNumberRouteImport
+      parentRoute: typeof ApiMobileJobsRoute
     }
   }
 }
@@ -654,15 +1072,11 @@ declare module '@tanstack/react-router' {
 interface AppRouteRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppAccountIndexRoute: typeof AppAccountIndexRoute
-  AppBooksIndexRoute: typeof AppBooksIndexRoute
-  AppBooksIdIndexRoute: typeof AppBooksIdIndexRoute
 }
 
 const AppRouteRouteChildren: AppRouteRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppAccountIndexRoute: AppAccountIndexRoute,
-  AppBooksIndexRoute: AppBooksIndexRoute,
-  AppBooksIdIndexRoute: AppBooksIdIndexRoute,
 }
 
 const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
@@ -688,33 +1102,56 @@ const LoginRouteRouteWithChildren = LoginRouteRoute._addFileChildren(
 interface ManagerRouteRouteChildren {
   ManagerIndexRoute: typeof ManagerIndexRoute
   ManagerAccountIndexRoute: typeof ManagerAccountIndexRoute
-  ManagerBooksIndexRoute: typeof ManagerBooksIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
+  ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
+  ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
+  ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
-  ManagerBooksIdIndexRoute: typeof ManagerBooksIdIndexRoute
-  ManagerBooksNewIndexRoute: typeof ManagerBooksNewIndexRoute
+  ManagerDevicesIdIndexRoute: typeof ManagerDevicesIdIndexRoute
+  ManagerJobsIdIndexRoute: typeof ManagerJobsIdIndexRoute
+  ManagerLicensesKeyIndexRoute: typeof ManagerLicensesKeyIndexRoute
   ManagerUsersIdIndexRoute: typeof ManagerUsersIdIndexRoute
   ManagerUsersNewIndexRoute: typeof ManagerUsersNewIndexRoute
-  ManagerBooksIdUpdateIndexRoute: typeof ManagerBooksIdUpdateIndexRoute
   ManagerUsersIdUpdateIndexRoute: typeof ManagerUsersIdUpdateIndexRoute
 }
 
 const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerIndexRoute: ManagerIndexRoute,
   ManagerAccountIndexRoute: ManagerAccountIndexRoute,
-  ManagerBooksIndexRoute: ManagerBooksIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
+  ManagerJobsIndexRoute: ManagerJobsIndexRoute,
+  ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
+  ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
-  ManagerBooksIdIndexRoute: ManagerBooksIdIndexRoute,
-  ManagerBooksNewIndexRoute: ManagerBooksNewIndexRoute,
+  ManagerDevicesIdIndexRoute: ManagerDevicesIdIndexRoute,
+  ManagerJobsIdIndexRoute: ManagerJobsIdIndexRoute,
+  ManagerLicensesKeyIndexRoute: ManagerLicensesKeyIndexRoute,
   ManagerUsersIdIndexRoute: ManagerUsersIdIndexRoute,
   ManagerUsersNewIndexRoute: ManagerUsersNewIndexRoute,
-  ManagerBooksIdUpdateIndexRoute: ManagerBooksIdUpdateIndexRoute,
   ManagerUsersIdUpdateIndexRoute: ManagerUsersIdUpdateIndexRoute,
 }
 
 const ManagerRouteRouteWithChildren = ManagerRouteRoute._addFileChildren(
   ManagerRouteRouteChildren,
+)
+
+interface ApiMobileJobsRouteChildren {
+  ApiMobileJobsJobIdCompleteRoute: typeof ApiMobileJobsJobIdCompleteRoute
+  ApiMobileJobsJobIdResultRoute: typeof ApiMobileJobsJobIdResultRoute
+  ApiMobileJobsJobIdIndexRoute: typeof ApiMobileJobsJobIdIndexRoute
+  ApiMobileJobsJobIdPagesPageNumberRoute: typeof ApiMobileJobsJobIdPagesPageNumberRoute
+}
+
+const ApiMobileJobsRouteChildren: ApiMobileJobsRouteChildren = {
+  ApiMobileJobsJobIdCompleteRoute: ApiMobileJobsJobIdCompleteRoute,
+  ApiMobileJobsJobIdResultRoute: ApiMobileJobsJobIdResultRoute,
+  ApiMobileJobsJobIdIndexRoute: ApiMobileJobsJobIdIndexRoute,
+  ApiMobileJobsJobIdPagesPageNumberRoute:
+    ApiMobileJobsJobIdPagesPageNumberRoute,
+}
+
+const ApiMobileJobsRouteWithChildren = ApiMobileJobsRoute._addFileChildren(
+  ApiMobileJobsRouteChildren,
 )
 
 interface ApiOpenapiAppRouteChildren {
@@ -746,14 +1183,31 @@ const rootRouteChildren: RootRouteChildren = {
   AppRouteRoute: AppRouteRouteWithChildren,
   LoginRouteRoute: LoginRouteRouteWithChildren,
   ManagerRouteRoute: ManagerRouteRouteWithChildren,
+  DownloadRoute: DownloadRoute,
+  HowItWorksRoute: HowItWorksRoute,
   LogoutRoute: LogoutRoute,
+  PricingRoute: PricingRoute,
+  SupportRoute: SupportRoute,
   ApiUploadRoute: ApiUploadRoute,
+  CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
+  CheckoutCancelRoute: CheckoutCancelRoute,
+  CheckoutSuccessRoute: CheckoutSuccessRoute,
+  LegalPrivacyRoute: LegalPrivacyRoute,
+  LegalTermsRoute: LegalTermsRoute,
+  ApiActivationRedeemRoute: ApiActivationRedeemRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
+  ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,
   ApiOpenapiAuthRoute: ApiOpenapiAuthRouteWithChildren,
   ApiRestSplatRoute: ApiRestSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
+  ApiStripeCheckoutRoute: ApiStripeCheckoutRoute,
+  ApiStripeWebhookRoute: ApiStripeWebhookRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
+  ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
+  ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
+  ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

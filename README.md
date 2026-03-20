@@ -1,165 +1,336 @@
-<h1 align="center"><img src=".github/assets/thumbnail.png" alt="Start UI Web" /></h1>
+# Tachiyomi Back
 
-🚀 Start UI <small>[web]</small> is an opinionated frontend starter repository created & maintained by the [BearStudio Team](https://www.bearstudio.fr/team) and other contributors.
-It represents our team's up-to-date stack that we use when creating web apps for our clients.
+`tachi-back` is the backend and backoffice for hosted OCR and translation features used by TachiyomiAT.
 
+The repository is currently in early Phase 15 hardening work: the starter domain is gone, the backend secret contract exists, the first product schema is in place, internal backoffice auth is tightened, the public landing/pricing surface is live, checkout is wired, Stripe fulfillment creates redeemable entitlements, anonymous activation exists, device-bound mobile bearer sessions exist, the first server-owned OCR and translation gateway layer is in place, the first mobile job/upload/status/result backend flow is live, the first support-facing manager views for licenses and devices are in place, the first jobs/provider-ops manager surfaces now exist, the first Android hosted-engine slice now consumes those backend contracts, and the first launch-hardening slice now covers request correlation plus dedicated rate limits for checkout and mobile job routes.
 
-## Technologies
+## Current Scope
 
-<div align="center" style="margin: 0 0 16px 0"><img src=".github/assets/tech-logos.png" alt="Technologies logos of the starter" /></div>
+- internal admin auth and manager shell
+- public landing and pricing surface
+- Stripe Checkout and initial webhook fulfillment for paid checkout completions
+- first anonymous redeem and installation-binding backend path
+- first device-bound mobile access and refresh session endpoints
+- first hosted provider gateway foundation for OCR and translation
+- first mobile job creation, page upload, queueing, polling, and result-manifest endpoints
+- first backoffice support lookup plus license/device detail views
+- first backoffice jobs list/detail and provider-ops summary views
+- first Android hosted engine option, activation/session storage, settings UI, and chapter submission path
+- first Phase 15 hardening slice for request IDs and dedicated checkout/mobile-job rate limits
+- TanStack Start web app and API route plumbing
+- Prisma, Postgres, Better Auth, and S3/MinIO foundations
+- roadmap docs for the staged implementation plan
 
-[⚙️ Node.js](https://nodejs.org), [🟦 TypeScript](https://www.typescriptlang.org/), [⚛️ React](https://react.dev/), [📦 TanStack Start](https://tanstack.com/start), [💨 Tailwind CSS](https://tailwindcss.com/), [🧩 shadcn/ui](https://ui.shadcn.com/), [📋 React Hook Form](https://react-hook-form.com/), [🔌 oRPC](https://orpc.unnoq.com/), [🛠 Prisma](https://www.prisma.io/), [🔐 Better Auth](https://www.better-auth.com/), [📚 Storybook](https://storybook.js.org/), [🧪 Vitest](https://vitest.dev/), [🎭 Playwright](https://playwright.dev/)
+Not implemented yet:
 
-## Documentation
+- complete mobile auth hardening and richer protected endpoints
+- durable worker runtime, cleanup tooling, and richer retries on top of the first inline job pipeline
+- remaining Phase 12/13 backoffice coverage for orders, redeem-code lists, audit views, manual support actions, and operator actions such as retry/cancel/refund review
+- remaining Android hosted UX polish such as review mode, richer retry/recovery UX, and broader hosted-only reader surfaces
+- broader Phase 15 work such as metrics, restore rehearsals, launch checklists, incident runbooks, and richer abuse controls
+- replay tooling and broader Stripe event support beyond the first paid checkout completion path
 
-For detailed information on how to use this project, please refer to the [documentation](https://docs.web.start-ui.com). The documentation contains all the necessary information on installation, usage, and some guides.
+## Stack Kept From The Starter
 
-## Requirements
+- React + TanStack Start
+- Prisma + PostgreSQL
+- Better Auth for internal admin access
+- oRPC + OpenAPI
+- S3/MinIO upload infrastructure
+- Storybook, Vitest, and Playwright setup
 
-* [Node.js](https://nodejs.org) >= 22
-* [pnpm](https://pnpm.io/)
-* [Docker](https://www.docker.com/) (or a [PostgreSQL](https://www.postgresql.org/) database)
+## Environment Contract
 
-## Getting Started
+Public client variables:
+
+- `VITE_BASE_URL`
+- `VITE_ENV_NAME`, `VITE_ENV_EMOJI`, `VITE_ENV_COLOR`
+- `VITE_IS_DEMO`
+- `VITE_STRIPE_PUBLIC_KEY`
+- `VITE_S3_BUCKET_PUBLIC_URL`
+
+Server-only variables:
+
+- auth and session secrets
+- Stripe secret and webhook secrets
+- provider API keys
+- mobile API signing secrets
+- S3 credentials and bucket names
+- Stripe price IDs for each sellable token pack
+- job-runtime and observability configuration
+
+## Local Setup
 
 ```bash
-pnpm create start-ui -t web myApp
+cp .env.example .env
+pnpm install
+pnpm dk:init
+pnpm db:init
 ```
 
-That will scaffold a new folder with the latest version of 🚀 Start UI <small>[web]</small> 🎉
+If Docker services are already created but stopped:
 
-## Setup your IDE
-
-- VS Code
 ```bash
-cp .vscode/settings.example.json .vscode/settings.json
+pnpm dk:start
 ```
 
-- Zed
-```bash
-cp .zed/settings.example.json .zed/settings.json
-```
+If you change Docker port mappings in `.env`, use `docker compose up -d <service>` instead of `pnpm dk:start`, because `docker compose start` will not recreate containers with new port bindings.
 
-## Installation
+Run the app:
 
 ```bash
-cp .env.example .env  # Setup your env variables
-pnpm install          # Install dependencies
-pnpm dk:init          # Start Docker containers (PostgreSQL, MinIO, Maildev)
-pnpm db:init          # Push the Prisma schema and seed the database
-```
-
-> [!NOTE]
-> **Don't want to use docker?**
->
-> Setup a PostgreSQL database (locally or online) and replace the **DATABASE_URL** environment variable. Then you can run `pnpm db:push` to update your database schema and then run `pnpm db:seed` to seed your database.
-
-## Run
-
-```bash
-pnpm dk:start # Only if your Docker containers are not running
 pnpm dev
 ```
 
+## Database Notes
 
+- `pnpm db:init` is the local convenience bootstrap and still uses `db push` before seeding.
+- `pnpm db:migrate:dev` is the real development migration workflow for new schema changes.
+- `pnpm db:migrate:deploy` applies checked-in migrations without editing them.
+- `pnpm db:seed` assumes the schema already exists.
+- The seed now creates internal admin/staff accounts and initial token packs instead of demo business data.
 
+## Development URLs
 
-### Emails in development
+- app: `http://localhost:3000`
+- OpenAPI: `http://localhost:3000/api/openapi/app`
+- Maildev UI: `http://localhost:${DOCKER_MAILDEV_UI_PORT}` from your local `.env` (default example: `http://localhost:1080`)
+- Storybook: `http://localhost:6006`
 
-#### Maildev to catch emails
+## Test Accounts
 
-In development, the emails will not be sent and will be caught by [maildev](https://github.com/maildev/maildev) which runs as a Docker container.
+After `pnpm db:init`, the seed creates:
 
-The maildev UI is available at [localhost:1080](http://localhost:1080) (port configurable via `DOCKER_MAILDEV_UI_PORT` in `.env`).
+- admin: `admin@tachi-back.local`
+- support: `support@tachi-back.local`
 
-#### Preview emails
+These are internal backoffice accounts only. TachiyomiAT customers will not use Better Auth login for hosted access.
 
-Emails templates are built with `react-email` components in the `src/emails` folder.
+## Roadmap
 
-You can preview an email template at `http://localhost:3000/api/dev/email/{template}` where `{template}` is the name of the template file in the `src/emails/templates` folder.
+The implementation roadmap lives in [`docs/phases/README.md`](./docs/phases/README.md).
 
-Example: [Login Code](http://localhost:3000/api/dev/email/login-code)
+The high-level order is:
 
-##### Email translation preview
+1. starter cleanup and backend foundations
+2. payments, activation, and mobile auth/session contracts
+3. provider gateway, jobs, and backoffice operations
+4. Android integration
+5. hardening and staged launch
 
-Add the language in the preview url like `http://localhost:3000/api/dev/email/{template}?language={language}` where `{language}` is the language key (`en`, `fr`, ...)
+## Phase 2 Intent
 
-#### Email props preview
+Phase 2 defines the environment and local infrastructure contract for the real product.
 
-You can add search params to the preview url to pass as props to the template.
-`http://localhost:3000/api/dev/email/{template}/?{propsName}={propsValue}`
+That means:
 
-### OpenAPI Documentation for the API
+- add server-only env placeholders for Stripe, provider APIs, mobile sessions, and observability
+- separate object-storage buckets for uploads, results, and logs
+- document the backend-only secret boundary so mobile and browser clients never receive provider secrets
+- keep early job execution in the main app process for now with `JOB_RUNTIME_MODE="inline"`
 
-You can access the API documentation via the OpenAPI interface at:
+## Phase 3 Intent
 
-`http://localhost:3000/api/openapi/app`
+Phase 3 introduces the first real product data model for Tachiyomi Back.
 
-This interface allows you to:
+That means:
 
-* View complete and up-to-date documentation of all backend endpoints exposed by the API.
+- keep Better Auth `User` for internal backoffice staff only
+- add relational models for licenses, devices, redeem codes, token packs, orders, webhook events, ledger entries, and translation jobs
+- keep the Android chapter translation payload as JSON/object-storage oriented assets instead of flattening OCR blocks into SQL tables
+- start using real Prisma migration history while keeping `db push` available as a local bootstrap shortcut
 
-* Understand request and response formats for each route.
+## Phase 4 Intent
 
-* Facilitate development and debugging by testing endpoints directly from the interface, without needing the frontend.
+Phase 4 tightens internal admin auth and RBAC for the backoffice.
 
-### Generate custom icons components from svg files
+That means:
 
-Put the custom svg files into the `src/components/icons/svg-sources` folder and then run the following command:
+- disable public Better Auth signup for this repo
+- keep Better Auth scoped to internal staff only, not TachiyomiAT customers
+- replace starter `user/admin` assumptions with `support/admin` internal roles
+- align UI guards and server permissions around staff, sessions, and future privileged operations
+- remove leftover native/mobile Better Auth assumptions from the admin auth surface
 
-```bash
-pnpm gen:icons
-```
+## Phase 5 Intent
 
-If you want to use the same set of custom duotone icons that Start UI is already using, checkout
-[Phosphor](https://phosphoricons.com/)
+Phase 5 introduces the public website and pricing surface.
 
-> [!WARNING]
-> All svg icons should be svg files prefixed by `icon-` (example: `icon-externel-link`) with **square size** and **filled with `#000` color** (will be replaced by `currentColor`).
+That means:
 
-### E2E Tests
+- replace the `/` redirect with a real public landing page
+- add pricing, activation/how-it-works, download, support, and legal placeholder routes
+- source public pricing from the real `TokenPack` records instead of hardcoded demo copy
+- keep public messaging honest about the current Android state while explaining the hosted direction
+- stop short of Stripe Checkout wiring, which stays in Phase 6
 
-E2E tests are setup with Playwright.
+## Phase 6 Intent
 
-```sh
-pnpm e2e:setup  # Setup context to be used across test for more efficient execution 
-pnpm e2e        # Run tests in headless mode, this is the command executed in CI
-pnpm e2e:ui     # Open a UI which allow you to run specific tests and see test execution
-```
+Phase 6 connects the public pricing site to Stripe Checkout without crediting tokens yet.
 
-> [!WARNING]
-> The generated e2e context files contain authentication logic. If you make changes to your local database instance, you should re-run `pnpm e2e:setup`. It will be run automatically in a CI context.
-## Production
+That means:
 
-```bash
-pnpm install
-pnpm storybook:build # Optional: Will expose the Storybook at `/storybook`
-pnpm build
-pnpm start
-```
+- use server-controlled token-pack to Stripe price mapping
+- collect payer email as part of checkout initiation because there is no customer login
+- redirect customers to Stripe Checkout from real pricing cards
+- add success and cancel pages that stay accurate about webhook crediting and redeem timing
+- keep token ledger posting, redeem-code generation, and activation in later phases
 
-## Show hint on development environments
+## Phase 7 Intent
 
-Setup the `VITE_ENV_NAME` env variable with the name of the environment.
+Phase 7 turns successful Stripe payments into durable internal entitlements.
 
-```
-VITE_ENV_NAME="staging"
-VITE_ENV_EMOJI="🔬"
-VITE_ENV_COLOR="teal"
-```
+That means:
 
-## FAQ
+- verify Stripe webhooks on a dedicated public route using the raw request body
+- persist Stripe events for idempotency, replay, and auditability
+- create or update paid `Order` records from Stripe checkout sessions
+- issue one `License`, one `RedeemCode`, and one append-only purchase credit ledger entry per successful paid order
+- treat email delivery as best-effort after durable fulfillment so email failure never loses paid credit
 
-<details><summary><strong>git detect a lot of changes inside my <code>.husky</code> folder</strong></summary>
-<p>
-You probably have updated your branch with lefthook installed instead of husky. Follow these steps to fix
-your hooks issue:
-<ul>
-  <li><code>git config --unset core.hooksPath</code></li>
-  <li><code>rm -rf ./.husky</code></li>
-  <li><code>pnpm install</code></li>
-</ul>
+## Phase 8 Intent
 
-From now husky should have been removed; and lefthook should run your hooks correctly.
-</p>
-</details>
+Phase 8 binds purchased entitlements to app installations without introducing end-user accounts.
+
+That means:
+
+- add a public redeem endpoint that binds a redeem code to an installation ID
+- keep the installation ID app-generated and separate from forbidden hardware identifiers
+- make redeem idempotent for safe retries from the same installation
+- add minimal internal support APIs for license inspection, manual grant, and device revoke flows
+- keep mobile session issuance and full Android UI for later phases
+
+## Phase 9 Intent
+
+Phase 9 gives the app a dedicated bearer-token auth path that stays separate from Better Auth.
+
+That means:
+
+- define a device-bound mobile session model with refresh rotation and revocation
+- expose public mobile auth activation and refresh endpoints
+- expose protected session summary and heartbeat endpoints using `Authorization: Bearer`
+- keep mobile auth separate from `/api/auth/$` and Better Auth cookie sessions
+- preserve the Android requirement that non-portable session state lives in app-state storage, not normal backupable preferences
+
+## Phase 10 Intent
+
+Phase 10 moves provider access behind a normalized backend gateway.
+
+That means:
+
+- keep Google Cloud Vision as the primary hosted OCR path
+- add direct hosted translation adapters for Gemini, OpenAI, and Anthropic
+- treat Google Cloud Translate and OpenRouter as compatibility-only, not first-class launch providers
+- normalize OCR and translation results so they stay compatible with TachiyomiAT page/block rendering
+- add prompt versioning, provider selection, retry/error normalization, and usage-tracking helpers before the job pipeline exists
+
+## Phase 11 Intent
+
+Phase 11 introduces the first hosted job pipeline and storage flow for mobile chapter processing.
+
+That means:
+
+- create protected mobile job creation, upload, completion, status, and result endpoints
+- preserve page filename identity and the existing TachiyomiAT result contract
+- reserve and finalize token usage around hosted processing
+- keep the first execution mode inline while the dedicated worker runtime is still pending
+
+## Phase 12 Intent
+
+Phase 12 introduces the first internal support surfaces for commerce, licenses, and device-bound access.
+
+That means:
+
+- redirect the manager entry point toward support lookup instead of the old dashboard-first flow
+- add backoffice search by license key, redeem code, installation ID, order ID, Stripe identifiers, and email
+- add first license and device detail pages so support can explain entitlements, balance changes, and device bindings
+- keep heavy operations dashboards, full order/redeem-code management, and customer-facing Android UI in later phases
+
+## Phase 13 Intent
+
+Phase 13 introduces the first internal operations visibility for hosted jobs and provider behavior.
+
+That means:
+
+- add manager jobs list/detail views with lifecycle, asset, provider usage, and token-ledger context
+- add provider ops summaries around recent failures, latency, cost concentration, and stage/provider health
+- keep this slice internal and operator-facing, because TachiyomiAT still has no hosted job correlation UI
+- leave retry/cancel/refund-review actions, richer alerting, and dedicated worker/runtime separation as the remaining Phase 13 follow-up work
+
+## Phase 14 Intent
+
+Phase 14 integrates TachiyomiAT with the hosted backend flow while preserving local engines during rollout.
+
+That means:
+
+- add a distinct `Tachiyomi Back [TOKENS]` engine mode in Android instead of overloading local provider modes
+- store installation identity in app-state preferences and store session tokens in private preferences
+- add a dedicated Android client for activation, refresh, session summary, job creation, page upload, polling, and result download
+- materialize hosted results back into the existing local chapter translation file format used by the reader
+- keep current local OCR/translation engines available during rollout
+
+Current Phase 14 slice already implemented:
+
+- hosted engine option in TachiyomiAT translation settings
+- hosted URL plus redeem-code configuration
+- device-bound activation, session refresh, and hosted status display
+- hosted chapter submission from Android to the backend job pipeline
+- hosted result download back into the existing local translation file contract
+
+Still pending in Phase 14:
+
+- hosted review mode
+- richer Android balance/device/license screens beyond the settings surface
+- better in-app recovery UX for revoked sessions, uploads, and failed jobs
+- end-to-end standard flavor validation once the repo's Google Services configuration is fixed for the debug app id
+
+## Phase 15 Intent
+
+Phase 15 hardens the hosted system for staged launch instead of adding new core product flows.
+
+That means:
+
+- add launch-grade request controls, observability, and failure correlation around public and mobile entry points
+- add restore/runbook/checklist documentation instead of relying on local-only setup habits
+- verify that Android hosted identity/session behavior remains safe across reinstall and backup boundaries
+- keep hosted rollout messaging clear so local bring-your-own-key mode is not confused with paid hosted mode
+
+Current Phase 15 slice already implemented:
+
+- dedicated env-backed rate limits for public Stripe checkout initiation
+- dedicated env-backed rate limits for authenticated mobile job create, upload/complete, and read routes
+- shared request-context helpers that issue or preserve request IDs and attach `X-Request-ID` headers to the hardened API responses
+- structured route logging for rate-limit hits and checkout/mobile-job request handling
+
+Still pending in Phase 15:
+
+- metrics and alerting surfaces
+- backup/restore rehearsal docs and operational runbooks
+- launch checklists and staged rollout criteria
+- richer anomaly detection and token-drain safeguards
+- user-facing migration/support documentation for hosted launch
+
+## Local Infra Notes
+
+- local Docker covers Postgres, MinIO, and Maildev
+- MinIO bucket bootstrap now creates `default`, `uploads`, `results`, and `logs`
+- early phases still use the main app process for job execution; no dedicated worker service is scaffolded yet
+- Stripe webhooks and provider calls will still rely on remote services or local CLI tunnels when those phases begin
+
+## Secrets Policy
+
+- never place provider secrets or mobile signing secrets in `VITE_` variables
+- treat `VITE_STRIPE_PUBLIC_KEY` as public by design
+- production secrets should live in deployment secret storage, not committed env files
+- the current Better Auth setup is for internal admin users only, not for TachiyomiAT end-user identity
+- validation for implementation work should include `pnpm lint`
+
+## Phase 1 Intent
+
+Phase 1 removes the starter `book`/`genre` product domain while keeping the reusable infrastructure that Tachiyomi Back actually needs.
+
+That means:
+
+- remove demo business entities, routes, seeds, and demo pages
+- keep auth, env handling, DB access, API plumbing, and manager shell
+- replace repo branding and docs so new contributors see the real product direction

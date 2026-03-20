@@ -3,6 +3,7 @@ import { createFileRoute, Outlet } from '@tanstack/react-router';
 import { PageError } from '@/components/errors/page-error';
 
 import { GuardAuthenticated } from '@/features/auth/guard-authenticated';
+import { permissionApps } from '@/features/auth/permissions';
 import { Layout } from '@/layout/manager/layout';
 
 export const Route = createFileRoute('/manager')({
@@ -13,7 +14,7 @@ export const Route = createFileRoute('/manager')({
 
 function RouteComponent() {
   return (
-    <GuardAuthenticated permissionApps={['manager']}>
+    <GuardAuthenticated permissionApps={permissionApps.manager}>
       <Layout>
         <Outlet />
       </Layout>

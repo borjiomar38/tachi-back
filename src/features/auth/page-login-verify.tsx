@@ -15,20 +15,13 @@ import { Button } from '@/components/ui/button';
 import { ButtonLink } from '@/components/ui/button-link';
 
 import { authClient } from '@/features/auth/client';
-import {
-  AUTH_EMAIL_OTP_EXPIRATION_IN_MINUTES,
-  AUTH_SIGNUP_ENABLED,
-} from '@/features/auth/config';
+import { AUTH_EMAIL_OTP_EXPIRATION_IN_MINUTES } from '@/features/auth/config';
 import { useMascot } from '@/features/auth/mascot';
 import {
   FormFieldsLoginVerify,
   zFormFieldsLoginVerify,
 } from '@/features/auth/schema';
 import { LoginEmailOtpHint } from '@/features/devtools/login-hint';
-
-const I18N_KEY_PAGE_PREFIX = AUTH_SIGNUP_ENABLED
-  ? ('auth:pageLoginVerifyWithSignUp' as const)
-  : ('auth:pageLoginVerify' as const);
 
 export default function PageLoginVerify({
   search,
@@ -86,12 +79,12 @@ export default function PageLoginVerify({
           {t('common:actions.back')}
         </ButtonLink>
         <h1 className="text-lg font-bold text-balance">
-          {t(`${I18N_KEY_PAGE_PREFIX}.title`)}
+          {t('auth:pageLoginVerify.title')}
         </h1>
         <p className="text-sm text-balance wrap-break-word text-muted-foreground">
           <Trans
             t={t}
-            i18nKey={`${I18N_KEY_PAGE_PREFIX}.description`}
+            i18nKey="auth:pageLoginVerify.description"
             values={{
               email: search.email,
             }}
@@ -114,13 +107,13 @@ export default function PageLoginVerify({
             autoFocus
           />
           <FormFieldHelper className="text-xs">
-            {t(`${I18N_KEY_PAGE_PREFIX}.expireHint`, {
+            {t('auth:pageLoginVerify.expireHint', {
               expiration: AUTH_EMAIL_OTP_EXPIRATION_IN_MINUTES,
             })}
           </FormFieldHelper>
         </FormField>
         <Button loading={form.formState.isSubmitting} type="submit" size="lg">
-          {t(`${I18N_KEY_PAGE_PREFIX}.confirm`)}
+          {t('auth:pageLoginVerify.confirm')}
         </Button>
         <LoginEmailOtpHint />
       </div>

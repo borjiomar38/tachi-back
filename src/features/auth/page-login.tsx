@@ -15,14 +15,9 @@ import { Button } from '@/components/ui/button';
 
 import { envClient } from '@/env/client';
 import { authClient } from '@/features/auth/client';
-import { AUTH_SIGNUP_ENABLED } from '@/features/auth/config';
 import { useMascot } from '@/features/auth/mascot';
 import { FormFieldsLogin, zFormFieldsLogin } from '@/features/auth/schema';
 import { LoginEmailHint } from '@/features/devtools/login-hint';
-
-const I18N_KEY_PAGE_PREFIX = AUTH_SIGNUP_ENABLED
-  ? ('auth:pageLoginWithSignUp' as const)
-  : ('auth:pageLogin' as const);
 
 export default function PageLogin({
   search,
@@ -106,11 +101,9 @@ export default function PageLogin({
   return (
     <Form {...form} onSubmit={submitHandler} className="flex flex-col gap-6">
       <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-2xl font-bold">
-          {t(`${I18N_KEY_PAGE_PREFIX}.title`)}
-        </h1>
+        <h1 className="text-2xl font-bold">{t('auth:pageLogin.title')}</h1>
         <p className="text-sm text-balance text-muted-foreground">
-          {t(`${I18N_KEY_PAGE_PREFIX}.description`)}
+          {t('auth:pageLogin.description')}
         </p>
       </div>
       <div className="grid gap-6">
@@ -133,13 +126,13 @@ export default function PageLogin({
             size="lg"
             className="w-full"
           >
-            {t(`${I18N_KEY_PAGE_PREFIX}.loginWithEmail`)}
+            {t('auth:pageLogin.loginWithEmail')}
           </Button>
           <LoginEmailHint />
         </div>
         <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
           <span className="relative z-10 bg-background px-2 text-muted-foreground">
-            {t(`${I18N_KEY_PAGE_PREFIX}.spacer`)}
+            {t('auth:pageLogin.spacer')}
           </span>
         </div>
         <Button
@@ -153,7 +146,7 @@ export default function PageLogin({
           size="lg"
           onClick={() => social.mutate('github')}
         >
-          {t(`${I18N_KEY_PAGE_PREFIX}.loginWithSocial`, { provider: 'GitHub' })}
+          {t('auth:pageLogin.loginWithSocial', { provider: 'GitHub' })}
         </Button>
       </div>
     </Form>

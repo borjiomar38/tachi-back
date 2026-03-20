@@ -42,6 +42,11 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Spinner } from '@/components/ui/spinner';
 
 import { authClient } from '@/features/auth/client';
+import { GuardPermissions } from '@/features/auth/guard-permissions';
+import {
+  permissionSession,
+  permissionStaff,
+} from '@/features/auth/permissions';
 import { WithPermissions } from '@/features/auth/with-permissions';
 import {
   PageLayout,
@@ -99,136 +104,140 @@ export const PageUser = (props: { params: { id: string } }) => {
   });
 
   return (
-    <PageLayout>
-      <PageLayoutTopBar
-        startActions={<BackButton />}
-        endActions={
-          <>
-            {session.data?.user.id !== props.params.id && (
-              <WithPermissions
-                permissions={[
-                  {
-                    user: ['delete'],
-                  },
-                ]}
-              >
-                <ConfirmResponsiveDrawer
-                  onConfirm={() => deleteUser()}
-                  title={t('user:manager.detail.confirmDeleteTitle', {
-                    user: userQuery.data?.name ?? userQuery.data?.email ?? '--',
-                  })}
-                  description={t(
-                    'user:manager.detail.confirmDeleteDescription'
-                  )}
-                  confirmText={t('user:manager.detail.deleteButton.label')}
-                  confirmVariant="destructive"
-                >
-                  <ResponsiveIconButton
-                    variant="ghost"
-                    label={t('user:manager.detail.deleteButton.label')}
-                    size="sm"
+    <GuardPermissions permissions={[permissionStaff.list]}>
+      <PageLayout>
+        <PageLayoutTopBar
+          startActions={<BackButton />}
+          endActions={
+            <>
+              {session.data?.user.id !== props.params.id && (
+                <WithPermissions permissions={[permissionStaff.delete]}>
+                  <ConfirmResponsiveDrawer
+                    onConfirm={() => deleteUser()}
+                    title={t('user:manager.detail.confirmDeleteTitle', {
+                      user:
+                        userQuery.data?.name ?? userQuery.data?.email ?? '--',
+                    })}
+                    description={t(
+                      'user:manager.detail.confirmDeleteDescription'
+                    )}
+                    confirmText={t('user:manager.detail.deleteButton.label')}
+                    confirmVariant="destructive"
                   >
-                    <Trash2Icon />
-                  </ResponsiveIconButton>
-                </ConfirmResponsiveDrawer>
-              </WithPermissions>
-            )}
-          </>
-        }
-      >
-        <PageLayoutTopBarTitle>
-          {ui
-            .match('pending', () => <Skeleton className="h-4 w-48" />)
-            .match(['not-found', 'error'], () => (
-              <AlertCircleIcon className="size-4 text-muted-foreground" />
-            ))
-            .match('default', ({ user }) => <>{user.name || user.email}</>)
-            .exhaustive()}
-        </PageLayoutTopBarTitle>
-      </PageLayoutTopBar>
-      <PageLayoutContent>
-        {ui
-          .match('pending', () => <Spinner full />)
-          .match('not-found', () => <PageError type="404" />)
-          .match('error', () => <PageError type="unknown-server-error" />)
-          .match('default', ({ user }) => (
-            <div className="flex flex-col gap-4 xl:flex-row xl:items-start">
-              <Card className="relative flex-1">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <Avatar>
-                      <AvatarImage
-                        src={user.image ?? undefined}
-                        alt={user.name ?? ''}
-                      />
-                      <AvatarFallback variant="boring" name={user.name ?? ''} />
-                    </Avatar>
-                    <div className="flex flex-1 flex-col gap-0.5">
-                      <CardTitle>
-                        {user.name || (
-                          <span className="text-xs text-muted-foreground">
-                            {t('user:common.name.notAvailable')}
-                          </span>
-                        )}
-                      </CardTitle>
-                      <CardDescription>{user.email}</CardDescription>
-                    </div>
-                    <WithPermissions permissions={[{ user: ['set-role'] }]}>
-                      <Link
-                        to="/manager/users/$id/update"
-                        params={props.params}
-                        className="-m-2 self-start"
-                      >
-                        <Button
-                          size="icon-sm"
-                          variant="ghost"
-                          render={<span />}
-                          nativeButton={false}
-                        >
-                          <PencilLineIcon />
-                          <span className="sr-only">
-                            {t('user:manager.detail.editUser')}
-                          </span>
-                        </Button>
-                        <span className="absolute inset-0" />
-                      </Link>
-                    </WithPermissions>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <Badge
-                      variant={user.role === 'admin' ? 'default' : 'secondary'}
+                    <ResponsiveIconButton
+                      variant="ghost"
+                      label={t('user:manager.detail.deleteButton.label')}
+                      size="sm"
                     >
-                      {user.role ?? '-'}
-                    </Badge>
-                    <p className="text-sm text-muted-foreground">
-                      {user.onboardedAt ? (
-                        <>
-                          {t('user:common.onboardingStatus.onboardedAt', {
-                            time: dayjs(user.onboardedAt).format(
-                              'DD/MM/YYYY [at] HH:mm'
-                            ),
-                          })}
-                        </>
-                      ) : (
-                        <>{t('user:common.onboardingStatus.notOnboarded')}</>
-                      )}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <div className="flex min-w-0 flex-2 flex-col">
-                <WithPermissions permissions={[{ session: ['list'] }]}>
-                  <UserSessions userId={props.params.id} />
+                      <Trash2Icon />
+                    </ResponsiveIconButton>
+                  </ConfirmResponsiveDrawer>
                 </WithPermissions>
+              )}
+            </>
+          }
+        >
+          <PageLayoutTopBarTitle>
+            {ui
+              .match('pending', () => <Skeleton className="h-4 w-48" />)
+              .match(['not-found', 'error'], () => (
+                <AlertCircleIcon className="size-4 text-muted-foreground" />
+              ))
+              .match('default', ({ user }) => <>{user.name || user.email}</>)
+              .exhaustive()}
+          </PageLayoutTopBarTitle>
+        </PageLayoutTopBar>
+        <PageLayoutContent>
+          {ui
+            .match('pending', () => <Spinner full />)
+            .match('not-found', () => <PageError type="404" />)
+            .match('error', () => <PageError type="unknown-server-error" />)
+            .match('default', ({ user }) => (
+              <div className="flex flex-col gap-4 xl:flex-row xl:items-start">
+                <Card className="relative flex-1">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <Avatar>
+                        <AvatarImage
+                          src={user.image ?? undefined}
+                          alt={user.name ?? ''}
+                        />
+                        <AvatarFallback
+                          variant="boring"
+                          name={user.name ?? ''}
+                        />
+                      </Avatar>
+                      <div className="flex flex-1 flex-col gap-0.5">
+                        <CardTitle>
+                          {user.name || (
+                            <span className="text-xs text-muted-foreground">
+                              {t('user:common.name.notAvailable')}
+                            </span>
+                          )}
+                        </CardTitle>
+                        <CardDescription>{user.email}</CardDescription>
+                      </div>
+                      <WithPermissions permissions={[permissionStaff.update]}>
+                        <Link
+                          to="/manager/users/$id/update"
+                          params={props.params}
+                          className="-m-2 self-start"
+                        >
+                          <Button
+                            size="icon-sm"
+                            variant="ghost"
+                            render={<span />}
+                            nativeButton={false}
+                          >
+                            <PencilLineIcon />
+                            <span className="sr-only">
+                              {t('user:manager.detail.editUser')}
+                            </span>
+                          </Button>
+                          <span className="absolute inset-0" />
+                        </Link>
+                      </WithPermissions>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex flex-col gap-4">
+                    <div className="flex items-center gap-4">
+                      <Badge
+                        variant={
+                          user.role === 'admin' ? 'default' : 'secondary'
+                        }
+                      >
+                        {user.role === 'admin'
+                          ? t('user:common.role.values.admin')
+                          : t('user:common.role.values.support')}
+                      </Badge>
+                      <p className="text-sm text-muted-foreground">
+                        {user.onboardedAt ? (
+                          <>
+                            {t('user:common.onboardingStatus.onboardedAt', {
+                              time: dayjs(user.onboardedAt).format(
+                                'DD/MM/YYYY [at] HH:mm'
+                              ),
+                            })}
+                          </>
+                        ) : (
+                          <>{t('user:common.onboardingStatus.notOnboarded')}</>
+                        )}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="flex min-w-0 flex-2 flex-col">
+                  <WithPermissions permissions={[permissionSession.list]}>
+                    <UserSessions userId={props.params.id} />
+                  </WithPermissions>
+                </div>
               </div>
-            </div>
-          ))
-          .exhaustive()}
-      </PageLayoutContent>
-    </PageLayout>
+            ))
+            .exhaustive()}
+        </PageLayoutContent>
+      </PageLayout>
+    </GuardPermissions>
   );
 };
 
@@ -259,7 +268,7 @@ const UserSessions = (props: { userId: string }) => {
   });
 
   return (
-    <WithPermissions permissions={[{ session: ['list'] }]}>
+    <WithPermissions permissions={[permissionSession.list]}>
       <DataList>
         <DataListRow>
           <DataListCell>
@@ -268,7 +277,7 @@ const UserSessions = (props: { userId: string }) => {
             </h2>
           </DataListCell>
 
-          <WithPermissions permissions={[{ session: ['revoke'] }]}>
+          <WithPermissions permissions={[permissionSession.revoke]}>
             <DataListCell className="flex-none">
               {ui.when('default', () => (
                 <RevokeAllSessionsButton userId={props.userId} />
@@ -312,7 +321,7 @@ const UserSessions = (props: { userId: string }) => {
                       })}
                     </DataListText>
                   </DataListCell>
-                  <WithPermissions permissions={[{ session: ['revoke'] }]}>
+                  <WithPermissions permissions={[permissionSession.revoke]}>
                     <DataListCell className="flex-none">
                       <RevokeSessionButton
                         userId={props.userId}

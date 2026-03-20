@@ -38,7 +38,7 @@ const mockUserFromDb = {
   name: 'Target User',
   email: 'target@example.com',
   emailVerified: true,
-  role: 'user' as const,
+  role: 'support' as const,
   image: null,
   createdAt: now,
   updatedAt: now,
@@ -109,7 +109,7 @@ describe('user router', () => {
       expect(mockUserHasPermission).toHaveBeenCalledWith({
         body: {
           userId: mockUser.id,
-          permissions: { user: ['list'] },
+          permissions: { staff: ['list'] },
         },
       });
     });
@@ -163,7 +163,7 @@ describe('user router', () => {
       expect(mockUserHasPermission).toHaveBeenCalledWith({
         body: {
           userId: mockUser.id,
-          permissions: { user: ['list'] },
+          permissions: { staff: ['list'] },
         },
       });
     });
@@ -186,7 +186,7 @@ describe('user router', () => {
     const createInput = {
       name: 'New User',
       email: 'new@example.com',
-      role: 'user' as const,
+      role: 'support' as const,
     };
 
     it('should create a user and return it', async () => {
@@ -240,7 +240,7 @@ describe('user router', () => {
       expect(mockUserHasPermission).toHaveBeenCalledWith({
         body: {
           userId: mockUser.id,
-          permissions: { user: ['create'] },
+          permissions: { staff: ['create'] },
         },
       });
     });
@@ -292,13 +292,13 @@ describe('user router', () => {
         id: mockUser.id,
         name: 'New Name',
         email: 'self@example.com',
-        role: 'user',
+        role: 'support',
       };
       mockDb.user.update.mockResolvedValue(returnedUser);
 
       const result = await call(userRouter.updateById, selfUpdateInput);
 
-      expect(result.role).toBe('user');
+      expect(result.role).toBe('support');
     });
 
     it('should throw NOT_FOUND when target user does not exist', async () => {
@@ -368,7 +368,7 @@ describe('user router', () => {
       expect(mockUserHasPermission).toHaveBeenCalledWith({
         body: {
           userId: mockUser.id,
-          permissions: { user: ['set-role'] },
+          permissions: { staff: ['update'] },
         },
       });
     });
@@ -432,7 +432,7 @@ describe('user router', () => {
       expect(mockUserHasPermission).toHaveBeenCalledWith({
         body: {
           userId: mockUser.id,
-          permissions: { user: ['delete'] },
+          permissions: { staff: ['delete'] },
         },
       });
     });

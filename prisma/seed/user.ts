@@ -1,58 +1,61 @@
-import { faker } from '@faker-js/faker';
-
 import { db } from '@/server/db';
 
 import { emphasis } from './_utils';
 
 export async function createUsers() {
-  console.log(`⏳ Seeding users`);
+  console.log(`⏳ Seeding internal admin/staff users`);
 
-  let createdCounter = 0;
   const existingCount = await db.user.count();
+  let createdCounter = 0;
+  const seededAt = new Date();
 
-  await Promise.all(
-    Array.from({ length: Math.max(0, 98 - existingCount) }, async () => {
-      await db.user.create({
-        data: {
-          name: faker.person.fullName(),
-          email: faker.internet.email().toLowerCase(),
-          emailVerified: true,
-          role: 'user',
-        },
-      });
-      createdCounter += 1;
-    })
-  );
+  const support = await db.user.upsert({
+    where: { email: 'support@tachi-back.local' },
+    create: {
+      name: 'Support',
+      email: 'support@tachi-back.local',
+      emailVerified: true,
+      onboardedAt: seededAt,
+      role: 'support',
+    },
+    update: {
+      name: 'Support',
+      emailVerified: true,
+      role: 'support',
+    },
+    select: { createdAt: true },
+  });
 
-  if (!(await db.user.findUnique({ where: { email: 'user@user.com' } }))) {
-    await db.user.create({
-      data: {
-        name: 'User',
-        email: 'user@user.com',
-        emailVerified: true,
-        onboardedAt: new Date(),
-        role: 'user',
-      },
-    });
+  if (support.createdAt.getTime() === seededAt.getTime()) {
     createdCounter += 1;
   }
 
-  if (!(await db.user.findUnique({ where: { email: 'admin@admin.com' } }))) {
-    await db.user.create({
-      data: {
-        name: 'Admin',
-        email: 'admin@admin.com',
-        emailVerified: true,
-        role: 'admin',
-        onboardedAt: new Date(),
-      },
-    });
+  const admin = await db.user.upsert({
+    where: { email: 'admin@tachi-back.local' },
+    create: {
+      name: 'Admin',
+      email: 'admin@tachi-back.local',
+      emailVerified: true,
+      role: 'admin',
+      onboardedAt: seededAt,
+    },
+    update: {
+      name: 'Admin',
+      emailVerified: true,
+      role: 'admin',
+    },
+    select: { createdAt: true },
+  });
+
+  if (admin.createdAt.getTime() === seededAt.getTime()) {
     createdCounter += 1;
   }
 
   console.log(
-    `✅ ${existingCount} existing user 👉 ${createdCounter} users created`
+    `✅ ${existingCount} existing user 👉 ${createdCounter} internal admin/staff users created`
   );
-  console.log(`👉 Admin connect with: ${emphasis('admin@admin.com')}`);
-  console.log(`👉 User connect with: ${emphasis('user@user.com')}`);
+  console.log(`👉 Admin connect with: ${emphasis('admin@tachi-back.local')}`);
+  console.log(
+    `👉 Support connect with: ${emphasis('support@tachi-back.local')}`
+  );
 }

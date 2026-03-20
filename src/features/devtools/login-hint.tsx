@@ -37,9 +37,9 @@ export const LoginEmailHint = () => {
       </AlertTitle>
       <AlertDescription className="flex flex-wrap gap-x-1 text-sm leading-4">
         You can login with{' '}
-        <LoginEmailButton email="admin@admin.com" form={form} />
+        <LoginEmailButton email="admin@tachi-back.local" form={form} />
         {' or '}
-        <LoginEmailButton email="user@user.com" form={form} />
+        <LoginEmailButton email="support@tachi-back.local" form={form} />
       </AlertDescription>
     </Alert>
   );

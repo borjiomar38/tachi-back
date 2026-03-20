@@ -18,6 +18,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 
 import { authClient } from '@/features/auth/client';
+import { GuardPermissions } from '@/features/auth/guard-permissions';
+import { permissionStaff } from '@/features/auth/permissions';
 import { FormUser } from '@/features/user/manager/form-user';
 import { zFormFieldsUser } from '@/features/user/schema';
 import {
@@ -82,7 +84,7 @@ export const PageUserUpdate = (props: { params: { id: string } }) => {
     values: {
       name: userQuery.data?.name ?? '',
       email: userQuery.data?.email ?? '',
-      role: userQuery.data?.role ?? 'user',
+      role: userQuery.data?.role ?? 'support',
     },
   });
 
@@ -100,7 +102,7 @@ export const PageUserUpdate = (props: { params: { id: string } }) => {
   });
 
   return (
-    <>
+    <GuardPermissions permissions={[permissionStaff.update]}>
       <PreventNavigation shouldBlock={form.formState.isDirty} />
       <Form
         {...form}
@@ -141,6 +143,6 @@ export const PageUserUpdate = (props: { params: { id: string } }) => {
           </PageLayoutContent>
         </PageLayout>
       </Form>
-    </>
+    </GuardPermissions>
   );
 };

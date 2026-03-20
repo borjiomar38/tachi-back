@@ -1,0 +1,23 @@
+<svg
+  width="108"
+  height="108"
+  viewBox="0 0 108 108"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="markTitle markDesc"
+>
+  <title id="markTitle">TachiyomiAT brand mark</title>
+  <desc id="markDesc">
+    TachiyomiAT brand mark inspired by the mobile app launcher using the app's
+    slate, blue, and green palette.
+  </desc>
+  <rect x="6" y="6" width="96" height="96" rx="28" fill="#2E3943" />
+  <circle cx="54" cy="54" r="30" fill="#F2FAFF" />
+  <circle cx="54" cy="54" r="34" stroke="#0058CA" stroke-width="8" />
+  <circle cx="79" cy="78" r="7" fill="#006E1B" />
+  <path
+    d="M43.7 45.8H52.5V43.2H55.2V45.8H63.9V48.4H60.5C60.4 50.4 59.9 53.3 55.7 57.5C56.2 58.1 63.9 62.9 64.1 63.1C64 63.3 62.2 64.8 62.2 64.8C60.7 64.4 54.9 60.3 53.8 59.2C53.2 59.9 49.3 62.8 46 64.3C46 64.3 44.2 62.4 44.2 62.4C48.5 60.7 51.9 58 52.2 57.7C50.2 55.9 48.1 52.7 47.8 51.2H50.8C51.4 53.2 53.4 55.6 54.1 56.1C56.4 54.1 57.9 50.9 57.9 48.6H43.8L43.7 45.8Z"
+    fill="#2E3943"
+  />
+</svg>

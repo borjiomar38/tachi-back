@@ -1,0 +1,470 @@
+import { envServer } from '@/env/server';
+import { ProviderType } from '@/server/db/generated/client';
+import {
+  createInvalidProviderResponseError,
+  createProviderConfigError,
+} from '@/server/provider-gateway/errors';
+import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
+import { buildTranslationPrompt } from '@/server/provider-gateway/prompts';
+import {
+  NormalizedTranslationBatch,
+  TranslationGatewayInput,
+  zNormalizedTranslationBatch,
+  zTranslationGatewayInput,
+} from '@/server/provider-gateway/schema';
+import {
+  fetchTextWithTimeout,
+  parseJsonObjectText,
+  parseJsonResponse,
+} from '@/server/provider-gateway/utils';
+
+type TranslationProvider = 'anthropic' | 'gemini' | 'openai';
+
+export async function performTranslationWithProvider(
+  rawInput: unknown,
+  deps: {
+    fetchFn?: typeof fetch;
+    preferredProvider?: TranslationProvider;
+    timeoutMs?: number;
+  } = {}
+): Promise<NormalizedTranslationBatch> {
+  const input = zTranslationGatewayInput.parse(rawInput);
+  const provider = resolveTranslationProvider(
+    deps.preferredProvider ??
+      (input.preferredProvider as TranslationProvider | undefined)
+  );
+
+  switch (provider) {
+    case ProviderType.gemini:
+      return await translateWithGemini(input, deps);
+    case ProviderType.openai:
+      return await translateWithOpenAI(input, deps);
+    case ProviderType.anthropic:
+      return await translateWithAnthropic(input, deps);
+  }
+
+  throw createProviderConfigError(
+    ProviderType.internal,
+    'No hosted translation provider is configured.'
+  );
+}
+
+function resolveTranslationProvider(
+  preferredProvider?: TranslationProvider
+): TranslationProvider {
+  const manifest = getProviderGatewayManifest();
+
+  if (preferredProvider) {
+    const match = manifest.translation.providers.find(
+      (provider) =>
+        provider.provider === preferredProvider &&
+        provider.enabled &&
+        provider.supportedByGateway
+    );
+
+    if (match) {
+      return preferredProvider;
+    }
+  }
+
+  const fallback = manifest.translation.providers.find(
+    (provider) => provider.enabled && provider.supportedByGateway
+  );
+
+  if (
+    fallback?.provider === ProviderType.gemini ||
+    fallback?.provider === ProviderType.openai ||
+    fallback?.provider === ProviderType.anthropic
+  ) {
+    return fallback.provider;
+  }
+
+  throw createProviderConfigError(
+    ProviderType.internal,
+    'No hosted translation provider is configured.'
+  );
+}
+
+async function translateWithGemini(
+  input: TranslationGatewayInput,
+  deps: {
+    fetchFn?: typeof fetch;
+    timeoutMs?: number;
+  }
+) {
+  const apiKey = envServer.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw createProviderConfigError(
+      ProviderType.gemini,
+      'GEMINI_API_KEY is not configured.'
+    );
+  }
+
+  const prompt = buildTranslationPrompt(input);
+  const modelName = envServer.GEMINI_TRANSLATION_MODEL;
+  const response = await fetchTextWithTimeout({
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [{ text: prompt.userPrompt }],
+          role: 'user',
+        },
+      ],
+      generationConfig: {
+        responseMimeType: 'application/json',
+      },
+      systemInstruction: {
+        parts: [{ text: prompt.systemPrompt }],
+      },
+    }),
+    fetchFn: deps.fetchFn,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    provider: ProviderType.gemini,
+    timeoutMs: deps.timeoutMs ?? envServer.PROVIDER_REQUEST_TIMEOUT_MS,
+    url: `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(
+      modelName
+    )}:generateContent?key=${encodeURIComponent(apiKey)}`,
+  });
+
+  const json = parseJsonResponse<Record<string, unknown>>(
+    ProviderType.gemini,
+    response.text,
+    'Gemini returned malformed JSON'
+  );
+  const candidates = Array.isArray(json.candidates) ? json.candidates : [];
+  const candidate = candidates[0];
+
+  if (!candidate || typeof candidate !== 'object') {
+    throw createInvalidProviderResponseError(
+      ProviderType.gemini,
+      'Gemini did not return a usable candidate.'
+    );
+  }
+
+  const parts =
+    candidate.content &&
+    typeof candidate.content === 'object' &&
+    Array.isArray(candidate.content.parts)
+      ? candidate.content.parts
+      : [];
+  const text = parts
+    .map((part: unknown) => {
+      const partRecord =
+        part && typeof part === 'object' ? (part as { text?: unknown }) : null;
+
+      return partRecord && typeof partRecord.text === 'string'
+        ? partRecord.text
+        : '';
+    })
+    .join('')
+    .trim();
+
+  return buildNormalizedTranslationResult({
+    finishReason:
+      typeof candidate.finishReason === 'string'
+        ? candidate.finishReason
+        : null,
+    modelName,
+    pages: input.pages,
+    prompt,
+    provider: ProviderType.gemini,
+    providerRequestId:
+      (typeof json.responseId === 'string' ? json.responseId : null) ??
+      response.headers.get('x-request-id'),
+    rawText: text,
+    sourceLanguage: input.sourceLanguage,
+    stopReason: null,
+    targetLanguage: input.targetLanguage,
+    usage: json.usageMetadata,
+    usageDefaults: {
+      latencyMs: response.latencyMs,
+      pageCount: input.pages.length,
+      requestCount: 1,
+    },
+  });
+}
+
+async function translateWithOpenAI(
+  input: TranslationGatewayInput,
+  deps: {
+    fetchFn?: typeof fetch;
+    timeoutMs?: number;
+  }
+) {
+  const apiKey = envServer.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw createProviderConfigError(
+      ProviderType.openai,
+      'OPENAI_API_KEY is not configured.'
+    );
+  }
+
+  const prompt = buildTranslationPrompt(input);
+  const modelName = envServer.OPENAI_TRANSLATION_MODEL;
+  const response = await fetchTextWithTimeout({
+    body: JSON.stringify({
+      max_completion_tokens: 4096,
+      messages: [
+        {
+          content: prompt.systemPrompt,
+          role: 'system',
+        },
+        {
+          content: prompt.userPrompt,
+          role: 'user',
+        },
+      ],
+      model: modelName,
+      response_format: {
+        type: 'json_object',
+      },
+    }),
+    fetchFn: deps.fetchFn,
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    provider: ProviderType.openai,
+    timeoutMs: deps.timeoutMs ?? envServer.PROVIDER_REQUEST_TIMEOUT_MS,
+    url: 'https://api.openai.com/v1/chat/completions',
+  });
+
+  const json = parseJsonResponse<Record<string, unknown>>(
+    ProviderType.openai,
+    response.text,
+    'OpenAI returned malformed JSON'
+  );
+  const choices = Array.isArray(json.choices) ? json.choices : [];
+  const choice = choices[0];
+  const message =
+    choice &&
+    typeof choice === 'object' &&
+    choice.message &&
+    typeof choice.message === 'object'
+      ? choice.message
+      : null;
+  const content =
+    message && typeof message.content === 'string' ? message.content : '';
+
+  return buildNormalizedTranslationResult({
+    finishReason:
+      choice &&
+      typeof choice === 'object' &&
+      typeof choice.finish_reason === 'string'
+        ? choice.finish_reason
+        : null,
+    modelName,
+    pages: input.pages,
+    prompt,
+    provider: ProviderType.openai,
+    providerRequestId: response.headers.get('x-request-id'),
+    rawText: content,
+    sourceLanguage: input.sourceLanguage,
+    stopReason: null,
+    targetLanguage: input.targetLanguage,
+    usage: json.usage,
+    usageDefaults: {
+      latencyMs: response.latencyMs,
+      pageCount: input.pages.length,
+      requestCount: 1,
+    },
+  });
+}
+
+async function translateWithAnthropic(
+  input: TranslationGatewayInput,
+  deps: {
+    fetchFn?: typeof fetch;
+    timeoutMs?: number;
+  }
+) {
+  const apiKey = envServer.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw createProviderConfigError(
+      ProviderType.anthropic,
+      'ANTHROPIC_API_KEY is not configured.'
+    );
+  }
+
+  const prompt = buildTranslationPrompt(input);
+  const modelName = envServer.ANTHROPIC_TRANSLATION_MODEL;
+  const response = await fetchTextWithTimeout({
+    body: JSON.stringify({
+      max_tokens: 4096,
+      messages: [
+        {
+          content: prompt.userPrompt,
+          role: 'user',
+        },
+      ],
+      model: modelName,
+      system: prompt.systemPrompt,
+    }),
+    fetchFn: deps.fetchFn,
+    headers: {
+      'Content-Type': 'application/json',
+      'anthropic-version': '2023-06-01',
+      'x-api-key': apiKey,
+    },
+    provider: ProviderType.anthropic,
+    timeoutMs: deps.timeoutMs ?? envServer.PROVIDER_REQUEST_TIMEOUT_MS,
+    url: 'https://api.anthropic.com/v1/messages',
+  });
+
+  const json = parseJsonResponse<Record<string, unknown>>(
+    ProviderType.anthropic,
+    response.text,
+    'Anthropic returned malformed JSON'
+  );
+  const contentBlocks = Array.isArray(json.content) ? json.content : [];
+  const content = contentBlocks
+    .map((block) =>
+      block &&
+      typeof block === 'object' &&
+      block.type === 'text' &&
+      typeof block.text === 'string'
+        ? block.text
+        : ''
+    )
+    .join('')
+    .trim();
+
+  return buildNormalizedTranslationResult({
+    finishReason: null,
+    modelName,
+    pages: input.pages,
+    prompt,
+    provider: ProviderType.anthropic,
+    providerRequestId: typeof json.id === 'string' ? json.id : null,
+    rawText: content,
+    sourceLanguage: input.sourceLanguage,
+    stopReason: typeof json.stop_reason === 'string' ? json.stop_reason : null,
+    targetLanguage: input.targetLanguage,
+    usage: json.usage,
+    usageDefaults: {
+      latencyMs: response.latencyMs,
+      pageCount: input.pages.length,
+      requestCount: 1,
+    },
+  });
+}
+
+function buildNormalizedTranslationResult(input: {
+  finishReason: string | null;
+  modelName: string;
+  pages: TranslationGatewayInput['pages'];
+  prompt: ReturnType<typeof buildTranslationPrompt>;
+  provider: TranslationProvider;
+  providerRequestId: string | null;
+  rawText: string;
+  sourceLanguage: string;
+  stopReason: string | null;
+  targetLanguage: string;
+  usage: unknown;
+  usageDefaults: {
+    latencyMs: number;
+    pageCount: number;
+    requestCount: number;
+  };
+}) {
+  const translations = normalizeTranslationPayload(
+    input.provider,
+    input.pages,
+    input.rawText
+  );
+
+  return zNormalizedTranslationBatch.parse({
+    pages: translations,
+    promptProfile: input.prompt.promptProfile,
+    promptVersion: input.prompt.promptVersion,
+    provider: input.provider,
+    providerModel: input.modelName,
+    sourceLanguage: input.sourceLanguage,
+    targetLanguage: input.targetLanguage,
+    usage: {
+      finishReason: input.finishReason,
+      inputTokens: getUsageValue(
+        input.usage,
+        'promptTokenCount',
+        'input_tokens'
+      ),
+      latencyMs: input.usageDefaults.latencyMs,
+      outputTokens: getUsageValue(
+        input.usage,
+        'candidatesTokenCount',
+        'completion_tokens',
+        'output_tokens'
+      ),
+      pageCount: input.usageDefaults.pageCount,
+      providerRequestId: input.providerRequestId,
+      requestCount: input.usageDefaults.requestCount,
+      stopReason: input.stopReason,
+    },
+  });
+}
+
+function normalizeTranslationPayload(
+  provider: TranslationProvider,
+  pages: TranslationGatewayInput['pages'],
+  rawText: string
+) {
+  const json = parseJsonObjectText(
+    provider,
+    rawText,
+    'Provider translation response was not valid JSON'
+  );
+
+  return pages.map((page) => {
+    const translationList = json[page.pageKey];
+
+    if (!Array.isArray(translationList)) {
+      throw createInvalidProviderResponseError(
+        provider,
+        `Provider response is missing the page key "${page.pageKey}".`
+      );
+    }
+
+    if (translationList.length !== page.blocks.length) {
+      throw createInvalidProviderResponseError(
+        provider,
+        `Provider response for "${page.pageKey}" has ${translationList.length} items but ${page.blocks.length} blocks were sent.`
+      );
+    }
+
+    return {
+      blocks: page.blocks.map((block, index) => {
+        const translation = translationList[index];
+
+        if (typeof translation !== 'string') {
+          throw createInvalidProviderResponseError(
+            provider,
+            `Provider response for "${page.pageKey}" index ${index} is not a string.`
+          );
+        }
+
+        return {
+          index,
+          sourceText: block.text,
+          translation: translation.trim(),
+        };
+      }),
+      pageKey: page.pageKey,
+    };
+  });
+}
+
+function getUsageValue(usage: unknown, ...keys: string[]) {
+  if (!usage || typeof usage !== 'object') {
+    return null;
+  }
+
+  for (const key of keys) {
+    if (key in usage && typeof usage[key as keyof typeof usage] === 'number') {
+      return usage[key as keyof typeof usage] as number;
+    }
+  }
+
+  return null;
+}

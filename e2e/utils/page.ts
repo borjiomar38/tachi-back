@@ -3,10 +3,7 @@ import { CustomFixture } from 'e2e/utils/types';
 
 import { DEFAULT_LANGUAGE_KEY } from '@/lib/i18n/constants';
 
-import {
-  AUTH_EMAIL_OTP_MOCKED,
-  AUTH_SIGNUP_ENABLED,
-} from '@/features/auth/config';
+import { AUTH_EMAIL_OTP_MOCKED } from '@/features/auth/config';
 import locales from '@/locales';
 import { FileRouteTypes } from '@/routeTree.gen';
 
@@ -37,14 +34,9 @@ export const pageWithUtils: CustomFixture<Page & PageUtils> = async (
     await page.waitForURL(`**${routeLogin}**`);
 
     await expect(
-      page.getByText(
-        locales[DEFAULT_LANGUAGE_KEY].auth[
-          AUTH_SIGNUP_ENABLED ? 'pageLoginWithSignUp' : 'pageLogin'
-        ].title,
-        {
-          exact: true,
-        }
-      )
+      page.getByText(locales[DEFAULT_LANGUAGE_KEY].auth.pageLogin.title, {
+        exact: true,
+      })
     ).toBeVisible();
 
     await page
@@ -53,9 +45,7 @@ export const pageWithUtils: CustomFixture<Page & PageUtils> = async (
 
     await page
       .getByRole('button', {
-        name: locales[DEFAULT_LANGUAGE_KEY].auth[
-          AUTH_SIGNUP_ENABLED ? 'pageLoginWithSignUp' : 'pageLogin'
-        ].loginWithEmail,
+        name: locales[DEFAULT_LANGUAGE_KEY].auth.pageLogin.loginWithEmail,
       })
       .click();
 

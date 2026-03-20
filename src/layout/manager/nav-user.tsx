@@ -35,6 +35,7 @@ import { themes } from '@/components/ui/theme-switcher';
 
 import { authClient } from '@/features/auth/client';
 import { ConfirmSignOut } from '@/features/auth/confirm-signout';
+import { permissionApps } from '@/features/auth/permissions';
 import { WithPermissions } from '@/features/auth/with-permissions';
 import { BuildInfoDrawer } from '@/features/build-info/build-info-drawer';
 import { BuildInfoVersion } from '@/features/build-info/build-info-version';
@@ -137,7 +138,7 @@ export function NavUser() {
               <WithPermissions
                 permissions={[
                   {
-                    apps: ['app'],
+                    apps: permissionApps.app,
                   },
                 ]}
               >

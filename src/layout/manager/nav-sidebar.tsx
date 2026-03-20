@@ -1,5 +1,8 @@
 import { Link } from '@tanstack/react-router';
 import {
+  ActivityIcon,
+  CpuIcon,
+  KeyRoundIcon,
   LayoutDashboardIcon,
   PanelLeftIcon,
   UsersIcon,
@@ -9,7 +12,6 @@ import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Logo } from '@/components/brand/logo';
-import { IconBookOpen } from '@/components/icons/generated';
 import {
   Sidebar,
   SidebarContent,
@@ -26,6 +28,12 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar';
 
+import {
+  permissionJob,
+  permissionLicense,
+  permissionProvider,
+  permissionStaff,
+} from '@/features/auth/permissions';
 import { WithPermissions } from '@/features/auth/with-permissions';
 import { NavUser } from '@/layout/manager/nav-user';
 
@@ -81,31 +89,81 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                     )}
                   </Link>
                 </SidebarMenuItem>
-                <SidebarMenuItem>
-                  <Link to="/manager/books">
-                    {({ isActive }) => (
-                      <SidebarMenuButton
-                        isActive={isActive}
-                        render={
-                          <span>
-                            <IconBookOpen />
-                            <span>{t('layout:nav.books')}</span>
-                          </span>
-                        }
-                      />
-                    )}
-                  </Link>
-                </SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
+          <WithPermissions permissions={[permissionLicense.read]}>
+            <SidebarGroup>
+              <SidebarGroupLabel>{t('layout:nav.support')}</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <SidebarMenuItem>
+                    <Link to="/manager/licenses">
+                      {({ isActive }) => (
+                        <SidebarMenuButton
+                          isActive={isActive}
+                          render={
+                            <span>
+                              <KeyRoundIcon />
+                              <span>{t('layout:nav.licenses')}</span>
+                            </span>
+                          }
+                        />
+                      )}
+                    </Link>
+                  </SidebarMenuItem>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </WithPermissions>
           <WithPermissions
-            permissions={[
-              {
-                user: ['list'],
-              },
-            ]}
+            permissions={[permissionJob.read, permissionProvider.read]}
           >
+            <SidebarGroup>
+              <SidebarGroupLabel>
+                {t('layout:nav.operations')}
+              </SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <WithPermissions permissions={[permissionJob.read]}>
+                    <SidebarMenuItem>
+                      <Link to="/manager/jobs">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <ActivityIcon />
+                                <span>{t('layout:nav.jobs')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                  </WithPermissions>
+                  <WithPermissions permissions={[permissionProvider.read]}>
+                    <SidebarMenuItem>
+                      <Link to="/manager/providers">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <CpuIcon />
+                                <span>{t('layout:nav.providers')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                  </WithPermissions>
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </WithPermissions>
+          <WithPermissions permissions={[permissionStaff.list]}>
             <SidebarGroup>
               <SidebarGroupLabel>
                 {t('layout:nav.configuration')}

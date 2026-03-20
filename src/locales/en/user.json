@@ -18,13 +18,17 @@
     },
     "role": {
       "label": "Role",
-      "cannotUpdateOwnRole": "You can't update your own role."
+      "cannotUpdateOwnRole": "You can't update your own role.",
+      "values": {
+        "admin": "Admin",
+        "support": "Support"
+      }
     }
   },
   "manager": {
     "list": {
-      "title": "Users",
-      "newButton": "New User",
+      "title": "Staff",
+      "newButton": "New Staff Account",
       "loadMore": "Load more",
       "showing": "Showing {{count}} of {{total}}",
       "searchResults": "{{total}} results for \"{{searchTerm}}\""
@@ -36,37 +40,37 @@
       "deleteButton": {
         "label": "Delete"
       },
-      "userDeleted": "User deleted",
-      "deleteError": "Failed to delete the user",
+      "userDeleted": "Staff account deleted",
+      "deleteError": "Failed to delete the staff account",
       "confirmDeleteTitle": "Delete {{user}}",
-      "confirmDeleteDescription": "You are about to permanently delete this user. This action cannot be undone.",
+      "confirmDeleteDescription": "You are about to permanently delete this staff account. This action cannot be undone.",
       "revokeAllSessions": "Revoke all",
       "revokeAllError": "Failed to revoke all sessions",
       "revokeSession": "Revoke",
       "revokeError": "Failed to revoke session",
-      "userSessions": "User Sessions",
-      "noSessions": "No user sessions",
+      "userSessions": "Staff Sessions",
+      "noSessions": "No staff sessions",
       "session": "Session {{token}}",
       "sessionUpdated": "Updated {{time}}",
       "sessionExpires": "Expires {{time}}",
-      "editUser": "Edit user"
+      "editUser": "Edit staff account"
     },
     "form": {
       "emailAlreadyExist": "Email already used"
     },
     "new": {
-      "title": "New User",
+      "title": "New Staff Account",
       "createButton": {
         "label": "Create"
       },
-      "createError": "Failed to create a user"
+      "createError": "Failed to create a staff account"
     },
     "update": {
-      "title": "Update User",
+      "title": "Update Staff Account",
       "updateButton": {
         "label": "Save"
       },
-      "updateError": "Failed to update a user"
+      "updateError": "Failed to update a staff account"
     }
   }
 }

@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider     = "prisma-client"
   output       = "../src/server/db/generated"
@@ -13,26 +10,135 @@ datasource db {
 }
 
 enum UserRole {
-  user
+  support
   admin
 }
 
+enum LicenseStatus {
+  pending
+  active
+  suspended
+  revoked
+  expired
+}
+
+enum DevicePlatform {
+  android
+}
+
+enum DeviceStatus {
+  pending
+  active
+  revoked
+  blocked
+}
+
+enum DeviceBindingStatus {
+  active
+  released
+  revoked
+}
+
+enum RedeemCodeStatus {
+  available
+  redeemed
+  expired
+  canceled
+}
+
+enum PaymentProvider {
+  stripe
+  manual
+}
+
+enum OrderStatus {
+  pending
+  paid
+  failed
+  canceled
+  refunded
+  partially_refunded
+}
+
+enum StripeEventStatus {
+  received
+  processed
+  ignored
+  failed
+}
+
+enum TokenLedgerEntryType {
+  purchase_credit
+  manual_credit
+  redeem_credit
+  job_reserve
+  job_release
+  job_spend
+  refund_credit
+  expiration_debit
+  admin_adjustment
+}
+
+enum TokenLedgerEntryStatus {
+  pending
+  posted
+  voided
+}
+
+enum TranslationJobStatus {
+  created
+  awaiting_upload
+  queued
+  processing
+  completed
+  failed
+  canceled
+  expired
+}
+
+enum JobAssetKind {
+  page_upload
+  result_manifest
+  debug_artifact
+  log_export
+}
+
+enum ProviderType {
+  google_cloud_vision
+  google_cloud_translate
+  gemini
+  openai
+  anthropic
+  openrouter
+  internal
+}
+
+enum ProviderUsageStage {
+  ocr
+  translation
+  retry
+  postprocess
+}
+
+// Better Auth users are internal backoffice identities only.
+// Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
-  id            String    @id @default(cuid())
+  id            String       @id @default(cuid())
   name          String
   email         String
   emailVerified Boolean
   image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
   sessions      Session[]
   accounts      Account[]
 
-  role        UserRole?
-  banned      Boolean?
-  banReason   String?
-  banExpires  DateTime?
-  onboardedAt DateTime?
+  role              UserRole?
+  banned            Boolean?
+  banReason         String?
+  banExpires        DateTime?
+  onboardedAt       DateTime?
+  createdRedeemCodes RedeemCode[] @relation("RedeemCodeCreatedByUser")
 
   @@unique([email])
   @@map("user")
@@ -85,46 +191,310 @@ model Verification {
   @@map("verification")
 }
 
-model Book {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String
-  author    String
-  genre     Genre?   @relation(fields: [genreId], references: [id])
-  genreId   String
-  publisher String?
-  coverId   String?
+model License {
+  id          String         @id @default(cuid())
+  key         String         @unique @default(uuid())
+  fulfillmentKey String?     @unique
+  ownerEmail  String?
+  status      LicenseStatus  @default(pending)
+  deviceLimit Int            @default(1)
+  notes       String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  activatedAt DateTime?
+  revokedAt   DateTime?
 
-  @@unique([title, author])
-  @@map("book")
+  devices      LicenseDevice[]
+  redeemCodes  RedeemCode[]
+  orders       Order[]
+  ledgerEntries TokenLedger[]
+  mobileSessions MobileSession[]
+  jobs         TranslationJob[]
+
+  @@index([status, createdAt])
+  @@index([ownerEmail])
+  @@map("licenses")
 }
 
-model Author {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String   @unique
+model Device {
+  id             String         @id @default(cuid())
+  installationId String         @unique
+  platform       DevicePlatform @default(android)
+  status         DeviceStatus   @default(pending)
+  appVersion     String?
+  appBuild       String?
+  locale         String?
+  lastSeenAt     DateTime?
+  lastIpAddress  String?
+  metadata       Json?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
 
-  @@map("author")
+  licenseBindings LicenseDevice[]
+  mobileSessions   MobileSession[]
+  redeemedCodes   RedeemCode[]
+  jobs            TranslationJob[]
+  ledgerEntries   TokenLedger[]
+
+  @@index([status, lastSeenAt])
+  @@map("devices")
 }
 
-model Genre {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String   @unique
-  color     String
-  Book      Book[]
+model LicenseDevice {
+  id        String              @id @default(cuid())
+  licenseId String
+  deviceId  String
+  status    DeviceBindingStatus @default(active)
+  boundAt   DateTime            @default(now())
+  unboundAt DateTime?
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
 
-  @@map("genre")
+  license License @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device  Device  @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([licenseId, deviceId])
+  @@index([licenseId, status])
+  @@index([deviceId, status])
+  @@map("license_devices")
 }
 
-model Publisher {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String   @unique
+model RedeemCode {
+  id                 String           @id @default(cuid())
+  code               String           @unique
+  fulfillmentKey     String?          @unique
+  licenseId          String
+  orderId            String?
+  status             RedeemCodeStatus @default(available)
+  createdByUserId    String?
+  redeemedByDeviceId String?
+  expiresAt          DateTime?
+  redeemedAt         DateTime?
+  metadata           Json?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
 
-  @@map("publisher")
+  license          License  @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  order            Order?   @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  createdByUser    User?    @relation("RedeemCodeCreatedByUser", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  redeemedByDevice Device?  @relation(fields: [redeemedByDeviceId], references: [id], onDelete: SetNull)
+  ledgerEntries    TokenLedger[]
+
+  @@index([licenseId, status])
+  @@index([orderId])
+  @@index([redeemedByDeviceId])
+  @@map("redeem_codes")
+}
+
+model TokenPack {
+  id               String   @id @default(cuid())
+  key              String   @unique
+  name             String
+  description      String?
+  tokenAmount      Int
+  bonusTokenAmount Int      @default(0)
+  priceAmountCents Int
+  currency         String   @default("usd")
+  stripePriceId    String?  @unique
+  active           Boolean  @default(true)
+  sortOrder        Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  orders Order[]
+
+  @@index([active, sortOrder])
+  @@map("token_packs")
+}
+
+model Order {
+  id                     String          @id @default(cuid())
+  provider               PaymentProvider @default(stripe)
+  status                 OrderStatus     @default(pending)
+  tokenPackId            String?
+  licenseId              String?
+  payerEmail             String?
+  currency               String          @default("usd")
+  amountSubtotalCents    Int             @default(0)
+  amountDiscountCents    Int             @default(0)
+  amountTotalCents       Int             @default(0)
+  stripeCheckoutSessionId String?        @unique
+  stripePaymentIntentId  String?         @unique
+  stripeCustomerId       String?
+  paidAt                 DateTime?
+  rawPayload             Json?
+  createdAt              DateTime        @default(now())
+  updatedAt              DateTime        @updatedAt
+
+  tokenPack     TokenPack?    @relation(fields: [tokenPackId], references: [id], onDelete: SetNull)
+  license       License?      @relation(fields: [licenseId], references: [id], onDelete: SetNull)
+  redeemCodes   RedeemCode[]
+  ledgerEntries TokenLedger[]
+  stripeEvents  StripeEvent[]
+
+  @@index([status, createdAt])
+  @@index([payerEmail])
+  @@index([tokenPackId])
+  @@index([licenseId])
+  @@map("orders")
+}
+
+model StripeEvent {
+  id            String            @id @default(cuid())
+  stripeEventId String            @unique
+  type          String
+  status        StripeEventStatus @default(received)
+  orderId       String?
+  payload       Json
+  processedAt   DateTime?
+  failureMessage String?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  order Order? @relation(fields: [orderId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([orderId])
+  @@map("stripe_events")
+}
+
+model TokenLedger {
+  id           String                 @id @default(cuid())
+  idempotencyKey String?              @unique
+  licenseId    String
+  orderId      String?
+  jobId        String?
+  deviceId     String?
+  redeemCodeId String?
+  type         TokenLedgerEntryType
+  status       TokenLedgerEntryStatus @default(posted)
+  deltaTokens  Int
+  description  String?
+  metadata     Json?
+  createdAt    DateTime               @default(now())
+  updatedAt    DateTime               @updatedAt
+
+  license    License        @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  order      Order?         @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  job        TranslationJob? @relation(fields: [jobId], references: [id], onDelete: SetNull)
+  device     Device?        @relation(fields: [deviceId], references: [id], onDelete: SetNull)
+  redeemCode RedeemCode?    @relation(fields: [redeemCodeId], references: [id], onDelete: SetNull)
+
+  @@index([licenseId, createdAt])
+  @@index([jobId])
+  @@index([orderId])
+  @@index([type, status])
+  @@map("token_ledger")
+}
+
+model MobileSession {
+  id               String    @id @default(cuid())
+  deviceId         String
+  licenseId        String
+  refreshTokenHash String    @unique
+  expiresAt        DateTime
+  lastUsedAt       DateTime?
+  lastRefreshedAt  DateTime?
+  revokedAt        DateTime?
+  revokeReason     String?
+  lastIpAddress    String?
+  userAgent        String?
+  appVersion       String?
+  appBuild         String?
+  metadata         Json?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  device  Device  @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  license License @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+
+  @@index([deviceId, revokedAt, expiresAt])
+  @@index([licenseId, revokedAt, expiresAt])
+  @@map("mobile_sessions")
+}
+
+model TranslationJob {
+  id                         String               @id @default(cuid())
+  licenseId                  String
+  deviceId                   String
+  status                     TranslationJobStatus @default(created)
+  sourceLanguage             String
+  targetLanguage             String
+  pageCount                  Int                  @default(0)
+  requestedOcrProvider       ProviderType?
+  requestedTranslationProvider ProviderType?
+  resolvedOcrProvider        ProviderType?
+  resolvedTranslationProvider ProviderType?
+  reservedTokens             Int                  @default(0)
+  spentTokens                Int                  @default(0)
+  uploadCompletedAt          DateTime?
+  queuedAt                   DateTime?
+  startedAt                  DateTime?
+  completedAt                DateTime?
+  failedAt                   DateTime?
+  expiresAt                  DateTime?
+  errorCode                  String?
+  errorMessage               String?
+  resultPayloadVersion       String?
+  resultSummary              Json?
+  createdAt                  DateTime             @default(now())
+  updatedAt                  DateTime             @updatedAt
+
+  license       License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device        Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  assets        JobAsset[]
+  providerUsages ProviderUsage[]
+  ledgerEntries TokenLedger[]
+
+  @@index([licenseId, createdAt])
+  @@index([deviceId, createdAt])
+  @@index([status, createdAt])
+  @@map("translation_jobs")
+}
+
+model JobAsset {
+  id               String       @id @default(cuid())
+  jobId            String
+  kind             JobAssetKind
+  bucketName       String?
+  objectKey        String?
+  pageNumber       Int?
+  originalFileName String?
+  mimeType         String?
+  sizeBytes        Int?
+  checksumSha256   String?
+  metadata         Json?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  job TranslationJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@index([jobId, kind])
+  @@index([kind, createdAt])
+  @@map("job_assets")
+}
+
+model ProviderUsage {
+  id           String            @id @default(cuid())
+  jobId        String
+  provider     ProviderType
+  stage        ProviderUsageStage
+  modelName    String?
+  pageCount    Int               @default(0)
+  requestCount Int               @default(1)
+  inputTokens  Int?
+  outputTokens Int?
+  latencyMs    Int?
+  costMicros   BigInt?
+  success      Boolean           @default(true)
+  errorCode    String?
+  metadata     Json?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  job TranslationJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@index([jobId, stage])
+  @@index([provider, createdAt])
+  @@map("provider_usages")
 }

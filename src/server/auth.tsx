@@ -1,4 +1,3 @@
-import { expo } from '@better-auth/expo';
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { admin, emailOTP, openAPI } from 'better-auth/plugins';
@@ -12,7 +11,7 @@ import { envServer } from '@/env/server';
 import {
   AUTH_EMAIL_OTP_EXPIRATION_IN_MINUTES,
   AUTH_EMAIL_OTP_MOCKED,
-  AUTH_SIGNUP_ENABLED,
+  AUTH_PUBLIC_SIGNUP_ENABLED,
 } from '@/features/auth/config';
 import { permissions } from '@/features/auth/permissions';
 import { db } from '@/server/db';
@@ -51,17 +50,11 @@ export const auth = betterAuth({
       enabled: !!(envServer.GITHUB_CLIENT_ID && envServer.GITHUB_CLIENT_SECRET),
       clientId: envServer.GITHUB_CLIENT_ID!,
       clientSecret: envServer.GITHUB_CLIENT_SECRET!,
-      disableImplicitSignUp: !AUTH_SIGNUP_ENABLED,
+      disableImplicitSignUp: !AUTH_PUBLIC_SIGNUP_ENABLED,
     },
   },
 
   plugins: [
-    /**
-     * Allows an Expo native app to use auth, can be deleted if not needed.
-     * disableOriginOverride: workaround for a crash in onRequest. Learn more at:
-     * https://github.com/better-auth/better-auth/issues/1058
-     */
-    expo({ disableOriginOverride: true }),
     openAPI({
       disableDefaultReference: true, // Use custom exposition in /routes/api/openapi folder
     }),
@@ -69,7 +62,7 @@ export const auth = betterAuth({
       ...permissions,
     }),
     emailOTP({
-      disableSignUp: !AUTH_SIGNUP_ENABLED,
+      disableSignUp: !AUTH_PUBLIC_SIGNUP_ENABLED,
       expiresIn: AUTH_EMAIL_OTP_EXPIRATION_IN_MINUTES * 60,
       // Use predictable mocked code in dev and demo
       ...(import.meta.env.DEV || envClient.VITE_IS_DEMO
@@ -90,17 +83,17 @@ export const auth = betterAuth({
           })
           .with('email-verification', async () => {
             throw new Error(
-              'email-verification email not implemented, update the /app/server/auth.tsx file'
+              'email-verification email not implemented, update src/server/auth.tsx'
             );
           })
           .with('forget-password', async () => {
             throw new Error(
-              'forget-password email not implemented, update the /app/server/auth.tsx file'
+              'forget-password email not implemented, update src/server/auth.tsx'
             );
           })
           .with('change-email', async () => {
             throw new Error(
-              'change-email email not implemented, update the /app/server/auth.tsx file'
+              'change-email email not implemented, update src/server/auth.tsx'
             );
           })
           .exhaustive();
