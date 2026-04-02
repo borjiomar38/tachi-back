@@ -27,11 +27,13 @@ import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
 import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
 import { Route as ApiUploadRouteImport } from './routes/api/upload'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
+import { Route as ManagerContactsIndexRouteImport } from './routes/manager/contacts/index'
 import { Route as ManagerAccountIndexRouteImport } from './routes/manager/account.index'
 import { Route as LoginVerifyIndexRouteImport } from './routes/login/verify.index'
 import { Route as LoginErrorIndexRouteImport } from './routes/login/error.index'
@@ -51,6 +53,7 @@ import { Route as ManagerUsersIdIndexRouteImport } from './routes/manager/users/
 import { Route as ManagerLicensesKeyIndexRouteImport } from './routes/manager/licenses/$key.index'
 import { Route as ManagerJobsIdIndexRouteImport } from './routes/manager/jobs/$id.index'
 import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devices/$id.index'
+import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/contacts/$id.index'
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
@@ -153,6 +156,11 @@ const ApiUploadRoute = ApiUploadRouteImport.update({
   path: '/api/upload',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManagerUsersIndexRoute = ManagerUsersIndexRouteImport.update({
   id: '/users/',
   path: '/users/',
@@ -176,6 +184,11 @@ const ManagerJobsIndexRoute = ManagerJobsIndexRouteImport.update({
 const ManagerDashboardIndexRoute = ManagerDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
+const ManagerContactsIndexRoute = ManagerContactsIndexRouteImport.update({
+  id: '/contacts/',
+  path: '/contacts/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
 const ManagerAccountIndexRoute = ManagerAccountIndexRouteImport.update({
@@ -273,6 +286,11 @@ const ManagerDevicesIdIndexRoute = ManagerDevicesIdIndexRouteImport.update({
   path: '/devices/$id/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerContactsIdIndexRoute = ManagerContactsIdIndexRouteImport.update({
+  id: '/contacts/$id/',
+  path: '/contacts/$id/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ApiOpenapiAuthSchemaRoute = ApiOpenapiAuthSchemaRouteImport.update({
   id: '/schema',
   path: '/schema',
@@ -343,6 +361,7 @@ export interface FileRoutesByFullPath {
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
   '/support': typeof SupportRoute
+  '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
@@ -366,6 +385,7 @@ export interface FileRoutesByFullPath {
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
   '/manager/account/': typeof ManagerAccountIndexRoute
+  '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
@@ -377,6 +397,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
@@ -395,6 +416,7 @@ export interface FileRoutesByTo {
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
   '/support': typeof SupportRoute
+  '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
@@ -418,6 +440,7 @@ export interface FileRoutesByTo {
   '/login/error': typeof LoginErrorIndexRoute
   '/login/verify': typeof LoginVerifyIndexRoute
   '/manager/account': typeof ManagerAccountIndexRoute
+  '/manager/contacts': typeof ManagerContactsIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
   '/manager/jobs': typeof ManagerJobsIndexRoute
   '/manager/licenses': typeof ManagerLicensesIndexRoute
@@ -429,6 +452,7 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manager/contacts/$id': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id': typeof ManagerDevicesIdIndexRoute
   '/manager/jobs/$id': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key': typeof ManagerLicensesKeyIndexRoute
@@ -451,6 +475,7 @@ export interface FileRoutesById {
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
   '/support': typeof SupportRoute
+  '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
@@ -474,6 +499,7 @@ export interface FileRoutesById {
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
   '/manager/account/': typeof ManagerAccountIndexRoute
+  '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
@@ -485,6 +511,7 @@ export interface FileRoutesById {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
@@ -508,6 +535,7 @@ export interface FileRouteTypes {
     | '/logout'
     | '/pricing'
     | '/support'
+    | '/api/contact'
     | '/api/upload'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
@@ -531,6 +559,7 @@ export interface FileRouteTypes {
     | '/login/error/'
     | '/login/verify/'
     | '/manager/account/'
+    | '/manager/contacts/'
     | '/manager/dashboard/'
     | '/manager/jobs/'
     | '/manager/licenses/'
@@ -542,6 +571,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
@@ -560,6 +590,7 @@ export interface FileRouteTypes {
     | '/logout'
     | '/pricing'
     | '/support'
+    | '/api/contact'
     | '/api/upload'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
@@ -583,6 +614,7 @@ export interface FileRouteTypes {
     | '/login/error'
     | '/login/verify'
     | '/manager/account'
+    | '/manager/contacts'
     | '/manager/dashboard'
     | '/manager/jobs'
     | '/manager/licenses'
@@ -594,6 +626,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manager/contacts/$id'
     | '/manager/devices/$id'
     | '/manager/jobs/$id'
     | '/manager/licenses/$key'
@@ -615,6 +648,7 @@ export interface FileRouteTypes {
     | '/logout'
     | '/pricing'
     | '/support'
+    | '/api/contact'
     | '/api/upload'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
@@ -638,6 +672,7 @@ export interface FileRouteTypes {
     | '/login/error/'
     | '/login/verify/'
     | '/manager/account/'
+    | '/manager/contacts/'
     | '/manager/dashboard/'
     | '/manager/jobs/'
     | '/manager/licenses/'
@@ -649,6 +684,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
@@ -671,6 +707,7 @@ export interface RootRouteChildren {
   LogoutRoute: typeof LogoutRoute
   PricingRoute: typeof PricingRoute
   SupportRoute: typeof SupportRoute
+  ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
   CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
   CheckoutCancelRoute: typeof CheckoutCancelRoute
@@ -821,6 +858,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiUploadRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manager/users/': {
       id: '/manager/users/'
       path: '/users'
@@ -854,6 +898,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/manager/dashboard/'
       preLoaderRoute: typeof ManagerDashboardIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/contacts/': {
+      id: '/manager/contacts/'
+      path: '/contacts'
+      fullPath: '/manager/contacts/'
+      preLoaderRoute: typeof ManagerContactsIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
     '/manager/account/': {
@@ -989,6 +1040,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerDevicesIdIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/contacts/$id/': {
+      id: '/manager/contacts/$id/'
+      path: '/contacts/$id'
+      fullPath: '/manager/contacts/$id/'
+      preLoaderRoute: typeof ManagerContactsIdIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/api/openapi/auth/schema': {
       id: '/api/openapi/auth/schema'
       path: '/schema'
@@ -1102,11 +1160,13 @@ const LoginRouteRouteWithChildren = LoginRouteRoute._addFileChildren(
 interface ManagerRouteRouteChildren {
   ManagerIndexRoute: typeof ManagerIndexRoute
   ManagerAccountIndexRoute: typeof ManagerAccountIndexRoute
+  ManagerContactsIndexRoute: typeof ManagerContactsIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
+  ManagerContactsIdIndexRoute: typeof ManagerContactsIdIndexRoute
   ManagerDevicesIdIndexRoute: typeof ManagerDevicesIdIndexRoute
   ManagerJobsIdIndexRoute: typeof ManagerJobsIdIndexRoute
   ManagerLicensesKeyIndexRoute: typeof ManagerLicensesKeyIndexRoute
@@ -1118,11 +1178,13 @@ interface ManagerRouteRouteChildren {
 const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerIndexRoute: ManagerIndexRoute,
   ManagerAccountIndexRoute: ManagerAccountIndexRoute,
+  ManagerContactsIndexRoute: ManagerContactsIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
+  ManagerContactsIdIndexRoute: ManagerContactsIdIndexRoute,
   ManagerDevicesIdIndexRoute: ManagerDevicesIdIndexRoute,
   ManagerJobsIdIndexRoute: ManagerJobsIdIndexRoute,
   ManagerLicensesKeyIndexRoute: ManagerLicensesKeyIndexRoute,
@@ -1188,6 +1250,7 @@ const rootRouteChildren: RootRouteChildren = {
   LogoutRoute: LogoutRoute,
   PricingRoute: PricingRoute,
   SupportRoute: SupportRoute,
+  ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,
   CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
   CheckoutCancelRoute: CheckoutCancelRoute,

@@ -27,7 +27,7 @@ export const PageDashboard = () => {
               <CardTitle>Support Lookup</CardTitle>
               <CardDescription>
                 Search by license key, redeem code, installation ID, order ID,
-                Stripe IDs, or email.
+                Lemon Squeezy IDs, or email.
               </CardDescription>
             </CardHeader>
             <CardContent>

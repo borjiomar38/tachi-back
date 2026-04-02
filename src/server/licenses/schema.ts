@@ -111,8 +111,8 @@ export const zSupportLookupResult = z.discriminatedUnion('entityType', [
     matchedOn: z.enum([
       'order_id',
       'payer_email',
-      'stripe_checkout_session_id',
-      'stripe_payment_intent_id',
+      'ls_order_id',
+      'ls_subscription_id',
     ]),
     matchedValue: z.string(),
     paidAt: z.date().nullish(),
@@ -145,7 +145,9 @@ export const zLicenseOrderSummary = z.object({
   id: z.string(),
   paidAt: z.date().nullish(),
   payerEmail: z.string().nullish(),
-  provider: z.enum(['stripe', 'manual']),
+  lsOrderId: z.string().nullish(),
+  lsSubscriptionId: z.string().nullish(),
+  provider: z.enum(['lemonsqueezy', 'manual']),
   status: z.enum([
     'pending',
     'paid',
@@ -154,8 +156,6 @@ export const zLicenseOrderSummary = z.object({
     'refunded',
     'partially_refunded',
   ]),
-  stripeCheckoutSessionId: z.string().nullish(),
-  stripePaymentIntentId: z.string().nullish(),
   tokenPackName: z.string().nullish(),
 });
 

@@ -9,6 +9,10 @@ export interface PublicTokenPack {
   currency: string;
   totalTokens: number;
   checkoutEnabled: boolean;
+  estimatedPages: number;
+  estimatedChapters: number;
+  marketingSummary: string;
+  marketedChaptersPerMonth: number;
 }
 
 export interface ContentBlock {
@@ -20,80 +24,80 @@ export const PUBLIC_SUPPORT_EMAIL = 'support@tachi-back.local';
 
 export const publicHighlights: ContentBlock[] = [
   {
-    title: 'Server-side OCR and translation',
+    title: 'Translate manga and manhwa fast',
     description:
-      'Provider calls move to the backend so API keys stay off the device and routing stays under your control.',
+      'Open a chapter, launch the translation, and keep reading without complex setup.',
   },
   {
-    title: 'Redeem-code activation',
+    title: 'Powerful text detection',
     description:
-      'Customers do not need a website account. They pay, receive a redeem code, and bind tokens to an app installation.',
+      'Text is detected cleanly on manga and manhwa pages, even when the layout is busy.',
   },
   {
-    title: 'Token-based usage',
+    title: 'Simple monthly plans',
     description:
-      'Token packs let you sell hosted usage cleanly while keeping provider cost accounting on the server side.',
+      'Choose a monthly plan, receive your activation code by email, and start using it in the app.',
   },
   {
-    title: 'Backoffice support controls',
+    title: 'Easy activation',
     description:
-      'Internal staff can inspect devices, issue manual credits, and manage licenses without exposing internal tools to customers.',
+      'No technical account setup. Just add your activation code and start translating.',
   },
 ];
 
 export const activationSteps: ContentBlock[] = [
   {
-    title: '1. Pick a token pack',
+    title: '1. Pick a monthly plan',
     description:
-      'Customers choose a starter, pro, or power pack from the public pricing page.',
+      'Choose the plan that matches how much manga or manhwa you read every month.',
   },
   {
-    title: '2. Receive a redeem code',
+    title: '2. Receive an activation code',
     description:
-      'Stripe checkout can start the purchase, but durable crediting and redeem-code creation only become final after webhook confirmation.',
+      'After payment, you receive your activation code by email.',
   },
   {
-    title: '3. Bind to an installation',
+    title: '3. Add the code in the app',
     description:
-      'The app will redeem tokens against an installation identity instead of a normal user account.',
+      'Enter the activation code in TachiyomiAT once to unlock your monthly plan.',
   },
   {
-    title: '4. Spend tokens on hosted jobs',
+    title: '4. Start translating chapters',
     description:
-      'OCR and translation jobs run on the backend while the app polls for results and keeps the existing reader output contract.',
+      'Pick a chapter and launch the translation when you need it.',
   },
 ];
 
 export const supportFaqs: ContentBlock[] = [
   {
-    title: 'What do tokens pay for?',
+    title: 'What can I translate?',
     description:
-      'Tokens are the hosted usage balance for OCR and translation jobs. The app will spend them when a chapter is processed through the backend.',
+      'You can use the service for manga and manhwa chapters inside TachiyomiAT.',
   },
   {
-    title: 'Which providers will be supported?',
+    title: 'Do I need API keys?',
     description:
-      'The backend roadmap currently targets Google Cloud Vision for OCR and Gemini, OpenAI, and Anthropic for translation, with provider routing kept server-side.',
+      'No. The goal is a simple user flow: subscribe, receive a code, activate, and translate.',
   },
   {
-    title: 'Will customers need an account?',
+    title: 'How do I get my activation code?',
     description:
-      'No. The planned hosted flow is redeem code plus device binding, not customer login through the web backoffice.',
+      'After payment, the activation code is sent to your email address.',
   },
   {
-    title: 'How do device changes work?',
+    title: 'Can I change phone later?',
     description:
-      'Backoffice support will be able to inspect device bindings and handle manual recovery or revocation when a device is lost or replaced.',
+      'Yes. If you move to another device, support can help you recover access.',
   },
   {
-    title: 'How will refunds work?',
+    title: 'Which plan should I choose?',
     description:
-      'Stripe checkout can collect payment in this phase, but refund automation, token ledger posting, and support tooling still land in later phases.',
+      'Starter is good for trying the service, Pro is best for regular reading, and Power is for heavy readers.',
   },
   {
-    title: 'What about privacy?',
+    title: 'Is it monthly?',
     description:
-      'Hosted mode will process images and text on the backend, so retention limits, short-lived artifacts, and customer-facing privacy terms must be explicit before launch.',
+      'Yes. The plans renew every month until you cancel them.',
   },
 ];
 

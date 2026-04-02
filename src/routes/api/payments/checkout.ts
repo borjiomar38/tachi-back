@@ -9,18 +9,18 @@ import {
 } from '@/server/http/route-utils';
 import { logger } from '@/server/logger';
 import {
-  createStripeCheckoutSession,
-  StripeCheckoutError,
-  zCreateStripeCheckoutInput,
+  CheckoutError,
+  createLemonSqueezyCheckout,
+  zCreateCheckoutInput,
 } from '@/server/payments/checkout';
 
-export const Route = createFileRoute('/api/stripe/checkout')({
+export const Route = createFileRoute('/api/payments/checkout')({
   server: {
     handlers: {
       POST: async ({ request }) => {
         const context = buildHttpRequestContext(request);
         const routeLog = logger.child({
-          path: '/api/stripe/checkout',
+          path: '/api/payments/checkout',
           requestId: context.requestId,
           scope: 'payments',
         });
@@ -39,7 +39,7 @@ export const Route = createFileRoute('/api/stripe/checkout')({
         if (!rateLimit.allowed) {
           routeLog.warn({
             clientIp: context.clientIp,
-            message: 'Rate limited Stripe checkout creation request',
+            message: 'Rate limited checkout creation request',
             retryAfterMs: rateLimit.retryAfterMs,
             type: 'rate_limit',
           });
@@ -61,7 +61,7 @@ export const Route = createFileRoute('/api/stripe/checkout')({
         const rawTokenPackKey = readFormValue(formData, 'tokenPackKey');
         const rawPayerEmail = readFormValue(formData, 'payerEmail');
 
-        const parsedInput = zCreateStripeCheckoutInput.safeParse({
+        const parsedInput = zCreateCheckoutInput.safeParse({
           payerEmail: rawPayerEmail,
           tokenPackKey: rawTokenPackKey,
         });
@@ -69,7 +69,7 @@ export const Route = createFileRoute('/api/stripe/checkout')({
         if (!parsedInput.success) {
           routeLog.warn({
             clientIp: context.clientIp,
-            message: 'Rejected invalid Stripe checkout initiation payload',
+            message: 'Rejected invalid checkout initiation payload',
             tokenPackKey: rawTokenPackKey,
             type: 'validation',
           });
@@ -82,18 +82,18 @@ export const Route = createFileRoute('/api/stripe/checkout')({
         }
 
         try {
-          const checkout = await createStripeCheckoutSession(parsedInput.data, {
+          const checkout = await createLemonSqueezyCheckout(parsedInput.data, {
             log: routeLog,
           });
           return redirectWithRequestId(checkout.url, {
             requestId: context.requestId,
           });
         } catch (error) {
-          if (error instanceof StripeCheckoutError) {
+          if (error instanceof CheckoutError) {
             routeLog.warn({
               clientIp: context.clientIp,
               errorCode: error.code,
-              message: 'Stripe checkout initiation failed',
+              message: 'Checkout initiation failed',
               tokenPackKey: parsedInput.data.tokenPackKey,
               type: 'checkout_error',
             });

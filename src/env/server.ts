@@ -29,12 +29,13 @@ const envServerBase = createEnv({
     EMAIL_SERVER: z.url(),
     EMAIL_FROM: z.string(),
 
-    STRIPE_ENABLED: z.stringbool().default(false),
-    STRIPE_SECRET_KEY: z.string().optional(),
-    STRIPE_WEBHOOK_SECRET: z.string().optional(),
-    STRIPE_PRICE_TOKENS_STARTER: z.string().optional(),
-    STRIPE_PRICE_TOKENS_PRO: z.string().optional(),
-    STRIPE_PRICE_TOKENS_POWER: z.string().optional(),
+    LEMONSQUEEZY_ENABLED: z.stringbool().default(false),
+    LEMONSQUEEZY_API_KEY: z.string().optional(),
+    LEMONSQUEEZY_WEBHOOK_SECRET: z.string().optional(),
+    LEMONSQUEEZY_STORE_ID: z.string().optional(),
+    LEMONSQUEEZY_VARIANT_TOKENS_STARTER: z.string().optional(),
+    LEMONSQUEEZY_VARIANT_TOKENS_PRO: z.string().optional(),
+    LEMONSQUEEZY_VARIANT_TOKENS_POWER: z.string().optional(),
 
     GOOGLE_CLOUD_VISION_API_KEY: z.string().optional(),
     GOOGLE_CLOUD_TRANSLATE_API_KEY: z.string().optional(),
@@ -188,12 +189,16 @@ function zCsvList() {
 function validateServerEnv(env: typeof envServerBase) {
   const errors: string[] = [];
 
-  if (env.STRIPE_ENABLED) {
-    if (!env.STRIPE_SECRET_KEY) {
-      errors.push('STRIPE_SECRET_KEY is required when STRIPE_ENABLED=true');
+  if (env.LEMONSQUEEZY_ENABLED) {
+    if (!env.LEMONSQUEEZY_API_KEY) {
+      errors.push(
+        'LEMONSQUEEZY_API_KEY is required when LEMONSQUEEZY_ENABLED=true'
+      );
     }
-    if (!env.STRIPE_WEBHOOK_SECRET) {
-      errors.push('STRIPE_WEBHOOK_SECRET is required when STRIPE_ENABLED=true');
+    if (!env.LEMONSQUEEZY_WEBHOOK_SECRET) {
+      errors.push(
+        'LEMONSQUEEZY_WEBHOOK_SECRET is required when LEMONSQUEEZY_ENABLED=true'
+      );
     }
   }
 

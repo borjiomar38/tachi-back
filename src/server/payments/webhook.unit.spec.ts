@@ -34,7 +34,7 @@ import type Stripe from 'stripe';
 import { processStripeWebhookEvent } from '@/server/payments/webhook';
 
 const checkoutSessionEvent = {
-  api_version: '2025-09-30',
+  api_version: '2026-02-25.clover',
   created: 1_742_347_200,
   data: {
     object: {
@@ -66,6 +66,87 @@ const checkoutSessionEvent = {
     idempotency_key: null,
   },
   type: 'checkout.session.completed',
+} as unknown as Stripe.Event;
+
+const invoicePaidEvent = {
+  api_version: '2026-02-25.clover',
+  created: 1_742_347_200,
+  data: {
+    object: {
+      currency: 'usd',
+      customer: 'cus_123',
+      customer_email: 'reader@example.com',
+      id: 'in_test_123',
+      lines: {
+        data: [
+          {
+            period: {
+              end: 1_742_606_400,
+              start: 1_739_928_000,
+            },
+            price: {
+              id: 'price_pro_monthly_123',
+            },
+          },
+        ],
+      },
+      object: 'invoice',
+      payment_intent: 'pi_123',
+      subscription: 'sub_test_123',
+      subtotal: 3999,
+      total: 3999,
+    },
+  },
+  id: 'evt_invoice_paid_123',
+  livemode: false,
+  object: 'event',
+  pending_webhooks: 1,
+  request: {
+    id: null,
+    idempotency_key: null,
+  },
+  type: 'invoice.paid',
+} as unknown as Stripe.Event;
+
+const invoicePaymentFailedEvent = {
+  ...invoicePaidEvent,
+  id: 'evt_invoice_failed_123',
+  type: 'invoice.payment_failed',
+} as unknown as Stripe.Event;
+
+const subscriptionUpdatedEvent = {
+  api_version: '2026-02-25.clover',
+  created: 1_742_347_200,
+  data: {
+    object: {
+      cancel_at_period_end: false,
+      id: 'sub_test_123',
+      object: 'subscription',
+      status: 'past_due',
+    },
+  },
+  id: 'evt_subscription_updated_123',
+  livemode: false,
+  object: 'event',
+  pending_webhooks: 1,
+  request: {
+    id: null,
+    idempotency_key: null,
+  },
+  type: 'customer.subscription.updated',
+} as unknown as Stripe.Event;
+
+const subscriptionDeletedEvent = {
+  ...subscriptionUpdatedEvent,
+  data: {
+    object: {
+      id: 'sub_test_123',
+      object: 'subscription',
+      status: 'canceled',
+    },
+  },
+  id: 'evt_subscription_deleted_123',
+  type: 'customer.subscription.deleted',
 } as unknown as Stripe.Event;
 
 describe('stripe webhook fulfillment', () => {
@@ -113,27 +194,41 @@ describe('stripe webhook fulfillment', () => {
     expect(mockSendEmail).not.toHaveBeenCalled();
   });
 
-  it('processes a paid checkout session into fulfillment records', async () => {
+  it('processes a paid invoice into recurring fulfillment records', async () => {
     const tx = {
       license: {
         create: vi.fn().mockResolvedValue({ id: 'license-1' }),
       },
       order: {
         create: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
           id: 'order-1',
           licenseId: null,
           payerEmail: 'reader@example.com',
           status: 'paid',
-          stripeCheckoutSessionId: 'cs_test_123',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
         }),
+        findFirst: vi.fn().mockResolvedValue(null),
         findUnique: vi.fn().mockResolvedValue(null),
         update: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
           id: 'order-1',
           licenseId: 'license-1',
           payerEmail: 'reader@example.com',
           status: 'paid',
-          stripeCheckoutSessionId: 'cs_test_123',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
         }),
+      },
+      mobileSession: {
+        updateMany: vi.fn().mockResolvedValue({ count: 0 }),
       },
       redeemCode: {
         findUnique: vi.fn().mockResolvedValue(null),
@@ -153,7 +248,7 @@ describe('stripe webhook fulfillment', () => {
         findUnique: vi.fn().mockResolvedValue({
           bonusTokenAmount: 250,
           currency: 'usd',
-          description: 'Pro pack',
+          description: 'Pro monthly plan',
           id: 'pack-pro',
           key: 'pro',
           name: 'Pro 2500',
@@ -172,7 +267,7 @@ describe('stripe webhook fulfillment', () => {
     mockDb.$transaction.mockImplementation((callback) => callback(tx));
     mockSendEmail.mockResolvedValue(undefined);
 
-    const result = await processStripeWebhookEvent(checkoutSessionEvent, {
+    const result = await processStripeWebhookEvent(invoicePaidEvent, {
       dbClient: mockDb,
       log: mockLogger,
       sendEmailFn: mockSendEmail,
@@ -181,7 +276,7 @@ describe('stripe webhook fulfillment', () => {
     expect(result).toEqual({
       orderId: 'order-1',
       status: 'processed',
-      stripeEventId: 'evt_checkout_paid_123',
+      stripeEventId: 'evt_invoice_paid_123',
     });
     expect(tx.order.create).toHaveBeenCalledOnce();
     expect(tx.license.create).toHaveBeenCalledOnce();
@@ -197,7 +292,7 @@ describe('stripe webhook fulfillment', () => {
       status: 'processed',
     });
 
-    const result = await processStripeWebhookEvent(checkoutSessionEvent, {
+    const result = await processStripeWebhookEvent(invoicePaidEvent, {
       dbClient: mockDb,
       log: mockLogger,
       sendEmailFn: mockSendEmail,
@@ -205,33 +300,47 @@ describe('stripe webhook fulfillment', () => {
 
     expect(result).toEqual({
       status: 'already_processed',
-      stripeEventId: 'evt_checkout_paid_123',
+      stripeEventId: 'evt_invoice_paid_123',
     });
     expect(mockDb.$transaction).not.toHaveBeenCalled();
     expect(mockSendEmail).not.toHaveBeenCalled();
   });
 
-  it('keeps fulfillment durable when email sending fails', async () => {
+  it('keeps fulfillment durable when activation-code email sending fails', async () => {
     const tx = {
       license: {
         create: vi.fn().mockResolvedValue({ id: 'license-1' }),
       },
       order: {
         create: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
           id: 'order-1',
           licenseId: null,
           payerEmail: 'reader@example.com',
           status: 'paid',
-          stripeCheckoutSessionId: 'cs_test_123',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
         }),
+        findFirst: vi.fn().mockResolvedValue(null),
         findUnique: vi.fn().mockResolvedValue(null),
         update: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
           id: 'order-1',
           licenseId: 'license-1',
           payerEmail: 'reader@example.com',
           status: 'paid',
-          stripeCheckoutSessionId: 'cs_test_123',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
         }),
+      },
+      mobileSession: {
+        updateMany: vi.fn().mockResolvedValue({ count: 0 }),
       },
       redeemCode: {
         findUnique: vi.fn().mockResolvedValue(null),
@@ -251,7 +360,7 @@ describe('stripe webhook fulfillment', () => {
         findUnique: vi.fn().mockResolvedValue({
           bonusTokenAmount: 250,
           currency: 'usd',
-          description: 'Pro pack',
+          description: 'Pro monthly plan',
           id: 'pack-pro',
           key: 'pro',
           name: 'Pro 2500',
@@ -270,7 +379,7 @@ describe('stripe webhook fulfillment', () => {
     mockDb.$transaction.mockImplementation((callback) => callback(tx));
     mockSendEmail.mockRejectedValue(new Error('SMTP offline'));
 
-    const result = await processStripeWebhookEvent(checkoutSessionEvent, {
+    const result = await processStripeWebhookEvent(invoicePaidEvent, {
       dbClient: mockDb,
       log: mockLogger,
       sendEmailFn: mockSendEmail,
@@ -279,5 +388,230 @@ describe('stripe webhook fulfillment', () => {
     expect(result.status).toBe('processed');
     expect(mockLogger.warn).toHaveBeenCalledOnce();
     expect(mockLogger.error).not.toHaveBeenCalled();
+  });
+
+  it('records invoice.payment_failed without crediting monthly tokens', async () => {
+    const tx = {
+      license: {
+        create: vi.fn(),
+        update: vi.fn(),
+      },
+      order: {
+        create: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
+          id: 'order-failed-1',
+          licenseId: 'license-1',
+          payerEmail: 'reader@example.com',
+          status: 'failed',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
+        }),
+        findFirst: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-03-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-02-01T00:00:00.000Z'),
+          id: 'order-prev-1',
+          licenseId: 'license-1',
+          payerEmail: 'reader@example.com',
+          status: 'paid',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_prev_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
+        }),
+        findUnique: vi.fn().mockResolvedValue(null),
+        update: vi.fn(),
+      },
+      mobileSession: {
+        updateMany: vi.fn(),
+      },
+      redeemCode: {
+        findUnique: vi.fn(),
+        upsert: vi.fn(),
+      },
+      stripeEvent: {
+        update: vi.fn().mockResolvedValue({}),
+      },
+      tokenLedger: {
+        findUnique: vi.fn(),
+        upsert: vi.fn(),
+      },
+      tokenPack: {
+        findUnique: vi.fn().mockResolvedValue({
+          bonusTokenAmount: 250,
+          currency: 'usd',
+          description: 'Pro monthly plan',
+          id: 'pack-pro',
+          key: 'pro',
+          name: 'Pro 2500',
+          priceAmountCents: 3999,
+          tokenAmount: 2500,
+        }),
+      },
+    };
+
+    mockDb.stripeEvent.findUnique.mockResolvedValue(null);
+    mockDb.stripeEvent.create.mockResolvedValue({
+      id: 'stripe-event-row-1',
+      orderId: null,
+      status: 'received',
+    });
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await processStripeWebhookEvent(invoicePaymentFailedEvent, {
+      dbClient: mockDb,
+      log: mockLogger,
+      sendEmailFn: mockSendEmail,
+    });
+
+    expect(result).toEqual({
+      orderId: 'order-failed-1',
+      status: 'processed',
+      stripeEventId: 'evt_invoice_failed_123',
+    });
+    expect(tx.order.create).toHaveBeenCalledOnce();
+    expect(tx.redeemCode.upsert).not.toHaveBeenCalled();
+    expect(tx.tokenLedger.upsert).not.toHaveBeenCalled();
+    expect(mockSendEmail).not.toHaveBeenCalled();
+  });
+
+  it('suspends the license when Stripe marks the subscription as past_due', async () => {
+    const tx = {
+      license: {
+        create: vi.fn(),
+        update: vi.fn().mockResolvedValue({
+          id: 'license-1',
+          status: 'suspended',
+        }),
+      },
+      order: {
+        create: vi.fn(),
+        findFirst: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
+          id: 'order-1',
+          licenseId: 'license-1',
+          payerEmail: 'reader@example.com',
+          status: 'paid',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
+        }),
+        findUnique: vi.fn(),
+        update: vi.fn(),
+      },
+      mobileSession: {
+        updateMany: vi.fn(),
+      },
+      redeemCode: {
+        findUnique: vi.fn(),
+        upsert: vi.fn(),
+      },
+      stripeEvent: {
+        update: vi.fn().mockResolvedValue({}),
+      },
+      tokenLedger: {
+        findUnique: vi.fn(),
+        upsert: vi.fn(),
+      },
+      tokenPack: {
+        findUnique: vi.fn(),
+      },
+    };
+
+    mockDb.stripeEvent.findUnique.mockResolvedValue(null);
+    mockDb.stripeEvent.create.mockResolvedValue({
+      id: 'stripe-event-row-1',
+      orderId: null,
+      status: 'received',
+    });
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await processStripeWebhookEvent(subscriptionUpdatedEvent, {
+      dbClient: mockDb,
+      log: mockLogger,
+      sendEmailFn: mockSendEmail,
+    });
+
+    expect(result).toEqual({
+      orderId: 'order-1',
+      status: 'processed',
+      stripeEventId: 'evt_subscription_updated_123',
+    });
+    expect(tx.license.update).toHaveBeenCalledOnce();
+    expect(tx.mobileSession.updateMany).not.toHaveBeenCalled();
+    expect(mockSendEmail).not.toHaveBeenCalled();
+  });
+
+  it('expires the license and revokes mobile sessions when the subscription ends', async () => {
+    const tx = {
+      license: {
+        create: vi.fn(),
+        update: vi.fn().mockResolvedValue({
+          id: 'license-1',
+          status: 'expired',
+        }),
+      },
+      order: {
+        create: vi.fn(),
+        findFirst: vi.fn().mockResolvedValue({
+          billingPeriodEnd: new Date('2026-04-01T00:00:00.000Z'),
+          billingPeriodStart: new Date('2026-03-01T00:00:00.000Z'),
+          id: 'order-1',
+          licenseId: 'license-1',
+          payerEmail: 'reader@example.com',
+          status: 'paid',
+          stripeCheckoutSessionId: null,
+          stripeInvoiceId: 'in_test_123',
+          stripeSubscriptionId: 'sub_test_123',
+          tokenPackId: 'pack-pro',
+        }),
+        findUnique: vi.fn(),
+        update: vi.fn(),
+      },
+      mobileSession: {
+        updateMany: vi.fn().mockResolvedValue({ count: 2 }),
+      },
+      redeemCode: {
+        findUnique: vi.fn(),
+        upsert: vi.fn(),
+      },
+      stripeEvent: {
+        update: vi.fn().mockResolvedValue({}),
+      },
+      tokenLedger: {
+        findUnique: vi.fn(),
+        upsert: vi.fn(),
+      },
+      tokenPack: {
+        findUnique: vi.fn(),
+      },
+    };
+
+    mockDb.stripeEvent.findUnique.mockResolvedValue(null);
+    mockDb.stripeEvent.create.mockResolvedValue({
+      id: 'stripe-event-row-1',
+      orderId: null,
+      status: 'received',
+    });
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await processStripeWebhookEvent(subscriptionDeletedEvent, {
+      dbClient: mockDb,
+      log: mockLogger,
+      sendEmailFn: mockSendEmail,
+    });
+
+    expect(result).toEqual({
+      orderId: 'order-1',
+      status: 'processed',
+      stripeEventId: 'evt_subscription_deleted_123',
+    });
+    expect(tx.license.update).toHaveBeenCalledOnce();
+    expect(tx.mobileSession.updateMany).toHaveBeenCalledOnce();
+    expect(mockSendEmail).not.toHaveBeenCalled();
   });
 });

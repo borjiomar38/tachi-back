@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router';
 import {
   ActivityIcon,
   CpuIcon,
+  InboxIcon,
   KeyRoundIcon,
   LayoutDashboardIcon,
   PanelLeftIcon,
@@ -29,6 +30,7 @@ import {
 } from '@/components/ui/sidebar';
 
 import {
+  permissionContact,
   permissionJob,
   permissionLicense,
   permissionProvider,
@@ -92,11 +94,30 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
-          <WithPermissions permissions={[permissionLicense.read]}>
+          <WithPermissions
+            permissions={[permissionLicense.read, permissionContact.read]}
+          >
             <SidebarGroup>
               <SidebarGroupLabel>{t('layout:nav.support')}</SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
+                  <WithPermissions permissions={[permissionContact.read]}>
+                    <SidebarMenuItem>
+                      <Link to="/manager/contacts">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <InboxIcon />
+                                <span>{t('layout:nav.contacts')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                  </WithPermissions>
                   <SidebarMenuItem>
                     <Link to="/manager/licenses">
                       {({ isActive }) => (

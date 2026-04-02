@@ -42,7 +42,7 @@ export const envClient = createEnv({
       .string()
       .optional()
       .transform((value) => value ?? (isDev ? 'gold' : 'plum')),
-    VITE_STRIPE_PUBLIC_KEY: z.string().optional(),
+    VITE_LEMONSQUEEZY_STORE_URL: z.string().optional(),
     VITE_S3_BUCKET_PUBLIC_URL: z.url(),
   },
   runtimeEnv: {

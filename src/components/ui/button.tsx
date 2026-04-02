@@ -13,7 +13,7 @@ const buttonVariants = cva(
         default:
           'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 [a:hover_&]:bg-primary/90 [button:hover_&]:bg-primary/90',
         secondary:
-          'border-border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground [a:hover_&]:bg-accent [a:hover_&]:text-accent-foreground dark:[a:hover_&]:bg-accent dark:[a:hover_&]:text-accent-foreground [button:hover_&]:bg-accent [button:hover_&]:text-accent-foreground dark:[button:hover_&]:bg-accent dark:[button:hover_&]:text-accent-foreground',
+          'border-border bg-background text-foreground shadow-xs hover:bg-accent hover:text-accent-foreground [a:hover_&]:bg-accent [a:hover_&]:text-accent-foreground dark:[a:hover_&]:bg-accent dark:[a:hover_&]:text-accent-foreground [button:hover_&]:bg-accent [button:hover_&]:text-accent-foreground dark:[button:hover_&]:bg-accent dark:[button:hover_&]:text-accent-foreground',
         ghost:
           'hover:bg-black/5 dark:hover:bg-white/10 [a:hover_&]:bg-black/5 dark:[a:hover_&]:bg-white/10 [button:hover_&]:bg-black/5 dark:[button:hover_&]:bg-white/10',
         destructive:

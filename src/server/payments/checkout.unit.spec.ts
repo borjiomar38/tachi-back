@@ -77,6 +77,7 @@ describe('checkout payments', () => {
     });
 
     expect(params.customer_email).toBe('reader@example.com');
+    expect(params.mode).toBe('subscription');
     expect(params.line_items).toEqual([
       {
         price: 'price_pro_123',
@@ -88,11 +89,16 @@ describe('checkout payments', () => {
       token_pack_key: 'pro',
       total_tokens: '2750',
     });
+    expect(params.subscription_data).toMatchObject({
+      metadata: expect.objectContaining({
+        token_pack_key: 'pro',
+      }),
+    });
     expect(params.success_url).toContain('/checkout/success');
     expect(params.cancel_url).toContain('/checkout/cancel');
   });
 
-  it('creates a Stripe checkout session for an active mapped token pack', async () => {
+  it('creates a Stripe checkout session for an active mapped monthly plan', async () => {
     const stripeClient = {
       checkout: {
         sessions: {
@@ -145,7 +151,7 @@ describe('checkout payments', () => {
     );
   });
 
-  it('rejects checkout when the token pack has no Stripe price mapping', async () => {
+  it('rejects checkout when the monthly plan has no Stripe price mapping', async () => {
     mockDb.tokenPack.findUnique.mockResolvedValue({
       ...activeTokenPack,
       stripePriceId: null,
@@ -168,7 +174,7 @@ describe('checkout payments', () => {
     );
   });
 
-  it('rejects checkout when the token pack is missing', async () => {
+  it('rejects checkout when the monthly plan is missing', async () => {
     mockDb.tokenPack.findUnique.mockResolvedValue(null);
 
     await expect(

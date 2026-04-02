@@ -47,7 +47,7 @@ enum RedeemCodeStatus {
 }
 
 enum PaymentProvider {
-  stripe
+  lemonsqueezy
   manual
 }
 
@@ -60,7 +60,7 @@ enum OrderStatus {
   partially_refunded
 }
 
-enum StripeEventStatus {
+enum WebhookEventStatus {
   received
   processed
   ignored
@@ -120,6 +120,13 @@ enum ProviderUsageStage {
   postprocess
 }
 
+enum ContactMessageStatus {
+  unread
+  in_progress
+  resolved
+  spam
+}
+
 // Better Auth users are internal backoffice identities only.
 // Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
@@ -138,7 +145,8 @@ model User {
   banReason         String?
   banExpires        DateTime?
   onboardedAt       DateTime?
-  createdRedeemCodes RedeemCode[] @relation("RedeemCodeCreatedByUser")
+  createdRedeemCodes  RedeemCode[]     @relation("RedeemCodeCreatedByUser")
+  assignedContacts    ContactMessage[] @relation("ContactMessageAssignedToUser")
 
   @@unique([email])
   @@map("user")
@@ -295,7 +303,7 @@ model TokenPack {
   bonusTokenAmount Int      @default(0)
   priceAmountCents Int
   currency         String   @default("usd")
-  stripePriceId    String?  @unique
+  lsVariantId      String?  @unique
   active           Boolean  @default(true)
   sortOrder        Int      @default(0)
   createdAt        DateTime @default(now())
@@ -309,7 +317,7 @@ model TokenPack {
 
 model Order {
   id                     String          @id @default(cuid())
-  provider               PaymentProvider @default(stripe)
+  provider               PaymentProvider @default(lemonsqueezy)
   status                 OrderStatus     @default(pending)
   tokenPackId            String?
   licenseId              String?
@@ -318,9 +326,12 @@ model Order {
   amountSubtotalCents    Int             @default(0)
   amountDiscountCents    Int             @default(0)
   amountTotalCents       Int             @default(0)
-  stripeCheckoutSessionId String?        @unique
-  stripePaymentIntentId  String?         @unique
-  stripeCustomerId       String?
+  lsOrderId              String?         @unique
+  lsSubscriptionId       String?
+  lsCustomerId           String?
+  billingReason          String?
+  billingPeriodStart     DateTime?
+  billingPeriodEnd       DateTime?
   paidAt                 DateTime?
   rawPayload             Json?
   createdAt              DateTime        @default(now())
@@ -330,32 +341,33 @@ model Order {
   license       License?      @relation(fields: [licenseId], references: [id], onDelete: SetNull)
   redeemCodes   RedeemCode[]
   ledgerEntries TokenLedger[]
-  stripeEvents  StripeEvent[]
+  webhookEvents WebhookEvent[]
 
   @@index([status, createdAt])
   @@index([payerEmail])
   @@index([tokenPackId])
   @@index([licenseId])
+  @@index([lsSubscriptionId])
   @@map("orders")
 }
 
-model StripeEvent {
-  id            String            @id @default(cuid())
-  stripeEventId String            @unique
-  type          String
-  status        StripeEventStatus @default(received)
-  orderId       String?
-  payload       Json
-  processedAt   DateTime?
+model WebhookEvent {
+  id             String             @id @default(cuid())
+  lsEventId      String             @unique
+  type           String
+  status         WebhookEventStatus @default(received)
+  orderId        String?
+  payload        Json
+  processedAt    DateTime?
   failureMessage String?
-  createdAt     DateTime          @default(now())
-  updatedAt     DateTime          @updatedAt
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
 
   order Order? @relation(fields: [orderId], references: [id], onDelete: SetNull)
 
   @@index([status, createdAt])
   @@index([orderId])
-  @@map("stripe_events")
+  @@map("webhook_events")
 }
 
 model TokenLedger {
@@ -497,4 +509,29 @@ model ProviderUsage {
   @@index([jobId, stage])
   @@index([provider, createdAt])
   @@map("provider_usages")
+}
+
+model ContactMessage {
+  id               String               @id @default(cuid())
+  name             String
+  email            String
+  subject          String
+  message          String
+  status           ContactMessageStatus @default(unread)
+  source           String               @default("public_landing_form")
+  ipAddress        String?
+  userAgent        String?
+  internalNotes    String?
+  assignedToUserId String?
+  readAt           DateTime?
+  resolvedAt       DateTime?
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+
+  assignedToUser User? @relation("ContactMessageAssignedToUser", fields: [assignedToUserId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([email])
+  @@index([assignedToUserId, status])
+  @@map("contact_messages")
 }

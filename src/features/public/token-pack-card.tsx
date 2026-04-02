@@ -38,7 +38,7 @@ export const TokenPackCard = (props: {
           <div className="space-y-1">
             <CardTitle className="text-xl">{tokenPack.name}</CardTitle>
             <CardDescription className={textMutedClassName}>
-              {tokenPack.description ?? 'Hosted OCR and translation tokens.'}
+              {tokenPack.marketingSummary}
             </CardDescription>
           </div>
           {featured ? (
@@ -47,7 +47,7 @@ export const TokenPackCard = (props: {
             </Badge>
           ) : (
             <Badge variant="secondary" size="sm">
-              Token pack
+              Monthly plan
             </Badge>
           )}
         </div>
@@ -58,26 +58,24 @@ export const TokenPackCard = (props: {
             {formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)}
           </p>
           <p className={cn('text-sm', textMutedClassName)}>
-            {formatTokenCount(tokenPack.totalTokens)} total tokens
+            About{' '}
+            {formatTokenCount(tokenPack.marketedChaptersPerMonth)} chapters /
+            month
           </p>
         </div>
 
         <div className="grid gap-2 text-sm">
           <div className="flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2">
-            <span className={textMutedClassName}>Base tokens</span>
-            <span className="font-medium">
-              {formatTokenCount(tokenPack.tokenAmount)}
-            </span>
+            <span className={textMutedClassName}>Best for</span>
+            <span className="font-medium">{tokenPack.marketingSummary}</span>
           </div>
           <div className="flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2">
-            <span className={textMutedClassName}>Bonus tokens</span>
-            <span className="font-medium">
-              {formatTokenCount(tokenPack.bonusTokenAmount)}
-            </span>
+            <span className={textMutedClassName}>Detection</span>
+            <span className="font-medium">Powerful text scan</span>
           </div>
           <div className="flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2">
-            <span className={textMutedClassName}>Activation</span>
-            <span className="font-medium">Redeem code</span>
+            <span className={textMutedClassName}>Billing</span>
+            <span className="font-medium">Monthly renewal</span>
           </div>
         </div>
 
@@ -91,20 +89,27 @@ export const TokenPackCard = (props: {
               'w-full'
             )}
           >
-            {tokenPack.checkoutEnabled ? 'Buy with Stripe' : 'Contact support'}
+            {tokenPack.checkoutEnabled
+              ? 'Buy now'
+              : 'Contact support'}
           </a>
           <a
             href="/how-it-works"
             className={cn(buttonVariants({ variant: 'ghost' }), 'w-full')}
           >
-            How activation works
+            How it works
           </a>
         </div>
 
         <p className={cn('text-xs leading-5', textMutedClassName)}>
+          Simple monthly access for manga and manhwa translation inside the
+          app.
+        </p>
+
+        <p className={cn('text-xs leading-5', textMutedClassName)}>
           {tokenPack.checkoutEnabled
-            ? 'Stripe checkout starts the purchase. Token crediting and redeem-code delivery are finalized in later phases.'
-            : 'This pack is visible publicly, but Stripe checkout is not configured for it in this environment yet.'}
+            ? 'After payment, your activation code is sent by email.'
+            : 'Online payment is not configured in this environment yet.'}
         </p>
       </CardContent>
     </Card>

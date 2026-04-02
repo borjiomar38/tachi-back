@@ -17,21 +17,21 @@ import { TokenPackCard } from '@/features/public/token-pack-card';
 const pricingNotes = [
   {
     icon: CoinsIcon,
-    title: 'Server-controlled checkout',
+    title: 'Server-controlled subscriptions',
     description:
-      'The pricing cards resolve token packs on the server and only sell Stripe-mapped packs.',
+      'The pricing cards resolve monthly plans on the server and only sell Lemon Squeezy–mapped subscriptions.',
   },
   {
     icon: KeyRoundIcon,
     title: 'No account signup path',
     description:
-      'Activation is planned around redeem codes and installation binding, not customer dashboards.',
+      'Activation is planned around activation codes and installation binding, not customer dashboards.',
   },
   {
     icon: ShieldCheckIcon,
-    title: 'Fulfillment still deferred',
+    title: 'Recurring fulfillment path',
     description:
-      'Webhook crediting, redeem codes, device recovery, and refund tooling stay in later phases.',
+      'Webhook crediting now follows monthly invoices, while token expiry, device recovery, and refund tooling stay in later phases.',
   },
 ] as const;
 
@@ -45,8 +45,8 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
     <PublicShell>
       <PublicSection
         eyebrow="Pricing"
-        title="Token packs for hosted OCR and translation"
-        description="These public cards are sourced from the seeded token-pack data in Postgres, and Phase 6 adds the first trusted Stripe checkout path for packs with a configured Stripe price."
+        title="Monthly plans for hosted OCR and translation"
+        description="These public cards are sourced from the seeded plan data in Postgres, and Lemon Squeezy checkout now starts recurring monthly subscriptions for plans with a configured Lemon Squeezy price."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -68,9 +68,9 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
       </PublicSection>
 
       <PublicSection
-        eyebrow="Token packs"
-        title="Real packs, first checkout path"
-        description="Stripe can collect payment from these cards now, but token ledger posting, redeem-code generation, and activation still land in the next phases."
+        eyebrow="Monthly plans"
+        title="Real plans, recurring checkout path"
+        description="Lemon Squeezy can collect recurring payment from these cards now, and monthly token crediting is finalized from paid invoice webhooks."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {props.tokenPacks.map((tokenPack) => (
@@ -85,8 +85,8 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
 
       <PublicSection
         eyebrow="FAQ"
-        title="Questions pricing still needs to answer after checkout exists"
-        description="The website should set expectations now so later webhook, activation, and support work has less customer ambiguity."
+        title="Questions pricing still needs to answer after subscriptions exist"
+        description="The website should set expectations now so webhook, activation, renewal, and support work has less customer ambiguity."
         className="pb-20"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -114,7 +114,7 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
             href="/support"
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
-            Ask about activation timing
+            Ask about monthly billing
           </a>
         </div>
       </PublicSection>

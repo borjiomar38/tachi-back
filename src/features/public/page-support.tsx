@@ -68,7 +68,7 @@ export const PageSupport = () => {
                 Add the real support mailbox and SLA.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Link Stripe receipts and redeem emails back here once those
+                Link Lemon Squeezy receipts and redeem emails back here once those
                 phases exist.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">

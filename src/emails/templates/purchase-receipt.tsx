@@ -15,24 +15,29 @@ export const TemplatePurchaseReceipt = (props: {
 }) => {
   return (
     <EmailLayout
-      preview={`Your Tachiyomi Back redeem code for ${props.packName}`}
+      preview={`Your Tachiyomi Back activation code for ${props.packName}`}
       language={props.language}
     >
       <Container style={styles.container}>
-        <Heading style={styles.h1}>Your purchase is recorded</Heading>
+        <Heading style={styles.h1}>
+          Your subscription payment is recorded
+        </Heading>
         <Section style={styles.section}>
           <Text style={styles.text}>
-            Stripe payment for <strong>{props.packName}</strong> is now linked
-            to a pending Tachiyomi Back license with{' '}
-            <strong>{formatTokenCount(props.totalTokens)} tokens</strong>.
+            Lemon Squeezy billing for <strong>{props.packName}</strong> is now
+            linked to a pending Tachiyomi Back license with{' '}
+            <strong>
+              {formatTokenCount(props.totalTokens)} monthly tokens
+            </strong>
+            .
           </Text>
           <Text style={styles.text}>
-            Keep this redeem code for the activation flow:
+            Keep this activation code for the first device-binding flow:
           </Text>
           <Text style={styles.code}>{props.redeemCode}</Text>
           <Text style={styles.textMuted}>
             Hosted activation and device binding still land in later phases, so
-            support may guide the first redemptions manually while the Android
+            support may guide the first activations manually while the Android
             flow is being connected.
           </Text>
         </Section>

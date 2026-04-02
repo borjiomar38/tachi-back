@@ -141,12 +141,12 @@ export default {
                 },
               },
               {
-                stripeCheckoutSessionId: {
+                lsOrderId: {
                   contains: query,
                 },
               },
               {
-                stripePaymentIntentId: {
+                lsSubscriptionId: {
                   contains: query,
                 },
               },
@@ -167,8 +167,8 @@ export default {
             paidAt: true,
             payerEmail: true,
             status: true,
-            stripeCheckoutSessionId: true,
-            stripePaymentIntentId: true,
+            lsOrderId: true,
+            lsSubscriptionId: true,
           },
           take: input.limit,
         }),
@@ -223,20 +223,16 @@ export default {
             ? ('order_id' as const)
             : order.payerEmail?.toLowerCase().includes(normalizedQuery)
               ? ('payer_email' as const)
-              : order.stripeCheckoutSessionId
-                    ?.toLowerCase()
-                    .includes(normalizedQuery)
-                ? ('stripe_checkout_session_id' as const)
-                : ('stripe_payment_intent_id' as const),
+              : order.lsOrderId?.toLowerCase().includes(normalizedQuery)
+                ? ('ls_order_id' as const)
+                : ('ls_subscription_id' as const),
           matchedValue: order.id.toLowerCase().includes(normalizedQuery)
             ? order.id
             : order.payerEmail?.toLowerCase().includes(normalizedQuery)
               ? (order.payerEmail ?? query)
-              : order.stripeCheckoutSessionId
-                    ?.toLowerCase()
-                    .includes(normalizedQuery)
-                ? (order.stripeCheckoutSessionId ?? query)
-                : (order.stripePaymentIntentId ?? query),
+              : order.lsOrderId?.toLowerCase().includes(normalizedQuery)
+                ? (order.lsOrderId ?? query)
+                : (order.lsSubscriptionId ?? query),
           paidAt: order.paidAt,
           payerEmail: order.payerEmail,
           status: order.status,
@@ -453,8 +449,8 @@ export default {
             payerEmail: true,
             provider: true,
             status: true,
-            stripeCheckoutSessionId: true,
-            stripePaymentIntentId: true,
+            lsOrderId: true,
+            lsSubscriptionId: true,
             tokenPack: {
               select: {
                 name: true,
@@ -472,8 +468,8 @@ export default {
             payerEmail: order.payerEmail,
             provider: order.provider,
             status: order.status,
-            stripeCheckoutSessionId: order.stripeCheckoutSessionId,
-            stripePaymentIntentId: order.stripePaymentIntentId,
+            lsOrderId: order.lsOrderId,
+            lsSubscriptionId: order.lsSubscriptionId,
             tokenPackName: order.tokenPack?.name ?? null,
           }))
         );

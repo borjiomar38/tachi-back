@@ -19,7 +19,7 @@ export const Route = createFileRoute('/checkout/$tokenPackKey')({
   head: ({ params }) =>
     buildPublicPageHead(
       'Checkout',
-      `Stripe checkout entry point for the ${params.tokenPackKey} token pack.`
+      `Checkout entry point for the ${params.tokenPackKey} token pack.`
     ),
 });
 

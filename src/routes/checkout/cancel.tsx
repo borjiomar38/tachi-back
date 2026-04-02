@@ -15,7 +15,7 @@ export const Route = createFileRoute('/checkout/cancel')({
   head: () =>
     buildPublicPageHead(
       'Checkout Cancelled',
-      'Stripe checkout cancellation page for Tachiyomi Back.'
+      'Checkout cancellation page for Tachiyomi Back.'
     ),
 });
 

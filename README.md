@@ -14,6 +14,7 @@ The repository is currently in early Phase 15 hardening work: the starter domain
 - first hosted provider gateway foundation for OCR and translation
 - first mobile job creation, page upload, queueing, polling, and result-manifest endpoints
 - first backoffice support lookup plus license/device detail views
+- database-backed public contact form plus the first backoffice contact inbox/detail workflow
 - first backoffice jobs list/detail and provider-ops summary views
 - first Android hosted engine option, activation/session storage, settings UI, and chapter submission path
 - first Phase 15 hardening slice for request IDs and dedicated checkout/mobile-job rate limits
@@ -25,7 +26,7 @@ Not implemented yet:
 
 - complete mobile auth hardening and richer protected endpoints
 - durable worker runtime, cleanup tooling, and richer retries on top of the first inline job pipeline
-- remaining Phase 12/13 backoffice coverage for orders, redeem-code lists, audit views, manual support actions, and operator actions such as retry/cancel/refund review
+- remaining Phase 12/13 backoffice coverage for orders, redeem-code lists, audit views, manual support actions, and operator actions such as retry/cancel/refund review beyond the first contact inbox workflow
 - remaining Android hosted UX polish such as review mode, richer retry/recovery UX, and broader hosted-only reader surfaces
 - broader Phase 15 work such as metrics, restore rehearsals, launch checklists, incident runbooks, and richer abuse controls
 - replay tooling and broader Stripe event support beyond the first paid checkout completion path
@@ -76,6 +77,13 @@ pnpm dk:start
 
 If you change Docker port mappings in `.env`, use `docker compose up -d <service>` instead of `pnpm dk:start`, because `docker compose start` will not recreate containers with new port bindings.
 
+For local Stripe subscription testing, forward webhooks to `/api/stripe/webhook` and enable these events:
+
+- `invoice.paid`
+- `invoice.payment_failed`
+- `customer.subscription.updated`
+- `customer.subscription.deleted`
+
 Run the app:
 
 ```bash
@@ -88,7 +96,7 @@ pnpm dev
 - `pnpm db:migrate:dev` is the real development migration workflow for new schema changes.
 - `pnpm db:migrate:deploy` applies checked-in migrations without editing them.
 - `pnpm db:seed` assumes the schema already exists.
-- The seed now creates internal admin/staff accounts and initial token packs instead of demo business data.
+- The seed now creates internal admin/staff accounts, token packs, and a fake backoffice dataset for licenses, devices, redeem codes, orders, jobs, provider usage, and contact messages.
 
 ## Development URLs
 
@@ -103,6 +111,8 @@ After `pnpm db:init`, the seed creates:
 
 - admin: `admin@tachi-back.local`
 - support: `support@tachi-back.local`
+- demo support lookup data such as `alex.reader@demo.local`, `DEMO-ALEX-PRO-001`, `inst_demo_pixel8_alex`, and `lic_demo_unredeemed`
+- demo contact inbox messages such as `lina.checkout@demo.local`, `omar.activation@demo.local`, and `maya.billing@demo.local`
 
 These are internal backoffice accounts only. TachiyomiAT customers will not use Better Auth login for hosted access.
 

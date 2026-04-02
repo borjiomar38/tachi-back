@@ -1,11 +1,11 @@
-import type Stripe from 'stripe';
+import { createCheckout } from '@lemonsqueezy/lemonsqueezy.js';
 import { z } from 'zod';
 
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
 import { logger } from '@/server/logger';
-import { getStripeClient } from '@/server/payments/stripe';
+import { initLemonSqueezy } from '@/server/payments/lemonsqueezy';
 
 const checkoutTokenPackSelect = {
   id: true,
@@ -16,11 +16,11 @@ const checkoutTokenPackSelect = {
   bonusTokenAmount: true,
   priceAmountCents: true,
   currency: true,
-  stripePriceId: true,
+  lsVariantId: true,
   active: true,
 } as const;
 
-export const zCreateStripeCheckoutInput = z.object({
+export const zCreateCheckoutInput = z.object({
   tokenPackKey: z
     .string()
     .trim()
@@ -30,13 +30,11 @@ export const zCreateStripeCheckoutInput = z.object({
   payerEmail: z.string().trim().email().max(320),
 });
 
-export type CreateStripeCheckoutInput = z.infer<
-  typeof zCreateStripeCheckoutInput
->;
+export type CreateCheckoutInput = z.infer<typeof zCreateCheckoutInput>;
 
-export type StripeCheckoutErrorCode =
+export type CheckoutErrorCode =
   | 'checkout_unavailable'
-  | 'stripe_disabled'
+  | 'ls_disabled'
   | 'token_pack_not_found'
   | 'token_pack_unavailable';
 
@@ -47,9 +45,9 @@ export interface CheckoutTokenPack {
   description: string | null;
   id: string;
   key: string;
+  lsVariantId: string | null;
   name: string;
   priceAmountCents: number;
-  stripePriceId: string | null;
   tokenAmount: number;
 }
 
@@ -62,24 +60,14 @@ type CheckoutDbClient = {
   };
 };
 
-type CheckoutStripeClient = {
-  checkout: {
-    sessions: {
-      create: (
-        params: Stripe.Checkout.SessionCreateParams
-      ) => Promise<{ id: string; url: string | null }>;
-    };
-  };
-};
-
-export class StripeCheckoutError extends Error {
+export class CheckoutError extends Error {
   constructor(
-    public readonly code: StripeCheckoutErrorCode,
+    public readonly code: CheckoutErrorCode,
     message: string,
     public readonly status: number
   ) {
     super(message);
-    this.name = 'StripeCheckoutError';
+    this.name = 'CheckoutError';
   }
 }
 
@@ -97,77 +85,22 @@ export async function getCheckoutTokenPackByKey(
   });
 }
 
-export function buildStripeCheckoutSessionParams(input: {
-  baseUrl?: string;
-  envName?: string | undefined;
-  payerEmail: string;
-  tokenPack: {
-    id: string;
-    key: string;
-    name: string;
-    tokenAmount: number;
-    bonusTokenAmount: number;
-    stripePriceId: string;
-  };
-}): Stripe.Checkout.SessionCreateParams {
-  const baseUrl = input.baseUrl ?? envClient.VITE_BASE_URL;
-  const envName = input.envName ?? envClient.VITE_ENV_NAME ?? 'UNKNOWN';
-  const totalTokens =
-    input.tokenPack.tokenAmount + input.tokenPack.bonusTokenAmount;
-
-  const successUrl = new URL('/checkout/success', baseUrl);
-  successUrl.searchParams.set('tokenPack', input.tokenPack.key);
-  successUrl.searchParams.set('session_id', '{CHECKOUT_SESSION_ID}');
-
-  const cancelUrl = new URL('/checkout/cancel', baseUrl);
-  cancelUrl.searchParams.set('tokenPack', input.tokenPack.key);
-
-  const metadata = {
-    environment: envName,
-    purchase_source: 'public-web',
-    token_pack_id: input.tokenPack.id,
-    token_pack_key: input.tokenPack.key,
-    token_pack_name: input.tokenPack.name,
-    total_tokens: String(totalTokens),
-  } satisfies Record<string, string>;
-
-  return {
-    mode: 'payment',
-    billing_address_collection: 'auto',
-    cancel_url: cancelUrl.toString(),
-    client_reference_id: input.tokenPack.id,
-    customer_email: input.payerEmail,
-    line_items: [
-      {
-        price: input.tokenPack.stripePriceId,
-        quantity: 1,
-      },
-    ],
-    metadata,
-    payment_intent_data: {
-      metadata,
-    },
-    success_url: successUrl.toString(),
-  };
-}
-
-export async function createStripeCheckoutSession(
-  input: CreateStripeCheckoutInput,
+export async function createLemonSqueezyCheckout(
+  input: CreateCheckoutInput,
   deps: {
     baseUrl?: string;
     dbClient?: CheckoutDbClient;
     envName?: string | undefined;
     log?: Pick<typeof logger, 'info'>;
-    stripeClient?: CheckoutStripeClient;
-    stripeEnabled?: boolean;
+    lsEnabled?: boolean;
   } = {}
 ) {
-  const stripeEnabled = deps.stripeEnabled ?? envServer.STRIPE_ENABLED;
+  const lsEnabled = deps.lsEnabled ?? envServer.LEMONSQUEEZY_ENABLED;
 
-  if (!stripeEnabled) {
-    throw new StripeCheckoutError(
-      'stripe_disabled',
-      'Stripe checkout is disabled for this environment.',
+  if (!lsEnabled) {
+    throw new CheckoutError(
+      'ls_disabled',
+      'Lemon Squeezy checkout is disabled for this environment.',
       503
     );
   }
@@ -177,56 +110,83 @@ export async function createStripeCheckoutSession(
   });
 
   if (!tokenPack?.active) {
-    throw new StripeCheckoutError(
+    throw new CheckoutError(
       'token_pack_not_found',
-      'The selected token pack is not available.',
+      'The selected monthly plan is not available.',
       404
     );
   }
 
-  if (!tokenPack.stripePriceId) {
-    throw new StripeCheckoutError(
+  if (!tokenPack.lsVariantId) {
+    throw new CheckoutError(
       'token_pack_unavailable',
-      'The selected token pack does not have a Stripe price configured yet.',
+      'The selected monthly plan does not have a Lemon Squeezy variant configured yet.',
       409
     );
   }
 
-  const stripeClient = deps.stripeClient ?? getStripeClient();
-  const session = await stripeClient.checkout.sessions.create(
-    buildStripeCheckoutSessionParams({
-      baseUrl: deps.baseUrl,
-      envName: deps.envName,
-      payerEmail: input.payerEmail,
-      tokenPack: {
-        id: tokenPack.id,
-        key: tokenPack.key,
-        name: tokenPack.name,
-        tokenAmount: tokenPack.tokenAmount,
-        bonusTokenAmount: tokenPack.bonusTokenAmount,
-        stripePriceId: tokenPack.stripePriceId,
-      },
-    })
-  );
+  initLemonSqueezy();
 
-  if (!session.url) {
-    throw new StripeCheckoutError(
+  const storeId = envServer.LEMONSQUEEZY_STORE_ID;
+
+  if (!storeId) {
+    throw new CheckoutError(
       'checkout_unavailable',
-      'Stripe did not return a hosted checkout URL.',
+      'Lemon Squeezy store ID is not configured.',
       502
     );
   }
 
+  const baseUrl = deps.baseUrl ?? envClient.VITE_BASE_URL;
+  const envName = deps.envName ?? envClient.VITE_ENV_NAME ?? 'UNKNOWN';
+  const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
+
+  const successUrl = new URL('/checkout/success', baseUrl);
+  successUrl.searchParams.set('tokenPack', tokenPack.key);
+
+  const cancelUrl = new URL('/checkout/cancel', baseUrl);
+  cancelUrl.searchParams.set('tokenPack', tokenPack.key);
+
+  const { data, error } = await createCheckout(storeId, tokenPack.lsVariantId, {
+    checkoutData: {
+      email: input.payerEmail,
+      custom: {
+        environment: envName,
+        purchase_source: 'public-web',
+        token_pack_id: tokenPack.id,
+        token_pack_key: tokenPack.key,
+        token_pack_name: tokenPack.name,
+        total_tokens: String(totalTokens),
+      },
+    },
+    checkoutOptions: {
+      embed: false,
+    },
+    productOptions: {
+      redirectUrl: successUrl.toString(),
+    },
+  });
+
+  if (error || !data) {
+    throw new CheckoutError(
+      'checkout_unavailable',
+      'Lemon Squeezy did not return a checkout URL.',
+      502
+    );
+  }
+
+  const checkoutUrl = data.data.attributes.url;
+
   (deps.log ?? logger).info({
     scope: 'payments',
-    message: 'Created public Stripe checkout session',
-    stripeCheckoutSessionId: session.id,
+    message: 'Created Lemon Squeezy checkout',
+    lsCheckoutId: data.data.id,
     tokenPackKey: tokenPack.key,
   });
 
   return {
-    sessionId: session.id,
+    checkoutId: data.data.id,
     tokenPack,
-    url: session.url,
+    url: checkoutUrl,
   };
 }

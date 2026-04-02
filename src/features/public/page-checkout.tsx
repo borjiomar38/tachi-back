@@ -29,13 +29,13 @@ import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 const checkoutErrorMessages: Record<string, string> = {
   checkout_unavailable:
-    'Stripe did not return a hosted checkout URL. Please try again.',
+    'Lemon Squeezy did not return a checkout URL. Please try again.',
   invalid_request:
-    'Enter a valid payer email before continuing to Stripe.',
-  stripe_disabled: 'Stripe checkout is disabled in this environment.',
-  token_pack_not_found: 'The selected token pack is not available anymore.',
+    'Enter a valid payer email before continuing to checkout.',
+  ls_disabled: 'Checkout is disabled in this environment.',
+  token_pack_not_found: 'The selected monthly plan is not available anymore.',
   token_pack_unavailable:
-    'This token pack is visible publicly, but its Stripe price is not configured yet.',
+    'This monthly plan is visible publicly, but its Lemon Squeezy variant is not configured yet.',
 };
 
 export const PageCheckout = (props: {
@@ -56,16 +56,16 @@ export const PageCheckout = (props: {
       <PublicShell>
         <PublicSection
           eyebrow="Checkout"
-          title="Token pack not found"
-          description="This pack is not active on the public pricing surface anymore."
+          title="Monthly plan not found"
+          description="This plan is not active on the public pricing surface anymore."
           className="pb-20 pt-10"
         >
           <Card className="max-w-2xl rounded-[1.5rem]">
             <CardHeader className="gap-3">
               <CardTitle>Unavailable selection</CardTitle>
               <CardDescription>
-                The token pack key <code>{props.tokenPackKey}</code> does not
-                match an active public pack.
+                The plan key <code>{props.tokenPackKey}</code> does not match
+                an active public monthly plan.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-3">
@@ -92,8 +92,8 @@ export const PageCheckout = (props: {
     <PublicShell>
       <PublicSection
         eyebrow="Checkout"
-        title={`Buy ${props.tokenPack.name}`}
-        description="Stripe handles payment. Token crediting, redeem-code creation, and device activation still happen in later phases after webhook confirmation."
+        title={`Subscribe to ${props.tokenPack.name}`}
+        description="Lemon Squeezy handles recurring payment. Monthly token crediting, activation-code creation, and device activation are finalized after webhook confirmation."
         className="pb-20 pt-10"
       >
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
@@ -110,13 +110,13 @@ export const PageCheckout = (props: {
                   </CardDescription>
                 </div>
                 <Badge variant="warning" size="sm">
-                  Stripe
+                  Lemon Squeezy
                 </Badge>
               </div>
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="rounded-2xl border border-white/10 px-4 py-4">
-                <p className="text-sm text-neutral-300">One-time payment</p>
+                <p className="text-sm text-neutral-300">Monthly subscription</p>
                 <p className="mt-1 text-3xl font-semibold">
                   {formatCurrency(
                     props.tokenPack.priceAmountCents,
@@ -124,7 +124,7 @@ export const PageCheckout = (props: {
                   )}
                 </p>
                 <p className="mt-2 text-sm text-neutral-300">
-                  {formatTokenCount(props.tokenPack.totalTokens)} total tokens
+                  {formatTokenCount(props.tokenPack.totalTokens)} monthly tokens
                 </p>
               </div>
 
@@ -140,8 +140,8 @@ export const PageCheckout = (props: {
                   </span>
                 </div>
                 <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3">
-                  <span className="text-neutral-300">Activation</span>
-                  <span>Redeem code later</span>
+                  <span className="text-neutral-300">Billing</span>
+                  <span>Recurring monthly renewal</span>
                 </div>
               </div>
 
@@ -149,9 +149,9 @@ export const PageCheckout = (props: {
                 <CreditCardIcon />
                 <AlertTitle>What this page does</AlertTitle>
                 <AlertDescription className="text-neutral-300">
-                  This step only creates a Stripe Checkout Session. It does not
-                  credit tokens immediately, and it does not activate a device
-                  yet.
+                  This step only creates a checkout session. It does not
+                  credit monthly tokens immediately, and it does not activate a
+                  device yet.
                 </AlertDescription>
               </Alert>
             </CardContent>
@@ -171,25 +171,26 @@ export const PageCheckout = (props: {
                 <KeyRoundIcon />
                 <AlertTitle>Checkout not configured</AlertTitle>
                 <AlertDescription>
-                  This environment does not have a Stripe price mapped for{' '}
-                  {props.tokenPack.name} yet. Keep the pack visible publicly,
-                  but route customers to support until the mapping is in place.
+                  This environment does not have a Lemon Squeezy variant
+                  mapped for {props.tokenPack.name} yet. Keep the plan visible
+                  publicly, but route customers to support until the mapping is
+                  in place.
                 </AlertDescription>
               </Alert>
             ) : null}
 
             <Card className="rounded-[1.5rem]">
               <CardHeader className="gap-2">
-                <CardTitle>Continue with Stripe</CardTitle>
+                <CardTitle>Continue to checkout</CardTitle>
                 <CardDescription>
-                  Use the payer email you want receipts and later redeem-code
+                  Use the payer email you want receipts and activation-code
                   instructions tied to.
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4">
                 <form
                   method="POST"
-                  action="/api/stripe/checkout"
+                  action="/api/payments/checkout"
                   className="grid gap-4"
                 >
                   <input
@@ -216,8 +217,9 @@ export const PageCheckout = (props: {
                       startAddon={<MailIcon className="size-4" />}
                     />
                     <p className="text-sm text-muted-foreground">
-                      Stripe payment starts here. Support and activation still
-                      use redeem-code flows in later phases.
+                      Subscription checkout starts here. Support and
+                      activation still use activation-code flows after the first
+                      paid invoice.
                     </p>
                   </div>
 
@@ -227,7 +229,7 @@ export const PageCheckout = (props: {
                     className="w-full"
                     disabled={!props.tokenPack.checkoutEnabled}
                   >
-                    Continue to Stripe
+                    Continue to checkout
                   </Button>
                 </form>
 

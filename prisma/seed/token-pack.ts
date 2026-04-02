@@ -5,7 +5,7 @@ const tokenPacks = [
   {
     key: 'starter',
     name: 'Starter 500',
-    description: '500 hosted OCR/translation tokens for light usage.',
+    description: '500 hosted OCR/translation tokens refreshed every month.',
     tokenAmount: 500,
     bonusTokenAmount: 0,
     priceAmountCents: 999,
@@ -15,7 +15,7 @@ const tokenPacks = [
   {
     key: 'pro',
     name: 'Pro 2500',
-    description: '2500 tokens plus a small bonus for regular readers.',
+    description: '2500 tokens plus a small bonus refreshed every month.',
     tokenAmount: 2500,
     bonusTokenAmount: 250,
     priceAmountCents: 3999,
@@ -25,7 +25,7 @@ const tokenPacks = [
   {
     key: 'power',
     name: 'Power 7500',
-    description: '7500 tokens plus a larger bonus for heavy usage.',
+    description: '7500 tokens plus a larger bonus refreshed every month.',
     tokenAmount: 7500,
     bonusTokenAmount: 1000,
     priceAmountCents: 9999,
@@ -40,7 +40,7 @@ export async function createTokenPacks() {
   let createdCounter = 0;
 
   for (const tokenPack of tokenPacks) {
-    const stripePriceId = getStripePriceId(tokenPack.key);
+    const lsVariantId = getLsVariantId(tokenPack.key);
     const existing = await db.tokenPack.findUnique({
       where: { key: tokenPack.key },
       select: { id: true },
@@ -51,7 +51,7 @@ export async function createTokenPacks() {
         where: { key: tokenPack.key },
         data: {
           ...tokenPack,
-          stripePriceId,
+          lsVariantId,
         },
       });
       continue;
@@ -60,7 +60,7 @@ export async function createTokenPacks() {
     await db.tokenPack.create({
       data: {
         ...tokenPack,
-        stripePriceId,
+        lsVariantId,
       },
     });
     createdCounter += 1;
@@ -71,14 +71,14 @@ export async function createTokenPacks() {
   );
 }
 
-function getStripePriceId(tokenPackKey: (typeof tokenPacks)[number]['key']) {
+function getLsVariantId(tokenPackKey: (typeof tokenPacks)[number]['key']) {
   switch (tokenPackKey) {
     case 'starter':
-      return envServer.STRIPE_PRICE_TOKENS_STARTER ?? null;
+      return envServer.LEMONSQUEEZY_VARIANT_TOKENS_STARTER ?? null;
     case 'pro':
-      return envServer.STRIPE_PRICE_TOKENS_PRO ?? null;
+      return envServer.LEMONSQUEEZY_VARIANT_TOKENS_PRO ?? null;
     case 'power':
-      return envServer.STRIPE_PRICE_TOKENS_POWER ?? null;
+      return envServer.LEMONSQUEEZY_VARIANT_TOKENS_POWER ?? null;
     default:
       return null;
   }

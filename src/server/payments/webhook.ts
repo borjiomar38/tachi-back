@@ -1,5 +1,3 @@
-import type Stripe from 'stripe';
-
 import { DEFAULT_LANGUAGE_KEY } from '@/lib/i18n/constants';
 
 import TemplatePurchaseReceipt from '@/emails/templates/purchase-receipt';
@@ -10,11 +8,15 @@ import { generateRedeemCode } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 
 const orderSelect = {
+  billingPeriodEnd: true,
+  billingPeriodStart: true,
   id: true,
   licenseId: true,
   payerEmail: true,
   status: true,
-  stripeCheckoutSessionId: true,
+  lsOrderId: true,
+  lsSubscriptionId: true,
+  tokenPackId: true,
 } as const;
 
 const redeemCodeSelect = {
@@ -33,7 +35,7 @@ const tokenPackSelect = {
   tokenAmount: true,
 } as const;
 
-type StripeEventRecord = {
+type WebhookEventRecord = {
   id: string;
   orderId: string | null;
   status: 'failed' | 'ignored' | 'processed' | 'received';
@@ -50,6 +52,21 @@ type PaymentTx = {
         id: true;
       };
     }) => Promise<{ id: string }>;
+    update: (args: {
+      where: { id: string };
+      data: {
+        notes?: string | null;
+        revokedAt?: Date | null;
+        status?: 'active' | 'expired' | 'pending' | 'revoked' | 'suspended';
+      };
+      select: {
+        id: true;
+        status: true;
+      };
+    }) => Promise<{
+      id: string;
+      status: 'active' | 'expired' | 'pending' | 'revoked' | 'suspended';
+    }>;
   };
   order: {
     create: (args: {
@@ -57,33 +74,65 @@ type PaymentTx = {
         amountDiscountCents: number;
         amountSubtotalCents: number;
         amountTotalCents: number;
+        billingPeriodEnd?: Date | null;
+        billingPeriodStart?: Date | null;
+        billingReason?: string | null;
         currency: string;
-        paidAt: Date;
+        paidAt?: Date;
         payerEmail: string | null;
         rawPayload: Prisma.InputJsonValue;
-        status: 'paid';
-        stripeCheckoutSessionId: string;
-        stripeCustomerId: string | null;
-        stripePaymentIntentId: string | null;
-        tokenPackId: string;
+        status: 'failed' | 'paid';
+        lsOrderId?: string | null;
+        lsSubscriptionId?: string | null;
+        lsCustomerId?: string | null;
+        tokenPackId?: string | null;
+        licenseId?: string | null;
       };
       select: typeof orderSelect;
     }) => Promise<{
+      billingPeriodEnd: Date | null;
+      billingPeriodStart: Date | null;
       id: string;
       licenseId: string | null;
       payerEmail: string | null;
       status: string;
-      stripeCheckoutSessionId: string | null;
+      lsOrderId: string | null;
+      lsSubscriptionId: string | null;
+      tokenPackId: string | null;
     }>;
     findUnique: (args: {
-      where: { stripeCheckoutSessionId: string };
+      where: { lsOrderId?: string };
       select: typeof orderSelect;
     }) => Promise<{
+      billingPeriodEnd: Date | null;
+      billingPeriodStart: Date | null;
       id: string;
       licenseId: string | null;
       payerEmail: string | null;
       status: string;
-      stripeCheckoutSessionId: string | null;
+      lsOrderId: string | null;
+      lsSubscriptionId: string | null;
+      tokenPackId: string | null;
+    } | null>;
+    findFirst: (args: {
+      where: {
+        licenseId?: {
+          not?: null;
+        };
+        lsSubscriptionId?: string;
+      };
+      orderBy: { paidAt: 'desc' } | { createdAt: 'desc' };
+      select: typeof orderSelect;
+    }) => Promise<{
+      billingPeriodEnd: Date | null;
+      billingPeriodStart: Date | null;
+      id: string;
+      licenseId: string | null;
+      payerEmail: string | null;
+      status: string;
+      lsOrderId: string | null;
+      lsSubscriptionId: string | null;
+      tokenPackId: string | null;
     } | null>;
     update: (args: {
       where: { id: string };
@@ -91,24 +140,44 @@ type PaymentTx = {
         amountDiscountCents?: number;
         amountSubtotalCents?: number;
         amountTotalCents?: number;
+        billingPeriodEnd?: Date | null;
+        billingPeriodStart?: Date | null;
+        billingReason?: string | null;
         currency?: string;
         licenseId?: string;
         paidAt?: Date;
         payerEmail?: string | null;
         rawPayload?: Prisma.InputJsonValue;
-        status?: 'paid';
-        stripeCustomerId?: string | null;
-        stripePaymentIntentId?: string | null;
-        tokenPackId?: string;
+        status?: 'failed' | 'paid';
+        lsOrderId?: string | null;
+        lsSubscriptionId?: string | null;
+        lsCustomerId?: string | null;
+        tokenPackId?: string | null;
       };
       select: typeof orderSelect;
     }) => Promise<{
+      billingPeriodEnd: Date | null;
+      billingPeriodStart: Date | null;
       id: string;
       licenseId: string | null;
       payerEmail: string | null;
       status: string;
-      stripeCheckoutSessionId: string | null;
+      lsOrderId: string | null;
+      lsSubscriptionId: string | null;
+      tokenPackId: string | null;
     }>;
+  };
+  mobileSession: {
+    updateMany: (args: {
+      data: {
+        revokeReason?: string | null;
+        revokedAt?: Date | null;
+      };
+      where: {
+        licenseId: string;
+        revokedAt?: null;
+      };
+    }) => Promise<unknown>;
   };
   redeemCode: {
     findUnique: (args: {
@@ -133,7 +202,7 @@ type PaymentTx = {
       select: typeof redeemCodeSelect;
     }) => Promise<{ code: string; id: string }>;
   };
-  stripeEvent: {
+  webhookEvent: {
     update: (args: {
       where: { id: string };
       data: {
@@ -181,7 +250,7 @@ type PaymentTx = {
   };
   tokenPack: {
     findUnique: (args: {
-      where: { id?: string; key?: string };
+      where: { id?: string; key?: string; lsVariantId?: string };
       select: typeof tokenPackSelect;
     }) => Promise<{
       bonusTokenAmount: number;
@@ -198,11 +267,11 @@ type PaymentTx = {
 
 type PaymentDbClient = {
   $transaction: <T>(fn: (tx: PaymentTx) => Promise<T>) => Promise<T>;
-  stripeEvent: {
+  webhookEvent: {
     create: (args: {
       data: {
         payload: Prisma.InputJsonValue;
-        stripeEventId: string;
+        lsEventId: string;
         type: string;
       };
       select: {
@@ -210,84 +279,152 @@ type PaymentDbClient = {
         orderId: true;
         status: true;
       };
-    }) => Promise<StripeEventRecord>;
+    }) => Promise<WebhookEventRecord>;
     findUnique: (args: {
-      where: { stripeEventId: string };
+      where: { lsEventId: string };
       select: {
         id: true;
         orderId: true;
         status: true;
       };
-    }) => Promise<StripeEventRecord | null>;
-    update: PaymentTx['stripeEvent']['update'];
+    }) => Promise<WebhookEventRecord | null>;
+    update: PaymentTx['webhookEvent']['update'];
   };
 };
 
 type SendEmailFn = typeof sendEmail;
 
-export type ProcessStripeWebhookResult =
+export type ProcessWebhookResult =
   | {
       orderId?: undefined;
       status: 'already_processed' | 'ignored';
-      stripeEventId: string;
+      lsEventId: string;
     }
   | {
-      orderId: string;
+      orderId?: string;
       status: 'processed';
-      stripeEventId: string;
+      lsEventId: string;
     };
 
-export async function processStripeWebhookEvent(
-  event: Stripe.Event,
+type WebhookEmailPayload = {
+  packName: string;
+  redeemCode: string;
+  to: string;
+  totalTokens: number;
+};
+
+type WebhookFulfillment = {
+  email: WebhookEmailPayload | null;
+  orderId?: string;
+};
+
+// Lemon Squeezy webhook event shape
+export interface LemonSqueezyWebhookEvent {
+  meta: {
+    event_name: string;
+    custom_data?: Record<string, string>;
+  };
+  data: {
+    id: string;
+    type: string;
+    attributes: Record<string, unknown>;
+    relationships?: Record<string, unknown>;
+  };
+}
+
+export async function processWebhookEvent(
+  event: LemonSqueezyWebhookEvent,
   deps: {
     dbClient?: PaymentDbClient;
     log?: Pick<typeof logger, 'error' | 'info' | 'warn'>;
     sendEmailFn?: SendEmailFn;
   } = {}
-): Promise<ProcessStripeWebhookResult> {
+): Promise<ProcessWebhookResult> {
   const dbClient = deps.dbClient ?? (db as unknown as PaymentDbClient);
   const log = deps.log ?? logger;
   const sendEmailFn = deps.sendEmailFn ?? sendEmail;
-  const eventRecord = await getOrCreateStripeEventRecord(dbClient, event);
+  const eventName = event.meta.event_name;
+  const lsEventId = `${eventName}:${event.data.id}`;
+  const eventRecord = await getOrCreateEventRecord(
+    dbClient,
+    lsEventId,
+    eventName,
+    event
+  );
 
   if (eventRecord.status === 'processed') {
     return {
       status: 'already_processed',
-      stripeEventId: event.id,
+      lsEventId,
     };
   }
 
-  if (!isPaidCheckoutSessionCompletedEvent(event)) {
-    await dbClient.stripeEvent.update({
+  const isOrderCreated = eventName === 'order_created';
+  const isSubscriptionPaymentSuccess =
+    eventName === 'subscription_payment_success';
+  const isSubscriptionPaymentFailed =
+    eventName === 'subscription_payment_failed';
+  const isSubscriptionUpdated = eventName === 'subscription_updated';
+  const isSubscriptionCancelled = eventName === 'subscription_cancelled';
+  const isSubscriptionExpired = eventName === 'subscription_expired';
+
+  if (
+    !isOrderCreated &&
+    !isSubscriptionPaymentSuccess &&
+    !isSubscriptionPaymentFailed &&
+    !isSubscriptionUpdated &&
+    !isSubscriptionCancelled &&
+    !isSubscriptionExpired
+  ) {
+    await dbClient.webhookEvent.update({
       where: { id: eventRecord.id },
       data: {
         failureMessage: null,
         payload: event as unknown as Prisma.InputJsonValue,
         processedAt: new Date(),
         status: 'ignored',
-        type: event.type,
+        type: eventName,
       },
     });
 
     return {
       status: 'ignored',
-      stripeEventId: event.id,
+      lsEventId,
     };
   }
 
   try {
-    const fulfillment = await dbClient.$transaction((tx) =>
-      fulfillPaidCheckoutSession({
-        event,
-        eventRecordId: eventRecord.id,
-        tx,
-      })
+    const fulfillment = await dbClient.$transaction<WebhookFulfillment>(
+      (tx) => {
+        if (isOrderCreated) {
+          return fulfillPaidOrder({ event, eventRecordId: eventRecord.id, tx });
+        }
+        if (isSubscriptionPaymentSuccess) {
+          return fulfillSubscriptionPayment({
+            event,
+            eventRecordId: eventRecord.id,
+            tx,
+          });
+        }
+        if (isSubscriptionPaymentFailed) {
+          return recordFailedPayment({
+            event,
+            eventRecordId: eventRecord.id,
+            tx,
+          });
+        }
+        return handleSubscriptionLifecycleEvent({
+          event,
+          eventRecordId: eventRecord.id,
+          tx,
+        });
+      }
     );
 
     if (fulfillment.email) {
       try {
         await sendEmailFn({
-          subject: `Your Tachiyomi Back redeem code for ${fulfillment.email.packName}`,
+          subject: `Your Tachiyomi Back activation code for ${fulfillment.email.packName}`,
           template: TemplatePurchaseReceipt({
             language: DEFAULT_LANGUAGE_KEY,
             packName: fulfillment.email.packName,
@@ -302,7 +439,7 @@ export async function processStripeWebhookEvent(
           message: 'Purchase email failed after durable fulfillment',
           orderId: fulfillment.orderId,
           errorMessage: getErrorMessage(error),
-          stripeEventId: event.id,
+          lsEventId,
         });
       }
     }
@@ -310,50 +447,58 @@ export async function processStripeWebhookEvent(
     return {
       orderId: fulfillment.orderId,
       status: 'processed',
-      stripeEventId: event.id,
+      lsEventId,
     };
   } catch (error) {
-    await dbClient.stripeEvent.update({
+    await dbClient.webhookEvent.update({
       where: { id: eventRecord.id },
       data: {
         failureMessage: getErrorMessage(error),
         payload: event as unknown as Prisma.InputJsonValue,
         status: 'failed',
-        type: event.type,
+        type: eventName,
       },
     });
 
     log.error({
       scope: 'payments',
-      message: 'Stripe webhook processing failed',
+      message: 'Webhook processing failed',
       errorMessage: getErrorMessage(error),
-      stripeEventId: event.id,
-      type: event.type,
+      lsEventId,
+      type: eventName,
     });
 
     throw error;
   }
 }
 
-async function fulfillPaidCheckoutSession(input: {
-  event: Stripe.Event & {
-    data: {
-      object: Stripe.Checkout.Session;
-    };
-    type: 'checkout.session.completed';
-  };
+async function fulfillPaidOrder(input: {
+  event: LemonSqueezyWebhookEvent;
   eventRecordId: string;
   tx: PaymentTx;
-}) {
-  const session = input.event.data.object;
-  const tokenPack = await getTokenPackForSession(input.tx, session);
-  const orderPayload = session as unknown as Prisma.InputJsonValue;
-  const payerEmail = getPayerEmail(session);
-  const orderPaidAt = new Date(input.event.created * 1000);
+}): Promise<WebhookFulfillment> {
+  const attrs = input.event.data.attributes;
+  const customData = input.event.meta.custom_data ?? {};
+  const lsOrderId = String(input.event.data.id);
+  const lsSubscriptionId = attrs.first_order_item
+    ? String(
+        (attrs.first_order_item as Record<string, unknown>).subscription_id ??
+          ''
+      )
+    : null;
+  const lsCustomerId = String(attrs.customer_id ?? '');
+  const payerEmail = String(attrs.user_email ?? '') || null;
+  const totalCents = Number(attrs.total ?? 0);
+  const subtotalCents = Number(attrs.subtotal ?? totalCents);
+  const discountCents = Number(attrs.discount_total ?? 0);
+  const currency = String(attrs.currency ?? 'USD').toLowerCase();
+  const orderPayload = input.event as unknown as Prisma.InputJsonValue;
+  const orderPaidAt = new Date();
+
+  const tokenPack = await resolveTokenPack(input.tx, customData);
+
   const existingOrder = await input.tx.order.findUnique({
-    where: {
-      stripeCheckoutSessionId: session.id,
-    },
+    where: { lsOrderId },
     select: orderSelect,
   });
 
@@ -361,35 +506,33 @@ async function fulfillPaidCheckoutSession(input: {
     ? await input.tx.order.update({
         where: { id: existingOrder.id },
         data: {
-          amountDiscountCents: 0,
-          amountSubtotalCents:
-            session.amount_subtotal ?? tokenPack.priceAmountCents,
-          amountTotalCents: session.amount_total ?? tokenPack.priceAmountCents,
-          currency: session.currency ?? tokenPack.currency,
+          amountDiscountCents: discountCents,
+          amountSubtotalCents: subtotalCents,
+          amountTotalCents: totalCents,
+          currency,
           paidAt: orderPaidAt,
           payerEmail,
           rawPayload: orderPayload,
           status: 'paid',
-          stripeCustomerId: getExpandableId(session.customer),
-          stripePaymentIntentId: getExpandableId(session.payment_intent),
+          lsCustomerId,
+          lsSubscriptionId: lsSubscriptionId || undefined,
           tokenPackId: tokenPack.id,
         },
         select: orderSelect,
       })
     : await input.tx.order.create({
         data: {
-          amountDiscountCents: 0,
-          amountSubtotalCents:
-            session.amount_subtotal ?? tokenPack.priceAmountCents,
-          amountTotalCents: session.amount_total ?? tokenPack.priceAmountCents,
-          currency: session.currency ?? tokenPack.currency,
+          amountDiscountCents: discountCents,
+          amountSubtotalCents: subtotalCents,
+          amountTotalCents: totalCents,
+          currency,
           paidAt: orderPaidAt,
           payerEmail,
           rawPayload: orderPayload,
           status: 'paid',
-          stripeCheckoutSessionId: session.id,
-          stripeCustomerId: getExpandableId(session.customer),
-          stripePaymentIntentId: getExpandableId(session.payment_intent),
+          lsOrderId,
+          lsCustomerId,
+          lsSubscriptionId: lsSubscriptionId || undefined,
           tokenPackId: tokenPack.id,
         },
         select: orderSelect,
@@ -400,25 +543,21 @@ async function fulfillPaidCheckoutSession(input: {
   if (!licenseId) {
     const license = await input.tx.license.create({
       data: {
-        notes: `Created from Stripe checkout session ${session.id}`,
+        notes: `Created from Lemon Squeezy order ${lsOrderId}`,
         ownerEmail: payerEmail,
       },
-      select: {
-        id: true,
-      },
+      select: { id: true },
     });
 
     order = await input.tx.order.update({
       where: { id: order.id },
-      data: {
-        licenseId: license.id,
-      },
+      data: { licenseId: license.id },
       select: orderSelect,
     });
     licenseId = license.id;
   }
 
-  const redeemFulfillmentKey = buildRedeemFulfillmentKey(session.id);
+  const redeemFulfillmentKey = `ls:order:${lsOrderId}:redeem`;
   const existingRedeemCode = await input.tx.redeemCode.findUnique({
     where: { fulfillmentKey: redeemFulfillmentKey },
     select: redeemCodeSelect,
@@ -431,7 +570,7 @@ async function fulfillPaidCheckoutSession(input: {
       fulfillmentKey: redeemFulfillmentKey,
       licenseId,
       metadata: {
-        stripeCheckoutSessionId: session.id,
+        lsOrderId,
         tokenPackKey: tokenPack.key,
       } satisfies Prisma.InputJsonObject,
       orderId: order.id,
@@ -439,7 +578,7 @@ async function fulfillPaidCheckoutSession(input: {
     update: {
       licenseId,
       metadata: {
-        stripeCheckoutSessionId: session.id,
+        lsOrderId,
         tokenPackKey: tokenPack.key,
       } satisfies Prisma.InputJsonObject,
       orderId: order.id,
@@ -448,12 +587,10 @@ async function fulfillPaidCheckoutSession(input: {
     select: redeemCodeSelect,
   });
 
-  const purchaseCreditKey = buildPurchaseCreditIdempotencyKey(session.id);
+  const purchaseCreditKey = `ls:order:${lsOrderId}:purchase-credit`;
   const existingLedgerEntry = await input.tx.tokenLedger.findUnique({
     where: { idempotencyKey: purchaseCreditKey },
-    select: {
-      id: true,
-    },
+    select: { id: true },
   });
 
   const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
@@ -461,12 +598,12 @@ async function fulfillPaidCheckoutSession(input: {
     where: { idempotencyKey: purchaseCreditKey },
     create: {
       deltaTokens: totalTokens,
-      description: `${tokenPack.name} Stripe purchase credit`,
+      description: `${tokenPack.name} Lemon Squeezy purchase credit`,
       idempotencyKey: purchaseCreditKey,
       licenseId,
       metadata: {
-        stripeCheckoutSessionId: session.id,
-        stripeEventId: input.event.id,
+        lsOrderId,
+        lsEventId: `order_created:${input.event.data.id}`,
         tokenPackKey: tokenPack.key,
       } satisfies Prisma.InputJsonObject,
       orderId: order.id,
@@ -475,23 +612,21 @@ async function fulfillPaidCheckoutSession(input: {
       type: 'purchase_credit',
     },
     update: {
-      description: `${tokenPack.name} Stripe purchase credit`,
+      description: `${tokenPack.name} Lemon Squeezy purchase credit`,
       deltaTokens: totalTokens,
       metadata: {
-        stripeCheckoutSessionId: session.id,
-        stripeEventId: input.event.id,
+        lsOrderId,
+        lsEventId: `order_created:${input.event.data.id}`,
         tokenPackKey: tokenPack.key,
       } satisfies Prisma.InputJsonObject,
       orderId: order.id,
       redeemCodeId: redeemCode.id,
       status: 'posted',
     },
-    select: {
-      id: true,
-    },
+    select: { id: true },
   });
 
-  await input.tx.stripeEvent.update({
+  await input.tx.webhookEvent.update({
     where: { id: input.eventRecordId },
     data: {
       failureMessage: null,
@@ -499,7 +634,7 @@ async function fulfillPaidCheckoutSession(input: {
       payload: input.event as unknown as Prisma.InputJsonValue,
       processedAt: new Date(),
       status: 'processed',
-      type: input.event.type,
+      type: input.event.meta.event_name,
     },
   });
 
@@ -517,131 +652,402 @@ async function fulfillPaidCheckoutSession(input: {
   };
 }
 
-async function getOrCreateStripeEventRecord(
-  dbClient: PaymentDbClient,
-  event: Stripe.Event
-) {
-  const existing = await dbClient.stripeEvent.findUnique({
+async function fulfillSubscriptionPayment(input: {
+  event: LemonSqueezyWebhookEvent;
+  eventRecordId: string;
+  tx: PaymentTx;
+}): Promise<WebhookFulfillment> {
+  const attrs = input.event.data.attributes;
+  const customData = input.event.meta.custom_data ?? {};
+  const lsSubscriptionId = String(attrs.subscription_id ?? input.event.data.id);
+  const lsOrderId = `sub_payment:${input.event.data.id}`;
+  const lsCustomerId = String(attrs.customer_id ?? '');
+  const payerEmail = String(attrs.user_email ?? '') || null;
+  const totalCents = Number(attrs.total ?? 0);
+  const subtotalCents = Number(attrs.subtotal ?? totalCents);
+  const discountCents = Number(attrs.discount_total ?? 0);
+  const currency = String(attrs.currency ?? 'USD').toLowerCase();
+  const orderPayload = input.event as unknown as Prisma.InputJsonValue;
+  const orderPaidAt = new Date();
+
+  const tokenPack = await resolveTokenPack(input.tx, customData);
+
+  const previousSubscriptionOrder = await input.tx.order.findFirst({
     where: {
-      stripeEventId: event.id,
+      licenseId: { not: null },
+      lsSubscriptionId,
     },
-    select: {
-      id: true,
-      orderId: true,
-      status: true,
+    orderBy: { paidAt: 'desc' },
+    select: orderSelect,
+  });
+
+  const existingOrder = await input.tx.order.findUnique({
+    where: { lsOrderId },
+    select: orderSelect,
+  });
+
+  let order = existingOrder
+    ? await input.tx.order.update({
+        where: { id: existingOrder.id },
+        data: {
+          amountDiscountCents: discountCents,
+          amountSubtotalCents: subtotalCents,
+          amountTotalCents: totalCents,
+          currency,
+          paidAt: orderPaidAt,
+          payerEmail: payerEmail ?? existingOrder.payerEmail,
+          rawPayload: orderPayload,
+          status: 'paid',
+          lsCustomerId,
+          lsSubscriptionId,
+          tokenPackId: tokenPack.id,
+        },
+        select: orderSelect,
+      })
+    : await input.tx.order.create({
+        data: {
+          amountDiscountCents: discountCents,
+          amountSubtotalCents: subtotalCents,
+          amountTotalCents: totalCents,
+          currency,
+          paidAt: orderPaidAt,
+          payerEmail:
+            payerEmail ?? previousSubscriptionOrder?.payerEmail ?? null,
+          rawPayload: orderPayload,
+          status: 'paid',
+          lsOrderId,
+          lsCustomerId,
+          lsSubscriptionId,
+          tokenPackId: tokenPack.id,
+          licenseId: previousSubscriptionOrder?.licenseId ?? null,
+        },
+        select: orderSelect,
+      });
+
+  let licenseId =
+    order.licenseId ?? previousSubscriptionOrder?.licenseId ?? null;
+
+  if (!licenseId) {
+    const license = await input.tx.license.create({
+      data: {
+        notes: `Created from Lemon Squeezy subscription ${lsSubscriptionId}`,
+        ownerEmail: payerEmail,
+      },
+      select: { id: true },
+    });
+
+    order = await input.tx.order.update({
+      where: { id: order.id },
+      data: { licenseId: license.id },
+      select: orderSelect,
+    });
+    licenseId = license.id;
+  }
+
+  const redeemFulfillmentKey = `ls:subscription:${lsSubscriptionId}:redeem`;
+  const existingRedeemCode = await input.tx.redeemCode.findUnique({
+    where: { fulfillmentKey: redeemFulfillmentKey },
+    select: redeemCodeSelect,
+  });
+
+  const redeemCode = await input.tx.redeemCode.upsert({
+    where: { fulfillmentKey: redeemFulfillmentKey },
+    create: {
+      code: generateRedeemCode(),
+      fulfillmentKey: redeemFulfillmentKey,
+      licenseId,
+      metadata: {
+        lsSubscriptionId,
+        tokenPackKey: tokenPack.key,
+      } satisfies Prisma.InputJsonObject,
+      orderId: order.id,
+    },
+    update: {
+      licenseId,
+      metadata: {
+        lsSubscriptionId,
+        tokenPackKey: tokenPack.key,
+      } satisfies Prisma.InputJsonObject,
+      orderId: order.id,
+      status: 'available',
+    },
+    select: redeemCodeSelect,
+  });
+
+  const creditIdempotencyKey = `ls:sub_payment:${input.event.data.id}:purchase-credit`;
+  const existingLedgerEntry = await input.tx.tokenLedger.findUnique({
+    where: { idempotencyKey: creditIdempotencyKey },
+    select: { id: true },
+  });
+
+  const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
+  await input.tx.tokenLedger.upsert({
+    where: { idempotencyKey: creditIdempotencyKey },
+    create: {
+      deltaTokens: totalTokens,
+      description: `${tokenPack.name} monthly subscription credit`,
+      idempotencyKey: creditIdempotencyKey,
+      licenseId,
+      metadata: {
+        lsEventId: `subscription_payment_success:${input.event.data.id}`,
+        lsSubscriptionId,
+        tokenPackKey: tokenPack.key,
+      } satisfies Prisma.InputJsonObject,
+      orderId: order.id,
+      redeemCodeId: redeemCode.id,
+      status: 'posted',
+      type: 'purchase_credit',
+    },
+    update: {
+      description: `${tokenPack.name} monthly subscription credit`,
+      deltaTokens: totalTokens,
+      metadata: {
+        lsEventId: `subscription_payment_success:${input.event.data.id}`,
+        lsSubscriptionId,
+        tokenPackKey: tokenPack.key,
+      } satisfies Prisma.InputJsonObject,
+      orderId: order.id,
+      redeemCodeId: redeemCode.id,
+      status: 'posted',
+    },
+    select: { id: true },
+  });
+
+  await input.tx.webhookEvent.update({
+    where: { id: input.eventRecordId },
+    data: {
+      failureMessage: null,
+      orderId: order.id,
+      payload: input.event as unknown as Prisma.InputJsonValue,
+      processedAt: new Date(),
+      status: 'processed',
+      type: input.event.meta.event_name,
     },
   });
 
-  if (existing) {
-    return existing;
+  return {
+    email:
+      payerEmail && (!existingRedeemCode || !existingLedgerEntry)
+        ? {
+            packName: tokenPack.name,
+            redeemCode: redeemCode.code,
+            to: payerEmail,
+            totalTokens,
+          }
+        : null,
+    orderId: order.id,
+  };
+}
+
+async function recordFailedPayment(input: {
+  event: LemonSqueezyWebhookEvent;
+  eventRecordId: string;
+  tx: PaymentTx;
+}): Promise<WebhookFulfillment> {
+  const attrs = input.event.data.attributes;
+  const customData = input.event.meta.custom_data ?? {};
+  const lsOrderId = `sub_payment_failed:${input.event.data.id}`;
+  const lsSubscriptionId = String(attrs.subscription_id ?? input.event.data.id);
+  const lsCustomerId = String(attrs.customer_id ?? '');
+  const payerEmail = String(attrs.user_email ?? '') || null;
+  const totalCents = Number(attrs.total ?? 0);
+  const subtotalCents = Number(attrs.subtotal ?? totalCents);
+  const discountCents = Number(attrs.discount_total ?? 0);
+  const currency = String(attrs.currency ?? 'USD').toLowerCase();
+  const orderPayload = input.event as unknown as Prisma.InputJsonValue;
+
+  const tokenPack = await resolveTokenPack(input.tx, customData);
+
+  const previousSubscriptionOrder = await input.tx.order.findFirst({
+    where: {
+      licenseId: { not: null },
+      lsSubscriptionId,
+    },
+    orderBy: { paidAt: 'desc' },
+    select: orderSelect,
+  });
+
+  await input.tx.order.create({
+    data: {
+      amountDiscountCents: discountCents,
+      amountSubtotalCents: subtotalCents,
+      amountTotalCents: totalCents,
+      currency,
+      payerEmail: payerEmail ?? previousSubscriptionOrder?.payerEmail ?? null,
+      rawPayload: orderPayload,
+      status: 'failed',
+      lsOrderId,
+      lsCustomerId,
+      lsSubscriptionId,
+      tokenPackId: tokenPack.id,
+      licenseId: previousSubscriptionOrder?.licenseId ?? null,
+    },
+    select: orderSelect,
+  });
+
+  await input.tx.webhookEvent.update({
+    where: { id: input.eventRecordId },
+    data: {
+      failureMessage: null,
+      payload: input.event as unknown as Prisma.InputJsonValue,
+      processedAt: new Date(),
+      status: 'processed',
+      type: input.event.meta.event_name,
+    },
+  });
+
+  return { email: null };
+}
+
+async function handleSubscriptionLifecycleEvent(input: {
+  event: LemonSqueezyWebhookEvent;
+  eventRecordId: string;
+  tx: PaymentTx;
+}): Promise<WebhookFulfillment> {
+  const attrs = input.event.data.attributes;
+  const lsSubscriptionId = String(input.event.data.id);
+  const lsStatus = String(attrs.status ?? '');
+  const eventName = input.event.meta.event_name;
+
+  const latestOrder = await input.tx.order.findFirst({
+    where: {
+      licenseId: { not: null },
+      lsSubscriptionId,
+    },
+    orderBy: { paidAt: 'desc' },
+    select: orderSelect,
+  });
+
+  const nextLicenseStatus = mapLsStatusToLicenseStatus(eventName, lsStatus);
+  const lifecycleTimestamp = new Date();
+
+  if (latestOrder?.licenseId) {
+    await input.tx.license.update({
+      where: { id: latestOrder.licenseId },
+      data: {
+        notes: `Lemon Squeezy subscription ${lsSubscriptionId}: ${eventName} (status: ${lsStatus})`,
+        revokedAt: nextLicenseStatus === 'expired' ? lifecycleTimestamp : null,
+        status: nextLicenseStatus,
+      },
+      select: { id: true, status: true },
+    });
+
+    if (nextLicenseStatus === 'expired') {
+      await input.tx.mobileSession.updateMany({
+        data: {
+          revokeReason: 'subscription_ended',
+          revokedAt: lifecycleTimestamp,
+        },
+        where: {
+          licenseId: latestOrder.licenseId,
+          revokedAt: null,
+        },
+      });
+    }
   }
 
+  await input.tx.webhookEvent.update({
+    where: { id: input.eventRecordId },
+    data: {
+      failureMessage: null,
+      orderId: latestOrder?.id,
+      payload: input.event as unknown as Prisma.InputJsonValue,
+      processedAt: lifecycleTimestamp,
+      status: 'processed',
+      type: eventName,
+    },
+  });
+
+  return {
+    email: null,
+    orderId: latestOrder?.id,
+  };
+}
+
+function mapLsStatusToLicenseStatus(
+  eventName: string,
+  lsStatus: string
+): 'active' | 'expired' | 'pending' | 'revoked' | 'suspended' {
+  if (
+    eventName === 'subscription_cancelled' ||
+    eventName === 'subscription_expired'
+  ) {
+    return 'expired';
+  }
+
+  switch (lsStatus) {
+    case 'active':
+    case 'on_trial':
+      return 'active';
+    case 'past_due':
+    case 'unpaid':
+    case 'paused':
+      return 'suspended';
+    case 'cancelled':
+    case 'expired':
+      return 'expired';
+    default:
+      return 'pending';
+  }
+}
+
+async function resolveTokenPack(
+  tx: PaymentTx,
+  customData: Record<string, string>
+) {
+  if (customData.token_pack_id) {
+    const pack = await tx.tokenPack.findUnique({
+      where: { id: customData.token_pack_id },
+      select: tokenPackSelect,
+    });
+    if (pack) return pack;
+  }
+
+  if (customData.token_pack_key) {
+    const pack = await tx.tokenPack.findUnique({
+      where: { key: customData.token_pack_key },
+      select: tokenPackSelect,
+    });
+    if (pack) return pack;
+  }
+
+  throw new Error(
+    `Could not resolve token pack from webhook custom data: ${JSON.stringify(customData)}`
+  );
+}
+
+async function getOrCreateEventRecord(
+  dbClient: PaymentDbClient,
+  lsEventId: string,
+  eventType: string,
+  event: LemonSqueezyWebhookEvent
+) {
+  const existing = await dbClient.webhookEvent.findUnique({
+    where: { lsEventId },
+    select: { id: true, orderId: true, status: true },
+  });
+
+  if (existing) return existing;
+
   try {
-    return await dbClient.stripeEvent.create({
+    return await dbClient.webhookEvent.create({
       data: {
         payload: event as unknown as Prisma.InputJsonValue,
-        stripeEventId: event.id,
-        type: event.type,
+        lsEventId,
+        type: eventType,
       },
-      select: {
-        id: true,
-        orderId: true,
-        status: true,
-      },
+      select: { id: true, orderId: true, status: true },
     });
   } catch (error) {
     if (isUniqueConstraintError(error)) {
-      const concurrentExisting = await dbClient.stripeEvent.findUnique({
-        where: {
-          stripeEventId: event.id,
-        },
-        select: {
-          id: true,
-          orderId: true,
-          status: true,
-        },
+      const concurrentExisting = await dbClient.webhookEvent.findUnique({
+        where: { lsEventId },
+        select: { id: true, orderId: true, status: true },
       });
-
-      if (concurrentExisting) {
-        return concurrentExisting;
-      }
+      if (concurrentExisting) return concurrentExisting;
     }
-
     throw error;
   }
-}
-
-function isPaidCheckoutSessionCompletedEvent(
-  event: Stripe.Event
-): event is Stripe.Event & {
-  data: {
-    object: Stripe.Checkout.Session;
-  };
-  type: 'checkout.session.completed';
-} {
-  if (event.type !== 'checkout.session.completed') {
-    return false;
-  }
-
-  const session = event.data.object as Stripe.Checkout.Session;
-
-  return session.mode === 'payment' && session.payment_status === 'paid';
-}
-
-async function getTokenPackForSession(
-  tx: PaymentTx,
-  session: Stripe.Checkout.Session
-) {
-  const tokenPackId = session.metadata?.token_pack_id;
-  const tokenPackKey = session.metadata?.token_pack_key;
-
-  const tokenPack = tokenPackId
-    ? await tx.tokenPack.findUnique({
-        where: { id: tokenPackId },
-        select: tokenPackSelect,
-      })
-    : tokenPackKey
-      ? await tx.tokenPack.findUnique({
-          where: { key: tokenPackKey },
-          select: tokenPackSelect,
-        })
-      : null;
-
-  if (!tokenPack) {
-    throw new Error(
-      'Stripe checkout session does not resolve to a token pack.'
-    );
-  }
-
-  return tokenPack;
-}
-
-function getPayerEmail(session: Stripe.Checkout.Session) {
-  return session.customer_details?.email ?? session.customer_email ?? null;
-}
-
-function buildRedeemFulfillmentKey(checkoutSessionId: string) {
-  return `stripe:checkout:${checkoutSessionId}:redeem`;
-}
-
-function buildPurchaseCreditIdempotencyKey(checkoutSessionId: string) {
-  return `stripe:checkout:${checkoutSessionId}:purchase-credit`;
-}
-
-function getExpandableId(
-  value:
-    | { id: string }
-    | string
-    | Stripe.Customer
-    | Stripe.DeletedCustomer
-    | Stripe.PaymentIntent
-    | null
-) {
-  if (!value) {
-    return null;
-  }
-
-  return typeof value === 'string' ? value : value.id;
 }
 
 function isUniqueConstraintError(error: unknown) {

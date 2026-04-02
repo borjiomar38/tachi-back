@@ -13,6 +13,7 @@ const statement = {
   account: ['read', 'update'],
   apps: ['app', 'manager'],
   staff: ['list', 'create', 'update', 'delete'],
+  contact: ['read', 'update', 'delete'],
   license: ['read', 'manual-credit', 'revoke', 'generate-redeem-code'],
   device: ['read', 'revoke'],
   order: ['read', 'refund'],
@@ -28,6 +29,7 @@ const support = ac.newRole({
   account: ['update'],
   apps: ['manager'],
   staff: ['list'],
+  contact: ['read', 'update'],
   license: ['read'],
   device: ['read'],
   order: ['read'],
@@ -42,6 +44,7 @@ const admin = ac.newRole({
   account: ['read', 'update'],
   apps: ['app', 'manager'],
   staff: ['list', 'create', 'update', 'delete'],
+  contact: ['read', 'update', 'delete'],
   license: ['read', 'manual-credit', 'revoke', 'generate-redeem-code'],
   device: ['read', 'revoke'],
   order: ['read', 'refund'],
@@ -78,6 +81,12 @@ export const permissionStaff = {
   create: { staff: ['create'] },
   update: { staff: ['update'] },
   delete: { staff: ['delete'] },
+} as const satisfies Record<string, Permission>;
+
+export const permissionContact = {
+  read: { contact: ['read'] },
+  update: { contact: ['update'] },
+  delete: { contact: ['delete'] },
 } as const satisfies Record<string, Permission>;
 
 export const permissionLicense = {

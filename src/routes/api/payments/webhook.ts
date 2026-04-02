@@ -2,34 +2,34 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { envServer } from '@/env/server';
 import { logger } from '@/server/logger';
-import { constructStripeWebhookEvent } from '@/server/payments/stripe';
-import { processStripeWebhookEvent } from '@/server/payments/webhook';
+import { verifyLemonSqueezyWebhookSignature } from '@/server/payments/lemonsqueezy';
+import { processWebhookEvent } from '@/server/payments/webhook';
 
-export const Route = createFileRoute('/api/stripe/webhook')({
+export const Route = createFileRoute('/api/payments/webhook')({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        if (!envServer.STRIPE_ENABLED) {
-          return new Response('Stripe disabled', { status: 503 });
+        if (!envServer.LEMONSQUEEZY_ENABLED) {
+          return new Response('Lemon Squeezy disabled', { status: 503 });
         }
 
-        const signature = request.headers.get('stripe-signature');
+        const signature = request.headers.get('x-signature');
 
         if (!signature) {
-          return new Response('Missing stripe-signature header', {
+          return new Response('Missing x-signature header', {
             status: 400,
           });
         }
 
         const payload = await request.text();
-        let event;
+        let isValid: boolean;
 
         try {
-          event = constructStripeWebhookEvent({ payload, signature });
+          isValid = verifyLemonSqueezyWebhookSignature({ payload, signature });
         } catch (error) {
           logger.error({
             scope: 'payments',
-            message: 'Stripe webhook signature verification failed',
+            message: 'Lemon Squeezy webhook signature verification failed',
             errorMessage:
               error instanceof Error ? error.message : 'Unknown error',
           });
@@ -39,8 +39,19 @@ export const Route = createFileRoute('/api/stripe/webhook')({
           });
         }
 
+        if (!isValid) {
+          return new Response('Invalid webhook signature', { status: 400 });
+        }
+
+        let event;
         try {
-          const result = await processStripeWebhookEvent(event);
+          event = JSON.parse(payload);
+        } catch {
+          return new Response('Invalid JSON payload', { status: 400 });
+        }
+
+        try {
+          const result = await processWebhookEvent(event);
 
           return Response.json({
             ok: true,
@@ -49,10 +60,10 @@ export const Route = createFileRoute('/api/stripe/webhook')({
         } catch (error) {
           logger.error({
             scope: 'payments',
-            message: 'Stripe webhook processing failed',
+            message: 'Webhook processing failed',
             errorMessage:
               error instanceof Error ? error.message : 'Unknown error',
-            stripeEventId: event.id,
+            eventName: event?.meta?.event_name,
           });
 
           return new Response('Webhook processing failed', {

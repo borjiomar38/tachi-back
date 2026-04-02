@@ -4,7 +4,6 @@ import {
   KeyRoundIcon,
   LanguagesIcon,
   MailIcon,
-  ServerIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
@@ -12,7 +11,7 @@ import {
 import { cn } from '@/lib/tailwind/utils';
 
 import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -20,10 +19,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 import {
   activationSteps,
-  PUBLIC_SUPPORT_EMAIL,
   publicHighlights,
   type PublicTokenPack,
   supportFaqs,
@@ -32,7 +33,7 @@ import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
 
 const highlightIcons = [
-  ServerIcon,
+  LanguagesIcon,
   KeyRoundIcon,
   CoinsIcon,
   ShieldCheckIcon,
@@ -42,7 +43,7 @@ const contactCards = [
   {
     title: 'Billing and packs',
     description:
-      'Questions about token packs, checkout, receipts, or which hosted plan to start with.',
+      'Questions about plans, payment, or which offer fits your reading style.',
     href: '/pricing',
     cta: 'View pricing',
     icon: CoinsIcon,
@@ -50,7 +51,7 @@ const contactCards = [
   {
     title: 'Activation and devices',
     description:
-      'Need help with redeem codes, device binding, or recovering access on a new installation.',
+      'Need help with your activation code or moving access to another device.',
     href: '/support',
     cta: 'Open support',
     icon: KeyRoundIcon,
@@ -58,7 +59,7 @@ const contactCards = [
   {
     title: 'Download and setup',
     description:
-      'See the current Android state, hosted roadmap, and how TachiyomiAT fits into the flow.',
+      'See where to download the app and how to start quickly.',
     href: '/download',
     cta: 'Read setup guide',
     icon: SmartphoneIcon,
@@ -66,14 +67,17 @@ const contactCards = [
   {
     title: 'General contact',
     description:
-      'Reach the team directly for roadmap, launch-readiness, or support questions.',
-    href: `mailto:${PUBLIC_SUPPORT_EMAIL}`,
-    cta: PUBLIC_SUPPORT_EMAIL,
+      'Send a simple message if you need help before or after payment.',
+    href: '/#contact',
+    cta: 'Open contact form',
     icon: MailIcon,
   },
 ] as const;
 
-export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
+export const PageLanding = (props: {
+  contactStatus?: 'sent' | 'error' | 'invalid';
+  tokenPacks: PublicTokenPack[];
+}) => {
   const featuredTokenPack =
     props.tokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
     props.tokenPacks[1] ??
@@ -89,20 +93,18 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
           <div className="grid gap-10 px-6 py-8 md:px-10 md:py-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
               <Badge variant="warning" size="sm">
-                Hosted OCR launch surface
+                Manga & manhwa translation
               </Badge>
               <div className="space-y-4">
                 <p className="text-sm font-medium tracking-[0.24em] text-muted-foreground uppercase">
-                  Hosted OCR + translation for TachiyomiAT
+                  Simple translation inside TachiyomiAT
                 </p>
                 <h1 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
-                  Sell token-based OCR and translation without exposing
-                  provider keys on the device.
+                  Translate manga and manhwa with powerful text detection.
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-                  Tachiyomi Back is the backend and backoffice layer for hosted
-                  OCR, translation, token packs, redeem-code activation, and
-                  support operations around TachiyomiAT.
+                  Choose a monthly plan, receive your activation code by email,
+                  and start translating chapters in the app.
                 </p>
               </div>
 
@@ -112,7 +114,7 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
                   className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
                 >
                   <span className="flex items-center gap-2">
-                    See token packs
+                    See monthly plans
                     <ArrowRightIcon className="size-4" />
                   </span>
                 </a>
@@ -134,13 +136,11 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
                 <CardHeader className="gap-2">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <SmartphoneIcon className="size-5" />
-                    Current Android reality
+                    Simple user flow
                   </CardTitle>
                   <CardDescription className="text-warning-900 dark:text-warning-100">
-                    TachiyomiAT still ships local translators and asks users to
-                    provide their own API keys for hosted providers today.
-                    This public site explains the hosted direction without
-                    pretending the mobile integration already ships.
+                    Pay for a plan, receive your activation code, enter it once
+                    in the app, and translate the chapters you want to read.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -168,24 +168,20 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
 
               <Card className="rounded-[1.5rem]">
                 <CardHeader className="gap-2">
-                  <CardTitle className="text-xl">At a glance</CardTitle>
+                  <CardTitle className="text-xl">Why people use it</CardTitle>
                   <CardDescription>
-                    The hosted product is designed around backend routing,
-                    token packs, and device-bound activation.
+                    Built to feel simple for readers, not technical users.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-3">
                   <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Server-side OCR and translation providers keep keys off the
-                    device.
+                    Powerful text detection for manga and manhwa pages.
                   </div>
                   <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Stripe checkout sells token packs without forcing a user
-                    account.
+                    Simple monthly plans with activation by email.
                   </div>
                   <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Redeem codes and device binding connect paid usage to a
-                    TachiyomiAT installation.
+                    Translate directly in the app without complicated setup.
                   </div>
                 </CardContent>
               </Card>
@@ -197,18 +193,17 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
       <PublicSection
         id="demo"
         eyebrow="Demo"
-        title="See the hosted workflow before Android launch"
-        description="The demo section now pairs a real Tachiyomi walkthrough video with the hosted backend flow: tokens, redeem-code activation, backend OCR and translation, and results that keep the existing reader output contract."
+        title="See how it feels in the app"
+        description="The goal is simple: open a chapter, activate your plan once, translate, and keep reading your manga or manhwa."
       >
         <Card className="mb-4 overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
           <CardHeader className="gap-2 border-b border-white/10">
             <CardTitle className="text-2xl">
-              Video demo: How to Use Tachiyomi App
+              Video demo
             </CardTitle>
             <CardDescription className="text-neutral-300">
-              This YouTube demo shows the baseline Tachiyomi experience first.
-              Your hosted OCR and translation flow extends that same app usage
-              pattern instead of replacing it with a separate reader.
+              This video shows the reading experience in Tachiyomi. The hosted
+              translation service fits into that same flow.
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4 p-0 lg:grid-cols-[1.15fr_0.85fr]">
@@ -228,17 +223,14 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
               </p>
               <div className="mt-4 grid gap-3 text-sm text-neutral-200">
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  It gives users the core Tachiyomi reading context before they
-                  see hosted features like tokens and redemption.
+                  Read your manga and manhwa in the same app you already use.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  The backend product fits into that same chapter-reading flow:
-                  upload pages, process OCR and translation, then return
-                  reader-ready output.
+                  Activate once, then translate chapters when you need them.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  That makes the hosted service easier to explain to users who
-                  already know Tachiyomi or are learning it for the first time.
+                  Keep the reading flow simple instead of learning a technical
+                  setup.
                 </div>
               </div>
             </div>
@@ -246,30 +238,29 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
         </Card>
 
         <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <Card className="overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
-            <CardHeader className="gap-2 border-b border-white/10">
-              <CardTitle className="text-2xl">Hosted reader pipeline</CardTitle>
+            <Card className="overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+              <CardHeader className="gap-2 border-b border-white/10">
+              <CardTitle className="text-2xl">Simple reading flow</CardTitle>
               <CardDescription className="text-neutral-300">
-                A page-level translation job moves from device upload to
-                backend OCR and translation, then comes back as the same
-                reader-ready structure TachiyomiAT already understands.
+                Start from the app, let the service detect and translate the
+                text, then continue reading normally.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 p-6">
               <div className="grid gap-4 lg:grid-cols-[0.92fr_auto_1.08fr] lg:items-center">
                 <div className="rounded-[1.25rem] border border-white/10 bg-white/5 p-4">
                   <p className="text-sm font-medium tracking-[0.2em] text-neutral-400 uppercase">
-                    On device
+                    In the app
                   </p>
                   <div className="mt-4 grid gap-3 text-sm">
                     <div className="rounded-xl bg-white/5 px-3 py-3">
-                      Select the hosted translator inside TachiyomiAT.
+                      Choose the chapter you want to read.
                     </div>
                     <div className="rounded-xl bg-white/5 px-3 py-3">
-                      Redeem once and upload chapter pages through the backend.
+                      Add your activation code once.
                     </div>
                     <div className="rounded-xl bg-white/5 px-3 py-3">
-                      Poll for status and store the final chapter JSON locally.
+                      Launch the translation and keep reading.
                     </div>
                   </div>
                 </div>
@@ -278,18 +269,17 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
                 </div>
                 <div className="rounded-[1.25rem] bg-white p-4 text-neutral-950">
                   <p className="text-sm font-medium tracking-[0.2em] text-neutral-500 uppercase">
-                    On backend
+                    In the service
                   </p>
                   <div className="mt-4 grid gap-3 text-sm">
                     <div className="rounded-xl bg-neutral-100 px-3 py-3">
-                      OCR providers extract text blocks and coordinates.
+                      Detect text on manga and manhwa pages.
                     </div>
                     <div className="rounded-xl bg-neutral-100 px-3 py-3">
-                      Translation providers rewrite text without exposing keys.
+                      Translate the detected text.
                     </div>
                     <div className="rounded-xl bg-neutral-100 px-3 py-3">
-                      Token ledger, device binding, and result storage stay
-                      server-controlled.
+                      Send back pages ready to read in the app.
                     </div>
                   </div>
                 </div>
@@ -297,12 +287,11 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
 
               <div className="rounded-[1.25rem] border border-white/10 bg-gradient-to-r from-warning-400/15 to-positive-400/10 px-4 py-4">
                 <p className="text-sm font-medium tracking-[0.2em] text-neutral-300 uppercase">
-                  Output contract
+                  Simple result
                 </p>
                 <p className="mt-2 text-sm leading-7 text-neutral-200">
-                  The backend returns translated page data that preserves page
-                  order, geometry, and reader compatibility instead of forcing
-                  a brand-new mobile rendering model.
+                  The goal is to keep the reading experience smooth and easy
+                  inside TachiyomiAT.
                 </p>
               </div>
             </CardContent>
@@ -341,8 +330,8 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
       <PublicSection
         id="pricing"
         eyebrow="Pricing"
-        title="Pricing backed by real token packs"
-        description="Customers buy hosted usage as token packs. Stripe checkout is server-controlled, and only packs with an active Stripe price can be purchased."
+        title="Simple monthly plans"
+        description="Choose the offer that matches how much manga or manhwa you want to translate every month."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {props.tokenPacks.map((tokenPack) => (
@@ -353,49 +342,151 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
             />
           ))}
         </div>
+        <p className="mt-4 text-sm leading-6 text-muted-foreground">
+          Chapter estimates are simple approximations for normal monthly use.
+        </p>
       </PublicSection>
 
       <PublicSection
         id="contact"
         eyebrow="Contact"
-        title="Contact paths for billing, setup, and support"
-        description="The landing page should make it obvious where customers go next, even before every hosted support workflow is fully automated."
+        title="Need help?"
+        description="Use the form below if you have a question about plans, payment, activation, or app setup."
       >
         <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
           <Card className="rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
-            <CardHeader className="gap-2">
+            <CardHeader className="gap-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="secondary" size="sm">
+                  Contact form
+                </Badge>
+                <Badge variant="warning" size="sm">
+                  Stored in support inbox
+                </Badge>
+              </div>
               <CardTitle className="text-2xl">Talk to Tachiyomi Back</CardTitle>
               <CardDescription className="text-neutral-300">
-                Use the support email for billing questions, device-binding
-                issues, redeem-code help, or launch discussions around hosted
-                OCR and translation.
+                Ask us about plans, activation codes, payment, or getting
+                started in the app.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
-              <div className="rounded-[1.25rem] border border-white/10 bg-white/5 px-4 py-4">
-                <p className="text-sm font-medium tracking-[0.22em] text-neutral-400 uppercase">
-                  Primary contact
-                </p>
-                <p className="mt-3 text-2xl font-semibold">{PUBLIC_SUPPORT_EMAIL}</p>
-                <p className="mt-2 text-sm leading-7 text-neutral-300">
-                  This is the current support path for questions about pricing,
-                  hosted activation, token access, and the public rollout.
-                </p>
-              </div>
+              {props.contactStatus === 'sent' ? (
+                <div className="rounded-[1.25rem] border border-emerald-500/30 bg-emerald-500/10 px-4 py-4 text-sm text-emerald-100">
+                  Your message is now stored in the support inbox. The team can
+                  reply using the email address you submitted.
+                </div>
+              ) : null}
+              {props.contactStatus === 'invalid' ? (
+                <div className="rounded-[1.25rem] border border-amber-500/30 bg-amber-500/10 px-4 py-4 text-sm text-amber-100">
+                  Please complete all form fields with a valid email and a message
+                  long enough to explain your request.
+                </div>
+              ) : null}
+              {props.contactStatus === 'error' ? (
+                <div className="rounded-[1.25rem] border border-rose-500/30 bg-rose-500/10 px-4 py-4 text-sm text-rose-100">
+                  The contact form failed to save in the support inbox. Please
+                  retry in a moment.
+                </div>
+              ) : null}
 
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={`mailto:${PUBLIC_SUPPORT_EMAIL}`}
-                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
-                >
-                  Email support
-                </a>
-                <a
-                  href="/support"
-                  className={buttonVariants({ variant: 'ghost', size: 'lg' })}
-                >
-                  Support center
-                </a>
+              <form
+                action="/api/contact"
+                method="POST"
+                className="grid gap-5 rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-4 md:p-5"
+              >
+                <p className="text-xs font-medium tracking-[0.18em] text-neutral-400 uppercase">
+                  Send a request
+                </p>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="grid gap-2">
+                    <Label htmlFor="contact-name" className="text-neutral-200">
+                      Name
+                    </Label>
+                    <Input
+                      id="contact-name"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                      className="border-white/10 bg-white/5 text-neutral-50"
+                    />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="contact-email" className="text-neutral-200">
+                      Email
+                    </Label>
+                    <Input
+                      id="contact-email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="you@example.com"
+                      className="border-white/10 bg-white/5 text-neutral-50"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-2">
+                  <Label htmlFor="contact-subject" className="text-neutral-200">
+                    Subject
+                  </Label>
+                  <Input
+                    id="contact-subject"
+                    name="subject"
+                    required
+                    placeholder="Billing, activation, setup, or general question"
+                    className="border-white/10 bg-white/5 text-neutral-50"
+                  />
+                </div>
+
+                <div className="grid gap-2">
+                  <Label htmlFor="contact-message" className="text-neutral-200">
+                    Message
+                  </Label>
+                  <Textarea
+                    id="contact-message"
+                    name="message"
+                    rows={7}
+                    required
+                    placeholder="Tell us what you need help with."
+                    className="border-white/10 bg-white/5 text-neutral-50"
+                  />
+                  <p className="text-xs leading-5 text-neutral-400">
+                    Tell us what you need in simple words and we will help you.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <Button type="submit" size="lg" variant="secondary">
+                    Submit request
+                  </Button>
+                  <a
+                    href="/support"
+                    className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+                  >
+                    Support center
+                  </a>
+                </div>
+              </form>
+
+              <div className="grid gap-3 rounded-[1.35rem] border border-white/10 bg-white/5 px-4 py-4 md:grid-cols-2">
+                <div>
+                  <p className="text-xs font-medium tracking-[0.18em] text-neutral-400 uppercase">
+                    What happens next
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-neutral-200">
+                    We review your message and reply to the email address you
+                    entered.
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-medium tracking-[0.18em] text-neutral-400 uppercase">
+                    Reply channel
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-neutral-200">
+                    Make sure you enter an email address you really use.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -431,8 +522,8 @@ export const PageLanding = (props: { tokenPacks: PublicTokenPack[] }) => {
       <PublicSection
         id="faq"
         eyebrow="FAQ"
-        title="Public FAQ before launch"
-        description="The landing page answers the main questions about tokens, providers, privacy, activation, and device support before customers ever enter checkout."
+        title="Frequently asked questions"
+        description="Quick answers for readers who just want to know how the service works."
         className="pb-20"
       >
         <div className="grid gap-4 lg:grid-cols-2">

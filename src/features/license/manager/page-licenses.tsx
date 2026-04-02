@@ -106,13 +106,13 @@ export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
         <PageLayoutContent containerClassName="max-w-6xl">
           {ui
             .match('idle', () => (
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                 <Card>
                   <CardHeader>
                     <CardTitle>Search by operational identifiers</CardTitle>
                     <CardDescription>
                       Look up a customer by license key, redeem code,
-                      installation ID, order ID, Stripe IDs, or email.
+                      installation ID, order ID, Lemon Squeezy IDs, or email.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-sm text-muted-foreground">
@@ -131,6 +131,37 @@ export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
                   <CardContent className="text-sm text-muted-foreground">
                     Search results will route licenses, redeem codes, and paid
                     orders back to the attached license whenever one exists.
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Seeded demo queries</CardTitle>
+                    <CardDescription>
+                      The local seed now includes fake commerce and job data so
+                      you can inspect the backoffice flow immediately.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-2 text-sm text-muted-foreground">
+                    <div>
+                      <span className="font-medium text-foreground">
+                        alex.reader@demo.local
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-foreground">
+                        DEMO-ALEX-PRO-001
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-foreground">
+                        inst_demo_pixel8_alex
+                      </span>
+                    </div>
+                    <div>
+                      <span className="font-medium text-foreground">
+                        lic_demo_unredeemed
+                      </span>
+                    </div>
                   </CardContent>
                 </Card>
                 <Card>

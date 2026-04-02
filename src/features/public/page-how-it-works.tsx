@@ -146,7 +146,7 @@ export const PageHowItWorks = () => {
           <CardHeader className="gap-2">
             <CardTitle className="text-lg">Still pending after this phase</CardTitle>
             <CardDescription className="text-warning-900 dark:text-warning-100">
-              Stripe Checkout, paid order fulfillment, redeem-code APIs,
+              Lemon Squeezy Checkout, paid order fulfillment, redeem-code APIs,
               device-bound mobile sessions, and Android hosted-mode integration
               all stay in later phases even though the public website now
               explains the intended flow.

@@ -16,7 +16,7 @@ export const Route = createFileRoute('/checkout/success')({
   head: () =>
     buildPublicPageHead(
       'Checkout Complete',
-      'Stripe checkout completion page for Tachiyomi Back.'
+      'Checkout completion page for Tachiyomi Back.'
     ),
 });
 

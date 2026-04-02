@@ -14,7 +14,7 @@ const publicTokenPackSelect = {
   bonusTokenAmount: true,
   priceAmountCents: true,
   currency: true,
-  stripePriceId: true,
+  lsVariantId: true,
 } as const;
 
 const zPublicTokenPackByKeyInput = z.object({
@@ -29,7 +29,7 @@ type PublicTokenPackRow = {
   key: string;
   name: string;
   priceAmountCents: number;
-  stripePriceId: string | null;
+  lsVariantId: string | null;
   tokenAmount: number;
 };
 
@@ -62,9 +62,49 @@ export const getPublicTokenPackByKey = createServerFn({ method: 'GET' })
   });
 
 function mapPublicTokenPack(tokenPack: PublicTokenPackRow): PublicTokenPack {
+  const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
+  const estimatedPages = Math.max(
+    1,
+    Math.floor(totalTokens / envServer.JOB_TOKENS_PER_PAGE)
+  );
+  const estimatedChapters = Math.max(1, Math.round(estimatedPages / 20));
+  const marketing = getMarketingPresentation(tokenPack.key, estimatedChapters);
+
   return {
     ...tokenPack,
-    totalTokens: tokenPack.tokenAmount + tokenPack.bonusTokenAmount,
-    checkoutEnabled: envServer.STRIPE_ENABLED && !!tokenPack.stripePriceId,
+    estimatedChapters,
+    estimatedPages,
+    totalTokens,
+    checkoutEnabled: envServer.LEMONSQUEEZY_ENABLED && !!tokenPack.lsVariantId,
+    marketedChaptersPerMonth: marketing.marketedChaptersPerMonth,
+    marketingSummary: marketing.marketingSummary,
   };
+}
+
+function getMarketingPresentation(
+  tokenPackKey: string,
+  estimatedChapters: number
+) {
+  switch (tokenPackKey) {
+    case 'starter':
+      return {
+        marketedChaptersPerMonth: 100,
+        marketingSummary: 'Good to start',
+      };
+    case 'pro':
+      return {
+        marketedChaptersPerMonth: 500,
+        marketingSummary: 'Best for regular readers',
+      };
+    case 'power':
+      return {
+        marketedChaptersPerMonth: 1500,
+        marketingSummary: 'For heavy readers',
+      };
+    default:
+      return {
+        marketedChaptersPerMonth: estimatedChapters,
+        marketingSummary: 'Monthly manga and manhwa translation',
+      };
+  }
 }
