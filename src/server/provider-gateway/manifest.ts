@@ -1,5 +1,10 @@
 import { envServer } from '@/env/server';
+import { db } from '@/server/db';
 import { ProviderType } from '@/server/db/generated/client';
+import {
+  getProviderGatewayRuntimeConfig,
+  getProviderGatewayRuntimeState,
+} from '@/server/provider-gateway/runtime-config';
 import { zProviderGatewayManifest } from '@/server/provider-gateway/schema';
 
 export function getProviderGatewayManifest() {
@@ -97,6 +102,72 @@ export function getProviderGatewayManifest() {
           : null,
       promptVersion: envServer.TRANSLATION_PROMPT_VERSION,
       providers: translationProviders,
+    },
+  });
+}
+
+export async function getProviderGatewayManifestWithRuntimeConfig(deps?: {
+  dbClient?: typeof db;
+}) {
+  const manifest = getProviderGatewayManifest();
+  const { current } = await getProviderGatewayRuntimeConfig({
+    dbClient: deps?.dbClient,
+  });
+  const runtimeState = getProviderGatewayRuntimeState({
+    config: current,
+  });
+
+  const translationDefaultProvider = runtimeState.translationProviders.find(
+    (provider) =>
+      provider.provider === current.translationProviderPrimary &&
+      provider.enabled
+  )
+    ? current.translationProviderPrimary
+    : (runtimeState.translationProviders.find((provider) => provider.enabled)
+        ?.provider ?? null);
+
+  return zProviderGatewayManifest.parse({
+    ...manifest,
+    ocr: {
+      defaultProvider: runtimeState.ocr.enabled
+        ? ProviderType.google_cloud_vision
+        : null,
+      providers: manifest.ocr.providers.map((provider) =>
+        provider.provider === ProviderType.google_cloud_vision
+          ? {
+              ...provider,
+              isDefault: runtimeState.ocr.enabled,
+              modelName: runtimeState.ocr.modelName,
+            }
+          : provider
+      ),
+    },
+    translation: {
+      ...manifest.translation,
+      defaultProvider: translationDefaultProvider,
+      providers: manifest.translation.providers.map((provider) => {
+        if (provider.provider === ProviderType.gemini) {
+          return {
+            ...provider,
+            isDefault: translationDefaultProvider === ProviderType.gemini,
+            modelName: runtimeState.translationProviders.find(
+              (item) => item.provider === ProviderType.gemini
+            )?.modelName,
+          };
+        }
+
+        if (provider.provider === ProviderType.openai) {
+          return {
+            ...provider,
+            isDefault: translationDefaultProvider === ProviderType.openai,
+            modelName: runtimeState.translationProviders.find(
+              (item) => item.provider === ProviderType.openai
+            )?.modelName,
+          };
+        }
+
+        return provider;
+      }),
     },
   });
 }

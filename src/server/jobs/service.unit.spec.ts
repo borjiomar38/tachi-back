@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const {
   mockDb,
-  mockGetProviderGatewayManifest,
+  mockGetProviderGatewayManifestWithRuntimeConfig,
   mockGetTranslationJobPageUpload,
   mockLogger,
   mockPerformHostedOcr,
@@ -22,7 +22,7 @@ const {
       update: vi.fn(),
     },
   },
-  mockGetProviderGatewayManifest: vi.fn(),
+  mockGetProviderGatewayManifestWithRuntimeConfig: vi.fn(),
   mockGetTranslationJobPageUpload: vi.fn(),
   mockLogger: {
     error: vi.fn(),
@@ -53,7 +53,8 @@ vi.mock('@/server/logger', () => ({
 }));
 
 vi.mock('@/server/provider-gateway/manifest', () => ({
-  getProviderGatewayManifest: mockGetProviderGatewayManifest,
+  getProviderGatewayManifestWithRuntimeConfig:
+    mockGetProviderGatewayManifestWithRuntimeConfig,
 }));
 
 vi.mock('@/server/provider-gateway/service', () => ({
@@ -97,7 +98,7 @@ describe('job service', () => {
     mockDb.tokenLedger.updateMany.mockReset();
     mockDb.translationJob.findUnique.mockReset();
     mockDb.translationJob.update.mockReset();
-    mockGetProviderGatewayManifest.mockReset();
+    mockGetProviderGatewayManifestWithRuntimeConfig.mockReset();
     mockGetTranslationJobPageUpload.mockReset();
     mockLogger.error.mockReset();
     mockLogger.info.mockReset();
@@ -106,7 +107,7 @@ describe('job service', () => {
     mockPutTranslationJobPageUpload.mockReset();
     mockPutTranslationJobResultManifest.mockReset();
 
-    mockGetProviderGatewayManifest.mockReturnValue({
+    mockGetProviderGatewayManifestWithRuntimeConfig.mockResolvedValue({
       ocr: {
         defaultProvider: 'google_cloud_vision',
         providers: [],
@@ -240,6 +241,7 @@ describe('job service', () => {
           licenseId: 'license-1',
         },
         dbClient: mockDb as never,
+        now: new Date('2026-03-20T10:05:00.000Z'),
         scheduleProcessing,
       }
     );

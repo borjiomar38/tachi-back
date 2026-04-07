@@ -19,7 +19,7 @@ const statement = {
   order: ['read', 'refund'],
   job: ['read', 'retry', 'cancel'],
   webhook: ['read', 'replay'],
-  provider: ['read'],
+  provider: ['read', 'update'],
   auditLog: ['read'],
 } as const;
 
@@ -50,7 +50,7 @@ const admin = ac.newRole({
   order: ['read', 'refund'],
   job: ['read', 'retry', 'cancel'],
   webhook: ['read', 'replay'],
-  provider: ['read'],
+  provider: ['read', 'update'],
   auditLog: ['read'],
 });
 
@@ -114,6 +114,7 @@ export const permissionJob = {
 
 export const permissionProvider = {
   read: { provider: ['read'] },
+  update: { provider: ['update'] },
 } as const satisfies Record<string, Permission>;
 
 export const permissionSession = {

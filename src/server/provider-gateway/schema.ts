@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 import { ProviderType } from '@/server/db/generated/client';
 
-export const zOcrProviderType = z.enum(['google_cloud_vision']);
+export const zOcrProviderType = z.enum(['gemini', 'google_cloud_vision']);
 export const zTranslationProviderType = z.enum([
   'anthropic',
   'gemini',

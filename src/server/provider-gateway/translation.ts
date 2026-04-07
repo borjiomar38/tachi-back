@@ -7,6 +7,11 @@ import {
 import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
 import { buildTranslationPrompt } from '@/server/provider-gateway/prompts';
 import {
+  getEffectiveTranslationModel,
+  getProviderGatewayRuntimeConfig,
+  ProviderGatewayRuntimeConfig,
+} from '@/server/provider-gateway/runtime-config';
+import {
   NormalizedTranslationBatch,
   TranslationGatewayInput,
   zNormalizedTranslationBatch,
@@ -25,20 +30,24 @@ export async function performTranslationWithProvider(
   deps: {
     fetchFn?: typeof fetch;
     preferredProvider?: TranslationProvider;
+    runtimeConfig?: ProviderGatewayRuntimeConfig;
     timeoutMs?: number;
   } = {}
 ): Promise<NormalizedTranslationBatch> {
   const input = zTranslationGatewayInput.parse(rawInput);
+  const runtimeConfig =
+    deps.runtimeConfig ?? (await getProviderGatewayRuntimeConfig()).current;
   const provider = resolveTranslationProvider(
     deps.preferredProvider ??
-      (input.preferredProvider as TranslationProvider | undefined)
+      (input.preferredProvider as TranslationProvider | undefined),
+    runtimeConfig
   );
 
   switch (provider) {
     case ProviderType.gemini:
-      return await translateWithGemini(input, deps);
+      return await translateWithGemini(input, deps, runtimeConfig);
     case ProviderType.openai:
-      return await translateWithOpenAI(input, deps);
+      return await translateWithOpenAI(input, deps, runtimeConfig);
     case ProviderType.anthropic:
       return await translateWithAnthropic(input, deps);
   }
@@ -50,7 +59,8 @@ export async function performTranslationWithProvider(
 }
 
 function resolveTranslationProvider(
-  preferredProvider?: TranslationProvider
+  preferredProvider: TranslationProvider | undefined,
+  runtimeConfig: ProviderGatewayRuntimeConfig
 ): TranslationProvider {
   const manifest = getProviderGatewayManifest();
 
@@ -67,9 +77,16 @@ function resolveTranslationProvider(
     }
   }
 
-  const fallback = manifest.translation.providers.find(
-    (provider) => provider.enabled && provider.supportedByGateway
-  );
+  const fallback =
+    manifest.translation.providers.find(
+      (provider) =>
+        provider.provider === runtimeConfig.translationProviderPrimary &&
+        provider.enabled &&
+        provider.supportedByGateway
+    ) ??
+    manifest.translation.providers.find(
+      (provider) => provider.enabled && provider.supportedByGateway
+    );
 
   if (
     fallback?.provider === ProviderType.gemini ||
@@ -90,7 +107,8 @@ async function translateWithGemini(
   deps: {
     fetchFn?: typeof fetch;
     timeoutMs?: number;
-  }
+  },
+  runtimeConfig: ProviderGatewayRuntimeConfig
 ) {
   const apiKey = envServer.GEMINI_API_KEY;
   if (!apiKey) {
@@ -101,7 +119,10 @@ async function translateWithGemini(
   }
 
   const prompt = buildTranslationPrompt(input);
-  const modelName = envServer.GEMINI_TRANSLATION_MODEL;
+  const modelName = getEffectiveTranslationModel({
+    config: runtimeConfig,
+    provider: 'gemini',
+  });
   const response = await fetchTextWithTimeout({
     body: JSON.stringify({
       contents: [
@@ -191,7 +212,8 @@ async function translateWithOpenAI(
   deps: {
     fetchFn?: typeof fetch;
     timeoutMs?: number;
-  }
+  },
+  runtimeConfig: ProviderGatewayRuntimeConfig
 ) {
   const apiKey = envServer.OPENAI_API_KEY;
   if (!apiKey) {
@@ -202,7 +224,10 @@ async function translateWithOpenAI(
   }
 
   const prompt = buildTranslationPrompt(input);
-  const modelName = envServer.OPENAI_TRANSLATION_MODEL;
+  const modelName = getEffectiveTranslationModel({
+    config: runtimeConfig,
+    provider: 'openai',
+  });
   const response = await fetchTextWithTimeout({
     body: JSON.stringify({
       max_completion_tokens: 4096,

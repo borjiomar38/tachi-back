@@ -1,222 +1,236 @@
-# TachiyomiAT Backend — Progress & Roadmap
+# TachiyomiAT Hosted Translation Progress
 
-> This document tracks what has been built, what is being worked on right now, and what comes next.
-> Updated: 2026-04-06
-
----
-
-## The Big Picture
-
-**What is this?**
-`tachi-back` is the backend and backoffice for **TachiyomiAT** — a fork of the Mihon/Tachiyomi Android manga reader that adds AI-powered translation (Gemini, MLKit, Google Cloud Translation, OpenRouter).
-
-**Why does a manga reader need a backend?**
-Local translation requires the user to bring their own API keys (BYOK). To make this accessible to non-technical users, we are building a **hosted translation service** — users pay for token credits, the backend handles OCR and AI translation on their behalf, and the results are delivered back to the Android app seamlessly.
-
-**Why Lemon Squeezy?**
-The original design used Stripe. We refactored to **Lemon Squeezy** because it acts as a Merchant of Record — it handles VAT, taxes, and compliance automatically, which removes significant legal and operational overhead for an indie product.
+> Updated: 2026-04-07
+>
+> This document is the product and engineering snapshot for the hosted
+> translation stack shared by `tachi-back` and `TachiyomiAT`.
 
 ---
 
-## System Overview
+## Goal
 
-```
-User buys tokens (Lemon Squeezy)
-        ↓
-LS generates license key + emails user
-        ↓
-User enters license key in TachiyomiAT Android app (once)
-        ↓
-App activates with backend → gets device-bound bearer token
-        ↓
-App submits manga chapters to backend for translation
-        ↓
-Backend uses OCR (Google Cloud Vision) + AI (Gemini/OpenAI/Anthropic)
-        ↓
-Backend returns translated results → app renders them in the reader
-        ↓
-Tokens deducted per job
-```
+`tachi-back` is the hosted backend and backoffice for `TachiyomiAT`.
 
----
+The intended user flow is:
 
-## What We Did (Completed)
+1. User buys a monthly token plan via Lemon Squeezy
+2. Backend receives the webhook and creates or updates product-side records
+3. Backend generates a redeem code and emails it to the customer
+4. User enters the redeem code in the Android app
+5. App activates a device-bound hosted session
+6. App sends chapters to the backend for OCR + translation
+7. Backend spends tokens per job and returns translated results
 
-### Infrastructure & Foundation
-- Cleaned up starter boilerplate, removed demo `book`/`genre` domain
-- Set up Prisma + PostgreSQL schema with real product models:
-  - `License`, `Device`, `RedeemCode`, `Order`, `TokenPack`
-  - `TokenLedger`, `WebhookEvent`, `TranslationJob`
-- Set up S3/MinIO with separate buckets: `uploads`, `results`, `logs`
-- Local Docker stack: Postgres + MinIO + Maildev
+Important terminology:
 
-### Auth (Internal Backoffice Only)
-- Better Auth scoped to internal staff only (admin + support roles)
-- Public signup disabled — customers never use Better Auth
-- Backoffice protected routes and RBAC guards
-
-### Public Website
-- Landing page, pricing page sourced from real `TokenPack` DB records
-- Download, support, and legal placeholder routes
-
-### Payments — Stripe (OLD, now replaced)
-- Stripe Checkout integration
-- Webhook handler for `checkout.session.completed`
-- Created `License` + `RedeemCode` on successful payment
-- Token ledger credit entry per order
-
-### Payments — Lemon Squeezy (CURRENT)
-- Refactored payment layer from Stripe to Lemon Squeezy
-- Products created in LS dashboard:
-  - TachiyomiAT Tokens — Starter 500 ($9.99/month)
-  - TachiyomiAT Tokens — Pro 2500 ($39.99/month)
-  - TachiyomiAT Tokens — Power 7500 ($99.99/month)
-- License key generation enabled in LS (LS issues key per purchase, emails customer)
-
-### Mobile Auth (Android Sessions)
-- Device-bound mobile session model — separate from Better Auth
-- `/api/mobile/activate` — redeem license key, bind to installation ID
-- `/api/mobile/refresh` — rotate bearer token
-- `/api/mobile/session` — protected session summary
-- Installation ID is app-generated, stored in private (non-backup) preferences
-
-### Hosted Provider Gateway
-- OCR adapter: Google Cloud Vision
-- Translation adapters: Gemini, OpenAI, Anthropic
-- Prompt versioning, provider selection, retry/error normalization
-- Usage tracking helpers
-
-### Job Pipeline
-- `/api/mobile/jobs` — create job, upload pages, poll status, fetch results
-- Inline execution mode (no dedicated worker yet)
-- Results stored in S3, returned in TachiyomiAT's existing translation file format
-- Token reservation and finalization per job
-
-### Backoffice Operations
-- Support lookup by license key, redeem code, installation ID, order ID, email
-- License detail view (balance, devices, ledger history)
-- Device detail + revoke
-- Jobs list/detail with lifecycle, asset, and provider usage context
-- Provider ops summary (failures, latency, cost concentration)
-- Contact form inbox + detail workflow
-
-### Android Integration (Phase 14)
-- New `Tachiyomi Back [TOKENS]` engine mode in TachiyomiAT settings
-- Hosted URL + license key configuration UI
-- Activation flow: app sends license key → backend validates → issues bearer token
-- Chapter submission: app uploads pages → backend processes → app downloads results
-- Results materialized into existing local translation file format
-
-### Hardening (Phase 15 — partial)
-- Request ID correlation (`X-Request-ID` on all hardened routes)
-- Dedicated rate limits for checkout initiation routes
-- Dedicated rate limits for mobile job create/upload/read routes
-- Structured logging for rate-limit hits
+- We currently use a `redeem code` for Android activation
+- We do not currently expose a Lemon Squeezy-native `license key` flow in the app
+- Device access is now unlimited per license because usage is constrained by token
+  balance instead
 
 ---
 
-## What We Are Doing Now
+## Current State
 
-### Lemon Squeezy Webhook Integration
-**What:** Wire the LS webhook handler so the backend reacts to purchase events.
+### What is already working
 
-**Why:** Products exist in LS but the backend doesn't yet know when a purchase happens. Without this, no `License` or `RedeemCode` is created after a customer pays.
+- [x] Lemon Squeezy checkout route is implemented
+- [x] Lemon Squeezy webhook route is implemented
+- [x] Lemon Squeezy production env vars are configured on Vercel
+- [x] Monthly plans are configured in Lemon Squeezy
+- [x] Backend creates licenses, orders, token credits, and redeem codes
+- [x] Purchase email flow is wired through SMTP
+- [x] Mobile activation API is enabled in production
+- [x] Mobile session and hosted auth flow are working in production
+- [x] Android app is locked to `Tachiyomi Back [TOKENS]`
+- [x] Android app default backend URL is fixed to
+      `https://tachi-back.vercel.app`
+- [x] Hosted provider env vars are present in Vercel production for OCR and
+      translation
+- [x] Device limit is effectively unlimited for hosted licenses
+- [x] Production mobile-contract translation completes successfully with
+      `gemini`
+- [x] Production mobile-contract translation completes successfully with
+      `openai`
 
-**Where:** `app/api/lemonsqueezy/webhook` (new route)
+### What is working in code but still needs finishing steps
 
-**Steps:**
-1. Add LS env vars to `.env`:
-   ```
-   LEMONSQUEEZY_API_KEY=
-   LEMONSQUEEZY_WEBHOOK_SECRET=
-   LEMONSQUEEZY_STORE_ID=
-   LEMONSQUEEZY_VARIANT_STARTER=
-   LEMONSQUEEZY_VARIANT_PRO=
-   LEMONSQUEEZY_VARIANT_POWER=
-   ```
-2. Register webhook in LS dashboard pointing to `/api/lemonsqueezy/webhook`
-3. Implement webhook handler:
-   - Verify LS signature (HMAC-SHA256)
-   - Handle `order_created` event
-   - Map LS variant ID → token pack
-   - Create `Order` + `License` + `RedeemCode` + ledger credit entry
-   - Best-effort email delivery (send license key to customer)
-4. Replace old Stripe webhook handler references
+- [x] Admin-side provider routing runtime config is implemented in the backend
+- [x] Manager UI has been started so admin can choose translation provider and
+      model
+- [x] Provider resolution in job creation has been updated to use runtime config
+- [x] Translation execution has been updated to respect admin-selected model
+- [x] Database migration for runtime provider config has been applied in production
+- [x] Updated backend changes have been deployed to production
+- [x] Runtime config persistence has been validated against the production DB
+- [ ] Authenticated manager UI still needs a real save/reload validation in
+      production
+- [ ] Final Android reader-side smoke test is still recommended after the
+      backend fixes
 
----
+### What is not implemented yet
 
-## What We Will Do Next
-
-### 1. Android — Lemon Squeezy UX Polish
-**What:** Update the Android app's activation screen to reflect the new LS flow (enter license key from LS email, not a redeem code).
-
-**Why:** The activation UX was designed around a "redeem code" concept from the Stripe flow. With LS, the customer receives a "license key" directly — the terminology and instructions in the app need to match.
-
-**Where:** `TachiyomiAT/app/src/main/java/eu/kanade/translation/`
-
-### 2. Balance & License Screen (Android)
-**What:** Show the user their current token balance, device info, and license status inside the app.
-
-**Why:** Users need visibility into how many tokens they have left before submitting expensive chapters.
-
-**Where:** New screen in TachiyomiAT settings / translation section.
-
-### 3. Hosted Review Mode (Android)
-**What:** After a hosted translation job completes, allow the user to review and optionally correct translations before saving.
-
-**Why:** AI translation is not perfect — giving users a review step improves quality and trust.
-
-**Where:** TachiyomiAT reader / translation result handling.
-
-### 4. Retry & Recovery UX (Android)
-**What:** Better in-app handling for revoked sessions, failed uploads, and failed jobs.
-
-**Why:** Currently failures surface as generic errors. Users need clear guidance: "your session expired — tap to re-activate", "upload failed — tap to retry".
-
-**Where:** TachiyomiAT hosted engine client code.
-
-### 5. Phase 15 Remaining Hardening
-**What:**
-- Metrics and alerting surfaces (track job failure rates, provider latency)
-- Backup/restore rehearsal docs and operational runbooks
-- Launch checklists and staged rollout criteria
-- Token-drain safeguards (anomaly detection for suspicious usage)
-- User-facing migration/support documentation
-
-**Why:** Pre-launch hardening. The system works but is not yet safe to expose to real user traffic at scale.
-
-**Where:** Backend infra, docs, and monitoring setup.
-
-### 6. Staged Launch
-**What:** Open the hosted service to early users in a controlled rollout.
-
-**Why:** Validate the full flow end-to-end with real purchases, real Android devices, and real manga chapters before full public launch.
-
-**How:** Use a waitlist or invite codes, monitor closely, iterate fast.
+- [ ] One-shot top-up packs attached to an existing license
+- [ ] Refund lifecycle handling for Lemon Squeezy
+- [ ] Dedicated subscriber/customer list in backoffice
+- [ ] Full launch runbooks and monitoring/alerting
+- [ ] Final cleanup of old/stale documentation and terminology
+- [ ] Real production object storage config instead of the inline fallback
+- [ ] Final Google Vision production enablement or explicit Gemini OCR policy
+- [ ] Fix the manual-grant null-expiry bug for support-created redeem codes
 
 ---
 
-## Key Files Reference
+## What We Have Done
 
-| Area | Location |
-|------|----------|
-| Backend root | `/tachi-back/` |
-| Phase docs | `/tachi-back/docs/phases/` |
-| Prisma schema | `/tachi-back/prisma/schema.prisma` |
-| API routes | `/tachi-back/app/api/` |
-| Android translation | `/TachiyomiAT/app/src/main/java/eu/kanade/translation/` |
-| Android settings UI | `/TachiyomiAT/app/src/main/java/eu/kanade/presentation/more/settings/` |
+### Payments and licensing
+
+- Migrated the active payment flow from Stripe to Lemon Squeezy
+- Added Lemon Squeezy variant-based checkout
+- Added Lemon Squeezy webhook processing for orders and subscriptions
+- Added backend-generated redeem code fulfillment after purchase
+- Wired SMTP delivery for purchase/OTP emails
+
+### Hosted mobile access
+
+- Added mobile activation endpoint
+- Added hosted session issuance and refresh
+- Added device-bound hosted auth
+- Enabled mobile API in production
+- Created and tested production redeem codes
+
+### Hosted translation pipeline
+
+- Added OCR provider gateway support for Google Cloud Vision
+- Added translation provider gateway support for Gemini/OpenAI/Anthropic
+- Added mobile job creation, upload, processing, and result retrieval
+- Added token reservation/spend logic for hosted jobs
+- Removed user-side provider switching from the Android app
+- Moved the product direction toward server-side provider choice
+- Added production inline storage fallback so hosted jobs can still complete
+  while object storage env is not yet real
+- Added Gemini OCR fallback for production when Google Vision is configured but
+  the actual Google API is disabled
+- Validated live production jobs on both `gemini` and `openai`
+
+### Android product constraints
+
+- Locked translation engine to hosted mode
+- Locked backend URL to production backend
+- Kept redeem code as the only user-editable hosted credential
+- Added hosted access prompt UX when redeem/session/token state is invalid
+
+### Backoffice operations
+
+- Added support lookup across license, redeem code, installation ID, order ID,
+  subscription ID, and email
+- Added job monitoring screens
+- Added provider ops summary
+- Started admin-controlled provider/model routing from the manager
 
 ---
 
-## Decisions Log
+## Immediate Focus
 
-| Decision | Reason |
-|----------|--------|
-| Lemon Squeezy over Stripe | Merchant of Record — handles VAT/taxes automatically, less legal overhead for indie product |
-| Token credits over subscriptions | More flexible for users, aligns cost with actual usage |
-| Device-bound sessions over user accounts | No sign-up friction, privacy-friendly, simpler auth surface |
-| Better Auth for backoffice only | Customers never need an account — license key + device binding is sufficient |
-| Inline job execution first | Keeps the stack simple during development; dedicated worker added when needed |
-| Google Cloud Vision for OCR | Best accuracy for manga text, well-supported API |
-| LS generates license keys | Removes the need for the backend to generate and email keys — LS handles this natively |
+The current work is now split into individual task files.
+
+### Active task files
+
+- `docs/tasks/01-provider-routing-runtime-config.md`
+- `docs/tasks/02-production-hosted-translation-e2e.md`
+- `docs/tasks/03-billing-post-purchase-ops.md`
+- `docs/tasks/04-local-prisma-runtime-config-migration.md`
+
+### Status summary
+
+- [x] Provider routing runtime-config implementation is deployed and validated
+- [ ] Provider routing still needs authenticated manager UI validation
+- [x] Production hosted translation runtime is green through the live mobile API
+      contract
+- [ ] Android reader-side smoke still needs one final manual confirmation pass
+- [ ] Billing follow-up still needs refund and top-up design/implementation
+- [ ] Local Prisma drift still needs a safe cleanup path for dev
+
+---
+
+## Production Reality
+
+As of this update, production has the critical hosted envs configured:
+
+- [x] `LEMONSQUEEZY_ENABLED`
+- [x] `LEMONSQUEEZY_API_KEY`
+- [x] `LEMONSQUEEZY_STORE_ID`
+- [x] `LEMONSQUEEZY_WEBHOOK_SECRET`
+- [x] `LEMONSQUEEZY_VARIANT_TOKENS_STARTER`
+- [x] `LEMONSQUEEZY_VARIANT_TOKENS_PRO`
+- [x] `LEMONSQUEEZY_VARIANT_TOKENS_POWER`
+- [x] `MOBILE_API_ENABLED`
+- [x] `MOBILE_API_JWT_SECRET`
+- [x] `GOOGLE_CLOUD_VISION_API_KEY`
+- [x] `GEMINI_API_KEY`
+- [x] `OPENAI_API_KEY`
+- [x] `OCR_PROVIDER_PRIMARY=google_cloud_vision`
+- [x] `TRANSLATION_PROVIDER_PRIMARY=gemini`
+
+This means the remaining blocker is no longer raw secret wiring. The remaining
+blocker is no longer backend provider execution. The remaining gaps are the
+authenticated manager UI validation path and the remaining production infra
+cleanup around storage and OCR.
+
+---
+
+## Risks and Gaps
+
+### Product gaps
+
+- Customers still activate with redeem codes, not a cleaner subscription-aware
+  account surface
+- There is no one-shot top-up flow attached to the same hosted license yet
+- There is no refund-support lifecycle completed yet
+
+### Engineering gaps
+
+- Local Prisma dev migration is currently blocked by old schema drift from the
+  previous Stripe-era local database
+- Runtime provider config execution is validated in production, but the manager
+  UI save/reload path still needs authenticated confirmation
+- Production still depends on fallback behavior because object storage env is
+  placeholder and Google Vision is not truly enabled
+- Current docs in old branches/phases are not fully aligned with the live flow
+
+### UX gaps
+
+- Android still needs the final post-fix reader-side smoke pass
+- Balance visibility and subscription status UX can still be improved
+- Support tooling can still be improved with a dedicated subscriptions view
+
+---
+
+## Task Index
+
+Detailed task docs live here:
+
+- `docs/tasks/README.md`
+- `docs/tasks/01-provider-routing-runtime-config.md`
+- `docs/tasks/02-production-hosted-translation-e2e.md`
+- `docs/tasks/03-billing-post-purchase-ops.md`
+- `docs/tasks/04-local-prisma-runtime-config-migration.md`
+
+---
+
+## Next Decision Points
+
+- Decide if hosted translation should stay `monthly plans only` for launch or if
+  top-up packs must be built before launch
+- Decide whether `openai` stays as fallback only or becomes admin-selectable
+  primary in production
+- Decide whether Anthropic remains supported internally only or should also be
+  exposed in the manager later
+
+---
+
+## Companion Doc
+
+For the technical implementation map, open:
+
+- `docs/HOSTED_TRANSLATION_STATUS.md`

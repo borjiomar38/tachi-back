@@ -1,6 +1,10 @@
 import { envServer } from '@/env/server';
 import { ProviderType, ProviderUsageStage } from '@/server/db/generated/client';
-import { performGoogleCloudVisionOcr } from '@/server/provider-gateway/ocr';
+import { ProviderGatewayError } from '@/server/provider-gateway/errors';
+import {
+  performGeminiVisionOcr,
+  performGoogleCloudVisionOcr,
+} from '@/server/provider-gateway/ocr';
 import {
   HostedPageTranslation,
   NormalizedOcrPage,
@@ -22,22 +26,47 @@ export async function performHostedOcr(
     fetchFn?: typeof fetch;
   } = {}
 ) {
-  const result = await retryProviderCall(
-    async () =>
-      await performGoogleCloudVisionOcr(
-        {
-          imageBytes: input.imageBytes,
-          imageHeight: input.imageHeight,
-          imageWidth: input.imageWidth,
-        },
-        {
-          fetchFn: deps.fetchFn,
-        }
-      ),
-    {
-      maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
+  let result: NormalizedOcrPage;
+
+  try {
+    result = await retryProviderCall(
+      async () =>
+        await performGoogleCloudVisionOcr(
+          {
+            imageBytes: input.imageBytes,
+            imageHeight: input.imageHeight,
+            imageWidth: input.imageWidth,
+          },
+          {
+            fetchFn: deps.fetchFn,
+          }
+        ),
+      {
+        maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
+      }
+    );
+  } catch (error) {
+    if (!shouldFallbackToGeminiOcr(error)) {
+      throw error;
     }
-  );
+
+    result = await retryProviderCall(
+      async () =>
+        await performGeminiVisionOcr(
+          {
+            imageBytes: input.imageBytes,
+            imageHeight: input.imageHeight,
+            imageWidth: input.imageWidth,
+          },
+          {
+            fetchFn: deps.fetchFn,
+          }
+        ),
+      {
+        maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
+      }
+    );
+  }
 
   if (input.jobId) {
     await persistProviderUsageSnapshot({
@@ -50,7 +79,7 @@ export async function performHostedOcr(
       modelName: result.providerModel,
       outputTokens: result.usage.outputTokens ?? undefined,
       pageCount: result.usage.pageCount,
-      provider: ProviderType.google_cloud_vision,
+      provider: result.provider,
       requestCount: result.usage.requestCount,
       stage: ProviderUsageStage.ocr,
       success: true,
@@ -149,4 +178,27 @@ export function mergeHostedPageTranslation(input: {
     targetLanguage: input.targetLanguage,
     translatorType: input.translatorType,
   });
+}
+
+function shouldFallbackToGeminiOcr(error: unknown) {
+  if (!envServer.GEMINI_API_KEY) {
+    return false;
+  }
+
+  if (
+    !(error instanceof ProviderGatewayError) ||
+    error.provider !== ProviderType.google_cloud_vision
+  ) {
+    return false;
+  }
+
+  const message = error.message.toLowerCase();
+
+  return (
+    error.code === 'config_error' ||
+    message.includes('has not been used in project') ||
+    message.includes('enable it by visiting') ||
+    message.includes('authentication failed') ||
+    message.includes('request contains an invalid argument')
+  );
 }

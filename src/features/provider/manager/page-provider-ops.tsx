@@ -1,9 +1,14 @@
 import { getUiState } from '@bearstudio/ui-state';
-import { useQuery } from '@tanstack/react-query';
+import { ORPCError } from '@orpc/client';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
+import { CheckCircle2Icon, TriangleAlertIcon } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { toast } from 'sonner';
 
 import { orpc } from '@/lib/orpc/client';
 
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -23,9 +28,19 @@ import {
   DataListText,
   DataListTextHeader,
 } from '@/components/ui/datalist';
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionProvider } from '@/features/auth/permissions';
+import { WithPermissions } from '@/features/auth/with-permissions';
 import {
   PageLayout,
   PageLayoutContent,
@@ -41,6 +56,7 @@ export const PageProviderOps = (props: {
   };
   setWindowHours: (windowHours: number) => void;
 }) => {
+  const queryClient = useQueryClient();
   const windowHours = props.search.windowHours ?? 24;
 
   const summaryQuery = useQuery(
@@ -50,6 +66,99 @@ export const PageProviderOps = (props: {
       },
     })
   );
+  const routingConfigQuery = useQuery(
+    orpc.provider.routingConfig.queryOptions({
+      input: undefined,
+    })
+  );
+  const [translationProviderPrimary, setTranslationProviderPrimary] = useState<
+    'gemini' | 'openai'
+  >('gemini');
+  const [geminiTranslationModel, setGeminiTranslationModel] = useState('');
+  const [openaiTranslationModel, setOpenaiTranslationModel] = useState('');
+
+  useEffect(() => {
+    if (!routingConfigQuery.data) {
+      return;
+    }
+
+    setTranslationProviderPrimary(
+      routingConfigQuery.data.current.translationProviderPrimary
+    );
+    setGeminiTranslationModel(
+      routingConfigQuery.data.current.geminiTranslationModel
+    );
+    setOpenaiTranslationModel(
+      routingConfigQuery.data.current.openaiTranslationModel
+    );
+  }, [routingConfigQuery.data]);
+
+  const updateRoutingConfigMutation = useMutation({
+    mutationFn: async () =>
+      await orpc.provider.updateRoutingConfig.call({
+        geminiTranslationModel: geminiTranslationModel.trim(),
+        openaiTranslationModel: openaiTranslationModel.trim(),
+        translationProviderPrimary,
+      }),
+    onSuccess: async () => {
+      toast.success('Provider routing updated.');
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: orpc.provider.routingConfig.key({
+            input: undefined,
+          }),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: orpc.provider.opsSummary.key({
+            input: {
+              windowHours,
+            },
+          }),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: orpc.provider.manifest.key({
+            input: undefined,
+          }),
+        }),
+      ]);
+    },
+    onError: (error) => {
+      const message =
+        error instanceof ORPCError
+          ? error.message
+          : 'Failed to update provider routing.';
+
+      toast.error(message);
+    },
+  });
+
+  const activeProvider = routingConfigQuery.data?.translationProviders.find(
+    (provider) => provider.provider === translationProviderPrimary
+  );
+  const translationProviderOptions =
+    routingConfigQuery.data?.translationProviders.map((provider) => ({
+      label: `${provider.provider}${provider.enabled ? '' : ' (missing API key)'}`,
+      value: provider.provider,
+    })) ?? [];
+  const currentActiveModel =
+    translationProviderPrimary === 'gemini'
+      ? geminiTranslationModel
+      : openaiTranslationModel;
+  const activeModelOptions = useMemo(() => {
+    const options = activeProvider?.modelOptions ?? [];
+
+    if (!currentActiveModel.trim()) {
+      return options;
+    }
+
+    return options.includes(currentActiveModel)
+      ? options
+      : [currentActiveModel, ...options];
+  }, [activeProvider?.modelOptions, currentActiveModel]);
+  const activeModelSelectOptions = activeModelOptions.map((value) => ({
+    label: value,
+    value,
+  }));
 
   const ui = getUiState((set) => {
     if (summaryQuery.status === 'pending') {
@@ -85,6 +194,219 @@ export const PageProviderOps = (props: {
                 </Button>
               ))}
             </div>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Translation Routing</CardTitle>
+                <CardDescription>
+                  Choose which hosted translation API and model are used for
+                  mobile jobs. API keys stay on the server.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {routingConfigQuery.status === 'pending' ? (
+                  <DataList>
+                    <DataListLoadingState />
+                  </DataList>
+                ) : routingConfigQuery.status === 'error' ? (
+                  <Alert variant="destructive">
+                    <TriangleAlertIcon />
+                    <AlertTitle>Provider config failed to load</AlertTitle>
+                    <AlertDescription>
+                      <p>
+                        The current provider routing could not be loaded from
+                        the server.
+                      </p>
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => routingConfigQuery.refetch()}
+                      >
+                        Retry
+                      </Button>
+                    </AlertDescription>
+                  </Alert>
+                ) : (
+                  <>
+                    {!routingConfigQuery.data.ocr.enabled ? (
+                      <Alert variant="destructive">
+                        <TriangleAlertIcon />
+                        <AlertTitle>OCR is not configured</AlertTitle>
+                        <AlertDescription>
+                          <p>
+                            {routingConfigQuery.data.ocr.reason ??
+                              'Google Cloud Vision is required to process hosted translation jobs.'}
+                          </p>
+                        </AlertDescription>
+                      </Alert>
+                    ) : (
+                      <Alert>
+                        <CheckCircle2Icon />
+                        <AlertTitle>OCR ready</AlertTitle>
+                        <AlertDescription>
+                          <p>
+                            {routingConfigQuery.data.ocr.provider} ·{' '}
+                            {routingConfigQuery.data.ocr.modelName}
+                          </p>
+                        </AlertDescription>
+                      </Alert>
+                    )}
+
+                    <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+                      <div className="space-y-2">
+                        <p className="text-sm font-medium">
+                          Translation provider
+                        </p>
+                        <Select
+                          items={translationProviderOptions}
+                          value={translationProviderPrimary}
+                          onValueChange={(value) => {
+                            if (value !== 'gemini' && value !== 'openai') {
+                              return;
+                            }
+
+                            setTranslationProviderPrimary(value);
+                          }}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a provider" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectGroup>
+                              {routingConfigQuery.data.translationProviders.map(
+                                (provider) => (
+                                  <SelectItem
+                                    key={provider.provider}
+                                    value={provider.provider}
+                                  >
+                                    {provider.provider}
+                                    {provider.enabled
+                                      ? ''
+                                      : ' (missing API key)'}
+                                  </SelectItem>
+                                )
+                              )}
+                            </SelectGroup>
+                          </SelectContent>
+                        </Select>
+                        <p className="text-xs text-muted-foreground">
+                          Only server-configured providers are usable by mobile
+                          users.
+                        </p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-sm font-medium">
+                          {translationProviderPrimary === 'gemini'
+                            ? 'Gemini model'
+                            : 'OpenAI model'}
+                        </p>
+                        <Select
+                          items={activeModelSelectOptions}
+                          value={currentActiveModel}
+                          onValueChange={(value) => {
+                            if (!value) {
+                              return;
+                            }
+
+                            if (translationProviderPrimary === 'gemini') {
+                              setGeminiTranslationModel(value);
+                              return;
+                            }
+
+                            setOpenaiTranslationModel(value);
+                          }}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a model" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectGroup>
+                              {activeModelOptions.map((value) => (
+                                <SelectItem key={value} value={value}>
+                                  {value}
+                                </SelectItem>
+                              ))}
+                            </SelectGroup>
+                          </SelectContent>
+                        </Select>
+                        <Input
+                          value={currentActiveModel}
+                          onChange={(event) => {
+                            if (translationProviderPrimary === 'gemini') {
+                              setGeminiTranslationModel(
+                                event.currentTarget.value
+                              );
+                              return;
+                            }
+
+                            setOpenaiTranslationModel(
+                              event.currentTarget.value
+                            );
+                          }}
+                          placeholder="Override with a custom model name"
+                        />
+                        <p className="text-xs text-muted-foreground">
+                          Pick a recommended model above or type a custom model
+                          name manually.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="grid gap-3 md:grid-cols-2">
+                      {routingConfigQuery.data.translationProviders.map(
+                        (provider) => (
+                          <div
+                            key={provider.provider}
+                            className="rounded-xl border border-border/70 bg-muted/20 px-4 py-4 text-sm"
+                          >
+                            <div className="flex items-center justify-between gap-2">
+                              <div className="font-medium text-foreground">
+                                {provider.provider}
+                              </div>
+                              <Badge
+                                variant={
+                                  provider.enabled ? 'default' : 'secondary'
+                                }
+                              >
+                                {provider.enabled
+                                  ? 'Configured'
+                                  : 'Missing key'}
+                              </Badge>
+                            </div>
+                            <div className="mt-2 text-muted-foreground">
+                              Current model: {provider.modelName}
+                            </div>
+                            {!provider.enabled && provider.reason ? (
+                              <div className="mt-1 text-destructive">
+                                {provider.reason}
+                              </div>
+                            ) : null}
+                          </div>
+                        )
+                      )}
+                    </div>
+
+                    <WithPermissions permissions={[permissionProvider.update]}>
+                      <div className="flex items-center justify-end gap-2">
+                        <Button
+                          variant="secondary"
+                          onClick={() => routingConfigQuery.refetch()}
+                        >
+                          Refresh
+                        </Button>
+                        <Button
+                          loading={updateRoutingConfigMutation.isPending}
+                          onClick={() => updateRoutingConfigMutation.mutate()}
+                        >
+                          Save routing
+                        </Button>
+                      </div>
+                    </WithPermissions>
+                  </>
+                )}
+              </CardContent>
+            </Card>
 
             {ui
               .match('pending', () => (

@@ -1,12 +1,20 @@
+import { ORPCError } from '@orpc/server';
 import { z } from 'zod';
 
 import { ProviderType, ProviderUsageStage } from '@/server/db/generated/client';
 import {
   zProviderOpsInput,
   zProviderOpsSummary,
+  zProviderRoutingConfigInput,
+  zProviderRoutingConfigResponse,
 } from '@/server/jobs/backoffice-schema';
 import { protectedProcedure } from '@/server/orpc';
-import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
+import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-gateway/manifest';
+import {
+  getProviderGatewayRuntimeConfig,
+  getProviderGatewayRuntimeState,
+  updateProviderGatewayRuntimeConfig,
+} from '@/server/provider-gateway/runtime-config';
 import { zProviderGatewayManifest } from '@/server/provider-gateway/schema';
 
 const tags = ['providers'];
@@ -24,8 +32,87 @@ export default {
     })
     .input(z.void())
     .output(zProviderGatewayManifest)
-    .handler(() => {
-      return getProviderGatewayManifest();
+    .handler(async ({ context }) => {
+      return await getProviderGatewayManifestWithRuntimeConfig({
+        dbClient: context.db,
+      });
+    }),
+
+  routingConfig: protectedProcedure({
+    permissions: {
+      provider: ['read'],
+    },
+  })
+    .route({
+      method: 'GET',
+      path: '/providers/routing-config',
+      tags,
+    })
+    .input(z.void())
+    .output(zProviderRoutingConfigResponse)
+    .handler(async ({ context }) => {
+      const config = await getProviderGatewayRuntimeConfig({
+        dbClient: context.db,
+      });
+
+      return zProviderRoutingConfigResponse.parse({
+        ...config,
+        ...getProviderGatewayRuntimeState({
+          config: config.current,
+        }),
+      });
+    }),
+
+  updateRoutingConfig: protectedProcedure({
+    permissions: {
+      provider: ['update'],
+    },
+  })
+    .route({
+      method: 'POST',
+      path: '/providers/routing-config',
+      tags,
+    })
+    .input(zProviderRoutingConfigInput)
+    .output(zProviderRoutingConfigResponse)
+    .handler(async ({ context, input }) => {
+      const nextState = getProviderGatewayRuntimeState({
+        config: input,
+      });
+      const selectedProvider = nextState.translationProviders.find(
+        (provider) => provider.provider === input.translationProviderPrimary
+      );
+
+      if (!nextState.ocr.enabled) {
+        throw new ORPCError('BAD_REQUEST', {
+          message: 'GOOGLE_CLOUD_VISION_API_KEY is not configured.',
+        });
+      }
+
+      if (!selectedProvider?.enabled) {
+        throw new ORPCError('BAD_REQUEST', {
+          message:
+            selectedProvider?.reason ??
+            'The selected translation provider is not configured.',
+        });
+      }
+
+      const config = await updateProviderGatewayRuntimeConfig(input, {
+        dbClient: context.db,
+      });
+
+      context.logger.info({
+        provider: config.current.translationProviderPrimary,
+        scope: 'provider',
+        type: 'mutation',
+      });
+
+      return zProviderRoutingConfigResponse.parse({
+        ...config,
+        ...getProviderGatewayRuntimeState({
+          config: config.current,
+        }),
+      });
     }),
 
   opsSummary: protectedProcedure({
@@ -45,7 +132,9 @@ export default {
       const windowStart = new Date(
         generatedAt.getTime() - input.windowHours * 60 * 60 * 1000
       );
-      const manifest = getProviderGatewayManifest();
+      const manifest = await getProviderGatewayManifestWithRuntimeConfig({
+        dbClient: context.db,
+      });
 
       const [recentUsages, recentFailures, jobStatusCounts] = await Promise.all(
         [

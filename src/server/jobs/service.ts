@@ -5,7 +5,7 @@ import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
-import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
+import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-gateway/manifest';
 import { HostedPageTranslation } from '@/server/provider-gateway/schema';
 import {
   mergeHostedPageTranslation,
@@ -111,10 +111,15 @@ export async function createTranslationJob(
   const input = zCreateTranslationJobInput.parse(rawInput);
   const dbClient = deps.dbClient ?? db;
   const now = deps.now ?? new Date();
-  const providers = resolveProviderSelection({
-    ocrProvider: input.ocrProvider,
-    translationProvider: input.translationProvider,
-  });
+  const providers = await resolveProviderSelection(
+    {
+      ocrProvider: input.ocrProvider,
+      translationProvider: input.translationProvider,
+    },
+    {
+      dbClient,
+    }
+  );
   const expiresAt = new Date(
     now.getTime() + envServer.JOB_PAGE_UPLOAD_URL_TTL_SECONDS * 1000
   );
@@ -876,11 +881,18 @@ function calculateJobProgress(
   }
 }
 
-function resolveProviderSelection(input: {
-  ocrProvider?: 'google_cloud_vision';
-  translationProvider?: 'anthropic' | 'gemini' | 'openai';
-}) {
-  const manifest = getProviderGatewayManifest();
+async function resolveProviderSelection(
+  input: {
+    ocrProvider?: 'google_cloud_vision';
+    translationProvider?: 'anthropic' | 'gemini' | 'openai';
+  },
+  deps?: {
+    dbClient?: typeof db;
+  }
+) {
+  const manifest = await getProviderGatewayManifestWithRuntimeConfig({
+    dbClient: deps?.dbClient,
+  });
   const requestedOcrProvider =
     input.ocrProvider === 'google_cloud_vision'
       ? ProviderType.google_cloud_vision

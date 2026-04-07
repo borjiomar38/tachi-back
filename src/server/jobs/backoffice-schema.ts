@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 import { ProviderType, ProviderUsageStage } from '@/server/db/generated/client';
+import { zTranslationProviderPrimary } from '@/server/provider-gateway/runtime-config';
 import { zProviderGatewayManifest } from '@/server/provider-gateway/schema';
 
 export const zBackofficeJobStatus = z.enum([
@@ -177,6 +178,34 @@ export const zProviderOpsInput = z.object({
     .positive()
     .max(24 * 30)
     .default(24),
+});
+
+export const zProviderRoutingConfig = z.object({
+  geminiTranslationModel: z.string().trim().min(1),
+  openaiTranslationModel: z.string().trim().min(1),
+  translationProviderPrimary: zTranslationProviderPrimary,
+});
+
+export const zProviderRoutingConfigInput = zProviderRoutingConfig;
+
+export const zProviderRoutingProviderOption = z.object({
+  enabled: z.boolean(),
+  modelName: z.string(),
+  modelOptions: z.array(z.string()),
+  provider: z.enum(['gemini', 'openai']),
+  reason: z.string().nullish(),
+});
+
+export const zProviderRoutingConfigResponse = z.object({
+  current: zProviderRoutingConfig,
+  ocr: z.object({
+    enabled: z.boolean(),
+    modelName: z.string(),
+    provider: z.literal('google_cloud_vision'),
+    reason: z.string().nullish(),
+  }),
+  translationProviders: z.array(zProviderRoutingProviderOption),
+  updatedAt: z.date().nullish(),
 });
 
 export const zProviderOpsHealth = z.enum([
