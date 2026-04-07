@@ -37,9 +37,8 @@ export const PageCheckoutCancel = (props: {
           </CardHeader>
           <CardContent className="grid gap-4">
             <div className="rounded-xl border border-border/70 bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-              This phase only handles subscription checkout initiation, so
-              cancellation just returns you to the public site. There is no
-              token ledger change or activation code to unwind here yet.
+              Cancellation just returns you to the public site. No token credit
+              or redeem code was created for this incomplete checkout.
             </div>
             <div className="flex flex-wrap gap-3">
               <a

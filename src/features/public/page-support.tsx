@@ -22,8 +22,8 @@ export const PageSupport = () => {
     <PublicShell>
       <PublicSection
         eyebrow="Support"
-        title="Support and policy placeholders before launch"
-        description="Phase 5 adds the support-facing public routes now so checkout, activation, and backoffice flows have somewhere stable to point later."
+        title="Support and policy routes"
+        description="Use this page for billing questions, redeem-code help, device recovery guidance, and policy links."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
@@ -46,8 +46,8 @@ export const PageSupport = () => {
                 {PUBLIC_SUPPORT_EMAIL}
               </a>
               <p className="text-sm leading-6 text-neutral-300">
-                This route should eventually cover device recovery, manual token
-                adjustments, billing questions, and privacy/legal requests.
+                Use this route for device recovery, manual token adjustments,
+                billing questions, and privacy or legal requests.
               </p>
             </CardContent>
           </Card>
@@ -57,10 +57,10 @@ export const PageSupport = () => {
               <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
                 <ShieldCheckIcon className="size-5" />
               </div>
-              <CardTitle className="text-xl">Launch checklist reminder</CardTitle>
+              <CardTitle className="text-xl">Support flow notes</CardTitle>
               <CardDescription>
-                The support page exists now so later flows do not need to invent
-                contact and policy messaging at the last minute.
+                Keep receipt, redeem-code, and device-recovery guidance
+                consistent here so customers know what to do next.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm text-muted-foreground">
@@ -68,12 +68,12 @@ export const PageSupport = () => {
                 Add the real support mailbox and SLA.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Link Lemon Squeezy receipts and redeem emails back here once those
-                phases exist.
+                Use Lemon Squeezy receipts and redeem-code emails to reconcile
+                orders quickly.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
                 Keep device recovery, refund handling, and privacy requests
-                clearly separated in the backoffice later.
+                clearly separated in the backoffice.
               </div>
             </CardContent>
           </Card>

@@ -108,7 +108,7 @@ export const TokenPackCard = (props: {
 
         <p className={cn('text-xs leading-5', textMutedClassName)}>
           {tokenPack.checkoutEnabled
-            ? 'After payment, your activation code is sent by email.'
+            ? 'After payment, your redeem code is sent by email.'
             : 'Online payment is not configured in this environment yet.'}
         </p>
       </CardContent>

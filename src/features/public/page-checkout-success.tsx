@@ -13,7 +13,6 @@ import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 export const PageCheckoutSuccess = (props: {
   search: {
-    sessionId?: string;
     tokenPack?: string;
   };
 }) => {
@@ -22,7 +21,7 @@ export const PageCheckoutSuccess = (props: {
       <PublicSection
         eyebrow="Checkout"
         title="Checkout completed"
-        description="This page only confirms the checkout handoff. Monthly token crediting, activation-code generation, and device activation depend on webhook processing."
+        description="This page confirms the checkout handoff. Token crediting, redeem-code delivery, and device activation finish after webhook processing."
         className="pb-20 pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
@@ -47,7 +46,7 @@ export const PageCheckoutSuccess = (props: {
                 webhooks before crediting tokens.
               </div>
               <div className="rounded-xl border border-positive-300/70 bg-background px-4 py-3">
-                Activation-code delivery and device binding happen after that
+                Redeem-code delivery and device binding happen after that
                 webhook confirmation.
               </div>
             </CardContent>
@@ -57,16 +56,20 @@ export const PageCheckoutSuccess = (props: {
             <CardHeader className="gap-2">
               <CardTitle>What to keep for support</CardTitle>
               <CardDescription>
-                If you need help reconciling the payment later, keep the
-                order reference.
+                If webhook processing or redeem-code delivery is delayed, keep
+                your Lemon Squeezy receipt email and the selected plan name.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="rounded-xl border border-border/70 bg-muted/40 px-4 py-3">
-                <p className="text-sm font-medium">Order reference</p>
+                <p className="text-sm font-medium">Selected plan</p>
                 <p className="mt-1 break-all font-mono text-xs text-muted-foreground">
-                  {props.search.sessionId ?? 'Unavailable'}
+                  {props.search.tokenPack ?? 'Unavailable'}
                 </p>
+              </div>
+              <div className="rounded-xl border border-border/70 bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
+                Keep the payer email used at checkout and the Lemon Squeezy
+                receipt email so support can reconcile the purchase quickly.
               </div>
               <div className="flex flex-wrap gap-3">
                 <a

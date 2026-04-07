@@ -36,12 +36,12 @@ export const publicHighlights: ContentBlock[] = [
   {
     title: 'Simple monthly plans',
     description:
-      'Choose a monthly plan, receive your activation code by email, and start using it in the app.',
+      'Choose a monthly plan, receive your redeem code by email, and start using it in the app.',
   },
   {
     title: 'Easy activation',
     description:
-      'No technical account setup. Just add your activation code and start translating.',
+      'No technical account setup. Just add your redeem code and start translating.',
   },
 ];
 
@@ -52,14 +52,14 @@ export const activationSteps: ContentBlock[] = [
       'Choose the plan that matches how much manga or manhwa you read every month.',
   },
   {
-    title: '2. Receive an activation code',
+    title: '2. Receive a redeem code',
     description:
-      'After payment, you receive your activation code by email.',
+      'After payment, you receive your redeem code by email.',
   },
   {
     title: '3. Add the code in the app',
     description:
-      'Enter the activation code in TachiyomiAT once to unlock your monthly plan.',
+      'Enter the redeem code in TachiyomiAT once to unlock your monthly plan.',
   },
   {
     title: '4. Start translating chapters',
@@ -80,9 +80,9 @@ export const supportFaqs: ContentBlock[] = [
       'No. The goal is a simple user flow: subscribe, receive a code, activate, and translate.',
   },
   {
-    title: 'How do I get my activation code?',
+    title: 'How do I get my redeem code?',
     description:
-      'After payment, the activation code is sent to your email address.',
+      'After payment, the redeem code is sent to your email address.',
   },
   {
     title: 'Can I change phone later?',

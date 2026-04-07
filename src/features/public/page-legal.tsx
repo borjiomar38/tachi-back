@@ -90,8 +90,8 @@ export const PageLegalPrivacy = () => {
                 longer operational metadata.
               </p>
               <p>
-                This public page exists now so later phases have a stable place
-                to document those rules clearly.
+                This public page exists now so launch has a stable place to
+                document those rules clearly.
               </p>
             </>
           ),
@@ -106,7 +106,7 @@ export const PageLegalTerms = () => {
     <LegalPage
       eyebrow="Terms"
       title="Terms of Service placeholder"
-      description="The public website needs basic legal placeholders now so checkout, activation, and support flows have somewhere to point later."
+      description="The public website needs basic legal placeholders so checkout, activation, and support flows have somewhere stable to point."
       sections={[
         {
           title: 'Service boundary',
@@ -129,9 +129,9 @@ export const PageLegalTerms = () => {
           children: (
             <>
               <p>
-                The planned customer flow uses redeem codes and device binding
-                instead of a normal user account, so the terms should document
-                recovery, revocation, and misuse handling in those terms.
+                The customer flow uses redeem codes and device binding instead
+                of a normal user account, so the terms should document
+                recovery, revocation, and misuse handling clearly.
               </p>
             </>
           ),

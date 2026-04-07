@@ -25,13 +25,13 @@ const pricingNotes = [
     icon: KeyRoundIcon,
     title: 'No account signup path',
     description:
-      'Activation is planned around activation codes and installation binding, not customer dashboards.',
+      'Access uses redeem codes and installation binding, not customer dashboards.',
   },
   {
     icon: ShieldCheckIcon,
     title: 'Recurring fulfillment path',
     description:
-      'Webhook crediting now follows monthly invoices, while token expiry, device recovery, and refund tooling stay in later phases.',
+      'Webhook fulfillment credits monthly tokens after paid billing events, while refund tooling and some recovery flows remain follow-up work.',
   },
 ] as const;
 
@@ -85,8 +85,8 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
 
       <PublicSection
         eyebrow="FAQ"
-        title="Questions pricing still needs to answer after subscriptions exist"
-        description="The website should set expectations now so webhook, activation, renewal, and support work has less customer ambiguity."
+        title="Questions people ask about monthly plans"
+        description="The website should set expectations clearly around webhook fulfillment, activation, renewal, and support."
         className="pb-20"
       >
         <div className="grid gap-4 lg:grid-cols-2">

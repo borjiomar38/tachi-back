@@ -10,7 +10,7 @@ export async function sendPurchaseReceiptEmail(input: {
   totalTokens: number;
 }) {
   return sendEmail({
-    subject: `Your ${input.tokenPackName} activation code`,
+    subject: `Your ${input.tokenPackName} redeem code`,
     template: (
       <TemplatePurchaseReceipt
         language={DEFAULT_LANGUAGE_KEY}

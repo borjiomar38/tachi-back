@@ -9,7 +9,6 @@ export const Route = createFileRoute('/checkout/success')({
   component: RouteComponent,
   validateSearch: zodValidator(
     z.object({
-      session_id: fallback(z.string(), '').optional(),
       tokenPack: fallback(z.string(), '').optional(),
     })
   ),
@@ -26,7 +25,6 @@ function RouteComponent() {
   return (
     <PageCheckoutSuccess
       search={{
-        sessionId: search.session_id,
         tokenPack: search.tokenPack,
       }}
     />

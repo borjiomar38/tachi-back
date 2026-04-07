@@ -2,13 +2,13 @@
 
 `tachi-back` is the backend and backoffice for hosted OCR and translation features used by TachiyomiAT.
 
-The repository is currently in early Phase 15 hardening work: the starter domain is gone, the backend secret contract exists, the first product schema is in place, internal backoffice auth is tightened, the public landing/pricing surface is live, checkout is wired, Stripe fulfillment creates redeemable entitlements, anonymous activation exists, device-bound mobile bearer sessions exist, the first server-owned OCR and translation gateway layer is in place, the first mobile job/upload/status/result backend flow is live, the first support-facing manager views for licenses and devices are in place, the first jobs/provider-ops manager surfaces now exist, the first Android hosted-engine slice now consumes those backend contracts, and the first launch-hardening slice now covers request correlation plus dedicated rate limits for checkout and mobile job routes.
+The repository is currently in early Phase 15 hardening work: the starter domain is gone, the backend secret contract exists, the first product schema is in place, internal backoffice auth is tightened, the public landing/pricing surface is live, checkout is wired, Lemon Squeezy webhook fulfillment creates redeemable entitlements, anonymous activation exists, device-bound mobile bearer sessions exist, the first server-owned OCR and translation gateway layer is in place, the first mobile job/upload/status/result backend flow is live, the first support-facing manager views for licenses and devices are in place, the first jobs/provider-ops manager surfaces now exist, the first Android hosted-engine slice now consumes those backend contracts, and the first launch-hardening slice now covers request correlation plus dedicated rate limits for checkout and mobile job routes.
 
 ## Current Scope
 
 - internal admin auth and manager shell
 - public landing and pricing surface
-- Stripe Checkout and initial webhook fulfillment for paid checkout completions
+- Lemon Squeezy checkout and webhook fulfillment for paid purchases and subscription renewals
 - first anonymous redeem and installation-binding backend path
 - first device-bound mobile access and refresh session endpoints
 - first hosted provider gateway foundation for OCR and translation
@@ -29,7 +29,7 @@ Not implemented yet:
 - remaining Phase 12/13 backoffice coverage for orders, redeem-code lists, audit views, manual support actions, and operator actions such as retry/cancel/refund review beyond the first contact inbox workflow
 - remaining Android hosted UX polish such as review mode, richer retry/recovery UX, and broader hosted-only reader surfaces
 - broader Phase 15 work such as metrics, restore rehearsals, launch checklists, incident runbooks, and richer abuse controls
-- replay tooling and broader Stripe event support beyond the first paid checkout completion path
+- refund tooling, replay tooling, and broader Lemon Squeezy event support beyond the current order and subscription payment path
 
 ## Stack Kept From The Starter
 
@@ -47,17 +47,17 @@ Public client variables:
 - `VITE_BASE_URL`
 - `VITE_ENV_NAME`, `VITE_ENV_EMOJI`, `VITE_ENV_COLOR`
 - `VITE_IS_DEMO`
-- `VITE_STRIPE_PUBLIC_KEY`
+- `VITE_LEMONSQUEEZY_STORE_URL`
 - `VITE_S3_BUCKET_PUBLIC_URL`
 
 Server-only variables:
 
 - auth and session secrets
-- Stripe secret and webhook secrets
+- Lemon Squeezy API and webhook secrets
 - provider API keys
 - mobile API signing secrets
 - S3 credentials and bucket names
-- Stripe price IDs for each sellable token pack
+- Lemon Squeezy store and variant IDs for each sellable token pack
 - job-runtime and observability configuration
 
 ## Local Setup
@@ -77,12 +77,14 @@ pnpm dk:start
 
 If you change Docker port mappings in `.env`, use `docker compose up -d <service>` instead of `pnpm dk:start`, because `docker compose start` will not recreate containers with new port bindings.
 
-For local Stripe subscription testing, forward webhooks to `/api/stripe/webhook` and enable these events:
+For local Lemon Squeezy subscription testing, register a webhook that targets `/api/payments/webhook` through a public tunnel and enable these events:
 
-- `invoice.paid`
-- `invoice.payment_failed`
-- `customer.subscription.updated`
-- `customer.subscription.deleted`
+- `order_created`
+- `subscription_payment_success`
+- `subscription_payment_failed`
+- `subscription_updated`
+- `subscription_cancelled`
+- `subscription_expired`
 
 Run the app:
 
@@ -134,7 +136,7 @@ Phase 2 defines the environment and local infrastructure contract for the real p
 
 That means:
 
-- add server-only env placeholders for Stripe, provider APIs, mobile sessions, and observability
+- add server-only env placeholders for Lemon Squeezy, provider APIs, mobile sessions, and observability
 - separate object-storage buckets for uploads, results, and logs
 - document the backend-only secret boundary so mobile and browser clients never receive provider secrets
 - keep early job execution in the main app process for now with `JOB_RUNTIME_MODE="inline"`
@@ -172,29 +174,29 @@ That means:
 - add pricing, activation/how-it-works, download, support, and legal placeholder routes
 - source public pricing from the real `TokenPack` records instead of hardcoded demo copy
 - keep public messaging honest about the current Android state while explaining the hosted direction
-- stop short of Stripe Checkout wiring, which stays in Phase 6
+- stop short of Lemon Squeezy checkout wiring, which stays in Phase 6
 
 ## Phase 6 Intent
 
-Phase 6 connects the public pricing site to Stripe Checkout without crediting tokens yet.
+Phase 6 connects the public pricing site to Lemon Squeezy checkout without crediting tokens yet.
 
 That means:
 
-- use server-controlled token-pack to Stripe price mapping
+- use server-controlled token-pack to Lemon Squeezy variant mapping
 - collect payer email as part of checkout initiation because there is no customer login
-- redirect customers to Stripe Checkout from real pricing cards
+- redirect customers to Lemon Squeezy checkout from real pricing cards
 - add success and cancel pages that stay accurate about webhook crediting and redeem timing
 - keep token ledger posting, redeem-code generation, and activation in later phases
 
 ## Phase 7 Intent
 
-Phase 7 turns successful Stripe payments into durable internal entitlements.
+Phase 7 turns successful Lemon Squeezy payments into durable internal entitlements.
 
 That means:
 
-- verify Stripe webhooks on a dedicated public route using the raw request body
-- persist Stripe events for idempotency, replay, and auditability
-- create or update paid `Order` records from Stripe checkout sessions
+- verify Lemon Squeezy webhooks on a dedicated public route using the raw request body
+- persist webhook events for idempotency, replay, and auditability
+- create or update paid `Order` records from Lemon Squeezy order and subscription events
 - issue one `License`, one `RedeemCode`, and one append-only purchase credit ledger entry per successful paid order
 - treat email delivery as best-effort after durable fulfillment so email failure never loses paid credit
 
@@ -252,7 +254,7 @@ Phase 12 introduces the first internal support surfaces for commerce, licenses, 
 That means:
 
 - redirect the manager entry point toward support lookup instead of the old dashboard-first flow
-- add backoffice search by license key, redeem code, installation ID, order ID, Stripe identifiers, and email
+- add backoffice search by license key, redeem code, installation ID, order ID, Lemon Squeezy identifiers, and email
 - add first license and device detail pages so support can explain entitlements, balance changes, and device bindings
 - keep heavy operations dashboards, full order/redeem-code management, and customer-facing Android UI in later phases
 
@@ -307,7 +309,7 @@ That means:
 
 Current Phase 15 slice already implemented:
 
-- dedicated env-backed rate limits for public Stripe checkout initiation
+- dedicated env-backed rate limits for public Lemon Squeezy checkout initiation
 - dedicated env-backed rate limits for authenticated mobile job create, upload/complete, and read routes
 - shared request-context helpers that issue or preserve request IDs and attach `X-Request-ID` headers to the hardened API responses
 - structured route logging for rate-limit hits and checkout/mobile-job request handling
@@ -325,12 +327,12 @@ Still pending in Phase 15:
 - local Docker covers Postgres, MinIO, and Maildev
 - MinIO bucket bootstrap now creates `default`, `uploads`, `results`, and `logs`
 - early phases still use the main app process for job execution; no dedicated worker service is scaffolded yet
-- Stripe webhooks and provider calls will still rely on remote services or local CLI tunnels when those phases begin
+- Lemon Squeezy webhooks and provider calls will still rely on remote services or local tunnels when those phases begin
 
 ## Secrets Policy
 
 - never place provider secrets or mobile signing secrets in `VITE_` variables
-- treat `VITE_STRIPE_PUBLIC_KEY` as public by design
+- treat `VITE_LEMONSQUEEZY_STORE_URL` as public by design
 - production secrets should live in deployment secret storage, not committed env files
 - the current Better Auth setup is for internal admin users only, not for TachiyomiAT end-user identity
 - validation for implementation work should include `pnpm lint`

@@ -93,7 +93,7 @@ export const PageCheckout = (props: {
       <PublicSection
         eyebrow="Checkout"
         title={`Subscribe to ${props.tokenPack.name}`}
-        description="Lemon Squeezy handles recurring payment. Monthly token crediting, activation-code creation, and device activation are finalized after webhook confirmation."
+        description="Lemon Squeezy handles recurring payment. Monthly token crediting, redeem-code delivery, and device activation are finalized after webhook confirmation."
         className="pb-20 pt-10"
       >
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
@@ -183,7 +183,7 @@ export const PageCheckout = (props: {
               <CardHeader className="gap-2">
                 <CardTitle>Continue to checkout</CardTitle>
                 <CardDescription>
-                  Use the payer email you want receipts and activation-code
+                  Use the payer email you want receipts and redeem-code
                   instructions tied to.
                 </CardDescription>
               </CardHeader>
@@ -217,9 +217,9 @@ export const PageCheckout = (props: {
                       startAddon={<MailIcon className="size-4" />}
                     />
                     <p className="text-sm text-muted-foreground">
-                      Subscription checkout starts here. Support and
-                      activation still use activation-code flows after the first
-                      paid invoice.
+                      Subscription checkout starts here. After the first paid
+                      invoice, we email the redeem code used to activate the
+                      app.
                     </p>
                   </div>
 

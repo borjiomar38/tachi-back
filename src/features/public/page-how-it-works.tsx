@@ -25,7 +25,7 @@ const flowNotes = [
     icon: SmartphoneIcon,
     title: 'Device binding is explicit',
     description:
-      'Backoffice staff will be able to inspect and recover device bindings when a customer changes phones or reinstalls.',
+      'Backoffice staff can inspect and recover device bindings when a customer changes phones or reinstalls.',
   },
   {
     icon: ServerIcon,
@@ -41,7 +41,7 @@ export const PageHowItWorks = () => {
       <PublicSection
         eyebrow="How it works"
         title="Hosted activation without customer accounts"
-        description="The public website needs to explain the eventual redeem-code flow clearly now, because TachiyomiAT does not have a normal login model for this product."
+        description="The public website explains the current redeem-code flow clearly because TachiyomiAT does not use a traditional customer account system for hosted access."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -122,7 +122,7 @@ export const PageHowItWorks = () => {
       <PublicSection
         eyebrow="Step by step"
         title="Activation sequence"
-        description="This is the public-facing explanation of the planned hosted flow. Checkout, redemption, and mobile API calls still land in later phases."
+        description="This page explains the current hosted flow from checkout to device-bound access."
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {activationSteps.map((step) => (
@@ -138,18 +138,18 @@ export const PageHowItWorks = () => {
 
       <PublicSection
         eyebrow="Important boundary"
-        title="What is not live yet"
-        description="Phase 5 is only the public explanation and pricing surface."
+        title="What still needs polish"
+        description="The core hosted flow is live, but rollout polish and support tooling still continue."
         className="pb-20"
       >
         <Card className="rounded-[1.5rem] border-warning-200 bg-warning-50/80 dark:border-warning-900/60 dark:bg-warning-950/15">
           <CardHeader className="gap-2">
-            <CardTitle className="text-lg">Still pending after this phase</CardTitle>
+            <CardTitle className="text-lg">Current follow-up work</CardTitle>
             <CardDescription className="text-warning-900 dark:text-warning-100">
-              Lemon Squeezy Checkout, paid order fulfillment, redeem-code APIs,
-              device-bound mobile sessions, and Android hosted-mode integration
-              all stay in later phases even though the public website now
-              explains the intended flow.
+              Lemon Squeezy checkout, webhook fulfillment, redeem-code
+              activation, device-bound mobile sessions, and Android hosted mode
+              are in place. Remaining work is around recovery UX, review mode,
+              refund tooling, and launch hardening.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-3">

@@ -15,30 +15,31 @@ export const TemplatePurchaseReceipt = (props: {
 }) => {
   return (
     <EmailLayout
-      preview={`Your Tachiyomi Back activation code for ${props.packName}`}
+      preview={`Your Tachiyomi Back redeem code for ${props.packName}`}
       language={props.language}
     >
       <Container style={styles.container}>
         <Heading style={styles.h1}>
-          Your subscription payment is recorded
+          Your subscription payment is confirmed
         </Heading>
         <Section style={styles.section}>
           <Text style={styles.text}>
             Lemon Squeezy billing for <strong>{props.packName}</strong> is now
-            linked to a pending Tachiyomi Back license with{' '}
+            linked to a Tachiyomi Back license with{' '}
             <strong>
               {formatTokenCount(props.totalTokens)} monthly tokens
             </strong>
             .
           </Text>
           <Text style={styles.text}>
-            Keep this activation code for the first device-binding flow:
+            Use this redeem code in TachiyomiAT to activate hosted access on
+            your device:
           </Text>
           <Text style={styles.code}>{props.redeemCode}</Text>
           <Text style={styles.textMuted}>
-            Hosted activation and device binding still land in later phases, so
-            support may guide the first activations manually while the Android
-            flow is being connected.
+            Open the Tachiyomi Back settings in the app, enter the redeem code,
+            and complete device activation. Keep this email for support if you
+            need recovery help later.
           </Text>
         </Section>
         <EmailFooter />

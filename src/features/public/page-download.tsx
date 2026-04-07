@@ -18,8 +18,8 @@ export const PageDownload = () => {
     <PublicShell>
       <PublicSection
         eyebrow="Download"
-        title="Download guidance without overpromising hosted mode"
-        description="This page should help visitors understand what TachiyomiAT can do today and what will only exist after the hosted backend integration is complete."
+        title="Download TachiyomiAT and choose your mode"
+        description="This page should help visitors understand the current Android app, including both local translation modes and Tachiyomi Back hosted mode."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -30,8 +30,8 @@ export const PageDownload = () => {
               </div>
               <CardTitle className="text-xl">What the app does today</CardTitle>
               <CardDescription>
-                The current Android build still relies on local translation
-                modes and user-supplied API keys for hosted providers.
+                The current Android build supports both local translation modes
+                and the hosted Tachiyomi Back mode.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm text-muted-foreground">
@@ -39,12 +39,12 @@ export const PageDownload = () => {
                 On-device translation is available through ML Kit.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                API-based translators currently expect the user to provide their
-                own provider credentials.
+                API-based local translators can still use user-supplied
+                provider credentials.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                This website does not distribute a hosted-mode Android build
-                yet.
+                Hosted mode can activate against Tachiyomi Back with a redeem
+                code and backend URL.
               </div>
             </CardContent>
           </Card>
@@ -54,10 +54,10 @@ export const PageDownload = () => {
               <div className="flex size-11 items-center justify-center rounded-2xl bg-white/10 text-neutral-50">
                 <KeyRoundIcon className="size-5" />
               </div>
-              <CardTitle className="text-xl">What hosted mode will add</CardTitle>
+              <CardTitle className="text-xl">What hosted mode adds</CardTitle>
               <CardDescription className="text-neutral-300">
-                The backend roadmap replaces exposed provider keys with token
-                packs, redeem codes, device binding, and server-side provider
+                Hosted mode moves payment, token credits, redeem codes, device
+                binding, and server-side provider
                 routing.
               </CardDescription>
             </CardHeader>
@@ -80,17 +80,16 @@ export const PageDownload = () => {
       <PublicSection
         eyebrow="Distribution note"
         title="Keep the download messaging honest"
-        description="Until Android integration ships, the public site should guide users rather than pretend a hosted-enabled build already exists."
+        description="Explain clearly whether a user wants local bring-your-own-key mode or the hosted redeem-code flow."
         className="pb-20"
       >
         <Card className="rounded-[1.5rem] border-warning-200 bg-warning-50/80 dark:border-warning-900/60 dark:bg-warning-950/15">
           <CardHeader className="gap-2">
             <CardTitle className="text-lg">Recommended copy boundary</CardTitle>
             <CardDescription className="text-warning-900 dark:text-warning-100">
-              Tell visitors that TachiyomiAT is available today, but hosted mode
-              is still under implementation. Do not advertise checkout,
-              redeem-code activation, or backend job processing as already
-              shipped in Android.
+              Tell visitors that TachiyomiAT supports both local and hosted
+              flows. Do not imply that token crediting or redeem-code delivery
+              completes before webhook confirmation.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-3">

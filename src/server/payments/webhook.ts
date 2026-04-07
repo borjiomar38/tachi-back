@@ -424,7 +424,7 @@ export async function processWebhookEvent(
     if (fulfillment.email) {
       try {
         await sendEmailFn({
-          subject: `Your Tachiyomi Back activation code for ${fulfillment.email.packName}`,
+          subject: `Your Tachiyomi Back redeem code for ${fulfillment.email.packName}`,
           template: TemplatePurchaseReceipt({
             language: DEFAULT_LANGUAGE_KEY,
             packName: fulfillment.email.packName,

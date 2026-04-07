@@ -51,7 +51,7 @@ const contactCards = [
   {
     title: 'Activation and devices',
     description:
-      'Need help with your activation code or moving access to another device.',
+      'Need help with your redeem code or moving access to another device.',
     href: '/support',
     cta: 'Open support',
     icon: KeyRoundIcon,
@@ -103,7 +103,7 @@ export const PageLanding = (props: {
                   Translate manga and manhwa with powerful text detection.
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-                  Choose a monthly plan, receive your activation code by email,
+                  Choose a monthly plan, receive your redeem code by email,
                   and start translating chapters in the app.
                 </p>
               </div>
@@ -139,7 +139,7 @@ export const PageLanding = (props: {
                     Simple user flow
                   </CardTitle>
                   <CardDescription className="text-warning-900 dark:text-warning-100">
-                    Pay for a plan, receive your activation code, enter it once
+                    Pay for a plan, receive your redeem code, enter it once
                     in the app, and translate the chapters you want to read.
                   </CardDescription>
                 </CardHeader>
@@ -178,7 +178,7 @@ export const PageLanding = (props: {
                     Powerful text detection for manga and manhwa pages.
                   </div>
                   <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Simple monthly plans with activation by email.
+                    Simple monthly plans with redeem-code delivery by email.
                   </div>
                   <div className="rounded-xl border border-border/70 px-3 py-3">
                     Translate directly in the app without complicated setup.
@@ -257,7 +257,7 @@ export const PageLanding = (props: {
                       Choose the chapter you want to read.
                     </div>
                     <div className="rounded-xl bg-white/5 px-3 py-3">
-                      Add your activation code once.
+                      Add your redeem code once.
                     </div>
                     <div className="rounded-xl bg-white/5 px-3 py-3">
                       Launch the translation and keep reading.
@@ -366,7 +366,7 @@ export const PageLanding = (props: {
               </div>
               <CardTitle className="text-2xl">Talk to Tachiyomi Back</CardTitle>
               <CardDescription className="text-neutral-300">
-                Ask us about plans, activation codes, payment, or getting
+                Ask us about plans, redeem codes, payment, or getting
                 started in the app.
               </CardDescription>
             </CardHeader>
