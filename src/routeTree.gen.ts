@@ -38,10 +38,10 @@ import { Route as ManagerAccountIndexRouteImport } from './routes/manager/accoun
 import { Route as LoginVerifyIndexRouteImport } from './routes/login/verify.index'
 import { Route as LoginErrorIndexRouteImport } from './routes/login/error.index'
 import { Route as AppAccountIndexRouteImport } from './routes/app/account.index'
-import { Route as ApiPaymentsWebhookRouteImport } from './routes/api/payments/webhook'
-import { Route as ApiPaymentsCheckoutRouteImport } from './routes/api/payments/checkout'
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
 import { Route as ApiRestSplatRouteImport } from './routes/api/rest.$'
+import { Route as ApiPaymentsWebhookRouteImport } from './routes/api/payments/webhook'
+import { Route as ApiPaymentsCheckoutRouteImport } from './routes/api/payments/checkout'
 import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
@@ -211,16 +211,6 @@ const AppAccountIndexRoute = AppAccountIndexRouteImport.update({
   path: '/account/',
   getParentRoute: () => AppRouteRoute,
 } as any)
-const ApiPaymentsWebhookRoute = ApiPaymentsWebhookRouteImport.update({
-  id: '/api/payments/webhook',
-  path: '/api/payments/webhook',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiPaymentsCheckoutRoute = ApiPaymentsCheckoutRouteImport.update({
-  id: '/api/payments/checkout',
-  path: '/api/payments/checkout',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
   id: '/api/rpc/$',
   path: '/api/rpc/$',
@@ -229,6 +219,16 @@ const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
 const ApiRestSplatRoute = ApiRestSplatRouteImport.update({
   id: '/api/rest/$',
   path: '/api/rest/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaymentsWebhookRoute = ApiPaymentsWebhookRouteImport.update({
+  id: '/api/payments/webhook',
+  path: '/api/payments/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaymentsCheckoutRoute = ApiPaymentsCheckoutRouteImport.update({
+  id: '/api/payments/checkout',
+  path: '/api/payments/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiOpenapiAuthRoute = ApiOpenapiAuthRouteImport.update({
@@ -363,8 +363,6 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
-  '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
-  '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
@@ -379,6 +377,8 @@ export interface FileRoutesByFullPath {
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
+  '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
+  '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
   '/app/account/': typeof AppAccountIndexRoute
@@ -418,8 +418,6 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
-  '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
-  '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
@@ -434,6 +432,8 @@ export interface FileRoutesByTo {
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
+  '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
+  '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
   '/app/account': typeof AppAccountIndexRoute
@@ -477,8 +477,6 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
-  '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
-  '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
@@ -493,6 +491,8 @@ export interface FileRoutesById {
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
+  '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
+  '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
   '/app/account/': typeof AppAccountIndexRoute
@@ -551,6 +551,8 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs'
     | '/api/openapi/app'
     | '/api/openapi/auth'
+    | '/api/payments/checkout'
+    | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
     | '/app/account/'
@@ -604,6 +606,8 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs'
     | '/api/openapi/app'
     | '/api/openapi/auth'
+    | '/api/payments/checkout'
+    | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
     | '/app/account'
@@ -660,6 +664,8 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs'
     | '/api/openapi/app'
     | '/api/openapi/auth'
+    | '/api/payments/checkout'
+    | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
     | '/app/account/'
@@ -703,8 +709,6 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
-  ApiPaymentsCheckoutRoute: typeof ApiPaymentsCheckoutRoute
-  ApiPaymentsWebhookRoute: typeof ApiPaymentsWebhookRoute
   CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
   CheckoutCancelRoute: typeof CheckoutCancelRoute
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
@@ -716,6 +720,8 @@ export interface RootRouteChildren {
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
   ApiOpenapiAuthRoute: typeof ApiOpenapiAuthRouteWithChildren
+  ApiPaymentsCheckoutRoute: typeof ApiPaymentsCheckoutRoute
+  ApiPaymentsWebhookRoute: typeof ApiPaymentsWebhookRoute
   ApiRestSplatRoute: typeof ApiRestSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
@@ -859,20 +865,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/payments/checkout': {
-      id: '/api/payments/checkout'
-      path: '/api/payments/checkout'
-      fullPath: '/api/payments/checkout'
-      preLoaderRoute: typeof ApiPaymentsCheckoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/payments/webhook': {
-      id: '/api/payments/webhook'
-      path: '/api/payments/webhook'
-      fullPath: '/api/payments/webhook'
-      preLoaderRoute: typeof ApiPaymentsWebhookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/manager/users/': {
       id: '/manager/users/'
       path: '/users'
@@ -955,6 +947,20 @@ declare module '@tanstack/react-router' {
       path: '/api/rest/$'
       fullPath: '/api/rest/$'
       preLoaderRoute: typeof ApiRestSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/payments/webhook': {
+      id: '/api/payments/webhook'
+      path: '/api/payments/webhook'
+      fullPath: '/api/payments/webhook'
+      preLoaderRoute: typeof ApiPaymentsWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/payments/checkout': {
+      id: '/api/payments/checkout'
+      path: '/api/payments/checkout'
+      fullPath: '/api/payments/checkout'
+      preLoaderRoute: typeof ApiPaymentsCheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/openapi/auth': {
@@ -1246,8 +1252,6 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,
-  ApiPaymentsCheckoutRoute: ApiPaymentsCheckoutRoute,
-  ApiPaymentsWebhookRoute: ApiPaymentsWebhookRoute,
   CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
   CheckoutCancelRoute: CheckoutCancelRoute,
   CheckoutSuccessRoute: CheckoutSuccessRoute,
@@ -1259,6 +1263,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,
   ApiOpenapiAuthRoute: ApiOpenapiAuthRouteWithChildren,
+  ApiPaymentsCheckoutRoute: ApiPaymentsCheckoutRoute,
+  ApiPaymentsWebhookRoute: ApiPaymentsWebhookRoute,
   ApiRestSplatRoute: ApiRestSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,

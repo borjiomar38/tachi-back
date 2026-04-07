@@ -127,8 +127,12 @@ export const PageLicense = (props: { params: { key: string } }) => {
                   />
                   <SummaryCard
                     label="Devices"
-                    value={`${summary.activeDeviceCount}/${summary.deviceLimit}`}
-                    subLabel="Active devices / limit"
+                    value={
+                      summary.deviceLimit > 0
+                        ? `${summary.activeDeviceCount}/${summary.deviceLimit}`
+                        : `${summary.activeDeviceCount}/Unlimited`
+                    }
+                    subLabel="Active devices"
                   />
                   <SummaryCard
                     label="Owner Email"

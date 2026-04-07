@@ -351,4 +351,92 @@ describe('license redeem activation', () => {
       })
     );
   });
+
+  it('treats deviceLimit=0 as unlimited', async () => {
+    const now = new Date('2026-03-19T21:40:00.000Z');
+    const tx = {
+      device: {
+        create: vi.fn().mockResolvedValue({
+          appBuild: null,
+          appVersion: null,
+          id: 'device-3',
+          installationId: 'install-1234567890abcd',
+          lastSeenAt: now,
+          locale: null,
+          platform: 'android',
+          status: 'active',
+        }),
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      license: {
+        update: vi.fn().mockResolvedValue({
+          activatedAt: now,
+          deviceLimit: 0,
+          id: 'license-1',
+          key: 'license-key-1',
+          status: 'active',
+        }),
+      },
+      licenseDevice: {
+        count: vi.fn().mockResolvedValueOnce(25).mockResolvedValueOnce(26),
+        create: vi.fn().mockResolvedValue({
+          boundAt: now,
+          id: 'binding-3',
+        }),
+        findFirst: vi.fn().mockResolvedValue(null),
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      redeemCode: {
+        findUnique: vi.fn().mockResolvedValue({
+          code: 'TB-AAAA-BBBB-CCCC',
+          createdAt: now,
+          expiresAt: null,
+          id: 'redeem-1',
+          license: {
+            activatedAt: null,
+            deviceLimit: 0,
+            id: 'license-1',
+            key: 'license-key-1',
+            status: 'pending',
+          },
+          metadata: null,
+          redeemedAt: null,
+          redeemedByDevice: null,
+          redeemedByDeviceId: null,
+          status: 'available',
+        }),
+        update: vi.fn().mockResolvedValue({
+          code: 'TB-AAAA-BBBB-CCCC',
+          redeemedAt: now,
+          status: 'redeemed',
+        }),
+      },
+      tokenLedger: {
+        aggregate: vi.fn().mockResolvedValue({
+          _sum: {
+            deltaTokens: 2750,
+          },
+        }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await redeemLicenseToDevice(
+      {
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+        redeemCode: 'TB-AAAA-BBBB-CCCC',
+      },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+        now,
+      }
+    );
+
+    expect(result.activationStatus).toBe('activated');
+    expect(result.license.deviceLimit).toBe(0);
+    expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+  });
 });

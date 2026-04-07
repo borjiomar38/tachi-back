@@ -1,4 +1,5 @@
 import { db } from '@/server/db';
+import { isUnlimitedDeviceLimit } from '@/server/licenses/device-limit';
 import {
   zRedeemActivationInput,
   zRedeemActivationResponse,
@@ -223,7 +224,10 @@ export async function redeemLicenseToDevice(
         },
       });
 
-      if (activeDeviceCount >= redeemCode.license.deviceLimit) {
+      if (
+        !isUnlimitedDeviceLimit(redeemCode.license.deviceLimit) &&
+        activeDeviceCount >= redeemCode.license.deviceLimit
+      ) {
         throw new RedeemActivationError('device_limit_reached', 409);
       }
     }

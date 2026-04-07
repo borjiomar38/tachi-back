@@ -33,7 +33,7 @@ export const zRedeemActivationResponse = z.object({
     activatedAt: z.date().nullish(),
     activeDeviceCount: z.number().int().nonnegative(),
     availableTokens: z.number().int(),
-    deviceLimit: z.number().int().positive(),
+    deviceLimit: z.number().int().nonnegative(),
     id: z.string(),
     key: z.string(),
     status: z.enum(['pending', 'active', 'suspended', 'revoked', 'expired']),
@@ -50,7 +50,7 @@ export const zLicenseSummary = z.object({
   activeDeviceCount: z.number().int().nonnegative(),
   availableTokens: z.number().int(),
   createdAt: z.date(),
-  deviceLimit: z.number().int().positive(),
+  deviceLimit: z.number().int().nonnegative(),
   id: z.string(),
   key: z.string(),
   ownerEmail: z.string().nullish(),
@@ -224,7 +224,7 @@ export const zBackofficeDeviceDetail = z.object({
 });
 
 export const zCreateManualLicenseGrantInput = z.object({
-  deviceLimit: z.coerce.number().int().positive().max(10).default(1),
+  deviceLimit: z.coerce.number().int().min(0).max(10).default(0),
   notes: z.string().trim().max(500).optional(),
   ownerEmail: z.email().optional(),
   redeemCodeExpiresAt: z.coerce.date().optional(),
@@ -233,7 +233,7 @@ export const zCreateManualLicenseGrantInput = z.object({
 
 export const zCreateManualLicenseGrantResponse = z.object({
   createdAt: z.date(),
-  deviceLimit: z.number().int().positive(),
+  deviceLimit: z.number().int().nonnegative(),
   licenseId: z.string(),
   licenseKey: z.string(),
   redeemCode: z.string(),

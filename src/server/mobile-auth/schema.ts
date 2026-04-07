@@ -64,7 +64,7 @@ export const zMobileSessionSummaryResponse = z.object({
   license: z.object({
     activatedAt: z.date().nullish(),
     availableTokens: z.number().int(),
-    deviceLimit: z.number().int().positive(),
+    deviceLimit: z.number().int().nonnegative(),
     id: z.string(),
     key: z.string(),
     ownerEmail: z.string().nullish(),

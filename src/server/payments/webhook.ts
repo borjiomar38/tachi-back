@@ -4,6 +4,7 @@ import TemplatePurchaseReceipt from '@/emails/templates/purchase-receipt';
 import { db } from '@/server/db';
 import { Prisma } from '@/server/db/generated/client';
 import { sendEmail } from '@/server/email';
+import { UNLIMITED_DEVICE_LIMIT } from '@/server/licenses/device-limit';
 import { generateRedeemCode } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 
@@ -45,6 +46,7 @@ type PaymentTx = {
   license: {
     create: (args: {
       data: {
+        deviceLimit: number;
         notes: string;
         ownerEmail: string | null;
       };
@@ -543,6 +545,7 @@ async function fulfillPaidOrder(input: {
   if (!licenseId) {
     const license = await input.tx.license.create({
       data: {
+        deviceLimit: UNLIMITED_DEVICE_LIMIT,
         notes: `Created from Lemon Squeezy order ${lsOrderId}`,
         ownerEmail: payerEmail,
       },
@@ -730,6 +733,7 @@ async function fulfillSubscriptionPayment(input: {
   if (!licenseId) {
     const license = await input.tx.license.create({
       data: {
+        deviceLimit: UNLIMITED_DEVICE_LIMIT,
         notes: `Created from Lemon Squeezy subscription ${lsSubscriptionId}`,
         ownerEmail: payerEmail,
       },
