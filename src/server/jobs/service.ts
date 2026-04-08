@@ -183,12 +183,15 @@ export async function uploadTranslationJobPage(
     contentLength?: number | null;
     contentType: string | null;
     dbClient?: typeof db;
+    log?: Pick<typeof logger, 'error' | 'info'>;
     now?: Date;
   }
 ) {
   const input = zTranslationJobPageUploadInput.parse(rawInput);
   const dbClient = deps.dbClient ?? db;
+  const log = deps.log ?? logger;
   const now = deps.now ?? new Date();
+  const startedAt = Date.now();
 
   if (deps.contentLength && deps.contentLength > envServer.JOB_MAX_PAGE_BYTES) {
     throw new TranslationJobError('payload_too_large', 413);
@@ -244,12 +247,46 @@ export async function uploadTranslationJobPage(
     throw new TranslationJobError('checksum_mismatch', 409);
   }
 
-  const upload = await putTranslationJobPageUpload({
-    body: deps.body,
+  const putObjectStartedAt = Date.now();
+  let upload;
+
+  try {
+    upload = await putTranslationJobPageUpload({
+      body: deps.body,
+      contentType,
+      fileName: pageAsset.originalFileName,
+      jobId: job.id,
+      pageNumber: input.pageNumber,
+    });
+  } catch (error) {
+    log.error({
+      contentLengthHeader: deps.contentLength,
+      contentType,
+      err: error,
+      jobId: job.id,
+      message: 'Failed to store mobile job page upload',
+      objectStorageDurationMs: Date.now() - putObjectStartedAt,
+      pageNumber: input.pageNumber,
+      sizeBytes: deps.body.byteLength,
+      totalDurationMs: Date.now() - startedAt,
+      type: 'mutation',
+    });
+
+    throw error;
+  }
+
+  log.info({
+    bucketName: upload.bucketName,
+    contentLengthHeader: deps.contentLength,
     contentType,
-    fileName: pageAsset.originalFileName,
     jobId: job.id,
+    message: 'Stored mobile job page upload',
+    objectKey: upload.objectKey,
+    objectStorageDurationMs: Date.now() - putObjectStartedAt,
     pageNumber: input.pageNumber,
+    sizeBytes: deps.body.byteLength,
+    totalDurationMs: Date.now() - startedAt,
+    type: 'mutation',
   });
 
   const updatedJob = await dbClient.$transaction(async (tx) => {

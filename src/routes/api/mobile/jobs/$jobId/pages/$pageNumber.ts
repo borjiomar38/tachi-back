@@ -19,13 +19,13 @@ export const Route = createFileRoute(
     handlers: {
       PUT: async ({ request, params }) => {
         const context = buildHttpRequestContext(request);
+        const routeLog = logger.child({
+          path: '/api/mobile/jobs/$jobId/pages/$pageNumber',
+          requestId: context.requestId,
+          scope: 'jobs',
+        });
 
         try {
-          const routeLog = logger.child({
-            path: '/api/mobile/jobs/$jobId/pages/$pageNumber',
-            requestId: context.requestId,
-            scope: 'jobs',
-          });
           const { auth, rateLimit } =
             await authenticateAndRateLimitMobileJobRequest(request, {
               bucket: 'write',
@@ -64,6 +64,7 @@ export const Route = createFileRoute(
               body,
               contentLength: getContentLength(request),
               contentType: request.headers.get('content-type'),
+              log: routeLog,
             }
           );
 
@@ -81,6 +82,14 @@ export const Route = createFileRoute(
             requestId: context.requestId,
           });
         } catch (error) {
+          routeLog.error({
+            err: error,
+            jobId: params.jobId,
+            message: 'Mobile job page upload failed',
+            pageNumber: params.pageNumber,
+            type: 'mutation',
+          });
+
           return buildMobileJobErrorResponse(error, context.requestId);
         }
       },
