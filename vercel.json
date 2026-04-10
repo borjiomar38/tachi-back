@@ -1,10 +1,5 @@
 {
   "buildCommand": "pnpm db:migrate:deploy && pnpm build",
   "framework": null,
-  "installCommand": "pnpm install",
-  "functions": {
-    "src/routes/api/mobile/jobs/*/complete.ts": {
-      "maxDuration": 300
-    }
-  }
+  "installCommand": "pnpm install"
 }
