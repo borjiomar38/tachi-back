@@ -83,6 +83,9 @@ importers:
       '@uidotdev/usehooks':
         specifier: 2.4.1
         version: 2.4.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@vercel/functions':
+        specifier: ^3.4.3
+        version: 3.4.3
       better-auth:
         specifier: 1.5.2
         version: 1.5.2(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(@tanstack/react-start@1.166.1(crossws@0.4.4(srvx@0.11.7))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)))(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3)))(mongodb@7.1.0)(prisma@6.19.2(typescript@5.9.3))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(solid-js@1.9.11)(vitest@4.0.18)
@@ -118,7 +121,7 @@ importers:
         version: 0.4.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       nitro:
         specifier: npm:nitro-nightly@3.0.1-20260219-081345-4df7aab2
-        version: nitro-nightly@3.0.1-20260219-081345-4df7aab2(aws4fetch@1.0.20)(chokidar@4.0.3)(dotenv@17.2.3)(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3)))(giget@2.0.0)(jiti@2.6.1)(lru-cache@11.2.5)(mongodb@7.1.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
+        version: nitro-nightly@3.0.1-20260219-081345-4df7aab2(@vercel/functions@3.4.3)(aws4fetch@1.0.20)(chokidar@4.0.3)(dotenv@17.2.3)(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3)))(giget@2.0.0)(jiti@2.6.1)(lru-cache@11.2.5)(mongodb@7.1.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       nodemailer:
         specifier: 7.0.13
         version: 7.0.13
@@ -2271,6 +2274,19 @@ packages:
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
+
+  '@vercel/functions@3.4.3':
+    resolution: {integrity: sha512-kA14KIUVgAY6VXbhZ5jjY+s0883cV3cZqIU3WhrSRxuJ9KvxatMjtmzl0K23HK59oOUjYl7HaE/eYMmhmqpZzw==}
+    engines: {node: '>= 20'}
+    peerDependencies:
+      '@aws-sdk/credential-provider-web-identity': '*'
+    peerDependenciesMeta:
+      '@aws-sdk/credential-provider-web-identity':
+        optional: true
+
+  '@vercel/oidc@3.2.0':
+    resolution: {integrity: sha512-UycprH3T6n3jH0k44NHMa7pnFHGu/N05MjojYr+Mc6I7obkoLIJujSWwin1pCvdy/eOxrI/l3uDLQsmcrOb4ug==}
+    engines: {node: '>= 20'}
 
   '@vitejs/plugin-react@5.1.2':
     resolution: {integrity: sha512-EcA07pHJouywpzsoTUqNh5NwGayl2PPVEJKUSinGGSxFGYn+shYbqMGBg6FXDqgXum9Ou/ecb+411ssw8HImJQ==}
@@ -7479,6 +7495,12 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
+  '@vercel/functions@3.4.3':
+    dependencies:
+      '@vercel/oidc': 3.2.0
+
+  '@vercel/oidc@3.2.0': {}
+
   '@vitejs/plugin-react@5.1.2(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.28.6
@@ -9261,7 +9283,7 @@ snapshots:
 
   nice-try@1.0.5: {}
 
-  nitro-nightly@3.0.1-20260219-081345-4df7aab2(aws4fetch@1.0.20)(chokidar@4.0.3)(dotenv@17.2.3)(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3)))(giget@2.0.0)(jiti@2.6.1)(lru-cache@11.2.5)(mongodb@7.1.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
+  nitro-nightly@3.0.1-20260219-081345-4df7aab2(@vercel/functions@3.4.3)(aws4fetch@1.0.20)(chokidar@4.0.3)(dotenv@17.2.3)(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3)))(giget@2.0.0)(jiti@2.6.1)(lru-cache@11.2.5)(mongodb@7.1.0)(vite@7.3.1(@types/node@25.3.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
     dependencies:
       consola: 3.4.2
       crossws: 0.4.4(srvx@0.11.7)
@@ -9274,7 +9296,7 @@ snapshots:
       rolldown: 1.0.0-rc.5
       srvx: 0.11.7
       unenv: 2.0.0-rc.24
-      unstorage: 2.0.0-alpha.5(aws4fetch@1.0.20)(chokidar@4.0.3)(db0@0.3.4(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3))))(lru-cache@11.2.5)(mongodb@7.1.0)(ofetch@2.0.0-alpha.3)
+      unstorage: 2.0.0-alpha.5(@vercel/functions@3.4.3)(aws4fetch@1.0.20)(chokidar@4.0.3)(db0@0.3.4(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3))))(lru-cache@11.2.5)(mongodb@7.1.0)(ofetch@2.0.0-alpha.3)
     optionalDependencies:
       dotenv: 17.2.3
       giget: 2.0.0
@@ -10382,8 +10404,9 @@ snapshots:
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
 
-  unstorage@2.0.0-alpha.5(aws4fetch@1.0.20)(chokidar@4.0.3)(db0@0.3.4(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3))))(lru-cache@11.2.5)(mongodb@7.1.0)(ofetch@2.0.0-alpha.3):
+  unstorage@2.0.0-alpha.5(@vercel/functions@3.4.3)(aws4fetch@1.0.20)(chokidar@4.0.3)(db0@0.3.4(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3))))(lru-cache@11.2.5)(mongodb@7.1.0)(ofetch@2.0.0-alpha.3):
     optionalDependencies:
+      '@vercel/functions': 3.4.3
       aws4fetch: 1.0.20
       chokidar: 4.0.3
       db0: 0.3.4(drizzle-orm@0.45.1(@prisma/client@6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3))(kysely@0.28.11)(prisma@6.19.2(typescript@5.9.3)))

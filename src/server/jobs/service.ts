@@ -454,14 +454,56 @@ export async function getTranslationJobSummary(
   deps: {
     actor: MobileJobActor;
     dbClient?: typeof db;
+    now?: Date;
   }
 ) {
   const input = zTranslationJobControlInput.parse(rawInput);
-  const job = await getAuthorizedJob(input.jobId, deps.actor, {
-    dbClient: deps.dbClient,
-  });
+  const dbClient = deps.dbClient ?? db;
+  const now = deps.now ?? new Date();
+  let job = await getAuthorizedJob(input.jobId, deps.actor, { dbClient });
+
+  if (isStaleJob(job, now)) {
+    const failedAt = now;
+    await dbClient.translationJob.update({
+      where: { id: job.id },
+      data: {
+        errorCode: 'processing_failed',
+        errorMessage:
+          'The translation job did not complete within the allowed time.',
+        failedAt,
+        status: 'failed',
+      },
+    });
+
+    await dbClient.tokenLedger.updateMany({
+      where: {
+        idempotencyKey: `job-reserve:${job.id}`,
+        status: 'pending',
+      },
+      data: { status: 'voided' },
+    });
+
+    job = await getAuthorizedJob(input.jobId, deps.actor, { dbClient });
+  }
 
   return zTranslationJobSummary.parse(buildTranslationJobSummary(job));
+}
+
+const STALE_JOB_TIMEOUT_MS = 15 * 60 * 1_000; // 15 minutes
+
+function isStaleJob(job: JobRecord, now: Date): boolean {
+  if (job.status !== 'processing' && job.status !== 'queued') {
+    return false;
+  }
+
+  const referenceTime =
+    job.status === 'processing' ? job.startedAt : job.queuedAt;
+
+  if (!referenceTime) {
+    return false;
+  }
+
+  return now.getTime() - referenceTime.getTime() > STALE_JOB_TIMEOUT_MS;
 }
 
 export async function getTranslationJobResult(

@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { waitUntil } from '@vercel/functions';
 
 import {
   buildApiOkResponse,
@@ -9,7 +10,10 @@ import {
   buildMobileJobErrorResponse,
   buildMobileJobRateLimitedResponse,
 } from '@/server/jobs/http';
-import { completeTranslationJobUpload } from '@/server/jobs/service';
+import {
+  completeTranslationJobUpload,
+  processTranslationJob,
+} from '@/server/jobs/service';
 import { logger } from '@/server/logger';
 
 export const Route = createFileRoute('/api/mobile/jobs/$jobId/complete')({
@@ -55,6 +59,22 @@ export const Route = createFileRoute('/api/mobile/jobs/$jobId/complete')({
               actor: {
                 deviceId: auth.device.id,
                 licenseId: auth.license.id,
+              },
+              scheduleProcessing: (jobId) => {
+                waitUntil(
+                  processTranslationJob({ jobId }, { log: routeLog }).catch(
+                    (error) => {
+                      routeLog.error({
+                        errorMessage:
+                          error instanceof Error
+                            ? error.message
+                            : 'Unknown error',
+                        jobId,
+                        scope: 'jobs',
+                      });
+                    }
+                  )
+                );
               },
             }
           );
