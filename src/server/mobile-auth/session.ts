@@ -17,6 +17,7 @@ import {
   zMobileSessionSummaryResponse,
   zRefreshMobileSessionInput,
 } from '@/server/mobile-auth/schema';
+import { getMobileLicenseSubscriptionSummary } from '@/server/mobile-auth/subscription';
 
 type MobileSessionRecord = {
   appBuild: string | null;
@@ -304,6 +305,12 @@ export async function buildMobileSessionSummary(
       dbClient,
     }
   );
+  const subscription = await getMobileLicenseSubscriptionSummary(
+    auth.license.id,
+    {
+      dbClient,
+    }
+  );
 
   return zMobileSessionSummaryResponse.parse({
     device: auth.device,
@@ -315,6 +322,7 @@ export async function buildMobileSessionSummary(
       key: auth.license.key,
       ownerEmail: auth.license.ownerEmail,
       status: auth.license.status,
+      subscription,
     },
     session: {
       accessTokenExpiresAt: auth.accessTokenExpiresAt,

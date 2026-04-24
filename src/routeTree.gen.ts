@@ -56,6 +56,7 @@ import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devi
 import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/contacts/$id.index'
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
+import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
@@ -301,6 +302,12 @@ const ApiOpenapiAppSchemaRoute = ApiOpenapiAppSchemaRouteImport.update({
   path: '/schema',
   getParentRoute: () => ApiOpenapiAppRoute,
 } as any)
+const ApiMobileSubscriptionCancelRoute =
+  ApiMobileSubscriptionCancelRouteImport.update({
+    id: '/api/mobile/subscription/cancel',
+    path: '/api/mobile/subscription/cancel',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileAuthSessionRoute = ApiMobileAuthSessionRouteImport.update({
   id: '/api/mobile/auth/session',
   path: '/api/mobile/auth/session',
@@ -395,6 +402,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
+  '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
@@ -450,6 +458,7 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
+  '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
   '/manager/contacts/$id': typeof ManagerContactsIdIndexRoute
@@ -509,6 +518,7 @@ export interface FileRoutesById {
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
+  '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
@@ -569,6 +579,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
+    | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
     | '/manager/contacts/$id/'
@@ -624,6 +635,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
+    | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
     | '/manager/contacts/$id'
@@ -682,6 +694,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
+    | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
     | '/manager/contacts/$id/'
@@ -728,6 +741,7 @@ export interface RootRouteChildren {
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
+  ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1061,6 +1075,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOpenapiAppSchemaRouteImport
       parentRoute: typeof ApiOpenapiAppRoute
     }
+    '/api/mobile/subscription/cancel': {
+      id: '/api/mobile/subscription/cancel'
+      path: '/api/mobile/subscription/cancel'
+      fullPath: '/api/mobile/subscription/cancel'
+      preLoaderRoute: typeof ApiMobileSubscriptionCancelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/auth/session': {
       id: '/api/mobile/auth/session'
       path: '/api/mobile/auth/session'
@@ -1271,6 +1292,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
+  ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

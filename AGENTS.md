@@ -65,3 +65,28 @@
 - Always create schema migrations with `pnpm prisma migrate dev --name ...`.
 - **`pnpm db:push` / `prisma db push` is forbidden** unless the user explicitly asks for it.
 - If `pnpm prisma migrate dev --name ...` is blocked by environment/runtime constraints, stop and report the issue instead of falling back to a manual migration workflow.
+
+## Vercel Production Deploy
+- For `tachi-back`, prefer the prebuilt deployment path. A direct `vercel deploy --prod --yes` has failed before with `deploy_failed`, an empty CLI message, and a zero-millisecond Vercel build. Do not waste time retrying that path first.
+- Use the NAEST Vercel team scope explicitly: `maleks-projects-5ef1c03`.
+- Deploy from this directory only: `/Users/macbookpro/Documents/p2/tachi/tachi-back`.
+- Standard production deploy sequence:
+
+```bash
+pnpm lint:ts
+pnpm build
+vercel pull --yes --environment=production --scope maleks-projects-5ef1c03
+vercel build --prod --scope maleks-projects-5ef1c03
+vercel deploy --prebuilt --prod --scope maleks-projects-5ef1c03
+```
+
+- `vercel build --prod` runs the configured production build using pulled Vercel env vars and runs `pnpm db:migrate:deploy`; confirm there are no pending migration failures before deploying.
+- Never commit `.vercel/.env.production.local` or any pulled Vercel env file.
+- After deployment, verify the alias and route health:
+
+```bash
+vercel inspect <deployment-url> --scope maleks-projects-5ef1c03
+curl -i -s -X POST https://tachi-back.vercel.app/api/mobile/subscription/cancel
+```
+
+- The unauthenticated mobile cancel check should return `401` with `{"error":{"code":"invalid_session"},"ok":false}`. That confirms the route is live without requiring a real mobile token.

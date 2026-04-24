@@ -34,6 +34,7 @@ export type CreateCheckoutInput = z.infer<typeof zCreateCheckoutInput>;
 
 export type CheckoutErrorCode =
   | 'checkout_unavailable'
+  | 'checkout_test_mode'
   | 'ls_disabled'
   | 'token_pack_not_found'
   | 'token_pack_unavailable';
@@ -92,6 +93,7 @@ export async function createLemonSqueezyCheckout(
     dbClient?: CheckoutDbClient;
     envName?: string | undefined;
     log?: Pick<typeof logger, 'info'>;
+    allowTestMode?: boolean;
     lsEnabled?: boolean;
   } = {}
 ) {
@@ -139,6 +141,8 @@ export async function createLemonSqueezyCheckout(
 
   const baseUrl = deps.baseUrl ?? envClient.VITE_BASE_URL;
   const envName = deps.envName ?? envClient.VITE_ENV_NAME ?? 'UNKNOWN';
+  const isProduction = envName.toLowerCase() === 'production';
+  const allowTestMode = deps.allowTestMode ?? !isProduction;
   const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
 
   const successUrl = new URL('/checkout/success', baseUrl);
@@ -165,6 +169,7 @@ export async function createLemonSqueezyCheckout(
     productOptions: {
       redirectUrl: successUrl.toString(),
     },
+    testMode: allowTestMode,
   });
 
   if (error || !data) {
@@ -176,11 +181,21 @@ export async function createLemonSqueezyCheckout(
   }
 
   const checkoutUrl = data.data.attributes.url;
+  const isTestCheckout = data.data.attributes.test_mode;
+
+  if (isTestCheckout && !allowTestMode) {
+    throw new CheckoutError(
+      'checkout_test_mode',
+      'The selected monthly plan is still configured in Lemon Squeezy test mode.',
+      409
+    );
+  }
 
   (deps.log ?? logger).info({
     scope: 'payments',
     message: 'Created Lemon Squeezy checkout',
     lsCheckoutId: data.data.id,
+    lsTestMode: isTestCheckout,
     tokenPackKey: tokenPack.key,
   });
 

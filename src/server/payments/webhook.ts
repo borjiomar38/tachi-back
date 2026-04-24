@@ -972,10 +972,11 @@ function mapLsStatusToLicenseStatus(
   eventName: string,
   lsStatus: string
 ): 'active' | 'expired' | 'pending' | 'revoked' | 'suspended' {
-  if (
-    eventName === 'subscription_cancelled' ||
-    eventName === 'subscription_expired'
-  ) {
+  if (eventName === 'subscription_cancelled') {
+    return 'active';
+  }
+
+  if (eventName === 'subscription_expired') {
     return 'expired';
   }
 
@@ -988,6 +989,7 @@ function mapLsStatusToLicenseStatus(
     case 'paused':
       return 'suspended';
     case 'cancelled':
+      return 'active';
     case 'expired':
       return 'expired';
     default:

@@ -30,6 +30,8 @@ import { PublicSection, PublicShell } from '@/features/public/public-shell';
 const checkoutErrorMessages: Record<string, string> = {
   checkout_unavailable:
     'Lemon Squeezy did not return a checkout URL. Please try again.',
+  checkout_test_mode:
+    'Live checkout is not available yet because the Lemon Squeezy product is still in test mode.',
   invalid_request:
     'Enter a valid payer email before continuing to checkout.',
   ls_disabled: 'Checkout is disabled in this environment.',

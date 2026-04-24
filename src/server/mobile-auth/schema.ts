@@ -69,6 +69,16 @@ export const zMobileSessionSummaryResponse = z.object({
     key: z.string(),
     ownerEmail: z.string().nullish(),
     status: z.enum(['pending', 'active', 'suspended', 'revoked', 'expired']),
+    subscription: z
+      .object({
+        canCancel: z.boolean(),
+        endsAt: z.date().nullish(),
+        planName: z.string().nullish(),
+        renewsAt: z.date().nullish(),
+        status: z.string().nullish(),
+        tokenPackKey: z.string().nullish(),
+      })
+      .nullish(),
   }),
   session: z.object({
     accessTokenExpiresAt: z.date(),
