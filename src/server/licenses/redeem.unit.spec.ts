@@ -18,10 +18,7 @@ vi.mock('@/server/logger', () => ({
   logger: mockLogger,
 }));
 
-import {
-  RedeemActivationError,
-  redeemLicenseToDevice,
-} from '@/server/licenses/redeem';
+import { redeemLicenseToDevice } from '@/server/licenses/redeem';
 
 describe('license redeem activation', () => {
   beforeEach(() => {
@@ -232,10 +229,38 @@ describe('license redeem activation', () => {
     expect(tx.licenseDevice.update).toHaveBeenCalledOnce();
   });
 
-  it('rejects conflicting reuse from another installation', async () => {
+  it('allows a non-expired redeemed code on another installation', async () => {
     const now = new Date('2026-03-19T21:20:00.000Z');
     const tx = {
       device: {
+        create: vi.fn().mockResolvedValue({
+          appBuild: null,
+          appVersion: null,
+          id: 'device-2',
+          installationId: 'install-1234567890abcd',
+          lastSeenAt: now,
+          locale: null,
+          platform: 'android',
+          status: 'active',
+        }),
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      license: {
+        update: vi.fn().mockResolvedValue({
+          activatedAt: now,
+          deviceLimit: 1,
+          id: 'license-1',
+          key: 'license-key-1',
+          status: 'active',
+        }),
+      },
+      licenseDevice: {
+        count: vi.fn().mockResolvedValue(2),
+        create: vi.fn().mockResolvedValue({
+          boundAt: now,
+          id: 'binding-2',
+        }),
+        findFirst: vi.fn().mockResolvedValue(null),
         findUnique: vi.fn().mockResolvedValue(null),
       },
       redeemCode: {
@@ -261,32 +286,50 @@ describe('license redeem activation', () => {
           redeemedByDeviceId: 'device-1',
           status: 'redeemed',
         }),
+        update: vi.fn().mockResolvedValue({
+          code: 'TB-AAAA-BBBB-CCCC',
+          redeemedAt: now,
+          status: 'redeemed',
+        }),
+      },
+      tokenLedger: {
+        aggregate: vi.fn().mockResolvedValue({
+          _sum: {
+            deltaTokens: 2750,
+          },
+        }),
       },
     };
 
     mockDb.$transaction.mockImplementation((callback) => callback(tx));
 
-    await expect(
-      redeemLicenseToDevice(
-        {
-          installationId: 'install-1234567890abcd',
-          platform: 'android',
-          redeemCode: 'TB-AAAA-BBBB-CCCC',
-        },
-        {
-          dbClient: mockDb as never,
-          log: mockLogger,
-          now,
-        }
-      )
-    ).rejects.toEqual(
-      expect.objectContaining<Partial<RedeemActivationError>>({
-        code: 'redeem_code_already_used',
+    const result = await redeemLicenseToDevice(
+      {
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+        redeemCode: 'TB-AAAA-BBBB-CCCC',
+      },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+        now,
+      }
+    );
+
+    expect(result.activationStatus).toBe('activated');
+    expect(result.device.id).toBe('device-2');
+    expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+    expect(tx.redeemCode.update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          redeemedByDeviceId: 'device-2',
+          status: 'redeemed',
+        }),
       })
     );
   });
 
-  it('rejects activation when the license device limit is reached', async () => {
+  it('does not block activation when the old license device limit is reached', async () => {
     const now = new Date('2026-03-19T21:30:00.000Z');
     const tx = {
       device: {
@@ -304,9 +347,21 @@ describe('license redeem activation', () => {
       },
       licenseDevice: {
         count: vi.fn().mockResolvedValue(1),
-        create: vi.fn(),
+        create: vi.fn().mockResolvedValue({
+          boundAt: now,
+          id: 'binding-2',
+        }),
         findFirst: vi.fn().mockResolvedValue(null),
         findUnique: vi.fn().mockResolvedValue(null),
+      },
+      license: {
+        update: vi.fn().mockResolvedValue({
+          activatedAt: now,
+          deviceLimit: 1,
+          id: 'license-1',
+          key: 'license-key-1',
+          status: 'active',
+        }),
       },
       redeemCode: {
         findUnique: vi.fn().mockResolvedValue({
@@ -327,29 +382,39 @@ describe('license redeem activation', () => {
           redeemedByDeviceId: null,
           status: 'available',
         }),
+        update: vi.fn().mockResolvedValue({
+          code: 'TB-AAAA-BBBB-CCCC',
+          redeemedAt: now,
+          status: 'redeemed',
+        }),
+      },
+      tokenLedger: {
+        aggregate: vi.fn().mockResolvedValue({
+          _sum: {
+            deltaTokens: 2750,
+          },
+        }),
       },
     };
 
     mockDb.$transaction.mockImplementation((callback) => callback(tx));
 
-    await expect(
-      redeemLicenseToDevice(
-        {
-          installationId: 'install-1234567890abcd',
-          platform: 'android',
-          redeemCode: 'TB-AAAA-BBBB-CCCC',
-        },
-        {
-          dbClient: mockDb as never,
-          log: mockLogger,
-          now,
-        }
-      )
-    ).rejects.toEqual(
-      expect.objectContaining<Partial<RedeemActivationError>>({
-        code: 'device_limit_reached',
-      })
+    const result = await redeemLicenseToDevice(
+      {
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+        redeemCode: 'TB-AAAA-BBBB-CCCC',
+      },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+        now,
+      }
     );
+
+    expect(result.activationStatus).toBe('activated');
+    expect(result.license.deviceLimit).toBe(1);
+    expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
   });
 
   it('treats deviceLimit=0 as unlimited', async () => {

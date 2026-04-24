@@ -1,5 +1,4 @@
 import { db } from '@/server/db';
-import { isUnlimitedDeviceLimit } from '@/server/licenses/device-limit';
 import {
   zRedeemActivationInput,
   zRedeemActivationResponse,
@@ -11,12 +10,10 @@ import { logger } from '@/server/logger';
 export class RedeemActivationError extends Error {
   constructor(
     readonly code:
-      | 'device_limit_reached'
       | 'device_revoked'
       | 'installation_conflict'
       | 'invalid_redeem_code'
       | 'license_unavailable'
-      | 'redeem_code_already_used'
       | 'redeem_code_unavailable',
     readonly statusCode: number,
     message?: string
@@ -115,18 +112,6 @@ export async function redeemLicenseToDevice(
       throw new RedeemActivationError('device_revoked', 409);
     }
 
-    const isSameInstallationRedeem =
-      redeemCode.status === 'redeemed' &&
-      redeemCode.redeemedByDevice?.installationId === input.installationId;
-
-    if (
-      redeemCode.status === 'redeemed' &&
-      !isSameInstallationRedeem &&
-      redeemCode.redeemedByDevice
-    ) {
-      throw new RedeemActivationError('redeem_code_already_used', 409);
-    }
-
     if (existingDevice) {
       const otherActiveBinding = await tx.licenseDevice.findFirst({
         where: {
@@ -216,21 +201,7 @@ export async function redeemLicenseToDevice(
       },
     });
 
-    if (!existingBinding) {
-      const activeDeviceCount = await tx.licenseDevice.count({
-        where: {
-          licenseId: redeemCode.license.id,
-          status: 'active',
-        },
-      });
-
-      if (
-        !isUnlimitedDeviceLimit(redeemCode.license.deviceLimit) &&
-        activeDeviceCount >= redeemCode.license.deviceLimit
-      ) {
-        throw new RedeemActivationError('device_limit_reached', 409);
-      }
-    }
+    const isExistingActiveBinding = existingBinding?.status === 'active';
 
     const binding = existingBinding
       ? await tx.licenseDevice.update({
@@ -309,7 +280,7 @@ export async function redeemLicenseToDevice(
     ]);
 
     return {
-      activationStatus: isSameInstallationRedeem
+      activationStatus: isExistingActiveBinding
         ? ('already_activated' as const)
         : ('activated' as const),
       device: {
