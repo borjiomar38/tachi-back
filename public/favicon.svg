@@ -1,5 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="200" height="200"><svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M49.8532 3.92228C62.938 -0.418175 76.973 -1.05478 90.5232 1.51092C181.419 18.7136 197.325 67.1387 197.839 97.4785C198.006 110.807 194.825 123.966 188.584 135.761C176.435 158.949 146.028 205.725 100.942 199.421C41.2964 191.083 -0.449964 150.07 3.22484 72.053C5.2901 28.171 29.2684 10.7561 49.8532 3.92228ZM69.0364 52.8867L137.914 60.1563C140.57 60.4367 143.115 61.3722 145.321 62.8793C147.527 64.3863 149.325 66.4179 150.555 68.7928C151.786 71.1676 152.409 73.8116 152.371 76.4888C152.333 79.1659 151.633 81.7928 150.335 84.1348L116.637 144.842C110.363 156.15 94.0753 155.93 88.1255 144.46C85.5995 139.58 81.9062 135.405 77.3752 132.307C77.1967 132.185 77.0183 132.063 76.8399 131.94C72.4862 128.956 68.0886 125.941 62.1593 126.708C55.987 127.505 41.2743 128.308 41.2743 128.308C40.7363 128.251 40.2209 128.062 39.7742 127.757C39.3275 127.451 38.9634 127.04 38.7145 126.559C38.4656 126.078 38.3397 125.542 38.348 125C38.3564 124.458 38.4987 123.926 38.7622 123.452C38.7622 123.452 49.0029 111.128 52.5242 105.737C56.0455 100.346 56.3377 96.2672 56.4139 91.1638C56.4901 86.0603 55.3037 81.0193 52.9607 76.491C47.026 65.0254 56.2166 51.5338 69.0364 52.8867Z" fill="black"></path>
-</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
-@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
-</style></svg>
+<svg width="108" height="108" viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="markTitle markDesc">
+  <title id="markTitle">TachiyomiAT logo mark</title><desc id="markDesc">Manga translation logo with Japanese and English speech bubbles.</desc>
+  <defs>
+    <linearGradient id="purplePanel" x1="55" y1="14" x2="102" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A855F7"/>
+      <stop offset="0.55" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#4C1D95"/>
+    </linearGradient>
+    <linearGradient id="bubblePurple" x1="63" y1="14" x2="95" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B66DFF"/>
+      <stop offset="1" stop-color="#6D28D9"/>
+    </linearGradient>
+    <clipPath id="clipMark"><rect x="7" y="7" width="94" height="94" rx="21"/></clipPath>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.4" flood-color="#7C3AED" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="108" height="108" fill="#05050A"/>
+  <g clip-path="url(#clipMark)">
+    <rect x="7" y="7" width="94" height="94" fill="#F8F8FB"/>
+    <path d="M55 7H101V101H49L55 7Z" fill="url(#purplePanel)"/>
+    <path d="M7 7H56L49 101H7V7Z" fill="#F9F9FA"/>
+    <path d="M7 36C20 31 30 31 42 36M9 58C23 52 35 54 50 60M13 84C26 78 35 80 47 87" stroke="#151628" stroke-width="1.25" opacity="0.48"/>
+    <path d="M61 20H83C92 20 98 26 101 32M58 56H101M55 79C68 73 83 75 101 83" stroke="#EDE7FF" stroke-width="1.1" opacity="0.58"/>
+    <path d="M75 31L101 25M77 70L101 63" stroke="#1B1235" stroke-width="1.6" opacity="0.68"/>
+    <path d="M16 39C25 34 35 33 44 38C36 39 29 43 24 50C20 48 17 44 16 39Z" fill="#11121F" opacity="0.95"/>
+    <path d="M18 41C13 47 12 57 17 68C22 82 35 92 48 98H22C13 90 8 78 7 62V48C10 45 13 43 18 41Z" fill="#11121F" opacity="0.94"/>
+    <path d="M18 52C24 47 30 46 37 47C32 50 27 54 23 60C21 58 19 55 18 52Z" fill="#F7F7F8" opacity="0.78"/>
+    <path d="M25 57C29 54 34 53 39 55" stroke="#11121F" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M57.5 6.5L63 6.5L50.5 101.5H45L57.5 6.5Z" fill="#0D0E1B"/>
+    <path d="M24 16H55C58.9 16 62 19.1 62 23V43C62 46.9 58.9 50 55 50H43L39 61L35 50H24C20.1 50 17 46.9 17 43V23C17 19.1 20.1 16 24 16Z" fill="white" stroke="#141526" stroke-width="2.3"/>
+    <text x="39.5" y="42" text-anchor="middle" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="27" font-weight="900" fill="#151628">文</text>
+    <path d="M67 15H87C94.2 15 100 20.8 100 28V48C100 55.2 94.2 61 87 61H80L74 70V61H67C59.8 61 54 55.2 54 48V28C54 20.8 59.8 15 67 15Z" fill="url(#bubblePurple)" stroke="#DCC8FF" stroke-width="2"/>
+    <text x="78" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="900" fill="white">A</text>
+    <path d="M50 68C52 65 55 63 59 63L58 59L68 66L59 73L60 69C55 69 52 71 50 75" stroke="#EEE7FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
+    <path d="M58 75C56 78 53 80 49 80L50 84L40 77L49 70L48 74C53 74 56 72 58 68" stroke="#EEE7FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
+    <path d="M66 69H90C96.1 69 101 73.9 101 80C101 86.1 96.1 91 90 91H79L71 99V91H66C59.9 91 55 86.1 55 80C55 73.9 59.9 69 66 69Z" fill="white" stroke="#7C3AED" stroke-width="2"/>
+    <text x="78" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.6" font-weight="800" font-style="italic" fill="#32129A">I don't know</text>
+    <text x="78" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.8" font-weight="800" font-style="italic" fill="#32129A">what lies ahead...</text>
+  </g>
+  <rect x="7" y="7" width="94" height="94" rx="21" stroke="#0D0E1B" stroke-width="5"/>
+</svg>
