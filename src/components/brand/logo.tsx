@@ -12,7 +12,15 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
   >
     <title>TachiyomiAT</title>
     <image
-      href="/tachiyomiat-mark.svg"
+      href="/tachiyomiat-mark-light.png"
+      className="dark:hidden"
+      width="108"
+      height="108"
+      preserveAspectRatio="xMinYMid meet"
+    />
+    <image
+      href="/tachiyomiat-mark-dark.png"
+      className="hidden dark:block"
       width="108"
       height="108"
       preserveAspectRatio="xMinYMid meet"
