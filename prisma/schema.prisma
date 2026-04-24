@@ -441,6 +441,8 @@ model TranslationJob {
   licenseId                  String
   deviceId                   String
   status                     TranslationJobStatus @default(created)
+  chapterCacheKey            String?
+  chapterIdentity            Json?
   sourceLanguage             String
   targetLanguage             String
   pageCount                  Int                  @default(0)
@@ -472,16 +474,20 @@ model TranslationJob {
   @@index([licenseId, createdAt])
   @@index([deviceId, createdAt])
   @@index([status, createdAt])
+  @@index([chapterCacheKey, targetLanguage, createdAt])
   @@map("translation_jobs")
 }
 
 model TranslationResultCache {
   id                   String   @id @default(cuid())
   cacheKey             String   @unique
+  chapterCacheKey      String?
+  chapterIdentity      Json?
   bucketName           String
   objectKey            String
   pageCount            Int
   providerSignature    String
+  resultManifest       Json?
   resultPayloadVersion String
   sizeBytes            Int
   sourceLanguage       String
@@ -492,6 +498,7 @@ model TranslationResultCache {
   updatedAt            DateTime @updatedAt
 
   @@index([targetLanguage, createdAt])
+  @@index([chapterCacheKey, targetLanguage, updatedAt])
   @@map("translation_result_caches")
 }
 

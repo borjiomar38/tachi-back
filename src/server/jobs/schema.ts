@@ -8,8 +8,20 @@ const zPageMimeType = z
   .min(1)
   .regex(/^image\/[a-z0-9.+-]+$/i);
 
+export const zTranslationChapterIdentity = z
+  .object({
+    chapterName: z.string().trim().min(1).max(255).optional(),
+    chapterUrl: z.string().trim().min(1).max(2048),
+    mangaTitle: z.string().trim().min(1).max(255).optional(),
+    mangaUrl: z.string().trim().min(1).max(2048).optional(),
+    sourceId: z.string().trim().min(1).max(64).optional(),
+    sourceName: z.string().trim().min(1).max(255).optional(),
+  })
+  .strict();
+
 export const zCreateTranslationJobInput = z
   .object({
+    chapterIdentity: zTranslationChapterIdentity.optional(),
     ocrProvider: z.literal('google_cloud_vision').optional(),
     pages: z
       .array(

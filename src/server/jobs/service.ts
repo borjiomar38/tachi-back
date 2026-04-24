@@ -20,6 +20,7 @@ import {
   type TranslationJobResultManifest,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
+  zTranslationChapterIdentity,
   zTranslationJobControlInput,
   zTranslationJobPageUploadInput,
   zTranslationJobResultManifest,
@@ -54,6 +55,8 @@ type JobAssetRecord = {
 
 type JobRecord = {
   assets: JobAssetRecord[];
+  chapterCacheKey: string | null;
+  chapterIdentity: unknown;
   completedAt: Date | null;
   createdAt: Date;
   deviceId: string;
@@ -176,6 +179,10 @@ export async function createTranslationJob(
   const job = await dbClient.$transaction(async (tx) => {
     const createdJob = await tx.translationJob.create({
       data: {
+        chapterCacheKey: buildChapterCacheKey(input.chapterIdentity),
+        chapterIdentity: input.chapterIdentity
+          ? (input.chapterIdentity as Prisma.InputJsonValue)
+          : undefined,
         deviceId: deps.actor.deviceId,
         expiresAt,
         licenseId: deps.actor.licenseId,
@@ -221,20 +228,20 @@ export async function createTranslationJob(
     job,
     uploadAssets,
   });
-  const cachedManifest = cacheKey
-    ? await getCachedTranslationResultManifest({
-        cacheKey,
-        dbClient,
-        job,
-        log: logger,
-        now,
-        uploadAssets,
-      })
-    : null;
+  const cached = await getCachedTranslationResultManifest({
+    cacheKey,
+    dbClient,
+    job,
+    log: logger,
+    now,
+    uploadAssets,
+  });
+  const cachedManifest = cached?.manifest ?? null;
+  const cacheHitKey = cached?.cacheKey ?? cacheKey;
 
-  if (cacheKey && cachedManifest) {
+  if (cacheHitKey && cachedManifest) {
     const completedJob = await completeTranslationJobFromCachedManifest({
-      cacheKey,
+      cacheKey: cacheHitKey,
       dbClient,
       job,
       manifest: cachedManifest,
@@ -243,7 +250,7 @@ export async function createTranslationJob(
     });
 
     logger.info({
-      cacheKey,
+      cacheKey: cacheHitKey,
       jobId: job.id,
       pageCount: job.pageCount,
       scope: 'jobs',
@@ -486,20 +493,20 @@ export async function completeTranslationJobUpload(
     job,
     uploadAssets,
   });
-  const cachedManifest = cacheKey
-    ? await getCachedTranslationResultManifest({
-        cacheKey,
-        dbClient,
-        job,
-        log,
-        now,
-        uploadAssets,
-      })
-    : null;
+  const cached = await getCachedTranslationResultManifest({
+    cacheKey,
+    dbClient,
+    job,
+    log,
+    now,
+    uploadAssets,
+  });
+  const cachedManifest = cached?.manifest ?? null;
+  const cacheHitKey = cached?.cacheKey ?? cacheKey;
 
-  if (cacheKey && cachedManifest) {
+  if (cacheHitKey && cachedManifest) {
     const completedJob = await completeTranslationJobFromCachedManifest({
-      cacheKey,
+      cacheKey: cacheHitKey,
       dbClient,
       job,
       manifest: cachedManifest,
@@ -508,7 +515,7 @@ export async function completeTranslationJobUpload(
     });
 
     log.info({
-      cacheKey,
+      cacheKey: cacheHitKey,
       jobId: job.id,
       pageCount: job.pageCount,
       scope: 'jobs',
@@ -819,6 +826,7 @@ export async function processTranslationJob(
     const cacheKey = buildTranslationResultCacheKey({
       job: startedJob,
       uploadAssets,
+      sourceLanguage,
     });
 
     await dbClient.$transaction(async (tx) => {
@@ -920,6 +928,7 @@ export async function processTranslationJob(
         await storeTranslationResultCache({
           cacheKey,
           dbClient,
+          job: startedJob,
           manifest,
           providerSignature: buildTranslationCacheProviderSignature(startedJob),
         });
@@ -1003,6 +1012,8 @@ const translationJobSelect = {
       sizeBytes: true,
     },
   },
+  chapterCacheKey: true,
+  chapterIdentity: true,
   completedAt: true,
   createdAt: true,
   deviceId: true,
@@ -1228,8 +1239,45 @@ function buildTranslationCacheProviderSignature(job: JobRecord) {
   });
 }
 
+function normalizeChapterIdentity(rawIdentity: unknown) {
+  const identity = zTranslationChapterIdentity.safeParse(rawIdentity);
+
+  if (!identity.success) {
+    return null;
+  }
+
+  return {
+    chapterName: identity.data.chapterName?.trim() || null,
+    chapterUrl: identity.data.chapterUrl.trim(),
+    mangaTitle: identity.data.mangaTitle?.trim() || null,
+    mangaUrl: identity.data.mangaUrl?.trim() || null,
+    sourceId: identity.data.sourceId?.trim() || null,
+    sourceName: identity.data.sourceName?.trim() || null,
+  };
+}
+
+function buildChapterCacheKey(rawIdentity: unknown) {
+  const identity = normalizeChapterIdentity(rawIdentity);
+
+  if (!identity) {
+    return null;
+  }
+
+  return createHash('sha256')
+    .update(
+      JSON.stringify({
+        algorithm: '2026-04-24.chapter-url.v1',
+        chapterUrl: identity.chapterUrl,
+        sourceId: identity.sourceId,
+        sourceName: identity.sourceName,
+      })
+    )
+    .digest('hex');
+}
+
 function buildTranslationResultCacheKey(input: {
   job: JobRecord;
+  sourceLanguage?: string;
   uploadAssets: JobAssetRecord[];
 }) {
   const pageFingerprints = input.uploadAssets
@@ -1256,7 +1304,7 @@ function buildTranslationResultCacheKey(input: {
         pageCount: input.job.pageCount,
         pages: pageFingerprints,
         providerSignature: buildTranslationCacheProviderSignature(input.job),
-        sourceLanguage: input.job.sourceLanguage,
+        sourceLanguage: input.sourceLanguage ?? input.job.sourceLanguage,
         targetLanguage: input.job.targetLanguage,
       })
     )
@@ -1264,38 +1312,61 @@ function buildTranslationResultCacheKey(input: {
 }
 
 async function getCachedTranslationResultManifest(input: {
-  cacheKey: string;
+  cacheKey: string | null;
   dbClient: typeof db;
   job: JobRecord;
   log: Pick<typeof logger, 'error' | 'info'>;
   now: Date;
   uploadAssets: JobAssetRecord[];
 }) {
-  const cachedResult = await input.dbClient.translationResultCache.findUnique({
-    where: {
-      cacheKey: input.cacheKey,
-    },
-  });
+  const cachedResult = input.job.chapterCacheKey
+    ? await input.dbClient.translationResultCache.findFirst({
+        where: {
+          chapterCacheKey: input.job.chapterCacheKey,
+          providerSignature: buildTranslationCacheProviderSignature(input.job),
+          targetLanguage: input.job.targetLanguage,
+        },
+        orderBy: {
+          updatedAt: 'desc',
+        },
+      })
+    : input.cacheKey
+      ? await input.dbClient.translationResultCache.findUnique({
+          where: {
+            cacheKey: input.cacheKey,
+          },
+        })
+      : null;
 
   if (!cachedResult) {
     return null;
   }
 
   try {
-    const cachedManifest = await getTranslationJobResultManifest({
-      bucketName: cachedResult.bucketName,
-      objectKey: cachedResult.objectKey,
-    });
+    const cachedManifest =
+      cachedResult.resultManifest == null
+        ? await getTranslationJobResultManifest({
+            bucketName: cachedResult.bucketName,
+            objectKey: cachedResult.objectKey,
+          })
+        : parseCachedResultManifest(cachedResult.resultManifest);
 
-    return rebindCachedManifestToJob({
+    const manifest = rebindCachedManifestToJob({
       job: input.job,
       manifest: cachedManifest,
       now: input.now,
       uploadAssets: input.uploadAssets,
     });
+
+    return manifest
+      ? {
+          cacheKey: cachedResult.cacheKey,
+          manifest,
+        }
+      : null;
   } catch (error) {
     input.log.error({
-      cacheKey: input.cacheKey,
+      cacheKey: cachedResult.cacheKey,
       err: error,
       jobId: input.job.id,
       message: 'Failed to read translation result cache',
@@ -1313,21 +1384,27 @@ function rebindCachedManifestToJob(input: {
   uploadAssets: JobAssetRecord[];
 }) {
   if (
-    input.manifest.pageCount !== input.job.pageCount ||
     input.manifest.targetLanguage !== input.job.targetLanguage ||
-    input.manifest.pageOrder.length !== input.uploadAssets.length
+    input.uploadAssets.length !== input.job.pageCount
   ) {
     return null;
   }
 
   const pages: Record<string, HostedPageTranslation> = {};
   const pageOrder: string[] = [];
+  const cachedPagesByFileName = new Map(
+    input.manifest.pageOrder
+      .map((pageKey) => [pageKey, input.manifest.pages[pageKey]] as const)
+      .filter((entry): entry is [string, HostedPageTranslation] =>
+        Boolean(entry[1])
+      )
+  );
 
   for (const [index, asset] of input.uploadAssets.entries()) {
-    const cachedPageKey = input.manifest.pageOrder[index];
-    const cachedPage = cachedPageKey
-      ? input.manifest.pages[cachedPageKey]
-      : null;
+    const cachedPage =
+      (asset.originalFileName
+        ? cachedPagesByFileName.get(asset.originalFileName)
+        : null) ?? input.manifest.pages[input.manifest.pageOrder[index] ?? ''];
 
     if (!asset.originalFileName || !cachedPage) {
       return null;
@@ -1343,6 +1420,7 @@ function rebindCachedManifestToJob(input: {
     deviceId: input.job.deviceId,
     jobId: input.job.id,
     licenseId: input.job.licenseId,
+    pageCount: input.job.pageCount,
     pageOrder,
     pages,
   });
@@ -1469,6 +1547,7 @@ async function completeTranslationJobFromCachedManifest(input: {
 async function storeTranslationResultCache(input: {
   cacheKey: string;
   dbClient: typeof db;
+  job: JobRecord;
   manifest: TranslationJobResultManifest;
   providerSignature: string;
 }) {
@@ -1477,6 +1556,7 @@ async function storeTranslationResultCache(input: {
     manifest: input.manifest,
   });
   const manifestJson = JSON.stringify(input.manifest);
+  const manifestValue = JSON.parse(manifestJson) as Prisma.InputJsonValue;
 
   await input.dbClient.translationResultCache.upsert({
     where: {
@@ -1485,9 +1565,14 @@ async function storeTranslationResultCache(input: {
     create: {
       bucketName: storedCacheResult.bucketName,
       cacheKey: input.cacheKey,
+      chapterCacheKey: input.job.chapterCacheKey,
+      chapterIdentity: normalizeChapterIdentity(input.job.chapterIdentity) as
+        | Prisma.InputJsonValue
+        | undefined,
       objectKey: storedCacheResult.objectKey,
       pageCount: input.manifest.pageCount,
       providerSignature: input.providerSignature,
+      resultManifest: manifestValue,
       resultPayloadVersion: input.manifest.version,
       sizeBytes: Buffer.byteLength(manifestJson),
       sourceLanguage: input.manifest.sourceLanguage,
@@ -1495,14 +1580,36 @@ async function storeTranslationResultCache(input: {
     },
     update: {
       bucketName: storedCacheResult.bucketName,
+      chapterCacheKey: input.job.chapterCacheKey,
+      chapterIdentity: normalizeChapterIdentity(input.job.chapterIdentity) as
+        | Prisma.InputJsonValue
+        | undefined,
       objectKey: storedCacheResult.objectKey,
       pageCount: input.manifest.pageCount,
       providerSignature: input.providerSignature,
+      resultManifest: manifestValue,
       resultPayloadVersion: input.manifest.version,
       sizeBytes: Buffer.byteLength(manifestJson),
       sourceLanguage: input.manifest.sourceLanguage,
       targetLanguage: input.manifest.targetLanguage,
     },
+  });
+}
+
+function parseCachedResultManifest(rawManifest: unknown) {
+  const record =
+    rawManifest &&
+    typeof rawManifest === 'object' &&
+    !Array.isArray(rawManifest)
+      ? (rawManifest as Record<string, unknown>)
+      : null;
+
+  return zTranslationJobResultManifest.parse({
+    ...record,
+    completedAt:
+      typeof record?.completedAt === 'string'
+        ? new Date(record.completedAt)
+        : record?.completedAt,
   });
 }
 

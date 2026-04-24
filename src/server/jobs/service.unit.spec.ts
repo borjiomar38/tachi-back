@@ -24,6 +24,7 @@ const {
       update: vi.fn(),
     },
     translationResultCache: {
+      findFirst: vi.fn(),
       findUnique: vi.fn(),
       update: vi.fn(),
       upsert: vi.fn(),
@@ -111,6 +112,7 @@ describe('job service', () => {
     mockDb.translationJob.findUnique.mockReset();
     mockDb.translationJob.update.mockReset();
     mockDb.translationResultCache.findUnique.mockReset();
+    mockDb.translationResultCache.findFirst.mockReset();
     mockDb.translationResultCache.update.mockReset();
     mockDb.translationResultCache.upsert.mockReset();
     mockGetProviderGatewayManifestWithRuntimeConfig.mockReset();
@@ -341,6 +343,159 @@ describe('job service', () => {
       '/api/mobile/jobs/job-create-cache-hit/result'
     );
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
+  });
+
+  it('creates a completed job from a chapter URL cache when the client sees fewer pages', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            createMany: vi.fn(),
+          },
+          translationJob: {
+            create: vi.fn().mockResolvedValue({
+              id: 'job-chapter-url-cache-hit',
+            }),
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                chapterIdentity: {
+                  chapterUrl: '/manga/absolute-regression/chapter-97',
+                  sourceId: '1234',
+                },
+                id: 'job-chapter-url-cache-hit',
+                objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                status: 'awaiting_upload',
+              })
+            ),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+          },
+          translationJob: {
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                chapterIdentity: {
+                  chapterUrl: '/manga/absolute-regression/chapter-97',
+                  sourceId: '1234',
+                },
+                completedAt: new Date('2026-03-20T10:00:00.000Z'),
+                id: 'job-chapter-url-cache-hit',
+                objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                spentTokens: 10,
+                status: 'completed',
+                uploadCompletedAt: new Date('2026-03-20T10:00:00.000Z'),
+              })
+            ),
+            update: vi.fn(),
+          },
+          translationResultCache: {
+            update: mockDb.translationResultCache.update,
+          },
+        };
+
+        return await callback(tx);
+      });
+    mockDb.translationResultCache.findFirst.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'chapter-url-cache-key',
+      objectKey:
+        'cache/translation-results/chapter-url-cache-key/translation-manifest.json',
+      resultManifest: {
+        completedAt: new Date('2026-03-20T09:00:00.000Z'),
+        deviceId: 'device-original',
+        jobId: 'job-original',
+        licenseId: 'license-original',
+        pageCount: 3,
+        pageOrder: ['001.jpg', '002.jpg', '003.jpg'],
+        pages: {
+          '001.jpg': {
+            blocks: [],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'ja',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
+          '002.jpg': {
+            blocks: [],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'ja',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
+          '003.jpg': {
+            blocks: [],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'ja',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
+        },
+        sourceLanguage: 'ja',
+        targetLanguage: 'fr',
+        translatorType: 'gemini',
+        version: '2026-03-20.phase11.v1',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'jobs/job-chapter-url-cache-hit/results/translation-manifest.json',
+    });
+
+    const result = await createTranslationJob(
+      {
+        chapterIdentity: {
+          chapterUrl: '/manga/absolute-regression/chapter-97',
+          sourceId: '1234',
+        },
+        pages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: '002.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 2048,
+          },
+        ],
+        targetLanguage: 'fr',
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+      }
+    );
+
+    expect(result.job.status).toBe('completed');
+    expect(mockDb.translationResultCache.findFirst).toHaveBeenCalledOnce();
     expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
   });
 
@@ -1175,6 +1330,8 @@ describe('job service', () => {
 function buildJobRecord(
   overrides: Partial<{
     completedAt: Date | null;
+    chapterCacheKey: string | null;
+    chapterIdentity: unknown;
     createdAt: Date;
     failedAt: Date | null;
     id: string;
@@ -1226,6 +1383,8 @@ function buildJobRecord(
 
   return {
     assets,
+    chapterCacheKey: overrides.chapterCacheKey ?? null,
+    chapterIdentity: overrides.chapterIdentity ?? null,
     completedAt: overrides.completedAt ?? null,
     createdAt: overrides.createdAt ?? new Date('2026-03-20T10:00:00.000Z'),
     deviceId: 'device-1',
