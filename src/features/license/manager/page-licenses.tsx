@@ -231,78 +231,15 @@ export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
           </WithPermissions>
           {ui
             .match('idle', () => (
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Search by operational identifiers</CardTitle>
-                    <CardDescription>
-                      Look up a customer by license key, redeem code,
-                      installation ID, order ID, Lemon Squeezy IDs, or email.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-sm text-muted-foreground">
-                    Enter at least 2 characters in the search box to start a
-                    support lookup.
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle>License-first support flow</CardTitle>
-                    <CardDescription>
-                      Most payment, redeem, and balance questions resolve from
-                      the license detail view.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-sm text-muted-foreground">
-                    Search results will route licenses, redeem codes, and paid
-                    orders back to the attached license whenever one exists.
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Seeded demo queries</CardTitle>
-                    <CardDescription>
-                      The local seed now includes fake commerce and job data so
-                      you can inspect the backoffice flow immediately.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-2 text-sm text-muted-foreground">
-                    <div>
-                      <span className="font-medium text-foreground">
-                        alex.reader@demo.local
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-foreground">
-                        DEMO-ALEX-PRO-001
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-foreground">
-                        inst_demo_pixel8_alex
-                      </span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-foreground">
-                        lic_demo_unredeemed
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Device visibility</CardTitle>
-                    <CardDescription>
-                      Installation-bound devices remain inspectable even without
-                      end-user accounts.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-sm text-muted-foreground">
-                    Device results link straight to the bound installation so
-                    support can inspect status and revoke access when needed.
-                  </CardContent>
-                </Card>
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Support Lookup</CardTitle>
+                  <CardDescription>
+                    Type at least 2 characters in the search box to find a
+                    license, redeem code, device installation, or order.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
             ))
             .match('pending', () => (
               <DataList>
