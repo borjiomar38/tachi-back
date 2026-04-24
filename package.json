@@ -144,6 +144,10 @@
     "vitest": "4.0.18",
     "vitest-browser-react": "2.0.4"
   },
+  "optionalDependencies": {
+    "@img/sharp-libvips-linux-x64": "^1.2.4",
+    "@img/sharp-linux-x64": "^0.34.5"
+  },
   "engines": {
     "node": ">=22"
   },
