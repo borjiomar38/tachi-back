@@ -214,6 +214,52 @@ export async function createTranslationJob(
     });
   });
 
+  const uploadAssets = job.assets
+    .filter((asset) => asset.kind === 'page_upload')
+    .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
+  const cacheKey = buildTranslationResultCacheKey({
+    job,
+    uploadAssets,
+  });
+  const cachedManifest = cacheKey
+    ? await getCachedTranslationResultManifest({
+        cacheKey,
+        dbClient,
+        job,
+        log: logger,
+        now,
+        uploadAssets,
+      })
+    : null;
+
+  if (cacheKey && cachedManifest) {
+    const completedJob = await completeTranslationJobFromCachedManifest({
+      cacheKey,
+      dbClient,
+      job,
+      manifest: cachedManifest,
+      now,
+      spentTokens: reservedTokens,
+    });
+
+    logger.info({
+      cacheKey,
+      jobId: job.id,
+      pageCount: job.pageCount,
+      scope: 'jobs',
+      status: 'created_from_cache',
+    });
+
+    return zCreateTranslationJobResponse.parse({
+      job: buildTranslationJobSummary(completedJob),
+      upload: {
+        expiresAt: completedJob.expiresAt,
+        method: 'PUT',
+        mode: 'server_multipart',
+      },
+    });
+  }
+
   return zCreateTranslationJobResponse.parse({
     job: buildTranslationJobSummary(job),
     upload: {

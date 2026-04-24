@@ -210,6 +210,140 @@ describe('job service', () => {
     expect(result.job.pages[0]?.uploadStatus).toBe('pending');
   });
 
+  it('creates a completed job immediately when a cached result matches the page checksums', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            createMany: vi.fn(),
+          },
+          translationJob: {
+            create: vi.fn().mockResolvedValue({
+              id: 'job-create-cache-hit',
+            }),
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                id: 'job-create-cache-hit',
+                objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                status: 'awaiting_upload',
+              })
+            ),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+          },
+          translationJob: {
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                completedAt: new Date('2026-03-20T10:00:00.000Z'),
+                id: 'job-create-cache-hit',
+                objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                spentTokens: 10,
+                status: 'completed',
+                uploadCompletedAt: new Date('2026-03-20T10:00:00.000Z'),
+              })
+            ),
+            update: vi.fn(),
+          },
+          translationResultCache: {
+            update: mockDb.translationResultCache.update,
+          },
+        };
+
+        return await callback(tx);
+      });
+    mockDb.translationResultCache.findUnique.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'cache-key',
+      objectKey:
+        'cache/translation-results/cache-key/translation-manifest.json',
+    });
+    mockGetTranslationJobResultManifest.mockResolvedValue({
+      completedAt: new Date('2026-03-20T09:00:00.000Z'),
+      deviceId: 'device-original',
+      jobId: 'job-original',
+      licenseId: 'license-original',
+      pageCount: 2,
+      pageOrder: ['old-001.jpg', 'old-002.jpg'],
+      pages: {
+        'old-001.jpg': {
+          blocks: [],
+          imgHeight: 100,
+          imgWidth: 80,
+          sourceLanguage: 'ja',
+          targetLanguage: 'fr',
+          translatorType: 'gemini',
+        },
+        'old-002.jpg': {
+          blocks: [],
+          imgHeight: 100,
+          imgWidth: 80,
+          sourceLanguage: 'ja',
+          targetLanguage: 'fr',
+          translatorType: 'gemini',
+        },
+      },
+      sourceLanguage: 'ja',
+      targetLanguage: 'fr',
+      translatorType: 'gemini',
+      version: '2026-03-20.phase11.v1',
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job-create-cache-hit/results/translation-manifest.json',
+    });
+
+    const result = await createTranslationJob(
+      {
+        pages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: 'first.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: 'second.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 2048,
+          },
+        ],
+        targetLanguage: 'fr',
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+      }
+    );
+
+    expect(result.job.status).toBe('completed');
+    expect(result.job.spentTokens).toBe(10);
+    expect(result.job.resultPath).toBe(
+      '/api/mobile/jobs/job-create-cache-hit/result'
+    );
+    expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
+  });
+
   it('rejects job creation before upload when tokens are insufficient', async () => {
     mockDb.tokenLedger.aggregate.mockResolvedValue({
       _sum: {
