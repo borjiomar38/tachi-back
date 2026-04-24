@@ -1,5 +1,4 @@
 import { createHash } from 'node:crypto';
-import sharp from 'sharp';
 
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
@@ -82,36 +81,7 @@ type JobRecord = {
   uploadCompletedAt: Date | null;
 };
 
-type UploadedOcrPage = {
-  fileName: string;
-  imageBytes: Uint8Array;
-};
-
-type UploadedOcrPageWithDimensions = UploadedOcrPage & {
-  imageHeight: number;
-  imageWidth: number;
-};
-
-type OcrBatchPlacement = {
-  fileName: string;
-  height: number;
-  offsetX: number;
-  offsetY: number;
-  width: number;
-};
-
-type OcrBatch = {
-  height: number;
-  imageBytes: Uint8Array;
-  placements: OcrBatchPlacement[];
-  width: number;
-};
-
 const JOB_RESULT_VERSION = '2026-03-20.phase11.v1' as const;
-const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
-const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
-const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
-const HOSTED_OCR_JPEG_QUALITY = 88;
 
 export class TranslationJobError extends Error {
   constructor(
@@ -629,7 +599,11 @@ export async function processTranslationJob(
     .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
 
   try {
-    const uploadedOcrPages: UploadedOcrPage[] = [];
+    const ocrPages: Array<{
+      fileName: string;
+      ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
+    }> = [];
+    const detectedLanguages: string[] = [];
 
     for (const asset of uploadAssets) {
       if (!asset.bucketName || !asset.objectKey || !asset.originalFileName) {
@@ -641,19 +615,17 @@ export async function processTranslationJob(
         objectKey: asset.objectKey,
       });
       const imageBytes = new Uint8Array(await uploadedPage.blob.arrayBuffer());
-      uploadedOcrPages.push({
-        fileName: asset.originalFileName,
+      const ocrPage = await performHostedOcr({
         imageBytes,
+        jobId: startedJob.id,
+      });
+
+      detectedLanguages.push(ocrPage.sourceLanguage);
+      ocrPages.push({
+        fileName: asset.originalFileName,
+        ocrPage,
       });
     }
-
-    const ocrPages = await performHostedOcrForUploadedPages({
-      jobId: startedJob.id,
-      pages: uploadedOcrPages,
-    });
-    const detectedLanguages = ocrPages.map(
-      (page) => page.ocrPage.sourceLanguage
-    );
 
     const sourceLanguage = resolveEffectiveSourceLanguage(
       startedJob.sourceLanguage,
@@ -1106,293 +1078,6 @@ function getUploadedAt(metadata: unknown) {
 
 function calculateReservedTokens(pageCount: number) {
   return pageCount * envServer.JOB_TOKENS_PER_PAGE;
-}
-
-async function performHostedOcrForUploadedPages(input: {
-  jobId: string;
-  pages: UploadedOcrPage[];
-}): Promise<
-  Array<{
-    fileName: string;
-    ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
-  }>
-> {
-  const dimensionedPages: UploadedOcrPageWithDimensions[] = [];
-  const fallbackPages: UploadedOcrPage[] = [];
-
-  for (const page of input.pages) {
-    const dimensions = await getUploadedPageImageDimensions(page.imageBytes);
-    if (!dimensions) {
-      fallbackPages.push(page);
-      continue;
-    }
-
-    dimensionedPages.push({
-      ...page,
-      imageHeight: dimensions.height,
-      imageWidth: dimensions.width,
-    });
-  }
-
-  const ocrPages: Array<{
-    fileName: string;
-    ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
-  }> = [];
-
-  for (const batch of await buildHostedOcrBatches(dimensionedPages)) {
-    const batchOcrPage = await performHostedOcr({
-      imageBytes: batch.imageBytes,
-      imageHeight: batch.height,
-      imageWidth: batch.width,
-      jobId: input.jobId,
-      pageCount: batch.placements.length,
-    });
-    ocrPages.push(...mapBatchOcrPageToOriginalPages(batch, batchOcrPage));
-  }
-
-  for (const page of fallbackPages) {
-    ocrPages.push({
-      fileName: page.fileName,
-      ocrPage: await performHostedOcr({
-        imageBytes: page.imageBytes,
-        jobId: input.jobId,
-      }),
-    });
-  }
-
-  const byFileName = new Map(ocrPages.map((page) => [page.fileName, page]));
-
-  return input.pages.map((page) => {
-    const ocrPage = byFileName.get(page.fileName);
-    if (!ocrPage) {
-      throw new Error(`Missing OCR page for ${page.fileName}`);
-    }
-    return ocrPage;
-  });
-}
-
-async function getUploadedPageImageDimensions(imageBytes: Uint8Array) {
-  try {
-    const metadata = await sharp(imageBytes).metadata();
-    if (!metadata.width || !metadata.height) {
-      return null;
-    }
-
-    return {
-      height: metadata.height,
-      width: metadata.width,
-    };
-  } catch {
-    return null;
-  }
-}
-
-async function buildHostedOcrBatches(
-  pages: UploadedOcrPageWithDimensions[]
-): Promise<OcrBatch[]> {
-  const batches: UploadedOcrPageWithDimensions[][] = [];
-  let currentBatch: UploadedOcrPageWithDimensions[] = [];
-
-  for (const page of pages) {
-    const candidate = [...currentBatch, page];
-    if (currentBatch.length > 0 && !canFitHostedOcrBatch(candidate)) {
-      batches.push(currentBatch);
-      currentBatch = [page];
-      continue;
-    }
-
-    currentBatch = candidate;
-  }
-
-  if (currentBatch.length > 0) {
-    batches.push(currentBatch);
-  }
-
-  const encodedBatches: OcrBatch[] = [];
-  for (const batch of batches) {
-    encodedBatches.push(...(await encodeHostedOcrBatchSafely(batch)));
-  }
-
-  return encodedBatches;
-}
-
-function canFitHostedOcrBatch(pages: UploadedOcrPageWithDimensions[]) {
-  const width = Math.max(...pages.map((page) => page.imageWidth));
-  const height = pages.reduce((sum, page) => sum + page.imageHeight, 0);
-  const pixels = width * height;
-
-  return (
-    height <= HOSTED_OCR_MAX_BATCH_HEIGHT &&
-    pixels <= HOSTED_OCR_MAX_BATCH_PIXELS
-  );
-}
-
-async function encodeHostedOcrBatchSafely(
-  pages: UploadedOcrPageWithDimensions[]
-): Promise<OcrBatch[]> {
-  if (pages.length === 0) {
-    return [];
-  }
-
-  const batch = await encodeHostedOcrBatch(pages);
-  if (
-    batch.imageBytes.byteLength <= HOSTED_OCR_MAX_INLINE_IMAGE_BYTES ||
-    pages.length === 1
-  ) {
-    return [batch];
-  }
-
-  const splitAt = Math.ceil(pages.length / 2);
-  return [
-    ...(await encodeHostedOcrBatchSafely(pages.slice(0, splitAt))),
-    ...(await encodeHostedOcrBatchSafely(pages.slice(splitAt))),
-  ];
-}
-
-async function encodeHostedOcrBatch(
-  pages: UploadedOcrPageWithDimensions[]
-): Promise<OcrBatch> {
-  const width = Math.max(...pages.map((page) => page.imageWidth));
-  const height = pages.reduce((sum, page) => sum + page.imageHeight, 0);
-  const placements: OcrBatchPlacement[] = [];
-  let offsetY = 0;
-
-  for (const page of pages) {
-    placements.push({
-      fileName: page.fileName,
-      height: page.imageHeight,
-      offsetX: Math.max(Math.floor((width - page.imageWidth) / 2), 0),
-      offsetY,
-      width: page.imageWidth,
-    });
-    offsetY += page.imageHeight;
-  }
-
-  const imageBytes = await sharp({
-    create: {
-      background: '#ffffff',
-      channels: 3,
-      height,
-      width,
-    },
-  })
-    .composite(
-      pages.map((page, index) => ({
-        input: Buffer.from(page.imageBytes),
-        left: placements[index]?.offsetX ?? 0,
-        top: placements[index]?.offsetY ?? 0,
-      }))
-    )
-    .jpeg({
-      mozjpeg: true,
-      quality: HOSTED_OCR_JPEG_QUALITY,
-    })
-    .toBuffer();
-
-  return {
-    height,
-    imageBytes,
-    placements,
-    width,
-  };
-}
-
-function mapBatchOcrPageToOriginalPages(
-  batch: OcrBatch,
-  ocrPage: Awaited<ReturnType<typeof performHostedOcr>>
-) {
-  const pages = new Map<string, Awaited<ReturnType<typeof performHostedOcr>>>();
-
-  for (const placement of batch.placements) {
-    pages.set(placement.fileName, {
-      ...ocrPage,
-      blocks: [],
-      imgHeight: placement.height,
-      imgWidth: placement.width,
-    });
-  }
-
-  for (const block of ocrPage.blocks) {
-    const placement = findPlacementForOcrBlock(batch.placements, block);
-    if (!placement) {
-      continue;
-    }
-
-    const mappedBlock = mapOcrBlockToPlacement(block, placement);
-    if (!mappedBlock) {
-      continue;
-    }
-
-    pages.get(placement.fileName)?.blocks.push(mappedBlock);
-  }
-
-  return batch.placements.map((placement) => ({
-    fileName: placement.fileName,
-    ocrPage: pages.get(placement.fileName)!,
-  }));
-}
-
-function findPlacementForOcrBlock(
-  placements: OcrBatchPlacement[],
-  block: NormalizedOcrPage['blocks'][number]
-) {
-  const centerY = block.y + block.height / 2;
-  const containingPlacement = placements.find(
-    (placement) =>
-      centerY >= placement.offsetY &&
-      centerY <= placement.offsetY + placement.height
-  );
-
-  if (containingPlacement) {
-    return containingPlacement;
-  }
-
-  return placements
-    .map((placement) => ({
-      overlap: verticalOverlap(
-        block.y,
-        block.y + block.height,
-        placement.offsetY,
-        placement.offsetY + placement.height
-      ),
-      placement,
-    }))
-    .sort((left, right) => right.overlap - left.overlap)[0]?.placement;
-}
-
-function mapOcrBlockToPlacement(
-  block: NormalizedOcrPage['blocks'][number],
-  placement: OcrBatchPlacement
-): NormalizedOcrPage['blocks'][number] | null {
-  const localLeft = block.x - placement.offsetX;
-  const localTop = block.y - placement.offsetY;
-  const left = Math.max(localLeft, 0);
-  const top = Math.max(localTop, 0);
-  const right = Math.min(localLeft + block.width, placement.width);
-  const bottom = Math.min(localTop + block.height, placement.height);
-  const width = right - left;
-  const height = bottom - top;
-
-  if (width <= 0 || height <= 0) {
-    return null;
-  }
-
-  return {
-    ...block,
-    height,
-    width,
-    x: left,
-    y: top,
-  };
-}
-
-function verticalOverlap(
-  topA: number,
-  bottomA: number,
-  topB: number,
-  bottomB: number
-) {
-  return Math.max(0, Math.min(bottomA, bottomB) - Math.max(topA, topB));
 }
 
 function coalesceOcrLineBlocks(ocrPage: NormalizedOcrPage): NormalizedOcrPage {

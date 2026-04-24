@@ -21,7 +21,6 @@ export async function performHostedOcr(
     imageHeight?: number;
     imageWidth?: number;
     jobId?: string;
-    pageCount?: number;
   },
   deps: {
     fetchFn?: typeof fetch;
@@ -79,7 +78,7 @@ export async function performHostedOcr(
       },
       modelName: result.providerModel,
       outputTokens: result.usage.outputTokens ?? undefined,
-      pageCount: input.pageCount ?? result.usage.pageCount,
+      pageCount: result.usage.pageCount,
       provider: result.provider,
       requestCount: result.usage.requestCount,
       stage: ProviderUsageStage.ocr,
