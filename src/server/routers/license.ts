@@ -3,6 +3,8 @@ import { z } from 'zod';
 
 import { createManualLicenseGrant } from '@/server/licenses/manual-grant';
 import {
+  zAdjustRedeemCodeInput,
+  zAdjustRedeemCodeResponse,
   zCreateManualLicenseGrantInput,
   zCreateManualLicenseGrantResponse,
   zCreateRedeemCodeInput,
@@ -146,44 +148,66 @@ export default {
 
       const balanceByLicenseId = new Map<
         string,
-        { availableTokens: number; spentTokens: number }
+        {
+          availableTokens: number;
+          creditedTokens: number;
+          spentTokens: number;
+        }
       >();
 
+      const uniqueLicenseIds = [
+        ...new Set(redeemCodes.map((redeemCode) => redeemCode.license.id)),
+      ];
+
       await Promise.all(
-        redeemCodes.map(async (redeemCode) => {
-          if (balanceByLicenseId.has(redeemCode.license.id)) {
-            return;
-          }
-
-          const [availableTokens, spentTokens] = await Promise.all([
-            getAvailableLicenseTokenBalance(
-              {
-                licenseId: redeemCode.license.id,
-              },
-              {
-                dbClient: context.db,
-              }
-            ),
-            context.db.tokenLedger
-              .aggregate({
-                where: {
-                  deltaTokens: {
-                    lt: 0,
-                  },
-                  licenseId: redeemCode.license.id,
-                  status: {
-                    in: ['pending', 'posted'],
-                  },
+        uniqueLicenseIds.map(async (licenseId) => {
+          const [availableTokens, creditedTokens, spentTokens] =
+            await Promise.all([
+              getAvailableLicenseTokenBalance(
+                {
+                  licenseId,
                 },
-                _sum: {
-                  deltaTokens: true,
-                },
-              })
-              .then((result) => Math.abs(result._sum.deltaTokens ?? 0)),
-          ]);
+                {
+                  dbClient: context.db,
+                }
+              ),
+              context.db.tokenLedger
+                .aggregate({
+                  where: {
+                    deltaTokens: {
+                      gt: 0,
+                    },
+                    licenseId,
+                    status: {
+                      in: ['pending', 'posted'],
+                    },
+                  },
+                  _sum: {
+                    deltaTokens: true,
+                  },
+                })
+                .then((result) => result._sum.deltaTokens ?? 0),
+              context.db.tokenLedger
+                .aggregate({
+                  where: {
+                    deltaTokens: {
+                      lt: 0,
+                    },
+                    licenseId,
+                    status: {
+                      in: ['pending', 'posted'],
+                    },
+                  },
+                  _sum: {
+                    deltaTokens: true,
+                  },
+                })
+                .then((result) => Math.abs(result._sum.deltaTokens ?? 0)),
+            ]);
 
-          balanceByLicenseId.set(redeemCode.license.id, {
+          balanceByLicenseId.set(licenseId, {
             availableTokens,
+            creditedTokens,
             spentTokens,
           });
         })
@@ -192,6 +216,7 @@ export default {
       return redeemCodes.map((redeemCode) => {
         const balance = balanceByLicenseId.get(redeemCode.license.id) ?? {
           availableTokens: 0,
+          creditedTokens: 0,
           spentTokens: 0,
         };
         const postedLedgerEntries = redeemCode.ledgerEntries.filter((entry) =>
@@ -202,9 +227,7 @@ export default {
           availableTokens: balance.availableTokens,
           code: redeemCode.code,
           createdAt: redeemCode.createdAt,
-          creditedTokens: postedLedgerEntries
-            .filter((entry) => entry.deltaTokens > 0)
-            .reduce((total, entry) => total + entry.deltaTokens, 0),
+          creditedTokens: balance.creditedTokens,
           deviceLimit: redeemCode.license.deviceLimit,
           expiresAt: redeemCode.expiresAt,
           id: redeemCode.id,
@@ -886,6 +909,134 @@ export default {
       });
 
       return result;
+    }),
+
+  adjustRedeemCode: protectedProcedure({
+    permissions: {
+      license: ['manual-credit'],
+    },
+  })
+    .route({
+      method: 'PATCH',
+      path: '/licenses/redeem-codes/{code}',
+      tags,
+    })
+    .input(zAdjustRedeemCodeInput)
+    .output(zAdjustRedeemCodeResponse)
+    .handler(async ({ context, input }) => {
+      const code = normalizeRedeemCode(input.code);
+
+      const result = await context.db.$transaction(async (tx) => {
+        const redeemCode = await tx.redeemCode.findUnique({
+          where: {
+            code,
+          },
+          select: {
+            id: true,
+            license: {
+              select: {
+                deviceLimit: true,
+                id: true,
+                status: true,
+              },
+            },
+            status: true,
+          },
+        });
+
+        if (!redeemCode) {
+          throw new ORPCError('NOT_FOUND');
+        }
+
+        if (redeemCode.status === 'redeemed' && input.status) {
+          throw new ORPCError('CONFLICT');
+        }
+
+        if (input.status || input.redeemCodeExpiresAt !== undefined) {
+          await tx.redeemCode.update({
+            where: {
+              id: redeemCode.id,
+            },
+            data: {
+              expiresAt:
+                input.status === 'available' ? null : input.redeemCodeExpiresAt,
+              status: input.status,
+            },
+          });
+        }
+
+        const shouldUpdateLicense =
+          input.deviceLimit !== undefined || input.licenseStatus !== undefined;
+
+        const license = shouldUpdateLicense
+          ? await tx.license.update({
+              where: {
+                id: redeemCode.license.id,
+              },
+              data: {
+                deviceLimit: input.deviceLimit,
+                status: input.licenseStatus,
+              },
+              select: {
+                deviceLimit: true,
+                id: true,
+                status: true,
+              },
+            })
+          : redeemCode.license;
+
+        if (input.tokenDelta && input.tokenDelta !== 0) {
+          await tx.tokenLedger.create({
+            data: {
+              deltaTokens: input.tokenDelta,
+              description: input.notes || 'Backoffice token adjustment',
+              licenseId: redeemCode.license.id,
+              metadata: {
+                adjustedByUserId: context.user.id,
+                source: 'backoffice_redeem_manager',
+              },
+              redeemCodeId: redeemCode.id,
+              status: 'posted',
+              type: 'admin_adjustment',
+            },
+          });
+        }
+
+        const updatedRedeemCode = await tx.redeemCode.findUniqueOrThrow({
+          where: {
+            id: redeemCode.id,
+          },
+          select: {
+            code: true,
+            status: true,
+          },
+        });
+
+        return {
+          code: updatedRedeemCode.code,
+          deviceLimit: license.deviceLimit,
+          licenseId: license.id,
+          licenseStatus: license.status,
+          status: updatedRedeemCode.status,
+        };
+      });
+
+      const availableTokens = await getAvailableLicenseTokenBalance(
+        {
+          licenseId: result.licenseId,
+        },
+        {
+          dbClient: context.db,
+        }
+      );
+
+      return {
+        availableTokens,
+        code: result.code,
+        deviceLimit: result.deviceLimit,
+        licenseStatus: result.licenseStatus,
+        status: result.status,
+      };
     }),
 
   updateRedeemCodeStatus: protectedProcedure({

@@ -176,6 +176,11 @@ describe('license router', () => {
         })
         .mockResolvedValueOnce({
           _sum: {
+            deltaTokens: 2000,
+          },
+        })
+        .mockResolvedValueOnce({
+          _sum: {
             deltaTokens: -70,
           },
         });
@@ -205,6 +210,91 @@ describe('license router', () => {
           status: 'available',
         },
       ]);
+    });
+
+    it('shows license-level totals consistently across multiple redeem codes', async () => {
+      mockDb.redeemCode.findMany.mockResolvedValue([
+        {
+          code: 'TB-AAAA-BBBB-CCCC',
+          createdAt: now,
+          expiresAt: null,
+          id: 'redeem-1',
+          ledgerEntries: [
+            {
+              createdAt: now,
+              deltaTokens: 2000,
+              status: 'posted',
+            },
+          ],
+          license: {
+            deviceLimit: 1,
+            id: 'license-1',
+            key: 'LIC-123',
+            ownerEmail: 'reader@example.com',
+            status: 'active',
+          },
+          orderId: null,
+          redeemedAt: now,
+          redeemedByDevice: null,
+          status: 'redeemed',
+        },
+        {
+          code: 'TB-DDDD-EEEE-FFFF',
+          createdAt: now,
+          expiresAt: null,
+          id: 'redeem-2',
+          ledgerEntries: [],
+          license: {
+            deviceLimit: 1,
+            id: 'license-1',
+            key: 'LIC-123',
+            ownerEmail: 'reader@example.com',
+            status: 'active',
+          },
+          orderId: null,
+          redeemedAt: null,
+          redeemedByDevice: null,
+          status: 'canceled',
+        },
+      ]);
+      mockDb.tokenLedger.aggregate
+        .mockResolvedValueOnce({
+          _sum: {
+            deltaTokens: 17470,
+          },
+        })
+        .mockResolvedValueOnce({
+          _sum: {
+            deltaTokens: 20000,
+          },
+        })
+        .mockResolvedValueOnce({
+          _sum: {
+            deltaTokens: -2530,
+          },
+        });
+
+      const result = await call(licenseRouter.listRedeemCodes, {
+        status: 'all',
+      });
+
+      expect(result).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            availableTokens: 17470,
+            code: 'TB-AAAA-BBBB-CCCC',
+            creditedTokens: 20000,
+            spentTokens: 2530,
+          }),
+          expect.objectContaining({
+            availableTokens: 17470,
+            code: 'TB-DDDD-EEEE-FFFF',
+            creditedTokens: 20000,
+            spentTokens: 2530,
+          }),
+        ])
+      );
+      expect(mockDb.tokenLedger.aggregate).toHaveBeenCalledTimes(3);
     });
   });
 
@@ -499,6 +589,95 @@ describe('license router', () => {
           where: {
             id: 'redeem-1',
           },
+        })
+      );
+    });
+
+    it('adjusts redeem access and writes an admin token ledger entry', async () => {
+      const tx = {
+        license: {
+          update: vi.fn().mockResolvedValue({
+            deviceLimit: 2,
+            id: 'license-1',
+            status: 'suspended',
+          }),
+        },
+        redeemCode: {
+          findUnique: vi.fn().mockResolvedValue({
+            id: 'redeem-1',
+            license: {
+              deviceLimit: 1,
+              id: 'license-1',
+              status: 'active',
+            },
+            status: 'available',
+          }),
+          findUniqueOrThrow: vi.fn().mockResolvedValue({
+            code: 'TB-AAAA-BBBB-CCCC',
+            status: 'canceled',
+          }),
+          update: vi.fn().mockResolvedValue({
+            id: 'redeem-1',
+          }),
+        },
+        tokenLedger: {
+          create: vi.fn().mockResolvedValue({
+            id: 'ledger-1',
+          }),
+        },
+      };
+
+      mockTransaction(tx);
+      mockDb.tokenLedger.aggregate.mockResolvedValue({
+        _sum: {
+          deltaTokens: 1500,
+        },
+      });
+
+      const result = await call(licenseRouter.adjustRedeemCode, {
+        code: 'TB-AAAA-BBBB-CCCC',
+        deviceLimit: 2,
+        licenseStatus: 'suspended',
+        notes: 'Support adjustment',
+        status: 'canceled',
+        tokenDelta: -500,
+      });
+
+      expect(result).toEqual({
+        availableTokens: 1500,
+        code: 'TB-AAAA-BBBB-CCCC',
+        deviceLimit: 2,
+        licenseStatus: 'suspended',
+        status: 'canceled',
+      });
+      expect(tx.redeemCode.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: {
+            expiresAt: undefined,
+            status: 'canceled',
+          },
+          where: {
+            id: 'redeem-1',
+          },
+        })
+      );
+      expect(tx.license.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: {
+            deviceLimit: 2,
+            status: 'suspended',
+          },
+        })
+      );
+      expect(tx.tokenLedger.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            deltaTokens: -500,
+            description: 'Support adjustment',
+            licenseId: 'license-1',
+            redeemCodeId: 'redeem-1',
+            type: 'admin_adjustment',
+          }),
         })
       );
     });

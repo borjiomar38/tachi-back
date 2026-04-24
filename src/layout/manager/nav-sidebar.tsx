@@ -53,8 +53,9 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                   className="h-auto"
                   render={
                     <Link to="/manager">
-                      <span>
-                        <Logo className="w-24 group-data-[collapsible=icon]:w-18" />
+                      <span className="flex items-center">
+                        <Logo variant="mark" className="size-10 md:hidden" />
+                        <Logo className="hidden w-24 group-data-[collapsible=icon]:w-18 md:block" />
                       </span>
                     </Link>
                   }

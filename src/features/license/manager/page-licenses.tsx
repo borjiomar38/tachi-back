@@ -6,7 +6,9 @@ import dayjs from 'dayjs';
 import {
   BanIcon,
   CheckCircle2Icon,
+  ClipboardCopyIcon,
   EllipsisIcon,
+  PencilIcon,
   PlusIcon,
   RefreshCcwIcon,
   RotateCcwIcon,
@@ -19,11 +21,11 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { orpc } from '@/lib/orpc/client';
+import { useClipboard } from '@/hooks/use-clipboard';
 
 import { Form } from '@/components/form';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ConfirmResponsiveDrawer } from '@/components/ui/confirm-responsive-drawer';
 import {
   DataList,
   DataListCell,
@@ -93,6 +95,23 @@ const zGenerateRedeemCodeForm = z.object({
 });
 
 type GenerateRedeemCodeForm = z.infer<typeof zGenerateRedeemCodeForm>;
+
+const zAdjustRedeemCodeForm = z.object({
+  deviceLimit: z.coerce.number().int().min(0).max(10),
+  licenseStatus: z.enum([
+    'pending',
+    'active',
+    'suspended',
+    'revoked',
+    'expired',
+  ]),
+  notes: z.string().trim().max(500),
+  redeemCodeExpiresAt: z.string().trim(),
+  status: z.enum(['available', 'expired', 'canceled']),
+  tokenDelta: z.coerce.number().int().min(-1_000_000).max(1_000_000),
+});
+
+type AdjustRedeemCodeForm = z.infer<typeof zAdjustRedeemCodeForm>;
 
 export const PageLicenses = (props: {
   search: { searchTerm?: string; status?: RedeemCodeStatus };
@@ -198,6 +217,20 @@ export const PageLicenses = (props: {
       },
       onError: () => {
         toast.error('Unable to regenerate redeem code.');
+      },
+    })
+  );
+
+  const adjustRedeemCode = useMutation(
+    orpc.license.adjustRedeemCode.mutationOptions({
+      onSuccess: async (result) => {
+        toast.success(
+          `Redeem updated. ${result.availableTokens.toLocaleString()} tokens available.`
+        );
+        await invalidateRedeemCodes();
+      },
+      onError: () => {
+        toast.error('Unable to update redeem.');
       },
     })
   );
@@ -425,6 +458,7 @@ export const PageLicenses = (props: {
                       onRegenerate={(code) =>
                         regenerateRedeemCode.mutateAsync({ code })
                       }
+                      onAdjust={(input) => adjustRedeemCode.mutateAsync(input)}
                       onSetStatus={(code, status) =>
                         updateRedeemCodeStatus.mutateAsync({ code, status })
                       }
@@ -442,6 +476,15 @@ export const PageLicenses = (props: {
 
 const RedeemCodeRow = (props: {
   item: RedeemCodeItem;
+  onAdjust: (input: {
+    code: string;
+    deviceLimit?: number;
+    licenseStatus?: RedeemCodeItem['licenseStatus'];
+    notes?: string;
+    redeemCodeExpiresAt?: Date | null;
+    status?: 'available' | 'expired' | 'canceled';
+    tokenDelta?: number;
+  }) => Promise<unknown>;
   onDelete: (code: string) => Promise<unknown>;
   onRegenerate: (code: string) => Promise<unknown>;
   onSetStatus: (
@@ -451,6 +494,25 @@ const RedeemCodeRow = (props: {
 }) => {
   const item = props.item;
   const isRedeemed = item.status === 'redeemed';
+  const { copyToClipboard } = useClipboard();
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const adjustForm = useForm({
+    resolver: zodResolver(zAdjustRedeemCodeForm),
+    defaultValues: {
+      deviceLimit: item.deviceLimit,
+      licenseStatus: item.licenseStatus,
+      notes: '',
+      redeemCodeExpiresAt: toDatetimeLocalValue(item.expiresAt),
+      status: item.status === 'redeemed' ? 'available' : item.status,
+      tokenDelta: 0,
+    },
+  });
+
+  const copyRedeemCode = () => {
+    copyToClipboard(item.code);
+    toast.success('Redeem copied to clipboard.');
+  };
 
   return (
     <DataListRow
@@ -459,9 +521,15 @@ const RedeemCodeRow = (props: {
     >
       <DataListCell className="gap-1 sm:flex-[1.1]">
         <div className="flex w-full min-w-0 items-center gap-2">
-          <DataListText className="font-mono font-medium">
+          <button
+            type="button"
+            aria-label={`Copy redeem code ${item.code}`}
+            className="min-w-0 truncate rounded-sm text-left font-mono text-sm font-medium outline-none hover:text-primary focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            title={`Copy ${item.code}`}
+            onClick={copyRedeemCode}
+          >
             {item.code}
-          </DataListText>
+          </button>
           <Badge variant={getRedeemStatusVariant(item.status)}>
             {item.status}
           </Badge>
@@ -483,12 +551,12 @@ const RedeemCodeRow = (props: {
       </DataListCell>
 
       <DataListCell className="sm:flex-[1.1]">
-        <DataListTextHeader>Consumption</DataListTextHeader>
+        <DataListTextHeader>License balance</DataListTextHeader>
         <DataListText>
           {item.availableTokens.toLocaleString()} available
         </DataListText>
         <DataListText className="text-xs text-muted-foreground">
-          {item.creditedTokens.toLocaleString()} credited ·{' '}
+          {item.creditedTokens.toLocaleString()} total credited ·{' '}
           {item.spentTokens.toLocaleString()} spent
         </DataListText>
       </DataListCell>
@@ -534,6 +602,14 @@ const RedeemCodeRow = (props: {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="min-w-44">
               <DropdownMenuGroup>
+                <DropdownMenuItem onClick={copyRedeemCode}>
+                  <ClipboardCopyIcon />
+                  Copy redeem
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setIsEditOpen(true)}>
+                  <PencilIcon />
+                  Edit redeem
+                </DropdownMenuItem>
                 {item.status !== 'available' && !isRedeemed ? (
                   <DropdownMenuItem
                     onClick={() => props.onSetStatus(item.code, 'available')}
@@ -564,22 +640,158 @@ const RedeemCodeRow = (props: {
                 </DropdownMenuItem>
               </DropdownMenuGroup>
               <DropdownMenuSeparator />
-              <ConfirmResponsiveDrawer
-                confirmText="Delete redeem"
-                confirmVariant="destructive"
-                description="This removes the redeem code record from the manager. Ledger history remains attached to the license."
-                onConfirm={() => props.onDelete(item.code)}
-                title={`Delete ${item.code}?`}
+              <DropdownMenuItem
+                variant="destructive"
+                onClick={() => setIsDeleteOpen(true)}
               >
-                <DropdownMenuItem variant="destructive">
-                  <Trash2Icon />
-                  Delete
-                </DropdownMenuItem>
-              </ConfirmResponsiveDrawer>
+                <Trash2Icon />
+                Delete
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </WithPermissions>
       </DataListCell>
+      <Dialog open={isEditOpen} onOpenChange={setIsEditOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <Form
+            {...adjustForm}
+            onSubmit={(values: AdjustRedeemCodeForm) => {
+              props
+                .onAdjust({
+                  code: item.code,
+                  deviceLimit: values.deviceLimit,
+                  licenseStatus: values.licenseStatus,
+                  notes: values.notes || undefined,
+                  redeemCodeExpiresAt: values.redeemCodeExpiresAt
+                    ? new Date(values.redeemCodeExpiresAt)
+                    : null,
+                  status: isRedeemed ? undefined : values.status,
+                  tokenDelta: values.tokenDelta || undefined,
+                })
+                .then(() => setIsEditOpen(false));
+            }}
+          >
+            <DialogHeader>
+              <DialogTitle>Edit redeem</DialogTitle>
+              <DialogDescription>
+                Adjust tokens, expiry, redeem status, or license access for{' '}
+                {item.code}.
+              </DialogDescription>
+            </DialogHeader>
+            <DialogBody className="gap-3">
+              <div className="grid gap-3 sm:grid-cols-3">
+                <FormFieldError
+                  error={adjustForm.formState.errors.tokenDelta}
+                  label="Token delta"
+                >
+                  <Input
+                    inputMode="numeric"
+                    size="sm"
+                    type="number"
+                    {...adjustForm.register('tokenDelta')}
+                  />
+                </FormFieldError>
+                <FormFieldError
+                  error={adjustForm.formState.errors.deviceLimit}
+                  label="Device limit"
+                >
+                  <Input
+                    inputMode="numeric"
+                    min={0}
+                    size="sm"
+                    type="number"
+                    {...adjustForm.register('deviceLimit')}
+                  />
+                </FormFieldError>
+                <FormFieldError
+                  error={adjustForm.formState.errors.redeemCodeExpiresAt}
+                  label="Expires at"
+                >
+                  <Input
+                    size="sm"
+                    type="datetime-local"
+                    {...adjustForm.register('redeemCodeExpiresAt')}
+                  />
+                </FormFieldError>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <FormFieldError
+                  error={adjustForm.formState.errors.status}
+                  label="Redeem status"
+                >
+                  <select
+                    className="h-8 rounded-md border bg-background px-2 text-sm"
+                    disabled={isRedeemed}
+                    {...adjustForm.register('status')}
+                  >
+                    <option value="available">available</option>
+                    <option value="expired">expired</option>
+                    <option value="canceled">canceled</option>
+                  </select>
+                </FormFieldError>
+                <FormFieldError
+                  error={adjustForm.formState.errors.licenseStatus}
+                  label="License status"
+                >
+                  <select
+                    className="h-8 rounded-md border bg-background px-2 text-sm"
+                    {...adjustForm.register('licenseStatus')}
+                  >
+                    <option value="pending">pending</option>
+                    <option value="active">active</option>
+                    <option value="suspended">suspended</option>
+                    <option value="revoked">revoked</option>
+                    <option value="expired">expired</option>
+                  </select>
+                </FormFieldError>
+              </div>
+              <FormFieldError
+                error={adjustForm.formState.errors.notes}
+                label="Adjustment note"
+              >
+                <Textarea
+                  placeholder="Optional reason for the token or access change"
+                  rows={3}
+                  size="sm"
+                  {...adjustForm.register('notes')}
+                />
+              </FormFieldError>
+            </DialogBody>
+            <DialogFooter>
+              <DialogClose
+                render={<Button type="button" variant="secondary" />}
+              >
+                Cancel
+              </DialogClose>
+              <Button type="submit">Save changes</Button>
+            </DialogFooter>
+          </Form>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={isDeleteOpen} onOpenChange={setIsDeleteOpen}>
+        <DialogContent className="sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle>Delete {item.code}?</DialogTitle>
+            <DialogDescription>
+              This removes the redeem code record from the manager. Ledger
+              history remains attached to the license.
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <DialogClose render={<Button type="button" variant="secondary" />}>
+              Cancel
+            </DialogClose>
+            <Button
+              variant="destructive"
+              onClick={() => {
+                props.onDelete(item.code).then(() => setIsDeleteOpen(false));
+              }}
+            >
+              Delete redeem
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </DataListRow>
   );
 };
@@ -622,6 +834,10 @@ function formatDate(date: Date | string) {
 
 function formatNullableDate(date: Date | string | null | undefined) {
   return date ? formatDate(date) : 'Never';
+}
+
+function toDatetimeLocalValue(date: Date | string | null | undefined) {
+  return date ? dayjs(date).format('YYYY-MM-DDTHH:mm') : '';
 }
 
 function getRedeemStatusVariant(status: RedeemCodeItem['status']) {
