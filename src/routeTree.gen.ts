@@ -34,6 +34,7 @@ import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licen
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
 import { Route as ManagerContactsIndexRouteImport } from './routes/manager/contacts/index'
+import { Route as ManagerChaptersIndexRouteImport } from './routes/manager/chapters/index'
 import { Route as ManagerAccountIndexRouteImport } from './routes/manager/account.index'
 import { Route as LoginVerifyIndexRouteImport } from './routes/login/verify.index'
 import { Route as LoginErrorIndexRouteImport } from './routes/login/error.index'
@@ -54,6 +55,7 @@ import { Route as ManagerLicensesKeyIndexRouteImport } from './routes/manager/li
 import { Route as ManagerJobsIdIndexRouteImport } from './routes/manager/jobs/$id.index'
 import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devices/$id.index'
 import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/contacts/$id.index'
+import { Route as ManagerChaptersCacheKeyIndexRouteImport } from './routes/manager/chapters/$cacheKey.index'
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
 import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
@@ -192,6 +194,11 @@ const ManagerContactsIndexRoute = ManagerContactsIndexRouteImport.update({
   path: '/contacts/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerChaptersIndexRoute = ManagerChaptersIndexRouteImport.update({
+  id: '/chapters/',
+  path: '/chapters/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerAccountIndexRoute = ManagerAccountIndexRouteImport.update({
   id: '/account/',
   path: '/account/',
@@ -292,6 +299,12 @@ const ManagerContactsIdIndexRoute = ManagerContactsIdIndexRouteImport.update({
   path: '/contacts/$id/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerChaptersCacheKeyIndexRoute =
+  ManagerChaptersCacheKeyIndexRouteImport.update({
+    id: '/chapters/$cacheKey/',
+    path: '/chapters/$cacheKey/',
+    getParentRoute: () => ManagerRouteRoute,
+  } as any)
 const ApiOpenapiAuthSchemaRoute = ApiOpenapiAuthSchemaRouteImport.update({
   id: '/schema',
   path: '/schema',
@@ -392,6 +405,7 @@ export interface FileRoutesByFullPath {
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
   '/manager/account/': typeof ManagerAccountIndexRoute
+  '/manager/chapters/': typeof ManagerChaptersIndexRoute
   '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
@@ -405,6 +419,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
@@ -448,6 +463,7 @@ export interface FileRoutesByTo {
   '/login/error': typeof LoginErrorIndexRoute
   '/login/verify': typeof LoginVerifyIndexRoute
   '/manager/account': typeof ManagerAccountIndexRoute
+  '/manager/chapters': typeof ManagerChaptersIndexRoute
   '/manager/contacts': typeof ManagerContactsIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
   '/manager/jobs': typeof ManagerJobsIndexRoute
@@ -461,6 +477,7 @@ export interface FileRoutesByTo {
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manager/chapters/$cacheKey': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id': typeof ManagerDevicesIdIndexRoute
   '/manager/jobs/$id': typeof ManagerJobsIdIndexRoute
@@ -508,6 +525,7 @@ export interface FileRoutesById {
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
   '/manager/account/': typeof ManagerAccountIndexRoute
+  '/manager/chapters/': typeof ManagerChaptersIndexRoute
   '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
@@ -521,6 +539,7 @@ export interface FileRoutesById {
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
@@ -569,6 +588,7 @@ export interface FileRouteTypes {
     | '/login/error/'
     | '/login/verify/'
     | '/manager/account/'
+    | '/manager/chapters/'
     | '/manager/contacts/'
     | '/manager/dashboard/'
     | '/manager/jobs/'
@@ -582,6 +602,7 @@ export interface FileRouteTypes {
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manager/chapters/$cacheKey/'
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
     | '/manager/jobs/$id/'
@@ -625,6 +646,7 @@ export interface FileRouteTypes {
     | '/login/error'
     | '/login/verify'
     | '/manager/account'
+    | '/manager/chapters'
     | '/manager/contacts'
     | '/manager/dashboard'
     | '/manager/jobs'
@@ -638,6 +660,7 @@ export interface FileRouteTypes {
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manager/chapters/$cacheKey'
     | '/manager/contacts/$id'
     | '/manager/devices/$id'
     | '/manager/jobs/$id'
@@ -684,6 +707,7 @@ export interface FileRouteTypes {
     | '/login/error/'
     | '/login/verify/'
     | '/manager/account/'
+    | '/manager/chapters/'
     | '/manager/contacts/'
     | '/manager/dashboard/'
     | '/manager/jobs/'
@@ -697,6 +721,7 @@ export interface FileRouteTypes {
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manager/chapters/$cacheKey/'
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
     | '/manager/jobs/$id/'
@@ -921,6 +946,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerContactsIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/chapters/': {
+      id: '/manager/chapters/'
+      path: '/chapters'
+      fullPath: '/manager/chapters/'
+      preLoaderRoute: typeof ManagerChaptersIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/account/': {
       id: '/manager/account/'
       path: '/account'
@@ -1061,6 +1093,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerContactsIdIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/chapters/$cacheKey/': {
+      id: '/manager/chapters/$cacheKey/'
+      path: '/chapters/$cacheKey'
+      fullPath: '/manager/chapters/$cacheKey/'
+      preLoaderRoute: typeof ManagerChaptersCacheKeyIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/api/openapi/auth/schema': {
       id: '/api/openapi/auth/schema'
       path: '/schema'
@@ -1181,12 +1220,14 @@ const LoginRouteRouteWithChildren = LoginRouteRoute._addFileChildren(
 interface ManagerRouteRouteChildren {
   ManagerIndexRoute: typeof ManagerIndexRoute
   ManagerAccountIndexRoute: typeof ManagerAccountIndexRoute
+  ManagerChaptersIndexRoute: typeof ManagerChaptersIndexRoute
   ManagerContactsIndexRoute: typeof ManagerContactsIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
+  ManagerChaptersCacheKeyIndexRoute: typeof ManagerChaptersCacheKeyIndexRoute
   ManagerContactsIdIndexRoute: typeof ManagerContactsIdIndexRoute
   ManagerDevicesIdIndexRoute: typeof ManagerDevicesIdIndexRoute
   ManagerJobsIdIndexRoute: typeof ManagerJobsIdIndexRoute
@@ -1199,12 +1240,14 @@ interface ManagerRouteRouteChildren {
 const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerIndexRoute: ManagerIndexRoute,
   ManagerAccountIndexRoute: ManagerAccountIndexRoute,
+  ManagerChaptersIndexRoute: ManagerChaptersIndexRoute,
   ManagerContactsIndexRoute: ManagerContactsIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
+  ManagerChaptersCacheKeyIndexRoute: ManagerChaptersCacheKeyIndexRoute,
   ManagerContactsIdIndexRoute: ManagerContactsIdIndexRoute,
   ManagerDevicesIdIndexRoute: ManagerDevicesIdIndexRoute,
   ManagerJobsIdIndexRoute: ManagerJobsIdIndexRoute,

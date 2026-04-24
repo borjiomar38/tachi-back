@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import {
   ActivityIcon,
+  BookOpenTextIcon,
   CpuIcon,
   InboxIcon,
   KeyRoundIcon,
@@ -147,6 +148,21 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
               <SidebarGroupContent>
                 <SidebarMenu>
                   <WithPermissions permissions={[permissionJob.read]}>
+                    <SidebarMenuItem>
+                      <Link to="/manager/chapters">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <BookOpenTextIcon />
+                                <span>{t('layout:nav.chapters')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
                     <SidebarMenuItem>
                       <Link to="/manager/jobs">
                         {({ isActive }) => (

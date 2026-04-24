@@ -171,6 +171,92 @@ export const zBackofficeJobDetail = z.object({
   uploadedPageCount: z.number().int().nonnegative(),
 });
 
+export const zBackofficeChapterIdentity = z.object({
+  chapterName: z.string().nullish(),
+  chapterUrl: z.string(),
+  mangaTitle: z.string().nullish(),
+  mangaUrl: z.string().nullish(),
+  sourceId: z.string().nullish(),
+  sourceName: z.string().nullish(),
+});
+
+export const zBackofficeTranslatedChapterListInput = z.object({
+  limit: z.coerce.number().int().positive().max(100).default(25),
+  searchTerm: z.string().trim().max(128).optional().default(''),
+});
+
+export const zBackofficeTranslatedChapterListItem = z.object({
+  cacheHitCount: z.number().int().nonnegative(),
+  cachedTranslationCount: z.number().int().nonnegative(),
+  chapterCacheKey: z.string(),
+  completedJobCount: z.number().int().nonnegative(),
+  firstCachedAt: z.date(),
+  identity: zBackofficeChapterIdentity.nullish(),
+  lastCachedAt: z.date(),
+  latestJobAt: z.date().nullish(),
+  pageCount: z.number().int().nonnegative(),
+  sourceLanguages: z.array(z.string()),
+  targetLanguages: z.array(z.string()),
+  totalJobCount: z.number().int().nonnegative(),
+});
+
+export const zBackofficeTranslatedChapterListResponse = z.object({
+  items: z.array(zBackofficeTranslatedChapterListItem),
+  scannedCacheRows: z.number().int().nonnegative(),
+  total: z.number().int().nonnegative(),
+});
+
+export const zBackofficeTranslatedChapterCacheEntry = z.object({
+  cacheHitCount: z.number().int().nonnegative(),
+  cacheKey: z.string(),
+  createdAt: z.date(),
+  pageCount: z.number().int().nonnegative(),
+  resultManifest: z.unknown().nullish(),
+  resultPayloadVersion: z.string(),
+  sourceLanguage: z.string(),
+  targetLanguage: z.string(),
+  updatedAt: z.date(),
+});
+
+export const zBackofficeTranslatedChapterJob = z.object({
+  completedAt: z.date().nullish(),
+  createdAt: z.date(),
+  id: z.string(),
+  installationId: z.string(),
+  licenseKey: z.string(),
+  pageCount: z.number().int().nonnegative(),
+  sourceLanguage: z.string(),
+  status: zBackofficeJobStatus,
+  targetLanguage: z.string(),
+});
+
+export const zBackofficeTranslatedChapterPagePreview = z.object({
+  blockCount: z.number().int().nonnegative(),
+  imageHeight: z.number().int().positive().nullish(),
+  imageWidth: z.number().int().positive().nullish(),
+  pageKey: z.string(),
+  sourcePreview: z.string(),
+  translationPreview: z.string(),
+});
+
+export const zBackofficeTranslatedChapterDetail = z.object({
+  cacheEntries: z.array(zBackofficeTranslatedChapterCacheEntry),
+  chapterCacheKey: z.string(),
+  identity: zBackofficeChapterIdentity.nullish(),
+  jobs: z.array(zBackofficeTranslatedChapterJob),
+  latestManifest: z.unknown().nullish(),
+  pagePreviews: z.array(zBackofficeTranslatedChapterPagePreview),
+  stats: z.object({
+    cacheHitCount: z.number().int().nonnegative(),
+    cachedTranslationCount: z.number().int().nonnegative(),
+    completedJobCount: z.number().int().nonnegative(),
+    pageCount: z.number().int().nonnegative(),
+    sourceLanguages: z.array(z.string()),
+    targetLanguages: z.array(z.string()),
+    totalJobCount: z.number().int().nonnegative(),
+  }),
+});
+
 export const zProviderOpsInput = z.object({
   windowHours: z.coerce
     .number()
