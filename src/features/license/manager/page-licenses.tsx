@@ -1,11 +1,14 @@
 import { getUiState } from '@bearstudio/ui-state';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link, useRouter } from '@tanstack/react-router';
 import dayjs from 'dayjs';
+import { type FormEvent, useState } from 'react';
+import { toast } from 'sonner';
 
 import { orpc } from '@/lib/orpc/client';
 
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -24,11 +27,14 @@ import {
   DataListText,
   DataListTextHeader,
 } from '@/components/ui/datalist';
+import { Input } from '@/components/ui/input';
 import { SearchButton } from '@/components/ui/search-button';
 import { SearchInput } from '@/components/ui/search-input';
+import { Textarea } from '@/components/ui/textarea';
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionLicense } from '@/features/auth/permissions';
+import { WithPermissions } from '@/features/auth/with-permissions';
 import {
   PageLayout,
   PageLayoutContent,
@@ -40,8 +46,13 @@ type SupportLookupResult = Awaited<
   ReturnType<typeof orpc.license.searchSupport.call>
 >[number];
 
+type ManualGrantResult = Awaited<
+  ReturnType<typeof orpc.license.createManualGrant.call>
+>;
+
 export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const searchTerm = props.search.searchTerm ?? '';
   const normalizedSearchTerm = searchTerm.trim();
   const shouldSearch = normalizedSearchTerm.length >= 2;
@@ -64,6 +75,48 @@ export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
     }),
     enabled: shouldSearch,
   });
+
+  const [manualGrantResult, setManualGrantResult] =
+    useState<ManualGrantResult | null>(null);
+
+  const manualGrant = useMutation(
+    orpc.license.createManualGrant.mutationOptions({
+      onSuccess: async (result) => {
+        setManualGrantResult(result);
+        toast.success('Redeem code generated');
+        await queryClient.invalidateQueries({
+          queryKey: orpc.license.searchSupport.key(),
+          type: 'all',
+        });
+      },
+      onError: () => {
+        toast.error('Unable to generate redeem code');
+      },
+    })
+  );
+
+  const handleManualGrantSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const tokenAmount = Number(formData.get('tokenAmount'));
+    const ownerEmail = String(formData.get('ownerEmail') ?? '').trim();
+    const expiresAt = String(formData.get('expiresAt') ?? '').trim();
+    const notes = String(formData.get('notes') ?? '').trim();
+
+    if (!Number.isInteger(tokenAmount) || tokenAmount <= 0) {
+      toast.error('Token amount must be a positive whole number');
+      return;
+    }
+
+    manualGrant.mutate({
+      deviceLimit: 0,
+      notes: notes || undefined,
+      ownerEmail: ownerEmail || undefined,
+      redeemCodeExpiresAt: expiresAt ? new Date(expiresAt) : undefined,
+      tokenAmount,
+    });
+  };
 
   const ui = getUiState((set) => {
     if (!shouldSearch) {
@@ -104,6 +157,78 @@ export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
           />
         </PageLayoutTopBar>
         <PageLayoutContent containerClassName="max-w-6xl">
+          <WithPermissions permissions={[permissionLicense.manualCredit]}>
+            <Card>
+              <CardHeader>
+                <CardTitle>Generate redeem code</CardTitle>
+                <CardDescription>
+                  Create a fresh hosted-access redeem code with manual token
+                  credit. Codes stay usable across devices until they expire.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form
+                  className="grid gap-3 md:grid-cols-[minmax(0,1fr)_10rem_14rem_auto]"
+                  onSubmit={handleManualGrantSubmit}
+                >
+                  <label className="grid gap-1.5 text-sm">
+                    <span className="font-medium">Owner email</span>
+                    <Input
+                      name="ownerEmail"
+                      placeholder="optional"
+                      size="sm"
+                      type="email"
+                    />
+                  </label>
+                  <label className="grid gap-1.5 text-sm">
+                    <span className="font-medium">Tokens</span>
+                    <Input
+                      defaultValue={100}
+                      inputMode="numeric"
+                      name="tokenAmount"
+                      required
+                      size="sm"
+                      type="number"
+                    />
+                  </label>
+                  <label className="grid gap-1.5 text-sm">
+                    <span className="font-medium">Expires at</span>
+                    <Input name="expiresAt" size="sm" type="datetime-local" />
+                  </label>
+                  <div className="flex items-end">
+                    <Button
+                      className="w-full md:w-auto"
+                      loading={manualGrant.isPending}
+                      size="sm"
+                      type="submit"
+                    >
+                      Generate
+                    </Button>
+                  </div>
+                  <label className="grid gap-1.5 text-sm md:col-span-3">
+                    <span className="font-medium">Notes</span>
+                    <Textarea
+                      name="notes"
+                      placeholder="optional internal note"
+                      rows={2}
+                      size="sm"
+                    />
+                  </label>
+                  {manualGrantResult ? (
+                    <div className="rounded-md border bg-muted/40 p-3 text-sm md:col-span-4">
+                      <div className="font-medium">
+                        Redeem code: {manualGrantResult.redeemCode}
+                      </div>
+                      <div className="text-muted-foreground">
+                        License {manualGrantResult.licenseKey} ·{' '}
+                        {manualGrantResult.tokenAmount} tokens
+                      </div>
+                    </div>
+                  ) : null}
+                </form>
+              </CardContent>
+            </Card>
+          </WithPermissions>
           {ui
             .match('idle', () => (
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
