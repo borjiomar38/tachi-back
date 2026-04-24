@@ -182,6 +182,84 @@ export const zLicenseLedgerEntry = z.object({
   ]),
 });
 
+export const zRedeemCodeListInput = z.object({
+  limit: z.coerce.number().int().positive().max(100).default(50),
+  query: z.string().trim().max(128).optional(),
+  status: z
+    .enum(['all', 'available', 'redeemed', 'expired', 'canceled'])
+    .default('all'),
+});
+
+export const zRedeemCodeListItem = z.object({
+  availableTokens: z.number().int(),
+  code: z.string(),
+  createdAt: z.date(),
+  creditedTokens: z.number().int().nonnegative(),
+  deviceLimit: z.number().int().nonnegative(),
+  expiresAt: z.date().nullish(),
+  id: z.string(),
+  lastLedgerAt: z.date().nullish(),
+  licenseId: z.string(),
+  licenseKey: z.string(),
+  licenseStatus: z.enum([
+    'pending',
+    'active',
+    'suspended',
+    'revoked',
+    'expired',
+  ]),
+  orderId: z.string().nullish(),
+  ownerEmail: z.string().nullish(),
+  redeemedAt: z.date().nullish(),
+  redeemedByDevice: z
+    .object({
+      id: z.string(),
+      installationId: z.string(),
+      status: z.enum(['pending', 'active', 'revoked', 'blocked']),
+    })
+    .nullish(),
+  spentTokens: z.number().int().nonnegative(),
+  status: z.enum(['available', 'redeemed', 'expired', 'canceled']),
+});
+
+export const zCreateRedeemCodeInput = z.object({
+  deviceLimit: z.coerce.number().int().min(0).max(10).default(0),
+  licenseKey: z.string().trim().min(1).max(128).optional(),
+  notes: z.string().trim().max(500).optional(),
+  ownerEmail: z.email().optional(),
+  redeemCodeExpiresAt: z.coerce.date().optional(),
+  tokenAmount: z.coerce.number().int().positive().max(1_000_000),
+});
+
+export const zCreateRedeemCodeResponse = z.object({
+  createdAt: z.date(),
+  deviceLimit: z.number().int().nonnegative(),
+  licenseId: z.string(),
+  licenseKey: z.string(),
+  redeemCode: z.string(),
+  tokenAmount: z.number().int().positive(),
+});
+
+export const zUpdateRedeemCodeStatusInput = z.object({
+  code: z.string().trim().min(1).max(64),
+  status: z.enum(['available', 'expired', 'canceled']),
+});
+
+export const zRedeemCodeActionInput = z.object({
+  code: z.string().trim().min(1).max(64),
+});
+
+export const zRedeemCodeActionResponse = z.object({
+  code: z.string(),
+  status: z.enum(['available', 'redeemed', 'expired', 'canceled']),
+});
+
+export const zRegenerateRedeemCodeResponse = z.object({
+  oldCode: z.string(),
+  redeemCode: z.string(),
+  status: z.enum(['available', 'redeemed', 'expired', 'canceled']),
+});
+
 export const zBackofficeDeviceDetail = z.object({
   activeLicense: z
     .object({

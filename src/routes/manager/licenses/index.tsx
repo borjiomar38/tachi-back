@@ -9,10 +9,13 @@ export const Route = createFileRoute('/manager/licenses/')({
   validateSearch: zodValidator(
     z.object({
       searchTerm: z.string().prefault(''),
+      status: z
+        .enum(['all', 'available', 'redeemed', 'expired', 'canceled'])
+        .prefault('all'),
     })
   ),
   search: {
-    middlewares: [stripSearchParams({ searchTerm: '' })],
+    middlewares: [stripSearchParams({ searchTerm: '', status: 'all' })],
   },
 });
 

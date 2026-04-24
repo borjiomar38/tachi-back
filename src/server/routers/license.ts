@@ -5,18 +5,223 @@ import { createManualLicenseGrant } from '@/server/licenses/manual-grant';
 import {
   zCreateManualLicenseGrantInput,
   zCreateManualLicenseGrantResponse,
+  zCreateRedeemCodeInput,
+  zCreateRedeemCodeResponse,
   zLicenseDevice,
   zLicenseLedgerEntry,
   zLicenseOrderSummary,
   zLicenseSummary,
+  zRedeemCodeActionInput,
+  zRedeemCodeActionResponse,
+  zRedeemCodeListInput,
+  zRedeemCodeListItem,
+  zRegenerateRedeemCodeResponse,
   zSupportLookupResult,
+  zUpdateRedeemCodeStatusInput,
 } from '@/server/licenses/schema';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
+import {
+  generateRedeemCode,
+  normalizeRedeemCode,
+} from '@/server/licenses/utils';
 import { protectedProcedure } from '@/server/orpc';
 
 const tags = ['licenses'];
 
+type RedeemCodeLookupClient = {
+  redeemCode: {
+    findUnique: (args: {
+      select: { id: true };
+      where: { code: string };
+    }) => Promise<{ id: string } | null>;
+  };
+};
+
+async function generateUniqueRedeemCode(dbClient: RedeemCodeLookupClient) {
+  for (let attempt = 0; attempt < 10; attempt++) {
+    const code = generateRedeemCode();
+    const existingRedeemCode = await dbClient.redeemCode.findUnique({
+      select: {
+        id: true,
+      },
+      where: {
+        code,
+      },
+    });
+
+    if (!existingRedeemCode) {
+      return code;
+    }
+  }
+
+  throw new ORPCError('CONFLICT');
+}
+
 export default {
+  listRedeemCodes: protectedProcedure({
+    permissions: {
+      license: ['read'],
+    },
+  })
+    .route({
+      method: 'GET',
+      path: '/licenses/redeem-codes',
+      tags,
+    })
+    .input(zRedeemCodeListInput)
+    .output(z.array(zRedeemCodeListItem))
+    .handler(async ({ context, input }) => {
+      const query = input.query?.trim();
+
+      const redeemCodes = await context.db.redeemCode.findMany({
+        where: {
+          ...(input.status === 'all' ? {} : { status: input.status }),
+          ...(query
+            ? {
+                OR: [
+                  {
+                    code: {
+                      contains: query,
+                    },
+                  },
+                  {
+                    license: {
+                      key: {
+                        contains: query,
+                      },
+                    },
+                  },
+                  {
+                    license: {
+                      ownerEmail: {
+                        contains: query,
+                        mode: 'insensitive',
+                      },
+                    },
+                  },
+                ],
+              }
+            : {}),
+        },
+        orderBy: {
+          createdAt: 'desc',
+        },
+        select: {
+          code: true,
+          createdAt: true,
+          expiresAt: true,
+          id: true,
+          ledgerEntries: {
+            orderBy: {
+              createdAt: 'desc',
+            },
+            select: {
+              createdAt: true,
+              deltaTokens: true,
+              status: true,
+            },
+          },
+          license: {
+            select: {
+              deviceLimit: true,
+              id: true,
+              key: true,
+              ownerEmail: true,
+              status: true,
+            },
+          },
+          orderId: true,
+          redeemedAt: true,
+          redeemedByDevice: {
+            select: {
+              id: true,
+              installationId: true,
+              status: true,
+            },
+          },
+          status: true,
+        },
+        take: input.limit,
+      });
+
+      const balanceByLicenseId = new Map<
+        string,
+        { availableTokens: number; spentTokens: number }
+      >();
+
+      await Promise.all(
+        redeemCodes.map(async (redeemCode) => {
+          if (balanceByLicenseId.has(redeemCode.license.id)) {
+            return;
+          }
+
+          const [availableTokens, spentTokens] = await Promise.all([
+            getAvailableLicenseTokenBalance(
+              {
+                licenseId: redeemCode.license.id,
+              },
+              {
+                dbClient: context.db,
+              }
+            ),
+            context.db.tokenLedger
+              .aggregate({
+                where: {
+                  deltaTokens: {
+                    lt: 0,
+                  },
+                  licenseId: redeemCode.license.id,
+                  status: {
+                    in: ['pending', 'posted'],
+                  },
+                },
+                _sum: {
+                  deltaTokens: true,
+                },
+              })
+              .then((result) => Math.abs(result._sum.deltaTokens ?? 0)),
+          ]);
+
+          balanceByLicenseId.set(redeemCode.license.id, {
+            availableTokens,
+            spentTokens,
+          });
+        })
+      );
+
+      return redeemCodes.map((redeemCode) => {
+        const balance = balanceByLicenseId.get(redeemCode.license.id) ?? {
+          availableTokens: 0,
+          spentTokens: 0,
+        };
+        const postedLedgerEntries = redeemCode.ledgerEntries.filter((entry) =>
+          ['pending', 'posted'].includes(entry.status)
+        );
+
+        return {
+          availableTokens: balance.availableTokens,
+          code: redeemCode.code,
+          createdAt: redeemCode.createdAt,
+          creditedTokens: postedLedgerEntries
+            .filter((entry) => entry.deltaTokens > 0)
+            .reduce((total, entry) => total + entry.deltaTokens, 0),
+          deviceLimit: redeemCode.license.deviceLimit,
+          expiresAt: redeemCode.expiresAt,
+          id: redeemCode.id,
+          lastLedgerAt: postedLedgerEntries[0]?.createdAt ?? null,
+          licenseId: redeemCode.license.id,
+          licenseKey: redeemCode.license.key,
+          licenseStatus: redeemCode.license.status,
+          orderId: redeemCode.orderId,
+          ownerEmail: redeemCode.license.ownerEmail,
+          redeemedAt: redeemCode.redeemedAt,
+          redeemedByDevice: redeemCode.redeemedByDevice,
+          spentTokens: balance.spentTokens,
+          status: redeemCode.status,
+        };
+      });
+    }),
+
   searchSupport: protectedProcedure({
     permissions: {
       device: ['read'],
@@ -542,6 +747,303 @@ export default {
         status: entry.status,
         type: entry.type,
       }));
+    }),
+
+  createRedeemCode: protectedProcedure({
+    permissions: {
+      license: ['manual-credit'],
+    },
+  })
+    .route({
+      method: 'POST',
+      path: '/licenses/redeem-codes',
+      tags,
+    })
+    .input(zCreateRedeemCodeInput)
+    .output(zCreateRedeemCodeResponse)
+    .handler(async ({ context, input }) => {
+      const result = await context.db.$transaction(async (tx) => {
+        const existingLicense = input.licenseKey
+          ? await tx.license.findUnique({
+              where: {
+                key: input.licenseKey,
+              },
+              select: {
+                createdAt: true,
+                deviceLimit: true,
+                id: true,
+                key: true,
+                ownerEmail: true,
+              },
+            })
+          : input.ownerEmail
+            ? await tx.license.findFirst({
+                orderBy: {
+                  createdAt: 'desc',
+                },
+                where: {
+                  ownerEmail: input.ownerEmail,
+                  status: {
+                    notIn: ['expired', 'revoked'],
+                  },
+                },
+                select: {
+                  createdAt: true,
+                  deviceLimit: true,
+                  id: true,
+                  key: true,
+                  ownerEmail: true,
+                },
+              })
+            : null;
+
+        if (input.licenseKey && !existingLicense) {
+          throw new ORPCError('NOT_FOUND');
+        }
+
+        const license = existingLicense
+          ? await tx.license.update({
+              where: {
+                id: existingLicense.id,
+              },
+              data: {
+                deviceLimit: Math.max(
+                  existingLicense.deviceLimit,
+                  input.deviceLimit
+                ),
+                notes: input.notes,
+                ownerEmail: existingLicense.ownerEmail ?? input.ownerEmail,
+              },
+              select: {
+                createdAt: true,
+                deviceLimit: true,
+                id: true,
+                key: true,
+              },
+            })
+          : await tx.license.create({
+              data: {
+                deviceLimit: input.deviceLimit,
+                notes: input.notes,
+                ownerEmail: input.ownerEmail,
+                status: 'pending',
+              },
+              select: {
+                createdAt: true,
+                deviceLimit: true,
+                id: true,
+                key: true,
+              },
+            });
+
+        const redeemCode = await tx.redeemCode.create({
+          data: {
+            code: await generateUniqueRedeemCode(tx),
+            createdByUserId: context.user.id,
+            expiresAt: input.redeemCodeExpiresAt,
+            licenseId: license.id,
+            metadata: {
+              createdByUserId: context.user.id,
+              source: 'backoffice_redeem_manager',
+            },
+          },
+          select: {
+            code: true,
+            id: true,
+          },
+        });
+
+        await tx.tokenLedger.create({
+          data: {
+            deltaTokens: input.tokenAmount,
+            description: 'Manual support credit',
+            licenseId: license.id,
+            metadata: {
+              createdByUserId: context.user.id,
+              source: 'backoffice_redeem_manager',
+            },
+            redeemCodeId: redeemCode.id,
+            status: 'posted',
+            type: 'manual_credit',
+          },
+        });
+
+        return {
+          createdAt: license.createdAt,
+          deviceLimit: license.deviceLimit,
+          licenseId: license.id,
+          licenseKey: license.key,
+          redeemCode: redeemCode.code,
+          tokenAmount: input.tokenAmount,
+        };
+      });
+
+      context.logger.info({
+        createdByUserId: context.user.id,
+        licenseId: result.licenseId,
+        scope: 'license',
+        tokenAmount: result.tokenAmount,
+      });
+
+      return result;
+    }),
+
+  updateRedeemCodeStatus: protectedProcedure({
+    permissions: {
+      license: ['generate-redeem-code'],
+    },
+  })
+    .route({
+      method: 'PATCH',
+      path: '/licenses/redeem-codes/{code}/status',
+      tags,
+    })
+    .input(zUpdateRedeemCodeStatusInput)
+    .output(zRedeemCodeActionResponse)
+    .handler(async ({ context, input }) => {
+      const code = normalizeRedeemCode(input.code);
+
+      const redeemCode = await context.db.redeemCode.findUnique({
+        where: {
+          code,
+        },
+        select: {
+          id: true,
+          status: true,
+        },
+      });
+
+      if (!redeemCode) {
+        throw new ORPCError('NOT_FOUND');
+      }
+
+      if (redeemCode.status === 'redeemed') {
+        throw new ORPCError('CONFLICT');
+      }
+
+      return await context.db.redeemCode.update({
+        where: {
+          id: redeemCode.id,
+        },
+        data: {
+          expiresAt: input.status === 'available' ? null : undefined,
+          status: input.status,
+        },
+        select: {
+          code: true,
+          status: true,
+        },
+      });
+    }),
+
+  deleteRedeemCode: protectedProcedure({
+    permissions: {
+      license: ['generate-redeem-code'],
+    },
+  })
+    .route({
+      method: 'DELETE',
+      path: '/licenses/redeem-codes/{code}',
+      tags,
+    })
+    .input(zRedeemCodeActionInput)
+    .output(zRedeemCodeActionResponse)
+    .handler(async ({ context, input }) => {
+      const code = normalizeRedeemCode(input.code);
+      const redeemCode = await context.db.redeemCode.findUnique({
+        where: {
+          code,
+        },
+        select: {
+          code: true,
+          id: true,
+          status: true,
+        },
+      });
+
+      if (!redeemCode) {
+        throw new ORPCError('NOT_FOUND');
+      }
+
+      return await context.db.redeemCode.delete({
+        where: {
+          id: redeemCode.id,
+        },
+        select: {
+          code: true,
+          status: true,
+        },
+      });
+    }),
+
+  regenerateRedeemCode: protectedProcedure({
+    permissions: {
+      license: ['generate-redeem-code'],
+    },
+  })
+    .route({
+      method: 'POST',
+      path: '/licenses/redeem-codes/{code}/regenerate',
+      tags,
+    })
+    .input(zRedeemCodeActionInput)
+    .output(zRegenerateRedeemCodeResponse)
+    .handler(async ({ context, input }) => {
+      const code = normalizeRedeemCode(input.code);
+
+      return await context.db.$transaction(async (tx) => {
+        const redeemCode = await tx.redeemCode.findUnique({
+          where: {
+            code,
+          },
+          select: {
+            expiresAt: true,
+            id: true,
+            licenseId: true,
+            metadata: true,
+            status: true,
+          },
+        });
+
+        if (!redeemCode) {
+          throw new ORPCError('NOT_FOUND');
+        }
+
+        if (redeemCode.status !== 'redeemed') {
+          await tx.redeemCode.update({
+            where: {
+              id: redeemCode.id,
+            },
+            data: {
+              status: 'canceled',
+            },
+          });
+        }
+
+        const nextRedeemCode = await tx.redeemCode.create({
+          data: {
+            code: await generateUniqueRedeemCode(tx),
+            createdByUserId: context.user.id,
+            expiresAt: redeemCode.expiresAt,
+            licenseId: redeemCode.licenseId,
+            metadata: {
+              createdByUserId: context.user.id,
+              regeneratedFrom: code,
+              source: 'backoffice_redeem_manager',
+            },
+          },
+          select: {
+            code: true,
+            status: true,
+          },
+        });
+
+        return {
+          oldCode: code,
+          redeemCode: nextRedeemCode.code,
+          status: nextRedeemCode.status,
+        };
+      });
     }),
 
   createManualGrant: protectedProcedure({

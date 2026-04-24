@@ -1,5 +1,5 @@
 import { call } from '@orpc/server';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, type Mock, vi } from 'vitest';
 
 import licenseRouter from '@/server/routers/license';
 import {
@@ -137,6 +137,74 @@ describe('license router', () => {
           userId: mockUser.id,
         },
       });
+    });
+  });
+
+  describe('listRedeemCodes', () => {
+    it('returns redeem codes with token consumption details', async () => {
+      mockDb.redeemCode.findMany.mockResolvedValue([
+        {
+          code: 'TB-AAAA-BBBB-CCCC',
+          createdAt: now,
+          expiresAt: null,
+          id: 'redeem-1',
+          ledgerEntries: [
+            {
+              createdAt: now,
+              deltaTokens: 2000,
+              status: 'posted',
+            },
+          ],
+          license: {
+            deviceLimit: 0,
+            id: 'license-1',
+            key: 'LIC-123',
+            ownerEmail: 'reader@example.com',
+            status: 'active',
+          },
+          orderId: null,
+          redeemedAt: null,
+          redeemedByDevice: null,
+          status: 'available',
+        },
+      ]);
+      mockDb.tokenLedger.aggregate
+        .mockResolvedValueOnce({
+          _sum: {
+            deltaTokens: 1930,
+          },
+        })
+        .mockResolvedValueOnce({
+          _sum: {
+            deltaTokens: -70,
+          },
+        });
+
+      const result = await call(licenseRouter.listRedeemCodes, {
+        status: 'all',
+      });
+
+      expect(result).toEqual([
+        {
+          availableTokens: 1930,
+          code: 'TB-AAAA-BBBB-CCCC',
+          createdAt: now,
+          creditedTokens: 2000,
+          deviceLimit: 0,
+          expiresAt: null,
+          id: 'redeem-1',
+          lastLedgerAt: now,
+          licenseId: 'license-1',
+          licenseKey: 'LIC-123',
+          licenseStatus: 'active',
+          orderId: null,
+          ownerEmail: 'reader@example.com',
+          redeemedAt: null,
+          redeemedByDevice: null,
+          spentTokens: 70,
+          status: 'available',
+        },
+      ]);
     });
   });
 
@@ -296,6 +364,146 @@ describe('license router', () => {
     });
   });
 
+  describe('redeem code management', () => {
+    it('creates a redeem code on an existing license by email', async () => {
+      const tx = {
+        license: {
+          create: vi.fn(),
+          findFirst: vi.fn().mockResolvedValue({
+            createdAt: now,
+            deviceLimit: 0,
+            id: 'license-1',
+            key: 'LIC-123',
+            ownerEmail: 'reader@example.com',
+          }),
+          findUnique: vi.fn(),
+          update: vi.fn().mockResolvedValue({
+            createdAt: now,
+            deviceLimit: 0,
+            id: 'license-1',
+            key: 'LIC-123',
+          }),
+        },
+        redeemCode: {
+          create: vi.fn().mockResolvedValue({
+            code: 'TB-AAAA-BBBB-CCCC',
+            id: 'redeem-1',
+          }),
+          findUnique: vi.fn().mockResolvedValue(null),
+        },
+        tokenLedger: {
+          create: vi.fn().mockResolvedValue({
+            id: 'ledger-1',
+          }),
+        },
+      };
+
+      mockTransaction(tx);
+
+      const result = await call(licenseRouter.createRedeemCode, {
+        ownerEmail: 'reader@example.com',
+        tokenAmount: 2000,
+      });
+
+      expect(result).toEqual({
+        createdAt: now,
+        deviceLimit: 0,
+        licenseId: 'license-1',
+        licenseKey: 'LIC-123',
+        redeemCode: 'TB-AAAA-BBBB-CCCC',
+        tokenAmount: 2000,
+      });
+      expect(tx.license.create).not.toHaveBeenCalled();
+      expect(tx.tokenLedger.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            deltaTokens: 2000,
+            licenseId: 'license-1',
+            redeemCodeId: 'redeem-1',
+          }),
+        })
+      );
+    });
+
+    it('reactivates a non-redeemed code and clears its expiry', async () => {
+      mockDb.redeemCode.findUnique.mockResolvedValue({
+        id: 'redeem-1',
+        status: 'expired',
+      });
+      mockDb.redeemCode.update.mockResolvedValue({
+        code: 'TB-AAAA-BBBB-CCCC',
+        status: 'available',
+      });
+
+      const result = await call(licenseRouter.updateRedeemCodeStatus, {
+        code: 'tb aaaa bbbb cccc',
+        status: 'available',
+      });
+
+      expect(result).toEqual({
+        code: 'TB-AAAA-BBBB-CCCC',
+        status: 'available',
+      });
+      expect(mockDb.redeemCode.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: {
+            expiresAt: null,
+            status: 'available',
+          },
+          where: {
+            id: 'redeem-1',
+          },
+        })
+      );
+    });
+
+    it('regenerates a new code and cancels the old available code', async () => {
+      const tx = {
+        redeemCode: {
+          create: vi.fn().mockResolvedValue({
+            code: 'TB-DDDD-EEEE-FFFF',
+            status: 'available',
+          }),
+          findUnique: vi
+            .fn()
+            .mockResolvedValueOnce({
+              expiresAt: null,
+              id: 'redeem-1',
+              licenseId: 'license-1',
+              metadata: null,
+              status: 'available',
+            })
+            .mockResolvedValueOnce(null),
+          update: vi.fn().mockResolvedValue({
+            id: 'redeem-1',
+          }),
+        },
+      };
+
+      mockTransaction(tx);
+
+      const result = await call(licenseRouter.regenerateRedeemCode, {
+        code: 'TB-AAAA-BBBB-CCCC',
+      });
+
+      expect(result).toEqual({
+        oldCode: 'TB-AAAA-BBBB-CCCC',
+        redeemCode: 'TB-DDDD-EEEE-FFFF',
+        status: 'available',
+      });
+      expect(tx.redeemCode.update).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: {
+            status: 'canceled',
+          },
+          where: {
+            id: 'redeem-1',
+          },
+        })
+      );
+    });
+  });
+
   it('throws UNAUTHORIZED for protected reads when there is no staff session', async () => {
     mockGetSession.mockResolvedValue(null);
 
@@ -308,3 +516,13 @@ describe('license router', () => {
     });
   });
 });
+
+function mockTransaction<TTx>(tx: TTx) {
+  const dbWithTransaction = mockDb as typeof mockDb & {
+    $transaction: Mock;
+  };
+
+  dbWithTransaction.$transaction = vi.fn((callback: (tx: TTx) => unknown) =>
+    callback(tx)
+  );
+}

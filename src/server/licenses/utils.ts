@@ -3,9 +3,14 @@ import { randomBytes } from 'node:crypto';
 import { Prisma } from '@/server/db/generated/client';
 
 export function generateRedeemCode() {
-  const raw = randomBytes(9)
-    .toString('base64url')
-    .replace(/[^A-Za-z0-9]/g, '');
+  let raw = '';
+
+  while (raw.length < 12) {
+    raw += randomBytes(12)
+      .toString('base64url')
+      .replace(/[^A-Za-z0-9]/g, '');
+  }
+
   const normalized = raw.slice(0, 12).toUpperCase();
 
   return `TB-${normalized.slice(0, 4)}-${normalized.slice(4, 8)}-${normalized.slice(8, 12)}`;

@@ -1,21 +1,29 @@
 import { getUiState } from '@bearstudio/ui-state';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Link, useRouter } from '@tanstack/react-router';
 import dayjs from 'dayjs';
-import { type FormEvent, useState } from 'react';
+import {
+  BanIcon,
+  CheckCircle2Icon,
+  EllipsisIcon,
+  PlusIcon,
+  RefreshCcwIcon,
+  RotateCcwIcon,
+  Trash2Icon,
+} from 'lucide-react';
+import { useState } from 'react';
+import { type ReactNode } from 'react';
+import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
+import { z } from 'zod';
 
 import { orpc } from '@/lib/orpc/client';
 
+import { Form } from '@/components/form';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { ConfirmResponsiveDrawer } from '@/components/ui/confirm-responsive-drawer';
 import {
   DataList,
   DataListCell,
@@ -27,6 +35,25 @@ import {
   DataListText,
   DataListTextHeader,
 } from '@/components/ui/datalist';
+import {
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { SearchButton } from '@/components/ui/search-button';
 import { SearchInput } from '@/components/ui/search-input';
@@ -42,401 +69,570 @@ import {
   PageLayoutTopBarTitle,
 } from '@/layout/manager/page-layout';
 
-type SupportLookupResult = Awaited<
-  ReturnType<typeof orpc.license.searchSupport.call>
+type RedeemCodeItem = Awaited<
+  ReturnType<typeof orpc.license.listRedeemCodes.call>
 >[number];
 
-type ManualGrantResult = Awaited<
-  ReturnType<typeof orpc.license.createManualGrant.call>
->;
+type RedeemCodeStatus = 'all' | RedeemCodeItem['status'];
 
-export const PageLicenses = (props: { search: { searchTerm?: string } }) => {
+const redeemCodeStatuses = [
+  'all',
+  'available',
+  'redeemed',
+  'expired',
+  'canceled',
+] satisfies RedeemCodeStatus[];
+
+const zGenerateRedeemCodeForm = z.object({
+  deviceLimit: z.coerce.number().int().min(0).max(10),
+  licenseKey: z.string().trim().max(128),
+  notes: z.string().trim().max(500),
+  ownerEmail: z.union([z.email(), z.literal('')]),
+  redeemCodeExpiresAt: z.string().trim(),
+  tokenAmount: z.coerce.number().int().positive().max(1_000_000),
+});
+
+type GenerateRedeemCodeForm = z.infer<typeof zGenerateRedeemCodeForm>;
+
+export const PageLicenses = (props: {
+  search: { searchTerm?: string; status?: RedeemCodeStatus };
+}) => {
   const router = useRouter();
   const queryClient = useQueryClient();
+  const [isGenerateOpen, setIsGenerateOpen] = useState(false);
   const searchTerm = props.search.searchTerm ?? '';
+  const status = props.search.status ?? 'all';
   const normalizedSearchTerm = searchTerm.trim();
-  const shouldSearch = normalizedSearchTerm.length >= 2;
+
+  const generateForm = useForm({
+    resolver: zodResolver(zGenerateRedeemCodeForm),
+    values: {
+      deviceLimit: 0,
+      licenseKey: '',
+      notes: '',
+      ownerEmail: '',
+      redeemCodeExpiresAt: '',
+      tokenAmount: 100,
+    },
+  });
 
   const searchInputProps = {
     value: searchTerm,
     onChange: (value: string) =>
       router.navigate({
         replace: true,
-        search: { searchTerm: value },
+        search: { searchTerm: value, status },
         to: '.',
       }),
   };
 
-  const searchQuery = useQuery({
-    ...orpc.license.searchSupport.queryOptions({
+  const handleStatusChange = (nextStatus: RedeemCodeStatus) =>
+    router.navigate({
+      replace: true,
+      search: {
+        searchTerm,
+        status: nextStatus,
+      },
+      to: '.',
+    });
+
+  const invalidateRedeemCodes = async () => {
+    await queryClient.invalidateQueries({
+      queryKey: orpc.license.listRedeemCodes.key(),
+      type: 'all',
+    });
+  };
+
+  const redeemCodesQuery = useQuery(
+    orpc.license.listRedeemCodes.queryOptions({
       input: {
-        query: normalizedSearchTerm,
-      },
-    }),
-    enabled: shouldSearch,
-  });
-
-  const [manualGrantResult, setManualGrantResult] =
-    useState<ManualGrantResult | null>(null);
-
-  const manualGrant = useMutation(
-    orpc.license.createManualGrant.mutationOptions({
-      onSuccess: async (result) => {
-        setManualGrantResult(result);
-        toast.success('Redeem code generated');
-        await queryClient.invalidateQueries({
-          queryKey: orpc.license.searchSupport.key(),
-          type: 'all',
-        });
-      },
-      onError: () => {
-        toast.error('Unable to generate redeem code');
+        query: normalizedSearchTerm || undefined,
+        status,
       },
     })
   );
 
-  const handleManualGrantSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const generateRedeemCode = useMutation(
+    orpc.license.createRedeemCode.mutationOptions({
+      onSuccess: async (result) => {
+        toast.success(`Redeem generated: ${result.redeemCode}`);
+        generateForm.reset();
+        setIsGenerateOpen(false);
+        await invalidateRedeemCodes();
+      },
+      onError: () => {
+        toast.error('Unable to generate redeem code.');
+      },
+    })
+  );
 
-    const formData = new FormData(event.currentTarget);
-    const tokenAmount = Number(formData.get('tokenAmount'));
-    const ownerEmail = String(formData.get('ownerEmail') ?? '').trim();
-    const expiresAt = String(formData.get('expiresAt') ?? '').trim();
-    const notes = String(formData.get('notes') ?? '').trim();
+  const updateRedeemCodeStatus = useMutation(
+    orpc.license.updateRedeemCodeStatus.mutationOptions({
+      onSuccess: async () => {
+        toast.success('Redeem status updated.');
+        await invalidateRedeemCodes();
+      },
+      onError: () => {
+        toast.error('Unable to update redeem status.');
+      },
+    })
+  );
 
-    if (!Number.isInteger(tokenAmount) || tokenAmount <= 0) {
-      toast.error('Token amount must be a positive whole number');
-      return;
-    }
+  const deleteRedeemCode = useMutation(
+    orpc.license.deleteRedeemCode.mutationOptions({
+      onSuccess: async () => {
+        toast.success('Redeem deleted.');
+        await invalidateRedeemCodes();
+      },
+      onError: () => {
+        toast.error('Unable to delete redeem code.');
+      },
+    })
+  );
 
-    manualGrant.mutate({
-      deviceLimit: 0,
-      notes: notes || undefined,
-      ownerEmail: ownerEmail || undefined,
-      redeemCodeExpiresAt: expiresAt ? new Date(expiresAt) : undefined,
-      tokenAmount,
-    });
-  };
+  const regenerateRedeemCode = useMutation(
+    orpc.license.regenerateRedeemCode.mutationOptions({
+      onSuccess: async (result) => {
+        toast.success(`New redeem generated: ${result.redeemCode}`);
+        await invalidateRedeemCodes();
+      },
+      onError: () => {
+        toast.error('Unable to regenerate redeem code.');
+      },
+    })
+  );
 
   const ui = getUiState((set) => {
-    if (!shouldSearch) {
-      return set('idle');
-    }
-
-    if (searchQuery.status === 'pending') {
+    if (redeemCodesQuery.status === 'pending') {
       return set('pending');
     }
 
-    if (searchQuery.status === 'error') {
+    if (redeemCodesQuery.status === 'error') {
       return set('error');
     }
 
-    if (!searchQuery.data.length) {
+    if (!redeemCodesQuery.data.length) {
       return set('empty');
     }
 
     return set('default', {
-      items: searchQuery.data,
+      items: redeemCodesQuery.data,
     });
   });
 
   return (
     <GuardPermissions permissions={[permissionLicense.read]}>
       <PageLayout>
-        <PageLayoutTopBar>
-          <PageLayoutTopBarTitle>Support Lookup</PageLayoutTopBarTitle>
-          <SearchButton
-            {...searchInputProps}
-            className="-mx-2 md:hidden"
-            size="icon-sm"
-          />
+        <PageLayoutTopBar
+          endActions={
+            <>
+              <SearchButton
+                {...searchInputProps}
+                className="-mx-2 md:hidden"
+                size="icon-sm"
+              />
+              <WithPermissions permissions={[permissionLicense.manualCredit]}>
+                <Dialog open={isGenerateOpen} onOpenChange={setIsGenerateOpen}>
+                  <DialogTrigger render={<Button size="sm" />}>
+                    <PlusIcon />
+                    Generate redeem
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-lg">
+                    <Form
+                      {...generateForm}
+                      onSubmit={(values: GenerateRedeemCodeForm) => {
+                        generateRedeemCode.mutate({
+                          deviceLimit: values.deviceLimit,
+                          licenseKey: values.licenseKey || undefined,
+                          notes: values.notes || undefined,
+                          ownerEmail: values.ownerEmail || undefined,
+                          redeemCodeExpiresAt: values.redeemCodeExpiresAt
+                            ? new Date(values.redeemCodeExpiresAt)
+                            : undefined,
+                          tokenAmount: values.tokenAmount,
+                        });
+                      }}
+                    >
+                      <DialogHeader>
+                        <DialogTitle>Generate redeem</DialogTitle>
+                        <DialogDescription>
+                          Create a redeem code and attach the token credit to an
+                          existing license by key or email when possible.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <DialogBody className="gap-3">
+                        <div className="grid gap-3 sm:grid-cols-2">
+                          <FormFieldError
+                            error={generateForm.formState.errors.ownerEmail}
+                            label="Owner email"
+                          >
+                            <Input
+                              placeholder="customer@example.com"
+                              size="sm"
+                              type="email"
+                              {...generateForm.register('ownerEmail')}
+                            />
+                          </FormFieldError>
+                          <FormFieldError
+                            error={generateForm.formState.errors.licenseKey}
+                            label="License key"
+                          >
+                            <Input
+                              placeholder="optional existing license"
+                              size="sm"
+                              {...generateForm.register('licenseKey')}
+                            />
+                          </FormFieldError>
+                        </div>
+                        <div className="grid gap-3 sm:grid-cols-3">
+                          <FormFieldError
+                            error={generateForm.formState.errors.tokenAmount}
+                            label="Tokens"
+                          >
+                            <Input
+                              inputMode="numeric"
+                              min={1}
+                              size="sm"
+                              type="number"
+                              {...generateForm.register('tokenAmount')}
+                            />
+                          </FormFieldError>
+                          <FormFieldError
+                            error={generateForm.formState.errors.deviceLimit}
+                            label="Device limit"
+                          >
+                            <Input
+                              inputMode="numeric"
+                              min={0}
+                              size="sm"
+                              type="number"
+                              {...generateForm.register('deviceLimit')}
+                            />
+                          </FormFieldError>
+                          <FormFieldError
+                            error={
+                              generateForm.formState.errors.redeemCodeExpiresAt
+                            }
+                            label="Expires at"
+                          >
+                            <Input
+                              size="sm"
+                              type="datetime-local"
+                              {...generateForm.register('redeemCodeExpiresAt')}
+                            />
+                          </FormFieldError>
+                        </div>
+                        <FormFieldError
+                          error={generateForm.formState.errors.notes}
+                          label="Notes"
+                        >
+                          <Textarea
+                            placeholder="optional internal note"
+                            rows={3}
+                            size="sm"
+                            {...generateForm.register('notes')}
+                          />
+                        </FormFieldError>
+                      </DialogBody>
+                      <DialogFooter>
+                        <DialogClose
+                          render={<Button type="button" variant="secondary" />}
+                        >
+                          Cancel
+                        </DialogClose>
+                        <Button
+                          className="min-w-24"
+                          loading={generateRedeemCode.isPending}
+                          type="submit"
+                        >
+                          Generate
+                        </Button>
+                      </DialogFooter>
+                    </Form>
+                  </DialogContent>
+                </Dialog>
+              </WithPermissions>
+            </>
+          }
+        >
+          <PageLayoutTopBarTitle>Redeem codes</PageLayoutTopBarTitle>
           <SearchInput
             {...searchInputProps}
             className="max-w-sm max-md:hidden"
+            placeholder="Search code, email, license"
             size="sm"
           />
+          <select
+            className="h-8 rounded-md border bg-background px-2 text-sm max-sm:hidden"
+            value={status}
+            onChange={(event) =>
+              handleStatusChange(event.currentTarget.value as RedeemCodeStatus)
+            }
+          >
+            {redeemCodeStatuses.map((statusOption) => (
+              <option key={statusOption} value={statusOption}>
+                {statusOption === 'all' ? 'All statuses' : statusOption}
+              </option>
+            ))}
+          </select>
         </PageLayoutTopBar>
-        <PageLayoutContent containerClassName="max-w-6xl">
-          <WithPermissions permissions={[permissionLicense.manualCredit]}>
-            <Card>
-              <CardHeader>
-                <CardTitle>Generate redeem code</CardTitle>
-                <CardDescription>
-                  Create a fresh hosted-access redeem code with manual token
-                  credit. Codes stay usable across devices until they expire.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form
-                  className="grid gap-3 md:grid-cols-[minmax(0,1fr)_10rem_14rem_auto]"
-                  onSubmit={handleManualGrantSubmit}
-                >
-                  <label className="grid gap-1.5 text-sm">
-                    <span className="font-medium">Owner email</span>
-                    <Input
-                      name="ownerEmail"
-                      placeholder="optional"
-                      size="sm"
-                      type="email"
+        <PageLayoutContent containerClassName="max-w-7xl">
+          <select
+            className="mb-3 h-9 w-full rounded-md border bg-background px-2 text-sm sm:hidden"
+            value={status}
+            onChange={(event) =>
+              handleStatusChange(event.currentTarget.value as RedeemCodeStatus)
+            }
+          >
+            {redeemCodeStatuses.map((statusOption) => (
+              <option key={statusOption} value={statusOption}>
+                {statusOption === 'all' ? 'All statuses' : statusOption}
+              </option>
+            ))}
+          </select>
+          <DataList>
+            <DataListRowResults
+              withClearButton={!!normalizedSearchTerm || status !== 'all'}
+              onClear={() =>
+                router.navigate({
+                  replace: true,
+                  search: { searchTerm: '', status: 'all' },
+                  to: '.',
+                })
+              }
+            >
+              {getResultsLabel(normalizedSearchTerm, status)}
+            </DataListRowResults>
+            {ui
+              .match('pending', () => <DataListLoadingState />)
+              .match('error', () => (
+                <DataListErrorState retry={() => redeemCodesQuery.refetch()} />
+              ))
+              .match('empty', () => (
+                <DataListEmptyState searchTerm={normalizedSearchTerm}>
+                  No redeem codes yet.
+                </DataListEmptyState>
+              ))
+              .match('default', ({ items }) => (
+                <>
+                  {items.map((item) => (
+                    <RedeemCodeRow
+                      key={item.id}
+                      item={item}
+                      onDelete={(code) =>
+                        deleteRedeemCode.mutateAsync({ code })
+                      }
+                      onRegenerate={(code) =>
+                        regenerateRedeemCode.mutateAsync({ code })
+                      }
+                      onSetStatus={(code, status) =>
+                        updateRedeemCodeStatus.mutateAsync({ code, status })
+                      }
                     />
-                  </label>
-                  <label className="grid gap-1.5 text-sm">
-                    <span className="font-medium">Tokens</span>
-                    <Input
-                      defaultValue={100}
-                      inputMode="numeric"
-                      name="tokenAmount"
-                      required
-                      size="sm"
-                      type="number"
-                    />
-                  </label>
-                  <label className="grid gap-1.5 text-sm">
-                    <span className="font-medium">Expires at</span>
-                    <Input name="expiresAt" size="sm" type="datetime-local" />
-                  </label>
-                  <div className="flex items-end">
-                    <Button
-                      className="w-full md:w-auto"
-                      loading={manualGrant.isPending}
-                      size="sm"
-                      type="submit"
-                    >
-                      Generate
-                    </Button>
-                  </div>
-                  <label className="grid gap-1.5 text-sm md:col-span-3">
-                    <span className="font-medium">Notes</span>
-                    <Textarea
-                      name="notes"
-                      placeholder="optional internal note"
-                      rows={2}
-                      size="sm"
-                    />
-                  </label>
-                  {manualGrantResult ? (
-                    <div className="rounded-md border bg-muted/40 p-3 text-sm md:col-span-4">
-                      <div className="font-medium">
-                        Redeem code: {manualGrantResult.redeemCode}
-                      </div>
-                      <div className="text-muted-foreground">
-                        License {manualGrantResult.licenseKey} ·{' '}
-                        {manualGrantResult.tokenAmount} tokens
-                      </div>
-                    </div>
-                  ) : null}
-                </form>
-              </CardContent>
-            </Card>
-          </WithPermissions>
-          {ui
-            .match('idle', () => (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Support Lookup</CardTitle>
-                  <CardDescription>
-                    Type at least 2 characters in the search box to find a
-                    license, redeem code, device installation, or order.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))
-            .match('pending', () => (
-              <DataList>
-                <DataListRowResults
-                  withClearButton
-                  onClear={() =>
-                    router.navigate({
-                      replace: true,
-                      search: { searchTerm: '' },
-                      to: '.',
-                    })
-                  }
-                >
-                  {`Results for "${normalizedSearchTerm}"`}
-                </DataListRowResults>
-                <DataListLoadingState />
-              </DataList>
-            ))
-            .match('error', () => (
-              <DataList>
-                <DataListRowResults
-                  withClearButton
-                  onClear={() =>
-                    router.navigate({
-                      replace: true,
-                      search: { searchTerm: '' },
-                      to: '.',
-                    })
-                  }
-                >
-                  {`Results for "${normalizedSearchTerm}"`}
-                </DataListRowResults>
-                <DataListErrorState retry={() => searchQuery.refetch()} />
-              </DataList>
-            ))
-            .match('empty', () => (
-              <DataList>
-                <DataListRowResults
-                  withClearButton
-                  onClear={() =>
-                    router.navigate({
-                      replace: true,
-                      search: { searchTerm: '' },
-                      to: '.',
-                    })
-                  }
-                >
-                  {`Results for "${normalizedSearchTerm}"`}
-                </DataListRowResults>
-                <DataListEmptyState searchTerm={normalizedSearchTerm} />
-              </DataList>
-            ))
-            .match('default', ({ items }) => (
-              <DataList>
-                <DataListRowResults
-                  withClearButton
-                  onClear={() =>
-                    router.navigate({
-                      replace: true,
-                      search: { searchTerm: '' },
-                      to: '.',
-                    })
-                  }
-                >
-                  {`Results for "${normalizedSearchTerm}"`}
-                </DataListRowResults>
-                {items.map((item) => {
-                  const linkProps =
-                    item.entityType === 'device'
-                      ? {
-                          params: { id: item.deviceId },
-                          to: '/manager/devices/$id' as const,
-                        }
-                      : item.key
-                        ? {
-                            params: { key: item.key },
-                            to: '/manager/licenses/$key' as const,
-                          }
-                        : null;
-
-                  return (
-                    <DataListRow
-                      key={`${item.entityType}-${getItemKey(item)}`}
-                      withHover
-                    >
-                      <DataListCell className="flex-none">
-                        <Badge variant={getEntityBadgeVariant(item.entityType)}>
-                          {item.entityType.replace('_', ' ')}
-                        </Badge>
-                      </DataListCell>
-                      <DataListCell>
-                        <DataListText className="font-medium">
-                          {linkProps ? (
-                            <Link {...linkProps}>
-                              {getPrimaryLabel(item)}
-                              <span className="absolute inset-0" />
-                            </Link>
-                          ) : (
-                            getPrimaryLabel(item)
-                          )}
-                        </DataListText>
-                        <DataListText className="text-xs text-muted-foreground">
-                          {getSecondaryLabel(item)}
-                        </DataListText>
-                      </DataListCell>
-                      <DataListCell className="max-w-56 max-sm:hidden">
-                        <DataListTextHeader>Matched On</DataListTextHeader>
-                        <DataListText className="text-xs text-muted-foreground">
-                          {item.matchedOn}
-                        </DataListText>
-                        <DataListText className="text-xs">
-                          {item.matchedValue}
-                        </DataListText>
-                      </DataListCell>
-                      <DataListCell className="flex-[0.55] max-md:hidden">
-                        <DataListTextHeader>Status</DataListTextHeader>
-                        <DataListText className="text-xs">
-                          {getStatusLabel(item)}
-                        </DataListText>
-                      </DataListCell>
-                    </DataListRow>
-                  );
-                })}
-              </DataList>
-            ))
-            .exhaustive()}
+                  ))}
+                </>
+              ))
+              .exhaustive()}
+          </DataList>
         </PageLayoutContent>
       </PageLayout>
     </GuardPermissions>
   );
 };
 
-function getItemKey(item: SupportLookupResult) {
-  switch (item.entityType) {
-    case 'device':
-      return item.deviceId;
-    case 'order':
-      return item.id;
-    case 'redeem_code':
-      return item.code;
-    case 'license':
-      return item.key;
+const RedeemCodeRow = (props: {
+  item: RedeemCodeItem;
+  onDelete: (code: string) => Promise<unknown>;
+  onRegenerate: (code: string) => Promise<unknown>;
+  onSetStatus: (
+    code: string,
+    status: 'available' | 'expired' | 'canceled'
+  ) => Promise<unknown>;
+}) => {
+  const item = props.item;
+  const isRedeemed = item.status === 'redeemed';
+
+  return (
+    <DataListRow
+      className="flex-col gap-1 py-2 sm:flex-row sm:items-stretch"
+      withHover
+    >
+      <DataListCell className="gap-1 sm:flex-[1.1]">
+        <div className="flex w-full min-w-0 items-center gap-2">
+          <DataListText className="font-mono font-medium">
+            {item.code}
+          </DataListText>
+          <Badge variant={getRedeemStatusVariant(item.status)}>
+            {item.status}
+          </Badge>
+        </div>
+        <DataListText className="text-xs text-muted-foreground">
+          Created {formatDate(item.createdAt)}
+        </DataListText>
+      </DataListCell>
+
+      <DataListCell className="sm:flex-[1.1]">
+        <DataListTextHeader>Email / License</DataListTextHeader>
+        <DataListText>{item.ownerEmail ?? 'No owner email'}</DataListText>
+        <DataListText className="text-xs text-muted-foreground">
+          <Link params={{ key: item.licenseKey }} to="/manager/licenses/$key">
+            {item.licenseKey}
+          </Link>{' '}
+          · {item.licenseStatus} · {item.deviceLimit} device limit
+        </DataListText>
+      </DataListCell>
+
+      <DataListCell className="sm:flex-[1.1]">
+        <DataListTextHeader>Consumption</DataListTextHeader>
+        <DataListText>
+          {item.availableTokens.toLocaleString()} available
+        </DataListText>
+        <DataListText className="text-xs text-muted-foreground">
+          {item.creditedTokens.toLocaleString()} credited ·{' '}
+          {item.spentTokens.toLocaleString()} spent
+        </DataListText>
+      </DataListCell>
+
+      <DataListCell className="sm:flex-[1.2]">
+        <DataListTextHeader>Redeemed / Device</DataListTextHeader>
+        <DataListText>{formatNullableDate(item.redeemedAt)}</DataListText>
+        <DataListText className="text-xs text-muted-foreground">
+          {item.redeemedByDevice ? (
+            <Link
+              params={{ id: item.redeemedByDevice.id }}
+              to="/manager/devices/$id"
+            >
+              {item.redeemedByDevice.installationId}
+            </Link>
+          ) : (
+            'Not redeemed yet'
+          )}
+        </DataListText>
+      </DataListCell>
+
+      <DataListCell className="sm:flex-[0.9]">
+        <DataListTextHeader>Expiry / Ledger</DataListTextHeader>
+        <DataListText>{formatNullableDate(item.expiresAt)}</DataListText>
+        <DataListText className="text-xs text-muted-foreground">
+          Last ledger {formatNullableDate(item.lastLedgerAt)}
+        </DataListText>
+      </DataListCell>
+
+      <DataListCell className="items-end sm:flex-none">
+        <WithPermissions permissions={[permissionLicense.generateRedeemCode]}>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              render={
+                <Button
+                  aria-label={`Actions for ${item.code}`}
+                  size="icon-sm"
+                  variant="ghost"
+                />
+              }
+            >
+              <EllipsisIcon />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-44">
+              <DropdownMenuGroup>
+                {item.status !== 'available' && !isRedeemed ? (
+                  <DropdownMenuItem
+                    onClick={() => props.onSetStatus(item.code, 'available')}
+                  >
+                    <CheckCircle2Icon />
+                    Reactivate
+                  </DropdownMenuItem>
+                ) : null}
+                {item.status === 'available' ? (
+                  <DropdownMenuItem
+                    onClick={() => props.onSetStatus(item.code, 'canceled')}
+                  >
+                    <BanIcon />
+                    Deactivate
+                  </DropdownMenuItem>
+                ) : null}
+                {item.status === 'available' ? (
+                  <DropdownMenuItem
+                    onClick={() => props.onSetStatus(item.code, 'expired')}
+                  >
+                    <RotateCcwIcon />
+                    Expire
+                  </DropdownMenuItem>
+                ) : null}
+                <DropdownMenuItem onClick={() => props.onRegenerate(item.code)}>
+                  <RefreshCcwIcon />
+                  Regenerate
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <ConfirmResponsiveDrawer
+                confirmText="Delete redeem"
+                confirmVariant="destructive"
+                description="This removes the redeem code record from the manager. Ledger history remains attached to the license."
+                onConfirm={() => props.onDelete(item.code)}
+                title={`Delete ${item.code}?`}
+              >
+                <DropdownMenuItem variant="destructive">
+                  <Trash2Icon />
+                  Delete
+                </DropdownMenuItem>
+              </ConfirmResponsiveDrawer>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </WithPermissions>
+      </DataListCell>
+    </DataListRow>
+  );
+};
+
+const FormFieldError = (props: {
+  children: ReactNode;
+  error?: { message?: string };
+  label: string;
+}) => {
+  return (
+    <label className="grid gap-1.5 text-sm">
+      <span className="font-medium">{props.label}</span>
+      {props.children}
+      {props.error?.message ? (
+        <span className="text-xs text-destructive">{props.error.message}</span>
+      ) : null}
+    </label>
+  );
+};
+
+function getResultsLabel(searchTerm: string, status: RedeemCodeStatus) {
+  if (searchTerm && status !== 'all') {
+    return `Redeems matching "${searchTerm}" · ${status}`;
   }
+
+  if (searchTerm) {
+    return `Redeems matching "${searchTerm}"`;
+  }
+
+  if (status !== 'all') {
+    return `Redeems filtered by ${status}`;
+  }
+
+  return 'Latest redeem codes';
 }
 
-function getPrimaryLabel(item: SupportLookupResult) {
-  switch (item.entityType) {
-    case 'device':
-      return item.installationId;
-    case 'order':
-      return item.id;
-    case 'redeem_code':
-      return item.code;
-    case 'license':
-      return item.key;
-  }
+function formatDate(date: Date | string) {
+  return dayjs(date).format('DD/MM/YYYY HH:mm');
 }
 
-function getSecondaryLabel(item: SupportLookupResult) {
-  switch (item.entityType) {
-    case 'device':
-      return item.key
-        ? `License ${item.key}${item.lastSeenAt ? ` · last seen ${dayjs(item.lastSeenAt).fromNow()}` : ''}`
-        : 'No attached license yet';
-    case 'order':
-      return `${item.payerEmail ?? 'No payer email'} · ${(item.amountTotalCents / 100).toFixed(2)} ${item.currency.toUpperCase()}`;
-    case 'redeem_code':
-      return `License ${item.key}${item.ownerEmail ? ` · ${item.ownerEmail}` : ''}`;
-    case 'license':
-      return `${item.ownerEmail ?? 'No owner email'} · ${item.activeDeviceCount} active device${item.activeDeviceCount === 1 ? '' : 's'}`;
-  }
+function formatNullableDate(date: Date | string | null | undefined) {
+  return date ? formatDate(date) : 'Never';
 }
 
-function getStatusLabel(item: SupportLookupResult) {
-  switch (item.entityType) {
-    case 'device':
-      return item.status;
-    case 'order':
-      return item.status;
-    case 'redeem_code':
-      return item.status;
-    case 'license':
-      return item.status;
-  }
-}
-
-function getEntityBadgeVariant(entityType: string) {
-  switch (entityType) {
-    case 'device':
-      return 'secondary' as const;
-    case 'order':
-      return 'warning' as const;
-    case 'redeem_code':
-      return 'warning' as const;
-    case 'license':
+function getRedeemStatusVariant(status: RedeemCodeItem['status']) {
+  switch (status) {
+    case 'available':
+      return 'positive' as const;
+    case 'redeemed':
       return 'default' as const;
-    default:
-      return 'secondary' as const;
+    case 'expired':
+      return 'warning' as const;
+    case 'canceled':
+      return 'negative' as const;
   }
 }
