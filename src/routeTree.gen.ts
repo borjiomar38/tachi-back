@@ -47,6 +47,7 @@ import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
+import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
 import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users/new.index'
@@ -259,6 +260,11 @@ const ApiMobileHeartbeatRoute = ApiMobileHeartbeatRouteImport.update({
   path: '/api/mobile/heartbeat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
+  id: '/api/download/apk',
+  path: '/api/download/apk',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
@@ -393,6 +399,7 @@ export interface FileRoutesByFullPath {
   '/manager/': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
@@ -451,6 +458,7 @@ export interface FileRoutesByTo {
   '/manager': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
@@ -513,6 +521,7 @@ export interface FileRoutesById {
   '/manager/': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
@@ -576,6 +585,7 @@ export interface FileRouteTypes {
     | '/manager/'
     | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/download/apk'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/openapi/app'
@@ -634,6 +644,7 @@ export interface FileRouteTypes {
     | '/manager'
     | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/download/apk'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/openapi/app'
@@ -695,6 +706,7 @@ export interface FileRouteTypes {
     | '/manager/'
     | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/download/apk'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/openapi/app'
@@ -754,6 +766,7 @@ export interface RootRouteChildren {
   LegalTermsRoute: typeof LegalTermsRoute
   ApiActivationRedeemRoute: typeof ApiActivationRedeemRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
@@ -1035,6 +1048,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/heartbeat'
       fullPath: '/api/mobile/heartbeat'
       preLoaderRoute: typeof ApiMobileHeartbeatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/apk': {
+      id: '/api/download/apk'
+      path: '/api/download/apk'
+      fullPath: '/api/download/apk'
+      preLoaderRoute: typeof ApiDownloadApkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/auth/$': {
@@ -1323,6 +1343,7 @@ const rootRouteChildren: RootRouteChildren = {
   LegalTermsRoute: LegalTermsRoute,
   ApiActivationRedeemRoute: ApiActivationRedeemRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,

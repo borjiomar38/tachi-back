@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 
 import { PUBLIC_SUPPORT_EMAIL } from '@/features/public/data';
+import { androidApkDownload } from '@/features/public/download-assets';
 
 const primaryLinks = [
   { href: '/#hero', label: 'Overview' },
@@ -44,10 +45,16 @@ export const PublicShell = (props: { children: ReactNode }) => {
             </nav>
             <div className="flex items-center gap-2">
               <a
+                href={androidApkDownload.href}
+                className={buttonVariants({ variant: 'default', size: 'sm' })}
+              >
+                APK
+              </a>
+              <a
                 href="/download"
                 className={buttonVariants({ variant: 'secondary', size: 'sm' })}
               >
-                Download
+                Download page
               </a>
               <a
                 href="/login"
@@ -82,6 +89,12 @@ export const PublicShell = (props: { children: ReactNode }) => {
                       {item.label}
                     </a>
                   ))}
+                  <a href={androidApkDownload.href} className="hover:text-foreground">
+                    Download APK
+                  </a>
+                  <a href="/download" className="hover:text-foreground">
+                    Install guide
+                  </a>
                 </div>
               </div>
               <div className="space-y-3">

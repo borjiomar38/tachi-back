@@ -1,4 +1,11 @@
-import { ArrowRightIcon, KeyRoundIcon, ServerIcon, SmartphoneIcon } from 'lucide-react';
+import {
+  ArrowRightIcon,
+  DownloadIcon,
+  KeyRoundIcon,
+  PlayCircleIcon,
+  ServerIcon,
+  SmartphoneIcon,
+} from 'lucide-react';
 
 import { cn } from '@/lib/tailwind/utils';
 
@@ -12,6 +19,7 @@ import {
 } from '@/components/ui/card';
 
 import { activationSteps } from '@/features/public/data';
+import { androidApkDownload, youtubeDemo } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 const flowNotes = [
@@ -64,55 +72,65 @@ export const PageHowItWorks = () => {
 
       <PublicSection
         eyebrow="Demo"
-        title="Watch the baseline Tachiyomi flow"
-        description="This embedded demo uses the video “How to Use Tachiyomi App” by How-To-Heroes to show the core Tachiyomi experience first. It helps customers understand the existing app flow before hosted OCR, translation, redeem codes, and token-backed jobs are layered on top."
+        title="Watch the TachiyomiAT translation flow"
+        description="The final tutorial video should live on YouTube and play online from this page. The APK remains a direct Android download."
       >
         <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
           <Card className="overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
             <CardContent className="p-0">
-              <div className="aspect-video w-full">
-                <iframe
-                  src="https://www.youtube.com/embed/0aZU4nbLKrw"
-                  title="How to Use Tachiyomi App"
-                  className="h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              </div>
+              {youtubeDemo.embedUrl ? (
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={youtubeDemo.embedUrl}
+                    title="TachiyomiAT translation demo"
+                    className="h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <div className="flex aspect-video w-full items-center justify-center bg-black">
+                  <div className="max-w-sm space-y-3 px-6 text-center">
+                    <PlayCircleIcon className="mx-auto size-12 text-warning-300" />
+                    <p className="text-lg font-semibold">YouTube demo coming soon</p>
+                    <p className="text-sm leading-6 text-neutral-300">
+                      Add the YouTube embed link once the final video is online.
+                    </p>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
 
           <Card className="rounded-[1.75rem]">
             <CardHeader className="gap-3">
-              <CardTitle className="text-2xl">Why this demo is here</CardTitle>
+              <CardTitle className="text-2xl">Install while watching</CardTitle>
               <CardDescription>
-                The video is not about the hosted backend itself. It is here to
-                explain the existing Tachiyomi usage pattern that your hosted
-                OCR and translation flow is designed to extend.
+                Keep the video online, and make the APK easy to find from the
+                same screen.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm leading-7 text-muted-foreground">
               <div className="rounded-xl border border-border/70 px-4 py-3">
-                It shows a general Tachiyomi app walkthrough, which gives users
-                the baseline reading and library context first.
+                Watch the YouTube demo to understand the translation flow before
+                installing.
               </div>
               <div className="rounded-xl border border-border/70 px-4 py-3">
-                Your hosted product then plugs into that same mobile workflow
-                instead of replacing it with a separate reader or web account.
+                Download the APK directly from the website when you are ready to
+                test on Android.
               </div>
               <div className="rounded-xl border border-border/70 px-4 py-3">
-                The backend-specific pieces come after that baseline: buy
-                tokens, receive a redeem code, bind an installation, submit
-                pages, and get translated chapter data back.
+                Activate hosted mode with a redeem code after installation.
               </div>
               <a
-                href="https://www.youtube.com/watch?v=0aZU4nbLKrw"
-                target="_blank"
-                rel="noreferrer"
-                className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+                href={androidApkDownload.href}
+                className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
               >
-                Watch on YouTube
+                <span className="flex items-center gap-2">
+                  Download APK
+                  <DownloadIcon className="size-4" />
+                </span>
               </a>
             </CardContent>
           </Card>

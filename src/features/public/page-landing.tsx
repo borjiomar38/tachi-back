@@ -1,9 +1,11 @@
 import {
   ArrowRightIcon,
   CoinsIcon,
+  DownloadIcon,
   KeyRoundIcon,
   LanguagesIcon,
   MailIcon,
+  PlayCircleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
@@ -29,6 +31,7 @@ import {
   type PublicTokenPack,
   supportFaqs,
 } from '@/features/public/data';
+import { androidApkDownload, youtubeDemo } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
 
@@ -110,8 +113,17 @@ export const PageLanding = (props: {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="/#pricing"
+                  href={androidApkDownload.href}
                   className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+                >
+                  <span className="flex items-center gap-2">
+                    Download Android APK
+                    <DownloadIcon className="size-4" />
+                  </span>
+                </a>
+                <a
+                  href="/#pricing"
+                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
                 >
                   <span className="flex items-center gap-2">
                     See monthly plans
@@ -120,7 +132,7 @@ export const PageLanding = (props: {
                 </a>
                 <a
                   href="/#demo"
-                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+                  className={buttonVariants({ variant: 'ghost', size: 'lg' })}
                 >
                   See the demo
                 </a>
@@ -143,6 +155,17 @@ export const PageLanding = (props: {
                     in the app, and translate the chapters you want to read.
                   </CardDescription>
                 </CardHeader>
+                <CardContent>
+                  <a
+                    href={androidApkDownload.href}
+                    className={buttonVariants({ variant: 'default', size: 'lg' })}
+                  >
+                    <span className="flex items-center gap-2">
+                      Install the APK
+                      <DownloadIcon className="size-4" />
+                    </span>
+                  </a>
+                </CardContent>
               </Card>
             </div>
 
@@ -198,25 +221,36 @@ export const PageLanding = (props: {
       >
         <Card className="mb-4 overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
           <CardHeader className="gap-2 border-b border-white/10">
-            <CardTitle className="text-2xl">
-              Video demo
-            </CardTitle>
+            <CardTitle className="text-2xl">Video demo</CardTitle>
             <CardDescription className="text-neutral-300">
-              This video shows the reading experience in Tachiyomi. The hosted
-              translation service fits into that same flow.
+              The final product demo will be embedded from YouTube so visitors
+              can watch it online without downloading a video file.
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4 p-0 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="aspect-video w-full">
-              <iframe
-                src="https://www.youtube.com/embed/0aZU4nbLKrw"
-                title="How to Use Tachiyomi App"
-                className="h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+            {youtubeDemo.embedUrl ? (
+              <div className="aspect-video w-full">
+                <iframe
+                  src={youtubeDemo.embedUrl}
+                  title="TachiyomiAT translation demo"
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="flex aspect-video w-full items-center justify-center bg-black">
+                <div className="max-w-sm space-y-3 px-6 text-center">
+                  <PlayCircleIcon className="mx-auto size-12 text-warning-300" />
+                  <p className="text-lg font-semibold">YouTube demo coming soon</p>
+                  <p className="text-sm leading-6 text-neutral-300">
+                    Upload the final tutorial to YouTube, then add the embed
+                    link here.
+                  </p>
+                </div>
+              </div>
+            )}
             <div className="p-6">
               <p className="text-sm font-medium tracking-[0.2em] text-neutral-400 uppercase">
                 Why it matters
@@ -232,6 +266,23 @@ export const PageLanding = (props: {
                   Keep the reading flow simple instead of learning a technical
                   setup.
                 </div>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  href={androidApkDownload.href}
+                  className={buttonVariants({ variant: 'default', size: 'lg' })}
+                >
+                  <span className="flex items-center gap-2">
+                    Download APK
+                    <DownloadIcon className="size-4" />
+                  </span>
+                </a>
+                <a
+                  href="/download"
+                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+                >
+                  Install guide
+                </a>
               </div>
             </div>
           </CardContent>
