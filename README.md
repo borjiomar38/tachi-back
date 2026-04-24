@@ -1,4 +1,4 @@
-# Tachiyomi Back
+# Tachiyomi Back.
 
 `tachi-back` is the backend and backoffice for hosted OCR and translation features used by TachiyomiAT.
 
