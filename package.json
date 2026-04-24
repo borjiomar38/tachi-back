@@ -40,7 +40,8 @@
     "db:migrate:status": "prisma migrate status",
     "db:push": "prisma db push",
     "db:ui": "prisma studio",
-    "db:seed": "dotenv -- cross-env node ./run-jiti ./prisma/seed/index.ts"
+    "db:seed": "dotenv -- cross-env node ./run-jiti ./prisma/seed/index.ts",
+    "redeem:generate": "dotenv -- cross-env node ./run-jiti.js ./scripts/generate-redeem-code.ts"
   },
   "dependencies": {
     "@base-ui/react": "1.2.0",

@@ -5,7 +5,10 @@ import {
   createProviderConfigError,
 } from '@/server/provider-gateway/errors';
 import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
-import { buildTranslationPrompt } from '@/server/provider-gateway/prompts';
+import {
+  buildBlockTranslationKey,
+  buildTranslationPrompt,
+} from '@/server/provider-gateway/prompts';
 import {
   getEffectiveTranslationModel,
   getProviderGatewayRuntimeConfig,
@@ -442,30 +445,47 @@ function normalizeTranslationPayload(
   );
 
   return pages.map((page) => {
-    const translationList = json[page.pageKey];
+    const translationMap = json[page.pageKey];
 
-    if (!Array.isArray(translationList)) {
+    if (
+      !translationMap ||
+      typeof translationMap !== 'object' ||
+      Array.isArray(translationMap)
+    ) {
       throw createInvalidProviderResponseError(
         provider,
         `Provider response is missing the page key "${page.pageKey}".`
       );
     }
 
-    if (translationList.length !== page.blocks.length) {
-      throw createInvalidProviderResponseError(
-        provider,
-        `Provider response for "${page.pageKey}" has ${translationList.length} items but ${page.blocks.length} blocks were sent.`
-      );
-    }
+    const translationRecord = translationMap as Record<string, unknown>;
 
     return {
       blocks: page.blocks.map((block, index) => {
-        const translation = translationList[index];
+        const blockKey = buildBlockTranslationKey(index);
+
+        if (!(blockKey in translationRecord)) {
+          return {
+            index,
+            sourceText: block.text,
+            translation: '',
+          };
+        }
+
+        const translation = translationRecord[blockKey];
+
+        if (translation === undefined || translation === null) {
+          return {
+            index,
+            sourceText: block.text,
+            translation: '',
+          };
+        }
 
         if (typeof translation !== 'string') {
           throw createInvalidProviderResponseError(
             provider,
-            `Provider response for "${page.pageKey}" index ${index} is not a string.`
+            `Provider response for "${page.pageKey}" block key "${blockKey}" is not a string.`
           );
         }
 

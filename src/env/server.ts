@@ -63,7 +63,7 @@ const envServerBase = createEnv({
       .min(1)
       .max(5)
       .default(2),
-    TRANSLATION_PROMPT_VERSION: z.string().default('2026-03-20.v1'),
+    TRANSLATION_PROMPT_VERSION: z.string().default('2026-04-24.scanlation.v1'),
 
     MOBILE_API_ENABLED: z.stringbool().default(false),
     MOBILE_API_JWT_SECRET: z.string().optional(),

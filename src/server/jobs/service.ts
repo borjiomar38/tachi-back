@@ -6,7 +6,10 @@ import { Prisma, ProviderType } from '@/server/db/generated/client';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-gateway/manifest';
-import { HostedPageTranslation } from '@/server/provider-gateway/schema';
+import {
+  HostedPageTranslation,
+  NormalizedOcrPage,
+} from '@/server/provider-gateway/schema';
 import {
   mergeHostedPageTranslation,
   performHostedOcr,
@@ -120,6 +123,20 @@ export async function createTranslationJob(
       dbClient,
     }
   );
+  const reservedTokens = calculateReservedTokens(input.pages.length);
+  const availableTokens = await getAvailableLicenseTokenBalance(
+    {
+      licenseId: deps.actor.licenseId,
+    },
+    {
+      dbClient,
+    }
+  );
+
+  if (availableTokens < reservedTokens) {
+    throw new TranslationJobError('insufficient_tokens', 409);
+  }
+
   const expiresAt = new Date(
     now.getTime() + envServer.JOB_PAGE_UPLOAD_URL_TTL_SECONDS * 1000
   );
@@ -614,27 +631,45 @@ export async function processTranslationJob(
       startedJob.sourceLanguage,
       detectedLanguages
     );
+    const layoutPages = ocrPages.map((page) => ({
+      ...page,
+      ocrPage: coalesceOcrLineBlocks(page.ocrPage),
+    }));
 
-    const translationBatch = await performHostedTranslation({
-      jobId: startedJob.id,
-      pages: ocrPages.map((page) => ({
+    const translationProvider = toGatewayTranslationProvider(
+      startedJob.resolvedTranslationProvider
+    );
+    const translatablePages = layoutPages
+      .filter((page) => page.ocrPage.blocks.length > 0)
+      .map((page) => ({
         blocks: page.ocrPage.blocks.map((block) => ({ text: block.text })),
         pageKey: page.fileName,
-      })),
-      preferredProvider: toGatewayTranslationProvider(
-        startedJob.resolvedTranslationProvider
-      ),
-      sourceLanguage,
-      targetLanguage: startedJob.targetLanguage,
-    });
+      }));
+    const translationBatch =
+      translatablePages.length > 0
+        ? await performHostedTranslation({
+            jobId: startedJob.id,
+            pages: translatablePages,
+            preferredProvider: translationProvider,
+            sourceLanguage,
+            targetLanguage: startedJob.targetLanguage,
+          })
+        : null;
 
     const translationsByPage = new Map(
-      translationBatch.pages.map((page) => [page.pageKey, page])
+      translationBatch?.pages.map((page) => [page.pageKey, page]) ?? []
     );
     const pages: Record<string, HostedPageTranslation> = {};
 
-    for (const page of ocrPages) {
-      const translationPage = translationsByPage.get(page.fileName);
+    for (const page of layoutPages) {
+      const translationPage =
+        translationsByPage.get(page.fileName) ??
+        (page.ocrPage.blocks.length === 0
+          ? {
+              blocks: [],
+              pageKey: page.fileName,
+            }
+          : null);
 
       if (!translationPage) {
         throw new Error(`Missing translation page for ${page.fileName}`);
@@ -644,7 +679,8 @@ export async function processTranslationJob(
         ocrPage: page.ocrPage,
         targetLanguage: startedJob.targetLanguage,
         translationPage,
-        translatorType: translationBatch.provider,
+        translatorType:
+          translationBatch?.provider ?? translationProvider ?? 'openai',
       });
     }
 
@@ -655,11 +691,12 @@ export async function processTranslationJob(
       jobId: startedJob.id,
       licenseId: startedJob.licenseId,
       pageCount: startedJob.pageCount,
-      pageOrder: ocrPages.map((page) => page.fileName),
+      pageOrder: layoutPages.map((page) => page.fileName),
       pages,
       sourceLanguage,
       targetLanguage: startedJob.targetLanguage,
-      translatorType: translationBatch.provider,
+      translatorType:
+        translationBatch?.provider ?? translationProvider ?? 'openai',
       version: JOB_RESULT_VERSION,
     });
     const manifestJson = JSON.stringify(manifest);
@@ -688,7 +725,8 @@ export async function processTranslationJob(
           metadata: {
             completedAt: completedAt.toISOString(),
             pageCount: startedJob.pageCount,
-            translatorType: translationBatch.provider,
+            translatorType:
+              translationBatch?.provider ?? translationProvider ?? 'openai',
           },
           status: 'posted',
           type: 'job_spend',
@@ -1040,6 +1078,100 @@ function getUploadedAt(metadata: unknown) {
 
 function calculateReservedTokens(pageCount: number) {
   return pageCount * envServer.JOB_TOKENS_PER_PAGE;
+}
+
+function coalesceOcrLineBlocks(ocrPage: NormalizedOcrPage): NormalizedOcrPage {
+  if (ocrPage.blocks.length < 2) {
+    return ocrPage;
+  }
+
+  const sortedBlocks = [...ocrPage.blocks].sort(
+    (left, right) => left.y - right.y || left.x - right.x
+  );
+  const groups: Array<NormalizedOcrPage['blocks']> = [];
+
+  for (const block of sortedBlocks) {
+    const currentGroup = groups[groups.length - 1];
+    const previousBlock = currentGroup?.[currentGroup.length - 1];
+
+    if (
+      currentGroup &&
+      previousBlock &&
+      shouldCoalesceOcrBlocks(previousBlock, block)
+    ) {
+      currentGroup.push(block);
+      continue;
+    }
+
+    groups.push([block]);
+  }
+
+  return {
+    ...ocrPage,
+    blocks: groups.map(mergeOcrBlockGroup),
+  };
+}
+
+function shouldCoalesceOcrBlocks(
+  previousBlock: NormalizedOcrPage['blocks'][number],
+  nextBlock: NormalizedOcrPage['blocks'][number]
+) {
+  const previousBottom = previousBlock.y + previousBlock.height;
+  const verticalGap = nextBlock.y - previousBottom;
+  const averageSymbolHeight =
+    (previousBlock.symHeight + nextBlock.symHeight) / 2;
+  const maxVerticalGap = Math.max(14, Math.min(36, averageSymbolHeight * 1.4));
+
+  if (verticalGap < -8 || verticalGap > maxVerticalGap) {
+    return false;
+  }
+
+  if (Math.abs(previousBlock.angle - nextBlock.angle) > 8) {
+    return false;
+  }
+
+  const overlap =
+    Math.min(
+      previousBlock.x + previousBlock.width,
+      nextBlock.x + nextBlock.width
+    ) - Math.max(previousBlock.x, nextBlock.x);
+  const minWidth = Math.min(previousBlock.width, nextBlock.width);
+  const overlapRatio = minWidth > 0 ? overlap / minWidth : 0;
+  const previousCenter = previousBlock.x + previousBlock.width / 2;
+  const nextCenter = nextBlock.x + nextBlock.width / 2;
+  const maxCenterDistance =
+    Math.max(previousBlock.width, nextBlock.width) * 0.35;
+
+  return (
+    overlapRatio >= 0.35 ||
+    Math.abs(previousCenter - nextCenter) <= maxCenterDistance
+  );
+}
+
+function mergeOcrBlockGroup(
+  blocks: NormalizedOcrPage['blocks']
+): NormalizedOcrPage['blocks'][number] {
+  if (blocks.length === 1) {
+    return blocks[0]!;
+  }
+
+  const left = Math.min(...blocks.map((block) => block.x));
+  const top = Math.min(...blocks.map((block) => block.y));
+  const right = Math.max(...blocks.map((block) => block.x + block.width));
+  const bottom = Math.max(...blocks.map((block) => block.y + block.height));
+
+  return {
+    angle: blocks[0]?.angle ?? 0,
+    height: bottom - top,
+    symHeight:
+      blocks.reduce((sum, block) => sum + block.symHeight, 0) / blocks.length,
+    symWidth:
+      blocks.reduce((sum, block) => sum + block.symWidth, 0) / blocks.length,
+    text: blocks.map((block) => block.text).join(' '),
+    width: right - left,
+    x: left,
+    y: top,
+  };
 }
 
 function resolveEffectiveSourceLanguage(

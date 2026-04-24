@@ -131,6 +131,11 @@ describe('job service', () => {
         ],
       },
     });
+    mockDb.tokenLedger.aggregate.mockResolvedValue({
+      _sum: {
+        deltaTokens: 100,
+      },
+    });
   });
 
   it('creates an awaiting-upload job with page placeholders', async () => {
@@ -186,6 +191,41 @@ describe('job service', () => {
     expect(result.job.status).toBe('awaiting_upload');
     expect(result.job.pages).toHaveLength(2);
     expect(result.job.pages[0]?.uploadStatus).toBe('pending');
+  });
+
+  it('rejects job creation before upload when tokens are insufficient', async () => {
+    mockDb.tokenLedger.aggregate.mockResolvedValue({
+      _sum: {
+        deltaTokens: 4,
+      },
+    });
+
+    await expect(
+      createTranslationJob(
+        {
+          pages: [
+            {
+              fileName: '001.jpg',
+              mimeType: 'image/jpeg',
+              sizeBytes: 1024,
+            },
+          ],
+          targetLanguage: 'en',
+        },
+        {
+          actor: {
+            deviceId: 'device-1',
+            licenseId: 'license-1',
+          },
+          dbClient: mockDb as never,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'insufficient_tokens',
+      statusCode: 409,
+    });
+
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
   });
 
   it('queues a fully uploaded job and reserves tokens', async () => {
@@ -370,6 +410,318 @@ describe('job service', () => {
     expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('bonjour');
     expect(mockDb.tokenLedger.create).toHaveBeenCalledOnce();
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
+  });
+
+  it('keeps pages with no OCR blocks out of the translation request', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUnique: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                id: 'job-empty-pages',
+                objectKeys: [
+                  'jobs/job/uploads/0001-001.jpg',
+                  'jobs/job/uploads/0002-002.jpg',
+                ],
+                pageCount: 2,
+                reservedTokens: 10,
+                startedAt: new Date('2026-03-20T10:10:00.000Z'),
+                status: 'processing',
+                uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
+              })
+            ),
+            updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+            updateMany: mockDb.tokenLedger.updateMany,
+          },
+          translationJob: {
+            update: vi.fn(),
+          },
+        };
+
+        return await callback(tx);
+      });
+
+    mockGetTranslationJobPageUpload.mockResolvedValue({
+      blob: new Blob([new Uint8Array([1, 2, 3])]),
+    });
+    mockPerformHostedOcr
+      .mockResolvedValueOnce({
+        blocks: [],
+        imgHeight: 100,
+        imgWidth: 80,
+        provider: 'google_cloud_vision',
+        providerModel: 'TEXT_DETECTION',
+        providerRequestId: 'ocr-empty',
+        sourceLanguage: 'auto',
+        usage: {
+          inputTokens: null,
+          latencyMs: 100,
+          outputTokens: null,
+          pageCount: 1,
+          providerRequestId: 'ocr-empty',
+          requestCount: 1,
+        },
+      })
+      .mockResolvedValueOnce({
+        blocks: [
+          {
+            angle: 0,
+            height: 10,
+            symHeight: 5,
+            symWidth: 5,
+            text: 'hello',
+            width: 20,
+            x: 1,
+            y: 2,
+          },
+        ],
+        imgHeight: 100,
+        imgWidth: 80,
+        provider: 'google_cloud_vision',
+        providerModel: 'TEXT_DETECTION',
+        providerRequestId: 'ocr-text',
+        sourceLanguage: 'ja',
+        usage: {
+          inputTokens: null,
+          latencyMs: 100,
+          outputTokens: null,
+          pageCount: 1,
+          providerRequestId: 'ocr-text',
+          requestCount: 1,
+        },
+      });
+    mockPerformHostedTranslation.mockResolvedValue({
+      pages: [
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText: 'hello',
+              translation: 'bonjour',
+            },
+          ],
+          pageKey: '002.jpg',
+        },
+      ],
+      promptProfile: 'manga',
+      promptVersion: '2026-03-20.v1',
+      provider: 'gemini',
+      providerModel: 'gemini-test',
+      sourceLanguage: 'ja',
+      targetLanguage: 'fr',
+      usage: {
+        finishReason: 'stop',
+        inputTokens: 10,
+        latencyMs: 200,
+        outputTokens: 5,
+        pageCount: 1,
+        providerRequestId: 'tr-1',
+        requestCount: 1,
+        stopReason: 'stop',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job-empty-pages/results/translation-manifest.json',
+    });
+
+    const result = await processTranslationJob(
+      { jobId: 'job-empty-pages' },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+      }
+    );
+
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [{ text: 'hello' }],
+            pageKey: '002.jpg',
+          },
+        ],
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks).toEqual([]);
+    expect(result?.pages['002.jpg']?.blocks[0]?.translation).toBe('bonjour');
+  });
+
+  it('coalesces close OCR line fragments before translation and manifest merge', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUnique: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                id: 'job-coalesce-lines',
+                pageCount: 1,
+                reservedTokens: 5,
+                startedAt: new Date('2026-03-20T10:10:00.000Z'),
+                status: 'processing',
+                uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
+              })
+            ),
+            updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+            updateMany: mockDb.tokenLedger.updateMany,
+          },
+          translationJob: {
+            update: vi.fn(),
+          },
+        };
+
+        return await callback(tx);
+      });
+
+    mockGetTranslationJobPageUpload.mockResolvedValue({
+      blob: new Blob([new Uint8Array([1, 2, 3])]),
+    });
+    mockPerformHostedOcr.mockResolvedValue({
+      blocks: [
+        {
+          angle: 0,
+          height: 90,
+          symHeight: 20,
+          symWidth: 10,
+          text: "LUCKILY ... I'D",
+          width: 437,
+          x: 184,
+          y: 126,
+        },
+        {
+          angle: 0,
+          height: 23,
+          symHeight: 20,
+          symWidth: 10,
+          text: 'BE SATISFIED WITH ONE THAT',
+          width: 357,
+          x: 224,
+          y: 227,
+        },
+        {
+          angle: 0,
+          height: 22,
+          symHeight: 20,
+          symWidth: 10,
+          text: 'BREAKS THROUGH FIVE.',
+          width: 286,
+          x: 260,
+          y: 261,
+        },
+      ],
+      imgHeight: 1000,
+      imgWidth: 800,
+      provider: 'google_cloud_vision',
+      providerModel: 'TEXT_DETECTION',
+      providerRequestId: 'ocr-lines',
+      sourceLanguage: 'en',
+      usage: {
+        inputTokens: null,
+        latencyMs: 100,
+        outputTokens: null,
+        pageCount: 1,
+        providerRequestId: 'ocr-lines',
+        requestCount: 1,
+      },
+    });
+    mockPerformHostedTranslation.mockResolvedValue({
+      pages: [
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText:
+                "LUCKILY ... I'D BE SATISFIED WITH ONE THAT BREAKS THROUGH FIVE.",
+              translation: 'Arabic merged bubble',
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+      ],
+      promptProfile: 'manga',
+      promptVersion: '2026-03-20.v1',
+      provider: 'gemini',
+      providerModel: 'gemini-test',
+      sourceLanguage: 'en',
+      targetLanguage: 'ar',
+      usage: {
+        finishReason: 'stop',
+        inputTokens: 10,
+        latencyMs: 200,
+        outputTokens: 5,
+        pageCount: 1,
+        providerRequestId: 'tr-lines',
+        requestCount: 1,
+        stopReason: 'stop',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job-coalesce-lines/results/translation-manifest.json',
+    });
+
+    const result = await processTranslationJob(
+      { jobId: 'job-coalesce-lines' },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+      }
+    );
+
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [
+              {
+                text: "LUCKILY ... I'D BE SATISFIED WITH ONE THAT BREAKS THROUGH FIVE.",
+              },
+            ],
+            pageKey: '001.jpg',
+          },
+        ],
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks).toHaveLength(1);
+    expect(result?.pages['001.jpg']?.blocks[0]).toEqual(
+      expect.objectContaining({
+        height: 157,
+        text: "LUCKILY ... I'D BE SATISFIED WITH ONE THAT BREAKS THROUGH FIVE.",
+        translation: 'Arabic merged bubble',
+        width: 437,
+        x: 184,
+        y: 126,
+      })
+    );
   });
 });
 

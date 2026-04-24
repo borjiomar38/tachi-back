@@ -38,7 +38,10 @@ describe('provider gateway prompts', () => {
         },
       ])
     ).toEqual({
-      '001.jpg': ['안녕', '하세요'],
+      '001.jpg': {
+        block_0000: '안녕',
+        block_0001: '하세요',
+      },
     });
   });
 
@@ -59,6 +62,27 @@ describe('provider gateway prompts', () => {
     expect(prompt.promptVersion).toBe('2026-03-20.v1');
     expect(prompt.systemPrompt).toContain('Return only valid JSON');
     expect(prompt.userPrompt).toContain('Chapter recap');
-    expect(prompt.userPrompt).toContain('"001.jpg":["こんにちは"]');
+    expect(prompt.userPrompt).toContain(
+      '"001.jpg":{"block_0000":"こんにちは"}'
+    );
+  });
+
+  it('uses elevated literary scanlation guidance for Arabic targets', () => {
+    const prompt = buildTranslationPrompt({
+      pages: [
+        {
+          blocks: [{ text: 'I have planted the seed of doubt.' }],
+          pageKey: '001.jpg',
+        },
+      ],
+      sourceLanguage: 'en',
+      targetLanguage: 'ar',
+    });
+
+    expect(prompt.promptProfile).toBe('arabic_target');
+    expect(prompt.systemPrompt).toContain('فصحى جزلة');
+    expect(prompt.systemPrompt).toContain('almost poetic');
+    expect(prompt.systemPrompt).toContain('Arabic scanlation bubbles');
+    expect(prompt.systemPrompt).toContain('العظمة، الهيبة، القدر');
   });
 });

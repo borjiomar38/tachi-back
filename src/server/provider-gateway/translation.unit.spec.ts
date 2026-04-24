@@ -43,7 +43,11 @@ describe('provider gateway translation', () => {
             candidates: [
               {
                 content: {
-                  parts: [{ text: '{"001.jpg":["Hello there"]}' }],
+                  parts: [
+                    {
+                      text: '{"001.jpg":{"block_0000":"Hello there"}}',
+                    },
+                  ],
                 },
                 finishReason: 'STOP',
               },
@@ -115,6 +119,122 @@ describe('provider gateway translation', () => {
           preferredProvider: 'openai',
           sourceLanguage: 'ja',
           targetLanguage: 'en',
+        },
+        {
+          fetchFn,
+          preferredProvider: 'openai',
+        }
+      )
+    ).rejects.toEqual(
+      expect.objectContaining<Partial<ProviderGatewayError>>({
+        code: 'invalid_response',
+        provider: 'openai',
+      })
+    );
+  });
+
+  it('maps dictionary block ids so one missing item cannot shift following translations', async () => {
+    const fetchFn = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              finish_reason: 'stop',
+              message: {
+                content:
+                  '{"006.webp":{"block_0000":"first","block_0002":"third","block_0003":"fourth"}}',
+              },
+            },
+          ],
+          usage: {
+            completion_tokens: 5,
+            prompt_tokens: 10,
+          },
+        }),
+        { status: 200 }
+      )
+    );
+
+    const result = await performTranslationWithProvider(
+      {
+        pages: [
+          {
+            blocks: [
+              { text: 'line 1' },
+              { text: 'line 2' },
+              { text: 'line 3' },
+              { text: 'line 4' },
+            ],
+            pageKey: '006.webp',
+          },
+        ],
+        preferredProvider: 'openai',
+        sourceLanguage: 'ja',
+        targetLanguage: 'ar',
+      },
+      {
+        fetchFn,
+        preferredProvider: 'openai',
+      }
+    );
+
+    expect(result.pages[0]?.blocks).toEqual([
+      {
+        index: 0,
+        sourceText: 'line 1',
+        translation: 'first',
+      },
+      {
+        index: 1,
+        sourceText: 'line 2',
+        translation: '',
+      },
+      {
+        index: 2,
+        sourceText: 'line 3',
+        translation: 'third',
+      },
+      {
+        index: 3,
+        sourceText: 'line 4',
+        translation: 'fourth',
+      },
+    ]);
+  });
+
+  it('rejects legacy shortened arrays instead of padding wrong block positions', async () => {
+    const fetchFn = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              finish_reason: 'stop',
+              message: {
+                content: '{"006.webp":["Merged text"]}',
+              },
+            },
+          ],
+          usage: {
+            completion_tokens: 5,
+            prompt_tokens: 10,
+          },
+        }),
+        { status: 200 }
+      )
+    );
+
+    await expect(
+      performTranslationWithProvider(
+        {
+          pages: [
+            {
+              blocks: [{ text: 'line 1' }, { text: 'line 2' }],
+              pageKey: '006.webp',
+            },
+          ],
+          preferredProvider: 'openai',
+          sourceLanguage: 'ja',
+          targetLanguage: 'ar',
         },
         {
           fetchFn,

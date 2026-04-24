@@ -67,8 +67,20 @@ export function buildTranslationJsonPayload(
   }>
 ) {
   return Object.fromEntries(
-    pages.map((page) => [page.pageKey, page.blocks.map((block) => block.text)])
+    pages.map((page) => [
+      page.pageKey,
+      Object.fromEntries(
+        page.blocks.map((block, index) => [
+          buildBlockTranslationKey(index),
+          block.text,
+        ])
+      ),
+    ])
   );
+}
+
+export function buildBlockTranslationKey(index: number) {
+  return `block_${String(index).padStart(4, '0')}`;
 }
 
 export function selectPromptProfile(input: {
@@ -108,31 +120,64 @@ function buildSystemPrompt(input: {
 }) {
   const commonRules = [
     `Translate OCR text from ${input.sourceLanguage} to ${input.targetLanguage} for manga or comic dialogue.`,
-    'Return only valid JSON with the exact same keys and array lengths as the input.',
+    'The input is a JSON object keyed by page filename, then by stable OCR block id.',
+    'Return only valid JSON with the exact same page keys and block id keys as the input.',
+    'Return each block translation as a string value at the same block id key.',
+    'Never merge, drop, reorder, rename, or split block ids, even when multiple blocks look like one sentence.',
     'Do not add notes, speaker labels, markdown, code fences, or explanations.',
     'Keep translations concise enough to fit speech bubbles.',
-    'Preserve tone, honorific nuance, and emotional intent where it matters.',
+    'Translate like a premium scanlation localizer, not a literal subtitle engine.',
+    'Preserve tone, honorific nuance, hierarchy, subtext, and emotional intent where it matters.',
+    'Use polished target-language phrasing with rhythm, weight, and natural bubble flow.',
+    'Prefer compact, vivid lines over word-for-word phrasing when literal translation weakens the scene.',
+    'Keep character voices distinct: elders sound measured, rulers authoritative, strategists controlled, and angry characters sharp without becoming crude.',
+    'Preserve dramatic pauses, ellipses, and quiet menace when the original uses tension or restraint.',
+    'Remove watermarks, scan group credits, URLs, and unrelated site text by translating that block as "RTMTH".',
   ];
 
-  const profileRule = (() => {
+  const profileRules = (() => {
     switch (input.promptProfile) {
       case 'arabic_target':
-        return 'Use natural modern Arabic, keep dialogue readable in bubbles, and avoid over-literal phrasing.';
+        return [
+          'Arabic style: use elevated Modern Standard Arabic (فصحى جزلة), refined, solemn, and literary.',
+          'Do not use casual dialect. Avoid flat modern phrasing unless the character voice clearly requires simplicity.',
+          'For historical, murim, martial arts, fantasy, royal, or sect dialogue, make the Arabic feel dignified and almost poetic, with restrained grandeur.',
+          'Shape lines like Arabic scanlation bubbles: short, balanced, readable, and charged with meaning.',
+          'Use strong Arabic diction when suitable: العظمة، الهيبة، القدر، الريبة، الولاء، البصيرة، الحزم، المكر، السمو، الجحود، الارتياب.',
+          'Prefer natural Arabic rhetorical turns such as "ما كان لي أن...", "لست ممن...", "إن في ذلك...", "غير أن...", "حسبك...", and "لقد أدركت الآن..." when they fit.',
+          'Let threats remain veiled and dignified. Let wisdom sound weighty. Let ambiguity stay alive instead of over-explaining it.',
+          'Arabic punctuation and right-to-left flow must feel natural inside speech bubbles.',
+        ];
       case 'chinese_to_english':
-        return 'Treat this as manhua dialogue and preserve cultivation, fantasy, or wuxia terminology consistently.';
+        return [
+          'Treat this as manhua dialogue and preserve cultivation, fantasy, or wuxia terminology consistently.',
+          'For wuxia/xianxia scenes, use elevated English with controlled grandeur rather than casual modern phrasing.',
+        ];
       case 'japanese_to_english':
-        return 'Treat this as manga dialogue and preserve honorific nuance or speech quirks when useful for tone.';
+        return [
+          'Treat this as manga dialogue and preserve honorific nuance or speech quirks when useful for tone.',
+          'Use natural English that still carries manga timing: concise reactions, clean pauses, and readable emotional beats.',
+        ];
       case 'korean_to_english':
-        return 'Treat this as manhwa dialogue and keep relationship hierarchy and tone shifts clear.';
+        return [
+          'Treat this as manhwa dialogue and keep relationship hierarchy and tone shifts clear.',
+          'For martial, historical, regression, or royal-political scenes, keep the English refined, tense, and dramatic without sounding archaic by default.',
+        ];
       case 'latin_source_to_english':
-        return 'Prefer fluent natural English over literal wording for Latin-alphabet source languages.';
+        return [
+          'Prefer fluent natural English over literal wording for Latin-alphabet source languages.',
+          'Keep jokes, insults, and emotional turns idiomatic in English while preserving the panel rhythm.',
+        ];
       case 'generic':
       default:
-        return 'Prefer faithful but readable translation over word-for-word output.';
+        return [
+          'Prefer faithful but readable translation over word-for-word output.',
+          'Adapt the style to the target language: literary for solemn fantasy, sharp for action, warm for romance, and clean for comedy.',
+        ];
     }
   })();
 
-  return [...commonRules, profileRule].join('\n');
+  return [...commonRules, ...profileRules].join('\n');
 }
 
 function compactMangaContext(context: string) {
