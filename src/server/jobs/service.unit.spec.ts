@@ -4,11 +4,13 @@ const {
   mockDb,
   mockGetProviderGatewayManifestWithRuntimeConfig,
   mockGetTranslationJobPageUpload,
+  mockGetTranslationJobResultManifest,
   mockLogger,
   mockPerformHostedOcr,
   mockPerformHostedTranslation,
   mockPutTranslationJobPageUpload,
   mockPutTranslationJobResultManifest,
+  mockPutTranslationResultCacheManifest,
 } = vi.hoisted(() => ({
   mockDb: {
     $transaction: vi.fn(),
@@ -21,9 +23,15 @@ const {
       findUnique: vi.fn(),
       update: vi.fn(),
     },
+    translationResultCache: {
+      findUnique: vi.fn(),
+      update: vi.fn(),
+      upsert: vi.fn(),
+    },
   },
   mockGetProviderGatewayManifestWithRuntimeConfig: vi.fn(),
   mockGetTranslationJobPageUpload: vi.fn(),
+  mockGetTranslationJobResultManifest: vi.fn(),
   mockLogger: {
     error: vi.fn(),
     info: vi.fn(),
@@ -32,6 +40,7 @@ const {
   mockPerformHostedTranslation: vi.fn(),
   mockPutTranslationJobPageUpload: vi.fn(),
   mockPutTranslationJobResultManifest: vi.fn(),
+  mockPutTranslationResultCacheManifest: vi.fn(),
 }));
 
 vi.mock('@/env/server', () => ({
@@ -79,9 +88,10 @@ vi.mock('@/server/provider-gateway/service', () => ({
 
 vi.mock('@/server/jobs/storage', () => ({
   getTranslationJobPageUpload: mockGetTranslationJobPageUpload,
-  getTranslationJobResultManifest: vi.fn(),
+  getTranslationJobResultManifest: mockGetTranslationJobResultManifest,
   putTranslationJobPageUpload: mockPutTranslationJobPageUpload,
   putTranslationJobResultManifest: mockPutTranslationJobResultManifest,
+  putTranslationResultCacheManifest: mockPutTranslationResultCacheManifest,
 }));
 
 import sharp from 'sharp';
@@ -100,14 +110,19 @@ describe('job service', () => {
     mockDb.tokenLedger.updateMany.mockReset();
     mockDb.translationJob.findUnique.mockReset();
     mockDb.translationJob.update.mockReset();
+    mockDb.translationResultCache.findUnique.mockReset();
+    mockDb.translationResultCache.update.mockReset();
+    mockDb.translationResultCache.upsert.mockReset();
     mockGetProviderGatewayManifestWithRuntimeConfig.mockReset();
     mockGetTranslationJobPageUpload.mockReset();
+    mockGetTranslationJobResultManifest.mockReset();
     mockLogger.error.mockReset();
     mockLogger.info.mockReset();
     mockPerformHostedOcr.mockReset();
     mockPerformHostedTranslation.mockReset();
     mockPutTranslationJobPageUpload.mockReset();
     mockPutTranslationJobResultManifest.mockReset();
+    mockPutTranslationResultCacheManifest.mockReset();
 
     mockGetProviderGatewayManifestWithRuntimeConfig.mockResolvedValue({
       ocr: {
@@ -294,6 +309,136 @@ describe('job service', () => {
     expect(scheduleProcessing).toHaveBeenCalledWith('job-2');
   });
 
+  it('completes a fully uploaded job immediately when a cached result exists', async () => {
+    mockDb.translationJob.findUnique.mockResolvedValue(
+      buildJobRecord({
+        id: 'job-cache-hit',
+        objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+        objectKeys: [
+          'jobs/job-cache-hit/uploads/0001-first.jpg',
+          'jobs/job-cache-hit/uploads/0002-second.jpg',
+        ],
+        pageCount: 2,
+        status: 'awaiting_upload',
+      })
+    );
+    mockDb.tokenLedger.aggregate.mockResolvedValue({
+      _sum: {
+        deltaTokens: 100,
+      },
+    });
+    mockDb.translationResultCache.findUnique.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'cache-key',
+      objectKey:
+        'cache/translation-results/cache-key/translation-manifest.json',
+    });
+    mockGetTranslationJobResultManifest.mockResolvedValue({
+      completedAt: new Date('2026-03-20T09:00:00.000Z'),
+      deviceId: 'device-original',
+      jobId: 'job-original',
+      licenseId: 'license-original',
+      pageCount: 2,
+      pageOrder: ['old-001.jpg', 'old-002.jpg'],
+      pages: {
+        'old-001.jpg': {
+          blocks: [],
+          imgHeight: 100,
+          imgWidth: 80,
+          sourceLanguage: 'ja',
+          targetLanguage: 'fr',
+          translatorType: 'gemini',
+        },
+        'old-002.jpg': {
+          blocks: [
+            {
+              angle: 0,
+              height: 10,
+              symHeight: 5,
+              symWidth: 5,
+              text: 'hello',
+              translation: 'bonjour',
+              width: 20,
+              x: 1,
+              y: 2,
+            },
+          ],
+          imgHeight: 100,
+          imgWidth: 80,
+          sourceLanguage: 'ja',
+          targetLanguage: 'fr',
+          translatorType: 'gemini',
+        },
+      },
+      sourceLanguage: 'ja',
+      targetLanguage: 'fr',
+      translatorType: 'gemini',
+      version: '2026-03-20.phase11.v1',
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job-cache-hit/results/translation-manifest.json',
+    });
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        jobAsset: {
+          create: vi.fn(),
+          findFirst: vi.fn().mockResolvedValue(null),
+          update: vi.fn(),
+        },
+        tokenLedger: {
+          create: mockDb.tokenLedger.create,
+        },
+        translationJob: {
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              completedAt: new Date('2026-03-20T10:05:00.000Z'),
+              id: 'job-cache-hit',
+              objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+              objectKeys: [
+                'jobs/job-cache-hit/uploads/0001-first.jpg',
+                'jobs/job-cache-hit/uploads/0002-second.jpg',
+              ],
+              pageCount: 2,
+              sourceLanguage: 'ja',
+              spentTokens: 10,
+              status: 'completed',
+              uploadCompletedAt: new Date('2026-03-20T10:05:00.000Z'),
+            })
+          ),
+          update: vi.fn(),
+        },
+        translationResultCache: {
+          update: mockDb.translationResultCache.update,
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const scheduleProcessing = vi.fn();
+    const result = await completeTranslationJobUpload(
+      { jobId: 'job-cache-hit' },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+        now: new Date('2026-03-20T10:05:00.000Z'),
+        scheduleProcessing,
+      }
+    );
+
+    expect(result.status).toBe('completed');
+    expect(result.spentTokens).toBe(10);
+    expect(scheduleProcessing).not.toHaveBeenCalled();
+    expect(mockPerformHostedOcr).not.toHaveBeenCalled();
+    expect(mockPerformHostedTranslation).not.toHaveBeenCalled();
+    expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
+  });
+
   it('processes a queued job and stores the manifest', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {
@@ -302,6 +447,7 @@ describe('job service', () => {
             findUnique: vi.fn().mockResolvedValue(
               buildJobRecord({
                 id: 'job-3',
+                objectChecksums: ['c'.repeat(64)],
                 pageCount: 1,
                 reservedTokens: 5,
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
@@ -399,6 +545,11 @@ describe('job service', () => {
       bucketName: 'results',
       objectKey: 'jobs/job-3/results/translation-manifest.json',
     });
+    mockPutTranslationResultCacheManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'cache/translation-results/cache-key/translation-manifest.json',
+    });
 
     const result = await processTranslationJob(
       { jobId: 'job-3' },
@@ -412,6 +563,8 @@ describe('job service', () => {
     expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('bonjour');
     expect(mockDb.tokenLedger.create).toHaveBeenCalledOnce();
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
+    expect(mockPutTranslationResultCacheManifest).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.upsert).toHaveBeenCalledOnce();
   });
 
   it('keeps pages with no OCR blocks out of the translation request', async () => {
@@ -891,10 +1044,12 @@ function buildJobRecord(
     createdAt: Date;
     failedAt: Date | null;
     id: string;
+    objectChecksums: Array<string | null>;
     objectKeys: Array<string | null>;
     pageCount: number;
     queuedAt: Date | null;
     reservedTokens: number;
+    resolvedOcrProvider: 'google_cloud_vision' | null;
     sourceLanguage: string;
     spentTokens: number;
     startedAt: Date | null;
@@ -912,9 +1067,11 @@ function buildJobRecord(
   }> = {}
 ) {
   const objectKeys = overrides.objectKeys ?? ['jobs/job/uploads/0001-001.jpg'];
+  const objectChecksums =
+    overrides.objectChecksums ?? objectKeys.map(() => null);
   const assets = objectKeys.map((objectKey, index) => ({
     bucketName: objectKey ? 'uploads' : null,
-    checksumSha256: null,
+    checksumSha256: objectChecksums[index] ?? null,
     createdAt: new Date('2026-03-20T09:59:00.000Z'),
     id: `asset-${index + 1}`,
     kind: 'page_upload' as const,
@@ -947,6 +1104,7 @@ function buildJobRecord(
     pageCount: overrides.pageCount ?? assets.length,
     queuedAt: overrides.queuedAt ?? null,
     reservedTokens: overrides.reservedTokens ?? 0,
+    resolvedOcrProvider: overrides.resolvedOcrProvider ?? 'google_cloud_vision',
     resolvedTranslationProvider: 'gemini',
     sourceLanguage: overrides.sourceLanguage ?? 'auto',
     spentTokens: overrides.spentTokens ?? 0,

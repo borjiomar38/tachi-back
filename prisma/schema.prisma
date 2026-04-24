@@ -475,6 +475,26 @@ model TranslationJob {
   @@map("translation_jobs")
 }
 
+model TranslationResultCache {
+  id                   String   @id @default(cuid())
+  cacheKey             String   @unique
+  bucketName           String
+  objectKey            String
+  pageCount            Int
+  providerSignature    String
+  resultPayloadVersion String
+  sizeBytes            Int
+  sourceLanguage       String
+  targetLanguage       String
+  hitCount             Int      @default(0)
+  lastHitAt            DateTime?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([targetLanguage, createdAt])
+  @@map("translation_result_caches")
+}
+
 model JobAsset {
   id               String       @id @default(cuid())
   jobId            String

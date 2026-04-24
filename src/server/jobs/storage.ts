@@ -25,6 +25,10 @@ export function buildJobResultObjectKey(jobId: string) {
   return `jobs/${jobId}/results/translation-manifest.json`;
 }
 
+export function buildTranslationResultCacheObjectKey(cacheKey: string) {
+  return `cache/translation-results/${cacheKey}/translation-manifest.json`;
+}
+
 export async function putTranslationJobPageUpload(input: {
   body: Uint8Array;
   contentType: string;
@@ -94,6 +98,35 @@ export async function putTranslationJobResultManifest(
 
   await putObject(uploadClient, {
     body: JSON.stringify(manifest),
+    bucket: objectStorageBuckets.results,
+    contentType: 'application/json',
+    key: objectKey,
+  });
+
+  return {
+    bucketName: objectStorageBuckets.results,
+    objectKey,
+  };
+}
+
+export async function putTranslationResultCacheManifest(input: {
+  cacheKey: string;
+  manifest: TranslationJobResultManifest;
+}) {
+  const objectKey = buildTranslationResultCacheObjectKey(input.cacheKey);
+
+  if (shouldUseInlineObjectStorage) {
+    return {
+      bucketName: INLINE_STORAGE_BUCKET,
+      objectKey: buildInlineObjectKey({
+        body: Buffer.from(JSON.stringify(input.manifest)),
+        contentType: 'application/json',
+      }),
+    };
+  }
+
+  await putObject(uploadClient, {
+    body: JSON.stringify(input.manifest),
     bucket: objectStorageBuckets.results,
     contentType: 'application/json',
     key: objectKey,

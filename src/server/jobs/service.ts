@@ -17,6 +17,7 @@ import {
 } from '@/server/provider-gateway/service';
 
 import {
+  type TranslationJobResultManifest,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
   zTranslationJobControlInput,
@@ -29,6 +30,7 @@ import {
   getTranslationJobResultManifest,
   putTranslationJobPageUpload,
   putTranslationJobResultManifest,
+  putTranslationResultCacheManifest,
 } from './storage';
 
 type MobileJobActor = {
@@ -64,6 +66,7 @@ type JobRecord = {
   pageCount: number;
   queuedAt: Date | null;
   reservedTokens: number;
+  resolvedOcrProvider: ProviderType | null;
   resolvedTranslationProvider: ProviderType | null;
   sourceLanguage: string;
   spentTokens: number;
@@ -86,7 +89,31 @@ type UploadedOcrPage = {
   imageBytes: Uint8Array;
 };
 
+type UploadedOcrPageWithDimensions = UploadedOcrPage & {
+  imageHeight: number;
+  imageWidth: number;
+};
+
+type OcrBatchPlacement = {
+  fileName: string;
+  height: number;
+  offsetX: number;
+  offsetY: number;
+  width: number;
+};
+
+type OcrBatch = {
+  height: number;
+  imageBytes: Uint8Array;
+  placements: OcrBatchPlacement[];
+  width: number;
+};
+
 const JOB_RESULT_VERSION = '2026-03-20.phase11.v1' as const;
+const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
+const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
+const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
+const HOSTED_OCR_JPEG_QUALITY = 88;
 
 export class TranslationJobError extends Error {
   constructor(
@@ -409,6 +436,44 @@ export async function completeTranslationJobUpload(
     throw new TranslationJobError('insufficient_tokens', 409);
   }
 
+  const cacheKey = buildTranslationResultCacheKey({
+    job,
+    uploadAssets,
+  });
+  const cachedManifest = cacheKey
+    ? await getCachedTranslationResultManifest({
+        cacheKey,
+        dbClient,
+        job,
+        log,
+        now,
+        uploadAssets,
+      })
+    : null;
+
+  if (cacheKey && cachedManifest) {
+    const completedJob = await completeTranslationJobFromCachedManifest({
+      cacheKey,
+      dbClient,
+      job,
+      manifest: cachedManifest,
+      now,
+      spentTokens: reservedTokens,
+    });
+
+    log.info({
+      cacheKey,
+      jobId: job.id,
+      pageCount: job.pageCount,
+      scope: 'jobs',
+      status: 'completed_from_cache',
+    });
+
+    return zTranslationJobSummary.parse(
+      buildTranslationJobSummary(completedJob)
+    );
+  }
+
   const queuedJob = await dbClient.$transaction(async (tx) => {
     await tx.tokenLedger.create({
       data: {
@@ -705,6 +770,10 @@ export async function processTranslationJob(
     const manifestJson = JSON.stringify(manifest);
     const storedResult = await putTranslationJobResultManifest(manifest);
     const spentTokens = calculateReservedTokens(startedJob.pageCount);
+    const cacheKey = buildTranslationResultCacheKey({
+      job: startedJob,
+      uploadAssets,
+    });
 
     await dbClient.$transaction(async (tx) => {
       await tx.tokenLedger.updateMany({
@@ -791,6 +860,7 @@ export async function processTranslationJob(
             completedAt.getTime() +
               envServer.JOB_RESULT_RETENTION_HOURS * 60 * 60 * 1000
           ),
+          resultPayloadVersion: JOB_RESULT_VERSION,
           sourceLanguage,
           spentTokens,
           status: 'completed',
@@ -798,6 +868,25 @@ export async function processTranslationJob(
         },
       });
     });
+
+    if (cacheKey) {
+      try {
+        await storeTranslationResultCache({
+          cacheKey,
+          dbClient,
+          manifest,
+          providerSignature: buildTranslationCacheProviderSignature(startedJob),
+        });
+      } catch (cacheError) {
+        log.error({
+          cacheKey,
+          err: cacheError,
+          jobId: startedJob.id,
+          message: 'Failed to store translation result cache',
+          scope: 'jobs',
+        });
+      }
+    }
 
     log.info({
       jobId: startedJob.id,
@@ -880,6 +969,7 @@ const translationJobSelect = {
   pageCount: true,
   queuedAt: true,
   reservedTokens: true,
+  resolvedOcrProvider: true,
   resolvedTranslationProvider: true,
   sourceLanguage: true,
   spentTokens: true,
@@ -1083,6 +1173,293 @@ function calculateReservedTokens(pageCount: number) {
   return pageCount * envServer.JOB_TOKENS_PER_PAGE;
 }
 
+function buildTranslationCacheProviderSignature(job: JobRecord) {
+  return JSON.stringify({
+    ocrProvider: job.resolvedOcrProvider,
+    promptVersion: envServer.TRANSLATION_PROMPT_VERSION ?? null,
+    resultVersion: JOB_RESULT_VERSION,
+    translationProvider: job.resolvedTranslationProvider,
+  });
+}
+
+function buildTranslationResultCacheKey(input: {
+  job: JobRecord;
+  uploadAssets: JobAssetRecord[];
+}) {
+  const pageFingerprints = input.uploadAssets
+    .map((asset) => {
+      if (!asset.checksumSha256 || !asset.pageNumber) {
+        return null;
+      }
+
+      return {
+        checksumSha256: asset.checksumSha256.toLowerCase(),
+        pageNumber: asset.pageNumber,
+      };
+    })
+    .filter((page): page is NonNullable<typeof page> => Boolean(page));
+
+  if (pageFingerprints.length !== input.job.pageCount) {
+    return null;
+  }
+
+  return createHash('sha256')
+    .update(
+      JSON.stringify({
+        algorithm: '2026-04-24.v1',
+        pageCount: input.job.pageCount,
+        pages: pageFingerprints,
+        providerSignature: buildTranslationCacheProviderSignature(input.job),
+        sourceLanguage: input.job.sourceLanguage,
+        targetLanguage: input.job.targetLanguage,
+      })
+    )
+    .digest('hex');
+}
+
+async function getCachedTranslationResultManifest(input: {
+  cacheKey: string;
+  dbClient: typeof db;
+  job: JobRecord;
+  log: Pick<typeof logger, 'error' | 'info'>;
+  now: Date;
+  uploadAssets: JobAssetRecord[];
+}) {
+  const cachedResult = await input.dbClient.translationResultCache.findUnique({
+    where: {
+      cacheKey: input.cacheKey,
+    },
+  });
+
+  if (!cachedResult) {
+    return null;
+  }
+
+  try {
+    const cachedManifest = await getTranslationJobResultManifest({
+      bucketName: cachedResult.bucketName,
+      objectKey: cachedResult.objectKey,
+    });
+
+    return rebindCachedManifestToJob({
+      job: input.job,
+      manifest: cachedManifest,
+      now: input.now,
+      uploadAssets: input.uploadAssets,
+    });
+  } catch (error) {
+    input.log.error({
+      cacheKey: input.cacheKey,
+      err: error,
+      jobId: input.job.id,
+      message: 'Failed to read translation result cache',
+      scope: 'jobs',
+    });
+
+    return null;
+  }
+}
+
+function rebindCachedManifestToJob(input: {
+  job: JobRecord;
+  manifest: TranslationJobResultManifest;
+  now: Date;
+  uploadAssets: JobAssetRecord[];
+}) {
+  if (
+    input.manifest.pageCount !== input.job.pageCount ||
+    input.manifest.targetLanguage !== input.job.targetLanguage ||
+    input.manifest.pageOrder.length !== input.uploadAssets.length
+  ) {
+    return null;
+  }
+
+  const pages: Record<string, HostedPageTranslation> = {};
+  const pageOrder: string[] = [];
+
+  for (const [index, asset] of input.uploadAssets.entries()) {
+    const cachedPageKey = input.manifest.pageOrder[index];
+    const cachedPage = cachedPageKey
+      ? input.manifest.pages[cachedPageKey]
+      : null;
+
+    if (!asset.originalFileName || !cachedPage) {
+      return null;
+    }
+
+    pageOrder.push(asset.originalFileName);
+    pages[asset.originalFileName] = cachedPage;
+  }
+
+  return zTranslationJobResultManifest.parse({
+    ...input.manifest,
+    completedAt: input.now,
+    deviceId: input.job.deviceId,
+    jobId: input.job.id,
+    licenseId: input.job.licenseId,
+    pageOrder,
+    pages,
+  });
+}
+
+async function completeTranslationJobFromCachedManifest(input: {
+  cacheKey: string;
+  dbClient: typeof db;
+  job: JobRecord;
+  manifest: TranslationJobResultManifest;
+  now: Date;
+  spentTokens: number;
+}) {
+  const manifestJson = JSON.stringify(input.manifest);
+  const storedResult = await putTranslationJobResultManifest(input.manifest);
+
+  return await input.dbClient.$transaction(async (tx) => {
+    await tx.tokenLedger.create({
+      data: {
+        deltaTokens: -input.spentTokens,
+        description: `Spent tokens for cached job ${input.job.id}`,
+        deviceId: input.job.deviceId,
+        idempotencyKey: `job-spend:${input.job.id}`,
+        jobId: input.job.id,
+        licenseId: input.job.licenseId,
+        metadata: {
+          cacheHit: true,
+          cacheKey: input.cacheKey,
+          completedAt: input.now.toISOString(),
+          pageCount: input.job.pageCount,
+          translatorType: input.manifest.translatorType,
+        },
+        status: 'posted',
+        type: 'job_spend',
+      },
+    });
+
+    const existingResultAsset = await tx.jobAsset.findFirst({
+      where: {
+        jobId: input.job.id,
+        kind: 'result_manifest',
+      },
+      select: {
+        id: true,
+      },
+    });
+
+    const resultAssetData = {
+      bucketName: storedResult.bucketName,
+      metadata: {
+        cacheHit: true,
+        cacheKey: input.cacheKey,
+        pageCount: input.job.pageCount,
+        version: JOB_RESULT_VERSION,
+      },
+      mimeType: 'application/json',
+      objectKey: storedResult.objectKey,
+      sizeBytes: Buffer.byteLength(manifestJson),
+    };
+
+    if (existingResultAsset) {
+      await tx.jobAsset.update({
+        where: {
+          id: existingResultAsset.id,
+        },
+        data: resultAssetData,
+      });
+    } else {
+      await tx.jobAsset.create({
+        data: {
+          ...resultAssetData,
+          jobId: input.job.id,
+          kind: 'result_manifest',
+        },
+      });
+    }
+
+    await tx.translationResultCache.update({
+      where: {
+        cacheKey: input.cacheKey,
+      },
+      data: {
+        hitCount: {
+          increment: 1,
+        },
+        lastHitAt: input.now,
+      },
+    });
+
+    await tx.translationJob.update({
+      where: {
+        id: input.job.id,
+      },
+      data: {
+        completedAt: input.now,
+        errorCode: null,
+        errorMessage: null,
+        expiresAt: new Date(
+          input.now.getTime() +
+            envServer.JOB_RESULT_RETENTION_HOURS * 60 * 60 * 1000
+        ),
+        resultPayloadVersion: JOB_RESULT_VERSION,
+        resultSummary: {
+          cacheHit: true,
+          cacheKey: input.cacheKey,
+          pageCount: input.job.pageCount,
+        },
+        sourceLanguage: input.manifest.sourceLanguage,
+        spentTokens: input.spentTokens,
+        status: 'completed',
+        uploadCompletedAt: input.job.uploadCompletedAt ?? input.now,
+      },
+    });
+
+    return await tx.translationJob.findUniqueOrThrow({
+      where: {
+        id: input.job.id,
+      },
+      select: translationJobSelect,
+    });
+  });
+}
+
+async function storeTranslationResultCache(input: {
+  cacheKey: string;
+  dbClient: typeof db;
+  manifest: TranslationJobResultManifest;
+  providerSignature: string;
+}) {
+  const storedCacheResult = await putTranslationResultCacheManifest({
+    cacheKey: input.cacheKey,
+    manifest: input.manifest,
+  });
+  const manifestJson = JSON.stringify(input.manifest);
+
+  await input.dbClient.translationResultCache.upsert({
+    where: {
+      cacheKey: input.cacheKey,
+    },
+    create: {
+      bucketName: storedCacheResult.bucketName,
+      cacheKey: input.cacheKey,
+      objectKey: storedCacheResult.objectKey,
+      pageCount: input.manifest.pageCount,
+      providerSignature: input.providerSignature,
+      resultPayloadVersion: input.manifest.version,
+      sizeBytes: Buffer.byteLength(manifestJson),
+      sourceLanguage: input.manifest.sourceLanguage,
+      targetLanguage: input.manifest.targetLanguage,
+    },
+    update: {
+      bucketName: storedCacheResult.bucketName,
+      objectKey: storedCacheResult.objectKey,
+      pageCount: input.manifest.pageCount,
+      providerSignature: input.providerSignature,
+      resultPayloadVersion: input.manifest.version,
+      sizeBytes: Buffer.byteLength(manifestJson),
+      sourceLanguage: input.manifest.sourceLanguage,
+      targetLanguage: input.manifest.targetLanguage,
+    },
+  });
+}
+
 async function performHostedOcrForUploadedPages(input: {
   jobId: string;
   pages: UploadedOcrPage[];
@@ -1092,15 +1469,288 @@ async function performHostedOcrForUploadedPages(input: {
     ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
   }>
 > {
-  return await Promise.all(
-    input.pages.map(async (page) => ({
+  const dimensionedPages: UploadedOcrPageWithDimensions[] = [];
+  const fallbackPages: UploadedOcrPage[] = [];
+
+  for (const page of input.pages) {
+    const dimensions = await getUploadedPageImageDimensions(page.imageBytes);
+    if (!dimensions) {
+      fallbackPages.push(page);
+      continue;
+    }
+
+    dimensionedPages.push({
+      ...page,
+      imageHeight: dimensions.height,
+      imageWidth: dimensions.width,
+    });
+  }
+
+  const ocrPages: Array<{
+    fileName: string;
+    ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
+  }> = [];
+
+  for (const batch of await buildHostedOcrBatches(dimensionedPages)) {
+    const batchOcrPage = await performHostedOcr({
+      imageBytes: batch.imageBytes,
+      imageHeight: batch.height,
+      imageWidth: batch.width,
+      jobId: input.jobId,
+      pageCount: batch.placements.length,
+    });
+    ocrPages.push(...mapBatchOcrPageToOriginalPages(batch, batchOcrPage));
+  }
+
+  for (const page of fallbackPages) {
+    ocrPages.push({
       fileName: page.fileName,
       ocrPage: await performHostedOcr({
         imageBytes: page.imageBytes,
         jobId: input.jobId,
       }),
-    }))
+    });
+  }
+
+  const byFileName = new Map(ocrPages.map((page) => [page.fileName, page]));
+
+  return input.pages.map((page) => {
+    const ocrPage = byFileName.get(page.fileName);
+    if (!ocrPage) {
+      throw new Error(`Missing OCR page for ${page.fileName}`);
+    }
+    return ocrPage;
+  });
+}
+
+async function getUploadedPageImageDimensions(imageBytes: Uint8Array) {
+  try {
+    const sharp = await loadSharp();
+    const metadata = await sharp(imageBytes).metadata();
+    if (!metadata.width || !metadata.height) {
+      return null;
+    }
+
+    return {
+      height: metadata.height,
+      width: metadata.width,
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function loadSharp() {
+  return (await import('sharp')).default;
+}
+
+async function buildHostedOcrBatches(
+  pages: UploadedOcrPageWithDimensions[]
+): Promise<OcrBatch[]> {
+  const batches: UploadedOcrPageWithDimensions[][] = [];
+  let currentBatch: UploadedOcrPageWithDimensions[] = [];
+
+  for (const page of pages) {
+    const candidate = [...currentBatch, page];
+    if (currentBatch.length > 0 && !canFitHostedOcrBatch(candidate)) {
+      batches.push(currentBatch);
+      currentBatch = [page];
+      continue;
+    }
+
+    currentBatch = candidate;
+  }
+
+  if (currentBatch.length > 0) {
+    batches.push(currentBatch);
+  }
+
+  const encodedBatches: OcrBatch[] = [];
+  for (const batch of batches) {
+    encodedBatches.push(...(await encodeHostedOcrBatchSafely(batch)));
+  }
+
+  return encodedBatches;
+}
+
+function canFitHostedOcrBatch(pages: UploadedOcrPageWithDimensions[]) {
+  const width = Math.max(...pages.map((page) => page.imageWidth));
+  const height = pages.reduce((sum, page) => sum + page.imageHeight, 0);
+  const pixels = width * height;
+
+  return (
+    height <= HOSTED_OCR_MAX_BATCH_HEIGHT &&
+    pixels <= HOSTED_OCR_MAX_BATCH_PIXELS
   );
+}
+
+async function encodeHostedOcrBatchSafely(
+  pages: UploadedOcrPageWithDimensions[]
+): Promise<OcrBatch[]> {
+  if (pages.length === 0) {
+    return [];
+  }
+
+  const batch = await encodeHostedOcrBatch(pages);
+  if (
+    batch.imageBytes.byteLength <= HOSTED_OCR_MAX_INLINE_IMAGE_BYTES ||
+    pages.length === 1
+  ) {
+    return [batch];
+  }
+
+  const splitAt = Math.ceil(pages.length / 2);
+  return [
+    ...(await encodeHostedOcrBatchSafely(pages.slice(0, splitAt))),
+    ...(await encodeHostedOcrBatchSafely(pages.slice(splitAt))),
+  ];
+}
+
+async function encodeHostedOcrBatch(
+  pages: UploadedOcrPageWithDimensions[]
+): Promise<OcrBatch> {
+  const sharp = await loadSharp();
+  const width = Math.max(...pages.map((page) => page.imageWidth));
+  const height = pages.reduce((sum, page) => sum + page.imageHeight, 0);
+  const placements: OcrBatchPlacement[] = [];
+  let offsetY = 0;
+
+  for (const page of pages) {
+    placements.push({
+      fileName: page.fileName,
+      height: page.imageHeight,
+      offsetX: Math.max(Math.floor((width - page.imageWidth) / 2), 0),
+      offsetY,
+      width: page.imageWidth,
+    });
+    offsetY += page.imageHeight;
+  }
+
+  const imageBytes = await sharp({
+    create: {
+      background: '#ffffff',
+      channels: 3,
+      height,
+      width,
+    },
+  })
+    .composite(
+      pages.map((page, index) => ({
+        input: Buffer.from(page.imageBytes),
+        left: placements[index]?.offsetX ?? 0,
+        top: placements[index]?.offsetY ?? 0,
+      }))
+    )
+    .jpeg({
+      mozjpeg: true,
+      quality: HOSTED_OCR_JPEG_QUALITY,
+    })
+    .toBuffer();
+
+  return {
+    height,
+    imageBytes,
+    placements,
+    width,
+  };
+}
+
+function mapBatchOcrPageToOriginalPages(
+  batch: OcrBatch,
+  ocrPage: Awaited<ReturnType<typeof performHostedOcr>>
+) {
+  const pages = new Map<string, Awaited<ReturnType<typeof performHostedOcr>>>();
+
+  for (const placement of batch.placements) {
+    pages.set(placement.fileName, {
+      ...ocrPage,
+      blocks: [],
+      imgHeight: placement.height,
+      imgWidth: placement.width,
+    });
+  }
+
+  for (const block of ocrPage.blocks) {
+    const placement = findPlacementForOcrBlock(batch.placements, block);
+    if (!placement) {
+      continue;
+    }
+
+    const mappedBlock = mapOcrBlockToPlacement(block, placement);
+    if (!mappedBlock) {
+      continue;
+    }
+
+    pages.get(placement.fileName)?.blocks.push(mappedBlock);
+  }
+
+  return batch.placements.map((placement) => ({
+    fileName: placement.fileName,
+    ocrPage: pages.get(placement.fileName)!,
+  }));
+}
+
+function findPlacementForOcrBlock(
+  placements: OcrBatchPlacement[],
+  block: NormalizedOcrPage['blocks'][number]
+) {
+  const centerY = block.y + block.height / 2;
+  const containingPlacement = placements.find(
+    (placement) =>
+      centerY >= placement.offsetY &&
+      centerY <= placement.offsetY + placement.height
+  );
+
+  if (containingPlacement) {
+    return containingPlacement;
+  }
+
+  return placements
+    .map((placement) => ({
+      overlap: verticalOverlap(
+        block.y,
+        block.y + block.height,
+        placement.offsetY,
+        placement.offsetY + placement.height
+      ),
+      placement,
+    }))
+    .sort((left, right) => right.overlap - left.overlap)[0]?.placement;
+}
+
+function mapOcrBlockToPlacement(
+  block: NormalizedOcrPage['blocks'][number],
+  placement: OcrBatchPlacement
+): NormalizedOcrPage['blocks'][number] | null {
+  const localLeft = block.x - placement.offsetX;
+  const localTop = block.y - placement.offsetY;
+  const left = Math.max(localLeft, 0);
+  const top = Math.max(localTop, 0);
+  const right = Math.min(localLeft + block.width, placement.width);
+  const bottom = Math.min(localTop + block.height, placement.height);
+  const width = right - left;
+  const height = bottom - top;
+
+  if (width <= 0 || height <= 0) {
+    return null;
+  }
+
+  return {
+    ...block,
+    height,
+    width,
+    x: left,
+    y: top,
+  };
+}
+
+function verticalOverlap(
+  topA: number,
+  bottomA: number,
+  topB: number,
+  bottomB: number
+) {
+  return Math.max(0, Math.min(bottomA, bottomB) - Math.max(topA, topB));
 }
 
 function coalesceOcrLineBlocks(ocrPage: NormalizedOcrPage): NormalizedOcrPage {
