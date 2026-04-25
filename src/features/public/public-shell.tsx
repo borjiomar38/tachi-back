@@ -1,3 +1,4 @@
+import { DownloadIcon, LogInIcon, PackageIcon } from 'lucide-react';
 import { ReactNode } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
@@ -22,17 +23,31 @@ const legalLinks = [
   { href: '/legal/terms', label: 'Terms' },
 ] as const;
 
+const mobileTabs = [
+  {
+    href: androidApkDownload.href,
+    label: 'APK',
+    icon: PackageIcon,
+  },
+  {
+    href: '/download',
+    label: 'Télécharger',
+    icon: DownloadIcon,
+  },
+  {
+    href: '/login',
+    label: 'Se connecter',
+    icon: LogInIcon,
+  },
+] as const;
+
 export const PublicShell = (props: { children: ReactNode }) => {
   return (
     <div className="min-h-dvh bg-neutral-50 text-foreground dark:bg-neutral-950">
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden pb-20 md:pb-0">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-gradient-to-br from-warning-100/70 via-white to-positive-100/60 blur-3xl dark:from-warning-950/20 dark:via-neutral-950 dark:to-positive-950/20" />
         <header className="sticky top-0 z-20 border-b border-border/70 bg-background/90 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-            <a href="/" className="flex items-center gap-3">
-              <Logo variant="mark" className="size-10 md:hidden" />
-              <Logo className="hidden w-28 md:block" />
-            </a>
+          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3">
             <nav className="hidden items-center gap-5 md:flex">
               {primaryLinks.map((item) => (
                 <a
@@ -44,7 +59,10 @@ export const PublicShell = (props: { children: ReactNode }) => {
                 </a>
               ))}
             </nav>
-            <div className="hidden items-center gap-2 md:flex">
+            <a href="/" className="flex items-center justify-center">
+              <Logo className="w-28" />
+            </a>
+            <div className="hidden items-center justify-end gap-2 md:flex">
               <a
                 href={androidApkDownload.href}
                 className={buttonVariants({ variant: 'default', size: 'sm' })}
@@ -61,7 +79,7 @@ export const PublicShell = (props: { children: ReactNode }) => {
                 href="/login"
                 className={buttonVariants({ variant: 'ghost', size: 'sm' })}
               >
-                Staff login
+                Se connecter
               </a>
             </div>
           </div>
@@ -125,6 +143,23 @@ export const PublicShell = (props: { children: ReactNode }) => {
             </div>
           </div>
         </footer>
+        <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border/70 bg-background/95 pb-safe-bottom shadow-lg backdrop-blur md:hidden">
+          <div className="mx-auto grid max-w-6xl grid-cols-3 px-2 py-2">
+            {mobileTabs.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
+                >
+                  <Icon className="size-5" />
+                  <span className="truncate">{item.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </nav>
       </div>
     </div>
   );
