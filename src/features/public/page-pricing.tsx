@@ -23,9 +23,9 @@ const pricingNotes = [
   },
   {
     icon: KeyRoundIcon,
-    title: 'No account signup path',
+    title: 'Shared redeem codes',
     description:
-      'Access uses redeem codes and installation binding, not customer dashboards.',
+      'Redeem codes can be shared across devices or people, with usage limited by monthly tokens.',
   },
   {
     icon: ShieldCheckIcon,

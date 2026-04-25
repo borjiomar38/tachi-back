@@ -16,10 +16,12 @@ import {
   type PublicTokenPack,
 } from '@/features/public/data';
 
-export const TokenPackCard = (props: {
+interface TokenPackCardProps {
   tokenPack: PublicTokenPack;
   featured?: boolean;
-}) => {
+}
+
+export const TokenPackCard = (props: TokenPackCardProps) => {
   const { tokenPack, featured = false } = props;
   const textMutedClassName = featured
     ? 'text-neutral-300'
@@ -108,8 +110,14 @@ export const TokenPackCard = (props: {
 
         <p className={cn('text-xs leading-5', textMutedClassName)}>
           {tokenPack.checkoutEnabled
-            ? 'After payment, your redeem code is sent by email.'
+            ? 'After payment, your redeem code is emailed and can be shared across devices or people.'
             : 'Online payment is not configured in this environment yet.'}
+        </p>
+
+        <p className={cn('text-xs leading-5', textMutedClassName)}>
+          {tokenPack.checkoutEnabled
+            ? 'If monthly tokens run out, ask for an additional redeem code.'
+            : 'Contact support to configure access.'}
         </p>
       </CardContent>
     </Card>

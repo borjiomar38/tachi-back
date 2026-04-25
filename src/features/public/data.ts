@@ -85,9 +85,14 @@ export const supportFaqs: ContentBlock[] = [
       'After payment, the redeem code is sent to your email address.',
   },
   {
-    title: 'Can I change phone later?',
+    title: 'Can I share my redeem code?',
     description:
-      'Yes. If you move to another device, support can help you recover access.',
+      'Yes. You can share a redeem code across devices or people.',
+  },
+  {
+    title: 'Can I get more tokens?',
+    description:
+      'Yes. If your monthly tokens run out, ask support for an additional redeem code.',
   },
   {
     title: 'Which plan should I choose?',

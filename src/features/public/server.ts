@@ -33,6 +33,19 @@ type PublicTokenPackRow = {
   tokenAmount: number;
 };
 
+interface TokenPackMarketingPresentation {
+  marketedChaptersPerMonth: number;
+  marketingSummary: string;
+}
+
+const CHAPTER_TOKEN_COST = 10;
+
+const tokenPackMarketingSummaries: Record<string, string> = {
+  power: 'For heavy readers',
+  pro: 'Best for regular readers',
+  starter: 'Good to start',
+};
+
 export const getPublicTokenPacks = createServerFn({ method: 'GET' }).handler(
   async (): Promise<PublicTokenPack[]> => {
     const tokenPacks = await db.tokenPack.findMany({
@@ -68,7 +81,7 @@ function mapPublicTokenPack(tokenPack: PublicTokenPackRow): PublicTokenPack {
     Math.floor(totalTokens / envServer.JOB_TOKENS_PER_PAGE)
   );
   const estimatedChapters = Math.max(1, Math.round(estimatedPages / 20));
-  const marketing = getMarketingPresentation(tokenPack.key, estimatedChapters);
+  const marketing = getMarketingPresentation(tokenPack);
 
   return {
     ...tokenPack,
@@ -82,29 +95,15 @@ function mapPublicTokenPack(tokenPack: PublicTokenPackRow): PublicTokenPack {
 }
 
 function getMarketingPresentation(
-  tokenPackKey: string,
-  estimatedChapters: number
-) {
-  switch (tokenPackKey) {
-    case 'starter':
-      return {
-        marketedChaptersPerMonth: 100,
-        marketingSummary: 'Good to start',
-      };
-    case 'pro':
-      return {
-        marketedChaptersPerMonth: 500,
-        marketingSummary: 'Best for regular readers',
-      };
-    case 'power':
-      return {
-        marketedChaptersPerMonth: 1500,
-        marketingSummary: 'For heavy readers',
-      };
-    default:
-      return {
-        marketedChaptersPerMonth: estimatedChapters,
-        marketingSummary: 'Monthly manga and manhwa translation',
-      };
-  }
+  tokenPack: PublicTokenPackRow
+): TokenPackMarketingPresentation {
+  return {
+    marketedChaptersPerMonth: Math.max(
+      1,
+      Math.floor(tokenPack.tokenAmount / CHAPTER_TOKEN_COST)
+    ),
+    marketingSummary:
+      tokenPackMarketingSummaries[tokenPack.key] ??
+      'Monthly manga and manhwa translation',
+  };
 }

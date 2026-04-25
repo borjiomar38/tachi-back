@@ -30,7 +30,8 @@ export const PublicShell = (props: { children: ReactNode }) => {
         <header className="sticky top-0 z-20 border-b border-border/70 bg-background/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
             <a href="/" className="flex items-center gap-3">
-              <Logo className="w-28" />
+              <Logo variant="mark" className="size-10 md:hidden" />
+              <Logo className="hidden w-28 md:block" />
             </a>
             <nav className="hidden items-center gap-5 md:flex">
               {primaryLinks.map((item) => (
@@ -43,7 +44,7 @@ export const PublicShell = (props: { children: ReactNode }) => {
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-2">
+            <div className="hidden items-center gap-2 md:flex">
               <a
                 href={androidApkDownload.href}
                 className={buttonVariants({ variant: 'default', size: 'sm' })}
