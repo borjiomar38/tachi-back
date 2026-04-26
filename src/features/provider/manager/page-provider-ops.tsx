@@ -347,8 +347,9 @@ export const PageProviderOps = (props: {
                           placeholder="Override with a custom model name"
                         />
                         <p className="text-xs text-muted-foreground">
-                          Pick a recommended model above or type a custom model
-                          name manually.
+                          {translationProviderPrimary === 'openai'
+                            ? 'OpenAI options are loaded from the account model list. You can still type any compatible model manually.'
+                            : 'Pick a recommended model above or type a custom model name manually.'}
                         </p>
                       </div>
                     </div>

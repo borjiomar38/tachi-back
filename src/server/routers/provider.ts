@@ -13,6 +13,7 @@ import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-g
 import {
   getProviderGatewayRuntimeConfig,
   getProviderGatewayRuntimeState,
+  getProviderGatewayRuntimeStateWithDynamicModels,
   updateProviderGatewayRuntimeConfig,
 } from '@/server/provider-gateway/runtime-config';
 import { zProviderGatewayManifest } from '@/server/provider-gateway/schema';
@@ -54,12 +55,14 @@ export default {
       const config = await getProviderGatewayRuntimeConfig({
         dbClient: context.db,
       });
+      const runtimeState =
+        await getProviderGatewayRuntimeStateWithDynamicModels({
+          config: config.current,
+        });
 
       return zProviderRoutingConfigResponse.parse({
         ...config,
-        ...getProviderGatewayRuntimeState({
-          config: config.current,
-        }),
+        ...runtimeState,
       });
     }),
 
@@ -100,6 +103,10 @@ export default {
       const config = await updateProviderGatewayRuntimeConfig(input, {
         dbClient: context.db,
       });
+      const runtimeState =
+        await getProviderGatewayRuntimeStateWithDynamicModels({
+          config: config.current,
+        });
 
       context.logger.info({
         provider: config.current.translationProviderPrimary,
@@ -109,9 +116,7 @@ export default {
 
       return zProviderRoutingConfigResponse.parse({
         ...config,
-        ...getProviderGatewayRuntimeState({
-          config: config.current,
-        }),
+        ...runtimeState,
       });
     }),
 

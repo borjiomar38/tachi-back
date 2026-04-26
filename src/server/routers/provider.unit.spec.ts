@@ -1,5 +1,5 @@
 import { call } from '@orpc/server';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { mockDb } from '@/server/routers/test-utils';
 import {
@@ -51,6 +51,10 @@ describe('provider router', () => {
     });
   });
 
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it('returns the provider gateway manifest to authorized staff', async () => {
     const result = await call(providerRouter.manifest, undefined);
 
@@ -76,6 +80,43 @@ describe('provider router', () => {
         userId: 'user-1',
       },
     });
+  });
+
+  it('returns OpenAI model options from the live model list', async () => {
+    mockDb.appConfig.findUnique.mockResolvedValue(null);
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          data: [
+            { id: 'gpt-live-translation' },
+            { id: 'text-embedding-3-small' },
+            { id: 'o3-mini' },
+          ],
+        }),
+        {
+          status: 200,
+        }
+      )
+    );
+    vi.stubGlobal('fetch', fetchMock);
+
+    const result = await call(providerRouter.routingConfig, undefined);
+    const openAIProvider = result.translationProviders.find(
+      (provider) => provider.provider === 'openai'
+    );
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api.openai.com/v1/models',
+      expect.objectContaining({
+        method: 'GET',
+      })
+    );
+    expect(openAIProvider?.modelOptions).toEqual(
+      expect.arrayContaining(['gpt-test', 'gpt-live-translation', 'o3-mini'])
+    );
+    expect(openAIProvider?.modelOptions).not.toContain(
+      'text-embedding-3-small'
+    );
   });
 
   it('returns provider operations summaries', async () => {
