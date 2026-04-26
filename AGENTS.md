@@ -67,17 +67,16 @@
 - If `pnpm prisma migrate dev --name ...` is blocked by environment/runtime constraints, stop and report the issue instead of falling back to a manual migration workflow.
 
 ## Vercel Production Deploy
+- **Canonical command:** when the user says "deploy", "push and deploy", or "deploy prod", run `pnpm deploy:prod` from `/Users/macbookpro/Documents/p2/tachi/tachi-back`. Do not start with raw Vercel commands.
+- `pnpm deploy:prod` owns the exact sequence, including type-checking, `vercel pull`, production build, prebuilt deploy, deployment inspection, and mobile route health verification.
+- Vercel writes sensitive pulled secrets such as `S3_ACCESS_KEY_ID` and `S3_SECRET_ACCESS_KEY` as empty strings in `.vercel/.env.production.local`; this is expected. The deploy script overlays the local `.env` R2 values only for the local prebuilt build validation, without printing them.
 - For `tachi-back`, prefer the prebuilt deployment path. A direct `vercel deploy --prod --yes` has failed before with `deploy_failed`, an empty CLI message, and a zero-millisecond Vercel build. Do not waste time retrying that path first.
 - Use the NAEST Vercel team scope explicitly: `maleks-projects-5ef1c03`.
 - Deploy from this directory only: `/Users/macbookpro/Documents/p2/tachi/tachi-back`.
 - Standard production deploy sequence:
 
 ```bash
-pnpm lint:ts
-pnpm build
-vercel pull --yes --environment=production --scope maleks-projects-5ef1c03
-vercel build --prod --scope maleks-projects-5ef1c03
-vercel deploy --prebuilt --prod --scope maleks-projects-5ef1c03
+pnpm deploy:prod
 ```
 
 - `vercel build --prod` runs the configured production build using pulled Vercel env vars and runs `pnpm db:migrate:deploy`; confirm there are no pending migration failures before deploying.
