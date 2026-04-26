@@ -86,4 +86,105 @@ describe('manga page translation service', () => {
       })
     );
   });
+
+  it('keeps manga title and chapter labels in English for non-English page translations', async () => {
+    const translate = vi.fn().mockImplementation((input) => {
+      if (input.targetLanguage === 'en') {
+        return Promise.resolve({
+          pages: [
+            {
+              blocks: [
+                {
+                  index: 0,
+                  sourceText: '全职觉醒',
+                  translation: 'Full-Time Awakening',
+                },
+                { index: 1, sourceText: '第123话', translation: 'Chapter 123' },
+                { index: 2, sourceText: '第122话', translation: 'Chapter 122' },
+              ],
+              pageKey: 'manga_page_english',
+            },
+          ],
+        });
+      }
+
+      return Promise.resolve({
+        pages: [
+          {
+            blocks: [
+              {
+                index: 0,
+                sourceText: '作为最强觉醒者的神之兵团的队长白以',
+                translation: 'بصفته قائد أقوى فيلق من المستيقظين...',
+              },
+              { index: 1, sourceText: '动作', translation: 'أكشن' },
+            ],
+            pageKey: 'manga_page_localized',
+          },
+        ],
+      });
+    });
+
+    const result = await translateMangaPage(
+      {
+        chapters: [
+          { key: '/123', name: '第123话', url: '/123' },
+          { key: '/122', name: '第122话', url: '/122' },
+        ],
+        manga: {
+          description: '作为最强觉醒者的神之兵团的队长白以',
+          genres: ['动作'],
+          title: '全职觉醒',
+          url: '/manga/full-time-awakening',
+        },
+        sourceId: '1',
+        sourceLanguage: 'zh',
+        targetLanguage: 'ar',
+      },
+      { translate }
+    );
+
+    expect(result).toEqual({
+      chapters: [
+        { key: '/123', name: 'Chapter 123' },
+        { key: '/122', name: 'Chapter 122' },
+      ],
+      manga: {
+        description: 'بصفته قائد أقوى فيلق من المستيقظين...',
+        genres: ['أكشن'],
+        title: 'Full-Time Awakening',
+      },
+      targetLanguage: 'ar',
+    });
+    expect(translate).toHaveBeenCalledTimes(2);
+    expect(translate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [
+              { text: '全职觉醒' },
+              { text: '第123话' },
+              { text: '第122话' },
+            ],
+            pageKey: 'manga_page_english',
+          },
+        ],
+        targetLanguage: 'en',
+      })
+    );
+    expect(translate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [
+              { text: '作为最强觉醒者的神之兵团的队长白以' },
+              { text: '动作' },
+            ],
+            pageKey: 'manga_page_localized',
+          },
+        ],
+        targetLanguage: 'ar',
+      })
+    );
+  });
 });

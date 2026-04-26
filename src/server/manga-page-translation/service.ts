@@ -3,7 +3,10 @@ import { z } from 'zod';
 import { performHostedTranslation } from '@/server/provider-gateway/service';
 
 const MANGA_PAGE_KEY = 'manga_page';
+const MANGA_PAGE_ENGLISH_KEY = 'manga_page_english';
+const MANGA_PAGE_LOCALIZED_KEY = 'manga_page_localized';
 const MAX_CHAPTERS_PER_REQUEST = 500;
+const ENGLISH_TARGET_LANGUAGE = 'en';
 
 const zOptionalText = z.string().trim().max(10_000).nullish();
 
@@ -56,9 +59,9 @@ export async function translateMangaPage(
 ) {
   const input = zTranslateMangaPageInput.parse(rawInput);
   const translate = deps.translate ?? performHostedTranslation;
-  const { blocks, refs } = buildTranslationBlocks(input);
+  const blockGroups = buildTranslationBlockGroups(input);
 
-  if (blocks.length === 0) {
+  if (blockGroups.length === 0) {
     return {
       chapters: [],
       manga: {},
@@ -66,51 +69,141 @@ export async function translateMangaPage(
     };
   }
 
-  const translated = await translate({
-    mangaContext: buildMangaContext(input),
-    pages: [
-      {
-        blocks,
-        pageKey: MANGA_PAGE_KEY,
-      },
-    ],
-    sourceLanguage: input.sourceLanguage,
-    targetLanguage: input.targetLanguage,
-  });
-
-  const page = translated.pages.find(
-    (candidate) => candidate.pageKey === MANGA_PAGE_KEY
-  );
-  const translations = page?.blocks ?? [];
+  const translatedItems = (
+    await Promise.all(
+      blockGroups.map(
+        async (group) =>
+          await translateBlockGroup({
+            group,
+            input,
+            translate,
+          })
+      )
+    )
+  ).flat();
 
   return buildResponse({
     input,
-    refs,
-    translations,
+    translatedItems,
   });
 }
 
-function buildTranslationBlocks(input: TranslateMangaPageInput) {
-  const blocks: Array<{ text: string }> = [];
-  const refs: MangaPageBlockRef[] = [];
+function buildTranslationBlockGroups(input: TranslateMangaPageInput) {
+  const targetLanguage = normalizeLanguage(input.targetLanguage);
 
-  pushBlock(blocks, refs, { type: 'title' }, input.manga.title);
-  pushBlock(blocks, refs, { type: 'description' }, input.manga.description);
+  if (targetLanguage === ENGLISH_TARGET_LANGUAGE) {
+    const group = createBlockGroup(MANGA_PAGE_KEY, ENGLISH_TARGET_LANGUAGE);
 
-  input.manga.genres?.forEach((genre, index) => {
-    pushBlock(blocks, refs, { index, type: 'genre' }, genre);
-  });
+    pushBlock(group.blocks, group.refs, { type: 'title' }, input.manga.title);
+    pushBlock(
+      group.blocks,
+      group.refs,
+      { type: 'description' },
+      input.manga.description
+    );
+
+    input.manga.genres?.forEach((genre, index) => {
+      pushBlock(group.blocks, group.refs, { index, type: 'genre' }, genre);
+    });
+
+    input.chapters.forEach((chapter) => {
+      pushBlock(
+        group.blocks,
+        group.refs,
+        { key: chapter.key, type: 'chapter' },
+        chapter.name
+      );
+    });
+
+    return group.blocks.length > 0 ? [group] : [];
+  }
+
+  const englishGroup = createBlockGroup(
+    MANGA_PAGE_ENGLISH_KEY,
+    ENGLISH_TARGET_LANGUAGE
+  );
+  const localizedGroup = createBlockGroup(
+    MANGA_PAGE_LOCALIZED_KEY,
+    input.targetLanguage
+  );
+
+  pushBlock(
+    englishGroup.blocks,
+    englishGroup.refs,
+    { type: 'title' },
+    input.manga.title
+  );
 
   input.chapters.forEach((chapter) => {
     pushBlock(
-      blocks,
-      refs,
+      englishGroup.blocks,
+      englishGroup.refs,
       { key: chapter.key, type: 'chapter' },
       chapter.name
     );
   });
 
-  return { blocks, refs };
+  pushBlock(
+    localizedGroup.blocks,
+    localizedGroup.refs,
+    { type: 'description' },
+    input.manga.description
+  );
+
+  input.manga.genres?.forEach((genre, index) => {
+    pushBlock(
+      localizedGroup.blocks,
+      localizedGroup.refs,
+      { index, type: 'genre' },
+      genre
+    );
+  });
+
+  return [englishGroup, localizedGroup].filter(
+    (group) => group.blocks.length > 0
+  );
+}
+
+function createBlockGroup(pageKey: string, targetLanguage: string) {
+  return {
+    blocks: [] as Array<{ text: string }>,
+    pageKey,
+    refs: [] as MangaPageBlockRef[],
+    targetLanguage,
+  };
+}
+
+async function translateBlockGroup(input: {
+  group: ReturnType<typeof createBlockGroup>;
+  input: TranslateMangaPageInput;
+  translate: HostedTranslationFn;
+}) {
+  const translated = await input.translate({
+    mangaContext: buildMangaContext(input.input, input.group.targetLanguage),
+    pages: [
+      {
+        blocks: input.group.blocks,
+        pageKey: input.group.pageKey,
+      },
+    ],
+    sourceLanguage: input.input.sourceLanguage,
+    targetLanguage: input.group.targetLanguage,
+  });
+
+  const page = translated.pages.find(
+    (candidate) => candidate.pageKey === input.group.pageKey
+  );
+  const translatedByIndex = new Map(
+    (page?.blocks ?? []).map((block) => [
+      block.index,
+      sanitizeTranslation(block.translation),
+    ])
+  );
+
+  return input.group.refs.map((ref, index) => ({
+    ref,
+    translation: translatedByIndex.get(index) ?? '',
+  }));
 }
 
 function pushBlock(
@@ -131,18 +224,11 @@ function pushBlock(
 
 function buildResponse(input: {
   input: TranslateMangaPageInput;
-  refs: MangaPageBlockRef[];
-  translations: Array<{
-    index: number;
+  translatedItems: Array<{
+    ref: MangaPageBlockRef;
     translation: string;
   }>;
 }) {
-  const translatedByIndex = new Map(
-    input.translations.map((block) => [
-      block.index,
-      sanitizeTranslation(block.translation),
-    ])
-  );
   const manga: {
     description?: string;
     genres?: string[];
@@ -153,9 +239,7 @@ function buildResponse(input: {
     : undefined;
   const chapters: Array<{ key: string; name: string }> = [];
 
-  input.refs.forEach((ref, index) => {
-    const translation = translatedByIndex.get(index);
-
+  input.translatedItems.forEach(({ ref, translation }) => {
     if (!translation) {
       return;
     }
@@ -206,10 +290,16 @@ function sanitizeTranslation(value: string) {
   return trimmed;
 }
 
-function buildMangaContext(input: TranslateMangaPageInput) {
+function buildMangaContext(
+  input: TranslateMangaPageInput,
+  targetLanguage: string
+) {
   return [
     'Translate manga detail page metadata and chapter labels, not dialogue.',
     `Manga title: ${input.manga.title}`,
+    normalizeLanguage(targetLanguage) === ENGLISH_TARGET_LANGUAGE
+      ? 'For this request, manga title and chapter labels must be translated into English even when the app page target language is different.'
+      : null,
     input.sourceName ? `Source: ${input.sourceName}` : null,
     input.manga.author ? `Author: ${input.manga.author}` : null,
     input.manga.artist ? `Artist: ${input.manga.artist}` : null,
@@ -220,4 +310,8 @@ function buildMangaContext(input: TranslateMangaPageInput) {
   ]
     .filter(Boolean)
     .join('\n');
+}
+
+function normalizeLanguage(language: string) {
+  return language.trim().toLowerCase().split(/[-_]/)[0] ?? '';
 }
