@@ -1,4 +1,5 @@
-import { DownloadIcon, LogInIcon, PackageIcon } from 'lucide-react';
+import { useRouterState } from '@tanstack/react-router';
+import { CircleHelpIcon, DownloadIcon, HomeIcon, TagsIcon } from 'lucide-react';
 import { ReactNode } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
@@ -7,13 +8,17 @@ import { Logo } from '@/components/brand/logo';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 
-import { PUBLIC_SUPPORT_EMAIL } from '@/features/public/data';
+import {
+  PUBLIC_OWNER_WHATSAPP_DISPLAY,
+  PUBLIC_OWNER_WHATSAPP_HREF,
+  PUBLIC_SUPPORT_EMAIL,
+} from '@/features/public/data';
 import { androidApkDownload } from '@/features/public/download-assets';
 
 const primaryLinks = [
-  { href: '/#hero', label: 'Overview' },
-  { href: '/#demo', label: 'Demo' },
-  { href: '/#pricing', label: 'Pricing' },
+  { href: '/#hero', label: 'Accueil' },
+  { href: '/#demo', label: 'Démo' },
+  { href: '/#pricing', label: 'Plans' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#faq', label: 'FAQ' },
 ] as const;
@@ -25,30 +30,46 @@ const legalLinks = [
 
 const mobileTabs = [
   {
-    href: androidApkDownload.href,
-    label: 'APK',
-    icon: PackageIcon,
+    href: '/',
+    label: 'Accueil',
+    icon: HomeIcon,
+    isActive: (pathname: string) => pathname === '/',
   },
   {
     href: '/download',
     label: 'Télécharger',
     icon: DownloadIcon,
+    isActive: (pathname: string) => pathname === '/download',
   },
   {
-    href: '/login',
-    label: 'Se connecter',
-    icon: LogInIcon,
+    href: '/pricing',
+    label: 'Plans',
+    icon: TagsIcon,
+    isActive: (pathname: string) => pathname === '/pricing',
+  },
+  {
+    href: '/support',
+    label: 'Support',
+    icon: CircleHelpIcon,
+    isActive: (pathname: string) => pathname === '/support',
   },
 ] as const;
 
 export const PublicShell = (props: { children: ReactNode }) => {
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+
   return (
-    <div className="min-h-dvh bg-neutral-50 text-foreground dark:bg-neutral-950">
+    <div className="public-client-shell min-h-dvh text-foreground">
       <div className="relative overflow-hidden pb-20 md:pb-0">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-gradient-to-br from-warning-100/70 via-white to-positive-100/60 blur-3xl dark:from-warning-950/20 dark:via-neutral-950 dark:to-positive-950/20" />
+        <div className="public-client-ambient pointer-events-none absolute inset-x-0 top-0 h-80" />
         <header className="sticky top-0 z-20 border-b border-border/70 bg-background/90 backdrop-blur">
-          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3">
-            <nav className="hidden items-center gap-5 md:flex">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-4 py-3 md:grid-cols-[auto_1fr_auto]">
+            <a href="/" className="flex items-center justify-center md:justify-start">
+              <Logo variant="compact" className="w-40" />
+            </a>
+            <nav className="hidden items-center justify-center gap-5 md:flex">
               {primaryLinks.map((item) => (
                 <a
                   key={item.href}
@@ -59,21 +80,12 @@ export const PublicShell = (props: { children: ReactNode }) => {
                 </a>
               ))}
             </nav>
-            <a href="/" className="flex items-center justify-center">
-              <Logo className="w-28" />
-            </a>
             <div className="hidden items-center justify-end gap-2 md:flex">
               <a
                 href={androidApkDownload.href}
                 className={buttonVariants({ variant: 'default', size: 'sm' })}
               >
-                APK
-              </a>
-              <a
-                href="/download"
-                className={buttonVariants({ variant: 'secondary', size: 'sm' })}
-              >
-                Download page
+                Installer l'APK
               </a>
               <a
                 href="/login"
@@ -129,6 +141,14 @@ export const PublicShell = (props: { children: ReactNode }) => {
               <div className="space-y-3">
                 <h2 className="text-sm font-semibold">Support</h2>
                 <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                  <a
+                    href={PUBLIC_OWNER_WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground"
+                  >
+                    WhatsApp {PUBLIC_OWNER_WHATSAPP_DISPLAY}
+                  </a>
                   <a href="/support" className="hover:text-foreground">
                     Support center
                   </a>
@@ -144,14 +164,19 @@ export const PublicShell = (props: { children: ReactNode }) => {
           </div>
         </footer>
         <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border/70 bg-background/95 pb-safe-bottom shadow-lg backdrop-blur md:hidden">
-          <div className="mx-auto grid max-w-6xl grid-cols-3 px-2 py-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-4 px-2 py-2">
             {mobileTabs.map((item) => {
               const Icon = item.icon;
+              const active = item.isActive(pathname);
+
               return (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
+                  className={cn(
+                    'flex min-w-0 flex-col items-center justify-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground',
+                    active && 'bg-primary/10 text-primary ring-1 ring-primary/15'
+                  )}
                 >
                   <Icon className="size-5" />
                   <span className="truncate">{item.label}</span>
@@ -183,7 +208,7 @@ export const PublicSection = (props: {
     >
       <div className="mb-8 max-w-3xl space-y-3">
         {props.eyebrow ? (
-          <Badge variant="warning" size="sm">
+          <Badge variant="brand" size="sm">
             {props.eyebrow}
           </Badge>
         ) : null}

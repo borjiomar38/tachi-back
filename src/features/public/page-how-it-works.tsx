@@ -76,7 +76,7 @@ export const PageHowItWorks = () => {
         description="The final tutorial video should live on YouTube and play online from this page. The APK remains a direct Android download."
       >
         <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
-          <Card className="overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+          <Card className="public-ink-panel overflow-hidden rounded-[1.75rem] text-neutral-50">
             <CardContent className="p-0">
               {youtubeDemo.embedUrl ? (
                 <div className="aspect-video w-full">
@@ -92,7 +92,7 @@ export const PageHowItWorks = () => {
               ) : (
                 <div className="flex aspect-video w-full items-center justify-center bg-black">
                   <div className="max-w-sm space-y-3 px-6 text-center">
-                    <PlayCircleIcon className="mx-auto size-12 text-warning-300" />
+                    <PlayCircleIcon className="mx-auto size-12 text-brand-300" />
                     <p className="text-lg font-semibold">YouTube demo coming soon</p>
                     <p className="text-sm leading-6 text-neutral-300">
                       Add the YouTube embed link once the final video is online.
@@ -160,10 +160,10 @@ export const PageHowItWorks = () => {
         description="The core hosted flow is live, but rollout polish and support tooling still continue."
         className="pb-20"
       >
-        <Card className="rounded-[1.5rem] border-warning-200 bg-warning-50/80 dark:border-warning-900/60 dark:bg-warning-950/15">
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
           <CardHeader className="gap-2">
             <CardTitle className="text-lg">Current follow-up work</CardTitle>
-            <CardDescription className="text-warning-900 dark:text-warning-100">
+            <CardDescription className="text-brand-950 dark:text-brand-100">
               Lemon Squeezy checkout, webhook fulfillment, redeem-code
               activation, device-bound mobile sessions, and Android hosted mode
               are in place. Remaining work is around recovery UX, review mode,

@@ -12,6 +12,8 @@ const badgeVariants = cva(
         default: 'bg-primary text-primary-foreground [a&]:hover:bg-primary/80',
         secondary:
           'bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/80',
+        brand:
+          'bg-brand-100 text-brand-800 dark:bg-brand-500/25 dark:text-brand-100 [a&]:hover:bg-brand-200 dark:[a&]:hover:bg-brand-500/35',
         negative:
           'bg-negative-100 text-negative-800 dark:bg-negative-500/25 dark:text-negative-100 [a&]:hover:bg-negative-200 dark:[a&]:hover:bg-negative-500/35',
         warning:

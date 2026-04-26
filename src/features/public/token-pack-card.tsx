@@ -32,7 +32,7 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
       className={cn(
         'h-full rounded-[1.5rem] border-border/80 bg-background/90 shadow-sm backdrop-blur',
         featured &&
-          'border-neutral-900 bg-neutral-950 text-neutral-50 dark:border-neutral-700'
+          'public-brand-panel text-neutral-50 ring-1 ring-brand-400/30'
       )}
     >
       <CardHeader className="gap-3">
@@ -44,7 +44,7 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
             </CardDescription>
           </div>
           {featured ? (
-            <Badge variant="warning" size="sm">
+            <Badge variant="brand" size="sm">
               Most popular
             </Badge>
           ) : (

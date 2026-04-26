@@ -99,7 +99,7 @@ export const PageCheckout = (props: {
         className="pb-20 pt-10"
       >
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
-          <Card className="rounded-[1.5rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+          <Card className="public-brand-panel rounded-[1.5rem] text-neutral-50">
             <CardHeader className="gap-3">
               <div className="flex items-center justify-between gap-3">
                 <div className="space-y-1">
@@ -111,7 +111,7 @@ export const PageCheckout = (props: {
                       'Hosted OCR and translation tokens.'}
                   </CardDescription>
                 </div>
-                <Badge variant="warning" size="sm">
+                <Badge variant="brand" size="sm">
                   Lemon Squeezy
                 </Badge>
               </div>

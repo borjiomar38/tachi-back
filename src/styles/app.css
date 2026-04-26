@@ -23,6 +23,18 @@
   --color-neutral-900: oklch(0.21 0.006 285.885);
   --color-neutral-950: oklch(0.141 0.005 285.823);
 
+  --color-brand-50: oklch(0.969 0.016 293.756);
+  --color-brand-100: oklch(0.943 0.029 294.588);
+  --color-brand-200: oklch(0.894 0.057 293.283);
+  --color-brand-300: oklch(0.811 0.111 293.571);
+  --color-brand-400: oklch(0.702 0.183 293.541);
+  --color-brand-500: oklch(0.606 0.25 292.717);
+  --color-brand-600: oklch(0.541 0.281 293.009);
+  --color-brand-700: oklch(0.491 0.27 292.581);
+  --color-brand-800: oklch(0.432 0.232 292.759);
+  --color-brand-900: oklch(0.38 0.189 293.745);
+  --color-brand-950: oklch(0.283 0.141 291.089);
+
   --color-negative-50: oklch(0.971 0.013 17.38);
   --color-negative-100: oklch(0.936 0.032 17.717);
   --color-negative-200: oklch(0.885 0.062 18.334);
@@ -78,6 +90,9 @@
 }
 
 :root {
+  --logo-accent: #7c3aed;
+  --logo-accent-soft: #f1e8ff;
+  --logo-accent-strong: #6d28d9;
   --background: var(--color-white);
   --foreground: var(--color-neutral-950);
   --card: var(--color-white);
@@ -116,6 +131,13 @@
 .dark {
   color-scheme: dark;
 
+  --logo-accent: #c4b5fd;
+  --logo-accent-soft: color-mix(
+    in oklch,
+    var(--color-brand-300),
+    var(--color-white) 76%
+  );
+  --logo-accent-strong: #ddd6fe;
   --background: var(--color-neutral-950);
   --foreground: var(--color-neutral-50);
   --card: var(--color-neutral-900);
@@ -199,6 +221,164 @@
     @media all and (display-mode: standalone) {
       height: 100lvh; /* Force full height on iOS standalone */
     }
+  }
+}
+
+@layer components {
+  .public-client-shell {
+    --background: oklch(0.985 0.008 293);
+    --foreground: var(--color-neutral-950);
+    --card: oklch(0.995 0.004 293);
+    --card-foreground: var(--color-neutral-950);
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-neutral-950);
+    --primary: var(--color-brand-700);
+    --primary-foreground: var(--color-white);
+    --secondary: var(--color-brand-50);
+    --secondary-foreground: var(--color-brand-950);
+    --muted: oklch(0.955 0.014 293);
+    --muted-foreground: oklch(0.47 0.028 293);
+    --accent: var(--color-brand-100);
+    --accent-foreground: var(--color-brand-950);
+    --border: oklch(0.89 0.027 293);
+    --input: oklch(0.89 0.027 293);
+    --ring: var(--color-brand-400);
+    background:
+      radial-gradient(
+        circle at 14% -4%,
+        color-mix(in oklch, var(--color-brand-200), transparent 18%),
+        transparent 28rem
+      ),
+      radial-gradient(
+        circle at 94% 8%,
+        color-mix(in oklch, var(--color-brand-100), transparent 24%),
+        transparent 30rem
+      ),
+      var(--background);
+  }
+
+  .dark .public-client-shell {
+    --background: oklch(0.145 0.021 293);
+    --foreground: var(--color-neutral-50);
+    --card: oklch(0.18 0.024 293);
+    --card-foreground: var(--color-neutral-50);
+    --popover: oklch(0.145 0.021 293);
+    --popover-foreground: var(--color-neutral-50);
+    --primary: var(--color-brand-300);
+    --primary-foreground: var(--color-brand-950);
+    --secondary: oklch(0.235 0.04 293);
+    --secondary-foreground: var(--color-brand-50);
+    --muted: oklch(0.215 0.026 293);
+    --muted-foreground: oklch(0.74 0.03 293);
+    --accent: oklch(0.255 0.05 293);
+    --accent-foreground: var(--color-brand-50);
+    --border: oklch(0.285 0.044 293);
+    --input: oklch(0.285 0.044 293);
+    --ring: var(--color-brand-400);
+    background:
+      radial-gradient(
+        circle at 12% -6%,
+        color-mix(in oklch, var(--color-brand-700), transparent 90%),
+        transparent 30rem
+      ),
+      radial-gradient(
+        circle at 92% 8%,
+        color-mix(in oklch, var(--color-brand-500), transparent 94%),
+        transparent 32rem
+      ),
+      var(--background);
+  }
+
+  .public-client-ambient {
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        color-mix(in oklch, var(--color-brand-200), transparent 20%),
+        transparent 24rem
+      ),
+      radial-gradient(
+        circle at 82% 18%,
+        color-mix(in oklch, var(--color-brand-100), transparent 30%),
+        transparent 26rem
+      );
+    filter: blur(42px);
+  }
+
+  .dark .public-client-ambient {
+    background:
+      radial-gradient(
+        circle at 20% 8%,
+        color-mix(in oklch, var(--color-brand-700), transparent 86%),
+        transparent 24rem
+      ),
+      radial-gradient(
+        circle at 82% 18%,
+        color-mix(in oklch, var(--color-brand-500), transparent 92%),
+        transparent 26rem
+      );
+  }
+
+  .public-brand-panel {
+    border-color: color-mix(
+      in oklch,
+      var(--color-brand-800),
+      var(--color-black) 35%
+    );
+    background:
+      radial-gradient(
+        circle at 16% 0%,
+        color-mix(in oklch, var(--color-brand-700), transparent 38%),
+        transparent 21rem
+      ),
+      linear-gradient(
+        135deg,
+        var(--color-brand-950),
+        var(--color-neutral-950) 58%,
+        oklch(0.19 0.035 293)
+      );
+    color: var(--color-neutral-50) !important;
+    box-shadow: 0 24px 80px -48px
+      color-mix(in oklch, var(--color-brand-900), black 35%);
+  }
+
+  .public-ink-panel {
+    border-color: color-mix(
+      in oklch,
+      var(--color-neutral-900),
+      var(--color-brand-900) 12%
+    );
+    background:
+      radial-gradient(
+        circle at 16% 0%,
+        color-mix(in oklch, var(--color-brand-700), transparent 80%),
+        transparent 20rem
+      ),
+      linear-gradient(135deg, var(--color-neutral-950), oklch(0.17 0.014 293));
+    color: var(--color-neutral-50) !important;
+    box-shadow: 0 24px 80px -54px
+      color-mix(in oklch, var(--color-neutral-950), black 45%);
+  }
+
+  .public-brand-panel-muted {
+    border-color: color-mix(
+      in oklch,
+      var(--color-brand-300),
+      var(--color-white) 40%
+    );
+    background: color-mix(
+      in oklch,
+      var(--color-brand-50),
+      var(--color-white) 54%
+    );
+  }
+
+  .dark .public-brand-panel-muted {
+    border-color: color-mix(
+      in oklch,
+      var(--color-brand-800),
+      var(--color-white) 6%
+    );
+    background: color-mix(in oklch, var(--color-brand-950), transparent 66%);
   }
 }
 

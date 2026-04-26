@@ -5,6 +5,7 @@ import {
   KeyRoundIcon,
   LanguagesIcon,
   MailIcon,
+  MessageCircleIcon,
   PlayCircleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
@@ -27,6 +28,8 @@ import { Textarea } from '@/components/ui/textarea';
 
 import {
   activationSteps,
+  PUBLIC_OWNER_WHATSAPP_DISPLAY,
+  PUBLIC_OWNER_WHATSAPP_HREF,
   publicHighlights,
   type PublicTokenPack,
   supportFaqs,
@@ -95,7 +98,7 @@ export const PageLanding = (props: {
         <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-background/90 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.55)] ring-1 ring-black/5 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
           <div className="grid gap-10 px-6 py-8 md:px-10 md:py-12 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
-              <Badge variant="warning" size="sm">
+              <Badge variant="brand" size="sm">
                 Manga & manhwa translation
               </Badge>
               <div className="space-y-4">
@@ -144,13 +147,13 @@ export const PageLanding = (props: {
                 </a>
               </div>
 
-              <Card className="rounded-[1.5rem] border-warning-200 bg-warning-50/80 dark:border-warning-900/60 dark:bg-warning-950/15">
+              <Card className="public-brand-panel-muted rounded-[1.5rem]">
                 <CardHeader className="gap-2">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <SmartphoneIcon className="size-5" />
                     Simple user flow
                   </CardTitle>
-                  <CardDescription className="text-warning-900 dark:text-warning-100">
+                  <CardDescription className="text-brand-950 dark:text-brand-100">
                     Pay for a plan, receive your redeem code, enter it once
                     in the app, and translate the chapters you want to read.
                   </CardDescription>
@@ -170,7 +173,7 @@ export const PageLanding = (props: {
             </div>
 
             <div className="grid gap-4">
-              <Card className="overflow-hidden rounded-[1.5rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+              <Card className="public-brand-panel overflow-hidden rounded-[1.5rem] text-neutral-50">
                 <CardContent className="p-0">
                   <div className="border-b border-white/10 px-5 py-4">
                     <p className="text-sm font-medium tracking-[0.22em] text-neutral-300 uppercase">
@@ -219,7 +222,7 @@ export const PageLanding = (props: {
         title="See how it feels in the app"
         description="The goal is simple: open a chapter, activate your plan once, translate, and keep reading your manga or manhwa."
       >
-        <Card className="mb-4 overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+        <Card className="public-ink-panel mb-4 overflow-hidden rounded-[1.75rem] text-neutral-50">
           <CardHeader className="gap-2 border-b border-white/10">
             <CardTitle className="text-2xl">Video demo</CardTitle>
             <CardDescription className="text-neutral-300">
@@ -242,7 +245,7 @@ export const PageLanding = (props: {
             ) : (
               <div className="flex aspect-video w-full items-center justify-center bg-black">
                 <div className="max-w-sm space-y-3 px-6 text-center">
-                  <PlayCircleIcon className="mx-auto size-12 text-warning-300" />
+                  <PlayCircleIcon className="mx-auto size-12 text-brand-300" />
                   <p className="text-lg font-semibold">YouTube demo coming soon</p>
                   <p className="text-sm leading-6 text-neutral-300">
                     Upload the final tutorial to YouTube, then add the embed
@@ -289,7 +292,7 @@ export const PageLanding = (props: {
         </Card>
 
         <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-            <Card className="overflow-hidden rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+            <Card className="public-ink-panel overflow-hidden rounded-[1.75rem] text-neutral-50">
               <CardHeader className="gap-2 border-b border-white/10">
               <CardTitle className="text-2xl">Simple reading flow</CardTitle>
               <CardDescription className="text-neutral-300">
@@ -316,7 +319,7 @@ export const PageLanding = (props: {
                   </div>
                 </div>
                 <div className="hidden justify-center lg:flex">
-                  <ArrowRightIcon className="size-7 text-warning-300" />
+                  <ArrowRightIcon className="size-7 text-brand-300" />
                 </div>
                 <div className="rounded-[1.25rem] bg-white p-4 text-neutral-950">
                   <p className="text-sm font-medium tracking-[0.2em] text-neutral-500 uppercase">
@@ -336,7 +339,7 @@ export const PageLanding = (props: {
                 </div>
               </div>
 
-              <div className="rounded-[1.25rem] border border-white/10 bg-gradient-to-r from-warning-400/15 to-positive-400/10 px-4 py-4">
+              <div className="rounded-[1.25rem] border border-brand-300/15 bg-brand-400/10 px-4 py-4">
                 <p className="text-sm font-medium tracking-[0.2em] text-neutral-300 uppercase">
                   Simple result
                 </p>
@@ -405,13 +408,13 @@ export const PageLanding = (props: {
         description="Use the form below if you have a question about plans, payment, activation, or app setup."
       >
         <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <Card className="rounded-[1.75rem] border-neutral-900 bg-neutral-950 text-neutral-50">
+          <Card className="public-ink-panel rounded-[1.75rem] text-neutral-50">
             <CardHeader className="gap-4">
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" size="sm">
                   Contact form
                 </Badge>
-                <Badge variant="warning" size="sm">
+                <Badge variant="brand" size="sm">
                   Stored in support inbox
                 </Badge>
               </div>
@@ -422,6 +425,51 @@ export const PageLanding = (props: {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5">
+              <div className="public-brand-panel-muted rounded-[1.35rem] p-4 md:p-5">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0 space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="flex size-10 items-center justify-center rounded-2xl bg-positive-100 text-positive-700 ring-1 ring-positive-200 dark:bg-positive-500/15 dark:text-positive-200 dark:ring-positive-500/25">
+                        <MessageCircleIcon className="size-5" />
+                      </span>
+                      <div>
+                        <div className="flex flex-wrap gap-2">
+                          <Badge variant="brand" size="sm">
+                            WhatsApp
+                          </Badge>
+                          <Badge variant="positive" size="sm">
+                            Fastest reply
+                          </Badge>
+                        </div>
+                        <p className="mt-2 text-sm font-semibold text-brand-950 dark:text-brand-100">
+                          WhatsApp support
+                        </p>
+                        <p className="text-xs text-brand-950/75 dark:text-brand-100/80">
+                          Fastest for payment, redeem-code, activation, and setup help.
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-brand-950/75 dark:text-brand-100/80">
+                      Owner phone: {PUBLIC_OWNER_WHATSAPP_DISPLAY}
+                    </p>
+                  </div>
+                  <a
+                    href={PUBLIC_OWNER_WHATSAPP_HREF}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={cn(
+                      buttonVariants({ variant: 'secondary', size: 'lg' }),
+                      'w-full justify-center sm:w-auto'
+                    )}
+                  >
+                    <span className="flex items-center gap-2">
+                      Message on WhatsApp
+                      <MessageCircleIcon className="size-4" />
+                    </span>
+                  </a>
+                </div>
+              </div>
+
               {props.contactStatus === 'sent' ? (
                 <div className="rounded-[1.25rem] border border-emerald-500/30 bg-emerald-500/10 px-4 py-4 text-sm text-emerald-100">
                   Your message is now stored in the support inbox. The team can
@@ -447,7 +495,7 @@ export const PageLanding = (props: {
                 className="grid gap-5 rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-4 md:p-5"
               >
                 <p className="text-xs font-medium tracking-[0.18em] text-neutral-400 uppercase">
-                  Send a request
+                  Send a detailed request
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="grid gap-2">

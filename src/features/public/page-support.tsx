@@ -1,7 +1,13 @@
-import { ArrowRightIcon, MailIcon, ShieldCheckIcon } from 'lucide-react';
+import {
+  ArrowRightIcon,
+  MailIcon,
+  MessageCircleIcon,
+  ShieldCheckIcon,
+} from 'lucide-react';
 
 import { cn } from '@/lib/tailwind/utils';
 
+import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
@@ -12,6 +18,8 @@ import {
 } from '@/components/ui/card';
 
 import {
+  PUBLIC_OWNER_WHATSAPP_DISPLAY,
+  PUBLIC_OWNER_WHATSAPP_HREF,
   PUBLIC_SUPPORT_EMAIL,
   supportFaqs,
 } from '@/features/public/data';
@@ -27,27 +35,53 @@ export const PageSupport = () => {
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-          <Card className="rounded-[1.5rem] border-neutral-900 bg-neutral-950 text-neutral-50">
-            <CardHeader className="gap-3">
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-white/10 text-neutral-50">
-                <MailIcon className="size-5" />
+          <Card className="public-brand-panel rounded-[1.5rem] text-neutral-50">
+            <CardHeader className="gap-4">
+              <div className="flex items-start gap-3">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-positive-100 text-positive-700 ring-1 ring-positive-200 dark:bg-positive-500/15 dark:text-positive-200 dark:ring-positive-500/25">
+                  <MessageCircleIcon className="size-6" />
+                </div>
+                <div className="space-y-2">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="brand" size="sm">
+                      WhatsApp
+                    </Badge>
+                    <Badge variant="positive" size="sm">
+                      Fastest reply
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-xl">WhatsApp support</CardTitle>
+                  <CardDescription className="text-neutral-300">
+                    Fastest for payment, redeem-code, activation, and setup help.
+                  </CardDescription>
+                </div>
               </div>
-              <CardTitle className="text-xl">Contact path</CardTitle>
-              <CardDescription className="text-neutral-300">
-                Replace this local placeholder with a production support mailbox
-                before launch.
-              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <a
-                href={`mailto:${PUBLIC_SUPPORT_EMAIL}`}
+                href={PUBLIC_OWNER_WHATSAPP_HREF}
+                target="_blank"
+                rel="noreferrer"
                 className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }), 'w-full')}
               >
-                {PUBLIC_SUPPORT_EMAIL}
+                <span className="flex items-center gap-2">
+                  Message on WhatsApp
+                  <MessageCircleIcon className="size-4" />
+                </span>
               </a>
               <p className="text-sm leading-6 text-neutral-300">
-                Use this route for device recovery, manual token adjustments,
-                billing questions, and privacy or legal requests.
+                Owner phone: {PUBLIC_OWNER_WHATSAPP_DISPLAY}
+              </p>
+              <a
+                href={`mailto:${PUBLIC_SUPPORT_EMAIL}`}
+                className="inline-flex items-center gap-2 text-sm font-medium text-neutral-300 transition hover:text-neutral-50"
+              >
+                <MailIcon className="size-4" />
+                Prefer email? {PUBLIC_SUPPORT_EMAIL}
+              </a>
+              <p className="text-sm leading-6 text-neutral-300">
+                Use support for device recovery, manual token adjustments,
+                billing questions, privacy, or legal requests.
               </p>
             </CardContent>
           </Card>
@@ -65,15 +99,15 @@ export const PageSupport = () => {
             </CardHeader>
             <CardContent className="grid gap-3 text-sm text-muted-foreground">
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Add the real support mailbox and SLA.
+                Include the receipt email and redeem code when asking for billing help.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
                 Use Lemon Squeezy receipts and redeem-code emails to reconcile
                 orders quickly.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Keep device recovery, refund handling, and privacy requests
-                clearly separated in the backoffice.
+                Device recovery, refund handling, and privacy requests are routed
+                through the backoffice.
               </div>
             </CardContent>
           </Card>
@@ -102,7 +136,7 @@ export const PageSupport = () => {
             className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
           >
             <span className="flex items-center gap-2">
-              Privacy placeholder
+              Privacy policy
               <ArrowRightIcon className="size-4" />
             </span>
           </a>
