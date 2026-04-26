@@ -1006,7 +1006,7 @@ describe('job service', () => {
     expect(result?.pages['002.jpg']?.blocks[0]?.translation).toBe('bonjour');
   });
 
-  it('batches readable uploaded pages into one vertical OCR request', async () => {
+  it('maps batched OCR blocks back to original page coordinates', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {
         const tx = {
@@ -1065,7 +1065,7 @@ describe('job service', () => {
         background: '#ffffff',
         channels: 3,
         height: 20,
-        width: 10,
+        width: 20,
       },
     })
       .png()
@@ -1081,14 +1081,24 @@ describe('job service', () => {
           height: 4,
           symHeight: 4,
           symWidth: 3,
-          text: 'hello',
+          text: 'top',
+          width: 5,
+          x: 7,
+          y: 5,
+        },
+        {
+          angle: 0,
+          height: 4,
+          symHeight: 4,
+          symWidth: 3,
+          text: 'bottom',
           width: 5,
           x: 1,
           y: 25,
         },
       ],
       imgHeight: 40,
-      imgWidth: 10,
+      imgWidth: 20,
       provider: 'google_cloud_vision',
       providerModel: 'TEXT_DETECTION',
       providerRequestId: 'ocr-batch',
@@ -1108,8 +1118,18 @@ describe('job service', () => {
           blocks: [
             {
               index: 0,
-              sourceText: 'hello',
-              translation: 'bonjour',
+              sourceText: 'top',
+              translation: 'haut',
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText: 'bottom',
+              translation: 'bas',
             },
           ],
           pageKey: '002.jpg',
@@ -1149,15 +1169,36 @@ describe('job service', () => {
     expect(mockPerformHostedOcr).toHaveBeenCalledWith(
       expect.objectContaining({
         imageHeight: 40,
-        imageWidth: 10,
+        imageWidth: 20,
         pageCount: 2,
       })
     );
-    expect(result?.pages['001.jpg']?.blocks).toEqual([]);
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [{ text: 'top' }],
+            pageKey: '001.jpg',
+          },
+          {
+            blocks: [{ text: 'bottom' }],
+            pageKey: '002.jpg',
+          },
+        ],
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks[0]).toEqual(
+      expect.objectContaining({
+        text: 'top',
+        translation: 'haut',
+        x: 2,
+        y: 5,
+      })
+    );
     expect(result?.pages['002.jpg']?.blocks[0]).toEqual(
       expect.objectContaining({
-        text: 'hello',
-        translation: 'bonjour',
+        text: 'bottom',
+        translation: 'bas',
         x: 1,
         y: 5,
       })

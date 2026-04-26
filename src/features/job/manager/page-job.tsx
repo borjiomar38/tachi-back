@@ -263,6 +263,9 @@ export const PageJob = (props: { params: { id: string } }) => {
                                   {usage.modelName ?? 'No model name'} ·{' '}
                                   {usage.requestCount} request
                                   {usage.requestCount === 1 ? '' : 's'}
+                                  {' · '}
+                                  {usage.pageCount} page
+                                  {usage.pageCount === 1 ? '' : 's'}
                                 </DataListText>
                               </DataListCell>
                               <DataListCell className="flex-[0.5]">

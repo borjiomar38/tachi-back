@@ -66,8 +66,18 @@ export const PublicShell = (props: { children: ReactNode }) => {
         <div className="public-client-ambient pointer-events-none absolute inset-x-0 top-0 h-80" />
         <header className="sticky top-0 z-20 border-b border-border/70 bg-background/90 backdrop-blur">
           <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-4 py-3 md:grid-cols-[auto_1fr_auto]">
-            <a href="/" className="flex items-center justify-center md:justify-start">
-              <Logo variant="compact" className="w-40" />
+            <a
+              href="/"
+              className="inline-flex items-center justify-center gap-3 md:justify-start"
+              aria-label="TachiyomiAT"
+            >
+              <Logo variant="mark" className="size-14 shrink-0" />
+              <span className="text-2xl font-extrabold tracking-normal text-foreground">
+                Tachiyomi{' '}
+                <span className="font-black" style={{ color: 'var(--logo-accent)' }}>
+                  AT
+                </span>
+              </span>
             </a>
             <nav className="hidden items-center justify-center gap-5 md:flex">
               {primaryLinks.map((item) => (
