@@ -5,7 +5,9 @@ import { performHostedTranslation } from '@/server/provider-gateway/service';
 const MANGA_PAGE_KEY = 'manga_page';
 const MANGA_PAGE_ENGLISH_KEY = 'manga_page_english';
 const MANGA_PAGE_LOCALIZED_KEY = 'manga_page_localized';
-const MAX_CHAPTERS_PER_REQUEST = 500;
+const MAX_CHAPTERS_PER_REQUEST = 2500;
+const MAX_BLOCKS_PER_TRANSLATION_GROUP = 60;
+const MAX_PARALLEL_TRANSLATION_GROUPS = 6;
 const ENGLISH_TARGET_LANGUAGE = 'en';
 
 const zOptionalText = z.string().trim().max(10_000).nullish();
@@ -51,6 +53,13 @@ type MangaPageBlockRef =
       type: 'genre';
     };
 
+interface MangaPageBlockGroup {
+  blocks: Array<{ text: string }>;
+  pageKey: string;
+  refs: MangaPageBlockRef[];
+  targetLanguage: string;
+}
+
 export async function translateMangaPage(
   rawInput: unknown,
   deps: {
@@ -69,18 +78,11 @@ export async function translateMangaPage(
     };
   }
 
-  const translatedItems = (
-    await Promise.all(
-      blockGroups.map(
-        async (group) =>
-          await translateBlockGroup({
-            group,
-            input,
-            translate,
-          })
-      )
-    )
-  ).flat();
+  const translatedItems = await translateBlockGroups({
+    groups: blockGroups,
+    input,
+    translate,
+  });
 
   return buildResponse({
     input,
@@ -88,11 +90,54 @@ export async function translateMangaPage(
   });
 }
 
+export function calculateMangaPageTranslationTokenCost(rawInput: unknown) {
+  const input = zTranslateMangaPageInput.parse(rawInput);
+
+  return buildTranslationBlockGroups(input).length;
+}
+
+async function translateBlockGroups(input: {
+  groups: MangaPageBlockGroup[];
+  input: TranslateMangaPageInput;
+  translate: HostedTranslationFn;
+}) {
+  const translatedItems: Array<{
+    ref: MangaPageBlockRef;
+    translation: string;
+  }> = [];
+
+  for (
+    let index = 0;
+    index < input.groups.length;
+    index += MAX_PARALLEL_TRANSLATION_GROUPS
+  ) {
+    const batch = input.groups.slice(
+      index,
+      index + MAX_PARALLEL_TRANSLATION_GROUPS
+    );
+    const translatedBatch = await Promise.all(
+      batch.map(
+        async (group) =>
+          await translateBlockGroup({
+            group,
+            input: input.input,
+            translate: input.translate,
+          })
+      )
+    );
+
+    translatedItems.push(...translatedBatch.flat());
+  }
+
+  return translatedItems;
+}
+
 function buildTranslationBlockGroups(input: TranslateMangaPageInput) {
   const targetLanguage = normalizeLanguage(input.targetLanguage);
 
   if (targetLanguage === ENGLISH_TARGET_LANGUAGE) {
-    const group = createBlockGroup(MANGA_PAGE_KEY, ENGLISH_TARGET_LANGUAGE);
+    let group = createBlockGroup(MANGA_PAGE_KEY, ENGLISH_TARGET_LANGUAGE);
+    const groups = [group];
 
     pushBlock(group.blocks, group.refs, { type: 'title' }, input.manga.title);
     pushBlock(
@@ -107,21 +152,17 @@ function buildTranslationBlockGroups(input: TranslateMangaPageInput) {
     });
 
     input.chapters.forEach((chapter) => {
-      pushBlock(
-        group.blocks,
-        group.refs,
-        { key: chapter.key, type: 'chapter' },
-        chapter.name
-      );
+      group = pushChapterBlock(group, groups, MANGA_PAGE_KEY, chapter);
     });
 
-    return group.blocks.length > 0 ? [group] : [];
+    return groups.filter((candidate) => candidate.blocks.length > 0);
   }
 
-  const englishGroup = createBlockGroup(
+  let englishGroup = createBlockGroup(
     MANGA_PAGE_ENGLISH_KEY,
     ENGLISH_TARGET_LANGUAGE
   );
+  const englishGroups = [englishGroup];
   const localizedGroup = createBlockGroup(
     MANGA_PAGE_LOCALIZED_KEY,
     input.targetLanguage
@@ -135,11 +176,11 @@ function buildTranslationBlockGroups(input: TranslateMangaPageInput) {
   );
 
   input.chapters.forEach((chapter) => {
-    pushBlock(
-      englishGroup.blocks,
-      englishGroup.refs,
-      { key: chapter.key, type: 'chapter' },
-      chapter.name
+    englishGroup = pushChapterBlock(
+      englishGroup,
+      englishGroups,
+      MANGA_PAGE_ENGLISH_KEY,
+      chapter
     );
   });
 
@@ -159,22 +200,51 @@ function buildTranslationBlockGroups(input: TranslateMangaPageInput) {
     );
   });
 
-  return [englishGroup, localizedGroup].filter(
+  return [...englishGroups, localizedGroup].filter(
     (group) => group.blocks.length > 0
   );
 }
 
-function createBlockGroup(pageKey: string, targetLanguage: string) {
+function createBlockGroup(
+  pageKey: string,
+  targetLanguage: string
+): MangaPageBlockGroup {
   return {
-    blocks: [] as Array<{ text: string }>,
+    blocks: [],
     pageKey,
-    refs: [] as MangaPageBlockRef[],
+    refs: [],
     targetLanguage,
   };
 }
 
+function pushChapterBlock(
+  group: MangaPageBlockGroup,
+  groups: MangaPageBlockGroup[],
+  pageKeyPrefix: string,
+  chapter: TranslateMangaPageInput['chapters'][number]
+) {
+  let targetGroup = group;
+
+  if (targetGroup.blocks.length >= MAX_BLOCKS_PER_TRANSLATION_GROUP) {
+    targetGroup = createBlockGroup(
+      `${pageKeyPrefix}_chapters_${groups.length}`,
+      targetGroup.targetLanguage
+    );
+    groups.push(targetGroup);
+  }
+
+  pushBlock(
+    targetGroup.blocks,
+    targetGroup.refs,
+    { key: chapter.key, type: 'chapter' },
+    chapter.name
+  );
+
+  return targetGroup;
+}
+
 async function translateBlockGroup(input: {
-  group: ReturnType<typeof createBlockGroup>;
+  group: MangaPageBlockGroup;
   input: TranslateMangaPageInput;
   translate: HostedTranslationFn;
 }) {

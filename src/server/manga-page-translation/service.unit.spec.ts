@@ -1,6 +1,9 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { translateMangaPage } from './service';
+import {
+  calculateMangaPageTranslationTokenCost,
+  translateMangaPage,
+} from './service';
 
 describe('manga page translation service', () => {
   it('maps translated metadata and chapter names back to the mobile response shape', async () => {
@@ -186,5 +189,76 @@ describe('manga page translation service', () => {
         targetLanguage: 'ar',
       })
     );
+  });
+
+  it('splits large chapter lists into smaller translation requests', async () => {
+    const chapters = Array.from({ length: 2000 }, (_, index) => ({
+      key: `/chapter-${index + 1}`,
+      name: `第${index + 1}话`,
+      url: `/chapter-${index + 1}`,
+    }));
+    const translate = vi.fn().mockImplementation((input) =>
+      Promise.resolve({
+        pages: input.pages.map(
+          (page: { blocks: Array<{ text: string }>; pageKey: string }) => ({
+            blocks: page.blocks.map((block, index) => ({
+              index,
+              sourceText: block.text,
+              translation:
+                block.text === '高武：登陆未来一万年'
+                  ? 'Logging Into the Future 10,000 Years'
+                  : `Chapter ${block.text.match(/\d+/)?.[0] ?? index}`,
+            })),
+            pageKey: page.pageKey,
+          })
+        ),
+      })
+    );
+
+    const result = await translateMangaPage(
+      {
+        chapters,
+        manga: {
+          title: '高武：登陆未来一万年',
+          url: '/manga/future',
+        },
+        sourceId: '1',
+        sourceLanguage: 'zh',
+        targetLanguage: 'ar',
+      },
+      { translate }
+    );
+
+    expect(result.chapters).toHaveLength(2000);
+    expect(result.manga.title).toBe('Logging Into the Future 10,000 Years');
+    expect(translate).toHaveBeenCalledTimes(34);
+    expect(
+      translate.mock.calls.every(
+        ([input]) => input.pages[0].blocks.length <= 60
+      )
+    ).toBe(true);
+  });
+
+  it('charges tokens by translation request blocks instead of raw chapter count', () => {
+    const chapters = Array.from({ length: 2000 }, (_, index) => ({
+      key: `/chapter-${index + 1}`,
+      name: `第${index + 1}话`,
+      url: `/chapter-${index + 1}`,
+    }));
+
+    expect(
+      calculateMangaPageTranslationTokenCost({
+        chapters,
+        manga: {
+          description: '武道初兴之时，恐怖的异兽入侵。',
+          genres: ['异能', '热血'],
+          title: '高武：登陆未来一万年',
+          url: '/manga/future',
+        },
+        sourceId: '1',
+        sourceLanguage: 'zh',
+        targetLanguage: 'ar',
+      })
+    ).toBe(35);
   });
 });
