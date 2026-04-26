@@ -2,6 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const {
   mockDb,
+  mockDeleteTranslationJobPageUploads,
   mockGetProviderGatewayManifestWithRuntimeConfig,
   mockGetTranslationJobPageUpload,
   mockGetTranslationJobResultManifest,
@@ -14,6 +15,9 @@ const {
 } = vi.hoisted(() => ({
   mockDb: {
     $transaction: vi.fn(),
+    jobAsset: {
+      update: vi.fn(),
+    },
     tokenLedger: {
       aggregate: vi.fn(),
       create: vi.fn(),
@@ -30,6 +34,7 @@ const {
       upsert: vi.fn(),
     },
   },
+  mockDeleteTranslationJobPageUploads: vi.fn(),
   mockGetProviderGatewayManifestWithRuntimeConfig: vi.fn(),
   mockGetTranslationJobPageUpload: vi.fn(),
   mockGetTranslationJobResultManifest: vi.fn(),
@@ -88,6 +93,7 @@ vi.mock('@/server/provider-gateway/service', () => ({
 }));
 
 vi.mock('@/server/jobs/storage', () => ({
+  deleteTranslationJobPageUploads: mockDeleteTranslationJobPageUploads,
   getTranslationJobPageUpload: mockGetTranslationJobPageUpload,
   getTranslationJobResultManifest: mockGetTranslationJobResultManifest,
   putTranslationJobPageUpload: mockPutTranslationJobPageUpload,
@@ -106,6 +112,7 @@ import {
 describe('job service', () => {
   beforeEach(() => {
     mockDb.$transaction.mockReset();
+    mockDb.jobAsset.update.mockReset();
     mockDb.tokenLedger.aggregate.mockReset();
     mockDb.tokenLedger.create.mockReset();
     mockDb.tokenLedger.updateMany.mockReset();
@@ -115,6 +122,7 @@ describe('job service', () => {
     mockDb.translationResultCache.findFirst.mockReset();
     mockDb.translationResultCache.update.mockReset();
     mockDb.translationResultCache.upsert.mockReset();
+    mockDeleteTranslationJobPageUploads.mockReset();
     mockGetProviderGatewayManifestWithRuntimeConfig.mockReset();
     mockGetTranslationJobPageUpload.mockReset();
     mockGetTranslationJobResultManifest.mockReset();

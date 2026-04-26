@@ -27,6 +27,7 @@ import {
   zTranslationJobSummary,
 } from './schema';
 import {
+  deleteTranslationJobPageUploads,
   getTranslationJobPageUpload,
   getTranslationJobResultManifest,
   putTranslationJobPageUpload,
@@ -522,6 +523,14 @@ export async function completeTranslationJobUpload(
       status: 'completed_from_cache',
     });
 
+    await cleanupCompletedJobPageUploads({
+      dbClient,
+      jobId: job.id,
+      log,
+      now,
+      uploadAssets,
+    });
+
     return zTranslationJobSummary.parse(
       buildTranslationJobSummary(completedJob)
     );
@@ -943,6 +952,14 @@ export async function processTranslationJob(
       }
     }
 
+    await cleanupCompletedJobPageUploads({
+      dbClient,
+      jobId: startedJob.id,
+      log,
+      now: completedAt,
+      uploadAssets,
+    });
+
     log.info({
       jobId: startedJob.id,
       pageCount: startedJob.pageCount,
@@ -1214,6 +1231,68 @@ function mergeAssetMetadata(
     ...(current && typeof current === 'object' ? current : {}),
     ...next,
   } as Prisma.InputJsonValue;
+}
+
+async function cleanupCompletedJobPageUploads(input: {
+  dbClient: typeof db;
+  jobId: string;
+  log: Pick<typeof logger, 'error' | 'info'>;
+  now: Date;
+  uploadAssets: JobAssetRecord[];
+}) {
+  const uploadedAssets = input.uploadAssets.filter(
+    (
+      asset
+    ): asset is JobAssetRecord & {
+      bucketName: string;
+      objectKey: string;
+    } =>
+      asset.kind === 'page_upload' &&
+      Boolean(asset.bucketName && asset.objectKey)
+  );
+
+  if (uploadedAssets.length === 0) {
+    return;
+  }
+
+  try {
+    await deleteTranslationJobPageUploads({
+      objects: uploadedAssets.map((asset) => ({
+        bucketName: asset.bucketName,
+        objectKey: asset.objectKey,
+      })),
+    });
+
+    await Promise.all(
+      uploadedAssets.map((asset) =>
+        input.dbClient.jobAsset.update({
+          where: {
+            id: asset.id,
+          },
+          data: {
+            metadata: mergeAssetMetadata(asset.metadata, {
+              deletedAt: input.now.toISOString(),
+              storageStatus: 'deleted',
+            }),
+          },
+        })
+      )
+    );
+
+    input.log.info({
+      deletedPageCount: uploadedAssets.length,
+      jobId: input.jobId,
+      message: 'Deleted completed job page uploads',
+      scope: 'jobs',
+    });
+  } catch (error) {
+    input.log.error({
+      err: error,
+      jobId: input.jobId,
+      message: 'Failed to delete completed job page uploads',
+      scope: 'jobs',
+    });
+  }
 }
 
 function getUploadedAt(metadata: unknown) {

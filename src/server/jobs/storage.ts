@@ -1,4 +1,8 @@
-import { getObject, putObject } from '@better-upload/server/helpers';
+import {
+  deleteObjects,
+  getObject,
+  putObject,
+} from '@better-upload/server/helpers';
 
 import {
   type TranslationJobResultManifest,
@@ -79,6 +83,43 @@ export async function getTranslationJobPageUpload(input: {
     bucket: input.bucketName,
     key: input.objectKey,
   });
+}
+
+export async function deleteTranslationJobPageUploads(input: {
+  objects: Array<{
+    bucketName: string;
+    objectKey: string;
+  }>;
+}) {
+  const objectsByBucket = new Map<string, Array<{ key: string }>>();
+
+  for (const object of input.objects) {
+    if (object.bucketName === INLINE_STORAGE_BUCKET) {
+      continue;
+    }
+
+    const bucketObjects = objectsByBucket.get(object.bucketName) ?? [];
+    bucketObjects.push({
+      key: object.objectKey,
+    });
+    objectsByBucket.set(object.bucketName, bucketObjects);
+  }
+
+  for (const [bucket, objects] of objectsByBucket) {
+    for (const chunk of chunkObjects(objects, 1000)) {
+      const result = await deleteObjects(uploadClient, {
+        bucket,
+        objects: chunk,
+        quiet: false,
+      });
+
+      if (result.errors.length > 0) {
+        throw new Error(
+          `Failed to delete ${result.errors.length} uploaded job page object(s).`
+        );
+      }
+    }
+  }
 }
 
 export async function putTranslationJobResultManifest(
@@ -186,6 +227,16 @@ function buildInlineObjectKey(input: {
   ).toString('base64url');
 
   return `${INLINE_STORAGE_PREFIX}${payload}`;
+}
+
+function chunkObjects<T>(items: T[], size: number) {
+  const chunks: T[][] = [];
+
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+
+  return chunks;
 }
 
 function parseInlineObjectKey(objectKey: string) {
