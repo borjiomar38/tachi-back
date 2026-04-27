@@ -320,7 +320,7 @@ export async function verifySourceDiscoveryCandidates(
 }
 
 export function calculateSourceDiscoveryPlanTokenCost() {
-  return 0;
+  return 1;
 }
 
 export function calculateSourceDiscoveryVerifyTokenCost(rawInput: unknown) {
@@ -449,7 +449,7 @@ export async function importSourceSearchMethodsFromExtensionsSource(
           searchUrlPattern: template?.searchUrlPattern ?? null,
           sourceLanguage: source.lang,
           sourceName: source.name,
-          status: methodStatus,
+          status: template ? undefined : methodStatus,
           themeKey,
           thumbnailSelector: template?.thumbnailSelector ?? null,
           titleSelector: template?.titleSelector ?? null,
@@ -617,9 +617,6 @@ async function loadSearchMethodsForCandidates(
         where: {
           sourceId: {
             in: sourceIds,
-          },
-          status: {
-            notIn: ['cloudflare', 'failed', 'unsupported'],
           },
         },
       })

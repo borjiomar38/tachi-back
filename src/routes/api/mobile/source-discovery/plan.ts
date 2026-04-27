@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import { db } from '@/server/db';
 import {
   buildApiErrorResponse,
   buildApiOkResponse,
@@ -11,6 +12,7 @@ import {
   buildMobileJobErrorResponse,
   buildMobileJobRateLimitedResponse,
 } from '@/server/jobs/http';
+import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import { ProviderGatewayError } from '@/server/provider-gateway/errors';
 import {
@@ -71,8 +73,60 @@ export const Route = createFileRoute('/api/mobile/source-discovery/plan')({
             );
           }
 
-          const plan = await buildSourceDiscoveryPlan(parsedInput.data);
           const tokenCost = calculateSourceDiscoveryPlanTokenCost();
+          const availableTokens =
+            tokenCost > 0
+              ? await getAvailableLicenseTokenBalance({
+                  licenseId: auth.license.id,
+                })
+              : 0;
+
+          if (tokenCost > 0 && availableTokens < tokenCost) {
+            routeLog.warn({
+              availableTokens,
+              clientIp: context.clientIp,
+              deviceId: auth.device.id,
+              licenseId: auth.license.id,
+              message:
+                'Rejected mobile source discovery plan without enough tokens',
+              requiredTokens: tokenCost,
+              type: 'insufficient_tokens',
+            });
+
+            return buildApiErrorResponse({
+              code: 'insufficient_tokens',
+              details: {
+                availableTokens,
+                requiredTokens: tokenCost,
+              },
+              requestId: context.requestId,
+              status: 409,
+            });
+          }
+
+          const plan = await buildSourceDiscoveryPlan(parsedInput.data);
+
+          if (tokenCost > 0) {
+            await db.tokenLedger.create({
+              data: {
+                deltaTokens: -tokenCost,
+                description: `Spent tokens for source discovery plan ${context.requestId}`,
+                deviceId: auth.device.id,
+                idempotencyKey: `source-discovery-plan:${context.requestId}`,
+                licenseId: auth.license.id,
+                metadata: {
+                  aliasCount: plan.aliases.length,
+                  candidateCount: plan.candidates.length,
+                  completedAt: new Date().toISOString(),
+                  query: parsedInput.data.query,
+                  requestId: context.requestId,
+                  targetChapter: parsedInput.data.targetChapter ?? null,
+                },
+                status: 'posted',
+                type: 'job_spend',
+              },
+            });
+          }
 
           routeLog.info({
             candidateCount: plan.candidates.length,
