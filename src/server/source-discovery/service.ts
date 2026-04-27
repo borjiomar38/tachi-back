@@ -28,8 +28,27 @@ const KEIYOUSHI_REPO_URL =
   'https://raw.githubusercontent.com/keiyoushi/extensions/repo';
 const INDEX_CACHE_TTL_MS = 30 * 60 * 1000;
 const MAX_ALIASES = 12;
+const MAX_SOURCE_DISCOVERY_CANDIDATES = 2_500;
 const MAX_VERIFY_CANDIDATES_PER_REQUEST = 120;
 const VERIFY_CANDIDATES_PER_TOKEN = 40;
+const ASIAN_SOURCE_LANGUAGES = new Set([
+  'all',
+  'zh',
+  'zh-cn',
+  'zh-hans',
+  'zh-hant',
+  'zh-hk',
+  'zh-mo',
+  'zh-sg',
+  'zh-tw',
+  'ko',
+  'kr',
+  'ja',
+  'jp',
+  'id',
+  'th',
+  'vi',
+]);
 const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'asurascans',
   'madara',
@@ -39,7 +58,12 @@ const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
 
 export const zSourceDiscoveryPlanInput = z.object({
   includeNsfw: z.boolean().default(false),
-  maxCandidates: z.number().int().min(5).max(300).default(120),
+  maxCandidates: z
+    .number()
+    .int()
+    .min(5)
+    .max(MAX_SOURCE_DISCOVERY_CANDIDATES)
+    .default(120),
   preferredLanguages: z
     .array(z.string().trim().min(1).max(32))
     .max(20)
@@ -281,6 +305,10 @@ export async function buildSourceDiscoveryPlan(
     ...(aiStrategy?.alternativeTitles ?? []),
     ...(aiStrategy?.romanizedTitles ?? []),
   ]).slice(0, MAX_ALIASES);
+  const prioritizedLanguages = uniqueNonEmpty([
+    ...input.preferredLanguages,
+    ...(aiStrategy?.probableLanguages ?? []),
+  ]).map((language) => language.toLowerCase());
   const sourceThemeHints =
     deps.sourceThemeHints ?? (await loadSourceThemeHints());
   const themeByBaseUrl = buildThemeHintMap(sourceThemeHints);
@@ -301,6 +329,7 @@ export async function buildSourceDiscoveryPlan(
             aliases,
             extension,
             input,
+            prioritizedLanguages,
             source,
             themeKey:
               themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null,
@@ -968,6 +997,7 @@ function buildCandidate(input: {
   aliases: string[];
   extension: ExtensionIndex[number];
   input: SourceDiscoveryPlanInput;
+  prioritizedLanguages: string[];
   source: ExtensionIndexSource;
   themeKey: string | null;
 }): SourceDiscoveryPlanCandidate {
@@ -981,7 +1011,7 @@ function buildCandidate(input: {
     baseUrl: input.source.baseUrl,
     extensionLang: input.extension.lang,
     extensionName: input.extension.name,
-    preferredLanguages: input.input.preferredLanguages,
+    prioritizedLanguages: input.prioritizedLanguages,
     sourceLanguage: input.source.lang,
     sourceName: input.source.name,
     themeKey: input.themeKey,
@@ -1461,7 +1491,7 @@ function scoreCandidate(input: {
   baseUrl: string;
   extensionLang: string;
   extensionName: string;
-  preferredLanguages: string[];
+  prioritizedLanguages: string[];
   sourceLanguage: string;
   sourceName: string;
   themeKey: string | null;
@@ -1469,9 +1499,11 @@ function scoreCandidate(input: {
   const haystack = `${input.extensionName} ${input.sourceName} ${input.baseUrl}`
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, ' ');
-  const preferredLanguages = new Set(
-    input.preferredLanguages.map((language) => language.toLowerCase())
+  const prioritizedLanguages = new Set(
+    input.prioritizedLanguages.map((language) => language.toLowerCase())
   );
+  const sourceLanguage = input.sourceLanguage.toLowerCase();
+  const extensionLang = input.extensionLang.toLowerCase();
   const reasonCodes: string[] = [];
   let priority = 0;
 
@@ -1500,11 +1532,20 @@ function scoreCandidate(input: {
   }
 
   if (
-    preferredLanguages.has(input.sourceLanguage.toLowerCase()) ||
-    preferredLanguages.has(input.extensionLang.toLowerCase())
+    prioritizedLanguages.has(sourceLanguage) ||
+    prioritizedLanguages.has(extensionLang)
   ) {
-    priority += 8;
+    priority += 80;
     reasonCodes.push('preferred_language');
+    reasonCodes.push('probable_original_language');
+  }
+
+  if (
+    ASIAN_SOURCE_LANGUAGES.has(sourceLanguage) ||
+    ASIAN_SOURCE_LANGUAGES.has(extensionLang)
+  ) {
+    priority += 35;
+    reasonCodes.push('asian_language');
   }
 
   if (input.sourceLanguage === 'all' || input.extensionLang === 'all') {
