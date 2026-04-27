@@ -28,6 +28,7 @@ const KEIYOUSHI_REPO_URL =
   'https://raw.githubusercontent.com/keiyoushi/extensions/repo';
 const INDEX_CACHE_TTL_MS = 30 * 60 * 1000;
 const MAX_ALIASES = 12;
+const MAX_SEARCH_QUERIES = 24;
 const MAX_SOURCE_DISCOVERY_CANDIDATES = 2_500;
 const MAX_VERIFY_CANDIDATES_PER_REQUEST = 120;
 const VERIFY_CANDIDATES_PER_TOKEN = 40;
@@ -299,12 +300,13 @@ export async function buildSourceDiscoveryPlan(
           fetchFn: deps.fetchFn,
         }).catch(() => null)
       : deps.aiSearchStrategy;
-  const aliases = uniqueNonEmpty([
+  const searchQueries = uniqueNonEmpty([
     ...deterministicAliases,
     ...(aiStrategy?.aliases ?? []),
     ...(aiStrategy?.alternativeTitles ?? []),
     ...(aiStrategy?.romanizedTitles ?? []),
-  ]).slice(0, MAX_ALIASES);
+  ]).slice(0, MAX_SEARCH_QUERIES);
+  const aliases = searchQueries.slice(0, MAX_ALIASES);
   const prioritizedLanguages = uniqueNonEmpty([
     ...input.preferredLanguages,
     ...(aiStrategy?.probableLanguages ?? []),
@@ -330,6 +332,7 @@ export async function buildSourceDiscoveryPlan(
             extension,
             input,
             prioritizedLanguages,
+            searchQueries,
             source,
             themeKey:
               themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null,
@@ -998,6 +1001,7 @@ function buildCandidate(input: {
   extension: ExtensionIndex[number];
   input: SourceDiscoveryPlanInput;
   prioritizedLanguages: string[];
+  searchQueries: string[];
   source: ExtensionIndexSource;
   themeKey: string | null;
 }): SourceDiscoveryPlanCandidate {
@@ -1030,7 +1034,7 @@ function buildCandidate(input: {
     priority,
     reasonCodes,
     repoUrl: KEIYOUSHI_REPO_URL,
-    searchQueries: input.aliases,
+    searchQueries: input.searchQueries,
     sourceId: input.source.id,
     sourceLanguage: input.source.lang,
     sourceName: input.source.name,
@@ -1191,8 +1195,13 @@ async function generateSearchStrategy(
   const prompt = [
     'You help a manga/manhwa reader find the same work across scanlation source websites.',
     'Return strict JSON with these keys: aliases, alternativeTitles, romanizedTitles, probableLanguages, searchStrategy.',
-    'Create compact search terms only. Include original-language title variants when likely, romanized titles, English title variants, and title fragments that a website search might index.',
+    'Create compact title-only search terms. Include original-language title variants when likely, romanized titles, English title variants, and title fragments that a website search might index.',
+    'If the query is likely a manhua, include known Simplified Chinese and Traditional Chinese title variants when you can infer them with high confidence.',
+    'If the query is likely a manhwa, include known Korean Hangul title variants when you can infer them with high confidence.',
+    'If the query is likely a manga, include known Japanese kanji/kana title variants when you can infer them with high confidence.',
+    'Prefer official or commonly used alternate titles over literal translations. Do not invent original-script titles when unsure.',
     'Do not include chapter words unless the title itself contains a number.',
+    'Keep aliases short and useful for website search boxes; avoid generic genre words.',
     `User query: ${input.query}`,
     input.targetChapter
       ? `The user is looking for sources around chapter ${input.targetChapter}.`
