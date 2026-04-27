@@ -369,6 +369,10 @@ export async function processWebhookEvent(
   const isSubscriptionUpdated = eventName === 'subscription_updated';
   const isSubscriptionCancelled = eventName === 'subscription_cancelled';
   const isSubscriptionExpired = eventName === 'subscription_expired';
+  const isInitialSubscriptionPayment =
+    isSubscriptionPaymentSuccess &&
+    String(event.data.attributes.billing_reason ?? '').toLowerCase() ===
+      'initial';
 
   if (
     !isOrderCreated &&
@@ -378,6 +382,24 @@ export async function processWebhookEvent(
     !isSubscriptionCancelled &&
     !isSubscriptionExpired
   ) {
+    await dbClient.webhookEvent.update({
+      where: { id: eventRecord.id },
+      data: {
+        failureMessage: null,
+        payload: event as unknown as Prisma.InputJsonValue,
+        processedAt: new Date(),
+        status: 'ignored',
+        type: eventName,
+      },
+    });
+
+    return {
+      status: 'ignored',
+      lsEventId,
+    };
+  }
+
+  if (isInitialSubscriptionPayment) {
     await dbClient.webhookEvent.update({
       where: { id: eventRecord.id },
       data: {
