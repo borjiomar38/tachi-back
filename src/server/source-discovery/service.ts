@@ -88,7 +88,7 @@ const zAiVerificationResponse = z.object({
 });
 
 const zExtensionIndexSource = z.object({
-  baseUrl: z.string().trim().min(1),
+  baseUrl: z.string().trim(),
   id: z.union([z.string(), z.number()]).transform(String),
   lang: z.string().trim().min(1),
   name: z.string().trim().min(1),
@@ -196,16 +196,18 @@ export async function buildSourceDiscoveryPlan(
   const candidates = items
     .filter((extension) => input.includeNsfw || extension.nsfw !== 1)
     .flatMap((extension) =>
-      (extension.sources ?? []).map((source) =>
-        buildCandidate({
-          aliases,
-          extension,
-          input,
-          source,
-          themeKey:
-            themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null,
-        })
-      )
+      (extension.sources ?? [])
+        .filter((source) => source.baseUrl.trim().length > 0)
+        .map((source) =>
+          buildCandidate({
+            aliases,
+            extension,
+            input,
+            source,
+            themeKey:
+              themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null,
+          })
+        )
     )
     .sort((left, right) => {
       if (right.priority !== left.priority) {
