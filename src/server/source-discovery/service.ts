@@ -52,6 +52,8 @@ const ASIAN_SOURCE_LANGUAGES = new Set([
 ]);
 const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'asurascans',
+  'baozimanhua',
+  'goda',
   'madara',
   'mangathemesia',
   'manhwaz',
@@ -210,7 +212,9 @@ export type SourceDiscoveryKnownResult = {
 
 export type SourceDiscoveryAdapterKey =
   | 'asurascans'
+  | 'baozimanhua'
   | 'generic'
+  | 'goda'
   | 'madara'
   | 'mangathemesia'
   | 'manhwaz';
@@ -1147,6 +1151,34 @@ function getAdapterSearchMethodTemplate(
         titleSelector: 'div.block > span.block',
         urlSelector: '&',
       };
+    case 'baozimanhua':
+      return {
+        chapterSelector: '.comics-chapters a',
+        descriptionSelector: 'p.comics-detail__desc',
+        detailTitleSelector: 'h1.comics-detail__title',
+        headers: null,
+        latestChapterSelector: '.comics-chapters a',
+        methodType: 'http_template',
+        resultSelector: 'div.pure-g div a.comics-card__poster',
+        searchUrlPattern: '{baseUrl}/search?q={query}',
+        thumbnailSelector: 'amp-img, img',
+        titleSelector: '&',
+        urlSelector: '&',
+      };
+    case 'goda':
+      return {
+        chapterSelector: '.chapteritem a',
+        descriptionSelector: 'main p',
+        detailTitleSelector: 'main h1, h1',
+        headers: null,
+        latestChapterSelector: '.chapteritem a',
+        methodType: 'http_template',
+        resultSelector: '.container > .cardlist .pb-2 a',
+        searchUrlPattern: '{baseUrl}/s/{query}?page={page}',
+        thumbnailSelector: 'img',
+        titleSelector: 'h3',
+        urlSelector: '&',
+      };
     case 'mangathemesia':
       return {
         chapterSelector:
@@ -1576,6 +1608,18 @@ function resolveAdapterKey(input: {
   const sourceKey = `${input.sourceName} ${input.baseUrl}`.toLowerCase();
 
   if (sourceKey.includes('asura')) return 'asurascans';
+  if (
+    sourceKey.includes('goda') ||
+    sourceKey.includes('godamh') ||
+    sourceKey.includes('g-mh') ||
+    sourceKey.includes('baozimh.org') ||
+    sourceKey.includes('m.baozimh.one')
+  ) {
+    return 'goda';
+  }
+  if (sourceKey.includes('包子') || sourceKey.includes('baozimanhua')) {
+    return 'baozimanhua';
+  }
   if (
     input.themeKey &&
     SUPPORTED_DISCOVERY_ADAPTERS.has(input.themeKey.toLowerCase())
