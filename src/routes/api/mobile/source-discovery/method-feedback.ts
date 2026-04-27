@@ -50,7 +50,7 @@ export const Route = createFileRoute(
         try {
           const { auth, rateLimit } =
             await authenticateAndRateLimitMobileJobRequest(request, {
-              bucket: 'create',
+              bucket: 'write',
               context,
             });
 
