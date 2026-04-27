@@ -158,6 +158,7 @@ export type SourceDiscoveryResultSubmitInput = z.infer<
 >;
 
 export type SourceDiscoveryKnownResult = {
+  apkName: string | null;
   baseUrl: string;
   confidence: number;
   decision: string;
@@ -165,17 +166,21 @@ export type SourceDiscoveryKnownResult = {
   extensionIconUrl: string;
   extensionLang: string;
   extensionName: string;
+  libVersion: number | null;
   latestChapterName: string | null;
   latestChapterNumber: number | null;
   mangaUrl: string;
   packageName: string;
   reason: string | null;
+  repoUrl: string | null;
   sourceId: string;
   sourceLanguage: string;
   sourceMangaUrl: string;
   sourceName: string;
   thumbnailUrl: string | null;
   title: string;
+  versionCode: number | null;
+  versionName: string | null;
 };
 
 export type SourceDiscoveryAdapterKey =
@@ -193,6 +198,7 @@ export type SourceDiscoveryPlanCandidate = {
   extensionName: string;
   iconUrl: string;
   isNsfw: boolean;
+  libVersion: number;
   packageName: string;
   priority: number;
   reasonCodes: string[];
@@ -203,6 +209,8 @@ export type SourceDiscoveryPlanCandidate = {
   sourceName: string;
   searchMethod: SourceDiscoverySearchMethod | null;
   themeKey: string | null;
+  versionCode: number;
+  versionName: string;
 };
 
 export type SourceDiscoverySearchMethod = {
@@ -319,12 +327,21 @@ export async function buildSourceDiscoveryPlan(
       searchMethods.get(candidate.sourceId) ??
       buildFallbackSearchMethod(candidate),
   }));
-  const knownResults =
+  const knownResultsRaw =
     deps.knownResults ??
     (await findKnownSourceDiscoveryResults({
       aliases,
       query: input.query,
     }).catch(() => []));
+  const extensionByPackageName = new Map(
+    items.map((extension) => [extension.pkg, extension])
+  );
+  const knownResults = knownResultsRaw.map((result) =>
+    enrichKnownResultWithExtensionMetadata(
+      result,
+      extensionByPackageName.get(result.packageName) ?? null
+    )
+  );
 
   return {
     aliasStrategy: aiStrategy ? 'ai' : 'deterministic',
@@ -856,6 +873,7 @@ function serializeKnownResult(result: {
   title: string;
 }): SourceDiscoveryKnownResult {
   return {
+    apkName: null,
     baseUrl: result.baseUrl,
     confidence: result.confidence,
     decision: result.decision,
@@ -863,18 +881,46 @@ function serializeKnownResult(result: {
     extensionIconUrl: `${KEIYOUSHI_REPO_URL}/icon/${result.packageName}.png`,
     extensionLang: result.extensionLang,
     extensionName: result.extensionName,
+    libVersion: null,
     latestChapterName: result.latestChapterName,
     latestChapterNumber: result.latestChapterNumber,
     mangaUrl: result.mangaUrl,
     packageName: result.packageName,
     reason: result.reason,
+    repoUrl: null,
     sourceId: result.sourceId,
     sourceLanguage: result.sourceLanguage,
     sourceMangaUrl: result.sourceMangaUrl,
     sourceName: result.sourceName,
     thumbnailUrl: result.thumbnailUrl,
     title: result.title,
+    versionCode: null,
+    versionName: null,
   };
+}
+
+function enrichKnownResultWithExtensionMetadata(
+  result: SourceDiscoveryKnownResult,
+  extension: ExtensionIndex[number] | null
+): SourceDiscoveryKnownResult {
+  if (!extension) {
+    return result;
+  }
+
+  return {
+    ...result,
+    apkName: extension.apk,
+    extensionIconUrl: `${KEIYOUSHI_REPO_URL}/icon/${extension.pkg}.png`,
+    libVersion: extractLibVersion(extension.version),
+    repoUrl: KEIYOUSHI_REPO_URL,
+    versionCode: extension.code,
+    versionName: extension.version,
+  };
+}
+
+function extractLibVersion(version: string): number {
+  const parsed = Number.parseFloat(version.split('.').slice(0, -1).join('.'));
+  return Number.isFinite(parsed) ? parsed : 0;
 }
 
 async function fetchExtensionIndex(input: {
@@ -949,6 +995,7 @@ function buildCandidate(input: {
     extensionName: input.extension.name,
     iconUrl: `${KEIYOUSHI_REPO_URL}/icon/${input.extension.pkg}.png`,
     isNsfw: input.extension.nsfw === 1,
+    libVersion: extractLibVersion(input.extension.version),
     packageName: input.extension.pkg,
     priority,
     reasonCodes,
@@ -959,6 +1006,8 @@ function buildCandidate(input: {
     sourceName: input.source.name,
     searchMethod: null,
     themeKey: input.themeKey,
+    versionCode: input.extension.code,
+    versionName: input.extension.version,
   };
 }
 

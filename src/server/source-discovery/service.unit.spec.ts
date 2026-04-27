@@ -82,6 +82,7 @@ describe('source discovery service', () => {
         ],
         knownResults: [
           {
+            apkName: null,
             baseUrl: 'https://asuracomic.net',
             confidence: 0.98,
             decision: 'match',
@@ -90,17 +91,21 @@ describe('source discovery service', () => {
               'https://raw.githubusercontent.com/keiyoushi/extensions/repo/icon/tachiyomi-en.asura.png',
             extensionLang: 'en',
             extensionName: 'Tachiyomi: Asura Scans',
+            libVersion: null,
             latestChapterName: 'Chapter 123',
             latestChapterNumber: 123,
             mangaUrl: 'https://asuracomic.net/series/full-awakening',
             packageName: 'eu.kanade.tachiyomi.extension.en.asura',
             reason: 'Previously confirmed by a device search',
+            repoUrl: null,
             sourceId: '1',
             sourceLanguage: 'en',
             sourceMangaUrl: '/series/full-awakening',
             sourceName: 'Asura Scans',
             thumbnailUrl: null,
             title: 'Full Awakening',
+            versionCode: null,
+            versionName: null,
           },
         ],
         now: () => new Date('2026-04-27T00:00:00.000Z'),
@@ -127,9 +132,12 @@ describe('source discovery service', () => {
       adapterKey: 'asurascans',
       apkName: 'tachiyomi-en.asura-v1.0.0.apk',
       baseUrl: 'https://asuracomic.net',
+      libVersion: 1,
       packageName: 'eu.kanade.tachiyomi.extension.en.asura',
       sourceId: '1',
       themeKey: 'madara',
+      versionCode: 1,
+      versionName: '1.0.0',
     });
     expect(firstCandidate?.reasonCodes).toContain('supported_adapter');
     expect(firstCandidate?.reasonCodes).toContain('preferred_language');
@@ -138,9 +146,13 @@ describe('source discovery service', () => {
     ).not.toContain('3');
     expect(plan.knownResults).toHaveLength(1);
     expect(plan.knownResults[0]).toMatchObject({
+      apkName: 'tachiyomi-en.asura-v1.0.0.apk',
       latestChapterNumber: 123,
+      repoUrl: 'https://raw.githubusercontent.com/keiyoushi/extensions/repo',
       packageName: 'eu.kanade.tachiyomi.extension.en.asura',
       title: 'Full Awakening',
+      versionCode: 1,
+      versionName: '1.0.0',
     });
   });
 });
