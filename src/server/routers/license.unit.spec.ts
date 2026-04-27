@@ -455,10 +455,15 @@ describe('license router', () => {
   });
 
   describe('redeem code management', () => {
-    it('creates a redeem code on an existing license by email', async () => {
+    it('creates a redeem code on a new license when only an email is provided', async () => {
       const tx = {
         license: {
-          create: vi.fn(),
+          create: vi.fn().mockResolvedValue({
+            createdAt: now,
+            deviceLimit: 0,
+            id: 'license-new',
+            key: 'LIC-NEW',
+          }),
           findFirst: vi.fn().mockResolvedValue({
             createdAt: now,
             deviceLimit: 0,
@@ -498,17 +503,26 @@ describe('license router', () => {
       expect(result).toEqual({
         createdAt: now,
         deviceLimit: 0,
-        licenseId: 'license-1',
-        licenseKey: 'LIC-123',
+        licenseId: 'license-new',
+        licenseKey: 'LIC-NEW',
         redeemCode: 'TB-AAAA-BBBB-CCCC',
         tokenAmount: 2000,
       });
-      expect(tx.license.create).not.toHaveBeenCalled();
+      expect(tx.license.findFirst).not.toHaveBeenCalled();
+      expect(tx.license.update).not.toHaveBeenCalled();
+      expect(tx.license.create).toHaveBeenCalledWith(
+        expect.objectContaining({
+          data: expect.objectContaining({
+            ownerEmail: 'reader@example.com',
+            status: 'pending',
+          }),
+        })
+      );
       expect(tx.tokenLedger.create).toHaveBeenCalledWith(
         expect.objectContaining({
           data: expect.objectContaining({
             deltaTokens: 2000,
-            licenseId: 'license-1',
+            licenseId: 'license-new',
             redeemCodeId: 'redeem-1',
           }),
         })

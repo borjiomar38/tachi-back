@@ -289,8 +289,9 @@ export const PageLicenses = (props: {
                       <DialogHeader>
                         <DialogTitle>Generate redeem</DialogTitle>
                         <DialogDescription>
-                          Create a redeem code and attach the token credit to an
-                          existing license by key or email when possible.
+                          Create an independent license and redeem code. Enter a
+                          license key only when you intentionally want to add
+                          credit to an existing license wallet.
                         </DialogDescription>
                       </DialogHeader>
                       <DialogBody className="gap-3">

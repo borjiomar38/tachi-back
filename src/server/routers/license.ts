@@ -799,26 +799,7 @@ export default {
                 ownerEmail: true,
               },
             })
-          : input.ownerEmail
-            ? await tx.license.findFirst({
-                orderBy: {
-                  createdAt: 'desc',
-                },
-                where: {
-                  ownerEmail: input.ownerEmail,
-                  status: {
-                    notIn: ['expired', 'revoked'],
-                  },
-                },
-                select: {
-                  createdAt: true,
-                  deviceLimit: true,
-                  id: true,
-                  key: true,
-                  ownerEmail: true,
-                },
-              })
-            : null;
+          : null;
 
         if (input.licenseKey && !existingLicense) {
           throw new ORPCError('NOT_FOUND');
