@@ -76,11 +76,14 @@ export const Route = createFileRoute('/api/mobile/source-discovery/verify')({
           const tokenCost = calculateSourceDiscoveryVerifyTokenCost(
             parsedInput.data
           );
-          const availableTokens = await getAvailableLicenseTokenBalance({
-            licenseId: auth.license.id,
-          });
+          const availableTokens =
+            tokenCost > 0
+              ? await getAvailableLicenseTokenBalance({
+                  licenseId: auth.license.id,
+                })
+              : 0;
 
-          if (availableTokens < tokenCost) {
+          if (tokenCost > 0 && availableTokens < tokenCost) {
             routeLog.warn({
               availableTokens,
               candidateCount: parsedInput.data.candidates.length,
@@ -108,27 +111,29 @@ export const Route = createFileRoute('/api/mobile/source-discovery/verify')({
             parsedInput.data
           );
 
-          await db.tokenLedger.create({
-            data: {
-              deltaTokens: -tokenCost,
-              description: `Spent tokens for source discovery verification ${context.requestId}`,
-              deviceId: auth.device.id,
-              idempotencyKey: `source-discovery-verify:${context.requestId}`,
-              licenseId: auth.license.id,
-              metadata: {
-                candidateCount: parsedInput.data.candidates.length,
-                completedAt: new Date().toISOString(),
-                matchCount: result.matches.filter(
-                  (match) => match.decision === 'match'
-                ).length,
-                query: parsedInput.data.query,
-                requestId: context.requestId,
-                targetChapter: parsedInput.data.targetChapter ?? null,
+          if (tokenCost > 0) {
+            await db.tokenLedger.create({
+              data: {
+                deltaTokens: -tokenCost,
+                description: `Spent tokens for source discovery verification ${context.requestId}`,
+                deviceId: auth.device.id,
+                idempotencyKey: `source-discovery-verify:${context.requestId}`,
+                licenseId: auth.license.id,
+                metadata: {
+                  candidateCount: parsedInput.data.candidates.length,
+                  completedAt: new Date().toISOString(),
+                  matchCount: result.matches.filter(
+                    (match) => match.decision === 'match'
+                  ).length,
+                  query: parsedInput.data.query,
+                  requestId: context.requestId,
+                  targetChapter: parsedInput.data.targetChapter ?? null,
+                },
+                status: 'posted',
+                type: 'job_spend',
               },
-              status: 'posted',
-              type: 'job_spend',
-            },
-          });
+            });
+          }
 
           routeLog.info({
             candidateCount: parsedInput.data.candidates.length,

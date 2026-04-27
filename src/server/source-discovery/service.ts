@@ -28,12 +28,9 @@ const MAX_VERIFY_CANDIDATES_PER_REQUEST = 120;
 const VERIFY_CANDIDATES_PER_TOKEN = 40;
 const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'asurascans',
-  'flamecomics',
   'madara',
-  'mangadex',
   'mangathemesia',
   'manhwaz',
-  'zeistmanga',
 ]);
 
 export const zSourceDiscoveryPlanInput = z.object({
@@ -119,13 +116,10 @@ export type SourceDiscoveryVerifyInput = z.infer<
 
 export type SourceDiscoveryAdapterKey =
   | 'asurascans'
-  | 'flamecomics'
   | 'generic'
   | 'madara'
-  | 'mangadex'
   | 'mangathemesia'
-  | 'manhwaz'
-  | 'zeistmanga';
+  | 'manhwaz';
 
 export type SourceDiscoveryPlanCandidate = {
   adapterKey: SourceDiscoveryAdapterKey;
@@ -280,11 +274,15 @@ export async function verifySourceDiscoveryCandidates(
 }
 
 export function calculateSourceDiscoveryPlanTokenCost() {
-  return 1;
+  return 0;
 }
 
 export function calculateSourceDiscoveryVerifyTokenCost(rawInput: unknown) {
   const input = zSourceDiscoveryVerifyInput.parse(rawInput);
+
+  if (input.candidates.length === 0) {
+    return 0;
+  }
 
   return Math.max(
     1,
@@ -783,8 +781,6 @@ function resolveAdapterKey(input: {
   const sourceKey = `${input.sourceName} ${input.baseUrl}`.toLowerCase();
 
   if (sourceKey.includes('asura')) return 'asurascans';
-  if (sourceKey.includes('flame')) return 'flamecomics';
-  if (sourceKey.includes('mangadex')) return 'mangadex';
   if (
     input.themeKey &&
     SUPPORTED_DISCOVERY_ADAPTERS.has(input.themeKey.toLowerCase())
