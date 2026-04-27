@@ -8,7 +8,7 @@ export const Route = createFileRoute('/legal/privacy')({
   head: () =>
     buildPublicPageHead(
       'Privacy Policy',
-      'Privacy placeholder for Tachiyomi Back hosted OCR and translation workflows.'
+      'Privacy policy for Tachiyomi Back hosted OCR, translation, source discovery, checkout, activation, and support.'
     ),
 });
 

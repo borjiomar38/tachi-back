@@ -75,7 +75,7 @@ export const supportFaqs: ContentBlock[] = [
   {
     title: 'What can I translate?',
     description:
-      'You can use the service for manga and manhwa chapters inside TachiyomiAT.',
+      'Only translate content you own, content in the public domain, or content you have permission to process.',
   },
   {
     title: 'Do I need API keys?',
@@ -109,7 +109,7 @@ export const supportFaqs: ContentBlock[] = [
   },
 ];
 
-export const legalEffectiveDate = 'March 19, 2026';
+export const legalEffectiveDate = 'April 27, 2026';
 
 export const formatTokenCount = (value: number) =>
   new Intl.NumberFormat('en-US').format(value);

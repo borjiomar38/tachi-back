@@ -8,7 +8,7 @@ export const Route = createFileRoute('/support')({
   head: () =>
     buildPublicPageHead(
       'Support',
-      'Public support, FAQ, and legal placeholder links for Tachiyomi Back.'
+      'Public support, FAQ, billing help, device recovery, and legal policy links for Tachiyomi Back.'
     ),
 });
 

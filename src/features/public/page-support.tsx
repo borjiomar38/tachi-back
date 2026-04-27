@@ -144,7 +144,7 @@ export const PageSupport = () => {
             href="/legal/terms"
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
-            Terms placeholder
+            Terms of service
           </a>
         </div>
       </PublicSection>

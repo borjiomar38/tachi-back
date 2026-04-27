@@ -8,7 +8,7 @@ export const Route = createFileRoute('/legal/terms')({
   head: () =>
     buildPublicPageHead(
       'Terms of Service',
-      'Terms placeholder for Tachiyomi Back token packs, redeem codes, and hosted OCR and translation processing.'
+      'Terms for Tachiyomi Back token packs, redeem codes, device activation, source discovery, OCR, and translation processing.'
     ),
 });
 

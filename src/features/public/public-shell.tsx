@@ -117,8 +117,8 @@ export const PublicShell = (props: { children: ReactNode }) => {
                 operations around TachiyomiAT.
               </p>
               <p className="text-sm text-muted-foreground">
-                Hosted mode is not live in the Android app yet. Current builds
-                still rely on local translators and user-supplied provider keys.
+                The Android app connects to hosted plans through redeem codes,
+                device activation, token accounting, and forced update checks.
               </p>
             </div>
             <div className="grid gap-8 sm:grid-cols-3">
