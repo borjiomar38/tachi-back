@@ -79,6 +79,16 @@ const envServerBase = createEnv({
       .int()
       .positive()
       .default(2592000),
+    MOBILE_ANDROID_LATEST_VERSION_CODE: z.coerce
+      .number()
+      .int()
+      .min(0)
+      .default(0),
+    MOBILE_ANDROID_LATEST_VERSION_NAME: z.string().optional(),
+    MOBILE_ANDROID_MIN_VERSION_CODE: z.coerce.number().int().min(0).default(0),
+    MOBILE_ANDROID_RELEASE_URL: z.url().optional(),
+    MOBILE_ANDROID_UPDATE_MESSAGE: z.string().optional(),
+    MOBILE_ANDROID_UPDATE_URL: z.url().optional(),
 
     LOGGER_LEVEL: z
       .enum(['trace', 'debug', 'info', 'warn', 'error', 'fatal'])
