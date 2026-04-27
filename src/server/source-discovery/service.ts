@@ -2,6 +2,20 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { z } from 'zod';
 
+import { envServer } from '@/env/server';
+import { ProviderType } from '@/server/db/generated/client';
+import {
+  createInvalidProviderResponseError,
+  createProviderConfigError,
+} from '@/server/provider-gateway/errors';
+import { getProviderGatewayRuntimeConfig } from '@/server/provider-gateway/runtime-config';
+import {
+  fetchTextWithTimeout,
+  parseJsonObjectText,
+  parseJsonResponse,
+  retryProviderCall,
+} from '@/server/provider-gateway/utils';
+
 import { GENERATED_SOURCE_THEME_HINTS } from './theme-hints.generated';
 
 const KEIYOUSHI_INDEX_URL =
@@ -10,6 +24,8 @@ const KEIYOUSHI_REPO_URL =
   'https://raw.githubusercontent.com/keiyoushi/extensions/repo';
 const INDEX_CACHE_TTL_MS = 30 * 60 * 1000;
 const MAX_ALIASES = 12;
+const MAX_VERIFY_CANDIDATES_PER_REQUEST = 120;
+const VERIFY_CANDIDATES_PER_TOKEN = 40;
 const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'asurascans',
   'flamecomics',
@@ -30,6 +46,48 @@ export const zSourceDiscoveryPlanInput = z.object({
     .default([]),
   query: z.string().trim().min(1).max(200),
   targetChapter: z.number().int().positive().optional(),
+});
+
+export const zSourceDiscoveryVerifyInput = z.object({
+  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
+  candidates: z
+    .array(
+      z.object({
+        baseUrl: z.string().trim().min(1).max(2_000),
+        candidateId: z.string().trim().min(1).max(500),
+        description: z.string().trim().max(4_000).nullish(),
+        extensionName: z.string().trim().min(1).max(200),
+        latestChapterName: z.string().trim().max(500).nullish(),
+        latestChapterNumber: z.number().nonnegative().nullish(),
+        mangaUrl: z.string().trim().max(2_000).nullish(),
+        sourceId: z.string().trim().min(1).max(200),
+        sourceLanguage: z.string().trim().min(1).max(32),
+        sourceName: z.string().trim().min(1).max(200),
+        title: z.string().trim().min(1).max(500),
+      })
+    )
+    .max(MAX_VERIFY_CANDIDATES_PER_REQUEST),
+  query: z.string().trim().min(1).max(200),
+  targetChapter: z.number().int().positive().optional(),
+});
+
+const zAiSearchStrategy = z.object({
+  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
+  alternativeTitles: z.array(z.string().trim().min(1).max(200)).max(20),
+  probableLanguages: z.array(z.string().trim().min(1).max(32)).max(12),
+  romanizedTitles: z.array(z.string().trim().min(1).max(200)).max(20),
+  searchStrategy: z.string().trim().min(1).max(1_500),
+});
+
+const zAiVerificationResponse = z.object({
+  matches: z.array(
+    z.object({
+      candidateId: z.string().trim().min(1),
+      confidence: z.number().min(0).max(1),
+      decision: z.enum(['match', 'maybe', 'reject']),
+      reason: z.string().trim().max(500).default(''),
+    })
+  ),
 });
 
 const zExtensionIndexSource = z.object({
@@ -54,6 +112,9 @@ const zExtensionIndex = z.array(zExtensionIndexItem);
 
 export type SourceDiscoveryPlanInput = z.infer<
   typeof zSourceDiscoveryPlanInput
+>;
+export type SourceDiscoveryVerifyInput = z.infer<
+  typeof zSourceDiscoveryVerifyInput
 >;
 
 export type SourceDiscoveryAdapterKey =
@@ -85,6 +146,8 @@ export type SourceDiscoveryPlanCandidate = {
   themeKey: string | null;
 };
 
+type SourceDiscoveryAiSearchStrategy = z.infer<typeof zAiSearchStrategy>;
+
 type ExtensionIndex = z.infer<typeof zExtensionIndex>;
 type ExtensionIndexSource = z.infer<typeof zExtensionIndexSource>;
 
@@ -104,6 +167,7 @@ let indexCache:
 export async function buildSourceDiscoveryPlan(
   rawInput: unknown,
   deps: {
+    aiSearchStrategy?: SourceDiscoveryAiSearchStrategy | null;
     extensionIndexItems?: ExtensionIndex;
     fetchFn?: typeof fetch;
     now?: () => Date;
@@ -112,7 +176,19 @@ export async function buildSourceDiscoveryPlan(
 ) {
   const input = zSourceDiscoveryPlanInput.parse(rawInput);
   const now = deps.now?.() ?? new Date();
-  const aliases = buildSearchAliases(input.query);
+  const deterministicAliases = buildSearchAliases(input.query);
+  const aiStrategy =
+    deps.aiSearchStrategy === undefined
+      ? await generateSearchStrategy(input, {
+          fetchFn: deps.fetchFn,
+        }).catch(() => null)
+      : deps.aiSearchStrategy;
+  const aliases = uniqueNonEmpty([
+    ...deterministicAliases,
+    ...(aiStrategy?.aliases ?? []),
+    ...(aiStrategy?.alternativeTitles ?? []),
+    ...(aiStrategy?.romanizedTitles ?? []),
+  ]).slice(0, MAX_ALIASES);
   const sourceThemeHints =
     deps.sourceThemeHints ?? (await loadSourceThemeHints());
   const themeByBaseUrl = buildThemeHintMap(sourceThemeHints);
@@ -149,14 +225,71 @@ export async function buildSourceDiscoveryPlan(
     .slice(0, input.maxCandidates);
 
   return {
-    aliasStrategy: 'deterministic',
+    aliasStrategy: aiStrategy ? 'ai' : 'deterministic',
     aliases,
+    alternativeTitles: aiStrategy?.alternativeTitles ?? [],
     candidates,
     generatedAt: now.toISOString(),
     indexSourceUrl: KEIYOUSHI_INDEX_URL,
+    probableLanguages: aiStrategy?.probableLanguages ?? [],
     query: input.query,
+    romanizedTitles: aiStrategy?.romanizedTitles ?? [],
+    searchStrategy:
+      aiStrategy?.searchStrategy ??
+      'Search the original title and normalized aliases across likely manga, manhwa, manhua, scanlation, and webtoon sources.',
     targetChapter: input.targetChapter ?? null,
   };
+}
+
+export async function verifySourceDiscoveryCandidates(
+  rawInput: unknown,
+  deps: {
+    fetchFn?: typeof fetch;
+    verifier?: (input: SourceDiscoveryVerifyInput) => Promise<unknown>;
+  } = {}
+) {
+  const input = zSourceDiscoveryVerifyInput.parse(rawInput);
+
+  if (input.candidates.length === 0) {
+    return {
+      matches: [],
+    };
+  }
+
+  const raw =
+    deps.verifier !== undefined
+      ? await deps.verifier(input)
+      : await generateVerification(input, {
+          fetchFn: deps.fetchFn,
+        });
+  const parsed = zAiVerificationResponse.parse(raw);
+  const knownIds = new Set(
+    input.candidates.map((candidate) => candidate.candidateId)
+  );
+
+  return {
+    matches: parsed.matches
+      .filter((match) => knownIds.has(match.candidateId))
+      .map((match) => ({
+        candidateId: match.candidateId,
+        confidence: match.confidence,
+        decision: match.decision,
+        reason: match.reason,
+      })),
+  };
+}
+
+export function calculateSourceDiscoveryPlanTokenCost() {
+  return 1;
+}
+
+export function calculateSourceDiscoveryVerifyTokenCost(rawInput: unknown) {
+  const input = zSourceDiscoveryVerifyInput.parse(rawInput);
+
+  return Math.max(
+    1,
+    Math.ceil(input.candidates.length / VERIFY_CANDIDATES_PER_TOKEN)
+  );
 }
 
 export function buildSearchAliases(query: string) {
@@ -274,6 +407,310 @@ function buildCandidate(input: {
     sourceName: input.source.name,
     themeKey: input.themeKey,
   };
+}
+
+async function generateSearchStrategy(
+  input: SourceDiscoveryPlanInput,
+  deps: {
+    fetchFn?: typeof fetch;
+  } = {}
+): Promise<SourceDiscoveryAiSearchStrategy> {
+  const prompt = [
+    'You help a manga/manhwa reader find the same work across scanlation source websites.',
+    'Return strict JSON with these keys: aliases, alternativeTitles, romanizedTitles, probableLanguages, searchStrategy.',
+    'Create compact search terms only. Include original-language title variants when likely, romanized titles, English title variants, and title fragments that a website search might index.',
+    'Do not include chapter words unless the title itself contains a number.',
+    `User query: ${input.query}`,
+    input.targetChapter
+      ? `The user is looking for sources around chapter ${input.targetChapter}.`
+      : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  const parsed = zAiSearchStrategy.parse(
+    await generateJsonObject({
+      fetchFn: deps.fetchFn,
+      prompt,
+      schemaName: 'source_discovery_search_strategy',
+    })
+  );
+
+  return {
+    aliases: uniqueNonEmpty(parsed.aliases).slice(0, MAX_ALIASES),
+    alternativeTitles: uniqueNonEmpty(parsed.alternativeTitles),
+    probableLanguages: uniqueNonEmpty(parsed.probableLanguages),
+    romanizedTitles: uniqueNonEmpty(parsed.romanizedTitles),
+    searchStrategy: parsed.searchStrategy,
+  };
+}
+
+async function generateVerification(
+  input: SourceDiscoveryVerifyInput,
+  deps: {
+    fetchFn?: typeof fetch;
+  } = {}
+) {
+  const compactCandidates = input.candidates.map((candidate) => ({
+    baseUrl: candidate.baseUrl,
+    candidateId: candidate.candidateId,
+    description: candidate.description?.slice(0, 900) ?? null,
+    extensionName: candidate.extensionName,
+    latestChapterName: candidate.latestChapterName ?? null,
+    latestChapterNumber: candidate.latestChapterNumber ?? null,
+    mangaUrl: candidate.mangaUrl ?? null,
+    sourceLanguage: candidate.sourceLanguage,
+    sourceName: candidate.sourceName,
+    title: candidate.title,
+  }));
+  const prompt = [
+    'You verify manga/manhwa source search results before they are shown to a user.',
+    'Return strict JSON with key matches: array of {candidateId, decision, confidence, reason}.',
+    'decision must be match, maybe, or reject.',
+    'Reject unrelated results even if one generic word overlaps. Match alternate-language titles, romanization differences, subtitles, and common scanlation title variants.',
+    'If targetChapter is present, do not reject only because the latest chapter is lower; the app still needs to show it, but confidence can be lower.',
+    `User query: ${input.query}`,
+    `Search aliases used silently by the app: ${JSON.stringify(input.aliases)}`,
+    input.targetChapter ? `Target chapter: ${input.targetChapter}` : '',
+    `Candidates: ${JSON.stringify(compactCandidates)}`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return await generateJsonObject({
+    fetchFn: deps.fetchFn,
+    prompt,
+    schemaName: 'source_discovery_candidate_verification',
+  });
+}
+
+async function generateJsonObject(input: {
+  fetchFn?: typeof fetch;
+  prompt: string;
+  schemaName: string;
+}) {
+  return await retryProviderCall(
+    async () => {
+      switch (envServer.TRANSLATION_PROVIDER_PRIMARY) {
+        case 'openai':
+          return await generateJsonWithOpenAI(input);
+        case 'anthropic':
+          return await generateJsonWithAnthropic(input);
+        case 'gemini':
+        default:
+          return await generateJsonWithGemini(input);
+      }
+    },
+    {
+      maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
+    }
+  );
+}
+
+async function generateJsonWithGemini(input: {
+  fetchFn?: typeof fetch;
+  prompt: string;
+  schemaName: string;
+}) {
+  const apiKey = envServer.GEMINI_API_KEY;
+  if (!apiKey) {
+    throw createProviderConfigError(
+      ProviderType.gemini,
+      'GEMINI_API_KEY is not configured.'
+    );
+  }
+  const runtimeConfig = (await getProviderGatewayRuntimeConfig()).current;
+  const modelName = runtimeConfig.geminiTranslationModel;
+  const response = await fetchTextWithTimeout({
+    body: JSON.stringify({
+      contents: [
+        {
+          parts: [{ text: input.prompt }],
+          role: 'user',
+        },
+      ],
+      generationConfig: {
+        responseMimeType: 'application/json',
+      },
+      systemInstruction: {
+        parts: [
+          {
+            text: 'You are a precise JSON API for manga source discovery. Return only a valid JSON object.',
+          },
+        ],
+      },
+    }),
+    fetchFn: input.fetchFn,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    provider: ProviderType.gemini,
+    timeoutMs: envServer.PROVIDER_REQUEST_TIMEOUT_MS,
+    url: `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(
+      modelName
+    )}:generateContent?key=${encodeURIComponent(apiKey)}`,
+  });
+  const json = parseJsonResponse<Record<string, unknown>>(
+    ProviderType.gemini,
+    response.text,
+    'Gemini returned malformed JSON'
+  );
+  const candidates = Array.isArray(json.candidates) ? json.candidates : [];
+  const candidate = candidates[0];
+  const parts =
+    candidate &&
+    typeof candidate === 'object' &&
+    candidate.content &&
+    typeof candidate.content === 'object' &&
+    Array.isArray(candidate.content.parts)
+      ? candidate.content.parts
+      : [];
+  const text = parts
+    .map((part: unknown) =>
+      part && typeof part === 'object' && 'text' in part
+        ? String(part.text ?? '')
+        : ''
+    )
+    .join('\n');
+
+  return parseJsonObjectText(
+    ProviderType.gemini,
+    text,
+    `Gemini returned invalid ${input.schemaName} JSON`
+  );
+}
+
+async function generateJsonWithOpenAI(input: {
+  fetchFn?: typeof fetch;
+  prompt: string;
+  schemaName: string;
+}) {
+  const apiKey = envServer.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw createProviderConfigError(
+      ProviderType.openai,
+      'OPENAI_API_KEY is not configured.'
+    );
+  }
+  const runtimeConfig = (await getProviderGatewayRuntimeConfig()).current;
+  const modelName = runtimeConfig.openaiTranslationModel;
+  const response = await fetchTextWithTimeout({
+    body: JSON.stringify({
+      max_completion_tokens: 4096,
+      messages: [
+        {
+          content:
+            'You are a precise JSON API for manga source discovery. Return only a valid JSON object.',
+          role: 'system',
+        },
+        {
+          content: input.prompt,
+          role: 'user',
+        },
+      ],
+      model: modelName,
+      response_format: {
+        type: 'json_object',
+      },
+    }),
+    fetchFn: input.fetchFn,
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    provider: ProviderType.openai,
+    timeoutMs: envServer.PROVIDER_REQUEST_TIMEOUT_MS,
+    url: 'https://api.openai.com/v1/chat/completions',
+  });
+  const json = parseJsonResponse<Record<string, unknown>>(
+    ProviderType.openai,
+    response.text,
+    'OpenAI returned malformed JSON'
+  );
+  const choices = Array.isArray(json.choices) ? json.choices : [];
+  const choice = choices[0];
+  const message =
+    choice &&
+    typeof choice === 'object' &&
+    choice.message &&
+    typeof choice.message === 'object'
+      ? choice.message
+      : null;
+  const content =
+    message && typeof message.content === 'string' ? message.content : '';
+
+  return parseJsonObjectText(
+    ProviderType.openai,
+    content,
+    `OpenAI returned invalid ${input.schemaName} JSON`
+  );
+}
+
+async function generateJsonWithAnthropic(input: {
+  fetchFn?: typeof fetch;
+  prompt: string;
+  schemaName: string;
+}) {
+  const apiKey = envServer.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw createProviderConfigError(
+      ProviderType.anthropic,
+      'ANTHROPIC_API_KEY is not configured.'
+    );
+  }
+  const response = await fetchTextWithTimeout({
+    body: JSON.stringify({
+      max_tokens: 4096,
+      messages: [
+        {
+          content: input.prompt,
+          role: 'user',
+        },
+      ],
+      model: envServer.ANTHROPIC_TRANSLATION_MODEL,
+      system:
+        'You are a precise JSON API for manga source discovery. Return only a valid JSON object.',
+    }),
+    fetchFn: input.fetchFn,
+    headers: {
+      'Anthropic-Version': '2023-06-01',
+      'Content-Type': 'application/json',
+      'X-Api-Key': apiKey,
+    },
+    provider: ProviderType.anthropic,
+    timeoutMs: envServer.PROVIDER_REQUEST_TIMEOUT_MS,
+    url: 'https://api.anthropic.com/v1/messages',
+  });
+  const json = parseJsonResponse<Record<string, unknown>>(
+    ProviderType.anthropic,
+    response.text,
+    'Anthropic returned malformed JSON'
+  );
+  const contentBlocks = Array.isArray(json.content) ? json.content : [];
+  const text = contentBlocks
+    .map((block) =>
+      block &&
+      typeof block === 'object' &&
+      'type' in block &&
+      block.type === 'text' &&
+      'text' in block
+        ? String(block.text ?? '')
+        : ''
+    )
+    .join('\n');
+
+  if (!text.trim()) {
+    throw createInvalidProviderResponseError(
+      ProviderType.anthropic,
+      'Anthropic did not return text content.'
+    );
+  }
+
+  return parseJsonObjectText(
+    ProviderType.anthropic,
+    text,
+    `Anthropic returned invalid ${input.schemaName} JSON`
+  );
 }
 
 function scoreCandidate(input: {

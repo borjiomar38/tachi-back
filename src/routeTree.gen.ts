@@ -60,6 +60,7 @@ import { Route as ManagerChaptersCacheKeyIndexRouteImport } from './routes/manag
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
 import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
+import { Route as ApiMobileSourceDiscoveryVerifyRouteImport } from './routes/api/mobile/source-discovery/verify'
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
@@ -329,6 +330,12 @@ const ApiMobileSubscriptionCancelRoute =
     path: '/api/mobile/subscription/cancel',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileSourceDiscoveryVerifyRoute =
+  ApiMobileSourceDiscoveryVerifyRouteImport.update({
+    id: '/api/mobile/source-discovery/verify',
+    path: '/api/mobile/source-discovery/verify',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileSourceDiscoveryPlanRoute =
   ApiMobileSourceDiscoveryPlanRouteImport.update({
     id: '/api/mobile/source-discovery/plan',
@@ -439,6 +446,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
+  '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
@@ -500,6 +508,7 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
+  '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
@@ -565,6 +574,7 @@ export interface FileRoutesById {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
+  '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
@@ -631,6 +641,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/plan'
+    | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
@@ -692,6 +703,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/plan'
+    | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
@@ -756,6 +768,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/plan'
+    | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
@@ -807,6 +820,7 @@ export interface RootRouteChildren {
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
+  ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
 }
 
@@ -1169,6 +1183,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileSubscriptionCancelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/source-discovery/verify': {
+      id: '/api/mobile/source-discovery/verify'
+      path: '/api/mobile/source-discovery/verify'
+      fullPath: '/api/mobile/source-discovery/verify'
+      preLoaderRoute: typeof ApiMobileSourceDiscoveryVerifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/source-discovery/plan': {
       id: '/api/mobile/source-discovery/plan'
       path: '/api/mobile/source-discovery/plan'
@@ -1400,6 +1421,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,
   ApiMobileSourceDiscoveryPlanRoute: ApiMobileSourceDiscoveryPlanRoute,
+  ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
 }
 export const routeTree = rootRouteImport
