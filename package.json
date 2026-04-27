@@ -41,6 +41,7 @@
     "db:push": "prisma db push",
     "db:ui": "prisma studio",
     "db:seed": "dotenv -- cross-env node ./run-jiti ./prisma/seed/index.ts",
+    "source-discovery:import": "dotenv -- cross-env node ./run-jiti ./scripts/import-source-search-methods.ts",
     "deploy:prod": "bash scripts/deploy-prod.sh",
     "redeem:generate": "dotenv -- cross-env node ./run-jiti.js ./scripts/generate-redeem-code.ts"
   },

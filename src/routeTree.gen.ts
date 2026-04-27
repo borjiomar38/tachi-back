@@ -62,6 +62,7 @@ import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/ap
 import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
 import { Route as ApiMobileSourceDiscoveryVerifyRouteImport } from './routes/api/mobile/source-discovery/verify'
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
+import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
@@ -342,6 +343,12 @@ const ApiMobileSourceDiscoveryPlanRoute =
     path: '/api/mobile/source-discovery/plan',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileSourceDiscoveryMethodFeedbackRoute =
+  ApiMobileSourceDiscoveryMethodFeedbackRouteImport.update({
+    id: '/api/mobile/source-discovery/method-feedback',
+    path: '/api/mobile/source-discovery/method-feedback',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileMangaPageTranslateRoute =
   ApiMobileMangaPageTranslateRouteImport.update({
     id: '/api/mobile/manga-page/translate',
@@ -445,6 +452,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
+  '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
@@ -507,6 +515,7 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
+  '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
@@ -573,6 +582,7 @@ export interface FileRoutesById {
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
+  '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
@@ -640,6 +650,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
+    | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
@@ -702,6 +713,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
+    | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
@@ -767,6 +779,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
+    | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
@@ -819,6 +832,7 @@ export interface RootRouteChildren {
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
+  ApiMobileSourceDiscoveryMethodFeedbackRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
@@ -1190,6 +1204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileSourceDiscoveryVerifyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/source-discovery/method-feedback': {
+      id: '/api/mobile/source-discovery/method-feedback'
+      path: '/api/mobile/source-discovery/method-feedback'
+      fullPath: '/api/mobile/source-discovery/method-feedback'
+      preLoaderRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/source-discovery/plan': {
       id: '/api/mobile/source-discovery/plan'
       path: '/api/mobile/source-discovery/plan'
@@ -1420,6 +1441,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,
+  ApiMobileSourceDiscoveryMethodFeedbackRoute:
+    ApiMobileSourceDiscoveryMethodFeedbackRoute,
   ApiMobileSourceDiscoveryPlanRoute: ApiMobileSourceDiscoveryPlanRoute,
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,

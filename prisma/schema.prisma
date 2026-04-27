@@ -128,6 +128,22 @@ enum ContactMessageStatus {
   spam
 }
 
+enum SourceSearchMethodType {
+  installed_native
+  http_template
+  custom_adapter
+  unsupported
+}
+
+enum SourceSearchMethodStatus {
+  working
+  stale
+  cloudflare
+  failed
+  unsupported
+  unknown
+}
+
 // Better Auth users are internal backoffice identities only.
 // Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
@@ -572,4 +588,44 @@ model ContactMessage {
   @@index([email])
   @@index([assignedToUserId, status])
   @@map("contact_messages")
+}
+
+model SourceSearchMethod {
+  id                    String                   @id @default(cuid())
+  sourceId              String                   @unique
+  packageName           String
+  apkName               String?
+  extensionName         String
+  extensionLang         String
+  sourceName            String
+  sourceLanguage        String
+  baseUrl               String
+  adapterKey            String
+  themeKey              String?
+  methodType            SourceSearchMethodType
+  status                SourceSearchMethodStatus @default(unknown)
+  versionCode           Int?
+  versionName           String?
+  searchUrlPattern      String?
+  resultSelector        String?
+  titleSelector         String?
+  urlSelector           String?
+  thumbnailSelector     String?
+  descriptionSelector   String?
+  detailTitleSelector   String?
+  chapterSelector       String?
+  latestChapterSelector String?
+  headers               Json?
+  metadata              Json?
+  failureReason         String?
+  lastImportedAt        DateTime?
+  lastTestedAt          DateTime?
+  lastSuccessAt         DateTime?
+  createdAt             DateTime                 @default(now())
+  updatedAt             DateTime                 @updatedAt
+
+  @@index([packageName])
+  @@index([adapterKey, status])
+  @@index([sourceLanguage, status])
+  @@map("source_search_methods")
 }

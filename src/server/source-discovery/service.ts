@@ -3,6 +3,7 @@ import path from 'node:path';
 import { z } from 'zod';
 
 import { envServer } from '@/env/server';
+import { db } from '@/server/db';
 import { ProviderType } from '@/server/db/generated/client';
 import {
   createInvalidProviderResponseError,
@@ -35,7 +36,7 @@ const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
 
 export const zSourceDiscoveryPlanInput = z.object({
   includeNsfw: z.boolean().default(false),
-  maxCandidates: z.number().int().min(5).max(100).default(60),
+  maxCandidates: z.number().int().min(5).max(300).default(120),
   preferredLanguages: z
     .array(z.string().trim().min(1).max(32))
     .max(20)
@@ -85,6 +86,14 @@ const zAiVerificationResponse = z.object({
       reason: z.string().trim().max(500).default(''),
     })
   ),
+});
+
+export const zSourceDiscoveryMethodFeedbackInput = z.object({
+  error: z.string().trim().max(1_000).nullish(),
+  methodId: z.string().trim().min(1).max(200),
+  sampleUrl: z.string().trim().max(2_000).nullish(),
+  sourceId: z.string().trim().min(1).max(200),
+  status: z.enum(['working', 'stale', 'cloudflare', 'failed']),
 });
 
 const zExtensionIndexSource = z.object({
@@ -137,7 +146,31 @@ export type SourceDiscoveryPlanCandidate = {
   sourceId: string;
   sourceLanguage: string;
   sourceName: string;
+  searchMethod: SourceDiscoverySearchMethod | null;
   themeKey: string | null;
+};
+
+export type SourceDiscoverySearchMethod = {
+  adapterKey: string;
+  chapterSelector: string | null;
+  descriptionSelector: string | null;
+  detailTitleSelector: string | null;
+  headers: Record<string, string> | null;
+  id: string;
+  latestChapterSelector: string | null;
+  methodType: 'http_template' | 'custom_adapter' | 'unsupported';
+  resultSelector: string | null;
+  searchUrlPattern: string | null;
+  status:
+    | 'working'
+    | 'stale'
+    | 'cloudflare'
+    | 'failed'
+    | 'unsupported'
+    | 'unknown';
+  thumbnailSelector: string | null;
+  titleSelector: string | null;
+  urlSelector: string | null;
 };
 
 type SourceDiscoveryAiSearchStrategy = z.infer<typeof zAiSearchStrategy>;
@@ -165,6 +198,7 @@ export async function buildSourceDiscoveryPlan(
     extensionIndexItems?: ExtensionIndex;
     fetchFn?: typeof fetch;
     now?: () => Date;
+    sourceSearchMethods?: SourceDiscoverySearchMethod[];
     sourceThemeHints?: SourceThemeHint[];
   } = {}
 ) {
@@ -193,7 +227,7 @@ export async function buildSourceDiscoveryPlan(
       now,
     }));
 
-  const candidates = items
+  const baseCandidates = items
     .filter((extension) => input.includeNsfw || extension.nsfw !== 1)
     .flatMap((extension) =>
       (extension.sources ?? [])
@@ -219,6 +253,16 @@ export async function buildSourceDiscoveryPlan(
       );
     })
     .slice(0, input.maxCandidates);
+  const searchMethods = await loadSearchMethodsForCandidates(
+    baseCandidates,
+    deps.sourceSearchMethods
+  );
+  const candidates = baseCandidates.map((candidate) => ({
+    ...candidate,
+    searchMethod:
+      searchMethods.get(candidate.sourceId) ??
+      buildFallbackSearchMethod(candidate),
+  }));
 
   return {
     aliasStrategy: aiStrategy ? 'ai' : 'deterministic',
@@ -290,6 +334,147 @@ export function calculateSourceDiscoveryVerifyTokenCost(rawInput: unknown) {
     1,
     Math.ceil(input.candidates.length / VERIFY_CANDIDATES_PER_TOKEN)
   );
+}
+
+export async function updateSourceDiscoveryMethodFeedback(rawInput: unknown) {
+  const input = zSourceDiscoveryMethodFeedbackInput.parse(rawInput);
+  const status = input.status;
+  const now = new Date();
+
+  await db.sourceSearchMethod.updateMany({
+    data: {
+      failureReason: input.error ?? null,
+      lastSuccessAt: status === 'working' ? now : undefined,
+      lastTestedAt: now,
+      metadata: {
+        lastFeedbackSampleUrl: input.sampleUrl ?? null,
+      },
+      status,
+    },
+    where: {
+      OR: [{ id: input.methodId }, { sourceId: input.sourceId }],
+    },
+  });
+
+  return { ok: true };
+}
+
+export async function importSourceSearchMethodsFromExtensionsSource(
+  deps: {
+    extensionIndexItems?: ExtensionIndex;
+    fetchFn?: typeof fetch;
+    now?: () => Date;
+    sourceThemeHints?: SourceThemeHint[];
+  } = {}
+) {
+  const now = deps.now?.() ?? new Date();
+  const items =
+    deps.extensionIndexItems ??
+    (await fetchExtensionIndex({
+      fetchFn: deps.fetchFn ?? fetch,
+      now,
+    }));
+  const sourceThemeHints =
+    deps.sourceThemeHints ?? (await loadSourceThemeHints());
+  const themeByBaseUrl = buildThemeHintMap(sourceThemeHints);
+  let imported = 0;
+  let unsupported = 0;
+
+  for (const extension of items) {
+    for (const source of extension.sources ?? []) {
+      if (!source.baseUrl.trim()) {
+        continue;
+      }
+
+      const themeKey =
+        themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null;
+      const adapterKey = resolveAdapterKey({
+        baseUrl: source.baseUrl,
+        sourceName: source.name,
+        themeKey,
+      });
+      const template = getAdapterSearchMethodTemplate(adapterKey);
+      const methodType = template?.methodType ?? 'unsupported';
+      const methodStatus = template ? 'unknown' : 'unsupported';
+
+      await db.sourceSearchMethod.upsert({
+        create: {
+          adapterKey,
+          apkName: extension.apk,
+          baseUrl: source.baseUrl,
+          chapterSelector: template?.chapterSelector ?? null,
+          descriptionSelector: template?.descriptionSelector ?? null,
+          detailTitleSelector: template?.detailTitleSelector ?? null,
+          extensionLang: extension.lang,
+          extensionName: extension.name,
+          headers: template?.headers ?? undefined,
+          latestChapterSelector: template?.latestChapterSelector ?? null,
+          lastImportedAt: now,
+          methodType,
+          metadata: {
+            reason: template ? 'template_detected' : 'no_supported_template',
+          },
+          packageName: extension.pkg,
+          resultSelector: template?.resultSelector ?? null,
+          searchUrlPattern: template?.searchUrlPattern ?? null,
+          sourceId: source.id,
+          sourceLanguage: source.lang,
+          sourceName: source.name,
+          status: methodStatus,
+          themeKey,
+          thumbnailSelector: template?.thumbnailSelector ?? null,
+          titleSelector: template?.titleSelector ?? null,
+          urlSelector: template?.urlSelector ?? null,
+          versionCode: extension.code,
+          versionName: extension.version,
+        },
+        update: {
+          adapterKey,
+          apkName: extension.apk,
+          baseUrl: source.baseUrl,
+          chapterSelector: template?.chapterSelector ?? null,
+          descriptionSelector: template?.descriptionSelector ?? null,
+          detailTitleSelector: template?.detailTitleSelector ?? null,
+          extensionLang: extension.lang,
+          extensionName: extension.name,
+          headers: template?.headers ?? undefined,
+          latestChapterSelector: template?.latestChapterSelector ?? null,
+          lastImportedAt: now,
+          methodType,
+          metadata: {
+            reason: template ? 'template_detected' : 'no_supported_template',
+          },
+          packageName: extension.pkg,
+          resultSelector: template?.resultSelector ?? null,
+          searchUrlPattern: template?.searchUrlPattern ?? null,
+          sourceLanguage: source.lang,
+          sourceName: source.name,
+          status: methodStatus,
+          themeKey,
+          thumbnailSelector: template?.thumbnailSelector ?? null,
+          titleSelector: template?.titleSelector ?? null,
+          urlSelector: template?.urlSelector ?? null,
+          versionCode: extension.code,
+          versionName: extension.version,
+        },
+        where: {
+          sourceId: source.id,
+        },
+      });
+
+      if (template) {
+        imported += 1;
+      } else {
+        unsupported += 1;
+      }
+    }
+  }
+
+  return {
+    imported,
+    total: imported + unsupported,
+    unsupported,
+  };
 }
 
 export function buildSearchAliases(query: string) {
@@ -405,8 +590,153 @@ function buildCandidate(input: {
     sourceId: input.source.id,
     sourceLanguage: input.source.lang,
     sourceName: input.source.name,
+    searchMethod: null,
     themeKey: input.themeKey,
   };
+}
+
+async function loadSearchMethodsForCandidates(
+  candidates: SourceDiscoveryPlanCandidate[],
+  injectedMethods?: SourceDiscoverySearchMethod[]
+) {
+  if (injectedMethods) {
+    return new Map(injectedMethods.map((method) => [method.id, method]));
+  }
+
+  const sourceIds = uniqueNonEmpty(
+    candidates.map((candidate) => candidate.sourceId)
+  );
+
+  if (sourceIds.length === 0) {
+    return new Map<string, SourceDiscoverySearchMethod>();
+  }
+
+  const rows =
+    (await Promise.resolve(
+      db.sourceSearchMethod.findMany({
+        where: {
+          sourceId: {
+            in: sourceIds,
+          },
+          status: {
+            notIn: ['cloudflare', 'failed', 'unsupported'],
+          },
+        },
+      })
+    ).catch(() => [])) ?? [];
+
+  return new Map(
+    rows.map((row) => [row.sourceId, serializeSearchMethodRow(row)])
+  );
+}
+
+function serializeSearchMethodRow(row: {
+  adapterKey: string;
+  chapterSelector: string | null;
+  descriptionSelector: string | null;
+  detailTitleSelector: string | null;
+  headers: unknown;
+  id: string;
+  latestChapterSelector: string | null;
+  methodType: string;
+  resultSelector: string | null;
+  searchUrlPattern: string | null;
+  status: string;
+  thumbnailSelector: string | null;
+  titleSelector: string | null;
+  urlSelector: string | null;
+}): SourceDiscoverySearchMethod {
+  return {
+    adapterKey: row.adapterKey,
+    chapterSelector: row.chapterSelector,
+    descriptionSelector: row.descriptionSelector,
+    detailTitleSelector: row.detailTitleSelector,
+    headers: isStringRecord(row.headers) ? row.headers : null,
+    id: row.id,
+    latestChapterSelector: row.latestChapterSelector,
+    methodType: normalizeMethodType(row.methodType),
+    resultSelector: row.resultSelector,
+    searchUrlPattern: row.searchUrlPattern,
+    status: normalizeMethodStatus(row.status),
+    thumbnailSelector: row.thumbnailSelector,
+    titleSelector: row.titleSelector,
+    urlSelector: row.urlSelector,
+  };
+}
+
+function buildFallbackSearchMethod(
+  candidate: SourceDiscoveryPlanCandidate
+): SourceDiscoverySearchMethod | null {
+  const template = getAdapterSearchMethodTemplate(candidate.adapterKey);
+
+  if (!template) {
+    return null;
+  }
+
+  return {
+    ...template,
+    adapterKey: candidate.adapterKey,
+    id: `fallback:${candidate.sourceId}`,
+    status: 'unknown',
+  };
+}
+
+function getAdapterSearchMethodTemplate(
+  adapterKey: SourceDiscoveryAdapterKey
+): Omit<SourceDiscoverySearchMethod, 'adapterKey' | 'id' | 'status'> | null {
+  switch (adapterKey) {
+    case 'asurascans':
+      return {
+        chapterSelector: 'div.scrollbar-thumb-themecolor > div.group h3',
+        descriptionSelector: 'span.font-medium.text-sm',
+        detailTitleSelector: 'span.text-xl.font-bold, h3.truncate',
+        headers: null,
+        latestChapterSelector: 'div.scrollbar-thumb-themecolor > div.group h3',
+        methodType: 'http_template',
+        resultSelector: 'div.grid > a[href]',
+        searchUrlPattern:
+          '{baseUrl}/series?page={page}&name={query}&genres=&status=-1&types=-1&order=rating',
+        thumbnailSelector: 'img',
+        titleSelector: 'div.block > span.block',
+        urlSelector: '&',
+      };
+    case 'mangathemesia':
+      return {
+        chapterSelector:
+          'div.bxcl li a, div.cl li a, #chapterlist li a, .eph-num a',
+        descriptionSelector: '.desc, .entry-content[itemprop=description]',
+        detailTitleSelector:
+          'h1.entry-title, .ts-breadcrumb li:last-child span',
+        headers: null,
+        latestChapterSelector:
+          'div.bxcl li a, div.cl li a, #chapterlist li a, .eph-num a',
+        methodType: 'http_template',
+        resultSelector: '.utao .uta .imgu, .listupd .bs .bsx, .listo .bs .bsx',
+        searchUrlPattern: '{baseUrl}/manga?title={query}&page={page}',
+        thumbnailSelector: 'img',
+        titleSelector: 'a[title]',
+        urlSelector: 'a[href]',
+      };
+    case 'madara':
+    case 'manhwaz':
+      return {
+        chapterSelector: 'li.wp-manga-chapter a, .chapter-list a',
+        descriptionSelector:
+          '.description-summary, .summary__content, .entry-content[itemprop=description]',
+        detailTitleSelector: 'div.post-title h1, .post-title h1, h1',
+        headers: null,
+        latestChapterSelector: 'li.wp-manga-chapter a, .chapter-list a',
+        methodType: 'http_template',
+        resultSelector:
+          'div.c-tabs-item__content, .manga__item, div.page-item-detail',
+        searchUrlPattern: '{baseUrl}/?s={query}&post_type=wp-manga',
+        thumbnailSelector: 'img',
+        titleSelector: 'div.post-title a[href], a[href]',
+        urlSelector: 'div.post-title a[href], a[href]',
+      };
+    default:
+      return null;
+  }
 }
 
 async function generateSearchStrategy(
@@ -868,6 +1198,46 @@ function buildThemeHintMap(hints: SourceThemeHint[]) {
 
 function normalizeBaseUrl(url: string) {
   return url.trim().replace(/\/+$/, '').toLowerCase();
+}
+
+function isStringRecord(value: unknown): value is Record<string, string> {
+  return (
+    !!value &&
+    typeof value === 'object' &&
+    !Array.isArray(value) &&
+    Object.values(value).every((item) => typeof item === 'string')
+  );
+}
+
+function normalizeMethodType(
+  value: string
+): SourceDiscoverySearchMethod['methodType'] {
+  if (
+    value === 'http_template' ||
+    value === 'custom_adapter' ||
+    value === 'unsupported'
+  ) {
+    return value;
+  }
+
+  return 'unsupported';
+}
+
+function normalizeMethodStatus(
+  value: string
+): SourceDiscoverySearchMethod['status'] {
+  if (
+    value === 'working' ||
+    value === 'stale' ||
+    value === 'cloudflare' ||
+    value === 'failed' ||
+    value === 'unsupported' ||
+    value === 'unknown'
+  ) {
+    return value;
+  }
+
+  return 'unknown';
 }
 
 function uniqueNonEmpty(values: string[]) {
