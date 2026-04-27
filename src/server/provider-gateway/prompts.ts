@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+
 import { envServer } from '@/env/server';
 import { zTranslationGatewayPageInput } from '@/server/provider-gateway/schema';
 
@@ -72,7 +74,10 @@ export function buildTranslationJsonPayload(
       Object.fromEntries(
         page.blocks.map((block, index) => [
           buildBlockTranslationKey(index),
-          block.text,
+          {
+            sourceHash: buildBlockSourceHash(block.text),
+            sourceText: block.text,
+          },
         ])
       ),
     ])
@@ -81,6 +86,13 @@ export function buildTranslationJsonPayload(
 
 export function buildBlockTranslationKey(index: number) {
   return `block_${String(index).padStart(4, '0')}`;
+}
+
+export function buildBlockSourceHash(text: string) {
+  return createHash('sha256')
+    .update(text.replace(/\s+/g, ' ').trim())
+    .digest('hex')
+    .slice(0, 12);
 }
 
 export function selectPromptProfile(input: {
@@ -120,9 +132,11 @@ function buildSystemPrompt(input: {
 }) {
   const commonRules = [
     `Translate OCR text from ${input.sourceLanguage} to ${input.targetLanguage} for manga or comic dialogue.`,
-    'The input is a JSON object keyed by page filename, then by stable OCR block id.',
+    'The input is a JSON object keyed by page filename, then by stable OCR block id. Each block value is an object with sourceHash and sourceText.',
     'Return only valid JSON with the exact same page keys and block id keys as the input.',
-    'Return each block translation as a string value at the same block id key.',
+    'Return each block as an object at the same block id key: keep sourceHash unchanged and add translation as a string.',
+    'Do not echo sourceText in the response.',
+    'Never put a translation under a block id unless the sourceHash and sourceText for that block id match the input block.',
     'Never merge, drop, reorder, rename, or split block ids, even when multiple blocks look like one sentence.',
     'Do not add notes, speaker labels, markdown, code fences, or explanations.',
     'Keep translations concise enough to fit speech bubbles.',

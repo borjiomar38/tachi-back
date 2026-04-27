@@ -1260,7 +1260,7 @@ describe('job service', () => {
       blocks: [
         {
           angle: 0,
-          height: 90,
+          height: 117,
           symHeight: 20,
           symWidth: 10,
           text: "LUCKILY ... I'D",

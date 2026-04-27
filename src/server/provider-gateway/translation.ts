@@ -3,9 +3,12 @@ import { ProviderType } from '@/server/db/generated/client';
 import {
   createInvalidProviderResponseError,
   createProviderConfigError,
+  createRetryableInvalidProviderResponseError,
+  ProviderGatewayError,
 } from '@/server/provider-gateway/errors';
 import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
 import {
+  buildBlockSourceHash,
   buildBlockTranslationKey,
   buildTranslationPrompt,
 } from '@/server/provider-gateway/prompts';
@@ -233,7 +236,7 @@ async function translateWithOpenAI(
   });
   const response = await fetchTextWithTimeout({
     body: JSON.stringify({
-      max_completion_tokens: 4096,
+      max_completion_tokens: 8192,
       messages: [
         {
           content: prompt.systemPrompt,
@@ -438,11 +441,27 @@ function normalizeTranslationPayload(
   pages: TranslationGatewayInput['pages'],
   rawText: string
 ) {
-  const json = parseJsonObjectText(
-    provider,
-    rawText,
-    'Provider translation response was not valid JSON'
-  );
+  const json = (() => {
+    try {
+      return parseJsonObjectText(
+        provider,
+        rawText,
+        'Provider translation response was not valid JSON'
+      );
+    } catch (error) {
+      if (
+        error instanceof ProviderGatewayError &&
+        error.code === 'invalid_response'
+      ) {
+        throw createRetryableInvalidProviderResponseError(
+          provider,
+          error.message
+        );
+      }
+
+      throw error;
+    }
+  })();
 
   return pages.map((page) => {
     const translationMap = json[page.pageKey];
@@ -482,22 +501,80 @@ function normalizeTranslationPayload(
           };
         }
 
+        if (typeof translation === 'string') {
+          return {
+            index,
+            sourceText: block.text,
+            translation: translation.trim(),
+          };
+        }
+
+        if (typeof translation === 'object' && !Array.isArray(translation)) {
+          const translationObject = translation as Record<string, unknown>;
+          const returnedSourceHash = translationObject.sourceHash;
+          const returnedSourceText = translationObject.sourceText;
+          const returnedTranslation = translationObject.translation;
+
+          if (
+            typeof returnedSourceHash === 'string' &&
+            returnedSourceHash !== buildBlockSourceHash(block.text)
+          ) {
+            throw createRetryableInvalidProviderResponseError(
+              provider,
+              `Provider response for "${page.pageKey}" block key "${blockKey}" echoed sourceHash for a different OCR block.`
+            );
+          }
+
+          if (
+            typeof returnedSourceText === 'string' &&
+            normalizeSourceText(returnedSourceText) !==
+              normalizeSourceText(block.text)
+          ) {
+            throw createRetryableInvalidProviderResponseError(
+              provider,
+              `Provider response for "${page.pageKey}" block key "${blockKey}" echoed sourceText for a different OCR block.`
+            );
+          }
+
+          if (
+            returnedTranslation === undefined ||
+            returnedTranslation === null
+          ) {
+            return {
+              index,
+              sourceText: block.text,
+              translation: '',
+            };
+          }
+
+          if (typeof returnedTranslation !== 'string') {
+            throw createInvalidProviderResponseError(
+              provider,
+              `Provider response for "${page.pageKey}" block key "${blockKey}" translation is not a string.`
+            );
+          }
+
+          return {
+            index,
+            sourceText: block.text,
+            translation: returnedTranslation.trim(),
+          };
+        }
+
         if (typeof translation !== 'string') {
           throw createInvalidProviderResponseError(
             provider,
-            `Provider response for "${page.pageKey}" block key "${blockKey}" is not a string.`
+            `Provider response for "${page.pageKey}" block key "${blockKey}" is not a string or translation object.`
           );
         }
-
-        return {
-          index,
-          sourceText: block.text,
-          translation: translation.trim(),
-        };
       }),
       pageKey: page.pageKey,
     };
   });
+}
+
+function normalizeSourceText(text: string) {
+  return text.replace(/\s+/g, ' ').trim();
 }
 
 function getUsageValue(usage: unknown, ...keys: string[]) {

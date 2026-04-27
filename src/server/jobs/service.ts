@@ -2026,8 +2026,9 @@ function shouldCoalesceOcrBlocks(
   const averageSymbolHeight =
     (previousBlock.symHeight + nextBlock.symHeight) / 2;
   const maxVerticalGap = Math.max(14, Math.min(36, averageSymbolHeight * 1.4));
+  const maxVerticalOverlap = Math.max(10, averageSymbolHeight * 1.2);
 
-  if (verticalGap < -8 || verticalGap > maxVerticalGap) {
+  if (verticalGap < -maxVerticalOverlap || verticalGap > maxVerticalGap) {
     return false;
   }
 

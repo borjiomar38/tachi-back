@@ -7,6 +7,7 @@ vi.mock('@/env/server', () => ({
 }));
 
 import {
+  buildBlockSourceHash,
   buildTranslationJsonPayload,
   buildTranslationPrompt,
   selectPromptProfile,
@@ -39,8 +40,14 @@ describe('provider gateway prompts', () => {
       ])
     ).toEqual({
       '001.jpg': {
-        block_0000: '안녕',
-        block_0001: '하세요',
+        block_0000: {
+          sourceHash: buildBlockSourceHash('안녕'),
+          sourceText: '안녕',
+        },
+        block_0001: {
+          sourceHash: buildBlockSourceHash('하세요'),
+          sourceText: '하세요',
+        },
       },
     });
   });
@@ -62,9 +69,9 @@ describe('provider gateway prompts', () => {
     expect(prompt.promptVersion).toBe('2026-03-20.v1');
     expect(prompt.systemPrompt).toContain('Return only valid JSON');
     expect(prompt.userPrompt).toContain('Chapter recap');
-    expect(prompt.userPrompt).toContain(
-      '"001.jpg":{"block_0000":"こんにちは"}'
-    );
+    expect(prompt.userPrompt).toContain('"001.jpg":{"block_0000":');
+    expect(prompt.userPrompt).toContain('"sourceHash":');
+    expect(prompt.userPrompt).toContain('"sourceText":"こんにちは"');
   });
 
   it('uses elevated literary scanlation guidance for Arabic targets', () => {

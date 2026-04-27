@@ -20,6 +20,7 @@ vi.mock('@/env/server', () => ({
 }));
 
 import { ProviderGatewayError } from '@/server/provider-gateway/errors';
+import { buildBlockSourceHash } from '@/server/provider-gateway/prompts';
 import { performHostedTranslation } from '@/server/provider-gateway/service';
 import { performTranslationWithProvider } from '@/server/provider-gateway/translation';
 
@@ -134,6 +135,22 @@ describe('provider gateway translation', () => {
   });
 
   it('maps dictionary block ids so one missing item cannot shift following translations', async () => {
+    const responsePayload = {
+      '006.webp': {
+        block_0000: {
+          sourceHash: buildBlockSourceHash('line 1'),
+          translation: 'first',
+        },
+        block_0002: {
+          sourceHash: buildBlockSourceHash('line 3'),
+          translation: 'third',
+        },
+        block_0003: {
+          sourceHash: buildBlockSourceHash('line 4'),
+          translation: 'fourth',
+        },
+      },
+    };
     const fetchFn = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -141,8 +158,7 @@ describe('provider gateway translation', () => {
             {
               finish_reason: 'stop',
               message: {
-                content:
-                  '{"006.webp":{"block_0000":"first","block_0002":"third","block_0003":"fourth"}}',
+                content: JSON.stringify(responsePayload),
               },
             },
           ],
@@ -198,6 +214,104 @@ describe('provider gateway translation', () => {
         index: 3,
         sourceText: 'line 4',
         translation: 'fourth',
+      },
+    ]);
+  });
+
+  it('retries when a dictionary object echoes sourceHash for the wrong block id', async () => {
+    const wrongPayload = {
+      '006.webp': {
+        block_0000: {
+          sourceHash: buildBlockSourceHash('line 2'),
+          translation: 'wrong',
+        },
+        block_0001: {
+          sourceHash: buildBlockSourceHash('line 1'),
+          translation: 'shifted',
+        },
+      },
+    };
+    const correctPayload = {
+      '006.webp': {
+        block_0000: {
+          sourceHash: buildBlockSourceHash('line 1'),
+          translation: 'first',
+        },
+        block_0001: {
+          sourceHash: buildBlockSourceHash('line 2'),
+          translation: 'second',
+        },
+      },
+    };
+    const fetchFn = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                finish_reason: 'stop',
+                message: {
+                  content: JSON.stringify(wrongPayload),
+                },
+              },
+            ],
+            usage: {
+              completion_tokens: 5,
+              prompt_tokens: 10,
+            },
+          }),
+          { status: 200 }
+        )
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                finish_reason: 'stop',
+                message: {
+                  content: JSON.stringify(correctPayload),
+                },
+              },
+            ],
+            usage: {
+              completion_tokens: 5,
+              prompt_tokens: 10,
+            },
+          }),
+          { status: 200 }
+        )
+      );
+
+    const result = await performHostedTranslation(
+      {
+        pages: [
+          {
+            blocks: [{ text: 'line 1' }, { text: 'line 2' }],
+            pageKey: '006.webp',
+          },
+        ],
+        preferredProvider: 'openai',
+        sourceLanguage: 'en',
+        targetLanguage: 'ar',
+      },
+      {
+        fetchFn,
+      }
+    );
+
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+    expect(result.pages[0]?.blocks).toEqual([
+      {
+        index: 0,
+        sourceText: 'line 1',
+        translation: 'first',
+      },
+      {
+        index: 1,
+        sourceText: 'line 2',
+        translation: 'second',
       },
     ]);
   });

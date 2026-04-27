@@ -60,6 +60,19 @@ export function createInvalidProviderResponseError(
   );
 }
 
+export function createRetryableInvalidProviderResponseError(
+  provider: ProviderType,
+  message: string
+) {
+  return new ProviderGatewayError(
+    'invalid_response',
+    provider,
+    true,
+    502,
+    message
+  );
+}
+
 export function normalizeProviderHttpError(input: {
   provider: ProviderType;
   responseText: string;

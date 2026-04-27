@@ -5,15 +5,38 @@ import {
   performGeminiVisionOcr,
   performGoogleCloudVisionOcr,
 } from '@/server/provider-gateway/ocr';
+import { buildTranslationJsonPayload } from '@/server/provider-gateway/prompts';
 import {
   HostedPageTranslation,
   NormalizedOcrPage,
+  NormalizedTranslationBatch,
   zHostedPageTranslation,
+  zNormalizedTranslationBatch,
   zNormalizedTranslationPage,
 } from '@/server/provider-gateway/schema';
 import { performTranslationWithProvider } from '@/server/provider-gateway/translation';
 import { persistProviderUsageSnapshot } from '@/server/provider-gateway/usage';
 import { retryProviderCall } from '@/server/provider-gateway/utils';
+
+const TRANSLATION_BATCH_MAX_PAYLOAD_CHARS = 9_000;
+const TRANSLATION_BATCH_MAX_BLOCKS = 45;
+const TRANSLATION_BATCH_CONCURRENCY = 3;
+
+type TranslationPageInput = {
+  blocks: Array<{ text: string }>;
+  pageKey: string;
+};
+
+type TranslationBatchSegment = {
+  originalPageKey: string;
+  requestPage: TranslationPageInput;
+};
+
+type TranslationBatch = {
+  payloadChars: number;
+  requestPages: TranslationPageInput[];
+  segments: TranslationBatchSegment[];
+};
 
 export async function performHostedOcr(
   input: {
@@ -106,26 +129,39 @@ export async function performHostedTranslation(
     fetchFn?: typeof fetch;
   } = {}
 ) {
-  const result = await retryProviderCall(
-    async () =>
-      await performTranslationWithProvider(
+  const translationPlan = buildTranslationBatchPlan(input.pages);
+  const batchResults = await mapWithConcurrency(
+    translationPlan.batches,
+    TRANSLATION_BATCH_CONCURRENCY,
+    async (batch) =>
+      await retryProviderCall(
+        async () =>
+          await performTranslationWithProvider(
+            {
+              jobId: input.jobId,
+              mangaContext: input.mangaContext ?? '',
+              pages: batch.requestPages,
+              preferredProvider: input.preferredProvider,
+              sourceLanguage: input.sourceLanguage,
+              targetLanguage: input.targetLanguage,
+            },
+            {
+              fetchFn: deps.fetchFn,
+              preferredProvider: input.preferredProvider,
+            }
+          ),
         {
-          jobId: input.jobId,
-          mangaContext: input.mangaContext ?? '',
-          pages: input.pages,
-          preferredProvider: input.preferredProvider,
-          sourceLanguage: input.sourceLanguage,
-          targetLanguage: input.targetLanguage,
-        },
-        {
-          fetchFn: deps.fetchFn,
-          preferredProvider: input.preferredProvider,
+          maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
         }
-      ),
-    {
-      maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
-    }
+      )
   );
+  const result = combineTranslationBatchResults({
+    batchResults,
+    batches: translationPlan.batches,
+    originalPages: input.pages,
+    sourceLanguage: input.sourceLanguage,
+    targetLanguage: input.targetLanguage,
+  });
 
   if (input.jobId) {
     await persistProviderUsageSnapshot({
@@ -133,6 +169,10 @@ export async function performHostedTranslation(
       jobId: input.jobId,
       latencyMs: result.usage.latencyMs,
       metadata: {
+        batchCount: translationPlan.batches.length,
+        batchPayloadChars: translationPlan.batches.map(
+          (batch) => batch.payloadChars
+        ),
         finishReason: result.usage.finishReason ?? null,
         promptProfile: result.promptProfile,
         promptVersion: result.promptVersion,
@@ -150,6 +190,253 @@ export async function performHostedTranslation(
   }
 
   return result;
+}
+
+function buildTranslationBatchPlan(pages: TranslationPageInput[]) {
+  const segments = pages.flatMap(splitPageIntoTranslationSegments);
+  const batches: TranslationBatch[] = [];
+  let currentSegments: TranslationBatchSegment[] = [];
+  let currentPayloadChars = 0;
+  let currentBlockCount = 0;
+
+  for (const segment of segments) {
+    const segmentPayloadChars = estimateTranslationPayloadChars([
+      segment.requestPage,
+    ]);
+    const segmentBlockCount = segment.requestPage.blocks.length;
+    const shouldStartNextBatch =
+      currentSegments.length > 0 &&
+      (currentPayloadChars + segmentPayloadChars >
+        TRANSLATION_BATCH_MAX_PAYLOAD_CHARS ||
+        currentBlockCount + segmentBlockCount > TRANSLATION_BATCH_MAX_BLOCKS);
+
+    if (shouldStartNextBatch) {
+      batches.push(createTranslationBatch(currentSegments));
+      currentSegments = [];
+      currentPayloadChars = 0;
+      currentBlockCount = 0;
+    }
+
+    currentSegments.push(segment);
+    currentPayloadChars += segmentPayloadChars;
+    currentBlockCount += segmentBlockCount;
+  }
+
+  if (currentSegments.length > 0) {
+    batches.push(createTranslationBatch(currentSegments));
+  }
+
+  return {
+    batches,
+    segments,
+  };
+}
+
+function splitPageIntoTranslationSegments(
+  page: TranslationPageInput
+): TranslationBatchSegment[] {
+  const blockGroups: Array<Array<{ text: string }>> = [];
+  let currentBlocks: Array<{ text: string }> = [];
+
+  for (const block of page.blocks) {
+    const candidateBlocks = [...currentBlocks, block];
+    const candidatePayloadChars = estimateTranslationPayloadChars([
+      {
+        blocks: candidateBlocks,
+        pageKey: page.pageKey,
+      },
+    ]);
+    const shouldStartNextSegment =
+      currentBlocks.length > 0 &&
+      (candidatePayloadChars > TRANSLATION_BATCH_MAX_PAYLOAD_CHARS ||
+        candidateBlocks.length > TRANSLATION_BATCH_MAX_BLOCKS);
+
+    if (shouldStartNextSegment) {
+      blockGroups.push(currentBlocks);
+      currentBlocks = [];
+    }
+
+    currentBlocks.push(block);
+  }
+
+  if (currentBlocks.length > 0) {
+    blockGroups.push(currentBlocks);
+  }
+
+  return blockGroups.map((blocks, index) => ({
+    originalPageKey: page.pageKey,
+    requestPage: {
+      blocks,
+      pageKey:
+        blockGroups.length === 1
+          ? page.pageKey
+          : `${page.pageKey}__part_${String(index + 1).padStart(3, '0')}`,
+    },
+  }));
+}
+
+function createTranslationBatch(
+  segments: TranslationBatchSegment[]
+): TranslationBatch {
+  const requestPages = segments.map((segment) => segment.requestPage);
+
+  return {
+    payloadChars: estimateTranslationPayloadChars(requestPages),
+    requestPages,
+    segments,
+  };
+}
+
+function estimateTranslationPayloadChars(pages: TranslationPageInput[]) {
+  return JSON.stringify(buildTranslationJsonPayload(pages)).length;
+}
+
+async function mapWithConcurrency<Item, Result>(
+  items: Item[],
+  concurrency: number,
+  task: (item: Item, index: number) => Promise<Result>
+) {
+  const results = Array.from<Result | undefined>({ length: items.length });
+  let nextIndex = 0;
+
+  async function worker() {
+    while (nextIndex < items.length) {
+      const index = nextIndex;
+      nextIndex += 1;
+      const item = items[index];
+
+      if (item !== undefined) {
+        results[index] = await task(item, index);
+      }
+    }
+  }
+
+  await Promise.all(
+    Array.from(
+      { length: Math.min(concurrency, items.length) },
+      async () => await worker()
+    )
+  );
+
+  return results as Result[];
+}
+
+function combineTranslationBatchResults(input: {
+  batches: TranslationBatch[];
+  batchResults: NormalizedTranslationBatch[];
+  originalPages: TranslationPageInput[];
+  sourceLanguage: string;
+  targetLanguage: string;
+}) {
+  const firstResult = input.batchResults[0];
+
+  if (!firstResult) {
+    throw new Error('Hosted translation produced no batch results.');
+  }
+
+  const translatedPagesByRequestKey = new Map(
+    input.batchResults.flatMap((result) =>
+      result.pages.map((page) => [page.pageKey, page] as const)
+    )
+  );
+  const blocksByOriginalPageKey = new Map<
+    string,
+    NormalizedTranslationBatch['pages'][number]['blocks']
+  >();
+
+  for (const batch of input.batches) {
+    for (const segment of batch.segments) {
+      const translatedPage = translatedPagesByRequestKey.get(
+        segment.requestPage.pageKey
+      );
+
+      if (!translatedPage) {
+        throw new Error(
+          `Missing translation batch page for ${segment.requestPage.pageKey}.`
+        );
+      }
+
+      const existingBlocks =
+        blocksByOriginalPageKey.get(segment.originalPageKey) ?? [];
+      blocksByOriginalPageKey.set(segment.originalPageKey, [
+        ...existingBlocks,
+        ...translatedPage.blocks,
+      ]);
+    }
+  }
+
+  const pages = input.originalPages.map((page) => {
+    const blocks = blocksByOriginalPageKey.get(page.pageKey) ?? [];
+
+    if (blocks.length !== page.blocks.length) {
+      throw new Error(
+        `Translation batch block count does not match OCR block count for ${page.pageKey}.`
+      );
+    }
+
+    return {
+      blocks,
+      pageKey: page.pageKey,
+    };
+  });
+
+  return zNormalizedTranslationBatch.parse({
+    pages,
+    promptProfile: firstResult.promptProfile,
+    promptVersion: firstResult.promptVersion,
+    provider: firstResult.provider,
+    providerModel: firstResult.providerModel,
+    sourceLanguage: input.sourceLanguage,
+    targetLanguage: input.targetLanguage,
+    usage: {
+      finishReason: combineOptionalStrings(
+        input.batchResults.map((result) => result.usage.finishReason)
+      ),
+      inputTokens: sumOptionalNumbers(
+        input.batchResults.map((result) => result.usage.inputTokens)
+      ),
+      latencyMs: input.batchResults.reduce(
+        (sum, result) => sum + result.usage.latencyMs,
+        0
+      ),
+      outputTokens: sumOptionalNumbers(
+        input.batchResults.map((result) => result.usage.outputTokens)
+      ),
+      pageCount: input.originalPages.length,
+      providerRequestId: combineOptionalStrings(
+        input.batchResults.map((result) => result.usage.providerRequestId)
+      ),
+      requestCount: input.batchResults.reduce(
+        (sum, result) => sum + result.usage.requestCount,
+        0
+      ),
+      stopReason: combineOptionalStrings(
+        input.batchResults.map((result) => result.usage.stopReason)
+      ),
+    },
+  });
+}
+
+function sumOptionalNumbers(values: Array<null | number | undefined>) {
+  const numbers = values.filter((value): value is number => value != null);
+
+  if (numbers.length === 0) {
+    return null;
+  }
+
+  return numbers.reduce((sum, value) => sum + value, 0);
+}
+
+function combineOptionalStrings(values: Array<null | string | undefined>) {
+  const strings = values.filter(
+    (value): value is string => typeof value === 'string' && value.length > 0
+  );
+
+  if (strings.length === 0) {
+    return null;
+  }
+
+  return [...new Set(strings)].join(',');
 }
 
 export function mergeHostedPageTranslation(input: {
