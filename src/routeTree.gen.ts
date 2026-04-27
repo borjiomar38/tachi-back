@@ -61,6 +61,7 @@ import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/a
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
 import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
 import { Route as ApiMobileSourceDiscoveryVerifyRouteImport } from './routes/api/mobile/source-discovery/verify'
+import { Route as ApiMobileSourceDiscoveryResultsRouteImport } from './routes/api/mobile/source-discovery/results'
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
@@ -337,6 +338,12 @@ const ApiMobileSourceDiscoveryVerifyRoute =
     path: '/api/mobile/source-discovery/verify',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileSourceDiscoveryResultsRoute =
+  ApiMobileSourceDiscoveryResultsRouteImport.update({
+    id: '/api/mobile/source-discovery/results',
+    path: '/api/mobile/source-discovery/results',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileSourceDiscoveryPlanRoute =
   ApiMobileSourceDiscoveryPlanRouteImport.update({
     id: '/api/mobile/source-discovery/plan',
@@ -454,6 +461,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
+  '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
@@ -517,6 +525,7 @@ export interface FileRoutesByTo {
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
+  '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
@@ -584,6 +593,7 @@ export interface FileRoutesById {
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
+  '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
@@ -652,6 +662,7 @@ export interface FileRouteTypes {
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
+    | '/api/mobile/source-discovery/results'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
@@ -715,6 +726,7 @@ export interface FileRouteTypes {
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
+    | '/api/mobile/source-discovery/results'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
@@ -781,6 +793,7 @@ export interface FileRouteTypes {
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
+    | '/api/mobile/source-discovery/results'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
@@ -834,6 +847,7 @@ export interface RootRouteChildren {
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
   ApiMobileSourceDiscoveryMethodFeedbackRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
+  ApiMobileSourceDiscoveryResultsRoute: typeof ApiMobileSourceDiscoveryResultsRoute
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
 }
@@ -1204,11 +1218,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileSourceDiscoveryVerifyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/mobile/source-discovery/method-feedback': {
-      id: '/api/mobile/source-discovery/method-feedback'
-      path: '/api/mobile/source-discovery/method-feedback'
-      fullPath: '/api/mobile/source-discovery/method-feedback'
-      preLoaderRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRouteImport
+    '/api/mobile/source-discovery/results': {
+      id: '/api/mobile/source-discovery/results'
+      path: '/api/mobile/source-discovery/results'
+      fullPath: '/api/mobile/source-discovery/results'
+      preLoaderRoute: typeof ApiMobileSourceDiscoveryResultsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/source-discovery/plan': {
@@ -1216,6 +1230,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/source-discovery/plan'
       fullPath: '/api/mobile/source-discovery/plan'
       preLoaderRoute: typeof ApiMobileSourceDiscoveryPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/source-discovery/method-feedback': {
+      id: '/api/mobile/source-discovery/method-feedback'
+      path: '/api/mobile/source-discovery/method-feedback'
+      fullPath: '/api/mobile/source-discovery/method-feedback'
+      preLoaderRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/manga-page/translate': {
@@ -1444,6 +1465,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileSourceDiscoveryMethodFeedbackRoute:
     ApiMobileSourceDiscoveryMethodFeedbackRoute,
   ApiMobileSourceDiscoveryPlanRoute: ApiMobileSourceDiscoveryPlanRoute,
+  ApiMobileSourceDiscoveryResultsRoute: ApiMobileSourceDiscoveryResultsRoute,
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
 }

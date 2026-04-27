@@ -4,7 +4,10 @@ import { z } from 'zod';
 
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
-import { ProviderType } from '@/server/db/generated/client';
+import {
+  ProviderType,
+  SourceDiscoveryResultStatus,
+} from '@/server/db/generated/client';
 import {
   createInvalidProviderResponseError,
   createProviderConfigError,
@@ -69,6 +72,34 @@ export const zSourceDiscoveryVerifyInput = z.object({
   targetChapter: z.number().int().positive().optional(),
 });
 
+export const zSourceDiscoveryResultSubmitInput = z.object({
+  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
+  query: z.string().trim().min(1).max(200),
+  results: z
+    .array(
+      z.object({
+        baseUrl: z.string().trim().min(1).max(2_000),
+        confidence: z.number().min(0).max(1),
+        decision: z.enum(['match', 'maybe', 'reject']),
+        description: z.string().trim().max(4_000).nullish(),
+        extensionLang: z.string().trim().min(1).max(32),
+        extensionName: z.string().trim().min(1).max(200),
+        latestChapterName: z.string().trim().max(500).nullish(),
+        latestChapterNumber: z.number().nonnegative().nullish(),
+        mangaUrl: z.string().trim().min(1).max(2_000),
+        packageName: z.string().trim().min(1).max(250),
+        reason: z.string().trim().max(500).nullish(),
+        sourceId: z.string().trim().min(1).max(200),
+        sourceLanguage: z.string().trim().min(1).max(32),
+        sourceMangaUrl: z.string().trim().min(1).max(2_000),
+        sourceName: z.string().trim().min(1).max(200),
+        thumbnailUrl: z.string().trim().max(2_000).nullish(),
+        title: z.string().trim().min(1).max(500),
+      })
+    )
+    .max(MAX_VERIFY_CANDIDATES_PER_REQUEST),
+});
+
 const zAiSearchStrategy = z.object({
   aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
   alternativeTitles: z.array(z.string().trim().min(1).max(200)).max(20),
@@ -122,6 +153,30 @@ export type SourceDiscoveryPlanInput = z.infer<
 export type SourceDiscoveryVerifyInput = z.infer<
   typeof zSourceDiscoveryVerifyInput
 >;
+export type SourceDiscoveryResultSubmitInput = z.infer<
+  typeof zSourceDiscoveryResultSubmitInput
+>;
+
+export type SourceDiscoveryKnownResult = {
+  baseUrl: string;
+  confidence: number;
+  decision: string;
+  description: string | null;
+  extensionIconUrl: string;
+  extensionLang: string;
+  extensionName: string;
+  latestChapterName: string | null;
+  latestChapterNumber: number | null;
+  mangaUrl: string;
+  packageName: string;
+  reason: string | null;
+  sourceId: string;
+  sourceLanguage: string;
+  sourceMangaUrl: string;
+  sourceName: string;
+  thumbnailUrl: string | null;
+  title: string;
+};
 
 export type SourceDiscoveryAdapterKey =
   | 'asurascans'
@@ -197,6 +252,7 @@ export async function buildSourceDiscoveryPlan(
     aiSearchStrategy?: SourceDiscoveryAiSearchStrategy | null;
     extensionIndexItems?: ExtensionIndex;
     fetchFn?: typeof fetch;
+    knownResults?: SourceDiscoveryKnownResult[];
     now?: () => Date;
     sourceSearchMethods?: SourceDiscoverySearchMethod[];
     sourceThemeHints?: SourceThemeHint[];
@@ -263,6 +319,12 @@ export async function buildSourceDiscoveryPlan(
       searchMethods.get(candidate.sourceId) ??
       buildFallbackSearchMethod(candidate),
   }));
+  const knownResults =
+    deps.knownResults ??
+    (await findKnownSourceDiscoveryResults({
+      aliases,
+      query: input.query,
+    }).catch(() => []));
 
   return {
     aliasStrategy: aiStrategy ? 'ai' : 'deterministic',
@@ -271,6 +333,7 @@ export async function buildSourceDiscoveryPlan(
     candidates,
     generatedAt: now.toISOString(),
     indexSourceUrl: KEIYOUSHI_INDEX_URL,
+    knownResults,
     probableLanguages: aiStrategy?.probableLanguages ?? [],
     query: input.query,
     romanizedTitles: aiStrategy?.romanizedTitles ?? [],
@@ -316,6 +379,205 @@ export async function verifySourceDiscoveryCandidates(
         decision: match.decision,
         reason: match.reason,
       })),
+  };
+}
+
+export async function findKnownSourceDiscoveryResults(input: {
+  aliases?: string[];
+  limit?: number;
+  query: string;
+}): Promise<SourceDiscoveryKnownResult[]> {
+  const aliasKeys = buildDiscoveryAliasKeys(input.query, input.aliases ?? []);
+  if (aliasKeys.length === 0) {
+    return [];
+  }
+
+  const rows = await db.sourceDiscoveryResultAlias.findMany({
+    include: {
+      result: true,
+    },
+    orderBy: [
+      { result: { latestChapterNumber: 'desc' } },
+      { result: { confidence: 'desc' } },
+      { result: { confirmationCount: 'desc' } },
+      { result: { lastSeenAt: 'desc' } },
+    ],
+    take: Math.min(input.limit ?? 40, 80),
+    where: {
+      aliasKey: {
+        in: aliasKeys,
+      },
+      result: {
+        status: SourceDiscoveryResultStatus.active,
+      },
+    },
+  });
+  const seen = new Set<string>();
+
+  return rows
+    .map((row) => row.result)
+    .filter((result) => {
+      if (seen.has(result.id)) {
+        return false;
+      }
+      seen.add(result.id);
+      return true;
+    })
+    .map(serializeKnownResult);
+}
+
+export async function submitSourceDiscoveryResults(rawInput: unknown) {
+  const input = zSourceDiscoveryResultSubmitInput.parse(rawInput);
+  const now = new Date();
+  let accepted = 0;
+  let rejected = 0;
+
+  await db.$transaction(async (tx) => {
+    for (const result of input.results) {
+      if (result.decision === 'reject' || result.confidence < 0.65) {
+        rejected += 1;
+        continue;
+      }
+
+      const canonicalMangaUrl = canonicalizeMangaUrl(
+        result.mangaUrl || result.sourceMangaUrl,
+        result.baseUrl
+      );
+      const titleKey = normalizeDiscoveryKey(result.title);
+      if (!canonicalMangaUrl || !titleKey) {
+        rejected += 1;
+        continue;
+      }
+
+      const existing = await tx.sourceDiscoveryResult.findUnique({
+        where: {
+          sourceId_canonicalMangaUrl: {
+            canonicalMangaUrl,
+            sourceId: result.sourceId,
+          },
+        },
+      });
+      const latestChapterNumber = maxNullableNumber(
+        existing?.latestChapterNumber ?? null,
+        result.latestChapterNumber ?? null
+      );
+      const nextConfirmationCount =
+        (existing?.confirmationCount ?? 0) +
+        (result.decision === 'match' ? 1 : 0);
+      const isGlobalSearchObservation =
+        result.reason === 'Found by installed global source search';
+      const shouldPromote =
+        result.decision === 'match' &&
+        ((!isGlobalSearchObservation && result.confidence >= 0.75) ||
+          (nextConfirmationCount >= 2 && result.confidence >= 0.7));
+      const status = shouldPromote
+        ? SourceDiscoveryResultStatus.active
+        : SourceDiscoveryResultStatus.pending;
+      const row = existing
+        ? await tx.sourceDiscoveryResult.update({
+            data: {
+              baseUrl: result.baseUrl,
+              confidence: Math.max(existing.confidence, result.confidence),
+              decision:
+                result.decision === 'match' ? 'match' : existing.decision,
+              description: result.description ?? existing.description,
+              extensionLang: result.extensionLang,
+              extensionName: result.extensionName,
+              lastSeenAt: now,
+              lastVerifiedAt: now,
+              latestChapterName:
+                result.latestChapterName ?? existing.latestChapterName,
+              latestChapterNumber,
+              metadata: {
+                lastSubmittedQueryKey: normalizeDiscoveryKey(input.query),
+              },
+              observationCount: {
+                increment: 1,
+              },
+              packageName: result.packageName,
+              reason: result.reason ?? existing.reason,
+              sourceLanguage: result.sourceLanguage,
+              sourceMangaUrl: result.sourceMangaUrl,
+              sourceName: result.sourceName,
+              status:
+                existing.status === SourceDiscoveryResultStatus.active ||
+                shouldPromote
+                  ? SourceDiscoveryResultStatus.active
+                  : status,
+              thumbnailUrl: result.thumbnailUrl ?? existing.thumbnailUrl,
+              title: result.title,
+              titleKey,
+              confirmationCount: nextConfirmationCount,
+            },
+            where: {
+              id: existing.id,
+            },
+          })
+        : await tx.sourceDiscoveryResult.create({
+            data: {
+              baseUrl: result.baseUrl,
+              canonicalMangaUrl,
+              confidence: result.confidence,
+              decision: result.decision,
+              description: result.description ?? null,
+              extensionLang: result.extensionLang,
+              extensionName: result.extensionName,
+              firstSeenAt: now,
+              lastSeenAt: now,
+              lastVerifiedAt: now,
+              latestChapterName: result.latestChapterName ?? null,
+              latestChapterNumber: result.latestChapterNumber ?? null,
+              mangaUrl: result.mangaUrl,
+              metadata: {
+                firstSubmittedQueryKey: normalizeDiscoveryKey(input.query),
+              },
+              packageName: result.packageName,
+              reason: result.reason ?? null,
+              confirmationCount: result.decision === 'match' ? 1 : 0,
+              sourceId: result.sourceId,
+              sourceLanguage: result.sourceLanguage,
+              sourceMangaUrl: result.sourceMangaUrl,
+              sourceName: result.sourceName,
+              status,
+              thumbnailUrl: result.thumbnailUrl ?? null,
+              title: result.title,
+              titleKey,
+            },
+          });
+
+      for (const alias of buildDiscoveryAliases(input.query, [
+        ...input.aliases,
+        result.title,
+      ])) {
+        const aliasKey = normalizeDiscoveryKey(alias);
+        if (!aliasKey) {
+          continue;
+        }
+        await tx.sourceDiscoveryResultAlias.upsert({
+          create: {
+            alias,
+            aliasKey,
+            resultId: row.id,
+          },
+          update: {
+            alias,
+          },
+          where: {
+            resultId_aliasKey: {
+              aliasKey,
+              resultId: row.id,
+            },
+          },
+        });
+      }
+
+      accepted += 1;
+    }
+  });
+
+  return {
+    accepted,
+    rejected,
   };
 }
 
@@ -508,6 +770,111 @@ export function buildSearchAliases(query: string) {
     compactKeywords,
     punctuationAsSpace.toLowerCase(),
   ]).slice(0, MAX_ALIASES);
+}
+
+function buildDiscoveryAliases(query: string, aliases: string[]) {
+  return uniqueNonEmpty([
+    query,
+    ...buildSearchAliases(query),
+    ...aliases,
+  ]).slice(0, MAX_ALIASES + 8);
+}
+
+function buildDiscoveryAliasKeys(query: string, aliases: string[]) {
+  return uniqueNonEmpty(
+    buildDiscoveryAliases(query, aliases).map(normalizeDiscoveryKey)
+  );
+}
+
+function normalizeDiscoveryKey(value: string) {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]+/gi, ' ')
+    .replace(
+      /\b(chapter|chapitre|capitulo|capitulo|manga|manhwa|manhua|scan|scans|webtoon)\b/g,
+      ' '
+    )
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function canonicalizeMangaUrl(url: string, baseUrl: string) {
+  const rawUrl = url.trim();
+  if (!rawUrl) {
+    return '';
+  }
+
+  try {
+    const parsed = new URL(rawUrl, baseUrl);
+    parsed.hash = '';
+    for (const key of parsed.searchParams.keys()) {
+      if (
+        key.toLowerCase().startsWith('utm_') ||
+        ['fbclid', 'gclid', 'ref'].includes(key.toLowerCase())
+      ) {
+        parsed.searchParams.delete(key);
+      }
+    }
+    parsed.hostname = parsed.hostname.toLowerCase();
+    parsed.pathname = parsed.pathname.replace(/\/+$/g, '') || '/';
+    return parsed.toString();
+  } catch {
+    return rawUrl.replace(/#.*$/, '').replace(/\/+$/, '');
+  }
+}
+
+function maxNullableNumber(left: number | null, right: number | null) {
+  if (left == null) {
+    return right;
+  }
+  if (right == null) {
+    return left;
+  }
+  return Math.max(left, right);
+}
+
+function serializeKnownResult(result: {
+  baseUrl: string;
+  confidence: number;
+  decision: string;
+  description: string | null;
+  extensionLang: string;
+  extensionName: string;
+  latestChapterName: string | null;
+  latestChapterNumber: number | null;
+  mangaUrl: string;
+  packageName: string;
+  reason: string | null;
+  sourceId: string;
+  sourceLanguage: string;
+  sourceMangaUrl: string;
+  sourceName: string;
+  thumbnailUrl: string | null;
+  title: string;
+}): SourceDiscoveryKnownResult {
+  return {
+    baseUrl: result.baseUrl,
+    confidence: result.confidence,
+    decision: result.decision,
+    description: result.description,
+    extensionIconUrl: `${KEIYOUSHI_REPO_URL}/icon/${result.packageName}.png`,
+    extensionLang: result.extensionLang,
+    extensionName: result.extensionName,
+    latestChapterName: result.latestChapterName,
+    latestChapterNumber: result.latestChapterNumber,
+    mangaUrl: result.mangaUrl,
+    packageName: result.packageName,
+    reason: result.reason,
+    sourceId: result.sourceId,
+    sourceLanguage: result.sourceLanguage,
+    sourceMangaUrl: result.sourceMangaUrl,
+    sourceName: result.sourceName,
+    thumbnailUrl: result.thumbnailUrl,
+    title: result.title,
+  };
 }
 
 async function fetchExtensionIndex(input: {

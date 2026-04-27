@@ -80,6 +80,29 @@ describe('source discovery service', () => {
             version: '1.0.0',
           },
         ],
+        knownResults: [
+          {
+            baseUrl: 'https://asuracomic.net',
+            confidence: 0.98,
+            decision: 'match',
+            description: 'Cached result',
+            extensionIconUrl:
+              'https://raw.githubusercontent.com/keiyoushi/extensions/repo/icon/tachiyomi-en.asura.png',
+            extensionLang: 'en',
+            extensionName: 'Tachiyomi: Asura Scans',
+            latestChapterName: 'Chapter 123',
+            latestChapterNumber: 123,
+            mangaUrl: 'https://asuracomic.net/series/full-awakening',
+            packageName: 'eu.kanade.tachiyomi.extension.en.asura',
+            reason: 'Previously confirmed by a device search',
+            sourceId: '1',
+            sourceLanguage: 'en',
+            sourceMangaUrl: '/series/full-awakening',
+            sourceName: 'Asura Scans',
+            thumbnailUrl: null,
+            title: 'Full Awakening',
+          },
+        ],
         now: () => new Date('2026-04-27T00:00:00.000Z'),
         sourceThemeHints: [
           {
@@ -113,5 +136,11 @@ describe('source discovery service', () => {
     expect(
       plan.candidates.map((candidate) => candidate.sourceId)
     ).not.toContain('3');
+    expect(plan.knownResults).toHaveLength(1);
+    expect(plan.knownResults[0]).toMatchObject({
+      latestChapterNumber: 123,
+      packageName: 'eu.kanade.tachiyomi.extension.en.asura',
+      title: 'Full Awakening',
+    });
   });
 });

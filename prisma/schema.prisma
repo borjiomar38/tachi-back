@@ -144,6 +144,13 @@ enum SourceSearchMethodStatus {
   unknown
 }
 
+enum SourceDiscoveryResultStatus {
+  active
+  pending
+  stale
+  rejected
+}
+
 // Better Auth users are internal backoffice identities only.
 // Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
@@ -628,4 +635,59 @@ model SourceSearchMethod {
   @@index([adapterKey, status])
   @@index([sourceLanguage, status])
   @@map("source_search_methods")
+}
+
+model SourceDiscoveryResult {
+  id                  String                      @id @default(cuid())
+  sourceId            String
+  packageName         String
+  extensionName       String
+  extensionLang       String
+  sourceName          String
+  sourceLanguage      String
+  baseUrl             String
+  mangaUrl            String
+  canonicalMangaUrl   String
+  sourceMangaUrl      String
+  title               String
+  titleKey            String
+  description         String?
+  thumbnailUrl        String?
+  latestChapterName   String?
+  latestChapterNumber Float?
+  confidence          Float                       @default(0)
+  decision            String                      @default("maybe")
+  reason              String?
+  confirmationCount   Int                         @default(1)
+  observationCount    Int                         @default(1)
+  status              SourceDiscoveryResultStatus @default(pending)
+  firstSeenAt         DateTime                    @default(now())
+  lastSeenAt          DateTime                    @default(now())
+  lastVerifiedAt      DateTime?
+  metadata            Json?
+  createdAt           DateTime                    @default(now())
+  updatedAt           DateTime                    @updatedAt
+
+  aliases SourceDiscoveryResultAlias[]
+
+  @@unique([sourceId, canonicalMangaUrl])
+  @@index([packageName, status])
+  @@index([sourceLanguage, status])
+  @@index([titleKey])
+  @@index([latestChapterNumber])
+  @@map("source_discovery_results")
+}
+
+model SourceDiscoveryResultAlias {
+  id        String                @id @default(cuid())
+  resultId  String
+  alias     String
+  aliasKey  String
+  createdAt DateTime              @default(now())
+
+  result SourceDiscoveryResult @relation(fields: [resultId], references: [id], onDelete: Cascade)
+
+  @@unique([resultId, aliasKey])
+  @@index([aliasKey])
+  @@map("source_discovery_result_aliases")
 }
