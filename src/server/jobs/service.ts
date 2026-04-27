@@ -2027,12 +2027,24 @@ function shouldCoalesceOcrBlocks(
     (previousBlock.symHeight + nextBlock.symHeight) / 2;
   const maxVerticalGap = Math.max(14, Math.min(36, averageSymbolHeight * 1.4));
   const maxVerticalOverlap = Math.max(10, averageSymbolHeight * 1.2);
+  const previousCenterY = previousBlock.y + previousBlock.height / 2;
+  const nextCenterY = nextBlock.y + nextBlock.height / 2;
+  const centerYDistance = nextCenterY - previousCenterY;
+  const maxLineStep = Math.max(
+    42,
+    averageSymbolHeight * 3,
+    Math.min(previousBlock.height, nextBlock.height) * 0.9
+  );
 
-  if (verticalGap < -maxVerticalOverlap || verticalGap > maxVerticalGap) {
+  if (verticalGap > maxVerticalGap) {
     return false;
   }
 
   if (Math.abs(previousBlock.angle - nextBlock.angle) > 8) {
+    return false;
+  }
+
+  if (verticalGap < -maxVerticalOverlap && centerYDistance > maxLineStep) {
     return false;
   }
 
@@ -2045,11 +2057,14 @@ function shouldCoalesceOcrBlocks(
   const overlapRatio = minWidth > 0 ? overlap / minWidth : 0;
   const previousCenter = previousBlock.x + previousBlock.width / 2;
   const nextCenter = nextBlock.x + nextBlock.width / 2;
-  const maxCenterDistance =
-    Math.max(previousBlock.width, nextBlock.width) * 0.35;
+  const maxCenterDistance = Math.max(
+    48,
+    averageSymbolHeight * 4,
+    Math.min(previousBlock.width, nextBlock.width) * 0.55
+  );
 
   return (
-    overlapRatio >= 0.35 ||
+    overlapRatio >= 0.25 ||
     Math.abs(previousCenter - nextCenter) <= maxCenterDistance
   );
 }

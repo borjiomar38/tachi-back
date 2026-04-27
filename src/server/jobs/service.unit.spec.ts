@@ -1260,33 +1260,33 @@ describe('job service', () => {
       blocks: [
         {
           angle: 0,
-          height: 117,
-          symHeight: 20,
-          symWidth: 10,
-          text: "LUCKILY ... I'D",
-          width: 437,
-          x: 184,
-          y: 126,
+          height: 43,
+          symHeight: 17,
+          symWidth: 10.625,
+          text: 'WAS THAT LIGHTNING STRIKE IN',
+          width: 191,
+          x: 134,
+          y: 0,
         },
         {
           angle: 0,
-          height: 23,
-          symHeight: 20,
-          symWidth: 10,
-          text: 'BE SATISFIED WITH ONE THAT',
-          width: 357,
-          x: 224,
-          y: 227,
+          height: 69,
+          symHeight: 16.333334,
+          symWidth: 11.4375,
+          text: 'THE SOUTH OF THE CITY EARLIER CAUSED BY YOU?',
+          width: 189,
+          x: 135,
+          y: 27,
         },
         {
           angle: 0,
-          height: 22,
-          symHeight: 20,
-          symWidth: 10,
-          text: 'BREAKS THROUGH FIVE.',
-          width: 286,
-          x: 260,
-          y: 261,
+          height: 120,
+          symHeight: 17,
+          symWidth: 11,
+          text: 'FAINTLY, THERE WERE ACTUALLY RULES VAGUELY HIDDEN WITHIN IT. I AM VERY CURIOUS~',
+          width: 208,
+          x: 263,
+          y: 129,
         },
       ],
       imgHeight: 1000,
@@ -1311,8 +1311,14 @@ describe('job service', () => {
             {
               index: 0,
               sourceText:
-                "LUCKILY ... I'D BE SATISFIED WITH ONE THAT BREAKS THROUGH FIVE.",
-              translation: 'Arabic merged bubble',
+                'WAS THAT LIGHTNING STRIKE IN THE SOUTH OF THE CITY EARLIER CAUSED BY YOU?',
+              translation: 'Arabic merged question',
+            },
+            {
+              index: 1,
+              sourceText:
+                'FAINTLY, THERE WERE ACTUALLY RULES VAGUELY HIDDEN WITHIN IT. I AM VERY CURIOUS~',
+              translation: 'Arabic second bubble',
             },
           ],
           pageKey: '001.jpg',
@@ -1354,7 +1360,10 @@ describe('job service', () => {
           {
             blocks: [
               {
-                text: "LUCKILY ... I'D BE SATISFIED WITH ONE THAT BREAKS THROUGH FIVE.",
+                text: 'WAS THAT LIGHTNING STRIKE IN THE SOUTH OF THE CITY EARLIER CAUSED BY YOU?',
+              },
+              {
+                text: 'FAINTLY, THERE WERE ACTUALLY RULES VAGUELY HIDDEN WITHIN IT. I AM VERY CURIOUS~',
               },
             ],
             pageKey: '001.jpg',
@@ -1362,15 +1371,21 @@ describe('job service', () => {
         ],
       })
     );
-    expect(result?.pages['001.jpg']?.blocks).toHaveLength(1);
+    expect(result?.pages['001.jpg']?.blocks).toHaveLength(2);
     expect(result?.pages['001.jpg']?.blocks[0]).toEqual(
       expect.objectContaining({
-        height: 157,
-        text: "LUCKILY ... I'D BE SATISFIED WITH ONE THAT BREAKS THROUGH FIVE.",
-        translation: 'Arabic merged bubble',
-        width: 437,
-        x: 184,
-        y: 126,
+        height: 96,
+        text: 'WAS THAT LIGHTNING STRIKE IN THE SOUTH OF THE CITY EARLIER CAUSED BY YOU?',
+        translation: 'Arabic merged question',
+        width: 191,
+        x: 134,
+        y: 0,
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks[1]).toEqual(
+      expect.objectContaining({
+        text: 'FAINTLY, THERE WERE ACTUALLY RULES VAGUELY HIDDEN WITHIN IT. I AM VERY CURIOUS~',
+        translation: 'Arabic second bubble',
       })
     );
   });
