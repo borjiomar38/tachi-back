@@ -239,7 +239,7 @@ describe('manga page translation service', () => {
     ).toBe(true);
   });
 
-  it('charges tokens by translation request blocks instead of raw chapter count', () => {
+  it('charges a fixed token cost for manga page translation', () => {
     const chapters = Array.from({ length: 2000 }, (_, index) => ({
       key: `/chapter-${index + 1}`,
       name: `第${index + 1}话`,
@@ -259,6 +259,6 @@ describe('manga page translation service', () => {
         sourceLanguage: 'zh',
         targetLanguage: 'ar',
       })
-    ).toBe(35);
+    ).toBe(5);
   });
 });

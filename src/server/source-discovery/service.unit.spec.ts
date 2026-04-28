@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildSearchAliases, buildSourceDiscoveryPlan } from './service';
+import {
+  buildSearchAliases,
+  buildSourceDiscoveryPlan,
+  calculateSourceDiscoveryPlanTokenCost,
+  calculateSourceDiscoveryVerifyTokenCost,
+} from './service';
 
 describe('source discovery service', () => {
   it('builds normalized title aliases for cross-source search', () => {
@@ -154,5 +159,24 @@ describe('source discovery service', () => {
       versionCode: 1,
       versionName: '1.0.0',
     });
+  });
+
+  it('charges source discovery once during the AI plan step', () => {
+    expect(calculateSourceDiscoveryPlanTokenCost()).toBe(5);
+    expect(
+      calculateSourceDiscoveryVerifyTokenCost({
+        aliases: ['Full Awakening'],
+        candidates: Array.from({ length: 120 }, (_, index) => ({
+          baseUrl: `https://source-${index}.example`,
+          candidateId: `candidate-${index}`,
+          extensionName: 'Tachiyomi: Test',
+          sourceId: `source-${index}`,
+          sourceLanguage: 'en',
+          sourceName: 'Test Source',
+          title: 'Full Awakening',
+        })),
+        query: 'Full Awakening',
+      })
+    ).toBe(0);
   });
 });

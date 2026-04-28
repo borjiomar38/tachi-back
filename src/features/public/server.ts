@@ -76,11 +76,11 @@ export const getPublicTokenPackByKey = createServerFn({ method: 'GET' })
 
 function mapPublicTokenPack(tokenPack: PublicTokenPackRow): PublicTokenPack {
   const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
-  const estimatedPages = Math.max(
+  const estimatedChapters = Math.max(
     1,
-    Math.floor(totalTokens / envServer.JOB_TOKENS_PER_PAGE)
+    Math.floor(totalTokens / envServer.JOB_TOKENS_PER_CHAPTER)
   );
-  const estimatedChapters = Math.max(1, Math.round(estimatedPages / 20));
+  const estimatedPages = estimatedChapters * 20;
   const marketing = getMarketingPresentation(tokenPack);
 
   return {

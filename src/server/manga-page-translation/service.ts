@@ -9,6 +9,7 @@ const MAX_CHAPTERS_PER_REQUEST = 2500;
 const MAX_BLOCKS_PER_TRANSLATION_GROUP = 60;
 const MAX_PARALLEL_TRANSLATION_GROUPS = 6;
 const ENGLISH_TARGET_LANGUAGE = 'en';
+const MANGA_PAGE_TRANSLATION_TOKEN_COST = 5;
 
 const zOptionalText = z.string().trim().max(10_000).nullish();
 
@@ -93,7 +94,9 @@ export async function translateMangaPage(
 export function calculateMangaPageTranslationTokenCost(rawInput: unknown) {
   const input = zTranslateMangaPageInput.parse(rawInput);
 
-  return buildTranslationBlockGroups(input).length;
+  return buildTranslationBlockGroups(input).length > 0
+    ? MANGA_PAGE_TRANSLATION_TOKEN_COST
+    : 0;
 }
 
 async function translateBlockGroups(input: {

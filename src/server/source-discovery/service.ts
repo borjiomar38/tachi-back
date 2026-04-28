@@ -31,7 +31,7 @@ const MAX_ALIASES = 12;
 const MAX_SEARCH_QUERIES = 24;
 const MAX_SOURCE_DISCOVERY_CANDIDATES = 2_500;
 const MAX_VERIFY_CANDIDATES_PER_REQUEST = 120;
-const VERIFY_CANDIDATES_PER_TOKEN = 40;
+const SOURCE_DISCOVERY_PLAN_TOKEN_COST = 5;
 const ASIAN_SOURCE_LANGUAGES = new Set([
   'all',
   'zh',
@@ -635,20 +635,13 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
 }
 
 export function calculateSourceDiscoveryPlanTokenCost() {
-  return 1;
+  return SOURCE_DISCOVERY_PLAN_TOKEN_COST;
 }
 
 export function calculateSourceDiscoveryVerifyTokenCost(rawInput: unknown) {
-  const input = zSourceDiscoveryVerifyInput.parse(rawInput);
+  zSourceDiscoveryVerifyInput.parse(rawInput);
 
-  if (input.candidates.length === 0) {
-    return 0;
-  }
-
-  return Math.max(
-    1,
-    Math.ceil(input.candidates.length / VERIFY_CANDIDATES_PER_TOKEN)
-  );
+  return 0;
 }
 
 export async function updateSourceDiscoveryMethodFeedback(rawInput: unknown) {

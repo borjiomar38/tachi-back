@@ -1305,8 +1305,8 @@ function getUploadedAt(metadata: unknown) {
   return typeof uploadedAt === 'string' ? new Date(uploadedAt) : null;
 }
 
-function calculateReservedTokens(pageCount: number) {
-  return pageCount * envServer.JOB_TOKENS_PER_PAGE;
+function calculateReservedTokens(_pageCount: number) {
+  return envServer.JOB_TOKENS_PER_CHAPTER;
 }
 
 function buildTranslationCacheProviderSignature(job: JobRecord) {
