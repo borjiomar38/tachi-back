@@ -5,7 +5,7 @@ export const androidApkDownload = {
   sizeLabel: '197 MB',
   buildLabel: 'Android universal dev build',
   sha256:
-    'f672ec4e47d25e85978e982668591b3b016289b2cebafb2e7e45a3af88da09a7',
+    '36a5b9acadcf06859c69d1ea2645b7e635397db934115efcfe312d55158d7a4a',
   objectKey: 'public/downloads/tachiyomiat-latest.apk',
 } as const;
 
