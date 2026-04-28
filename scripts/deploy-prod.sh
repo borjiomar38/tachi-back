@@ -3,7 +3,7 @@ set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VERCEL_SCOPE="maleks-projects-5ef1c03"
-PRODUCTION_ALIAS="https://tachi-back.vercel.app"
+PRODUCTION_ALIAS="https://tachiyomiat.com"
 
 cd "$PROJECT_DIR"
 

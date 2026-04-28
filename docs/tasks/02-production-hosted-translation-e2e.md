@@ -34,7 +34,7 @@ admin-side provider switching actually changes live job execution.
 
 - `gemini` validation job: `cmnopw22a0006jv04cx6awbia`
 - `openai` validation job: `cmnopxl3m000ojv041yiuuul8`
-- both jobs completed on `https://tachi-back.vercel.app`
+- both jobs completed on `https://tachiyomiat.com`
 - both jobs reserved `5` tokens and spent `5` tokens
 - both result manifests returned `200`
 - runtime config was restored to `gemini` after the `openai` validation run

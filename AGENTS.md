@@ -86,7 +86,7 @@ pnpm deploy:prod
 
 ```bash
 vercel inspect <deployment-url> --scope maleks-projects-5ef1c03
-curl -i -s -X POST https://tachi-back.vercel.app/api/mobile/subscription/cancel
+curl -i -s -X POST https://tachiyomiat.com/api/mobile/subscription/cancel
 ```
 
 - The unauthenticated mobile cancel check should return `401` with `{"error":{"code":"invalid_session"},"ok":false}`. That confirms the route is live without requiring a real mobile token.

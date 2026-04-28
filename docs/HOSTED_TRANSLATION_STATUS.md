@@ -125,7 +125,7 @@ Local Prisma drift and runtime-config migration handling:
 Relevant mobile-side product decisions already made:
 
 - translation engine is fixed to `Tachiyomi Back [TOKENS]`
-- backend URL is fixed to `https://tachi-back.vercel.app`
+- backend URL is fixed to `https://tachiyomiat.com`
 - end user should only provide redeem code
 - provider choice must not be a mobile setting anymore
 

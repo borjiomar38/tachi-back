@@ -44,7 +44,7 @@ Important terminology:
 - [x] Mobile session and hosted auth flow are working in production
 - [x] Android app is locked to `Tachiyomi Back [TOKENS]`
 - [x] Android app default backend URL is fixed to
-      `https://tachi-back.vercel.app`
+      `https://tachiyomiat.com`
 - [x] Hosted provider env vars are present in Vercel production for OCR and
       translation
 - [x] Device limit is effectively unlimited for hosted licenses
