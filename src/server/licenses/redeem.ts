@@ -112,25 +112,6 @@ export async function redeemLicenseToDevice(
       throw new RedeemActivationError('device_revoked', 409);
     }
 
-    if (existingDevice) {
-      const otherActiveBinding = await tx.licenseDevice.findFirst({
-        where: {
-          deviceId: existingDevice.id,
-          licenseId: {
-            not: redeemCode.license.id,
-          },
-          status: 'active',
-        },
-        select: {
-          id: true,
-        },
-      });
-
-      if (otherActiveBinding) {
-        throw new RedeemActivationError('installation_conflict', 409);
-      }
-    }
-
     const device = existingDevice
       ? await tx.device.update({
           where: { id: existingDevice.id },
@@ -186,6 +167,36 @@ export async function redeemLicenseToDevice(
             status: true,
           },
         });
+
+    if (existingDevice) {
+      await tx.licenseDevice.updateMany({
+        where: {
+          deviceId: existingDevice.id,
+          licenseId: {
+            not: redeemCode.license.id,
+          },
+          status: 'active',
+        },
+        data: {
+          status: 'released',
+          unboundAt: now,
+        },
+      });
+
+      await tx.mobileSession.updateMany({
+        where: {
+          deviceId: existingDevice.id,
+          licenseId: {
+            not: redeemCode.license.id,
+          },
+          revokedAt: null,
+        },
+        data: {
+          revokedAt: now,
+          revokeReason: 'redeem_replaced',
+        },
+      });
+    }
 
     const existingBinding = await tx.licenseDevice.findUnique({
       where: {

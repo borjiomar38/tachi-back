@@ -164,10 +164,14 @@ describe('license redeem activation', () => {
           id: 'binding-1',
           status: 'active',
         }),
+        updateMany: vi.fn().mockResolvedValue({ count: 0 }),
         update: vi.fn().mockResolvedValue({
           boundAt: now,
           id: 'binding-1',
         }),
+      },
+      mobileSession: {
+        updateMany: vi.fn().mockResolvedValue({ count: 0 }),
       },
       redeemCode: {
         findUnique: vi.fn().mockResolvedValue({
@@ -226,7 +230,148 @@ describe('license redeem activation', () => {
     );
 
     expect(result.activationStatus).toBe('already_activated');
+    expect(tx.licenseDevice.updateMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          licenseId: {
+            not: 'license-1',
+          },
+        }),
+      })
+    );
     expect(tx.licenseDevice.update).toHaveBeenCalledOnce();
+  });
+
+  it('replaces a different active license binding only for the same installation', async () => {
+    const now = new Date('2026-03-19T21:15:00.000Z');
+    const tx = {
+      device: {
+        findUnique: vi.fn().mockResolvedValue({
+          appBuild: '100',
+          appVersion: '1.0.0',
+          id: 'device-1',
+          installationId: 'install-1234567890abcd',
+          lastSeenAt: now,
+          locale: 'en',
+          metadata: null,
+          platform: 'android',
+          status: 'active',
+        }),
+        update: vi.fn().mockResolvedValue({
+          appBuild: '101',
+          appVersion: '1.0.1',
+          id: 'device-1',
+          installationId: 'install-1234567890abcd',
+          lastSeenAt: now,
+          locale: 'en',
+          platform: 'android',
+          status: 'active',
+        }),
+      },
+      license: {
+        update: vi.fn().mockResolvedValue({
+          activatedAt: now,
+          deviceLimit: 1,
+          id: 'license-new',
+          key: 'license-key-new',
+          status: 'active',
+        }),
+      },
+      licenseDevice: {
+        count: vi.fn().mockResolvedValue(1),
+        create: vi.fn().mockResolvedValue({
+          boundAt: now,
+          id: 'binding-new',
+        }),
+        findFirst: vi.fn().mockResolvedValue({
+          id: 'binding-old',
+        }),
+        findUnique: vi.fn().mockResolvedValue(null),
+        updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+      },
+      mobileSession: {
+        updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+      },
+      redeemCode: {
+        findUnique: vi.fn().mockResolvedValue({
+          code: 'TB-NEWC-ODE1-2345',
+          createdAt: now,
+          expiresAt: null,
+          id: 'redeem-new',
+          license: {
+            activatedAt: null,
+            deviceLimit: 1,
+            id: 'license-new',
+            key: 'license-key-new',
+            status: 'pending',
+          },
+          metadata: null,
+          redeemedAt: null,
+          redeemedByDevice: null,
+          redeemedByDeviceId: null,
+          status: 'available',
+        }),
+        update: vi.fn().mockResolvedValue({
+          code: 'TB-NEWC-ODE1-2345',
+          redeemedAt: now,
+          status: 'redeemed',
+        }),
+      },
+      tokenLedger: {
+        aggregate: vi.fn().mockResolvedValue({
+          _sum: {
+            deltaTokens: 500,
+          },
+        }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await redeemLicenseToDevice(
+      {
+        appBuild: '101',
+        appVersion: '1.0.1',
+        installationId: 'install-1234567890abcd',
+        locale: 'en',
+        platform: 'android',
+        redeemCode: 'TB-NEWC-ODE1-2345',
+      },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+        now,
+      }
+    );
+
+    expect(result.activationStatus).toBe('activated');
+    expect(tx.licenseDevice.updateMany).toHaveBeenCalledWith({
+      where: {
+        deviceId: 'device-1',
+        licenseId: {
+          not: 'license-new',
+        },
+        status: 'active',
+      },
+      data: {
+        status: 'released',
+        unboundAt: now,
+      },
+    });
+    expect(tx.mobileSession.updateMany).toHaveBeenCalledWith({
+      where: {
+        deviceId: 'device-1',
+        licenseId: {
+          not: 'license-new',
+        },
+        revokedAt: null,
+      },
+      data: {
+        revokedAt: now,
+        revokeReason: 'redeem_replaced',
+      },
+    });
+    expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
   });
 
   it('allows a non-expired redeemed code on another installation', async () => {
