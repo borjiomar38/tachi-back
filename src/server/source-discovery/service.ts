@@ -7,6 +7,7 @@ import { db } from '@/server/db';
 import {
   ProviderType,
   SourceDiscoveryResultStatus,
+  SourceSearchMethodStatus,
 } from '@/server/db/generated/client';
 import {
   createInvalidProviderResponseError,
@@ -67,6 +68,11 @@ const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'mangaball',
   'mangathemesia',
   'manhwaz',
+]);
+const DISABLING_SEARCH_METHOD_STATUSES = new Set([
+  'cloudflare',
+  'failed',
+  'unsupported',
 ]);
 const zSourceDiscoveryAlias = z.string().trim().min(1).max(200);
 
@@ -768,21 +774,44 @@ export async function updateSourceDiscoveryMethodFeedback(rawInput: unknown) {
   const input = zSourceDiscoveryMethodFeedbackInput.parse(rawInput);
   const status = input.status;
   const now = new Date();
-
-  await db.sourceSearchMethod.updateMany({
-    data: {
-      failureReason: input.error ?? null,
-      lastSuccessAt: status === 'working' ? now : undefined,
-      lastTestedAt: now,
-      metadata: {
-        lastFeedbackSampleUrl: input.sampleUrl ?? null,
-      },
-      status,
+  const rows = await db.sourceSearchMethod.findMany({
+    select: {
+      baseUrl: true,
+      extensionName: true,
+      id: true,
+      sourceName: true,
     },
     where: {
       OR: [{ id: input.methodId }, { sourceId: input.sourceId }],
     },
   });
+
+  for (const row of rows) {
+    const persistedStatus =
+      status !== 'working' &&
+      isFeaturedAsianExtensionSource({
+        baseUrl: row.baseUrl,
+        extensionName: row.extensionName,
+        sourceName: row.sourceName,
+      })
+        ? SourceSearchMethodStatus.stale
+        : status;
+
+    await db.sourceSearchMethod.update({
+      data: {
+        failureReason: input.error ?? null,
+        lastSuccessAt: status === 'working' ? now : undefined,
+        lastTestedAt: now,
+        metadata: {
+          lastFeedbackSampleUrl: input.sampleUrl ?? null,
+        },
+        status: persistedStatus,
+      },
+      where: {
+        id: row.id,
+      },
+    });
+  }
 
   return { ok: true };
 }
@@ -1217,8 +1246,15 @@ async function loadSearchMethodsForCandidates(
   candidates: SourceDiscoveryPlanCandidate[],
   injectedMethods?: SourceDiscoverySearchMethod[]
 ) {
+  const candidateBySourceId = new Map(
+    candidates.map((candidate) => [candidate.sourceId, candidate])
+  );
+
   if (injectedMethods) {
-    return new Map(injectedMethods.map((method) => [method.id, method]));
+    return normalizeSearchMethodMapForCandidates(
+      candidateBySourceId,
+      new Map(injectedMethods.map((method) => [method.id, method]))
+    );
   }
 
   const sourceIds = uniqueNonEmpty(
@@ -1240,8 +1276,40 @@ async function loadSearchMethodsForCandidates(
       })
     ).catch(() => [])) ?? [];
 
+  return normalizeSearchMethodMapForCandidates(
+    candidateBySourceId,
+    new Map(
+      rows.map((row) => {
+        const method = serializeSearchMethodRow(row);
+
+        return [row.sourceId, method] as const;
+      })
+    )
+  );
+}
+
+function normalizeSearchMethodMapForCandidates(
+  candidateBySourceId: Map<string, SourceDiscoveryPlanCandidate>,
+  methodsBySourceId: Map<string, SourceDiscoverySearchMethod>
+) {
   return new Map(
-    rows.map((row) => [row.sourceId, serializeSearchMethodRow(row)])
+    Array.from(methodsBySourceId.entries()).map(([sourceId, method]) => {
+      const candidate = candidateBySourceId.get(sourceId);
+
+      if (
+        candidate &&
+        DISABLING_SEARCH_METHOD_STATUSES.has(method.status) &&
+        isFeaturedAsianExtensionSource({
+          baseUrl: candidate.baseUrl,
+          extensionName: candidate.extensionName,
+          sourceName: candidate.sourceName,
+        })
+      ) {
+        return [sourceId, { ...method, status: 'stale' }] as const;
+      }
+
+      return [sourceId, method] as const;
+    })
   );
 }
 

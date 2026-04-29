@@ -377,6 +377,63 @@ describe('source discovery service', () => {
     });
   });
 
+  it('keeps featured Asian source methods runnable after stale failure feedback', async () => {
+    const plan = await buildSourceDiscoveryPlan(
+      {
+        maxCandidates: 5,
+        preferredLanguages: ['zh'],
+        query: '全职觉醒',
+      },
+      {
+        extensionIndexItems: [
+          {
+            apk: 'tachiyomi-zh.baozi-v1.0.0.apk',
+            code: 1,
+            lang: 'zh',
+            name: 'Tachiyomi: Baozi Manhua',
+            nsfw: 0,
+            pkg: 'eu.kanade.tachiyomi.extension.zh.baozimanhua',
+            sources: [
+              {
+                baseUrl: 'https://cn.baozimh.com',
+                id: '5724751873601868259',
+                lang: 'zh',
+                name: '包子漫画',
+              },
+            ],
+            version: '1.0.0',
+          },
+        ],
+        now: () => new Date('2026-04-27T00:00:00.000Z'),
+        sourceSearchMethods: [
+          {
+            adapterKey: 'baozimanhua',
+            chapterSelector: '.comics-chapters a',
+            descriptionSelector: 'p.comics-detail__desc',
+            detailTitleSelector: 'h1.comics-detail__title',
+            headers: null,
+            id: '5724751873601868259',
+            latestChapterSelector: '.comics-chapters a',
+            methodType: 'http_template',
+            resultSelector: 'a.comics-card__poster[href]',
+            searchUrlPattern: '{baseUrl}/search?q={query}',
+            status: 'failed',
+            thumbnailSelector: 'amp-img[src], img[src]',
+            titleSelector: null,
+            urlSelector: '&',
+          },
+        ],
+        sourceThemeHints: [],
+      }
+    );
+
+    expect(plan.candidates[0]?.searchMethod).toMatchObject({
+      adapterKey: 'baozimanhua',
+      methodType: 'http_template',
+      status: 'stale',
+    });
+  });
+
   it('charges only when AI title correction is needed', () => {
     expect(calculateSourceDiscoveryPlanTokenCost()).toBe(0);
     expect(
