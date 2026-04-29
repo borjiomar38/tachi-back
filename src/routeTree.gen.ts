@@ -67,6 +67,7 @@ import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './ro
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
+import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
 import { Route as ManagerUsersIdUpdateIndexRouteImport } from './routes/manager/users/$id.update.index'
@@ -372,6 +373,11 @@ const ApiMobileAuthRefreshRoute = ApiMobileAuthRefreshRouteImport.update({
   path: '/api/mobile/auth/refresh',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileAuthFreeTrialRoute = ApiMobileAuthFreeTrialRouteImport.update({
+  id: '/api/mobile/auth/free-trial',
+  path: '/api/mobile/auth/free-trial',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiMobileAuthActivateRoute = ApiMobileAuthActivateRouteImport.update({
   id: '/api/mobile/auth/activate',
   path: '/api/mobile/auth/activate',
@@ -456,6 +462,7 @@ export interface FileRoutesByFullPath {
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
@@ -520,6 +527,7 @@ export interface FileRoutesByTo {
   '/manager/users': typeof ManagerUsersIndexRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
@@ -588,6 +596,7 @@ export interface FileRoutesById {
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
@@ -657,6 +666,7 @@ export interface FileRouteTypes {
     | '/manager/users/'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
@@ -721,6 +731,7 @@ export interface FileRouteTypes {
     | '/manager/users'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
@@ -788,6 +799,7 @@ export interface FileRouteTypes {
     | '/manager/users/'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/manga-page/translate'
@@ -842,6 +854,7 @@ export interface RootRouteChildren {
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
+  ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRoute
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
@@ -1260,6 +1273,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileAuthRefreshRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/auth/free-trial': {
+      id: '/api/mobile/auth/free-trial'
+      path: '/api/mobile/auth/free-trial'
+      fullPath: '/api/mobile/auth/free-trial'
+      preLoaderRoute: typeof ApiMobileAuthFreeTrialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/auth/activate': {
       id: '/api/mobile/auth/activate'
       path: '/api/mobile/auth/activate'
@@ -1459,6 +1479,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRpcSplatRoute: ApiRpcSplatRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
+  ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRoute,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,

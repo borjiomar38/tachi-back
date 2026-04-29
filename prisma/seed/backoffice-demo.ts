@@ -734,7 +734,7 @@ export async function createBackofficeDemoData() {
             requestedTranslationProvider: 'anthropic',
             resolvedOcrProvider: 'google_cloud_vision',
             resolvedTranslationProvider: 'anthropic',
-            reservedTokens: 25,
+            reservedTokens: 10,
             spentTokens: 0,
             uploadCompletedAt: hoursAgo(1.4),
             queuedAt: hoursAgo(1.35),

@@ -110,7 +110,7 @@ const envServerBase = createEnv({
 
     JOB_RUNTIME_MODE: z.enum(['inline', 'worker']).default('inline'),
     JOB_MAX_CONCURRENCY: z.coerce.number().int().positive().default(2),
-    JOB_TOKENS_PER_CHAPTER: z.coerce.number().int().positive().default(25),
+    JOB_TOKENS_PER_CHAPTER: z.coerce.number().int().positive().default(10),
     JOB_MAX_PAGE_BYTES: z.coerce.number().int().positive().default(20_000_000),
     JOB_PAGE_UPLOAD_URL_TTL_SECONDS: z.coerce
       .number()

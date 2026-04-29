@@ -55,7 +55,7 @@ export const Logo = ({ variant = 'full', ...props }: LogoProps) => (
           fontSize={variant === 'compact' ? '42' : '36'}
           fontWeight="900"
         >
-          AT
+          At
         </text>
         {variant === 'full' && (
           <>

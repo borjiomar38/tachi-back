@@ -154,23 +154,23 @@ enum SourceDiscoveryResultStatus {
 // Better Auth users are internal backoffice identities only.
 // Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
-  id            String       @id @default(cuid())
+  id            String    @id @default(cuid())
   name          String
   email         String
   emailVerified Boolean
   image         String?
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
 
-  role              UserRole?
-  banned            Boolean?
-  banReason         String?
-  banExpires        DateTime?
-  onboardedAt       DateTime?
-  createdRedeemCodes  RedeemCode[]     @relation("RedeemCodeCreatedByUser")
-  assignedContacts    ContactMessage[] @relation("ContactMessageAssignedToUser")
+  role               UserRole?
+  banned             Boolean?
+  banReason          String?
+  banExpires         DateTime?
+  onboardedAt        DateTime?
+  createdRedeemCodes RedeemCode[]     @relation("RedeemCodeCreatedByUser")
+  assignedContacts   ContactMessage[] @relation("ContactMessageAssignedToUser")
 
   @@unique([email])
   @@map("user")
@@ -224,24 +224,25 @@ model Verification {
 }
 
 model License {
-  id          String         @id @default(cuid())
-  key         String         @unique @default(uuid())
-  fulfillmentKey String?     @unique
-  ownerEmail  String?
-  status      LicenseStatus  @default(pending)
-  deviceLimit Int            @default(1)
-  notes       String?
-  createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt
-  activatedAt DateTime?
-  revokedAt   DateTime?
+  id             String        @id @default(cuid())
+  key            String        @unique @default(uuid())
+  fulfillmentKey String?       @unique
+  ownerEmail     String?
+  status         LicenseStatus @default(pending)
+  deviceLimit    Int           @default(1)
+  notes          String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  activatedAt    DateTime?
+  revokedAt      DateTime?
 
-  devices      LicenseDevice[]
-  redeemCodes  RedeemCode[]
-  orders       Order[]
-  ledgerEntries TokenLedger[]
+  devices        LicenseDevice[]
+  redeemCodes    RedeemCode[]
+  orders         Order[]
+  ledgerEntries  TokenLedger[]
   mobileSessions MobileSession[]
-  jobs         TranslationJob[]
+  jobs           TranslationJob[]
+  freeTrialClaim FreeTrialClaim?
 
   @@index([status, createdAt])
   @@index([ownerEmail])
@@ -263,7 +264,7 @@ model Device {
   updatedAt      DateTime       @updatedAt
 
   licenseBindings LicenseDevice[]
-  mobileSessions   MobileSession[]
+  mobileSessions  MobileSession[]
   redeemedCodes   RedeemCode[]
   jobs            TranslationJob[]
   ledgerEntries   TokenLedger[]
@@ -306,16 +307,35 @@ model RedeemCode {
   createdAt          DateTime         @default(now())
   updatedAt          DateTime         @updatedAt
 
-  license          License  @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  order            Order?   @relation(fields: [orderId], references: [id], onDelete: SetNull)
-  createdByUser    User?    @relation("RedeemCodeCreatedByUser", fields: [createdByUserId], references: [id], onDelete: SetNull)
-  redeemedByDevice Device?  @relation(fields: [redeemedByDeviceId], references: [id], onDelete: SetNull)
+  license          License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  order            Order?          @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  createdByUser    User?           @relation("RedeemCodeCreatedByUser", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  redeemedByDevice Device?         @relation(fields: [redeemedByDeviceId], references: [id], onDelete: SetNull)
   ledgerEntries    TokenLedger[]
+  freeTrialClaim   FreeTrialClaim?
 
   @@index([licenseId, status])
   @@index([orderId])
   @@index([redeemedByDeviceId])
   @@map("redeem_codes")
+}
+
+model FreeTrialClaim {
+  id              String   @id @default(cuid())
+  email           String
+  emailNormalized String   @unique
+  installationId  String   @unique
+  licenseId       String   @unique
+  redeemCodeId    String   @unique
+  tokenAmount     Int      @default(100)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  license    License    @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  redeemCode RedeemCode @relation(fields: [redeemCodeId], references: [id], onDelete: Cascade)
+
+  @@index([createdAt])
+  @@map("free_trial_claims")
 }
 
 model AppConfig {
@@ -350,29 +370,29 @@ model TokenPack {
 }
 
 model Order {
-  id                     String          @id @default(cuid())
-  provider               PaymentProvider @default(lemonsqueezy)
-  status                 OrderStatus     @default(pending)
-  tokenPackId            String?
-  licenseId              String?
-  payerEmail             String?
-  currency               String          @default("usd")
-  amountSubtotalCents    Int             @default(0)
-  amountDiscountCents    Int             @default(0)
-  amountTotalCents       Int             @default(0)
-  lsOrderId              String?         @unique
-  lsSubscriptionId       String?
-  lsCustomerId           String?
-  billingReason          String?
-  billingPeriodStart     DateTime?
-  billingPeriodEnd       DateTime?
-  paidAt                 DateTime?
-  rawPayload             Json?
-  createdAt              DateTime        @default(now())
-  updatedAt              DateTime        @updatedAt
+  id                  String          @id @default(cuid())
+  provider            PaymentProvider @default(lemonsqueezy)
+  status              OrderStatus     @default(pending)
+  tokenPackId         String?
+  licenseId           String?
+  payerEmail          String?
+  currency            String          @default("usd")
+  amountSubtotalCents Int             @default(0)
+  amountDiscountCents Int             @default(0)
+  amountTotalCents    Int             @default(0)
+  lsOrderId           String?         @unique
+  lsSubscriptionId    String?
+  lsCustomerId        String?
+  billingReason       String?
+  billingPeriodStart  DateTime?
+  billingPeriodEnd    DateTime?
+  paidAt              DateTime?
+  rawPayload          Json?
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
 
-  tokenPack     TokenPack?    @relation(fields: [tokenPackId], references: [id], onDelete: SetNull)
-  license       License?      @relation(fields: [licenseId], references: [id], onDelete: SetNull)
+  tokenPack     TokenPack?     @relation(fields: [tokenPackId], references: [id], onDelete: SetNull)
+  license       License?       @relation(fields: [licenseId], references: [id], onDelete: SetNull)
   redeemCodes   RedeemCode[]
   ledgerEntries TokenLedger[]
   webhookEvents WebhookEvent[]
@@ -405,26 +425,26 @@ model WebhookEvent {
 }
 
 model TokenLedger {
-  id           String                 @id @default(cuid())
-  idempotencyKey String?              @unique
-  licenseId    String
-  orderId      String?
-  jobId        String?
-  deviceId     String?
-  redeemCodeId String?
-  type         TokenLedgerEntryType
-  status       TokenLedgerEntryStatus @default(posted)
-  deltaTokens  Int
-  description  String?
-  metadata     Json?
-  createdAt    DateTime               @default(now())
-  updatedAt    DateTime               @updatedAt
+  id             String                 @id @default(cuid())
+  idempotencyKey String?                @unique
+  licenseId      String
+  orderId        String?
+  jobId          String?
+  deviceId       String?
+  redeemCodeId   String?
+  type           TokenLedgerEntryType
+  status         TokenLedgerEntryStatus @default(posted)
+  deltaTokens    Int
+  description    String?
+  metadata       Json?
+  createdAt      DateTime               @default(now())
+  updatedAt      DateTime               @updatedAt
 
-  license    License        @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  order      Order?         @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  license    License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  order      Order?          @relation(fields: [orderId], references: [id], onDelete: SetNull)
   job        TranslationJob? @relation(fields: [jobId], references: [id], onDelete: SetNull)
-  device     Device?        @relation(fields: [deviceId], references: [id], onDelete: SetNull)
-  redeemCode RedeemCode?    @relation(fields: [redeemCodeId], references: [id], onDelete: SetNull)
+  device     Device?         @relation(fields: [deviceId], references: [id], onDelete: SetNull)
+  redeemCode RedeemCode?     @relation(fields: [redeemCodeId], references: [id], onDelete: SetNull)
 
   @@index([licenseId, createdAt])
   @@index([jobId])
@@ -460,39 +480,39 @@ model MobileSession {
 }
 
 model TranslationJob {
-  id                         String               @id @default(cuid())
-  licenseId                  String
-  deviceId                   String
-  status                     TranslationJobStatus @default(created)
-  chapterCacheKey            String?
-  chapterIdentity            Json?
-  sourceLanguage             String
-  targetLanguage             String
-  pageCount                  Int                  @default(0)
-  requestedOcrProvider       ProviderType?
+  id                           String               @id @default(cuid())
+  licenseId                    String
+  deviceId                     String
+  status                       TranslationJobStatus @default(created)
+  chapterCacheKey              String?
+  chapterIdentity              Json?
+  sourceLanguage               String
+  targetLanguage               String
+  pageCount                    Int                  @default(0)
+  requestedOcrProvider         ProviderType?
   requestedTranslationProvider ProviderType?
-  resolvedOcrProvider        ProviderType?
-  resolvedTranslationProvider ProviderType?
-  reservedTokens             Int                  @default(0)
-  spentTokens                Int                  @default(0)
-  uploadCompletedAt          DateTime?
-  queuedAt                   DateTime?
-  startedAt                  DateTime?
-  completedAt                DateTime?
-  failedAt                   DateTime?
-  expiresAt                  DateTime?
-  errorCode                  String?
-  errorMessage               String?
-  resultPayloadVersion       String?
-  resultSummary              Json?
-  createdAt                  DateTime             @default(now())
-  updatedAt                  DateTime             @updatedAt
+  resolvedOcrProvider          ProviderType?
+  resolvedTranslationProvider  ProviderType?
+  reservedTokens               Int                  @default(0)
+  spentTokens                  Int                  @default(0)
+  uploadCompletedAt            DateTime?
+  queuedAt                     DateTime?
+  startedAt                    DateTime?
+  completedAt                  DateTime?
+  failedAt                     DateTime?
+  expiresAt                    DateTime?
+  errorCode                    String?
+  errorMessage                 String?
+  resultPayloadVersion         String?
+  resultSummary                Json?
+  createdAt                    DateTime             @default(now())
+  updatedAt                    DateTime             @updatedAt
 
-  license       License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  device        Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
-  assets        JobAsset[]
+  license        License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device         Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  assets         JobAsset[]
   providerUsages ProviderUsage[]
-  ledgerEntries TokenLedger[]
+  ledgerEntries  TokenLedger[]
 
   @@index([licenseId, createdAt])
   @@index([deviceId, createdAt])
@@ -502,8 +522,8 @@ model TranslationJob {
 }
 
 model TranslationResultCache {
-  id                   String   @id @default(cuid())
-  cacheKey             String   @unique
+  id                   String    @id @default(cuid())
+  cacheKey             String    @unique
   chapterCacheKey      String?
   chapterIdentity      Json?
   bucketName           String
@@ -515,10 +535,10 @@ model TranslationResultCache {
   sizeBytes            Int
   sourceLanguage       String
   targetLanguage       String
-  hitCount             Int      @default(0)
+  hitCount             Int       @default(0)
   lastHitAt            DateTime?
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
 
   @@index([targetLanguage, createdAt])
   @@index([chapterCacheKey, targetLanguage, updatedAt])
@@ -548,22 +568,22 @@ model JobAsset {
 }
 
 model ProviderUsage {
-  id           String            @id @default(cuid())
+  id           String             @id @default(cuid())
   jobId        String
   provider     ProviderType
   stage        ProviderUsageStage
   modelName    String?
-  pageCount    Int               @default(0)
-  requestCount Int               @default(1)
+  pageCount    Int                @default(0)
+  requestCount Int                @default(1)
   inputTokens  Int?
   outputTokens Int?
   latencyMs    Int?
   costMicros   BigInt?
-  success      Boolean           @default(true)
+  success      Boolean            @default(true)
   errorCode    String?
   metadata     Json?
-  createdAt    DateTime          @default(now())
-  updatedAt    DateTime          @updatedAt
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
 
   job TranslationJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
 
@@ -679,11 +699,11 @@ model SourceDiscoveryResult {
 }
 
 model SourceDiscoveryResultAlias {
-  id        String                @id @default(cuid())
+  id        String   @id @default(cuid())
   resultId  String
   alias     String
   aliasKey  String
-  createdAt DateTime              @default(now())
+  createdAt DateTime @default(now())
 
   result SourceDiscoveryResult @relation(fields: [resultId], references: [id], onDelete: Cascade)
 

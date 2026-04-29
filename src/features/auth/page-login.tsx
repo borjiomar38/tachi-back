@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useMutation } from '@tanstack/react-query';
 import { useRouter } from '@tanstack/react-router';
+import { MailIcon } from 'lucide-react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
@@ -13,7 +13,6 @@ import {
 } from '@/components/form';
 import { Button } from '@/components/ui/button';
 
-import { envClient } from '@/env/client';
 import { authClient } from '@/features/auth/client';
 import { useMascot } from '@/features/auth/mascot';
 import { FormFieldsLogin, zFormFieldsLogin } from '@/features/auth/schema';
@@ -26,33 +25,6 @@ export default function PageLogin({
 }) {
   const { t } = useTranslation(['auth', 'common']);
   const router = useRouter();
-  const social = useMutation({
-    mutationFn: async (
-      provider: Parameters<typeof authClient.signIn.social>[0]['provider']
-    ) => {
-      const callbackURL = search.redirect ?? '/';
-      let response;
-      try {
-        response = await authClient.signIn.social({
-          provider,
-          callbackURL,
-          errorCallbackURL: '/login/error',
-        });
-      } catch (error) {
-        throw error instanceof Error
-          ? error
-          : new Error(t('auth:errorCode.UNKNOWN_ERROR'));
-      }
-      if (response.error) {
-        throw new Error(response.error.message);
-      }
-      return response.data;
-    },
-    onError: (error) => {
-      const message = error.message || t('auth:errorCode.UNKNOWN_ERROR');
-      toast.error(message);
-    },
-  });
 
   const form = useForm({
     mode: 'onSubmit',
@@ -99,17 +71,19 @@ export default function PageLogin({
   };
 
   return (
-    <Form {...form} onSubmit={submitHandler} className="flex flex-col gap-6">
-      <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-2xl font-bold">{t('auth:pageLogin.title')}</h1>
-        <p className="text-sm text-balance text-muted-foreground">
+    <Form {...form} onSubmit={submitHandler} className="flex flex-col gap-7">
+      <div className="space-y-2 text-center">
+        <h1 className="text-3xl leading-tight font-bold text-balance">
+          {t('auth:pageLogin.title')}
+        </h1>
+        <p className="mx-auto max-w-sm text-sm leading-6 text-balance text-muted-foreground">
           {t('auth:pageLogin.description')}
         </p>
       </div>
       <div className="grid gap-6">
         <div className="grid gap-4">
           <FormField>
-            <FormFieldLabel className="sr-only">
+            <FormFieldLabel className="font-medium">
               {t('auth:common.email.label')}
             </FormFieldLabel>
             <FormFieldController
@@ -118,36 +92,20 @@ export default function PageLogin({
               name="email"
               size="lg"
               placeholder={t('auth:common.email.label')}
+              autoComplete="email"
             />
           </FormField>
           <Button
             loading={form.formState.isSubmitting}
             type="submit"
             size="lg"
-            className="w-full"
+            className="h-11 w-full"
           >
+            <MailIcon />
             {t('auth:pageLogin.loginWithEmail')}
           </Button>
           <LoginEmailHint />
         </div>
-        <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
-          <span className="relative z-10 bg-background px-2 text-muted-foreground">
-            {t('auth:pageLogin.spacer')}
-          </span>
-        </div>
-        <Button
-          className="w-full"
-          variant="secondary"
-          disabled={envClient.VITE_IS_DEMO}
-          loading={
-            social.variables === 'github' &&
-            (social.isPending || social.isSuccess)
-          }
-          size="lg"
-          onClick={() => social.mutate('github')}
-        >
-          {t('auth:pageLogin.loginWithSocial', { provider: 'GitHub' })}
-        </Button>
       </div>
     </Form>
   );

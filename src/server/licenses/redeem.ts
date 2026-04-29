@@ -89,6 +89,14 @@ export async function redeemLicenseToDevice(
       throw new RedeemActivationError('license_unavailable', 409);
     }
 
+    if (
+      isFreeTrialRedeemCode(redeemCode.metadata) &&
+      redeemCode.redeemedByDevice &&
+      redeemCode.redeemedByDevice.installationId !== input.installationId
+    ) {
+      throw new RedeemActivationError('installation_conflict', 409);
+    }
+
     const existingDevice = await tx.device.findUnique({
       where: { installationId: input.installationId },
       select: {
@@ -322,4 +330,14 @@ export function isRedeemActivationError(
   error: unknown
 ): error is RedeemActivationError {
   return error instanceof RedeemActivationError;
+}
+
+function isFreeTrialRedeemCode(metadata: unknown) {
+  return (
+    metadata !== null &&
+    typeof metadata === 'object' &&
+    !Array.isArray(metadata) &&
+    'source' in metadata &&
+    metadata.source === 'free_trial'
+  );
 }

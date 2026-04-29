@@ -55,7 +55,7 @@ vi.mock('@/env/server', () => ({
     JOB_PAGE_UPLOAD_URL_TTL_SECONDS: 900,
     JOB_RESULT_RETENTION_HOURS: 24,
     JOB_RUNTIME_MODE: 'inline',
-    JOB_TOKENS_PER_CHAPTER: 25,
+    JOB_TOKENS_PER_CHAPTER: 10,
   },
 }));
 
@@ -263,7 +263,7 @@ describe('job service', () => {
                 objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
                 objectKeys: [null, null],
                 pageCount: 2,
-                spentTokens: 25,
+                spentTokens: 10,
                 status: 'completed',
                 uploadCompletedAt: new Date('2026-03-20T10:00:00.000Z'),
               })
@@ -346,7 +346,7 @@ describe('job service', () => {
     );
 
     expect(result.job.status).toBe('completed');
-    expect(result.job.spentTokens).toBe(25);
+    expect(result.job.spentTokens).toBe(10);
     expect(result.job.resultPath).toBe(
       '/api/mobile/jobs/job-create-cache-hit/result'
     );
@@ -407,7 +407,7 @@ describe('job service', () => {
                 objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
                 objectKeys: [null, null],
                 pageCount: 2,
-                spentTokens: 25,
+                spentTokens: 10,
                 status: 'completed',
                 uploadCompletedAt: new Date('2026-03-20T10:00:00.000Z'),
               })
@@ -574,7 +574,7 @@ describe('job service', () => {
               ],
               pageCount: 2,
               queuedAt: new Date('2026-03-20T10:05:00.000Z'),
-              reservedTokens: 25,
+              reservedTokens: 10,
               status: 'queued',
               uploadCompletedAt: new Date('2026-03-20T10:05:00.000Z'),
             })
@@ -601,7 +601,7 @@ describe('job service', () => {
     );
 
     expect(result.status).toBe('queued');
-    expect(result.reservedTokens).toBe(25);
+    expect(result.reservedTokens).toBe(10);
     expect(mockDb.tokenLedger.create).toHaveBeenCalledOnce();
     expect(scheduleProcessing).toHaveBeenCalledWith('job-2');
   });
@@ -698,7 +698,7 @@ describe('job service', () => {
               ],
               pageCount: 2,
               sourceLanguage: 'ja',
-              spentTokens: 25,
+              spentTokens: 10,
               status: 'completed',
               uploadCompletedAt: new Date('2026-03-20T10:05:00.000Z'),
             })
@@ -728,7 +728,7 @@ describe('job service', () => {
     );
 
     expect(result.status).toBe('completed');
-    expect(result.spentTokens).toBe(25);
+    expect(result.spentTokens).toBe(10);
     expect(scheduleProcessing).not.toHaveBeenCalled();
     expect(mockPerformHostedOcr).not.toHaveBeenCalled();
     expect(mockPerformHostedTranslation).not.toHaveBeenCalled();
@@ -746,7 +746,7 @@ describe('job service', () => {
                 id: 'job-3',
                 objectChecksums: ['c'.repeat(64)],
                 pageCount: 1,
-                reservedTokens: 25,
+                reservedTokens: 10,
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
                 status: 'processing',
                 uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
@@ -877,7 +877,7 @@ describe('job service', () => {
                   'jobs/job/uploads/0002-002.jpg',
                 ],
                 pageCount: 2,
-                reservedTokens: 25,
+                reservedTokens: 10,
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
                 status: 'processing',
                 uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
@@ -1027,7 +1027,7 @@ describe('job service', () => {
                   'jobs/job/uploads/0002-002.jpg',
                 ],
                 pageCount: 2,
-                reservedTokens: 25,
+                reservedTokens: 10,
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
                 status: 'processing',
                 uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
@@ -1222,7 +1222,7 @@ describe('job service', () => {
               buildJobRecord({
                 id: 'job-coalesce-lines',
                 pageCount: 1,
-                reservedTokens: 25,
+                reservedTokens: 10,
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
                 status: 'processing',
                 uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),

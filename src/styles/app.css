@@ -35,6 +35,25 @@
   --color-brand-900: oklch(0.38 0.189 293.745);
   --color-brand-950: oklch(0.283 0.141 291.089);
 
+  --color-auth-ink-950: oklch(0.177 0.011 260.635);
+  --color-auth-ink-900: oklch(0.214 0.019 266.094);
+  --color-auth-ink-800: oklch(0.269 0.026 265.386);
+  --color-auth-ink-700: oklch(0.321 0.029 265.264);
+  --color-auth-ink-600: oklch(0.4 0.03 261.913);
+  --color-auth-ink-400: oklch(0.728 0.025 258.368);
+  --color-auth-ink-100: oklch(0.959 0.007 247.896);
+  --color-auth-ink-50: oklch(0.984 0.003 247.858);
+
+  --color-auth-seal-950: oklch(0.257 0.074 27.189);
+  --color-auth-seal-700: oklch(0.503 0.165 26.849);
+  --color-auth-seal-400: oklch(0.72 0.175 30.165);
+  --color-auth-seal-100: oklch(0.931 0.035 30.748);
+  --color-auth-seal-50: oklch(0.968 0.016 32.009);
+
+  --color-auth-scan-950: oklch(0.247 0.036 217.225);
+  --color-auth-scan-400: oklch(0.717 0.115 208.865);
+  --color-auth-scan-50: oklch(0.975 0.019 204.852);
+
   --color-negative-50: oklch(0.971 0.013 17.38);
   --color-negative-100: oklch(0.936 0.032 17.717);
   --color-negative-200: oklch(0.885 0.062 18.334);
@@ -225,6 +244,60 @@
 }
 
 @layer components {
+  .auth-login-shell {
+    --background: var(--color-auth-ink-50);
+    --foreground: var(--color-auth-ink-950);
+    --card: var(--color-white);
+    --card-foreground: var(--color-auth-ink-950);
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-auth-ink-950);
+    --primary: var(--color-auth-seal-700);
+    --primary-foreground: var(--color-auth-ink-50);
+    --secondary: var(--color-auth-ink-100);
+    --secondary-foreground: var(--color-auth-ink-950);
+    --muted: var(--color-auth-ink-100);
+    --muted-foreground: var(--color-auth-ink-600);
+    --accent: var(--color-auth-scan-50);
+    --accent-foreground: var(--color-auth-scan-950);
+    --border: #d8dee7;
+    --input: #d8dee7;
+    --ring: var(--color-auth-scan-400);
+    background:
+      linear-gradient(
+        145deg,
+        color-mix(in oklch, var(--color-auth-seal-50), transparent 18%),
+        transparent 34rem
+      ),
+      var(--background);
+  }
+
+  .dark .auth-login-shell {
+    --background: var(--color-auth-ink-950);
+    --foreground: var(--color-auth-ink-50);
+    --card: var(--color-auth-ink-900);
+    --card-foreground: var(--color-auth-ink-50);
+    --popover: var(--color-auth-ink-950);
+    --popover-foreground: var(--color-auth-ink-50);
+    --primary: var(--color-auth-seal-400);
+    --primary-foreground: var(--color-auth-seal-950);
+    --secondary: var(--color-auth-ink-800);
+    --secondary-foreground: var(--color-auth-ink-50);
+    --muted: var(--color-auth-ink-900);
+    --muted-foreground: var(--color-auth-ink-400);
+    --accent: var(--color-auth-scan-950);
+    --accent-foreground: var(--color-auth-scan-50);
+    --border: var(--color-auth-ink-700);
+    --input: var(--color-auth-ink-800);
+    --ring: var(--color-auth-scan-400);
+    background:
+      linear-gradient(
+        145deg,
+        color-mix(in oklch, var(--color-auth-seal-950), transparent 54%),
+        transparent 34rem
+      ),
+      var(--background);
+  }
+
   .public-client-shell {
     --background: oklch(0.985 0.008 293);
     --foreground: var(--color-neutral-950);
