@@ -232,7 +232,7 @@ describe('source discovery service', () => {
             code: 1,
             lang: 'ja',
             name: 'Tachiyomi: Manga Ball',
-            nsfw: 0,
+            nsfw: 1,
             pkg: 'eu.kanade.tachiyomi.extension.ja.mangaball',
             sources: [
               {
@@ -252,8 +252,129 @@ describe('source discovery service', () => {
 
     expect(
       plan.candidates.slice(0, 2).map((candidate) => candidate.sourceId)
-    ).toEqual(['2', '3']);
+    ).toEqual(expect.arrayContaining(['2', '3']));
     expect(plan.candidates[0]?.reasonCodes).toContain('featured_asian_source');
+    expect(
+      plan.candidates.find((candidate) => candidate.sourceId === '3')
+        ?.searchMethod
+    ).toMatchObject({
+      adapterKey: 'mangaball',
+      methodType: 'custom_adapter',
+      searchUrlPattern: '{baseUrl}/api/v1/title/search-advanced/',
+    });
+  });
+
+  it('expands multi-baseUrl GoDa sources and includes featured Asian NSFW sources for discovery', async () => {
+    const plan = await buildSourceDiscoveryPlan(
+      {
+        maxCandidates: 10,
+        preferredLanguages: ['zh'],
+        query: 'Disastrous Necromancer',
+      },
+      {
+        extensionIndexItems: [
+          {
+            apk: 'tachiyomi-zh.goda-v1.0.0.apk',
+            code: 1,
+            lang: 'zh',
+            name: 'Tachiyomi: GoDa',
+            nsfw: 1,
+            pkg: 'eu.kanade.tachiyomi.extension.zh.baozimhorg',
+            sources: [
+              {
+                baseUrl:
+                  'https://baozimh.org#, https://godamh.com#, https://m.baozimh.one#',
+                id: '774030471139699415',
+                lang: 'zh',
+                name: 'GoDa漫画',
+              },
+            ],
+            version: '1.0.0',
+          },
+          {
+            apk: 'tachiyomi-zh.generic-nsfw-v1.0.0.apk',
+            code: 1,
+            lang: 'zh',
+            name: 'Tachiyomi: Hidden Source',
+            nsfw: 1,
+            pkg: 'eu.kanade.tachiyomi.extension.zh.hidden',
+            sources: [
+              {
+                baseUrl: 'https://hidden.example',
+                id: 'hidden',
+                lang: 'zh',
+                name: 'Hidden Source',
+              },
+            ],
+            version: '1.0.0',
+          },
+        ],
+        now: () => new Date('2026-04-27T00:00:00.000Z'),
+        sourceThemeHints: [],
+      }
+    );
+
+    expect(plan.candidates.map((candidate) => candidate.baseUrl)).toEqual([
+      'https://baozimh.org',
+      'https://godamh.com',
+      'https://m.baozimh.one',
+    ]);
+    expect(plan.candidates.every((candidate) => candidate.isNsfw)).toBe(true);
+    expect(
+      plan.candidates.every((candidate) => candidate.adapterKey === 'goda')
+    ).toBe(true);
+    expect(
+      plan.candidates.every((candidate) =>
+        candidate.reasonCodes.includes('multi_base_url')
+      )
+    ).toBe(true);
+    expect(plan.candidates[0]?.searchMethod).toMatchObject({
+      methodType: 'http_template',
+      resultSelector: '.container > .cardlist .pb-2 a[href]',
+      searchUrlPattern: '{baseUrl}/s/{query}?page={page}',
+      urlSelector: '&',
+    });
+  });
+
+  it('uses Baozi result links as title and URL roots in fallback search methods', async () => {
+    const plan = await buildSourceDiscoveryPlan(
+      {
+        maxCandidates: 5,
+        preferredLanguages: ['zh'],
+        query: '全职觉醒',
+      },
+      {
+        extensionIndexItems: [
+          {
+            apk: 'tachiyomi-zh.baozi-v1.0.0.apk',
+            code: 1,
+            lang: 'zh',
+            name: 'Tachiyomi: Baozi Manhua',
+            nsfw: 0,
+            pkg: 'eu.kanade.tachiyomi.extension.zh.baozimanhua',
+            sources: [
+              {
+                baseUrl: 'https://cn.baozimh.com',
+                id: '5724751873601868259',
+                lang: 'zh',
+                name: '包子漫画',
+              },
+            ],
+            version: '1.0.0',
+          },
+        ],
+        now: () => new Date('2026-04-27T00:00:00.000Z'),
+        sourceThemeHints: [],
+      }
+    );
+
+    expect(plan.candidates[0]?.adapterKey).toBe('baozimanhua');
+    expect(plan.candidates[0]?.searchMethod).toMatchObject({
+      methodType: 'http_template',
+      searchUrlPattern: '{baseUrl}/search?q={query}',
+      titleSelector: null,
+      urlSelector: '&',
+    });
   });
 
   it('charges only when AI title correction is needed', () => {

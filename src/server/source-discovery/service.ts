@@ -64,6 +64,7 @@ const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'baozimanhua',
   'goda',
   'madara',
+  'mangaball',
   'mangathemesia',
   'manhwaz',
 ]);
@@ -270,6 +271,7 @@ export type SourceDiscoveryAdapterKey =
   | 'generic'
   | 'goda'
   | 'madara'
+  | 'mangaball'
   | 'mangathemesia'
   | 'manhwaz';
 
@@ -369,22 +371,41 @@ export async function buildSourceDiscoveryPlan(
     }));
 
   const baseCandidates = items
-    .filter((extension) => input.includeNsfw || extension.nsfw !== 1)
     .flatMap((extension) =>
       (extension.sources ?? [])
-        .filter((source) => source.baseUrl.trim().length > 0)
-        .map((source) =>
-          buildCandidate({
+        .flatMap((source) => {
+          const baseUrls = parseBaseUrlCandidates(source.baseUrl);
+
+          return baseUrls.map((baseUrl) => ({
+            ...source,
+            baseUrl,
+            hasAlternateBaseUrls: baseUrls.length > 1,
+          }));
+        })
+        .filter(
+          (source) =>
+            input.includeNsfw ||
+            extension.nsfw !== 1 ||
+            isFeaturedAsianExtensionSource({
+              baseUrl: source.baseUrl,
+              extensionName: extension.name,
+              sourceName: source.name,
+            })
+        )
+        .map((source) => {
+          const themeKey =
+            themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null;
+
+          return buildCandidate({
             aliases,
             extension,
             input,
             prioritizedLanguages,
             searchQueries,
             source,
-            themeKey:
-              themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null,
-          })
-        )
+            themeKey,
+          });
+        })
     )
     .sort((left, right) => {
       if (right.priority !== left.priority) {
@@ -789,14 +810,19 @@ export async function importSourceSearchMethodsFromExtensionsSource(
 
   for (const extension of items) {
     for (const source of extension.sources ?? []) {
-      if (!source.baseUrl.trim()) {
+      const baseUrls = parseBaseUrlCandidates(source.baseUrl);
+      const baseUrl = baseUrls[0];
+
+      if (!baseUrl) {
         continue;
       }
 
       const themeKey =
-        themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ?? null;
+        themeByBaseUrl.get(normalizeBaseUrl(baseUrl)) ??
+        themeByBaseUrl.get(normalizeBaseUrl(source.baseUrl)) ??
+        null;
       const adapterKey = resolveAdapterKey({
-        baseUrl: source.baseUrl,
+        baseUrl,
         sourceName: source.name,
         themeKey,
       });
@@ -808,7 +834,7 @@ export async function importSourceSearchMethodsFromExtensionsSource(
         create: {
           adapterKey,
           apkName: extension.apk,
-          baseUrl: source.baseUrl,
+          baseUrl,
           chapterSelector: template?.chapterSelector ?? null,
           descriptionSelector: template?.descriptionSelector ?? null,
           detailTitleSelector: template?.detailTitleSelector ?? null,
@@ -819,6 +845,7 @@ export async function importSourceSearchMethodsFromExtensionsSource(
           lastImportedAt: now,
           methodType,
           metadata: {
+            alternateBaseUrls: baseUrls.slice(1),
             reason: template ? 'template_detected' : 'no_supported_template',
           },
           packageName: extension.pkg,
@@ -838,7 +865,7 @@ export async function importSourceSearchMethodsFromExtensionsSource(
         update: {
           adapterKey,
           apkName: extension.apk,
-          baseUrl: source.baseUrl,
+          baseUrl,
           chapterSelector: template?.chapterSelector ?? null,
           descriptionSelector: template?.descriptionSelector ?? null,
           detailTitleSelector: template?.detailTitleSelector ?? null,
@@ -849,6 +876,7 @@ export async function importSourceSearchMethodsFromExtensionsSource(
           lastImportedAt: now,
           methodType,
           metadata: {
+            alternateBaseUrls: baseUrls.slice(1),
             reason: template ? 'template_detected' : 'no_supported_template',
           },
           packageName: extension.pkg,
@@ -1139,7 +1167,7 @@ function buildCandidate(input: {
   input: SourceDiscoveryPlanInput;
   prioritizedLanguages: string[];
   searchQueries: string[];
-  source: ExtensionIndexSource;
+  source: ExtensionIndexSource & { hasAlternateBaseUrls?: boolean };
   themeKey: string | null;
 }): SourceDiscoveryPlanCandidate {
   const adapterKey = resolveAdapterKey({
@@ -1157,6 +1185,9 @@ function buildCandidate(input: {
     sourceName: input.source.name,
     themeKey: input.themeKey,
   });
+  if (input.source.hasAlternateBaseUrls) {
+    reasonCodes.push('multi_base_url');
+  }
 
   return {
     adapterKey,
@@ -1292,25 +1323,43 @@ function getAdapterSearchMethodTemplate(
         headers: null,
         latestChapterSelector: '.comics-chapters a',
         methodType: 'http_template',
-        resultSelector: 'div.pure-g div a.comics-card__poster',
+        resultSelector:
+          'div.pure-g div a.comics-card__poster[href], a.comics-card__poster[href]',
         searchUrlPattern: '{baseUrl}/search?q={query}',
-        thumbnailSelector: 'amp-img, img',
-        titleSelector: '&',
+        thumbnailSelector: 'amp-img[src], img[src]',
+        titleSelector: null,
         urlSelector: '&',
       };
     case 'goda':
       return {
-        chapterSelector: '.chapteritem a',
-        descriptionSelector: 'main p',
+        chapterSelector: '.chapteritem a[data-ct], .chapteritem a',
+        descriptionSelector: 'main p, #mangachapters ~ p',
         detailTitleSelector: 'main h1, h1',
         headers: null,
-        latestChapterSelector: '.chapteritem a',
+        latestChapterSelector: '.chapteritem a[data-ct], .chapteritem a',
         methodType: 'http_template',
-        resultSelector: '.container > .cardlist .pb-2 a',
+        resultSelector: '.container > .cardlist .pb-2 a[href]',
         searchUrlPattern: '{baseUrl}/s/{query}?page={page}',
-        thumbnailSelector: 'img',
+        thumbnailSelector: 'img[src]',
         titleSelector: 'h3',
         urlSelector: '&',
+      };
+    case 'mangaball':
+      return {
+        chapterSelector: null,
+        descriptionSelector: null,
+        detailTitleSelector: null,
+        headers: {
+          Accept: 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        latestChapterSelector: null,
+        methodType: 'custom_adapter',
+        resultSelector: null,
+        searchUrlPattern: '{baseUrl}/api/v1/title/search-advanced/',
+        thumbnailSelector: null,
+        titleSelector: null,
+        urlSelector: null,
       };
     case 'mangathemesia':
       return {
@@ -1733,6 +1782,16 @@ function isFeaturedAsianSource(value: string) {
   );
 }
 
+function isFeaturedAsianExtensionSource(input: {
+  baseUrl: string;
+  extensionName: string;
+  sourceName: string;
+}) {
+  return isFeaturedAsianSource(
+    `${input.extensionName} ${input.sourceName} ${input.baseUrl}`
+  );
+}
+
 function resolveAdapterKey(input: {
   baseUrl: string;
   sourceName: string;
@@ -1745,6 +1804,7 @@ function resolveAdapterKey(input: {
     sourceKey.includes('goda') ||
     sourceKey.includes('godamh') ||
     sourceKey.includes('g-mh') ||
+    sourceKey.includes('bzmh.org') ||
     sourceKey.includes('baozimh.org') ||
     sourceKey.includes('m.baozimh.one')
   ) {
@@ -1752,6 +1812,9 @@ function resolveAdapterKey(input: {
   }
   if (sourceKey.includes('包子') || sourceKey.includes('baozimanhua')) {
     return 'baozimanhua';
+  }
+  if (sourceKey.includes('manga ball') || sourceKey.includes('mangaball')) {
+    return 'mangaball';
   }
   if (
     input.themeKey &&
@@ -1838,6 +1901,20 @@ function buildThemeHintMap(hints: SourceThemeHint[]) {
 
 function normalizeBaseUrl(url: string) {
   return url.trim().replace(/\/+$/, '').toLowerCase();
+}
+
+function parseBaseUrlCandidates(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return [];
+  }
+
+  const matchedUrls = trimmed.match(/https?:\/\/[^#,\s]+/gi);
+  const urls = matchedUrls?.map((url) => url.replace(/\/+$/, '')) ?? [
+    trimmed.replace(/#+$/, '').replace(/\/+$/, ''),
+  ];
+
+  return uniqueNonEmpty(urls);
 }
 
 function isStringRecord(value: unknown): value is Record<string, string> {
