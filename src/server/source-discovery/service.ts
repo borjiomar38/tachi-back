@@ -136,7 +136,7 @@ export const zSourceDiscoveryTitleCorrectionInput = z.object({
 });
 
 export const zSourceDiscoveryVerifyInput = z.object({
-  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
+  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_SEARCH_QUERIES),
   candidates: z
     .array(
       z.object({
@@ -159,7 +159,7 @@ export const zSourceDiscoveryVerifyInput = z.object({
 });
 
 export const zSourceDiscoveryResultSubmitInput = z.object({
-  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
+  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_SEARCH_QUERIES),
   query: z.string().trim().min(1).max(200),
   results: z
     .array(
@@ -498,7 +498,11 @@ export async function verifySourceDiscoveryCandidates(
     verifier?: (input: SourceDiscoveryVerifyInput) => Promise<unknown>;
   } = {}
 ) {
-  const input = zSourceDiscoveryVerifyInput.parse(rawInput);
+  const parsedInput = zSourceDiscoveryVerifyInput.parse(rawInput);
+  const input = {
+    ...parsedInput,
+    aliases: normalizeSourceDiscoveryApiAliases(parsedInput.aliases),
+  };
   const candidatesWithLatest = input.candidates.filter(
     hasDetectedLatestChapter
   );
@@ -670,7 +674,11 @@ export async function findKnownSourceDiscoveryResults(input: {
 }
 
 export async function submitSourceDiscoveryResults(rawInput: unknown) {
-  const input = zSourceDiscoveryResultSubmitInput.parse(rawInput);
+  const parsedInput = zSourceDiscoveryResultSubmitInput.parse(rawInput);
+  const input = {
+    ...parsedInput,
+    aliases: normalizeSourceDiscoveryApiAliases(parsedInput.aliases),
+  };
   const now = new Date();
   let accepted = 0;
   let rejected = 0;
@@ -2194,6 +2202,10 @@ function normalizeMethodStatus(
 
 function uniqueNonEmpty(values: string[]) {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
+}
+
+function normalizeSourceDiscoveryApiAliases(values: string[]) {
+  return uniqueNonEmpty(values).slice(0, MAX_ALIASES);
 }
 
 export class SourceDiscoveryError extends Error {

@@ -44,6 +44,7 @@ export function buildMobileJobErrorResponse(error: unknown, requestId: string) {
   if (error instanceof TranslationJobError) {
     return buildApiErrorResponse({
       code: error.code,
+      details: error.details,
       requestId,
       status: error.statusCode,
     });

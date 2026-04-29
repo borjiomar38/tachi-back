@@ -132,11 +132,14 @@ export class TranslationJobError extends Error {
       | 'result_not_ready'
       | 'upload_expired',
     readonly statusCode: number,
-    message?: string
+    options?: string | { details?: unknown; message?: string }
   ) {
-    super(message ?? code);
+    super(typeof options === 'string' ? options : (options?.message ?? code));
+    this.details = typeof options === 'string' ? undefined : options?.details;
     this.name = 'TranslationJobError';
   }
+
+  readonly details?: unknown;
 }
 
 export async function createTranslationJob(
@@ -170,7 +173,12 @@ export async function createTranslationJob(
   );
 
   if (availableTokens < reservedTokens) {
-    throw new TranslationJobError('insufficient_tokens', 409);
+    throw new TranslationJobError('insufficient_tokens', 409, {
+      details: {
+        availableTokens,
+        requiredTokens: reservedTokens,
+      },
+    });
   }
 
   const expiresAt = new Date(
@@ -487,7 +495,12 @@ export async function completeTranslationJobUpload(
   );
 
   if (availableTokens < reservedTokens) {
-    throw new TranslationJobError('insufficient_tokens', 409);
+    throw new TranslationJobError('insufficient_tokens', 409, {
+      details: {
+        availableTokens,
+        requiredTokens: reservedTokens,
+      },
+    });
   }
 
   const cacheKey = buildTranslationResultCacheKey({

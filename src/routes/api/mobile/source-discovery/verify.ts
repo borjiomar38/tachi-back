@@ -27,6 +27,11 @@ export const Route = createFileRoute('/api/mobile/source-discovery/verify')({
     handlers: {
       POST: async ({ request }) => {
         const context = buildHttpRequestContext(request);
+        const routeLog = logger.child({
+          path: '/api/mobile/source-discovery/verify',
+          requestId: context.requestId,
+          scope: 'source-discovery',
+        });
         let payload: unknown;
 
         try {
@@ -38,17 +43,30 @@ export const Route = createFileRoute('/api/mobile/source-discovery/verify')({
         const parsedInput = zSourceDiscoveryVerifyInput.safeParse(payload);
 
         if (!parsedInput.success) {
+          routeLog.warn({
+            aliasCount:
+              typeof payload === 'object' &&
+              payload !== null &&
+              Array.isArray((payload as { aliases?: unknown }).aliases)
+                ? (payload as { aliases: unknown[] }).aliases.length
+                : null,
+            candidateCount:
+              typeof payload === 'object' &&
+              payload !== null &&
+              Array.isArray((payload as { candidates?: unknown }).candidates)
+                ? (payload as { candidates: unknown[] }).candidates.length
+                : null,
+            fieldErrors: parsedInput.error.flatten().fieldErrors,
+            formErrors: parsedInput.error.flatten().formErrors,
+            message: 'Invalid mobile source discovery verification request',
+            type: 'invalid_request',
+          });
+
           return buildInvalidRequestResponse(
             context.requestId,
             parsedInput.error.flatten()
           );
         }
-
-        const routeLog = logger.child({
-          path: '/api/mobile/source-discovery/verify',
-          requestId: context.requestId,
-          scope: 'source-discovery',
-        });
 
         try {
           const { auth, rateLimit } =
