@@ -50,6 +50,15 @@ const ASIAN_SOURCE_LANGUAGES = new Set([
   'th',
   'vi',
 ]);
+const FEATURED_ASIAN_SOURCE_MATCHERS = [
+  '包子',
+  'baozi',
+  'goda',
+  'goda漫畫',
+  'goda漫画',
+  'manga ball',
+  'mangaball',
+];
 const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'asurascans',
   'baozimanhua',
@@ -1220,10 +1229,10 @@ async function generateSearchStrategy(
   const prompt = [
     'You help a manga/manhwa reader find the same work across scanlation source websites.',
     'Return strict JSON with these keys: aliases, alternativeTitles, romanizedTitles, probableLanguages, searchStrategy.',
-    'Create compact title-only search terms. Include original-language title variants when likely, romanized titles, English title variants, and title fragments that a website search might index.',
-    'If the query is likely a manhua, include known Simplified Chinese and Traditional Chinese title variants when you can infer them with high confidence.',
-    'If the query is likely a manhwa, include known Korean Hangul title variants when you can infer them with high confidence.',
-    'If the query is likely a manga, include known Japanese kanji/kana title variants when you can infer them with high confidence.',
+    'Create compact title-only search terms. Include original-language title variants, romanized titles, English title variants, and title fragments that a website search might index.',
+    'Always try to include useful Simplified Chinese, Traditional Chinese, Japanese, and Korean title/search variants when the work has known or strongly inferable names in those languages.',
+    'Prioritize aliases that would work on Chinese, Japanese, and Korean source search boxes such as Baozi Manhua, GoDa Manga, Manga Ball, and similar Asian sources.',
+    'If a localized title is uncertain, prefer a short romanized or common English alias over a literal invented translation.',
     'Prefer official or commonly used alternate titles over literal translations. Do not invent original-script titles when unsure.',
     'Do not include chapter words unless the title itself contains a number.',
     'Keep aliases short and useful for website search boxes; avoid generic genre words.',
@@ -1565,6 +1574,11 @@ function scoreCandidate(input: {
     }
   }
 
+  if (isFeaturedAsianSource(haystack)) {
+    priority += 95;
+    reasonCodes.push('featured_asian_source');
+  }
+
   if (
     prioritizedLanguages.has(sourceLanguage) ||
     prioritizedLanguages.has(extensionLang)
@@ -1591,6 +1605,13 @@ function scoreCandidate(input: {
     priority,
     reasonCodes: uniqueNonEmpty(reasonCodes),
   };
+}
+
+function isFeaturedAsianSource(value: string) {
+  const normalized = value.toLowerCase();
+  return FEATURED_ASIAN_SOURCE_MATCHERS.some((matcher) =>
+    normalized.includes(matcher.toLowerCase())
+  );
 }
 
 function resolveAdapterKey(input: {

@@ -161,6 +161,78 @@ describe('source discovery service', () => {
     });
   });
 
+  it('prioritizes featured Asian sources used for discovery demos', async () => {
+    const plan = await buildSourceDiscoveryPlan(
+      {
+        maxCandidates: 5,
+        preferredLanguages: ['en'],
+        query: 'Disastrous Necromancer',
+      },
+      {
+        extensionIndexItems: [
+          {
+            apk: 'tachiyomi-en.generic-v1.0.0.apk',
+            code: 1,
+            lang: 'en',
+            name: 'Tachiyomi: Generic Comics',
+            nsfw: 0,
+            pkg: 'eu.kanade.tachiyomi.extension.en.generic',
+            sources: [
+              {
+                baseUrl: 'https://generic.example',
+                id: '1',
+                lang: 'en',
+                name: 'Generic Comics',
+              },
+            ],
+            version: '1.0.0',
+          },
+          {
+            apk: 'tachiyomi-zh.baozi-v1.0.0.apk',
+            code: 1,
+            lang: 'zh',
+            name: 'Tachiyomi: 包子漫畫',
+            nsfw: 0,
+            pkg: 'eu.kanade.tachiyomi.extension.zh.baozi',
+            sources: [
+              {
+                baseUrl: 'https://baozimh.example',
+                id: '2',
+                lang: 'zh',
+                name: '包子漫畫',
+              },
+            ],
+            version: '1.0.0',
+          },
+          {
+            apk: 'tachiyomi-ja.mangaball-v1.0.0.apk',
+            code: 1,
+            lang: 'ja',
+            name: 'Tachiyomi: Manga Ball',
+            nsfw: 0,
+            pkg: 'eu.kanade.tachiyomi.extension.ja.mangaball',
+            sources: [
+              {
+                baseUrl: 'https://mangaball.example',
+                id: '3',
+                lang: 'ja',
+                name: 'Manga Ball',
+              },
+            ],
+            version: '1.0.0',
+          },
+        ],
+        now: () => new Date('2026-04-27T00:00:00.000Z'),
+        sourceThemeHints: [],
+      }
+    );
+
+    expect(
+      plan.candidates.slice(0, 2).map((candidate) => candidate.sourceId)
+    ).toEqual(['2', '3']);
+    expect(plan.candidates[0]?.reasonCodes).toContain('featured_asian_source');
+  });
+
   it('charges source discovery once during the AI plan step', () => {
     expect(calculateSourceDiscoveryPlanTokenCost()).toBe(5);
     expect(
