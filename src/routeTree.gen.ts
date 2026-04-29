@@ -61,6 +61,7 @@ import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/a
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
 import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
 import { Route as ApiMobileSourceDiscoveryVerifyRouteImport } from './routes/api/mobile/source-discovery/verify'
+import { Route as ApiMobileSourceDiscoveryTitleCorrectionRouteImport } from './routes/api/mobile/source-discovery/title-correction'
 import { Route as ApiMobileSourceDiscoveryResultsRouteImport } from './routes/api/mobile/source-discovery/results'
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
@@ -339,6 +340,12 @@ const ApiMobileSourceDiscoveryVerifyRoute =
     path: '/api/mobile/source-discovery/verify',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileSourceDiscoveryTitleCorrectionRoute =
+  ApiMobileSourceDiscoveryTitleCorrectionRouteImport.update({
+    id: '/api/mobile/source-discovery/title-correction',
+    path: '/api/mobile/source-discovery/title-correction',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileSourceDiscoveryResultsRoute =
   ApiMobileSourceDiscoveryResultsRouteImport.update({
     id: '/api/mobile/source-discovery/results',
@@ -469,6 +476,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
+  '/api/mobile/source-discovery/title-correction': typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
@@ -534,6 +542,7 @@ export interface FileRoutesByTo {
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
+  '/api/mobile/source-discovery/title-correction': typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
@@ -603,6 +612,7 @@ export interface FileRoutesById {
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
+  '/api/mobile/source-discovery/title-correction': typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
@@ -673,6 +683,7 @@ export interface FileRouteTypes {
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/results'
+    | '/api/mobile/source-discovery/title-correction'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
@@ -738,6 +749,7 @@ export interface FileRouteTypes {
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/results'
+    | '/api/mobile/source-discovery/title-correction'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
@@ -806,6 +818,7 @@ export interface FileRouteTypes {
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/results'
+    | '/api/mobile/source-discovery/title-correction'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
     | '/api/openapi/app/schema'
@@ -861,6 +874,7 @@ export interface RootRouteChildren {
   ApiMobileSourceDiscoveryMethodFeedbackRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
   ApiMobileSourceDiscoveryResultsRoute: typeof ApiMobileSourceDiscoveryResultsRoute
+  ApiMobileSourceDiscoveryTitleCorrectionRoute: typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
 }
@@ -1231,6 +1245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileSourceDiscoveryVerifyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/source-discovery/title-correction': {
+      id: '/api/mobile/source-discovery/title-correction'
+      path: '/api/mobile/source-discovery/title-correction'
+      fullPath: '/api/mobile/source-discovery/title-correction'
+      preLoaderRoute: typeof ApiMobileSourceDiscoveryTitleCorrectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/source-discovery/results': {
       id: '/api/mobile/source-discovery/results'
       path: '/api/mobile/source-discovery/results'
@@ -1487,6 +1508,8 @@ const rootRouteChildren: RootRouteChildren = {
     ApiMobileSourceDiscoveryMethodFeedbackRoute,
   ApiMobileSourceDiscoveryPlanRoute: ApiMobileSourceDiscoveryPlanRoute,
   ApiMobileSourceDiscoveryResultsRoute: ApiMobileSourceDiscoveryResultsRoute,
+  ApiMobileSourceDiscoveryTitleCorrectionRoute:
+    ApiMobileSourceDiscoveryTitleCorrectionRoute,
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
 }

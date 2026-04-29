@@ -4,7 +4,9 @@ import {
   buildSearchAliases,
   buildSourceDiscoveryPlan,
   calculateSourceDiscoveryPlanTokenCost,
+  calculateSourceDiscoveryTitleCorrectionTokenCost,
   calculateSourceDiscoveryVerifyTokenCost,
+  generateSourceDiscoveryTitleCorrection,
 } from './service';
 
 describe('source discovery service', () => {
@@ -100,6 +102,7 @@ describe('source discovery service', () => {
             latestChapterName: 'Chapter 123',
             latestChapterNumber: 123,
             mangaUrl: 'https://asuracomic.net/series/full-awakening',
+            matchedAlias: null,
             packageName: 'eu.kanade.tachiyomi.extension.en.asura',
             reason: 'Previously confirmed by a device search',
             repoUrl: null,
@@ -125,7 +128,7 @@ describe('source discovery service', () => {
     );
 
     expect(plan).toMatchObject({
-      aliasStrategy: 'deterministic',
+      aliasStrategy: 'mobile_exact',
       generatedAt: '2026-04-27T00:00:00.000Z',
       query: 'Full Awakening',
       targetChapter: 123,
@@ -159,6 +162,26 @@ describe('source discovery service', () => {
       versionCode: 1,
       versionName: '1.0.0',
     });
+  });
+
+  it('uses exact catalog aliases without adding broad title fragments', async () => {
+    const plan = await buildSourceDiscoveryPlan(
+      {
+        aliases: ['全职觉醒', 'Full Awakening'],
+        catalogAliases: ['全职觉醒', 'Full Awakening'],
+        maxCandidates: 5,
+        preferredLanguages: ['en', 'zh'],
+        query: 'Full Awakening',
+      },
+      {
+        extensionIndexItems: [],
+        now: () => new Date('2026-04-27T00:00:00.000Z'),
+        sourceThemeHints: [],
+      }
+    );
+
+    expect(plan.aliases).toEqual(['Full Awakening', '全职觉醒']);
+    expect(plan.aliases).not.toContain('Awakening');
   });
 
   it('prioritizes featured Asian sources used for discovery demos', async () => {
@@ -233,8 +256,17 @@ describe('source discovery service', () => {
     expect(plan.candidates[0]?.reasonCodes).toContain('featured_asian_source');
   });
 
-  it('charges source discovery once during the AI plan step', () => {
-    expect(calculateSourceDiscoveryPlanTokenCost()).toBe(5);
+  it('charges only when AI title correction is needed', () => {
+    expect(calculateSourceDiscoveryPlanTokenCost()).toBe(0);
+    expect(
+      calculateSourceDiscoveryTitleCorrectionTokenCost({
+        attemptedAliases: ['Full Awakening'],
+        catalogAliases: ['Full Awakening'],
+        observedResultCount: 0,
+        query: 'Full Awakening',
+        searchedCandidateCount: 120,
+      })
+    ).toBe(5);
     expect(
       calculateSourceDiscoveryVerifyTokenCost({
         aliases: ['Full Awakening'],
@@ -250,5 +282,31 @@ describe('source discovery service', () => {
         query: 'Full Awakening',
       })
     ).toBe(0);
+  });
+
+  it('filters AI title correction aliases that were already tried', async () => {
+    const correction = await generateSourceDiscoveryTitleCorrection(
+      {
+        attemptedAliases: ['Full Awakening', '全职觉醒'],
+        catalogAliases: ['Full Awakening'],
+        observedResultCount: 0,
+        query: 'Full Awakening',
+        searchedCandidateCount: 120,
+      },
+      {
+        generator: async () => ({
+          aliases: ['Full Awakening', 'Omniscient Awakening'],
+          confidence: 0.81,
+          correctedTitle: '全职觉醒',
+          reason: 'Found a likely common alias.',
+        }),
+      }
+    );
+
+    expect(correction).toMatchObject({
+      aliasStrategy: 'ai_title_correction',
+      aliases: ['Omniscient Awakening'],
+      canRetry: true,
+    });
   });
 });

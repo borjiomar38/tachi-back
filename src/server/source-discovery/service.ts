@@ -67,8 +67,24 @@ const SUPPORTED_DISCOVERY_ADAPTERS = new Set([
   'mangathemesia',
   'manhwaz',
 ]);
+const zSourceDiscoveryAlias = z.string().trim().min(1).max(200);
 
 export const zSourceDiscoveryPlanInput = z.object({
+  aliases: z
+    .array(zSourceDiscoveryAlias)
+    .max(MAX_SEARCH_QUERIES)
+    .optional()
+    .default([]),
+  catalogAliases: z
+    .array(zSourceDiscoveryAlias)
+    .max(MAX_SEARCH_QUERIES)
+    .optional()
+    .default([]),
+  clientAliases: z
+    .array(zSourceDiscoveryAlias)
+    .max(MAX_SEARCH_QUERIES)
+    .optional()
+    .default([]),
   includeNsfw: z.boolean().default(false),
   maxCandidates: z
     .number()
@@ -82,6 +98,31 @@ export const zSourceDiscoveryPlanInput = z.object({
     .optional()
     .default([]),
   query: z.string().trim().min(1).max(200),
+  targetChapter: z.number().int().positive().optional(),
+});
+
+export const zSourceDiscoveryTitleCorrectionInput = z.object({
+  attemptedAliases: z
+    .array(zSourceDiscoveryAlias)
+    .min(1)
+    .max(MAX_SEARCH_QUERIES),
+  catalogAliases: z
+    .array(zSourceDiscoveryAlias)
+    .max(MAX_SEARCH_QUERIES)
+    .optional()
+    .default([]),
+  clientAliases: z
+    .array(zSourceDiscoveryAlias)
+    .max(MAX_SEARCH_QUERIES)
+    .optional()
+    .default([]),
+  observedResultCount: z.number().int().min(0).max(10_000),
+  query: z.string().trim().min(1).max(200),
+  searchedCandidateCount: z
+    .number()
+    .int()
+    .min(1)
+    .max(MAX_SOURCE_DISCOVERY_CANDIDATES),
   targetChapter: z.number().int().positive().optional(),
 });
 
@@ -123,6 +164,7 @@ export const zSourceDiscoveryResultSubmitInput = z.object({
         latestChapterName: z.string().trim().max(500).nullish(),
         latestChapterNumber: z.number().nonnegative().nullish(),
         mangaUrl: z.string().trim().min(1).max(2_000),
+        matchedAlias: z.string().trim().max(200).nullish(),
         packageName: z.string().trim().min(1).max(250),
         reason: z.string().trim().max(500).nullish(),
         sourceId: z.string().trim().min(1).max(200),
@@ -136,12 +178,11 @@ export const zSourceDiscoveryResultSubmitInput = z.object({
     .max(MAX_VERIFY_CANDIDATES_PER_REQUEST),
 });
 
-const zAiSearchStrategy = z.object({
-  aliases: z.array(z.string().trim().min(1).max(200)).max(MAX_ALIASES),
-  alternativeTitles: z.array(z.string().trim().min(1).max(200)).max(20),
-  probableLanguages: z.array(z.string().trim().min(1).max(32)).max(12),
-  romanizedTitles: z.array(z.string().trim().min(1).max(200)).max(20),
-  searchStrategy: z.string().trim().min(1).max(1_500),
+const zAiTitleCorrectionResponse = z.object({
+  aliases: z.array(zSourceDiscoveryAlias).max(MAX_SEARCH_QUERIES).default([]),
+  confidence: z.number().min(0).max(1).default(0),
+  correctedTitle: z.string().trim().max(200).nullish(),
+  reason: z.string().trim().max(500).default(''),
 });
 
 const zAiVerificationResponse = z.object({
@@ -192,6 +233,9 @@ export type SourceDiscoveryVerifyInput = z.infer<
 export type SourceDiscoveryResultSubmitInput = z.infer<
   typeof zSourceDiscoveryResultSubmitInput
 >;
+export type SourceDiscoveryTitleCorrectionInput = z.infer<
+  typeof zSourceDiscoveryTitleCorrectionInput
+>;
 
 export type SourceDiscoveryKnownResult = {
   apkName: string | null;
@@ -206,6 +250,7 @@ export type SourceDiscoveryKnownResult = {
   latestChapterName: string | null;
   latestChapterNumber: number | null;
   mangaUrl: string;
+  matchedAlias: string | null;
   packageName: string;
   reason: string | null;
   repoUrl: string | null;
@@ -274,8 +319,6 @@ export type SourceDiscoverySearchMethod = {
   urlSelector: string | null;
 };
 
-type SourceDiscoveryAiSearchStrategy = z.infer<typeof zAiSearchStrategy>;
-
 type ExtensionIndex = z.infer<typeof zExtensionIndex>;
 type ExtensionIndexSource = z.infer<typeof zExtensionIndexSource>;
 
@@ -295,7 +338,6 @@ let indexCache:
 export async function buildSourceDiscoveryPlan(
   rawInput: unknown,
   deps: {
-    aiSearchStrategy?: SourceDiscoveryAiSearchStrategy | null;
     extensionIndexItems?: ExtensionIndex;
     fetchFn?: typeof fetch;
     knownResults?: SourceDiscoveryKnownResult[];
@@ -306,23 +348,15 @@ export async function buildSourceDiscoveryPlan(
 ) {
   const input = zSourceDiscoveryPlanInput.parse(rawInput);
   const now = deps.now?.() ?? new Date();
-  const deterministicAliases = buildSearchAliases(input.query);
-  const aiStrategy =
-    deps.aiSearchStrategy === undefined
-      ? await generateSearchStrategy(input, {
-          fetchFn: deps.fetchFn,
-        }).catch(() => null)
-      : deps.aiSearchStrategy;
   const searchQueries = uniqueNonEmpty([
-    ...deterministicAliases,
-    ...(aiStrategy?.aliases ?? []),
-    ...(aiStrategy?.alternativeTitles ?? []),
-    ...(aiStrategy?.romanizedTitles ?? []),
+    input.query,
+    ...input.catalogAliases,
+    ...input.clientAliases,
+    ...input.aliases,
   ]).slice(0, MAX_SEARCH_QUERIES);
   const aliases = searchQueries.slice(0, MAX_ALIASES);
   const prioritizedLanguages = uniqueNonEmpty([
     ...input.preferredLanguages,
-    ...(aiStrategy?.probableLanguages ?? []),
   ]).map((language) => language.toLowerCase());
   const sourceThemeHints =
     deps.sourceThemeHints ?? (await loadSourceThemeHints());
@@ -376,6 +410,7 @@ export async function buildSourceDiscoveryPlan(
     deps.knownResults ??
     (await findKnownSourceDiscoveryResults({
       aliases,
+      exactAliasesOnly: true,
       query: input.query,
     }).catch(() => []));
   const extensionByPackageName = new Map(
@@ -389,19 +424,18 @@ export async function buildSourceDiscoveryPlan(
   );
 
   return {
-    aliasStrategy: aiStrategy ? 'ai' : 'deterministic',
+    aliasStrategy: 'mobile_exact',
     aliases,
-    alternativeTitles: aiStrategy?.alternativeTitles ?? [],
+    alternativeTitles: [],
     candidates,
     generatedAt: now.toISOString(),
     indexSourceUrl: KEIYOUSHI_INDEX_URL,
     knownResults,
-    probableLanguages: aiStrategy?.probableLanguages ?? [],
+    probableLanguages: [],
     query: input.query,
-    romanizedTitles: aiStrategy?.romanizedTitles ?? [],
+    romanizedTitles: [],
     searchStrategy:
-      aiStrategy?.searchStrategy ??
-      'Search the original title and normalized aliases across likely manga, manhwa, manhua, scanlation, and webtoon sources.',
+      'Search the exact catalog aliases from the device across likely manga, manhwa, manhua, scanlation, and webtoon sources.',
     targetChapter: input.targetChapter ?? null,
   };
 }
@@ -444,12 +478,57 @@ export async function verifySourceDiscoveryCandidates(
   };
 }
 
+export async function generateSourceDiscoveryTitleCorrection(
+  rawInput: unknown,
+  deps: {
+    fetchFn?: typeof fetch;
+    generator?: (
+      input: SourceDiscoveryTitleCorrectionInput
+    ) => Promise<unknown>;
+  } = {}
+) {
+  const input = zSourceDiscoveryTitleCorrectionInput.parse(rawInput);
+  const attemptedKeys = new Set(
+    buildExactDiscoveryAliasKeys([
+      input.query,
+      ...input.catalogAliases,
+      ...input.clientAliases,
+      ...input.attemptedAliases,
+    ])
+  );
+  const raw =
+    deps.generator !== undefined
+      ? await deps.generator(input)
+      : await generateTitleCorrection(input, {
+          fetchFn: deps.fetchFn,
+        });
+  const parsed = zAiTitleCorrectionResponse.parse(raw);
+  const aliases = uniqueNonEmpty([
+    parsed.correctedTitle ?? '',
+    ...parsed.aliases,
+  ])
+    .filter((alias) => !attemptedKeys.has(normalizeDiscoveryKey(alias)))
+    .slice(0, MAX_SEARCH_QUERIES);
+
+  return {
+    aliasStrategy: 'ai_title_correction',
+    aliases,
+    canRetry: aliases.length > 0,
+    confidence: parsed.confidence,
+    correctedTitle: parsed.correctedTitle?.trim() || null,
+    reason: parsed.reason,
+  };
+}
+
 export async function findKnownSourceDiscoveryResults(input: {
   aliases?: string[];
+  exactAliasesOnly?: boolean;
   limit?: number;
   query: string;
 }): Promise<SourceDiscoveryKnownResult[]> {
-  const aliasKeys = buildDiscoveryAliasKeys(input.query, input.aliases ?? []);
+  const aliasKeys = input.exactAliasesOnly
+    ? buildExactDiscoveryAliasKeys([input.query, ...(input.aliases ?? [])])
+    : buildDiscoveryAliasKeys(input.query, input.aliases ?? []);
   if (aliasKeys.length === 0) {
     return [];
   }
@@ -552,6 +631,7 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
               latestChapterNumber,
               metadata: {
                 lastSubmittedQueryKey: normalizeDiscoveryKey(input.query),
+                matchedAlias: result.matchedAlias ?? null,
               },
               observationCount: {
                 increment: 1,
@@ -592,6 +672,7 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
               mangaUrl: result.mangaUrl,
               metadata: {
                 firstSubmittedQueryKey: normalizeDiscoveryKey(input.query),
+                matchedAlias: result.matchedAlias ?? null,
               },
               packageName: result.packageName,
               reason: result.reason ?? null,
@@ -607,10 +688,11 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
             },
           });
 
-      for (const alias of buildDiscoveryAliases(input.query, [
-        ...input.aliases,
-        result.title,
-      ])) {
+      for (const alias of buildSubmissionAliases(
+        input.query,
+        input.aliases,
+        result
+      )) {
         const aliasKey = normalizeDiscoveryKey(alias);
         if (!aliasKey) {
           continue;
@@ -644,6 +726,14 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
 }
 
 export function calculateSourceDiscoveryPlanTokenCost() {
+  return 0;
+}
+
+export function calculateSourceDiscoveryTitleCorrectionTokenCost(
+  rawInput: unknown
+) {
+  zSourceDiscoveryTitleCorrectionInput.parse(rawInput);
+
   return SOURCE_DISCOVERY_PLAN_TOKEN_COST;
 }
 
@@ -841,6 +931,35 @@ function buildDiscoveryAliasKeys(query: string, aliases: string[]) {
   );
 }
 
+function buildExactDiscoveryAliasKeys(values: string[]) {
+  return uniqueNonEmpty(values.map(normalizeDiscoveryKey));
+}
+
+function buildSubmissionAliases(
+  query: string,
+  aliases: string[],
+  result: {
+    confidence: number;
+    decision: string;
+    matchedAlias?: string | null;
+    reason?: string | null;
+    title: string;
+  }
+) {
+  const isGlobalSearchObservation =
+    result.reason === 'Found by installed global source search';
+  const shouldUseRequestedAliases =
+    result.decision === 'match' &&
+    result.confidence >= 0.75 &&
+    !isGlobalSearchObservation;
+
+  return uniqueNonEmpty([
+    result.title,
+    result.matchedAlias ?? '',
+    ...(shouldUseRequestedAliases ? [query, ...aliases] : []),
+  ]).slice(0, MAX_ALIASES);
+}
+
 function normalizeDiscoveryKey(value: string) {
   return value
     .normalize('NFKD')
@@ -901,6 +1020,7 @@ function serializeKnownResult(result: {
   latestChapterName: string | null;
   latestChapterNumber: number | null;
   mangaUrl: string;
+  metadata?: unknown;
   packageName: string;
   reason: string | null;
   sourceId: string;
@@ -923,6 +1043,7 @@ function serializeKnownResult(result: {
     latestChapterName: result.latestChapterName,
     latestChapterNumber: result.latestChapterNumber,
     mangaUrl: result.mangaUrl,
+    matchedAlias: extractMatchedAlias(result.metadata),
     packageName: result.packageName,
     reason: result.reason,
     repoUrl: null,
@@ -935,6 +1056,16 @@ function serializeKnownResult(result: {
     versionCode: null,
     versionName: null,
   };
+}
+
+function extractMatchedAlias(metadata: unknown): string | null {
+  if (!metadata || typeof metadata !== 'object') {
+    return null;
+  }
+
+  const value = (metadata as { matchedAlias?: unknown }).matchedAlias;
+
+  return typeof value === 'string' && value.trim() ? value.trim() : null;
 }
 
 function enrichKnownResultWithExtensionMetadata(
@@ -1220,47 +1351,6 @@ function getAdapterSearchMethodTemplate(
   }
 }
 
-async function generateSearchStrategy(
-  input: SourceDiscoveryPlanInput,
-  deps: {
-    fetchFn?: typeof fetch;
-  } = {}
-): Promise<SourceDiscoveryAiSearchStrategy> {
-  const prompt = [
-    'You help a manga/manhwa reader find the same work across scanlation source websites.',
-    'Return strict JSON with these keys: aliases, alternativeTitles, romanizedTitles, probableLanguages, searchStrategy.',
-    'Create compact title-only search terms. Include original-language title variants, romanized titles, English title variants, and title fragments that a website search might index.',
-    'Always try to include useful Simplified Chinese, Traditional Chinese, Japanese, and Korean title/search variants when the work has known or strongly inferable names in those languages.',
-    'Prioritize aliases that would work on Chinese, Japanese, and Korean source search boxes such as Baozi Manhua, GoDa Manga, Manga Ball, and similar Asian sources.',
-    'If a localized title is uncertain, prefer a short romanized or common English alias over a literal invented translation.',
-    'Prefer official or commonly used alternate titles over literal translations. Do not invent original-script titles when unsure.',
-    'Do not include chapter words unless the title itself contains a number.',
-    'Keep aliases short and useful for website search boxes; avoid generic genre words.',
-    `User query: ${input.query}`,
-    input.targetChapter
-      ? `The user is looking for sources around chapter ${input.targetChapter}.`
-      : '',
-  ]
-    .filter(Boolean)
-    .join('\n');
-
-  const parsed = zAiSearchStrategy.parse(
-    await generateJsonObject({
-      fetchFn: deps.fetchFn,
-      prompt,
-      schemaName: 'source_discovery_search_strategy',
-    })
-  );
-
-  return {
-    aliases: uniqueNonEmpty(parsed.aliases).slice(0, MAX_ALIASES),
-    alternativeTitles: uniqueNonEmpty(parsed.alternativeTitles),
-    probableLanguages: uniqueNonEmpty(parsed.probableLanguages),
-    romanizedTitles: uniqueNonEmpty(parsed.romanizedTitles),
-    searchStrategy: parsed.searchStrategy,
-  };
-}
-
 async function generateVerification(
   input: SourceDiscoveryVerifyInput,
   deps: {
@@ -1297,6 +1387,35 @@ async function generateVerification(
     fetchFn: deps.fetchFn,
     prompt,
     schemaName: 'source_discovery_candidate_verification',
+  });
+}
+
+async function generateTitleCorrection(
+  input: SourceDiscoveryTitleCorrectionInput,
+  deps: {
+    fetchFn?: typeof fetch;
+  } = {}
+) {
+  const prompt = [
+    'You help a manga/manhwa reader recover from a failed source search.',
+    'The app already tried the provided aliases exactly and found zero usable results.',
+    'Return strict JSON with keys: correctedTitle, aliases, confidence, reason.',
+    'Only return known/common manga, manhwa, or manhua titles. Prefer official/native titles and common scan titles.',
+    'Do not split titles into generic fragments. Do not return aliases already attempted. If unsure, return an empty aliases array.',
+    `User query: ${input.query}`,
+    `Catalog aliases already tried: ${JSON.stringify(input.catalogAliases)}`,
+    `Client aliases already tried: ${JSON.stringify(input.clientAliases)}`,
+    `Attempted aliases: ${JSON.stringify(input.attemptedAliases)}`,
+    `Searched source count: ${input.searchedCandidateCount}`,
+    input.targetChapter ? `Target chapter: ${input.targetChapter}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  return await generateJsonObject({
+    fetchFn: deps.fetchFn,
+    prompt,
+    schemaName: 'source_discovery_title_correction',
   });
 }
 
