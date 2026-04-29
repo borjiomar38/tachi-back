@@ -129,12 +129,27 @@ export const Route = createFileRoute('/api/mobile/source-discovery/plan')({
           }
 
           routeLog.info({
+            aliasCount: plan.aliases.length,
+            aliases: plan.aliases.slice(0, 12),
             candidateCount: plan.candidates.length,
+            candidateSample: plan.candidates.slice(0, 12).map((candidate) => ({
+              adapterKey: candidate.adapterKey,
+              methodStatus: candidate.searchMethod?.status ?? null,
+              methodType: candidate.searchMethod?.methodType ?? null,
+              sourceLanguage: candidate.sourceLanguage,
+              sourceName: candidate.sourceName,
+            })),
             clientIp: context.clientIp,
             deviceId: auth.device.id,
+            knownResultCount: plan.knownResults.length,
             licenseId: auth.license.id,
             message: 'Created mobile source discovery plan',
             query: parsedInput.data.query,
+            runnableMethodCount: plan.candidates.filter(
+              (candidate) =>
+                candidate.searchMethod &&
+                candidate.searchMethod.methodType !== 'unsupported'
+            ).length,
             targetChapter: parsedInput.data.targetChapter ?? null,
             tokenCost,
             type: 'mutation',

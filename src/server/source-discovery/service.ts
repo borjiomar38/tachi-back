@@ -9,6 +9,7 @@ import {
   SourceDiscoveryResultStatus,
   SourceSearchMethodStatus,
 } from '@/server/db/generated/client';
+import { logger } from '@/server/logger';
 import {
   createInvalidProviderResponseError,
   createProviderConfigError,
@@ -23,6 +24,7 @@ import {
 
 import { GENERATED_SOURCE_THEME_HINTS } from './theme-hints.generated';
 
+const sourceDiscoveryLog = logger.child({ scope: 'source-discovery' });
 const KEIYOUSHI_INDEX_URL =
   'https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json';
 const KEIYOUSHI_REPO_URL =
@@ -443,12 +445,34 @@ export async function buildSourceDiscoveryPlan(
   const extensionByPackageName = new Map(
     items.map((extension) => [extension.pkg, extension])
   );
-  const knownResults = knownResultsRaw.map((result) =>
+  const enrichedKnownResults = knownResultsRaw.map((result) =>
     enrichKnownResultWithExtensionMetadata(
       result,
       extensionByPackageName.get(result.packageName) ?? null
     )
   );
+  const knownResults = enrichedKnownResults.filter(hasDetectedLatestChapter);
+  const knownResultsWithoutLatest =
+    enrichedKnownResults.length - knownResults.length;
+
+  sourceDiscoveryLog.info({
+    aliasCount: aliases.length,
+    candidateCount: candidates.length,
+    candidateSample: summarizeDiscoveryCandidates(candidates),
+    knownResults: knownResults.length,
+    knownResultsWithoutLatest,
+    message: 'Built source discovery plan',
+    query: input.query,
+    runnableMethodCount: candidates.filter(
+      (candidate) =>
+        candidate.searchMethod &&
+        candidate.searchMethod.methodType !== 'unsupported'
+    ).length,
+    searchMethodCount: candidates.filter(
+      (candidate) => candidate.searchMethod !== null
+    ).length,
+    type: 'source_discovery_plan',
+  });
 
   return {
     aliasStrategy: 'mobile_exact',
@@ -475,33 +499,63 @@ export async function verifySourceDiscoveryCandidates(
   } = {}
 ) {
   const input = zSourceDiscoveryVerifyInput.parse(rawInput);
+  const candidatesWithLatest = input.candidates.filter(
+    hasDetectedLatestChapter
+  );
+  const droppedMissingLatest =
+    input.candidates.length - candidatesWithLatest.length;
 
-  if (input.candidates.length === 0) {
+  sourceDiscoveryLog.info({
+    aliasCount: input.aliases.length,
+    candidateCount: input.candidates.length,
+    candidateSample: summarizeDiscoveryCandidates(input.candidates),
+    droppedMissingLatest,
+    message: 'Verifying source discovery candidates',
+    query: input.query,
+    type: 'source_discovery_verify_start',
+  });
+
+  if (candidatesWithLatest.length === 0) {
     return {
       matches: [],
     };
   }
 
+  const verificationInput = {
+    ...input,
+    candidates: candidatesWithLatest,
+  };
   const raw =
     deps.verifier !== undefined
-      ? await deps.verifier(input)
-      : await generateVerification(input, {
+      ? await deps.verifier(verificationInput)
+      : await generateVerification(verificationInput, {
           fetchFn: deps.fetchFn,
         });
   const parsed = zAiVerificationResponse.parse(raw);
   const knownIds = new Set(
-    input.candidates.map((candidate) => candidate.candidateId)
+    candidatesWithLatest.map((candidate) => candidate.candidateId)
   );
+  const matches = parsed.matches
+    .filter((match) => knownIds.has(match.candidateId))
+    .map((match) => ({
+      candidateId: match.candidateId,
+      confidence: match.confidence,
+      decision: match.decision,
+      reason: match.reason,
+    }));
+
+  sourceDiscoveryLog.info({
+    acceptedCount: matches.filter((match) => match.decision !== 'reject')
+      .length,
+    matchSample: matches.slice(0, 12),
+    message: 'Verified source discovery candidates',
+    query: input.query,
+    returnedMatchCount: matches.length,
+    type: 'source_discovery_verify_done',
+  });
 
   return {
-    matches: parsed.matches
-      .filter((match) => knownIds.has(match.candidateId))
-      .map((match) => ({
-        candidateId: match.candidateId,
-        confidence: match.confidence,
-        decision: match.decision,
-        reason: match.reason,
-      })),
+    matches,
   };
 }
 
@@ -576,6 +630,27 @@ export async function findKnownSourceDiscoveryResults(input: {
         in: aliasKeys,
       },
       result: {
+        OR: [
+          {
+            AND: [
+              {
+                latestChapterName: {
+                  not: null,
+                },
+              },
+              {
+                latestChapterName: {
+                  not: '',
+                },
+              },
+            ],
+          },
+          {
+            latestChapterNumber: {
+              not: null,
+            },
+          },
+        ],
         status: SourceDiscoveryResultStatus.active,
       },
     },
@@ -604,6 +679,18 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
     for (const result of input.results) {
       if (result.decision === 'reject' || result.confidence < 0.65) {
         rejected += 1;
+        continue;
+      }
+      if (!hasDetectedLatestChapter(result)) {
+        rejected += 1;
+        sourceDiscoveryLog.info({
+          message: 'Rejected source discovery result without latest chapter',
+          query: input.query,
+          sourceId: result.sourceId,
+          sourceName: result.sourceName,
+          title: result.title,
+          type: 'source_discovery_result_without_latest',
+        });
         continue;
       }
 
@@ -746,6 +833,16 @@ export async function submitSourceDiscoveryResults(rawInput: unknown) {
     }
   });
 
+  sourceDiscoveryLog.info({
+    accepted,
+    inputCount: input.results.length,
+    message: 'Submitted source discovery results',
+    query: input.query,
+    rejected,
+    resultSample: summarizeDiscoveryResults(input.results),
+    type: 'source_discovery_results_submit',
+  });
+
   return {
     accepted,
     rejected,
@@ -812,6 +909,17 @@ export async function updateSourceDiscoveryMethodFeedback(rawInput: unknown) {
       },
     });
   }
+
+  sourceDiscoveryLog.info({
+    error: input.error ?? null,
+    matchedRows: rows.length,
+    message: 'Updated source discovery method feedback',
+    methodId: input.methodId,
+    sampleUrl: input.sampleUrl ?? null,
+    sourceId: input.sourceId,
+    status,
+    type: 'source_discovery_method_feedback',
+  });
 
   return { ok: true };
 }
@@ -1015,6 +1123,65 @@ function buildSubmissionAliases(
     result.matchedAlias ?? '',
     ...(shouldUseRequestedAliases ? [query, ...aliases] : []),
   ]).slice(0, MAX_ALIASES);
+}
+
+function hasDetectedLatestChapter(result: {
+  latestChapterName?: string | null;
+  latestChapterNumber?: number | null;
+}) {
+  return (
+    result.latestChapterNumber != null ||
+    (typeof result.latestChapterName === 'string' &&
+      result.latestChapterName.trim().length > 0)
+  );
+}
+
+function summarizeDiscoveryCandidates(
+  candidates: Array<{
+    adapterKey?: string | null;
+    extensionName?: string | null;
+    latestChapterName?: string | null;
+    latestChapterNumber?: number | null;
+    searchMethod?: SourceDiscoverySearchMethod | null;
+    sourceLanguage: string;
+    sourceName: string;
+    title?: string | null;
+  }>,
+  limit = 12
+) {
+  return candidates.slice(0, limit).map((candidate) => ({
+    adapterKey: candidate.adapterKey ?? null,
+    extensionName: candidate.extensionName ?? null,
+    latest:
+      candidate.latestChapterNumber ?? candidate.latestChapterName ?? null,
+    methodStatus: candidate.searchMethod?.status ?? null,
+    methodType: candidate.searchMethod?.methodType ?? null,
+    sourceLanguage: candidate.sourceLanguage,
+    sourceName: candidate.sourceName,
+    title: candidate.title ?? null,
+  }));
+}
+
+function summarizeDiscoveryResults(
+  results: Array<{
+    confidence?: number | null;
+    decision?: string | null;
+    latestChapterName?: string | null;
+    latestChapterNumber?: number | null;
+    sourceLanguage: string;
+    sourceName: string;
+    title: string;
+  }>,
+  limit = 12
+) {
+  return results.slice(0, limit).map((result) => ({
+    confidence: result.confidence ?? null,
+    decision: result.decision ?? null,
+    latest: result.latestChapterNumber ?? result.latestChapterName ?? null,
+    sourceLanguage: result.sourceLanguage,
+    sourceName: result.sourceName,
+    title: result.title,
+  }));
 }
 
 function normalizeDiscoveryKey(value: string) {

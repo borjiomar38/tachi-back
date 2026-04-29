@@ -137,10 +137,26 @@ export const Route = createFileRoute('/api/mobile/source-discovery/verify')({
 
           routeLog.info({
             candidateCount: parsedInput.data.candidates.length,
+            candidateSample: parsedInput.data.candidates
+              .slice(0, 12)
+              .map((candidate) => ({
+                latest:
+                  candidate.latestChapterNumber ??
+                  candidate.latestChapterName ??
+                  null,
+                sourceLanguage: candidate.sourceLanguage,
+                sourceName: candidate.sourceName,
+                title: candidate.title,
+              })),
             clientIp: context.clientIp,
             deviceId: auth.device.id,
             licenseId: auth.license.id,
             matchCount: result.matches.length,
+            missingLatestCandidateCount: parsedInput.data.candidates.filter(
+              (candidate) =>
+                candidate.latestChapterNumber == null &&
+                !candidate.latestChapterName?.trim()
+            ).length,
             message: 'Verified mobile source discovery candidates',
             query: parsedInput.data.query,
             tokenCost,

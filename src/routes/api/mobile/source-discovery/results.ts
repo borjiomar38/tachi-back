@@ -72,8 +72,21 @@ export const Route = createFileRoute('/api/mobile/source-discovery/results')({
 
           routeLog.info({
             accepted: result.accepted,
+            missingLatestInputCount: parsedInput.data.results.filter(
+              (item) =>
+                item.latestChapterNumber == null &&
+                !item.latestChapterName?.trim()
+            ).length,
+            query: parsedInput.data.query,
             rejected: result.rejected,
             resultCount: parsedInput.data.results.length,
+            resultSample: parsedInput.data.results.slice(0, 12).map((item) => ({
+              latest:
+                item.latestChapterNumber ?? item.latestChapterName ?? null,
+              sourceLanguage: item.sourceLanguage,
+              sourceName: item.sourceName,
+              title: item.title,
+            })),
             type: 'success',
           });
 
