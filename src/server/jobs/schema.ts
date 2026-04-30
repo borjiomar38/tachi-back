@@ -90,7 +90,21 @@ export const zTranslationJobSummary = z.object({
   id: z.string(),
   pageCount: z.number().int().positive(),
   pages: z.array(zTranslationJobPageSummary),
+  progressMessage: z.string().nullish(),
   progressPercent: z.number().int().min(0).max(100),
+  progressStage: z
+    .enum([
+      'created',
+      'uploading',
+      'queued',
+      'starting',
+      'ocr',
+      'translation',
+      'finalizing',
+      'completed',
+      'failed',
+    ])
+    .nullish(),
   queuedAt: z.date().nullish(),
   reservedTokens: z.number().int().nonnegative(),
   resultPath: z.string().nullish(),

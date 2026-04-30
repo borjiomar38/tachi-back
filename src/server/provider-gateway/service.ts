@@ -117,6 +117,10 @@ export async function performHostedTranslation(
   input: {
     jobId?: string;
     mangaContext?: string;
+    onProgress?: (progress: {
+      completedBatches: number;
+      totalBatches: number;
+    }) => Promise<void>;
     pages: Array<{
       blocks: Array<{ text: string }>;
       pageKey: string;
@@ -130,11 +134,12 @@ export async function performHostedTranslation(
   } = {}
 ) {
   const translationPlan = buildTranslationBatchPlan(input.pages);
+  let completedBatches = 0;
   const batchResults = await mapWithConcurrency(
     translationPlan.batches,
     TRANSLATION_BATCH_CONCURRENCY,
-    async (batch) =>
-      await performHostedTranslationBatch({
+    async (batch) => {
+      const result = await performHostedTranslationBatch({
         batch,
         fetchFn: deps.fetchFn,
         jobId: input.jobId,
@@ -142,7 +147,14 @@ export async function performHostedTranslation(
         preferredProvider: input.preferredProvider,
         sourceLanguage: input.sourceLanguage,
         targetLanguage: input.targetLanguage,
-      })
+      });
+      completedBatches += 1;
+      await input.onProgress?.({
+        completedBatches,
+        totalBatches: translationPlan.batches.length,
+      });
+      return result;
+    }
   );
   const result = combineTranslationBatchResults({
     batchResults,

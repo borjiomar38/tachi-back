@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { waitUntil } from '@vercel/functions';
 
 import {
   buildApiOkResponse,
@@ -9,7 +10,10 @@ import {
   buildMobileJobErrorResponse,
   buildMobileJobRateLimitedResponse,
 } from '@/server/jobs/http';
-import { getTranslationJobSummary } from '@/server/jobs/service';
+import {
+  drainTranslationJobQueue,
+  getTranslationJobSummary,
+} from '@/server/jobs/service';
 import { logger } from '@/server/logger';
 
 export const Route = createFileRoute('/api/mobile/jobs/$jobId/')({
@@ -58,6 +62,19 @@ export const Route = createFileRoute('/api/mobile/jobs/$jobId/')({
               },
             }
           );
+
+          if (summary.status === 'queued') {
+            waitUntil(
+              drainTranslationJobQueue({ log: routeLog }).catch((error) => {
+                routeLog.error({
+                  errorMessage:
+                    error instanceof Error ? error.message : 'Unknown error',
+                  jobId: params.jobId,
+                  scope: 'jobs',
+                });
+              })
+            );
+          }
 
           return buildApiOkResponse(summary, {
             requestId: context.requestId,

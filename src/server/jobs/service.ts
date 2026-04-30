@@ -70,6 +70,7 @@ type JobRecord = {
   pageCount: number;
   queuedAt: Date | null;
   reservedTokens: number;
+  resultSummary: unknown;
   resolvedOcrProvider: ProviderType | null;
   resolvedTranslationProvider: ProviderType | null;
   sourceLanguage: string;
@@ -113,11 +114,30 @@ type OcrBatch = {
   width: number;
 };
 
+type JobProgressStage =
+  | 'created'
+  | 'uploading'
+  | 'queued'
+  | 'starting'
+  | 'ocr'
+  | 'translation'
+  | 'finalizing'
+  | 'completed'
+  | 'failed';
+
+type JobProgressSnapshot = {
+  message: string;
+  percent: number;
+  stage: JobProgressStage;
+  updatedAt: string;
+};
+
 const JOB_RESULT_VERSION = '2026-03-20.phase11.v1' as const;
 const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
 const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
 const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
 const HOSTED_OCR_JPEG_QUALITY = 88;
+const QUEUE_DRAIN_ADVISORY_LOCK_KEY = 74_224_301;
 
 export class TranslationJobError extends Error {
   constructor(
@@ -563,6 +583,12 @@ export async function completeTranslationJobUpload(
         errorMessage: null,
         failedAt: null,
         queuedAt: now,
+        resultSummary: buildProgressResultSummary(job.resultSummary, {
+          message: 'Waiting for a server translation slot.',
+          percent: 40,
+          stage: 'queued',
+          updatedAt: now.toISOString(),
+        }),
         startedAt: null,
         status: 'queued',
         uploadCompletedAt: job.uploadCompletedAt ?? now,
@@ -582,13 +608,10 @@ export async function completeTranslationJobUpload(
         return;
       }
 
-      void processTranslationJob(
-        { jobId },
-        {
-          dbClient,
-          log,
-        }
-      ).catch((error) => {
+      void drainTranslationJobQueue({
+        dbClient,
+        log,
+      }).catch((error) => {
         log.error({
           errorMessage:
             error instanceof Error ? error.message : 'Unknown error',
@@ -646,12 +669,11 @@ export async function getTranslationJobSummary(
 const STALE_JOB_TIMEOUT_MS = 15 * 60 * 1_000; // 15 minutes
 
 function isStaleJob(job: JobRecord, now: Date): boolean {
-  if (job.status !== 'processing' && job.status !== 'queued') {
+  if (job.status !== 'processing') {
     return false;
   }
 
-  const referenceTime =
-    job.status === 'processing' ? job.startedAt : job.queuedAt;
+  const referenceTime = job.startedAt;
 
   if (!referenceTime) {
     return false;
@@ -712,6 +734,12 @@ export async function processTranslationJob(
         status: 'queued',
       },
       data: {
+        resultSummary: buildProgressResultSummary(null, {
+          message: 'Starting hosted processing.',
+          percent: 42,
+          stage: 'starting',
+          updatedAt: now.toISOString(),
+        }),
         startedAt: now,
         status: 'processing',
       },
@@ -731,6 +759,178 @@ export async function processTranslationJob(
     return null;
   }
 
+  return await processStartedTranslationJob(startedJob, {
+    dbClient,
+    log,
+  });
+}
+
+export async function drainTranslationJobQueue(
+  deps: {
+    continueDraining?: boolean;
+    dbClient?: typeof db;
+    log?: Pick<typeof logger, 'error' | 'info'>;
+    now?: Date;
+    remainingCycles?: number;
+  } = {}
+) {
+  const dbClient = deps.dbClient ?? db;
+  const log = deps.log ?? logger;
+  const now = deps.now ?? new Date();
+  const remainingCycles = deps.remainingCycles ?? 20;
+
+  if (remainingCycles <= 0) {
+    return {
+      startedJobIds: [],
+    };
+  }
+
+  const startedJobs = await claimQueuedTranslationJobs({
+    dbClient,
+    now,
+  });
+
+  if (startedJobs.length === 0) {
+    return {
+      startedJobIds: [],
+    };
+  }
+
+  await Promise.all(
+    startedJobs.map(async (job) => {
+      try {
+        await processStartedTranslationJob(job, {
+          dbClient,
+          log,
+        });
+      } catch (error) {
+        log.error({
+          errorMessage:
+            error instanceof Error ? error.message : 'Unknown error',
+          jobId: job.id,
+          scope: 'jobs',
+        });
+      } finally {
+        if (deps.continueDraining ?? true) {
+          await drainTranslationJobQueue({
+            continueDraining: true,
+            dbClient,
+            log,
+            remainingCycles: remainingCycles - 1,
+          });
+        }
+      }
+    })
+  );
+
+  return {
+    startedJobIds: startedJobs.map((job) => job.id),
+  };
+}
+
+async function claimQueuedTranslationJobs(input: {
+  dbClient: typeof db;
+  now: Date;
+}) {
+  return await input.dbClient.$transaction(async (tx) => {
+    const [lock] = await tx.$queryRaw<Array<{ locked: boolean }>>`
+      SELECT pg_try_advisory_xact_lock(${QUEUE_DRAIN_ADVISORY_LOCK_KEY}) AS locked
+    `;
+
+    if (!lock?.locked) {
+      return [];
+    }
+
+    const staleStartedBefore = new Date(
+      input.now.getTime() - STALE_JOB_TIMEOUT_MS
+    );
+
+    await tx.translationJob.updateMany({
+      where: {
+        startedAt: {
+          lt: staleStartedBefore,
+        },
+        status: 'processing',
+      },
+      data: {
+        errorCode: 'processing_failed',
+        errorMessage:
+          'The translation job did not complete within the allowed time.',
+        failedAt: input.now,
+        status: 'failed',
+      },
+    });
+
+    const processingCount = await tx.translationJob.count({
+      where: {
+        status: 'processing',
+      },
+    });
+    const availableSlots = Math.max(
+      0,
+      envServer.JOB_MAX_CONCURRENCY - processingCount
+    );
+
+    if (availableSlots <= 0) {
+      return [];
+    }
+
+    const queuedJobs = await tx.translationJob.findMany({
+      where: {
+        status: 'queued',
+      },
+      orderBy: [{ queuedAt: 'asc' }, { createdAt: 'asc' }],
+      select: {
+        id: true,
+      },
+      take: availableSlots,
+    });
+    const jobIds = queuedJobs.map((job) => job.id);
+
+    if (jobIds.length === 0) {
+      return [];
+    }
+
+    await tx.translationJob.updateMany({
+      where: {
+        id: {
+          in: jobIds,
+        },
+        status: 'queued',
+      },
+      data: {
+        resultSummary: buildProgressResultSummary(null, {
+          message: 'Starting hosted processing.',
+          percent: 42,
+          stage: 'starting',
+          updatedAt: input.now.toISOString(),
+        }),
+        startedAt: input.now,
+        status: 'processing',
+      },
+    });
+
+    return await tx.translationJob.findMany({
+      where: {
+        id: {
+          in: jobIds,
+        },
+        status: 'processing',
+      },
+      orderBy: [{ queuedAt: 'asc' }, { createdAt: 'asc' }],
+      select: translationJobSelect,
+    });
+  });
+}
+
+async function processStartedTranslationJob(
+  startedJob: JobRecord,
+  deps: {
+    dbClient: typeof db;
+    log: Pick<typeof logger, 'error' | 'info'>;
+  }
+) {
+  const { dbClient, log } = deps;
   const uploadAssets = startedJob.assets
     .filter((asset) => asset.kind === 'page_upload')
     .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
@@ -754,8 +954,32 @@ export async function processTranslationJob(
       });
     }
 
+    await updateTranslationJobProgress({
+      dbClient,
+      jobId: startedJob.id,
+      progress: {
+        message: 'Reading text from uploaded pages.',
+        percent: 45,
+        stage: 'ocr',
+        updatedAt: new Date().toISOString(),
+      },
+    });
+
     const ocrPages = await performHostedOcrForUploadedPages({
       jobId: startedJob.id,
+      onProgress: async ({ completedPages, totalPages }) => {
+        const progressRatio = totalPages > 0 ? completedPages / totalPages : 1;
+        await updateTranslationJobProgress({
+          dbClient,
+          jobId: startedJob.id,
+          progress: {
+            message: `Reading text from pages ${completedPages}/${totalPages}.`,
+            percent: Math.min(65, 45 + Math.floor(progressRatio * 20)),
+            stage: 'ocr',
+            updatedAt: new Date().toISOString(),
+          },
+        });
+      },
       pages: uploadedOcrPages,
     });
     const detectedLanguages = ocrPages.map(
@@ -784,12 +1008,37 @@ export async function processTranslationJob(
       translatablePages.length > 0
         ? await performHostedTranslation({
             jobId: startedJob.id,
+            onProgress: async ({ completedBatches, totalBatches }) => {
+              const progressRatio =
+                totalBatches > 0 ? completedBatches / totalBatches : 1;
+              await updateTranslationJobProgress({
+                dbClient,
+                jobId: startedJob.id,
+                progress: {
+                  message: `Translating text with AI ${completedBatches}/${totalBatches}.`,
+                  percent: Math.min(95, 65 + Math.floor(progressRatio * 30)),
+                  stage: 'translation',
+                  updatedAt: new Date().toISOString(),
+                },
+              });
+            },
             pages: translatablePages,
             preferredProvider: translationProvider,
             sourceLanguage,
             targetLanguage: startedJob.targetLanguage,
           })
         : null;
+
+    await updateTranslationJobProgress({
+      dbClient,
+      jobId: startedJob.id,
+      progress: {
+        message: 'Finalizing translated chapter.',
+        percent: 97,
+        stage: 'finalizing',
+        updatedAt: new Date().toISOString(),
+      },
+    });
 
     const translationsByPage = new Map(
       translationBatch?.pages.map((page) => [page.pageKey, page]) ?? []
@@ -929,6 +1178,12 @@ export async function processTranslationJob(
               envServer.JOB_RESULT_RETENTION_HOURS * 60 * 60 * 1000
           ),
           resultPayloadVersion: JOB_RESULT_VERSION,
+          resultSummary: buildProgressResultSummary(startedJob.resultSummary, {
+            message: 'Translation completed.',
+            percent: 100,
+            stage: 'completed',
+            updatedAt: completedAt.toISOString(),
+          }),
           sourceLanguage,
           spentTokens,
           status: 'completed',
@@ -999,6 +1254,12 @@ export async function processTranslationJob(
           errorCode,
           errorMessage,
           failedAt,
+          resultSummary: buildProgressResultSummary(startedJob.resultSummary, {
+            message: errorMessage,
+            percent: getStoredJobProgress(startedJob)?.percent ?? 40,
+            stage: 'failed',
+            updatedAt: failedAt.toISOString(),
+          }),
           status: 'failed',
         },
       });
@@ -1048,6 +1309,7 @@ const translationJobSelect = {
   pageCount: true,
   queuedAt: true,
   reservedTokens: true,
+  resultSummary: true,
   resolvedOcrProvider: true,
   resolvedTranslationProvider: true,
   sourceLanguage: true,
@@ -1111,6 +1373,7 @@ function buildTranslationJobSummary(job: JobRecord) {
   const uploadedPageCount = pages.filter(
     (page) => page.uploadStatus === 'uploaded'
   ).length;
+  const storedProgress = getStoredJobProgress(job);
   const resultPath =
     job.status === 'completed' ? `/api/mobile/jobs/${job.id}/result` : null;
 
@@ -1123,10 +1386,13 @@ function buildTranslationJobSummary(job: JobRecord) {
     id: job.id,
     pageCount: job.pageCount,
     pages,
+    progressMessage: calculateJobProgressMessage(job.status, storedProgress),
     progressPercent: calculateJobProgress(job.status, {
       pageCount: job.pageCount,
+      storedProgress,
       uploadedPageCount,
     }),
+    progressStage: calculateJobProgressStage(job.status, storedProgress),
     queuedAt: job.queuedAt,
     reservedTokens: job.reservedTokens,
     resultPath,
@@ -1144,9 +1410,17 @@ function calculateJobProgress(
   status: JobRecord['status'],
   input: {
     pageCount: number;
+    storedProgress: JobProgressSnapshot | null;
     uploadedPageCount: number;
   }
 ) {
+  if (
+    input.storedProgress &&
+    (status === 'processing' || status === 'queued' || status === 'failed')
+  ) {
+    return input.storedProgress.percent;
+  }
+
   switch (status) {
     case 'created':
       return 0;
@@ -1158,15 +1432,73 @@ function calculateJobProgress(
           )
         : 0;
     case 'queued':
-      return 45;
+      return 40;
     case 'processing':
-      return 80;
+      return 42;
     case 'completed':
       return 100;
     case 'failed':
     case 'canceled':
     case 'expired':
       return input.uploadedPageCount > 0 ? 40 : 0;
+  }
+}
+
+function calculateJobProgressStage(
+  status: JobRecord['status'],
+  storedProgress: JobProgressSnapshot | null
+) {
+  if (
+    storedProgress &&
+    (status === 'processing' || status === 'queued' || status === 'failed')
+  ) {
+    return storedProgress.stage;
+  }
+
+  switch (status) {
+    case 'created':
+      return 'created';
+    case 'awaiting_upload':
+      return 'uploading';
+    case 'queued':
+      return 'queued';
+    case 'processing':
+      return 'starting';
+    case 'completed':
+      return 'completed';
+    case 'failed':
+    case 'canceled':
+    case 'expired':
+      return 'failed';
+  }
+}
+
+function calculateJobProgressMessage(
+  status: JobRecord['status'],
+  storedProgress: JobProgressSnapshot | null
+) {
+  if (
+    storedProgress &&
+    (status === 'processing' || status === 'queued' || status === 'failed')
+  ) {
+    return storedProgress.message;
+  }
+
+  switch (status) {
+    case 'created':
+      return 'Preparing hosted translation.';
+    case 'awaiting_upload':
+      return 'Uploading chapter pages.';
+    case 'queued':
+      return 'Waiting for a server translation slot.';
+    case 'processing':
+      return 'Starting hosted processing.';
+    case 'completed':
+      return 'Translation completed.';
+    case 'failed':
+    case 'canceled':
+    case 'expired':
+      return 'Hosted translation stopped.';
   }
 }
 
@@ -1236,6 +1568,109 @@ function mergeAssetMetadata(
     ...(current && typeof current === 'object' ? current : {}),
     ...next,
   } as Prisma.InputJsonValue;
+}
+
+function getStoredJobProgress(job: Pick<JobRecord, 'resultSummary'>) {
+  const summary =
+    job.resultSummary &&
+    typeof job.resultSummary === 'object' &&
+    !Array.isArray(job.resultSummary)
+      ? (job.resultSummary as Record<string, unknown>)
+      : null;
+  const progress =
+    summary?.progress &&
+    typeof summary.progress === 'object' &&
+    !Array.isArray(summary.progress)
+      ? (summary.progress as Record<string, unknown>)
+      : null;
+
+  if (!progress) {
+    return null;
+  }
+
+  const stage = progress.stage;
+  const message = progress.message;
+  const percent = progress.percent;
+  const updatedAt = progress.updatedAt;
+
+  if (
+    typeof stage !== 'string' ||
+    !isJobProgressStage(stage) ||
+    typeof message !== 'string' ||
+    typeof percent !== 'number' ||
+    typeof updatedAt !== 'string'
+  ) {
+    return null;
+  }
+
+  return {
+    message,
+    percent: clampProgressPercent(percent),
+    stage,
+    updatedAt,
+  } satisfies JobProgressSnapshot;
+}
+
+function buildProgressResultSummary(
+  current: unknown,
+  progress: JobProgressSnapshot
+): Prisma.InputJsonObject {
+  return {
+    ...(current && typeof current === 'object' && !Array.isArray(current)
+      ? current
+      : {}),
+    progress: {
+      message: progress.message,
+      percent: clampProgressPercent(progress.percent),
+      stage: progress.stage,
+      updatedAt: progress.updatedAt,
+    },
+  };
+}
+
+async function updateTranslationJobProgress(input: {
+  dbClient: typeof db;
+  jobId: string;
+  progress: JobProgressSnapshot;
+}) {
+  const currentJob = await input.dbClient.translationJob.findUnique({
+    where: {
+      id: input.jobId,
+    },
+    select: {
+      resultSummary: true,
+    },
+  });
+
+  await input.dbClient.translationJob.update({
+    where: {
+      id: input.jobId,
+    },
+    data: {
+      resultSummary: buildProgressResultSummary(
+        currentJob?.resultSummary ?? null,
+        input.progress
+      ),
+    },
+  });
+}
+
+function clampProgressPercent(value: number) {
+  return Math.max(0, Math.min(100, Math.round(value)));
+}
+
+function isJobProgressStage(stage: string): stage is JobProgressStage {
+  return [
+    'created',
+    'uploading',
+    'queued',
+    'starting',
+    'ocr',
+    'translation',
+    'finalizing',
+    'completed',
+    'failed',
+  ].includes(stage);
 }
 
 async function cleanupCompletedJobPageUploads(input: {
@@ -1611,6 +2046,12 @@ async function completeTranslationJobFromCachedManifest(input: {
           cacheHit: true,
           cacheKey: input.cacheKey,
           pageCount: input.job.pageCount,
+          progress: {
+            message: 'Translation loaded from cache.',
+            percent: 100,
+            stage: 'completed',
+            updatedAt: input.now.toISOString(),
+          },
         },
         sourceLanguage: input.manifest.sourceLanguage,
         spentTokens: input.spentTokens,
@@ -1699,6 +2140,10 @@ function parseCachedResultManifest(rawManifest: unknown) {
 
 async function performHostedOcrForUploadedPages(input: {
   jobId: string;
+  onProgress?: (progress: {
+    completedPages: number;
+    totalPages: number;
+  }) => Promise<void>;
   pages: UploadedOcrPage[];
 }): Promise<
   Array<{
@@ -1728,7 +2173,11 @@ async function performHostedOcrForUploadedPages(input: {
     ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
   }> = [];
 
-  for (const batch of await buildHostedOcrBatches(dimensionedPages)) {
+  let completedPages = 0;
+  const totalPages = input.pages.length;
+  const ocrBatches = await buildHostedOcrBatches(dimensionedPages);
+
+  for (const batch of ocrBatches) {
     const batchOcrPage = await performHostedOcr({
       imageBytes: batch.imageBytes,
       imageHeight: batch.height,
@@ -1737,6 +2186,8 @@ async function performHostedOcrForUploadedPages(input: {
       pageCount: batch.placements.length,
     });
     ocrPages.push(...mapBatchOcrPageToOriginalPages(batch, batchOcrPage));
+    completedPages += batch.placements.length;
+    await input.onProgress?.({ completedPages, totalPages });
   }
 
   for (const page of fallbackPages) {
@@ -1747,6 +2198,8 @@ async function performHostedOcrForUploadedPages(input: {
         jobId: input.jobId,
       }),
     });
+    completedPages += 1;
+    await input.onProgress?.({ completedPages, totalPages });
   }
 
   const byFileName = new Map(ocrPages.map((page) => [page.fileName, page]));

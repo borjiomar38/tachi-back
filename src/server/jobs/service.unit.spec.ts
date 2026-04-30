@@ -675,6 +675,14 @@ describe('job service', () => {
         errorMessage: null,
         failedAt: null,
         queuedAt: new Date('2026-03-20T10:05:00.000Z'),
+        resultSummary: {
+          progress: {
+            message: 'Waiting for a server translation slot.',
+            percent: 40,
+            stage: 'queued',
+            updatedAt: '2026-03-20T10:05:00.000Z',
+          },
+        },
         startedAt: null,
         status: 'queued',
         uploadCompletedAt: new Date('2026-03-20T10:02:00.000Z'),
@@ -1485,6 +1493,7 @@ function buildJobRecord(
     pageCount: number;
     queuedAt: Date | null;
     reservedTokens: number;
+    resultSummary: unknown;
     resolvedOcrProvider: 'google_cloud_vision' | null;
     sourceLanguage: string;
     spentTokens: number;
@@ -1545,6 +1554,7 @@ function buildJobRecord(
     pageCount: overrides.pageCount ?? assets.length,
     queuedAt: overrides.queuedAt ?? null,
     reservedTokens: overrides.reservedTokens ?? 0,
+    resultSummary: overrides.resultSummary ?? null,
     resolvedOcrProvider: overrides.resolvedOcrProvider ?? 'google_cloud_vision',
     resolvedTranslationProvider: 'gemini',
     sourceLanguage: overrides.sourceLanguage ?? 'auto',

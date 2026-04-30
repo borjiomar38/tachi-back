@@ -12,7 +12,7 @@ import {
 } from '@/server/jobs/http';
 import {
   completeTranslationJobUpload,
-  processTranslationJob,
+  drainTranslationJobQueue,
 } from '@/server/jobs/service';
 import { logger } from '@/server/logger';
 
@@ -62,18 +62,16 @@ export const Route = createFileRoute('/api/mobile/jobs/$jobId/complete')({
               },
               scheduleProcessing: (jobId) => {
                 waitUntil(
-                  processTranslationJob({ jobId }, { log: routeLog }).catch(
-                    (error) => {
-                      routeLog.error({
-                        errorMessage:
-                          error instanceof Error
-                            ? error.message
-                            : 'Unknown error',
-                        jobId,
-                        scope: 'jobs',
-                      });
-                    }
-                  )
+                  drainTranslationJobQueue({ log: routeLog }).catch((error) => {
+                    routeLog.error({
+                      errorMessage:
+                        error instanceof Error
+                          ? error.message
+                          : 'Unknown error',
+                      jobId,
+                      scope: 'jobs',
+                    });
+                  })
                 );
               },
             }
