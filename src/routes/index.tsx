@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { zodValidator } from '@tanstack/zod-adapter';
 import { z } from 'zod';
 
+import { fallbackPublicTokenPacks } from '@/features/public/data';
 import { buildPublicPageHead } from '@/features/public/head';
 import { PageLanding } from '@/features/public/page-landing';
 import { getPublicTokenPacks } from '@/features/public/server';
@@ -13,7 +14,14 @@ export const Route = createFileRoute('/')({
       contact: z.enum(['sent', 'error', 'invalid']).optional().catch(undefined),
     })
   ),
-  loader: () => getPublicTokenPacks(),
+  loader: async () => {
+    try {
+      return await getPublicTokenPacks();
+    } catch (error) {
+      console.error('Failed to load public token packs', error);
+      return fallbackPublicTokenPacks;
+    }
+  },
   head: () =>
     buildPublicPageHead(
       'Hosted OCR and Translation',

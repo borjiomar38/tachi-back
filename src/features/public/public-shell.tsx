@@ -16,8 +16,8 @@ import {
 import { androidApkDownload } from '@/features/public/download-assets';
 
 const primaryLinks = [
-  { href: '/#hero', label: 'Accueil' },
-  { href: '/#demo', label: 'Démo' },
+  { href: '/#hero', label: 'Home' },
+  { href: '/#demo', label: 'Demo' },
   { href: '/#pricing', label: 'Plans' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#faq', label: 'FAQ' },
@@ -31,13 +31,13 @@ const legalLinks = [
 const mobileTabs = [
   {
     href: '/',
-    label: 'Accueil',
+    label: 'Home',
     icon: HomeIcon,
     isActive: (pathname: string) => pathname === '/',
   },
   {
     href: '/download',
-    label: 'Télécharger',
+    label: 'Download',
     icon: DownloadIcon,
     isActive: (pathname: string) => pathname === '/download',
   },
@@ -95,13 +95,13 @@ export const PublicShell = (props: { children: ReactNode }) => {
                 href={androidApkDownload.href}
                 className={buttonVariants({ variant: 'default', size: 'sm' })}
               >
-                Installer l'APK
+                Download APK
               </a>
               <a
                 href="/login"
                 className={buttonVariants({ variant: 'ghost', size: 'sm' })}
               >
-                Se connecter
+                Sign in
               </a>
             </div>
           </div>

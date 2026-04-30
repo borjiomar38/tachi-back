@@ -26,6 +26,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 
+import heroBackground from '@/features/auth/layout-login-background.webp';
+import heroCharacter from '@/features/auth/layout-login-character.webp';
 import {
   activationSteps,
   PUBLIC_OWNER_WHATSAPP_DISPLAY,
@@ -88,6 +90,7 @@ export const PageLanding = (props: {
     props.tokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
     props.tokenPacks[1] ??
     props.tokenPacks[0];
+  const heroPlan = featuredTokenPack ?? props.tokenPacks[0];
 
   return (
     <PublicShell>
@@ -95,122 +98,124 @@ export const PageLanding = (props: {
         id="hero"
         className="mx-auto w-full max-w-6xl scroll-mt-24 px-4 py-8 md:py-14"
       >
-        <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-background/90 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.55)] ring-1 ring-black/5 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
-          <div className="grid gap-10 px-6 py-8 md:px-10 md:py-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-6">
-              <Badge variant="brand" size="sm">
-                Manga & manhwa translation
-              </Badge>
-              <div className="space-y-4">
-                <p className="text-sm font-medium tracking-[0.24em] text-muted-foreground uppercase">
-                  Simple translation inside TachiyomiAT
-                </p>
-                <h1 className="max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
-                  Translate manga and manhwa with powerful text detection.
-                </h1>
-                <p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-                  Choose a monthly plan, receive your redeem code by email,
-                  and start translating chapters in the app.
-                </p>
-              </div>
+        <div className="relative isolate min-h-[34rem] overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-950 px-5 py-7 text-neutral-50 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.75)] ring-1 ring-black/10 sm:px-7 md:min-h-[37rem] md:px-10 md:py-10">
+          <img
+            src={heroBackground}
+            alt=""
+            className="absolute inset-0 -z-20 size-full object-cover object-[62%_center]"
+          />
+          <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/82 to-neutral-950/25" />
+          <div className="absolute inset-0 -z-10 bg-linear-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/20" />
+          <img
+            src={heroCharacter}
+            alt=""
+            className="animate-float-in-space pointer-events-none absolute right-[-7rem] bottom-[-8rem] z-0 hidden w-[min(38rem,48%)] drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block lg:right-[-4rem]"
+          />
 
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={androidApkDownload.href}
-                  className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
-                >
-                  <span className="flex items-center gap-2">
-                    Download Android APK
-                    <DownloadIcon className="size-4" />
-                  </span>
-                </a>
-                <a
-                  href="/#pricing"
-                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
-                >
-                  <span className="flex items-center gap-2">
-                    See monthly plans
-                    <ArrowRightIcon className="size-4" />
-                  </span>
-                </a>
-                <a
-                  href="/#demo"
-                  className={buttonVariants({ variant: 'ghost', size: 'lg' })}
-                >
-                  See the demo
-                </a>
-                <a
-                  href="/#contact"
-                  className={buttonVariants({ variant: 'ghost', size: 'lg' })}
-                >
-                  Contact the team
-                </a>
-              </div>
+          <div className="relative z-10 flex min-h-[28rem] max-w-3xl flex-col justify-center gap-7 md:min-h-[31rem]">
+            <Badge
+              variant="brand"
+              size="lg"
+              className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
+            >
+              Manga & manhwa translation
+            </Badge>
 
-              <Card className="public-brand-panel-muted rounded-[1.5rem]">
-                <CardHeader className="gap-2">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <SmartphoneIcon className="size-5" />
-                    Simple user flow
-                  </CardTitle>
-                  <CardDescription className="text-brand-950 dark:text-brand-100">
-                    Pay for a plan, receive your redeem code, enter it once
-                    in the app, and translate the chapters you want to read.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <a
-                    href={androidApkDownload.href}
-                    className={buttonVariants({ variant: 'default', size: 'lg' })}
-                  >
-                    <span className="flex items-center gap-2">
-                      Install the APK
-                      <DownloadIcon className="size-4" />
-                    </span>
-                  </a>
-                </CardContent>
-              </Card>
+            <div className="space-y-5">
+              <p className="text-sm font-semibold tracking-[0.22em] text-brand-100 uppercase">
+                Simple translation inside TachiyomiAT
+              </p>
+              <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
+                Download, activate, and translate manga in one app.
+              </h1>
+              <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
+                Install the Android APK, choose a monthly plan, receive a redeem
+                code, and run hosted OCR and translation directly from the
+                reader.
+              </p>
             </div>
 
-            <div className="grid gap-4">
-              <Card className="public-brand-panel overflow-hidden rounded-[1.5rem] text-neutral-50">
-                <CardContent className="p-0">
-                  <div className="border-b border-white/10 px-5 py-4">
-                    <p className="text-sm font-medium tracking-[0.22em] text-neutral-300 uppercase">
-                      Branded preview
-                    </p>
-                    <p className="mt-2 text-lg font-semibold">
-                      Hosted OCR, translation, tokens, and device activation in
-                      one visual.
-                    </p>
-                  </div>
-                  <img
-                    src="/tachiyomi-back-hero.svg"
-                    alt="Tachiyomi Back illustration showing manga OCR, translated output, tokens, and device activation"
-                    className="block w-full"
-                  />
-                </CardContent>
-              </Card>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={androidApkDownload.href}
+                className={cn(
+                  buttonVariants({ variant: 'default', size: 'lg' }),
+                  'min-h-11 bg-brand-300 text-brand-950 hover:bg-brand-200'
+                )}
+              >
+                <span className="flex items-center gap-2">
+                  Download Android APK
+                  <DownloadIcon className="size-4" />
+                </span>
+              </a>
+              <a
+                href="/#pricing"
+                className={cn(
+                  buttonVariants({ variant: 'secondary', size: 'lg' }),
+                  'min-h-11 border-white/20 bg-white/10 text-neutral-50 hover:bg-white/15'
+                )}
+              >
+                <span className="flex items-center gap-2">
+                  See monthly plans
+                  <ArrowRightIcon className="size-4" />
+                </span>
+              </a>
+            </div>
 
-              <Card className="rounded-[1.5rem]">
-                <CardHeader className="gap-2">
-                  <CardTitle className="text-xl">Why people use it</CardTitle>
-                  <CardDescription>
-                    Built to feel simple for readers, not technical users.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="grid gap-3">
-                  <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Powerful text detection for manga and manhwa pages.
-                  </div>
-                  <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Simple monthly plans with redeem-code delivery by email.
-                  </div>
-                  <div className="rounded-xl border border-border/70 px-3 py-3">
-                    Translate directly in the app without complicated setup.
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="flex max-w-2xl flex-nowrap gap-2 overflow-x-auto pb-1 text-xs text-neutral-200 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:pb-0 sm:text-sm">
+              <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
+                <p className="font-semibold text-neutral-50">APK</p>
+                <p className="text-neutral-300 sm:mt-1">
+                  {androidApkDownload.sizeLabel}
+                </p>
+              </div>
+              <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
+                <p className="font-semibold text-neutral-50">Redeem code</p>
+                <p className="text-neutral-300 sm:mt-1">Email delivery</p>
+              </div>
+              <div className="hidden shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
+                <p className="font-semibold text-neutral-50">Hosted OCR</p>
+                <p className="mt-1 text-neutral-300">Clean detection</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10 mt-5 grid gap-3 md:absolute md:right-8 md:bottom-8 md:mt-0 md:w-[23rem]">
+            <div className="rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
+              <div className="flex items-center gap-3">
+                <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-300 text-brand-950">
+                  <KeyRoundIcon className="size-5" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold">Redeem code ready</p>
+                  <p className="text-xs text-neutral-300">
+                    Activate once in TachiyomiAT.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
+              <div className="public-hero-scanline" />
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.18em] text-brand-100 uppercase">
+                    Translation
+                  </p>
+                  <p className="mt-1 text-lg font-semibold">OCR complete</p>
+                </div>
+                <span className="flex size-10 items-center justify-center rounded-2xl bg-positive-400/20 text-positive-200">
+                  <ShieldCheckIcon className="size-5" />
+                </span>
+              </div>
+              <div className="mt-4 h-2 rounded-full bg-white/10">
+                <div className="h-full w-[82%] rounded-full bg-brand-300" />
+              </div>
+              <p className="mt-3 text-xs leading-5 text-neutral-300">
+                {heroPlan
+                  ? `${heroPlan.name} plan, ${heroPlan.marketedChaptersPerMonth} chapters/month estimate.`
+                  : 'Monthly plans and hosted text detection.'}
+              </p>
             </div>
           </div>
         </div>

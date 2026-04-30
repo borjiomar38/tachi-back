@@ -25,6 +25,57 @@ export const PUBLIC_OWNER_WHATSAPP_DISPLAY = '+216 23 655 086';
 export const PUBLIC_OWNER_WHATSAPP_HREF =
   'https://wa.me/21623655086?text=Hello%20TachiyomiAT%2C%20I%20need%20help%20with%20the%20app.';
 
+export const fallbackPublicTokenPacks: PublicTokenPack[] = [
+  {
+    id: 'fallback-starter',
+    key: 'starter',
+    name: 'Starter',
+    description: 'Good for trying hosted manga and manhwa translation.',
+    tokenAmount: 100,
+    bonusTokenAmount: 0,
+    priceAmountCents: 499,
+    currency: 'USD',
+    totalTokens: 100,
+    checkoutEnabled: false,
+    estimatedPages: 200,
+    estimatedChapters: 10,
+    marketingSummary: 'Good to start',
+    marketedChaptersPerMonth: 10,
+  },
+  {
+    id: 'fallback-pro',
+    key: 'pro',
+    name: 'Pro',
+    description: 'Best for regular manga and manhwa reading.',
+    tokenAmount: 300,
+    bonusTokenAmount: 50,
+    priceAmountCents: 999,
+    currency: 'USD',
+    totalTokens: 350,
+    checkoutEnabled: false,
+    estimatedPages: 700,
+    estimatedChapters: 35,
+    marketingSummary: 'Best for regular readers',
+    marketedChaptersPerMonth: 30,
+  },
+  {
+    id: 'fallback-power',
+    key: 'power',
+    name: 'Power',
+    description: 'For heavy readers who translate often.',
+    tokenAmount: 700,
+    bonusTokenAmount: 150,
+    priceAmountCents: 1999,
+    currency: 'USD',
+    totalTokens: 850,
+    checkoutEnabled: false,
+    estimatedPages: 1_700,
+    estimatedChapters: 85,
+    marketingSummary: 'For heavy readers',
+    marketedChaptersPerMonth: 70,
+  },
+];
+
 export const publicHighlights: ContentBlock[] = [
   {
     title: 'Translate manga and manhwa fast',

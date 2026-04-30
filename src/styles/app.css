@@ -471,6 +471,36 @@
   .animate-caret-blink {
     animation: caret-blink 1.25s ease-out infinite;
   }
+
+  @keyframes hero-scanline {
+    0%,
+    100% {
+      opacity: 0;
+      transform: translateY(-120%);
+    }
+    18%,
+    72% {
+      opacity: 0.72;
+    }
+    50% {
+      transform: translateY(360%);
+    }
+  }
+
+  .public-hero-scanline {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 3.5rem;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in oklch, var(--color-brand-300), transparent 36%),
+      transparent
+    );
+    animation: hero-scanline 4.8s ease-in-out infinite;
+  }
 }
 
 @layer components {
