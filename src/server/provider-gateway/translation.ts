@@ -484,21 +484,19 @@ function normalizeTranslationPayload(
         const blockKey = buildBlockTranslationKey(index);
 
         if (!(blockKey in translationRecord)) {
-          return {
-            index,
-            sourceText: block.text,
-            translation: '',
-          };
+          throw createRetryableInvalidProviderResponseError(
+            provider,
+            `Provider response is missing "${page.pageKey}" block key "${blockKey}".`
+          );
         }
 
         const translation = translationRecord[blockKey];
 
         if (translation === undefined || translation === null) {
-          return {
-            index,
-            sourceText: block.text,
-            translation: '',
-          };
+          throw createRetryableInvalidProviderResponseError(
+            provider,
+            `Provider response for "${page.pageKey}" block key "${blockKey}" is empty.`
+          );
         }
 
         if (typeof translation === 'string') {
@@ -540,15 +538,14 @@ function normalizeTranslationPayload(
             returnedTranslation === undefined ||
             returnedTranslation === null
           ) {
-            return {
-              index,
-              sourceText: block.text,
-              translation: '',
-            };
+            throw createRetryableInvalidProviderResponseError(
+              provider,
+              `Provider response for "${page.pageKey}" block key "${blockKey}" translation is empty.`
+            );
           }
 
           if (typeof returnedTranslation !== 'string') {
-            throw createInvalidProviderResponseError(
+            throw createRetryableInvalidProviderResponseError(
               provider,
               `Provider response for "${page.pageKey}" block key "${blockKey}" translation is not a string.`
             );
@@ -562,7 +559,7 @@ function normalizeTranslationPayload(
         }
 
         if (typeof translation !== 'string') {
-          throw createInvalidProviderResponseError(
+          throw createRetryableInvalidProviderResponseError(
             provider,
             `Provider response for "${page.pageKey}" block key "${blockKey}" is not a string or translation object.`
           );

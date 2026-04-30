@@ -5,7 +5,10 @@ import {
   performGeminiVisionOcr,
   performGoogleCloudVisionOcr,
 } from '@/server/provider-gateway/ocr';
-import { buildTranslationJsonPayload } from '@/server/provider-gateway/prompts';
+import {
+  buildTranslationJsonPayload,
+  buildTranslationPrompt,
+} from '@/server/provider-gateway/prompts';
 import {
   HostedPageTranslation,
   NormalizedOcrPage,
@@ -18,9 +21,12 @@ import { performTranslationWithProvider } from '@/server/provider-gateway/transl
 import { persistProviderUsageSnapshot } from '@/server/provider-gateway/usage';
 import { retryProviderCall } from '@/server/provider-gateway/utils';
 
-const TRANSLATION_BATCH_MAX_PAYLOAD_CHARS = 9_000;
-const TRANSLATION_BATCH_MAX_BLOCKS = 45;
-const TRANSLATION_BATCH_CONCURRENCY = 3;
+const TRANSLATION_BATCH_MAX_PAYLOAD_CHARS =
+  envServer.TRANSLATION_BATCH_MAX_PAYLOAD_CHARS;
+const TRANSLATION_BATCH_MAX_BLOCKS = envServer.TRANSLATION_BATCH_MAX_BLOCKS;
+const TRANSLATION_BATCH_CONCURRENCY = envServer.TRANSLATION_BATCH_CONCURRENCY;
+const TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS =
+  envServer.TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS;
 
 type TranslationPageInput = {
   blocks: Array<{ text: string }>;
@@ -213,47 +219,218 @@ async function performHostedTranslationBatch(input: {
       targetLanguage: input.targetLanguage,
     });
   } catch (error) {
-    if (!shouldFallbackToSinglePageTranslation(error, input.batch)) {
+    if (!shouldFallbackToGranularTranslation(error)) {
       throw error;
     }
 
-    const fallbackBatches = input.batch.requestPages.map((page) =>
-      createTranslationBatch([
-        {
-          originalPageKey: page.pageKey,
-          requestPage: page,
-        },
-      ])
-    );
-    const fallbackResults = await mapWithConcurrency(
-      fallbackBatches,
-      TRANSLATION_BATCH_CONCURRENCY,
-      async (batch) =>
-        await performGatewayTranslationPagesWithRetry({
+    return await performGranularTranslationFallback(input);
+  }
+}
+
+async function performGranularTranslationFallback(input: {
+  batch: TranslationBatch;
+  fetchFn?: typeof fetch;
+  jobId?: string;
+  mangaContext: string;
+  preferredProvider?: 'anthropic' | 'gemini' | 'openai';
+  sourceLanguage: string;
+  targetLanguage: string;
+}) {
+  const fallbackBatches = input.batch.requestPages.map((page) =>
+    createTranslationBatch([
+      {
+        originalPageKey: page.pageKey,
+        requestPage: page,
+      },
+    ])
+  );
+  const fallbackResults = await mapWithConcurrency(
+    fallbackBatches,
+    TRANSLATION_BATCH_CONCURRENCY,
+    async (batch) => {
+      const page = batch.requestPages[0];
+
+      if (!page) {
+        throw new Error('Missing fallback translation page.');
+      }
+
+      if (input.batch.requestPages.length > 1) {
+        try {
+          return await performGatewayTranslationPagesWithRetry({
+            fetchFn: input.fetchFn,
+            jobId: input.jobId,
+            mangaContext: input.mangaContext,
+            pages: [page],
+            preferredProvider: input.preferredProvider,
+            sourceLanguage: input.sourceLanguage,
+            targetLanguage: input.targetLanguage,
+          });
+        } catch (error) {
+          if (!shouldFallbackToGranularTranslation(error)) {
+            throw error;
+          }
+        }
+      }
+
+      return await performBlockLevelTranslationFallback({
+        fetchFn: input.fetchFn,
+        jobId: input.jobId,
+        mangaContext: input.mangaContext,
+        page,
+        preferredProvider: input.preferredProvider,
+        sourceLanguage: input.sourceLanguage,
+        targetLanguage: input.targetLanguage,
+      });
+    }
+  );
+
+  return combineTranslationBatchResults({
+    batchResults: fallbackResults,
+    batches: fallbackBatches,
+    originalPages: input.batch.requestPages,
+    sourceLanguage: input.sourceLanguage,
+    targetLanguage: input.targetLanguage,
+  });
+}
+
+async function performBlockLevelTranslationFallback(input: {
+  fetchFn?: typeof fetch;
+  jobId?: string;
+  mangaContext: string;
+  page: TranslationPageInput;
+  preferredProvider?: 'anthropic' | 'gemini' | 'openai';
+  sourceLanguage: string;
+  targetLanguage: string;
+}) {
+  const blockResults = await mapWithConcurrency(
+    input.page.blocks.map((block, index) => ({
+      block,
+      index,
+    })),
+    TRANSLATION_BATCH_CONCURRENCY,
+    async ({ block, index }) => {
+      try {
+        const result = await performGatewayTranslationPagesWithRetry({
           fetchFn: input.fetchFn,
           jobId: input.jobId,
           mangaContext: input.mangaContext,
-          pages: batch.requestPages,
+          maxAttempts: TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS,
+          pages: [
+            {
+              blocks: [block],
+              pageKey: input.page.pageKey,
+            },
+          ],
           preferredProvider: input.preferredProvider,
           sourceLanguage: input.sourceLanguage,
           targetLanguage: input.targetLanguage,
-        })
-    );
+        });
+        const translatedBlock = result.pages[0]?.blocks[0];
 
-    return combineTranslationBatchResults({
-      batchResults: fallbackResults,
-      batches: fallbackBatches,
-      originalPages: input.batch.requestPages,
-      sourceLanguage: input.sourceLanguage,
-      targetLanguage: input.targetLanguage,
-    });
-  }
+        if (!translatedBlock) {
+          throw new ProviderGatewayError(
+            'invalid_response',
+            result.provider as ProviderType,
+            true,
+            502,
+            `Provider response is missing "${input.page.pageKey}" block ${index}.`
+          );
+        }
+
+        return {
+          block: {
+            index,
+            sourceText: block.text,
+            translation: translatedBlock.translation,
+          },
+          result,
+          skippedRequestCount: 0,
+        };
+      } catch (error) {
+        if (!shouldSkipFailedTranslationBlock(error)) {
+          throw error;
+        }
+
+        return {
+          block: {
+            index,
+            sourceText: block.text,
+            translation: '',
+          },
+          result: null,
+          skippedRequestCount: TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS,
+        };
+      }
+    }
+  );
+
+  const successfulResults = blockResults
+    .map((result) => result.result)
+    .filter((result): result is NormalizedTranslationBatch => result !== null);
+  const firstResult = successfulResults[0];
+  const provider =
+    firstResult?.provider ??
+    getFallbackTranslationProvider(input.preferredProvider);
+  const prompt = buildTranslationPrompt({
+    mangaContext: input.mangaContext,
+    pages: [input.page],
+    sourceLanguage: input.sourceLanguage,
+    targetLanguage: input.targetLanguage,
+  });
+
+  return zNormalizedTranslationBatch.parse({
+    pages: [
+      {
+        blocks: blockResults.map((result) => result.block),
+        pageKey: input.page.pageKey,
+      },
+    ],
+    promptProfile: firstResult?.promptProfile ?? prompt.promptProfile,
+    promptVersion: firstResult?.promptVersion ?? prompt.promptVersion,
+    provider,
+    providerModel:
+      firstResult?.providerModel ?? getFallbackTranslationModel(provider),
+    sourceLanguage: input.sourceLanguage,
+    targetLanguage: input.targetLanguage,
+    usage: {
+      finishReason: combineOptionalStrings(
+        successfulResults.map((result) => result.usage.finishReason)
+      ),
+      inputTokens: sumOptionalNumbers(
+        successfulResults.map((result) => result.usage.inputTokens)
+      ),
+      latencyMs: successfulResults.reduce(
+        (sum, result) => sum + result.usage.latencyMs,
+        0
+      ),
+      outputTokens: sumOptionalNumbers(
+        successfulResults.map((result) => result.usage.outputTokens)
+      ),
+      pageCount: 1,
+      providerRequestId: combineOptionalStrings(
+        successfulResults.map((result) => result.usage.providerRequestId)
+      ),
+      requestCount:
+        successfulResults.reduce(
+          (sum, result) => sum + result.usage.requestCount,
+          0
+        ) +
+        blockResults.reduce(
+          (sum, result) => sum + result.skippedRequestCount,
+          0
+        ),
+      stopReason: combineOptionalStrings(
+        successfulResults.map((result) => result.usage.stopReason)
+      ),
+    },
+  });
 }
 
 async function performGatewayTranslationPagesWithRetry(input: {
   fetchFn?: typeof fetch;
   jobId?: string;
   mangaContext: string;
+  maxAttempts?: number;
   pages: TranslationPageInput[];
   preferredProvider?: 'anthropic' | 'gemini' | 'openai';
   sourceLanguage: string;
@@ -276,17 +453,37 @@ async function performGatewayTranslationPagesWithRetry(input: {
         }
       ),
     {
-      maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
+      maxAttempts: input.maxAttempts ?? envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
     }
   );
 }
 
-function shouldFallbackToSinglePageTranslation(
-  error: unknown,
-  batch: TranslationBatch
+function getFallbackTranslationProvider(
+  preferredProvider: 'anthropic' | 'gemini' | 'openai' | undefined
+): NormalizedTranslationBatch['provider'] {
+  return preferredProvider ?? envServer.TRANSLATION_PROVIDER_PRIMARY;
+}
+
+function getFallbackTranslationModel(
+  provider: NormalizedTranslationBatch['provider']
 ) {
+  const models: Record<NormalizedTranslationBatch['provider'], string> = {
+    anthropic: envServer.ANTHROPIC_TRANSLATION_MODEL,
+    gemini: envServer.GEMINI_TRANSLATION_MODEL,
+    openai: envServer.OPENAI_TRANSLATION_MODEL,
+  };
+
+  return models[provider];
+}
+
+function shouldSkipFailedTranslationBlock(error: unknown) {
   return (
-    batch.requestPages.length > 1 &&
+    error instanceof ProviderGatewayError && error.code === 'invalid_response'
+  );
+}
+
+function shouldFallbackToGranularTranslation(error: unknown) {
+  return (
     error instanceof ProviderGatewayError &&
     error.code === 'invalid_response' &&
     error.retryable

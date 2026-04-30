@@ -16,6 +16,10 @@ vi.mock('@/env/server', () => ({
   envServer: {
     GEMINI_API_KEY: '',
     PROVIDER_RETRY_MAX_ATTEMPTS: 1,
+    TRANSLATION_BATCH_CONCURRENCY: 40,
+    TRANSLATION_BATCH_MAX_BLOCKS: 45,
+    TRANSLATION_BATCH_MAX_PAYLOAD_CHARS: 2_000,
+    TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS: 3,
   },
 }));
 
@@ -299,5 +303,164 @@ describe('provider gateway service', () => {
         requestCount: 2,
       })
     );
+  });
+
+  it('retries invalid translation blocks three times and leaves failed blocks empty', async () => {
+    const counters = {
+      badSingleBlockCalls: 0,
+    };
+
+    mockPerformTranslationWithProvider.mockImplementation(
+      async (rawInput: unknown) => {
+        const input = rawInput as {
+          pages: Array<{
+            blocks: Array<{ text: string }>;
+            pageKey: string;
+          }>;
+          sourceLanguage: string;
+          targetLanguage: string;
+        };
+        const hasBadBlock = input.pages.some((page) =>
+          page.blocks.some((block) => block.text === 'bad')
+        );
+
+        if (hasBadBlock) {
+          if (
+            input.pages.length === 1 &&
+            input.pages[0]?.blocks.length === 1 &&
+            input.pages[0]?.blocks[0]?.text === 'bad'
+          ) {
+            counters.badSingleBlockCalls += 1;
+          }
+
+          throw new ProviderGatewayError(
+            'invalid_response',
+            'openai',
+            true,
+            502,
+            'Provider returned a block that does not match the OCR convention.'
+          );
+        }
+
+        return {
+          pages: input.pages.map((page) => ({
+            blocks: page.blocks.map((block, index) => ({
+              index,
+              sourceText: block.text,
+              translation: `${block.text}-translated`,
+            })),
+            pageKey: page.pageKey,
+          })),
+          promptProfile: 'arabic_target',
+          promptVersion: '2026-03-20.v1',
+          provider: 'openai',
+          providerModel: 'gpt-test',
+          sourceLanguage: input.sourceLanguage,
+          targetLanguage: input.targetLanguage,
+          usage: {
+            finishReason: 'stop',
+            inputTokens: 10,
+            latencyMs: 100,
+            outputTokens: 5,
+            pageCount: input.pages.length,
+            providerRequestId: null,
+            requestCount: 1,
+            stopReason: null,
+          },
+        };
+      }
+    );
+
+    const result = await performHostedTranslation({
+      pages: [
+        {
+          blocks: [{ text: 'bad' }, { text: 'good' }],
+          pageKey: '001.webp',
+        },
+      ],
+      preferredProvider: 'openai',
+      sourceLanguage: 'ja',
+      targetLanguage: 'ar',
+    });
+
+    expect(counters.badSingleBlockCalls).toBe(3);
+    expect(result.pages[0]?.blocks).toEqual([
+      {
+        index: 0,
+        sourceText: 'bad',
+        translation: '',
+      },
+      {
+        index: 1,
+        sourceText: 'good',
+        translation: 'good-translated',
+      },
+    ]);
+    expect(result.usage.requestCount).toBe(4);
+  });
+
+  it('runs hosted translation batches up to the configured concurrency', async () => {
+    const counters = {
+      active: 0,
+      maxActive: 0,
+    };
+
+    mockPerformTranslationWithProvider.mockImplementation(
+      async (rawInput: unknown) => {
+        counters.active += 1;
+        counters.maxActive = Math.max(counters.maxActive, counters.active);
+        await new Promise((resolve) => setTimeout(resolve, 10));
+        counters.active -= 1;
+
+        const input = rawInput as {
+          pages: Array<{
+            blocks: Array<{ text: string }>;
+            pageKey: string;
+          }>;
+          sourceLanguage: string;
+          targetLanguage: string;
+        };
+
+        return {
+          pages: input.pages.map((page) => ({
+            blocks: page.blocks.map((block, index) => ({
+              index,
+              sourceText: block.text,
+              translation: `${page.pageKey}:${index}`,
+            })),
+            pageKey: page.pageKey,
+          })),
+          promptProfile: 'arabic_target',
+          promptVersion: '2026-03-20.v1',
+          provider: 'openai',
+          providerModel: 'gpt-test',
+          sourceLanguage: input.sourceLanguage,
+          targetLanguage: input.targetLanguage,
+          usage: {
+            finishReason: 'stop',
+            inputTokens: 10,
+            latencyMs: 100,
+            outputTokens: 5,
+            pageCount: input.pages.length,
+            providerRequestId: null,
+            requestCount: 1,
+            stopReason: null,
+          },
+        };
+      }
+    );
+
+    await performHostedTranslation({
+      pages: Array.from({ length: 50 }, (_, index) => ({
+        blocks: [{ text: `line-${index}-${'A'.repeat(2_100)}` }],
+        pageKey: `${String(index).padStart(3, '0')}.webp`,
+      })),
+      preferredProvider: 'openai',
+      sourceLanguage: 'ja',
+      targetLanguage: 'ar',
+    });
+
+    expect(mockPerformTranslationWithProvider).toHaveBeenCalledTimes(50);
+    expect(counters.maxActive).toBe(40);
   });
 });

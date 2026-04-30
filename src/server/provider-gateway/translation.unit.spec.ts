@@ -10,6 +10,10 @@ vi.mock('@/env/server', () => ({
     OPENAI_TRANSLATION_MODEL: 'gpt-test',
     PROVIDER_REQUEST_TIMEOUT_MS: 5000,
     PROVIDER_RETRY_MAX_ATTEMPTS: 2,
+    TRANSLATION_BATCH_CONCURRENCY: 40,
+    TRANSLATION_BATCH_MAX_BLOCKS: 45,
+    TRANSLATION_BATCH_MAX_PAYLOAD_CHARS: 2_000,
+    TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS: 3,
     TRANSLATION_PROMPT_VERSION: '2026-03-20.v1',
     TRANSLATION_PROVIDER_PRIMARY: 'gemini',
     GOOGLE_CLOUD_VISION_API_KEY: '',
@@ -134,7 +138,7 @@ describe('provider gateway translation', () => {
     );
   });
 
-  it('maps dictionary block ids so one missing item cannot shift following translations', async () => {
+  it('rejects missing dictionary block ids instead of shifting translations', async () => {
     const responsePayload = {
       '006.webp': {
         block_0000: {
@@ -171,51 +175,35 @@ describe('provider gateway translation', () => {
       )
     );
 
-    const result = await performTranslationWithProvider(
-      {
-        pages: [
-          {
-            blocks: [
-              { text: 'line 1' },
-              { text: 'line 2' },
-              { text: 'line 3' },
-              { text: 'line 4' },
-            ],
-            pageKey: '006.webp',
-          },
-        ],
-        preferredProvider: 'openai',
-        sourceLanguage: 'ja',
-        targetLanguage: 'ar',
-      },
-      {
-        fetchFn,
-        preferredProvider: 'openai',
-      }
+    await expect(
+      performTranslationWithProvider(
+        {
+          pages: [
+            {
+              blocks: [
+                { text: 'line 1' },
+                { text: 'line 2' },
+                { text: 'line 3' },
+                { text: 'line 4' },
+              ],
+              pageKey: '006.webp',
+            },
+          ],
+          preferredProvider: 'openai',
+          sourceLanguage: 'ja',
+          targetLanguage: 'ar',
+        },
+        {
+          fetchFn,
+          preferredProvider: 'openai',
+        }
+      )
+    ).rejects.toEqual(
+      expect.objectContaining<Partial<ProviderGatewayError>>({
+        code: 'invalid_response',
+        provider: 'openai',
+      })
     );
-
-    expect(result.pages[0]?.blocks).toEqual([
-      {
-        index: 0,
-        sourceText: 'line 1',
-        translation: 'first',
-      },
-      {
-        index: 1,
-        sourceText: 'line 2',
-        translation: '',
-      },
-      {
-        index: 2,
-        sourceText: 'line 3',
-        translation: 'third',
-      },
-      {
-        index: 3,
-        sourceText: 'line 4',
-        translation: 'fourth',
-      },
-    ]);
   });
 
   it('retries when a dictionary object echoes sourceHash for the wrong block id', async () => {

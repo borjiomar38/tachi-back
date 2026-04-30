@@ -63,6 +63,26 @@ const envServerBase = createEnv({
       .min(1)
       .max(5)
       .default(2),
+    TRANSLATION_BATCH_MAX_PAYLOAD_CHARS: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(2_000),
+    TRANSLATION_BATCH_MAX_BLOCKS: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(45),
+    TRANSLATION_BATCH_CONCURRENCY: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(40),
+    TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(3),
     TRANSLATION_PROMPT_VERSION: z.string().default('2026-04-24.scanlation.v1'),
 
     MOBILE_API_ENABLED: z.stringbool().default(false),
