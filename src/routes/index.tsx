@@ -17,7 +17,8 @@ export const Route = createFileRoute('/')({
   head: () =>
     buildPublicPageHead(
       'Hosted OCR and Translation',
-      'Public landing page for Tachiyomi Back, covering token packs, hosted OCR and translation, and redeem-code activation.'
+      'TachiyomiAT helps readers translate manga and manhwa in-app with hosted OCR, clean translation, monthly token plans, redeem-code activation, and Android APK download.',
+      '/'
     ),
 });
 

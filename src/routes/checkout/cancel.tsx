@@ -15,7 +15,9 @@ export const Route = createFileRoute('/checkout/cancel')({
   head: () =>
     buildPublicPageHead(
       'Checkout Cancelled',
-      'Checkout cancellation page for Tachiyomi Back.'
+      'Checkout cancellation page for TachiyomiAT manga translation token packs.',
+      '/checkout/cancel',
+      { robots: 'noindex, nofollow' }
     ),
 });
 

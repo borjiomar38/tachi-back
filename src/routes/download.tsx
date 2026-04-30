@@ -8,7 +8,8 @@ export const Route = createFileRoute('/download')({
   head: () =>
     buildPublicPageHead(
       'Download',
-      'Download guidance for TachiyomiAT with clear boundaries between current app behavior and future hosted mode.'
+      'Download TachiyomiAT for Android and set up manga and manhwa translation with hosted OCR, redeem-code activation, and app update guidance.',
+      '/download'
     ),
 });
 

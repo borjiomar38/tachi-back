@@ -8,7 +8,8 @@ export const Route = createFileRoute('/how-it-works')({
   head: () =>
     buildPublicPageHead(
       'How It Works',
-      'Public explanation of redeem-code activation, device binding, and hosted OCR and translation flow for Tachiyomi Back.'
+      'Learn how TachiyomiAT hosted manga translation works: choose a plan, receive a redeem code, activate the app, run OCR, and translate chapters.',
+      '/how-it-works'
     ),
 });
 

@@ -10,7 +10,8 @@ export const Route = createFileRoute('/pricing')({
   head: () =>
     buildPublicPageHead(
       'Pricing',
-      'Public token-pack pricing for Tachiyomi Back, backed by the real seeded token-pack records.'
+      'Compare TachiyomiAT monthly token plans for manga and manhwa translation, hosted OCR, redeem-code delivery, and Android app activation.',
+      '/pricing'
     ),
 });
 

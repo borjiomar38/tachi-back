@@ -8,7 +8,8 @@ export const Route = createFileRoute('/legal/terms')({
   head: () =>
     buildPublicPageHead(
       'Terms of Service',
-      'Terms for Tachiyomi Back token packs, redeem codes, device activation, source discovery, OCR, and translation processing.'
+      'Terms for TachiyomiAT token packs, redeem codes, Android device activation, manga source discovery, hosted OCR, and translation processing.',
+      '/legal/terms'
     ),
 });
 

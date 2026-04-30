@@ -8,7 +8,8 @@ export const Route = createFileRoute('/support')({
   head: () =>
     buildPublicPageHead(
       'Support',
-      'Public support, FAQ, billing help, device recovery, and legal policy links for Tachiyomi Back.'
+      'Get TachiyomiAT support for redeem codes, Android setup, manga translation plans, billing questions, device activation, and hosted OCR issues.',
+      '/support'
     ),
 });
 

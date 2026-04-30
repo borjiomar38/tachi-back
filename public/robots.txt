@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /app/
+Disallow: /login/
+Disallow: /manager/
+
+Sitemap: https://tachi-back.vercel.app/sitemap.xml
