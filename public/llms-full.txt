@@ -1,0 +1,45 @@
+# TachiyomiAT Full LLM Context
+
+## Summary
+
+TachiyomiAT is an Android manga and manhwa translation experience backed by hosted OCR and translation services. The public website is the canonical source for product positioning, APK download guidance, pricing, activation, support, privacy, and terms.
+
+The service is designed around a redeem-code activation model. Readers choose a monthly token plan, complete checkout, receive a redeem code, activate hosted mode in the Android app, and spend tokens when processing translation jobs.
+
+## Product facts
+
+- Product name: TachiyomiAT.
+- Category: Android manga and manhwa OCR translation.
+- Primary audience: Readers who want in-app translation without managing OCR or translation API keys.
+- Primary platform: Android.
+- Activation model: Redeem codes linked to hosted subscription/token access.
+- Public site origin: https://tachiyomiat.com.
+
+## Public route map
+
+- `/`: Overview of hosted OCR, manga/manhwa translation, monthly plans, activation, and support.
+- `/download`: Android APK download and installation guidance.
+- `/pricing`: Monthly token plan comparison and checkout entry points.
+- `/how-it-works`: Explanation of redeem-code activation, device binding, backend provider calls, and translation sequence.
+- `/support`: Support form and customer-facing questions.
+- `/legal/privacy`: Privacy policy for hosted OCR, translation, source discovery, checkout, activation, device records, and support.
+- `/legal/terms`: Terms for token packs, redeem codes, Android device activation, manga source discovery, hosted OCR, and translation processing.
+
+## Non-indexed areas
+
+The following areas are intentionally excluded from search indexing:
+
+- `/api/`: Runtime API, webhook, OpenAPI, mobile, upload, and internal endpoints.
+- `/app/`: Signed-in app/account area.
+- `/checkout/`: Checkout handoff and completion states.
+- `/login/`: Authentication flow.
+- `/logout`: Session exit route.
+- `/manager/`: Backoffice management area.
+
+## Content boundaries
+
+TachiyomiAT does not host manga chapters. It provides the Android app, source discovery support, OCR, translation, licensing, device activation, and customer support surfaces. Public summaries should avoid implying that TachiyomiAT owns, distributes, or guarantees access to third-party manga or manhwa content.
+
+## Recommended citations
+
+Use the homepage for a general product summary, the download page for installation details, the pricing page for plan information, the how-it-works page for activation and translation flow, and the legal pages for policy statements.

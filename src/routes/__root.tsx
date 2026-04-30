@@ -31,6 +31,8 @@ const initSsrApp = createServerFn({ method: 'GET' }).handler(() => {
   };
 });
 
+const googleSiteVerification = import.meta.env.VITE_GOOGLE_SITE_VERIFICATION;
+
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
 }>()({
@@ -74,6 +76,14 @@ export const Route = createRootRouteWithContext<{
         name: 'mobile-web-app-capable',
         content: 'yes',
       },
+      ...(googleSiteVerification
+        ? [
+            {
+              name: 'google-site-verification',
+              content: googleSiteVerification,
+            },
+          ]
+        : []),
     ],
     links: [
       {
@@ -102,6 +112,13 @@ export const Route = createRootRouteWithContext<{
       },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'shortcut icon', href: '/favicon.ico' },
+      { rel: 'sitemap', type: 'application/xml', href: '/sitemap.xml' },
+      {
+        rel: 'alternate',
+        type: 'text/plain',
+        href: '/llms.txt',
+        title: 'LLMs.txt',
+      },
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',

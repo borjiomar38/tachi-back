@@ -2,7 +2,12 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /app/
+Disallow: /checkout/
 Disallow: /login/
+Disallow: /logout
 Disallow: /manager/
 
-Sitemap: https://tachi-back.vercel.app/sitemap.xml
+Sitemap: https://tachiyomiat.com/sitemap.xml
+
+# LLM-friendly site summary:
+# https://tachiyomiat.com/llms.txt
