@@ -326,18 +326,18 @@ export const PageLanding = (props: {
                 <div className="hidden justify-center lg:flex">
                   <ArrowRightIcon className="size-7 text-brand-300" />
                 </div>
-                <div className="rounded-[1.25rem] bg-white p-4 text-neutral-950">
-                  <p className="text-sm font-medium tracking-[0.2em] text-neutral-500 uppercase">
+                <div className="rounded-[1.25rem] border border-brand-300/15 bg-brand-400/10 p-4 text-neutral-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <p className="text-sm font-medium tracking-[0.2em] text-brand-100 uppercase">
                     In the service
                   </p>
-                  <div className="mt-4 grid gap-3 text-sm">
-                    <div className="rounded-xl bg-neutral-100 px-3 py-3">
+                  <div className="mt-4 grid gap-3 text-sm text-neutral-100">
+                    <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-3">
                       Detect text on manga and manhwa pages.
                     </div>
-                    <div className="rounded-xl bg-neutral-100 px-3 py-3">
+                    <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-3">
                       Translate the detected text.
                     </div>
-                    <div className="rounded-xl bg-neutral-100 px-3 py-3">
+                    <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-3">
                       Send back pages ready to read in the app.
                     </div>
                   </div>
@@ -372,9 +372,12 @@ export const PageLanding = (props: {
           {publicHighlights.map((item, index) => {
             const Icon = highlightIcons[index] ?? ShieldCheckIcon;
             return (
-              <Card key={item.title} className="rounded-[1.5rem]">
+              <Card
+                key={item.title}
+                className="rounded-[1.5rem] dark:border-white/10 dark:bg-white/[0.03]"
+              >
                 <CardHeader className="gap-3">
-                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:border dark:border-brand-300/20 dark:bg-brand-300/12 dark:text-brand-100">
                     <Icon className="size-5" />
                   </div>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
@@ -599,9 +602,12 @@ export const PageLanding = (props: {
             {contactCards.map((item) => {
               const Icon = item.icon;
               return (
-                <Card key={item.title} className="rounded-[1.5rem]">
+                <Card
+                  key={item.title}
+                  className="rounded-[1.5rem] dark:border-white/10 dark:bg-white/[0.03]"
+                >
                   <CardHeader className="gap-3">
-                    <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:border dark:border-brand-300/20 dark:bg-brand-300/12 dark:text-brand-100">
                       <Icon className="size-5" />
                     </div>
                     <CardTitle className="text-lg">{item.title}</CardTitle>
