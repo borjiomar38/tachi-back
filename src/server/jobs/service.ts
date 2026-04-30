@@ -455,11 +455,17 @@ export async function completeTranslationJobUpload(
     return zTranslationJobSummary.parse(buildTranslationJobSummary(job));
   }
 
-  if (job.status !== 'awaiting_upload' && job.status !== 'created') {
+  const isFailedJobRetry = job.status === 'failed';
+
+  if (
+    job.status !== 'awaiting_upload' &&
+    job.status !== 'created' &&
+    !isFailedJobRetry
+  ) {
     throw new TranslationJobError('invalid_job_state', 409);
   }
 
-  if (job.expiresAt && job.expiresAt <= now) {
+  if (!isFailedJobRetry && job.expiresAt && job.expiresAt <= now) {
     await dbClient.translationJob.update({
       where: { id: job.id },
       data: {
@@ -550,30 +556,16 @@ export async function completeTranslationJobUpload(
   }
 
   const queuedJob = await dbClient.$transaction(async (tx) => {
-    await tx.tokenLedger.create({
-      data: {
-        deltaTokens: -reservedTokens,
-        description: `Reserved tokens for job ${job.id}`,
-        deviceId: job.deviceId,
-        idempotencyKey: `job-reserve:${job.id}`,
-        jobId: job.id,
-        licenseId: job.licenseId,
-        metadata: {
-          pageCount: job.pageCount,
-          reservedAt: now.toISOString(),
-        },
-        status: 'pending',
-        type: 'job_reserve',
-      },
-    });
-
     await tx.translationJob.update({
       where: { id: job.id },
       data: {
+        errorCode: null,
+        errorMessage: null,
+        failedAt: null,
         queuedAt: now,
-        reservedTokens,
+        startedAt: null,
         status: 'queued',
-        uploadCompletedAt: now,
+        uploadCompletedAt: job.uploadCompletedAt ?? now,
       },
     });
 

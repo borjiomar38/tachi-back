@@ -542,7 +542,7 @@ describe('job service', () => {
     expect(mockDb.$transaction).not.toHaveBeenCalled();
   });
 
-  it('queues a fully uploaded job and reserves tokens', async () => {
+  it('queues a fully uploaded job without reserving tokens upfront', async () => {
     mockDb.translationJob.findUnique.mockResolvedValue(
       buildJobRecord({
         id: 'job-2',
@@ -574,7 +574,6 @@ describe('job service', () => {
               ],
               pageCount: 2,
               queuedAt: new Date('2026-03-20T10:05:00.000Z'),
-              reservedTokens: 10,
               status: 'queued',
               uploadCompletedAt: new Date('2026-03-20T10:05:00.000Z'),
             })
@@ -601,9 +600,88 @@ describe('job service', () => {
     );
 
     expect(result.status).toBe('queued');
-    expect(result.reservedTokens).toBe(10);
-    expect(mockDb.tokenLedger.create).toHaveBeenCalledOnce();
+    expect(result.reservedTokens).toBe(0);
+    expect(mockDb.tokenLedger.create).not.toHaveBeenCalled();
     expect(scheduleProcessing).toHaveBeenCalledWith('job-2');
+  });
+
+  it('requeues a failed uploaded job without requiring another upload', async () => {
+    const updateJob = vi.fn();
+
+    mockDb.translationJob.findUnique.mockResolvedValue(
+      buildJobRecord({
+        errorCode: 'processing_failed',
+        errorMessage: 'Provider response is missing the page key "003.webp".',
+        expiresAt: new Date('2026-03-20T10:01:00.000Z'),
+        failedAt: new Date('2026-03-20T10:03:00.000Z'),
+        id: 'job-retry',
+        objectKeys: [
+          'jobs/job-retry/uploads/0001-001.jpg',
+          'jobs/job-retry/uploads/0002-002.jpg',
+        ],
+        pageCount: 2,
+        status: 'failed',
+        uploadCompletedAt: new Date('2026-03-20T10:02:00.000Z'),
+      })
+    );
+    mockDb.tokenLedger.aggregate.mockResolvedValue({
+      _sum: {
+        deltaTokens: 100,
+      },
+    });
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        translationJob: {
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              id: 'job-retry',
+              objectKeys: [
+                'jobs/job-retry/uploads/0001-001.jpg',
+                'jobs/job-retry/uploads/0002-002.jpg',
+              ],
+              pageCount: 2,
+              queuedAt: new Date('2026-03-20T10:05:00.000Z'),
+              status: 'queued',
+              uploadCompletedAt: new Date('2026-03-20T10:02:00.000Z'),
+            })
+          ),
+          update: updateJob,
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const scheduleProcessing = vi.fn();
+    const result = await completeTranslationJobUpload(
+      { jobId: 'job-retry' },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+        now: new Date('2026-03-20T10:05:00.000Z'),
+        scheduleProcessing,
+      }
+    );
+
+    expect(result.status).toBe('queued');
+    expect(result.uploadedPageCount).toBe(2);
+    expect(updateJob).toHaveBeenCalledWith({
+      where: { id: 'job-retry' },
+      data: {
+        errorCode: null,
+        errorMessage: null,
+        failedAt: null,
+        queuedAt: new Date('2026-03-20T10:05:00.000Z'),
+        startedAt: null,
+        status: 'queued',
+        uploadCompletedAt: new Date('2026-03-20T10:02:00.000Z'),
+      },
+    });
+    expect(mockDb.tokenLedger.create).not.toHaveBeenCalled();
+    expect(scheduleProcessing).toHaveBeenCalledWith('job-retry');
   });
 
   it('completes a fully uploaded job immediately when a cached result exists', async () => {
@@ -1397,6 +1475,9 @@ function buildJobRecord(
     chapterCacheKey: string | null;
     chapterIdentity: unknown;
     createdAt: Date;
+    errorCode: string | null;
+    errorMessage: string | null;
+    expiresAt: Date | null;
     failedAt: Date | null;
     id: string;
     objectChecksums: Array<string | null>;
@@ -1452,9 +1533,12 @@ function buildJobRecord(
     completedAt: overrides.completedAt ?? null,
     createdAt: overrides.createdAt ?? new Date('2026-03-20T10:00:00.000Z'),
     deviceId: 'device-1',
-    errorCode: null,
-    errorMessage: null,
-    expiresAt: new Date('2026-03-20T10:15:00.000Z'),
+    errorCode: overrides.errorCode ?? null,
+    errorMessage: overrides.errorMessage ?? null,
+    expiresAt:
+      overrides.expiresAt === undefined
+        ? new Date('2026-03-20T10:15:00.000Z')
+        : overrides.expiresAt,
     failedAt: overrides.failedAt ?? null,
     id: overrides.id ?? 'job-default',
     licenseId: 'license-1',

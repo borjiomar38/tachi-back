@@ -12,9 +12,17 @@ export async function getAvailableLicenseTokenBalance(
   const tokenBalance = await dbClient.tokenLedger.aggregate({
     where: {
       licenseId: input.licenseId,
-      status: {
-        in: ['pending', 'posted'],
-      },
+      OR: [
+        {
+          status: 'posted',
+        },
+        {
+          status: 'pending',
+          type: {
+            not: 'job_reserve',
+          },
+        },
+      ],
     },
     _sum: {
       deltaTokens: true,

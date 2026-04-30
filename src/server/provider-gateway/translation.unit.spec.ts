@@ -316,6 +316,87 @@ describe('provider gateway translation', () => {
     ]);
   });
 
+  it('retries when a provider omits an expected page key', async () => {
+    const incompletePayload = {
+      '001.webp': {
+        block_0000: 'first',
+      },
+    };
+    const completePayload = {
+      '001.webp': {
+        block_0000: 'first',
+      },
+      '002.webp': {
+        block_0000: 'second',
+      },
+    };
+    const fetchFn = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                finish_reason: 'stop',
+                message: {
+                  content: JSON.stringify(incompletePayload),
+                },
+              },
+            ],
+            usage: {
+              completion_tokens: 5,
+              prompt_tokens: 10,
+            },
+          }),
+          { status: 200 }
+        )
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                finish_reason: 'stop',
+                message: {
+                  content: JSON.stringify(completePayload),
+                },
+              },
+            ],
+            usage: {
+              completion_tokens: 5,
+              prompt_tokens: 10,
+            },
+          }),
+          { status: 200 }
+        )
+      );
+
+    const result = await performHostedTranslation(
+      {
+        pages: [
+          {
+            blocks: [{ text: 'line 1' }],
+            pageKey: '001.webp',
+          },
+          {
+            blocks: [{ text: 'line 2' }],
+            pageKey: '002.webp',
+          },
+        ],
+        preferredProvider: 'openai',
+        sourceLanguage: 'ja',
+        targetLanguage: 'ar',
+      },
+      {
+        fetchFn,
+      }
+    );
+
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+    expect(result.pages[0]?.blocks[0]?.translation).toBe('first');
+    expect(result.pages[1]?.blocks[0]?.translation).toBe('second');
+  });
+
   it('rejects legacy shortened arrays instead of padding wrong block positions', async () => {
     const fetchFn = vi.fn().mockResolvedValue(
       new Response(

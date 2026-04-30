@@ -134,26 +134,15 @@ export async function performHostedTranslation(
     translationPlan.batches,
     TRANSLATION_BATCH_CONCURRENCY,
     async (batch) =>
-      await retryProviderCall(
-        async () =>
-          await performTranslationWithProvider(
-            {
-              jobId: input.jobId,
-              mangaContext: input.mangaContext ?? '',
-              pages: batch.requestPages,
-              preferredProvider: input.preferredProvider,
-              sourceLanguage: input.sourceLanguage,
-              targetLanguage: input.targetLanguage,
-            },
-            {
-              fetchFn: deps.fetchFn,
-              preferredProvider: input.preferredProvider,
-            }
-          ),
-        {
-          maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
-        }
-      )
+      await performHostedTranslationBatch({
+        batch,
+        fetchFn: deps.fetchFn,
+        jobId: input.jobId,
+        mangaContext: input.mangaContext ?? '',
+        preferredProvider: input.preferredProvider,
+        sourceLanguage: input.sourceLanguage,
+        targetLanguage: input.targetLanguage,
+      })
   );
   const result = combineTranslationBatchResults({
     batchResults,
@@ -190,6 +179,106 @@ export async function performHostedTranslation(
   }
 
   return result;
+}
+
+async function performHostedTranslationBatch(input: {
+  batch: TranslationBatch;
+  fetchFn?: typeof fetch;
+  jobId?: string;
+  mangaContext: string;
+  preferredProvider?: 'anthropic' | 'gemini' | 'openai';
+  sourceLanguage: string;
+  targetLanguage: string;
+}) {
+  try {
+    return await performGatewayTranslationPagesWithRetry({
+      fetchFn: input.fetchFn,
+      jobId: input.jobId,
+      mangaContext: input.mangaContext,
+      pages: input.batch.requestPages,
+      preferredProvider: input.preferredProvider,
+      sourceLanguage: input.sourceLanguage,
+      targetLanguage: input.targetLanguage,
+    });
+  } catch (error) {
+    if (!shouldFallbackToSinglePageTranslation(error, input.batch)) {
+      throw error;
+    }
+
+    const fallbackBatches = input.batch.requestPages.map((page) =>
+      createTranslationBatch([
+        {
+          originalPageKey: page.pageKey,
+          requestPage: page,
+        },
+      ])
+    );
+    const fallbackResults = await mapWithConcurrency(
+      fallbackBatches,
+      TRANSLATION_BATCH_CONCURRENCY,
+      async (batch) =>
+        await performGatewayTranslationPagesWithRetry({
+          fetchFn: input.fetchFn,
+          jobId: input.jobId,
+          mangaContext: input.mangaContext,
+          pages: batch.requestPages,
+          preferredProvider: input.preferredProvider,
+          sourceLanguage: input.sourceLanguage,
+          targetLanguage: input.targetLanguage,
+        })
+    );
+
+    return combineTranslationBatchResults({
+      batchResults: fallbackResults,
+      batches: fallbackBatches,
+      originalPages: input.batch.requestPages,
+      sourceLanguage: input.sourceLanguage,
+      targetLanguage: input.targetLanguage,
+    });
+  }
+}
+
+async function performGatewayTranslationPagesWithRetry(input: {
+  fetchFn?: typeof fetch;
+  jobId?: string;
+  mangaContext: string;
+  pages: TranslationPageInput[];
+  preferredProvider?: 'anthropic' | 'gemini' | 'openai';
+  sourceLanguage: string;
+  targetLanguage: string;
+}) {
+  return await retryProviderCall(
+    async () =>
+      await performTranslationWithProvider(
+        {
+          jobId: input.jobId,
+          mangaContext: input.mangaContext,
+          pages: input.pages,
+          preferredProvider: input.preferredProvider,
+          sourceLanguage: input.sourceLanguage,
+          targetLanguage: input.targetLanguage,
+        },
+        {
+          fetchFn: input.fetchFn,
+          preferredProvider: input.preferredProvider,
+        }
+      ),
+    {
+      maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
+    }
+  );
+}
+
+function shouldFallbackToSinglePageTranslation(
+  error: unknown,
+  batch: TranslationBatch
+) {
+  return (
+    batch.requestPages.length > 1 &&
+    error instanceof ProviderGatewayError &&
+    error.code === 'invalid_response' &&
+    error.retryable
+  );
 }
 
 function buildTranslationBatchPlan(pages: TranslationPageInput[]) {

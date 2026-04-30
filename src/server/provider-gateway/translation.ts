@@ -471,7 +471,7 @@ function normalizeTranslationPayload(
       typeof translationMap !== 'object' ||
       Array.isArray(translationMap)
     ) {
-      throw createInvalidProviderResponseError(
+      throw createRetryableInvalidProviderResponseError(
         provider,
         `Provider response is missing the page key "${page.pageKey}".`
       );

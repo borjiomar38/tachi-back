@@ -32,6 +32,7 @@ vi.mock('@/server/provider-gateway/usage', () => ({
   persistProviderUsageSnapshot: mockPersistProviderUsageSnapshot,
 }));
 
+import { ProviderGatewayError } from '@/server/provider-gateway/errors';
 import {
   performHostedOcr,
   performHostedTranslation,
@@ -175,6 +176,127 @@ describe('provider gateway service', () => {
         pageCount: 1,
         requestCount: 3,
         stage: 'translation',
+      })
+    );
+  });
+
+  it('falls back to page-level translation when a batched response is incomplete', async () => {
+    mockPerformTranslationWithProvider.mockImplementation(
+      async (rawInput: unknown) => {
+        const input = rawInput as {
+          pages: Array<{
+            blocks: Array<{ text: string }>;
+            pageKey: string;
+          }>;
+          sourceLanguage: string;
+          targetLanguage: string;
+        };
+        const requestNumber =
+          mockPerformTranslationWithProvider.mock.calls.length;
+
+        if (requestNumber === 1) {
+          throw new ProviderGatewayError(
+            'invalid_response',
+            'openai',
+            true,
+            502,
+            'Provider response is missing the page key "002.webp".'
+          );
+        }
+
+        return {
+          pages: input.pages.map((page) => ({
+            blocks: page.blocks.map((block, index) => ({
+              index,
+              sourceText: block.text,
+              translation: `${page.pageKey}:${block.text}`,
+            })),
+            pageKey: page.pageKey,
+          })),
+          promptProfile: 'arabic_target',
+          promptVersion: '2026-03-20.v1',
+          provider: 'openai',
+          providerModel: 'gpt-test',
+          sourceLanguage: input.sourceLanguage,
+          targetLanguage: input.targetLanguage,
+          usage: {
+            finishReason: 'stop',
+            inputTokens: 10,
+            latencyMs: 100,
+            outputTokens: 5,
+            pageCount: input.pages.length,
+            providerRequestId: `request-${requestNumber}`,
+            requestCount: 1,
+            stopReason: null,
+          },
+        };
+      }
+    );
+
+    const result = await performHostedTranslation({
+      pages: [
+        {
+          blocks: [{ text: 'first' }],
+          pageKey: '001.webp',
+        },
+        {
+          blocks: [{ text: 'second' }],
+          pageKey: '002.webp',
+        },
+      ],
+      preferredProvider: 'openai',
+      sourceLanguage: 'ja',
+      targetLanguage: 'ar',
+    });
+
+    expect(mockPerformTranslationWithProvider).toHaveBeenCalledTimes(3);
+    expect(mockPerformTranslationWithProvider).toHaveBeenNthCalledWith(
+      2,
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [{ text: 'first' }],
+            pageKey: '001.webp',
+          },
+        ],
+      }),
+      expect.any(Object)
+    );
+    expect(mockPerformTranslationWithProvider).toHaveBeenNthCalledWith(
+      3,
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [{ text: 'second' }],
+            pageKey: '002.webp',
+          },
+        ],
+      }),
+      expect.any(Object)
+    );
+    expect(result.pages.map((page) => page.pageKey)).toEqual([
+      '001.webp',
+      '002.webp',
+    ]);
+    expect(result.pages.flatMap((page) => page.blocks)).toEqual([
+      {
+        index: 0,
+        sourceText: 'first',
+        translation: '001.webp:first',
+      },
+      {
+        index: 0,
+        sourceText: 'second',
+        translation: '002.webp:second',
+      },
+    ]);
+    expect(result.usage).toEqual(
+      expect.objectContaining({
+        inputTokens: 20,
+        latencyMs: 200,
+        outputTokens: 10,
+        pageCount: 2,
+        requestCount: 2,
       })
     );
   });
