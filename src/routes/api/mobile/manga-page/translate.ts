@@ -15,6 +15,7 @@ import {
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import {
+  buildMangaPageTranslationSpendIdempotencyKey,
   calculateMangaPageTranslationTokenCost,
   translateMangaPage,
   zTranslateMangaPageInput,
@@ -72,9 +73,28 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             );
           }
 
-          const tokenCost = calculateMangaPageTranslationTokenCost(
+          const requestedTokenCost = calculateMangaPageTranslationTokenCost(
             parsedInput.data
           );
+          const spendIdempotencyKey =
+            requestedTokenCost > 0
+              ? buildMangaPageTranslationSpendIdempotencyKey({
+                  licenseId: auth.license.id,
+                  request: parsedInput.data,
+                })
+              : null;
+          const existingSpend =
+            spendIdempotencyKey != null
+              ? await db.tokenLedger.findUnique({
+                  where: {
+                    idempotencyKey: spendIdempotencyKey,
+                  },
+                  select: {
+                    id: true,
+                  },
+                })
+              : null;
+          const tokenCost = existingSpend ? 0 : requestedTokenCost;
           const availableTokens = await getAvailableLicenseTokenBalance({
             licenseId: auth.license.id,
           });
@@ -105,27 +125,36 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
 
           const translated = await translateMangaPage(parsedInput.data);
 
-          if (tokenCost > 0) {
-            await db.tokenLedger.create({
-              data: {
-                deltaTokens: -tokenCost,
-                description: `Spent tokens for manga page translation ${context.requestId}`,
-                deviceId: auth.device.id,
-                idempotencyKey: `manga-page-spend:${context.requestId}`,
-                licenseId: auth.license.id,
-                metadata: {
-                  chapterCount: parsedInput.data.chapters.length,
-                  completedAt: new Date().toISOString(),
-                  requestId: context.requestId,
-                  sourceId: parsedInput.data.sourceId,
-                  sourceLanguage: parsedInput.data.sourceLanguage,
-                  sourceName: parsedInput.data.sourceName ?? null,
-                  targetLanguage: parsedInput.data.targetLanguage,
+          let chargedTokenCost = 0;
+
+          if (tokenCost > 0 && spendIdempotencyKey != null) {
+            const ledgerResult = await db.tokenLedger.createMany({
+              data: [
+                {
+                  deltaTokens: -tokenCost,
+                  description: `Spent tokens for manga page translation ${parsedInput.data.manga.title}`,
+                  deviceId: auth.device.id,
+                  idempotencyKey: spendIdempotencyKey,
+                  licenseId: auth.license.id,
+                  metadata: {
+                    chapterCount: parsedInput.data.chapters.length,
+                    completedAt: new Date().toISOString(),
+                    mangaTitle: parsedInput.data.manga.title,
+                    mangaUrl: parsedInput.data.manga.url,
+                    requestId: context.requestId,
+                    sourceId: parsedInput.data.sourceId,
+                    sourceLanguage: parsedInput.data.sourceLanguage,
+                    sourceName: parsedInput.data.sourceName ?? null,
+                    targetLanguage: parsedInput.data.targetLanguage,
+                  },
+                  status: 'posted',
+                  type: 'job_spend',
                 },
-                status: 'posted',
-                type: 'job_spend',
-              },
+              ],
+              skipDuplicates: true,
             });
+
+            chargedTokenCost = ledgerResult.count > 0 ? tokenCost : 0;
           }
 
           routeLog.info({
@@ -135,7 +164,9 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             licenseId: auth.license.id,
             message: 'Translated mobile manga page metadata',
             targetLanguage: translated.targetLanguage,
-            tokenCost,
+            chargedTokenCost,
+            requestedTokenCost,
+            tokenCost: chargedTokenCost,
             type: 'mutation',
           });
 

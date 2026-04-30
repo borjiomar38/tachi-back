@@ -358,9 +358,14 @@ function combineTranslationBatchResults(input: {
 
       const existingBlocks =
         blocksByOriginalPageKey.get(segment.originalPageKey) ?? [];
+      const startIndex = existingBlocks.length;
+      const translatedBlocks = translatedPage.blocks.map((block, index) => ({
+        ...block,
+        index: startIndex + index,
+      }));
       blocksByOriginalPageKey.set(segment.originalPageKey, [
         ...existingBlocks,
-        ...translatedPage.blocks,
+        ...translatedBlocks,
       ]);
     }
   }

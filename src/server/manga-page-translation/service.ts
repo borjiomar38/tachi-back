@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { z } from 'zod';
 
 import { performHostedTranslation } from '@/server/provider-gateway/service';
@@ -97,6 +98,24 @@ export function calculateMangaPageTranslationTokenCost(rawInput: unknown) {
   return buildTranslationBlockGroups(input).length > 0
     ? MANGA_PAGE_TRANSLATION_TOKEN_COST
     : 0;
+}
+
+export function buildMangaPageTranslationSpendIdempotencyKey(input: {
+  licenseId: string;
+  request: TranslateMangaPageInput;
+}) {
+  const identity = JSON.stringify({
+    licenseId: input.licenseId.trim(),
+    mangaUrl: normalizeMangaPageUrl(input.request.manga.url),
+    sourceId: input.request.sourceId.trim(),
+    targetLanguage: normalizeMangaPageTargetLanguage(
+      input.request.targetLanguage
+    ),
+    version: 1,
+  });
+  const digest = createHash('sha256').update(identity).digest('hex');
+
+  return `manga-page-spend:${digest}`;
 }
 
 async function translateBlockGroups(input: {
@@ -387,4 +406,12 @@ function buildMangaContext(
 
 function normalizeLanguage(language: string) {
   return language.trim().toLowerCase().split(/[-_]/)[0] ?? '';
+}
+
+function normalizeMangaPageUrl(value: string) {
+  return value.trim().replace(/\/+$/, '');
+}
+
+function normalizeMangaPageTargetLanguage(value: string) {
+  return value.trim().toLowerCase().replace(/[-_]+/g, '_');
 }

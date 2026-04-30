@@ -154,6 +154,9 @@ describe('provider gateway service', () => {
       'B'.repeat(5_000),
       'C'.repeat(5_000),
     ]);
+    expect(result.pages[0]?.blocks.map((block) => block.index)).toEqual([
+      0, 1, 2,
+    ]);
     expect(result.usage).toEqual(
       expect.objectContaining({
         inputTokens: 30,

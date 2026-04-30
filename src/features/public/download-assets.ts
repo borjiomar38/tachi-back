@@ -5,12 +5,11 @@ export const androidApkDownload = {
   sizeLabel: '197 MB',
   buildLabel: 'Android universal dev build',
   sha256:
-    '36a5b9acadcf06859c69d1ea2645b7e635397db934115efcfe312d55158d7a4a',
+    'f0cb694d61776ec61654c9dbd84a41f6e58a9e4388863b0662391a11e6df2042',
   objectKey: 'public/downloads/tachiyomiat-latest.apk',
 } as const;
 
 export const youtubeDemo = {
-  // Replace with the final YouTube URL once the demo is uploaded.
-  watchUrl: '',
-  embedUrl: '',
+  watchUrl: 'https://www.youtube.com/shorts/ywT2ACJV8FI',
+  embedUrl: 'https://www.youtube.com/embed/ywT2ACJV8FI',
 } as const;

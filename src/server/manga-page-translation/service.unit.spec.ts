@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
 import {
+  buildMangaPageTranslationSpendIdempotencyKey,
   calculateMangaPageTranslationTokenCost,
   translateMangaPage,
 } from './service';
@@ -260,5 +261,45 @@ describe('manga page translation service', () => {
         targetLanguage: 'ar',
       })
     ).toBe(5);
+  });
+
+  it('builds one spend idempotency key per license manga and target language', () => {
+    const request = {
+      chapters: [{ key: '/1', name: '第1话', url: '/1' }],
+      manga: {
+        title: '高武：登陆未来一万年',
+        url: '/manga/future/',
+      },
+      sourceId: '1',
+      sourceLanguage: 'zh',
+      targetLanguage: 'AR',
+    };
+
+    expect(
+      buildMangaPageTranslationSpendIdempotencyKey({
+        licenseId: 'license-1',
+        request,
+      })
+    ).toBe(
+      buildMangaPageTranslationSpendIdempotencyKey({
+        licenseId: 'license-1',
+        request: {
+          ...request,
+          manga: { ...request.manga, url: '/manga/future' },
+          targetLanguage: 'ar',
+        },
+      })
+    );
+    expect(
+      buildMangaPageTranslationSpendIdempotencyKey({
+        licenseId: 'license-2',
+        request,
+      })
+    ).not.toBe(
+      buildMangaPageTranslationSpendIdempotencyKey({
+        licenseId: 'license-1',
+        request,
+      })
+    );
   });
 });
