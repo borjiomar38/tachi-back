@@ -63,7 +63,9 @@ export async function generateBlogArticleDraft(input: {
         prompt,
         provider,
       });
-      const parsed = zGeneratedBlogArticle.parse(generated.json);
+      const parsed = zGeneratedBlogArticle.parse(
+        normalizeGeneratedBlogArticle(generated.json, input.topic)
+      );
 
       return {
         ...parsed,
@@ -136,6 +138,372 @@ function buildArticlePrompt(input: {
     '- The downloadCallout buttonLabel must be "Download TachiyomiAT".',
     '- The disclaimer must say the site does not host manga/manhwa/manhua chapters and users should respect official releases and rights holders.',
   ].join('\n');
+}
+
+function normalizeGeneratedBlogArticle(
+  rawArticle: Record<string, unknown>,
+  topic: BlogGenerationTopic
+) {
+  const body = readRecord(rawArticle.body);
+  const sections = readArray(body.sections).map((section, index) =>
+    normalizeSection(section, topic, index)
+  );
+  const faqs = readArray(body.faqs)
+    .map(normalizeFaq)
+    .filter((faq): faq is NonNullable<ReturnType<typeof normalizeFaq>> =>
+      Boolean(faq)
+    );
+
+  return {
+    body: {
+      disclaimer: normalizeLongText(
+        readString(body.disclaimer) ??
+          'TachiyomiAT does not host manga, manhwa, or manhua chapters. Use the workflow only with content you own, public-domain material, official samples, or content you have permission to process, and respect official releases and rights holders.',
+        40,
+        520
+      ),
+      downloadCallout: normalizeDownloadCallout(body.downloadCallout, topic),
+      faqs: fillFaqs(faqs, topic),
+      introduction: normalizeLongText(
+        readString(body.introduction, body.intro, rawArticle.introduction) ??
+          `${topic.manhwaTitle} readers often search for cleaner ${topic.manhwaType} translation workflows when busy panels, speech bubbles, and recurring terms make a chapter harder to follow. TachiyomiAT keeps that workflow focused on hosted OCR, translation support, and the official Android download path.`,
+        120,
+        1_200
+      ),
+      readingProfile: normalizeReadingProfile(body.readingProfile, topic),
+      sections: fillSections(sections, topic),
+    },
+    excerpt: normalizeLongText(
+      readString(
+        rawArticle.excerpt,
+        rawArticle.summary,
+        rawArticle.description
+      ) ??
+        `A practical TachiyomiAT guide for ${topic.manhwaTitle} readers searching for ${topic.searchIntent}, hosted OCR, translation support, and a consistent Android APK download path.`,
+      80,
+      260
+    ),
+    imageAlt: normalizeLongText(
+      readString(rawArticle.imageAlt, rawArticle.image_alt) ??
+        `Dark cinematic ${topic.manhwaType} translation workflow scene for ${topic.manhwaTitle} readers.`,
+      24,
+      180
+    ),
+    imagePrompt: normalizeImagePrompt(
+      readString(rawArticle.imagePrompt, rawArticle.image_prompt),
+      topic
+    ),
+    keywords: normalizeKeywords(rawArticle.keywords, topic),
+    metaDescription: normalizeLongText(
+      readString(rawArticle.metaDescription, rawArticle.meta_description) ??
+        `Read a TachiyomiAT guide for ${topic.manhwaTitle}, ${topic.manhwaType} translation, hosted OCR, and the official Android APK download path.`,
+      120,
+      165
+    ),
+    slugBase: normalizeSlugBase(
+      readString(rawArticle.slugBase, rawArticle.slug_base, rawArticle.slug) ??
+        `${topic.manhwaTitle} TachiyomiAT translation guide`
+    ),
+    title: normalizeTitle(
+      readString(rawArticle.title, rawArticle.headline),
+      topic
+    ),
+  };
+}
+
+function normalizeTitle(
+  rawTitle: string | undefined,
+  topic: BlogGenerationTopic
+) {
+  const fallback = `${topic.manhwaTitle} ${topic.manhwaType} Translation Guide for TachiyomiAT`;
+  const normalized = rawTitle?.trim().replace(/\s+/g, ' ');
+
+  if (!normalized || normalized.length > 86) {
+    return fallback;
+  }
+
+  return normalizeLongText(normalized, 18, 86);
+}
+
+function normalizeImagePrompt(
+  rawPrompt: string | undefined,
+  topic: BlogGenerationTopic
+) {
+  const requiredPrompt =
+    `Original dark cinematic ${topic.manhwaType}-style illustration for ` +
+    `${topic.manhwaTitle} readers, no copyrighted characters, no logos, no readable text.`;
+  const prompt =
+    rawPrompt ??
+    'Premium Android reader interface, hosted OCR panels, translation workflow, midnight lighting, clean composition, atmospheric but inspectable.';
+
+  return normalizeLongText(`${requiredPrompt} ${prompt}`, 120, 1_200);
+}
+
+function normalizeSection(
+  rawSection: unknown,
+  topic: BlogGenerationTopic,
+  index: number
+) {
+  const section = readRecord(rawSection);
+  const heading =
+    readString(
+      section.heading,
+      section.title,
+      section.name,
+      section.subtitle
+    ) ?? defaultSectionHeading(topic, index);
+  const body =
+    readString(
+      section.body,
+      section.content,
+      section.text,
+      section.description,
+      section.summary
+    ) ??
+    `${topic.manhwaTitle} works best in a translation workflow that keeps OCR order, recurring names, and speech-bubble length consistent. TachiyomiAT keeps the reader focused on the official app download and hosted translation support instead of scattered setup steps.`;
+
+  return {
+    body: normalizeLongText(body, 80, 1_200),
+    heading: normalizeLongText(heading, 8, 96),
+    takeaways: normalizeTakeaways(section.takeaways, section.keyTakeaways, [
+      `${topic.manhwaType} panels need clean OCR ordering.`,
+      'Recurring names and terms should stay consistent.',
+      'Use the official TachiyomiAT download path.',
+    ]),
+  };
+}
+
+function normalizeFaq(rawFaq: unknown) {
+  const faq = readRecord(rawFaq);
+  const question = readString(faq.question, faq.q, faq.title);
+  const answer = readString(faq.answer, faq.a, faq.body, faq.content);
+
+  if (!question || !answer) {
+    return null;
+  }
+
+  return {
+    answer: normalizeLongText(answer, 40, 520),
+    question: normalizeLongText(question, 12, 140),
+  };
+}
+
+function normalizeDownloadCallout(
+  rawCallout: unknown,
+  topic: BlogGenerationTopic
+) {
+  const callout = readRecord(rawCallout);
+
+  return {
+    body: normalizeLongText(
+      readString(callout.body, callout.description, callout.text) ??
+        `Use the official TachiyomiAT Android download link for a consistent ${topic.manhwaType} OCR and translation workflow. Avoid random APK mirrors and keep setup guidance in one trusted path.`,
+      40,
+      420
+    ),
+    buttonLabel: 'Download TachiyomiAT',
+    title: normalizeLongText(
+      readString(callout.title, callout.heading) ??
+        'Download TachiyomiAT for Android',
+      8,
+      96
+    ),
+  };
+}
+
+function normalizeReadingProfile(
+  rawProfile: unknown,
+  topic: BlogGenerationTopic
+) {
+  const profile = readRecord(rawProfile);
+  const profileText = readString(rawProfile);
+
+  return {
+    bestFor: normalizeLongText(
+      readString(profile.bestFor, profile.best_for) ??
+        profileText ??
+        `${topic.manhwaTitle} readers who already have legal access to pages and want a cleaner hosted translation workflow.`,
+      20,
+      260
+    ),
+    pacing: normalizeLongText(
+      readString(profile.pacing) ??
+        'Best for vertical chapters with quick dialogue, action beats, and recurring terms that need stable wording.',
+      20,
+      180
+    ),
+    tone: normalizeLongText(
+      readString(profile.tone) ??
+        'Dark, cinematic, practical, and reader-focused rather than noisy or promotional.',
+      20,
+      180
+    ),
+  };
+}
+
+function fillSections(
+  sections: ReturnType<typeof normalizeSection>[],
+  topic: BlogGenerationTopic
+) {
+  const filled = sections.slice(0, 6);
+
+  while (filled.length < 3) {
+    filled.push(normalizeSection(null, topic, filled.length));
+  }
+
+  return filled;
+}
+
+function fillFaqs(
+  faqs: NonNullable<ReturnType<typeof normalizeFaq>>[],
+  topic: BlogGenerationTopic
+) {
+  const filled = faqs.slice(0, 5);
+  const defaults = [
+    {
+      answer: `No. TachiyomiAT focuses on hosted OCR, translation support, app setup, and Android download guidance. It does not publish or distribute ${topic.manhwaType} chapters.`,
+      question: `Does TachiyomiAT host ${topic.manhwaType} chapters?`,
+    },
+    {
+      answer: `Readers use it when a ${topic.manhwaType} page needs cleaner text detection, recurring term consistency, and a workflow that stays separate from unauthorized chapter hosting.`,
+      question: `Why use TachiyomiAT for ${topic.manhwaType} translation?`,
+    },
+    {
+      answer:
+        'Use the official TachiyomiAT download CTA in the article or the download page. That path keeps readers away from random APK mirrors.',
+      question: 'Where is the TachiyomiAT download link?',
+    },
+  ];
+
+  while (filled.length < 3) {
+    const fallback = defaults[filled.length] ?? defaults[0]!;
+    filled.push(fallback);
+  }
+
+  return filled;
+}
+
+function normalizeKeywords(rawKeywords: unknown, topic: BlogGenerationTopic) {
+  const keywords = readArray(rawKeywords)
+    .map((keyword) => readString(keyword))
+    .filter((keyword): keyword is string => Boolean(keyword))
+    .map((keyword) => normalizeLongText(keyword, 3, 48));
+  const defaults = [
+    'tachiyomiat',
+    'tachiyomi download',
+    `${topic.manhwaType} translation`,
+    `${topic.manhwaTitle} reader`,
+    'manga OCR',
+    'android APK',
+  ];
+
+  for (const keyword of defaults) {
+    if (keywords.length >= 12) {
+      break;
+    }
+
+    if (!keywords.includes(keyword)) {
+      keywords.push(keyword);
+    }
+  }
+
+  return keywords.slice(0, 12);
+}
+
+function normalizeTakeaways(...sources: unknown[]) {
+  const fallback = sources.pop();
+  const values = sources
+    .flatMap((source) => readArray(source))
+    .map((item) => readString(item))
+    .filter((item): item is string => Boolean(item));
+  const fallbackValues = Array.isArray(fallback)
+    ? fallback.filter((item): item is string => typeof item === 'string')
+    : [];
+  const takeaways = [...values, ...fallbackValues]
+    .map((item) => normalizeLongText(item, 8, 160))
+    .slice(0, 4);
+
+  return takeaways.length >= 2 ? takeaways : fallbackValues.slice(0, 3);
+}
+
+function normalizeSlugBase(value: string) {
+  return normalizeLongText(value, 8, 86)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function normalizeLongText(
+  value: string,
+  minLength: number,
+  maxLength: number
+) {
+  const normalized = value.trim().replace(/\s+/g, ' ');
+  const clipped =
+    normalized.length > maxLength
+      ? clipAtWord(normalized, maxLength)
+      : normalized;
+
+  if (clipped.length >= minLength) {
+    return clipped;
+  }
+
+  return `${clipped} ${'TachiyomiAT keeps the workflow consistent for readers.'.repeat(
+    4
+  )}`
+    .trim()
+    .slice(0, maxLength);
+}
+
+function clipAtWord(value: string, maxLength: number) {
+  const clipped = value.slice(0, maxLength).trim();
+  const lastSpace = clipped.lastIndexOf(' ');
+
+  return (lastSpace > 24 ? clipped.slice(0, lastSpace) : clipped).replace(
+    /[.,;:!?-]+$/,
+    ''
+  );
+}
+
+function defaultSectionHeading(topic: BlogGenerationTopic, index: number) {
+  const headings = [
+    `Why ${topic.manhwaTitle} needs a stable workflow`,
+    'Keep OCR and terminology consistent',
+    'Use the official TachiyomiAT download path',
+  ];
+
+  return headings[index] ?? `TachiyomiAT ${topic.manhwaType} workflow`;
+}
+
+function readRecord(value: unknown): Record<string, unknown> {
+  return value && typeof value === 'object' && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : {};
+}
+
+function readArray(value: unknown) {
+  return Array.isArray(value) ? value : [];
+}
+
+function readString(...values: unknown[]): string | undefined {
+  for (const value of values) {
+    if (typeof value === 'string' && value.trim()) {
+      return value;
+    }
+
+    if (Array.isArray(value)) {
+      const text = value
+        .map((item) => readString(item))
+        .filter(Boolean)
+        .join(' ');
+
+      if (text.trim()) {
+        return text;
+      }
+    }
+  }
+
+  return undefined;
 }
 
 async function generateJsonWithProvider(input: {
