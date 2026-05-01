@@ -23,6 +23,7 @@ import {
   zNormalizedTranslationBatch,
   zTranslationGatewayInput,
 } from '@/server/provider-gateway/schema';
+import { cleanProviderTranslationText } from '@/server/provider-gateway/translation-cleanup';
 import {
   fetchTextWithTimeout,
   parseJsonObjectText,
@@ -503,7 +504,7 @@ function normalizeTranslationPayload(
           return {
             index,
             sourceText: block.text,
-            translation: translation.trim(),
+            translation: cleanProviderTranslationText(translation),
           };
         }
 
@@ -554,7 +555,7 @@ function normalizeTranslationPayload(
           return {
             index,
             sourceText: block.text,
-            translation: returnedTranslation.trim(),
+            translation: cleanProviderTranslationText(returnedTranslation),
           };
         }
 

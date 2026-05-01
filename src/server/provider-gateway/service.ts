@@ -18,6 +18,10 @@ import {
   zNormalizedTranslationPage,
 } from '@/server/provider-gateway/schema';
 import { performTranslationWithProvider } from '@/server/provider-gateway/translation';
+import {
+  cleanProviderTranslationText,
+  shouldDropProviderTranslationBlock,
+} from '@/server/provider-gateway/translation-cleanup';
 import { persistProviderUsageSnapshot } from '@/server/provider-gateway/usage';
 import { retryProviderCall } from '@/server/provider-gateway/utils';
 
@@ -758,11 +762,28 @@ export function mergeHostedPageTranslation(input: {
     );
   }
 
+  const blocks = input.ocrPage.blocks
+    .map((block, index) => {
+      const rawTranslation = translationPage.blocks[index]?.translation ?? '';
+      const translation = cleanProviderTranslationText(rawTranslation);
+
+      return {
+        ...block,
+        rawTranslation,
+        translation,
+      };
+    })
+    .filter(
+      (block) =>
+        !shouldDropProviderTranslationBlock({
+          sourceText: block.text,
+          translation: block.rawTranslation,
+        })
+    )
+    .map(({ rawTranslation: _rawTranslation, ...block }) => block);
+
   return zHostedPageTranslation.parse({
-    blocks: input.ocrPage.blocks.map((block, index) => ({
-      ...block,
-      translation: translationPage.blocks[index]?.translation ?? '',
-    })),
+    blocks,
     imgHeight: input.ocrPage.imgHeight,
     imgWidth: input.ocrPage.imgWidth,
     sourceLanguage: input.ocrPage.sourceLanguage,

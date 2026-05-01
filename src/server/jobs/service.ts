@@ -15,6 +15,10 @@ import {
   performHostedOcr,
   performHostedTranslation,
 } from '@/server/provider-gateway/service';
+import {
+  cleanProviderTranslationText,
+  shouldDropProviderTranslationBlock,
+} from '@/server/provider-gateway/translation-cleanup';
 
 import {
   type TranslationJobResultManifest,
@@ -1930,7 +1934,7 @@ function rebindCachedManifestToJob(input: {
     }
 
     pageOrder.push(asset.originalFileName);
-    pages[asset.originalFileName] = cachedPage;
+    pages[asset.originalFileName] = sanitizeHostedPageTranslation(cachedPage);
   }
 
   return zTranslationJobResultManifest.parse({
@@ -2136,6 +2140,32 @@ function parseCachedResultManifest(rawManifest: unknown) {
         ? new Date(record.completedAt)
         : record?.completedAt,
   });
+}
+
+function sanitizeHostedPageTranslation(
+  page: HostedPageTranslation
+): HostedPageTranslation {
+  return {
+    ...page,
+    blocks: page.blocks
+      .map((block) => {
+        const rawTranslation = block.translation;
+
+        return {
+          ...block,
+          rawTranslation,
+          translation: cleanProviderTranslationText(rawTranslation),
+        };
+      })
+      .filter(
+        (block) =>
+          !shouldDropProviderTranslationBlock({
+            sourceText: block.text,
+            translation: block.rawTranslation,
+          })
+      )
+      .map(({ rawTranslation: _rawTranslation, ...block }) => block),
+  };
 }
 
 async function performHostedOcrForUploadedPages(input: {

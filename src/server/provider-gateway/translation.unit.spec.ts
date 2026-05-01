@@ -91,6 +91,57 @@ describe('provider gateway translation', () => {
     expect(result.usage.outputTokens).toBe(7);
   });
 
+  it('strips the watermark removal marker from provider translations', async () => {
+    const fetchFn = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          candidates: [
+            {
+              content: {
+                parts: [
+                  {
+                    text: '{"001.jpg":{"block_0000":"RTMTH أين مركز السر المقدس؟ RTMTH","block_0001":"RTMTH"}}',
+                  },
+                ],
+              },
+              finishReason: 'STOP',
+            },
+          ],
+          responseId: 'gemini-response-rtmth',
+          usageMetadata: {
+            candidatesTokenCount: 7,
+            promptTokenCount: 21,
+          },
+        }),
+        { status: 200 }
+      )
+    );
+
+    const result = await performHostedTranslation(
+      {
+        pages: [
+          {
+            blocks: [
+              { text: 'colamanga.com 这里是什么位置？' },
+              { text: 'ACLOUDMEROL.COM COLAMANGA.COM' },
+            ],
+            pageKey: '001.jpg',
+          },
+        ],
+        sourceLanguage: 'zh',
+        targetLanguage: 'ar',
+      },
+      {
+        fetchFn,
+      }
+    );
+
+    expect(result.pages[0]?.blocks[0]?.translation).toBe(
+      'أين مركز السر المقدس؟'
+    );
+    expect(result.pages[0]?.blocks[1]?.translation).toBe('');
+  });
+
   it('maps malformed model JSON to a stable invalid_response error', async () => {
     const fetchFn = vi.fn().mockResolvedValue(
       new Response(

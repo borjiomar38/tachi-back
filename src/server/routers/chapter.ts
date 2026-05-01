@@ -8,6 +8,10 @@ import {
 } from '@/server/jobs/backoffice-schema';
 import { zTranslationChapterIdentity } from '@/server/jobs/schema';
 import { protectedProcedure } from '@/server/orpc';
+import {
+  cleanProviderTranslationText,
+  shouldDropProviderTranslationBlock,
+} from '@/server/provider-gateway/translation-cleanup';
 
 const tags = ['chapters'];
 const MAX_CACHE_ROWS_TO_SCAN = 5000;
@@ -440,6 +444,7 @@ function buildPagePreviews(rawManifest: unknown) {
         ? (pages[pageKey] as Record<string, unknown>)
         : {};
     const blocks = Array.isArray(page.blocks) ? page.blocks : [];
+    let blockCount = 0;
     const sourceTexts: string[] = [];
     const translations: string[] = [];
 
@@ -449,16 +454,33 @@ function buildPagePreviews(rawManifest: unknown) {
       }
 
       const record = block as Record<string, unknown>;
-      if (typeof record.text === 'string') {
-        sourceTexts.push(record.text);
+      const sourceText = typeof record.text === 'string' ? record.text : '';
+      const translation =
+        typeof record.translation === 'string'
+          ? cleanProviderTranslationText(record.translation)
+          : '';
+
+      if (
+        shouldDropProviderTranslationBlock({
+          sourceText,
+          translation:
+            typeof record.translation === 'string' ? record.translation : '',
+        })
+      ) {
+        continue;
       }
-      if (typeof record.translation === 'string') {
-        translations.push(record.translation);
+
+      blockCount += 1;
+      if (sourceText) {
+        sourceTexts.push(sourceText);
+      }
+      if (translation) {
+        translations.push(translation);
       }
     }
 
     return {
-      blockCount: blocks.length,
+      blockCount,
       imageHeight: typeof page.imgHeight === 'number' ? page.imgHeight : null,
       imageWidth: typeof page.imgWidth === 'number' ? page.imgWidth : null,
       pageKey,

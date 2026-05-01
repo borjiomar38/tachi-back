@@ -38,6 +38,7 @@ vi.mock('@/server/provider-gateway/usage', () => ({
 
 import { ProviderGatewayError } from '@/server/provider-gateway/errors';
 import {
+  mergeHostedPageTranslation,
   performHostedOcr,
   performHostedTranslation,
 } from '@/server/provider-gateway/service';
@@ -88,6 +89,70 @@ describe('provider gateway service', () => {
         success: true,
       })
     );
+  });
+
+  it('drops standalone URL watermark blocks when merging hosted page output', () => {
+    const result = mergeHostedPageTranslation({
+      ocrPage: {
+        blocks: [
+          {
+            angle: 0,
+            height: 20,
+            symHeight: 10,
+            symWidth: 8,
+            text: 'ACLOUDMEROL.COM COLAMANGA.COM',
+            width: 200,
+            x: 0,
+            y: 0,
+          },
+          {
+            angle: 0,
+            height: 24,
+            symHeight: 12,
+            symWidth: 8,
+            text: '这里是什么位置？',
+            width: 160,
+            x: 20,
+            y: 40,
+          },
+        ],
+        imgHeight: 100,
+        imgWidth: 100,
+        provider: 'google_cloud_vision',
+        providerModel: 'TEXT_DETECTION',
+        providerRequestId: null,
+        sourceLanguage: 'zh',
+        usage: {
+          inputTokens: null,
+          latencyMs: 10,
+          outputTokens: null,
+          pageCount: 1,
+          providerRequestId: null,
+          requestCount: 1,
+        },
+      },
+      targetLanguage: 'ar',
+      translationPage: {
+        blocks: [
+          {
+            index: 0,
+            sourceText: 'ACLOUDMEROL.COM COLAMANGA.COM',
+            translation: '',
+          },
+          {
+            index: 1,
+            sourceText: '这里是什么位置？',
+            translation: 'أين هذا المكان؟',
+          },
+        ],
+        pageKey: '001.webp',
+      },
+      translatorType: 'gemini',
+    });
+
+    expect(result.blocks).toHaveLength(1);
+    expect(result.blocks[0]?.text).toBe('这里是什么位置？');
+    expect(result.blocks[0]?.translation).toBe('أين هذا المكان؟');
   });
 
   it('splits hosted translation batches by payload size and reassembles split pages', async () => {
