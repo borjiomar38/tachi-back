@@ -93,22 +93,14 @@ export const Route = createRootRouteWithContext<{
       {
         rel: 'icon',
         type: 'image/png',
+        href: '/favicon-48x48.png',
+        sizes: '48x48',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
         href: '/favicon-96x96.png',
         sizes: '96x96',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: '/favicon-light-96x96.png',
-        sizes: '96x96',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: '/favicon-dark-96x96.png',
-        sizes: '96x96',
-        media: '(prefers-color-scheme: dark)',
       },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'shortcut icon', href: '/favicon.ico' },
