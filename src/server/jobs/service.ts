@@ -9,6 +9,7 @@ import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-g
 import {
   HostedPageTranslation,
   NormalizedOcrPage,
+  zNormalizedOcrPage,
 } from '@/server/provider-gateway/schema';
 import {
   mergeHostedPageTranslation,
@@ -103,6 +104,16 @@ type UploadedOcrPageWithDimensions = UploadedOcrPage & {
   imageWidth: number;
 };
 
+type LayoutOcrPage = {
+  fileName: string;
+  ocrPage: NormalizedOcrPage;
+};
+
+type ReusableCachedOcrSource = {
+  cacheKey: string;
+  layoutPages: LayoutOcrPage[];
+};
+
 type OcrBatchPlacement = {
   fileName: string;
   height: number;
@@ -171,11 +182,14 @@ export async function createTranslationJob(
   deps: {
     actor: MobileJobActor;
     dbClient?: typeof db;
+    log?: Pick<typeof logger, 'error' | 'info'>;
     now?: Date;
+    scheduleProcessing?: (jobId: string) => void;
   }
 ) {
   const input = zCreateTranslationJobInput.parse(rawInput);
   const dbClient = deps.dbClient ?? db;
+  const log = deps.log ?? logger;
   const now = deps.now ?? new Date();
   const providers = await resolveProviderSelection(
     {
@@ -265,7 +279,7 @@ export async function createTranslationJob(
     cacheKey,
     dbClient,
     job,
-    log: logger,
+    log,
     now,
     uploadAssets,
   });
@@ -282,7 +296,7 @@ export async function createTranslationJob(
       spentTokens: reservedTokens,
     });
 
-    logger.info({
+    log.info({
       cacheKey: cacheHitKey,
       jobId: job.id,
       pageCount: job.pageCount,
@@ -294,6 +308,46 @@ export async function createTranslationJob(
       job: buildTranslationJobSummary(completedJob),
       upload: {
         expiresAt: completedJob.expiresAt,
+        method: 'PUT',
+        mode: 'server_multipart',
+      },
+    });
+  }
+
+  const reusableOcrSource = await getReusableCachedOcrSource({
+    dbClient,
+    job,
+    log,
+    uploadAssets,
+  });
+
+  if (reusableOcrSource) {
+    const queuedJob = await queueTranslationJobFromReusableOcrSource({
+      cacheKey: reusableOcrSource.cacheKey,
+      dbClient,
+      job,
+      now,
+    });
+
+    scheduleTranslationJobProcessing({
+      dbClient,
+      jobId: job.id,
+      log,
+      scheduleProcessing: deps.scheduleProcessing,
+    });
+
+    log.info({
+      cacheKey: reusableOcrSource.cacheKey,
+      jobId: job.id,
+      pageCount: job.pageCount,
+      scope: 'jobs',
+      status: 'queued_from_cached_ocr',
+    });
+
+    return zCreateTranslationJobResponse.parse({
+      job: buildTranslationJobSummary(queuedJob),
+      upload: {
+        expiresAt: queuedJob.expiresAt,
         method: 'PUT',
         mode: 'server_multipart',
       },
@@ -605,18 +659,73 @@ export async function completeTranslationJobUpload(
     });
   });
 
+  scheduleTranslationJobProcessing({
+    dbClient,
+    jobId: job.id,
+    log,
+    scheduleProcessing: deps.scheduleProcessing,
+  });
+
+  return zTranslationJobSummary.parse(buildTranslationJobSummary(queuedJob));
+}
+
+async function queueTranslationJobFromReusableOcrSource(input: {
+  cacheKey: string;
+  dbClient: typeof db;
+  job: JobRecord;
+  now: Date;
+}) {
+  return await input.dbClient.$transaction(async (tx) => {
+    await tx.translationJob.update({
+      where: { id: input.job.id },
+      data: {
+        errorCode: null,
+        errorMessage: null,
+        failedAt: null,
+        queuedAt: input.now,
+        resultSummary: {
+          ...buildProgressResultSummary(input.job.resultSummary, {
+            message: 'Waiting to retranslate saved chapter OCR.',
+            percent: 40,
+            stage: 'queued',
+            updatedAt: input.now.toISOString(),
+          }),
+          sourceCache: {
+            cacheKey: input.cacheKey,
+            reusedAt: input.now.toISOString(),
+          },
+        },
+        startedAt: null,
+        status: 'queued',
+        uploadCompletedAt: input.job.uploadCompletedAt ?? input.now,
+      },
+    });
+
+    return await tx.translationJob.findUniqueOrThrow({
+      where: { id: input.job.id },
+      select: translationJobSelect,
+    });
+  });
+}
+
+function scheduleTranslationJobProcessing(input: {
+  dbClient: typeof db;
+  jobId: string;
+  log: Pick<typeof logger, 'error' | 'info'>;
+  scheduleProcessing?: (jobId: string) => void;
+}) {
   const scheduleProcessing =
-    deps.scheduleProcessing ??
+    input.scheduleProcessing ??
     ((jobId: string) => {
       if (envServer.JOB_RUNTIME_MODE !== 'inline') {
         return;
       }
 
       void drainTranslationJobQueue({
-        dbClient,
-        log,
+        dbClient: input.dbClient,
+        log: input.log,
       }).catch((error) => {
-        log.error({
+        input.log.error({
           errorMessage:
             error instanceof Error ? error.message : 'Unknown error',
           jobId,
@@ -625,9 +734,7 @@ export async function completeTranslationJobUpload(
       });
     });
 
-  scheduleProcessing(job.id);
-
-  return zTranslationJobSummary.parse(buildTranslationJobSummary(queuedJob));
+  scheduleProcessing(input.jobId);
 }
 
 export async function getTranslationJobSummary(
@@ -940,53 +1047,96 @@ async function processStartedTranslationJob(
     .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
 
   try {
-    const uploadedOcrPages: UploadedOcrPage[] = [];
+    const reusableOcrSource = await getReusableCachedOcrSource({
+      dbClient,
+      job: startedJob,
+      log,
+      uploadAssets,
+    });
+    let layoutPages: LayoutOcrPage[];
 
-    for (const asset of uploadAssets) {
-      if (!asset.bucketName || !asset.objectKey || !asset.originalFileName) {
+    if (reusableOcrSource) {
+      await updateTranslationJobProgress({
+        dbClient,
+        jobId: startedJob.id,
+        progress: {
+          message: 'Reusing saved OCR blocks for this chapter.',
+          percent: 60,
+          stage: 'ocr',
+          updatedAt: new Date().toISOString(),
+        },
+      });
+
+      layoutPages = reusableOcrSource.layoutPages;
+      log.info({
+        cacheKey: reusableOcrSource.cacheKey,
+        jobId: startedJob.id,
+        pageCount: startedJob.pageCount,
+        scope: 'jobs',
+        status: 'reused_cached_ocr',
+      });
+    } else {
+      if (uploadAssets.length !== startedJob.pageCount) {
         throw new TranslationJobError('invalid_upload', 409);
       }
 
-      const uploadedPage = await getTranslationJobPageUpload({
-        bucketName: asset.bucketName,
-        objectKey: asset.objectKey,
+      const uploadedOcrPages: UploadedOcrPage[] = [];
+
+      for (const asset of uploadAssets) {
+        if (!asset.bucketName || !asset.objectKey || !asset.originalFileName) {
+          throw new TranslationJobError('invalid_upload', 409);
+        }
+
+        const uploadedPage = await getTranslationJobPageUpload({
+          bucketName: asset.bucketName,
+          objectKey: asset.objectKey,
+        });
+        const imageBytes = new Uint8Array(
+          await uploadedPage.blob.arrayBuffer()
+        );
+        uploadedOcrPages.push({
+          fileName: asset.originalFileName,
+          imageBytes,
+        });
+      }
+
+      await updateTranslationJobProgress({
+        dbClient,
+        jobId: startedJob.id,
+        progress: {
+          message: 'Reading text from uploaded pages.',
+          percent: 45,
+          stage: 'ocr',
+          updatedAt: new Date().toISOString(),
+        },
       });
-      const imageBytes = new Uint8Array(await uploadedPage.blob.arrayBuffer());
-      uploadedOcrPages.push({
-        fileName: asset.originalFileName,
-        imageBytes,
+
+      const ocrPages = await performHostedOcrForUploadedPages({
+        jobId: startedJob.id,
+        onProgress: async ({ completedPages, totalPages }) => {
+          const progressRatio =
+            totalPages > 0 ? completedPages / totalPages : 1;
+          await updateTranslationJobProgress({
+            dbClient,
+            jobId: startedJob.id,
+            progress: {
+              message: `Reading text from pages ${completedPages}/${totalPages}.`,
+              percent: Math.min(65, 45 + Math.floor(progressRatio * 20)),
+              stage: 'ocr',
+              updatedAt: new Date().toISOString(),
+            },
+          });
+        },
+        pages: uploadedOcrPages,
       });
+
+      layoutPages = ocrPages.map((page) => ({
+        ...page,
+        ocrPage: coalesceOcrLineBlocks(page.ocrPage),
+      }));
     }
 
-    await updateTranslationJobProgress({
-      dbClient,
-      jobId: startedJob.id,
-      progress: {
-        message: 'Reading text from uploaded pages.',
-        percent: 45,
-        stage: 'ocr',
-        updatedAt: new Date().toISOString(),
-      },
-    });
-
-    const ocrPages = await performHostedOcrForUploadedPages({
-      jobId: startedJob.id,
-      onProgress: async ({ completedPages, totalPages }) => {
-        const progressRatio = totalPages > 0 ? completedPages / totalPages : 1;
-        await updateTranslationJobProgress({
-          dbClient,
-          jobId: startedJob.id,
-          progress: {
-            message: `Reading text from pages ${completedPages}/${totalPages}.`,
-            percent: Math.min(65, 45 + Math.floor(progressRatio * 20)),
-            stage: 'ocr',
-            updatedAt: new Date().toISOString(),
-          },
-        });
-      },
-      pages: uploadedOcrPages,
-    });
-    const detectedLanguages = ocrPages.map(
+    const detectedLanguages = layoutPages.map(
       (page) => page.ocrPage.sourceLanguage
     );
 
@@ -994,10 +1144,6 @@ async function processStartedTranslationJob(
       startedJob.sourceLanguage,
       detectedLanguages
     );
-    const layoutPages = ocrPages.map((page) => ({
-      ...page,
-      ocrPage: coalesceOcrLineBlocks(page.ocrPage),
-    }));
 
     const translationProvider = toGatewayTranslationProvider(
       startedJob.resolvedTranslationProvider
@@ -1900,6 +2046,143 @@ async function getCachedTranslationResultManifest(input: {
   }
 }
 
+async function getReusableCachedOcrSource(input: {
+  dbClient: typeof db;
+  job: JobRecord;
+  log: Pick<typeof logger, 'error' | 'info'>;
+  uploadAssets: JobAssetRecord[];
+}): Promise<ReusableCachedOcrSource | null> {
+  const cached = await getCachedTranslationSourceManifest(input);
+
+  if (!cached) {
+    return null;
+  }
+
+  const layoutPages = mapCachedManifestToOcrLayoutPages({
+    cacheKey: cached.cacheKey,
+    job: input.job,
+    manifest: cached.manifest,
+    uploadAssets: input.uploadAssets,
+  });
+
+  if (!layoutPages) {
+    return null;
+  }
+
+  return {
+    cacheKey: cached.cacheKey,
+    layoutPages,
+  };
+}
+
+async function getCachedTranslationSourceManifest(input: {
+  dbClient: typeof db;
+  job: JobRecord;
+  log: Pick<typeof logger, 'error' | 'info'>;
+}) {
+  if (!input.job.chapterCacheKey) {
+    return null;
+  }
+
+  const cachedResult = await input.dbClient.translationResultCache.findFirst({
+    where: {
+      chapterCacheKey: input.job.chapterCacheKey,
+    },
+    orderBy: {
+      updatedAt: 'desc',
+    },
+  });
+
+  if (!cachedResult) {
+    return null;
+  }
+
+  try {
+    const manifest =
+      cachedResult.resultManifest == null
+        ? await getTranslationJobResultManifest({
+            bucketName: cachedResult.bucketName,
+            objectKey: cachedResult.objectKey,
+          })
+        : parseCachedResultManifest(cachedResult.resultManifest);
+
+    return {
+      cacheKey: cachedResult.cacheKey,
+      manifest,
+    };
+  } catch (error) {
+    input.log.error({
+      cacheKey: cachedResult.cacheKey,
+      err: error,
+      jobId: input.job.id,
+      message: 'Failed to read reusable OCR source cache',
+      scope: 'jobs',
+    });
+
+    return null;
+  }
+}
+
+function mapCachedManifestToOcrLayoutPages(input: {
+  cacheKey: string;
+  job: JobRecord;
+  manifest: TranslationJobResultManifest;
+  uploadAssets: JobAssetRecord[];
+}): LayoutOcrPage[] | null {
+  if (input.uploadAssets.length !== input.job.pageCount) {
+    return null;
+  }
+
+  const cachedPagesByFileName = new Map(
+    input.manifest.pageOrder
+      .map((pageKey) => [pageKey, input.manifest.pages[pageKey]] as const)
+      .filter((entry): entry is [string, HostedPageTranslation] =>
+        Boolean(entry[1])
+      )
+  );
+  const layoutPages: LayoutOcrPage[] = [];
+
+  for (const [index, asset] of input.uploadAssets.entries()) {
+    const cachedPage =
+      (asset.originalFileName
+        ? cachedPagesByFileName.get(asset.originalFileName)
+        : null) ?? input.manifest.pages[input.manifest.pageOrder[index] ?? ''];
+
+    if (!asset.originalFileName || !cachedPage) {
+      return null;
+    }
+
+    const sanitizedPage = sanitizeHostedPageTranslation(cachedPage);
+    const ocrPage = zNormalizedOcrPage.parse({
+      blocks: sanitizedPage.blocks.map(
+        ({ translation: _translation, ...block }) => block
+      ),
+      imgHeight: sanitizedPage.imgHeight,
+      imgWidth: sanitizedPage.imgWidth,
+      provider: toGatewayOcrProvider(input.job.resolvedOcrProvider),
+      providerModel: 'cached_result_manifest',
+      providerRequestId: input.cacheKey,
+      sourceLanguage:
+        sanitizedPage.sourceLanguage || input.manifest.sourceLanguage,
+      usage: {
+        inputTokens: null,
+        latencyMs: 0,
+        outputTokens: null,
+        pageCount: 1,
+        providerRequestId: input.cacheKey,
+        requestCount: 1,
+      },
+    });
+
+    layoutPages.push({
+      fileName: asset.originalFileName,
+      ocrPage,
+    });
+  }
+
+  return layoutPages;
+}
+
 function rebindCachedManifestToJob(input: {
   job: JobRecord;
   manifest: TranslationJobResultManifest;
@@ -2628,5 +2911,15 @@ function toGatewayTranslationProvider(provider: ProviderType | null) {
       return 'openai' as const;
     default:
       return undefined;
+  }
+}
+
+function toGatewayOcrProvider(provider: ProviderType | null) {
+  switch (provider) {
+    case ProviderType.gemini:
+      return 'gemini' as const;
+    case ProviderType.google_cloud_vision:
+    default:
+      return 'google_cloud_vision' as const;
   }
 }

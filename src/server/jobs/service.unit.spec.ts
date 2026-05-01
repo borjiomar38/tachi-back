@@ -507,6 +507,165 @@ describe('job service', () => {
     expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
   });
 
+  it('queues a retranslation from saved chapter OCR when another target exists', async () => {
+    const queuedAt = new Date('2026-03-20T10:05:00.000Z');
+    const queueJob = vi.fn();
+
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            createMany: vi.fn(),
+          },
+          translationJob: {
+            create: vi.fn().mockResolvedValue({
+              id: 'job-retranslate-cache-source',
+            }),
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                chapterIdentity: {
+                  chapterUrl: '/manga/absolute-regression/chapter-504',
+                  sourceId: '1234',
+                },
+                id: 'job-retranslate-cache-source',
+                objectChecksums: ['a'.repeat(64)],
+                objectKeys: [null],
+                pageCount: 1,
+                status: 'awaiting_upload',
+                targetLanguage: 'ar',
+              })
+            ),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                chapterIdentity: {
+                  chapterUrl: '/manga/absolute-regression/chapter-504',
+                  sourceId: '1234',
+                },
+                id: 'job-retranslate-cache-source',
+                objectChecksums: ['a'.repeat(64)],
+                objectKeys: [null],
+                pageCount: 1,
+                queuedAt,
+                resultSummary: {
+                  progress: {
+                    message: 'Waiting to retranslate saved chapter OCR.',
+                    percent: 40,
+                    stage: 'queued',
+                    updatedAt: queuedAt.toISOString(),
+                  },
+                  sourceCache: {
+                    cacheKey: 'source-cache-key',
+                    reusedAt: queuedAt.toISOString(),
+                  },
+                },
+                status: 'queued',
+                targetLanguage: 'ar',
+                uploadCompletedAt: queuedAt,
+              })
+            ),
+            update: queueJob,
+          },
+        };
+
+        return await callback(tx);
+      });
+    mockDb.translationResultCache.findFirst
+      .mockResolvedValueOnce(null)
+      .mockResolvedValueOnce({
+        bucketName: 'results',
+        cacheKey: 'source-cache-key',
+        objectKey:
+          'cache/translation-results/source-cache-key/translation-manifest.json',
+        resultManifest: {
+          completedAt: new Date('2026-03-20T09:00:00.000Z'),
+          deviceId: 'device-original',
+          jobId: 'job-original',
+          licenseId: 'license-original',
+          pageCount: 1,
+          pageOrder: ['001.jpg'],
+          pages: {
+            '001.jpg': {
+              blocks: [
+                {
+                  angle: 0,
+                  height: 10,
+                  symHeight: 5,
+                  symWidth: 5,
+                  text: 'hello',
+                  translation: 'bonjour',
+                  width: 20,
+                  x: 1,
+                  y: 2,
+                },
+              ],
+              imgHeight: 100,
+              imgWidth: 80,
+              sourceLanguage: 'ja',
+              targetLanguage: 'fr',
+              translatorType: 'gemini',
+            },
+          },
+          sourceLanguage: 'ja',
+          targetLanguage: 'fr',
+          translatorType: 'gemini',
+          version: '2026-03-20.phase11.v1',
+        },
+      });
+
+    const scheduleProcessing = vi.fn();
+    const result = await createTranslationJob(
+      {
+        chapterIdentity: {
+          chapterUrl: '/manga/absolute-regression/chapter-504',
+          sourceId: '1234',
+        },
+        pages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+        ],
+        targetLanguage: 'ar',
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+        now: queuedAt,
+        scheduleProcessing,
+      }
+    );
+
+    expect(result.job.status).toBe('queued');
+    expect(result.job.uploadedPageCount).toBe(0);
+    expect(queueJob).toHaveBeenCalledWith({
+      where: { id: 'job-retranslate-cache-source' },
+      data: expect.objectContaining({
+        queuedAt,
+        status: 'queued',
+        uploadCompletedAt: queuedAt,
+      }),
+    });
+    expect(scheduleProcessing).toHaveBeenCalledWith(
+      'job-retranslate-cache-source'
+    );
+    expect(mockPutTranslationJobResultManifest).not.toHaveBeenCalled();
+  });
+
   it('rejects job creation before upload when tokens are insufficient', async () => {
     mockDb.tokenLedger.aggregate.mockResolvedValue({
       _sum: {
@@ -948,6 +1107,157 @@ describe('job service', () => {
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
     expect(mockPutTranslationResultCacheManifest).toHaveBeenCalledOnce();
     expect(mockDb.translationResultCache.upsert).toHaveBeenCalledOnce();
+  });
+
+  it('processes a queued retranslation from saved OCR without reading uploads', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUnique: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                id: 'job-retranslate-cached-ocr',
+                objectChecksums: ['d'.repeat(64)],
+                objectKeys: [null],
+                pageCount: 1,
+                queuedAt: new Date('2026-03-20T10:09:00.000Z'),
+                startedAt: new Date('2026-03-20T10:10:00.000Z'),
+                status: 'processing',
+                targetLanguage: 'ar',
+                uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
+              })
+            ),
+            updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+            updateMany: mockDb.tokenLedger.updateMany,
+          },
+          translationJob: {
+            update: vi.fn(),
+          },
+        };
+
+        return await callback(tx);
+      });
+
+    mockDb.translationResultCache.findFirst.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'source-cache-key',
+      objectKey:
+        'cache/translation-results/source-cache-key/translation-manifest.json',
+      resultManifest: {
+        completedAt: new Date('2026-03-20T09:00:00.000Z'),
+        deviceId: 'device-original',
+        jobId: 'job-original',
+        licenseId: 'license-original',
+        pageCount: 1,
+        pageOrder: ['001.jpg'],
+        pages: {
+          '001.jpg': {
+            blocks: [
+              {
+                angle: 0,
+                height: 10,
+                symHeight: 5,
+                symWidth: 5,
+                text: 'hello',
+                translation: 'bonjour',
+                width: 20,
+                x: 1,
+                y: 2,
+              },
+            ],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'ja',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
+        },
+        sourceLanguage: 'ja',
+        targetLanguage: 'fr',
+        translatorType: 'gemini',
+        version: '2026-03-20.phase11.v1',
+      },
+    });
+    mockPerformHostedTranslation.mockResolvedValue({
+      pages: [
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText: 'hello',
+              translation: 'marhaba',
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+      ],
+      promptProfile: 'manga',
+      promptVersion: '2026-03-20.v1',
+      provider: 'gemini',
+      providerModel: 'gemini-test',
+      sourceLanguage: 'ja',
+      targetLanguage: 'ar',
+      usage: {
+        finishReason: 'stop',
+        inputTokens: 10,
+        latencyMs: 200,
+        outputTokens: 5,
+        pageCount: 1,
+        providerRequestId: 'tr-cached-ocr',
+        requestCount: 1,
+        stopReason: 'stop',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'jobs/job-retranslate-cached-ocr/results/translation-manifest.json',
+    });
+    mockPutTranslationResultCacheManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'cache/translation-results/cache-key/translation-manifest.json',
+    });
+
+    const result = await processTranslationJob(
+      { jobId: 'job-retranslate-cached-ocr' },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+      }
+    );
+
+    expect(mockGetTranslationJobPageUpload).not.toHaveBeenCalled();
+    expect(mockPerformHostedOcr).not.toHaveBeenCalled();
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [{ text: 'hello' }],
+            pageKey: '001.jpg',
+          },
+        ],
+        sourceLanguage: 'ja',
+        targetLanguage: 'ar',
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('marhaba');
+    expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
   });
 
   it('keeps pages with no OCR blocks out of the translation request', async () => {
