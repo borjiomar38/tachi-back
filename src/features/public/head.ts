@@ -1,3 +1,5 @@
+import { BlogArticleDetail } from '@/features/blog/schema';
+
 const publicSiteName = 'TachiyomiAT';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const socialImagePath = '/og/tachiyomiat-social-preview.jpg';
@@ -16,6 +18,8 @@ const buildAbsoluteUrl = (path: string) => {
 
   return `${normalizedBaseUrl}${normalizedPath}`;
 };
+
+export const buildPublicAbsoluteUrl = buildAbsoluteUrl;
 
 const buildStructuredData = (
   title: string,
@@ -185,6 +189,54 @@ export const buildPublicPageHead = (
         rel: 'canonical',
         href: url,
       },
+    ],
+  };
+};
+
+export const buildPublicBlogIndexHead = (): ReturnType<
+  typeof buildPublicPageHead
+> => {
+  const description =
+    'Read TachiyomiAT guides for manhwa, manhua, manga translation, hosted OCR, Android APK download, and reader-friendly setup workflows.';
+
+  return buildPublicPageHead('Manhwa Blog', description, '/blog');
+};
+
+export const buildPublicBlogArticleHead = (
+  article: BlogArticleDetail
+): ReturnType<typeof buildPublicPageHead> => {
+  const baseHead = buildPublicPageHead(
+    article.title,
+    article.metaDescription,
+    `/blog/${article.slug}`
+  );
+
+  return {
+    ...baseHead,
+    meta: [
+      ...baseHead.meta.filter(
+        (entry) => !('property' in entry) || entry.property !== 'og:type'
+      ),
+      {
+        property: 'og:type',
+        content: 'article',
+      },
+      {
+        property: 'article:published_time',
+        content: article.publishedAt,
+      },
+      {
+        property: 'article:modified_time',
+        content: article.updatedAt,
+      },
+      {
+        property: 'article:section',
+        content: article.manhwaType,
+      },
+      ...article.keywords.slice(0, 8).map((keyword) => ({
+        property: 'article:tag',
+        content: keyword,
+      })),
     ],
   };
 };

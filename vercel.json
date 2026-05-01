@@ -1,5 +1,11 @@
 {
   "buildCommand": "pnpm db:migrate:deploy && pnpm build",
+  "crons": [
+    {
+      "path": "/api/cron/generate-blog-article",
+      "schedule": "0 1 * * *"
+    }
+  ],
   "framework": null,
   "installCommand": "pnpm install"
 }

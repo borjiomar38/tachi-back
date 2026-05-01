@@ -151,6 +151,12 @@ enum SourceDiscoveryResultStatus {
   rejected
 }
 
+enum BlogArticleStatus {
+  draft
+  published
+  failed
+}
+
 // Better Auth users are internal backoffice identities only.
 // Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
@@ -346,6 +352,39 @@ model AppConfig {
   updatedAt DateTime @updatedAt
 
   @@map("app_configs")
+}
+
+model BlogArticle {
+  id                      String            @id @default(cuid())
+  slug                    String            @unique
+  title                   String
+  excerpt                 String
+  metaDescription         String
+  manhwaTitle             String
+  manhwaType              String            @default("manhwa")
+  searchIntent            String
+  keywords                String[]
+  imagePrompt             String
+  imageAlt                String
+  heroImageUrl            String?
+  heroImageObjectKey      String?
+  body                    Json
+  imageReview             Json?
+  uxReview                Json?
+  generationKey           String?           @unique
+  generationPromptVersion String
+  generationProvider      ProviderType?
+  generationModel         String?
+  generationSource        String            @default("manual")
+  status                  BlogArticleStatus @default(draft)
+  publishedAt             DateTime?
+  generatedAt             DateTime?
+  createdAt               DateTime          @default(now())
+  updatedAt               DateTime          @updatedAt
+
+  @@index([status, publishedAt])
+  @@index([manhwaTitle])
+  @@map("blog_articles")
 }
 
 model TokenPack {

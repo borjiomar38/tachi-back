@@ -7,15 +7,19 @@ TachiyomiAT is a reader-focused Android app and hosted backend for translating m
 ## Primary pages
 
 - [Home](https://tachiyomiat.com/): Product overview for hosted manga and manhwa OCR translation.
+- [Blog](https://tachiyomiat.com/blog): Manhwa, manhua, manga translation, Android setup, hosted OCR, and TachiyomiAT download articles.
 - [Download](https://tachiyomiat.com/download): Android APK download and setup guidance.
 - [Pricing](https://tachiyomiat.com/pricing): Monthly token plans for hosted OCR and translation.
 - [How it works](https://tachiyomiat.com/how-it-works): Checkout, redeem-code activation, device binding, OCR, and translation flow.
 - [Support](https://tachiyomiat.com/support): Help for billing, activation, setup, and service questions.
+- [Mihon and TachiyomiAT setup guide](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Official install guidance, hosted activation, and permission-safe setup boundaries.
+- [Translation support workflow](https://tachiyomiat.com/guides/translation-support-workflow): Permission check, OCR, glossary, review, credit, and removal workflow.
 
 ## Policies
 
 - [Privacy Policy](https://tachiyomiat.com/legal/privacy): Data processed for OCR, translation, source discovery, checkout, activation, and support.
 - [Terms of Service](https://tachiyomiat.com/legal/terms): Service rules for token packs, redeem codes, app activation, and translation processing.
+- [Official sources and takedown policy](https://tachiyomiat.com/legal/official-sources-takedown): Boundary for official sources, prohibited chapter hosting, and rights-holder review.
 
 ## Machine-readable resources
 
@@ -25,4 +29,4 @@ TachiyomiAT is a reader-focused Android app and hosted backend for translating m
 
 ## Crawl notes
 
-Checkout, login, app, manager, logout, and API routes are not intended for search indexing. TachiyomiAT does not host manga chapters; it provides OCR, translation, activation, and support infrastructure for the Android app.
+Checkout, login, app, manager, logout, and API routes are not intended for search indexing. TachiyomiAT does not host manga, manhwa, or manhua chapters; it provides OCR, translation, activation, download, and support infrastructure for the Android app.

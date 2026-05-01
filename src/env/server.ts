@@ -178,6 +178,16 @@ const envServerBase = createEnv({
       .int()
       .positive()
       .default(300),
+    CRON_SECRET: z.string().min(16).optional(),
+    BLOG_GENERATION_ENABLED: z.stringbool().default(true),
+    BLOG_GENERATION_PROVIDER: z
+      .enum(['anthropic', 'gemini', 'openai'])
+      .optional(),
+    BLOG_GENERATION_MODEL: z.string().optional(),
+    BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(false),
+    BLOG_IMAGE_GENERATION_MODEL: z.string().default('gpt-image-1'),
+    BLOG_IMAGE_PUBLIC_BASE_URL: z.url().optional(),
+    VITE_S3_BUCKET_PUBLIC_URL: z.url().optional(),
 
     SENTRY_DSN: z.url().optional(),
     OTEL_EXPORTER_OTLP_ENDPOINT: z.url().optional(),

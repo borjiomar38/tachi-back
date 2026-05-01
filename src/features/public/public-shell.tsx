@@ -1,5 +1,11 @@
 import { useRouterState } from '@tanstack/react-router';
-import { CircleHelpIcon, DownloadIcon, HomeIcon, TagsIcon } from 'lucide-react';
+import {
+  BookOpenTextIcon,
+  CircleHelpIcon,
+  DownloadIcon,
+  HomeIcon,
+  TagsIcon,
+} from 'lucide-react';
 import { ReactNode } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
@@ -19,6 +25,8 @@ const primaryLinks = [
   { href: '/#hero', label: 'Home' },
   { href: '/#demo', label: 'Demo' },
   { href: '/#pricing', label: 'Plans' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/guides/mihon-tachiyomiat-setup', label: 'Guides' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#faq', label: 'FAQ' },
 ] as const;
@@ -26,6 +34,7 @@ const primaryLinks = [
 const legalLinks = [
   { href: '/legal/privacy', label: 'Privacy' },
   { href: '/legal/terms', label: 'Terms' },
+  { href: '/legal/official-sources-takedown', label: 'Sources & takedown' },
 ] as const;
 
 const mobileTabs = [
@@ -46,6 +55,12 @@ const mobileTabs = [
     label: 'Plans',
     icon: TagsIcon,
     isActive: (pathname: string) => pathname === '/pricing',
+  },
+  {
+    href: '/blog',
+    label: 'Blog',
+    icon: BookOpenTextIcon,
+    isActive: (pathname: string) => pathname.startsWith('/blog'),
   },
   {
     href: '/support',
@@ -136,6 +151,18 @@ export const PublicShell = (props: { children: ReactNode }) => {
                   <a href="/download" className="hover:text-foreground">
                     Install guide
                   </a>
+                  <a
+                    href="/guides/mihon-tachiyomiat-setup"
+                    className="hover:text-foreground"
+                  >
+                    Setup guide
+                  </a>
+                  <a
+                    href="/guides/translation-support-workflow"
+                    className="hover:text-foreground"
+                  >
+                    Translation workflow
+                  </a>
                 </div>
               </div>
               <div className="space-y-3">
@@ -174,7 +201,7 @@ export const PublicShell = (props: { children: ReactNode }) => {
           </div>
         </footer>
         <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border/70 bg-background/95 pb-safe-bottom shadow-lg backdrop-blur md:hidden">
-          <div className="mx-auto grid max-w-6xl grid-cols-4 px-2 py-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-5 px-2 py-2">
             {mobileTabs.map((item) => {
               const Icon = item.icon;
               const active = item.isActive(pathname);

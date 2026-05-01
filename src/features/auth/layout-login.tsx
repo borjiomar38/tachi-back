@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 
 import { Logo } from '@/components/brand/logo';
 import { LocalSwitcher } from '@/components/ui/local-switcher';
-import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 
 import background from './layout-login-background.webp';
 import character from './layout-login-character.webp';
@@ -27,7 +26,6 @@ export const LayoutLogin = (props: {
               <Logo variant="compact" className="w-24 max-w-full sm:w-28" />
             </Link>
             <div className="flex shrink-0 flex-wrap justify-end gap-x-3 gap-y-2">
-              <ThemeSwitcher iconOnly />
               <LocalSwitcher />
             </div>
           </div>

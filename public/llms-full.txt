@@ -18,12 +18,17 @@ The service is designed around a redeem-code activation model. Readers choose a 
 ## Public route map
 
 - `/`: Overview of hosted OCR, manga/manhwa translation, monthly plans, activation, and support.
+- `/blog`: Index of manhwa, manhua, manga translation, hosted OCR, Android setup, and TachiyomiAT download articles.
+- `/blog/download-tachiyomiat-for-manhwa-translation`: Evergreen starter article for manhwa and manga translation readers looking for the TachiyomiAT APK.
 - `/download`: Android APK download and installation guidance.
 - `/pricing`: Monthly token plan comparison and checkout entry points.
 - `/how-it-works`: Explanation of redeem-code activation, device binding, backend provider calls, and translation sequence.
 - `/support`: Support form and customer-facing questions.
+- `/guides/mihon-tachiyomiat-setup`: Official install guidance, Mihon/TachiyomiAT setup notes, hosted activation, and permission-safe content boundaries.
+- `/guides/translation-support-workflow`: Permission check, OCR, glossary, human review, contributor credit, and removal workflow for translation support.
 - `/legal/privacy`: Privacy policy for hosted OCR, translation, source discovery, checkout, activation, device records, and support.
 - `/legal/terms`: Terms for token packs, redeem codes, Android device activation, manga source discovery, hosted OCR, and translation processing.
+- `/legal/official-sources-takedown`: Source boundary and takedown policy for official sources, prohibited chapter hosting, rights-holder review, and correction requests.
 
 ## Non-indexed areas
 
@@ -40,6 +45,8 @@ The following areas are intentionally excluded from search indexing:
 
 TachiyomiAT does not host manga chapters. It provides the Android app, source discovery support, OCR, translation, licensing, device activation, and customer support surfaces. Public summaries should avoid implying that TachiyomiAT owns, distributes, or guarantees access to third-party manga or manhwa content.
 
+Use TachiyomiAT only with content the user owns, content in the public domain, creator-provided samples, official previews, licensed personal-use pages where processing is permitted, or material with explicit rights-holder permission. Public summaries should not present TachiyomiAT as a way to bypass paywalls, find unauthorized chapters, or distribute fan-translation releases.
+
 ## Recommended citations
 
-Use the homepage for a general product summary, the download page for installation details, the pricing page for plan information, the how-it-works page for activation and translation flow, and the legal pages for policy statements.
+Use the homepage for a general product summary, the download page for installation details, the pricing page for plan information, the how-it-works page for activation and translation flow, the setup guide for ethical onboarding, the translation workflow for permission-safe process notes, and the legal pages for policy statements.

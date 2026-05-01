@@ -20,12 +20,17 @@ import { Route as AppRouteRouteImport } from './routes/app/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ManagerIndexRouteImport } from './routes/manager/index'
 import { Route as LoginIndexRouteImport } from './routes/login/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as LegalTermsRouteImport } from './routes/legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
+import { Route as LegalOfficialSourcesTakedownRouteImport } from './routes/legal/official-sources-takedown'
+import { Route as GuidesTranslationSupportWorkflowRouteImport } from './routes/guides/translation-support-workflow'
+import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
 import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
@@ -48,6 +53,7 @@ import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
+import { Route as ApiCronGenerateBlogArticleRouteImport } from './routes/api/cron/generate-blog-article'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
 import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users/new.index'
@@ -132,6 +138,11 @@ const LoginIndexRoute = LoginIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LoginRouteRoute,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppIndexRoute = AppIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -147,6 +158,24 @@ const LegalPrivacyRoute = LegalPrivacyRouteImport.update({
   path: '/legal/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LegalOfficialSourcesTakedownRoute =
+  LegalOfficialSourcesTakedownRouteImport.update({
+    id: '/legal/official-sources-takedown',
+    path: '/legal/official-sources-takedown',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesTranslationSupportWorkflowRoute =
+  GuidesTranslationSupportWorkflowRouteImport.update({
+    id: '/guides/translation-support-workflow',
+    path: '/guides/translation-support-workflow',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesMihonTachiyomiatSetupRoute =
+  GuidesMihonTachiyomiatSetupRouteImport.update({
+    id: '/guides/mihon-tachiyomiat-setup',
+    path: '/guides/mihon-tachiyomiat-setup',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
   id: '/checkout/success',
   path: '/checkout/success',
@@ -160,6 +189,11 @@ const CheckoutCancelRoute = CheckoutCancelRouteImport.update({
 const CheckoutTokenPackKeyRoute = CheckoutTokenPackKeyRouteImport.update({
   id: '/checkout/$tokenPackKey',
   path: '/checkout/$tokenPackKey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiUploadRoute = ApiUploadRouteImport.update({
@@ -272,6 +306,12 @@ const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
   path: '/api/download/apk',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronGenerateBlogArticleRoute =
+  ApiCronGenerateBlogArticleRouteImport.update({
+    id: '/api/cron/generate-blog-article',
+    path: '/api/cron/generate-blog-article',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
@@ -437,16 +477,22 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
+  '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/app/': typeof AppIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/login/': typeof LoginIndexRoute
   '/manager/': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
@@ -503,16 +549,22 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
+  '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/app': typeof AppIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/login': typeof LoginIndexRoute
   '/manager': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
@@ -573,16 +625,22 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
+  '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
   '/legal/terms': typeof LegalTermsRoute
   '/app/': typeof AppIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/login/': typeof LoginIndexRoute
   '/manager/': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
@@ -644,16 +702,22 @@ export interface FileRouteTypes {
     | '/support'
     | '/api/contact'
     | '/api/upload'
+    | '/blog/$slug'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/translation-support-workflow'
+    | '/legal/official-sources-takedown'
     | '/legal/privacy'
     | '/legal/terms'
     | '/app/'
+    | '/blog/'
     | '/login/'
     | '/manager/'
     | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/cron/generate-blog-article'
     | '/api/download/apk'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
@@ -710,16 +774,22 @@ export interface FileRouteTypes {
     | '/support'
     | '/api/contact'
     | '/api/upload'
+    | '/blog/$slug'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/translation-support-workflow'
+    | '/legal/official-sources-takedown'
     | '/legal/privacy'
     | '/legal/terms'
     | '/app'
+    | '/blog'
     | '/login'
     | '/manager'
     | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/cron/generate-blog-article'
     | '/api/download/apk'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
@@ -779,16 +849,22 @@ export interface FileRouteTypes {
     | '/support'
     | '/api/contact'
     | '/api/upload'
+    | '/blog/$slug'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/translation-support-workflow'
+    | '/legal/official-sources-takedown'
     | '/legal/privacy'
     | '/legal/terms'
     | '/app/'
+    | '/blog/'
     | '/login/'
     | '/manager/'
     | '/api/activation/redeem'
     | '/api/auth/$'
+    | '/api/cron/generate-blog-article'
     | '/api/download/apk'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
@@ -849,13 +925,19 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
   CheckoutCancelRoute: typeof CheckoutCancelRoute
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
+  GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
+  GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
+  LegalOfficialSourcesTakedownRoute: typeof LegalOfficialSourcesTakedownRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
   LegalTermsRoute: typeof LegalTermsRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   ApiActivationRedeemRoute: typeof ApiActivationRedeemRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiCronGenerateBlogArticleRoute: typeof ApiCronGenerateBlogArticleRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
@@ -958,6 +1040,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginIndexRouteImport
       parentRoute: typeof LoginRouteRoute
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app/': {
       id: '/app/'
       path: '/'
@@ -979,6 +1068,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalPrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/legal/official-sources-takedown': {
+      id: '/legal/official-sources-takedown'
+      path: '/legal/official-sources-takedown'
+      fullPath: '/legal/official-sources-takedown'
+      preLoaderRoute: typeof LegalOfficialSourcesTakedownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/translation-support-workflow': {
+      id: '/guides/translation-support-workflow'
+      path: '/guides/translation-support-workflow'
+      fullPath: '/guides/translation-support-workflow'
+      preLoaderRoute: typeof GuidesTranslationSupportWorkflowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/mihon-tachiyomiat-setup': {
+      id: '/guides/mihon-tachiyomiat-setup'
+      path: '/guides/mihon-tachiyomiat-setup'
+      fullPath: '/guides/mihon-tachiyomiat-setup'
+      preLoaderRoute: typeof GuidesMihonTachiyomiatSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/checkout/success': {
       id: '/checkout/success'
       path: '/checkout/success'
@@ -998,6 +1108,13 @@ declare module '@tanstack/react-router' {
       path: '/checkout/$tokenPackKey'
       fullPath: '/checkout/$tokenPackKey'
       preLoaderRoute: typeof CheckoutTokenPackKeyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/upload': {
@@ -1152,6 +1269,13 @@ declare module '@tanstack/react-router' {
       path: '/api/download/apk'
       fullPath: '/api/download/apk'
       preLoaderRoute: typeof ApiDownloadApkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cron/generate-blog-article': {
+      id: '/api/cron/generate-blog-article'
+      path: '/api/cron/generate-blog-article'
+      fullPath: '/api/cron/generate-blog-article'
+      preLoaderRoute: typeof ApiCronGenerateBlogArticleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/auth/$': {
@@ -1482,13 +1606,19 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,
+  BlogSlugRoute: BlogSlugRoute,
   CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
   CheckoutCancelRoute: CheckoutCancelRoute,
   CheckoutSuccessRoute: CheckoutSuccessRoute,
+  GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
+  GuidesTranslationSupportWorkflowRoute: GuidesTranslationSupportWorkflowRoute,
+  LegalOfficialSourcesTakedownRoute: LegalOfficialSourcesTakedownRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,
   LegalTermsRoute: LegalTermsRoute,
+  BlogIndexRoute: BlogIndexRoute,
   ApiActivationRedeemRoute: ApiActivationRedeemRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiCronGenerateBlogArticleRoute: ApiCronGenerateBlogArticleRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,

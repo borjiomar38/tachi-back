@@ -5,13 +5,8 @@ import {
   CircleUserIcon,
   LogOutIcon,
   MonitorSmartphoneIcon,
-  MoonIcon,
-  SunIcon,
-  SunMoonIcon,
 } from 'lucide-react';
-import { useTheme } from 'next-themes';
 import { useTranslation } from 'react-i18next';
-import { match } from 'ts-pattern';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -20,8 +15,6 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
@@ -31,7 +24,6 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { themes } from '@/components/ui/theme-switcher';
 
 import { authClient } from '@/features/auth/client';
 import { ConfirmSignOut } from '@/features/auth/confirm-signout';
@@ -45,7 +37,6 @@ export function NavUser() {
   const { isMobile } = useSidebar();
   const session = authClient.useSession();
   const { setOpenMobile } = useSidebar();
-  const { theme, setTheme } = useTheme();
 
   const user = {
     avatar: session.data?.user.image ?? undefined,
@@ -111,29 +102,6 @@ export function NavUser() {
                 {t('layout:nav.account')}
               </DropdownMenuItem>
             </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-              {themes.map((item) => (
-                <DropdownMenuRadioItem
-                  key={item}
-                  value={item}
-                  icon={match(theme as (typeof themes)[number])
-                    .with('system', () => (
-                      <SunMoonIcon className="text-muted-foreground" />
-                    ))
-                    .with('light', () => (
-                      <SunIcon className="text-muted-foreground" />
-                    ))
-                    .with('dark', () => (
-                      <MoonIcon className="text-muted-foreground" />
-                    ))
-                    .exhaustive()}
-                >
-                  {t(`common:themes.values.${item}`)}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-            <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <WithPermissions
                 permissions={[

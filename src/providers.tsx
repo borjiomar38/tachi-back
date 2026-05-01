@@ -8,16 +8,14 @@ import { QueryClientProvider } from '@/lib/tanstack-query/provider';
 
 import { Sonner } from '@/components/ui/sonner';
 
-export const Providers = (props: {
-  children: ReactNode;
-  forcedTheme?: string;
-}) => {
+export const Providers = (props: { children: ReactNode }) => {
   return (
     <ThemeProvider
       attribute="class"
+      defaultTheme="dark"
       storageKey="theme"
       disableTransitionOnChange
-      forcedTheme={props.forcedTheme}
+      forcedTheme="dark"
     >
       <QueryClientProvider>
         {props.children}
