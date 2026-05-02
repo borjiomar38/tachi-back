@@ -2,10 +2,10 @@ export const androidApkDownload = {
   href: '/api/download/apk',
   filename: 'tachiyomiat-latest.apk',
   label: 'Download Android APK',
-  sizeLabel: '197 MB',
-  buildLabel: 'Android universal debug build 0.17.7-7178',
+  sizeLabel: '174 MB',
+  buildLabel: 'Android universal preview build 0.17.7-7182',
   sha256:
-    '6d8e0b09ce2c4f8020f87fdf5ab8d42afab28aaaa6046e206ec8763a28b02ede',
+    'd8cb3e8835b9d41b99ee5ac5e4c4886af462f41947d0fd49839561f92d8a6417',
   objectKey: 'public/downloads/tachiyomiat-latest.apk',
 } as const;
 

@@ -66,26 +66,14 @@
 - **`pnpm db:push` / `prisma db push` is forbidden** unless the user explicitly asks for it.
 - If `pnpm prisma migrate dev --name ...` is blocked by environment/runtime constraints, stop and report the issue instead of falling back to a manual migration workflow.
 
-## Vercel Production Deploy
-- **IMPORTANT AUTO-DEPLOY:** pushing this repository to GitHub can trigger an automatic Vercel production deployment. Before pushing, confirm that this production deploy side effect is intended. After a GitHub push, do not also run a manual production deploy unless the user explicitly asks for it.
-- **Canonical command:** when the user says "deploy", "push and deploy", or "deploy prod", run `pnpm deploy:prod` from `/Users/macbookpro/Documents/p2/tachi/tachi-back`. Do not start with raw Vercel commands.
-- `pnpm deploy:prod` owns the exact sequence, including type-checking, `vercel pull`, production build, prebuilt deploy, deployment inspection, and mobile route health verification.
-- Vercel writes sensitive pulled secrets such as `S3_ACCESS_KEY_ID` and `S3_SECRET_ACCESS_KEY` as empty strings in `.vercel/.env.production.local`; this is expected. The deploy script overlays the local `.env` R2 values only for the local prebuilt build validation, without printing them.
-- For `tachi-back`, prefer the prebuilt deployment path. A direct `vercel deploy --prod --yes` has failed before with `deploy_failed`, an empty CLI message, and a zero-millisecond Vercel build. Do not waste time retrying that path first.
-- Use the NAEST Vercel team scope explicitly: `maleks-projects-5ef1c03`.
+## Production Deploy
+- Production is deployed by pushing `master` to GitHub. Do not run `pnpm deploy:prod` or raw Vercel deploy commands for normal production deploys.
+- Before pushing, confirm that the production deploy side effect is intended.
 - Deploy from this directory only: `/Users/macbookpro/Documents/p2/tachi/tachi-back`.
-- Standard production deploy sequence:
-
-```bash
-pnpm deploy:prod
-```
-
-- `vercel build --prod` runs the configured production build using pulled Vercel env vars and runs `pnpm db:migrate:deploy`; confirm there are no pending migration failures before deploying.
 - Never commit `.vercel/.env.production.local` or any pulled Vercel env file.
-- After deployment, verify the alias and route health:
+- After pushing `master`, verify the alias and route health:
 
 ```bash
-vercel inspect <deployment-url> --scope maleks-projects-5ef1c03
 curl -i -s -X POST https://tachiyomiat.com/api/mobile/subscription/cancel
 ```
 
