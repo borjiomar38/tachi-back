@@ -130,7 +130,7 @@ export const zSourceDiscoveryTitleCorrectionInput = z.object({
   searchedCandidateCount: z
     .number()
     .int()
-    .min(1)
+    .min(0)
     .max(MAX_SOURCE_DISCOVERY_CANDIDATES),
   targetChapter: z.number().int().positive().optional(),
 });
@@ -1069,23 +1069,11 @@ export function buildSearchAliases(query: string) {
     .replace(/[^A-Za-z0-9]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-  const titleParts = withoutBracketText
-    .split(/\s*[:|/-]\s*/)
-    .map((part) => part.trim())
-    .filter(Boolean);
-  const compactKeywords = punctuationAsSpace
-    .split(' ')
-    .filter(
-      (word) => !['a', 'an', 'and', 'of', 'the'].includes(word.toLowerCase())
-    )
-    .join(' ');
 
   return uniqueNonEmpty([
     normalized,
     withoutBracketText,
     punctuationAsSpace,
-    ...titleParts,
-    compactKeywords,
     punctuationAsSpace.toLowerCase(),
   ]).slice(0, MAX_ALIASES);
 }
@@ -1689,8 +1677,8 @@ async function generateTitleCorrection(
   } = {}
 ) {
   const prompt = [
-    'You help a manga/manhwa reader recover from a failed source search.',
-    'The app already tried the provided aliases exactly and found zero usable results.',
+    'You help a manga/manhwa reader recover from a failed title wording lookup or source search.',
+    'The app could not resolve usable title wordings, or it already tried the provided aliases exactly and found zero usable results.',
     'Return strict JSON with keys: correctedTitle, aliases, confidence, reason.',
     'Only return known/common manga, manhwa, or manhua titles. Prefer official/native titles and common scan titles.',
     'Do not split titles into generic fragments. Do not return aliases already attempted. If unsure, return an empty aliases array.',

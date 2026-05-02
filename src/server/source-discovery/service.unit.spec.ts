@@ -18,9 +18,6 @@ describe('source discovery service', () => {
     ).toEqual([
       'Infinite Martial Arts: Landing in the Future 10,000 Years',
       'Infinite Martial Arts Landing in the Future 10 000 Years',
-      'Infinite Martial Arts',
-      'Landing in the Future 10,000 Years',
-      'Infinite Martial Arts Landing in Future 10 000 Years',
       'infinite martial arts landing in the future 10 000 years',
     ]);
   });
@@ -443,6 +440,14 @@ describe('source discovery service', () => {
         observedResultCount: 0,
         query: 'Full Awakening',
         searchedCandidateCount: 120,
+      })
+    ).toBe(5);
+    expect(
+      calculateSourceDiscoveryTitleCorrectionTokenCost({
+        attemptedAliases: ['Full Awakening'],
+        observedResultCount: 0,
+        query: 'Full Awakening',
+        searchedCandidateCount: 0,
       })
     ).toBe(5);
     expect(
