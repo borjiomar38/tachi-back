@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SupportRouteImport } from './routes/support'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LogoutRouteImport } from './routes/logout'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
@@ -86,6 +87,11 @@ import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -474,6 +480,7 @@ export interface FileRoutesByFullPath {
   '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
@@ -546,6 +553,7 @@ export interface FileRoutesByTo {
   '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
@@ -622,6 +630,7 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
@@ -699,6 +708,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/logout'
     | '/pricing'
+    | '/sitemap.xml'
     | '/support'
     | '/api/contact'
     | '/api/upload'
@@ -771,6 +781,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/logout'
     | '/pricing'
+    | '/sitemap.xml'
     | '/support'
     | '/api/contact'
     | '/api/upload'
@@ -846,6 +857,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/logout'
     | '/pricing'
+    | '/sitemap.xml'
     | '/support'
     | '/api/contact'
     | '/api/upload'
@@ -922,6 +934,7 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   LogoutRoute: typeof LogoutRoute
   PricingRoute: typeof PricingRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
@@ -968,6 +981,13 @@ declare module '@tanstack/react-router' {
       path: '/support'
       fullPath: '/support'
       preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -1603,6 +1623,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute: HowItWorksRoute,
   LogoutRoute: LogoutRoute,
   PricingRoute: PricingRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
   ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,

@@ -1,4 +1,5 @@
 import { BlogArticleDetail, BlogArticleSummary } from '@/features/blog/schema';
+import { buildBlogSeoKeywords } from '@/features/blog/seo';
 
 export const fallbackBlogArticle: BlogArticleDetail = {
   body: {
@@ -27,7 +28,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
       },
     ],
     introduction:
-      'Readers searching for manhwa, manhua, manga translation, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. TachiyomiAT keeps that flow focused on the app, hosted OCR, redeem-code activation, and a consistent Android APK download path.',
+      'Readers searching for manhwa, manhua, manga translation, manhwa translate ia, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. TachiyomiAT keeps that flow focused on the app, hosted OCR, AI-assisted translation, redeem-code activation, and a consistent Android APK download path.',
     readingProfile: {
       bestFor:
         'Android readers who already have legal access to chapters and want a simpler hosted translation workflow.',
@@ -81,14 +82,14 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     passed: true,
     score: 100,
   },
-  keywords: [
+  keywords: buildBlogSeoKeywords([
     'tachiyomi download',
     'tachiyomiat',
     'manhwa translation',
     'manhua reader',
     'manga OCR',
     'android APK',
-  ],
+  ]),
   manhwaTitle: 'TachiyomiAT',
   manhwaType: 'manhwa',
   metaDescription:

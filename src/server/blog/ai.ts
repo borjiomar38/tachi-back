@@ -2,6 +2,11 @@ import { z } from 'zod';
 
 import { envServer } from '@/env/server';
 import { zBlogArticleBody } from '@/features/blog/schema';
+import {
+  buildBlogSeoKeywords,
+  highIntentBlogSeoKeywords,
+  requiredBlogSeoKeyword,
+} from '@/features/blog/seo';
 import { BlogGenerationTopic } from '@/server/blog/topics';
 import { ProviderType } from '@/server/db/generated/client';
 import { createProviderConfigError } from '@/server/provider-gateway/errors';
@@ -12,7 +17,7 @@ import {
   retryProviderCall,
 } from '@/server/provider-gateway/utils';
 
-const BLOG_PROMPT_VERSION = '2026-05-01.manhwa-seo.v1';
+const BLOG_PROMPT_VERSION = '2026-05-02.manhwa-seo.v2';
 
 const zGeneratedBlogArticle = z.object({
   body: zBlogArticleBody,
@@ -128,7 +133,10 @@ function buildArticlePrompt(input: {
     '{ title, slugBase, excerpt, metaDescription, keywords, imagePrompt, imageAlt, body: { introduction, sections, readingProfile, downloadCallout, faqs, disclaimer } }',
     '',
     'Rules:',
-    '- Target searches around manhwa, manhua, manga reader, translation app, TachiyomiAT, and Tachiyomi download intent.',
+    '- Target searches around manhwa, manhua, manga reader, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
+    `- The keywords array must include the exact phrase "${requiredBlogSeoKeyword}".`,
+    `- Work these high-intent SEO phrases into keywords and body copy only where they read naturally: ${highIntentBlogSeoKeywords.join(', ')}.`,
+    '- Prefer useful setup, reading workflow, OCR, AI translation, Android APK, and legal-use wording over keyword stuffing.',
     '- Mention TachiyomiAT naturally and include the idea that the download link is always available through the article CTA.',
     '- Do not claim TachiyomiAT hosts chapters, bypasses paywalls, or provides pirated content.',
     '- Keep the article useful for readers who already know the title but need a cleaner reading and translation workflow.',
@@ -407,7 +415,9 @@ function normalizeKeywords(rawKeywords: unknown, topic: BlogGenerationTopic) {
     }
   }
 
-  return keywords.slice(0, 12);
+  return buildBlogSeoKeywords(keywords, {
+    limit: 12,
+  });
 }
 
 function normalizeTakeaways(...sources: unknown[]) {

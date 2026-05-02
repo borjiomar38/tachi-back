@@ -6,6 +6,7 @@ import {
   zBlogAgentReview,
   zBlogArticleBody,
 } from '@/features/blog/schema';
+import { buildBlogSeoKeywords } from '@/features/blog/seo';
 import { generateBlogArticleDraft } from '@/server/blog/ai';
 import { generateBlogHeroImage } from '@/server/blog/images';
 import {
@@ -39,6 +40,17 @@ interface BlogArticleDetailRow extends BlogArticleSummaryRow {
   metaDescription: string;
   searchIntent: string;
   uxReview: unknown;
+}
+
+interface BlogSitemapEntryRow {
+  publishedAt: Date | null;
+  slug: string;
+  updatedAt: Date;
+}
+
+export interface BlogSitemapEntry {
+  lastModified: string;
+  slug: string;
 }
 
 const blogArticleSummarySelect = {
@@ -97,6 +109,27 @@ export async function getPublishedBlogArticleBySlug(
   });
 
   return row ? mapBlogArticleDetailRow(row) : null;
+}
+
+export async function getPublishedBlogSitemapEntries(): Promise<
+  BlogSitemapEntry[]
+> {
+  const rows = await db.blogArticle.findMany({
+    orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }],
+    select: {
+      publishedAt: true,
+      slug: true,
+      updatedAt: true,
+    },
+    where: {
+      publishedAt: {
+        lte: new Date(),
+      },
+      status: BlogArticleStatus.published,
+    },
+  });
+
+  return rows.map(mapBlogSitemapEntryRow);
 }
 
 export async function generateDailyBlogArticle(
@@ -284,7 +317,7 @@ function mapBlogArticleSummaryRow(
     excerpt: row.excerpt,
     imageAlt: row.imageAlt,
     imagePrompt: row.imagePrompt,
-    keywords: row.keywords,
+    keywords: buildBlogSeoKeywords(row.keywords),
     manhwaTitle: row.manhwaTitle,
     manhwaType: row.manhwaType,
     publishedAt: publishedAt.toISOString(),
@@ -303,6 +336,15 @@ function mapBlogArticleDetailRow(row: BlogArticleDetailRow): BlogArticleDetail {
     metaDescription: row.metaDescription,
     searchIntent: row.searchIntent,
     uxReview: parseReview(row.uxReview),
+  };
+}
+
+function mapBlogSitemapEntryRow(row: BlogSitemapEntryRow): BlogSitemapEntry {
+  const lastModified = row.updatedAt ?? row.publishedAt ?? new Date();
+
+  return {
+    lastModified: lastModified.toISOString(),
+    slug: row.slug,
   };
 }
 
