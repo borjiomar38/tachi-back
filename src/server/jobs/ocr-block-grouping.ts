@@ -101,7 +101,7 @@ export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(
         symWidth: (previousBlock.symWidth + nextBlock.symWidth) / 2,
         text: combinedText,
       };
-      nextPage.ocrPage.blocks.splice(nextBlockIndex, 1);
+      nextPage.ocrPage.blocks[nextBlockIndex] = toMaskOnlyBlock(nextBlock);
     } else {
       nextPage.ocrPage.blocks[nextBlockIndex] = {
         ...nextBlock,
@@ -109,7 +109,8 @@ export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(
         symWidth: (previousBlock.symWidth + nextBlock.symWidth) / 2,
         text: combinedText,
       };
-      previousPage.ocrPage.blocks.splice(previousBlockIndex, 1);
+      previousPage.ocrPage.blocks[previousBlockIndex] =
+        toMaskOnlyBlock(previousBlock);
     }
   }
 
@@ -297,6 +298,10 @@ function getPageBoundaryMargin(ocrPage: NormalizedOcrPage) {
 function isTextContinuationCandidate(
   block: NormalizedOcrPage['blocks'][number]
 ) {
+  if (block.renderMode === 'mask_only') {
+    return false;
+  }
+
   const text = normalizeOcrText(block.text);
 
   if (text.length < 4 || !/\p{L}/u.test(text)) {
@@ -360,4 +365,13 @@ function stripWrappingQuotes(text: string) {
     .replace(/^["'“”‘’]\s*/, '')
     .replace(/\s*["'“”‘’]$/g, '')
     .trim();
+}
+
+function toMaskOnlyBlock(
+  block: NormalizedOcrPage['blocks'][number]
+): NormalizedOcrPage['blocks'][number] {
+  return {
+    ...block,
+    renderMode: 'mask_only',
+  };
 }

@@ -1260,6 +1260,190 @@ describe('job service', () => {
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
   });
 
+  it('keeps cross-page continuation masks out of translation requests', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUnique: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                id: 'job-cross-page-mask',
+                objectChecksums: ['d'.repeat(64), 'e'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                queuedAt: new Date('2026-03-20T10:09:00.000Z'),
+                startedAt: new Date('2026-03-20T10:10:00.000Z'),
+                status: 'processing',
+                targetLanguage: 'ar',
+                uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
+              })
+            ),
+            updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+            updateMany: mockDb.tokenLedger.updateMany,
+          },
+          translationJob: {
+            update: vi.fn(),
+          },
+        };
+
+        return await callback(tx);
+      });
+
+    mockDb.translationResultCache.findFirst.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'source-cache-key',
+      objectKey:
+        'cache/translation-results/source-cache-key/translation-manifest.json',
+      resultManifest: {
+        completedAt: new Date('2026-03-20T09:00:00.000Z'),
+        deviceId: 'device-original',
+        jobId: 'job-original',
+        licenseId: 'license-original',
+        pageCount: 2,
+        pageOrder: ['001.jpg', '002.jpg'],
+        pages: {
+          '001.jpg': {
+            blocks: [
+              {
+                angle: 0,
+                height: 108,
+                symHeight: 20,
+                symWidth: 15,
+                text: '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL-',
+                translation: 'old translation first',
+                width: 313,
+                x: 197,
+                y: 2392,
+              },
+            ],
+            imgHeight: 2500,
+            imgWidth: 709,
+            sourceLanguage: 'en',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
+          '002.jpg': {
+            blocks: [
+              {
+                angle: 0,
+                height: 22,
+                symHeight: 20,
+                symWidth: 15,
+                text: 'INTENDED . "',
+                translation: 'old translation second',
+                width: 132,
+                x: 287,
+                y: 11,
+              },
+            ],
+            imgHeight: 2500,
+            imgWidth: 709,
+            sourceLanguage: 'en',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
+        },
+        sourceLanguage: 'en',
+        targetLanguage: 'fr',
+        translatorType: 'gemini',
+        version: '2026-03-20.phase11.v1',
+      },
+    });
+    mockPerformHostedTranslation.mockResolvedValue({
+      pages: [
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText:
+                '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL- INTENDED . "',
+              translation: 'Arabic cross-page sentence',
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+      ],
+      promptProfile: 'manga',
+      promptVersion: '2026-03-20.v1',
+      provider: 'gemini',
+      providerModel: 'gemini-test',
+      sourceLanguage: 'en',
+      targetLanguage: 'ar',
+      usage: {
+        finishReason: 'stop',
+        inputTokens: 10,
+        latencyMs: 200,
+        outputTokens: 5,
+        pageCount: 1,
+        providerRequestId: 'tr-cross-page-mask',
+        requestCount: 1,
+        stopReason: 'stop',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job-cross-page-mask/results/translation-manifest.json',
+    });
+    mockPutTranslationResultCacheManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'cache/translation-results/cache-key/translation-manifest.json',
+    });
+
+    const result = await processTranslationJob(
+      { jobId: 'job-cross-page-mask' },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+      }
+    );
+
+    expect(mockGetTranslationJobPageUpload).not.toHaveBeenCalled();
+    expect(mockPerformHostedOcr).not.toHaveBeenCalled();
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          {
+            blocks: [
+              {
+                text: '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL- INTENDED . "',
+              },
+            ],
+            pageKey: '001.jpg',
+          },
+        ],
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks[0]).toEqual(
+      expect.objectContaining({
+        text: '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL- INTENDED . "',
+        translation: 'Arabic cross-page sentence',
+      })
+    );
+    expect(result?.pages['002.jpg']?.blocks[0]).toEqual(
+      expect.objectContaining({
+        renderMode: 'mask_only',
+        text: 'INTENDED . "',
+        translation: '',
+      })
+    );
+  });
+
   it('keeps pages with no OCR blocks out of the translation request', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {

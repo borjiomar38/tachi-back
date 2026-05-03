@@ -18,6 +18,7 @@ type Chapter201GroupingCase = {
 
 type Chapter201CrossPageCase = {
   expectedMergedText: string;
+  expectedMaskOnlyText: string;
   nextBlocks: OcrBlock[];
   nextPageKey: string;
   previousBlocks: OcrBlock[];
@@ -50,6 +51,7 @@ describe('OCR block grouping chapter 201 regressions', () => {
     'keeps cross-page continuation together for $previousPageKey -> $nextPageKey from reader screenshot $screenshotPage',
     ({
       expectedMergedText,
+      expectedMaskOnlyText,
       nextBlocks,
       nextPageKey,
       previousBlocks,
@@ -66,15 +68,20 @@ describe('OCR block grouping chapter 201 regressions', () => {
         },
       ]);
 
-      const allTexts = result.flatMap((page) =>
-        page.ocrPage.blocks.map((item) => normalizeOcrText(item.text))
-      );
+      const allBlocks = result.flatMap((page) => page.ocrPage.blocks);
+      const translationTexts = allBlocks
+        .filter((block) => block.renderMode !== 'mask_only')
+        .map((item) => normalizeOcrText(item.text));
+      const maskOnlyTexts = allBlocks
+        .filter((block) => block.renderMode === 'mask_only')
+        .map((item) => normalizeOcrText(item.text));
 
-      expect(allTexts).toContain(normalizeOcrText(expectedMergedText));
-      expect(allTexts).not.toContain(
+      expect(translationTexts).toContain(normalizeOcrText(expectedMergedText));
+      expect(maskOnlyTexts).toContain(normalizeOcrText(expectedMaskOnlyText));
+      expect(translationTexts).not.toContain(
         normalizeOcrText(previousBlocks.at(-1)?.text ?? '')
       );
-      expect(allTexts).not.toContain(
+      expect(translationTexts).not.toContain(
         normalizeOcrText(nextBlocks[0]?.text ?? '')
       );
     }
@@ -843,6 +850,7 @@ function getChapter201CrossPageCases(): Chapter201CrossPageCase[] {
       ],
       expectedMergedText:
         '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL- INTENDED . "',
+      expectedMaskOnlyText: 'INTENDED . "',
     },
     {
       previousPageKey: '016__002.jpg',
@@ -872,6 +880,7 @@ function getChapter201CrossPageCases(): Chapter201CrossPageCase[] {
       ],
       expectedMergedText:
         '" RIGHT NOW , THE WORLD ALREADY BELONGS TO THE TAEPYEONG ALLIANCE AND THE HERO ALLIANCE . "',
+      expectedMaskOnlyText: '" RIGHT NOW , THE WORLD ALREADY',
     },
   ];
 }

@@ -1154,12 +1154,32 @@ async function processStartedTranslationJob(
     const translationProvider = toGatewayTranslationProvider(
       startedJob.resolvedTranslationProvider
     );
-    const translatablePages = layoutPages
-      .filter((page) => page.ocrPage.blocks.length > 0)
-      .map((page) => ({
-        blocks: page.ocrPage.blocks.map((block) => ({ text: block.text })),
-        pageKey: page.fileName,
-      }));
+    const translatableBlockIndexesByPage = new Map<string, number[]>();
+    const translatablePages = layoutPages.flatMap((page) => {
+      const translatableBlockIndexes: number[] = [];
+      const blocks = page.ocrPage.blocks.flatMap((block, index) => {
+        if (isMaskOnlyOcrBlock(block)) {
+          return [];
+        }
+
+        translatableBlockIndexes.push(index);
+        return [{ text: block.text }];
+      });
+
+      translatableBlockIndexesByPage.set(
+        page.fileName,
+        translatableBlockIndexes
+      );
+
+      return blocks.length > 0
+        ? [
+            {
+              blocks,
+              pageKey: page.fileName,
+            },
+          ]
+        : [];
+    });
     const translationBatch =
       translatablePages.length > 0
         ? await performHostedTranslation({
@@ -1202,9 +1222,11 @@ async function processStartedTranslationJob(
     const pages: Record<string, HostedPageTranslation> = {};
 
     for (const page of layoutPages) {
+      const translatableBlockIndexes =
+        translatableBlockIndexesByPage.get(page.fileName) ?? [];
       const translationPage =
         translationsByPage.get(page.fileName) ??
-        (page.ocrPage.blocks.length === 0
+        (translatableBlockIndexes.length === 0
           ? {
               blocks: [],
               pageKey: page.fileName,
@@ -1218,7 +1240,12 @@ async function processStartedTranslationJob(
       pages[page.fileName] = mergeHostedPageTranslation({
         ocrPage: page.ocrPage,
         targetLanguage: startedJob.targetLanguage,
-        translationPage,
+        translationPage: mapTranslationPageToOcrBlocks({
+          ocrPage: page.ocrPage,
+          pageKey: page.fileName,
+          translatableBlockIndexes,
+          translationPage,
+        }),
         translatorType:
           translationBatch?.provider ?? translationProvider ?? 'openai',
       });
@@ -1889,6 +1916,43 @@ async function cleanupCompletedJobPageUploads(input: {
       scope: 'jobs',
     });
   }
+}
+
+function mapTranslationPageToOcrBlocks(input: {
+  ocrPage: NormalizedOcrPage;
+  pageKey: string;
+  translatableBlockIndexes: number[];
+  translationPage: {
+    blocks: Array<{ translation?: string }>;
+    pageKey: string;
+  };
+}) {
+  const translationsByOcrBlockIndex = new Map<number, string>();
+
+  for (const [
+    translationBlockIndex,
+    ocrBlockIndex,
+  ] of input.translatableBlockIndexes.entries()) {
+    translationsByOcrBlockIndex.set(
+      ocrBlockIndex,
+      input.translationPage.blocks[translationBlockIndex]?.translation ?? ''
+    );
+  }
+
+  return {
+    blocks: input.ocrPage.blocks.map((block, index) => ({
+      index,
+      sourceText: block.text,
+      translation: isMaskOnlyOcrBlock(block)
+        ? ''
+        : (translationsByOcrBlockIndex.get(index) ?? ''),
+    })),
+    pageKey: input.pageKey,
+  };
+}
+
+function isMaskOnlyOcrBlock(block: NormalizedOcrPage['blocks'][number]) {
+  return block.renderMode === 'mask_only';
 }
 
 function getUploadedAt(metadata: unknown) {

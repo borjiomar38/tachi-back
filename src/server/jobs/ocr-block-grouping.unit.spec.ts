@@ -111,10 +111,16 @@ describe('OCR block grouping', () => {
       ]),
     ]);
 
-    expect(result[0]?.ocrPage.blocks).toHaveLength(0);
+    expect(result[0]?.ocrPage.blocks).toEqual([
+      expect.objectContaining({
+        renderMode: 'mask_only',
+        text: '" RIGHT NOW, THE WORLD ALREADY',
+      }),
+    ]);
     expect(result[1]?.ocrPage.blocks.map((item) => item.text)).toEqual([
       '" RIGHT NOW, THE WORLD ALREADY BELONGS TO THE ALLIANCE."',
     ]);
+    expect(result[1]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
   });
 
   it('does not merge a completed bottom bubble with a new top bubble', () => {

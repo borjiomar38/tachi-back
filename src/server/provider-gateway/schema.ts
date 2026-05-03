@@ -22,6 +22,7 @@ export const zProviderUsageSnapshot = z.object({
 export const zNormalizedOcrBlock = z.object({
   angle: z.number(),
   height: z.number().positive(),
+  renderMode: z.enum(['translation', 'mask_only']).optional(),
   symHeight: z.number().positive(),
   symWidth: z.number().positive(),
   text: z.string().trim().min(1),
@@ -91,6 +92,7 @@ export const zHostedPageTranslation = z.object({
     z.object({
       angle: z.number(),
       height: z.number().positive(),
+      renderMode: z.enum(['translation', 'mask_only']).optional(),
       symHeight: z.number().positive(),
       symWidth: z.number().positive(),
       text: z.string().trim().min(1),
