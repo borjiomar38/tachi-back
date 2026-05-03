@@ -151,7 +151,7 @@ type JobProgressSnapshot = {
   updatedAt: string;
 };
 
-const JOB_RESULT_VERSION = '2026-05-03.ocr-grouping.v1' as const;
+export const JOB_RESULT_VERSION = '2026-05-03.ocr-grouping.v1' as const;
 const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
 const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
 const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
