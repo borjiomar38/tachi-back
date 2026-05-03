@@ -2246,7 +2246,7 @@ function mapCachedManifestToOcrLayoutPages(input: {
 
     layoutPages.push({
       fileName: asset.originalFileName,
-      ocrPage,
+      ocrPage: coalesceOcrLineBlocks(ocrPage),
     });
   }
 

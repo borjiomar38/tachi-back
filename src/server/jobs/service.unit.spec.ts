@@ -1170,24 +1170,57 @@ describe('job service', () => {
             blocks: [
               {
                 angle: 0,
-                height: 10,
-                symHeight: 5,
-                symWidth: 5,
-                text: 'hello',
-                translation: 'bonjour',
-                width: 20,
-                x: 1,
-                y: 2,
+                height: 46,
+                symHeight: 26.91666666666666,
+                symWidth: 18.58333333333334,
+                text: 'QUE  DE TE  DIGO',
+                translation: 'old right top',
+                width: 168,
+                x: 507,
+                y: 309,
+              },
+              {
+                angle: 0,
+                height: 15,
+                symHeight: 15,
+                symWidth: 14.44444444444444,
+                text: 'SIENTO  QUE',
+                translation: 'old left top',
+                width: 124,
+                x: 278,
+                y: 342,
+              },
+              {
+                angle: 0,
+                height: 38,
+                symHeight: 23.07142857142857,
+                symWidth: 15.28571428571429,
+                text: 'VERDAD  LO  VI !!!!',
+                translation: 'old right bottom',
+                width: 162,
+                x: 504,
+                y: 346,
+              },
+              {
+                angle: 0,
+                height: 40,
+                symHeight: 15.5,
+                symWidth: 13.98128342245989,
+                text: 'OBTUVE  UN  BENEFICIO INESPERADO .',
+                translation: 'old left bottom',
+                width: 225,
+                x: 232,
+                y: 366,
               },
             ],
-            imgHeight: 100,
-            imgWidth: 80,
-            sourceLanguage: 'ja',
+            imgHeight: 2320,
+            imgWidth: 720,
+            sourceLanguage: 'es',
             targetLanguage: 'fr',
             translatorType: 'gemini',
           },
         },
-        sourceLanguage: 'ja',
+        sourceLanguage: 'es',
         targetLanguage: 'fr',
         translatorType: 'gemini',
         version: '2026-03-20.phase11.v1',
@@ -1199,8 +1232,13 @@ describe('job service', () => {
           blocks: [
             {
               index: 0,
-              sourceText: 'hello',
-              translation: 'marhaba',
+              sourceText: 'QUE  DE TE  DIGO VERDAD  LO  VI !!!!',
+              translation: 'Arabic right merged',
+            },
+            {
+              index: 1,
+              sourceText: 'SIENTO  QUE OBTUVE  UN  BENEFICIO INESPERADO .',
+              translation: 'Arabic left merged',
             },
           ],
           pageKey: '001.jpg',
@@ -1210,7 +1248,7 @@ describe('job service', () => {
       promptVersion: '2026-03-20.v1',
       provider: 'gemini',
       providerModel: 'gemini-test',
-      sourceLanguage: 'ja',
+      sourceLanguage: 'es',
       targetLanguage: 'ar',
       usage: {
         finishReason: 'stop',
@@ -1248,15 +1286,38 @@ describe('job service', () => {
       expect.objectContaining({
         pages: [
           {
-            blocks: [{ text: 'hello' }],
+            blocks: [
+              { text: 'QUE  DE TE  DIGO VERDAD  LO  VI !!!!' },
+              { text: 'SIENTO  QUE OBTUVE  UN  BENEFICIO INESPERADO .' },
+            ],
             pageKey: '001.jpg',
           },
         ],
-        sourceLanguage: 'ja',
+        sourceLanguage: 'es',
         targetLanguage: 'ar',
       })
     );
-    expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('marhaba');
+    expect(result?.pages['001.jpg']?.blocks).toHaveLength(2);
+    expect(result?.pages['001.jpg']?.blocks[0]).toEqual(
+      expect.objectContaining({
+        height: 75,
+        text: 'QUE  DE TE  DIGO VERDAD  LO  VI !!!!',
+        translation: 'Arabic right merged',
+        width: 171,
+        x: 504,
+        y: 309,
+      })
+    );
+    expect(result?.pages['001.jpg']?.blocks[1]).toEqual(
+      expect.objectContaining({
+        height: 64,
+        text: 'SIENTO  QUE OBTUVE  UN  BENEFICIO INESPERADO .',
+        translation: 'Arabic left merged',
+        width: 225,
+        x: 232,
+        y: 342,
+      })
+    );
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
   });
 

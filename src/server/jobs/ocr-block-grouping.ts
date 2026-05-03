@@ -14,30 +14,69 @@ export function coalesceOcrLineBlocks(
   const sortedBlocks = [...ocrPage.blocks].sort(
     (left, right) => left.y - right.y || left.x - right.x
   );
-  const groups: Array<NormalizedOcrPage['blocks']> = [];
+  const parent = sortedBlocks.map((_, index) => index);
+  const find = (index: number): number => {
+    const parentIndex = parent[index];
 
-  for (const block of sortedBlocks) {
-    const currentGroup = groups[groups.length - 1];
-    const previousBlock =
-      currentGroup && currentGroup.length > 1
-        ? mergeOcrBlockGroup(currentGroup)
-        : currentGroup?.[0];
+    if (parentIndex == null || parentIndex === index) {
+      return index;
+    }
 
-    if (
-      currentGroup &&
-      previousBlock &&
-      shouldCoalesceOcrBlocks(previousBlock, block)
-    ) {
-      currentGroup.push(block);
+    const root = find(parentIndex);
+    parent[index] = root;
+    return root;
+  };
+  const union = (left: number, right: number) => {
+    const leftRoot = find(left);
+    const rightRoot = find(right);
+
+    if (leftRoot !== rightRoot) {
+      parent[rightRoot] = leftRoot;
+    }
+  };
+
+  for (let leftIndex = 0; leftIndex < sortedBlocks.length; leftIndex += 1) {
+    const leftBlock = sortedBlocks[leftIndex];
+
+    if (!leftBlock) {
       continue;
     }
 
-    groups.push([block]);
+    for (
+      let rightIndex = leftIndex + 1;
+      rightIndex < sortedBlocks.length;
+      rightIndex += 1
+    ) {
+      const rightBlock = sortedBlocks[rightIndex];
+
+      if (!rightBlock) {
+        continue;
+      }
+
+      if (shouldCoalesceOcrBlocks(leftBlock, rightBlock)) {
+        union(leftIndex, rightIndex);
+      }
+    }
+  }
+
+  const groups = new Map<number, NormalizedOcrPage['blocks']>();
+
+  for (const [index, block] of sortedBlocks.entries()) {
+    const root = find(index);
+    const group = groups.get(root);
+
+    if (group) {
+      group.push(block);
+    } else {
+      groups.set(root, [block]);
+    }
   }
 
   return {
     ...ocrPage,
-    blocks: groups.map(mergeOcrBlockGroup),
+    blocks: [...groups.values()]
+      .map(mergeOcrBlockGroup)
+      .sort((left, right) => left.y - right.y || left.x - right.x),
   };
 }
 
