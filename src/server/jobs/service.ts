@@ -22,6 +22,10 @@ import {
 } from '@/server/provider-gateway/translation-cleanup';
 
 import {
+  coalesceOcrLineBlocks,
+  coalesceOcrPageContinuations,
+} from './ocr-block-grouping';
+import {
   type TranslationJobResultManifest,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
@@ -147,7 +151,7 @@ type JobProgressSnapshot = {
   updatedAt: string;
 };
 
-const JOB_RESULT_VERSION = '2026-03-20.phase11.v1' as const;
+const JOB_RESULT_VERSION = '2026-05-03.ocr-grouping.v1' as const;
 const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
 const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
 const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -1135,6 +1139,8 @@ async function processStartedTranslationJob(
         ocrPage: coalesceOcrLineBlocks(page.ocrPage),
       }));
     }
+
+    layoutPages = coalesceOcrPageContinuations(layoutPages);
 
     const detectedLanguages = layoutPages.map(
       (page) => page.ocrPage.sourceLanguage
@@ -2754,116 +2760,6 @@ function verticalOverlap(
   bottomB: number
 ) {
   return Math.max(0, Math.min(bottomA, bottomB) - Math.max(topA, topB));
-}
-
-function coalesceOcrLineBlocks(ocrPage: NormalizedOcrPage): NormalizedOcrPage {
-  if (ocrPage.blocks.length < 2) {
-    return ocrPage;
-  }
-
-  const sortedBlocks = [...ocrPage.blocks].sort(
-    (left, right) => left.y - right.y || left.x - right.x
-  );
-  const groups: Array<NormalizedOcrPage['blocks']> = [];
-
-  for (const block of sortedBlocks) {
-    const currentGroup = groups[groups.length - 1];
-    const previousBlock = currentGroup?.[currentGroup.length - 1];
-
-    if (
-      currentGroup &&
-      previousBlock &&
-      shouldCoalesceOcrBlocks(previousBlock, block)
-    ) {
-      currentGroup.push(block);
-      continue;
-    }
-
-    groups.push([block]);
-  }
-
-  return {
-    ...ocrPage,
-    blocks: groups.map(mergeOcrBlockGroup),
-  };
-}
-
-function shouldCoalesceOcrBlocks(
-  previousBlock: NormalizedOcrPage['blocks'][number],
-  nextBlock: NormalizedOcrPage['blocks'][number]
-) {
-  const previousBottom = previousBlock.y + previousBlock.height;
-  const verticalGap = nextBlock.y - previousBottom;
-  const averageSymbolHeight =
-    (previousBlock.symHeight + nextBlock.symHeight) / 2;
-  const maxVerticalGap = Math.max(14, Math.min(36, averageSymbolHeight * 1.4));
-  const maxVerticalOverlap = Math.max(10, averageSymbolHeight * 1.2);
-  const previousCenterY = previousBlock.y + previousBlock.height / 2;
-  const nextCenterY = nextBlock.y + nextBlock.height / 2;
-  const centerYDistance = nextCenterY - previousCenterY;
-  const maxLineStep = Math.max(
-    42,
-    averageSymbolHeight * 3,
-    Math.min(previousBlock.height, nextBlock.height) * 0.9
-  );
-
-  if (verticalGap > maxVerticalGap) {
-    return false;
-  }
-
-  if (Math.abs(previousBlock.angle - nextBlock.angle) > 8) {
-    return false;
-  }
-
-  if (verticalGap < -maxVerticalOverlap && centerYDistance > maxLineStep) {
-    return false;
-  }
-
-  const overlap =
-    Math.min(
-      previousBlock.x + previousBlock.width,
-      nextBlock.x + nextBlock.width
-    ) - Math.max(previousBlock.x, nextBlock.x);
-  const minWidth = Math.min(previousBlock.width, nextBlock.width);
-  const overlapRatio = minWidth > 0 ? overlap / minWidth : 0;
-  const previousCenter = previousBlock.x + previousBlock.width / 2;
-  const nextCenter = nextBlock.x + nextBlock.width / 2;
-  const maxCenterDistance = Math.max(
-    48,
-    averageSymbolHeight * 4,
-    Math.min(previousBlock.width, nextBlock.width) * 0.55
-  );
-
-  return (
-    overlapRatio >= 0.25 ||
-    Math.abs(previousCenter - nextCenter) <= maxCenterDistance
-  );
-}
-
-function mergeOcrBlockGroup(
-  blocks: NormalizedOcrPage['blocks']
-): NormalizedOcrPage['blocks'][number] {
-  if (blocks.length === 1) {
-    return blocks[0]!;
-  }
-
-  const left = Math.min(...blocks.map((block) => block.x));
-  const top = Math.min(...blocks.map((block) => block.y));
-  const right = Math.max(...blocks.map((block) => block.x + block.width));
-  const bottom = Math.max(...blocks.map((block) => block.y + block.height));
-
-  return {
-    angle: blocks[0]?.angle ?? 0,
-    height: bottom - top,
-    symHeight:
-      blocks.reduce((sum, block) => sum + block.symHeight, 0) / blocks.length,
-    symWidth:
-      blocks.reduce((sum, block) => sum + block.symWidth, 0) / blocks.length,
-    text: blocks.map((block) => block.text).join(' '),
-    width: right - left,
-    x: left,
-    y: top,
-  };
 }
 
 function resolveEffectiveSourceLanguage(

@@ -1,0 +1,363 @@
+import { type NormalizedOcrPage } from '@/server/provider-gateway/schema';
+
+type OcrLayoutPageLike = {
+  ocrPage: NormalizedOcrPage;
+};
+
+export function coalesceOcrLineBlocks(
+  ocrPage: NormalizedOcrPage
+): NormalizedOcrPage {
+  if (ocrPage.blocks.length < 2) {
+    return ocrPage;
+  }
+
+  const sortedBlocks = [...ocrPage.blocks].sort(
+    (left, right) => left.y - right.y || left.x - right.x
+  );
+  const groups: Array<NormalizedOcrPage['blocks']> = [];
+
+  for (const block of sortedBlocks) {
+    const currentGroup = groups[groups.length - 1];
+    const previousBlock =
+      currentGroup && currentGroup.length > 1
+        ? mergeOcrBlockGroup(currentGroup)
+        : currentGroup?.[0];
+
+    if (
+      currentGroup &&
+      previousBlock &&
+      shouldCoalesceOcrBlocks(previousBlock, block)
+    ) {
+      currentGroup.push(block);
+      continue;
+    }
+
+    groups.push([block]);
+  }
+
+  return {
+    ...ocrPage,
+    blocks: groups.map(mergeOcrBlockGroup),
+  };
+}
+
+export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(
+  pages: T[]
+): T[] {
+  if (pages.length < 2) {
+    return pages;
+  }
+
+  const nextPages = pages.map((page) => ({
+    ...page,
+    ocrPage: {
+      ...page.ocrPage,
+      blocks: sortOcrBlocksForReading(page.ocrPage.blocks),
+    },
+  }));
+
+  for (let pageIndex = 0; pageIndex < nextPages.length - 1; pageIndex += 1) {
+    const previousPage = nextPages[pageIndex];
+    const nextPage = nextPages[pageIndex + 1];
+
+    if (!previousPage || !nextPage) {
+      continue;
+    }
+
+    const previousBlockIndex = findBottomContinuationBlockIndex(
+      previousPage.ocrPage
+    );
+    const nextBlockIndex = findTopContinuationBlockIndex(nextPage.ocrPage);
+
+    if (previousBlockIndex == null || nextBlockIndex == null) {
+      continue;
+    }
+
+    const previousBlock = previousPage.ocrPage.blocks[previousBlockIndex];
+    const nextBlock = nextPage.ocrPage.blocks[nextBlockIndex];
+
+    if (
+      !previousBlock ||
+      !nextBlock ||
+      !shouldCoalesceOcrPageContinuationBlocks({
+        nextBlock,
+        nextPage: nextPage.ocrPage,
+        previousBlock,
+        previousPage: previousPage.ocrPage,
+      })
+    ) {
+      continue;
+    }
+
+    const combinedText = combineOcrText(previousBlock.text, nextBlock.text);
+    const keepPrevious =
+      previousBlock.width * previousBlock.height >=
+      nextBlock.width * nextBlock.height;
+
+    if (keepPrevious) {
+      previousPage.ocrPage.blocks[previousBlockIndex] = {
+        ...previousBlock,
+        symHeight: (previousBlock.symHeight + nextBlock.symHeight) / 2,
+        symWidth: (previousBlock.symWidth + nextBlock.symWidth) / 2,
+        text: combinedText,
+      };
+      nextPage.ocrPage.blocks.splice(nextBlockIndex, 1);
+    } else {
+      nextPage.ocrPage.blocks[nextBlockIndex] = {
+        ...nextBlock,
+        symHeight: (previousBlock.symHeight + nextBlock.symHeight) / 2,
+        symWidth: (previousBlock.symWidth + nextBlock.symWidth) / 2,
+        text: combinedText,
+      };
+      previousPage.ocrPage.blocks.splice(previousBlockIndex, 1);
+    }
+  }
+
+  return nextPages;
+}
+
+export function shouldCoalesceOcrBlocks(
+  previousBlock: NormalizedOcrPage['blocks'][number],
+  nextBlock: NormalizedOcrPage['blocks'][number]
+) {
+  const previousBottom = previousBlock.y + previousBlock.height;
+  const verticalGap = nextBlock.y - previousBottom;
+  const averageSymbolHeight =
+    (previousBlock.symHeight + nextBlock.symHeight) / 2;
+  const maxVerticalGap = Math.max(6, Math.min(24, averageSymbolHeight * 0.85));
+  const maxVerticalOverlap = Math.max(10, averageSymbolHeight * 1.2);
+  const previousCenterY = previousBlock.y + previousBlock.height / 2;
+  const nextCenterY = nextBlock.y + nextBlock.height / 2;
+  const centerYDistance = nextCenterY - previousCenterY;
+  const maxLineStep = Math.max(
+    42,
+    averageSymbolHeight * 3,
+    Math.min(previousBlock.height, nextBlock.height) * 0.9
+  );
+
+  if (verticalGap > maxVerticalGap) {
+    return false;
+  }
+
+  if (Math.abs(previousBlock.angle - nextBlock.angle) > 8) {
+    return false;
+  }
+
+  if (verticalGap < -maxVerticalOverlap && centerYDistance > maxLineStep) {
+    return false;
+  }
+
+  const overlap =
+    Math.min(
+      previousBlock.x + previousBlock.width,
+      nextBlock.x + nextBlock.width
+    ) - Math.max(previousBlock.x, nextBlock.x);
+  const minWidth = Math.min(previousBlock.width, nextBlock.width);
+  const overlapRatio = minWidth > 0 ? overlap / minWidth : 0;
+  const previousCenter = previousBlock.x + previousBlock.width / 2;
+  const nextCenter = nextBlock.x + nextBlock.width / 2;
+  const maxCenterDistance = Math.max(
+    48,
+    averageSymbolHeight * 4,
+    Math.min(previousBlock.width, nextBlock.width) * 0.55
+  );
+
+  return (
+    overlapRatio >= 0.25 ||
+    Math.abs(previousCenter - nextCenter) <= maxCenterDistance
+  );
+}
+
+function shouldCoalesceOcrPageContinuationBlocks(input: {
+  nextBlock: NormalizedOcrPage['blocks'][number];
+  nextPage: NormalizedOcrPage;
+  previousBlock: NormalizedOcrPage['blocks'][number];
+  previousPage: NormalizedOcrPage;
+}) {
+  if (
+    input.previousBlock.y + input.previousBlock.height <
+      input.previousPage.imgHeight -
+        getPageBoundaryMargin(input.previousPage) ||
+    input.nextBlock.y > getPageBoundaryMargin(input.nextPage)
+  ) {
+    return false;
+  }
+
+  if (
+    !isTextContinuationCandidate(input.previousBlock) ||
+    !isTextContinuationCandidate(input.nextBlock)
+  ) {
+    return false;
+  }
+
+  if (
+    !previousTextSuggestsContinuation(input.previousBlock.text) ||
+    !nextTextLooksLikeContinuation(input.nextBlock.text)
+  ) {
+    return false;
+  }
+
+  const overlap =
+    Math.min(
+      input.previousBlock.x + input.previousBlock.width,
+      input.nextBlock.x + input.nextBlock.width
+    ) - Math.max(input.previousBlock.x, input.nextBlock.x);
+  const minWidth = Math.min(input.previousBlock.width, input.nextBlock.width);
+  const overlapRatio = minWidth > 0 ? overlap / minWidth : 0;
+  const previousCenter = input.previousBlock.x + input.previousBlock.width / 2;
+  const nextCenter = input.nextBlock.x + input.nextBlock.width / 2;
+  const averageSymbolHeight =
+    (input.previousBlock.symHeight + input.nextBlock.symHeight) / 2;
+  const maxCenterDistance = Math.max(
+    70,
+    averageSymbolHeight * 8,
+    minWidth * 0.8
+  );
+
+  return (
+    overlapRatio >= 0.18 ||
+    Math.abs(previousCenter - nextCenter) <= maxCenterDistance
+  );
+}
+
+function mergeOcrBlockGroup(
+  blocks: NormalizedOcrPage['blocks']
+): NormalizedOcrPage['blocks'][number] {
+  if (blocks.length === 1) {
+    return blocks[0]!;
+  }
+
+  const left = Math.min(...blocks.map((block) => block.x));
+  const top = Math.min(...blocks.map((block) => block.y));
+  const right = Math.max(...blocks.map((block) => block.x + block.width));
+  const bottom = Math.max(...blocks.map((block) => block.y + block.height));
+
+  return {
+    angle: blocks[0]?.angle ?? 0,
+    height: bottom - top,
+    symHeight:
+      blocks.reduce((sum, block) => sum + block.symHeight, 0) / blocks.length,
+    symWidth:
+      blocks.reduce((sum, block) => sum + block.symWidth, 0) / blocks.length,
+    text: blocks.map((block) => block.text).join(' '),
+    width: right - left,
+    x: left,
+    y: top,
+  };
+}
+
+function sortOcrBlocksForReading(blocks: NormalizedOcrPage['blocks']) {
+  return [...blocks].sort(
+    (left, right) => left.y - right.y || left.x - right.x
+  );
+}
+
+function findBottomContinuationBlockIndex(ocrPage: NormalizedOcrPage) {
+  const margin = getPageBoundaryMargin(ocrPage);
+
+  for (let index = ocrPage.blocks.length - 1; index >= 0; index -= 1) {
+    const block = ocrPage.blocks[index];
+
+    if (!block) {
+      continue;
+    }
+
+    if (block.y + block.height < ocrPage.imgHeight - margin) {
+      return null;
+    }
+
+    if (isTextContinuationCandidate(block)) {
+      return index;
+    }
+  }
+
+  return null;
+}
+
+function findTopContinuationBlockIndex(ocrPage: NormalizedOcrPage) {
+  const margin = getPageBoundaryMargin(ocrPage);
+
+  for (const [index, block] of ocrPage.blocks.entries()) {
+    if (block.y > margin) {
+      return null;
+    }
+
+    if (isTextContinuationCandidate(block)) {
+      return index;
+    }
+  }
+
+  return null;
+}
+
+function getPageBoundaryMargin(ocrPage: NormalizedOcrPage) {
+  return Math.max(64, Math.min(140, ocrPage.imgHeight * 0.05));
+}
+
+function isTextContinuationCandidate(
+  block: NormalizedOcrPage['blocks'][number]
+) {
+  const text = normalizeOcrText(block.text);
+
+  if (text.length < 4 || !/\p{L}/u.test(text)) {
+    return false;
+  }
+
+  if (
+    /\b(?:ACLOUD|COLAMANGA|MANGA|MEROL|RTMTH)\b/i.test(text) ||
+    /\.[A-Z]{2,}\b/i.test(text)
+  ) {
+    return false;
+  }
+
+  if (block.symHeight > 45 && text.split(/\s+/).length < 4) {
+    return false;
+  }
+
+  return true;
+}
+
+function previousTextSuggestsContinuation(text: string) {
+  const normalized = stripWrappingQuotes(normalizeOcrText(text));
+
+  return (
+    /[-,;:]$/.test(normalized) ||
+    !/[.!?]$/.test(normalized) ||
+    hasUnclosedDoubleQuote(text)
+  );
+}
+
+function nextTextLooksLikeContinuation(text: string) {
+  const normalized = normalizeOcrText(text);
+  const withoutOpeningQuote = normalized.replace(/^["'“”‘’]\s*/, '');
+
+  return (
+    withoutOpeningQuote === normalized ||
+    /^(?:AND|AS|BECAUSE|BUT|IF|IN|NOR|OR|SO|THAT|THEN|TO|WHILE)\b/i.test(
+      withoutOpeningQuote
+    )
+  );
+}
+
+function hasUnclosedDoubleQuote(text: string) {
+  const quoteCount = (text.match(/"/g) ?? []).length;
+
+  return quoteCount % 2 === 1;
+}
+
+function combineOcrText(previousText: string, nextText: string) {
+  return `${normalizeOcrText(previousText)} ${normalizeOcrText(nextText)}`
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function normalizeOcrText(text: string) {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
+function stripWrappingQuotes(text: string) {
+  return text
+    .replace(/^["'“”‘’]\s*/, '')
+    .replace(/\s*["'“”‘’]$/g, '')
+    .trim();
+}

@@ -146,7 +146,7 @@ export const zTranslationJobResultManifest = z.object({
   sourceLanguage: z.string(),
   targetLanguage: z.string(),
   translatorType: z.enum(['anthropic', 'gemini', 'openai']),
-  version: z.literal('2026-03-20.phase11.v1'),
+  version: z.enum(['2026-03-20.phase11.v1', '2026-05-03.ocr-grouping.v1']),
 });
 
 export type TranslationJobResultManifest = z.infer<
