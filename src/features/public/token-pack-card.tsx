@@ -23,9 +23,20 @@ interface TokenPackCardProps {
 
 export const TokenPackCard = (props: TokenPackCardProps) => {
   const { tokenPack, featured = false } = props;
+  const isFreePlan = tokenPack.key === 'free';
   const textMutedClassName = featured
     ? 'text-neutral-300'
     : 'text-muted-foreground';
+  const primaryHref = isFreePlan
+    ? '/download'
+    : tokenPack.checkoutEnabled
+      ? `/checkout/${tokenPack.key}`
+      : '/support';
+  const primaryLabel = isFreePlan
+    ? 'Start free'
+    : tokenPack.checkoutEnabled
+      ? 'Buy now'
+      : 'Contact support';
 
   return (
     <Card
@@ -43,7 +54,11 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
               {tokenPack.marketingSummary}
             </CardDescription>
           </div>
-          {featured ? (
+          {isFreePlan ? (
+            <Badge variant="secondary" size="sm">
+              Free plan
+            </Badge>
+          ) : featured ? (
             <Badge variant="brand" size="sm">
               Most popular
             </Badge>
@@ -57,7 +72,9 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
       <CardContent className="flex h-full flex-col gap-5">
         <div className="space-y-1">
           <p className="text-3xl font-semibold tracking-tight">
-            {formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)}
+            {isFreePlan
+              ? 'Free'
+              : formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)}
           </p>
           <p className={cn('text-sm', textMutedClassName)}>
             About{' '}
@@ -77,13 +94,15 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
           </div>
           <div className="flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2">
             <span className={textMutedClassName}>Billing</span>
-            <span className="font-medium">Monthly renewal</span>
+            <span className="font-medium">
+              {isFreePlan ? 'Included monthly' : 'Monthly renewal'}
+            </span>
           </div>
         </div>
 
         <div className="mt-auto flex flex-col gap-2">
           <a
-            href={tokenPack.checkoutEnabled ? `/checkout/${tokenPack.key}` : '/support'}
+            href={primaryHref}
             className={cn(
               buttonVariants({
                 variant: featured ? 'secondary' : 'default',
@@ -91,9 +110,7 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
               'w-full'
             )}
           >
-            {tokenPack.checkoutEnabled
-              ? 'Buy now'
-              : 'Contact support'}
+            {primaryLabel}
           </a>
           <a
             href="/how-it-works"
@@ -102,23 +119,6 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
             How it works
           </a>
         </div>
-
-        <p className={cn('text-xs leading-5', textMutedClassName)}>
-          Simple monthly access for manga and manhwa translation inside the
-          app.
-        </p>
-
-        <p className={cn('text-xs leading-5', textMutedClassName)}>
-          {tokenPack.checkoutEnabled
-            ? 'After payment, your redeem code is emailed and can be shared across devices or people.'
-            : 'Online payment is not configured in this environment yet.'}
-        </p>
-
-        <p className={cn('text-xs leading-5', textMutedClassName)}>
-          {tokenPack.checkoutEnabled
-            ? 'If monthly tokens run out, ask for an additional redeem code.'
-            : 'Contact support to configure access.'}
-        </p>
       </CardContent>
     </Card>
   );

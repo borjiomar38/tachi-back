@@ -2,7 +2,10 @@ import { createServerFn } from '@tanstack/react-start';
 import { z } from 'zod';
 
 import { envServer } from '@/env/server';
-import type { PublicTokenPack } from '@/features/public/data';
+import {
+  publicFreeTokenPack,
+  type PublicTokenPack,
+} from '@/features/public/data';
 import { db } from '@/server/db';
 
 const publicTokenPackSelect = {
@@ -56,7 +59,7 @@ export const getPublicTokenPacks = createServerFn({ method: 'GET' }).handler(
       select: publicTokenPackSelect,
     });
 
-    return tokenPacks.map(mapPublicTokenPack);
+    return [publicFreeTokenPack, ...tokenPacks.map(mapPublicTokenPack)];
   }
 );
 

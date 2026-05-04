@@ -72,7 +72,7 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
         title="Real plans, recurring checkout path"
         description="Lemon Squeezy can collect recurring payment from these cards now, and monthly token crediting is finalized from paid invoice webhooks."
       >
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-4">
           {props.tokenPacks.map((tokenPack) => (
             <TokenPackCard
               key={tokenPack.id}

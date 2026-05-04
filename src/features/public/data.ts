@@ -25,7 +25,25 @@ export const PUBLIC_OWNER_WHATSAPP_DISPLAY = '+216 23 655 086';
 export const PUBLIC_OWNER_WHATSAPP_HREF =
   'https://wa.me/21623655086?text=Hello%20TachiyomiAT%2C%20I%20need%20help%20with%20the%20app.';
 
+export const publicFreeTokenPack: PublicTokenPack = {
+  id: 'public-free',
+  key: 'free',
+  name: 'Free 10',
+  description: 'Free monthly access for trying manga and manhwa translation.',
+  tokenAmount: 100,
+  bonusTokenAmount: 0,
+  priceAmountCents: 0,
+  currency: 'USD',
+  totalTokens: 100,
+  checkoutEnabled: false,
+  estimatedPages: 200,
+  estimatedChapters: 10,
+  marketingSummary: 'Free trial access',
+  marketedChaptersPerMonth: 10,
+};
+
 export const fallbackPublicTokenPacks: PublicTokenPack[] = [
+  publicFreeTokenPack,
   {
     id: 'fallback-starter',
     key: 'starter',
