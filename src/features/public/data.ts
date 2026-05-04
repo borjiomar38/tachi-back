@@ -29,7 +29,8 @@ export const publicFreeTokenPack: PublicTokenPack = {
   id: 'public-free',
   key: 'free',
   name: 'Free 10',
-  description: 'Free monthly access for trying manga and manhwa translation.',
+  description:
+    'Free monthly access for trying manga, manhwa, and manhua IA translation.',
   tokenAmount: 100,
   bonusTokenAmount: 0,
   priceAmountCents: 0,
@@ -96,17 +97,17 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
 
 export const publicHighlights: ContentBlock[] = [
   {
-    title: 'Manga translate IA fast',
+    title: 'Free manga IA translator',
     description:
       'Open a chapter, launch AI translation, and keep reading without complex setup.',
   },
   {
-    title: 'Manhwa translate IA workflow',
+    title: 'Free manhwa IA translator',
     description:
       'Text is detected cleanly on vertical manhwa pages, even when the layout is busy.',
   },
   {
-    title: 'Manhua translate IA support',
+    title: 'Free manhua IA translator',
     description:
       'Keep names, realms, and recurring terms consistent while reading manhua.',
   },

@@ -25,12 +25,15 @@ export const Route = createFileRoute('/')({
   },
   head: () =>
     buildPublicPageHead(
-      'Manga Translate IA App',
-      'TachiyomiAT helps readers with manga translate ia, manhwa translate ia, and manhua translate ia in-app using hosted OCR, clean translation, monthly token plans, redeem-code activation, and Android APK download.',
+      'Free Manga IA Translator App',
+      'TachiyomiAT helps readers try a free manga IA translator, free manhwa IA translator, and free manhua IA translator with hosted OCR, clean translation, redeem-code activation, and Android APK download.',
       '/',
       {
         keywords: [
           ...coreBlogSeoKeywords,
+          'free manga ia translator',
+          'free manhwa ia translator',
+          'free manhua ia translator',
           'AI manga translator',
           'AI manhwa translator',
           'AI manhua translator',
