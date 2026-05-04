@@ -402,11 +402,13 @@ export const PageLanding = (props: {
         description="Choose the offer that matches how much manga, manhwa, or manhua you want to translate every month."
       >
         {freeTokenPack ? (
-          <div className="mx-auto mb-4 w-full max-w-xl">
+          <div className="mb-4 grid gap-4 lg:grid-cols-3">
+            <div className="hidden lg:block" aria-hidden="true" />
             <TokenPackCard
               tokenPack={freeTokenPack}
               featured={false}
             />
+            <div className="hidden lg:block" aria-hidden="true" />
           </div>
         ) : null}
         <div className="grid gap-4 lg:grid-cols-3">

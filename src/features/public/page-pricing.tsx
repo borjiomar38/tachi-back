@@ -79,11 +79,13 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
         description="Lemon Squeezy can collect recurring payment from these cards now, and monthly token crediting is finalized from paid invoice webhooks."
       >
         {freeTokenPack ? (
-          <div className="mx-auto mb-4 w-full max-w-xl">
+          <div className="mb-4 grid gap-4 lg:grid-cols-3">
+            <div className="hidden lg:block" aria-hidden="true" />
             <TokenPackCard
               tokenPack={freeTokenPack}
               featured={false}
             />
+            <div className="hidden lg:block" aria-hidden="true" />
           </div>
         ) : null}
         <div className="grid gap-4 lg:grid-cols-3">
