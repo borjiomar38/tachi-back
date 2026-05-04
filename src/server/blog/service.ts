@@ -8,10 +8,12 @@ import {
 } from '@/features/blog/schema';
 import { buildBlogSeoKeywords } from '@/features/blog/seo';
 import { generateBlogArticleDraft } from '@/server/blog/ai';
-import { generateBlogHeroImage } from '@/server/blog/images';
+import { findPrebuiltBlogHeroImage } from '@/server/blog/images';
 import {
+  combineBlogImageReviews,
+  runAnimeMangaImageReviewAgent,
   runArticleUxReviewAgent,
-  runImageGenerationReviewAgent,
+  runHeroImageUxReviewAgent,
 } from '@/server/blog/review-agents';
 import {
   type BlogGenerationTopic,
@@ -151,7 +153,7 @@ export async function generateDailyBlogArticle(
   });
 
   if (existing) {
-    return await ensureBlogArticleHeroImage(existing, input.fetchFn);
+    return await ensureBlogArticleHeroImage(existing);
   }
 
   const topic = await selectDailyTopic(generationDate);
@@ -160,10 +162,10 @@ export async function generateDailyBlogArticle(
     fetchFn: input.fetchFn,
     topic,
   });
-  const imageReview = runImageGenerationReviewAgent({
+  const imageReview = runPrebuiltImageReview({
     imageAlt: draft.imageAlt,
     imagePrompt: draft.imagePrompt,
-    manhwaTitle: topic.manhwaTitle,
+    topic,
   });
   const uxReview = runArticleUxReviewAgent({
     body: draft.body,
@@ -174,22 +176,15 @@ export async function generateDailyBlogArticle(
   });
   const slug = await buildUniqueSlug(draft.slugBase, generationDate);
   const heroImage = imageReview.passed
-    ? await tryGenerateHeroImage({
-        fetchFn: input.fetchFn,
-        imagePrompt: draft.imagePrompt,
-        imageReview,
-        slug,
+    ? await findPrebuiltBlogHeroImage({
+        topic,
       })
-    : {
-        image: null,
-        imageReview,
-      };
-  const finalImageReview = heroImage.imageReview;
+    : null;
 
   const publishable =
-    finalImageReview.score >= 80 &&
+    imageReview.score >= 80 &&
     uxReview.score >= 80 &&
-    (!envServer.BLOG_IMAGE_GENERATION_ENABLED || Boolean(heroImage.image));
+    (!envServer.BLOG_IMAGE_GENERATION_ENABLED || Boolean(heroImage));
   const row = await db.blogArticle.create({
     data: {
       body: draft.body,
@@ -200,11 +195,11 @@ export async function generateDailyBlogArticle(
       generationPromptVersion: draft.generationPromptVersion,
       generationProvider: draft.generationProvider,
       generationSource: 'daily-cron',
-      heroImageObjectKey: heroImage.image?.heroImageObjectKey,
-      heroImageUrl: heroImage.image?.heroImageUrl,
+      heroImageObjectKey: heroImage?.heroImageObjectKey,
+      heroImageUrl: heroImage?.heroImageUrl,
       imageAlt: draft.imageAlt,
       imagePrompt: draft.imagePrompt,
-      imageReview: finalImageReview,
+      imageReview,
       keywords: draft.keywords,
       manhwaTitle: topic.manhwaTitle,
       manhwaType: topic.manhwaType,
@@ -270,49 +265,8 @@ async function buildUniqueSlug(slugBase: string, generationDate: string) {
   return `${base}-${Date.now().toString(36)}`;
 }
 
-async function tryGenerateHeroImage(input: {
-  fetchFn?: typeof fetch;
-  imagePrompt: string;
-  imageReview: BlogAgentReview;
-  slug: string;
-}) {
-  if (!envServer.BLOG_IMAGE_GENERATION_ENABLED) {
-    return {
-      image: null,
-      imageReview: input.imageReview,
-    };
-  }
-
-  try {
-    return {
-      image: await generateBlogHeroImage({
-        fetchFn: input.fetchFn,
-        imagePrompt: input.imagePrompt,
-        slug: input.slug,
-      }),
-      imageReview: input.imageReview,
-    };
-  } catch (error) {
-    return {
-      image: null,
-      imageReview: {
-        ...input.imageReview,
-        notes: [
-          ...input.imageReview.notes.slice(0, 5),
-          `Image generation failed: ${
-            error instanceof Error ? error.message : 'Unknown error'
-          }`,
-        ],
-        passed: false,
-        score: Math.min(input.imageReview.score, 70),
-      },
-    };
-  }
-}
-
 async function ensureBlogArticleHeroImage(
-  row: BlogArticleDetailRow,
-  fetchFn?: typeof fetch
+  row: BlogArticleDetailRow
 ): Promise<BlogArticleDetail> {
   if (row.heroImageUrl?.startsWith('/api/blog/heroes/')) {
     return mapBlogArticleDetailRow(row);
@@ -336,10 +290,11 @@ async function ensureBlogArticleHeroImage(
     return mapBlogArticleDetailRow(row);
   }
 
-  const imagePromptReview = runImageGenerationReviewAgent({
+  const topic = findTopicForArticle(row);
+  const imagePromptReview = runPrebuiltImageReview({
     imageAlt: row.imageAlt,
     imagePrompt: row.imagePrompt,
-    manhwaTitle: row.manhwaTitle,
+    topic,
   });
 
   if (!imagePromptReview.passed) {
@@ -356,17 +311,37 @@ async function ensureBlogArticleHeroImage(
     return mapBlogArticleDetailRow(updated);
   }
 
-  const heroImage = await tryGenerateHeroImage({
-    fetchFn,
-    imagePrompt: row.imagePrompt,
-    imageReview: imagePromptReview,
-    slug: row.slug,
+  const heroImage = await findPrebuiltBlogHeroImage({
+    topic,
   });
+
+  if (!heroImage) {
+    const updated = await db.blogArticle.update({
+      data: {
+        imageReview: {
+          ...imagePromptReview,
+          notes: [
+            ...imagePromptReview.notes.slice(0, 5),
+            'Needs attention: prebuilt Cloudflare hero image is missing for this topic.',
+          ],
+          passed: false,
+          score: Math.min(imagePromptReview.score, 70),
+        },
+      },
+      select: blogArticleDetailSelect,
+      where: {
+        slug: row.slug,
+      },
+    });
+
+    return mapBlogArticleDetailRow(updated);
+  }
+
   const updated = await db.blogArticle.update({
     data: {
-      heroImageObjectKey: heroImage.image?.heroImageObjectKey,
-      heroImageUrl: heroImage.image?.heroImageUrl,
-      imageReview: heroImage.imageReview,
+      heroImageObjectKey: heroImage.heroImageObjectKey,
+      heroImageUrl: heroImage.heroImageUrl,
+      imageReview: imagePromptReview,
     },
     select: blogArticleDetailSelect,
     where: {
@@ -375,6 +350,43 @@ async function ensureBlogArticleHeroImage(
   });
 
   return mapBlogArticleDetailRow(updated);
+}
+
+function runPrebuiltImageReview(input: {
+  imageAlt: string;
+  imagePrompt: string;
+  topic: BlogGenerationTopic;
+}) {
+  return combineBlogImageReviews([
+    runAnimeMangaImageReviewAgent(input),
+    runHeroImageUxReviewAgent({
+      imagePrompt: input.imagePrompt,
+    }),
+  ]);
+}
+
+function findTopicForArticle(row: {
+  manhwaTitle: string;
+  manhwaType: string;
+  searchIntent: string;
+}): BlogGenerationTopic {
+  return (
+    blogGenerationTopics.find(
+      (topic) =>
+        topic.manhwaTitle === row.manhwaTitle &&
+        topic.manhwaType === row.manhwaType
+    ) ?? {
+      angle: `Create a visual translation workflow article image for ${row.manhwaTitle}.`,
+      manhwaTitle: row.manhwaTitle,
+      manhwaType:
+        row.manhwaType === 'manga' ||
+        row.manhwaType === 'manhua' ||
+        row.manhwaType === 'manhwa'
+          ? row.manhwaType
+          : 'manhwa',
+      searchIntent: row.searchIntent,
+    }
+  );
 }
 
 function buildBlogHeroImageRouteUrl(slug: string) {

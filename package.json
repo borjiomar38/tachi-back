@@ -44,6 +44,7 @@
     "translation-cache:analyze-ocr": "dotenv -- node ./run-jiti.js ./scripts/analyze-translation-cache-ocr.ts",
     "translation-cache:retranslate-from-ocr": "dotenv -- node ./run-jiti.js ./scripts/retranslate-translation-cache-from-ocr.ts",
     "source-discovery:import": "dotenv -- cross-env node ./run-jiti ./scripts/import-source-search-methods.ts",
+    "blog:prepare-hero-images": "dotenv -- cross-env node ./run-jiti.js ./scripts/prepare-blog-hero-images.ts",
     "redeem:generate": "dotenv -- cross-env node ./run-jiti.js ./scripts/generate-redeem-code.ts"
   },
   "dependencies": {

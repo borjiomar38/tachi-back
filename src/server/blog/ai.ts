@@ -7,6 +7,10 @@ import {
   buildRequiredBlogSeoKeyword,
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
+import {
+  buildBlogTopicHeroImageAlt,
+  buildBlogTopicHeroImagePrompt,
+} from '@/server/blog/images';
 import { BlogGenerationTopic } from '@/server/blog/topics';
 import { ProviderType } from '@/server/db/generated/client';
 import { createProviderConfigError } from '@/server/provider-gateway/errors';
@@ -135,7 +139,7 @@ function buildArticlePrompt(input: {
     '',
     'Create one original SEO article for TachiyomiAT.',
     'Return only a JSON object matching this TypeScript shape:',
-    '{ title, slugBase, excerpt, metaDescription, keywords, imagePrompt, imageAlt, body: { introduction, sections, readingProfile, downloadCallout, faqs, disclaimer } }',
+    '{ title, slugBase, excerpt, metaDescription, keywords, body: { introduction, sections, readingProfile, downloadCallout, faqs, disclaimer } }',
     '',
     'Rules:',
     '- Target searches around manga translate ia, manhwa translate ia, manhua translate ia, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
@@ -146,7 +150,6 @@ function buildArticlePrompt(input: {
     '- Do not claim TachiyomiAT hosts chapters, bypasses paywalls, or provides pirated content.',
     '- Keep the article useful for readers who already know the title but need a cleaner reading and translation workflow.',
     '- Do not include external chapter links, scanlation links, or download links other than TachiyomiAT.',
-    '- The imagePrompt must describe an original fun, exciting, dark cinematic manga/manhwa/manhua-style hero illustration that makes the reader want to open the article and download TachiyomiAT, inspired by the login page mood, with no copyrighted characters, logos, or readable text.',
     '- Use 3 to 5 sections, 3 to 5 FAQs, and concise speech-bubble-aware translation advice.',
     '- The downloadCallout buttonLabel must be "Download TachiyomiAT".',
     '- The disclaimer must say the site does not host manga/manhwa/manhua chapters and users should respect official releases and rights holders.',
@@ -196,16 +199,8 @@ function normalizeGeneratedBlogArticle(
       80,
       260
     ),
-    imageAlt: normalizeLongText(
-      readString(rawArticle.imageAlt, rawArticle.image_alt) ??
-        `Dark cinematic ${topic.manhwaType} translation workflow scene for ${topic.manhwaTitle} readers.`,
-      24,
-      180
-    ),
-    imagePrompt: normalizeImagePrompt(
-      readString(rawArticle.imagePrompt, rawArticle.image_prompt),
-      topic
-    ),
+    imageAlt: buildBlogTopicHeroImageAlt(topic),
+    imagePrompt: buildBlogTopicHeroImagePrompt(topic),
     keywords: normalizeKeywords(rawArticle.keywords, topic),
     metaDescription: normalizeLongText(
       readString(rawArticle.metaDescription, rawArticle.meta_description) ??
@@ -236,20 +231,6 @@ function normalizeTitle(
   }
 
   return normalizeLongText(normalized, 18, 86);
-}
-
-function normalizeImagePrompt(
-  rawPrompt: string | undefined,
-  topic: BlogGenerationTopic
-) {
-  const requiredPrompt =
-    `Original fun and exciting dark cinematic ${topic.manhwaType}-style hero illustration for ` +
-    `${topic.manhwaTitle} readers, energetic app-download mood, Android reader and AI translation workflow, no copyrighted characters, no logos, no readable text.`;
-  const prompt =
-    rawPrompt ??
-    'Premium Android reader interface, hosted OCR panels, translation workflow, dramatic motion, bright discovery moment, midnight lighting, clean composition, atmospheric but inspectable.';
-
-  return normalizeLongText(`${requiredPrompt} ${prompt}`, 120, 1_200);
 }
 
 function normalizeSection(
