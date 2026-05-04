@@ -22,6 +22,7 @@ import { BlogArticleStatus } from '@/server/db/generated/client';
 
 interface BlogArticleSummaryRow {
   excerpt: string;
+  heroImageUrl: string | null;
   imageAlt: string;
   imagePrompt: string;
   keywords: string[];
@@ -55,6 +56,7 @@ export interface BlogSitemapEntry {
 
 const blogArticleSummarySelect = {
   excerpt: true,
+  heroImageUrl: true,
   imageAlt: true,
   imagePrompt: true,
   keywords: true,
@@ -386,6 +388,7 @@ function mapBlogArticleSummaryRow(
 
   return {
     excerpt: row.excerpt,
+    heroImageUrl: row.heroImageUrl,
     imageAlt: row.imageAlt,
     imagePrompt: row.imagePrompt,
     keywords: buildBlogSeoKeywords(row.keywords, {

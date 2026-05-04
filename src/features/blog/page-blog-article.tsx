@@ -24,22 +24,38 @@ interface PageBlogArticleProps {
 }
 
 export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
+  const hasGeneratedHeroImage = Boolean(article.heroImageUrl);
+
   return (
     <PublicShell>
       <article>
         <section className="mx-auto w-full max-w-6xl px-4 pt-7 md:pt-10">
-          <div className="public-ink-panel relative isolate overflow-hidden rounded-[1.75rem] border px-5 py-8 text-neutral-50 md:px-8 md:py-10">
+          <div className="public-ink-panel relative isolate min-h-[34rem] overflow-hidden rounded-[1.75rem] border px-5 py-8 text-neutral-50 md:min-h-[36rem] md:px-8 md:py-10">
             <img
               src={article.heroImageUrl ?? heroBackground}
-              alt=""
-              className="absolute inset-0 -z-20 size-full object-cover object-[62%_center] opacity-45"
+              alt={hasGeneratedHeroImage ? article.imageAlt : ''}
+              className={cn(
+                'absolute inset-0 -z-20 size-full object-cover transition',
+                hasGeneratedHeroImage
+                  ? 'object-[68%_center] opacity-90'
+                  : 'object-[62%_center] opacity-45'
+              )}
             />
-            <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/88 to-neutral-950/42" />
-            <img
-              src={heroCharacter}
-              alt=""
-              className="animate-float-in-space pointer-events-none absolute right-[-5rem] bottom-[-7rem] hidden w-[min(28rem,44%)] opacity-92 drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block"
+            <div
+              className={cn(
+                'absolute inset-0 -z-10',
+                hasGeneratedHeroImage
+                  ? 'bg-linear-to-r from-neutral-950 via-neutral-950/78 to-neutral-950/10'
+                  : 'bg-linear-to-r from-neutral-950 via-neutral-950/88 to-neutral-950/42'
+              )}
             />
+            {!hasGeneratedHeroImage ? (
+              <img
+                src={heroCharacter}
+                alt=""
+                className="animate-float-in-space pointer-events-none absolute right-[-5rem] bottom-[-7rem] hidden w-[min(28rem,44%)] opacity-92 drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block"
+              />
+            ) : null}
             <div className="max-w-3xl space-y-5">
               <a
                 href="/blog"

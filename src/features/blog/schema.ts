@@ -36,6 +36,7 @@ export const zBlogAgentReview = z.object({
 
 export interface BlogArticleSummary {
   excerpt: string;
+  heroImageUrl: string | null;
   imageAlt: string;
   imagePrompt: string;
   keywords: string[];

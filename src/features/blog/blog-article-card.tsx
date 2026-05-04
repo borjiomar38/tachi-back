@@ -14,22 +14,29 @@ interface BlogArticleCardProps {
 
 export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
   const formattedDate = formatArticleDate(article.publishedAt);
+  const hasGeneratedHeroImage = Boolean(article.heroImageUrl);
 
   return (
     <Card className="group overflow-hidden rounded-[1.5rem] border-border/80 bg-card/88 transition hover:border-primary/55">
       <CardContent className="grid gap-5 p-5">
         <div className="relative min-h-44 overflow-hidden rounded-[1.15rem] border border-white/10 bg-neutral-950">
           <img
-            src={heroBackground}
-            alt=""
-            className="absolute inset-0 size-full object-cover opacity-38"
+            src={article.heroImageUrl ?? heroBackground}
+            alt={hasGeneratedHeroImage ? article.imageAlt : ''}
+            className={
+              hasGeneratedHeroImage
+                ? 'absolute inset-0 size-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.03]'
+                : 'absolute inset-0 size-full object-cover opacity-38'
+            }
           />
-          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/70 to-neutral-950/20" />
-          <img
-            src={heroCharacter}
-            alt=""
-            className="animate-float-in-space absolute right-[-1.5rem] bottom-[-3rem] w-44 opacity-90"
-          />
+          <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/58 to-neutral-950/8" />
+          {!hasGeneratedHeroImage ? (
+            <img
+              src={heroCharacter}
+              alt=""
+              className="animate-float-in-space absolute right-[-1.5rem] bottom-[-3rem] w-44 opacity-90"
+            />
+          ) : null}
           <div className="absolute inset-x-0 bottom-0 p-4">
             <Badge
               variant="brand"

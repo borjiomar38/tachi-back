@@ -115,6 +115,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
 
 export const fallbackBlogArticleSummary: BlogArticleSummary = {
   excerpt: fallbackBlogArticle.excerpt,
+  heroImageUrl: fallbackBlogArticle.heroImageUrl,
   imageAlt: fallbackBlogArticle.imageAlt,
   imagePrompt: fallbackBlogArticle.imagePrompt,
   keywords: fallbackBlogArticle.keywords,
