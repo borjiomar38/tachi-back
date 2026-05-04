@@ -58,7 +58,7 @@ function buildSitemapXml(blogEntries: BlogSitemapEntry[]) {
     .sort()
     .at(-1);
   const sitemapEntries = mergeSitemapEntries([
-    ...buildStaticSitemapEntries(latestBlogDate ?? '2026-05-02'),
+    ...buildStaticSitemapEntries(latestBlogDate ?? '2026-05-04'),
     ...allBlogEntries.map((entry) => ({
       changeFrequency: 'monthly' as const,
       lastModified: toSitemapDate(entry.lastModified),
@@ -79,7 +79,7 @@ function buildStaticSitemapEntries(blogLastModified: string): SitemapEntry[] {
   return [
     {
       changeFrequency: 'weekly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/',
       priority: '1.0',
     },
@@ -91,55 +91,55 @@ function buildStaticSitemapEntries(blogLastModified: string): SitemapEntry[] {
     },
     {
       changeFrequency: 'monthly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/download',
       priority: '0.8',
     },
     {
       changeFrequency: 'weekly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/pricing',
       priority: '0.9',
     },
     {
       changeFrequency: 'monthly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/how-it-works',
       priority: '0.8',
     },
     {
       changeFrequency: 'monthly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/support',
       priority: '0.7',
     },
     {
       changeFrequency: 'monthly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/guides/mihon-tachiyomiat-setup',
       priority: '0.7',
     },
     {
       changeFrequency: 'monthly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/guides/translation-support-workflow',
       priority: '0.7',
     },
     {
       changeFrequency: 'yearly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/legal/privacy',
       priority: '0.3',
     },
     {
       changeFrequency: 'yearly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/legal/terms',
       priority: '0.3',
     },
     {
       changeFrequency: 'yearly',
-      lastModified: '2026-05-02',
+      lastModified: '2026-05-04',
       path: '/legal/official-sources-takedown',
       priority: '0.4',
     },

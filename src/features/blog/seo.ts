@@ -18,10 +18,24 @@ export const buildRequiredBlogSeoKeyword = (type?: string | null) => {
 
 export const highIntentBlogSeoKeywords = [
   ...coreBlogSeoKeywords,
+  'free manga ia translator',
+  'free manhwa ia translator',
+  'free manhua ia translator',
+  'free manga AI translator',
+  'free manhwa AI translator',
+  'free manhua AI translator',
   'manhwa AI translator',
+  'manga AI translator',
+  'manhua AI translator',
   'AI manhwa translation',
+  'AI manga translation',
+  'AI manhua translation',
   'manhwa OCR translator',
+  'manga OCR translator',
+  'manhua OCR translator',
   'translate manhwa online',
+  'translate manga online',
+  'translate manhua online',
   'manhwa translation app',
   'manhua translation app',
   'manga translator app',
@@ -29,6 +43,30 @@ export const highIntentBlogSeoKeywords = [
   'TachiyomiAT download',
   'Android manhwa reader',
 ] as const;
+
+export const publicSeoKeywords = [
+  ...highIntentBlogSeoKeywords,
+  'free manga ia translator app',
+  'free manhwa ia translator app',
+  'free manhua ia translator app',
+  'Android manga IA translator',
+  'Android manhwa IA translator',
+  'Android manhua IA translator',
+  'TachiyomiAT APK',
+  'TachiyomiAT Android app',
+] as const;
+
+export const buildPublicSeoKeywords = (
+  keywords: readonly string[] = [],
+  options: {
+    limit?: number;
+    type?: string | null;
+  } = {}
+) =>
+  buildBlogSeoKeywords([...keywords, ...publicSeoKeywords], {
+    limit: options.limit ?? 18,
+    type: options.type,
+  });
 
 export const buildBlogSeoKeywords = (
   keywords: readonly string[],

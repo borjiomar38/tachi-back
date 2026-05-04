@@ -2,14 +2,14 @@
 
 ## Summary
 
-TachiyomiAT is an Android manga and manhwa translation experience backed by hosted OCR and translation services. The public website is the canonical source for product positioning, APK download guidance, pricing, activation, support, privacy, and terms.
+TachiyomiAT is an Android manga, manhwa, and manhua IA translation experience backed by hosted OCR and translation services. It is positioned for searches around free manga IA translator, free manhwa IA translator, free manhua IA translator, manga translate ia, manhwa translate ia, and manhua translate ia. The public website is the canonical source for product positioning, APK download guidance, pricing, activation, support, privacy, and terms.
 
 The service is designed around a redeem-code activation model. Readers choose a monthly token plan, complete checkout, receive a redeem code, activate hosted mode in the Android app, and spend tokens when processing translation jobs.
 
 ## Product facts
 
 - Product name: TachiyomiAT.
-- Category: Android manga and manhwa OCR translation.
+- Category: Android manga, manhwa, and manhua OCR/IA translation.
 - Primary audience: Readers who want in-app translation without managing OCR or translation API keys.
 - Primary platform: Android.
 - Activation model: Redeem codes linked to hosted subscription/token access.
@@ -17,7 +17,7 @@ The service is designed around a redeem-code activation model. Readers choose a 
 
 ## Public route map
 
-- `/`: Overview of hosted OCR, manga/manhwa translation, monthly plans, activation, and support.
+- `/`: Overview of the free manga IA translator, free manhwa IA translator, free manhua IA translator, hosted OCR, monthly plans, activation, and support.
 - `/blog`: Index of manhwa, manhua, manga translation, hosted OCR, Android setup, and TachiyomiAT download articles.
 - `/blog/download-tachiyomiat-for-manhwa-translation`: Evergreen starter article for manhwa and manga translation readers looking for the TachiyomiAT APK.
 - `/download`: Android APK download and installation guidance.

@@ -49,7 +49,8 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
     id: 'fallback-starter',
     key: 'starter',
     name: 'Starter 50',
-    description: 'Good for trying hosted manga and manhwa translation.',
+    description:
+      'Good for trying hosted manga, manhwa, and manhua IA translation.',
     tokenAmount: 500,
     bonusTokenAmount: 0,
     priceAmountCents: 200,
@@ -65,7 +66,7 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
     id: 'fallback-pro',
     key: 'pro',
     name: 'Pro 250',
-    description: 'Best for regular manga and manhwa reading.',
+    description: 'Best for regular manga, manhwa, and manhua IA translation.',
     tokenAmount: 2500,
     bonusTokenAmount: 0,
     priceAmountCents: 1000,
@@ -81,7 +82,7 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
     id: 'fallback-power',
     key: 'power',
     name: 'Power 550',
-    description: 'For heavy readers who translate often.',
+    description: 'For heavy readers who use manga translate IA often.',
     tokenAmount: 5500,
     bonusTokenAmount: 0,
     priceAmountCents: 2000,
@@ -122,7 +123,7 @@ export const activationSteps: ContentBlock[] = [
   {
     title: '1. Pick a monthly plan',
     description:
-      'Choose the plan that matches how much manga or manhwa you read every month.',
+      'Choose the free or monthly plan that matches how much manga, manhwa, or manhua you translate every month.',
   },
   {
     title: '2. Receive a redeem code',
@@ -137,7 +138,7 @@ export const activationSteps: ContentBlock[] = [
   {
     title: '4. Start translating chapters',
     description:
-      'Pick a chapter and launch the translation when you need it.',
+      'Pick a chapter and launch manga translate IA, manhwa translate IA, or manhua translate IA when you need it.',
   },
 ];
 
@@ -145,7 +146,7 @@ export const supportFaqs: ContentBlock[] = [
   {
     title: 'What can I translate?',
     description:
-      'Only translate content you own, content in the public domain, or content you have permission to process.',
+      'Use manga translate IA, manhwa translate IA, or manhua translate IA only with content you own, content in the public domain, or content you have permission to process.',
   },
   {
     title: 'Do I need API keys?',

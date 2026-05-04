@@ -1,6 +1,7 @@
 import { BlogArticleDetail } from '@/features/blog/schema';
 import {
   buildBlogSeoKeywords,
+  buildPublicSeoKeywords,
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
 
@@ -8,7 +9,7 @@ const publicSiteName = 'TachiyomiAT';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const socialImagePath = '/og/tachiyomiat-social-preview.jpg';
 const publicSiteDescription =
-  'TachiyomiAT helps Android readers with manga translate ia, manhwa translate ia, and manhua translate ia workflows using hosted OCR, translation, source discovery, monthly token plans, and redeem-code activation.';
+  'TachiyomiAT is a free manga IA translator, free manhwa IA translator, and free manhua IA translator for Android readers who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 
@@ -25,11 +26,44 @@ const buildAbsoluteUrl = (path: string) => {
 
 export const buildPublicAbsoluteUrl = buildAbsoluteUrl;
 
+export const buildPublicFaqStructuredData = (
+  path: string,
+  faqs: readonly { description: string; title: string }[]
+) => {
+  if (faqs.length === 0) {
+    return [];
+  }
+
+  return [
+    {
+      '@type': 'FAQPage',
+      '@id': `${buildAbsoluteUrl(path)}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.title,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.description,
+        },
+      })),
+    },
+  ];
+};
+
+const toAbsoluteAssetUrl = (value: string) => {
+  if (/^https?:\/\//i.test(value)) {
+    return value;
+  }
+
+  return buildAbsoluteUrl(value);
+};
+
 const buildStructuredData = (
   title: string,
   description: string,
   url: string,
-  imageUrl: string
+  imageUrl: string,
+  extraGraph: readonly Record<string, unknown>[] = []
 ) => {
   const baseUrl = buildAbsoluteUrl('/');
   const organizationId = `${baseUrl}#organization`;
@@ -76,7 +110,15 @@ const buildStructuredData = (
         operatingSystem: 'Android',
         url: buildAbsoluteUrl('/download'),
         description: publicSiteDescription,
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+          description:
+            'Free TachiyomiAT trial access for manga, manhwa, and manhua IA translation.',
+        },
       },
+      ...extraGraph,
     ],
   };
 };
@@ -90,19 +132,32 @@ export const buildPublicPageHead = (
   path: string,
   options?: {
     keywords?: readonly string[];
+    imageAlt?: string;
+    imagePath?: string;
+    imageType?: string;
+    structuredDataGraph?: readonly Record<string, unknown>[];
     robots?: string;
     type?: string | null;
   }
 ) => {
   const title = buildPublicTitle(pageTitle);
   const url = buildAbsoluteUrl(path);
-  const imageUrl = buildAbsoluteUrl(socialImagePath);
+  const imageUrl = toAbsoluteAssetUrl(options?.imagePath ?? socialImagePath);
+  const imageAlt =
+    options?.imageAlt ??
+    'TachiyomiAT free manga, manhwa, and manhua IA translator preview.';
   const keywords = options?.keywords
-    ? buildBlogSeoKeywords(options.keywords, {
+    ? buildPublicSeoKeywords(options.keywords, {
         type: options.type,
       })
     : [];
-  const structuredData = buildStructuredData(title, description, url, imageUrl);
+  const structuredData = buildStructuredData(
+    title,
+    description,
+    url,
+    imageUrl,
+    options?.structuredDataGraph
+  );
 
   return {
     meta: [
@@ -163,7 +218,7 @@ export const buildPublicPageHead = (
       },
       {
         property: 'og:image:type',
-        content: 'image/jpeg',
+        content: options?.imageType ?? 'image/jpeg',
       },
       {
         property: 'og:image:width',
@@ -175,8 +230,7 @@ export const buildPublicPageHead = (
       },
       {
         property: 'og:image:alt',
-        content:
-          'TachiyomiAT manga and manhwa translation preview with hosted OCR and app activation.',
+        content: imageAlt,
       },
       {
         name: 'twitter:card',
@@ -196,8 +250,7 @@ export const buildPublicPageHead = (
       },
       {
         name: 'twitter:image:alt',
-        content:
-          'TachiyomiAT manga and manhwa translation preview with hosted OCR and app activation.',
+        content: imageAlt,
       },
       {
         'script:ld+json': structuredData,
@@ -216,9 +269,9 @@ export const buildPublicBlogIndexHead = (): ReturnType<
   typeof buildPublicPageHead
 > => {
   const description =
-    'Read TachiyomiAT guides for manga translate ia, manhwa translate ia, manhua translate ia, hosted OCR, Android APK download, and reader-friendly setup workflows.';
+    'Read TachiyomiAT guides for manga translate ia, manhwa translate ia, manhua translate ia, free manga IA translator setup, hosted OCR, Android APK download, and reader-friendly workflows.';
 
-  return buildPublicPageHead('Manhwa Blog', description, '/blog', {
+  return buildPublicPageHead('Manga, Manhwa and Manhua IA Translator Blog', description, '/blog', {
     keywords: highIntentBlogSeoKeywords,
   });
 };
@@ -231,7 +284,11 @@ export const buildPublicBlogArticleHead = (
     article.metaDescription,
     `/blog/${article.slug}`,
     {
+      imageAlt: `${article.title} hero image for TachiyomiAT ${article.manhwaType} IA translation.`,
+      imagePath: article.heroImageUrl ?? undefined,
+      imageType: article.heroImageUrl ? 'image/png' : undefined,
       keywords: article.keywords,
+      structuredDataGraph: buildArticleStructuredData(article),
       type: article.manhwaType,
     }
   );
@@ -267,4 +324,51 @@ export const buildPublicBlogArticleHead = (
       })),
     ],
   };
+};
+
+const buildArticleStructuredData = (article: BlogArticleDetail) => {
+  const articleUrl = buildAbsoluteUrl(`/blog/${article.slug}`);
+  const imageUrl = article.heroImageUrl
+    ? toAbsoluteAssetUrl(article.heroImageUrl)
+    : buildAbsoluteUrl(socialImagePath);
+  const baseUrl = buildAbsoluteUrl('/');
+  const graph: Record<string, unknown>[] = [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${articleUrl}#article`,
+      headline: article.title,
+      description: article.metaDescription,
+      image: imageUrl,
+      datePublished: article.publishedAt,
+      dateModified: article.updatedAt,
+      articleSection: article.manhwaType,
+      keywords: buildBlogSeoKeywords(article.keywords, {
+        limit: 12,
+        type: article.manhwaType,
+      }).join(', '),
+      mainEntityOfPage: {
+        '@id': `${articleUrl}#webpage`,
+      },
+      publisher: {
+        '@id': `${baseUrl}#organization`,
+      },
+    },
+  ];
+
+  if (article.body.faqs.length > 0) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${articleUrl}#faq`,
+      mainEntity: article.body.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  return graph;
 };

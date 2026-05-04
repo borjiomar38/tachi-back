@@ -2,9 +2,12 @@ import { createFileRoute } from '@tanstack/react-router';
 import { zodValidator } from '@tanstack/zod-adapter';
 import { z } from 'zod';
 
-import { coreBlogSeoKeywords } from '@/features/blog/seo';
-import { fallbackPublicTokenPacks } from '@/features/public/data';
-import { buildPublicPageHead } from '@/features/public/head';
+import { publicSeoKeywords } from '@/features/blog/seo';
+import { fallbackPublicTokenPacks, supportFaqs } from '@/features/public/data';
+import {
+  buildPublicFaqStructuredData,
+  buildPublicPageHead,
+} from '@/features/public/head';
 import { PageLanding } from '@/features/public/page-landing';
 import { getPublicTokenPacks } from '@/features/public/server';
 
@@ -30,7 +33,7 @@ export const Route = createFileRoute('/')({
       '/',
       {
         keywords: [
-          ...coreBlogSeoKeywords,
+          ...publicSeoKeywords,
           'free manga ia translator',
           'free manhwa ia translator',
           'free manhua ia translator',
@@ -40,6 +43,7 @@ export const Route = createFileRoute('/')({
           'TachiyomiAT download',
           'Android manga translator app',
         ],
+        structuredDataGraph: buildPublicFaqStructuredData('/', supportFaqs),
       }
     ),
 });

@@ -55,7 +55,6 @@ import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiCronGenerateBlogArticleRouteImport } from './routes/api/cron/generate-blog-article'
-import { Route as ApiBlogHeroesSlugRouteImport } from './routes/api/blog/heroes/$slug'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
 import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users/new.index'
@@ -79,6 +78,7 @@ import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/au
 import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
+import { Route as ApiBlogHeroesSlugRouteImport } from './routes/api/blog/heroes/$slug'
 import { Route as ManagerUsersIdUpdateIndexRouteImport } from './routes/manager/users/$id.update.index'
 import { Route as ApiMobileJobsJobIdIndexRouteImport } from './routes/api/mobile/jobs/$jobId.index'
 import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobile/jobs/$jobId/result'
@@ -313,11 +313,6 @@ const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
   path: '/api/download/apk',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiBlogHeroesSlugRoute = ApiBlogHeroesSlugRouteImport.update({
-  id: '/api/blog/heroes/$slug',
-  path: '/api/blog/heroes/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiCronGenerateBlogArticleRoute =
   ApiCronGenerateBlogArticleRouteImport.update({
     id: '/api/cron/generate-blog-article',
@@ -447,6 +442,11 @@ const ApiDevEmailTemplateRoute = ApiDevEmailTemplateRouteImport.update({
   path: '/api/dev/email/$template',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiBlogHeroesSlugRoute = ApiBlogHeroesSlugRouteImport.update({
+  id: '/api/blog/heroes/$slug',
+  path: '/api/blog/heroes/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManagerUsersIdUpdateIndexRoute =
   ManagerUsersIdUpdateIndexRouteImport.update({
     id: '/users/$id/update/',
@@ -505,7 +505,6 @@ export interface FileRoutesByFullPath {
   '/manager/': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -527,6 +526,7 @@ export interface FileRoutesByFullPath {
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
+  '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
@@ -579,7 +579,6 @@ export interface FileRoutesByTo {
   '/manager': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -601,6 +600,7 @@ export interface FileRoutesByTo {
   '/manager/licenses': typeof ManagerLicensesIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
+  '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
@@ -657,7 +657,6 @@ export interface FileRoutesById {
   '/manager/': typeof ManagerIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
-  '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -679,6 +678,7 @@ export interface FileRoutesById {
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
+  '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
@@ -736,7 +736,6 @@ export interface FileRouteTypes {
     | '/manager/'
     | '/api/activation/redeem'
     | '/api/auth/$'
-    | '/api/blog/heroes/$slug'
     | '/api/cron/generate-blog-article'
     | '/api/download/apk'
     | '/api/mobile/heartbeat'
@@ -758,6 +757,7 @@ export interface FileRouteTypes {
     | '/manager/licenses/'
     | '/manager/providers/'
     | '/manager/users/'
+    | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
@@ -810,7 +810,6 @@ export interface FileRouteTypes {
     | '/manager'
     | '/api/activation/redeem'
     | '/api/auth/$'
-    | '/api/blog/heroes/$slug'
     | '/api/cron/generate-blog-article'
     | '/api/download/apk'
     | '/api/mobile/heartbeat'
@@ -832,6 +831,7 @@ export interface FileRouteTypes {
     | '/manager/licenses'
     | '/manager/providers'
     | '/manager/users'
+    | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
@@ -887,7 +887,6 @@ export interface FileRouteTypes {
     | '/manager/'
     | '/api/activation/redeem'
     | '/api/auth/$'
-    | '/api/blog/heroes/$slug'
     | '/api/cron/generate-blog-article'
     | '/api/download/apk'
     | '/api/mobile/heartbeat'
@@ -909,6 +908,7 @@ export interface FileRouteTypes {
     | '/manager/licenses/'
     | '/manager/providers/'
     | '/manager/users/'
+    | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
@@ -962,7 +962,6 @@ export interface RootRouteChildren {
   BlogIndexRoute: typeof BlogIndexRoute
   ApiActivationRedeemRoute: typeof ApiActivationRedeemRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
-  ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiCronGenerateBlogArticleRoute: typeof ApiCronGenerateBlogArticleRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
@@ -973,6 +972,7 @@ export interface RootRouteChildren {
   ApiPaymentsWebhookRoute: typeof ApiPaymentsWebhookRoute
   ApiRestSplatRoute: typeof ApiRestSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
+  ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
   ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRoute
@@ -1304,13 +1304,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiDownloadApkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/blog/heroes/$slug': {
-      id: '/api/blog/heroes/$slug'
-      path: '/api/blog/heroes/$slug'
-      fullPath: '/api/blog/heroes/$slug'
-      preLoaderRoute: typeof ApiBlogHeroesSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/cron/generate-blog-article': {
       id: '/api/cron/generate-blog-article'
       path: '/api/cron/generate-blog-article'
@@ -1477,6 +1470,13 @@ declare module '@tanstack/react-router' {
       path: '/api/dev/email/$template'
       fullPath: '/api/dev/email/$template'
       preLoaderRoute: typeof ApiDevEmailTemplateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/blog/heroes/$slug': {
+      id: '/api/blog/heroes/$slug'
+      path: '/api/blog/heroes/$slug'
+      fullPath: '/api/blog/heroes/$slug'
+      preLoaderRoute: typeof ApiBlogHeroesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manager/users/$id/update/': {
@@ -1659,7 +1659,6 @@ const rootRouteChildren: RootRouteChildren = {
   BlogIndexRoute: BlogIndexRoute,
   ApiActivationRedeemRoute: ApiActivationRedeemRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
-  ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiCronGenerateBlogArticleRoute: ApiCronGenerateBlogArticleRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
@@ -1670,6 +1669,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPaymentsWebhookRoute: ApiPaymentsWebhookRoute,
   ApiRestSplatRoute: ApiRestSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
+  ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
   ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRoute,

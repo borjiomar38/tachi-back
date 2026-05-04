@@ -1,15 +1,15 @@
 # TachiyomiAT
 
-> Android manga and manhwa translation with hosted OCR, clean translation, monthly token plans, redeem-code activation, and APK download.
+> Free manga IA translator, free manhwa IA translator, and free manhua IA translator for Android with hosted OCR, clean AI translation, monthly token plans, redeem-code activation, and APK download.
 
-TachiyomiAT is a reader-focused Android app and hosted backend for translating manga and manhwa pages. The public website explains the service, pricing, download path, activation flow, support options, privacy policy, and terms.
+TachiyomiAT is a reader-focused Android app and hosted backend for manga translate ia, manhwa translate ia, and manhua translate ia workflows. The public website explains the service, pricing, download path, activation flow, support options, privacy policy, and terms.
 
 ## Primary pages
 
-- [Home](https://tachiyomiat.com/): Product overview for hosted manga and manhwa OCR translation.
+- [Home](https://tachiyomiat.com/): Product overview for a free manga IA translator, free manhwa IA translator, free manhua IA translator, hosted OCR, and Android activation.
 - [Blog](https://tachiyomiat.com/blog): Manhwa, manhua, manga translation, Android setup, hosted OCR, and TachiyomiAT download articles.
 - [Download](https://tachiyomiat.com/download): Android APK download and setup guidance.
-- [Pricing](https://tachiyomiat.com/pricing): Monthly token plans for hosted OCR and translation.
+- [Pricing](https://tachiyomiat.com/pricing): Free and monthly token plans for hosted OCR and manga, manhwa, and manhua IA translation.
 - [How it works](https://tachiyomiat.com/how-it-works): Checkout, redeem-code activation, device binding, OCR, and translation flow.
 - [Support](https://tachiyomiat.com/support): Help for billing, activation, setup, and service questions.
 - [Mihon and TachiyomiAT setup guide](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Official install guidance, hosted activation, and permission-safe setup boundaries.
