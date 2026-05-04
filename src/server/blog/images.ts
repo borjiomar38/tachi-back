@@ -48,13 +48,6 @@ export async function generateBlogHeroImage(input: {
 
   const publicBaseUrl = resolvePublicAssetBaseUrl();
 
-  if (!publicBaseUrl) {
-    throw createProviderConfigError(
-      ProviderType.internal,
-      'BLOG_IMAGE_PUBLIC_BASE_URL or VITE_S3_BUCKET_PUBLIC_URL is required for blog hero image generation.'
-    );
-  }
-
   return await retryProviderCall(
     async () => {
       const image = await requestOpenAIImage({
@@ -173,17 +166,24 @@ function buildBlogHeroImageObjectKey(slug: string) {
   return `blog/heroes/${slug}.png`;
 }
 
-function buildPublicObjectUrl(baseUrl: string, objectKey: string) {
-  const encodedKey = objectKey
+function buildPublicObjectUrl(baseUrl: string | undefined, objectKey: string) {
+  const slug = objectKey
     .split('/')
-    .map((segment) => encodeURIComponent(segment))
-    .join('/');
+    .at(-1)
+    ?.replace(/\.png$/i, '');
 
-  return `${baseUrl.replace(/\/+$/, '')}/${encodedKey}`;
+  if (!slug) {
+    throw createProviderConfigError(
+      ProviderType.internal,
+      'Unable to build blog hero image URL.'
+    );
+  }
+
+  const path = `/api/blog/heroes/${encodeURIComponent(slug)}`;
+
+  return baseUrl ? `${baseUrl.replace(/\/+$/, '')}${path}` : path;
 }
 
 function resolvePublicAssetBaseUrl() {
-  return (
-    envServer.BLOG_IMAGE_PUBLIC_BASE_URL ?? envServer.VITE_S3_BUCKET_PUBLIC_URL
-  );
+  return envServer.BLOG_IMAGE_PUBLIC_BASE_URL;
 }

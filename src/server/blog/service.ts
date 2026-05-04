@@ -312,7 +312,25 @@ async function ensureBlogArticleHeroImage(
   row: BlogArticleDetailRow,
   fetchFn?: typeof fetch
 ): Promise<BlogArticleDetail> {
-  if (row.heroImageUrl || !envServer.BLOG_IMAGE_GENERATION_ENABLED) {
+  if (row.heroImageUrl?.startsWith('/api/blog/heroes/')) {
+    return mapBlogArticleDetailRow(row);
+  }
+
+  if (row.heroImageUrl) {
+    const updated = await db.blogArticle.update({
+      data: {
+        heroImageUrl: buildBlogHeroImageRouteUrl(row.slug),
+      },
+      select: blogArticleDetailSelect,
+      where: {
+        slug: row.slug,
+      },
+    });
+
+    return mapBlogArticleDetailRow(updated);
+  }
+
+  if (!envServer.BLOG_IMAGE_GENERATION_ENABLED) {
     return mapBlogArticleDetailRow(row);
   }
 
@@ -355,6 +373,10 @@ async function ensureBlogArticleHeroImage(
   });
 
   return mapBlogArticleDetailRow(updated);
+}
+
+function buildBlogHeroImageRouteUrl(slug: string) {
+  return `/api/blog/heroes/${encodeURIComponent(slug)}`;
 }
 
 function mapBlogArticleSummaryRow(
