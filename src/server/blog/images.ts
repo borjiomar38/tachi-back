@@ -90,6 +90,7 @@ async function requestOpenAIImage(input: {
       model: envServer.BLOG_IMAGE_GENERATION_MODEL,
       n: 1,
       prompt: input.imagePrompt,
+      quality: envServer.BLOG_IMAGE_GENERATION_QUALITY,
       size: '1024x1024',
     }),
     fetchFn: input.fetchFn,

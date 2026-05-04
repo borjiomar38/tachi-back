@@ -4,8 +4,8 @@ import { envServer } from '@/env/server';
 import { zBlogArticleBody } from '@/features/blog/schema';
 import {
   buildBlogSeoKeywords,
+  buildRequiredBlogSeoKeyword,
   highIntentBlogSeoKeywords,
-  requiredBlogSeoKeyword,
 } from '@/features/blog/seo';
 import { BlogGenerationTopic } from '@/server/blog/topics';
 import { ProviderType } from '@/server/db/generated/client';
@@ -17,7 +17,7 @@ import {
   retryProviderCall,
 } from '@/server/provider-gateway/utils';
 
-const BLOG_PROMPT_VERSION = '2026-05-02.manhwa-seo.v2';
+const BLOG_PROMPT_VERSION = '2026-05-04.translate-ia-seo.v3';
 
 const zGeneratedBlogArticle = z.object({
   body: zBlogArticleBody,
@@ -120,6 +120,11 @@ function buildArticlePrompt(input: {
   date: string;
   topic: BlogGenerationTopic;
 }) {
+  const requiredKeyword = buildRequiredBlogSeoKeyword(input.topic.manhwaType);
+  const supportingKeywords = highIntentBlogSeoKeywords.filter(
+    (keyword) => keyword !== requiredKeyword
+  );
+
   return [
     `Prompt version: ${BLOG_PROMPT_VERSION}`,
     `Publication date: ${input.date}`,
@@ -133,15 +138,15 @@ function buildArticlePrompt(input: {
     '{ title, slugBase, excerpt, metaDescription, keywords, imagePrompt, imageAlt, body: { introduction, sections, readingProfile, downloadCallout, faqs, disclaimer } }',
     '',
     'Rules:',
-    '- Target searches around manhwa, manhua, manga reader, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
-    `- The keywords array must include the exact phrase "${requiredBlogSeoKeyword}".`,
-    `- Work these high-intent SEO phrases into keywords and body copy only where they read naturally: ${highIntentBlogSeoKeywords.join(', ')}.`,
+    '- Target searches around manga translate ia, manhwa translate ia, manhua translate ia, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
+    `- The primary SEO phrase for this article is "${requiredKeyword}" because the type is ${input.topic.manhwaType}. Include that exact phrase in the title or meta description if it reads naturally, always include it in keywords, and use it at least once in the body copy.`,
+    `- Support the broader keyword cluster without stuffing: ${supportingKeywords.join(', ')}.`,
     '- Prefer useful setup, reading workflow, OCR, AI translation, Android APK, and legal-use wording over keyword stuffing.',
-    '- Mention TachiyomiAT naturally and include the idea that the download link is always available through the article CTA.',
+    '- Mention TachiyomiAT naturally and make the reader excited to download the Android app through the article CTA.',
     '- Do not claim TachiyomiAT hosts chapters, bypasses paywalls, or provides pirated content.',
     '- Keep the article useful for readers who already know the title but need a cleaner reading and translation workflow.',
     '- Do not include external chapter links, scanlation links, or download links other than TachiyomiAT.',
-    '- The imagePrompt must describe an original dark cinematic manhwa-style illustration inspired by the login page mood, with no copyrighted characters, logos, or readable text.',
+    '- The imagePrompt must describe an original fun, exciting, dark cinematic manga/manhwa/manhua-style hero illustration that makes the reader want to open the article and download TachiyomiAT, inspired by the login page mood, with no copyrighted characters, logos, or readable text.',
     '- Use 3 to 5 sections, 3 to 5 FAQs, and concise speech-bubble-aware translation advice.',
     '- The downloadCallout buttonLabel must be "Download TachiyomiAT".',
     '- The disclaimer must say the site does not host manga/manhwa/manhua chapters and users should respect official releases and rights holders.',
@@ -238,11 +243,11 @@ function normalizeImagePrompt(
   topic: BlogGenerationTopic
 ) {
   const requiredPrompt =
-    `Original dark cinematic ${topic.manhwaType}-style illustration for ` +
-    `${topic.manhwaTitle} readers, no copyrighted characters, no logos, no readable text.`;
+    `Original fun and exciting dark cinematic ${topic.manhwaType}-style hero illustration for ` +
+    `${topic.manhwaTitle} readers, energetic app-download mood, Android reader and AI translation workflow, no copyrighted characters, no logos, no readable text.`;
   const prompt =
     rawPrompt ??
-    'Premium Android reader interface, hosted OCR panels, translation workflow, midnight lighting, clean composition, atmospheric but inspectable.';
+    'Premium Android reader interface, hosted OCR panels, translation workflow, dramatic motion, bright discovery moment, midnight lighting, clean composition, atmospheric but inspectable.';
 
   return normalizeLongText(`${requiredPrompt} ${prompt}`, 120, 1_200);
 }
@@ -399,6 +404,7 @@ function normalizeKeywords(rawKeywords: unknown, topic: BlogGenerationTopic) {
   const defaults = [
     'tachiyomiat',
     'tachiyomi download',
+    buildRequiredBlogSeoKeyword(topic.manhwaType),
     `${topic.manhwaType} translation`,
     `${topic.manhwaTitle} reader`,
     'manga OCR',
@@ -417,6 +423,7 @@ function normalizeKeywords(rawKeywords: unknown, topic: BlogGenerationTopic) {
 
   return buildBlogSeoKeywords(keywords, {
     limit: 12,
+    type: topic.manhwaType,
   });
 }
 

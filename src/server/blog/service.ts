@@ -317,7 +317,9 @@ function mapBlogArticleSummaryRow(
     excerpt: row.excerpt,
     imageAlt: row.imageAlt,
     imagePrompt: row.imagePrompt,
-    keywords: buildBlogSeoKeywords(row.keywords),
+    keywords: buildBlogSeoKeywords(row.keywords, {
+      type: row.manhwaType,
+    }),
     manhwaTitle: row.manhwaTitle,
     manhwaType: row.manhwaType,
     publishedAt: publishedAt.toISOString(),

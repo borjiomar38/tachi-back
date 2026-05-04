@@ -118,20 +118,20 @@ export const PageLanding = (props: {
               size="lg"
               className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
             >
-              Manga & manhwa translation
+              Manga, manhwa & manhua translate IA
             </Badge>
 
             <div className="space-y-5">
               <p className="text-sm font-semibold tracking-[0.22em] text-brand-100 uppercase">
-                Simple translation inside TachiyomiAT
+                Simple AI translation inside TachiyomiAT
               </p>
               <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
-                Download, activate, and translate manga in one app.
+                Download the app for manga translate IA.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                Install the Android APK, choose a monthly plan, receive a redeem
-                code, and run hosted OCR and translation directly from the
-                reader.
+                Use TachiyomiAT for manga translate IA, manhwa translate IA, and
+                manhua translate IA with hosted OCR, clean translation, monthly
+                plans, redeem-code activation, and one Android APK download.
               </p>
             </div>
 
@@ -265,10 +265,10 @@ export const PageLanding = (props: {
               </p>
               <div className="mt-4 grid gap-3 text-sm text-neutral-200">
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  Read your manga and manhwa in the same app you already use.
+                  Read manga, manhwa, and manhua in the same app you already use.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  Activate once, then translate chapters when you need them.
+                  Activate once, then use AI translation when pages need help.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                   Keep the reading flow simple instead of learning a technical
@@ -302,7 +302,7 @@ export const PageLanding = (props: {
               <CardTitle className="text-2xl">Simple reading flow</CardTitle>
               <CardDescription className="text-neutral-300">
                 Start from the app, let the service detect and translate the
-                text, then continue reading normally.
+                text, then continue reading manga, manhwa, or manhua normally.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 p-6">
@@ -332,7 +332,7 @@ export const PageLanding = (props: {
                   </p>
                   <div className="mt-4 grid gap-3 text-sm text-neutral-100">
                     <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-3">
-                      Detect text on manga and manhwa pages.
+                      Detect text on manga, manhwa, and manhua pages.
                     </div>
                     <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-3">
                       Translate the detected text.
@@ -349,8 +349,8 @@ export const PageLanding = (props: {
                   Simple result
                 </p>
                 <p className="mt-2 text-sm leading-7 text-neutral-200">
-                  The goal is to keep the reading experience smooth and easy
-                  inside TachiyomiAT.
+                  The goal is to keep manga translate IA, manhwa translate IA,
+                  and manhua translate IA smooth inside TachiyomiAT.
                 </p>
               </div>
             </CardContent>
@@ -393,9 +393,9 @@ export const PageLanding = (props: {
         id="pricing"
         eyebrow="Pricing"
         title="Simple monthly plans"
-        description="Choose the offer that matches how much manga or manhwa you want to translate every month."
+        description="Choose the offer that matches how much manga, manhwa, or manhua you want to translate every month."
       >
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-4">
           {props.tokenPacks.map((tokenPack) => (
             <TokenPackCard
               key={tokenPack.id}

@@ -8,7 +8,7 @@ const publicSiteName = 'TachiyomiAT';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const socialImagePath = '/og/tachiyomiat-social-preview.jpg';
 const publicSiteDescription =
-  'TachiyomiAT helps Android readers translate manga and manhwa with hosted OCR, translation, source discovery, monthly token plans, and redeem-code activation.';
+  'TachiyomiAT helps Android readers with manga translate ia, manhwa translate ia, and manhua translate ia workflows using hosted OCR, translation, source discovery, monthly token plans, and redeem-code activation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 
@@ -91,13 +91,16 @@ export const buildPublicPageHead = (
   options?: {
     keywords?: readonly string[];
     robots?: string;
+    type?: string | null;
   }
 ) => {
   const title = buildPublicTitle(pageTitle);
   const url = buildAbsoluteUrl(path);
   const imageUrl = buildAbsoluteUrl(socialImagePath);
   const keywords = options?.keywords
-    ? buildBlogSeoKeywords(options.keywords)
+    ? buildBlogSeoKeywords(options.keywords, {
+        type: options.type,
+      })
     : [];
   const structuredData = buildStructuredData(title, description, url, imageUrl);
 
@@ -213,7 +216,7 @@ export const buildPublicBlogIndexHead = (): ReturnType<
   typeof buildPublicPageHead
 > => {
   const description =
-    'Read TachiyomiAT guides for manhwa translate ia searches, AI manhwa translation, hosted OCR, Android APK download, and reader-friendly setup workflows.';
+    'Read TachiyomiAT guides for manga translate ia, manhwa translate ia, manhua translate ia, hosted OCR, Android APK download, and reader-friendly setup workflows.';
 
   return buildPublicPageHead('Manhwa Blog', description, '/blog', {
     keywords: highIntentBlogSeoKeywords,
@@ -229,9 +232,12 @@ export const buildPublicBlogArticleHead = (
     `/blog/${article.slug}`,
     {
       keywords: article.keywords,
+      type: article.manhwaType,
     }
   );
-  const keywords = buildBlogSeoKeywords(article.keywords);
+  const keywords = buildBlogSeoKeywords(article.keywords, {
+    type: article.manhwaType,
+  });
 
   return {
     ...baseHead,

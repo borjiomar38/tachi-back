@@ -1,7 +1,7 @@
 export interface BlogGenerationTopic {
   angle: string;
   manhwaTitle: string;
-  manhwaType: 'manhua' | 'manhwa';
+  manhwaType: 'manga' | 'manhua' | 'manhwa';
   searchIntent: string;
 }
 
@@ -47,6 +47,20 @@ export const blogGenerationTopics: BlogGenerationTopic[] = [
     manhwaTitle: 'Battle Through the Heavens',
     manhwaType: 'manhua',
     searchIntent: 'cultivation manhua translation reader',
+  },
+  {
+    angle:
+      'Use One Piece as a mainstream manga example where readers need clean OCR for dense speech bubbles, attack names, and long-running terminology.',
+    manhwaTitle: 'One Piece',
+    manhwaType: 'manga',
+    searchIntent: 'manga translate ia reader app',
+  },
+  {
+    angle:
+      'Frame Jujutsu Kaisen around fast action pages, technique names, and compact dialogue where manga translation needs to stay readable.',
+    manhwaTitle: 'Jujutsu Kaisen',
+    manhwaType: 'manga',
+    searchIntent: 'manga translate ia OCR app',
   },
   {
     angle:

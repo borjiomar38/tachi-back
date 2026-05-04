@@ -72,7 +72,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
   imageAlt:
     'Dark cinematic manhwa-style TachiyomiAT reader scene with an Android translation workflow.',
   imagePrompt:
-    'Original dark cinematic manhwa-style illustration of an Android reader interface glowing in a midnight studio, dramatic violet rim light, floating OCR panels, no copyrighted characters, no logos, no readable text, inspired by a premium login page mood.',
+    'Original fun and exciting dark cinematic manhwa-style hero illustration of an Android reader interface glowing in a midnight studio, dramatic motion, violet rim light, floating OCR panels, AI translation workflow, energetic app-download mood, no copyrighted characters, no logos, no readable text, inspired by a premium login page mood.',
   imageReview: {
     notes: [
       'Prompt requests an original composition instead of copying known characters.',
@@ -83,6 +83,9 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     score: 100,
   },
   keywords: buildBlogSeoKeywords([
+    'manga translate ia',
+    'manhwa translate ia',
+    'manhua translate ia',
     'tachiyomi download',
     'tachiyomiat',
     'manhwa translation',

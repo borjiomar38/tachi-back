@@ -1,12 +1,29 @@
+export type BlogSeoContentType = 'manga' | 'manhua' | 'manhwa';
+
+export const coreBlogSeoKeywords = [
+  'manga translate ia',
+  'manhwa translate ia',
+  'manhua translate ia',
+] as const;
+
 export const requiredBlogSeoKeyword = 'manhwa translate ia';
 
+export const buildRequiredBlogSeoKeyword = (type?: string | null) => {
+  if (type === 'manga' || type === 'manhua' || type === 'manhwa') {
+    return `${type} translate ia`;
+  }
+
+  return requiredBlogSeoKeyword;
+};
+
 export const highIntentBlogSeoKeywords = [
-  requiredBlogSeoKeyword,
+  ...coreBlogSeoKeywords,
   'manhwa AI translator',
   'AI manhwa translation',
   'manhwa OCR translator',
   'translate manhwa online',
   'manhwa translation app',
+  'manhua translation app',
   'manga translator app',
   'manga OCR',
   'TachiyomiAT download',
@@ -17,11 +34,13 @@ export const buildBlogSeoKeywords = (
   keywords: readonly string[],
   options: {
     limit?: number;
+    type?: string | null;
   } = {}
 ) => {
   const limit = options.limit ?? 12;
+  const requiredKeyword = buildRequiredBlogSeoKeyword(options.type);
   const candidates = [
-    requiredBlogSeoKeyword,
+    requiredKeyword,
     ...keywords,
     ...highIntentBlogSeoKeywords,
   ];

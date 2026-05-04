@@ -96,19 +96,19 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
 
 export const publicHighlights: ContentBlock[] = [
   {
-    title: 'Translate manga and manhwa fast',
+    title: 'Manga translate IA fast',
     description:
-      'Open a chapter, launch the translation, and keep reading without complex setup.',
+      'Open a chapter, launch AI translation, and keep reading without complex setup.',
   },
   {
-    title: 'Powerful text detection',
+    title: 'Manhwa translate IA workflow',
     description:
-      'Text is detected cleanly on manga and manhwa pages, even when the layout is busy.',
+      'Text is detected cleanly on vertical manhwa pages, even when the layout is busy.',
   },
   {
-    title: 'Simple monthly plans',
+    title: 'Manhua translate IA support',
     description:
-      'Choose a monthly plan, receive your redeem code by email, and start using it in the app.',
+      'Keep names, realms, and recurring terms consistent while reading manhua.',
   },
   {
     title: 'Easy activation',

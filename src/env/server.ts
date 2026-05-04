@@ -185,7 +185,10 @@ const envServerBase = createEnv({
       .optional(),
     BLOG_GENERATION_MODEL: z.string().optional(),
     BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(false),
-    BLOG_IMAGE_GENERATION_MODEL: z.string().default('gpt-image-1'),
+    BLOG_IMAGE_GENERATION_MODEL: z.string().default('gpt-image-2'),
+    BLOG_IMAGE_GENERATION_QUALITY: z
+      .enum(['auto', 'low', 'medium', 'high'])
+      .default('low'),
     BLOG_IMAGE_PUBLIC_BASE_URL: z.url().optional(),
     VITE_S3_BUCKET_PUBLIC_URL: z.url().optional(),
 

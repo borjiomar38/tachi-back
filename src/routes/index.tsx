@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { zodValidator } from '@tanstack/zod-adapter';
 import { z } from 'zod';
 
+import { coreBlogSeoKeywords } from '@/features/blog/seo';
 import { fallbackPublicTokenPacks } from '@/features/public/data';
 import { buildPublicPageHead } from '@/features/public/head';
 import { PageLanding } from '@/features/public/page-landing';
@@ -24,9 +25,19 @@ export const Route = createFileRoute('/')({
   },
   head: () =>
     buildPublicPageHead(
-      'Hosted OCR and Translation',
-      'TachiyomiAT helps readers translate manga and manhwa in-app with hosted OCR, clean translation, monthly token plans, redeem-code activation, and Android APK download.',
-      '/'
+      'Manga Translate IA App',
+      'TachiyomiAT helps readers with manga translate ia, manhwa translate ia, and manhua translate ia in-app using hosted OCR, clean translation, monthly token plans, redeem-code activation, and Android APK download.',
+      '/',
+      {
+        keywords: [
+          ...coreBlogSeoKeywords,
+          'AI manga translator',
+          'AI manhwa translator',
+          'AI manhua translator',
+          'TachiyomiAT download',
+          'Android manga translator app',
+        ],
+      }
     ),
 });
 
