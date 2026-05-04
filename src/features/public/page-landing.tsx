@@ -86,10 +86,16 @@ export const PageLanding = (props: {
   contactStatus?: 'sent' | 'error' | 'invalid';
   tokenPacks: PublicTokenPack[];
 }) => {
+  const freeTokenPack = props.tokenPacks.find(
+    (tokenPack) => tokenPack.key === 'free'
+  );
+  const paidTokenPacks = props.tokenPacks.filter(
+    (tokenPack) => tokenPack.key !== 'free'
+  );
   const featuredTokenPack =
-    props.tokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
-    props.tokenPacks[1] ??
-    props.tokenPacks[0];
+    paidTokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
+    paidTokenPacks[1] ??
+    paidTokenPacks[0];
   const heroPlan = featuredTokenPack ?? props.tokenPacks[0];
 
   return (
@@ -395,8 +401,16 @@ export const PageLanding = (props: {
         title="Simple monthly plans"
         description="Choose the offer that matches how much manga, manhwa, or manhua you want to translate every month."
       >
-        <div className="grid gap-4 lg:grid-cols-4">
-          {props.tokenPacks.map((tokenPack) => (
+        {freeTokenPack ? (
+          <div className="mx-auto mb-4 w-full max-w-xl">
+            <TokenPackCard
+              tokenPack={freeTokenPack}
+              featured={false}
+            />
+          </div>
+        ) : null}
+        <div className="grid gap-4 lg:grid-cols-3">
+          {paidTokenPacks.map((tokenPack) => (
             <TokenPackCard
               key={tokenPack.id}
               tokenPack={tokenPack}

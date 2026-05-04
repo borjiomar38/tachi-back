@@ -36,10 +36,16 @@ const pricingNotes = [
 ] as const;
 
 export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
+  const freeTokenPack = props.tokenPacks.find(
+    (tokenPack) => tokenPack.key === 'free'
+  );
+  const paidTokenPacks = props.tokenPacks.filter(
+    (tokenPack) => tokenPack.key !== 'free'
+  );
   const featuredTokenPack =
-    props.tokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
-    props.tokenPacks[1] ??
-    props.tokenPacks[0];
+    paidTokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
+    paidTokenPacks[1] ??
+    paidTokenPacks[0];
 
   return (
     <PublicShell>
@@ -72,8 +78,16 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
         title="Real plans, recurring checkout path"
         description="Lemon Squeezy can collect recurring payment from these cards now, and monthly token crediting is finalized from paid invoice webhooks."
       >
-        <div className="grid gap-4 lg:grid-cols-4">
-          {props.tokenPacks.map((tokenPack) => (
+        {freeTokenPack ? (
+          <div className="mx-auto mb-4 w-full max-w-xl">
+            <TokenPackCard
+              tokenPack={freeTokenPack}
+              featured={false}
+            />
+          </div>
+        ) : null}
+        <div className="grid gap-4 lg:grid-cols-3">
+          {paidTokenPacks.map((tokenPack) => (
             <TokenPackCard
               key={tokenPack.id}
               tokenPack={tokenPack}
