@@ -127,6 +127,16 @@ export async function createLemonSqueezyCheckout(
     );
   }
 
+  const lsVariantId = Number(tokenPack.lsVariantId);
+
+  if (!Number.isSafeInteger(lsVariantId) || lsVariantId <= 0) {
+    throw new CheckoutError(
+      'token_pack_unavailable',
+      'The selected monthly plan has an invalid Lemon Squeezy variant configured.',
+      409
+    );
+  }
+
   initLemonSqueezy();
 
   const storeId = envServer.LEMONSQUEEZY_STORE_ID;
@@ -151,7 +161,7 @@ export async function createLemonSqueezyCheckout(
   const cancelUrl = new URL('/checkout/cancel', baseUrl);
   cancelUrl.searchParams.set('tokenPack', tokenPack.key);
 
-  const { data, error } = await createCheckout(storeId, tokenPack.lsVariantId, {
+  const { data, error } = await createCheckout(storeId, lsVariantId, {
     checkoutData: {
       email: input.payerEmail,
       custom: {
@@ -167,8 +177,10 @@ export async function createLemonSqueezyCheckout(
       embed: false,
     },
     productOptions: {
+      enabledVariants: [lsVariantId],
       redirectUrl: successUrl.toString(),
     },
+    customPrice: tokenPack.priceAmountCents,
     testMode: allowTestMode,
   });
 
