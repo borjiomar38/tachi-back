@@ -184,7 +184,7 @@ const envServerBase = createEnv({
       .enum(['anthropic', 'gemini', 'openai'])
       .optional(),
     BLOG_GENERATION_MODEL: z.string().optional(),
-    BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(false),
+    BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(true),
     BLOG_IMAGE_GENERATION_MODEL: z.string().default('gpt-image-2'),
     BLOG_IMAGE_GENERATION_QUALITY: z
       .enum(['auto', 'low', 'medium', 'high'])

@@ -149,7 +149,7 @@ export async function generateDailyBlogArticle(
   });
 
   if (existing) {
-    return mapBlogArticleDetailRow(existing);
+    return await ensureBlogArticleHeroImage(existing, input.fetchFn);
   }
 
   const topic = await selectDailyTopic(generationDate);
@@ -306,6 +306,55 @@ async function tryGenerateHeroImage(input: {
       },
     };
   }
+}
+
+async function ensureBlogArticleHeroImage(
+  row: BlogArticleDetailRow,
+  fetchFn?: typeof fetch
+): Promise<BlogArticleDetail> {
+  if (row.heroImageUrl || !envServer.BLOG_IMAGE_GENERATION_ENABLED) {
+    return mapBlogArticleDetailRow(row);
+  }
+
+  const imagePromptReview = runImageGenerationReviewAgent({
+    imageAlt: row.imageAlt,
+    imagePrompt: row.imagePrompt,
+    manhwaTitle: row.manhwaTitle,
+  });
+
+  if (!imagePromptReview.passed) {
+    const updated = await db.blogArticle.update({
+      data: {
+        imageReview: imagePromptReview,
+      },
+      select: blogArticleDetailSelect,
+      where: {
+        slug: row.slug,
+      },
+    });
+
+    return mapBlogArticleDetailRow(updated);
+  }
+
+  const heroImage = await tryGenerateHeroImage({
+    fetchFn,
+    imagePrompt: row.imagePrompt,
+    imageReview: imagePromptReview,
+    slug: row.slug,
+  });
+  const updated = await db.blogArticle.update({
+    data: {
+      heroImageObjectKey: heroImage.image?.heroImageObjectKey,
+      heroImageUrl: heroImage.image?.heroImageUrl,
+      imageReview: heroImage.imageReview,
+    },
+    select: blogArticleDetailSelect,
+    where: {
+      slug: row.slug,
+    },
+  });
+
+  return mapBlogArticleDetailRow(updated);
 }
 
 function mapBlogArticleSummaryRow(
