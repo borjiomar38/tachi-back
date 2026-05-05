@@ -1163,7 +1163,18 @@ async function processStartedTranslationJob(
         }
 
         translatableBlockIndexes.push(index);
-        return [{ text: block.text }];
+        return [
+          {
+            angle: block.angle,
+            height: block.height,
+            symHeight: block.symHeight,
+            symWidth: block.symWidth,
+            text: block.text,
+            width: block.width,
+            x: block.x,
+            y: block.y,
+          },
+        ];
       });
 
       translatableBlockIndexesByPage.set(

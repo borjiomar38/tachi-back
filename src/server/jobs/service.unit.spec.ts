@@ -1287,8 +1287,12 @@ describe('job service', () => {
         pages: [
           {
             blocks: [
-              { text: 'QUE  DE TE  DIGO VERDAD  LO  VI !!!!' },
-              { text: 'SIENTO  QUE OBTUVE  UN  BENEFICIO INESPERADO .' },
+              expect.objectContaining({
+                text: 'QUE  DE TE  DIGO VERDAD  LO  VI !!!!',
+              }),
+              expect.objectContaining({
+                text: 'SIENTO  QUE OBTUVE  UN  BENEFICIO INESPERADO .',
+              }),
             ],
             pageKey: '001.jpg',
           },
@@ -1481,9 +1485,9 @@ describe('job service', () => {
         pages: [
           {
             blocks: [
-              {
+              expect.objectContaining({
                 text: '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL- INTENDED . "',
-              },
+              }),
             ],
             pageKey: '001.jpg',
           },
@@ -1645,7 +1649,7 @@ describe('job service', () => {
       expect.objectContaining({
         pages: [
           {
-            blocks: [{ text: 'hello' }],
+            blocks: [expect.objectContaining({ text: 'hello' })],
             pageKey: '002.jpg',
           },
         ],
@@ -1826,11 +1830,11 @@ describe('job service', () => {
       expect.objectContaining({
         pages: [
           {
-            blocks: [{ text: 'top' }],
+            blocks: [expect.objectContaining({ text: 'top' })],
             pageKey: '001.jpg',
           },
           {
-            blocks: [{ text: 'bottom' }],
+            blocks: [expect.objectContaining({ text: 'bottom' })],
             pageKey: '002.jpg',
           },
         ],
@@ -2000,12 +2004,19 @@ describe('job service', () => {
         pages: [
           {
             blocks: [
-              {
+              expect.objectContaining({
+                height: 96,
                 text: 'WAS THAT LIGHTNING STRIKE IN THE SOUTH OF THE CITY EARLIER CAUSED BY YOU?',
-              },
-              {
+                width: 191,
+                x: 134,
+                y: 0,
+              }),
+              expect.objectContaining({
                 text: 'FAINTLY, THERE WERE ACTUALLY RULES VAGUELY HIDDEN WITHIN IT. I AM VERY CURIOUS~',
-              },
+                width: 208,
+                x: 263,
+                y: 129,
+              }),
             ],
             pageKey: '001.jpg',
           },

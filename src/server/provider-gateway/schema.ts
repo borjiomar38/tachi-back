@@ -46,7 +46,14 @@ export const zTranslationGatewayPageInput = z.object({
   blocks: z
     .array(
       z.object({
+        angle: z.number().optional(),
+        height: z.number().positive().optional(),
+        symHeight: z.number().positive().optional(),
+        symWidth: z.number().positive().optional(),
         text: z.string().trim().min(1),
+        width: z.number().positive().optional(),
+        x: z.number().optional(),
+        y: z.number().optional(),
       })
     )
     .min(1),

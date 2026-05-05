@@ -83,7 +83,9 @@ const envServerBase = createEnv({
       .int()
       .positive()
       .default(3),
-    TRANSLATION_PROMPT_VERSION: z.string().default('2026-04-24.scanlation.v1'),
+    TRANSLATION_PROMPT_VERSION: z
+      .string()
+      .default('2026-05-05.ai-linebreak.v1'),
 
     MOBILE_API_ENABLED: z.stringbool().default(false),
     MOBILE_API_JWT_SECRET: z.string().optional(),

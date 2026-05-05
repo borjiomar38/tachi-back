@@ -52,6 +52,44 @@ describe('provider gateway prompts', () => {
     });
   });
 
+  it('normalizes OCR line breaks and includes visual layout metadata when available', () => {
+    expect(
+      buildTranslationJsonPayload([
+        {
+          blocks: [
+            {
+              angle: 0,
+              height: 40,
+              symHeight: 18,
+              symWidth: 10,
+              text: 'WAS THAT\nLIGHTNING',
+              width: 120,
+              x: 25,
+              y: 50,
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+      ])
+    ).toEqual({
+      '001.jpg': {
+        block_0000: {
+          layout: {
+            angle: 0,
+            height: 40,
+            symHeight: 18,
+            symWidth: 10,
+            width: 120,
+            x: 25,
+            y: 50,
+          },
+          sourceHash: buildBlockSourceHash('WAS THAT\nLIGHTNING'),
+          sourceText: 'WAS THAT LIGHTNING',
+        },
+      },
+    });
+  });
+
   it('builds a prompt bundle with compacted context and version metadata', () => {
     const prompt = buildTranslationPrompt({
       mangaContext: 'Chapter recap\nHero meets rival',
@@ -68,6 +106,10 @@ describe('provider gateway prompts', () => {
     expect(prompt.promptProfile).toBe('japanese_to_english');
     expect(prompt.promptVersion).toBe('2026-03-20.v1');
     expect(prompt.systemPrompt).toContain('Return only valid JSON');
+    expect(prompt.systemPrompt).toContain('visual layout metadata');
+    expect(prompt.systemPrompt).toContain(
+      'Do not preserve, copy, or recreate OCR line breaks'
+    );
     expect(prompt.userPrompt).toContain('Chapter recap');
     expect(prompt.userPrompt).toContain('"001.jpg":{"block_0000":');
     expect(prompt.userPrompt).toContain('"sourceHash":');

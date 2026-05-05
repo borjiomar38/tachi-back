@@ -27,7 +27,7 @@ const LATIN_SOURCE_LANGUAGES = new Set([
 export function buildTranslationPrompt(input: {
   mangaContext?: string;
   pages: Array<{
-    blocks: Array<{ text: string }>;
+    blocks: TranslationPromptBlock[];
     pageKey: string;
   }>;
   sourceLanguage: string;
@@ -64,7 +64,7 @@ export function buildTranslationPrompt(input: {
 
 export function buildTranslationJsonPayload(
   pages: Array<{
-    blocks: Array<{ text: string }>;
+    blocks: TranslationPromptBlock[];
     pageKey: string;
   }>
 ) {
@@ -74,14 +74,50 @@ export function buildTranslationJsonPayload(
       Object.fromEntries(
         page.blocks.map((block, index) => [
           buildBlockTranslationKey(index),
-          {
-            sourceHash: buildBlockSourceHash(block.text),
-            sourceText: block.text,
-          },
+          buildBlockPayload(block),
         ])
       ),
     ])
   );
+}
+
+type TranslationPromptBlock = {
+  angle?: number;
+  height?: number;
+  symHeight?: number;
+  symWidth?: number;
+  text: string;
+  width?: number;
+  x?: number;
+  y?: number;
+};
+
+function buildBlockPayload(block: TranslationPromptBlock) {
+  const layout = buildBlockLayout(block);
+
+  return {
+    sourceHash: buildBlockSourceHash(block.text),
+    sourceText: normalizePromptSourceText(block.text),
+    ...(layout ? { layout } : {}),
+  };
+}
+
+function buildBlockLayout(block: TranslationPromptBlock) {
+  const layout = {
+    angle: block.angle,
+    height: block.height,
+    symHeight: block.symHeight,
+    symWidth: block.symWidth,
+    width: block.width,
+    x: block.x,
+    y: block.y,
+  };
+  const entries = Object.entries(layout).filter(
+    (entry): entry is [keyof typeof layout, number] =>
+      typeof entry[1] === 'number' && Number.isFinite(entry[1])
+  );
+
+  return entries.length > 0 ? Object.fromEntries(entries) : null;
 }
 
 export function buildBlockTranslationKey(index: number) {
@@ -90,7 +126,7 @@ export function buildBlockTranslationKey(index: number) {
 
 export function buildBlockSourceHash(text: string) {
   return createHash('sha256')
-    .update(text.replace(/\s+/g, ' ').trim())
+    .update(normalizePromptSourceText(text))
     .digest('hex')
     .slice(0, 12);
 }
@@ -133,6 +169,8 @@ function buildSystemPrompt(input: {
   const commonRules = [
     `Translate OCR text from ${input.sourceLanguage} to ${input.targetLanguage} for manga or comic dialogue.`,
     'The input is a JSON object keyed by page filename, then by stable OCR block id. Each block value is an object with sourceHash and sourceText.',
+    'sourceText is whitespace-normalized OCR text; OCR line breaks and spacing are noisy extraction artifacts, not layout instructions.',
+    'When present, layout contains approximate OCR block geometry in source-image pixels: x, y, width, height, angle, symWidth, and symHeight.',
     'Return only valid JSON with the exact same page keys and block id keys as the input.',
     'Return each block as an object at the same block id key: keep sourceHash unchanged and add translation as a string.',
     'Do not echo sourceText in the response.',
@@ -140,6 +178,9 @@ function buildSystemPrompt(input: {
     'Never merge, drop, reorder, rename, or split block ids, even when multiple blocks look like one sentence.',
     'Do not add notes, speaker labels, markdown, code fences, or explanations.',
     'Keep translations concise enough to fit speech bubbles.',
+    'Choose line breaks inside each translation yourself based on target-language readability, bubble rhythm, and visual layout metadata when available.',
+    'Use "\\n" in a translation only where it improves visual fit; otherwise return the translation as one line.',
+    'Do not preserve, copy, or recreate OCR line breaks just because they appeared in source text.',
     'Translate like a premium scanlation localizer, not a literal subtitle engine.',
     'Preserve tone, honorific nuance, hierarchy, subtext, and emotional intent where it matters.',
     'Use polished target-language phrasing with rhythm, weight, and natural bubble flow.',
@@ -209,6 +250,10 @@ function compactMangaContext(context: string) {
 
 function normalizeLanguage(language: string) {
   return language.trim().toLowerCase().split(/[-_]/)[0] ?? '';
+}
+
+function normalizePromptSourceText(text: string) {
+  return text.replace(/\s+/g, ' ').trim();
 }
 
 export function parseTranslationPagesInput(rawPages: unknown) {

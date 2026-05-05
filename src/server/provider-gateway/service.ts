@@ -32,8 +32,19 @@ const TRANSLATION_BATCH_CONCURRENCY = envServer.TRANSLATION_BATCH_CONCURRENCY;
 const TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS =
   envServer.TRANSLATION_BLOCK_RETRY_MAX_ATTEMPTS;
 
+type TranslationBlockInput = {
+  angle?: number;
+  height?: number;
+  symHeight?: number;
+  symWidth?: number;
+  text: string;
+  width?: number;
+  x?: number;
+  y?: number;
+};
+
 type TranslationPageInput = {
-  blocks: Array<{ text: string }>;
+  blocks: TranslationBlockInput[];
   pageKey: string;
 };
 
@@ -132,7 +143,7 @@ export async function performHostedTranslation(
       totalBatches: number;
     }) => Promise<void>;
     pages: Array<{
-      blocks: Array<{ text: string }>;
+      blocks: TranslationBlockInput[];
       pageKey: string;
     }>;
     preferredProvider?: 'anthropic' | 'gemini' | 'openai';
@@ -537,8 +548,8 @@ function buildTranslationBatchPlan(pages: TranslationPageInput[]) {
 function splitPageIntoTranslationSegments(
   page: TranslationPageInput
 ): TranslationBatchSegment[] {
-  const blockGroups: Array<Array<{ text: string }>> = [];
-  let currentBlocks: Array<{ text: string }> = [];
+  const blockGroups: TranslationBlockInput[][] = [];
+  let currentBlocks: TranslationBlockInput[] = [];
 
   for (const block of page.blocks) {
     const candidateBlocks = [...currentBlocks, block];

@@ -142,6 +142,53 @@ describe('provider gateway translation', () => {
     expect(result.pages[0]?.blocks[1]?.translation).toBe('');
   });
 
+  it('preserves model-selected translation line breaks', async () => {
+    const fetchFn = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          candidates: [
+            {
+              content: {
+                parts: [
+                  {
+                    text: '{"001.jpg":{"block_0000":"The first blow\\nwill decide it."}}',
+                  },
+                ],
+              },
+              finishReason: 'STOP',
+            },
+          ],
+          responseId: 'gemini-response-line-breaks',
+          usageMetadata: {
+            candidatesTokenCount: 7,
+            promptTokenCount: 21,
+          },
+        }),
+        { status: 200 }
+      )
+    );
+
+    const result = await performHostedTranslation(
+      {
+        pages: [
+          {
+            blocks: [{ text: 'THE FIRST BLOW WILL DECIDE IT.' }],
+            pageKey: '001.jpg',
+          },
+        ],
+        sourceLanguage: 'en',
+        targetLanguage: 'ar',
+      },
+      {
+        fetchFn,
+      }
+    );
+
+    expect(result.pages[0]?.blocks[0]?.translation).toBe(
+      'The first blow\nwill decide it.'
+    );
+  });
+
   it('maps malformed model JSON to a stable invalid_response error', async () => {
     const fetchFn = vi.fn().mockResolvedValue(
       new Response(

@@ -1,5 +1,8 @@
 const WATERMARK_MARKER_REPLACE_REGEX = /\bRTMTH\b/gi;
 const WATERMARK_MARKER_TEST_REGEX = /\bRTMTH\b/i;
+const HORIZONTAL_WHITESPACE_REGEX = /[^\S\r\n]+/g;
+const LINE_BREAK_REGEX = /\r\n?/g;
+const MULTIPLE_LINE_BREAKS_REGEX = /\n{2,}/g;
 const SPACE_BEFORE_PUNCTUATION_REGEX = /\s+([,.;:!?،؛؟…])/g;
 const URL_OR_DOMAIN_TEST_REGEX =
   /(?:https?:\/\/|www\.|(?:[a-z0-9][a-z0-9-]*\.)+(?:com|net|org|io|co|me|xyz|top|site|vip|cc|tv)\b)/i;
@@ -11,8 +14,16 @@ const WATERMARK_WORD_REGEX =
 export function cleanProviderTranslationText(value: string) {
   return value
     .replace(WATERMARK_MARKER_REPLACE_REGEX, ' ')
-    .replace(/\s+/g, ' ')
-    .replace(SPACE_BEFORE_PUNCTUATION_REGEX, '$1')
+    .replace(LINE_BREAK_REGEX, '\n')
+    .split('\n')
+    .map((line) =>
+      line
+        .replace(HORIZONTAL_WHITESPACE_REGEX, ' ')
+        .replace(SPACE_BEFORE_PUNCTUATION_REGEX, '$1')
+        .trim()
+    )
+    .join('\n')
+    .replace(MULTIPLE_LINE_BREAKS_REGEX, '\n')
     .trim();
 }
 
