@@ -1,11 +1,14 @@
 import { type NormalizedOcrPage } from '@/server/provider-gateway/schema';
 
+import { type MobileOcrRegionHints } from './schema';
+
 type OcrLayoutPageLike = {
   ocrPage: NormalizedOcrPage;
 };
 
 export function coalesceOcrLineBlocks(
-  ocrPage: NormalizedOcrPage
+  ocrPage: NormalizedOcrPage,
+  options: { mobileOcrRegionHints?: MobileOcrRegionHints | null } = {}
 ): NormalizedOcrPage {
   if (ocrPage.blocks.length < 2) {
     return ocrPage;
@@ -34,6 +37,28 @@ export function coalesceOcrLineBlocks(
       parent[rightRoot] = leftRoot;
     }
   };
+  const blockRegionIds = assignWhiteBubbleRegionIds(
+    sortedBlocks,
+    normalizeWhiteBubbleRegions(options.mobileOcrRegionHints, ocrPage)
+  );
+
+  for (let leftIndex = 0; leftIndex < sortedBlocks.length; leftIndex += 1) {
+    const leftRegionId = blockRegionIds.get(leftIndex);
+
+    if (!leftRegionId) {
+      continue;
+    }
+
+    for (
+      let rightIndex = leftIndex + 1;
+      rightIndex < sortedBlocks.length;
+      rightIndex += 1
+    ) {
+      if (blockRegionIds.get(rightIndex) === leftRegionId) {
+        union(leftIndex, rightIndex);
+      }
+    }
+  }
 
   for (let leftIndex = 0; leftIndex < sortedBlocks.length; leftIndex += 1) {
     const leftBlock = sortedBlocks[leftIndex];
@@ -50,6 +75,13 @@ export function coalesceOcrLineBlocks(
       const rightBlock = sortedBlocks[rightIndex];
 
       if (!rightBlock) {
+        continue;
+      }
+
+      const leftRegionId = blockRegionIds.get(leftIndex);
+      const rightRegionId = blockRegionIds.get(rightIndex);
+
+      if (leftRegionId && rightRegionId && leftRegionId !== rightRegionId) {
         continue;
       }
 
@@ -78,6 +110,143 @@ export function coalesceOcrLineBlocks(
       .map(mergeOcrBlockGroup)
       .sort((left, right) => left.y - right.y || left.x - right.x),
   };
+}
+
+type WhiteBubbleRegion = {
+  bottom: number;
+  confidence: number;
+  id: string;
+  left: number;
+  right: number;
+  top: number;
+};
+
+function normalizeWhiteBubbleRegions(
+  hints: MobileOcrRegionHints | null | undefined,
+  ocrPage: NormalizedOcrPage
+): WhiteBubbleRegion[] {
+  if (!hints || hints.status !== 'ok' || hints.regions.length === 0) {
+    return [];
+  }
+
+  const widthRatio = hints.imageWidth / ocrPage.imgWidth;
+  const heightRatio = hints.imageHeight / ocrPage.imgHeight;
+  const dimensionsMatch =
+    Number.isFinite(widthRatio) &&
+    Number.isFinite(heightRatio) &&
+    widthRatio > 0.96 &&
+    widthRatio < 1.04 &&
+    heightRatio > 0.96 &&
+    heightRatio < 1.04;
+
+  if (!dimensionsMatch) {
+    return [];
+  }
+
+  const pageArea = ocrPage.imgWidth * ocrPage.imgHeight;
+
+  return hints.regions
+    .map((region): WhiteBubbleRegion | null => {
+      const confidence = region.confidence ?? 0.7;
+      const left = Math.max(0, Math.min(region.x, ocrPage.imgWidth));
+      const top = Math.max(0, Math.min(region.y, ocrPage.imgHeight));
+      const right = Math.max(
+        left,
+        Math.min(region.x + region.width, ocrPage.imgWidth)
+      );
+      const bottom = Math.max(
+        top,
+        Math.min(region.y + region.height, ocrPage.imgHeight)
+      );
+      const width = right - left;
+      const height = bottom - top;
+      const area = width * height;
+
+      if (
+        confidence < 0.55 ||
+        width < 8 ||
+        height < 8 ||
+        area <= 0 ||
+        area > pageArea * 0.6
+      ) {
+        return null;
+      }
+
+      return {
+        bottom,
+        confidence,
+        id: region.hintId,
+        left,
+        right,
+        top,
+      };
+    })
+    .filter((region): region is WhiteBubbleRegion => Boolean(region));
+}
+
+function assignWhiteBubbleRegionIds(
+  blocks: NormalizedOcrPage['blocks'],
+  regions: WhiteBubbleRegion[]
+) {
+  const assignments = new Map<number, string>();
+
+  if (regions.length === 0) {
+    return assignments;
+  }
+
+  for (const [index, block] of blocks.entries()) {
+    const blockArea = block.width * block.height;
+    if (blockArea <= 0 || block.renderMode === 'mask_only') {
+      continue;
+    }
+
+    let bestRegion: WhiteBubbleRegion | null = null;
+    let bestScore = 0;
+
+    for (const region of regions) {
+      const centerInside =
+        block.x + block.width / 2 >= region.left &&
+        block.x + block.width / 2 <= region.right &&
+        block.y + block.height / 2 >= region.top &&
+        block.y + block.height / 2 <= region.bottom;
+      const intersection = rectangleIntersectionArea(
+        {
+          bottom: block.y + block.height,
+          left: block.x,
+          right: block.x + block.width,
+          top: block.y,
+        },
+        region
+      );
+      const intersectionRatio = intersection / blockArea;
+      const score = intersectionRatio + (centerInside ? 0.35 : 0);
+
+      if (score > bestScore) {
+        bestRegion = region;
+        bestScore = score;
+      }
+    }
+
+    if (bestRegion && bestScore >= 0.55) {
+      assignments.set(index, bestRegion.id);
+    }
+  }
+
+  return assignments;
+}
+
+function rectangleIntersectionArea(
+  leftRect: { bottom: number; left: number; right: number; top: number },
+  rightRect: { bottom: number; left: number; right: number; top: number }
+) {
+  const width =
+    Math.min(leftRect.right, rightRect.right) -
+    Math.max(leftRect.left, rightRect.left);
+  const height =
+    Math.min(leftRect.bottom, rightRect.bottom) -
+    Math.max(leftRect.top, rightRect.top);
+
+  return Math.max(0, width) * Math.max(0, height);
 }
 
 export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(

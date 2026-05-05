@@ -19,6 +19,35 @@ export const zTranslationChapterIdentity = z
   })
   .strict();
 
+export const zMobileOcrRegionHint = z
+  .object({
+    confidence: z.number().min(0).max(1).optional(),
+    height: z.number().positive(),
+    hintId: z.string().trim().min(1).max(80),
+    kind: z.enum(['white_bubble']).default('white_bubble'),
+    sourceBlockCount: z.number().int().positive().max(100).optional(),
+    width: z.number().positive(),
+    x: z.number(),
+    y: z.number(),
+  })
+  .strict();
+
+export const zMobileOcrRegionHints = z
+  .object({
+    algorithm: z.string().trim().min(1).max(120),
+    coordinateSpace: z
+      .literal('original_image_px')
+      .default('original_image_px'),
+    imageHeight: z.number().positive(),
+    imageWidth: z.number().positive(),
+    regions: z.array(zMobileOcrRegionHint).max(512),
+    schemaVersion: z
+      .literal('mobile_ocr_region_hints.v1')
+      .default('mobile_ocr_region_hints.v1'),
+    status: z.enum(['ok', 'failed', 'skipped']).default('ok'),
+  })
+  .strict();
+
 export const zCreateTranslationJobInput = z
   .object({
     chapterIdentity: zTranslationChapterIdentity.optional(),
@@ -34,6 +63,7 @@ export const zCreateTranslationJobInput = z
             .optional(),
           fileName: z.string().trim().min(1).max(255),
           mimeType: zPageMimeType,
+          mobileOcrRegionHints: zMobileOcrRegionHints.optional(),
           sizeBytes: z.number().int().positive().max(50_000_000),
         })
       )
@@ -146,9 +176,14 @@ export const zTranslationJobResultManifest = z.object({
   sourceLanguage: z.string(),
   targetLanguage: z.string(),
   translatorType: z.enum(['anthropic', 'gemini', 'openai']),
-  version: z.enum(['2026-03-20.phase11.v1', '2026-05-03.ocr-grouping.v1']),
+  version: z.enum([
+    '2026-03-20.phase11.v1',
+    '2026-05-03.ocr-grouping.v1',
+    '2026-05-05.mobile-layout-hints.v1',
+  ]),
 });
 
 export type TranslationJobResultManifest = z.infer<
   typeof zTranslationJobResultManifest
 >;
+export type MobileOcrRegionHints = z.infer<typeof zMobileOcrRegionHints>;

@@ -29,6 +29,7 @@ import {
   type TranslationJobResultManifest,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
+  zMobileOcrRegionHints,
   zTranslationChapterIdentity,
   zTranslationJobControlInput,
   zTranslationJobPageUploadInput,
@@ -151,7 +152,7 @@ type JobProgressSnapshot = {
   updatedAt: string;
 };
 
-export const JOB_RESULT_VERSION = '2026-05-03.ocr-grouping.v1' as const;
+export const JOB_RESULT_VERSION = '2026-05-05.mobile-layout-hints.v1' as const;
 const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
 const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
 const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -256,9 +257,14 @@ export async function createTranslationJob(
         checksumSha256: page.checksumSha256 ?? null,
         jobId: createdJob.id,
         kind: 'page_upload',
-        metadata: {
-          uploadStatus: 'pending',
-        },
+        metadata: page.mobileOcrRegionHints
+          ? {
+              mobileOcrRegionHints: page.mobileOcrRegionHints,
+              uploadStatus: 'pending',
+            }
+          : {
+              uploadStatus: 'pending',
+            },
         mimeType: page.mimeType,
         originalFileName: page.fileName,
         pageNumber: index + 1,
@@ -1136,7 +1142,13 @@ async function processStartedTranslationJob(
 
       layoutPages = ocrPages.map((page) => ({
         ...page,
-        ocrPage: coalesceOcrLineBlocks(page.ocrPage),
+        ocrPage: coalesceOcrLineBlocks(page.ocrPage, {
+          mobileOcrRegionHints: getMobileOcrRegionHintsForPage({
+            fileName: page.fileName,
+            ocrPage: page.ocrPage,
+            uploadAssets,
+          }),
+        }),
       }));
     }
 
@@ -1982,11 +1994,85 @@ function calculateReservedTokens(_pageCount: number) {
 
 function buildTranslationCacheProviderSignature(job: JobRecord) {
   return JSON.stringify({
+    layoutHintsSignature: buildMobileLayoutHintsSignature(job.assets),
     ocrProvider: job.resolvedOcrProvider,
     promptVersion: envServer.TRANSLATION_PROMPT_VERSION ?? null,
     resultVersion: JOB_RESULT_VERSION,
     translationProvider: job.resolvedTranslationProvider,
   });
+}
+
+function getMobileOcrRegionHintsForPage(input: {
+  fileName: string;
+  ocrPage: NormalizedOcrPage;
+  uploadAssets: JobAssetRecord[];
+}) {
+  const asset = input.uploadAssets.find(
+    (item) =>
+      item.kind === 'page_upload' && item.originalFileName === input.fileName
+  );
+  const metadata =
+    asset?.metadata && typeof asset.metadata === 'object'
+      ? (asset.metadata as { mobileOcrRegionHints?: unknown })
+      : null;
+  const parsed = zMobileOcrRegionHints.safeParse(
+    metadata?.mobileOcrRegionHints
+  );
+
+  if (!parsed.success) {
+    return null;
+  }
+
+  const hints = parsed.data;
+  const widthDelta = Math.abs(hints.imageWidth - input.ocrPage.imgWidth);
+  const heightDelta = Math.abs(hints.imageHeight - input.ocrPage.imgHeight);
+  const widthTolerance = Math.max(2, input.ocrPage.imgWidth * 0.04);
+  const heightTolerance = Math.max(2, input.ocrPage.imgHeight * 0.04);
+
+  if (widthDelta > widthTolerance || heightDelta > heightTolerance) {
+    return null;
+  }
+
+  return hints;
+}
+
+function buildMobileLayoutHintsSignature(assets: JobAssetRecord[]) {
+  const pages = assets
+    .filter((asset) => asset.kind === 'page_upload')
+    .map((asset) => {
+      const metadata =
+        asset.metadata && typeof asset.metadata === 'object'
+          ? (asset.metadata as { mobileOcrRegionHints?: unknown })
+          : null;
+      const parsed = zMobileOcrRegionHints.safeParse(
+        metadata?.mobileOcrRegionHints
+      );
+
+      if (!asset.pageNumber || !parsed.success || parsed.data.status !== 'ok') {
+        return {
+          pageNumber: asset.pageNumber,
+          status: 'none',
+        };
+      }
+
+      return {
+        algorithm: parsed.data.algorithm,
+        pageNumber: asset.pageNumber,
+        regions: parsed.data.regions.map((region) => ({
+          confidence: region.confidence ?? null,
+          height: Math.round(region.height),
+          kind: region.kind,
+          width: Math.round(region.width),
+          x: Math.round(region.x),
+          y: Math.round(region.y),
+        })),
+        schemaVersion: parsed.data.schemaVersion,
+        status: parsed.data.status,
+      };
+    })
+    .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
+
+  return createHash('sha256').update(JSON.stringify({ pages })).digest('hex');
 }
 
 function normalizeChapterIdentity(rawIdentity: unknown) {
@@ -2257,7 +2343,13 @@ function mapCachedManifestToOcrLayoutPages(input: {
 
     layoutPages.push({
       fileName: asset.originalFileName,
-      ocrPage: coalesceOcrLineBlocks(ocrPage),
+      ocrPage: coalesceOcrLineBlocks(ocrPage, {
+        mobileOcrRegionHints: getMobileOcrRegionHintsForPage({
+          fileName: asset.originalFileName,
+          ocrPage,
+          uploadAssets: input.uploadAssets,
+        }),
+      }),
     });
   }
 
