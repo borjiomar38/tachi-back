@@ -91,6 +91,54 @@ describe('OCR block grouping', () => {
     expect(result.blocks).toHaveLength(2);
   });
 
+  it('does not merge close dialogue with a standalone watermark block', () => {
+    const page = buildOcrPage([
+      block({ text: 'THIS IS IMPORTANT.', x: 80, y: 920, width: 180 }),
+      block({ text: 'COLAMANGA.COM', x: 82, y: 944, width: 210 }),
+    ]);
+
+    const result = coalesceOcrLineBlocks({
+      ...page,
+      imgHeight: 980,
+    });
+
+    expect(result.blocks).toHaveLength(2);
+    expect(result.blocks[0]).toEqual(
+      expect.objectContaining({
+        text: 'THIS IS IMPORTANT.',
+      })
+    );
+    expect(result.blocks[1]).toEqual(
+      expect.objectContaining({
+        renderMode: 'mask_only',
+        text: 'COLAMANGA.COM',
+      })
+    );
+  });
+
+  it('strips watermark domains from polluted OCR text before translation', () => {
+    const page = buildOcrPage([
+      block({
+        height: 164,
+        text: '这 下 有意思 了 , 离 火 圣 子 若是 没 掌控 妖 神宗 … 他们 说不定 还 是 友军 呢 ~ ACLOUDMEROL.COM COLAMANGA.COM',
+        width: 291,
+        x: 1,
+        y: 961,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toHaveLength(1);
+    expect(result.blocks[0]).toEqual(
+      expect.objectContaining({
+        height: expect.any(Number),
+        text: '这 下 有意思 了, 离 火 圣 子 若是 没 掌控 妖 神宗… 他们 说不定 还 是 友军 呢 ~',
+      })
+    );
+    expect(result.blocks[0]?.height).toBeLessThan(100);
+  });
+
   it('uses white bubble layout hints to merge OCR lines beyond distance thresholds', () => {
     const page = buildOcrPage([
       block({ text: 'FIRST LINE', x: 180, y: 120, width: 120 }),
@@ -115,6 +163,33 @@ describe('OCR block grouping', () => {
     );
   });
 
+  it('uses white bubble hints without letting watermark blocks pollute merged dialogue', () => {
+    const page = buildOcrPage([
+      block({ text: 'FIRST LINE', x: 180, y: 120, width: 120 }),
+      block({ text: 'SECOND LINE', x: 176, y: 170, width: 140 }),
+      block({ text: 'COLAMANGA.COM', x: 174, y: 202, width: 170 }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page, {
+      mobileOcrRegionHints: buildHints([
+        region({ height: 130, hintId: 'white-1', width: 240, x: 130, y: 90 }),
+      ]),
+    });
+
+    expect(result.blocks).toHaveLength(2);
+    expect(result.blocks[0]).toEqual(
+      expect.objectContaining({
+        text: 'FIRST LINE SECOND LINE',
+      })
+    );
+    expect(result.blocks[1]).toEqual(
+      expect.objectContaining({
+        renderMode: 'mask_only',
+        text: 'COLAMANGA.COM',
+      })
+    );
+  });
+
   it('does not threshold-merge OCR blocks assigned to different white bubbles', () => {
     const page = buildOcrPage([
       block({ text: 'YES.', x: 180, y: 100, width: 80 }),
@@ -131,6 +206,26 @@ describe('OCR block grouping', () => {
     });
 
     expect(result.blocks.map((item) => item.text)).toEqual(['YES.', 'NO.']);
+  });
+
+  it('does not threshold-merge a white-bubble block with an unassigned neighbor', () => {
+    const page = buildOcrPage([
+      block({ text: 'INSIDE BUBBLE', x: 180, y: 100, width: 130 }),
+      block({ text: 'OUTSIDE NOTE', x: 182, y: 124, width: 130 }),
+    ]);
+
+    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(1);
+
+    const result = coalesceOcrLineBlocks(page, {
+      mobileOcrRegionHints: buildHints([
+        region({ height: 30, hintId: 'white-1', width: 170, x: 150, y: 90 }),
+      ]),
+    });
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'INSIDE BUBBLE',
+      'OUTSIDE NOTE',
+    ]);
   });
 
   it('ignores layout hints whose dimensions do not match the OCR page', () => {

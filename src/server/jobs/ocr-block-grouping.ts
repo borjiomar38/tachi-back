@@ -10,11 +10,13 @@ export function coalesceOcrLineBlocks(
   ocrPage: NormalizedOcrPage,
   options: { mobileOcrRegionHints?: MobileOcrRegionHints | null } = {}
 ): NormalizedOcrPage {
-  if (ocrPage.blocks.length < 2) {
-    return ocrPage;
+  const sanitizedPage = sanitizeOcrPageForGrouping(ocrPage);
+
+  if (sanitizedPage.blocks.length < 2) {
+    return sanitizedPage;
   }
 
-  const sortedBlocks = [...ocrPage.blocks].sort(
+  const sortedBlocks = [...sanitizedPage.blocks].sort(
     (left, right) => left.y - right.y || left.x - right.x
   );
   const parent = sortedBlocks.map((_, index) => index);
@@ -39,7 +41,7 @@ export function coalesceOcrLineBlocks(
   };
   const blockRegionIds = assignWhiteBubbleRegionIds(
     sortedBlocks,
-    normalizeWhiteBubbleRegions(options.mobileOcrRegionHints, ocrPage)
+    normalizeWhiteBubbleRegions(options.mobileOcrRegionHints, sanitizedPage)
   );
 
   for (let leftIndex = 0; leftIndex < sortedBlocks.length; leftIndex += 1) {
@@ -81,7 +83,7 @@ export function coalesceOcrLineBlocks(
       const leftRegionId = blockRegionIds.get(leftIndex);
       const rightRegionId = blockRegionIds.get(rightIndex);
 
-      if (leftRegionId && rightRegionId && leftRegionId !== rightRegionId) {
+      if ((leftRegionId || rightRegionId) && leftRegionId !== rightRegionId) {
         continue;
       }
 
@@ -105,7 +107,7 @@ export function coalesceOcrLineBlocks(
   }
 
   return {
-    ...ocrPage,
+    ...sanitizedPage,
     blocks: [...groups.values()]
       .map(mergeOcrBlockGroup)
       .sort((left, right) => left.y - right.y || left.x - right.x),
@@ -329,6 +331,13 @@ export function shouldCoalesceOcrBlocks(
   previousBlock: NormalizedOcrPage['blocks'][number],
   nextBlock: NormalizedOcrPage['blocks'][number]
 ) {
+  if (
+    isLikelyStandaloneWatermarkSource(previousBlock.text) ||
+    isLikelyStandaloneWatermarkSource(nextBlock.text)
+  ) {
+    return false;
+  }
+
   const previousBottom = previousBlock.y + previousBlock.height;
   const verticalGap = nextBlock.y - previousBottom;
   const averageSymbolHeight =
@@ -528,6 +537,117 @@ function isTextContinuationCandidate(
   }
 
   return true;
+}
+
+function sanitizeOcrPageForGrouping(
+  ocrPage: NormalizedOcrPage
+): NormalizedOcrPage {
+  return {
+    ...ocrPage,
+    blocks: ocrPage.blocks.map(sanitizeOcrBlockForGrouping),
+  };
+}
+
+function sanitizeOcrBlockForGrouping(
+  block: NormalizedOcrPage['blocks'][number]
+): NormalizedOcrPage['blocks'][number] {
+  if (!hasLikelyWatermarkSource(block.text)) {
+    return block;
+  }
+
+  const cleanedText = stripWatermarkText(block.text);
+
+  if (!cleanedText) {
+    return {
+      ...block,
+      renderMode: 'mask_only',
+    };
+  }
+
+  if (cleanedText === block.text) {
+    return block;
+  }
+
+  return {
+    ...block,
+    ...estimatePollutedOcrBlockGeometry(block, cleanedText),
+    text: cleanedText,
+  };
+}
+
+function estimatePollutedOcrBlockGeometry(
+  block: NormalizedOcrPage['blocks'][number],
+  cleanedText: string
+): Partial<NormalizedOcrPage['blocks'][number]> {
+  const currentLineSlots = block.height / Math.max(1, block.symHeight);
+
+  if (currentLineSlots < 5) {
+    return {};
+  }
+
+  const estimatedLineCount = estimateTextLineCount(block, cleanedText);
+  const estimatedHeight = Math.ceil(
+    estimatedLineCount * block.symHeight * 1.45
+  );
+  const minimumHeight = Math.ceil(block.symHeight * 1.8);
+  const nextHeight = Math.max(minimumHeight, estimatedHeight);
+
+  if (nextHeight >= block.height * 0.82) {
+    return {};
+  }
+
+  return {
+    height: nextHeight,
+  };
+}
+
+function estimateTextLineCount(
+  block: NormalizedOcrPage['blocks'][number],
+  text: string
+) {
+  const glyphCount = normalizeOcrText(text).length;
+  const usableWidth = Math.max(block.symWidth, block.width * 0.9);
+  return Math.max(1, Math.ceil((glyphCount * block.symWidth) / usableWidth));
+}
+
+const URL_OR_DOMAIN_REGEX =
+  /(?:https?:\/\/|www\.|(?:[a-z0-9][a-z0-9-]*\.)+(?:com|net|org|io|co|me|xyz|top|site|vip|cc|tv)\b)/gi;
+const URL_OR_DOMAIN_TEST_REGEX =
+  /(?:https?:\/\/|www\.|(?:[a-z0-9][a-z0-9-]*\.)+(?:com|net|org|io|co|me|xyz|top|site|vip|cc|tv)\b)/i;
+const WATERMARK_MARKER_REGEX = /\b(?:ACLOUD|COLAMANGA|MANGA|MEROL|RTMTH)\b/gi;
+const WATERMARK_MARKER_TEST_REGEX = /\b(?:ACLOUD|COLAMANGA|MEROL|RTMTH)\b/i;
+
+function stripWatermarkText(text: string) {
+  const withoutDomains = text
+    .replace(URL_OR_DOMAIN_REGEX, ' ')
+    .replace(WATERMARK_MARKER_REGEX, ' ');
+
+  return normalizeOcrText(withoutDomains)
+    .replace(/\s+([,.;:!?،؛؟…])/g, '$1')
+    .trim();
+}
+
+function isLikelyStandaloneWatermarkSource(value: string) {
+  const source = normalizeOcrText(value);
+
+  if (!source || !hasLikelyWatermarkSource(source)) {
+    return false;
+  }
+
+  const remainder = source
+    .replace(URL_OR_DOMAIN_REGEX, ' ')
+    .replace(WATERMARK_MARKER_REGEX, ' ')
+    .replace(/[^\p{L}\p{N}]+/gu, '')
+    .trim();
+
+  return remainder.length <= 3;
+}
+
+function hasLikelyWatermarkSource(value: string) {
+  return (
+    URL_OR_DOMAIN_TEST_REGEX.test(value) ||
+    WATERMARK_MARKER_TEST_REGEX.test(value)
+  );
 }
 
 function previousTextSuggestsContinuation(text: string) {
