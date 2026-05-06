@@ -166,10 +166,12 @@ describe('job service', () => {
   });
 
   it('creates an awaiting-upload job with page placeholders', async () => {
+    const createMany = vi.fn();
+
     mockDb.$transaction.mockImplementation(async (callback) => {
       const tx = {
         jobAsset: {
-          createMany: vi.fn(),
+          createMany,
         },
         translationJob: {
           create: vi.fn().mockResolvedValue({
@@ -195,6 +197,24 @@ describe('job service', () => {
           {
             fileName: '001.jpg',
             mimeType: 'image/jpeg',
+            mobileOcrRegionHints: {
+              algorithm: 'legacy-mobile-hints.v1',
+              coordinateSpace: 'original_image_px',
+              imageHeight: 100,
+              imageWidth: 80,
+              regions: [
+                {
+                  height: 20,
+                  hintId: 'white-1',
+                  kind: 'white_bubble',
+                  width: 30,
+                  x: 10,
+                  y: 10,
+                },
+              ],
+              schemaVersion: 'mobile_ocr_region_hints.v1',
+              status: 'ok',
+            },
             sizeBytes: 1024,
           },
           {
@@ -218,6 +238,22 @@ describe('job service', () => {
     expect(result.job.status).toBe('awaiting_upload');
     expect(result.job.pages).toHaveLength(2);
     expect(result.job.pages[0]?.uploadStatus).toBe('pending');
+    expect(createMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: [
+          expect.objectContaining({
+            metadata: {
+              uploadStatus: 'pending',
+            },
+          }),
+          expect.objectContaining({
+            metadata: {
+              uploadStatus: 'pending',
+            },
+          }),
+        ],
+      })
+    );
   });
 
   it('creates a completed job immediately when a cached result matches the page checksums', async () => {

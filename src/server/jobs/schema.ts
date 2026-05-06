@@ -180,6 +180,7 @@ export const zTranslationJobResultManifest = z.object({
     '2026-03-20.phase11.v1',
     '2026-05-03.ocr-grouping.v1',
     '2026-05-05.mobile-layout-hints.v1',
+    '2026-05-06.no-mobile-layout-hints.v1',
   ]),
 });
 

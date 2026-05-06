@@ -139,7 +139,7 @@ describe('OCR block grouping', () => {
     expect(result.blocks[0]?.height).toBeLessThan(100);
   });
 
-  it('uses white bubble layout hints to merge OCR lines beyond distance thresholds', () => {
+  it('accepts deprecated mobile OCR region hints without changing grouping', () => {
     const page = buildOcrPage([
       block({ text: 'FIRST LINE', x: 180, y: 120, width: 120 }),
       block({ text: 'SECOND LINE', x: 176, y: 170, width: 140 }),
@@ -153,100 +153,10 @@ describe('OCR block grouping', () => {
       ]),
     });
 
-    expect(result.blocks).toHaveLength(1);
-    expect(result.blocks[0]).toEqual(
-      expect.objectContaining({
-        text: 'FIRST LINE SECOND LINE',
-        x: 176,
-        y: 120,
-      })
-    );
-  });
-
-  it('uses white bubble hints without letting watermark blocks pollute merged dialogue', () => {
-    const page = buildOcrPage([
-      block({ text: 'FIRST LINE', x: 180, y: 120, width: 120 }),
-      block({ text: 'SECOND LINE', x: 176, y: 170, width: 140 }),
-      block({ text: 'COLAMANGA.COM', x: 174, y: 202, width: 170 }),
-    ]);
-
-    const result = coalesceOcrLineBlocks(page, {
-      mobileOcrRegionHints: buildHints([
-        region({ height: 130, hintId: 'white-1', width: 240, x: 130, y: 90 }),
-      ]),
-    });
-
-    expect(result.blocks).toHaveLength(2);
-    expect(result.blocks[0]).toEqual(
-      expect.objectContaining({
-        text: 'FIRST LINE SECOND LINE',
-      })
-    );
-    expect(result.blocks[1]).toEqual(
-      expect.objectContaining({
-        renderMode: 'mask_only',
-        text: 'COLAMANGA.COM',
-      })
-    );
-  });
-
-  it('does not threshold-merge OCR blocks assigned to different white bubbles', () => {
-    const page = buildOcrPage([
-      block({ text: 'YES.', x: 180, y: 100, width: 80 }),
-      block({ text: 'NO.', x: 182, y: 126, width: 80 }),
-    ]);
-
-    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(1);
-
-    const result = coalesceOcrLineBlocks(page, {
-      mobileOcrRegionHints: buildHints([
-        region({ height: 38, hintId: 'white-1', width: 160, x: 140, y: 88 }),
-        region({ height: 38, hintId: 'white-2', width: 160, x: 140, y: 122 }),
-      ]),
-    });
-
-    expect(result.blocks.map((item) => item.text)).toEqual(['YES.', 'NO.']);
-  });
-
-  it('does not threshold-merge a white-bubble block with an unassigned neighbor', () => {
-    const page = buildOcrPage([
-      block({ text: 'INSIDE BUBBLE', x: 180, y: 100, width: 130 }),
-      block({ text: 'OUTSIDE NOTE', x: 182, y: 124, width: 130 }),
-    ]);
-
-    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(1);
-
-    const result = coalesceOcrLineBlocks(page, {
-      mobileOcrRegionHints: buildHints([
-        region({ height: 30, hintId: 'white-1', width: 170, x: 150, y: 90 }),
-      ]),
-    });
-
-    expect(result.blocks.map((item) => item.text)).toEqual([
-      'INSIDE BUBBLE',
-      'OUTSIDE NOTE',
-    ]);
-  });
-
-  it('ignores layout hints whose dimensions do not match the OCR page', () => {
-    const page = buildOcrPage([
-      block({ text: 'FIRST LINE', x: 180, y: 120, width: 120 }),
-      block({ text: 'SECOND LINE', x: 176, y: 170, width: 140 }),
-    ]);
-
-    const result = coalesceOcrLineBlocks(page, {
-      mobileOcrRegionHints: {
-        ...buildHints([
-          region({ height: 130, hintId: 'white-1', width: 240, x: 130, y: 90 }),
-        ]),
-        imageWidth: 900,
-      },
-    });
-
     expect(result.blocks).toHaveLength(2);
   });
 
-  it('validates a generated page containing normal, loud, thought, narration, and dark regions', async () => {
+  it('validates synthetic white-bubble hints without applying them to grouping', async () => {
     const image = await buildSyntheticBubbleFixtureImage();
     const metadata = await sharp(image).metadata();
 
@@ -281,10 +191,13 @@ describe('OCR block grouping', () => {
     });
 
     expect(result.blocks.map((item) => item.text)).toEqual([
-      'NORMAL TOP NORMAL BOTTOM',
-      'LOUD TOP LOUD BOTTOM',
-      'THOUGHT TOP THOUGHT BOTTOM',
+      'NORMAL TOP',
+      'LOUD TOP',
+      'NORMAL BOTTOM',
+      'LOUD BOTTOM',
+      'THOUGHT TOP',
       'NARRATION BOX',
+      'THOUGHT BOTTOM',
       'DARK ORIGINAL',
     ]);
   });
