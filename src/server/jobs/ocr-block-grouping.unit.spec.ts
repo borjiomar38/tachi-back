@@ -139,6 +139,150 @@ describe('OCR block grouping', () => {
     expect(result.blocks[0]?.height).toBeLessThan(100);
   });
 
+  it('drops a huge edge-touching sparse OCR block before grouping', () => {
+    const page = buildOcrPage([
+      block({
+        height: 360,
+        symHeight: 16,
+        symWidth: 10,
+        text: 'IN LESS THAN A DAY',
+        width: 620,
+        x: 0,
+        y: 260,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([]);
+  });
+
+  it('keeps a normal OCR block when a nearby huge sparse block is dropped', () => {
+    const page = buildOcrPage([
+      block({
+        height: 360,
+        symHeight: 16,
+        symWidth: 10,
+        text: 'IN LESS THAN A DAY',
+        width: 620,
+        x: 0,
+        y: 260,
+      }),
+      block({
+        height: 44,
+        symHeight: 16,
+        symWidth: 10,
+        text: 'THIS SHOULD REMAIN',
+        width: 180,
+        x: 240,
+        y: 300,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        text: 'THIS SHOULD REMAIN',
+        width: 180,
+        x: 240,
+        y: 300,
+      }),
+    ]);
+  });
+
+  it('keeps a large sparse block when symbol metrics indicate a real large sound effect', () => {
+    const page = buildOcrPage([
+      block({
+        height: 140,
+        symHeight: 131,
+        symWidth: 110.5,
+        text: 'TH',
+        width: 139,
+        x: 289,
+        y: 650,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        text: 'TH',
+      }),
+    ]);
+  });
+
+  it('keeps a large dense narration block with enough useful text', () => {
+    const page = buildOcrPage([
+      block({
+        height: 220,
+        symHeight: 16,
+        symWidth: 10,
+        text: 'THE HISTORY OF THIS PLACE WAS WRITTEN BY MANY PEOPLE WHO FOUGHT THROUGH EVERY SEASON AND LEFT THEIR NAMES BEHIND.',
+        width: 560,
+        x: 70,
+        y: 220,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        text: 'THE HISTORY OF THIS PLACE WAS WRITTEN BY MANY PEOPLE WHO FOUGHT THROUGH EVERY SEASON AND LEFT THEIR NAMES BEHIND.',
+      }),
+    ]);
+  });
+
+  it('counts multilingual letters as useful characters when filtering sparse OCR blocks', () => {
+    const page = buildOcrPage([
+      block({
+        height: 180,
+        symHeight: 18,
+        symWidth: 12,
+        text: 'هذه فقرة عربية طويلة بما يكفي حتى لا تعتبر كتلة فارغة أو قليلة الحروف داخل صندوق كبير.',
+        width: 430,
+        x: 120,
+        y: 220,
+      }),
+      block({
+        height: 180,
+        symHeight: 18,
+        symWidth: 12,
+        text: '这是一个足够长的中文段落，用来确认过滤器不会把多语言文本当成空白块。',
+        width: 430,
+        x: 120,
+        y: 430,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'هذه فقرة عربية طويلة بما يكفي حتى لا تعتبر كتلة فارغة أو قليلة الحروف داخل صندوق كبير.',
+      '这是一个足够长的中文段落，用来确认过滤器不会把多语言文本当成空白块。',
+    ]);
+  });
+
+  it('drops huge punctuation-only OCR artifacts', () => {
+    const page = buildOcrPage([
+      block({
+        height: 180,
+        symHeight: 14,
+        symWidth: 8,
+        text: '......',
+        width: 360,
+        x: 0,
+        y: 200,
+      }),
+    ]);
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([]);
+  });
+
   it('accepts deprecated mobile OCR region hints without changing grouping', () => {
     const page = buildOcrPage([
       block({ text: 'FIRST LINE', x: 180, y: 120, width: 120 }),

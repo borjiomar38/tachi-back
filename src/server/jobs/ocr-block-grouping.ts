@@ -164,6 +164,13 @@ export function shouldCoalesceOcrBlocks(
   nextBlock: NormalizedOcrPage['blocks'][number]
 ) {
   if (
+    previousBlock.renderMode === 'mask_only' ||
+    nextBlock.renderMode === 'mask_only'
+  ) {
+    return false;
+  }
+
+  if (
     isLikelyStandaloneWatermarkSource(previousBlock.text) ||
     isLikelyStandaloneWatermarkSource(nextBlock.text)
   ) {
@@ -374,9 +381,13 @@ function isTextContinuationCandidate(
 function sanitizeOcrPageForGrouping(
   ocrPage: NormalizedOcrPage
 ): NormalizedOcrPage {
+  const sanitizedBlocks = ocrPage.blocks
+    .map(sanitizeOcrBlockForGrouping)
+    .filter((block) => !isSuspiciousLargeSparseOcrBlock(block, ocrPage));
+
   return {
     ...ocrPage,
-    blocks: ocrPage.blocks.map(sanitizeOcrBlockForGrouping),
+    blocks: sanitizedBlocks,
   };
 }
 
@@ -440,6 +451,80 @@ function estimateTextLineCount(
   const glyphCount = normalizeOcrText(text).length;
   const usableWidth = Math.max(block.symWidth, block.width * 0.9);
   return Math.max(1, Math.ceil((glyphCount * block.symWidth) / usableWidth));
+}
+
+function isSuspiciousLargeSparseOcrBlock(
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  if (block.renderMode === 'mask_only') {
+    return false;
+  }
+
+  const metrics = getSparseOcrBlockMetrics(block, page);
+
+  if (metrics.usefulCharacterCount <= 0 && metrics.areaRatio >= 0.025) {
+    return true;
+  }
+
+  const sparseBySymbolSlots =
+    metrics.symbolSlotDensity < 0.18 &&
+    metrics.symbolColumnSlots >= 8 &&
+    metrics.symbolLineSlots >= 3.5;
+  const touchesPageEdge =
+    metrics.touchesHorizontalPageEdge || metrics.touchesVerticalPageEdge;
+  const largeEdgeBlock =
+    touchesPageEdge &&
+    metrics.areaRatio >= 0.045 &&
+    metrics.usefulCharacterCount <= 140 &&
+    sparseBySymbolSlots;
+  const extremeSparseBlock =
+    metrics.areaRatio >= 0.16 &&
+    metrics.usefulCharacterCount <= 80 &&
+    metrics.symbolSlotDensity < 0.12 &&
+    metrics.symbolLineSlots >= 4.5;
+  const fullWidthSparseBlock =
+    metrics.widthRatio >= 0.82 &&
+    metrics.areaRatio >= 0.055 &&
+    metrics.usefulCharacterCount <= 90 &&
+    sparseBySymbolSlots;
+
+  return largeEdgeBlock || extremeSparseBlock || fullWidthSparseBlock;
+}
+
+function getSparseOcrBlockMetrics(
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  const pageArea = Math.max(1, page.imgWidth * page.imgHeight);
+  const blockArea = Math.max(1, block.width * block.height);
+  const edgeMarginX = Math.max(2, page.imgWidth * 0.015);
+  const edgeMarginY = Math.max(2, page.imgHeight * 0.015);
+  const symbolColumnSlots = block.width / Math.max(1, block.symWidth);
+  const symbolLineSlots = block.height / Math.max(1, block.symHeight);
+  const symbolSlotCount = Math.max(1, symbolColumnSlots * symbolLineSlots);
+  const usefulCharacterCount = countUsefulOcrCharacters(block.text);
+
+  return {
+    areaRatio: blockArea / pageArea,
+    heightRatio: block.height / Math.max(1, page.imgHeight),
+    symbolColumnSlots,
+    symbolLineSlots,
+    symbolSlotDensity: usefulCharacterCount / symbolSlotCount,
+    touchesHorizontalPageEdge:
+      block.x <= edgeMarginX ||
+      block.x + block.width >= page.imgWidth - edgeMarginX,
+    touchesVerticalPageEdge:
+      block.y <= edgeMarginY ||
+      block.y + block.height >= page.imgHeight - edgeMarginY,
+    usefulCharacterCount,
+    widthRatio: block.width / Math.max(1, page.imgWidth),
+  };
+}
+
+function countUsefulOcrCharacters(text: string) {
+  return [...text].filter((character) => /[\p{L}\p{N}]/u.test(character))
+    .length;
 }
 
 const URL_OR_DOMAIN_REGEX =
