@@ -53,6 +53,7 @@ import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
+import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiCronGenerateBlogArticleRouteImport } from './routes/api/cron/generate-blog-article'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
@@ -308,6 +309,12 @@ const ApiMobileHeartbeatRoute = ApiMobileHeartbeatRouteImport.update({
   path: '/api/mobile/heartbeat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileAppUpdatePolicyRoute =
+  ApiMobileAppUpdatePolicyRouteImport.update({
+    id: '/api/mobile/app-update-policy',
+    path: '/api/mobile/app-update-policy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
   id: '/api/download/apk',
   path: '/api/download/apk',
@@ -507,6 +514,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
+  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
@@ -581,6 +589,7 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
+  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
@@ -659,6 +668,7 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
+  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
@@ -738,6 +748,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
     | '/api/download/apk'
+    | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/openapi/app'
@@ -812,6 +823,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
     | '/api/download/apk'
+    | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/openapi/app'
@@ -889,6 +901,7 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
     | '/api/download/apk'
+    | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/openapi/app'
@@ -964,6 +977,7 @@ export interface RootRouteChildren {
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiCronGenerateBlogArticleRoute: typeof ApiCronGenerateBlogArticleRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
+  ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
@@ -1295,6 +1309,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/heartbeat'
       fullPath: '/api/mobile/heartbeat'
       preLoaderRoute: typeof ApiMobileHeartbeatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/app-update-policy': {
+      id: '/api/mobile/app-update-policy'
+      path: '/api/mobile/app-update-policy'
+      fullPath: '/api/mobile/app-update-policy'
+      preLoaderRoute: typeof ApiMobileAppUpdatePolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/download/apk': {
@@ -1661,6 +1682,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiCronGenerateBlogArticleRoute: ApiCronGenerateBlogArticleRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
+  ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,

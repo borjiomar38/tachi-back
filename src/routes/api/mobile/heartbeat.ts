@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { envServer } from '@/env/server';
 import { getClientIp } from '@/server/licenses/utils';
 import { zMobileHeartbeatInput } from '@/server/mobile-auth/schema';
 import {
@@ -8,6 +7,7 @@ import {
   MobileAuthError,
   recordMobileHeartbeat,
 } from '@/server/mobile-auth/session';
+import { getEffectiveMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
 
 export const Route = createFileRoute('/api/mobile/heartbeat')({
   server: {
@@ -20,40 +20,16 @@ export const Route = createFileRoute('/api/mobile/heartbeat')({
           url.searchParams.get('versionCode') ?? '0',
           10
         );
-        const latestVersionCode = envServer.MOBILE_ANDROID_LATEST_VERSION_CODE;
-        const minimumSupportedVersionCode =
-          envServer.MOBILE_ANDROID_MIN_VERSION_CODE;
-        const updateUrl =
-          envServer.MOBILE_ANDROID_UPDATE_URL ??
-          envServer.MOBILE_ANDROID_RELEASE_URL ??
-          'https://github.com/mannu691/TachiyomiAT/releases';
-        const releaseUrl =
-          envServer.MOBILE_ANDROID_RELEASE_URL ??
-          'https://github.com/mannu691/TachiyomiAT/releases';
+        const policy = await getEffectiveMobileAppUpdatePolicy({
+          channel,
+          currentVersionCode: Number.isFinite(currentVersionCode)
+            ? currentVersionCode
+            : 0,
+          platform,
+        });
 
         return Response.json({
-          data: {
-            channel,
-            checkedAt: new Date().toISOString(),
-            currentVersionCode: Number.isFinite(currentVersionCode)
-              ? currentVersionCode
-              : 0,
-            forceUpdate: minimumSupportedVersionCode > 0,
-            latestVersionCode,
-            latestVersionName:
-              envServer.MOBILE_ANDROID_LATEST_VERSION_NAME ?? null,
-            message:
-              envServer.MOBILE_ANDROID_UPDATE_MESSAGE ??
-              'This version is no longer supported. Update to continue.',
-            minimumSupportedVersionCode,
-            platform,
-            releaseUrl,
-            requiresUpdate:
-              minimumSupportedVersionCode > 0 &&
-              Number.isFinite(currentVersionCode) &&
-              currentVersionCode < minimumSupportedVersionCode,
-            updateUrl,
-          },
+          data: policy,
           ok: true,
         });
       },
