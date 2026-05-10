@@ -12,14 +12,14 @@ export const Route = createFileRoute('/support')({
   component: RouteComponent,
   head: () =>
     buildPublicPageHead(
-      'Manga IA Translator Support',
-      'Get TachiyomiAT support for redeem codes, Android setup, free manga IA translator access, manhwa translation plans, billing questions, device activation, and hosted OCR issues.',
+      'Manga AI Translator Support',
+      'Get TachiyomiAT support for redeem codes, Android setup, free manga AI translator access, manhwa translation plans, billing questions, device activation, and hosted OCR issues.',
       '/support',
       {
         keywords: [
           ...publicSeoKeywords,
-          'manga ia translator support',
-          'manhwa ia translator support',
+          'manga ai translator support',
+          'manhwa ai translator support',
           'TachiyomiAT redeem code support',
           'Android manga translator help',
         ],

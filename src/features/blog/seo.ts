@@ -1,16 +1,16 @@
 export type BlogSeoContentType = 'manga' | 'manhua' | 'manhwa';
 
 export const coreBlogSeoKeywords = [
-  'manga translate ia',
-  'manhwa translate ia',
-  'manhua translate ia',
+  'manga translate ai',
+  'manhwa translate ai',
+  'manhua translate ai',
 ] as const;
 
-export const requiredBlogSeoKeyword = 'manhwa translate ia';
+export const requiredBlogSeoKeyword = 'manhwa translate ai';
 
 export const buildRequiredBlogSeoKeyword = (type?: string | null) => {
   if (type === 'manga' || type === 'manhua' || type === 'manhwa') {
-    return `${type} translate ia`;
+    return `${type} translate ai`;
   }
 
   return requiredBlogSeoKeyword;
@@ -18,9 +18,9 @@ export const buildRequiredBlogSeoKeyword = (type?: string | null) => {
 
 export const highIntentBlogSeoKeywords = [
   ...coreBlogSeoKeywords,
-  'free manga ia translator',
-  'free manhwa ia translator',
-  'free manhua ia translator',
+  'free manga ai translator',
+  'free manhwa ai translator',
+  'free manhua ai translator',
   'free manga AI translator',
   'free manhwa AI translator',
   'free manhua AI translator',
@@ -46,12 +46,12 @@ export const highIntentBlogSeoKeywords = [
 
 export const publicSeoKeywords = [
   ...highIntentBlogSeoKeywords,
-  'free manga ia translator app',
-  'free manhwa ia translator app',
-  'free manhua ia translator app',
-  'Android manga IA translator',
-  'Android manhwa IA translator',
-  'Android manhua IA translator',
+  'free manga ai translator app',
+  'free manhwa ai translator app',
+  'free manhua ai translator app',
+  'Android manga AI translator',
+  'Android manhwa AI translator',
+  'Android manhua AI translator',
   'TachiyomiAT APK',
   'TachiyomiAT Android app',
 ] as const;

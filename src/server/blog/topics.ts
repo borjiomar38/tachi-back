@@ -53,14 +53,14 @@ export const blogGenerationTopics: BlogGenerationTopic[] = [
       'Use One Piece as a mainstream manga example where readers need clean OCR for dense speech bubbles, attack names, and long-running terminology.',
     manhwaTitle: 'One Piece',
     manhwaType: 'manga',
-    searchIntent: 'manga translate ia reader app',
+    searchIntent: 'manga translate ai reader app',
   },
   {
     angle:
       'Frame Jujutsu Kaisen around fast action pages, technique names, and compact dialogue where manga translation needs to stay readable.',
     manhwaTitle: 'Jujutsu Kaisen',
     manhwaType: 'manga',
-    searchIntent: 'manga translate ia OCR app',
+    searchIntent: 'manga translate ai OCR app',
   },
   {
     angle:

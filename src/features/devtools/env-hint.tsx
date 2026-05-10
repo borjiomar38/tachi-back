@@ -1,13 +1,9 @@
 import { envClient } from '@/env/client';
 
-export const getEnvHintTitlePrefix = () => {
-  if (envClient.VITE_ENV_EMOJI) return `${envClient.VITE_ENV_EMOJI} `;
-  if (envClient.VITE_ENV_NAME) return `[${envClient.VITE_ENV_NAME}] `;
-  return '';
-};
+import { shouldShowEnvHint } from './should-show-env-hint';
 
 export const EnvHint = () => {
-  if (!envClient.VITE_ENV_NAME) {
+  if (!shouldShowEnvHint(envClient.VITE_ENV_NAME)) {
     return null;
   }
 

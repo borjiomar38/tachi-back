@@ -20,7 +20,7 @@ export interface ContentBlock {
   description: string;
 }
 
-export const PUBLIC_SUPPORT_EMAIL = 'borjiomar38@gmail.com';
+export const PUBLIC_SUPPORT_EMAIL = 'support@tachiyomiat.com';
 export const PUBLIC_OWNER_WHATSAPP_DISPLAY = '+216 23 655 086';
 export const PUBLIC_OWNER_WHATSAPP_HREF =
   'https://wa.me/21623655086?text=Hello%20TachiyomiAT%2C%20I%20need%20help%20with%20the%20app.';
@@ -30,7 +30,7 @@ export const publicFreeTokenPack: PublicTokenPack = {
   key: 'free',
   name: 'Free 10',
   description:
-    'Free monthly access for trying manga, manhwa, and manhua IA translation.',
+    'Free monthly access for trying manga, manhwa, and manhua AI translation.',
   tokenAmount: 100,
   bonusTokenAmount: 0,
   priceAmountCents: 0,
@@ -50,7 +50,7 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
     key: 'starter',
     name: 'Starter 50',
     description:
-      'Good for trying hosted manga, manhwa, and manhua IA translation.',
+      'Good for trying hosted manga, manhwa, and manhua AI translation.',
     tokenAmount: 500,
     bonusTokenAmount: 0,
     priceAmountCents: 200,
@@ -66,7 +66,7 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
     id: 'fallback-pro',
     key: 'pro',
     name: 'Pro 250',
-    description: 'Best for regular manga, manhwa, and manhua IA translation.',
+    description: 'Best for regular manga, manhwa, and manhua AI translation.',
     tokenAmount: 2500,
     bonusTokenAmount: 0,
     priceAmountCents: 1000,
@@ -82,7 +82,7 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
     id: 'fallback-power',
     key: 'power',
     name: 'Power 550',
-    description: 'For heavy readers who use manga translate IA often.',
+    description: 'For heavy readers who use manga translate AI often.',
     tokenAmount: 5500,
     bonusTokenAmount: 0,
     priceAmountCents: 2000,
@@ -98,17 +98,17 @@ export const fallbackPublicTokenPacks: PublicTokenPack[] = [
 
 export const publicHighlights: ContentBlock[] = [
   {
-    title: 'Free manga IA translator',
+    title: 'Free manga AI translator',
     description:
       'Open a chapter, launch AI translation, and keep reading without complex setup.',
   },
   {
-    title: 'Free manhwa IA translator',
+    title: 'Free manhwa AI translator',
     description:
       'Text is detected cleanly on vertical manhwa pages, even when the layout is busy.',
   },
   {
-    title: 'Free manhua IA translator',
+    title: 'Free manhua AI translator',
     description:
       'Keep names, realms, and recurring terms consistent while reading manhua.',
   },
@@ -138,7 +138,7 @@ export const activationSteps: ContentBlock[] = [
   {
     title: '4. Start translating chapters',
     description:
-      'Pick a chapter and launch manga translate IA, manhwa translate IA, or manhua translate IA when you need it.',
+      'Pick a chapter and launch manga translate AI, manhwa translate AI, or manhua translate AI when you need it.',
   },
 ];
 
@@ -146,7 +146,7 @@ export const supportFaqs: ContentBlock[] = [
   {
     title: 'What can I translate?',
     description:
-      'Use manga translate IA, manhwa translate IA, or manhua translate IA only with content you own, content in the public domain, or content you have permission to process.',
+      'Use manga translate AI, manhwa translate AI, or manhua translate AI only with content you own, content in the public domain, or content you have permission to process.',
   },
   {
     title: 'Do I need API keys?',

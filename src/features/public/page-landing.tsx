@@ -124,7 +124,7 @@ export const PageLanding = (props: {
               size="lg"
               className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
             >
-              Free manga, manhwa & manhua IA translator
+              Free manga, manhwa & manhua AI translator
             </Badge>
 
             <div className="space-y-5">
@@ -132,11 +132,11 @@ export const PageLanding = (props: {
                 Simple AI translation inside TachiyomiAT
               </p>
               <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
-                Try a free manga IA translator.
+                Try a free manga AI translator.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                Use TachiyomiAT as a free manga IA translator, free manhwa IA
-                translator, and free manhua IA translator with hosted OCR,
+                Use TachiyomiAT as a free manga AI translator, free manhwa AI
+                translator, and free manhua AI translator with hosted OCR,
                 clean translation, redeem-code activation, and one Android APK
                 download.
               </p>
@@ -275,7 +275,7 @@ export const PageLanding = (props: {
                   Read manga, manhwa, and manhua in the same app you already use.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  Start with free IA translator access, then use AI translation
+                  Start with free AI translator access, then use AI translation
                   when pages need help.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
@@ -357,8 +357,8 @@ export const PageLanding = (props: {
                   Simple result
                 </p>
                 <p className="mt-2 text-sm leading-7 text-neutral-200">
-                  The goal is to keep free manga IA translator, free manhwa IA
-                  translator, and free manhua IA translator workflows smooth
+                  The goal is to keep free manga AI translator, free manhwa AI
+                  translator, and free manhua AI translator workflows smooth
                   inside TachiyomiAT.
                 </p>
               </div>

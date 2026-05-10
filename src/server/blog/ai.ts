@@ -21,7 +21,7 @@ import {
   retryProviderCall,
 } from '@/server/provider-gateway/utils';
 
-const BLOG_PROMPT_VERSION = '2026-05-04.translate-ia-seo.v3';
+const BLOG_PROMPT_VERSION = '2026-05-04.translate-ai-seo.v3';
 
 const zGeneratedBlogArticle = z.object({
   body: zBlogArticleBody,
@@ -142,7 +142,7 @@ function buildArticlePrompt(input: {
     '{ title, slugBase, excerpt, metaDescription, keywords, body: { introduction, sections, readingProfile, downloadCallout, faqs, disclaimer } }',
     '',
     'Rules:',
-    '- Target searches around manga translate ia, manhwa translate ia, manhua translate ia, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
+    '- Target searches around manga translate ai, manhwa translate ai, manhua translate ai, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
     `- The primary SEO phrase for this article is "${requiredKeyword}" because the type is ${input.topic.manhwaType}. Include that exact phrase in the title or meta description if it reads naturally, always include it in keywords, and use it at least once in the body copy.`,
     `- Support the broader keyword cluster without stuffing: ${supportingKeywords.join(', ')}.`,
     '- Prefer useful setup, reading workflow, OCR, AI translation, Android APK, and legal-use wording over keyword stuffing.',

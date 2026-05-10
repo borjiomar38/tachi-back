@@ -250,7 +250,7 @@ async function fetchGeneratedImageUrl(input: {
 }
 
 export function buildBlogTopicHeroImageAlt(topic: BlogGenerationTopic) {
-  return `AI-generated ${topic.manhwaTitle} ${topic.manhwaType} translate IA hero image for TachiyomiAT OCR translation.`;
+  return `AI-generated ${topic.manhwaTitle} ${topic.manhwaType} translate AI hero image for TachiyomiAT OCR translation.`;
 }
 
 export function buildBlogTopicHeroImagePrompt(topic: BlogGenerationTopic) {
@@ -259,7 +259,7 @@ export function buildBlogTopicHeroImagePrompt(topic: BlogGenerationTopic) {
   return [
     `Original AI-generated dark cinematic ${topic.manhwaType}-style hero illustration for a TachiyomiAT article about ${topic.manhwaTitle}.`,
     visualHint,
-    `SEO target: ${topic.manhwaTitle} ${topic.manhwaType} translate IA, OCR manga translation, TachiyomiAT Android reader.`,
+    `SEO target: ${topic.manhwaTitle} ${topic.manhwaType} translate AI, OCR manga translation, TachiyomiAT Android reader.`,
     `Show the feeling of reading and translating ${topic.manhwaType}: an Android manga reader, OCR scan lines over speech bubbles, clean translated captions, glowing page panels, and a premium app-download mood.`,
     'Make it highly relevant to the title genre and setting without copying copyrighted characters, logos, symbols, panel art, costumes, or readable text.',
     'No official artwork, no known character likenesses, no watermarks, no fake UI text, no readable typography.',
