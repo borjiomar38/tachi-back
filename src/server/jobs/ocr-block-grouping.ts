@@ -383,12 +383,22 @@ function sanitizeOcrPageForGrouping(
 ): NormalizedOcrPage {
   const sanitizedBlocks = ocrPage.blocks
     .map(sanitizeOcrBlockForGrouping)
-    .filter((block) => !isSuspiciousLargeSparseOcrBlock(block, ocrPage));
+    .filter((block) => !shouldDropOcrBlockBeforeTranslation(block, ocrPage));
 
   return {
     ...ocrPage,
     blocks: sanitizedBlocks,
   };
+}
+
+function shouldDropOcrBlockBeforeTranslation(
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  return (
+    isSuspiciousLargeSparseOcrBlock(block, page) ||
+    isLargeDecorativeEastAsianOcrBlock(block, page)
+  );
 }
 
 function sanitizeOcrBlockForGrouping(
@@ -492,6 +502,47 @@ function isSuspiciousLargeSparseOcrBlock(
   return largeEdgeBlock || extremeSparseBlock || fullWidthSparseBlock;
 }
 
+function isLargeDecorativeEastAsianOcrBlock(
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  if (block.renderMode === 'mask_only') {
+    return false;
+  }
+
+  const metrics = getSparseOcrBlockMetrics(block, page);
+
+  if (
+    metrics.usefulCharacterCount <= 0 ||
+    metrics.usefulCharacterCount > MAX_DECORATIVE_SOURCE_CHARS
+  ) {
+    return false;
+  }
+
+  const eastAsianCharacterCount = countEastAsianScriptCharacters(block.text);
+  if (eastAsianCharacterCount <= 0) {
+    return false;
+  }
+
+  if (
+    eastAsianCharacterCount / Math.max(1, metrics.usefulCharacterCount) <
+    MIN_DECORATIVE_EAST_ASIAN_RATIO
+  ) {
+    return false;
+  }
+
+  const hasHugeGlyphMetrics =
+    block.symHeight >= MIN_DECORATIVE_SYMBOL_SIZE ||
+    block.symWidth >= MIN_DECORATIVE_SYMBOL_SIZE ||
+    metrics.heightRatio >= MIN_DECORATIVE_HEIGHT_RATIO;
+  const isLargeBlock =
+    metrics.widthRatio >= MIN_DECORATIVE_WIDTH_RATIO ||
+    metrics.areaRatio >= MIN_DECORATIVE_AREA_RATIO ||
+    metrics.heightRatio >= MIN_DECORATIVE_HEIGHT_RATIO;
+
+  return hasHugeGlyphMetrics && isLargeBlock;
+}
+
 function getSparseOcrBlockMetrics(
   block: NormalizedOcrPage['blocks'][number],
   page: NormalizedOcrPage
@@ -526,6 +577,21 @@ function countUsefulOcrCharacters(text: string) {
   return [...text].filter((character) => /[\p{L}\p{N}]/u.test(character))
     .length;
 }
+
+function countEastAsianScriptCharacters(text: string) {
+  return [...text].filter((character) =>
+    EAST_ASIAN_SCRIPT_CHARACTER_REGEX.test(character)
+  ).length;
+}
+
+const MAX_DECORATIVE_SOURCE_CHARS = 8;
+const MIN_DECORATIVE_AREA_RATIO = 0.015;
+const MIN_DECORATIVE_EAST_ASIAN_RATIO = 0.6;
+const MIN_DECORATIVE_HEIGHT_RATIO = 0.06;
+const MIN_DECORATIVE_SYMBOL_SIZE = 48;
+const MIN_DECORATIVE_WIDTH_RATIO = 0.35;
+const EAST_ASIAN_SCRIPT_CHARACTER_REGEX =
+  /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]/u;
 
 const URL_OR_DOMAIN_REGEX =
   /(?:https?:\/\/|www\.|(?:[a-z0-9][a-z0-9-]*\.)+(?:com|net|org|io|co|me|xyz|top|site|vip|cc|tv)\b)/gi;

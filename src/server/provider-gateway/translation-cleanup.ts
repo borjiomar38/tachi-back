@@ -33,6 +33,10 @@ export function shouldDropProviderTranslationBlock(input: {
 }) {
   const translation = input.translation.trim();
 
+  if (isNoTranslationPlaceholder(translation)) {
+    return true;
+  }
+
   if (cleanProviderTranslationText(translation)) {
     return false;
   }
@@ -40,6 +44,22 @@ export function shouldDropProviderTranslationBlock(input: {
   return (
     WATERMARK_MARKER_TEST_REGEX.test(translation) ||
     isLikelyStandaloneWatermarkSource(input.sourceText)
+  );
+}
+
+function isNoTranslationPlaceholder(value: string) {
+  const normalized = value
+    .toLowerCase()
+    .replace(NO_TRANSLATION_PUNCTUATION_REGEX, ' ')
+    .replace(HORIZONTAL_WHITESPACE_REGEX, ' ')
+    .trim();
+
+  if (!normalized) {
+    return false;
+  }
+
+  return NO_TRANSLATION_PLACEHOLDER_REGEXES.some((regex) =>
+    regex.test(normalized)
   );
 }
 
@@ -58,3 +78,14 @@ function isLikelyStandaloneWatermarkSource(value: string) {
 
   return remainder.length <= 3;
 }
+
+const NO_TRANSLATION_PUNCTUATION_REGEX = /[()[\]{}<>"'`_*:;,.!?،؛؟\-–—]+/g;
+const NO_TRANSLATION_PLACEHOLDER_REGEXES = [
+  /\b(?:no|not|without)\s+(?:translation|translated)\b/,
+  /\b(?:untranslated|non\s+translatable|not\s+translatable|cannot\s+translate|can\s+t\s+translate)\b/,
+  /\b(?:chinese|korean|japanese|cjk)\s+text\b/,
+  /\btexte\s+(?:chinois|coreen|coréen|japonais)\b/,
+  /\b(?:sin\s+traducci[oó]n|sans\s+traduction|pas\s+de\s+traduction)\b/,
+  /(?:لا|بدون|غير|عدم)\s+ترجم\p{L}*/u,
+  /نص\s+(?:صيني|كوري|ياباني)/u,
+];

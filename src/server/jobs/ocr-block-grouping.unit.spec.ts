@@ -213,6 +213,28 @@ describe('OCR block grouping', () => {
     ]);
   });
 
+  it('drops a large decorative CJK sound effect before translation', () => {
+    const page = {
+      ...buildOcrPage([
+        block({
+          height: 324,
+          symHeight: 290.5,
+          symWidth: 255,
+          text: '你 發',
+          width: 622,
+          x: 29,
+          y: 535,
+        }),
+      ]),
+      imgHeight: 4200,
+      imgWidth: 700,
+    };
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([]);
+  });
+
   it('keeps a large dense narration block with enough useful text', () => {
     const page = buildOcrPage([
       block({
