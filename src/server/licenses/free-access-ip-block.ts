@@ -7,7 +7,7 @@ const FREE_ACCESS_IP_BLOCKS_CONFIG_KEY = 'free_access_ip_blocks';
 
 export const FREE_ACCESS_PRICING_URL = '/pricing';
 export const FREE_ACCESS_BLOCKED_MESSAGE =
-  'Free access from this network is blocked. To continue, buy a subscription.';
+  'The free trial is no longer available. To continue, buy a subscription.';
 
 const zStoredFreeAccessIpBlock = z.object({
   blockedAt: z.string().trim().min(1),
