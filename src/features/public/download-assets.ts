@@ -10,6 +10,6 @@ export const androidApkDownload = {
 } as const;
 
 export const youtubeDemo = {
-  watchUrl: 'https://www.youtube.com/shorts/ywT2ACJV8FI',
-  embedUrl: 'https://www.youtube.com/embed/ywT2ACJV8FI',
+  watchUrl: 'https://www.youtube.com/shorts/8To9Cx8lDdc',
+  embedUrl: 'https://www.youtube.com/embed/8To9Cx8lDdc',
 } as const;
