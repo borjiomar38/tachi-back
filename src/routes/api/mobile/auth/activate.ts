@@ -38,12 +38,13 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
           );
         }
 
-        const clientIp = getClientIp(request) ?? 'unknown';
+        const clientIp = getClientIp(request);
+        const rateLimitIp = clientIp ?? 'unknown';
         const userAgent = request.headers.get('user-agent');
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
 
         const ipRateLimit = consumeInMemoryRateLimit({
-          key: `mobile-auth-activate:ip:${clientIp}`,
+          key: `mobile-auth-activate:ip:${rateLimitIp}`,
           limit: envServer.REDEEM_RATE_LIMIT_MAX_ATTEMPTS,
           windowMs,
         });

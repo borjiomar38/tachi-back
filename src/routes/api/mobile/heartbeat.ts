@@ -1,5 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import {
+  buildFreeAccessIpBlockedErrorBody,
+  isFreeAccessIpBlockedError,
+} from '@/server/licenses/free-access-ip-block';
 import { getClientIp } from '@/server/licenses/utils';
 import { zMobileHeartbeatInput } from '@/server/mobile-auth/schema';
 import {
@@ -81,6 +85,16 @@ export const Route = createFileRoute('/api/mobile/heartbeat')({
             ok: true,
           });
         } catch (error) {
+          if (isFreeAccessIpBlockedError(error)) {
+            return Response.json(
+              {
+                error: buildFreeAccessIpBlockedErrorBody(error),
+                ok: false,
+              },
+              { status: error.statusCode }
+            );
+          }
+
           if (error instanceof MobileAuthError) {
             return Response.json(
               {

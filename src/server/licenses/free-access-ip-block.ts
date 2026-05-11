@@ -8,6 +8,7 @@ const FREE_ACCESS_IP_BLOCKS_CONFIG_KEY = 'free_access_ip_blocks';
 export const FREE_ACCESS_PRICING_URL = '/pricing';
 export const FREE_ACCESS_BLOCKED_MESSAGE =
   'The free trial is no longer available. To continue, buy a subscription.';
+export const FREE_ACCESS_UNAVAILABLE_ERROR_CODE = 'free_access_unavailable';
 
 const zStoredFreeAccessIpBlock = z.object({
   blockedAt: z.string().trim().min(1),
@@ -32,7 +33,7 @@ export type FreeAccessIpBlock = {
 };
 
 export class FreeAccessIpBlockedError extends Error {
-  readonly code = 'free_access_ip_blocked';
+  readonly code = FREE_ACCESS_UNAVAILABLE_ERROR_CODE;
   readonly pricingUrl: string;
   readonly statusCode = 402;
 
@@ -177,8 +178,8 @@ export function buildFreeAccessIpBlockedErrorBody(
   const block = input instanceof FreeAccessIpBlockedError ? input.block : input;
 
   return {
-    code: 'free_access_ip_blocked' as const,
-    message: block.message,
+    code: FREE_ACCESS_UNAVAILABLE_ERROR_CODE,
+    message: FREE_ACCESS_BLOCKED_MESSAGE,
     pricingUrl: block.pricingUrl,
   };
 }
@@ -187,6 +188,32 @@ export function isFreeAccessIpBlockedError(
   error: unknown
 ): error is FreeAccessIpBlockedError {
   return error instanceof FreeAccessIpBlockedError;
+}
+
+export function buildFreeAccessIpClaimBlock(input: {
+  ipAddress: string;
+  now?: Date;
+  reason?: string | null;
+}) {
+  const ipAddress = normalizeFreeAccessIpAddress(input.ipAddress);
+  if (!ipAddress) {
+    throw new Error('invalid_ip_address');
+  }
+
+  return {
+    blockedAt: (input.now ?? new Date()).toISOString(),
+    ipAddress,
+    message: FREE_ACCESS_BLOCKED_MESSAGE,
+    pricingUrl: FREE_ACCESS_PRICING_URL,
+    reason: normalizeOptionalText(input.reason),
+    updatedAt: null,
+  } satisfies FreeAccessIpBlock;
+}
+
+export function normalizeFreeAccessIpAddress(
+  ipAddress: string | null | undefined
+) {
+  return normalizeIpAddress(ipAddress);
 }
 
 function normalizeStoredBlock(

@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { createPublicContactMessage } from '@/server/contact/public-form';
 import { zPublicContactMessageInput } from '@/server/contact/schema';
+import { getClientIp } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 
 export const Route = createFileRoute('/api/contact')({
@@ -27,11 +28,9 @@ export const Route = createFileRoute('/api/contact')({
           }
 
           const data = parsed.data;
-          const forwardedFor = request.headers.get('x-forwarded-for');
-          const ipAddress = forwardedFor?.split(',')[0]?.trim() || null;
 
           await createPublicContactMessage(data, {
-            ipAddress,
+            ipAddress: getClientIp(request),
             userAgent: request.headers.get('user-agent'),
           });
 

@@ -327,21 +327,39 @@ model RedeemCode {
 }
 
 model FreeTrialClaim {
-  id              String   @id @default(cuid())
-  email           String
-  emailNormalized String   @unique
-  installationId  String   @unique
-  licenseId       String   @unique
-  redeemCodeId    String   @unique
-  tokenAmount     Int      @default(100)
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id                    String   @id @default(cuid())
+  email                 String
+  emailNormalized       String   @unique
+  installationId        String   @unique
+  ipAddress             String?  @unique
+  deviceFingerprintHash String?  @unique
+  licenseId             String   @unique
+  redeemCodeId          String   @unique
+  tokenAmount           Int      @default(100)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 
-  license    License    @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  redeemCode RedeemCode @relation(fields: [redeemCodeId], references: [id], onDelete: Cascade)
+  license    License             @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  redeemCode RedeemCode          @relation(fields: [redeemCodeId], references: [id], onDelete: Cascade)
+  identities FreeTrialIdentity[]
 
   @@index([createdAt])
   @@map("free_trial_claims")
+}
+
+model FreeTrialIdentity {
+  id        String   @id @default(cuid())
+  claimId   String
+  kind      String
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  claim FreeTrialClaim @relation(fields: [claimId], references: [id], onDelete: Cascade)
+
+  @@unique([kind, value])
+  @@index([claimId])
+  @@map("free_trial_identities")
 }
 
 model AppConfig {
