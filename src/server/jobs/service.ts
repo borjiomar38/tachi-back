@@ -1270,6 +1270,11 @@ async function processStartedTranslationJob(
       jobId: startedJob.id,
       licenseId: startedJob.licenseId,
       pageCount: startedJob.pageCount,
+      pageFingerprints:
+        buildUploadedPageFingerprints({
+          pageCount: startedJob.pageCount,
+          uploadAssets,
+        }) ?? undefined,
       pageOrder: layoutPages.map((page) => page.fileName),
       pages,
       sourceLanguage,
@@ -2031,20 +2036,12 @@ function buildTranslationResultCacheKey(input: {
   sourceLanguage?: string;
   uploadAssets: JobAssetRecord[];
 }) {
-  const pageFingerprints = input.uploadAssets
-    .map((asset) => {
-      if (!asset.checksumSha256 || !asset.pageNumber) {
-        return null;
-      }
+  const pageFingerprints = buildUploadedPageFingerprints({
+    pageCount: input.job.pageCount,
+    uploadAssets: input.uploadAssets,
+  });
 
-      return {
-        checksumSha256: asset.checksumSha256.toLowerCase(),
-        pageNumber: asset.pageNumber,
-      };
-    })
-    .filter((page): page is NonNullable<typeof page> => Boolean(page));
-
-  if (pageFingerprints.length !== input.job.pageCount) {
+  if (!pageFingerprints) {
     return null;
   }
 
@@ -2062,6 +2059,31 @@ function buildTranslationResultCacheKey(input: {
     .digest('hex');
 }
 
+function buildUploadedPageFingerprints(input: {
+  pageCount: number;
+  uploadAssets: JobAssetRecord[];
+}) {
+  const pageFingerprints = input.uploadAssets
+    .map((asset) => {
+      if (
+        !asset.checksumSha256 ||
+        !asset.originalFileName ||
+        !asset.pageNumber
+      ) {
+        return null;
+      }
+
+      return {
+        checksumSha256: asset.checksumSha256.toLowerCase(),
+        fileName: asset.originalFileName,
+        pageNumber: asset.pageNumber,
+      };
+    })
+    .filter((page): page is NonNullable<typeof page> => Boolean(page));
+
+  return pageFingerprints.length === input.pageCount ? pageFingerprints : null;
+}
+
 async function getCachedTranslationResultManifest(input: {
   cacheKey: string | null;
   dbClient: typeof db;
@@ -2070,24 +2092,13 @@ async function getCachedTranslationResultManifest(input: {
   now: Date;
   uploadAssets: JobAssetRecord[];
 }) {
-  const cachedResult = input.job.chapterCacheKey
-    ? await input.dbClient.translationResultCache.findFirst({
+  const cachedResult = input.cacheKey
+    ? await input.dbClient.translationResultCache.findUnique({
         where: {
-          chapterCacheKey: input.job.chapterCacheKey,
-          providerSignature: buildTranslationCacheProviderSignature(input.job),
-          targetLanguage: input.job.targetLanguage,
-        },
-        orderBy: {
-          updatedAt: 'desc',
+          cacheKey: input.cacheKey,
         },
       })
-    : input.cacheKey
-      ? await input.dbClient.translationResultCache.findUnique({
-          where: {
-            cacheKey: input.cacheKey,
-          },
-        })
-      : null;
+    : null;
 
   if (!cachedResult) {
     return null;
@@ -2137,6 +2148,24 @@ async function getReusableCachedOcrSource(input: {
   const cached = await getCachedTranslationSourceManifest(input);
 
   if (!cached) {
+    return null;
+  }
+
+  const compatibilityIssue = getCachedManifestCompatibilityIssue({
+    job: input.job,
+    manifest: cached.manifest,
+    requireFingerprints: true,
+    uploadAssets: input.uploadAssets,
+  });
+  if (compatibilityIssue) {
+    input.log.info({
+      cacheKey: cached.cacheKey,
+      jobId: input.job.id,
+      pageCount: input.job.pageCount,
+      reason: compatibilityIssue,
+      scope: 'jobs',
+      status: 'skipped_cached_ocr_source',
+    });
     return null;
   }
 
@@ -2211,7 +2240,14 @@ function mapCachedManifestToOcrLayoutPages(input: {
   manifest: TranslationJobResultManifest;
   uploadAssets: JobAssetRecord[];
 }): LayoutOcrPage[] | null {
-  if (input.uploadAssets.length !== input.job.pageCount) {
+  if (
+    getCachedManifestCompatibilityIssue({
+      job: input.job,
+      manifest: input.manifest,
+      requireFingerprints: true,
+      uploadAssets: input.uploadAssets,
+    })
+  ) {
     return null;
   }
 
@@ -2273,7 +2309,12 @@ function rebindCachedManifestToJob(input: {
 }) {
   if (
     input.manifest.targetLanguage !== input.job.targetLanguage ||
-    input.uploadAssets.length !== input.job.pageCount
+    getCachedManifestCompatibilityIssue({
+      job: input.job,
+      manifest: input.manifest,
+      requireFingerprints: false,
+      uploadAssets: input.uploadAssets,
+    })
   ) {
     return null;
   }
@@ -2312,6 +2353,53 @@ function rebindCachedManifestToJob(input: {
     pageOrder,
     pages,
   });
+}
+
+function getCachedManifestCompatibilityIssue(input: {
+  job: JobRecord;
+  manifest: TranslationJobResultManifest;
+  requireFingerprints: boolean;
+  uploadAssets: JobAssetRecord[];
+}): string | null {
+  if (input.manifest.pageCount !== input.job.pageCount) {
+    return `page_count_mismatch:${input.manifest.pageCount}:${input.job.pageCount}`;
+  }
+  if (input.uploadAssets.length !== input.job.pageCount) {
+    return `upload_asset_count_mismatch:${input.uploadAssets.length}:${input.job.pageCount}`;
+  }
+  if (input.manifest.pageOrder.length !== input.job.pageCount) {
+    return `manifest_page_order_mismatch:${input.manifest.pageOrder.length}:${input.job.pageCount}`;
+  }
+
+  if (!input.requireFingerprints && !input.manifest.pageFingerprints) {
+    return null;
+  }
+
+  const uploadedFingerprints = buildUploadedPageFingerprints({
+    pageCount: input.job.pageCount,
+    uploadAssets: input.uploadAssets,
+  });
+  if (!uploadedFingerprints || !input.manifest.pageFingerprints) {
+    return 'missing_page_fingerprints';
+  }
+  if (input.manifest.pageFingerprints.length !== uploadedFingerprints.length) {
+    return `fingerprint_count_mismatch:${input.manifest.pageFingerprints.length}:${uploadedFingerprints.length}`;
+  }
+
+  for (const [index, uploaded] of uploadedFingerprints.entries()) {
+    const cached = input.manifest.pageFingerprints[index];
+    if (!cached) {
+      return `missing_cached_fingerprint:${index}`;
+    }
+    if (cached.pageNumber !== uploaded.pageNumber) {
+      return `page_number_mismatch:${index}:${cached.pageNumber}:${uploaded.pageNumber}`;
+    }
+    if (cached.checksumSha256 !== uploaded.checksumSha256) {
+      return `checksum_mismatch:${index}`;
+    }
+  }
+
+  return null;
 }
 
 async function completeTranslationJobFromCachedManifest(input: {

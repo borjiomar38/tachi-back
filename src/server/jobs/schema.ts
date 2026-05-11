@@ -165,12 +165,22 @@ export const zCreateTranslationJobResponse = z.object({
   }),
 });
 
+const zTranslationJobResultPageFingerprint = z.object({
+  checksumSha256: z.string().regex(/^[a-f0-9]{64}$/),
+  fileName: z.string().min(1),
+  pageNumber: z.number().int().positive(),
+});
+
 export const zTranslationJobResultManifest = z.object({
   completedAt: z.date(),
   deviceId: z.string(),
   jobId: z.string(),
   licenseId: z.string(),
   pageCount: z.number().int().positive(),
+  pageFingerprints: z
+    .array(zTranslationJobResultPageFingerprint)
+    .min(1)
+    .optional(),
   pageOrder: z.array(z.string()).min(1),
   pages: z.record(z.string(), zHostedPageTranslation),
   sourceLanguage: z.string(),

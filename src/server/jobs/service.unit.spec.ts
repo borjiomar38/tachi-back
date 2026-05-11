@@ -390,7 +390,7 @@ describe('job service', () => {
     expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
   });
 
-  it('creates a completed job from a chapter URL cache when the client sees fewer pages', async () => {
+  it('does not reuse a chapter URL cache when the client sees fewer pages', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {
         const tx = {
@@ -538,9 +538,13 @@ describe('job service', () => {
       }
     );
 
-    expect(result.job.status).toBe('completed');
+    expect(result.job.status).toBe('awaiting_upload');
+    expect(result.job.uploadedPageCount).toBe(0);
+    expect(result.job.resultPath).toBeNull();
+    expect(mockDb.translationResultCache.findUnique).toHaveBeenCalledOnce();
     expect(mockDb.translationResultCache.findFirst).toHaveBeenCalledOnce();
-    expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
+    expect(mockPutTranslationJobResultManifest).not.toHaveBeenCalled();
+    expect(mockDb.translationResultCache.update).not.toHaveBeenCalled();
   });
 
   it('queues a retranslation from saved chapter OCR when another target exists', async () => {
@@ -615,48 +619,53 @@ describe('job service', () => {
 
         return await callback(tx);
       });
-    mockDb.translationResultCache.findFirst
-      .mockResolvedValueOnce(null)
-      .mockResolvedValueOnce({
-        bucketName: 'results',
-        cacheKey: 'source-cache-key',
-        objectKey:
-          'cache/translation-results/source-cache-key/translation-manifest.json',
-        resultManifest: {
-          completedAt: new Date('2026-03-20T09:00:00.000Z'),
-          deviceId: 'device-original',
-          jobId: 'job-original',
-          licenseId: 'license-original',
-          pageCount: 1,
-          pageOrder: ['001.jpg'],
-          pages: {
-            '001.jpg': {
-              blocks: [
-                {
-                  angle: 0,
-                  height: 10,
-                  symHeight: 5,
-                  symWidth: 5,
-                  text: 'hello',
-                  translation: 'bonjour',
-                  width: 20,
-                  x: 1,
-                  y: 2,
-                },
-              ],
-              imgHeight: 100,
-              imgWidth: 80,
-              sourceLanguage: 'ja',
-              targetLanguage: 'fr',
-              translatorType: 'gemini',
-            },
+    mockDb.translationResultCache.findFirst.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'source-cache-key',
+      objectKey:
+        'cache/translation-results/source-cache-key/translation-manifest.json',
+      resultManifest: {
+        completedAt: new Date('2026-03-20T09:00:00.000Z'),
+        deviceId: 'device-original',
+        jobId: 'job-original',
+        licenseId: 'license-original',
+        pageCount: 1,
+        pageFingerprints: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001.jpg',
+            pageNumber: 1,
           },
-          sourceLanguage: 'ja',
-          targetLanguage: 'fr',
-          translatorType: 'gemini',
-          version: '2026-03-20.phase11.v1',
+        ],
+        pageOrder: ['001.jpg'],
+        pages: {
+          '001.jpg': {
+            blocks: [
+              {
+                angle: 0,
+                height: 10,
+                symHeight: 5,
+                symWidth: 5,
+                text: 'hello',
+                translation: 'bonjour',
+                width: 20,
+                x: 1,
+                y: 2,
+              },
+            ],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'ja',
+            targetLanguage: 'fr',
+            translatorType: 'gemini',
+          },
         },
-      });
+        sourceLanguage: 'ja',
+        targetLanguage: 'fr',
+        translatorType: 'gemini',
+        version: '2026-03-20.phase11.v1',
+      },
+    });
 
     const scheduleProcessing = vi.fn();
     const result = await createTranslationJob(
@@ -1200,6 +1209,13 @@ describe('job service', () => {
         jobId: 'job-original',
         licenseId: 'license-original',
         pageCount: 1,
+        pageFingerprints: [
+          {
+            checksumSha256: 'd'.repeat(64),
+            fileName: '001.jpg',
+            pageNumber: 1,
+          },
+        ],
         pageOrder: ['001.jpg'],
         pages: {
           '001.jpg': {
@@ -1416,6 +1432,18 @@ describe('job service', () => {
         jobId: 'job-original',
         licenseId: 'license-original',
         pageCount: 2,
+        pageFingerprints: [
+          {
+            checksumSha256: 'd'.repeat(64),
+            fileName: '001.jpg',
+            pageNumber: 1,
+          },
+          {
+            checksumSha256: 'e'.repeat(64),
+            fileName: '002.jpg',
+            pageNumber: 2,
+          },
+        ],
         pageOrder: ['001.jpg', '002.jpg'],
         pages: {
           '001.jpg': {
