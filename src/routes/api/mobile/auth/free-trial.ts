@@ -3,6 +3,11 @@ import { createFileRoute } from '@tanstack/react-router';
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
 import {
+  buildFreeAccessIpBlockedErrorBody,
+  getFreeAccessIpBlock,
+  isFreeAccessIpBlockedError,
+} from '@/server/licenses/free-access-ip-block';
+import {
   createFreeTrialRedeemCode,
   isFreeTrialActivationError,
 } from '@/server/licenses/free-trial';
@@ -41,6 +46,17 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
         const clientIp = getClientIp(request) ?? 'unknown';
         const userAgent = request.headers.get('user-agent');
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
+        const freeAccessIpBlock = await getFreeAccessIpBlock(clientIp);
+
+        if (freeAccessIpBlock) {
+          return Response.json(
+            {
+              error: buildFreeAccessIpBlockedErrorBody(freeAccessIpBlock),
+              ok: false,
+            },
+            { status: 402 }
+          );
+        }
 
         const ipRateLimit = consumeInMemoryRateLimit({
           key: `mobile-auth-free-trial:ip:${clientIp}`,
@@ -111,6 +127,16 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
             ok: true,
           });
         } catch (error) {
+          if (isFreeAccessIpBlockedError(error)) {
+            return Response.json(
+              {
+                error: buildFreeAccessIpBlockedErrorBody(error),
+                ok: false,
+              },
+              { status: error.statusCode }
+            );
+          }
+
           if (error instanceof MobileAuthError) {
             return Response.json(
               {

@@ -2,6 +2,10 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
+import {
+  buildFreeAccessIpBlockedErrorBody,
+  isFreeAccessIpBlockedError,
+} from '@/server/licenses/free-access-ip-block';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import { redeemLicenseToDevice } from '@/server/licenses/redeem';
 import { getClientIp } from '@/server/licenses/utils';
@@ -99,6 +103,16 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
             ok: true,
           });
         } catch (error) {
+          if (isFreeAccessIpBlockedError(error)) {
+            return Response.json(
+              {
+                error: buildFreeAccessIpBlockedErrorBody(error),
+                ok: false,
+              },
+              { status: error.statusCode }
+            );
+          }
+
           if (error instanceof MobileAuthError) {
             return Response.json(
               {

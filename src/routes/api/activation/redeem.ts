@@ -2,6 +2,10 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
+import {
+  buildFreeAccessIpBlockedErrorBody,
+  isFreeAccessIpBlockedError,
+} from '@/server/licenses/free-access-ip-block';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import {
   isRedeemActivationError,
@@ -82,6 +86,16 @@ export const Route = createFileRoute('/api/activation/redeem')({
             ok: true,
           });
         } catch (error) {
+          if (isFreeAccessIpBlockedError(error)) {
+            return Response.json(
+              {
+                error: buildFreeAccessIpBlockedErrorBody(error),
+                ok: false,
+              },
+              { status: error.statusCode }
+            );
+          }
+
           if (isRedeemActivationError(error)) {
             return Response.json(
               {

@@ -316,6 +316,36 @@ export const zBackofficeDeviceDetail = z.object({
       unboundAt: z.date().nullish(),
     })
   ),
+  readingActivity: z.array(
+    z.object({
+      activityAt: z.date(),
+      chapterCount: z.number().int().nonnegative().nullish(),
+      chapterName: z.string().nullish(),
+      chapterNumber: z.string().nullish(),
+      chapterUrl: z.string().nullish(),
+      chapters: z.array(
+        z.object({
+          name: z.string(),
+          number: z.string().nullish(),
+          url: z.string().nullish(),
+        })
+      ),
+      completedAt: z.date().nullish(),
+      createdAt: z.date(),
+      id: z.string(),
+      jobId: z.string().nullish(),
+      ledgerEntryId: z.string().nullish(),
+      mangaTitle: z.string().nullish(),
+      mangaUrl: z.string().nullish(),
+      pageCount: z.number().int().nonnegative().nullish(),
+      sourceLanguage: z.string().nullish(),
+      sourceName: z.string().nullish(),
+      sourceType: z.enum(['chapter_translation', 'manga_page_translation']),
+      spentTokens: z.number().int().nullish(),
+      status: z.string(),
+      targetLanguage: z.string().nullish(),
+    })
+  ),
   createdAt: z.date(),
   id: z.string(),
   installationId: z.string(),

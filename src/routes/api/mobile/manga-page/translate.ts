@@ -138,6 +138,14 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
                   licenseId: auth.license.id,
                   metadata: {
                     chapterCount: parsedInput.data.chapters.length,
+                    chapters: parsedInput.data.chapters
+                      .slice(0, 50)
+                      .map((chapter) => ({
+                        key: chapter.key,
+                        name: chapter.name,
+                        number: resolveChapterNumber(chapter),
+                        url: chapter.url || null,
+                      })),
                     completedAt: new Date().toISOString(),
                     mangaTitle: parsedInput.data.manga.title,
                     mangaUrl: parsedInput.data.manga.url,
@@ -199,3 +207,24 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
     },
   },
 });
+
+function resolveChapterNumber(input: {
+  key: string;
+  name: string;
+  url: string;
+}) {
+  for (const value of [input.name, input.url, input.key]) {
+    const match =
+      value.match(
+        /(?:chapter|chap|ch\.?|episode|ep\.?|cap[ií]tulo)\s*#?\s*([0-9]+(?:[.,][0-9]+)?)/i
+      ) ??
+      value.match(/第\s*([0-9]+(?:[.,][0-9]+)?)/i) ??
+      value.match(/(?:^|[/\s_-])([0-9]+(?:[.,][0-9]+)?)(?:$|[/\s_-])/);
+
+    if (match?.[1]) {
+      return match[1].replace(',', '.');
+    }
+  }
+
+  return null;
+}

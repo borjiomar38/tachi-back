@@ -64,6 +64,60 @@ export const zBackofficeJobListResponse = z.object({
   total: z.number().int().nonnegative(),
 });
 
+export const zBackofficeDeviceListInput = z.object({
+  country: z.string().trim().max(64).default('all'),
+  limit: z.coerce.number().int().positive().max(100).default(50),
+  linked: z.enum(['all', 'linked', 'unlinked']).default('all'),
+  page: z.coerce.number().int().positive().default(1),
+  searchTerm: z.string().trim().max(128).optional().default(''),
+  status: z
+    .enum(['all', 'pending', 'active', 'revoked', 'blocked'])
+    .default('all'),
+});
+
+export const zBackofficeDeviceListItem = z.object({
+  activeLicense: z
+    .object({
+      boundAt: z.date(),
+      id: z.string(),
+      key: z.string(),
+      ownerEmail: z.string().nullish(),
+      status: z.enum(['pending', 'active', 'suspended', 'revoked', 'expired']),
+    })
+    .nullish(),
+  appBuild: z.string().nullish(),
+  appVersion: z.string().nullish(),
+  country: z.string().nullish(),
+  freeAccessIpBlocked: z.boolean(),
+  latitude: z.number().nullish(),
+  longitude: z.number().nullish(),
+  ownerAvatarUrl: z.string().nullish(),
+  createdAt: z.date(),
+  id: z.string(),
+  installationId: z.string(),
+  lastIpAddress: z.string().nullish(),
+  lastSeenAt: z.date().nullish(),
+  locale: z.string().nullish(),
+  platform: z.literal('android'),
+  redeemedCode: z
+    .object({
+      code: z.string(),
+      redeemedAt: z.date().nullish(),
+      status: z.enum(['available', 'redeemed', 'expired', 'canceled']),
+    })
+    .nullish(),
+  sameIpOwnerEmails: z.array(z.string()),
+  sameIpInstallCount: z.number().int().nonnegative(),
+  status: z.enum(['pending', 'active', 'revoked', 'blocked']),
+});
+
+export const zBackofficeDeviceListResponse = z.object({
+  items: z.array(zBackofficeDeviceListItem),
+  linkedCount: z.number().int().nonnegative(),
+  unlinkedCount: z.number().int().nonnegative(),
+  total: z.number().int().nonnegative(),
+});
+
 export const zBackofficeJobAsset = z.object({
   bucketName: z.string().nullish(),
   createdAt: z.date(),

@@ -7,6 +7,10 @@ import {
 
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
+import {
+  FreeAccessIpBlockedError,
+  getFreeAccessIpBlock,
+} from '@/server/licenses/free-access-ip-block';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import {
@@ -182,6 +186,25 @@ export async function refreshMobileSession(
 
   if (validatedSession.device.installationId !== input.installationId) {
     throw new MobileAuthError('installation_mismatch', 409);
+  }
+
+  const freeAccessIpBlock = await getFreeAccessIpBlock(deps.clientIp, {
+    dbClient,
+  });
+
+  if (freeAccessIpBlock) {
+    const freeTrialClaim = await dbClient.freeTrialClaim.findUnique({
+      where: {
+        licenseId: validatedSession.licenseId,
+      },
+      select: {
+        id: true,
+      },
+    });
+
+    if (freeTrialClaim) {
+      throw new FreeAccessIpBlockedError(freeAccessIpBlock);
+    }
   }
 
   const nextRefreshToken = generateOpaqueToken();

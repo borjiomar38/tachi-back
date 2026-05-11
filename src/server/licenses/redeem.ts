@@ -1,5 +1,9 @@
 import { db } from '@/server/db';
 import {
+  FreeAccessIpBlockedError,
+  getFreeAccessIpBlock,
+} from '@/server/licenses/free-access-ip-block';
+import {
   zRedeemActivationInput,
   zRedeemActivationResponse,
 } from '@/server/licenses/schema';
@@ -87,6 +91,16 @@ export async function redeemLicenseToDevice(
       redeemCode.license.status === 'suspended'
     ) {
       throw new RedeemActivationError('license_unavailable', 409);
+    }
+
+    if (isFreeTrialRedeemCode(redeemCode.metadata)) {
+      const freeAccessIpBlock = await getFreeAccessIpBlock(deps.clientIp, {
+        dbClient: tx as unknown as typeof db,
+      });
+
+      if (freeAccessIpBlock) {
+        throw new FreeAccessIpBlockedError(freeAccessIpBlock);
+      }
     }
 
     if (

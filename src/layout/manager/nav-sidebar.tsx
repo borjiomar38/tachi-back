@@ -6,7 +6,9 @@ import {
   InboxIcon,
   KeyRoundIcon,
   LayoutDashboardIcon,
+  MapPinnedIcon,
   PanelLeftIcon,
+  SmartphoneIcon,
   UsersIcon,
   XIcon,
 } from 'lucide-react';
@@ -32,6 +34,7 @@ import {
 
 import {
   permissionContact,
+  permissionDevice,
   permissionJob,
   permissionLicense,
   permissionProvider,
@@ -140,7 +143,11 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
             </SidebarGroup>
           </WithPermissions>
           <WithPermissions
-            permissions={[permissionJob.read, permissionProvider.read]}
+            permissions={[
+              permissionDevice.read,
+              permissionJob.read,
+              permissionProvider.read,
+            ]}
           >
             <SidebarGroup>
               <SidebarGroupLabel>
@@ -173,6 +180,38 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                               <span>
                                 <ActivityIcon />
                                 <span>{t('layout:nav.jobs')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                  </WithPermissions>
+                  <WithPermissions permissions={[permissionDevice.read]}>
+                    <SidebarMenuItem>
+                      <Link to="/manager/devices">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <SmartphoneIcon />
+                                <span>{t('layout:nav.installs')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link to="/manager/devices/map">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <MapPinnedIcon />
+                                <span>{t('layout:nav.installsMap')}</span>
                               </span>
                             }
                           />

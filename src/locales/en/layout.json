@@ -15,6 +15,8 @@
     "users": "Users",
     "account": "Account",
     "openApp": "Open App",
-    "apiDocumentation": "API Documentation"
+    "apiDocumentation": "API Documentation",
+    "installs": "Installs",
+    "installsMap": "Installs Map"
   }
 }

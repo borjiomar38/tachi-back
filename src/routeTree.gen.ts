@@ -38,6 +38,7 @@ import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/in
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
+import { Route as ManagerDevicesIndexRouteImport } from './routes/manager/devices/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
 import { Route as ManagerContactsIndexRouteImport } from './routes/manager/contacts/index'
 import { Route as ManagerChaptersIndexRouteImport } from './routes/manager/chapters/index'
@@ -62,6 +63,7 @@ import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users
 import { Route as ManagerUsersIdIndexRouteImport } from './routes/manager/users/$id.index'
 import { Route as ManagerLicensesKeyIndexRouteImport } from './routes/manager/licenses/$key.index'
 import { Route as ManagerJobsIdIndexRouteImport } from './routes/manager/jobs/$id.index'
+import { Route as ManagerDevicesMapIndexRouteImport } from './routes/manager/devices/map/index'
 import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devices/$id.index'
 import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/contacts/$id.index'
 import { Route as ManagerChaptersCacheKeyIndexRouteImport } from './routes/manager/chapters/$cacheKey.index'
@@ -234,6 +236,11 @@ const ManagerJobsIndexRoute = ManagerJobsIndexRouteImport.update({
   path: '/jobs/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerDevicesIndexRoute = ManagerDevicesIndexRouteImport.update({
+  id: '/devices/',
+  path: '/devices/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerDashboardIndexRoute = ManagerDashboardIndexRouteImport.update({
   id: '/dashboard/',
   path: '/dashboard/',
@@ -354,6 +361,11 @@ const ManagerLicensesKeyIndexRoute = ManagerLicensesKeyIndexRouteImport.update({
 const ManagerJobsIdIndexRoute = ManagerJobsIdIndexRouteImport.update({
   id: '/jobs/$id/',
   path: '/jobs/$id/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
+const ManagerDevicesMapIndexRoute = ManagerDevicesMapIndexRouteImport.update({
+  id: '/devices/map/',
+  path: '/devices/map/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
 const ManagerDevicesIdIndexRoute = ManagerDevicesIdIndexRouteImport.update({
@@ -530,6 +542,7 @@ export interface FileRoutesByFullPath {
   '/manager/chapters/': typeof ManagerChaptersIndexRoute
   '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
+  '/manager/devices/': typeof ManagerDevicesIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
@@ -552,6 +565,7 @@ export interface FileRoutesByFullPath {
   '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
+  '/manager/devices/map/': typeof ManagerDevicesMapIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
@@ -605,6 +619,7 @@ export interface FileRoutesByTo {
   '/manager/chapters': typeof ManagerChaptersIndexRoute
   '/manager/contacts': typeof ManagerContactsIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
+  '/manager/devices': typeof ManagerDevicesIndexRoute
   '/manager/jobs': typeof ManagerJobsIndexRoute
   '/manager/licenses': typeof ManagerLicensesIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
@@ -627,6 +642,7 @@ export interface FileRoutesByTo {
   '/manager/chapters/$cacheKey': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id': typeof ManagerDevicesIdIndexRoute
+  '/manager/devices/map': typeof ManagerDevicesMapIndexRoute
   '/manager/jobs/$id': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id': typeof ManagerUsersIdIndexRoute
@@ -684,6 +700,7 @@ export interface FileRoutesById {
   '/manager/chapters/': typeof ManagerChaptersIndexRoute
   '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
+  '/manager/devices/': typeof ManagerDevicesIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
@@ -706,6 +723,7 @@ export interface FileRoutesById {
   '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
+  '/manager/devices/map/': typeof ManagerDevicesMapIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
@@ -764,6 +782,7 @@ export interface FileRouteTypes {
     | '/manager/chapters/'
     | '/manager/contacts/'
     | '/manager/dashboard/'
+    | '/manager/devices/'
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
@@ -786,6 +805,7 @@ export interface FileRouteTypes {
     | '/manager/chapters/$cacheKey/'
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
+    | '/manager/devices/map/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
     | '/manager/users/$id/'
@@ -839,6 +859,7 @@ export interface FileRouteTypes {
     | '/manager/chapters'
     | '/manager/contacts'
     | '/manager/dashboard'
+    | '/manager/devices'
     | '/manager/jobs'
     | '/manager/licenses'
     | '/manager/providers'
@@ -861,6 +882,7 @@ export interface FileRouteTypes {
     | '/manager/chapters/$cacheKey'
     | '/manager/contacts/$id'
     | '/manager/devices/$id'
+    | '/manager/devices/map'
     | '/manager/jobs/$id'
     | '/manager/licenses/$key'
     | '/manager/users/$id'
@@ -917,6 +939,7 @@ export interface FileRouteTypes {
     | '/manager/chapters/'
     | '/manager/contacts/'
     | '/manager/dashboard/'
+    | '/manager/devices/'
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
@@ -939,6 +962,7 @@ export interface FileRouteTypes {
     | '/manager/chapters/$cacheKey/'
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
+    | '/manager/devices/map/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
     | '/manager/users/$id/'
@@ -1206,6 +1230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerJobsIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/devices/': {
+      id: '/manager/devices/'
+      path: '/devices'
+      fullPath: '/manager/devices/'
+      preLoaderRoute: typeof ManagerDevicesIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/dashboard/': {
       id: '/manager/dashboard/'
       path: '/dashboard'
@@ -1372,6 +1403,13 @@ declare module '@tanstack/react-router' {
       path: '/jobs/$id'
       fullPath: '/manager/jobs/$id/'
       preLoaderRoute: typeof ManagerJobsIdIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/devices/map/': {
+      id: '/manager/devices/map/'
+      path: '/devices/map'
+      fullPath: '/manager/devices/map/'
+      preLoaderRoute: typeof ManagerDevicesMapIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
     '/manager/devices/$id/': {
@@ -1574,6 +1612,7 @@ interface ManagerRouteRouteChildren {
   ManagerChaptersIndexRoute: typeof ManagerChaptersIndexRoute
   ManagerContactsIndexRoute: typeof ManagerContactsIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
+  ManagerDevicesIndexRoute: typeof ManagerDevicesIndexRoute
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
@@ -1581,6 +1620,7 @@ interface ManagerRouteRouteChildren {
   ManagerChaptersCacheKeyIndexRoute: typeof ManagerChaptersCacheKeyIndexRoute
   ManagerContactsIdIndexRoute: typeof ManagerContactsIdIndexRoute
   ManagerDevicesIdIndexRoute: typeof ManagerDevicesIdIndexRoute
+  ManagerDevicesMapIndexRoute: typeof ManagerDevicesMapIndexRoute
   ManagerJobsIdIndexRoute: typeof ManagerJobsIdIndexRoute
   ManagerLicensesKeyIndexRoute: typeof ManagerLicensesKeyIndexRoute
   ManagerUsersIdIndexRoute: typeof ManagerUsersIdIndexRoute
@@ -1594,6 +1634,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerChaptersIndexRoute: ManagerChaptersIndexRoute,
   ManagerContactsIndexRoute: ManagerContactsIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
+  ManagerDevicesIndexRoute: ManagerDevicesIndexRoute,
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
@@ -1601,6 +1642,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerChaptersCacheKeyIndexRoute: ManagerChaptersCacheKeyIndexRoute,
   ManagerContactsIdIndexRoute: ManagerContactsIdIndexRoute,
   ManagerDevicesIdIndexRoute: ManagerDevicesIdIndexRoute,
+  ManagerDevicesMapIndexRoute: ManagerDevicesMapIndexRoute,
   ManagerJobsIdIndexRoute: ManagerJobsIdIndexRoute,
   ManagerLicensesKeyIndexRoute: ManagerLicensesKeyIndexRoute,
   ManagerUsersIdIndexRoute: ManagerUsersIdIndexRoute,
