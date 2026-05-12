@@ -11,6 +11,10 @@ import {
   FreeAccessIpBlockedError,
   getFreeAccessIpBlock,
 } from '@/server/licenses/free-access-ip-block';
+import {
+  findTrialOnlyFreeTrialClaimForLicense,
+  recordFreeTrialNetworkIdentityForLicense,
+} from '@/server/licenses/free-trial-identity';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import {
@@ -188,24 +192,36 @@ export async function refreshMobileSession(
     throw new MobileAuthError('installation_mismatch', 409);
   }
 
-  const freeAccessIpBlock = await getFreeAccessIpBlock(deps.clientIp, {
-    dbClient,
-  });
+  const freeTrialClaim = await findTrialOnlyFreeTrialClaimForLicense(
+    {
+      licenseId: validatedSession.licenseId,
+      now,
+    },
+    {
+      dbClient,
+    }
+  );
 
-  if (freeAccessIpBlock) {
-    const freeTrialClaim = await dbClient.freeTrialClaim.findUnique({
-      where: {
-        licenseId: validatedSession.licenseId,
-      },
-      select: {
-        id: true,
-      },
+  if (freeTrialClaim) {
+    const freeAccessIpBlock = await getFreeAccessIpBlock(deps.clientIp, {
+      dbClient,
     });
 
-    if (freeTrialClaim) {
+    if (freeAccessIpBlock) {
       throw new FreeAccessIpBlockedError(freeAccessIpBlock);
     }
   }
+
+  await recordFreeTrialNetworkIdentityForLicense(
+    {
+      ipAddress: deps.clientIp,
+      licenseId: validatedSession.licenseId,
+      now,
+    },
+    {
+      dbClient,
+    }
+  );
 
   const nextRefreshToken = generateOpaqueToken();
   const nextRefreshTokenHash = hashToken(nextRefreshToken);
@@ -369,6 +385,17 @@ export async function recordMobileHeartbeat(
   const input = zMobileHeartbeatInput.parse(rawInput);
   const dbClient = deps.dbClient ?? db;
   const now = deps.now ?? new Date();
+
+  await recordFreeTrialNetworkIdentityForLicense(
+    {
+      ipAddress: deps.clientIp,
+      licenseId: auth.license.id,
+      now,
+    },
+    {
+      dbClient,
+    }
+  );
 
   const [device, session] = await dbClient.$transaction([
     dbClient.device.update({

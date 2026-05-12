@@ -2,7 +2,14 @@ import { db } from '@/server/db';
 import {
   FreeAccessIpBlockedError,
   getFreeAccessIpBlock,
+  normalizeFreeAccessIpAddress,
 } from '@/server/licenses/free-access-ip-block';
+import {
+  buildFreeTrialIdentitySignals,
+  ensureFreeTrialIdentitySignals,
+  findFreeTrialIdentityConflict,
+  throwFreeTrialIdentityUnavailable,
+} from '@/server/licenses/free-trial-identity';
 import {
   zRedeemActivationInput,
   zRedeemActivationResponse,
@@ -40,7 +47,14 @@ export async function redeemLicenseToDevice(
   const dbClient = deps.dbClient ?? db;
   const log = deps.log ?? logger;
   const now = deps.now ?? new Date();
+  const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
   const normalizedCode = normalizeRedeemCode(input.redeemCode);
+  const clientIp = normalizeFreeAccessIpAddress(deps.clientIp);
+  const freeTrialIdentitySignals = buildFreeTrialIdentitySignals({
+    deviceFingerprintHash,
+    installationId: input.installationId,
+    ipAddress: clientIp,
+  });
 
   const result = await dbClient.$transaction(async (tx) => {
     const redeemCode = await tx.redeemCode.findUnique({
@@ -49,6 +63,14 @@ export async function redeemLicenseToDevice(
         code: true,
         createdAt: true,
         expiresAt: true,
+        freeTrialClaim: {
+          select: {
+            deviceFingerprintHash: true,
+            id: true,
+            installationId: true,
+            ipAddress: true,
+          },
+        },
         id: true,
         metadata: true,
         redeemedAt: true,
@@ -93,22 +115,100 @@ export async function redeemLicenseToDevice(
       throw new RedeemActivationError('license_unavailable', 409);
     }
 
-    if (isFreeTrialRedeemCode(redeemCode.metadata)) {
-      const freeAccessIpBlock = await getFreeAccessIpBlock(deps.clientIp, {
+    const isFreeTrialCode = isFreeTrialRedeemCode(redeemCode.metadata);
+
+    if (isFreeTrialCode) {
+      const freeAccessIpBlock = await getFreeAccessIpBlock(clientIp, {
         dbClient: tx as unknown as typeof db,
       });
 
       if (freeAccessIpBlock) {
         throw new FreeAccessIpBlockedError(freeAccessIpBlock);
       }
+
+      if (!deviceFingerprintHash) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: clientIp,
+          now,
+        });
+      }
+
+      if (
+        redeemCode.freeTrialClaim &&
+        redeemCode.freeTrialClaim.installationId !== input.installationId
+      ) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: clientIp,
+          now,
+        });
+      }
+
+      if (
+        redeemCode.freeTrialClaim?.deviceFingerprintHash &&
+        redeemCode.freeTrialClaim.deviceFingerprintHash !==
+          deviceFingerprintHash
+      ) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: clientIp,
+          now,
+        });
+      }
+
+      const persistedIdentityConflict = redeemCode.freeTrialClaim
+        ? await findFreeTrialIdentityConflict(tx, freeTrialIdentitySignals, {
+            excludeClaimId: redeemCode.freeTrialClaim.id,
+          })
+        : null;
+
+      if (persistedIdentityConflict) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: clientIp,
+          now,
+        });
+      }
+
+      const freeTrialIdentityConflict = await tx.freeTrialClaim.findFirst({
+        where: {
+          OR: [
+            { installationId: input.installationId },
+            ...(clientIp ? [{ ipAddress: clientIp }] : []),
+            ...(deviceFingerprintHash ? [{ deviceFingerprintHash }] : []),
+          ],
+          redeemCodeId: {
+            not: redeemCode.id,
+          },
+        },
+        select: {
+          id: true,
+        },
+      });
+
+      if (freeTrialIdentityConflict) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: clientIp,
+          now,
+        });
+      }
+
+      if (redeemCode.freeTrialClaim) {
+        await ensureFreeTrialIdentitySignals(tx, {
+          claimId: redeemCode.freeTrialClaim.id,
+          ipAddress: clientIp,
+          now,
+          signals: freeTrialIdentitySignals,
+        });
+      }
     }
 
     if (
-      isFreeTrialRedeemCode(redeemCode.metadata) &&
+      isFreeTrialCode &&
       redeemCode.redeemedByDevice &&
       redeemCode.redeemedByDevice.installationId !== input.installationId
     ) {
-      throw new RedeemActivationError('installation_conflict', 409);
+      throwFreeTrialIdentityUnavailable({
+        ipAddress: clientIp,
+        now,
+      });
     }
 
     const existingDevice = await tx.device.findUnique({

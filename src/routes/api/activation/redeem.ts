@@ -22,11 +22,12 @@ export const Route = createFileRoute('/api/activation/redeem')({
           return new Response('Demo Mode', { status: 405 });
         }
 
-        const clientIp = getClientIp(request) ?? 'unknown';
+        const clientIp = getClientIp(request);
+        const rateLimitIp = clientIp ?? 'unknown';
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
 
         const ipRateLimit = consumeInMemoryRateLimit({
-          key: `redeem:ip:${clientIp}`,
+          key: `redeem:ip:${rateLimitIp}`,
           limit: envServer.REDEEM_RATE_LIMIT_MAX_ATTEMPTS,
           windowMs,
         });

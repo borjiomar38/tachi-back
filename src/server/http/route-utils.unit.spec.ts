@@ -10,11 +10,11 @@ import {
 } from '@/server/http/route-utils';
 
 describe('route utils', () => {
-  it('reuses a valid incoming request id and forwarded client IP', () => {
+  it('reuses a valid incoming request id and trusted platform client IP', () => {
     const request = new Request('https://example.com/api/test', {
       headers: {
-        'x-forwarded-for': '203.0.113.1, 198.51.100.2',
         'x-request-id': 'req-123',
+        'x-real-ip': '203.0.113.1',
       },
     });
 

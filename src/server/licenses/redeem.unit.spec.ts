@@ -474,6 +474,223 @@ describe('license redeem activation', () => {
     );
   });
 
+  it('blocks a free trial redeem when the IP already claimed free access', async () => {
+    const now = new Date('2026-03-19T21:25:00.000Z');
+    const tx = {
+      appConfig: {
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      device: {
+        findUnique: vi.fn(),
+      },
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue({
+          id: 'claim-existing',
+        }),
+      },
+      freeTrialIdentity: {
+        findFirst: vi.fn().mockResolvedValue(null),
+      },
+      redeemCode: {
+        findUnique: vi.fn().mockResolvedValue({
+          code: 'TB-FREE-1111-2222',
+          createdAt: now,
+          expiresAt: null,
+          freeTrialClaim: {
+            id: 'claim-current',
+            installationId: 'install-1234567890abcd',
+            ipAddress: null,
+          },
+          id: 'redeem-free',
+          license: {
+            activatedAt: null,
+            deviceLimit: 1,
+            id: 'license-free',
+            key: 'license-key-free',
+            status: 'pending',
+          },
+          metadata: {
+            source: 'free_trial',
+          },
+          redeemedAt: null,
+          redeemedByDevice: null,
+          redeemedByDeviceId: null,
+          status: 'available',
+        }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    await expect(
+      redeemLicenseToDevice(
+        {
+          deviceFingerprintHash:
+            '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+          installationId: 'install-1234567890abcd',
+          platform: 'android',
+          redeemCode: 'TB-FREE-1111-2222',
+        },
+        {
+          clientIp: '203.0.113.10',
+          dbClient: mockDb as never,
+          log: mockLogger,
+          now,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_access_unavailable',
+      statusCode: 402,
+    });
+    expect(tx.freeTrialClaim.findFirst).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          redeemCodeId: {
+            not: 'redeem-free',
+          },
+        }),
+      })
+    );
+    expect(tx.device.findUnique).not.toHaveBeenCalled();
+  });
+
+  it('blocks a free trial redeem when the device fingerprint is missing', async () => {
+    const now = new Date('2026-03-19T21:25:30.000Z');
+    const tx = {
+      appConfig: {
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      device: {
+        findUnique: vi.fn(),
+      },
+      freeTrialClaim: {
+        findFirst: vi.fn(),
+      },
+      redeemCode: {
+        findUnique: vi.fn().mockResolvedValue({
+          code: 'TB-FREE-1111-2222',
+          createdAt: now,
+          expiresAt: null,
+          freeTrialClaim: {
+            deviceFingerprintHash:
+              'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+            id: 'claim-current',
+            installationId: 'install-1234567890abcd',
+            ipAddress: null,
+          },
+          id: 'redeem-free',
+          license: {
+            activatedAt: null,
+            deviceLimit: 1,
+            id: 'license-free',
+            key: 'license-key-free',
+            status: 'pending',
+          },
+          metadata: {
+            source: 'free_trial',
+          },
+          redeemedAt: null,
+          redeemedByDevice: null,
+          redeemedByDeviceId: null,
+          status: 'available',
+        }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    await expect(
+      redeemLicenseToDevice(
+        {
+          installationId: 'install-1234567890abcd',
+          platform: 'android',
+          redeemCode: 'TB-FREE-1111-2222',
+        },
+        {
+          clientIp: '203.0.113.15',
+          dbClient: mockDb as never,
+          log: mockLogger,
+          now,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_access_unavailable',
+      statusCode: 402,
+    });
+    expect(tx.freeTrialClaim.findFirst).not.toHaveBeenCalled();
+    expect(tx.device.findUnique).not.toHaveBeenCalled();
+  });
+
+  it('blocks a free trial redeem when the device fingerprint already claimed free access', async () => {
+    const now = new Date('2026-03-19T21:26:00.000Z');
+    const tx = {
+      appConfig: {
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      device: {
+        findUnique: vi.fn(),
+      },
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue({
+          id: 'claim-existing',
+        }),
+      },
+      redeemCode: {
+        findUnique: vi.fn().mockResolvedValue({
+          code: 'TB-FREE-1111-2222',
+          createdAt: now,
+          expiresAt: null,
+          freeTrialClaim: {
+            deviceFingerprintHash:
+              'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+            id: 'claim-current',
+            installationId: 'install-1234567890abcd',
+            ipAddress: null,
+          },
+          id: 'redeem-free',
+          license: {
+            activatedAt: null,
+            deviceLimit: 1,
+            id: 'license-free',
+            key: 'license-key-free',
+            status: 'pending',
+          },
+          metadata: {
+            source: 'free_trial',
+          },
+          redeemedAt: null,
+          redeemedByDevice: null,
+          redeemedByDeviceId: null,
+          status: 'available',
+        }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    await expect(
+      redeemLicenseToDevice(
+        {
+          deviceFingerprintHash:
+            '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+          installationId: 'install-1234567890abcd',
+          platform: 'android',
+          redeemCode: 'TB-FREE-1111-2222',
+        },
+        {
+          clientIp: '203.0.113.20',
+          dbClient: mockDb as never,
+          log: mockLogger,
+          now,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_access_unavailable',
+      statusCode: 402,
+    });
+    expect(tx.device.findUnique).not.toHaveBeenCalled();
+  });
+
   it('does not block activation when the old license device limit is reached', async () => {
     const now = new Date('2026-03-19T21:30:00.000Z');
     const tx = {

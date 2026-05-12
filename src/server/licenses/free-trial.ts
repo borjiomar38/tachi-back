@@ -1,16 +1,26 @@
 import { db } from '@/server/db';
 import { Prisma } from '@/server/db/generated/client';
+import {
+  FreeAccessIpBlockedError,
+  normalizeFreeAccessIpAddress,
+} from '@/server/licenses/free-access-ip-block';
+import {
+  buildFreeTrialIdentitySignals,
+  createFreeTrialIdentitySignals,
+  findFreeTrialIdentityConflict,
+  throwFreeTrialIdentityUnavailable,
+} from '@/server/licenses/free-trial-identity';
 import { generateRedeemCode } from '@/server/licenses/utils';
-import { zCreateFreeTrialMobileSessionInput } from '@/server/mobile-auth/schema';
+import {
+  zCheckFreeTrialEligibilityInput,
+  zCreateFreeTrialMobileSessionInput,
+} from '@/server/mobile-auth/schema';
 
 const FREE_TRIAL_TOKEN_AMOUNT = 100;
 
 export class FreeTrialActivationError extends Error {
   constructor(
-    readonly code:
-      | 'free_trial_device_used'
-      | 'free_trial_email_used'
-      | 'free_trial_unavailable',
+    readonly code: 'free_trial_unavailable',
     readonly statusCode: number,
     message?: string
   ) {
@@ -22,6 +32,7 @@ export class FreeTrialActivationError extends Error {
 export async function createFreeTrialRedeemCode(
   rawInput: unknown,
   deps: {
+    clientIp?: string | null;
     dbClient?: typeof db;
     now?: Date;
   } = {}
@@ -31,17 +42,40 @@ export async function createFreeTrialRedeemCode(
   const now = deps.now ?? new Date();
   const email = input.email.trim();
   const emailNormalized = email.toLowerCase();
+  const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
   const installationId = input.installationId.trim();
+  const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
+
+  if (!deviceFingerprintHash) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress,
+      now,
+    });
+  }
+
+  const identitySignals = buildFreeTrialIdentitySignals({
+    deviceFingerprintHash,
+    emailNormalized,
+    installationId,
+    ipAddress,
+  });
 
   try {
     return await dbClient.$transaction(async (tx) => {
       const existingClaim = await tx.freeTrialClaim.findFirst({
         where: {
-          OR: [{ emailNormalized }, { installationId }],
+          OR: [
+            { emailNormalized },
+            { installationId },
+            ...(ipAddress ? [{ ipAddress }] : []),
+            ...(deviceFingerprintHash ? [{ deviceFingerprintHash }] : []),
+          ],
         },
         select: {
+          deviceFingerprintHash: true,
           emailNormalized: true,
           installationId: true,
+          ipAddress: true,
           redeemCode: {
             select: {
               code: true,
@@ -61,11 +95,22 @@ export async function createFreeTrialRedeemCode(
           };
         }
 
-        if (existingClaim.emailNormalized === emailNormalized) {
-          throw new FreeTrialActivationError('free_trial_email_used', 409);
-        }
+        throwFreeTrialIdentityUnavailable({
+          ipAddress,
+          now,
+        });
+      }
 
-        throw new FreeTrialActivationError('free_trial_device_used', 409);
+      const identityConflict = await findFreeTrialIdentityConflict(
+        tx,
+        identitySignals
+      );
+
+      if (identityConflict) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress,
+          now,
+        });
       }
 
       const license = await tx.license.create({
@@ -87,7 +132,9 @@ export async function createFreeTrialRedeemCode(
           metadata: {
             email,
             emailNormalized,
+            ...(deviceFingerprintHash ? { deviceFingerprintHash } : {}),
             installationId,
+            ...(ipAddress ? { ipAddress } : {}),
             source: 'free_trial',
             tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
           } satisfies Prisma.InputJsonObject,
@@ -107,8 +154,10 @@ export async function createFreeTrialRedeemCode(
           metadata: {
             email,
             emailNormalized,
+            ...(deviceFingerprintHash ? { deviceFingerprintHash } : {}),
             grantedAt: now.toISOString(),
             installationId,
+            ...(ipAddress ? { ipAddress } : {}),
             source: 'free_trial',
           } satisfies Prisma.InputJsonObject,
           redeemCodeId: redeemCode.id,
@@ -117,15 +166,25 @@ export async function createFreeTrialRedeemCode(
         },
       });
 
-      await tx.freeTrialClaim.create({
+      const freeTrialClaim = await tx.freeTrialClaim.create({
         data: {
           email,
           emailNormalized,
+          deviceFingerprintHash,
           installationId,
+          ipAddress,
           licenseId: license.id,
           redeemCodeId: redeemCode.id,
           tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
         },
+        select: {
+          id: true,
+        },
+      });
+
+      await createFreeTrialIdentitySignals(tx, {
+        claimId: freeTrialClaim.id,
+        signals: identitySignals,
       });
 
       return {
@@ -138,12 +197,73 @@ export async function createFreeTrialRedeemCode(
       throw error;
     }
 
+    if (error instanceof FreeAccessIpBlockedError) {
+      throw error;
+    }
+
     if (isPrismaUniqueConstraintError(error)) {
-      throw new FreeTrialActivationError('free_trial_unavailable', 409);
+      throwFreeTrialIdentityUnavailable({
+        ipAddress,
+        now,
+      });
     }
 
     throw error;
   }
+}
+
+export async function checkFreeTrialEligibility(
+  rawInput: unknown,
+  deps: {
+    clientIp?: string | null;
+    dbClient?: typeof db;
+  } = {}
+) {
+  const input = zCheckFreeTrialEligibilityInput.parse(rawInput);
+  const dbClient = deps.dbClient ?? db;
+  const installationId = input.installationId.trim();
+  const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
+  const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
+
+  if (!deviceFingerprintHash) {
+    return {
+      eligible: false,
+    };
+  }
+
+  const identitySignals = buildFreeTrialIdentitySignals({
+    deviceFingerprintHash,
+    installationId,
+    ipAddress,
+  });
+
+  const existingClaim = await dbClient.freeTrialClaim.findFirst({
+    where: {
+      OR: [
+        { installationId },
+        ...(ipAddress ? [{ ipAddress }] : []),
+        { deviceFingerprintHash },
+      ],
+    },
+    select: {
+      id: true,
+    },
+  });
+
+  if (existingClaim) {
+    return {
+      eligible: false,
+    };
+  }
+
+  const identityConflict = await findFreeTrialIdentityConflict(
+    dbClient,
+    identitySignals
+  );
+
+  return {
+    eligible: !identityConflict,
+  };
 }
 
 export function isFreeTrialActivationError(

@@ -77,8 +77,10 @@ export const PageLegalPrivacy = () => {
                 This can include uploaded pages or screenshots, extracted OCR
                 text, translation prompts and outputs, source-discovery search
                 terms, candidate results, chapter metadata, device identifiers,
-                app version, locale, IP-derived request metadata, token ledger
-                events, redeem-code activity, and support messages.
+                free-trial activation email, hashed device signals used for
+                activation and abuse prevention, app version, locale,
+                IP-derived request metadata, token ledger events, redeem-code
+                activity, and support messages.
               </p>
             </>
           ),
@@ -241,7 +243,8 @@ export const PageLegalTerms = () => {
               <p>
                 We may revoke or rotate redeem codes, reset device bindings, or
                 suspend access when needed for support, payment disputes,
-                security, abuse prevention, or legal compliance.
+                security, abuse prevention, free-trial limit enforcement, or
+                legal compliance.
               </p>
             </>
           ),

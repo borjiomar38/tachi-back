@@ -1,4 +1,6 @@
+import { ipAddress as getVercelIpAddress } from '@vercel/functions';
 import { randomBytes } from 'node:crypto';
+import { isIP } from 'node:net';
 
 import { Prisma } from '@/server/db/generated/client';
 
@@ -52,15 +54,17 @@ export function mergeJsonObject(
 }
 
 export function getClientIp(request: Request) {
-  const forwardedFor = request.headers.get('x-forwarded-for');
+  return normalizeTrustedClientIp(
+    getVercelIpAddress(request) ?? request.headers.get('cf-connecting-ip')
+  );
+}
 
-  if (forwardedFor) {
-    return forwardedFor.split(',')[0]?.trim() ?? null;
+function normalizeTrustedClientIp(ipAddress: string | null | undefined) {
+  const normalized = ipAddress?.trim();
+
+  if (!normalized || normalized.includes(',')) {
+    return null;
   }
 
-  return (
-    request.headers.get('x-real-ip') ??
-    request.headers.get('cf-connecting-ip') ??
-    null
-  );
+  return isIP(normalized) ? normalized.toLowerCase() : null;
 }

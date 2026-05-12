@@ -34,7 +34,8 @@ export const Route = createFileRoute('/api/mobile/auth/refresh')({
           );
         }
 
-        const clientIp = getClientIp(request) ?? 'unknown';
+        const clientIp = getClientIp(request);
+        const rateLimitIp = clientIp ?? 'unknown';
         const userAgent = request.headers.get('user-agent');
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
 
@@ -53,7 +54,7 @@ export const Route = createFileRoute('/api/mobile/auth/refresh')({
         }
 
         const rateLimit = consumeInMemoryRateLimit({
-          key: `mobile-auth-refresh:${parsedInput.data.installationId}:${clientIp}`,
+          key: `mobile-auth-refresh:${parsedInput.data.installationId}:${rateLimitIp}`,
           limit: envServer.REDEEM_RATE_LIMIT_MAX_ATTEMPTS,
           windowMs,
         });

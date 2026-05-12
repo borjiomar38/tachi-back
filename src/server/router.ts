@@ -5,6 +5,7 @@ import chapterRouter from './routers/chapter';
 import configRouter from './routers/config';
 import contactRouter from './routers/contact';
 import deviceRouter from './routers/device';
+import freeTrialRouter from './routers/free-trial';
 import jobRouter from './routers/job';
 import licenseRouter from './routers/license';
 import providerRouter from './routers/provider';
@@ -22,5 +23,6 @@ export const router = {
   provider: providerRouter,
   license: licenseRouter,
   device: deviceRouter,
+  freeTrial: freeTrialRouter,
   job: jobRouter,
 };

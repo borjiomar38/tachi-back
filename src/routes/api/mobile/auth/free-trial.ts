@@ -43,7 +43,8 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
           );
         }
 
-        const clientIp = getClientIp(request) ?? 'unknown';
+        const clientIp = getClientIp(request);
+        const rateLimitIp = clientIp ?? 'unknown';
         const userAgent = request.headers.get('user-agent');
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
         const freeAccessIpBlock = await getFreeAccessIpBlock(clientIp);
@@ -59,7 +60,7 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
         }
 
         const ipRateLimit = consumeInMemoryRateLimit({
-          key: `mobile-auth-free-trial:ip:${clientIp}`,
+          key: `mobile-auth-free-trial:ip:${rateLimitIp}`,
           limit: envServer.REDEEM_RATE_LIMIT_MAX_ATTEMPTS,
           windowMs,
         });
@@ -94,7 +95,9 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
         }
 
         try {
-          const trial = await createFreeTrialRedeemCode(parsedInput.data);
+          const trial = await createFreeTrialRedeemCode(parsedInput.data, {
+            clientIp,
+          });
           const activation = await redeemLicenseToDevice(
             {
               ...parsedInput.data,
