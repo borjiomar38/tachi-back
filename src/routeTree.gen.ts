@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TranslateManhwaAiRouteImport } from './routes/translate-manhwa-ai'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -93,6 +94,11 @@ import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mob
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 
+const TranslateManhwaAiRoute = TranslateManhwaAiRouteImport.update({
+  id: '/translate-manhwa-ai',
+  path: '/translate-manhwa-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
@@ -540,6 +546,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
+  '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -622,6 +629,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
+  '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -708,6 +716,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
+  '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -795,6 +804,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/sitemap.xml'
     | '/support'
+    | '/translate-manhwa-ai'
     | '/api/contact'
     | '/api/upload'
     | '/blog/$slug'
@@ -877,6 +887,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/sitemap.xml'
     | '/support'
+    | '/translate-manhwa-ai'
     | '/api/contact'
     | '/api/upload'
     | '/blog/$slug'
@@ -962,6 +973,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/sitemap.xml'
     | '/support'
+    | '/translate-manhwa-ai'
     | '/api/contact'
     | '/api/upload'
     | '/blog/$slug'
@@ -1048,6 +1060,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
+  TranslateManhwaAiRoute: typeof TranslateManhwaAiRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -1091,6 +1104,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/translate-manhwa-ai': {
+      id: '/translate-manhwa-ai'
+      path: '/translate-manhwa-ai'
+      fullPath: '/translate-manhwa-ai'
+      preLoaderRoute: typeof TranslateManhwaAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/support': {
       id: '/support'
       path: '/support'
@@ -1828,6 +1848,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
+  TranslateManhwaAiRoute: TranslateManhwaAiRoute,
   ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,
   BlogSlugRoute: BlogSlugRoute,

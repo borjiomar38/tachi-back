@@ -97,6 +97,12 @@ function buildStaticSitemapEntries(blogLastModified: string): SitemapEntry[] {
     },
     {
       changeFrequency: 'weekly',
+      lastModified: '2026-05-12',
+      path: '/translate-manhwa-ai',
+      priority: '0.9',
+    },
+    {
+      changeFrequency: 'weekly',
       lastModified: '2026-05-04',
       path: '/pricing',
       priority: '0.9',

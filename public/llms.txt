@@ -7,6 +7,7 @@ TachiyomiAT is a reader-focused Android app and hosted backend for manga transla
 ## Primary pages
 
 - [Home](https://tachiyomiat.com/): Product overview for a free manga IA translator, free manhwa IA translator, free manhua IA translator, hosted OCR, and Android activation.
+- [AI Manhwa Translator](https://tachiyomiat.com/translate-manhwa-ai): SEO landing page for AI manhwa translation, hosted OCR, Android APK download, and TachiyomiAT activation.
 - [Blog](https://tachiyomiat.com/blog): Manhwa, manhua, manga translation, Android setup, hosted OCR, and TachiyomiAT download articles.
 - [Download](https://tachiyomiat.com/download): Android APK download and setup guidance.
 - [Pricing](https://tachiyomiat.com/pricing): Free and monthly token plans for hosted OCR and manga, manhwa, and manhua IA translation.

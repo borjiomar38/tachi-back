@@ -18,6 +18,7 @@ The service is designed around a redeem-code activation model. Readers choose a 
 ## Public route map
 
 - `/`: Overview of the free manga IA translator, free manhwa IA translator, free manhua IA translator, hosted OCR, monthly plans, activation, and support.
+- `/translate-manhwa-ai`: SEO landing page for AI manhwa translation, hosted OCR, Android APK download, TachiyomiAT activation, and permission-safe workflow guidance.
 - `/blog`: Index of manhwa, manhua, manga translation, hosted OCR, Android setup, and TachiyomiAT download articles.
 - `/blog/download-tachiyomiat-for-manhwa-translation`: Evergreen starter article for manhwa and manga translation readers looking for the TachiyomiAT APK.
 - `/download`: Android APK download and installation guidance.
