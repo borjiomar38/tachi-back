@@ -884,6 +884,84 @@ describe('job service', () => {
     expect(createMany).toHaveBeenCalledOnce();
   });
 
+  it('counts same-day manga-page usage against trial-only chapter jobs', async () => {
+    const createJob = vi.fn();
+    const countDailyJobs = vi.fn().mockResolvedValue(0);
+    const queryRaw = vi
+      .fn()
+      .mockResolvedValueOnce([{ locked: true }])
+      .mockResolvedValueOnce([{ chapterCount: 2 }]);
+
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue({
+      id: 'claim-1',
+    });
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        $queryRaw: queryRaw,
+        jobAsset: {
+          createMany: vi.fn(),
+        },
+        order: {
+          findFirst: vi.fn().mockResolvedValue(null),
+        },
+        tokenLedger: {
+          createMany: vi.fn(),
+        },
+        translationJob: {
+          count: countDailyJobs,
+          create: createJob,
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    await expect(
+      createTranslationJob(
+        {
+          pages: [
+            {
+              fileName: '001.jpg',
+              mimeType: 'image/jpeg',
+              sizeBytes: 1024,
+            },
+          ],
+          targetLanguage: 'en',
+        },
+        {
+          actor: {
+            deviceId: 'device-trial-1',
+            licenseId: 'license-trial-1',
+          },
+          dbClient: mockDb as never,
+          now: new Date('2026-05-12T14:30:00.000Z'),
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_trial_daily_limit_exceeded',
+      details: {
+        dailyLimit: 2,
+        remainingChapters: 0,
+        requestedChapters: 1,
+        resetsAt: '2026-05-13T00:00:00.000Z',
+        usedChapters: 2,
+      },
+      statusCode: 429,
+    });
+
+    expect(countDailyJobs).toHaveBeenCalledWith({
+      where: {
+        createdAt: {
+          gte: new Date('2026-05-12T00:00:00.000Z'),
+          lt: new Date('2026-05-13T00:00:00.000Z'),
+        },
+        licenseId: 'license-trial-1',
+      },
+    });
+    expect(queryRaw).toHaveBeenCalledTimes(2);
+    expect(createJob).not.toHaveBeenCalled();
+  });
+
   it('skips the trial daily limit when a paid entitlement appears inside the transaction', async () => {
     const createJob = vi.fn().mockResolvedValue({
       id: 'job-paid-after-trial',

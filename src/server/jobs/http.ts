@@ -1,9 +1,15 @@
+import { db } from '@/server/db';
 import { consumeMobileJobRouteRateLimit } from '@/server/hardening/rate-limit';
 import {
   buildApiErrorResponse,
   buildRateLimitedResponse,
   HttpRequestContext,
 } from '@/server/http/route-utils';
+import {
+  FreeTrialDailyLimitError,
+  type FreeTrialDailyUsageReservation,
+  voidFreeTrialDailyUsageReservation,
+} from '@/server/licenses/free-trial-daily-limit';
 import {
   authenticateMobileAccessToken,
   MobileAuthError,
@@ -50,7 +56,34 @@ export function buildMobileJobErrorResponse(error: unknown, requestId: string) {
     });
   }
 
+  if (error instanceof FreeTrialDailyLimitError) {
+    return buildApiErrorResponse({
+      code: error.code,
+      details: error.details,
+      requestId,
+      status: error.statusCode,
+    });
+  }
+
   throw error;
+}
+
+export async function voidMobileJobReservationOnError(input: {
+  error: unknown;
+  reservation: FreeTrialDailyUsageReservation | null;
+}) {
+  if (!input.reservation) {
+    return;
+  }
+
+  if (input.error instanceof FreeTrialDailyLimitError) {
+    return;
+  }
+
+  await voidFreeTrialDailyUsageReservation({
+    dbClient: db,
+    reservation: input.reservation,
+  });
 }
 
 export function buildMobileJobRateLimitedResponse(

@@ -11,7 +11,14 @@ import {
   authenticateAndRateLimitMobileJobRequest,
   buildMobileJobErrorResponse,
   buildMobileJobRateLimitedResponse,
+  voidMobileJobReservationOnError,
 } from '@/server/jobs/http';
+import {
+  type FreeTrialDailyUsageReservation,
+  markFreeTrialDailyUsageReservationPosted,
+  reserveFreeTrialDailyMangaPageUsage,
+  resolveFreeTrialDailyLimitScope,
+} from '@/server/licenses/free-trial-daily-limit';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import {
@@ -49,6 +56,8 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
           requestId: context.requestId,
           scope: 'manga-page-translation',
         });
+        let freeTrialDailyUsageReservation: FreeTrialDailyUsageReservation | null =
+          null;
 
         try {
           const { auth, rateLimit } =
@@ -73,6 +82,7 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             );
           }
 
+          const now = new Date();
           const requestedTokenCost = calculateMangaPageTranslationTokenCost(
             parsedInput.data
           );
@@ -123,46 +133,86 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             });
           }
 
+          const freeTrialDailyLimitScope =
+            await resolveFreeTrialDailyLimitScope({
+              dbClient: db,
+              licenseId: auth.license.id,
+              now,
+            });
+
+          freeTrialDailyUsageReservation = await db.$transaction(async (tx) => {
+            return await reserveFreeTrialDailyMangaPageUsage({
+              actor: {
+                deviceId: auth.device.id,
+                licenseId: auth.license.id,
+              },
+              request: parsedInput.data,
+              scope: freeTrialDailyLimitScope,
+              tx,
+            });
+          });
+
           const translated = await translateMangaPage(parsedInput.data);
 
           let chargedTokenCost = 0;
 
-          if (tokenCost > 0 && spendIdempotencyKey != null) {
-            const ledgerResult = await db.tokenLedger.createMany({
-              data: [
-                {
-                  deltaTokens: -tokenCost,
-                  description: `Spent tokens for manga page translation ${parsedInput.data.manga.title}`,
-                  deviceId: auth.device.id,
-                  idempotencyKey: spendIdempotencyKey,
-                  licenseId: auth.license.id,
-                  metadata: {
-                    chapterCount: parsedInput.data.chapters.length,
-                    chapters: parsedInput.data.chapters
-                      .slice(0, 50)
-                      .map((chapter) => ({
-                        key: chapter.key,
-                        name: chapter.name,
-                        number: resolveChapterNumber(chapter),
-                        url: chapter.url || null,
-                      })),
-                    completedAt: new Date().toISOString(),
-                    mangaTitle: parsedInput.data.manga.title,
-                    mangaUrl: parsedInput.data.manga.url,
-                    requestId: context.requestId,
-                    sourceId: parsedInput.data.sourceId,
-                    sourceLanguage: parsedInput.data.sourceLanguage,
-                    sourceName: parsedInput.data.sourceName ?? null,
-                    targetLanguage: parsedInput.data.targetLanguage,
-                  },
-                  status: 'posted',
-                  type: 'job_spend',
-                },
-              ],
-              skipDuplicates: true,
+          if (
+            (tokenCost > 0 && spendIdempotencyKey != null) ||
+            freeTrialDailyUsageReservation
+          ) {
+            const ledgerResult = await db.$transaction(async (tx) => {
+              const spendResult =
+                tokenCost > 0 && spendIdempotencyKey != null
+                  ? await tx.tokenLedger.createMany({
+                      data: [
+                        {
+                          deltaTokens: -tokenCost,
+                          description: `Spent tokens for manga page translation ${parsedInput.data.manga.title}`,
+                          deviceId: auth.device.id,
+                          idempotencyKey: spendIdempotencyKey,
+                          licenseId: auth.license.id,
+                          metadata: {
+                            chapterCount: parsedInput.data.chapters.length,
+                            chapters: parsedInput.data.chapters
+                              .slice(0, 50)
+                              .map((chapter) => ({
+                                key: chapter.key,
+                                name: chapter.name,
+                                number: resolveChapterNumber(chapter),
+                                url: chapter.url || null,
+                              })),
+                            completedAt: new Date().toISOString(),
+                            ...(freeTrialDailyUsageReservation
+                              ? {
+                                  freeTrialDailyUsageIdempotencyKey:
+                                    freeTrialDailyUsageReservation.idempotencyKey,
+                                }
+                              : {}),
+                            mangaTitle: parsedInput.data.manga.title,
+                            mangaUrl: parsedInput.data.manga.url,
+                            requestId: context.requestId,
+                            sourceId: parsedInput.data.sourceId,
+                            sourceLanguage: parsedInput.data.sourceLanguage,
+                            sourceName: parsedInput.data.sourceName ?? null,
+                            targetLanguage: parsedInput.data.targetLanguage,
+                          },
+                          status: 'posted',
+                          type: 'job_spend',
+                        },
+                      ],
+                      skipDuplicates: true,
+                    })
+                  : null;
+
+              await markFreeTrialDailyUsageReservationPosted({
+                dbClient: tx as typeof db,
+                reservation: freeTrialDailyUsageReservation,
+              });
+
+              return spendResult;
             });
 
-            chargedTokenCost = ledgerResult.count > 0 ? tokenCost : 0;
+            chargedTokenCost = (ledgerResult?.count ?? 0) > 0 ? tokenCost : 0;
           }
 
           routeLog.info({
@@ -182,6 +232,11 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             requestId: context.requestId,
           });
         } catch (error) {
+          await voidMobileJobReservationOnError({
+            error,
+            reservation: freeTrialDailyUsageReservation,
+          });
+
           if (error instanceof ProviderGatewayError) {
             routeLog.warn({
               code: error.code,
