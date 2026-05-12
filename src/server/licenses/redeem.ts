@@ -126,6 +126,13 @@ export async function redeemLicenseToDevice(
         throw new FreeAccessIpBlockedError(freeAccessIpBlock);
       }
 
+      if (!deviceFingerprintHash) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: clientIp,
+          now,
+        });
+      }
+
       if (
         redeemCode.freeTrialClaim &&
         redeemCode.freeTrialClaim.installationId !== input.installationId
@@ -137,7 +144,6 @@ export async function redeemLicenseToDevice(
       }
 
       if (
-        deviceFingerprintHash &&
         redeemCode.freeTrialClaim?.deviceFingerprintHash &&
         redeemCode.freeTrialClaim.deviceFingerprintHash !==
           deviceFingerprintHash

@@ -1,10 +1,11 @@
 import { z } from 'zod';
 
-export const zDeviceFingerprintHash = z
+export const zRequiredDeviceFingerprintHash = z
   .string()
   .trim()
-  .regex(/^[a-f0-9]{64}$/)
-  .optional();
+  .regex(/^[a-f0-9]{64}$/);
+
+export const zDeviceFingerprintHash = zRequiredDeviceFingerprintHash.optional();
 
 export const zRedeemActivationInput = z.object({
   appBuild: z.string().trim().max(64).optional(),

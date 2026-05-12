@@ -150,6 +150,8 @@ describe('free trial redeem creation', () => {
     await expect(
       createFreeTrialRedeemCode(
         {
+          deviceFingerprintHash:
+            '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
           email: 'reader@example.com',
           installationId: 'install-1234567890abcd',
           platform: 'android',
