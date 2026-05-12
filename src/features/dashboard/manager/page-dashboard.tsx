@@ -63,6 +63,9 @@ export const PageDashboard = () => {
               <ButtonLink to="/manager/providers" variant="secondary">
                 Open provider ops
               </ButtonLink>
+              <ButtonLink to="/manager/versions" variant="secondary">
+                Open versions
+              </ButtonLink>
             </CardContent>
           </Card>
         </div>

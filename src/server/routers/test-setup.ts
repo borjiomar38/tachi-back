@@ -30,6 +30,16 @@ vi.mock('@/env/server', () => ({
   envServer: {
     LOGGER_LEVEL: 'error',
     LOGGER_PRETTY: false,
+    S3_ACCESS_KEY_ID: 'test-access-key',
+    S3_BUCKET_NAME: 'test-public',
+    S3_FORCE_PATH_STYLE: true,
+    S3_HOST: 'localhost:9000',
+    S3_LOGS_BUCKET_NAME: 'test-logs',
+    S3_REGION: 'auto',
+    S3_RESULTS_BUCKET_NAME: 'test-results',
+    S3_SECRET_ACCESS_KEY: 'test-secret-key',
+    S3_SECURE: false,
+    S3_UPLOADS_BUCKET_NAME: 'test-uploads',
   },
 }));
 

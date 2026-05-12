@@ -1,5 +1,11 @@
 import { call } from '@orpc/server';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
+
+const mockGetPublicMobileAppUpdatePolicy = vi.hoisted(() => vi.fn());
+
+vi.mock('@/server/mobile-update-policy', () => ({
+  getPublicMobileAppUpdatePolicy: mockGetPublicMobileAppUpdatePolicy,
+}));
 
 import deviceRouter from '@/server/routers/device';
 import {
@@ -12,6 +18,141 @@ import {
 const now = new Date('2026-03-19T20:00:00.000Z');
 
 describe('device router', () => {
+  describe('getVersionSummary', () => {
+    it('summarizes installed version groups against the update policy', async () => {
+      mockGetPublicMobileAppUpdatePolicy.mockResolvedValue({
+        channel: 'standard-release',
+        checkedAt: '2026-05-12T07:00:00.000Z',
+        currentVersionCode: 0,
+        currentVersionName: null,
+        forceUpdate: true,
+        latestVersionCode: 27,
+        latestVersionName: '0.17.17',
+        message: 'Update to continue.',
+        minimumSupportedVersionCode: 25,
+        platform: 'android',
+        releaseUrl: 'https://example.com/releases',
+        requiresUpdate: false,
+        updateUrl: 'https://example.com/app.apk',
+      });
+      mockDb.device.groupBy
+        .mockResolvedValueOnce([
+          {
+            appBuild: '27',
+            appVersion: '0.17.17',
+            _count: {
+              _all: 3,
+            },
+            _max: {
+              lastSeenAt: now,
+            },
+            _min: {
+              createdAt: new Date('2026-05-11T12:00:00.000Z'),
+            },
+          },
+          {
+            appBuild: '20',
+            appVersion: '0.17.10',
+            _count: {
+              _all: 2,
+            },
+            _max: {
+              lastSeenAt: new Date('2026-05-10T12:00:00.000Z'),
+            },
+            _min: {
+              createdAt: new Date('2026-05-09T12:00:00.000Z'),
+            },
+          },
+          {
+            appBuild: null,
+            appVersion: null,
+            _count: {
+              _all: 1,
+            },
+            _max: {
+              lastSeenAt: null,
+            },
+            _min: {
+              createdAt: new Date('2026-05-08T12:00:00.000Z'),
+            },
+          },
+        ])
+        .mockResolvedValueOnce([
+          {
+            appBuild: '27',
+            appVersion: '0.17.17',
+            _count: {
+              _all: 2,
+            },
+          },
+        ])
+        .mockResolvedValueOnce([
+          {
+            appBuild: '27',
+            appVersion: '0.17.17',
+            _count: {
+              _all: 1,
+            },
+          },
+          {
+            appBuild: '20',
+            appVersion: '0.17.10',
+            _count: {
+              _all: 1,
+            },
+          },
+        ]);
+
+      const result = await call(deviceRouter.getVersionSummary, undefined);
+
+      expect(result.stats).toEqual({
+        activeInstallCount: 2,
+        latestInstallCount: 3,
+        linkedInstallCount: 2,
+        outdatedInstallCount: 2,
+        totalInstallCount: 6,
+        unknownVersionInstallCount: 1,
+        unsupportedInstallCount: 2,
+        versionCount: 3,
+      });
+      expect(
+        result.versions.map((version) => ({
+          appBuild: version.appBuild,
+          appVersion: version.appVersion,
+          installCount: version.installCount,
+          status: version.status,
+        }))
+      ).toEqual([
+        {
+          appBuild: '27',
+          appVersion: '0.17.17',
+          installCount: 3,
+          status: 'latest',
+        },
+        {
+          appBuild: '20',
+          appVersion: '0.17.10',
+          installCount: 2,
+          status: 'unsupported',
+        },
+        {
+          appBuild: null,
+          appVersion: null,
+          installCount: 1,
+          status: 'unknown',
+        },
+      ]);
+      expect(mockUserHasPermission).toHaveBeenCalledWith({
+        body: {
+          permissions: {
+            device: ['read'],
+          },
+          userId: mockUser.id,
+        },
+      });
+    });
+  });
+
   describe('getById', () => {
     it('returns the device detail with active and historical license bindings', async () => {
       mockDb.device.findUnique.mockResolvedValue({

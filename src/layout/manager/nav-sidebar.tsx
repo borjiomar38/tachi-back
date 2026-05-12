@@ -3,6 +3,7 @@ import {
   ActivityIcon,
   BookOpenTextIcon,
   CpuIcon,
+  HistoryIcon,
   InboxIcon,
   KeyRoundIcon,
   LayoutDashboardIcon,
@@ -235,6 +236,21 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                               <span>
                                 <MapPinnedIcon />
                                 <span>{t('layout:nav.installsMap')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link to="/manager/versions">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <HistoryIcon />
+                                <span>{t('layout:nav.versionHistory')}</span>
                               </span>
                             }
                           />

@@ -5,6 +5,7 @@ import { Prisma } from '@/server/db/generated/client';
 import {
   zBackofficeDeviceListInput,
   zBackofficeDeviceListResponse,
+  zBackofficeVersionSummary,
 } from '@/server/jobs/backoffice-schema';
 import { zTranslationChapterIdentity } from '@/server/jobs/schema';
 import {
@@ -18,9 +19,12 @@ import {
   zRevokeDeviceInput,
   zRevokeDeviceResponse,
 } from '@/server/licenses/schema';
+import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
 import { protectedProcedure } from '@/server/orpc';
 
 const tags = ['devices'];
+const VERSION_ACTIVITY_WINDOW_DAYS = 30;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 type MetadataRecord = Record<string, unknown>;
 
@@ -68,6 +72,23 @@ type ReadingActivityItem = {
   spentTokens: number | null;
   status: string;
   targetLanguage: string | null;
+};
+
+type VersionCountGroup = {
+  appBuild: string | null;
+  appVersion: string | null;
+  _count: {
+    _all: number;
+  };
+};
+
+type VersionStatsGroup = VersionCountGroup & {
+  _max: {
+    lastSeenAt: Date | null;
+  };
+  _min: {
+    createdAt: Date | null;
+  };
 };
 
 const COUNTRY_METADATA_PATHS = [
@@ -559,7 +580,243 @@ function parseNonNegativeInteger(value: unknown) {
   return Number.isInteger(parsed) && parsed >= 0 ? parsed : null;
 }
 
+function buildVersionGroupKey(input: {
+  appBuild: string | null;
+  appVersion: string | null;
+}) {
+  return JSON.stringify([input.appVersion, input.appBuild]);
+}
+
+function buildVersionCountMap(groups: VersionCountGroup[]) {
+  const counts = new Map<string, number>();
+
+  for (const group of groups) {
+    counts.set(buildVersionGroupKey(group), group._count._all);
+  }
+
+  return counts;
+}
+
+function parseVersionCode(appBuild: string | null) {
+  const normalized = appBuild?.trim();
+
+  if (!normalized) {
+    return null;
+  }
+
+  const parsed = Number(normalized);
+
+  return Number.isInteger(parsed) && parsed >= 0 ? parsed : null;
+}
+
+function resolveVersionSupportStatus(input: {
+  appVersion: string | null;
+  latestVersionCode: number;
+  latestVersionName: string | null;
+  minimumSupportedVersionCode: number;
+  versionCode: number | null;
+}) {
+  if (input.latestVersionName && input.appVersion === input.latestVersionName) {
+    return 'latest' as const;
+  }
+
+  if (input.versionCode === null) {
+    return 'unknown' as const;
+  }
+
+  if (
+    input.minimumSupportedVersionCode > 0 &&
+    input.versionCode < input.minimumSupportedVersionCode
+  ) {
+    return 'unsupported' as const;
+  }
+
+  if (
+    input.latestVersionCode > 0 &&
+    input.versionCode === input.latestVersionCode
+  ) {
+    return 'latest' as const;
+  }
+
+  if (
+    input.latestVersionCode > 0 &&
+    input.versionCode > input.latestVersionCode
+  ) {
+    return 'ahead' as const;
+  }
+
+  if (
+    input.latestVersionCode > 0 &&
+    input.versionCode < input.latestVersionCode
+  ) {
+    return 'outdated' as const;
+  }
+
+  return 'supported' as const;
+}
+
+function compareInstalledVersions(
+  left: z.infer<typeof zBackofficeVersionSummary>['versions'][number],
+  right: z.infer<typeof zBackofficeVersionSummary>['versions'][number]
+) {
+  const leftCode = left.versionCode ?? -1;
+  const rightCode = right.versionCode ?? -1;
+
+  if (leftCode !== rightCode) {
+    return rightCode - leftCode;
+  }
+
+  if (left.installCount !== right.installCount) {
+    return right.installCount - left.installCount;
+  }
+
+  return (right.lastSeenAt?.getTime() ?? 0) - (left.lastSeenAt?.getTime() ?? 0);
+}
+
 export default {
+  getVersionSummary: protectedProcedure({
+    permissions: {
+      device: ['read'],
+    },
+  })
+    .route({
+      method: 'GET',
+      path: '/devices/version-summary',
+      tags,
+    })
+    .output(zBackofficeVersionSummary)
+    .handler(async ({ context }) => {
+      const generatedAt = new Date();
+      const activeSince = new Date(
+        generatedAt.getTime() - VERSION_ACTIVITY_WINDOW_DAYS * MS_PER_DAY
+      );
+
+      const [policy, versionGroups, activeGroups, linkedGroups] =
+        await Promise.all([
+          getPublicMobileAppUpdatePolicy(),
+          context.db.device.groupBy({
+            by: ['appVersion', 'appBuild'],
+            _count: {
+              _all: true,
+            },
+            _max: {
+              lastSeenAt: true,
+            },
+            _min: {
+              createdAt: true,
+            },
+          }),
+          context.db.device.groupBy({
+            by: ['appVersion', 'appBuild'],
+            _count: {
+              _all: true,
+            },
+            where: {
+              lastSeenAt: {
+                gte: activeSince,
+              },
+            },
+          }),
+          context.db.device.groupBy({
+            by: ['appVersion', 'appBuild'],
+            _count: {
+              _all: true,
+            },
+            where: {
+              licenseBindings: {
+                some: {
+                  status: 'active' as const,
+                },
+              },
+            },
+          }),
+        ]);
+
+      const activeCountByVersion = buildVersionCountMap(activeGroups);
+      const linkedCountByVersion = buildVersionCountMap(linkedGroups);
+
+      const versions = (versionGroups as VersionStatsGroup[])
+        .map((group) => {
+          const key = buildVersionGroupKey(group);
+          const versionCode = parseVersionCode(group.appBuild);
+
+          return {
+            activeInstallCount: activeCountByVersion.get(key) ?? 0,
+            appBuild: group.appBuild,
+            appVersion: group.appVersion,
+            firstSeenAt: group._min.createdAt,
+            installCount: group._count._all,
+            lastSeenAt: group._max.lastSeenAt,
+            linkedInstallCount: linkedCountByVersion.get(key) ?? 0,
+            status: resolveVersionSupportStatus({
+              appVersion: group.appVersion,
+              latestVersionCode: policy.latestVersionCode,
+              latestVersionName: policy.latestVersionName,
+              minimumSupportedVersionCode: policy.minimumSupportedVersionCode,
+              versionCode,
+            }),
+            versionCode,
+          };
+        })
+        .sort(compareInstalledVersions);
+
+      const stats = versions.reduce(
+        (accumulator, version) => {
+          const isOutdated =
+            version.status === 'outdated' || version.status === 'unsupported';
+
+          return {
+            activeInstallCount:
+              accumulator.activeInstallCount + version.activeInstallCount,
+            latestInstallCount:
+              accumulator.latestInstallCount +
+              (version.status === 'latest' ? version.installCount : 0),
+            linkedInstallCount:
+              accumulator.linkedInstallCount + version.linkedInstallCount,
+            outdatedInstallCount:
+              accumulator.outdatedInstallCount +
+              (isOutdated ? version.installCount : 0),
+            totalInstallCount:
+              accumulator.totalInstallCount + version.installCount,
+            unknownVersionInstallCount:
+              accumulator.unknownVersionInstallCount +
+              (version.status === 'unknown' ? version.installCount : 0),
+            unsupportedInstallCount:
+              accumulator.unsupportedInstallCount +
+              (version.status === 'unsupported' ? version.installCount : 0),
+            versionCount: accumulator.versionCount,
+          };
+        },
+        {
+          activeInstallCount: 0,
+          latestInstallCount: 0,
+          linkedInstallCount: 0,
+          outdatedInstallCount: 0,
+          totalInstallCount: 0,
+          unknownVersionInstallCount: 0,
+          unsupportedInstallCount: 0,
+          versionCount: versions.length,
+        }
+      );
+
+      return {
+        activeSince,
+        generatedAt,
+        policy: {
+          checkedAt: policy.checkedAt,
+          forceUpdate: policy.forceUpdate,
+          latestVersionCode: policy.latestVersionCode,
+          latestVersionName: policy.latestVersionName,
+          message: policy.message,
+          minimumSupportedVersionCode: policy.minimumSupportedVersionCode,
+          releaseUrl: policy.releaseUrl,
+          updateUrl: policy.updateUrl,
+        },
+        stats,
+        versions,
+      };
+    }),
+
   list: protectedProcedure({
     permissions: {
       device: ['read'],

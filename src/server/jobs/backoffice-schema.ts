@@ -118,6 +118,53 @@ export const zBackofficeDeviceListResponse = z.object({
   total: z.number().int().nonnegative(),
 });
 
+export const zBackofficeVersionSupportStatus = z.enum([
+  'ahead',
+  'latest',
+  'outdated',
+  'supported',
+  'unknown',
+  'unsupported',
+]);
+
+export const zBackofficeInstalledVersionStats = z.object({
+  activeInstallCount: z.number().int().nonnegative(),
+  appBuild: z.string().nullable(),
+  appVersion: z.string().nullable(),
+  firstSeenAt: z.date().nullable(),
+  installCount: z.number().int().nonnegative(),
+  lastSeenAt: z.date().nullable(),
+  linkedInstallCount: z.number().int().nonnegative(),
+  status: zBackofficeVersionSupportStatus,
+  versionCode: z.number().int().nonnegative().nullable(),
+});
+
+export const zBackofficeVersionSummary = z.object({
+  activeSince: z.date(),
+  generatedAt: z.date(),
+  policy: z.object({
+    checkedAt: z.string(),
+    forceUpdate: z.boolean(),
+    latestVersionCode: z.number().int().nonnegative(),
+    latestVersionName: z.string().nullable(),
+    message: z.string(),
+    minimumSupportedVersionCode: z.number().int().nonnegative(),
+    releaseUrl: z.string(),
+    updateUrl: z.string(),
+  }),
+  stats: z.object({
+    activeInstallCount: z.number().int().nonnegative(),
+    latestInstallCount: z.number().int().nonnegative(),
+    linkedInstallCount: z.number().int().nonnegative(),
+    outdatedInstallCount: z.number().int().nonnegative(),
+    totalInstallCount: z.number().int().nonnegative(),
+    unknownVersionInstallCount: z.number().int().nonnegative(),
+    unsupportedInstallCount: z.number().int().nonnegative(),
+    versionCount: z.number().int().nonnegative(),
+  }),
+  versions: z.array(zBackofficeInstalledVersionStats),
+});
+
 export const zBackofficeJobAsset = z.object({
   bucketName: z.string().nullish(),
   createdAt: z.date(),

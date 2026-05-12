@@ -34,6 +34,7 @@ import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tok
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
@@ -218,6 +219,11 @@ const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ManagerVersionsIndexRoute = ManagerVersionsIndexRouteImport.update({
+  id: '/versions/',
+  path: '/versions/',
+  getParentRoute: () => ManagerRouteRoute,
 } as any)
 const ManagerUsersIndexRoute = ManagerUsersIndexRouteImport.update({
   id: '/users/',
@@ -568,6 +574,7 @@ export interface FileRoutesByFullPath {
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
+  '/manager/versions/': typeof ManagerVersionsIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
@@ -648,6 +655,7 @@ export interface FileRoutesByTo {
   '/manager/licenses': typeof ManagerLicensesIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
+  '/manager/versions': typeof ManagerVersionsIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
@@ -732,6 +740,7 @@ export interface FileRoutesById {
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
+  '/manager/versions/': typeof ManagerVersionsIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
@@ -817,6 +826,7 @@ export interface FileRouteTypes {
     | '/manager/licenses/'
     | '/manager/providers/'
     | '/manager/users/'
+    | '/manager/versions/'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
@@ -897,6 +907,7 @@ export interface FileRouteTypes {
     | '/manager/licenses'
     | '/manager/providers'
     | '/manager/users'
+    | '/manager/versions'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
@@ -980,6 +991,7 @@ export interface FileRouteTypes {
     | '/manager/licenses/'
     | '/manager/providers/'
     | '/manager/users/'
+    | '/manager/versions/'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
@@ -1239,6 +1251,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/contact'
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/manager/versions/': {
+      id: '/manager/versions/'
+      path: '/versions'
+      fullPath: '/manager/versions/'
+      preLoaderRoute: typeof ManagerVersionsIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
     }
     '/manager/users/': {
       id: '/manager/users/'
@@ -1677,6 +1696,7 @@ interface ManagerRouteRouteChildren {
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
+  ManagerVersionsIndexRoute: typeof ManagerVersionsIndexRoute
   ManagerChaptersCacheKeyIndexRoute: typeof ManagerChaptersCacheKeyIndexRoute
   ManagerContactsIdIndexRoute: typeof ManagerContactsIdIndexRoute
   ManagerDevicesIdIndexRoute: typeof ManagerDevicesIdIndexRoute
@@ -1701,6 +1721,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
+  ManagerVersionsIndexRoute: ManagerVersionsIndexRoute,
   ManagerChaptersCacheKeyIndexRoute: ManagerChaptersCacheKeyIndexRoute,
   ManagerContactsIdIndexRoute: ManagerContactsIdIndexRoute,
   ManagerDevicesIdIndexRoute: ManagerDevicesIdIndexRoute,
