@@ -14,6 +14,7 @@ import {
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import { redeemLicenseToDevice } from '@/server/licenses/redeem';
 import { getClientIp } from '@/server/licenses/utils';
+import { logger } from '@/server/logger';
 import {
   zCreateFreeTrialMobileSessionInput,
   zMobileActivationResponse,
@@ -46,6 +47,10 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
         const clientIp = getClientIp(request);
         const rateLimitIp = clientIp ?? 'unknown';
         const userAgent = request.headers.get('user-agent');
+        const routeLog = logger.child({
+          path: '/api/mobile/auth/free-trial',
+          scope: 'mobile-auth',
+        });
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
         const freeAccessIpBlock = await getFreeAccessIpBlock(clientIp);
 
@@ -83,6 +88,17 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
         if (!parsedInput.success) {
           return invalidRequestResponse(parsedInput.error.flatten());
         }
+
+        routeLog.info({
+          appBuild: parsedInput.data.appBuild,
+          appVersion: parsedInput.data.appVersion,
+          buildChannel: parsedInput.data.buildChannel,
+          clientIp,
+          email: maskEmailForLog(parsedInput.data.email),
+          installationId: parsedInput.data.installationId,
+          message: 'Mobile free trial activation requested',
+          type: 'free_trial_activation_start',
+        });
 
         const installationRateLimit = consumeInMemoryRateLimit({
           key: `mobile-auth-free-trial:installation:${parsedInput.data.installationId}`,
@@ -122,6 +138,17 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
             }
           );
 
+          routeLog.info({
+            activationStatus: activation.activationStatus,
+            clientIp,
+            deviceId: activation.device.id,
+            installationId: activation.device.installationId,
+            licenseId: activation.license.id,
+            message: 'Mobile free trial activation succeeded',
+            redeemCode: maskRedeemCodeForLog(activation.redeemCode.code),
+            type: 'free_trial_activation_success',
+          });
+
           return Response.json({
             data: zMobileActivationResponse.parse({
               activation,
@@ -131,6 +158,13 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
           });
         } catch (error) {
           if (isFreeAccessIpBlockedError(error)) {
+            routeLog.warn({
+              code: error.code,
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message: 'Mobile free trial blocked by free access IP rule',
+              type: 'free_trial_activation_error',
+            });
             return Response.json(
               {
                 error: buildFreeAccessIpBlockedErrorBody(error),
@@ -141,6 +175,13 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
           }
 
           if (error instanceof MobileAuthError) {
+            routeLog.warn({
+              code: error.code,
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message: 'Mobile free trial session creation failed',
+              type: 'free_trial_activation_error',
+            });
             return Response.json(
               {
                 error: {
@@ -153,6 +194,13 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
           }
 
           if (isFreeTrialActivationError(error)) {
+            routeLog.warn({
+              code: error.code,
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message: 'Mobile free trial activation rejected',
+              type: 'free_trial_activation_error',
+            });
             return Response.json(
               {
                 error: {
@@ -170,6 +218,13 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
             'code' in error &&
             'statusCode' in error
           ) {
+            routeLog.warn({
+              code: String(error.code),
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message: 'Mobile free trial activation failed',
+              type: 'free_trial_activation_error',
+            });
             return Response.json(
               {
                 error: {
@@ -216,4 +271,25 @@ function buildRateLimitedResponse(retryAfterMs: number) {
       status: 429,
     }
   );
+}
+
+function maskEmailForLog(email: string) {
+  const normalized = email.trim();
+  const atIndex = normalized.indexOf('@');
+
+  if (!normalized || atIndex <= 0) {
+    return '***';
+  }
+
+  return `${normalized.slice(0, 1)}***${normalized.slice(atIndex)}`;
+}
+
+function maskRedeemCodeForLog(code: string) {
+  const normalized = code.trim();
+
+  if (normalized.length <= 8) {
+    return '***';
+  }
+
+  return `${normalized.slice(0, 6)}...${normalized.slice(-4)}`;
 }

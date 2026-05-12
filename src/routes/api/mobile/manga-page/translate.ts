@@ -14,6 +14,7 @@ import {
   voidMobileJobReservationOnError,
 } from '@/server/jobs/http';
 import {
+  FreeTrialDailyLimitError,
   type FreeTrialDailyUsageReservation,
   markFreeTrialDailyUsageReservationPosted,
   reserveFreeTrialDailyMangaPageUsage,
@@ -140,6 +141,19 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
               now,
             });
 
+          routeLog.info({
+            chapterCount: parsedInput.data.chapters.length,
+            clientIp: context.clientIp,
+            deviceId: auth.device.id,
+            hasFreeTrialDailyLimit: Boolean(freeTrialDailyLimitScope),
+            licenseId: auth.license.id,
+            mangaTitle: parsedInput.data.manga.title,
+            message: 'Checking mobile manga page free trial daily usage',
+            targetLanguage: parsedInput.data.targetLanguage,
+            tokenCost,
+            type: 'free_trial_daily_limit_check',
+          });
+
           freeTrialDailyUsageReservation = await db.$transaction(async (tx) => {
             return await reserveFreeTrialDailyMangaPageUsage({
               actor: {
@@ -151,6 +165,18 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
               tx,
             });
           });
+
+          if (freeTrialDailyUsageReservation) {
+            routeLog.info({
+              clientIp: context.clientIp,
+              deviceId: auth.device.id,
+              licenseId: auth.license.id,
+              message: 'Reserved mobile manga page free trial daily usage',
+              reservationKey:
+                freeTrialDailyUsageReservation.idempotencyKey.slice(0, 48),
+              type: 'free_trial_daily_usage_reserved',
+            });
+          }
 
           const translated = await translateMangaPage(parsedInput.data);
 
@@ -236,6 +262,15 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             error,
             reservation: freeTrialDailyUsageReservation,
           });
+
+          if (error instanceof FreeTrialDailyLimitError) {
+            routeLog.warn({
+              details: error.details,
+              message:
+                'Rejected mobile manga page translation by free trial daily limit',
+              type: 'free_trial_daily_limit_exceeded',
+            });
+          }
 
           if (error instanceof ProviderGatewayError) {
             routeLog.warn({

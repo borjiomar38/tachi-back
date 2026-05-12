@@ -5,6 +5,7 @@ import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
 import {
   enforceFreeTrialDailyChapterLimit,
+  FreeTrialDailyLimitError,
   resolveFreeTrialDailyLimitScope,
 } from '@/server/licenses/free-trial-daily-limit';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
@@ -239,11 +240,26 @@ export async function createTranslationJob(
   );
 
   const job = await dbClient.$transaction(async (tx) => {
-    await enforceFreeTrialDailyChapterLimit({
-      actor: deps.actor,
-      scope: freeTrialDailyLimitScope,
-      tx,
-    });
+    try {
+      await enforceFreeTrialDailyChapterLimit({
+        actor: deps.actor,
+        scope: freeTrialDailyLimitScope,
+        tx,
+      });
+    } catch (error) {
+      if (error instanceof FreeTrialDailyLimitError) {
+        log.info({
+          details: error.details,
+          deviceId: deps.actor.deviceId,
+          licenseId: deps.actor.licenseId,
+          message: 'Rejected hosted translation job by free trial daily limit',
+          scope: 'jobs',
+          type: 'free_trial_daily_limit_exceeded',
+        });
+      }
+
+      throw error;
+    }
 
     const createdJob = await tx.translationJob.create({
       data: {

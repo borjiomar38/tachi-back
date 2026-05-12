@@ -9,6 +9,7 @@ import {
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import { redeemLicenseToDevice } from '@/server/licenses/redeem';
 import { getClientIp } from '@/server/licenses/utils';
+import { logger } from '@/server/logger';
 import {
   zActivateMobileSessionInput,
   zMobileActivationResponse,
@@ -41,6 +42,10 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
         const clientIp = getClientIp(request);
         const rateLimitIp = clientIp ?? 'unknown';
         const userAgent = request.headers.get('user-agent');
+        const routeLog = logger.child({
+          path: '/api/mobile/auth/activate',
+          scope: 'mobile-auth',
+        });
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
 
         const ipRateLimit = consumeInMemoryRateLimit({
@@ -66,6 +71,17 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
         if (!parsedInput.success) {
           return invalidRequestResponse(parsedInput.error.flatten());
         }
+
+        routeLog.info({
+          appBuild: parsedInput.data.appBuild,
+          appVersion: parsedInput.data.appVersion,
+          buildChannel: parsedInput.data.buildChannel,
+          clientIp,
+          installationId: parsedInput.data.installationId,
+          message: 'Mobile redeem activation requested',
+          redeemCode: maskRedeemCodeForLog(parsedInput.data.redeemCode),
+          type: 'redeem_activation_start',
+        });
 
         const installationRateLimit = consumeInMemoryRateLimit({
           key: `mobile-auth-activate:installation:${parsedInput.data.installationId}`,
@@ -96,6 +112,17 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
             }
           );
 
+          routeLog.info({
+            activationStatus: activation.activationStatus,
+            clientIp,
+            deviceId: activation.device.id,
+            installationId: activation.device.installationId,
+            licenseId: activation.license.id,
+            message: 'Mobile redeem activation succeeded',
+            redeemCode: maskRedeemCodeForLog(activation.redeemCode.code),
+            type: 'redeem_activation_success',
+          });
+
           return Response.json({
             data: zMobileActivationResponse.parse({
               activation,
@@ -105,6 +132,14 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
           });
         } catch (error) {
           if (isFreeAccessIpBlockedError(error)) {
+            routeLog.warn({
+              code: error.code,
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message:
+                'Mobile redeem activation blocked by free access IP rule',
+              type: 'redeem_activation_error',
+            });
             return Response.json(
               {
                 error: buildFreeAccessIpBlockedErrorBody(error),
@@ -115,6 +150,13 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
           }
 
           if (error instanceof MobileAuthError) {
+            routeLog.warn({
+              code: error.code,
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message: 'Mobile redeem session creation failed',
+              type: 'redeem_activation_error',
+            });
             return Response.json(
               {
                 error: {
@@ -132,6 +174,14 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
             'code' in error &&
             'statusCode' in error
           ) {
+            routeLog.warn({
+              code: String(error.code),
+              clientIp,
+              installationId: parsedInput.data.installationId,
+              message: 'Mobile redeem activation failed',
+              redeemCode: maskRedeemCodeForLog(parsedInput.data.redeemCode),
+              type: 'redeem_activation_error',
+            });
             return Response.json(
               {
                 error: {
@@ -178,4 +228,14 @@ function buildRateLimitedResponse(retryAfterMs: number) {
       status: 429,
     }
   );
+}
+
+function maskRedeemCodeForLog(code: string) {
+  const normalized = code.trim();
+
+  if (normalized.length <= 8) {
+    return '***';
+  }
+
+  return `${normalized.slice(0, 6)}...${normalized.slice(-4)}`;
 }

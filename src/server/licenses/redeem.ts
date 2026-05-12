@@ -433,7 +433,7 @@ export async function redeemLicenseToDevice(
     activationStatus: result.activationStatus,
     installationId: input.installationId,
     licenseId: result.license.id,
-    redeemCode: normalizedCode,
+    redeemCode: maskRedeemCodeForLog(normalizedCode),
     scope: 'activation',
   });
 
@@ -454,4 +454,14 @@ function isFreeTrialRedeemCode(metadata: unknown) {
     'source' in metadata &&
     metadata.source === 'free_trial'
   );
+}
+
+function maskRedeemCodeForLog(code: string) {
+  const normalized = code.trim();
+
+  if (normalized.length <= 8) {
+    return '***';
+  }
+
+  return `${normalized.slice(0, 6)}...${normalized.slice(-4)}`;
 }
