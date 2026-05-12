@@ -1,12 +1,14 @@
 import { DEFAULT_LANGUAGE_KEY } from '@/lib/i18n/constants';
 
 import TemplatePurchaseReceipt from '@/emails/templates/purchase-receipt';
+import { envServer } from '@/env/server';
 import { db } from '@/server/db';
 import { Prisma } from '@/server/db/generated/client';
 import { sendEmail } from '@/server/email';
 import { UNLIMITED_DEVICE_LIMIT } from '@/server/licenses/device-limit';
 import { generateRedeemCode } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
+import { buildMobileSubscriptionUpgradeCreditKey } from '@/server/mobile-auth/subscription';
 
 const orderSelect = {
   billingPeriodEnd: true,
@@ -182,6 +184,18 @@ type PaymentTx = {
     }) => Promise<unknown>;
   };
   redeemCode: {
+    findFirst: (args: {
+      where: {
+        licenseId: string;
+        status: {
+          in: ['available', 'redeemed'];
+        };
+      };
+      orderBy: {
+        createdAt: 'asc';
+      };
+      select: typeof redeemCodeSelect;
+    }) => Promise<{ code: string; id: string } | null>;
     findUnique: (args: {
       where: { fulfillmentKey: string };
       select: typeof redeemCodeSelect;
@@ -218,6 +232,29 @@ type PaymentTx = {
     }) => Promise<unknown>;
   };
   tokenLedger: {
+    aggregate: (args: {
+      where: {
+        licenseId: string;
+        OR: Array<
+          | {
+              status: 'posted';
+            }
+          | {
+              status: 'pending';
+              type: {
+                not: 'job_reserve';
+              };
+            }
+        >;
+      };
+      _sum: {
+        deltaTokens: true;
+      };
+    }) => Promise<{
+      _sum: {
+        deltaTokens: number | null;
+      };
+    }>;
     findUnique: (args: {
       where: { idempotencyKey: string };
       select: {
@@ -235,7 +272,7 @@ type PaymentTx = {
         orderId: string;
         redeemCodeId: string;
         status: 'posted';
-        type: 'purchase_credit';
+        type: 'expiration_debit' | 'purchase_credit';
       };
       update: {
         description: string;
@@ -249,6 +286,19 @@ type PaymentTx = {
         id: true;
       };
     }) => Promise<{ id: string }>;
+  };
+  translationJob: {
+    count: (args: {
+      where: {
+        createdAt: {
+          lt: Date;
+        };
+        licenseId: string;
+        status: {
+          in: ['created', 'awaiting_upload', 'queued', 'processing'];
+        };
+      };
+    }) => Promise<number>;
   };
   tokenPack: {
     findUnique: (args: {
@@ -518,6 +568,15 @@ async function fulfillPaidOrder(input: {
   const currency = String(attrs.currency ?? 'USD').toLowerCase();
   const orderPayload = input.event as unknown as Prisma.InputJsonValue;
   const orderPaidAt = new Date();
+  const billingPeriodStart = parseDateAttribute(attrs, [
+    'billing_period_start',
+    'period_start',
+  ]);
+  const billingPeriodEnd = parseDateAttribute(attrs, [
+    'billing_period_end',
+    'period_end',
+    'renews_at',
+  ]);
 
   const tokenPack = await resolveTokenPack(input.tx, customData);
 
@@ -533,6 +592,8 @@ async function fulfillPaidOrder(input: {
           amountDiscountCents: discountCents,
           amountSubtotalCents: subtotalCents,
           amountTotalCents: totalCents,
+          billingPeriodEnd,
+          billingPeriodStart,
           currency,
           paidAt: orderPaidAt,
           payerEmail,
@@ -549,6 +610,8 @@ async function fulfillPaidOrder(input: {
           amountDiscountCents: discountCents,
           amountSubtotalCents: subtotalCents,
           amountTotalCents: totalCents,
+          billingPeriodEnd,
+          billingPeriodStart,
           currency,
           paidAt: orderPaidAt,
           payerEmail,
@@ -694,8 +757,15 @@ async function fulfillSubscriptionPayment(input: {
   const currency = String(attrs.currency ?? 'USD').toLowerCase();
   const orderPayload = input.event as unknown as Prisma.InputJsonValue;
   const orderPaidAt = new Date();
-
-  const tokenPack = await resolveTokenPack(input.tx, customData);
+  const billingPeriodStart = parseDateAttribute(attrs, [
+    'billing_period_start',
+    'period_start',
+  ]);
+  const billingPeriodEnd = parseDateAttribute(attrs, [
+    'billing_period_end',
+    'period_end',
+    'renews_at',
+  ]);
 
   const previousSubscriptionOrder = await input.tx.order.findFirst({
     where: {
@@ -704,6 +774,10 @@ async function fulfillSubscriptionPayment(input: {
     },
     orderBy: { paidAt: 'desc' },
     select: orderSelect,
+  });
+  const tokenPack = await resolveTokenPack(input.tx, customData, {
+    tokenPackId: previousSubscriptionOrder?.tokenPackId ?? undefined,
+    variantId: stringifyOptional(attrs.variant_id),
   });
 
   const existingOrder = await input.tx.order.findUnique({
@@ -718,6 +792,9 @@ async function fulfillSubscriptionPayment(input: {
           amountDiscountCents: discountCents,
           amountSubtotalCents: subtotalCents,
           amountTotalCents: totalCents,
+          billingPeriodEnd,
+          billingPeriodStart,
+          billingReason: stringifyOptional(attrs.billing_reason),
           currency,
           paidAt: orderPaidAt,
           payerEmail: payerEmail ?? existingOrder.payerEmail,
@@ -734,6 +811,9 @@ async function fulfillSubscriptionPayment(input: {
           amountDiscountCents: discountCents,
           amountSubtotalCents: subtotalCents,
           amountTotalCents: totalCents,
+          billingPeriodEnd,
+          billingPeriodStart,
+          billingReason: stringifyOptional(attrs.billing_reason),
           currency,
           paidAt: orderPaidAt,
           payerEmail:
@@ -770,74 +850,47 @@ async function fulfillSubscriptionPayment(input: {
     licenseId = license.id;
   }
 
-  const redeemFulfillmentKey = `ls:subscription:${lsSubscriptionId}:redeem`;
-  const existingRedeemCode = await input.tx.redeemCode.findUnique({
-    where: { fulfillmentKey: redeemFulfillmentKey },
-    select: redeemCodeSelect,
-  });
-
-  const redeemCode = await input.tx.redeemCode.upsert({
-    where: { fulfillmentKey: redeemFulfillmentKey },
-    create: {
-      code: generateRedeemCode(),
-      fulfillmentKey: redeemFulfillmentKey,
+  const { existingRedeemCode, redeemCode } =
+    await resolveSubscriptionRedeemCode({
       licenseId,
-      metadata: {
-        lsSubscriptionId,
-        tokenPackKey: tokenPack.key,
-      } satisfies Prisma.InputJsonObject,
+      lsSubscriptionId,
       orderId: order.id,
-    },
-    update: {
-      licenseId,
-      metadata: {
-        lsSubscriptionId,
-        tokenPackKey: tokenPack.key,
-      } satisfies Prisma.InputJsonObject,
-      orderId: order.id,
-      status: 'available',
-    },
-    select: redeemCodeSelect,
-  });
+      tokenPackKey: tokenPack.key,
+      tx: input.tx,
+    });
 
+  const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
   const creditIdempotencyKey = `ls:sub_payment:${input.event.data.id}:purchase-credit`;
   const existingLedgerEntry = await input.tx.tokenLedger.findUnique({
     where: { idempotencyKey: creditIdempotencyKey },
     select: { id: true },
   });
+  const existingMobileUpgradeCreditEntry =
+    await findExistingMobileUpgradeCreditEntry({
+      lsSubscriptionId,
+      previousSubscriptionOrder,
+      targetTokenPackKey: tokenPack.key,
+      tx: input.tx,
+    });
+  const shouldSkipCreditBecauseMobileUpgradeHandled =
+    Boolean(existingMobileUpgradeCreditEntry) &&
+    subtotalCents < tokenPack.priceAmountCents;
 
-  const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
-  await input.tx.tokenLedger.upsert({
-    where: { idempotencyKey: creditIdempotencyKey },
-    create: {
-      deltaTokens: totalTokens,
-      description: `${tokenPack.name} monthly subscription credit`,
-      idempotencyKey: creditIdempotencyKey,
+  if (!shouldSkipCreditBecauseMobileUpgradeHandled) {
+    await resetAndCreditSubscriptionTokens({
+      creditIdempotencyKey,
+      eventId: input.event.data.id,
+      existingCreditEntryId: existingLedgerEntry?.id ?? null,
       licenseId,
-      metadata: {
-        lsEventId: `subscription_payment_success:${input.event.data.id}`,
-        lsSubscriptionId,
-        tokenPackKey: tokenPack.key,
-      } satisfies Prisma.InputJsonObject,
+      lsSubscriptionId,
       orderId: order.id,
       redeemCodeId: redeemCode.id,
-      status: 'posted',
-      type: 'purchase_credit',
-    },
-    update: {
-      description: `${tokenPack.name} monthly subscription credit`,
-      deltaTokens: totalTokens,
-      metadata: {
-        lsEventId: `subscription_payment_success:${input.event.data.id}`,
-        lsSubscriptionId,
-        tokenPackKey: tokenPack.key,
-      } satisfies Prisma.InputJsonObject,
-      orderId: order.id,
-      redeemCodeId: redeemCode.id,
-      status: 'posted',
-    },
-    select: { id: true },
-  });
+      resetAt: billingPeriodStart ?? orderPaidAt,
+      tokenPack,
+      totalTokens,
+      tx: input.tx,
+    });
+  }
 
   await input.tx.webhookEvent.update({
     where: { id: input.eventRecordId },
@@ -853,7 +906,10 @@ async function fulfillSubscriptionPayment(input: {
 
   return {
     email:
-      payerEmail && (!existingRedeemCode || !existingLedgerEntry)
+      payerEmail &&
+      !existingRedeemCode &&
+      !existingLedgerEntry &&
+      !shouldSkipCreditBecauseMobileUpgradeHandled
         ? {
             packName: tokenPack.name,
             redeemCode: redeemCode.code,
@@ -863,6 +919,244 @@ async function fulfillSubscriptionPayment(input: {
         : null,
     orderId: order.id,
   };
+}
+
+type ResolvedTokenPack = Awaited<ReturnType<typeof resolveTokenPack>>;
+
+async function resolveSubscriptionRedeemCode(input: {
+  licenseId: string;
+  lsSubscriptionId: string;
+  orderId: string;
+  tokenPackKey: string;
+  tx: PaymentTx;
+}) {
+  const existingLicenseRedeemCode = await input.tx.redeemCode.findFirst({
+    where: {
+      licenseId: input.licenseId,
+      status: {
+        in: ['available', 'redeemed'],
+      },
+    },
+    orderBy: {
+      createdAt: 'asc',
+    },
+    select: redeemCodeSelect,
+  });
+
+  if (existingLicenseRedeemCode) {
+    return {
+      existingRedeemCode: true,
+      redeemCode: existingLicenseRedeemCode,
+    };
+  }
+
+  const redeemFulfillmentKey = `ls:subscription:${input.lsSubscriptionId}:redeem`;
+  const existingRedeemCode = await input.tx.redeemCode.findUnique({
+    where: { fulfillmentKey: redeemFulfillmentKey },
+    select: redeemCodeSelect,
+  });
+
+  const redeemCode = await input.tx.redeemCode.upsert({
+    where: { fulfillmentKey: redeemFulfillmentKey },
+    create: {
+      code: generateRedeemCode(),
+      fulfillmentKey: redeemFulfillmentKey,
+      licenseId: input.licenseId,
+      metadata: {
+        lsSubscriptionId: input.lsSubscriptionId,
+        tokenPackKey: input.tokenPackKey,
+      } satisfies Prisma.InputJsonObject,
+      orderId: input.orderId,
+    },
+    update: {
+      licenseId: input.licenseId,
+      metadata: {
+        lsSubscriptionId: input.lsSubscriptionId,
+        tokenPackKey: input.tokenPackKey,
+      } satisfies Prisma.InputJsonObject,
+      orderId: input.orderId,
+      status: 'available',
+    },
+    select: redeemCodeSelect,
+  });
+
+  return {
+    existingRedeemCode: Boolean(existingRedeemCode),
+    redeemCode,
+  };
+}
+
+async function resetAndCreditSubscriptionTokens(input: {
+  creditIdempotencyKey: string;
+  eventId: string;
+  existingCreditEntryId: string | null;
+  licenseId: string;
+  lsSubscriptionId: string;
+  orderId: string;
+  redeemCodeId: string;
+  resetAt: Date;
+  tokenPack: ResolvedTokenPack;
+  totalTokens: number;
+  tx: PaymentTx;
+}) {
+  const metadata = {
+    lsEventId: `subscription_payment_success:${input.eventId}`,
+    lsSubscriptionId: input.lsSubscriptionId,
+    tokenPackKey: input.tokenPack.key,
+  } satisfies Prisma.InputJsonObject;
+
+  if (!input.existingCreditEntryId) {
+    const currentBalance = await getAvailableTokenBalanceForPaymentTx(
+      input.tx,
+      input.licenseId
+    );
+    const protectedCommittedTokens =
+      await getActiveCommittedJobTokensForPaymentTx(input.tx, {
+        licenseId: input.licenseId,
+        resetAt: input.resetAt,
+      });
+    const expiredTokens = Math.max(
+      0,
+      currentBalance - protectedCommittedTokens
+    );
+
+    if (expiredTokens > 0) {
+      await input.tx.tokenLedger.upsert({
+        where: {
+          idempotencyKey: `ls:sub_payment:${input.eventId}:unused-balance-expiration`,
+        },
+        create: {
+          deltaTokens: -expiredTokens,
+          description: `Expired unused tokens before ${input.tokenPack.name} monthly renewal`,
+          idempotencyKey: `ls:sub_payment:${input.eventId}:unused-balance-expiration`,
+          licenseId: input.licenseId,
+          metadata: {
+            ...metadata,
+            expiredTokens,
+            protectedCommittedTokens,
+            resetTargetTokens: input.totalTokens,
+          } satisfies Prisma.InputJsonObject,
+          orderId: input.orderId,
+          redeemCodeId: input.redeemCodeId,
+          status: 'posted',
+          type: 'expiration_debit',
+        },
+        update: {
+          description: `Expired unused tokens before ${input.tokenPack.name} monthly renewal`,
+          deltaTokens: -expiredTokens,
+          metadata: {
+            ...metadata,
+            expiredTokens,
+            protectedCommittedTokens,
+            resetTargetTokens: input.totalTokens,
+          } satisfies Prisma.InputJsonObject,
+          orderId: input.orderId,
+          redeemCodeId: input.redeemCodeId,
+          status: 'posted',
+        },
+        select: { id: true },
+      });
+    }
+  }
+
+  await input.tx.tokenLedger.upsert({
+    where: { idempotencyKey: input.creditIdempotencyKey },
+    create: {
+      deltaTokens: input.totalTokens,
+      description: `${input.tokenPack.name} monthly subscription credit`,
+      idempotencyKey: input.creditIdempotencyKey,
+      licenseId: input.licenseId,
+      metadata,
+      orderId: input.orderId,
+      redeemCodeId: input.redeemCodeId,
+      status: 'posted',
+      type: 'purchase_credit',
+    },
+    update: {
+      description: `${input.tokenPack.name} monthly subscription credit`,
+      deltaTokens: input.totalTokens,
+      metadata,
+      orderId: input.orderId,
+      redeemCodeId: input.redeemCodeId,
+      status: 'posted',
+    },
+    select: { id: true },
+  });
+}
+
+async function findExistingMobileUpgradeCreditEntry(input: {
+  lsSubscriptionId: string;
+  previousSubscriptionOrder: {
+    billingPeriodStart: Date | null;
+    id: string;
+  } | null;
+  targetTokenPackKey: string;
+  tx: PaymentTx;
+}) {
+  if (!input.previousSubscriptionOrder) {
+    return null;
+  }
+
+  return input.tx.tokenLedger.findUnique({
+    where: {
+      idempotencyKey: buildMobileSubscriptionUpgradeCreditKey({
+        currentOrderId: input.previousSubscriptionOrder.id,
+        currentPeriodStart: input.previousSubscriptionOrder.billingPeriodStart,
+        lsSubscriptionId: input.lsSubscriptionId,
+        targetTokenPackKey: input.targetTokenPackKey,
+      }),
+    },
+    select: { id: true },
+  });
+}
+
+async function getAvailableTokenBalanceForPaymentTx(
+  tx: PaymentTx,
+  licenseId: string
+) {
+  const tokenBalance = await tx.tokenLedger.aggregate({
+    where: {
+      licenseId,
+      OR: [
+        {
+          status: 'posted',
+        },
+        {
+          status: 'pending',
+          type: {
+            not: 'job_reserve',
+          },
+        },
+      ],
+    },
+    _sum: {
+      deltaTokens: true,
+    },
+  });
+
+  return tokenBalance._sum.deltaTokens ?? 0;
+}
+
+async function getActiveCommittedJobTokensForPaymentTx(
+  tx: PaymentTx,
+  input: {
+    licenseId: string;
+    resetAt: Date;
+  }
+) {
+  const activeJobCount = await tx.translationJob.count({
+    where: {
+      createdAt: {
+        lt: input.resetAt,
+      },
+      licenseId: input.licenseId,
+      status: {
+        in: ['created', 'awaiting_upload', 'queued', 'processing'],
+      },
+    },
+  });
+
+  return activeJobCount * envServer.JOB_TOKENS_PER_CHAPTER;
 }
 
 async function recordFailedPayment(input: {
@@ -882,8 +1176,6 @@ async function recordFailedPayment(input: {
   const currency = String(attrs.currency ?? 'USD').toLowerCase();
   const orderPayload = input.event as unknown as Prisma.InputJsonValue;
 
-  const tokenPack = await resolveTokenPack(input.tx, customData);
-
   const previousSubscriptionOrder = await input.tx.order.findFirst({
     where: {
       licenseId: { not: null },
@@ -892,12 +1184,17 @@ async function recordFailedPayment(input: {
     orderBy: { paidAt: 'desc' },
     select: orderSelect,
   });
+  const tokenPack = await resolveTokenPack(input.tx, customData, {
+    tokenPackId: previousSubscriptionOrder?.tokenPackId ?? undefined,
+    variantId: stringifyOptional(attrs.variant_id),
+  });
 
   await input.tx.order.create({
     data: {
       amountDiscountCents: discountCents,
       amountSubtotalCents: subtotalCents,
       amountTotalCents: totalCents,
+      billingReason: stringifyOptional(attrs.billing_reason),
       currency,
       payerEmail: payerEmail ?? previousSubscriptionOrder?.payerEmail ?? null,
       rawPayload: orderPayload,
@@ -946,8 +1243,27 @@ async function handleSubscriptionLifecycleEvent(input: {
 
   const nextLicenseStatus = mapLsStatusToLicenseStatus(eventName, lsStatus);
   const lifecycleTimestamp = new Date();
+  const lifecycleTokenPack = await resolveTokenPack(
+    input.tx,
+    {},
+    {
+      variantId: stringifyOptional(attrs.variant_id),
+    }
+  ).catch(() => null);
 
   if (latestOrder?.licenseId) {
+    await input.tx.order.update({
+      where: { id: latestOrder.id },
+      data: {
+        billingPeriodEnd:
+          parseDateAttribute(attrs, ['renews_at', 'ends_at']) ??
+          latestOrder.billingPeriodEnd,
+        rawPayload: input.event as unknown as Prisma.InputJsonValue,
+        tokenPackId: lifecycleTokenPack?.id ?? latestOrder.tokenPackId,
+      },
+      select: orderSelect,
+    });
+
     await input.tx.license.update({
       where: { id: latestOrder.licenseId },
       data: {
@@ -1021,7 +1337,11 @@ function mapLsStatusToLicenseStatus(
 
 async function resolveTokenPack(
   tx: PaymentTx,
-  customData: Record<string, string>
+  customData: Record<string, string>,
+  fallback: {
+    tokenPackId?: string;
+    variantId?: string;
+  } = {}
 ) {
   if (customData.token_pack_id) {
     const pack = await tx.tokenPack.findUnique({
@@ -1039,8 +1359,27 @@ async function resolveTokenPack(
     if (pack) return pack;
   }
 
+  if (fallback.variantId) {
+    const pack = await tx.tokenPack.findUnique({
+      where: { lsVariantId: fallback.variantId },
+      select: tokenPackSelect,
+    });
+    if (pack) return pack;
+  }
+
+  if (fallback.tokenPackId) {
+    const pack = await tx.tokenPack.findUnique({
+      where: { id: fallback.tokenPackId },
+      select: tokenPackSelect,
+    });
+    if (pack) return pack;
+  }
+
   throw new Error(
-    `Could not resolve token pack from webhook custom data: ${JSON.stringify(customData)}`
+    `Could not resolve token pack from webhook data: ${JSON.stringify({
+      customData,
+      fallback,
+    })}`
   );
 }
 
@@ -1083,6 +1422,45 @@ function isUniqueConstraintError(error: unknown) {
     error instanceof Prisma.PrismaClientKnownRequestError &&
     error.code === 'P2002'
   );
+}
+
+function parseDateAttribute(
+  attrs: Record<string, unknown>,
+  keys: string[]
+): Date | null {
+  for (const key of keys) {
+    const value = attrs[key];
+    const date = parseNullableDateValue(value);
+
+    if (date) {
+      return date;
+    }
+  }
+
+  return null;
+}
+
+function parseNullableDateValue(value: unknown): Date | null {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    const milliseconds = value > 10_000_000_000 ? value : value * 1000;
+    const date = new Date(milliseconds);
+
+    return Number.isNaN(date.getTime()) ? null : date;
+  }
+
+  if (typeof value !== 'string' || !value.trim()) {
+    return null;
+  }
+
+  const date = new Date(value);
+
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function stringifyOptional(value: unknown) {
+  const text = String(value ?? '').trim();
+
+  return text || undefined;
 }
 
 function getErrorMessage(error: unknown) {

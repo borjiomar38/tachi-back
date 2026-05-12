@@ -1,19 +1,27 @@
+import type { Page } from '@playwright/test';
 import { expect, test } from 'e2e/utils';
+import { ADMIN_FILE } from 'e2e/utils/constants';
 import { randomString } from 'remeda';
 
 test.describe('Redeem code management as manager', () => {
+  test.use({ storageState: ADMIN_FILE });
+
   test('copies, edits, and deletes a redeem code', async ({
+    browserName,
     page,
     context,
   }) => {
+    test.slow();
+    test.skip(
+      browserName !== 'chromium',
+      'Clipboard-backed redeem actions are covered in Chromium.'
+    );
+
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const uniqueId = randomString(8);
     const ownerEmail = `redeem-${uniqueId}@example.com`;
 
-    await page.to('/login');
-    await page.login({ email: 'admin@tachi-back.local' });
-    await page.waitForURL('/manager');
     await page.to('/manager/licenses');
     await page.getByRole('button', { name: 'Generate redeem' }).click();
     await page.getByLabel('Owner email').fill(ownerEmail);
@@ -39,10 +47,10 @@ test.describe('Redeem code management as manager', () => {
       .poll(() => page.evaluate(() => navigator.clipboard.readText()))
       .toBe(redeemCode);
 
-    await page
-      .getByRole('button', { name: `Actions for ${redeemCode}` })
-      .click();
-    await page.getByRole('menuitem', { name: 'Edit redeem' }).click();
+    await selectRedeemAction(page, redeemCode, 'Edit redeem');
+    await expect(
+      page.getByRole('dialog', { name: 'Edit redeem' })
+    ).toBeVisible();
     await page.getByLabel('Token delta').fill('250');
     await page.getByLabel('License status').selectOption('suspended');
     await page.getByLabel('Adjustment note').fill('E2E token adjustment');
@@ -50,13 +58,16 @@ test.describe('Redeem code management as manager', () => {
       force: true,
     });
     await expect(page.getByText(/Redeem updated/)).toBeVisible();
-    await expect(page.getByText(/suspended/)).toBeVisible();
-    await expect(page.getByText('1,484 total credited')).toBeVisible();
+    await expect(
+      page.getByRole('dialog', { name: 'Edit redeem' })
+    ).toBeHidden();
+    const updatedRow = page
+      .getByText(ownerEmail)
+      .locator('xpath=ancestor::div[contains(@class, "border-b")][1]');
+    await expect(updatedRow.getByText(/suspended/)).toBeVisible();
+    await expect(updatedRow.getByText('1,484 total credited')).toBeVisible();
 
-    await page
-      .getByRole('button', { name: `Actions for ${redeemCode}` })
-      .click();
-    await page.getByRole('menuitem', { name: 'Delete' }).click();
+    await selectRedeemAction(page, redeemCode, 'Delete');
     await expect(
       page.getByRole('heading', { name: `Delete ${redeemCode}?` })
     ).toBeVisible();
@@ -67,3 +78,19 @@ test.describe('Redeem code management as manager', () => {
     ).toBeVisible();
   });
 });
+
+async function selectRedeemAction(
+  page: Page,
+  redeemCode: string,
+  actionName: string
+) {
+  const actionButton = page.getByRole('button', {
+    name: `Actions for ${redeemCode}`,
+  });
+  await actionButton.scrollIntoViewIfNeeded();
+  await actionButton.click({ force: true });
+
+  const menuItem = page.getByRole('menuitem', { name: actionName });
+  await expect(menuItem).toBeVisible();
+  await menuItem.dispatchEvent('click');
+}

@@ -1194,7 +1194,7 @@ export default {
   })
     .route({
       method: 'GET',
-      path: '/devices/{id}',
+      path: '/devices/{deviceId}',
       tags,
     })
     .input(

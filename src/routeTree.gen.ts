@@ -72,6 +72,7 @@ import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/con
 import { Route as ManagerChaptersCacheKeyIndexRouteImport } from './routes/manager/chapters/$cacheKey.index'
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
+import { Route as ApiMobileSubscriptionUpgradeRouteImport } from './routes/api/mobile/subscription/upgrade'
 import { Route as ApiMobileSubscriptionCancelRouteImport } from './routes/api/mobile/subscription/cancel'
 import { Route as ApiMobileSourceDiscoveryVerifyRouteImport } from './routes/api/mobile/source-discovery/verify'
 import { Route as ApiMobileSourceDiscoveryTitleCorrectionRouteImport } from './routes/api/mobile/source-discovery/title-correction'
@@ -414,6 +415,12 @@ const ApiOpenapiAppSchemaRoute = ApiOpenapiAppSchemaRouteImport.update({
   path: '/schema',
   getParentRoute: () => ApiOpenapiAppRoute,
 } as any)
+const ApiMobileSubscriptionUpgradeRoute =
+  ApiMobileSubscriptionUpgradeRouteImport.update({
+    id: '/api/mobile/subscription/upgrade',
+    path: '/api/mobile/subscription/upgrade',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileSubscriptionCancelRoute =
   ApiMobileSubscriptionCancelRouteImport.update({
     id: '/api/mobile/subscription/cancel',
@@ -588,6 +595,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/source-discovery/title-correction': typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
+  '/api/mobile/subscription/upgrade': typeof ApiMobileSubscriptionUpgradeRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
   '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
@@ -669,6 +677,7 @@ export interface FileRoutesByTo {
   '/api/mobile/source-discovery/title-correction': typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
+  '/api/mobile/subscription/upgrade': typeof ApiMobileSubscriptionUpgradeRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
   '/manager/chapters/$cacheKey': typeof ManagerChaptersCacheKeyIndexRoute
@@ -754,6 +763,7 @@ export interface FileRoutesById {
   '/api/mobile/source-discovery/title-correction': typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   '/api/mobile/source-discovery/verify': typeof ApiMobileSourceDiscoveryVerifyRoute
   '/api/mobile/subscription/cancel': typeof ApiMobileSubscriptionCancelRoute
+  '/api/mobile/subscription/upgrade': typeof ApiMobileSubscriptionUpgradeRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
   '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
@@ -840,6 +850,7 @@ export interface FileRouteTypes {
     | '/api/mobile/source-discovery/title-correction'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
+    | '/api/mobile/subscription/upgrade'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
     | '/manager/chapters/$cacheKey/'
@@ -921,6 +932,7 @@ export interface FileRouteTypes {
     | '/api/mobile/source-discovery/title-correction'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
+    | '/api/mobile/subscription/upgrade'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
     | '/manager/chapters/$cacheKey'
@@ -1005,6 +1017,7 @@ export interface FileRouteTypes {
     | '/api/mobile/source-discovery/title-correction'
     | '/api/mobile/source-discovery/verify'
     | '/api/mobile/subscription/cancel'
+    | '/api/mobile/subscription/upgrade'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
     | '/manager/chapters/$cacheKey/'
@@ -1073,6 +1086,7 @@ export interface RootRouteChildren {
   ApiMobileSourceDiscoveryTitleCorrectionRoute: typeof ApiMobileSourceDiscoveryTitleCorrectionRoute
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
+  ApiMobileSubscriptionUpgradeRoute: typeof ApiMobileSubscriptionUpgradeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1518,6 +1532,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOpenapiAppSchemaRouteImport
       parentRoute: typeof ApiOpenapiAppRoute
     }
+    '/api/mobile/subscription/upgrade': {
+      id: '/api/mobile/subscription/upgrade'
+      path: '/api/mobile/subscription/upgrade'
+      fullPath: '/api/mobile/subscription/upgrade'
+      preLoaderRoute: typeof ApiMobileSubscriptionUpgradeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/subscription/cancel': {
       id: '/api/mobile/subscription/cancel'
       path: '/api/mobile/subscription/cancel'
@@ -1847,6 +1868,7 @@ const rootRouteChildren: RootRouteChildren = {
     ApiMobileSourceDiscoveryTitleCorrectionRoute,
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
+  ApiMobileSubscriptionUpgradeRoute: ApiMobileSubscriptionUpgradeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

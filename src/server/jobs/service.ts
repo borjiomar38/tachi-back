@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
+import { hasPaidLicenseEntitlement } from '@/server/licenses/paid-entitlement';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-gateway/manifest';
@@ -158,11 +159,14 @@ const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
 const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
 const HOSTED_OCR_JPEG_QUALITY = 88;
 const QUEUE_DRAIN_ADVISORY_LOCK_KEY = 74_224_301;
+const FREE_TRIAL_DAILY_CHAPTER_LIMIT = 2;
+const FREE_TRIAL_DAILY_USAGE_LOCK_NAMESPACE = 74_224_302;
 
 export class TranslationJobError extends Error {
   constructor(
     readonly code:
       | 'checksum_mismatch'
+      | 'free_trial_daily_limit_exceeded'
       | 'insufficient_tokens'
       | 'invalid_job'
       | 'invalid_job_state'
@@ -224,11 +228,22 @@ export async function createTranslationJob(
     });
   }
 
+  const freeTrialDailyLimitScope = await resolveFreeTrialDailyLimitScope({
+    dbClient,
+    licenseId: deps.actor.licenseId,
+    now,
+  });
   const expiresAt = new Date(
     now.getTime() + envServer.JOB_PAGE_UPLOAD_URL_TTL_SECONDS * 1000
   );
 
   const job = await dbClient.$transaction(async (tx) => {
+    await enforceFreeTrialDailyChapterLimit({
+      actor: deps.actor,
+      scope: freeTrialDailyLimitScope,
+      tx,
+    });
+
     const createdJob = await tx.translationJob.create({
       data: {
         chapterCacheKey: buildChapterCacheKey(input.chapterIdentity),
@@ -367,6 +382,204 @@ export async function createTranslationJob(
       mode: 'server_multipart',
     },
   });
+}
+
+type FreeTrialDailyLimitScope = {
+  claimId: string;
+  dayEnd: Date;
+  dayStart: Date;
+  licenseId: string;
+  now: Date;
+};
+
+type FreeTrialUsageTx = {
+  $queryRaw?: <T = unknown>(
+    strings: TemplateStringsArray,
+    ...values: unknown[]
+  ) => Promise<T>;
+  order: {
+    findFirst: (args: {
+      where: {
+        licenseId: string;
+        paidAt: {
+          not: null;
+        };
+        status: 'paid';
+        OR: Array<
+          | {
+              lsSubscriptionId: null;
+            }
+          | {
+              billingPeriodEnd: null;
+            }
+          | {
+              billingPeriodEnd: {
+                gt: Date;
+              };
+            }
+        >;
+      };
+      select: {
+        id: true;
+      };
+    }) => Promise<{ id: string } | null>;
+  };
+  translationJob: {
+    count: (args: {
+      where: {
+        createdAt: {
+          gte: Date;
+          lt: Date;
+        };
+        licenseId: string;
+      };
+    }) => Promise<number>;
+  };
+};
+
+async function resolveFreeTrialDailyLimitScope(input: {
+  dbClient: typeof db;
+  licenseId: string;
+  now: Date;
+}): Promise<FreeTrialDailyLimitScope | null> {
+  const freeTrialClaim = await input.dbClient.freeTrialClaim.findUnique({
+    where: {
+      licenseId: input.licenseId,
+    },
+    select: {
+      id: true,
+    },
+  });
+
+  if (!freeTrialClaim) {
+    return null;
+  }
+
+  const hasPaidEntitlement = await hasPaidLicenseEntitlement(
+    {
+      licenseId: input.licenseId,
+      now: input.now,
+    },
+    {
+      dbClient: input.dbClient,
+    }
+  );
+
+  if (hasPaidEntitlement) {
+    return null;
+  }
+
+  const dayStart = getUtcDayStart(input.now);
+  const dayEnd = new Date(dayStart.getTime() + 24 * 60 * 60 * 1000);
+
+  return {
+    claimId: freeTrialClaim.id,
+    dayEnd,
+    dayStart,
+    licenseId: input.licenseId,
+    now: input.now,
+  };
+}
+
+async function enforceFreeTrialDailyChapterLimit(input: {
+  actor: MobileJobActor;
+  scope: FreeTrialDailyLimitScope | null;
+  tx: FreeTrialUsageTx;
+}) {
+  if (!input.scope) {
+    return;
+  }
+
+  const hasPaidEntitlement = await hasPaidLicenseEntitlementForJobTx(input.tx, {
+    licenseId: input.scope.licenseId,
+    now: input.scope.now,
+  });
+
+  if (hasPaidEntitlement) {
+    return;
+  }
+
+  await acquireFreeTrialDailyUsageLock(input.tx, input.scope);
+
+  const usedChapters = await input.tx.translationJob.count({
+    where: {
+      createdAt: {
+        gte: input.scope.dayStart,
+        lt: input.scope.dayEnd,
+      },
+      licenseId: input.actor.licenseId,
+    },
+  });
+
+  if (usedChapters >= FREE_TRIAL_DAILY_CHAPTER_LIMIT) {
+    throw new TranslationJobError('free_trial_daily_limit_exceeded', 429, {
+      details: {
+        dailyLimit: FREE_TRIAL_DAILY_CHAPTER_LIMIT,
+        resetsAt: input.scope.dayEnd.toISOString(),
+        usedChapters,
+      },
+    });
+  }
+}
+
+async function acquireFreeTrialDailyUsageLock(
+  tx: FreeTrialUsageTx,
+  scope: FreeTrialDailyLimitScope
+) {
+  if (!tx.$queryRaw) {
+    return;
+  }
+
+  const lockKey = `${scope.claimId}:${scope.dayStart.toISOString()}`;
+
+  await tx.$queryRaw`
+    SELECT pg_advisory_xact_lock(
+      ${FREE_TRIAL_DAILY_USAGE_LOCK_NAMESPACE},
+      hashtext(${lockKey})
+    )
+  `;
+}
+
+function getUtcDayStart(date: Date) {
+  return new Date(
+    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
+  );
+}
+
+async function hasPaidLicenseEntitlementForJobTx(
+  tx: FreeTrialUsageTx,
+  input: {
+    licenseId: string;
+    now: Date;
+  }
+) {
+  const paidOrder = await tx.order.findFirst({
+    where: {
+      licenseId: input.licenseId,
+      paidAt: {
+        not: null,
+      },
+      status: 'paid',
+      OR: [
+        {
+          lsSubscriptionId: null,
+        },
+        {
+          billingPeriodEnd: null,
+        },
+        {
+          billingPeriodEnd: {
+            gt: input.now,
+          },
+        },
+      ],
+    },
+    select: {
+      id: true,
+    },
+  });
+
+  return Boolean(paidOrder);
 }
 
 export async function uploadTranslationJobPage(

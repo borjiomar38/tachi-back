@@ -77,9 +77,14 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
               : formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)}
           </p>
           <p className={cn('text-sm', textMutedClassName)}>
-            About{' '}
-            {formatTokenCount(tokenPack.marketedChaptersPerMonth)} chapters /
-            month
+            {isFreePlan ? (
+              <>Limited to 2 chapters / day</>
+            ) : (
+              <>
+                About {formatTokenCount(tokenPack.marketedChaptersPerMonth)}{' '}
+                chapters / month
+              </>
+            )}
           </p>
         </div>
 
@@ -93,9 +98,11 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
             <span className="font-medium">Powerful text scan</span>
           </div>
           <div className="flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2">
-            <span className={textMutedClassName}>Billing</span>
+            <span className={textMutedClassName}>
+              {isFreePlan ? 'Limit' : 'Billing'}
+            </span>
             <span className="font-medium">
-              {isFreePlan ? 'Included monthly' : 'Monthly renewal'}
+              {isFreePlan ? '2 chapters / day' : 'Monthly renewal'}
             </span>
           </div>
         </div>

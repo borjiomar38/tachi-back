@@ -9,11 +9,11 @@ test.describe('Login flow', () => {
     await expect(page.getByTestId('layout-manager')).toBeVisible();
   });
 
-  test('Login as user', async ({ page }) => {
+  test('Login as support', async ({ page }) => {
     await page.to('/login');
     await page.login({ email: USER_EMAIL });
-    await page.waitForURL('/app');
-    await expect(page.getByTestId('layout-app')).toBeVisible();
+    await page.waitForURL('/manager');
+    await expect(page.getByTestId('layout-manager')).toBeVisible();
   });
 
   test('Login with redirect', async ({ page }) => {

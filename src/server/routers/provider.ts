@@ -19,6 +19,7 @@ import {
 import { zProviderGatewayManifest } from '@/server/provider-gateway/schema';
 
 const tags = ['providers'];
+const zEmptyQuery = z.object({}).default({});
 
 export default {
   manifest: protectedProcedure({
@@ -31,7 +32,7 @@ export default {
       path: '/providers/manifest',
       tags,
     })
-    .input(z.void())
+    .input(zEmptyQuery)
     .output(zProviderGatewayManifest)
     .handler(async ({ context }) => {
       return await getProviderGatewayManifestWithRuntimeConfig({
@@ -49,7 +50,7 @@ export default {
       path: '/providers/routing-config',
       tags,
     })
-    .input(z.void())
+    .input(zEmptyQuery)
     .output(zProviderRoutingConfigResponse)
     .handler(async ({ context }) => {
       const config = await getProviderGatewayRuntimeConfig({

@@ -1,5 +1,6 @@
 import type { Page } from '@playwright/test';
 import { expect, test } from 'e2e/utils';
+import { ADMIN_FILE } from 'e2e/utils/constants';
 
 import { PrismaClient } from '@/server/db/generated/client';
 
@@ -22,6 +23,8 @@ const fixture = {
 };
 
 test.describe('Free-trial tracking backoffice', () => {
+  test.use({ storageState: ADMIN_FILE });
+
   test.beforeAll(async () => {
     await cleanupFixture();
     await db.device.create({
@@ -123,9 +126,6 @@ test.describe('Free-trial tracking backoffice', () => {
     page,
   }) => {
     await page.setViewportSize({ width: 1280, height: 900 });
-    await page.to('/login');
-    await page.login({ email: 'admin@tachi-back.local' });
-    await page.waitForURL('/manager');
 
     await page.to('/manager/free-trials');
     await expect(

@@ -8,15 +8,31 @@ import locales from '@/locales';
 
 const t = locales[DEFAULT_LANGUAGE_KEY];
 
-test.describe('User management as user', () => {
+test.describe('User management as support', () => {
   test.use({ storageState: USER_FILE });
 
-  test('Should not have access', async ({ page }) => {
+  test('Should not have write access', async ({ page }) => {
     await page.to('/manager/users');
 
     await expect(
-      page.getByText(t.components.pageError[403].message)
+      page.getByRole('heading', { name: t.user.manager.list.title })
     ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: t.user.manager.list.newButton })
+    ).toHaveCount(0);
+
+    await page.getByText('admin@tachi-back.local').click({
+      force: true,
+    });
+
+    await expect(
+      page.getByRole('link', { name: t.user.manager.detail.editUser })
+    ).toHaveCount(0);
+    await expect(
+      page.getByRole('button', {
+        name: t.user.manager.detail.deleteButton.label,
+      })
+    ).toHaveCount(0);
   });
 });
 
@@ -34,12 +50,16 @@ test.describe('User management as manager', () => {
     const uniqueEmail = `new-user-${randomId}@user.com`;
 
     // Fill the form
-    await page.waitForURL('/manager/users/new');
+    await expect(
+      page.getByRole('heading', { name: t.user.manager.new.title })
+    ).toBeVisible();
     await page.getByLabel(t.user.common.name.label).fill('New user');
     await page.getByLabel(t.user.common.email.label).fill(uniqueEmail);
     await page.getByText(t.user.manager.new.createButton.label).click();
 
-    await page.waitForURL('/manager/users');
+    await expect(
+      page.getByRole('heading', { name: t.user.manager.list.title })
+    ).toBeVisible();
     await page
       .getByPlaceholder(t.components.searchInput.placeholder)
       .fill(`new-user-${randomId}`);
@@ -47,7 +67,7 @@ test.describe('User management as manager', () => {
   });
 
   test('Edit a user', async ({ page }) => {
-    await page.getByText('admin@admin.com').click({
+    await page.getByText('admin@tachi-back.local').click({
       force: true,
     });
 
@@ -66,12 +86,25 @@ test.describe('User management as manager', () => {
   });
 
   test('Delete a user', async ({ page }) => {
+    await page.getByText(t.user.manager.list.newButton).click();
+
+    const randomId = randomString(8);
+    const uniqueEmail = `delete-user-${randomId}@user.com`;
+
+    await expect(
+      page.getByRole('heading', { name: t.user.manager.new.title })
+    ).toBeVisible();
+    await page.getByLabel(t.user.common.name.label).fill('Delete user');
+    await page.getByLabel(t.user.common.email.label).fill(uniqueEmail);
+    await page.getByText(t.user.manager.new.createButton.label).click();
+
+    await expect(
+      page.getByRole('heading', { name: t.user.manager.list.title })
+    ).toBeVisible();
     await page
-      .getByText('user', {
-        exact: true,
-      })
-      .first()
-      .click({ force: true });
+      .getByPlaceholder(t.components.searchInput.placeholder)
+      .fill(`delete-user-${randomId}`);
+    await page.getByText(uniqueEmail).click({ force: true });
 
     await page
       .getByRole('button', { name: t.user.manager.detail.deleteButton.label })

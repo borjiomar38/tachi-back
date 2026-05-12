@@ -30,7 +30,7 @@ export const publicFreeTokenPack: PublicTokenPack = {
   key: 'free',
   name: 'Free 10',
   description:
-    'Free monthly access for trying manga, manhwa, and manhua AI translation.',
+    'Free trial access for trying manga, manhwa, and manhua AI translation, limited to two chapters per day.',
   tokenAmount: 100,
   bonusTokenAmount: 0,
   priceAmountCents: 0,

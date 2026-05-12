@@ -15,8 +15,14 @@ const {
 } = vi.hoisted(() => ({
   mockDb: {
     $transaction: vi.fn(),
+    freeTrialClaim: {
+      findUnique: vi.fn(),
+    },
     jobAsset: {
       update: vi.fn(),
+    },
+    order: {
+      findFirst: vi.fn(),
     },
     tokenLedger: {
       aggregate: vi.fn(),
@@ -112,7 +118,9 @@ import {
 describe('job service', () => {
   beforeEach(() => {
     mockDb.$transaction.mockReset();
+    mockDb.freeTrialClaim.findUnique.mockReset();
     mockDb.jobAsset.update.mockReset();
+    mockDb.order.findFirst.mockReset();
     mockDb.tokenLedger.aggregate.mockReset();
     mockDb.tokenLedger.create.mockReset();
     mockDb.tokenLedger.updateMany.mockReset();
@@ -163,6 +171,8 @@ describe('job service', () => {
         deltaTokens: 100,
       },
     });
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue(null);
+    mockDb.order.findFirst.mockResolvedValue(null);
   });
 
   it('creates an awaiting-upload job with page placeholders', async () => {
@@ -744,6 +754,198 @@ describe('job service', () => {
     });
 
     expect(mockDb.$transaction).not.toHaveBeenCalled();
+  });
+
+  it('limits trial-only licenses to two chapter jobs per UTC day', async () => {
+    const countDailyJobs = vi.fn().mockResolvedValue(2);
+    const acquireDailyLock = vi.fn().mockResolvedValue([{ locked: true }]);
+    const now = new Date('2026-05-12T14:30:00.000Z');
+
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue({
+      id: 'claim-1',
+    });
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        $queryRaw: acquireDailyLock,
+        order: {
+          findFirst: vi.fn().mockResolvedValue(null),
+        },
+        translationJob: {
+          count: countDailyJobs,
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    await expect(
+      createTranslationJob(
+        {
+          pages: [
+            {
+              fileName: '001.jpg',
+              mimeType: 'image/jpeg',
+              sizeBytes: 1024,
+            },
+          ],
+          targetLanguage: 'en',
+        },
+        {
+          actor: {
+            deviceId: 'device-trial-1',
+            licenseId: 'license-trial-1',
+          },
+          dbClient: mockDb as never,
+          now,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_trial_daily_limit_exceeded',
+      details: {
+        dailyLimit: 2,
+        resetsAt: '2026-05-13T00:00:00.000Z',
+        usedChapters: 2,
+      },
+      statusCode: 429,
+    });
+
+    expect(countDailyJobs).toHaveBeenCalledWith({
+      where: {
+        createdAt: {
+          gte: new Date('2026-05-12T00:00:00.000Z'),
+          lt: new Date('2026-05-13T00:00:00.000Z'),
+        },
+        licenseId: 'license-trial-1',
+      },
+    });
+    expect(acquireDailyLock).toHaveBeenCalledOnce();
+  });
+
+  it('allows a trial-only license below the daily chapter limit', async () => {
+    const createMany = vi.fn();
+    const createJob = vi.fn().mockResolvedValue({
+      id: 'job-trial-allowed',
+    });
+    const countDailyJobs = vi.fn().mockResolvedValue(1);
+
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue({
+      id: 'claim-1',
+    });
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        $queryRaw: vi.fn().mockResolvedValue([{ locked: true }]),
+        jobAsset: {
+          createMany,
+        },
+        order: {
+          findFirst: vi.fn().mockResolvedValue(null),
+        },
+        translationJob: {
+          count: countDailyJobs,
+          create: createJob,
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              id: 'job-trial-allowed',
+              objectKeys: [null],
+              pageCount: 1,
+              status: 'awaiting_upload',
+            })
+          ),
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const result = await createTranslationJob(
+      {
+        pages: [
+          {
+            fileName: '001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+        ],
+        targetLanguage: 'en',
+      },
+      {
+        actor: {
+          deviceId: 'device-trial-1',
+          licenseId: 'license-trial-1',
+        },
+        dbClient: mockDb as never,
+        now: new Date('2026-05-12T14:30:00.000Z'),
+      }
+    );
+
+    expect(result.job.id).toBe('job-trial-allowed');
+    expect(createJob).toHaveBeenCalledOnce();
+    expect(countDailyJobs).toHaveBeenCalledOnce();
+    expect(createMany).toHaveBeenCalledOnce();
+  });
+
+  it('skips the trial daily limit when a paid entitlement appears inside the transaction', async () => {
+    const createJob = vi.fn().mockResolvedValue({
+      id: 'job-paid-after-trial',
+    });
+    const countDailyJobs = vi.fn();
+
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue({
+      id: 'claim-1',
+    });
+    mockDb.order.findFirst.mockResolvedValueOnce(null);
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        $queryRaw: vi.fn(),
+        jobAsset: {
+          createMany: vi.fn(),
+        },
+        order: {
+          findFirst: vi.fn().mockResolvedValue({
+            id: 'paid-order-1',
+          }),
+        },
+        translationJob: {
+          count: countDailyJobs,
+          create: createJob,
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              id: 'job-paid-after-trial',
+              objectKeys: [null],
+              pageCount: 1,
+              status: 'awaiting_upload',
+            })
+          ),
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const result = await createTranslationJob(
+      {
+        pages: [
+          {
+            fileName: '001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+        ],
+        targetLanguage: 'en',
+      },
+      {
+        actor: {
+          deviceId: 'device-trial-1',
+          licenseId: 'license-trial-1',
+        },
+        dbClient: mockDb as never,
+        now: new Date('2026-05-12T14:30:00.000Z'),
+      }
+    );
+
+    expect(result.job.id).toBe('job-paid-after-trial');
+    expect(countDailyJobs).not.toHaveBeenCalled();
+    expect(createJob).toHaveBeenCalledOnce();
   });
 
   it('queues a fully uploaded job without reserving tokens upfront', async () => {
