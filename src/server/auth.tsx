@@ -19,6 +19,8 @@ import { sendEmail } from '@/server/email';
 import { getUserLanguage } from '@/server/utils';
 
 export type Auth = typeof auth;
+const shouldUseMockedOtp = !import.meta.env.PROD || envClient.VITE_IS_DEMO;
+
 export const auth = betterAuth({
   baseURL: {
     allowedHosts: [
@@ -65,7 +67,7 @@ export const auth = betterAuth({
       disableSignUp: !AUTH_PUBLIC_SIGNUP_ENABLED,
       expiresIn: AUTH_EMAIL_OTP_EXPIRATION_IN_MINUTES * 60,
       // Use predictable mocked code in dev and demo
-      ...(import.meta.env.DEV || envClient.VITE_IS_DEMO
+      ...(shouldUseMockedOtp
         ? { generateOTP: () => AUTH_EMAIL_OTP_MOCKED }
         : undefined),
       async sendVerificationOTP({ email, otp, type }) {

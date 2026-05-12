@@ -19,6 +19,15 @@ export const zCreateFreeTrialMobileSessionInput = z.object({
   platform: z.literal('android').default('android'),
 });
 
+export const zCheckFreeTrialEligibilityInput =
+  zCreateFreeTrialMobileSessionInput.omit({
+    email: true,
+  });
+
+export const zFreeTrialEligibilityResponse = z.object({
+  eligible: z.boolean(),
+});
+
 export const zCreateMobileSessionInput = z.object({
   appBuild: z.string().trim().max(64).optional(),
   appVersion: z.string().trim().max(64).optional(),

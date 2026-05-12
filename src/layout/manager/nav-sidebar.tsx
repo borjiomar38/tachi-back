@@ -8,6 +8,7 @@ import {
   LayoutDashboardIcon,
   MapPinnedIcon,
   PanelLeftIcon,
+  ShieldAlertIcon,
   SmartphoneIcon,
   UsersIcon,
   XIcon,
@@ -138,6 +139,28 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                       )}
                     </Link>
                   </SidebarMenuItem>
+                  <WithPermissions
+                    permissions={[
+                      permissionDevice.read,
+                      permissionLicense.read,
+                    ]}
+                  >
+                    <SidebarMenuItem>
+                      <Link to="/manager/free-trials">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <ShieldAlertIcon />
+                                <span>{t('layout:nav.freeTrials')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                  </WithPermissions>
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>

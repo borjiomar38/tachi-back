@@ -10,7 +10,10 @@ vi.mock('@/server/db', () => ({
   db: mockDb,
 }));
 
-import { createFreeTrialRedeemCode } from '@/server/licenses/free-trial';
+import {
+  checkFreeTrialEligibility,
+  createFreeTrialRedeemCode,
+} from '@/server/licenses/free-trial';
 
 describe('free trial redeem creation', () => {
   beforeEach(() => {
@@ -226,5 +229,110 @@ describe('free trial redeem creation', () => {
       code: 'free_access_unavailable',
       statusCode: 402,
     });
+  });
+});
+
+describe('free trial eligibility', () => {
+  beforeEach(() => {
+    mockDb.$transaction.mockReset();
+  });
+
+  it('allows the email form when installation, IP, and fingerprint are unused', async () => {
+    const dbClient = {
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue(null),
+      },
+      freeTrialIdentity: {
+        findFirst: vi.fn().mockResolvedValue(null),
+      },
+    };
+
+    const result = await checkFreeTrialEligibility(
+      {
+        deviceFingerprintHash:
+          '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+      },
+      {
+        clientIp: '203.0.113.10',
+        dbClient: dbClient as never,
+      }
+    );
+
+    expect(result).toEqual({
+      eligible: true,
+    });
+    expect(dbClient.freeTrialClaim.findFirst).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          OR: expect.arrayContaining([
+            { installationId: 'install-1234567890abcd' },
+            { ipAddress: '203.0.113.10' },
+            {
+              deviceFingerprintHash:
+                '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+            },
+          ]),
+        }),
+      })
+    );
+  });
+
+  it('hides the email form when the current identity already used a free trial', async () => {
+    const dbClient = {
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue({ id: 'claim-1' }),
+      },
+      freeTrialIdentity: {
+        findFirst: vi.fn(),
+      },
+    };
+
+    const result = await checkFreeTrialEligibility(
+      {
+        deviceFingerprintHash:
+          '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+      },
+      {
+        clientIp: '203.0.113.10',
+        dbClient: dbClient as never,
+      }
+    );
+
+    expect(result).toEqual({
+      eligible: false,
+    });
+    expect(dbClient.freeTrialIdentity.findFirst).not.toHaveBeenCalled();
+  });
+
+  it('hides the email form when the fingerprint is missing', async () => {
+    const dbClient = {
+      freeTrialClaim: {
+        findFirst: vi.fn(),
+      },
+      freeTrialIdentity: {
+        findFirst: vi.fn(),
+      },
+    };
+
+    const result = await checkFreeTrialEligibility(
+      {
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+      },
+      {
+        clientIp: '203.0.113.10',
+        dbClient: dbClient as never,
+      }
+    );
+
+    expect(result).toEqual({
+      eligible: false,
+    });
+    expect(dbClient.freeTrialClaim.findFirst).not.toHaveBeenCalled();
+    expect(dbClient.freeTrialIdentity.findFirst).not.toHaveBeenCalled();
   });
 });

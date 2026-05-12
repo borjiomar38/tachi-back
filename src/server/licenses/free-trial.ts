@@ -11,7 +11,10 @@ import {
   throwFreeTrialIdentityUnavailable,
 } from '@/server/licenses/free-trial-identity';
 import { generateRedeemCode } from '@/server/licenses/utils';
-import { zCreateFreeTrialMobileSessionInput } from '@/server/mobile-auth/schema';
+import {
+  zCheckFreeTrialEligibilityInput,
+  zCreateFreeTrialMobileSessionInput,
+} from '@/server/mobile-auth/schema';
 
 const FREE_TRIAL_TOKEN_AMOUNT = 100;
 
@@ -207,6 +210,60 @@ export async function createFreeTrialRedeemCode(
 
     throw error;
   }
+}
+
+export async function checkFreeTrialEligibility(
+  rawInput: unknown,
+  deps: {
+    clientIp?: string | null;
+    dbClient?: typeof db;
+  } = {}
+) {
+  const input = zCheckFreeTrialEligibilityInput.parse(rawInput);
+  const dbClient = deps.dbClient ?? db;
+  const installationId = input.installationId.trim();
+  const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
+  const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
+
+  if (!deviceFingerprintHash) {
+    return {
+      eligible: false,
+    };
+  }
+
+  const identitySignals = buildFreeTrialIdentitySignals({
+    deviceFingerprintHash,
+    installationId,
+    ipAddress,
+  });
+
+  const existingClaim = await dbClient.freeTrialClaim.findFirst({
+    where: {
+      OR: [
+        { installationId },
+        ...(ipAddress ? [{ ipAddress }] : []),
+        { deviceFingerprintHash },
+      ],
+    },
+    select: {
+      id: true,
+    },
+  });
+
+  if (existingClaim) {
+    return {
+      eligible: false,
+    };
+  }
+
+  const identityConflict = await findFreeTrialIdentityConflict(
+    dbClient,
+    identitySignals
+  );
+
+  return {
+    eligible: !identityConflict,
+  };
 }
 
 export function isFreeTrialActivationError(

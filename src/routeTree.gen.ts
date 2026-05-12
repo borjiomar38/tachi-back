@@ -38,6 +38,7 @@ import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/in
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
+import { Route as ManagerFreeTrialsIndexRouteImport } from './routes/manager/free-trials/index'
 import { Route as ManagerDevicesIndexRouteImport } from './routes/manager/devices/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
 import { Route as ManagerContactsIndexRouteImport } from './routes/manager/contacts/index'
@@ -63,6 +64,7 @@ import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users
 import { Route as ManagerUsersIdIndexRouteImport } from './routes/manager/users/$id.index'
 import { Route as ManagerLicensesKeyIndexRouteImport } from './routes/manager/licenses/$key.index'
 import { Route as ManagerJobsIdIndexRouteImport } from './routes/manager/jobs/$id.index'
+import { Route as ManagerFreeTrialsIdIndexRouteImport } from './routes/manager/free-trials/$id.index'
 import { Route as ManagerDevicesMapIndexRouteImport } from './routes/manager/devices/map/index'
 import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devices/$id.index'
 import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/contacts/$id.index'
@@ -86,6 +88,7 @@ import { Route as ManagerUsersIdUpdateIndexRouteImport } from './routes/manager/
 import { Route as ApiMobileJobsJobIdIndexRouteImport } from './routes/api/mobile/jobs/$jobId.index'
 import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobile/jobs/$jobId/result'
 import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/complete'
+import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 
 const SupportRoute = SupportRouteImport.update({
@@ -236,6 +239,11 @@ const ManagerJobsIndexRoute = ManagerJobsIndexRouteImport.update({
   path: '/jobs/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerFreeTrialsIndexRoute = ManagerFreeTrialsIndexRouteImport.update({
+  id: '/free-trials/',
+  path: '/free-trials/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerDevicesIndexRoute = ManagerDevicesIndexRouteImport.update({
   id: '/devices/',
   path: '/devices/',
@@ -363,6 +371,12 @@ const ManagerJobsIdIndexRoute = ManagerJobsIdIndexRouteImport.update({
   path: '/jobs/$id/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerFreeTrialsIdIndexRoute =
+  ManagerFreeTrialsIdIndexRouteImport.update({
+    id: '/free-trials/$id/',
+    path: '/free-trials/$id/',
+    getParentRoute: () => ManagerRouteRoute,
+  } as any)
 const ManagerDevicesMapIndexRoute = ManagerDevicesMapIndexRouteImport.update({
   id: '/devices/map/',
   path: '/devices/map/',
@@ -489,6 +503,12 @@ const ApiMobileJobsJobIdCompleteRoute =
     path: '/$jobId/complete',
     getParentRoute: () => ApiMobileJobsRoute,
   } as any)
+const ApiMobileAuthFreeTrialEligibilityRoute =
+  ApiMobileAuthFreeTrialEligibilityRouteImport.update({
+    id: '/eligibility',
+    path: '/eligibility',
+    getParentRoute: () => ApiMobileAuthFreeTrialRoute,
+  } as any)
 const ApiMobileJobsJobIdPagesPageNumberRoute =
   ApiMobileJobsJobIdPagesPageNumberRouteImport.update({
     id: '/$jobId/pages/$pageNumber',
@@ -543,6 +563,7 @@ export interface FileRoutesByFullPath {
   '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/devices/': typeof ManagerDevicesIndexRoute
+  '/manager/free-trials/': typeof ManagerFreeTrialsIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
@@ -550,7 +571,7 @@ export interface FileRoutesByFullPath {
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
-  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
+  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
@@ -566,10 +587,12 @@ export interface FileRoutesByFullPath {
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
   '/manager/devices/map/': typeof ManagerDevicesMapIndexRoute
+  '/manager/free-trials/$id/': typeof ManagerFreeTrialsIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
+  '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
@@ -620,6 +643,7 @@ export interface FileRoutesByTo {
   '/manager/contacts': typeof ManagerContactsIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
   '/manager/devices': typeof ManagerDevicesIndexRoute
+  '/manager/free-trials': typeof ManagerFreeTrialsIndexRoute
   '/manager/jobs': typeof ManagerJobsIndexRoute
   '/manager/licenses': typeof ManagerLicensesIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
@@ -627,7 +651,7 @@ export interface FileRoutesByTo {
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
-  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
+  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
@@ -643,10 +667,12 @@ export interface FileRoutesByTo {
   '/manager/contacts/$id': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id': typeof ManagerDevicesIdIndexRoute
   '/manager/devices/map': typeof ManagerDevicesMapIndexRoute
+  '/manager/free-trials/$id': typeof ManagerFreeTrialsIdIndexRoute
   '/manager/jobs/$id': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id': typeof ManagerUsersIdIndexRoute
   '/manager/users/new': typeof ManagerUsersNewIndexRoute
+  '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
   '/api/mobile/jobs/$jobId': typeof ApiMobileJobsJobIdIndexRoute
@@ -701,6 +727,7 @@ export interface FileRoutesById {
   '/manager/contacts/': typeof ManagerContactsIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/devices/': typeof ManagerDevicesIndexRoute
+  '/manager/free-trials/': typeof ManagerFreeTrialsIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
@@ -708,7 +735,7 @@ export interface FileRoutesById {
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
-  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRoute
+  '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
@@ -724,10 +751,12 @@ export interface FileRoutesById {
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
   '/manager/devices/map/': typeof ManagerDevicesMapIndexRoute
+  '/manager/free-trials/$id/': typeof ManagerFreeTrialsIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
+  '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
@@ -783,6 +812,7 @@ export interface FileRouteTypes {
     | '/manager/contacts/'
     | '/manager/dashboard/'
     | '/manager/devices/'
+    | '/manager/free-trials/'
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
@@ -806,10 +836,12 @@ export interface FileRouteTypes {
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
     | '/manager/devices/map/'
+    | '/manager/free-trials/$id/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
+    | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
     | '/api/mobile/jobs/$jobId/'
@@ -860,6 +892,7 @@ export interface FileRouteTypes {
     | '/manager/contacts'
     | '/manager/dashboard'
     | '/manager/devices'
+    | '/manager/free-trials'
     | '/manager/jobs'
     | '/manager/licenses'
     | '/manager/providers'
@@ -883,10 +916,12 @@ export interface FileRouteTypes {
     | '/manager/contacts/$id'
     | '/manager/devices/$id'
     | '/manager/devices/map'
+    | '/manager/free-trials/$id'
     | '/manager/jobs/$id'
     | '/manager/licenses/$key'
     | '/manager/users/$id'
     | '/manager/users/new'
+    | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
     | '/api/mobile/jobs/$jobId'
@@ -940,6 +975,7 @@ export interface FileRouteTypes {
     | '/manager/contacts/'
     | '/manager/dashboard/'
     | '/manager/devices/'
+    | '/manager/free-trials/'
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
@@ -963,10 +999,12 @@ export interface FileRouteTypes {
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
     | '/manager/devices/map/'
+    | '/manager/free-trials/$id/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
+    | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
     | '/api/mobile/jobs/$jobId/'
@@ -1013,7 +1051,7 @@ export interface RootRouteChildren {
   ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
-  ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRoute
+  ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRouteWithChildren
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
@@ -1230,6 +1268,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerJobsIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/free-trials/': {
+      id: '/manager/free-trials/'
+      path: '/free-trials'
+      fullPath: '/manager/free-trials/'
+      preLoaderRoute: typeof ManagerFreeTrialsIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/devices/': {
       id: '/manager/devices/'
       path: '/devices'
@@ -1405,6 +1450,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerJobsIdIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/free-trials/$id/': {
+      id: '/manager/free-trials/$id/'
+      path: '/free-trials/$id'
+      fullPath: '/manager/free-trials/$id/'
+      preLoaderRoute: typeof ManagerFreeTrialsIdIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/devices/map/': {
       id: '/manager/devices/map/'
       path: '/devices/map'
@@ -1566,6 +1618,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileJobsJobIdCompleteRouteImport
       parentRoute: typeof ApiMobileJobsRoute
     }
+    '/api/mobile/auth/free-trial/eligibility': {
+      id: '/api/mobile/auth/free-trial/eligibility'
+      path: '/eligibility'
+      fullPath: '/api/mobile/auth/free-trial/eligibility'
+      preLoaderRoute: typeof ApiMobileAuthFreeTrialEligibilityRouteImport
+      parentRoute: typeof ApiMobileAuthFreeTrialRoute
+    }
     '/api/mobile/jobs/$jobId/pages/$pageNumber': {
       id: '/api/mobile/jobs/$jobId/pages/$pageNumber'
       path: '/$jobId/pages/$pageNumber'
@@ -1613,6 +1672,7 @@ interface ManagerRouteRouteChildren {
   ManagerContactsIndexRoute: typeof ManagerContactsIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
   ManagerDevicesIndexRoute: typeof ManagerDevicesIndexRoute
+  ManagerFreeTrialsIndexRoute: typeof ManagerFreeTrialsIndexRoute
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
@@ -1621,6 +1681,7 @@ interface ManagerRouteRouteChildren {
   ManagerContactsIdIndexRoute: typeof ManagerContactsIdIndexRoute
   ManagerDevicesIdIndexRoute: typeof ManagerDevicesIdIndexRoute
   ManagerDevicesMapIndexRoute: typeof ManagerDevicesMapIndexRoute
+  ManagerFreeTrialsIdIndexRoute: typeof ManagerFreeTrialsIdIndexRoute
   ManagerJobsIdIndexRoute: typeof ManagerJobsIdIndexRoute
   ManagerLicensesKeyIndexRoute: typeof ManagerLicensesKeyIndexRoute
   ManagerUsersIdIndexRoute: typeof ManagerUsersIdIndexRoute
@@ -1635,6 +1696,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerContactsIndexRoute: ManagerContactsIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
   ManagerDevicesIndexRoute: ManagerDevicesIndexRoute,
+  ManagerFreeTrialsIndexRoute: ManagerFreeTrialsIndexRoute,
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
@@ -1643,6 +1705,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerContactsIdIndexRoute: ManagerContactsIdIndexRoute,
   ManagerDevicesIdIndexRoute: ManagerDevicesIdIndexRoute,
   ManagerDevicesMapIndexRoute: ManagerDevicesMapIndexRoute,
+  ManagerFreeTrialsIdIndexRoute: ManagerFreeTrialsIdIndexRoute,
   ManagerJobsIdIndexRoute: ManagerJobsIdIndexRoute,
   ManagerLicensesKeyIndexRoute: ManagerLicensesKeyIndexRoute,
   ManagerUsersIdIndexRoute: ManagerUsersIdIndexRoute,
@@ -1697,6 +1760,21 @@ const ApiOpenapiAuthRouteWithChildren = ApiOpenapiAuthRoute._addFileChildren(
   ApiOpenapiAuthRouteChildren,
 )
 
+interface ApiMobileAuthFreeTrialRouteChildren {
+  ApiMobileAuthFreeTrialEligibilityRoute: typeof ApiMobileAuthFreeTrialEligibilityRoute
+}
+
+const ApiMobileAuthFreeTrialRouteChildren: ApiMobileAuthFreeTrialRouteChildren =
+  {
+    ApiMobileAuthFreeTrialEligibilityRoute:
+      ApiMobileAuthFreeTrialEligibilityRoute,
+  }
+
+const ApiMobileAuthFreeTrialRouteWithChildren =
+  ApiMobileAuthFreeTrialRoute._addFileChildren(
+    ApiMobileAuthFreeTrialRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRouteRoute: AppRouteRouteWithChildren,
@@ -1736,7 +1814,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
-  ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRoute,
+  ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRouteWithChildren,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,
