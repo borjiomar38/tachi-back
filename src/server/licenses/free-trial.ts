@@ -17,6 +17,11 @@ import {
 } from '@/server/mobile-auth/schema';
 
 const FREE_TRIAL_TOKEN_AMOUNT = 100;
+type FreeTrialEligibilityReasonCode =
+  | 'free_access_ip_blocked'
+  | 'free_access_unavailable'
+  | 'free_trial_device_used'
+  | 'free_trial_unavailable';
 
 export class FreeTrialActivationError extends Error {
   constructor(
@@ -228,6 +233,8 @@ export async function checkFreeTrialEligibility(
   if (!deviceFingerprintHash) {
     return {
       eligible: false,
+      reasonCode:
+        'free_trial_unavailable' satisfies FreeTrialEligibilityReasonCode,
     };
   }
 
@@ -246,13 +253,22 @@ export async function checkFreeTrialEligibility(
       ],
     },
     select: {
+      deviceFingerprintHash: true,
       id: true,
+      installationId: true,
+      ipAddress: true,
     },
   });
 
   if (existingClaim) {
     return {
       eligible: false,
+      reasonCode: freeTrialEligibilityReasonFromClaim({
+        claim: existingClaim,
+        deviceFingerprintHash,
+        installationId,
+        ipAddress,
+      }),
     };
   }
 
@@ -263,7 +279,51 @@ export async function checkFreeTrialEligibility(
 
   return {
     eligible: !identityConflict,
+    ...(identityConflict
+      ? {
+          reasonCode:
+            freeTrialEligibilityReasonFromIdentityConflict(identityConflict),
+        }
+      : {}),
   };
+}
+
+function freeTrialEligibilityReasonFromClaim(input: {
+  claim: {
+    deviceFingerprintHash: string | null;
+    installationId: string;
+    ipAddress: string | null;
+  };
+  deviceFingerprintHash: string;
+  installationId: string;
+  ipAddress: string | null;
+}): FreeTrialEligibilityReasonCode {
+  if (
+    input.claim.installationId === input.installationId ||
+    input.claim.deviceFingerprintHash === input.deviceFingerprintHash
+  ) {
+    return 'free_trial_device_used';
+  }
+
+  if (input.ipAddress && input.claim.ipAddress === input.ipAddress) {
+    return 'free_access_ip_blocked';
+  }
+
+  return 'free_access_unavailable';
+}
+
+function freeTrialEligibilityReasonFromIdentityConflict(input: {
+  kind: string;
+}): FreeTrialEligibilityReasonCode {
+  switch (input.kind) {
+    case 'installation':
+    case 'device_fingerprint':
+      return 'free_trial_device_used';
+    case 'ip_address':
+      return 'free_access_ip_blocked';
+    default:
+      return 'free_access_unavailable';
+  }
 }
 
 export function isFreeTrialActivationError(

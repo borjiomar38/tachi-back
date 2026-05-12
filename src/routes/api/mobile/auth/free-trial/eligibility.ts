@@ -73,7 +73,10 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial/eligibility')(
 
           const freeAccessIpBlock = await getFreeAccessIpBlock(clientIp);
           const eligibility = freeAccessIpBlock
-            ? { eligible: false }
+            ? {
+                eligible: false,
+                reasonCode: 'free_access_ip_blocked' as const,
+              }
             : await checkFreeTrialEligibility(parsedInput.data, {
                 clientIp,
               });

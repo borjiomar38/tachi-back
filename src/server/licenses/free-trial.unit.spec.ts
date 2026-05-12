@@ -282,7 +282,13 @@ describe('free trial eligibility', () => {
   it('hides the email form when the current identity already used a free trial', async () => {
     const dbClient = {
       freeTrialClaim: {
-        findFirst: vi.fn().mockResolvedValue({ id: 'claim-1' }),
+        findFirst: vi.fn().mockResolvedValue({
+          deviceFingerprintHash:
+            '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+          id: 'claim-1',
+          installationId: 'install-1234567890abcd',
+          ipAddress: '203.0.113.10',
+        }),
       },
       freeTrialIdentity: {
         findFirst: vi.fn(),
@@ -304,8 +310,44 @@ describe('free trial eligibility', () => {
 
     expect(result).toEqual({
       eligible: false,
+      reasonCode: 'free_trial_device_used',
     });
     expect(dbClient.freeTrialIdentity.findFirst).not.toHaveBeenCalled();
+  });
+
+  it('explains when free trial eligibility is blocked by IP identity', async () => {
+    const dbClient = {
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue({
+          deviceFingerprintHash:
+            'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          id: 'claim-1',
+          installationId: 'install-other-1234567890',
+          ipAddress: '203.0.113.10',
+        }),
+      },
+      freeTrialIdentity: {
+        findFirst: vi.fn(),
+      },
+    };
+
+    const result = await checkFreeTrialEligibility(
+      {
+        deviceFingerprintHash:
+          '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+      },
+      {
+        clientIp: '203.0.113.10',
+        dbClient: dbClient as never,
+      }
+    );
+
+    expect(result).toEqual({
+      eligible: false,
+      reasonCode: 'free_access_ip_blocked',
+    });
   });
 
   it('hides the email form when the fingerprint is missing', async () => {
@@ -331,6 +373,7 @@ describe('free trial eligibility', () => {
 
     expect(result).toEqual({
       eligible: false,
+      reasonCode: 'free_trial_unavailable',
     });
     expect(dbClient.freeTrialClaim.findFirst).not.toHaveBeenCalled();
     expect(dbClient.freeTrialIdentity.findFirst).not.toHaveBeenCalled();

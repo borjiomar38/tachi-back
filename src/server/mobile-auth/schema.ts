@@ -26,6 +26,14 @@ export const zCheckFreeTrialEligibilityInput =
 
 export const zFreeTrialEligibilityResponse = z.object({
   eligible: z.boolean(),
+  reasonCode: z
+    .enum([
+      'free_access_ip_blocked',
+      'free_access_unavailable',
+      'free_trial_device_used',
+      'free_trial_unavailable',
+    ])
+    .optional(),
 });
 
 export const zCreateMobileSessionInput = z.object({
