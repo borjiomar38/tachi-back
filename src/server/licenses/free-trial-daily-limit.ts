@@ -85,13 +85,7 @@ type FreeTrialDailyLimitTx = {
   };
   translationJob: {
     count: (args: {
-      where: {
-        createdAt: {
-          gte: Date;
-          lt: Date;
-        };
-        licenseId: string;
-      };
+      where: Prisma.TranslationJobWhereInput;
     }) => Promise<number>;
   };
 };
@@ -338,15 +332,7 @@ async function countFreeTrialDailyUsedChapters(input: {
   scope: FreeTrialDailyLimitScope;
   tx: FreeTrialDailyLimitTx;
 }) {
-  const translationJobChapters = await input.tx.translationJob.count({
-    where: {
-      createdAt: {
-        gte: input.scope.dayStart,
-        lt: input.scope.dayEnd,
-      },
-      licenseId: input.actor.licenseId,
-    },
-  });
+  const translationJobChapters = await countTranslationJobDailyChapters(input);
   const mangaPageChapters = await countMangaPageDailyUsageChapters(
     input.tx,
     input.scope,
@@ -354,6 +340,65 @@ async function countFreeTrialDailyUsedChapters(input: {
   );
 
   return translationJobChapters + mangaPageChapters;
+}
+
+async function countTranslationJobDailyChapters(input: {
+  actor: FreeTrialDailyLimitActor;
+  scope: FreeTrialDailyLimitScope;
+  tx: FreeTrialDailyLimitTx;
+}) {
+  if (input.tx.$queryRaw) {
+    const rows = await input.tx.$queryRaw<
+      Array<{ chapterCount: bigint | number }>
+    >`
+      SELECT COUNT(DISTINCT COALESCE("chapterCacheKey", "id"))::integer AS "chapterCount"
+      FROM "translation_jobs"
+      WHERE "licenseId" = ${input.actor.licenseId}
+        AND "createdAt" >= ${input.scope.dayStart}
+        AND "createdAt" < ${input.scope.dayEnd}
+        AND (
+          "status" IN ('queued', 'processing', 'completed')
+          OR (
+            "status" IN ('created', 'awaiting_upload')
+            AND ("expiresAt" IS NULL OR "expiresAt" > ${input.scope.now})
+          )
+        )
+    `;
+
+    return Number(rows[0]?.chapterCount ?? 0);
+  }
+
+  return await input.tx.translationJob.count({
+    where: {
+      createdAt: {
+        gte: input.scope.dayStart,
+        lt: input.scope.dayEnd,
+      },
+      licenseId: input.actor.licenseId,
+      OR: [
+        {
+          status: {
+            in: ['queued', 'processing', 'completed'],
+          },
+        },
+        {
+          status: {
+            in: ['created', 'awaiting_upload'],
+          },
+          OR: [
+            {
+              expiresAt: null,
+            },
+            {
+              expiresAt: {
+                gt: input.scope.now,
+              },
+            },
+          ],
+        },
+      ],
+    },
+  });
 }
 
 async function countMangaPageDailyUsageChapters(

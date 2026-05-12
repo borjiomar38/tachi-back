@@ -756,9 +756,12 @@ describe('job service', () => {
     expect(mockDb.$transaction).not.toHaveBeenCalled();
   });
 
-  it('limits trial-only licenses to two chapter jobs per UTC day', async () => {
-    const countDailyJobs = vi.fn().mockResolvedValue(2);
-    const acquireDailyLock = vi.fn().mockResolvedValue([{ locked: true }]);
+  it('limits trial-only licenses to two distinct chapter jobs per UTC day', async () => {
+    const countDailyJobs = vi.fn();
+    const queryRaw = vi
+      .fn()
+      .mockResolvedValueOnce([{ locked: true }])
+      .mockResolvedValueOnce([{ chapterCount: 2 }]);
     const now = new Date('2026-05-12T14:30:00.000Z');
 
     mockDb.freeTrialClaim.findUnique.mockResolvedValue({
@@ -766,7 +769,7 @@ describe('job service', () => {
     });
     mockDb.$transaction.mockImplementation(async (callback) => {
       const tx = {
-        $queryRaw: acquireDailyLock,
+        $queryRaw: queryRaw,
         order: {
           findFirst: vi.fn().mockResolvedValue(null),
         },
@@ -809,38 +812,37 @@ describe('job service', () => {
       statusCode: 429,
     });
 
-    expect(countDailyJobs).toHaveBeenCalledWith({
-      where: {
-        createdAt: {
-          gte: new Date('2026-05-12T00:00:00.000Z'),
-          lt: new Date('2026-05-13T00:00:00.000Z'),
-        },
-        licenseId: 'license-trial-1',
-      },
-    });
-    expect(acquireDailyLock).toHaveBeenCalledOnce();
-    expect(acquireDailyLock.mock.calls[0]?.[0].join('')).toContain(
+    expect(countDailyJobs).not.toHaveBeenCalled();
+    expect(queryRaw).toHaveBeenCalledTimes(2);
+    expect(queryRaw.mock.calls[0]?.[0].join('')).toContain(
       'pg_advisory_xact_lock'
     );
-    expect(acquireDailyLock.mock.calls[0]?.[0].join('')).toContain('::integer');
-    expect(acquireDailyLock.mock.calls[0]?.[0].join('')).toContain(
+    expect(queryRaw.mock.calls[0]?.[0].join('')).toContain('::integer');
+    expect(queryRaw.mock.calls[0]?.[0].join('')).toContain(
       'SELECT true AS "locked"'
+    );
+    expect(queryRaw.mock.calls[1]?.[0].join('')).toContain(
+      'COUNT(DISTINCT COALESCE("chapterCacheKey", "id"))'
     );
   });
 
-  it('allows a trial-only license below the daily chapter limit', async () => {
+  it('counts duplicate same-chapter trial jobs once below the daily limit', async () => {
     const createMany = vi.fn();
     const createJob = vi.fn().mockResolvedValue({
       id: 'job-trial-allowed',
     });
-    const countDailyJobs = vi.fn().mockResolvedValue(1);
+    const countDailyJobs = vi.fn();
+    const queryRaw = vi
+      .fn()
+      .mockResolvedValueOnce([{ locked: true }])
+      .mockResolvedValueOnce([{ chapterCount: 1 }]);
 
     mockDb.freeTrialClaim.findUnique.mockResolvedValue({
       id: 'claim-1',
     });
     mockDb.$transaction.mockImplementation(async (callback) => {
       const tx = {
-        $queryRaw: vi.fn().mockResolvedValue([{ locked: true }]),
+        $queryRaw: queryRaw,
         jobAsset: {
           createMany,
         },
@@ -887,8 +889,12 @@ describe('job service', () => {
 
     expect(result.job.id).toBe('job-trial-allowed');
     expect(createJob).toHaveBeenCalledOnce();
-    expect(countDailyJobs).toHaveBeenCalledOnce();
+    expect(countDailyJobs).not.toHaveBeenCalled();
     expect(createMany).toHaveBeenCalledOnce();
+    expect(queryRaw).toHaveBeenCalledTimes(2);
+    expect(queryRaw.mock.calls[1]?.[0].join('')).toContain(
+      'COUNT(DISTINCT COALESCE("chapterCacheKey", "id"))'
+    );
   });
 
   it('counts same-day manga-page usage against trial-only chapter jobs', async () => {
@@ -897,6 +903,7 @@ describe('job service', () => {
     const queryRaw = vi
       .fn()
       .mockResolvedValueOnce([{ locked: true }])
+      .mockResolvedValueOnce([{ chapterCount: 0 }])
       .mockResolvedValueOnce([{ chapterCount: 2 }]);
 
     mockDb.freeTrialClaim.findUnique.mockResolvedValue({
@@ -956,16 +963,11 @@ describe('job service', () => {
       statusCode: 429,
     });
 
-    expect(countDailyJobs).toHaveBeenCalledWith({
-      where: {
-        createdAt: {
-          gte: new Date('2026-05-12T00:00:00.000Z'),
-          lt: new Date('2026-05-13T00:00:00.000Z'),
-        },
-        licenseId: 'license-trial-1',
-      },
-    });
-    expect(queryRaw).toHaveBeenCalledTimes(2);
+    expect(countDailyJobs).not.toHaveBeenCalled();
+    expect(queryRaw).toHaveBeenCalledTimes(3);
+    expect(queryRaw.mock.calls[1]?.[0].join('')).toContain(
+      'COUNT(DISTINCT COALESCE("chapterCacheKey", "id"))'
+    );
     expect(createJob).not.toHaveBeenCalled();
   });
 
