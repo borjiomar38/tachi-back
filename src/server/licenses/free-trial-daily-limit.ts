@@ -422,10 +422,14 @@ async function acquireFreeTrialDailyUsageLock(
   const lockKey = `${scope.claimId}:${scope.dayStart.toISOString()}`;
 
   await tx.$queryRaw`
-    SELECT pg_advisory_xact_lock(
-      ${FREE_TRIAL_DAILY_USAGE_LOCK_NAMESPACE},
-      hashtext(${lockKey})
+    WITH lock AS (
+      SELECT pg_advisory_xact_lock(
+        ${FREE_TRIAL_DAILY_USAGE_LOCK_NAMESPACE}::integer,
+        hashtext(${lockKey})::integer
+      )
     )
+    SELECT true AS "locked"
+    FROM lock
   `;
 }
 

@@ -819,6 +819,13 @@ describe('job service', () => {
       },
     });
     expect(acquireDailyLock).toHaveBeenCalledOnce();
+    expect(acquireDailyLock.mock.calls[0]?.[0].join('')).toContain(
+      'pg_advisory_xact_lock'
+    );
+    expect(acquireDailyLock.mock.calls[0]?.[0].join('')).toContain('::integer');
+    expect(acquireDailyLock.mock.calls[0]?.[0].join('')).toContain(
+      'SELECT true AS "locked"'
+    );
   });
 
   it('allows a trial-only license below the daily chapter limit', async () => {
