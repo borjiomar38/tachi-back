@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 import {
+  zDeviceFingerprintHash,
   zRedeemActivationInput,
   zRedeemActivationResponse,
-  zRequiredDeviceFingerprintHash,
 } from '@/server/licenses/schema';
 
 export const zActivateMobileSessionInput = zRedeemActivationInput;
@@ -12,7 +12,7 @@ export const zCreateFreeTrialMobileSessionInput = z.object({
   appBuild: z.string().trim().max(64).optional(),
   appVersion: z.string().trim().max(64).optional(),
   buildChannel: z.string().trim().max(32).optional(),
-  deviceFingerprintHash: zRequiredDeviceFingerprintHash,
+  deviceFingerprintHash: zDeviceFingerprintHash,
   email: z.email().max(320),
   installationId: z.string().trim().min(16).max(128),
   locale: z.string().trim().max(32).optional(),

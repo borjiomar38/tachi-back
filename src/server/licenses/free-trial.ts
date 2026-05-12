@@ -42,6 +42,14 @@ export async function createFreeTrialRedeemCode(
   const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
   const installationId = input.installationId.trim();
   const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
+
+  if (!deviceFingerprintHash) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress,
+      now,
+    });
+  }
+
   const identitySignals = buildFreeTrialIdentitySignals({
     deviceFingerprintHash,
     emailNormalized,

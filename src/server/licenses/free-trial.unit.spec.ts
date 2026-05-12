@@ -168,6 +168,27 @@ describe('free trial redeem creation', () => {
     });
   });
 
+  it('returns the generic free-access block when the device fingerprint is missing', async () => {
+    await expect(
+      createFreeTrialRedeemCode(
+        {
+          email: 'reader@example.com',
+          installationId: 'install-1234567890abcd',
+          platform: 'android',
+        },
+        {
+          clientIp: '203.0.113.10',
+          dbClient: mockDb as never,
+          now: new Date('2026-05-11T10:00:00.000Z'),
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_access_unavailable',
+      statusCode: 402,
+    });
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
+  });
+
   it('returns the generic free-access block when the device fingerprint has already claimed', async () => {
     const tx = {
       freeTrialClaim: {
