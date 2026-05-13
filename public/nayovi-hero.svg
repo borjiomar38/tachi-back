@@ -7,9 +7,9 @@
   role="img"
   aria-labelledby="heroTitle heroDesc"
 >
-  <title id="heroTitle">Tachiyomi Back hosted OCR and translation illustration</title>
+  <title id="heroTitle">Nayovi hosted OCR and translation illustration</title>
   <desc id="heroDesc">
-    Stylized Tachiyomi Back scene showing manga panels, OCR blocks,
+    Stylized Nayovi scene showing manga panels, OCR blocks,
     translated text bubbles, device activation, tokens, and backend routing.
   </desc>
   <defs>
@@ -66,10 +66,10 @@
     <rect x="392" y="270" width="28" height="28" rx="8" fill="#FFD563" />
     <path d="M402 278H410V282H407V290H403V282H400V278H402Z" fill="#0F172A" />
     <text x="436" y="286" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="700">
-      Tachiyomi
+      Nayovi
     </text>
     <text x="436" y="305" fill="#94A3B8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="600">
-      Back
+      AI
     </text>
 
     <rect x="382" y="392" width="312" height="338" rx="28" fill="#F8FAFC" />

@@ -8,7 +8,7 @@ export const Route = createFileRoute('/legal/official-sources-takedown')({
   head: () =>
     buildPublicPageHead(
       'Official Sources and Takedown Policy',
-      'TachiyomiAT policy for official sources, permission-safe content, prohibited chapter hosting, rights-holder review, and takedown requests.',
+      'Nayovi policy for official sources, permission-safe content, prohibited chapter hosting, rights-holder review, and takedown requests.',
       '/legal/official-sources-takedown'
     ),
 });

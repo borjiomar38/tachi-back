@@ -3,7 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { envClient } from '@/env/client';
 
 // Used to type route param on UploadButton component
-// Upload routes will be reintroduced with the real Tachiyomi Back job flow.
+// Upload routes will be reintroduced with the real Nayovi job flow.
 export type UploadRoutes = string;
 
 export const Route = createFileRoute('/api/upload')({

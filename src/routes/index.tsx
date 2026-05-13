@@ -29,7 +29,7 @@ export const Route = createFileRoute('/')({
   head: () =>
     buildPublicPageHead(
       'Free Manga AI Translator App',
-      'TachiyomiAT helps readers try a free manga AI translator, free manhwa AI translator, and free manhua AI translator with hosted OCR, clean translation, redeem-code activation, and Android APK download.',
+      'Nayovi helps readers try a free manga AI translator, free manhwa AI translator, and free manhua AI translator with hosted OCR, clean translation, redeem-code activation, and Android APK download.',
       '/',
       {
         keywords: [
@@ -40,7 +40,7 @@ export const Route = createFileRoute('/')({
           'AI manga translator',
           'AI manhwa translator',
           'AI manhua translator',
-          'TachiyomiAT download',
+          'Nayovi download',
           'Android manga translator app',
         ],
         structuredDataGraph: buildPublicFaqStructuredData('/', supportFaqs),

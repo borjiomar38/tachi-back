@@ -8,7 +8,7 @@ export const Route = createFileRoute('/legal/privacy')({
   head: () =>
     buildPublicPageHead(
       'Privacy Policy',
-      'Privacy policy for TachiyomiAT hosted OCR, manga translation, source discovery, checkout, redeem-code activation, device records, and support.',
+      'Privacy policy for Nayovi hosted OCR, manga translation, source discovery, checkout, redeem-code activation, device records, and support.',
       '/legal/privacy'
     ),
 });

@@ -15,7 +15,7 @@ export const Route = createFileRoute('/checkout/success')({
   head: () =>
     buildPublicPageHead(
       'Checkout Complete',
-      'Checkout completion page for TachiyomiAT manga translation token packs and redeem-code delivery.',
+      'Checkout completion page for Nayovi manga translation token packs and redeem-code delivery.',
       '/checkout/success',
       { robots: 'noindex, nofollow' }
     ),

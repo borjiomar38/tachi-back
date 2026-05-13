@@ -40,7 +40,7 @@ export const highIntentBlogSeoKeywords = [
   'manhua translation app',
   'manga translator app',
   'manga OCR',
-  'TachiyomiAT download',
+  'Nayovi download',
   'Android manhwa reader',
 ] as const;
 
@@ -52,8 +52,8 @@ export const publicSeoKeywords = [
   'Android manga AI translator',
   'Android manhwa AI translator',
   'Android manhua AI translator',
-  'TachiyomiAT APK',
-  'TachiyomiAT Android app',
+  'Nayovi APK',
+  'Nayovi Android app',
 ] as const;
 
 export const buildPublicSeoKeywords = (

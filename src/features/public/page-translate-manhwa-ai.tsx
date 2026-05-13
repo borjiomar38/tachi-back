@@ -49,9 +49,9 @@ const benefits = [
 
 const workflowSteps = [
   {
-    title: 'Download TachiyomiAT',
+    title: 'Download Nayovi',
     description:
-      'Install the Android APK from the official TachiyomiAT website.',
+      'Install the Android APK from the official Nayovi website.',
     icon: DownloadIcon,
   },
   {
@@ -70,19 +70,19 @@ const workflowSteps = [
 
 const faqs = [
   {
-    title: 'Is TachiyomiAT a free manhwa AI translator?',
+    title: 'Is Nayovi a free manhwa AI translator?',
     description:
-      'TachiyomiAT offers free trial access for testing manga, manhwa, and manhua AI translation, with monthly token plans for heavier use.',
+      'Nayovi offers free trial access for testing manga, manhwa, and manhua AI translation, with monthly token plans for heavier use.',
   },
   {
-    title: 'Does TachiyomiAT translate manga and manhua too?',
+    title: 'Does Nayovi translate manga and manhua too?',
     description:
       'Yes. The same hosted OCR and AI translation workflow is designed for manga, manhwa, and manhua reading tasks.',
   },
   {
-    title: 'Does TachiyomiAT host manhwa chapters?',
+    title: 'Does Nayovi host manhwa chapters?',
     description:
-      'No. TachiyomiAT provides app setup, hosted OCR, translation support, activation, and support workflows. It does not publish or distribute chapters.',
+      'No. Nayovi provides app setup, hosted OCR, translation support, activation, and support workflows. It does not publish or distribute chapters.',
   },
 ] as const;
 
@@ -120,10 +120,10 @@ export const PageTranslateManhwaAi = () => {
                 Translate manhwa with hosted OCR
               </p>
               <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
-                Translate manhwa with AI in TachiyomiAT.
+                Translate manhwa with AI in Nayovi.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                TachiyomiAT helps Android readers use hosted OCR and AI
+                Nayovi helps Android readers use hosted OCR and AI
                 translation for manhwa, manga, and manhua pages while keeping
                 the official app download, activation, and support flow in one
                 place.
@@ -176,7 +176,7 @@ export const PageTranslateManhwaAi = () => {
       </section>
 
       <PublicSection
-        eyebrow="Why TachiyomiAT"
+        eyebrow="Why Nayovi"
         title="A focused workflow for manhwa translation"
         description="Readers searching for a manhwa AI translator usually need clean text detection, consistent translation, and a simple Android path instead of a scattered setup."
         className="pt-0"
@@ -234,7 +234,7 @@ export const PageTranslateManhwaAi = () => {
                 Permission-safe translation support
               </div>
               <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
-                TachiyomiAT is a translator workflow, not a chapter host. Use it
+                Nayovi is a translator workflow, not a chapter host. Use it
                 with content you own, public-domain material, official samples,
                 or content you have permission to process.
               </p>
@@ -253,7 +253,7 @@ export const PageTranslateManhwaAi = () => {
         id="faq"
         eyebrow="FAQ"
         title="Manhwa AI translator questions"
-        description="Quick answers for readers comparing TachiyomiAT with generic manga or manhwa translation tools."
+        description="Quick answers for readers comparing Nayovi with generic manga or manhwa translation tools."
         className="pb-20"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -270,7 +270,7 @@ export const PageTranslateManhwaAi = () => {
         <Card className="public-brand-panel mt-4 rounded-[1.5rem] text-neutral-50">
           <CardContent className="flex flex-wrap items-center justify-between gap-4 p-6">
             <div className="space-y-1">
-              <p className="font-medium">Ready to try TachiyomiAT?</p>
+              <p className="font-medium">Ready to try Nayovi?</p>
               <p className="text-sm text-neutral-300">
                 Download the Android APK or compare token plans before
                 activating hosted translation.

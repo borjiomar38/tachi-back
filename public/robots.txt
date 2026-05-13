@@ -7,7 +7,7 @@ Disallow: /login/
 Disallow: /logout
 Disallow: /manager/
 
-Sitemap: https://tachiyomiat.com/sitemap.xml
+Sitemap: https://nayovi.com/sitemap.xml
 
 # LLM-friendly site summary:
-# https://tachiyomiat.com/llms.txt
+# https://nayovi.com/llms.txt

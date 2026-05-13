@@ -100,7 +100,7 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
                   )}
                 >
                   <span className="flex items-center gap-2">
-                    Download TachiyomiAT
+                    Download Nayovi
                     <DownloadIcon className="size-4" />
                   </span>
                 </a>
@@ -239,7 +239,7 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
                 <ShieldCheckIcon className="size-5" />
               </span>
               <div className="space-y-1">
-                <p className="font-medium">Official TachiyomiAT download</p>
+                <p className="font-medium">Official Nayovi download</p>
                 <p className="text-sm text-muted-foreground">
                   Use the official APK path and avoid random reposted builds.
                 </p>
@@ -250,7 +250,7 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
               className={buttonVariants({ variant: 'default', size: 'lg' })}
             >
               <span className="flex items-center gap-2">
-                Download TachiyomiAT
+                Download Nayovi
                 <DownloadIcon className="size-4" />
               </span>
             </a>

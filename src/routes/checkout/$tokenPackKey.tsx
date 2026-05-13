@@ -19,7 +19,7 @@ export const Route = createFileRoute('/checkout/$tokenPackKey')({
   head: ({ params }) =>
     buildPublicPageHead(
       'Checkout',
-      `Secure checkout entry point for the ${params.tokenPackKey} TachiyomiAT manga translation token pack.`,
+      `Secure checkout entry point for the ${params.tokenPackKey} Nayovi manga translation token pack.`,
       `/checkout/${params.tokenPackKey}`,
       { robots: 'noindex, nofollow' }
     ),

@@ -4,17 +4,17 @@ import { buildBlogSeoKeywords } from '@/features/blog/seo';
 export const fallbackBlogArticle: BlogArticleDetail = {
   body: {
     disclaimer:
-      'TachiyomiAT does not host manga, manhwa, or manhua chapters. Use the app only with content you own, content in the public domain, or content you have permission to process, and respect official releases and rights holders.',
+      'Nayovi does not host manga, manhwa, or manhua chapters. Use the app only with content you own, content in the public domain, or content you have permission to process, and respect official releases and rights holders.',
     downloadCallout: {
-      body: 'Install the Android APK from the official TachiyomiAT download page, activate hosted mode with your redeem code, and keep the same dark reader-focused workflow across manga, manhwa, and manhua translation tasks.',
-      buttonLabel: 'Download TachiyomiAT',
-      title: 'Download TachiyomiAT for Android',
+      body: 'Install the Android APK from the official Nayovi download page, activate hosted mode with your redeem code, and keep the same dark reader-focused workflow across manga, manhwa, and manhua translation tasks.',
+      buttonLabel: 'Download Nayovi',
+      title: 'Download Nayovi for Android',
     },
     faqs: [
       {
         answer:
-          'No. TachiyomiAT is focused on the app, hosted OCR, translation workflow, activation, and support. It does not publish or distribute manga, manhwa, or manhua chapters.',
-        question: 'Does TachiyomiAT host manhwa chapters?',
+          'No. Nayovi is focused on the app, hosted OCR, translation workflow, activation, and support. It does not publish or distribute manga, manhwa, or manhua chapters.',
+        question: 'Does Nayovi host manhwa chapters?',
       },
       {
         answer:
@@ -23,12 +23,12 @@ export const fallbackBlogArticle: BlogArticleDetail = {
       },
       {
         answer:
-          'Use the official download page or APK CTA in each article. The link points to the TachiyomiAT backend so readers get the current Android build instead of a random mirror.',
-        question: 'Where is the TachiyomiAT download link?',
+          'Use the official download page or APK CTA in each article. The link points to the Nayovi backend so readers get the current Android build instead of a random mirror.',
+        question: 'Where is the Nayovi download link?',
       },
     ],
     introduction:
-      'Readers searching for manhwa, manhua, manga translation, manhwa translate ai, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. TachiyomiAT keeps that flow focused on the app, hosted OCR, AI-assisted translation, redeem-code activation, and a consistent Android APK download path.',
+      'Readers searching for manhwa, manhua, manga translation, manhwa translate ai, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. Nayovi keeps that flow focused on the app, hosted OCR, AI-assisted translation, redeem-code activation, and a consistent Android APK download path.',
     readingProfile: {
       bestFor:
         'Android readers who already have legal access to chapters and want a simpler hosted translation workflow.',
@@ -38,7 +38,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     },
     sections: [
       {
-        body: 'Manhwa and manhua pages often mix tall-panel composition, sound effects, narration boxes, and short dialogue bursts. A good translation workflow has to preserve that rhythm. TachiyomiAT is designed around opening the app, activating hosted mode once, and sending page text through the backend when a chapter needs help.',
+        body: 'Manhwa and manhua pages often mix tall-panel composition, sound effects, narration boxes, and short dialogue bursts. A good translation workflow has to preserve that rhythm. Nayovi is designed around opening the app, activating hosted mode once, and sending page text through the backend when a chapter needs help.',
         heading: 'Why manhwa translation needs a stable workflow',
         takeaways: [
           'Vertical chapters benefit from clean OCR ordering.',
@@ -47,8 +47,8 @@ export const fallbackBlogArticle: BlogArticleDetail = {
         ],
       },
       {
-        body: 'Every blog article uses the same download CTA so visitors do not have to hunt for the APK. The main path is the official TachiyomiAT download page, with the direct APK endpoint behind the button. That keeps the site consistent for search visitors and safer than sending readers to third-party mirrors.',
-        heading: 'Keep the TachiyomiAT download link consistent',
+        body: 'Every blog article uses the same download CTA so visitors do not have to hunt for the APK. The main path is the official Nayovi download page, with the direct APK endpoint behind the button. That keeps the site consistent for search visitors and safer than sending readers to third-party mirrors.',
+        heading: 'Keep the Nayovi download link consistent',
         takeaways: [
           'Use the official site download page.',
           'Avoid random mirrors or reposted APKs.',
@@ -56,7 +56,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
         ],
       },
       {
-        body: 'The strongest traffic pages should be useful before they are promotional. Articles can explain a manhwa reading problem, describe how OCR and translation affect the reading experience, then point to TachiyomiAT as the app workflow. That is better for readers and safer for long-term SEO.',
+        body: 'The strongest traffic pages should be useful before they are promotional. Articles can explain a manhwa reading problem, describe how OCR and translation affect the reading experience, then point to Nayovi as the app workflow. That is better for readers and safer for long-term SEO.',
         heading: 'Write useful articles before chasing traffic',
         takeaways: [
           'Answer a real reader search intent.',
@@ -67,10 +67,10 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     ],
   },
   excerpt:
-    'A practical guide to TachiyomiAT for readers searching for manhwa, manhua, manga translation, and a consistent Android APK download path.',
+    'A practical guide to Nayovi for readers searching for manhwa, manhua, manga translation, and a consistent Android APK download path.',
   heroImageUrl: null,
   imageAlt:
-    'Dark cinematic manhwa-style TachiyomiAT reader scene with an Android translation workflow.',
+    'Dark cinematic manhwa-style Nayovi reader scene with an Android translation workflow.',
   imagePrompt:
     'Original fun and exciting dark cinematic manhwa-style hero illustration of an Android reader interface glowing in a midnight studio, dramatic motion, violet rim light, floating OCR panels, AI translation workflow, energetic app-download mood, no copyrighted characters, no logos, no readable text, inspired by a premium login page mood.',
   imageReview: {
@@ -87,20 +87,20 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     'manhwa translate ai',
     'manhua translate ai',
     'tachiyomi download',
-    'tachiyomiat',
+    'nayovi',
     'manhwa translation',
     'manhua reader',
     'manga OCR',
     'android APK',
   ]),
-  manhwaTitle: 'TachiyomiAT',
+  manhwaTitle: 'Nayovi',
   manhwaType: 'manhwa',
   metaDescription:
-    'Download TachiyomiAT for Android and learn how the app supports manga, manhwa, and manhua translation with hosted OCR and redeem-code activation.',
+    'Download Nayovi for Android and learn how the app supports manga, manhwa, and manhua translation with hosted OCR and redeem-code activation.',
   publishedAt: '2026-05-01T00:00:00.000Z',
   searchIntent: 'tachiyomi download manhwa translation app',
-  slug: 'download-tachiyomiat-for-manhwa-translation',
-  title: 'Download TachiyomiAT for Manhwa and Manga Translation',
+  slug: 'download-nayovi-for-manhwa-translation',
+  title: 'Download Nayovi for Manhwa and Manga Translation',
   updatedAt: '2026-05-01T00:00:00.000Z',
   uxReview: {
     notes: [

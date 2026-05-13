@@ -62,16 +62,16 @@ export const PageLegalPrivacy = () => {
     <LegalPage
       eyebrow="Privacy"
       title="Privacy Policy"
-      description="This policy explains what Tachiyomi Back processes for hosted OCR, translation, source discovery, checkout, activation, and support."
+      description="This policy explains what Nayovi processes for hosted OCR, translation, source discovery, checkout, activation, and support."
       sections={[
         {
           title: 'Data we process',
           children: (
             <>
               <p>
-                Tachiyomi Back processes the data needed to provide hosted OCR,
+                Nayovi processes the data needed to provide hosted OCR,
                 translation, source discovery, licensing, token accounting,
-                support, and app-update checks for TachiyomiAT.
+                support, and app-update checks for the Android app.
               </p>
               <p>
                 This can include uploaded pages or screenshots, extracted OCR
@@ -92,7 +92,7 @@ export const PageLegalPrivacy = () => {
               <p>
                 Paid plans are processed through Lemon Squeezy. Lemon Squeezy
                 handles checkout, payment collection, taxes, payment compliance,
-                refunds, and chargebacks as merchant of record. Tachiyomi Back
+                refunds, and chargebacks as merchant of record. Nayovi
                 does not store full card numbers.
               </p>
               <p>
@@ -148,7 +148,7 @@ export const PageLegalPrivacy = () => {
           children: (
             <>
               <p>
-                TachiyomiAT can open or search third-party manga sources and
+                Nayovi can open or search third-party manga sources and
                 extensions. Those websites, extensions, and payment providers
                 have their own terms and privacy policies. We are not
                 responsible for their content, availability, or data handling.
@@ -172,7 +172,7 @@ export const PageLegalPrivacy = () => {
                 guaranteed to be perfectly secure.
               </p>
               <p>
-                Tachiyomi Back is not intended for children under 13. Do not use
+                Nayovi is not intended for children under 13. Do not use
                 the service if you are not old enough to agree to these terms in
                 your country.
               </p>
@@ -189,15 +189,15 @@ export const PageLegalTerms = () => {
     <LegalPage
       eyebrow="Terms"
       title="Terms of Service"
-      description="These terms define the rules for Tachiyomi Back, TachiyomiAT hosted features, token plans, redeem codes, source discovery, OCR, and translation."
+      description="These terms define the rules for Nayovi hosted features, token plans, redeem codes, source discovery, OCR, and translation."
       sections={[
         {
           title: 'Service boundary',
           children: (
             <>
               <p>
-                Tachiyomi Back sells token-based hosted processing for
-                TachiyomiAT features such as OCR, translation, manga page
+                Nayovi sells token-based hosted processing for features such as
+                OCR, translation, manga page
                 translation, source discovery, and related support tooling. We
                 do not sell manga, manhwa, manhua, chapters, scans, or access to
                 third-party content.
@@ -254,7 +254,7 @@ export const PageLegalTerms = () => {
           children: (
             <>
               <p>
-                You must not use Tachiyomi Back or TachiyomiAT hosted features
+                You must not use Nayovi or Nayovi hosted features
                 to upload, OCR, translate, store, distribute, or process
                 copyrighted manga, manhwa, manhua, chapters, scans, images,
                 text, or other protected content unless you own the rights or
@@ -281,7 +281,7 @@ export const PageLegalTerms = () => {
           children: (
             <>
               <p>
-                Some TachiyomiAT versions can be blocked by a forced-update
+                Some Nayovi versions can be blocked by a forced-update
                 policy when a newer build is required for security,
                 compatibility, payment, licensing, or hosted processing
                 correctness.

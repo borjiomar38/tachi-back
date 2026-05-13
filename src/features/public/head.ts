@@ -5,11 +5,11 @@ import {
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
 
-const publicSiteName = 'TachiyomiAT';
-const publicBaseUrlFallback = 'https://tachiyomiat.com';
-const socialImagePath = '/og/tachiyomiat-social-preview.jpg';
+const publicSiteName = 'Nayovi';
+const publicBaseUrlFallback = 'https://nayovi.com';
+const socialImagePath = '/og/nayovi-social-preview.jpg';
 const publicSiteDescription =
-  'TachiyomiAT is a free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
+  'Nayovi is a free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 
@@ -77,12 +77,12 @@ const buildStructuredData = (
         '@id': organizationId,
         name: publicSiteName,
         url: baseUrl,
-        logo: buildAbsoluteUrl('/tachiyomiat-mark-light.png'),
+        logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
       },
       {
         '@type': 'WebSite',
         '@id': websiteId,
-        name: 'TachiyomiAT Manga Translator',
+        name: 'Nayovi Manga Translator',
         url: baseUrl,
         description: publicSiteDescription,
         inLanguage: 'en',
@@ -115,7 +115,7 @@ const buildStructuredData = (
           price: '0',
           priceCurrency: 'USD',
           description:
-            'Free TachiyomiAT trial access for manga, manhwa, and manhua AI translation.',
+            'Free Nayovi trial access for manga, manhwa, and manhua AI translation.',
         },
       },
       ...extraGraph,
@@ -124,7 +124,7 @@ const buildStructuredData = (
 };
 
 const buildPublicTitle = (pageTitle: string) =>
-  `${pageTitle} | TachiyomiAT Manga Translator`;
+  `${pageTitle} | Nayovi Manga Translator`;
 
 export const buildPublicPageHead = (
   pageTitle: string,
@@ -145,7 +145,7 @@ export const buildPublicPageHead = (
   const imageUrl = toAbsoluteAssetUrl(options?.imagePath ?? socialImagePath);
   const imageAlt =
     options?.imageAlt ??
-    'TachiyomiAT free manga, manhwa, and manhua AI translator preview.';
+    'Nayovi free manga, manhwa, and manhua AI translator preview.';
   const keywords = options?.keywords
     ? buildPublicSeoKeywords(options.keywords, {
         type: options.type,
@@ -269,7 +269,7 @@ export const buildPublicBlogIndexHead = (): ReturnType<
   typeof buildPublicPageHead
 > => {
   const description =
-    'Read TachiyomiAT guides for manga translate ai, manhwa translate ai, manhua translate ai, free manga AI translator setup, hosted OCR, Android APK download, and reader-friendly workflows.';
+    'Read Nayovi guides for manga translate ai, manhwa translate ai, manhua translate ai, free manga AI translator setup, hosted OCR, Android APK download, and reader-friendly workflows.';
 
   return buildPublicPageHead('Manga, Manhwa and Manhua AI Translator Blog', description, '/blog', {
     keywords: highIntentBlogSeoKeywords,
@@ -284,7 +284,7 @@ export const buildPublicBlogArticleHead = (
     article.metaDescription,
     `/blog/${article.slug}`,
     {
-      imageAlt: `${article.title} hero image for TachiyomiAT ${article.manhwaType} AI translation.`,
+      imageAlt: `${article.title} hero image for Nayovi ${article.manhwaType} AI translation.`,
       imagePath: article.heroImageUrl ?? undefined,
       imageType: article.heroImageUrl ? 'image/png' : undefined,
       keywords: article.keywords,

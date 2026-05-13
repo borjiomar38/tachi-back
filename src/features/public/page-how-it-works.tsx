@@ -49,7 +49,7 @@ export const PageHowItWorks = () => {
       <PublicSection
         eyebrow="How it works"
         title="Hosted activation without customer accounts"
-        description="The public website explains the current redeem-code flow clearly because TachiyomiAT does not use a traditional customer account system for hosted access."
+        description="The public website explains the current redeem-code flow clearly because Nayovi does not use a traditional customer account system for hosted access."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -72,7 +72,7 @@ export const PageHowItWorks = () => {
 
       <PublicSection
         eyebrow="Demo"
-        title="Watch the TachiyomiAT translation flow"
+        title="Watch the Nayovi translation flow"
         description="The final tutorial video should live on YouTube and play online from this page. The APK remains a direct Android download."
       >
         <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
@@ -82,7 +82,7 @@ export const PageHowItWorks = () => {
                 <div className="aspect-video w-full">
                   <iframe
                     src={youtubeDemo.embedUrl}
-                    title="TachiyomiAT translation demo"
+                    title="Nayovi translation demo"
                     className="h-full w-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"

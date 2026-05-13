@@ -27,13 +27,13 @@ const setupSteps = [
     icon: SmartphoneIcon,
     title: 'Use official installs',
     description:
-      'Download TachiyomiAT from this site and use official Mihon or reader project channels when you need a separate reader. Avoid patched APKs and unknown mirrors.',
+      'Download Nayovi from this site and use official Mihon or reader project channels when you need a separate reader. Avoid patched APKs and unknown mirrors.',
   },
   {
     icon: ShieldCheckIcon,
     title: 'Keep provider keys off the device',
     description:
-      'Hosted OCR and translation requests go through the TachiyomiAT backend, so the Android client does not need user-managed OCR or translation API keys.',
+      'Hosted OCR and translation requests go through the Nayovi backend, so the Android client does not need user-managed OCR or translation API keys.',
   },
   {
     icon: BookOpenCheckIcon,
@@ -89,26 +89,26 @@ const sourceBoundaries = [
       'Licensed rips, unauthorized scan uploads, ad-heavy chapter mirrors, paywall bypasses, paid fan-translation leaks, or any source promoted mainly as free access to copyrighted chapters.',
   },
   {
-    title: 'What TachiyomiAT provides',
+    title: 'What Nayovi provides',
     description:
       'The service provides Android setup, redeem-code activation, hosted OCR, translation processing, source-discovery support, and customer support. It does not sell or host manga chapters.',
   },
 ] as const;
 
 const takedownSteps = [
-  'Send the request to support with the work title, affected TachiyomiAT URL or feature, your rights-holder relationship, and a reliable contact address.',
+  'Send the request to support with the work title, affected Nayovi URL or feature, your rights-holder relationship, and a reliable contact address.',
   'Include enough detail for the support team to identify the reported material or workflow output without exposing unrelated private files.',
-  'TachiyomiAT can remove public references, disable hosted processing where appropriate, preserve abuse evidence, and cooperate with lawful requests.',
+  'Nayovi can remove public references, disable hosted processing where appropriate, preserve abuse evidence, and cooperate with lawful requests.',
   'Good-faith correction requests are welcome for attribution, terminology, source labeling, and policy wording.',
 ] as const;
 
-export const PageMihonTachiyomiSetupGuide = () => {
+export const PageMihonNayoviSetupGuide = () => {
   return (
     <PublicShell>
       <PublicSection
         eyebrow="Setup guide"
-        title="Mihon and TachiyomiAT setup guide"
-        description="Set up TachiyomiAT as a hosted OCR and translation workflow without turning the project into a chapter source, extension list, or piracy index."
+        title="Mihon and Nayovi setup guide"
+        description="Set up Nayovi as a hosted OCR and translation workflow without turning the project into a chapter source, extension list, or piracy index."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -137,7 +137,7 @@ export const PageMihonTachiyomiSetupGuide = () => {
         <Card className="public-brand-panel-muted rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
-              Download TachiyomiAT from the official APK link on this site.
+              Download Nayovi from the official APK link on this site.
             </div>
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
               Review the terms and confirm your use is limited to owned,
@@ -269,7 +269,7 @@ export const PageTranslationSupportWorkflow = () => {
             </span>
           </a>
           <a
-            href="/guides/mihon-tachiyomiat-setup"
+            href="/guides/mihon-nayovi-setup"
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
             Setup guide
@@ -286,7 +286,7 @@ export const PageOfficialSourcesTakedown = () => {
       <PublicSection
         eyebrow="Policy"
         title="Official sources and takedown policy"
-        description="TachiyomiAT is for hosted OCR, translation support, activation, and troubleshooting. It does not host manga chapters or promote unauthorized chapter access."
+        description="Nayovi is for hosted OCR, translation support, activation, and troubleshooting. It does not host manga chapters or promote unauthorized chapter access."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">
@@ -304,7 +304,7 @@ export const PageOfficialSourcesTakedown = () => {
       <PublicSection
         eyebrow="Takedown"
         title="How to request review or removal"
-        description="Rights holders, creators, publishers, and authorized representatives can request review when they believe TachiyomiAT public pages, hosted processing, or support material involves unauthorized content."
+        description="Rights holders, creators, publishers, and authorized representatives can request review when they believe Nayovi public pages, hosted processing, or support material involves unauthorized content."
       >
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
@@ -320,7 +320,7 @@ export const PageOfficialSourcesTakedown = () => {
       <PublicSection
         eyebrow="Boundary"
         title="Community and directory submissions"
-        description="Use this page when explaining TachiyomiAT to directories, moderators, contributors, or reviewers who need to verify the project is a tool, not a chapter-hosting site."
+        description="Use this page when explaining Nayovi to directories, moderators, contributors, or reviewers who need to verify the project is a tool, not a chapter-hosting site."
         className="pb-20"
       >
         <div className="flex flex-wrap gap-3">

@@ -129,13 +129,13 @@ export const PageLanding = (props: {
 
             <div className="space-y-5">
               <p className="text-sm font-semibold tracking-[0.22em] text-brand-100 uppercase">
-                Simple AI translation inside TachiyomiAT
+                Simple AI translation inside Nayovi
               </p>
               <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
                 Try a free manga AI translator.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                Use TachiyomiAT as a free manga AI translator, free manhwa AI
+                Use Nayovi as a free manga AI translator, free manhwa AI
                 translator, and free manhua AI translator with hosted OCR,
                 clean translation, redeem-code activation, and one Android APK
                 download.
@@ -196,7 +196,7 @@ export const PageLanding = (props: {
                 <div>
                   <p className="text-sm font-semibold">Redeem code ready</p>
                   <p className="text-xs text-neutral-300">
-                    Activate once in TachiyomiAT.
+                    Activate once in Nayovi.
                   </p>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export const PageLanding = (props: {
               <div className="aspect-video w-full">
                 <iframe
                   src={youtubeDemo.embedUrl}
-                  title="TachiyomiAT translation demo"
+                  title="Nayovi translation demo"
                   className="h-full w-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -359,7 +359,7 @@ export const PageLanding = (props: {
                 <p className="mt-2 text-sm leading-7 text-neutral-200">
                   The goal is to keep free manga AI translator, free manhwa AI
                   translator, and free manhua AI translator workflows smooth
-                  inside TachiyomiAT.
+                  inside Nayovi.
                 </p>
               </div>
             </CardContent>
@@ -445,7 +445,7 @@ export const PageLanding = (props: {
                   Stored in support inbox
                 </Badge>
               </div>
-              <CardTitle className="text-2xl">Talk to Tachiyomi Back</CardTitle>
+              <CardTitle className="text-2xl">Talk to Nayovi</CardTitle>
               <CardDescription className="text-neutral-300">
                 Ask us about plans, redeem codes, payment, or getting
                 started in the app.

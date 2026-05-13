@@ -15,7 +15,7 @@ export const Route = createFileRoute('/translate-manhwa-ai')({
   head: () =>
     buildPublicPageHead(
       'AI Manhwa Translator',
-      'Use TachiyomiAT as an AI manhwa translator for Android with hosted OCR, manga and manhua translation support, redeem-code activation, APK download, and permission-safe workflows.',
+      'Use Nayovi as an AI manhwa translator for Android with hosted OCR, manga and manhua translation support, redeem-code activation, APK download, and permission-safe workflows.',
       '/translate-manhwa-ai',
       {
         keywords: [

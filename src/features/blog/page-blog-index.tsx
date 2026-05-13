@@ -46,8 +46,7 @@ export const PageBlogIndex = ({ articles }: PageBlogIndexProps) => {
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
                 Search-friendly articles about reading workflows, hosted OCR,
-                translation quality, and the official TachiyomiAT Android
-                download.
+                translation quality, and the official Nayovi Android download.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -59,7 +58,7 @@ export const PageBlogIndex = ({ articles }: PageBlogIndexProps) => {
                 )}
               >
                 <span className="flex items-center gap-2">
-                  Download TachiyomiAT
+                  Download Nayovi
                   <DownloadIcon className="size-4" />
                 </span>
               </a>
@@ -79,8 +78,8 @@ export const PageBlogIndex = ({ articles }: PageBlogIndexProps) => {
 
       <PublicSection
         eyebrow="Articles"
-        title="Latest TachiyomiAT reading guides"
-        description="Fresh reading notes for manhwa, manhua, manga translation, Android setup, and the official TachiyomiAT APK."
+        title="Latest Nayovi reading guides"
+        description="Fresh reading notes for manhwa, manhua, manga translation, Android setup, and the official Nayovi APK."
         className="pb-20"
       >
         <div className="grid gap-4 md:grid-cols-2">

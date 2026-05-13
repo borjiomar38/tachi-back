@@ -214,7 +214,7 @@ export function runArticleUxReviewAgent(input: {
     },
     {
       note: 'Download CTA is consistent across generated articles.',
-      passed: input.body.downloadCallout.buttonLabel === 'Download TachiyomiAT',
+      passed: input.body.downloadCallout.buttonLabel === 'Download Nayovi',
     },
     {
       note: 'Metadata stays within search result display limits.',

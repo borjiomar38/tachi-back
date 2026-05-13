@@ -1323,7 +1323,7 @@ async function fetchExtensionIndex(input: {
   const response = await input.fetchFn(KEIYOUSHI_INDEX_URL, {
     headers: {
       Accept: 'application/json',
-      'User-Agent': 'TachiyomiAT-Back/source-discovery',
+      'User-Agent': 'Nayovi-Back/source-discovery',
     },
   });
 

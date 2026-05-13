@@ -6,7 +6,7 @@ export const EmailFooter = () => {
   return (
     <Section style={styles.footer}>
       <Text style={styles.text}>
-        <strong>Tachiyomi Back</strong>
+        <strong>Nayovi</strong>
         <br />
         Internal admin and hosted translation backend
       </Text>

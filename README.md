@@ -1,6 +1,6 @@
-# Tachiyomi Back.
+# Nayovi Backend.
 
-`tachi-back` is the backend and backoffice for hosted OCR and translation features used by TachiyomiAT.
+`tachi-back` is the backend and backoffice for hosted OCR and translation features used by Nayovi, the Android app built from the TachiyomiAT fork.
 
 The repository is currently in early Phase 15 hardening work: the starter domain is gone, the backend secret contract exists, the first product schema is in place, internal backoffice auth is tightened, the public landing/pricing surface is live, checkout is wired, Lemon Squeezy webhook fulfillment creates redeemable entitlements, anonymous activation exists, device-bound mobile bearer sessions exist, the first server-owned OCR and translation gateway layer is in place, the first mobile job/upload/status/result backend flow is live, the first support-facing manager views for licenses and devices are in place, the first jobs/provider-ops manager surfaces now exist, the first Android hosted-engine slice now consumes those backend contracts, and the first launch-hardening slice now covers request correlation plus dedicated rate limits for checkout and mobile job routes.
 
@@ -116,7 +116,7 @@ After `pnpm db:init`, the seed creates:
 - demo support lookup data such as `alex.reader@demo.local`, `DEMO-ALEX-PRO-001`, `inst_demo_pixel8_alex`, and `lic_demo_unredeemed`
 - demo contact inbox messages such as `lina.checkout@demo.local`, `omar.activation@demo.local`, and `maya.billing@demo.local`
 
-These are internal backoffice accounts only. TachiyomiAT customers will not use Better Auth login for hosted access.
+These are internal backoffice accounts only. Nayovi customers will not use Better Auth login for hosted access.
 
 ## Roadmap
 
@@ -143,7 +143,7 @@ That means:
 
 ## Phase 3 Intent
 
-Phase 3 introduces the first real product data model for Tachiyomi Back.
+Phase 3 introduces the first real product data model for Nayovi.
 
 That means:
 
@@ -159,7 +159,7 @@ Phase 4 tightens internal admin auth and RBAC for the backoffice.
 That means:
 
 - disable public Better Auth signup for this repo
-- keep Better Auth scoped to internal staff only, not TachiyomiAT customers
+- keep Better Auth scoped to internal staff only, not Nayovi customers
 - replace starter `user/admin` assumptions with `support/admin` internal roles
 - align UI guards and server permissions around staff, sessions, and future privileged operations
 - remove leftover native/mobile Better Auth assumptions from the admin auth surface
@@ -233,7 +233,7 @@ That means:
 - keep Google Cloud Vision as the primary hosted OCR path
 - add direct hosted translation adapters for Gemini, OpenAI, and Anthropic
 - treat Google Cloud Translate and OpenRouter as compatibility-only, not first-class launch providers
-- normalize OCR and translation results so they stay compatible with TachiyomiAT page/block rendering
+- normalize OCR and translation results so they stay compatible with the TachiyomiAT fork page/block rendering
 - add prompt versioning, provider selection, retry/error normalization, and usage-tracking helpers before the job pipeline exists
 
 ## Phase 11 Intent
@@ -243,7 +243,7 @@ Phase 11 introduces the first hosted job pipeline and storage flow for mobile ch
 That means:
 
 - create protected mobile job creation, upload, completion, status, and result endpoints
-- preserve page filename identity and the existing TachiyomiAT result contract
+- preserve page filename identity and the existing TachiyomiAT fork result contract
 - reserve and finalize token usage around hosted processing
 - keep the first execution mode inline while the dedicated worker runtime is still pending
 
@@ -266,16 +266,16 @@ That means:
 
 - add manager jobs list/detail views with lifecycle, asset, provider usage, and token-ledger context
 - add provider ops summaries around recent failures, latency, cost concentration, and stage/provider health
-- keep this slice internal and operator-facing, because TachiyomiAT still has no hosted job correlation UI
+- keep this slice internal and operator-facing, because Nayovi still has no hosted job correlation UI
 - leave retry/cancel/refund-review actions, richer alerting, and dedicated worker/runtime separation as the remaining Phase 13 follow-up work
 
 ## Phase 14 Intent
 
-Phase 14 integrates TachiyomiAT with the hosted backend flow while preserving local engines during rollout.
+Phase 14 integrates Nayovi with the hosted backend flow while preserving local engines during rollout. The Android codebase still carries TachiyomiAT fork internals where they are part of the upstream source history or compatibility layer.
 
 That means:
 
-- add a distinct `Tachiyomi Back [TOKENS]` engine mode in Android instead of overloading local provider modes
+- add a distinct `Nayovi [TOKENS]` engine mode in Android instead of overloading local provider modes
 - store installation identity in app-state preferences and store session tokens in private preferences
 - add a dedicated Android client for activation, refresh, session summary, job creation, page upload, polling, and result download
 - materialize hosted results back into the existing local chapter translation file format used by the reader
@@ -283,7 +283,7 @@ That means:
 
 Current Phase 14 slice already implemented:
 
-- hosted engine option in TachiyomiAT translation settings
+- hosted engine option in Nayovi translation settings
 - hosted URL plus redeem-code configuration
 - device-bound activation, session refresh, and hosted status display
 - hosted chapter submission from Android to the backend job pipeline
@@ -334,12 +334,12 @@ Still pending in Phase 15:
 - never place provider secrets or mobile signing secrets in `VITE_` variables
 - treat `VITE_LEMONSQUEEZY_STORE_URL` as public by design
 - production secrets should live in deployment secret storage, not committed env files
-- the current Better Auth setup is for internal admin users only, not for TachiyomiAT end-user identity
+- the current Better Auth setup is for internal admin users only, not for Nayovi end-user identity
 - validation for implementation work should include `pnpm lint`
 
 ## Phase 1 Intent
 
-Phase 1 removes the starter `book`/`genre` product domain while keeping the reusable infrastructure that Tachiyomi Back actually needs.
+Phase 1 removes the starter `book`/`genre` product domain while keeping the reusable infrastructure that Nayovi actually needs.
 
 That means:
 

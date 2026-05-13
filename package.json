@@ -2,7 +2,7 @@
   "name": "tachi-back",
   "version": "0.1.0",
   "private": true,
-  "description": "Backoffice, payments, and hosted translation backend for TachiyomiAT.",
+  "description": "Backoffice, payments, and hosted translation backend for Nayovi.",
   "license": "MIT",
   "type": "module",
   "scripts": {

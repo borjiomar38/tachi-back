@@ -27,7 +27,7 @@ const primaryLinks = [
   { href: '/#pricing', label: 'Plans' },
   { href: '/translate-manhwa-ai', label: 'Manhwa AI' },
   { href: '/blog', label: 'Blog' },
-  { href: '/guides/mihon-tachiyomiat-setup', label: 'Guides' },
+  { href: '/guides/mihon-nayovi-setup', label: 'Guides' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#faq', label: 'FAQ' },
 ] as const;
@@ -85,14 +85,11 @@ export const PublicShell = (props: { children: ReactNode }) => {
             <a
               href="/"
               className="inline-flex items-center justify-center gap-3 md:justify-start"
-              aria-label="TachiyomiAT"
+              aria-label="Nayovi"
             >
               <Logo variant="mark" className="size-14 shrink-0" />
               <span className="text-2xl font-extrabold tracking-normal text-foreground">
-                Tachiyomi{' '}
-                <span className="font-black" style={{ color: 'var(--logo-accent)' }}>
-                  AT
-                </span>
+                Nayovi
               </span>
             </a>
             <nav className="hidden items-center justify-center gap-5 md:flex">
@@ -128,9 +125,9 @@ export const PublicShell = (props: { children: ReactNode }) => {
             <div className="max-w-xl space-y-3">
               <Logo className="w-32" />
               <p className="text-sm text-muted-foreground">
-                Tachiyomi Back is the hosted backend and backoffice roadmap for
-                OCR, translation, payments, licenses, devices, and support
-                operations around TachiyomiAT.
+                Nayovi is the hosted Android reader and translation service.
+                Fork lineage: Mihon, Tachiyomi, and TachiyomiAT; app branding:
+                Nayovi.
               </p>
               <p className="text-sm text-muted-foreground">
                 The Android app connects to hosted plans through redeem codes,
@@ -153,7 +150,7 @@ export const PublicShell = (props: { children: ReactNode }) => {
                     Install guide
                   </a>
                   <a
-                    href="/guides/mihon-tachiyomiat-setup"
+                    href="/guides/mihon-nayovi-setup"
                     className="hover:text-foreground"
                   >
                     Setup guide

@@ -18,7 +18,7 @@ export const Route = createFileRoute('/blog/$slug')({
       ? buildPublicBlogArticleHead(loaderData)
       : buildPublicPageHead(
           'Article not found',
-          'This TachiyomiAT blog article is not available.',
+          'This Nayovi blog article is not available.',
           '/blog'
         ),
 });

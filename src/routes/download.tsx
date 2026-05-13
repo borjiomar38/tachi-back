@@ -9,14 +9,14 @@ export const Route = createFileRoute('/download')({
   head: () =>
     buildPublicPageHead(
       'Download Free Manga AI Translator APK',
-      'Download TachiyomiAT for Android and set up a free manga AI translator, free manhwa AI translator, and free manhua AI translator with hosted OCR, redeem-code activation, and app update guidance.',
+      'Download Nayovi for Android and set up a free manga AI translator, free manhwa AI translator, and free manhua AI translator with hosted OCR, redeem-code activation, and app update guidance.',
       '/download',
       {
         keywords: [
           ...publicSeoKeywords,
           'download free manga ai translator',
           'download free manhwa ai translator',
-          'TachiyomiAT APK download',
+          'Nayovi APK download',
           'Android manga translator APK',
         ],
       }

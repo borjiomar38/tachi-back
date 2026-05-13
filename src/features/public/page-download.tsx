@@ -26,7 +26,7 @@ export const PageDownload = () => {
     <PublicShell>
       <PublicSection
         eyebrow="Download"
-        title="Download TachiyomiAT for Android"
+        title="Download Nayovi for Android"
         description="Install the Android APK, activate hosted mode with a redeem code, and start translating manga or manhwa chapters from the app."
         className="pt-7 md:pt-10"
       >
@@ -42,7 +42,7 @@ export const PageDownload = () => {
                 </h2>
                 <p className="max-w-2xl text-sm leading-6 text-neutral-300 md:leading-7">
                   Universal APK for Android devices. Download it directly from
-                  the official TachiyomiAT backend.
+                  the official Nayovi backend.
                 </p>
               </div>
             </div>

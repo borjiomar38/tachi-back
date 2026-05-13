@@ -15,7 +15,7 @@ export const TemplatePurchaseReceipt = (props: {
 }) => {
   return (
     <EmailLayout
-      preview={`Your Tachiyomi Back redeem code for ${props.packName}`}
+      preview={`Your Nayovi redeem code for ${props.packName}`}
       language={props.language}
     >
       <Container style={styles.container}>
@@ -25,21 +25,21 @@ export const TemplatePurchaseReceipt = (props: {
         <Section style={styles.section}>
           <Text style={styles.text}>
             Lemon Squeezy billing for <strong>{props.packName}</strong> is now
-            linked to a Tachiyomi Back license with{' '}
+            linked to a Nayovi license with{' '}
             <strong>
               {formatTokenCount(props.totalTokens)} monthly tokens
             </strong>
             .
           </Text>
           <Text style={styles.text}>
-            Use this redeem code in TachiyomiAT to activate hosted access on
-            your device:
+            Use this redeem code in Nayovi to activate hosted access on your
+            device:
           </Text>
           <Text style={styles.code}>{props.redeemCode}</Text>
           <Text style={styles.textMuted}>
-            Open the Tachiyomi Back settings in the app, enter the redeem code,
-            and complete device activation. Keep this email for support if you
-            need recovery help later.
+            Open the Nayovi settings in the app, enter the redeem code, and
+            complete device activation. Keep this email for support if you need
+            recovery help later.
           </Text>
         </Section>
         <EmailFooter />

@@ -17,7 +17,7 @@ export const PageHome = () => {
           <Logo className="h-12 w-auto" />
           <div className="space-y-3">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Tachiyomi Back foundation
+              Nayovi foundation
             </h1>
             <p className="text-sm text-muted-foreground">
               The starter demo content has been removed. This app shell is now

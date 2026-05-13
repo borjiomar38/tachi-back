@@ -137,21 +137,21 @@ function buildArticlePrompt(input: {
     `Search intent: ${input.topic.searchIntent}`,
     `Editorial angle: ${input.topic.angle}`,
     '',
-    'Create one original SEO article for TachiyomiAT.',
+    'Create one original SEO article for Nayovi.',
     'Return only a JSON object matching this TypeScript shape:',
     '{ title, slugBase, excerpt, metaDescription, keywords, body: { introduction, sections, readingProfile, downloadCallout, faqs, disclaimer } }',
     '',
     'Rules:',
-    '- Target searches around manga translate ai, manhwa translate ai, manhua translate ai, AI translation, OCR translation, translation app, TachiyomiAT, and Tachiyomi download intent.',
+    '- Target searches around manga translate ai, manhwa translate ai, manhua translate ai, AI translation, OCR translation, translation app, Nayovi, and Tachiyomi download intent.',
     `- The primary SEO phrase for this article is "${requiredKeyword}" because the type is ${input.topic.manhwaType}. Include that exact phrase in the title or meta description if it reads naturally, always include it in keywords, and use it at least once in the body copy.`,
     `- Support the broader keyword cluster without stuffing: ${supportingKeywords.join(', ')}.`,
     '- Prefer useful setup, reading workflow, OCR, AI translation, Android APK, and legal-use wording over keyword stuffing.',
-    '- Mention TachiyomiAT naturally and make the reader excited to download the Android app through the article CTA.',
-    '- Do not claim TachiyomiAT hosts chapters, bypasses paywalls, or provides pirated content.',
+    '- Mention Nayovi naturally and make the reader excited to download the Android app through the article CTA.',
+    '- Do not claim Nayovi hosts chapters, bypasses paywalls, or provides pirated content.',
     '- Keep the article useful for readers who already know the title but need a cleaner reading and translation workflow.',
-    '- Do not include external chapter links, scanlation links, or download links other than TachiyomiAT.',
+    '- Do not include external chapter links, scanlation links, or download links other than Nayovi.',
     '- Use 3 to 5 sections, 3 to 5 FAQs, and concise speech-bubble-aware translation advice.',
-    '- The downloadCallout buttonLabel must be "Download TachiyomiAT".',
+    '- The downloadCallout buttonLabel must be "Download Nayovi".',
     '- The disclaimer must say the site does not host manga/manhwa/manhua chapters and users should respect official releases and rights holders.',
   ].join('\n');
 }
@@ -174,7 +174,7 @@ function normalizeGeneratedBlogArticle(
     body: {
       disclaimer: normalizeLongText(
         readString(body.disclaimer) ??
-          'TachiyomiAT does not host manga, manhwa, or manhua chapters. Use the workflow only with content you own, public-domain material, official samples, or content you have permission to process, and respect official releases and rights holders.',
+          'Nayovi does not host manga, manhwa, or manhua chapters. Use the workflow only with content you own, public-domain material, official samples, or content you have permission to process, and respect official releases and rights holders.',
         40,
         520
       ),
@@ -182,7 +182,7 @@ function normalizeGeneratedBlogArticle(
       faqs: fillFaqs(faqs, topic),
       introduction: normalizeLongText(
         readString(body.introduction, body.intro, rawArticle.introduction) ??
-          `${topic.manhwaTitle} readers often search for cleaner ${topic.manhwaType} translation workflows when busy panels, speech bubbles, and recurring terms make a chapter harder to follow. TachiyomiAT keeps that workflow focused on hosted OCR, translation support, and the official Android download path.`,
+          `${topic.manhwaTitle} readers often search for cleaner ${topic.manhwaType} translation workflows when busy panels, speech bubbles, and recurring terms make a chapter harder to follow. Nayovi keeps that workflow focused on hosted OCR, translation support, and the official Android download path.`,
         120,
         1_200
       ),
@@ -195,7 +195,7 @@ function normalizeGeneratedBlogArticle(
         rawArticle.summary,
         rawArticle.description
       ) ??
-        `A practical TachiyomiAT guide for ${topic.manhwaTitle} readers searching for ${topic.searchIntent}, hosted OCR, translation support, and a consistent Android APK download path.`,
+        `A practical Nayovi guide for ${topic.manhwaTitle} readers searching for ${topic.searchIntent}, hosted OCR, translation support, and a consistent Android APK download path.`,
       80,
       260
     ),
@@ -204,13 +204,13 @@ function normalizeGeneratedBlogArticle(
     keywords: normalizeKeywords(rawArticle.keywords, topic),
     metaDescription: normalizeLongText(
       readString(rawArticle.metaDescription, rawArticle.meta_description) ??
-        `Read a TachiyomiAT guide for ${topic.manhwaTitle}, ${topic.manhwaType} translation, hosted OCR, and the official Android APK download path.`,
+        `Read a Nayovi guide for ${topic.manhwaTitle}, ${topic.manhwaType} translation, hosted OCR, and the official Android APK download path.`,
       120,
       165
     ),
     slugBase: normalizeSlugBase(
       readString(rawArticle.slugBase, rawArticle.slug_base, rawArticle.slug) ??
-        `${topic.manhwaTitle} TachiyomiAT translation guide`
+        `${topic.manhwaTitle} Nayovi translation guide`
     ),
     title: normalizeTitle(
       readString(rawArticle.title, rawArticle.headline),
@@ -223,7 +223,7 @@ function normalizeTitle(
   rawTitle: string | undefined,
   topic: BlogGenerationTopic
 ) {
-  const fallback = `${topic.manhwaTitle} ${topic.manhwaType} Translation Guide for TachiyomiAT`;
+  const fallback = `${topic.manhwaTitle} ${topic.manhwaType} Translation Guide for Nayovi`;
   const normalized = rawTitle?.trim().replace(/\s+/g, ' ');
 
   if (!normalized || normalized.length > 86) {
@@ -254,7 +254,7 @@ function normalizeSection(
       section.description,
       section.summary
     ) ??
-    `${topic.manhwaTitle} works best in a translation workflow that keeps OCR order, recurring names, and speech-bubble length consistent. TachiyomiAT keeps the reader focused on the official app download and hosted translation support instead of scattered setup steps.`;
+    `${topic.manhwaTitle} works best in a translation workflow that keeps OCR order, recurring names, and speech-bubble length consistent. Nayovi keeps the reader focused on the official app download and hosted translation support instead of scattered setup steps.`;
 
   return {
     body: normalizeLongText(body, 80, 1_200),
@@ -262,7 +262,7 @@ function normalizeSection(
     takeaways: normalizeTakeaways(section.takeaways, section.keyTakeaways, [
       `${topic.manhwaType} panels need clean OCR ordering.`,
       'Recurring names and terms should stay consistent.',
-      'Use the official TachiyomiAT download path.',
+      'Use the official Nayovi download path.',
     ]),
   };
 }
@@ -291,14 +291,14 @@ function normalizeDownloadCallout(
   return {
     body: normalizeLongText(
       readString(callout.body, callout.description, callout.text) ??
-        `Use the official TachiyomiAT Android download link for a consistent ${topic.manhwaType} OCR and translation workflow. Avoid random APK mirrors and keep setup guidance in one trusted path.`,
+        `Use the official Nayovi Android download link for a consistent ${topic.manhwaType} OCR and translation workflow. Avoid random APK mirrors and keep setup guidance in one trusted path.`,
       40,
       420
     ),
-    buttonLabel: 'Download TachiyomiAT',
+    buttonLabel: 'Download Nayovi',
     title: normalizeLongText(
       readString(callout.title, callout.heading) ??
-        'Download TachiyomiAT for Android',
+        'Download Nayovi for Android',
       8,
       96
     ),
@@ -355,17 +355,17 @@ function fillFaqs(
   const filled = faqs.slice(0, 5);
   const defaults = [
     {
-      answer: `No. TachiyomiAT focuses on hosted OCR, translation support, app setup, and Android download guidance. It does not publish or distribute ${topic.manhwaType} chapters.`,
-      question: `Does TachiyomiAT host ${topic.manhwaType} chapters?`,
+      answer: `No. Nayovi focuses on hosted OCR, translation support, app setup, and Android download guidance. It does not publish or distribute ${topic.manhwaType} chapters.`,
+      question: `Does Nayovi host ${topic.manhwaType} chapters?`,
     },
     {
       answer: `Readers use it when a ${topic.manhwaType} page needs cleaner text detection, recurring term consistency, and a workflow that stays separate from unauthorized chapter hosting.`,
-      question: `Why use TachiyomiAT for ${topic.manhwaType} translation?`,
+      question: `Why use Nayovi for ${topic.manhwaType} translation?`,
     },
     {
       answer:
-        'Use the official TachiyomiAT download CTA in the article or the download page. That path keeps readers away from random APK mirrors.',
-      question: 'Where is the TachiyomiAT download link?',
+        'Use the official Nayovi download CTA in the article or the download page. That path keeps readers away from random APK mirrors.',
+      question: 'Where is the Nayovi download link?',
     },
   ];
 
@@ -383,7 +383,7 @@ function normalizeKeywords(rawKeywords: unknown, topic: BlogGenerationTopic) {
     .filter((keyword): keyword is string => Boolean(keyword))
     .map((keyword) => normalizeLongText(keyword, 3, 48));
   const defaults = [
-    'tachiyomiat',
+    'nayovi',
     'tachiyomi download',
     buildRequiredBlogSeoKeyword(topic.manhwaType),
     `${topic.manhwaType} translation`,
@@ -446,7 +446,7 @@ function normalizeLongText(
     return clipped;
   }
 
-  return `${clipped} ${'TachiyomiAT keeps the workflow consistent for readers.'.repeat(
+  return `${clipped} ${'Nayovi keeps the workflow consistent for readers.'.repeat(
     4
   )}`
     .trim()
@@ -467,10 +467,10 @@ function defaultSectionHeading(topic: BlogGenerationTopic, index: number) {
   const headings = [
     `Why ${topic.manhwaTitle} needs a stable workflow`,
     'Keep OCR and terminology consistent',
-    'Use the official TachiyomiAT download path',
+    'Use the official Nayovi download path',
   ];
 
-  return headings[index] ?? `TachiyomiAT ${topic.manhwaType} workflow`;
+  return headings[index] ?? `Nayovi ${topic.manhwaType} workflow`;
 }
 
 function readRecord(value: unknown): Record<string, unknown> {

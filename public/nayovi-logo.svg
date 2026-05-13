@@ -1,0 +1,18 @@
+<svg width="430" height="108" viewBox="0 0 430 108" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Nayovi logo</title>
+  <desc id="logoDesc">Nayovi app icon and wordmark.</desc>
+  <style>
+    #mark-dark { display: none; }
+    @media (prefers-color-scheme: dark) {
+      #mark-light { display: none; }
+      #mark-dark { display: block; }
+      .word { fill: #F8FAFC; }
+    }
+  </style>
+  <image id="mark-light" href="/nayovi-mark-light.png" width="108" height="108"/>
+  <image id="mark-dark" href="/nayovi-mark-dark.png" width="108" height="108"/>
+  <text class="word" x="126" y="48" fill="#151628" font-family="ui-sans-serif, system-ui, sans-serif" font-size="36" font-weight="800">Nayovi</text>
+  <rect x="128" y="64" width="96" height="28" rx="14" fill="#F1E8FF"/>
+  <text x="147" y="83" fill="#6D28D9" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800" letter-spacing="0">APP</text>
+  <text class="word" x="242" y="83" fill="#151628" opacity="0.72" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600">mobile reader + translation</text>
+</svg>

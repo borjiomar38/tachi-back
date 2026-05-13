@@ -13,7 +13,7 @@ export const TemplateContactSubmission = (props: {
 }) => {
   return (
     <EmailLayout
-      preview={`New Tachiyomi Back contact form: ${props.subject}`}
+      preview={`New Nayovi contact form: ${props.subject}`}
       language={props.language}
     >
       <Container style={styles.container}>

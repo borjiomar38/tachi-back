@@ -455,5 +455,5 @@ function slugify(value: string) {
     .replace(/^-+|-+$/g, '')
     .slice(0, 80);
 
-  return slug || 'tachiyomiat-manhwa-guide';
+  return slug || 'nayovi-manhwa-guide';
 }
