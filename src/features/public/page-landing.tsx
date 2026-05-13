@@ -102,9 +102,9 @@ export const PageLanding = (props: {
     <PublicShell>
       <section
         id="hero"
-        className="mx-auto w-full max-w-6xl scroll-mt-24 px-4 py-8 md:py-14"
+        className="relative w-full scroll-mt-24"
       >
-        <div className="relative isolate min-h-[34rem] overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-950 px-5 py-7 text-neutral-50 shadow-[0_24px_80px_-48px_rgba(15,23,42,0.75)] ring-1 ring-black/10 sm:px-7 md:min-h-[37rem] md:px-10 md:py-10">
+        <div className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-neutral-950 px-4 py-8 text-neutral-50 sm:px-7 md:px-10 md:py-10">
           <img
             src={heroBackground}
             alt=""
@@ -112,13 +112,15 @@ export const PageLanding = (props: {
           />
           <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/82 to-neutral-950/25" />
           <div className="absolute inset-0 -z-10 bg-linear-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/20" />
+          <div className="absolute inset-y-0 left-0 -z-10 w-[clamp(5rem,14vw,18rem)] bg-linear-to-r from-neutral-950 via-neutral-950/82 to-transparent" />
+          <div className="absolute inset-y-0 right-0 -z-10 w-[clamp(5rem,14vw,18rem)] bg-linear-to-l from-neutral-950 via-neutral-950/78 to-transparent" />
           <img
             src={heroCharacter}
             alt=""
-            className="animate-float-in-space pointer-events-none absolute right-[-7rem] bottom-[-8rem] z-0 hidden w-[min(38rem,48%)] drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block lg:right-[-4rem]"
+            className="public-hero-character"
           />
 
-          <div className="relative z-10 flex min-h-[28rem] max-w-3xl flex-col justify-center gap-7 md:min-h-[31rem]">
+          <div className="relative z-10 mx-auto flex min-h-[calc(100svh-11rem)] max-w-6xl flex-col justify-center gap-7 md:min-h-[calc(100svh-13rem)]">
             <Badge
               variant="brand"
               size="lg"
@@ -187,7 +189,7 @@ export const PageLanding = (props: {
             </div>
           </div>
 
-          <div className="relative z-10 mt-5 grid gap-3 md:absolute md:right-8 md:bottom-8 md:mt-0 md:w-[23rem]">
+          <div className="public-hero-overlay-cards">
             <div className="rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
               <div className="flex items-center gap-3">
                 <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-300 text-brand-950">
