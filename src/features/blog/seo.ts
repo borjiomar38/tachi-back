@@ -8,6 +8,21 @@ export const coreBlogSeoKeywords = [
 
 export const requiredBlogSeoKeyword = 'manhwa translate ai';
 
+export const legacyReaderSeoKeywords = [
+  'TachiyomiAT',
+  'TachiyomiAT download',
+  'TachiyomiAT APK',
+  'TachiyomiAT manga translator',
+  'TachiyomiAT manhwa translator',
+  'Tachiyomi',
+  'Tachiyomi manga translator',
+  'Tachiyomi manhwa translator',
+  'Mihon',
+  'Mihon setup',
+  'Mihon manga translator',
+  'Mihon AI translator',
+] as const;
+
 export const buildRequiredBlogSeoKeyword = (type?: string | null) => {
   if (type === 'manga' || type === 'manhua' || type === 'manhwa') {
     return `${type} translate ai`;
@@ -18,6 +33,7 @@ export const buildRequiredBlogSeoKeyword = (type?: string | null) => {
 
 export const highIntentBlogSeoKeywords = [
   ...coreBlogSeoKeywords,
+  ...legacyReaderSeoKeywords,
   'free manga ai translator',
   'free manhwa ai translator',
   'free manhua ai translator',
@@ -54,6 +70,8 @@ export const publicSeoKeywords = [
   'Android manhua AI translator',
   'Nayovi APK',
   'Nayovi Android app',
+  'Nayovi TachiyomiAT setup',
+  'Nayovi Mihon setup',
 ] as const;
 
 export const buildPublicSeoKeywords = (

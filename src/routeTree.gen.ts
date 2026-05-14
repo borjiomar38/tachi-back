@@ -28,6 +28,7 @@ import { Route as LegalTermsRouteImport } from './routes/legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
 import { Route as LegalOfficialSourcesTakedownRouteImport } from './routes/legal/official-sources-takedown'
 import { Route as GuidesTranslationSupportWorkflowRouteImport } from './routes/guides/translation-support-workflow'
+import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
@@ -189,6 +190,12 @@ const GuidesTranslationSupportWorkflowRoute =
   GuidesTranslationSupportWorkflowRouteImport.update({
     id: '/guides/translation-support-workflow',
     path: '/guides/translation-support-workflow',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesMihonTachiyomiatSetupRoute =
+  GuidesMihonTachiyomiatSetupRouteImport.update({
+    id: '/guides/mihon-tachiyomiat-setup',
+    path: '/guides/mihon-tachiyomiat-setup',
     getParentRoute: () => rootRouteImport,
   } as any)
 const GuidesMihonNayoviSetupRoute = GuidesMihonNayoviSetupRouteImport.update({
@@ -553,6 +560,7 @@ export interface FileRoutesByFullPath {
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
+  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -636,6 +644,7 @@ export interface FileRoutesByTo {
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
+  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -723,6 +732,7 @@ export interface FileRoutesById {
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
+  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -811,6 +821,7 @@ export interface FileRouteTypes {
     | '/checkout/cancel'
     | '/checkout/success'
     | '/guides/mihon-nayovi-setup'
+    | '/guides/mihon-tachiyomiat-setup'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -894,6 +905,7 @@ export interface FileRouteTypes {
     | '/checkout/cancel'
     | '/checkout/success'
     | '/guides/mihon-nayovi-setup'
+    | '/guides/mihon-tachiyomiat-setup'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -980,6 +992,7 @@ export interface FileRouteTypes {
     | '/checkout/cancel'
     | '/checkout/success'
     | '/guides/mihon-nayovi-setup'
+    | '/guides/mihon-tachiyomiat-setup'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1067,6 +1080,7 @@ export interface RootRouteChildren {
   CheckoutCancelRoute: typeof CheckoutCancelRoute
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
+  GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
   GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
   LegalOfficialSourcesTakedownRoute: typeof LegalOfficialSourcesTakedownRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
@@ -1234,6 +1248,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/translation-support-workflow'
       fullPath: '/guides/translation-support-workflow'
       preLoaderRoute: typeof GuidesTranslationSupportWorkflowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/mihon-tachiyomiat-setup': {
+      id: '/guides/mihon-tachiyomiat-setup'
+      path: '/guides/mihon-tachiyomiat-setup'
+      fullPath: '/guides/mihon-tachiyomiat-setup'
+      preLoaderRoute: typeof GuidesMihonTachiyomiatSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/mihon-nayovi-setup': {
@@ -1855,6 +1876,7 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutCancelRoute: CheckoutCancelRoute,
   CheckoutSuccessRoute: CheckoutSuccessRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
+  GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
   GuidesTranslationSupportWorkflowRoute: GuidesTranslationSupportWorkflowRoute,
   LegalOfficialSourcesTakedownRoute: LegalOfficialSourcesTakedownRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,

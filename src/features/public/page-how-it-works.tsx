@@ -31,9 +31,9 @@ const flowNotes = [
   },
   {
     icon: SmartphoneIcon,
-    title: 'Device binding is explicit',
+    title: 'Familiar Android reader flow',
     description:
-      'Backoffice staff can inspect and recover device bindings when a customer changes phones or reinstalls.',
+      'Readers coming from TachiyomiAT, Tachiyomi, or Mihon can install Nayovi, activate once, and keep translation inside the Android app flow.',
   },
   {
     icon: ServerIcon,
@@ -49,7 +49,7 @@ export const PageHowItWorks = () => {
       <PublicSection
         eyebrow="How it works"
         title="Hosted activation without customer accounts"
-        description="The public website explains the current redeem-code flow clearly because Nayovi does not use a traditional customer account system for hosted access."
+        description="The public website explains the current redeem-code flow clearly for Nayovi, TachiyomiAT, Tachiyomi, and Mihon-style Android reader searches because hosted access does not use traditional customer accounts."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">

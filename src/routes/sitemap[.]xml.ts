@@ -121,9 +121,15 @@ function buildStaticSitemapEntries(blogLastModified: string): SitemapEntry[] {
     },
     {
       changeFrequency: 'monthly',
-      lastModified: '2026-05-04',
+      lastModified: '2026-05-14',
       path: '/guides/mihon-nayovi-setup',
-      priority: '0.7',
+      priority: '0.8',
+    },
+    {
+      changeFrequency: 'monthly',
+      lastModified: '2026-05-14',
+      path: '/guides/mihon-tachiyomiat-setup',
+      priority: '0.8',
     },
     {
       changeFrequency: 'monthly',

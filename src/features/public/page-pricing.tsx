@@ -52,7 +52,7 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
       <PublicSection
         eyebrow="Pricing"
         title="Monthly plans for hosted OCR and translation"
-        description="These public cards are sourced from the seeded plan data in Postgres, and Lemon Squeezy checkout now starts recurring monthly subscriptions for plans with a configured Lemon Squeezy price."
+        description="These plans support readers coming from TachiyomiAT, Tachiyomi, or Mihon-style workflows who need hosted OCR, AI translation, redeem-code activation, and recurring monthly token access."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">

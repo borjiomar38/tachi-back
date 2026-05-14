@@ -27,7 +27,7 @@ const primaryLinks = [
   { href: '/#pricing', label: 'Plans' },
   { href: '/translate-manhwa-ai', label: 'Manhwa AI' },
   { href: '/blog', label: 'Blog' },
-  { href: '/guides/mihon-nayovi-setup', label: 'Guides' },
+  { href: '/guides/mihon-tachiyomiat-setup', label: 'Guides' },
   { href: '/#contact', label: 'Contact' },
   { href: '/#faq', label: 'FAQ' },
 ] as const;
@@ -153,7 +153,13 @@ export const PublicShell = (props: { children: ReactNode }) => {
                     href="/guides/mihon-nayovi-setup"
                     className="hover:text-foreground"
                   >
-                    Setup guide
+                    Mihon setup guide
+                  </a>
+                  <a
+                    href="/guides/mihon-tachiyomiat-setup"
+                    className="hover:text-foreground"
+                  >
+                    TachiyomiAT setup guide
                   </a>
                   <a
                     href="/guides/translation-support-workflow"

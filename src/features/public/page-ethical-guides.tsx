@@ -27,7 +27,7 @@ const setupSteps = [
     icon: SmartphoneIcon,
     title: 'Use official installs',
     description:
-      'Download Nayovi from this site and use official Mihon or reader project channels when you need a separate reader. Avoid patched APKs and unknown mirrors.',
+      'Download Nayovi from this site and use official Mihon, Tachiyomi, or TachiyomiAT project channels when you need a separate reader. Avoid patched APKs and unknown mirrors.',
   },
   {
     icon: ShieldCheckIcon,
@@ -46,6 +46,24 @@ const setupSteps = [
     title: 'Use support for recovery',
     description:
       'Redeem-code, payment, installation, and device recovery questions should go through support instead of public extension or source-sharing threads.',
+  },
+] as const;
+
+const readerLineageNotes = [
+  {
+    title: 'For TachiyomiAT searches',
+    description:
+      'Nayovi is the current branded Android APK and hosted translation path for readers who arrive from TachiyomiAT setup or TachiyomiAT download searches.',
+  },
+  {
+    title: 'For Tachiyomi and Mihon readers',
+    description:
+      'Readers familiar with Tachiyomi or Mihon-style workflows can keep the same Android-first reading habit while using Nayovi for hosted OCR, AI translation, activation, and support.',
+  },
+  {
+    title: 'Keep sources separate',
+    description:
+      'Use official reader project channels for reader setup and use Nayovi for translation support. Nayovi does not host manga chapters, extension lists, or unauthorized chapter sources.',
   },
 ] as const;
 
@@ -102,13 +120,46 @@ const takedownSteps = [
   'Good-faith correction requests are welcome for attribution, terminology, source labeling, and policy wording.',
 ] as const;
 
+interface SetupGuideCopy {
+  description: string;
+  eyebrow: string;
+  firstRunIntro: string;
+  title: string;
+}
+
+const mihonNayoviSetupGuideCopy: SetupGuideCopy = {
+  description:
+    'Set up Nayovi as a hosted OCR and translation workflow for Mihon, Tachiyomi, and TachiyomiAT-style Android readers without turning the project into a chapter source, extension list, or piracy index.',
+  eyebrow: 'Setup guide',
+  firstRunIntro:
+    'This sequence keeps installation, activation, and policy checks clear before any translation job is processed.',
+  title: 'Mihon, TachiyomiAT and Nayovi setup guide',
+};
+
+const mihonTachiyomiAtSetupGuideCopy: SetupGuideCopy = {
+  description:
+    'Use this setup guide if you searched for Mihon, TachiyomiAT, or Tachiyomi. Nayovi is the current branded Android APK and hosted OCR translation workflow.',
+  eyebrow: 'TachiyomiAT setup',
+  firstRunIntro:
+    'This sequence maps older Mihon, Tachiyomi, and TachiyomiAT setup intent to the current Nayovi Android APK and hosted translation flow.',
+  title: 'Mihon and TachiyomiAT setup guide',
+};
+
 export const PageMihonNayoviSetupGuide = () => {
+  return <SetupGuidePage copy={mihonNayoviSetupGuideCopy} />;
+};
+
+export const PageMihonTachiyomiAtSetupGuide = () => {
+  return <SetupGuidePage copy={mihonTachiyomiAtSetupGuideCopy} />;
+};
+
+const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
   return (
     <PublicShell>
       <PublicSection
-        eyebrow="Setup guide"
-        title="Mihon and Nayovi setup guide"
-        description="Set up Nayovi as a hosted OCR and translation workflow without turning the project into a chapter source, extension list, or piracy index."
+        eyebrow={props.copy.eyebrow}
+        title={props.copy.title}
+        description={props.copy.description}
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -130,14 +181,33 @@ export const PageMihonNayoviSetupGuide = () => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Reader lineage"
+        title="TachiyomiAT, Tachiyomi and Mihon context"
+        description="The public pages keep familiar reader search language visible while pointing readers to the current Nayovi app and support workflow."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {readerLineageNotes.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
         eyebrow="Safe setup"
         title="Recommended first run"
-        description="This sequence keeps installation, activation, and policy checks clear before any translation job is processed."
+        description={props.copy.firstRunIntro}
       >
         <Card className="public-brand-panel-muted rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
-              Download Nayovi from the official APK link on this site.
+              Download Nayovi from the official APK link on this site. This is
+              the current app path for readers arriving from TachiyomiAT,
+              Tachiyomi, or Mihon searches.
             </div>
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
               Review the terms and confirm your use is limited to owned,

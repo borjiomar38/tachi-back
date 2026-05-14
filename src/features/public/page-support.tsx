@@ -31,7 +31,7 @@ export const PageSupport = () => {
       <PublicSection
         eyebrow="Support"
         title="Support and policy routes"
-        description="Use this page for billing questions, redeem-code help, device recovery guidance, and policy links."
+        description="Use this page for TachiyomiAT, Tachiyomi, Mihon, and Nayovi setup questions, billing questions, redeem-code help, device recovery guidance, and policy links."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">

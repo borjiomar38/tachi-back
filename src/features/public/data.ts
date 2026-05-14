@@ -100,7 +100,7 @@ export const publicHighlights: ContentBlock[] = [
   {
     title: 'Free manga AI translator',
     description:
-      'Open a chapter, launch AI translation, and keep reading without complex setup.',
+      'Open a chapter, launch AI translation, and keep reading without complex setup in a TachiyomiAT, Tachiyomi, or Mihon-style Android workflow.',
   },
   {
     title: 'Free manhwa AI translator',
@@ -115,7 +115,7 @@ export const publicHighlights: ContentBlock[] = [
   {
     title: 'Easy activation',
     description:
-      'No technical account setup. Just add your redeem code and start translating.',
+      'No technical account setup. Install Nayovi, add your redeem code, and start translating from the Android app.',
   },
 ];
 
@@ -138,11 +138,16 @@ export const activationSteps: ContentBlock[] = [
   {
     title: '4. Start translating chapters',
     description:
-      'Pick a chapter and launch manga translate AI, manhwa translate AI, or manhua translate AI when you need it.',
+      'Pick a chapter and launch manga translate AI, manhwa translate AI, or manhua translate AI when you need it in the Nayovi app.',
   },
 ];
 
 export const supportFaqs: ContentBlock[] = [
+  {
+    title: 'Is Nayovi related to TachiyomiAT, Tachiyomi, or Mihon?',
+    description:
+      'Nayovi keeps the Android reader workflow familiar for people searching TachiyomiAT, Tachiyomi, or Mihon, while focusing on hosted OCR, AI translation, activation, and support.',
+  },
   {
     title: 'What can I translate?',
     description:
