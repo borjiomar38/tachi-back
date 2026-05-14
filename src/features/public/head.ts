@@ -9,7 +9,7 @@ const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://nayovi.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
 const publicSiteDescription =
-  'Nayovi is a free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
+  'Nayovi is a free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers coming from TachiyomiAT, Tachiyomi, and Mihon-style workflows who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 
@@ -269,7 +269,7 @@ export const buildPublicBlogIndexHead = (): ReturnType<
   typeof buildPublicPageHead
 > => {
   const description =
-    'Read Nayovi guides for manga translate ai, manhwa translate ai, manhua translate ai, free manga AI translator setup, hosted OCR, Android APK download, and reader-friendly workflows.';
+    'Read Nayovi guides for manga translate ai, manhwa translate ai, manhua translate ai, TachiyomiAT, Tachiyomi, Mihon-style setup, hosted OCR, Android APK download, and reader-friendly workflows.';
 
   return buildPublicPageHead('Manga, Manhwa and Manhua AI Translator Blog', description, '/blog', {
     keywords: highIntentBlogSeoKeywords,

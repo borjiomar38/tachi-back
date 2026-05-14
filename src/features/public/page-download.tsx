@@ -27,7 +27,7 @@ export const PageDownload = () => {
       <PublicSection
         eyebrow="Download"
         title="Download Nayovi for Android"
-        description="Install the Android APK, activate hosted mode with a redeem code, and start translating manga or manhwa chapters from the app."
+        description="Install the Android APK for readers coming from TachiyomiAT, Tachiyomi, or Mihon-style workflows, activate hosted mode with a redeem code, and start translating manga or manhwa chapters from the app."
         className="pt-7 md:pt-10"
       >
         <Card className="public-brand-panel mb-4 overflow-hidden rounded-[1.5rem] text-neutral-50 md:rounded-[1.75rem]">
@@ -42,7 +42,9 @@ export const PageDownload = () => {
                 </h2>
                 <p className="max-w-2xl text-sm leading-6 text-neutral-300 md:leading-7">
                   Universal APK for Android devices. Download it directly from
-                  the official Nayovi backend.
+                  the official Nayovi backend if you searched for
+                  TachiyomiAT APK, Tachiyomi download, or Mihon translation
+                  setup.
                 </p>
               </div>
             </div>
@@ -147,7 +149,7 @@ export const PageDownload = () => {
               icon: DownloadIcon,
               title: 'Download the APK',
               description:
-                'Use any APK button on this page to download the latest Android build.',
+                'Use any APK button on this page to download the latest Nayovi Android build for TachiyomiAT, Tachiyomi, and Mihon-style readers.',
             },
             {
               icon: ShieldCheckIcon,
@@ -181,8 +183,9 @@ export const PageDownload = () => {
           <CardContent className="flex flex-wrap items-center justify-between gap-3 p-6">
             <div className="space-y-1">
               <p className="font-medium">Ready to install?</p>
-              <p className="text-sm text-brand-950 dark:text-brand-100">
-                This APK link always points to the latest uploaded Android build.
+          <p className="text-sm text-brand-950 dark:text-brand-100">
+                This APK link always points to the latest uploaded Nayovi
+                Android build.
               </p>
             </div>
             <a
@@ -220,6 +223,12 @@ export const PageDownload = () => {
               className={buttonVariants({ variant: 'secondary', size: 'lg' })}
             >
               Contact support
+            </a>
+            <a
+              href="/guides/mihon-tachiyomiat-setup"
+              className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+            >
+              TachiyomiAT setup guide
             </a>
             <a
               href="/"

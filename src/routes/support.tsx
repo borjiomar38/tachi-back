@@ -13,11 +13,14 @@ export const Route = createFileRoute('/support')({
   head: () =>
     buildPublicPageHead(
       'Manga AI Translator Support',
-      'Get Nayovi support for redeem codes, Android setup, free manga AI translator access, manhwa translation plans, billing questions, device activation, and hosted OCR issues.',
+      'Get Nayovi support for TachiyomiAT, Tachiyomi, and Mihon-style Android setup, redeem codes, free manga AI translator access, manhwa translation plans, billing questions, device activation, and hosted OCR issues.',
       '/support',
       {
         keywords: [
           ...publicSeoKeywords,
+          'TachiyomiAT setup support',
+          'Tachiyomi support',
+          'Mihon setup support',
           'manga ai translator support',
           'manhwa ai translator support',
           'Nayovi redeem code support',

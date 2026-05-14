@@ -42,7 +42,7 @@ const benefits = [
   {
     title: 'Android app workflow',
     description:
-      'Install the APK, activate with a redeem code, and translate from the reader workflow.',
+      'Install the APK, activate with a redeem code, and translate from a TachiyomiAT, Tachiyomi, or Mihon-style reader workflow.',
     icon: KeyRoundIcon,
   },
 ] as const;
@@ -83,6 +83,11 @@ const faqs = [
     title: 'Does Nayovi host manhwa chapters?',
     description:
       'No. Nayovi provides app setup, hosted OCR, translation support, activation, and support workflows. It does not publish or distribute chapters.',
+  },
+  {
+    title: 'Is this for TachiyomiAT, Tachiyomi, or Mihon readers?',
+    description:
+      'Yes. Nayovi keeps the Android reading workflow familiar for people searching TachiyomiAT, Tachiyomi, or Mihon, then adds hosted OCR, AI translation, redeem-code activation, and support.',
   },
 ] as const;
 
@@ -126,7 +131,8 @@ export const PageTranslateManhwaAi = () => {
                 Nayovi helps Android readers use hosted OCR and AI
                 translation for manhwa, manga, and manhua pages while keeping
                 the official app download, activation, and support flow in one
-                place.
+                place. It also preserves the path for readers searching
+                TachiyomiAT, Tachiyomi, or Mihon translation workflows.
               </p>
             </div>
 

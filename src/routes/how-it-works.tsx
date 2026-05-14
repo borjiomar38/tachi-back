@@ -9,11 +9,14 @@ export const Route = createFileRoute('/how-it-works')({
   head: () =>
     buildPublicPageHead(
       'How Manga Translate AI Works',
-      'Learn how Nayovi manga translate ai works: choose a free or paid plan, receive a redeem code, activate the Android app, run hosted OCR, and translate manga, manhwa, or manhua chapters.',
+      'Learn how Nayovi manga translate ai works for TachiyomiAT, Tachiyomi, and Mihon-style Android readers: choose a plan, receive a redeem code, run hosted OCR, and translate manga, manhwa, or manhua chapters.',
       '/how-it-works',
       {
         keywords: [
           ...publicSeoKeywords,
+          'TachiyomiAT setup',
+          'Tachiyomi manga translator setup',
+          'Mihon AI translator setup',
           'how manga translate ai works',
           'how manhwa translate ai works',
           'hosted OCR manga translator',

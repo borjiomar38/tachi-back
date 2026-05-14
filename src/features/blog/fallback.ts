@@ -6,7 +6,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     disclaimer:
       'Nayovi does not host manga, manhwa, or manhua chapters. Use the app only with content you own, content in the public domain, or content you have permission to process, and respect official releases and rights holders.',
     downloadCallout: {
-      body: 'Install the Android APK from the official Nayovi download page, activate hosted mode with your redeem code, and keep the same dark reader-focused workflow across manga, manhwa, and manhua translation tasks.',
+      body: 'Install the Android APK from the official Nayovi download page, activate hosted mode with your redeem code, and keep the same dark reader-focused workflow across manga, manhwa, manhua, TachiyomiAT, Tachiyomi, and Mihon-style translation tasks.',
       buttonLabel: 'Download Nayovi',
       title: 'Download Nayovi for Android',
     },
@@ -28,7 +28,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
       },
     ],
     introduction:
-      'Readers searching for manhwa, manhua, manga translation, manhwa translate ai, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. Nayovi keeps that flow focused on the app, hosted OCR, AI-assisted translation, redeem-code activation, and a consistent Android APK download path.',
+      'Readers searching for manhwa, manhua, manga translation, manhwa translate ai, TachiyomiAT, Tachiyomi, Mihon, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. Nayovi keeps that flow focused on the app, hosted OCR, AI-assisted translation, redeem-code activation, and a consistent Android APK download path.',
     readingProfile: {
       bestFor:
         'Android readers who already have legal access to chapters and want a simpler hosted translation workflow.',
@@ -86,6 +86,9 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     'manga translate ai',
     'manhwa translate ai',
     'manhua translate ai',
+    'TachiyomiAT',
+    'TachiyomiAT download',
+    'Mihon',
     'tachiyomi download',
     'nayovi',
     'manhwa translation',
@@ -96,9 +99,9 @@ export const fallbackBlogArticle: BlogArticleDetail = {
   manhwaTitle: 'Nayovi',
   manhwaType: 'manhwa',
   metaDescription:
-    'Download Nayovi for Android and learn how the app supports manga, manhwa, and manhua translation with hosted OCR and redeem-code activation.',
+    'Download Nayovi for Android and learn how the app supports TachiyomiAT, Tachiyomi, Mihon, manga, manhwa, and manhua translation with hosted OCR and redeem-code activation.',
   publishedAt: '2026-05-01T00:00:00.000Z',
-  searchIntent: 'tachiyomi download manhwa translation app',
+  searchIntent: 'TachiyomiAT Tachiyomi Mihon download manhwa translation app',
   slug: 'download-nayovi-for-manhwa-translation',
   title: 'Download Nayovi for Manhwa and Manga Translation',
   updatedAt: '2026-05-01T00:00:00.000Z',

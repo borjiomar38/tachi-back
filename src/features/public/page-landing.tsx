@@ -140,7 +140,9 @@ export const PageLanding = (props: {
                 Use Nayovi as a free manga AI translator, free manhwa AI
                 translator, and free manhua AI translator with hosted OCR,
                 clean translation, redeem-code activation, and one Android APK
-                download.
+                download. Readers coming from TachiyomiAT, Tachiyomi, or
+                Mihon-style workflows get the same simple Android path with
+                Nayovi branding.
               </p>
             </div>
 
@@ -274,7 +276,8 @@ export const PageLanding = (props: {
               </p>
               <div className="mt-4 grid gap-3 text-sm text-neutral-200">
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  Read manga, manhwa, and manhua in the same app you already use.
+                  Read manga, manhwa, and manhua in a familiar TachiyomiAT,
+                  Tachiyomi, or Mihon-style Android flow.
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                   Start with free AI translator access, then use AI translation

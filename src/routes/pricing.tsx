@@ -11,11 +11,14 @@ export const Route = createFileRoute('/pricing')({
   head: () =>
     buildPublicPageHead(
       'Free and Paid Manga AI Translator Plans',
-      'Compare Nayovi free and monthly token plans for manga translate ai, manhwa translate ai, manhua translate ai, hosted OCR, redeem-code delivery, and Android app activation.',
+      'Compare Nayovi free and monthly token plans for TachiyomiAT, Tachiyomi, and Mihon-style Android readers using manga translate ai, manhwa translate ai, hosted OCR, redeem-code delivery, and app activation.',
       '/pricing',
       {
         keywords: [
           ...publicSeoKeywords,
+          'TachiyomiAT manga translator plan',
+          'Tachiyomi manga translator plan',
+          'Mihon AI translator plan',
           'free manga ai translator plan',
           'free manhwa ai translator plan',
           'manga translation token plan',

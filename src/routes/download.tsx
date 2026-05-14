@@ -8,12 +8,16 @@ export const Route = createFileRoute('/download')({
   component: RouteComponent,
   head: () =>
     buildPublicPageHead(
-      'Download Free Manga AI Translator APK',
-      'Download Nayovi for Android and set up a free manga AI translator, free manhwa AI translator, and free manhua AI translator with hosted OCR, redeem-code activation, and app update guidance.',
+      'Download Nayovi APK for TachiyomiAT, Tachiyomi and Mihon Readers',
+      'Download Nayovi for Android readers coming from TachiyomiAT, Tachiyomi, and Mihon-style workflows, then set up a free manga AI translator, hosted OCR, redeem-code activation, and app update guidance.',
       '/download',
       {
         keywords: [
           ...publicSeoKeywords,
+          'TachiyomiAT APK',
+          'TachiyomiAT download',
+          'Tachiyomi download',
+          'Mihon Android reader',
           'download free manga ai translator',
           'download free manhwa ai translator',
           'Nayovi APK download',
