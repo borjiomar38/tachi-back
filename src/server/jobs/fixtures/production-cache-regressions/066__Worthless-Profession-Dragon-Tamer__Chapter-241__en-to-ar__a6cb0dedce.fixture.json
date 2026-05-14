@@ -1,0 +1,1467 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0066",
+  "jobId": "fixture-job-0066",
+  "licenseId": "fixture-license-0066",
+  "pageCount": 23,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 58.15,
+          "symWidth": 51.46875,
+          "text": "臺 驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل صيادو التنانين أضعف المهن؟ أنا دراكو ماجسترو +",
+          "width": 413,
+          "x": 140,
+          "y": 1115
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 26.22222222222222,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "أنظر سريعاً! أنظر! حصري من كواي كان للمانغا",
+          "width": 243,
+          "x": 234,
+          "y": 1388
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 19.27272727272727,
+          "text": "本 漫画 作品 改编 自 飞 卢 小说 网 作者 鬼泣 双刀 坎 上天",
+          "translation": "هذه المانغا مقتبسة من رواية الكاتب غوي تشي شوانغ داو كان شانتيان على موقع فيلو",
+          "width": 470,
+          "x": 115,
+          "y": 1480
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.35,
+          "text": "原创 作品 《 全民 转职 : 驭 龙 师 是 最弱 职业 ? 》",
+          "translation": "العمل الأصلي «التحوّل الجماعي: هل صيادو التنانين أضعف المهن؟»",
+          "width": 414,
+          "x": 138,
+          "y": 1521
+        },
+        {
+          "angle": 0,
+          "height": 272,
+          "symHeight": 23.35714285714286,
+          "symWidth": 20.8,
+          "text": "出品 :  快 看 漫画 原著 : 鬼泣 双刀 坎 上天 制作 : D 唱 文化 后期 : 阿 妞 助手 : 星 兰 编剧 : 素 和 责编 : 春雨",
+          "translation": "الإصدار: كواي كان المانغا. المؤلف الأصلي: غوي تشي شوانغ داو كان شانتيان. الإنتاج: ثقافة دي شينغ. المونتاج: آ نيو. المساعدة: شينغ لانغ. السيناريو: سو هي. التحرير: تشون يو",
+          "width": 251,
+          "x": 261,
+          "y": 1602
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 145,
+          "symWidth": 97,
+          "text": "HA",
+          "translation": "ها",
+          "width": 158,
+          "x": 49,
+          "y": 2111
+        }
+      ],
+      "imgHeight": 3167,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 19.21379310344827,
+          "symWidth": 15.04137931034483,
+          "text": "HEAVENLY  FLAMES :  PHOENIX  FLAMES  RAIN DOWN  CONTINUOUSLY  DURING  FLIGHT . EACH  EXPLOSION  DEALS  90 %  FIRE  DAMAGE . ENEMIES  IGNITED  BY  THE  BLAST  TAKE  45 % FIRE  DAMAGE  FOR  1  MINUTE .",
+          "translation": "النيران السماوية: نيران العنقاء تتساقط بلا انقطاع خلال الطيران. كل انفجار يسبب ضرر نار بنسبة 90%. الأعداء المشتعلون من الانفجار يتلقون ضرر نار بنسبة 45% لمدة دقيقة واحدة.",
+          "width": 494,
+          "x": 79,
+          "y": 138
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 20.54545454545455,
+          "symWidth": 20,
+          "text": "WHAT  IS THAT ?",
+          "translation": "ما هذا؟",
+          "width": 129,
+          "x": 179,
+          "y": 798
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 17.66871921182266,
+          "symWidth": 16.57019704433498,
+          "text": "... THE HEAVENLY DRAGON GANG  HAS  A SUMMONED BEAST !?",
+          "translation": "... هل لعصابة التنين السماوي منوحش منادى؟",
+          "width": 169,
+          "x": 327,
+          "y": 908
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 20.76,
+          "symWidth": 18.4,
+          "text": "FIREBALLS ! EVERYONE , DODGE !",
+          "translation": "كرات نارية! احذروا جميعاً!",
+          "width": 170,
+          "x": 410,
+          "y": 1609
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 22,
+          "symWidth": 19.4,
+          "text": "AAARGHH !!!",
+          "translation": "آآآه!!!",
+          "width": 189,
+          "x": 97,
+          "y": 2158
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 22.58333333333333,
+          "symWidth": 22.58333333333333,
+          "text": "BOSS , SAVE  ME !",
+          "translation": "يا زعيم، النجدة!",
+          "width": 167,
+          "x": 205,
+          "y": 2961
+        }
+      ],
+      "imgHeight": 3169,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 25.75,
+          "text": "RUN !",
+          "translation": "اهرب!",
+          "width": 97,
+          "x": 277,
+          "y": 285
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 20,
+          "text": "HURRY !",
+          "translation": "عجّلوا!",
+          "width": 118,
+          "x": 377,
+          "y": 428
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.5,
+          "symWidth": 16.47712418300654,
+          "text": "I  PREPARED SO  LONG  FOR TODAY ...",
+          "translation": "لقد أعددتُ لهذا اليوم طويلاً...",
+          "width": 189,
+          "x": 223,
+          "y": 1136
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19,
+          "symWidth": 19.4,
+          "text": "AND  YOU COWARDS DARE  TO RUN ?!",
+          "translation": "وها أنتم أيها الجبناء تجرؤون على الفرار؟!",
+          "width": 150,
+          "x": 441,
+          "y": 1310
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 12,
+          "text": "the",
+          "translation": "",
+          "width": 171,
+          "x": 7,
+          "y": 2154
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 19.5,
+          "symWidth": 17.81875,
+          "text": "NO  ONE  IS ALLOWED  TO FLEE !",
+          "translation": "لا يُسمح لأحد بالفرار!",
+          "width": 193,
+          "x": 128,
+          "y": 2671
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 21.33333333333333,
+          "symWidth": 21.11111111111111,
+          "text": "ANYONE  WHO RETREATS  WILL BE  EXECUTED !!",
+          "translation": "مَن يتراجع سيُعدم بلا رحمة!!",
+          "width": 256,
+          "x": 279,
+          "y": 3454
+        }
+      ],
+      "imgHeight": 4055,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 16.14285714285714,
+          "text": "UGH ... !",
+          "translation": "آه...!",
+          "width": 103,
+          "x": 303,
+          "y": 592
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 20.875,
+          "text": "AH ... AH !",
+          "translation": "آه... آه!",
+          "width": 164,
+          "x": 250,
+          "y": 1366
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 16.66666666666667,
+          "symWidth": 17.33333333333333,
+          "text": "333",
+          "translation": "٣٣٣",
+          "width": 23,
+          "x": 140,
+          "y": 1718
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 21.33333333333333,
+          "symWidth": 16.33333333333333,
+          "text": "wwx",
+          "translation": "واو",
+          "width": 26,
+          "x": 52,
+          "y": 1719
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 17.83333333333333,
+          "text": "TODAY ,",
+          "translation": "اليوم،",
+          "width": 101,
+          "x": 350,
+          "y": 2658
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 16.51920634920635,
+          "text": "IS  THE  DAY  I WIPE  OUT  THE HEAVENLY DRAGON GANG ...",
+          "translation": "هو اليوم الذي أمحو فيه عصابة التنين السماوي...",
+          "width": 184,
+          "x": 428,
+          "y": 2848
+        }
+      ],
+      "imgHeight": 4056,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 326,
+          "symHeight": 293.5,
+          "symWidth": 197.5,
+          "text": "嘭 !",
+          "translation": "انفجار!",
+          "width": 364,
+          "x": 213,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 16.8,
+          "symWidth": 15.50882352941177,
+          "text": "DIVINE  BONE  DESCENT :  WHEN  EQUIPPED  WITH THE  DIVINE  BONE  GAUNTLETS , SUMMONS  A  FULL DIVINE  BONE  ARMOR  SET ,  BOOSTING  ALL ATTRIBUTES  BY  300 % .",
+          "translation": "نزول العظم الإلهي: عند ارتداء القفازين العظميين الإلهيين، يستدعي درعًا كاملًا من العظام الإلهية، مضاعفًا جميع الصفات بنسبة ٣٠٠٪.",
+          "width": 561,
+          "x": 70,
+          "y": 932
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.5,
+          "symWidth": 16.48571428571429,
+          "text": "TOO  MUCH TALKING . YOU'RE  FULL OF  OPENINGS ,",
+          "translation": "كفى حديثًا.\nأنت مكشوفٌ تمامًا.",
+          "width": 190,
+          "x": 58,
+          "y": 1861
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 17.75413711583924,
+          "symWidth": 13.92880428020406,
+          "text": "DRAGON  TAMER  AURA  -  SHADOW  DRAGON  KING : CHANNELLING  THE  BLOODLINE  POWER  OF  THE SHADOW  DRAGON  KING  TO  GAIN  THE  SHADOW  DRAGON KING  AURA .  INCREASES  SPEED  BY  300 %  AND  GRANTS SHADOW  STEALTH .  ALL  ATTACKS  IGNORE  55 %  OF THE  TARGET'S  DEFENSE .",
+          "translation": "هالة مروض التنانين ـ ملك التنين الظلّي: استدعاء قوى نسب ملك التنين الظلّي لاكتساب هالته؛ زيادة السرعة ٣٠٠٪ ومنح التسلل الظلّي. كل الهجمات تتجاهل ٥٥٪ من دفاع الهدف.",
+          "width": 564,
+          "x": 74,
+          "y": 2249
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 15.22727272727273,
+          "text": "W - WHAT  JUST HAPPENED ... ?",
+          "translation": "م ـ ماذا حدث للتو...؟",
+          "width": 186,
+          "x": 251,
+          "y": 3012
+        }
+      ],
+      "imgHeight": 3549,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 22.66666666666667,
+          "symWidth": 19.14021164021164,
+          "text": "I  CAN'T ... FEEL  MY BODY ...",
+          "translation": "لا أشعر بجسدي...",
+          "width": 152,
+          "x": 422,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18,
+          "symWidth": 15.27777777777778,
+          "text": "NICE  SHOT , LU  FAN .",
+          "translation": "ضربة ممتازة، لو فان.",
+          "width": 149,
+          "x": 423,
+          "y": 1304
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 27,
+          "symWidth": 9.4,
+          "text": "... !  !",
+          "translation": "...!!",
+          "width": 79,
+          "x": 488,
+          "y": 1787
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.75,
+          "symWidth": 16.84191919191919,
+          "text": "SINCE  YOU'VE COME  TO  ME ,  I WON'T  HOLD BACK !",
+          "translation": "لقد أتيت إليّ، فلن أكتم غضبي!",
+          "width": 203,
+          "x": 239,
+          "y": 2624
+        }
+      ],
+      "imgHeight": 3550,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 15.44444444444444,
+          "text": "TODAY ....",
+          "translation": "اليوم...",
+          "width": 136,
+          "x": 168,
+          "y": 170
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.75,
+          "symWidth": 15.23809523809524,
+          "text": "SHOULDN'T HAVE ENDED  LIKE THIS ...",
+          "translation": "لم يكن من المفترض أن يُختتم هكذا...",
+          "width": 150,
+          "x": 341,
+          "y": 328
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 17,
+          "symWidth": 15.80949111609453,
+          "text": "BLAZING  WINGS :  FLAPS  THE  WINGS  OF  THE PHOENIX ,  TURNING  FEATHERS  INTO  TEN THOUSAND  STREAKS  OF  FIRE .  THE  FIRST  WING DEALS  40 %  FIRE  DAMAGE ;  EACH  SUBSEQUENT  HIT DOUBLES  THE  DAMAGE  OF  THE  PREVIOUS  ONE .  IF ALL  HIT ,  TOTAL  DAMAGE  REACHES  2520 % .",
+          "translation": "أجنحة اللهب: يخفق بأجنحة العنقاء، محولاً الريش إلى عشرة آلاف وهج ناري. الجناح الأول يسبب 40% ضرر ناري؛ كل ضربة تالية تضاعف ضرر السابقة. إن أصابت كلها، يبلغ مجموع الضرر 2520%.",
+          "width": 604,
+          "x": 53,
+          "y": 2099
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 96,
+          "symWidth": 153.5,
+          "text": "ཤ་",
+          "translation": "",
+          "width": 179,
+          "x": 136,
+          "y": 3490
+        }
+      ],
+      "imgHeight": 4278,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 17,
+          "symWidth": 16.16666666666667,
+          "text": "AHHH !  THE BOSS  IS DEAD !!",
+          "translation": "آهـ! لقد مات الزعيم!!",
+          "width": 133,
+          "x": 157,
+          "y": 869
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 17.61363636363636,
+          "symWidth": 16.29545454545455,
+          "text": "IT'S  OVER ! THE  DRAGON- SLAYER  GANG IS  FINISHED ! RUN !",
+          "translation": "لقد انتهى الأمر! عصابة قاتلي التنين قد دُمِّروا! اهربوا!",
+          "width": 192,
+          "x": 106,
+          "y": 1737
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.35,
+          "symWidth": 17.15,
+          "text": "FORGETTING YOUR  BOSS'S WORDS  SO QUICKLY ,  I SEE .",
+          "translation": "أنسيت قول زعيمك بهذه السرعة، أليس كذلك؟",
+          "width": 184,
+          "x": 138,
+          "y": 2368
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 12.125,
+          "text": "UGH .... !",
+          "translation": "آه...!",
+          "width": 81,
+          "x": 451,
+          "y": 3079
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.04347826086956,
+          "symWidth": 17.36739130434783,
+          "text": "IT'S  THE  ONE WHO  KNOCKED THE  BOSS AWAY  IN  ONE PUNCH !!",
+          "translation": "ذاك هو من أسقط الزعيم بضربة واحدة!!",
+          "width": 197,
+          "x": 197,
+          "y": 3954
+        }
+      ],
+      "imgHeight": 4278,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.50854700854701,
+          "symWidth": 16.98290598290598,
+          "text": "HE  JUST TOLD  YOU NOT  TO RUN ,",
+          "translation": "لقد أمرك بعدم الهروب،",
+          "width": 134,
+          "x": 499,
+          "y": 867
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.25,
+          "symWidth": 17.72777777777778,
+          "text": "COWARDS  GET EXECUTED , REMEMBER ?",
+          "translation": "فالجبناء يُعدمون، ألا تذكر؟",
+          "width": 204,
+          "x": 293,
+          "y": 1068
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.66666666666667,
+          "symWidth": 16.47777777777778,
+          "text": "AH ...  AH .... ! WHAT  DO WE  DO ?",
+          "translation": "آه... آه...! ماذا نفعل؟",
+          "width": 123,
+          "x": 116,
+          "y": 1411
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18,
+          "symWidth": 16.75,
+          "text": "HE'S BLOCKING THE  WAY !!",
+          "translation": "إنه يسد الطريق!!",
+          "width": 134,
+          "x": 225,
+          "y": 1564
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 17.58823529411765,
+          "symWidth": 14.64705882352941,
+          "text": "PLEASE , SPARE  US ...",
+          "translation": "أرجوك، ارحمنا...",
+          "width": 150,
+          "x": 58,
+          "y": 2300
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.07692307692308,
+          "symWidth": 17.43426573426573,
+          "text": "WE  DIDN'T WANT  TO  FIGHT , WE  WERE FORCED  BY  THE BOSS !",
+          "translation": "لم نشأ القتال، لكن السيد أجبرنا!",
+          "width": 215,
+          "x": 202,
+          "y": 2393
+        }
+      ],
+      "imgHeight": 3762,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 18,
+          "symWidth": 14.17592592592593,
+          "text": "REPEL  THE  WEAK :  RELEASES  DRACONIC  KILLING INTENT ,  DEALING  DEFENSE - IGNORING  ADE  DAMAGE AND  KNOCKBACK  TO  ALL  NEARBY  ENEMIES .  DAMAGE DEPENDS  ON  THE  ATTRIBUTE  GAP  BETWEEN  THE USER  AND  TARGETS ;  THE  LARGER  THE  GAP ,  THE HIGHER  THE  DAMAGE .",
+          "translation": "ردع الضعفاء: يُطلق نية القتل التنينِيّة، مُلحقًا ضررًا يتجاهل الدفاع والهجوم المدمر وصفعات الصدق لجميع الأعداء القريبين. الضرر يعتمد على فجوة الصفات بين المستخدم والأهداف؛ فكلما كبرت الفجوة زاد الضرر.",
+          "width": 567,
+          "x": 66,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 338,
+          "symHeight": 307,
+          "symWidth": 221.5,
+          "text": "平 !",
+          "translation": "هاه!",
+          "width": 349,
+          "x": 250,
+          "y": 348
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 27,
+          "symWidth": 24.8,
+          "text": "UGH !!",
+          "translation": "آه!!",
+          "width": 107,
+          "x": 482,
+          "y": 1143
+        },
+        {
+          "angle": 0,
+          "height": 306,
+          "symHeight": 286,
+          "symWidth": 161,
+          "text": "拍 !",
+          "translation": "صفعة!",
+          "width": 294,
+          "x": 123,
+          "y": 1981
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 20.5,
+          "symWidth": 18.36160714285714,
+          "text": "I'LL GIVE YOU A CHOICE .",
+          "translation": "سأمنحك خياراً.",
+          "width": 184,
+          "x": 131,
+          "y": 3707
+        }
+      ],
+      "imgHeight": 3762,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "renderMode": "mask_only",
+          "symHeight": 21,
+          "symWidth": 17.28571428571428,
+          "text": "CHOICE .",
+          "translation": "",
+          "width": 118,
+          "x": 162,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.83333333333333,
+          "text": "MM ....",
+          "translation": "هممم...",
+          "width": 103,
+          "x": 314,
+          "y": 454
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.25,
+          "symWidth": 17.47897727272727,
+          "text": "SUBMIT  TO LEADER  CUI  OF THE  HEAVENLY DRAGON GANG ,",
+          "translation": "اخضع لقائدة كوي من عصابة التنين السماوي,",
+          "width": 198,
+          "x": 285,
+          "y": 875
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 17.47857142857143,
+          "text": "AND  OBEY HER  ORDERS .",
+          "translation": "وانصع لأوامرها.",
+          "width": 177,
+          "x": 148,
+          "y": 1123
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18.625,
+          "symWidth": 17.125,
+          "text": "LAO QING !",
+          "translation": "لاو تشينغ!",
+          "width": 77,
+          "x": 83,
+          "y": 2738
+        }
+      ],
+      "imgHeight": 3762,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17.5,
+          "symWidth": 17.1875,
+          "text": "ARE  YOU ALRIGHT ?",
+          "translation": "هل أنت بخير؟",
+          "width": 129,
+          "x": 117,
+          "y": 439
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17,
+          "symWidth": 13.35795454545455,
+          "text": "COUGH ... I'M  FINE ....",
+          "translation": "سعال... أنا بخير...",
+          "width": 127,
+          "x": 164,
+          "y": 1057
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 17.8,
+          "symWidth": 16.74579365079365,
+          "text": "MISS ,  IM SORRY ,  IT'S MY  FAULT FOR  BEING CAPTURED .",
+          "translation": "آنسة، أعتذر، إن أسرني كان خطئي.",
+          "width": 164,
+          "x": 360,
+          "y": 1109
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 20,
+          "symWidth": 20.48333333333333,
+          "text": "AS  LONG AS  YOU'RE OKAY .",
+          "translation": "طالما أنت بخير.",
+          "width": 159,
+          "x": 113,
+          "y": 1548
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 21,
+          "symWidth": 21.10714285714286,
+          "text": "OR  I  CRUSH ALL  YOUR HEADS ,",
+          "translation": "إما أن أسحق جماجمكم جميعًا،",
+          "width": 195,
+          "x": 321,
+          "y": 3344
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.5,
+          "symWidth": 17.32291666666667,
+          "text": "AND  LEAVE YOU  TO  ROT IN  THIS SWAMP .",
+          "translation": "وأترككم تذبلون في هذا المستنقع.",
+          "width": 170,
+          "x": 114,
+          "y": 3499
+        }
+      ],
+      "imgHeight": 4095,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 18.375,
+          "text": "AH ...  AH !",
+          "translation": "آه... آه!",
+          "width": 149,
+          "x": 311,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17.5,
+          "symWidth": 19.78571428571428,
+          "text": "NOW CHOOSE-",
+          "translation": "اختر الآن -",
+          "width": 121,
+          "x": 143,
+          "y": 817
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 109,
+          "symWidth": 94.66666666666667,
+          "text": "TAX",
+          "translation": "الضريبة",
+          "width": 151,
+          "x": 506,
+          "y": 1140
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.5,
+          "symWidth": 16.35,
+          "text": "SUBMISSION OR  DEATH ?",
+          "translation": "الخضوع أم الموت؟",
+          "width": 158,
+          "x": 280,
+          "y": 1853
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.4,
+          "symWidth": 15.29213564213564,
+          "text": "LEADER  CUI IS  MERCIFUL ! PLEASE , SPARE  OUR LIVES !",
+          "translation": "القائد كوي رحيم! أرحم أرواحنا رجاءً!",
+          "width": 170,
+          "x": 147,
+          "y": 3045
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.2,
+          "symWidth": 17.51642135642136,
+          "text": "WE  SWEAR LOYALTY  TO THE  HEAVENLY DRAGON  GANG UNTO  DEATH !!",
+          "translation": "نقسم بالولاء لعصبة التنين السماوي حتى الموت!!",
+          "width": 205,
+          "x": 203,
+          "y": 3865
+        }
+      ],
+      "imgHeight": 4096,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17.5,
+          "symWidth": 15.44444444444445,
+          "text": "THANK  YOU , MR .  LU .",
+          "translation": "شكرًا لكَ، السيد لو.",
+          "width": 156,
+          "x": 339,
+          "y": 613
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 16.00324675324675,
+          "text": "I ,  CUI  ZIYI , LEADER  OF  THE HEAVENLY DRAGON  GANG , DECLARE",
+          "translation": "أنا كوي زيي، قائد عصابة التنين السماوي، أُعلن",
+          "width": 212,
+          "x": 168,
+          "y": 1548
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 17.6,
+          "symWidth": 17.33534798534798,
+          "text": "THAT  THE DRAGON - SLAYER GANG  AND  ITS ALLIED  GANGS  NO LONGER  EXIST !",
+          "translation": "أن عصابة صائد التنانين والعصابات المتحالفة معها لم تعد موجودة!",
+          "width": 243,
+          "x": 409,
+          "y": 1646
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.16666666666667,
+          "symWidth": 17.60176767676768,
+          "text": "ALL  REMAINING MEMBERS  ARE NOW  UNDER  THE COMMAND  OF THE  HEAVENLY DRAGON  GANG !",
+          "translation": "كل الأعضاء الباقين الآن تحت قيادة عصابة التنين السماوي!",
+          "width": 216,
+          "x": 162,
+          "y": 2557
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 108.6666666666667,
+          "symWidth": 72.66666666666667,
+          "text": "WE !",
+          "translation": "نحن!",
+          "width": 161,
+          "x": 367,
+          "y": 3003
+        }
+      ],
+      "imgHeight": 3543,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 15.81967213114754,
+          "symWidth": 15.55932864949258,
+          "text": "THE  THREE  GANGS  LED  BY VIPER  YIELDED  A  TOTAL  OF  3 ABYSS  FRAGMENTS ,  BUT  THAT IS  STILL  FAR  FROM  ENOUGH .",
+          "translation": "تسليم ثلاث عصابات بقيادة فايبر لمجموع ثلاث شظايا من الهاوية، ولكن ذلك لا يزال بعيدًا عن الكفاية.",
+          "width": 376,
+          "x": 215,
+          "y": 337
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15.11111111111111,
+          "text": "ABYSS  FRAGMENTS :  3/9",
+          "translation": "شظايا الهاوية: ٣/٩",
+          "width": 271,
+          "x": 174,
+          "y": 2071
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 17,
+          "symWidth": 16.48979591836735,
+          "text": "SOUTH  BLACK  PORT , LONGNAN  PREFECTURE : SOUTHERN  GANG  CAMP",
+          "translation": "الميناء الأسود الجنوبي، محافظة لونغنان: معسكر العصابات الجنوبية",
+          "width": 299,
+          "x": 27,
+          "y": 2457
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 17.54929577464789,
+          "symWidth": 16.28169014084507,
+          "text": "THE  NEXT  DAY , BEFORE  THE  NEWS  OF THE  DRAGON - SLAYER GANG'S  DESTRUCTION COULD  SPREAD ,",
+          "translation": "في اليوم التالي، وقبل أن تنتشر أخبار دمار عصابة قاتل التنين،",
+          "width": 284,
+          "x": 136,
+          "y": 2768
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 15.88333333333333,
+          "symWidth": 12.93690476190476,
+          "text": "NING  SHUANG  AND  I  BLENDED IN  WITH  THE  NEWLY RECRUITED  SOUTHERNERS AND  SUCCESSFULLY INFILTRATED  THE  OTHER SOUTHERN  GANGS  IN  SOUTH BLACK  PORT .",
+          "translation": "اندمجت أنا ونينغ شوانغ مع الجنوبيين الجدد المُجنّدين، وتمكنا بنجاح من التسلل إلى العصابات الجنوبية الأخرى في الميناء الأسود الجنوبي.",
+          "width": 294,
+          "x": 377,
+          "y": 3006
+        }
+      ],
+      "imgHeight": 3544,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 17.8375,
+          "symWidth": 16.85625,
+          "text": "THEY  LOOK  LIKE UNFAMILIAR  FACES . ARE  THEY SOUTHERNERS  OR FROM  THE  DRAGON NATION ?",
+          "translation": "هم وجوه غريبة لا نعرفها.. هل هم من الجنوبيين أم من أمة التنين؟",
+          "width": 260,
+          "x": 82,
+          "y": 264
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 17.5,
+          "symWidth": 17.45,
+          "text": "SOUTHERN GANG  LEADER",
+          "translation": "زعيم العصابة الجنوبية",
+          "width": 189,
+          "x": 257,
+          "y": 865
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 24,
+          "symWidth": 20.61538461538462,
+          "text": "TH - THEY ARE ...",
+          "translation": "إنهم... هـ-هم...",
+          "width": 163,
+          "x": 380,
+          "y": 1128
+        }
+      ],
+      "imgHeight": 3544,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 15.29333333333333,
+          "symWidth": 13.58666666666667,
+          "text": "WITH  NING  SHUANG  AND  ME  ON  THE INSIDE  AND  CUI  ZIYION  THE  OUTSIDE , WE  STRUCK  FROM  BOTH  SIDES .",
+          "translation": "بوجود نينغ شويانغ وأنا في الداخل، وتسو تسييون في الخارج، ضربنا من الجانبين.",
+          "width": 387,
+          "x": 215,
+          "y": 111
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 14,
+          "symWidth": 12.93847795163585,
+          "text": "BLADE  ARMOR  SICKLE :  FIRES  A HOOKED  SICKLE  RAPIDLY ,  DEALING PIERCING  DAMAGE  AND  PULLING THE  TARGET  TO  THE  USER .",
+          "translation": "منجل درع السيف: يُطلق منجلاً معقوفًا بسرعة، مُسببًا ضررًا اختراقيًا ويسحب الهدف إلى المستخدم.",
+          "width": 345,
+          "x": 60,
+          "y": 376
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 16.14285714285714,
+          "text": "UGH ... !",
+          "translation": "آه...!",
+          "width": 102,
+          "x": 144,
+          "y": 1320
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.77272727272727,
+          "symWidth": 17.61688311688312,
+          "text": "WE  EASILY  TOOK DOWN  ALL  THE SOUTHERN  GANGS .",
+          "translation": "أسقطنا عصابات الجنوب جميعًا بسهولة.",
+          "width": 256,
+          "x": 94,
+          "y": 1674
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 20.38235294117647,
+          "symWidth": 19.19090909090909,
+          "text": "STOP ! I  SURRENDER ! I'LL  GIVE  THE FRAGMENT- SPARE  ME !",
+          "translation": "قف! أستسلم! سأعطي القطعة - ارحمني!",
+          "width": 224,
+          "x": 241,
+          "y": 2714
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 18,
+          "symWidth": 17.27513227513228,
+          "text": "OUTSIDE  THE  SOUTHERN GANG  CAMP ,  SOUTH BLACK  PORT",
+          "translation": "خارج معسكر العصابة الجنوبية، ميناء البلاك الجنوبي",
+          "width": 323,
+          "x": 53,
+          "y": 3169
+        }
+      ],
+      "imgHeight": 3997,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 17.83333333333333,
+          "text": "ABYSS  FRAGMENTS :  5/9",
+          "translation": "شُظايا الهاوية: ٥/٩",
+          "width": 328,
+          "x": 195,
+          "y": 63
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 14.33333333333333,
+          "symWidth": 14.54621848739496,
+          "text": "AFTER  I  TOOK  THE  ABYSS FRAGMENTS  FROM  THE SOUTHERN  NATION GANGS ,",
+          "translation": "بعد أن استحوذت على شظايا الهاوية من عصابات الأمة الجنوبية،",
+          "width": 294,
+          "x": 102,
+          "y": 947
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 14.75,
+          "symWidth": 14.05254962236345,
+          "text": "JUST  AS  EXPECTED ,  THE  DRAGON NATION'S  NETHERWORLD  GANG AND  FLAME  GANG  HAD  ALREADY RUSHED  OVER  UPON  HEARING THE  NEWS .",
+          "translation": "وبالضبط كما توقعت، كانت عصابة العالم السفلي وعصابة اللهب من أمة التنين قد هرعت فور سماعها الخبر.",
+          "width": 359,
+          "x": 234,
+          "y": 1307
+        }
+      ],
+      "imgHeight": 3999,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.25,
+          "symWidth": 15.99285714285714,
+          "text": "LEADER  CUI ,  WHAT IS  THE MEANING OF  THIS !?",
+          "translation": "القائد تساي، ما مغزى هذا الفعل!؟",
+          "width": 241,
+          "x": 121,
+          "y": 347
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 17.35,
+          "text": "NETHERWORLD GANG  LEADER",
+          "translation": "قائد عصابة العالم السفلي",
+          "width": 196,
+          "x": 182,
+          "y": 1090
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 19.2,
+          "symWidth": 17.3375,
+          "text": "WHILE  WE  WERE  AWAY , YOU ACTUALLY  DARED TO  DO  SOMETHING LIKE  THIS !",
+          "translation": "وبينما كنا غائبين، تجرأت على ارتكاب أمرٍ كهذا!",
+          "width": 295,
+          "x": 303,
+          "y": 1345
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17,
+          "symWidth": 17.19444444444444,
+          "text": "FLAME  GANG LEADER",
+          "translation": "قائد عصابة اللهب",
+          "width": 173,
+          "x": 332,
+          "y": 2213
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 16.86573083778966,
+          "text": "SO  YOU  TWO  HAVE RETURNED ,  PERFECT , THAT  SAVES  ME  THE TROUBLE  OF  ISSUING A  CHALLENGE !",
+          "translation": "ها قد عدتما أنتما الاثنان، رائعٌ! وهذا يوفر عليّ عناء توجيه التحدي!",
+          "width": 277,
+          "x": 223,
+          "y": 3191
+        }
+      ],
+      "imgHeight": 3757,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 14.14285714285714,
+          "symWidth": 14.42649117618062,
+          "text": "COMPARED  TO  THE  SOUTHERN NATION'S  SCATTERED  RABBLE ,  THE DRAGON  NATION  GANGS  ARE STRONGER  AND  MORE  NUMEROUS- BUT  THEY  WERE  FORTUNATE ENOUGH  TO  WITNESS  MY  DRAGON COMPANIONS .",
+          "translation": "بالمقارنة مع جماعة الفوضى المنتشرة في الأمة الجنوبية، فإن عصابات أمة التنين أقوى وأكثر عددًا – لكنهم حظوا برؤية رفاقي من التنانين.",
+          "width": 383,
+          "x": 154,
+          "y": 2212
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 17,
+          "symWidth": 14.21229853479853,
+          "text": "SHADOW  ASSASSINATION :  WHILE STEALTHY ,  TELEPORT  BEHIND  THE TARGET  AND  UNLEASH  A  FATAL  STRIKE DEALING  1600 %  POWER  DAMAGE .",
+          "translation": "الاغتيال في الظل: بمهارة التسلل، اقفز خلف الهدف وأطلق ضربة قاتلة تتسبب في ضرر يعادل 1600% من القوة.",
+          "width": 420,
+          "x": 126,
+          "y": 2678
+        }
+      ],
+      "imgHeight": 3758,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 19,
+          "symWidth": 18.68839285714286,
+          "text": "DRAGON TAMER ... HOW  IS  IT YOU !?",
+          "translation": "مروض التنانين... كيف لك أن تكون هنا!؟",
+          "width": 149,
+          "x": 123,
+          "y": 48
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 16.6,
+          "symWidth": 15.72727272727273,
+          "text": "LAVA  BURST :  ERUPTS  FLAMES IN  AN  AREA ,  FORMING  A  MAGMA POOL  THAT  ENGULFS  TARGETS AND  DEALS  CONTINUOUS HEAVY  DAMAGE .",
+          "translation": "اندلاع الحمم: ينفجر بنيران في منطقة، مكونًا بركة من الحمم تلتهم الأهداف وتلحق ضررًا ثقيلاً مستمرًا.",
+          "width": 370,
+          "x": 279,
+          "y": 359
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 24.8,
+          "text": "ROAR !",
+          "translation": "زئير!",
+          "width": 121,
+          "x": 73,
+          "y": 1096
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35,
+          "symWidth": 32,
+          "text": "UGH !",
+          "translation": "آه!",
+          "width": 129,
+          "x": 187,
+          "y": 1646
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 19.14285714285714,
+          "symWidth": 14.5311939268461,
+          "text": "CHAIN LIGHTNING :  RELEASES  A  BOLT OF  LIGHTNING  THAT  JUMPS  10  TIMES BETWEEN  ENEMIES .  EACH  JUMP INCREASES  THE  NEXT  JUMP'S  DAMAGE BY  30 % .  THE  BLUE  DRAGON  ITSELF  CAN ACT  AS  A  RELAY  FOR  THE  JUMPS .",
+          "translation": "البرق المتسلسل: يطلق صاعقة برق تقفز بين الأعداء 10 مرات. كل قفزة تزيد من ضرر القفزة التالية بنسبة 30%. يمكن للتنين الأزرق نفسه أن يكون قناة للانتقال.",
+          "width": 425,
+          "x": 143,
+          "y": 2276
+        }
+      ],
+      "imgHeight": 3757,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.8,
+          "symWidth": 17.3777619047619,
+          "text": "DIVINE  WRATH :  LOCKS  ONTO TARGETS  AND  UNLEASHES  RAPID , CONTINUOUS LIGHTNING  STRIKES DEALING  MASSIVE  DAMAGE .",
+          "translation": "الغضب الإلهي: يحدد الأهداف ويُطلق صواعق برقٍ متتالية وسريعة تضرب بدقة مُسببة دمارًا هائلًا.",
+          "width": 450,
+          "x": 128,
+          "y": 415
+        },
+        {
+          "angle": 0,
+          "height": 407,
+          "symHeight": 54.8,
+          "symWidth": 50.37276524644945,
+          "text": "轰 ! IN  LESS  THAN  A  DAY , BOTH  THE  NETHERWORLD GANG  AND  THE  FLAME  GANG CEASED  TO  EXIST .",
+          "translation": "بأقل من يوم، انحلّت عصابة العالم السفلي وعصابة اللهب ولم يعد لهما وجود.",
+          "width": 619,
+          "x": 0,
+          "y": 1223
+        }
+      ],
+      "imgHeight": 2632,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 23.28571428571428,
+          "text": "AAHHHH !",
+          "translation": "آآآه!",
+          "width": 150,
+          "x": 272,
+          "y": 87
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.7710843373494,
+          "symWidth": 17.27710843373494,
+          "text": "SHADOW  BURST :  RELEASES MULTIPLE  WIND  BLADES  THAT DAMAGE  NEARBY  ENEMIES  AND STRIP  ALL  THEIR  BUFFS .",
+          "translation": "انفجار الظل: يُطلق شفرات هوائية متعددة تُصيب الأعداء القريبين وتزيل جميع تعزيزاتهم.",
+          "width": 421,
+          "x": 191,
+          "y": 1621
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 16.17647058823529,
+          "symWidth": 15.878087375301,
+          "text": "SOUTH  BLACK  PORT  IS NOW  COMPLETELY  UNDER THE  CONTROL  OF  THE HEAVENLY  DRAGON  GANG .",
+          "translation": "ميناء الجنوب الأسود صار كاملاً تحت سيطرة عصابة التنين السماوي.",
+          "width": 313,
+          "x": 184,
+          "y": 2208
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.8695652173913,
+          "text": "未经许可 , 不能 转载 , 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "ممنوع النشر أو النقل دون إذن، ومن يُخالف يُحاسب قانونًا.",
+          "width": 417,
+          "x": 253,
+          "y": 2573
+        }
+      ],
+      "imgHeight": 2633,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

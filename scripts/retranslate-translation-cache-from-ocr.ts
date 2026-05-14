@@ -250,10 +250,9 @@ function buildRetranslationPlan(input: {
         ocrPage: coalesceOcrLineBlocks(
           buildCachedOcrPage({
             cacheKey: input.row.cacheKey,
+            manifestSourceLanguage: input.manifest.sourceLanguage,
             ocrProvider,
             page: cachedPage,
-            sourceLanguage:
-              cachedPage.sourceLanguage || input.manifest.sourceLanguage,
           })
         ),
       };
@@ -304,11 +303,19 @@ function buildRetranslationPlan(input: {
 
 function buildCachedOcrPage(input: {
   cacheKey: string;
+  manifestSourceLanguage: string;
   ocrProvider: OcrProvider;
   page: HostedPageTranslation;
-  sourceLanguage: string;
 }) {
-  const sanitizedPage = sanitizeHostedPageTranslation(input.page);
+  const sourceLanguage = resolveOcrPageSourceLanguage({
+    detectedSourceLanguage: input.page.sourceLanguage,
+    fallbackSourceLanguage: input.manifestSourceLanguage,
+  });
+  const sanitizedPage = sanitizeHostedPageTranslation(
+    input.page,
+    sourceLanguage,
+    'cached_ocr_source'
+  );
 
   return zNormalizedOcrPage.parse({
     blocks: sanitizedPage.blocks.map(
@@ -319,7 +326,7 @@ function buildCachedOcrPage(input: {
     provider: input.ocrProvider,
     providerModel: 'cached_result_manifest',
     providerRequestId: input.cacheKey,
-    sourceLanguage: input.sourceLanguage,
+    sourceLanguage,
     usage: {
       inputTokens: null,
       latencyMs: 0,
@@ -580,7 +587,9 @@ function isMaskOnlyOcrBlock(block: NormalizedOcrPage['blocks'][number]) {
 }
 
 function sanitizeHostedPageTranslation(
-  page: HostedPageTranslation
+  page: HostedPageTranslation,
+  sourceLanguage?: string,
+  mode?: 'cached_ocr_source' | 'translated_manifest'
 ): HostedPageTranslation {
   return {
     ...page,
@@ -597,12 +606,33 @@ function sanitizeHostedPageTranslation(
       .filter(
         (block) =>
           !shouldDropProviderTranslationBlock({
+            mode,
+            sourceLanguage: sourceLanguage ?? page.sourceLanguage,
             sourceText: block.text,
             translation: block.rawTranslation,
           })
       )
       .map(({ rawTranslation: _rawTranslation, ...block }) => block),
   };
+}
+
+function resolveOcrPageSourceLanguage(input: {
+  detectedSourceLanguage: string;
+  fallbackSourceLanguage: string;
+}) {
+  if (!isUnknownSourceLanguage(input.fallbackSourceLanguage)) {
+    return input.fallbackSourceLanguage;
+  }
+
+  if (!isUnknownSourceLanguage(input.detectedSourceLanguage)) {
+    return input.detectedSourceLanguage;
+  }
+
+  return 'auto';
+}
+
+function isUnknownSourceLanguage(sourceLanguage: string) {
+  return /^(?:auto|und|undetermined|unknown)$/i.test(sourceLanguage.trim());
 }
 
 function parseManifest(rawManifest: unknown) {
@@ -670,7 +700,7 @@ function resolveEffectiveSourceLanguage(
   }
 
   const counts = detectedLanguages
-    .filter((language) => language && language !== 'auto')
+    .filter((language) => language && !isUnknownSourceLanguage(language))
     .reduce<Record<string, number>>((accumulator, language) => {
       accumulator[language] = (accumulator[language] ?? 0) + 1;
       return accumulator;

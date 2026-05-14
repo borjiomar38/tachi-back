@@ -1,0 +1,2796 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0077",
+  "jobId": "fixture-job-0077",
+  "licenseId": "fixture-license-0077",
+  "pageCount": 69,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg",
+    "059.jpg",
+    "060.jpg",
+    "061.jpg",
+    "062.jpg",
+    "063.jpg",
+    "064.jpg",
+    "065.jpg",
+    "066.jpg",
+    "067.jpg",
+    "068.jpg",
+    "069.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 29.28571428571428,
+          "symWidth": 22.92857142857143,
+          "text": "I  WANT  A DIVORCE .",
+          "translation": "أريد الطلاق.",
+          "width": 183,
+          "x": 381,
+          "y": 808
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.12903225806452,
+          "symWidth": 18.90322580645161,
+          "text": "THERE  IS  NO SUCH  PRECEDENT , EMPRESS .",
+          "translation": "لا يوجد سابقة كهذه، يا إمبراطورة.",
+          "width": 282,
+          "x": 580,
+          "y": 496
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 27.046875,
+          "symWidth": 20.078125,
+          "text": "GOOD .  THEN THIS  CAN  BE  THE FIRST  TIME  IT HAPPENS .",
+          "translation": "حسناً، إذن لتكن هذه هي المرة الأولى.",
+          "width": 295,
+          "x": 149,
+          "y": 1420
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.5,
+          "symWidth": 20.4,
+          "text": "WHAT  ARE  YOU SAYING ... ?",
+          "translation": "ماذا تعنين...؟",
+          "width": 241,
+          "x": 581,
+          "y": 1722
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 25.52941176470588,
+          "symWidth": 19.51307189542483,
+          "text": "OR  I  COULD BE  THE  FIRST  IN A  DIFFERENT REGARD .",
+          "translation": "أو قد أكون الأولى من نوعٍ آخر.",
+          "width": 259,
+          "x": 183,
+          "y": 606
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30.58333333333333,
+          "symWidth": 18.08333333333333,
+          "text": "FOR  INSTANCE ,",
+          "translation": "على سبيل المثال،",
+          "width": 232,
+          "x": 597,
+          "y": 1502
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 27.75862068965517,
+          "symWidth": 22.87277851458886,
+          "text": "I  COULD  BE THE  WIFE  WHO COULDN'T  ENDURE  A TEDIOUS  DIVORCE PROCEEDING ...",
+          "translation": "قد أكون الزوجة التي لم تحتمل وطأة إجراءات الطلاق المملة...",
+          "width": 350,
+          "x": 172,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 32.5,
+          "symWidth": 25.59415584415584,
+          "text": "cocAND  MURDERED HER  HUSBAND .",
+          "translation": "وقاتلت زوجها وقتلته.",
+          "width": 342,
+          "x": 478,
+          "y": 1536
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 25.53333333333333,
+          "symWidth": 19.8,
+          "text": "I  THOUGHT MY  EXISTENCE  HAD BEEN  FORGOTTEN AFTER  THAT .",
+          "translation": "ظننت أنني ستُنسى بعد ذلك.",
+          "width": 302,
+          "x": 506,
+          "y": 1272
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 21.26262626262626,
+          "text": "I'M  GLAD  TO SEE  YOU  IN  SUCH GOOD  HEALTH ,",
+          "translation": "سعيد برؤيتك بأتمّ الصحة والعافية،",
+          "width": 298,
+          "x": 527,
+          "y": 565
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 32.5,
+          "symWidth": 36,
+          "text": "茶茶",
+          "translation": "",
+          "width": 42,
+          "x": 241,
+          "y": 768
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 24.25,
+          "text": "GRANDMOTHER .",
+          "translation": "جدتي.",
+          "width": 289,
+          "x": 228,
+          "y": 1185
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 30.5,
+          "symWidth": 27.5,
+          "text": "淡淡",
+          "translation": "",
+          "width": 69,
+          "x": 605,
+          "y": 1272
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 45,
+          "symWidth": 52,
+          "text": "OT",
+          "translation": "الأمر",
+          "width": 96,
+          "x": 524,
+          "y": 663
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 29.14705882352941,
+          "symWidth": 23.26274509803921,
+          "text": "EMPEROR  OF  MARESHAL CARMINE  MARESHAL",
+          "translation": "الإمبراطور مارشال كارمين مارشال",
+          "width": 440,
+          "x": 378,
+          "y": 1106
+        }
+      ],
+      "imgHeight": 1816,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 27.57142857142857,
+          "symWidth": 18.90476190476191,
+          "text": "LIKEWISE ,  YOUR MAJESTY .",
+          "translation": "وَأَنتَمَا عَلَى مِثْلٍ، يَا جَلَالَةَ المَلِكِ.",
+          "width": 248,
+          "x": 201,
+          "y": 312
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 26.94285714285714,
+          "symWidth": 19.96190476190476,
+          "text": "THERE'S NO  NEED  FOR FORMALITIES .  YOU  ARE MY  GRANDMOTHER , AFTER  ALL .",
+          "translation": "لَيْسَ مِنَ الضَّرورَةِ تَرَعْرُعُ الْمَجْلِسِ.\nفَأَنْتِ، بَعْدَ كُلِّ شَيْءٍ، جَدَّتِي.",
+          "width": 365,
+          "x": 411,
+          "y": 999
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 26.06481481481482,
+          "symWidth": 20.12037037037037,
+          "text": "I  ABANDONED SUCH  TIES  ON  THE  DAY  I DECLARED  MY  DIVORCE AT  THE  GRAND CATHEDRAL .",
+          "translation": "تَرَكْتُ تِلْكَ الرِّباطَ يَوْمَ أَعْلَنْتُ طَلَاقِي فِي الْكَاتِدْرَائِيَّةِ الْعَظِيمَةِ.",
+          "width": 402,
+          "x": 164,
+          "y": 1576
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 26.734375,
+          "symWidth": 20.5625,
+          "text": "YOUR  MAJESTY  SHOULD ALSO  ADDRESS  ME  AS LADY  AURELIAN  NOW .",
+          "translation": "يجب على مقامكم السامي أن تناديني الآن بالسيدة أورليان.",
+          "width": 388,
+          "x": 477,
+          "y": 50
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 25.71428571428572,
+          "symWidth": 18.75187969924812,
+          "text": "I  ENJOYED THE  FRUIT  YOU SENT  US ,",
+          "translation": "لقد أسعدني الثمر الذي أرسلتموه لنا,",
+          "width": 239,
+          "x": 226,
+          "y": 1685
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 26.72222222222222,
+          "symWidth": 20.63789682539683,
+          "text": "BUT  I  WAS  UNAWARE IT  WAS  GROWN  WITH VONERACKOL'S BLESSING .",
+          "translation": "لكني لم أكن أعلم أنه قد نال بركة فونيراكول.",
+          "width": 364,
+          "x": 94,
+          "y": 1136
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 25.87878787878788,
+          "symWidth": 18.50815850815851,
+          "text": "I  SIMPLY  WANTED TO  SEND  RIENNA'S BEAUTIFUL  FRUIT  TO  MY CHILDREN , BUT  THIS  JUST HAD  TO  HAPPEN ...",
+          "translation": "كنت أرغب ببساطة في إرسال ثمر رينا الجميل إلى أولادي، غير أن هذا كان لا مفر منه...",
+          "width": 397,
+          "x": 159,
+          "y": 510
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 26.34615384615385,
+          "symWidth": 19.15384615384615,
+          "text": "IT'S  JUST  A MISUNDERSTANDING .",
+          "translation": "إنها مجرد سهوة لا أكثر.",
+          "width": 321,
+          "x": 170,
+          "y": 1579
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.88888888888889,
+          "text": "A  MISUNDERSTANDING ?",
+          "translation": "سهوة؟",
+          "width": 365,
+          "x": 466,
+          "y": 157
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 25.35,
+          "symWidth": 19.58608058608058,
+          "text": "SO  THE  SWORD THAT  VANISHED  FROM THE  IMPERIAL  PALACE  AT THE  SAME  TIME  AS YOUR  DIVORCE ...",
+          "translation": "فالسيف الذي اختفى من القصر الإمبراطوري في الوقت نفسه مع طلاقك...",
+          "width": 395,
+          "x": 231,
+          "y": 946
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 61.33333333333334,
+          "symWidth": 61.33333333333334,
+          "text": "***",
+          "translation": "***",
+          "width": 120,
+          "x": 665,
+          "y": 1092
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 25.75555555555556,
+          "symWidth": 18.65555555555556,
+          "text": "... AND  FOSTINE'S UNUSUALLY  BOUNTIFUL HARVEST ...",
+          "translation": "... وحصاد فوسيتين الجَزِير غير المألوف...",
+          "width": 366,
+          "x": 489,
+          "y": 899
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 24.5,
+          "symWidth": 21,
+          "text": "**",
+          "translation": "**",
+          "width": 22,
+          "x": 500,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 27.06666666666667,
+          "symWidth": 19.71282051282051,
+          "text": "... AREN'T CONNECTED  AT ALL ?  IS  THAT  WHAT YOU'RE  SAYING ?",
+          "translation": "... ألا ترتبطان أبداً؟ هل هذا ما تقول؟",
+          "width": 331,
+          "x": 107,
+          "y": 811
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 78.42857142857143,
+          "symWidth": 59.85714285714285,
+          "text": "SCRUNCH",
+          "translation": "تشوش",
+          "width": 338,
+          "x": 74,
+          "y": 1304
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.25,
+          "symWidth": 20.85405844155844,
+          "text": "I  ASSURE YOU  THAT  I  HAVE NOTHING  TO  BE ASHAMED  OF .",
+          "translation": "أَؤكّد لك أنني لا أخجل من شيء.",
+          "width": 285,
+          "x": 140,
+          "y": 366
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 25.66666666666667,
+          "symWidth": 19.96972934472934,
+          "text": "YOU KNOW THAT  I  LEFT EVERYTHING  BEHIND AT  THE  IMPERIAL PALACE ...",
+          "translation": "تعلم أنّي تركتُ كل شيء خلفي في القصر الإمبراطوري...",
+          "width": 322,
+          "x": 73,
+          "y": 1308
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 25.75,
+          "symWidth": 20.03541666666667,
+          "text": "... THE  DAY  I ABANDONED  THE MARESHAL NAME .",
+          "translation": "... في اليوم الذي تخليتُ فيه عن اسم المارشال.",
+          "width": 265,
+          "x": 292,
+          "y": 1611
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.5,
+          "symWidth": 21.88492063492064,
+          "text": "THEN  WHERE  IS  THE SWORD  NOW ?",
+          "translation": "أين السيف الآن إذن؟",
+          "width": 323,
+          "x": 530,
+          "y": 443
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 74,
+          "symWidth": 51.5,
+          "text": "LEAN",
+          "translation": "اتكئ",
+          "width": 190,
+          "x": 32,
+          "y": 490
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 27,
+          "symWidth": 19.68055555555556,
+          "text": "I'M  NOT  THE  ONE WHO  HAS  IT .",
+          "translation": "لست أنا من يمتلكه.",
+          "width": 278,
+          "x": 160,
+          "y": 1443
+        }
+      ],
+      "imgHeight": 1842,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 25.75,
+          "symWidth": 22.4,
+          "text": "WHAT  DO YOU  MEAN  BY THAT ?",
+          "translation": "ماذا تقصد بذلك؟",
+          "width": 221,
+          "x": 608,
+          "y": 270
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.9,
+          "symWidth": 20.77263157894737,
+          "text": "ONE  OF  MY VILLAGERS  HAS FORMED  A  PACT  WITH THAT  SWORD .",
+          "translation": "أحد قروييّ قد عقد عهدًا مع ذلك السيف.",
+          "width": 341,
+          "x": 283,
+          "y": 1159
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 27,
+          "symWidth": 21.68,
+          "text": "YOU  EXPECT  ME  TO BELIEVE  THAT ?",
+          "translation": "أتتوقع مني أن أصدق ذلك؟",
+          "width": 330,
+          "x": 136,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 83,
+          "symWidth": 62.5,
+          "text": "GRIT",
+          "translation": "عزيمة",
+          "width": 235,
+          "x": 106,
+          "y": 346
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 26.48387096774194,
+          "symWidth": 20.24193548387097,
+          "text": "YOU  CAN INTERROGATE  AN  OLD WOMAN  LIKE  ME  ALL YOU  WANT ,  BUT  IT'S THE  TRUTH ...",
+          "translation": "يمكنك استجوابي - امرأة عتيقة مثلي - ما شئت، لكنها الحقيقة...",
+          "width": 342,
+          "x": 373,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 80,
+          "symWidth": 58.25,
+          "text": "SIGH",
+          "translation": "تنهد",
+          "width": 187,
+          "x": 108,
+          "y": 325
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 28.42857142857143,
+          "symWidth": 20.25396825396825,
+          "text": "HER  NAME  IS RIENNA ,",
+          "translation": "اسمها رينا،",
+          "width": 218,
+          "x": 236,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 15.5,
+          "symWidth": 14.5,
+          "text": "90",
+          "translation": "90",
+          "width": 24,
+          "x": 94,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.44,
+          "symWidth": 22.48,
+          "text": "AND  SHE'S AN  ORDINARY FARMER .",
+          "translation": "وهي فَلَّاحةٌ عادية.",
+          "width": 230,
+          "x": 529,
+          "y": 1532
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 204,
+          "symHeight": 89.03571428571428,
+          "symWidth": 56.69761904761905,
+          "text": "COUNTRY  LIFE  WITH HIS  SEXY  MAJESTY",
+          "translation": "حياة الريف مع جلالته الوسيم",
+          "width": 715,
+          "x": 108,
+          "y": 1243
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 30.75,
+          "symWidth": 16.66979166666667,
+          "text": "Art  by :  SEOLAM Original  Novel  by  :  Irui Adaptation  by :  2B",
+          "translation": "الرسوم: سيوغام الرواية الأصلية: إيروي التكييف: ٢ب",
+          "width": 509,
+          "x": 215,
+          "y": 1623
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 42.75,
+          "symWidth": 27,
+          "text": "Ep .  5",
+          "translation": "الحلقة 5",
+          "width": 99,
+          "x": 423,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.22222222222222,
+          "symWidth": 20.61111111111111,
+          "text": "SO ,  UM ... ARE  YOU  SURE YOU'RE  HERE  TO SEE  ME ?",
+          "translation": "فـ، هـم... هل أنت متأكّد أنك جئت لرؤيتي؟",
+          "width": 269,
+          "x": 525,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 25.8695652173913,
+          "symWidth": 17.60869565217391,
+          "text": "THAT'S  RIGHT , MISS  RIENNA .",
+          "translation": "بالضبط، يا آنسة رينا.",
+          "width": 220,
+          "x": 403,
+          "y": 1649
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 25.73076923076923,
+          "symWidth": 19.58974358974359,
+          "text": "HE  DOESN'T  SEEM LIKE  A  COMMONER , BUT  HE'S  BEING  POLITE TO  ME ...",
+          "translation": "لا يبدو كعادي، لكنه يعاملني بأدب...",
+          "width": 375,
+          "x": 147,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 25.5,
+          "symWidth": 19.80555555555555,
+          "text": "AND  HE  JUST CALLED ME  A KITTEN-- NO , A  CAT ...",
+          "translation": "ووصفني لتوه بـ\"الهرّة\"— بل \"قطة\"...",
+          "width": 216,
+          "x": 618,
+          "y": 1298
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.16666666666667,
+          "text": "HIC ...",
+          "translation": "تَشَخْشُخُ...",
+          "width": 87,
+          "x": 156,
+          "y": 267
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 27.6875,
+          "symWidth": 22.63539377289377,
+          "text": "GETTING CALLED  A  KITTEN BY SUCH  A  HANDSOME WAS  ON  MY  BUCKET MAN LIST !",
+          "translation": "أن يناديني بذلك الوسيم بـ\"الهرّة\" كان على قائمة أمنياتي!",
+          "width": 408,
+          "x": 206,
+          "y": 373
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 30.54545454545455,
+          "symWidth": 25.71328671328671,
+          "text": "BUT  IT  ONLY  HALF CAME  TRUE ...",
+          "translation": "لكن ذلك تحقق جزئياً فقط...",
+          "width": 299,
+          "x": 411,
+          "y": 653
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 25.5625,
+          "symWidth": 18.25,
+          "text": "UH ...  MISS RIENNA ?",
+          "translation": "آه... الآنسة رينّا؟",
+          "width": 173,
+          "x": 257,
+          "y": 1600
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 22,
+          "text": "OH !",
+          "translation": "آه!",
+          "width": 64,
+          "x": 149,
+          "y": 368
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 25,
+          "symWidth": 19.11875,
+          "text": "I'LL  HEAR WHAT  THIS  IS ABOUT  RIGHT OUTSIDE .",
+          "translation": "سأصغي لما يدور في الخارج فورًا.",
+          "width": 217,
+          "x": 183,
+          "y": 452
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 26.25,
+          "symWidth": 20.60518648018648,
+          "text": "I  TRUST  THAT  YOU AREN'T  A  RUFFIAN  WHO ENTERS  A  HOME  WHERE A  WOMAN  LIVES  BY HERSELF .",
+          "translation": "أثق أنك لست ولداً شقيًا يدخُل بيت امرأة تسكن وحدها.",
+          "width": 386,
+          "x": 427,
+          "y": 1401
+        }
+      ],
+      "imgHeight": 1835,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 29.57142857142857,
+          "symWidth": 23.95238095238095,
+          "text": "YOU  INSOLENT LITTLE ... !",
+          "translation": "يا لك من وقحٍ صغير...!",
+          "width": 295,
+          "x": 311,
+          "y": 429
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 25.25,
+          "symWidth": 20.75,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 84,
+          "x": 737,
+          "y": 1253
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 26.85714285714286,
+          "symWidth": 23.14285714285714,
+          "text": "SURELY !",
+          "translation": "بلا ريب!",
+          "width": 135,
+          "x": 82,
+          "y": 223
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 25.8,
+          "symWidth": 20.67686274509804,
+          "text": "YOU'RE  NOT SO  SHAMELESS  AS  TO SHOW  UP  UNANNOUNCED AT  THIS  HOUR  AND  THEN DEMAND  HOSPITALITY !",
+          "translation": "لست ممن يجرؤ على الحضور فجأة في مثل هذا الوقت ثم يطلب الضيافة!",
+          "width": 401,
+          "x": 134,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 27.5,
+          "text": "WHAT ?!",
+          "translation": "ماذا؟!",
+          "width": 151,
+          "x": 572,
+          "y": 1597
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 23.14285714285714,
+          "text": "ENOUGH .",
+          "translation": "كفى.",
+          "width": 164,
+          "x": 181,
+          "y": 640
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 26.29629629629629,
+          "symWidth": 19.23703703703704,
+          "text": "HE  MUST  BE  A REALLY  IMPORTANT PERSON ...",
+          "translation": "لا بد أنَّه شخصٌ ذا شأنٍ عظيم...",
+          "width": 300,
+          "x": 487,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 25.5,
+          "symWidth": 21.54545454545455,
+          "text": "WHAT  COULD  HE WANT  WITH  ME ?",
+          "translation": "ماذا يريد مني؟",
+          "width": 260,
+          "x": 326,
+          "y": 923
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 25.6,
+          "symWidth": 21.32626262626263,
+          "text": "IS  HE  AFTER MY FARMLAND OR  MY  FARMING TECHNIQUES ?",
+          "translation": "هل يرنو إلى أراضيَّ الزراعية أم إلى أسرار زراعي؟",
+          "width": 258,
+          "x": 167,
+          "y": 1227
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 19.33333333333333,
+          "text": "I  AM ...",
+          "translation": "أنا...",
+          "width": 116,
+          "x": 716,
+          "y": 1572
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 29.33333333333333,
+          "symWidth": 23.74285714285714,
+          "text": "I  JUST  WON'T FALL  FOR  WHATEVER HE  SAYS !",
+          "translation": "لن أخدع بأي مما يقول!",
+          "width": 390,
+          "x": 383,
+          "y": 1182
+        }
+      ],
+      "imgHeight": 1673,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.33333333333333,
+          "symWidth": 22.12521367521367,
+          "text": "... THE  OWNER  OF THAT  SWORD  YOU HAVE  THERE .",
+          "translation": "... صاحب تلك السيف الذي تحملها.",
+          "width": 303,
+          "x": 115,
+          "y": 282
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 27,
+          "symWidth": 19.82857142857143,
+          "text": "I  CAME  TO  GET IT  BACK .",
+          "translation": "جئت لأستعيدها.",
+          "width": 261,
+          "x": 579,
+          "y": 1126
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28,
+          "symWidth": 24.23611111111111,
+          "text": "YOU  HAVE  AN OWNER ,  RIRI ?!",
+          "translation": "هل لك بصاحب يا ريري؟!",
+          "width": 256,
+          "x": 183,
+          "y": 1656
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 23.25,
+          "symWidth": 21.3926282051282,
+          "text": "THAT'S PREPOSTEROUS ! YOU'RE  MY  ONLY MASTER !",
+          "translation": "هذا لهو عبث! أنت مولاي الوحيد!",
+          "width": 285,
+          "x": 540,
+          "y": 530
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26,
+          "symWidth": 18.75,
+          "text": "HE  SAYS  THAT'S NOT  TRUE .",
+          "translation": "يقول إن ذلك غير صحيح.",
+          "width": 256,
+          "x": 218,
+          "y": 1170
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 40.5,
+          "text": "PSST",
+          "translation": "ششّ",
+          "width": 137,
+          "x": 484,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 51.28571428571428,
+          "symWidth": 42.57142857142857,
+          "text": "WHISPER",
+          "translation": "همس",
+          "width": 222,
+          "x": 683,
+          "y": 278
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 26,
+          "symWidth": 20.75,
+          "text": "YOU  JERK !  YOU  WERE TWO - TIMING  ME ?",
+          "translation": "يا وغد! هل كنت تغدر بي؟",
+          "width": 355,
+          "x": 450,
+          "y": 432
+        },
+        {
+          "angle": 0,
+          "height": 168,
+          "symHeight": 27.15384615384615,
+          "symWidth": 23.92673992673993,
+          "text": "AND  YOU ,  MÁDE SUCH  A  FUSS  ABOUT ME  JUST  TOUCHING A  KNIFE !",
+          "translation": "وأنت، تصنع ضجة كبيرة فقط لأنني لمستُ سكينا!",
+          "width": 350,
+          "x": 541,
+          "y": 624
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.58333333333334,
+          "symWidth": 16.09444444444444,
+          "text": "HEY !  MASTER ,  HE DIDN'T  SAY  ANYTHING LIKE  THAT !",
+          "translation": "هيه! سيدي، لم يقل شيئًا من هذا القبيل!",
+          "width": 321,
+          "x": 62,
+          "y": 1027
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 38.8,
+          "symWidth": 34,
+          "text": "ARGUE",
+          "translation": "جادل",
+          "width": 142,
+          "x": 451,
+          "y": 1220
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 51.83333333333334,
+          "symWidth": 34.66666666666666,
+          "text": "BICKER",
+          "translation": "تشاجر",
+          "width": 171,
+          "x": 687,
+          "y": 1309
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.01851851851852,
+          "symWidth": 19.15972222222222,
+          "text": "WHY  DO  YOU JUST  ASSUME  I'M TWO - TIMING  YOU ?",
+          "translation": "لماذا تفترض أنني أغدر بك؟",
+          "width": 271,
+          "x": 247,
+          "y": 1321
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 25.90476190476191,
+          "symWidth": 19,
+          "text": "BECAUSE I  TRUST  HIS FACE !",
+          "translation": "لأنني أثق بوجهه!",
+          "width": 198,
+          "x": 673,
+          "y": 1444
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 42,
+          "symWidth": 32.28571428571428,
+          "text": "QUARREL",
+          "translation": "شِجار",
+          "width": 177,
+          "x": 47,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 28.4,
+          "text": "ARGUE",
+          "translation": "تجادل",
+          "width": 126,
+          "x": 430,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 21.7360248447205,
+          "symWidth": 18.97826086956522,
+          "text": "SINCE  WHEN HAVE  YOU  CARED SO  MUCH  ABOUT APPEARANCES ?",
+          "translation": "منذ متى صار للظاهر هذا القدر من الأهمية لديك؟",
+          "width": 260,
+          "x": 150,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26.09375,
+          "symWidth": 20.875,
+          "text": "ARE  YOU  TALKING TO  THE  SWORD RIGHT  NOW ?",
+          "translation": "هل تخاطب السيفَ الآن؟",
+          "width": 284,
+          "x": 577,
+          "y": 1036
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 25.5,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 91,
+          "x": 231,
+          "y": 215
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.11111111111111,
+          "symWidth": 19.59259259259259,
+          "text": "HIS  MASTER CAN'T  EVEN  TELL THAT ?",
+          "translation": "وهل لا يدرك سيده ذلك؟",
+          "width": 268,
+          "x": 267,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 27,
+          "symWidth": 25.8,
+          "text": "AHEM !",
+          "translation": "همهمة!",
+          "width": 109,
+          "x": 457,
+          "y": 1356
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 25.33333333333333,
+          "symWidth": 20.46560846560847,
+          "text": "I  DO  KNOW THAT  IT'S  A  SWORD WITH  A  WILL  OF ITS  OWN .",
+          "translation": "أدرك تمامًا أنه سيفٌ ذو إرادة مستقلة.",
+          "width": 310,
+          "x": 235,
+          "y": 1457
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 20.8,
+          "text": "HM ...",
+          "translation": "هممم...",
+          "width": 86,
+          "x": 498,
+          "y": 240
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 25.86046511627907,
+          "symWidth": 20.18604651162791,
+          "text": "YOU'RE  RIGHT . HE'S  A  VERY  QUIET AND  RESERVED SWORD .",
+          "translation": "أنت محق، إنه سيف هادئ ومتزن للغاية.",
+          "width": 303,
+          "x": 504,
+          "y": 334
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 18,
+          "text": "YES ...",
+          "translation": "نعم...",
+          "width": 96,
+          "x": 201,
+          "y": 1325
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 26.58333333333333,
+          "symWidth": 22.32459207459208,
+          "text": "YOU'RE  LYING ABOUT  BEING  HIS MASTER ,  AREN'T YOU ?",
+          "translation": "ألا تكذب حين تقول إنك سيده؟",
+          "width": 299,
+          "x": 159,
+          "y": 427
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 30.63636363636363,
+          "symWidth": 27.04545454545455,
+          "text": "WHO  WOULD CALL  THIS  MASSIVE NARCISSIST QUIET ?",
+          "translation": "من يصف هذا النرجسي الجبار بأنه هادئ؟",
+          "width": 321,
+          "x": 43,
+          "y": 649
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 25.5,
+          "symWidth": 21.13988095238096,
+          "text": "MASSIVE NARCISSIST ?  SO THAT'S  HOW  YOU SEE  ME ?!",
+          "translation": "نرجسي جبار؟ هل هذا ما تراني عليه؟!",
+          "width": 250,
+          "x": 81,
+          "y": 982
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 78,
+          "symWidth": 53,
+          "text": "-FWIP",
+          "translation": "-فووو",
+          "width": 222,
+          "x": 5,
+          "y": 19
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.23684210526316,
+          "symWidth": 22.1203007518797,
+          "text": "WHAT  DO  YOU REALLY  WANT WITH  ME ?",
+          "translation": "ما الذي تريده مني حقًا؟",
+          "width": 237,
+          "x": 575,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 28.0925925925926,
+          "symWidth": 20.08361391694725,
+          "text": "IF  YOU  LIE  ONE MORE  TIME ,  I  WON'T OPEN  THIS  DOOR AGAIN .",
+          "translation": "إن كذبت مرة أخرى، فلن أفتح هذا الباب ثانية.",
+          "width": 354,
+          "x": 107,
+          "y": 651
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 47,
+          "symWidth": 39.57142857142857,
+          "text": "SQUEEZE",
+          "translation": "اعْصِرْ",
+          "width": 226,
+          "x": 461,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 73,
+          "symWidth": 50.75,
+          "text": "SIGH",
+          "translation": "تنهد",
+          "width": 182,
+          "x": 483,
+          "y": 863
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 26,
+          "symWidth": 19.6875,
+          "text": "MY  NAME  IS CARMINE .",
+          "translation": "اسمي كارمين.",
+          "width": 189,
+          "x": 556,
+          "y": 1236
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.33333333333333,
+          "symWidth": 20.90793650793651,
+          "text": "I  AM  LADY AURELIAN'S GRANDSON .",
+          "translation": "أنا حفيد السيدة أوريليان.",
+          "width": 196,
+          "x": 386,
+          "y": 645
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 26.5,
+          "symWidth": 20.49308608058608,
+          "text": "LADY  AUREL ... ? WHO ?  I  DON'T  KNOW ANYONE  BY  THAT NAME .",
+          "translation": "السيدة أوريلي...؟ من؟ لا أعرف أحداً بهذا الاسم.",
+          "width": 337,
+          "x": 204,
+          "y": 192
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.5,
+          "symWidth": 20.29375,
+          "text": "AURELIAN  IS THE  NAME  OF  THE GOVERNOR OF FOSTINE .",
+          "translation": "أوريليان هو اسم حاكم فوستين.",
+          "width": 292,
+          "x": 463,
+          "y": 854
+        }
+      ],
+      "imgHeight": 1745,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 28.3,
+          "symWidth": 20,
+          "text": "OH ,  GRANNY !",
+          "translation": "أوه، يا جدتي!",
+          "width": 207,
+          "x": 465,
+          "y": 403
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 42,
+          "symWidth": 26.25,
+          "text": "JOLT",
+          "translation": "اهتزاز",
+          "width": 103,
+          "x": 411,
+          "y": 669
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 21,
+          "text": "\" GRANNY \" ?!",
+          "translation": "\"جدتي\"؟!",
+          "width": 218,
+          "x": 170,
+          "y": 1224
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 26.64516129032258,
+          "symWidth": 20.10925499231951,
+          "text": "WE'VE  BEEN HAVING  TEA  TOGETHER  FOR YEARS ,  AND  SHE  TOLD  ME TO  JUST  CALL  HER GRANNY .",
+          "translation": "لقد ارتشفنا الشاي معاً لسنوات، وأوصتني أن أدعوها جدتي فقط.",
+          "width": 442,
+          "x": 432,
+          "y": 1418
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 31.85714285714286,
+          "symWidth": 27.71428571428572,
+          "text": "ANYWAY ,",
+          "translation": "على أي حال،",
+          "width": 143,
+          "x": 95,
+          "y": 47
+        },
+        {
+          "angle": 0,
+          "height": 237,
+          "symHeight": 26.16326530612245,
+          "symWidth": 20.35671768707483,
+          "text": "THE  TRUTH  IS THAT  SWORD  IS  A PRECIOUS  ARTIFACT THAT  ONLY  THE  HEAD OF  MY FAMILY CAN  USE .",
+          "translation": "الحقيقة أنّ السيف قطعة ثمينة لا يُسمح باستخدامها إلّا لرئيس عشيرتي.",
+          "width": 341,
+          "x": 109,
+          "y": 148
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 47,
+          "symWidth": 38.25,
+          "text": "AHEM",
+          "translation": "همهمة",
+          "width": 137,
+          "x": 634,
+          "y": 800
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.5,
+          "symWidth": 20.1529695633314,
+          "text": "AFTER  GRANDMOTHER GOT  DIVORCED  AND  LEFT  US , THE  SWORD  DISAPPEARED ALONG  WITH  HER .",
+          "translation": "بعد أن طلّقت جدّتنا وتركتنا، اختفى السيف معها.",
+          "width": 459,
+          "x": 368,
+          "y": 1720
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 67.4,
+          "symWidth": 60.2,
+          "text": "SWEAT",
+          "translation": "عرق",
+          "width": 220,
+          "x": 424,
+          "y": 346
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 79.75,
+          "symWidth": 64.5,
+          "text": "DRIP",
+          "translation": "قطرة",
+          "width": 229,
+          "x": 679,
+          "y": 801
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 25.4,
+          "symWidth": 19.42960784313725,
+          "text": "AHA !  SO  THAT'S WHY  HE  IMMEDIATELY CALLED  ME  A  KITTEN-- I  MEAN ,  A  CAT BURGLAR .",
+          "translation": "آها! لهذا السبب وصفني فورًا بالكتّيّة... أعني، باللصّ القطة.",
+          "width": 361,
+          "x": 180,
+          "y": 1006
+        },
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 26.5,
+          "symWidth": 19.77592592592593,
+          "text": "THIS  JERK  OF A  SWORD  SECRETLY RAN  AWAY ,  AND  BECAUSE OF  HIM ,  GRANNY  AND  I ARE  TREATED  LIKE CRIMINALS !",
+          "translation": "ذلك السيف الحقير فرّ خفية، وبسببه تُعامل جدتي وأنا كالمجرمين!",
+          "width": 399,
+          "x": 374,
+          "y": 1357
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 25,
+          "symWidth": 19.83333333333333,
+          "text": "YOU  WILL BE  HANDSOMELY REWARDED .",
+          "translation": "سوف تُجازى بسخاءٍ.",
+          "width": 266,
+          "x": 473,
+          "y": 320
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 48,
+          "symWidth": 35.4,
+          "text": "SHAKE",
+          "translation": "هَزَّة",
+          "width": 145,
+          "x": 785,
+          "y": 869
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 25.14940476190476,
+          "symWidth": 19.65416666666667,
+          "text": "UM ...  I  UNDERSTAND WHAT'S  GOING  ON ,  MORE OR  LESS ,  BUT  EVEN  IF  I WANTED  TO  RETURN THIS  TO  YOU ...",
+          "translation": "همم... أدرك ما يجري، إلى حد ما، ولكن حتى لو رغبتُ في إعادته إليك...",
+          "width": 402,
+          "x": 237,
+          "y": 1232
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 24.6,
+          "symWidth": 21.14662393162393,
+          "text": "NO !  I'M  NOT LEAVING !  I'LL  STAY BY  YOUR  SIDE  UNTIL YOUR  HAIR  TURNS WHITE !",
+          "translation": "لا! لن أغادر! سأظل إلى جانبك حتى يتحول شعرك إلى الأبيض!",
+          "width": 340,
+          "x": 454,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 159.25,
+          "symWidth": 126.5,
+          "text": "FWIP",
+          "translation": "صَيحَة هادئة",
+          "width": 392,
+          "x": 247,
+          "y": 644
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 27,
+          "symWidth": 20.45833333333334,
+          "text": "YOU  REALLY  ARE HIS  MASTER ...",
+          "translation": "حقًا أنت سيده...",
+          "width": 268,
+          "x": 142,
+          "y": 310
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 42,
+          "symWidth": 33.66666666666666,
+          "text": "MURMUR",
+          "translation": "همسة",
+          "width": 174,
+          "x": 727,
+          "y": 499
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 56,
+          "symWidth": 40.8,
+          "text": "DAZED",
+          "translation": "في حالة ذهول",
+          "width": 180,
+          "x": 94,
+          "y": 567
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 29.19047619047619,
+          "symWidth": 25.7202380952381,
+          "text": "THE  SWORD MOVED  ON ITS  OWN ?",
+          "translation": "هل تحرك السيف من تلقاء نفسه؟",
+          "width": 192,
+          "x": 658,
+          "y": 590
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 24.96969696969697,
+          "symWidth": 21.72558922558922,
+          "text": "I'VE  NEVER SEEN  ANYTHING LIKE  THAT ...",
+          "translation": "لم أرَ شيئًا مماثلًا من قبل...",
+          "width": 262,
+          "x": 82,
+          "y": 686
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 44.71428571428572,
+          "symWidth": 35.85714285714285,
+          "text": "WHISPER",
+          "translation": "هامس",
+          "width": 172,
+          "x": 56,
+          "y": 990
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 23,
+          "symWidth": 17.14285714285714,
+          "text": "HMPH !!!",
+          "translation": "همهمة!!!",
+          "width": 128,
+          "x": 666,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "renderMode": "mask_only",
+          "symHeight": 23,
+          "symWidth": 18.125,
+          "text": "THEY  JUST DECIDED  I  WAS  A  FAMILY",
+          "translation": "",
+          "width": 418,
+          "x": 419,
+          "y": 1662
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 23.33333333333334,
+          "symWidth": 18.79802631578947,
+          "text": "THEY JUST DECIDED I WAS A FAMILY HEIRLOOM ON THEIR OWN . THEY'VE NEVER ACTUALLY CARED FOR ME !",
+          "translation": "لقد قرروا بأجمعهم أنني مجرد تراث عائلي. لم يسبق لهم أن اهتموا بي حقاً!",
+          "width": 423,
+          "x": 417,
+          "y": 18
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 157.4,
+          "symWidth": 139,
+          "text": "WAAAH",
+          "translation": "وآآآه!",
+          "width": 403,
+          "x": 7,
+          "y": 387
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 57.75,
+          "symWidth": 49.25,
+          "text": "PUSH",
+          "translation": "ادفع!",
+          "width": 182,
+          "x": 566,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 23.75,
+          "symWidth": 18.78787878787879,
+          "text": "IF  HE'S  TRULY MY  MASTER ,  ASK  HIM TO  SAY  MY  REAL NAME !",
+          "translation": "إذا كان فعلاً ســيدي، فليُجبني باسمي الحقيقي!",
+          "width": 335,
+          "x": 531,
+          "y": 1018
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42.66666666666666,
+          "symWidth": 35.66666666666666,
+          "text": "SOB",
+          "translation": "انهمار الدموع",
+          "width": 94,
+          "x": 723,
+          "y": 1212
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 17,
+          "text": "LIGH ...",
+          "translation": "لييه...",
+          "width": 102,
+          "x": 176,
+          "y": 1255
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26.14285714285714,
+          "symWidth": 20.10714285714286,
+          "text": "RUI  WANTS YOU  TO  SAY  HIS REAL  NAME .",
+          "translation": "يريد روي منك أن تقول اسمه الحقيقي.",
+          "width": 256,
+          "x": 444,
+          "y": 179
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 25.16666666666667,
+          "text": "LIH ...",
+          "translation": "ليهه...",
+          "width": 94,
+          "x": 115,
+          "y": 949
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 25.47368421052632,
+          "symWidth": 20.89473684210526,
+          "text": "THE  SWORD'S REAL  NAME ?",
+          "translation": "اسم السيف الحقيقي؟",
+          "width": 221,
+          "x": 141,
+          "y": 1072
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 28,
+          "symWidth": 18.66666666666667,
+          "text": "RUI ...",
+          "translation": "روي...",
+          "width": 101,
+          "x": 678,
+          "y": 1579
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 25.66666666666666,
+          "symWidth": 19.02777777777778,
+          "text": "HEY ,  HE KNOWS  YOUR REAL  NAME .",
+          "translation": "انه يعلم اسمك الحقيقي.",
+          "width": 218,
+          "x": 127,
+          "y": 679
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 28.66666666666667,
+          "symWidth": 24.24603174603175,
+          "text": "HE  PASSED ,  AND  IT HAD  NOTHING  TO  DO WITH  HIS  LOOKS",
+          "translation": "لقد اجتاز الاختبار، ولم يكن ذلك بسبب مظهره.",
+          "width": 336,
+          "x": 26,
+          "y": 868
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 24.08695652173913,
+          "text": "WHAT  DO  YOU MEAN ?  ALL  HE  SAID WAS  \" RUI \" !",
+          "translation": "ماذا تعني؟ كل ما قاله هو \"روي\" فقط!",
+          "width": 367,
+          "x": 436,
+          "y": 1085
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 26.16666666666667,
+          "symWidth": 23.0959595959596,
+          "text": "AND  BESIDES , YOU  CALLED  ME THAT  IN  FRONT OF  HIM !",
+          "translation": "وعلاوة على ذلك، لقد ناديتني بذلك أمامه!",
+          "width": 300,
+          "x": 248,
+          "y": 71
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 26,
+          "symWidth": 20.32758620689655,
+          "text": "WELL ,  AN  ORDINARY PERSON  COULD  NEVER MEMORIZE  YOUR  FULL NAME  ANYWAY .",
+          "translation": "حسناً، لا أحد عادي يستطيع حفظ اسمك الكامل على أي حال.",
+          "width": 361,
+          "x": 523,
+          "y": 341
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 26.25,
+          "symWidth": 25.18181818181818,
+          "text": "HOW  COULD YOU  DO  THIS  TO ME ,  MASTER ?!",
+          "translation": "كيف تفعل بي هذا، أستاذي؟!",
+          "width": 297,
+          "x": 310,
+          "y": 1178
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 36.25,
+          "text": "WEEP",
+          "translation": "يبكي",
+          "width": 136,
+          "x": 272,
+          "y": 1362
+        }
+      ],
+      "imgHeight": 1718,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 26.2090395480226,
+          "symWidth": 19.41503694046067,
+          "text": "IN  ANY  CASE , I  CAN'T  GIVE  YOU THE  SWORD  BECAUSE  HE SAYS  THAT  YOU'RE  NOT HIS  MASTER .  NOW PLEASE  LEAVE .",
+          "translation": "على أي حال، لا أستطيع أن أمنحك السيف لأنّه يقول إنك لست سيده. أرجو منك المغادرة الآن.",
+          "width": 403,
+          "x": 145,
+          "y": 208
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 50.2,
+          "symWidth": 39.8,
+          "text": "TRIUMPHANT",
+          "translation": "انتصارٌ مبين",
+          "width": 318,
+          "x": 614,
+          "y": 1268
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 19.09090909090909,
+          "text": "MISS  RIENNA .",
+          "translation": "آنسة رينا.",
+          "width": 229,
+          "x": 554,
+          "y": 1562
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 26.21438172043011,
+          "symWidth": 19.98209921798631,
+          "text": "THAT  SWORD'S  VALUE AND  SIGNIFICANCE  ARE BEYOND  WHAT  YOU CAN  IMAGINE ,",
+          "translation": "قيمة هذا السيف وعظمته تفوق ما تتصور.",
+          "width": 362,
+          "x": 172,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26.07692307692308,
+          "symWidth": 18.69230769230769,
+          "text": "SO  I  CAN'T  JUST LEAVE  LIKE  THIS .",
+          "translation": "لذا، لا أستطيع الرحيل هكذا ببساطة.",
+          "width": 277,
+          "x": 580,
+          "y": 1493
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 26.27358490566038,
+          "symWidth": 21.01362683438155,
+          "text": "I  MUST  TAKE THAT  SWORD ,  EVEN  IF IT  MEANS  RESORTING TO  UNDERHANDED METHODS .",
+          "translation": "يجب أن أحصل على ذلك السيف، حتى وإن اضطررت إلى اللجوء إلى أساليب ماكرة.",
+          "width": 347,
+          "x": 147,
+          "y": 271
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 26.57894736842105,
+          "symWidth": 20.57894736842105,
+          "text": "UNDERHANDED METHODS ?",
+          "translation": "أساليب ماكرة؟",
+          "width": 225,
+          "x": 531,
+          "y": 756
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 26.69607843137255,
+          "symWidth": 20.20502765208647,
+          "text": "HE  HAS  A  WILL  OF  HIS OWN ,  SO  I  CAN'T  IGNORE HIS  WISHES  AND  HAND HIM  OVER  TO  YOU .",
+          "translation": "له إرادته الخاصة، فلا أستطيع تجاهل رغبته وتسليمه إليك.",
+          "width": 406,
+          "x": 133,
+          "y": 1545
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 19.90530303030303,
+          "text": "HIS  WILL ?  THAT THING  IS  A  WEAPON , A  SWORD .",
+          "translation": "إرادته؟ ذلك الشيء سلاح، سيف.",
+          "width": 322,
+          "x": 542,
+          "y": 1243
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.66666666666667,
+          "symWidth": 20.18148148148148,
+          "text": "WHAT'S IMPORTANT  HERE  IS YOUR  WILL .",
+          "translation": "ما يهم هنا هو إرادتك.",
+          "width": 315,
+          "x": 411,
+          "y": 1601
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.5,
+          "symWidth": 20.68365384615385,
+          "text": "I  DO  NOT  WISH  TO USE  FORCE  AGAINST A  FRAGILE  YOUNG WOMAN .",
+          "translation": "لا أرغب في استخدام القوة ضد امرأة شابة هشة.",
+          "width": 327,
+          "x": 201,
+          "y": 386
+        }
+      ],
+      "imgHeight": 1897,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 26.54545454545454,
+          "symWidth": 20.53986291486292,
+          "text": "IF  I  HAPPENED TO  TELL  YOU  I  WAS  THE MOST  POWERFUL PERSON  IN THE  WORLD ,  WOULD  YOUR ANSWER  REMAIN THE  SAME ?",
+          "translation": "لو أخبرتك أنني أقوى شخص في العالم، هل ستظل إجابتك كما هي؟",
+          "width": 455,
+          "x": 181,
+          "y": 197
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26,
+          "symWidth": 20.73809523809524,
+          "text": "OF  COURSE  MY ANSWER  WOULDN'T CHANGE .",
+          "translation": "بالطبع لن تتغير إجابتي.",
+          "width": 307,
+          "x": 497,
+          "y": 1753
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 29,
+          "symWidth": 20.11111111111111,
+          "text": "IN  THAT CASE ,  MISS RIENNA ...",
+          "translation": "في هذه الحالة، الآنسة رينا...",
+          "width": 211,
+          "x": 174,
+          "y": 363
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 84,
+          "symWidth": 77.5,
+          "text": "ли",
+          "translation": "",
+          "width": 114,
+          "x": 773,
+          "y": 710
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 29.66666666666667,
+          "text": "!!!",
+          "translation": "!!!",
+          "width": 65,
+          "x": 724,
+          "y": 1749
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "059.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 30.52380952380953,
+          "symWidth": 24.55311355311355,
+          "text": "BY  UNDERHANDED METHODS ,  DID HE  MEAN ... ?",
+          "translation": "هل كان يقصد... بطرق ملتوية؟",
+          "width": 329,
+          "x": 173,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 49,
+          "symWidth": 48.5,
+          "text": "**",
+          "translation": "**",
+          "width": 93,
+          "x": 84,
+          "y": 1470
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 196.6666666666667,
+          "symWidth": 148,
+          "text": "TAP",
+          "translation": "نقر",
+          "width": 376,
+          "x": 175,
+          "y": 1741
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "060.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 21.83333333333333,
+          "text": "SHH ...",
+          "translation": "شش...",
+          "width": 123,
+          "x": 540,
+          "y": 294
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 29.88461538461539,
+          "symWidth": 20.81868131868132,
+          "text": "HUSH ,  MY  LITTLE KITTEN .",
+          "translation": "اصمتِ، صغيرتي الطاهرة.",
+          "width": 315,
+          "x": 126,
+          "y": 1625
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "061.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 32.33333333333334,
+          "text": "???",
+          "translation": "؟؟؟",
+          "width": 87,
+          "x": 237,
+          "y": 576
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 24.75,
+          "symWidth": 21.16054778554778,
+          "text": "YOU  SHOULD BE  MORE  CAREFUL ABOUT  SAYING SUCH  WORDS !",
+          "translation": "ينبغي أن تحذر أكثرُ\nعند نطق مثل هذه الأقوال!",
+          "width": 299,
+          "x": 491,
+          "y": 1377
+        }
+      ],
+      "imgHeight": 1916,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "062.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 22.3,
+          "text": "WHAT  WORDS ?",
+          "translation": "أي كلمات؟",
+          "width": 236,
+          "x": 179,
+          "y": 324
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 39,
+          "symWidth": 46.66666666666666,
+          "text": "000",
+          "translation": "000",
+          "width": 64,
+          "x": 719,
+          "y": 614
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 28,
+          "symWidth": 26.25,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 91,
+          "x": 531,
+          "y": 1043
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.25,
+          "symWidth": 20.91547619047619,
+          "text": "WEREN'T  YOU GOING  TO  PROPOSE A  CONTRACT MARRIAGE ?",
+          "translation": "ألستَ تنوي اقتراح زواج بالتراضي؟",
+          "width": 317,
+          "x": 541,
+          "y": 1150
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "063.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.25,
+          "symWidth": 22.46527777777778,
+          "text": "WHY  WOULD YOU  SAY SOMETHING SO  ABSURD ?",
+          "translation": "لماذا تقول مثل هذا الهراء؟",
+          "width": 334,
+          "x": 172,
+          "y": 66
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 27.03333333333333,
+          "symWidth": 20.66515151515151,
+          "text": "WELL ,  YOU  DID SAY  \" UNDERHANDED METHODS , \"  DIDN'T YOU ?",
+          "translation": "حسناً، ألم تقل \"بأساليب ملتوية\"؟",
+          "width": 315,
+          "x": 534,
+          "y": 341
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "064.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 27.89705882352941,
+          "symWidth": 22.90104166666667,
+          "text": "AS  A  MARRIED  COUPLE , WE  WOULD  HAVE  COMMON OWNERSHIP  OVER  OUR POSSESSIONS ,",
+          "translation": "كزوجين، سيكون لنا ملكية مشتركة على ممتلكاتنا،",
+          "width": 443,
+          "x": 112,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 27.2,
+          "symWidth": 21.87534965034965,
+          "text": "AND  THE  ONLY LEGAL  WAY  TO  GET YOUR  HANDS  ON THIS SWORD ...",
+          "translation": "وطريقة قانونية واحدة فقط للحصول على هذه السيف...",
+          "width": 323,
+          "x": 502,
+          "y": 613
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "065.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 20.875,
+          "text": "... IS  THAT ,  RIGHT ?",
+          "translation": "... أليس كذلك؟",
+          "width": 346,
+          "x": 166,
+          "y": 665
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 38,
+          "symWidth": 38,
+          "text": "**",
+          "translation": "",
+          "width": 73,
+          "x": 352,
+          "y": 1339
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "066.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 21.07692307692308,
+          "text": "To  be  continued",
+          "translation": "تابع...",
+          "width": 283,
+          "x": 551,
+          "y": 850
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 37.25,
+          "symWidth": 48.32142857142857,
+          "text": "La Yeondam",
+          "translation": "لا يوندام",
+          "width": 98,
+          "x": 746,
+          "y": 1377
+        }
+      ],
+      "imgHeight": 1606,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "067.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 22.4,
+          "symWidth": 11.21395348837209,
+          "text": "This  work  is  protected  by  copyright  laws  and  we prohibit  unauthorized  use ,  duplication ,  distribution  or sharing .  Any  unauthorized  use ,  duplication  or  sharing may  be  punishable  by  law  pertaining  to  copyright protection ,  intellectual  properties ,  etc.",
+          "translation": "هذا العمل محمي بحقوق النشر ونمنع الاستخدام أو النسخ أو التوزيع أو المشاركة غير المصرح بها. وأي استخدام أو نسخ أو مشاركة غير مرخصة قد يعرض مرتكبها للعقوبات القانونية المتعلقة بحماية حقوق النشر والملكية الفكرية وغيرها.",
+          "width": 618,
+          "x": 162,
+          "y": 169
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 11.38709677419355,
+          "text": "Localization  Produced  by  Kakao  Ent .",
+          "translation": "الترجمة أنتجتها شركة كاكاو للإعلام.",
+          "width": 406,
+          "x": 266,
+          "y": 364
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 64,
+          "symWidth": 43.8,
+          "text": "kakao",
+          "translation": "كاكاو",
+          "width": 239,
+          "x": 354,
+          "y": 458
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 19.23076923076923,
+          "text": "ENTERTAINMENT",
+          "translation": "للترفيه",
+          "width": 300,
+          "x": 321,
+          "y": 556
+        }
+      ],
+      "imgHeight": 705,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "068.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 14.65116279069767,
+          "text": "Authorized  for  Publishing  on  Tapas  Entertainment",
+          "translation": "مخوّل بالنشر عبر تاباتس إنترتينمنت",
+          "width": 742,
+          "x": 100,
+          "y": 170
+        }
+      ],
+      "imgHeight": 490,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "069.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 96.63068181818181,
+          "symWidth": 58.14772727272727,
+          "text": "Localized  by kiwivinė",
+          "translation": "",
+          "width": 780,
+          "x": 24,
+          "y": 24
+        }
+      ],
+      "imgHeight": 277,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

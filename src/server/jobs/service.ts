@@ -1167,10 +1167,17 @@ async function processStartedTranslationJob(
         pages: uploadedOcrPages,
       });
 
-      layoutPages = ocrPages.map((page) => ({
-        ...page,
-        ocrPage: coalesceOcrLineBlocks(page.ocrPage),
-      }));
+      layoutPages = ocrPages.map((page) => {
+        const ocrPage = withEffectiveOcrSourceLanguage(
+          page.ocrPage,
+          startedJob.sourceLanguage
+        );
+
+        return {
+          ...page,
+          ocrPage: coalesceOcrLineBlocks(ocrPage),
+        };
+      });
     }
 
     layoutPages = coalesceOcrPageContinuations(layoutPages);
@@ -2302,7 +2309,16 @@ function mapCachedManifestToOcrLayoutPages(input: {
       return null;
     }
 
-    const sanitizedPage = sanitizeHostedPageTranslation(cachedPage);
+    const sourceLanguage = resolveCachedPageSourceLanguage({
+      jobSourceLanguage: input.job.sourceLanguage,
+      manifestSourceLanguage: input.manifest.sourceLanguage,
+      pageSourceLanguage: cachedPage.sourceLanguage,
+    });
+    const sanitizedPage = sanitizeHostedPageTranslation(
+      cachedPage,
+      sourceLanguage,
+      'cached_ocr_source'
+    );
     const ocrPage = zNormalizedOcrPage.parse({
       blocks: sanitizedPage.blocks.map(
         ({ translation: _translation, ...block }) => block
@@ -2312,8 +2328,7 @@ function mapCachedManifestToOcrLayoutPages(input: {
       provider: toGatewayOcrProvider(input.job.resolvedOcrProvider),
       providerModel: 'cached_result_manifest',
       providerRequestId: input.cacheKey,
-      sourceLanguage:
-        sanitizedPage.sourceLanguage || input.manifest.sourceLanguage,
+      sourceLanguage,
       usage: {
         inputTokens: null,
         latencyMs: 0,
@@ -2372,7 +2387,14 @@ function rebindCachedManifestToJob(input: {
     }
 
     pageOrder.push(asset.originalFileName);
-    pages[asset.originalFileName] = sanitizeHostedPageTranslation(cachedPage);
+    pages[asset.originalFileName] = sanitizeHostedPageTranslation(
+      cachedPage,
+      resolveCachedPageSourceLanguage({
+        jobSourceLanguage: input.job.sourceLanguage,
+        manifestSourceLanguage: input.manifest.sourceLanguage,
+        pageSourceLanguage: cachedPage.sourceLanguage,
+      })
+    );
   }
 
   return zTranslationJobResultManifest.parse({
@@ -2628,7 +2650,9 @@ function parseCachedResultManifest(rawManifest: unknown) {
 }
 
 function sanitizeHostedPageTranslation(
-  page: HostedPageTranslation
+  page: HostedPageTranslation,
+  sourceLanguage?: string,
+  mode?: 'cached_ocr_source' | 'translated_manifest'
 ): HostedPageTranslation {
   return {
     ...page,
@@ -2645,6 +2669,8 @@ function sanitizeHostedPageTranslation(
       .filter(
         (block) =>
           !shouldDropProviderTranslationBlock({
+            mode,
+            sourceLanguage: sourceLanguage ?? page.sourceLanguage,
             sourceText: block.text,
             translation: block.rawTranslation,
           })
@@ -2967,7 +2993,7 @@ function resolveEffectiveSourceLanguage(
   }
 
   const counts = detectedLanguages
-    .filter((language) => language && language !== 'auto')
+    .filter((language) => language && !isUnknownSourceLanguage(language))
     .reduce<Record<string, number>>((accumulator, language) => {
       accumulator[language] = (accumulator[language] ?? 0) + 1;
       return accumulator;
@@ -2978,6 +3004,59 @@ function resolveEffectiveSourceLanguage(
   )[0]?.[0];
 
   return dominantLanguage ?? 'auto';
+}
+
+function withEffectiveOcrSourceLanguage(
+  ocrPage: NormalizedOcrPage,
+  requestedSourceLanguage: string
+): NormalizedOcrPage {
+  const sourceLanguage = resolveOcrPageSourceLanguage({
+    detectedSourceLanguage: ocrPage.sourceLanguage,
+    fallbackSourceLanguage: requestedSourceLanguage,
+  });
+
+  if (sourceLanguage === ocrPage.sourceLanguage) {
+    return ocrPage;
+  }
+
+  return {
+    ...ocrPage,
+    sourceLanguage,
+  };
+}
+
+function resolveCachedPageSourceLanguage(input: {
+  jobSourceLanguage: string;
+  manifestSourceLanguage: string;
+  pageSourceLanguage: string;
+}) {
+  return resolveOcrPageSourceLanguage({
+    detectedSourceLanguage: input.pageSourceLanguage,
+    fallbackSourceLanguage: !isUnknownSourceLanguage(
+      input.manifestSourceLanguage
+    )
+      ? input.manifestSourceLanguage
+      : input.jobSourceLanguage,
+  });
+}
+
+function resolveOcrPageSourceLanguage(input: {
+  detectedSourceLanguage: string;
+  fallbackSourceLanguage: string;
+}) {
+  if (!isUnknownSourceLanguage(input.fallbackSourceLanguage)) {
+    return input.fallbackSourceLanguage;
+  }
+
+  if (!isUnknownSourceLanguage(input.detectedSourceLanguage)) {
+    return input.detectedSourceLanguage;
+  }
+
+  return 'auto';
+}
+
+function isUnknownSourceLanguage(sourceLanguage: string) {
+  return /^(?:auto|und|undetermined|unknown)$/i.test(sourceLanguage.trim());
 }
 
 function toPrismaTranslationProvider(

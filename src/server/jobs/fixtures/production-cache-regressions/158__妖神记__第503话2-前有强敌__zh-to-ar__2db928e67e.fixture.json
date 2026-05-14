@@ -1,0 +1,853 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0158",
+  "jobId": "fixture-job-0158",
+  "licenseId": "fixture-license-0158",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 16.72,
+          "text": "colamanga.com 观看 , 最快 最 稳 ,  广告 最少",
+          "translation": "RTMTH",
+          "width": 550,
+          "x": 104,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.53846153846154,
+          "symWidth": 17.46153846153846,
+          "text": "赤 蟒 , 我们 真的 不管 她 了 吗 ?",
+          "translation": "أيتها الأفعى الحمراء، هل سنتركها حقاً؟",
+          "width": 107,
+          "x": 76,
+          "y": 175
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 19.38461538461538,
+          "symWidth": 18.76923076923077,
+          "text": "可是 , 万一 她 受伤 了 怎 么 办 ?",
+          "translation": "وإن أصيبت، فماذا سنفعل؟",
+          "width": 110,
+          "x": 465,
+          "y": 183
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.5,
+          "text": "不管 了 !",
+          "translation": "لا مبالاة!",
+          "width": 71,
+          "x": 320,
+          "y": 373
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20.26666666666667,
+          "symWidth": 17.8952380952381,
+          "text": "哈哈 , 谁要 是 能 伤 得了 这 母 暴龙 , 那 真是 高手 了 。",
+          "translation": "هاها، من يستطيع أن يؤذي هذه التيرانوصور الأم؟ إنه بحق بارع حقًا.",
+          "width": 160,
+          "x": 109,
+          "y": 506
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.625,
+          "text": "你们 好像 真 的 很熟 …",
+          "translation": "يبدو أنكم على معرفة حقيقية...",
+          "width": 107,
+          "x": 435,
+          "y": 667
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.75,
+          "text": "第三 个 。",
+          "translation": "الثالث.",
+          "width": 72,
+          "x": 414,
+          "y": 1087
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 26.5,
+          "symWidth": 22.34358974358975,
+          "text": "ACLOUDMEROL.COM COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 289,
+          "x": 1,
+          "y": 1151
+        }
+      ],
+      "imgHeight": 1220,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20.35,
+          "symWidth": 18.45,
+          "text": "你 以为 设 下 阵法 禁制 , 就能 阻挡 本 神 的 追踪 ?",
+          "translation": "هل تظن أن وضعي لذلك الطوق السحري سيمنع عزيمتي؟",
+          "width": 153,
+          "x": 233,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.66666666666667,
+          "text": "天真 。",
+          "translation": "سذاجة.",
+          "width": 51,
+          "x": 476,
+          "y": 298
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 55.875,
+          "text": "west  as ..",
+          "translation": "الريح تهب...",
+          "width": 268,
+          "x": 80,
+          "y": 644
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 18.83333333333334,
+          "symWidth": 16.91666666666667,
+          "text": "哼 , 又 被 你 找 到 了 。",
+          "translation": "همم، عثرتَ عليَّ مجددًا.",
+          "width": 129,
+          "x": 79,
+          "y": 787
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.31818181818182,
+          "symWidth": 18.54545454545455,
+          "text": "不过 , 本尊 化身 无数 , 纵然 你 杀 掉 几个 又能 如何 ?",
+          "translation": "لكنني قد تنكَّرت بغير عدد، وحتى إن قتلت عدة أجساد، فماذا ينفعك؟",
+          "width": 163,
+          "x": 535,
+          "y": 890
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 26.5,
+          "symWidth": 23.15128205128205,
+          "text": "ACLOUDMEROL.COM COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 291,
+          "x": 0,
+          "y": 1062
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20.5,
+          "symWidth": 17.66666666666666,
+          "text": "放肆 ! 本体 藏 头 露 尾 , 却让",
+          "translation": "وقحٌ! جسدي المختبئ يكشف عن ذيوله، ومع ذلك...",
+          "width": 131,
+          "x": 487,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.8,
+          "text": "待 我 突破 之 日 , 就是 你 们 的 死期 。",
+          "translation": "حين أتجاوز هذه المرحلة، سيكون مصيركم محتومًا.",
+          "width": 109,
+          "x": 67,
+          "y": 125
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 18.375,
+          "text": "这些 分身 蝼 蚁 来 送死 。",
+          "translation": "تلك الأجساد التافهة ترمي بأنفسها للموت.",
+          "width": 130,
+          "x": 488,
+          "y": 127
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.33333333333333,
+          "symWidth": 16.16666666666667,
+          "text": "这 片 秘境 , 是 属于 我 的 !",
+          "translation": "هذه الأرض الخفية ملك لي وحدي!",
+          "width": 94,
+          "x": 336,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 17.6,
+          "text": "真是 可笑 。",
+          "translation": "غاية في السخافة.",
+          "width": 94,
+          "x": 517,
+          "y": 388
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 75.5,
+          "symWidth": 44,
+          "text": "V  z",
+          "translation": "V  z",
+          "width": 77,
+          "x": 553,
+          "y": 860
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 17,
+          "text": "HCLOUDMLN",
+          "translation": "HCLOUDMLN",
+          "width": 175,
+          "x": 501,
+          "y": 1079
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 116,
+          "x": 11,
+          "y": 1083
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 21.84615384615385,
+          "text": "COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 288,
+          "x": 503,
+          "y": 1096
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20,
+          "symWidth": 18.77777777777778,
+          "text": "妖 神宗 主 , 你 纵 然 用尽 手段 , 甚 至 设 下 阵法 禁制 来 阻碍 本 神 。",
+          "translation": "يا سيد طائفة الشياطين، رغم كل ما بذلت من الحيل وحتى الفِخاخ،",
+          "width": 153,
+          "x": 222,
+          "y": 88
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.81818181818182,
+          "symWidth": 18.04545454545455,
+          "text": "但 你 以为 这样 就 能 保住 自己 ? 太 天真 了 。",
+          "translation": "هل تظن أن ذلك ينقذك؟ يا له من وهم عظيم.",
+          "width": 152,
+          "x": 440,
+          "y": 91
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.5,
+          "symWidth": 17.58333333333333,
+          "text": "我 会把 你 的 所有 分身 找 出来 , 灭杀 !",
+          "translation": "سأُعثرُ على كل أجسادك الموازية وأبيدها!",
+          "width": 109,
+          "x": 460,
+          "y": 336
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.07142857142857,
+          "symWidth": 19.21428571428572,
+          "text": "蝼 蚁 也 敢 觊 觎 本 神 的 东 西 ?",
+          "translation": "هل تجرؤ الحشرات على الطمع فيما أملك؟",
+          "width": 108,
+          "x": 468,
+          "y": 522
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19.5,
+          "symWidth": 13.5,
+          "text": "哼 。",
+          "translation": "همم.",
+          "width": 28,
+          "x": 651,
+          "y": 608
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.5,
+          "symWidth": 17.825,
+          "text": "嗯 … 还 让 几 个 妖 神宗 的 蝼 蚁 溜进 来 了 。",
+          "translation": "بل، لقد تمكنت بعض صدقات الطائفة من التسلل.",
+          "width": 109,
+          "x": 88,
+          "y": 609
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 15.66666666666667,
+          "text": "不对 !",
+          "translation": "ليس هكذا!",
+          "width": 51,
+          "x": 425,
+          "y": 799
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 24.6,
+          "symWidth": 21.53333333333333,
+          "text": "ACLOUDMERCE.COM",
+          "translation": "RTMTH",
+          "width": 288,
+          "x": 500,
+          "y": 1064
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 34.66666666666666,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 115,
+          "x": 11,
+          "y": 1081
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 21.84615384615385,
+          "text": "COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 289,
+          "x": 503,
+          "y": 1096
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 20.66666666666667,
+          "text": "他 好像",
+          "translation": "يبدو أنه...",
+          "width": 65,
+          "x": 425,
+          "y": 622
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 18.6,
+          "text": "这 … 这 是 何",
+          "translation": "هذا... ما هذا؟",
+          "width": 108,
+          "x": 60,
+          "y": 645
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 17.33333333333333,
+          "text": "能 看见 我们 。",
+          "translation": "يرانا.",
+          "width": 62,
+          "x": 426,
+          "y": 648
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.8,
+          "text": "等 的 威 压 !",
+          "translation": "هيبته تملأ المكان!",
+          "width": 95,
+          "x": 60,
+          "y": 672
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 19.8,
+          "text": "竟然 比 宗主 还要 强得多",
+          "translation": "أقوى بكثير من سيد الطائفة!",
+          "width": 110,
+          "x": 270,
+          "y": 736
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14.5,
+          "text": "啊 ?",
+          "translation": "ها؟",
+          "width": 31,
+          "x": 655,
+          "y": 770
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 21,
+          "symWidth": 19.5,
+          "text": "原来 如此 , 难怪 离 火 圣 子 会 这么",
+          "translation": "آه، الآن فهمت، لذلك يلتف حول ابن النار المقدس...",
+          "width": 152,
+          "x": 58,
+          "y": 942
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 21.25,
+          "text": "原来 背后",
+          "translation": "في الحقيقة خلفه...",
+          "width": 87,
+          "x": 634,
+          "y": 979
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.57142857142857,
+          "text": "强 , 难怪 宗 主要",
+          "translation": "عظيمٌ، لذلك يريد سيد الطائفة...",
+          "width": 152,
+          "x": 59,
+          "y": 997
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.25,
+          "text": "是 待 神 !",
+          "translation": "الانتظار هو مصير العتاة!",
+          "width": 74,
+          "x": 634,
+          "y": 1005
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 17.25,
+          "text": "对付 他 。",
+          "translation": "للقضاء عليه.",
+          "width": 73,
+          "x": 59,
+          "y": 1023
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 30.13333333333333,
+          "symWidth": 23.53333333333333,
+          "text": "ACLOUDMERCE.COM",
+          "translation": "RTMTH",
+          "width": 292,
+          "x": 496,
+          "y": 1059
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 34.66666666666666,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 115,
+          "x": 12,
+          "y": 1081
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 21.69230769230769,
+          "text": "COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 288,
+          "x": 503,
+          "y": 1096
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.71428571428571,
+          "text": "哼 … 如今 本 神 也 没 心情 和 你们 玩 了 。",
+          "translation": "همم... في هذه اللحظة، لا أريد أن ألهو معكم.",
+          "width": 154,
+          "x": 63,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 16.75,
+          "text": "一并 死去 吧 。",
+          "translation": "اهلكوا جميعًا!",
+          "width": 87,
+          "x": 260,
+          "y": 308
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.5,
+          "symWidth": 17.125,
+          "text": "光暗 元气 爆 !",
+          "translation": "انفجار الطاقة المظلمة والنورانية!",
+          "width": 88,
+          "x": 137,
+          "y": 510
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19.33333333333333,
+          "symWidth": 11.33333333333333,
+          "text": "吼 !!",
+          "translation": "هااه!!",
+          "width": 52,
+          "x": 484,
+          "y": 968
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 24.75,
+          "symWidth": 22,
+          "text": "ACLOUDMILAOL.COM",
+          "translation": "RTMTH",
+          "width": 288,
+          "x": 499,
+          "y": 1064
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 117,
+          "x": 11,
+          "y": 1083
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 21.84615384615385,
+          "text": "COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 287,
+          "x": 503,
+          "y": 1095
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 15.33333333333333,
+          "text": "【 吸收",
+          "translation": "[امتصاص",
+          "width": 47,
+          "x": 486,
+          "y": 546
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 19,
+          "text": "吸收",
+          "translation": "تم الامتصاص",
+          "width": 40,
+          "x": 549,
+          "y": 588
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.75,
+          "symWidth": 18.15,
+          "text": "哦 ? 这 血雾 竟然 能 遮蔽 我 的 视线 。",
+          "translation": "حقًا؟ هذه الضبابية الدموية تحجب بصري.",
+          "width": 109,
+          "x": 252,
+          "y": 825
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 17,
+          "symWidth": 15.23333333333333,
+          "text": "哼 , 拥有 空 冥 传承 的 老 鼠 , 倒 有些 东西 。",
+          "translation": "همم، فأر يحمل ميراث الفراغ، لديه بعض الحيل.",
+          "width": 96,
+          "x": 259,
+          "y": 958
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 27,
+          "symWidth": 20.42788461538461,
+          "text": "ACLOUDME COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 288,
+          "x": 2,
+          "y": 1065
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 13,
+          "text": "走 !",
+          "translation": "انطلقوا!",
+          "width": 30,
+          "x": 307,
+          "y": 483
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 36.93333333333333,
+          "symWidth": 22.13333333333333,
+          "text": "ACLOUDMERCE.COM",
+          "translation": "RTMTH",
+          "width": 292,
+          "x": 500,
+          "y": 1053
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 37,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 120,
+          "x": 10,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 29,
+          "symWidth": 22.07692307692308,
+          "text": "COLAMANGA.COM",
+          "translation": "RTMTH",
+          "width": 287,
+          "x": 503,
+          "y": 1094
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.83333333333333,
+          "symWidth": 16.88888888888889,
+          "text": "蝼 蚁 , 在 本 神 面前 耍 这些 小 戏 。",
+          "translation": "أيها الحثالة، تُمارسون هذا التمويه أمام عيني؟",
+          "width": 129,
+          "x": 445,
+          "y": 79
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 18.8,
+          "text": "你们 以为 能 逃得 掉 吗 ?",
+          "translation": "هل تعتقدون أنكم ستهربون؟",
+          "width": 109,
+          "x": 609,
+          "y": 324
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.20833333333333,
+          "text": "不管 你 逃到 哪里 , 我 都会 把 你们 找出 * ......",
+          "translation": "مهما فررتم، سأعثر عليكم...",
+          "width": 173,
+          "x": 106,
+          "y": 502
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 21,
+          "symWidth": 18.5,
+          "text": "我 会把 整个 妖 神 宗 … 统统 杀光 !",
+          "translation": "سأُبيدُ جميع طائفة الشياطين بأكملها!",
+          "width": 151,
+          "x": 507,
+          "y": 912
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 27.33333333333333,
+          "symWidth": 18.82282051282051,
+          "text": "ACLO COLAMANGA.COM colamanga.com 观看 , 最快 最 稳 , 广告 最少",
+          "translation": "RTMTH",
+          "width": 677,
+          "x": 1,
+          "y": 1064
+        }
+      ],
+      "imgHeight": 1226,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

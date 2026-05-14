@@ -1,0 +1,4022 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0124",
+  "jobId": "fixture-job-0124",
+  "licenseId": "fixture-license-0124",
+  "pageCount": 175,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp",
+    "029.webp",
+    "030.webp",
+    "031.webp",
+    "032.webp",
+    "033.webp",
+    "034.webp",
+    "035.webp",
+    "036.webp",
+    "037.webp",
+    "038.webp",
+    "039.webp",
+    "040.webp",
+    "041.webp",
+    "042.webp",
+    "043.webp",
+    "044.webp",
+    "045.webp",
+    "046.webp",
+    "047.webp",
+    "048.webp",
+    "049.webp",
+    "050.webp",
+    "051.webp",
+    "052.webp",
+    "053.webp",
+    "054.webp",
+    "055.webp",
+    "056.webp",
+    "057.webp",
+    "058.webp",
+    "059.webp",
+    "060.webp",
+    "061.webp",
+    "062.webp",
+    "063.webp",
+    "064.webp",
+    "065.webp",
+    "066.webp",
+    "067.webp",
+    "068.webp",
+    "069.webp",
+    "070.webp",
+    "071.webp",
+    "072.webp",
+    "073.webp",
+    "074.webp",
+    "075.webp",
+    "076.webp",
+    "077.webp",
+    "078.webp",
+    "079.webp",
+    "080.webp",
+    "081.webp",
+    "082.webp",
+    "083.webp",
+    "084.webp",
+    "085.webp",
+    "086.webp",
+    "087.webp",
+    "088.webp",
+    "089.webp",
+    "090.webp",
+    "091.webp",
+    "092.webp",
+    "093.webp",
+    "094.webp",
+    "095.webp",
+    "096.webp",
+    "097.webp",
+    "098.webp",
+    "099.webp",
+    "100.webp",
+    "101.webp",
+    "102.webp",
+    "103.webp",
+    "104.webp",
+    "105.webp",
+    "106.webp",
+    "107.webp",
+    "108.webp",
+    "109.webp",
+    "110.webp",
+    "111.webp",
+    "112.webp",
+    "113.webp",
+    "114.webp",
+    "115.webp",
+    "116.webp",
+    "117.webp",
+    "118.webp",
+    "119.webp",
+    "120.webp",
+    "121.webp",
+    "122.webp",
+    "123.webp",
+    "124.webp",
+    "125.webp",
+    "126.webp",
+    "127.webp",
+    "128.webp",
+    "129.webp",
+    "130.webp",
+    "131.webp",
+    "132.webp",
+    "133.webp",
+    "134.webp",
+    "135.webp",
+    "136.webp",
+    "137.webp",
+    "138.webp",
+    "139.webp",
+    "140.webp",
+    "141.webp",
+    "142.webp",
+    "143.webp",
+    "144.webp",
+    "145.webp",
+    "146.webp",
+    "147.webp",
+    "148.webp",
+    "149.webp",
+    "150.webp",
+    "151.webp",
+    "152.webp",
+    "153.webp",
+    "154.webp",
+    "155.webp",
+    "156.webp",
+    "157.webp",
+    "158.webp",
+    "159.webp",
+    "160.webp",
+    "161.webp",
+    "162.webp",
+    "163.webp",
+    "164.webp",
+    "165.webp",
+    "166.webp",
+    "167.webp",
+    "168.webp",
+    "169.webp",
+    "170.webp",
+    "171.webp",
+    "172.webp",
+    "173.webp",
+    "174.webp",
+    "175.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 17,
+          "text": "嬉皮 漫画 hipmh.com",
+          "translation": "",
+          "width": 257,
+          "x": 806,
+          "y": 15
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 348,
+          "symHeight": 97.61868686868686,
+          "symWidth": 78.51515151515152,
+          "text": "这一 世 至尊 The  ULTIMATE of  All  Ages",
+          "translation": "السمو الأعظم عبر العصور",
+          "width": 502,
+          "x": 416,
+          "y": 431
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 33,
+          "text": "改编 自 阅 文 集团 起点 中文 网 作者",
+          "translation": "مقتبس من مجموعة يوانوين التابعة لموقع كي ديان الصيني",
+          "width": 538,
+          "x": 280,
+          "y": 177
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 32.78571428571428,
+          "text": "太 一生 水 原创 小说 《 万古 至尊 》",
+          "translation": "رواية أصلية من تأليف تاي إيشينغ شوي \"الأسمى الدائم\"",
+          "width": 521,
+          "x": 280,
+          "y": 240
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 49,
+          "symWidth": 40.66666666666666,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "شاهِدوا! حصريًا في المانغا",
+          "width": 376,
+          "x": 354,
+          "y": 452
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 36,
+          "symWidth": 30.71428571428572,
+          "text": "原著 : 太 一生 水",
+          "translation": "المؤلف الأصلي: تاي إيشينغ شوي",
+          "width": 266,
+          "x": 356,
+          "y": 682
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 34.2,
+          "text": "漫画 改编 : 鑫 A4 漫 业",
+          "translation": "تحويل المانغا: شين A4 مانغا انDUSTRY",
+          "width": 384,
+          "x": 356,
+          "y": 748
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "renderMode": "mask_only",
+          "symHeight": 35,
+          "symWidth": 30.4,
+          "text": "脚本 : 滴水",
+          "translation": "",
+          "width": 189,
+          "x": 358,
+          "y": 811
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 30.1,
+          "text": "脚本 : 滴水 监制 : 滴水",
+          "translation": "السيناريو: ديوشو الإشراف: ديوشو",
+          "width": 190,
+          "x": 357,
+          "y": 31
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 32.28571428571428,
+          "text": "主笔 : 杰克 挪威",
+          "translation": "الرسام الرئيسي: جاك نوروي",
+          "width": 269,
+          "x": 356,
+          "y": 94
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 25.4,
+          "text": "线 稿 助手 : 815110  老邢  九日",
+          "translation": "مساعد الخطوط: 815110، لاو شينغ، جيو ري",
+          "width": 506,
+          "x": 356,
+          "y": 160
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 34.16666666666666,
+          "text": "阿米巴  小 电影",
+          "translation": "أميبا الفيلم الصغير",
+          "width": 247,
+          "x": 547,
+          "y": 224
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 36.52380952380953,
+          "symWidth": 28.80952380952381,
+          "text": "色彩 助手 : JXH  FN  午夜 党  猫 小呆 责编 : 春雨",
+          "translation": "مساعد التلوين: JXH، FN، حزب منتصف الليل، ماو شياو داي، التحرير: تشون يو",
+          "width": 590,
+          "x": 357,
+          "y": 288
+        }
+      ],
+      "imgHeight": 666,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 52.51515151515152,
+          "symWidth": 48.21212121212121,
+          "text": "为了 破解 李云霄 的 封 印 , 徐 青 尝试 了 无数 种 办法 , 最后 甚至 找 到 了 裴明远 ,",
+          "translation": "لكسر ختم لي يونشياو، حاول شيو تشينغ جميع الوسائل، حتى أنه لجأ إلى باي مينغ يوان.",
+          "width": 515,
+          "x": 415,
+          "y": 622
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.33333333333334,
+          "symWidth": 50.82804232804233,
+          "text": "想 看看 琉璃 山庄 是否 有 力量 可以 破解 , 却 没 想到 琉璃 山庄 之 人 也是 一筹莫展 。",
+          "translation": "أراد التحقق مما إذا كان لدى منتجع لولي جبال قوى قد تفك الختم، لكنه لم يتوقع أن يكونوا عاجزين عن المساعدة.",
+          "width": 515,
+          "x": 132,
+          "y": 329
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 311,
+          "symHeight": 52.48571428571428,
+          "symWidth": 47.84999999999999,
+          "text": "更 过分 的 是 , 为了 确保 裴明远 的 安全 , 琉璃 山 庄 之 人 竟然 拿 徐 青 做 实 验 , 尝试 着 各种各样 古 怪 的 办法 ,",
+          "translation": "والأمر الأسوأ، لضمان سلامة باي مينغ يوان، استخدموا شيو تشينغ كفأر تجارب، مجربين كل أشكال الأساليب الغريبة.",
+          "width": 574,
+          "x": 97,
+          "y": 533
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 51.59090909090909,
+          "symWidth": 51.58333333333333,
+          "text": "徐 青 被 弄得 遍 体 是 伤 也 依然 毫无 进展 。",
+          "translation": "شيو تشينغ تعرض لإصابات بالغة وظل دون تقدم يذكر.",
+          "width": 343,
+          "x": 693,
+          "y": 604
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 16.78571428571428,
+          "text": "嬉皮 漫画 hipmh.com/",
+          "translation": "",
+          "width": 270,
+          "x": 16,
+          "y": 794
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 53,
+          "symWidth": 47.875,
+          "text": "徐 青 也 算 运气 好 , 找 机会 打伤 了 看守 侥幸 逃出 来 。",
+          "translation": "كان حظه جيداً، إذ وجد فرصة لجرح الحارس وهرب بحذر.",
+          "width": 455,
+          "x": 100,
+          "y": 596
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 52.66666666666667,
+          "symWidth": 50.77777777777777,
+          "text": "凭借 着 玉牌 上 的 信息 寻找 李 云霄 。",
+          "translation": "اعتمد في البحث عن لي يونشياو على المعلومات الموجودة في الرمز اليشمي.",
+          "width": 345,
+          "x": 495,
+          "y": 103
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 53.5,
+          "symWidth": 39.4,
+          "text": "哎 , 吃 了 不少 苦头 呀 ~ !",
+          "translation": "آه، لقد تحملت الكثير من المعاناة!",
+          "width": 339,
+          "x": 599,
+          "y": 260
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 53.47619047619048,
+          "symWidth": 47.79166666666666,
+          "text": "消息 我 带来 了 , 希 你 能 遵守 约定 , 替 我 解开 封印 。",
+          "translation": "جئت بالخبر، آمل أن تحترم عهدنا وأن تفك الختم لي.",
+          "width": 457,
+          "x": 98,
+          "y": 502
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 47,
+          "symWidth": 35.875,
+          "text": "嗯 , 你 说吧 。",
+          "translation": "حسناً، تفضل بالحديث.",
+          "width": 190,
+          "x": 738,
+          "y": 235
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 52.5,
+          "symWidth": 49.75,
+          "text": "我 真是 井底 之 蛙 , 贻笑大方",
+          "translation": "حقاً، أنا أعمى في قاع البئر، وأضحك على نفسي.",
+          "width": 339,
+          "x": 83,
+          "y": 736
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 48,
+          "symWidth": 33,
+          "text": "了 。",
+          "translation": ".",
+          "width": 73,
+          "x": 86,
+          "y": 32
+        },
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 54.0625,
+          "symWidth": 48.59375,
+          "text": "武道 一途 , 博大 精 远 , 即便 是 巅峰 强 者 也不 敢说 自己 可 以 窥 尽 天下 武学 ,",
+          "translation": "في دروب الفنون القتالية العميقة الشاسعة، لا يجرؤ حتى الأقوى على الادعاء بأنه قد أدرك بسرها كاملاً.",
+          "width": 456,
+          "x": 566,
+          "y": 100
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 34,
+          "symWidth": 15.5,
+          "text": "嬉皮 漫画  hipmh.com/",
+          "translation": "",
+          "width": 271,
+          "x": 16,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 53.75,
+          "symWidth": 47.83333333333334,
+          "text": "我 布 下 封印 之 术 , 若 没有 十足 信心 , 何敢 让 你 离开 呢 ?",
+          "translation": "لقد نصبت تعاويذ الاحتجاز، فلولا ثقتي المطلقة لما جرؤتك على المغادرة.",
+          "width": 423,
+          "x": 241,
+          "y": 223
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [],
+      "imgHeight": 73,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 52.5,
+          "symWidth": 43,
+          "text": "受教 了 !",
+          "translation": "أثرتم حيرتي!",
+          "width": 194,
+          "x": 204,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 333,
+          "symHeight": 52.125,
+          "symWidth": 47.19444444444444,
+          "text": "那 铁锤 的 消息 我 已经 打听 到 了 , 乃是 姜家 的 大小姐 姜若梅 , 姜 家 主母 阮红玉 的 亲生 女儿 。",
+          "translation": "لقد تحصّلت على خبر المطرقة الحديدية، إنها الآنسة الكبرى من عائلة جيانغ، جانغ رو مي، ابنة السيدة روآن هونغ يو، ربة بيت عائلة جيانغ.",
+          "width": 513,
+          "x": 446,
+          "y": 495
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 333,
+          "symHeight": 53.005,
+          "symWidth": 48.42555555555555,
+          "text": "只 因为 从小 得了 一种 怪病 , 即便 不吃不喝 能 变 的 壮实 , 所以 日积月累 就 成了 现在 这个 样子 。",
+          "translation": "ذلك لأن مرضاً غريباً أصابها في صغرها، فلم يكن يمكن لجسدها أن ينمو حتى ولو توقف عن الأكل والشرب، وهكذا تراكم الأمر وصارت بهذا السوء.",
+          "width": 514,
+          "x": 55,
+          "y": 358
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 52.63888888888889,
+          "symWidth": 49.35069444444445,
+          "text": "她 极少 在 众人 面前 露 面 , 而且 极为 忌讳 人 家 在 背后 谈论 她 , 所 以 敢说 的 人 不多 。",
+          "translation": "نادراً ما تظهر بين الناس، وتكره أن يُتحدث عنها في الخفاء، فلا يجرؤ كثيرون على الكلام.",
+          "width": 514,
+          "x": 497,
+          "y": 134
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 44,
+          "symWidth": 44,
+          "text": "快  快 看 漫画",
+          "translation": "",
+          "width": 284,
+          "x": 21,
+          "y": 456
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 50.75,
+          "symWidth": 47.64434523809523,
+          "text": "竟然 有 如此 怪病 , 对 一个 女人 来说 那 简直 是 生 不如 死啊 。",
+          "translation": "كالمرض العجيب هذا يحول حياة المرأة إلى جحيم لا يطاق.",
+          "width": 417,
+          "x": 595,
+          "y": 707
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "renderMode": "mask_only",
+          "symHeight": 49,
+          "symWidth": 45.83333333333333,
+          "text": "那 简直 是 生 不如 死啊 。",
+          "translation": "",
+          "width": 396,
+          "x": 595,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 52,
+          "symWidth": 47.32142857142857,
+          "text": "可不是 , 若非 如 此 , 这 姜家 大小 姐 继承 父母 遗传 的 话 ,",
+          "translation": "ذلك صحيح، لولا ذلك، لكانت الابنة الكبرى من عائلة جيانغ ورثت جمال والديها.",
+          "width": 403,
+          "x": 132,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 253,
+          "symHeight": 52.25,
+          "symWidth": 50.03571428571428,
+          "text": "定然 也是 个 美人 胚子 , 不至于 落 得 相貌 和 性格 都 如此 不堪 !",
+          "translation": "ولا كانت لتسقط في كيانها ومظهرها إلى ما هو أبعد مما هو الآن.",
+          "width": 400,
+          "x": 26,
+          "y": 591
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 32.92857142857143,
+          "symWidth": 16.28571428571428,
+          "text": "塔皮 漫画 hipmh.com .",
+          "translation": "",
+          "width": 269,
+          "x": 18,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 333,
+          "symHeight": 54.4,
+          "symWidth": 50.41460317460318,
+          "text": "那 什么 冰块 粉丝 团 的 事 不用 想 也 能 明白 了 , 然 是 姐姐 嫉妒 妹妹 , 这才 从 背后 搞 一些 见 不得 人 的 手段 。",
+          "translation": "لا حاجة إلى كثير تفكير عن فرقة المعجبين بقطع الثلج، فالاخت حسدت أختها، فاستعملت أساليب خبيثة خلف الكواليس.",
+          "width": 536,
+          "x": 470,
+          "y": 32
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "renderMode": "mask_only",
+          "symHeight": 54,
+          "symWidth": 49.5625,
+          "text": "以 红月 城 的 势力 地 位 , 就算 是 鲁聪子",
+          "translation": "",
+          "width": 458,
+          "x": 179,
+          "y": 744
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 54.5,
+          "symWidth": 49.25,
+          "text": "以 红月 城 的 势力 地 位 , 就算 是 鲁聪子 也 能 请来 , 竟然 会 找不到 医治 之 法 ?",
+          "translation": "بعنفوان قوة قلعة هونغ يو، حتى لو دعونا لو كونغ زي كان بوسعنا جلبه، فكيف يعجزون إذن عن إيجاد علاج؟",
+          "width": 455,
+          "x": 180,
+          "y": 40
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 52.08333333333333,
+          "symWidth": 46.58333333333333,
+          "text": "当真 是 奇怪 了 !",
+          "translation": "حقاً، إن الأمر عجيب للغاية!",
+          "width": 192,
+          "x": 527,
+          "y": 220
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 269,
+          "symHeight": 53.16666666666666,
+          "symWidth": 50.23958333333334,
+          "text": "此事 我 也 觉得 不可 思议 , 再三 打探 之 下 才 明白 一些 过往 之 事 。",
+          "translation": "في هذا الأمر، أنا أيضاً أجد الأمر عجيباً. وبعد استقصاء متكرر، بدأت أفهم بعضاً من ماضي الأمور.",
+          "width": 455,
+          "x": 101,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53,
+          "symWidth": 50.80158730158731,
+          "text": "你 可 曾 听闻 当年 生 在 红月 城 的 一件 震惊 天下 的",
+          "translation": "هل سمعت يوماً عن حادثة هزّت العالم وقُعت في مدينة القمر الأحمر؟",
+          "width": 401,
+          "x": 561,
+          "y": 651
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 51.5,
+          "symWidth": 42,
+          "text": "事 ?",
+          "translation": "حادثة؟",
+          "width": 86,
+          "x": 620,
+          "y": 15
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 265,
+          "symHeight": 53.25,
+          "symWidth": 48.65277777777778,
+          "text": "曾经 有人 在 红月 城 - 杀 了 阮家 三十 多名 武帝强 者 , 差点 让 阮 家 势力 灰飞烟灭 。",
+          "translation": "لقد قتل أحدهم في مدينة القمر الأحمر أكثر من ثلاثين من أقوى المحاربين في عشيرة روان، كاد أن يمحو نفوذها.",
+          "width": 511,
+          "x": 97,
+          "y": 105
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 53.33333333333333,
+          "symWidth": 48.08333333333333,
+          "text": "那一 战 真的 是 满城 尽 血 , 月色 染红 , 那一晚 真实 的 名 副 其实 的 红月 之 城 !",
+          "translation": "كانت معركةً مسرفة بالدماء، دامية كالدم تسربلت بها المدينة، لقد كانت حقاً المدينة الحمراء والقمر الدموي في تلك الليلة.",
+          "width": 454,
+          "x": 586,
+          "y": 639
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "renderMode": "mask_only",
+          "symHeight": 54,
+          "symWidth": 47.5,
+          "text": "其实 的 红月 之 城 !",
+          "translation": "",
+          "width": 422,
+          "x": 585,
+          "y": 3
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 255,
+          "symHeight": 71.66666666666667,
+          "symWidth": 66.35714285714285,
+          "text": "而 那 个人 , 就是 军 武帝 古 飞扬 !",
+          "translation": "ذلك الرجل، هو القائد المحارب غو في يانغ!",
+          "width": 398,
+          "x": 129,
+          "y": 511
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 154.5,
+          "symWidth": 81.5,
+          "text": "11",
+          "translation": "11",
+          "width": 95,
+          "x": 117,
+          "y": 227
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 15.92307692307692,
+          "text": "嬉皮 漫画 hipmh.com",
+          "translation": "",
+          "width": 259,
+          "x": 806,
+          "y": 797
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 53.5,
+          "symWidth": 53.68055555555556,
+          "text": "不是 这 跟 我 —— 这 跟 古 飞扬 大人 又有 什么 关系 ? 而且 这 跟 那 铁 锤 又有 什么 关系 ?",
+          "translation": "ما هذا الذي له علاقة بي—؟ وما شأنه بالسيد غو في يانغ؟ وما علاقة هذا بالمطرقة الحديدية؟",
+          "width": 515,
+          "x": 173,
+          "y": 559
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 59,
+          "symWidth": 50.75,
+          "text": "当然 有 !",
+          "translation": "بالطبع أن له!",
+          "width": 219,
+          "x": 169,
+          "y": 752
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 118,
+          "renderMode": "mask_only",
+          "symHeight": 53.5,
+          "symWidth": 51.27380952380953,
+          "text": "破 军 武帝 的 瞳 术 下 无双 , 已经",
+          "translation": "",
+          "width": 403,
+          "x": 469,
+          "y": 726
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 52.5,
+          "symWidth": 48.85119047619048,
+          "text": "破 军 武帝 的 瞳 术 下 无双 , 已经 到 了 神乎其技 的 程度 。",
+          "translation": "مهارة غو في يانغ في فنون النظر القتالية باتت فريدة، بلغت درجة من الإتقان تقارب السحر.",
+          "width": 395,
+          "x": 472,
+          "y": 22
+        },
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 53.66666666666666,
+          "symWidth": 45.08928571428572,
+          "text": "以 变 虚 为 实 , 改天 为 地 , 化 沧 海桑 田 , 转 星斗 皓月 !",
+          "translation": "تحويل الوهم إلى حقيقة، تبديل السماء بالأرض، تحويل البحار القاحلة إلى ألسنة الخضرة، وتحريك النجوم والقمر الساطع!",
+          "width": 401,
+          "x": 595,
+          "y": 168
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 54,
+          "symWidth": 47.97916666666666,
+          "text": "当年 红月 城 一 战 , 家 不仅 武帝 死 了 三 十多 人 ,",
+          "translation": "في معركة مدينة القمر الأحمر ذاك العام، لم يقتل ثلاثة عشر من المحاربين فقط،",
+          "width": 420,
+          "x": 92,
+          "y": 557
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 266,
+          "symHeight": 54.61764705882353,
+          "symWidth": 50.08823529411764,
+          "text": "而且 成百上千 的 族人 被 破 军 武帝 的 瞳 术 所 摄 , 一直 浑浑噩噩 , 如同 白痴 一般 ,",
+          "translation": "بل أوقعت عديداً من أفراد العشيرة تحت تأثير فنون النظر القتالية الخاصة بغو في يانغ، فأصبحوا فاقدي الإدراك، كالمجانين.",
+          "width": 516,
+          "x": 444,
+          "y": 150
+        },
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 53.8421052631579,
+          "symWidth": 52.21052631578947,
+          "text": "直到 数 年 之后 才 陆 陆续 续 的 回 神 清醒 过来 。",
+          "translation": "ولم يستعيدوا وعيهم إلا بعد سنوات عدة، شيئاً فشيئاً.",
+          "width": 400,
+          "x": 161,
+          "y": 483
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.webp": {
+      "blocks": [],
+      "imgHeight": 57,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 54.14814814814815,
+          "symWidth": 51.11111111111111,
+          "text": "阮红玉 便是 当年 被 瞳 术 所 摄 之 人 , 当时 她 已经 怀 上 了 姜若梅 。",
+          "translation": "روآن هونغ يو كانت إحدى هؤلاء المسحورين، وكانت آنذاك حاملاً بجانغ رو مي.",
+          "width": 423,
+          "x": 141,
+          "y": 190
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 48.6,
+          "text": "保  快 看 漫画",
+          "translation": "",
+          "width": 285,
+          "x": 20,
+          "y": 180
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 37,
+          "text": "造孽 啊 !!",
+          "translation": "يا لها من مصيبة!",
+          "width": 250,
+          "x": 739,
+          "y": 267
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 32.61538461538461,
+          "symWidth": 17.46153846153846,
+          "text": "谵 皮 漫画 hipmh.com",
+          "translation": "",
+          "width": 259,
+          "x": 806,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 52.17857142857143,
+          "symWidth": 49.60714285714285,
+          "text": "后来 姜若梅 出世 时 便有 三十 多斤 , 现在 怕 是 三百 公 斤 都 不止 了 ?",
+          "translation": "حين وُلدت جيانغ روماي، تجاوز وزنها الثلاثين رطلًا، والآن، قد لا تقل عن ثلاثمائة كيلوغرام.",
+          "width": 419,
+          "x": 255,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 335,
+          "symHeight": 53.77777777777778,
+          "symWidth": 49.22222222222222,
+          "text": "红月 城主 姜 楚 然 曾 多 方 求医 , 正如 你 所言 , 化 神 海 的 鲁聪子 大人 也 亲自 驾临 红月 城 , 结果 也 无济于事 。",
+          "translation": "لقد استشار جيانغ تشوران، سيد مدينة القمر الأحمر، العديد من الأطباء، وكما قلت، حضر السيد لو تسونغ زي من بحر تحوّل الآلهة بنفسه، ولكن دون جدوى.",
+          "width": 536,
+          "x": 493,
+          "y": 216
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 52.66666666666666,
+          "symWidth": 49.69047619047618,
+          "text": "鲁聪子 大人 当时 的 一句话 便 让 姜 若梅 和 阮红玉 彻 底 的 绝望 了 。",
+          "translation": "كلمة واحدة قالها السيد لو تسونغ زي حينذاك أغرقت جيانغ روماي وروانغ هونغيو في اليأس التام.",
+          "width": 399,
+          "x": 87,
+          "y": 62
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 54,
+          "symWidth": 50.62698412698413,
+          "text": "想不到 那 铁锤 的 一身 腱子 肉 竟然 是 我 造成 的 !",
+          "translation": "لم أكن أتخيل أن كل عضلات ذلك الرجل الحديدي كان سببها أنا!",
+          "width": 397,
+          "x": 645,
+          "y": 4
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 52,
+          "symWidth": 48,
+          "text": "鲁聪子 说 什么 了 ?",
+          "translation": "ماذا قال السيد لو تسونغ زي؟",
+          "width": 227,
+          "x": 175,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 300,
+          "symHeight": 53.55102040816327,
+          "symWidth": 50.02040816326531,
+          "text": "当时 鲁聪子 大人 说 姜若梅 身上 还 带着 破 军 武帝 瞳 术 的 咒 印 , 除非 破 军 武帝 亲 自 替 她 解除 , 否则 天下 间 无人 可 解 。",
+          "translation": "قال السيد لو تسونغ زي أن جيانغ روماي تحمل على جسدها لعنة فنون بصر إمبراطور الجيش المحطم، ولا أحد بالعالم سوى الإمبراطور نفسه قادر على رفعها.",
+          "width": 629,
+          "x": 103,
+          "y": 544
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 52.75,
+          "symWidth": 49.79166666666666,
+          "text": "以 当时 红月 城 和 破 军 武帝 的 关系 , 城主 姜 楚 然 怎么 可能 去找 他 。",
+          "translation": "في تلك الأيام، كيف لم يكن بإمكان حاكم القمر الأحمر، جيانغ تشوران، البحث عن الإمبراطور المحطم، على ضوء علاقتهم؟",
+          "width": 418,
+          "x": 539,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 50.69047619047619,
+          "symWidth": 46.39880952380953,
+          "text": "再 后来 破 军 武帝 身 陨 , 整个 天下 间 再 无人 可 破 此 咒 印 了 。",
+          "translation": "ثم توفي الإمبراطور المحطم، ولم يعد في العالم من يستطيع كسر تلك اللعنة بعده.",
+          "width": 399,
+          "x": 243,
+          "y": 666
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "046.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "renderMode": "mask_only",
+          "symHeight": 49,
+          "symWidth": 41.75,
+          "text": "咒 印 了 。",
+          "translation": "",
+          "width": 192,
+          "x": 243,
+          "y": 33
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "047.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 150.5,
+          "symWidth": 150.5,
+          "text": "AM",
+          "translation": "صباح الخير",
+          "width": 218,
+          "x": 366,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 52.6,
+          "symWidth": 33.37777777777778,
+          "text": ".. 我 多余 问 这个 ......",
+          "translation": ".. كان عليّ أن لا أسأل هذا...",
+          "width": 285,
+          "x": 657,
+          "y": 399
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "048.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 52.75,
+          "symWidth": 51.03125,
+          "text": "其实 这些 辛 秘 在 红 月 城 其实 算不得 什 么 秘密 , 只不过 众 人 都 不敢 谈论 。",
+          "translation": "في الحقيقة، هذه الأسرار ليست بأسرار حقيقية في مدينة القمر الأحمر، بل الجميع يخشى مناقشتها.",
+          "width": 459,
+          "x": 334,
+          "y": 285
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 17.69230769230769,
+          "text": "谵 庭 漫画 hipmh.com",
+          "translation": "",
+          "width": 259,
+          "x": 806,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "049.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 333,
+          "symHeight": 54.125,
+          "symWidth": 48.875,
+          "text": "至于 那 晏星华 , 乃是 姜 若 梅 一直 以来 的 玩伴 , 由于 姜若梅 体型 壮硕 , 所以 从 小 性格 怪癖 , 阮红玉 便 找 了 许多 同龄 的 孩童 陪 她 ,",
+          "translation": "أما يانغ شينهوا، فكان رفيق طفولة جيانغ روماي الدائم، ونتيجة لحجمها الضخم، وطباعها الغريبة من الصغر، فقد جعلت روانغ هونغيو تستعين بأطفال من نفس العمر لمرافقتها.",
+          "width": 630,
+          "x": 49,
+          "y": 11
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "050.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 52.70982142857143,
+          "symWidth": 49.54017857142857,
+          "text": "可惜 姜若梅 不仅 性 格 怪癖 , 还 极其 残 忍 , 另外 那些 玩伴 都 被 她 杀死 了 ,",
+          "translation": "لكن للأسف، لم تكن جيانغ روماي غريبة الطبع فقط، بل كانت شديدة القسوة، وقد قتلت كل رفاقها.",
+          "width": 458,
+          "x": 44,
+          "y": 295
+        },
+        {
+          "angle": 0,
+          "height": 250,
+          "symHeight": 53.5,
+          "symWidth": 47.57589285714286,
+          "text": "不知 为何 只 活 下 了 晏星华 , 据 闻 , 他 应该 是 姜若梅 的 牛郎 。",
+          "translation": "ولا يُعلم لماذا، نجا يانغ شينهوا فقط، ويقال إنه كان خادم الحب الخاص بجِيَانغ روماي.",
+          "width": 419,
+          "x": 426,
+          "y": 594
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "051.webp": {
+      "blocks": [],
+      "imgHeight": 183,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "052.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 333,
+          "symHeight": 52.63333333333334,
+          "symWidth": 49.04,
+          "text": "嗯 , 如此 看来 , 阮红玉 对 这个 女儿 应该 是 倍感 亏欠 的 , 否则 她 玩 些 乱 七八 糟 的 手段 , 阮红玉 不可能 不管 。",
+          "translation": "نعم، يبدو أن روانغ هونغيو مدركة لمدى تقصيرها تجاه تلك الابنة، وإلا لما سمحت بتصرفاتها العشوائية.",
+          "width": 573,
+          "x": 325,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 51.66666666666666,
+          "symWidth": 49.03174603174603,
+          "text": "若是 让 姜若梅 去 索要 东海 月 明珠 的 话 , 也许 能 要 来 也 说不定 。",
+          "translation": "ولو أُرسلت جيانغ روماي للمطالبة ببلورة قمر شرق البحر، قد تكون قادرة على الحصول عليها.",
+          "width": 398,
+          "x": 110,
+          "y": 581
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "053.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 49.33333333333334,
+          "symWidth": 45,
+          "text": "呵呵 ,",
+          "translation": "هه هه,",
+          "width": 137,
+          "x": 844,
+          "y": 35
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "054.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 332,
+          "symHeight": 51.625,
+          "symWidth": 48.69444444444444,
+          "text": "姜若梅 怎么 可能 会 帮 你 去 要 那 东海 月 明珠 呢 , 这 东西 已经 被 列 为 姜若冰 的 嫁妆 , 天 下 皆知 了 。",
+          "translation": "كيف لهانغ روماي أن يساعدك في استعادة جوهرة القمر الشرقية؟ لقد أصبحت هذه القطعة بمثابة مهراً لهانغ روبينغ، والكل يعلم ذلك.",
+          "width": 514,
+          "x": 476,
+          "y": 127
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 52.33333333333334,
+          "symWidth": 51.54285714285714,
+          "text": "除非 你 能把 她 那 一身 腱子 肉 除掉 还 差不多 。",
+          "translation": "إلا إذا تمكنت من إزالتها عن جسدها العضلي المتين، فقد يكون ذلك ممكناً.",
+          "width": 398,
+          "x": 278,
+          "y": 518
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "055.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 51,
+          "symWidth": 51.41666666666667,
+          "text": "你 小子 有 做 预 言 师 的 潜质 。",
+          "translation": "يا فتى، لديك موهبة لأن تصبح عرافاً.",
+          "width": 343,
+          "x": 114,
+          "y": 419
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "056.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 55.5,
+          "symWidth": 41.5,
+          "text": "嗯 ?",
+          "translation": "هم؟",
+          "width": 90,
+          "x": 523,
+          "y": 615
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 18.76923076923077,
+          "text": "谵 處 漫画 hipmh.com",
+          "translation": "",
+          "width": 258,
+          "x": 16,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "057.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 51.46666666666667,
+          "symWidth": 47.6,
+          "text": "你 的 这些 消 很有 价值 , 我 很 满意 。",
+          "translation": "معلوماتك قيمة جدًّا، وأنا راضٍ تمامًا.",
+          "width": 306,
+          "x": 223,
+          "y": 388
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "058.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 73.5,
+          "symWidth": 48.5,
+          "text": "唔 !",
+          "translation": "هم!",
+          "width": 107,
+          "x": 863,
+          "y": 354
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "059.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 55,
+          "symWidth": 49.97222222222223,
+          "text": "封印 之 力 已经 尽数 解 开 , 不仅 如此 , 我 被 琉璃 山庄 虐待 的 身体 也 似乎 恢复 了 一些 !",
+          "translation": "قدرة الختم قد تحررت بالكامل، وليس ذلك فحسب، بل يبدو أن جسدي الذي عُذب في جرف ليولي قد بدأ يستعيد عافيته!",
+          "width": 517,
+          "x": 160,
+          "y": 306
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "060.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "061.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 59.875,
+          "symWidth": 48.79166666666667,
+          "text": "这 、 这就 好 了 ?",
+          "translation": "هل، هل هذا كل شيء؟",
+          "width": 262,
+          "x": 578,
+          "y": 49
+        }
+      ],
+      "imgHeight": 530,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "062.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 52.61111111111111,
+          "symWidth": 47.21626984126984,
+          "text": "你 可以 走 了 。 次 再见 的 时候 , 希望 能 长 点 出息 。",
+          "translation": "يمكنك الرحيل الآن. آمل أن تثمر جهودك في لقائنا القادم.",
+          "width": 421,
+          "x": 245,
+          "y": 248
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "063.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42.33333333333334,
+          "symWidth": 28.66666666666667,
+          "text": "快 看 !",
+          "translation": "انظر بسرعة!",
+          "width": 75,
+          "x": 21,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 51,
+          "symWidth": 44.35,
+          "text": "我 会 的 ! 下次 再见 !",
+          "translation": "سأفعل! حتى نلتقي مرة أخرى!",
+          "width": 252,
+          "x": 415,
+          "y": 252
+        },
+        {
+          "angle": 0,
+          "height": 265,
+          "symHeight": 53.7,
+          "symWidth": 48.81666666666666,
+          "text": "我 要将 属于 我 的 宝 镜 抢 回来 , 还有 另 外 几 件 东西 , 你 一 并 保管 好 了 !",
+          "translation": "سأستعيد المرآة التي تخصني، وبعض الأشياء الأخرى، فاحتفظ بها جميعاً بأمان!",
+          "width": 456,
+          "x": 523,
+          "y": 446
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "064.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30,
+          "symWidth": 16.07142857142857,
+          "text": "塔皮 漫画 hiomin.com",
+          "translation": "",
+          "width": 256,
+          "x": 18,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "065.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 55,
+          "symWidth": 46.91666666666667,
+          "text": "当年 煞气 太重 , 害 了 不少 人 ,",
+          "translation": "كانت طاقة الشر شديدة في ذلك الزمان، وألحقت الضرر بالكثيرين.",
+          "width": 365,
+          "x": 628,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "066.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 53.75,
+          "symWidth": 51.58541666666666,
+          "text": "这 铁锤 我 若是 能帮 的 就 帮 她 一把 , 也许 正是 取得 那 东海 月 明 珠 的 突破口 也 说不定 。",
+          "translation": "لو أستطيع مساعدة تلك الفتاة بهذه المطرقة الحديدية، فقد يكون هو المفتاح للحصول على جوهرة القمر الشرقية.",
+          "width": 536,
+          "x": 502,
+          "y": 165
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "067.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "068.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 292,
+          "symHeight": 64.20833333333333,
+          "symWidth": 61.08333333333334,
+          "text": "你 是 何 人 , 竟敢 在 红月 城 众目睽睽 之 下 随意 撒野 打人 !",
+          "translation": "من أنت حتى تجرؤ على العبث وضرب الناس في ساحة المدينة الحمراء أمام الجميع؟",
+          "width": 473,
+          "x": 59,
+          "y": 313
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "069.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "070.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "071.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "072.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 53.83333333333334,
+          "symWidth": 46.55555555555555,
+          "text": "罗兄 , 兰 小姐 , 这 是 何 为",
+          "translation": "الأخ لو، الآنسة لان، ما الذي يحدث؟",
+          "width": 250,
+          "x": 247,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 216,
+          "symHeight": 57.70588235294117,
+          "symWidth": 40.86764705882353,
+          "text": "兄台 , 你 我 素 不 相识 , 为何 突然 出手 伤 我 ?  hipmabhu.com",
+          "translation": "يا أخي، نحن غرباء، فلماذا هجمت علي فجأة؟",
+          "width": 430,
+          "x": 638,
+          "y": 628
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "073.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "074.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "075.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 60.6,
+          "symWidth": 32.5,
+          "text": "DEC ...... ?",
+          "translation": "DEC...؟",
+          "width": 261,
+          "x": 181,
+          "y": 484
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "076.webp": {
+      "blocks": [],
+      "imgHeight": 179,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "077.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 51.75,
+          "symWidth": 48.63095238095238,
+          "text": "你 刚才 所说 姜 二 小姐 的 三围 , 是 如何 得知 的 ?",
+          "translation": "كيف علمت ما ذكرتَه عن مقاسات الآنسة جيانغ الثانية؟",
+          "width": 396,
+          "x": 575,
+          "y": 186
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "078.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "079.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 51,
+          "symWidth": 44.96428571428572,
+          "text": "那 白衣 男子 虽 带 有 喉结 , 毛孔 也 比 女性 要 来 的 粗 t ......",
+          "translation": "ذلك الرجل بالثوب الأبيض رغم حنجرتِه الظاهرة، ونفاذ مسام جلده الخشن مقارنة بالنساء...",
+          "width": 409,
+          "x": 561,
+          "y": 57
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "080.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 54.5,
+          "symWidth": 48.16964285714286,
+          "text": "这 是 极高 明 的 易容 手法 , 连 身后 那个 剑童 也 一样 , 这两 个 都是 女子 !!",
+          "translation": "إنها مهارة تنكر فائقة، حتى الصبيّ السيفي وراءهما كذلك، كلاهما إناث!!",
+          "width": 461,
+          "x": 165,
+          "y": 224
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 30.92307692307692,
+          "symWidth": 16.15384615384615,
+          "text": "嬉皮 漫画 hipmh.com",
+          "translation": "",
+          "width": 262,
+          "x": 804,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "081.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "082.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "083.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 51.92857142857143,
+          "symWidth": 43.11607142857143,
+          "text": "姜 二 小姐 的 三围 这些 东西 都是 乱 传 的 , 而且 版本 颇多 ......",
+          "translation": "مقاسات الآنسة جيانغ الثانية شائعة عارية عن الصحة، وتختلف من نسخة لأخرى...",
+          "width": 399,
+          "x": 462,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 52.5,
+          "symWidth": 48.60119047619047,
+          "text": "我 是 自己 考量 了 一下 , 选 了 一个 觉得 比较 靠谱 的 版本 说 而已 。",
+          "translation": "لقد قمتُ بتقدير شخصي واخترت نسخة أراها أكثر موثوقية فقط.",
+          "width": 398,
+          "x": 251,
+          "y": 368
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "084.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "085.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.33333333333334,
+          "symWidth": 46.75873015873017,
+          "text": "原来 , 这 就是 姜 家 那个 二 小姐 - 姜若冰 !",
+          "translation": "فَهِمْتُ، هذه هي الآنسة الثانية من عائلة جيانغ — جيانغ رو بينغ!",
+          "width": 399,
+          "x": 205,
+          "y": 166
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "086.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 51.125,
+          "symWidth": 44.5,
+          "text": "这 、 难道 是 真的 ?",
+          "translation": "هل هذا... حقاً؟",
+          "width": 227,
+          "x": 653,
+          "y": 217
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 63,
+          "symWidth": 56,
+          "text": "当然 是 假 的 !",
+          "translation": "بالطبع لا، إنه زائف!",
+          "width": 306,
+          "x": 80,
+          "y": 760
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "087.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "088.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 53.51190476190476,
+          "symWidth": 50.47023809523809,
+          "text": "你 竟敢 造谣 污蔑 诋毁 姜 二 小姐 , 我 杀 了 你 !",
+          "translation": "لقد جئتَ تروج الأكاذيب وتشوه سمعة الآنسة جيانغ الثانية، سأقتلك!",
+          "width": 399,
+          "x": 610,
+          "y": 421
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 44,
+          "symWidth": 42.8,
+          "text": "快快 看 漫画",
+          "translation": "",
+          "width": 286,
+          "x": 93,
+          "y": 624
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 31.61538461538462,
+          "symWidth": 17.53846153846154,
+          "text": "谵 處 漫画 hipmh.com",
+          "translation": "",
+          "width": 258,
+          "x": 807,
+          "y": 794
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "089.webp": {
+      "blocks": [],
+      "imgHeight": 86,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "090.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 265,
+          "symHeight": 55.75,
+          "symWidth": 47.90625,
+          "text": "杀 不胜 杀 , 现在 满 城 都 在 谈论 这些 无 聊 的 东西 . 难道 你 要 杀尽 天下 ?",
+          "translation": "قتل بعد قتل، وحتى الآن المدينة تعج بهذه السخافات. هل تنوي قتل الجميع حقاً؟",
+          "width": 459,
+          "x": 445,
+          "y": 273
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "091.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "092.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 59,
+          "symWidth": 44,
+          "text": "对 对 ,",
+          "translation": "نعم، نعم,",
+          "width": 154,
+          "x": 697,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "093.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 59.1,
+          "symWidth": 59.06666666666666,
+          "text": "难道 你 要 杀尽 天下 不成 ?",
+          "translation": "هل تنوي أن تُباد العالم برمته؟",
+          "width": 394,
+          "x": 107,
+          "y": 65
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "094.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 52.53333333333333,
+          "symWidth": 46.6,
+          "text": "滚 ! 再 听见 你 一次 舌头 , 杀无赦 !",
+          "translation": "اخرَس! إن سمعت كلمة أخرى منك سأقتلك بلا رحمة!",
+          "width": 342,
+          "x": 633,
+          "y": 244
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 51.3,
+          "symWidth": 44.6,
+          "text": "我 以后 再也 不 说 了 !!",
+          "translation": "لن أقول شيئاً بعد الآن!!",
+          "width": 282,
+          "x": 97,
+          "y": 487
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "095.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 37.2,
+          "text": "不 说 了 !!",
+          "translation": "لن أقول شيئاً!!",
+          "width": 252,
+          "x": 88,
+          "y": 351
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "096.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.09523809523809,
+          "symWidth": 46.88095238095238,
+          "text": "徐兄 , 你 竟然 安 然 无恙 ? 看来 徐 兄 的 实力 出乎 我 预料 啊 !",
+          "translation": "يا أخي شو، كيف بقيت سالماً؟ يبدو أن قوتك فاقت توقعاتي!",
+          "width": 400,
+          "x": 407,
+          "y": 139
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 17.5,
+          "text": "!!",
+          "translation": "!!",
+          "width": 74,
+          "x": 671,
+          "y": 666
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 30,
+          "symWidth": 17,
+          "text": "嬉度 漫画 hipmh.com",
+          "translation": "",
+          "width": 258,
+          "x": 807,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "097.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 53.25,
+          "symWidth": 47.48690476190477,
+          "text": "原来 这厮 早就 知 了 李云霄 的 实 力 ! 只是 在 等 我 的 笑话 !!",
+          "translation": "لقد كان هذا الخائن يعلم منذ زمن طويل بقوة لي يون شياو! إنه فقط ينتظر سخرتي!",
+          "width": 400,
+          "x": 636,
+          "y": 257
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "098.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 44.25,
+          "symWidth": 44.75,
+          "text": "溜 了 溜 了",
+          "translation": "سأرحل الآن",
+          "width": 158,
+          "x": 221,
+          "y": 179
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 51,
+          "symWidth": 36.5,
+          "text": "哼 !",
+          "translation": "هم!",
+          "width": 81,
+          "x": 194,
+          "y": 774
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "099.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "100.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 57.33333333333334,
+          "symWidth": 55.01111111111111,
+          "text": "又 见面 了 , 难道 今天 又 是 个 坏 日子 ?",
+          "translation": "نلتقي مجدداً، هل اليوم من الأيام المشؤومة؟",
+          "width": 393,
+          "x": 342,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "101.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 293,
+          "symHeight": 58.40476190476191,
+          "symWidth": 45.63095238095238,
+          "text": "相逢 不如 偶遇 , 罗兄 去 了 一趟 城 主 府 , 收获 颇多 啊 !",
+          "translation": "اللقاء لا يضاهي الصدفة، يا أخي لو، لقد ذهبت إلى مقر الحاكم وجنيت ثمراً ثميناً!",
+          "width": 457,
+          "x": 138,
+          "y": 204
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 27.5,
+          "symWidth": 27,
+          "text": "96",
+          "translation": "96",
+          "width": 39,
+          "x": 563,
+          "y": 731
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "102.webp": {
+      "blocks": [],
+      "imgHeight": 570,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "103.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.33333333333334,
+          "symWidth": 51.51111111111111,
+          "text": "道 他 看出 了 姜若冰 的 女儿 之 身 ?",
+          "translation": "هل أدرك أنه ابنة جيانغ رو بينغ؟",
+          "width": 344,
+          "x": 496,
+          "y": 265
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 52.33333333333334,
+          "symWidth": 48.06666666666666,
+          "text": "云霄 公子 高 义 , 芷 璇 不 胜 感激 。",
+          "translation": "شرف ليون شياو، تشي شوان ممتنة بعظيم.",
+          "width": 285,
+          "x": 109,
+          "y": 637
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "104.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 31.5,
+          "symWidth": 17.35714285714286,
+          "text": "鱔 皮 漫画 hipmh.com .",
+          "translation": "",
+          "width": 330,
+          "x": 16,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "105.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 52.5,
+          "symWidth": 41.875,
+          "text": "芷 璇 姑娘 说 ,",
+          "translation": "الآنسة تشي شوان قالت:",
+          "width": 246,
+          "x": 383,
+          "y": 219
+        },
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.5,
+          "symWidth": 50.22619047619047,
+          "text": "我 还 指 望着 芷 璇 娘 照顾 , 加入 银 月 宗 后 能 多 挑 几个 妹妹 呢 。",
+          "translation": "كنت أعلق آمالي على رعاية السيدة تشي شوان، وأتمنى بعد انضمامي إلى طائفة القمر الفضي أن أختار أخوات أكثر.",
+          "width": 399,
+          "x": 167,
+          "y": 431
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "renderMode": "mask_only",
+          "symHeight": 52,
+          "symWidth": 51.71428571428572,
+          "text": "若是 云霄 公子 真",
+          "translation": "",
+          "width": 395,
+          "x": 630,
+          "y": 811
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "106.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 51.95833333333333,
+          "symWidth": 50.1140873015873,
+          "text": "若是 云霄 公子 真 的 肯加 入 银 月 宗 , 璇 保证 挑 到 公 子 眼花 。",
+          "translation": "لو وافق ليون شياو على الانضمام لطائفة القمر الفضي، تشوان تضمن له اختياراً يذهله.",
+          "width": 417,
+          "x": 631,
+          "y": 34
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "107.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "108.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 53.38095238095238,
+          "symWidth": 47.02380952380953,
+          "text": "芷 璇 姐姐 , 这 浪 荡 之 人 你 还是 少 触 的 好 !",
+          "translation": "أختي تشي شوان، من الأفضل لك تجنب هذا الرجل الفاسد!",
+          "width": 400,
+          "x": 302,
+          "y": 105
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "109.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 53.39285714285714,
+          "symWidth": 47.81607142857143,
+          "text": "兵 弟弟 有所 不知 , 其中 颇为 曲折 , 不如 我们 几 人 坐 慢慢 畅谈 ?",
+          "translation": "أيها الجندي، غابت عنك بعض الحقائق المعقدة، فلنجلس نحن القلة ونتحدث بهدوء؟",
+          "width": 417,
+          "x": 48,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 269,
+          "symHeight": 54.75,
+          "symWidth": 48.51190476190476,
+          "text": "也好 , 难得 与 一 见 , 还 带来 了 罗兄 这样 的 朋 友 。",
+          "translation": "حسنٌ، نادرٌ أن ألتقي بكم، خاصةً وأنت يا لو تحضر صديقاً كهذا.",
+          "width": 406,
+          "x": 558,
+          "y": 505
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "110.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "111.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "112.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 17.92307692307692,
+          "text": "谢 皮 漫画 hipmh.com",
+          "translation": "",
+          "width": 257,
+          "x": 17,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "113.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 52,
+          "symWidth": 47.55555555555556,
+          "text": "这 杯酒 是 我 欠 云霄 公子 的 , 先 干 为 敬 了 。",
+          "translation": "هذا الكأس دَين ليون شياو، سأشربه أولاً عن تقدير.",
+          "width": 339,
+          "x": 576,
+          "y": 289
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "114.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 51,
+          "symWidth": 51.8,
+          "text": "要喝 便 大家",
+          "translation": "إن كنتم تريدون الشرب، فالجميع",
+          "width": 282,
+          "x": 542,
+          "y": 803
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "115.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 49,
+          "symWidth": 44.25,
+          "text": "一起 喝 。",
+          "translation": "لنشرب معاً.",
+          "width": 190,
+          "x": 542,
+          "y": 29
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "116.webp": {
+      "blocks": [],
+      "imgHeight": 413,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "117.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 54,
+          "symWidth": 47.23809523809524,
+          "text": "这 酒 , 这 哪里 是 什么 桃花 酒 , 这 是 醉 忘 愁 啊 !",
+          "translation": "هذه الخمرة، ليست خمرة زهر الخوخ، بل هي خمرة النسيان الثمل!",
+          "width": 362,
+          "x": 101,
+          "y": 191
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "118.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "119.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 54.5,
+          "symWidth": 48.69047619047619,
+          "text": "你 什么 意思 ? 这 名字 有 问题 ?",
+          "translation": "ما مغزى كلامك؟ هل هنالك خلل في هذا الاسم؟",
+          "width": 368,
+          "x": 168,
+          "y": 90
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 47.66666666666666,
+          "text": "没 没 ~",
+          "translation": "لا، لا شيء~",
+          "width": 146,
+          "x": 720,
+          "y": 256
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 50,
+          "symWidth": 55,
+          "text": "只是 不 小心",
+          "translation": "هو فقط خطأ بسيط.",
+          "width": 281,
+          "x": 639,
+          "y": 819
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "120.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 49.66666666666666,
+          "symWidth": 43.5,
+          "text": "呛 了 下 而已 。",
+          "translation": "لقد اختنقت قليلاً فحسب.",
+          "width": 303,
+          "x": 644,
+          "y": 45
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 16.30769230769231,
+          "text": "塔皮 深 画 hipmh.coM",
+          "translation": "",
+          "width": 255,
+          "x": 809,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "121.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 312,
+          "symHeight": 52.625,
+          "symWidth": 49.09375,
+          "text": "这 醉 忘 愁 的 名字 乃 是 我 最 敬爱 之 人 所 取 , 你 要不 给 我 一 个 解释 , 今天 便 剑 下 见 分明 !",
+          "translation": "اسم \"سُكرُ النسيان\" قد أُطلق من قِبل أعز الناس إليّ، وإن لم تفسر لي سببك، فاليوم سيُحسم الأمر بحد السيف!",
+          "width": 459,
+          "x": 345,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "122.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "renderMode": "mask_only",
+          "symHeight": 53.91666666666666,
+          "symWidth": 43.13333333333333,
+          "text": "醉 忘 愁 , 醉 忘 愁 , 好 名字 呀 ,",
+          "translation": "",
+          "width": 250,
+          "x": 160,
+          "y": 632
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "123.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 52.98958333333333,
+          "symWidth": 45.63958333333333,
+          "text": "醉 忘 愁 , 醉 忘 愁 , 好 名字 呀 , 芷 璇 也 同样 不 明白 , 云霄 公 子 为何 会 如此 态度 呢 ?",
+          "translation": "سُكرُ النسيان! اسمٌ جليل، ولا أرى عجباً في حيرة الأخت تشي شيوان من هذا السلوك الغريب لسيد الغيوم.",
+          "width": 344,
+          "x": 38,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 52.58333333333334,
+          "symWidth": 47.51388888888889,
+          "text": "李兄 , 这次 你 不 交代 清楚 的 话 , 怕 是 麻烦 就 大 了 。",
+          "translation": "يا أخ لي، إن لم توضّح الأمر جيداً هذه المرّة، فالمتاعب أعظم مما تظن.",
+          "width": 422,
+          "x": 621,
+          "y": 458
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 54.16666666666667,
+          "symWidth": 39.64444444444445,
+          "text": "这 丫头 气 性 可 真 大 ......",
+          "translation": "ما أشرس طباع هذه الفتاة...",
+          "width": 291,
+          "x": 181,
+          "y": 677
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "124.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 48.08333333333333,
+          "symWidth": 46.5,
+          "text": "这 俊俏 公子 也 太 会 惹事 了 ?",
+          "translation": "يا له من شاب وسيم مغرم بإثارة المشاكل!",
+          "width": 219,
+          "x": 224,
+          "y": 546
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 46.26984126984127,
+          "symWidth": 43.37301587301587,
+          "text": "刚刚 出手 伤人 , 这才 多久 又要 动手 了 !",
+          "translation": "لقد قام بالاعتداء للتو، وما هي إلا لحظات حتى يرغب في الشجار مجدداً!",
+          "width": 258,
+          "x": 720,
+          "y": 584
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 16,
+          "symWidth": 20.33333333333333,
+          "text": "TOR",
+          "translation": "",
+          "width": 51,
+          "x": 131,
+          "y": 719
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "125.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "renderMode": "mask_only",
+          "symHeight": 55,
+          "symWidth": 50.57142857142857,
+          "text": "想不到 这 丫头 竟",
+          "translation": "",
+          "width": 397,
+          "x": 335,
+          "y": 756
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "126.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 54.25,
+          "symWidth": 50.25714285714285,
+          "text": "想不到 这 丫头 竟 然 和 宁可 月 关系 如此 之 深 。",
+          "translation": "لم أكن أتوقع أن تلك الفتاة لها علاقة وثيقة للغاية بنينغي يوي.",
+          "width": 397,
+          "x": 333,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "127.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 53.83333333333334,
+          "symWidth": 49.33333333333334,
+          "text": "红月 城 三大 家族 之间 联姻 太多 , 已经 互相 扎根 极深 , 基本 是 一 损 俱 损 , 一 荣 俱 荣 。",
+          "translation": "روابط الزواج بين العشائر الكبرى في مدينة القمر الأحمر متشابكة إلى حد عميق، صار فيه ما يصيب أحدهم يصيب الجميع، وما ينعم به أحدهم ينعم به الجميع.",
+          "width": 513,
+          "x": 431,
+          "y": 501
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "128.webp": {
+      "blocks": [],
+      "imgHeight": 280,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "129.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 52,
+          "symWidth": 52.3125,
+          "text": "你 一个 小孩子 家 哪知 什么 是 愁 ?",
+          "translation": "أنت طفل صغير، كيف لك أن تدرك معنى الحزن؟",
+          "width": 348,
+          "x": 576,
+          "y": 132
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 41.8,
+          "text": "快  快 看 漫画",
+          "translation": "سارع، شاهد المانغا.",
+          "width": 280,
+          "x": 782,
+          "y": 616
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "130.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.43019943019943,
+          "symWidth": 49.66239316239317,
+          "text": "你 自己 一个 小毛孩 , 竟然 说 我 小 ! 难道 就是 这个 原因 让 你 觉得 好笑 ?",
+          "translation": "أنت بنفسك فتى صغير، وتجرؤ على أن تقول لي 'صغير'! هل هذا السبب الذي يجعلك تضحك؟",
+          "width": 482,
+          "x": 237,
+          "y": 358
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "131.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 51.5,
+          "symWidth": 44.45,
+          "text": "兵 老弟 , 他杀 不得 !",
+          "translation": "أيها الأخ بينغ، لا يجوز قتله!",
+          "width": 251,
+          "x": 767,
+          "y": 214
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "132.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 52.96428571428572,
+          "symWidth": 48.86904761904762,
+          "text": "看 在 罗 大哥 和 芷 璇 姐姐 的 份 上 我 不会 他 的 , 但 怎么 也 要 他 说 清楚 !",
+          "translation": "لأجل اللورد لوو والأخت تشي شيوان، لن أضربه، ولكن لا بد أن يوضح الأمور!",
+          "width": 458,
+          "x": 499,
+          "y": 528
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "133.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 52.33333333333334,
+          "symWidth": 48.5,
+          "text": "兵 老弟 , 他 便 是 我 所说 的 能 够 帮 你 之 人 ,",
+          "translation": "أيها الأخ بينغ، إنه الشخص الذي كنت أتحدث عنه، القادر على مساعدتك.",
+          "width": 341,
+          "x": 305,
+          "y": 543
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "renderMode": "mask_only",
+          "symHeight": 52,
+          "symWidth": 46.5,
+          "text": "你 若是 惹恼 了 他 ,",
+          "translation": "",
+          "width": 416,
+          "x": 127,
+          "y": 805
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "134.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 52.16666666666666,
+          "symWidth": 49.75,
+          "text": "你 若是 惹恼 了 他 , 个 红月 城 便 无 人 可 帮 你 了",
+          "translation": "إن أزعجته، فلن تجد في مدينة القمر الأحمر فارساً ينجدك.",
+          "width": 399,
+          "x": 123,
+          "y": 28
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 49,
+          "text": "什么 ?",
+          "translation": "ماذا؟",
+          "width": 160,
+          "x": 794,
+          "y": 254
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 34,
+          "symWidth": 17,
+          "text": "? .",
+          "translation": "؟",
+          "width": 17,
+          "x": 466,
+          "y": 348
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "135.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 298,
+          "symHeight": 60.57142857142857,
+          "symWidth": 54.5,
+          "text": "罗 大哥 你 胡说 什 么 , 他 不过 是 五 星 武宗 而已 , 有 什么 能力 帮 我 !",
+          "translation": "الأخ لو، ما هذا الهراء الذي تقوله؟ إنه مجرد مقاتل مصنف من الدرجة الخامسة، ماذا يمكنه أن يفعل لأجلي؟",
+          "width": 454,
+          "x": 416,
+          "y": 271
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "136.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 60.16666666666666,
+          "symWidth": 55.44444444444445,
+          "text": "这 九 阶 玄 器 的 器 蕴 震荡 真是 妙 ~",
+          "translation": "رنين جوهر الأداة الخارقة من الدرجة التاسعة حقاً يدعو للإعجاب~",
+          "width": 389,
+          "x": 226,
+          "y": 248
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29.30769230769231,
+          "symWidth": 14.61538461538461,
+          "text": "塔皮 漫画  hipml.com",
+          "translation": "",
+          "width": 252,
+          "x": 810,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "137.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "138.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "139.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "140.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "141.webp": {
+      "blocks": [],
+      "imgHeight": 589,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "142.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 52.77777777777777,
+          "symWidth": 43.72222222222222,
+          "text": "用 手指 就 可以 震散 九 阶 玄 器 的 剑芒 ......",
+          "translation": "يمكن تفريق وهج السيف الخاص بالأداة الخارقة من الدرجة التاسعة بمجرد إصبع واحد...",
+          "width": 341,
+          "x": 60,
+          "y": 246
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "143.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.28125,
+          "symWidth": 47.17291666666667,
+          "text": "若冰 妹妹 的 实力 我 十分 清楚 , 这 剑芒 绝不 是 可以 用 手指 去接 的 , 难道 这 李云 是 专门 修炼 双 指 的 功 法 ? !",
+          "translation": "أنا أعرف قوة الأخت رو بينغ جيداً، ذلك الوَهج لا يُلمس باصبع، هل يكون لي يون متمرّساً بنوع خاص من فنون الإصبع المزدوجة؟!",
+          "width": 459,
+          "x": 587,
+          "y": 549
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "144.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "renderMode": "mask_only",
+          "symHeight": 54.25,
+          "symWidth": 45.40833333333333,
+          "text": "难道 这 李云 是 专门 修炼 双 指 的 功 法 ? !",
+          "translation": "",
+          "width": 346,
+          "x": 335,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 28,
+          "symWidth": 15.5625,
+          "text": "嬉皮 漫画 hirommun.com",
+          "translation": "",
+          "width": 259,
+          "x": 805,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "145.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 52.75,
+          "symWidth": 47.91418650793651,
+          "text": "弟弟 , 太 激动 的 话 , 人 容易 老 的 快 , 你 看 你 气 几 下 就 开 始 长 皱纹 了 。",
+          "translation": "يا أخي، لا تغضب كثيراً، فإن الغضب يسرّع ظهور التجاعيد، لقد بدأت خطوط الهم تظهر على وجهك.",
+          "width": 476,
+          "x": 505,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 41.33333333333334,
+          "text": "真的 ?",
+          "translation": "حقاً؟",
+          "width": 138,
+          "x": 29,
+          "y": 168
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "146.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 266,
+          "symHeight": 54,
+          "symWidth": 45.98333333333333,
+          "text": "记得 在 宗 内 曾经 翻阅 过 一个 小岛 上流 传出 的 指 功 , 叫 什么 鹰 家 藤 指 .....",
+          "translation": "أتذكر أنني قرأت مرة فن الأصابع المنقول عن جزيرة صغيرة، يدعى 'إصبع العنكبوت المحلق'...",
+          "width": 512,
+          "x": 347,
+          "y": 375
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 54,
+          "symWidth": 51.22222222222222,
+          "text": "此 年轻 就 达到 这 个 程度 , 怕 是 从小 开",
+          "translation": "بلوغ هذه الدرجة في هذا العمر، يدل على أنه يتدرب منذ صغره.",
+          "width": 513,
+          "x": 464,
+          "y": 696
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 46.4,
+          "symWidth": 50,
+          "text": "你  快 看 漫画",
+          "translation": "انظر بسرعة إلى المانغا",
+          "width": 288,
+          "x": 25,
+          "y": 726
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "147.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 53.4,
+          "symWidth": 50.01111111111112,
+          "text": "就 浸淫 在 这 对 手指 之上 , 才能 取得 现在 这般 成就 !",
+          "translation": "لقد اغترف مهاراته من تلك اليدين، لذلك بلغ هذا المستوى العظيم!",
+          "width": 514,
+          "x": 464,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "148.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 51.4,
+          "symWidth": 47.91111111111111,
+          "text": "芷 璇 姐姐 , 你 看看 有 皱 纹 了 吗 ?",
+          "translation": "أختي تشي شوان، هل ترى خطوط التجاعيد على وجهي؟",
+          "width": 283,
+          "x": 673,
+          "y": 30
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 51.66666666666667,
+          "symWidth": 47.5,
+          "text": "李公子 逗 你 的 ~",
+          "translation": "السيد لي يمزح معك فقط~",
+          "width": 226,
+          "x": 222,
+          "y": 320
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "149.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 52.16666666666667,
+          "symWidth": 49.64285714285714,
+          "text": "李云霄 说出 这种 调 侃 女孩子 的 话 来 , 难道 他 真的 发现 了 姜若冰 的 身份 ?",
+          "translation": "عندما يقول لي يون شياو هذا النوع من المزاح مع الفتيات، هل يكون قد خمن سر جانغ رو بينغ فعلاً؟",
+          "width": 456,
+          "x": 112,
+          "y": 140
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "150.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 53.95,
+          "symWidth": 52.125,
+          "text": "红月 城 的 治安 什么 时候 能够 改善 一下 ? 什么 阿猫阿狗 都 当 街 跑 ~",
+          "translation": "متى ستتحسن أوضاع الأمن في مدينة القمر الأحمر؟ أصبحت الشوارع مليئة بالجهال والضالين~",
+          "width": 486,
+          "x": 115,
+          "y": 385
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 100,
+          "symWidth": 99.5,
+          "text": "啪啦",
+          "translation": "طقطقة",
+          "width": 163,
+          "x": 371,
+          "y": 725
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "151.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "152.webp": {
+      "blocks": [],
+      "imgHeight": 366,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "153.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 329,
+          "symHeight": 52.275,
+          "symWidth": 48.65,
+          "text": "本 座 好意 替 你 解 封印 , 你 竟然 打伤 我 琉璃 山 庄 之 人 , 当真 是 狼心 狗 肺 , 不知 悔改 的 狗 东西 !",
+          "translation": "لقد أظهرت لك رأفتي في فك القيود، وإذا بك تجرح من في مزرعة ليو لي، حقاً إن قلبك قاسٍ كقلب الذئب، ولست تدرك ندمك أيها الحقير!",
+          "width": 535,
+          "x": 191,
+          "y": 248
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "154.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "155.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 57.69230769230769,
+          "symWidth": 51.61538461538461,
+          "text": "老 匹夫 , 还有 脸 说 解封 之 事 ,",
+          "translation": "يا عرجوز، هل من المعقول أن تتحدث عن فك القيود بذات الوجه؟",
+          "width": 283,
+          "x": 635,
+          "y": 330
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "156.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "157.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 293,
+          "symHeight": 59.25,
+          "symWidth": 53.63392857142857,
+          "text": "拿 我 当 试验 品 , 若非 我 运气 好 逃 走 , 就 差点 被 你 弄死 了 !",
+          "translation": "اعتبرتني مجرّد كائن للتجارب، ولولا حظي النجاة، لكنت هلكت على يديك!",
+          "width": 459,
+          "x": 135,
+          "y": 152
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "158.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 52.5,
+          "symWidth": 48.62946428571428,
+          "text": "想要 解封 自然 就有 风险 , 本 座 又 不是 绝世 强者 , 哪能 说 解 就 解 的 了 的 。",
+          "translation": "فك القيود لا يخلو من خطر، ولست أنا من في قمة القوة كي أفكها كما أشاء.",
+          "width": 457,
+          "x": 203,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 332,
+          "symHeight": 53,
+          "symWidth": 48.32222222222222,
+          "text": "你 的 好运 也就 到此 为 止 了 , 打伤 了 我 琉璃 山庄 的 弟子 , 就算 是 你 师父 来 了 , 今日 也 保不住 你 。",
+          "translation": "حظك العاثر قد انتهى هنا، لقد جرحت من في مزرعتي، وحتى لو حضر معلمك اليوم، فلن تنجو.",
+          "width": 516,
+          "x": 434,
+          "y": 466
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "159.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "160.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 246,
+          "symHeight": 53.83928571428572,
+          "symWidth": 47.35714285714286,
+          "text": "裴明远 , 你 我 也 算是 相交 一场 , 竟然 如此 绝情 寡 义 !",
+          "translation": "باي مينغ يوان، لقد جمعنا القدر، ومع هذا كنت بلا رحمة أو وفاء!",
+          "width": 403,
+          "x": 324,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 211,
+          "symHeight": 53.93233082706767,
+          "symWidth": 45.93397556390978,
+          "text": "前辈 息怒 , 我 和 徐 青 不过 是 碰巧 遇 见 罢了 , 彼此 其实 總線 員 : mhucomm 并不 熟 的 , 还 望 前 辈 放 我 一 命 !",
+          "translation": "لا تغضب أيها السلف، أنا وزو تشينغ التقينا صدفة، ولسنا بمعارف، فأسألك أن تغفر لي!",
+          "width": 686,
+          "x": 380,
+          "y": 626
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "161.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "renderMode": "mask_only",
+          "symHeight": 53,
+          "symWidth": 47.60416666666667,
+          "text": "并不 熟 的 , 还 望 前 辈 放 我 一 命 !",
+          "translation": "",
+          "width": 457,
+          "x": 381,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "162.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "163.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 62.5,
+          "symWidth": 50.25,
+          "text": "这样 啊 。",
+          "translation": "أفهم ذلك.",
+          "width": 218,
+          "x": 178,
+          "y": 233
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "164.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 84.85714285714286,
+          "symWidth": 81.57142857142857,
+          "text": "既然 碰巧 遇见 ,",
+          "translation": "إذا كانت صدفة اللقاء,",
+          "width": 594,
+          "x": 190,
+          "y": 437
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 84.41666666666666,
+          "symWidth": 83.0625,
+          "text": "那 碰巧 一起 去 西天 不是 很好 么 ?",
+          "translation": "فأليس من الأفضل أن نذهب معاً إلى الغرب؟",
+          "width": 738,
+          "x": 195,
+          "y": 551
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "165.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "166.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "167.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 40.66666666666666,
+          "text": "什么 !",
+          "translation": "ماذا؟!",
+          "width": 138,
+          "x": 216,
+          "y": 790
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "168.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 52.66666666666666,
+          "symWidth": 42.33333333333334,
+          "text": "哼哼 ~",
+          "translation": "همم.",
+          "width": 141,
+          "x": 841,
+          "y": 114
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 32.69230769230769,
+          "symWidth": 18.46153846153846,
+          "text": "路虎 漫画 hipmh.coM",
+          "translation": "",
+          "width": 258,
+          "x": 18,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "169.webp": {
+      "blocks": [],
+      "imgHeight": 47,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "170.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "171.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 69.06666666666666,
+          "symWidth": 61.15,
+          "text": "爹 , 便是 此 人 下 的 封印 !",
+          "translation": "يا والدي، هو من وضع هذا القيد!",
+          "width": 440,
+          "x": 135,
+          "y": 387
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "172.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 17.66666666666667,
+          "symWidth": 16,
+          "text": "401",
+          "translation": "",
+          "width": 30,
+          "x": 818,
+          "y": 491
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 17,
+          "symWidth": 18,
+          "text": "TOLEY",
+          "translation": "",
+          "width": 70,
+          "x": 528,
+          "y": 598
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "173.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 98,
+          "symWidth": 73,
+          "text": "什么 !",
+          "translation": "ماذا؟!",
+          "width": 248,
+          "x": 463,
+          "y": 335
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "174.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 284,
+          "symHeight": 230.8333333333333,
+          "symWidth": 188.1666666666667,
+          "text": "客家 路窄 !!",
+          "translation": "الطريق ضيق للغاية!",
+          "width": 1037,
+          "x": 41,
+          "y": 560
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "175.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 27.33333333333333,
+          "symWidth": 20.7,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。 饞 皮 漫画 hipmh.com",
+          "translation": "لا يُسمح بإعادة النشر من دون إذن. ومن يُكتشف مخالفته سيُحال للعدالة.",
+          "width": 672,
+          "x": 391,
+          "y": 719
+        }
+      ],
+      "imgHeight": 810,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

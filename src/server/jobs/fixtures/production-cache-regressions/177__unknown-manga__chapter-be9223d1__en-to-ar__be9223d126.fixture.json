@@ -1,0 +1,1905 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0177",
+  "jobId": "fixture-job-0177",
+  "licenseId": "fixture-license-0177",
+  "pageCount": 34,
+  "pageOrder": [
+    "005__001.jpg",
+    "001__001.jpg",
+    "003__001.jpg",
+    "002__001.jpg",
+    "001__002.jpg",
+    "002__002.jpg",
+    "001__003.jpg",
+    "002__003.jpg",
+    "006__001.jpg",
+    "004__001.jpg",
+    "003__002.jpg",
+    "004__002.jpg",
+    "003__003.jpg",
+    "004__003.jpg",
+    "012__001.jpg",
+    "007__001.jpg",
+    "005__002.jpg",
+    "006__002.jpg",
+    "005__003.jpg",
+    "006__003.jpg",
+    "009__001.jpg",
+    "008__001.jpg",
+    "007__002.jpg",
+    "008__002.jpg",
+    "007__003.jpg",
+    "008__003.jpg",
+    "010__001.jpg",
+    "009__002.jpg",
+    "010__002.jpg",
+    "009__003.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "012__002.jpg",
+    "011__002.jpg"
+  ],
+  "pages": {
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 41.13333333333333,
+          "symWidth": 30.4,
+          "text": "YOU  REALLY ARE ...",
+          "translation": "أنت فعلاً...",
+          "width": 304,
+          "x": 159,
+          "y": 1467
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 27,
+          "text": "IM",
+          "translation": "أنا",
+          "width": 35,
+          "x": 636,
+          "y": 2430
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 9,
+          "symWidth": 15,
+          "text": "...",
+          "translation": "...",
+          "width": 39,
+          "x": 308,
+          "y": 2575
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 32.69230769230769,
+          "symWidth": 26.03846153846154,
+          "text": "THERE  IS ONE  THING  I  WISH TO  ASK .",
+          "translation": "هناك أمر واحد أود أن أسألك عنه.",
+          "width": 397,
+          "x": 189,
+          "y": 3264
+        }
+      ],
+      "imgHeight": 3985,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 51,
+          "text": "HMM ?",
+          "translation": "هممم؟",
+          "width": 212,
+          "x": 201,
+          "y": 274
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.785714285714286,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 151,
+          "x": 11,
+          "y": 3730
+        }
+      ],
+      "imgHeight": 3959,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [],
+      "imgHeight": 4133,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 30.566666666666666,
+          "symWidth": 25.483333333333334,
+          "text": "THE  FIRST YOUNG  MASTER CAME  LOOKING FOR  ME .",
+          "translation": "جاء السيد الشاب الأول يبحث عني.",
+          "width": 310,
+          "x": 141,
+          "y": 1135
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 33,
+          "symWidth": 31.5,
+          "text": "ин",
+          "translation": "RTMTH",
+          "width": 58,
+          "x": 474,
+          "y": 2060
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 33,
+          "symWidth": 30.5,
+          "text": "Ky",
+          "translation": "RTMTH",
+          "width": 50,
+          "x": 407,
+          "y": 2073
+        },
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 37.75,
+          "symWidth": 29.54985119047619,
+          "text": "I  WAITED  BECAUSE I  WANTED  TO  TELL  YOU DIRECTLY  THAT  I  WAS NEVER  SHAKEN .",
+          "translation": "انتظرت لأنني أردت أن أخبرك مباشرة أنني لم أتزعزع قط.",
+          "width": 565,
+          "x": 52,
+          "y": 2538
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 54.75,
+          "symWidth": 32.25,
+          "text": "AAH ,",
+          "translation": "آه،",
+          "width": 130,
+          "x": 440,
+          "y": 3236
+        }
+      ],
+      "imgHeight": 3831,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 36,
+          "symWidth": 28.05,
+          "text": "WHEN  DID YOU  ARRIVE ?",
+          "translation": "متى وصلت؟",
+          "width": 310,
+          "x": 169,
+          "y": 31
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 30.333333333333332,
+          "symWidth": 23.59313725490196,
+          "text": "I'VE COME  TO  SEE  YOUR ESTEEMED  MILITARY ADVISOR .",
+          "translation": "جئت لأرى مستشارك العسكري الموقر.",
+          "width": 419,
+          "x": 191,
+          "y": 834
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 32,
+          "symWidth": 32,
+          "text": "//",
+          "translation": "//",
+          "width": 53,
+          "x": 365,
+          "y": 1876
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 27.633333333333333,
+          "symWidth": 23.22403846153846,
+          "text": "THERE'S NO  NEED  TO WORRY  ABOUT  HAVING KEPT  ME  WAITING LONG .",
+          "translation": "لا داعي للقلق من أنني جعلتك تنتظر طويلاً.",
+          "width": 406,
+          "x": 198,
+          "y": 2124
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 27,
+          "symWidth": 20.63888888888889,
+          "text": "DID  YOU  HAVE A  PLEASANT",
+          "translation": "هل كان لديك لقاء",
+          "width": 298,
+          "x": 181,
+          "y": 2689
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 27.333333333333332,
+          "symWidth": 20.66845238095238,
+          "text": "MEETING WITH  OUR  DISTINGUISHED MILITARY  ADVISOR ?",
+          "translation": "سار مع مستشارنا العسكري الموقر؟",
+          "width": 441,
+          "x": 142,
+          "y": 2726
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 28,
+          "symWidth": 22.95,
+          "text": "ALL  I  GOT  WAS A  SCOLDING .",
+          "translation": "كل ما حصلت عليه هو توبيخ.",
+          "width": 275,
+          "x": 156,
+          "y": 3714
+        }
+      ],
+      "imgHeight": 3960,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 45,
+          "symWidth": 34.22222222222222,
+          "text": "I'M  MOVED .",
+          "translation": "لقد تأثرت.",
+          "width": 324,
+          "x": 229,
+          "y": 172
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 32.94444444444445,
+          "symWidth": 27.045454545454547,
+          "text": "THAT'S  RIGHT , YOU  SHOULD  BE MOVED !",
+          "translation": "هذا صحيح، يجب أن تتأثر!",
+          "width": 350,
+          "x": 144,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 26,
+          "symWidth": 21.137826086956522,
+          "text": "THE  FIRST  YOUNG MASTER  PRESENTED SUCH  FAVORABLE  CONDITIONS AND  I  STILL  REFUSED THEM  ALL .",
+          "translation": "قدم السيد الشاب الأول مثل هذه الشروط الملائمة ورفضتها كلها.",
+          "width": 520,
+          "x": 71,
+          "y": 1747
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 30,
+          "symWidth": 23.203263403263403,
+          "text": "THANK YOU ,  SKY  HEAVEN CULT  LEADER .",
+          "translation": "شكرًا لك، قائد طائفة السماء السماوية.",
+          "width": 337,
+          "x": 149,
+          "y": 2449
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 29,
+          "symWidth": 23.633333333333336,
+          "text": "THEN I  SHALL  TAKE MY  LEAVE .",
+          "translation": "حينها سأدعكم في أمان الله.",
+          "width": 270,
+          "x": 271,
+          "y": 2993
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 10.928571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 153,
+          "x": 11,
+          "y": 3741
+        }
+      ],
+      "imgHeight": 3832,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 35,
+          "symWidth": 29.65277777777778,
+          "text": "OH  MY ,  THAT WON'T  DO .",
+          "translation": "يا إلهي، هذا لا يجوز.",
+          "width": 279,
+          "x": 302,
+          "y": 576
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 32.714285714285715,
+          "symWidth": 26.17142857142857,
+          "text": "HOW  DARE  HE REBUKE  YOU ?  I  SHALL HIM  FOR  YOU .",
+          "translation": "كيف تجرؤ على تأنيبك؟ سأعاقبه شخصيًا بدلاً عنك.",
+          "width": 480,
+          "x": 100,
+          "y": 1251
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 25.3,
+          "text": "PERSONALLY",
+          "translation": "بنفسي",
+          "width": 272,
+          "x": 123,
+          "y": 1346
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 23.833333333333332,
+          "text": "PUNISH",
+          "translation": "سأعاقبه",
+          "width": 147,
+          "x": 408,
+          "y": 1346
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 26.666666666666668,
+          "symWidth": 22.427777777777777,
+          "text": "DON'T SAY  THINGS  YOU DON'T  MEAN .",
+          "translation": "لا تقل كلمات لا تعنيها.",
+          "width": 291,
+          "x": 283,
+          "y": 1873
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 31,
+          "symWidth": 27.04674145299145,
+          "text": "YOUR WORDS  ONLY MAKE  ME  DISLIKE YOU  MORE .",
+          "translation": "كلماتك تزيد من استيائي منك.",
+          "width": 361,
+          "x": 234,
+          "y": 2629
+        }
+      ],
+      "imgHeight": 3960,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 25.924050632911392,
+          "symWidth": 19.90295358649789,
+          "text": "I'VE  HEARD DAWDLING  AROUND  AT TIMES  LIKE  THESE  RUINS THE  MOMENT ,  THAT  THE IMPACT  OF  WHAT  I  DID DIMINISHES .",
+          "translation": "سمعت أن التلكؤ في أوقات كهذه يفسد اللحظة ويضعف أثر ما فعلته.",
+          "width": 424,
+          "x": 131,
+          "y": 35
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 30.51086956521739,
+          "symWidth": 20.960474308300398,
+          "text": "YEAH ,  THAT'S TRUE .  IT  WOULD'VE  BEEN PERFECT  IF  YOU  HADN'T SAID  THAT .",
+          "translation": "نعم، هذا صحيح. كان سيكون الأمر مثاليًا لو لم تقل ذلك.",
+          "width": 466,
+          "x": 120,
+          "y": 560
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 30.333333333333332,
+          "symWidth": 26.444444444444443,
+          "text": "IS  THAT SO ?",
+          "translation": "حقًا؟",
+          "width": 153,
+          "x": 385,
+          "y": 1301
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 21.473214285714285,
+          "symWidth": 20.910714285714285,
+          "text": "SO  THIS  IS HOW  THE  CONNECTION BETWEEN  THE  SKY  HEAVEN CULT  LEADER  AND I  GROWS .",
+          "translation": "هكذا ينمو الرباط بين قائد طائفة السماء السماوية وأنا.",
+          "width": 381,
+          "x": 128,
+          "y": 2975
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 33.07843137254902,
+          "symWidth": 31.15686274509804,
+          "text": "I  THINK  THAT WE  SHALL  FORGE  AN EVEN  DEEPER  BOND GOING  FORWARD .",
+          "translation": "أظن أننا سوف نرسخ علاقة أعمق فيما هو آت.",
+          "width": 457,
+          "x": 115,
+          "y": 3380
+        }
+      ],
+      "imgHeight": 3832,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 39,
+          "symWidth": 28.823529411764707,
+          "text": "I  WAS  BEING SINCERE .",
+          "translation": "كنت صادقًا.",
+          "width": 320,
+          "x": 236,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 26.97142857142857,
+          "symWidth": 21.37142857142857,
+          "text": "THEN  OPEN THIS  SPACE  FOR  ME OCCASIONALLY .",
+          "translation": "إذن افتح لي هذه المساحة بين الحين والآخر.",
+          "width": 357,
+          "x": 192,
+          "y": 1478
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 28.19318181818182,
+          "symWidth": 22.53636363636364,
+          "text": "WHEN  ELSE  IN LIFE  WOULD  I  HAVE  THE CHANCE  TO  SERVE  AS YOUR  TEACHER ?",
+          "translation": "متى غير هذا ستكون لي فرصة أن أكون معلمك؟",
+          "width": 437,
+          "x": 138,
+          "y": 2731
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 41.86666666666667,
+          "symWidth": 32.46666666666667,
+          "text": "YES , I  SHALL  DO SO .",
+          "translation": "نعم، سأفعل ذلك.",
+          "width": 299,
+          "x": 232,
+          "y": 3323
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 24.666666666666668,
+          "text": "IT'S  PERFECT !",
+          "translation": "إنه مثالي!",
+          "width": 289,
+          "x": 194,
+          "y": 1741
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 27.717391304347828,
+          "symWidth": 20.25,
+          "text": "IT'S  THANKS TO  YOU  TRANSMITTING SUCH  EXCELLENT  MARTIAL ARTS  TO  ME .",
+          "translation": "كل ذلك بفضلك، لنقلك إليّ فنوناً قتالية رائعة.",
+          "width": 455,
+          "x": 129,
+          "y": 2491
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 30.424418604651162,
+          "symWidth": 22.71279069767442,
+          "text": "SINCE  THE SPACE - TIME  TRANSFERENCE ILLUSION  ART  CAME  INTO EXISTENCE ,  YOU  MUST  BE THE  FIRST  TO  MASTER  IT SO  QUICKLY .",
+          "translation": "منذ إنشاء فن وهم الانتقال الزمني المكاني، يجب أنك أول من أتقنه بهذه السرعة.",
+          "width": 514,
+          "x": 102,
+          "y": 3058
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 57,
+          "symWidth": 24.5,
+          "text": "!!",
+          "translation": "!!",
+          "width": 42,
+          "x": 389,
+          "y": 1383
+        },
+        {
+          "angle": 0,
+          "height": 450,
+          "symHeight": 172.66666666666666,
+          "symWidth": 138.22222222222223,
+          "text": "ABSOLUTE REGRESSION",
+          "translation": "الرجوع المطلق",
+          "width": 698,
+          "x": 0,
+          "y": 3116
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 14,
+          "text": "JP",
+          "translation": "JP",
+          "width": 27,
+          "x": 370,
+          "y": 3650
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20,
+          "symWidth": 13.240476190476189,
+          "text": "SCRIPT ART  PARK  JIN  HWAN ORIGINAL  JANG  YUNGHOON",
+          "translation": "نص وفن بارك جين هوان، مؤلف الأصلي جانغ يونغهون",
+          "width": 261,
+          "x": 217,
+          "y": 3651
+        }
+      ],
+      "imgHeight": 4134,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 31.381944444444443,
+          "symWidth": 25.376880648591175,
+          "text": "YOU  WOULDN'T UNDERSTAND  JUST  HOW MANY  LONG  YEARS  I  SPENT CULTIVATING  TO  CREATE THIS  SPACE .",
+          "translation": "لن تفهم كم من السنين قضيتها في تطوير هذه المساحة.",
+          "width": 573,
+          "x": 61,
+          "y": 334
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 45,
+          "symWidth": 35.55,
+          "text": "I  WAS FORTUNATE .",
+          "translation": "كنت محظوظًا.",
+          "width": 343,
+          "x": 226,
+          "y": 999
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 27.666666666666668,
+          "symWidth": 21.465219421101775,
+          "text": "DON'T  BE HUMBLE .  AT  LEAST  FOR THIS ,  THERE'S",
+          "translation": "لا تتواضع، على الأقل في هذا الأمر،",
+          "width": 423,
+          "x": 160,
+          "y": 1836
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 28,
+          "symWidth": 21.308035714285715,
+          "text": "TRULY  NO NEED  FOR  HUMILITY .",
+          "translation": "لا داعي للتواضع حقًا.",
+          "width": 394,
+          "x": 202,
+          "y": 1913
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29.53125,
+          "symWidth": 24.15625,
+          "text": "I  OFFER  YOU  SINCERE CONGRATULATIONS .",
+          "translation": "أقدم لك أخلص التهاني.",
+          "width": 456,
+          "x": 122,
+          "y": 3002
+        }
+      ],
+      "imgHeight": 4228,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 39.5,
+          "symWidth": 27.669172932330827,
+          "text": "THIS  IS  A COMPLETED  SPACE - TIME TRANSFERENCE ILLUSION  ART !",
+          "translation": "هذه مساحة مكتملة لفن وهم النقل الزمني المكاني!",
+          "width": 478,
+          "x": 101,
+          "y": 903
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 150,
+          "x": 11,
+          "y": 2275
+        }
+      ],
+      "imgHeight": 4135,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 10.642857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 150,
+          "x": 10,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 28.22222222222222,
+          "text": "THANK  YOU .",
+          "translation": "شكرًا لك.",
+          "width": 284,
+          "x": 213,
+          "y": 1467
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 34.25,
+          "symWidth": 25.82089381207028,
+          "text": "WITHIN  THIS SPACE ,  YOU  ARE  MY TEACHER ,  SKY  HEAVEN CULT  LEADER .",
+          "translation": "داخل هذه المساحة، أنت معلمي، قائد طائفة السماء السماوية.",
+          "width": 503,
+          "x": 94,
+          "y": 2587
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 45.625,
+          "symWidth": 32.125,
+          "text": "YES ,  THAT'S RIGHT .",
+          "translation": "نعم، صحيح.",
+          "width": 333,
+          "x": 169,
+          "y": 87
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 42.7037037037037,
+          "symWidth": 33.25925925925926,
+          "text": "I  KNOCKED ENDLESSLY  ON THE  DOOR .",
+          "translation": "طرقت الباب بلا نهاية.",
+          "width": 401,
+          "x": 152,
+          "y": 1307
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 36.25,
+          "symWidth": 33.375,
+          "text": "THE DOOR ?",
+          "translation": "الباب؟",
+          "width": 179,
+          "x": 309,
+          "y": 2185
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 41.333333333333336,
+          "symWidth": 34.77777777777778,
+          "text": "THE DOOR  TO  HIS HEART .",
+          "translation": "باب قلبه.",
+          "width": 385,
+          "x": 164,
+          "y": 3078
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 30.4,
+          "text": "HMPH .",
+          "translation": "همف.",
+          "width": 163,
+          "x": 127,
+          "y": 3748
+        }
+      ],
+      "imgHeight": 4402,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 147.5,
+          "symWidth": 129.5,
+          "text": "AHEN",
+          "translation": "آهين",
+          "width": 256,
+          "x": 424,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 34.91025641025641,
+          "symWidth": 27.535897435897436,
+          "text": "FIRST  YOUNG MASTER ,  YOU  MET THE  SKY  HEAVEN  CULT LEADER  NOW ?",
+          "translation": "السيد الشاب الأول، هل التقيت قائد طائفة السماء السماوية الآن؟",
+          "width": 488,
+          "x": 112,
+          "y": 3140
+        }
+      ],
+      "imgHeight": 4211,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 45.76923076923077,
+          "symWidth": 31.46153846153846,
+          "text": "PLEASE , SPEAK .",
+          "translation": "تفضل، تكلم.",
+          "width": 232,
+          "x": 248,
+          "y": 203
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 26.73456790123457,
+          "symWidth": 19.529629629629632,
+          "text": "IN  THE  SPACE - TIME TRANSFERENCE  ILLUSION  ART , IS  IT  POSSIBLE  TO  MAKE  TIME FLOW  DIFFERENTLY  INSIDE THAN  IN  REALITY ?",
+          "translation": "في فن وهم النقل الزمني المكاني، هل من الممكن أن يتدفق الوقت داخله بشكل مختلف عن الواقع؟",
+          "width": 522,
+          "x": 95,
+          "y": 724
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 34.333333333333336,
+          "symWidth": 28.79700854700855,
+          "text": "SUCH  AS TO  MAKE  IT  FLOW MORE  SLOWLY  THAN OUTSIDE  OF  IT .",
+          "translation": "كأن يجري أبطأ منه بالخارجي؟",
+          "width": 466,
+          "x": 113,
+          "y": 1985
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 37,
+          "text": "HMM ...",
+          "translation": "همم...",
+          "width": 217,
+          "x": 267,
+          "y": 2781
+        },
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 34.75,
+          "symWidth": 27.68901515151515,
+          "text": "MANY  PAST  CULT LEADERS  AND  I  HAVE ATTEMPTED  IT ,  BUT  IT PROVED  IMPOSSIBLE FOR  US .",
+          "translation": "حاول العديد من قادة الطوائف السابقين مثلي ذلك، لكنه كان مستحيلاً.",
+          "width": 506,
+          "x": 97,
+          "y": 3709
+        }
+      ],
+      "imgHeight": 3986,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 43.41666666666667,
+          "symWidth": 35.125,
+          "text": "SEE YOU  NEXT TIME .",
+          "translation": "أراكم في المرة القادمة.",
+          "width": 279,
+          "x": 239,
+          "y": 3972
+        }
+      ],
+      "imgHeight": 4228,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 28.5,
+          "symWidth": 22.6875,
+          "text": "THANK  YOU  FOR THAT  INFORMATION .",
+          "translation": "شكرًا على تلك المعلومات.",
+          "width": 366,
+          "x": 154,
+          "y": 410
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 10.5,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 152,
+          "x": 76,
+          "y": 1254
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 25.5,
+          "symWidth": 20.049142743221694,
+          "text": "BEFORE  THAT , WAIT  A  MOMENT !  WERE  YOU SINCERE  ABOUT  WHAT  YOU SAID  EARLIER ?",
+          "translation": "انتظر للحظة! هل كنت صادقًا بما قلته سابقًا؟",
+          "width": 448,
+          "x": 134,
+          "y": 1580
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 30.333333333333332,
+          "symWidth": 25.09090909090909,
+          "text": "WHICH REMARK  DO  YOU MEAN ?",
+          "translation": "أي تعليق تقصد؟",
+          "width": 338,
+          "x": 231,
+          "y": 2421
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 37.25,
+          "symWidth": 29.826923076923077,
+          "text": "THAT  YOU REGARD  ME  AS YOUR  TEACHER  IN THIS  PLACE .",
+          "translation": "أنك تعتبرني معلمك في هذا المكان.",
+          "width": 438,
+          "x": 133,
+          "y": 2905
+        }
+      ],
+      "imgHeight": 3985,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 48.93333333333333,
+          "symWidth": 40.666666666666664,
+          "text": "FAREWELL FOR  NOW .",
+          "translation": "وداعًا الآن.",
+          "width": 340,
+          "x": 154,
+          "y": 832
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 53.125,
+          "symWidth": 35.88541666666667,
+          "text": "I'LL ALWAYS  CHOOSE YOUR  SIDE !",
+          "translation": "سأختار دائمًا جانبك!",
+          "width": 443,
+          "x": 124,
+          "y": 2699
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 10.642857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 150,
+          "x": 10,
+          "y": 4113
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 27.75,
+          "symWidth": 26.162745098039213,
+          "text": "THAT'S  RIGHT . HE  WALKS  THE  PATH TOWARD  BECOMING  THE SUCCESSOR .",
+          "translation": "هذا صحيح. هو يسير في طريق الخلافة.",
+          "width": 458,
+          "x": 118,
+          "y": 168
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 28.666666666666668,
+          "symWidth": 26.26111111111111,
+          "text": "HE  WOULDN'T WANT  EVEN  A  THREAD OF  CONNECTION",
+          "translation": "لن يرضى حتى بخيط من صلة",
+          "width": 463,
+          "x": 84,
+          "y": 1424
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 28,
+          "symWidth": 24.788982259570492,
+          "text": "WITH  TRASH LIKE  THE  YUNNAN  TWIN FREAKS .",
+          "translation": "مع قمامة مثل الشقيقين الشاذين من يونان.",
+          "width": 473,
+          "x": 143,
+          "y": 1505
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 39.833333333333336,
+          "symWidth": 29.438888888888886,
+          "text": "AAH ,  I MISSPOKE  JUST NOW .",
+          "translation": "آه، لقد أخطأت في القول الآن.",
+          "width": 411,
+          "x": 153,
+          "y": 2286
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 31.246376811594203,
+          "symWidth": 23.32850241545894,
+          "text": "THAT'S CORRECT .  THE  YUNNAN TWIN  FREAKS  MATTER WAS ,  IN",
+          "translation": "صحيح، مسألة الشقيقين الشاذين من يونان،",
+          "width": 449,
+          "x": 103,
+          "y": 3425
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 31,
+          "symWidth": 22.444444444444443,
+          "text": "ALL  TRUTH , MY  AFFAIR .",
+          "translation": "بكل صدق، هي أمر يخصني.",
+          "width": 285,
+          "x": 227,
+          "y": 3558
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 32.22222222222222,
+          "symWidth": 31.006944444444446,
+          "text": "OF  COURSE , I  UNDERSTAND  YOU SUMMONED  THEM FOR  MY  SAKE",
+          "translation": "بالطبع، أفهم أنك استدعيتهم من أجلي.",
+          "width": 445,
+          "x": 112,
+          "y": 4049
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 33.666666666666664,
+          "symWidth": 27.09981684981685,
+          "text": "CALLING UPON  THE  YUNNAN TWIN  FREAKS  WAS MY  ERROR .",
+          "translation": "استدعاء الشقيقين الشاذين من يونان كان خطأي.",
+          "width": 407,
+          "x": 142,
+          "y": 1257
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 44.142857142857146,
+          "symWidth": 38.42857142857143,
+          "text": "WHAT  DO YOU  MEAN ?",
+          "translation": "ماذا تعني؟",
+          "width": 326,
+          "x": 240,
+          "y": 1720
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 37.15384615384615,
+          "symWidth": 28.884615384615383,
+          "text": "I  FEAR  MY JUDGMENT  WAS LACKING .",
+          "translation": "أخشى أن حكمتي قد قصرت.",
+          "width": 381,
+          "x": 137,
+          "y": 2669
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 35.24324324324324,
+          "symWidth": 28.71042471042471,
+          "text": "I  SHOULD NOT  HAVE  INVOLVED SUCH  TRASH  IN  YOUR AFFAIRS",
+          "translation": "ما كان يجب أن أشرك مثل هذه القمامة في أمورك.",
+          "width": 497,
+          "x": 89,
+          "y": 3794
+        }
+      ],
+      "imgHeight": 3978,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 36.75,
+          "symWidth": 27.90416666666667,
+          "text": "YES ,  I  MET  WITH HIM  TO  DRAW  HIM TO  OUR  SIDE .",
+          "translation": "نعم، التقيت به لجذبه إلى صفنا.",
+          "width": 398,
+          "x": 157,
+          "y": 71
+        },
+        {
+          "angle": 0,
+          "height": 173,
+          "symHeight": 25.901234567901234,
+          "symWidth": 23.913019079685746,
+          "text": "I  UNDERSTAND GOING  TO  MEET  THE  BLOOD HEAVENS  SWORD  DEMON .  IN  ANY CASE ,  THERE  WAS  UNFINISHED BUSINESS  WITH  HIM .",
+          "translation": "أفهم أنك ذهبت لملاقاة شيطان سيف السماء الدموية. على أية حال، كان هناك شأن غير مكتمل معه.",
+          "width": 559,
+          "x": 81,
+          "y": 2523
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 13,
+          "symWidth": 12,
+          "text": "コン",
+          "translation": "コン",
+          "width": 18,
+          "x": 0,
+          "y": 3621
+        },
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 28.914141414141415,
+          "symWidth": 26.847853535353533,
+          "text": "YET  HE  WENT  TO FIND  THE  SKY  HEAVEN CULT  LEADER  EVEN  AFTER SEEING  ME  AND  THE  SKY HEAVEN  CULT  LEADER QUARRELLING ...",
+          "translation": "ومع ذلك، ذهب للقاء قائد طائفة السماء السماوية رغم مشاهدته لخلافي معه.",
+          "width": 503,
+          "x": 95,
+          "y": 3783
+        }
+      ],
+      "imgHeight": 4212,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 33.75,
+          "symWidth": 28.102884615384617,
+          "text": "I  UNDERSTAND  IT CAME  FROM  YOUR HEART  FOR  MY SAKE .",
+          "translation": "أدرك أن ذلك جاء من قلبك من أجلي.",
+          "width": 406,
+          "x": 116,
+          "y": 451
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 19,
+          "symWidth": 11.5,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 151,
+          "x": 11,
+          "y": 1704
+        },
+        {
+          "angle": 0,
+          "height": 211,
+          "symHeight": 31.264705882352942,
+          "symWidth": 23.933250572956453,
+          "text": "I  AM  GRATEFUL YOU  SEE  IT  THAT  WAY . AS  EXPECTED ,  YOU  HAVE A  MAGNANIMOUS SPIRIT .",
+          "translation": "أنا ممتن لأنك ترى الأمر هكذا. كما توقعت، روحك كريمة.",
+          "width": 491,
+          "x": 87,
+          "y": 1962
+        },
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 33.75,
+          "symWidth": 25.33840811965812,
+          "text": "HOWEVER , THERE  IS  ONE THING  I  MUST  SET STRAIGHT .",
+          "translation": "لكن هناك أمر واحد يجب أن أوضحه.",
+          "width": 400,
+          "x": 191,
+          "y": 3612
+        }
+      ],
+      "imgHeight": 3978,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 25.66923076923077,
+          "symWidth": 20.68693806193806,
+          "text": "IF  WE  DRAW  THE SKY  HEAVEN  CULT  LEADER  TO OUR  SIDE ,  WOULDN'T  THE  SOUL ABSORBING  SUPREME  DEMON NATURALLY  BECOME  OUR  ALLY AS  WELL ?",
+          "translation": "إذا جذبنا قائد طائفة السماء السماوية إلى جانبنا، ألن يصبح شبح امتصاص الأرواح العظيم، شيطاننا أيضاً؟",
+          "width": 537,
+          "x": 74,
+          "y": 266
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.857142857142858,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 154,
+          "x": 9,
+          "y": 1231
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 38.666666666666664,
+          "symWidth": 29.89814814814815,
+          "text": "THAT IS  WHY  I  MET HIM .",
+          "translation": "لهذا السبب التقيته.",
+          "width": 348,
+          "x": 222,
+          "y": 1268
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 33.76470588235294,
+          "symWidth": 26.294117647058822,
+          "text": "... WHAT  DID  THE CULT",
+          "translation": "... ماذا قال قائد الطائفة؟",
+          "width": 371,
+          "x": 130,
+          "y": 2437
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 33,
+          "symWidth": 27.477777777777778,
+          "text": "SKY  HEAVEN LEADER  SAY ?",
+          "translation": "قال إنه سينظر في الأمر.",
+          "width": 342,
+          "x": 111,
+          "y": 2486
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 36,
+          "symWidth": 27.606060606060606,
+          "text": "HE SAID  HE  WOULD CONSIDER  IT .",
+          "translation": "",
+          "width": 374,
+          "x": 153,
+          "y": 3156
+        }
+      ],
+      "imgHeight": 4213,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 48,
+          "symWidth": 42.47916666666667,
+          "text": "WHAT  DO YOU  MEAN ?",
+          "translation": "ماذا تعني؟",
+          "width": 352,
+          "x": 135,
+          "y": 819
+        },
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 33.75213675213675,
+          "symWidth": 25.576923076923077,
+          "text": "YOU  SAID  YOU BROUGHT  THE  YUNNAN TWIN  FREAKS AFFAIRS .",
+          "translation": "قلت إنك جلبت قضايا الشقيقين الشاذين من يونان إلى أموري.",
+          "width": 490,
+          "x": 113,
+          "y": 1396
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 26.833333333333332,
+          "text": "INTO  MY",
+          "translation": "إلى أنا",
+          "width": 174,
+          "x": 422,
+          "y": 1495
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 13,
+          "symWidth": 15,
+          "text": "EM",
+          "translation": "EM",
+          "width": 15,
+          "x": 492,
+          "y": 2671
+        },
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 39.17948717948718,
+          "symWidth": 28.900349650349654,
+          "text": "BUT  STRICTLY SPEAKING ,  IT  WAS YOUR  AFFAIRS , NOT  MINE .",
+          "translation": "لكن بصراحة، كانت أمورك أنت، لا أنا.",
+          "width": 444,
+          "x": 123,
+          "y": 2794
+        }
+      ],
+      "imgHeight": 3979,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 61,
+          "symWidth": 40.18181818181818,
+          "text": "SECOND  YOUNG",
+          "translation": "السيد الشاب الثاني؟",
+          "width": 306,
+          "x": 177,
+          "y": 405
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 63.42857142857143,
+          "symWidth": 34.57142857142857,
+          "text": "MASTER ?",
+          "translation": "كنت أنتظر لأنني",
+          "width": 177,
+          "x": 260,
+          "y": 487
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 34.5,
+          "symWidth": 26.98051948051948,
+          "text": "I  WAS  WAITING BECAUSE",
+          "translation": "أتمنى رؤيتك.",
+          "width": 374,
+          "x": 151,
+          "y": 3092
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 33.5,
+          "symWidth": 27.27777777777778,
+          "text": "WISHED TO  SEE  YOU .",
+          "translation": "أن تراني؟",
+          "width": 363,
+          "x": 221,
+          "y": 3142
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 35.5,
+          "symWidth": 32.6,
+          "text": "TO  SEE ME ?",
+          "translation": "لماذا؟",
+          "width": 191,
+          "x": 307,
+          "y": 3638
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 54.25,
+          "symWidth": 46,
+          "text": "WHY ?",
+          "translation": "",
+          "width": 168,
+          "x": 370,
+          "y": 4140
+        }
+      ],
+      "imgHeight": 4191,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 31.384615384615387,
+          "symWidth": 26.142857142857142,
+          "text": "SO PLEASE  DON'T TROUBLE  YOURSELF OVER  IT .",
+          "translation": "فلا تشغل بالك بها.",
+          "width": 441,
+          "x": 91,
+          "y": 1137
+        }
+      ],
+      "imgHeight": 4228,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 275,
+          "symHeight": 241.5,
+          "symWidth": 240,
+          "text": "71",
+          "translation": "71",
+          "width": 299,
+          "x": 346,
+          "y": 584
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 32.56666666666667,
+          "symWidth": 29.833333333333332,
+          "text": "COULD HE  BE  TRYING TO  RECRUIT ME ... ?",
+          "translation": "هل يحاول تجنيدي...؟",
+          "width": 308,
+          "x": 184,
+          "y": 1148
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 34.24242424242424,
+          "symWidth": 26.09090909090909,
+          "text": "WOULD  YOU JOIN  ME  FOR  A  DRINK AT  A  TAVERN ?",
+          "translation": "هل تنضم إليّ لنشرب في حانة؟",
+          "width": 463,
+          "x": 140,
+          "y": 1887
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 35.515151515151516,
+          "symWidth": 26.818181818181817,
+          "text": "A  DRINK WITH  ME ?  AND AT  A  TAVERN , NO  LESS ?",
+          "translation": "نشرب معك؟ وفي حانة، كذلك؟",
+          "width": 313,
+          "x": 150,
+          "y": 3045
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 21.625,
+          "text": "EXACTLY .",
+          "translation": "تمامًا.",
+          "width": 177,
+          "x": 334,
+          "y": 3904
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 10.5,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 150,
+          "x": 11,
+          "y": 4029
+        }
+      ],
+      "imgHeight": 4192,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.571428571428571,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 152,
+          "x": 9,
+          "y": 397
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 30.149425287356323,
+          "symWidth": 23.876026272578,
+          "text": "YOU  SAID YOU  BROUGHT  THE YUNNAN  TWIN  FREAKS INTO  MY  AFFAIRS .",
+          "translation": "قلت إنك جلبت قضايا الشقيقين الشاذين من يونان إلى أموري.",
+          "width": 421,
+          "x": 112,
+          "y": 1727
+        },
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 40.75,
+          "symWidth": 29.98336038961039,
+          "text": "BUT  STRICTLY SPEAKING ,  IT  WAS YOUR  AFFAIRS , NOT  MINE .",
+          "translation": "لكن بصراحة، كانت أمورك أنت، لا أنا.",
+          "width": 460,
+          "x": 109,
+          "y": 2926
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 13.666666666666666,
+          "symWidth": 16.666666666666668,
+          "text": "་  ་ \\",
+          "translation": "་  ་ \\",
+          "width": 35,
+          "x": 280,
+          "y": 3709
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 44.0625,
+          "symWidth": 37.5,
+          "text": "WHAT COULD ...",
+          "translation": "ماذا يمكن أن...",
+          "width": 240,
+          "x": 337,
+          "y": 305
+        },
+        {
+          "angle": 0,
+          "height": 216,
+          "symHeight": 26.083333333333332,
+          "symWidth": 24.00967261904762,
+          "text": "IF  THE  FIRST YOUNG  MASTER  MEETS WITH  THE  BLOOD  HEAVENS SWORD  DEMON  AND  THE SKY  HEAVEN  CULT LEADER ,",
+          "translation": "إذا التقى السيد الشاب الأول مع شيطان سيف السماء الدموية وقائد طائفة السماء السماوية،",
+          "width": 464,
+          "x": 112,
+          "y": 1833
+        },
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 32.19642857142857,
+          "symWidth": 30.264285714285716,
+          "text": "THEN  SURELY I  TOO  CAN  MEET GEOM  MUGEUK  AS I  NOT ?",
+          "translation": "فهل لي أن ألتقي جوم موغوك كذلك؟ أليس كذلك؟",
+          "width": 405,
+          "x": 140,
+          "y": 3434
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34,
+          "symWidth": 28.363636363636363,
+          "text": "I  PLEASE ,  CAN",
+          "translation": "أتوسل إليك، هل يمكن؟",
+          "width": 311,
+          "x": 186,
+          "y": 3575
+        }
+      ],
+      "imgHeight": 4193,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 36.23529411764706,
+          "symWidth": 28.785714285714285,
+          "text": "ALRIGHT , I  DON'T  SEE WHY  NOT .",
+          "translation": "حسنًا، لا أرى سببًا للرفض.",
+          "width": 303,
+          "x": 217,
+          "y": 85
+        }
+      ],
+      "imgHeight": 5675,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 31.5,
+          "symWidth": 27.098290598290596,
+          "text": "NOW  THAT  HE MENTIONS  IT ...",
+          "translation": "الآن وقد ذكرت ذلك...",
+          "width": 291,
+          "x": 169,
+          "y": 1302
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 11,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 149,
+          "x": 12,
+          "y": 2728
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 33.5,
+          "symWidth": 34.20202020202021,
+          "text": "HAS  THE  FIRST YOUNG  MASTER EVER  KNOCKED ON  MY  DOOR ?",
+          "translation": "هل طرق السيد الشاب الأول بابي يومًا؟",
+          "width": 378,
+          "x": 165,
+          "y": 2976
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 30.25,
+          "symWidth": 27.6875,
+          "text": "작화 도움 종일 은정 성현",
+          "translation": "작화 도움 종일 은정 성현",
+          "width": 112,
+          "x": 565,
+          "y": 4162
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 17,
+          "symWidth": 19.75,
+          "text": "JHS STUDIO",
+          "translation": "JHS STUDIO",
+          "width": 106,
+          "x": 571,
+          "y": 4348
+        }
+      ],
+      "imgHeight": 4403,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 34.75,
+          "symWidth": 25.643037518037517,
+          "text": "THIS  IS  THE FIRST  TIME  WE'VE SAT  TOGETHER LIKE  THIS .",
+          "translation": "هذه أول مرة نجلس معًا هكذا.",
+          "width": 397,
+          "x": 154,
+          "y": 1051
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 10.714285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 150,
+          "x": 12,
+          "y": 1866
+        },
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 35.75,
+          "symWidth": 27.51825396825397,
+          "text": "DON'T PRETEND  TO BE  FAMILIAR WITH  ME .",
+          "translation": "لا تدّع أنك على معرفة بي.",
+          "width": 303,
+          "x": 196,
+          "y": 1944
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 34.5,
+          "symWidth": 27.033516483516483,
+          "text": "AN  OPPORTUNITY TO  DRINK  WITH  YOU LIKE  THIS  WON'T COME  OFTEN .",
+          "translation": "فرصة الشراب معك هكذا لن تتكرر كثيرًا.",
+          "width": 442,
+          "x": 157,
+          "y": 2498
+        },
+        {
+          "angle": 0,
+          "height": 227,
+          "symHeight": 34.4,
+          "symWidth": 25.871515837104074,
+          "text": "IF  I  DON'T ACT  FREELY  NOW ,  WHEN WOULD  I ?  PLEASE  FORGIVE MY  UNRULY  BEHAVIOR , JUST  FOR  TODAY .",
+          "translation": "إن لم أتصرف بحرية الآن، فمتى؟ اغفر لي طيش تصرفي اليوم فقط.",
+          "width": 602,
+          "x": 57,
+          "y": 4015
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 30.333333333333332,
+          "symWidth": 27.593628593628594,
+          "text": "SO  THIS  IS  HOW THE  SWORD  DEMON WAS",
+          "translation": "هكذا استقطب شيطان السيف.",
+          "width": 413,
+          "x": 143,
+          "y": 4734
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 21,
+          "text": "ENTICED .",
+          "translation": "",
+          "width": 177,
+          "x": 311,
+          "y": 4824
+        }
+      ],
+      "imgHeight": 5677,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

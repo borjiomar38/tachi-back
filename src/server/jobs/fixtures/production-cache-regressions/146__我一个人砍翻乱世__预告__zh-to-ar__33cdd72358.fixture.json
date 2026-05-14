@@ -1,0 +1,466 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0146",
+  "jobId": "fixture-job-0146",
+  "licenseId": "fixture-license-0146",
+  "pageCount": 17,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1156,
+          "symHeight": 238.5,
+          "symWidth": 260,
+          "text": "末世 降临",
+          "translation": "حلول نهاية العالم",
+          "width": 260,
+          "x": 1062,
+          "y": 719
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1295,
+          "symHeight": 237,
+          "symWidth": 242.2,
+          "text": "丧尸 来袭 。",
+          "translation": "انشقاق الزومبي.",
+          "width": 255,
+          "x": 142,
+          "y": 16
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 126,
+          "symWidth": 107,
+          "text": "死亡 爬向 人间 .... ……",
+          "translation": "تتسلل الموتى إلى عالم الأحياء...",
+          "width": 1103,
+          "x": 188,
+          "y": 386
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 596,
+          "symHeight": 151.75,
+          "symWidth": 171.75,
+          "text": "上门 回 我",
+          "translation": "الباب قد أُغلق ورائي",
+          "width": 174,
+          "x": 181,
+          "y": 1394
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 49,
+          "symWidth": 52,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 106,
+          "x": 1359,
+          "y": 2607
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 880,
+          "symHeight": 138.1666666666667,
+          "symWidth": 136,
+          "text": "温柔 的 我 手 起",
+          "translation": "يدي الحنونة ترتفع",
+          "width": 136,
+          "x": 1198,
+          "y": 1513
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1004,
+          "symHeight": 268.25,
+          "symWidth": 247.875,
+          "text": "绝不 让 地 变成 丧尸",
+          "translation": "لن أدع الأرض تتحول إلى مأوى لهم",
+          "width": 252,
+          "x": 94,
+          "y": 1675
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 55.4,
+          "symWidth": 52.2,
+          "text": "④  包子 漫畫",
+          "translation": "٤ - مانغا باوزي",
+          "width": 270,
+          "x": 36,
+          "y": 1202
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 38.83333333333334,
+          "text": "ASINEN",
+          "translation": "أسينن",
+          "width": 181,
+          "x": 1243,
+          "y": 1229
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 17,
+          "text": "baozimh.com",
+          "translation": "baozimh.com",
+          "width": 207,
+          "x": 105,
+          "y": 1258
+        }
+      ],
+      "imgHeight": 1310,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 134,
+          "symWidth": 99.18181818181819,
+          "text": "我 不是 英雄 , 我 只是 ..",
+          "translation": "لست بطلاً، إنما...",
+          "width": 1435,
+          "x": 59,
+          "y": 577
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 136,
+          "symWidth": 121.8571428571429,
+          "text": "一个 拥有 系统 的",
+          "translation": "إنسان عادي يملك نظاماً",
+          "width": 1020,
+          "x": 208,
+          "y": 933
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 180.25,
+          "symWidth": 136.25,
+          "text": "普通人 。",
+          "translation": "بسيطاً.",
+          "width": 653,
+          "x": 433,
+          "y": 1134
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 40.2,
+          "symWidth": 34.52727272727273,
+          "text": "④  包子 漫畫 baozimh.com",
+          "translation": "٤ - مانغا باوزي baozimh.com",
+          "width": 276,
+          "x": 37,
+          "y": 1893
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 118.8571428571429,
+          "symWidth": 107.8571428571429,
+          "text": "开局 一 把刀 ..",
+          "translation": "بداية بحمل سكين...",
+          "width": 825,
+          "x": 295,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 907,
+          "symHeight": 332.8,
+          "symWidth": 258,
+          "text": "属性 全靠 砍",
+          "translation": "كل خصائصه تُكتسب بالقطع",
+          "width": 262,
+          "x": 135,
+          "y": 1093
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 52,
+          "symWidth": 66,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 104,
+          "x": 1360,
+          "y": 1923
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 465,
+          "symHeight": 254.875,
+          "symWidth": 240.625,
+          "text": "我 一个 人 砍翻 乱世",
+          "translation": "أنا من سيهزم الفوضى بمفردي",
+          "width": 1001,
+          "x": 391,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 313,
+          "symHeight": 127.4285714285714,
+          "symWidth": 104.8095238095238,
+          "text": "9 . 27 - 9 . 29 日 三 连 更 新 作 上 线  敬请 关注",
+          "translation": "٩.٢٧ - ٩.٢٩ تحديث مستمر ثلاث مرات، ترقبوا",
+          "width": 1232,
+          "x": 152,
+          "y": 809
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 60,
+          "symWidth": 66.25,
+          "text": "腾讯 动漫",
+          "translation": "تينسنت أنمي",
+          "width": 205,
+          "x": 1264,
+          "y": 1322
+        }
+      ],
+      "imgHeight": 1400,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 526,
+          "symHeight": 256.625,
+          "symWidth": 280.25,
+          "text": "我 一个 人 砍翻 乱世",
+          "translation": "أنا من سيهزم الفوضى بمفردي",
+          "width": 1076,
+          "x": 216,
+          "y": 2154
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 43.34615384615385,
+          "text": "改编 自 阅 文 集团 作者 新丰 同名 小说 : 《 我 一个 人 砍翻 乱世 》",
+          "translation": "مقتبس من رواية تحمل الاسم ذاته للكاتب شين فونغ التابعة لمجموعة يوان ون: \"أنا من سيهزم الفوضى بمفردي\"",
+          "width": 1278,
+          "x": 105,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 53.125,
+          "text": "监制 : 阿布  小涛 子",
+          "translation": "المشرف: أبو وشياو تاو زي",
+          "width": 510,
+          "x": 470,
+          "y": 3097
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 55.85714285714285,
+          "symWidth": 48.57142857142857,
+          "text": "责编 : momo",
+          "translation": "المحرر: مومو",
+          "width": 388,
+          "x": 471,
+          "y": 3241
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 54.75,
+          "text": "制作 : 蔷薇 事务所",
+          "translation": "الإنتاج: مكتب الورود",
+          "width": 491,
+          "x": 470,
+          "y": 3384
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 57.5,
+          "symWidth": 65.5,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 122,
+          "x": 1347,
+          "y": 3518
+        }
+      ],
+      "imgHeight": 3596,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

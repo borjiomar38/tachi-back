@@ -1,0 +1,2117 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0038",
+  "jobId": "fixture-job-0038",
+  "licenseId": "fixture-license-0038",
+  "pageCount": 22,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 76,
+          "symWidth": 59.66666666666666,
+          "text": "这一 世",
+          "translation": "العصر الأعظم",
+          "width": 171,
+          "x": 270,
+          "y": 822
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 18.61111111111111,
+          "symWidth": 10.53535353535354,
+          "text": "The  ULTIMATE of  All  Ages",
+          "translation": "القمة عبر العصور",
+          "width": 177,
+          "x": 306,
+          "y": 1015
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 25.11111111111111,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر بسرعة! حصري للمانغا",
+          "width": 242,
+          "x": 232,
+          "y": 1387
+        },
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 22.8,
+          "symWidth": 20.23142857142857,
+          "text": "原著 : 太 一生 水 漫画 改编 : AA4 漫 业 脚本 : 滴水 监制 : 滴水 主笔 : 杰克 挪威",
+          "translation": "المؤلف الأصلي: تاي يشينغشي\nتحويل المانغا: AA4 مانغايا\nالسيناريو: دِي شوي\nالإشراف: دِي شوي\nالرسم الأساسي: جاك النرويجي",
+          "width": 249,
+          "x": 231,
+          "y": 1536
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 22.75,
+          "symWidth": 19.23125,
+          "text": "线 稿 助手 : 815110  老邢  九日 阿米巴  小 电影 色彩 助手 : JXH  FN  午夜 党  猫 小呆 责编 : 春雨",
+          "translation": "مساعد الخطوط: 815110 لاو شينغ، جيو ري، أميبا، فيلم صغير\nمساعد التلوين: JXH FN، حزب منتصف الليل، القط، شياو داي\nالمحرر: شون يو",
+          "width": 383,
+          "x": 231,
+          "y": 1745
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 24,
+          "symWidth": 11.695,
+          "text": "IN  ORDER  TO  BREAK  LI YUNXIAO'S  SEAL ,  XU  QING  TRIED COUNTLESS  METHODS ,  EVENTUALLY EVEN  FINDING  PEI  MINGYUAN ,",
+          "translation": "لكسر ختم لي يونشياو، حاول شو تشينغ كل الوسائل، وبلغ به الأمر أن وجد بي مينغيوان،",
+          "width": 367,
+          "x": 257,
+          "y": 2492
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 19.86290322580645,
+          "symWidth": 10.37903225806452,
+          "text": "WANTING  TO  SEE  IF  THE GLAZED  GLASS  VILLA  HAD  THE  POWER  TO BREAK  IT ,  BUT  UNEXPECTEDLY ,  THE  PEOPLE OF  THE  GLAZED  GLASS  VILLA  WERE ALSO  AT  THEIR  WITS '  END .",
+          "translation": "ليرى إن كان لفيلا الزجاج الملون القدرة على كسره، لكن بعض الحاصل أن أهل الفيلا كانوا في حيرة بالغة.",
+          "width": 367,
+          "x": 70,
+          "y": 2845
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 18.6780303030303,
+          "symWidth": 10.66477272727273,
+          "text": "WHAT  WAS  EVEN  MORE  EXCESSIVE WAS  THAT  TO  ENSURE  PEI  MINGYUAN'S  SAFETY , THE  PEOPLE  OF  THE  GLAZED  GLASS  VILLA  ACTUALLY USED  XU  QING  AS  AN  EXPERIMENT ,  TRYING  OUT ALL  SORTS  OF  BIZARRE  METHODS .",
+          "translation": "وما كان أفظع أن أهل فيلا الزجاج الملون، لضمان سلامة بي مينغيوان، استخدموا شو تشينغ كفأر تجارب، مجربين كل الطرائق الغريبة.",
+          "width": 426,
+          "x": 37,
+          "y": 3539
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 20.23636363636364,
+          "symWidth": 10.83636363636364,
+          "text": "XU  QING  WAS  LEFT COVERED  IN  INJURIES  WITH ABSOLUTELY  NO  PROGRESS .",
+          "translation": "تُرِكَ شو تشينغ مكسوًّا بالجراح دون أي تقدم يُذكر.",
+          "width": 249,
+          "x": 437,
+          "y": 4121
+        }
+      ],
+      "imgHeight": 4303,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 23.78865131578947,
+          "symWidth": 12.37828947368421,
+          "text": "XU  QING  WAS CONSIDERED  LUCKY ;  HE  FOUND AN  OPPORTUNITY  TO  INJURE  THE GUARDS  AND  MANAGED  TO ESCAPE  BY  A  FLUKE .",
+          "translation": "كان شو تشينغ يعتبر محظوظًا؛ إذ وجد فرصة لإصابة الحراس وهرب بمحض الصدفة.",
+          "width": 338,
+          "x": 42,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 18.7051282051282,
+          "symWidth": 10.12820512820513,
+          "text": "RELYING  ON  THE INFORMATION  ON  THE  JADE  TAG TO  FIND  LI  YUNXIAO .",
+          "translation": "اعتمادًا على المعلومات الواردة في الوسم اليشم للعثور على لي يونشياو.",
+          "width": 262,
+          "x": 304,
+          "y": 1142
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 24.5,
+          "symWidth": 15.10714285714286,
+          "text": "SIGH ,  I'VE SUFFERED  QUITE A  BIT ~ !",
+          "translation": "آه، لقد تكبدت الكثير من المتاعب!",
+          "width": 215,
+          "x": 389,
+          "y": 1750
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19.32203389830509,
+          "symWidth": 13.52234206471494,
+          "text": "I  BROUGHT  THE INFORMATION ,  I  HOPE  YOU CAN  KEEP  YOUR  PROMISE  AND BREAK  THE  SEAL  FOR  ME .",
+          "translation": "أحضرتُ المعلومات، وآمل أن تفي بوعدك وتكسر الختم لي.",
+          "width": 308,
+          "x": 57,
+          "y": 2463
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20,
+          "symWidth": 13.66666666666667,
+          "text": "HMM ,  GO  AHEAD AND  SPEAK .",
+          "translation": "همم، تفضل وتحدث.",
+          "width": 174,
+          "x": 449,
+          "y": 2859
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 19.84375,
+          "symWidth": 13.80625,
+          "text": "I  TRULY  WAS  A FROG  IN  A  WELL ,  MAKING A  FOOL  OF  MYSELF .",
+          "translation": "كنت كضفدع في بئر، أجهل وأستخف بنفسي.",
+          "width": 263,
+          "x": 35,
+          "y": 3734
+        },
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 22.92631578947369,
+          "symWidth": 16.07081339712919,
+          "text": "THE  PATH  OF MARTIAL  ARTS  IS  VAST  AND PROFOUND .  EVEN  A  PEAK EXPERT  WOULDN'T  DARE  SAY THEY  HAVE  SEEN  THROUGH ALL  THE  MARTIAL  ARTS IN  THE  WORLD .",
+          "translation": "طريق الفنون القتالية واسع وعميق للغاية، ولا يجرؤ حتى أعظم الخبراء على ادعاء فهمهم لكل فنون القتال في العالم.",
+          "width": 355,
+          "x": 337,
+          "y": 3812
+        }
+      ],
+      "imgHeight": 4304,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 22.01169590643275,
+          "symWidth": 14.49749373433584,
+          "text": "WITH  THE  SEALING TECHNIQUE  I  LAID  DOWN , IF  I  DIDN'T  HAVE  ABSOLUTE CONFIDENCE ,  HOW  WOULD I  DARE  LET  YOU  LEAVE ?",
+          "translation": "بالطريقة التي رسمت بهاِ ختم الإغلاق، لو لم يكن لدي تمام الثقة، فكيف لي أن أسمح لك بالمغادرة؟",
+          "width": 316,
+          "x": 137,
+          "y": 153
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 23,
+          "symWidth": 15.39130434782609,
+          "text": "I  HAVE BEEN  TAUGHT A  LESSON !",
+          "translation": "لقد نلت درساً قاسياً!",
+          "width": 170,
+          "x": 113,
+          "y": 722
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 17.06028368794326,
+          "symWidth": 11.59682097651434,
+          "text": "I  HAVE  ALREADY  FOUND OUT  THE  INFORMATION HAMMER .  SHE  IS  THE  ELDEST  MISS  OF  THE ABOUT  THAT  IRON JIANG  FAMILY ,  JIANG  RUOMEI ,  THE  BIOLOGICAL DAUGHTER  OF  THE  JIANG  FAMILY MATRIARCH ,  RUAN  HONGYU .",
+          "translation": "لقد أوصلتُ إلى ما يُدعى بمطرقة المعلومات؛ إنها الآنسة الكبرى من عائلة جيانغ الحديدية، جيانغ روميي، الابنة البيولوجية لربة العائلة روان هونغيو.",
+          "width": 424,
+          "x": 242,
+          "y": 966
+        },
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 21.58333333333333,
+          "symWidth": 14.92099123099123,
+          "text": "ONLY  BECAUSE SHE  CONTRACTED  A  STRANGE ILLNESS  SINCE  CHILDHOOD ,  EVEN IF  SHE  DOESN'T  EAT  OR  DRINK ,  SHE STILL  BECOMES  ROBUST ,  SO  OVER THE  YEARS ,  SHE  BECAME  THE WAY  SHE  IS  NOW .",
+          "translation": "إذ أصيبت بمرض غريب منذ الصغر، حتى لو لم تأكل أو تشرب، ظلت قوية، ومع مرور السنين أصبحت على ما هي عليه اليوم.",
+          "width": 391,
+          "x": 5,
+          "y": 1942
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 20.015625,
+          "symWidth": 12.88541666666667,
+          "text": "SHE  RARELY  APPEARS  IN FRONT  OF  THE  PUBLIC ,  AND  IT  IS  A MASSIVE  TABOO  TO  TALK  ABOUT  HER BEHIND  HER  BACK ,  SO  NOT  MANY PEOPLE  DARE  TO  SPEAK  OF  IT .",
+          "translation": "نادراً ما تظهر في العلن، والتحدث عنها من خلفها يُعد من المحرمات الجسيمة، لذا قلة فقط من يجرؤون على ذكرها.",
+          "width": 401,
+          "x": 293,
+          "y": 2361
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 35.6,
+          "text": "【  快 看 漫画",
+          "translation": "",
+          "width": 187,
+          "x": 12,
+          "y": 2558
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 21.10810810810811,
+          "symWidth": 14.12162162162162,
+          "text": "TO  THINK  THERE  IS SUCH  A  STRANGE  ILLNESS ,  FOR A  WOMAN ,  IT  IS  SIMPLY  A  FATE WORSE  THAN  DEATH .",
+          "translation": "أن يمتلك امرأة مرضاً غريباً كهذا، هو قَدَر أشد وطأة من الموت نفسه.",
+          "width": 341,
+          "x": 349,
+          "y": 2743
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 23.99319727891157,
+          "symWidth": 15.32276295133438,
+          "text": "EXACTLY .  IF  NOT FOR  THAT ,  IF  THIS  ELDEST MISS  OF  THE  JIANG  FAMILY HAD  INHERITED  HER PARENTS '  GENES ,",
+          "translation": "بالتحديد. لو لم يكن الأمر كذلك، ولو ورثت الابنة الكبرى من عائلة جيانغ جينات والديها،",
+          "width": 340,
+          "x": 40,
+          "y": 2985
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 20.66666666666667,
+          "symWidth": 14.21233974358974,
+          "text": "SHE  WOULD SURELY  BE  A  BEAUTY . HOW  COULD  SHE  END  UP WITH  SUCH  AN  UNBEARABLE APPEARANCE  AND PERSONALITY !",
+          "translation": "لكانت بلا شك من جميلات الزمان. كيف يُعقل أن تتصف بمظهر وشخصية لا تُحتمل؟",
+          "width": 297,
+          "x": 0,
+          "y": 3182
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 16.50606060606061,
+          "symWidth": 11.00702861952862,
+          "text": "I  DON'T  EVEN  NEED  TO THINK  TO  UNDERSTAND  THE  MATTER  OF THAT  ICE  CUBES  FAN  CLUB .  IT  MUST  BE  THE OLDER  SISTER  BEING  JEALOUS  OF  THE  YOUNGER SISTER ,  RESORTING  TO  SOME  SHADY TRICKS  BEHIND  THE  SCENES .",
+          "translation": "لا حاجة بي إلى تفكير عميق لأدرك سر نادي معجبي مكعبات الثلج. لا بد أن الأخت الكبرى تغار من الصغرى، فتلجأ إلى مكائد خفية خلف الكواليس.",
+          "width": 428,
+          "x": 261,
+          "y": 3955
+        }
+      ],
+      "imgHeight": 4305,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 21.8,
+          "symWidth": 15.6028083028083,
+          "text": "WITH  THE  POWER AND  STATUS  OF  RED  MOON CITY ,  THEY  COULD  EVEN  INVITE LU  CONGZI .  HOW  COULD  THEY NOT  FIND  A  CURE ?",
+          "translation": "بفضل قوة ومكانة مدينة القمر الأحمر،\nكان بإمكانهم استدعاء لو كونغتزي. كيف يختلط لهم ألا يجدوا علاجاً؟",
+          "width": 352,
+          "x": 93,
+          "y": 80
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 22.5,
+          "symWidth": 14.0625,
+          "text": "IT  TRULY  IS STRANGE !",
+          "translation": "إنه لأمر غريب حقاً!",
+          "width": 134,
+          "x": 336,
+          "y": 302
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 21.06034482758621,
+          "symWidth": 14.02894088669951,
+          "text": "I  ALSO  FOUND  THIS MATTER  INCONCEIVABLE .  ONLY AFTER  INQUIRING  REPEATEDLY DID  I  UNDERSTAND  SOME PAST  EVENTS .",
+          "translation": "لقد وجدتُ هذا الأمر مستعصياً على التصديق أيضًا.\nلم أدرك إلا بعد استقصاء متكرر بعض أحداث الماضي.",
+          "width": 341,
+          "x": 42,
+          "y": 812
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19.2,
+          "symWidth": 13.34289958407605,
+          "text": "HAVE  YOU  EVER HEARD  OF  A  WORLD - SHOCKING MAJOR  EVENT  THAT  HAPPENED IN  RED  MOON  CITY  BACK IN  THE  DAY ?",
+          "translation": "هل سمعت يوماً عن حدث جسيم أحدث صدمةً للعالم\nوقع في مدينة القمر الأحمر منذ زمن بعيد؟",
+          "width": 331,
+          "x": 332,
+          "y": 1131
+        },
+        {
+          "angle": 0,
+          "height": 173,
+          "symHeight": 19.66666666666667,
+          "symWidth": 13.17545367467781,
+          "text": "SOMEONE  ONCE SINGLE - HANDEDLY  KILLED  OVER THIRTY  MARTIAL  SOVEREIGN  EXPERTS OF  THE  RUAN  FAMILY  IN  RED  MOON CITY ,  NEARLY  WIPING  OUT  THE RUAN  FAMILY'S  POWER .",
+          "translation": "مرةً قام شخص بمفرده بقتل أكثر من ثلاثين خبيراً من سياديّة فنون القتال من عائلة روان في مدينة القمر الأحمر،\nكاد يمحو قوة عائلة روان برمتها.",
+          "width": 386,
+          "x": 35,
+          "y": 1850
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 16.8,
+          "symWidth": 11.70091849529781,
+          "text": "THAT  BATTLE  TRULY  FILLED THE  ENTIRE  CITY  WITH  BLOOD  AND DYED  THE  MOONLIGHT  RED .  THAT  NIGHT IT  WAS  TRULY  A  RED  MOON  CITY WORTHY  OF  THE  NAME !",
+          "translation": "لقد ملأ ذلك القتال المدينة بالدماء،\nوصبغ ضوء القمر بالأحمر،\nوبالفعل كان تلك الليلة من جدارة تستحق اسم مدينة القمر الأحمر!",
+          "width": 365,
+          "x": 334,
+          "y": 2218
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 22,
+          "symWidth": 14.4405303030303,
+          "text": "AND  THAT  PERSON  WAS THE  ARMY  BREAKING  MARTIAL SOVEREIGN ,  GU  FEIYANG !",
+          "translation": "وكان ذلك الشخص هو القاهر المُدمر للسياديّة،\ngu Feiyang!",
+          "width": 336,
+          "x": 41,
+          "y": 3240
+        }
+      ],
+      "imgHeight": 3923,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 17.28571428571428,
+          "symWidth": 16.68162085408326,
+          "text": "NO ,  WHAT  DOES THIS  HAVE  TO  DO  WITH ME - WHAT  DOES  THIS  HAVE  TO DO  WITH  LORD  GU  FEIYANG ? AND  WHAT  DOES  THIS  HAVE TO  DO  WITH  THAT  IRON HAMMER ?",
+          "translation": "لا، ما شأن هذا بي؟ وما علاقتها بسيد قو فييانغ؟ وماذا في هذا المطرقة الحديدية؟",
+          "width": 353,
+          "x": 100,
+          "y": 417
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21.5,
+          "symWidth": 21.29464285714286,
+          "text": "OF  COURSE IT  DOES !",
+          "translation": "بالطبع لها شأن!",
+          "width": 171,
+          "x": 98,
+          "y": 1077
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 14.2,
+          "symWidth": 13.11528226675285,
+          "text": "THE  ARMY  BREAKING MARTIAL  SOVEREIGN'S  OCULAR TECHNIQUE  IS  UNPARALLELED  IN  THE WORLD ,  HAVING  ALREADY  REACHED A  MIRACULOUS  LEVEL .",
+          "translation": "تقنية العين لجنود مكسري العسكر تمتاز بلا مثيل في العالم، وقد بلغت مستوى معجزيًا.",
+          "width": 360,
+          "x": 253,
+          "y": 1647
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 12.2,
+          "symWidth": 11.08570174844131,
+          "text": "IT  CAN  TURN  THE  ILLUSORY INTO  REALITY ,  CHANGE  THE  HEAVENS AND  THE  EARTH ,  TRANSFORM  THE  SEAS  INTO MULBERRY  FIELDS ,  AND  SHIFT  THE  STARS AND  THE  BRIGHT  MOON !",
+          "translation": "تجعل الخيال حقيقةً، تغير السماء والأرض، تحول البحار إلى حقول توت، وتحرف النجوم والقمر الساطع!",
+          "width": 340,
+          "x": 342,
+          "y": 1845
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 13.5,
+          "symWidth": 12.98203542780749,
+          "text": "IN  THE  BATTLE  OF  RED MOON  CITY  BACK  THEN ,  NOT  ONLY DID  THE  RUAN  FAMILY  LOSE OVER  THIRTY  MARTIAL SOVEREIGNS ,",
+          "translation": "في معركة مدينة القمر الأحمر حينها، لم تفقد عائلة روان سوى أكثر من ثلاثين سيّد قتالٍ.",
+          "width": 312,
+          "x": 31,
+          "y": 2072
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 12.6,
+          "symWidth": 12.08692596406151,
+          "text": "BUT  HUNDREDS  AND THOUSANDS  OF  CLANSMEN  WERE CAPTIVATED  BY  THE  ARMY  BREAKING THEY  REMAINED  IN  A  MUDDLE - HEADED MARTIAL  SOVEREIGN'S  OCULAR  TECHNIQUE . STATE ,  LIKE  IDIOTS ,",
+          "translation": "لكن مئات وآلاف من أفراد العشيرة أسرهم التقنية وجعلتهم في حيرة، كأنهم حمقى بلا وعي.",
+          "width": 376,
+          "x": 268,
+          "y": 2363
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 16,
+          "symWidth": 15.41282051282051,
+          "text": "UNTIL  SEVERAL YEARS  LATER  WHEN  THEY GRADUALLY  REGAINED  THEIR SENSES  AND  WOKE  UP  ONE AFTER  ANOTHER .",
+          "translation": "حتى أعيتهم الأرواح وأفاقوا واحداً تلو الآخر بعد أعوام عدة.",
+          "width": 321,
+          "x": 74,
+          "y": 2559
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 13.11111111111111,
+          "symWidth": 12.24113300492611,
+          "text": "RUAN HONGYU  WAS  ONE OF  THE PEOPLE  CAPTIVATED  BY  THE OCULAR  TECHNIQUE  BACK  THEN ,  AND  AT THAT  TIME ,  SHE  WAS  ALREADY  PREGNANT WITH JIANG RUOMEI .",
+          "translation": "كانت روان هونغيو من بين من أسرتهم تقنية العين تلك، وكانت آنذاك حاملاً بجياو روميي.",
+          "width": 356,
+          "x": 43,
+          "y": 2977
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 36.2,
+          "text": "|  快 看 漫画",
+          "translation": "",
+          "width": 192,
+          "x": 7,
+          "y": 3485
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20.5,
+          "symWidth": 22.4,
+          "text": "WHAT  A SIN !!",
+          "translation": "يا لها من جريمة!",
+          "width": 115,
+          "x": 506,
+          "y": 3542
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.83333333333334,
+          "symWidth": 13.19753018166331,
+          "text": "LATER , WHEN JIANG RUOMEI WAS BORN , SHE WEIGHED OVER THIRTY CATTIES . NOW , I'M AFRAID SHE'S WELL OVER THREE HUNDRED KILOGRAMS ?",
+          "translation": "حين وُلدت جياو روميي، تخطت وزنها ثلاثين قطة. أما الآن، فما أظنها تقل عن ثلاثمائة كيلوغرام.",
+          "width": 288,
+          "x": 153,
+          "y": 3841
+        }
+      ],
+      "imgHeight": 3924,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "renderMode": "mask_only",
+          "symHeight": 19.66666666666667,
+          "symWidth": 13.02225334578276,
+          "text": "CATTIES .  NOW ,  I'M  AFRAID SHE'S  WELL  OVER  THREE HUNDRED  KILOGRAMS ?",
+          "translation": "",
+          "width": 261,
+          "x": 166,
+          "y": 11
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 17.14285714285714,
+          "symWidth": 11.89837002901519,
+          "text": "RED  MOON  CITY  LORD  JIANG CHURAN  SOUGHT  MEDICAL  HELP  FROM MANY  PLACES .  JUST  AS  YOU  SAID ,  LORD  LU CONGZI  FROM  THE  SEA  OF  SOUL  FORMATION ALSO PERSONALLY  VISITED  RED  MOON CITY ,  BUT  TO  NO  AVAIL .",
+          "translation": "سيد مدينة القمر الأحمر، جيانغ تشوران، طلب العون الطبي من شتى الجهات. وكما قلت، السيد لو كونغتزي من بحر تشكيل الأرواح زاره شخصياً، لكن بلا جدوى.",
+          "width": 414,
+          "x": 277,
+          "y": 155
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 17,
+          "symWidth": 11.31024966261808,
+          "text": "A  SINGLE  SENTENCE  FROM LORD  LU  CONGZI  AT  THAT  TIME  MADE JIANG  RUOMEI  AND  RUAN  HONGYU COMPLETELY DESPAIR .",
+          "translation": "جملة واحدة من السيد لو كونغتزي حينها أوقعت جيانغ رومِي ورُوآن هونغيو في قنوط تام.",
+          "width": 339,
+          "x": 15,
+          "y": 620
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.7230303030303,
+          "text": "TO  THINK  THAT  IRON HAMMER'S  BODY  FULL  OF  MUSCLES WAS  ACTUALLY  CAUSED  BY  ME !",
+          "translation": "من كان يظن أن جسد المطرقة الحديدية المُمَلَّل بالعضلات ما هو إلا ثمرة جهدي!",
+          "width": 294,
+          "x": 400,
+          "y": 1116
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 23,
+          "symWidth": 16.13888888888889,
+          "text": "WHAT  DID  LU CONGZI  SAY ?",
+          "translation": "ماذا قال لو كونغتزي؟",
+          "width": 166,
+          "x": 106,
+          "y": 1626
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 15.71428571428571,
+          "symWidth": 10.67057127374801,
+          "text": "AT  THAT  TIME ,  LORD  LU  CONGZI SAID  THAT  JIANG  RUOME !  CARRIED  THE  CURSE SEAL  OF  THE  ARMY  BREAKING  MARTIAL  SOVEREIGN'S OCULAR TECHNIQUE .  UNLESS  THE  ARMY  BREAKING  MARTIAL SOVEREIGN  PERSONALLY  LIFTED  IT  FOR  HER ,  NO  ONE IN  THE  WORLD  COULD  BREAK  IT .",
+          "translation": "حينها قال السيد لو كونغتزي إن جيانغ رومِي تحمل ختم اللعنة لعين سيد فنون القتال المفجِّر للجيش. ولا يستطيع أحد في العالم رفعه إلا صاحب الفنون ذاته.",
+          "width": 482,
+          "x": 30,
+          "y": 2006
+        },
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 18.5,
+          "symWidth": 12.33661726431463,
+          "text": "GIVEN  THE RELATIONSHIP BETWEEN RED  MOON  CITY  AND  THE  ARMY BREAKING  MARTIAL  SOVEREIGN  AT THAT  TIME ,  HOW  COULD  CITY  LORD JIANG  CHURAN  POSSIBLY GO  FIND  HIM ?",
+          "translation": "وبالنظر إلى العلاقة بين مدينة القمر الأحمر وسيد فنون القتال المفجِّر حينذاك، كيف لسيد المدينة جيانغ تشوران أن يلتمس اللقاء به؟",
+          "width": 347,
+          "x": 313,
+          "y": 2390
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 18.57142857142857,
+          "symWidth": 12.15339911985875,
+          "text": "LATER ,  THE  ARMY BREAKING  MARTIAL SOVEREIGN PERISHED ,  AND  THERE  WAS  NO LONGER  ANYONE  IN  THE  ENTIRE WORLD  WHO  COULD  BREAK THIS  CURSE  SEAL .",
+          "translation": "فيما بعد، انقضى souverain الحرب ولم يَعُد في العالم من يستطيع كسر ختم اللعنة.",
+          "width": 306,
+          "x": 128,
+          "y": 2612
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 100.5,
+          "symWidth": 101.5,
+          "text": "AM",
+          "translation": "صباح الخير",
+          "width": 148,
+          "x": 236,
+          "y": 3354
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 21,
+          "symWidth": 15.27838827838828,
+          "text": "...  SHOULDN'T HAVE  EVEN  ASKED THAT ...",
+          "translation": "...لم يكن من المفترض أن تسأل عن ذلك أصلاً...",
+          "width": 196,
+          "x": 421,
+          "y": 3534
+        }
+      ],
+      "imgHeight": 3923,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 16.8,
+          "symWidth": 11.01277777777778,
+          "text": "ACTUALLY ,  THESE  HIDDEN FACTS AREN'T REALLY  SECRETS  IN  RED MOON  CITY , IT'S JUST  THAT  EVERYONE  IS TOO AFRAID TO  DISCUSS  THEM .",
+          "translation": "في الحقيقة، هذه الحقائق المخفية ليست أسرارًا حقيقية في مدينة القمر الأحمر، بل الجميع يخشى مجرد مناقشتها.",
+          "width": 351,
+          "x": 189,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 250,
+          "symHeight": 21.42857142857143,
+          "symWidth": 14.09134285641469,
+          "text": "AS FOR THAT YAN JIANG  RUOMEI'S XINGHUA ,  HE IS LONG - TIME PLAYMATE .  BECAUSE  OF JIANG  RUOMEI'S  ROBUST  PHYSIQUE , SHE  HAD  A  PECULIAR  PERSONALITY  SINCE CHILDHOOD ,  SO  RUAN  HONGYU  FOUND MANY  CHILDREN  OF  THE  SAME  AGE TO  KEEP  HER  COMPANY .",
+          "translation": "أما عن يان جيانغ رومِي وزينغهوا، فهو رفيق لعب منذ زمن بعيد. وبسبب بنية جيانغ رومِي القوية، كانت تحمل شخصية غريبة منذ الطفولة، فحرص روان هونغيو على توفير أطفال من نفس العمر لمرافقته.",
+          "width": 448,
+          "x": 13,
+          "y": 434
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 21.14285714285714,
+          "symWidth": 13.56241496598639,
+          "text": "UNFORTUNATELY , JIANG  RUOMEI  IS  NOT  ONLY PECULIAR  IN  PERSONALITY  BUT ALSO EXTREMELY  CRUEL ;  ALL  OF HER  OTHER  PLAYMATES  WERE KILLED  BY  HER ,",
+          "translation": "لكن للأسف، لم تكن شخصية جيانغ رومِي غريبة فحسب، بل هي في غاية القسوة؛ فقد قضت على جميع رفاقها الآخرين.",
+          "width": 352,
+          "x": 3,
+          "y": 1163
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 23.5,
+          "symWidth": 16.01075851393189,
+          "text": "I  DON'T  KNOW WHY  ONLY  YAN  XINGHUA SURVIVED .  RUMOR  HAS  IT THAT  HE  IS  LIKELY  JIANG RUOMEI'S GIGOLO .",
+          "translation": "ولا أعلم لماذا نجا فقط يان زينغهوا. ولكن الشائعات تقول إنه على الأرجح عشيق جيانغ رومِي.",
+          "width": 308,
+          "x": 258,
+          "y": 1372
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.6,
+          "symWidth": 11.87581098324067,
+          "text": "HMM ,  LOOKING  AT  IT  THIS WAY ,  RUAN  HONGYU  MUST  FEEL  DEEPLY INDEBTED  TO  THIS  DAUGHTER ,  OTHERWISE ,  RUAN HONGYU  COULDN'T  POSSIBLY  IGNORE  HER PLAYING  SUCH  MESSY  TRICKS .",
+          "translation": "همم، إذا نظرنا إلى الأمر هكذا، فلا بد أن روان هونغيو يعتقد بأنها مدين لها كثيرًا، وإلا لما تغاضى عن تصرفاتها الفوضوية.",
+          "width": 458,
+          "x": 171,
+          "y": 1811
+        },
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 23.75,
+          "symWidth": 15.97230044261294,
+          "text": "IF  WE LET JIANG  RUOMEI  GO AND  ASK  FOR  THE  EAST SEA  BRIGHT MOON  PEARL , SHE  MIGHT  JUST  BE ABLE  TO  GET  IT .",
+          "translation": "لو طلبنا من جيانغ رومِي المضي نحو لؤلؤة القمر المضيئة لبحر الشرق، قد تنجح بالفعل في الحصول عليها.",
+          "width": 335,
+          "x": 35,
+          "y": 2006
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 14.8,
+          "text": "НЕНЕ ,",
+          "translation": "نعم،",
+          "width": 72,
+          "x": 556,
+          "y": 2222
+        },
+        {
+          "angle": 0,
+          "height": 229,
+          "symHeight": 23,
+          "symWidth": 15.3336593300879,
+          "text": "HOW  COULD  JIANG RUOMEI  POSSIBLY  HELP  YOU  ASK FOR  THAT  EAST  SEA  BRIGHT  MOON PEARL ?  THIS  ITEM  HAS  ALREADY  BEEN LISTED  AS  JIANG  RUOMEI'S  DOWRY , A  FACT  KNOWN  TO  EVERYONE IN  THE  WORLD .",
+          "translation": "كيف لك أن تطلب من جيانغ رومِي ذلك اللؤلؤ المضيء من بحر الشرق؟ لقد صار هذا العنصر مهر جيانغ رومِي، وأمرٌ بات معلوماً لكل نفوس العالم.",
+          "width": 433,
+          "x": 262,
+          "y": 2822
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 17.16666666666667,
+          "symWidth": 11.33614221929439,
+          "text": "UNLESS  YOU CAN  GET  RID  OF  THAT  BODY  FULL OF  MUSCLES OF HERS ,  THEN  IT  MIGHT BE  POSSIBLE .",
+          "translation": "ما لم تتخلص من جسدها المليء بالعضلات، عندها قد يكون ذلك ممكناً.",
+          "width": 331,
+          "x": 141,
+          "y": 3093
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 23.33333333333333,
+          "symWidth": 15.9991341991342,
+          "text": "YOU  KID  HAVE THE  POTENTIAL  TO BE  A  PROPHET .",
+          "translation": "أيها الفتى، أنت تحمل فيك بذرة النبي.",
+          "width": 239,
+          "x": 64,
+          "y": 3555
+        }
+      ],
+      "imgHeight": 4049,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 17,
+          "text": "HM ?",
+          "translation": "هممم؟",
+          "width": 52,
+          "x": 343,
+          "y": 198
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 19.07407407407407,
+          "symWidth": 12,
+          "text": "THIS  INFORMATION  OF YOURS  IS  VERY  VALUABLE ,  I AM  VERY  SATISFIED .",
+          "translation": "هذه المعلومات التي قدمتها ثمينة للغاية، وأنا في غاية الرضا.",
+          "width": 265,
+          "x": 105,
+          "y": 622
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 20.75,
+          "symWidth": 21.75,
+          "text": "UGH !",
+          "translation": "آهِ!",
+          "width": 75,
+          "x": 550,
+          "y": 1129
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.53333333333333,
+          "symWidth": 14.57759103641457,
+          "text": "THE  POWER  OF  THE  SEAL HAS  BEEN  COMPLETELY  BROKEN .  NOT ONLY  THAT ,  MY  BODY  WHICH  WAS  ABUSED BY  THE  GLAZED  GLASS  VILLA  SEEMS  TO HAVE  RECOVERED  A  BIT  TOO !",
+          "translation": "لقد تحطمت قوة الختم تمامًا. وليس ذلك فحسب، بل جسدي الذي عُذب في فيلا الزجاج المعتم يبدو أنه قد تعافى قليلًا أيضًا!",
+          "width": 399,
+          "x": 80,
+          "y": 1656
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 22.09090909090909,
+          "symWidth": 14.72727272727273,
+          "text": "I - IS  IT DONE ?",
+          "translation": "ه- هل انتهى الأمر؟",
+          "width": 87,
+          "x": 416,
+          "y": 2571
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 23.15238095238095,
+          "symWidth": 16.73174603174603,
+          "text": "YOU  MAY LEAVE .  NEXT  TIME WE  MEET ,  I  HOPE  YOU SHOW  A  BIT  MORE PROMISE .",
+          "translation": "يمكنك الانصراف. وأتمنى أن تظهر وعدًا أكبر عند لقائنا القادم.",
+          "width": 276,
+          "x": 152,
+          "y": 3009
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28.5,
+          "symWidth": 17.5,
+          "text": "【 快 看 !",
+          "translation": "【انظر بسرعة!",
+          "width": 58,
+          "x": 6,
+          "y": 3513
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 22,
+          "symWidth": 15.04761904761905,
+          "text": "I  WILL ! SEE  YOU  NEXT TIME !",
+          "translation": "سأفعل! ألقاك في المرة القادمة!",
+          "width": 179,
+          "x": 257,
+          "y": 3570
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 19.19642857142857,
+          "symWidth": 12.6,
+          "text": "I  WILL  SNATCH  BACK THE  PRECIOUS  MIRROR  THAT BELONGS  TO  ME ,  AS  WELL  AS  A  FEW OTHER  ITEMS .  YOU  BETTER  KEEP THEM  SAFE  FOR  NOW !",
+          "translation": "سأستعيد المرآة الثمينة التي تخصني، بالإضافة إلى بعض الأشياء الأخرى. من الأفضل أن تحافظ عليها بحرص حتى ذلك الحين!",
+          "width": 363,
+          "x": 306,
+          "y": 3715
+        }
+      ],
+      "imgHeight": 4050,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 14.5,
+          "symWidth": 11.64558823529412,
+          "text": "THE  BALEFUL  AURA  WAS TOO  HEAVY  BACK  THEN ,  HARMING QUITE  A  FEW  PEOPLE .",
+          "translation": "كانت الهالة السوداء ثقيلةً آنذاك، تُلحق الضرر بعددٍ من الناس.",
+          "width": 251,
+          "x": 399,
+          "y": 459
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 20.61214953271028,
+          "symWidth": 15.00400534045394,
+          "text": "IF  I  CAN  HELP  THIS IRON  HAMMER ,  I'LL  GIVE HER  A  HAND .  PERHAPS  THIS  IS EXACTLY  THE  BREAKTHROUGH  POINT- TO  OBTAINING  THAT  EAST  SEA BRIGHT  MOON  PEARL .",
+          "translation": "إن استطعت مساعدة هذا المطرقة الحديدية، فسأمدّها بيدي. لعل هذا هو المنعطف الحاسم—لحيازة لؤلؤة قمر بحر الشرق.",
+          "width": 408,
+          "x": 291,
+          "y": 1103
+        },
+        {
+          "angle": 0,
+          "height": 266,
+          "symHeight": 248,
+          "symWidth": 280,
+          "text": "VE",
+          "translation": "VE",
+          "width": 447,
+          "x": 203,
+          "y": 1830
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 16.37635869565217,
+          "symWidth": 14.8106884057971,
+          "text": "WHO  ARE  YOU  TO  ACT  SO WILDLY  AND  HIT  PEOPLE  AT  WILL  IN RED  MOON  CITY  UNDER  THE  WATCHFUL EYES  OF  THE  PUBLIC !",
+          "translation": "من أنت حتى تتصرّف بتهور وتعتدي على الناس في مدينة القمر الأحمر تحت رقابة العامة؟",
+          "width": 345,
+          "x": 15,
+          "y": 2337
+        }
+      ],
+      "imgHeight": 4051,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 22.70326797385621,
+          "symWidth": 20.27908496732026,
+          "text": "BROTHER LUO ,  MISS NALAN ,  WHAT  IS THE  MEANING OF  THIS ?",
+          "translation": "الأخ لوى، الآنسة نالان، ما مغزى هذا؟",
+          "width": 245,
+          "x": 113,
+          "y": 230
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 14,
+          "symWidth": 13.0731884057971,
+          "text": "BROTHER , YOU  AND  I  HAVE  NEVER  MET , WHY  DID  YOU  SUDDENLY  ATTACK AND  INJURE  ME ?",
+          "translation": "يا أخي، لم نلتقِ قط، فبأي سبب هاجمتني فجأة وجنيتني؟",
+          "width": 289,
+          "x": 410,
+          "y": 664
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 18.16666666666667,
+          "text": "OH ... ?",
+          "translation": "أوه...؟",
+          "width": 104,
+          "x": 156,
+          "y": 2188
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19,
+          "symWidth": 13.90016317016317,
+          "text": "THE  MEASUREMENTS OF  THE  SECOND  MISS JIANG  YOU  JUST  MENTIONED , HOW  DID  YOU  FIND THEM  OUT ?",
+          "translation": "كيف عثرت على قياسات الآنسة جيانغ الثانية التي ذكرتها؟",
+          "width": 306,
+          "x": 352,
+          "y": 2652
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 23.25,
+          "symWidth": 18.45288825757576,
+          "text": "ALTHOUGH  THAT MAN  IN  WHITE  HAS  AN ADAM'S  APPLE  AND  HIS PORES  ARE  LARGER  THAN A  WOMAN'S ...",
+          "translation": "مع أن ذلك الرجل الأبيض يمتلك تفاحة آدم ومسامه أكبر من مسام النساء...",
+          "width": 317,
+          "x": 344,
+          "y": 3666
+        }
+      ],
+      "imgHeight": 4152,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 23.49206349206349,
+          "symWidth": 16.62566137566138,
+          "text": "THIS  IS  AN EXTREMELY BRILLIANT  BASIC DISGUISE  TECHNIQUE .  EVEN THE  SWORD  BOY  BEHIND  HIM IS  THE  SAME ;  BOTH  OF THEM  ARE  WOMEN !!",
+          "translation": "إنها تقنية تمويه أساسية فائقة البراعة. حتى الفتى الذي يحمل السيف خلفه هو نفسه؛ كلاهما امرأتان!!",
+          "width": 345,
+          "x": 93,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 18,
+          "symWidth": 11.96851851851852,
+          "text": "THINGS LIKE  SECOND  MISS  JIANG'S MEASUREMENTS ARE  ALL  WILDLY RUMORED ,  AND  THERE  ARE  QUITE A  FEW  VERSIONS ...",
+          "translation": "الأمر بخصوص مقاسات الآنسة الثانية من عائلة جيانغ محاط بالشائعات والمتناقضات...",
+          "width": 323,
+          "x": 266,
+          "y": 1709
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 22.8,
+          "symWidth": 15.47126696832579,
+          "text": "I  JUST  WEIGHED THEM  MYSELF  AND CHOSE  A  VERSION  THAT I  FELT  WAS  RELATIVELY RELIABLE .",
+          "translation": "لقد قمت بقياسها بنفسي واختارت نسخة أرى أنها أكثر موثوقية.",
+          "width": 297,
+          "x": 136,
+          "y": 1921
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 24.21052631578947,
+          "symWidth": 18.54025689223058,
+          "text": "SO ,  THIS  IS THAT  SECOND MISS  OF  THE  JIANG FAMILY - JIANG RUOBING !",
+          "translation": "إذن، هذه هي الآنسة الثانية من عائلة جيانغ - جيانغ رووبينغ!",
+          "width": 249,
+          "x": 141,
+          "y": 2841
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23,
+          "symWidth": 14.80555555555556,
+          "text": "T - THIS ,  COULD IT  BE  TRUE ?",
+          "translation": "ه- هل يمكن أن يكون هذا حقيقياً؟",
+          "width": 178,
+          "x": 406,
+          "y": 3460
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 26.75,
+          "symWidth": 25.975,
+          "text": "OF  COURSE IT'S  FALSE !",
+          "translation": "بالطبع هذا كذب!",
+          "width": 180,
+          "x": 63,
+          "y": 3795
+        }
+      ],
+      "imgHeight": 4152,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 16.2,
+          "symWidth": 15.3616028708134,
+          "text": "YOU  ACTUALLY DARE  TO  SPREAD RUMORS  AND  SLANDER  THE SECOND  MISS  JIANG , I'LL  KILL  YOU !",
+          "translation": "هل تجرؤ فعلاً على نشر الشائعات وتشهير الآنسة الثانية جيانغ؟ سأقتلك!",
+          "width": 296,
+          "x": 374,
+          "y": 524
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 28.2,
+          "text": "【  快 看 漫画",
+          "translation": "",
+          "width": 197,
+          "x": 48,
+          "y": 661
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 22.33333333333333,
+          "symWidth": 15.00964276633613,
+          "text": "YOU  CAN'T  KILL THEM  ALL .  RIGHT  NOW ,  THE WHOLE  CITY  IS  TALKING  ABOUT THESE  BORING  THINGS .  ARE  YOU GOING  TO  KILL  EVERYONE IN  THE  WORLD ?",
+          "translation": "لا يمكنك قتل الجميع. الآن، المدينة بأسرها تتحدث عن هذه التفاهات. هل ستقتل العالم بأسره؟",
+          "width": 387,
+          "x": 248,
+          "y": 1022
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28,
+          "symWidth": 25.25,
+          "text": "RIGHT , RIGHT ,",
+          "translation": "صحيح، صحيح،",
+          "width": 132,
+          "x": 437,
+          "y": 1914
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 18.66666666666667,
+          "symWidth": 17.90826330532213,
+          "text": "ARE  YOU  TRYING  TO KILL  EVERYONE  IN  THE WORLD  OR  WHAT ?",
+          "translation": "هل تحاول قتل الجميع في العالم أم ماذا؟",
+          "width": 289,
+          "x": 64,
+          "y": 2556
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 14.4,
+          "symWidth": 13.56902863218653,
+          "text": "SCRAM !  IF  I HEAR  YOU WAGGING  YOUR TONGUE  AGAIN ,  YOU  WILL  BE KILLED  WITHOUT  MERCY !",
+          "translation": "انصرف! وإن سمعت لسانك يلعق مجدداً، فستلقى حتفك بلا رحمة!",
+          "width": 279,
+          "x": 380,
+          "y": 3221
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 17.5,
+          "symWidth": 16.72727272727273,
+          "text": "I  WON'T  SAY  IT EVER  AGAIN !!",
+          "translation": "لن أكررها أبداً!!",
+          "width": 183,
+          "x": 64,
+          "y": 3373
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 21,
+          "symWidth": 21.70238095238095,
+          "text": "I  WON'T SAY  IT !!",
+          "translation": "لن أقولها!!",
+          "width": 131,
+          "x": 78,
+          "y": 3808
+        }
+      ],
+      "imgHeight": 4152,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 18.8,
+          "symWidth": 12.31346153846154,
+          "text": "BROTHER  XU ,  YOU'RE ACTUALLY  UNHARMED ?  IT  SEEMS BROTHER  XU'S  STRENGTH  EXCEEDS EXPECTATIONS ! MY",
+          "translation": "أيها الأخ شو، ألم تصب بأذى؟ يبدو أن قوة الأخ شو تجاوزت التوقعات!",
+          "width": 334,
+          "x": 226,
+          "y": 102
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 14.5,
+          "text": "!  !",
+          "translation": "!!",
+          "width": 52,
+          "x": 430,
+          "y": 416
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 20,
+          "symWidth": 13,
+          "text": "il",
+          "translation": "",
+          "width": 18,
+          "x": 322,
+          "y": 522
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.85714285714286,
+          "symWidth": 13.72475778190064,
+          "text": "SO  THIS  BASTARD ALREADY KNEW  ABOUT  LI YUNXIAO'S STRENGTH !  HE  WAS JUST  WAITING  TO  SEE  ME  MAKE A  JOKE  OF  MYSELF !!",
+          "translation": "إذًا ذلك الأحمق كان على علم بقوة لي يونشياو! كان ينتظر فقط ليرى سخافتي!",
+          "width": 295,
+          "x": 392,
+          "y": 716
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 26.5,
+          "symWidth": 26.5,
+          "text": "溜 了 溜 了",
+          "translation": "هرب، هرب",
+          "width": 99,
+          "x": 145,
+          "y": 1197
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 21.4,
+          "text": "HMPH !",
+          "translation": "همف!",
+          "width": 96,
+          "x": 104,
+          "y": 1584
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 16,
+          "symWidth": 13,
+          "text": "ER",
+          "translation": "",
+          "width": 20,
+          "x": 143,
+          "y": 1694
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 23.5,
+          "symWidth": 17.16309523809524,
+          "text": "WE MEET  AGAIN ,  COULD TODAY  BE  ANOTHER BAD  DAY ?",
+          "translation": "نلتقي مجددًا، هل سيكون اليوم يوم مصاب ببلاء آخر؟",
+          "width": 256,
+          "x": 218,
+          "y": 2156
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 17.86,
+          "symWidth": 11.63039072039072,
+          "text": "A  CHANCE  ENCOUNTER  IS BETTER  THAN  A  PLANNED  MEETING . BROTHER  LUO  TOOK  A  TRIP  TO  THE  CITY LORD'S  MANSION  AND  REAPED QUITE  A  HARVEST !",
+          "translation": "لقاء عارض خير من لقاء معد مسبقًا. الأخ لو زار قصر السيد المدينة وجنى ثمارًا وافرَة!",
+          "width": 386,
+          "x": 38,
+          "y": 2879
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 17,
+          "symWidth": 13.34970238095238,
+          "text": "COULD  HE HAVE  SEEN THROUGH  JIANG  RUOBING'S FEMALE  DISGUISE ?",
+          "translation": "هل استطاع أن يكتشف تنكر جيانغ رووبينغ كامرأة؟",
+          "width": 254,
+          "x": 309,
+          "y": 3835
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 17.8,
+          "symWidth": 11.62385964912281,
+          "text": "YOUNG MASTER  YUNXIAO  IS HIGHLY RIGHTEOUS ,  ZHIXUAN  IS ENDLESSLY  GRATEFUL .",
+          "translation": "السيد الصغير يونشياو يتسم بالعدل المطلق، وزهيشوان يعبر عن امتنان لا ينتهي.",
+          "width": 251,
+          "x": 39,
+          "y": 4058
+        }
+      ],
+      "imgHeight": 4364,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 23.79166666666667,
+          "symWidth": 15.0239898989899,
+          "text": "MISS  ZHIXUAN , PLEASE  DON'T SAY  THAT ,",
+          "translation": "آنسة تشي شوآن، لا تقلقي هكذا،",
+          "width": 178,
+          "x": 254,
+          "y": 496
+        },
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 22,
+          "symWidth": 14.18958109559614,
+          "text": "I  WAS  STILL COUNTING  ON  MISS ZHIXUAN'S CARE ,  HOPING TO  PICK  A  FEW  MORE  YOUNG LADIES  AFTER  JOINING  THE SILVER  MOON  SECT .",
+          "translation": "كنتُ لا أزال معوّلًا على عناية آنسة تشي شوآن، وأرجو أن أختار بعض الشابات بعد انضمامي إلى طائفة القمر الفضي.",
+          "width": 339,
+          "x": 72,
+          "y": 632
+        },
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 22.61111111111111,
+          "symWidth": 14.83456049086301,
+          "text": "IF  YOUNG MASTER  YUNXIAO  IS TRULY  WILLING  TO  JOIN THE  SILVER  MOON  SECT , ZHIXUAN  GUARANTEES YOU'LL  BE  DAZZLED PICKING  THEM .",
+          "translation": "إن كان السيد يونشياو حقًا يرغب في الانضمام إلى طائفة القمر الفضي، فإن تشي شوآن تضمن لك سحر الانبهار أثناء الاختيار.",
+          "width": 297,
+          "x": 386,
+          "y": 849
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 23.61363636363636,
+          "symWidth": 15.91983702571938,
+          "text": "SISTER ZHIXUAN ,  IT'S  BEST YOU  AVOID  CONTACT WITH  THIS  FRIVOLOUS PERSON !",
+          "translation": "أختي تشي شوآن، من الأفضل لك تجنب أي اتصال بهذا الشخص السطحي!",
+          "width": 281,
+          "x": 181,
+          "y": 2052
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 18.85714285714286,
+          "symWidth": 12.53522075496865,
+          "text": "LITTLE  BROTHER  BING DOESN'T KNOW ,  THE  DETAILS  ARE QUITE COMPLICATED .  WHY  DON'T THE  FEW  OF  US  SIT  DOWN  AND HAVE  A  GOOD  CHAT ?",
+          "translation": "الأخ الصغير بينغ لا يعلم، فالأمر معقد للغاية. لِمَ لا نجلس نحن القليلون ونتحدث بتمعّن؟",
+          "width": 323,
+          "x": 1,
+          "y": 2660
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 23.4,
+          "symWidth": 14.85990153637212,
+          "text": "FINE . IT'S  RARE  TO  MEET SISTER ,  AND  YOU  EVEN BROUGHT  A  FRIEND  LIKE BROTHER  LUO .",
+          "translation": "حسنًا. نادرًا ما أراكِ يا أختي، وقد أتيتِ مع صديق مثل الأخ لوو.",
+          "width": 306,
+          "x": 346,
+          "y": 2870
+        }
+      ],
+      "imgHeight": 4364,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 17.04411764705882,
+          "symWidth": 11.52941176470588,
+          "text": "IOWE  THIS  CUP  OF WINE  TO  YOUNG  MASTER YUNXIAO ,  I  WILL  DRINK  IT  FIRST OUT  OF  RESPECT .",
+          "translation": "أدين بكأس النبيذ هذا للسيد الشاب يونكسياو، فليكن شربي أولاً تكريماً له.",
+          "width": 271,
+          "x": 347,
+          "y": 576
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 20.07894736842105,
+          "symWidth": 12.1578947368421,
+          "text": "IF  WE'RE DRINKING ,  LET'S  ALL DRINK  TOGETHER .",
+          "translation": "إن كنا نشرب، فلنشرب جميعاً معاً.",
+          "width": 208,
+          "x": 339,
+          "y": 1434
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 20.50925925925926,
+          "symWidth": 13.17003367003367,
+          "text": "THIS  WINE ... HOW  IS  THIS  PEACH BLOSSOM  WINE ?  THIS  IS DRUNK  FORGETTING SORROW !",
+          "translation": "هذا الخمر... ما رأيك في خمر زهر الخوخ؟ إنه شراب نسيان الهموم!",
+          "width": 276,
+          "x": 42,
+          "y": 2392
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.25,
+          "symWidth": 21.30555555555556,
+          "text": "WHAT  DO  YOU MEAN ?  IS  THERE A  PROBLEM  WITH THIS  NAME ?",
+          "translation": "ماذا تعني؟ هل ثمة مشكلة في هذا الاسم؟",
+          "width": 264,
+          "x": 98,
+          "y": 3408
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 19.5,
+          "symWidth": 13.375,
+          "text": "NOTHING , NOTHING ~",
+          "translation": "لا شيء، لا شيء ~",
+          "width": 111,
+          "x": 455,
+          "y": 3535
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 41,
+          "symWidth": 20.5,
+          "text": "2 )",
+          "translation": "2 )",
+          "width": 33,
+          "x": 642,
+          "y": 3610
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 19.5,
+          "symWidth": 12.82887700534759,
+          "text": "I  JUST  ACCIDENTALLY CHOKED  ON  IT .",
+          "translation": "لقد اختنقت به صدفة.",
+          "width": 215,
+          "x": 404,
+          "y": 3922
+        }
+      ],
+      "imgHeight": 4366,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 15.22689075630252,
+          "symWidth": 14.39355742296919,
+          "text": "THE  NAME  DRUNK FORGETTING  SORROW  WAS  GIVEN BY  THE  PERSON  I  RESPECT  AND  LOVE THE  MOST .  IF  YOU  DON'T  GIVE  ME  AN EXPLANATION ,  WE'LL  SETTLE  THIS WITH  SWORDS  TODAY !",
+          "translation": "اسم «سُكر النسيان للحزن» أُعطي لي من قبل أعظم من أكن له مودة واحترامًا. إن لم تُقدِّم لي تفسيرًا، فسوف نحسم الأمر بالسيوف اليوم!",
+          "width": 378,
+          "x": 183,
+          "y": 130
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 15.96212121212121,
+          "symWidth": 11.93232323232323,
+          "text": "DRUNK FORGETTING  SORROW , DRUNK  FORGETTING SORROW ,  WHAT  A GOOD  NAME .",
+          "translation": "سُكر النسيان للحزن، يا له من اسم عظيم.",
+          "width": 205,
+          "x": 79,
+          "y": 1067
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19.68,
+          "symWidth": 13.2,
+          "text": "ZHIXUAN  IS  ALSO SIMILARLY  CONFUSED , WHY  DOES  YOUNG  MASTER YUNXIAO  HAVE  SUCH AN  ATTITUDE ?",
+          "translation": "شيشوان أيضاً في حيرة مماثلة، لماذا يظهر الصغير يونشياو بمثل هذا الموقف؟",
+          "width": 281,
+          "x": 0,
+          "y": 1233
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 24.27536231884058,
+          "symWidth": 14.93667654808959,
+          "text": "BROTHER  LI ,  IF YOU  DON'T  EXPLAIN CLEARLY  THIS  TIME ,  I'M AFRAID  YOU'LL  BE  IN BIG  TROUBLE .",
+          "translation": "أخي لي، إن لم توضح الأمور هذه المرّة، فربما يكون شأنك عسيرًا.",
+          "width": 282,
+          "x": 392,
+          "y": 1470
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 22,
+          "symWidth": 15.41818181818182,
+          "text": "THIS  GIRL  HAS QUITE  A  TEMPER ...",
+          "translation": "هذه الفتاة ذات طبع حاد حقًا...",
+          "width": 207,
+          "x": 106,
+          "y": 1644
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 24.68965517241379,
+          "symWidth": 17.44827586206896,
+          "text": "THIS  YOUNG  MASTER IS  TOO  RECKLESS !",
+          "translation": "هذا الشاب مستهتر للغاية!",
+          "width": 171,
+          "x": 131,
+          "y": 2103
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 17.36752136752137,
+          "symWidth": 11.40598290598291,
+          "text": "HIS  STRIKE  JUST NOW  WAS  SHOCKING ,  AND  IT  HASN'T EVEN  BEEN  THAT  LONG  AND  HE  WANTS TO  FIGHT  AGAIN !",
+          "translation": "ضربته قبل قليل كانت صادمة، ولم تمضِ فترة طويلة حتى يريد القتال مرة أخرى!",
+          "width": 213,
+          "x": 429,
+          "y": 2120
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 22.50806451612903,
+          "symWidth": 19.00413699204022,
+          "text": "TO THINK  THIS  GIRL'S RELATIONSHIP  WITH NING  KEYUE  IS SO  DEEP .",
+          "translation": "أن هذه الفتاة تربطها علاقة عميقة بنينغ كايوي.",
+          "width": 251,
+          "x": 218,
+          "y": 2763
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 16.2248322147651,
+          "symWidth": 13.33221476510067,
+          "text": "THERE  IS  TOO  MUCH INTERMARRIAGE  AMONG  THE  THREE MAJOR  FAMILIES  OF  RED  MOON  CITY .  THEY ARE  ALREADY  DEEPLY  ROOTED  IN  EACH  OTHER . BASICALLY ,  IF  ONE  SUFFERS ,  ALL  SUFFER ;  IF ONE  PROSPERS ,  ALL  PROSPER .",
+          "translation": "فالمنازعات بين الأسر الثلاث الكبرى في مدينة القمر الأحمر كثيرة،\nوقد تأصلت علاقاتهم إلى حد عميق.\nفإذا اشتكى أحدهم، عانى الجميع؛ وإذا ازدهر أحدهم، وجد الجميع الازدهار.",
+          "width": 404,
+          "x": 244,
+          "y": 3724
+        }
+      ],
+      "imgHeight": 4198,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 23.29824561403509,
+          "symWidth": 16.91885964912281,
+          "text": "WHAT  DOES A  LITTLE  CHILD  LIKE YOU  KNOW  ABOUT SORROW ?",
+          "translation": "ماذا يعرف طفل صغير مثلك عن الهم؟",
+          "width": 248,
+          "x": 365,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 40.4,
+          "text": "【  快 看 漫画",
+          "translation": "",
+          "width": 179,
+          "x": 510,
+          "y": 317
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 21.38709677419355,
+          "symWidth": 20.94789081885856,
+          "text": "YOU'RE  A  LITTLE BRAT  YOURSELF ,  YET YOU  CALL  ME  LITTLE !  IS THAT  THE  REASON  YOU FIND  IT  FUNNY ?",
+          "translation": "أنت أيها الولد المشاغب تدعيني صغيرًا! هل هذا سبب سخريتك؟",
+          "width": 366,
+          "x": 124,
+          "y": 700
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 21.1304347826087,
+          "symWidth": 13.49275362318841,
+          "text": "OLD  BROTHER BING ,  HE  CANNOT BE  KILLED !",
+          "translation": "الأخ الأكبر بينغ، لا يُقتل!",
+          "width": 199,
+          "x": 480,
+          "y": 1144
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 23.42613636363636,
+          "symWidth": 16.1474025974026,
+          "text": "ON  ACCOUNT  OF  BIG BROTHER  LUO  AND  SISTER ZHIXUAN ,  I  WON'T  KILL  HIM ,  BUT HE  MUST  EXPLAIN  HIMSELF NO  MATTER  WHAT !",
+          "translation": "لأجل الأخ الأكبر لو والأخت تشيكسوان، لن أقتله، لكنه ملزم بأن يبرر موقفه مهما كان الثمن!",
+          "width": 387,
+          "x": 282,
+          "y": 1891
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 18.67105263157895,
+          "symWidth": 12.67797334244703,
+          "text": "OLD BROTHER  BING ,  HE  IS THE  PERSON  I  MENTIONED WHO  IS  CAPABLE  OF HELPING  YOU .",
+          "translation": "الأخ الأكبر بينغ، هو الذي ذكرتُه كقادرٍ على مساعدتك.",
+          "width": 264,
+          "x": 178,
+          "y": 2443
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 24.3010752688172,
+          "symWidth": 16.24784946236559,
+          "text": "IF  YOU  ANGER HIM ,  NO  ONE  IN  ALL  OF RED  MOON  CITY  WILL  BE ABLE  TO  HELP  YOU .",
+          "translation": "إن أغضبته، لن يجد في مدينة مون الحمراء كلها من ينجدك.",
+          "width": 311,
+          "x": 57,
+          "y": 2618
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 24,
+          "text": "WHAT ?",
+          "translation": "ماذا؟",
+          "width": 104,
+          "x": 511,
+          "y": 2820
+        },
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 23.44444444444444,
+          "symWidth": 16.13015354289864,
+          "text": "BIG  BROTHER LUO ,  WHAT  NONSENSE ARE YOU  SAYING ?  HE'S JUST  A  FIVE - STAR  MARTIAL GRANDMASTER , WHAT ABILITY  DOES  HE  HAVE TO  HELP  ME !",
+          "translation": "أيها الأخ الكبير لو، ما هذا العبث الذي تقوله؟ إنه مجرد سيد فني قتالي من الدرجة الخامسة، فما القدرة التي يمتلكها ليعينني بها!",
+          "width": 325,
+          "x": 257,
+          "y": 3343
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 23.1328125,
+          "symWidth": 16.80696022727273,
+          "text": "THE  PROFOUND RESONANCE  OF  THIS RANK - NINE  PROFOUND ARTIFACT  IS  TRULY WONDERFUL ~",
+          "translation": "إن تردد هذا الأثر العميق من الدرجة التاسعة حقًّا بديعٌ فعلاً~",
+          "width": 278,
+          "x": 135,
+          "y": 3894
+        }
+      ],
+      "imgHeight": 4198,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 324,
+          "symHeight": 290.5,
+          "symWidth": 255,
+          "text": "你 發",
+          "translation": "(لا ترجمة - نص صيني)",
+          "width": 622,
+          "x": 29,
+          "y": 535
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 15.4375,
+          "symWidth": 11.50648148148148,
+          "text": "TO  BE  ABLE  TO SHATTER  THE  SWORD  AURA  OF  A RANK - NINE  PROFOUND  ARTIFACT WITH  JUST  FINGERS ...",
+          "translation": "أن تحطم هالة السيف لأثر عميق من الدرجة التاسعة بأصابعك فقط...",
+          "width": 258,
+          "x": 23,
+          "y": 2847
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 22.66666666666667,
+          "symWidth": 16.92209595959596,
+          "text": "I  AM  VERY  CLEAR ABOUT  SISTER  RUOBING'S STRENGTH .  THIS  SWORD  AURA ABSOLUTELY CANNOT  BE CAUGHT  WITH  FINGERS ,",
+          "translation": "أنا أدرك تمامًا قوة الأخت رووبينغ. هذه الهالة السيفية لا يمكن أن تُمسك بأصابع مطلقًا.",
+          "width": 341,
+          "x": 356,
+          "y": 3550
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18.66666666666667,
+          "symWidth": 13.74532627865961,
+          "text": "COULD  IT  BE  THAT  LI YUNXIAO  SPECIALLY  CULTIVATES  A TWO - FINGER  TECHNIQUE ?!",
+          "translation": "هل يعقل أن لي يونيشياو يتقن تقنية إصبعين خاصة؟!",
+          "width": 319,
+          "x": 174,
+          "y": 3792
+        }
+      ],
+      "imgHeight": 4200,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 17.8,
+          "symWidth": 12.11845154845155,
+          "text": "OLD  BROTHER  BING , GETTING  TOO  AGITATED  MAKES  YOU AGE  FASTER .  LOOK ,  YOU'RE  ALREADY STARTING  TO  GET  WRINKLES  AFTER GETTING  ANGRY  A  FEW  TIMES .",
+          "translation": "أيُّها الأخ الأكبر بينغ، الهيجان الزائد يُسريع الشيخوخة. انظر، لقد بدأت تظهر عليك التجاعيد من فرط الغضب مرات عدة.",
+          "width": 349,
+          "x": 299,
+          "y": 101
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 14.85714285714286,
+          "text": "REALLY ?",
+          "translation": "حقًا؟",
+          "width": 100,
+          "x": 12,
+          "y": 217
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 17.1375,
+          "symWidth": 12.4403125,
+          "text": "I  REMEMBER FLIPPING  THROUGH  A  FINGER  TECHNIQUE THAT  ORIGINATED  FROM  A  SMALL  ISLAND  IN THE  SECT ...  IT  WAS  CALLED  EAGLE  FAMILY VINE  FINGERS  OR  SOMETHING ...",
+          "translation": "أتذكر أنني تصفحت تقنية أصابع نشأت في جزيرة صغيرة ضمن الطائفة... كانت تُدعى أصابع الكرمة النسرية أو شيئًا من هذا القبيل...",
+          "width": 374,
+          "x": 205,
+          "y": 911
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 29.25,
+          "symWidth": 29,
+          "text": "快 看 漫画",
+          "translation": "",
+          "width": 122,
+          "x": 79,
+          "y": 1123
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 18.71428571428572,
+          "symWidth": 13.99244734775469,
+          "text": "TO REACH  THIS  LEVEL  AT SUCH  A  YOUNG  AGE ,  I'M  AFRAID  HE  MUST HAVE  BEEN IMMERSED  IN  PRACTICING  THESE FINGERS  SINCE  CHILDHOOD  TO  ACHIEVE SUCH  ACCOMPLISHMENTS  NOW !",
+          "translation": "في هذا السن الصغير، لا بد أنه غاص منذ الطفولة في تمرين تلك الأصابع ليصل إلى هذه الدرجة من الإتقان الآن!",
+          "width": 403,
+          "x": 269,
+          "y": 1152
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 23.26923076923077,
+          "symWidth": 14.64423076923077,
+          "text": "SISTER ZHIXUAN ,  TAKE  A LOOK ,  ARE  THERE WRINKLES ?",
+          "translation": "الأخت تشيكشوان، ألقِ نظرة، هل ترى تجاعيد؟",
+          "width": 227,
+          "x": 414,
+          "y": 1753
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 18.75,
+          "symWidth": 14.5,
+          "text": "YOUNG MASTER LI  IS  JUST  TEASING YOU",
+          "translation": "السيد الشاب لي يمزح معك فقط.",
+          "width": 189,
+          "x": 120,
+          "y": 1951
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 24,
+          "symWidth": 18.29286492374728,
+          "text": "FOR  LI  YUNXIAO  TO SAY  SUCH  WORDS  MEANT TO  TEASE  GIRLS ,  COULD  HE HAVE  REALLY  DISCOVERED JIANG  RUOBING'S IDENTITY ?",
+          "translation": "أن يقول لي يونشياو مثل هذه الكلمات التي تهدف إلى مُداعبة الفتيات، هل يكون حقاً قد كشف هوية جيانغ روبينغ؟",
+          "width": 348,
+          "x": 53,
+          "y": 2385
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.86017367135788,
+          "text": "WHEN  WILL RED  MOON  CITY'S SECURITY  BE  IMPROVED ? ALL  SORTS  OF  RIFFRAFF  ARE RUNNING  LOOSE  ON THE  STREETS",
+          "translation": "متى ستتحسنْ أمن مدينة القمر الأحمر؟ فالأزلام وما أكثرهم يجوبون الشوارع بلا كابح.",
+          "width": 384,
+          "x": 36,
+          "y": 3086
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 73.5,
+          "symWidth": 73,
+          "text": "啪啦",
+          "translation": "صَفْق",
+          "width": 127,
+          "x": 222,
+          "y": 3302
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 13,
+          "symWidth": 13.5,
+          "text": "ラブ",
+          "translation": "حبّ",
+          "width": 27,
+          "x": 197,
+          "y": 3448
+        }
+      ],
+      "imgHeight": 4346,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 19.16666666666667,
+          "symWidth": 12.79105002209182,
+          "text": "I  KINDLY  TRIED  TO  BREAK YOUR  SEAL  FOR  YOU ,  YET  YOU  ACTUALLY INJURED  THE  PEOPLE  OF  MY  GLAZED  GLASS VILLA .  YOU  TRULY  HAVE  A  WOLF'S  HEART AND  A  DOG'S  LUNGS ,  AN  UNREPENTANT PIECE  OF  TRASH !",
+          "translation": "حاولت بلطف أن أكسر ختمك من أجلك، ولكنك جرحت أهل فيلتي الزجاجية المزججة. حقًا، لك قلبٌ ذئب ورئتان كلب، قطعة نفاية لا تندم!",
+          "width": 443,
+          "x": 72,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.01536195286195,
+          "text": "OLD  GEEZER ,  YOU  STILL HAVE  THE  GALL  TO  TALK  ABOUT BREAKING  THE  SEAL .",
+          "translation": "يا أيها العجوز، ما زال فيك الجرأة لتتحدث عن كسر الختم.",
+          "width": 273,
+          "x": 367,
+          "y": 1170
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 22.4,
+          "symWidth": 14.64478985926355,
+          "text": "TREATING  ME  AS  A TEST  SUBJECT ,  IF  I  HADN'T BEEN  LUCKY  ENOUGH  TO  ESCAPE , I  WOULD'VE  ALMOST  BEEN KILLED  BY  YOU !",
+          "translation": "عاملوك كموضوع تجربة، ولولا حظي بأن هربت، لكنت قد كدت أن تلفظ أنفاسي على يديك!",
+          "width": 396,
+          "x": 32,
+          "y": 2121
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 24,
+          "symWidth": 15.41707202390432,
+          "text": "BREAKING  A  SEAL NATURALLY  CARRIES  RISKS .  I AM  NOT  A  PEERLESS EXPERT , HOW  COULD  I  BREAK  IT  JUST BY SAYING  SO ?",
+          "translation": "كسر الختم لا بد أن يحمل مخاطره، ولست بخبير فذ، فكيف أجعله يحدث بمجرد قول ذلك؟",
+          "width": 364,
+          "x": 99,
+          "y": 2634
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 18.83333333333333,
+          "symWidth": 13.73845878136201,
+          "text": "YOUR  GOOD  LUCK  ENDS HERE .  HAVING  INJURED  THE  DISCIPLES OF  MY  GLAZED  GLASS  VILLA ,  EVEN  IF  YOUR MASTER  COMES ,  HE  WON'T  BE  ABLE TO PROTECT  YOU  TODAY .",
+          "translation": "ينتهي حظك هنا. بعد أن جرحت تلاميذ فيلتي الزجاجية، وإن جاء معلمك، فلن يستطيع حمايتك اليوم.",
+          "width": 428,
+          "x": 233,
+          "y": 2903
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 14.33333333333333,
+          "symWidth": 13.64708358090711,
+          "text": "PEI MINGYUAN ,  YOU AND I  CAN  BE  CONSIDERED  TO HAVE  BEEN ACQUAINTED ,  YET  YOU ARE  ACTUALLY  SO  HEARTLESS AND UNRIGHTEOUS !",
+          "translation": "باي مينغيوان، قد نُعدّ قد تعارفنا، ومع ذلك أنت قلبك قاسٍ وظالم!",
+          "width": 330,
+          "x": 174,
+          "y": 3666
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 18.42857142857143,
+          "symWidth": 11.90793732952118,
+          "text": "SENIOR ,  PLEASE  QUELL YOUR  ANGER .  XU  QING  AND  I  JUST HAPPENED  TO  RUN  INTO  EACH  OTHER  BY CHANCE .  WE  AREN'T  ACTUALLY FAMILIAR WITH  EACH  OTHER ,  SO  I  HOPE  SENIOR WILL  SPARE  MY  LIFE !",
+          "translation": "أيّها الشيخ، رجاءً كظم غضبك.\nلقد صادف فقط أنني وقعت صدفةً على زو تشينغ.\nولم نكن بمعرفة حقيقية لبعضنا، فلتعف عن حياتي!",
+          "width": 391,
+          "x": 196,
+          "y": 4087
+        }
+      ],
+      "imgHeight": 4346,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 35.33333333333334,
+          "symWidth": 34.33333333333334,
+          "text": "930",
+          "translation": "٩٣٠",
+          "width": 58,
+          "x": 266,
+          "y": 305
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 28,
+          "symWidth": 20.75,
+          "text": "8100",
+          "translation": "٨١٠٠",
+          "width": 42,
+          "x": 372,
+          "y": 501
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 23.33333333333333,
+          "symWidth": 14.72222222222222,
+          "text": "IS THAT SO .",
+          "translation": "حقاً؟",
+          "width": 61,
+          "x": 152,
+          "y": 1072
+        },
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 23.16666666666667,
+          "symWidth": 15.88382682132682,
+          "text": "SINCE  YOU HAPPENED  TO  RUN INTO  EACH  OTHER ,  WOULDN'T  IT  BE NICE  TO  HAPPEN  TO  GO  TO  THE WESTERN  PARADISE TOGETHER ?",
+          "translation": "وبما أنكما قد التقيتما صدفةً، ماذا لو صُحبتما معاً إلى الفردوس الغربي؟",
+          "width": 455,
+          "x": 133,
+          "y": 1773
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 19.55555555555556,
+          "text": "WHAT !  YOU-",
+          "translation": "ما هذه...\nأنت—",
+          "width": 168,
+          "x": 108,
+          "y": 3673
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 13.77777777777778,
+          "text": "HMPH  HMPH ~",
+          "translation": "همهمة همهمة~",
+          "width": 131,
+          "x": 528,
+          "y": 3761
+        }
+      ],
+      "imgHeight": 4346,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 23.26923076923077,
+          "symWidth": 21.0472027972028,
+          "text": "FATHER ,  THIS IS  THE  PERSON  WHO CAST  THE  SEAL !",
+          "translation": "أيُّها الأب، هذا هو الذي نقَش الختم!",
+          "width": 310,
+          "x": 80,
+          "y": 715
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 32,
+          "symWidth": 33.8,
+          "text": "WHAT !",
+          "translation": "ما هذا؟!",
+          "width": 147,
+          "x": 315,
+          "y": 1775
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 92.36363636363636,
+          "symWidth": 51.63636363636363,
+          "text": "ENEMIES  ON  A  NARROW  ROAD !!",
+          "translation": "أعداء في ممر ضيق!!",
+          "width": 676,
+          "x": 7,
+          "y": 2456
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14.82608695652174,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "",
+          "width": 417,
+          "x": 253,
+          "y": 3112
+        }
+      ],
+      "imgHeight": 3173,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

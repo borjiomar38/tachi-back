@@ -1,0 +1,1012 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0015",
+  "jobId": "fixture-job-0015",
+  "licenseId": "fixture-license-0015",
+  "pageCount": 23,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "7280c000ca6f44569d3c78bca50ce0a4b097e484478a07118c24f618a45c862b",
+      "fileName": "001__001.jpg",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "5d2885cd7acc9953787463497c9b8fd683fac06582e342f7739c60b6f38422ca",
+      "fileName": "001__002.jpg",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "6410c5385b7e20be7c350da0813abea204fe6e83bbea04dfb183d8d5b7a2c101",
+      "fileName": "001__003.jpg",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "3ab29126a65deb9856c1ca9f616c1cf1f61a8df8012c76cbd9b97849d7b59934",
+      "fileName": "002__001.jpg",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "fa687db2e0b065fc62f6defcf1d9ae9103241ff7d887896537ff852fd2ca11bf",
+      "fileName": "002__002.jpg",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "460dcf5579c5e6d6ae2c19de09f9c1dd5e646ddc9c2fb0a3cb381558ed397674",
+      "fileName": "003__001.jpg",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "1e4f5d2328fd865389469dae02b817c45e366b07f1d718b747aa92fbc9f6ecd5",
+      "fileName": "003__002.jpg",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "3064d6f452521ea4a883bf88fd8288ca186933c1ec4a00085a3681b5786d6dd0",
+      "fileName": "004__001.jpg",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "05dd2673d8580e661289efc637ba809de42ddf27d5af562edc4962d7acc1f754",
+      "fileName": "004__002.jpg",
+      "pageNumber": 9
+    },
+    {
+      "checksumSha256": "10dc871c39dde1a9ffc7342f3843e4524961e8ec35e71da7c0292f84d3d42776",
+      "fileName": "005__001.jpg",
+      "pageNumber": 10
+    },
+    {
+      "checksumSha256": "9cd819e2efbfed8ab4fe8bf250be50d25128aa0cbfb24614a24d2fc0f72705f9",
+      "fileName": "005__002.jpg",
+      "pageNumber": 11
+    },
+    {
+      "checksumSha256": "f80473d4d3c38a3f387f3dfb17f47c62f17d25cb5f765fa29ad0363c71c8465b",
+      "fileName": "005__003.jpg",
+      "pageNumber": 12
+    },
+    {
+      "checksumSha256": "f8c1533869e2befd6f48be15bbc0574f909df0249b90a6b4c5d813679db9ee5b",
+      "fileName": "006__001.jpg",
+      "pageNumber": 13
+    },
+    {
+      "checksumSha256": "0e5e1973abf2bda3e6f1a4f7f6037034c3eb32b723be721d298ebafbd49289bb",
+      "fileName": "006__002.jpg",
+      "pageNumber": 14
+    },
+    {
+      "checksumSha256": "31d6153049229d207184aba0fc09848491ae1929c4ab66679c44b3342ea9a254",
+      "fileName": "006__003.jpg",
+      "pageNumber": 15
+    },
+    {
+      "checksumSha256": "f4209b470d960aa3ff5ba5d9eac29896a6a8e62180df5c9321f26ddffee92207",
+      "fileName": "007__001.jpg",
+      "pageNumber": 16
+    },
+    {
+      "checksumSha256": "6c7e0d2b48dfd34ec1e59b975337339a6747bae58016ebf1225c9397791dce62",
+      "fileName": "007__002.jpg",
+      "pageNumber": 17
+    },
+    {
+      "checksumSha256": "2483e9e96ee6e408938ae7a74c939ca4dbfcf6e50bcf34127fa44af50798a5a8",
+      "fileName": "007__003.jpg",
+      "pageNumber": 18
+    },
+    {
+      "checksumSha256": "c1dc4c57e3e708e1c6e29a2426ac73dbeacc289de647defc9cca516d069d7d20",
+      "fileName": "008__001.jpg",
+      "pageNumber": 19
+    },
+    {
+      "checksumSha256": "b6b55587a170db2217efd68c08aee4d8d6bbd503cefdaa9d6d2f98408a9e575c",
+      "fileName": "008__002.jpg",
+      "pageNumber": 20
+    },
+    {
+      "checksumSha256": "a7340c3911f5de81fd2d055b9160fc563bb8f8df7ef1efa3112cd7951f94f9c8",
+      "fileName": "008__003.jpg",
+      "pageNumber": 21
+    },
+    {
+      "checksumSha256": "aa3a8bb950b353fcb2c7c6429afec0e0240558dd5f90291908117e2c454d698b",
+      "fileName": "009__001.jpg",
+      "pageNumber": 22
+    },
+    {
+      "checksumSha256": "dfa274c8d921aca9859ff3b5d98b8cf506c980aa9a1b7fa854cfaad58482a07b",
+      "fileName": "009__002.jpg",
+      "pageNumber": 23
+    }
+  ],
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 22.23529411764706,
+          "symWidth": 15.76470588235294,
+          "text": "#  I'M  DRAKO  MAJSTRO  4",
+          "translation": "# أنا دراكو مايجسترو 4",
+          "width": 302,
+          "x": 183,
+          "y": 1309
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 25.66666666666667,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر! انظر! مانغا حصرية",
+          "width": 245,
+          "x": 231,
+          "y": 1387
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 17.1,
+          "text": "THE  NEXT  DAY",
+          "translation": "اليوم التالي",
+          "width": 191,
+          "x": 409,
+          "y": 2096
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 17.65789473684211,
+          "text": "ABYSS  SECRET  REALM  ENTRANCE TO  THE  10TH  REALM",
+          "translation": "الهاوية السرية مدخل العالم العاشر",
+          "width": 471,
+          "x": 44,
+          "y": 2366
+        }
+      ],
+      "imgHeight": 2891,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 45.22222222222222,
+          "symWidth": 39,
+          "text": "MAVTRUSOU",
+          "translation": "",
+          "width": 162,
+          "x": 15,
+          "y": 258
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 34.67142857142857,
+          "symWidth": 36.54285714285714,
+          "text": "EATON SILIJEV",
+          "translation": "",
+          "width": 127,
+          "x": 91,
+          "y": 506
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 25.33333333333333,
+          "symWidth": 26.66666666666667,
+          "text": "MPI",
+          "translation": "",
+          "width": 36,
+          "x": 387,
+          "y": 599
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 27.25,
+          "symWidth": 20.75,
+          "text": "2222",
+          "translation": "",
+          "width": 35,
+          "x": 468,
+          "y": 733
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 28.8,
+          "symWidth": 28.6,
+          "text": "2011  C",
+          "translation": "",
+          "width": 58,
+          "x": 51,
+          "y": 734
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 33.85714285714285,
+          "symWidth": 35.42857142857143,
+          "text": "SHAVANA",
+          "translation": "",
+          "width": 159,
+          "x": 163,
+          "y": 1035
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.4,
+          "text": "一 嬉皮 漫画.",
+          "translation": "",
+          "width": 185,
+          "x": 0,
+          "y": 1231
+        }
+      ],
+      "imgHeight": 2892,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 17.28571428571428,
+          "symWidth": 15.23809523809524,
+          "text": "THE  10TH SECRET REALM ...",
+          "translation": "العالم السري العاشر...",
+          "width": 116,
+          "x": 376,
+          "y": 1145
+        }
+      ],
+      "imgHeight": 2893,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.5,
+          "symWidth": 16.62091503267974,
+          "text": "ABYSS  SECRET  REALM . 10TH  REALM",
+          "translation": "المملكة السرية الهاوية · المملكة العاشرة",
+          "width": 313,
+          "x": 203,
+          "y": 86
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 34.66666666666666,
+          "symWidth": 38,
+          "text": "000",
+          "translation": "",
+          "width": 128,
+          "x": 176,
+          "y": 700
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 26,
+          "text": "快 看 漫画",
+          "translation": "",
+          "width": 119,
+          "x": 573,
+          "y": 3752
+        }
+      ],
+      "imgHeight": 4095,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.8,
+          "symWidth": 16.65666666666667,
+          "text": "LOOKS LIKE I'LL  HAVE  TO CLEAR  A PATH  FIRST .",
+          "translation": "يبدو أنني سأضطر لتمهيد الطريق أولاً.",
+          "width": 171,
+          "x": 347,
+          "y": 2704
+        }
+      ],
+      "imgHeight": 4096,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.66666666666667,
+          "symWidth": 14.21546052631579,
+          "text": "BLADE  HOOK :  FIRES  A  HOOKED  BLADE  AT  HIGH  SPEED TOWARD  A  TARGET ,  DEALING  PIERCING  DAMAGE  AND BRIEFLY  PULLING  THEM  TOWARD  THE  USER .",
+          "translation": "خطاف الشفرة: يطلق شفرةً معقوفة بسرعة فائقة نحو هدفه، مُحدثًا ضررًا نافذًا ويجذب الهدف نحو المستخدم لفترة وجيزة.",
+          "width": 559,
+          "x": 71,
+          "y": 1695
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 41.66666666666666,
+          "symWidth": 44.66666666666666,
+          "text": "000",
+          "translation": "000",
+          "width": 159,
+          "x": 231,
+          "y": 3138
+        }
+      ],
+      "imgHeight": 3917,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 19.5,
+          "symWidth": 17.81110551075269,
+          "text": "BLADE  ARMOR  STRIKE :  RAPIDLY  THRUSTS BLADE  ARMOR  SPIKES ,  DEALING  PIERCING DAMAGE  THAT  IGNORES  45 %  DEFENSE  AND REFLECTING  99 %  OF  RECEIVED  DAMAGE .",
+          "translation": "ضربة درع الشفرة: يغرز مسامير درع الشفرة بسرعة، مُحدثًا ضررًا نافذًا يتجاوز ٤٥٪ من الدفاع، ويعكس ٩٩٪ من الضرر المتلقّى.",
+          "width": 585,
+          "x": 42,
+          "y": 2267
+        }
+      ],
+      "imgHeight": 3919,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 17.33333333333333,
+          "symWidth": 16.25714285714286,
+          "text": "THAT ONE  IS  SO MASSIVE ...",
+          "translation": "ذلك الذكّاء هائلٌ جداً...!",
+          "width": 142,
+          "x": 443,
+          "y": 3924
+        }
+      ],
+      "imgHeight": 4190,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.33908045977012,
+          "symWidth": 18.13218390804597,
+          "text": "YET  IT  HASN'T LAUNCHED  AN ATTACK  ON ME ?",
+          "translation": "مع ذلك، لم يشن علي هجومًا؟",
+          "width": 189,
+          "x": 91,
+          "y": 127
+        },
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 166.25,
+          "symWidth": 108,
+          "text": "////",
+          "translation": "////",
+          "width": 201,
+          "x": 375,
+          "y": 856
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 20,
+          "symWidth": 19.77777777777778,
+          "text": "THEN  LET ME  TEST YOU .",
+          "translation": "فليكن، دعني أختبرك.",
+          "width": 146,
+          "x": 170,
+          "y": 1487
+        },
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 84.75,
+          "symWidth": 82.25,
+          "text": "5888",
+          "translation": "5888",
+          "width": 168,
+          "x": 269,
+          "y": 2254
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 73.83333333333333,
+          "symWidth": 40,
+          "text": "TAX  TAK",
+          "translation": "TAX TAK",
+          "width": 173,
+          "x": 401,
+          "y": 2889
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 21.42857142857143,
+          "symWidth": 16.21428571428572,
+          "text": "THIS PLACE  IS ...",
+          "translation": "هذا المكان هو...",
+          "width": 163,
+          "x": 407,
+          "y": 3232
+        }
+      ],
+      "imgHeight": 4191,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 17.7536231884058,
+          "symWidth": 16.3167701863354,
+          "text": "THE  MARK LEFT  BY  BLADE HOOK ...  IT'S WHERE  I  CUT  OFF THAT  TENTACLE EARLIER .",
+          "translation": "العلامة التي تركها خطاف السيف... حيث قطعت ذلك المجسَّم سابقًا.",
+          "width": 229,
+          "x": 128,
+          "y": 123
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 19.74444444444445,
+          "symWidth": 17.26515151515152,
+          "text": "IT'S  NOT AN  ILLUSION- I'VE  BEEN  GOING IN  CIRCLES .  THESE SCENES  HAVE  ALL APPEARED BEFORE .",
+          "translation": "ليست أوهامًا—لقد كنت أدور في حلقات. هذه المشاهد قد تكرر ظهورها من قبل.",
+          "width": 275,
+          "x": 311,
+          "y": 1851
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "renderMode": "mask_only",
+          "symHeight": 18,
+          "symWidth": 17.42857142857143,
+          "text": "THIS  IS  PROBABLY",
+          "translation": "",
+          "width": 273,
+          "x": 88,
+          "y": 3257
+        }
+      ],
+      "imgHeight": 3276,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 18.6,
+          "symWidth": 17.47511904761905,
+          "text": "THIS IS PROBABLY AN ILLUSION REALM WITHIN THE SECRET REALM . IF I CAN'T FIND A WAY TO BREAK IT . I'LL BE TRAPPED HERE FOREVER .",
+          "translation": "ربما هذه حقلاً من الوهم داخل العالم السري. إذا لم أجد طريقًا لكسره، سأظل محصورًا هنا إلى الأبد.",
+          "width": 325,
+          "x": 61,
+          "y": 12
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 19.16666666666667,
+          "symWidth": 17.34070004070004,
+          "text": "IF  I  WANT TO  BREAK  THE ILLUSION ,  I  CAN HAVE  XINGCHEN TRY  \" STARRY  SKY SHUTTLE . \"",
+          "translation": "إذا أردت كسر الوهم، يمكنني أن أجعل شينغتشن يجرب \"رحلة السماء النجمية\".",
+          "width": 266,
+          "x": 49,
+          "y": 2256
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "renderMode": "mask_only",
+          "symHeight": 17,
+          "symWidth": 16.1,
+          "text": "AFTER  BEING",
+          "translation": "",
+          "width": 175,
+          "x": 426,
+          "y": 3265
+        }
+      ],
+      "imgHeight": 3276,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 17.6875,
+          "symWidth": 16.2671626984127,
+          "text": "AFTER BEING STRENGTHENED BY THE STARRY SKY GIANT DRAGON , XINGCHEN'S ABILITIES SHOULD BE ENOUGH TO ESCAPE THIS PLACE .",
+          "translation": "بعد تقوية شينغتشن بواسطة التنين العملاق السمائي النجمي، ينبغي أن تكون قدراته كافية للخروج من هنا.",
+          "width": 292,
+          "x": 367,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 19.225,
+          "symWidth": 17.67257834757835,
+          "text": "HOWEVER ... WHAT  IF  TEARING THROUGH SPACE DOESN'T  LEAD  TO THE  ACTUAL SECRET  REALM ..",
+          "translation": "لكن... ماذا إن كان تمزيق الفضاء لا يؤدي إلى العالم السري الحقيقي...",
+          "width": 260,
+          "x": 113,
+          "y": 379
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.25,
+          "symWidth": 16.88888888888889,
+          "text": "BUT SOMEWHERE ELSE ENTIRELY ?",
+          "translation": "بل إلى مكان آخر مختلف تمامًا؟",
+          "width": 168,
+          "x": 416,
+          "y": 1313
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.25,
+          "symWidth": 19.09513888888889,
+          "text": "OR  WORSE ... DIRECTLY BACK  TO  THE ENTRANCE .",
+          "translation": "أو الأسوأ... إلى المدخل ذاته بلا رجعة.",
+          "width": 204,
+          "x": 50,
+          "y": 1875
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 19.8,
+          "symWidth": 17.82380952380952,
+          "text": "THEN  THE KEY ... WILL HAVE  BEEN WASTED .",
+          "translation": "حينها سيكون المفتاح قد ضاع هباءً.",
+          "width": 163,
+          "x": 443,
+          "y": 2974
+        }
+      ],
+      "imgHeight": 3276,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 21.66666666666667,
+          "symWidth": 21.42328042328042,
+          "text": "HOW SHOULD  I CHOOSE .. ?",
+          "translation": "كيف أختار...؟",
+          "width": 167,
+          "x": 382,
+          "y": 211
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 27.75,
+          "text": "快 看 漫 网",
+          "translation": "",
+          "width": 121,
+          "x": 570,
+          "y": 1131
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.37222222222222,
+          "text": "THEN  I'LL GAMBLE ON  IT .",
+          "translation": "حسنًا، سأخاطر بذلك.",
+          "width": 139,
+          "x": 102,
+          "y": 1135
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.53846153846154,
+          "text": "帳波 漫画",
+          "translation": "",
+          "width": 166,
+          "x": 11,
+          "y": 2700
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18,
+          "symWidth": 16.40074786324787,
+          "text": "XINGCHEN , USE  STARRY  SKY SHUTTLE .  GET  US OUT  OF  HERE .",
+          "translation": "شينغ تشن، استخدم الناقلة السماوية النجمية. انقذنا من هنا.",
+          "width": 238,
+          "x": 218,
+          "y": 46
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 20.4,
+          "symWidth": 14.95015873015873,
+          "text": "STARRY  SKY  SHUTTLE :  TEARS THROUGH  SPACE  TO FORM  A  PORTAL  RIFT  TO  A  TARGET  LOCATION .  THE RIFT  EXISTS  FOR  60  SECONDS  AND  IS  NOT  RESTRICTED BY  ANY  FORMATIONS  OR  FORBIDDEN  SPELLS .",
+          "translation": "الناقلة السماوية النجمية: تخترق الفضاء لتشكل شقًّا بوابياً نحو هدف محدد. يستمر الشق لمدة ستين ثانية ولا تخضع لأي تشكيلات أو تعاويذ محرمة.",
+          "width": 606,
+          "x": 47,
+          "y": 2650
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.6,
+          "text": "Veseta",
+          "translation": "فيضيسيتا",
+          "width": 173,
+          "x": 517,
+          "y": 1244
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17,
+          "symWidth": 16.75,
+          "text": "THE GAMBLE PAID  OFF .",
+          "translation": "نجح الرهان.",
+          "width": 129,
+          "x": 150,
+          "y": 1553
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 19.33333333333333,
+          "symWidth": 16.03273809523809,
+          "text": "ABYSS  SECRET  REALM ANCIENT RUINS",
+          "translation": "عالم الأسرار الهاوية\nأطلال قديمة",
+          "width": 302,
+          "x": 110,
+          "y": 3022
+        }
+      ],
+      "imgHeight": 3339,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 20.33333333333333,
+          "symWidth": 30,
+          "text": "000",
+          "translation": "٠٠٠",
+          "width": 32,
+          "x": 422,
+          "y": 2730
+        }
+      ],
+      "imgHeight": 3340,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3341,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 20.71428571428572,
+          "symWidth": 18.9,
+          "text": "JUST  AS  I THOUGHT ...  THE PLACE  I  WAS  IN BEFORE  WAS ACTUALLY  INSIDE THIS  CRYSTAL BALL !",
+          "translation": "تمامًا كما ظننت... ذلك المكان الذي كنت فيه سابقًا كان في داخل هذه الكرة البلورية!",
+          "width": 265,
+          "x": 136,
+          "y": 128
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13.5,
+          "text": "#peta",
+          "translation": "",
+          "width": 168,
+          "x": 521,
+          "y": 1061
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 20.92494824016563,
+          "symWidth": 18.8703933747412,
+          "text": "THIS  TEMPLE IS  THE  TRUE  10TH SECRET  REALM .  BUT WHERE  ARE  THE BREAKTHROUGH MATERIALS  I'M LOOKING  FOR ?",
+          "translation": "هذا المعبد هو حقيقةُ العالم السري العاشر. ولكن أين هي المواد التي أبحث عنها لاختراقي؟",
+          "width": 310,
+          "x": 121,
+          "y": 1596
+        }
+      ],
+      "imgHeight": 3400,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 85.5,
+          "symWidth": 48,
+          "text": "10",
+          "translation": "١٠",
+          "width": 85,
+          "x": 537,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.71010101010101,
+          "text": "... THE  AURA OF  AN  ANCIENT GOD !!!",
+          "translation": "... هالة إلهٍ قديم!",
+          "width": 223,
+          "x": 91,
+          "y": 1510
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 28,
+          "text": "OH ?",
+          "translation": "أحقًا؟",
+          "width": 80,
+          "x": 234,
+          "y": 3203
+        }
+      ],
+      "imgHeight": 3400,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 18.24242424242424,
+          "symWidth": 18.4944684944685,
+          "text": "YOU ACTUALLY MANAGED  TO ESCAPE ?",
+          "translation": "هل تمكنتَ من الفرار حقًا؟",
+          "width": 180,
+          "x": 353,
+          "y": 1114
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 19,
+          "symWidth": 19.25641025641026,
+          "text": "HOW INTERESTING !!",
+          "translation": "يا للروعة!",
+          "width": 211,
+          "x": 140,
+          "y": 2346
+        }
+      ],
+      "imgHeight": 3402,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 19.48,
+          "symWidth": 17.63166666666667,
+          "text": "IT'S ACTUALLY .... SPEAKING DIRECTLY INSIDE  MY MIND !?",
+          "translation": "إنه... يتكلم مباشرة في داخلي!؟",
+          "width": 168,
+          "x": 307,
+          "y": 56
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13.46153846153846,
+          "text": "APPRAISAL ....",
+          "translation": "تقييم...",
+          "width": 173,
+          "x": 149,
+          "y": 1145
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 20.5,
+          "symWidth": 18.19743589743589,
+          "text": "ABYSS  ANCIENT  GOD LEVEL :  150 ,  ???",
+          "translation": "إله قديم من الهاوية - المستوى: ١٥٠،؟؟؟",
+          "width": 321,
+          "x": 207,
+          "y": 1575
+        }
+      ],
+      "imgHeight": 2184,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 20.2,
+          "symWidth": 17.77555555555556,
+          "text": "INSIDE  THIS SECRET  REALM ... THERE'S  ACTUALLY AN  ANCIENT GOD !?",
+          "translation": "داخل هذه المملكة السرية... هل هنالك إله قديم حقاً!؟",
+          "width": 272,
+          "x": 272,
+          "y": 1020
+        }
+      ],
+      "imgHeight": 2184,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

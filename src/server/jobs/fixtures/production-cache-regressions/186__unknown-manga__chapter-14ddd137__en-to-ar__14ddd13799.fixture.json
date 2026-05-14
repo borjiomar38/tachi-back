@@ -1,0 +1,827 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0186",
+  "jobId": "fixture-job-0186",
+  "licenseId": "fixture-license-0186",
+  "pageCount": 21,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003__001.jpg",
+    "004__001.jpg",
+    "005.webp",
+    "006__001.jpg",
+    "007__001.jpg",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011__001.jpg",
+    "012__001.jpg",
+    "013.webp",
+    "014__001.jpg",
+    "015__001.jpg",
+    "016.webp",
+    "017.webp",
+    "018__001.jpg",
+    "019__001.jpg",
+    "020.webp",
+    "021.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 304,
+          "symHeight": 153.5,
+          "symWidth": 150.875,
+          "text": "遇 强 则 强 让 限",
+          "translation": "مَن تَقدَّم فَيُسلِمُ",
+          "width": 552,
+          "x": 51,
+          "y": 1247
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 33.25,
+          "symWidth": 34,
+          "text": "我 的 修 为",
+          "translation": "مُرتقَاي في السَّمو",
+          "width": 35,
+          "x": 101,
+          "y": 1393
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 45.5,
+          "symWidth": 32.5,
+          "text": "玄幻",
+          "translation": "خيالٌ مُتفجِّر",
+          "width": 33,
+          "x": 560,
+          "y": 1418
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 20.68421052631579,
+          "text": "改编 自 小说 《 遇 强 则 强 , 我 的 修 为 无 上限 》",
+          "translation": "مقتبسٌ من الرواية «مَن تَقدَّم فَيُسلِم، مُرتقَاي بلا حدود»",
+          "width": 470,
+          "x": 131,
+          "y": 1674
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 38,
+          "symWidth": 35.33333333333333,
+          "text": "原著 / 史上 最帅 作者 监制 / 老徐",
+          "translation": "الكاتب الأصلي / أجمل كاتبٍ في التاريخ / إشراف الأستاذ شو",
+          "width": 344,
+          "x": 141,
+          "y": 1740
+        }
+      ],
+      "imgHeight": 1817,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 38.6875,
+          "symWidth": 32.381249999999994,
+          "text": "编剧 / G 周 主笔 / 英 、 凯 、 永乐 界 文化 — 凡 星 勾 线 / 龙 一 、 薯条 上色 / 赫 屿 、 殇 夕 浅 夜",
+          "translation": "السيناريو/ جيه، شو الكاتب الرئيسي / ينغ، كاي، يونغلوا ثقافة - فان ستار التحديد / لونغ يي، شرائح التلوين / هو يو، شانغ شي، تشيان يا",
+          "width": 528,
+          "x": 141,
+          "y": 23
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 59.5,
+          "symWidth": 54.45625,
+          "text": "火 珑 果 漫画 HUOLONGGUO  AANHUA",
+          "translation": "مانغا فوا لونغ هووا HUOLONGGUO AANHUA",
+          "width": 444,
+          "x": 126,
+          "y": 340
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 14.18421052631579,
+          "symWidth": 12.219298245614034,
+          "text": "YOU  WANT TO  INSPECT  THE GOODS ?",
+          "translation": "هل ترغب في معاينة البضاعة؟",
+          "width": 158,
+          "x": 201,
+          "y": 960
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 14.117647058823529,
+          "symWidth": 11.176470588235293,
+          "text": "BUT THERE'S  NO RUSH .",
+          "translation": "لكن لا عجل في ذلك.",
+          "width": 117,
+          "x": 407,
+          "y": 1122
+        }
+      ],
+      "imgHeight": 2116,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.705882352941174,
+          "symWidth": 16.254901960784313,
+          "text": "OH ? PLAYING  HARD TO  GET ?",
+          "translation": "أوه؟ تلعبين على التردد؟",
+          "width": 185,
+          "x": 173,
+          "y": 87
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 15.118644067796609,
+          "symWidth": 11.211483626445636,
+          "text": "HMPH .  YOU'RE FAR  TOO  CONFIDENT , PRINCESS .  EVEN  IF  THE  KING HIMSELF  CAME ,  I  WOULDN'T NECESSARILY  SERVE HIM  WILLINGLY !",
+          "translation": "همف. ثقتك مفرطة، أيتها الأميرة. حتى لو جاء الملك بنفسه، فلن أخدمه عن طيب خاطر!",
+          "width": 296,
+          "x": 36,
+          "y": 1560
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 18,
+          "symWidth": 14.555555555555555,
+          "text": "MY  STANDARDS AREN'T  THAT  LOW ...",
+          "translation": "معاييري ليست منخفضة إلى هذا الحد...",
+          "width": 246,
+          "x": 324,
+          "y": 2956
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 34,
+          "symWidth": 26.007936507936506,
+          "text": "YOU ... HOW  DARE YOU  BE  SO RUDE !",
+          "translation": "أنت... كيف تجرؤين على هذا الوقاحة!",
+          "width": 223,
+          "x": 133,
+          "y": 813
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 22,
+          "symWidth": 36.5,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 48,
+          "x": 637,
+          "y": 1000
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 16.258064516129032,
+          "symWidth": 13.64980449657869,
+          "text": "YOU'RE INSOLENT !  YOU HAVE  NO  TRACE  OF A  MAN'S  GRACE OR  MODESTY ...",
+          "translation": "أنت وقحة! لا أثر لهيبة الرجل أو تواضعه فيك...",
+          "width": 196,
+          "x": 432,
+          "y": 2540
+        },
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 20.428571428571427,
+          "symWidth": 18.76734693877551,
+          "text": "NOT ONLY  DO YOU  SPEAK WITH  SUCH AUDACITY ,  BUT YOU  DARE  LAY HANDS  ON ME !",
+          "translation": "لا تتكلمي بجرأة فحسب، بل تجرأتِ أيضًا على لمس يدي!",
+          "width": 200,
+          "x": 210,
+          "y": 2703
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [],
+      "imgHeight": 98,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 14,
+          "text": "HOWEVER ...",
+          "translation": "ومع ذلك...",
+          "width": 152,
+          "x": 408,
+          "y": 897
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 25.333333333333332,
+          "symWidth": 24.833333333333332,
+          "text": "YOU'RE  WILD !!",
+          "translation": "أنتِ جريئة جداً!!",
+          "width": 264,
+          "x": 430,
+          "y": 1766
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 24.666666666666668,
+          "symWidth": 19.42222222222222,
+          "text": "WHICH I  LIKE  A LOT !!",
+          "translation": "وهذا ما أحببته كثيرًا!!",
+          "width": 142,
+          "x": 125,
+          "y": 643
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 18.38712121212121,
+          "symWidth": 13.262745098039217,
+          "text": "MAKE  ANY REQUEST  YOU  WISH , WITHIN  THIS  KINGDOM THERE  IS  NOTHING  I CAN'T  ACCOMPLISH !!",
+          "translation": "اطلبي ما شئتِ، فليس هناك في هذا الملكوت ما يفوق قدرتي على تحقيقه!!",
+          "width": 240,
+          "x": 345,
+          "y": 2473
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [],
+      "imgHeight": 610,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16,
+          "symWidth": 15.263636363636364,
+          "text": "LOOKS LIKE  THE  FISH HAS  TAKEN  THE BAIT ~",
+          "translation": "يبدو أن السمكة قد قَعَصَت الطُعم~",
+          "width": 173,
+          "x": 390,
+          "y": 431
+        }
+      ],
+      "imgHeight": 2553,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 20,
+          "symWidth": 17.107142857142858,
+          "text": "SO ...  SO MAGNIFICENT !!!",
+          "translation": "ما أجمل هذا!!!",
+          "width": 206,
+          "x": 106,
+          "y": 1382
+        }
+      ],
+      "imgHeight": 2553,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 20,
+          "symWidth": 14.25,
+          "text": "WHAT  IF I  SAID ...",
+          "translation": "ماذا لو قلتُ...",
+          "width": 116,
+          "x": 237,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 13.333333333333334,
+          "symWidth": 11.74074074074074,
+          "text": "I  WANTED  TO ENTER  THE  PALACE'S FORBIDDEN",
+          "translation": "أرغب في دخول أراضي القصر الممنوعة؟ أيتها الأميرة، هل يمكنك جعل ذلك واقعًا؟",
+          "width": 211,
+          "x": 350,
+          "y": 487
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 14.666666666666666,
+          "symWidth": 11.577614379084968,
+          "text": "GROUNDS ? PRINCESS ,  COULD  YOU MAKE  IT",
+          "translation": "",
+          "width": 218,
+          "x": 353,
+          "y": 532
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 10.857142857142858,
+          "text": "HAPPEN ?",
+          "translation": "",
+          "width": 82,
+          "x": 461,
+          "y": 573
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 12.285714285714286,
+          "symWidth": 9.993008766505005,
+          "text": "ENTERING  THE FORBIDDEN  GROUNDS REQUIRES  THE  EMPRESS MOTHER'S  PERMISSION . WHAT  BUSINESS DO  YOU  HAVE THERE !?",
+          "translation": "دخول الأراضي الممنوعة لا يتم إلا بموافقة الإمبراطورة الأم. فما شأنك هناك؟",
+          "width": 209,
+          "x": 97,
+          "y": 1677
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 15.2,
+          "symWidth": 12.764004884004885,
+          "text": "HMPH ,  SEEMS THE  PRINCESS'S BOLD  CLAIMS  WERE NOTHING  BUT  EMPTY BOASTING !",
+          "translation": "همم، يبدو أن ادعاءات الأميرة الجريئة ما هي إلا تهور فارغ!",
+          "width": 221,
+          "x": 332,
+          "y": 545
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17,
+          "symWidth": 13.016666666666666,
+          "text": "IN  THAT  CASE ,  I'LL TAKE  MY  LEAVE .",
+          "translation": "في هذه الحال، سأرحل.",
+          "width": 216,
+          "x": 210,
+          "y": 854
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 14.4,
+          "symWidth": 10.612380952380953,
+          "text": "WAIT .  IT'S  NOT IMPOSSIBLE .  WITH YOUR  BEAUTY ,  I'M  SURE MOTHER  WOULDN'T REFUSE .",
+          "translation": "انتظري. ليس بالأمر المستحيل. بجمالك، أنا متأكد أن الأم ستميل للموافقة.",
+          "width": 241,
+          "x": 315,
+          "y": 2633
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 25,
+          "symWidth": 25.25,
+          "text": "腾讯 动漫",
+          "translation": "تنسِنت أنمي",
+          "width": 100,
+          "x": 586,
+          "y": 192
+        }
+      ],
+      "imgHeight": 1772,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17,
+          "symWidth": 13.478260869565217,
+          "text": "IT'S  JUST  THAT THE  PRICE ...",
+          "translation": "لكن الثمن...",
+          "width": 188,
+          "x": 239,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18,
+          "symWidth": 14.666666666666666,
+          "text": "THE  PRICE IS  NO  ISSUE .",
+          "translation": "الثمن ليس مشكلة.",
+          "width": 172,
+          "x": 135,
+          "y": 2105
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 16.86021505376344,
+          "symWidth": 14.974910394265232,
+          "text": "AFTER  ALL , I'M  AT  MY  BEST WHEN  FACING  A CHALLENGE .  WHAT PRICE  COULD  I NOT  AFFORD ?",
+          "translation": "فأنا في أوج المستوي حين أواجه التحديات. فما ثمنٌ لا أقدر على تحمله؟",
+          "width": 210,
+          "x": 399,
+          "y": 270
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 20.333333333333332,
+          "symWidth": 17.294736842105262,
+          "text": "HAHA . THEN  I  SHALL AWAIT  GOOD NEWS .",
+          "translation": "هاها. إذًا سأنتظر الأخبار السارة.",
+          "width": 201,
+          "x": 122,
+          "y": 1099
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 22,
+          "symWidth": 16.22222222222222,
+          "text": "OH ,  RIGHT !",
+          "translation": "أوه، صحيح!",
+          "width": 151,
+          "x": 72,
+          "y": 183
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.666666666666668,
+          "symWidth": 18.984126984126984,
+          "text": "I  ALMOST FORGOT  TO ASK ...",
+          "translation": "كادت أن أنسى أن أسألك...",
+          "width": 187,
+          "x": 97,
+          "y": 1405
+        }
+      ],
+      "imgHeight": 2325,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 21,
+          "symWidth": 18.77777777777778,
+          "text": "ARE  YOU SATISFIED  WITH MY  GOODS ?",
+          "translation": "هل أنت راضية عن بضايعي؟",
+          "width": 231,
+          "x": 324,
+          "y": 989
+        }
+      ],
+      "imgHeight": 2325,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.59259259259259,
+          "symWidth": 13.685185185185185,
+          "text": "MORE THAN  SATISFIED ! I  CAN  HARDLY WAIT !!",
+          "translation": "أكثر من ذلك! لا أستطيع الانتظار!!",
+          "width": 198,
+          "x": 306,
+          "y": 1803
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 12.666666666666666,
+          "symWidth": 11.151851851851852,
+          "text": "THE  WOMEN  HERE ARE  LIKE  RAVENOUS BEASTS !!!",
+          "translation": "النساء هنا كالوحوش الجائعة!!!",
+          "width": 171,
+          "x": 339,
+          "y": 916
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 21,
+          "symWidth": 18.82063492063492,
+          "text": "HOW WILD !  I  WILL HAVE  YOU",
+          "translation": "كم أنت عاصي!",
+          "width": 209,
+          "x": 379,
+          "y": 1907
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 21,
+          "symWidth": 18.75,
+          "text": "IN  BED SOONER  OR LATER !!!",
+          "translation": "سأجعل لك مكانًا في الفراش عاجلاً أم آجلاً!!!",
+          "width": 193,
+          "x": 423,
+          "y": 1971
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 60.5,
+          "symWidth": 45,
+          "text": "00",
+          "translation": "00",
+          "width": 82,
+          "x": 150,
+          "y": 2824
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [],
+      "imgHeight": 373,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 22,
+          "symWidth": 13.587542087542086,
+          "text": "SORRY ,  EVERYONE ,  THIS  CHAPTER'S  LATE , IT  KEPT  GETTING  STUCK  IN  REVIEW .",
+          "translation": "عذرًا للجميع، هذا الفصل تأخر، كان يعلق باستمرار عند المراجعة.",
+          "width": 433,
+          "x": 139,
+          "y": 175
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 16.77777777777778,
+          "text": "RIGHT  NOW ,",
+          "translation": "الآن،",
+          "width": 153,
+          "x": 74,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 18.5,
+          "text": "HONG",
+          "translation": "هونغ",
+          "width": 75,
+          "x": 238,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 15,
+          "text": "QIANYE ...",
+          "translation": "تشيانيي...",
+          "width": 125,
+          "x": 318,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 45.25,
+          "symWidth": 27.625,
+          "text": "GET  LOST !",
+          "translation": "اِذهب بعيدًا!",
+          "width": 146,
+          "x": 343,
+          "y": 424
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 44.25,
+          "symWidth": 31.75,
+          "text": "MANY",
+          "translation": "كثير",
+          "width": 83,
+          "x": 424,
+          "y": 481
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 45,
+          "symWidth": 34.333333333333336,
+          "text": "HOW",
+          "translation": "كم",
+          "width": 77,
+          "x": 348,
+          "y": 499
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 47.416666666666664,
+          "symWidth": 29,
+          "text": "TIMES  DO  I  HAVE",
+          "translation": "مرةً أخبرك؟",
+          "width": 230,
+          "x": 323,
+          "y": 524
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 47,
+          "symWidth": 28.083333333333332,
+          "text": "TO  SAY  IT !?  I'M",
+          "translation": "أنا",
+          "width": 209,
+          "x": 346,
+          "y": 580
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 45,
+          "symWidth": 28.8,
+          "text": "A  MAN !",
+          "translation": "رجلٌ!",
+          "width": 102,
+          "x": 411,
+          "y": 654
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 80.77777777777777,
+          "symWidth": 53.333333333333336,
+          "text": "A  MANNN !!!",
+          "translation": "رجل!!!",
+          "width": 250,
+          "x": 104,
+          "y": 1484
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 18.76923076923077,
+          "text": "... IS  CURRENTLY  BEING  CHASED .",
+          "translation": "... يُطارَد حاليًا.",
+          "width": 508,
+          "x": 128,
+          "y": 1781
+        }
+      ],
+      "imgHeight": 2041,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

@@ -1,0 +1,1322 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0110",
+  "jobId": "fixture-job-0110",
+  "licenseId": "fixture-license-0110",
+  "pageCount": 39,
+  "pageOrder": [
+    "001.jpg",
+    "007.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "008.jpg",
+    "006.jpg",
+    "011.jpg",
+    "009.jpg",
+    "015.jpg",
+    "010.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "018.jpg",
+    "016.jpg",
+    "020.jpg",
+    "017.jpg",
+    "029.jpg",
+    "019.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "038.jpg",
+    "037.jpg",
+    "039.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 30,
+          "text": "TODAY  IS  THE  DAY",
+          "translation": "اليوم هو اليوم المنتظر",
+          "width": 445,
+          "x": 91,
+          "y": 895
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 26.38461538461538,
+          "text": "WE  SETTLE  THIS !",
+          "translation": "لنحسم هذا الأمر!",
+          "width": 398,
+          "x": 119,
+          "y": 960
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 31,
+          "symWidth": 25.4,
+          "text": "CHARGE ! GIVE  THEM  HELL !",
+          "translation": "اندفع! أمتطِ جحيمهم!",
+          "width": 392,
+          "x": 257,
+          "y": 383
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 31.94736842105263,
+          "symWidth": 30.05263157894737,
+          "text": "WATCH  OUT ! BEHIND  YOU !",
+          "translation": "احذر! خلفك!",
+          "width": 324,
+          "x": 88,
+          "y": 1219
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 31.75,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 140,
+          "x": 399,
+          "y": 685
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 44.375,
+          "text": "AHHHH !!!",
+          "translation": "آآآه!!!",
+          "width": 390,
+          "x": 162,
+          "y": 1156
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 33.23076923076923,
+          "symWidth": 28.38461538461538,
+          "text": "W - WHAT  IS THIS ?",
+          "translation": "م-ما هذا؟",
+          "width": 274,
+          "x": 189,
+          "y": 456
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 22.15384615384615,
+          "text": "IT'S  A  MISSILE !",
+          "translation": "إنها صاروخ!",
+          "width": 339,
+          "x": 186,
+          "y": 50
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 50.28571428571428,
+          "symWidth": 38.92857142857143,
+          "text": "WE'RE FINISHED !",
+          "translation": "لقد انتهينا!",
+          "width": 364,
+          "x": 176,
+          "y": 779
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 26.29411764705882,
+          "symWidth": 21.55882352941176,
+          "text": "..IN  THE  MILITARY , THAT  WAS MY  NICKNAME .",
+          "translation": "في الجيش، كان هذا لقبي.",
+          "width": 335,
+          "x": 110,
+          "y": 1258
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 34,
+          "text": "WHAT",
+          "translation": "ماذا؟",
+          "width": 150,
+          "x": 407,
+          "y": 1535
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 18.6,
+          "text": "IS  IT ?",
+          "translation": "هل هو؟",
+          "width": 116,
+          "x": 425,
+          "y": 5
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 31.2,
+          "symWidth": 21.2,
+          "text": "UH ,  WELL ...",
+          "translation": "آه، حسناً...",
+          "width": 226,
+          "x": 150,
+          "y": 1229
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 19.5,
+          "symWidth": 17.36458333333334,
+          "text": "WELL ...  YOU  KNOW , THE  STUFF  THEY  SELL",
+          "translation": "حسناً... تعلم، الأشياء التي يبيعونها",
+          "width": 305,
+          "x": 300,
+          "y": 1409
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 18.18181818181818,
+          "text": "A  LOT  AT  THE  PX",
+          "translation": "كثير منها في المتجر العسكري",
+          "width": 234,
+          "x": 335,
+          "y": 1485
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 18.75,
+          "text": "HOW  DID  YOU  GET",
+          "translation": "كيف حصلت",
+          "width": 264,
+          "x": 128,
+          "y": 685
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 20,
+          "symWidth": 18.29166666666666,
+          "text": "A  NICKNAME LIKE  THAT",
+          "translation": "على لقب مثل هذا",
+          "width": 189,
+          "x": 165,
+          "y": 720
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.375,
+          "text": "IN  THE  MILITARY ...",
+          "translation": "في الجيش...",
+          "width": 260,
+          "x": 134,
+          "y": 797
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 13.5,
+          "text": "... AND",
+          "translation": "... ومن ثم",
+          "width": 85,
+          "x": 399,
+          "y": 962
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 19.82352941176471,
+          "text": "THEN  YOU  WENT  AROUND",
+          "translation": "تجولت متباهياً به؟",
+          "width": 377,
+          "x": 251,
+          "y": 1000
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.23529411764706,
+          "text": "BRAGGING  ABOUT  IT ?!",
+          "translation": "!",
+          "width": 314,
+          "x": 287,
+          "y": 1038
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 28.8,
+          "text": "AH ,  N - NO - BECAUSE",
+          "translation": "آه، لَـ- لـسـْـتُ... لأنّ",
+          "width": 472,
+          "x": 123,
+          "y": 459
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36,
+          "symWidth": 27.57142857142857,
+          "text": "IN  THE  MILITARY ,",
+          "translation": "في العسكر،",
+          "width": 422,
+          "x": 147,
+          "y": 522
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 29.86666666666667,
+          "text": "WE  DID  EVERYTHING",
+          "translation": "كنا نفعل كل شيء",
+          "width": 509,
+          "x": 103,
+          "y": 589
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33,
+          "symWidth": 29,
+          "text": "TOGETHER",
+          "translation": "معًا",
+          "width": 263,
+          "x": 235,
+          "y": 650
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 34.8,
+          "symWidth": 30.8,
+          "text": "MHM ..",
+          "translation": "مم...",
+          "width": 155,
+          "x": 281,
+          "y": 1441
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 20,
+          "symWidth": 13.33333333333333,
+          "text": "kareer",
+          "translation": "",
+          "width": 68,
+          "x": 113,
+          "y": 76
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 89.5,
+          "symWidth": 76.75,
+          "text": "아 봉딱 it's  an  abbreviation  of",
+          "translation": "",
+          "width": 467,
+          "x": 116,
+          "y": 1379
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 42.54545454545455,
+          "symWidth": 22.19191919191919,
+          "text": "' A  kiss  is  perfect  for sealing  someone's  mouth '",
+          "translation": "«القبلة سبيل إلى إسكات الأفواه»",
+          "width": 545,
+          "x": 75,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 24,
+          "symWidth": 26.5,
+          "text": "ww",
+          "translation": "",
+          "width": 41,
+          "x": 271,
+          "y": 988
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 38.83333333333334,
+          "symWidth": 30.83333333333333,
+          "text": "UM ,  BUT",
+          "translation": "همم، لكن",
+          "width": 201,
+          "x": 215,
+          "y": 451
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 33.44444444444444,
+          "text": "WHAT  ABOUT",
+          "translation": "وماذا عن",
+          "width": 335,
+          "x": 149,
+          "y": 519
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 31.125,
+          "text": "OUR  PLANS",
+          "translation": "خططنا",
+          "width": 280,
+          "x": 171,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 28.2,
+          "text": "THEN ?",
+          "translation": "آنذاك؟",
+          "width": 157,
+          "x": 238,
+          "y": 649
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 22.15384615384615,
+          "text": "I  DIDN'T  EXPECT",
+          "translation": "لم أتوقع",
+          "width": 335,
+          "x": 261,
+          "y": 89
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 29,
+          "symWidth": 25.47321428571428,
+          "text": "THINGS  TO TURN  OUT",
+          "translation": "أن الأمور ستنقلب",
+          "width": 225,
+          "x": 319,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 21.25,
+          "text": "LIKE THIS",
+          "translation": "على هذا النحو",
+          "width": 197,
+          "x": 329,
+          "y": 256
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 26.75,
+          "text": "AS  SOON  AS",
+          "translation": "مباشرةً حين",
+          "width": 247,
+          "x": 304,
+          "y": 311
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 21.66666666666667,
+          "text": "WE  ARRIVED ...",
+          "translation": "وصلنا...",
+          "width": 290,
+          "x": 286,
+          "y": 367
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 26.4,
+          "text": "I  DON'T  KNOW",
+          "translation": "لم أعد أعلم",
+          "width": 294,
+          "x": 208,
+          "y": 936
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 22.4,
+          "text": "ANYMORE ...",
+          "translation": "بعد الآن...",
+          "width": 241,
+          "x": 241,
+          "y": 989
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 89,
+          "symWidth": 100.5,
+          "text": "오늘",
+          "translation": "اليوم",
+          "width": 188,
+          "x": 142,
+          "y": 1478
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 96,
+          "symWidth": 82.66666666666667,
+          "text": "이구나",
+          "translation": "",
+          "width": 266,
+          "x": 332,
+          "y": 1154
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 202.5,
+          "symWidth": 126,
+          "text": "گرمی",
+          "translation": "",
+          "width": 298,
+          "x": 56,
+          "y": 1087
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 386,
+          "symHeight": 151.1,
+          "symWidth": 149.3,
+          "text": "HX  of  ox ok  or",
+          "translation": "",
+          "width": 408,
+          "x": 21,
+          "y": 766
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 31,
+          "symWidth": 25.10526315789474,
+          "text": "MY  LEGS  ARE TINGLING ..",
+          "translation": "تخدر ساقايَّ...",
+          "width": 298,
+          "x": 293,
+          "y": 772
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 26.0625,
+          "symWidth": 23.875,
+          "text": "HUH , WHEN DID YOU",
+          "translation": "هاه، متى دخلت؟",
+          "width": 218,
+          "x": 194,
+          "y": 1545
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "renderMode": "mask_only",
+          "symHeight": 24,
+          "symWidth": 23,
+          "text": "DID  YOU",
+          "translation": "",
+          "width": 155,
+          "x": 210,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 19.90909090909091,
+          "text": "GET  IN  HERE ?!",
+          "translation": "كيف تجرؤ على الدخول هنا؟!",
+          "width": 256,
+          "x": 166,
+          "y": 58
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 31.77777777777778,
+          "text": "WHY  ARE  YOU",
+          "translation": "لماذا أنت",
+          "width": 320,
+          "x": 120,
+          "y": 1336
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 24.28571428571428,
+          "text": "IN  HERE ?",
+          "translation": "هنا؟",
+          "width": 200,
+          "x": 187,
+          "y": 1395
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 30.71428571428572,
+          "text": "SO  WHAT ?",
+          "translation": "وماذا في ذلك؟",
+          "width": 245,
+          "x": 338,
+          "y": 1546
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 18.75,
+          "text": "I'VE  SEEN",
+          "translation": "لقد رأيت",
+          "width": 167,
+          "x": 372,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 21.8,
+          "text": "EVERYTHING",
+          "translation": "كل شيء",
+          "width": 236,
+          "x": 344,
+          "y": 58
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 25,
+          "symWidth": 21.73684210526316,
+          "text": "THERE  IS  TO SEE  ANYWAY .",
+          "translation": "يمكن أن يُرى على أي حال.",
+          "width": 238,
+          "x": 342,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 25.77777777777778,
+          "symWidth": 20.22222222222222,
+          "text": "THAT'S  DIFFERENT FROM  THIS , THOUGH ...  EH ~",
+          "translation": "لكن هذا مختلف عما هنا... أليس كذلك؟",
+          "width": 334,
+          "x": 138,
+          "y": 852
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 25.22222222222222,
+          "text": "W - WHAT  ARE",
+          "translation": "م-ماذا",
+          "width": 242,
+          "x": 330,
+          "y": 215
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 22.88888888888889,
+          "text": "YOU  DOING ?",
+          "translation": "تفعل؟",
+          "width": 229,
+          "x": 337,
+          "y": 262
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 27.66666666666667,
+          "text": "AGAIN ?",
+          "translation": "مرة أخرى؟",
+          "width": 187,
+          "x": 203,
+          "y": 1024
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 31,
+          "text": "DON'T  YOU",
+          "translation": "ألست",
+          "width": 274,
+          "x": 309,
+          "y": 733
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 22.85714285714286,
+          "text": "LIKE  IT ?",
+          "translation": "تحب ذلك؟",
+          "width": 188,
+          "x": 351,
+          "y": 798
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 30.2,
+          "text": "MHPH !",
+          "translation": "هممم!",
+          "width": 167,
+          "x": 155,
+          "y": 1519
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 26,
+          "text": "THAT'S",
+          "translation": "هذا",
+          "width": 168,
+          "x": 395,
+          "y": 866
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 29.57142857142857,
+          "text": "SO  MEAN !",
+          "translation": "حقًا قاسٍ!",
+          "width": 241,
+          "x": 364,
+          "y": 931
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.78947368421053,
+          "text": "DAY  OF  RETURN  FROM  TRIP",
+          "translation": "يوم العودة من الرحلة",
+          "width": 385,
+          "x": 151,
+          "y": 712
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 30.91666666666667,
+          "symWidth": 18.62820512820513,
+          "text": "During  my two - day , one  night  trip ,",
+          "translation": "خلال رحلتي التي استمرت لليلتين ويوم واحد،",
+          "width": 227,
+          "x": 57,
+          "y": 563
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 16.83333333333333,
+          "text": "I  never",
+          "translation": "لم",
+          "width": 112,
+          "x": 290,
+          "y": 861
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 31.42857142857143,
+          "symWidth": 18.35714285714286,
+          "text": "stepped  outside",
+          "translation": "أخرج من",
+          "width": 255,
+          "x": 219,
+          "y": 952
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 18.66666666666667,
+          "text": "The",
+          "translation": "ال",
+          "width": 57,
+          "x": 495,
+          "y": 1121
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 18.5,
+          "text": "Guesthouse",
+          "translation": "نزل الضيوف",
+          "width": 190,
+          "x": 429,
+          "y": 1168
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 32.33333333333334,
+          "symWidth": 21.88888888888889,
+          "text": "Items used",
+          "translation": "الأغراض المستخدمة",
+          "width": 117,
+          "x": 106,
+          "y": 130
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33,
+          "symWidth": 21,
+          "text": "2  bottles  of  water",
+          "translation": "زجاجتان من الماء",
+          "width": 362,
+          "x": 229,
+          "y": 297
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 21.42857142857143,
+          "text": "3  snacks",
+          "translation": "٣ وجبات خفيفة",
+          "width": 174,
+          "x": 322,
+          "y": 557
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 31.33333333333333,
+          "text": "IT  WAS  A",
+          "translation": "كان",
+          "width": 217,
+          "x": 231,
+          "y": 611
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 31,
+          "text": "TOTAL",
+          "translation": "كارثة",
+          "width": 166,
+          "x": 258,
+          "y": 741
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 27.44444444444444,
+          "text": "DISASTER .",
+          "translation": "شاملة.",
+          "width": 258,
+          "x": 210,
+          "y": 871
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 135,
+          "symWidth": 114.25,
+          "text": "무지 뱅스",
+          "translation": "",
+          "width": 496,
+          "x": 27,
+          "y": 1458
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 250,
+          "symHeight": 107,
+          "symWidth": 91.91666666666667,
+          "text": "계백 순 글 / 그림  지발",
+          "translation": "كي بيك، كتابة ورسم: جيبال",
+          "width": 516,
+          "x": 121,
+          "y": 49
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 26.89473684210526,
+          "text": "외전  계백 순 & 강 주경  :  엉망진창  여행  ( 3 )",
+          "translation": "خارج السلسلة: كي بيك وكانغ جوكيونغ: الرحلة الفوضوية (٣)",
+          "width": 624,
+          "x": 41,
+          "y": 369
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 18.8859649122807,
+          "symWidth": 10.38566755872733,
+          "text": "Im  sorry if  the  quality  of  the  translation  wasnt  up  to  your  standards i  did  this  for  fun  since  the  usual  translator  refused  to  translate  it  TT",
+          "translation": "أعتذر إن لم ترقَ جودة الترجمة لمستوى توقعاتكم، فقد فعلتها من باب المتعة بعد رفض المترجم المعتاد القيام بها.",
+          "width": 661,
+          "x": 19,
+          "y": 571
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 11.75757575757576,
+          "text": "he  will  translate  the  next  chapter  tho !",
+          "translation": "سيرد مترجم الفصل المقبل بلا ريب!",
+          "width": 460,
+          "x": 44,
+          "y": 675
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 9.6,
+          "text": "STAFF",
+          "translation": "الطاقم",
+          "width": 52,
+          "x": 619,
+          "y": 808
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15,
+          "symWidth": 11.89285714285714,
+          "text": "TEAM  ART 작화  도움  :  말 배앵",
+          "translation": "فريق الفن، مساعدة في الرسوم: مال بيانغ",
+          "width": 125,
+          "x": 545,
+          "y": 833
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 23,
+          "symWidth": 18.875,
+          "text": "기획 / 제작 YLAB",
+          "translation": "التخطيط والإنتاج: YLAB",
+          "width": 96,
+          "x": 575,
+          "y": 1010
+        }
+      ],
+      "imgHeight": 1198,
+      "imgWidth": 690,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

@@ -1,0 +1,2751 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0028",
+  "jobId": "fixture-job-0028",
+  "licenseId": "fixture-license-0028",
+  "pageCount": 100,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg",
+    "059.jpg",
+    "060.jpg",
+    "061.jpg",
+    "062.jpg",
+    "063.jpg",
+    "064.jpg",
+    "065.jpg",
+    "066.jpg",
+    "067.jpg",
+    "068.jpg",
+    "069.jpg",
+    "070.jpg",
+    "071.jpg",
+    "072.jpg",
+    "073.jpg",
+    "074.jpg",
+    "075.jpg",
+    "076.jpg",
+    "077.jpg",
+    "078.jpg",
+    "079.jpg",
+    "080.jpg",
+    "081.jpg",
+    "082.jpg",
+    "083.jpg",
+    "084.jpg",
+    "085.jpg",
+    "086.jpg",
+    "087.jpg",
+    "088.jpg",
+    "089.jpg",
+    "090.jpg",
+    "091.jpg",
+    "092.jpg",
+    "093.jpg",
+    "094.jpg",
+    "095.jpg",
+    "096.jpg",
+    "097.jpg",
+    "098.jpg",
+    "099.jpg",
+    "100.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 58.27272727272727,
+          "symWidth": 52.92045454545455,
+          "text": "잔 공격 이 안  먹히는  내게 유효  타격 을",
+          "translation": "A hit that actually hurts me, who's immune to light attacks",
+          "width": 379,
+          "x": 213,
+          "y": 368
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 73,
+          "symWidth": 70.33333333333333,
+          "text": "일부러",
+          "translation": "On purpose",
+          "width": 209,
+          "x": 263,
+          "y": 90
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 60.5,
+          "symWidth": 48.5,
+          "text": "말  ㅈ나 많네 .",
+          "translation": "You sure talk a lot.",
+          "width": 191,
+          "x": 120,
+          "y": 1165
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 61,
+          "symWidth": 52.06666666666666,
+          "text": "이래서 엘리트  체육 출신  놈들 이",
+          "translation": "This is why those elite athletes",
+          "width": 307,
+          "x": 187,
+          "y": 474
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 60.66666666666666,
+          "symWidth": 46.66666666666666,
+          "text": "하고 .",
+          "translation": "say.",
+          "width": 137,
+          "x": 360,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 83,
+          "symWidth": 86.5,
+          "text": "설마",
+          "translation": "No way...",
+          "width": 171,
+          "x": 253,
+          "y": 783
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 85.5,
+          "symWidth": 84.1,
+          "text": "싸움  끝나는  거 아니 제 ?",
+          "translation": "Is the fight already over?",
+          "width": 535,
+          "x": 76,
+          "y": 1090
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30,
+          "symWidth": 27.66666666666667,
+          "text": "이한솔",
+          "translation": "Lee Hansol",
+          "width": 85,
+          "x": 572,
+          "y": 918
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 57,
+          "symWidth": 29.8,
+          "text": "01 ...",
+          "translation": "01...",
+          "width": 123,
+          "x": 141,
+          "y": 810
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 64,
+          "symWidth": 53.33333333333334,
+          "text": "드디어",
+          "translation": "Finally",
+          "width": 179,
+          "x": 232,
+          "y": 1438
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 67.66666666666667,
+          "symWidth": 44.33333333333334,
+          "text": "싫던 ,",
+          "translation": "Hated it,",
+          "width": 148,
+          "x": 247,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 72,
+          "symWidth": 68.33333333333333,
+          "text": "ㅈ 같은",
+          "translation": "Damn it",
+          "width": 206,
+          "x": 257,
+          "y": 718
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 65,
+          "symWidth": 61.66666666666666,
+          "text": "잡히면",
+          "translation": "If caught,",
+          "width": 184,
+          "x": 298,
+          "y": 1153
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 67,
+          "symWidth": 65.5,
+          "text": "누가",
+          "translation": "Who",
+          "width": 128,
+          "x": 264,
+          "y": 1373
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 70,
+          "symWidth": 73,
+          "text": "배운",
+          "translation": "Learned",
+          "width": 140,
+          "x": 293,
+          "y": 260
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 51.5,
+          "symWidth": 34,
+          "text": "크윽 ..",
+          "translation": "Ugh..",
+          "width": 128,
+          "x": 422,
+          "y": 966
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 45.5,
+          "text": "ㅁㅁ",
+          "translation": "Mmm",
+          "width": 136,
+          "x": 277,
+          "y": 1510
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 65.33333333333333,
+          "symWidth": 35.16666666666666,
+          "text": "크헉 .. !!",
+          "translation": "Ugh..!!",
+          "width": 232,
+          "x": 144,
+          "y": 1119
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 50.16666666666666,
+          "symWidth": 32.33333333333334,
+          "text": "이 .. ㅆ팔 !",
+          "translation": "D- Dammit!",
+          "width": 204,
+          "x": 73,
+          "y": 955
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 60,
+          "symWidth": 62,
+          "text": "발로",
+          "translation": "With a kick",
+          "width": 119,
+          "x": 270,
+          "y": 656
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 39,
+          "text": "야 .",
+          "translation": "Hey.",
+          "width": 78,
+          "x": 336,
+          "y": 608
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 63,
+          "symWidth": 58.5,
+          "text": "체급 차 를",
+          "translation": "Weight class difference",
+          "width": 235,
+          "x": 200,
+          "y": 1441
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 36,
+          "text": "크억 .. !!",
+          "translation": "Ghh..!!",
+          "width": 238,
+          "x": 166,
+          "y": 607
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 58,
+          "symWidth": 33.375,
+          "text": "큭 .. ! ㅆ팔 .. !!",
+          "translation": "Tsk...! Damn..!!",
+          "width": 203,
+          "x": 272,
+          "y": 488
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 60,
+          "symWidth": 54,
+          "text": "느그 들이",
+          "translation": "You guys",
+          "width": 224,
+          "x": 221,
+          "y": 1522
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 62,
+          "symWidth": 54.33333333333334,
+          "text": "그리고",
+          "translation": "And then",
+          "width": 174,
+          "x": 419,
+          "y": 640
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 58,
+          "symWidth": 53.125,
+          "text": "영만 이 성훈 이 를",
+          "translation": "Youngman already defeated Seonghun",
+          "width": 231,
+          "x": 257,
+          "y": 413
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 67,
+          "symWidth": 52,
+          "text": "이미",
+          "translation": "Already",
+          "width": 113,
+          "x": 243,
+          "y": 1103
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 72,
+          "symWidth": 52.66666666666666,
+          "text": "졌다 .",
+          "translation": "Lost.",
+          "width": 162,
+          "x": 257,
+          "y": 1111
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 56.4,
+          "symWidth": 37.2,
+          "text": "크윽 .. !",
+          "translation": "Guh..!",
+          "width": 178,
+          "x": 254,
+          "y": 110
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 72,
+          "symWidth": 73.33333333333333,
+          "text": "저  새끼",
+          "translation": "That bastard",
+          "width": 226,
+          "x": 226,
+          "y": 764
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 58,
+          "symWidth": 42.57777777777778,
+          "text": "역시 . 이렇게 나와야지 .",
+          "translation": "This is how it should be done.",
+          "width": 232,
+          "x": 238,
+          "y": 1024
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 60,
+          "symWidth": 29.5,
+          "text": "!!",
+          "translation": "!!",
+          "width": 61,
+          "x": 488,
+          "y": 1417
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 69,
+          "symWidth": 66,
+          "text": "몇  놈 이",
+          "translation": "How many of you",
+          "width": 208,
+          "x": 240,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 77,
+          "symWidth": 78.5,
+          "text": "내는",
+          "translation": "are you?",
+          "width": 153,
+          "x": 296,
+          "y": 1123
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 40.66666666666666,
+          "text": "뭐야 ?",
+          "translation": "What?",
+          "width": 128,
+          "x": 179,
+          "y": 309
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 52,
+          "symWidth": 38,
+          "text": "어느  학교 놈 이지 .. ?",
+          "translation": "Which school are you from..?",
+          "width": 216,
+          "x": 303,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 60.5,
+          "symWidth": 42,
+          "text": "힐끔",
+          "translation": "*glance*",
+          "width": 74,
+          "x": 438,
+          "y": 974
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 51,
+          "symWidth": 50.5,
+          "text": "남의  학교",
+          "translation": "A different school.",
+          "width": 217,
+          "x": 186,
+          "y": 21
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 58.5,
+          "symWidth": 52.66666666666667,
+          "text": "・ 내 도 거 금한",
+          "translation": "My territory too.",
+          "width": 195,
+          "x": 248,
+          "y": 1042
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 70.5,
+          "text": "어떤",
+          "translation": "What kind?",
+          "width": 138,
+          "x": 220,
+          "y": 36
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 56.5,
+          "symWidth": 34.5,
+          "text": "라 .",
+          "translation": "Ra.",
+          "width": 71,
+          "x": 415,
+          "y": 1468
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 60,
+          "symWidth": 50,
+          "text": "정신 이",
+          "translation": "My mind...",
+          "width": 168,
+          "x": 246,
+          "y": 583
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 62,
+          "symWidth": 57.66666666666666,
+          "text": "싸우고",
+          "translation": "Fighting",
+          "width": 177,
+          "x": 323,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 277,
+          "symHeight": 59.52380952380952,
+          "symWidth": 52.29761904761904,
+          "text": "나를 다른  사람 으로 착각 하고  공격 한  거 같았다 .",
+          "translation": "He must have mistaken me for someone else and attacked.",
+          "width": 481,
+          "x": 130,
+          "y": 1202
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 59,
+          "symWidth": 45.66666666666666,
+          "text": "없나 ?",
+          "translation": "Is there none?",
+          "width": 140,
+          "x": 284,
+          "y": 1243
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 37,
+          "symWidth": 30,
+          "text": "학교  성심 병원",
+          "translation": "School Sacred Heart Hospital",
+          "width": 206,
+          "x": 196,
+          "y": 1424
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 60,
+          "symWidth": 47.25,
+          "text": "거라도 .",
+          "translation": "Even something like this.",
+          "width": 190,
+          "x": 266,
+          "y": 455
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 59,
+          "symWidth": 34.5,
+          "text": "글쎄 ..",
+          "translation": "Hmm...",
+          "width": 145,
+          "x": 115,
+          "y": 1037
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 59,
+          "symWidth": 44.75,
+          "text": "없어서 …",
+          "translation": "There isn’t any...",
+          "width": 216,
+          "x": 338,
+          "y": 259
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 57,
+          "symWidth": 45.66666666666666,
+          "text": "남은  건 ・ ・ ・",
+          "translation": "All that’s left is...",
+          "width": 234,
+          "x": 173,
+          "y": 1010
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 54,
+          "symWidth": 50.5,
+          "text": "그정도 만",
+          "translation": "Only to that extent",
+          "width": 217,
+          "x": 146,
+          "y": 636
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 61.25,
+          "symWidth": 37.75,
+          "text": "설마 … !",
+          "translation": "No way...!",
+          "width": 182,
+          "x": 357,
+          "y": 312
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 57,
+          "symWidth": 43.5,
+          "text": "마  됐다 !",
+          "translation": "Stop it!",
+          "width": 197,
+          "x": 321,
+          "y": 1084
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 18,
+          "symWidth": 14,
+          "text": "701",
+          "translation": "701",
+          "width": 15,
+          "x": 30,
+          "y": 433
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 48.33333333333334,
+          "text": "후우 -",
+          "translation": "Huff—",
+          "width": 127,
+          "x": 96,
+          "y": 71
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 61.66666666666666,
+          "symWidth": 65,
+          "text": "봤을  때",
+          "translation": "From what I see",
+          "width": 192,
+          "x": 276,
+          "y": 90
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 57.5,
+          "symWidth": 46.83333333333334,
+          "text": "반경  10km",
+          "translation": "Within a 10km radius",
+          "width": 285,
+          "x": 158,
+          "y": 840
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 36,
+          "symWidth": 37,
+          "text": "이제  질문  좀 해도  되나 ?",
+          "translation": "Can I ask some questions now?",
+          "width": 194,
+          "x": 345,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 35.88888888888889,
+          "symWidth": 30.54166666666667,
+          "text": "넵 .. 편하게 물어 보십쇼 .. !",
+          "translation": "Yes... Feel free to ask!",
+          "width": 204,
+          "x": 17,
+          "y": 179
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 65,
+          "symWidth": 55,
+          "text": "단  한곳 .",
+          "translation": "Just one place.",
+          "width": 217,
+          "x": 191,
+          "y": 925
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 72,
+          "symWidth": 67,
+          "text": "여기",
+          "translation": "Here",
+          "width": 135,
+          "x": 267,
+          "y": 1493
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 38.4375,
+          "symWidth": 30.3375,
+          "text": "나도  5 천  만원 노려 볼까 ? 니 가 ? ! ㅋㅋㅋ",
+          "translation": "Should I try for 50 million too? You?",
+          "width": 327,
+          "x": 335,
+          "y": 237
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 67,
+          "symWidth": 53.25,
+          "text": "그리고 ,",
+          "translation": "And,",
+          "width": 208,
+          "x": 242,
+          "y": 1027
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 12.33333333333333,
+          "symWidth": 18,
+          "text": "000",
+          "translation": "000",
+          "width": 19,
+          "x": 26,
+          "y": 277
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 68.54545454545455,
+          "symWidth": 64.18181818181819,
+          "text": "대가리 가  다 길 다고  했제 .",
+          "translation": "I told you the head’s all messed up, didn't I?",
+          "width": 359,
+          "x": 216,
+          "y": 843
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 59.55555555555555,
+          "symWidth": 50.61111111111111,
+          "text": "뭐야 ? 방금 내가",
+          "translation": "What was that? Just now, I",
+          "width": 241,
+          "x": 267,
+          "y": 1282
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 58,
+          "symWidth": 45.25,
+          "text": "아니지 ?",
+          "translation": "didn't, right?",
+          "width": 195,
+          "x": 293,
+          "y": 1498
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 59,
+          "symWidth": 32.5,
+          "text": "어 .",
+          "translation": "Yeah.",
+          "width": 71,
+          "x": 431,
+          "y": 674
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 45,
+          "text": "더  있나 ?",
+          "translation": "Anything else?",
+          "width": 217,
+          "x": 224,
+          "y": 1438
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 77.5,
+          "symWidth": 66.5,
+          "text": "빠직",
+          "translation": "Crunch",
+          "width": 108,
+          "x": 88,
+          "y": 39
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 69,
+          "symWidth": 58,
+          "text": "돌았 …",
+          "translation": "Lost it...",
+          "width": 190,
+          "x": 189,
+          "y": 914
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 46,
+          "symWidth": 41.5,
+          "text": "ㅁㅁ",
+          "translation": "···",
+          "width": 110,
+          "x": 242,
+          "y": 151
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 65.16666666666667,
+          "symWidth": 37.16666666666666,
+          "text": "크헐 .. !!",
+          "translation": "Ugh..!!",
+          "width": 230,
+          "x": 118,
+          "y": 1424
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 64,
+          "symWidth": 51.91666666666667,
+          "text": "끄덕 TIE",
+          "translation": "Nod.",
+          "width": 118,
+          "x": 264,
+          "y": 49
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 62.33333333333334,
+          "text": "있제 ?",
+          "translation": "You see?",
+          "width": 169,
+          "x": 258,
+          "y": 1198
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 53,
+          "symWidth": 39.6,
+          "text": "아 .  ㅆ팔 .",
+          "translation": "Ah… damn.",
+          "width": 196,
+          "x": 388,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 70,
+          "symWidth": 69.5,
+          "text": "ㅈ나",
+          "translation": "Fuck.",
+          "width": 142,
+          "x": 305,
+          "y": 649
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 80,
+          "symWidth": 42,
+          "text": "쭛 !",
+          "translation": "Bastard!",
+          "width": 71,
+          "x": 187,
+          "y": 1146
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 50,
+          "symWidth": 43.66666666666666,
+          "text": "3 학년",
+          "translation": "3rd Year",
+          "width": 129,
+          "x": 194,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 43.97727272727273,
+          "symWidth": 34.28030303030303,
+          "text": "IRASHT BAG_A_ZI_ME",
+          "translation": "",
+          "width": 223,
+          "x": 414,
+          "y": 177
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 49.66666666666666,
+          "text": "이형남",
+          "translation": "Lee Hyung-nam",
+          "width": 151,
+          "x": 184,
+          "y": 235
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 40.6,
+          "text": "웃겨  ㅋㅋㅋ",
+          "translation": "So funny lol",
+          "width": 262,
+          "x": 241,
+          "y": 530
+        },
+        {
+          "angle": 0,
+          "height": 248,
+          "symHeight": 53.6304347826087,
+          "symWidth": 45.82608695652173,
+          "text": "니  배달 잘못  했다며  ㅋㅋ 형태 가  잡아 오란  애 말고  뜬금  없는  애로",
+          "translation": "You messed up the delivery lol\nSent some random guy instead of the one who was told to pick up Hyeong-tae",
+          "width": 445,
+          "x": 155,
+          "y": 1046
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 22,
+          "symWidth": 34.2,
+          "text": "ㅋㅋ ㅋㅋㅋ",
+          "translation": "Haha lol",
+          "width": 237,
+          "x": 258,
+          "y": 1322
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "059.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 65.6,
+          "symWidth": 64.95,
+          "text": "ㅈ나 웃겨 ㅋㅋㅋ",
+          "translation": "This is damn hilarious lol",
+          "width": 155,
+          "x": 192,
+          "y": 26
+        },
+        {
+          "angle": 0,
+          "height": 248,
+          "symHeight": 51.45,
+          "symWidth": 43.84999999999999,
+          "text": "아  ㅆ발 !! 니네 가  보라고 ㅈ나  헷갈 리게 생겼 으니까 !!!",
+          "translation": "Ah, damn it!! It looks so damn confusing when you go!!!",
+          "width": 322,
+          "x": 232,
+          "y": 331
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 52,
+          "symWidth": 53.75,
+          "text": "내가  직접 심완구",
+          "translation": "I personally signed it",
+          "width": 214,
+          "x": 166,
+          "y": 992
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 68.53333333333333,
+          "symWidth": 53.6,
+          "text": "Apket ㅈ밥 ~",
+          "translation": "Apket, you loser~",
+          "width": 169,
+          "x": 345,
+          "y": 1327
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "060.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "061.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 54.25,
+          "symWidth": 52.75,
+          "text": "내가  직접",
+          "translation": "I'll do it myself",
+          "width": 215,
+          "x": 274,
+          "y": 276
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 49,
+          "symWidth": 51,
+          "text": "딱  그 ㄴ",
+          "translation": "right here",
+          "width": 177,
+          "x": 290,
+          "y": 407
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "062.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 48.66666666666666,
+          "text": "까지 !",
+          "translation": "Exactly!",
+          "width": 135,
+          "x": 282,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 51.25,
+          "text": "내  눈 으로",
+          "translation": "With my own eyes",
+          "width": 215,
+          "x": 283,
+          "y": 868
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "063.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 54.54545454545455,
+          "symWidth": 51.18181818181818,
+          "text": "담배 가  마침 딱  떨어져서 !",
+          "translation": "I just ran out of cigarettes!",
+          "width": 287,
+          "x": 208,
+          "y": 47
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 57,
+          "symWidth": 57,
+          "text": "MU",
+          "translation": "MU",
+          "width": 90,
+          "x": 31,
+          "y": 286
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 54,
+          "symWidth": 52.66666666666666,
+          "text": "편의점",
+          "translation": "convenience store",
+          "width": 153,
+          "x": 374,
+          "y": 747
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 53.5,
+          "symWidth": 55.66666666666667,
+          "text": "마침  딱 ㄴ  혼자",
+          "translation": "Just alone",
+          "width": 216,
+          "x": 207,
+          "y": 1473
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "064.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "065.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 12.2,
+          "symWidth": 13,
+          "text": "OQILD",
+          "translation": "",
+          "width": 13,
+          "x": 292,
+          "y": 1045
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 14.88888888888889,
+          "symWidth": 15,
+          "text": "HOSPITALI",
+          "translation": "",
+          "width": 17,
+          "x": 329,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 11.85353535353535,
+          "symWidth": 13,
+          "text": "HOSPITAL  HOU TIQUUU - TA",
+          "translation": "",
+          "width": 53,
+          "x": 409,
+          "y": 1085
+        },
+        {
+          "angle": 0,
+          "height": 436,
+          "symHeight": 13.36666666666667,
+          "symWidth": 14.5,
+          "text": "HOT  HOT  HOSTALI OSPITAL  HOSPITAL -1 - INOILDHANOILDHANOILD - 10NOIL IONU - TIONUTIONU",
+          "translation": "",
+          "width": 133,
+          "x": 58,
+          "y": 1086
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "066.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 46.5,
+          "text": "ㅆ발",
+          "translation": "Damn it",
+          "width": 99,
+          "x": 186,
+          "y": 147
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 37,
+          "text": "봐봐 !!!",
+          "translation": "Look!!!",
+          "width": 176,
+          "x": 264,
+          "y": 279
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 50,
+          "symWidth": 46.33333333333334,
+          "text": "잘못 럼",
+          "translation": "It's wrong",
+          "width": 165,
+          "x": 279,
+          "y": 1322
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "067.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 60,
+          "symWidth": 36,
+          "text": "치익",
+          "translation": "Ssssh",
+          "width": 71,
+          "x": 592,
+          "y": 150
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 24,
+          "symWidth": 18.73076923076923,
+          "text": "HRASH M_A_G_A_ZVN_E",
+          "translation": "",
+          "width": 123,
+          "x": 428,
+          "y": 420
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 56.33333333333334,
+          "symWidth": 46.11111111111111,
+          "text": "친한  사 할  거 이긴 아냐 .",
+          "translation": "We're not exactly close.",
+          "width": 412,
+          "x": 127,
+          "y": 1316
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "068.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 36.5,
+          "text": "엉 ?",
+          "translation": "Huh?",
+          "width": 75,
+          "x": 556,
+          "y": 94
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 81,
+          "symWidth": 71.5,
+          "text": "깜짝",
+          "translation": "Startled",
+          "width": 120,
+          "x": 284,
+          "y": 1231
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "069.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 45.75,
+          "text": "형 남아 …",
+          "translation": "Brother…",
+          "width": 213,
+          "x": 177,
+          "y": 1462
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "070.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 52,
+          "symWidth": 41.04166666666666,
+          "text": "g ... ? ! 니  면상 이",
+          "translation": "G...?! Your face is",
+          "width": 234,
+          "x": 192,
+          "y": 409
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 53,
+          "symWidth": 35.5,
+          "text": "훌쩍",
+          "translation": "Sniffle",
+          "width": 64,
+          "x": 295,
+          "y": 823
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 52,
+          "symWidth": 35.5,
+          "text": "저 .. 그게 …",
+          "translation": "I… well…",
+          "width": 229,
+          "x": 140,
+          "y": 1455
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "071.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 50.33333333333334,
+          "text": "새끼 가",
+          "translation": "You little brat",
+          "width": 155,
+          "x": 318,
+          "y": 359
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 40,
+          "text": "나 ?",
+          "translation": "Me?",
+          "width": 76,
+          "x": 275,
+          "y": 1052
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "072.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 52,
+          "symWidth": 41,
+          "text": "너냐 ?",
+          "translation": "Is that you?",
+          "width": 123,
+          "x": 402,
+          "y": 1508
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "073.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 65,
+          "symWidth": 54.75,
+          "text": "새끼 가 ?",
+          "translation": "You little brat?",
+          "width": 221,
+          "x": 257,
+          "y": 989
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 21.5,
+          "symWidth": 20.2,
+          "text": "HRASH MAGAZ",
+          "translation": "",
+          "width": 94,
+          "x": 359,
+          "y": 1557
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "074.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 16,
+          "renderMode": "mask_only",
+          "symHeight": 9.4,
+          "symWidth": 13.8,
+          "text": "MAGAZ",
+          "translation": "",
+          "width": 63,
+          "x": 355,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 63,
+          "symWidth": 50,
+          "text": "나  아냐 ?",
+          "translation": "Is it me?",
+          "width": 225,
+          "x": 246,
+          "y": 500
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "075.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 57.33333333333334,
+          "symWidth": 22.66666666666667,
+          "text": "... Ot .",
+          "translation": "... Huh.",
+          "width": 138,
+          "x": 384,
+          "y": 833
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "076.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 17.66666666666667,
+          "symWidth": 23,
+          "text": "000",
+          "translation": "Huh?",
+          "width": 25,
+          "x": 81,
+          "y": 449
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 52.5,
+          "symWidth": 39.5,
+          "text": "뭐 ?",
+          "translation": "What?",
+          "width": 81,
+          "x": 54,
+          "y": 688
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "077.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 62.77777777777778,
+          "symWidth": 50.83333333333334,
+          "text": "아가리 에 금  박혔 는지 보게 .",
+          "translation": "Check if your mouth is sealed.",
+          "width": 311,
+          "x": 167,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 52.75,
+          "symWidth": 46,
+          "text": "이 ~ 해봐라",
+          "translation": "Try it out~",
+          "width": 136,
+          "x": 537,
+          "y": 411
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "078.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 68,
+          "symWidth": 60,
+          "text": "한번  씩",
+          "translation": "Once each.",
+          "width": 210,
+          "x": 257,
+          "y": 47
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "079.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 311,
+          "symHeight": 70.23333333333333,
+          "symWidth": 70.36666666666667,
+          "text": "HRASH FAZINE",
+          "translation": "",
+          "width": 206,
+          "x": 0,
+          "y": 1030
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "080.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 64,
+          "symWidth": 63.5,
+          "text": "보도",
+          "translation": "Report",
+          "width": 121,
+          "x": 171,
+          "y": 353
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42,
+          "symWidth": 27,
+          "text": "오 ..",
+          "translation": "Oh...",
+          "width": 87,
+          "x": 480,
+          "y": 853
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 29.33333333333333,
+          "text": "ㅇㅋ .",
+          "translation": "OK.",
+          "width": 107,
+          "x": 476,
+          "y": 932
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "081.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 51,
+          "text": "완료 .",
+          "translation": "Complete.",
+          "width": 138,
+          "x": 260,
+          "y": 263
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 79,
+          "symWidth": 74.8,
+          "text": "TRASH",
+          "translation": "",
+          "width": 191,
+          "x": 239,
+          "y": 1060
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "082.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 42.5,
+          "text": "ㅁㅁ",
+          "translation": "??",
+          "width": 123,
+          "x": 242,
+          "y": 28
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 41.6,
+          "text": "크헉 … !!",
+          "translation": "Ugh...!!",
+          "width": 234,
+          "x": 161,
+          "y": 887
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "083.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 68.66666666666667,
+          "symWidth": 53,
+          "text": "오늘 ,",
+          "translation": "Today,",
+          "width": 140,
+          "x": 389,
+          "y": 166
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 71,
+          "symWidth": 53.66666666666666,
+          "text": "거다 .",
+          "translation": "That's it.",
+          "width": 152,
+          "x": 357,
+          "y": 774
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "084.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "085.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 30.9,
+          "symWidth": 35.8,
+          "text": "국제 식대 다이  설치 업소",
+          "translation": "International Dining Table Installation Business",
+          "width": 259,
+          "x": 227,
+          "y": 1269
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "086.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 36.2,
+          "text": "후우 ...",
+          "translation": "Hoo...",
+          "width": 152,
+          "x": 76,
+          "y": 400
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 53,
+          "symWidth": 37.2,
+          "text": "이  새끼 ……",
+          "translation": "This bastard...",
+          "width": 208,
+          "x": 404,
+          "y": 1104
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "087.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 61.5,
+          "symWidth": 49.54166666666667,
+          "text": "맷집  하 죽이네 .",
+          "translation": "That endurance is insane.",
+          "width": 220,
+          "x": 224,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "088.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "089.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 74.5,
+          "symWidth": 52,
+          "text": "끝 !",
+          "translation": "End!",
+          "width": 107,
+          "x": 280,
+          "y": 329
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "090.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 31.5,
+          "text": "야 .",
+          "translation": "Hey.",
+          "width": 64,
+          "x": 371,
+          "y": 1126
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "091.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "092.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "093.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 49,
+          "text": "대충  다",
+          "translation": "Almost all",
+          "width": 166,
+          "x": 324,
+          "y": 292
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 50,
+          "symWidth": 41.6,
+          "text": "도망 갔고 .",
+          "translation": "have run away.",
+          "width": 216,
+          "x": 322,
+          "y": 1426
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "094.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 60,
+          "symWidth": 56.5,
+          "text": "강포 횐가",
+          "translation": "Gangpo's gang, huh?",
+          "width": 235,
+          "x": 259,
+          "y": 1464
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "095.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 61.05555555555556,
+          "symWidth": 53,
+          "text": "광어 횐가 거기  학교 가 몇개 고 ?",
+          "translation": "Gangpo, how many schools are there?",
+          "width": 315,
+          "x": 219,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 12.33333333333333,
+          "symWidth": 14,
+          "text": "000",
+          "translation": "000",
+          "width": 16,
+          "x": 68,
+          "y": 293
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 54,
+          "symWidth": 45.4,
+          "text": "강포 글쎄 ・ ・ ・",
+          "translation": "Gangpo, I dunno...",
+          "width": 166,
+          "x": 118,
+          "y": 736
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 68,
+          "symWidth": 57.66666666666666,
+          "text": "전부  다",
+          "translation": "All of them.",
+          "width": 203,
+          "x": 280,
+          "y": 1443
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "096.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 57,
+          "text": "적어도",
+          "translation": "At least",
+          "width": 185,
+          "x": 289,
+          "y": 794
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 56.66666666666666,
+          "symWidth": 51.33333333333334,
+          "text": "아마도",
+          "translation": "Probably",
+          "width": 127,
+          "x": 501,
+          "y": 1006
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "097.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 66,
+          "symWidth": 52.33333333333334,
+          "text": "쳐도 …",
+          "translation": "Even if I strike...",
+          "width": 183,
+          "x": 151,
+          "y": 756
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 28.4,
+          "symWidth": 24.2,
+          "text": "AMMIN",
+          "translation": "",
+          "width": 87,
+          "x": 109,
+          "y": 1003
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "098.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 64,
+          "symWidth": 45,
+          "text": "남았나 ...",
+          "translation": "Is there any left...?",
+          "width": 238,
+          "x": 310,
+          "y": 233
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "099.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 77,
+          "symWidth": 75,
+          "text": "너무",
+          "translation": "Too much.",
+          "width": 149,
+          "x": 265,
+          "y": 120
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "100.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 78.8,
+          "symWidth": 73.7,
+          "text": "하나씩 기다려  주기 엔 .",
+          "translation": "There's no time to wait for them one by one.",
+          "width": 488,
+          "x": 116,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 17.5,
+          "text": "ㅇ  @SOLCITYBOY",
+          "translation": "",
+          "width": 247,
+          "x": 406,
+          "y": 1149
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 21.85714285714286,
+          "text": "채색  도움 -  시몽",
+          "translation": "Coloring assistance - Simon",
+          "width": 187,
+          "x": 464,
+          "y": 1212
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 24.71428571428572,
+          "text": "후반  도움 -  소슬",
+          "translation": "Final touch assistance - Sosul",
+          "width": 188,
+          "x": 463,
+          "y": 1270
+        }
+      ],
+      "imgHeight": 1359,
+      "imgWidth": 690,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "ko",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

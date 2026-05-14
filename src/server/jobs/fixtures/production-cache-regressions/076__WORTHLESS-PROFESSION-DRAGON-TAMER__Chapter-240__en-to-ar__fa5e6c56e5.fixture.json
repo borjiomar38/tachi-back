@@ -1,0 +1,3775 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0076",
+  "jobId": "fixture-job-0076",
+  "licenseId": "fixture-license-0076",
+  "pageCount": 136,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg",
+    "059.jpg",
+    "060.jpg",
+    "061.jpg",
+    "062.jpg",
+    "063.jpg",
+    "064.jpg",
+    "065.jpg",
+    "066.jpg",
+    "067.jpg",
+    "068.jpg",
+    "069.jpg",
+    "070.jpg",
+    "071.jpg",
+    "072.jpg",
+    "073.jpg",
+    "074.jpg",
+    "075.jpg",
+    "076.jpg",
+    "077.jpg",
+    "078.jpg",
+    "079.jpg",
+    "080.jpg",
+    "081.jpg",
+    "082.jpg",
+    "083.jpg",
+    "084.jpg",
+    "085.jpg",
+    "086.jpg",
+    "087.jpg",
+    "088.jpg",
+    "089.jpg",
+    "090.jpg",
+    "091.jpg",
+    "092.jpg",
+    "093.jpg",
+    "094.jpg",
+    "095.jpg",
+    "096.jpg",
+    "097.jpg",
+    "098.jpg",
+    "099.jpg",
+    "100.jpg",
+    "101.jpg",
+    "102.jpg",
+    "103.jpg",
+    "104.jpg",
+    "105.jpg",
+    "106.jpg",
+    "107.jpg",
+    "108.jpg",
+    "109.jpg",
+    "110.jpg",
+    "111.jpg",
+    "112.jpg",
+    "113.jpg",
+    "114.jpg",
+    "115.jpg",
+    "116.jpg",
+    "117.jpg",
+    "118.jpg",
+    "119.jpg",
+    "120.jpg",
+    "121.jpg",
+    "122.jpg",
+    "123.jpg",
+    "124.jpg",
+    "125.jpg",
+    "126.jpg",
+    "127.jpg",
+    "128.jpg",
+    "129.jpg",
+    "130.jpg",
+    "131.jpg",
+    "132.jpg",
+    "133.jpg",
+    "134.jpg",
+    "135.jpg",
+    "136.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 21.75,
+          "symWidth": 17.5,
+          "text": "HOME",
+          "translation": "الرئيسية",
+          "width": 74,
+          "x": 226,
+          "y": 51
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 12,
+          "symWidth": 12,
+          "text": "MGREAD",
+          "translation": "MGREAD",
+          "width": 83,
+          "x": 39,
+          "y": 99
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 135.8888888888889,
+          "symWidth": 82,
+          "text": "MCREADSIO",
+          "translation": "MCREADSIO",
+          "width": 653,
+          "x": 85,
+          "y": 405
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 32.42,
+          "symWidth": 20.04444444444444,
+          "text": "The  Lord's  Coins  Aren't Decreasing ?! #Action  #Adventure  # Comedy /",
+          "translation": "عملات الرب لم تنقص؟! #أكشن #مغامرة #كوميديا",
+          "width": 476,
+          "x": 118,
+          "y": 641
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 23.6,
+          "symWidth": 15.6,
+          "text": "Mgread  Admin  Lv.2",
+          "translation": "إدارة Mgread المستوى ٢",
+          "width": 296,
+          "x": 128,
+          "y": 943
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 11.66666666666667,
+          "text": "2  weeks",
+          "translation": "أسبوعان",
+          "width": 83,
+          "x": 662,
+          "y": 944
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.6,
+          "text": "Hello",
+          "translation": "مرحبًا",
+          "width": 65,
+          "x": 83,
+          "y": 1030
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 24.22549019607843,
+          "symWidth": 14.44607843137255,
+          "text": "THANK YOU FOR READING THIS ON OUR SITE: MGREAD.10 THIS IS TRANSLATED AND UPLOADED FASTEST ON OUR SITE. VISIT TO READ THE LATEST UPDATED CHAPTERS. HIGH LOADING SPEED - >> - >> FEW ADS - >> FAST SITE. THE WORLD OF AND ANIME.",
+          "translation": "شكرًا لقراءتك على موقعنا MGREAD.10\nهذا هو الأسرع ترجمة ورفعًا على موقعنا.\nزر الموقع لقراءة أحدث الفصول.\nتحميل سريع - قليل الإعلانات - موقع سريع.\nعالم الأنمي والمانغا.",
+          "width": 765,
+          "x": 18,
+          "y": 1166
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 28.67857142857143,
+          "symWidth": 16.42857142857143,
+          "text": "THANK  YOU  FOR  READING  THIS  COMIC  ON  OUR  SITE . VISIT  LIKEMANGAINK  TO  READ  THE  LATEST  UPDATED  CHAPTERS",
+          "translation": "شكرًا لقراءتك هذه الرواية المصورة على موقعنا.\nزر LIKEMANGAINK لقراءة أحدث الفصول.",
+          "width": 784,
+          "x": 8,
+          "y": 1396
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 21.84210526315789,
+          "symWidth": 12.52631578947368,
+          "text": "RESPONSIBLE FOR ... ! ?",
+          "translation": "هل أنت المسؤول عن ذلك...؟!",
+          "width": 144,
+          "x": 227,
+          "y": 1799
+        }
+      ],
+      "imgHeight": 2047,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 23.70588235294118,
+          "symWidth": 13.91176470588235,
+          "text": "HUH ?  MR .  LU ,  IS THIS  INTRUDER YOUR  WOMAN ?",
+          "translation": "هاه؟ السيد لو، هل هذه الغريبة امرأة تخصك؟",
+          "width": 179,
+          "x": 57,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 9.333333333333334,
+          "text": "UGH ...",
+          "translation": "آه...",
+          "width": 47,
+          "x": 469,
+          "y": 432
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 20.52631578947368,
+          "symWidth": 14.06052631578947,
+          "text": "DON'T MISUNDERSTAND , I  HAVE  NOTHING TO  DO  WITH  HER .",
+          "translation": "لا تخلط الأمور، ليس لي علاقة بها.",
+          "width": 180,
+          "x": 450,
+          "y": 438
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 21.5,
+          "symWidth": 12.94407894736842,
+          "text": "IF  WE'RE  TALKING  ABOUT A  RELATIONSHIP ,  WE'RE ENEMIES .",
+          "translation": "إذا كنا نتحدث عن علاقة، فها نحن أعداء.",
+          "width": 272,
+          "x": 122,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 34.77777777777778,
+          "symWidth": 21.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 176,
+          "x": 617,
+          "y": 5
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36,
+          "symWidth": 20.55555555555556,
+          "text": "MCREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 617,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.9,
+          "symWidth": 14.16666666666667,
+          "text": "BUT  THAT'S  ALL  IN THE  PAST ,  ISN'T  IT ?",
+          "translation": "لكن هذا كله من ماضيك، أليس كذلك؟",
+          "width": 231,
+          "x": 483,
+          "y": 282
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 36.66666666666666,
+          "symWidth": 20.66666666666667,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 617,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 269,
+          "symHeight": 24.26415094339623,
+          "symWidth": 14.87157457322552,
+          "text": "YOU'VE  MADE  ME REALIZE  THE  NING FAMILY'S  TRUE ATTITUDE  TOWARDS ME ;  I'M  JUST  MY YOUNGER  BROTHER'S BODYGUARD .",
+          "translation": "لقد أدركت الآن الموقف الحقيقي لعائلة نينغ تجاهي؛ فأنا لست سوى حارس خاص لأخي الأصغر.",
+          "width": 242,
+          "x": 231,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 24.64150943396226,
+          "symWidth": 14.61986681465039,
+          "text": "A  TOOL  FOR  POLITICAL MARRIAGE ,  A  DISCARDED CHILD  WHO  CAN  BE  DRIVEN OUT  AT  ANY  TIME ...",
+          "translation": "أداة من أدوات الزواج السياسي، وطفل معرض للطرد في أية لحظة...",
+          "width": 307,
+          "x": 375,
+          "y": 426
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 22.38095238095238,
+          "symWidth": 13.17619047619048,
+          "text": "YOU'RE OVERTHINKING  IT ; THAT  WASN'T  MY INTENTION .",
+          "translation": "لقد بالغت في التفكير؛ لم يكن ذلك من نيتي.",
+          "width": 192,
+          "x": 128,
+          "y": 343
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 20.6,
+          "text": "MIGREAD.10",
+          "translation": "MIGREAD.10",
+          "width": 177,
+          "x": 615,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 19.16666666666667,
+          "text": "最新 免费 漫画",
+          "translation": "أحدث المانغا المجانية",
+          "width": 124,
+          "x": 48,
+          "y": 21
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 22.66666666666667,
+          "symWidth": 13.60050505050505,
+          "text": "DON'T  FORGET  I KILLED  YOUR  BROTHER AND  RUINED  YOUR ENGAGEMENT !",
+          "translation": "لا تنسَ أنني قتلت أخاك ودمرت خطوبتك!",
+          "width": 241,
+          "x": 431,
+          "y": 268
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 229,
+          "symHeight": 24.14355742296919,
+          "symWidth": 15.80056022408964,
+          "text": "WHAT  A COMPLICATED RELATIONSHIP !  WHAT KIND  OF  LOVE - HATE RELATIONSHIP  IS THIS ?",
+          "translation": "يا لها من علاقة معقدة! ما هذا الحُبّ الممزوج بالكراهية؟",
+          "width": 246,
+          "x": 153,
+          "y": 276
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 15.875,
+          "text": "GREAD.10",
+          "translation": "عظيم.10",
+          "width": 141,
+          "x": 651,
+          "y": 11
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 18,
+          "symWidth": 10.63461538461539,
+          "text": "HOW  SERIOUS  ARE THE  INJURIES ?",
+          "translation": "إلى أي مدى هي الإصابات خطيرة؟",
+          "width": 159,
+          "x": 116,
+          "y": 171
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 23.14423076923077,
+          "symWidth": 14.48106060606061,
+          "text": "HMM ... THANKFULLY , SHOULDN'T  WE  GIVE THEM  SPACE  TO REUNITE ?",
+          "translation": "هممم... لحسن الحظ، ألم يحن الوقت لنترك لهم مكانًا للالتقاء؟",
+          "width": 237,
+          "x": 421,
+          "y": 390
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 23.84210526315789,
+          "symWidth": 15.47368421052632,
+          "text": "WHO  IS  IN  LOVE WITH  HER ?",
+          "translation": "من هو الواقع في حبها؟",
+          "width": 186,
+          "x": 438,
+          "y": 544
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 37.22222222222222,
+          "symWidth": 20.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "عظيم.10",
+          "width": 177,
+          "x": 616,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36.44444444444444,
+          "symWidth": 19.77777777777778,
+          "text": "MGREAD.TO",
+          "translation": "عظيم.إلى",
+          "width": 174,
+          "x": 618,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 25.33333333333333,
+          "symWidth": 14.97463768115942,
+          "text": "THEY'RE  SUCH  A  CLINGY  PEST ! I  REGRET  NOT  FINISHING  THEM OFF  BACK  THEN !",
+          "translation": "إنهم آفة تلازم! وأندم على فشلي في القضاء عليهم حينها!",
+          "width": 368,
+          "x": 117,
+          "y": 449
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 25,
+          "symWidth": 14.8125,
+          "text": "MR .  LU ,  PLEASE DON'T  GO !",
+          "translation": "السيد لو، أرجوك لا ترحل!",
+          "width": 187,
+          "x": 462,
+          "y": 546
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 23.5,
+          "text": "MCREADIO",
+          "translation": "آي أم كريدايو",
+          "width": 177,
+          "x": 616,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 19.83333333333333,
+          "text": "最新 免费 漫画",
+          "translation": "أحدث المانغا المجانية",
+          "width": 126,
+          "x": 46,
+          "y": 564
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 32.57142857142857,
+          "symWidth": 24.57142857142857,
+          "text": "MREAD  IO",
+          "translation": "آي أم كريد آيو",
+          "width": 174,
+          "x": 618,
+          "y": 0
+        }
+      ],
+      "imgHeight": 401,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 26,
+          "symWidth": 15.72142857142857,
+          "text": "MR .  LUIS  ALL  BARK AND  NO  BITE .",
+          "translation": "السيد لويس، كلامٌ كثيرٌ بلا فعل.",
+          "width": 247,
+          "x": 483,
+          "y": 194
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 35.77777777777778,
+          "symWidth": 23.77777777777778,
+          "text": "MOREAD.10",
+          "translation": "موريد.10",
+          "width": 176,
+          "x": 616,
+          "y": 5
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 37.88888888888889,
+          "symWidth": 21.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "إم جريد.10",
+          "width": 177,
+          "x": 617,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 245,
+          "symHeight": 25.92307692307692,
+          "symWidth": 16.14234839234839,
+          "text": "IF  YOU  REALLY  HAD MURDEROUS INTENT , YOU  WOULD  HAVE ATTACKED  HER  THE MOMENT  YOU  SAW HER .",
+          "translation": "لو كان لديك نية القتل حقًا، لهاجمتها فوراً عندما رأيتها.",
+          "width": 266,
+          "x": 456,
+          "y": 265
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 23.5,
+          "symWidth": 15.14871794871795,
+          "text": "I  AM  HOMELESS ,  ALL BECAUSE  OF  YOU .",
+          "translation": "صرت بلا مأوى، وكل ذلك بسببك.",
+          "width": 246,
+          "x": 97,
+          "y": 202
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 23.25,
+          "symWidth": 14.28814102564102,
+          "text": "I  WILL  DEFINITELY COME  AFTER  YOU AS  SOON  AS  I  HEAR NEWS  OF  YOU .",
+          "translation": "لا محالة سأأتيك حين أسمع بأخبارك.",
+          "width": 219,
+          "x": 466,
+          "y": 231
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36,
+          "symWidth": 19.22222222222222,
+          "text": "MEREAD.10",
+          "translation": "ميرياد.10",
+          "width": 174,
+          "x": 618,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "renderMode": "mask_only",
+          "symHeight": 24,
+          "symWidth": 14.73076923076923,
+          "text": "EVEN  IF  YOU  KEEP FOLLOWING  ME ,  I",
+          "translation": "",
+          "width": 209,
+          "x": 432,
+          "y": 560
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 30,
+          "symWidth": 17.5472027972028,
+          "text": "EVEN IF YOU KEEP FOLLOWING ME , I WON'T AGREE",
+          "translation": "حتى وإن واصلت ملاحقتي، فلن أوافق.",
+          "width": 372,
+          "x": 421,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 24,
+          "symWidth": 14.53142857142857,
+          "text": "I  HAVE  IMPORTANT RESPONSIBILITIES RIGHT  NOW ,  I  DON'T HAVE  TIME  TO  ARGUE WITH  YOU !",
+          "translation": "لدي مسؤوليات هامة الآن، وليس لدي وقت للجدال معك!",
+          "width": 247,
+          "x": 93,
+          "y": 51
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 20.85714285714286,
+          "symWidth": 19.71428571428572,
+          "text": "● 最新 免费 漫画",
+          "translation": "",
+          "width": 145,
+          "x": 25,
+          "y": 563
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36.125,
+          "symWidth": 21.125,
+          "text": "MGREAD  10",
+          "translation": "مقراءات 10",
+          "width": 176,
+          "x": 616,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 38.25,
+          "symWidth": 22.375,
+          "text": "MCREAD  IO",
+          "translation": "مقراءات 10",
+          "width": 177,
+          "x": 616,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 22.33333333333333,
+          "symWidth": 14.2974025974026,
+          "text": "BESIDES ,  HOW  DID YOU  KNOW  I  WAS HERE ?",
+          "translation": "وبالمناسبة، كيف عرفت أنني هنا؟",
+          "width": 197,
+          "x": 508,
+          "y": 111
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 23.66666666666667,
+          "symWidth": 14.18028322440087,
+          "text": "I  FOUND  YE  WUXIAN  IN THE  FAR  NORTH ;  SHE'S THE  ONE  WHO  TOLD  ME ...",
+          "translation": "وجدت يُو وكسين في أقصى الشمال؛ هي من أخبرتني...",
+          "width": 278,
+          "x": 142,
+          "y": 35
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 34.28571428571428,
+          "symWidth": 24.85714285714286,
+          "text": "MCREADO",
+          "translation": "مقدمة MCREADO",
+          "width": 180,
+          "x": 617,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 16.16666666666667,
+          "text": "WHAT !?",
+          "translation": "ماذا!؟",
+          "width": 85,
+          "x": 341,
+          "y": 576
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 22.5,
+          "symWidth": 15.6,
+          "text": "MY  SENIOR SOLD  ME  OUT ?",
+          "translation": "هل باعني كبيري؟",
+          "width": 174,
+          "x": 469,
+          "y": 556
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 35.1875,
+          "symWidth": 21,
+          "text": "SERIOUSLY.MORE  10",
+          "translation": "حقًا... أكثر من عشرة",
+          "width": 307,
+          "x": 486,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 37.85714285714285,
+          "symWidth": 22.57142857142857,
+          "text": "MGREAD .",
+          "translation": "MGREAD.",
+          "width": 148,
+          "x": 618,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 24.66233766233766,
+          "symWidth": 16.10851370851371,
+          "text": "EVEN  IF  I'M  THE  ONE WHO CAUSED  HER  TO END  UP  LIKE  THIS ,  IT'S THE  NING  FAMILY'S OWN FAULT .",
+          "translation": "حتى لو كنت السبب في ما آلت إليه حالتها،\nفاللوم في النهاية على عائلة نينغ نفسها.",
+          "width": 264,
+          "x": 73,
+          "y": 171
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 23,
+          "symWidth": 13.59259259259259,
+          "text": "SENIOR ,  YOU CAN'T  BE  SO SOFT - HEARTED ...",
+          "translation": "أيها الكبير، لا يجوز لك أن تكون رحيمًا إلى هذا الحد...",
+          "width": 201,
+          "x": 204,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 35.77777777777778,
+          "symWidth": 21.77777777777778,
+          "text": "MEREAD.10",
+          "translation": "MEREAD.10",
+          "width": 175,
+          "x": 616,
+          "y": 5
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "renderMode": "mask_only",
+          "symHeight": 23,
+          "symWidth": 16.54545454545455,
+          "text": "MISS  YE  IS  NOW",
+          "translation": "",
+          "width": 196,
+          "x": 380,
+          "y": 586
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 31.79545454545455,
+          "symWidth": 18.68181818181818,
+          "text": "MISS YE IS NOW THE PRINCIPAL . MGREAD.10",
+          "translation": "الآن معلمة يي هي المديرة. MGREAD.10",
+          "width": 402,
+          "x": 392,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 24.2,
+          "symWidth": 14.79392857142857,
+          "text": "THERE'S  WAR  GOING ON  IN  THE  FAR  NORTH ; DON'T  DISTURB  HER WITH  SUCH  A  TRIVIAL MATTER !",
+          "translation": "هناك حرب تدور في الشمال البعيد؛ فلا تزعجها بمسألة تافهة كهذه!",
+          "width": 248,
+          "x": 110,
+          "y": 177
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 36.33333333333334,
+          "symWidth": 19.66666666666667,
+          "text": "MEREAD.10",
+          "translation": "MGREAD.10",
+          "width": 175,
+          "x": 617,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 26.45333333333333,
+          "symWidth": 15.66064935064935,
+          "text": "... I  DON'T  CARE  ABOUT  ANY  MEREAD.10 OF  THAT .  WHETHER  YOU'RE  IN THE  WEST ,  THE  FAR  NORTH , OR  LONGNAN  COUNTY ,  I  WILL FIND  YOU !",
+          "translation": "... لا أبالي بأي MGREAD.10 من ذلك. سواءً كنت في الغرب، أو الشمال البعيد، أو مقاطعة لونغنان، سأجدك لا محالة!",
+          "width": 552,
+          "x": 241,
+          "y": 0
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36.33333333333334,
+          "symWidth": 20.66666666666667,
+          "text": "M &",
+          "translation": "M &",
+          "width": 177,
+          "x": 615,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 234,
+          "symHeight": 24.16666666666667,
+          "symWidth": 15.06679292929293,
+          "text": "FOLLOW  ME  IF YOU  WANT ,  AND IF  ANYTHING HAPPENS ,  IT'S NONE  OF  MY BUSINESS !",
+          "translation": "اتبعني إن شئت، وإن حدث شيءٌ فلستُ معنيًا به!",
+          "width": 192,
+          "x": 485,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 23.8974358974359,
+          "symWidth": 13.86829836829837,
+          "text": "... FORGET  IT ,  I CAN'T  REASON WITH  YOU .",
+          "translation": "... انس الأمر، لا فائدة من الجدال معك.",
+          "width": 175,
+          "x": 102,
+          "y": 133
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36,
+          "symWidth": 19.44444444444444,
+          "text": "MGREAD.10",
+          "translation": "MGREAD.10",
+          "width": 174,
+          "x": 618,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [],
+      "imgHeight": 96,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 23.6,
+          "symWidth": 14.84786324786325,
+          "text": "SINCE  WE'RE  ALL ACQUAINTANCES , LET'S  ALL  STAY  AT THE CAMPSITE .",
+          "translation": "بما أننا جميعًا معارف، فليكن مبيتنا جميعًا في المخيم.",
+          "width": 225,
+          "x": 135,
+          "y": 196
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 25.75,
+          "symWidth": 16.34821428571428,
+          "text": "OLD  QING  AND OLD  JIU ,  PREPARE A  WELCOME FEAST !",
+          "translation": "يا العجوز تشينغ والعجوز جيو، استعدا وليمة الترحيب!",
+          "width": 225,
+          "x": 459,
+          "y": 221
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 36.22222222222222,
+          "symWidth": 21.33333333333333,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 617,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 10.8,
+          "text": "OKAY ,  FINE .",
+          "translation": "حسنًا، لا بأس.",
+          "width": 110,
+          "x": 112,
+          "y": 85
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33,
+          "symWidth": 20.11111111111111,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 617,
+          "y": 5
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 23.5,
+          "symWidth": 13.84607371794872,
+          "text": "OKAY ,  OKAY ,  GET  UP AND  TIDY  UP .  WE'RE ALL  FRIENDS ,  LET'S STOP  FIGHTING !",
+          "translation": "حسنًا، حسنًا، انهضوا ورتبوا أموركم. فنحن أصدقاء، فلنكف عن الشجار!",
+          "width": 228,
+          "x": 131,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 23,
+          "symWidth": 13.12087418300654,
+          "text": "SIGH ... THIS  GIRL  IS SOMETHING , REALLY SHE'S  DEFINITELY  A HIGHER  LEVEL  THAN  A YOUNG  LADY !",
+          "translation": "آه... هذه الفتاة استثنائية، حقًا هي بلا شك أرقى من مجرد آنسة شابة!",
+          "width": 230,
+          "x": 451,
+          "y": 392
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 32.22222222222222,
+          "symWidth": 22.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 179,
+          "x": 613,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 23.69444444444444,
+          "symWidth": 14.05,
+          "text": "SHH ,  DON'T  LET THE  YOUNG  LADY HEAR !",
+          "translation": "شش... لا تدعوا الآنسة تسمع!",
+          "width": 200,
+          "x": 95,
+          "y": 75
+        }
+      ],
+      "imgHeight": 623,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 38.44444444444444,
+          "symWidth": 21,
+          "text": "MCREAD.10",
+          "translation": "",
+          "width": 174,
+          "x": 619,
+          "y": 2
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33.44444444444444,
+          "symWidth": 18.77777777777778,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 174,
+          "x": 619,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 23.91836734693878,
+          "symWidth": 15.02040816326531,
+          "text": "A  MOMENT  LATER  AT  THE  SOUTH BLACK  HARBOR  TIANLONG  GANG CAMP",
+          "translation": "لحظة من بعد في معسكر تيانلونغ غانغ بميناء الجنوب الأسود",
+          "width": 376,
+          "x": 56,
+          "y": 1
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 24.3125,
+          "symWidth": 13.75,
+          "text": "DRINK !  DON'T STOP !",
+          "translation": "اشرب! لا تتوقف!",
+          "width": 157,
+          "x": 469,
+          "y": 344
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 37.85714285714285,
+          "symWidth": 23.85714285714286,
+          "text": "MEREAD  O",
+          "translation": "",
+          "width": 178,
+          "x": 617,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 23.32758620689655,
+          "symWidth": 14.90996168582376,
+          "text": "I'LL  GO  ASK THE  KITCHEN TO  ADD  TWO MORE  DISHES !",
+          "translation": "سأطلب من المطبخ إضافة طبقين آخرين!",
+          "width": 159,
+          "x": 145,
+          "y": 272
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 23.40036231884058,
+          "symWidth": 14.5054347826087,
+          "text": "WOW IT'S SO REFRESHING WHEN IT'S ICE COLD !",
+          "translation": "يا له من انتعاش عندما يكون مثلجًا!",
+          "width": 209,
+          "x": 464,
+          "y": 540
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "renderMode": "mask_only",
+          "symHeight": 22.58333333333333,
+          "symWidth": 13.75,
+          "text": "IT'S  ICE  COLD !",
+          "translation": "",
+          "width": 166,
+          "x": 490,
+          "y": 0
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 44,
+          "symWidth": 22.66666666666667,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 617,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 23.87179487179487,
+          "symWidth": 14.41402714932127,
+          "text": "EVERYONE'S  HAVING  A GREAT  TIME ;  THEY'VE COMPLETELY  FORGOTTEN THEY  WERE  JUST  FIGHTING NING  SHUANG ...",
+          "translation": "الجميع يستمتعون كثيرًا؛ لقد نسوا تمامًا أنهم كانوا يقاتلون نينغ شووانغ...",
+          "width": 312,
+          "x": 380,
+          "y": 321
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 24.45945945945946,
+          "symWidth": 14.88217164532954,
+          "text": "IT'S  NO  BIG  DEAL .  WE'VE BECOME  FRIENDS  AFTER  THIS LITTLE  MISUNDERSTANDING . YOU  GUYS  EAT  TOO !",
+          "translation": "ليس بالأمر الكبير. لقد أصبحنا أصدقاء بعد هذا اللبس الصغير. تناولوا أنتم أيضاً!",
+          "width": 347,
+          "x": 36,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 37,
+          "symWidth": 21.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 178,
+          "x": 617,
+          "y": 2
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33.44444444444444,
+          "symWidth": 19.22222222222222,
+          "text": "MGREAD.10",
+          "translation": "آر تي إم تي إتش",
+          "width": 175,
+          "x": 617,
+          "y": 8
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36,
+          "symWidth": 19.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 174,
+          "x": 619,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 44.9375,
+          "symWidth": 24.625,
+          "text": "THANKS,",
+          "translation": "شكرًا لك،",
+          "width": 295,
+          "x": 499,
+          "y": 0
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "059.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 32.55555555555556,
+          "symWidth": 21.11111111111111,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 176,
+          "x": 617,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.55555555555556,
+          "symWidth": 15.25925925925926,
+          "text": "LET'S  DISCUSS TOMORROW'S  PLAN .",
+          "translation": "لِنَبْحَثْ خُطَّةَ الغَدِ.",
+          "width": 238,
+          "x": 173,
+          "y": 413
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "060.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 24.14285714285714,
+          "symWidth": 15.16554621848739,
+          "text": "TOMORROW ,  AS  SOON  AS THE  NANMING  GANG  AND THE  HUOYAN  GANG  RETURN TO  NANHEI  PORT ,  I  WILL ISSUE  A  CHALLENGE .",
+          "translation": "غدًا، بمجرد عودة عصابتي نامنينغ وهوويان إلى ميناء نانهاي، سأوجه تحديًا.",
+          "width": 306,
+          "x": 422,
+          "y": 244
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 23.49142857142857,
+          "symWidth": 14.40285714285714,
+          "text": "MR .  LU  WILL THEN  BE  ABLE  TO RIGHTFULLY WIPE  THEM  ALL OUT !",
+          "translation": "حينذاك، سيتمكن السيد لو من إبادتهم جميعًا عن حق.",
+          "width": 195,
+          "x": 153,
+          "y": 417
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "061.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 36.11111111111111,
+          "symWidth": 20.11111111111111,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 616,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "062.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 37,
+          "symWidth": 21.875,
+          "text": "MGREAD  NO",
+          "translation": "",
+          "width": 175,
+          "x": 615,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "063.jpg": {
+      "blocks": [],
+      "imgHeight": 218,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "064.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 24,
+          "symWidth": 15.15694444444444,
+          "text": "BOTH  OF  THESE  GANGS POSSESS  THE  ABYSS FRAGMENTS  I  NEED ?",
+          "translation": "هاتان العصابتان تحتويان على شظايا الهاوية التي أحتاجها؟",
+          "width": 266,
+          "x": 110,
+          "y": 207
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "065.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36.14285714285715,
+          "symWidth": 23.28571428571428,
+          "text": "MGREAD  O",
+          "translation": "",
+          "width": 184,
+          "x": 610,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 26,
+          "symWidth": 16.2031746031746,
+          "text": "OF COURSE , BOTH BELONG TO MR . LU",
+          "translation": "بالطبع، كلاهما ملك للسيد لو.",
+          "width": 171,
+          "x": 470,
+          "y": 529
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "066.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "renderMode": "mask_only",
+          "symHeight": 27,
+          "symWidth": 16.42857142857143,
+          "text": "TO  MR .  LU",
+          "translation": "",
+          "width": 123,
+          "x": 494,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 39,
+          "symWidth": 21,
+          "text": "MCREAD.10",
+          "translation": "",
+          "width": 178,
+          "x": 615,
+          "y": 2
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "067.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 23.46666666666667,
+          "symWidth": 14.18461538461538,
+          "text": "LU  FAN ,  I  WANT  TO GO  TOO !  I  CAN  HELP !",
+          "translation": "لو فان، أرغب في الذهاب أيضاً! أستطيع أن أساعد!",
+          "width": 228,
+          "x": 124,
+          "y": 553
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "068.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 37.11111111111111,
+          "symWidth": 23.11111111111111,
+          "text": "MEREAD.10",
+          "translation": "",
+          "width": 178,
+          "x": 614,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 22,
+          "symWidth": 13.95386904761905,
+          "text": "DON'T  GET  INVOLVED ;  THIS IS  MY  OWN  BUSINESS .",
+          "translation": "لا تتدخل؛ هذا أمر شخصي يخصني فقط.",
+          "width": 291,
+          "x": 421,
+          "y": 268
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "069.jpg": {
+      "blocks": [],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "070.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 23.87727272727273,
+          "symWidth": 15.47878787878788,
+          "text": "WHICH  GUILDS  HAVE  THE REMAINING  5  ABYSS FRAGMENTS ?",
+          "translation": "أي النقابات تملك البقايا الخمسة من شظايا الهاوية؟",
+          "width": 292,
+          "x": 344,
+          "y": 474
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "071.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 25.6,
+          "symWidth": 15.68421245421245,
+          "text": "THE  REST  ARE  IN THE  HANDS  OF  THE SOUTHERN  GANG , TWO  OF  WHOM  ARE IN  SOUTHERN  BLACK HARBOR .",
+          "translation": "أما البقية فبيد عصابة الجنوب، اثنان منهم في ميناء الجنوب الأسود.",
+          "width": 250,
+          "x": 95,
+          "y": 227
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 91,
+          "symWidth": 80,
+          "text": "咕嘟",
+          "translation": "",
+          "width": 169,
+          "x": 28,
+          "y": 554
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "072.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 54,
+          "symWidth": 44.5,
+          "text": "114  K",
+          "translation": "114 ك",
+          "width": 138,
+          "x": 67,
+          "y": 74
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "073.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 19.55555555555556,
+          "text": "MEREAD.10",
+          "translation": "ميرياد.10",
+          "width": 172,
+          "x": 619,
+          "y": 8
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 23.5,
+          "symWidth": 14.55128205128205,
+          "text": "AND  THE REMAINING  3 ...",
+          "translation": "والباقي الثلاثة...",
+          "width": 171,
+          "x": 152,
+          "y": 49
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "renderMode": "mask_only",
+          "symHeight": 23,
+          "symWidth": 14.4,
+          "text": "OH  NO !  MISS !  SOUTH",
+          "translation": "",
+          "width": 234,
+          "x": 155,
+          "y": 575
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "074.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 22.75,
+          "symWidth": 14.29722222222222,
+          "text": "OH NO ! MISS ! SOUTH BLACK HARBOR HAS BEEN ATTACKED !",
+          "translation": "يا للهول! يا آنستي! لقد تعرض ميناء الجنوب الأسود لهجوم!",
+          "width": 287,
+          "x": 130,
+          "y": 0
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "075.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 102,
+          "symWidth": 46,
+          "text": "!! ?",
+          "translation": "!!؟",
+          "width": 192,
+          "x": 445,
+          "y": 356
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "076.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 76.33333333333333,
+          "symWidth": 76,
+          "text": "000",
+          "translation": "٠٠٠",
+          "width": 133,
+          "x": 296,
+          "y": 307
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 23.9375,
+          "symWidth": 14.59375,
+          "text": "DON'T  LOOK  AT  ME ,  THIS HAS  NOTHING  TO  DO  WITH ME ,  I  CAME  ALONE !",
+          "translation": "لا تلبسوني ما ليس لي، لقد جئت وحدي!",
+          "width": 292,
+          "x": 428,
+          "y": 505
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "077.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 37.375,
+          "symWidth": 22.5,
+          "text": "MCREAD  10",
+          "translation": "MCREAD 10",
+          "width": 177,
+          "x": 615,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 15.33333333333333,
+          "symWidth": 24.33333333333333,
+          "text": "ܩܩܕ",
+          "translation": "ܩܩܕ",
+          "width": 33,
+          "x": 269,
+          "y": 314
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "078.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 37.77777777777778,
+          "symWidth": 21.22222222222222,
+          "text": "MGREAD.10",
+          "translation": "MGREAD.10",
+          "width": 178,
+          "x": 615,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "079.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 38.22222222222222,
+          "symWidth": 22.55555555555556,
+          "text": "MCREAD.10",
+          "translation": "MCREAD.10",
+          "width": 179,
+          "x": 616,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 21.70833333333333,
+          "symWidth": 13.89448051948052,
+          "text": "IT'S ... IT'S  THE DRAGON  SLAYER GANG  FROM  THE SOUTH !",
+          "translation": "إنهم... عصابة قاتلي التنانين من الجنوب!",
+          "width": 181,
+          "x": 154,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 16,
+          "text": "THEY  ALSO",
+          "translation": "وقد",
+          "width": 132,
+          "x": 448,
+          "y": 146
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 23.33333333333333,
+          "symWidth": 15.31428571428571,
+          "text": "BROUGHT  TWO OTHER  GANGS  FROM THE  SOUTH !",
+          "translation": "أحضروا معهم أيضاً عصابتين أخريين من الجنوب!",
+          "width": 236,
+          "x": 395,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "renderMode": "mask_only",
+          "symHeight": 22,
+          "symWidth": 19.5,
+          "text": "最新 免费 漫画",
+          "translation": "",
+          "width": 124,
+          "x": 629,
+          "y": 564
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "080.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 29.38888888888889,
+          "symWidth": 19.97222222222222,
+          "text": "最新 免费 漫画 MEREAD.10",
+          "translation": "أحدث مانغا مجانية MEREAD.10",
+          "width": 177,
+          "x": 617,
+          "y": 2
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "081.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25,
+          "symWidth": 15.28525641025641,
+          "text": "DAMN  IT !  THOSE SOUTHERN  DOGS !",
+          "translation": "لعنةٌ على هؤلاء الأوغاد الجنوبيين!",
+          "width": 213,
+          "x": 409,
+          "y": 376
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "082.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 21.44444444444444,
+          "text": "MGREAD.IÓ",
+          "translation": "",
+          "width": 178,
+          "x": 616,
+          "y": 1
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "083.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 24.25,
+          "symWidth": 15.39444444444445,
+          "text": "MR . LU , THE REMAINING THREE SOUTHERN GANGS I WAS JUST ABOUT TO MENTION ARE THEM !",
+          "translation": "السيد لو، العصابات الجنوبية الثلاث المتبقية التي كنت على وشك ذكرها هي هم!",
+          "width": 302,
+          "x": 152,
+          "y": 529
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "084.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "renderMode": "mask_only",
+          "symHeight": 24.5,
+          "symWidth": 15.9,
+          "text": "I  WAS  JUST  ABOUT  TO MENTION  ARE  THEM !",
+          "translation": "",
+          "width": 272,
+          "x": 167,
+          "y": 0
+        }
+      ],
+      "imgHeight": 309,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "085.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 23.96296296296296,
+          "symWidth": 15.88973063973064,
+          "text": "WHAT  ARE  WE WAITING  FOR ? LET'S  GO !",
+          "translation": "ما الذي ننتظره؟ هيا بنا!",
+          "width": 170,
+          "x": 181,
+          "y": 151
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "086.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 33.75,
+          "symWidth": 20.875,
+          "text": "MGREAD  IO",
+          "translation": "",
+          "width": 179,
+          "x": 614,
+          "y": 7
+        }
+      ],
+      "imgHeight": 623,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "087.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 20.55555555555556,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 176,
+          "x": 616,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "088.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 24.5,
+          "symWidth": 15.61111111111111,
+          "text": "BROTHERS , FOLLOW  ME !",
+          "translation": "أيها الإخوة، اتبعوني!",
+          "width": 156,
+          "x": 160,
+          "y": 255
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "089.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 35.44444444444444,
+          "symWidth": 21.77777777777778,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 176,
+          "x": 616,
+          "y": 6
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "090.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 21.66666666666667,
+          "symWidth": 13.27671568627451,
+          "text": "DON'T  FALL  BEHIND ! KILL  THESE  SOUTHERN DOGS !",
+          "translation": "لا تتأخروا! اقتلوا أولئك الأوغاد الجنوبيين!",
+          "width": 244,
+          "x": 453,
+          "y": 276
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "091.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 25,
+          "symWidth": 16.47676767676768,
+          "text": "WHAT'S  THE BACKGROUND  OF THIS  DRAGON SLAYER  GANG ?",
+          "translation": "ما سر خلفية عصابة قاتلي التنانين هذه؟",
+          "width": 209,
+          "x": 108,
+          "y": 126
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 24.66666666666667,
+          "symWidth": 15.15297619047619,
+          "text": "SURPRISINGLY ,  IT ALSO  BROUGHT  ALONG TWO  OTHER  GANGS .",
+          "translation": "والأمر المريب أنهم جاءوا معهم عصابتان أخريان.",
+          "width": 276,
+          "x": 386,
+          "y": 188
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "092.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 31.375,
+          "symWidth": 22.125,
+          "text": "MGREAD  IQ",
+          "translation": "MGREAD IQ",
+          "width": 176,
+          "x": 616,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 24.08333333333334,
+          "symWidth": 14.44642857142857,
+          "text": "THEY  ARE  OUR TIANLONG  GANG'S MORTAL  ENEMIES .",
+          "translation": "هم ألد أعداء عصابتنا تيانلونغ.",
+          "width": 216,
+          "x": 65,
+          "y": 269
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 23,
+          "symWidth": 14.72272727272727,
+          "text": "THEY  INVADE SOUTH  BLACK HARBOR  FROM TIME  TO  TIME .",
+          "translation": "يقتحمون ميناء الجنوب الأسود بين الفينة والأخرى.",
+          "width": 172,
+          "x": 391,
+          "y": 292
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "093.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 37,
+          "symWidth": 20.22222222222222,
+          "text": "MEREAD.10",
+          "translation": "MEREAD.10",
+          "width": 176,
+          "x": 616,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 28,
+          "symWidth": 17.60744047619048,
+          "text": "THE NAME \" DRAGON SLAYER \" WAS CHOSEN SPECIFICALLY TO TARGET USBREAD 10",
+          "translation": "اختير اسم \"قاتل التنانين\" تحديدًا ليستهدف USBREAD 10",
+          "width": 265,
+          "x": 448,
+          "y": 510
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "094.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "renderMode": "mask_only",
+          "symHeight": 32,
+          "symWidth": 20.2,
+          "text": "TARGET  USBREAD  10",
+          "translation": "",
+          "width": 281,
+          "x": 513,
+          "y": 5
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 25.33333333333333,
+          "symWidth": 14.77513227513228,
+          "text": "THEIR  GANG LEADER  IS  CALLED VIPER .",
+          "translation": "زَعِيمُ عِصَابَتِهِ يُدْعَى الأَفْعَى.",
+          "width": 226,
+          "x": 72,
+          "y": 368
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 30.26666666666667,
+          "symWidth": 18.42125,
+          "text": "ALTHOUGH I'VE JUST REACHED LEVEL 100 , MY ENTIRE SET OF EQUIPMENT IS OF LEGENDARY QUALITY AND HAS MANY SPECIAL EFFECTS MCREADIO",
+          "translation": "رَغْمَ أَنِّي وَصَلْتُ إِلَى المُسْتَوَى ١٠٠ فَقَط،\nإِلَّا أَنَّ جَمِيعَ عُدَّتِي مِن نَوْعِ الأُسْطُورَة وتَحْمِلُ أَثَرًا خاصًّا غَزِيرًا.",
+          "width": 343,
+          "x": 391,
+          "y": 424
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "095.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "renderMode": "mask_only",
+          "symHeight": 34.93333333333333,
+          "symWidth": 20.86666666666667,
+          "text": "EFFECTS  MCREADIO",
+          "translation": "",
+          "width": 288,
+          "x": 504,
+          "y": 7
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "096.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 26.25,
+          "symWidth": 16.94005847953216,
+          "text": "HE  ALSO  CONSOLIDATED THE  GANGS  IN  THE  SOUTH , AND  NOW  ONE  PERSON  CAN COMMAND  THREE  GANGS !",
+          "translation": "كَمَا أَنَّهُ وَحَّدَ العَصَابَاتِ فِي الجَنُوبِ، وَالآنَ صَارَ شَخْصٌ وَاحِدٌ يُمْكِنُهُ أَنْ يَقُودَ ثَلَاثَ عَصَابَاتٍ!",
+          "width": 342,
+          "x": 77,
+          "y": 229
+        }
+      ],
+      "imgHeight": 521,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "097.jpg": {
+      "blocks": [],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "098.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 30,
+          "symWidth": 18.5,
+          "text": "MIGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 618,
+          "y": 11
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 69.16666666666667,
+          "symWidth": 49.66666666666666,
+          "text": "PHEW !!",
+          "translation": "هَفْ!",
+          "width": 236,
+          "x": 223,
+          "y": 411
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "099.jpg": {
+      "blocks": [],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "100.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 30.21739130434782,
+          "symWidth": 18.30434782608696,
+          "text": "STOP ! EVERYONE  BE CAREFUL !",
+          "translation": "تَوَقَّفُوا! كُلُّهُمْ اِحْتَرِسُوا!",
+          "width": 202,
+          "x": 170,
+          "y": 468
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "101.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 35.44444444444444,
+          "symWidth": 21.44444444444444,
+          "text": "MOREAD.10",
+          "translation": "",
+          "width": 178,
+          "x": 616,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "102.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 32,
+          "symWidth": 19.14285714285714,
+          "text": "THE  VIPER  OF  THE DRAGON  SLAYER  GANG IS  RIGHT  THERE !",
+          "translation": "هُنَاكَ الأَفْعَى مِنْ عِصَابَةِ قَاتِلِ التُّحُفِ!",
+          "width": 349,
+          "x": 308,
+          "y": 182
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 11.58333333333333,
+          "text": "HEY  HEY  HEY ...",
+          "translation": "هَيَّ هَيَّ هَيَّ...",
+          "width": 153,
+          "x": 65,
+          "y": 590
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "103.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 19,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 176,
+          "x": 617,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "104.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 31.77777777777778,
+          "symWidth": 20.33333333333333,
+          "text": "MEREAD.10",
+          "translation": "",
+          "width": 178,
+          "x": 614,
+          "y": 7
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 22.78571428571428,
+          "symWidth": 14.04166666666667,
+          "text": "IT  WAS  SO  CLOSE TO  HITTING  THE TARGET ...",
+          "translation": "لقد كاد أن يصيب الهدف...",
+          "width": 197,
+          "x": 473,
+          "y": 117
+        }
+      ],
+      "imgHeight": 401,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "105.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 25.02941176470588,
+          "symWidth": 15.24331550802139,
+          "text": "CUI  ZIYI ,  GET DOWN  HERE RIGHT  NOW !",
+          "translation": "كوي زيي، انزل إلى هنا فوراً!",
+          "width": 168,
+          "x": 214,
+          "y": 177
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 23.76666666666667,
+          "symWidth": 15.91666666666667,
+          "text": "YOUR  TIME OF  DEATH HAS  COME !",
+          "translation": "قد حان وقت مَن يريدون الموت!",
+          "width": 142,
+          "x": 516,
+          "y": 286
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "106.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 36.875,
+          "symWidth": 22.125,
+          "text": "MGREAD.O",
+          "translation": "",
+          "width": 177,
+          "x": 618,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 13,
+          "symWidth": 12,
+          "text": "ha",
+          "translation": "ها",
+          "width": 20,
+          "x": 572,
+          "y": 292
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "107.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 37.22222222222222,
+          "symWidth": 21.33333333333333,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 617,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 32.10204081632653,
+          "symWidth": 21.16326530612245,
+          "text": "VIPER  LEVEL  100  WEAPON  MASTER  IV DRAGON  SLAYER  GANG  LEADER",
+          "translation": "الأفعى\nالمستوى ١٠٠\nسيد الأسلحة الرابعة\nقاتل التنين\nزعيم العصابة",
+          "width": 521,
+          "x": 133,
+          "y": 296
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "108.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 15.375,
+          "text": "YOU  WISH !",
+          "translation": "كما تشاء!",
+          "width": 129,
+          "x": 442,
+          "y": 81
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "109.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 33.66666666666666,
+          "symWidth": 19.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 616,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "110.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 24.30434782608696,
+          "symWidth": 14.52173913043478,
+          "text": "HMPH ,  I  KNEW  YOU'D SAY  THAT !",
+          "translation": "هممم، كنت أعلم أنك ستقول ذلك!",
+          "width": 235,
+          "x": 184,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 18.22222222222222,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 618,
+          "y": 9
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "111.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 37.75,
+          "symWidth": 24.875,
+          "text": "MEREAD  TO",
+          "translation": "",
+          "width": 178,
+          "x": 616,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 32.6,
+          "symWidth": 17.8,
+          "text": "HEY ,  BRING IT  OUT !",
+          "translation": "أهلاً، أخرجها الآن!",
+          "width": 174,
+          "x": 108,
+          "y": 452
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "112.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 21.55555555555556,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 179,
+          "x": 614,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 33,
+          "symWidth": 18.5,
+          "text": "YES !",
+          "translation": "نعم!",
+          "width": 74,
+          "x": 587,
+          "y": 78
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 21.33333333333333,
+          "symWidth": 13.2031746031746,
+          "text": "THIS  OLD  BASTARD IS  TRYING  TO  STALL ME ,",
+          "translation": "ذاك العجوز يحاول كسب الوقت معي،",
+          "width": 208,
+          "x": 445,
+          "y": 430
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 21.76,
+          "symWidth": 14.09,
+          "text": "DOESN'T HE EVEN KNOW WHAT HE'S CAPABLE OF ?",
+          "translation": "أليس يدري بما يعنيه ذلك وما قدرته؟",
+          "width": 194,
+          "x": 168,
+          "y": 544
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "113.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "renderMode": "mask_only",
+          "symHeight": 22,
+          "symWidth": 13.7,
+          "text": "CAPABLE  OF ?",
+          "translation": "",
+          "width": 143,
+          "x": 197,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 37.875,
+          "symWidth": 21.125,
+          "text": "MGREAD  10",
+          "translation": "استعجل!",
+          "width": 178,
+          "x": 616,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 11.75,
+          "text": "HURRY  UP !",
+          "translation": "عَجِّل!",
+          "width": 100,
+          "x": 56,
+          "y": 493
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "114.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 36.22222222222222,
+          "symWidth": 20.44444444444444,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 617,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 248,
+          "symHeight": 323,
+          "symWidth": 62,
+          "text": "|| )",
+          "translation": "",
+          "width": 202,
+          "x": 85,
+          "y": 376
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "115.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 36,
+          "symWidth": 23.28571428571428,
+          "text": "MGREAD  O",
+          "translation": "",
+          "width": 184,
+          "x": 611,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 12.66666666666667,
+          "text": "WH ... !",
+          "translation": "ماذا...!",
+          "width": 76,
+          "x": 255,
+          "y": 245
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "116.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 37,
+          "text": "OLD  QING !!",
+          "translation": "العجوز تشينغ!!",
+          "width": 321,
+          "x": 139,
+          "y": 122
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "117.jpg": {
+      "blocks": [],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "118.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 235,
+          "symHeight": 24.75,
+          "symWidth": 15.08482142857143,
+          "text": "YOU  HAVE  FIVE SECONDS  TO  THINK  IT OVER .  GET  DOWN  AND KNEEL  BEFORE  ME ,  AND GIVE  UP  SOUTH  BLACK HARBOR .",
+          "translation": "لديك خمس ثوانٍ لتفكر. اهبط واركع أمامي، وتخلَّ عن ميناء الجنوب الأسود.",
+          "width": 285,
+          "x": 115,
+          "y": 214
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 26.5,
+          "symWidth": 15.20833333333333,
+          "text": "OTHERWISE , I'LL  KILL  HIM !",
+          "translation": "وإلا فسيكون مصيره الموت!",
+          "width": 182,
+          "x": 534,
+          "y": 420
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "119.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33.11111111111111,
+          "symWidth": 20.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 618,
+          "y": 8
+        }
+      ],
+      "imgHeight": 625,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "120.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 19.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 176,
+          "x": 617,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 26.1969696969697,
+          "symWidth": 15.66060606060606,
+          "text": "MISS !  DON'T  WORRY ABOUT  ME !  KILL  ALL  THESE SOUTHERN  DOGS !",
+          "translation": "آنسة! لا تقلقي لأجلي! اقتلوا كل هؤلاء الكلاب الجنوبية!",
+          "width": 323,
+          "x": 135,
+          "y": 246
+        }
+      ],
+      "imgHeight": 530,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "121.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.75,
+          "symWidth": 16.13478933239963,
+          "text": "MISS !  WHAT  SHOULD  WE DO ?  IF  WE  GO  ALONG WITH  THEM ,  LAO  QING MIGHT ... !",
+          "translation": "آنسة! ماذا نفعل؟ إذا تَمّ التوافق معهم، قد يكون لآو تشينغ...",
+          "width": 306,
+          "x": 197,
+          "y": 249
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "122.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 36.77777777777778,
+          "symWidth": 20.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 179,
+          "x": 615,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "123.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 36.77777777777778,
+          "symWidth": 21.33333333333333,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 177,
+          "x": 617,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.4,
+          "text": "FIVE !",
+          "translation": "خمسة!",
+          "width": 51,
+          "x": 98,
+          "y": 124
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 24.5,
+          "symWidth": 15.61111111111111,
+          "text": "JUST  A BUNCH  OF SMALL  FRY .",
+          "translation": "مجموعة من الهامشيين الصغار.",
+          "width": 146,
+          "x": 527,
+          "y": 469
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "124.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 23.33333333333333,
+          "symWidth": 13.77289377289377,
+          "text": "MISS  CUI ,  DON'T WORRY ,  I'LL  TAKE CARE  OF  OLD  QING !",
+          "translation": "آنسة تساي، لا تقلقي، سأتصدى لأولد تشينغ بنفسي!",
+          "width": 218,
+          "x": 171,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36.11111111111111,
+          "symWidth": 23.33333333333333,
+          "text": "MCREAD.10",
+          "translation": "",
+          "width": 178,
+          "x": 616,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "125.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 31.33333333333333,
+          "symWidth": 20,
+          "text": "MGREAD.10",
+          "translation": "ام جي ريد.10",
+          "width": 176,
+          "x": 617,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 13.6,
+          "text": "FOUR !",
+          "translation": "الأربعة!",
+          "width": 65,
+          "x": 610,
+          "y": 192
+        }
+      ],
+      "imgHeight": 469,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "126.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 19.8,
+          "text": "CHIRP",
+          "translation": "تغريد",
+          "width": 85,
+          "x": 234,
+          "y": 169
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "127.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 33.77777777777778,
+          "symWidth": 21.66666666666667,
+          "text": "MEREAD.10",
+          "translation": "ميريد.10",
+          "width": 175,
+          "x": 617,
+          "y": 6
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "128.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 38.75,
+          "symWidth": 21.625,
+          "text": "MGREAD  10",
+          "translation": "ام جي ريد 10",
+          "width": 176,
+          "x": 618,
+          "y": 2
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "129.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 33,
+          "symWidth": 20.0625,
+          "text": "WHAT ... WHAT IS  THAT !?",
+          "translation": "ما هذا... ما الأمر بحقّ السماء؟!",
+          "width": 205,
+          "x": 265,
+          "y": 208
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "130.jpg": {
+      "blocks": [],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "131.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 27,
+          "text": "WOW !",
+          "translation": "يا للعجب!",
+          "width": 110,
+          "x": 325,
+          "y": 497
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "132.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 34.11111111111111,
+          "symWidth": 20.11111111111111,
+          "text": "MCREAD.10",
+          "translation": "ام سي ريد.10",
+          "width": 176,
+          "x": 616,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "133.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 33.77777777777778,
+          "symWidth": 20.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "ام جي ريد.10",
+          "width": 177,
+          "x": 616,
+          "y": 4
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "134.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36.11111111111111,
+          "symWidth": 21.55555555555556,
+          "text": "MCREAD.10",
+          "translation": "MCREAD.10",
+          "width": 177,
+          "x": 616,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 23.275,
+          "symWidth": 14.19583333333333,
+          "text": "... TSK ,  THIS  NING  SHUANG , THERE'S  JUST  NO  WAY  TO DEAL  WITH  HER .",
+          "translation": "هممم... تلك نينغ شوانغ، لا سبيل لمجاراتها.",
+          "width": 306,
+          "x": 159,
+          "y": 433
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "135.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 37.85714285714285,
+          "symWidth": 25.71428571428572,
+          "text": "MGREAD  O",
+          "translation": "MGREAD O",
+          "width": 180,
+          "x": 615,
+          "y": 3
+        }
+      ],
+      "imgHeight": 624,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "136.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 36.875,
+          "symWidth": 25.375,
+          "text": "MCREADIO",
+          "translation": "ام سي ريديو",
+          "width": 174,
+          "x": 618,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 17.75,
+          "text": "HOME",
+          "translation": "الرئيسية",
+          "width": 75,
+          "x": 226,
+          "y": 699
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 12.16666666666667,
+          "text": "MGREAD",
+          "translation": "ام جريد",
+          "width": 82,
+          "x": 40,
+          "y": 746
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 66.5,
+          "symWidth": 39,
+          "text": "TO",
+          "translation": "إلى",
+          "width": 40,
+          "x": 22,
+          "y": 850
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 125.1428571428571,
+          "symWidth": 69.85714285714286,
+          "text": "GREAD  IO",
+          "translation": "جريد آي أو",
+          "width": 523,
+          "x": 204,
+          "y": 1071
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 30.75,
+          "symWidth": 20.45833333333334,
+          "text": "The  Lord's  Coins  Aren't Decreasing ?! #Action  #Adventure  #Comedy",
+          "translation": "لا تقلُ عملاتُ الربِّ؟! #حركة #مغامرة #كوميديا",
+          "width": 443,
+          "x": 118,
+          "y": 1289
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 24,
+          "symWidth": 15.72727272727273,
+          "text": "Mgread  Admin",
+          "translation": "إدارة ام جريد",
+          "width": 183,
+          "x": 129,
+          "y": 1588
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 15,
+          "symWidth": 11.5,
+          "text": "2  weeks",
+          "translation": "أسبوعان",
+          "width": 83,
+          "x": 662,
+          "y": 1593
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 16.25,
+          "text": "Lv.2",
+          "translation": "المستوى ٢",
+          "width": 47,
+          "x": 376,
+          "y": 1595
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12,
+          "text": "Hello",
+          "translation": "مرحباً",
+          "width": 66,
+          "x": 83,
+          "y": 1676
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 23.90315789473684,
+          "symWidth": 14.60469247832224,
+          "text": "THANK YOU FOR READING THIS ON OUR SITE: THIS IS TRANSLATED AND UPLOADED FASTEST ON OUR SITE. VISIT TO READ THE LATEST UPDATED CHAPTERS. - >>  FAST  SITE . HIGH  LOADING  SPEED  - >> - >>  FEW  ADS  - THE  WORLD  OF  MANGA  AND  ANIME .",
+          "translation": "شكرًا لقراءتكم هذا العمل على موقعنا: الترجمة والرفع يتم بأسرع وتيرة لدينا. زورونا لقراءة أحدث الفصول المُحدّثة. - >> موقع سريع · تحميل عالي السرعة - >> - >> إعلانات معدودة - عالم المانغا والأنمي.",
+          "width": 764,
+          "x": 18,
+          "y": 1812
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 16.13513513513514,
+          "text": "THANK  YOU  FOR  READING  THIS  COMIC  ON  OUR  SITE .",
+          "translation": "شكرًا لقراءتكم هذه القصّة المصوّرة على موقعنا.",
+          "width": 609,
+          "x": 100,
+          "y": 2042
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 16.97872340425532,
+          "text": "VISIT  LIKEMANGAINK  TO  READ  THE  LATEST  UPDATED  CHAPTERS",
+          "translation": "زوروا Likemangaink لقراءة أحدث الفصول المحدّثة.",
+          "width": 786,
+          "x": 7,
+          "y": 2094
+        }
+      ],
+      "imgHeight": 2152,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

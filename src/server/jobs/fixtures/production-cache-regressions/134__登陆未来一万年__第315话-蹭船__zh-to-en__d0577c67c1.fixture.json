@@ -1,0 +1,372 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0134",
+  "jobId": "fixture-job-0134",
+  "licenseId": "fixture-license-0134",
+  "pageCount": 6,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 96.0909090909091,
+          "symWidth": 87.88636363636364,
+          "text": "包子 漫画 baozimh.com",
+          "translation": "",
+          "width": 564,
+          "x": 423,
+          "y": 366
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 45.47058823529412,
+          "text": "请 在 包子 漫画 APP 内 阅读 最新 章节 哦",
+          "translation": "Please read the latest chapters in the Baozi Manhua app.",
+          "width": 818,
+          "x": 190,
+          "y": 681
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 38.90909090909091,
+          "text": "扫描 二维 码 , 下载 APP",
+          "translation": "Scan the QR code to download the app.",
+          "width": 508,
+          "x": 344,
+          "y": 1455
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 32,
+          "symWidth": 24.65151515151515,
+          "text": "∵∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 237,
+          "x": 938,
+          "y": 2043
+        }
+      ],
+      "imgHeight": 2133,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 27,
+          "symWidth": 25.13333333333333,
+          "text": "最新 免费 漫画 www.baozimh.com",
+          "translation": "",
+          "width": 293,
+          "x": 879,
+          "y": 36
+        },
+        {
+          "angle": 0,
+          "height": 204,
+          "symHeight": 95.5,
+          "symWidth": 89.29545454545455,
+          "text": "包子 漫画 baozimh.com",
+          "translation": "",
+          "width": 563,
+          "x": 425,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 45.8235294117647,
+          "text": "请 在 包子 漫画 APP 内 阅读 最新 章节 哦",
+          "translation": "Please read the latest chapters in the Baozi Manhua app.",
+          "width": 820,
+          "x": 188,
+          "y": 679
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 40,
+          "text": "扫描 二维 码 , 下载 APP",
+          "translation": "Scan the QR code to download the app.",
+          "width": 510,
+          "x": 344,
+          "y": 1455
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 34.41666666666667,
+          "symWidth": 26.68939393939394,
+          "text": "∵∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 236,
+          "x": 939,
+          "y": 2038
+        }
+      ],
+      "imgHeight": 2133,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 38.83333333333333,
+          "symWidth": 29.57575757575758,
+          "text": "∵∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 279,
+          "x": 894,
+          "y": 31
+        },
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 97.9090909090909,
+          "symWidth": 90.30681818181819,
+          "text": "包子 漫画 baozimh.com",
+          "translation": "",
+          "width": 567,
+          "x": 423,
+          "y": 366
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 45.41176470588236,
+          "text": "请 在 包子 漫画 APP 内 阅读 最新 章节 哦",
+          "translation": "Please read the latest chapters in the Baozi Manhua app.",
+          "width": 819,
+          "x": 189,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 130,
+          "symWidth": 108.6666666666667,
+          "text": "FOR",
+          "translation": "FOR",
+          "width": 343,
+          "x": 458,
+          "y": 1196
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 50,
+          "symWidth": 39.18181818181818,
+          "text": "扫描 二维 码 , 下载 APP",
+          "translation": "Scan the QR code to download the app.",
+          "width": 509,
+          "x": 344,
+          "y": 1454
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 34.41666666666667,
+          "symWidth": 26.46969696969697,
+          "text": "∵∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 240,
+          "x": 935,
+          "y": 2038
+        }
+      ],
+      "imgHeight": 2133,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 202,
+          "symHeight": 95.5,
+          "symWidth": 89.63636363636364,
+          "text": "包子 漫画 baozimh.com",
+          "translation": "",
+          "width": 561,
+          "x": 426,
+          "y": 368
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 45.35294117647059,
+          "text": "请 在 包子 漫画 APP 内 阅读 最新 章节 哦",
+          "translation": "Please read the latest chapters in the Baozi Manhua app.",
+          "width": 819,
+          "x": 189,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 39.18181818181818,
+          "text": "扫描 二维 码 , 下载 APP",
+          "translation": "Scan the QR code to download the app.",
+          "width": 509,
+          "x": 344,
+          "y": 1456
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 33.5,
+          "symWidth": 24.40151515151515,
+          "text": "∵∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 237,
+          "x": 938,
+          "y": 2042
+        }
+      ],
+      "imgHeight": 2133,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 92.5,
+          "symWidth": 82.98863636363636,
+          "text": "包子 漫画 baozimh.com",
+          "translation": "",
+          "width": 561,
+          "x": 426,
+          "y": 370
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 45.47058823529412,
+          "text": "请 在 包子 漫画 APP 内 阅读 最新 章节 哦",
+          "translation": "Please read the latest chapters in the Baozi Manhua app.",
+          "width": 819,
+          "x": 189,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 39.09090909090909,
+          "text": "扫描 二维 码 , 下载 APP",
+          "translation": "Scan the QR code to download the app.",
+          "width": 509,
+          "x": 345,
+          "y": 1455
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 32.9,
+          "symWidth": 27.17272727272727,
+          "text": "∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 213,
+          "x": 962,
+          "y": 2040
+        }
+      ],
+      "imgHeight": 2133,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 97.5,
+          "symWidth": 86.85227272727272,
+          "text": "包子 漫画 baozimh.com",
+          "translation": "",
+          "width": 561,
+          "x": 426,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 46,
+          "text": "请 在 包子 漫画 APP 内 阅读 最新 章节 哦",
+          "translation": "Please read the latest chapter in the Baozi Manga app.",
+          "width": 820,
+          "x": 188,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 38.27272727272727,
+          "text": "扫描 二维 码 , 下载 APP",
+          "translation": "Scan the QR code to download the app.",
+          "width": 507,
+          "x": 346,
+          "y": 1456
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 33,
+          "symWidth": 24.84090909090909,
+          "text": "∵∴  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 238,
+          "x": 937,
+          "y": 2040
+        }
+      ],
+      "imgHeight": 2133,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

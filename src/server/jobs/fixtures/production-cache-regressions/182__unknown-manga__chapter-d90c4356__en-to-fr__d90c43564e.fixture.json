@@ -1,0 +1,948 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0182",
+  "jobId": "fixture-job-0182",
+  "licenseId": "fixture-license-0182",
+  "pageCount": 21,
+  "pageOrder": [
+    "001.webp",
+    "008.webp",
+    "002.webp",
+    "007__001.jpg",
+    "003__001.jpg",
+    "004__001.jpg",
+    "005.webp",
+    "012__001.jpg",
+    "006__001.jpg",
+    "009.webp",
+    "011__001.jpg",
+    "010.webp",
+    "015__001.jpg",
+    "013.webp",
+    "014__001.jpg",
+    "018__001.jpg",
+    "016.webp",
+    "017.webp",
+    "019__001.jpg",
+    "020.webp",
+    "021.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 34,
+          "text": "动漫",
+          "translation": "Manga",
+          "width": 54,
+          "x": 629,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 148,
+          "symWidth": 145.25,
+          "text": "遇 强 则 强",
+          "translation": "La force appelle la force",
+          "width": 551,
+          "x": 51,
+          "y": 1242
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 177.66666666666666,
+          "symWidth": 161.33333333333334,
+          "text": "无 上限",
+          "translation": "Illimité",
+          "width": 454,
+          "x": 119,
+          "y": 1377
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 21.105263157894736,
+          "text": "改编 自 小说 《 遇 强 则 强 , 我 的 修 为 无 上限 》",
+          "translation": "Adapté du roman « La force appelle la force, mon pouvoir est illimité »",
+          "width": 470,
+          "x": 131,
+          "y": 1674
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 33.5,
+          "symWidth": 33.44444444444444,
+          "text": "原著 / 史上 最帅 作者 监制 / 老徐 園",
+          "translation": "Auteur original / Le plus beau de l'histoire Superviseur / Vieux Xu Yuan",
+          "width": 344,
+          "x": 143,
+          "y": 1740
+        }
+      ],
+      "imgHeight": 1817,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [],
+      "imgHeight": 610,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 39.15625,
+          "symWidth": 32.170833333333334,
+          "text": "编剧 / G 周 主笔 / 英 、 凯 、 永乐 界 文化 — 凡 星 勾 线 / 龙 一 、 薯条 上色 / 赫 屿 、 殇 夕 浅 夜",
+          "translation": "Scénariste / G Zhou Dessinateurs / Ying, Kai, Yongle Culture Jiexing / Long Yi, Frites Colorisation / He Yu, Shang Xi, Qian Ye",
+          "width": 529,
+          "x": 141,
+          "y": 23
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 61.2,
+          "symWidth": 53.15625,
+          "text": "火 珑 果 漫画 HUOLONGGUO  AANHUA",
+          "translation": "Manga Huolongguo",
+          "width": 437,
+          "x": 129,
+          "y": 335
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 13.81578947368421,
+          "symWidth": 12.43859649122807,
+          "text": "YOU  WANT TO  INSPECT  THE GOODS ?",
+          "translation": "VOUS VOULEZ INSPECTER LA MARCHANDISE ?",
+          "width": 158,
+          "x": 201,
+          "y": 962
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 13.75,
+          "symWidth": 11.108333333333334,
+          "text": "BUT THERE'S  NO RUSH .",
+          "translation": "MAIS IL N’Y A PAS D’URGENCE.",
+          "width": 114,
+          "x": 408,
+          "y": 1123
+        },
+        {
+          "angle": 0,
+          "height": 325,
+          "symHeight": 321,
+          "symWidth": 307,
+          "text": "啪 !",
+          "translation": "CLAC !",
+          "width": 313,
+          "x": 121,
+          "y": 1578
+        }
+      ],
+      "imgHeight": 2116,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 24.3125,
+          "symWidth": 19.5,
+          "text": "WHICH I  LIKE  A LOT !!",
+          "translation": "CE QUE J’AIME BEAUCOUP !!",
+          "width": 142,
+          "x": 125,
+          "y": 644
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 18.08385416666667,
+          "symWidth": 12.685893732492998,
+          "text": "MAKE  ANY REQUEST  YOU  WISH , WITHIN  THIS  KINGDOM THERE  IS  NOTHING  I CAN'T  ACCOMPLISH !!",
+          "translation": "FAITES TOUTES LES DEMANDES QUE VOUS VOULEZ, RIEN DANS CE ROYAUME NE M’EST IMPOSSIBLE !!",
+          "width": 240,
+          "x": 346,
+          "y": 2474
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 18.392857142857142,
+          "symWidth": 16.166666666666664,
+          "text": "OH ? PLAYING  HARD TO  GET ?",
+          "translation": "OH ? FAIRE LA DIFFICILE ?",
+          "width": 186,
+          "x": 172,
+          "y": 87
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 15.125,
+          "symWidth": 11.65449134199134,
+          "text": "HMPH .  YOU'RE FAR  TOO  CONFIDENT , PRINCESS .  EVEN  IF  THE  KING HIMSELF  CAME ,  I  WOULDN'T HIM  WILLINGLY !",
+          "translation": "HMPH. PRINCESSE, VOUS ÊTES BIEN TROP SÛRE DE VOUS. MÊME SI LE ROI LUI-MÊME VENAIT, JE NE ME RENDRAIS PAS AVEC PLAISIR !",
+          "width": 296,
+          "x": 36,
+          "y": 1563
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 14,
+          "symWidth": 12.125,
+          "text": "NECESSARILY  SERVE",
+          "translation": "SERVIR AVEC URGENCE",
+          "width": 212,
+          "x": 78,
+          "y": 1657
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 16.727272727272727,
+          "text": "MY  STANDARDS",
+          "translation": "MES EXIGENCES",
+          "width": 193,
+          "x": 351,
+          "y": 2956
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 18,
+          "symWidth": 13.3125,
+          "text": "AREN'T  THAT  LOW ...",
+          "translation": "ELLES NE SONT PAS SI BASSES...",
+          "width": 249,
+          "x": 324,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 32.46153846153846,
+          "symWidth": 28.196336996337,
+          "text": "YOU ... HOW  DARE YOU  BE  SO RUDE !",
+          "translation": "VOUS... COMMENT OSEZ-VOUS ÊTRE AUSSI IMPOLIE !",
+          "width": 225,
+          "x": 131,
+          "y": 814
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 16.583333333333332,
+          "symWidth": 13.764131701631701,
+          "text": "YOU'RE INSOLENT !  YOU HAVE  NO  TRACE  OF A  MAN'S  GRACE OR  MODESTY ...",
+          "translation": "VOUS ÊTES INSOLENTE ! AUCUNE ÉLÉGANCE NI MODESTIE D’HOMME EN VOUS...",
+          "width": 197,
+          "x": 432,
+          "y": 2539
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20.6,
+          "symWidth": 18.080555555555556,
+          "text": "NOT ONLY  DO YOU  SPEAK WITH  SUCH AUDACITY ,",
+          "translation": "NON SEULEMENT VOUS PARLEZ AVEC UNE TELLE AUDACE,",
+          "width": 171,
+          "x": 211,
+          "y": 2703
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 20.75,
+          "symWidth": 18.349999999999998,
+          "text": "BUT YOU  DARE  LAY HANDS  ON ME !",
+          "translation": "MAIS VOUS OSEZ ME TOUCHER !",
+          "width": 186,
+          "x": 222,
+          "y": 2825
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [],
+      "imgHeight": 98,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 15.4,
+          "symWidth": 12.40007326007326,
+          "text": "HMPH ,  SEEMS THE  PRINCESS'S BOLD  CLAIMS  WERE NOTHING  BUT  EMPTY BOASTING !",
+          "translation": "HMPH, IL SEMBLE QUE LES GRANDS DISCOURS DE LA PRINCESSE N’ÉTAIENT QUE VENTS !",
+          "width": 221,
+          "x": 333,
+          "y": 542
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 13.083333333333332,
+          "text": "IN  THAT  CASE ,  I'LL TAKE  MY  LEAVE .",
+          "translation": "DANS CE CAS, JE M’EN VAIS.",
+          "width": 218,
+          "x": 209,
+          "y": 855
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 14.4,
+          "symWidth": 10.783968253968254,
+          "text": "WAIT .  IT'S  NOT IMPOSSIBLE .  WITH YOUR  BEAUTY ,  I'M  SURE MOTHER  WOULDN'T REFUSE .",
+          "translation": "ATTENDEZ. CE N’EST PAS IMPOSSIBLE. AVEC VOTRE BEAUTÉ, JE SUIS SÛR QUE MÈRE N’Y VOUDRAIT PAS SE REFUSER.",
+          "width": 241,
+          "x": 315,
+          "y": 2633
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14.3,
+          "text": "HOWEVER ...",
+          "translation": "CEPENDANT...",
+          "width": 151,
+          "x": 409,
+          "y": 899
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 25.285714285714285,
+          "symWidth": 20.285714285714285,
+          "text": "YOU'RE  WILD !  ENE",
+          "translation": "VOUS ÊTES SAUVAGE ! ENE",
+          "width": 259,
+          "x": 429,
+          "y": 1764
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 15.5625,
+          "symWidth": 13.95340909090909,
+          "text": "LOOKS LIKE  THE  FISH HAS  TAKEN  THE BAIT ~",
+          "translation": "ON DIRAIT QUE LE POISSON MORD À L’HAMEÇON ~",
+          "width": 173,
+          "x": 391,
+          "y": 432
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 40,
+          "text": "动漫",
+          "translation": "Manga",
+          "width": 56,
+          "x": 630,
+          "y": 1120
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 40.333333333333336,
+          "symWidth": 51.666666666666664,
+          "text": "COC",
+          "translation": "COC",
+          "width": 56,
+          "x": 637,
+          "y": 1829
+        }
+      ],
+      "imgHeight": 2553,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 20,
+          "symWidth": 14.333333333333334,
+          "text": "WHAT  IF ISAID ...",
+          "translation": "ET SI JE DISAIS...",
+          "width": 117,
+          "x": 237,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 14.5,
+          "symWidth": 11.86111111111111,
+          "text": "I  WANTED  TO ENTER  THE",
+          "translation": "QUE JE VOULAIS ENTRER DANS",
+          "width": 162,
+          "x": 361,
+          "y": 485
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 12.25,
+          "text": "PALACE'S",
+          "translation": "LES",
+          "width": 88,
+          "x": 474,
+          "y": 509
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 10.88888888888889,
+          "text": "FORBIDDEN",
+          "translation": "TERRAINS INTERDITS",
+          "width": 108,
+          "x": 351,
+          "y": 531
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 14,
+          "symWidth": 11.25326797385621,
+          "text": "GROUNDS ? PRINCESS ,  COULD  YOU MAKE  IT",
+          "translation": "DU PALAIS ? PRINCESSE, POURRIEZ-VOUS LE FAIRE",
+          "width": 217,
+          "x": 354,
+          "y": 531
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 10.428571428571429,
+          "text": "HAPPEN ?",
+          "translation": "ARRIVER ?",
+          "width": 81,
+          "x": 463,
+          "y": 575
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 11.5,
+          "symWidth": 9.686868686868687,
+          "text": "ENTERING  THE FORBIDDEN",
+          "translation": "ENTRER DANS LES TERRAINS INTERDITS EXIGE LA PERMISSION DE L’IMPERATRICE MÈRE. QU’Y AVEZ-VOUS À FAIRE !?",
+          "width": 150,
+          "x": 111,
+          "y": 1677
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 11.833333333333334,
+          "symWidth": 10.16993873572821,
+          "text": "GROUNDS REQUIRES  THE  EMPRESS MOTHER'S  PERMISSION . WHAT  BUSINESS DO  YOU  HAVE THERE !?",
+          "translation": "",
+          "width": 207,
+          "x": 98,
+          "y": 1698
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 21.5,
+          "symWidth": 16.866666666666667,
+          "text": "SO ...  SO MAGNIFICENT !!!!",
+          "translation": "SI... MAGNIFIQUE !!!!",
+          "width": 212,
+          "x": 104,
+          "y": 1381
+        }
+      ],
+      "imgHeight": 2553,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 16.89814814814815,
+          "symWidth": 14.816137566137565,
+          "text": "AFTER  ALL , I'M  AT  MY  BEST WHEN  FACING  A CHALLENGE .  WHAT PRICE  COULD  I NOT  AFFORD ?",
+          "translation": "APRÈS TOUT, C’EST FACE AU DÉFI QUE JE SUIS AU MEILLEUR DE MOI-MÊME. QUEL PRIX NE POURRAIS-JE PAS PAYER ?",
+          "width": 211,
+          "x": 399,
+          "y": 273
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 19.78571428571429,
+          "symWidth": 16.952380952380953,
+          "text": "HAHA . THEN  I  SHALL AWAIT  GOOD NEWS .",
+          "translation": "HAHA. ALORS J’ATTENDRAI DE BONNES NOUVELLES.",
+          "width": 200,
+          "x": 122,
+          "y": 1099
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 26,
+          "text": "腾讯 动漫",
+          "translation": "Tencent Manga",
+          "width": 99,
+          "x": 588,
+          "y": 193
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 22.666666666666668,
+          "text": "MEN",
+          "translation": "HOMMES",
+          "width": 64,
+          "x": 608,
+          "y": 991
+        }
+      ],
+      "imgHeight": 1772,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17,
+          "symWidth": 13.511363636363637,
+          "text": "IT'S  JUST  THAT THE  PRICE ...",
+          "translation": "C’EST JUSTE QUE LE PRIX...",
+          "width": 188,
+          "x": 238,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 18.5,
+          "symWidth": 14.8625,
+          "text": "THE  PRICE IS  NO  ISSUE .",
+          "translation": "LE PRIX N’EST PAS UN PROBLÈME.",
+          "width": 170,
+          "x": 136,
+          "y": 2104
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 16.59259259259259,
+          "symWidth": 13.392592592592592,
+          "text": "MORE THAN  SATISFIED ! I  CAN  HARDLY WAIT !!",
+          "translation": "PLUS QUE SATISFAIT ! J’AI HÂTE !!",
+          "width": 199,
+          "x": 306,
+          "y": 1805
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 22,
+          "symWidth": 16.22222222222222,
+          "text": "OH ,  RIGHT !",
+          "translation": "OH, JUSTE !",
+          "width": 151,
+          "x": 72,
+          "y": 183
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 21.2,
+          "text": "AMENS",
+          "translation": "AMENS",
+          "width": 96,
+          "x": 592,
+          "y": 1310
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 23.266666666666666,
+          "symWidth": 18.450000000000003,
+          "text": "I  ALMOST FORGOT  TO ASK ...",
+          "translation": "J’AI PRESQUE OUBLIÉ DE DEMANDER...",
+          "width": 189,
+          "x": 97,
+          "y": 1405
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 131.5,
+          "symWidth": 91,
+          "text": "啪 !",
+          "translation": "CLAC !",
+          "width": 131,
+          "x": 552,
+          "y": 1987
+        }
+      ],
+      "imgHeight": 2325,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 21,
+          "symWidth": 19.192307692307693,
+          "text": "ARE  YOU SATISFIED  WITH MY  GOODS ?",
+          "translation": "ÊTES-VOUS SATISFAIT DE MA MARCHANDISE ?",
+          "width": 231,
+          "x": 324,
+          "y": 989
+        }
+      ],
+      "imgHeight": 2325,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 12.666666666666666,
+          "symWidth": 11.129629629629628,
+          "text": "THE  WOMEN  HERE ARE  LIKE  RAVENOUS BEASTS !!!",
+          "translation": "LES FEMMES ICI SONT COMME DES BÊTES AFFAMÉES !!!",
+          "width": 170,
+          "x": 339,
+          "y": 916
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 126,
+          "symWidth": 113,
+          "text": "Ap",
+          "translation": "Ap",
+          "width": 192,
+          "x": 421,
+          "y": 1905
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 21.326923076923077,
+          "symWidth": 18.224358974358974,
+          "text": "HOW WILD !  I  WILL HAVE  YOU  IN  BED SOONER  OR LATER !!!",
+          "translation": "QUELLE FOLIE ! JE VOUS AURAI AU LIT TÔT OU TARD !!!",
+          "width": 238,
+          "x": 378,
+          "y": 1909
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 61.5,
+          "symWidth": 44,
+          "text": "00",
+          "translation": "00",
+          "width": 82,
+          "x": 150,
+          "y": 2822
+        }
+      ],
+      "imgHeight": 2988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [],
+      "imgHeight": 373,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 22,
+          "symWidth": 13.161616161616163,
+          "text": "SORRY ,  EVERYONE ,  THIS  CHAPTER'S  LATE , IT  KEPT  GETTING  STUCK  IN  REVIEW .",
+          "translation": "DÉSOLÉ, TOUT LE MONDE, CE CHAPITRE EST EN RETARD, IL A PASSÉ TROP DE TEMPS EN REVUE.",
+          "width": 432,
+          "x": 139,
+          "y": 177
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 17.88888888888889,
+          "text": "RIGHT  NOW ,",
+          "translation": "ACTUELLEMENT,",
+          "width": 156,
+          "x": 73,
+          "y": 247
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 18.5,
+          "text": "HONG",
+          "translation": "HONG",
+          "width": 75,
+          "x": 237,
+          "y": 247
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 15.222222222222221,
+          "text": "QIANYE ...",
+          "translation": "QIANYE...",
+          "width": 125,
+          "x": 318,
+          "y": 247
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 46.125,
+          "symWidth": 27.125,
+          "text": "GET  LOST !",
+          "translation": "DÉGAGEZ !",
+          "width": 140,
+          "x": 346,
+          "y": 426
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 42.714285714285715,
+          "symWidth": 33.714285714285715,
+          "text": "HOW  MANY",
+          "translation": "COMBIEN",
+          "width": 163,
+          "x": 346,
+          "y": 480
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 47.75,
+          "symWidth": 29.75,
+          "text": "HAVE",
+          "translation": "DE FOIS",
+          "width": 79,
+          "x": 475,
+          "y": 525
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 47.375,
+          "symWidth": 29.125,
+          "text": "TIMES  DO  I",
+          "translation": "DOIS-JE",
+          "width": 157,
+          "x": 323,
+          "y": 542
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 45.416666666666664,
+          "symWidth": 27.833333333333332,
+          "text": "TO  SAY  IT !?  I'M",
+          "translation": "LE DIRE !? JE SUIS",
+          "width": 208,
+          "x": 346,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 46.25,
+          "symWidth": 30.5,
+          "text": "MAN !",
+          "translation": "UN HOMME !",
+          "width": 78,
+          "x": 436,
+          "y": 648
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 76.22222222222223,
+          "symWidth": 52.22222222222222,
+          "text": "A  MANNN !!!",
+          "translation": "UN VRAI HOMME !!!",
+          "width": 246,
+          "x": 107,
+          "y": 1478
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 18.346153846153847,
+          "text": "... IS  CURRENTLY  BEING  CHASED .",
+          "translation": "... EST ACTUELLEMENT POURCHASSÉ.",
+          "width": 509,
+          "x": 127,
+          "y": 1781
+        }
+      ],
+      "imgHeight": 2041,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

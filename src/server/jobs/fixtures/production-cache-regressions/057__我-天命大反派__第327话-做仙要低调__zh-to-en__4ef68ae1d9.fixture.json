@@ -1,0 +1,3048 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0057",
+  "jobId": "fixture-job-0057",
+  "licenseId": "fixture-license-0057",
+  "pageCount": 140,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp",
+    "029.webp",
+    "030.webp",
+    "031.webp",
+    "032.webp",
+    "033.webp",
+    "034.webp",
+    "035.webp",
+    "036.webp",
+    "037.webp",
+    "038.webp",
+    "039.webp",
+    "040.webp",
+    "041.webp",
+    "042.webp",
+    "043.webp",
+    "044.webp",
+    "045.webp",
+    "046.webp",
+    "047.webp",
+    "048.webp",
+    "049.webp",
+    "050.webp",
+    "051.webp",
+    "052.webp",
+    "053.webp",
+    "054.webp",
+    "055.webp",
+    "056.webp",
+    "057.webp",
+    "058.webp",
+    "059.webp",
+    "060.webp",
+    "061.webp",
+    "062.webp",
+    "063.webp",
+    "064.webp",
+    "065.webp",
+    "066.webp",
+    "067.webp",
+    "068.webp",
+    "069.webp",
+    "070.webp",
+    "071.webp",
+    "072.webp",
+    "073.webp",
+    "074.webp",
+    "075.webp",
+    "076.webp",
+    "077.webp",
+    "078.webp",
+    "079.webp",
+    "080.webp",
+    "081.webp",
+    "082.webp",
+    "083.webp",
+    "084.webp",
+    "085.webp",
+    "086.webp",
+    "087.webp",
+    "088.webp",
+    "089.webp",
+    "090.webp",
+    "091.webp",
+    "092.webp",
+    "093.webp",
+    "094.webp",
+    "095.webp",
+    "096.webp",
+    "097.webp",
+    "098.webp",
+    "099.webp",
+    "100.webp",
+    "101.webp",
+    "102.webp",
+    "103.webp",
+    "104.webp",
+    "105.webp",
+    "106.webp",
+    "107.webp",
+    "108.webp",
+    "109.webp",
+    "110.webp",
+    "111.webp",
+    "112.webp",
+    "113.webp",
+    "114.webp",
+    "115.webp",
+    "116.webp",
+    "117.webp",
+    "118.webp",
+    "119.webp",
+    "120.webp",
+    "121.webp",
+    "122.webp",
+    "123.webp",
+    "124.webp",
+    "125.webp",
+    "126.webp",
+    "127.webp",
+    "128.webp",
+    "129.webp",
+    "130.webp",
+    "131.webp",
+    "132.webp",
+    "133.webp",
+    "134.webp",
+    "135.webp",
+    "136.webp",
+    "137.webp",
+    "138.webp",
+    "139.webp",
+    "140.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 16.84615384615385,
+          "text": "嬉皮 漫画",
+          "translation": "Hippy Comic",
+          "width": 259,
+          "x": 804,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 317,
+          "symHeight": 57.33333333333334,
+          "symWidth": 51.83333333333334,
+          "text": "100000",
+          "translation": "100000",
+          "width": 159,
+          "x": 16,
+          "y": 376
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 389,
+          "symHeight": 136.1944444444444,
+          "symWidth": 121.4380341880342,
+          "text": "我 没命 大 反派 ! VILLAIN  IS  HERE",
+          "translation": "I'm doomed, the great villain is here!",
+          "width": 666,
+          "x": 194,
+          "y": 345
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 27,
+          "text": "改编 自 飞 卢 小说 网 作者",
+          "translation": "Adapted from Flying Lu Novel Network Author",
+          "width": 301,
+          "x": 389,
+          "y": 32
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 24.65,
+          "text": "天命 反派 原创 小说 《 玄幻 : 我 ! 天命 大 反派 》",
+          "translation": "Destined Villain Original Novel \"Fantasy: I am the Great Villain by Destiny\"",
+          "width": 589,
+          "x": 238,
+          "y": 85
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 48.4,
+          "symWidth": 63.2,
+          "text": "【  快 看 独家",
+          "translation": "Exclusive by Kuaikan",
+          "width": 273,
+          "x": 408,
+          "y": 200
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 39.14285714285715,
+          "symWidth": 32.42857142857143,
+          "text": "出品 : 快 看 漫画",
+          "translation": "Produced by: Kuaikan Comics",
+          "width": 268,
+          "x": 398,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 33.28571428571428,
+          "text": "原著 : 天命 反派",
+          "translation": "Original Author: Destined Villain",
+          "width": 271,
+          "x": 396,
+          "y": 384
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 32.14285714285715,
+          "text": "制作 : 绘 术 动漫",
+          "translation": "Produced by: Huishu Animation",
+          "width": 268,
+          "x": 398,
+          "y": 447
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 31.5,
+          "text": "主笔 : 木头 人",
+          "translation": "Lead Artist: Wood Man",
+          "width": 227,
+          "x": 399,
+          "y": 512
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 34.2,
+          "symWidth": 31.8,
+          "text": "编剧 : 六 芒",
+          "translation": "Writer: Liu Mang",
+          "width": 193,
+          "x": 396,
+          "y": 575
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 33.33333333333334,
+          "text": "助手 : 丹东 队长  皮蛋",
+          "translation": "Assistants: Dandong, Captain, Pidan",
+          "width": 366,
+          "x": 396,
+          "y": 640
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 31,
+          "text": "责编 : 薇恩",
+          "translation": "Editor: Vien",
+          "width": 194,
+          "x": 398,
+          "y": 703
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [],
+      "imgHeight": 253,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 39.33333333333334,
+          "text": "啊啊 !",
+          "translation": "Aaah!",
+          "width": 126,
+          "x": 593,
+          "y": 399
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 52.66666666666666,
+          "symWidth": 52.96666666666667,
+          "text": "为什么 ! ? 古 祖 要 放弃 我们 了 吗 ! ?",
+          "translation": "Why!? Is the Ancient Ancestor abandoning us!?",
+          "width": 324,
+          "x": 704,
+          "y": 398
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "renderMode": "mask_only",
+          "symHeight": 33,
+          "symWidth": 15.92857142857143,
+          "text": "| 嬉皮 漫画",
+          "translation": "",
+          "width": 274,
+          "x": 3,
+          "y": 797
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 42.75,
+          "symWidth": 37.90595238095238,
+          "text": "| 嬉皮 漫画 古 祖 们 已经 自身 难保 了 !",
+          "translation": "The old ancestors are struggling just to survive!",
+          "width": 314,
+          "x": 114,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 50.375,
+          "symWidth": 47.83333333333333,
+          "text": "绝 阴天 ……… 也 完了 。",
+          "translation": "The endless gloom... it’s all over.",
+          "width": 246,
+          "x": 622,
+          "y": 466
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 58.5,
+          "text": "收集 多少 了 ?",
+          "translation": "How many have you collected?",
+          "width": 323,
+          "x": 191,
+          "y": 536
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 256,
+          "symHeight": 54.5,
+          "symWidth": 60.075,
+          "text": "此 物 并非 简单 的 物质 , 而是 某种 符 文 所 凝练 而成 , 在 碎裂 的 那一 刻 便 开始 消散",
+          "translation": "This object is not a mere substance, but a condensation of certain runes that begin to dissipate the moment it shatters.",
+          "width": 545,
+          "x": 428,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 54,
+          "symWidth": 55.58333333333333,
+          "text": "嗯 , 这 点 我 倒 是 清楚 …",
+          "translation": "Hmm, that much I am clear about...",
+          "width": 351,
+          "x": 257,
+          "y": 653
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 31,
+          "text": "! ?",
+          "translation": "!?",
+          "width": 90,
+          "x": 500,
+          "y": 201
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 55,
+          "symWidth": 56.23333333333333,
+          "text": "你 竟然 收集 了 这么 多 ! ?",
+          "translation": "You actually collected this many!?",
+          "width": 320,
+          "x": 594,
+          "y": 394
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 16.92307692307692,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comics",
+          "width": 263,
+          "x": 11,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 52.54166666666666,
+          "symWidth": 58.65833333333333,
+          "text": "是 我 想 多 了 , 这 小子 居然 真的 没有 独 吞 ?",
+          "translation": "I was overthinking it. This kid really didn't keep it all to himself?",
+          "width": 317,
+          "x": 566,
+          "y": 192
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 53.5,
+          "symWidth": 52.475,
+          "text": "好 徒弟 ! 不 错 不错 !",
+          "translation": "Good disciple! Well done, well done!",
+          "width": 294,
+          "x": 201,
+          "y": 743
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 52.625,
+          "symWidth": 57.675,
+          "text": "我 …… 我 还给 多 了 ?",
+          "translation": "I... I even gave him more?",
+          "width": 264,
+          "x": 564,
+          "y": 629
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 53.66666666666666,
+          "symWidth": 57.16071428571428,
+          "text": "若是 早 一点 赶来 , 或许 还能 再多 收 集 一点 。",
+          "translation": "Had I arrived earlier, perhaps I could have gathered even more.",
+          "width": 428,
+          "x": 371,
+          "y": 188
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 326,
+          "symHeight": 54.3015873015873,
+          "symWidth": 56.96825396825398,
+          "text": "无妨 , 这 已经 是 意外之喜 了 , 只 要 为 师 能 窥 清 其 中 玄妙 , 到 时候 必 不会 忘 了 你 的 !",
+          "translation": "No matter, this is already a pleasant surprise. As long as I can discern the profound secrets within, I shall not forget you!",
+          "width": 427,
+          "x": 152,
+          "y": 321
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 54.5,
+          "symWidth": 52.33333333333333,
+          "text": "老 怪物 , 给 我 画饼 呢 ?",
+          "translation": "Old monster, are you just feeding me empty promises?",
+          "width": 344,
+          "x": 569,
+          "y": 18
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 53.66666666666666,
+          "symWidth": 56.24404761904762,
+          "text": "也是 , 这么 厉害 的 年轻人 , 怎会 满足 于 一句 承诺 ?",
+          "translation": "True, such a formidable youth wouldn’t be content with mere promises.",
+          "width": 436,
+          "x": 85,
+          "y": 196
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 17.23076923076923,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comics",
+          "width": 260,
+          "x": 15,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 51.33333333333334,
+          "symWidth": 54.16666666666666,
+          "text": "罢了 , 如今 还 需要 他 了解 消 息 呢 。",
+          "translation": "Enough. He still needs to be kept in the dark for now.",
+          "width": 351,
+          "x": 557,
+          "y": 343
+        }
+      ],
+      "imgHeight": 759,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 398,
+          "symHeight": 54.6875,
+          "symWidth": 57.18564814814815,
+          "text": "这 是 那 六个 老 东西 的 阵法 , 若不 是 绝 阴 之 气 所剩 无 多 , 就连 为 师 对付 起来 , 也 不容易啊 ……… 赐予 你 了 。",
+          "translation": "This is the formation of those six old creatures. Were it not for the dwindling Yin energy, even I would find it hard to handle... I grant this to you.",
+          "width": 481,
+          "x": 356,
+          "y": 139
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 56,
+          "symWidth": 57.42857142857143,
+          "text": "多谢 师尊 赐 宝 !",
+          "translation": "Thank you, Master, for the precious gift!",
+          "width": 374,
+          "x": 447,
+          "y": 802
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 54.73333333333333,
+          "symWidth": 59.13333333333333,
+          "text": "那 徒儿 就 先 恭贺 师尊 道 法 修 为 更 进一步 了 !",
+          "translation": "Your disciple humbly congratulates Master on further advancing your Dao cultivation!",
+          "width": 411,
+          "x": 174,
+          "y": 146
+        },
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 45.27777777777778,
+          "symWidth": 50.86111111111111,
+          "text": "看来 这 绝 阴天 也 撑 不了 多久 就要 覆灭 了 , 绝 阴 之 气 外流 , 对于 外界 来说 , 这 绝对 是 一场 可怕 的 灾难",
+          "translation": "It seems this Severely Yin Heaven won’t last much longer before it perishes. As the Yin energy leaks out, it will surely bring a terrifying catastrophe to the outside world.",
+          "width": 412,
+          "x": 448,
+          "y": 599
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "renderMode": "mask_only",
+          "symHeight": 44.5,
+          "symWidth": 52.0625,
+          "text": "绝对 是 一场 可怕 的 灾难",
+          "translation": "",
+          "width": 394,
+          "x": 452,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 45,
+          "symWidth": 49.75416666666666,
+          "text": "无数 的 生灵 和 道 统 , 恐 都会 湮灭 其中 啊",
+          "translation": "Countless lives and Dao lineages will likely be engulfed and obliterated within it.",
+          "width": 256,
+          "x": 157,
+          "y": 120
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 88,
+          "symWidth": 81,
+          "text": "开裂",
+          "translation": "Cracking",
+          "width": 93,
+          "x": 814,
+          "y": 41
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "renderMode": "mask_only",
+          "symHeight": 45.58333333333334,
+          "symWidth": 51.41666666666666,
+          "text": "这些 年 以来 , 上 界 各方 倒是 尝试 建立 真 仙 书院 试图 培养",
+          "translation": "",
+          "width": 396,
+          "x": 470,
+          "y": 696
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "031.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 46.125,
+          "symWidth": 49.6875,
+          "text": "这些 年 以来 , 上 界 各方 倒是 尝试 建立 真 仙 书院 试图 培养 出 一位 真 仙 , 在 绝 阴天 爆发 之 际 , 力 挽狂澜 …",
+          "translation": "Over the years, various factions in the Upper Realm have attempted to establish a True Immortal Academy, hoping to cultivate a True Immortal who can turn the tide amid the outbreak of Severely Yin Heaven...",
+          "width": 400,
+          "x": 465,
+          "y": 27
+        },
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 45.29166666666666,
+          "symWidth": 49.38392857142857,
+          "text": "可惜 这 书院 成立 的 时间 还是 太短 了 , 培养 真 仙 之 事 , 是 遥遥无期 。",
+          "translation": "Unfortunately, the academy’s establishment is still too recent; nurturing a True Immortal remains a distant and uncertain hope.",
+          "width": 401,
+          "x": 187,
+          "y": 295
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 53,
+          "symWidth": 61.8,
+          "text": "遥遥无期 么",
+          "translation": "A distant, uncertain hope, huh?",
+          "width": 285,
+          "x": 529,
+          "y": 817
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "032.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 54.06666666666666,
+          "symWidth": 59.50952380952381,
+          "text": "那 岂不 是 说 , 如今 这 上 界 并无 真 仙 存在 ?",
+          "translation": "So, that means there are no true immortals in this Upper Realm now?",
+          "width": 382,
+          "x": 526,
+          "y": 40
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 15.76923076923077,
+          "text": "嬉皮 漫画",
+          "translation": "",
+          "width": 258,
+          "x": 806,
+          "y": 798
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 50.25,
+          "symWidth": 54.56904761904762,
+          "text": "那 老夫 在 这 上 界 当中 岂 不是 … T ......",
+          "translation": "So in this Upper Realm, am I not then... T......",
+          "width": 295,
+          "x": 124,
+          "y": 436
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "034.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 52,
+          "symWidth": 51.42857142857143,
+          "text": "无敌 的 存在 ! ?",
+          "translation": "An invincible existence!?",
+          "width": 381,
+          "x": 570,
+          "y": 576
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "035.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 396,
+          "symHeight": 54.5,
+          "symWidth": 55.92592592592592,
+          "text": "师尊 消失 了 那么 长 的 一段 岁月 , 而今 若是 重现 世间 , 恐怕 会 引 发 无边 波澜 的 , 徒儿 觉得 , 您 不妨 利用 这 个 机会 ………",
+          "translation": "Master has been gone for so many years. If you were to reappear in the world now, it would surely cause untold chaos. I think you should take this opportunity...",
+          "width": 524,
+          "x": 142,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 12.66666666666667,
+          "symWidth": 14.33333333333333,
+          "text": "100",
+          "translation": "100",
+          "width": 29,
+          "x": 63,
+          "y": 781
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "036.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "037.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 53.56043956043956,
+          "symWidth": 59.62637362637363,
+          "text": "你 的 意思 是 …… 希望 我 这 时候 出手 拯救 万 灵 , 趁机 立信 ?",
+          "translation": "You mean... you want me to step in now and save all beings, to cement my credibility?",
+          "width": 404,
+          "x": 145,
+          "y": 251
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 46,
+          "symWidth": 47.66666666666666,
+          "text": "正是 。",
+          "translation": "Exactly.",
+          "width": 142,
+          "x": 762,
+          "y": 596
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "038.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 282,
+          "symHeight": 46.41304347826087,
+          "symWidth": 51.45652173913044,
+          "text": "上 界 情况 还有 待 了解 , 仙 路 何时 浮现 也不 确 定 , 在 此 期间 除了 继 续 收割 之前 布置 后手 的 那些 古 界 也 无 他 事",
+          "translation": "The situation in the Upper Realm remains unclear, and when the Immortal Path will appear is uncertain. During this interval, aside from continuing to reap the leftover setups laid before, there is nothing else concerning the Ancient Realm.",
+          "width": 462,
+          "x": 166,
+          "y": 123
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "039.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 51.71428571428572,
+          "text": "倒不如 …………",
+          "translation": "Might as well...",
+          "width": 292,
+          "x": 339,
+          "y": 657
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "040.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 55.8,
+          "symWidth": 54.7,
+          "text": "好 徒弟 , 便 依 你 所言 。",
+          "translation": "Good disciple, then I shall follow your word.",
+          "width": 298,
+          "x": 587,
+          "y": 163
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 31.61538461538462,
+          "symWidth": 16.46153846153846,
+          "text": "嬉皮 漫画",
+          "translation": "",
+          "width": 258,
+          "x": 15,
+          "y": 794
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "041.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "042.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 54.66666666666666,
+          "symWidth": 57.38095238095238,
+          "text": "这 老 怪物 经常 穿 梭 于 各个 古 界 之 中 , 实力 强横 ,",
+          "translation": "This old monster often roams between ancient realms, with formidable strength.",
+          "width": 409,
+          "x": 115,
+          "y": 153
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "043.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.875,
+          "symWidth": 58.15848214285714,
+          "text": "带着 他 , 不仅 能 为 我 挡 枪 , 说不定 还能 靠 他 找到 一个 适合 设 局 的 古 界 。",
+          "translation": "Having him with us not only blocks attacks but might also help us find an ancient realm suited for setting our trap.",
+          "width": 465,
+          "x": 472,
+          "y": 628
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "044.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "renderMode": "mask_only",
+          "symHeight": 54,
+          "symWidth": 58,
+          "text": "适合 设 局 的 古 界 。",
+          "translation": "",
+          "width": 431,
+          "x": 472,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "045.webp": {
+      "blocks": [],
+      "imgHeight": 759,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "046.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 259,
+          "symHeight": 53.75,
+          "symWidth": 58.72321428571428,
+          "text": "上 界 的 一些 情况 就是 如此 ………… 师尊 不如 先 在 我 那 落脚 吧 。",
+          "translation": "Such are the affairs of the Upper Realm... Master, why not stay for now at my place?",
+          "width": 412,
+          "x": 446,
+          "y": 135
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "047.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 53.94642857142857,
+          "symWidth": 57.26785714285714,
+          "text": "哦 …… 好 徒弟 , 你 还没 说 你 是 来自 哪个 家族 的 ?",
+          "translation": "Oh... Good disciple, you still haven't told me which clan you're from?",
+          "width": 367,
+          "x": 304,
+          "y": 389
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "renderMode": "mask_only",
+          "symHeight": 54.16666666666666,
+          "symWidth": 62,
+          "text": "讲讲 你 家 老祖",
+          "translation": "",
+          "width": 348,
+          "x": 128,
+          "y": 764
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "048.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 53.625,
+          "symWidth": 58.79166666666666,
+          "text": "讲讲 你 家 老祖 吧 , 说不定 老 夫 还 认识 呢 。",
+          "translation": "Tell me about your clan's ancestor, perhaps this old man knows them.",
+          "width": 352,
+          "x": 128,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 31.38461538461538,
+          "symWidth": 16.23076923076923,
+          "text": "嬉皮 漫画",
+          "translation": "",
+          "width": 260,
+          "x": 803,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "049.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 52.125,
+          "symWidth": 56.0625,
+          "text": "我 家 老祖 有些 多 , 我 也 没 见过 几个 。",
+          "translation": "My family has many ancestors, but I've only met a few.",
+          "width": 429,
+          "x": 487,
+          "y": 308
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "050.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 53,
+          "symWidth": 47.75,
+          "text": "哼 , 还 卖 关 子 。",
+          "translation": "Hmph, still playing hard to get.",
+          "width": 234,
+          "x": 107,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "051.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 53.14285714285715,
+          "symWidth": 56.87619047619048,
+          "text": "到 时候 让 你 知道 知道 , 何 为 引狼入室 。",
+          "translation": "When the time comes, I'll show you what it means to invite wolves into your home.",
+          "width": 371,
+          "x": 523,
+          "y": 340
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "052.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 396,
+          "symHeight": 46.28571428571428,
+          "symWidth": 56.57142857142857,
+          "text": "上 界 • 绝 阴 之 地",
+          "translation": "Upper Realm · Land of Absolute Yin",
+          "width": 59,
+          "x": 227,
+          "y": 50
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "053.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "054.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "055.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 258,
+          "symHeight": 54,
+          "symWidth": 57.40476190476191,
+          "text": "长老 们 布 下 的 阵法 , 在 被 慢 慢 侵蚀 , 快来 更多 人 帮忙 啊 !",
+          "translation": "The formation set by the elders is being slowly eroded. Hurry, we need more help!",
+          "width": 371,
+          "x": 482,
+          "y": 186
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "056.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 31.69230769230769,
+          "symWidth": 16.76923076923077,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comics",
+          "width": 257,
+          "x": 15,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "057.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.6875,
+          "symWidth": 58.15625,
+          "text": "圣女 , 这次 绝 阴天 爆发 来势 汹汹 , 不 比 之前 都要 可怕 的 多 , 要 小心 应对 啊 !",
+          "translation": "Saintess, this outbreak of Absolute Yin Heaven is fiercer than before. Be very careful!",
+          "width": 490,
+          "x": 486,
+          "y": 568
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "058.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "059.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 331,
+          "symHeight": 53.5,
+          "symWidth": 59.3047619047619,
+          "text": "据 三 长老 推演 , 似 有 绝世 强者 在 绝 阴天 深处 交战 引发 了 这场 灾 难 …",
+          "translation": "According to Third Elder's calculations, a peerless powerhouse clashing deep within the Absolute Yin Heaven triggered this disaster…",
+          "width": 415,
+          "x": 86,
+          "y": 283
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 53,
+          "symWidth": 55.75,
+          "text": "绝世 强者 …………",
+          "translation": "Peerless powerhouse...",
+          "width": 344,
+          "x": 642,
+          "y": 808
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "060.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 51,
+          "symWidth": 56.5,
+          "text": "是 顾 长 歌 么 ?",
+          "translation": "Are you Gu Changge?",
+          "width": 322,
+          "x": 644,
+          "y": 35
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "061.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 329,
+          "symHeight": 53.395,
+          "symWidth": 55.72357142857143,
+          "text": "圣女 , 守卫 上 界 , 抵抗 绝 阴天 也不 全 是 我 等 的 责任 , 你 大可不必 只身 冒险 啊 ……",
+          "translation": "Saintess, guarding the Upper Realm and resisting the Absolute Yin Sky is not solely our duty. You need not risk yourself alone...",
+          "width": 427,
+          "x": 238,
+          "y": 309
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "062.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "063.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.28571428571428,
+          "symWidth": 54.00952380952381,
+          "text": "是 啊 , 绝 阴天 内 危机重重 , 以 我 等 修 为 ……",
+          "translation": "Yes, the Absolute Yin Sky is fraught with peril, and with our cultivation...",
+          "width": 406,
+          "x": 542,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 53,
+          "symWidth": 59.61574074074074,
+          "text": "各族 各 道 统 的 强者 , 都 不愿 深入 探查 绝 阴天 爆发 的 原因 ,",
+          "translation": "The strongest from various tribes and sects all avoid delving into the cause of the Absolute Yin Sky outbreak,",
+          "width": 482,
+          "x": 135,
+          "y": 587
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "064.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 31.30769230769231,
+          "symWidth": 16.92307692307692,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comics",
+          "width": 261,
+          "x": 14,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "065.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 53.75,
+          "symWidth": 61.73958333333334,
+          "text": "我 身为 人 祖 殿 圣女 若是 也 选择 退缩 的 话 , 那 谁 又能 来 解 决 此 祸患 呢 ?",
+          "translation": "If I, as Saintess of the Ancestral Hall, were to retreat, then who would confront this calamity?",
+          "width": 468,
+          "x": 437,
+          "y": 293
+        }
+      ],
+      "imgHeight": 759,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "066.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 45.75,
+          "symWidth": 50.14285714285714,
+          "text": "我 记得 顾 长 歌 不是 和 人 祖 殿 圣女 走 的 挺 近 的 吗 , 还 称 是 人 祖 转世 来 着 ?",
+          "translation": "I remember Gu Changge was quite close to the Saintess of the Ancestral Hall and was even said to be her reincarnation?",
+          "width": 400,
+          "x": 94,
+          "y": 141
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "067.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 44.64102564102564,
+          "symWidth": 50.71794871794872,
+          "text": "而今 绝 阴天 爆发 他 却 不见 人影 , 让 小 圣女 一个 人 去 赴汤蹈火 ?",
+          "translation": "Now with the Absolute Yin Sky erupting, he’s nowhere to be seen, leaving the young Saintess to face the fire alone?",
+          "width": 350,
+          "x": 557,
+          "y": 661
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "068.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 46,
+          "symWidth": 50.95238095238096,
+          "text": "怕 是 因为 最近 沸 沸 扬扬 的 消息 躲 起来 了 ?",
+          "translation": "Maybe they've gone into hiding because of all the recent uproar?",
+          "width": 349,
+          "x": 116,
+          "y": 220
+        },
+        {
+          "angle": 0,
+          "height": 280,
+          "symHeight": 45.6,
+          "symWidth": 49.89722222222223,
+          "text": "如此一来 , 这 谣言 可 又 得 加 一条 了 , 顾 长 歌 身为 魔功 传 承 者 窃取 人 祖 身份 , 图谋 不轨",
+          "translation": "If so, we’ve got another rumor to add: Gu Changge, inheritor of demonic arts, has stolen the identity of the Ancestor and harbors foul designs.",
+          "width": 415,
+          "x": 576,
+          "y": 503
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "069.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "070.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 51.5,
+          "symWidth": 52.1,
+          "text": "万一 , 不是 谣言 呢 ?",
+          "translation": "What if it’s not just rumor?",
+          "width": 292,
+          "x": 326,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 52.375,
+          "symWidth": 40.01923076923077,
+          "text": "哈哈哈 · DADADA ...... !",
+          "translation": "Hahaha... DADADA...!",
+          "width": 315,
+          "x": 656,
+          "y": 597
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "071.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "072.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 52.35714285714285,
+          "symWidth": 58.21428571428572,
+          "text": "江 楚楚 这次 恐怕 真 有些 莽撞 了 。",
+          "translation": "This time, Jiang Chuchu may have truly acted rashly.",
+          "width": 291,
+          "x": 570,
+          "y": 60
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 53.85,
+          "symWidth": 55.61666666666667,
+          "text": "也 可能 是 , 被 爱情 冲昏 了 头脑 。",
+          "translation": "Or perhaps she’s simply blinded by love.",
+          "width": 296,
+          "x": 149,
+          "y": 402
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33,
+          "symWidth": 16.07692307692308,
+          "text": "嬉皮 漫画",
+          "translation": "Hip Comic",
+          "width": 255,
+          "x": 808,
+          "y": 794
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "073.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 70.4,
+          "text": "魔功 传承 者",
+          "translation": "Inheritor of Demonic Arts",
+          "width": 317,
+          "x": 573,
+          "y": 100
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "074.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 52.5,
+          "symWidth": 57.125,
+          "text": "还真 就 不是 谣言 啊 。",
+          "translation": "So it’s not just a rumor after all.",
+          "width": 294,
+          "x": 168,
+          "y": 288
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "075.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 50,
+          "symWidth": 48,
+          "text": "少 主 !",
+          "translation": "Young Master!",
+          "width": 143,
+          "x": 481,
+          "y": 537
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "076.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 112,
+          "symWidth": 96.25,
+          "text": "告 生 顾家",
+          "translation": "Notify the Gu family.",
+          "width": 491,
+          "x": 284,
+          "y": 207
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "077.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 52.125,
+          "symWidth": 59.2625,
+          "text": "你 …… 你 是 长生 顾家 的 少 主 ?",
+          "translation": "Y-You are the young master of the Changsheng Gu family?",
+          "width": 292,
+          "x": 593,
+          "y": 525
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "078.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 58.16666666666666,
+          "symWidth": 56.33333333333334,
+          "text": "师尊 里面 请 。",
+          "translation": "Please, Master, come inside.",
+          "width": 318,
+          "x": 437,
+          "y": 97
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "079.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 55.4375,
+          "symWidth": 58.65625,
+          "text": "若是 其他 家族 倒 也 不甚 稀奇 , 但 长生 顾家 …… 在 仙 古时 期 就 十分 神秘 了 ,",
+          "translation": "If it were another clan, it wouldn’t be unusual, but the Changsheng Gu family... Even in ancient times, they were shrouded in mystery.",
+          "width": 462,
+          "x": 76,
+          "y": 657
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "080.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "renderMode": "mask_only",
+          "symHeight": 55.9375,
+          "symWidth": 57.5625,
+          "text": "顾家 …… 在 仙 古时 期 就 十分 神秘 了 ,",
+          "translation": "",
+          "width": 463,
+          "x": 75,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 54,
+          "symWidth": 58.38095238095238,
+          "text": "据说 当年 , 可是 连 仙 王 都 不敢 轻 易 得罪 的 存在 。",
+          "translation": "It is said that in those days, even the Immortal Kings dared not offend them lightly.",
+          "width": 410,
+          "x": 361,
+          "y": 155
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "renderMode": "mask_only",
+          "symHeight": 59.08333333333334,
+          "symWidth": 51.08333333333334,
+          "text": "不过 如今 上 界 无 仙 ,  Com",
+          "translation": "",
+          "width": 594,
+          "x": 475,
+          "y": 786
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "081.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 57.375,
+          "symWidth": 54.27083333333334,
+          "text": "不过 如今 上 界 无 仙 , Com 就算 这 顾家龙 潭 虎 穴 , 以 我 的 实力 , 他们 又 能耐 我 何 ?",
+          "translation": "But now, with no immortals in the Upper Realm, even if this Gu family is a den of dragons and tigers, with my strength, what can they do to me?",
+          "width": 467,
+          "x": 472,
+          "y": 20
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "082.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "083.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 251,
+          "symHeight": 51.28571428571428,
+          "symWidth": 48.46428571428572,
+          "text": "且 让 我 瞧瞧 , 这 如今 的 顾家 与 昔 日 相比 , 差 了 多 ✓ ......",
+          "translation": "Let me see how the Gu family now compares to the past—it’s quite a decline...",
+          "width": 410,
+          "x": 141,
+          "y": 308
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "084.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "085.webp": {
+      "blocks": [],
+      "imgHeight": 253,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "086.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 54.44444444444445,
+          "symWidth": 56.59722222222222,
+          "text": "我 与 师尊 相遇 匆忙 , 一 时间 忘 了 介绍 自 己 , 师尊 勿怪 ………",
+          "translation": "Our meeting was abrupt, and I forgot to introduce myself. Please forgive me, Master...",
+          "width": 479,
+          "x": 201,
+          "y": 168
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "087.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "088.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 328,
+          "symHeight": 53.8,
+          "symWidth": 58.75,
+          "text": "无妨 无妨 , 说 起来 仙 古 时期 的 顾家 可 是 威慑 四方 , 如今 怎么 守门 只 派 了 两 名 至尊 呢 ?",
+          "translation": "No worries, no worries. Speaking of which, the Gu family in ancient times was feared across all lands. How come only two Supremes are guarding the gate now?",
+          "width": 468,
+          "x": 498,
+          "y": 132
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 45.25,
+          "symWidth": 42.78888888888889,
+          "text": "门卫 而已, 我们 嬉皮 漫画 顾家 一向 低调 ………",
+          "translation": "Just gatekeepers. Our Gu family has always kept a low profile...",
+          "width": 475,
+          "x": 18,
+          "y": 757
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "089.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "renderMode": "mask_only",
+          "symHeight": 53,
+          "symWidth": 55.77777777777778,
+          "text": "顾家 一向 低调 ………",
+          "translation": "",
+          "width": 461,
+          "x": 87,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "090.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 255,
+          "symHeight": 52.92857142857143,
+          "symWidth": 59.04464285714285,
+          "text": "是 低调 …… 还是 顾家 之前 遭 过 大 变 ? 导致 高端 力 量 不足 ?",
+          "translation": "Is it low-profile... or did the Gu family suffer a great crisis before?\nIs that why their high-level power is lacking?",
+          "width": 411,
+          "x": 505,
+          "y": 230
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "091.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "092.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 52,
+          "symWidth": 56.83333333333333,
+          "text": "师尊 此言 何 意 ?",
+          "translation": "Master, what do you mean by this?",
+          "width": 236,
+          "x": 481,
+          "y": 181
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "093.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "094.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 45.33333333333334,
+          "symWidth": 49.17559523809524,
+          "text": "来 都 来 了 , 你 带 我 去 见见 你 顾家 的 几位 老祖宗 吧 , 说不定 还 认识 呢 。",
+          "translation": "Since we're here, take me to meet a few of your Gu family's ancestors. Maybe I even know them.",
+          "width": 371,
+          "x": 70,
+          "y": 413
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "renderMode": "mask_only",
+          "symHeight": 47,
+          "symWidth": 51.85714285714285,
+          "text": "我 顾家 有 几十 位",
+          "translation": "",
+          "width": 347,
+          "x": 616,
+          "y": 786
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "095.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 46.35714285714286,
+          "symWidth": 50.5,
+          "text": "我 顾家 有 几十 位 老祖 , 不知 师尊 想见 哪 几位 呢 ?",
+          "translation": "My Gu family has dozens of ancestors. Which ones does Master wish to see?",
+          "width": 346,
+          "x": 614,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 54.30357142857142,
+          "symWidth": 57.77976190476191,
+          "text": "呵呵 , 残 仙 以下 只能 算 长老 , 你 小子 身为 少 主 ……",
+          "translation": "Heh, as for the Remnant Immortal, you’re only an elder at best. But you, young man, as the Young Master...",
+          "width": 464,
+          "x": 72,
+          "y": 365
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "096.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 30,
+          "symWidth": 16.53846153846154,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comic",
+          "width": 259,
+          "x": 15,
+          "y": 796
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 51,
+          "symWidth": 61.66666666666666,
+          "text": "以为 长生 家族",
+          "translation": "Believing in the Changsheng Clan",
+          "width": 347,
+          "x": 589,
+          "y": 813
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "097.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 44.5,
+          "symWidth": 54.44444444444445,
+          "text": "的 老祖 是 大白 菜 … ....",
+          "translation": "The ancestor is just a big cabbage...",
+          "width": 345,
+          "x": 588,
+          "y": 39
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "098.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 45,
+          "symWidth": 31,
+          "text": "! ?",
+          "translation": "!?",
+          "width": 90,
+          "x": 598,
+          "y": 322
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "099.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "100.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "101.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "102.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "103.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "104.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 17,
+          "text": "嬉皮 漫画 hipmh.dom",
+          "translation": "",
+          "width": 259,
+          "x": 804,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "105.webp": {
+      "blocks": [],
+      "imgHeight": 759,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "106.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 50.3,
+          "symWidth": 53.96666666666667,
+          "text": "师尊 ? 你 怎么 了 ?",
+          "translation": "Master? What's wrong?",
+          "width": 261,
+          "x": 524,
+          "y": 173
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "107.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22.66666666666667,
+          "symWidth": 17.33333333333333,
+          "text": "הקת",
+          "translation": "",
+          "width": 59,
+          "x": 199,
+          "y": 820
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21.5,
+          "symWidth": 58.5,
+          "text": "好学",
+          "translation": "Diligent learner",
+          "width": 173,
+          "x": 315,
+          "y": 821
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "108.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 233,
+          "symHeight": 41.825,
+          "symWidth": 55.175,
+          "text": "啊 , 好 徒弟 , 乃师 觉得 你 说 的 很有 道 理 , 做人 就是 要 低 调 一点 。",
+          "translation": "Ah, good disciple, your master thinks you have a point.\nOne must always stay humble.",
+          "width": 474,
+          "x": 188,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 53.25,
+          "symWidth": 58.36111111111111,
+          "text": "你 的 老祖 们 为了 抗衡 天道 的 压制 , 都 很忙 。 有 几位 长老 接待 老夫 就 已经 很不 错啦 。",
+          "translation": "Your ancestors are all busy resisting the Heaven's suppression.\nOnly a few elders have received me already, which is quite generous.",
+          "width": 545,
+          "x": 430,
+          "y": 331
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "109.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 54.26190476190476,
+          "symWidth": 58.03174603174604,
+          "text": "轮回 古 天尊 大驾 光临 , 有失 远 迎 了 。",
+          "translation": "The Ancient Sovereign of Reincarnation graces us with their presence.\nI regret the poor welcome.",
+          "width": 409,
+          "x": 127,
+          "y": 25
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "110.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 53.85714285714285,
+          "symWidth": 57,
+          "text": "哪里 哪里 , 顾家",
+          "translation": "Not at all, Gu family...",
+          "width": 410,
+          "x": 484,
+          "y": 534
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "111.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 45.5,
+          "symWidth": 43.96666666666667,
+          "text": "我 爹 , 顾家 家 主 。",
+          "translation": "My father, head of the Gu family.",
+          "width": 251,
+          "x": 149,
+          "y": 55
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "112.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.19047619047618,
+          "symWidth": 58.19047619047618,
+          "text": "顾家 家 主 与 诸位 长老 如此 客气 , 老夫 不敢 当 啊 。",
+          "translation": "The Gu family head is too polite to all the elders; I dare not accept such honor.",
+          "width": 411,
+          "x": 413,
+          "y": 214
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 43.35833333333333,
+          "symWidth": 32.525,
+          "text": "这边 请 。 嬉皮 漫画.",
+          "translation": "Please this way.",
+          "width": 332,
+          "x": 17,
+          "y": 750
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "113.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "114.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 51.25,
+          "symWidth": 48,
+          "text": "劳烦 了 。",
+          "translation": "Thank you for the trouble.",
+          "width": 199,
+          "x": 354,
+          "y": 218
+        },
+        {
+          "angle": 0,
+          "height": 259,
+          "symHeight": 53.58653846153846,
+          "symWidth": 57.67788461538461,
+          "text": "这 轮回 古 天尊 倒是 颇有 礼数 , 一点 都不 倨傲 呢 。",
+          "translation": "This Ancient Celestial of the Cycle is indeed very courteous, not arrogant at all.",
+          "width": 367,
+          "x": 233,
+          "y": 547
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "115.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "116.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 51.93333333333334,
+          "symWidth": 58.25555555555555,
+          "text": "在 我们 顾家 , 又有 谁能 倨 傲 的 了 呢 ?",
+          "translation": "In our Gu family, who could ever afford to be arrogant?",
+          "width": 313,
+          "x": 158,
+          "y": 114
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 47,
+          "symWidth": 50.71428571428572,
+          "text": "那 确实 …………",
+          "translation": "That's certainly true...",
+          "width": 249,
+          "x": 760,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 53.1,
+          "symWidth": 56.30714285714286,
+          "text": "长 歌 , 这段 时间 外界 传出 的 诸多 谣言 , 你 都 知晓 了 吗 ?",
+          "translation": "Chang Ge, are you aware of all the rumors spreading outside recently?",
+          "width": 408,
+          "x": 310,
+          "y": 705
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "117.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "renderMode": "mask_only",
+          "symHeight": 52.7,
+          "symWidth": 53.9,
+          "text": "谣言 , 你 都 知晓 了 吗 ?",
+          "translation": "",
+          "width": 404,
+          "x": 317,
+          "y": 0
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "118.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 43.83333333333334,
+          "text": "高  快 看 漫画 釀",
+          "translation": "Hurry and read the comic.",
+          "width": 272,
+          "x": 807,
+          "y": 360
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 52.8,
+          "symWidth": 53.4,
+          "text": "略有 耳闻 。",
+          "translation": "I've heard whispers.",
+          "width": 256,
+          "x": 102,
+          "y": 500
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 53.25,
+          "symWidth": 57.25,
+          "text": "你 放心 , 只要 明眼人 都 能看明白 他们 的 目 的 , 我们 好 几个 老祖 都 出 关 了 , 就是 为了",
+          "translation": "Rest assured, any clear-eyed person can see their intent. Several of our elders have stepped out of seclusion just for this.",
+          "width": 523,
+          "x": 453,
+          "y": 680
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "119.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.66666666666666,
+          "symWidth": 58.5462962962963,
+          "text": "给 你 撑腰 , 若是 真 敢 欺负 到 我 长生 顾家 的 头上 来 …",
+          "translation": "We're backing you up. If anyone dares to bully the Changsheng Gu family...",
+          "width": 525,
+          "x": 451,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "renderMode": "mask_only",
+          "symHeight": 53.5,
+          "symWidth": 55.53472222222222,
+          "text": "多谢 族 老 们 的 关心 , 事 是 我 自己 惹 的 ,",
+          "translation": "",
+          "width": 482,
+          "x": 181,
+          "y": 682
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "120.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 53.5,
+          "symWidth": 53.82986111111111,
+          "text": "多谢 族 老 们 的 关心 , 事 是 我 自己 惹 的 , 长 歌 有义务 自行 解 决 , 绝不 让 家族 受 累 。",
+          "translation": "Thank you, elders, for your concern. This matter is of my own making. Chang Ge is responsible for resolving it alone and will never burden the clan.",
+          "width": 468,
+          "x": 178,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 28.46666666666667,
+          "symWidth": 15.2,
+          "text": "三 嬉 波 漫画.",
+          "translation": "",
+          "width": 281,
+          "x": 0,
+          "y": 795
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "121.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 53.33333333333334,
+          "symWidth": 56.71428571428572,
+          "text": "什么 话 ! 你 的 事 就是 家族 的 事 , 又 怎能 分 彼此 ?",
+          "translation": "Nonsense! Your affairs are the clan's affairs. How can they be separated?",
+          "width": 407,
+          "x": 540,
+          "y": 366
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "122.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 52,
+          "symWidth": 53.6,
+          "text": "此事 , 长 歌 已有 对策 。",
+          "translation": "Chang Ge already has a plan for this matter.",
+          "width": 294,
+          "x": 159,
+          "y": 106
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "123.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "124.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 54.34375,
+          "symWidth": 56.60714285714285,
+          "text": "既然 他 自己 说 了 , 就让 他 自己 整 去 吧 , 这 小子 打 小 就 鬼主意 多 。",
+          "translation": "Since he admitted it himself, let him handle it. That kid’s been sly since childhood.",
+          "width": 429,
+          "x": 531,
+          "y": 9
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "125.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 53.33333333333334,
+          "symWidth": 56.33333333333334,
+          "text": "我们 这些 老 家伙 , 后方 压阵 就好 ~",
+          "translation": "Us old timers will hold the rear lines.",
+          "width": 295,
+          "x": 281,
+          "y": 403
+        }
+      ],
+      "imgHeight": 759,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "126.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "127.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "128.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 28.61538461538462,
+          "symWidth": 16.76923076923077,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comics",
+          "width": 259,
+          "x": 805,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "129.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 53.53703703703704,
+          "symWidth": 53.91666666666666,
+          "text": "这 起源 祖 井 的 黑雾 , 连 成 道 者 也 避 如 蛇 蝎 ⋅",
+          "translation": "The black mist from the Origin Ancestor's Well is so vile even Daoists avoid it like venom.",
+          "width": 485,
+          "x": 392,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 258,
+          "symHeight": 53,
+          "symWidth": 59.32142857142857,
+          "text": "一般 的 古 界 下界 别说 是 用来 设 局 了 , 连 承受 它 的 力量 都 远远 不行 …………",
+          "translation": "In the ancient lower realms, it’s not just about setting traps—no one can withstand its power.",
+          "width": 517,
+          "x": 136,
+          "y": 572
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "130.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 52.5,
+          "symWidth": 58.25833333333334,
+          "text": "此事 急 不得 , 还得 从 轮回 古 天尊 身上 想 办法 。",
+          "translation": "This matter cannot be rushed; we must seek a solution from the Ancient Sovereign of Reincarnation.",
+          "width": 312,
+          "x": 556,
+          "y": 305
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "131.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "132.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 55,
+          "symWidth": 61.3095238095238,
+          "text": "他 这 几天 应该 已经 在 参悟 起源 祖 碎 片中 的 奥义 了 。",
+          "translation": "He should be deeply studying the secrets within the Origin Ancestor’s fragments by now.",
+          "width": 471,
+          "x": 389,
+          "y": 316
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "133.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 54.08035714285714,
+          "symWidth": 54.66964285714286,
+          "text": "既然 我 的 师尊 , 要 出手 救世 ………",
+          "translation": "Since my master has decided to intervene and save the world...",
+          "width": 388,
+          "x": 183,
+          "y": 188
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "134.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "135.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 55,
+          "symWidth": 56.07589285714286,
+          "text": "那 我 这 当 徒弟 的 , 就 先去 帮 他 搞 一 搞 排场 , 顺便 洗 洗 黑锅 。",
+          "translation": "Then as his disciple, I'll handle the spectacle and clear his name while I’m at it.",
+          "width": 424,
+          "x": 275,
+          "y": 266
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "136.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 23,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "No reproduction without permission. Legal action will be taken if violated.",
+          "width": 642,
+          "x": 390,
+          "y": 58
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30,
+          "symWidth": 17.30769230769231,
+          "text": "嬉皮 漫画",
+          "translation": "Hippie Comics",
+          "width": 259,
+          "x": 805,
+          "y": 796
+        }
+      ],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "137.webp": {
+      "blocks": [],
+      "imgHeight": 563,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "138.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "139.webp": {
+      "blocks": [],
+      "imgHeight": 844,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "140.webp": {
+      "blocks": [],
+      "imgHeight": 253,
+      "imgWidth": 1080,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

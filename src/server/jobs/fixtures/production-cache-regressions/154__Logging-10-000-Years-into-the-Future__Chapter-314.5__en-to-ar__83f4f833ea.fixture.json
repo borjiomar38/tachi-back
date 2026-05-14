@@ -1,0 +1,56 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0154",
+  "jobId": "fixture-job-0154",
+  "licenseId": "fixture-license-0154",
+  "pageCount": 1,
+  "pageOrder": ["001.webp"],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 45,
+          "symWidth": 19.83333333333333,
+          "text": "UPDATE  NOTICE",
+          "translation": "إشعار تحديث",
+          "width": 252,
+          "x": 221,
+          "y": 44
+        },
+        {
+          "angle": 0,
+          "height": 438,
+          "symHeight": 35.14285714285715,
+          "symWidth": 18.63756957328386,
+          "text": "DEAR  ESTEEMED  READERS , WEEKEND  UPDATES  WILL  BE TEMPORARILY  PAUSED .  HOWEVER , UPDATES  DURING  THE  MAY  DAY HOLIDAY  WILL  PROCEED  AS  USUAL . THANK  YOU  FOR  YOUR  UNDERSTANDING AND  CONTINUED  SUPPORT !",
+          "translation": "أعزاءنا القراء الكرام، سيتم توقيف التحديثات الأسبوعية مؤقتًا. ومع ذلك، ستستمر التحديثات خلال عطلة عيد العمال في مايو كالمعتاد. شكرًا لتفهمكم ودعمكم المستمر!",
+          "width": 541,
+          "x": 77,
+          "y": 187
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 29.8,
+          "text": "SORRY",
+          "translation": "نعتذر",
+          "width": 146,
+          "x": 282,
+          "y": 750
+        }
+      ],
+      "imgHeight": 1104,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

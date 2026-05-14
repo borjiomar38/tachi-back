@@ -1,0 +1,1222 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0002",
+  "jobId": "fixture-job-0002",
+  "licenseId": "fixture-license-0002",
+  "pageCount": 41,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "67d1cff9088e03936eabb05feb4ab4c73aa857a31289fe6868b470eeb5d6caa6",
+      "fileName": "001.jpg",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "133a31dd7a24388f432015f5f6d010afd28b2021adc4eadd83a986385207c6d6",
+      "fileName": "002.webp",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "cc92b75ad812cb5c20c39c31ac15e318ada99502cffafdba8bd2e76f8df53fba",
+      "fileName": "003.webp",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "24907d58aac3cfab7acbefbe741c785564ec2dc376c247e440c14257b2501bd9",
+      "fileName": "004.webp",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "fee038a3d0b03f98fbb1dd8d79027ecec498b5a8fd5591b3bd81fd89031ed45f",
+      "fileName": "005.webp",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "3125fe702f1f3cb1c821d81d38a67e94a55eb2ec0d55ebe599bf25321be6ef35",
+      "fileName": "006.webp",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "3a22d82b727c98a20782ac0ab6faae6f89da388d1e1ed68808b72ad7200c66ce",
+      "fileName": "007.webp",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "e8ce91cd00b0f4dad17d31fee7ff17d57b6f6236c2a64c2ffceb6282f5604374",
+      "fileName": "008.webp",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "5e3294054f48e9d82721ddfa184bd670bb5d39119ba1b2bce5a9dec8c0a0d819",
+      "fileName": "009.webp",
+      "pageNumber": 9
+    },
+    {
+      "checksumSha256": "49c06750d78bd6f286c51d312fb9eaf293506e8d5e617ce58ee8f24844baa073",
+      "fileName": "010.webp",
+      "pageNumber": 10
+    },
+    {
+      "checksumSha256": "cb9cd0be3523ef93795f04e50e76ff47e75f8d7f07a547f794aed5c9cf5bc51e",
+      "fileName": "011.webp",
+      "pageNumber": 11
+    },
+    {
+      "checksumSha256": "fe0aca9d93650968e4fc9b8c23144dd047259b371d0bf8dbf6673274024f735e",
+      "fileName": "012.webp",
+      "pageNumber": 12
+    },
+    {
+      "checksumSha256": "d22875200403a44a8a33f9e15fba4434c9621e5a628185a4534abdd8b149e953",
+      "fileName": "013.webp",
+      "pageNumber": 13
+    },
+    {
+      "checksumSha256": "e10a8d9ded434be8ba0318afd5bfc95888062e09dd55bf694159673c05fcfdbf",
+      "fileName": "014.webp",
+      "pageNumber": 14
+    },
+    {
+      "checksumSha256": "de72957a7fba4a1959b06d2d6bbd025e494b41c854ceeb4150e845a9d8c9c1b0",
+      "fileName": "015.webp",
+      "pageNumber": 15
+    },
+    {
+      "checksumSha256": "df1c150add24cbe488d8b1c0b59ae84ccef57ccd980f1078e8816dd8d893b185",
+      "fileName": "016.webp",
+      "pageNumber": 16
+    },
+    {
+      "checksumSha256": "e1a238aa1c6120b0eb666de58be66edf3c4e49fc6f4219fd6d57ee1d38681823",
+      "fileName": "017.webp",
+      "pageNumber": 17
+    },
+    {
+      "checksumSha256": "e025f6cb2f9fa1dbfb7e49b8adc2786a1d3fb0f1b5610584994aa94f6ee186ef",
+      "fileName": "018.webp",
+      "pageNumber": 18
+    },
+    {
+      "checksumSha256": "0768d50a3c198114b81aa6d029d54fbc94a335f3c9a17e0e4554bb139be73982",
+      "fileName": "019.webp",
+      "pageNumber": 19
+    },
+    {
+      "checksumSha256": "426bfe5c523a72246e10a2cec53e21f94affa68883cbaedeaa834ccf3d0ee2db",
+      "fileName": "020.webp",
+      "pageNumber": 20
+    },
+    {
+      "checksumSha256": "785cb79ad51434aee322575dfd880c59353c7dc2031bfe63083cbcf345b3a21c",
+      "fileName": "021.webp",
+      "pageNumber": 21
+    },
+    {
+      "checksumSha256": "778beda96ed0e67441e8e7f5b793831835d7d0579d8838bd99e4e2de398e2ba7",
+      "fileName": "022.webp",
+      "pageNumber": 22
+    },
+    {
+      "checksumSha256": "6de35945411e76e935fded576a3dd1141bdedae423c48e859767e9ef0a642aba",
+      "fileName": "023.webp",
+      "pageNumber": 23
+    },
+    {
+      "checksumSha256": "a15565eede68f6c0ca75972be7b5051cae60095086f2af55785147255630c026",
+      "fileName": "024.webp",
+      "pageNumber": 24
+    },
+    {
+      "checksumSha256": "65b1ca759183adacf7544b370941dbedb52600892d55176d53490ea6bd395b70",
+      "fileName": "025.webp",
+      "pageNumber": 25
+    },
+    {
+      "checksumSha256": "bcf99920f5571817ee527d9b7eec04f65592dd2e3a4dfa050b411d078ba4892e",
+      "fileName": "026.webp",
+      "pageNumber": 26
+    },
+    {
+      "checksumSha256": "c31438aed6b672bb55aae9297898f4bd24a4125ef7c7c561839764e069243998",
+      "fileName": "027.webp",
+      "pageNumber": 27
+    },
+    {
+      "checksumSha256": "5d1883ffba8dae8ed9e8cfd5f42448322f428acd0dab09e5166838db3a8df0bd",
+      "fileName": "028.webp",
+      "pageNumber": 28
+    },
+    {
+      "checksumSha256": "617a36341f4ba847d9129181ce1a4ccf9cdf1387a55d79782dcba0ef247fee11",
+      "fileName": "029.webp",
+      "pageNumber": 29
+    },
+    {
+      "checksumSha256": "45840a6dede826933e86cc2eec37bc9d3f60d0fee7a041de200211ec200ca143",
+      "fileName": "030.webp",
+      "pageNumber": 30
+    },
+    {
+      "checksumSha256": "4d585e6ba74c26e59bdea5145d698c7759c28a81b9d384bedfefa7a17aa78e0f",
+      "fileName": "031.webp",
+      "pageNumber": 31
+    },
+    {
+      "checksumSha256": "7e4538422f9aff6160189ec02de53db15b23f0385ab66cdf917cc90c27f62540",
+      "fileName": "032.webp",
+      "pageNumber": 32
+    },
+    {
+      "checksumSha256": "8cdb485c00ebe3db207c3cc04ef470e29bd74b2fee72d422c2cab618df584d3b",
+      "fileName": "033.webp",
+      "pageNumber": 33
+    },
+    {
+      "checksumSha256": "e72571ce1881d9475a6dc401643351f9e000adbdabab787283b92c3bc4cd9944",
+      "fileName": "034.webp",
+      "pageNumber": 34
+    },
+    {
+      "checksumSha256": "67f81d03c6ad40ac5ea2cbd740a0c275dbc0736c98ef872a2306f74fe053f9d8",
+      "fileName": "035.webp",
+      "pageNumber": 35
+    },
+    {
+      "checksumSha256": "9dd2d472c9de42792beed34b010730083aeb3ec0977541651a4a1fdc5f41a8c7",
+      "fileName": "036.webp",
+      "pageNumber": 36
+    },
+    {
+      "checksumSha256": "cadda3f58f369425f04e9d89d5f378b5414ac67b4cf2032e863246674841b483",
+      "fileName": "037.webp",
+      "pageNumber": 37
+    },
+    {
+      "checksumSha256": "732aa382bed17af5dfdd4b3f3d0159e3407435314ecb755342e854b09cf4c977",
+      "fileName": "038.webp",
+      "pageNumber": 38
+    },
+    {
+      "checksumSha256": "91fb1518917445480010ae9735068e7cc316efb8926fe34fab9b18e456beb02a",
+      "fileName": "039.webp",
+      "pageNumber": 39
+    },
+    {
+      "checksumSha256": "d8901f283c18cd0bf7ef50bab70be1b1869eeadceb093798e7072a7118b298dd",
+      "fileName": "040.webp",
+      "pageNumber": 40
+    },
+    {
+      "checksumSha256": "1d9dc92e7fccfd7fc891ed616bb67ff3ee94df265f05d2bc5900a3c09d532b32",
+      "fileName": "041.jpg",
+      "pageNumber": 41
+    }
+  ],
+  "pageOrder": [
+    "001.jpg",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp",
+    "029.webp",
+    "030.webp",
+    "031.webp",
+    "032.webp",
+    "033.webp",
+    "034.webp",
+    "035.webp",
+    "036.webp",
+    "037.webp",
+    "038.webp",
+    "039.webp",
+    "040.webp",
+    "041.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 95,
+          "symWidth": 76.11538461538461,
+          "text": "READ FISRT AT",
+          "translation": "اقرأ أولاً في",
+          "width": 2210,
+          "x": 192,
+          "y": 1080
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 61.25,
+          "symWidth": 57.75,
+          "text": "FAST",
+          "translation": "بسرعة",
+          "width": 249,
+          "x": 379,
+          "y": 1231
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 64,
+          "symWidth": 63.84615384615385,
+          "text": "NO  ANNOYING  ADS",
+          "translation": "لا إعلانات مزعجة",
+          "width": 1038,
+          "x": 1175,
+          "y": 1233
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 59,
+          "symWidth": 60.5,
+          "text": "EASY",
+          "translation": "بسهولة",
+          "width": 261,
+          "x": 771,
+          "y": 1234
+        }
+      ],
+      "imgHeight": 1435,
+      "imgWidth": 2560,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 62,
+          "symWidth": 60.26086956521739,
+          "text": "FAST  -  EASY  -  NO  ANNOYING  ADS",
+          "translation": "سريع - سهل - بلا إعلانات مزعجة",
+          "width": 1834,
+          "x": 379,
+          "y": 1233
+        }
+      ],
+      "imgHeight": 1435,
+      "imgWidth": 2560,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 20.92307692307692,
+          "text": "tapas  original",
+          "translation": "خاص بتاباس",
+          "width": 259,
+          "x": 349,
+          "y": 413
+        },
+        {
+          "angle": 0,
+          "height": 518,
+          "symHeight": 89.01785714285715,
+          "symWidth": 70.33391330891331,
+          "text": "I  MADE ADEM COURT  THE  DEVIL WITH Story :  KazzenLX Art :  Giselart",
+          "translation": "حكيتُ أدم يسير أمام الشيطان\nقصة: كازين إل إكس\nرسم: جيسيل آرت",
+          "width": 772,
+          "x": 85,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 37,
+          "symWidth": 39.66666666666666,
+          "text": "TEASER",
+          "translation": "مقدمة",
+          "width": 195,
+          "x": 364,
+          "y": 1086
+        }
+      ],
+      "imgHeight": 1754,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 85.6,
+          "symWidth": 66.8,
+          "text": "dizzy",
+          "translation": "دوار",
+          "width": 228,
+          "x": 69,
+          "y": 806
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 216,
+          "symHeight": 26.22857142857143,
+          "symWidth": 22.31015873015873,
+          "text": "AND  YET YOU  DARE  TO COME  HERE ? ARE  YOU  THINKING TO  COME  SEEK",
+          "translation": "ومع ذلك، هل تجرؤ على القدوم إلى هنا؟ هل تعتقد أنّك ستجد",
+          "width": 317,
+          "x": 584,
+          "y": 1474
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 25,
+          "symWidth": 20.58823529411765,
+          "text": "SHELTER  IN MY  PLACE ?",
+          "translation": "ملاذاً في مكاني؟",
+          "width": 195,
+          "x": 644,
+          "y": 1713
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "renderMode": "mask_only",
+          "symHeight": 27.73809523809524,
+          "symWidth": 22.14880952380953,
+          "text": "LISTEN ,  I  AM ONLY  ENGAGED TO  YOU  BECAUSE",
+          "translation": "",
+          "width": 300,
+          "x": 569,
+          "y": 1674
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 27.14110644257703,
+          "symWidth": 21.37692577030812,
+          "text": "LISTEN , I AM ONLY ENGAGED TO YOU BECAUSE WE THOUGHT YOU'RE THE YOUNG'S LEGITIMATE FAMILY .",
+          "translation": "اسمع، لقد كنت مخطوبًا لك فقط لأننا ظننا أنك العائلة الشرعية ليونغ.",
+          "width": 228,
+          "x": 606,
+          "y": 26
+        }
+      ],
+      "imgHeight": 1787,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 362,
+          "symHeight": 26.90416666666666,
+          "symWidth": 21.0101282051282,
+          "text": "OUR  SHITTY ENGAGEMENT IS  ALREADY  OVER SO  DON'T  YOU  EVER SHOW  THAT  UGLY FACE  OF  YOURS IN  FRONT  OF  ME AGAIN ,",
+          "translation": "لقد انتهى خطبُنا البائس فلا تتجرأ أبداً على إظهار ذلك الوجه القبيح أمامي مجدداً.",
+          "width": 334,
+          "x": 151,
+          "y": 501
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 25.84375,
+          "symWidth": 20.59375,
+          "text": "I'VE  BEEN SICK  OF  IT FOR  MANY YEARS  NOW !",
+          "translation": "لقد مللتُ ذلك منذ سنوات طوال!",
+          "width": 219,
+          "x": 408,
+          "y": 832
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 55.16666666666666,
+          "symWidth": 46.16666666666666,
+          "text": "CLENCH",
+          "translation": "يشدّ قبضته",
+          "width": 189,
+          "x": 558,
+          "y": 1383
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 27.34757834757835,
+          "symWidth": 24.46652421652422,
+          "text": "WHY ? WHY  DID  YOU DO  THIS ? WHY  MUST  YOU BETRAY  ME ?",
+          "translation": "لماذا؟ لماذا فعلت هذا؟ لماذا يجب عليك خيانتي؟",
+          "width": 254,
+          "x": 124,
+          "y": 549
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 245,
+          "symHeight": 27.30941358024691,
+          "symWidth": 24.70833333333333,
+          "text": "BECAUSE YOU  ARE  NOT MY LEGITIMATE GRAND- DALIGHTER !!",
+          "translation": "لأنك لست الحفيدة الشرعية لي!",
+          "width": 232,
+          "x": 552,
+          "y": 980
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 27.39,
+          "symWidth": 20.865,
+          "text": "YOU CAN'T BE SO DISRESPECTFUL AND BARGE IN INTO A MEETING ROOM LIKE THAT .",
+          "translation": "لا يحق لك أن تكون بهذا الغرور وتقتحم غرفة الاجتماعات بهذه الطريقة.",
+          "width": 335,
+          "x": 505,
+          "y": 1699
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "renderMode": "mask_only",
+          "symHeight": 27.48,
+          "symWidth": 20.48,
+          "text": "INTO  A  MEETING ROOM  LIKE  THAT .",
+          "translation": "",
+          "width": 288,
+          "x": 528,
+          "y": 50
+        }
+      ],
+      "imgHeight": 1787,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 373,
+          "symHeight": 27.90385731353473,
+          "symWidth": 22.53708824031404,
+          "text": "HOW  COULD YOU  CAST  ME  AWAY SO  EASILY  LIKE  THIS ? DIDN'T  I  DO  EVERYTHING A  GOOD  GRANDDAUGHTER SHOULD  HAVE  DONE DESPITE  ALL  THE  COLD TREATMENT  YOU'VE SHOWN  ME ? '",
+          "translation": "كيف رميت بي جانباً بهذه السهولة؟ ألم أفعل كل ما يتوجب على الحفيدة الصالحة أن تفعله رغم ما واجهته من برودك تجاهي؟",
+          "width": 432,
+          "x": 113,
+          "y": 803
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 83,
+          "symWidth": 67.25,
+          "text": "gulp",
+          "translation": "بلع",
+          "width": 154,
+          "x": 364,
+          "y": 1410
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 78.75,
+          "symWidth": 59.75,
+          "text": "gulp",
+          "translation": "ابتلع ريقه",
+          "width": 149,
+          "x": 261,
+          "y": 58
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 22.125,
+          "symWidth": 17.08978174603175,
+          "text": "THAT'S  RIGHT , YOU'RE  NOT ACTUALLY A  YOUNG .",
+          "translation": "صحيح، أنت لست شابًا بالفعل.",
+          "width": 199,
+          "x": 191,
+          "y": 952
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 23.66666666666667,
+          "symWidth": 19.70846560846561,
+          "text": "THEY  NEVER EVEN  CONSIDERED YOU  AS  THEIR",
+          "translation": "لم يعتبروك يومًا جزءًا من عائلتهم",
+          "width": 288,
+          "x": 268,
+          "y": 1250
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 16.54545454545455,
+          "text": "REAL  FAMILY .",
+          "translation": "الحقيقية.",
+          "width": 206,
+          "x": 308,
+          "y": 1380
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 22.90625,
+          "symWidth": 19.97916666666666,
+          "text": "YOU  WERE JUST  A  PAWN TO  THEM  ALL",
+          "translation": "كنت مجرد بيدقٍ لديهم جميعًا",
+          "width": 204,
+          "x": 663,
+          "y": 729
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 23.16666666666667,
+          "symWidth": 17.33333333333333,
+          "text": "ALONG .",
+          "translation": "طوال الوقت.",
+          "width": 114,
+          "x": 708,
+          "y": 858
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 24,
+          "symWidth": 19.12222222222222,
+          "text": "KEEP  THAT IN  MIND  FROM NOW  ON .",
+          "translation": "اجعل ذلك نصب عينيك من الآن فصاعدًا.",
+          "width": 212,
+          "x": 591,
+          "y": 1147
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 287,
+          "symHeight": 28.19119047619048,
+          "symWidth": 22.36387362637363,
+          "text": "MAKE  THEM ALL  PAY  FOR  CASTING YOU  AWAY ,  FOR  TREATING YOU  LIKE  SOME  SLAVE THEY  COULD  EASILY CAST  AWAY  WHENEVER THEY  WANTED ...",
+          "translation": "اجعلهم جميعًا يدفعون ثمن طردك، لاعتبارك عبدًا يمكن التخلص منه بسهولة متى شاؤوا...",
+          "width": 445,
+          "x": 274,
+          "y": 1447
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 26,
+          "symWidth": 21.95833333333333,
+          "text": "ONCE  THEY ARE  DONE  USING YOU !",
+          "translation": "حالما ينتهوا من استغلالك!",
+          "width": 292,
+          "x": 477,
+          "y": 39
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 30.64705882352941,
+          "symWidth": 24.05882352941176,
+          "text": "MAKE  THEM REGRET ...",
+          "translation": "اجعلهم يندمون...",
+          "width": 209,
+          "x": 280,
+          "y": 1378
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 43.5,
+          "symWidth": 34.77142857142857,
+          "text": "ALL  OF THEM ...",
+          "translation": "جميعهم...",
+          "width": 190,
+          "x": 321,
+          "y": 582
+        }
+      ],
+      "imgHeight": 1787,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 24.4624183006536,
+          "symWidth": 20.01960784313725,
+          "text": "AND  HOW ARE  YOU  GOING TO  MAKE  THEM REGRET  WHAT THEY DID TO  YOU ?",
+          "translation": "وكيف ستجعلهم يندمون على ما فعلوه بك؟",
+          "width": 243,
+          "x": 367,
+          "y": 774
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 24.16666666666667,
+          "symWidth": 21.4489417989418,
+          "text": "DO  YOU HAVE  ENOUGH MONEY  AND POWER  TO BRING  THEM ALL  DOWN ?",
+          "translation": "هل تملك المال والسلطة الكافيين لتسقطهم جميعًا؟",
+          "width": 220,
+          "x": 562,
+          "y": 1145
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 53,
+          "symWidth": 41.75,
+          "text": "FRON",
+          "translation": "من",
+          "width": 72,
+          "x": 622,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 48.66666666666666,
+          "symWidth": 40.33333333333334,
+          "text": "CLENCH",
+          "translation": "اشدّ قبضة يدك",
+          "width": 148,
+          "x": 549,
+          "y": 1636
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.webp": {
+      "blocks": [],
+      "imgHeight": 1787,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 87.5,
+          "symWidth": 72.75,
+          "text": "PULL",
+          "translation": "اسحب",
+          "width": 205,
+          "x": 716,
+          "y": 858
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 203,
+          "symHeight": 27.22608695652174,
+          "symWidth": 22.58224637681159,
+          "text": "I  DON'T HAVE  ENOUGH MONEY  OR POWER RIGHT  NOW",
+          "translation": "ليس لدي الآن المال أو القوة الكافيان",
+          "width": 228,
+          "x": 419,
+          "y": 935
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 63.42857142857143,
+          "symWidth": 52.85714285714285,
+          "text": "TREMBLE",
+          "translation": "ارتعد",
+          "width": 293,
+          "x": 286,
+          "y": 1537
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 284,
+          "symHeight": 27.27272727272727,
+          "symWidth": 21.53782725211297,
+          "text": "BUT  I  WILL DEFINITELY  FIND A  WAY  TO  BRING THEM  ALL  TO THEIR  KNEES ! I'LL  MAKE  THEM ALL  BEG !",
+          "translation": "لكنني بلا ريب سأجد وسيلة\nلأجعل الجميع يركعون! سأجبرهم على الاستجداء!",
+          "width": 302,
+          "x": 271,
+          "y": 870
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 26.89160839160839,
+          "symWidth": 19.77847041847042,
+          "text": "I WILL DO EVERYTHING , ANYTHING ... TO MAKE THEM ALL REGRET ...",
+          "translation": "سأفعل كل شيء، أيّ شيء...\nلأجعلهم يندمون جميعًا...",
+          "width": 284,
+          "x": 308,
+          "y": 1606
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "renderMode": "mask_only",
+          "symHeight": 26,
+          "symWidth": 17.55555555555556,
+          "text": "REGRET ...",
+          "translation": "",
+          "width": 159,
+          "x": 370,
+          "y": 29
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 26.73076923076923,
+          "symWidth": 21.93974358974359,
+          "text": "EVEN  IF I  HAVE  TO SELL  MY  SOUL TO  THE DEVIL !",
+          "translation": "حتى لو اضطررتُ لبيع روحي للشيطان!",
+          "width": 252,
+          "x": 562,
+          "y": 1391
+        }
+      ],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.webp": {
+      "blocks": [],
+      "imgHeight": 1791,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 54,
+          "symWidth": 41,
+          "text": "SMIRK",
+          "translation": "ابتسامة ماكرة",
+          "width": 191,
+          "x": 331,
+          "y": 634
+        }
+      ],
+      "imgHeight": 1787,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 18.44444444444444,
+          "text": "BE  CAREFUL",
+          "translation": "احذر",
+          "width": 189,
+          "x": 164,
+          "y": 1511
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 23.75,
+          "symWidth": 18.34642857142857,
+          "text": "WHAT YOU WISH FOR , MISS .",
+          "translation": "ما تتمنينه، آنسة.",
+          "width": 163,
+          "x": 175,
+          "y": 1554
+        }
+      ],
+      "imgHeight": 1642,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "renderMode": "mask_only",
+          "symHeight": 23,
+          "symWidth": 16.8,
+          "text": "MISS .",
+          "translation": "",
+          "width": 89,
+          "x": 213,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1642,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.webp": {
+      "blocks": [],
+      "imgHeight": 1642,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 21.23076923076923,
+          "text": "tapas  original",
+          "translation": "تاباس الأصلية",
+          "width": 286,
+          "x": 336,
+          "y": 139
+        },
+        {
+          "angle": 0,
+          "height": 440,
+          "symHeight": 134.6666666666667,
+          "symWidth": 104.6,
+          "text": "I  MADE A  DEAL WITH  THE  DEVIL",
+          "translation": "أبرمت صفقة مع الشيطان",
+          "width": 829,
+          "x": 51,
+          "y": 216
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 29.5,
+          "symWidth": 20.85267857142857,
+          "text": "AUTHOR  KAZZEN  L.X. ARTIST  GISELART",
+          "translation": "المؤلف كازن إل.إكس. الفنان جيسيلآرت",
+          "width": 395,
+          "x": 274,
+          "y": 727
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 29.97619047619047,
+          "symWidth": 21.23809523809524,
+          "text": "COLOR  ASSISTANT  CHANCHU_ART BASE  COLORIST  OLRUN",
+          "translation": "مساعد التلوين تشانتشو_آرت، ملون الأساس أولرون",
+          "width": 591,
+          "x": 103,
+          "y": 968
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 15.125,
+          "text": "Please  support  us  to  keep  us  motivated",
+          "translation": "ادعمونا لتحافظوا على حماسنا",
+          "width": 598,
+          "x": 198,
+          "y": 1148
+        },
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 32.11372982363549,
+          "symWidth": 18.02106881588014,
+          "text": "Follow our social media accounts: /@authorkazzen @ kazzenlx.x /@gisel.arts O  @ gisel.arts O  @chanchu_art O  @olrunsson",
+          "translation": "تابعوا حساباتنا على وسائل التواصل: /@authorkazzen @ kazzenlx.x /@gisel.arts O @ gisel.arts O @chanchu_art O @olrunsson",
+          "width": 763,
+          "x": 161,
+          "y": 1222
+        }
+      ],
+      "imgHeight": 1885,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

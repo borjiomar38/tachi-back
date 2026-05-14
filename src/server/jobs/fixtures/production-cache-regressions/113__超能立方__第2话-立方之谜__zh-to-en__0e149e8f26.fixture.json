@@ -1,0 +1,1419 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0113",
+  "jobId": "fixture-job-0113",
+  "licenseId": "fixture-license-0113",
+  "pageCount": 57,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 253,
+          "symHeight": 125,
+          "symWidth": 134.7777777777778,
+          "text": "超 能 立方 SUPER  CUBE",
+          "translation": "Super Cube",
+          "width": 910,
+          "x": 198,
+          "y": 230
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 65.77777777777777,
+          "symWidth": 56.44444444444444,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "Look! Exclusive manga",
+          "width": 485,
+          "x": 417,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "renderMode": "mask_only",
+          "symHeight": 49.57142857142857,
+          "symWidth": 44.28571428571428,
+          "text": "作者 : 水落 声声",
+          "translation": "",
+          "width": 368,
+          "x": 484,
+          "y": 962
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 47.92857142857143,
+          "symWidth": 45.42857142857143,
+          "text": "作者 : 水落 声声 助理 : 血魔 狂 煞",
+          "translation": "Author: Shui Luo Sheng Sheng Assistant: Xue Mo Kuang Sha",
+          "width": 368,
+          "x": 484,
+          "y": 24
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 47.66666666666666,
+          "symWidth": 43,
+          "text": "责编 : 可可 菌",
+          "translation": "Editor: Coco Jun",
+          "width": 305,
+          "x": 491,
+          "y": 137
+        }
+      ],
+      "imgHeight": 391,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 68.2,
+          "symWidth": 61.8,
+          "text": "什么 声音 ?",
+          "translation": "What’s that sound?",
+          "width": 360,
+          "x": 669,
+          "y": 153
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 63,
+          "symWidth": 55,
+          "text": "是 谁 ?",
+          "translation": "Who’s there?",
+          "width": 193,
+          "x": 568,
+          "y": 879
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 64.4,
+          "symWidth": 68,
+          "text": "怎么 还有 人",
+          "translation": "Why are there still people here?",
+          "width": 360,
+          "x": 163,
+          "y": 943
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 72,
+          "symWidth": 45.71428571428572,
+          "text": "| 在 教室 啊 ! ?",
+          "translation": "In the classroom!?",
+          "width": 435,
+          "x": 146,
+          "y": 32
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 72.5,
+          "symWidth": 74.75,
+          "text": "与此同时",
+          "translation": "Meanwhile",
+          "width": 338,
+          "x": 482,
+          "y": 336
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 39.5,
+          "symWidth": 36.875,
+          "text": "这 都 一 分钟 了 吧 ? 怎么 还没 浮上 来 ?",
+          "translation": "It’s been a minute, right? Why haven’t they surfaced yet?",
+          "width": 308,
+          "x": 41,
+          "y": 535
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 34.57142857142857,
+          "text": "老大 , 怎么 办 ?",
+          "translation": "Boss, what do we do?",
+          "width": 278,
+          "x": 971,
+          "y": 804
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 52.85714285714285,
+          "text": "什么 “ 怎么 办 ”",
+          "translation": "What do you mean, 'what do we do'?",
+          "width": 437,
+          "x": 202,
+          "y": 213
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 69,
+          "symWidth": 62.5,
+          "text": "赶快 给 我 下 去找 !",
+          "translation": "Hurry and get down there to find them!",
+          "width": 561,
+          "x": 420,
+          "y": 533
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 81.5,
+          "symWidth": 60.57857142857143,
+          "text": "啊 ? 这么冷 的 天 要 下去 吗 ......",
+          "translation": "Huh? You want me to go down in this freezing weather...?",
+          "width": 597,
+          "x": 291,
+          "y": 7
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 341,
+          "symHeight": 73.625,
+          "symWidth": 66.3452380952381,
+          "text": "妈 的 , 本来 只是 教唆 恐吓 ! 这 小子 要是 死 了 我们 就 成 蓄意 谋杀 了 !",
+          "translation": "Damn it, it was just intimidation! If this kid dies, it’s premeditated murder!",
+          "width": 618,
+          "x": 508,
+          "y": 40
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 67,
+          "symWidth": 62.5,
+          "text": "赶快 给 我 下 去找 !",
+          "translation": "Hurry and get down there to find them!",
+          "width": 566,
+          "x": 192,
+          "y": 451
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [],
+      "imgHeight": 671,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 51.66666666666666,
+          "symWidth": 47.07407407407408,
+          "text": "什么 ? 居然 晚自习 后 就 在 教室 里 睡着 了 , 就 被 锁 到 教室 里 了 ?",
+          "translation": "What? He fell asleep in the classroom after evening study and got locked in?",
+          "width": 514,
+          "x": 650,
+          "y": 212
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 52.08333333333334,
+          "symWidth": 46.08333333333334,
+          "text": "小 修 , 你 太 不 小心 了 吧 , 唉 这 , 怎么 衣服 还 湿漉漉 的 ?",
+          "translation": "Xiao Xiu, you’ve been too careless. Hey, why are your clothes still wet?",
+          "width": 441,
+          "x": 246,
+          "y": 190
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 51,
+          "symWidth": 46.55555555555556,
+          "text": "喝水 的 时候 不 小心 洒 了 一些 。 我 回家 了 !",
+          "translation": "I accidentally spilled some while drinking. I'm going home!",
+          "width": 502,
+          "x": 259,
+          "y": 156
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 47,
+          "symWidth": 45.70833333333333,
+          "text": "训导 老师 再见 !",
+          "translation": "Goodbye, discipline teacher!",
+          "width": 217,
+          "x": 668,
+          "y": 320
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 40.95833333333334,
+          "symWidth": 37.425,
+          "text": "喝水 能 湿 成 这样 子 吗 ? 这 小子 搞 什么 鬼 ?",
+          "translation": "Can you get that soaked just from drinking water? What's he up to?",
+          "width": 269,
+          "x": 992,
+          "y": 440
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 44.5,
+          "symWidth": 20,
+          "text": "喂 ...",
+          "translation": "Hey...",
+          "width": 116,
+          "x": 445,
+          "y": 451
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 9.5,
+          "symWidth": 16.5,
+          "text": "..",
+          "translation": "...",
+          "width": 42,
+          "x": 601,
+          "y": 483
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 50,
+          "symWidth": 53.41666666666667,
+          "text": "尼玛 都 找遍 了 根本 没 个人 影",
+          "translation": "Damn, searched everywhere, not a soul in sight.",
+          "width": 342,
+          "x": 717,
+          "y": 555
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 96.5,
+          "symWidth": 108.5,
+          "text": "扒 通",
+          "translation": "Dig through.",
+          "width": 201,
+          "x": 215,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 35.44444444444444,
+          "text": "我 这边 也 没有 ...",
+          "translation": "Nothing here either...",
+          "width": 394,
+          "x": 198,
+          "y": 544
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 55,
+          "symWidth": 48.75,
+          "text": "好冷 啊 !",
+          "translation": "So cold!",
+          "width": 220,
+          "x": 346,
+          "y": 243
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 48,
+          "symWidth": 41.73333333333333,
+          "text": "都 找 半 小时 了 完全 没 个人 影 ....",
+          "translation": "Searched half an hour, and still no sign of anyone...",
+          "width": 431,
+          "x": 233,
+          "y": 603
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 41.5,
+          "symWidth": 38.75,
+          "text": "冷 死 了 !",
+          "translation": "Freezing to death!",
+          "width": 134,
+          "x": 854,
+          "y": 818
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 53.5,
+          "symWidth": 79,
+          "text": "啊 啾",
+          "translation": "Achoo!",
+          "width": 152,
+          "x": 457,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 58,
+          "symWidth": 57.33333333333334,
+          "text": "这 小子",
+          "translation": "That brat...",
+          "width": 176,
+          "x": 144,
+          "y": 160
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 50.33333333333334,
+          "symWidth": 51,
+          "text": "难道 会 水 遁 !",
+          "translation": "Could he have water teleportation?",
+          "width": 331,
+          "x": 140,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 47.16666666666667,
+          "symWidth": 46.5,
+          "text": "别 扯皮 努力 找 !",
+          "translation": "Stop bickering, keep searching!",
+          "width": 192,
+          "x": 157,
+          "y": 603
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [],
+      "imgHeight": 184,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 39,
+          "symWidth": 39.25,
+          "text": "与此同时",
+          "translation": "Meanwhile,",
+          "width": 185,
+          "x": 160,
+          "y": 319
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 48,
+          "symWidth": 52.67857142857143,
+          "text": "今天 发生 的 事情 ……",
+          "translation": "What happened today...",
+          "width": 403,
+          "x": 270,
+          "y": 664
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 55,
+          "symWidth": 40.3,
+          "text": "绝对 不 正常 吧 !! ……",
+          "translation": "This is definitely abnormal!!...",
+          "width": 602,
+          "x": 322,
+          "y": 638
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 50.2,
+          "symWidth": 35.3,
+          "text": "我 清楚 的 记得 .000",
+          "translation": "I clearly remember.",
+          "width": 408,
+          "x": 116,
+          "y": 68
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 48.25,
+          "symWidth": 48.25,
+          "text": "时 那 东西 应该 是 进入 我 身体 里面",
+          "translation": "At that moment, that thing must have entered my body.",
+          "width": 551,
+          "x": 661,
+          "y": 306
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 47.64285714285715,
+          "symWidth": 43.64285714285715,
+          "text": "然后 我 就 莫名其妙 发生 了 瞬移 !",
+          "translation": "Then, suddenly, I teleported for no reason!",
+          "width": 676,
+          "x": 302,
+          "y": 555
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 43.69230769230769,
+          "symWidth": 34.92307692307692,
+          "text": "一切 都 和 那个 方块 有关 。。。",
+          "translation": "Everything is connected to that cube...",
+          "width": 480,
+          "x": 672,
+          "y": 859
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 46,
+          "text": "分析 正确 !",
+          "translation": "Analysis correct!",
+          "width": 245,
+          "x": 357,
+          "y": 71
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 62.83333333333334,
+          "symWidth": 53,
+          "text": "谁 在 说话 ! ?",
+          "translation": "Who’s speaking!?",
+          "width": 404,
+          "x": 718,
+          "y": 760
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 63.4,
+          "symWidth": 66.1,
+          "text": "讲话 的 是 我 啊 宿主 大人",
+          "translation": "It’s me speaking, your host, Master.",
+          "width": 426,
+          "x": 133,
+          "y": 473
+        },
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 227.5,
+          "symWidth": 199.5,
+          "text": "吃 当",
+          "translation": "Eat up.",
+          "width": 204,
+          "x": 83,
+          "y": 759
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [],
+      "imgHeight": 650,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 54.16666666666666,
+          "symWidth": 52.54166666666666,
+          "text": "我 是 宇宙 终极 系统 我 的 名字 叫 ...",
+          "translation": "I am the Ultimate Cosmic System. My name is...",
+          "width": 424,
+          "x": 757,
+          "y": 313
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 78,
+          "symWidth": 84,
+          "text": "赫拉迪克",
+          "translation": "Heradric.",
+          "width": 372,
+          "x": 425,
+          "y": 541
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 44.83333333333334,
+          "text": "什么 鬼 东西 ?",
+          "translation": "What the hell is this?",
+          "width": 324,
+          "x": 147,
+          "y": 259
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 49.53571428571428,
+          "symWidth": 44.55952380952381,
+          "text": "这 是 在 哪里 ? ! 外星人 绑架 ? 活 体 实验 ? 还是 我 的 幻觉 ?",
+          "translation": "Where am I?! Alien abduction? Live experiment? Or just a hallucination?",
+          "width": 390,
+          "x": 499,
+          "y": 361
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 60.33333333333334,
+          "symWidth": 54.53333333333333,
+          "text": "大人 , 您 就 在 方块 空 间 内部 啊 !",
+          "translation": "My lord, you are inside the cube space!",
+          "width": 429,
+          "x": 758,
+          "y": 446
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 11.96634615384615,
+          "symWidth": 13.4375,
+          "text": "CHINESE  DESIGN WALL  DESI",
+          "translation": "",
+          "width": 42,
+          "x": 1154,
+          "y": 439
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 49.125,
+          "symWidth": 40.9375,
+          "text": "此刻 空间 的 外部 表象 是 ......",
+          "translation": "The external appearance of the space right now is...",
+          "width": 344,
+          "x": 633,
+          "y": 580
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 50.15384615384615,
+          "symWidth": 40,
+          "text": "3X3X3 立方厘米 的  方块 。",
+          "translation": "A 3x3x3 cubic centimeter cube.",
+          "width": 356,
+          "x": 843,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 45.33333333333334,
+          "symWidth": 38.14444444444445,
+          "text": "内部 空间 是 3X3X3 立方米 的 身 空间 .",
+          "translation": "The internal space is a 3x3x3 cubic meter personal chamber.",
+          "width": 314,
+          "x": 134,
+          "y": 776
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [],
+      "imgHeight": 838,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 41.5,
+          "symWidth": 24.75,
+          "text": "|  方块 ..... 出去 !",
+          "translation": "Cube... Let me out!",
+          "width": 207,
+          "x": 309,
+          "y": 200
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 28.5,
+          "text": "| 放 我 出去 !",
+          "translation": "Let me out!",
+          "width": 208,
+          "x": 308,
+          "y": 335
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "renderMode": "mask_only",
+          "symHeight": 38,
+          "symWidth": 35.375,
+          "text": "宿主 大人 , 您 随时",
+          "translation": "",
+          "width": 347,
+          "x": 534,
+          "y": 951
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 38,
+          "symWidth": 35.83564814814815,
+          "text": "宿主 大人 , 您 随时 都 可以 出去 , 但是 您 必须 学会 传送 的 具体 位置 .",
+          "translation": "Master, you can leave anytime, but you must learn the exact teleportation coordinates.",
+          "width": 395,
+          "x": 532,
+          "y": 8
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 51,
+          "text": "什么 意思 ?",
+          "translation": "What do you mean?",
+          "width": 286,
+          "x": 826,
+          "y": 37
+        },
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 38.925,
+          "symWidth": 35.49166666666667,
+          "text": "简单 点 说 , 您 可以 吧 自己 传送 距离 方块 为 中心 15 米 之 内 各种 合适 的 位置 。",
+          "translation": "Simply put, you can teleport anywhere suitable within 15 meters from the cube's center.",
+          "width": 353,
+          "x": 878,
+          "y": 668
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 15.66666666666667,
+          "text": "15m",
+          "translation": "15m",
+          "width": 58,
+          "x": 607,
+          "y": 130
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 33.8,
+          "text": "|  传送 领域",
+          "translation": "Teleportation range",
+          "width": 193,
+          "x": 710,
+          "y": 356
+        },
+        {
+          "angle": 0,
+          "height": 304,
+          "symHeight": 46,
+          "symWidth": 39.4478354978355,
+          "text": "但是 您 不能 再 随意 把 自己 到 空中 了 。 因 为 方块 存 能量 已尽 ..... 后 每 两次 传送 的 时间 间 隔 大约 在 1 分钟",
+          "translation": "But you can no longer teleport freely into the air. The cube’s stored energy is depleted... Afterwards, the interval between two teleports is about one minute.",
+          "width": 526,
+          "x": 180,
+          "y": 504
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 43.5,
+          "symWidth": 42.23863636363636,
+          "text": "快 看 漫画 www.kuaikanmanhua.com/",
+          "translation": "",
+          "width": 273,
+          "x": 705,
+          "y": 470
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 31,
+          "text": "| 想象 画面",
+          "translation": "Visualize the scene",
+          "width": 177,
+          "x": 898,
+          "y": 758
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 41.92592592592592,
+          "symWidth": 33.84511784511785,
+          "text": "如果 您 再把 自己 传送 到 15 米 空中 , 您 可能 会 被 摔死 ....",
+          "translation": "If you teleport yourself 15 meters in the air, you might fall to your death...",
+          "width": 396,
+          "x": 305,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 35.60714285714286,
+          "symWidth": 31.47867063492064,
+          "text": "刚 开始 就说 自己 快 没 电 了 , 还 好意思 说 自己 是 什么 宇宙 无敌 系统 ....",
+          "translation": "It said it was running out of power right from the start, and yet it dares to call itself the universe’s invincible system...",
+          "width": 342,
+          "x": 866,
+          "y": 805
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 37.30769230769231,
+          "symWidth": 31.29120879120879,
+          "text": "尼玛 ! 这么 危险 的 系统 ! 你 是 出 来 害人 的 吗 ?",
+          "translation": "Damn! Such a dangerous system! Are you out here to harm people?",
+          "width": 273,
+          "x": 68,
+          "y": 810
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 51.5,
+          "text": "不是 霹雳 无敌",
+          "translation": "It's not an unstoppable bomb.",
+          "width": 318,
+          "x": 543,
+          "y": 264
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 51,
+          "symWidth": 46.125,
+          "text": "是 宇宙 终极 系统 。",
+          "translation": "It's the ultimate cosmic system.",
+          "width": 394,
+          "x": 539,
+          "y": 338
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 40.36842105263158,
+          "symWidth": 39.26315789473684,
+          "text": "都 差不多 了 ! 我 小学 时候 都 不 吊 这些 词汇 了",
+          "translation": "Same difference! I didn’t even use these words back in elementary school.",
+          "width": 297,
+          "x": 630,
+          "y": 677
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 43.81363636363636,
+          "symWidth": 47.02272727272727,
+          "text": "臨  快 看 漫画 www.kuaikangnanhua.com",
+          "translation": "",
+          "width": 380,
+          "x": 209,
+          "y": 228
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 63,
+          "symWidth": 61.42857142857143,
+          "text": "快 说说 怎么 才能",
+          "translation": "Quick, tell me how to",
+          "width": 450,
+          "x": 672,
+          "y": 410
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 62,
+          "symWidth": 60,
+          "text": "选择 传送 出去 的",
+          "translation": "choose the exact spot",
+          "width": 446,
+          "x": 674,
+          "y": 499
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 59.25,
+          "symWidth": 61,
+          "text": "具体 位置",
+          "translation": "to teleport to.",
+          "width": 253,
+          "x": 678,
+          "y": 586
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 337,
+          "symHeight": 54.97777777777778,
+          "symWidth": 44.8,
+          "text": "宿主 大人 , 其实 你 已经 感知 了 吧 ? 五 感 之外 的 第六 觉 能力 ... ………",
+          "translation": "Master Host, you’ve already sensed it, haven’t you? The sixth sense beyond the five senses...",
+          "width": 474,
+          "x": 757,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 26.91304347826087,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "",
+          "width": 761,
+          "x": 503,
+          "y": 767
+        }
+      ],
+      "imgHeight": 987,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

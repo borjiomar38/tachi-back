@@ -1,0 +1,889 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0070",
+  "jobId": "fixture-job-0070",
+  "licenseId": "fixture-license-0070",
+  "pageCount": 38,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp",
+    "029.webp",
+    "030.webp",
+    "031.webp",
+    "032.webp",
+    "033.webp",
+    "034.webp",
+    "035.webp",
+    "036.webp",
+    "037.webp",
+    "038.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 11,
+          "symWidth": 12,
+          "text": "DAOGUIYI",
+          "translation": "دَوْغُوي",
+          "width": 114,
+          "x": 264,
+          "y": 201
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17.66666666666667,
+          "symWidth": 23,
+          "text": "Mas",
+          "translation": "ماس",
+          "width": 26,
+          "x": 149,
+          "y": 467
+        }
+      ],
+      "imgHeight": 560,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [],
+      "imgHeight": 560,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 310,
+          "symHeight": 39.83333333333334,
+          "symWidth": 33.78585858585859,
+          "text": "主笔 : 汤 不 烫 脚本 : 小刀 上色 : 颜 晨 场景 : 007 责编 : 皓月 制作 方 : 有点 笔 格 工作室",
+          "translation": "الرَّسَّامُ الرَّئِيسِيُّ: تانغ بو تانغ\nالنَّصُّ: شياو داو\nالتلوين: يان تشين\nالمشهد: 007\nالمُدِيرُ: هاوْ يُوِه\nجهة الإنتاج: استوديو يَوْديان بيْجِهْ",
+          "width": 459,
+          "x": 163,
+          "y": 140
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 28,
+          "symWidth": 25.57894736842105,
+          "text": "改编 自 作者 狐 尾 的 笔 原创 小说 《 道 诡异 仙 》",
+          "translation": "مقتبس من رواية خُصِّصَت عن كِتَابَةِ المؤلِّف فو وي تحت عنوان \"الطريق العجيب للأرواح الخالدة\"",
+          "width": 521,
+          "x": 144,
+          "y": 542
+        }
+      ],
+      "imgHeight": 560,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 36,
+          "text": "动漫",
+          "translation": "رسوم متحركة",
+          "width": 62,
+          "x": 720,
+          "y": 387
+        }
+      ],
+      "imgHeight": 431,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [],
+      "imgHeight": 983,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 31.66666666666667,
+          "symWidth": 28.13333333333334,
+          "text": "李 … 李 师兄 , 你 确定 是 在 这里 吗 ?",
+          "translation": "لي... أخي المُعلِّم لي، هل أنت مُتأكد من أنَّنا هنا؟",
+          "width": 179,
+          "x": 213,
+          "y": 263
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 30.99404761904762,
+          "symWidth": 28.92738095238095,
+          "text": "这 竹林 里 看起来 啥也没 有 啊 … 会 不会 是 我们 找 错 位置 了 ?",
+          "translation": "هذا الغابُ مِن الخيزران لا يبدو عليه شيء... هل من الممكن أن نكون قد أخطأنا المكان؟",
+          "width": 235,
+          "x": 360,
+          "y": 494
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 31.77272727272727,
+          "symWidth": 30.68181818181818,
+          "text": "静心 师太 说 腊月 十八 离 安 慈 庵 有 两百 里 ·",
+          "translation": "قالت الشيخَة جينغشين إنَّ المسافة إلى دير آن سي آن يوم ثامن عشر من شهر كانون الأول تبلغ مئتي لي.",
+          "width": 235,
+          "x": 163,
+          "y": 871
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 25.5,
+          "symWidth": 26,
+          "text": "咔嚓",
+          "translation": "صوت طقطقة",
+          "width": 54,
+          "x": 615,
+          "y": 97
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 30.66666666666667,
+          "symWidth": 28.75555555555556,
+          "text": "但 我 又 不是 机器 , 有点 误差 也 正常 。",
+          "translation": "لكني لست آلة، فوجود بعض الانحراف أمر طبيعي.",
+          "width": 182,
+          "x": 507,
+          "y": 596
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 78.5,
+          "symWidth": 54.25,
+          "text": "ok 10",
+          "translation": "حسنًا 10",
+          "width": 223,
+          "x": 516,
+          "y": 1010
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 102.5,
+          "symWidth": 82,
+          "text": "of",
+          "translation": "من",
+          "width": 109,
+          "x": 350,
+          "y": 348
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 21.14285714285714,
+          "text": "最新 免费 漫画 |",
+          "translation": "أحدث المانغا المجانية |",
+          "width": 155,
+          "x": 51,
+          "y": 1069
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [],
+      "imgHeight": 1249,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 42.66666666666666,
+          "symWidth": 48.33333333333334,
+          "text": "小心 !",
+          "translation": "احذر!",
+          "width": 164,
+          "x": 217,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 32.66666666666666,
+          "symWidth": 30,
+          "text": "腾讯 漫",
+          "translation": "تنسنت مانغا",
+          "width": 119,
+          "x": 664,
+          "y": 1203
+        }
+      ],
+      "imgHeight": 1249,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [],
+      "imgHeight": 1249,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [],
+      "imgHeight": 1248,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [],
+      "imgHeight": 1099,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 36,
+          "text": "动漫",
+          "translation": "رسوم متحركة",
+          "width": 64,
+          "x": 717,
+          "y": 1204
+        }
+      ],
+      "imgHeight": 1249,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 32.5,
+          "text": "包子 漫畫",
+          "translation": "مانغا باوزي",
+          "width": 136,
+          "x": 647,
+          "y": 1182
+        }
+      ],
+      "imgHeight": 1249,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 28.33333333333333,
+          "text": "你们 没事 吧 ?",
+          "translation": "هل أنتم بخير؟",
+          "width": 181,
+          "x": 154,
+          "y": 127
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 30.5,
+          "symWidth": 29,
+          "text": "… 我们 没事 , 李 师兄",
+          "translation": "...نحن بخير، أستاذ لي.",
+          "width": 212,
+          "x": 371,
+          "y": 1143
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 24.5,
+          "text": "【 腾讯 动",
+          "translation": "",
+          "width": 101,
+          "x": 659,
+          "y": 1263
+        }
+      ],
+      "imgHeight": 1307,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [],
+      "imgHeight": 1307,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 39.5,
+          "symWidth": 33.86666666666667,
+          "text": "谁 在 那里 ? 出来 !",
+          "translation": "من هناك؟ أظهر نفسك!",
+          "width": 206,
+          "x": 435,
+          "y": 887
+        }
+      ],
+      "imgHeight": 1307,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 31.4,
+          "symWidth": 24.8,
+          "text": "哎呦 , 我 的",
+          "translation": "آه، يا لي من...",
+          "width": 163,
+          "x": 276,
+          "y": 1047
+        }
+      ],
+      "imgHeight": 1307,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 30.25,
+          "symWidth": 29.875,
+          "text": "你们 这些 后生 砍 我们 吴家 村 的 竹 子 作 甚 ?",
+          "translation": "يا شباب، لماذا تقطعون خيزران قرية وو؟",
+          "width": 199,
+          "x": 118,
+          "y": 663
+        }
+      ],
+      "imgHeight": 1307,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 35.5,
+          "symWidth": 30,
+          "text": "GD",
+          "translation": "",
+          "width": 32,
+          "x": 209,
+          "y": 415
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 44,
+          "symWidth": 43.7,
+          "text": "吴家 村村长 吴青",
+          "translation": "رئيس قرية وو تشينغ",
+          "width": 165,
+          "x": 538,
+          "y": 539
+        }
+      ],
+      "imgHeight": 1307,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 30,
+          "symWidth": 30.75,
+          "text": "灯笼 不是 红色",
+          "translation": "الفانوس ليس أحمر اللون",
+          "width": 132,
+          "x": 254,
+          "y": 141
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 30.5,
+          "symWidth": 28.8,
+          "text": "全身 上下 也 没有 红色 ,",
+          "translation": "وليس هناك أحمر على كامل الجسد أيضًا،",
+          "width": 168,
+          "x": 330,
+          "y": 379
+        }
+      ],
+      "imgHeight": 1234,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 30.5,
+          "symWidth": 29.7,
+          "text": "看来 他 不是 腊月 十八 。",
+          "translation": "يبدو أنه ليس في الثامن عشر من الشهر الحادي عشر.",
+          "width": 167,
+          "x": 475,
+          "y": 239
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 32,
+          "symWidth": 27.26666666666667,
+          "text": "难道 是 我 找 了 地 方 ?",
+          "translation": "هل كُنت مخطئًا في المكان الذي بحثت فيه؟",
+          "width": 165,
+          "x": 278,
+          "y": 427
+        }
+      ],
+      "imgHeight": 1235,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 25.33333333333333,
+          "text": "不对 !",
+          "translation": "ليس كذلك!",
+          "width": 81,
+          "x": 347,
+          "y": 191
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 31.75,
+          "symWidth": 29.675,
+          "text": "才 竹 的 攻击 应该 就是 腊月 八 在 试探 …",
+          "translation": "هجوم تشاي تشو كان اختبارًا في الثامن من الشهر الحادي عشر…",
+          "width": 234,
+          "x": 215,
+          "y": 438
+        }
+      ],
+      "imgHeight": 1234,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 30.6,
+          "symWidth": 27.53333333333333,
+          "text": "这位 老丈 不好 意思 , 我们 迷 路 了 ·",
+          "translation": "يا سيدي، نعتذر، لقد ضللنا الطريق.",
+          "width": 199,
+          "x": 404,
+          "y": 319
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29.5,
+          "symWidth": 28.8,
+          "text": "迷路 也 不能 砍 竹子 啊 !",
+          "translation": "لكن حتى الضياع لا يبرر قطع الخيزران!",
+          "width": 166,
+          "x": 228,
+          "y": 602
+        }
+      ],
+      "imgHeight": 1235,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [],
+      "imgHeight": 1234,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 31.5,
+          "symWidth": 27.45,
+          "text": "老丈 , 这些 银子 你 拿着 。",
+          "translation": "خذ هذه الفضة، أيها السيد.",
+          "width": 180,
+          "x": 290,
+          "y": 148
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 30,
+          "symWidth": 27.53333333333333,
+          "text": "这 天色 已 晚 , 我们 赶路 也 有 些 乏 了 ··",
+          "translation": "لقد غابت الشمس، ونحن أيضًا مرهقون من السفر.",
+          "width": 200,
+          "x": 61,
+          "y": 354
+        }
+      ],
+      "imgHeight": 1235,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 31.5,
+          "symWidth": 29.66666666666667,
+          "text": "不知 可否 让 我 等 留宿 一 晚 ?",
+          "translation": "هل تسمح لي بالبقاء هنا مبيتًا هذه الليلة؟",
+          "width": 199,
+          "x": 96,
+          "y": 97
+        }
+      ],
+      "imgHeight": 1234,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 26.66666666666667,
+          "text": "咳咳 …",
+          "translation": "سعْل...",
+          "width": 97,
+          "x": 285,
+          "y": 101
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 30.5,
+          "symWidth": 29.125,
+          "text": "可以 倒是 可以 …",
+          "translation": "ربما... ربما يكون ممكناً...",
+          "width": 133,
+          "x": 418,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 202,
+          "symHeight": 199,
+          "symWidth": 222,
+          "text": "啪 !",
+          "translation": "صفعة!",
+          "width": 247,
+          "x": 496,
+          "y": 763
+        }
+      ],
+      "imgHeight": 1285,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 30.5,
+          "symWidth": 28.66666666666667,
+          "text": "不过 我们 吴家 村 的 规矩 多 ,",
+          "translation": "لكن لعائلتنا، قرى وو، عادات وقوانين كثيرة،",
+          "width": 198,
+          "x": 229,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 27,
+          "text": "你们 想 在 这 住 ,",
+          "translation": "إن أردتم المكوث هنا،",
+          "width": 210,
+          "x": 335,
+          "y": 235
+        }
+      ],
+      "imgHeight": 1285,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 36.14285714285715,
+          "text": "可 一定 要 ...",
+          "translation": "فلا بد من...",
+          "width": 233,
+          "x": 58,
+          "y": 349
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 57.5,
+          "text": "守 规矩 。",
+          "translation": "الالتزام بالقوانين.",
+          "width": 243,
+          "x": 102,
+          "y": 1209
+        }
+      ],
+      "imgHeight": 1285,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.webp": {
+      "blocks": [],
+      "imgHeight": 1285,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.webp": {
+      "blocks": [],
+      "imgHeight": 560,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 65.5,
+          "symWidth": 56.2,
+          "text": "常规 更新 日 为 每周 六 求 点 赞 、 评论 、 收藏 !",
+          "translation": "تُحدّث بانتظام كل يوم سبت، نرجو الإعجاب والتعليق والحفظ!",
+          "width": 600,
+          "x": 110,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 39.875,
+          "text": "各位 看官 多 支持 ~",
+          "translation": "أيها القراء الأعزاء، دعمكم محل تقدير كبير~",
+          "width": 348,
+          "x": 369,
+          "y": 393
+        }
+      ],
+      "imgHeight": 560,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.webp": {
+      "blocks": [],
+      "imgHeight": 560,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 37.5,
+          "text": "动漫",
+          "translation": "رسوم متحركة",
+          "width": 62,
+          "x": 719,
+          "y": 182
+        }
+      ],
+      "imgHeight": 225,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

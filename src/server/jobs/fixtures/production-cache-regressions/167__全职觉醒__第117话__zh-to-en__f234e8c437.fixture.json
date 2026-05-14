@@ -1,0 +1,1417 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0167",
+  "jobId": "fixture-job-0167",
+  "licenseId": "fixture-license-0167",
+  "pageCount": 52,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp",
+    "029.webp",
+    "030.webp",
+    "031.webp",
+    "032.webp",
+    "033.webp",
+    "034.webp",
+    "035.webp",
+    "036.webp",
+    "037.webp",
+    "038.webp",
+    "039.webp",
+    "040.webp",
+    "041.webp",
+    "042.webp",
+    "043.webp",
+    "044.webp",
+    "045.webp",
+    "046.webp",
+    "047.webp",
+    "048.webp",
+    "049.webp",
+    "050.webp",
+    "051.webp",
+    "052.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 179.5,
+          "symWidth": 187,
+          "text": "全职",
+          "translation": "Full-Time",
+          "width": 343,
+          "x": 62,
+          "y": 1222
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 31,
+          "symWidth": 18.07142857142857,
+          "text": "5 ( ALL ) ELEMENTS",
+          "translation": "5 (ALL) ELEMENTS",
+          "width": 166,
+          "x": 437,
+          "y": 1316
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 213.5,
+          "symWidth": 237.5,
+          "text": "觉醒",
+          "translation": "Awakening",
+          "width": 456,
+          "x": 179,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 44.66666666666666,
+          "symWidth": 26.5047619047619,
+          "text": "故事 : TONY 绘制 : HAMA 责编 : 芮芮",
+          "translation": "Story: TONY Art: HAMA Editor: Rui Rui",
+          "width": 250,
+          "x": 270,
+          "y": 420
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 34,
+          "symWidth": 37.2,
+          "text": "多拉格 文化",
+          "translation": "Dorag Culture",
+          "width": 202,
+          "x": 290,
+          "y": 1060
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 30.5,
+          "text": "腾讯 动漫",
+          "translation": "Tencent Animation",
+          "width": 116,
+          "x": 668,
+          "y": 1325
+        }
+      ],
+      "imgHeight": 1366,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 38,
+          "symWidth": 24.5,
+          "text": "喂 ,",
+          "translation": "Hey,",
+          "width": 53,
+          "x": 235,
+          "y": 584
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 36.16666666666666,
+          "symWidth": 34.63333333333333,
+          "text": "你 在 擂台 上 说 的 会 办到 吧 ?",
+          "translation": "Can you make good on your words in the ring?",
+          "width": 206,
+          "x": 407,
+          "y": 790
+        }
+      ],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 34,
+          "text": "全力 击晕 我 。",
+          "translation": "Knock me out with all your strength.",
+          "width": 223,
+          "x": 427,
+          "y": 533
+        }
+      ],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 14,
+          "symWidth": 11.33333333333333,
+          "text": "www.baozimh.com",
+          "translation": "RTMTH",
+          "width": 154,
+          "x": 17,
+          "y": 37
+        }
+      ],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 21,
+          "symWidth": 17.775,
+          "text": "包子 漫畫 bozimh.com",
+          "translation": "RTMTH",
+          "width": 112,
+          "x": 54,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 35.5,
+          "text": "动漫",
+          "translation": "Animation",
+          "width": 65,
+          "x": 716,
+          "y": 644
+        }
+      ],
+      "imgHeight": 685,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 15.5,
+          "symWidth": 13.48333333333333,
+          "text": "最新 免费 漫画 www.baozimh.com",
+          "translation": "Latest Free Manga RTMTH",
+          "width": 159,
+          "x": 627,
+          "y": 19
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 21.33333333333333,
+          "text": "喂 !!",
+          "translation": "Hey!!",
+          "width": 97,
+          "x": 148,
+          "y": 231
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 34.5,
+          "symWidth": 31.04166666666667,
+          "text": "甘 尼克斯 你 疯 了 吗 !!",
+          "translation": "Gannix, are you insane!!",
+          "width": 248,
+          "x": 251,
+          "y": 360
+        }
+      ],
+      "imgHeight": 1143,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 37,
+          "symWidth": 29.83333333333334,
+          "text": "什么 擂台 ? ! 办到 什么 ? !",
+          "translation": "What ring?! Make good on what?!",
+          "width": 224,
+          "x": 140,
+          "y": 660
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 37.625,
+          "symWidth": 32.5,
+          "text": "你们 说过 什 么 ! ?",
+          "translation": "What did you say!?",
+          "width": 206,
+          "x": 358,
+          "y": 873
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 16,
+          "symWidth": 13.03333333333333,
+          "text": "最新 免费 漫画 www.baozimh.com",
+          "translation": "Latest Free Manga RTMTH",
+          "width": 156,
+          "x": 627,
+          "y": 1092
+        }
+      ],
+      "imgHeight": 1143,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 28,
+          "text": "好 。",
+          "translation": "Alright.",
+          "width": 57,
+          "x": 330,
+          "y": 998
+        }
+      ],
+      "imgHeight": 1143,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36.66666666666666,
+          "symWidth": 37,
+          "text": "知道 了",
+          "translation": "Noted.",
+          "width": 120,
+          "x": 525,
+          "y": 59
+        }
+      ],
+      "imgHeight": 1143,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 84,
+          "symWidth": 74.16666666666667,
+          "text": "星 之 地 涌 · 拳",
+          "translation": "Star’s Earth Surge · Fist",
+          "width": 496,
+          "x": 173,
+          "y": 839
+        }
+      ],
+      "imgHeight": 1143,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [],
+      "imgHeight": 1143,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 81.66666666666667,
+          "symWidth": 63.66666666666666,
+          "text": "誌 飞 !",
+          "translation": "Zhi Fei!",
+          "width": 211,
+          "x": 317,
+          "y": 105
+        }
+      ],
+      "imgHeight": 964,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 30.625,
+          "text": "你 妈 的 真 该死 !!",
+          "translation": "Damn you!!",
+          "width": 304,
+          "x": 378,
+          "y": 766
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 146.5,
+          "symWidth": 160.5,
+          "text": "哒 哒",
+          "translation": "Clack clack",
+          "width": 325,
+          "x": 406,
+          "y": 529
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 30.75,
+          "text": "可恶 ! 甘 尼克斯 !",
+          "translation": "Damn it! Gannix!",
+          "width": 303,
+          "x": 382,
+          "y": 981
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 38,
+          "symWidth": 38,
+          "text": "居然 敢 背叛",
+          "translation": "How dare you betray us.",
+          "width": 205,
+          "x": 163,
+          "y": 1187
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 38.94444444444445,
+          "symWidth": 35.16666666666667,
+          "text": "等 我 回去 一定 要把 你 全村 杀 的 鸡犬不留 !",
+          "translation": "When I return, I’ll wipe out your whole village without mercy!",
+          "width": 246,
+          "x": 299,
+          "y": 246
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 342,
+          "symHeight": 129.6666666666667,
+          "symWidth": 132.3333333333333,
+          "text": "林淑 开",
+          "translation": "Lin Shu Kai",
+          "width": 311,
+          "x": 1,
+          "y": 793
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 33,
+          "symWidth": 16,
+          "text": "! ?",
+          "translation": "!?",
+          "width": 56,
+          "x": 444,
+          "y": 955
+        }
+      ],
+      "imgHeight": 1304,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 108,
+          "symWidth": 87.5,
+          "text": "!!",
+          "translation": "!!",
+          "width": 93,
+          "x": 640,
+          "y": 470
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36.33333333333334,
+          "symWidth": 23.33333333333333,
+          "text": "诶 ! ?",
+          "translation": "Eh!?",
+          "width": 100,
+          "x": 266,
+          "y": 179
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 20,
+          "symWidth": 14.9,
+          "text": "|  包子 漫畫 baozimh.com",
+          "translation": "RTMTH",
+          "width": 113,
+          "x": 53,
+          "y": 1374
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 86,
+          "symWidth": 74.83333333333333,
+          "text": "星 之 地 涌 · 牢",
+          "translation": "Star’s Earth Surge · Prison",
+          "width": 495,
+          "x": 159,
+          "y": 769
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37,
+          "symWidth": 30,
+          "text": "后面 也 ! ?",
+          "translation": "Behind us too!?",
+          "width": 184,
+          "x": 146,
+          "y": 818
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 36,
+          "symWidth": 27,
+          "text": "喂 ! 等等 …",
+          "translation": "Hey! Wait up...",
+          "width": 185,
+          "x": 424,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 365,
+          "symHeight": 305,
+          "symWidth": 178.6666666666667,
+          "text": "味 酱 味",
+          "translation": "Mysterious flavor",
+          "width": 397,
+          "x": 48,
+          "y": 151
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 25.92857142857143,
+          "symWidth": 19.66233766233766,
+          "text": "电子 漫畫  可恶 ! baozimh.com",
+          "translation": "Digital Manga Damn! RTMTH",
+          "width": 214,
+          "x": 56,
+          "y": 1366
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 37.5,
+          "symWidth": 28.45,
+          "text": "对 了 ! 护卫 队 !",
+          "translation": "Right! The guard squad!",
+          "width": 206,
+          "x": 350,
+          "y": 155
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 38,
+          "symWidth": 27.8,
+          "text": "护卫 队 !!",
+          "translation": "Guard squad!!",
+          "width": 182,
+          "x": 159,
+          "y": 921
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 27.66666666666667,
+          "text": "护卫 队 呢 !!",
+          "translation": "Where’s the guard squad!!",
+          "width": 222,
+          "x": 403,
+          "y": 1158
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 35.5,
+          "symWidth": 29.775,
+          "text": "都 死 到 哪里 去 了 !!",
+          "translation": "Where the hell are they all??",
+          "width": 205,
+          "x": 239,
+          "y": 1162
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 52.16666666666666,
+          "symWidth": 43,
+          "text": "护卫 队 马上 封",
+          "translation": "The guard squad has been sealed off.",
+          "width": 356,
+          "x": 428,
+          "y": 1373
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 27,
+          "text": "就要 到 了 !!",
+          "translation": "They’re almost here!!",
+          "width": 221,
+          "x": 435,
+          "y": 22
+        }
+      ],
+      "imgHeight": 665,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "031.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 33.25,
+          "text": "护卫 队 ?",
+          "translation": "Guard squad?",
+          "width": 145,
+          "x": 166,
+          "y": 144
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 34.42857142857143,
+          "text": "你 忘 了 么 ? 方圆",
+          "translation": "Have you forgotten? Within a one-kilometer radius,",
+          "width": 287,
+          "x": 328,
+          "y": 1291
+        }
+      ],
+      "imgHeight": 1353,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "032.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 37,
+          "symWidth": 35.28571428571428,
+          "text": "一 公里 内 都 不会 有人 了 。",
+          "translation": "there is no one left.",
+          "width": 291,
+          "x": 325,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 36.5,
+          "symWidth": 32.1,
+          "text": "被 你 自己 支 开 了 。",
+          "translation": "You sent them away yourself.",
+          "width": 205,
+          "x": 120,
+          "y": 27
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 37.19047619047619,
+          "symWidth": 34.76984126984127,
+          "text": "这栋 别墅 方圆 1 公里 内 的 人 全 被 我 支开 了 。",
+          "translation": "Everyone around this villa within one kilometer was sent away by me.",
+          "width": 269,
+          "x": 340,
+          "y": 1216
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "034.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 36.55555555555555,
+          "symWidth": 34.77777777777778,
+          "text": "他们 都不 敢问 理由 就 都 乖乖 照办 ,",
+          "translation": "They didn’t even dare ask why and all followed orders quietly,",
+          "width": 249,
+          "x": 152,
+          "y": 821
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 38,
+          "symWidth": 33.625,
+          "text": "你 知道 为什么 吗 ?",
+          "translation": "Do you know why?",
+          "width": 307,
+          "x": 318,
+          "y": 1167
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "035.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 37,
+          "symWidth": 29.75,
+          "text": "因为 神族 的 话 ,",
+          "translation": "Because when the gods speak,",
+          "width": 203,
+          "x": 176,
+          "y": 1141
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 39,
+          "symWidth": 33.5,
+          "text": "没人敢 不 信 ,",
+          "translation": "no one dares disbelieve,",
+          "width": 221,
+          "x": 378,
+          "y": 1403
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "036.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 38.5,
+          "symWidth": 33.66666666666666,
+          "text": "没人敢 不 听 。",
+          "translation": "no one dares disobey.",
+          "width": 221,
+          "x": 378,
+          "y": 24
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "037.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35.4,
+          "symWidth": 27.2,
+          "text": "你 …… !?",
+          "translation": "You...!?",
+          "width": 184,
+          "x": 242,
+          "y": 698
+        }
+      ],
+      "imgHeight": 896,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "038.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 30.33333333333333,
+          "text": "鹤 乐 。",
+          "translation": "He Le.",
+          "width": 95,
+          "x": 321,
+          "y": 243
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 16.5,
+          "symWidth": 14.03333333333333,
+          "text": "最新 免费 漫画 www.baozimh.com",
+          "translation": "RTMTH",
+          "width": 151,
+          "x": 20,
+          "y": 1377
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "039.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 19.875,
+          "symWidth": 16.05769230769231,
+          "text": "包子 漫畫 ( baozimh.com .",
+          "translation": "RTMTH",
+          "width": 121,
+          "x": 49,
+          "y": 18
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 37.71428571428572,
+          "symWidth": 36.14285714285715,
+          "text": "接下来 要 发生 的 一 切 与 你 无关 。",
+          "translation": "What’s about to happen next has nothing to do with you.",
+          "width": 330,
+          "x": 198,
+          "y": 984
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "040.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 34.625,
+          "text": "你 什么 都不 知道 。",
+          "translation": "You know nothing.",
+          "width": 303,
+          "x": 341,
+          "y": 878
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "041.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 69,
+          "symWidth": 60.16666666666666,
+          "text": "星 之 地 涌 · 墙",
+          "translation": "Star’s Earth Surge · Wall",
+          "width": 403,
+          "x": 191,
+          "y": 377
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 34.875,
+          "text": "也 什么 都没 看到 。",
+          "translation": "And you saw nothing.",
+          "width": 303,
+          "x": 188,
+          "y": 1360
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "042.webp": {
+      "blocks": [],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "043.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 29,
+          "text": "....",
+          "translation": "....",
+          "width": 72,
+          "x": 319,
+          "y": 730
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36,
+          "symWidth": 30.5,
+          "text": "等一下 !",
+          "translation": "Wait!",
+          "width": 138,
+          "x": 163,
+          "y": 924
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "044.webp": {
+      "blocks": [],
+      "imgHeight": 1164,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "045.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 37.33333333333334,
+          "symWidth": 34.26666666666667,
+          "text": "你 …… 你 到 底 准备 …… 干嘛 ……",
+          "translation": "You... what exactly do you intend to...?",
+          "width": 203,
+          "x": 478,
+          "y": 323
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "046.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 33.5,
+          "text": "我 要做 什么 ,",
+          "translation": "You know perfectly well what I’m going to do.",
+          "width": 220,
+          "x": 124,
+          "y": 255
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 36.33333333333333,
+          "symWidth": 37.41666666666667,
+          "text": "你 再 清楚 不过 了 吧",
+          "translation": "",
+          "width": 245,
+          "x": 294,
+          "y": 491
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "047.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 43.42857142857143,
+          "text": "对 神族 的 审判 。",
+          "translation": "Judgment of the gods.",
+          "width": 332,
+          "x": 215,
+          "y": 422
+        }
+      ],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "048.webp": {
+      "blocks": [],
+      "imgHeight": 1429,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "049.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 72.5,
+          "symWidth": 60.75,
+          "text": "开始 了 。",
+          "translation": "It has begun.",
+          "width": 266,
+          "x": 270,
+          "y": 398
+        }
+      ],
+      "imgHeight": 1580,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "050.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 261,
+          "symHeight": 114.5,
+          "symWidth": 111.6,
+          "text": "多拉格 近期 新 作 引导 !",
+          "translation": "Dorag’s Latest Releases!",
+          "width": 603,
+          "x": 102,
+          "y": 130
+        },
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 52.25,
+          "symWidth": 54,
+          "text": "奇幻  动作",
+          "translation": "Fantasy Action",
+          "width": 57,
+          "x": 724,
+          "y": 513
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 51.23076923076923,
+          "text": "《 重生 后 我 用 镜面 反转 复仇 》",
+          "translation": "\"After Rebirth, I Retaliate with Mirror Reversal\"",
+          "width": 689,
+          "x": 13,
+          "y": 795
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 50,
+          "symWidth": 51,
+          "text": "少女  西幻",
+          "translation": "Young Girl Western Fantasy",
+          "width": 53,
+          "x": 29,
+          "y": 915
+        }
+      ],
+      "imgHeight": 1065,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "051.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 51.2,
+          "text": "《 六岁 开始 成为 女王 》",
+          "translation": "\"Becoming Queen at Six\"",
+          "width": 516,
+          "x": 262,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 51.66666666666666,
+          "symWidth": 53,
+          "text": "年  复仇",
+          "translation": "Years of Revenge",
+          "width": 58,
+          "x": 722,
+          "y": 295
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 46.5,
+          "text": "《 全职 觉醒 》",
+          "translation": "\"Full-Time Awakening\"",
+          "width": 285,
+          "x": 27,
+          "y": 516
+        },
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 51,
+          "symWidth": 47,
+          "text": "战斗  冒险",
+          "translation": "Battle Adventure",
+          "width": 47,
+          "x": 39,
+          "y": 653
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 44.5,
+          "symWidth": 44.20833333333333,
+          "text": "( 我 用 顶级 系统 重塑 世界 》 动漫",
+          "translation": "(Reforge the World with a Top-Level System) Animation",
+          "width": 613,
+          "x": 170,
+          "y": 933
+        }
+      ],
+      "imgHeight": 1067,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "052.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 273,
+          "symHeight": 48.5,
+          "symWidth": 37.89419642857143,
+          "text": "我们 会 投入 全部 的 热情 与 真诚 。 认真 做好 每一 部 作品 ~ 你们 的 每 一个 收藏 , 点 赞 , 评论 都 将 成为 我们 前进 路上 最大 的 鼓励 !",
+          "translation": "We pour all our passion and sincerity into every single work~ Every bookmark, like, and comment from you fuels our journey forward!",
+          "width": 630,
+          "x": 59,
+          "y": 86
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 40.30769230769231,
+          "text": "- 多拉格 文化 全体 创 作者 敬上",
+          "translation": "- Sincerely, all creators at Dorag Culture",
+          "width": 537,
+          "x": 230,
+          "y": 456
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 50.22222222222222,
+          "text": "可 在 搜索 栏 搜索 关注",
+          "translation": "Search and follow in the search bar",
+          "width": 452,
+          "x": 178,
+          "y": 747
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 32.25,
+          "text": "腾讯 动漫",
+          "translation": "Tencent Animation",
+          "width": 121,
+          "x": 663,
+          "y": 826
+        }
+      ],
+      "imgHeight": 867,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

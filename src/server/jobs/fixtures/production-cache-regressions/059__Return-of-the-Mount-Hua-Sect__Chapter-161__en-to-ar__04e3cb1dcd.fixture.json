@@ -1,0 +1,2370 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0059",
+  "jobId": "fixture-job-0059",
+  "licenseId": "fixture-license-0059",
+  "pageCount": 46,
+  "pageOrder": [
+    "001.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "013__003.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "014__003.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "015__003.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "016__003.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 80,
+          "symWidth": 42.33333333333334,
+          "text": "161",
+          "translation": "١٦١",
+          "width": 129,
+          "x": 941,
+          "y": 223
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 42.56521739130435,
+          "symWidth": 20.1304347826087,
+          "text": "RETURN  OF  THE  MOUNT  HUA  SECT",
+          "translation": "عودة طائفة جبل هوا",
+          "width": 432,
+          "x": 571,
+          "y": 348
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 19.5,
+          "symWidth": 14,
+          "text": "PR",
+          "translation": "PR",
+          "width": 25,
+          "x": 965,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 19.42857142857143,
+          "symWidth": 16.57142857142857,
+          "text": "YEROUCH",
+          "translation": "YEROUCH",
+          "width": 96,
+          "x": 1017,
+          "y": 477
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 22,
+          "symWidth": 20,
+          "text": "OAKS",
+          "translation": "OAKS",
+          "width": 78,
+          "x": 725,
+          "y": 494
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18.5,
+          "symWidth": 12.5,
+          "text": "TL",
+          "translation": "TL",
+          "width": 23,
+          "x": 655,
+          "y": 495
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 24.6,
+          "symWidth": 20.8,
+          "text": "AsuraScans",
+          "translation": "AsuraScans",
+          "width": 198,
+          "x": 191,
+          "y": 518
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 18,
+          "symWidth": 17.16666666666667,
+          "text": "KILLER",
+          "translation": "قاتل",
+          "width": 88,
+          "x": 935,
+          "y": 564
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 12,
+          "text": "CL",
+          "translation": "CL",
+          "width": 24,
+          "x": 868,
+          "y": 565
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 17.83333333333333,
+          "symWidth": 16.16666666666667,
+          "text": "KILLER",
+          "translation": "قاتل",
+          "width": 89,
+          "x": 638,
+          "y": 587
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13.5,
+          "text": "RD",
+          "translation": "RD",
+          "width": 28,
+          "x": 573,
+          "y": 589
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 33,
+          "symWidth": 14.7741935483871,
+          "text": "Discord.gg/asuran",
+          "translation": "",
+          "width": 223,
+          "x": 277,
+          "y": 615
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25.8,
+          "symWidth": 25,
+          "text": "QC  MED",
+          "translation": "",
+          "width": 159,
+          "x": 944,
+          "y": 647
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14,
+          "text": "TS",
+          "translation": "",
+          "width": 27,
+          "x": 655,
+          "y": 664
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 19.4,
+          "symWidth": 26.2,
+          "text": "M_E_D",
+          "translation": "",
+          "width": 99,
+          "x": 703,
+          "y": 668
+        }
+      ],
+      "imgHeight": 800,
+      "imgWidth": 1200,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 94,
+          "symWidth": 49.14285714285715,
+          "text": "WHOA ...",
+          "translation": "واو...",
+          "width": 307,
+          "x": 274,
+          "y": 595
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 56.25,
+          "symWidth": 44.875,
+          "text": "of of 000",
+          "translation": "",
+          "width": 353,
+          "x": 356,
+          "y": 2914
+        }
+      ],
+      "imgHeight": 3800,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 35.54545454545455,
+          "symWidth": 19.95454545454545,
+          "text": "... THE  DIVINE RESERVOIR .",
+          "translation": "... الخزان الإلهي.",
+          "width": 250,
+          "x": 207,
+          "y": 540
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 38.76470588235294,
+          "symWidth": 26.5,
+          "text": "DOES  IT  MEAN THE  POND  WHERE A  GOD  RESIDES ?",
+          "translation": "هل يعني البركة التي يحلّ بها الإله؟",
+          "width": 374,
+          "x": 265,
+          "y": 744
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 40.45238095238095,
+          "symWidth": 27.73809523809524,
+          "text": "I  CANNOT GO  ANY  FURTHER THAN  THIS .",
+          "translation": "لا أستطيع التقدم أكثر من هذا.",
+          "width": 388,
+          "x": 167,
+          "y": 1451
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 34.33333333333334,
+          "text": "OH .",
+          "translation": "آه.",
+          "width": 105,
+          "x": 490,
+          "y": 2217
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 40.90476190476191,
+          "symWidth": 25.61904761904762,
+          "text": "THEN  FROM HERE ,  WE'LL ...",
+          "translation": "إذًا من هنا، سنـ...",
+          "width": 327,
+          "x": 475,
+          "y": 2366
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 35,
+          "text": "WAIT .",
+          "translation": "قف.",
+          "width": 164,
+          "x": 148,
+          "y": 2784
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 40,
+          "symWidth": 27.44444444444444,
+          "text": "THERE  IS ONE  VERY  MINOR PROBLEM .",
+          "translation": "ثمة مشكلة ضئيلة جدّاً.",
+          "width": 393,
+          "x": 152,
+          "y": 2926
+        }
+      ],
+      "imgHeight": 3800,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 24.66666666666667,
+          "text": "A  PROBLEM ?",
+          "translation": "مشكلة؟",
+          "width": 248,
+          "x": 365,
+          "y": 23
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 36.5,
+          "symWidth": 23.98645833333333,
+          "text": "IT'S  BETTER  TO  SEE IT  FOR  YOURSELF  THAN FOR  ME  TO  EXPLAIN .",
+          "translation": "خيرٌ أن ترى بعينيك مما أن أشرح لك.",
+          "width": 455,
+          "x": 229,
+          "y": 691
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 17,
+          "symWidth": 19.5,
+          "text": "Es",
+          "translation": "Es",
+          "width": 30,
+          "x": 788,
+          "y": 979
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 16.33333333333333,
+          "symWidth": 19,
+          "text": "000",
+          "translation": "000",
+          "width": 50,
+          "x": 401,
+          "y": 1385
+        }
+      ],
+      "imgHeight": 3800,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 36.22222222222222,
+          "symWidth": 19.88888888888889,
+          "text": "MEREAD.10",
+          "translation": "ميريد.١٠",
+          "width": 177,
+          "x": 715,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 46.66666666666666,
+          "symWidth": 21.5,
+          "text": "།།།། ་  ་",
+          "translation": "......",
+          "width": 94,
+          "x": 532,
+          "y": 734
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 46.2,
+          "symWidth": 33.6,
+          "text": "MEAT ?",
+          "translation": "لحم؟",
+          "width": 169,
+          "x": 479,
+          "y": 1685
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 116.5,
+          "symWidth": 98.5,
+          "text": "ak  of",
+          "translation": "نضج من",
+          "width": 251,
+          "x": 178,
+          "y": 3766
+        }
+      ],
+      "imgHeight": 3867,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 43.5,
+          "symWidth": 28.29166666666667,
+          "text": "of .. 000",
+          "translation": "من.. 000",
+          "width": 143,
+          "x": 423,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 57.14285714285715,
+          "symWidth": 44.42857142857143,
+          "text": "of  of ...",
+          "translation": "من من...",
+          "width": 214,
+          "x": 571,
+          "y": 1350
+        }
+      ],
+      "imgHeight": 3867,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 38.6,
+          "symWidth": 26.61666666666667,
+          "text": "WHAT  ON EARTH  IS ...",
+          "translation": "ما هذا بحق السماء...؟",
+          "width": 246,
+          "x": 327,
+          "y": 499
+        }
+      ],
+      "imgHeight": 3868,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 36,
+          "symWidth": 21.22222222222222,
+          "text": "MEREAD.10",
+          "translation": "ميريد.10",
+          "width": 174,
+          "x": 718,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 294,
+          "symHeight": 292,
+          "symWidth": 141,
+          "text": "of",
+          "translation": "من",
+          "width": 236,
+          "x": 282,
+          "y": 2700
+        }
+      ],
+      "imgHeight": 3913,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 51.5,
+          "symWidth": 56.75,
+          "text": "콰작 000",
+          "translation": "كواجاك 000",
+          "width": 199,
+          "x": 581,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 69,
+          "symWidth": 65.75,
+          "text": "FLEE",
+          "translation": "اهرب",
+          "width": 198,
+          "x": 537,
+          "y": 205
+        }
+      ],
+      "imgHeight": 3913,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 317,
+          "symHeight": 105.5,
+          "symWidth": 107.25,
+          "text": "ххх .",
+          "translation": "xxx.",
+          "width": 276,
+          "x": 366,
+          "y": 0
+        }
+      ],
+      "imgHeight": 3913,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 31.6,
+          "text": "WH ...",
+          "translation": "ماذا...",
+          "width": 140,
+          "x": 367,
+          "y": 2126
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 157,
+          "symWidth": 83.33333333333333,
+          "text": "WHAT ... ? !",
+          "translation": "ماذا...؟!",
+          "width": 585,
+          "x": 153,
+          "y": 2657
+        }
+      ],
+      "imgHeight": 3373,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 368,
+          "symHeight": 102.9565217391304,
+          "symWidth": 74.26086956521739,
+          "text": "WH - WHAT WAS  THAT  JUST NOW ?!",
+          "translation": "م- ما كان ذلك الآن؟!",
+          "width": 739,
+          "x": 80,
+          "y": 1570
+        }
+      ],
+      "imgHeight": 3373,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 134.6666666666667,
+          "symWidth": 81.5,
+          "text": "IT  WAS  HUGE !!!",
+          "translation": "كان هائلًا!!!",
+          "width": 788,
+          "x": 63,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 62,
+          "symWidth": 39,
+          "text": "HO ...",
+          "translation": "هو...",
+          "width": 182,
+          "x": 307,
+          "y": 791
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 37.33333333333334,
+          "text": "HOHOHO ...",
+          "translation": "هاهاها...",
+          "width": 337,
+          "x": 285,
+          "y": 967
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 46,
+          "symWidth": 28.66666666666667,
+          "text": "THAT'S  IT .",
+          "translation": "هذا هو.",
+          "width": 250,
+          "x": 333,
+          "y": 2265
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18.5,
+          "symWidth": 25,
+          "text": "८८",
+          "translation": "٨٨",
+          "width": 36,
+          "x": 732,
+          "y": 2788
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 48,
+          "symWidth": 29.3110487616099,
+          "text": "THE  MINOR PROBLEM  THAT  PREVENTS US  FROM  GETTING  THE DIVINE  SPIRIT  HERB .",
+          "translation": "العقبة الصغيرة التي تمنعنا من نيل عشبة الروح الإلهية.",
+          "width": 642,
+          "x": 124,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 455,
+          "symHeight": 105.3333333333333,
+          "symWidth": 71.94318181818181,
+          "text": "RETURN  OF  THE MOUNT HUA  SECT",
+          "translation": "عودة طائفة جبل هوا",
+          "width": 636,
+          "x": 154,
+          "y": 3036
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 15.38461538461539,
+          "text": "ART / ADAPTATION  STUDIO  ARCHE  I  ORIGINAL  •  BIGA",
+          "translation": "الفن / التكييف استوديو آركي | الأصلي • بيغا",
+          "width": 669,
+          "x": 116,
+          "y": 3596
+        }
+      ],
+      "imgHeight": 3810,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 29,
+          "text": "161",
+          "translation": "١٦١",
+          "width": 108,
+          "x": 396,
+          "y": 47
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 84,
+          "symWidth": 53.78076923076923,
+          "text": "WHAT  KIND  OF PLACE  IS  THIS ?!",
+          "translation": "ما هذا المكان بحقِّ؟!",
+          "width": 590,
+          "x": 138,
+          "y": 991
+        },
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 66.77777777777777,
+          "symWidth": 44.34529914529914,
+          "text": "WHY  IS  THERE A  DRAGON  LIVING HERE ?!",
+          "translation": "لماذا يقطن هنا تنين؟!",
+          "width": 527,
+          "x": 250,
+          "y": 1306
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 43.66666666666666,
+          "symWidth": 28.06428571428571,
+          "text": "DRAGONS ARE  IMAGINARY CREATURES .",
+          "translation": "التنانين مخلوقاتُ وهميّة.",
+          "width": 364,
+          "x": 294,
+          "y": 3063
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 43,
+          "symWidth": 27.63888888888889,
+          "text": "THAT  IS  A  SNAKE CALLED  THE  INK - SCALED BLOOD  PYTHON .",
+          "translation": "ذلك ثُعبانُ دمِّ الحَبَرِ ذاتُ القشور.",
+          "width": 552,
+          "x": 240,
+          "y": 3321
+        }
+      ],
+      "imgHeight": 3810,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 312,
+          "symHeight": 63.3974358974359,
+          "symWidth": 41.69411509543089,
+          "text": "WHAT'S THE  DIFFERENCE ?!  THAT'S AN  IMAGINARY  CREATURE TOO ,  ISN'T  IT ?!",
+          "translation": "ما الفرق؟ هو أيضًا مخلوقٌ وهمي، أليس كذلك؟!",
+          "width": 733,
+          "x": 91,
+          "y": 671
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 46.52631578947368,
+          "symWidth": 32.31578947368421,
+          "text": "BUT  YOU SAW  IT  WITH  YOUR OWN  EYES !",
+          "translation": "لكنَّكَ رأيتهُ بعينِكَ!",
+          "width": 499,
+          "x": 264,
+          "y": 1572
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 32.80555555555556,
+          "symWidth": 25.09861111111111,
+          "text": "I'M  AN  IDIOT FOR  THINKING  THIS  PLACE WAS  NICE ,  EVEN  IF  JUST FOR  A  MOMENT .",
+          "translation": "كنتُ أحمقَ الظنْ أن هذا المكان جميل، ولو للحظة.",
+          "width": 493,
+          "x": 181,
+          "y": 3276
+        }
+      ],
+      "imgHeight": 3812,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 34.98684210526316,
+          "symWidth": 26.01315789473684,
+          "text": "I  WONDERED  WHY PEOPLE  ONLY  LIVED  IN  BARREN WASTELANDS  WHEN  THERE'S FERTILE  LAND  LIKE  THIS ,",
+          "translation": "كنت أتساءل لماذا يعيش الناس في البراري القاحلة\nمع وجود أراضٍ خصبة كهذه.",
+          "width": 595,
+          "x": 152,
+          "y": 146
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 29.19148936170213,
+          "symWidth": 25.29078014184397,
+          "text": "BUT HOW  THE  HELL  IS  ANYONE SUPPOSED  TO  RESIDE  IN SUCH  A  PLACE ?",
+          "translation": "ولكن كيف يجرؤ أحد على السكنى في مثل هذا المكان؟",
+          "width": 451,
+          "x": 320,
+          "y": 446
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 27.48148148148148,
+          "symWidth": 17.51851851851852,
+          "text": "THE  INK - SCALED BLOOD  PYTHON ...",
+          "translation": "أفعى الدم ذات القشور المُخططة...",
+          "width": 273,
+          "x": 126,
+          "y": 1232
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 43.90322580645162,
+          "symWidth": 26.90322580645161,
+          "text": "IS  THE ENCHANTED  BEAST OF  THIS  PLACE .",
+          "translation": "هي الوحش المسحور في هذه البقعة.",
+          "width": 435,
+          "x": 238,
+          "y": 2234
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 39.45070422535211,
+          "symWidth": 24.04225352112676,
+          "text": "ITS  SCALES  ARE IMPERVIOUS  TO  BLADES  AND EVEN  THE  ENHANCED  ENERGY OF  A  MARTIAL  MASTER .",
+          "translation": "قشورها صامدة أمام الشفرات،\nوحتى أمام الطاقة المعززة لسيد فنون القتال.",
+          "width": 585,
+          "x": 118,
+          "y": 2998
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "renderMode": "mask_only",
+          "symHeight": 39,
+          "symWidth": 24.25,
+          "text": "ON  TOP  OF  THAT ,",
+          "translation": "",
+          "width": 342,
+          "x": 325,
+          "y": 3317
+        }
+      ],
+      "imgHeight": 3432,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 38.55384615384615,
+          "symWidth": 23.625,
+          "text": "ON TOP OF THAT , ITS STRENGTH IS SO GREAT THAT A SINGLE FLICK OF ITS TAIL CAN CHANGE THE TERRAIN .",
+          "translation": "وفوق كل ذلك، قوته عظيمة إلى حد أن رفرفة ذيله الوحيدة قد تغيّر تضاريس الأرض.",
+          "width": 562,
+          "x": 216,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 38.70588235294117,
+          "symWidth": 25.5,
+          "text": "IT  IS  A  MONSTER IN  EVERY  SENSE  OF THE  WORD .",
+          "translation": "إنه وحش بكل ما تحمله الكلمة من معنى.",
+          "width": 395,
+          "x": 235,
+          "y": 1631
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 40.16666666666666,
+          "symWidth": 25.02777777777778,
+          "text": "E - EVEN  YOU CAN'T  HANDLE  IT ,  PALACE MASTER ?",
+          "translation": "هل أنتَ، أيها السيد الحاكم، عاجزٌ حتى عن السيطرة عليه؟",
+          "width": 540,
+          "x": 196,
+          "y": 2144
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 46,
+          "symWidth": 31.09090909090909,
+          "text": "I'M  NOT SURE .",
+          "translation": "لست متيقناً.",
+          "width": 213,
+          "x": 410,
+          "y": 3109
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "renderMode": "mask_only",
+          "symHeight": 38,
+          "symWidth": 23,
+          "text": "I'D  HAVE  TO  FIGHT",
+          "translation": "",
+          "width": 371,
+          "x": 384,
+          "y": 3326
+        }
+      ],
+      "imgHeight": 3432,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 38.56521739130434,
+          "symWidth": 23.64130434782609,
+          "text": "I'D HAVE TO FIGHT IT TO FIND OUT , BUT AS YOU KNOW , I CANNOT ENTER THAT AREA .",
+          "translation": "يجب أن أقاتله لأعرف، لكن كما تعلم، لا أستطيع دخول تلك المنطقة.",
+          "width": 488,
+          "x": 328,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 256,
+          "symHeight": 38.73710317460318,
+          "symWidth": 24.18650793650794,
+          "text": "AND  SINCE THE  INK - SCALED  BLOOD PYTHON  DOESN'T  LEAVE  IT , WE  NEVER  REALLY CROSS  PATHS .",
+          "translation": "وبما أن الأفعى بوتون الدم ذات الحراشيف الحبرية لا تخرج منها، فإن طرقنا لا تلتقي حقًا.",
+          "width": 561,
+          "x": 167,
+          "y": 636
+        },
+        {
+          "angle": 0,
+          "height": 273,
+          "symHeight": 33.93069306930693,
+          "symWidth": 23.01561309977151,
+          "text": "IN  OTHER  WORDS , THE  BEAST  PALACE  HAS  NO REASON  TO  ENTER ,  AND  THAT THING  HAS  NO  REASON  TO  LEAVE , SO  WE'RE  LIKE  NEIGHBORS WHO  WILL  NEVER  MEET .",
+          "translation": "بمعنى آخر، قصر الوحش لا مصلحة له بالدخول، وذلك الشيء لا حاجة له بالمغادرة، فصارت علاقتنا كجيران لا يلتقون.",
+          "width": 607,
+          "x": 265,
+          "y": 989
+        },
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 37.53061224489796,
+          "symWidth": 27.10204081632653,
+          "text": "WE  HAD  NO REASON  TO  GO  OUT  OF  OUR WAY  TO  DRIVE  IT  OUT  OR EXTERMINATE  IT .",
+          "translation": "لم يكن لدينا سبب لنصرف جهدنا لطرده أو للقضاء عليه.",
+          "width": 596,
+          "x": 206,
+          "y": 2436
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 40.57142857142857,
+          "symWidth": 24.35714285714286,
+          "text": "... I  SUPPOSE SO .",
+          "translation": "... أظن ذلك صحيح.",
+          "width": 292,
+          "x": 143,
+          "y": 2846
+        }
+      ],
+      "imgHeight": 3433,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 37.4758064516129,
+          "symWidth": 22.7866568914956,
+          "text": "REGARDLESS , IT  ATTACKS  ANYTHING  THAT ENTERS  THE  DIVINE  RESERVOIR WITHOUT  EXCEPTION .",
+          "translation": "مهما يكن، فإنه يهاجم كل من يدخل الخزانة الإلهية بلا استثناء.",
+          "width": 615,
+          "x": 129,
+          "y": 83
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 47.94736842105263,
+          "symWidth": 31.21052631578947,
+          "text": "THAT'S  THE PROBLEM ...",
+          "translation": "هذه هي المشكلة...",
+          "width": 324,
+          "x": 257,
+          "y": 379
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 34.78048780487805,
+          "symWidth": 20.91996951219512,
+          "text": "TO  GET  THE  IMPERIAL GROMWELL ,  WE  HAVE  TO  ENTER THE  DIVINE  RESERVOIR ,",
+          "translation": "للحصول على جرامويل الإمبراطوري، علينا دخول الخزانة الإلهية،",
+          "width": 577,
+          "x": 234,
+          "y": 1193
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 34.3828125,
+          "symWidth": 22.15104166666666,
+          "text": "AND  THAT  MEANS  WE  HAVE TO  DEAL  WITH  THAT  IMUGI ...  NO , THE  INK - SCALED  BLOOD  PYTHON OR  WHATEVER  IT  IS .",
+          "translation": "وهذا يعني وجوب مواجهتنا لتلك الإيموجي... بل لنقل الأفعى ذات الحراشف السوداء أو ما شئت من أسماء.",
+          "width": 597,
+          "x": 230,
+          "y": 1479
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 37.32954545454545,
+          "symWidth": 21.74431818181818,
+          "text": "AS  I  SAID , IT'S  JUST  A  MINOR PROBLEM !",
+          "translation": "كما قلت، إنها مجرد مشكلة ثانوية!",
+          "width": 384,
+          "x": 440,
+          "y": 1907
+        },
+        {
+          "angle": 0,
+          "height": 452,
+          "symHeight": 46.81397849462365,
+          "symWidth": 29.10973401245048,
+          "text": "YEAH , MINOR .  WHAT'S  SO  GREAT ABOUT  A  MATTER  OF  LIFE AND  DEATH ? LIFE  IS  LIKE A  SPECK  OF  DUST ANYWAY ,  RIGHT ?",
+          "translation": "نعم، ثانوية! وما عظيم شأن أمر يتعلق بالحياة والموت؟ فالحياة مجرد ذرة تراب، أليس كذلك؟",
+          "width": 540,
+          "x": 48,
+          "y": 2133
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 51.16666666666666,
+          "symWidth": 33,
+          "text": "VERY  MUCH AMITABHA !!",
+          "translation": "حقًا، أميتابها!!",
+          "width": 260,
+          "x": 402,
+          "y": 3131
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 43,
+          "symWidth": 25.33653846153846,
+          "text": "IT'S  AMITAYUS , YOU  PUNK .",
+          "translation": "إنه أميتايوس، أيها الصغير.",
+          "width": 330,
+          "x": 94,
+          "y": 3368
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 23,
+          "symWidth": 12.55102040816327,
+          "text": "TL / N :  DIFFERENCE  OF  GREETINGS BETWEEN  MONKS  AND  TAOISTS .",
+          "translation": "اختلاف التحايا بين الرُهبان والطاويين.",
+          "width": 348,
+          "x": 548,
+          "y": 3390
+        }
+      ],
+      "imgHeight": 3600,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 255,
+          "symHeight": 55.06666666666667,
+          "symWidth": 35.02222222222223,
+          "text": "DOES  IT  MATTER IF  IT'S  AMITABHA  OR AMITAYUS  RIGHT NOW ?",
+          "translation": "هل يهم الآن أن يكون الأمر آميتابه أو أميتايوس؟",
+          "width": 501,
+          "x": 286,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 54.42105263157895,
+          "symWidth": 35.07287449392712,
+          "text": "WE'RE  ALL  GOING TO  DIE  IF  WE  GO IN  THERE !",
+          "translation": "سنهلك جميعًا إن دخلنا هناك!",
+          "width": 406,
+          "x": 181,
+          "y": 283
+        },
+        {
+          "angle": 0,
+          "height": 301,
+          "symHeight": 58.87962962962963,
+          "symWidth": 38.44330484330484,
+          "text": "WHETHER  YOU'RE A  TAOIST  OR  A  MONK ,  IT'S JUST  ONE  HIT  IF  YOU  GO IN !  ONE  HIT !",
+          "translation": "سواءٌ كنت طاويًا أو راهبًا، ضربة واحدة تكفي إذا دخلت! ضربة واحدة!",
+          "width": 692,
+          "x": 114,
+          "y": 1133
+        },
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 71,
+          "symWidth": 47.2445652173913,
+          "text": "EVERYONE IS  EQUAL  BEFORE THOSE  JAWS !",
+          "translation": "الجميع سواء أمام تلك الأفواه!",
+          "width": 586,
+          "x": 166,
+          "y": 2604
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 30.44411764705882,
+          "symWidth": 24.30212093788564,
+          "text": "IT MIGHT NOT COMPARE TO THE ENHANCED ENERGY CREATED BY A WUDANG ELDER OR THE HIDDEN WEAPON ARTS INFUSED WITH THE TANG CLAN PATRIARCH'S INTERNAL ENERGY , BUT IT PRODUCED A STRIKE OF THAT MAGNITUDE WITH A SIMPLE SNAP OF ITS JAWS .",
+          "translation": "قد لا تضاهي طاقتها المعززة التي يخلقها شيخ وودانغ أو فنون الأسلحة الخفية الغارقة في طاقة بادِي عشيرة تانغ، لكنها أطلقت ضربة بهذه الشدة بنقرة بسيطة من فكّيها.",
+          "width": 607,
+          "x": 116,
+          "y": 3381
+        }
+      ],
+      "imgHeight": 3600,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 172,
+          "renderMode": "mask_only",
+          "symHeight": 32,
+          "symWidth": 25.57203825586178,
+          "text": "BUT  IT  PRODUCED A  STRIKE  OF  THAT  MAGNITUDE WITH  A  SIMPLE  SNAP  OF ITS  JAWS .",
+          "translation": "",
+          "width": 554,
+          "x": 217,
+          "y": 133
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 36.5,
+          "symWidth": 27.83039772727273,
+          "text": "IT'S  OBVIOUS HOW  STRONG  IT  WOULD BE  IF  IT  DECIDED  TO BITE  FOR  REAL .",
+          "translation": "من الواضح مدى شدة قوته لو قرر أن يعض حقًا.",
+          "width": 515,
+          "x": 179,
+          "y": 1443
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 27.31428571428572,
+          "symWidth": 21.24285714285714,
+          "text": "I  DID  THINK  THAT THINGS  WERE  GOING  TOO  WELL AT  THE  BEAST  PALACE .",
+          "translation": "كنت أظن أن الأمور تسير على ما يرام للغاية في قصر الوحوش.",
+          "width": 484,
+          "x": 275,
+          "y": 2177
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 30.66666666666667,
+          "symWidth": 25.03703703703704,
+          "text": "THERE'S  NO WAY  MY  LUCK  WOULD BE  THAT  GOOD .",
+          "translation": "ليس من شأن حظي أن يكون بهذا الخير.",
+          "width": 381,
+          "x": 379,
+          "y": 2415
+        }
+      ],
+      "imgHeight": 3600,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 42.66666666666666,
+          "symWidth": 29.82323232323232,
+          "text": "HOW  ARE WE  SUPPOSED  TO DEFEAT  THAT ?",
+          "translation": "كيف لنا أن ننتصر على ذلك؟",
+          "width": 417,
+          "x": 177,
+          "y": 53
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 38.44230769230769,
+          "symWidth": 26.31043956043956,
+          "text": "WHAT  DO  YOU MEAN ,  HOW ?  IT'S  JUST A  BEAST !",
+          "translation": "ماذا تعني بقولك «كيف»؟ إنه مجرد وحش!",
+          "width": 489,
+          "x": 250,
+          "y": 843
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 36.8,
+          "symWidth": 21.31545454545455,
+          "text": "IF  I  BEAT  IT  UP WITH  ALL  MY  MIGHT ,  IT'LL DIE  EVENTUALLY JUST  LIKE ANYTHING  ELSE !",
+          "translation": "إن ضربته بكل قوتي فسيموت عاجلاً كما كل شيء.",
+          "width": 515,
+          "x": 301,
+          "y": 1079
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 34.96774193548387,
+          "symWidth": 21.97235023041475,
+          "text": "IT'S  NOT  LIKE THAT  THING  DOESN'T  HAVE A  PHYSICAL  BODY .",
+          "translation": "ليس الأمر كما لو أن ذلك الشيء بلا جسد مادي.",
+          "width": 498,
+          "x": 235,
+          "y": 1614
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 30.66666666666667,
+          "symWidth": 20.46560846560847,
+          "text": "MOST  PROBLEMS  IN THE  WORLD  CAN  BE  SOLVED  BY SMASHING  ONE'S  HEAD .",
+          "translation": "معظم مشكلات العالم تحل بضربة على الرأس.",
+          "width": 518,
+          "x": 303,
+          "y": 1876
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 33.33333333333334,
+          "symWidth": 27.1468253968254,
+          "text": "YOU'RE  REALLY GOING  TO  DIE  IF  YOU DO  THAT .",
+          "translation": "سوف تموت حقاً إن فعلت ذلك.",
+          "width": 419,
+          "x": 83,
+          "y": 2973
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 34.96666666666667,
+          "symWidth": 23.31291666666667,
+          "text": "I SHOULDN'T BE SAYING THIS SINCE I'M THE ONE WHO BROUGHT YOU HERE , BUT WILL YOU BE OKAY ?",
+          "translation": "لا ينبغي لي أن أقول هذا بعد أن جلبتك إلى هنا، لكن هل ستكون بخير؟",
+          "width": 471,
+          "x": 249,
+          "y": 3653
+        }
+      ],
+      "imgHeight": 3828,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "renderMode": "mask_only",
+          "symHeight": 35.33333333333334,
+          "symWidth": 24.33333333333333,
+          "text": "BUT  WILL  YOU BE OKAY ?",
+          "translation": "",
+          "width": 282,
+          "x": 445,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 19.81818181818182,
+          "text": "I'LL  BE  FINE .",
+          "translation": "سأكون بخير.",
+          "width": 252,
+          "x": 92,
+          "y": 869
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 35.72222222222222,
+          "symWidth": 23.44047619047619,
+          "text": "I'M  A  BIT STRONGER  THAN I  LOOK .",
+          "translation": "أنا أقوى مما أبدو عليه قليلاً.",
+          "width": 333,
+          "x": 137,
+          "y": 998
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 48.23636363636363,
+          "symWidth": 29.7030303030303,
+          "text": "WELL , YOUR  CONFIDENCE  IS REASSURING !",
+          "translation": "حسنًا، إن ثقتك تُعَد طمأنينة!",
+          "width": 549,
+          "x": 222,
+          "y": 1555
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 35,
+          "symWidth": 21.77222222222222,
+          "text": "I'LL  TAKE RESPONSIBILITY  AND  MAKE SURE  YOUR  FUNERAL  RITES ARE  WELL - PERFORMED !",
+          "translation": "سأتولى الأمر وأضمن أن تتم مراسم جنازتك على أكمل وجه!",
+          "width": 520,
+          "x": 275,
+          "y": 2679
+        },
+        {
+          "angle": 0,
+          "height": 250,
+          "symHeight": 51.66666666666666,
+          "symWidth": 29.82037037037037,
+          "text": "IF A  MERE  BEAST DARES  TO  ATTACK  WITHOUT RECOGNIZING WHO  I  AM ,  IT'S BECOMING  SNAKE  SOUP !",
+          "translation": "إذا تجرأ وحش حقير على الهجوم دون أن يعرف من أنا، فذلك يصبح حساء ثعابين!",
+          "width": 663,
+          "x": 122,
+          "y": 3454
+        }
+      ],
+      "imgHeight": 3828,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 302,
+          "symHeight": 48.36263736263736,
+          "symWidth": 27.66243131868132,
+          "text": "THE  FOOD  SITUATION IN  KUNMING  DIDN'T  SEEM  GREAT ANYWAY .  IF  WE  CATCH  THAT ,  THE  WHOLE CITY  WILL  BE  ABLE  TO  EAT  FOR THREE  OR  FOUR  DAYS !",
+          "translation": "الوضع الغذائي في كونمينغ لم يكن ليبدو جيدًا على أي حال.\nإن تمكنا من الإمساك به، سيكفي سكان المدينة للطعام لثلاثة أو أربعة أيام!",
+          "width": 793,
+          "x": 52,
+          "y": 1384
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 37.42553191489362,
+          "symWidth": 22.27659574468085,
+          "text": "WHAT  A  MAGNIFICENT SOLUTION .  BEFITTING  OF ZHUGE  LIANG .",
+          "translation": "يا لها من حيلة بديعة، تليق بحقّ بزوغي ليانغ.",
+          "width": 492,
+          "x": 195,
+          "y": 1913
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 41,
+          "symWidth": 25.28571428571428,
+          "text": "ALRIGHT , I'M  GO-",
+          "translation": "حسنًا، سأذها—",
+          "width": 192,
+          "x": 433,
+          "y": 2729
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 65.6,
+          "symWidth": 45.8,
+          "text": "WAIT !",
+          "translation": "انتظر!",
+          "width": 221,
+          "x": 264,
+          "y": 2916
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 53,
+          "symWidth": 36.11111111111111,
+          "text": "UGH ! WHY ?!",
+          "translation": "آه! لماذا؟!",
+          "width": 196,
+          "x": 593,
+          "y": 3558
+        }
+      ],
+      "imgHeight": 3828,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 36.73333333333333,
+          "symWidth": 24.04367816091954,
+          "text": "PALACE  MASTER , CAN  YOU  TELL  US  WHERE THE  IMPERIAL  GROMWELL IS  LOCATED ?",
+          "translation": "يا سيد القصر، هل تعلم موقع الأعشاب الإمبراطورية غروومويل؟",
+          "width": 501,
+          "x": 128,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 38.55555555555556,
+          "symWidth": 25.44444444444444,
+          "text": "HMM .  THAT'S NOT  HARD .",
+          "translation": "همم.. فذاك ليس بالأمر العسير.",
+          "width": 276,
+          "x": 411,
+          "y": 431
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 33,
+          "symWidth": 23.36805555555556,
+          "text": "DO  YOU  SEE THOSE  WHITE  FLOWERS GROWING  ON  THE  CLIFF BY  THE  WATER ?",
+          "translation": "هل ترى تلك الزهور البيضاء تنمو على الجرف بجانب الماء؟",
+          "width": 431,
+          "x": 331,
+          "y": 1170
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 36.80769230769231,
+          "symWidth": 21.26923076923077,
+          "text": "THAT  IS THE  DIVINE  SPIRIT HERB .",
+          "translation": "تلك هي نبتة الروح الإلهية.",
+          "width": 361,
+          "x": 269,
+          "y": 3279
+        }
+      ],
+      "imgHeight": 3797,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 39.52678571428572,
+          "symWidth": 21.13392857142857,
+          "text": "CHUNG  MYUNG , DEFEATING  THE  DRAGON ... I  MEAN ,  THE  SNAKE  ISN'T WHAT'S  IMPORTANT .",
+          "translation": "تشونغ ميونغ، هزيمة التنين... أعني، الثعبان ليست هي القضية الجوهرية.",
+          "width": 506,
+          "x": 101,
+          "y": 206
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 39.25,
+          "symWidth": 25.04166666666667,
+          "text": "IF  THAT  HERB  GETS DAMAGED  DURING  THE  FIGHT , IT'S  ALL  OVER .",
+          "translation": "إن تعرضت تلك النبتة للأذى أثناء القتال، فكل شيء يكون قد انتهى.",
+          "width": 610,
+          "x": 165,
+          "y": 538
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 32.83333333333334,
+          "text": "I  KNOW .",
+          "translation": "إنني على علم بذلك.",
+          "width": 222,
+          "x": 443,
+          "y": 1606
+        }
+      ],
+      "imgHeight": 3797,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 29.63333333333333,
+          "symWidth": 22.3,
+          "text": "A  MASTERWORK SWORD  OF  THE  TANG CLAN !",
+          "translation": "سَيْفٌ بَارِعٌ مِنْ عَشِيرَةِ التَّانْغِ!",
+          "width": 353,
+          "x": 131,
+          "y": 1850
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 59,
+          "symWidth": 54.66666666666666,
+          "text": "번쩍 000",
+          "translation": "",
+          "width": 208,
+          "x": 524,
+          "y": 2091
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 34.33333333333334,
+          "symWidth": 21.72595704948646,
+          "text": "THE  WEIGHT  ISN'T BAD ,  AND  THE  BALANCE IS  QUITE  GOOD .",
+          "translation": "الثِّقْلُ لَيْسَ سَيِّئًا، وَتَوَازُنُهُ رَائِعٌ.",
+          "width": 428,
+          "x": 256,
+          "y": 3103
+        }
+      ],
+      "imgHeight": 3799,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 61.03030303030303,
+          "symWidth": 35.70075757575757,
+          "text": "NO  MATTER  HOW MUCH  IT  RAGES ,  IT'S JUST  A  BEAST !",
+          "translation": "مَهْمَا تَحَدَّثَ الْوَحْشُ، فَهُوَ غَيْرُ أَكْثَرَ مِنْ دَبْبٍ!",
+          "width": 519,
+          "x": 168,
+          "y": 85
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 113,
+          "symWidth": 72.88888888888889,
+          "text": "I'M  REALLY",
+          "translation": "إِنِّي على أَهْبَةِ الاسْتِعْدَادِ",
+          "width": 551,
+          "x": 177,
+          "y": 1667
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 112,
+          "symWidth": 74,
+          "text": "GOING  NOW !!",
+          "translation": "سَأَنْطَلِقُ الآن!",
+          "width": 682,
+          "x": 116,
+          "y": 1808
+        }
+      ],
+      "imgHeight": 3782,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3782,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 39,
+          "symWidth": 27.75,
+          "text": "... GOOD .",
+          "translation": "... جيد.",
+          "width": 200,
+          "x": 374,
+          "y": 596
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 27.16666666666667,
+          "symWidth": 22.08333333333333,
+          "text": "IT'S NOT  COMING , RIGHT ?",
+          "translation": "إنه لن يأتي، أليس كذلك؟",
+          "width": 217,
+          "x": 406,
+          "y": 721
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 62.75,
+          "symWidth": 52.75,
+          "text": "AFER",
+          "translation": "آفير",
+          "width": 119,
+          "x": 255,
+          "y": 1592
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 61.8,
+          "symWidth": 45.4,
+          "text": "Arell",
+          "translation": "أريل",
+          "width": 122,
+          "x": 395,
+          "y": 1724
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 9.666666666666666,
+          "symWidth": 9.666666666666666,
+          "text": "AV .",
+          "translation": "آف.",
+          "width": 21,
+          "x": 273,
+          "y": 1803
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 33.45,
+          "symWidth": 25.3,
+          "text": "LET'S  THINK CAREFULLY .",
+          "translation": "دعنا نفكر مليًا.",
+          "width": 241,
+          "x": 317,
+          "y": 2512
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 108.5,
+          "symWidth": 94.5,
+          "text": "사박",
+          "translation": "사박",
+          "width": 179,
+          "x": 378,
+          "y": 3033
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 34.5,
+          "symWidth": 26.02631578947368,
+          "text": "MY  MISSION ISN'T  TO  BEAT  UP  A  SNAKE BUT  TO  GET  THE  IMPERIAL GROMWELL .",
+          "translation": "مهمتي ليست أن أهزم الأفعى، بل أن أحصل على الكرة الإمبراطورية.",
+          "width": 516,
+          "x": 254,
+          "y": 3267
+        }
+      ],
+      "imgHeight": 3783,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 36.33333333333334,
+          "symWidth": 19.77777777777778,
+          "text": "MCREAD.10",
+          "translation": "MCREAD.10",
+          "width": 176,
+          "x": 717,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 35.92,
+          "symWidth": 28.53461538461539,
+          "text": "I  SHOULD  SECURE IT  FIRST ,  THEN  I  CAN  BEAT UP  THE  BEAST  OR  MAKE SOUP  OUT  OF  IT ...",
+          "translation": "عليّ أولاً أن أحصره، ثم أتمكن من سحق الوحش أو تحضير حساء منه...",
+          "width": 548,
+          "x": 201,
+          "y": 147
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 49.5,
+          "symWidth": 45.5,
+          "text": "사박",
+          "translation": "صَفَقة",
+          "width": 75,
+          "x": 391,
+          "y": 540
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 54,
+          "symWidth": 53,
+          "text": "사박",
+          "translation": "صَفَقة",
+          "width": 86,
+          "x": 287,
+          "y": 623
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 42.93333333333333,
+          "symWidth": 30.23333333333333,
+          "text": "CAREFULLY ,  SO  IT DOESN'T  NOTICE ...",
+          "translation": "بحذر، كي لا يلحظني...",
+          "width": 455,
+          "x": 284,
+          "y": 2185
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 43.5,
+          "symWidth": 40.25,
+          "text": "Abub",
+          "translation": "أبوب",
+          "width": 82,
+          "x": 257,
+          "y": 2701
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 49,
+          "symWidth": 43.5,
+          "text": "사박",
+          "translation": "صَفَقة",
+          "width": 76,
+          "x": 262,
+          "y": 2828
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 35.25,
+          "symWidth": 22.25,
+          "text": "A - UL",
+          "translation": "أ - أول",
+          "width": 65,
+          "x": 327,
+          "y": 2941
+        }
+      ],
+      "imgHeight": 3771,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 46.75,
+          "symWidth": 32.08333333333334,
+          "text": "FIRST ,  I'LL  PULL THIS  OUT ...",
+          "translation": "أولاً، سأخلع هذا...",
+          "width": 429,
+          "x": 241,
+          "y": 2689
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 15.33333333333333,
+          "symWidth": 21,
+          "text": "000",
+          "translation": "000",
+          "width": 56,
+          "x": 625,
+          "y": 2985
+        }
+      ],
+      "imgHeight": 3771,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 144.3333333333333,
+          "symWidth": 96.33333333333333,
+          "text": "아아 ... !",
+          "translation": "آه...!",
+          "width": 416,
+          "x": 276,
+          "y": 211
+        }
+      ],
+      "imgHeight": 3773,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 23.33333333333333,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 182,
+          "x": 709,
+          "y": 8
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 20.33333333333333,
+          "symWidth": 19,
+          "text": "ο  ο  ο",
+          "translation": "",
+          "width": 28,
+          "x": 748,
+          "y": 273
+        }
+      ],
+      "imgHeight": 2884,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 20,
+          "symWidth": 20,
+          "text": "00",
+          "translation": "",
+          "width": 42,
+          "x": 427,
+          "y": 1845
+        }
+      ],
+      "imgHeight": 2884,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 52.14285714285714,
+          "symWidth": 29.45238095238095,
+          "text": "IN  THIS CASE ...",
+          "translation": "في هذه الحال...",
+          "width": 211,
+          "x": 345,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 47.08333333333333,
+          "symWidth": 31.58333333333333,
+          "text": "... I'M SCREWED .",
+          "translation": "... لقد وقعت في المأساة.",
+          "width": 253,
+          "x": 332,
+          "y": 515
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 82.33333333333333,
+          "symWidth": 55.41666666666666,
+          "text": "q . O  O  O",
+          "translation": "",
+          "width": 175,
+          "x": 375,
+          "y": 2389
+        }
+      ],
+      "imgHeight": 2886,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 39.09523809523809,
+          "symWidth": 25.58893557422969,
+          "text": "... CAN'T  WE  JUST TALK  AFTER  I  TAKE  THE FLOWERS ?",
+          "translation": "... أما نتحادث بعد أن أحصل على الزهور؟",
+          "width": 500,
+          "x": 207,
+          "y": 102
+        }
+      ],
+      "imgHeight": 3867,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 67.30434782608695,
+          "symWidth": 42.39130434782609,
+          "text": "I'VE  GONE CRAZY ,  TALKING  TO A  SNAKE !",
+          "translation": "لقد جننتُ من الحديث مع أفعى!",
+          "width": 560,
+          "x": 128,
+          "y": 1772
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 76,
+          "symWidth": 48.63157894736842,
+          "text": "IT'S  FULL  OF OPENINGS !",
+          "translation": "إنه مفعم بالثغرات!",
+          "width": 465,
+          "x": 253,
+          "y": 3370
+        }
+      ],
+      "imgHeight": 3867,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 48.11475409836066,
+          "symWidth": 30.98360655737705,
+          "text": "NO  MATTER  HOW GREAT  OF  AN  ENCHANTED BEAST  IT  IS ,  IT'S  STILL JUST  AN  ANIMAL !",
+          "translation": "مهما بلغت عظمة الوحش المسحور، فإنه يظل مجرد حيوان!",
+          "width": 544,
+          "x": 130,
+          "y": 1234
+        },
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 57.97674418604652,
+          "symWidth": 37.63808139534883,
+          "text": "WITH  THIS SIZE ,  I'LL  HIT  IT  EVEN IF  I  SWING  WITH  MY EYES  CLOSED !",
+          "translation": "بحجمه هذا، سأصيبُه حتى لو ضربتُ والعيون مغمضة!",
+          "width": 556,
+          "x": 279,
+          "y": 1531
+        }
+      ],
+      "imgHeight": 3868,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 191.6153846153846,
+          "symWidth": 82.61538461538461,
+          "text": "YOU  SLUGGARD !!",
+          "translation": "أيتها الكاسلة!!",
+          "width": 731,
+          "x": 87,
+          "y": 155
+        },
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 116.25,
+          "symWidth": 64,
+          "text": "ENHANCED SWORD  ENERGY !",
+          "translation": "طاقة السيف المعززة!",
+          "width": 591,
+          "x": 170,
+          "y": 2006
+        }
+      ],
+      "imgHeight": 3913,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 131.8571428571429,
+          "symWidth": 61.57142857142857,
+          "text": "... EH ?!",
+          "translation": "... ماذا؟!",
+          "width": 428,
+          "x": 243,
+          "y": 2268
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 39.20689655172414,
+          "symWidth": 26.47629310344828,
+          "text": "IT'S  A  SWORD  PASSED DOWN  AS  A  TREASURE  IN THE  TANG  CLAN .",
+          "translation": "إنه سيف متوارث ككنز في عشيرة تانغ.",
+          "width": 529,
+          "x": 187,
+          "y": 3006
+        }
+      ],
+      "imgHeight": 3913,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 39.33333333333334,
+          "symWidth": 24.8989898989899,
+          "text": "I'M  GIVING  IT  TO  YOU  AS A  TOKEN  OF  OUR  FRIENDSHIP , SO  USE  IT  WELL .",
+          "translation": "أهديكَ إياها علامة على صداقتنا، فاستخدمها بحكمة.",
+          "width": 610,
+          "x": 138,
+          "y": 611
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 84.6875,
+          "symWidth": 52.875,
+          "text": "TREASURE ,  MY 455 !!",
+          "translation": "كنزُ حياتي!!",
+          "width": 539,
+          "x": 231,
+          "y": 892
+        },
+        {
+          "angle": 0,
+          "height": 242,
+          "symHeight": 51.21212121212121,
+          "symWidth": 32.19507575757576,
+          "text": "THAT  MAN  SOLD ME  A  LIE  WITH  A  SWORD THAT  CAN'T  EVEN  CUT A  SNAKE !!",
+          "translation": "باعني ذلك الإنسان كذباً بسيفٍ لا يقطع حتى أفعى!",
+          "width": 535,
+          "x": 174,
+          "y": 1931
+        }
+      ],
+      "imgHeight": 3913,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 35.88888888888889,
+          "symWidth": 23.4047619047619,
+          "text": "HA , YOU'RE  CRACKING YOUR  NECK ?",
+          "translation": "ها، أترقص عنقك؟",
+          "width": 349,
+          "x": 273,
+          "y": 1401
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 47.5,
+          "symWidth": 31.38888888888889,
+          "text": "... I  USED  TO  DO THAT  A  LOT .",
+          "translation": "... كنت أفعل ذلك كثيراً في السابق.",
+          "width": 418,
+          "x": 334,
+          "y": 1639
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 34.66666666666666,
+          "symWidth": 26.04629629629629,
+          "text": "DO  YOU  HAVE A  NASTY  TEMPER TOO ?",
+          "translation": "هل أنت ذا طباع سيئة أيضاً؟",
+          "width": 333,
+          "x": 255,
+          "y": 2406
+        },
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 51.2962962962963,
+          "symWidth": 32.34523809523809,
+          "text": "I  DON'T  THINK YOU'LL  UNDERSTAND HUMAN  SPEECH ...",
+          "translation": "لا أظنك ستفهم كلام البشر...",
+          "width": 573,
+          "x": 170,
+          "y": 3114
+        }
+      ],
+      "imgHeight": 3486,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 42.07936507936508,
+          "symWidth": 29.8531746031746,
+          "text": "BUT  CAN'T WE  FIGHT  FAIRLY AFTER  I  CHANGE MY  SWORD ?",
+          "translation": "ألا يمكننا القتال بإنصاف بعد أن أبدل سيفي؟",
+          "width": 400,
+          "x": 203,
+          "y": 1274
+        }
+      ],
+      "imgHeight": 3486,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 48.32051282051282,
+          "symWidth": 32.16025641025641,
+          "text": "OR  WE COULD  JUST  NOT FIGHT  AT  ALL ...",
+          "translation": "أَو نَكتفِي عَدَمَ القِتالِ كُلِّهِ...",
+          "width": 415,
+          "x": 242,
+          "y": 99
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 21.25,
+          "symWidth": 17.76461038961039,
+          "text": "원작 비가 각색  ·  작화  | 불 주먹  영수 바위 뛰기 .  사과 양배추 즙 .  소불",
+          "translation": "العمل الأصلي: بيغا · التأليف والرسوم: قبضة النار، يونغسو، القفز على الصخرة. عصير التفاح والكرنب. لحم بقر",
+          "width": 291,
+          "x": 591,
+          "y": 2533
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 17,
+          "text": "고기",
+          "translation": "لحم",
+          "width": 32,
+          "x": 845,
+          "y": 2600
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 12,
+          "symWidth": 7.5,
+          "text": "studio ARCHE",
+          "translation": "استوديو آرتش",
+          "width": 45,
+          "x": 827,
+          "y": 2700
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 73,
+          "symWidth": 55.66666666666666,
+          "text": "Read  at",
+          "translation": "اقرأ عند",
+          "width": 286,
+          "x": 278,
+          "y": 2996
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 44.47619047619047,
+          "symWidth": 29.90476190476191,
+          "text": "for  the  fastest  releases",
+          "translation": "لأسرع الإصدارات",
+          "width": 486,
+          "x": 204,
+          "y": 3220
+        }
+      ],
+      "imgHeight": 3486,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

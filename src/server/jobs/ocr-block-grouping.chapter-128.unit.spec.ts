@@ -126,7 +126,11 @@ function buildCachedOcrPage(input: {
   pageKey: string;
   sourceLanguage: string;
 }) {
-  const sanitizedPage = sanitizeHostedPageTranslation(input.page);
+  const sanitizedPage = sanitizeHostedPageTranslation(
+    input.page,
+    input.sourceLanguage,
+    'cached_ocr_source'
+  );
 
   return zNormalizedOcrPage.parse({
     blocks: sanitizedPage.blocks.map(
@@ -150,7 +154,9 @@ function buildCachedOcrPage(input: {
 }
 
 function sanitizeHostedPageTranslation(
-  page: HostedPageTranslation
+  page: HostedPageTranslation,
+  sourceLanguage?: string,
+  mode?: 'cached_ocr_source' | 'translated_manifest'
 ): HostedPageTranslation {
   return {
     ...page,
@@ -167,6 +173,8 @@ function sanitizeHostedPageTranslation(
       .filter(
         (block) =>
           !shouldDropProviderTranslationBlock({
+            mode,
+            sourceLanguage: sourceLanguage ?? page.sourceLanguage,
             sourceText: block.text,
             translation: block.rawTranslation,
           })

@@ -1,0 +1,2818 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0131",
+  "jobId": "fixture-job-0131",
+  "licenseId": "fixture-license-0131",
+  "pageCount": 69,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg",
+    "059.jpg",
+    "060.jpg",
+    "061.jpg",
+    "062.jpg",
+    "063.jpg",
+    "064.jpg",
+    "065.jpg",
+    "066.jpg",
+    "067.jpg",
+    "068.jpg",
+    "069.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 29.28571428571428,
+          "symWidth": 22.92857142857143,
+          "text": "I  WANT  A DIVORCE .",
+          "translation": "AKU INGIN BERCERAI.",
+          "width": 183,
+          "x": 381,
+          "y": 808
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.12903225806452,
+          "symWidth": 18.90322580645161,
+          "text": "THERE  IS  NO SUCH  PRECEDENT , EMPRESS .",
+          "translation": "TIDAK ADA PRESIDEN SEPERTI ITU, MAHKOTA.",
+          "width": 282,
+          "x": 580,
+          "y": 496
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 27.046875,
+          "symWidth": 20.078125,
+          "text": "GOOD .  THEN THIS  CAN  BE  THE FIRST  TIME  IT HAPPENS .",
+          "translation": "BAIK. MAKA INI AKAN JADI PERTAMA KALI.",
+          "width": 295,
+          "x": 149,
+          "y": 1420
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.5,
+          "symWidth": 20.4,
+          "text": "WHAT  ARE  YOU SAYING ... ?",
+          "translation": "APA MAKSUDMU...?",
+          "width": 241,
+          "x": 581,
+          "y": 1722
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 25.52941176470588,
+          "symWidth": 19.51307189542483,
+          "text": "OR  I  COULD BE  THE  FIRST  IN A  DIFFERENT REGARD .",
+          "translation": "ATAU AKU BISA JADI YANG PERTAMA DALAM HAL LAIN.",
+          "width": 259,
+          "x": 183,
+          "y": 606
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30.58333333333333,
+          "symWidth": 18.08333333333333,
+          "text": "FOR  INSTANCE ,",
+          "translation": "SEPERTINYA,",
+          "width": 232,
+          "x": 597,
+          "y": 1502
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 27.75862068965517,
+          "symWidth": 22.87277851458886,
+          "text": "I  COULD  BE THE  WIFE  WHO COULDN'T  ENDURE  A TEDIOUS  DIVORCE PROCEEDING ...",
+          "translation": "AKU BISA JADI ISTRI YANG TAK KUAT MENJALANI PROSES PERCERAIAN YANG MEMBOSANKAN...",
+          "width": 350,
+          "x": 172,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 32.5,
+          "symWidth": 25.59415584415584,
+          "text": "cocAND  MURDERED HER  HUSBAND .",
+          "translation": "DAN MEMBUNUH SUAMINYA.",
+          "width": 342,
+          "x": 478,
+          "y": 1536
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 25.53333333333333,
+          "symWidth": 19.8,
+          "text": "I  THOUGHT MY  EXISTENCE  HAD BEEN  FORGOTTEN AFTER  THAT .",
+          "translation": "KUPIKIR DIRIKU TELAH TERLUPAKAN SETELAH ITU.",
+          "width": 302,
+          "x": 506,
+          "y": 1272
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 21.26262626262626,
+          "text": "I'M  GLAD  TO SEE  YOU  IN  SUCH GOOD  HEALTH ,",
+          "translation": "SENANG MELIHATMU DALAM KESEHATAN SEPERTI INI,",
+          "width": 298,
+          "x": 527,
+          "y": 565
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 32.5,
+          "symWidth": 36,
+          "text": "茶茶",
+          "translation": "",
+          "width": 42,
+          "x": 241,
+          "y": 768
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 24.25,
+          "text": "GRANDMOTHER .",
+          "translation": "NENEK.",
+          "width": 289,
+          "x": 228,
+          "y": 1185
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 30.5,
+          "symWidth": 27.5,
+          "text": "淡淡",
+          "translation": "",
+          "width": 69,
+          "x": 605,
+          "y": 1272
+        }
+      ],
+      "imgHeight": 1822,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 45,
+          "symWidth": 52,
+          "text": "OT",
+          "translation": "",
+          "width": 96,
+          "x": 524,
+          "y": 663
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 29.14705882352941,
+          "symWidth": 23.26274509803921,
+          "text": "EMPEROR  OF  MARESHAL CARMINE  MARESHAL",
+          "translation": "KAISAR MARESHAL CARMINE MARESHAL",
+          "width": 440,
+          "x": 378,
+          "y": 1106
+        }
+      ],
+      "imgHeight": 1816,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 27.57142857142857,
+          "symWidth": 18.90476190476191,
+          "text": "LIKEWISE ,  YOUR MAJESTY .",
+          "translation": "SAMAKAN JUGA, MAHKOTA.",
+          "width": 248,
+          "x": 201,
+          "y": 312
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 26.94285714285714,
+          "symWidth": 19.96190476190476,
+          "text": "THERE'S NO  NEED  FOR FORMALITIES .  YOU  ARE MY  GRANDMOTHER , AFTER  ALL .",
+          "translation": "TIDAK PERLU SIKAP FORMAL. KAU KAN NENEKKU.",
+          "width": 365,
+          "x": 411,
+          "y": 999
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 26.06481481481482,
+          "symWidth": 20.12037037037037,
+          "text": "I  ABANDONED SUCH  TIES  ON  THE  DAY  I DECLARED  MY  DIVORCE AT  THE  GRAND CATHEDRAL .",
+          "translation": "KUABAUKAN HUBUNGAN ITU PADA HARI KUUMUMKAN PERCERAIAN DI KATEDRAL UTAMA.",
+          "width": 402,
+          "x": 164,
+          "y": 1576
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 26.734375,
+          "symWidth": 20.5625,
+          "text": "YOUR  MAJESTY  SHOULD ALSO  ADDRESS  ME  AS LADY  AURELIAN  NOW .",
+          "translation": "MAJESTAS HARUS MEMANGGIL SAYA LADY AURELIAN MULAI SEKARANG.",
+          "width": 388,
+          "x": 477,
+          "y": 50
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 25.71428571428572,
+          "symWidth": 18.75187969924812,
+          "text": "I  ENJOYED THE  FRUIT  YOU SENT  US ,",
+          "translation": "SAYA MENIKMATI BUAH YANG ANDA KIRIMKAN.",
+          "width": 239,
+          "x": 226,
+          "y": 1685
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 26.72222222222222,
+          "symWidth": 20.63789682539683,
+          "text": "BUT  I  WAS  UNAWARE IT  WAS  GROWN  WITH VONERACKOL'S BLESSING .",
+          "translation": "TAPI SAYA TIDAK SADAR BUAH ITU DIBUDIDAYA DENGAN BERKAT VONERACKOL.",
+          "width": 364,
+          "x": 94,
+          "y": 1136
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 25.87878787878788,
+          "symWidth": 18.50815850815851,
+          "text": "I  SIMPLY  WANTED TO  SEND  RIENNA'S BEAUTIFUL  FRUIT  TO  MY CHILDREN , BUT  THIS  JUST HAD  TO  HAPPEN ...",
+          "translation": "SAYA HANYA INGIN MENGIRIMKAN BUAH INDAH RIENNA UNTUK ANAK-ANAKKU, TAPI SEMUANYA BERAKHIR SEPERTI INI...",
+          "width": 397,
+          "x": 159,
+          "y": 510
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 26.34615384615385,
+          "symWidth": 19.15384615384615,
+          "text": "IT'S  JUST  A MISUNDERSTANDING .",
+          "translation": "INI HANYA SALAH PAHAM.",
+          "width": 321,
+          "x": 170,
+          "y": 1579
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.88888888888889,
+          "text": "A  MISUNDERSTANDING ?",
+          "translation": "SALAH PAHAM?",
+          "width": 365,
+          "x": 466,
+          "y": 157
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 25.7,
+          "symWidth": 20.74358974358974,
+          "text": "SO  THE  SWORD THAT  VANISHED  FROM THE  IMPERIAL  PALACE  AT THE  SAME  TIME  AS",
+          "translation": "JADI PEDANG YANG HILANG DARI ISTANA KEKASATRIAAN PADA WAKTU YANG SAMA DENGAN",
+          "width": 395,
+          "x": 231,
+          "y": 946
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 61.33333333333334,
+          "symWidth": 61.33333333333334,
+          "text": "***",
+          "translation": "***",
+          "width": 120,
+          "x": 665,
+          "y": 1092
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 18.42857142857143,
+          "text": "YOUR  DIVORCE ...",
+          "translation": "PERCERAIAN MAJESTAS...",
+          "width": 271,
+          "x": 291,
+          "y": 1116
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 25.75555555555556,
+          "symWidth": 18.65555555555556,
+          "text": "... AND  FOSTINE'S UNUSUALLY  BOUNTIFUL HARVEST ...",
+          "translation": "... DAN PANEN MELIMPAH FOSTINE YANG TIDAK BIASA...",
+          "width": 366,
+          "x": 489,
+          "y": 899
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 24.5,
+          "symWidth": 21,
+          "text": "**",
+          "translation": "**",
+          "width": 22,
+          "x": 500,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 27.06666666666667,
+          "symWidth": 19.71282051282051,
+          "text": "... AREN'T CONNECTED  AT ALL ?  IS  THAT  WHAT YOU'RE  SAYING ?",
+          "translation": "... TIDAK ADA HUBUNGANNYA SAMA SEKALI? ITUKAH YANG MAJESTAS MAKSUD?",
+          "width": 331,
+          "x": 107,
+          "y": 811
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 78.42857142857143,
+          "symWidth": 59.85714285714285,
+          "text": "SCRUNCH",
+          "translation": "MENGERUTKAN KENYANGAN",
+          "width": 338,
+          "x": 74,
+          "y": 1304
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.25,
+          "symWidth": 20.85405844155844,
+          "text": "I  ASSURE YOU  THAT  I  HAVE NOTHING  TO  BE ASHAMED  OF .",
+          "translation": "SAYA PASTIKAN TIDAK ADA SESUATU PUN YANG PATUT DIPERMALUKAN.",
+          "width": 285,
+          "x": 140,
+          "y": 366
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 25.66666666666667,
+          "symWidth": 19.96972934472934,
+          "text": "YOU KNOW THAT  I  LEFT EVERYTHING  BEHIND AT  THE  IMPERIAL PALACE ...",
+          "translation": "MAJESTAS TAHU BAHWA SAYA TELAH MENINGGALKAN SEGALANYA DI ISTANA KEKASATRIAAN...",
+          "width": 322,
+          "x": 73,
+          "y": 1308
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 25.75,
+          "symWidth": 20.03541666666667,
+          "text": "... THE  DAY  I ABANDONED  THE MARESHAL NAME .",
+          "translation": "... PADA HARI SAYA MENINGGALKAN NAMA MARESHAL.",
+          "width": 265,
+          "x": 292,
+          "y": 1611
+        }
+      ],
+      "imgHeight": 1846,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.5,
+          "symWidth": 21.88492063492064,
+          "text": "THEN  WHERE  IS  THE SWORD  NOW ?",
+          "translation": "JADI, DI MANA PEDANG ITU SEKARANG?",
+          "width": 323,
+          "x": 530,
+          "y": 443
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 74,
+          "symWidth": 51.5,
+          "text": "LEAN",
+          "translation": "LEAN",
+          "width": 190,
+          "x": 32,
+          "y": 490
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 27,
+          "symWidth": 19.68055555555556,
+          "text": "I'M  NOT  THE  ONE WHO  HAS  IT .",
+          "translation": "AKU BUKAN ORANG YANG MEMILIKINYA.",
+          "width": 278,
+          "x": 160,
+          "y": 1443
+        }
+      ],
+      "imgHeight": 1842,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 25.75,
+          "symWidth": 22.4,
+          "text": "WHAT  DO YOU  MEAN  BY THAT ?",
+          "translation": "MAU KATA APA DENGAN ITU?",
+          "width": 221,
+          "x": 608,
+          "y": 270
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.9,
+          "symWidth": 20.77263157894737,
+          "text": "ONE  OF  MY VILLAGERS  HAS FORMED  A  PACT  WITH THAT  SWORD .",
+          "translation": "SATU DARI PENDUDUK DESAKU TELAH MEMBUAT PAKTA DENGAN PEDANG ITU.",
+          "width": 341,
+          "x": 283,
+          "y": 1159
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 27,
+          "symWidth": 21.68,
+          "text": "YOU  EXPECT  ME  TO BELIEVE  THAT ?",
+          "translation": "KAU SERIUS INGIN AKU PERCAYA ITU?",
+          "width": 330,
+          "x": 136,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 83,
+          "symWidth": 62.5,
+          "text": "GRIT",
+          "translation": "GIGITAN GIGI",
+          "width": 235,
+          "x": 106,
+          "y": 346
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 26.48387096774194,
+          "symWidth": 20.24193548387097,
+          "text": "YOU  CAN INTERROGATE  AN  OLD WOMAN  LIKE  ME  ALL YOU  WANT ,  BUT  IT'S THE  TRUTH ...",
+          "translation": "KAU BOLEH MENGINTEROGASI NENEK SEPERTI AKU SEPUAS HATI, TAPI ITULAH KEBENARANNYA...",
+          "width": 342,
+          "x": 373,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 80,
+          "symWidth": 58.25,
+          "text": "SIGH",
+          "translation": "HEMBUSAN NAFAS",
+          "width": 187,
+          "x": 108,
+          "y": 325
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 28.42857142857143,
+          "symWidth": 20.25396825396825,
+          "text": "HER  NAME  IS RIENNA ,",
+          "translation": "NAMANYA RIENNA,",
+          "width": 218,
+          "x": 236,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 15.5,
+          "symWidth": 14.5,
+          "text": "90",
+          "translation": "90",
+          "width": 24,
+          "x": 94,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.44,
+          "symWidth": 22.48,
+          "text": "AND  SHE'S AN  ORDINARY FARMER .",
+          "translation": "DAN DIA ADALAH PETANI BIASA.",
+          "width": 230,
+          "x": 529,
+          "y": 1532
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 204,
+          "symHeight": 89.03571428571428,
+          "symWidth": 56.69761904761905,
+          "text": "COUNTRY  LIFE  WITH HIS  SEXY  MAJESTY",
+          "translation": "KEHIDUPAN PEDESAAN DENGAN MAHKOTA SEKSI NYA",
+          "width": 715,
+          "x": 108,
+          "y": 1243
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 30.75,
+          "symWidth": 16.66979166666667,
+          "text": "Art  by :  SEOLAM Original  Novel  by  :  Irui Adaptation  by :  2B",
+          "translation": "Seni oleh: SEOLAM Novel Asli oleh: Irui Adaptasi oleh: 2B",
+          "width": 509,
+          "x": 215,
+          "y": 1623
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 42.75,
+          "symWidth": 27,
+          "text": "Ep .  5",
+          "translation": "Epis. 5",
+          "width": 99,
+          "x": 423,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.22222222222222,
+          "symWidth": 20.61111111111111,
+          "text": "SO ,  UM ... ARE  YOU  SURE YOU'RE  HERE  TO SEE  ME ?",
+          "translation": "JADI, UM... APAKAH KAU YAKIN DATANG KEMARI UNTUK MENEMUIMU?",
+          "width": 269,
+          "x": 525,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 25.8695652173913,
+          "symWidth": 17.60869565217391,
+          "text": "THAT'S  RIGHT , MISS  RIENNA .",
+          "translation": "BENAR, NONA RIENNA.",
+          "width": 220,
+          "x": 403,
+          "y": 1649
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 25.73076923076923,
+          "symWidth": 19.58974358974359,
+          "text": "HE  DOESN'T  SEEM LIKE  A  COMMONER , BUT  HE'S  BEING  POLITE TO  ME ...",
+          "translation": "DIA TAK TERLIHAT SEPERTI ORANG BIASA, TAPI DIA SANGAT SOPAN PADAKU...",
+          "width": 375,
+          "x": 147,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 25.5,
+          "symWidth": 19.80555555555555,
+          "text": "AND  HE  JUST CALLED ME  A KITTEN-- NO , A  CAT ...",
+          "translation": "DAN DIA BARU SAJA MEMANGGILKU ANAK KUCING—TAK, SEEKOR KUCING...",
+          "width": 216,
+          "x": 618,
+          "y": 1298
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.16666666666667,
+          "text": "HIC ...",
+          "translation": "HIK...",
+          "width": 87,
+          "x": 156,
+          "y": 267
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 27.5,
+          "symWidth": 20.87912087912088,
+          "text": "GETTING CALLED  A  KITTEN",
+          "translation": "DIPANGGIL SEBAGAI ANAK KUCING",
+          "width": 288,
+          "x": 236,
+          "y": 373
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 27.875,
+          "symWidth": 24.39166666666667,
+          "text": "BY SUCH  A  HANDSOME WAS  ON  MY  BUCKET MAN LIST !",
+          "translation": "OLEH PRIA TAMPAN ADALAH HAL YANG ADA DI DAFTAR PRIA IMPANANKU!",
+          "width": 408,
+          "x": 206,
+          "y": 414
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 30.54545454545455,
+          "symWidth": 25.71328671328671,
+          "text": "BUT  IT  ONLY  HALF CAME  TRUE ...",
+          "translation": "TAPI ITU HANYA SETENGAH KEJADIAN...",
+          "width": 299,
+          "x": 411,
+          "y": 653
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 25.5625,
+          "symWidth": 18.25,
+          "text": "UH ...  MISS RIENNA ?",
+          "translation": "EH... NONA RIENNA?",
+          "width": 173,
+          "x": 257,
+          "y": 1600
+        }
+      ],
+      "imgHeight": 1841,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 22,
+          "text": "OH !",
+          "translation": "OH!",
+          "width": 64,
+          "x": 149,
+          "y": 368
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 25,
+          "symWidth": 19.11875,
+          "text": "I'LL  HEAR WHAT  THIS  IS ABOUT  RIGHT OUTSIDE .",
+          "translation": "AKU AKAN DENGAR APA YANG TERJADI DARI LUAR.",
+          "width": 217,
+          "x": 183,
+          "y": 452
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 26.25,
+          "symWidth": 20.60518648018648,
+          "text": "I  TRUST  THAT  YOU AREN'T  A  RUFFIAN  WHO ENTERS  A  HOME  WHERE A  WOMAN  LIVES  BY HERSELF .",
+          "translation": "AKU HARAP KAU BUKAN PENCOCOT YANG MASUK KE RUMAH SEORANG WANITA SENDIRI.",
+          "width": 386,
+          "x": 427,
+          "y": 1401
+        }
+      ],
+      "imgHeight": 1835,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 29.57142857142857,
+          "symWidth": 23.95238095238095,
+          "text": "YOU  INSOLENT LITTLE ... !",
+          "translation": "KAU SI PEDE KECIL...!",
+          "width": 295,
+          "x": 311,
+          "y": 429
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 25.25,
+          "symWidth": 20.75,
+          "text": "HUH ?",
+          "translation": "HA?",
+          "width": 84,
+          "x": 737,
+          "y": 1253
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 26.85714285714286,
+          "symWidth": 23.14285714285714,
+          "text": "SURELY !",
+          "translation": "PASTI!",
+          "width": 135,
+          "x": 82,
+          "y": 223
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 25.8,
+          "symWidth": 20.67686274509804,
+          "text": "YOU'RE  NOT SO  SHAMELESS  AS  TO SHOW  UP  UNANNOUNCED AT  THIS  HOUR  AND  THEN DEMAND  HOSPITALITY !",
+          "translation": "KAU TAK MALU DATANG TANPA PEMBERITAHUAN PADA JAM SEPERTI INI LALU MENUNTUT JAMUAN!",
+          "width": 401,
+          "x": 134,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 27.5,
+          "text": "WHAT ?!",
+          "translation": "APA?!",
+          "width": 151,
+          "x": 572,
+          "y": 1597
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 23.14285714285714,
+          "text": "ENOUGH .",
+          "translation": "CUKUP.",
+          "width": 164,
+          "x": 181,
+          "y": 640
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 26.29629629629629,
+          "symWidth": 19.23703703703704,
+          "text": "HE  MUST  BE  A REALLY  IMPORTANT PERSON ...",
+          "translation": "DIA PASTI ORANG PENTING...",
+          "width": 300,
+          "x": 487,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 25.5,
+          "symWidth": 21.54545454545455,
+          "text": "WHAT  COULD  HE WANT  WITH  ME ?",
+          "translation": "APA YANG DIA INGINKAN DARIKU?",
+          "width": 260,
+          "x": 326,
+          "y": 923
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 25.6,
+          "symWidth": 21.32626262626263,
+          "text": "IS  HE  AFTER MY FARMLAND OR  MY  FARMING TECHNIQUES ?",
+          "translation": "APA DIA MENGINGINKAN TANAH PERTANIAN ATAU TEKNIK BERPERTANIANKU?",
+          "width": 258,
+          "x": 167,
+          "y": 1227
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 19.33333333333333,
+          "text": "I  AM ...",
+          "translation": "AKU...",
+          "width": 116,
+          "x": 716,
+          "y": 1572
+        }
+      ],
+      "imgHeight": 1677,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 29.33333333333333,
+          "symWidth": 23.74285714285714,
+          "text": "I  JUST  WON'T FALL  FOR  WHATEVER HE  SAYS !",
+          "translation": "AKU TAKKAN MUDAH TERTIPU OLEH APA PUN YANG DIA KATAKAN!",
+          "width": 390,
+          "x": 383,
+          "y": 1182
+        }
+      ],
+      "imgHeight": 1673,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.33333333333333,
+          "symWidth": 22.12521367521367,
+          "text": "... THE  OWNER  OF THAT  SWORD  YOU HAVE  THERE .",
+          "translation": "... PEMILIK PEDANG ITU YANG KAU PUNYA.",
+          "width": 303,
+          "x": 115,
+          "y": 282
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 27,
+          "symWidth": 19.82857142857143,
+          "text": "I  CAME  TO  GET IT  BACK .",
+          "translation": "AKU DATANG MENGAMBILNYA KEMBALI.",
+          "width": 261,
+          "x": 579,
+          "y": 1126
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28,
+          "symWidth": 24.23611111111111,
+          "text": "YOU  HAVE  AN OWNER ,  RIRI ?!",
+          "translation": "KAMU PUNYA PEMILIK, RIRI?!",
+          "width": 256,
+          "x": 183,
+          "y": 1656
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 23.25,
+          "symWidth": 21.3926282051282,
+          "text": "THAT'S PREPOSTEROUS ! YOU'RE  MY  ONLY MASTER !",
+          "translation": "ITU NGGAK MASUK AKAL! KAMU CUMA PUNYA AKU!",
+          "width": 285,
+          "x": 540,
+          "y": 530
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26,
+          "symWidth": 18.75,
+          "text": "HE  SAYS  THAT'S NOT  TRUE .",
+          "translation": "DIA BILANG ITU NGGAK BENAR.",
+          "width": 256,
+          "x": 218,
+          "y": 1170
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 40.5,
+          "text": "PSST",
+          "translation": "PSST",
+          "width": 137,
+          "x": 484,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 51.28571428571428,
+          "symWidth": 42.57142857142857,
+          "text": "WHISPER",
+          "translation": "BERSIUL",
+          "width": 222,
+          "x": 683,
+          "y": 278
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 26,
+          "symWidth": 20.75,
+          "text": "YOU  JERK !  YOU  WERE TWO - TIMING  ME ?",
+          "translation": "ANJING! KAMU NGESELINGKUH?!",
+          "width": 355,
+          "x": 450,
+          "y": 432
+        },
+        {
+          "angle": 0,
+          "height": 168,
+          "symHeight": 27.15384615384615,
+          "symWidth": 23.92673992673993,
+          "text": "AND  YOU ,  MÁDE SUCH  A  FUSS  ABOUT ME  JUST  TOUCHING A  KNIFE !",
+          "translation": "DAN KAMU, BIKIN RAMAI CUMA KARENA AKU SENTUH PISAU!",
+          "width": 350,
+          "x": 541,
+          "y": 624
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.58333333333334,
+          "symWidth": 16.09444444444444,
+          "text": "HEY !  MASTER ,  HE DIDN'T  SAY  ANYTHING LIKE  THAT !",
+          "translation": "HEI! TUAN, DIA NGGAK BILANG GITU, KAN!",
+          "width": 321,
+          "x": 62,
+          "y": 1027
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 38.8,
+          "symWidth": 34,
+          "text": "ARGUE",
+          "translation": "BERDEBAT",
+          "width": 142,
+          "x": 451,
+          "y": 1220
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 51.83333333333334,
+          "symWidth": 34.66666666666666,
+          "text": "BICKER",
+          "translation": "SAING-SARING",
+          "width": 171,
+          "x": 687,
+          "y": 1309
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.01851851851852,
+          "symWidth": 19.15972222222222,
+          "text": "WHY  DO  YOU JUST  ASSUME  I'M TWO - TIMING  YOU ?",
+          "translation": "KENAPA KAMU LANGSUNG NGESAUKAN AKU SELINGKUH?",
+          "width": 271,
+          "x": 247,
+          "y": 1321
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 25.90476190476191,
+          "symWidth": 19,
+          "text": "BECAUSE I  TRUST  HIS FACE !",
+          "translation": "KARENA AKU PERCAYA WAJAHNYA!",
+          "width": 198,
+          "x": 673,
+          "y": 1444
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 42,
+          "symWidth": 32.28571428571428,
+          "text": "QUARREL",
+          "translation": "BERTENGKAR",
+          "width": 177,
+          "x": 47,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 28.4,
+          "text": "ARGUE",
+          "translation": "BERDEBAT",
+          "width": 126,
+          "x": 430,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 21.7360248447205,
+          "symWidth": 18.97826086956522,
+          "text": "SINCE  WHEN HAVE  YOU  CARED SO  MUCH  ABOUT APPEARANCES ?",
+          "translation": "SEJAK KAPAN KAMU TERLALU PEDULI PENAMPILAN?",
+          "width": 260,
+          "x": 150,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26.09375,
+          "symWidth": 20.875,
+          "text": "ARE  YOU  TALKING TO  THE  SWORD RIGHT  NOW ?",
+          "translation": "KAMU SEDANG NGOMONG SAMA PEDANG SEKARANG?",
+          "width": 284,
+          "x": 577,
+          "y": 1036
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 25.5,
+          "text": "HUH ?",
+          "translation": "Hah?",
+          "width": 91,
+          "x": 231,
+          "y": 215
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.11111111111111,
+          "symWidth": 19.59259259259259,
+          "text": "HIS  MASTER CAN'T  EVEN  TELL THAT ?",
+          "translation": "Tuanannya aja nggak bisa bedain?",
+          "width": 268,
+          "x": 267,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 27,
+          "symWidth": 25.8,
+          "text": "AHEM !",
+          "translation": "Ehem!",
+          "width": 109,
+          "x": 457,
+          "y": 1356
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 25.33333333333333,
+          "symWidth": 20.46560846560847,
+          "text": "I  DO  KNOW THAT  IT'S  A  SWORD WITH  A  WILL  OF ITS  OWN .",
+          "translation": "Aku tahu ini pedang yang punya kehendak sendiri.",
+          "width": 310,
+          "x": 235,
+          "y": 1457
+        }
+      ],
+      "imgHeight": 1959,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 20.8,
+          "text": "HM ...",
+          "translation": "Hm...",
+          "width": 86,
+          "x": 498,
+          "y": 240
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 25.86046511627907,
+          "symWidth": 20.18604651162791,
+          "text": "YOU'RE  RIGHT . HE'S  A  VERY  QUIET AND  RESERVED SWORD .",
+          "translation": "Kau benar. Dia pedang yang sangat pendiam dan tertutup.",
+          "width": 303,
+          "x": 504,
+          "y": 334
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 18,
+          "text": "YES ...",
+          "translation": "Iya...",
+          "width": 96,
+          "x": 201,
+          "y": 1325
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 26.58333333333333,
+          "symWidth": 22.32459207459208,
+          "text": "YOU'RE  LYING ABOUT  BEING  HIS MASTER ,  AREN'T YOU ?",
+          "translation": "Kau bohong tentang jadi tuanannya, ya?",
+          "width": 299,
+          "x": 159,
+          "y": 427
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 30.63636363636363,
+          "symWidth": 27.04545454545455,
+          "text": "WHO  WOULD CALL  THIS  MASSIVE NARCISSIST QUIET ?",
+          "translation": "Siapa coba yang nyebut narsisis gede begini pendiam?",
+          "width": 321,
+          "x": 43,
+          "y": 649
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 25.5,
+          "symWidth": 21.13988095238096,
+          "text": "MASSIVE NARCISSIST ?  SO THAT'S  HOW  YOU SEE  ME ?!",
+          "translation": "Narsisis gede? Jadi begini pandanganmu padaku?!",
+          "width": 250,
+          "x": 81,
+          "y": 982
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 78,
+          "symWidth": 53,
+          "text": "-FWIP",
+          "translation": "-FWIP",
+          "width": 222,
+          "x": 5,
+          "y": 19
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.23684210526316,
+          "symWidth": 22.1203007518797,
+          "text": "WHAT  DO  YOU REALLY  WANT WITH  ME ?",
+          "translation": "Sebenarnya, apa yang kau inginkan dariku?",
+          "width": 237,
+          "x": 575,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 28.0925925925926,
+          "symWidth": 20.08361391694725,
+          "text": "IF  YOU  LIE  ONE MORE  TIME ,  I  WON'T OPEN  THIS  DOOR AGAIN .",
+          "translation": "Kalau kau bohong sekali lagi, aku tak akan buka pintu ini lagi.",
+          "width": 354,
+          "x": 107,
+          "y": 651
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 47,
+          "symWidth": 39.57142857142857,
+          "text": "SQUEEZE",
+          "translation": "DETEKAN",
+          "width": 226,
+          "x": 461,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 73,
+          "symWidth": 50.75,
+          "text": "SIGH",
+          "translation": "Huft",
+          "width": 182,
+          "x": 483,
+          "y": 863
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 26,
+          "symWidth": 19.6875,
+          "text": "MY  NAME  IS CARMINE .",
+          "translation": "Namaku Carmine.",
+          "width": 189,
+          "x": 556,
+          "y": 1236
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.33333333333333,
+          "symWidth": 20.90793650793651,
+          "text": "I  AM  LADY AURELIAN'S GRANDSON .",
+          "translation": "Aku cucu dari Lady Aurelian.",
+          "width": 196,
+          "x": 386,
+          "y": 645
+        }
+      ],
+      "imgHeight": 1747,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 26.5,
+          "symWidth": 20.49308608058608,
+          "text": "LADY  AUREL ... ? WHO ?  I  DON'T  KNOW ANYONE  BY  THAT NAME .",
+          "translation": "Lady Aurel...? Siapa? Aku nggak kenal nama itu.",
+          "width": 337,
+          "x": 204,
+          "y": 192
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.5,
+          "symWidth": 20.29375,
+          "text": "AURELIAN  IS THE  NAME  OF  THE GOVERNOR OF FOSTINE .",
+          "translation": "Aurelian adalah nama Gubernur Fostine.",
+          "width": 292,
+          "x": 463,
+          "y": 854
+        }
+      ],
+      "imgHeight": 1745,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 28.3,
+          "symWidth": 20,
+          "text": "OH ,  GRANNY !",
+          "translation": "OH, NAN!",
+          "width": 207,
+          "x": 465,
+          "y": 403
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 42,
+          "symWidth": 26.25,
+          "text": "JOLT",
+          "translation": "GEDER",
+          "width": 103,
+          "x": 411,
+          "y": 669
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 21,
+          "text": "\" GRANNY \" ?!",
+          "translation": "\"NAN\"?!",
+          "width": 218,
+          "x": 170,
+          "y": 1224
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 26.64516129032258,
+          "symWidth": 20.10925499231951,
+          "text": "WE'VE  BEEN HAVING  TEA  TOGETHER  FOR YEARS ,  AND  SHE  TOLD  ME TO  JUST  CALL  HER GRANNY .",
+          "translation": "KITA SUDAH MINUM TEH BERSAMA SELAMA BERTAHUN-TAHUN, DAN DIA BILANG BISA PANGGIL DIA NAN SAJA.",
+          "width": 442,
+          "x": 432,
+          "y": 1418
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 31.85714285714286,
+          "symWidth": 27.71428571428572,
+          "text": "ANYWAY ,",
+          "translation": "NGOMONG-NGOMONG,",
+          "width": 143,
+          "x": 95,
+          "y": 47
+        },
+        {
+          "angle": 0,
+          "height": 237,
+          "symHeight": 26.16326530612245,
+          "symWidth": 20.35671768707483,
+          "text": "THE  TRUTH  IS THAT  SWORD  IS  A PRECIOUS  ARTIFACT THAT  ONLY  THE  HEAD OF  MY FAMILY CAN  USE .",
+          "translation": "SENJATA ITU ADALAH ARTEFAK BERHARGA YANG HANYA KEPALA KELUARGAKU YANG BISA PAKAI.",
+          "width": 341,
+          "x": 109,
+          "y": 148
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 47,
+          "symWidth": 38.25,
+          "text": "AHEM",
+          "translation": "HMM.",
+          "width": 137,
+          "x": 634,
+          "y": 800
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.5,
+          "symWidth": 20.1529695633314,
+          "text": "AFTER  GRANDMOTHER GOT  DIVORCED  AND  LEFT  US , THE  SWORD  DISAPPEARED ALONG  WITH  HER .",
+          "translation": "SETELAH NENEK KAMI CERAI DAN MENINGGALKAN KAMI, PEDANG ITU HILANG BERSAMA DIA.",
+          "width": 459,
+          "x": 368,
+          "y": 1720
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 67.4,
+          "symWidth": 60.2,
+          "text": "SWEAT",
+          "translation": "HENTAKKAN KERINGAT",
+          "width": 220,
+          "x": 424,
+          "y": 346
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 79.75,
+          "symWidth": 64.5,
+          "text": "DRIP",
+          "translation": "TETESKAN",
+          "width": 229,
+          "x": 679,
+          "y": 801
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 25.4,
+          "symWidth": 19.42960784313725,
+          "text": "AHA !  SO  THAT'S WHY  HE  IMMEDIATELY CALLED  ME  A  KITTEN-- I  MEAN ,  A  CAT BURGLAR .",
+          "translation": "AHA! MAKANYA DIA LANGSUNG NGEJULIK MASA SAYA KUCING PENCURI!",
+          "width": 361,
+          "x": 180,
+          "y": 1006
+        },
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 26.5,
+          "symWidth": 19.77592592592593,
+          "text": "THIS  JERK  OF A  SWORD  SECRETLY RAN  AWAY ,  AND  BECAUSE OF  HIM ,  GRANNY  AND  I ARE  TREATED  LIKE CRIMINALS !",
+          "translation": "PEDANG JAHAT ITU SECARA RAHASIA MELARIKAN DIRIYA, DAN KARENA DIA, NAN DAN SAYA DIPERLAKUKAN SEPERTI PENJAHAT!",
+          "width": 399,
+          "x": 374,
+          "y": 1357
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 25,
+          "symWidth": 19.83333333333333,
+          "text": "YOU  WILL BE  HANDSOMELY REWARDED .",
+          "translation": "KAMU AKAN DIBERI IMBALAN YANG BESAR.",
+          "width": 266,
+          "x": 473,
+          "y": 320
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 48,
+          "symWidth": 35.4,
+          "text": "SHAKE",
+          "translation": "GENGGAM",
+          "width": 145,
+          "x": 785,
+          "y": 869
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 25.14940476190476,
+          "symWidth": 19.65416666666667,
+          "text": "UM ...  I  UNDERSTAND WHAT'S  GOING  ON ,  MORE OR  LESS ,  BUT  EVEN  IF  I WANTED  TO  RETURN THIS  TO  YOU ...",
+          "translation": "UM... SAYA KIRA SAYA KASIH TAU SITUASINYA, TAPI BAHKAN JIKA MAU BALIKIN INI KE KAMU...",
+          "width": 402,
+          "x": 237,
+          "y": 1232
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 24.6,
+          "symWidth": 21.14662393162393,
+          "text": "NO !  I'M  NOT LEAVING !  I'LL  STAY BY  YOUR  SIDE  UNTIL YOUR  HAIR  TURNS WHITE !",
+          "translation": "TIDAK! SAYA TIDAK AKAN PERGI! AKU AKAN TINGGAL DI SAMPINGMU SAMPAI RAMBUTMU MEMUTIH!",
+          "width": 340,
+          "x": 454,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 159.25,
+          "symWidth": 126.5,
+          "text": "FWIP",
+          "translation": "SWISH",
+          "width": 392,
+          "x": 247,
+          "y": 644
+        }
+      ],
+      "imgHeight": 1877,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 27,
+          "symWidth": 20.45833333333334,
+          "text": "YOU  REALLY  ARE HIS  MASTER ...",
+          "translation": "KAMU BENAR-BENAR TUANNYA...",
+          "width": 268,
+          "x": 142,
+          "y": 310
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 42,
+          "symWidth": 33.66666666666666,
+          "text": "MURMUR",
+          "translation": "GUMAM",
+          "width": 174,
+          "x": 727,
+          "y": 499
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 56,
+          "symWidth": 40.8,
+          "text": "DAZED",
+          "translation": "TERBINGUNG",
+          "width": 180,
+          "x": 94,
+          "y": 567
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 29.19047619047619,
+          "symWidth": 25.7202380952381,
+          "text": "THE  SWORD MOVED  ON ITS  OWN ?",
+          "translation": "PEDANG ITU BERGERAK SENDIRI?",
+          "width": 192,
+          "x": 658,
+          "y": 590
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 24.96969696969697,
+          "symWidth": 21.72558922558922,
+          "text": "I'VE  NEVER SEEN  ANYTHING LIKE  THAT ...",
+          "translation": "AKU BELUM PERNAH MELIHAT YANG SEPERTI ITU...",
+          "width": 262,
+          "x": 82,
+          "y": 686
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 44.71428571428572,
+          "symWidth": 35.85714285714285,
+          "text": "WHISPER",
+          "translation": "BERBISIK",
+          "width": 172,
+          "x": 56,
+          "y": 990
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 23,
+          "symWidth": 17.14285714285714,
+          "text": "HMPH !!!",
+          "translation": "HMPH!!!",
+          "width": 128,
+          "x": 666,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "renderMode": "mask_only",
+          "symHeight": 23,
+          "symWidth": 18.125,
+          "text": "THEY  JUST DECIDED  I  WAS  A  FAMILY",
+          "translation": "",
+          "width": 418,
+          "x": 419,
+          "y": 1662
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 23.33333333333334,
+          "symWidth": 18.79802631578947,
+          "text": "THEY JUST DECIDED I WAS A FAMILY HEIRLOOM ON THEIR OWN . THEY'VE NEVER ACTUALLY CARED FOR ME !",
+          "translation": "MEREKA SENDIRI YANG PUTUSKAN AKU WARISAN KELUARGA. MEREKA TIDAK PERNAH PEDULI PADAKU!",
+          "width": 423,
+          "x": 417,
+          "y": 18
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 157.4,
+          "symWidth": 139,
+          "text": "WAAAH",
+          "translation": "WAHH",
+          "width": 403,
+          "x": 7,
+          "y": 387
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 57.75,
+          "symWidth": 49.25,
+          "text": "PUSH",
+          "translation": "DORONG",
+          "width": 182,
+          "x": 566,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 23.75,
+          "symWidth": 18.78787878787879,
+          "text": "IF  HE'S  TRULY MY  MASTER ,  ASK  HIM TO  SAY  MY  REAL NAME !",
+          "translation": "JIKA DIA BENAR-BENAR TUANKU, SURUH DIA BILANG NAMA ASLIKU!",
+          "width": 335,
+          "x": 531,
+          "y": 1018
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42.66666666666666,
+          "symWidth": 35.66666666666666,
+          "text": "SOB",
+          "translation": "TERISAK",
+          "width": 94,
+          "x": 723,
+          "y": 1212
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 17,
+          "text": "LIGH ...",
+          "translation": "LIGH...",
+          "width": 102,
+          "x": 176,
+          "y": 1255
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26.14285714285714,
+          "symWidth": 20.10714285714286,
+          "text": "RUI  WANTS YOU  TO  SAY  HIS REAL  NAME .",
+          "translation": "RUI INGIN KAMU MENGUCAPKAN NAMA ASLINYA.",
+          "width": 256,
+          "x": 444,
+          "y": 179
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 25.16666666666667,
+          "text": "LIH ...",
+          "translation": "LIH...",
+          "width": 94,
+          "x": 115,
+          "y": 949
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 25.47368421052632,
+          "symWidth": 20.89473684210526,
+          "text": "THE  SWORD'S REAL  NAME ?",
+          "translation": "NAMA ASLI PEDANG?",
+          "width": 221,
+          "x": 141,
+          "y": 1072
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 28,
+          "symWidth": 18.66666666666667,
+          "text": "RUI ...",
+          "translation": "RUI...",
+          "width": 101,
+          "x": 678,
+          "y": 1579
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 25.66666666666666,
+          "symWidth": 19.02777777777778,
+          "text": "HEY ,  HE KNOWS  YOUR REAL  NAME .",
+          "translation": "HEI, DIA TAHU NAMAMU YANG SEBENARNYA.",
+          "width": 218,
+          "x": 127,
+          "y": 679
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 28.66666666666667,
+          "symWidth": 24.24603174603175,
+          "text": "HE  PASSED ,  AND  IT HAD  NOTHING  TO  DO WITH  HIS  LOOKS",
+          "translation": "DIA LULUS, DAN ITU TAK ADA HUBUNGANNYA DENGAN PENAMPILANNYA.",
+          "width": 336,
+          "x": 26,
+          "y": 868
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 24.08695652173913,
+          "text": "WHAT  DO  YOU MEAN ?  ALL  HE  SAID WAS  \" RUI \" !",
+          "translation": "MAKSUDMU APA? DIA CUMA BILANG \"RUI\"!",
+          "width": 367,
+          "x": 436,
+          "y": 1085
+        }
+      ],
+      "imgHeight": 1721,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 26.16666666666667,
+          "symWidth": 23.0959595959596,
+          "text": "AND  BESIDES , YOU  CALLED  ME THAT  IN  FRONT OF  HIM !",
+          "translation": "LAGI PULA, KAU MEMANGGILKU DEMIKIAN DI DEPANNYA!",
+          "width": 300,
+          "x": 248,
+          "y": 71
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 26,
+          "symWidth": 20.32758620689655,
+          "text": "WELL ,  AN  ORDINARY PERSON  COULD  NEVER MEMORIZE  YOUR  FULL NAME  ANYWAY .",
+          "translation": "YA, ORANG BIASA TIDAK MUNGKIN MENGINGAT NAMA LENGKAPMU.",
+          "width": 361,
+          "x": 523,
+          "y": 341
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 26.25,
+          "symWidth": 25.18181818181818,
+          "text": "HOW  COULD YOU  DO  THIS  TO ME ,  MASTER ?!",
+          "translation": "BAGAIMANA KAU BERANI MELAKUKAN INI PADAKU, TUAN?!",
+          "width": 297,
+          "x": 310,
+          "y": 1178
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 36.25,
+          "text": "WEEP",
+          "translation": "MENANGIS",
+          "width": 136,
+          "x": 272,
+          "y": 1362
+        }
+      ],
+      "imgHeight": 1718,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 26.2090395480226,
+          "symWidth": 19.41503694046067,
+          "text": "IN  ANY  CASE , I  CAN'T  GIVE  YOU THE  SWORD  BECAUSE  HE SAYS  THAT  YOU'RE  NOT HIS  MASTER .  NOW PLEASE  LEAVE .",
+          "translation": "BAGAIMANAPUN, AKU TAK BISA MEMBERIKAN PEDANG ITU KARENA DIA BILANG KAU BUKAN TUANNYA. SEKARANG, SILAHKAN PERGI.",
+          "width": 403,
+          "x": 145,
+          "y": 208
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 50.2,
+          "symWidth": 39.8,
+          "text": "TRIUMPHANT",
+          "translation": "MENANG",
+          "width": 318,
+          "x": 614,
+          "y": 1268
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 19.09090909090909,
+          "text": "MISS  RIENNA .",
+          "translation": "NONA RIENNA.",
+          "width": 229,
+          "x": 554,
+          "y": 1562
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 26.21438172043011,
+          "symWidth": 19.98209921798631,
+          "text": "THAT  SWORD'S  VALUE AND  SIGNIFICANCE  ARE BEYOND  WHAT  YOU CAN  IMAGINE ,",
+          "translation": "NILAI DAN MAKNA PEDANG ITU MELEBIHI YANG KAU BAYANGKAN,",
+          "width": 362,
+          "x": 172,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26.07692307692308,
+          "symWidth": 18.69230769230769,
+          "text": "SO  I  CAN'T  JUST LEAVE  LIKE  THIS .",
+          "translation": "JADI AKU TAK BISA BERDAMAI SAJA.",
+          "width": 277,
+          "x": 580,
+          "y": 1493
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 26.27358490566038,
+          "symWidth": 21.01362683438155,
+          "text": "I  MUST  TAKE THAT  SWORD ,  EVEN  IF IT  MEANS  RESORTING TO  UNDERHANDED METHODS .",
+          "translation": "AKU HARUS MEREBUT PEDANG ITU, MESKIPUN HARUS MENGGUNAKAN CARA LICIK.",
+          "width": 347,
+          "x": 147,
+          "y": 271
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 26.57894736842105,
+          "symWidth": 20.57894736842105,
+          "text": "UNDERHANDED METHODS ?",
+          "translation": "CARA LICIK?",
+          "width": 225,
+          "x": 531,
+          "y": 756
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 26.69607843137255,
+          "symWidth": 20.20502765208647,
+          "text": "HE  HAS  A  WILL  OF  HIS OWN ,  SO  I  CAN'T  IGNORE HIS  WISHES  AND  HAND HIM  OVER  TO  YOU .",
+          "translation": "DIA PUNYA KEINGINAN SENDIRI, JADI AKU TAK BISA MENGABAIKAN ITU DAN MEMBERIKANNYA PADAMU.",
+          "width": 406,
+          "x": 133,
+          "y": 1545
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 19.90530303030303,
+          "text": "HIS  WILL ?  THAT THING  IS  A  WEAPON , A  SWORD .",
+          "translation": "KEINGINANNYA? ITU SENJATA, PEDANG SEMATA.",
+          "width": 322,
+          "x": 542,
+          "y": 1243
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.66666666666667,
+          "symWidth": 20.18148148148148,
+          "text": "WHAT'S IMPORTANT  HERE  IS YOUR  WILL .",
+          "translation": "YANG PENTING ADALAH KEINGINANMU.",
+          "width": 315,
+          "x": 411,
+          "y": 1601
+        }
+      ],
+      "imgHeight": 1901,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.5,
+          "symWidth": 20.68365384615385,
+          "text": "I  DO  NOT  WISH  TO USE  FORCE  AGAINST A  FRAGILE  YOUNG WOMAN .",
+          "translation": "AKU TAK INGIN MENGGUNAKAN KEKUATAN TERHADAP WANITA MUDA YANG LEMAH.",
+          "width": 327,
+          "x": 201,
+          "y": 386
+        }
+      ],
+      "imgHeight": 1897,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 26.54545454545454,
+          "symWidth": 20.53986291486292,
+          "text": "IF  I  HAPPENED TO  TELL  YOU  I  WAS  THE MOST  POWERFUL PERSON  IN THE  WORLD ,  WOULD  YOUR ANSWER  REMAIN THE  SAME ?",
+          "translation": "JIKA KUBERITAHU KEPADAMU BAHWA AKU ADALAH ORANG PALING KUAT DI DUNIA, APA JAWABANMU MASIH SAMA?",
+          "width": 455,
+          "x": 181,
+          "y": 197
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26,
+          "symWidth": 20.73809523809524,
+          "text": "OF  COURSE  MY ANSWER  WOULDN'T CHANGE .",
+          "translation": "TENTU SAJA JAWABANKU TIDAK AKAN BERUBAH.",
+          "width": 307,
+          "x": 497,
+          "y": 1753
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 29,
+          "symWidth": 20.11111111111111,
+          "text": "IN  THAT CASE ,  MISS RIENNA ...",
+          "translation": "DALAM KASUS ITU, NONA RIENNA...",
+          "width": 211,
+          "x": 174,
+          "y": 363
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 84,
+          "symWidth": 77.5,
+          "text": "ли",
+          "translation": "",
+          "width": 114,
+          "x": 773,
+          "y": 710
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 29.66666666666667,
+          "text": "!!!",
+          "translation": "!!!",
+          "width": 65,
+          "x": 724,
+          "y": 1749
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "059.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 30.52380952380953,
+          "symWidth": 24.55311355311355,
+          "text": "BY  UNDERHANDED METHODS ,  DID HE  MEAN ... ?",
+          "translation": "METODE KURANG JELAS, APA DIA BERARTI...?",
+          "width": 329,
+          "x": 173,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 49,
+          "symWidth": 48.5,
+          "text": "**",
+          "translation": "**",
+          "width": 93,
+          "x": 84,
+          "y": 1470
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 196.6666666666667,
+          "symWidth": 148,
+          "text": "TAP",
+          "translation": "KETUK",
+          "width": 376,
+          "x": 175,
+          "y": 1741
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "060.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 21.83333333333333,
+          "text": "SHH ...",
+          "translation": "SHH...",
+          "width": 123,
+          "x": 540,
+          "y": 294
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 29.88461538461539,
+          "symWidth": 20.81868131868132,
+          "text": "HUSH ,  MY  LITTLE KITTEN .",
+          "translation": "DIAM, ANAK KUCING KECILKU.",
+          "width": 315,
+          "x": 126,
+          "y": 1625
+        }
+      ],
+      "imgHeight": 1918,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "061.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 32.33333333333334,
+          "text": "???",
+          "translation": "???",
+          "width": 87,
+          "x": 237,
+          "y": 576
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 24.75,
+          "symWidth": 21.16054778554778,
+          "text": "YOU  SHOULD BE  MORE  CAREFUL ABOUT  SAYING SUCH  WORDS !",
+          "translation": "KAMU HARUS LEBIH HATI-HATI SAAT MENGUCAPKAN KATA-KATA SEPERTI ITU!",
+          "width": 299,
+          "x": 491,
+          "y": 1377
+        }
+      ],
+      "imgHeight": 1916,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "062.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 22.3,
+          "text": "WHAT  WORDS ?",
+          "translation": "KATA-KATA APA?",
+          "width": 236,
+          "x": 179,
+          "y": 324
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 39,
+          "symWidth": 46.66666666666666,
+          "text": "000",
+          "translation": "000",
+          "width": 64,
+          "x": 719,
+          "y": 614
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 28,
+          "symWidth": 26.25,
+          "text": "HUH ?",
+          "translation": "HMM?",
+          "width": 91,
+          "x": 531,
+          "y": 1043
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 25.25,
+          "symWidth": 20.91547619047619,
+          "text": "WEREN'T  YOU GOING  TO  PROPOSE A  CONTRACT MARRIAGE ?",
+          "translation": "APA KAMU TIDAK BERENCANA MENGAJUKAN PERNIKAHAN KONTRAK?",
+          "width": 317,
+          "x": 541,
+          "y": 1150
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "063.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.25,
+          "symWidth": 22.46527777777778,
+          "text": "WHY  WOULD YOU  SAY SOMETHING SO  ABSURD ?",
+          "translation": "KENAPA KAMU MENGUCAPKAN HAL SEBEGITU BODOH?",
+          "width": 334,
+          "x": 172,
+          "y": 66
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 27.03333333333333,
+          "symWidth": 20.66515151515151,
+          "text": "WELL ,  YOU  DID SAY  \" UNDERHANDED METHODS , \"  DIDN'T YOU ?",
+          "translation": "KAMU SENDIRI YANG BILANG \"METODE KURANG JELAS\", BUKANKAH?",
+          "width": 315,
+          "x": 534,
+          "y": 341
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "064.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 27.89705882352941,
+          "symWidth": 22.90104166666667,
+          "text": "AS  A  MARRIED  COUPLE , WE  WOULD  HAVE  COMMON OWNERSHIP  OVER  OUR POSSESSIONS ,",
+          "translation": "SEBAGAI SUAMI ISTRI, KITA AKAN MEMILIKI HARTA MILIK BERSAMA,",
+          "width": 443,
+          "x": 112,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 27.2,
+          "symWidth": 21.87534965034965,
+          "text": "AND  THE  ONLY LEGAL  WAY  TO  GET YOUR  HANDS  ON THIS SWORD ...",
+          "translation": "DAN SATU-SATUNYA CARA HUKUM UNTUK MENGUASAI PEDANG INI...",
+          "width": 323,
+          "x": 502,
+          "y": 613
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "065.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 20.875,
+          "text": "... IS  THAT ,  RIGHT ?",
+          "translation": "... ITU, KAN?",
+          "width": 346,
+          "x": 166,
+          "y": 665
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 38,
+          "symWidth": 38,
+          "text": "**",
+          "translation": "**",
+          "width": 73,
+          "x": 352,
+          "y": 1339
+        }
+      ],
+      "imgHeight": 1609,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "066.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 21.07692307692308,
+          "text": "To  be  continued",
+          "translation": "Bersambung",
+          "width": 283,
+          "x": 551,
+          "y": 850
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 37.25,
+          "symWidth": 48.32142857142857,
+          "text": "La Yeondam",
+          "translation": "La Yeondam",
+          "width": 98,
+          "x": 746,
+          "y": 1377
+        }
+      ],
+      "imgHeight": 1606,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "067.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 22.4,
+          "symWidth": 11.21395348837209,
+          "text": "This  work  is  protected  by  copyright  laws  and  we prohibit  unauthorized  use ,  duplication ,  distribution  or sharing .  Any  unauthorized  use ,  duplication  or  sharing may  be  punishable  by  law  pertaining  to  copyright protection ,  intellectual  properties ,  etc.",
+          "translation": "Karya ini dilindungi undang-undang hak cipta dan kami melarang penggunaan, duplikasi, distribusi, atau pembagian tanpa izin. Setiap penggunaan, duplikasi, atau pembagian tanpa izin dapat dihukum sesuai hukum perlindungan hak cipta, properti intelektual, dan lainnya.",
+          "width": 618,
+          "x": 162,
+          "y": 169
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 11.38709677419355,
+          "text": "Localization  Produced  by  Kakao  Ent .",
+          "translation": "Lokalisasi diproduksi oleh Kakao Ent.",
+          "width": 406,
+          "x": 266,
+          "y": 364
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 64,
+          "symWidth": 43.8,
+          "text": "kakao",
+          "translation": "kakao",
+          "width": 239,
+          "x": 354,
+          "y": 458
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 19.23076923076923,
+          "text": "ENTERTAINMENT",
+          "translation": "ENTERTAINMENT",
+          "width": 300,
+          "x": 321,
+          "y": 556
+        }
+      ],
+      "imgHeight": 705,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "068.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 14.65116279069767,
+          "text": "Authorized  for  Publishing  on  Tapas  Entertainment",
+          "translation": "Diizinkan untuk diterbitkan di Tapas Entertainment",
+          "width": 742,
+          "x": 100,
+          "y": 170
+        }
+      ],
+      "imgHeight": 490,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    },
+    "069.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 96.63068181818181,
+          "symWidth": 58.14772727272727,
+          "text": "Localized  by kiwivinė",
+          "translation": "Diterjemahkan oleh kiwivinė",
+          "width": 780,
+          "x": 24,
+          "y": 24
+        }
+      ],
+      "imgHeight": 277,
+      "imgWidth": 940,
+      "sourceLanguage": "en",
+      "targetLanguage": "id",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "id",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

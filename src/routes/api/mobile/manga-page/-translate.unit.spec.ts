@@ -144,12 +144,16 @@ describe('POST /api/mobile/manga-page/translate', () => {
   });
 
   it('returns the free trial daily limit modal contract before translating a third chapter', async () => {
-    const acquireDailyLock = vi.fn().mockResolvedValue([{ locked: true }]);
+    const queryRaw = vi
+      .fn()
+      .mockResolvedValueOnce([{ locked: true }])
+      .mockResolvedValueOnce([{ chapterCount: 2 }])
+      .mockResolvedValueOnce([{ chapterCount: 0 }]);
     const countDailyJobs = vi.fn().mockResolvedValue(2);
 
     mockDb.$transaction.mockImplementation(async (callback) => {
       const tx = {
-        $queryRaw: acquireDailyLock,
+        $queryRaw: queryRaw,
         order: {
           findFirst: vi.fn().mockResolvedValue(null),
         },
@@ -216,21 +220,15 @@ describe('POST /api/mobile/manga-page/translate', () => {
       ok: false,
     });
     expect(mockTranslateMangaPage).not.toHaveBeenCalled();
-    expect(countDailyJobs).toHaveBeenCalledWith({
-      where: {
-        createdAt: {
-          gte: expect.any(Date),
-          lt: expect.any(Date),
-        },
-        licenseId: 'license-free-trial-1',
-      },
-    });
+    expect(queryRaw).toHaveBeenCalledTimes(3);
+    expect(countDailyJobs).not.toHaveBeenCalled();
   });
 
   it('counts same-day manga-page usage before allowing another free trial chapter', async () => {
     const queryRaw = vi
       .fn()
       .mockResolvedValueOnce([{ locked: true }])
+      .mockResolvedValueOnce([{ chapterCount: 0 }])
       .mockResolvedValueOnce([{ chapterCount: 2 }]);
     const countDailyJobs = vi.fn().mockResolvedValue(0);
 
@@ -302,8 +300,8 @@ describe('POST /api/mobile/manga-page/translate', () => {
       },
       ok: false,
     });
-    expect(countDailyJobs).toHaveBeenCalledOnce();
-    expect(queryRaw).toHaveBeenCalledTimes(2);
+    expect(countDailyJobs).not.toHaveBeenCalled();
+    expect(queryRaw).toHaveBeenCalledTimes(3);
     expect(mockTranslateMangaPage).not.toHaveBeenCalled();
   });
 });

@@ -1,0 +1,131 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0047",
+  "jobId": "fixture-job-0047",
+  "licenseId": "fixture-license-0047",
+  "pageCount": 2,
+  "pageOrder": ["001.png", "002.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 41.33333333333334,
+          "symWidth": 26.66666666666667,
+          "text": "UHM ... CAN  I CALL  YOU ONII - CHAN ?",
+          "translation": "Ehm... Posso te chamar de onii-chan?",
+          "width": 249,
+          "x": 1391,
+          "y": 316
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 28.66666666666667,
+          "text": "HM ?",
+          "translation": "Hm?",
+          "width": 88,
+          "x": 476,
+          "y": 557
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 35,
+          "symWidth": 24.33333333333333,
+          "text": "OF  COURSE YOU  CAN .",
+          "translation": "Claro que pode.",
+          "width": 228,
+          "x": 252,
+          "y": 792
+        },
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 38.36,
+          "symWidth": 30.79333333333333,
+          "text": "I  AM YOUR  OLDER BROTHER AFTER  ALL !",
+          "translation": "Afinal, eu sou seu irmão mais velho!",
+          "width": 295,
+          "x": 239,
+          "y": 1337
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 40.95652173913044,
+          "symWidth": 27.08695652173913,
+          "text": "RIGHT . THANK  YOU VERY  MUCH .",
+          "translation": "Certo. Muito obrigado.",
+          "width": 280,
+          "x": 1364,
+          "y": 1799
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 35.86764705882353,
+          "symWidth": 23.64075630252101,
+          "text": "I  KNEW  IT ... THIS  MAN IN  FRONT OF  ME ...",
+          "translation": "Eu sabia... este homem à minha frente...",
+          "width": 252,
+          "x": 1450,
+          "y": 231
+        },
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 29.69444444444444,
+          "symWidth": 20.20454545454545,
+          "text": "HE'S DIFFERENT FROM  \" THAT PERSON \" FROM  BEFORE .",
+          "translation": "Ele é diferente da \"aquela pessoa\" de antes.",
+          "width": 257,
+          "x": 1282,
+          "y": 596
+        },
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 41.08108108108108,
+          "symWidth": 24.7027027027027,
+          "text": "BUT ,  SAKURA LIKES  THIS \" ONII - CHAN \" MORE ...",
+          "translation": "Mas a Sakura gosta mais deste \"onii-chan\".",
+          "width": 297,
+          "x": 155,
+          "y": 1231
+        },
+        {
+          "angle": 0,
+          "height": 331,
+          "symHeight": 40.55882352941177,
+          "symWidth": 26.72426470588235,
+          "text": "I'M  LOOKING FORWARD TO  LIVING WITH  YOU , MY  KIND ONII - CHAN .",
+          "translation": "Estou ansiosa para morar com você, meu gentil onii-chan.",
+          "width": 292,
+          "x": 1377,
+          "y": 1985
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

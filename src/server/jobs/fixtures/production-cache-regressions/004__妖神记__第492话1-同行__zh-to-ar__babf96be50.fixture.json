@@ -1,0 +1,900 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0004",
+  "jobId": "fixture-job-0004",
+  "licenseId": "fixture-license-0004",
+  "pageCount": 9,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "0a2e3029a4809e43e05745f9a60b71300102fc6a18c02916d1780805ddc87c8e",
+      "fileName": "001.webp",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "f7cf0afcedf5199c5eef7ec679b948273f0b437cf50af7413719a6c5b2078ba9",
+      "fileName": "002.webp",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "d4c5d0f0192272ebaba1d515660ac532ccd41490a665d49c381342abe2d1194f",
+      "fileName": "003.webp",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "cdd0947e36e3f274a3e9d58c2a2b391d7bca2b255d72298a7c3403fd4b146a25",
+      "fileName": "004.webp",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "82f868723c1150d19c13faa531a8e276df1ff6569c5e65db3dd6c031b3f03e4e",
+      "fileName": "005.webp",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "f10530c52e466e398a468b2596a98ece1c0816e9b801e0d51ee732d62c02f740",
+      "fileName": "006.webp",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "5f3c07a2a00ee06b7a56c04a3572e70121fdf9dde10d0dd0aaf938dc4d10e653",
+      "fileName": "007.webp",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "1e6045778a7baef68ea854926515da155e67992991177e3a9bca4ef10687a275",
+      "fileName": "008.webp",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "0ab0b504dd605e32ad901ab5117513284bd2385253f9ac291123d883e9f4978f",
+      "fileName": "009.webp",
+      "pageNumber": 9
+    }
+  ],
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 17.16,
+          "text": "观看, 最快 最 稳, 广告 最少",
+          "translation": "مشاهدة بسرعة وثبات، مع أقل عدد من الإعلانات",
+          "width": 551,
+          "x": 150,
+          "y": 31
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20.5,
+          "symWidth": 15.86666666666667,
+          "text": "喂 ! 你 的 手 往 哪儿 放 ? !",
+          "translation": "هيّا! أين تضع يدك؟!",
+          "width": 128,
+          "x": 449,
+          "y": 828
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 17.26666666666667,
+          "text": "我们 … 这 是 在 哪 ?",
+          "translation": "أين نحن... في أي مكان هذا؟",
+          "width": 96,
+          "x": 73,
+          "y": 835
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 30.5,
+          "text": "NG",
+          "translation": "خطأ",
+          "width": 61,
+          "x": 573,
+          "y": 1107
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 117,
+          "x": 12,
+          "y": 1141
+        }
+      ],
+      "imgHeight": 1191,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 41,
+          "symWidth": 28.225,
+          "text": "2017 ! 咳咳 咳 !",
+          "translation": "2017! كح كح كح!",
+          "width": 244,
+          "x": 75,
+          "y": 498
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.77777777777778,
+          "symWidth": 16.87777777777778,
+          "text": "抱歉 , 刚才 情况 紧急 , 冒犯 了 。",
+          "translation": "أعتذر، كان الوضع طارئاً للتو، لم أقصد الإهانة.",
+          "width": 107,
+          "x": 369,
+          "y": 604
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.71428571428572,
+          "symWidth": 18.14285714285714,
+          "text": "赤 蟒 老祖 , 以 你 的 实力 和 血脉 。",
+          "translation": "يا جدّ الأفعى الحمراء، بقوتك وسلالتك العريقة.",
+          "width": 107,
+          "x": 459,
+          "y": 764
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.25,
+          "symWidth": 18.95,
+          "text": "我 在 妖 神宗 不可能 没听 说过 你 …",
+          "translation": "في طائفة آلهة الشياطين، لا بد أنني سمعت عنك...",
+          "width": 107,
+          "x": 607,
+          "y": 792
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 41.6,
+          "text": "COLNO",
+          "translation": "كولنو",
+          "width": 195,
+          "x": 1,
+          "y": 1045
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 21,
+          "symWidth": 17.40529100529101,
+          "text": "「 是 啊 , 赤 蟒 哥哥 , 你 真的 是 火 灵 殿 的 弟子 吗 ?",
+          "translation": "أحقاً، أيها الأخ الأفعى القرمزية، هل أنت حقاً تلميذ قاعة الأرواح النارية؟",
+          "width": 168,
+          "x": 268,
+          "y": 185
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 20,
+          "symWidth": 18.97916666666667,
+          "text": "为什么 我 感觉 你 和 火 灵 殿 的 其他 弟子 不太 一样 啊 ?",
+          "translation": "لِمَ أشعر أنك تختلف عن باقي تلامذة قاعة الأرواح النارية؟",
+          "width": 130,
+          "x": 408,
+          "y": 273
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 17.69047619047619,
+          "text": "啊 , 你们 不 认识 我 也 正常 , 因为 我 才 回到 火 灵 殿 。",
+          "translation": "آه، لا عجب أنكم لا تعرفونني، فأنا للتو عُدت إلى قاعة الأرواح النارية.",
+          "width": 161,
+          "x": 217,
+          "y": 460
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 20,
+          "symWidth": 19.25833333333333,
+          "text": "之前 我 都 被 派遣 驻 守 在 小玲 珑 世界 了 。",
+          "translation": "لقد أُرسلت سابقاً لأحرس عالم الصغيرة اللطيفة.",
+          "width": 96,
+          "x": 292,
+          "y": 594
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20,
+          "symWidth": 19.18095238095238,
+          "text": "被 派遣 去 小 玲珑 世界 的 弟子 , 都 是 一些 没有 天赋 没有 未来 的 弟子 。",
+          "translation": "التلامذة المرسلون إلى عالم الصغيرة اللطيفة هم عادة من لا يملكون موهبة ولا مستقبل.",
+          "width": 162,
+          "x": 126,
+          "y": 915
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 17.75,
+          "text": "不可能 有 你 这 般 实力 。",
+          "translation": "لا يمكن أن تكون ممن يملكون مثلك هذه القوة.",
+          "width": 128,
+          "x": 324,
+          "y": 974
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "اقرأ المانغا",
+          "width": 118,
+          "x": 12,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20,
+          "symWidth": 18.74583333333333,
+          "text": "我 刚被 派遣 镇守 的 时候 , 的确 只有 天 命 境界 。",
+          "translation": "عندما وُكلت بواجب الحراسة، لم تكن قوتي سوى في مستوى القضاء السماوي.",
+          "width": 116,
+          "x": 73,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 17.2,
+          "text": "胡言乱语 。",
+          "translation": "هراء لا محل له.",
+          "width": 94,
+          "x": 406,
+          "y": 189
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 19,
+          "symWidth": 16.78174603174603,
+          "text": "后来 因为 学习 到 了 许多 小 玲珑 世 |  界 中人 族 的 符 文 、 阵 道 等 知识 。",
+          "translation": "ثم تعلمت الكثير من رموز البشر وفنون المصفوفات في عالم شياولينغ لونغ.",
+          "width": 157,
+          "x": 47,
+          "y": 338
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 18,
+          "symWidth": 16.5,
+          "text": "又 得到 了 些 特殊 传承 , 才 意外 突破 到 现在 的 实 力 。",
+          "translation": "وحصلت على ميراثات خاصة ففجرت قوتي إلى ما هي عليه الآن.",
+          "width": 98,
+          "x": 232,
+          "y": 342
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 17.875,
+          "text": "你 骗骗 别人 可以 , 但是 休想 骗过 我 。",
+          "translation": "قد تخدع غيري، لكنني لست ممن يُغشون.",
+          "width": 160,
+          "x": 128,
+          "y": 542
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 20.66666666666667,
+          "symWidth": 18.45833333333333,
+          "text": "你 可知 , 我 妖 神宗 所有 被 派遣 镇守 小 玲珑 世界 的 弟子 ,",
+          "translation": "أتعلم، كل تلميذ من عشيرة الشياطين المكلف بحراسة عالم شياولينغ لونغ،",
+          "width": 175,
+          "x": 221,
+          "y": 651
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.875,
+          "symWidth": 19.35416666666666,
+          "text": "在 临行 前 都会 被 赐予 一道 圣 水 。",
+          "translation": "يتلقى قبل الرحيل ماء مقدس.",
+          "width": 131,
+          "x": 562,
+          "y": 665
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.33333333333333,
+          "symWidth": 16.42222222222222,
+          "text": "哦 ~ 哦 ! 我 的 记忆 里 确实 有 啊 !",
+          "translation": "أوه~ نعم! ذكرياتي تحمل ذلك بالفعل!",
+          "width": 118,
+          "x": 65,
+          "y": 853
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 19,
+          "symWidth": 19.31818181818182,
+          "text": "那 道 圣水 表 面上 是 提升 你们 的 修 为 。",
+          "translation": "ذلك الماء المقدس يرفع مستواكم الظاهري في التدريب.",
+          "width": 117,
+          "x": 440,
+          "y": 856
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 21.83333333333333,
+          "symWidth": 22.10714285714286,
+          "text": "实际上 是 封印 其 体内 妖族 血脉 衍 变 , 以免 修 为 提 升 , 窃取 小 玲珑 世界 的 收获 。 com",
+          "translation": "بيد أن فعله الحقيقي حبس تحور الدم الشيطاني فيكم، لئلا يسرق زاد عالم شياولينغ لونغ بسبب ارتفاع قوتكم.",
+          "width": 213,
+          "x": 580,
+          "y": 935
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.81818181818182,
+          "symWidth": 17.2,
+          "text": "服用 以后 , 修 为 还 提 升 了 好几 阶 呢 !",
+          "translation": "بعد أن تناولته، ارتقى مستواي القتالي عدّة مستويات!",
+          "width": 94,
+          "x": 301,
+          "y": 959
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 118,
+          "x": 11,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 19.6,
+          "symWidth": 18.44666666666667,
+          "text": "除非 你 回来 述 职 过 , 否则 , 你 怎么 可能 在 镇守 期间 突破 到 龙 道 境 ?",
+          "translation": "ما دامت لم تُقم بإرجاع تقريرك رسميًا، فكيف لك أن تبلغ مرتبة \"طريق التنين\" أثناء حراستك للمدينة؟",
+          "width": 131,
+          "x": 297,
+          "y": 233
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19,
+          "symWidth": 18.91666666666666,
+          "text": "所以 你 究竟 是 是 谁 ?",
+          "translation": "فمن تكون حقًا؟",
+          "width": 131,
+          "x": 434,
+          "y": 449
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 16.6,
+          "text": "哇 ! 还有 这 种 事 !",
+          "translation": "يا للهول! هل تصدق؟",
+          "width": 108,
+          "x": 242,
+          "y": 452
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 19.40625,
+          "symWidth": 18.39375,
+          "text": "妖 神宗 内 能 击败 离 火 圣 子 的 弟子 , 不可能 默默 无 闻 。",
+          "translation": "لا يمكن لأتباع طائفة الشياطين الذين هزموا ولي النار أن يظلوا مجهولين بلا أثر.",
+          "width": 110,
+          "x": 480,
+          "y": 539
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 18.25,
+          "symWidth": 16.94940476190476,
+          "text": "可恶 啊 , 这 赤 蟒 老祖 级别 太低 了 , 记忆 里 根本 什么 情报 都 没有 !",
+          "translation": "حقير! رتبة هذا السلف الأفعى القرمزي متدنية حتى أن ذاكرتي خلت من أدنى معلومة!",
+          "width": 148,
+          "x": 229,
+          "y": 571
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 20,
+          "symWidth": 18.44666666666667,
+          "text": "好吧 , 我 确实 不是 普通 的 火 灵 殿 弟子 , 但 我 对 你们 绝对 没有 恶意 。",
+          "translation": "حسنًا، لست عاديًا بين أتباع قصر النار، لكن لا ضغينة لي عليكم أبدًا.",
+          "width": 131,
+          "x": 74,
+          "y": 913
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13,
+          "text": "看 。",
+          "translation": "انظر.",
+          "width": 29,
+          "x": 322,
+          "y": 1001
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 25.5,
+          "text": ".com",
+          "translation": "",
+          "width": 98,
+          "x": 696,
+          "y": 1049
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 36.33333333333334,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 117,
+          "x": 11,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 20.5,
+          "symWidth": 18.31339285714286,
+          "text": "神 血 妖 狸 ? ! 赤 蟒 哥哥 , 难道 你 是 无涯 子 哥哥 异 父 异 母 的 兄弟 ?",
+          "translation": "هل أنت من عشيرة الروحانية الدموية الملعونة؟ أخي الثعبان الأحمر، هل أنت حقاً الأخ غير الشقيق لأخي وُيازي؟",
+          "width": 176,
+          "x": 419,
+          "y": 673
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 18.57142857142857,
+          "text": "这 是 … 神 血 妖 狸 的 血脉 气息 !",
+          "translation": "هذا... هذا هو عرق دم الروحانية الدموية الملعونة!",
+          "width": 152,
+          "x": 66,
+          "y": 703
+        },
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 20.16666666666667,
+          "symWidth": 17.6031746031746,
+          "text": "你 是 神 血 妖 狸 一族 ? ! 不可能 , 神 血 妖 狸 都是 雨 灵 殿 弟子 , 你 明明 是 火 灵 殿 的 。",
+          "translation": "هل أنت من عشيرة الروحانية الدموية الملعونة؟ مستحيل، فكل أفراد هذه العشيرة من تلاميذ قصر الأرواح الممطرة، وأنت بالظاهر... من قصر الأرواح النارية.",
+          "width": 160,
+          "x": 223,
+          "y": 866
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.04761904761905,
+          "text": "难怪 你 之前 那么 照顾 无涯 子 哥哥 \\ 和 我 呀 !",
+          "translation": "لا عجب إذًا في رعايتك الحثيثة لأخي وُيازي ولي سابقاً!",
+          "width": 160,
+          "x": 430,
+          "y": 965
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 33,
+          "symWidth": 32.5,
+          "text": "COPAMANG",
+          "translation": "",
+          "width": 227,
+          "x": 0,
+          "y": 1044
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 24.75,
+          "symWidth": 26.25,
+          "text": ".com",
+          "translation": "",
+          "width": 88,
+          "x": 302,
+          "y": 1055
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.5,
+          "symWidth": 17.66666666666666,
+          "text": "雨馨 圣女 , 水 苓 , 不管 你们 信不信 。",
+          "translation": "يا شين، يا قديسة الماء، سواء صدقتم أم لا.",
+          "width": 131,
+          "x": 355,
+          "y": 91
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 20.6,
+          "symWidth": 18.6,
+          "text": "我 的确 因为 一些 特殊 原因 隐藏 了 身份 , 但 我 和 神 血 妖 狸 一族 有 某些 特殊 的 渊源 , 对 雨 灵 殿 也 并无 恶意 。",
+          "translation": "لقد أخفيت هويتي لأسباب خاصة، لكن لي علاقة خاصة بسلالة شينشوي يولي، ولا أكن عداءً لقصر يولينغ.",
+          "width": 197,
+          "x": 348,
+          "y": 244
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.125,
+          "symWidth": 18.14285714285714,
+          "text": "此次 出手 相助 , 只是 看不惯 离 火 圣 子 胡作非为 而 已 。",
+          "translation": "تدخلي هذه المرة لم يكن إلا لردع ولي النار عن تجاوز حدوده.",
+          "width": 153,
+          "x": 196,
+          "y": 535
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20.33333333333333,
+          "symWidth": 17.87777777777778,
+          "text": "赤 蟒 哥哥 你 不用 解释 , 我 相信 你 !",
+          "translation": "يا أخي التمساح الأحمر، لا حاجة لتبرير، فأنا أؤمن بك!",
+          "width": 129,
+          "x": 531,
+          "y": 600
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 19.8,
+          "symWidth": 17.96666666666667,
+          "text": "既然 你 没有 恶 意 , 那 为何 要 隐藏 身份 , 你 的 目的 到底 是 什么 ?",
+          "translation": "إن لم تكن لك نوايا سيئة، فهل لي أن أعرف سر إخفائك لهويتك؟ ما هدفك الحقيقي؟",
+          "width": 131,
+          "x": 572,
+          "y": 925
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.33333333333333,
+          "symWidth": 16.5,
+          "text": "这 傻 丫头 , 怎么 什么 都 信 :",
+          "translation": "يا لتلك الفتاة الساذجة، تزعم تصديق كل ما تسمع.",
+          "width": 110,
+          "x": 264,
+          "y": 940
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 30,
+          "symWidth": 29.66666666666667,
+          "text": "COLIMANGA",
+          "translation": "",
+          "width": 259,
+          "x": 0,
+          "y": 1043
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.51666666666667,
+          "text": "此 行 我 愿意 与 你们 合作 ,",
+          "translation": "في هذا الأمر، أُبدِي استعدادي للتعاون معكم،",
+          "width": 117,
+          "x": 454,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18.5,
+          "symWidth": 15.45,
+          "text": "共同 寻找 出 口 。",
+          "translation": "لنعثر معًا على المخرج.",
+          "width": 106,
+          "x": 622,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 18,
+          "symWidth": 15.6,
+          "text": "若 你们 还是 不 信任 我 , 我 就 独自 离 开 了 。",
+          "translation": "إن لم تودعوني بثقةِ قلوبكم، فسأغادر وحيدًا.",
+          "width": 98,
+          "x": 639,
+          "y": 199
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 18.45079365079365,
+          "text": "我 有 我 的 苦衷 , 希望 圣女 不要 再 深究 了 。",
+          "translation": "لِي أسبابي الخاصّة، وآمُل ألّا تغوص القديسة في ذلك أكثر.",
+          "width": 139,
+          "x": 99,
+          "y": 314
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.26666666666667,
+          "symWidth": 16.46666666666667,
+          "text": "欸 , 赤 蟒 哥 哥 , 你 别走 啊 ……",
+          "translation": "أيها الأخ الأفعى الحمراء، لا تذهب هكذا...",
+          "width": 107,
+          "x": 416,
+          "y": 557
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 18.2,
+          "text": "雨馨 姐姐 。",
+          "translation": "الأخت يوشين.",
+          "width": 93,
+          "x": 345,
+          "y": 796
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20,
+          "symWidth": 18.21666666666667,
+          "text": "你 快把 赤 蟒 哥 哥 喊 回来 吧 , 他 一个 人 离开 多 可怜 啊 !",
+          "translation": "اسرع بنداء الأخ الأحمر،\nإنه وحيد وقليل الحيلة في رحيله!",
+          "width": 131,
+          "x": 387,
+          "y": 861
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 28.75,
+          "symWidth": 27.25,
+          "text": "LANG",
+          "translation": "",
+          "width": 107,
+          "x": 523,
+          "y": 1047
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 25,
+          "symWidth": 27.25,
+          "text": ".com",
+          "translation": "",
+          "width": 100,
+          "x": 696,
+          "y": 1054
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 34.66666666666666,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 116,
+          "x": 13,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.88888888888889,
+          "symWidth": 17.59259259259259,
+          "text": "水 苓 , 你 是 九尾 妖狐 一 脉 , 能 辨 真假 , 知 善恶 。",
+          "translation": "يا سوي لينغ، أنتِ من نسل الثعلب ذو الذيول التسعة، تميزين الحقيقي من المزيف، وتعرفين الخير من الشر.",
+          "width": 198,
+          "x": 183,
+          "y": 163
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20.25,
+          "symWidth": 17.83333333333333,
+          "text": "你 认真 告诉 我 , 你 的 直觉 真的 觉得 他 没有 恶 意 ?",
+          "translation": "قل لي بجد، هل حقاً حدسك يخبرك بأنه لا يحمل في طياته شرّاً؟",
+          "width": 139,
+          "x": 579,
+          "y": 295
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 16,
+          "symWidth": 11.2,
+          "text": "DE ...",
+          "translation": "دي...",
+          "width": 44,
+          "x": 657,
+          "y": 611
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.88888888888889,
+          "symWidth": 17.77777777777778,
+          "text": "我 可以 肯定 , 赤 蟒 哥哥 没有 恶意 。",
+          "translation": "أؤكد لك، الأخ تشي مانغ لا يحمل أي نية خبيثة.",
+          "width": 130,
+          "x": 118,
+          "y": 745
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.45714285714286,
+          "text": "而且 你 不 知道 , 救过 我们 已 经 不止一次 了 。",
+          "translation": "بل أنت لا تعلمين، لقد أنقذ حياتنا مراتٍ لا تُحصى.",
+          "width": 140,
+          "x": 470,
+          "y": 934
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 36,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 116,
+          "x": 12,
+          "y": 1083
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 17.04,
+          "text": "观看, 最快 最 稳, 广告 最少",
+          "translation": "",
+          "width": 551,
+          "x": 212,
+          "y": 1174
+        }
+      ],
+      "imgHeight": 1233,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

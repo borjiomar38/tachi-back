@@ -1,0 +1,555 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0118",
+  "jobId": "fixture-job-0118",
+  "licenseId": "fixture-license-0118",
+  "pageCount": 10,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 30,
+          "symWidth": 16.72,
+          "text": "colamanga.com 观看 , 最快 最 稳 , 广告 最少",
+          "translation": "",
+          "width": 550,
+          "x": 147,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 27.08333333333334,
+          "symWidth": 21.05128205128205,
+          "text": "ACLOUD COLAMANGA.COM",
+          "translation": "",
+          "width": 290,
+          "x": 501,
+          "y": 1140
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 118,
+          "x": 11,
+          "y": 1163
+        }
+      ],
+      "imgHeight": 1212,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20,
+          "symWidth": 17.86666666666667,
+          "text": "刚才 的 账 , 我们 该 好好 算一算 了 。",
+          "translation": "آن الأوان لأن نحسم الحساب.",
+          "width": 108,
+          "x": 512,
+          "y": 374
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20.1304347826087,
+          "symWidth": 17.52173913043478,
+          "text": "这位 大侠 , 我们 不过 路过 此地 , 未曾 想 与 你 为敌 啊 。",
+          "translation": "أيها الفارس، نحن عابرون هنا فقط، ولم نرغب قط في العداء معك.",
+          "width": 152,
+          "x": 167,
+          "y": 706
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 20,
+          "symWidth": 18.15,
+          "text": "少 废话 , 降 妖 除魔 本 是 我 正道 弟子 的 天职 。",
+          "translation": "لا تهدر الكلام، طرد الشياطين والقضاء على الشر واجبنا كأتباع للطريق المستقيم.",
+          "width": 110,
+          "x": 397,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19,
+          "symWidth": 18.48333333333333,
+          "text": "今天 你们 一个 也 别想 走 !",
+          "translation": "لن ينجو أحد منكم اليوم!",
+          "width": 130,
+          "x": 586,
+          "y": 946
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 26.5,
+          "symWidth": 20.45054945054945,
+          "text": "ACLOUDM COLAMANGA.COM",
+          "translation": "",
+          "width": 289,
+          "x": 3,
+          "y": 1065
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19.5,
+          "symWidth": 13.5,
+          "text": "唰 !",
+          "translation": "شحّ! (صوت سهم أو حركة سريعة)",
+          "width": 29,
+          "x": 87,
+          "y": 573
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 20.5,
+          "symWidth": 19.3301282051282,
+          "text": "ACLOUDMLNOL . COLAMANGA.COM",
+          "translation": "",
+          "width": 289,
+          "x": 502,
+          "y": 1079
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 34,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 119,
+          "x": 11,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 17.83333333333334,
+          "text": "龙羽 音 ? 你 怎么 会 在 这 。",
+          "translation": "لونغ يو يين؟ كيف تواجدت هنا؟",
+          "width": 117,
+          "x": 364,
+          "y": 536
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.16666666666666,
+          "symWidth": 17.94444444444444,
+          "text": "怎么 , 你 要 帮 着 妖族 对付 自 己 人 ?",
+          "translation": "هل أنت متحالف مع الشياطين ضد قومك؟",
+          "width": 132,
+          "x": 591,
+          "y": 718
+        },
+        {
+          "angle": 0,
+          "height": 267,
+          "symHeight": 22.28571428571428,
+          "symWidth": 21.05238095238095,
+          "text": "难怪 整天 和 聂 离 的 妖 盟 那 伙 人 混 在 一 起 。 你们 果然 是 妖 神宗 的 细 作 ! 看 漫画",
+          "translation": "لا عجب أنك تلازم عصابة تحالف الشياطين برفقة نيي لي. أنتم جواسيس طائفة آلهة الشياطين بالتأكيد!",
+          "width": 179,
+          "x": 11,
+          "y": 853
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 19.07142857142857,
+          "symWidth": 17.39285714285714,
+          "text": "胆敢 侮辱 师傅 , 受 死 !!",
+          "translation": "تجرأت على إهانة أستاذي؟ فلتموت!",
+          "width": 88,
+          "x": 420,
+          "y": 880
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 13,
+          "text": "唔 !",
+          "translation": "همّ!",
+          "width": 29,
+          "x": 273,
+          "y": 864
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.5,
+          "symWidth": 17.75,
+          "text": "就 这 点 本 事 ?",
+          "translation": "هذه كل قوتك؟",
+          "width": 88,
+          "x": 422,
+          "y": 880
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 17.95,
+          "text": "你 的 实力 也 不过如此 啊 。",
+          "translation": "مهارتك لا تعدو هذا الحد.",
+          "width": 116,
+          "x": 624,
+          "y": 995
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 36.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 119,
+          "x": 10,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 16,
+          "text": "啊 …",
+          "translation": "آه...",
+          "width": 37,
+          "x": 207,
+          "y": 335
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 36,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 118,
+          "x": 11,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18.5,
+          "symWidth": 14,
+          "text": "切 。",
+          "translation": "قف.",
+          "width": 28,
+          "x": 465,
+          "y": 716
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.78571428571428,
+          "symWidth": 17.39285714285714,
+          "text": "臭小子 , 等 会 再 收拾 你 !",
+          "translation": "أيها الغرّ، سأعاقبك لاحقاً!",
+          "width": 74,
+          "x": 89,
+          "y": 840
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28.5,
+          "symWidth": 22.91608391608392,
+          "text": "ACLOUDMERCE COLAMANGA.COM",
+          "translation": "",
+          "width": 292,
+          "x": 0,
+          "y": 1055
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 11,
+          "symWidth": 11.5,
+          "text": "AA",
+          "translation": "",
+          "width": 21,
+          "x": 265,
+          "y": 1065
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20.5,
+          "symWidth": 14,
+          "text": "咕 !",
+          "translation": "أغغ!",
+          "width": 30,
+          "x": 437,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 17.25,
+          "text": "不好 , 全 是 冲 着 穴位 去 的 。",
+          "translation": "سيء، كلها تستهدف النقاط الحرجة.",
+          "width": 130,
+          "x": 122,
+          "y": 510
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 17.33333333333334,
+          "text": "我 的 灵 力 运转 停滞 了 !",
+          "translation": "طاقتي الروحية توقفت عن الدوران!",
+          "width": 129,
+          "x": 235,
+          "y": 647
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.25,
+          "text": "哈 啊 !!",
+          "translation": "هاه!!",
+          "width": 72,
+          "x": 126,
+          "y": 1012
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 34,
+          "symWidth": 36,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 118,
+          "x": 10,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 10.66666666666667,
+          "text": "咦 !!",
+          "translation": "ها!!",
+          "width": 51,
+          "x": 426,
+          "y": 602
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.5,
+          "symWidth": 14.875,
+          "text": "卑鄙 , 你 找死 !!",
+          "translation": "وضيع، تودُّ الموت؟!",
+          "width": 88,
+          "x": 81,
+          "y": 614
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.75,
+          "symWidth": 19.41666666666667,
+          "text": "帅哥 , 我 只是 不 小心 踢 了 块 石头 儿",
+          "translation": "يا وسيماً، لقد ركلت حجراً عن طريق الخطأ فقط.",
+          "width": 131,
+          "x": 563,
+          "y": 749
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 19.875,
+          "text": "谁 知道 它 会 爆 了 啊",
+          "translation": "من كان يظن أنه سينفجر؟",
+          "width": 88,
+          "x": 653,
+          "y": 975
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 37,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 118,
+          "x": 11,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.33333333333333,
+          "text": "啊啊 !",
+          "translation": "آه آه!",
+          "width": 50,
+          "x": 460,
+          "y": 126
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.1,
+          "text": "你 想 先 死 , 我 就 成全 你 !",
+          "translation": "إن أردت الموت أولاً، فسأساعدك على ذلك!",
+          "width": 95,
+          "x": 72,
+          "y": 314
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 17.4,
+          "text": "看 烟雾 弹 !",
+          "translation": "انظر قنبلة الدخان!",
+          "width": 96,
+          "x": 365,
+          "y": 818
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 16.91666666666666,
+          "text": "雕 虫 小 技 !",
+          "translation": "حيل وضيعة!",
+          "width": 65,
+          "x": 205,
+          "y": 882
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 26.82894736842105,
+          "symWidth": 17.73684210526316,
+          "text": "ACL COLAMANGA.COM colamanga.com 观看 , 最快 最 稳 , 广告 最少",
+          "translation": "",
+          "width": 634,
+          "x": 2,
+          "y": 1063
+        }
+      ],
+      "imgHeight": 1222,
+      "imgWidth": 800,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "und",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

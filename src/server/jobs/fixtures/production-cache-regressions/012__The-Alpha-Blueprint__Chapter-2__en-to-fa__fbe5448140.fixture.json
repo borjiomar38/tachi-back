@@ -1,0 +1,3486 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0012",
+  "jobId": "fixture-job-0012",
+  "licenseId": "fixture-license-0012",
+  "pageCount": 97,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "f399924d8a937d28f07c95fed3a2801f5526100ab8524d8206303bf5d267e035",
+      "fileName": "001__001.jpg",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "193e41100c5311d0554a3e8d8dff41e3f924a26099e81b1c8647360233bbe89f",
+      "fileName": "001__002.jpg",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "f20386dcaf0c17033db5d56aa0fd9f3e9d264286ad8b6e99342840c724425ce4",
+      "fileName": "001__003.jpg",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "96ad874d6915a0f7d67eb46d966ad811926484435ab4606040a6c5d3078f89d2",
+      "fileName": "002__001.jpg",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "612d3b990499dab0d328b56afd1a80447aff8a16dcbfab14561ff6269dc8190d",
+      "fileName": "002__002.jpg",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "ac75343668a2f6edcbea82f792f26d87d58ba1d15b7ca3c03e13afb6135013b2",
+      "fileName": "002__003.jpg",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "2e1fe3fd7fa68d0599fc001e2c2625b889b9115a12a991121c0aa6c742e358b4",
+      "fileName": "003__001.jpg",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "619384806decb63c48123238e1c91f18fcacb4c5a118bda147f5a2216614bfb1",
+      "fileName": "003__002.jpg",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "6275c4335716c74cff4c6499df50f4634d50387a105d28b8a6c300b4c032d7ef",
+      "fileName": "003__003.jpg",
+      "pageNumber": 9
+    },
+    {
+      "checksumSha256": "7ad15cfa2e23396b0da2b519f062fab6143ab252c84f7bd015c96bf020f15511",
+      "fileName": "004__001.jpg",
+      "pageNumber": 10
+    },
+    {
+      "checksumSha256": "0bafe391208bc1a583a40e76b5f2428924cf32c5d76908d5c0dde023817d2932",
+      "fileName": "004__002.jpg",
+      "pageNumber": 11
+    },
+    {
+      "checksumSha256": "3c40600c77f3bd4d3dd5cf8ba23880be4ba3709deb9025f1a319080728b882e7",
+      "fileName": "004__003.jpg",
+      "pageNumber": 12
+    },
+    {
+      "checksumSha256": "09958e7ceca77094e1b02d3c245171cf4499008681dfcc375b0a32d7c6fc5a84",
+      "fileName": "005__001.jpg",
+      "pageNumber": 13
+    },
+    {
+      "checksumSha256": "cdaf8fceb7a6e320865de434dda0b2c3dfdf31e1bf61a8f789e41e994ec5be61",
+      "fileName": "005__002.jpg",
+      "pageNumber": 14
+    },
+    {
+      "checksumSha256": "d96619056eb0a2a2ffdf14ba667d1064f9bc2ee2ea23c0e71af614bca240bedb",
+      "fileName": "005__003.jpg",
+      "pageNumber": 15
+    },
+    {
+      "checksumSha256": "bf516006490f8f2002bd56159b4dbb42fc92876259a508214471bd278736ab9e",
+      "fileName": "006__001.jpg",
+      "pageNumber": 16
+    },
+    {
+      "checksumSha256": "aefb03191a4caa5638a38510dd81fcd4101dbfba3d0950804f5c3a84185e543f",
+      "fileName": "006__002.jpg",
+      "pageNumber": 17
+    },
+    {
+      "checksumSha256": "9b8f121b2e5f2133049b31085c42f9ce523e00b779c15020f0b1a825ce5f5194",
+      "fileName": "006__003.jpg",
+      "pageNumber": 18
+    },
+    {
+      "checksumSha256": "7af3c20e917eccdd032c092e7575c891ea9e11aa55ebe1ff4a368583b9112175",
+      "fileName": "007__001.jpg",
+      "pageNumber": 19
+    },
+    {
+      "checksumSha256": "a4887561e47808d62727cb95df4f1123e7b0f24d805f5f4c1c7b4f77bcd15185",
+      "fileName": "007__002.jpg",
+      "pageNumber": 20
+    },
+    {
+      "checksumSha256": "83c1e97b469f1bc81d11488833d2352b08012dc227d14046d2d09a87bea55716",
+      "fileName": "007__003.jpg",
+      "pageNumber": 21
+    },
+    {
+      "checksumSha256": "77e6423ed00bcb45420ebe22b89dd671d1a608de012f70b1a2382e16334aa801",
+      "fileName": "008__001.jpg",
+      "pageNumber": 22
+    },
+    {
+      "checksumSha256": "55dc1f96f7c35616cec89380b86ff5599dc34319521c8119564d51267f3925db",
+      "fileName": "008__002.jpg",
+      "pageNumber": 23
+    },
+    {
+      "checksumSha256": "c3ca0c87a9467608042504ce5b135720ddf59b832cc86cbf2518caac265bbab5",
+      "fileName": "008__003.jpg",
+      "pageNumber": 24
+    },
+    {
+      "checksumSha256": "079cd55170166fd022f41940ce01ef890bc3d589564e4a244878730391f1f341",
+      "fileName": "009__001.jpg",
+      "pageNumber": 25
+    },
+    {
+      "checksumSha256": "484aff2839447f96ea44a52cc8cd0c4520120922565c805a3a805b87e975ea6a",
+      "fileName": "009__002.jpg",
+      "pageNumber": 26
+    },
+    {
+      "checksumSha256": "2124c7027b317f1cb71f08409ff4fa569900e15ad2798c526488163d1aa9a448",
+      "fileName": "009__003.jpg",
+      "pageNumber": 27
+    },
+    {
+      "checksumSha256": "b32f3a4888c2c9894b3297e60cbb5662fdfcfc20f18e3cd104c47492e98e86b6",
+      "fileName": "010__001.jpg",
+      "pageNumber": 28
+    },
+    {
+      "checksumSha256": "ef503c062f6cf436dad891685e81ce173955104bfc529098570bfc919b0b5689",
+      "fileName": "010__002.jpg",
+      "pageNumber": 29
+    },
+    {
+      "checksumSha256": "7c02fa20077c3880651ebabced30e6bf5c3302a093a829a040c35fe20cee2b30",
+      "fileName": "010__003.jpg",
+      "pageNumber": 30
+    },
+    {
+      "checksumSha256": "ddc16a0216bf6c62e59a221231e3c06cd252f4a0a9604f73477a8b600199d724",
+      "fileName": "011__001.jpg",
+      "pageNumber": 31
+    },
+    {
+      "checksumSha256": "0452af84e1f970a85cb3e44493a7318db6e9de149e1283745d96a8e6c84fbd8b",
+      "fileName": "011__002.jpg",
+      "pageNumber": 32
+    },
+    {
+      "checksumSha256": "be6cdafdffe6202e42a6bcb86c2913e1a1e75c7eb75ee20aac711e5058c30fe0",
+      "fileName": "011__003.jpg",
+      "pageNumber": 33
+    },
+    {
+      "checksumSha256": "af368bf3c8acc719d0039640863d3e2c00a8e2b8a0775a92cafc3c13b2dfc420",
+      "fileName": "012__001.jpg",
+      "pageNumber": 34
+    },
+    {
+      "checksumSha256": "873bf17c90b1a2b838e84bfbf71777b5e4c87f383bcaa28332052496532ae7de",
+      "fileName": "012__002.jpg",
+      "pageNumber": 35
+    },
+    {
+      "checksumSha256": "30e161c3c96e5dfc27f7ce2e8034c9c0f9ff923641b1201dbe7aa1038f812d9f",
+      "fileName": "012__003.jpg",
+      "pageNumber": 36
+    },
+    {
+      "checksumSha256": "754128cddbca726edcfab8ccdf235aad8ba036946848a84ea701192fc8badb0e",
+      "fileName": "013__001.jpg",
+      "pageNumber": 37
+    },
+    {
+      "checksumSha256": "18cf75f70db436a3d37778f5b5c7e5ccbe3bbf9aea4f59eeb64786826b213127",
+      "fileName": "013__002.jpg",
+      "pageNumber": 38
+    },
+    {
+      "checksumSha256": "6a37c1ac27af843d778fde788bce6e2f6e2b2e2bc0dbcb34ae521a375771bb77",
+      "fileName": "013__003.jpg",
+      "pageNumber": 39
+    },
+    {
+      "checksumSha256": "620a2163247bfbc6a738f5706cd88c1ea735a17276e0687d6cf677fb2d67640c",
+      "fileName": "014__001.jpg",
+      "pageNumber": 40
+    },
+    {
+      "checksumSha256": "0c8cbe86ab88c097f9aacdbaa44899ba32bbd89657a6f5cbce3cee708eed0d9d",
+      "fileName": "014__002.jpg",
+      "pageNumber": 41
+    },
+    {
+      "checksumSha256": "71bde4ab1b561308fa6319644bee0ad424712e81fbabaf34f16e0f48972f9efb",
+      "fileName": "014__003.jpg",
+      "pageNumber": 42
+    },
+    {
+      "checksumSha256": "88c4392a69dbcbcfb8ea7ae962bda7b1b3db22e68e87aa33ce447dbe6209b924",
+      "fileName": "015__001.jpg",
+      "pageNumber": 43
+    },
+    {
+      "checksumSha256": "a1b48bd550982cceaaa2ef9749bc96bd5fcfd6a899a216c7ce4efc30ab3b5625",
+      "fileName": "015__002.jpg",
+      "pageNumber": 44
+    },
+    {
+      "checksumSha256": "de82253bfc5d9a21c8b27ddb4c946ae0251ff85ff70fae373b73c8602e2b19a8",
+      "fileName": "015__003.jpg",
+      "pageNumber": 45
+    },
+    {
+      "checksumSha256": "0e517cd28e89c51d1e2b94ddf54af25f3e97f74f41cefc60e35ba1fbf48b0f97",
+      "fileName": "016__001.jpg",
+      "pageNumber": 46
+    },
+    {
+      "checksumSha256": "0572173ed9f94d5714d67980bb572e246d976fb34e65294aa1ac96a83b7a7245",
+      "fileName": "016__002.jpg",
+      "pageNumber": 47
+    },
+    {
+      "checksumSha256": "bdc2e543b0aa536d6a5b8a9b09880e6f782262d7d4881043d78e421fa2346847",
+      "fileName": "016__003.jpg",
+      "pageNumber": 48
+    },
+    {
+      "checksumSha256": "5744a82653e2348e7c81226004c7426e4b1655b7ea4c6d2d173907cbf9df8d1e",
+      "fileName": "017__001.jpg",
+      "pageNumber": 49
+    },
+    {
+      "checksumSha256": "25c4b61ac09e2282b7dad1a3657ad12093fe6545b3702e5b9db3f2cd3ed4f51f",
+      "fileName": "017__002.jpg",
+      "pageNumber": 50
+    },
+    {
+      "checksumSha256": "c3a23747197aa7dcbcd7d7ca1632dd35e82fde74dc6942cb5ca96d2726ec4a94",
+      "fileName": "017__003.jpg",
+      "pageNumber": 51
+    },
+    {
+      "checksumSha256": "12caf3a4eddd4432c5bd0accc3fbe01d5a7a3cb2bf9f5ceb411ecc9f588deb99",
+      "fileName": "018__001.jpg",
+      "pageNumber": 52
+    },
+    {
+      "checksumSha256": "4da8025d04464c152372359fa5dd7719e7bfffcc2224a9689776e6532ee80cbe",
+      "fileName": "018__002.jpg",
+      "pageNumber": 53
+    },
+    {
+      "checksumSha256": "3d1b614656a5c431d54b4b367c62a4b0f2f9d1176b2b33657aac7645bfba1a25",
+      "fileName": "018__003.jpg",
+      "pageNumber": 54
+    },
+    {
+      "checksumSha256": "f0f2f62589576e91b1bd884a15d960ee1318fbf9e775e5767d56a48c847a3490",
+      "fileName": "019__001.jpg",
+      "pageNumber": 55
+    },
+    {
+      "checksumSha256": "d6509001de8d67c69b53c63645b537baf4efdf1ec065c6702d72e83f7356a388",
+      "fileName": "019__002.jpg",
+      "pageNumber": 56
+    },
+    {
+      "checksumSha256": "81c5fb355165ba53067709f2fb3f20122788a50d4549507d00f1271efb7b83b3",
+      "fileName": "019__003.jpg",
+      "pageNumber": 57
+    },
+    {
+      "checksumSha256": "e70659e229d3db25f498ecf47a84f7fe3f4a48e80a4d30de2a0286e745a2f350",
+      "fileName": "020__001.jpg",
+      "pageNumber": 58
+    },
+    {
+      "checksumSha256": "c203ee1558229b0a2614e250e84d74c1ddb0a7c0b113ba3dd0a0aecce2974465",
+      "fileName": "020__002.jpg",
+      "pageNumber": 59
+    },
+    {
+      "checksumSha256": "162e6478c770116824c7bea4e5787874febfff7df2965cd1abb4920c1cd9e6ec",
+      "fileName": "020__003.jpg",
+      "pageNumber": 60
+    },
+    {
+      "checksumSha256": "b7979323d454fbf2e7dea3e43ffeaeda3eff46f153e86e6b7387049c9b77ea30",
+      "fileName": "021__001.jpg",
+      "pageNumber": 61
+    },
+    {
+      "checksumSha256": "73f9b487243ebb17f87c249f3e17d246be4e6f002518d88ec513ec8eed00541b",
+      "fileName": "021__002.jpg",
+      "pageNumber": 62
+    },
+    {
+      "checksumSha256": "d5a349b880ae6f4638d5e9f388650f936c2902386d04bf71c643072a8bf35d0d",
+      "fileName": "021__003.jpg",
+      "pageNumber": 63
+    },
+    {
+      "checksumSha256": "4b46f3c90746fe64c36e6492b6d4f87e81ec9076cee385390ce3a5aec56b206b",
+      "fileName": "022__001.jpg",
+      "pageNumber": 64
+    },
+    {
+      "checksumSha256": "49f2079f1a3fad4bc88aaccb0bb959a61aab17626e05272d6824b2159cea0f62",
+      "fileName": "022__002.jpg",
+      "pageNumber": 65
+    },
+    {
+      "checksumSha256": "30f3657a33baf2fb6898eecddb84d93f4122a4e91ddee14720f9aee165919a5c",
+      "fileName": "022__003.jpg",
+      "pageNumber": 66
+    },
+    {
+      "checksumSha256": "96c478933a150e1f77d52c08589b3da7abeacaa28e102cc94476a047b9f53ada",
+      "fileName": "023__001.jpg",
+      "pageNumber": 67
+    },
+    {
+      "checksumSha256": "f18f8add54a5b1377361f788cf850848a192707babed71f15727d1005e1838f2",
+      "fileName": "023__002.jpg",
+      "pageNumber": 68
+    },
+    {
+      "checksumSha256": "59ee749f5b35b128f0112de02988514f009c79a590915aaa10c4a2e19a701d8e",
+      "fileName": "023__003.jpg",
+      "pageNumber": 69
+    },
+    {
+      "checksumSha256": "830b82714e8ed889583513d173dbb73fe908ebb164a75aed2fc936e50332f510",
+      "fileName": "024__001.jpg",
+      "pageNumber": 70
+    },
+    {
+      "checksumSha256": "a1427f0c36e69fbaa5eb782f8a863ed2155783f8e61aed89f67aa731432af413",
+      "fileName": "024__002.jpg",
+      "pageNumber": 71
+    },
+    {
+      "checksumSha256": "952e61620ba0b7145abcf9a799b9fb7a7ed013bea3fef40b2ba5fef79d8381a4",
+      "fileName": "024__003.jpg",
+      "pageNumber": 72
+    },
+    {
+      "checksumSha256": "2c9aab303e6ccf73ddee514599ccee76b0ac33cb17d9da70535c9fd7e90807cb",
+      "fileName": "025__001.jpg",
+      "pageNumber": 73
+    },
+    {
+      "checksumSha256": "3208cb7169f4f4cd49c4958e0a9ef91a2cf36f869e6dc88b9e213e5813907067",
+      "fileName": "025__002.jpg",
+      "pageNumber": 74
+    },
+    {
+      "checksumSha256": "9d1da653d24ed793d616b3db3df063bdc8cfee6a68c3177d5a84fd468b27784b",
+      "fileName": "025__003.jpg",
+      "pageNumber": 75
+    },
+    {
+      "checksumSha256": "898fc2458566a27bbb93b746e1ff081e5e4a514c9fc47abebbfaaa2752e66da4",
+      "fileName": "026__001.jpg",
+      "pageNumber": 76
+    },
+    {
+      "checksumSha256": "a0da4380705bf782f7b001b6292fa559dca63e47b42a1999e2f4a6297d1fb31a",
+      "fileName": "026__002.jpg",
+      "pageNumber": 77
+    },
+    {
+      "checksumSha256": "abc9825a7ce64495cfe8122f5f68a1fb9973f89d078f069435320c2d5601326f",
+      "fileName": "026__003.jpg",
+      "pageNumber": 78
+    },
+    {
+      "checksumSha256": "de70eadbeac353264f3fcdcaadd62e69c4da8b4f106a91c6cbbc582f35aca69f",
+      "fileName": "027__001.jpg",
+      "pageNumber": 79
+    },
+    {
+      "checksumSha256": "16a4207ce838f9fee3e17f53c51735483e620319abfeba38043d0f8bdcaac6b8",
+      "fileName": "027__002.jpg",
+      "pageNumber": 80
+    },
+    {
+      "checksumSha256": "0518667eda42da8514eb53854ec9dafbdfdfb2896e2aefff6b944d28496392f6",
+      "fileName": "027__003.jpg",
+      "pageNumber": 81
+    },
+    {
+      "checksumSha256": "1a76d00a8278fbe9c71106bfb4c00432a4c9f6177f0e1e44aed90fac117b28a9",
+      "fileName": "028__001.jpg",
+      "pageNumber": 82
+    },
+    {
+      "checksumSha256": "bb352824e9808d268bcdfc493f54b2f09db0b2c1bea39de47a0339a801c8383b",
+      "fileName": "028__002.jpg",
+      "pageNumber": 83
+    },
+    {
+      "checksumSha256": "f0f29bb213ffe0d96c29c15e2e043f8da2c4b3b83cb68fccfabb3385c5e91a2a",
+      "fileName": "028__003.jpg",
+      "pageNumber": 84
+    },
+    {
+      "checksumSha256": "4c41cc3551a77e785471408a619123ddaf63f3ce64620b1388bd41e5f75b0d25",
+      "fileName": "029__001.jpg",
+      "pageNumber": 85
+    },
+    {
+      "checksumSha256": "62f3f5fb547106d339d9dc77ce2ac96ea1361ced5f4f05245d6019de97ab9a75",
+      "fileName": "029__002.jpg",
+      "pageNumber": 86
+    },
+    {
+      "checksumSha256": "9b7df3ffa2cd6f9a3e9792a8c9d37d26f870c8d3da111abf7aae30ddc39e2d67",
+      "fileName": "029__003.jpg",
+      "pageNumber": 87
+    },
+    {
+      "checksumSha256": "59413a3db57a761c43a6c9b53ea6833c800b81e1063fe130c0706cd92ced234c",
+      "fileName": "030__001.jpg",
+      "pageNumber": 88
+    },
+    {
+      "checksumSha256": "8ba78cb7590d243c811306a714ca1410ddfe8355750ab6ee7206ef9853f43c67",
+      "fileName": "030__002.jpg",
+      "pageNumber": 89
+    },
+    {
+      "checksumSha256": "1f5979d470bf9a92c1df94864b64920bd75e5565b611e70ef726ab5d6926626f",
+      "fileName": "030__003.jpg",
+      "pageNumber": 90
+    },
+    {
+      "checksumSha256": "c6e5bb5e151039ca4b7bb26ef5faeb7bf81748d847580638a158e45b90848819",
+      "fileName": "031__001.jpg",
+      "pageNumber": 91
+    },
+    {
+      "checksumSha256": "0bcd8ba63302631492dcacec1a1ebcd38668321842fc0e3cab99dfceb119a71e",
+      "fileName": "031__002.jpg",
+      "pageNumber": 92
+    },
+    {
+      "checksumSha256": "cc39bf1786d4474357774476b38d3b731ac954beca652d37f79bad52cdb76d1b",
+      "fileName": "031__003.jpg",
+      "pageNumber": 93
+    },
+    {
+      "checksumSha256": "22e6a499b02eb844e833f2d0c93b67a94eadc58594eaf477c00ddc5125300d1a",
+      "fileName": "032__001.jpg",
+      "pageNumber": 94
+    },
+    {
+      "checksumSha256": "091aca0730cd664a95f996f75e97544c7ddff3fab698ec5d9c62be32d588b4b3",
+      "fileName": "032__002.jpg",
+      "pageNumber": 95
+    },
+    {
+      "checksumSha256": "d35fe84e2babd0c3a576b6f49f2e1681dc2a601e59807d83090336b5c02fd67f",
+      "fileName": "032__003.jpg",
+      "pageNumber": 96
+    },
+    {
+      "checksumSha256": "f0dce2cca90f9bdad9c57915176dba8bac87c1d49291bdd5bb81c519ace6fce4",
+      "fileName": "033.webp",
+      "pageNumber": 97
+    }
+  ],
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "013__003.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "014__003.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "015__003.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "016__003.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "017__003.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "018__003.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "019__003.jpg",
+    "020__001.jpg",
+    "020__002.jpg",
+    "020__003.jpg",
+    "021__001.jpg",
+    "021__002.jpg",
+    "021__003.jpg",
+    "022__001.jpg",
+    "022__002.jpg",
+    "022__003.jpg",
+    "023__001.jpg",
+    "023__002.jpg",
+    "023__003.jpg",
+    "024__001.jpg",
+    "024__002.jpg",
+    "024__003.jpg",
+    "025__001.jpg",
+    "025__002.jpg",
+    "025__003.jpg",
+    "026__001.jpg",
+    "026__002.jpg",
+    "026__003.jpg",
+    "027__001.jpg",
+    "027__002.jpg",
+    "027__003.jpg",
+    "028__001.jpg",
+    "028__002.jpg",
+    "028__003.jpg",
+    "029__001.jpg",
+    "029__002.jpg",
+    "029__003.jpg",
+    "030__001.jpg",
+    "030__002.jpg",
+    "030__003.jpg",
+    "031__001.jpg",
+    "031__002.jpg",
+    "031__003.jpg",
+    "032__001.jpg",
+    "032__002.jpg",
+    "032__003.jpg",
+    "033.webp"
+  ],
+  "pages": {
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 19.90909090909091,
+          "text": "GIVE  IT  TO  ME .",
+          "translation": "بده به من.",
+          "width": 268,
+          "x": 347,
+          "y": 1091
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 26.25,
+          "symWidth": 19.41228070175439,
+          "text": "IF  I  TAKE  THIS  LEASH ... MAYBE  EVEN  A  GUY  LIKE  ME COULD  CHANGE .",
+          "translation": "اگه این قلاده رو بگیرم... شاید حتی یه آدم مثل من هم بتونه تغییر کنه.",
+          "width": 487,
+          "x": 505,
+          "y": 2844
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 18.5,
+          "text": "TO  BE  CONTINUED ...",
+          "translation": "ادامه دارد...",
+          "width": 366,
+          "x": 881,
+          "y": 3965
+        }
+      ],
+      "imgHeight": 4384,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 25.7,
+          "symWidth": 21.425,
+          "text": "SHOULD  I  BUY  IT OR  NOT ?  IS  IT  JUST  A WASTE  OF  MONEY ?",
+          "translation": "بخرمش یا نه؟ آیا فقط هدر دادن پوله؟",
+          "width": 397,
+          "x": 229,
+          "y": 1150
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 25.85714285714286,
+          "symWidth": 18.69047619047619,
+          "text": "GOD ,  I'M SO  TORN ...",
+          "translation": "خدا، واقعاً مرددم...",
+          "width": 181,
+          "x": 540,
+          "y": 1601
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 26.39655172413793,
+          "symWidth": 20.39655172413793,
+          "text": "THE  TOUGH  GUY COURSE  IS  $ 499 ,  WHILE THE  ALPHA  MALE  BOOTCAMP IS  $ 569 ...",
+          "translation": "دوره پسر سخت قیمتش ۴۹۹ دلاره، ولی بوت‌کمپ آلفا مال ۵۶۹ دلاره...",
+          "width": 481,
+          "x": 719,
+          "y": 3179
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 24.69736842105263,
+          "symWidth": 19.99707602339181,
+          "text": "THE  PRICES FOR  THESE  COURSES ARE  BASICALLY  ALL THE  SAME .",
+          "translation": "قیمت این دوره‌ها عملاً همشون یه حدودی هستن.",
+          "width": 357,
+          "x": 355,
+          "y": 1207
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 24.5,
+          "symWidth": 19.27272727272727,
+          "text": "THEY'RE  REALLY OUT  HERE  OVERCHARGING FOR  THIS  CRAP ...",
+          "translation": "واقعاً دارن این مزخرفات رو گرون می‌فروشن...",
+          "width": 446,
+          "x": 155,
+          "y": 2501
+        },
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 127,
+          "symWidth": 139.5,
+          "text": "00",
+          "translation": "",
+          "width": 248,
+          "x": 1002,
+          "y": 2796
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 25.3921568627451,
+          "symWidth": 21.74509803921569,
+          "text": "AND  WHY  ARE  THERE  SO MANY ?  WHICH  ONE  AM  I  EVEN SUPPOSED  TO  BUY ?!",
+          "translation": "چرا این‌قدر زیاده؟ باید کدومو بخرم؟!",
+          "width": 526,
+          "x": 651,
+          "y": 1564
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 25,
+          "symWidth": 20.62621951219512,
+          "text": "HAA ... BUT WILL I REALLY BECOME AN ALPHA MALE AND BE ABLE TO PICK UP GIRLS IF I WATCH THIS ?",
+          "translation": "هاا... ولی واقعاً با دیدن این‌ها آلفا می‌شم و می‌تونم دخترا رو جذب کنم؟",
+          "width": 517,
+          "x": 310,
+          "y": 3229
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "renderMode": "mask_only",
+          "symHeight": 25,
+          "symWidth": 21,
+          "text": "I  WATCH  THIS ?",
+          "translation": "",
+          "width": 262,
+          "x": 438,
+          "y": 18
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 23,
+          "symWidth": 23.33333333333333,
+          "text": "000",
+          "translation": "۰۰۰",
+          "width": 51,
+          "x": 416,
+          "y": 1282
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 68.5,
+          "symWidth": 60,
+          "text": "FOR  MEN",
+          "translation": "برای مردان",
+          "width": 412,
+          "x": 564,
+          "y": 3121
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 33.16666666666666,
+          "symWidth": 15.30952380952381,
+          "text": "UNLOCKING  THE  SECRET  TO  EARNING  WOMEN'S  RESPECT !",
+          "translation": "راز کسب احترام زنان را باز کنید!",
+          "width": 709,
+          "x": 455,
+          "y": 3255
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 43.546875,
+          "symWidth": 28.015625,
+          "text": "QUICK  CONSULT SPECIAL  INSIDER  ACCESS  FOR  ONLY  $ 999 !",
+          "translation": "مشاوره سریع مخصوص\nدسترسی ویژه فقط با ۹۹۹ دلار!",
+          "width": 837,
+          "x": 258,
+          "y": 1438
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 28,
+          "symWidth": 23.29059829059829,
+          "text": "$ 999 ?  IS  THIS  BASTARD OUT  OF  HIS  MIND ?",
+          "translation": "۹۹۹ دلار؟ این دیوانه‌ست؟!",
+          "width": 464,
+          "x": 489,
+          "y": 2114
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 28.33333333333333,
+          "symWidth": 22.60512820512821,
+          "text": "\" FOR  MEN \" ?  YEAH ,  RIGHT ! HE  JUST  WANTS  TO  SQUEEZE MONEY  OUT  OF  US !",
+          "translation": "«برای مردان»؟ آره، درست حرف می‌زنه! فقط می‌خواد از ما پول بگیر!",
+          "width": 539,
+          "x": 396,
+          "y": 2970
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 449,
+          "symHeight": 322.75,
+          "symWidth": 245.75,
+          "text": "BANG",
+          "translation": "بوم",
+          "width": 653,
+          "x": 58,
+          "y": 1426
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 25.95121951219512,
+          "symWidth": 20.58188153310105,
+          "text": "THESE  SO - CALLED COURSE  GURUS  ARE  ALL  SCAMMERS ! I'M  NOT  BUYING  IT !",
+          "translation": "این به اصطلاح استادهای دوره؟ همه کلاهبردارند! من نمی‌خرم!",
+          "width": 623,
+          "x": 398,
+          "y": 3082
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 180,
+          "symWidth": 157.6666666666667,
+          "text": "FUU",
+          "translation": "فوو",
+          "width": 301,
+          "x": 960,
+          "y": 1829
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 26.11764705882353,
+          "symWidth": 22.17401960784314,
+          "text": "HOW  THE  HELL  AM I  SUPPOSED  TO  BECOME  A  MAN WOMEN  RESPECT ?",
+          "translation": "چطور به من یادآوری کنم مردی بشم که زن‌ها بهش احترام بذارن؟",
+          "width": 542,
+          "x": 262,
+          "y": 2350
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 25.68571428571428,
+          "symWidth": 19.78095238095238,
+          "text": "ALL  THE  PRETTY GIRLS ...  GO  FOR  GUYS  WHO HAVE  EVERYTHING .",
+          "translation": "همه دخترای خوشگل...\nمیان سراغ آدما با همه چیز.",
+          "width": 469,
+          "x": 676,
+          "y": 363
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 25,
+          "symWidth": 21.64204545454545,
+          "text": "I  WAS ...  BORN A  MAN  TOO .",
+          "translation": "منم که به دنیا اومدم، مرد بودم.",
+          "width": 234,
+          "x": 884,
+          "y": 2291
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 423,
+          "symHeight": 170.7647058823529,
+          "symWidth": 119.1764705882353,
+          "text": "The  Alpha Blueprint",
+          "translation": "طرح نهایی آلفا",
+          "width": 931,
+          "x": 244,
+          "y": 446
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 38.4375,
+          "symWidth": 20.25,
+          "text": "Story  Kim  Keyboard",
+          "translation": "داستان از کیم کیبورد",
+          "width": 359,
+          "x": 353,
+          "y": 969
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 19.15384615384615,
+          "text": "Art  whale  donut",
+          "translation": "طراحی از وال دونات",
+          "width": 294,
+          "x": 795,
+          "y": 974
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 292,
+          "symHeight": 176,
+          "symWidth": 209.25,
+          "text": "CLUS",
+          "translation": "CLUS",
+          "width": 283,
+          "x": 202,
+          "y": 118
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 24.75510204081633,
+          "symWidth": 20.2984693877551,
+          "text": "I  ENDED  UP NOT  BUYING  THE  COURSE BECAUSE  I  COULDN'T  JUSTIFY THE  COST .",
+          "translation": "در نهایت دوره را نخریدم چون هزینه‌اش برایم توجیه نداشت.",
+          "width": 523,
+          "x": 744,
+          "y": 1197
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 26.625,
+          "symWidth": 19.65659722222222,
+          "text": "I  KEPT  HESITATING , GIVING  UP ...  JUST  REPEATING THE  SAME  ROUTINE  OVER AND  OVER ...",
+          "translation": "هیچ‌وقت نمی‌توانستم تصمیم بگیرم، عقب می‌کشیدم... فقط همان روال تکراری را بارها و بارها تکرار می‌کردم...",
+          "width": 520,
+          "x": 170,
+          "y": 1964
+        },
+        {
+          "angle": 0,
+          "height": 293,
+          "symHeight": 162,
+          "symWidth": 155,
+          "text": "GLINCH",
+          "translation": "GLINCH",
+          "width": 299,
+          "x": 1095,
+          "y": 2880
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 173.4,
+          "symWidth": 120,
+          "text": "WINCH",
+          "translation": "WINCH",
+          "width": 309,
+          "x": 705,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 95.33333333333333,
+          "symWidth": 93,
+          "text": "RUB",
+          "translation": "RUB",
+          "width": 175,
+          "x": 917,
+          "y": 305
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 118,
+          "symWidth": 105,
+          "text": "RUB",
+          "translation": "RUB",
+          "width": 206,
+          "x": 1174,
+          "y": 613
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 25.66666666666667,
+          "symWidth": 20.22877492877493,
+          "text": "UNTIL  A  MIRACLE HAPPENED  TO  A  REGULAR GUY  LIKE  ME !",
+          "translation": "تا اینکه معجزه‌ای برای یک آدم معمولی مثل من رخ داد!",
+          "width": 429,
+          "x": 506,
+          "y": 2571
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 132.2,
+          "symWidth": 104.6,
+          "text": "REACH",
+          "translation": "REACH",
+          "width": 273,
+          "x": 728,
+          "y": 3204
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 158.6666666666667,
+          "symWidth": 127.3333333333333,
+          "text": "TAP",
+          "translation": "تق‌تق",
+          "width": 246,
+          "x": 495,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 145,
+          "symWidth": 92.25,
+          "text": "SWEL",
+          "translation": "تورم",
+          "width": 195,
+          "x": 624,
+          "y": 647
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 143,
+          "symWidth": 132,
+          "text": "TAP",
+          "translation": "تق‌تق",
+          "width": 271,
+          "x": 493,
+          "y": 1037
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 26,
+          "symWidth": 18.88461538461539,
+          "text": "IS  THIS REAL  LIFE ... ? !",
+          "translation": "این زندگی واقعی است...؟!",
+          "width": 234,
+          "x": 373,
+          "y": 1475
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 14.5,
+          "text": "FUU ...",
+          "translation": "فوو...",
+          "width": 89,
+          "x": 298,
+          "y": 2714
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 25.79411764705883,
+          "symWidth": 21.08403361344538,
+          "text": "I  NEED  TO  HOLD  IT  IN . SHE  TOLD  ME  NOT  TO  MAKE A  SOUND !",
+          "translation": "باید جلوی خودمو بگیرم. بهم گفت صدایی درنیارم!",
+          "width": 480,
+          "x": 730,
+          "y": 1533
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 170.3333333333333,
+          "symWidth": 157.3333333333333,
+          "text": "ING",
+          "translation": "قطره‌قطره",
+          "width": 399,
+          "x": 394,
+          "y": 1328
+        },
+        {
+          "angle": 0,
+          "height": 216,
+          "symHeight": 156.75,
+          "symWidth": 118.25,
+          "text": "DRIP",
+          "translation": "چکیدن",
+          "width": 244,
+          "x": 1104,
+          "y": 2134
+        },
+        {
+          "angle": 0,
+          "height": 422,
+          "symHeight": 317.5,
+          "symWidth": 221.25,
+          "text": "SWEL",
+          "translation": "تورم",
+          "width": 434,
+          "x": 894,
+          "y": 2846
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 233.2,
+          "symWidth": 104,
+          "text": "SINEZ",
+          "translation": "سینز",
+          "width": 273,
+          "x": 543,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 169,
+          "symWidth": 102.25,
+          "text": "DRIP",
+          "translation": "چکیدن",
+          "width": 281,
+          "x": 740,
+          "y": 1666
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 128,
+          "symWidth": 101.6666666666667,
+          "text": "RUB",
+          "translation": "مالیدن",
+          "width": 243,
+          "x": 249,
+          "y": 2310
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 125.6666666666667,
+          "symWidth": 94.33333333333333,
+          "text": "RUB",
+          "translation": "مالیدن",
+          "width": 226,
+          "x": 944,
+          "y": 2536
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 26.25,
+          "symWidth": 19.85721247563353,
+          "text": "HOLY  SHIT ... !  SHE  ONLY TOUCHED  IT  WITH  HER  FINGERTIPS , BUT  I  ALREADY  FEEL  LIKE  I'M  GOING TO  LOSE  IT !",
+          "translation": "وای لعنتی... فقط با نوک انگشت هاش لمسش کرد،\nاما دارم از هوش میرم!",
+          "width": 643,
+          "x": 255,
+          "y": 3077
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 247,
+          "symHeight": 158.25,
+          "symWidth": 149.5,
+          "text": "SLIP",
+          "translation": "لغزیدن",
+          "width": 275,
+          "x": 1032,
+          "y": 2307
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 83.25,
+          "symWidth": 77,
+          "text": "DRIB",
+          "translation": "چکیدن",
+          "width": 150,
+          "x": 909,
+          "y": 2602
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25,
+          "symWidth": 20.36666666666667,
+          "text": "MY  FINGERS ARE  ALL  WET .",
+          "translation": "دستم حسابی خیس شده.",
+          "width": 228,
+          "x": 851,
+          "y": 1885
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 102.75,
+          "symWidth": 55,
+          "text": "DRIP",
+          "translation": "چک چک",
+          "width": 171,
+          "x": 313,
+          "y": 2651
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 61.33333333333334,
+          "symWidth": 48,
+          "text": "now",
+          "translation": "الان",
+          "width": 54,
+          "x": 1067,
+          "y": 2652
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 102.25,
+          "symWidth": 67.5,
+          "text": "DRIP",
+          "translation": "چک چک",
+          "width": 172,
+          "x": 147,
+          "y": 3040
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 123.75,
+          "symWidth": 100.75,
+          "text": "PRIP",
+          "translation": "چک چک",
+          "width": 198,
+          "x": 712,
+          "y": 3190
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 270,
+          "symHeight": 195.5,
+          "symWidth": 136.25,
+          "text": "LICK",
+          "translation": "لیس",
+          "width": 320,
+          "x": 107,
+          "y": 575
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 25,
+          "symWidth": 20.16666666666667,
+          "text": "HMM ... TASTES KIND  OF  SALTY .",
+          "translation": "همم... طعمش کمی شور است.",
+          "width": 273,
+          "x": 708,
+          "y": 1952
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 25.58823529411764,
+          "symWidth": 19.62352941176471,
+          "text": "A ... A WOMAN THIS GORGEOUS ... IS TASTING MY CUM ... ? !",
+          "translation": "ا... این زن زیبا داره مَنِ رو می‌چشه؟!",
+          "width": 432,
+          "x": 402,
+          "y": 3283
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "renderMode": "mask_only",
+          "symHeight": 25,
+          "symWidth": 19.6,
+          "text": "MY  CUM ... ? !",
+          "translation": "",
+          "width": 199,
+          "x": 520,
+          "y": 30
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 115.5,
+          "symWidth": 99.75,
+          "text": "LICK",
+          "translation": "لیس",
+          "width": 243,
+          "x": 65,
+          "y": 1759
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 79.2,
+          "symWidth": 69.6,
+          "text": "REACH",
+          "translation": "دست می‌کشم",
+          "width": 206,
+          "x": 660,
+          "y": 2072
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26.5,
+          "symWidth": 18.61904761904762,
+          "text": "H - HERE  SHE COMES  AGAIN ... !",
+          "translation": "ا- این‌جا دوباره داره میاد...!",
+          "width": 280,
+          "x": 558,
+          "y": 73
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 102.6,
+          "symWidth": 77.2,
+          "text": "TWIRV",
+          "translation": "چرخش",
+          "width": 305,
+          "x": 269,
+          "y": 1582
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 108.8,
+          "symWidth": 104.4,
+          "text": "AWIRK",
+          "translation": "چرخش",
+          "width": 324,
+          "x": 891,
+          "y": 2317
+        },
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 168.2,
+          "symWidth": 151.2,
+          "text": "AWIRV",
+          "translation": "چرخش",
+          "width": 545,
+          "x": 849,
+          "y": 3116
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 233,
+          "symWidth": 239.6666666666667,
+          "text": "RUB",
+          "translation": "مالیدن",
+          "width": 389,
+          "x": 205,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 296,
+          "symHeight": 151,
+          "symWidth": 133.8,
+          "text": "TWIRK",
+          "translation": "چرخش",
+          "width": 413,
+          "x": 96,
+          "y": 1627
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 145.6666666666667,
+          "symWidth": 115.6666666666667,
+          "text": "QUB",
+          "translation": "کوپ",
+          "width": 268,
+          "x": 1114,
+          "y": 1627
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 26,
+          "symWidth": 18.06153846153846,
+          "text": "AGH ... !  WHAT  IS THIS  FEELING ... ?",
+          "translation": "آغ...! این حس چیه...؟",
+          "width": 291,
+          "x": 668,
+          "y": 2309
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 56.16666666666667,
+          "symWidth": 50.83333333333334,
+          "text": "TINGLE TINGLE",
+          "translation": "مور مور",
+          "width": 255,
+          "x": 441,
+          "y": 609
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 58.66666666666666,
+          "symWidth": 50.125,
+          "text": "UHFF 000",
+          "translation": "آخ فف",
+          "width": 174,
+          "x": 869,
+          "y": 891
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 95.25,
+          "symWidth": 81.25,
+          "text": "SLUR",
+          "translation": "لیس",
+          "width": 220,
+          "x": 1020,
+          "y": 1604
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 109,
+          "symWidth": 102,
+          "text": "SLUR",
+          "translation": "لیس",
+          "width": 230,
+          "x": 485,
+          "y": 2558
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 134.5,
+          "symWidth": 102.25,
+          "text": "SLUR",
+          "translation": "لیس",
+          "width": 293,
+          "x": 714,
+          "y": 2845
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 26.66666666666667,
+          "symWidth": 19.69047619047619,
+          "text": "IT'S  LIKE  HER TONGUE  IS  MELTING  ME FROM  THE  INSIDE .",
+          "translation": "انگار زبانش از درون\nدارم ذوب می‌شوم.",
+          "width": 428,
+          "x": 360,
+          "y": 262
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 97.75,
+          "symWidth": 60.75,
+          "text": "DRIP",
+          "translation": "چک چک",
+          "width": 147,
+          "x": 478,
+          "y": 1740
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 91.75,
+          "symWidth": 80.5,
+          "text": "LICK",
+          "translation": "لیسیدن",
+          "width": 202,
+          "x": 1120,
+          "y": 1559
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 28,
+          "symWidth": 28.33333333333333,
+          "text": "000",
+          "translation": "۰۰۰",
+          "width": 52,
+          "x": 649,
+          "y": 2050
+        },
+        {
+          "angle": 0,
+          "height": 373,
+          "symHeight": 110.875,
+          "symWidth": 118.7916666666667,
+          "text": "LICK 000",
+          "translation": "لیسیدن ۰۰۰",
+          "width": 446,
+          "x": 294,
+          "y": 2130
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 25.27659574468085,
+          "symWidth": 20.51595744680851,
+          "text": "IT  FEELS  LIKE  SHE'S SUCKING  ME  FROM  THE INSIDE  OUT .  HOW  IS  SHE SO  GOOD  AT  THIS ?",
+          "translation": "حس می‌کنم داره از درون من را می‌مکه... چطور این‌قدر تو این کار حرفه‌ایه؟",
+          "width": 446,
+          "x": 270,
+          "y": 2982
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 69.25,
+          "symWidth": 70.5,
+          "text": "محار",
+          "translation": "محار",
+          "width": 123,
+          "x": 50,
+          "y": 1297
+        },
+        {
+          "angle": 0,
+          "height": 378,
+          "symHeight": 154.5,
+          "symWidth": 119.125,
+          "text": "SWEL M-",
+          "translation": "متورم م-",
+          "width": 325,
+          "x": 876,
+          "y": 1344
+        },
+        {
+          "angle": 0,
+          "height": 274,
+          "symHeight": 82.84126984126983,
+          "symWidth": 62.61507936507936,
+          "text": "QUEL སང་ SQVELCE",
+          "translation": "کویل སང་ اسکولس",
+          "width": 259,
+          "x": 22,
+          "y": 1523
+        },
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 190.2,
+          "symWidth": 129,
+          "text": "AAA . ,",
+          "translation": "آآا...",
+          "width": 275,
+          "x": 802,
+          "y": 2624
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 20.4,
+          "text": "I - I  THINK  I'M  GONNA  CUM !",
+          "translation": "مممم... دارم می‌رسم!",
+          "width": 479,
+          "x": 513,
+          "y": 392
+        },
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 193,
+          "symWidth": 154,
+          "text": "HAA",
+          "translation": "هااا",
+          "width": 307,
+          "x": 599,
+          "y": 1465
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 296,
+          "symHeight": 202.6666666666667,
+          "symWidth": 144,
+          "text": "HAA !!!",
+          "translation": "هاا!!!",
+          "width": 441,
+          "x": 363,
+          "y": 222
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 25,
+          "symWidth": 19,
+          "text": "AGH !",
+          "translation": "آغ!",
+          "width": 77,
+          "x": 971,
+          "y": 1131
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.73333333333333,
+          "text": "I - I'M  CUMMING !!!",
+          "translation": "می‌رسـم!!!",
+          "width": 312,
+          "x": 597,
+          "y": 2596
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 186.25,
+          "symWidth": 121.5,
+          "text": "Sive",
+          "translation": "سایو",
+          "width": 323,
+          "x": 762,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 302,
+          "symHeight": 245,
+          "symWidth": 209.5,
+          "text": "We",
+          "translation": "وی",
+          "width": 314,
+          "x": 1045,
+          "y": 1556
+        },
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 131.25,
+          "symWidth": 114.75,
+          "text": "DRIP",
+          "translation": "چکه",
+          "width": 247,
+          "x": 323,
+          "y": 1836
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 13.33333333333333,
+          "text": "HAA ...  HAA ...",
+          "translation": "هاا... هاا...",
+          "width": 187,
+          "x": 412,
+          "y": 581
+        },
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 193.3333333333333,
+          "symWidth": 138.6666666666667,
+          "text": "HAP",
+          "translation": "هاپ",
+          "width": 259,
+          "x": 215,
+          "y": 1655
+        },
+        {
+          "angle": 0,
+          "height": 203,
+          "symHeight": 191.6666666666667,
+          "symWidth": 98,
+          "text": "HAO",
+          "translation": "هاو",
+          "width": 223,
+          "x": 685,
+          "y": 2309
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 284,
+          "symHeight": 183.25,
+          "symWidth": 156.25,
+          "text": "TURN",
+          "translation": "برگرد",
+          "width": 325,
+          "x": 506,
+          "y": 2985
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 25,
+          "symWidth": 21.2,
+          "text": "OH  NO !",
+          "translation": "وای نه!",
+          "width": 122,
+          "x": 1114,
+          "y": 743
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 27.02777777777778,
+          "symWidth": 19.22222222222222,
+          "text": "I - I  CAME  ON  HER HAND  LIKE  AN  IDIOT !!!",
+          "translation": "من—خنگ بازی درآوردم و روی دستش ارضا شدم!!!",
+          "width": 388,
+          "x": 381,
+          "y": 2188
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 26.84656084656085,
+          "symWidth": 21.26785714285714,
+          "text": "SHE  TOLD  ME  NOT TO  SAY  ANYTHING ,  SO HOW  AM  I  SUPPOSED  TO APOLOGIZE ?!",
+          "translation": "او گفت چیزی نگو، پس چطوری باید معذرت‌خواهی کنم؟!",
+          "width": 423,
+          "x": 693,
+          "y": 1552
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 27.18181818181818,
+          "symWidth": 20.09090909090909,
+          "text": "PATHETIC QUICK - SHOOTER .",
+          "translation": "آدم بی‌اراده و عجول.",
+          "width": 295,
+          "x": 603,
+          "y": 3205
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 26.8,
+          "text": "WHAT ?",
+          "translation": "چی؟",
+          "width": 120,
+          "x": 928,
+          "y": 1378
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 26,
+          "symWidth": 22.14267676767677,
+          "text": "YOU  COULDN'T EVEN  LAST  5  MINUTES FOR  A  HANDJOB ?",
+          "translation": "نمیتونستی حتی پنج دقیقه تو قضیه‌ی دست دادن دوام بیاری؟",
+          "width": 394,
+          "x": 187,
+          "y": 2338
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 161.8,
+          "symWidth": 121.4,
+          "text": "SMIRK",
+          "translation": "لبخند تمسخرآمیز",
+          "width": 334,
+          "x": 54,
+          "y": 2650
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "013__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 24.30357142857143,
+          "symWidth": 20.23214285714286,
+          "text": "HAVE  YOU  BEEN PENT - UP ?  LOOK  AT  ALL THIS  CUM .",
+          "translation": "سرکوب شده بودی؟ نگاه کن چقدر اسپرم جمع شده.",
+          "width": 403,
+          "x": 703,
+          "y": 732
+        },
+        {
+          "angle": 0,
+          "height": 385,
+          "symHeight": 220.5,
+          "symWidth": 213,
+          "text": "GRAD",
+          "translation": "GRAD",
+          "width": 400,
+          "x": 463,
+          "y": 2461
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 23.75,
+          "symWidth": 20,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 83,
+          "x": 945,
+          "y": 3179
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 28.5,
+          "symWidth": 19.89285714285714,
+          "text": "PATHETIC ??? QUICK - SHOOTER ?",
+          "translation": "حقیر؟ تیرانداز سریع؟",
+          "width": 306,
+          "x": 775,
+          "y": 1900
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 24.5,
+          "symWidth": 19.04545454545455,
+          "text": "L - LOOK  WHO'S TALKING ... !",
+          "translation": "خودت ببین کی حرف میزنه...!",
+          "width": 252,
+          "x": 288,
+          "y": 1915
+        },
+        {
+          "angle": 0,
+          "height": 348,
+          "symHeight": 135.4166666666667,
+          "symWidth": 116.5,
+          "text": "TURN 312",
+          "translation": "TURN 312",
+          "width": 597,
+          "x": 212,
+          "y": 2256
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "014__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 25.68,
+          "symWidth": 19.5,
+          "text": "SHE'S  THE  PERVERTED FREAK  WHO  GRABBED  A STRANGER'S  DICK !!!",
+          "translation": "اون اون آشفته منحرفه که آلت مرد غریبه‌ای رو گرفت!!!",
+          "width": 392,
+          "x": 528,
+          "y": 385
+        },
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 161,
+          "symWidth": 84,
+          "text": "PAUSE",
+          "translation": "وقفه",
+          "width": 302,
+          "x": 536,
+          "y": 1426
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 21.33333333333333,
+          "text": "W - WHAT  THE ???",
+          "translation": "چ-چی؟",
+          "width": 284,
+          "x": 784,
+          "y": 3189
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "015__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 26,
+          "symWidth": 19.98333333333333,
+          "text": "W - WOW ... WHO  IS  THAT  GUY ?  HIS AURA  IS  INSANE !!!",
+          "translation": "وا-واو... اون کیه؟ هاله‌ش دیوونه‌کننده‌ست!!!",
+          "width": 408,
+          "x": 520,
+          "y": 1416
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 304,
+          "symHeight": 149,
+          "symWidth": 114,
+          "text": "TA TA",
+          "translation": "تا تا",
+          "width": 314,
+          "x": 772,
+          "y": 468
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 228,
+          "symHeight": 145.4,
+          "symWidth": 125.2,
+          "text": "PSH  HA",
+          "translation": "پش ها",
+          "width": 368,
+          "x": 249,
+          "y": 434
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "016__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 11,
+          "symWidth": 8.5,
+          "text": "لا",
+          "translation": "نه",
+          "width": 10,
+          "x": 0,
+          "y": 1837
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 280,
+          "symHeight": 147.8,
+          "symWidth": 130,
+          "text": "PSHHH",
+          "translation": "پشش",
+          "width": 433,
+          "x": 766,
+          "y": 285
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.73913043478261,
+          "symWidth": 20.73122529644269,
+          "text": "WAIT ,  DOES  HE KNOW  THAT  PERVERTED FREAK ?",
+          "translation": "صبر کن، اون اون منقار مريض رو می‌شناسه؟",
+          "width": 402,
+          "x": 259,
+          "y": 615
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "017__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 118,
+          "symWidth": 110.25,
+          "text": "PFFT",
+          "translation": "ففّت",
+          "width": 278,
+          "x": 1063,
+          "y": 1248
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 26,
+          "symWidth": 20.36363636363636,
+          "text": "D - DID  HE  JUST LAUGH  AT  ME ?!",
+          "translation": "ا-اون همین حالا به من خندید؟!",
+          "width": 262,
+          "x": 736,
+          "y": 545
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 26.36538461538461,
+          "symWidth": 19.73978652926021,
+          "text": "THEY'RE  DEFINITELY  IN ON  THIS  TOGETHER !  THEY'RE BOTH  LAUGHING  AT  ME  AS THEY  GET  OFF !!!",
+          "translation": "قطعا با هم نقشه کشیدن! دارن همزمان که دارن تَرکش می‌کنن بهم می‌خندن!!!",
+          "width": 497,
+          "x": 359,
+          "y": 2210
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "018__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 193.1666666666667,
+          "symWidth": 129.1666666666667,
+          "text": "SPRING",
+          "translation": "بهار",
+          "width": 398,
+          "x": 69,
+          "y": 761
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 24,
+          "symWidth": 21.13611111111111,
+          "text": "HOW  DARE  THEY ... ! DO  I  LOOK  THAT  EASY TO  THEM ?!",
+          "translation": "چطور جرأت می‌کنن...! من اینقدر ساده به‌نظر می‌رسم؟!",
+          "width": 382,
+          "x": 419,
+          "y": 2821
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 195.5,
+          "symWidth": 133,
+          "text": "та",
+          "translation": "تا",
+          "width": 248,
+          "x": 407,
+          "y": 723
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 188,
+          "symWidth": 124.5,
+          "text": "TA",
+          "translation": "تا",
+          "width": 180,
+          "x": 600,
+          "y": 1178
+        },
+        {
+          "angle": 0,
+          "height": 278,
+          "symHeight": 254.5,
+          "symWidth": 182.5,
+          "text": "TA",
+          "translation": "تا",
+          "width": 327,
+          "x": 678,
+          "y": 1633
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 26.25,
+          "symWidth": 20.73444896964634,
+          "text": "FUCK !  I'M  GOING  TO  MAKE THEM  APOLOGIZE  TO  ME !  IF  THEY DON'T ,  I'LL  MAKE  THEM  ROT  IN  JAIL FOR  SEXUAL  HARRASSMENT !",
+          "translation": "لعنتی! مجبورشون می‌کنم به من عذرخواهی کنن! اگه نکنن، می‌ذارم تو زندان به جرم آزار جنسی پوسیده شن!",
+          "width": 638,
+          "x": 496,
+          "y": 2331
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 19.8,
+          "text": "PHEW !",
+          "translation": "هوم!",
+          "width": 104,
+          "x": 152,
+          "y": 1544
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 180,
+          "symWidth": 103.3333333333333,
+          "text": "GLANCE",
+          "translation": "نگاه",
+          "width": 400,
+          "x": 758,
+          "y": 2961
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "019__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 130,
+          "symWidth": 101,
+          "text": "ANCE",
+          "translation": "نسخه",
+          "width": 271,
+          "x": 261,
+          "y": 12
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 20.5,
+          "text": "WHERE'D  THEY  GO ?",
+          "translation": "کجا رفتن؟",
+          "width": 330,
+          "x": 870,
+          "y": 1190
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 539,
+          "symHeight": 614.5,
+          "symWidth": 330,
+          "text": "11",
+          "translation": "۱۱",
+          "width": 401,
+          "x": 394,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 26.89285714285714,
+          "symWidth": 19.71153846153846,
+          "text": "THERE  THEY  ARE , THOSE  BASTARDS !",
+          "translation": "اون‌ها هستن، اون کثیف‌ها!",
+          "width": 311,
+          "x": 818,
+          "y": 1109
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "020__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 24.42857142857143,
+          "symWidth": 21.28571428571428,
+          "text": "I  BROUGHT  THE  SEMEN YOU  ASKED  FOR .",
+          "translation": "شاهد ژنتیکی که خواسته بودید، آوردم.",
+          "width": 394,
+          "x": 198,
+          "y": 929
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "021__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 406,
+          "symHeight": 368,
+          "symWidth": 255,
+          "text": "SLA",
+          "translation": "SLA",
+          "width": 557,
+          "x": 759,
+          "y": 1364
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "021__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "021__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 23.87878787878788,
+          "symWidth": 18.94242424242424,
+          "text": "W - WHAT  WAS  THAT ?! DID  THAT  BASTARD  JUST HIT  HER ... ?",
+          "translation": "چ- چی بود اون؟! اون حرامزاده همین الان زد تو صورتش...؟",
+          "width": 425,
+          "x": 625,
+          "y": 2054
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "022__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 25,
+          "symWidth": 21.38461538461539,
+          "text": "WHERE  DID  I  TELL YOU  TO  STORE  IT ?",
+          "translation": "کجا گفتم اینو بذاری؟",
+          "width": 329,
+          "x": 581,
+          "y": 352
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "022__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 97.4,
+          "symWidth": 82.4,
+          "text": "QUIRM",
+          "translation": "پیچ خوردن",
+          "width": 274,
+          "x": 1153,
+          "y": 2038
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 114.3333333333333,
+          "symWidth": 93.83333333333333,
+          "text": "SQUIRM",
+          "translation": "پیچ و تاب خوردن",
+          "width": 384,
+          "x": 108,
+          "y": 2469
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "022__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 361,
+          "symHeight": 190.4,
+          "symWidth": 174,
+          "text": "KNEEL",
+          "translation": "زانو بزن",
+          "width": 400,
+          "x": 201,
+          "y": 780
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 25,
+          "symWidth": 20.58928571428572,
+          "text": "I - IN  MY  MOUTH . I'M  SORRY ,  MASTER . PLEASE  FORGIVE  ME JUST  THIS  ONCE .",
+          "translation": "توی دهانم... معذرت می‌خوام استاد. لطفاً این بار من رو ببخش.",
+          "width": 353,
+          "x": 431,
+          "y": 2805
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "023__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 75.85714285714286,
+          "symWidth": 71,
+          "text": "TREMBLE",
+          "translation": "لرزیدن",
+          "width": 274,
+          "x": 715,
+          "y": 287
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 70.85714285714286,
+          "symWidth": 66.85714285714286,
+          "text": "TREMBLE",
+          "translation": "لرزیدن",
+          "width": 226,
+          "x": 1009,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 73.28571428571429,
+          "symWidth": 68.14285714285714,
+          "text": "TREMBLE",
+          "translation": "لرزیدن",
+          "width": 273,
+          "x": 836,
+          "y": 1724
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "023__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 514,
+          "symHeight": 66.95714285714286,
+          "symWidth": 61.57142857142857,
+          "text": "TREMBLE °  0000",
+          "translation": "لرزش ° 0000",
+          "width": 359,
+          "x": 518,
+          "y": 213
+        },
+        {
+          "angle": 0,
+          "height": 449,
+          "symHeight": 45.72727272727273,
+          "symWidth": 24.09090909090909,
+          "text": "Doo  Doooo  aoa",
+          "translation": "دووو دووو آوآ",
+          "width": 93,
+          "x": 1128,
+          "y": 647
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "023__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 311,
+          "symHeight": 195.75,
+          "symWidth": 183.5,
+          "text": "BLEH",
+          "translation": "بله",
+          "width": 539,
+          "x": 326,
+          "y": 823
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.35,
+          "symWidth": 20.76633986928105,
+          "text": "NOW  YOU'RE ACTING  LIKE  A  PROPER CUM DUMP .",
+          "translation": "حالا داری مثل یه کثافت واقعی رفتار می‌کنی.",
+          "width": 404,
+          "x": 851,
+          "y": 2928
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "024__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 313,
+          "symHeight": 208,
+          "symWidth": 168,
+          "text": "GRAB",
+          "translation": "بگیرش",
+          "width": 392,
+          "x": 966,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 20.5,
+          "text": "SWALLOW  IT .",
+          "translation": "قورتش بده.",
+          "width": 230,
+          "x": 856,
+          "y": 2986
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "024__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "024__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 132.75,
+          "symWidth": 100,
+          "text": "GULP",
+          "translation": "قورت داد",
+          "width": 243,
+          "x": 802,
+          "y": 1020
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 26.4,
+          "symWidth": 21.30751594896332,
+          "text": "I  GUESS  MY  TEACHING YOU  HOW  TO  HANDLE  A  COCK WASN'T  A  WASTE  AFTER  ALL . GOOD  JOB  BRINGING  ME  THAT LOSER'S  CUM .",
+          "translation": "ظاهراً آموزش کنترل آلت بهت بیهوده نبود. کارت درسته، که منی که از اون بازنده جمع آوردم آوردی.",
+          "width": 531,
+          "x": 303,
+          "y": 2956
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "025__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 271,
+          "symHeight": 135.6666666666667,
+          "symWidth": 114.1666666666667,
+          "text": "STROKE",
+          "translation": "ماساژ بده",
+          "width": 325,
+          "x": 491,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 129.8333333333333,
+          "symWidth": 102.3333333333333,
+          "text": "STROKE",
+          "translation": "ماساژ بده",
+          "width": 316,
+          "x": 255,
+          "y": 880
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "025__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 135.1666666666667,
+          "symWidth": 118.8333333333333,
+          "text": "STROKE",
+          "translation": "ماساژ بده",
+          "width": 457,
+          "x": 664,
+          "y": 779
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 17.90909090909091,
+          "text": "THANK  YOU ...",
+          "translation": "ممنون...",
+          "width": 215,
+          "x": 295,
+          "y": 2678
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "025__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 26.23076923076923,
+          "symWidth": 19.16329284750337,
+          "text": "HE  HIT  HER ...  YET  SHE'S KNEELING  IN  FRONT  OF  HIM ? HOW  IS  THAT  POSSIBLE ?",
+          "translation": "زده بهش... ولی چرا زانوش رو جلوش خم کرده؟ چطور ممکنه؟",
+          "width": 521,
+          "x": 467,
+          "y": 2900
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "026__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "026__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 25.5,
+          "symWidth": 19.39676113360324,
+          "text": "I'VE  NEVER  SEEN ANYTHING  LIKE  THIS ...",
+          "translation": "تا حالا همچین چیزی ندیده‌ام...",
+          "width": 395,
+          "x": 704,
+          "y": 1035
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "026__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 98,
+          "symWidth": 86,
+          "text": "RUMMAGE",
+          "translation": "شلوغ‌بازی",
+          "width": 393,
+          "x": 432,
+          "y": 572
+        },
+        {
+          "angle": 0,
+          "height": 335,
+          "symHeight": 117.5714285714286,
+          "symWidth": 115.5714285714286,
+          "text": "RUMMAGF",
+          "translation": "شلوغ‌بازی",
+          "width": 348,
+          "x": 880,
+          "y": 1333
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "027__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 179.6666666666667,
+          "symWidth": 121.6666666666667,
+          "text": "MCK",
+          "translation": "مک",
+          "width": 248,
+          "x": 412,
+          "y": 1002
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "027__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 25.66666666666667,
+          "symWidth": 20.36056644880174,
+          "text": "HERE'S  YOUR  REWARD . SHALL  WE  GO  FOR  A  WALK ? IT'S  BEEN  A  WHILE .",
+          "translation": "پاداشت رو بگیر. می‌خوای بریم یه دور قدم بزنیم؟ وقت یه خورده گذشته.",
+          "width": 468,
+          "x": 521,
+          "y": 392
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "027__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 20.33333333333333,
+          "text": "THANK  YOU .",
+          "translation": "ممنونم.",
+          "width": 201,
+          "x": 960,
+          "y": 455
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "028__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 106.5,
+          "symWidth": 76.5,
+          "text": "OF",
+          "translation": "از",
+          "width": 121,
+          "x": 455,
+          "y": 1921
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "028__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 202.75,
+          "symWidth": 178.75,
+          "text": "SWAY",
+          "translation": "تاب خوردن",
+          "width": 567,
+          "x": 805,
+          "y": 791
+        },
+        {
+          "angle": 0,
+          "height": 361,
+          "symHeight": 245.75,
+          "symWidth": 224,
+          "text": "SWAT",
+          "translation": "بادزدن",
+          "width": 581,
+          "x": 129,
+          "y": 1043
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "028__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 25.96808510638298,
+          "symWidth": 20.45440729483283,
+          "text": "SHE'S  WEARING  A  LEASH  AND CRAWLING  LIKE  A  DOG  BEHIND  HIM AFTER  GETTING  SLAPPED ...",
+          "translation": "او دستبند پوشیده و بعد از سیلی خوردن مثل سگ پشت سرش چهار دست و پا می‌رود...",
+          "width": 617,
+          "x": 443,
+          "y": 2192
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "029__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 25,
+          "symWidth": 20.08928571428572,
+          "text": "I  DON'T  GET  HOW THAT'S  EVEN  POSSIBLE ...",
+          "translation": "درک نمی‌کنم همچین چیزی چطور ممکنه...",
+          "width": 428,
+          "x": 534,
+          "y": 234
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 25,
+          "symWidth": 16.90909090909091,
+          "text": "HEY ,  YOU ... !",
+          "translation": "هی، تو...!",
+          "width": 193,
+          "x": 493,
+          "y": 2388
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "029__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 21,
+          "text": "HUH ?  ME ?",
+          "translation": "ها؟ من؟",
+          "width": 170,
+          "x": 1149,
+          "y": 277
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 25.5,
+          "symWidth": 21.1010101010101,
+          "text": "WHO  ELSE  IS HERE  BUT  YOU ?",
+          "translation": "غیر از تو کی اینجاست؟",
+          "width": 265,
+          "x": 956,
+          "y": 1362
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 137.2,
+          "symWidth": 55.8,
+          "text": "CLICK",
+          "translation": "کلیک",
+          "width": 183,
+          "x": 590,
+          "y": 1545
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "029__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 26.25,
+          "symWidth": 19.53287545787546,
+          "text": "YOU'RE STARING WITH  SUCH  PATHETIC  EYES FULL  OF  ENVY ...",
+          "translation": "چشمای ذلیل و پر حسادتت رو خیره بهم دوختی...",
+          "width": 470,
+          "x": 471,
+          "y": 1727
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 25,
+          "symWidth": 18.6,
+          "text": "PFFT !",
+          "translation": "پف!",
+          "width": 93,
+          "x": 603,
+          "y": 3042
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "030__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "030__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "030__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 25.5,
+          "symWidth": 22,
+          "text": "WANNA  GIVE IT  A  GO ?",
+          "translation": "می‌خوای یک بار امتحان کنی؟",
+          "width": 219,
+          "x": 467,
+          "y": 46
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "031__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 24.52941176470588,
+          "symWidth": 15.05882352941176,
+          "text": "M - ME ... ? ! I ...  I ...",
+          "translation": "مَن... مَن من من...؟!",
+          "width": 158,
+          "x": 388,
+          "y": 1358
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "031__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 26.04166666666666,
+          "symWidth": 21.66964285714286,
+          "text": "YOU  CAN'T  DO STUFF  LIKE  THIS ? WHY  NOT ?",
+          "translation": "تو که نمی‌تونی همچین کارهایی بکنی! چرا؟",
+          "width": 315,
+          "x": 302,
+          "y": 560
+        },
+        {
+          "angle": 0,
+          "height": 266,
+          "symHeight": 159,
+          "symWidth": 143.5,
+          "text": "PUFF",
+          "translation": "پووف",
+          "width": 399,
+          "x": 94,
+          "y": 1718
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "031__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 25.53333333333333,
+          "symWidth": 21.46666666666667,
+          "text": "YOU  WERE  BORN  A MAN ,  WEREN'T  YOU ?",
+          "translation": "تو که مرد به دنیا اومدی، نه؟",
+          "width": 349,
+          "x": 571,
+          "y": 1197
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "032__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 16.5,
+          "text": "HE'S  RIGHT ...",
+          "translation": "درسته...",
+          "width": 216,
+          "x": 639,
+          "y": 2464
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "032__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 25.75,
+          "symWidth": 21.39772727272727,
+          "text": "I  WAS ...  BORN A  MAN  TOO .",
+          "translation": "منم... مرد به دنیا اومدم.",
+          "width": 234,
+          "x": 352,
+          "y": 1451
+        },
+        {
+          "angle": 0,
+          "height": 286,
+          "symHeight": 171.2,
+          "symWidth": 157.4,
+          "text": "REACH",
+          "translation": "نزدیک شد",
+          "width": 325,
+          "x": 897,
+          "y": 2841
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    },
+    "032__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3334,
+      "imgWidth": 1440,
+      "sourceLanguage": "en",
+      "targetLanguage": "fa",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "fa",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

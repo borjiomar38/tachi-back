@@ -1,0 +1,1779 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0180",
+  "jobId": "fixture-job-0180",
+  "licenseId": "fixture-license-0180",
+  "pageCount": 29,
+  "pageOrder": [
+    "003__001.jpg",
+    "002__001.jpg",
+    "001__003.jpg",
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__002.jpg",
+    "003__003.jpg",
+    "004__002.jpg",
+    "003__002.jpg",
+    "006__001.jpg",
+    "004__001.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__002.jpg",
+    "005__003.jpg",
+    "008__001.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "008__002.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "009__001.jpg",
+    "010__001.jpg",
+    "011__001.jpg",
+    "009__002.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__002.jpg"
+  ],
+  "pages": {
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 33.81578947368421,
+          "symWidth": 26.789473684210527,
+          "text": "WHAT  A  HEAVENLY DEMON  SAYS  AND  DOES IS  THE  LAW !",
+          "translation": "LES PAROLES ET ACTES D’UN DÉMON CÉLESTE SONT LA LOI !",
+          "width": 516,
+          "x": 96,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 340,
+          "symHeight": 34.756122448979596,
+          "symWidth": 26.694897959183674,
+          "text": "WHETHER IT'S  IMPORTANT OR  UNIMPORTANT , FULFILLING  A  PROMISE OR  NOT .  THE  HEAVENLY DEMON  DECIDES ALL  OF  IT !",
+          "translation": "QU’ELLE SOIT IMPORTANTE OU NON, SURVEILLER UNE PROMESSE OU NON. LE DÉMON CÉLESTE DÉCIDE DE TOUT !",
+          "width": 516,
+          "x": 94,
+          "y": 1256
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 34.41176470588235,
+          "symWidth": 27.11764705882353,
+          "text": "YOU TRULY  ARE  BEYOND REPROACH .",
+          "translation": "TU ES VRAIMENT IRRÉPROCHABLE.",
+          "width": 429,
+          "x": 154,
+          "y": 2966
+        }
+      ],
+      "imgHeight": 3922,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 120.4,
+          "symWidth": 128,
+          "text": "NINIA",
+          "translation": "NINIA",
+          "width": 222,
+          "x": 269,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 32.77272727272727,
+          "symWidth": 25.734848484848484,
+          "text": "MY  BROTHER  CAN  BE DIFFICULT  BECAUSE  OF HIS  SELFISHNESS .",
+          "translation": "MON FRÈRE PEUT ÊTRE DIFFICILE PAR SA ÉGOÏSME.",
+          "width": 486,
+          "x": 131,
+          "y": 1092
+        },
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 40,
+          "symWidth": 32.37037037037037,
+          "text": "YOU  SHOULD COUNSEL  AND LOOK  AFTER HIM  WELL .",
+          "translation": "TU DEVAIS LE CONSEILLER ET PRENDRE SOIN DE LUI.",
+          "width": 369,
+          "x": 201,
+          "y": 2001
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 36.526315789473685,
+          "symWidth": 29,
+          "text": "YOU  REALLY ARE  SO  FAKE .",
+          "translation": "TU ES TELLEMENT FAUX.",
+          "width": 326,
+          "x": 238,
+          "y": 2958
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 34.23529411764706,
+          "symWidth": 25.509803921568626,
+          "text": "DID YOU  THINK  I'D  BE MOVED  BY  WORDS LIKE  THAT ?",
+          "translation": "TU PENSAIS QUE J’ALLAIS ÊTRE ÉMU PAR DE TELLES PAROLES ?",
+          "width": 420,
+          "x": 156,
+          "y": 3600
+        },
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 29.753676470588236,
+          "symWidth": 22.280841503267975,
+          "text": "THAT'S  NOT  IT . I  WAS  SPEAKING  ILL OF  MY  BROTHER  BEHIND HIS  BACK  BY  CALLING HIM  A  SELFISH PERSON .",
+          "translation": "CE N’EST PAS ÇA. JE PARLAIS MAL DE MON FRÈRE DERRIÈRE SON DOS EN LE TRAITANT D’ÉGOÏSTE.",
+          "width": 463,
+          "x": 101,
+          "y": 4921
+        }
+      ],
+      "imgHeight": 5665,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 34,
+          "symWidth": 26.96408529741863,
+          "text": "I  KNOW  YOUR RESOLVE  REGARDING MY  BROTHER  IS UNWAVERING .",
+          "translation": "JE CONNAIS TA DÉTERMINATION FACE À MON FRÈRE.",
+          "width": 465,
+          "x": 97,
+          "y": 219
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 11,
+          "y": 884
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 39.705882352941174,
+          "symWidth": 34.470588235294116,
+          "text": "WHAT WOULD  YOU KNOW ?",
+          "translation": "QUE SAIS-TU ?",
+          "width": 310,
+          "x": 222,
+          "y": 913
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 34.333333333333336,
+          "symWidth": 27.167914438502674,
+          "text": "YOU  SHOWED  ME THE  DAY  HE  RETURNED , DIDN'T  YOU ?",
+          "translation": "TU M’AS MONTRÉ LE JOUR DE SON RETOUR, N’EST-CE PAS ?",
+          "width": 495,
+          "x": 92,
+          "y": 1459
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 33,
+          "symWidth": 27.039285714285715,
+          "text": "I  FELT  YOUR AFFECTION  FOR  HIM DEEPLY  AT  THAT MOMENT .",
+          "translation": "J’AI RESSENTI TON AFFECTION POUR LUI PROFONDÉMENT À CE MOMENT-LÀ.",
+          "width": 436,
+          "x": 107,
+          "y": 2340
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 34.666666666666664,
+          "symWidth": 28.857142857142858,
+          "text": "DON'T PRESUME  TO KNOW  ME .",
+          "translation": "NE FAIS PAS SEMBLANT DE ME CONNAÎTRE.",
+          "width": 299,
+          "x": 166,
+          "y": 3013
+        }
+      ],
+      "imgHeight": 4133,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 455,
+          "symHeight": 183.77777777777777,
+          "symWidth": 147.72222222222223,
+          "text": "ABSOLUTE REGRESSION",
+          "translation": "RÉGRESSION ABSOLUE",
+          "width": 699,
+          "x": 0,
+          "y": 437
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 17,
+          "symWidth": 15,
+          "text": "JP",
+          "translation": "JP",
+          "width": 29,
+          "x": 369,
+          "y": 974
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19,
+          "symWidth": 13.36904761904762,
+          "text": "SCRIPT ART  PARK  JIN  HWAN ORIGINAL  JANG  YUNGHOON",
+          "translation": "SCÉNARIO ART PARK JIN HWAN ORIGINAL JANG YUNGHOON",
+          "width": 259,
+          "x": 219,
+          "y": 975
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 40.833333333333336,
+          "symWidth": 34.68518518518518,
+          "text": "WHY  DID YOU  WANT  TO SEE  ME ?",
+          "translation": "POURQUOI VOULAIS-TU ME VOIR ?",
+          "width": 363,
+          "x": 185,
+          "y": 2160
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 25.379310344827587,
+          "symWidth": 19.88649425287356,
+          "text": "THERE  ARE  MANY REASONS ,  BUT  YOU  WOULDN'T BELIEVE",
+          "translation": "IL Y A PLUSIEURS RAISONS, MAIS TU NE ME CROIRAS PAS.",
+          "width": 484,
+          "x": 136,
+          "y": 3591
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 25.8,
+          "symWidth": 18.878571428571426,
+          "text": "THEM  ANYWAY .  IF  I  HAD TO  GIVE  YOU  A  REASON  WORTH BELIEVING ,  IT'S  MY  WAY  OF KEEPING  MY  OPPONENT IN  CHECK .",
+          "translation": "SI JE DEVAIENT TE DONNER UNE RAISON À CROIRE, C’EST MA FAÇON DE TENIR MON ADVERSAIRE EN ÉCHEC.",
+          "width": 496,
+          "x": 132,
+          "y": 3662
+        }
+      ],
+      "imgHeight": 4132,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 19.909090909090907,
+          "text": "KEEPING  THEM IN  CHECK ?",
+          "translation": "LES TENIR EN ÉCHEC ?",
+          "width": 249,
+          "x": 312,
+          "y": 1232
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 35,
+          "symWidth": 26.6875,
+          "text": "YES , MY  BROTHER  HAS STARTED  MEETING PEOPLE .",
+          "translation": "OUI, MON FRÈRE A COMMENCÉ À RENCONTRER DES GENS.",
+          "width": 408,
+          "x": 154,
+          "y": 1528
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 35.06060606060606,
+          "symWidth": 27.494949494949495,
+          "text": "I'M  TRYING TO  SHOW  HIM  THAT I  CAN  ALSO  MEET WITH  PEOPLE .",
+          "translation": "J’ESSAIE DE LUI MONTRER QUE MOI AUSSI, JE PEUX RENCONTRER DES GENS.",
+          "width": 426,
+          "x": 164,
+          "y": 2481
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 28,
+          "symWidth": 22.119658119658123,
+          "text": "THE  FIRST OF  THOSE  PEOPLE IS  YOU .",
+          "translation": "LA PREMIÈRE DE CES PERSONNES, C’EST TOI.",
+          "width": 351,
+          "x": 187,
+          "y": 3097
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 30,
+          "symWidth": 22.833333333333336,
+          "text": "WILL  ANYTHING CHANGE  JUST  FROM MEETING  PEOPLE ?",
+          "translation": "QUOI, ÇA CHANGERA QUOI DE RENCONTRER DES GENS ?",
+          "width": 393,
+          "x": 118,
+          "y": 3840
+        }
+      ],
+      "imgHeight": 4132,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 34.5,
+          "symWidth": 25.248717948717946,
+          "text": "YOUR  BROTHER  IS A  PERCEPTIVE  MAN .",
+          "translation": "TON FRÈRE EST UN HOMME PERSPICACE.",
+          "width": 406,
+          "x": 146,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 18,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 11,
+          "y": 1139
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 35.666666666666664,
+          "symWidth": 28.666666666666668,
+          "text": "HE  LACKS HUMAN  WARMTH , THOUGH .",
+          "translation": "IL MANQUE CEPENDANT DE CHALEUR HUMAINE.",
+          "width": 364,
+          "x": 160,
+          "y": 1518
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 32.666666666666664,
+          "symWidth": 24.721885521885525,
+          "text": "THAT'S  FINE . A  MAN  DESTINED  FOR GREATNESS",
+          "translation": "PEU IMPORTE. UN HOMME DESTINÉ À LA GRANDEUR",
+          "width": 468,
+          "x": 94,
+          "y": 2484
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 32,
+          "symWidth": 24.897167755991287,
+          "text": "SHOULDN'T BE  SWAYED  BY  PETTY PERSONAL  FEELINGS .",
+          "translation": "NE DOIT PAS SE LAISSER AFFECTER PAR DES SENTIMENTS PERSONNELS MESQUINS.",
+          "width": 467,
+          "x": 129,
+          "y": 2574
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 35,
+          "symWidth": 26.962962962962962,
+          "text": "HE  MAY  EVEN DISRESPECT  YOU AT  TIMES .",
+          "translation": "IL PEUT MÊME TE MÉPRISER PARFOIS.",
+          "width": 400,
+          "x": 87,
+          "y": 3794
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 29.4,
+          "symWidth": 22.1979797979798,
+          "text": "THAT'S  FINE . WHAT  DOES  IT  MATTER  IF HE  DISRESPECTS  ME ?  HE'S DESTINED  TO  BECOME A  HEAVENLY  DEMON .",
+          "translation": "PEU IMPORTE. QU’IL ME MÉPRISE OU NON, IL EST DESTINÉ À DEVENIR UN DÉMON CÉLESTE.",
+          "width": 494,
+          "x": 121,
+          "y": 4552
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 47.333333333333336,
+          "symWidth": 81.33333333333333,
+          "text": "לה ?",
+          "translation": "לה ?",
+          "width": 85,
+          "x": 39,
+          "y": 4880
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 33,
+          "symWidth": 25.09920634920635,
+          "text": "HE  WILL BREAK  IMPORTANT PROMISES  TOO .",
+          "translation": "IL BRISERA AUSSI DES PROMESSES IMPORTANTES.",
+          "width": 399,
+          "x": 154,
+          "y": 5235
+        }
+      ],
+      "imgHeight": 5667,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 28.20689655172414,
+          "symWidth": 21.982758620689655,
+          "text": "I'M  A  DIFFERENT PERSON  FROM  SWORD DEMON  OR  THE  SKY  HEAVEN CULT  LEADER .",
+          "translation": "JE SUIS UNE PERSONNE DIFFÉRENTE DU DÉMON ÉPÉE OU DU CHEF DE LA CULTURE DU CIEL.",
+          "width": 488,
+          "x": 115,
+          "y": 26
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 31.9873417721519,
+          "symWidth": 24.189873417721518,
+          "text": "I  KNOW  THAT . AS  I  MENTIONED  BEFORE , I  NEVER  INTENDED  TO  MAKE YOU  ONE  MY  PEOPLE  IN THE  FIRST  PLACE .",
+          "translation": "JE SAIS ÇA. COMME JE L’AI DÉJÀ DIT, JE N’AVAIS JAMAIS L’INTENTION DE TE FAIRE DE MES GENS AU DÉPART.",
+          "width": 549,
+          "x": 70,
+          "y": 1584
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 10.928571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 11,
+          "y": 3053
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 32.5,
+          "symWidth": 25.321052631578947,
+          "text": "... SO  WHY ARE  YOU  DOING THIS ?",
+          "translation": "... ALORS POURQUOI FAIS-TU CELA ?",
+          "width": 353,
+          "x": 223,
+          "y": 3097
+        }
+      ],
+      "imgHeight": 3924,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 39.973684210526315,
+          "symWidth": 29.763157894736842,
+          "text": "WHEN  I  SEE  YOU , I  THINK  OF  YOU  AS A  LITTLE  GIANT .",
+          "translation": "QUAND JE TE VOIS, JE PENSE À TOI COMME UN PETIT GÉANT.",
+          "width": 478,
+          "x": 108,
+          "y": 3376
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 39.5,
+          "symWidth": 33.77272727272727,
+          "text": "YOU  ARE GREATER  THAN",
+          "translation": "TU ES PLUS GRAND QUE",
+          "width": 392,
+          "x": 152,
+          "y": 4077
+        }
+      ],
+      "imgHeight": 4174,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 40.18181818181819,
+          "symWidth": 29.79090909090909,
+          "text": "I  DRINK  THIS WINE  WITH  RESPECT FOR  YOU .",
+          "translation": "JE BOIS CE VIN EN TON HONNEUR.",
+          "width": 507,
+          "x": 110,
+          "y": 672
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 29.58139534883721,
+          "symWidth": 21.790697674418606,
+          "text": "I'LL  ADMIT THAT  YOU'RE  SKILLED  IN HANDLING  PEOPLE ,",
+          "translation": "JE DOIS ADMETTRE QUE TU ES HABILE À MANIPULER LES GENS,",
+          "width": 458,
+          "x": 116,
+          "y": 2195
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 40.45,
+          "symWidth": 33.78333333333333,
+          "text": "BUT  YOU WON'T  BE  ABLE TO  SWAY  ME .",
+          "translation": "MAIS TU NE POURRAS PAS ME CHANGER.",
+          "width": 415,
+          "x": 135,
+          "y": 3450
+        }
+      ],
+      "imgHeight": 3922,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 42.04347826086956,
+          "symWidth": 29.152173913043477,
+          "text": "YOU  CAN'T  BECOME THE  SUCCESSOR  WITH A  SMALL  EXPLOSION .",
+          "translation": "TU NE DEVIENDRAS PAS SUCCESSEUR AVEC UNE PETITE EXPLOSION.",
+          "width": 504,
+          "x": 92,
+          "y": 138
+        },
+        {
+          "angle": 0,
+          "height": 276,
+          "symHeight": 55.53448275862069,
+          "symWidth": 36.33793103448276,
+          "text": "I'LL  INCITE HIM  TO  BLOW EVERYTHING AWAY .",
+          "translation": "JE LE pousserai À TOUT FAIRE SAUTER.",
+          "width": 409,
+          "x": 141,
+          "y": 1257
+        },
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 44,
+          "symWidth": 31.65238927738928,
+          "text": "IF  YOU  BELIEVE THE  SUCCESSION CAN  BE  DECIDED PEACEFULLY ,",
+          "translation": "SI TU PENSES QUE LA SUCCESSION PEUT SE RÉGLER PACIFIQUEMENT,",
+          "width": 483,
+          "x": 105,
+          "y": 2949
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 32.6,
+          "text": "THEN  YOU'RE",
+          "translation": "ALORS TU ES",
+          "width": 335,
+          "x": 195,
+          "y": 4061
+        }
+      ],
+      "imgHeight": 4101,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 246,
+          "symHeight": 30.087962962962962,
+          "symWidth": 23.235449735449734,
+          "text": "I  WANTED TO  KNOW  WHAT  KIND OF  PERSON  YOU  ARE .  I  WAS CURIOUS  ABOUT  WHO  STANDS BESIDE  MY  BROTHER  AND PROTECTS  HIM ,",
+          "translation": "JE VOULAIS SAVOIR QUI TU ÉTAIS. JE ME DEMANDAIS QUI ÉTAIT À CÔTÉ DE MON FRÈRE ET QUI LE PROTÉGEAIT,",
+          "width": 575,
+          "x": 64,
+          "y": 81
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 40,
+          "symWidth": 31.798076923076923,
+          "text": "AND  I'VE  COME  TO A  CONCLUSION .",
+          "translation": "ET J’EN SUIS ARRIVÉE À UNE CONCLUSION.",
+          "width": 478,
+          "x": 91,
+          "y": 965
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 47,
+          "symWidth": 35.0625,
+          "text": "MY  BROTHER WOULD  BE  THE GREATEST  FOOL IN  THE  CULT",
+          "translation": "MON FRÈRE SERAIT LE PLUS GRAND IMBÉCILE DE LA CULTURE",
+          "width": 459,
+          "x": 111,
+          "y": 2034
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 45.5,
+          "symWidth": 31.997619047619047,
+          "text": "IF  HE  WERE  TO EVER  HURT  YOUR FEELINGS .",
+          "translation": "S’IL BLESSAIT UN JOUR TES SENTIMENTS.",
+          "width": 448,
+          "x": 109,
+          "y": 3621
+        }
+      ],
+      "imgHeight": 4174,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 31.636363636363637,
+          "text": "ANYONE  ELSE .",
+          "translation": "QUICONQUE D’AUTRE.",
+          "width": 379,
+          "x": 159,
+          "y": 24
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 10.214285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 10,
+          "y": 1559
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 39,
+          "symWidth": 32.48214285714286,
+          "text": "A  LITTLE GIANT ...",
+          "translation": "UN PETIT GÉANT...",
+          "width": 215,
+          "x": 269,
+          "y": 2051
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 35.333333333333336,
+          "symWidth": 33.1,
+          "text": "I  ONCE THOUGHT  OF  MYSELF THAT",
+          "translation": "JE ME CONSIDÉRAIS AINSI UNE FOIS,",
+          "width": 499,
+          "x": 78,
+          "y": 3425
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37.5,
+          "symWidth": 32,
+          "text": "WAY ,",
+          "translation": "MAIS PERSONNE NE M’A JAMAIS APPELÉ COMME ÇA.",
+          "width": 100,
+          "x": 338,
+          "y": 3529
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 34.666666666666664,
+          "symWidth": 33.162393162393165,
+          "text": "BUT  NO  ONE HAS  EVER  CALLED ME  THAT",
+          "translation": "",
+          "width": 420,
+          "x": 156,
+          "y": 3819
+        }
+      ],
+      "imgHeight": 4176,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 29.5,
+          "symWidth": 26.87556561085973,
+          "text": "DOES  HE KNOW  WHAT  I'M THINKING ... ? !",
+          "translation": "SAIT-IL CE QUE JE PENSE... ?!",
+          "width": 305,
+          "x": 208,
+          "y": 1085
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 32,
+          "symWidth": 27,
+          "text": "PLEASE  TAKE GOOD  CARE  OF MY  BROTHER .",
+          "translation": "PRENDS BIEN SOIN DE MON FRÈRE.",
+          "width": 335,
+          "x": 205,
+          "y": 2222
+        },
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 34.6,
+          "symWidth": 28.331135531135534,
+          "text": "YOU'RE REALLY  ASKING ME  TO  LOOK  AFTER THE  FIRST  YOUNG MASTER ?",
+          "translation": "TU ME DEMANDES VRAIMENT DE SURVEILLER LE PREMIER JEUNE MAÎTRE ?",
+          "width": 455,
+          "x": 117,
+          "y": 3010
+        }
+      ],
+      "imgHeight": 4039,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 30.4921875,
+          "symWidth": 23.356770833333336,
+          "text": "I  INTEND  TO END  THE  SENSELESS KILLING  IN  THE  SUCCESSION STRUGGLE  DURING MY  GENERATION .",
+          "translation": "J’AI L’INTENTION DE METTRE FIN AUX MEURTRES INSENSÉS LORS DE LA LUTTE POUR LA SUCCESSION PENDANT MA GÉNÉRATION.",
+          "width": 548,
+          "x": 60,
+          "y": 45
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 10.714285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 10,
+          "y": 1355
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 49,
+          "symWidth": 41.8,
+          "text": "WHAT ?",
+          "translation": "QUOI ?",
+          "width": 204,
+          "x": 298,
+          "y": 1777
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 29.03846153846154,
+          "symWidth": 21.942307692307693,
+          "text": "FOR  THAT TO  HAPPEN ,  WE  CAN'T APPROACH  EACH  OTHER EMOTIONALLY .",
+          "translation": "POUR QUE CELA ARRIVE, NOUS NE POUVONS PAS NOUS APPROCHER L’ÉMOTION DE L’AUTRE.",
+          "width": 430,
+          "x": 84,
+          "y": 2686
+        },
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 31.559038662486937,
+          "symWidth": 22.64987311539036,
+          "text": "BUT  MY BROTHER  HAS  A  STRONG SENSE  OF  PRIDE ,  SO  IT  WILL BE  DIFFICULT  FOR  HIM TO  CONTROL  IT .",
+          "translation": "MAIS MON FRÈRE A BEAUCOUP DE FIERTÉ, IL LUI SERA DIFFICILE DE LA MAÎTRISER.",
+          "width": 549,
+          "x": 89,
+          "y": 2959
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 54.46666666666667,
+          "symWidth": 33.733333333333334,
+          "text": "PLEASE  STAY AT  HIS  SIDE  AND HELP  HIM .",
+          "translation": "RESTE PRÈS DE LUI ET AIDE-LE.",
+          "width": 464,
+          "x": 131,
+          "y": 3634
+        }
+      ],
+      "imgHeight": 4040,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 39,
+          "symWidth": 29.863636363636363,
+          "text": "EITHER  A  FOOL OR  A  LUNATIC .",
+          "translation": "SOIT UN IMBÉCILE, SOIT UN FOU.",
+          "width": 390,
+          "x": 169,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 40.645161290322584,
+          "symWidth": 32.16129032258065,
+          "text": "EVERYONE  WHO KNOWS  ME  SAYS I'M  CRAZY ,",
+          "translation": "TOUS CEUX QUI ME CONNAISSENT DISENT QUE JE SUIS FOU,",
+          "width": 429,
+          "x": 186,
+          "y": 1563
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 40.44444444444444,
+          "symWidth": 33.666666666666664,
+          "text": "SO  I  SUPPOSE I  MUST  BE .",
+          "translation": "ALORS JE DOIS L’ÊTRE.",
+          "width": 392,
+          "x": 208,
+          "y": 2333
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 80.85714285714286,
+          "symWidth": 47.142857142857146,
+          "text": "I  HATE LUNATICS .",
+          "translation": "JE DÉTESTE LES FOUS.",
+          "width": 356,
+          "x": 165,
+          "y": 2758
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 10.428571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 150,
+          "x": 10,
+          "y": 4044
+        }
+      ],
+      "imgHeight": 4102,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 306,
+          "symHeight": 49.410714285714285,
+          "symWidth": 30.9375,
+          "text": "IF  YOU'RE THERE ...  EVEN  IF  MY BROTHER  RAMPAGES , YOU  MIGHT  BE  ABLE TO  STOP  HIM .",
+          "translation": "SI TU ES LÀ... MÊME SI MON FRÈRE FAIT DES DÉGÂTS, TU POURRAIS PEUT-ÊTRE L’ARRÊTER.",
+          "width": 538,
+          "x": 68,
+          "y": 792
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 48.92857142857143,
+          "symWidth": 29.607142857142858,
+          "text": "YOU  UNDERSTAND NOTHING  ABOUT  ME .",
+          "translation": "TU NE COMPRENDS RIEN À MOI.",
+          "width": 432,
+          "x": 135,
+          "y": 2514
+        },
+        {
+          "angle": 0,
+          "height": 332,
+          "symHeight": 52.375,
+          "symWidth": 30.413636363636368,
+          "text": "IF  THE FIRST  YOUNG MASTER  RAMPAGES , THEN  I'LL  POUR  OIL ON  THAT  FIRE .",
+          "translation": "SI LE PREMIER JEUNE MAÎTRE DÉRAPE, JE JETTERAI DE L’HUILE SUR LE FEU.",
+          "width": 437,
+          "x": 148,
+          "y": 3547
+        }
+      ],
+      "imgHeight": 4040,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 61.8,
+          "symWidth": 41.6,
+          "text": "I  SEE .",
+          "translation": "JE VOIS.",
+          "width": 237,
+          "x": 298,
+          "y": 513
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 35,
+          "symWidth": 29.022552447552446,
+          "text": "WHY  DON'T YOU  ASK  WHY  HE CAME  AND  WHAT  WE DISCUSSED ?",
+          "translation": "POURQUOI NE PAS DEMANDER POURQUOI IL EST VENU ET CE QUE NOUS AVONS DISCUTÉ ?",
+          "width": 442,
+          "x": 109,
+          "y": 1634
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 49.470588235294116,
+          "symWidth": 32.470588235294116,
+          "text": "BECAUSE  I TRUST  YOU .",
+          "translation": "PARCE QUE J’AI CONFIANCE EN TOI.",
+          "width": 317,
+          "x": 222,
+          "y": 2838
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 29,
+          "symWidth": 25.447248931623932,
+          "text": "YES , THE  FIRST  YOUNG MASTER  IS  THIS  KIND OF  PERSON .",
+          "translation": "OUI, LE PREMIER JEUNE MAÎTRE EST CE GENRE DE PERSONNE.",
+          "width": 391,
+          "x": 176,
+          "y": 3962
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 27.666666666666668,
+          "symWidth": 25.49206349206349,
+          "text": "HE'S  NOT  DELICATE NOR  ELOQUENT ,  BUT GENUINE  AS  GOLD .",
+          "translation": "IL N’EST NI DÉLICAT NI ÉLOQUENT, MAIS AUTHENTIQUE COMME L’OR.",
+          "width": 388,
+          "x": 208,
+          "y": 4966
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 27.8,
+          "text": "IT  WAS",
+          "translation": "C’ÉTAIT",
+          "width": 133,
+          "x": 291,
+          "y": 5633
+        }
+      ],
+      "imgHeight": 5668,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 18.666666666666668,
+          "symWidth": 19,
+          "text": "DOD",
+          "translation": "DOD",
+          "width": 21,
+          "x": 474,
+          "y": 2808
+        }
+      ],
+      "imgHeight": 4103,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 24.4,
+          "text": "AFTER",
+          "translation": "APRÈS",
+          "width": 114,
+          "x": 244,
+          "y": 2888
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 27.333333333333332,
+          "symWidth": 25.69047619047619,
+          "text": "SEEING THE  SECOND  YOUNG MASTER ,",
+          "translation": "AVOIR VU LE DEUXIÈME JEUNE MAÎTRE,",
+          "width": 448,
+          "x": 109,
+          "y": 2888
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 28,
+          "symWidth": 25.303703703703704,
+          "text": "I  SUDDENLY  WANTED TO  SEE  THE  FIRST  YOUNG MASTER  AGAIN .",
+          "translation": "J’AI SUREMENT ENVIE DE REVOIR LE PREMIER JEUNE MAÎTRE.",
+          "width": 495,
+          "x": 145,
+          "y": 2967
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 28,
+          "symWidth": 25.893939393939394,
+          "text": "I  THINK  I  NEED TO  SEE  HIM  MORE BEFORE  I  CAN SLEEP .",
+          "translation": "JE PENSE QUE J’AI BESOIN DE LE VOIR PLUS AVANT DE POUVOIR DORMIR.",
+          "width": 339,
+          "x": 196,
+          "y": 3789
+        }
+      ],
+      "imgHeight": 4078,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 28,
+          "symWidth": 26.551136363636363,
+          "text": "RIGHT  TO  COME FIND  HIM .",
+          "translation": "LE DROIT DE VENIR LE TROUVER.",
+          "width": 317,
+          "x": 200,
+          "y": 7
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 38.64705882352941,
+          "symWidth": 34.588235294117645,
+          "text": "I  SHALL TRUST  IN  HIM .",
+          "translation": "JE VAIS LUI FAIRE CONFIANCE.",
+          "width": 365,
+          "x": 169,
+          "y": 1165
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 32.25,
+          "symWidth": 26.45,
+          "text": "PLEASE HAVE  A  GOOD REST .",
+          "translation": "REPOSE-TOI BIEN.",
+          "width": 300,
+          "x": 197,
+          "y": 2178
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 18,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 12,
+          "y": 3892
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 29.5,
+          "symWidth": 22.872159090909093,
+          "text": "OFFERING  THE SUPREME  DEMON  POSITION TO  THE  BLOOD  HEAVENS  SWORD DEMON  WAS  FOR  THE  PURPOSE OF  WINNING  HIM  OVER .",
+          "translation": "OFFRIR LA POSITION DE DÉMON SUPRÊME AU DÉMON ÉPÉE DU CIEL DE SANG ÉTAIT POUR LE GAGNER.",
+          "width": 609,
+          "x": 32,
+          "y": 4193
+        }
+      ],
+      "imgHeight": 5669,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 44,
+          "symWidth": 35.72727272727273,
+          "text": "YOU'RE BACK ?",
+          "translation": "TU ES DE RETOUR ?",
+          "width": 213,
+          "x": 243,
+          "y": 1194
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 9,
+          "symWidth": 14,
+          "text": "...",
+          "translation": "...",
+          "width": 38,
+          "x": 438,
+          "y": 2346
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 33.43055555555556,
+          "symWidth": 30.46666666666667,
+          "text": "HE  DOESN'T EVEN  ASK  WHY  I'VE COME  AGAIN  WHEN WE  JUST  MET .",
+          "translation": "IL NE DEMANDE MÊME PAS POURQUOI JE SUIS REVENUE ALORS QUE NOUS NOUS SOMMES JUSTE VUS.",
+          "width": 417,
+          "x": 170,
+          "y": 2708
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.928571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 9,
+          "y": 3806
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 39,
+          "symWidth": 36.5,
+          "text": "THAT'S",
+          "translation": "C’EST",
+          "width": 181,
+          "x": 233,
+          "y": 4031
+        }
+      ],
+      "imgHeight": 4078,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 36.666666666666664,
+          "text": "RIGHT .",
+          "translation": "JUSTE.",
+          "width": 174,
+          "x": 234,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 29.416666666666664,
+          "symWidth": 26.5,
+          "text": "THE  FIRST YOUNG  MASTER  HAS NEVER  BEEN  ONE  TO  REVEAL EMOTION  EASILY .",
+          "translation": "LE PREMIER JEUNE MAÎTRE N’A JAMAIS ÉTÉ DE CEUX QUI EXPRIMENT FACILEMENT LEURS ÉMOTIONS.",
+          "width": 556,
+          "x": 81,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 26.789473684210527,
+          "text": "PERSONAL  CURIOSITY  OR",
+          "translation": "LA CURIOSITÉ PERSONNELLE OU",
+          "width": 503,
+          "x": 111,
+          "y": 833
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 28.25,
+          "symWidth": 27.235576923076923,
+          "text": "HE'S NOT  A  FLAME  THAT WAVERS  AT  SUCH THINGS .",
+          "translation": "IL N’EST PAS UNE FLAMME QUI TREMULE POUR SI PEU.",
+          "width": 369,
+          "x": 173,
+          "y": 1405
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 26,
+          "symWidth": 21.251851851851853,
+          "text": "THE  SECOND YOUNG  MASTER  CAME TO  VISIT  ME .",
+          "translation": "LE DEUXIÈME JEUNE MAÎTRE EST VENUE ME RENDRE VISITE.",
+          "width": 375,
+          "x": 184,
+          "y": 2313
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 32.857142857142854,
+          "text": "MUGEUK ?",
+          "translation": "MUGEUK ?",
+          "width": 245,
+          "x": 327,
+          "y": 2974
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 47,
+          "symWidth": 34.5,
+          "text": "YES .",
+          "translation": "OUI.",
+          "width": 120,
+          "x": 227,
+          "y": 3615
+        }
+      ],
+      "imgHeight": 4078,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 45.84873949579832,
+          "symWidth": 38.86974789915966,
+          "text": "WHY  IS HE  EXPLAINING NOW ... ?",
+          "translation": "POURQUOI EXPLIQUE-T-IL MAINTENANT... ?",
+          "width": 426,
+          "x": 135,
+          "y": 1106
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 31.555555555555557,
+          "symWidth": 28.92735042735043,
+          "text": "HE  WOULDN'T  DO IT  WHEN  I  BEGGED FOR  IT ,",
+          "translation": "IL NE LE FAISAIT PAS QUAND JE LE SUPPLIAIS,",
+          "width": 395,
+          "x": 152,
+          "y": 1902
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 31.666666666666668,
+          "symWidth": 32.205128205128204,
+          "text": "SO  WHY DO  SO  AFTER  GEOM MUGEUK",
+          "translation": "ALORS POURQUOI LE FAIT-IL APRÈS QUE GEOM MUGEUK SOIT VENU ME VOIR ?",
+          "width": 441,
+          "x": 145,
+          "y": 3407
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 32,
+          "symWidth": 32.276785714285715,
+          "text": "HAS  COME TO  SEE  ME ?",
+          "translation": "QUAND JE DEVIENDRAI LE DÉMON CÉLESTE, LA POSITION DE DÉMON SUPRÊME TE REVIENDRA NATURELLEMENT.",
+          "width": 335,
+          "x": 237,
+          "y": 3500
+        },
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 26.934210526315788,
+          "symWidth": 21.521941551740312,
+          "text": "WHEN  I BECOME  THE  HEAVENLY DEMON ,  THE  SUPREME DEMON  POSITION  WILL NATURALLY  BE YOURS .",
+          "translation": "",
+          "width": 409,
+          "x": 156,
+          "y": 4773
+        }
+      ],
+      "imgHeight": 5328,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 33.75,
+          "symWidth": 31.534777722277724,
+          "text": "YES , NOW  YOU  KNOW  HOW MUCH  GEOM  MUGEUK HAS  CHANGED .",
+          "translation": "OUI, MAINTENANT TU SAIS À QUEL POINT GEOM MUGEUK A CHANGÉ.",
+          "width": 479,
+          "x": 107,
+          "y": 152
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 11.333333333333334,
+          "symWidth": 12.333333333333334,
+          "text": "680",
+          "translation": "680",
+          "width": 26,
+          "x": 389,
+          "y": 1556
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 30.666666666666668,
+          "symWidth": 30.542692939244663,
+          "text": "YOUR YOUNGER  BROTHER IS  AN  OPPONENT  WHO DEMANDS",
+          "translation": "TON JEUNE FRÈRE EST UN ADVERSAIRE QUI EXIGE",
+          "width": 456,
+          "x": 133,
+          "y": 1741
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 31,
+          "symWidth": 28.65277777777778,
+          "text": "SUCH VIGILANCE",
+          "translation": "UNE TELLE VIGILANCE",
+          "width": 271,
+          "x": 258,
+          "y": 1881
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 38.333333333333336,
+          "symWidth": 33.96880341880342,
+          "text": "BUT  THERE'S  NO NEED  TO  LOSE  FAITH IN  YOURSELF ...",
+          "translation": "MAIS IL NE FAUT PAS PERDRE FOI EN TOI...",
+          "width": 550,
+          "x": 74,
+          "y": 3115
+        }
+      ],
+      "imgHeight": 4063,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 44,
+          "symWidth": 37.43518518518518,
+          "text": "HE'S  STILL YOUNG ,  THAT'S ALL .",
+          "translation": "IL EST TOUJOURS JEUNE, C’EST TOUT.",
+          "width": 447,
+          "x": 121,
+          "y": 4237
+        }
+      ],
+      "imgHeight": 5340,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 34.55555555555555,
+          "symWidth": 34.34920634920635,
+          "text": "ARE  YOU ANXIOUS  BECAUSE GEOM  MUGEUK  MIGHT SWAY  ME",
+          "translation": "ES-TU INQUIET QUE GEOM MUGEUK ME FASSE CHANGER",
+          "width": 520,
+          "x": 88,
+          "y": 1160
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 36.06666666666667,
+          "symWidth": 33.77777777777778,
+          "text": "EVEN  THOUGH YOU  ORIGINALLY THOUGHT  I  CAN'T BE  SWAYED ?",
+          "translation": "ALORS QUE TU PENSAIS AU DÉPART QUE JE NE POUVAIS PAS ÊTRE INFLUENCÉ ?",
+          "width": 428,
+          "x": 152,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.785714285714286,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 12,
+          "y": 3212
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 50.30434782608695,
+          "symWidth": 50.04347826086956,
+          "text": "DIDN'T YOU  SAY  YOU TRUST  ME ?",
+          "translation": "N’AS-TU PAS DIT QUE TU ME FAISAIS CONFIANCE ?",
+          "width": 470,
+          "x": 116,
+          "y": 3627
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 29.756756756756758,
+          "symWidth": 28.64864864864865,
+          "text": "THIS  PAINS ME  EVEN  AS  I  TRY  TO UNDERSTAND  YOU .",
+          "translation": "ÇA ME FAIT MAL MÊME EN ESSAYANT DE TE COMPRENDRE.",
+          "width": 433,
+          "x": 128,
+          "y": 4818
+        }
+      ],
+      "imgHeight": 5329,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 40.29166666666667,
+          "symWidth": 28.69047619047619,
+          "text": "I  KNEW  IT WOULD  NATURALLY BE  THIS  WAY .",
+          "translation": "JE SAVAIS QUE CE SERAIT NATURELLEMENT AINSI.",
+          "width": 465,
+          "x": 133,
+          "y": 1510
+        },
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 31.939655172413794,
+          "symWidth": 25.03291536050157,
+          "text": "I  WORRIED  YOU MIGHT  MISUNDERSTAND MY  INTENTIONS  SINCE I'M  SPEAKING  TO YOU  AT  A  TIME",
+          "translation": "JE CRAIGNAIS QUE TU NE COMPRENNES MAL MES INTENTIONS, CAR JE TE PARLE AU MOMENT",
+          "width": 463,
+          "x": 114,
+          "y": 2243
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 35.11904761904762,
+          "symWidth": 29.535714285714285,
+          "text": "WHEN  YOU'VE  JUST SEEN  MY  YOUNGER BROTHER .",
+          "translation": "OÙ TU VIENS DE VOIR MON JEUNE FRÈRE.",
+          "width": 442,
+          "x": 118,
+          "y": 3291
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 10.266666666666667,
+          "text": "IASURASCANS.COM",
+          "translation": "IASURASCANS.COM",
+          "width": 160,
+          "x": 0,
+          "y": 3574
+        }
+      ],
+      "imgHeight": 4064,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 34,
+          "symWidth": 28.238636363636363,
+          "text": "WHAT MISUNDERSTANDING WOULD  I  HAVE ?",
+          "translation": "QUEL MALENTENDU AURAIS-JE ?",
+          "width": 448,
+          "x": 115,
+          "y": 43
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 34.5,
+          "symWidth": 27.56513409961686,
+          "text": "I'M  SIMPLY GRATEFUL  FOR HOW  MUCH  YOU VALUE  ME .",
+          "translation": "JE SUIS JUSTE RECONNAISSANTE DE L’ESTIME QUE TU ME PORTES.",
+          "width": 364,
+          "x": 239,
+          "y": 1151
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 28,
+          "symWidth": 21.53208020050125,
+          "text": "THAT'S  ONLY NATURAL .  PLEASE  DON'T SAY  SUCH  THINGS .",
+          "translation": "C’EST NATUREL. NE DIS PAS DE TELLES CHOSES.",
+          "width": 431,
+          "x": 159,
+          "y": 2139
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 30,
+          "text": "THEN",
+          "translation": "ALORS",
+          "width": 130,
+          "x": 156,
+          "y": 2692
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 41.5,
+          "symWidth": 29.916666666666664,
+          "text": "I  SHALL TAKE  MY  LEAVE .",
+          "translation": "JE VAIS M’EN ALLER.",
+          "width": 401,
+          "x": 132,
+          "y": 2692
+        }
+      ],
+      "imgHeight": 4063,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 28.4,
+          "symWidth": 26.42090909090909,
+          "text": "IF  HE WERE  PERFECT LIKE  THE  SECOND  YOUNG MASTER ,  WHY  WOULD I  NEED  HIM ?",
+          "translation": "S’IL ÉTAIT PARFAIT COMME LE DEUXIÈME JEUNE MAÎTRE, POURQUOI AURAIS-JE BESOIN DE LUI ?",
+          "width": 478,
+          "x": 110,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 247,
+          "symHeight": 25.662601626016258,
+          "symWidth": 23.88355625192067,
+          "text": "RATHER  THAN  SOMEONE LIKE  THE  SECOND  YOUNG MASTER  WHO  IS  AS  CUNNING AS  A  SNAKE ,  IT'S  BETTER  TO HAVE  THE  FIRST  YOUNG MASTER  WITH  HIS WEAKNESSES .",
+          "translation": "PLUTÔT QUE QUELQU’UN COMME LE DEUXIÈME JEUNE MAÎTRE, ASTUCIEUX COMME UN SERPENT, JE PRÉFÈRE LE PREMIER JEUNE MAÎTRE AVEC SES FAIBLESSES.",
+          "width": 478,
+          "x": 124,
+          "y": 1519
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 34,
+          "symWidth": 30.65079365079365,
+          "text": "I  JUST ...  NEED TO  WATCH  OVER  HIM CAREFULLY .",
+          "translation": "JE DOIS JUSTE... LE SURVEILLER ATTENTIVEMENT.",
+          "width": 458,
+          "x": 124,
+          "y": 2663
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 19,
+          "symWidth": 11.071428571428571,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 11,
+          "y": 4356
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 29.666666666666668,
+          "symWidth": 27.333333333333332,
+          "text": "작화 도움 박종일 석은 정",
+          "translation": "작화 도움 박종일 석은 정",
+          "width": 112,
+          "x": 565,
+          "y": 5099
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 19,
+          "symWidth": 21.75,
+          "text": "JHS STUDIO",
+          "translation": "JHS STUDIO",
+          "width": 107,
+          "x": 571,
+          "y": 5286
+        }
+      ],
+      "imgHeight": 5341,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

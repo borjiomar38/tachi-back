@@ -1,0 +1,1174 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0068",
+  "jobId": "fixture-job-0068",
+  "licenseId": "fixture-license-0068",
+  "pageCount": 20,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 58.33333333333334,
+          "symWidth": 53.05902777777778,
+          "text": "驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل صانع التنانين هو أضعف المهن؟ أنا دراكو ماجسترو",
+          "width": 410,
+          "x": 140,
+          "y": 1115
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 25.11111111111111,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر! انظر، هذا مانغا حصري",
+          "width": 246,
+          "x": 232,
+          "y": 1387
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 17.77397260273973,
+          "symWidth": 17.41552511415525,
+          "text": "GREAT ,  IF THE  BREAKTHROUGH MATERIALS  ARE  INSIDE , I  CAN  COMPLETE  MY FOURTH  ADVANCEMENT TOMORROW .",
+          "translation": "رائع، إذا كانت مواد الاختراق بداخلها، يمكنني إكمال ترقيتي الرابعة غداً.",
+          "width": 319,
+          "x": 118,
+          "y": 3081
+        }
+      ],
+      "imgHeight": 3440,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 187,
+          "symWidth": 108.3333333333333,
+          "text": "127",
+          "translation": "١٢٧",
+          "width": 214,
+          "x": 16,
+          "y": 579
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 10.69230769230769,
+          "text": "嬉皮 漫画",
+          "translation": "مانغا هيبي",
+          "width": 169,
+          "x": 522,
+          "y": 681
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 21.5,
+          "text": "!  ?",
+          "translation": "!؟",
+          "width": 77,
+          "x": 341,
+          "y": 1063
+        },
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 233,
+          "symWidth": 207.5,
+          "text": "曲 !",
+          "translation": "قوس!",
+          "width": 373,
+          "x": 114,
+          "y": 1817
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 23.26967888604717,
+          "symWidth": 21.08780903665814,
+          "text": "ABYSS  SECRETREALM  - REQUIRED  ABYSS  FRAGMENTS : 0,9",
+          "translation": "العالم السري للهاوية - الشظايا المطلوبة من الهاوية: ٠،٩",
+          "width": 351,
+          "x": 32,
+          "y": 2623
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.73703703703704,
+          "text": "I  CAN'T  ENTER DIRECTLY ...  I  STILL NEED  9  ABYSS FRAGMENTS .",
+          "translation": "لا أستطيع الدخول مباشرة... لا زلت بحاجة إلى ٩ شظايا من الهاوية.",
+          "width": 271,
+          "x": 189,
+          "y": 3204
+        }
+      ],
+      "imgHeight": 3441,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 22.03846153846154,
+          "symWidth": 19.65384615384615,
+          "text": "MR .  LU ,  WHY AREN'T  YOU GOING  IN ?",
+          "translation": "السيد لو، لماذا لا تدخل؟",
+          "width": 192,
+          "x": 359,
+          "y": 228
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 18.1328125,
+          "symWidth": 16.5214342948718,
+          "text": "CUT  THE  ACT ,  WHY DIDN'T  YOU  TELL  ME EARLIER  THIS  SECRET REALM  CAN'T  BE ENTERED  DIRECTLY ?",
+          "translation": "كفى تمثيلاً، لماذا أخبرتني الآن فقط أن هذا العالم السري لا يُدخل إليه مباشرة؟",
+          "width": 294,
+          "x": 86,
+          "y": 1503
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21.61111111111111,
+          "symWidth": 18.86243386243386,
+          "text": "OH  COME  ON ,  DON'T BE  SO  SERIOUS ,  I  WAS JUST  JOKING .",
+          "translation": "هلمّ، لا تكن جاداً لهذه الدرجة، كنت أمزح فقط.",
+          "width": 338,
+          "x": 70,
+          "y": 2898
+        }
+      ],
+      "imgHeight": 3211,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 18,
+          "symWidth": 16.8,
+          "text": "PLEASE  CALM DOWN ,  MR .  LU , MISS  MEANT  NO HARM .",
+          "translation": "اهدأ يا سيد لو، لم تكن نيتها الإيذاء.",
+          "width": 216,
+          "x": 344,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 19.6,
+          "symWidth": 18.8251282051282,
+          "text": "ENOUGH NONSENSE ,  WHAT EXACTLY  ARE THESE  ABYSS FRAGMENTS ?",
+          "translation": "كفى هراء، ما هي آثار الهاوية هذه بالضبط؟",
+          "width": 254,
+          "x": 146,
+          "y": 885
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.5,
+          "symWidth": 16.54786706349206,
+          "text": "AS  THE  NAME SUGGESTS ,  THEY'RE THE  NINE  KEYS  TO OPEN  IT .",
+          "translation": "كما يدل الاسم، هي المفاتيح التسعة لفتحها.",
+          "width": 270,
+          "x": 333,
+          "y": 1741
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 18,
+          "symWidth": 16.68579753579753,
+          "text": "THIS  IS  THE  10TH REALM ,  AND  THE KEYS  ARE  LOCATED WITHIN  THE  OTHER NINE  REALMS .",
+          "translation": "هذا هو العالم العاشر، والمفاتيح موزعة في العوالم التسعة الأخرى.",
+          "width": 268,
+          "x": 287,
+          "y": 2337
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.18518518518519,
+          "symWidth": 16.77335858585859,
+          "text": "WHAT  A  WASTE  OF TIME .  I'M  GOING  TO FIND  THE  OTHER  NINE REALMS  THEN .",
+          "translation": "يا له من هدر للوقت، سأبحث إذن عن العوالم التسعة الأخرى.",
+          "width": 281,
+          "x": 345,
+          "y": 2702
+        }
+      ],
+      "imgHeight": 3212,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17.33333333333333,
+          "symWidth": 14.66666666666667,
+          "text": "EH ?",
+          "translation": "ها؟",
+          "width": 45,
+          "x": 190,
+          "y": 125
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 19,
+          "symWidth": 15.52121212121212,
+          "text": "WAIT ,  MR .  LU !  I HAVEN'T  FINISHED EXPLAINING !",
+          "translation": "انتظر، السيد لو! لم أُنهِ شرحِي بعد!",
+          "width": 232,
+          "x": 117,
+          "y": 469
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 19,
+          "symWidth": 16.55909090909091,
+          "text": "WHAT  NOW ?  SAY IT  QUICKLY .",
+          "translation": "ماذا الآن؟ قلها بسرعة.",
+          "width": 226,
+          "x": 301,
+          "y": 1944
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 161,
+          "symWidth": 77,
+          "text": "LARG",
+          "translation": "لارج",
+          "width": 206,
+          "x": 453,
+          "y": 2164
+        }
+      ],
+      "imgHeight": 3211,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 19.33333333333333,
+          "symWidth": 16.79267399267399,
+          "text": "PHEW ... I  THOUGHT  YOU'D JUST  LEAVE .",
+          "translation": "الحمد لله... ظننت أنك سترحل دون وداع.",
+          "width": 261,
+          "x": 254,
+          "y": 61
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.57142857142857,
+          "symWidth": 16.92286081099106,
+          "text": "OUT  OF  THE  NINE DUNGEONS , ONLY  TWO STILL  HAVE  KEYS - THE OTHER  SEVEN  HAVE  BEEN TAKEN  BY  GANGS  FROM BOTH  NATIONS .",
+          "translation": "من بين التسع زنزانات، لا يزال مفتاحان فقط بحوزتنا، أما السبعة الباقية فقد استولى عليها عصابات من كلا الدولتين.",
+          "width": 333,
+          "x": 127,
+          "y": 998
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 20,
+          "symWidth": 17.9255450431921,
+          "text": "YOU  MUST  GATHER ALL  NINE  TO  ENTER ... WHICH  MEANS-",
+          "translation": "يجب أن تجمع جميع المفاتيح التسع للدخول... وهذا يعني—",
+          "width": 288,
+          "x": 106,
+          "y": 2423
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 17.89285714285714,
+          "text": "SO  YOU'LL  TAKE  ME TO  THOSE  SEVEN GANGS ?",
+          "translation": "هل ستأخذني إلى تلك العصابات السبعة؟",
+          "width": 265,
+          "x": 303,
+          "y": 2893
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.4,
+          "symWidth": 16.17856209150327,
+          "text": "EXACTLY ,  AND  YOU , MR .  LU ,  WILL  HELP  OUR HEAVENLY  DRAGON  GANG ELIMINATE THEM .",
+          "translation": "بالضبط، وأنت، السيد لو، ستعين عصابة التنين السماوي لدينا للقضاء عليهم.",
+          "width": 346,
+          "x": 92,
+          "y": 3939
+        }
+      ],
+      "imgHeight": 4543,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 23.44576719576719,
+          "symWidth": 22.61838624338624,
+          "text": "DAMN ... SO  THAT'S YOUR  PLAN .",
+          "translation": "تباً... هكذا هي خطتك.",
+          "width": 158,
+          "x": 161,
+          "y": 638
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 21.76568764568764,
+          "symWidth": 18.70462204462205,
+          "text": "BE  QUIET ,  WE HAVENT  REACHED AN  AGREEMENT YET  STOP EMBARRASSING  US .",
+          "translation": "اصمت، لم نبلغ بعد اتفاقاً. كفى إحراجاً لنا.",
+          "width": 195,
+          "x": 459,
+          "y": 672
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 61.33333333333334,
+          "symWidth": 59,
+          "text": "小声 ~",
+          "translation": "بهدوء~",
+          "width": 131,
+          "x": 499,
+          "y": 942
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 17.16666666666667,
+          "symWidth": 16.29254955570745,
+          "text": "THE  HEAVENLY  DRAGON  GANG ELIMINATES  THE  SOUTHERN GANGS  AND  GROWS  STRONGER , WHILE  YOU  COLLECT  THE  NINE KEYS  AND  COMPLETE  YOUR ADVANCEMENT .",
+          "translation": "عصابة التنين السماوي تقضي على العصابات الجنوبية وتزداد قوة، وأنت تجمع المفاتيح التسعة وتُتم تقدمك.",
+          "width": 412,
+          "x": 70,
+          "y": 1603
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 20,
+          "symWidth": 18.81150793650794,
+          "text": "THAT  WAY , IT'S  A  WIN- WIN .  WHY NOT ?",
+          "translation": "هكذا، فوزٌ للطرفين. أليس كذلك؟",
+          "width": 165,
+          "x": 147,
+          "y": 2485
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 18.2,
+          "symWidth": 16.66867217062264,
+          "text": "TSK ...  REVEALING  MY IDENTITY  JUST  BROUGHT TROUBLE .  SHE  WANTS  TO USE  ME  TO  CLEAR OBSTACLES .",
+          "translation": "ها... كشف هويتي جلب لي المتاعب. تُريد استخدامي لتذليل العقبات.",
+          "width": 337,
+          "x": 129,
+          "y": 3419
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.2,
+          "symWidth": 16.46333333333333,
+          "text": "I  KNOW  NOTHING ABOUT  LOCAL  GANGS HAVING  HER  GUIDE  ME WILL  SPEED  THINGS UP .",
+          "translation": "لا أعلم شيئاً عن العصابات المحلية، فهديتها لي ستعجل الأمور.",
+          "width": 295,
+          "x": 280,
+          "y": 4317
+        }
+      ],
+      "imgHeight": 4545,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 20,
+          "symWidth": 17.44405594405594,
+          "text": "... FINE .  LET'S COOPERATE ,  BUT LET'S  SET  THE RULES  FIRST .",
+          "translation": "حسناً. فلنتعاون، لكن لنسطر القواعد أولاً.",
+          "width": 264,
+          "x": 249,
+          "y": 156
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 21.375,
+          "symWidth": 21.14935064935065,
+          "text": "IF  YOU  TAKE ME  TO  GANGS WITHOUT  KEYS AND  WASTE MY  TIME ,",
+          "translation": "إن أخذتموني إلى العصابات بلا مفاتيح وضيّعتم وقتي،",
+          "width": 232,
+          "x": 234,
+          "y": 1388
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 19.25,
+          "symWidth": 18.34017857142857,
+          "text": "DON'T BLAME  ME FOR  TURNING HOSTILE .",
+          "translation": "فلا تلُمْوني إن تحوّلت عدواً.",
+          "width": 196,
+          "x": 138,
+          "y": 2507
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 17.09770451770452,
+          "text": "UNDERSTOOD !  I , CUI  ZIYI ,  VALUE LOYALTY ,  I WON'T  BREAK MY  WORD !",
+          "translation": "فهمت! أنا كوي زييي، أعتز بالولاء، ولن أخون عهدي!",
+          "width": 225,
+          "x": 299,
+          "y": 3366
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17,
+          "symWidth": 17.45714285714286,
+          "text": "ONE  HOUR LATER",
+          "translation": "بعد ساعة",
+          "width": 134,
+          "x": 105,
+          "y": 3760
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 16,
+          "symWidth": 14.97058823529412,
+          "text": "SOUTH  BLACK  PORT , LONGNAN  PREFECTURE",
+          "translation": "ميناء الجنوب الأسود، محافظة لونغنان",
+          "width": 265,
+          "x": 180,
+          "y": 3886
+        }
+      ],
+      "imgHeight": 4303,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 21.42857142857143,
+          "symWidth": 18.14285714285714,
+          "text": "THERE ,  THIS  IS THE  PLACE .",
+          "translation": "ها هو ذا، هذا هو المكان.",
+          "width": 238,
+          "x": 306,
+          "y": 659
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 17.98780487804878,
+          "symWidth": 15.5820399113082,
+          "text": "SOUTH  BLACK  PORT HAS  ALWAYS  BEEN CHAOTIC .  AT  FIRST , DRAGON  NATION PEOPLE  DIDN'T  MIND SOUTHERNERS LIVING  HERE .",
+          "translation": "كان ميناء الجنوب الأسود فوضويًا دومًا.\nفي البداية، لم يكن أهل دولة التنين يمانعون أهل الجنوب في الإقامة هنا.",
+          "width": 271,
+          "x": 135,
+          "y": 1250
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 74.66666666666667,
+          "symWidth": 75,
+          "text": "www",
+          "translation": "",
+          "width": 99,
+          "x": 550,
+          "y": 2056
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 17.53333333333333,
+          "symWidth": 16.87193223443224,
+          "text": "BUT  OVER  TIME , THOSE  SOUTHERN DOGS  ACTUALLY  TRIED TO  SEIZE  CONTROL AND  EVEN  FORMED THEIR  OWN  GANGS",
+          "translation": "لكن مع مرور الزمان، حاول أولئك الجناة الجنوبيون السيطرة فعلاً\nوحتى شكلوا عصاباتهم الخاصة.",
+          "width": 310,
+          "x": 277,
+          "y": 2384
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 17.88888888888889,
+          "symWidth": 17.38222222222222,
+          "text": "SO  THE HEAVENLY DRAGON  GANG IS  THE  ONLY DRAGON NATION  GANG HERE ?",
+          "translation": "هل إذن عصابة التنين السماوي هي الوحيدة من دولة التنين هنا؟",
+          "width": 204,
+          "x": 120,
+          "y": 2711
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 17.25,
+          "symWidth": 14.41666666666667,
+          "text": "YES ...  AND NO .",
+          "translation": "نعم... ولا.",
+          "width": 131,
+          "x": 290,
+          "y": 4001
+        }
+      ],
+      "imgHeight": 4304,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 17.93939393939394,
+          "symWidth": 17.37878787878788,
+          "text": "THERE  ARE  SIX MAJOR  GANGS NOW - THREE FROM  EACH SIDE .",
+          "translation": "هناك ست عصابات رئيسية الآن - ثلاث من كل جانب.",
+          "width": 208,
+          "x": 129,
+          "y": 776
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 21,
+          "symWidth": 19.20833333333334,
+          "text": "BESIDES  US , THERE'S  THE SOUTHERN NETHER  GANG AND  FLAME GANG .",
+          "translation": "إلى جانبنا، توجد عصابة الجنوب النذر وعصابة اللهب.",
+          "width": 220,
+          "x": 150,
+          "y": 2530
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 45,
+          "symWidth": 26,
+          "text": "III",
+          "translation": "III",
+          "width": 70,
+          "x": 157,
+          "y": 3086
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.4,
+          "symWidth": 16.64519230769231,
+          "text": "BUT  THOSE TWO  DON'T  CARE ABOUT  SOUTHERN ENCROACHMENT AT  ALL .",
+          "translation": "لكن هاتين العصابتين لا يباليان أبداً بتعدي الجنوب.",
+          "width": 243,
+          "x": 284,
+          "y": 3155
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 43.5,
+          "symWidth": 36.5,
+          "text": "ww",
+          "translation": "",
+          "width": 40,
+          "x": 326,
+          "y": 3755
+        }
+      ],
+      "imgHeight": 4303,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 21.39473684210526,
+          "symWidth": 19.11654135338346,
+          "text": "THEY'VE COMPLETELY FORGOTTEN THEIR  PACT WITH  US !",
+          "translation": "لقد نسيوا عهدهم معنا تمامًا!",
+          "width": 208,
+          "x": 122,
+          "y": 322
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 17.42857142857143,
+          "symWidth": 17.22823129251701,
+          "text": "THE  THREE  DRAGON KINGDOM  GANGS ORIGINALLY  SWORE TO  BUILD  SOUTH BLACK  PORT  INTO  A PROPER  BORDER TOWN .",
+          "translation": "لقد تعهَّدَت عصابات ممالك التنانين الثلاث منذ البداية ببناء ميناء الجنوب الأسود كمدينة حدودية حقيقية.",
+          "width": 273,
+          "x": 127,
+          "y": 1490
+        },
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 17.9,
+          "symWidth": 16.7637271062271,
+          "text": "BUT  NOW  THEY ONLY  CARE  ABOUT THEIR  CURRENT PLEASURES , EVEN GOING  SO  FAR  AS  TO RECRUIT SOUTHERN DOGS  INTO  THEIR RANKS !",
+          "translation": "لكنهم الآن لا يهتمون سوى بلذاتهم الحالية، بل وصل بهم الأمر لتجنيد كلاب الجنوب في صفوفهم!",
+          "width": 294,
+          "x": 285,
+          "y": 2550
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 104.3333333333333,
+          "symWidth": 87,
+          "text": "咯 哎 ~",
+          "translation": "هاه، آه ~",
+          "width": 228,
+          "x": 471,
+          "y": 3066
+        }
+      ],
+      "imgHeight": 3575,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 18.09166666666667,
+          "symWidth": 17.15862745098039,
+          "text": "IF  THE  SOUTHERN NATION  TAKES ADVANTAGE  OF  THE DRAGON  NATION  BEING BUSY  WITH  THE  ANCIENT GODS  IN  THE  FAR  NORTH TO  OCCUPY  THIS  PLACE , THOSE  TWO  GANGS  WILL BE  TIME  BOMBS .",
+          "translation": "إذا استغلّت أمة الجنوب انشغال أمة التنانين بالآلهة القديمة في أقصى الشمال واحتلت هذا الموضع، فستكون هاتان العصابتان قنابل موقوتة.",
+          "width": 334,
+          "x": 222,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 16.84259259259259,
+          "text": "SO  YOU  WANT TO  STRIKE FIRST ?",
+          "translation": "هل تريد إذن أن تبادر بالضربة الأولى؟",
+          "width": 191,
+          "x": 116,
+          "y": 1594
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 16.91363636363636,
+          "text": "EXACTLY ,  STEP ONE ,  WIPE  OUT THE  SOUTHERN NETHER  AND FLAME  GANGS !",
+          "translation": "تمامًا، الخطوة الأولى: القضاء على عصابتَي الناَثر والنار الجنوبية!",
+          "width": 208,
+          "x": 252,
+          "y": 2912
+        }
+      ],
+      "imgHeight": 3576,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 16.26880341880342,
+          "text": "I'LL  ABSORB THEIR  MEMBERS AND  TERRITORY ,",
+          "translation": "سأمتص أعضاءهم وأراضيهم،",
+          "width": 227,
+          "x": 105,
+          "y": 842
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 18,
+          "symWidth": 17.54861111111111,
+          "text": "AND  THE  TWO KEYS  FROM THEIR  LEADERS GO  TO  YOU .",
+          "translation": "وتنتقل إليك مفاتيح زعامتهم.",
+          "width": 203,
+          "x": 351,
+          "y": 2217
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 17.8,
+          "symWidth": 16.41111111111111,
+          "text": "EASY .  AT  DAWN , SPREAD  THE WORD - I'LL DEAL WITH  THEM .",
+          "translation": "الأمر سهل. عند الفجر، انشر الخبر - سأتعامل معهم.",
+          "width": 216,
+          "x": 155,
+          "y": 2569
+        }
+      ],
+      "imgHeight": 3575,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.83333333333333,
+          "symWidth": 16.46666666666667,
+          "text": "STRAIGHT- FORWARD  AS ALWAYS ,  MR . LU !",
+          "translation": "بصراحة كما عهدناك دائماً، سيد لو!",
+          "width": 181,
+          "x": 335,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.2,
+          "symWidth": 16.69412698412699,
+          "text": "STAY  AT  OUR CAMP  TONIGHT . IT'S  JUST  TENTS- HOPE  YOU  DON'T MIND .",
+          "translation": "ابقَ في مخيمنا الليلة. إنها مجرد خيام، آمل ألا تمانع.",
+          "width": 236,
+          "x": 253,
+          "y": 1637
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.5,
+          "symWidth": 16.51430652680652,
+          "text": "I'VE  TREKKED THROUGH  THE WESTERN  FRONTIER ON  FOOT ,  NOT HAVING  A  TENT  IS NOTHING .",
+          "translation": "سرت على الأقدام عبر الحدود الغربية، ولا شيء يزعجني من دون خيمة.",
+          "width": 267,
+          "x": 224,
+          "y": 3118
+        }
+      ],
+      "imgHeight": 3617,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 20,
+          "symWidth": 18.05555555555556,
+          "text": "MISS ! DISASTER !",
+          "translation": "آنسة! كارثة!",
+          "width": 168,
+          "x": 236,
+          "y": 382
+        },
+        {
+          "angle": 0,
+          "height": 8,
+          "symHeight": 7,
+          "symWidth": 10.5,
+          "text": "\" .",
+          "translation": ".",
+          "width": 18,
+          "x": 105,
+          "y": 608
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.66666666666667,
+          "symWidth": 17.14285714285714,
+          "text": "THE  CAMP IS  UNDER ATTACK !",
+          "translation": "المعسكر تحت الهجوم!",
+          "width": 134,
+          "x": 392,
+          "y": 1897
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 23,
+          "text": "WHAT !?",
+          "translation": "ماذا!؟",
+          "width": 133,
+          "x": 210,
+          "y": 3155
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.71794871794872,
+          "symWidth": 16.86196904946905,
+          "text": "COULD IT BE THE OTHER GANGS MAKING THE FIRST MOVE ?",
+          "translation": "هل يكون ذلك من العصابات الأخرى التي تبادر بالهجوم؟",
+          "width": 214,
+          "x": 342,
+          "y": 3538
+        }
+      ],
+      "imgHeight": 3618,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "renderMode": "mask_only",
+          "symHeight": 17.76923076923077,
+          "symWidth": 16.30769230769231,
+          "text": "THE  FIRST MOVE ?",
+          "translation": "",
+          "width": 135,
+          "x": 383,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 24,
+          "symWidth": 22.40625,
+          "text": "POSSIBLE , LET'S  GO CHECK !",
+          "translation": "هذا محتمل، هيا لنذهب ونحقق!",
+          "width": 188,
+          "x": 132,
+          "y": 634
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 19,
+          "symWidth": 25,
+          "text": "YON",
+          "translation": "يون",
+          "width": 26,
+          "x": 69,
+          "y": 1319
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.5,
+          "symWidth": 17.99747474747475,
+          "text": "LONGNAN  SOUTH  BLACK  PORT . HEAVENLY  DRAGON  CAMP",
+          "translation": "لونغنان، الميناء الأسود الجنوبي. معسكر التنين السماوي",
+          "width": 436,
+          "x": 70,
+          "y": 1870
+        }
+      ],
+      "imgHeight": 3618,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 22.6,
+          "text": "BOSS !",
+          "translation": "سيدي!",
+          "width": 116,
+          "x": 260,
+          "y": 1659
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 20.97539682539682,
+          "symWidth": 18.73492063492064,
+          "text": "A  POWERFUL FIGHTER  IS  AT THE  GATE - WE CAN'T  HANDLE HER !",
+          "translation": "مقاتلة عظيمة عند البوابة ـ لا نستطيع مقاومتها!",
+          "width": 219,
+          "x": 296,
+          "y": 3228
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 22.5,
+          "symWidth": 19.25668449197861,
+          "text": "DON'T  PANIC ! GIVE  ME  THE DETAILS !",
+          "translation": "لا تذهل! زودني بالتفاصيل!",
+          "width": 222,
+          "x": 375,
+          "y": 4221
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "renderMode": "mask_only",
+          "symHeight": 18,
+          "symWidth": 17.75,
+          "text": "SHE'S  NOT  FROM",
+          "translation": "",
+          "width": 227,
+          "x": 113,
+          "y": 4526
+        }
+      ],
+      "imgHeight": 4543,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.08695652173913,
+          "symWidth": 17.28037125917561,
+          "text": "SHE'S NOT FROM SOUTH BLACK PORT . SHE'S INJURED OVER A DOZEN BROTHERS , AND LAO JIU IS ABOUT TO LOSE HIS GRIP ON HER !",
+          "translation": "ليست من جنوب الميناء الأسود. قد ألحقت إصابات بعشرة أخوة، واللاو جيو يكاد يفقد السيطرة عليها!",
+          "width": 281,
+          "x": 86,
+          "y": 11
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 19.75,
+          "symWidth": 18.41851355166573,
+          "text": "SHE  HITS EVERYONE  SHE SEES  AND  KEEPS ASKING  WHERE LU  FAN  IS !",
+          "translation": "تضرب كل من ترى وتصر على معرفة مكان لو فان!",
+          "width": 256,
+          "x": 299,
+          "y": 825
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 12.66666666666667,
+          "text": "... LU  FAN ?",
+          "translation": "... لو فان؟",
+          "width": 122,
+          "x": 85,
+          "y": 1259
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 21.5,
+          "text": "!  ?",
+          "translation": "!؟",
+          "width": 58,
+          "x": 274,
+          "y": 1927
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 15.85714285714286,
+          "text": "UGH ... !",
+          "translation": "آه...!",
+          "width": 102,
+          "x": 427,
+          "y": 3081
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 19.25,
+          "text": "LAO  JIU !!",
+          "translation": "لاو جيو!!",
+          "width": 146,
+          "x": 123,
+          "y": 4235
+        }
+      ],
+      "imgHeight": 4545,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 20.25,
+          "symWidth": 21.11313131313131,
+          "text": "WHO  ARE  YOU ? WHY  ARE  YOU ATTACKING  MY GANG ?",
+          "translation": "من أنت؟ ولماذا تعتدي على عصابتي؟",
+          "width": 224,
+          "x": 236,
+          "y": 997
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.33333333333333,
+          "symWidth": 16.22222222222222,
+          "text": "LU  FAN ,  YOU FINALLY  SHOW YOUR  FACE ...",
+          "translation": "لو فان، أخيراً أظهرت وجهك...",
+          "width": 187,
+          "x": 140,
+          "y": 2371
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.43910256410257,
+          "text": "THAT  VOICE ... ! WHY  IS  SHE HERE !?",
+          "translation": "تلك الصوت...! لماذا هي هنا؟!",
+          "width": 206,
+          "x": 332,
+          "y": 3309
+        }
+      ],
+      "imgHeight": 3549,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 20.25,
+          "symWidth": 19.95019841269841,
+          "text": "YOU  HAVEN'T FORGOTTEN ME ,  HAVE YOU ?",
+          "translation": "ألم تنسني بعد، أليس كذلك؟",
+          "width": 194,
+          "x": 148,
+          "y": 719
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 17.925,
+          "symWidth": 17.48452380952381,
+          "text": "YOU'RE SUPPOSED  TO  TAKE RESPONSIBILITY FOR  ME ,  YOU KNOW .",
+          "translation": "كان المفترض أن تتحمل عني المسؤولية، ألا تدري؟",
+          "width": 280,
+          "x": 203,
+          "y": 3274
+        }
+      ],
+      "imgHeight": 3550,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}
