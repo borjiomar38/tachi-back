@@ -62,6 +62,22 @@ describe('OCR cache analysis', () => {
     );
   });
 
+  it('ignores mask-only blocks when reporting translation issues', () => {
+    const analysis = analyzeTranslationManifestOcr({
+      manifest: buildManifest({
+        blocks: [
+          block({
+            renderMode: 'mask_only',
+            text: '腾讯 动漫',
+            translation: '',
+          }),
+        ],
+      }),
+    });
+
+    expect(analysis.issues).toEqual([]);
+  });
+
   it('summarizes and ranks detected grouping issues', () => {
     const analyses = [
       analyzeTranslationManifestOcr({

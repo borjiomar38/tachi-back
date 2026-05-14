@@ -53,6 +53,10 @@ export function analyzeTranslationManifestOcr(input: {
     blockCount += page.blocks.length;
 
     page.blocks.forEach((block, blockIndex) => {
+      if (block.renderMode === 'mask_only') {
+        return;
+      }
+
       const overmergedIssue = detectOvermergedBlock({
         block,
         blockIndex,
@@ -217,6 +221,7 @@ function detectUndermergedNeighbors(input: {
 }): OcrGroupingIssue[] {
   const sortedBlocks = input.blocks
     .map((block, index) => ({ block, index }))
+    .filter((item) => item.block.renderMode !== 'mask_only')
     .sort(
       (left, right) =>
         left.block.y - right.block.y || left.block.x - right.block.x

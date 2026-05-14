@@ -235,6 +235,164 @@ describe('OCR block grouping', () => {
     expect(result.blocks).toEqual([]);
   });
 
+  it('keeps large CJK OCR blocks when the source language is Chinese', () => {
+    const page = {
+      ...buildOcrPage(
+        [
+          block({
+            height: 324,
+            symHeight: 290.5,
+            symWidth: 255,
+            text: '你 發',
+            width: 622,
+            x: 29,
+            y: 535,
+          }),
+        ],
+        'zh'
+      ),
+      imgHeight: 4200,
+      imgWidth: 700,
+    };
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        text: '你 發',
+      }),
+    ]);
+  });
+
+  it.each([
+    { sourceLanguage: 'ja', text: 'ドン' },
+    { sourceLanguage: 'ko', text: '쾅' },
+  ])(
+    'keeps large East Asian OCR blocks when source language is $sourceLanguage',
+    ({ sourceLanguage, text }) => {
+      const page = {
+        ...buildOcrPage(
+          [
+            block({
+              height: 260,
+              symHeight: 180,
+              symWidth: 160,
+              text,
+              width: 420,
+              x: 120,
+              y: 480,
+            }),
+          ],
+          sourceLanguage
+        ),
+        imgHeight: 1800,
+        imgWidth: 700,
+      };
+
+      const result = coalesceOcrLineBlocks(page);
+
+      expect(result.blocks).toEqual([
+        expect.objectContaining({
+          text,
+        }),
+      ]);
+    }
+  );
+
+  it('marks standalone publisher edge logos as mask-only', () => {
+    const result = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({
+          height: 44,
+          text: '腾讯 动漫',
+          width: 92,
+          x: 605,
+          y: 780,
+        }),
+      ])
+    );
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        renderMode: 'mask_only',
+        text: '腾讯 动漫',
+      }),
+    ]);
+  });
+
+  it('keeps Asian source speech while stripping embedded site pollution', () => {
+    const page = buildOcrPage(
+      [
+        block({
+          height: 164,
+          text: '为什么 要 这 样 对 我 —— ACLOUDMEROL.COM COLAMANGA.COM',
+          width: 360,
+          x: 120,
+          y: 960,
+        }),
+      ],
+      'zh'
+    );
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        text: '为什么 要 这 样 对 我 ——',
+      }),
+    ]);
+  });
+
+  it('keeps sparse but real Asian source text blocks', () => {
+    const page = {
+      ...buildOcrPage(
+        [
+          block({
+            height: 360,
+            symHeight: 62,
+            symWidth: 58,
+            text: '为什么 要 这 样 对 我 ——',
+            width: 620,
+            x: 0,
+            y: 260,
+          }),
+        ],
+        'zh'
+      ),
+      imgHeight: 1200,
+      imgWidth: 700,
+    };
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        text: '为什么 要 这 样 对 我 ——',
+      }),
+    ]);
+  });
+
+  it('still drops huge punctuation-only artifacts for Asian source pages', () => {
+    const page = buildOcrPage(
+      [
+        block({
+          height: 180,
+          symHeight: 14,
+          symWidth: 8,
+          text: '......',
+          width: 360,
+          x: 0,
+          y: 200,
+        }),
+      ],
+      'zh'
+    );
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toEqual([]);
+  });
+
   it('keeps a large dense narration block with enough useful text', () => {
     const page = buildOcrPage([
       block({
@@ -528,7 +686,10 @@ function buildLayoutPage(
   };
 }
 
-function buildOcrPage(blocks: NormalizedOcrPage['blocks']): NormalizedOcrPage {
+function buildOcrPage(
+  blocks: NormalizedOcrPage['blocks'],
+  sourceLanguage = 'en'
+): NormalizedOcrPage {
   return {
     blocks,
     imgHeight: 900,
@@ -536,7 +697,7 @@ function buildOcrPage(blocks: NormalizedOcrPage['blocks']): NormalizedOcrPage {
     provider: 'google_cloud_vision',
     providerModel: 'TEXT_DETECTION',
     providerRequestId: 'test',
-    sourceLanguage: 'en',
+    sourceLanguage,
     usage: {
       inputTokens: null,
       latencyMs: 0,

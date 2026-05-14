@@ -1,0 +1,1263 @@
+{
+  "jobId": "fixture-job",
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "x": 94,
+          "y": 1871,
+          "text": "全职  FULL 5 ( ALL ) ELEMENTS",
+          "angle": 0,
+          "width": 812,
+          "height": 226,
+          "symWidth": 84.52777777777777,
+          "symHeight": 104.7777777777778,
+          "translation": "الكلية الكاملة للعناصر (5 عناصر مُنجزة)"
+        },
+        {
+          "x": 998,
+          "y": 2080,
+          "text": "體 讯 动漫",
+          "angle": 0,
+          "width": 179,
+          "height": 44,
+          "symWidth": 46.25,
+          "symHeight": 44,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "x": 406,
+          "y": 626,
+          "text": "故事 : TONY",
+          "angle": 0,
+          "width": 359,
+          "height": 71,
+          "symWidth": 37.28571428571428,
+          "symHeight": 68,
+          "translation": "القصة: توني"
+        },
+        {
+          "x": 409,
+          "y": 748,
+          "text": "绘制 : HAMA",
+          "angle": 0,
+          "width": 374,
+          "height": 71,
+          "symWidth": 39,
+          "symHeight": 69,
+          "translation": "الرسومات: حاما"
+        },
+        {
+          "x": 404,
+          "y": 872,
+          "text": "责编 : 芮芮",
+          "angle": 0,
+          "width": 333,
+          "height": 68,
+          "symWidth": 43.8,
+          "symHeight": 68,
+          "translation": "المحرر: روي روي"
+        },
+        {
+          "x": 437,
+          "y": 1587,
+          "text": "多拉格 文化",
+          "angle": 0,
+          "width": 302,
+          "height": 57,
+          "symWidth": 57.2,
+          "symHeight": 54,
+          "translation": "ثقافة دوراغ"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2048,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "x": 520,
+          "y": 325,
+          "text": "为什么 ?",
+          "angle": 0,
+          "width": 230,
+          "height": 63,
+          "symWidth": 54,
+          "symHeight": 61,
+          "translation": "لماذا؟"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "x": 438,
+          "y": 564,
+          "text": "为什么 要 这 样 对 我 ——",
+          "angle": 0,
+          "width": 329,
+          "height": 139,
+          "symWidth": 64.6,
+          "symHeight": 62.5,
+          "translation": "لماذا تعاملني\nبهذه القسوة—"
+        },
+        {
+          "x": 474,
+          "y": 1395,
+          "text": "一次 又一次 地 救 我 !",
+          "angle": 0,
+          "width": 326,
+          "height": 145,
+          "symWidth": 57.425,
+          "symHeight": 60,
+          "translation": "أنقذتني مرارًا وتكرارًا!"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "x": 472,
+          "y": 910,
+          "text": "用 圣 喻 救 我 ! 现在 又 替 我 用 肉身 受罚 !",
+          "angle": 0,
+          "width": 359,
+          "height": 222,
+          "symWidth": 55.53333333333333,
+          "symHeight": 59.66666666666666,
+          "translation": "أنقذتني بالقداسة!\nوالآن تعاقب جسدي بدلاً عني!"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "x": 500,
+          "y": 1207,
+          "text": "我 只是 个 会 不停 犯错 ,",
+          "angle": 0,
+          "width": 326,
+          "height": 140,
+          "symWidth": 56.09999999999999,
+          "symHeight": 60,
+          "translation": "أنا لست سوى شخص\nيرتكب الخطأ بلا توقف،"
+        },
+        {
+          "x": 369,
+          "y": 1583,
+          "text": "什么 也不 懂 的 ………",
+          "angle": 0,
+          "width": 264,
+          "height": 139,
+          "symWidth": 54.35,
+          "symHeight": 61,
+          "translation": "ولست أدري شيئًا..."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "x": 396,
+          "y": 1979,
+          "text": "莽撞 又 愚蠢 的 自私 鬼 …………",
+          "angle": 0,
+          "width": 392,
+          "height": 143,
+          "symWidth": 57.22619047619047,
+          "symHeight": 63.5,
+          "translation": "يا لهذا الغرور الأحمق الأناني..."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "x": 384,
+          "y": 965,
+          "text": "我 明明 ……",
+          "angle": 0,
+          "width": 256,
+          "height": 61,
+          "symWidth": 46,
+          "symHeight": 59.6,
+          "translation": "لقد كنت واضحًا..."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 1593,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "x": 511,
+          "y": 305,
+          "text": "喂喂 喂 ……",
+          "angle": 0,
+          "width": 295,
+          "height": 60,
+          "symWidth": 49.6,
+          "symHeight": 58,
+          "translation": "هيه هيه هيه..."
+        },
+        {
+          "x": 477,
+          "y": 1496,
+          "text": "你 在 说 什么 啊 臭 小鬼 ——",
+          "angle": 0,
+          "width": 400,
+          "height": 146,
+          "symWidth": 68.11666666666667,
+          "symHeight": 61.2,
+          "translation": "عمّا تتحدث أيها الوغد الحقير—"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "x": 456,
+          "y": 551,
+          "text": "我 的 徒弟 啊 。",
+          "angle": 0,
+          "width": 351,
+          "height": 60,
+          "symWidth": 53.16666666666666,
+          "symHeight": 60,
+          "translation": "تلميذي."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "x": 997,
+          "y": 2081,
+          "text": "腾讯 动漫",
+          "angle": 0,
+          "width": 182,
+          "height": 45,
+          "symWidth": 49.25,
+          "symHeight": 44,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "x": 997,
+          "y": 2081,
+          "text": "腾讯 动漫",
+          "angle": 0,
+          "width": 182,
+          "height": 48,
+          "symWidth": 48.5,
+          "symHeight": 48,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "x": 995,
+          "y": 930,
+          "text": "腾讯 动漫",
+          "angle": 0,
+          "width": 181,
+          "height": 43,
+          "symWidth": 47.75,
+          "symHeight": 43,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 991,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "x": 1083,
+          "y": 1653,
+          "text": "动漫",
+          "angle": 0,
+          "width": 92,
+          "height": 45,
+          "symWidth": 52.5,
+          "symHeight": 44,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [
+        {
+          "x": 429,
+          "y": 1677,
+          "text": "雷击 很痛 吧 !",
+          "angle": 0,
+          "width": 354,
+          "height": 37,
+          "symWidth": 53.33333333333334,
+          "symHeight": 60,
+          "translation": "الصدمة الكهرباء مؤلمة حقًا!"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "x": 1093,
+          "y": 1652,
+          "text": "动漫",
+          "angle": 0,
+          "width": 82,
+          "height": 47,
+          "symWidth": 56,
+          "symHeight": 47,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "x": 344,
+          "y": 550,
+          "text": "哈哈哈 哈哈 !",
+          "angle": 0,
+          "width": 352,
+          "height": 62,
+          "symWidth": 52.66666666666666,
+          "symHeight": 62,
+          "translation": "هاهاها هاها!"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "x": 347,
+          "y": 564,
+          "text": "还是 第 一次",
+          "angle": 0,
+          "width": 328,
+          "height": 61,
+          "symWidth": 61.4,
+          "symHeight": 61,
+          "translation": "إنها المرة الأولى"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "x": 1080,
+          "y": 1653,
+          "text": "动漫",
+          "angle": 0,
+          "width": 95,
+          "height": 46,
+          "symWidth": 50,
+          "symHeight": 45,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "x": 292,
+          "y": 314,
+          "text": "因为 师父 和 天牢 的 典",
+          "angle": 0,
+          "width": 587,
+          "height": 62,
+          "symWidth": 58.44444444444444,
+          "symHeight": 62,
+          "translation": "لأن المعلم وسجن السماء هما"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1714,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "x": 365,
+          "y": 1129,
+          "text": "是 在 那里 。",
+          "angle": 0,
+          "width": 303,
+          "height": 63,
+          "symWidth": 57.4,
+          "symHeight": 61.2,
+          "translation": "كانا هناك."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2062,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "x": 409,
+          "y": 1033,
+          "text": "所以 我 本 想 在 天牢 中 再 呆 一段 时间 。",
+          "angle": 0,
+          "width": 356,
+          "height": 219,
+          "symWidth": 58.55555555555555,
+          "symHeight": 59.66666666666666,
+          "translation": "كنتُ أنوي\nأن أبقى فترةً أطول في السجن السماوي."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "x": 424,
+          "y": 1154,
+          "text": "我 并不 祈求 能 和 师 父 有 上 一 世 那样 的 羁绊 。",
+          "angle": 0,
+          "width": 420,
+          "height": 214,
+          "symWidth": 60.75892857142857,
+          "symHeight": 59,
+          "translation": "لا أرجو إلا أن يكون لي رباطٌ مع المعلّم\nعلى غرار ما كان في حياتنا الماضية."
+        },
+        {
+          "x": 447,
+          "y": 1945,
+          "text": "只是 幻想 ………",
+          "angle": 0,
+          "width": 389,
+          "height": 63,
+          "symWidth": 56.71428571428572,
+          "symHeight": 60,
+          "translation": "مجرد خيالٍ فقط..."
+        },
+        {
+          "x": 997,
+          "y": 2081,
+          "text": "腾讯 动漫",
+          "angle": 0,
+          "width": 179,
+          "height": 45,
+          "symWidth": 49.25,
+          "symHeight": 45,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "x": 399,
+          "y": 1067,
+          "text": "能够 碰到 好运",
+          "angle": 0,
+          "width": 392,
+          "height": 61,
+          "symWidth": 60.33333333333334,
+          "symHeight": 60,
+          "translation": "أن ألتقي بالحظِّ السعيد"
+        },
+        {
+          "x": 393,
+          "y": 1226,
+          "text": "看 他 一眼 ………",
+          "angle": 0,
+          "width": 392,
+          "height": 58,
+          "symWidth": 57.28571428571428,
+          "symHeight": 58,
+          "translation": "وأن أنظر إليه\nمرةً واحدة..."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "x": 310,
+          "y": 1645,
+          "text": "相遇 ,",
+          "angle": 0,
+          "width": 277,
+          "height": 118,
+          "symWidth": 85.33333333333333,
+          "symHeight": 109,
+          "translation": "لقاء."
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "x": 322,
+          "y": 0,
+          "text": "喂 ! 你 就是 白 以 吗 ?",
+          "angle": 0,
+          "width": 225,
+          "height": 201,
+          "symWidth": 49.27777777777778,
+          "symHeight": 58,
+          "translation": "هيّا! هل أنت من يُدعى باي إي؟"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "x": 494,
+          "y": 769,
+          "text": "就是 你 把 神 族 狠狠 揍 了 一顿 吗 ? !",
+          "angle": 0,
+          "width": 329,
+          "height": 207,
+          "symWidth": 55.13333333333333,
+          "symHeight": 59.46666666666667,
+          "translation": "هل أنت من ضرب اللهبيين\nبقسوةٍ هائلة؟!"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 2143,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 998,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "x": 617,
+          "y": 390,
+          "text": "哈哈 哈哈 !",
+          "angle": 0,
+          "width": 286,
+          "height": 60,
+          "symWidth": 51,
+          "symHeight": 60,
+          "translation": "هاهاها!"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "x": 461,
+          "y": 999,
+          "text": "你 可 真是 太 勇猛 了 !",
+          "angle": 0,
+          "width": 292,
+          "height": 136,
+          "symWidth": 56.025,
+          "symHeight": 57.5,
+          "translation": "حقًا أنت شجاعٌ للغاية!"
+        },
+        {
+          "x": 1083,
+          "y": 1539,
+          "text": "动漫",
+          "angle": 0,
+          "width": 88,
+          "height": 45,
+          "symWidth": 58,
+          "symHeight": 43.5,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "x": 518,
+          "y": 34,
+          "text": "有 没有 兴趣 , 来 我 第六 工 会 团 ?",
+          "angle": 0,
+          "width": 355,
+          "height": 216,
+          "symWidth": 55.94444444444445,
+          "symHeight": 59.33333333333334,
+          "translation": "هل تود الانضمام إلى نقابتي السادسة؟"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [],
+      "imgWidth": 1200,
+      "imgHeight": 2310,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [
+        {
+          "x": 24,
+          "y": 1193,
+          "text": "《 重生 后 我 用 镜面 反转 复仇 》",
+          "angle": 0,
+          "width": 1029,
+          "height": 86,
+          "symWidth": 75.46153846153847,
+          "symHeight": 86,
+          "translation": "«بعد الولادة الجديدة، أستخدم الانعكاس المرآوي للانتقام»"
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "x": 693,
+          "y": 1276,
+          "text": "77771",
+          "angle": 0,
+          "width": 12,
+          "height": 52,
+          "symWidth": 9.8,
+          "symHeight": 14.2,
+          "translation": "77771"
+        },
+        {
+          "x": 221,
+          "y": 1400,
+          "text": "《 我 用 顶级 系统 重塑 世界 》",
+          "angle": 0,
+          "width": 944,
+          "height": 84,
+          "symWidth": 74.16666666666667,
+          "symHeight": 84,
+          "translation": "«أعيد بناء العالم بنظام فائق»"
+        },
+        {
+          "x": 995,
+          "y": 1539,
+          "text": "腾讯 动漫",
+          "angle": 0,
+          "width": 182,
+          "height": 43,
+          "symWidth": 46.5,
+          "symHeight": 41,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [
+        {
+          "x": 161,
+          "y": 130,
+          "text": "们 会 投入 全部 的 热情 与 真诚 。",
+          "angle": 0,
+          "width": 785,
+          "height": 77,
+          "symWidth": 57.53846153846154,
+          "symHeight": 77,
+          "translation": "سنُكرّس كل حماسنا وصدقنا."
+        },
+        {
+          "x": 90,
+          "y": 244,
+          "text": "认真 做好 每一 部 作品 ~",
+          "angle": 0,
+          "width": 624,
+          "height": 70,
+          "symWidth": 60.3,
+          "symHeight": 70,
+          "translation": "نعمل بجد في كل عمل نقدمه~"
+        },
+        {
+          "x": 175,
+          "y": 344,
+          "text": "们 的 每 一个 收藏 , 点 赞 , 评论",
+          "angle": 0,
+          "width": 783,
+          "height": 85,
+          "symWidth": 54,
+          "symHeight": 79.76923076923077,
+          "translation": "كل ذخيرة، إعجاب، تعليق منكم"
+        },
+        {
+          "x": 91,
+          "y": 463,
+          "text": "都 将 成为 我们 前进 路上 最大 的 鼓励 !",
+          "angle": 0,
+          "width": 938,
+          "height": 74,
+          "symWidth": 55.6875,
+          "symHeight": 67.375,
+          "translation": "ستكون أعظم حافز لنا في طريقنا قُدماً!"
+        },
+        {
+          "x": 345,
+          "y": 681,
+          "text": "- 多拉格 文化 全体 创 作者 敬上",
+          "angle": 0,
+          "width": 809,
+          "height": 75,
+          "symWidth": 61.15384615384615,
+          "symHeight": 72.38461538461539,
+          "translation": "- بإجلال كُتّاب ثقافة دوراغ جميعاً"
+        },
+        {
+          "x": 268,
+          "y": 1121,
+          "text": "可 在 搜索 栏 搜索 关注",
+          "angle": 0,
+          "width": 677,
+          "height": 74,
+          "symWidth": 73.88888888888889,
+          "symHeight": 74,
+          "translation": "ابحث و تابع في شريط البحث"
+        },
+        {
+          "x": 999,
+          "y": 1242,
+          "text": "腾讯 动漫",
+          "angle": 0,
+          "width": 176,
+          "height": 44,
+          "symWidth": 47,
+          "symHeight": 44,
+          "renderMode": "mask_only",
+          "translation": ""
+        }
+      ],
+      "imgWidth": 1200,
+      "imgHeight": 1302,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "version": "2026-05-06.no-mobile-layout-hints.v1",
+  "deviceId": "fixture-device",
+  "licenseId": "fixture-license",
+  "pageCount": 45,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg"
+  ],
+  "completedAt": "2026-05-14T00:00:00.000Z",
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "pageFingerprints": [
+    {
+      "fileName": "001.jpg",
+      "pageNumber": 1,
+      "checksumSha256": "96920cc2bd1c0e643cc83ca68f25c9e68e728c7af1671bd45bbfcd887893ccc1"
+    },
+    {
+      "fileName": "002.jpg",
+      "pageNumber": 2,
+      "checksumSha256": "eed21b0978f67080a64eb37ac4cdbdb6b33715e981c19cdec8cda1e59b34fae7"
+    },
+    {
+      "fileName": "003.jpg",
+      "pageNumber": 3,
+      "checksumSha256": "ee8100113ee60fbecb6bbd5aae0c371d2a3556c2b1ffe847fb4fabcf634f8707"
+    },
+    {
+      "fileName": "004.jpg",
+      "pageNumber": 4,
+      "checksumSha256": "116faf8e34eb7634430f43d7e9546abd24c23e2db21818a6975230a11cd6a1f0"
+    },
+    {
+      "fileName": "005.jpg",
+      "pageNumber": 5,
+      "checksumSha256": "83f68dc92843ba11b2f67f1ee8428dc829823c736a3a15662a02fd21a84f1505"
+    },
+    {
+      "fileName": "006.jpg",
+      "pageNumber": 6,
+      "checksumSha256": "10925112a42c7f0e22b305e606bdc97bc07156193a36d4242b9f9403bbdd7d6c"
+    },
+    {
+      "fileName": "007.jpg",
+      "pageNumber": 7,
+      "checksumSha256": "817ed928de0012e324fc7c21dafa55bc6ced391b84968977bed93d029428de4c"
+    },
+    {
+      "fileName": "008.jpg",
+      "pageNumber": 8,
+      "checksumSha256": "3d0b1a9cd290fd1d30a8c88c78dbe934a13393a76e3aa7c44f844b7c766a53d8"
+    },
+    {
+      "fileName": "009.jpg",
+      "pageNumber": 9,
+      "checksumSha256": "bf4bd8c149c34e17e41ac13e67e8d4490d9a18fa260f9159ffa139173a82c348"
+    },
+    {
+      "fileName": "010.jpg",
+      "pageNumber": 10,
+      "checksumSha256": "e45bc8e3ef893235cd1fe794a30b718dcbff99c45f9c7d90fef392c5dbf2168b"
+    },
+    {
+      "fileName": "011.jpg",
+      "pageNumber": 11,
+      "checksumSha256": "3d1dec60e929183f29cc3811d8d91be4299be00b65bc27c86677a9ff47d4a2bf"
+    },
+    {
+      "fileName": "012.jpg",
+      "pageNumber": 12,
+      "checksumSha256": "aca640938e9887188e175d9e2b30907ce84183d3ea57b998e1e77950fa43faab"
+    },
+    {
+      "fileName": "013.jpg",
+      "pageNumber": 13,
+      "checksumSha256": "4370dd02d1d910178da76a93f1dedc925c151cbadbbfde965d10ed443c580925"
+    },
+    {
+      "fileName": "014.jpg",
+      "pageNumber": 14,
+      "checksumSha256": "866055856bd6f7568aa615130781d1243c8653635a5619552287754a00507a51"
+    },
+    {
+      "fileName": "015.jpg",
+      "pageNumber": 15,
+      "checksumSha256": "5e5f63720c248f8e9e246964399e71d9b302ba573eebfeb0a63ce0b1eca0a946"
+    },
+    {
+      "fileName": "016.jpg",
+      "pageNumber": 16,
+      "checksumSha256": "af7d3b152dbb0ecbd98fdec32cd52c96790affc601ff309dda21c863b8070c2b"
+    },
+    {
+      "fileName": "017.jpg",
+      "pageNumber": 17,
+      "checksumSha256": "4e565a9ef37f8b8ee569fb89792e0d4442c38bf8f87110957f860c3aed2d1628"
+    },
+    {
+      "fileName": "018.jpg",
+      "pageNumber": 18,
+      "checksumSha256": "096a4dc28b0f965f854d23775cedfc5dd9f7b77cbf1e5b50d4dd506a3d198132"
+    },
+    {
+      "fileName": "019.jpg",
+      "pageNumber": 19,
+      "checksumSha256": "a71bbc59889bd0ccc32733c310e5e075dc09f6f531f4fd32f2a2ab951c987368"
+    },
+    {
+      "fileName": "020.jpg",
+      "pageNumber": 20,
+      "checksumSha256": "ee88a0c0defc9c397111b2bd740e85c6a3a86a29f7e365b832ac73660baf49f8"
+    },
+    {
+      "fileName": "021.jpg",
+      "pageNumber": 21,
+      "checksumSha256": "3470ccc5fc493921401b9b6489f982f36b11cc3509996d0c7503a0c3d3c6c7ac"
+    },
+    {
+      "fileName": "022.jpg",
+      "pageNumber": 22,
+      "checksumSha256": "e019580c0295db32dc3a6e5188f6f61e93d965ec4895d48842f78586b9f76026"
+    },
+    {
+      "fileName": "023.jpg",
+      "pageNumber": 23,
+      "checksumSha256": "bbf9ba4ce22bd01068cdcdd8c5ab570ae90ad8906d0f8587f689a4d3919e4a41"
+    },
+    {
+      "fileName": "024.jpg",
+      "pageNumber": 24,
+      "checksumSha256": "3b72bee2949b2c7200289c41809ff956eea6b320107b95ad2f2e7e5695ba2c75"
+    },
+    {
+      "fileName": "025.jpg",
+      "pageNumber": 25,
+      "checksumSha256": "f4479ae07ff05283ba20e476b95aae3a443a3b964210846a0a7bba74c4b29d85"
+    },
+    {
+      "fileName": "026.jpg",
+      "pageNumber": 26,
+      "checksumSha256": "59fe550ffeea6f4f4ad56306928c865f28141d3074bbbabc8081ed9d4a43b987"
+    },
+    {
+      "fileName": "027.jpg",
+      "pageNumber": 27,
+      "checksumSha256": "abcfe072ee088ed3e5a88cf875fcbf6352b6c78a92dceadc98176765493d2783"
+    },
+    {
+      "fileName": "028.jpg",
+      "pageNumber": 28,
+      "checksumSha256": "727bb49d733eb553be4bd25d03f1c2871521e62677e15aa418f78938a709240d"
+    },
+    {
+      "fileName": "029.jpg",
+      "pageNumber": 29,
+      "checksumSha256": "50f16245c53209deff45206c63d5dbc201b13c7623d2cd78ff864027bc28d892"
+    },
+    {
+      "fileName": "030.jpg",
+      "pageNumber": 30,
+      "checksumSha256": "021eb0868b09922d1d8a2721cd3991810ada1dd09ccfd9f8973a301be170ad95"
+    },
+    {
+      "fileName": "031.jpg",
+      "pageNumber": 31,
+      "checksumSha256": "e3357b043d2c0f488e2b237570b6f305becaae79a3b775f52343e93ba6fb1fb4"
+    },
+    {
+      "fileName": "032.jpg",
+      "pageNumber": 32,
+      "checksumSha256": "b6b3092beac360a41558081766b9b4e4421bf601b688de1f0d5689c9b6276226"
+    },
+    {
+      "fileName": "033.jpg",
+      "pageNumber": 33,
+      "checksumSha256": "bdfcd18f2047f8d6f0b3ef34f82601dac8def6c39f37717ddff10778c93ccb8e"
+    },
+    {
+      "fileName": "034.jpg",
+      "pageNumber": 34,
+      "checksumSha256": "fa99bb7f3014b968d99ac738b93819549f9bb254316511b19cbe6746d267bfca"
+    },
+    {
+      "fileName": "035.jpg",
+      "pageNumber": 35,
+      "checksumSha256": "729cdc61687ae5204dd2b183315e22dd0ae2d09ee93af8e3595927fd39509835"
+    },
+    {
+      "fileName": "036.jpg",
+      "pageNumber": 36,
+      "checksumSha256": "a9c7b0fefbf41658fd0395b73324604e4ea40616400d9880c881fb2e2968c68a"
+    },
+    {
+      "fileName": "037.jpg",
+      "pageNumber": 37,
+      "checksumSha256": "d59e668d476db476bf22ad1730c12831aafa2bde2bed97df786450ec35d2bdc7"
+    },
+    {
+      "fileName": "038.jpg",
+      "pageNumber": 38,
+      "checksumSha256": "47692e0d166a1ebd55d4393f8ef92480cfea142cdfd36bd094541a4902660780"
+    },
+    {
+      "fileName": "039.jpg",
+      "pageNumber": 39,
+      "checksumSha256": "4160ebeab882e80bb7c7e7ba43d83e35b838d1658d4fce710766e960a19a692f"
+    },
+    {
+      "fileName": "040.jpg",
+      "pageNumber": 40,
+      "checksumSha256": "e2b9c9b18a857269b857bb035a0cf542f95c130c3f79e35f4411ea0f6ec5f1de"
+    },
+    {
+      "fileName": "041.jpg",
+      "pageNumber": 41,
+      "checksumSha256": "60114a114eb4df3ed3c3ee299c54173a5cf76a513af5e122d0195623fc9aee34"
+    },
+    {
+      "fileName": "042.jpg",
+      "pageNumber": 42,
+      "checksumSha256": "79354c399d200aa7fb2c77ba4d1c53c745ea8b1bc052978ce410a8918045766a"
+    },
+    {
+      "fileName": "043.jpg",
+      "pageNumber": 43,
+      "checksumSha256": "ee13a5b9e8e4c51bff73d8bc2624031274c90cd5a3978ecf9938734f2312f3f5"
+    },
+    {
+      "fileName": "044.jpg",
+      "pageNumber": 44,
+      "checksumSha256": "0508d3c5ab9a5766a6abe59d877b337865f16482818fc8e42491b72fa317d6f7"
+    },
+    {
+      "fileName": "045.jpg",
+      "pageNumber": 45,
+      "checksumSha256": "219edaab9f336c4400631615d17671e7645edcd4a16b1b92214425f806985caa"
+    }
+  ]
+}

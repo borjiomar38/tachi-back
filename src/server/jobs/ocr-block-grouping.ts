@@ -382,7 +382,7 @@ function sanitizeOcrPageForGrouping(
   ocrPage: NormalizedOcrPage
 ): NormalizedOcrPage {
   const sanitizedBlocks = ocrPage.blocks
-    .map(sanitizeOcrBlockForGrouping)
+    .map((block) => sanitizeOcrBlockForGrouping(block, ocrPage))
     .filter((block) => !shouldDropOcrBlockBeforeTranslation(block, ocrPage));
 
   return {
@@ -395,6 +395,10 @@ function shouldDropOcrBlockBeforeTranslation(
   block: NormalizedOcrPage['blocks'][number],
   page: NormalizedOcrPage
 ) {
+  if (isAsianSourceLanguage(page.sourceLanguage)) {
+    return shouldDropAsianSourcePollutionBlock(block, page);
+  }
+
   return (
     isSuspiciousLargeSparseOcrBlock(block, page) ||
     isLargeDecorativeEastAsianOcrBlock(block, page)
@@ -402,8 +406,17 @@ function shouldDropOcrBlockBeforeTranslation(
 }
 
 function sanitizeOcrBlockForGrouping(
-  block: NormalizedOcrPage['blocks'][number]
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
 ): NormalizedOcrPage['blocks'][number] {
+  if (block.renderMode === 'mask_only') {
+    return block;
+  }
+
+  if (isLikelyStandalonePublisherWatermarkBlock(block, page)) {
+    return toMaskOnlyBlock(block);
+  }
+
   if (!hasLikelyWatermarkSource(block.text)) {
     return block;
   }
@@ -502,6 +515,19 @@ function isSuspiciousLargeSparseOcrBlock(
   return largeEdgeBlock || extremeSparseBlock || fullWidthSparseBlock;
 }
 
+function shouldDropAsianSourcePollutionBlock(
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  if (block.renderMode === 'mask_only') {
+    return false;
+  }
+
+  const metrics = getSparseOcrBlockMetrics(block, page);
+
+  return metrics.usefulCharacterCount <= 0 && metrics.areaRatio >= 0.025;
+}
+
 function isLargeDecorativeEastAsianOcrBlock(
   block: NormalizedOcrPage['blocks'][number],
   page: NormalizedOcrPage
@@ -584,6 +610,35 @@ function countEastAsianScriptCharacters(text: string) {
   ).length;
 }
 
+function isAsianSourceLanguage(sourceLanguage: string) {
+  return /^(?:zh|zho|chi|cmn|yue|ja|jpn|ko|kor)(?:\b|[-_])/i.test(
+    sourceLanguage.trim()
+  );
+}
+
+function isLikelyStandalonePublisherWatermarkBlock(
+  block: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  const normalized = normalizeOcrText(block.text).replace(/\s+/g, '');
+
+  if (!PUBLISHER_WATERMARK_TEXTS.has(normalized)) {
+    return false;
+  }
+
+  const metrics = getSparseOcrBlockMetrics(block, page);
+  const edgeMarginX = Math.max(24, page.imgWidth * 0.035);
+  const touchesHorizontalEdge =
+    block.x <= edgeMarginX ||
+    block.x + block.width >= page.imgWidth - edgeMarginX;
+
+  return (
+    touchesHorizontalEdge &&
+    metrics.widthRatio <= 0.24 &&
+    metrics.heightRatio <= 0.08
+  );
+}
+
 const MAX_DECORATIVE_SOURCE_CHARS = 8;
 const MIN_DECORATIVE_AREA_RATIO = 0.015;
 const MIN_DECORATIVE_EAST_ASIAN_RATIO = 0.6;
@@ -592,6 +647,15 @@ const MIN_DECORATIVE_SYMBOL_SIZE = 48;
 const MIN_DECORATIVE_WIDTH_RATIO = 0.35;
 const EAST_ASIAN_SCRIPT_CHARACTER_REGEX =
   /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]/u;
+const PUBLISHER_WATERMARK_TEXTS = new Set([
+  '动漫',
+  '腾讯',
+  '腾讯动漫',
+  '騰訊',
+  '騰訊動漫',
+  '体讯动漫',
+  '體讯动漫',
+]);
 
 const URL_OR_DOMAIN_REGEX =
   /(?:https?:\/\/|www\.|(?:[a-z0-9][a-z0-9-]*\.)+(?:com|net|org|io|co|me|xyz|top|site|vip|cc|tv)\b)/gi;
