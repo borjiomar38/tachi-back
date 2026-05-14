@@ -1,4 +1,5 @@
-import { DownloadIcon } from 'lucide-react';
+import { ChevronLeftIcon, ChevronRightIcon, DownloadIcon } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
 
@@ -8,15 +9,21 @@ import { buttonVariants } from '@/components/ui/button';
 import heroBackground from '@/features/auth/layout-login-background.webp';
 import heroCharacter from '@/features/auth/layout-login-character.webp';
 import { BlogArticleCard } from '@/features/blog/blog-article-card';
-import { BlogArticleSummary } from '@/features/blog/schema';
+import {
+  BlogArticlePagination,
+  BlogArticleSummary,
+} from '@/features/blog/schema';
 import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 interface PageBlogIndexProps {
   articles: BlogArticleSummary[];
+  pagination: BlogArticlePagination;
 }
 
-export const PageBlogIndex = ({ articles }: PageBlogIndexProps) => {
+const formatBlogCount = new Intl.NumberFormat('en-US');
+
+export const PageBlogIndex = ({ articles, pagination }: PageBlogIndexProps) => {
   return (
     <PublicShell>
       <section className="mx-auto w-full max-w-6xl px-4 pt-7 md:pt-10">
@@ -87,7 +94,80 @@ export const PageBlogIndex = ({ articles }: PageBlogIndexProps) => {
             <BlogArticleCard key={article.slug} article={article} />
           ))}
         </div>
+        <BlogPagination pagination={pagination} />
       </PublicSection>
     </PublicShell>
   );
 };
+
+function BlogPagination(props: { pagination: BlogArticlePagination }) {
+  if (props.pagination.totalPages <= 1) {
+    return null;
+  }
+
+  const previousPage = Math.max(1, props.pagination.page - 1);
+  const nextPage = Math.min(
+    props.pagination.totalPages,
+    props.pagination.page + 1
+  );
+
+  return (
+    <nav
+      aria-label="Blog pagination"
+      className="mt-8 flex flex-col gap-3 rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-600 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>
+        Showing {formatBlogCount.format(props.pagination.pageStart)}-
+        {formatBlogCount.format(props.pagination.pageEnd)} of{' '}
+        {formatBlogCount.format(props.pagination.totalItems)} articles · Page{' '}
+        {formatBlogCount.format(props.pagination.page)} of{' '}
+        {formatBlogCount.format(props.pagination.totalPages)}
+      </p>
+      <div className="flex flex-wrap items-center gap-2">
+        <PaginationLink
+          disabled={!props.pagination.hasPreviousPage}
+          href={buildBlogPageHref(previousPage)}
+        >
+          <ChevronLeftIcon className="size-4" />
+          Previous
+        </PaginationLink>
+        <PaginationLink
+          disabled={!props.pagination.hasNextPage}
+          href={buildBlogPageHref(nextPage)}
+        >
+          Next
+          <ChevronRightIcon className="size-4" />
+        </PaginationLink>
+      </div>
+    </nav>
+  );
+}
+
+function PaginationLink(props: {
+  children: ReactNode;
+  disabled: boolean;
+  href: string;
+}) {
+  const className = cn(
+    buttonVariants({ variant: 'secondary', size: 'sm' }),
+    'gap-2'
+  );
+
+  if (props.disabled) {
+    return (
+      <span aria-disabled="true" className={cn(className, 'opacity-50')}>
+        {props.children}
+      </span>
+    );
+  }
+
+  return (
+    <a href={props.href} className={className}>
+      {props.children}
+    </a>
+  );
+}
+
+function buildBlogPageHref(page: number) {
+  return page <= 1 ? '/blog' : `/blog?page=${page}`;
+}

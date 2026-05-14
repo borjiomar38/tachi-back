@@ -51,6 +51,13 @@ interface BlogSitemapEntryRow {
   updatedAt: Date;
 }
 
+interface BlogArticleSummaryQueryOptions {
+  excludedSlugs?: string[];
+  publishedAtFrom?: Date;
+  skip?: number;
+  take?: number;
+}
+
 export interface BlogSitemapEntry {
   lastModified: string;
   slug: string;
@@ -82,20 +89,42 @@ const blogArticleDetailSelect = {
 
 export async function getPublishedBlogArticleSummaries(): Promise<
   BlogArticleSummary[]
-> {
+>;
+export async function getPublishedBlogArticleSummaries(
+  options: BlogArticleSummaryQueryOptions
+): Promise<BlogArticleSummary[]>;
+export async function getPublishedBlogArticleSummaries(
+  options: BlogArticleSummaryQueryOptions = {}
+): Promise<BlogArticleSummary[]> {
+  const where = buildPublishedBlogArticleWhere({
+    excludedSlugs: options.excludedSlugs,
+    now: new Date(),
+    publishedAtFrom: options.publishedAtFrom,
+  });
   const rows = await db.blogArticle.findMany({
     orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }],
     select: blogArticleSummarySelect,
-    take: 24,
-    where: {
-      publishedAt: {
-        lte: new Date(),
-      },
-      status: BlogArticleStatus.published,
-    },
+    ...(options.skip ? { skip: options.skip } : {}),
+    take: options.take ?? 24,
+    where,
   });
 
   return rows.map(mapBlogArticleSummaryRow);
+}
+
+export async function getPublishedBlogArticleSummaryCount(
+  options: Pick<
+    BlogArticleSummaryQueryOptions,
+    'excludedSlugs' | 'publishedAtFrom'
+  > = {}
+): Promise<number> {
+  return await db.blogArticle.count({
+    where: buildPublishedBlogArticleWhere({
+      excludedSlugs: options.excludedSlugs,
+      now: new Date(),
+      publishedAtFrom: options.publishedAtFrom,
+    }),
+  });
 }
 
 export async function getPublishedBlogArticleBySlug(
@@ -391,6 +420,23 @@ function findTopicForArticle(row: {
 
 function buildBlogHeroImageRouteUrl(slug: string) {
   return `/api/blog/heroes/${encodeURIComponent(slug)}`;
+}
+
+function buildPublishedBlogArticleWhere(input: {
+  excludedSlugs?: string[];
+  now: Date;
+  publishedAtFrom?: Date;
+}) {
+  const excludedSlugs = input.excludedSlugs?.filter(Boolean) ?? [];
+
+  return {
+    ...(excludedSlugs.length > 0 ? { slug: { notIn: excludedSlugs } } : {}),
+    publishedAt: {
+      ...(input.publishedAtFrom ? { gte: input.publishedAtFrom } : {}),
+      lte: input.now,
+    },
+    status: BlogArticleStatus.published,
+  };
 }
 
 function mapBlogArticleSummaryRow(
