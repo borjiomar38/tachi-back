@@ -48,6 +48,22 @@ export interface BlogArticleSummary {
   updatedAt: string;
 }
 
+export interface BlogArticlePagination {
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+  page: number;
+  pageEnd: number;
+  pageSize: number;
+  pageStart: number;
+  totalItems: number;
+  totalPages: number;
+}
+
+export interface BlogArticleSummaryPage {
+  articles: BlogArticleSummary[];
+  pagination: BlogArticlePagination;
+}
+
 export interface BlogArticleDetail extends BlogArticleSummary {
   body: BlogArticleBody;
   heroImageUrl: string | null;
