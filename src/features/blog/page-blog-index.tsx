@@ -114,7 +114,7 @@ function BlogPagination(props: { pagination: BlogArticlePagination }) {
   return (
     <nav
       aria-label="Blog pagination"
-      className="mt-8 flex flex-col gap-3 rounded-lg border border-neutral-200 bg-white p-4 text-sm text-neutral-600 shadow-sm sm:flex-row sm:items-center sm:justify-between"
+      className="mt-8 flex flex-col gap-3 rounded-[1.25rem] border border-border/80 bg-card/88 p-4 text-sm text-muted-foreground shadow-sm sm:flex-row sm:items-center sm:justify-between"
     >
       <p>
         Showing {formatBlogCount.format(props.pagination.pageStart)}-
@@ -155,7 +155,13 @@ function PaginationLink(props: {
 
   if (props.disabled) {
     return (
-      <span aria-disabled="true" className={cn(className, 'opacity-50')}>
+      <span
+        aria-disabled="true"
+        className={cn(
+          className,
+          'cursor-default border-border/60 bg-muted/60 text-muted-foreground opacity-70 shadow-none hover:bg-muted/60 hover:text-muted-foreground'
+        )}
+      >
         {props.children}
       </span>
     );
