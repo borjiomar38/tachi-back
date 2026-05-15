@@ -16,7 +16,7 @@ import {
   getPublishedBlogArticleSummaryCount,
 } from '@/server/blog/service';
 
-const publicBlogArticlesPageSize = 12;
+const publicBlogArticlesPageSize = 14;
 
 const zPublicBlogArticlesInput = z.object({
   page: z.number().int().min(1).max(10_000).catch(1),
