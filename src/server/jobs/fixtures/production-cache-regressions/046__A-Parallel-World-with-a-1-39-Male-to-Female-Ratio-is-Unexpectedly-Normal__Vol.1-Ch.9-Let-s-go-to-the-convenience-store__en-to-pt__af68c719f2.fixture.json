@@ -1,0 +1,164 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0046",
+  "jobId": "fixture-job-0046",
+  "licenseId": "fixture-license-0046",
+  "pageCount": 2,
+  "pageOrder": ["001.png", "002.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 36,
+          "text": "SOU !?",
+          "translation": "O QUE!?",
+          "width": 155,
+          "x": 1553,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 53,
+          "symWidth": 36.4,
+          "text": "HUH !?",
+          "translation": "HÃ!?",
+          "width": 150,
+          "x": 266,
+          "y": 344
+        },
+        {
+          "angle": 0,
+          "height": 403,
+          "symHeight": 49.01470588235294,
+          "symWidth": 31.1764705882353,
+          "text": "ARE  YOU CRAZY ,  GOING TO  THE  CON- VENIENCE STORE  BY YOURSELF !?",
+          "translation": "VOCÊ ESTÁ LOUCO, VAI SOZINHO À LOJA DE CONVENIÊNCIA!?",
+          "width": 279,
+          "x": 1410,
+          "y": 463
+        },
+        {
+          "angle": 0,
+          "height": 334,
+          "symHeight": 49.175,
+          "symWidth": 32.075,
+          "text": "CAN'T  I  GO TO  THE  CON- VENIENCE STORE  BY MYSELF !?",
+          "translation": "NÃO POSSO IR SOZINHO À LOJA DE CONVENIÊNCIA!?",
+          "width": 256,
+          "x": 105,
+          "y": 674
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 45,
+          "symWidth": 36.66666666666666,
+          "text": "I'M",
+          "translation": "EU VOU",
+          "width": 83,
+          "x": 1596,
+          "y": 1615
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 45.5,
+          "symWidth": 29.66666666666667,
+          "text": "COMING ALONG !",
+          "translation": "JUNTO COM VOCÊ!",
+          "width": 160,
+          "x": 1559,
+          "y": 1690
+        },
+        {
+          "angle": 0,
+          "height": 365,
+          "symHeight": 35.578125,
+          "symWidth": 22.3125,
+          "text": "SUMIRE NEE - SAN ... YOU  WANTED TO  GO  THAT BADLY TO  THE CONVENIENCE STORE ... ! ?",
+          "translation": "SUMIRE NEE-SAN... VOCÊ QUERIA IR TANTO À LOJA DE CONVENIÊNCIA...!?",
+          "width": 255,
+          "x": 98,
+          "y": 1997
+        },
+        {
+          "angle": 0,
+          "height": 289,
+          "symHeight": 52.96527777777778,
+          "symWidth": 34.45138888888889,
+          "text": "HOLD  ON A  MINUTE , I'M  GOING TO  CHANGE !",
+          "translation": "ESPERA UM POUCO, EU VOU ME TROCAR!",
+          "width": 262,
+          "x": 1391,
+          "y": 2047
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 353,
+          "symHeight": 38.68292682926829,
+          "symWidth": 29.26829268292683,
+          "text": "MY  SOU WILL  GET ATTACKED BY  THOSE THIRSTY WOMEN !!",
+          "translation": "MEU SOU SERÁ ATACADO POR ESSAS MULHERES SEDENTAS!!",
+          "width": 233,
+          "x": 1403,
+          "y": 251
+        },
+        {
+          "angle": 0,
+          "height": 396,
+          "symHeight": 37.52435064935065,
+          "symWidth": 26.99350649350649,
+          "text": "BECAUSE  OF HIS  AMNESIA HE  ISN'T FEARFUL  AND CAUTIOUS AROUND WOMEN ...",
+          "translation": "POR CAUSA DA AMNÉSIA, ELE NÃO TEM MEDO NEM CAUTELA PERTO DAS MULHERES...",
+          "width": 288,
+          "x": 119,
+          "y": 574
+        },
+        {
+          "angle": 0,
+          "height": 415,
+          "symHeight": 38.57962962962963,
+          "symWidth": 25.54444444444445,
+          "text": "I'M  GLAD YOU'RE LOOKING AT  ME BECAUSE OF  THAT , BUT ...",
+          "translation": "FICO FELIZ QUE VOCÊ ESTEJA OLHANDO PARA MIM POR ISSO, MAS...",
+          "width": 210,
+          "x": 1453,
+          "y": 1890
+        },
+        {
+          "angle": 0,
+          "height": 439,
+          "symHeight": 41.54763832658569,
+          "symWidth": 26.54687359424202,
+          "text": "I  DON'T LIKE  IT ... SOU'S  FIRST TIME  HAS  TO BE  WITH  ME , HIS  OLDER SISTER ...",
+          "translation": "EU NÃO GOSTO DISSO... A PRIMEIRA VEZ DO SOU TEM QUE SER COMIGO, A IRMÃ MAIS VELHA DELE...",
+          "width": 317,
+          "x": 132,
+          "y": 1951
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

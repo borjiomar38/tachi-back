@@ -1,0 +1,1755 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0123",
+  "jobId": "fixture-job-0123",
+  "licenseId": "fixture-license-0123",
+  "pageCount": 41,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "013__003.jpg",
+    "014__001.jpg",
+    "014__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 400,
+          "symHeight": 156.1111111111111,
+          "symWidth": 131.7777777777778,
+          "text": "ABSOLUTE REGRESSION",
+          "translation": "تراجع مطلق",
+          "width": 635,
+          "x": 37,
+          "y": 213
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18.81818181818182,
+          "symWidth": 12.19090909090909,
+          "text": "SCRIPT  JP ART  PARK  JIN  HWAN ORIGINAL  JANG  YUNGHOON",
+          "translation": "نص ياباني - فن: بارك جين هوان - أصلي: جانغ يونغ هون",
+          "width": 230,
+          "x": 233,
+          "y": 688
+        }
+      ],
+      "imgHeight": 3307,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 42.70588235294117,
+          "symWidth": 27.82352941176471,
+          "text": "HERE ,  THIS IS  A  GIFT .",
+          "translation": "ها هو، هذه هدية.",
+          "width": 276,
+          "x": 210,
+          "y": 1545
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 33.39130434782609,
+          "symWidth": 23.78260869565218,
+          "text": "THANK  YOU . IT'S  BEAUTIFUL .",
+          "translation": "شكرًا لك، إنها بغاية الجمال.",
+          "width": 330,
+          "x": 213,
+          "y": 2235
+        }
+      ],
+      "imgHeight": 3308,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 33.22857142857143,
+          "symWidth": 24.45714285714286,
+          "text": "I  HOPE  I'M NOT  VISITING  WHILE YOU'RE  BUSY .",
+          "translation": "آمل ألا أكون قد أتيتك وأنت منشغل.",
+          "width": 411,
+          "x": 206,
+          "y": 215
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 32.78723404255319,
+          "symWidth": 25.7322695035461,
+          "text": "NOT  AT  ALL .  THE INVESTIGATORS  DO  THE WORK ,  WHILE  I'M  JUST SLACKING  OFF .",
+          "translation": "على الإطلاق، المحققون هم من يقومون بالعمل، أما أنا فمجرد متخاذل.",
+          "width": 496,
+          "x": 84,
+          "y": 1210
+        }
+      ],
+      "imgHeight": 3309,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 34.33333333333334,
+          "symWidth": 28.11666666666666,
+          "text": "DID  MY BROTHER  VISIT YOU  AS  WELL ?",
+          "translation": "هل زارك أخي أيضاً؟",
+          "width": 342,
+          "x": 168,
+          "y": 1845
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 46.07692307692308,
+          "symWidth": 29.84615384615385,
+          "text": "HE  DID VISIT  ME .",
+          "translation": "نعم، لقد زارني.",
+          "width": 257,
+          "x": 139,
+          "y": 3258
+        }
+      ],
+      "imgHeight": 3868,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 43.81944444444444,
+          "symWidth": 28.77777777777778,
+          "text": "MY , HE  IS  QUITE DILIGENT .",
+          "translation": "يا له من مجتهد.",
+          "width": 323,
+          "x": 156,
+          "y": 426
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 39.1,
+          "symWidth": 30.24583333333333,
+          "text": "THAT'S WHY  HE'S  SO POPULAR .",
+          "translation": "لهذا السبب هو محبب للجميع.",
+          "width": 337,
+          "x": 204,
+          "y": 1389
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 32.33333333333334,
+          "symWidth": 24.32142857142857,
+          "text": "I  AM  AWARE THAT  MANY  PEOPLE LIKE  HIM .",
+          "translation": "أدرك أن كثيرين يحبونه.",
+          "width": 401,
+          "x": 213,
+          "y": 1991
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 31.75,
+          "symWidth": 25.84791666666667,
+          "text": "FIRST  YOUNG MASTER  IS  SOMEONE WHO  FITS  WELL  WITH OUR  CULT .",
+          "translation": "الشاب السيد الأول هو من يتناسب تماماً مع طريقتنا.",
+          "width": 452,
+          "x": 98,
+          "y": 3131
+        }
+      ],
+      "imgHeight": 3868,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 31,
+          "symWidth": 21.0875234962406,
+          "text": "THERE  IS A  SENSE  OF  STABILITY ,  AS IF  HE  WOULD  LEAD  WELL  IF ENTRUSTED  WITH  IT .",
+          "translation": "فيه إحساس بالثبات، وكأنه سيكون قائداً ممتازاً إذا ما أوكل إليه الأمر.",
+          "width": 499,
+          "x": 107,
+          "y": 49
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 56,
+          "symWidth": 47.33333333333334,
+          "text": "AND ME ?",
+          "translation": "وأنا؟",
+          "width": 142,
+          "x": 238,
+          "y": 631
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 29.46376811594203,
+          "symWidth": 24.79710144927536,
+          "text": "YOU  ARE  TRULY ... NOT  FIT  IN . SOMEONE WHO  DOES",
+          "translation": "أنت حقاً... لا تنتمي. شخص من هذا النوع",
+          "width": 414,
+          "x": 125,
+          "y": 2624
+        }
+      ],
+      "imgHeight": 3869,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 30.33333333333333,
+          "symWidth": 25.55677655677655,
+          "text": "WHERE  ON EARTH  WOULD  YOU LEAD  US ?",
+          "translation": "إلى أين بحق الأرض ستقودنا؟",
+          "width": 372,
+          "x": 211,
+          "y": 86
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 33.20588235294117,
+          "symWidth": 25.13101604278075,
+          "text": "RATHER , YOU  MAKE  ONE FEEL  UNEASY .",
+          "translation": "بل إن حضورك يبعث على القلق.",
+          "width": 316,
+          "x": 93,
+          "y": 1372
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 32.98148148148148,
+          "symWidth": 24.09629629629629,
+          "text": "AND  YET ,  SEEING THAT  YOU  ARE  THIS POPULAR ...",
+          "translation": "ومع ذلك، ونظراً لشعبيتك هذه...",
+          "width": 426,
+          "x": 138,
+          "y": 2057
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 30.33333333333333,
+          "symWidth": 23.97189847189847,
+          "text": "I'M  STARTING TO  THINK  THAT  THERE  IS HOPE  FOR  US  TOO .",
+          "translation": "أدرك الآن أن الأمل قد ينتابنا نحن أيضاً.",
+          "width": 470,
+          "x": 120,
+          "y": 3577
+        }
+      ],
+      "imgHeight": 3848,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 8,
+          "symHeight": 8,
+          "symWidth": 7.333333333333333,
+          "text": "AST",
+          "translation": "",
+          "width": 17,
+          "x": 221,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 40,
+          "symWidth": 32.22321428571428,
+          "text": "WHAT  KIND OF  HOPE ?",
+          "translation": "أي أمل تتحدث عنه؟",
+          "width": 271,
+          "x": 273,
+          "y": 578
+        },
+        {
+          "angle": 0,
+          "height": 227,
+          "symHeight": 33.2,
+          "symWidth": 26.74631868131868,
+          "text": "HOPE  THAT THE  NEW  DEMONIC PATH  YOU  SPOKE  OF MIGHT  ACTUALLY  BE ESTABLISHED .",
+          "translation": "الأمل في أن يُقام ذلك الطريق الشيطاني الجديد الذي تحدثت عنه فعلاً.",
+          "width": 452,
+          "x": 142,
+          "y": 1169
+        }
+      ],
+      "imgHeight": 3848,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 39.26666666666667,
+          "symWidth": 31.4,
+          "text": "BUT  DO  NOT FORGET ,",
+          "translation": "لكن لا تنسى،",
+          "width": 309,
+          "x": 140,
+          "y": 339
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 35.74418604651163,
+          "symWidth": 27.86046511627907,
+          "text": "THERE  ARE  STILL MANY  IN  OUR  CULT  WHO DESPISE  CHANGE .",
+          "translation": "ما زال هناك كثيرون في طريقتنا يكرهون التغيير.",
+          "width": 533,
+          "x": 55,
+          "y": 1701
+        },
+        {
+          "angle": 0,
+          "height": 254,
+          "symHeight": 36.75925925925926,
+          "symWidth": 28.2962962962963,
+          "text": "MANY  ALSO BELIEVE  THAT  EVIL IS  OUR  STRENGTH AND  OUR  VERY ESSENCE .",
+          "translation": "وكثيرون منهم يعتقدون بأن الشر قوتنا وجوهر وجودنا.",
+          "width": 437,
+          "x": 206,
+          "y": 1949
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 38.9,
+          "symWidth": 26.35,
+          "text": "I  WILL  KEEP THAT  IN  MIND .",
+          "translation": "سأضع هذا في الحسبان.",
+          "width": 313,
+          "x": 245,
+          "y": 3219
+        }
+      ],
+      "imgHeight": 3849,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 38.62162162162162,
+          "symWidth": 29.2972972972973,
+          "text": "BY  THE  WAY , THE  FIRST  YOUNG MASTER  IS  MOVING SO  QUICKLY ,",
+          "translation": "على الرغم من سرعة تحرك السيد الشاب الأول،",
+          "width": 464,
+          "x": 131,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 29.30434782608696,
+          "symWidth": 24.43478260869565,
+          "text": "ARE  YOU  JUST GOING  TO  SIT  BACK AND  WATCH ?",
+          "translation": "هل ستجلس مكتوف الأيدي تراقب؟",
+          "width": 383,
+          "x": 136,
+          "y": 773
+        },
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 30.79824561403509,
+          "symWidth": 24.15131578947368,
+          "text": "ASIDE  FROM  THE SWORD  DEMON  AND  YOU , I  DON'T  KNOW  THE  OTHER SUPREME  DEMONS VERY  WELL .",
+          "translation": "بعيداً عن شيطان السيف وأنت، لست على دراية جيدة بالشياطين العليا الآخرين.",
+          "width": 505,
+          "x": 83,
+          "y": 1305
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 32.23333333333333,
+          "symWidth": 26.61666666666667,
+          "text": "I'M  NOT  SURE WHO  WE  SHOULD BRING  OVER  TO OUR  SIDE .",
+          "translation": "لست أدري من عليهم أن ينضم إلى صفنا.",
+          "width": 360,
+          "x": 182,
+          "y": 2360
+        }
+      ],
+      "imgHeight": 3889,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 287,
+          "symHeight": 29.26041666666667,
+          "symWidth": 26.10833333333333,
+          "text": "DO  YOU KNOW  WHO  VOTED FOR  CHEONG  SEON  INSTEAD OF  ME  AND  SWORD  DEMON WHEN  WE  WERE  ELECTING THE  SOUL  ABSORBING SUPREME  DEMON ?",
+          "translation": "هل تعلم من صوّت لصالح تشيونغ سيون بدلًا مني ومن شيطان السيف عند اختيارنا لشيطان الامتصاص الأعظم؟",
+          "width": 552,
+          "x": 71,
+          "y": 67
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 34.79411764705883,
+          "symWidth": 27.32058823529412,
+          "text": "I'M  TALKING ABOUT  THE  PERSON SWORD  DEMON PERSUADED .",
+          "translation": "أتحدث عن الشخص الذي أقنعه شيطان السيف.",
+          "width": 451,
+          "x": 137,
+          "y": 1924
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 36.66666666666666,
+          "symWidth": 27.03235653235653,
+          "text": "I  DON'T KNOW .  HE  DIDN'T TELL  ME .",
+          "translation": "لا أدري. لم يخبرني.",
+          "width": 389,
+          "x": 182,
+          "y": 2872
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 43.1,
+          "symWidth": 30.63333333333333,
+          "text": "SHALL I  TELL  YOU ?",
+          "translation": "هل أُخبرك؟",
+          "width": 286,
+          "x": 186,
+          "y": 3544
+        }
+      ],
+      "imgHeight": 3890,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 28.33333333333333,
+          "symWidth": 26.05393457117595,
+          "text": "ORIGINALLY ,  MATTERS OR  DECISIONS  AMONG  THE SUPREME  DEMONS  ARE  KEPT STRICTLY  SECRET  FROM THE  OUTSIDE .",
+          "translation": "في الأصل، تظل الأمور والقرارات بين الشياطين العُظماء سرية للغاية عن الخارج.",
+          "width": 547,
+          "x": 48,
+          "y": 1814
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 30.40476190476191,
+          "symWidth": 28.26526251526252,
+          "text": "BUT  THE  SWORD SUPREME  IS  BREAKING THAT  PRINCIPLE FOR  ME ?",
+          "translation": "لكن الأعلى من سيوف الشياطين ينتهك هذا المبدأ لأجلي؟",
+          "width": 457,
+          "x": 107,
+          "y": 2430
+        },
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 45.8,
+          "symWidth": 35.32083333333333,
+          "text": "IS  IT  OKAY FOR  YOU  TO TELL  ME ?",
+          "translation": "هل تراني أحق أن تُفصح لي؟",
+          "width": 369,
+          "x": 205,
+          "y": 3506
+        }
+      ],
+      "imgHeight": 3889,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 38.09090909090909,
+          "symWidth": 24.27272727272727,
+          "text": "NO , IT'S  NOT .",
+          "translation": "لا، ليس كذلك.",
+          "width": 199,
+          "x": 290,
+          "y": 322
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 45.27272727272727,
+          "symWidth": 31.18181818181818,
+          "text": "THEN WHY ... ?",
+          "translation": "فلماذا إذن...؟",
+          "width": 188,
+          "x": 233,
+          "y": 989
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 31.66666666666667,
+          "symWidth": 24.08823529411765,
+          "text": "I'M  TRYING  TO LIVE  WHILE  BREAKING THE  RULES  TOO .",
+          "translation": "أنا أيضًا أحاول أن أحيا رغم انتهاكي للقواعد.",
+          "width": 422,
+          "x": 109,
+          "y": 1792
+        },
+        {
+          "angle": 0,
+          "height": 228,
+          "symHeight": 44.2,
+          "symWidth": 31.07777777777777,
+          "text": "ACTUALLY , I  AM  A  RIGID AND  INFLEXIBLE PERSON .",
+          "translation": "في الحقيقة، أنا شخص جامد لا يلين.",
+          "width": 421,
+          "x": 139,
+          "y": 3329
+        }
+      ],
+      "imgHeight": 3750,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 16.35714285714286,
+          "symWidth": 23.92857142857143,
+          "text": "RIADNAMNA  MNATE",
+          "translation": "رياضنامنا متناثرة",
+          "width": 288,
+          "x": 408,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 31.33333333333333,
+          "symWidth": 23.36406485671192,
+          "text": "IF  THERE  ARE  SET RULES ,  I  DON'T  TRY  TO BREAK  THEM  EASILY .",
+          "translation": "إن وُجدت قواعد محددة، لا أجترئ على خرقها بسهولة.",
+          "width": 461,
+          "x": 131,
+          "y": 799
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 32,
+          "symWidth": 23.90779220779221,
+          "text": "IF  I  HAVE AN  APPOINTMENT TO  MEET  SOMEONE , I  MUST  ARRIVE EARLY .",
+          "translation": "إن كنت موعدي مع أحد، وجب أن أصل قبل الوقت.",
+          "width": 418,
+          "x": 154,
+          "y": 1396
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 31,
+          "symWidth": 24.55791316526611,
+          "text": "I'M  THE TYPE  WHO  CAN'T  SLEEP OUT  OF  WORRY  IF  I'M MISUNDERSTOOD .",
+          "translation": "أنا من النوع الذي لا يهدأ نومه من همّ سوء الفهم.",
+          "width": 480,
+          "x": 109,
+          "y": 2593
+        }
+      ],
+      "imgHeight": 3750,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 29,
+          "symWidth": 21.81102564102564,
+          "text": "I  HAVE AND  I'M  SENSITIVE MANY  UNNECESSARY WORRIES , TO  HOW  THE  WORLD PERCEIVES  ME .",
+          "translation": "لدي ولكني حساس تجاه كثير من الهموم لا مبرر لها، تجاه كيف ينظر إليّ العالم.",
+          "width": 516,
+          "x": 68,
+          "y": 307
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 32.66666666666666,
+          "symWidth": 22.22222222222222,
+          "text": "... IT'S  A  TIRING PERSONALITY  IN MANY  WAYS .",
+          "translation": "... إنها شخصية مرهقة بطرق عدة.",
+          "width": 322,
+          "x": 193,
+          "y": 1011
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 29.75,
+          "symWidth": 22.07107843137255,
+          "text": "ISN'T  THAT VERY  TIREDNESS  WHAT CREATED  YOUR  CURRENT REPUTATION ?",
+          "translation": "أليست تلك الإرهاق ذاته سبب سمعتك الراهنة؟",
+          "width": 483,
+          "x": 143,
+          "y": 3222
+        }
+      ],
+      "imgHeight": 3751,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 36.94444444444444,
+          "symWidth": 27.5,
+          "text": "IN  SOME  WAYS , THAT  MIGHT  HAVE BEEN  THE  CASE .",
+          "translation": "في بعض النواحي، قد يكون هذا صحيحاً.",
+          "width": 386,
+          "x": 125,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 252,
+          "symHeight": 31.43243243243243,
+          "symWidth": 24.43243243243243,
+          "text": "ANYWAY , I'M  TRYING  TO  BE A  BIT  MORE  FLEXIBLE NOW .  WHAT  DOES  IT MATTER  IF  I  BREAK A  FEW  RULES ?",
+          "translation": "على أية حال، أحاول الآن أن أكون أكثر مرونة قليلاً. ما الضرر لو خالفت بعض القواعد؟",
+          "width": 419,
+          "x": 121,
+          "y": 1336
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 39.984375,
+          "symWidth": 27,
+          "text": "IF  IT HELPS  YOU ,  THEN IT'S  A  WORTHWHILE THING .",
+          "translation": "إن كان ذلك يفيدك، فهو أمر يستحق العناء.",
+          "width": 477,
+          "x": 122,
+          "y": 2102
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 30.14285714285714,
+          "symWidth": 24.28968253968254,
+          "text": "IS  THERE A  REASON  WHY  YOU'VE HAD  A  CHANGE  OF HEART ?",
+          "translation": "هل من سبب وراء تبدّل مشاعرك؟",
+          "width": 443,
+          "x": 122,
+          "y": 3189
+        }
+      ],
+      "imgHeight": 3889,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 31.52380952380952,
+          "symWidth": 24.37113997113997,
+          "text": "I  SUPPOSE ... AS  I  GET  OLDER , I  FIND  MYSELF  LOOKING BACK  ON  MY  LIFE MORE  OFTEN .",
+          "translation": "أظن... كلما تقدمت في العمر أجد نفسي أعود للتأمل في حياتي أكثر.",
+          "width": 487,
+          "x": 139,
+          "y": 1040
+        },
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 41.82432432432432,
+          "symWidth": 31.13783783783784,
+          "text": "IT  WAS  A  LIFE FULL  OF  REGRETS ABOUT  ALL  SORTS OF  THINGS ...",
+          "translation": "كانت حياة ملئت بالندم على أمور شتى...",
+          "width": 494,
+          "x": 88,
+          "y": 2570
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 53,
+          "symWidth": 78,
+          "text": "TA",
+          "translation": "",
+          "width": 85,
+          "x": 384,
+          "y": 3177
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "renderMode": "mask_only",
+          "symHeight": 32,
+          "symWidth": 26.125,
+          "text": "THE  THING",
+          "translation": "",
+          "width": 232,
+          "x": 199,
+          "y": 3830
+        }
+      ],
+      "imgHeight": 3890,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 34.17647058823529,
+          "symWidth": 26.97426470588236,
+          "text": "THE THING I REGRETTED MOST ...",
+          "translation": "أمر الندم الأعظم لدي...",
+          "width": 320,
+          "x": 158,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 31,
+          "text": "IS  THIS .",
+          "translation": "هو هذا.",
+          "width": 243,
+          "x": 244,
+          "y": 2738
+        },
+        {
+          "angle": 0,
+          "height": 734,
+          "symHeight": 420,
+          "symWidth": 288.25,
+          "text": "of of",
+          "translation": "",
+          "width": 533,
+          "x": 166,
+          "y": 3138
+        }
+      ],
+      "imgHeight": 3889,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3242,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 27.2,
+          "symWidth": 20.33236461251167,
+          "text": "I'VE DEDICATED  MY  ENTIRE LIFE  TO  ENSURING  THIS SWORD  NEVER  BREAKS AGAINST  ANYONE .",
+          "translation": "كرّست حياتي كلها لئلّا ينكسر هذا السيف أمام أحدٍ أبداً.",
+          "width": 405,
+          "x": 179,
+          "y": 44
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 39,
+          "symWidth": 27.67424242424243,
+          "text": "IN  EXCHANGE , MY  LIFE  BECAME JUST  AS  RIGID .",
+          "translation": "وفي المقابل، صارت حياتي جامدةً منضبطة إلى حدٍ مشابه.",
+          "width": 393,
+          "x": 162,
+          "y": 1645
+        }
+      ],
+      "imgHeight": 3242,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 33,
+          "symWidth": 25.03562091503268,
+          "text": "I  TRULY  REGRET HAVING  LIVED  MY  LIFE SO  STIFFLY .",
+          "translation": "أعترف أنني ندمت على أني عشت حياتي بكل هذه الصلابة.",
+          "width": 452,
+          "x": 141,
+          "y": 20
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 40.13,
+          "symWidth": 26.29,
+          "text": "YOU'RE  DISAPPOINTED BECAUSE  IT  FEELS  LIKE NO  ONE  ACKNOWLEDGES THAT  LIFE ,  RIGHT ?",
+          "translation": "تُخيّبك مشاعرُك لأنّك ترى أن لا أحد يدرك تلك الحياة، أليس كذلك؟",
+          "width": 534,
+          "x": 81,
+          "y": 750
+        }
+      ],
+      "imgHeight": 3244,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 33.2,
+          "symWidth": 24.26019138755981,
+          "text": "YOU'VE  LIVED SO  METICULOUSLY , BUT  YOU  FELT  LIKE  THERE WAS  NO  ONE  WHO  TRULY RECOGNIZED  THAT .",
+          "translation": "لقد عشتَ بكل دقةٍ وعناية، لكنك شعرت أنه لا من يُبدي اعترافاً حقيقياً بذلك.",
+          "width": 533,
+          "x": 79,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 227,
+          "symHeight": 28.16666666666667,
+          "symWidth": 21.68292131844764,
+          "text": "EVERYONE  ELSE JUST  GETS  BY  AIMLESSLY , SO  YOU  WONDERED  IF  YOU WERE  THE  ONLY  ONE  BEING FOOLISHLY  LINGERING ON  IT ,  RIGHT ?",
+          "translation": "الجميع غيرك يمرّون حياته بلا هدف، فظننتَ ربما أنك وحدك من يغوص في ذلك بحماقة، أليس كذلك؟",
+          "width": 480,
+          "x": 87,
+          "y": 2022
+        }
+      ],
+      "imgHeight": 3417,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 55,
+          "symWidth": 34.83333333333334,
+          "text": "YOU ...",
+          "translation": "أنت...",
+          "width": 206,
+          "x": 111,
+          "y": 921
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 39.66666666666666,
+          "symWidth": 34.58603896103896,
+          "text": "HOW  DO  YOU KNOW  MY  HEART SO  WELL ?",
+          "translation": "كيف لك أن تعرف قلبي بهذه الدقة؟",
+          "width": 415,
+          "x": 123,
+          "y": 1632
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 29.66666666666667,
+          "symWidth": 25.9270202020202,
+          "text": "... BECAUSE IT'S  A  FEELING I'VE EXPERIENCED AT  LEAST ONCE  BEFORE .",
+          "translation": "...لأنّي شعرت بذلك الشعور على الأقل مرةً واحدةً من قبل.",
+          "width": 461,
+          "x": 128,
+          "y": 2785
+        }
+      ],
+      "imgHeight": 3418,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 42.1875,
+          "symWidth": 33.15625,
+          "text": "IT'S  BECAUSE I  RESPECT  YOU A  LOT .",
+          "translation": "ذلك لأنني أُكنّ لك احتراماً كبيراً.",
+          "width": 433,
+          "x": 137,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 39.33333333333334,
+          "symWidth": 31.375,
+          "text": "I  REALLY SHOULD  LET YOU  KNOW .",
+          "translation": "يجب أن أخبرك بذلك حقاً.",
+          "width": 307,
+          "x": 215,
+          "y": 1816
+        }
+      ],
+      "imgHeight": 3417,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 28.88135593220339,
+          "symWidth": 23.98305084745763,
+          "text": "WHEN THERE  IS  SOMEONE WHO  UNDERSTANDS  MY HEART  SO  WELL  AND RESPECTS  ME ,",
+          "translation": "عندما يُدركُ قلبي أحدٌ ويحترمُه بصدقٍ،",
+          "width": 431,
+          "x": 148,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 30.75,
+          "symWidth": 25.04020979020979,
+          "text": "WHAT  DO THOSE  RULES MATTER  IF  I  KEEP THAT  INFORMATION HIDDEN ?",
+          "translation": "فما قيمةُ تلك القوانين إن ظللتُ عن هذا الأمرِ صامتاً؟",
+          "width": 376,
+          "x": 198,
+          "y": 1507
+        },
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 42.20454545454545,
+          "symWidth": 29.67045454545455,
+          "text": "THE  PERSON WHO  CAST  THE  VOTE  IN FAVOR  WAS  THE  EVIL SMILING  DEMON .",
+          "translation": "الشخصُ الذي صوّت لصالحنا كان الشيطانُ المبتسمُ الشريرُ.",
+          "width": 546,
+          "x": 79,
+          "y": 2582
+        }
+      ],
+      "imgHeight": 3680,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 29.02702702702702,
+          "symWidth": 22.16486486486487,
+          "text": "ISN'T  THE  EVIL SMILING  DEMON  ON MY  BROTHER'S SIDE ?",
+          "translation": "أليس الشيطانُ المبتسمُ الشريرُ إلى جانب أخي؟",
+          "width": 372,
+          "x": 147,
+          "y": 732
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 40.5,
+          "symWidth": 31.41666666666667,
+          "text": "THAT'S RIGHT .",
+          "translation": "بالضبط.",
+          "width": 187,
+          "x": 224,
+          "y": 1386
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 23,
+          "symWidth": 20.77272727272727,
+          "text": "THIS  IS UNEXPECTED .",
+          "translation": "هذا أمراً غيرُ متوقعٍ.",
+          "width": 205,
+          "x": 223,
+          "y": 2547
+        }
+      ],
+      "imgHeight": 3680,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 280,
+          "symHeight": 28.46586345381526,
+          "symWidth": 25.45972608382247,
+          "text": "IT  WAS  UNEXPECTED THAT  EVIL  SMILING  DEMON TOOK  OUR  SIDE ,  AND  THAT BLOOD  HEAVENS  SWORD DEMON  PERSUADED HIM  IS  EVEN  MORE UNEXPECTED ...",
+          "translation": "كان من غير المتوقع أن يقفَ الشيطانُ المبتسمُ إلى جانبنا، وأن يقنعه شيطانُ سيف السماء الداميّ هو أمرٌ أكثر غرابةً...",
+          "width": 510,
+          "x": 89,
+          "y": 12
+        },
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 31.305,
+          "symWidth": 23.55055555555555,
+          "text": "I'M  TELLING YOU  BECAUSE  THE EVIL  SMILING  DEMON  IS INVOLVED .  OTHERWISE , I  MIGHT  NOT HAVE .",
+          "translation": "أخبرك لأن الشيطان المبتسم تورّط في الأمر، وإلا فما كان لي لأبوح.",
+          "width": 472,
+          "x": 81,
+          "y": 707
+        },
+        {
+          "angle": 0,
+          "height": 203,
+          "symHeight": 30.23030303030303,
+          "symWidth": 23.66412337662338,
+          "text": "HE'S  NOT  SOMEONE TO  BE  TAKEN  LIGHTLY . THE  BLOOD  HEAVENS  SWORD DEMON  MIGHT  EVEN  HAVE OTHER  INTENTIONS .",
+          "translation": "هو ليس شخصاً يُستهان به، وربما يكون لشيطانِ سيف السماء الدامي نوايا أخرى.",
+          "width": 562,
+          "x": 72,
+          "y": 1800
+        }
+      ],
+      "imgHeight": 3682,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 33,
+          "symWidth": 27.32893032893033,
+          "text": "DO  YOU  LOATHE THE  SWORD  DEMON THAT  MUCH ?",
+          "translation": "هل تكره شيطان السيف إلى هذا الحد؟",
+          "width": 402,
+          "x": 150,
+          "y": 591
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 28.13513513513514,
+          "symWidth": 21.36023836336337,
+          "text": "I  DON'T  HATE HIM .  TO  HATE  SOMEONE MEANS  THERE'S  SOME  SORT OF  INTENSE  EMOTION INVOLVED .",
+          "translation": "لست أكرهه، فالكراهية تعني وجود شعورٍ عارم.",
+          "width": 516,
+          "x": 102,
+          "y": 1793
+        },
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 45,
+          "symWidth": 31.73333333333333,
+          "text": "I  JUST DISLIKE  HIM A  BIT .",
+          "translation": "أنا فقط أكن له بعض الاستياء.",
+          "width": 326,
+          "x": 179,
+          "y": 2790
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 44,
+          "symWidth": 30.6,
+          "text": "THEN , I  SHALL  TAKE MY  LEAVE .",
+          "translation": "حينها، سأرحل.",
+          "width": 352,
+          "x": 154,
+          "y": 3214
+        }
+      ],
+      "imgHeight": 3621,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 29.32258064516129,
+          "symWidth": 21.47849462365591,
+          "text": "THANK  YOU  FOR SHARING  SUCH  IMPORTANT INFORMATION .",
+          "translation": "شكراً لك على مشاركتك هذه المعلومات المهمة.",
+          "width": 482,
+          "x": 96,
+          "y": 654
+        },
+        {
+          "angle": 0,
+          "height": 235,
+          "symHeight": 51.14583333333334,
+          "symWidth": 28.19871794871795,
+          "text": "THINK OF  IT  AS  A  GIFT FROM  A  SPARRING PARTNER .",
+          "translation": "اعتبرها هدية من خصم في المعركة.",
+          "width": 382,
+          "x": 129,
+          "y": 2743
+        }
+      ],
+      "imgHeight": 3622,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3623,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 34.7,
+          "symWidth": 28.05,
+          "text": "YOU  REALLY DO  READ  BOOKS ON  A  REGULAR BASIS .",
+          "translation": "حقًا أنت تقرأ الكتب بانتظام.",
+          "width": 395,
+          "x": 164,
+          "y": 1288
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 46.66666666666666,
+          "symWidth": 34.375,
+          "text": "IT'S JUST FOR  SHOW .",
+          "translation": "إنه مجرد تمثيل.",
+          "width": 337,
+          "x": 201,
+          "y": 2348
+        }
+      ],
+      "imgHeight": 3347,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 32.78494623655914,
+          "symWidth": 25.26726403823178,
+          "text": "WHEN  I  HEAR YOUR  FOOTSTEPS  FROM AFAR ,  I  RUN  TO  THE BOOKSHELF .",
+          "translation": "عندما أسمع صوت خطواتك من بعيد، أسرع إلى الرف.",
+          "width": 519,
+          "x": 74,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 36,
+          "symWidth": 30.77777777777778,
+          "text": "WHAT BRINGS  YOU HERE ?",
+          "translation": "ما الذي جاء بك إلى هنا؟",
+          "width": 312,
+          "x": 246,
+          "y": 1278
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 35.13333333333333,
+          "symWidth": 29.26666666666667,
+          "text": "I  CAME  TO  ASK ABOUT  A  CERTAIN PERSON .",
+          "translation": "جئت لأسأل عن شخص معيّن.",
+          "width": 412,
+          "x": 192,
+          "y": 2023
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 50,
+          "symWidth": 45.75,
+          "text": "WHO ?",
+          "translation": "من هو؟",
+          "width": 181,
+          "x": 192,
+          "y": 2929
+        }
+      ],
+      "imgHeight": 3348,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 28,
+          "symWidth": 23.76628352490421,
+          "text": "WHAT  DO  YOU KNOW  ABOUT  THE  EVIL SMILING  DEMON ?",
+          "translation": "ماذا تعرف عن الشيطان المبتسم الشرير؟",
+          "width": 402,
+          "x": 187,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 32.5,
+          "symWidth": 26.83333333333333,
+          "text": "WHY ARE  YOU  ASKING ABOUT  HIM ?",
+          "translation": "لماذا تسأل عنه؟",
+          "width": 368,
+          "x": 112,
+          "y": 1547
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 27.94444444444444,
+          "symWidth": 20.57407407407408,
+          "text": "I  WAS  THINKING OF  BRINGING  HIM  OVER TO  OUR  SIDE .",
+          "translation": "كنت أفكر في استقطابه إلى جانبنا.",
+          "width": 415,
+          "x": 159,
+          "y": 2292
+        }
+      ],
+      "imgHeight": 3349,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 33.79310344827586,
+          "symWidth": 27.3448275862069,
+          "text": "DAMN  IT , THAT  LOUD - MOUTHED WOMAN .",
+          "translation": "تبا لتلك المرأة الصاخبة.",
+          "width": 465,
+          "x": 87,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 49.57142857142857,
+          "symWidth": 44,
+          "text": "WHAT  DO YOU  MEAN ?",
+          "translation": "ماذا تقصد؟",
+          "width": 370,
+          "x": 160,
+          "y": 1362
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 59.85714285714285,
+          "symWidth": 44.71428571428572,
+          "text": "DON'T  PLAY DUMB !",
+          "translation": "لا تدّع الجهل يغشك!",
+          "width": 363,
+          "x": 207,
+          "y": 1970
+        },
+        {
+          "angle": 0,
+          "height": 277,
+          "symHeight": 34.06741573033708,
+          "symWidth": 27.04494382022472,
+          "text": "IT  WAS  THE  FLOWER SWORD  SUPREME  WHO TOLD  ME  THAT  THE  ONE WHO  PERSUADED  HIM  IN THE  FIRST  PLACE  WAS YOU ,  NOT  HER .",
+          "translation": "كانت ملكة سيف الزهرة من أخبرني بأن من أقنعه أولاً كنت أنت، لا هي.",
+          "width": 493,
+          "x": 101,
+          "y": 2995
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 37.17857142857143,
+          "symWidth": 32.10714285714286,
+          "text": "SHE  TOLD ME  FOR  YOUR SAKE .",
+          "translation": "قالت لي من أجلك.",
+          "width": 361,
+          "x": 168,
+          "y": 341
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 41,
+          "symWidth": 31.90909090909091,
+          "text": "IT  WASN'T  FOR MY  SAKE .",
+          "translation": "لم يكن من أجلي.",
+          "width": 382,
+          "x": 107,
+          "y": 841
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 26,
+          "symWidth": 20.63492063492064,
+          "text": "IT'S  BECAUSE  SHE HAS  AN  OBSESSION  WITH ACTING  MORALLY .",
+          "translation": "بل لأنها مهووسة بظهور نفسها صالحًا.",
+          "width": 426,
+          "x": 102,
+          "y": 1541
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 31.25,
+          "symWidth": 27.13038003663004,
+          "text": "SINCE  YOU  KNOW EACH  OTHER  SO  WELL , WHY  DO  YOU  FIGHT SO  MUCH ?",
+          "translation": "وبما أنكما تعرفان بعضكما جيدًا، فلماذا تشتبكان كثيرًا؟",
+          "width": 464,
+          "x": 101,
+          "y": 2093
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 30.25,
+          "symWidth": 24.17292266556973,
+          "text": "DO  STRANGERS EVER  FIGHT ?  WE  FIGHT BECAUSE  WE  KNOW EACH  OTHER .",
+          "translation": "هل يتشاجر الغرباء؟ نحن نختلف لأننا نعرف بعضنا.",
+          "width": 435,
+          "x": 102,
+          "y": 3139
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 28.31372549019608,
+          "symWidth": 21.43954248366013,
+          "text": "WHAT ... SO , IS  IT  YOU  WANT TO  ASK ?",
+          "translation": "فماذا... هل هذا ما تود أن تسأل عنه؟",
+          "width": 285,
+          "x": 91,
+          "y": 600
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 28.75,
+          "symWidth": 23.17633928571428,
+          "text": "HOW  DID  YOU MANAGE  TO  PERSUADE THE  EVIL  SMILING DEMON ?",
+          "translation": "كيف تمكنت من إقناع الشيطان المبتسم بالشر؟",
+          "width": 420,
+          "x": 126,
+          "y": 978
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 41.66666666666666,
+          "symWidth": 31.70833333333334,
+          "text": "HE  CAME TO  FIND  ME FIRST .",
+          "translation": "هو من بادر بالبحث عني أولاً.",
+          "width": 318,
+          "x": 157,
+          "y": 2154
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 31.33333333333333,
+          "symWidth": 28.26046176046176,
+          "text": "THE  EVIL SMILING  DEMON ACTED  FIRST ?",
+          "translation": "الشيطان المبتسم بالشر هو من تحرك أولًا؟",
+          "width": 337,
+          "x": 178,
+          "y": 2961
+        }
+      ],
+      "imgHeight": 3824,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 31.2,
+          "symWidth": 22.81739170702019,
+          "text": "HE  SAID  HE  WOULD VOTE  FOR  CHEONG  SEON , AND  IN  RETURN ,  HE  ASKED ME  TO  HELP  HIM  WHEN  HE REQUESTS  IT  LATER .",
+          "translation": "قال إنه سيصوت لـ تشيونغ سون، وفي المقابل طلب مني أن أساعده عندما يحتاج.",
+          "width": 501,
+          "x": 93,
+          "y": 138
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 31.25,
+          "symWidth": 25.75735294117647,
+          "text": "DID  YOU ACCEPT  THAT  KNOWING WHAT  HE  MIGHT  DEMAND LATER ?",
+          "translation": "هل قبلت ذلك مع علمك بما قد يطلبه لاحقًا؟",
+          "width": 495,
+          "x": 88,
+          "y": 1552
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 32,
+          "symWidth": 23.56370192307692,
+          "text": "HE'LL  PROBABLY ASK  FOR  SOMETHING  FOR HIS  OWN  BENEFIT .",
+          "translation": "على الأرجح سيسعى لمنفعة شخصية.",
+          "width": 523,
+          "x": 75,
+          "y": 3342
+        },
+        {
+          "angle": 0,
+          "height": 204,
+          "symHeight": 37.6,
+          "symWidth": 27.65363636363637,
+          "text": "IF HE  ASKS FOR  SOMETHING RIDICULOUS ,  I  CAN JUST  REFUSE .",
+          "translation": "إن طلب شيئًا سخيفًا، فيمكنني ببساطة الرفض.",
+          "width": 443,
+          "x": 151,
+          "y": 3634
+        }
+      ],
+      "imgHeight": 3889,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 33.4,
+          "symWidth": 30.8430303030303,
+          "text": "WHY DIDN'T  YOU  AT LEAST  TRY  TO  TAKE SOME  CREDIT WITH  ME ?",
+          "translation": "لماذا لم تحاول على الأقل أن تنسب لي بعض الفضل؟",
+          "width": 428,
+          "x": 144,
+          "y": 529
+        },
+        {
+          "angle": 0,
+          "height": 231,
+          "symHeight": 28.80555555555556,
+          "symWidth": 27.09967627401838,
+          "text": "YOU  EVEN  ENDED UP  WITH  A  DEBT  TO  PAY BECAUSE  OF  ME .  WHAT  ARE YOU  GOING  TO  DO ?  WHY DID  YOU  JUST  STAY QUIET ?",
+          "translation": "لقد تراكمت عليك ديون بسببي، ماذا ستفعل؟ لماذا صمت تمامًا؟",
+          "width": 509,
+          "x": 85,
+          "y": 1946
+        }
+      ],
+      "imgHeight": 3890,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 32.04545454545455,
+          "symWidth": 26.41363636363636,
+          "text": "WHO  NEEDS  TO TAKE  CREDIT ?",
+          "translation": "من ذا الذي يحتاج إلى الاعتراف بالفضل؟",
+          "width": 318,
+          "x": 200,
+          "y": 609
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 28.33333333333333,
+          "symWidth": 26.32483953095408,
+          "text": "WHEN  I  FIRST MET  WITH  HIM ,  THE  BLOOD HEAVENS SWORD  DEMON  WAS A  TRULY  CALCULATING  AND METICULOUS  PERSON .",
+          "translation": "عندما التقيت به لأول مرة، كان شيطان سيف عصبة الدم شخصًا عقلانيًا دقيقًا فعلاً.",
+          "width": 549,
+          "x": 77,
+          "y": 3332
+        }
+      ],
+      "imgHeight": 3889,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 235,
+          "symHeight": 28.07236842105263,
+          "symWidth": 27.60526315789474,
+          "text": "HE  WAS THE  KIND  OF  PERSON WHO  WOULD  TAKE  ALL  THE CREDIT  AND  EXPECT  TO RECEIVE  EVERYTHING IN  RETURN .",
+          "translation": "كان من نوع الأشخاص الذين يأخذون كل الفضل وينتظرون المقابل كله.",
+          "width": 488,
+          "x": 113,
+          "y": 131
+        },
+        {
+          "angle": 0,
+          "height": 226,
+          "symHeight": 33.29230769230769,
+          "symWidth": 31.73846153846154,
+          "text": "BUT  BEHIND  THE DOOR  TO  HIS  HEART , THERE  WAS  ANOTHER BLOOD  HEAVENS SWORD  DEMON .",
+          "translation": "لكن خلف بوابة قلبه، كان هناك شيطان سيف عصبة الدم آخر.",
+          "width": 462,
+          "x": 113,
+          "y": 1691
+        }
+      ],
+      "imgHeight": 2813,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 33.97872340425532,
+          "symWidth": 32.62234042553192,
+          "text": "THERE  WAS A  SWORD  DEMON WHO  THREW  THINGS LIKE  CREDIT  INTO A  CORNER ,",
+          "translation": "كان هناك شيطان سيف يرمي بأمور مثل الفضل في ركن بعيد,",
+          "width": 448,
+          "x": 136,
+          "y": 1067
+        },
+        {
+          "angle": 0,
+          "height": 242,
+          "symHeight": 34.3053613053613,
+          "symWidth": 33.40870240870241,
+          "text": "WHO  WAS JUST  A  MAN  THAT ENJOYED  READING BOOKS  UNDER THE  SUNLIGHT .",
+          "translation": "وكان مجرّد إنسان يستمتع بقراءة الكتب تحت ضوء الشمس.",
+          "width": 421,
+          "x": 148,
+          "y": 1469
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 30,
+          "symWidth": 27.38888888888889,
+          "text": "작화 도움 박종일 석은 정",
+          "translation": "",
+          "width": 112,
+          "x": 565,
+          "y": 2514
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17.5,
+          "symWidth": 20.75,
+          "text": "JHS STUDIO",
+          "translation": "",
+          "width": 107,
+          "x": 571,
+          "y": 2700
+        }
+      ],
+      "imgHeight": 2814,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

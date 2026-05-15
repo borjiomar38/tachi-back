@@ -1,0 +1,764 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0023",
+  "jobId": "fixture-job-0023",
+  "licenseId": "fixture-license-0023",
+  "pageCount": 20,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 59.07941176470588,
+          "symWidth": 50.31470588235294,
+          "text": "喜 驭 龙 师 是 最弱 职业 ? #  I'M  DRAKO  MAJSTRO  4",
+          "translation": "هل سيد التنانين أضعف المهن؟ # أنا دراكو ماجسترو 4",
+          "width": 410,
+          "x": 141,
+          "y": 1117
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 9.8,
+          "symWidth": 8.8,
+          "text": "GEMIN",
+          "translation": "جيمين",
+          "width": 29,
+          "x": 548,
+          "y": 1395
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 25,
+          "symWidth": 19.16666666666667,
+          "text": "READ  AT",
+          "translation": "اقرأ على",
+          "width": 106,
+          "x": 463,
+          "y": 1448
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 12.28571428571429,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 162,
+          "x": 328,
+          "y": 1577
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.33333333333333,
+          "text": "NEW  COMICS",
+          "translation": "قصص جديدة",
+          "width": 152,
+          "x": 428,
+          "y": 1643
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.86666666666667,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمع نشط",
+          "width": 185,
+          "x": 496,
+          "y": 1704
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 24.45454545454545,
+          "symWidth": 21.09090909090909,
+          "text": "THE  TRIAL ISN'T  OVER YET !?",
+          "translation": "هل لم تنتهِ المحاكمة بعد!؟",
+          "width": 194,
+          "x": 168,
+          "y": 2658
+        }
+      ],
+      "imgHeight": 3022,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3022,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 21.4921875,
+          "symWidth": 18.46005817099567,
+          "text": "DAMN ... I  HAVE  NO STRENGTH  LEFT TO  FIGHT  BACK ,  I NEED  TO  LEAVE IMMEDIATELY !",
+          "translation": "اللعنة... لم يعد فيّ أي قوة لأقاتل، يجب أن أغادر فوراً!",
+          "width": 249,
+          "x": 300,
+          "y": 1925
+        }
+      ],
+      "imgHeight": 3022,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 19.3448275862069,
+          "symWidth": 16.58620689655172,
+          "text": "PREPARE  FOR STARRY  SKY TRAVERSE . ,",
+          "translation": "استعدوا لعبور السماء المرصعة بالنجوم.",
+          "width": 183,
+          "x": 269,
+          "y": 230
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 20,
+          "symWidth": 14.28972431077694,
+          "text": "STARRY  SKY  DRAGON  III , FORM  SWITCH : STAR - SHINE FORM .",
+          "translation": "تنين السماء المرصعة III، تحويل الشكل: شكل بريق النجوم.",
+          "width": 312,
+          "x": 56,
+          "y": 3432
+        }
+      ],
+      "imgHeight": 4191,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [],
+      "imgHeight": 4192,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 18.5,
+          "symWidth": 14.76785714285714,
+          "text": "TRIAL  OF  THE  ICE  DRAGON  KING : PASSED .",
+          "translation": "اختبار ملك التنين الجليدي: تم اجتيازه.",
+          "width": 383,
+          "x": 161,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 19.125,
+          "text": "IPASSED ?",
+          "translation": "هل اجتزته؟",
+          "width": 147,
+          "x": 78,
+          "y": 1296
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 18.8,
+          "symWidth": 16.9265367965368,
+          "text": "SO  YOU  WERE AT  THE  END  OF  YOUR ROPE  AFTER  USING THAT  MOVE ...  HOW LAUGHABLE THAT  I ACTUALLY  THOUGHT YOU  STILL  HAD STRENGTH  TO SPARE .",
+          "translation": "كنت قد بلغت نهايتك بعد استعمال تلك الحركة... يا لسخافة ظني بأنك ما تزال تملك قوة للاحتياط.",
+          "width": 278,
+          "x": 277,
+          "y": 3074
+        }
+      ],
+      "imgHeight": 3521,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.5,
+          "symWidth": 17.00514069264069,
+          "text": "AND  I  EVEN WENT  AS  FAR  AS SIGNING  THIS DAMN  CONTRACT WITH  YOU BECAUSE  OF  IT /",
+          "translation": "ولقد ذهبت حتى حد توقيع هذا العهد اللعين معك بسبب ذلك.",
+          "width": 233,
+          "x": 136,
+          "y": 1447
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 18.66666666666667,
+          "symWidth": 17.22261072261072,
+          "text": "THE  CONTRACT IS  SEALED .  NOW , HAVEN'T  WE BOTH  SEEN  EACH OTHER'S  TRUE TRUMP  CARDS ?",
+          "translation": "العقد مختوم الآن، ألم نكشف كل منا عن ورقته الرابحة؟",
+          "width": 227,
+          "x": 81,
+          "y": 2841
+        }
+      ],
+      "imgHeight": 3522,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 20.84523809523809,
+          "symWidth": 16.83974358974359,
+          "text": "YOU  SLY  BRAT ... NEXT  TIME ,  I  WON'T FALL  FOR  THIS  SO EASILY .",
+          "translation": "أيها الوغد الماكر... في المرة القادمة، لن أخدعك بهذه السهولة.",
+          "width": 281,
+          "x": 119,
+          "y": 1831
+        }
+      ],
+      "imgHeight": 3522,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 19.625,
+          "symWidth": 16,
+          "text": "... THAT  WAS CLOSE .",
+          "translation": "لقد خطرنا بعيدًا.",
+          "width": 163,
+          "x": 228,
+          "y": 1708
+        }
+      ],
+      "imgHeight": 2929,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 20,
+          "symWidth": 17.7375,
+          "text": "LET'S  GO , GET  OUT  OF HERE .",
+          "translation": "لنرحل، غادر هذا المكان.",
+          "width": 183,
+          "x": 277,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 29.2,
+          "text": "保  快 看 漫画",
+          "translation": "",
+          "width": 187,
+          "x": 502,
+          "y": 925
+        }
+      ],
+      "imgHeight": 2930,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [],
+      "imgHeight": 2930,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 19.95723684210526,
+          "symWidth": 17.44259085213033,
+          "text": "CONGRATULATIONS ,  TRIAL TAKER .  I  AM  THE  ICE WINTER ,  SOVEREIGN  OF  THE DRAGON  DOMAIN'S  SNOWY DRAGON  KING - CALAMITY  OF MOUNTAINS .  MY  NAME  ONCE SHOOK  ALL  THE  PEAKS  OF THE  DRAGON  DOMAIN .",
+          "translation": "أبارك لك، يا حامل الاختبار. أنا شتاء الجليد، سيّد مملكة التنين الثلجية في عالم التنين — كارثة الجبال. كان اسمي يرعد عبر جميع قمم ممالك التنين.",
+          "width": 380,
+          "x": 134,
+          "y": 3124
+        }
+      ],
+      "imgHeight": 3885,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.27619047619048,
+          "symWidth": 16.56833333333334,
+          "text": "AS  FOR  WHY  I  FELL HERE ,  AND  WHY  I RETREATED  INTO  THIS DESOLATE FROZEN LAND ...  THAT  IS  A LONG  STORY .",
+          "translation": "أما عن سبب سقوطِي هنا، وابتعادي إلى هذه الأرض الجليدية المقفرة... فلقصة طويلة.",
+          "width": 293,
+          "x": 259,
+          "y": 816
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17.5,
+          "symWidth": 16.82417582417582,
+          "text": "DRAGON  DOMAIN . SNOWY  MOUNTAINS",
+          "translation": "مملكة التنين. جبال الثلج.",
+          "width": 236,
+          "x": 393,
+          "y": 1798
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.01590571976279,
+          "text": "THREE  HUNDRED  YEARS AGO ,  A  RIFT  APPEARED  IN THE  SNOWY  MOUNTAINS  OF THE  DRAGON  DOMAIN . FROM  WITHIN  IT , COUNTLESS  UNKNOWN \" EROSIONS \" -STRANGE  IN FORM  AND  FOUL  IN  AURA- SURGED  FORTH .",
+          "translation": "قبل ثلاثة قرون، شقّ فجوة في جبال الثلج بأراضي التنين. منها تدفّق عدد لا يحصى من \"التآكلات\" المجهولة — غريبة الشكل وغليظة الهالة.",
+          "width": 360,
+          "x": 121,
+          "y": 2217
+        },
+        {
+          "angle": 0,
+          "height": 216,
+          "symHeight": 164,
+          "symWidth": 162.6666666666667,
+          "text": "144",
+          "translation": "١٤٤",
+          "width": 229,
+          "x": 8,
+          "y": 2608
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "renderMode": "mask_only",
+          "symHeight": 18.5,
+          "symWidth": 16.71052631578947,
+          "text": "THEY  RESEMBLED  FILTHY SLUDGE .  WHEREVER  THEY",
+          "translation": "",
+          "width": 351,
+          "x": 232,
+          "y": 3836
+        }
+      ],
+      "imgHeight": 3886,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 18.90128205128205,
+          "symWidth": 16.69505558768716,
+          "text": "THEY RESEMBLED FILTHY SLUDGE . WHEREVER THEY PASSED , EVERYTHING WAS CORRUPTED . THEY COULD DEVOUR FLESH AND BLOOD , ENDLESSLY MULTIPLYING AND EVOLVING .",
+          "translation": "كانت تشبه الوحل القذر. حيثما مرت، فسد كل شيء. بلعوا اللحم والدم، يتكاثرون ويتطورون بلا نهاية.",
+          "width": 359,
+          "x": 228,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 19,
+          "symWidth": 16.34328731492597,
+          "text": "ILED  THE  ENTIRE  ICE DRAGON  CLAN  INTO BATTLE ,  DEFENDING OUR  TERRITORY  FOR  A FULL  YEAR .  YET ...  WE WERE  ULTIMATELY DEFEATED .",
+          "translation": "أشعلت معركة كاملة ضد عشيرة التنين الجليدية، مدافعين عن أراضينا لعام كامل. ومع ذلك... تلقينا الهزيمة في النهاية.",
+          "width": 302,
+          "x": 197,
+          "y": 2226
+        }
+      ],
+      "imgHeight": 3887,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 24.5,
+          "text": "快 养",
+          "translation": "سريعًا، ارحِ.",
+          "width": 50,
+          "x": 570,
+          "y": 1349
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 19.71428571428572,
+          "symWidth": 16.48264275407132,
+          "text": "FINALLY ,  I  HAD  NO CHOICE  BUT  TO  TEAR THROUGH  SPACE  AND FLEE ,  ENDING  UP  HERE ... EVENTUALLY ,  DUE  TO  MY HEAVY  INJURIES ,  I  WAS BEYOND  HELP .",
+          "translation": "لم يكن لي من خيار سوى تمزيق الفضاء والفرار، حتى أتت بي الدروب إلى هنا... وبسبب جروحي العميقة، تجاوزت حدود النجاة.",
+          "width": 334,
+          "x": 149,
+          "y": 1413
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 18.88888888888889,
+          "symWidth": 17.14976541298781,
+          "text": "I  USED  THE  LAST  OF MY  STRENGTH  TO  SEAL MYSELF  IN  ETERNAL  ICE , JUST  SO  I  COULD MAINTAIN  MY  SENSE  OF SELF  EVEN  AFTER  DEATH ... AND  NOT  HAVE  MY  BODY OCCUPIED  BY  THOSE EROSIONS .",
+          "translation": "استخدمت آخر قوتي لأحاصر نفسي في صقيع أبدي، حفاظًا على ذاتي حتى بعد الموت... كي لا تحتل أجسادي تلك الانبعاثات الآثمة.",
+          "width": 354,
+          "x": 237,
+          "y": 2731
+        }
+      ],
+      "imgHeight": 3821,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 19.2,
+          "symWidth": 14.1846439628483,
+          "text": "ETERNAL  ICE  TOMB :  THE  ICE  DRAGON  KING  USES  ALL ITS  LIFE  FORCE  TO  SUMMON  AN  ETERNAL  TOMB , IMMUNE  TO  ALL  DAMAGE  AND ISOLATING  ALL DETECTION .",
+          "translation": "قبر الجليد الأبدي:\nيستمد ملك التنين الجليدي كامل قوته الحيوية\nليستحضر قبرًا أبديًا، محصنًا من كل أذى\nومنعزلًا عن كل كشف.",
+          "width": 576,
+          "x": 62,
+          "y": 1492
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.42857142857143,
+          "symWidth": 17.09204545454545,
+          "text": "SEE ...  WHAT THE  ICE  DRAGON  KING ENCOUNTERED WERE THE  SAME  CREATURES THAT  CORRUPTED  THE LIFE  DRAGON  KING .",
+          "translation": "انظر... المخلوقات التي واجهها ملك التنين الجليدي\nهي ذات المخلوقات التي أفسدت ملك تنين الحياة.",
+          "width": 304,
+          "x": 266,
+          "y": 1905
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20.8,
+          "symWidth": 18.82179144385027,
+          "text": "AS  THE  ONE  WHO PASSED  ALL  TRIALS , I  HAVE  TWO  RELICS ... TO  ENTRUST  TO YOU .",
+          "translation": "بصفتي من اجتاز كل المحن، أهديك آثاري الاثنين...",
+          "width": 309,
+          "x": 273,
+          "y": 3280
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 23,
+          "symWidth": 19.2258064516129,
+          "text": "THE  FIRST  IS  MY OFFSPRING ...  TRIAL TAKER ,  I  ENTRUST MY  UNBORN  CHILD TO  YOU .",
+          "translation": "الأول هو فراعي...\nيا حامل المحن، أوكل إليك طفلي الذي لم يولد بعد.",
+          "width": 315,
+          "x": 149,
+          "y": 1005
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 14.73913043478261,
+          "text": "OBTAINED :  ICE  DRAGON  EGG  * 1",
+          "translation": "المكتسب: بيضة تنين جليدي × 1",
+          "width": 348,
+          "x": 169,
+          "y": 2082
+        },
+        {
+          "angle": 0,
+          "height": 247,
+          "symHeight": 22.09486945962356,
+          "symWidth": 18.20338837289302,
+          "text": "THE  SECOND ...  IS  A FRAGMENT  OF  THE CORRUPTED  ENTITY  I ONCE  SEVERED .  USE  IT TO  TRACE  THEIR  ORIGIN- BUT  BE  CAREFUL ,  EVEN FROZEN  IN  ICE ,  IT  IS STILL  ALIVE .",
+          "translation": "الثاني... هو قطعة من الكيان الفاسد الذي قطعهته ذات يوم.\nاستخدمه لتعقب منبعه، لكن كن حذرًا،\nفحتى وإن جمد في الجليد، فهو لا يزال حيًا.",
+          "width": 380,
+          "x": 171,
+          "y": 2378
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.18518518518519,
+          "text": "OBTAINED :  CORRUPTED REMNANT  * 1",
+          "translation": "المكتسب: بقايا فاسدة × 1",
+          "width": 320,
+          "x": 188,
+          "y": 3554
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 19.05405405405405,
+          "symWidth": 16.51351351351351,
+          "text": "REMEMBER- IF  THEY  ARE  LEFT UNCHECKED ,  ALL LIFE  IN  THE  WORLD WILL  EVENTUALLY BE  DEVOURED .",
+          "translation": "تذكَّرْ: إن تُركوا بلا كبح، فسوف تلتهمُ الحياةُ جمعاءً في النهاية.",
+          "width": 245,
+          "x": 306,
+          "y": 139
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 19,
+          "symWidth": 17.58333333333334,
+          "text": "YOU  MUST FIND  A  WAY ... TO  COMPLETELY DESTROY  THEM .",
+          "translation": "عليك أن تجد وسيلةً... لتدميرهم تمامًا.",
+          "width": 221,
+          "x": 230,
+          "y": 1605
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 20.72222222222222,
+          "symWidth": 18,
+          "text": "TSK ,  AS EXPECTED - THESE CUNNING  OLD BEINGS  ALL  VALUE THEIR  OWN CORPSES .",
+          "translation": "تسك، كما توقعتُ - هؤلاء الكائنات العجائز ماكرون يحرصون على جثثهم.",
+          "width": 265,
+          "x": 123,
+          "y": 2048
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "renderMode": "mask_only",
+          "symHeight": 20,
+          "symWidth": 19.27272727272727,
+          "text": "I  KNEW  SHE  HAD",
+          "translation": "",
+          "width": 234,
+          "x": 264,
+          "y": 3845
+        }
+      ],
+      "imgHeight": 3926,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 20.26851851851852,
+          "symWidth": 18.89099326599327,
+          "text": "I KNEW SHE HAD BEEN EYEING THE ICE DRAGON KING'S CORPSE , WANTING TO DEVOUR IT TO GAIN POWER .",
+          "translation": "كنت أعلم أنها تلحظ جثة ملك التنين الجليدي، راغبةً في التهامها لتعزيز قوتها.",
+          "width": 291,
+          "x": 236,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 56,
+          "symWidth": 35.95833333333334,
+          "text": "哈哈 .. 000",
+          "translation": "هاها..",
+          "width": 248,
+          "x": 116,
+          "y": 1702
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 19.66666666666667,
+          "symWidth": 16.86615186615187,
+          "text": "ALRIGHT ,  NO  NEED TO  BE  NERVOUS ... TAKE  GOOD  CARE  OF YOUR  NEW  DRAGON COMPANION .",
+          "translation": "حسنًا، لا داعي للتوتر... اعتنِ جيدًا برفيقك التنين الجديد.",
+          "width": 277,
+          "x": 126,
+          "y": 2711
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 28.33333333333333,
+          "symWidth": 30,
+          "text": "000",
+          "translation": "",
+          "width": 112,
+          "x": 166,
+          "y": 3473
+        }
+      ],
+      "imgHeight": 3926,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 22.5,
+          "symWidth": 20.6525974025974,
+          "text": "FINALLY OBTAINED  THE TENTH  DRAGON EGG !",
+          "translation": "حصلنا أخيراً على البيضة العاشرة للتنين!",
+          "width": 252,
+          "x": 252,
+          "y": 258
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 18,
+          "symWidth": 16.33962264150943,
+          "text": "DRAGON  TAMING  ART :  ALLOWS  THE TAMING  OF  DRAGON - TYPE  CREATURES",
+          "translation": "فن ترويض التنانين: يتيح ترويض المخلوقات ذات النوع التنيني",
+          "width": 463,
+          "x": 130,
+          "y": 1605
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.33333333333333,
+          "symWidth": 17.32831541218638,
+          "text": "JUST  HOW POWERFUL  WILL THE  ICE  DRAGON KING'S  OFFSPRING BE ?",
+          "translation": "إلى أي مدى ستكون قوة نسل ملك التنانين الجليدية؟",
+          "width": 240,
+          "x": 273,
+          "y": 3327
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 21,
+          "text": "visit  and  read  at",
+          "translation": "زر واطلع في",
+          "width": 289,
+          "x": 325,
+          "y": 3747
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 19.28571428571428,
+          "text": "for  the  fastest  releases",
+          "translation": "لأسرع الإصدارات",
+          "width": 399,
+          "x": 270,
+          "y": 3848
+        }
+      ],
+      "imgHeight": 3927,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

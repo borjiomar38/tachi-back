@@ -1,0 +1,1779 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0179",
+  "jobId": "fixture-job-0179",
+  "licenseId": "fixture-license-0179",
+  "pageCount": 29,
+  "pageOrder": [
+    "003__001.jpg",
+    "002__001.jpg",
+    "001__003.jpg",
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__002.jpg",
+    "003__003.jpg",
+    "004__002.jpg",
+    "003__002.jpg",
+    "006__001.jpg",
+    "004__001.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__002.jpg",
+    "005__003.jpg",
+    "008__001.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "008__002.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "009__001.jpg",
+    "010__001.jpg",
+    "011__001.jpg",
+    "009__002.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__002.jpg"
+  ],
+  "pages": {
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 33.81578947368421,
+          "symWidth": 26.789473684210527,
+          "text": "WHAT  A  HEAVENLY DEMON  SAYS  AND  DOES IS  THE  LAW !",
+          "translation": "ما يقوله ويفعله الشيطان السماوي هو القانون!",
+          "width": 516,
+          "x": 96,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 340,
+          "symHeight": 34.756122448979596,
+          "symWidth": 26.68809523809524,
+          "text": "WHETHER IT'S  IMPORTANT OR  UNIMPORTANT , FULFILLING  A  PROMISE OR  NOT .  THE  HEAVENLY DEMON  DECIDES ALL  OF  IT !",
+          "translation": "سواء كان الأمر مهمًا أم تافهًا، الإيفاء بوعد أو عدمه، الشيطان السماوي هو من يقرر كل ذلك!",
+          "width": 516,
+          "x": 94,
+          "y": 1256
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 34.41176470588235,
+          "symWidth": 27.11764705882353,
+          "text": "YOU TRULY  ARE  BEYOND REPROACH .",
+          "translation": "أنت حقًا فوق النقد.",
+          "width": 429,
+          "x": 154,
+          "y": 2966
+        }
+      ],
+      "imgHeight": 3922,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 120.4,
+          "symWidth": 128,
+          "text": "NINIA",
+          "translation": "نينيا",
+          "width": 222,
+          "x": 269,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 32.77272727272727,
+          "symWidth": 25.734848484848484,
+          "text": "MY  BROTHER  CAN  BE DIFFICULT  BECAUSE  OF HIS  SELFISHNESS .",
+          "translation": "أخي قد يكون صعب المراس بسبب أنانيته.",
+          "width": 486,
+          "x": 131,
+          "y": 1092
+        },
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 40,
+          "symWidth": 32.37037037037037,
+          "text": "YOU  SHOULD COUNSEL  AND LOOK  AFTER HIM  WELL .",
+          "translation": "عليك أن تنصحيه وتعتني به جيدًا.",
+          "width": 369,
+          "x": 201,
+          "y": 2001
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 36.526315789473685,
+          "symWidth": 28.94736842105263,
+          "text": "YOU  REALLY ARE  SO  FAKE .",
+          "translation": "أنت حقًا مزيفة.",
+          "width": 326,
+          "x": 238,
+          "y": 2958
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 34.23529411764706,
+          "symWidth": 25.509803921568626,
+          "text": "DID YOU  THINK  I'D  BE MOVED  BY  WORDS LIKE  THAT ?",
+          "translation": "هل ظننت أن كلمات مثل هذه ستؤثر بي؟",
+          "width": 420,
+          "x": 156,
+          "y": 3600
+        },
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 29.753676470588236,
+          "symWidth": 22.271037581699346,
+          "text": "THAT'S  NOT  IT . I  WAS  SPEAKING  ILL OF  MY  BROTHER  BEHIND HIS  BACK  BY  CALLING HIM  A  SELFISH PERSON .",
+          "translation": "ليس ذلك. كنت أتكلم عنه وراء ظهره بوصفه شخصًا أنانيًا.",
+          "width": 463,
+          "x": 101,
+          "y": 4921
+        }
+      ],
+      "imgHeight": 5665,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 34,
+          "symWidth": 26.96408529741863,
+          "text": "I  KNOW  YOUR RESOLVE  REGARDING MY  BROTHER  IS UNWAVERING .",
+          "translation": "أعلم أن عزيمتك تجاه أخي لا تلين.",
+          "width": 465,
+          "x": 97,
+          "y": 219
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 11,
+          "y": 884
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 39.705882352941174,
+          "symWidth": 34.529411764705884,
+          "text": "WHAT WOULD  YOU KNOW ?",
+          "translation": "ماذا يعنون لك؟",
+          "width": 310,
+          "x": 222,
+          "y": 913
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 34.333333333333336,
+          "symWidth": 27.20124777183601,
+          "text": "YOU  SHOWED  ME THE  DAY  HE  RETURNED , DIDN'T  YOU ?",
+          "translation": "لقد أريتني يوم عودته، أليس كذلك؟",
+          "width": 495,
+          "x": 92,
+          "y": 1459
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 33,
+          "symWidth": 27.039285714285715,
+          "text": "I  FELT  YOUR AFFECTION  FOR  HIM DEEPLY  AT  THAT MOMENT .",
+          "translation": "شعرت بعمق بحبك له في تلك اللحظة.",
+          "width": 436,
+          "x": 107,
+          "y": 2340
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 34.666666666666664,
+          "symWidth": 28.857142857142858,
+          "text": "DON'T PRESUME  TO KNOW  ME .",
+          "translation": "لا تتظاهر بمعرفتي.",
+          "width": 299,
+          "x": 166,
+          "y": 3013
+        }
+      ],
+      "imgHeight": 4133,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 455,
+          "symHeight": 183.77777777777777,
+          "symWidth": 147.66666666666666,
+          "text": "ABSOLUTE REGRESSION",
+          "translation": "تراجع مطلق",
+          "width": 699,
+          "x": 0,
+          "y": 437
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 17,
+          "symWidth": 15,
+          "text": "JP",
+          "translation": "JP",
+          "width": 29,
+          "x": 369,
+          "y": 974
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19,
+          "symWidth": 13.36904761904762,
+          "text": "SCRIPT ART  PARK  JIN  HWAN ORIGINAL  JANG  YUNGHOON",
+          "translation": "السيناريو والفنون بارك جين هوان، الأصلي جانغ يونغ هون",
+          "width": 259,
+          "x": 219,
+          "y": 975
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 40.833333333333336,
+          "symWidth": 34.68518518518518,
+          "text": "WHY  DID YOU  WANT  TO SEE  ME ?",
+          "translation": "لماذا أردت أن تراني؟",
+          "width": 363,
+          "x": 185,
+          "y": 2160
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 25.379310344827587,
+          "symWidth": 19.88649425287356,
+          "text": "THERE  ARE  MANY REASONS ,  BUT  YOU  WOULDN'T BELIEVE",
+          "translation": "هناك أسباب عديدة، لكنك لن تصدقها على أي حال.",
+          "width": 484,
+          "x": 136,
+          "y": 3591
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 25.6,
+          "symWidth": 18.878571428571426,
+          "text": "THEM  ANYWAY .  IF  I  HAD TO  GIVE  YOU  A  REASON  WORTH BELIEVING ,  IT'S  MY  WAY  OF KEEPING  MY  OPPONENT IN  CHECK .",
+          "translation": "إن كان علي أن أعطيك سببًا تستحق تصديقه، فهو طريقتي في إحكام السيطرة على خصمي.",
+          "width": 496,
+          "x": 132,
+          "y": 3662
+        }
+      ],
+      "imgHeight": 4132,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 19.909090909090907,
+          "text": "KEEPING  THEM IN  CHECK ?",
+          "translation": "إحكام السيطرة؟",
+          "width": 249,
+          "x": 312,
+          "y": 1232
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 35,
+          "symWidth": 26.6875,
+          "text": "YES , MY  BROTHER  HAS STARTED  MEETING PEOPLE .",
+          "translation": "نعم، أخي بدأ بالتعرف على الناس.",
+          "width": 408,
+          "x": 154,
+          "y": 1528
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 35.06060606060606,
+          "symWidth": 27.494949494949495,
+          "text": "I'M  TRYING TO  SHOW  HIM  THAT I  CAN  ALSO  MEET WITH  PEOPLE .",
+          "translation": "أحاول أن أظهر له أنني قادر أيضًا على لقاء الناس.",
+          "width": 426,
+          "x": 164,
+          "y": 2481
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 28,
+          "symWidth": 22.119658119658123,
+          "text": "THE  FIRST OF  THOSE  PEOPLE IS  YOU .",
+          "translation": "وأول هؤلاء الأشخاص هو أنت.",
+          "width": 351,
+          "x": 187,
+          "y": 3097
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 30,
+          "symWidth": 22.791666666666664,
+          "text": "WILL  ANYTHING CHANGE  JUST  FROM MEETING  PEOPLE ?",
+          "translation": "هل سيتغير شيء فقط بلقاء الناس؟",
+          "width": 393,
+          "x": 118,
+          "y": 3840
+        }
+      ],
+      "imgHeight": 4132,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 34.5,
+          "symWidth": 25.248717948717946,
+          "text": "YOUR  BROTHER  IS A  PERCEPTIVE  MAN .",
+          "translation": "أخوك رجل فطِن.",
+          "width": 406,
+          "x": 146,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 18,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 11,
+          "y": 1139
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 35.666666666666664,
+          "symWidth": 28.666666666666668,
+          "text": "HE  LACKS HUMAN  WARMTH , THOUGH .",
+          "translation": "لكنه يفتقر للدفء الإنساني.",
+          "width": 364,
+          "x": 160,
+          "y": 1518
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 32.666666666666664,
+          "symWidth": 24.721885521885525,
+          "text": "THAT'S  FINE . A  MAN  DESTINED  FOR GREATNESS",
+          "translation": "وهذا جيد. إنسان مقدر له العظمة",
+          "width": 468,
+          "x": 94,
+          "y": 2484
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 32,
+          "symWidth": 24.897167755991287,
+          "text": "SHOULDN'T BE  SWAYED  BY  PETTY PERSONAL  FEELINGS .",
+          "translation": "لا ينبغي أن تتزعزعه المشاعر الشخصية التافهة.",
+          "width": 467,
+          "x": 129,
+          "y": 2574
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 35,
+          "symWidth": 26.962962962962962,
+          "text": "HE  MAY  EVEN DISRESPECT  YOU AT  TIMES .",
+          "translation": "قد لا يحترمك أحيانًا.",
+          "width": 400,
+          "x": 87,
+          "y": 3794
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 29.4,
+          "symWidth": 22.161616161616163,
+          "text": "THAT'S  FINE . WHAT  DOES  IT  MATTER  IF HE  DISRESPECTS  ME ?  HE'S DESTINED  TO  BECOME A  HEAVENLY  DEMON .",
+          "translation": "وهذا جيد. ما قيمة عدم احترامه لي؟ إنه مقدر أن يصبح شيطانًا سماويًا.",
+          "width": 494,
+          "x": 121,
+          "y": 4552
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 47.333333333333336,
+          "symWidth": 81.33333333333333,
+          "text": "לה ?",
+          "translation": "לה ؟",
+          "width": 85,
+          "x": 39,
+          "y": 4880
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 33,
+          "symWidth": 25.09920634920635,
+          "text": "HE  WILL BREAK  IMPORTANT PROMISES  TOO .",
+          "translation": "وسينقضى على بعض الوعود المهمة أيضًا.",
+          "width": 399,
+          "x": 154,
+          "y": 5235
+        }
+      ],
+      "imgHeight": 5667,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 28.20689655172414,
+          "symWidth": 21.982758620689655,
+          "text": "I'M  A  DIFFERENT PERSON  FROM  SWORD DEMON  OR  THE  SKY  HEAVEN CULT  LEADER .",
+          "translation": "أنا شخص مختلف عن شيطان السيف أو قائد ثقافة السماء.",
+          "width": 488,
+          "x": 115,
+          "y": 26
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 31.9873417721519,
+          "symWidth": 24.164556962025316,
+          "text": "I  KNOW  THAT . AS  I  MENTIONED  BEFORE , I  NEVER  INTENDED  TO  MAKE YOU  ONE  MY  PEOPLE  IN THE  FIRST  PLACE .",
+          "translation": "أعلم ذلك. كما قلت سابقًا، لم أكن أنوي أبدًا جعلك من خاصتي منذ البداية.",
+          "width": 549,
+          "x": 70,
+          "y": 1584
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 10.928571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 11,
+          "y": 3053
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 32.5,
+          "symWidth": 25.321052631578947,
+          "text": "... SO  WHY ARE  YOU  DOING THIS ?",
+          "translation": "... فلماذا تفعل هذا إذًا؟",
+          "width": 353,
+          "x": 223,
+          "y": 3097
+        }
+      ],
+      "imgHeight": 3924,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 39.973684210526315,
+          "symWidth": 29.710526315789473,
+          "text": "WHEN  I  SEE  YOU , I  THINK  OF  YOU  AS A  LITTLE  GIANT .",
+          "translation": "عندما أراك، أراك عملاقًا صغيرًا.",
+          "width": 478,
+          "x": 108,
+          "y": 3376
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 39.5,
+          "symWidth": 33.77272727272727,
+          "text": "YOU  ARE GREATER  THAN",
+          "translation": "أنت أعظم من ذلك",
+          "width": 392,
+          "x": 152,
+          "y": 4077
+        }
+      ],
+      "imgHeight": 4174,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 40.18181818181819,
+          "symWidth": 29.813636363636363,
+          "text": "I  DRINK  THIS WINE  WITH  RESPECT FOR  YOU .",
+          "translation": "أشرب هذا الخمر احترامًا لك.",
+          "width": 507,
+          "x": 110,
+          "y": 672
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 29.58139534883721,
+          "symWidth": 21.790697674418606,
+          "text": "I'LL  ADMIT THAT  YOU'RE  SKILLED  IN HANDLING  PEOPLE ,",
+          "translation": "سأعترف بأنك بارع في التعامل مع الناس،",
+          "width": 458,
+          "x": 116,
+          "y": 2195
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 40.225,
+          "symWidth": 33.858333333333334,
+          "text": "BUT  YOU WON'T  BE  ABLE TO  SWAY  ME .",
+          "translation": "لكن لن تستطيع أن تؤثر عليّ.",
+          "width": 415,
+          "x": 135,
+          "y": 3450
+        }
+      ],
+      "imgHeight": 3922,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 42.04347826086956,
+          "symWidth": 29.17391304347826,
+          "text": "YOU  CAN'T  BECOME THE  SUCCESSOR  WITH A  SMALL  EXPLOSION .",
+          "translation": "لا يمكنك أن تصبح الوريث بانفجار صغير.",
+          "width": 504,
+          "x": 92,
+          "y": 138
+        },
+        {
+          "angle": 0,
+          "height": 276,
+          "symHeight": 55.53448275862069,
+          "symWidth": 36.3551724137931,
+          "text": "I'LL  INCITE HIM  TO  BLOW EVERYTHING AWAY .",
+          "translation": "سأثيره ليحطم كل شيء.",
+          "width": 409,
+          "x": 141,
+          "y": 1257
+        },
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 44,
+          "symWidth": 31.65238927738928,
+          "text": "IF  YOU  BELIEVE THE  SUCCESSION CAN  BE  DECIDED PEACEFULLY ,",
+          "translation": "إذا كنت تعتقد أن الخلاف على الخلافة سيُحسم بسلام،",
+          "width": 483,
+          "x": 105,
+          "y": 2949
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 32.6,
+          "text": "THEN  YOU'RE",
+          "translation": "فأنت",
+          "width": 335,
+          "x": 195,
+          "y": 4061
+        }
+      ],
+      "imgHeight": 4101,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 246,
+          "symHeight": 30.087962962962962,
+          "symWidth": 23.235449735449734,
+          "text": "I  WANTED TO  KNOW  WHAT  KIND OF  PERSON  YOU  ARE .  I  WAS CURIOUS  ABOUT  WHO  STANDS BESIDE  MY  BROTHER  AND PROTECTS  HIM ,",
+          "translation": "أردت أن أعرف من تكون. كنت فضوليًا بشأن من يقف إلى جانب أخي ويحميه،",
+          "width": 575,
+          "x": 64,
+          "y": 81
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 40,
+          "symWidth": 31.83974358974359,
+          "text": "AND  I'VE  COME  TO A  CONCLUSION .",
+          "translation": "وصلت إلى استنتاج.",
+          "width": 478,
+          "x": 91,
+          "y": 965
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 47,
+          "symWidth": 35.0625,
+          "text": "MY  BROTHER WOULD  BE  THE GREATEST  FOOL IN  THE  CULT",
+          "translation": "سيكون أخي أكبر المغفلين في الثقافة",
+          "width": 459,
+          "x": 111,
+          "y": 2034
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 45.5,
+          "symWidth": 32.02142857142857,
+          "text": "IF  HE  WERE  TO EVER  HURT  YOUR FEELINGS .",
+          "translation": "إذا ما آذا مشاعرك يومًا.",
+          "width": 448,
+          "x": 109,
+          "y": 3621
+        }
+      ],
+      "imgHeight": 4174,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 31.636363636363637,
+          "text": "ANYONE  ELSE .",
+          "translation": "أي أحد آخر.",
+          "width": 379,
+          "x": 159,
+          "y": 24
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 10.214285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 10,
+          "y": 1559
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 39.5,
+          "symWidth": 32.48214285714286,
+          "text": "A  LITTLE GIANT ...",
+          "translation": "عملاق صغير...",
+          "width": 215,
+          "x": 269,
+          "y": 2051
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 35.333333333333336,
+          "symWidth": 33.1,
+          "text": "I  ONCE THOUGHT  OF  MYSELF THAT",
+          "translation": "كنت أعتقد ذلك عن نفسي ذات مرة،",
+          "width": 499,
+          "x": 78,
+          "y": 3425
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37.5,
+          "symWidth": 32,
+          "text": "WAY ,",
+          "translation": "لكن لم يسبق لأحد أن وصفني بهذا.",
+          "width": 100,
+          "x": 338,
+          "y": 3529
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 34.666666666666664,
+          "symWidth": 33.162393162393165,
+          "text": "BUT  NO  ONE HAS  EVER  CALLED ME  THAT",
+          "translation": "",
+          "width": 420,
+          "x": 156,
+          "y": 3819
+        }
+      ],
+      "imgHeight": 4176,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 29.5,
+          "symWidth": 26.90497737556561,
+          "text": "DOES  HE KNOW  WHAT  I'M THINKING ... ? !",
+          "translation": "هل يعلم بما أفكر؟!",
+          "width": 305,
+          "x": 208,
+          "y": 1085
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 32,
+          "symWidth": 27,
+          "text": "PLEASE  TAKE GOOD  CARE  OF MY  BROTHER .",
+          "translation": "أرجو أن تعتني بأخي جيدًا.",
+          "width": 335,
+          "x": 205,
+          "y": 2222
+        },
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 34.6,
+          "symWidth": 28.331135531135534,
+          "text": "YOU'RE REALLY  ASKING ME  TO  LOOK  AFTER THE  FIRST  YOUNG MASTER ?",
+          "translation": "أترى حقًا أنك تطلب مني رعاية السيد الشاب الأول؟",
+          "width": 455,
+          "x": 117,
+          "y": 3010
+        }
+      ],
+      "imgHeight": 4039,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 30.4921875,
+          "symWidth": 23.356770833333336,
+          "text": "I  INTEND  TO END  THE  SENSELESS KILLING  IN  THE  SUCCESSION STRUGGLE  DURING MY  GENERATION .",
+          "translation": "أريد أن أنهي القتل العبثي في صراع الخلافة في جيلي.",
+          "width": 548,
+          "x": 60,
+          "y": 45
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 10.714285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 10,
+          "y": 1355
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 49,
+          "symWidth": 41.8,
+          "text": "WHAT ?",
+          "translation": "ماذا؟",
+          "width": 204,
+          "x": 298,
+          "y": 1777
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 29.03846153846154,
+          "symWidth": 21.942307692307693,
+          "text": "FOR  THAT TO  HAPPEN ,  WE  CAN'T APPROACH  EACH  OTHER EMOTIONALLY .",
+          "translation": "لكي يحدث ذلك، لا يجب أن نقترب من بعضنا عاطفيًا.",
+          "width": 430,
+          "x": 84,
+          "y": 2686
+        },
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 31.559038662486937,
+          "symWidth": 22.680897646414888,
+          "text": "BUT  MY BROTHER  HAS  A  STRONG SENSE  OF  PRIDE ,  SO  IT  WILL BE  DIFFICULT  FOR  HIM TO  CONTROL  IT .",
+          "translation": "لكن أخي يمتلك كبرياءً قويًا، وسيكون صعبًا عليه التحكم به.",
+          "width": 549,
+          "x": 89,
+          "y": 2959
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 54.46666666666667,
+          "symWidth": 33.733333333333334,
+          "text": "PLEASE  STAY AT  HIS  SIDE  AND HELP  HIM .",
+          "translation": "أرجوك ابق إلى جانبه وساعده.",
+          "width": 464,
+          "x": 131,
+          "y": 3634
+        }
+      ],
+      "imgHeight": 4040,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 39,
+          "symWidth": 29.863636363636363,
+          "text": "EITHER  A  FOOL OR  A  LUNATIC .",
+          "translation": "إما مغفل أو مجنون.",
+          "width": 390,
+          "x": 169,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 40.645161290322584,
+          "symWidth": 32.16129032258065,
+          "text": "EVERYONE  WHO KNOWS  ME  SAYS I'M  CRAZY ,",
+          "translation": "كل من يعرفني يقول إنني مجنون،",
+          "width": 429,
+          "x": 186,
+          "y": 1563
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 40.44444444444444,
+          "symWidth": 33.666666666666664,
+          "text": "SO  I  SUPPOSE I  MUST  BE .",
+          "translation": "فأعتقد أنني كذلك.",
+          "width": 392,
+          "x": 208,
+          "y": 2333
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 80.85714285714286,
+          "symWidth": 47.142857142857146,
+          "text": "I  HATE LUNATICS .",
+          "translation": "أكره المجانين.",
+          "width": 356,
+          "x": 165,
+          "y": 2758
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 10.428571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 150,
+          "x": 10,
+          "y": 4044
+        }
+      ],
+      "imgHeight": 4102,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 306,
+          "symHeight": 49.410714285714285,
+          "symWidth": 30.928571428571427,
+          "text": "IF  YOU'RE THERE ...  EVEN  IF  MY BROTHER  RAMPAGES , YOU  MIGHT  BE  ABLE TO  STOP  HIM .",
+          "translation": "إذا كنت موجودًا هناك... حتى لو ثار أخي، قد تتمكن من إيقافه.",
+          "width": 538,
+          "x": 68,
+          "y": 792
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 48.92857142857143,
+          "symWidth": 29.607142857142858,
+          "text": "YOU  UNDERSTAND NOTHING  ABOUT  ME .",
+          "translation": "أنت لا تفهمني.",
+          "width": 432,
+          "x": 135,
+          "y": 2514
+        },
+        {
+          "angle": 0,
+          "height": 332,
+          "symHeight": 52.375,
+          "symWidth": 30.413636363636368,
+          "text": "IF  THE FIRST  YOUNG MASTER  RAMPAGES , THEN  I'LL  POUR  OIL ON  THAT  FIRE .",
+          "translation": "لو ثار السيد الشاب الأول، فسأزيد النار وقودًا.",
+          "width": 437,
+          "x": 148,
+          "y": 3547
+        }
+      ],
+      "imgHeight": 4040,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 61.8,
+          "symWidth": 41.6,
+          "text": "I  SEE .",
+          "translation": "أرى.",
+          "width": 237,
+          "x": 298,
+          "y": 513
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 35,
+          "symWidth": 29.022552447552446,
+          "text": "WHY  DON'T YOU  ASK  WHY  HE CAME  AND  WHAT  WE DISCUSSED ?",
+          "translation": "لماذا لا تسأل لماذا جاء وما ناقشنا؟",
+          "width": 442,
+          "x": 109,
+          "y": 1634
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 49.470588235294116,
+          "symWidth": 32.470588235294116,
+          "text": "BECAUSE  I TRUST  YOU .",
+          "translation": "لأني أثق بك.",
+          "width": 317,
+          "x": 222,
+          "y": 2838
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 29,
+          "symWidth": 25.466479700854702,
+          "text": "YES , THE  FIRST  YOUNG MASTER  IS  THIS  KIND OF  PERSON .",
+          "translation": "نعم، السيد الشاب الأول هكذا هو.",
+          "width": 391,
+          "x": 176,
+          "y": 3962
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 27.666666666666668,
+          "symWidth": 25.446031746031746,
+          "text": "HE'S  NOT  DELICATE NOR  ELOQUENT ,  BUT GENUINE  AS  GOLD .",
+          "translation": "ليس دقيقًا ولا بليغًا، لكنه نقي كالذهب.",
+          "width": 388,
+          "x": 208,
+          "y": 4966
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 27.8,
+          "text": "IT  WAS",
+          "translation": "كان ذلك",
+          "width": 133,
+          "x": 291,
+          "y": 5633
+        }
+      ],
+      "imgHeight": 5668,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 18.666666666666668,
+          "symWidth": 19,
+          "text": "DOD",
+          "translation": "DOD",
+          "width": 21,
+          "x": 474,
+          "y": 2808
+        }
+      ],
+      "imgHeight": 4103,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 24.4,
+          "text": "AFTER",
+          "translation": "بعد",
+          "width": 114,
+          "x": 244,
+          "y": 2888
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 27.333333333333332,
+          "symWidth": 25.69047619047619,
+          "text": "SEEING THE  SECOND  YOUNG MASTER ,",
+          "translation": "رؤية السيد الشاب الثاني،",
+          "width": 448,
+          "x": 109,
+          "y": 2888
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 28,
+          "symWidth": 25.303703703703704,
+          "text": "I  SUDDENLY  WANTED TO  SEE  THE  FIRST  YOUNG MASTER  AGAIN .",
+          "translation": "أردت فجأة رؤية السيد الشاب الأول مجددًا.",
+          "width": 495,
+          "x": 145,
+          "y": 2967
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 28,
+          "symWidth": 25.893939393939394,
+          "text": "I  THINK  I  NEED TO  SEE  HIM  MORE BEFORE  I  CAN SLEEP .",
+          "translation": "أظن أنني بحاجة لرؤيته أكثر لكي أستطيع النوم.",
+          "width": 339,
+          "x": 196,
+          "y": 3789
+        }
+      ],
+      "imgHeight": 4078,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 28.5,
+          "symWidth": 26.551136363636363,
+          "text": "RIGHT  TO  COME FIND  HIM .",
+          "translation": "الحق أن ألتمسه.",
+          "width": 317,
+          "x": 200,
+          "y": 7
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 38.64705882352941,
+          "symWidth": 34.588235294117645,
+          "text": "I  SHALL TRUST  IN  HIM .",
+          "translation": "سأثق به.",
+          "width": 365,
+          "x": 169,
+          "y": 1165
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 32.25,
+          "symWidth": 26.45,
+          "text": "PLEASE HAVE  A  GOOD REST .",
+          "translation": "أتمنى لك راحة طيبة.",
+          "width": 300,
+          "x": 197,
+          "y": 2178
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 18,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 12,
+          "y": 3892
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 29.5,
+          "symWidth": 22.872159090909093,
+          "text": "OFFERING  THE SUPREME  DEMON  POSITION TO  THE  BLOOD  HEAVENS  SWORD DEMON  WAS  FOR  THE  PURPOSE OF  WINNING  HIM  OVER .",
+          "translation": "عرض منصب الشيطان الأعلى على شيطان سيف الدم السماوي كان لغرض كسبه.",
+          "width": 609,
+          "x": 32,
+          "y": 4193
+        }
+      ],
+      "imgHeight": 5669,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 44,
+          "symWidth": 35.72727272727273,
+          "text": "YOU'RE BACK ?",
+          "translation": "هل عدت؟",
+          "width": 213,
+          "x": 243,
+          "y": 1194
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 9,
+          "symWidth": 14,
+          "text": "...",
+          "translation": "...",
+          "width": 38,
+          "x": 438,
+          "y": 2346
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 33.43055555555556,
+          "symWidth": 30.45277777777778,
+          "text": "HE  DOESN'T EVEN  ASK  WHY  I'VE COME  AGAIN  WHEN WE  JUST  MET .",
+          "translation": "لا يسأل حتى لماذا جئت مرة أخرى ونحن التقينا للتو.",
+          "width": 417,
+          "x": 170,
+          "y": 2708
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.928571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 152,
+          "x": 9,
+          "y": 3806
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 39,
+          "symWidth": 36.5,
+          "text": "THAT'S",
+          "translation": "هذا",
+          "width": 181,
+          "x": 233,
+          "y": 4031
+        }
+      ],
+      "imgHeight": 4078,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 36.666666666666664,
+          "text": "RIGHT .",
+          "translation": "صحيح.",
+          "width": 174,
+          "x": 234,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 29.416666666666664,
+          "symWidth": 26.5,
+          "text": "THE  FIRST YOUNG  MASTER  HAS NEVER  BEEN  ONE  TO  REVEAL EMOTION  EASILY .",
+          "translation": "السيد الشاب الأول لم يكن يومًا من النوع الذي يكشف عن مشاعره بسهولة.",
+          "width": 556,
+          "x": 81,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 26.789473684210527,
+          "text": "PERSONAL  CURIOSITY  OR",
+          "translation": "فضول شخصي أو",
+          "width": 503,
+          "x": 111,
+          "y": 833
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 28.25,
+          "symWidth": 27.256410256410255,
+          "text": "HE'S NOT  A  FLAME  THAT WAVERS  AT  SUCH THINGS .",
+          "translation": "ليس ناريًا يهتز لمثل هذه الأمور.",
+          "width": 369,
+          "x": 173,
+          "y": 1405
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 26,
+          "symWidth": 21.251851851851853,
+          "text": "THE  SECOND YOUNG  MASTER  CAME TO  VISIT  ME .",
+          "translation": "جاء السيد الشاب الثاني لزيارتي.",
+          "width": 375,
+          "x": 184,
+          "y": 2313
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 32.857142857142854,
+          "text": "MUGEUK ?",
+          "translation": "موغوك؟",
+          "width": 245,
+          "x": 327,
+          "y": 2974
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 47,
+          "symWidth": 34.5,
+          "text": "YES .",
+          "translation": "نعم.",
+          "width": 120,
+          "x": 227,
+          "y": 3615
+        }
+      ],
+      "imgHeight": 4078,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 45.84873949579832,
+          "symWidth": 38.86974789915966,
+          "text": "WHY  IS HE  EXPLAINING NOW ... ?",
+          "translation": "لماذا يشرح الآن...؟",
+          "width": 426,
+          "x": 135,
+          "y": 1106
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 31.555555555555557,
+          "symWidth": 28.92735042735043,
+          "text": "HE  WOULDN'T  DO IT  WHEN  I  BEGGED FOR  IT ,",
+          "translation": "لم يفعل ذلك عندما طلبته منه،",
+          "width": 395,
+          "x": 152,
+          "y": 1902
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 31.666666666666668,
+          "symWidth": 32.205128205128204,
+          "text": "SO  WHY DO  SO  AFTER  GEOM MUGEUK",
+          "translation": "فلماذا بعد أن جاء إليّ غيوم موغوك؟",
+          "width": 441,
+          "x": 145,
+          "y": 3407
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 32,
+          "symWidth": 32.276785714285715,
+          "text": "HAS  COME TO  SEE  ME ?",
+          "translation": "عندما أصبح الشيطان السماوي، سيكون موقع الشيطان الأعلى لك بطبيعة الحال.",
+          "width": 335,
+          "x": 237,
+          "y": 3500
+        },
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 26.934210526315788,
+          "symWidth": 21.521941551740312,
+          "text": "WHEN  I BECOME  THE  HEAVENLY DEMON ,  THE  SUPREME DEMON  POSITION  WILL NATURALLY  BE YOURS .",
+          "translation": "",
+          "width": 409,
+          "x": 156,
+          "y": 4773
+        }
+      ],
+      "imgHeight": 5328,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 33.75,
+          "symWidth": 31.534777722277724,
+          "text": "YES , NOW  YOU  KNOW  HOW MUCH  GEOM  MUGEUK HAS  CHANGED .",
+          "translation": "نعم، الآن تعرف كم تغير غيوم موغوك.",
+          "width": 479,
+          "x": 107,
+          "y": 152
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 11.333333333333334,
+          "symWidth": 12.333333333333334,
+          "text": "680",
+          "translation": "680",
+          "width": 26,
+          "x": 389,
+          "y": 1556
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 30.666666666666668,
+          "symWidth": 30.542692939244663,
+          "text": "YOUR YOUNGER  BROTHER IS  AN  OPPONENT  WHO DEMANDS",
+          "translation": "أخوك الأصغر خصم يستحق",
+          "width": 456,
+          "x": 133,
+          "y": 1741
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 31,
+          "symWidth": 28.65277777777778,
+          "text": "SUCH VIGILANCE",
+          "translation": "مثل هذا اليقظة",
+          "width": 271,
+          "x": 258,
+          "y": 1881
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 38.333333333333336,
+          "symWidth": 33.94102564102564,
+          "text": "BUT  THERE'S  NO NEED  TO  LOSE  FAITH IN  YOURSELF ...",
+          "translation": "لكن لا حاجة لأن تفقد إيمانك بنفسك...",
+          "width": 550,
+          "x": 74,
+          "y": 3115
+        }
+      ],
+      "imgHeight": 4063,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 44,
+          "symWidth": 37.43518518518518,
+          "text": "HE'S  STILL YOUNG ,  THAT'S ALL .",
+          "translation": "إنه مازال شابًا، هذا كل شيء.",
+          "width": 447,
+          "x": 121,
+          "y": 4237
+        }
+      ],
+      "imgHeight": 5340,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 34.55555555555555,
+          "symWidth": 34.31746031746032,
+          "text": "ARE  YOU ANXIOUS  BECAUSE GEOM  MUGEUK  MIGHT SWAY  ME",
+          "translation": "هل أنت قلق لأن غيوم موغوك قد يؤثر عليّ رغم أنك كنت تظن أنني لا أتأثر؟",
+          "width": 520,
+          "x": 88,
+          "y": 1160
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 36.06666666666667,
+          "symWidth": 33.77777777777778,
+          "text": "EVEN  THOUGH YOU  ORIGINALLY THOUGHT  I  CAN'T BE  SWAYED ?",
+          "translation": "ASURASCANS.COM",
+          "width": 428,
+          "x": 152,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.785714285714286,
+          "text": "ASURASCANS.COM",
+          "translation": "ألم تقل إنك تثق بي؟",
+          "width": 151,
+          "x": 12,
+          "y": 3212
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 50.30434782608695,
+          "symWidth": 50.04347826086956,
+          "text": "DIDN'T YOU  SAY  YOU TRUST  ME ?",
+          "translation": "هذا يؤلمني حتى وأنا أحاول أن أفهمك.",
+          "width": 470,
+          "x": 116,
+          "y": 3627
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 29.756756756756758,
+          "symWidth": 28.62162162162162,
+          "text": "THIS  PAINS ME  EVEN  AS  I  TRY  TO UNDERSTAND  YOU .",
+          "translation": "",
+          "width": 432,
+          "x": 128,
+          "y": 4818
+        }
+      ],
+      "imgHeight": 5329,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 40.29166666666667,
+          "symWidth": 28.69047619047619,
+          "text": "I  KNEW  IT WOULD  NATURALLY BE  THIS  WAY .",
+          "translation": "كنت أعلم أن الأمر سيكون على هذا النحو بطبيعة الحال.",
+          "width": 465,
+          "x": 133,
+          "y": 1510
+        },
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 31.939655172413794,
+          "symWidth": 25.03291536050157,
+          "text": "I  WORRIED  YOU MIGHT  MISUNDERSTAND MY  INTENTIONS  SINCE I'M  SPEAKING  TO YOU  AT  A  TIME",
+          "translation": "كنت قلقًا من أن تسيء فهم نيتي لأنني أتحدث إليك في وقت",
+          "width": 463,
+          "x": 114,
+          "y": 2243
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 35.11904761904762,
+          "symWidth": 29.535714285714285,
+          "text": "WHEN  YOU'VE  JUST SEEN  MY  YOUNGER BROTHER .",
+          "translation": "التقيت فيه بأخي الأصغر لتوي.",
+          "width": 442,
+          "x": 118,
+          "y": 3291
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 10.266666666666667,
+          "text": "IASURASCANS.COM",
+          "translation": "IASURASCANS.COM",
+          "width": 160,
+          "x": 0,
+          "y": 3574
+        }
+      ],
+      "imgHeight": 4064,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 34,
+          "symWidth": 28.208333333333332,
+          "text": "WHAT MISUNDERSTANDING WOULD  I  HAVE ?",
+          "translation": "أي سوء فهم يمكن أن يحدث؟",
+          "width": 448,
+          "x": 115,
+          "y": 43
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 34.5,
+          "symWidth": 27.547892720306514,
+          "text": "I'M  SIMPLY GRATEFUL  FOR HOW  MUCH  YOU VALUE  ME .",
+          "translation": "أنا ببساطة ممتن لمدى تقييمك لي.",
+          "width": 364,
+          "x": 239,
+          "y": 1151
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 28,
+          "symWidth": 21.53208020050125,
+          "text": "THAT'S  ONLY NATURAL .  PLEASE  DON'T SAY  SUCH  THINGS .",
+          "translation": "ذلك أمر طبيعي فقط. أرجوك لا تقل أشياء كهذه.",
+          "width": 431,
+          "x": 159,
+          "y": 2139
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 30,
+          "text": "THEN",
+          "translation": "حسنًا،",
+          "width": 130,
+          "x": 156,
+          "y": 2692
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 41.5,
+          "symWidth": 29.916666666666664,
+          "text": "I  SHALL TAKE  MY  LEAVE .",
+          "translation": "سأرحل الآن.",
+          "width": 401,
+          "x": 132,
+          "y": 2692
+        }
+      ],
+      "imgHeight": 4063,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 28.4,
+          "symWidth": 26.42090909090909,
+          "text": "IF  HE WERE  PERFECT LIKE  THE  SECOND  YOUNG MASTER ,  WHY  WOULD I  NEED  HIM ?",
+          "translation": "لو كان كاملًا مثل السيد الشاب الثاني، لما احتجته.",
+          "width": 478,
+          "x": 110,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 247,
+          "symHeight": 25.662601626016258,
+          "symWidth": 23.879491211270263,
+          "text": "RATHER  THAN  SOMEONE LIKE  THE  SECOND  YOUNG MASTER  WHO  IS  AS  CUNNING AS  A  SNAKE ,  IT'S  BETTER  TO HAVE  THE  FIRST  YOUNG MASTER  WITH  HIS WEAKNESSES .",
+          "translation": "أفضل أن يكون لدي السيد الشاب الأول بضعفه على شخص مثل السيد الشاب الثاني الماكر كالأفعى.",
+          "width": 478,
+          "x": 124,
+          "y": 1519
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 34,
+          "symWidth": 30.65079365079365,
+          "text": "I  JUST ...  NEED TO  WATCH  OVER  HIM CAREFULLY .",
+          "translation": "أنا فقط... بحاجة لأن أراقبه بحرص.",
+          "width": 458,
+          "x": 124,
+          "y": 2663
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 19,
+          "symWidth": 11.071428571428571,
+          "text": "ASURASCANS.COM",
+          "translation": "ASURASCANS.COM",
+          "width": 151,
+          "x": 11,
+          "y": 4356
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 29.666666666666668,
+          "symWidth": 27.333333333333332,
+          "text": "작화 도움 박종일 석은 정",
+          "translation": "작화 도움 박종일 석은 정",
+          "width": 112,
+          "x": 565,
+          "y": 5099
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 19,
+          "symWidth": 21.583333333333336,
+          "text": "JHS STUDIO",
+          "translation": "JHS STUDIO",
+          "width": 107,
+          "x": 571,
+          "y": 5286
+        }
+      ],
+      "imgHeight": 5341,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

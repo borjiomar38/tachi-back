@@ -1,0 +1,996 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0078",
+  "jobId": "fixture-job-0078",
+  "licenseId": "fixture-license-0078",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 33.15,
+          "symWidth": 30,
+          "text": "待 神 给 的 一点 力量 也 当 个 宝 , 圣帝 我 都 见过 …",
+          "translation": "حتى القوة القليلة التي منحها الإله تُعدّ كنزًا، لقد شهدت الإمبراطور المقدس...",
+          "width": 278,
+          "x": 138,
+          "y": 723
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 30.83333333333333,
+          "symWidth": 27.66666666666667,
+          "text": "不 , 我 的 力 量",
+          "translation": "لا، قوتي",
+          "width": 171,
+          "x": 116,
+          "y": 1219
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31.71428571428572,
+          "symWidth": 26.14285714285714,
+          "text": "嘁 ! 快放开 我 !",
+          "translation": "هاه! أطلق سراحي فورًا!",
+          "width": 172,
+          "x": 677,
+          "y": 1249
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 25,
+          "text": "嘿嘿 。",
+          "translation": "ها ها.",
+          "width": 81,
+          "x": 1078,
+          "y": 1470
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 26.25,
+          "text": "「 扯扯 >",
+          "translation": "«تمتم»",
+          "width": 107,
+          "x": 633,
+          "y": 1497
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32.75,
+          "symWidth": 29.55952380952381,
+          "text": "这 不可能 ! 我 怎么 会 败给 你 这个 普通 弟子 !",
+          "translation": "هذا مستحيل! كيف لي أن أخسر أمامك، تلميذ عادي؟!",
+          "width": 221,
+          "x": 123,
+          "y": 1540
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 34.5,
+          "text": "扯扯",
+          "translation": "تمتم",
+          "width": 68,
+          "x": 807,
+          "y": 1576
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32.14285714285715,
+          "symWidth": 31,
+          "text": "●  最新 免费 漫画",
+          "translation": "● أحدث المانغا المجانية",
+          "width": 234,
+          "x": 969,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 33,
+          "text": "包子 漫畫",
+          "translation": "مانغا باوزي",
+          "width": 141,
+          "x": 612,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 24.62162162162162,
+          "symWidth": 20.86486486486486,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理, 更多 免費 漫畫 請 訪問",
+          "translation": "هذا المانغا جمعت ونُظمت بواسطة مانغا باوزي، للمزيد من المانغا المجانية زوروا الموقع",
+          "width": 525,
+          "x": 384,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 31.375,
+          "symWidth": 26.375,
+          "text": "好 了 , 该 我 出手 了 。",
+          "translation": "حسناً، لقد حان دوري للتحرك.",
+          "width": 172,
+          "x": 382,
+          "y": 392
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32.63636363636363,
+          "symWidth": 30.22727272727273,
+          "text": "既然 你 这么 喜欢 追随 侍 神 , 我 就 送 你 一份 大礼 吧 。",
+          "translation": "إذا كنت تعشق مرافقة الإله كذا، فسأهديك هديّة ثمينة.",
+          "width": 258,
+          "x": 878,
+          "y": 710
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.33333333333333,
+          "symWidth": 29.80555555555556,
+          "text": "你 …… 你 对 我 做 了 什么 ?",
+          "translation": "ما... ما الذي فعلته بي؟",
+          "width": 140,
+          "x": 669,
+          "y": 948
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 30,
+          "symWidth": 27.4,
+          "text": "嚯 嚯 , 别急",
+          "translation": "هاها، لا تستعجل.",
+          "width": 172,
+          "x": 509,
+          "y": 1503
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 31.66666666666666,
+          "symWidth": 27.93333333333333,
+          "text": "等 下 你 就 知 道 了 。",
+          "translation": "ستعلمُ قريبًا.",
+          "width": 170,
+          "x": 956,
+          "y": 1741
+        }
+      ],
+      "imgHeight": 2013,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 47.8,
+          "symWidth": 45.8,
+          "text": "∴  包子 漫畫",
+          "translation": "∴ مانغا باوزي",
+          "width": 258,
+          "x": 988,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 31,
+          "symWidth": 28.33333333333333,
+          "text": "那 是 什么 ? 看起来 不 简 单 啊 。",
+          "translation": "ما هذا؟ يبدو أنه ليس بالأمر البسيط.",
+          "width": 173,
+          "x": 973,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31.5,
+          "symWidth": 31.05,
+          "text": "你 给 他 打入 了 一个 符咒 ?",
+          "translation": "هل غرستُ فيه تعويذة؟",
+          "width": 207,
+          "x": 131,
+          "y": 154
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31.5,
+          "symWidth": 27.2,
+          "text": "是 啊 , 这 是 什么 符咒 ?",
+          "translation": "نعم، ما نوع هذه التعويذة؟",
+          "width": 171,
+          "x": 167,
+          "y": 802
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 38,
+          "symWidth": 28.66666666666667,
+          "text": "12 /",
+          "translation": "12 /",
+          "width": 62,
+          "x": 574,
+          "y": 1247
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 31.57142857142857,
+          "symWidth": 29.03571428571429,
+          "text": "此乃 控 魂 符 , 是 我 从 古籍 中 习 来 。",
+          "translation": "هذه تعويذة السيطرة على الروح، تعلمتها من كتابٍ قديم.",
+          "width": 140,
+          "x": 113,
+          "y": 1304
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 31.83333333333333,
+          "symWidth": 29.80555555555555,
+          "text": "它 的 作用 很 简 单 , 便是 能让 我 操纵 被 打入 者 的 行动 。",
+          "translation": "وظيفتها بسيطة، إذ تمكنني من التحكم في أفعال من تُغرَس عليه.",
+          "width": 208,
+          "x": 510,
+          "y": 1523
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 17.33333333333333,
+          "text": "啊 ? !",
+          "translation": "ها؟!",
+          "width": 77,
+          "x": 1059,
+          "y": 1610
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 49,
+          "symWidth": 61,
+          "text": "【 动漫",
+          "translation": "【أنمي",
+          "width": 199,
+          "x": 1051,
+          "y": 1743
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 32,
+          "symWidth": 27.875,
+          "text": "用 了 这 道 控 魂 符 ,",
+          "translation": "بفضل هذه الوشمة التي تسيطر على الروح،",
+          "width": 140,
+          "x": 631,
+          "y": 420
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 32.41666666666667,
+          "symWidth": 30.79166666666667,
+          "text": "那 他 就 不再 是 威胁 , 反而 可 以 成为 我们 的 帮手 啊 。",
+          "translation": "لن يعد يشكل تهديدًا، بل قد يصبح عونًا لنا.",
+          "width": 210,
+          "x": 818,
+          "y": 447
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 32.25,
+          "symWidth": 28.91666666666666,
+          "text": "你 真 以为 他 会 在乎 你 ? 身为 棋子 , 却还 沾 沾 自 喜 。",
+          "translation": "هل تعتقد حقًا أنه سيهتم لأمرك؟ إنّه مجرد بيدق، ولا زلت تغتر بنفسك.",
+          "width": 209,
+          "x": 942,
+          "y": 695
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 30.625,
+          "symWidth": 25.225,
+          "text": "不 ! 赤 蟒 ! 你 不能 这样 对 我 !",
+          "translation": "كلا! أيها الأفعى الحمراء! لا يمكنك معاملتي هكذا!",
+          "width": 170,
+          "x": 107,
+          "y": 779
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16.66666666666667,
+          "symWidth": 23.66666666666667,
+          "text": "www",
+          "translation": "",
+          "width": 67,
+          "x": 416,
+          "y": 889
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32.33333333333334,
+          "symWidth": 30.78333333333333,
+          "text": "你 现在 连 棋子 的 资 格 都没 了 。",
+          "translation": "أنت الآن لم تعد تستحق حتى أن تكون بيدقًا.",
+          "width": 153,
+          "x": 999,
+          "y": 930
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 32.61111111111111,
+          "symWidth": 29.73809523809524,
+          "text": "侍 神 大人 … 一 定 会 来救 我 的 , 他 不会 放过 你 !",
+          "translation": "يا سيدي الحارس... لابد وأن تأتي لإنقاذي، لن تغفر لك ذلك!",
+          "width": 224,
+          "x": 140,
+          "y": 988
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 28.28571428571428,
+          "text": "* 最新 免费 漫画",
+          "translation": "",
+          "width": 213,
+          "x": 992,
+          "y": 1718
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31.5,
+          "symWidth": 29.33333333333334,
+          "text": "真的 要让 他 离开 ?",
+          "translation": "هل سنجبره على الرحيل حقًا؟",
+          "width": 173,
+          "x": 780,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31.5,
+          "symWidth": 25.91666666666666,
+          "text": "高明 啊 , 这样 一 来 ,",
+          "translation": "ذكيٌّ حقًا، فبذلك،",
+          "width": 208,
+          "x": 146,
+          "y": 151
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 32.66666666666666,
+          "symWidth": 30.33333333333333,
+          "text": "我们 不仅 解决 了 离 火 圣 子 ,",
+          "translation": "لن نتخلص من ولي النار فحسب،",
+          "width": 140,
+          "x": 345,
+          "y": 294
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.76923076923077,
+          "symWidth": 30.76923076923077,
+          "text": "还能 通过 他 获取 待 神 的 情报 。",
+          "translation": "بل سنحصل عبره على أسرار الحديث الإلهي.",
+          "width": 174,
+          "x": 430,
+          "y": 452
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 31.66666666666667,
+          "symWidth": 29.71269841269842,
+          "text": "万一 离 火 圣 子 脱离 控制 , 后果 不堪设想 。",
+          "translation": "إذا خرج ولي النار عن السيطرة، فالعواقب لا تُحتمل.",
+          "width": 244,
+          "x": 811,
+          "y": 474
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 33,
+          "symWidth": 29.58333333333333,
+          "text": "放心 吧 , 控 魂 符 的 力量 不是 他 能 挣脱 的 。",
+          "translation": "لا تقلق، فقوة ختم روح السيطرة ليست مما يُفلت من قبضته.",
+          "width": 244,
+          "x": 198,
+          "y": 762
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31,
+          "symWidth": 29.25,
+          "text": "况且 , 我 还有 更大 的 计划 。",
+          "translation": "وأزيدك أن لدي خطة أسمى وأعظم.",
+          "width": 208,
+          "x": 450,
+          "y": 913
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 31.33333333333333,
+          "symWidth": 28.86666666666667,
+          "text": "打 了 这么 久 , 大家 消耗 都 不 小 。",
+          "translation": "لقد استمر القتال طويلًا، وكلنا استُنزفنا كثيرًا.",
+          "width": 189,
+          "x": 689,
+          "y": 1232
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 32.66666666666666,
+          "symWidth": 29.18888888888889,
+          "text": "那 我们 接下来 怎么 办 ? 就 在 这 躲着 吗 ?",
+          "translation": "فما خطوتنا التالية؟ هل سنظل مختبئين هنا؟",
+          "width": 208,
+          "x": 113,
+          "y": 1257
+        },
+        {
+          "angle": 0,
+          "height": 298,
+          "symHeight": 31.85714285714286,
+          "symWidth": 29.55918367346939,
+          "text": "这里 灵气 浓 郁 , 大家 就 在 这 休息 片 刻 吧 , 接下 来 的 路 , 会 更 凶险 。 ● 最新 免费 漫画",
+          "translation": "ها هنا غنى الطاقات الروحية عظيم، فلنسترح قليلاً، فالمسير القادم سيكون أكثر خطورة.",
+          "width": 234,
+          "x": 971,
+          "y": 1451
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 37,
+          "symWidth": 35.25,
+          "text": "走吧 , 金 蛋 。",
+          "translation": "فلنمضِ يا بيضة الذهب.",
+          "width": 151,
+          "x": 665,
+          "y": 398
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 31.77777777777778,
+          "symWidth": 28.33333333333334,
+          "text": "也好 , 我们 确实 需要 恢 复 一下 。",
+          "translation": "حقاً، نحن بحاجة إلى استعادة بعض قوتنا.",
+          "width": 175,
+          "x": 331,
+          "y": 483
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 31.25,
+          "symWidth": 29,
+          "text": "赤 蟒 , 你 的 手 段 越来越 夸张 了 。",
+          "translation": "يا ثعبان القرمزي، أساليبك تصبح أعتى يوماً بعد يوم.",
+          "width": 209,
+          "x": 730,
+          "y": 701
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31.5,
+          "symWidth": 29.08333333333333,
+          "text": "天上 的 这些 , 都是 神池 啊 …",
+          "translation": "تلك في السماء، كل منها بركة إلهية...",
+          "width": 203,
+          "x": 294,
+          "y": 742
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 31.27777777777778,
+          "symWidth": 30.54166666666666,
+          "text": "连 人 族 的 武宗 都是 你 的 帮手 。",
+          "translation": "حتى أتباع عالم البشر من المحاربين يخضعون لإمرتك.",
+          "width": 154,
+          "x": 970,
+          "y": 995
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 32.66666666666666,
+          "symWidth": 26.57936507936508,
+          "text": "『 你 看 她 , 哪有 拇指 大小 的 人 类 。",
+          "translation": "انظر إليها، لا وجود لإنسان بهذا الحجم إلا بحجم إبهام اليد.",
+          "width": 220,
+          "x": 418,
+          "y": 1318
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31.5,
+          "symWidth": 29.8,
+          "text": "还有 肥 鸟 样 的 人类 。",
+          "translation": "وحتى أولئك من البشر يشبهون الطيور السمينة.",
+          "width": 172,
+          "x": 566,
+          "y": 1457
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 49,
+          "symWidth": 56,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 105,
+          "x": 1146,
+          "y": 1742
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 33,
+          "symWidth": 22.375,
+          "text": "是 啊 , 是 啊 ,",
+          "translation": "نعم، نعم.",
+          "width": 136,
+          "x": 677,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 32.5,
+          "symWidth": 29.78333333333333,
+          "text": "赤 蟒 哥哥 不 会 害 我们 的 !",
+          "translation": "الأخ أختمير لن يؤذينا.",
+          "width": 188,
+          "x": 840,
+          "y": 176
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 32.25,
+          "symWidth": 29.125,
+          "text": "总之 , 现在 的 事件 已经 不一 般 了 , 我们 必 须 团结一致 。",
+          "translation": "بالمختصر، ما يحدث الآن ليس بالأمر العادي، لا بد لنا من توحيد الصفوف.",
+          "width": 209,
+          "x": 123,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 30.5,
+          "symWidth": 25.125,
+          "text": "是 吧 , 水 苓 。",
+          "translation": "أليس كذلك، شويلينغ؟",
+          "width": 140,
+          "x": 184,
+          "y": 442
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 31.91666666666667,
+          "symWidth": 30.28333333333333,
+          "text": "这次 秘境 之 旅 发展 得越 来 越出 人 预 料 了 。",
+          "translation": "تغدو رحلة الأسرار هذه أكثر فأكثر خارجة عن التوقعات.",
+          "width": 174,
+          "x": 714,
+          "y": 759
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32.66666666666666,
+          "symWidth": 30.35714285714286,
+          "text": "这里 到底 藏着 什么 秘密 , 必须 尽快 找到 答案 。",
+          "translation": "ما الأسرار التي تخبئها هذه الدهاليز؟ علينا إيجاد الجواب سريعًا.",
+          "width": 246,
+          "x": 749,
+          "y": 988
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.66666666666667,
+          "symWidth": 28.51666666666667,
+          "text": "嗯 , 咱们 也 找个 神池 去 调 息 吧 。",
+          "translation": "حسنًا، دعونا نجد بركة إلهية للراحة.",
+          "width": 173,
+          "x": 177,
+          "y": 1021
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 29.66666666666667,
+          "symWidth": 26.18333333333333,
+          "text": "继续 走吧 , 万里 河山 图 。",
+          "translation": "دعنا نستمر سيرًا، يا خريطة العروش البعيدة.",
+          "width": 150,
+          "x": 368,
+          "y": 1228
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 31,
+          "symWidth": 26.875,
+          "text": "去 秘境 深 处 。",
+          "translation": "نذهب إلى أعماق الأسرار.",
+          "width": 136,
+          "x": 798,
+          "y": 1515
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 52.5,
+          "text": "腾讯 动漫",
+          "translation": "تيينسنت للرسوم المتحركة",
+          "width": 192,
+          "x": 1059,
+          "y": 1743
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 26.6,
+          "text": "万里 河山 图 ( 移动 中 )",
+          "translation": "خريطة الأنهار والجبال عبر آلاف الأميال (قيد التحريك)",
+          "width": 306,
+          "x": 91,
+          "y": 115
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 31.4,
+          "symWidth": 28.94444444444444,
+          "text": "赤 蟒 , 我们 真的 要 进入 秘境 深处 吗 ?",
+          "translation": "أيها الأفعى الحمراء، هل سنغوص حقًا في أعماق السر الغامض؟",
+          "width": 189,
+          "x": 574,
+          "y": 732
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 30.78888888888889,
+          "symWidth": 28.73333333333333,
+          "text": "我 感觉 越 往 前 , 我 的 力量 便 越是 流失 。",
+          "translation": "أشعر بأن قوتي تضعف كلما تقدمنا إلى الأمام.",
+          "width": 207,
+          "x": 660,
+          "y": 899
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 29,
+          "symWidth": 26.05555555555556,
+          "text": "不如 先 想 办法 宗 门 , 再 找 救兵 。",
+          "translation": "ربما ينبغي أن نجد وسيلة لطلب النجدة من الطائفة أولاً.",
+          "width": 190,
+          "x": 813,
+          "y": 1031
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 36,
+          "symWidth": 30.81666666666667,
+          "text": "| 宗 主要 对 | 付 离 火 圣 子 ,",
+          "translation": "على رئيس الطائفة مواجهة ابن النار فولي.",
+          "width": 152,
+          "x": 76,
+          "y": 1284
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 32,
+          "symWidth": 31.05555555555556,
+          "text": "宗主 和 侍 神 都 跑来 了 , 还 把 我们 也 送",
+          "translation": "جاء رئيس الطائفة وحراس الآلهة، بل وأرسلونا معهم.",
+          "width": 209,
+          "x": 662,
+          "y": 1451
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.33333333333333,
+          "symWidth": 28.8,
+          "text": "恐怕 她 和 侍 神 早就 闹 掰 了 。",
+          "translation": "أخشى أنها قد انقطعت علاقتها مع حراس الآلهة منذ زمن.",
+          "width": 173,
+          "x": 93,
+          "y": 1521
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 32.5,
+          "symWidth": 32.25,
+          "text": "这 里面 绝对 有 不得了 的 宝物",
+          "translation": "لا شك أن في هذا المكان كنوزًا عظيمة لا تُقدر بثمن.",
+          "width": 207,
+          "x": 892,
+          "y": 1551
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 33.15,
+          "symWidth": 29.78333333333333,
+          "text": "宗 门 里 还能 有 比 宗主 更大 的 救兵 吗 ?",
+          "translation": "هل توجد قوة أنجد من رئيس الطائفة داخل الطائفة نفسها؟",
+          "width": 206,
+          "x": 389,
+          "y": 1561
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 50,
+          "symWidth": 42.6,
+          "text": "∴  包子 漫畫",
+          "translation": "رَمزٌ لِكُمَّةٍ من المانغا",
+          "width": 246,
+          "x": 60,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 29.2,
+          "text": "· 包子 漫畫",
+          "translation": "· رَمزٌ لِكُمَّةٍ من المانغا",
+          "width": 177,
+          "x": 576,
+          "y": 40
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 20.86363636363636,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問",
+          "translation": "هذا العمل جمعته ورتَّبه مجموعةُ رَمزٍ لِكُمَّةٍ من المانغا، لمزيدٍ من الأعمال المجانية، يرجى الزيارة",
+          "width": 524,
+          "x": 385,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 31.59090909090909,
+          "symWidth": 28.43479437229437,
+          "text": "笑话 , 我们 这 一路 走来 , 哪 次 不是 险 中 求胜 !  这 一次 也 不 例外 。",
+          "translation": "مهلاً، في رحلتنا هذه، ألم نكن دومًا ننتصر بابتكار المخاطر؟ ولن تكون هذه المرة استثناء.",
+          "width": 420,
+          "x": 656,
+          "y": 334
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31.5,
+          "symWidth": 32.5,
+          "text": "可是 我们 对 秘境 一 无所",
+          "translation": "لكننا لا نعلم شيئًا عن هذه السراديب.",
+          "width": 172,
+          "x": 180,
+          "y": 340
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 31.94444444444444,
+          "symWidth": 28.35714285714286,
+          "text": "再 不济 , 就 躲 进 万里 河山 图 , 没 人 能 进来 。",
+          "translation": "وفي أسوأ الأحوال، نلجأ إلى خريطة الأنهار والجبال التي تمتد أميالًا، فلا يستطيع أحد دخولها.",
+          "width": 222,
+          "x": 644,
+          "y": 709
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 32,
+          "symWidth": 29.5,
+          "text": "贸然 前往 , 会 不会 太 危险 了 ?",
+          "translation": "هل لا يكون من المتهور أن نتجه إليه دون تدبير؟",
+          "width": 152,
+          "x": 400,
+          "y": 718
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 32.33333333333334,
+          "symWidth": 28.55555555555555,
+          "text": "这 倒 也是 , 以 说 我 毫无 选择 。",
+          "translation": "ذلك صحيح، ويبدو لي أنه لا خيار لديّ.",
+          "width": 151,
+          "x": 97,
+          "y": 1008
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 23.66666666666667,
+          "text": "哼哼 。",
+          "translation": "همهمات.",
+          "width": 80,
+          "x": 721,
+          "y": 1092
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 19.5,
+          "text": "啊 !",
+          "translation": "آه!",
+          "width": 45,
+          "x": 734,
+          "y": 1418
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 28.6,
+          "text": "你 怎么 了 ?",
+          "translation": "ما خطبك؟",
+          "width": 155,
+          "x": 460,
+          "y": 1709
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 30.4,
+          "text": "你 的 脸色 …",
+          "translation": "هيئة وجهك...",
+          "width": 173,
+          "x": 639,
+          "y": 1794
+        }
+      ],
+      "imgHeight": 2013,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

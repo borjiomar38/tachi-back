@@ -9,7 +9,11 @@ const URL_OR_DOMAIN_TEST_REGEX =
 const URL_OR_DOMAIN_REGEX =
   /(?:https?:\/\/|www\.|(?:[a-z0-9][a-z0-9-]*\.)+(?:com|net|org|io|co|me|xyz|top|site|vip|cc|tv)\b)/gi;
 const WATERMARK_WORD_REGEX =
-  /\b(?:acl|colamanga|scanlations?|scanlator|discord|telegram|newtoki|manatoki)\b/gi;
+  /\b(?:acl|colamanga|hipmh|scanlations?|scanlator|discord|telegram|newtoki|manatoki)\b/gi;
+
+type ProviderTranslationCleanupMode =
+  | 'cached_ocr_source'
+  | 'translated_manifest';
 
 export function cleanProviderTranslationText(value: string) {
   return value
@@ -28,7 +32,9 @@ export function cleanProviderTranslationText(value: string) {
 }
 
 export function shouldDropProviderTranslationBlock(input: {
+  mode?: ProviderTranslationCleanupMode;
   sourceText: string;
+  sourceLanguage?: string;
   translation: string;
 }) {
   const translation = input.translation.trim();
@@ -41,9 +47,25 @@ export function shouldDropProviderTranslationBlock(input: {
     return false;
   }
 
+  if (WATERMARK_MARKER_TEST_REGEX.test(translation)) {
+    return !shouldKeepEmptyAsianSourceTranslationBlock(input);
+  }
+
+  return isLikelyStandaloneWatermarkSource(input.sourceText);
+}
+
+function shouldKeepEmptyAsianSourceTranslationBlock(input: {
+  mode?: ProviderTranslationCleanupMode;
+  sourceLanguage?: string;
+  sourceText: string;
+}) {
   return (
-    WATERMARK_MARKER_TEST_REGEX.test(translation) ||
-    isLikelyStandaloneWatermarkSource(input.sourceText)
+    input.mode === 'cached_ocr_source' &&
+    isAsianSourceLanguage(input.sourceLanguage ?? '') &&
+    EAST_ASIAN_TEXT_REGEX.test(input.sourceText) &&
+    usefulLetterOrNumberCount(input.sourceText) >= 2 &&
+    !isLikelyStandaloneWatermarkSource(input.sourceText) &&
+    !isKnownStandaloneAsianWatermarkSource(input.sourceText)
   );
 }
 
@@ -79,6 +101,34 @@ function isLikelyStandaloneWatermarkSource(value: string) {
   return remainder.length <= 3;
 }
 
+function isKnownStandaloneAsianWatermarkSource(value: string) {
+  const normalized = value
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '')
+    .trim();
+
+  if (!normalized) {
+    return false;
+  }
+
+  return (
+    ASIAN_WATERMARK_SOURCE_TEXTS.has(normalized) ||
+    normalized.includes('acloudmerol') ||
+    normalized.includes('colamanga') ||
+    normalized.includes('hipmh')
+  );
+}
+
+function isAsianSourceLanguage(sourceLanguage: string) {
+  return /^(?:zh|zho|chi|cmn|yue|ja|jpn|ko|kor)(?:\b|[-_])/i.test(
+    sourceLanguage.trim()
+  );
+}
+
+function usefulLetterOrNumberCount(text: string) {
+  return Array.from(text.matchAll(/[\p{Letter}\p{Number}]/gu)).length;
+}
+
 const NO_TRANSLATION_PUNCTUATION_REGEX = /[()[\]{}<>"'`_*:;,.!?،؛؟\-–—]+/g;
 const NO_TRANSLATION_PLACEHOLDER_REGEXES = [
   /\b(?:no|not|without)\s+(?:translation|translated)\b/,
@@ -89,3 +139,21 @@ const NO_TRANSLATION_PLACEHOLDER_REGEXES = [
   /(?:لا|بدون|غير|عدم)\s+ترجم\p{L}*/u,
   /نص\s+(?:صيني|كوري|ياباني)/u,
 ];
+const EAST_ASIAN_TEXT_REGEX =
+  /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]/u;
+const ASIAN_WATERMARK_SOURCE_TEXTS = new Set([
+  'com',
+  '漫画',
+  '看漫画',
+  '看漫',
+  '快看漫画',
+  '优良漫画',
+  '優良漫画',
+  '动漫',
+  '動漫',
+  '腾讯动漫',
+  '騰訊動漫',
+  '体讯动漫',
+  '體讯动漫',
+  '體訊動漫',
+]);

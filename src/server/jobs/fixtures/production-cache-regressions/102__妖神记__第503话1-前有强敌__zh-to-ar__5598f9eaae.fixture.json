@@ -1,0 +1,743 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0102",
+  "jobId": "fixture-job-0102",
+  "licenseId": "fixture-license-0102",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 31,
+          "symWidth": 16.76,
+          "text": "观看, 最快 最 稳, 广告 最少",
+          "translation": "المشاهدة، الأسرع، الأكثر استقرارًا، وأقل الإعلانات",
+          "width": 550,
+          "x": 34,
+          "y": 52
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.5,
+          "symWidth": 19.025,
+          "text": "变成 死 的 几个 圣 子 似乎 更强 了 。",
+          "translation": "يبدو أن بعض أولاد القديسين الذين كادت تموت قواهم أصبحوا أقوى.",
+          "width": 129,
+          "x": 71,
+          "y": 223
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 17.85714285714286,
+          "text": "不过 龙 天明 被 打成 那样 , 还能 嘴硬 , 真 佩服 他 。",
+          "translation": "لكن لما نال التنين تيان مين تلك الضربات وما زال يثور، حقًا أُعجبت به.",
+          "width": 161,
+          "x": 460,
+          "y": 362
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.5,
+          "symWidth": 19.5875,
+          "text": "他 会 不会 偷 偷 躲 起来 哭 鼻子 ?",
+          "translation": "هل لعله يختبئ سرًّا ليبكي في خلواه؟",
+          "width": 109,
+          "x": 80,
+          "y": 645
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 21.21428571428572,
+          "symWidth": 20.14285714285714,
+          "text": "说不定 现在 正 躲在 哪个 角落 里 ,",
+          "translation": "قد يكون الآن يختبئ في زاوية ما،",
+          "width": 136,
+          "x": 430,
+          "y": 682
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 18.83333333333333,
+          "text": "一边 舔舐 伤口 一边 骂街 呢 。",
+          "translation": "يلتقط أنفاسه ويلعن الدنيا.",
+          "width": 129,
+          "x": 595,
+          "y": 712
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20,
+          "symWidth": 17.45,
+          "text": "他 要是 真 有 本事 , 就该 亲自 报仇 。",
+          "translation": "لو كان ذا قدرة حقًا، لانتقم بيده بنفسه.",
+          "width": 108,
+          "x": 68,
+          "y": 866
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.55555555555556,
+          "symWidth": 17.6,
+          "text": "呦 , 没 想到 你 还会 替 他 说话 。",
+          "translation": "ها! لم أظن أنك ستدافع عنه.",
+          "width": 108,
+          "x": 406,
+          "y": 867
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.91666666666666,
+          "text": "难不成 你们 还 有点 交情 ?",
+          "translation": "هل أنتم حقًا تربطكم علاقة ما؟",
+          "width": 131,
+          "x": 421,
+          "y": 1033
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 15,
+          "text": "ACLOUDM",
+          "translation": "",
+          "width": 140,
+          "x": 3,
+          "y": 1134
+        }
+      ],
+      "imgHeight": 1206,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.8,
+          "text": "KR ...",
+          "translation": "ر، ك،...",
+          "width": 45,
+          "x": 643,
+          "y": 90
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20,
+          "symWidth": 18.78888888888889,
+          "text": "少 胡说八道 , 我 只是 就 事 论 事 而已 …",
+          "translation": "قف عن الهراء، أنا أتحدث بموضوعية فحسب...",
+          "width": 117,
+          "x": 82,
+          "y": 300
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 13,
+          "text": "咦 !",
+          "translation": "هاه!",
+          "width": 29,
+          "x": 627,
+          "y": 600
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.33333333333334,
+          "symWidth": 17.5,
+          "text": "误 … 误 会 啊 !",
+          "translation": "خطأ... إنه سوء تفاهم!",
+          "width": 64,
+          "x": 503,
+          "y": 828
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 17.31666666666667,
+          "text": "无耻 之 徒 , 竟敢 …… 占 我 便宜 !",
+          "translation": "يا من لا شرف له، كيف تجرؤ... على استغلالي!",
+          "width": 107,
+          "x": 87,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35,
+          "symWidth": 34.33333333333334,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 115,
+          "x": 12,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 13.5,
+          "text": "哦 !",
+          "translation": "أوه!",
+          "width": 29,
+          "x": 320,
+          "y": 298
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19,
+          "symWidth": 16.91666666666666,
+          "text": "喂 , 你们 继续 打 啊 。",
+          "translation": "هيا، تابعوا القتال.",
+          "width": 129,
+          "x": 461,
+          "y": 708
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 15.58333333333333,
+          "text": "不用 管 我们 , 嘿嘿 !",
+          "translation": "لا تهتموا بنا، هاها!",
+          "width": 116,
+          "x": 545,
+          "y": 962
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 25,
+          "symWidth": 20,
+          "text": "ACLOUDMER",
+          "translation": "",
+          "width": 171,
+          "x": 499,
+          "y": 1063
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 118,
+          "x": 12,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 16.75,
+          "text": "别闹 了 ! 他们 要打 过来 了 !",
+          "translation": "كف عن العبث! إنهم على وشك الهجوم!",
+          "width": 129,
+          "x": 255,
+          "y": 616
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.22222222222222,
+          "symWidth": 17.13333333333333,
+          "text": "谁 跟 你 闹 , 我 今天 非 杀 你 不可 !",
+          "translation": "من قال لك أنني أمزح؟ اليوم لا مفرّ من قتلك!",
+          "width": 96,
+          "x": 78,
+          "y": 960
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 37,
+          "symWidth": 31.64583333333333,
+          "text": "to  2 ACLOUDME",
+          "translation": "",
+          "width": 158,
+          "x": 496,
+          "y": 1006
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37,
+          "symWidth": 37,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 120,
+          "x": 10,
+          "y": 1081
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.72222222222222,
+          "symWidth": 17.71111111111111,
+          "text": "是 啊 , 赤 蟒 哥哥 也不 是 故意 的 ,",
+          "translation": "نعم، يا أخي الأحمر، لم يكن قصده الفعل.",
+          "width": 109,
+          "x": 432,
+          "y": 104
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.5,
+          "text": "别 这样 !",
+          "translation": "لا تفعل ذلك!",
+          "width": 75,
+          "x": 88,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.99603174603175,
+          "text": "现在 情况 危急 , 我们 得 先 想 办 法 脱身 !",
+          "translation": "الوضع الآن خطير للغاية، علينا أن نجد وسيلة للفرار أولاً!",
+          "width": 139,
+          "x": 241,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 17.14285714285714,
+          "text": "你们 别再 打 了 !",
+          "translation": "كفّوا عن القتال فوراً!",
+          "width": 139,
+          "x": 436,
+          "y": 297
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19.5,
+          "symWidth": 14.5,
+          "text": "喂 !",
+          "translation": "هيّا!",
+          "width": 30,
+          "x": 456,
+          "y": 498
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 15.66666666666667,
+          "text": "做梦 !",
+          "translation": "وما تتخيل!",
+          "width": 52,
+          "x": 134,
+          "y": 652
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 115,
+          "x": 11,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.56666666666667,
+          "text": "别 以为 这样 我 就会 原谅 你 !",
+          "translation": "لا تظنّ أنّني سأغفر لك مجرّد هذا!",
+          "width": 109,
+          "x": 425,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.5,
+          "symWidth": 15.65,
+          "text": "你 怎么 说 都 行 ,",
+          "translation": "قل ما شئت،",
+          "width": 107,
+          "x": 370,
+          "y": 496
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 19,
+          "symWidth": 19.16666666666667,
+          "text": "但 现在 能 不能 合作 一下 ?",
+          "translation": "لكن هل تستطيع التعاون معي الآن؟",
+          "width": 87,
+          "x": 437,
+          "y": 589
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 14,
+          "text": "哦 !",
+          "translation": "ها!",
+          "width": 30,
+          "x": 653,
+          "y": 797
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 18.93650793650794,
+          "text": "等 解决 了 这些 死 傀 , 你 再找 我 算账 也 不迟 。",
+          "translation": "عند انتهائي من تصفية هؤلاء الجهلة، سيكون لك الحقّ أن تطالبني بالحساب.",
+          "width": 152,
+          "x": 245,
+          "y": 971
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 20.625,
+          "text": "ACLOUDIE",
+          "translation": "",
+          "width": 154,
+          "x": 2,
+          "y": 1065
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.33333333333333,
+          "symWidth": 18.75,
+          "text": "区区 傀儡 也 敢 在 我 面前 嚣张 !",
+          "translation": "كيف لدمية حقيرة أن تتحداني أمام وجهي!",
+          "width": 95,
+          "x": 60,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 19.5,
+          "symWidth": 13.38636363636364,
+          "text": "ACLOUDMERCE שישה",
+          "translation": "",
+          "width": 211,
+          "x": 1,
+          "y": 1065
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 14.33333333333333,
+          "text": "SOM",
+          "translation": "",
+          "width": 46,
+          "x": 232,
+          "y": 1080
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 15.42857142857143,
+          "text": "快快 快 , 溜 了 。",
+          "translation": "هلمّا بسرعة، لنرحل.",
+          "width": 139,
+          "x": 134,
+          "y": 141
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19.5,
+          "symWidth": 15.5,
+          "text": "啊 ?",
+          "translation": "ها؟",
+          "width": 29,
+          "x": 482,
+          "y": 319
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.33333333333333,
+          "symWidth": 18.55555555555556,
+          "text": "开玩笑 , 她 可 是 天元",
+          "translation": "إنها مجرد مزحة، فهي بحق تيان يوان.",
+          "width": 131,
+          "x": 409,
+          "y": 436
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 18,
+          "symWidth": 16.14583333333334,
+          "text": "可是 … 她 一个 ........",
+          "translation": "لكنها... وحدها...",
+          "width": 132,
+          "x": 61,
+          "y": 439
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 20.25,
+          "symWidth": 18.48333333333333,
+          "text": "她 修炼 得 可不 一般 功 法 , 两个 龙 道 境 的 难 不住 她 。",
+          "translation": "قواها في التدريبات ليست عادية، وطريقي التنين الاثنين على مستوى السماء لا يُعيقانها.",
+          "width": 129,
+          "x": 613,
+          "y": 614
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 16.67777777777778,
+          "text": "就算 是 傀儡 , 但 也是 圣 子 啊 。",
+          "translation": "حتى وإن كان مجرد دمية، فإنه لا يزال الابن المقدس.",
+          "width": 116,
+          "x": 80,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.875,
+          "symWidth": 18.475,
+          "text": "咱们 别 在 这 碍事 了 。",
+          "translation": "لا داعي لأن نعطل الأمور هنا.",
+          "width": 109,
+          "x": 74,
+          "y": 771
+        },
+        {
+          "angle": 0,
+          "height": 8,
+          "symHeight": 7,
+          "symWidth": 14,
+          "text": "119",
+          "translation": "١١٩",
+          "width": 53,
+          "x": 372,
+          "y": 782
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 16.76666666666667,
+          "text": "我们 去 前面 等 她 。",
+          "translation": "لنذهب لننتظرها في الأمام.",
+          "width": 108,
+          "x": 255,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 12.85714285714286,
+          "symWidth": 17.64285714285714,
+          "text": "M HCLOUDMLNOL.C",
+          "translation": "",
+          "width": 288,
+          "x": 501,
+          "y": 1065
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 34,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 117,
+          "x": 12,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 21,
+          "symWidth": 16.25,
+          "text": "/ 什么 ? ! 无耻 之 徒 … 居然 丢下 我 跑 了 !",
+          "translation": "ما هذا؟! منقضُ حقير... هرب تاركًا إياي خلفه!",
+          "width": 161,
+          "x": 60,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 15,
+          "symWidth": 11.75,
+          "text": "p ...",
+          "translation": "...هيا!",
+          "width": 43,
+          "x": 487,
+          "y": 361
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13.25,
+          "text": "滚开 !!",
+          "translation": "ابتعدوا!",
+          "width": 73,
+          "x": 572,
+          "y": 676
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.75,
+          "text": "哦哦哦 !",
+          "translation": "آه آه آه!",
+          "width": 73,
+          "x": 647,
+          "y": 1006
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 25,
+          "symWidth": 22.8,
+          "text": "ACLOUDMERG",
+          "translation": "",
+          "width": 195,
+          "x": 1,
+          "y": 1058
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 16.8,
+          "text": "观看, 最快 最 稳, 广告 最少",
+          "translation": "",
+          "width": 550,
+          "x": 110,
+          "y": 1154
+        }
+      ],
+      "imgHeight": 1204,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-05.mobile-layout-hints.v1"
+}

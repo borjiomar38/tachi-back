@@ -1,0 +1,204 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0053",
+  "jobId": "fixture-job-0053",
+  "licenseId": "fixture-license-0053",
+  "pageCount": 4,
+  "pageOrder": ["001.png", "002.png", "003.png", "004.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 39.11111111111111,
+          "symWidth": 25.65555555555556,
+          "text": "SO ,  I  GUESS WE'LL  START WITH  YOU , MIKU .",
+          "translation": "So, let's start with you, Miku.",
+          "width": 285,
+          "x": 1285,
+          "y": 288
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 15.33333333333333,
+          "text": "У - УЕАН ...",
+          "translation": "U- Uean...",
+          "width": 155,
+          "x": 1002,
+          "y": 523
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 45,
+          "symWidth": 49,
+          "text": "Wo",
+          "translation": "Wo",
+          "width": 82,
+          "x": 780,
+          "y": 1808
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 46.85714285714286,
+          "symWidth": 30,
+          "text": "I'M  GLAD SOU - KUN'S PRAISING  YOU ,",
+          "translation": "I'm glad Sou-kun is praising you,",
+          "width": 364,
+          "x": 1288,
+          "y": 313
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 29.6,
+          "text": "MIKU - CHAN ♪",
+          "translation": "Miku-chan ♪",
+          "width": 314,
+          "x": 1321,
+          "y": 526
+        },
+        {
+          "angle": 0,
+          "height": 349,
+          "symHeight": 43.42553191489362,
+          "symWidth": 27.80851063829787,
+          "text": "I  WONDER IF  HE  WILL CALL  MIKU- CHAN \" RELIABLE \" OR  \" COOL \" ?",
+          "translation": "I wonder if he'll call Miku-chan \"reliable\" or \"cool\"?",
+          "width": 303,
+          "x": 787,
+          "y": 1076
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 354,
+          "symHeight": 43.16666666666666,
+          "symWidth": 29.33333333333333,
+          "text": "THIS  IS MY  FIRST TIME  SEEING A  MAN PRAISE  A WOMAN ...",
+          "translation": "This is the first time I've heard a man praise a woman...",
+          "width": 296,
+          "x": 1385,
+          "y": 194
+        },
+        {
+          "angle": 0,
+          "height": 531,
+          "symHeight": 42.57333333333333,
+          "symWidth": 29.56,
+          "text": "WOULD \" DIGNIFIED \" OR  \" STRONG \" BE  THE  WORDS OF  PRAISE  YOU WOULD  LIKE TO  CONVEY TO  MIKU- SAN ?",
+          "translation": "Would \"dignified\" or \"strong\" be the words you'd use to describe Miku-san?",
+          "width": 376,
+          "x": 771,
+          "y": 265
+        },
+        {
+          "angle": 0,
+          "height": 391,
+          "symHeight": 40.6,
+          "symWidth": 27.88492063492064,
+          "text": "SOU - SAMA ? DID  YOU  NOTICE SOMETHING WHEN  YOU WERE  RIGHT IN  FRONT  OF MIKU - SAN ?",
+          "translation": "Sou-sama? Did you notice something when you were right in front of Miku-san?",
+          "width": 366,
+          "x": 177,
+          "y": 484
+        },
+        {
+          "angle": 0,
+          "height": 449,
+          "symHeight": 48.70491803278689,
+          "symWidth": 31.58114754098361,
+          "text": "...  LOOKING DIRECTLY  AT YOU ,  I  FOUND ANOTHER  THING I  CONSIDER ONE  OF  YOUR GOOD  POINTS .",
+          "translation": "...Looking directly at you, I found another quality of yours that I admire.",
+          "width": 420,
+          "x": 231,
+          "y": 1690
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 49.92307692307692,
+          "symWidth": 29.30769230769231,
+          "text": "Miku , just  like",
+          "translation": "Miku, just as",
+          "width": 254,
+          "x": 1369,
+          "y": 268
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 49,
+          "symWidth": 32.875,
+          "text": "your  name implies ,",
+          "translation": "your name suggests,",
+          "width": 336,
+          "x": 1328,
+          "y": 429
+        },
+        {
+          "angle": 0,
+          "height": 403,
+          "symHeight": 37.51157407407408,
+          "symWidth": 23.09920634920635,
+          "text": "you  have such  beau- tiful  deep red  eyes . Miku ( 美 紅 ) * =  beauty / beautiful * I  =  crimson / deep  red",
+          "translation": "you have such beautiful deep red eyes. Miku (美紅) — beauty, crimson red.",
+          "width": 338,
+          "x": 1001,
+          "y": 515
+        },
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 249.3333333333333,
+          "symWidth": 157,
+          "text": "! ? '",
+          "translation": "!?",
+          "width": 334,
+          "x": 1091,
+          "y": 1880
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

@@ -1,0 +1,1197 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0144",
+  "jobId": "fixture-job-0144",
+  "licenseId": "fixture-license-0144",
+  "pageCount": 27,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 316,
+          "symHeight": 51.6984126984127,
+          "symWidth": 45.42328042328042,
+          "text": "高 武 : 登陆 未来 一 万年 LEVEL  UP  IN  THE  FUTURE",
+          "translation": "تاو وو: الارتقاء في المستقبل بعد عشرة آلاف عام",
+          "width": 383,
+          "x": 153,
+          "y": 887
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 28,
+          "symWidth": 25.35,
+          "text": "CHIEF  STAR COMMANDER ?!",
+          "translation": "القائد الأعلى للنجوم؟!",
+          "width": 274,
+          "x": 334,
+          "y": 2296
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 21.97435897435897,
+          "symWidth": 15.96153846153846,
+          "text": "DID  YOU  KNOW , THERE'S  ONLY  TWO CHIEF  STAR  COMMANDERS IN  THE  ENTIRE  HUNDRED GREAT  STAR  REGION ?",
+          "translation": "هل تعلم أن هناك قائدين فقط للقادة الأعلى للنجوم في المئة منطقة النجوم الكبرى؟",
+          "width": 333,
+          "x": 166,
+          "y": 3532
+        }
+      ],
+      "imgHeight": 3886,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 20.125,
+          "text": "OH  MY  GOD !",
+          "translation": "يا إلهي!",
+          "width": 177,
+          "x": 225,
+          "y": 587
+        },
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 19.34763948497854,
+          "symWidth": 13.27467811158798,
+          "text": "ONE'S  RESPONSIBLE  FOR OVERSEEING  THE  INTERDIMENSIONAL BATTLEFIELD  AND  RESISTING  THE  INVASION OF  ALIEN  BEASTS  FROM  OUTER  SPACE ,  WHILE THE  OTHER  COMMANDS  THE  HUNDRED  GREAT STAR  REGIONS  AND  IS  THE  MOST  NOBLE AND  RESPECTED  FIGURE  AMONG  ALL THE  RACES  IN  THE  ENTIRE  VAST STARRY  SKY !",
+          "translation": "أحدهما مسؤول عن مراقبة ساحة المعركة البين-بُعدية ومواجهة غزوات الوحوش الفضائية، بينما الآخر يقود المئة منطقة النجوم الكبرى ويُعد أسمى وأشرف شخصية بين كل الأعراق في سماء النجوم الفسيحة!",
+          "width": 497,
+          "x": 55,
+          "y": 803
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 22.3,
+          "symWidth": 18.20476190476191,
+          "text": "WHY WOULD  SUCH AN  IMPORTANT PERSON  COME HERE ?",
+          "translation": "لماذا سيأتي شخص مهم بهذا القدر إلى هنا؟",
+          "width": 208,
+          "x": 393,
+          "y": 2430
+        },
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 22.83536585365854,
+          "symWidth": 19.52828590785908,
+          "text": "HURRY ! COME  WITH  ME  TO WELCOME  THE  CHIEF STAR  COMMANDER ! THIS  IS  A  ONCE- IN - A - MILLENNIUM OPPORTUNITY !",
+          "translation": "عجّل! تعال معي لاستقبال القائد الأعلى للنجوم! هذه فرصة لا تعادلها ألوف السنين!",
+          "width": 307,
+          "x": 68,
+          "y": 3662
+        }
+      ],
+      "imgHeight": 3886,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 232,
+          "symHeight": 21.05263157894737,
+          "symWidth": 14.41728279030911,
+          "text": "THAT'S  RIGHT ! AND  SINCE  TODAY  HAPPENS TO  BE  THE  DAY  THAT  OUR  CLAN'S POWER  IS  CHANGING ,  AS  LONG  AS  WE SPREAD  THIS  NEWS ,  EVEN  IF  IT'S  JUST UNDER  THE  CHIEF  STAR  COMMANDER'S NAME ,  OUR  LARSAS  FAMILY  IS  BOUND TO  CLIMB  EVEN  HIGHER !",
+          "translation": "بالضبط! ونظرًا لأن اليوم هو يوم تحوّل قوة عشيرتنا، فبمجرد نشر هذا الخبر، حتى لو كان فقط باسم القائد الأعلى للنجوم، سترتقي عائلة لارساس لأعلى المناصب!",
+          "width": 466,
+          "x": 166,
+          "y": 1200
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 48,
+          "symWidth": 33.88888888888889,
+          "text": "SWARM  OUT-",
+          "translation": "انطلقوا بكثرة-",
+          "width": 309,
+          "x": 312,
+          "y": 3594
+        }
+      ],
+      "imgHeight": 3887,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 22.66666666666667,
+          "symWidth": 23.33333333333333,
+          "text": "3  23",
+          "translation": "٣ ٢٣",
+          "width": 41,
+          "x": 347,
+          "y": 21
+        },
+        {
+          "angle": 0,
+          "height": 233,
+          "symHeight": 24.51818181818182,
+          "symWidth": 21.11850649350649,
+          "text": "DAMN  IT !  THERE'S NO  TIME  TO  PREPARE , OTHERWISE  WE  WOULD'VE WELCOMED  THE  CHIEF  STAR COMMANDER  WITH  THE GRANDEST  CEREMONY ! HURRY !",
+          "translation": "اللعنة! لا وقت للتحضير، وإلا لكان استقبالنا للقائد الأعلى للنجوم بأرقى حفل! أسرع!",
+          "width": 436,
+          "x": 149,
+          "y": 962
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 24.26315789473684,
+          "symWidth": 16.66315789473684,
+          "text": "CHIEF  STAR COMMANDER ? HE ...",
+          "translation": "القائد الأعلى للنجوم؟ إنه...",
+          "width": 205,
+          "x": 348,
+          "y": 2573
+        }
+      ],
+      "imgHeight": 3307,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 29.75,
+          "text": "快 看 漫画",
+          "translation": "شاهد المانغا بسرعة",
+          "width": 126,
+          "x": 77,
+          "y": 439
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 17.25,
+          "symWidth": 15.10146103896104,
+          "text": "YOU  THINK YOU'RE  WORTHY  OF SEEING  THE  CHIEF  STAR COMMANDER'S",
+          "translation": "هل تظن أنك تستحق رؤية الهيئة المهيبة للقائد الأعلى للنجوم؟ انخفض!",
+          "width": 266,
+          "x": 297,
+          "y": 618
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 17.33333333333333,
+          "symWidth": 14.69100529100529,
+          "text": "DIGNIFIED APPEARANCE ?  GET DOWN !",
+          "translation": "انحني!",
+          "width": 240,
+          "x": 329,
+          "y": 686
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 24.4,
+          "symWidth": 20.56832167832168,
+          "text": "THE  LORD  WILL BE  HERE  SOON ,  SO QUICKLY  LOWER  YOUR HEAD !  DON'T  OFFEND THEIR  EYES !",
+          "translation": "الرب سيصل قريبًا، فأخفض رأسك بسرعة! لا تجرح بصيرتهم!",
+          "width": 345,
+          "x": 269,
+          "y": 2022
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 111.5,
+          "symWidth": 104,
+          "text": "04",
+          "translation": "٠٤",
+          "width": 185,
+          "x": 329,
+          "y": 2398
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34,
+          "symWidth": 20.125,
+          "text": "WUAH ... !",
+          "translation": "واح...!",
+          "width": 173,
+          "x": 145,
+          "y": 3149
+        }
+      ],
+      "imgHeight": 3308,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3307,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 25.17777777777778,
+          "symWidth": 20.40555555555556,
+          "text": "WE  RESPECTFULLY WELCOME  LORD  CHIEF STAR  COMMANDER'S ARRIVAL !",
+          "translation": "نرحب بكل احترام بوصول الرب القائد الأعلى للنجوم!",
+          "width": 346,
+          "x": 223,
+          "y": 2212
+        }
+      ],
+      "imgHeight": 3265,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 24.62735849056604,
+          "symWidth": 16.41437953555878,
+          "text": "EVERYONE ,  PLEASE  RISE . I  HEARD  THAT  THE  NEW  PATRIARCH OF  THE  LARSAS  FAMILY  IS  ASSUMING TO  OFFER  MY  CONGRATULATIONS .  I THEIR  POSITION  TODAY ,  SO  I  CAME",
+          "translation": "الجميع، قفوا رجاء. سمعت أن رب العائلة الجديد لعائلة لارساس يعتزم تقديم التهاني باسمي. وجئت",
+          "width": 502,
+          "x": 68,
+          "y": 342
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 24,
+          "symWidth": 16.33695652173913,
+          "text": "HOPE  I  DIDN'T  DISTURB  YOU  BY COMING  UNINVITED ?",
+          "translation": "آمل أنني لم أزعجكم بقدومي دون موعد؟",
+          "width": 444,
+          "x": 98,
+          "y": 515
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 23.2,
+          "symWidth": 18.68947454420364,
+          "text": "THE  LEGENDARY  AND INCREDIBLY  RESPECTED CHIEF  STAR  COMMANDER HAS  ACTUALLY  COME  TO OUR  LARSAS  FAMILY !",
+          "translation": "القائد الأعلى الأسطوري والمحترم جدًا قد جاء فعلاً إلى عائلة لارساس!",
+          "width": 344,
+          "x": 64,
+          "y": 1964
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 97,
+          "symWidth": 87.5,
+          "text": "zh",
+          "translation": "zh",
+          "width": 127,
+          "x": 32,
+          "y": 2470
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 17.8,
+          "text": "#NE !  R",
+          "translation": "#NE !  R",
+          "width": 98,
+          "x": 14,
+          "y": 3188
+        }
+      ],
+      "imgHeight": 3266,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 16.96546546546546,
+          "symWidth": 13.74399399399399,
+          "text": "HE  CAME  SPECIFICALLY TO  CONGRATULATE  US !  MY GOD !  FOR  A  MERE  STAR  REGION FAMILY  LIKE  OURS ,  HOW  COULD WE  POSSIBLY  DESERVE  SUCH HONOR !",
+          "translation": "لقد جاء خصيصًا ليهنئنا! يا إلهي! لعائلة صغيرة كعائلتنا في منطقة النجوم، كيف نليق بتلك الهيبة؟!",
+          "width": 328,
+          "x": 51,
+          "y": 1272
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 24.68224299065421,
+          "symWidth": 13.60620220900595,
+          "text": "EVERYONE  WAS  DEEPLY SHOCKED .  EVERYONE  KNEW  THAT FROM  THIS  DAY  FORWARD ,  THE LARSAS  FAMILY  WAS  ABOUT  TO USHER  IN  AN  UNPRECEDENTED ERA  OF  GLORY .",
+          "translation": "الجميع وقع في صدمة عميقة. أدركوا من اليوم أن عهد المجد العظيم على وشك البدء لعائلة لارساس.",
+          "width": 358,
+          "x": 259,
+          "y": 1690
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 33.3125,
+          "symWidth": 21.9375,
+          "text": "THIS  JUST  GOT  REAL !",
+          "translation": "لقد أصبح الأمر واقعًا!",
+          "width": 294,
+          "x": 355,
+          "y": 2277
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34,
+          "symWidth": 23.875,
+          "text": "AMAZING !",
+          "translation": "رائع!",
+          "width": 166,
+          "x": 198,
+          "y": 2525
+        }
+      ],
+      "imgHeight": 3267,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 22.38372093023256,
+          "symWidth": 16.32915921288014,
+          "text": "\" WELCOME ,  LORD CHIEF  STAR  COMMANDER ! NO  DISTURBANCE , NONE  AT  ALL !",
+          "translation": "«مرحبًا، يا رب القائد الأعلى للنجوم! لا إزعاج، على الإطلاق!",
+          "width": 335,
+          "x": 288,
+          "y": 752
+        },
+        {
+          "angle": 0,
+          "height": 233,
+          "symHeight": 23.86111111111111,
+          "symWidth": 16.37931034482759,
+          "text": "JACKPOT ! I'VE  COMPLETELY HIT  THE  JACKPOT ! HAHAHAHAHA ... I , WELLS ,  AM  FINALLY GOING  TO  RISE  UP AND  TAKE  OFF !",
+          "translation": "لقد ضربت الجائزة الكبرى! هاهاها... أنا، ويلز، على وشك أن أرتقي وأحلق عاليًا!",
+          "width": 259,
+          "x": 106,
+          "y": 1480
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 21,
+          "symWidth": 17.99794244970716,
+          "text": "I  DIDN'T  MAKE THE  WRONG  CHOICE ! I  DEFINITELY  DIDN'T MAKE  THE  WRONG CHOICE !",
+          "translation": "لم أخطئ في اختياري أبداً! بالتأكيد لم أخطئ!",
+          "width": 276,
+          "x": 68,
+          "y": 3190
+        }
+      ],
+      "imgHeight": 3680,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 266,
+          "symHeight": 23.99624060150376,
+          "symWidth": 16.71228070175439,
+          "text": "THE  LARSAS  FAMILY HAS  ACTUALLY  MANAGED TO  MAKE  A  CONNECTION WITH  THE  LEGENDARY  CHIEF STAR  COMMANDER ,  WELLS  WILL BECOME  THE  NEW  LEADER , AND  I ... WILL  BECOME  THE QUEEN  OF  A  NEW  ERA !",
+          "translation": "عائلة لارساس تمكنت فعلاً من الربط مع القائد الأعلى الأسطوري، ويلز سيصبح القائد الجديد، وأنا... سأكون ملكة عصر جديد!",
+          "width": 437,
+          "x": 52,
+          "y": 504
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 24,
+          "symWidth": 14.97824074074074,
+          "text": "SINCE  IT'S NOT  A  BOTHER ,  THEN IT'S  FINE ,  HEHE ...",
+          "translation": "طالما الأمر ليس إزعاجًا، فالأمر حسن، ههه...",
+          "width": 296,
+          "x": 147,
+          "y": 2593
+        }
+      ],
+      "imgHeight": 3680,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 27.5,
+          "symWidth": 19.3828947368421,
+          "text": "BY  THE  WAY , THE  NEW  HEAD  OF THE  FAMILY  IS  CALLED ... SAIYA  LARSAS ,  RIGHT ? WHERE  IS  HE ?",
+          "translation": "بالمناسبة، زعيم العائلة الجديد يُدعى... سايا لارساس، أليس كذلك؟ أين هو؟",
+          "width": 377,
+          "x": 211,
+          "y": 343
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 40.63636363636363,
+          "symWidth": 33.09090909090909,
+          "text": "EH ? S - SAIYA ?",
+          "translation": "ها؟ س- سايا؟",
+          "width": 241,
+          "x": 108,
+          "y": 1940
+        }
+      ],
+      "imgHeight": 3681,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 174.5,
+          "symWidth": 145,
+          "text": "安静",
+          "translation": "صمت",
+          "width": 318,
+          "x": 52,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 55.33333333333334,
+          "symWidth": 39.33333333333334,
+          "text": "AH ?",
+          "translation": "ها؟",
+          "width": 112,
+          "x": 365,
+          "y": 464
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 25.6,
+          "text": "WHAT ?",
+          "translation": "ماذا؟",
+          "width": 120,
+          "x": 107,
+          "y": 703
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 23.25,
+          "symWidth": 16.49553571428572,
+          "text": "DID  I  HEAR THAT  RIGHT ... LORD  CHIEF STAR  COMMANDER  JUST SHOUTED ... SAIYA ?",
+          "translation": "هل سمعت ذلك صحيحًا... القائد الأعلى للنجوم صرخ... سايا؟",
+          "width": 345,
+          "x": 167,
+          "y": 1333
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 158.5,
+          "symWidth": 83.5,
+          "text": "??",
+          "translation": "؟؟",
+          "width": 132,
+          "x": 346,
+          "y": 1534
+        }
+      ],
+      "imgHeight": 3634,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 29.5,
+          "symWidth": 25.01785714285714,
+          "text": "DAMN  IT ! LET  ME  GO !",
+          "translation": "تبا! أتركوني!",
+          "width": 230,
+          "x": 97,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29.56521739130435,
+          "symWidth": 26.34782608695652,
+          "text": "LORD  CHIEF  STAR COMMANDER !",
+          "translation": "أيها الرب القائد الأعلى للنجوم!",
+          "width": 340,
+          "x": 280,
+          "y": 853
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 30.33333333333334,
+          "symWidth": 27.44444444444444,
+          "text": "ME ! I'M  SAIYA !",
+          "translation": "أنا! أنا سايا!",
+          "width": 209,
+          "x": 379,
+          "y": 2999
+        }
+      ],
+      "imgHeight": 3634,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 29,
+          "symWidth": 18.52941176470588,
+          "text": "HAH ... HAH HAH ... COUGH  HAH ...",
+          "translation": "هاه... هاه هاه... سعل... هاه...",
+          "width": 320,
+          "x": 82,
+          "y": 568
+        }
+      ],
+      "imgHeight": 3636,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 24.25,
+          "symWidth": 17.38376958438878,
+          "text": "CONGRATULATIONS  TO YOU ,  YOUNG  MAN ,  STARRY SKY  WILL  REMEMBER THIS  MOMENT .",
+          "translation": "مبارك لك، أيها الشاب، سماء النجوم ستخلد هذه اللحظة.",
+          "width": 368,
+          "x": 126,
+          "y": 1243
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 26.5,
+          "text": "?  ?",
+          "translation": "؟ ؟",
+          "width": 78,
+          "x": 486,
+          "y": 2117
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 25,
+          "symWidth": 19.9021568627451,
+          "text": "LORD  CHIEF STAR  COMMANDER !  HE'S NOT  OUR  CLAN'S  NEW PATRIARCH  THERE'S  A MISTAKE !  I'MI",
+          "translation": "يا سيدي القائد الأعلى للنجوم! إنه ليس بزعماء عشيرتنا الجدد، ثمة خطأ!",
+          "width": 351,
+          "x": 271,
+          "y": 3129
+        }
+      ],
+      "imgHeight": 3716,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 26.5,
+          "text": "漫画",
+          "translation": "漫画",
+          "width": 60,
+          "x": 139,
+          "y": 594
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 23.25,
+          "symWidth": 18.53605769230769,
+          "text": "YES ,  YES !  CHIEF STAR  COMMANDER YOU'VE  MADE  A MISTAKE !",
+          "translation": "نعم، نعم! أيها القائد الأعلى للنجوم، لقد أخطأت!",
+          "width": 253,
+          "x": 331,
+          "y": 603
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 117.5,
+          "symWidth": 90.5,
+          "text": "tu",
+          "translation": "tu",
+          "width": 141,
+          "x": 488,
+          "y": 1010
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 23.59259259259259,
+          "symWidth": 16.7962962962963,
+          "text": "COULD  THERE  BE ANOTHER  PERSON  CALLED SAIYA  LARSAS  IN THIS  PLACE ?",
+          "translation": "هل يمكن أن يكون هنالك شخص آخر يُدعى سايا لارساس في هذا المكان؟",
+          "width": 359,
+          "x": 282,
+          "y": 2339
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 122.5,
+          "symWidth": 121,
+          "text": "无语",
+          "translation": "无语",
+          "width": 329,
+          "x": 54,
+          "y": 2805
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 28.8,
+          "text": "UH ...",
+          "translation": "آه...",
+          "width": 133,
+          "x": 87,
+          "y": 3622
+        }
+      ],
+      "imgHeight": 3716,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 24,
+          "symWidth": 17,
+          "text": "AS  FAR  AS  I'M CONCERNED ,  THERE'S ONLY  ONE  PATRIARCH OF  THE  LARSAS FAMILY .",
+          "translation": "حسب علمي، هناك زعيم واحد فقط لعشيرة لارساس.",
+          "width": 298,
+          "x": 342,
+          "y": 1515
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 32.5,
+          "symWidth": 26.66666666666666,
+          "text": "AND  THAT'S SAIYA  LARSAS !",
+          "translation": "وهو سايا لارساس!",
+          "width": 304,
+          "x": 98,
+          "y": 2086
+        }
+      ],
+      "imgHeight": 3717,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 23.79545454545455,
+          "symWidth": 15.23737373737374,
+          "text": "IF  THE  CLAN LEADER  YOU'VE  CHOSEN ISN'T  HIM ,  THAT  ONLY PROVES ...",
+          "translation": "إن لم يكن زعيم العشيرة الذي اخترتموه هو هو، فهذا دليل فقط...",
+          "width": 332,
+          "x": 265,
+          "y": 137
+        },
+        {
+          "angle": 0,
+          "height": 331,
+          "symHeight": 197,
+          "symWidth": 117.5,
+          "text": "广 肃",
+          "translation": "广 肃",
+          "width": 122,
+          "x": 12,
+          "y": 1456
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 23.48958333333333,
+          "symWidth": 15.70815826330532,
+          "text": "YOU  PEOPLE ... DON'T TRULY  REPRESENT  THE WILL  OF  THE  LARSAS FAMILY .",
+          "translation": "أنتم لا تمثلون حقاً إرادة عشيرة لارساس.",
+          "width": 308,
+          "x": 100,
+          "y": 2579
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 56.28571428571428,
+          "symWidth": 31.71428571428572,
+          "text": "THIS ...",
+          "translation": "هذا...",
+          "width": 195,
+          "x": 121,
+          "y": 3121
+        }
+      ],
+      "imgHeight": 3640,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 24,
+          "symWidth": 19.86809210526316,
+          "text": "BY  THE  GLORY  OF  THE LARSAS  FAMILY ,  I  SWEAR ! SAIYA  LARSAS  WILL  BECOME THE  NEW  PATRIARCH  OF OUR  CLAN !",
+          "translation": "بشرف عشيرة لارساس، أقسم! سايا لارساس سيكون الزعيم الجديد لعشيرتنا!",
+          "width": 418,
+          "x": 195,
+          "y": 2081
+        }
+      ],
+      "imgHeight": 3640,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 66.625,
+          "symWidth": 26.875,
+          "text": "форороро",
+          "translation": "форороро",
+          "width": 114,
+          "x": 303,
+          "y": 58
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 25,
+          "symWidth": 20.52691876750701,
+          "text": "BY  THE  GLORY  OF  THE LARSAS  FAMILY ,  I  SWEAR ! SAIYA  LARSAS  WILL  BECOME THE  NEW  PATRIARCH  OF OUR  CLAN !",
+          "translation": "بشرف عشيرة لارساس، أقسم! سايا لارساس سيكون الزعيم الجديد لعشيرتنا!",
+          "width": 439,
+          "x": 75,
+          "y": 393
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 30.5,
+          "text": "SAIYA !",
+          "translation": "سايا!",
+          "width": 170,
+          "x": 422,
+          "y": 1819
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 40,
+          "symWidth": 31.5,
+          "text": "SAIYA !",
+          "translation": "سايا!",
+          "width": 171,
+          "x": 108,
+          "y": 2464
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 47,
+          "symWidth": 37.16666666666666,
+          "text": "SAIYA !",
+          "translation": "سايا!",
+          "width": 198,
+          "x": 396,
+          "y": 3119
+        }
+      ],
+      "imgHeight": 3640,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 18.8,
+          "text": "BROTHER ...",
+          "translation": "أخي...",
+          "width": 197,
+          "x": 228,
+          "y": 97
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 24.4,
+          "symWidth": 20.12358974358974,
+          "text": "BROTHER ... YOU  ACTUALLY  HAVE THE  SUPPORT  OF LORD  CHIEF  STAR COMMANDER ?",
+          "translation": "أخي... هل أنت حقًا تحظى بدعم القائد الأعلى للنجوم؟",
+          "width": 310,
+          "x": 343,
+          "y": 2279
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 24,
+          "symWidth": 17.58851674641149,
+          "text": "IMPOSSIBLE ... THIS  IS IMPOSSIBLE !",
+          "translation": "مستحيل... هذا مستحيل!",
+          "width": 343,
+          "x": 81,
+          "y": 2970
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 22.4,
+          "symWidth": 18.01294261294261,
+          "text": "SAIYA ... SAIYA , HE ?  I - I  MADE  THE  WRONG CHOICE ?  I  MADE  THE  WRONG CHOICE !  I  REALLY  MADE  THE WRONG  CHOICE ?!",
+          "translation": "سايا... هل هو هو؟ هل... هل أخطأت في الاختيار؟ هل أخطأت فعلاً؟!",
+          "width": 403,
+          "x": 67,
+          "y": 3004
+        }
+      ],
+      "imgHeight": 3449,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 19,
+          "symWidth": 15,
+          "text": "60000",
+          "translation": "60000",
+          "width": 17,
+          "x": 369,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 23.91666666666667,
+          "symWidth": 20.44887955182073,
+          "text": "IT'S  ALL  YOUR  FAULT , WELLS ! SEDUCED ME !  YOU  BASTARD ! YOU",
+          "translation": "كل هذا خطأك، ويلز! لقد أغويتني! يا لك من حقير!",
+          "width": 326,
+          "x": 307,
+          "y": 876
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 25.66666666666667,
+          "symWidth": 21.03030303030303,
+          "text": "ALL  OF  THIS WAS  SUPPOSED TO  BE  MINE ...",
+          "translation": "كان من المفترض أن يكون كل هذا لي...",
+          "width": 255,
+          "x": 118,
+          "y": 2581
+        }
+      ],
+      "imgHeight": 3450,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 27.66666666666667,
+          "symWidth": 24.22592592592592,
+          "text": "YOU  B * TCH , HOW  DARE  YOU HIT  ME !",
+          "translation": "يا أيتها الحقيرة، كيف تجرئين على ضربي!",
+          "width": 275,
+          "x": 193,
+          "y": 463
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 24,
+          "symWidth": 20.3021978021978,
+          "text": "DIDN'T  YOU  JUST THROW  YOURSELF  AT  ME ? YOU  GOLD  DIGGER !",
+          "translation": "ألم تكوني هي من رمت بنفسها عليّ؟ يا من تبحثين عن الذهب!",
+          "width": 386,
+          "x": 139,
+          "y": 1675
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 24.66666666666667,
+          "symWidth": 19.65117521367521,
+          "text": "LORD  CHIEF  STAR COMMANDER ,  AH ... I  DON'T ACTUALLY  KNOW  YOU ?",
+          "translation": "سيدي القائد الأعلى للنجوم، آه... في الحقيقة، لا أعرفك.",
+          "width": 374,
+          "x": 64,
+          "y": 2098
+        }
+      ],
+      "imgHeight": 3451,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 259,
+          "symHeight": 23.80625,
+          "symWidth": 16.05,
+          "text": "YOU  SHOULD  THANK THAT  GOOD  FRIEND  YOU MADE  IN  THE  INTERDIMENSIONAL BATTLEFIELD .  HE  ASKED  OLD  MO TO  LOOK  AFTER  YOU ,  BUT  SINCE HE  CAN'T  LEAVE  THE  BATTLEFIELD , HE  ENTRUSTED  THE  TASK  TO ME  INSTEAD .",
+          "translation": "عليك أن تَشكر ذاك الصديق الوفي الذي كسبته في ساحة المعركة بين الأبعاد. لقد طلب من مولى مو أن يعتني بك، لكنه لا يستطيع مغادرة الساحة، فوكل إليّ هذه المهمة.",
+          "width": 445,
+          "x": 156,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 29.6,
+          "text": "翩  快 看 漫画",
+          "translation": "翩 快 看 漫画",
+          "width": 169,
+          "x": 33,
+          "y": 1591
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 19.25,
+          "symWidth": 19.5,
+          "text": "︽-- ཀ",
+          "translation": "︽-- ཀ",
+          "width": 61,
+          "x": 95,
+          "y": 2821
+        }
+      ],
+      "imgHeight": 3056,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 22,
+          "symWidth": 17.23040935672515,
+          "text": "I  GET  IT  NOW ... THE  PROPHECY ,  IT'S  THE PROPHECY !  EVERYTHING ... HAS  BEEN  PERFECTLY FULFILLED !",
+          "translation": "لقد أدركت الأمر الآن... النبوءة، إنها النبوءة! كل شيء تحقق بدقة تامة!",
+          "width": 353,
+          "x": 267,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 23.01470588235294,
+          "symWidth": 15.23406862745098,
+          "text": "SEE  THE  PERSON  YOU  FIRST  MET , RETURN  TO  WHERE  IT  ALL  BEGAN ,  RECLAIM WHAT  IS  RIGHTFULLY  YOURS ,  STANDING  AT THE  TOP  OF  THE  STARS ,  THE  ONE  WEARING THE  CROWN  HAS  ALREADY  ARRANGED EVERYTHING  FOR  YOU .",
+          "translation": "ها هو من قابلته أول مرة، عُد إلى حيث بدأ كل شيء، استعد ما هو لك بحق، واقفًا على قمة النجوم، الذي يرتدي التاج قد رتب كل شيء من أجلك.",
+          "width": 552,
+          "x": 109,
+          "y": 1967
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 23.47777777777778,
+          "symWidth": 17.08589743589744,
+          "text": "IT'S  LU  SHENG ! LU  SHENG  WAS  THE ONE  WHO  ARRANGED EVERYTHING  FOR ME !",
+          "translation": "إنه لو شينغ! لو شينغ هو الذي رتّب كل شيء لي!",
+          "width": 291,
+          "x": 86,
+          "y": 2710
+        }
+      ],
+      "imgHeight": 3056,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 26.53947368421053,
+          "symWidth": 19.65497076023392,
+          "text": "HE'S  THE  ONE STANDING  ATOP  THE STARS ,  WEARING THE  CROWN !",
+          "translation": "هو من يقف على قمة النجوم، مرتديًا التاج!",
+          "width": 323,
+          "x": 308,
+          "y": 1009
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "width": 417,
+          "x": 253,
+          "y": 2966
+        }
+      ],
+      "imgHeight": 3057,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

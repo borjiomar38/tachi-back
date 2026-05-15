@@ -1,0 +1,1948 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0069",
+  "jobId": "fixture-job-0069",
+  "licenseId": "fixture-license-0069",
+  "pageCount": 28,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 39.11111111111111,
+          "symWidth": 20.88888888888889,
+          "text": "MEREAD.10",
+          "translation": "ميريد.10",
+          "width": 175,
+          "x": 538,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 323,
+          "symHeight": 69.75,
+          "symWidth": 61.39583333333334,
+          "text": "高 武 : 登陆 未来 一 万年 LEVEL  UP  IN  THE  FUTURE",
+          "translation": "القوة العالية: التطور عبر عشرة آلاف عام في المستقبل",
+          "width": 401,
+          "x": 156,
+          "y": 923
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 20.07142857142857,
+          "text": "改编 自 飞 卢 小说 网 作者 每月 一 更",
+          "translation": "مقتبس من رواية على شبكة فيلو المُحدّثة شهريًا",
+          "width": 304,
+          "x": 181,
+          "y": 1346
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 17.75,
+          "text": "原创 小说 《 高 武 : 登陆 未来 一 万年 》",
+          "translation": "رواية أصلية \"القوة العالية: التطور عبر عشرة آلاف عام في المستقبل\"",
+          "width": 339,
+          "x": 157,
+          "y": 1387
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 26.11111111111111,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر! انظر، حصري لمانجا كواي كان",
+          "width": 248,
+          "x": 201,
+          "y": 1469
+        },
+        {
+          "angle": 0,
+          "height": 396,
+          "symHeight": 23.7,
+          "symWidth": 21.17507936507937,
+          "text": "出品 : 快 看 漫画 原著 : 每月 一 更 制作 : 常 盘 勇者 监制 : 猎人 脚本 : 猎人 分 镜 : 陈小皓  荒原  廿 肆 线 稿 : 笑匠  淮山 上色 : 来 一份 炸鸡  狗狗  木棉 3D : 贪婪 的 因果 G 责编 : 春雨",
+          "translation": "الإنتاج: مانجا كواي كان\nالعمل الأصلي: تحديث شهري\nالإعداد: المغامر تشانغ بان\nالإشراف: الصياد\nالسيناريو: الصياد\nالتخطيط البصري: تشين شياو هاو، هوانغ يوان، نيان شي\nالخطوط: زياو جيانغ، هواي شان\nالتلوين: لاي يي فن\n3D: الأسباب الجشعة\nرئيس التحرير G: تشون يو",
+          "width": 343,
+          "x": 195,
+          "y": 1564
+        },
+        {
+          "angle": 0,
+          "height": 10,
+          "symHeight": 10,
+          "symWidth": 7.714285714285714,
+          "text": "EXENERD",
+          "translation": "إكسنيرد",
+          "width": 47,
+          "x": 76,
+          "y": 2289
+        }
+      ],
+      "imgHeight": 4221,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.30769230769231,
+          "symWidth": 11.64615384615385,
+          "text": "THE  FOUR  EXTREMES -  EARTH ,  WIND , WATER ,  FIRE ....",
+          "translation": "الأَطْرَافُ الْأَرْبَعُ - الْأَرْضُ، الرِّيحُ، الْمَاءُ، النَّارُ....",
+          "width": 202,
+          "x": 91,
+          "y": 195
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 12.77777777777778,
+          "symWidth": 9.555555555555555,
+          "text": "al ( char  x )",
+          "translation": "",
+          "width": 53,
+          "x": 621,
+          "y": 344
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 10.33333333333333,
+          "symWidth": 9.666666666666666,
+          "text": "struct",
+          "translation": "",
+          "width": 34,
+          "x": 681,
+          "y": 394
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 13.1,
+          "symWidth": 11.65,
+          "text": "return  false ; arn  true ;",
+          "translation": "",
+          "width": 84,
+          "x": 599,
+          "y": 432
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 11.5,
+          "symWidth": 10.83333333333333,
+          "text": "char  x )",
+          "translation": "",
+          "width": 41,
+          "x": 613,
+          "y": 529
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 14,
+          "symWidth": 11.6,
+          "text": "forti",
+          "translation": "",
+          "width": 31,
+          "x": 685,
+          "y": 652
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 16.50848849945235,
+          "symWidth": 9.705366922234392,
+          "text": "LU  SHENG  HAD  NEVER  BEEN  ABLE  TO TRULY  GRASP  HIS  MASTER'S  WAY  OF  THE FOUR  EXTREMES .  IT  CONFLICTED  WITH -  AND  FELT  INCOMPLETE  AGAINST  -  HIS OWN  MASTERY  OF  THE  FIVE  ELEMENTS : METAL ,  WOOD ,  WATER ,  FIRE ,  AND  EARTH .",
+          "translation": "لَم يَتَمَكَّنْ لوشينغ أَبَدًا مِن إدراكِ طَرِيقِ سَيِّدِهِ فِي الأَطْرَافِ الْأَرْبَعِ حَقِيقَةً. فكانت تُنافِسُ - وَتَشْعُرُ نَفْسُهُ بِعَدَمِ اكتمالها مُقَابِلَ إِتْقَانِهِ لِلْعَنَاصِرِ الخَمْسَةِ: المُعْدَنُ، الخَشَبُ، الْمَاءُ، النَّارُ، وَالأَرْضُ.",
+          "width": 326,
+          "x": 230,
+          "y": 1124
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 17.16666666666667,
+          "text": "最新 免费 漫画",
+          "translation": "",
+          "width": 110,
+          "x": 43,
+          "y": 1211
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 15.78070175438597,
+          "symWidth": 9.78413424866514,
+          "text": "TIME  AND  AGAIN  HE'D  TRIED  TO ABSORB  THE  FOUR  EXTREMES  INTO HIMSELF .  TIME  AND  AGAIN ,  HE'D  FAILED .",
+          "translation": "مَرَّاتٍ وَمَرَّاتٍ حاوَلَ استيعابَ الأَطْرَافِ الْأَرْبَعِ في نَفْسِهِ، ولكِنَّهُ فَشِلَ في كُلِّ مَرَّةٍ.",
+          "width": 312,
+          "x": 214,
+          "y": 2658
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 16.4,
+          "text": "I  GET  IT  NOW !",
+          "translation": "أدركت الأمر الآن!",
+          "width": 223,
+          "x": 142,
+          "y": 4038
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 13.33461538461539,
+          "text": "Read  more  at erowscans.xUZ",
+          "translation": "",
+          "width": 220,
+          "x": 143,
+          "y": 4126
+        }
+      ],
+      "imgHeight": 4222,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 19.5,
+          "symWidth": 12.24166666666667,
+          "text": "AT  THEIR  CORE ,  THE FOUR  EXTREMES  AND THE  FIVE  ELEMENTS ARE  THE  SAME  THING .",
+          "translation": "في جوهرها، الأقصى الأربعة والعناصر الخمسة جوهرٌ واحد.",
+          "width": 213,
+          "x": 79,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 18,
+          "text": "最新 免费 漫画",
+          "translation": "",
+          "width": 113,
+          "x": 41,
+          "y": 364
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 16.25,
+          "symWidth": 10.27032749858837,
+          "text": "THE  FOUR  EXTREMES  ARE  THE FOUR  FOUNDATIONAL  FORCES OF  THE  UNIVERSE .  THE  FIVE ELEMENTS  WORK  THE  SAME  WAY .",
+          "translation": "الأقصى الأربعة قوى الكون الأساسية، والعناصر الخمسة تسير على نفس المنوال.",
+          "width": 259,
+          "x": 359,
+          "y": 1214
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15,
+          "symWidth": 9.79857278533076,
+          "text": "EARTH  GOVERNS  RESILIENCE , WIND  GOVERNS  AGILITY , WATER  GOVERNS  FLOW , FIRE  GOVERNS  WARMTH .",
+          "translation": "الأرض رمز الصمود، والريح رمز الرشاقة، والماء رمز السيولة، والنار رمز الدفء.",
+          "width": 225,
+          "x": 378,
+          "y": 1550
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 23.16666666666667,
+          "symWidth": 12.79823232323232,
+          "text": "THESE  FOUR PROPERTIES DON'T CONFLICT  -  AND THEY  DON'T  GO TO  EXTREMES !",
+          "translation": "هذه الخصائص الأربع لا تتصادم ولا تتطرف أبداً!",
+          "width": 217,
+          "x": 129,
+          "y": 2927
+        }
+      ],
+      "imgHeight": 3791,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 25.75,
+          "text": "包子 漫畫",
+          "translation": "مانغا باوزي",
+          "width": 110,
+          "x": 590,
+          "y": 1422
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 24,
+          "symWidth": 14.5047619047619,
+          "text": "IT'S  JUST  THAT MY  FIVE  ELEMENTS PUSH  EVERYTHING TO  THE  EXTREME ...",
+          "translation": "غير أن عناصر الخمسة تدفع كل شيء إلى أقصى الحدود...",
+          "width": 236,
+          "x": 116,
+          "y": 2506
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 16.1,
+          "symWidth": 11.9,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 114,
+          "x": 142,
+          "y": 3693
+        }
+      ],
+      "imgHeight": 3792,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 16,
+          "symWidth": 9.996666666666666,
+          "text": "THE  FIVE  ELEMENTS OFFER  MORE  VARIATION THAN  THE  FOUR  EXTREMES  - BROKEN  INTO  FIVE  POINTS  OF GENERATION  AND  SUPPRESSION .",
+          "translation": "تمنح العناصر الخمسة تنوعًا أعظم من الأربعة القصوى - تنقسم إلى خمس نقاط للتوليد والكبح.",
+          "width": 251,
+          "x": 354,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 21.2,
+          "text": "最新 免 法 画",
+          "translation": "",
+          "width": 111,
+          "x": 42,
+          "y": 1006
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 28.66666666666667,
+          "symWidth": 16.81926406926407,
+          "text": "IN  A  WAY ,  IT'S A  MORE  REFINED SYSTEM .",
+          "translation": "بطريقة ما، هو نظام أكثر دقة وتنظيمًا.",
+          "width": 247,
+          "x": 114,
+          "y": 1473
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 18.5,
+          "symWidth": 17.625,
+          "text": "包子 漫畫 .",
+          "translation": "مانغا باوزي.",
+          "width": 120,
+          "x": 588,
+          "y": 1571
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 25.5,
+          "text": "包子 漫迷",
+          "translation": "عشاق مانغا باوزي",
+          "width": 110,
+          "x": 64,
+          "y": 2695
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 15.6,
+          "symWidth": 9.833216374269005,
+          "text": "THAT'S  THE  REAL  REASON I  WAS  ABLE  TO  CATCH  A GLIMPSE  OF  THE  TIER  17  DOMAIN BREAKTHROUGH  DURING  MY MASTER'S  DISCOURSE !",
+          "translation": "هذا هو السبب الحقيقي الذي مكّنني من لمحة عن اختراق المجال من الدرجة السابعة عشرة خلال خطبة معلمي!",
+          "width": 259,
+          "x": 111,
+          "y": 3016
+        }
+      ],
+      "imgHeight": 4199,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 31.25,
+          "text": "快 看 漫画",
+          "translation": "سرعان ما أنظر إلى المانغا",
+          "width": 127,
+          "x": 581,
+          "y": 220
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 15.66666666666667,
+          "symWidth": 9.597296037296038,
+          "text": "WITH  THAT  REALIZATION ,  LU SHENG  WAS  FLOODED  WITH  INSIGHT AFTER  INSIGHT  ABOUT  THE  LAWS .",
+          "translation": "مع تلك البصيرة، غمر لو شينغ وعي عميق بقوانين الفنون.",
+          "width": 280,
+          "x": 104,
+          "y": 412
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 14.33333333333333,
+          "symWidth": 7.830220075147612,
+          "text": "ALL  FIVE  LAWS  FLOWED  NATURALLY  INTO LU  SHENG'S  BODY  -  A  GIFT  BESTOWED BY  HIS  MASTER ,  YANG  YIZHOU .",
+          "translation": "انصهرت القوانين الخمسة في جسد لو شينغ بسلاسة — هبة من معلمه، يانغ ييتشو.",
+          "width": 289,
+          "x": 343,
+          "y": 1881
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 17,
+          "symWidth": 10.21703703703704,
+          "text": "THE  INFUSION  OF  THESE MARTIAL  PRINCIPLES  TRIGGERED  LU SHENG'S  COMPLETE  EVOLUTION .",
+          "translation": "وأطلقت هذه المبادئ القتالية شرارة تطور لو شينغ الكامل.",
+          "width": 318,
+          "x": 92,
+          "y": 3889
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 13,
+          "symWidth": 9.9,
+          "text": "Read  more  at",
+          "translation": "اقرأ المزيد عند",
+          "width": 113,
+          "x": 143,
+          "y": 4103
+        }
+      ],
+      "imgHeight": 4199,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 38,
+          "symWidth": 23.66666666666667,
+          "text": "MEREAD.10",
+          "translation": "MEREAD.10",
+          "width": 178,
+          "x": 535,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 27.23684210526316,
+          "symWidth": 16.02412280701754,
+          "text": "MY  IMMORTAL CORE ...  IT CRACKED  OPEN !",
+          "translation": "نواتي الخالدة... قد انشقت!",
+          "width": 216,
+          "x": 427,
+          "y": 1170
+        }
+      ],
+      "imgHeight": 3850,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 27.85714285714286,
+          "text": "WHAT- !?",
+          "translation": "ما هذا ــ!؟",
+          "width": 198,
+          "x": 386,
+          "y": 744
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 34.2,
+          "text": "扭  快 看 漫画",
+          "translation": "",
+          "width": 194,
+          "x": 515,
+          "y": 1891
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 24.62,
+          "symWidth": 17.62,
+          "text": "AFTER  IT  SHATTERED ... A  MINIATURE  UNIVERSE FORMED  INSIDE ?",
+          "translation": "بعد أن تحطم... تكوّن عالم صغير في داخله؟",
+          "width": 304,
+          "x": 74,
+          "y": 2149
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 21.7,
+          "symWidth": 14.55,
+          "text": "MY  DANTIAN  ACTUALLY TRANSFORMED INTO  A  COSMOS !",
+          "translation": "لقد تحول دنتياني إلى كون بأكمله!",
+          "width": 258,
+          "x": 356,
+          "y": 3599
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "renderMode": "mask_only",
+          "symHeight": 14,
+          "symWidth": 9.6,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 112,
+          "x": 144,
+          "y": 3756
+        }
+      ],
+      "imgHeight": 3851,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 24.48387096774194,
+          "symWidth": 15.41290322580645,
+          "text": "Read more at AND IT KEEPS EXPANDING . AT THIS RATE-",
+          "translation": "ويواصل التوسع... فهل سيصل الأمر إلى هذا الحد؟",
+          "width": 280,
+          "x": 125,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 23.67391304347826,
+          "symWidth": 15,
+          "text": "IS  MY  DANTIAN  REALLY GOING  TO  BIRTH  AN ENTIRE  UNIVERSE ?",
+          "translation": "هل سيولد دنتياني حقًا كونًا كاملاً؟",
+          "width": 286,
+          "x": 342,
+          "y": 1567
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 15.59090909090909,
+          "symWidth": 13.40909090909091,
+          "text": "● 最新 免费 漫画",
+          "translation": "",
+          "width": 165,
+          "x": 15,
+          "y": 1731
+        }
+      ],
+      "imgHeight": 2898,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 23.75,
+          "symWidth": 15.63066620879121,
+          "text": "BUT  THEN HOW  DOES SPATIAL  FORCE  EVEN COME  INTO  PLAY ?",
+          "translation": "لكن كيف يندمج بالقوة المكانية أصلاً؟",
+          "width": 281,
+          "x": 343,
+          "y": 312
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 28.5,
+          "symWidth": 16.56993006993007,
+          "text": "WAIT ...  I  THINK I  CAN  FEEL  IT .",
+          "translation": "انتظر... أظنني أشعر به.",
+          "width": 231,
+          "x": 93,
+          "y": 777
+        }
+      ],
+      "imgHeight": 2898,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 21.2,
+          "text": "|  包子 漫畫",
+          "translation": "| مانغا باوزي",
+          "width": 115,
+          "x": 586,
+          "y": 2765
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "renderMode": "mask_only",
+          "symHeight": 14,
+          "symWidth": 10.7,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 114,
+          "x": 143,
+          "y": 2805
+        }
+      ],
+      "imgHeight": 2900,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 15,
+          "symWidth": 10.26819291819292,
+          "text": "Read more at WITH A SINGLE THOUGHT , LU SHENG'S ENTIRE BEING SILENTLY MELTED AWAY INTO NOTHINGNESS-",
+          "translation": "بفكرة واحدة فقط، ذاب كيان لو شينغ برمتة في صمت كأنه لم يكن—",
+          "width": 275,
+          "x": 88,
+          "y": 88
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 22.33333333333333,
+          "symWidth": 14.26296296296296,
+          "text": "-AND  REAPPEARED  A FEW  LIGHT - YEARS  AWAY AN  INSTANT  LATER .",
+          "translation": "—ثم ظهر مجددًا على بُعد عدة سنوات ضوئية في لحظة لاحقة.",
+          "width": 273,
+          "x": 354,
+          "y": 1422
+        }
+      ],
+      "imgHeight": 3836,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 16.66666666666667,
+          "text": "最新 免费 漫画",
+          "translation": "أحدث مانغا مجانية",
+          "width": 109,
+          "x": 570,
+          "y": 533
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 26,
+          "symWidth": 17.16666666666666,
+          "text": "IT  ACTUALLY WORKS .",
+          "translation": "لقد نجح الأمر حقًا.",
+          "width": 181,
+          "x": 85,
+          "y": 1114
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 23.25,
+          "symWidth": 15.30205627705628,
+          "text": "JUST  NOW ,  I  DIDN'T USE  THE  POWER OF  COSMIC  ORIGIN TO  TELEPORT .",
+          "translation": "قبل قليل، لم أستخدم قوة الأصل الكوني في الانتقال الآني.",
+          "width": 248,
+          "x": 376,
+          "y": 2385
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 25.5,
+          "symWidth": 16.4491341991342,
+          "text": "THAT  WAS  DONE ENTIRELY  THROUGH THE  MYSTERIES  OF THE  LAW  OF  SPACE .",
+          "translation": "لقد تم الأمر بالكامل من خلال أسرار قانون الفضاء.",
+          "width": 260,
+          "x": 109,
+          "y": 3569
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11.4,
+          "text": "Read  more  at",
+          "translation": "اقرأ المزيد في",
+          "width": 115,
+          "x": 143,
+          "y": 3742
+        }
+      ],
+      "imgHeight": 3837,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 24,
+          "symWidth": 14.36111111111111,
+          "text": "I  JUST  PULLED  OFF A  FULL  PHYSICAL - BODY TRANSIT ,  EVEN IF  ONLY  BRIEFLY .",
+          "translation": "لقد أنجزتُ انتقال الجسد الكامل جسديًا، حتى وإن كان لفترة وجيزة فقط.",
+          "width": 289,
+          "x": 308,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 18.5,
+          "text": "最新 免费 漢画",
+          "translation": "",
+          "width": 115,
+          "x": 564,
+          "y": 706
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 29.66666666666667,
+          "text": "保  快 看 漫画 釀",
+          "translation": "",
+          "width": 199,
+          "x": 520,
+          "y": 1460
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 20.57142857142857,
+          "text": "\" SPATIAL  LEAP . \"",
+          "translation": "\"القفزة المكانية.\"",
+          "width": 313,
+          "x": 82,
+          "y": 1484
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 23.37,
+          "symWidth": 15.22615384615385,
+          "text": "THAT  DISTANCE IS  NOWHERE  NEAR THE  LIMIT  THERE'S STILL  PLENTY  OF ROOM  TO  GROW .",
+          "translation": "تلك المسافة ليست حدًّا نهائيًا، لايزال في الإمكان الكثير من الاتساع للنمو.",
+          "width": 254,
+          "x": 315,
+          "y": 3286
+        }
+      ],
+      "imgHeight": 3552,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 33,
+          "symWidth": 19.79090909090909,
+          "text": "TIME  TO  PUSH THIS  HARDER .",
+          "translation": "حان الوقت لأن أدفع الأمر أبعد من ذلك.",
+          "width": 247,
+          "x": 126,
+          "y": 1262
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 28,
+          "symWidth": 18.07104700854701,
+          "text": "AND  IF  I  USE  THIS IN  COMBAT ,  WHO COULD  EVEN  KEEP UP  WITH  ME ?",
+          "translation": "وإن استخدمتها في المعركة، فمن ذا الذي قد يلاحقني؟",
+          "width": 274,
+          "x": 357,
+          "y": 2891
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 25.58181818181818,
+          "symWidth": 17.71333333333333,
+          "text": "最新 免费 ww baozim ENTIRE STAR SECTORS  THAT USED  TO  TAKE AGES  TO  CROSS-",
+          "translation": "",
+          "width": 324,
+          "x": 11,
+          "y": 3265
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 10.6,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 114,
+          "x": 143,
+          "y": 3458
+        }
+      ],
+      "imgHeight": 3552,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 19.11111111111111,
+          "text": "MGREAD.10",
+          "translation": "",
+          "width": 175,
+          "x": 537,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 29.23529411764706,
+          "symWidth": 18.11764705882353,
+          "text": "I  DON'T  NEED A  SHIP  TO  GET AROUND  ANYMORE .",
+          "translation": "لم أعد بحاجة إلى سفينة للتنقل.",
+          "width": 280,
+          "x": 229,
+          "y": 1111
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 16.13362068965517,
+          "symWidth": 10.09626436781609,
+          "text": "LU  SHENG  SPENT  HIS  TIME  DARTING  AND BLINKING  ACROSS  THE  COSMOS  WITHIN THE  DREAM - REALM  UNIVERSE ,  HAVING  A BLAST  AND  HIS  COMMAND  OF  THE  LAW  OF SPACE  ADVANCED  BY  LEAPS  AND  BOUNDS .",
+          "translation": "لو شينغ قضى وقته يطارد ويخطف الأنفاس عبر الكوكب الحالم، مستمتعاً، وقد تطور سقف سيطرته على قانون الفضاء قفزات هائلة.",
+          "width": 346,
+          "x": 258,
+          "y": 2708
+        }
+      ],
+      "imgHeight": 4258,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 33.72727272727273,
+          "symWidth": 21.54312354312354,
+          "text": "SEVERAL  COSMIC MONTHS  SLIPPED  BY  IN THE  BLINK  OF  AN  EYE .",
+          "translation": "مرّت عدة شهور كونية في لمح البصر.",
+          "width": 432,
+          "x": 141,
+          "y": 913
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 21.5,
+          "symWidth": 14.17794486215539,
+          "text": "REST  QUARTERS  -  ABOARD THE  STAR  SPIRIT  BLOSSOM .",
+          "translation": "حجرة الراحة - على متن الزهرة النجمية.",
+          "width": 321,
+          "x": 297,
+          "y": 1343
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 21.4,
+          "text": "|  包子 漫畫",
+          "translation": "",
+          "width": 119,
+          "x": 53,
+          "y": 2278
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 17.83333333333333,
+          "text": "最新 免费 漫画",
+          "translation": "",
+          "width": 113,
+          "x": 43,
+          "y": 2843
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 29.25,
+          "text": "快  快 看 漫",
+          "translation": "",
+          "width": 158,
+          "x": 520,
+          "y": 2905
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 15.5,
+          "symWidth": 11.5,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 115,
+          "x": 144,
+          "y": 4161
+        }
+      ],
+      "imgHeight": 4258,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 30.5,
+          "symWidth": 19.92857142857143,
+          "text": "FOUR  COSMIC MONTHS  HAVE PASSED .",
+          "translation": "مرّت أربعة أشهر كونية.",
+          "width": 233,
+          "x": 368,
+          "y": 76
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 13.5,
+          "symWidth": 23,
+          "text": "( )",
+          "translation": "()",
+          "width": 23,
+          "x": 627,
+          "y": 942
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 26.26190476190476,
+          "symWidth": 16.20952380952381,
+          "text": "AND NOW ,  I'M  ONLY RIGHT TIER  12 .",
+          "translation": "والآن، أنا فقط في المستوى الثاني عشر بالضبط.",
+          "width": 214,
+          "x": 93,
+          "y": 1291
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 23,
+          "symWidth": 15.06060606060606,
+          "text": "IS  THERE  STILL ENOUGH  TIME ?",
+          "translation": "هل بقي وقت كافٍ حقاً؟",
+          "width": 194,
+          "x": 430,
+          "y": 1721
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 18.5,
+          "symWidth": 11.66153846153846,
+          "text": "NOT  ENOUGH . NOT  EVEN  CLOSE !",
+          "translation": "ليس كافياً... ولا حتى قريباً!",
+          "width": 168,
+          "x": 477,
+          "y": 494
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 23.72941176470588,
+          "symWidth": 15.26380612851201,
+          "text": "THESE  FOUR MONTHS  LET  ME MASTER ESSENTIALLY THE  PRACTICAL  USE  OF THE  LAW  OF  SPACE .",
+          "translation": "خلال هذه الأشهر الأربعة، أتقنت عملياً استخدام قانون الفضاء.",
+          "width": 283,
+          "x": 107,
+          "y": 732
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 15.75,
+          "symWidth": 9.825804093567251,
+          "text": "I  CAN  DEPLOY  IT  RELIABLY IN  REAL  COMBAT  -  ANYONE BELOW  TIER  14  FLAT - OUT  CAN'T LAND  A  CLEAN  HIT  ON  ME .",
+          "translation": "أستطيع توظيفه بثبات في القتال الحقيقي — أي أحد دون المستوى الرابع عشر لا يستطيع أن يوجه إليّ ضربة نظيفة.",
+          "width": 248,
+          "x": 367,
+          "y": 2399
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 15.75,
+          "symWidth": 9.861584595959595,
+          "text": "AS  FOR  ANYTHING  ABOVE TIER  14 ...  I  HAVEN'T  FACED ONE  HEAD - ON  YET ,  SO  I CAN'T  SAY  FOR  SURE .",
+          "translation": "أما من هم فوق المستوى الرابع عشر... فلم أواجه أي منهم وجهاً لوجه بعد، فلا أستطيع أن أجزم.",
+          "width": 214,
+          "x": 85,
+          "y": 2767
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 11.8,
+          "text": "bacz  m",
+          "translation": "باكز م",
+          "width": 116,
+          "x": 59,
+          "y": 817
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 23.5,
+          "symWidth": 15.2233893557423,
+          "text": "THERE  ARE  TIER  14 ZOMBIE  ELITES  IN  THE DREAM - REALM  TOO ,  BUT FOR  SOME  REASON-",
+          "translation": "هناك نخب زومبي من المستوى الرابع عشر في عالم الأحلام أيضًا،\nلكن لسببٍ ما -",
+          "width": 302,
+          "x": 318,
+          "y": 1131
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 25.62962962962963,
+          "symWidth": 15.93356643356643,
+          "text": "-THEIR  POWER HAS  SEVERELY DETERIORATED . THEY'RE  USELESS AS  A  BENCHMARK .",
+          "translation": "-قدرتهم تآكلت بشدة، فلم يعودوا معيارًا يُعتد به.",
+          "width": 234,
+          "x": 106,
+          "y": 2392
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 30.83333333333333,
+          "symWidth": 26,
+          "text": "快 看 ! 快 看 漫",
+          "translation": "انظر سريعًا! انظر سريعًا!",
+          "width": 145,
+          "x": 531,
+          "y": 2586
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 29.75,
+          "symWidth": 18.53983516483517,
+          "text": "THEIR  OFFENSE  IS WEAK .  I  JUST  NEED TO  KEEP  MOVING .",
+          "translation": "هجومهم واهن، يكفيني أن أواصل التحرك فقط.",
+          "width": 311,
+          "x": 330,
+          "y": 2775
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 13,
+          "symWidth": 9.7,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 112,
+          "x": 144,
+          "y": 2904
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 19.88888888888889,
+          "text": "MGREAD.10",
+          "translation": "MGREAD.10",
+          "width": 175,
+          "x": 537,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 27,
+          "symWidth": 16.52777777777778,
+          "text": "THEY  DON'T CHASE  AT  ALL . ZERO  PRESSURE .",
+          "translation": "لا يلاحقون أبداً.. لا ضغوط تُذكر.",
+          "width": 240,
+          "x": 103,
+          "y": 989
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.33333333333333,
+          "text": "COME  TO  THINK  OF  IT ...",
+          "translation": "حين أتأمل الأمر...",
+          "width": 230,
+          "x": 353,
+          "y": 1370
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 27.66666666666667,
+          "symWidth": 17.32910052910053,
+          "text": "I'VE  ALSO  WORKED OUT  AN  OFFENSIVE TECHNIQUE USING THE  LAW  OF SPACE .",
+          "translation": "وقد ابتكرتُ تقنية هجومية تعتمد\nعلى قانون الفراغ.",
+          "width": 274,
+          "x": 117,
+          "y": 2539
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20,
+          "symWidth": 12.47563131313131,
+          "text": "MANIFESTING DIRECTLY  INSIDE  AN OPPONENT'S  BODY-",
+          "translation": "التجلي داخل جسد الخصم مباشرةً—",
+          "width": 210,
+          "x": 343,
+          "y": 2868
+        },
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 86,
+          "symWidth": 189,
+          "text": "20",
+          "translation": "20",
+          "width": 190,
+          "x": 71,
+          "y": 3744
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.33333333333333,
+          "symWidth": 10.06535947712418,
+          "text": "I  CAN  USE  SPATIAL  FORCE TO  TEAR  AN  ENEMY  APART FROM  THE  INSIDE  OUT .",
+          "translation": "أستطيع استخدام قوة الفراغ\nلتمزيق العدو من الداخل إلى الخارج.",
+          "width": 207,
+          "x": 436,
+          "y": 3992
+        }
+      ],
+      "imgHeight": 4143,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 31,
+          "symWidth": 19.09090909090909,
+          "text": "ANOTHER  CARD UP  MY  SLEEVE .",
+          "translation": "ورقة رابحة أخرى في جعبتي.",
+          "width": 237,
+          "x": 91,
+          "y": 721
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 22.75,
+          "symWidth": 14.79052197802198,
+          "text": "I'VE  GOT  SO  MANY TRUMP  CARDS  I'VE LOST COUNT ...",
+          "translation": "أملك الكثير من الأوراق الرابحة حتى فقدت عدها...",
+          "width": 231,
+          "x": 392,
+          "y": 1818
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 28.75,
+          "symWidth": 17.47019230769231,
+          "text": "THE  ONLY  THING I  STILL  HAVEN'T CRACKED  IS  THE LAW  OF  TIME .",
+          "translation": "الشيء الوحيد الذي لم أفك شيفرته بعد هو قانون الزمن.",
+          "width": 243,
+          "x": 110,
+          "y": 2154
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 30,
+          "symWidth": 19.38528138528138,
+          "text": "NO  LEADS WHATSOEVER . A  SHAME .",
+          "translation": "لا خيوط تدل على شيء. يا لها من خيبة.",
+          "width": 216,
+          "x": 410,
+          "y": 3374
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 15,
+          "symWidth": 9.5,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 112,
+          "x": 144,
+          "y": 4046
+        }
+      ],
+      "imgHeight": 4143,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 19.2,
+          "text": "Since",
+          "translation": "منذ",
+          "width": 93,
+          "x": 617,
+          "y": 1553
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 17.66666666666667,
+          "text": "最新 免费 漫画",
+          "translation": "",
+          "width": 113,
+          "x": 43,
+          "y": 1665
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 27.2,
+          "text": "快快 看 漫画",
+          "translation": "",
+          "width": 189,
+          "x": 520,
+          "y": 2334
+        }
+      ],
+      "imgHeight": 2973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 7.047619047619047,
+          "text": "HAHA ~  COME  AND  CATCH  ME ~ !",
+          "translation": "هاها ~ تعال وأمسكني ~!",
+          "width": 183,
+          "x": 450,
+          "y": 773
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 37.88235294117647,
+          "symWidth": 21.70588235294118,
+          "text": "HAHA ,  STOP RUNNING !",
+          "translation": "هاها، كفّ عن الركض!",
+          "width": 225,
+          "x": 228,
+          "y": 1294
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 23.50877192982456,
+          "symWidth": 15.33333333333333,
+          "text": "EVERYTHING  IN  FRONT OF  ME  IS  JUST  A  SCENE RECONSTRUCTED FROM  MEMORY .",
+          "translation": "كل ما أمامي ليس سوى مشهد أُعيد بناؤه من الذاكرة.",
+          "width": 295,
+          "x": 112,
+          "y": 2732
+        }
+      ],
+      "imgHeight": 2973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 17.19117647058824,
+          "symWidth": 11.10294117647059,
+          "text": "MY  HOME  PLANET  IS FATED  TO  BE  THE  FIRST WORLD  DESTROYED  WHEN CATASTROPHE  STRIKES .",
+          "translation": "مصير كوكبي الأم أن يكون أول عوالم يُدمر حين يحل الكارثة.",
+          "width": 226,
+          "x": 410,
+          "y": 498
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 18.5,
+          "text": "最新 免费 漫画",
+          "translation": "",
+          "width": 113,
+          "x": 43,
+          "y": 1344
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 14.35714285714286,
+          "symWidth": 9.028571428571428,
+          "text": "LU  SHENG  STOOD  STILL  WITHIN THE  FLOWING  CROWD  AN  UNMOVING REEF  AGAINST  THE  CURRENT .",
+          "translation": "لو شينغ وقف ساكناً وسط الجموع الجارية، كصخرة لا تتحرك في وجه التيار.",
+          "width": 266,
+          "x": 236,
+          "y": 1523
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 30.47058823529412,
+          "symWidth": 18.17647058823529,
+          "text": "ALL  I  CAN  DO IS  WATCH .",
+          "translation": "لا أملك سوى أن أشاهد.",
+          "width": 219,
+          "x": 97,
+          "y": 1826
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 16.34782608695652,
+          "symWidth": 9.021739130434783,
+          "text": "OBSERVING  TIME LIKE  THIS  -  TIME  THAT ISN'T  EVEN  REAL ...",
+          "translation": "أرقب الزمان هكذا - زمن ليس حقيقياً أصلاً...",
+          "width": 200,
+          "x": 403,
+          "y": 2706
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "renderMode": "mask_only",
+          "symHeight": 13,
+          "symWidth": 9.6,
+          "text": "Read  more  at",
+          "translation": "",
+          "width": 112,
+          "x": 144,
+          "y": 2881
+        }
+      ],
+      "imgHeight": 2975,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 18.57075471698113,
+          "symWidth": 12.55606469002695,
+          "text": "Read more at THE POWER OF TIME IS FAR TOO VAST AND MYSTERIOUS . SPACE , AT LEAST , CAN BE GRASPED -",
+          "translation": "قوة الزمن عظيمة وغامضة للغاية.\nأما الفضاء، فعلى الأقل يمكن إدراكه.",
+          "width": 251,
+          "x": 92,
+          "y": 111
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 23.29545454545455,
+          "symWidth": 11.68181818181818,
+          "text": "BUT  TIME ...  I  CAN'T EVEN  TOUCH  IT ,  LET ALONE  SENSE  IT .",
+          "translation": "أما الزمن... فلا أستطيع لمسه، فكيف لي بحسِّه؟",
+          "width": 225,
+          "x": 383,
+          "y": 1633
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 12.33333333333333,
+          "text": "BEEP  BEEP  BEEP",
+          "translation": "بيب بيب بيب",
+          "width": 129,
+          "x": 108,
+          "y": 2720
+        }
+      ],
+      "imgHeight": 2993,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 22,
+          "symWidth": 16.61363636363636,
+          "text": "包子 漫畫 2",
+          "translation": "باوزي مانغا 2",
+          "width": 129,
+          "x": 576,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 28,
+          "symWidth": 16.25230769230769,
+          "text": "THIS  IS ... QINGXUE'S  SIGNAL ? AND  THE  OTHERS ?",
+          "translation": "هل هذا هو إشارة تشينغشوي؟ وماذا عن الآخرين؟",
+          "width": 274,
+          "x": 347,
+          "y": 78
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 134,
+          "symWidth": 115.5,
+          "text": "MN",
+          "translation": "مم",
+          "width": 237,
+          "x": 199,
+          "y": 684
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 26,
+          "symWidth": 15.5,
+          "text": "THEY  FINALLY  GOT THROUGH  AFTER ALL  THIS  TIME !",
+          "translation": "لقد نجحوا أخيراً في الوصول بعد هذا الانتظار الطويل!",
+          "width": 244,
+          "x": 86,
+          "y": 1910
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.30434782608696,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "لا يجوز النقل دون إذن.\nوإن وُجد ذلك، فتكون المسؤولية القانونية حتمية.",
+          "width": 428,
+          "x": 261,
+          "y": 2215
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 19,
+          "symWidth": 18.02380952380953,
+          "text": "这里 可以 …… …… 登录 过去 …",
+          "translation": "هنا يمكن... الدخول إلى الماضي...",
+          "width": 123,
+          "x": 60,
+          "y": 2374
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 39,
+          "symWidth": 35.57142857142857,
+          "text": "高 武 官方 粉丝 群",
+          "translation": "المجموعة الرسمية لمحبي تاو وو",
+          "width": 266,
+          "x": 375,
+          "y": 2426
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 24,
+          "text": "371978155",
+          "translation": "٣٧١٩٧٨١٥٥",
+          "width": 219,
+          "x": 411,
+          "y": 2520
+        }
+      ],
+      "imgHeight": 2993,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 44,
+          "symWidth": 42.625,
+          "text": "迎 老爷 们 前 来看 漫画 !",
+          "translation": "مرحبًا بالسادة الأعزاء لمشاهدة المانغا!",
+          "width": 262,
+          "x": 95,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 59.66666666666666,
+          "symWidth": 50.11428571428572,
+          "text": "五一 收官 , 好运 接班 , 爷们 越 混 越 牛 , 日子 越来越 红火 !",
+          "translation": "مع اقتراب نهاية الأول من مايو،\nيتوالى الحظ، ويزداد الرجال قوة،\nوحياتهم تتألق وتزدهر أكثر!",
+          "width": 545,
+          "x": 21,
+          "y": 745
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 44.5,
+          "symWidth": 40.34722222222222,
+          "text": "感谢 老爷 们 的 支持 , 求 三 连 ~",
+          "translation": "شكرًا لدعمكم أيها السادة،\nنرجو ثلاث تفاعلات متتالية ~",
+          "width": 400,
+          "x": 265,
+          "y": 1185
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 19.22727272727273,
+          "text": "感谢 上周 加料 的 读者 ( 04.27-05.03 )",
+          "translation": "شكرًا للقراء الذين أضافوا خلال الأسبوع الماضي (27 أبريل - 3 مايو)",
+          "width": 492,
+          "x": 25,
+          "y": 1545
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 24.33333333333333,
+          "symWidth": 20.18095238095238,
+          "text": "LIUWENHAO- 留下 重要 的 言语 就好 . 2700  粉丝 力",
+          "translation": "LIUWENHAO - يكفي أن تترك كلمات ذات أهمية. 2700 قوة معجب",
+          "width": 228,
+          "x": 249,
+          "y": 1676
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24,
+          "symWidth": 22.15476190476191,
+          "text": "微笑 死于 过去 木 有 简介 , 可能 在 世界 角 ………",
+          "translation": "الابتسامة ماتت في الماضي. لا يوجد وصف، ربما في زاوية العالم...",
+          "width": 268,
+          "x": 224,
+          "y": 1880
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 18.57142857142857,
+          "text": "2588  粉丝 力",
+          "translation": "2588 قوة معجب",
+          "width": 141,
+          "x": 517,
+          "y": 1898
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 23.5,
+          "symWidth": 22.43333333333333,
+          "text": "余 山 红红 我 希望 有朝一日 能 看到 地 ....",
+          "translation": "余山红红 أتمنى أن يأتي يوم أرى فيه الأرض....",
+          "width": 276,
+          "x": 223,
+          "y": 2003
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 21,
+          "symWidth": 18,
+          "text": "2281  粉丝 力",
+          "translation": "2281 قوة معجب",
+          "width": 139,
+          "x": 517,
+          "y": 2018
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 22.25,
+          "symWidth": 19.89285714285714,
+          "text": "KY OwO 大 粉丝 在 世界 角落 游荡",
+          "translation": "KY OwO معجب كبير يتجول في زوايا العالم",
+          "width": 184,
+          "x": 224,
+          "y": 2127
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 21,
+          "symWidth": 17.42857142857143,
+          "text": "1500  粉丝 力",
+          "translation": "قوة المعجبين 1500",
+          "width": 138,
+          "x": 518,
+          "y": 2141
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.16666666666666,
+          "symWidth": 18.56428571428571,
+          "text": "春风 十里  mAo ... 1200  粉丝 力 木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "نسيم الربيع عبر العشرة أميال... قوة المعجبين 1200، لا توجد نبذة، ربما في زاوية من العالم...",
+          "width": 436,
+          "x": 222,
+          "y": 2248
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 12.5,
+          "symWidth": 13,
+          "text": "= 0",
+          "translation": "= 0",
+          "width": 20,
+          "x": 170,
+          "y": 2277
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.5,
+          "symWidth": 15.83333333333333,
+          "text": "临夏  tli ...  大 粉丝 世人 皆 醉 我 独醒 ! 世 ………",
+          "translation": "لين شيا... قوة المعجبين العظيمة، الجميع سكرى وأنا الوحيد الصافي! العالم...",
+          "width": 253,
+          "x": 223,
+          "y": 2371
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 22,
+          "symWidth": 17.57142857142857,
+          "text": "1000  粉丝 力",
+          "translation": "قوة المعجبين 1000",
+          "width": 139,
+          "x": 518,
+          "y": 2386
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 23.5,
+          "symWidth": 22.82291666666666,
+          "text": "龙龙 龙龙 龙 秋 木 有 简介 , 可能 在 世界 角落 ....",
+          "translation": "لونغ لونغ لونغ أخيرًا، لا توجد نبذة، ربما في زاوية من العالم....",
+          "width": 299,
+          "x": 223,
+          "y": 2494
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 19,
+          "text": "800  粉丝 力",
+          "translation": "قوة المعجبين 800",
+          "width": 124,
+          "x": 534,
+          "y": 2510
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 24,
+          "symWidth": 18.08035714285714,
+          "text": "钟  DdtWd5 木 有 简介 , 可能 在 世界 角落 ....",
+          "translation": "تشونغ، لا توجد نبذة، ربما في زاوية من العالم....",
+          "width": 296,
+          "x": 224,
+          "y": 2615
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 22,
+          "symWidth": 19.33333333333333,
+          "text": "788  粉丝 力",
+          "translation": "قوة المعجبين 788",
+          "width": 125,
+          "x": 533,
+          "y": 2632
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24,
+          "symWidth": 22.7,
+          "text": "轻 旅 者 木 有 简介 , 可能 在 世界 角落 ...",
+          "translation": "المسافر الخفيف لا توجد نبذة، ربما في زاوية من العالم...",
+          "width": 299,
+          "x": 223,
+          "y": 2739
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 18.66666666666667,
+          "text": "700  粉丝 力",
+          "translation": "٧٠٠ قوة المعجبين",
+          "width": 124,
+          "x": 534,
+          "y": 2755
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 24,
+          "symWidth": 17.5,
+          "text": "K 世界 居 Read  morea 自 简介",
+          "translation": "عالم K اقرأ المزيد من الملف الشخصي",
+          "width": 197,
+          "x": 144,
+          "y": 2861
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 24,
+          "symWidth": 13.91666666666667,
+          "text": "NYj ... 可能 在 世界 角落 ……… ..",
+          "translation": "ربما في زاوية من العالم...",
+          "width": 188,
+          "x": 336,
+          "y": 2862
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 13,
+          "text": "10",
+          "translation": "١٠",
+          "width": 27,
+          "x": 53,
+          "y": 2877
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 18.83333333333333,
+          "text": "700  粉丝 力",
+          "translation": "٧٠٠ قوة المعجبين",
+          "width": 124,
+          "x": 534,
+          "y": 2878
+        }
+      ],
+      "imgHeight": 2995,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

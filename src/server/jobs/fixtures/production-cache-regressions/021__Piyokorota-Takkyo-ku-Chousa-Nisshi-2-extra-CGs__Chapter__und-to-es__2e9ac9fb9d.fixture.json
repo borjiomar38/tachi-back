@@ -1,0 +1,540 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0021",
+  "jobId": "fixture-job-0021",
+  "licenseId": "fixture-license-0021",
+  "pageCount": 53,
+  "pageOrder": [
+    "001.avif",
+    "002.avif",
+    "003.avif",
+    "004.avif",
+    "005.avif",
+    "006.avif",
+    "007.avif",
+    "008.avif",
+    "009.avif",
+    "010.avif",
+    "011.avif",
+    "012.avif",
+    "013.avif",
+    "014.avif",
+    "015.avif",
+    "016.avif",
+    "017.avif",
+    "018.avif",
+    "019.avif",
+    "020.avif",
+    "021.avif",
+    "022.avif",
+    "023.avif",
+    "024.avif",
+    "025.avif",
+    "026.avif",
+    "027.avif",
+    "028.avif",
+    "029.avif",
+    "030.avif",
+    "031.avif",
+    "032.avif",
+    "033.avif",
+    "034.avif",
+    "035.avif",
+    "036.avif",
+    "037.avif",
+    "038.avif",
+    "039.avif",
+    "040.avif",
+    "041.avif",
+    "042.avif",
+    "043.avif",
+    "044.avif",
+    "045.avif",
+    "046.avif",
+    "047.avif",
+    "048.avif",
+    "049.avif",
+    "050.avif",
+    "051.avif",
+    "052.avif",
+    "053.avif"
+  ],
+  "pages": {
+    "001.avif": {
+      "blocks": [],
+      "imgHeight": 420,
+      "imgWidth": 560,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "002.avif": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 1000,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "003.avif": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 1000,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "004.avif": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 1000,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "005.avif": {
+      "blocks": [],
+      "imgHeight": 1575,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "006.avif": {
+      "blocks": [],
+      "imgHeight": 1575,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "007.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1000,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "008.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1000,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "009.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "010.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "011.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "012.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "013.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "014.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "015.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "016.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "017.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "018.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2000,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "019.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 278,
+          "symHeight": 276,
+          "symWidth": 262.5,
+          "text": "AR",
+          "translation": "AR",
+          "width": 536,
+          "x": 724,
+          "y": 84
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 2000,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "020.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2000,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "021.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2000,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "022.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 14.25,
+          "text": "COOP",
+          "translation": "COOP",
+          "width": 46,
+          "x": 456,
+          "y": 907
+        }
+      ],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "023.avif": {
+      "blocks": [],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "024.avif": {
+      "blocks": [],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "025.avif": {
+      "blocks": [],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "026.avif": {
+      "blocks": [],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "027.avif": {
+      "blocks": [],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "028.avif": {
+      "blocks": [],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "029.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 18,
+          "symWidth": 17.5,
+          "text": "COPP",
+          "translation": "COPP",
+          "width": 64,
+          "x": 438,
+          "y": 902
+        }
+      ],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "030.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 475,
+          "symHeight": 453.5,
+          "symWidth": 270.5,
+          "text": "ال",
+          "translation": "",
+          "width": 504,
+          "x": 425,
+          "y": 368
+        }
+      ],
+      "imgHeight": 960,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "031.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "032.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "033.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "034.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "035.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "036.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "037.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "038.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "039.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 933,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "040.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "041.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "042.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "043.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "044.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "045.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "046.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "047.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "048.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "049.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "050.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "051.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "052.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "053.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1167,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "und",
+  "targetLanguage": "es",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

@@ -462,6 +462,8 @@ function buildPagePreviews(rawManifest: unknown) {
 
       if (
         shouldDropProviderTranslationBlock({
+          sourceLanguage:
+            typeof page.sourceLanguage === 'string' ? page.sourceLanguage : '',
           sourceText,
           translation:
             typeof record.translation === 'string' ? record.translation : '',

@@ -8,6 +8,10 @@
     "eslint-plugin-sonarjs",
     "eslint-plugin-storybook"
   ],
+  "ignorePatterns": [
+    "tmp/**",
+    "src/server/jobs/fixtures/production-cache-regressions/**/*.json"
+  ],
   "categories": {
     "correctness": "error"
   },

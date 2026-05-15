@@ -1,0 +1,1314 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0088",
+  "jobId": "fixture-job-0088",
+  "licenseId": "fixture-license-0088",
+  "pageCount": 22,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 16,
+          "symWidth": 27.5,
+          "text": "W  M",
+          "translation": "رُبَّانُ التنانين",
+          "width": 76,
+          "x": 315,
+          "y": 44
+        },
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 68.31666666666666,
+          "symWidth": 63.35,
+          "text": "驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل هو أضعف مهنة؟ أنا دراكو ماجسترو+",
+          "width": 408,
+          "x": 140,
+          "y": 1117
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 19.33333333333333,
+          "text": "READ  AT",
+          "translation": "اقرأ على",
+          "width": 106,
+          "x": 463,
+          "y": 1467
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 13.07142857142857,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 164,
+          "x": 328,
+          "y": 1596
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 21,
+          "symWidth": 17,
+          "text": "NEW  COMICS",
+          "translation": "قصص جديدة",
+          "width": 151,
+          "x": 428,
+          "y": 1660
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.53333333333333,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمع نشط",
+          "width": 183,
+          "x": 497,
+          "y": 1722
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 18.61290322580645,
+          "symWidth": 15.80645161290323,
+          "text": "AS  EXPECTED OF  EPIC - TIER EQUIPMENT ,",
+          "translation": "كما هو متوقع من معدات من الدرجة الملحمية،",
+          "width": 183,
+          "x": 88,
+          "y": 2149
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 16.15441176470588,
+          "symWidth": 15.74321266968326,
+          "text": "BUT  THERE'S  NO TIME  TO  FOCUS  ON IT  NOW - THE FOURTH ADVANCEMENT  IS WHAT  MATTERS .",
+          "translation": "لكن لا وقت للتركيز الآن، فالترقية الرابعة هي الأهم.",
+          "width": 233,
+          "x": 395,
+          "y": 2157
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 9.666666666666666,
+          "text": "000",
+          "translation": "٠٠٠",
+          "width": 36,
+          "x": 65,
+          "y": 2752
+        }
+      ],
+      "imgHeight": 3021,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23.3125,
+          "symWidth": 17.875,
+          "text": "XIAO  FEI , HEAL  HIM .",
+          "translation": "شياو في، اشفِه.",
+          "width": 158,
+          "x": 431,
+          "y": 1720
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 23.1,
+          "symWidth": 21.125,
+          "text": "YING YING !",
+          "translation": "يينغ يينغ!",
+          "width": 99,
+          "x": 91,
+          "y": 2653
+        }
+      ],
+      "imgHeight": 3022,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 11.85714285714286,
+          "text": "...... ?",
+          "translation": "......؟",
+          "width": 91,
+          "x": 107,
+          "y": 450
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15.95652173913044,
+          "symWidth": 13.88405797101449,
+          "text": "FOUNTAIN  OF  LIFE :  APPLIES  A  LIFE SOURCE  TO  ALL  ALLIES ,  CONTINUOUSLY RESTORING  HP .",
+          "translation": "ينبوع الحياة: يمنح كل الحلفاء مصدر حياة، مستمر في استعادة نقاط الصحة.",
+          "width": 445,
+          "x": 186,
+          "y": 1059
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 17.5,
+          "symWidth": 15.07046190055899,
+          "text": "EMERALD  LIGHT :  GRANTS  MULTIPLE  LAYERS OF  EMERALD  BLESSING ,  REMOVING  ALL DEBUFFS  AND  INCREASING  ALL  ATTRIBUTES  BY  30 % . EACH  LAYER  BLOCKS  ONE  INSTANCE  OF  DAMAGE .",
+          "translation": "نور الزمرد: يمنح طبقات متعددة من بركة الزمرد، يُزيل كل العلل ويزيد جميع الصفات بنسبة ٣٠٪. كل طبقة تحجب هجمة واحدة من الضرر.",
+          "width": 589,
+          "x": 60,
+          "y": 1326
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 16.35,
+          "text": "NOT  ONLY  DID THE  WOUNDS HEAL ...",
+          "translation": "لم تلتئم الجراح فقط...",
+          "width": 190,
+          "x": 83,
+          "y": 1888
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 19.28571428571428,
+          "symWidth": 18.79761904761905,
+          "text": "MY STRENGTH EVEN DOUBLED ?!",
+          "translation": "بل تضاعفت قوتي إلى الضعف؟!",
+          "width": 166,
+          "x": 401,
+          "y": 1928
+        }
+      ],
+      "imgHeight": 3023,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 20.77666666666667,
+          "symWidth": 19.76274891774892,
+          "text": "I'VE  WORKED  WITH SO  MANY  LEVEL 100  SUPPORTS ... AND  NOT  ONE  OF THEM  COMPARES TO  HER .",
+          "translation": "لقد تعاملت مع العديد من الدعامات من المستوى ١٠٠... ولا أحد منهم يضاهيها.",
+          "width": 283,
+          "x": 249,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20,
+          "symWidth": 19.23371212121212,
+          "text": "TOO  BAD  WE STILL DON'T KNOW  WHY  THE SHADOW  GUARD WAS  HERE .",
+          "translation": "العيب أننا ما نزال نجهل سبب وجود الحرس الظل هنا.",
+          "width": 244,
+          "x": 153,
+          "y": 2012
+        }
+      ],
+      "imgHeight": 3029,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.2204415954416,
+          "text": "IF  WE  COULD FIGURE  IT  OUT , THE  PRESSURE  ON THE  FRONT  LINES WOULD  DROP SIGNIFICANTLY",
+          "translation": "لو استطعنا كشف الأمر، لتلاشت ضغوط خطوط المواجهة بشكل كبير.",
+          "width": 268,
+          "x": 302,
+          "y": 235
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 17.61111111111111,
+          "symWidth": 16.41458333333333,
+          "text": "ONCE  I  FINISH MY  FOURTH ADVANCEMENT ,  I'LL COME  BACK  AND WE'LL  TURN  THIS PLACE  UPSIDE DOWN .",
+          "translation": "حين أنهي ترقيتي الرابعة، سأعود لنقلب هذا المكان رأساً على عقب.",
+          "width": 258,
+          "x": 77,
+          "y": 802
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 17.5,
+          "text": "WHAT !?",
+          "translation": "ماذا!؟",
+          "width": 102,
+          "x": 69,
+          "y": 1507
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21.5,
+          "symWidth": 19.15277777777778,
+          "text": "Y - YOU'RE LEVEL  90 !?",
+          "translation": "أ- أنت في المستوى ٩٠!؟",
+          "width": 169,
+          "x": 356,
+          "y": 2089
+        }
+      ],
+      "imgHeight": 3030,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20,
+          "symWidth": 17.70563811188811,
+          "text": "WELL ,  YOU DID  KILL  OVER 300,000  CORPSE PUPPETS ,",
+          "translation": "حسنًا، لقد قتلت أكثر من ٣٠٠٬٠٠٠ دمية جثة،",
+          "width": 250,
+          "x": 107,
+          "y": 443
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 21,
+          "symWidth": 18.49047619047619,
+          "text": "THAT'S ENOUGH  TO REACH  LEVEL 90 ...",
+          "translation": "وهذا يكفي للوصول إلى المستوى ٩٠...",
+          "width": 210,
+          "x": 404,
+          "y": 1283
+        },
+        {
+          "angle": 0,
+          "height": 168,
+          "symHeight": 18.66666666666667,
+          "symWidth": 17.51307488807489,
+          "text": "PERFECT TIMING ,  I  NEED TO  REPORT  BACK TO  THE  OUTPOST . LET'S  GO TOGETHER !",
+          "translation": "توقيت مثالي، يجب أن أبلغ الحامية. هيا بنا معًا!",
+          "width": 255,
+          "x": 70,
+          "y": 1796
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 17,
+          "symWidth": 16.8,
+          "text": "OKAY .",
+          "translation": "حسنًا.",
+          "width": 81,
+          "x": 421,
+          "y": 2773
+        }
+      ],
+      "imgHeight": 3029,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 27.14285714285714,
+          "symWidth": 23.71428571428572,
+          "text": "ROAR !!!",
+          "translation": "زأر!!!",
+          "width": 172,
+          "x": 348,
+          "y": 236
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19.22916666666667,
+          "symWidth": 16.76349206349206,
+          "text": "EVERY  EXTRA KILL  MAKES  THE FRONT  LINE EASIER .",
+          "translation": "كل قتل إضافي يُيسّر الخطوط الأمامية.",
+          "width": 231,
+          "x": 370,
+          "y": 3562
+        }
+      ],
+      "imgHeight": 3997,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 19.50980392156863,
+          "symWidth": 16.92577030812325,
+          "text": "TRAINED  BY ELDER  XU- IMPRESSIVE INDEED .",
+          "translation": "تدريب الشيخ زو — إنجاز مبهر حقًا.",
+          "width": 180,
+          "x": 165,
+          "y": 556
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 30.5,
+          "symWidth": 33,
+          "text": "00",
+          "translation": "00",
+          "width": 59,
+          "x": 172,
+          "y": 1422
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17.5,
+          "symWidth": 15.65,
+          "text": "TH - THIS  MANY DRAGONS ...",
+          "translation": "هـ- هذا الكم من التنانين...",
+          "width": 187,
+          "x": 390,
+          "y": 3309
+        }
+      ],
+      "imgHeight": 3999,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 25,
+          "symWidth": 21.68055555555556,
+          "text": "I'LL  LEND  A HAND  TOO .",
+          "translation": "سأمدُّ يد العون أيضًا.",
+          "width": 199,
+          "x": 369,
+          "y": 316
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 15,
+          "symWidth": 9.429557535487767,
+          "text": "THIRTY - NINE  MILLION  STELLAR  ANNIHILATION :  SUMMONS  A  STAR CORE  THAT  GROWS  STRONGER  AS  INTERNAL  STARS  DIVIDE EVENTUALLY  DETONATED  BY  THE  ASTRAL  DRAGON  KING  FOR APOCALYPTIC  DAMAGE  INITIAL  STAR  COUNT :  39  MILLION .",
+          "translation": "تدمير نجمِيّ بتسعة وثلاثين مليون: يستدعي نواة نجمية تقوى بتقسيم النجوم الداخلية، ثم ينفجر في النهاية بواسطة ملك التنين النجمي ليُحدث دمارًا نهاية العالم. عدد النجوم الابتدائي: ٣٩ مليون.",
+          "width": 429,
+          "x": 32,
+          "y": 1457
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 15.33333333333333,
+          "symWidth": 10.39850114043662,
+          "text": "CATACLYSM  I :  THE  DESTRUCTION  DRAGON DETONATES  AREAS  IT  FLIES  OVER ,  DEALING MASSIVE  DAMAGE  AND  INFLICTING  BURN .",
+          "translation": "الخراب الأوّل: ينفجر تنين الهلاك فوق المناطق التي يطير عليها، مُلحقًا أضرارًا جسيمة وحروقًا.",
+          "width": 329,
+          "x": 334,
+          "y": 1650
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 14.8,
+          "symWidth": 10.36616271248624,
+          "text": "THREE  MILLION  THREE  HUNDRED  THOUSAND HEAVENLY THUNDER  ANNIHILATION :  SUMMONS  A  STORM  THAT STRIKES  THE  TARGET  AREA  WITH  3.3  MILLION DESTRUCTIVE  LIGHTNING  BOLTS .",
+          "translation": "إبادة الرعد السماوي بثلاثة ملايين وثلاثمائة ألف: يستحضر عاصفة تضرب الهدف بـ٣.٣ مليون صاعقة مدمرة.",
+          "width": 400,
+          "x": 27,
+          "y": 1981
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 18,
+          "symWidth": 15.59720511767926,
+          "text": "FROST  WALL : SUMMONS DURABLE  ICE  WALLS ; WHEN  FORMING  A  RING ,  REDUCES  ENEMY MOVEMENT  SPEED  BY  75 %  AND GRADUALLY  FREEZES  THEM .",
+          "translation": "جدار الصقيع: يستدعي جدرانًا جليدية صلبة؛ وعند تكوين حلقة، يُبطئ حركة العدو بنسبة ٧٥٪ ويجمّدهم تدريجيًا.",
+          "width": 513,
+          "x": 70,
+          "y": 3067
+        }
+      ],
+      "imgHeight": 3575,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.11904761904762,
+          "symWidth": 15.97619047619047,
+          "text": "I'LL  WAIT  AT  THE FRONT  LINE .  WHEN YOU  RETURN ,  WE'LL CLEAR  OUT  ALL THESE  NESTS TOGETHER .",
+          "translation": "سأنتظر في الخط الأمامي. عند عودتك، سنقضي معًا على كل هذه الأعشاش.",
+          "width": 253,
+          "x": 92,
+          "y": 922
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15.66666666666667,
+          "text": "OK .",
+          "translation": "حسنًا.",
+          "width": 45,
+          "x": 523,
+          "y": 1440
+        }
+      ],
+      "imgHeight": 3576,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 18.97916666666666,
+          "symWidth": 17.72916666666666,
+          "text": "I  WONDER HOW  THINGS ARE  ON  THEIR SIDE .",
+          "translation": "أتساءل كيف هي الأحوال في صفهم.",
+          "width": 194,
+          "x": 354,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19,
+          "symWidth": 17.94444444444444,
+          "text": "LATER  THAT  DAY :  FAR NORTH  SAFETY  OUTPOST",
+          "translation": "في وقت لاحق من ذلك اليوم: نقطة الأمان في أقصى الشمال",
+          "width": 362,
+          "x": 59,
+          "y": 942
+        }
+      ],
+      "imgHeight": 3575,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 23.4,
+          "symWidth": 20.01666666666667,
+          "text": "WHAT'S THIS ?",
+          "translation": "ما هذا؟",
+          "width": 114,
+          "x": 219,
+          "y": 693
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 18.45555555555556,
+          "symWidth": 17.60707070707071,
+          "text": "HAVEN'T  SEEN YOU  FOR  A  FEW DAYS ,  WHY  DO YOU  ALL  LOOK SO  DRAINED ?",
+          "translation": "لم أركم منذ أيام، لماذا تبدون كلّكم منهكين هكذا؟",
+          "width": 208,
+          "x": 437,
+          "y": 933
+        }
+      ],
+      "imgHeight": 2982,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.2258064516129,
+          "symWidth": 16.65786901270772,
+          "text": "LU  FAN !  YOU HAVE  NO  IDEA HOW  MISERABLE IT'S  BEEN  FOR US !",
+          "translation": "لو فان! لا تدري كم عانينا من البؤس!",
+          "width": 219,
+          "x": 204,
+          "y": 1693
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 16.33333333333333,
+          "text": "XIAO FAN - YOU'RE HERE !",
+          "translation": "شياو فان - أنت هنا!",
+          "width": 165,
+          "x": 485,
+          "y": 1984
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 15.83333333333333,
+          "text": "LU  FAN !",
+          "translation": "لو فان!",
+          "width": 99,
+          "x": 500,
+          "y": 2884
+        }
+      ],
+      "imgHeight": 2982,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 17.43535353535353,
+          "text": "I  HEARD  YOU HELD  OUT  HERE FOR  TWO  DAYS AND  ONE NIGHT .",
+          "translation": "سمعتُ أنك صمدت هنا يومين وليلة.",
+          "width": 210,
+          "x": 102,
+          "y": 331
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17,
+          "symWidth": 17.6031746031746,
+          "text": "CAME  TO CHECK  ON YOU .",
+          "translation": "أتيت لأطمئن عليك.",
+          "width": 132,
+          "x": 389,
+          "y": 409
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17,
+          "symWidth": 15.77728174603175,
+          "text": "QUICK ,  LET ME  SEE  IF YOU'RE INJURED !",
+          "translation": "سريعًا، دعني أرى إن كنت مصابًا!",
+          "width": 141,
+          "x": 124,
+          "y": 1241
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.98241758241758,
+          "text": "WITHOUT  YOU , GRINDING  WAS SLOW  AND EXHAUSTING - WE ALMOST  DIED SEVERAL  TIMES !",
+          "translation": "بدونك، كان النضال بطيئًا ومرهقًا - كدنا نموت عدة مرات!",
+          "width": 245,
+          "x": 358,
+          "y": 1495
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 17.97222222222222,
+          "text": "IT'S  GOOD TO  HAVE YOU  BACK .",
+          "translation": "من الجيد أن تكون بيننا مجددًا.",
+          "width": 143,
+          "x": 432,
+          "y": 2041
+        }
+      ],
+      "imgHeight": 2983,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.2,
+          "symWidth": 16.50704453441296,
+          "text": "ONCE  I  FINISH MY  FOURTH ADVANCEMENT , I'LL  TAKE  YOU  TO SLAUGHTER  THE BEAST  TIDE .",
+          "translation": "عندما أنتهي من ترقيتي الرابعة، سأقودك لصيد موجة الوحوش.",
+          "width": 235,
+          "x": 81,
+          "y": 351
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.75,
+          "symWidth": 16.13731060606061,
+          "text": "GIVE  ME  THREE DAYS - I'LL  GET YOU  ALL  TO LEVEL  90 .",
+          "translation": "امنحني ثلاثة أيام، وسأرفع مستواكم جميعًا إلى ٩٠.",
+          "width": 199,
+          "x": 388,
+          "y": 499
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 23.33333333333333,
+          "symWidth": 23.04444444444445,
+          "text": "W - WHAT DID  YOU SAY !?",
+          "translation": "م- ماذا قلت؟!",
+          "width": 145,
+          "x": 169,
+          "y": 1816
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 18.46071428571429,
+          "text": "H - HOW MANY  DID YOU  SAY !?",
+          "translation": "ك- كم قلت أن عددهم؟!",
+          "width": 147,
+          "x": 401,
+          "y": 2091
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30.2,
+          "symWidth": 39.2,
+          "text": "8  快 看 漫画",
+          "translation": "",
+          "width": 171,
+          "x": 517,
+          "y": 2945
+        }
+      ],
+      "imgHeight": 3211,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.4,
+          "symWidth": 16.5165293040293,
+          "text": "I  DIDN'T  EXPECT ... YOU'RE  ALREADY ABOUT  TO  REACH FOURTH ADVANCEMENT ...",
+          "translation": "لم أكن أظن... أنك على وشك بلوغ الترقية الرابعة بالفعل...",
+          "width": 237,
+          "x": 163,
+          "y": 208
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 16.625,
+          "text": "FOURTH ADVANCE- MENT !?",
+          "translation": "الترقية الرابعة؟!",
+          "width": 136,
+          "x": 99,
+          "y": 1696
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 70,
+          "symWidth": 55,
+          "text": "ве",
+          "translation": "",
+          "width": 92,
+          "x": 0,
+          "y": 2089
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 21.5,
+          "symWidth": 16.70714285714286,
+          "text": "PRINCIPAL , THIS ...",
+          "translation": "أيها المدير، هذا...",
+          "width": 178,
+          "x": 121,
+          "y": 2838
+        }
+      ],
+      "imgHeight": 3212,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21,
+          "symWidth": 21.375,
+          "text": "COME OUT .",
+          "translation": "اخرج.",
+          "width": 94,
+          "x": 119,
+          "y": 157
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 20.66666666666667,
+          "symWidth": 20.58730158730159,
+          "text": "I  NEED  TO TALK  TO YOU .",
+          "translation": "لا بد لي أن أتحدث معك.",
+          "width": 164,
+          "x": 149,
+          "y": 1060
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 23,
+          "symWidth": 20.93287878787878,
+          "text": "I  CAN'T  DO THE FOURTH ADVANCEMENT AT  SCHOOL ?!",
+          "translation": "لا أستطيع اجتياز المرحلة الرابعة في المدرسة؟!",
+          "width": 247,
+          "x": 130,
+          "y": 2470
+        }
+      ],
+      "imgHeight": 3211,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 16.5,
+          "symWidth": 15.83333333333333,
+          "text": "THAT'S RIGHT .",
+          "translation": "صحيح.",
+          "width": 93,
+          "x": 458,
+          "y": 135
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 17.85714285714286,
+          "symWidth": 16.99069264069264,
+          "text": "FROM THE  FOURTH ADVANCEMENT ONWARD ,  YOU NEED  SPECIAL BREAKTHROUGH MATERIALS",
+          "translation": "من المرحلة الرابعة فصاعدًا، تحتاج إلى مواد اختراق خاصة",
+          "width": 211,
+          "x": 57,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.75,
+          "symWidth": 17.60738636363637,
+          "text": "AND GUIDANCE FROM  A SPECIALIST .",
+          "translation": "وترتيب من مختصّ.",
+          "width": 161,
+          "x": 452,
+          "y": 2078
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 21.66666666666667,
+          "symWidth": 20.40317460317461,
+          "text": "THEN ...  WHO CAN  HELP ME ?",
+          "translation": "فمن ذا الذي يستطيع مساعدتي؟",
+          "width": 179,
+          "x": 109,
+          "y": 2487
+        }
+      ],
+      "imgHeight": 3621,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 21.01587301587302,
+          "symWidth": 20.76984126984127,
+          "text": "DON'T WORRY ,  I'LL TAKE  YOU TO  MEET SOMEONE .",
+          "translation": "لا تقلق، سأصطحبك لتقابل شخصًا.",
+          "width": 181,
+          "x": 129,
+          "y": 154
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 10.07692307692308,
+          "text": "嬉皮 漫画",
+          "translation": "",
+          "width": 168,
+          "x": 10,
+          "y": 717
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 28.66666666666667,
+          "text": "农 品  快 看 漫画",
+          "translation": "",
+          "width": 186,
+          "x": 13,
+          "y": 1246
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13,
+          "text": "... WHO ?",
+          "translation": "... من هو؟",
+          "width": 92,
+          "x": 218,
+          "y": 1609
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 19.9982905982906,
+          "symWidth": 19.74920634920635,
+          "text": "SOMEONE WHO  CAN NOT  ONLY HELP  YOU ADVANCE ,",
+          "translation": "شخصٌ لا يساعدك على التقدم فقط،",
+          "width": 155,
+          "x": 139,
+          "y": 2992
+        }
+      ],
+      "imgHeight": 3622,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 18.64,
+          "symWidth": 17.92,
+          "text": "BUT  ALSO BENEFIT  YOU GREATLY .",
+          "translation": "و سينفعك هذا أيضًا على نحو عظيم.",
+          "width": 182,
+          "x": 398,
+          "y": 169
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 10.75,
+          "text": "... SO ...",
+          "translation": "... إذًا...",
+          "width": 76,
+          "x": 116,
+          "y": 570
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 20.02272727272727,
+          "symWidth": 19.09715909090909,
+          "text": "DID  WE  REALLY NEED  TO  COME ALL  THE  WAY  OUT HERE  JUST  TO SAY  THIS ?",
+          "translation": "هل كان مقتضيًا أن نأتي إلى هذا المقام فقط لنقول هذا؟",
+          "width": 260,
+          "x": 311,
+          "y": 1219
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.27884615384615,
+          "symWidth": 16.38141025641026,
+          "text": "IF  I  DIDN'T  SAY THAT ,  HOW  COULD I  TRICK  YOU  INTO COMING  OUT ALONE  WITH  ME ? HEHE ~",
+          "translation": "ولو لم أقل ذلك، فكيف بغيت أن أجذبك للخروج بمفردك معي؟ ههه~",
+          "width": 240,
+          "x": 107,
+          "y": 1701
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18,
+          "symWidth": 17.65277777777778,
+          "text": "TOMORROW , WE'LL  GO  TO DRAGON  CAPITAL ACADEMY  TO FIND  HER !",
+          "translation": "غدًا، سنذهب إلى أكاديمية عاصمة التنين لنجدها!",
+          "width": 238,
+          "x": 182,
+          "y": 2856
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 13.54545454545454,
+          "text": "ALRIGHT ... !",
+          "translation": "حسنًا...!",
+          "width": 142,
+          "x": 386,
+          "y": 3136
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.47826086956522,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "",
+          "width": 416,
+          "x": 253,
+          "y": 3357
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 34,
+          "symWidth": 20.85714285714286,
+          "text": "visit  and  read  at",
+          "translation": "",
+          "width": 287,
+          "x": 325,
+          "y": 3438
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "renderMode": "mask_only",
+          "symHeight": 33,
+          "symWidth": 19.09523809523809,
+          "text": "for  the  fastest  releases",
+          "translation": "",
+          "width": 399,
+          "x": 270,
+          "y": 3542
+        }
+      ],
+      "imgHeight": 3621,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 43.80833333333334,
+          "symWidth": 34.93095238095238,
+          "text": "for the fastest releases 驭 龙 师 是 最弱 职业 ? I'M DRAKO MAJSTRO ♦",
+          "translation": "لأسرع الإصدارات\nهل سيد التنانين أضعف المهن؟\nأنا دراكو ماجسترو ♦",
+          "width": 326,
+          "x": 187,
+          "y": 64
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 34.1,
+          "symWidth": 33.12857142857143,
+          "text": "与 噬 魔 龙王 精神 沟通 的 空间",
+          "translation": "المساحة للتواصل الروحي مع ملك تنين الابتلاع الشيطاني",
+          "width": 254,
+          "x": 356,
+          "y": 356
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 33,
+          "symWidth": 29.78333333333333,
+          "text": "等等 ……… 在 这个 时间 回 学校 ?",
+          "translation": "انتظر... في هذا الوقت تعود إلى المدرسة؟",
+          "width": 183,
+          "x": 142,
+          "y": 639
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 32.5,
+          "symWidth": 27.9,
+          "text": "没错 , 现在 是 五一 啊 !",
+          "translation": "بالضبط، اليوم هو الأول من مايو!",
+          "width": 181,
+          "x": 396,
+          "y": 1406
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 11.69230769230769,
+          "text": "健 安 漫画",
+          "translation": "مانغا جيان آن",
+          "width": 168,
+          "x": 523,
+          "y": 2153
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 33,
+          "symWidth": 30.125,
+          "text": "为啥 去 学校 呢 ?",
+          "translation": "لماذا تذهب إلى المدرسة؟",
+          "width": 127,
+          "x": 161,
+          "y": 2243
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 33,
+          "symWidth": 31.75,
+          "text": "怎么 这么巧 ?",
+          "translation": "ما هذا القدر هذا؟",
+          "width": 128,
+          "x": 321,
+          "y": 2752
+        }
+      ],
+      "imgHeight": 4014,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 32.25,
+          "symWidth": 29.05,
+          "text": "劳动节 嘛 ! 当然 要做 任务 啊 !",
+          "translation": "عيد العمال!当然得执行任务！",
+          "width": 162,
+          "x": 176,
+          "y": 52
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 196,
+          "symWidth": 229,
+          "text": "连 更",
+          "translation": "سلسلة التحديثات",
+          "width": 452,
+          "x": 187,
+          "y": 281
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 38.65,
+          "symWidth": 32.65000000000001,
+          "text": "也 就是 你们 人类 口中 的 「 连 更 」 。",
+          "translation": "هذا ما تسميه البشرية \"سلسلة التحديثات\".",
+          "width": 191,
+          "x": 339,
+          "y": 1368
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 42.23076923076923,
+          "text": "2026 劳动节 : 任务 已 更新",
+          "translation": "عيد العمال 2026: تم تحديث المهام",
+          "width": 558,
+          "x": 71,
+          "y": 1842
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 48.61538461538461,
+          "text": "当前 进度 : 1/5  五一 6 连 更",
+          "translation": "التقدم الحالي: 1/5 تحديثات متتالية في أول مايو",
+          "width": 577,
+          "x": 48,
+          "y": 1916
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 34.33333333333334,
+          "symWidth": 28.73412698412698,
+          "text": "好 , 那 大家 赶紧 饱 喝 足 , 要 出 任务 啦 !",
+          "translation": "حسنًا، تناولوا طعامكم وشرابكم جيدًا، فالآن وقت أداء المهمة!",
+          "width": 256,
+          "x": 112,
+          "y": 2225
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 22.5,
+          "text": "嗄 !",
+          "translation": "ها!",
+          "width": 53,
+          "x": 548,
+          "y": 2312
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 12.15384615384615,
+          "text": "塔皮 漫画",
+          "translation": "مانغا تابي",
+          "width": 168,
+          "x": 10,
+          "y": 2507
+        },
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 131.3,
+          "symWidth": 86.8,
+          "text": "5 月 1 日 起 连 更 6 话 !",
+          "translation": "ابتداءً من الأول من مايو، ستصدر 6 حلقات متتالية!",
+          "width": 596,
+          "x": 52,
+          "y": 3373
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 42.75,
+          "text": "《 全民 转职 : 驭 龙 师 是 最弱 职业 ? 》",
+          "translation": "\"تحولات الجميع: هل صائد التنانين هو أضعف مهنة؟\"",
+          "width": 641,
+          "x": 33,
+          "y": 3703
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 60.33333333333334,
+          "symWidth": 44.50384615384615,
+          "text": "谢 各位 读者 的 支持 和 陪伴 !! 嬉皮 漫画",
+          "translation": "شكرًا جزيلاً لكل القراء على دعمكم ووفائكم!! مانغا هيبي",
+          "width": 463,
+          "x": 227,
+          "y": 3814
+        }
+      ],
+      "imgHeight": 4014,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

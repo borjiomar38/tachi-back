@@ -1,0 +1,1177 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0116",
+  "jobId": "fixture-job-0116",
+  "licenseId": "fixture-license-0116",
+  "pageCount": 15,
+  "pageOrder": [
+    "004__001.jpg",
+    "002__001.jpg",
+    "003__001.jpg",
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__002.jpg",
+    "003__002.jpg",
+    "004__002.jpg",
+    "006__001.jpg",
+    "007__001.jpg",
+    "005__003.jpg",
+    "005__001.jpg",
+    "006__002.jpg",
+    "005__002.jpg",
+    "007__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 68.8,
+          "symWidth": 64.22777777777777,
+          "text": "驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO",
+          "translation": "Is Dragon Tamer the weakest class? I’m Drako Majstro",
+          "width": 407,
+          "x": 145,
+          "y": 1116
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 8.8,
+          "symWidth": 8.4,
+          "text": "GEMIN",
+          "translation": "Gemini",
+          "width": 30,
+          "x": 548,
+          "y": 1467
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 30.5,
+          "symWidth": 21.63095238095238,
+          "text": "READ  AT MANHUAFAST.NET",
+          "translation": "Read at ManhuaFast.net",
+          "width": 314,
+          "x": 351,
+          "y": 1524
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 12.92857142857143,
+          "text": "FASTEST  UPDATES",
+          "translation": "Fastest updates",
+          "width": 163,
+          "x": 329,
+          "y": 1652
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.55555555555556,
+          "text": "NEW  COMICS",
+          "translation": "New comics",
+          "width": 149,
+          "x": 429,
+          "y": 1717
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 11.53333333333333,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "Active community",
+          "width": 184,
+          "x": 497,
+          "y": 1776
+        },
+        {
+          "angle": 0,
+          "height": 168,
+          "symHeight": 18.92,
+          "symWidth": 18.5474358974359,
+          "text": "WHAT  DO  WE DO ?  THAT  DEMON IS  HERE - AND  SHE BROUGHT  MORE PEOPLE  THAN US !",
+          "translation": "What do we do? That demon’s here—and she brought more people than us!",
+          "width": 255,
+          "x": 121,
+          "y": 3831
+        }
+      ],
+      "imgHeight": 4259,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.5,
+          "symWidth": 18.30568181818182,
+          "text": "TSK ...  IS  THIS DRAGON  NATION GUY  FROM  HER GANG ?  RETREAT FAST !",
+          "translation": "Tsk... Is that Dragon Nation guy one of her crew? Fall back, now!",
+          "width": 250,
+          "x": 336,
+          "y": 554
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20,
+          "symWidth": 18.15151515151515,
+          "text": "RUN !  IF  WE DON'T ,  WE'RE ALL  DEAD !",
+          "translation": "Run! If we don’t, we’re all dead!",
+          "width": 199,
+          "x": 124,
+          "y": 891
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 18.42857142857143,
+          "symWidth": 16.83354978354978,
+          "text": "THE  SOUTHERN  NATION GUYS  THINK  I'M  PART  OF THIS  GANG ?  THEY  TOOK OFF  AS  SOON  AS  THEY SAW  HER - THIS  SO - CALLED GIRL  \" DEMON \"  MUST BE  A  BIG  DEAL .",
+          "translation": "They think I'm with this gang? The Southern Nation fled the moment they saw her—this so-called \"Demon\" must be something else.",
+          "width": 349,
+          "x": 311,
+          "y": 2001
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 17.51960784313725,
+          "symWidth": 16.42838490485549,
+          "text": "THOSE  SOUTHERN DOGS  AMBUSHED  OUR HEAVENLY  DRAGON  GANG BEFORE .  TODAY ,  WE  MUST HUNT  THEM  DOWN  AND MAKE  THEM  PAY  WITH THEIR  LIVES !",
+          "translation": "Those Southern dogs ambushed our Heavenly Dragon Gang before. Today, we make them pay with their lives!",
+          "width": 331,
+          "x": 19,
+          "y": 2406
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 17.66666666666667,
+          "symWidth": 16.20875420875421,
+          "text": "MISS ,  DO  WE PURSUE ?  IT'S YOUR  CALL .",
+          "translation": "Miss, do we chase them? Your call.",
+          "width": 175,
+          "x": 465,
+          "y": 2758
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 25.66666666666667,
+          "text": "RD  快 看 漫画",
+          "translation": "",
+          "width": 179,
+          "x": 513,
+          "y": 3933
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.6,
+          "symWidth": 16.61,
+          "text": "..NO  NEED  TO CHASE .  I  CAN MAKE  THEM PAY  JUST  THE SAME .",
+          "translation": "No need to chase. I'll make them pay just the same.",
+          "width": 191,
+          "x": 251,
+          "y": 3948
+        }
+      ],
+      "imgHeight": 4261,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.33333333333333,
+          "text": "EH ...  EH !?",
+          "translation": "EH... EH!?",
+          "width": 115,
+          "x": 110,
+          "y": 427
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 16.85185185185185,
+          "text": "TURN  BACK ! RUN  THE OTHER  WAY !",
+          "translation": "TURN BACK! RUN THE OTHER WAY!",
+          "width": 168,
+          "x": 455,
+          "y": 1053
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 16.66666666666667,
+          "text": "HMPH .  YOU THINK  YOU CAN  RUN ?",
+          "translation": "HMPH. YOU THINK YOU CAN ESCAPE?",
+          "width": 140,
+          "x": 182,
+          "y": 1374
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23.36842105263158,
+          "symWidth": 18.78947368421053,
+          "text": "NO .... !  HELP , SAVE  ME !",
+          "translation": "NO...! HELP ME! SAVE ME!",
+          "width": 184,
+          "x": 138,
+          "y": 2697
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 19.5,
+          "symWidth": 18.59786324786324,
+          "text": "COUGH , COUGH ...  SPARE ME !  I  DON'T WANT  TO  DIE !",
+          "translation": "COUGH, COUGH... PLEASE, SPARE ME! I DON'T WANT TO DIE!",
+          "width": 242,
+          "x": 339,
+          "y": 3778
+        }
+      ],
+      "imgHeight": 4736,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 17.71304347826087,
+          "symWidth": 16.05565217391304,
+          "text": "TSK  TSK  TSK . DYING  TO  A  SKILL LIKE  THAT ... SOUTHERNERS ARE  AS  WEAK  AS EVER .",
+          "translation": "Tsk tsk tsk. Dying to a move like that... Southerners are as weak as ever.",
+          "width": 240,
+          "x": 42,
+          "y": 1036
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 19,
+          "symWidth": 18.35666666666667,
+          "text": "LAO  JIU ,  YOU KNOW  EVERYONE IN  SOUTH  BLACK PORT - WHO'S THAT  GUY ?",
+          "translation": "Lao Jiu, you know everyone at South Black Port—who's that guy?",
+          "width": 243,
+          "x": 345,
+          "y": 1955
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.33333333333333,
+          "symWidth": 16.94212962962963,
+          "text": "HMM ? STRANGE , I  DON'T  RECOGNIZE HIM .  HE'S  DEFINITELY NOT  FROM  SOUTH BLACK  PORT .",
+          "translation": "Hmm? Odd, I don’t recognize him. Definitely not from South Black Port.",
+          "width": 274,
+          "x": 135,
+          "y": 2968
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 17.85714285714286,
+          "symWidth": 16.6576455290741,
+          "text": "IF  HE'S  NOT  FROM SOUTH  BLACK  PORT , THEN  HE'S  NOT  FROM THE  SOUTHERN NETHER  GANG  OR FLAME  GANG EITHER .",
+          "translation": "If not from South Black Port, then he's not with the Southern Nether Gang or Flame Gang either.",
+          "width": 280,
+          "x": 268,
+          "y": 3349
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 20.1125,
+          "symWidth": 17.69742063492064,
+          "text": "IN  THAT  CASE , HE  CAN  ONLY BE  FROM  THE SOUTHERN NATION .",
+          "translation": "Then he can only be from the Southern Nation.",
+          "width": 208,
+          "x": 163,
+          "y": 4359
+        }
+      ],
+      "imgHeight": 4737,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18,
+          "symWidth": 16.02765151515151,
+          "text": "BOLD  SOUTHERN DOG - SEEING  ME AND  STILL  NOT RUNNING ...",
+          "translation": "Bold southern dog—sees me and still doesn’t run...",
+          "width": 222,
+          "x": 387,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21.07894736842105,
+          "symWidth": 17.4671052631579,
+          "text": "LAO  QING , LAO  JIU - KILL HIM !",
+          "translation": "Lao Qing, Lao Jiu—kill him!",
+          "width": 191,
+          "x": 128,
+          "y": 1242
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 21,
+          "text": "GO !",
+          "translation": "Go!",
+          "width": 57,
+          "x": 273,
+          "y": 1669
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.33333333333333,
+          "symWidth": 17.3520202020202,
+          "text": "SOUTHERN  DOG ! I'LL  SEND  YOU ON  YOUR  WAY !",
+          "translation": "Southern dog! I'll send you off for good!",
+          "width": 222,
+          "x": 140,
+          "y": 2580
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 16.84923340548341,
+          "text": "THE  SOUTHERN GUYS THINK  I'M  WITH  YOU , AND  YOU  THINK  I'M SOUTHERN - THIS  IS RIDICULOUS .",
+          "translation": "The southern crew thinks I’m with you, and you think I’m southern—this is absurd.",
+          "width": 280,
+          "x": 251,
+          "y": 3935
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 16.28571428571428,
+          "symWidth": 15.38095238095238,
+          "text": "LAO  JIU ,  BE CAREFUL - THIS",
+          "translation": "Lao Jiu, be careful—this",
+          "width": 184,
+          "x": 96,
+          "y": 4272
+        }
+      ],
+      "imgHeight": 4314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 17.17391304347826,
+          "text": "PERSON  SEEMS VERY  STRONG . ,",
+          "translation": "That person looks really strong.",
+          "width": 212,
+          "x": 83,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.56666666666667,
+          "symWidth": 17.13333333333333,
+          "text": "HAHAHA !  DON'T I  KNOW  EXACTLY HOW  CAPABLE SOUTHERN  NATION FIGHTERS  ARE ?",
+          "translation": "Hahaha! Don’t I know just how fierce the Southern Nation fighters are?",
+          "width": 249,
+          "x": 116,
+          "y": 1049
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19,
+          "symWidth": 17.8125,
+          "text": "SIGH ...  LOOKS LIKE  I'LL  HAVE TO  CALM  YOU DOWN  FIRST .",
+          "translation": "Sigh... looks like I’ll have to settle you down first.",
+          "width": 201,
+          "x": 231,
+          "y": 1565
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21.6,
+          "symWidth": 18.66666666666667,
+          "text": "[ REPEL  THE WEAK ] !",
+          "translation": "[REPEL THE WEAK]!",
+          "width": 172,
+          "x": 252,
+          "y": 2836
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 19.6,
+          "text": "UGH !?",
+          "translation": "Ugh!?",
+          "width": 97,
+          "x": 226,
+          "y": 3671
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 20.21264367816092,
+          "symWidth": 14.16666666666667,
+          "text": "REPEL  THE  WEAK :  RELEASES  DRACONIC  KILLING INTENT ,  DEALING  DEFENSE - IGNORING  DAMAGE  AND KNOCKBACK  TO  ALL  NEARBY  ENEMIES .  DAMAGE  IS DETERMINED  BY  THE  ATTRIBUTE  GAP ;  THE  LARGER  THE GAP ,  THE  HIGHER  THE  DAMAGE .",
+          "translation": "REPEL THE WEAK: Unleashes draconic killing intent, dealing defense-ignoring damage and knockback to all nearby enemies. Damage scales with attribute difference—the greater the gap, the higher the damage.",
+          "width": 578,
+          "x": 55,
+          "y": 4067
+        }
+      ],
+      "imgHeight": 4314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.17647058823529,
+          "symWidth": 17.8903743315508,
+          "text": "MASTER  QING AND  MASTER  JIU WERE  BLASTED AWAY !?",
+          "translation": "MASTER QING AND MASTER JIU HAVE BEEN BLOWN AWAY!?",
+          "width": 228,
+          "x": 305,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 17.43478260869565,
+          "symWidth": 15.47826086956522,
+          "text": "DON'T PANIC !  I'LL HELP  YOU !",
+          "translation": "DON'T PANIC! I'LL HELP YOU!",
+          "width": 143,
+          "x": 461,
+          "y": 1081
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.48387096774194,
+          "symWidth": 16.80645161290322,
+          "text": "STOP ,  TELL YOUR  PEOPLE TO  STAND DOWN .",
+          "translation": "STOP! ORDER YOUR MEN TO STAND DOWN.",
+          "width": 183,
+          "x": 125,
+          "y": 1361
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 18.66666666666667,
+          "text": "!  !  ?",
+          "translation": "!!?",
+          "width": 92,
+          "x": 436,
+          "y": 2370
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18.41666666666667,
+          "symWidth": 16.45833333333333,
+          "text": "HE'S  TAKEN THE  BOSS HOSTAGE !",
+          "translation": "HE'S TAKING THE BOSS HOSTAGE!",
+          "width": 153,
+          "x": 47,
+          "y": 2692
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.66129032258065,
+          "symWidth": 14.86088709677419,
+          "text": "HOW  IS  THAT POSSIBLE !? RIGHT  IN  FRONT OF  US ... !",
+          "translation": "HOW IS THAT EVEN POSSIBLE?! RIGHT BEFORE OUR EYES...!",
+          "width": 214,
+          "x": 441,
+          "y": 2850
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 18.06172839506173,
+          "symWidth": 16.25617283950617,
+          "text": "I'M  LU  FAN ,  THE FLAME  GUARDIAN FIGHTING  THE ANCIENT  GOD . I'M  NOT  YOUR ENEMY .",
+          "translation": "I'M LU FAN, THE FLAME GUARDIAN FIGHTING THE ANCIENT GOD. I'M NOT YOUR ENEMY.",
+          "width": 231,
+          "x": 50,
+          "y": 3847
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.11428571428571,
+          "symWidth": 16.74285714285714,
+          "text": "I  KNOW LU  FAN ... BROTHERS , LOWER  YOUR WEAPONS . ,",
+          "translation": "I KNOW LU FAN... BROTHERS, LOWER YOUR WEAPONS.",
+          "width": 175,
+          "x": 251,
+          "y": 4252
+        }
+      ],
+      "imgHeight": 5009,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 18.59574468085107,
+          "symWidth": 17.29435579196218,
+          "text": "YOU'RE  STRONG ,  BUT CLAIMING  TO  BE  THE LU  FAN  WHO  CAN SLAY  AN  ANCIENT GOD - WHAT  PROOF DO  YOU  HAVE ?",
+          "translation": "You’re strong, but claiming to be Lu Fan, the ancient godslayer—what proof do you have?",
+          "width": 288,
+          "x": 134,
+          "y": 410
+        },
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 18.72820512820513,
+          "symWidth": 17.1047619047619,
+          "text": "IT  SEEMS  LONGNAN PREFECTURE  IS  AS ISOLATED  AS  THE WESTERN  FRONTIER .  AT MOST ,  PEOPLE  KNOW MY  NAME  BUT  NOT MY  FACE .",
+          "translation": "Seems Longnan Prefecture is as isolated as the Western Frontier. At most, people know my name, not my face.",
+          "width": 321,
+          "x": 320,
+          "y": 2035
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 11.85714285714286,
+          "text": "THEN ...",
+          "translation": "Then...",
+          "width": 80,
+          "x": 137,
+          "y": 3053
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.82142857142857,
+          "symWidth": 18.65,
+          "text": "DO  YOU RECOGNIZE THIS ?",
+          "translation": "Do you recognize this?",
+          "width": 173,
+          "x": 196,
+          "y": 3554
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 21,
+          "symWidth": 17.15917415917416,
+          "text": "THIS  MEDAL .... ARE  YOU  TRULY LU  FAN !?",
+          "translation": "This medal... are you really Lu Fan?!",
+          "width": 232,
+          "x": 80,
+          "y": 4811
+        }
+      ],
+      "imgHeight": 5011,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 18.55555555555556,
+          "symWidth": 16.80016080506276,
+          "text": "OUR  DEEPEST APOLOGIES !  WE FAILED  TO  RECOGNIZE GREATNESS - WE NEVER  EXPECTED  THE LEGENDARY DRAGON TAMER  LU  FAN  TO BE  HERE .",
+          "translation": "Our deepest apologies! We failed to see greatness—we never expected the legendary Dragon Tamer Lu Fan to be here.",
+          "width": 297,
+          "x": 359,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 17.04666666666666,
+          "text": "NO  WONDER  HE DEFEATED  US  IN  ONE MOVE ...  LAO  QING , YOU  HAD  GOOD INSTINCTS .",
+          "translation": "No wonder he defeated us in one move... Lao Qing, you had good instincts.",
+          "width": 278,
+          "x": 83,
+          "y": 1344
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 19.28571428571428,
+          "symWidth": 17.80560709132138,
+          "text": "I  NEVER THOUGHT I'D  MEET  A  LEGEND AT  MY  AGE .  I'M NOT DREAMING , AM  I ...",
+          "translation": "I never thought I'd meet a legend at my age. This isn’t a dream, is it...?",
+          "width": 275,
+          "x": 305,
+          "y": 2266
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 17.77777777777778,
+          "symWidth": 15.79642857142857,
+          "text": "WE'RE  THE HEAVENLY  DRAGON GANG  OF SOUTH BLACK  PORT . I'M THE  LEADER , CUI ZIYI .",
+          "translation": "We're the Heavenly Dragon Gang from South Black Port. I'm the leader, Cui Ziyi.",
+          "width": 257,
+          "x": 135,
+          "y": 2644
+        }
+      ],
+      "imgHeight": 3885,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.76666666666667,
+          "symWidth": 15.96078431372549,
+          "text": "CUI  ZIYI - LEVEL  109 , TURBULENT  MAGE  IV ,  LEADER  OF THE  HEAVENLY  DRAGON  GANG",
+          "translation": "CUI ZIYI - LEVEL 109, TURBULENT MAGE IV, LEADER OF THE HEAVENLY DRAGON GANG",
+          "width": 433,
+          "x": 135,
+          "y": 89
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 18.62376237623763,
+          "symWidth": 17.03960396039604,
+          "text": "I'M  THE  YOUNGER AND  MORE  HANDSOME OF  THE  TWO  DEPUTIES- JUST  CALL  ME  LAO  JIU . THERE'S  NO  ONE  IN SOUTH  BLACK  PORT  I DON'T  KNOW .",
+          "translation": "I'm the younger, better-looking of the two deputies—just call me Lao Jiu. Nobody in South Black Port doesn't know me.",
+          "width": 311,
+          "x": 270,
+          "y": 406
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 14.26923076923077,
+          "symWidth": 13.32692307692308,
+          "text": "LAO  JIU - LEVEL  99 ,  LONGSWORD WARRIOR  IV ,  DEPUTY  OF  THE HEAVENLY  DRAGON  GANG",
+          "translation": "LAO JIU - LEVEL 99, LONGSWORD WARRIOR IV, DEPUTY OF THE HEAVENLY DRAGON GANG",
+          "width": 335,
+          "x": 32,
+          "y": 1333
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 17.35,
+          "symWidth": 15.05,
+          "text": "LAO  QING - LEVEL  102 ,  GALE STALKER  IV ,  DEPUTY  OF  THE HEAVENLY  DRAGON  GANG",
+          "translation": "LAO QING - LEVEL 102, GALE STALKER IV, DEPUTY OF THE HEAVENLY DRAGON GANG",
+          "width": 334,
+          "x": 312,
+          "y": 1551
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 19.11538461538461,
+          "symWidth": 15.51923076923077,
+          "text": "I'M  LAO  QING ... THE  OTHER  DEPUTY . THANK  YOU  FOR SHOWING  MERCY EARLIER ,  MR .  LU .",
+          "translation": "I'm Lao Qing... the other deputy. Thanks for showing mercy earlier, Mr. Lu.",
+          "width": 260,
+          "x": 77,
+          "y": 1760
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 19.84523809523809,
+          "symWidth": 17.22023809523809,
+          "text": "\" HEAVENLY DRAGON  GANG \" ... THAT  NAME SOUNDS  A  BIT ... DATED .",
+          "translation": "\"Heavenly Dragon Gang\"... that name feels kinda... outdated.",
+          "width": 253,
+          "x": 122,
+          "y": 2275
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 16.25,
+          "text": "HUH ?",
+          "translation": "Huh?",
+          "width": 63,
+          "x": 470,
+          "y": 2597
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 13.9,
+          "symWidth": 13.23896103896104,
+          "text": "SIGH ...  THE OLD  BOSS NAMED  IT ,  AND MISS  DOESN'T WANT  TO CHANGE  IT ,",
+          "translation": "Sigh... the old boss named it, and Miss won’t change it.",
+          "width": 162,
+          "x": 484,
+          "y": 3138
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 15.33333333333333,
+          "symWidth": 14.11354617604618,
+          "text": "I  TOLD  YOU IT'D  SOUND AWKWARD WHEN INTRODUCING IT .",
+          "translation": "I told you it’d sound awkward introducing ourselves with that name.",
+          "width": 152,
+          "x": 184,
+          "y": 3175
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.37962962962963,
+          "symWidth": 16.7912784679089,
+          "text": "WEREN'T  YOU  SENT BY  THE  CAPITAL  TO FIGHT  THE  BEAST TIDE ?  WHY  ARE  YOU LIKE  THIS ? HERE  IN  A  PLACE",
+          "translation": "Weren't you sent by the capital to fight the Beast Tide? Why are you like this? Here, in a place like this?",
+          "width": 266,
+          "x": 318,
+          "y": 3579
+        }
+      ],
+      "imgHeight": 3886,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 18.42857142857143,
+          "symWidth": 16.8616341991342,
+          "text": "I  DID  GO  TO  THE FAR  NORTH ,  BUT  TO FIGHT  THE  ANCIENT GOD ,  I  NEED  TO COMPLETE  MY  FOURTH ADVANCEMENT QUICKLY .",
+          "translation": "I did go to the far north, but to fight the ancient god, I need to quickly reach my fourth advancement.",
+          "width": 304,
+          "x": 149,
+          "y": 727
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.6,
+          "symWidth": 17.11091575091575,
+          "text": "I  TEACHER  TOLD  ME THE  MATERIALS  I NEED  ARE  IN  THE ABYSS  AT  THE LONGNAN  BORDER .",
+          "translation": "My teacher said the materials I need are in the abyss at the Longnan border.",
+          "width": 270,
+          "x": 310,
+          "y": 1068
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.125,
+          "symWidth": 17.17073412698413,
+          "text": "FOURTH ADVANCEMENT ? WAIT - SO  YOU HAVEN'T EVEN BROKEN PAST LEVEL  90 !?",
+          "translation": "Fourth advancement? Wait—so you haven't even surpassed level 90!?",
+          "width": 212,
+          "x": 130,
+          "y": 1408
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18,
+          "symWidth": 16.35217019822283,
+          "text": "TO  BE  DEFEATED  BY SOMEONE  STILL  AT THIRD  ADVANCEMENT ... HOW  EMBARRA- SSING ...",
+          "translation": "Losing to someone still at third advancement... how humiliating...",
+          "width": 299,
+          "x": 307,
+          "y": 2285
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.42857142857143,
+          "symWidth": 16.74413739854916,
+          "text": "THE  BORDER ABYSS ... YOU  WEREN'T  TRICKED , WERE  YOU ?  NO  ONE USES  MATERIALS  FROM THERE  FOR ADVANCEMENT .",
+          "translation": "The border abyss... You weren't fooled, right? No one uses materials from there to advance.",
+          "width": 315,
+          "x": 72,
+          "y": 2631
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.6,
+          "symWidth": 16.94765234765235,
+          "text": "BUT  LOSING  TO  A LEGENDARY  YOUTH OF  THE  DRAGON NATION ...  I  CAN ACCEPT  THAT .",
+          "translation": "But losing to a legendary youth from the Dragon Nation... I can live with that.",
+          "width": 255,
+          "x": 38,
+          "y": 3511
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18,
+          "symWidth": 17.36111111111111,
+          "text": "YOU  REALLY DON'T  DWELL  ON THINGS  AT  ALL , DO  YOU ?",
+          "translation": "You really don’t fret over things at all, do you?",
+          "width": 219,
+          "x": 447,
+          "y": 3627
+        }
+      ],
+      "imgHeight": 3887,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 17.85714285714286,
+          "symWidth": 17.11672771672772,
+          "text": "THIS  PROFESSOR OUYANG  IS  INDEED  A BIT  STRANGE - SENDING ME  FROM  THE  FAR NORTH  TO  THE  FAR SOUTH  FOR MATERIALS .",
+          "translation": "Professor Ouyang is definitely a bit odd—sending me from the far north to the far south just for materials.",
+          "width": 308,
+          "x": 108,
+          "y": 197
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 19.05,
+          "symWidth": 17.89583333333334,
+          "text": "BUT  MY SENIOR ...  THE PRINCIPAL PERSONALLY",
+          "translation": "But my senior... the principal herself",
+          "width": 196,
+          "x": 369,
+          "y": 1205
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 19.75,
+          "symWidth": 17.64903846153846,
+          "text": "SAID  SHE'S  VERY CAPABLE .  THERE SHOULDN'T  BE  A PROBLEM .",
+          "translation": "said she's very capable. This shouldn't be an issue.",
+          "width": 250,
+          "x": 121,
+          "y": 2240
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.13,
+          "symWidth": 16.45661616161616,
+          "text": "SINCE  YOU'RE ALREADY  HERE , I'LL  TAKE  YOU  TO THE  BORDER ABYSS .",
+          "translation": "Since you're already here, I'll take you to the Border Abyss.",
+          "width": 234,
+          "x": 352,
+          "y": 2589
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18,
+          "symWidth": 17.01606837606838,
+          "text": "ONCE  YOU  SEE  IT YOURSELF ,  YOU'LL UNDERSTAND  WHY NO  ONE  USES MATERIALS  FROM HERE .",
+          "translation": "Once you see it, you'll get why no one ever uses materials from here.",
+          "width": 244,
+          "x": 112,
+          "y": 3455
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 17.1,
+          "text": "HALF  AN  HOUR LATER",
+          "translation": "Half an hour later",
+          "width": 188,
+          "x": 82,
+          "y": 3838
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.5,
+          "symWidth": 16.92171717171717,
+          "text": "LONGNAN  PREFECTURE  · BORDER  ABYSS",
+          "translation": "Longnan Prefecture · Border Abyss",
+          "width": 317,
+          "x": 278,
+          "y": 3931
+        }
+      ],
+      "imgHeight": 5187,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 17.98936170212766,
+          "symWidth": 18.67659574468085,
+          "text": "WHAT  A MASSIVE  RIFT- SO  THIS  IS  WHAT SEPARATES  THE TWO  NATIONS ,",
+          "translation": "What a massive rift... So this is what divides the two nations.",
+          "width": 230,
+          "x": 127,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.5,
+          "symWidth": 16.2109375,
+          "text": "THIS  IS  IT .  THERE ARE  COUNTLESS SECRET  REALMS , LARGE  AND  SMALL , IN  THE  BORDER ABYSS .",
+          "translation": "This is it. Countless secret realms, big and small, lie within the border abyss.",
+          "width": 257,
+          "x": 128,
+          "y": 1320
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.78846153846154,
+          "symWidth": 15.96153846153846,
+          "text": "THE TEN  MOST IMPORTANT ONES  ARE HERE .",
+          "translation": "Here are the ten most important ones.",
+          "width": 159,
+          "x": 411,
+          "y": 2297
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.91935483870968,
+          "symWidth": 16.40994623655914,
+          "text": "WE  ARE CURRENTLY  RIGHT ABOVE  THE  10TH SECRET  REALM .",
+          "translation": "We're hovering just above the 10th secret realm right now.",
+          "width": 243,
+          "x": 107,
+          "y": 2658
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 17.76923076923077,
+          "symWidth": 16.48076923076923,
+          "text": "YOU  MEAN ...  MY BREAKTHROUGH MATERIALS  ARE INSIDE  THIS REALM ?",
+          "translation": "You mean... my breakthrough materials are inside that realm?",
+          "width": 216,
+          "x": 374,
+          "y": 3815
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.86764705882353,
+          "symWidth": 16.46398944193062,
+          "text": "I  CAN'T GUARANTEE  IT , BUT  YOU'LL  HAVE TO  TRY  FOR YOURSELF .",
+          "translation": "I can't promise it, but you'll have to check for yourself.",
+          "width": 222,
+          "x": 137,
+          "y": 4170
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 20.06734006734007,
+          "symWidth": 18.05555555555556,
+          "text": "ALRIGHT , THANKS  FOR  THE GUIDANCE .  TIME IS  TIGHT ,  SO  I'M HEADING  OUT NOW .",
+          "translation": "Alright, thanks for the guidance. Time's tight, so I'm heading out now.",
+          "width": 254,
+          "x": 258,
+          "y": 4995
+        }
+      ],
+      "imgHeight": 5188,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.13541666666667,
+          "symWidth": 15.7948717948718,
+          "text": "FOUND  IT .  CUI THERE  REALLY  IS ZIYI  WAS  RIGHT , A  SECRET  REALM HERE .",
+          "translation": "Found it. Cui there really is Ziyi was right—a secret realm lies here.",
+          "width": 233,
+          "x": 181,
+          "y": 2097
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.25,
+          "symWidth": 16.01041666666666,
+          "text": "MISS ,  THIS DOESN'T SEEM  LIKE YOU .",
+          "translation": "Miss, this doesn't seem like you.",
+          "width": 143,
+          "x": 254,
+          "y": 3776
+        },
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 18.5,
+          "symWidth": 16.43347675608705,
+          "text": "HE'S  THE GUARDIAN  OF  THE FLAME  PREPARING  FOR WAR .  WE  SHOULD  HELP HIM  AND  TELL  HIM THAT  THE  10TH  REALM IS  INACCESSIBLE WITHOUT  A  KEY .",
+          "translation": "He's the Guardian of the Flame, preparing for war. We should help him and let him know the 10th realm is locked without the key.",
+          "width": 309,
+          "x": 99,
+          "y": 4883
+        }
+      ],
+      "imgHeight": 5341,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.66666666666667,
+          "symWidth": 16.17508417508418,
+          "text": "LAO  JIU ,  MISS HAS  HER  OWN PLANS .",
+          "translation": "Lao Jiu, Miss has her own plans.",
+          "width": 185,
+          "x": 409,
+          "y": 737
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18,
+          "symWidth": 16.61645021645021,
+          "text": "LET  HIM  TRY  IT FOR  HIMSELF .  THEN HIS  GOALS  AND  THE HEAVENLY  DRAGON GANG'S  GOALS  WILL ALIGN .",
+          "translation": "Let him prove it himself. Then his goals and the Heavenly Dragon Gang’s will line up.",
+          "width": 275,
+          "x": 87,
+          "y": 2066
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.2,
+          "symWidth": 16.98919191919192,
+          "text": "THIS  WAY , WE  CAN  RIDE  HIS MOMENTUM ,  IN THE  NAME  OF THE  HEAVENLY DRAGON  GANG ,",
+          "translation": "That way, we'll ride his momentum under the Heavenly Dragon Gang’s name,",
+          "width": 220,
+          "x": 349,
+          "y": 3344
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 20.93333333333333,
+          "symWidth": 20.74833333333333,
+          "text": "AND COMPLETELY CRUSH  THOSE SOUTHERN GANGS !",
+          "translation": "and utterly crush those southern gangs!",
+          "width": 214,
+          "x": 369,
+          "y": 4756
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 32.25,
+          "symWidth": 20.14880952380953,
+          "text": "visit  and  read  at MANHUAFAST.NET for  the  fastest  releases",
+          "translation": "",
+          "width": 398,
+          "x": 269,
+          "y": 5162
+        }
+      ],
+      "imgHeight": 5343,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

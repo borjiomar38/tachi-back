@@ -1,0 +1,1115 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0150",
+  "jobId": "fixture-job-0150",
+  "licenseId": "fixture-license-0150",
+  "pageCount": 21,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 78.66666666666667,
+          "symWidth": 71.32264957264958,
+          "text": "十个 大帝 Heroic  teacher 都是 我 徒弟 !",
+          "translation": "All ten great emperors and heroic teachers are my disciples!",
+          "width": 501,
+          "x": 91,
+          "y": 815
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 8.6,
+          "symWidth": 8.4,
+          "text": "GEMIN",
+          "translation": "RTMTH",
+          "width": 30,
+          "x": 547,
+          "y": 1193
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 12.4,
+          "symWidth": 11.8,
+          "text": "CANCE",
+          "translation": "RTMTH",
+          "width": 29,
+          "x": 625,
+          "y": 1238
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 35.03571428571428,
+          "symWidth": 23.09523809523809,
+          "text": "READ  AT MANHUAFAST.NET",
+          "translation": "RTMTH",
+          "width": 317,
+          "x": 348,
+          "y": 1250
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 12.78571428571429,
+          "text": "FASTEST  UPDATES",
+          "translation": "RTMTH",
+          "width": 166,
+          "x": 326,
+          "y": 1378
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 15.55555555555556,
+          "text": "NEW  COMICS",
+          "translation": "RTMTH",
+          "width": 152,
+          "x": 427,
+          "y": 1444
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 12.26666666666667,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "RTMTH",
+          "width": 185,
+          "x": 496,
+          "y": 1504
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 139.3333333333333,
+          "symWidth": 158,
+          "text": "腳 啦啦",
+          "translation": "RTMTH",
+          "width": 411,
+          "x": 265,
+          "y": 1807
+        }
+      ],
+      "imgHeight": 3215,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 96,
+          "symWidth": 128.3333333333333,
+          "text": "唰 啦啦",
+          "translation": "Swish Lalala",
+          "width": 272,
+          "x": 52,
+          "y": 191
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 145.5,
+          "symWidth": 138.5,
+          "text": "啦啦",
+          "translation": "Lalala",
+          "width": 286,
+          "x": 184,
+          "y": 1140
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 17.4671052631579,
+          "symWidth": 12.50629290617849,
+          "text": "LOOK !  THOSE  SPECKS  OF  LIGHT RISING  FROM  THE  MOUNTAINS , RIVERS ,  AND  VEGETATION  HAVE GATHERED  INTO  A  GOLDEN LONG  RIVER !",
+          "translation": "Look! The specks of light rising from the mountains, rivers, and forests have merged into a golden river!",
+          "width": 296,
+          "x": 112,
+          "y": 2022
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 111,
+          "symWidth": 120.5,
+          "text": "新歌",
+          "translation": "New Song",
+          "width": 257,
+          "x": 21,
+          "y": 2956
+        }
+      ],
+      "imgHeight": 3216,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 105,
+          "symWidth": 123,
+          "text": "新歌",
+          "translation": "New Song",
+          "width": 259,
+          "x": 407,
+          "y": 187
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 15.63125,
+          "symWidth": 13.94711538461539,
+          "text": "EVEN  WHEN TIANWU  PREFECTURE  WON THE  COMPETITION  BEFORE , I  NEVER  SAW  SUCH A  MARVEL .",
+          "translation": "Even when Tianwu Prefecture won before, I never witnessed such a marvel.",
+          "width": 276,
+          "x": 161,
+          "y": 840
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 17.21212121212121,
+          "symWidth": 13.21403743315508,
+          "text": "NOW ,  YOUNG  MASTER  GU HAS  WON  THE  SOUTHERN REGION  DIVINE  ASSEMBLY ALL  BY  HIMSELF .  COULD THIS  VISION  BE ....",
+          "translation": "Now, Young Master Gu has single-handedly won the Southern Region Divine Assembly. Could this vision be...",
+          "width": 284,
+          "x": 254,
+          "y": 1035
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 16.24324324324324,
+          "symWidth": 13.94594594594595,
+          "text": "SOUTHERN  REGION ACKNOWLEDGING  ITS MASTER !",
+          "translation": "The Southern Region bowing to its master!",
+          "width": 220,
+          "x": 340,
+          "y": 2312
+        }
+      ],
+      "imgHeight": 3217,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 16.26470588235294,
+          "symWidth": 13.40522875816993,
+          "text": "THIS  IS  THE  FEELING  OF BEING  THE  MASTER  OF THE  SOUTHERN  REGION .",
+          "translation": "This is what it's like to be the master of the Southern Region.",
+          "width": 254,
+          "x": 389,
+          "y": 3909
+        }
+      ],
+      "imgHeight": 4081,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 22.23111111111111,
+          "symWidth": 16.47111111111111,
+          "text": "THIS  SEAT  SEEMS  TO  BE  ABLE TO  FEEL  THAT  ALL  THE  MOUNTAINS , RIVERS ,  PLANTS ,  AND  INSECTS  OF THE  ENTIRE  SOUTHERN  REGION ARE  AT  MY  COMMAND .",
+          "translation": "I can feel that all the mountains, rivers, plants, and creatures in the entire Southern Region answer to me.",
+          "width": 417,
+          "x": 156,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 345,
+          "symHeight": 234,
+          "symWidth": 199,
+          "text": "隆隆 !",
+          "translation": "Rumble!",
+          "width": 509,
+          "x": 17,
+          "y": 1093
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 21.875,
+          "symWidth": 18.25,
+          "text": "菁 242 斧 的 心事",
+          "translation": "Jing 242 Axe's thoughts",
+          "width": 113,
+          "x": 211,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 18.12121212121212,
+          "symWidth": 15.24848484848485,
+          "text": "THE  SOUTHERN  REGION IS  RESPONDING !  THE SOUTHERN  REGION  HAS TRULY  ACKNOWLEDGED ITS  MASTER !",
+          "translation": "The Southern Region is responding! It has truly accepted its master!",
+          "width": 275,
+          "x": 310,
+          "y": 2951
+        },
+        {
+          "angle": 0,
+          "height": 305,
+          "symHeight": 251.6666666666667,
+          "symWidth": 194,
+          "text": "隆隆 !",
+          "translation": "Rumble!",
+          "width": 480,
+          "x": 145,
+          "y": 3777
+        }
+      ],
+      "imgHeight": 4082,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 21.5,
+          "symWidth": 15.08333333333333,
+          "text": "SECT  MASTER  JI ,  ELDER WUYA ,  ELDER  WANG ....",
+          "translation": "Sect Master Ji, Elder Wuya, Elder Wang...",
+          "width": 297,
+          "x": 111,
+          "y": 659
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 17.875,
+          "text": "YOUNG  MASTER  GU ...",
+          "translation": "Young Master Gu...",
+          "width": 282,
+          "x": 187,
+          "y": 2377
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 20.2,
+          "symWidth": 16.17293343653251,
+          "text": "THE  HEAVENLY  DAO  OF THE  SOUTHERN  REGION  IS NOW  UNIFIED .  I  AM  NOW THE  MASTER  OF  THIS SOUTHERN",
+          "translation": "The Heavenly Dao of the Southern Region is now unified. I am the master of this Southern",
+          "width": 316,
+          "x": 163,
+          "y": 3360
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 14.57142857142857,
+          "text": "REGION !",
+          "translation": "Region!",
+          "width": 99,
+          "x": 341,
+          "y": 3526
+        },
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 16.71428571428572,
+          "symWidth": 13.63445648282196,
+          "text": "FROM  NOW  ON ,  CULTIVATORS FROM  ALL  PREFECTURES  IN  THE SUPREME  DIVINE  REALM  CAN CULTIVATE  IN  THE  SOUTHERN REGION .  YOU  WILL  BRING  YOUR SONGZHOU  DISCIPLES  TO CULTIVATE  IN  THIS  CORE !",
+          "translation": "From now on, cultivators from all prefectures within the Supreme Divine Realm may cultivate in the Southern Region. Bring your Songzhou disciples here to cultivate at this core!",
+          "width": 337,
+          "x": 290,
+          "y": 3598
+        }
+      ],
+      "imgHeight": 4081,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 40,
+          "symWidth": 30.25,
+          "text": "YES !",
+          "translation": "Yes!",
+          "width": 118,
+          "x": 95,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 24,
+          "symWidth": 15.90625,
+          "text": "CONGRATULATIONS , HONORED  MASTER  GU !",
+          "translation": "Congratulations, Honored Master Gu!",
+          "width": 274,
+          "x": 316,
+          "y": 599
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 19.5,
+          "symWidth": 14.89772727272727,
+          "text": "MASTER  OF  THE SOUTHERN",
+          "translation": "Master of the Southern",
+          "width": 195,
+          "x": 88,
+          "y": 1221
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 19.33333333333333,
+          "symWidth": 14.05228758169935,
+          "text": "REGION ! RESPECTED  BY  HEAVEN AND  EARTH !",
+          "translation": "Region! Respected by Heaven and Earth!",
+          "width": 255,
+          "x": 73,
+          "y": 1261
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 41.6,
+          "symWidth": 36.8,
+          "text": "RISE !",
+          "translation": "Rise!",
+          "width": 178,
+          "x": 188,
+          "y": 3248
+        }
+      ],
+      "imgHeight": 3698,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 19,
+          "symWidth": 14.53431013431013,
+          "text": "THIS  REALM  IS  ALREADY  A CLEAR  PATH  FOR  ME .  I  NEED TO  GO  TO  A  MORE  VAST DOMAIN .",
+          "translation": "This realm is now clear for me. I must venture into vaster domains.",
+          "width": 325,
+          "x": 230,
+          "y": 1357
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 20.66666666666667,
+          "symWidth": 14.64127178649237,
+          "text": "YOUNG  MASTER  GU ... HONORED  MASTER  GU , ARE  YOU  JUST  LEAVING LIKE  THIS ?",
+          "translation": "Young Master Gu... Honored Master Gu, are you leaving just like that?",
+          "width": 265,
+          "x": 261,
+          "y": 3279
+        }
+      ],
+      "imgHeight": 3698,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 29.6,
+          "text": "在  快 看 漫画",
+          "translation": "RTMTH",
+          "width": 194,
+          "x": 0,
+          "y": 459
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 16.48484848484848,
+          "symWidth": 13.87878787878788,
+          "text": "BUT ...  BUT  THERE  ARE  STILL THOUSANDS  OF  CULTIVATORS IN  THE  SOUTHERN  REGION , ALL  EAGER  FOR  YOUR GUIDANCE !",
+          "translation": "But... there are still thousands of cultivators in the Southern Region eagerly awaiting your guidance!",
+          "width": 309,
+          "x": 289,
+          "y": 539
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 16.83333333333333,
+          "symWidth": 13.44918937271879,
+          "text": "THAT'S  RIGHT , THE  MYRIAD  SPIRITS  OF THE  SOUTHERN  REGION  RELY ON  YOUR  PROTECTION , HONORED  MASTER .  PLEASE RECONSIDER !",
+          "translation": "Exactly. The myriad spirits of the Southern Region depend on your protection, Honored Master. Please reconsider!",
+          "width": 309,
+          "x": 325,
+          "y": 1297
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 13.29411764705882,
+          "text": "PROTECTION ,  HUH ...",
+          "translation": "Protection, huh...",
+          "width": 222,
+          "x": 358,
+          "y": 2727
+        }
+      ],
+      "imgHeight": 3700,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [],
+      "imgHeight": 4375,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 21.66666666666667,
+          "symWidth": 16.33333333333333,
+          "text": "MY  AZURE  SWORD INTENT  HAS  BROKEN THROUGH ?!",
+          "translation": "My Azure Sword Intent has broken through?!",
+          "width": 242,
+          "x": 328,
+          "y": 579
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 29,
+          "symWidth": 22,
+          "text": "ME  TOO !",
+          "translation": "Me too!",
+          "width": 123,
+          "x": 62,
+          "y": 1361
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 20.2,
+          "symWidth": 18.73502164502165,
+          "text": "THE  HEAVENLY DAO  HERE  HAS ALREADY  PLANTED THE  SEEDS  FOR CULTIVATION .",
+          "translation": "The Heavenly Dao here has already planted the seeds for cultivation.",
+          "width": 270,
+          "x": 381,
+          "y": 2152
+        }
+      ],
+      "imgHeight": 4376,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 21.375,
+          "symWidth": 15.24136382623225,
+          "text": "AS  FOR  YOU ...  ONCE  YOU COMPREHEND  THE  \" NINE HEAVENS  PALACE  ARRAY , \" YOUR  CULTIVATION  WILL ADVANCE  SIGNIFICANTLY .",
+          "translation": "As for you... once you comprehend the 'Nine Heavens Palace Array,' your cultivation will soar.",
+          "width": 303,
+          "x": 131,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 21.66666666666667,
+          "symWidth": 21.33333333333333,
+          "text": "LOONIC",
+          "translation": "RTMTH",
+          "width": 69,
+          "x": 191,
+          "y": 780
+        },
+        {
+          "angle": 0,
+          "height": 247,
+          "symHeight": 19.28571428571428,
+          "symWidth": 14.54815143448684,
+          "text": "THIS ...  THIS  IS  THE \" NINE  HEAVENS  PALACE  ARRAY \" THAT  WAS  LOST  DURING  THE ANCIENT  ERA  OF  THE  SOUTHERN REGION ,  WITH  THE  FALL  OF  THE FIRST  REALM  MASTER  OF  THE SOUTHERN  REGION !?",
+          "translation": "This... This is the 'Nine Heavens Palace Array' lost since the ancient era of the Southern Region, after the fall of its first realm master!?",
+          "width": 355,
+          "x": 74,
+          "y": 3784
+        }
+      ],
+      "imgHeight": 4293,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 17.75,
+          "symWidth": 28.5,
+          "text": "SD  fo",
+          "translation": "RTMTH",
+          "width": 31,
+          "x": 434,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 12.5,
+          "symWidth": 20,
+          "text": "( )",
+          "translation": "( )",
+          "width": 24,
+          "x": 201,
+          "y": 914
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 14.33333333333333,
+          "text": "IF  I",
+          "translation": "If I",
+          "width": 52,
+          "x": 315,
+          "y": 953
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 21.77777777777778,
+          "symWidth": 16.35185185185185,
+          "text": "CULTIVATE WELL ,  WOULDN'T  I BE  ABLE  TO  REACH",
+          "translation": "cultivate properly, wouldn't I reach",
+          "width": 234,
+          "x": 295,
+          "y": 953
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 19.66666666666667,
+          "symWidth": 25.66666666666667,
+          "text": "481",
+          "translation": "481",
+          "width": 32,
+          "x": 129,
+          "y": 1066
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 16,
+          "text": "THE",
+          "translation": "the",
+          "width": 47,
+          "x": 317,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 15.11111111111111,
+          "text": "PINNACLE ?",
+          "translation": "summit?",
+          "width": 132,
+          "x": 372,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 26,
+          "symWidth": 31.66666666666667,
+          "text": "( )  C",
+          "translation": "( ) C",
+          "width": 46,
+          "x": 192,
+          "y": 1483
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 21.66666666666667,
+          "symWidth": 26.66666666666667,
+          "text": "242",
+          "translation": "242",
+          "width": 37,
+          "x": 512,
+          "y": 1546
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 17.6,
+          "text": "REACH",
+          "translation": "Reach",
+          "width": 85,
+          "x": 62,
+          "y": 2458
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 22.4,
+          "symWidth": 16.51345029239766,
+          "text": "THE  PINNACLE ,  HUH ... WHAT  YOU  SEE  AS  THE  PEAK IS  MERELY  THE  FOOT  OF  THE MOUNTAIN  I  HAVE  ALREADY TRAVERSED .",
+          "translation": "The summit, huh... What you see as the peak is just the foothill I've already climbed.",
+          "width": 357,
+          "x": 63,
+          "y": 2458
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 45.54545454545455,
+          "symWidth": 36.45454545454545,
+          "text": "E )  FORCE  ( 722",
+          "translation": "E) Force (722)",
+          "width": 363,
+          "x": 136,
+          "y": 2947
+        }
+      ],
+      "imgHeight": 4295,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 19.88484848484848,
+          "symWidth": 15.4656199321834,
+          "text": "HONORED  MASTER , PLEASE  WAIT !  MAY  I  ASK , HONORED  MASTER ,  IF  YOU CAN  TAKE  QINGLUO  WITH YOU ,  SO  SHE  CAN  SERVE YOU  BY  YOUR  SIDE ?",
+          "translation": "Honored Master, please wait! May I ask if you can bring Qingluo with you, so she can serve at your side?",
+          "width": 302,
+          "x": 272,
+          "y": 1125
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 115.75,
+          "symWidth": 133.75,
+          "text": "1755",
+          "translation": "1755",
+          "width": 233,
+          "x": 119,
+          "y": 2230
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 135.75,
+          "symWidth": 134,
+          "text": "1749",
+          "translation": "1749",
+          "width": 235,
+          "x": 370,
+          "y": 3244
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 21.675,
+          "symWidth": 15.89285714285714,
+          "text": "A  STRONG  PERSON  DOESN'T SURPASS",
+          "translation": "A truly strong person surpasses opponents not through battle,",
+          "width": 347,
+          "x": 81,
+          "y": 4218
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 21,
+          "symWidth": 15.69200937950938,
+          "text": "OPPONENTS  THROUGH BATTLES ,  BUT  BY  RESHAPING THEMSELVES  IN  SOLITUDE .",
+          "translation": "but by transforming themselves in solitude.",
+          "width": 350,
+          "x": 97,
+          "y": 4266
+        }
+      ],
+      "imgHeight": 4397,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 18.33333333333333,
+          "symWidth": 14.57418300653595,
+          "text": "MOREOVER ,  THIS  SEAT DOES  NOT  NEED  TO  JOURNEY WITH  THE  WEAK .",
+          "translation": "Besides, this seat doesn't belong alongside the weak.",
+          "width": 325,
+          "x": 232,
+          "y": 66
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 37.2,
+          "text": "【  快 看 漫画",
+          "translation": "RTMTH",
+          "width": 179,
+          "x": 515,
+          "y": 1150
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 22.5,
+          "symWidth": 17.39285714285714,
+          "text": "IS  THAT  SO ...  I  AM INDEED  TOO  WEAK .",
+          "translation": "Is that so... I truly am too weak.",
+          "width": 264,
+          "x": 115,
+          "y": 1493
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19.54545454545455,
+          "symWidth": 14.8442760942761,
+          "text": "IF  YOU  CAN  PASS THROUGH  THE  CULTIVATION TRIALS  I  LEFT  IN  THE  SOUTHERN MEET  AGAIN",
+          "translation": "If you pass the cultivation trials I set in the Southern Region,",
+          "width": 370,
+          "x": 306,
+          "y": 3088
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 13.33333333333333,
+          "text": "REGION ,  WE",
+          "translation": "we",
+          "width": 126,
+          "x": 328,
+          "y": 3210
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 20,
+          "symWidth": 13.94642857142857,
+          "text": "WILL ANOTHER",
+          "translation": "will reunite",
+          "width": 103,
+          "x": 411,
+          "y": 3210
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 13,
+          "text": "DAY .",
+          "translation": "one day.",
+          "width": 45,
+          "x": 523,
+          "y": 3250
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17.54545454545455,
+          "symWidth": 26,
+          "text": "WE'LL  MEET  AT",
+          "translation": "We'll meet at",
+          "width": 289,
+          "x": 185,
+          "y": 4378
+        }
+      ],
+      "imgHeight": 4398,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 24.5,
+          "text": "THE  PEAK  !",
+          "translation": "the peak!",
+          "width": 205,
+          "x": 228,
+          "y": 56
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 20.25409836065574,
+          "symWidth": 13.94388398486759,
+          "text": "THANK  YOU  FOR  YOUR GUIDANCE ,  HONORED  MASTER GU .  QINGLUO  WILL  DILIGENTLY COMPREHEND  IT !",
+          "translation": "Thank you for your guidance, Honored Master Gu. Qingluo will study diligently!",
+          "width": 336,
+          "x": 49,
+          "y": 2986
+        }
+      ],
+      "imgHeight": 4399,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 32,
+          "symWidth": 17.77777777777778,
+          "text": "THIS  IS ...",
+          "translation": "This is...",
+          "width": 150,
+          "x": 459,
+          "y": 3244
+        }
+      ],
+      "imgHeight": 3624,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 25.66666666666667,
+          "symWidth": 18.3059829059829,
+          "text": "THE  DECREE  OF HONORED  MASTER  GU IS  PASSED  DOWN !",
+          "translation": "The decree of Honored Master Gu is hereby passed down!",
+          "width": 293,
+          "x": 243,
+          "y": 1032
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 18,
+          "symWidth": 14.54944178628389,
+          "text": "THOSE  WHO  BREAK  THROUGH THE  NINE  HEAVENS  PALACE  CAN FOLLOW  THE  HONORED  MASTER  TO TRAVERSE  THE  EVER - CHANGING WORLD  AND  REACH  THE  PINNACLE OF  THE  GREAT  DAO  TOGETHER !",
+          "translation": "Those who break through the Nine Heavens Palace may follow Honored Master to traverse the ever-changing world and reach the peak of the Great Dao together!",
+          "width": 371,
+          "x": 250,
+          "y": 2076
+        }
+      ],
+      "imgHeight": 3624,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 22.28571428571428,
+          "text": "NEXT ...",
+          "translation": "Next...",
+          "width": 155,
+          "x": 456,
+          "y": 232
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 25.27272727272727,
+          "symWidth": 17.54545454545455,
+          "text": "IT'S  TIME  TO  MEET THOSE ...",
+          "translation": "it's time to meet those...",
+          "width": 293,
+          "x": 97,
+          "y": 2248
+        }
+      ],
+      "imgHeight": 3625,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 28,
+          "symWidth": 18.59749670619236,
+          "text": "STRONGEST  INDIVIDUALS  WHO TREAT  HEAVEN  AND  EARTH  AS  A CHESSBOARD !",
+          "translation": "Strongest individuals who treat Heaven and Earth like their chessboard!",
+          "width": 430,
+          "x": 108,
+          "y": 202
+        }
+      ],
+      "imgHeight": 3264,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 27,
+          "symWidth": 37.5,
+          "text": "----",
+          "translation": "----",
+          "width": 366,
+          "x": 143,
+          "y": 1417
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 66.33333333333333,
+          "symWidth": 61.92521367521368,
+          "text": "十个 大帝 Heroic  teacher 都是 我 徒弟 )",
+          "translation": "Ten great emperors, heroic teachers, all my disciples.",
+          "width": 471,
+          "x": 199,
+          "y": 2074
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 86.875,
+          "symWidth": 68,
+          "text": "~ 撒花 ~ 完结 啦 !",
+          "translation": "~ Flowers scatter ~ It's over!",
+          "width": 594,
+          "x": 94,
+          "y": 2294
+        },
+        {
+          "angle": 0,
+          "height": 549,
+          "symHeight": 28.70768049155146,
+          "symWidth": 17.82977836295809,
+          "text": "THE  COMIC  HAS  OFFICIALLY  CONCLUDED ! THANK  YOU  ALL  VERY  MUCH  FOR  YOUR SUPPORT  AND  COMPANIONSHIP ,  WITNESSING GU  XUANCHEN'S  GROWTH  ALONG  THE  WAY ! IT'S  A  PITY  THAT  THE  COMIC  CAN  ONLY ACCOMPANY  YOU  THIS  FAR ,  BUT  GU  XUANCHEN WILL  CONTINUE  HIS  CULTIVATION  IN  HIS  OWN WORLD .  WE  WILL  ALSO  CONTINUE  TO  WORK HARD  TO  BRING  YOU  MORE  AND  BETTER WORKS !  PLEASE  CONTINUE  TO  SUPPORT ICIYUAN  ANIMATION !  LET'S  LOOK  FORWARD TO  THE  NEXT  NEW  BEGINNING TOGETHER !",
+          "translation": "The comic has officially concluded! Thank you all for your support and for witnessing Gu Xuancheng's growth! Though the story ends here, Gu Xuancheng will continue his cultivation beyond this world. We'll keep striving to bring you more and better works! Please continue supporting Iciyuan Animation! Let's look forward to a fresh new beginning together!",
+          "width": 629,
+          "x": 36,
+          "y": 2593
+        }
+      ],
+      "imgHeight": 3265,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

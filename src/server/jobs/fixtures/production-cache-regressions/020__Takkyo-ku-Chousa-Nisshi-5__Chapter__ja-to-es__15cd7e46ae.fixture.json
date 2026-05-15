@@ -1,0 +1,1267 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0020",
+  "jobId": "fixture-job-0020",
+  "licenseId": "fixture-license-0020",
+  "pageCount": 63,
+  "pageOrder": [
+    "001.avif",
+    "002.avif",
+    "003.avif",
+    "004.avif",
+    "005.avif",
+    "006.avif",
+    "007.avif",
+    "008.avif",
+    "009.avif",
+    "010.avif",
+    "011.avif",
+    "012.avif",
+    "013.avif",
+    "014.avif",
+    "015.avif",
+    "016.avif",
+    "017.avif",
+    "018.avif",
+    "019.avif",
+    "020.avif",
+    "021.avif",
+    "022.avif",
+    "023.avif",
+    "024.avif",
+    "025.avif",
+    "026.avif",
+    "027.avif",
+    "028.avif",
+    "029.avif",
+    "030.avif",
+    "031.avif",
+    "032.avif",
+    "033.avif",
+    "034.avif",
+    "035.avif",
+    "036.avif",
+    "037.avif",
+    "038.avif",
+    "039.avif",
+    "040.avif",
+    "041.avif",
+    "042.avif",
+    "043.avif",
+    "044.avif",
+    "045.avif",
+    "046.avif",
+    "047.avif",
+    "048.avif",
+    "049.avif",
+    "050.avif",
+    "051.avif",
+    "052.avif",
+    "053.avif",
+    "054.avif",
+    "055.avif",
+    "056.avif",
+    "057.avif",
+    "058.avif",
+    "059.avif",
+    "060.avif",
+    "061.avif",
+    "062.avif",
+    "063.avif"
+  ],
+  "pages": {
+    "001.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 673,
+          "symHeight": 37.75,
+          "symWidth": 47,
+          "text": "・・ なんか 凄い 寝 た 気 が する う 。 」",
+          "translation": "... Siento que he dormido increíblemente.",
+          "width": 47,
+          "x": 1321,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 696,
+          "symHeight": 35.29411764705883,
+          "symWidth": 44.5,
+          "text": "「 むうう 。 途中 から 記憶 が 曖昧 ・・ 。 誰か の 自宅 っぽい けど ・・ 。 」",
+          "translation": "Mmm... Mi memoria está borrosa desde un rato atrás... Parece la casa de alguien, pero...",
+          "width": 172,
+          "x": 68,
+          "y": 578
+        },
+        {
+          "angle": 0,
+          "height": 680,
+          "symHeight": 38.18,
+          "symWidth": 46.64,
+          "text": "( ぐっすり し た 割 に は 体 が 重い ? ええっと 私 どう し た ん だ っけ 。 そう だ 。 竜 居 区 の 調査 に 来 て それで ・・・ 。 )",
+          "translation": "(A pesar de haber dormido profundamente, ¿por qué me siento tan pesada? Veamos, ¿qué me pasó? Ah, sí... Vine a investigar la zona de los dragones, y entonces...)",
+          "width": 299,
+          "x": 861,
+          "y": 699
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "002.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 756,
+          "symHeight": 46.66666666666666,
+          "symWidth": 54.66666666666666,
+          "text": "「 ようやく 目 が 覚め た みたい ね 。 ここ は 私 の 自宅 よ 。",
+          "translation": "Parece que finalmente despertaste. Este es mi hogar.",
+          "width": 127,
+          "x": 1339,
+          "y": 85
+        },
+        {
+          "angle": 0,
+          "height": 985,
+          "symHeight": 48.24,
+          "symWidth": 55.74,
+          "text": "桜花 は 声 の し た 方 へ と 振り向き かける が はっきり し て き た 意識 は 頭上 の 異常 を 真 っ 先 に 捉え て 放そ う と し ない 。",
+          "translation": "Sakura apenas se gira hacia la voz, pero su conciencia cada vez más clara primero capta algo extraño sobre su cabeza y se aferra sin querer soltarlo.",
+          "width": 195,
+          "x": 906,
+          "y": 463
+        },
+        {
+          "angle": 0,
+          "height": 912,
+          "symHeight": 38.4,
+          "symWidth": 52.88571428571429,
+          "text": "嘘 っ !  こ 、 これ って 私 の ペニス ? なんで ･･･ こんなに 大きく なっ て ・・ ! 」",
+          "translation": "¡No puede ser! ¿Es... mi pene? ¿Por qué... está tan grande...?",
+          "width": 128,
+          "x": 113,
+          "y": 903
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1600,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "003.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1655,
+          "symHeight": 46.85140845070423,
+          "symWidth": 57.02112676056338,
+          "text": "注射 場 で の 発散 の 後 、 朦朧 し てる もの の 桜花 は 自分 で 歩い て い た 。 翠 たち が 歓迎 を 兼ね た 食事 を 奢る と 信じ られ ない ほど に 食べ まくり すぐさま 寝 て しまっ た 。 この 家 の 主 、 「 大澤 翠 」 は 事情 を 説明 する 。",
+          "translation": "Después de liberar tensión en la sala de inyecciones, Sakura, algo aturdida, caminaba por su cuenta. Cuando Midori y los demás le invitaron a una comida de bienvenida, comió sin parar como si fuera increíble y enseguida se quedó dormida. La dueña de esta casa, \"Midori Osawa\", explicó la situación.",
+          "width": 268,
+          "x": 1224,
+          "y": 80
+        },
+        {
+          "angle": 0,
+          "height": 1444,
+          "symHeight": 46.14602758352758,
+          "symWidth": 55.17361111111111,
+          "text": "翠 の 自宅 に 運ば れ 、 丸 一 日 寝 続け 、 ようやく 起き た 桜花 。 「 しかし 凄かっ た わ ね 。 寝 てる 間 に おっぱい も チンポ も どんどん 成長 し て 。 こんな 短期間 で ここ まで 変わる なんて 初めて 見 た わ 。 』",
+          "translation": "Transportada a la casa de Midori, Sakura durmió todo un día seguido y finalmente despertó. \"Fue increíble... Mientras dormías, tus pechos y todo lo demás crecían sin parar. Nunca había visto un cambio TAN rápido.\"",
+          "width": 368,
+          "x": 767,
+          "y": 85
+        },
+        {
+          "angle": 0,
+          "height": 1340,
+          "symHeight": 46.37343470483005,
+          "symWidth": 55.16279069767442,
+          "text": "成長 期 の 子供 よろしく 睡眠 中 に 急 成長 し た らしい が ・・ 。 「 ・・ いやいや 。 さすが に これ は おかしい でしょ ! 今 まで こんな こと ・・ !  明らか に 異常 よ ! 」",
+          "translation": "Parece que durante su crecimiento acelerado, sucedió mientras dormía... \"No, no, esto es raro, ¿sabes? Nunca había pasado algo así... ¡Esto es claramente anormal!\"",
+          "width": 268,
+          "x": 351,
+          "y": 182
+        },
+        {
+          "angle": 0,
+          "height": 1661,
+          "symHeight": 48.28888888888889,
+          "symWidth": 56.93333333333333,
+          "text": "「 それ は あなた が 逸材 の 完全 天然 モノ で 、 竜 居 区 の 住人 の 体 が 増強 剤 の 成分 に 侵さ れ て いる から よ 。 特に 私 たち の 精液 は 強力 な 増強 剤 。 そんな もの を あなた が 受けれ ば 超大 化 する の は 当然 じゃ ない ♪ 」",
+          "translation": "\"Eso es porque eres un caso único, completamente natural, mientras que los habitantes del distrito Dragon están expuestos a sustancias potenciadoras. Sobre todo nuestro semen es un estimulante poderoso. No es de extrañar que al recibirlo tu cuerpo se agrandara tanto ♪\"",
+          "width": 201,
+          "x": 63,
+          "y": 186
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1600,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "004.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1273,
+          "symHeight": 35.69512195121951,
+          "symWidth": 39.78048780487805,
+          "text": "竜 居 区 で は 通常 で は 手 に 入ら ない 強力 な 増強 剤 が 数多く 出回っ て いる 。 市販 の 増強 剤 で 中 竜 級 まで 成長 し 、 竜 居 区 の 住人 と なっ て さらに 増強 、 上 竜 級 に 到達 する 。 それ が 通常 の 流れ 。",
+          "translation": "En el distrito de dragones, circulan muchos potenciadores poderosos que normalmente no se consiguen. Con potenciadores comerciales, se alcanza nivel medio-dragón, y al convertirse en residentes del distrito de dragones, se potencian aún más hasta llegar al nivel superior dragón. Así es como funciona normalmente.",
+          "width": 145,
+          "x": 1395,
+          "y": 67
+        },
+        {
+          "angle": 0,
+          "height": 1134,
+          "symHeight": 35.01298701298701,
+          "symWidth": 40.48051948051948,
+          "text": "派閥 ごと の 区 へ の 貢献 で その 派閥 域 に 支給 さ れる 様々 な モノ が 決定 さ れる ため 、 これ ほど の エロ 魔 人 の 巣窟 で あっ て も 又 く 時 に はヌき 、 仕事 は 超 頑張る 態勢 が でき て いる 。",
+          "translation": "Las contribuciones a cada facción determinan los suministros que reciben, por eso, aunque es un nido de demonios sexuales, a veces se calman y se preparan para trabajar con todas sus fuerzas.",
+          "width": 147,
+          "x": 60,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 1008,
+          "symHeight": 35.58388157894737,
+          "symWidth": 40.52878289473684,
+          "text": "超大 化 すれ ば する ほど 増す 快感 と 優越 感 で 、 増強 欲 は 止まら ない 。 強力 過ぎ て 副作用 で 膨乳 ・ 膨尻 ・ 筋肉 肥大 し て も 増強 剤 を 取り込み 続ける 。 その 結果 、 住人 自身 が 増強 効果 を 有し 、 性交 する だけ で 互いに 増強 し 合う こと と なる",
+          "translation": "Cuanto más gigantesco, mayor el placer y la sensación de superioridad, y así el deseo de potenciarse nunca cesa. Aunque los efectos secundarios hinchen pechos, glúteos y músculos, siguen usando potenciadores. Como resultado, los mismos habitantes adquieren efectos potenciadores y, al tener relaciones, se fortalecen mutuamente.",
+          "width": 251,
+          "x": 804,
+          "y": 307
+        }
+      ],
+      "imgHeight": 1400,
+      "imgWidth": 1575,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "005.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 823,
+          "symHeight": 34.18181818181818,
+          "symWidth": 40,
+          "text": "思わ ぬ 情報 獲得 で 、 桜花 は 竜 居 区 の 真髄 を 知る 。",
+          "translation": "Con esta información inesperada, Ouka descubre la esencia del distrito de dragones.",
+          "width": 40,
+          "x": 1428,
+          "y": 48
+        },
+        {
+          "angle": 0,
+          "height": 745,
+          "symHeight": 31.01071428571429,
+          "symWidth": 38,
+          "text": "( よし 。 これ で 調査 終了 ~~ ! こんな ところ さっさと 帰る ん だ … ひゃっ ! )",
+          "translation": "(Bien. Con esto termina la investigación~~! Mejor me voy rápido de este lugar... ¡Hya!)",
+          "width": 87,
+          "x": 1070,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 860,
+          "symHeight": 32.56845238095238,
+          "symWidth": 38.13988095238096,
+          "text": "「 それだけ ビンビン だ と ある程度 ヌ か ない と ダメ ね 。 有望 ギガチン に 反応 し て 私 も 勃起 し て き た から そこら の バイブガン より 私 の 尿道 の 方 が ヌ ける と ここ で 発散 し て いっ て よ 。",
+          "translation": "\"Cuando estás tan erecto, tienes que descargar un poco para sentir alivio. Con la reacción al prometedor Gigachin, también me estoy excitando, así que aquí puedo liberar mejor que cualquier vibrador; ¡que te desahogues aquí!\"",
+          "width": 189,
+          "x": 419,
+          "y": 280
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "006.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 913,
+          "symHeight": 31.1624649859944,
+          "symWidth": 39.08823529411765,
+          "text": "( あ 、 あっという間に 私 の サイズ を 超え て … ! 凄 っ ‥ ♪  こんな チンポ の 尿道 で ・・ だああ あああっ ! 性欲 に 呑ま れる な ! )",
+          "translation": "(¡Ah, en un instante superó mi tamaño...! ¡Increíble...♪! No puedo dejar que el deseo\nme consuma en esta uretra tan pequeña... ¡No, no, no! ¡No me dejes vencer por el deseo!)",
+          "width": 142,
+          "x": 1326,
+          "y": 22
+        },
+        {
+          "angle": 0,
+          "height": 1066,
+          "symHeight": 32.93714680381347,
+          "symWidth": 38.90259277759278,
+          "text": "( 私 は 調査 に 来 た だけ な ん だ からぁ おお おお おっ ! ただ 凄 チン な だけ で 魅 かれる なんて し て は ダメ なん だ から ぐうつ !  ダ 、 ダメ !  巨大 化 し た せい か 衝動 が 強 すぎ て … ! チンポ で 相手 を 評価 する なんて 、 私 が 一番 嫌い な こと でしょ お 発散 の ため に ヤり に 来 た ん じゃ ・・ ヤリ ･･ ヤリ たひ いつ ♪ 私 の が 可愛く 見える ほ",
+          "translation": "(Solo vine a investigar, ¡por eso...! No puedo dejarme atraer solo porque es enorme. ¡Ni de broma! Quizá\npor el tamaño la urgencia es demasiado fuerte... Evaluar a alguien solo por su tamaño es lo que más odio.\nEsto no es para desahogarme... no vine a hacer esto... pero qué ganas tengo de hacerlo ♪ Quiero que el mío parezca lindo...",
+          "width": 390,
+          "x": 708,
+          "y": 88
+        },
+        {
+          "angle": 0,
+          "height": 588,
+          "symHeight": 33.99583333333334,
+          "symWidth": 38.5,
+          "text": "「 マッスル タイプ は 常に 最大 勃起 を あなた は 朝勃ち で ビンビン と はい",
+          "translation": "«El tipo musculoso siempre tiene la máxima erección. Tú tienes una erección mañanera bien firme.»",
+          "width": 138,
+          "x": 378,
+          "y": 543
+        },
+        {
+          "angle": 0,
+          "height": 514,
+          "symHeight": 33,
+          "symWidth": 39,
+          "text": "どこ まで いく か 楽しみ だわり 』",
+          "translation": "Estoy deseando ver hasta dónde llegas.»",
+          "width": 39,
+          "x": 178,
+          "y": 567
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "007.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1243,
+          "symHeight": 40.82537878787879,
+          "symWidth": 48.61363636363636,
+          "text": "「 ははひいっ ♪  よろしく お願い し ます う 。 」 ( あ ・・ 思わず 応え ちゃっ た … 。 ど 、 どっち に しろ 自力 で コレ を 抑える の は 無理 ! ある程度 スッキリ し たら 止めれ ば いい だけ だ よ ね ! )",
+          "translation": "«¡Sííí♪, mucho gusto!» (Ah... respondí sin querer... No importa cuál sea el caso, controlar esto por mi cuenta es imposible. Solo tengo que parar\ncuando de verdad me sienta aliviada, ¿no?)",
+          "width": 315,
+          "x": 729,
+          "y": 123
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 40.6,
+          "symWidth": 40.33333333333333,
+          "text": "翠 勃起 366cm",
+          "translation": "Verde erección: 366 cm",
+          "width": 186,
+          "x": 145,
+          "y": 1547
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 40.44444444444444,
+          "symWidth": 40.55555555555556,
+          "text": "桜 花 勃起 258cm",
+          "translation": "Cerezo en flor erección: 258 cm",
+          "width": 212,
+          "x": 814,
+          "y": 1589
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 1100,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "008.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 500,
+          "symHeight": 32,
+          "symWidth": 45.4,
+          "text": "( しゃ 、 射精 がっ 長 あつ ・・・・ 量 も 以前 より も ずっと",
+          "translation": "(Eyaculación más larga...\nY mucho más cantidad que antes",
+          "width": 104,
+          "x": 55,
+          "y": 570
+        },
+        {
+          "angle": 0,
+          "height": 820,
+          "symHeight": 34.75,
+          "symWidth": 41,
+          "text": "「 あひょおおお おおお おおお おおお おっ ! 」",
+          "translation": "¡Ahyoooooo, ohh, ohh, ohh!",
+          "width": 43,
+          "x": 232,
+          "y": 570
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "009.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 808,
+          "symHeight": 37.37468671679198,
+          "symWidth": 43.00877192982457,
+          "text": "「 ああ ああ ああっ ! 凄い 凄 ひいいい いつ ! あっという間に 膀胱 パンパン ♪ おお",
+          "translation": "¡Ah, ah, ah! ¡Increíble, increíble! ¡En un instante la vejiga está llena hasta el tope ♪ oh!",
+          "width": 281,
+          "x": 184,
+          "y": 482
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 42,
+          "symWidth": 48,
+          "text": "~ !",
+          "translation": "~!",
+          "width": 50,
+          "x": 360,
+          "y": 1163
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "010.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "011.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 25.5,
+          "symWidth": 42,
+          "text": "こ 、",
+          "translation": "Eh...",
+          "width": 42,
+          "x": 81,
+          "y": 79
+        },
+        {
+          "angle": 0,
+          "height": 504,
+          "symHeight": 35.78846153846154,
+          "symWidth": 43,
+          "text": "っ 飛ばさ れ た 記憶 が ・・ 。 ) なっ た から って 人 ごと",
+          "translation": "...Recuerdo haber sido lanzado.\nPero eso no significa que sea asunto de alguien más.",
+          "width": 159,
+          "x": 81,
+          "y": 418
+        }
+      ],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "012.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 949,
+          "symHeight": 36.508500791621,
+          "symWidth": 45.66304347826087,
+          "text": "( ぢょっ ・・ お 、 押し返さ れ た 精液 ごと 私 の 尿道 に 何 で こんな ことぉ ･･ ! まさか 射精 量 が 格段 に 精液 が 突き進ん で き て るぅ ･･ ? も 数 段 拡がっ てる せい な のぉ ・・ ! )",
+          "translation": "(Eh... I was pushed back... Why is the semen going into my urethra like this...? Could it be that the ejaculate amount has spiked drastically...? Maybe it's because it's expanded several times more...!)",
+          "width": 226,
+          "x": 71,
+          "y": 53
+        },
+        {
+          "angle": 0,
+          "height": 509,
+          "symHeight": 36.66666666666666,
+          "symWidth": 40,
+          "text": "おほおおお おおお おっ ? 」",
+          "translation": "Ohoooooo, oh?",
+          "width": 44,
+          "x": 1281,
+          "y": 79
+        }
+      ],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "013.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 798,
+          "symHeight": 34.23511904761905,
+          "symWidth": 41.64583333333333,
+          "text": "「 ふぅぎいっほ おお おおお おおお おおおつ ! も お 完全 に 逆流 し ゆるう うう うつつ ! 」",
+          "translation": "¡Puaaahh! ¡Oh, oh, oh, fluye completamente al revés, uuuh!",
+          "width": 106,
+          "x": 1279,
+          "y": 51
+        },
+        {
+          "angle": 0,
+          "height": 856,
+          "symHeight": 39.35833333333333,
+          "symWidth": 45.66666666666667,
+          "text": "( 流れ込ん だ 精液 で チンポ が 太っ とく なっ て 精液 が もっと 流れ込む うう",
+          "translation": "(El semen que fluye hace que el pene se engrose y así más semen puede fluir, uuuh",
+          "width": 105,
+          "x": 130,
+          "y": 108
+        }
+      ],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "014.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "015.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1419,
+          "symHeight": 42.30882352941177,
+          "symWidth": 48.22058823529412,
+          "text": "それら が 上手い 具合 に ハマっ て 、 二 人 の 精液 は 桜花 の ペニス に 流れ込み 膀胱 を 爆発 的 に 膨らま せ もう 一つ の 尿道 から 「 ああ ああ あああひぃあ あああっ !",
+          "translation": "Encajando perfectamente, el semen de ambos fluye hacia el pene de Ouka, inflando la vejiga como una explosión y por la otra uretra: \"Ah ah ahh, ¡ahh!,",
+          "width": 385,
+          "x": 238,
+          "y": 124
+        },
+        {
+          "angle": 0,
+          "height": 1260,
+          "symHeight": 41.93181818181818,
+          "symWidth": 47.77272727272727,
+          "text": "あひゃひいほ おお ごほおお おおおつ ! 」 桜花 の 拡がっ て いる 鈴口 と 尿道 と 翠 の 凶悪 な 勢い の 射精 。",
+          "translation": "¡Ahyaaah, ohhh, gopheee! La abertura inflada de Ouka y la uretra con la feroz eyaculación de Midori.",
+          "width": 495,
+          "x": 641,
+          "y": 128
+        },
+        {
+          "angle": 0,
+          "height": 818,
+          "symHeight": 40.22222222222222,
+          "symWidth": 46,
+          "text": "「 おぼおほおお おおお おおお おおおつ !",
+          "translation": "¡Obohooo, ohhh, ohhh, ohhh!",
+          "width": 46,
+          "x": 1156,
+          "y": 326
+        },
+        {
+          "angle": 0,
+          "height": 733,
+          "symHeight": 40.33333333333334,
+          "symWidth": 43,
+          "text": "出る 出る 出る 出 るぅ ~~~ っ ♪ 」",
+          "translation": "¡Sale, sale, sale, salióooo~ ♪",
+          "width": 43,
+          "x": 173,
+          "y": 822
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "016.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1057,
+          "symHeight": 39.62790697674419,
+          "symWidth": 46.48837209302326,
+          "text": "「 おぎょ ほ おおお おおお おおお おお おお おっ ! おほほ おおお ごおお おおお つ ひいほ おお おっ ! 」",
+          "translation": "¡Ogho, ohhh, ohhh, ohhh, oh, oh! ¡Ohhoho, oooh, ghoohh, ohh, hiho, ohh!",
+          "width": 117,
+          "x": 1292,
+          "y": 61
+        },
+        {
+          "angle": 0,
+          "height": 867,
+          "symHeight": 39.08946078431372,
+          "symWidth": 50.50980392156863,
+          "text": "( わ 、 私 今 どう なっ へん の お おつ ? 苦 気持ちいい いいいいいい いつつ ! ) 色んな 管 で 精液 が 暴れ へえ ええ えっ !",
+          "translation": "(¿Q-qué me está pasando ahora? ¡Duele, pero se siente increíble! ¡Ay!) El semen se descontrola dentro de varios conductos, eh, eh, eh!",
+          "width": 185,
+          "x": 815,
+          "y": 584
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "017.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1116,
+          "symHeight": 40.2390243902439,
+          "symWidth": 53.58048780487805,
+          "text": "( 噴射 止まん な あっ ああ ああ ああつ ･･･ ! い 。 いつ まで も 射精 ひい 続け て りゅ みたい で えつ ! チンポ が イぎ まぐ りゅう う ~~~ つ ! )",
+          "translation": "(La eyaculación no para, ah, ah, ah... ¡Sigue viniendo sin parar! ¡Mi pene está a punto de estallar!)",
+          "width": 194,
+          "x": 1197,
+          "y": 153
+        },
+        {
+          "angle": 0,
+          "height": 817,
+          "symHeight": 41.79956896551724,
+          "symWidth": 48.82758620689656,
+          "text": "「 ら 、 らめぇっ ! も お 来る ううつ ! ヂンポぉ ビキビキ ひてえっ ! 超 勃起 来 ちゃう から ぁ ああ あっ ! 』",
+          "translation": "¡N-no, no puede ser! ¡Ya viene otra vez! ¡Mi pene está temblando y a punto de reventar!",
+          "width": 187,
+          "x": 669,
+          "y": 641
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "018.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 847,
+          "symHeight": 44.05128205128205,
+          "symWidth": 47.28205128205128,
+          "text": "勃起 中 も 絶頂 し まくる ペニス は 膨張 を 続け 、 凄まじい 速度 と 肥大 度 で 超 勃起 し て いく 。",
+          "translation": "Mientras está erecto, el pene sigue explotando en orgasmos, creciendo sin parar a una velocidad y tamaño asombrosos.",
+          "width": 175,
+          "x": 131,
+          "y": 104
+        },
+        {
+          "angle": 0,
+          "height": 862,
+          "symHeight": 42.08823529411764,
+          "symWidth": 49,
+          "text": "二 人 分 の 大量 精液 で 、 噴射 孔 は 一つ 。 桜花 が 翠 の ペニス と 一体化 し た よう な 射精 は 数 十 分 続き 、 達せ させ まくら れ 桜花 の ペニス が 更 なる 勃起 を 始める 。",
+          "translation": "Con la enorme cantidad de semen de dos personas, hay solo una salida. La eyaculación, como si Sakura y Midori fueran uno solo, continúa durante decenas de minutos, hasta que el pene de Sakura comienza a erectarse aún más.",
+          "width": 247,
+          "x": 386,
+          "y": 104
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "019.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 930,
+          "symHeight": 44.32432432432432,
+          "symWidth": 48.13513513513514,
+          "text": "その 凄まじ さ は 翠 の 予想 を 遥か に 超える 。 危険 性 に 気づい た 時 に は もう 遅かっ た 。",
+          "translation": "La magnitud de esto supera por mucho lo que Midori había previsto. Cuando se dio cuenta del peligro, ya era demasiado tarde.",
+          "width": 115,
+          "x": 455,
+          "y": 105
+        },
+        {
+          "angle": 0,
+          "height": 794,
+          "symHeight": 37.8367816091954,
+          "symWidth": 49.5,
+          "text": "う 、 嘘 おつ ! もう 根本 近く までぇ ! しかも まだ 爆発 勃起 してえ ! ぢょっ 待っ て 待っ て 待っ ･･･ )",
+          "translation": "N-no puede ser... ¡ya casi llega a la raíz! ¡Y sigue creciendo al máximo! ¡E-espera, espera, espera...!",
+          "width": 178,
+          "x": 77,
+          "y": 486
+        }
+      ],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "020.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 463,
+          "symHeight": 37.15982683982683,
+          "symWidth": 41.77316017316017,
+          "text": "プラス 射精 が 放たれる ! ペニス の 降下 と共に 桜花 の 膀胱 内 精液 は 尿道 へ と 戻り 、 桜花 の 全力 全開 の 桜花 の ペニス が 翠 の 膀胱 お腹 は 亀頭 型 に 膨らみ 翠 の 射精 は 強制 停止 。",
+          "translation": "La eyaculación de Plus se libera. Con la caída del pene, el semen dentro de la vejiga de Sakura regresa a la uretra, y el pene de Sakura, a pleno y con toda su fuerza, hace que la vejiga de Midori se hinche en forma de glande, deteniendo forzosamente su eyaculación.",
+          "width": 475,
+          "x": 1052,
+          "y": 53
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "021.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "022.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 442,
+          "symHeight": 35.36363636363637,
+          "symWidth": 41,
+          "text": "そして 、 桜花 の 猛 反撃 が",
+          "translation": "Y entonces, ¡la feroz contraofensiva de Ouka!",
+          "width": 41,
+          "x": 1176,
+          "y": 58
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "023.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 890,
+          "symHeight": 36.77016591251886,
+          "symWidth": 44.8,
+          "text": "( い 、 一 発 で 萎え なかっ たら ヤバ かっ た ぁ ! しばらく チンポ 元 に 戻ん ない わ よ 、 これぇ 。 ) ながら また 成長 し た の かも 。 いや ･･ 私 の 精液 を 通し まくっ た せい で ヤリ まさか ここ まで 勃起 する なん てぇ … !",
+          "translation": "(Si no me hubiera desanimado de un solo golpe, habría sido un desastre... No podré volver atrás por un tiempo con esto...) Quizá ha vuelto a crecer. No... es porque pasé tanto tiempo con mi semen que se levantó así... ¡No puedo creer que esté tan erecto...!",
+          "width": 283,
+          "x": 28,
+          "y": 82
+        },
+        {
+          "angle": 0,
+          "height": 803,
+          "symHeight": 40.14610566448802,
+          "symWidth": 46.83333333333334,
+          "text": "いきなり 充填 込み で 放つ に は 精力 も 経験 超 勃起 で 噴射 量 が 跳ね上がっ た 射精 を 桜花 は 特大 一 発 で 萎え 、 気絶 する 。",
+          "translation": "De repente, recibiendo toda la carga, con toda la energía y experiencia, la cantidad de eyaculación aumentó drásticamente. Ouka pierde la erección de un solo disparo gigante y queda inconsciente.",
+          "width": 223,
+          "x": 1110,
+          "y": 85
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "024.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 712,
+          "symHeight": 34.98684210526316,
+          "symWidth": 39,
+          "text": "「 その シャツ は あげる から 遠慮 衣類 を 用意 し て くれる 知り合い に 会う まで",
+          "translation": "Te daré esta camisa, así que prepárate ropa para cuando te encuentres con alguien que conozcas.",
+          "width": 85,
+          "x": 1054,
+          "y": 72
+        },
+        {
+          "angle": 0,
+          "height": 1013,
+          "symHeight": 33.50985221674877,
+          "symWidth": 38.5,
+          "text": "「 ゲスト を 持て成す の は 竜 居 区 住人 として 当然 気 に なる なら 、 御代 は 性欲 発散 に 付き合っ て もらっ た こと で 。 」",
+          "translation": "Es natural que como residente del distrito de Dragones, quieras atender a un invitado. Considera este pago como agradecimiento por acompañarme a descargar el deseo sexual.",
+          "width": 85,
+          "x": 48,
+          "y": 95
+        },
+        {
+          "angle": 0,
+          "height": 433,
+          "symHeight": 31.84615384615385,
+          "symWidth": 38,
+          "text": "お世話 に なり っぱなし で 。 」",
+          "translation": "Estoy en deuda contigo.",
+          "width": 41,
+          "x": 866,
+          "y": 95
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "025.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 955,
+          "symHeight": 32.58995726495726,
+          "symWidth": 37.43846153846154,
+          "text": "( それにしても 桜花 ちゃ ・・ いえ 、 もう 桜花 姉 様 と お 制御 し て ない と また 勃起 し そお ! ) チンポ も 萎え てる のに 1m 以上 ある し 。 気絶 し て 少し 寝 てる 間 で また おっ 恐らく まだ 成長 する でしょ う し 、 素晴らし すぎる 肉体 ね ♪",
+          "translation": "(Aun así, Ohka-chan... No, ya debo llamarte Ohka-nee-sama, o me pondré erecto de nuevo sin control. ¡Aunque mi miembro esté flácido, mide más de un metro! Me desmayé y dormí un rato, y seguro que todavía sigue creciendo. Tu cuerpo es simplemente perfecto ♪)",
+          "width": 224,
+          "x": 916,
+          "y": 73
+        },
+        {
+          "angle": 0,
+          "height": 1082,
+          "symHeight": 32.60957148154034,
+          "symWidth": 39.4,
+          "text": "( 私 の バ カバカバ カッツ ! 軽く スッキリ する はず だっ た のに ! 胸 、 頭 何 個 分つ ?  チンポ も 抱え ない と 地面 に 着く とか 、 何 それ ! これ 以上 最悪 な こと に なら ない よう 平静 を 保つ ぞ ! 私 ! ) そもそも 竜 居 区 の 人 と やっ ちゃ ダメ だっ た !! さすが に もう 大きく なら ない なんて 決めつけ て ・・ 結果 が この 様 っ !",
+          "translation": "(¡Soy una tonta, una tonta absoluta! ¡Pensé que me aliviaría fácilmente! ¿Cuántas veces cabe en mi pecho, en mi cabeza? ¡Tengo que sostener mi miembro o tocaría el suelo, qué es esto! Mantendré la calma para que no empeore, ¡yo! No debería haberme metido con alguien del distrito Dragón!! Y aún así, pensé que ya no crecería más... ¡y miren esto!)",
+          "width": 226,
+          "x": 46,
+          "y": 94
+        },
+        {
+          "angle": 0,
+          "height": 316,
+          "symHeight": 32.53333333333333,
+          "symWidth": 36.33333333333334,
+          "text": "呼び し とこ う 。 くなっ てる わ ね 。",
+          "translation": "Decidí llamarte. Ya estás creciendo.",
+          "width": 83,
+          "x": 1057,
+          "y": 774
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "026.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 487,
+          "symHeight": 36.25,
+          "symWidth": 39.75,
+          "text": "「 ああ ああ ああ あっっ ! 」",
+          "translation": "\"¡Aaah, aaah, aaah!\"",
+          "width": 44,
+          "x": 1396,
+          "y": 94
+        },
+        {
+          "angle": 0,
+          "height": 963,
+          "symHeight": 38.00661375661375,
+          "symWidth": 43.17857142857142,
+          "text": "あひゃ ああ あああんんっ ! 」 ( 一度 盛大 に ぶっ 放し て 鎮める ! 気 を しっかり 保っ て おく の よ ! 私 い ! ) 初日 みたい に 快感 に 呑ま れる こと の ない よう に",
+          "translation": "¡Ahya, aah, aaahn! (Voy a calmarme con una buena descarga esta vez. ¡Mantén la mente firme! ¡Yo!) No dejaré que el placer me domine como en el primer día.",
+          "width": 296,
+          "x": 54,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 944,
+          "symHeight": 37.17073170731707,
+          "symWidth": 45.70731707317074,
+          "text": "( こ 、 この 感触 何となく 記憶 に ある かも おつ ! ういえ ば 入れ た 気 が する か なぁ ああ あっ ! )",
+          "translation": "(E-esta sensación me suena... Creo que sé lo que es... ¡Ah, sí, creo que está entrando! ¡Aaah!)",
+          "width": 106,
+          "x": 1217,
+          "y": 100
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "027.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 782,
+          "symHeight": 26.95454545454545,
+          "symWidth": 36,
+          "text": "1616  16  16  16  16  16  16  16  16  16  16  0- . も お 出る うう うう うう うう ううっ ! 」",
+          "translation": "¡Ya casi, uuh, uuh, uuh, uuh, uuh, uuh!",
+          "width": 97,
+          "x": 1286,
+          "y": 123
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "028.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "029.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1600,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "030.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1600,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "031.avif": {
+      "blocks": [],
+      "imgHeight": 1400,
+      "imgWidth": 1575,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "032.avif": {
+      "blocks": [],
+      "imgHeight": 1400,
+      "imgWidth": 1575,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "033.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "034.avif": {
+      "blocks": [],
+      "imgHeight": 2500,
+      "imgWidth": 1100,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "035.avif": {
+      "blocks": [],
+      "imgHeight": 2500,
+      "imgWidth": 1100,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "036.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "037.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "038.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "039.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 696,
+          "symHeight": 476,
+          "symWidth": 867,
+          "text": "ID",
+          "translation": "ID",
+          "width": 869,
+          "x": 306,
+          "y": 623
+        }
+      ],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "040.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "041.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "042.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "043.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "044.avif": {
+      "blocks": [],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "045.avif": {
+      "blocks": [],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "046.avif": {
+      "blocks": [],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "047.avif": {
+      "blocks": [],
+      "imgHeight": 1125,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "048.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "049.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "050.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "051.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "052.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "053.avif": {
+      "blocks": [],
+      "imgHeight": 2000,
+      "imgWidth": 1455,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "054.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "055.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "056.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "057.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "058.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "059.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "060.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "061.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "062.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1500,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "063.avif": {
+      "blocks": [],
+      "imgHeight": 1500,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "ja",
+  "targetLanguage": "es",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

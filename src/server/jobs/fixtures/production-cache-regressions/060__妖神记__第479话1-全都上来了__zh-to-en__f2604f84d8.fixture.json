@@ -1,0 +1,676 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0060",
+  "jobId": "fixture-job-0060",
+  "licenseId": "fixture-license-0060",
+  "pageCount": 10,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 16.72,
+          "text": "观看, 最快 最 稳, 广告 最少",
+          "translation": "Fastest, Steadiest, Least Ads",
+          "width": 550,
+          "x": 41,
+          "y": 40
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 23.76923076923077,
+          "text": "第四 百 七 十九 话 ・ 全都 上来 了",
+          "translation": "Chapter 479 ・ They're All Here",
+          "width": 360,
+          "x": 58,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34,
+          "symWidth": 32.5,
+          "text": "COMMAN",
+          "translation": "COMMAN",
+          "width": 200,
+          "x": 0,
+          "y": 1133
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 22,
+          "text": ".com",
+          "translation": ".com",
+          "width": 84,
+          "x": 296,
+          "y": 1151
+        }
+      ],
+      "imgHeight": 1219,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20.26666666666667,
+          "symWidth": 18.76666666666667,
+          "text": "你 看到 前面 的 金色 海洋 吗 ? 我们 守 在 这里 , 是 想 横渡 这 片 金色 海洋 。",
+          "translation": "Do you see the golden ocean ahead? We're guarding this spot, aiming to cross that golden sea.",
+          "width": 175,
+          "x": 193,
+          "y": 162
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.96969696969697,
+          "symWidth": 19,
+          "text": "这 海洋 中 的 火焰 力 量 极其可怕 , 只有 火 系 妖族 操控 七 品 以上 宝 器 方可 渡过 。",
+          "translation": "The flame power in this sea is terrifying; only fire-type妖族 wielding grade seven or higher treasures can pass through.",
+          "width": 183,
+          "x": 373,
+          "y": 262
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 16.30952380952381,
+          "text": "“ 小子 , 你 小心 一点 !",
+          "translation": "Kid, be careful!",
+          "width": 138,
+          "x": 404,
+          "y": 801
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.4,
+          "text": "哦 ? 这 火焰 很 厉害 吗 ?",
+          "translation": "Oh? Is this flame really that fierce?",
+          "width": 110,
+          "x": 232,
+          "y": 933
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.63636363636364,
+          "symWidth": 18.13636363636364,
+          "text": "这里 的 火焰 之 力 极其 恐怖 , 即便 你 是 火 系 的 妖族 ,",
+          "translation": "The power of these flames is incredibly fierce. Even if you’re a fire-element demon,",
+          "width": 159,
+          "x": 77,
+          "y": 100
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.3421052631579,
+          "symWidth": 17.86842105263158,
+          "text": ", 没有 七 品 宝 器 的 保护 直接 下 去 , 也会 被 瞬 间 灼伤 啊 !",
+          "translation": "without a seventh-grade treasure to protect you, stepping in directly will burn you instantly!",
+          "width": 139,
+          "x": 234,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15,
+          "text": "是 啊 !",
+          "translation": "That's right!",
+          "width": 52,
+          "x": 571,
+          "y": 301
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 13.5,
+          "text": "哼 。",
+          "translation": "Hmph.",
+          "width": 29,
+          "x": 322,
+          "y": 637
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 21,
+          "symWidth": 18.33333333333334,
+          "text": "这 … 这 小子 !",
+          "translation": "Th-this kid!",
+          "width": 67,
+          "x": 131,
+          "y": 363
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.2,
+          "symWidth": 18.63333333333333,
+          "text": "在 引 动 金色 火 焰 !",
+          "translation": "He’s drawing out the golden flames!",
+          "width": 66,
+          "x": 599,
+          "y": 522
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18.5,
+          "symWidth": 16.25,
+          "text": "他 不要 命 了 吗 ? !",
+          "translation": "Is he trying to get himself killed?!",
+          "width": 87,
+          "x": 111,
+          "y": 683
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20.5,
+          "symWidth": 17,
+          "text": "额 ?",
+          "translation": "Huh?",
+          "width": 35,
+          "x": 606,
+          "y": 989
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18.5,
+          "symWidth": 16.59523809523809,
+          "text": "混沌 金 X ......",
+          "translation": "Chaos Gold X......",
+          "width": 110,
+          "x": 179,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20.18181818181818,
+          "symWidth": 19.81818181818182,
+          "text": "前世 , 离 火 圣 子 就是 利用 这 混沌 金 炎 火 —",
+          "translation": "In his past life, the Fiery Son used this Chaos Golden Flame—",
+          "width": 155,
+          "x": 149,
+          "y": 581
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.80769230769231,
+          "symWidth": 19.45054945054945,
+          "text": "直接 焚 尽 了 羽 神 宗 魂 殿 , 让 羽 神宗 一蹶不振 。",
+          "translation": "to directly burn down the Feather God Sect's Soul Hall, leaving the sect crippled.",
+          "width": 175,
+          "x": 530,
+          "y": 660
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.73076923076923,
+          "symWidth": 18.37912087912088,
+          "text": "混沌 金 炎 火 …… 绝对 不能 再让 离 火 圣 子 得到 !",
+          "translation": "The Chaos Golden Flame... must never fall into the Fiery Son's hands again!",
+          "width": 138,
+          "x": 190,
+          "y": 836
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 33.92307692307692,
+          "symWidth": 32.69230769230769,
+          "text": "COLAMANCA  .com",
+          "translation": "",
+          "width": 395,
+          "x": 401,
+          "y": 1045
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 117,
+          "x": 12,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 19.5,
+          "text": "出现",
+          "translation": "Appears",
+          "width": 41,
+          "x": 485,
+          "y": 168
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.55555555555556,
+          "text": "羽 焰 姐姐 , 此乃 混沌 金 炎 火 。",
+          "translation": "Sister Yuyan, this is the Chaotic Golden Flame.",
+          "width": 108,
+          "x": 98,
+          "y": 503
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 21.25,
+          "symWidth": 18.51785714285714,
+          "text": "你 是 火 系 灵 神 , 这 火焰 对 你 修炼 火焰 大道 之 力 , 肯定 会有 很大 的 裨益 。",
+          "translation": "You’re a Fire-elemental Spirit God; this flame will greatly aid your cultivation of the Fire Dao.",
+          "width": 153,
+          "x": 295,
+          "y": 528
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.875,
+          "text": "混沌 金 炎 火 ?",
+          "translation": "Chaotic Golden Flame?",
+          "width": 88,
+          "x": 618,
+          "y": 622
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 20,
+          "symWidth": 18.64126984126984,
+          "text": "我们 等 在 这里 , 也 见过 不少 火 灵 殿 弟子 。",
+          "translation": "We’ve waited here and seen many Fire Spirit Hall disciples.",
+          "width": 137,
+          "x": 450,
+          "y": 752
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.90476190476191,
+          "text": "那朵 火焰 消失 了 ? ! 是 被 那 小子 吸收 了 吗 ?",
+          "translation": "That flame disappeared?! Did that kid absorb it?",
+          "width": 141,
+          "x": 105,
+          "y": 777
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 18,
+          "symWidth": 16.52777777777778,
+          "text": "「 能 闯入 金色 海洋 短 时间 不 受伤 的 也不 少 , 但是 … 怎么 还 能 直接 吸收 金色 火 焰 的 ?",
+          "translation": "Many can enter the golden sea without harm briefly, but… how can one directly absorb the golden flame?",
+          "width": 160,
+          "x": 522,
+          "y": 936
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 35,
+          "text": "看 漫画",
+          "translation": "Read the manga",
+          "width": 116,
+          "x": 12,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 18.52777777777778,
+          "text": "这 家伙 … 好像 有点 东西 。",
+          "translation": "This guy… seems to have something special.",
+          "width": 87,
+          "x": 114,
+          "y": 116
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 36,
+          "text": "看 漫画",
+          "translation": "Read the manga",
+          "width": 119,
+          "x": 11,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13,
+          "text": "叽 !",
+          "translation": "Chirp!",
+          "width": 29,
+          "x": 273,
+          "y": 552
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 16.1,
+          "text": "哇 , 这 是 怎 么 回事 ? !",
+          "translation": "Wow, what's going on?!",
+          "width": 110,
+          "x": 448,
+          "y": 944
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "Read Manga",
+          "width": 117,
+          "x": 11,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 19.33333333333333,
+          "symWidth": 16.84126984126984,
+          "text": "这 家伙 的 气息 , ※ 怎么 忽然 变 强 行动 那 一丝 ?",
+          "translation": "Why has this guy's aura suddenly grown so strong?",
+          "width": 152,
+          "x": 122,
+          "y": 142
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 21,
+          "symWidth": 17.99206349206349,
+          "text": "若是 这样 成长 ® 下去 , 那 我 以后 *  还 怎么 夺 舍",
+          "translation": "If he keeps growing like this, how can I ever seize his body?",
+          "width": 160,
+          "x": 501,
+          "y": 254
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20,
+          "symWidth": 18.02738095238095,
+          "text": "进 到 这 万里 河 山 图 之后 , 遇到 净 是 些 变态 , \\ 可恶 啊 。",
+          "translation": "Since entering this Ten-Thousand-Mile Mountain River Map, all I've met are freaks. Damn it.",
+          "width": 160,
+          "x": 75,
+          "y": 627
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 19.4,
+          "text": "火焰 铭 纹 …",
+          "translation": "Flame Inscription…",
+          "width": 108,
+          "x": 563,
+          "y": 853
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 20,
+          "text": "流转",
+          "translation": "Circulation",
+          "width": 42,
+          "x": 172,
+          "y": 923
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 19.5,
+          "text": "流转",
+          "translation": "Circulation",
+          "width": 41,
+          "x": 213,
+          "y": 978
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 36.33333333333334,
+          "text": "看 漫画",
+          "translation": "Read Manga",
+          "width": 119,
+          "x": 10,
+          "y": 1080
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19,
+          "symWidth": 15.375,
+          "text": "欸 ? 难道 i ...",
+          "translation": "Huh? Could it be I...",
+          "width": 89,
+          "x": 459,
+          "y": 93
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20,
+          "symWidth": 18.31818181818182,
+          "text": "聂 离 , 这 火焰 好像 天生 与 我 极其 亲 和 。",
+          "translation": "Nie Li, this flame feels innately\nand deeply connected to me.",
+          "width": 132,
+          "x": 73,
+          "y": 101
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.25,
+          "symWidth": 19.725,
+          "text": "混沌 金 炎 火 和 羽 焰 姐姐 还有 某种 渊 源 不成 ?",
+          "translation": "Could the Chaos Golden Flame have\nsome link to Sister Yu Yan?",
+          "width": 110,
+          "x": 620,
+          "y": 279
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.31666666666667,
+          "text": "完全 无需 化 , 就能 被 我 吸收 。",
+          "translation": "It requires no refinement at all,\nI can absorb it directly.",
+          "width": 107,
+          "x": 272,
+          "y": 310
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 20,
+          "symWidth": 19.15476190476191,
+          "text": "眼前 虽然 到处 都 是 混沌 金 炎 火 , 但 要从 中 提炼 出 源 火焰 给 羽 焰 姐姐 吸收 , 也 并 非 是 件 容易 事 。",
+          "translation": "Though Chaos Golden Flame is all around,\npurifying the true source flame for Sister Yu Yan is no easy task.",
+          "width": 153,
+          "x": 130,
+          "y": 503
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 19.1875,
+          "text": "而且 我 也 没有 那么 多 时间 ……",
+          "translation": "And I don't have that kind of time...",
+          "width": 174,
+          "x": 515,
+          "y": 638
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 17.1,
+          "text": "我 没 时间 , 他们 有 啊 。",
+          "translation": "I don't have time, but they do.",
+          "width": 95,
+          "x": 437,
+          "y": 805
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15,
+          "text": "对 了 !",
+          "translation": "That's it!",
+          "width": 52,
+          "x": 115,
+          "y": 1002
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 32.5,
+          "symWidth": 26.08,
+          "text": "看 漫画 观看, 最快 最 稳, 广告 最少",
+          "translation": "",
+          "width": 632,
+          "x": 12,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1230,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

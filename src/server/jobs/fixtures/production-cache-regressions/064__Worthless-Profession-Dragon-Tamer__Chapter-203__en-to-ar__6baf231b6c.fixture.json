@@ -1,0 +1,1913 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0064",
+  "jobId": "fixture-job-0064",
+  "licenseId": "fixture-license-0064",
+  "pageCount": 21,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 59.15,
+          "symWidth": 50.99375,
+          "text": "喜 驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل صانع التنانين أضعف المهن؟ أنا دراكو ماجسترو+",
+          "width": 411,
+          "x": 143,
+          "y": 1117
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 25.55555555555556,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر! انظر! مانغا حصرية",
+          "width": 239,
+          "x": 238,
+          "y": 1389
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 10.8,
+          "symWidth": 9.6,
+          "text": "GEMIN",
+          "translation": "جيمين",
+          "width": 31,
+          "x": 549,
+          "y": 1514
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 19,
+          "text": "READ  AT",
+          "translation": "اقرأ على",
+          "width": 106,
+          "x": 465,
+          "y": 1571
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 12.14285714285714,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 164,
+          "x": 329,
+          "y": 1698
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 15.55555555555556,
+          "text": "NEW  COMICS",
+          "translation": "قصص جديدة",
+          "width": 152,
+          "x": 429,
+          "y": 1764
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 11.8,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمع حيوي",
+          "width": 185,
+          "x": 498,
+          "y": 1823
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 21,
+          "symWidth": 18.48,
+          "text": "THE  LIFE  CANYON ( DREAMSCAPE )",
+          "translation": "وادي الحياة (عالم الأحلام)",
+          "width": 249,
+          "x": 347,
+          "y": 2058
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 21.72413793103448,
+          "symWidth": 19.37931034482759,
+          "text": "ALTHOUGH IT'S  HARD  TO PART  WITH  IT ,",
+          "translation": "إنه من الصعب الفراق بها،",
+          "width": 209,
+          "x": 81,
+          "y": 2288
+        }
+      ],
+      "imgHeight": 2420,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 20.19444444444444,
+          "symWidth": 19.25,
+          "text": "THE  LIFE  CANYON THAT  HAS  BEEN COMPLETELY  ERODED NO  LONGER  HAS ANYTHING  LEFT TO  MISS ...",
+          "translation": "الأخدود الحياتي الذي تعرّى تمامًا لم يعد يحمل شيئًا ليشتاق إليه...",
+          "width": 323,
+          "x": 301,
+          "y": 602
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 20.41935483870968,
+          "symWidth": 18.90322580645161,
+          "text": "THIS  IS  OUR LAST  CHANCE TO  STAY  ALIVE ,",
+          "translation": "هذه فرصتنا الأخيرة للبقاء على قيد الحياة،",
+          "width": 231,
+          "x": 89,
+          "y": 1033
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 21.02631578947368,
+          "symWidth": 19.84736842105263,
+          "text": "WE'RE COUNTING ON  YOU , COMPANION !",
+          "translation": "نعوّل عليك يا رفيق!",
+          "width": 191,
+          "x": 422,
+          "y": 1412
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 21.56,
+          "symWidth": 13.4,
+          "text": "READ FIRST AT",
+          "translation": "اقرأ أولاً على",
+          "width": 192,
+          "x": 41,
+          "y": 2226
+        }
+      ],
+      "imgHeight": 2421,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.78787878787879,
+          "symWidth": 16.06060606060606,
+          "text": "ALRIGHT , THEN  LET'S PREPARE  TO DEPART !",
+          "translation": "حسنًا، فلنستعد للانطلاق!",
+          "width": 170,
+          "x": 445,
+          "y": 1051
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 20,
+          "symWidth": 19.07361111111111,
+          "text": "XINGCHEN , CAST \" STARRY  SKY WARP \" !",
+          "translation": "شينغتشين، أطلق \"تشوّب السماء المرصعة بالنجوم\"!",
+          "width": 209,
+          "x": 200,
+          "y": 1163
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20.5,
+          "symWidth": 18.37461300309597,
+          "text": "STAR  DRAGON  III  FORM SWITCH :  STAR  RADIANCE",
+          "translation": "تغيير هيئة التنين النجمي الثالثة: تألق النجوم",
+          "width": 366,
+          "x": 72,
+          "y": 1524
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 16.90543735224587,
+          "symWidth": 13.97759727812919,
+          "text": "STARRY  SKY  WARP :  TEARS  OPEN  SPACE  TO  CREATE  A PORTAL  RIFT  LEADING  TO  THE  TARGET  LOCATION .  THE PORTAL  RIFT  LASTS  FOR  60  SECONDS  AND  IS  NOT BY  ANY  MAGIC  CIRCLES ,  FORBIDDEN  SPELLS , BARRIERS ,  DOMAINS ,  OR  SECRET  REALMS . AFFECTED",
+          "translation": "تشوّب السماء المرصعة بالنجوم: دموع تفتح الفضاء لصنع شق بُعدي يؤدي إلى الموقع المستهدف. يستمر الشق البُعدي 60 ثانية، ولا يؤثر عليه أي دوائر سحرية، أو تعاويذ ممنوعة، أو حواجز، أو نطاقات، أو عوالم سرية.",
+          "width": 586,
+          "x": 50,
+          "y": 3376
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 20.4,
+          "symWidth": 18.03571428571428,
+          "text": "LINKING TARGET PORTAL  TO [ TERRITORY TELEPORTI !",
+          "translation": "ربط بوابة الهدف بـ [انتقال الأراضي]!",
+          "width": 181,
+          "x": 196,
+          "y": 3774
+        }
+      ],
+      "imgHeight": 4095,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 17.75,
+          "symWidth": 15.45549872122762,
+          "text": "TERRITORY  TELEPORT :  THE  LORD  CAN  OPEN  OR CLOSE  A  PORTAL  LEADING  TO  THEIR  TERRITORY AT  ANY  TIME ;  AT  MOST  ONE  TERRITORY  PORTAL CAN  EXIST  SIMULTANEOUSLY .",
+          "translation": "انتقال الأراضي: يستطيع السيد فتح أو إغلاق بوابة تؤدي إلى أراضيه في أي لحظة؛ ولا يمكن أن يوجد أكثر من بوابة واحدة لأراضيه في آن.",
+          "width": 568,
+          "x": 73,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.38235294117647,
+          "symWidth": 18.93312908496732,
+          "text": "EVERYONE , HURRY  AND FOLLOW ,  WE ONLY  HAVE 60  SECONDS !",
+          "translation": "الجميع، اسرعوا وتابعوني، أمامنا 60 ثانية فقط!",
+          "width": 205,
+          "x": 106,
+          "y": 1181
+        }
+      ],
+      "imgHeight": 4096,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 20,
+          "symWidth": 18.2962962962963,
+          "text": "TIANFU  ISLAND  - SHADOW  FORTRESS",
+          "translation": "جزيرة تيانفو - القلعة الظليلة",
+          "width": 296,
+          "x": 96,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 20.5,
+          "symWidth": 23.58333333333334,
+          "text": "HMM  HMM HMM ~",
+          "translation": "هم هم هم ~",
+          "width": 153,
+          "x": 158,
+          "y": 1263
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 17.6,
+          "symWidth": 16.06515151515152,
+          "text": "THIS  SHOULD  BE ENOUGH ;  IT'S ALL  THE  STUFF XIAOFAN  LOVES TO  EAT ,",
+          "translation": "هذا يجب أن يكفي؛ فهذا من طعام شياوفان المفضل.",
+          "width": 213,
+          "x": 364,
+          "y": 1564
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17,
+          "symWidth": 15.18055555555556,
+          "text": "I'LL  WAIT FOR  HIM  TO COME  BACK ....",
+          "translation": "سأنتظره حتى يعود....",
+          "width": 178,
+          "x": 140,
+          "y": 1672
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 14.125,
+          "text": "... HUH !?",
+          "translation": "... ها؟!",
+          "width": 109,
+          "x": 527,
+          "y": 3161
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 21,
+          "symWidth": 18.57954545454545,
+          "text": "SUCH  FRESH AIR ,  JUST  LIKE OUR  HOMELAND BEFORE  IT  WAS",
+          "translation": "هواء نقي كهذا، كأنه وطننا قبل أن يعتريه الخراب",
+          "width": 231,
+          "x": 120,
+          "y": 4030
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "renderMode": "mask_only",
+          "symHeight": 21,
+          "symWidth": 21.2,
+          "text": "THANK",
+          "translation": "",
+          "width": 98,
+          "x": 431,
+          "y": 4117
+        }
+      ],
+      "imgHeight": 4137,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20.25,
+          "symWidth": 20.14761904761905,
+          "text": "THANK YOU , MY FRIEND .",
+          "translation": "شكرًا لك يا صديقي.",
+          "width": 126,
+          "x": 418,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 18.28571428571428,
+          "text": "ERODED ,",
+          "translation": "متآكل،",
+          "width": 129,
+          "x": 170,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 19.75,
+          "symWidth": 17.86111111111111,
+          "text": "WAAAH ... WH - WHAT  A BEAUTIFUL PLACE !",
+          "translation": "واااه... يَا له من مكان جميل!",
+          "width": 165,
+          "x": 59,
+          "y": 407
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 16.33333333333333,
+          "symWidth": 14.53699494949495,
+          "text": "UH ...  I  STILL NEED  SOME  TIME TO  GET  USED  TO PLACES  THAT ACTUALLY  HAVE WATER ...",
+          "translation": "آه... لازلت أحتاج بعض الوقت لأعتاد على الأماكن التي تحوي ماء.",
+          "width": 202,
+          "x": 452,
+          "y": 432
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 19.5,
+          "symWidth": 17.35,
+          "text": "WE'VE ARRIVED ; THIS  IS  MY TERRITORY ,",
+          "translation": "ها قد وصلنا؛ هذا قارتي.",
+          "width": 174,
+          "x": 484,
+          "y": 1058
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 19.33333333333333,
+          "symWidth": 20.3,
+          "text": "YOUR NEW HOME !",
+          "translation": "هو بيتك الجديد!",
+          "width": 96,
+          "x": 457,
+          "y": 1238
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 24,
+          "symWidth": 23.125,
+          "text": "XIAO FAN !",
+          "translation": "شياو فان!",
+          "width": 91,
+          "x": 342,
+          "y": 2105
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26.66666666666667,
+          "symWidth": 32,
+          "text": "000",
+          "translation": "000",
+          "width": 35,
+          "x": 101,
+          "y": 2288
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 15.9,
+          "text": "AUNTIE ... !",
+          "translation": "يا عمتي...!",
+          "width": 158,
+          "x": 477,
+          "y": 2843
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 22,
+          "symWidth": 21.26380952380952,
+          "text": "WHAT ARE THESE HUGE THINGS ?",
+          "translation": "ما هذه الأجسام الضخمة؟",
+          "width": 197,
+          "x": 97,
+          "y": 2971
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 19.8,
+          "symWidth": 18.95873015873016,
+          "text": "DON'T  TELL ME  THEY'RE ALL  YOUR NEW  PET DRAGONS !?",
+          "translation": "لا تخبرني أنَّهم جميعًا تنانينك الجدد المدللين!؟",
+          "width": 180,
+          "x": 383,
+          "y": 3862
+        }
+      ],
+      "imgHeight": 4138,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 24,
+          "symWidth": 21.78240740740741,
+          "text": "\" THINGS \" ? HOW  RUDE , HUMAN !",
+          "translation": "\"أشياء\"؟ ما ألطفك يا بشر!",
+          "width": 179,
+          "x": 408,
+          "y": 266
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 20.16666666666667,
+          "symWidth": 19.65244708994709,
+          "text": "\" PET DRAGON \" ? SHE  DARES LOOK  DOWN ON  ME - I'LL EAT  HER !",
+          "translation": "\"تنين أليف\"؟ تجرؤ على ازدرائي - فسوف أفترسها!",
+          "width": 180,
+          "x": 55,
+          "y": 611
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 20.8,
+          "symWidth": 18.38151515151515,
+          "text": "NO ! AH ,  NO SHE'S  MY  AUNT , SHE'S  FAMILY , NOT  AN  ENEMY !",
+          "translation": "لا! آه، إنها عمّتي، هي من العائلة، ليست عدوة!",
+          "width": 234,
+          "x": 393,
+          "y": 998
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.9040404040404,
+          "text": "MY GOODNESS , THEY  CAN  ALL TALK !?",
+          "translation": "يا لها من عجيبةٍ، هل حقًا جميعهم ينطقون؟",
+          "width": 201,
+          "x": 264,
+          "y": 1762
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20.4,
+          "symWidth": 18.20737373737374,
+          "text": "SHHH - AUNTIE , DON'T  TALK NONSENSE , THEY'RE  NOT PET  DRAGONS ,",
+          "translation": "ششش - عمّتي، لا تفتئي هراءً، فهم ليسوا تنانين أليفة،",
+          "width": 223,
+          "x": 321,
+          "y": 2248
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.6,
+          "symWidth": 16.01241258741259,
+          "text": "THEY'RE  SUPER \" POWERFUL FRIENDS  I RESCUED  FROM ELSEWHERE !",
+          "translation": "إنهم أصدقاءً أقوياء للغاية أنقذتهم من أماكن أخرى!",
+          "width": 212,
+          "x": 88,
+          "y": 2420
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20.05882352941176,
+          "symWidth": 17.76470588235294,
+          "text": "XIAO  FAN , HONESTLY ,",
+          "translation": "شياو فان، بحقِّ الصدق،",
+          "width": 160,
+          "x": 154,
+          "y": 3377
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 16.2,
+          "symWidth": 16.17242424242424,
+          "text": "THE  FRIENDS YOU  BRING  BACK ARE  GETTING MORE  AND  MORE OUTRAGEOUS !",
+          "translation": "الأصدقاء الذين تحضُرهم أصبحوا أكثر غرابةً وفجاجةً!",
+          "width": 214,
+          "x": 65,
+          "y": 3556
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 20.25,
+          "symWidth": 17.75931013431013,
+          "text": "HEHE ,  THEY HAVEN'T  REALLY SEEN  HUMANS BEFORE ,",
+          "translation": "هاها، لم يرَ هؤلاء البشر من قبل حقًا.",
+          "width": 235,
+          "x": 399,
+          "y": 4403
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 19.03571428571428,
+          "symWidth": 18.81121482683983,
+          "text": "SO YOU'D BETTER BE MENTALLY PREPARED FOR GETTING ALONG WITH THEM .",
+          "translation": "لذا عليك أن تكون مستعدًا نفسيًا للتعايش معهم.",
+          "width": 225,
+          "x": 147,
+          "y": 4521
+        }
+      ],
+      "imgHeight": 4632,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "renderMode": "mask_only",
+          "symHeight": 19.57142857142857,
+          "symWidth": 18.66666666666667,
+          "text": "GETTING  ALONG WITH  THEM .",
+          "translation": "",
+          "width": 239,
+          "x": 139,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 20.025,
+          "symWidth": 18.225,
+          "text": "MOTHER , EVERYTHING HERE  IS BRIMMING WITH  LIFE ,",
+          "translation": "يا أمي، هنا يعجُّ المكانُ بالحياة.",
+          "width": 178,
+          "x": 319,
+          "y": 287
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.5679012345679,
+          "symWidth": 18.84928651595319,
+          "text": "I  CAN  FEEL THE  FATIGUE FROM  ALL  MY BATTLES FADING  AWAY .",
+          "translation": "أشعرُ بتلاشي التعب عن كلّ معاركي.",
+          "width": 209,
+          "x": 76,
+          "y": 414
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20.42307692307692,
+          "symWidth": 19.26923076923077,
+          "text": "YES .  BY DRAWING  IN ENERGY  HERE ,",
+          "translation": "نعم. بعَثرِ الطاقاتِ من هنا،",
+          "width": 208,
+          "x": 389,
+          "y": 1398
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 20.61764705882353,
+          "symWidth": 19.72058823529412,
+          "text": "I  WILL  SOON  BE ABLE  TO  NURTURE A  \" SEED  OF  LIFE \" AND  LET  THAT EXILED  DRAGON BE  REBORN .",
+          "translation": "سأتمكن قريبًا من رعاية \"بذرة الحياة\" وإحياءُ ذلك التنينِ المنفى.",
+          "width": 268,
+          "x": 142,
+          "y": 1574
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 19.84210526315789,
+          "symWidth": 18.44736842105263,
+          "text": "DRAGON TAMER ,  I'LL  BE BLUNT  ABOUT SOMETHING ,",
+          "translation": "أيها المتحكّم بالتنانين، سأكون صريحًا معك،",
+          "width": 215,
+          "x": 67,
+          "y": 2010
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 16.5421686746988,
+          "symWidth": 16.04819277108434,
+          "text": "YOU  BROUGHT US  TO  SUCH  A  RICH AND  PROSPEROUS PLACE  TO  LIVE , BECAUSE  YOU  WANT SOMETHING ... DON'T  YOU ?",
+          "translation": "أحضرتنا إلى موضعٍ ثريٍّ مزدهر لنعيش فيه، لأنك تطمح لشيء... أليس كذلك؟",
+          "width": 244,
+          "x": 417,
+          "y": 2486
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 19.5,
+          "symWidth": 17.83333333333333,
+          "text": "THAT'S RIGHT .",
+          "translation": "هذا صحيح.",
+          "width": 103,
+          "x": 427,
+          "y": 2888
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20.22727272727273,
+          "symWidth": 19.27272727272727,
+          "text": "I  WANT  YOU ALL  TO  STAY HERE ,",
+          "translation": "أريدُكم أن تبقوا جميعًا هنا،",
+          "width": 198,
+          "x": 120,
+          "y": 3471
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 20,
+          "symWidth": 18.39285714285714,
+          "text": "AND  HELP  ME GUARD  THIS TERRITORY .",
+          "translation": "وساعدوني في حراسة هذا الإقليم.",
+          "width": 192,
+          "x": 416,
+          "y": 4350
+        }
+      ],
+      "imgHeight": 4633,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 20.55555555555556,
+          "symWidth": 18.5,
+          "text": "SO  THAT'S HOW  IT  IS ...",
+          "translation": "فهذا هو الحال إذًا...",
+          "width": 163,
+          "x": 464,
+          "y": 253
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 19.68,
+          "symWidth": 18.38222222222222,
+          "text": "THEN  WE'LL STAY  UNTIL I  RETURN  TO MY  PEAK ,",
+          "translation": "حينها سنبقى حتى أبلغ ذروتي مجددًا،",
+          "width": 189,
+          "x": 42,
+          "y": 659
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.35526315789474,
+          "symWidth": 18.375,
+          "text": "AND  UNTIL THEN ,  WE  WILL PROTECT  THIS TERRITORY FOR  YOU .",
+          "translation": "وحتى ذلك الحين، سنحمي هذا الإقليم لأجلك.",
+          "width": 214,
+          "x": 254,
+          "y": 762
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.84375,
+          "symWidth": 17.47395833333334,
+          "text": "I  KNOW  I PROBABLY  CAN'T KEEP  YOU  HERE FOREVER ,",
+          "translation": "أدرك أني لا أستطيع أن أبقيك هنا إلى الأبد،",
+          "width": 234,
+          "x": 385,
+          "y": 2012
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.91304347826087,
+          "symWidth": 17.06939799331104,
+          "text": "FIVE  LEGENDARY DRAGONS  WON'T DEIGN  TO  STAY  IN ONE  PLACE INDEFINITELY .",
+          "translation": "فخمسة تنانين أسطورية لا تجلس على حالها في مكانٍ واحد بلا نهاية.",
+          "width": 271,
+          "x": 75,
+          "y": 2122
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 23,
+          "symWidth": 23.66666666666667,
+          "text": "水 漫畫",
+          "translation": "",
+          "width": 76,
+          "x": 605,
+          "y": 2129
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 17.83333333333333,
+          "text": "BUT ...",
+          "translation": "لكن...",
+          "width": 102,
+          "x": 234,
+          "y": 3183
+        }
+      ],
+      "imgHeight": 3415,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 22.54545454545455,
+          "symWidth": 21.19772727272727,
+          "text": "IF  I  WERE  TO I  GIVE  YOU  THIS , WOULD  YOU CHANGE  YOUR MIND ?",
+          "translation": "لو أعطيتك هذا، هل تغير رأيك؟",
+          "width": 262,
+          "x": 321,
+          "y": 287
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 12.41666666666667,
+          "text": "BLOODSTAINED  FLYING  DRAGON  SACRED  TREE  SEED  -  QUEST  ITEM",
+          "translation": "بذرة شجرة التنين الطائر المقدسة الملطخة بالدماء - عنصر المهمة",
+          "width": 593,
+          "x": 51,
+          "y": 1288
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 18,
+          "symWidth": 12.43820224719101,
+          "text": "PROOF  OF  SLAYING  THE  DEMON - DEVOURING  DRAGON  KING ,  MAW  OF THE  ABYSS .  HAND  THIS  SEED  OVER  TO  THE  ORIGINAL  OWNER  OF THE  FLYING  DRAGON  SACRED  TREE - LIFE  DRAGON  KING ,  ROOT  OF ALL  THINGS - AND  YOU  ARE  SURE  TO  EARN  HER  FAVOR .",
+          "translation": "دليل قتل ملك التنين الشرس، فم الهاوية. سلّم هذه البذرة إلى صاحبة شجرة التنين الطائر المقدسة الأصلية - ملكة التنين الحي، جذر الكائنات، لتنال رضاها بلا ريب.",
+          "width": 606,
+          "x": 46,
+          "y": 1342
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 15,
+          "symWidth": 13.41148325358852,
+          "text": "QUEST  NAME :  SEED  OF  THE FLYING  DRAGON  SACRED  TREE",
+          "translation": "اسم المهمة: بذرة شجرة التنين الطائر المقدسة",
+          "width": 310,
+          "x": 253,
+          "y": 1721
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 15,
+          "symWidth": 13.32023460410557,
+          "text": "QUEST  PROGRESS :  1/1  BLOODSTAINED FLYING  DRAGON  SACRED  TREE  SEED 0/1  DELIVERED  TO  THE  LIFE  DRAGON  KING",
+          "translation": "تقدم المهمة: ١/١ بذرة شجرة التنين الطائر المقدسة الملطخة بالدماء ٠/١ تم تسليمها إلى ملكة التنين الحي",
+          "width": 415,
+          "x": 200,
+          "y": 1787
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 20.25,
+          "symWidth": 18.94535024154589,
+          "text": "W - WHA .... ! ? YOU  KILLED  THE DEMON- DEVOURING DRAGON  KING !?",
+          "translation": "م- ماذا...؟ قتلت ملك التنين الشرس؟",
+          "width": 240,
+          "x": 321,
+          "y": 2186
+        }
+      ],
+      "imgHeight": 3416,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 20.6,
+          "symWidth": 19.52181818181818,
+          "text": "Y - YOU COMPLETED  THE HIDDEN  QUEST MOTHER  LEFT BEHIND !?",
+          "translation": "أ-أتممت المهمة الخفية التي تركتها الأم خلفها!؟",
+          "width": 243,
+          "x": 354,
+          "y": 285
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 18.6,
+          "symWidth": 17.27039627039627,
+          "text": "THIS  REALLY IS  THE  BLOOD OF  THE  DEMON- DEVOURING DRAGON  KING ...",
+          "translation": "هذه حقًا دماء ملك التنانين آكل الشياطين...",
+          "width": 215,
+          "x": 71,
+          "y": 517
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 16,
+          "symWidth": 15.68645833333333,
+          "text": "AFTER  THE  \" WAR OF  THE THREE DRAGONS \" ,  THE DEMON - DEVOURING DRAGON  KING WAS  GRAVELY WOUNDED ,",
+          "translation": "بعد \"حرب التنانين الثلاث\"، جُرِح ملك التنانين آكل الشياطين جرحًا بالغًا،",
+          "width": 236,
+          "x": 135,
+          "y": 1661
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 20.33333333333333,
+          "symWidth": 17.36666666666667,
+          "text": "AND  I FOUND  HER  IN DRAGONFALL VALLEY ...",
+          "translation": "ووجدتها في وادي سقوط التنانين...",
+          "width": 197,
+          "x": 384,
+          "y": 1791
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 57,
+          "symWidth": 57.5,
+          "text": "拿起",
+          "translation": "",
+          "width": 113,
+          "x": 12,
+          "y": 2130
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 19.5,
+          "symWidth": 16.90277777777778,
+          "text": "SO  I  SEIZED THE  CHANCE AND  KILLED HER .",
+          "translation": "فكانت فرصتي فانتهزتها وقتلته.",
+          "width": 181,
+          "x": 381,
+          "y": 2692
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 22.36,
+          "symWidth": 13.36,
+          "text": "READ FIRST AT",
+          "translation": "اقرأ أولًا على",
+          "width": 196,
+          "x": 459,
+          "y": 3241
+        }
+      ],
+      "imgHeight": 3415,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 19.83333333333333,
+          "symWidth": 18.46965488215488,
+          "text": "..GOOD  THING I  STOPPED  THE DEMON- DEVOURING DRAGON  KING EARLIER ,",
+          "translation": "لقد صَدَقَني الحظ حين أوقفتُ ملك التنين الآكل للشياطين في وقت مبكر.",
+          "width": 228,
+          "x": 129,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 17.85714285714286,
+          "symWidth": 15.71604823747681,
+          "text": "I  ABSOLUTELY COULDN'T  LET  THE LIFE  DRAGON  KING FIND  OUT  THAT  THE DEMON - DEVOURING DRAGON  KING  IS STILL  ALIVE .",
+          "translation": "لم يكن لي أن أسمح لملك التنين الحي أن يعلم أن ملك التنين الآكل للشياطين لا يزال على قيد الحياة.",
+          "width": 250,
+          "x": 146,
+          "y": 1303
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 20,
+          "symWidth": 19.28571428571428,
+          "text": "I  HAD ALREADY GIVEN  UP HOPE ,",
+          "translation": "قد فقدتُ الأمل منذ زمن بعيد.",
+          "width": 138,
+          "x": 338,
+          "y": 1933
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 19.66666666666667,
+          "symWidth": 18.06367243867244,
+          "text": "I  NEVER IMAGINED SOMEONE COULD  REALLY KILL HER ...",
+          "translation": "لم أكن لأتصور أن بإمكان أحدٍ أن يقتلها حقّاً...",
+          "width": 216,
+          "x": 91,
+          "y": 2059
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 16,
+          "symWidth": 13.60049833887043,
+          "text": "CURRENT  PROGRESS :  1/1  BLOODSTAINED  FLYING  DRAGON SACRED  TREE  SEED  DELIVERED  TO  THE  LIFE  DRAGON  KING",
+          "translation": "التقدم الحالي: ١/١ بذرة شجرة التنين المقدسة الملطخة بالدماء قد سُلِمت إلى ملك التنين الحي.",
+          "width": 601,
+          "x": 44,
+          "y": 2638
+        },
+        {
+          "angle": 0,
+          "height": 203,
+          "symHeight": 20.05,
+          "symWidth": 19.575935828877,
+          "text": "DRAGON TAMER ,  YOU  HAVE AVENGED MY  CHILDREN WHO  DIED  TRAGICALLY ON  THE  FLYING DRAGON  SACRED TREE !",
+          "translation": "أيها مترويض التنين، لقد انتقمت من أجل أولادي الذين قضوا مآسياً على شجرة التنين المقدسة الطائرة!",
+          "width": 342,
+          "x": 305,
+          "y": 2878
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 19.6,
+          "symWidth": 19.24825396825397,
+          "text": "YOU  NOT ONLY  INTEND TO  SAVE  THE EXILED DRAGON ,",
+          "translation": "ليس فقط تنوي خلاص التنين المنفى،",
+          "width": 196,
+          "x": 69,
+          "y": 3473
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20.29545454545455,
+          "symWidth": 18.07548701298701,
+          "text": "YOU HAVE  ALSO FULFILLED  MY ANCIENT VENGEANCE ../",
+          "translation": "بل قد حققت انتقامي القديم منذ فجر الزمن...",
+          "width": 194,
+          "x": 329,
+          "y": 3508
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 16.2,
+          "symWidth": 15.97144522144522,
+          "text": "WITH  SUCH ACHIEVEMENTS , THERE'S  NO  WAY IT  WAS  JUST  TO MAKE  US  STAY ,",
+          "translation": "بهذه الإنجازات، لا يمكن أن يكون الأمر لمجرد إجبارنا على البقاء،",
+          "width": 204,
+          "x": 436,
+          "y": 3893
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 19.83333333333334,
+          "symWidth": 19.37380952380952,
+          "text": "TELL ME , WHAT IS IT THAT YOU WANT ?",
+          "translation": "فأخبرني، ماذا تريد حقًا؟",
+          "width": 160,
+          "x": 241,
+          "y": 4009
+        }
+      ],
+      "imgHeight": 4094,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "renderMode": "mask_only",
+          "symHeight": 20,
+          "symWidth": 20.2,
+          "text": "WANT ?",
+          "translation": "",
+          "width": 99,
+          "x": 272,
+          "y": 5
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 17.8,
+          "symWidth": 16.90763125763126,
+          "text": "AS  LONG  AS IT'S  SOMETHING WE  CAN  GIVE OR  DO ,  JUST SAY  IT !!",
+          "translation": "طالما أنه في وسعنا العطاء أو التنفيذ، فقط قل!",
+          "width": 207,
+          "x": 298,
+          "y": 319
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 20.6,
+          "symWidth": 19.74250749250749,
+          "text": "YOU'VE  REMOVED THE  THORN  IN MOTHER'S  HEART ; WE  MUST  REPAY YOU ,",
+          "translation": "لقد أزلت الشوكة من قلب والدتنا؛ علينا أن نرد لك الجميل،",
+          "width": 264,
+          "x": 68,
+          "y": 915
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 20,
+          "symWidth": 19.62103174603175,
+          "text": "THIS  IS WHAT  YOU DESERVE .",
+          "translation": "هذا حقك الذي تستحقه.",
+          "width": 153,
+          "x": 216,
+          "y": 1169
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 20,
+          "symWidth": 19.01515151515152,
+          "text": "NOTHING  ELSE- I  JUST  WANT YOU  TO  STAY  IN MY  TERRITORY .",
+          "translation": "لا شيء غير ذلك ـ أريد فقط أن تبقى في أرضي.",
+          "width": 242,
+          "x": 337,
+          "y": 1728
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 11.5,
+          "text": "...  !",
+          "translation": "...!",
+          "width": 69,
+          "x": 463,
+          "y": 3165
+        }
+      ],
+      "imgHeight": 4095,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.30239898989899,
+          "text": "НАНАНА ... YOU  ARE  A FASCINATING HUMAN !",
+          "translation": "نانانا... أنت إنسانٌ فاتنٌ بشكلٍ لا يوصف!",
+          "width": 194,
+          "x": 179,
+          "y": 642
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 20,
+          "symWidth": 20.21875,
+          "text": "AND  A  VERY CLEVER  ONE AT  THAT .",
+          "translation": "وهو ذلك الذكي البارع حقًا.",
+          "width": 182,
+          "x": 377,
+          "y": 1147
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 24.25,
+          "symWidth": 18,
+          "text": "ADDR",
+          "translation": "عنوان",
+          "width": 19,
+          "x": 175,
+          "y": 2195
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 29.25,
+          "symWidth": 27.5,
+          "text": "ADEL",
+          "translation": "عادل",
+          "width": 42,
+          "x": 514,
+          "y": 2529
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 16.16666666666667,
+          "symWidth": 15.3287037037037,
+          "text": "I  AM  A  DRAGON TAMER , AFTER  ALL ; THIS  PROFESSION  IS MEANT  TO  BEFRIEND DRAGONKIND .",
+          "translation": "فَلَستُ إلَّا مروضَ تنانينٍ؛\nوقد وُضِع هذا الفنُّ لتأليف القلوب مع التنانين.",
+          "width": 255,
+          "x": 62,
+          "y": 3080
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 18,
+          "symWidth": 17.28402396214896,
+          "text": "HUMANS  ALL CRAVE THE  POWER OF  DRAGONS ,  BUT THERE  ARE  WAYS  TO GAIN  IT  OTHER  THAN SUBJUGATION  OR THEFT .",
+          "translation": "جميع البشر يتوقون إلى قوة التنانين، ولكن هناك طرق لاكتسابها غير الخضوع أو السرقة.",
+          "width": 282,
+          "x": 348,
+          "y": 3171
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.8,
+          "text": "BY  BECOMING FRIENDS ,  AS COMPANIONS ,",
+          "translation": "بأن نرتبط بصداقةٍ ورفقةٍ،",
+          "width": 207,
+          "x": 72,
+          "y": 4113
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.8,
+          "symWidth": 19.94161616161616,
+          "text": "THE  BOND  WE SHARE  ALLOWS ME  TO  BORROW YOUR  STRENGTH ANYWAY .",
+          "translation": "الرابطة التي تجمعنا تتيح لي أن أستل قوتك مهما كان الأمر.",
+          "width": 250,
+          "x": 337,
+          "y": 4180
+        }
+      ],
+      "imgHeight": 4367,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 22.33333333333333,
+          "symWidth": 21.14880952380952,
+          "text": "..YOU'VE HELPED  US SO  MUCH ,",
+          "translation": "لقد ساعدتنا كثيرًا،",
+          "width": 182,
+          "x": 112,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 14.08,
+          "text": "READ FIRST AT",
+          "translation": "اقرأ أولًا في",
+          "width": 194,
+          "x": 49,
+          "y": 1011
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 21.67741935483871,
+          "symWidth": 20.70967741935484,
+          "text": "WE  TRULY  HAVE NO  REASON  TO REFUSE  YOU .",
+          "translation": "لا مبرر لنا لرفضك.",
+          "width": 232,
+          "x": 397,
+          "y": 1459
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 16.42553191489362,
+          "symWidth": 13.63829787234043,
+          "text": "SEED  OF  THE  FLYING  DRAGON  SACRED TREE :  QUEST  COMPLETED !",
+          "translation": "بذرة الشجرة المقدسة للتنين الطائر: المهمة اكتملت!",
+          "width": 388,
+          "x": 37,
+          "y": 2012
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 15,
+          "symWidth": 13.61111111111111,
+          "text": "THE  LIFE  DRAGON  KING  AND  THE ROOTLESS  GUARDIAN  DRAGONS  HAVE SETTLED  IN  THE  TERRITORY !",
+          "translation": "ملك تنانين الحياة وتنانين الحماية اللاجذرية استقروا في الأراضي!",
+          "width": 391,
+          "x": 247,
+          "y": 2273
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 16,
+          "symWidth": 13.77832512315271,
+          "text": "TAKING  ROOT :  THE  LIFE  DRAGON  KING'S  ROOTS  BURROW DEEP  INTO  THE  GROUND  TO  ANCHOR  HERSELF .  DURING  THIS TIME  SHE  FALLS  INTO  SLUMBER ,  CANNOT  MOVE ,  AND AUTOMATICALLY  ENTERS  AN  ABSORPTION  STATE , CONTINUOUSLY  DRAWING  IN  ENERGY  TO  STORE  LIFE  FORCE .",
+          "translation": "وضع الجذور: جذور ملكة تنانين الحياة تغوص عميقًا لتثبت حضورها. خلالها تغط في سبات، لا تقدر على الحركة، وتدخل حالة امتصاص تلقائيًا، مستمرة في استقطاب الطاقة لتخزين قوة الحياة.",
+          "width": 610,
+          "x": 48,
+          "y": 2755
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 22.27777777777778,
+          "symWidth": 19.55555555555556,
+          "text": "FOR THE  TIME BEING ...",
+          "translation": "في الوقت الراهن...",
+          "width": 153,
+          "x": 130,
+          "y": 3220
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20,
+          "symWidth": 15.96551724137931,
+          "text": "LET'S ...  GET ALONG ... HAPPILY ...",
+          "translation": "فلن... نتحاب... بسلام...",
+          "width": 169,
+          "x": 451,
+          "y": 3296
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 86,
+          "symWidth": 80,
+          "text": "沉睡",
+          "translation": "الغَفْو",
+          "width": 180,
+          "x": 8,
+          "y": 3802
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17.58333333333333,
+          "symWidth": 16.66666666666667,
+          "text": "TAKING  ROOT :  ABSORPTION STATE  ACTIVATED .",
+          "translation": "انطلاق الجذور: حالة الامتصاص فعالة.",
+          "width": 370,
+          "x": 153,
+          "y": 4039
+        }
+      ],
+      "imgHeight": 4369,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 16.36458333333333,
+          "symWidth": 15.84412525879917,
+          "text": "I  MANAGED  TO KEEP  THE  LIFE DRAGON  KING  AND FOUR  GIANT DRAGONS  WITHOUT RELYING  ON  ANY CONTRACT !",
+          "translation": "تمكنت من الاحتفاظ بملك التنين الحياة وأربعة التنانين العظيمة دون الحاجة إلى أي عقد!",
+          "width": 236,
+          "x": 343,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 17.82926829268293,
+          "symWidth": 16.91666666666666,
+          "text": "WHO  WOULD  HAVE THOUGHT  THAT  THE HIDDEN  QUEST  XIAO FEI  PICKED  UP  BACK THEN  WOULD  LET  ME GET  FIVE  DRAGONS ALL  AT  ONCE !",
+          "translation": "من الذي كان يظن أن المهمة الخفية التي التقطها شياو فاي حينها ستُمكّنني من الحصول على خمسة تنانين دفعة واحدة؟",
+          "width": 255,
+          "x": 113,
+          "y": 1048
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 22,
+          "symWidth": 18.71428571428572,
+          "text": "EH ?  I JUST  GOT HEALED ... ?",
+          "translation": "هل؟ لقد تعافيت للتو؟",
+          "width": 173,
+          "x": 390,
+          "y": 1699
+        },
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 17.92972972972973,
+          "symWidth": 16.50716820716821,
+          "text": "AFTER  MOTHER TAKES  ROOT ,  SHE WILL  FALL  ASLEEP , CONTINUOUSLY ABSORB  ENERGY , AND  AT  THE  SAME TIME  RELEASE  A LIFE  AURA .",
+          "translation": "بعد أن تأصلت الأم، ستغفو، تمتص الطاقة بلا انقطاع، وفي الوقت ذاته تنبث هالة حياة.",
+          "width": 240,
+          "x": 388,
+          "y": 3191
+        }
+      ],
+      "imgHeight": 3568,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 30,
+          "symWidth": 22.5,
+          "text": "ZE",
+          "translation": "زي",
+          "width": 30,
+          "x": 609,
+          "y": 180
+        },
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 19.88050314465409,
+          "symWidth": 18.07563505676713,
+          "text": "THE  LIFE  AURA HAS  MANY EFFECTS :  IT  CAN HEAL  AND  CAN ALSO  GRANT SOME  EXPERIENCE POINTS .",
+          "translation": "لهيبة الحياة آثارٌ جمة: تشفي، وتمنح أحيانًا حِصَصًا من الخبرة.",
+          "width": 274,
+          "x": 64,
+          "y": 348
+        },
+        {
+          "angle": 0,
+          "height": 173,
+          "symHeight": 139.5,
+          "symWidth": 105.5,
+          "text": "17",
+          "translation": "١٧",
+          "width": 184,
+          "x": 128,
+          "y": 679
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 20,
+          "symWidth": 16.66666666666667,
+          "text": "EXPERIENCE POINTS !?",
+          "translation": "نقاط خبرة!؟",
+          "width": 176,
+          "x": 408,
+          "y": 1103
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.8,
+          "symWidth": 18.93333333333333,
+          "text": "YOU'RE  SAYING WE  CAN  LEVEL  UP JUST  BY  STAYING NEAR  THE  LIFE DRAGON  KING ?",
+          "translation": "هل تقول إننا نرتقي درجات فقط بقربنا من ملك تنين الحياة؟",
+          "width": 266,
+          "x": 67,
+          "y": 1778
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 17.55882352941176,
+          "symWidth": 16.46241830065359,
+          "text": "THAT'S  RIGHT , BUT  MOTHER'S LIFE  FORCE  IS VERY  WEAK RIGHT  NOW ,",
+          "translation": "نعم، لكن قوة الحياة في الأم ضعيفة جدًا الآن،",
+          "width": 186,
+          "x": 401,
+          "y": 2276
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 18.26451612903226,
+          "symWidth": 16.7,
+          "text": "SO  IN  ABOUT  A MONTH  YOU  CAN SEVEN  OR  EIGHT LEVELS  AT PROBABLY GAIN MOST .",
+          "translation": "لذا بعد نحو شهر قد تكتسب ست أو سبع درجات كأقصى تقدير.",
+          "width": 216,
+          "x": 154,
+          "y": 2404
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 19.5,
+          "symWidth": 17.79513888888889,
+          "text": "THAT'S STILL AMAZING ! IT'S BASICALLY LEVELING UP WHILE LYING DOWN !",
+          "translation": "هذا مذهل بحق! كأننا نرتقي درجات ونحن مستلقون!",
+          "width": 215,
+          "x": 72,
+          "y": 3456
+        }
+      ],
+      "imgHeight": 3568,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "renderMode": "mask_only",
+          "symHeight": 19.5,
+          "symWidth": 18.5,
+          "text": "WHILE  LYING DOWN !",
+          "translation": "",
+          "width": 176,
+          "x": 91,
+          "y": 12
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 17.08064516129032,
+          "symWidth": 15.73003560254612,
+          "text": "EVERYONE  CAN JUST  RELAX  AND PLAY  AT  THE  HOT- SPRING  BEACH ,  SOAK IN  THE  SPRINGS  AND ENJOY  THE  SEA  VIEW WHILE  LEVELING  UP ON  THE  SIDE ,",
+          "translation": "ليكن للجميع الاسترخاء والمرح على شاطئ الينابيع الساخنة،\nاغتسلوا بالينابيع وتمتعوا بمشهد البحر بينما ترتقون قواكم بجانبهم.",
+          "width": 275,
+          "x": 345,
+          "y": 441
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 19.66666666666667,
+          "symWidth": 19.18518518518518,
+          "text": "THAT'S SOMETHING COUNTLESS PEOPLE  CAN ONLY  DREAM OF !",
+          "translation": "إنه ما يظلّ حلماً بعيد المنال لعدد لا يُحصى من الناس!",
+          "width": 190,
+          "x": 84,
+          "y": 1331
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 18.5,
+          "symWidth": 16.82925685425685,
+          "text": "IT'S  A  BIT  SLOW FOR  CLASS- CHANGERS ,  BUT  IT WILL  BE  FASTER FOR  THE  FEROCIOUS BEASTS  ON  THE ISLAND .",
+          "translation": "قد يكون ذلك بطيئاً قليلاً لمن يغيرون أصنافهم،\nلكن الوحوش الشرسة في الجزيرة ستلاحق التطور بسرعة.",
+          "width": 273,
+          "x": 282,
+          "y": 1934
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 20.4,
+          "symWidth": 18.77777777777778,
+          "text": "THE  ONES HERE  ARE ALL  AROUND LEVEL  90 , RIGHT ?",
+          "translation": "إن جميع الموجودين هنا على مستوى تسعين، أليس كذلك؟",
+          "width": 182,
+          "x": 65,
+          "y": 2471
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 19.75,
+          "symWidth": 19.11363636363636,
+          "text": "MOTHER  WILL SOON  BE  ABLE TO  RAISE  THEM TO  LEVEL  100 !",
+          "translation": "ستتمكن الأم قريباً من رفع مستواهم إلى مئة!",
+          "width": 227,
+          "x": 189,
+          "y": 2681
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 19.75,
+          "symWidth": 17.97222222222222,
+          "text": "HUH !?  EVEN THE  BEASTS CAN  LEVEL UP ?",
+          "translation": "ها؟ هل حتى الوحوش تستطيع الارتقاء؟",
+          "width": 183,
+          "x": 91,
+          "y": 3204
+        }
+      ],
+      "imgHeight": 3569,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 34.75,
+          "text": "HEY !",
+          "translation": "مهلاً!",
+          "width": 125,
+          "x": 447,
+          "y": 154
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 20.85714285714286,
+          "symWidth": 19.52545787545787,
+          "text": "I'VE  FOUND  THIS WATER  IS  NO ORDINARY STUFF- IT  CAN  BOOST QUITE  A  FEW  OF MY  STATS !",
+          "translation": "لقد اكتشفتُ أن هذا الماء ليس عادياً،\nفهو يعزز عدداً من قدراتي!",
+          "width": 266,
+          "x": 381,
+          "y": 1000
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 18,
+          "symWidth": 17.00625,
+          "text": "AHH ,  WHAT ARE  YOU  DOING ! GET  OUT  OF THERE ,  NOW !",
+          "translation": "آه، ماذا تفعل؟ اخرُج من هناك فوراً!",
+          "width": 230,
+          "x": 66,
+          "y": 1122
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13.83333333333333,
+          "text": "GRR ...",
+          "translation": "غـرغـرة...",
+          "width": 80,
+          "x": 45,
+          "y": 1806
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 67,
+          "symWidth": 63.5,
+          "text": "咕嘟",
+          "translation": "*رشفة*",
+          "width": 119,
+          "x": 553,
+          "y": 1987
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 127,
+          "symWidth": 117,
+          "text": "咕嘟",
+          "translation": "*رشفة*",
+          "width": 228,
+          "x": 427,
+          "y": 2212
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 18,
+          "symWidth": 17.44575794575795,
+          "text": "WEREN'T  YOU  THE ONE  WHO  SAID  YOU CAN'T  HANDLE WATER !  YOU ALMOST  BOILED  MY HOT  SPRING  DRY !",
+          "translation": "ألم تكن أنت من قال إنك لا تتحمّل الماء؟! لقد كدتَ تجفف ينبوع حراري خاص بي!",
+          "width": 267,
+          "x": 301,
+          "y": 2942
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 52.4,
+          "symWidth": 36.6,
+          "text": "UN  MAK",
+          "translation": "ون ماك",
+          "width": 123,
+          "x": 545,
+          "y": 3506
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20.9,
+          "symWidth": 18.6735347985348,
+          "text": "TSK , AND YOU WERE JUST TALKING ABOUT FRIENDS AND COMPANIONS . SO STINGY ...",
+          "translation": "تسك، وقد كنت تتحدث عن الأصدقاء والرفاق،\nيا للبخل الذي تنضح به...",
+          "width": 236,
+          "x": 364,
+          "y": 3713
+        }
+      ],
+      "imgHeight": 3830,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "renderMode": "mask_only",
+          "symHeight": 21,
+          "symWidth": 18.02564102564103,
+          "text": "COMPANIONS .  SO STINGY ...",
+          "translation": "",
+          "width": 261,
+          "x": 350,
+          "y": 8
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 27.5,
+          "symWidth": 19,
+          "text": "... HM ?",
+          "translation": "... هممم؟",
+          "width": 110,
+          "x": 446,
+          "y": 1170
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20.2,
+          "symWidth": 17.88588023088023,
+          "text": "THIS  IS  THE SEED  OF  LIFE THAT  WILL SAVE  THE  STAR DRAGON !",
+          "translation": "هذه بذرة الحياة التي سترمم تنين النجوم!",
+          "width": 236,
+          "x": 122,
+          "y": 1639
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.75,
+          "symWidth": 13.78073467230444,
+          "text": "SEED  OF  LIFE  PHASE  1  LEGENDARY  QUALITY NURTURED  BY  THE  LIFE  DRAGON  KING ;  WHEN CONSUMABLE LIFE  ESSENCE USED  IN  THIS  PHASE ,  IT  CAN  RESTORE  A  LIFE  TO  REBIRTH .",
+          "translation": "بذرة الحياة، المرحلة الأولى\nذات الجودة الأسطورية، تحت رعاية ملك التنين الحي؛\nعند استعمال جوهر الحياة القابل للاستهلاك في هذه المرحلة، يمكن إعادة الحياة إلى الميلاد من جديد.",
+          "width": 594,
+          "x": 53,
+          "y": 2465
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13.27272727272727,
+          "text": "READ  FIRST  AT",
+          "translation": "اقرأ أولاً في",
+          "width": 140,
+          "x": 482,
+          "y": 2833
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 21.5,
+          "symWidth": 19.47045454545454,
+          "text": "THE  LIFE DRAGON  KING SAID  SHE NEEDED  TIME ,",
+          "translation": "قال ملك التنين الحي إنها بحاجة إلى وقت،",
+          "width": 232,
+          "x": 346,
+          "y": 3113
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 19.33333333333333,
+          "symWidth": 18.09623015873015,
+          "text": "SO  IT  TURNS OUT  SHE  HAD TO  ABSORB ENERGY  BEFORE IT  COULD FORM ...",
+          "translation": "لذا اتضح أنها كانت ملزمة بامتصاص الطاقة قبل أن تتمكن من التكوين...",
+          "width": 243,
+          "x": 121,
+          "y": 3282
+        }
+      ],
+      "imgHeight": 3830,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 21.5,
+          "symWidth": 21.93181818181818,
+          "text": "DRAGON TAMER ,  WAIT !",
+          "translation": "أيها مُروّض التنين، انتظر!",
+          "width": 225,
+          "x": 337,
+          "y": 974
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 38.75,
+          "symWidth": 50,
+          "text": "0000",
+          "translation": "٠٠٠٠",
+          "width": 73,
+          "x": 232,
+          "y": 1198
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 20.2,
+          "symWidth": 20.21666666666667,
+          "text": "MOTHER TRUSTS YOU , AND  SO  DO WE ,",
+          "translation": "الأم تثق بك، ونحن كذلك.",
+          "width": 195,
+          "x": 82,
+          "y": 2954
+        },
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 22.71428571428572,
+          "symWidth": 21.04165358451073,
+          "text": "BUT  REGARDING THE  SEED ,  OF  LIFE WE  MUST  LAY DOWN  SOME  RULES ON  MOTHER'S BEHALF  IN ADVANCE .",
+          "translation": "لكن فيما يخص بذرة الحياة، يجب أن نضع بعض القواعد نيابةً عن الأم سلفًا.",
+          "width": 311,
+          "x": 162,
+          "y": 3224
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 21.07142857142857,
+          "text": "visit  and  read  at",
+          "translation": "زيارة وقراءة على",
+          "width": 289,
+          "x": 325,
+          "y": 3651
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 19.14285714285714,
+          "text": "for  the  fastest  releases",
+          "translation": "لأسرع الإصدارات",
+          "width": 398,
+          "x": 270,
+          "y": 3753
+        }
+      ],
+      "imgHeight": 3831,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

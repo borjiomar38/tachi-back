@@ -1,0 +1,397 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0148",
+  "jobId": "fixture-job-0148",
+  "licenseId": "fixture-license-0148",
+  "pageCount": 19,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 112,
+          "symWidth": 124.3,
+          "text": "我 被 预言 将会 毁灭 世界",
+          "translation": "I am prophesied to destroy the world",
+          "width": 1331,
+          "x": 142,
+          "y": 425
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 111,
+          "symWidth": 123.4444444444444,
+          "text": "开局 受困 神秘 禁闭 室",
+          "translation": "Trapped in a mysterious confinement chamber at the start",
+          "width": 1205,
+          "x": 196,
+          "y": 2094
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 59,
+          "symWidth": 67.25,
+          "text": "腾讯 动漫",
+          "translation": "Tencent Animation",
+          "width": 239,
+          "x": 1331,
+          "y": 2776
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 110.7,
+          "symWidth": 123.5,
+          "text": "异 能 觉醒 创建 人物 角色",
+          "translation": "Awakening of powers, creating character roles",
+          "width": 1338,
+          "x": 135,
+          "y": 183
+        },
+        {
+          "angle": 0,
+          "height": 256,
+          "symHeight": 210,
+          "symWidth": 217,
+          "text": "D4",
+          "translation": "D4",
+          "width": 341,
+          "x": 1055,
+          "y": 956
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 111,
+          "symWidth": 127.8,
+          "text": "无数 分身 替 我 游戏 人间",
+          "translation": "Countless avatars play the mortal world for me",
+          "width": 1337,
+          "x": 145,
+          "y": 2348
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 59.75,
+          "symWidth": 66,
+          "text": "腾讯 动漫",
+          "translation": "Tencent Animation",
+          "width": 231,
+          "x": 1335,
+          "y": 2774
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 114,
+          "symWidth": 121.25,
+          "text": "化身 个个 独自 成长",
+          "translation": "Each incarnation grows on its own",
+          "width": 1070,
+          "x": 258,
+          "y": 2020
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 88.5,
+          "symWidth": 85.5,
+          "text": "00",
+          "translation": "00",
+          "width": 110,
+          "x": 980,
+          "y": 1767
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 107,
+          "symWidth": 102.4,
+          "text": "全都 成为 最终 8055",
+          "translation": "All destined to become the ultimate 8055",
+          "width": 1143,
+          "x": 249,
+          "y": 2319
+        }
+      ],
+      "imgHeight": 3095,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 102,
+          "symWidth": 88,
+          "text": "出逃 , 求生 , 还是 复仇 ?",
+          "translation": "Escape, survive, or seek revenge?",
+          "width": 1251,
+          "x": 182,
+          "y": 153
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 110,
+          "symWidth": 121.8,
+          "text": "这 是 个 问题",
+          "translation": "That is the question",
+          "width": 663,
+          "x": 351,
+          "y": 1450
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 471,
+          "symHeight": 275,
+          "symWidth": 285,
+          "text": "鸡蛋",
+          "translation": "Egg",
+          "width": 394,
+          "x": 52,
+          "y": 1515
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 98,
+          "symWidth": 93.5,
+          "text": "罢了 , 我 还是 称霸 世界 吧 !",
+          "translation": "Enough, I shall conquer the world instead!",
+          "width": 1349,
+          "x": 124,
+          "y": 1641
+        }
+      ],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [],
+      "imgHeight": 2857,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 92,
+          "symWidth": 82.625,
+          "text": "《 我 的 化身 正在 成为 最终 8055 》",
+          "translation": "\"My Avatar Is Becoming the Ultimate 8055\"",
+          "width": 1482,
+          "x": 57,
+          "y": 224
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 95,
+          "symWidth": 75.14285714285714,
+          "text": "5.  1 日 至 5.  5 日 上 线 5 连 更",
+          "translation": "5.1 to 5.5: Five consecutive updates online",
+          "width": 1305,
+          "x": 148,
+          "y": 495
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 98,
+          "symWidth": 110.5,
+          "text": "期待 您 的 关注",
+          "translation": "Looking forward to your support",
+          "width": 718,
+          "x": 439,
+          "y": 636
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 65.25,
+          "text": "腾讯 动漫",
+          "translation": "Tencent Animation",
+          "width": 218,
+          "x": 1351,
+          "y": 2309
+        }
+      ],
+      "imgHeight": 2391,
+      "imgWidth": 1600,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

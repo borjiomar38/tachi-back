@@ -1,0 +1,2380 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0025",
+  "jobId": "fixture-job-0025",
+  "licenseId": "fixture-license-0025",
+  "pageCount": 46,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "013__003.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "014__003.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "015__003.jpg",
+    "016__001.jpg",
+    "016__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 405,
+          "symHeight": 213.8,
+          "symWidth": 232.8,
+          "text": "VIN / O",
+          "translation": "فين / أو",
+          "width": 391,
+          "x": 7,
+          "y": 427
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 21.5,
+          "symWidth": 17.55208333333334,
+          "text": "WHY ... ARE YOU ALL UPSIDE DOWN AND HAVE THAT LOOK ON YOUR FACES ?",
+          "translation": "لماذا... أنتم مقلوبو الرأس وتبدو وجوهكم هكذا؟",
+          "width": 395,
+          "x": 152,
+          "y": 3339
+        }
+      ],
+      "imgHeight": 3369,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "renderMode": "mask_only",
+          "symHeight": 21,
+          "symWidth": 18.4375,
+          "text": "LOOK  ON  YOUR  FACES ?",
+          "translation": "",
+          "width": 319,
+          "x": 189,
+          "y": 32
+        }
+      ],
+      "imgHeight": 3370,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 21.57142857142857,
+          "text": "... HUH ?",
+          "translation": "... ها؟",
+          "width": 156,
+          "x": 269,
+          "y": 1395
+        }
+      ],
+      "imgHeight": 3369,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 18.5,
+          "text": "MISSION >",
+          "translation": "المهمة >",
+          "width": 129,
+          "x": 226,
+          "y": 339
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 23.625,
+          "symWidth": 14.95833333333333,
+          "text": "SURVIVE  69  DAYS IN  THE  RUINS !",
+          "translation": "النجاة 69 يوماً في الأنقاض!",
+          "width": 194,
+          "x": 189,
+          "y": 391
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 33,
+          "symWidth": 18.03654970760234,
+          "text": "ESCAPE  FROM  THE S - RANK  MONSTER ,  THE  \" BLOOD WATER  PLANTAIN  LILY \" !",
+          "translation": "الهروب من وحش المرتبة-س، \"زنبق الدم النباتي\"!",
+          "width": 392,
+          "x": 159,
+          "y": 493
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 29.46153846153846,
+          "symWidth": 20.92307692307692,
+          "text": "TH - THE RANK ...",
+          "translation": "مَرْتَبَة ال...",
+          "width": 139,
+          "x": 280,
+          "y": 1894
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 10,
+          "symWidth": 8.666666666666666,
+          "text": "211",
+          "translation": "٢١١",
+          "width": 19,
+          "x": 34,
+          "y": 1993
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 22.66666666666667,
+          "symWidth": 21,
+          "text": "800",
+          "translation": "٨٠٠",
+          "width": 32,
+          "x": 20,
+          "y": 2541
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 34.5,
+          "symWidth": 22.61111111111111,
+          "text": "IT'S  AN ... S - RANK ?!",
+          "translation": "إنه... وحش من المرتبة-س؟!",
+          "width": 215,
+          "x": 241,
+          "y": 2826
+        }
+      ],
+      "imgHeight": 3370,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 204,
+          "symHeight": 150,
+          "symWidth": 149,
+          "text": "XO",
+          "translation": "إكس أو",
+          "width": 205,
+          "x": 251,
+          "y": 399
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 64,
+          "symWidth": 31.5,
+          "text": "? !",
+          "translation": "؟!",
+          "width": 59,
+          "x": 310,
+          "y": 1280
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 48.44444444444444,
+          "symWidth": 25.33888888888889,
+          "text": "HELLO ,  ALL SURVIVORS .",
+          "translation": "مرحبًا، يا من نجوتم.",
+          "width": 236,
+          "x": 231,
+          "y": 2002
+        },
+        {
+          "angle": 0,
+          "height": 421,
+          "symHeight": 408.5,
+          "symWidth": 275.5,
+          "text": "44",
+          "translation": "٤٤",
+          "width": 400,
+          "x": 156,
+          "y": 2922
+        }
+      ],
+      "imgHeight": 3370,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 26.66666666666667,
+          "symWidth": 15.75925925925926,
+          "text": "HERE  ENTERS THE  UNDERGROUND LEVEL  3'S  CUTE  FAIRY ,",
+          "translation": "ها هي تدخل، الجنية الظريفة من المستوي الثالث تحت الأرض،",
+          "width": 254,
+          "x": 119,
+          "y": 1115
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 87.83333333333333,
+          "symWidth": 43.66666666666666,
+          "text": "VENUS .",
+          "translation": "فينوس.",
+          "width": 248,
+          "x": 276,
+          "y": 1359
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 24.5,
+          "symWidth": 18.25240384615385,
+          "text": "TH - THAT  DAMNED FAIRY  APPEARED ...",
+          "translation": "ت- تلك الجنية اللعينة ظهرت...",
+          "width": 284,
+          "x": 117,
+          "y": 2105
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 24,
+          "symWidth": 17.13068181818182,
+          "text": "IT  SHOWED UP  AGAIN ... !",
+          "translation": "لقد عاودت الظهور...!",
+          "width": 190,
+          "x": 364,
+          "y": 2830
+        }
+      ],
+      "imgHeight": 3371,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 27.5,
+          "symWidth": 14.1336032388664,
+          "text": "THIS  MISSION  IS A  \" SURVIVAL  MISSION \" .",
+          "translation": "هذه المهمة \"مهمة بقاء\".",
+          "width": 277,
+          "x": 106,
+          "y": 213
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 29.66666666666667,
+          "symWidth": 16.11595655806182,
+          "text": "IT'S  A  VERY  SIMPLE MISSION  WHERE  YOU  JUST NEED  TO  SURVIVE .",
+          "translation": "إنها مهمة بسيطة للغاية، فقط عليك أن تبقى على قيد الحياة.",
+          "width": 315,
+          "x": 258,
+          "y": 426
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 25.66666666666667,
+          "symWidth": 14.58337523043405,
+          "text": "THE  NUMBER OF  DAYS  YOU  NEED TO  SURVIVE  IS  69 ....",
+          "translation": "عدد الأيام التي يجب أن تبقى فيها حيًّا هو ٦٩...",
+          "width": 218,
+          "x": 186,
+          "y": 1479
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 44,
+          "symWidth": 19.2,
+          "text": "WAIT ,",
+          "translation": "انتظر،",
+          "width": 88,
+          "x": 292,
+          "y": 2299
+        }
+      ],
+      "imgHeight": 2884,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 32,
+          "symWidth": 19.38311688311688,
+          "text": "THERE'S ONE  LESS  NOW .",
+          "translation": "لقد نقص واحد الآن.",
+          "width": 214,
+          "x": 138,
+          "y": 115
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 37.95454545454545,
+          "symWidth": 28.71212121212121,
+          "text": "NOW  YOU  JUST NEED  TO  SURVNE FOR  68  DAYS",
+          "translation": "الآن عليك أن تبقى على قيد الحياة لمدة ٦٨ يومًا.",
+          "width": 325,
+          "x": 196,
+          "y": 2004
+        },
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 228,
+          "symWidth": 127.75,
+          "text": "TELE",
+          "translation": "تيلي",
+          "width": 340,
+          "x": 152,
+          "y": 2545
+        }
+      ],
+      "imgHeight": 2884,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 25.66666666666667,
+          "text": "< MISSION >",
+          "translation": "< المهمة >",
+          "width": 227,
+          "x": 149,
+          "y": 55
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 35.53846153846154,
+          "symWidth": 18.32167832167832,
+          "text": "SURVIVE  68  DAYS IN  THE  RUINS !",
+          "translation": "البقاء على قيد الحياة 68 يوماً في الأطلال!",
+          "width": 252,
+          "x": 145,
+          "y": 163
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 29.66666666666667,
+          "symWidth": 17.07574819401445,
+          "text": "*  ESCAPE  FROM  THE  S - RANK MONSTER ,  THE  \" BLOOD WATER  PLANTAIN  LILY \" !",
+          "translation": "* الهروب من وحش الرتبة س، \"زنبق موزة الدم\"!",
+          "width": 379,
+          "x": 146,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 291,
+          "symHeight": 54.34523809523809,
+          "symWidth": 36.68730158730159,
+          "text": "REVENGE IRON - BLOODED SWORD  HOUND OF",
+          "translation": "الانتقام: كلب السيف الحديدي الدموي",
+          "width": 575,
+          "x": 63,
+          "y": 1341
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 13,
+          "symWidth": 9.344155844155843,
+          "text": "ILLUSTRATION  SEOLAHRANG  ADAPTATION  LEE  SANCHEK  ( REDICE  STUDIO ) ORIGINAL  I  STEPPED  ON  LEGO",
+          "translation": "رسم: سيولا هارنج\nتكييف: لي سانشيك (استوديو ريديس)\nالأصل: لقد وطأت قطعة ليغو",
+          "width": 482,
+          "x": 109,
+          "y": 1677
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 20,
+          "text": "161",
+          "translation": "161",
+          "width": 70,
+          "x": 313,
+          "y": 1769
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 18.66666666666667,
+          "symWidth": 13.8021978021978,
+          "text": "WH - WHAT THAT  FAIRY  JUST SAID ...",
+          "translation": "ماذا... قالتها تلك الجنية للتو؟",
+          "width": 206,
+          "x": 133,
+          "y": 2558
+        }
+      ],
+      "imgHeight": 2885,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 23.1875,
+          "symWidth": 17.3125,
+          "text": "IT  SAID  \" THERE'S ONE  LESS  NOW \" , RIGHT ?",
+          "translation": "قالَ: «بات الآن هناك واحد أقل»، أليس كذلك؟",
+          "width": 245,
+          "x": 312,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 27.5,
+          "symWidth": 23.125,
+          "text": "THEN  THAT MEANS ...",
+          "translation": "فهذا يعني...",
+          "width": 193,
+          "x": 252,
+          "y": 1293
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 19.71428571428572,
+          "symWidth": 15.75,
+          "text": "THE  FEWER SURVIVORS  THERE ARE ...",
+          "translation": "كلما قل عدد الناجين...",
+          "width": 238,
+          "x": 104,
+          "y": 2046
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21.32258064516129,
+          "symWidth": 17.45161290322581,
+          "text": "THE  FEWER THE  DAYS  WE  NEED TO  SURVIVE ?",
+          "translation": "قلّت الأيام التي نحتاجها للبقاء على قيد الحياة؟",
+          "width": 264,
+          "x": 335,
+          "y": 2985
+        }
+      ],
+      "imgHeight": 3221,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 18.66666666666667,
+          "text": "THAT'S  RIGHT .",
+          "translation": "صحيحٌ ذلك.",
+          "width": 210,
+          "x": 245,
+          "y": 518
+        },
+        {
+          "angle": 0,
+          "height": 323,
+          "symHeight": 260.5,
+          "symWidth": 316.5,
+          "text": "IN",
+          "translation": "في",
+          "width": 350,
+          "x": 260,
+          "y": 2654
+        }
+      ],
+      "imgHeight": 3222,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 29,
+          "symWidth": 15.87549019607843,
+          "text": "THERE  ARE  A  FEW SMALL  CONDITIONS  TO THIS  SURVIVAL  MISSION .",
+          "translation": "ثمة شروط بسيطة تعدُّل من مهمة البقاء على قيد الحياة هذه.",
+          "width": 284,
+          "x": 208,
+          "y": 645
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 61,
+          "symWidth": 22.5,
+          "text": "FIRST ,",
+          "translation": "أولاً،",
+          "width": 128,
+          "x": 132,
+          "y": 2220
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 28.2,
+          "symWidth": 16.00897435897436,
+          "text": "LIKE  YOU'VE  DEDUCED . THE  NUMBER  OF  DAYS  YOU  NEED TO  SURVIVE  DECREASES  WITH  THE NUMBER  OF  SURVIVORS .",
+          "translation": "كما استنتجت، عدد الأيام التي تحتاجها للبقاء يقلّ بقلّة الناجين.",
+          "width": 400,
+          "x": 173,
+          "y": 2404
+        }
+      ],
+      "imgHeight": 3222,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 34.66666666666666,
+          "symWidth": 19.48354978354978,
+          "text": "SECOND ,  THIS PLANT  NEEDS  TO  EAT ONE  PERSON  A  DAY .",
+          "translation": "ثانيًا، هذا الكائن يحتاج لالتقام شخص واحد يوميًا.",
+          "width": 314,
+          "x": 258,
+          "y": 170
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 29,
+          "symWidth": 15.18452380952381,
+          "text": "IT  DOESN'T MATTER  IF  THE  PERSON  IS DEAD  OR  ALIVE .",
+          "translation": "لا فرق إن كان الشخص حيًا أم ميتًا.",
+          "width": 315,
+          "x": 201,
+          "y": 1946
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 23,
+          "symWidth": 17.98333333333333,
+          "text": "YOU  SAID  IT  WAS A  SIMPLE  MISSION .",
+          "translation": "قلتَ إن المهمة سهلة.",
+          "width": 273,
+          "x": 213,
+          "y": 2724
+        }
+      ],
+      "imgHeight": 2979,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 26.03846153846154,
+          "symWidth": 19.35042735042735,
+          "text": "IT'S NOT  SIMPLE AT  ALL ... !",
+          "translation": "ليست سهلة على الإطلاق...!",
+          "width": 203,
+          "x": 377,
+          "y": 787
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 26.70588235294117,
+          "symWidth": 19.61344537815126,
+          "text": "LET'S JUST  IGNORE  IT AND  RUN !",
+          "translation": "دعنا نتجاهل الأمر ونهرب!",
+          "width": 273,
+          "x": 113,
+          "y": 1526
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 23,
+          "symWidth": 16.87321937321937,
+          "text": "IT  DOESN'T MATTER  IF  IT'S  AN S - RANK  BECAUSE  IT CAN'T  MOVE  SINCE  IT'S ATTACHED  TO  THE BUILDING .",
+          "translation": "لا فرق إن كان من رتبة S، فهو لا يتحرك لأنه ملتصق بالبناء.",
+          "width": 341,
+          "x": 235,
+          "y": 1777
+        }
+      ],
+      "imgHeight": 2980,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 23.0625,
+          "symWidth": 17.39884868421053,
+          "text": "WHY  THE  HELL  DO  WE NEED  TO  LISTEN  TO  WHAT THAT  THING  IS  SAYING ?!",
+          "translation": "لماذا بحق السماء يجب أن نصغي لما يقوله ذلك الشيء؟!",
+          "width": 361,
+          "x": 193,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 34,
+          "symWidth": 24.40357142857143,
+          "text": "IT'S  BEST  IF YOU  DON'T  PLAN  ON RUNNING AWAY",
+          "translation": "من الأفضل ألا تخطط للهروب.",
+          "width": 289,
+          "x": 204,
+          "y": 974
+        }
+      ],
+      "imgHeight": 2979,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 35.66666666666666,
+          "symWidth": 20.25877825877826,
+          "text": "THIS  PLANT DOESN'T  LIKE MOVING ,",
+          "translation": "هذه النبتة تُبْغِضُ الحَرَكَةَ,",
+          "width": 216,
+          "x": 237,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 35.125,
+          "symWidth": 21.325,
+          "text": "BUT  THAT DOESN'T  MEAN  IT CAN'T  MOVE .",
+          "translation": "لكن ذلك لا يعني أنها عاجزة عن الحركة.",
+          "width": 275,
+          "x": 210,
+          "y": 1798
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 32,
+          "symWidth": 18.65966386554622,
+          "text": "THE  REASON  WHY  IT DOESN'T  LIKE  MOVING",
+          "translation": "سبب كرهها للحركة",
+          "width": 304,
+          "x": 127,
+          "y": 2617
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 32.66666666666666,
+          "symWidth": 18.26616161616161,
+          "text": "IS  BECAUSE  IT GETS  HUNGRIER  THE MORE  IT  MOVES .",
+          "translation": "هو اشتداد جوعها كلما تحركت أكثر.",
+          "width": 290,
+          "x": 264,
+          "y": 2833
+        }
+      ],
+      "imgHeight": 3273,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 32.33333333333334,
+          "symWidth": 18.57875457875458,
+          "text": "THEN  ONE PERSON  WON'T  BE ENOUGH ,  RIGHT ?",
+          "translation": "حينها، لن تكفي يد واحدة، أليس كذلك؟",
+          "width": 258,
+          "x": 223,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 33.4,
+          "symWidth": 17.45597402597403,
+          "text": "DON'T  BE SO DISCOURAGED .  I'LL  GIVE YOU  A  SPECIAL GIFT .",
+          "translation": "لا تيأس هكذا. سأهبك هديةً خاصة.",
+          "width": 325,
+          "x": 185,
+          "y": 2332
+        }
+      ],
+      "imgHeight": 3274,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 118.3333333333333,
+          "symWidth": 72,
+          "text": "THE",
+          "translation": "الـ",
+          "width": 122,
+          "x": 56,
+          "y": 879
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 190.5,
+          "symWidth": 114,
+          "text": "IS",
+          "translation": "في",
+          "width": 186,
+          "x": 438,
+          "y": 1114
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 32.25,
+          "symWidth": 18.39099880382775,
+          "text": "INSIDE  THOSE BOXES MIGHT  BE  CANDY  THAT INCREASES  YOUR  STATS ,",
+          "translation": "قد تكمن في تلك الصناديق حلوى تزيد من قدراتك،",
+          "width": 322,
+          "x": 206,
+          "y": 1438
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 20.58333333333333,
+          "text": "FOOD  RATIONS ,",
+          "translation": "أطعمًا معيشية،",
+          "width": 250,
+          "x": 128,
+          "y": 1915
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 28.875,
+          "text": "WEAPONS .",
+          "translation": "أسلحة.",
+          "width": 222,
+          "x": 334,
+          "y": 2078
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 57,
+          "symWidth": 28.03333333333333,
+          "text": "OR  VARIOUS ARTIFACTS .",
+          "translation": "أو تحف نادرة متنوعة.",
+          "width": 278,
+          "x": 209,
+          "y": 2899
+        }
+      ],
+      "imgHeight": 3273,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 29.33333333333333,
+          "text": "A  GIFT ... ?",
+          "translation": "هدية...؟",
+          "width": 241,
+          "x": 229,
+          "y": 1121
+        },
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 208,
+          "symWidth": 149,
+          "text": "of",
+          "translation": "من",
+          "width": 234,
+          "x": 195,
+          "y": 1965
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 36.5,
+          "symWidth": 17.99145299145299,
+          "text": "BUT  ON  RARE INSTANCES ....",
+          "translation": "لكن في حالات نادرة...",
+          "width": 203,
+          "x": 250,
+          "y": 3336
+        }
+      ],
+      "imgHeight": 4281,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 101,
+          "symWidth": 69,
+          "text": "AAH",
+          "translation": "آآه",
+          "width": 179,
+          "x": 123,
+          "y": 2763
+        },
+        {
+          "angle": 0,
+          "height": 276,
+          "symHeight": 163.4,
+          "symWidth": 136,
+          "text": "KYAAA",
+          "translation": "كيااااا!",
+          "width": 378,
+          "x": 181,
+          "y": 3419
+        }
+      ],
+      "imgHeight": 4283,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 40.5,
+          "symWidth": 21.4051948051948,
+          "text": "THERE'S A  MIMIC - LIKE THING  INSIDE ,  SO BE  CAREFUL .",
+          "translation": "هناك كائن يشبه المحاكي بالداخل، فكن حذراً.",
+          "width": 285,
+          "x": 204,
+          "y": 1400
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 24.77777777777778,
+          "text": "< MISSION >",
+          "translation": "< المهمة >",
+          "width": 227,
+          "x": 149,
+          "y": 2452
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 34,
+          "symWidth": 18.08041958041958,
+          "text": "SURVIVE  67  DAYS IN  THE  RUINS !",
+          "translation": "النجاة لمدة 67 يوماً في الأنقاض!",
+          "width": 252,
+          "x": 145,
+          "y": 2563
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 30,
+          "symWidth": 16.92755417956656,
+          "text": "*  ESCAPE  FROM  THE  S - RANK MONSTER ,  THE  \" BLOOD WATER  PLANTAIN  LILY \" !",
+          "translation": "* الهروب من الوحش من الدرجة-S، \"زنبق ماء الدم\"!",
+          "width": 377,
+          "x": 146,
+          "y": 2699
+        }
+      ],
+      "imgHeight": 3137,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 22.83333333333333,
+          "text": "... NO .",
+          "translation": "... لا.",
+          "width": 143,
+          "x": 278,
+          "y": 872
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 20.69230769230769,
+          "symWidth": 16.05769230769231,
+          "text": "I  HATE  THE MISSIONS ,  THE  GIFTS , AND  THIS  PLACE !",
+          "translation": "أكره المهمات والهدايا وهذا المكان!",
+          "width": 290,
+          "x": 205,
+          "y": 1560
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 32,
+          "symWidth": 24.67541717541718,
+          "text": "I  WANT  TO LEAVE ...  I  WANT  TO  GET OUT  OF  HERE ... !",
+          "translation": "أريد الرحيل... أريد أن أغادر هذا المكان...!",
+          "width": 393,
+          "x": 163,
+          "y": 2090
+        }
+      ],
+      "imgHeight": 3138,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 26.72,
+          "symWidth": 23.8,
+          "text": "TH - THIS MISSION  IS INSANE !!!",
+          "translation": "هذِهِ المُهِمَّةُ جُنُونٌ خَالِصٌ!!!",
+          "width": 201,
+          "x": 383,
+          "y": 948
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 23.75,
+          "symWidth": 19.0389880952381,
+          "text": "THIS  IS A  PLAN  TO  PUT EACH  OTHER ! AGAINST EVERYONE",
+          "translation": "خِطَّةٌ لِجَعْلِ الْجَمِيعِ ضِدَّ بَعْضِهِم!",
+          "width": 250,
+          "x": 89,
+          "y": 1335
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 25,
+          "symWidth": 20.56388888888889,
+          "text": "AND  WHAT  IF THEY  ARE ?  IF  WE DON'T ,  THEN  WE'LL ALL  DIE ...",
+          "translation": "وَمَاذا إِذَا كُنَّا؟ إِلّا أَنْ لَمْ نَفْعَلْ، فَنَحنُ جَمِيعًا مَحْكُومُونَ بِالْمَوْتِ...",
+          "width": 267,
+          "x": 347,
+          "y": 1740
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 22.73511904761905,
+          "symWidth": 19.33214285714286,
+          "text": "IT'S  AN S - RANK  MONSTER ! WE'RE  ALL  GOING  TO DIE  ANYWAY !!!",
+          "translation": "إنَّهُ وَحْشٌ مِنْ رُتْبَةِ إس! سَنَمُوتُ جَمِيعًا عَلَى أَيَّةِ حَالٍ!!!",
+          "width": 277,
+          "x": 224,
+          "y": 2491
+        }
+      ],
+      "imgHeight": 3137,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 22.5,
+          "text": "... WAIT .",
+          "translation": "...اِنتَظِرُوا.",
+          "width": 183,
+          "x": 257,
+          "y": 1236
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 27.4,
+          "text": "GUYS ,",
+          "translation": "يا رِجَالُ،",
+          "width": 124,
+          "x": 262,
+          "y": 2139
+        }
+      ],
+      "imgHeight": 3313,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 28.33333333333333,
+          "symWidth": 22.08703703703704,
+          "text": "WE  NEED  TO MAKE  A  TOUGH DECISION .",
+          "translation": "علينا اتخاذ قرار عسير.",
+          "width": 272,
+          "x": 232,
+          "y": 657
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 25.66666666666667,
+          "symWidth": 14.32418300653595,
+          "text": "Colosseo  Third  Year Student  Council  Vice  President Arthurgordon  Pim",
+          "translation": "آرثر جوردون بيم\nنائب رئيس مجلس طلاب كوبليزيو، السنة الثالثة",
+          "width": 294,
+          "x": 202,
+          "y": 1057
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 22.33333333333333,
+          "symWidth": 17.26944444444445,
+          "text": "FROM  NOW  ON ,  WE'LL NEED  TO  KEEP  MAKING TOUGH  DECISIONS .",
+          "translation": "من الآن فصاعدًا، سنحتاج إلى اتخاذ قرارات صعبة متكررة.",
+          "width": 316,
+          "x": 299,
+          "y": 1881
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 23.5,
+          "text": "BUT ...",
+          "translation": "لكن...",
+          "width": 130,
+          "x": 286,
+          "y": 2822
+        }
+      ],
+      "imgHeight": 3314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 30.5,
+          "symWidth": 22.02857142857143,
+          "text": "RIGHT NOW ... !",
+          "translation": "في هذه اللحظة...!",
+          "width": 137,
+          "x": 136,
+          "y": 125
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 28.25,
+          "symWidth": 23.34642857142857,
+          "text": "LET'S  FOCUS ON  THE PROBLEM AT  HAND .",
+          "translation": "لنركز على المشكلة الآنية.",
+          "width": 328,
+          "x": 232,
+          "y": 347
+        },
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 89.5,
+          "symWidth": 71.75,
+          "text": "Of of",
+          "translation": "",
+          "width": 219,
+          "x": 472,
+          "y": 1247
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 21.32258064516129,
+          "symWidth": 16.71102150537634,
+          "text": "AS  EXPECTED  OF ARTHUR ,  COLOSSEO'S VICE  PRESIDENT .",
+          "translation": "كما هو متوقع من آرثر، نائب رئيس كوبليزيو.",
+          "width": 296,
+          "x": 296,
+          "y": 1795
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18.5,
+          "symWidth": 14.10147058823529,
+          "text": "HE  DE - ESCALATED  THE CHAOTIC  SITUATION ... !",
+          "translation": "لقد هدأ الموقف المشتعل...!",
+          "width": 263,
+          "x": 104,
+          "y": 2114
+        }
+      ],
+      "imgHeight": 3314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 21.640625,
+          "symWidth": 17.52326388888889,
+          "text": "LET'S  DECIDE ON  WHAT  SACRIFICE WE  SHOULD  GIVE  TO  THAT WITHERED  FLOWER TOMORROW .",
+          "translation": "لِنقرّر ما التضحية التي سنقدمها لتلك الزهرة الذابلة غدًا.",
+          "width": 369,
+          "x": 117,
+          "y": 111
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 26,
+          "symWidth": 21.22222222222222,
+          "text": "DOES EVERYONE AGREE ?",
+          "translation": "هل يتفق الجميع؟",
+          "width": 169,
+          "x": 265,
+          "y": 1031
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 158.25,
+          "symWidth": 109.5,
+          "text": "7224",
+          "translation": "7224",
+          "width": 263,
+          "x": 44,
+          "y": 1777
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 25.796875,
+          "symWidth": 21.921875,
+          "text": "WHO WANTS TO OFFER UP IDEAS ON HOW WE SHOULD SELECT THE SACRIFICE ?",
+          "translation": "من يود أن يقترح كيف نختار التضحية؟",
+          "width": 321,
+          "x": 119,
+          "y": 2833
+        }
+      ],
+      "imgHeight": 2937,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "renderMode": "mask_only",
+          "symHeight": 22.59375,
+          "symWidth": 18.84375,
+          "text": "ON  HOW  WE SHOULD  SELECT THE  SACRIFICE ?",
+          "translation": "",
+          "width": 241,
+          "x": 344,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 48,
+          "symWidth": 32.14285714285715,
+          "text": "NICE ...",
+          "translation": "جيد...",
+          "width": 183,
+          "x": 262,
+          "y": 1440
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 22,
+          "symWidth": 20.40909090909091,
+          "text": "I'M  THE  ONLY  ONE WHO  CAN  CONTROL  THIS CHAOS  RIGHT  NOW .",
+          "translation": "أنا الوحيد القادر على ضبط هذا الفوضى الآن.",
+          "width": 349,
+          "x": 124,
+          "y": 2266
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 21,
+          "symWidth": 20.32738095238095,
+          "text": "I  NEED  TO MAKE  AN  IMPRESSION ON  THEM .",
+          "translation": "يجب أن أترك أثرًا في نفوسهم.",
+          "width": 311,
+          "x": 272,
+          "y": 2512
+        }
+      ],
+      "imgHeight": 2938,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 251,
+          "symHeight": 133,
+          "symWidth": 144.6,
+          "text": "4017 /",
+          "translation": "٤٠١٧ /",
+          "width": 243,
+          "x": 316,
+          "y": 226
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 21.66666666666666,
+          "symWidth": 19.28928571428571,
+          "text": "THEN  I'LL  BECOME SOMEONE  \" THEY  NEED \"  AND I'LL  BE  ELIMINATED  FROM  THE LIST  OF  SACRIFICES .",
+          "translation": "حينها سأصبح من «يحتاجونني»\nوسأُخرج من قائمة التضحيات.",
+          "width": 413,
+          "x": 143,
+          "y": 681
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21.64705882352941,
+          "symWidth": 17.47058823529412,
+          "text": "... HOW  ABOUT A  VOTE ?",
+          "translation": "... ماذا عن التصويت؟",
+          "width": 196,
+          "x": 318,
+          "y": 2388
+        }
+      ],
+      "imgHeight": 2938,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 26,
+          "symWidth": 23.36666666666667,
+          "text": "THAT'S GOOD .",
+          "translation": "هذا حسن.",
+          "width": 121,
+          "x": 260,
+          "y": 81
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 21,
+          "symWidth": 17.48095238095238,
+          "text": "WE  USE THAT  METHOD  TO MAKE  DECISIONS  AT SCHOOL .",
+          "translation": "نستخدم هذا الأسلوب لاتخاذ القرارات في المدرسة.",
+          "width": 276,
+          "x": 348,
+          "y": 252
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 25,
+          "symWidth": 21.3625,
+          "text": "THAT  DOES SOUND  GOOD .",
+          "translation": "يبدو ذلك جيدًا حقًا.",
+          "width": 231,
+          "x": 330,
+          "y": 1110
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 20.33333333333333,
+          "symWidth": 15.88855588855589,
+          "text": "HOWEVER ,  IN  ORDER  TO DO  A  VOTE ,  CONDITIONS  MUST BE  SET  ON  THE  PERSON  WHO'LL BECOME  THE  FOOD ,",
+          "translation": "مع ذلك، لكي يتم التصويت، لا بد من فرض شروط على من سيكون طعامًا،",
+          "width": 395,
+          "x": 82,
+          "y": 1442
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 27.5,
+          "symWidth": 24.54166666666666,
+          "text": "SO  WE  CAN VOTE  YES  OR  NO .",
+          "translation": "حتى نستطيع التصويت بنعم أو لا.",
+          "width": 329,
+          "x": 262,
+          "y": 1751
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 31.78571428571428,
+          "symWidth": 23.42857142857143,
+          "text": "WELL ,  OF COURSE ,",
+          "translation": "بالطبع،",
+          "width": 171,
+          "x": 264,
+          "y": 2518
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 25.5,
+          "symWidth": 19.57692307692308,
+          "text": "THE WEAK SHOULD BE SACRIFICES .",
+          "translation": "يجب أن يكون الضعفاء هم القرابين.",
+          "width": 304,
+          "x": 300,
+          "y": 3254
+        }
+      ],
+      "imgHeight": 3282,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "renderMode": "mask_only",
+          "symHeight": 25,
+          "symWidth": 17.46153846153846,
+          "text": "BE  SACRIFICES .",
+          "translation": "",
+          "width": 250,
+          "x": 328,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 27.05555555555556,
+          "symWidth": 20.42361111111111,
+          "text": "USUALLY  IN  NATURE , THE  WEAK  ARE  EATEN BY  THE  STRONG-",
+          "translation": "عادةً في الطبيعة، يبتلع القوي الضعيف-",
+          "width": 358,
+          "x": 113,
+          "y": 1242
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 32.5,
+          "symWidth": 27.24545454545454,
+          "text": "THAT  DOESN'T MAKE  SENSE !",
+          "translation": "هذا الكلام لا معنى له!",
+          "width": 253,
+          "x": 329,
+          "y": 1506
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 31.08620689655172,
+          "symWidth": 23.12778904665314,
+          "text": "WE'RE  HUMANS ! WE'RE  CIVILIZED  AND HAVE  INTELLIGENCE !",
+          "translation": "نحن بشر! نحن متحضرون ونمتلك الحكمة!",
+          "width": 341,
+          "x": 186,
+          "y": 2351
+        }
+      ],
+      "imgHeight": 3282,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 34,
+          "symWidth": 26.56818181818182,
+          "text": "WE  CAN'T USE  THE  STANDARDS OF  BEASTS !",
+          "translation": "لا يمكننا اعتماد معايير الوحوش!",
+          "width": 367,
+          "x": 121,
+          "y": 355
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 41,
+          "symWidth": 28.8,
+          "text": "So ...",
+          "translation": "إذاً...",
+          "width": 136,
+          "x": 432,
+          "y": 641
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 25.66666666666667,
+          "symWidth": 20.61130952380952,
+          "text": "I  THINK  THOSE  WHO ARE  STUPID  NEED  TO BE  THE  SACRIFICES .",
+          "translation": "أرى أن الجاهل هو الذي يجب أن يُضحى به.",
+          "width": 358,
+          "x": 174,
+          "y": 1373
+        },
+        {
+          "angle": 0,
+          "height": 226,
+          "symHeight": 74.83333333333334,
+          "symWidth": 78.66666666666666,
+          "text": "INN INN",
+          "translation": "إن إن",
+          "width": 175,
+          "x": 52,
+          "y": 1588
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.33333333333333,
+          "symWidth": 19.15032679738562,
+          "text": "IF  YOU'RE  STUPID , YOU'RE  USELESS  EVEN IF  YOU'RE  ALIVE .",
+          "translation": "إذا كنت جاهلاً، فأنت بلا قيمة حتى لو كنت على قيد الحياة.",
+          "width": 366,
+          "x": 170,
+          "y": 2583
+        }
+      ],
+      "imgHeight": 3283,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 31.5,
+          "symWidth": 24.37142857142857,
+          "text": "WHAT ? STUPID ?",
+          "translation": "ماذا؟ أحمق؟",
+          "width": 165,
+          "x": 173,
+          "y": 80
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 20.33333333333333,
+          "symWidth": 16.78101851851852,
+          "text": "YOU  SHOULD JUST  SAY  \" IF  YOU'RE A  LONER \"  INSTEAD !",
+          "translation": "كان ينبغي عليك أن تقول \"إن كنت وحيداً\" بدلاً من ذلك!",
+          "width": 275,
+          "x": 278,
+          "y": 281
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 21.25,
+          "symWidth": 15.05397727272727,
+          "text": "I  DON'T HAVE FRIENDS , BUT  I'M  RICH .",
+          "translation": "لا أملك أصدقاء، لكني غني.",
+          "width": 191,
+          "x": 422,
+          "y": 930
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 20.33333333333333,
+          "symWidth": 16.5625,
+          "text": "I'LL  LOAD  YOUR POCKETS  WHEN  WE  GET OUT  OF  HERE-",
+          "translation": "سأملأ جيوبك حين نخرج من هنا—",
+          "width": 305,
+          "x": 228,
+          "y": 1136
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 19.25,
+          "symWidth": 15.19497863247863,
+          "text": "IS  MONEY  REALLY WORTH  ANYTHING  RIGHT NOW ? GET  A  GRIP ... !",
+          "translation": "هل للمال قيمة الآن؟ تمسك بحالك...!",
+          "width": 297,
+          "x": 201,
+          "y": 1562
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 23.36111111111111,
+          "symWidth": 18.32115270350565,
+          "text": "VOTE  LIKE  THE INTELLIGENT  PERSON YOU  ARE !  VOTE !",
+          "translation": "صوت كالشخص العاقل الذي أنت عليه! صوت!",
+          "width": 258,
+          "x": 100,
+          "y": 2369
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 24.40740740740741,
+          "symWidth": 22.84074074074074,
+          "text": "FINE !  LET'S GO  WITH  THE MAJORITY !",
+          "translation": "حسناً! فلنتبع رأي الأغلبية!",
+          "width": 217,
+          "x": 355,
+          "y": 2629
+        }
+      ],
+      "imgHeight": 3144,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 27.65555555555556,
+          "symWidth": 21.41587301587302,
+          "text": "OKAY !  LET'S VOTE  UNTIL  WE  GET  A UNANIMOUS  VOTE !",
+          "translation": "حسناً! لنصوت حتى نحقق الإجماع!",
+          "width": 297,
+          "x": 150,
+          "y": 227
+        }
+      ],
+      "imgHeight": 3144,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 39,
+          "symWidth": 27.5,
+          "text": "WH - WHY ME ... ?",
+          "translation": "لِمَ أنا...؟",
+          "width": 193,
+          "x": 253,
+          "y": 1313
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 76.33333333333333,
+          "symWidth": 56.66666666666666,
+          "text": "NO !",
+          "translation": "لا!",
+          "width": 146,
+          "x": 398,
+          "y": 2466
+        }
+      ],
+      "imgHeight": 3146,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 34.72727272727273,
+          "symWidth": 28,
+          "text": "NO ! I  SAID  NO !",
+          "translation": "لا! قلت لا!",
+          "width": 207,
+          "x": 111,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 37,
+          "symWidth": 27.94615384615385,
+          "text": "WHY  DOES  SHE NEED  TO  DIE ? !!!",
+          "translation": "لماذا يجب أن تموت هي؟!!!",
+          "width": 283,
+          "x": 220,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 47.875,
+          "symWidth": 30.875,
+          "text": "LET  GO !!!",
+          "translation": "دعني أرحل!!!",
+          "width": 197,
+          "x": 389,
+          "y": 1529
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 28.32352941176471,
+          "symWidth": 20.44117647058824,
+          "text": "IT  ALSO  PAINS US  TO  MAKE  THIS DECISION ...",
+          "translation": "إنه لأمر موجع لنا أيضًا أن نتخذ هذا القرار...",
+          "width": 322,
+          "x": 189,
+          "y": 2349
+        }
+      ],
+      "imgHeight": 3032,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 24.5,
+          "symWidth": 19.29442508710801,
+          "text": "BUT  THIS WAS  THE  RESULT  OF A  FAIR  VOTE  THAT  WE ALL  AGREED  ON .",
+          "translation": "لكن هذا كان نتاج تصويت نزيه اتفقنا عليه جميعًا.",
+          "width": 352,
+          "x": 173,
+          "y": 667
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 25.45454545454545,
+          "symWidth": 20.40909090909091,
+          "text": "WE  NEED TO  SURVIVE  FOR A  LONG  TIME ,",
+          "translation": "علينا أن نستمر في البقاء لفترة طويلة.",
+          "width": 266,
+          "x": 218,
+          "y": 1554
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 21.5,
+          "symWidth": 17.22916666666666,
+          "text": "BUT  WE'VE DECIDED  THAT  DUE  TO YOUR  INJURED  LEG",
+          "translation": "لكننا قررنا، بسبب ساقك المصابة،",
+          "width": 322,
+          "x": 99,
+          "y": 2647
+        }
+      ],
+      "imgHeight": 3032,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 26.52380952380953,
+          "symWidth": 21.80952380952381,
+          "text": "YOU  WILL  BE  OF NO  USE  TO  US .",
+          "translation": "لن تكون لنا نفعاً.",
+          "width": 277,
+          "x": 315,
+          "y": 316
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29,
+          "symWidth": 21.22272727272727,
+          "text": "WHEN  WE  LEAVE THIS  TOWER ,",
+          "translation": "حين نغادر هذه البرج،",
+          "width": 279,
+          "x": 130,
+          "y": 1094
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.41176470588235,
+          "symWidth": 19.94117647058824,
+          "text": "I  PROMISE  TO COMPENSATE  YOUR FAMILY  WELL",
+          "translation": "أعدك بأن أعوّض عائلتك خير تعويض",
+          "width": 311,
+          "x": 281,
+          "y": 1331
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 28.57894736842105,
+          "symWidth": 24.07894736842105,
+          "text": "AND  SAY THAT  YOU  WERE OUR  HERO .",
+          "translation": "وأُعلِن أنك كنت بطلنا.",
+          "width": 297,
+          "x": 219,
+          "y": 2716
+        }
+      ],
+      "imgHeight": 3032,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 28,
+          "symWidth": 22.33333333333333,
+          "text": "SO  PLEASE ,",
+          "translation": "فليرحمكم الله،",
+          "width": 210,
+          "x": 89,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 28,
+          "symWidth": 23.41666666666666,
+          "text": "PLEASE BECOME  A  SACRIFICE FOR  US .",
+          "translation": "تفضلوا بأن تصبحوا لنا تضحية.",
+          "width": 415,
+          "x": 143,
+          "y": 1216
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 39,
+          "symWidth": 22.14285714285714,
+          "text": "PLEASE !",
+          "translation": "أرجوكم!",
+          "width": 123,
+          "x": 176,
+          "y": 1545
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 38,
+          "symWidth": 22.14285714285714,
+          "text": "PLEASE !",
+          "translation": "أرجوكم!",
+          "width": 122,
+          "x": 397,
+          "y": 1701
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 24.5,
+          "symWidth": 20.04945054945055,
+          "text": "YOU  GUYS ARE  ALL  INSANE !",
+          "translation": "أنتم جميعًا في غاية الجنون!",
+          "width": 267,
+          "x": 297,
+          "y": 2391
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 26.5,
+          "symWidth": 20.96666666666667,
+          "text": "YOU'RE ALL  CRAZY !!",
+          "translation": "أنتم حقًا مجانين!!",
+          "width": 207,
+          "x": 147,
+          "y": 2599
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34,
+          "symWidth": 21.28571428571428,
+          "text": "PLEASE !",
+          "translation": "أرجوكم!",
+          "width": 122,
+          "x": 511,
+          "y": 2736
+        }
+      ],
+      "imgHeight": 3107,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 32,
+          "symWidth": 20.71428571428572,
+          "text": "PLEASE !",
+          "translation": "أَرجوك!",
+          "width": 121,
+          "x": 75,
+          "y": 295
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 25.2,
+          "symWidth": 19.64848484848485,
+          "text": "DO  YOU REALLY THINK THIS  IS  A  FAIR VOTE ?!",
+          "translation": "هل تظن حقًا أن هذه تصويت عادل؟!",
+          "width": 230,
+          "x": 235,
+          "y": 653
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 24.2,
+          "symWidth": 23.22871794871795,
+          "text": "THE  ACT OF  CHOOSING A  PERSON  TO  DIE WITH  A  MAJORITY VOTE",
+          "translation": "فعل اختيار شخص للموت بأغلبية الأصوات",
+          "width": 271,
+          "x": 130,
+          "y": 1461
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 33.58333333333334,
+          "symWidth": 26.47916666666666,
+          "text": "BECAUSE  YOU DON'T  WANT  TO  DIE YOURSELVES ?!",
+          "translation": "لمجرد أنكم لا تريدون أن تموتوا بأنفسكم؟!",
+          "width": 363,
+          "x": 202,
+          "y": 2480
+        }
+      ],
+      "imgHeight": 3108,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 30,
+          "symWidth": 20.23076923076923,
+          "text": "P - PLEASE  SPARE ME  JUST  ONCE ...",
+          "translation": "أَرجوك، ارحمني هذه المرة فقط...",
+          "width": 281,
+          "x": 218,
+          "y": 1186
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 118.5,
+          "symWidth": 62.5,
+          "text": "ай",
+          "translation": "آه!",
+          "width": 108,
+          "x": 472,
+          "y": 2067
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 27.5,
+          "symWidth": 21,
+          "text": "PLEASE JUST  ONCE ...",
+          "translation": "أَرجوك، فقط هذه المرة...",
+          "width": 223,
+          "x": 244,
+          "y": 2486
+        }
+      ],
+      "imgHeight": 3108,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 24.33333333333333,
+          "symWidth": 18.03245614035088,
+          "text": "I  HAVE  PARENTS ... AND  MY  YOUNGER SIBLINGS ...  WAAAH ...",
+          "translation": "لي والدان... وأخوة صغار... أوه...",
+          "width": 267,
+          "x": 119,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 29.5,
+          "symWidth": 20.34920634920635,
+          "text": "I  CAN'T ... I  WANT  TO  LIVE ...",
+          "translation": "لا أستطيع... أريد أن أعيش...",
+          "width": 285,
+          "x": 313,
+          "y": 1158
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42,
+          "symWidth": 26.28571428571428,
+          "text": "L - LOOK !",
+          "translation": "اِنْظُرْ!",
+          "width": 161,
+          "x": 185,
+          "y": 1926
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 27.1,
+          "text": "I  CAN  STAND !",
+          "translation": "بإمكاني أن أقف!",
+          "width": 261,
+          "x": 266,
+          "y": 2105
+        },
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 46.86111111111111,
+          "symWidth": 26.13888888888889,
+          "text": "8000 The 60000",
+          "translation": "٨٠٠٠ الستون ألف",
+          "width": 97,
+          "x": 596,
+          "y": 2396
+        },
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 89.375,
+          "symWidth": 86.875,
+          "text": "Am  Am Th",
+          "translation": "آه آه ث",
+          "width": 165,
+          "x": 12,
+          "y": 2443
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 25.8,
+          "symWidth": 18.2,
+          "text": "00000",
+          "translation": "٠٠٠٠٠",
+          "width": 43,
+          "x": 481,
+          "y": 2768
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 79.33333333333333,
+          "symWidth": 61,
+          "text": "The",
+          "translation": "ال",
+          "width": 94,
+          "x": 120,
+          "y": 2898
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 22.66666666666667,
+          "symWidth": 15,
+          "text": "000",
+          "translation": "٠٠٠",
+          "width": 27,
+          "x": 538,
+          "y": 2907
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 47,
+          "symWidth": 28.875,
+          "text": "SEE ... ? !",
+          "translation": "أترى...؟!",
+          "width": 177,
+          "x": 266,
+          "y": 3039
+        }
+      ],
+      "imgHeight": 3370,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 31.5,
+          "symWidth": 21.65,
+          "text": "TH - THERE'S NO  ISSUE ...",
+          "translation": "لا بأس...",
+          "width": 218,
+          "x": 151,
+          "y": 380
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 30.5,
+          "symWidth": 25.22222222222222,
+          "text": "I  CAN EVEN  WALK-",
+          "translation": "أستطيع أن أمشي حتى—",
+          "width": 210,
+          "x": 313,
+          "y": 586
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 85,
+          "symWidth": 98,
+          "text": "AN",
+          "translation": "أن",
+          "width": 107,
+          "x": 149,
+          "y": 812
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 81,
+          "symWidth": 63,
+          "text": "Th",
+          "translation": "ثـ",
+          "width": 93,
+          "x": 477,
+          "y": 958
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 69.75,
+          "symWidth": 45.41666666666667,
+          "text": "Th The",
+          "translation": "ثـ الثـ",
+          "width": 349,
+          "x": 176,
+          "y": 1273
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 22.58333333333334,
+          "symWidth": 13.04166666666667,
+          "text": "008 1000",
+          "translation": "008 1000",
+          "width": 82,
+          "x": 382,
+          "y": 1394
+        }
+      ],
+      "imgHeight": 3370,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3371,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 25.85714285714286,
+          "text": "STOP  IT .",
+          "translation": "كف عن ذلك.",
+          "width": 199,
+          "x": 250,
+          "y": 1883
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 66,
+          "symWidth": 39.16666666666666,
+          "text": "I'LL  BE",
+          "translation": "سأكون",
+          "width": 194,
+          "x": 248,
+          "y": 2599
+        }
+      ],
+      "imgHeight": 3015,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 111,
+          "symWidth": 66.75,
+          "text": "THE  BAIT .",
+          "translation": "الصنْدوقُ المَغْرُوسُ",
+          "width": 347,
+          "x": 176,
+          "y": 1796
+        },
+        {
+          "angle": 0,
+          "height": 229,
+          "symHeight": 70,
+          "symWidth": 44.13793103448276,
+          "text": "REVENGE IRON - BLOODED SWORD  HOUND",
+          "translation": "الانتقامُ: سَيْفُ الدمِ الحديديّ الأليم",
+          "width": 462,
+          "x": 120,
+          "y": 2477
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 11,
+          "symWidth": 7.326298701298701,
+          "text": "ILLUSTRATION  SEOLAHRANG  ADAPTATION  LEE  SANCHEK  ( REDICE  STUDIO ) ORIGINAL  ISTEPPED  ON  LEGO",
+          "translation": "رَسْمُ سِيُولا هَرانغ / تَكييفُ لي سانشيك (استوديو ريد آيس) / الأصْلِي مُرسومٌ بواسطة LEGO",
+          "width": 385,
+          "x": 157,
+          "y": 2744
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 17.5,
+          "symWidth": 15.1374269005848,
+          "text": "VODOCO 레드 아이스  스튜디오 ※ 본  저작물 은  저작권자 와 의  계약 에  따라  발행 한  것으로  저작권법 의  보호 를  받고  있습니다 . 무단  전재  및  무단  복제 하는  것을  금합니다 .",
+          "translation": "VODOCO استوديو ريد آيس ※ هذا العمل محميّ بموجب عقدٍ بين المؤلف ومالك الحقوق. يُمنعُ النشرُ أو النسخُ غيرُ المصرّح به.",
+          "width": 557,
+          "x": 115,
+          "y": 2905
+        }
+      ],
+      "imgHeight": 3017,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

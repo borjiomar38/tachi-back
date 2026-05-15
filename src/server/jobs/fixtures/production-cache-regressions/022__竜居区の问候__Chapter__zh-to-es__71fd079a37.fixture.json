@@ -1,0 +1,389 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0022",
+  "jobId": "fixture-job-0022",
+  "licenseId": "fixture-license-0022",
+  "pageCount": 16,
+  "pageOrder": [
+    "001.avif",
+    "002.avif",
+    "003.avif",
+    "004.avif",
+    "005.avif",
+    "006.avif",
+    "007.avif",
+    "008.avif",
+    "009.avif",
+    "010.avif",
+    "011.avif",
+    "012.avif",
+    "013.avif",
+    "014.avif",
+    "015.avif",
+    "016.avif"
+  ],
+  "pages": {
+    "001.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "002.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "003.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 625,
+          "symHeight": 63.54545454545455,
+          "symWidth": 65,
+          "text": "一大早 就 这么 精神 满满 呐",
+          "translation": "Tan lleno de energía desde temprano en la mañana.",
+          "width": 65,
+          "x": 368,
+          "y": 50
+        }
+      ],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "004.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 227,
+          "symHeight": 39.375,
+          "symWidth": 40.75,
+          "text": "BE ......",
+          "translation": "BE......",
+          "width": 46,
+          "x": 732,
+          "y": 128
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 33.5,
+          "symWidth": 15,
+          "text": "22",
+          "translation": "22",
+          "width": 15,
+          "x": 801,
+          "y": 1184
+        }
+      ],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "005.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "006.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "007.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 11,
+          "symWidth": 11,
+          "text": "Joooooo",
+          "translation": "Joooooo",
+          "width": 11,
+          "x": 1646,
+          "y": 152
+        }
+      ],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "008.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 27.5,
+          "symWidth": 13,
+          "text": "22",
+          "translation": "22",
+          "width": 13,
+          "x": 1730,
+          "y": 96
+        }
+      ],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "009.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 25.75,
+          "symWidth": 25,
+          "text": "KEES",
+          "translation": "KEES",
+          "width": 25,
+          "x": 256,
+          "y": 5
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 11.33333333333333,
+          "symWidth": 14,
+          "text": "000000000  000",
+          "translation": "000000000 000",
+          "width": 16,
+          "x": 1101,
+          "y": 83
+        }
+      ],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "010.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 10.15384615384615,
+          "symWidth": 8,
+          "text": "ooo  ooo  ooo  ooo .",
+          "translation": "ooo ooo ooo ooo.",
+          "width": 9,
+          "x": 312,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 18.5,
+          "symWidth": 29,
+          "text": "51 ........",
+          "translation": "51........",
+          "width": 29,
+          "x": 1087,
+          "y": 64
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 6.666666666666667,
+          "symWidth": 7,
+          "text": "000  000",
+          "translation": "000 000",
+          "width": 7,
+          "x": 1091,
+          "y": 267
+        }
+      ],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "011.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 248,
+          "symHeight": 15.97643097643098,
+          "symWidth": 18.63636363636364,
+          "text": "被 顶 开 了 2008 · 这种 充实感 已经 上瘾 的 啦 ~ 8 KKZ ...... ooo  ooo",
+          "translation": "Me empujaron con fuerza 2008 · Ya estoy enganchado a esta sensación de plenitud ~ 8 KKZ...... ooo ooo",
+          "width": 117,
+          "x": 19,
+          "y": 19
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 11,
+          "symWidth": 9,
+          "text": "ooo  ooo",
+          "translation": "ooo ooo",
+          "width": 9,
+          "x": 1013,
+          "y": 248
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "012.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 10,
+          "symWidth": 10,
+          "text": "ooo  ooo  ooo",
+          "translation": "ooo ooo ooo",
+          "width": 10,
+          "x": 73,
+          "y": 214
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 12.16666666666667,
+          "symWidth": 9,
+          "text": "000  000",
+          "translation": "000 000",
+          "width": 9,
+          "x": 1033,
+          "y": 272
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "013.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 25.33333333333333,
+          "text": "HI 。 茉莉 酱",
+          "translation": "Hola, Moli-chan",
+          "width": 186,
+          "x": 920,
+          "y": 783
+        }
+      ],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "014.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "015.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 269,
+          "symHeight": 29.66666666666667,
+          "symWidth": 34.875,
+          "text": "°  P ... ENI .... 用力 , 再添 一点 再 用力 一点",
+          "translation": "Fuerza... un poco más.\nUn poco más de fuerza.",
+          "width": 116,
+          "x": 330,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 13,
+          "symWidth": 9,
+          "text": "000",
+          "translation": "000",
+          "width": 10,
+          "x": 1246,
+          "y": 40
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 12.5,
+          "symWidth": 10,
+          "text": "000000",
+          "translation": "000000",
+          "width": 11,
+          "x": 1244,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 10.25,
+          "symWidth": 12,
+          "text": "8000",
+          "translation": "8000",
+          "width": 14,
+          "x": 1295,
+          "y": 200
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 10.75,
+          "symWidth": 12,
+          "text": "Pooo",
+          "translation": "Pooo",
+          "width": 14,
+          "x": 426,
+          "y": 240
+        }
+      ],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "016.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "zh",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "es",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

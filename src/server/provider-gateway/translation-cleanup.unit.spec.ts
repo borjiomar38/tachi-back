@@ -35,4 +35,37 @@ describe('provider translation cleanup', () => {
       })
     ).toBe(false);
   });
+
+  it('keeps Asian source speech with empty RTMTH cleanup for cached OCR retranslation', () => {
+    expect(cleanProviderTranslationText('RTMTH')).toBe('');
+    expect(
+      shouldDropProviderTranslationBlock({
+        mode: 'cached_ocr_source',
+        sourceLanguage: 'zh',
+        sourceText: '该 清理 垃圾 了 !',
+        translation: 'RTMTH',
+      })
+    ).toBe(false);
+  });
+
+  it('still drops RTMTH marker blocks outside cached OCR source mode', () => {
+    expect(
+      shouldDropProviderTranslationBlock({
+        sourceLanguage: 'zh',
+        sourceText: '你 發',
+        translation: 'RTMTH',
+      })
+    ).toBe(true);
+  });
+
+  it('still drops RTMTH watermark text in cached OCR source mode', () => {
+    expect(
+      shouldDropProviderTranslationBlock({
+        mode: 'cached_ocr_source',
+        sourceLanguage: 'zh',
+        sourceText: '看 漫画',
+        translation: 'RTMTH',
+      })
+    ).toBe(true);
+  });
 });

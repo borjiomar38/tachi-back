@@ -1,0 +1,1033 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0026",
+  "jobId": "fixture-job-0026",
+  "licenseId": "fixture-license-0026",
+  "pageCount": 33,
+  "pageOrder": [
+    "001__001.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "006__001.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "012__001.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "019__001.jpg",
+    "019__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 305,
+          "symHeight": 80,
+          "symWidth": 74.85714285714286,
+          "text": "遇 强 则 强 无 上限 我 的 修 为 玄幻",
+          "translation": "قوّتي في ازدياد مستمرّ بلا حدود، فصول عظمة",
+          "width": 556,
+          "x": 46,
+          "y": 25
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 20.94736842105263,
+          "text": "改编 自 小说 《 遇 强 则 强 , 我 的 修 为 无 上限 》",
+          "translation": "مقتبس من رواية «قوّتي في ازدياد مستمرّ بلا حدود»",
+          "width": 470,
+          "x": 131,
+          "y": 459
+        },
+        {
+          "angle": 0,
+          "height": 284,
+          "symHeight": 38.525,
+          "symWidth": 33.37314814814815,
+          "text": "原著 / 史上 最帅 作者 监制 / 老徐  ■ 编剧 / G 周 主笔 / 英 ､ 凯 、 永乐 界 文化 — 凡 星 勾 线 / 龙 一 、 薯条 上色 / 赫 屿 、 殇 夕 浅 夜",
+          "translation": "المؤلف الأصلي / الأنيق الأقوى في التاريخ\nالإشراف / السيّد شو ■ الكاتب / ج 周\nالخطوط / دراغون يي، شرائح البطاطس\nالتلوين / خيو، شروق الغسق، الليل البعيد",
+          "width": 527,
+          "x": 142,
+          "y": 525
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 60,
+          "symWidth": 54.86875,
+          "text": "火 珑 果 漫画 HUOLONGGUO  MANHUA",
+          "translation": "مانهوا هولونغ قوه",
+          "width": 447,
+          "x": 120,
+          "y": 939
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 27,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحركة",
+          "width": 106,
+          "x": 578,
+          "y": 1102
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 15.1328125,
+          "symWidth": 12.8046875,
+          "text": "ARROGANT HUMAN  RACE ,  HOW  DARE YOU  COVET  THE  KUNLUN REALM !  TODAY ,  I  WILL FLATTEN  THE  HEAVENLY MAIDEN  KINGDOM , GRIND  YOUR  BONES  TO DUST ,  AND  USE  YOU  AS RATIONS  FOR  THE SEA  CLAN !",
+          "translation": "يا أيها الجنس البشري المتكبر، كيف تجرؤون على الطمع في مملكة كونلون! اليوم، سأمحو مملكة العذراء السماوية، أبدد عظامكم إلى غبار، وآكلكم كطعام لقبيلة البحر!",
+          "width": 234,
+          "x": 123,
+          "y": 1313
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 9.625,
+          "text": ").",
+          "translation": ".",
+          "width": 183,
+          "x": 64,
+          "y": 2838
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 20.48611111111111,
+          "symWidth": 17.09722222222222,
+          "text": "HELP !  THE  SEA CLAN  IS  GOING  TO KILL  US !  NO  ONE CAN  STOP  THEM !",
+          "translation": "النجدة! قبيلة البحر ستقتلنا! لا أحد يستطيع إيقافهم!",
+          "width": 251,
+          "x": 145,
+          "y": 3368
+        }
+      ],
+      "imgHeight": 4069,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 19.7984496124031,
+          "symWidth": 17.73067552602437,
+          "text": "I  DON'T  WANT TO  DIE !  I  BEG  THE IMMORTAL  VENERABLE TO  MANIFEST  AND SAVE  US !",
+          "translation": "لا أريد أن أموت! أتوسل إلى السيد الخالد أن يظهر وينقذنا!",
+          "width": 287,
+          "x": 225,
+          "y": 370
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 26.75405405405405,
+          "symWidth": 23.89662162162162,
+          "text": "AN RACE , ANT - LIKE YOU  THINK  YOU'RE WORTHY  TO  CONTEND WITH  THE  SEA",
+          "translation": "يا قبيلة النمل، هل تظنون أنفسكم أهلًا لمجابهة البحر؟",
+          "width": 290,
+          "x": 115,
+          "y": 922
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 22.98076923076923,
+          "symWidth": 19.64835164835165,
+          "text": "TODAY  I WILL  COMPLETELY ANNIHILATE  YOU , LEAVING  NO  ONE ALIVE !",
+          "translation": "اليوم سأبيدكم عن بكرة أبيكم، لا ينجو أحد!",
+          "width": 269,
+          "x": 297,
+          "y": 2176
+        }
+      ],
+      "imgHeight": 2545,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [],
+      "imgHeight": 2546,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 16.54022988505747,
+          "symWidth": 13.86432717984442,
+          "text": "THE  HEAVENLY MAIDEN  KINGDOM  IS  THE SANCTUARY CHOSEN  BY  ME . TOUCHING  IT  MEANS  MAKING AN  ENEMY  OUT OF  ME .",
+          "translation": "مملكة العذراء السماويّة هي الملاذ الذي اخترته، ومن يلمسها يكون عدوًّا لي.",
+          "width": 316,
+          "x": 79,
+          "y": 1876
+        }
+      ],
+      "imgHeight": 2595,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 22.58333333333333,
+          "symWidth": 19.53148148148148,
+          "text": "TODAY , MEMBER EVERY OF  THE  SEA  CLAN WILL  LEAVE THEIR  LIVES HERE !",
+          "translation": "اليوم، سيُزهق كل عضو من عشيرة البحر حياته هنا!",
+          "width": 250,
+          "x": 79,
+          "y": 1559
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 22.42857142857143,
+          "symWidth": 19.14427952999382,
+          "text": "MASTER IS  SO  BAOASS ! THESE  SEA  CLAN TRASHES ARE DEAD  FOR SURE !",
+          "translation": "السيد جبار بحق! هؤلاء النفايات من عشيرة البحر موتاهم مؤكّد!",
+          "width": 240,
+          "x": 56,
+          "y": 2191
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 9.533333333333333,
+          "text": "O",
+          "translation": "ا",
+          "width": 171,
+          "x": 493,
+          "y": 2313
+        }
+      ],
+      "imgHeight": 2597,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 20.6,
+          "symWidth": 17.28057315233786,
+          "text": "WITH  SENIOR YE'S  PROTECTION , THE  HEAVENLY  MAIDEN KINGDOM  HAS  NOTHING TO  WORRY  ABOUT !",
+          "translation": "بفضل حماية السيّد يي الكبير، لا تخشى مملكة الملكة السماوية شيئًا!",
+          "width": 305,
+          "x": 379,
+          "y": 433
+        },
+        {
+          "angle": 0,
+          "height": 276,
+          "symHeight": 21.83223684210526,
+          "symWidth": 19.32009109311741,
+          "text": "YOU ...  WHO ARE  YOU ?  HOW DARE  YOU  BLOCK THE  SEA  CLAN'S GREAT  ARMY !  I  AM A  GREAT  GENERAL UNDER  ANCESTOR SEA  WHALE .  AREN'T YOU  AFRAID  OF DEATH ?",
+          "translation": "من أنت... كيف تجرؤ على سدّ الطريق أمام جيش عشيرة البحر العظيم! أنا جنرال عظيم تحت راية الحوت البحري الأسطوري، أليس الموت مخيفًا لك؟",
+          "width": 282,
+          "x": 299,
+          "y": 934
+        }
+      ],
+      "imgHeight": 2595,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 15.5,
+          "symWidth": 14.30396825396826,
+          "text": "YOU  ARE  NOT WORTHY  TO  KNOW  MY NAME .  YOU  ARE  ONLY FIT  TO  BE  THE  DUST BENEATH  MY FEET !",
+          "translation": "أنت لا تستحق أن تعرف اسمي، فأنت لائق فقط بأن تكون الغبار تحت قدميّ!",
+          "width": 250,
+          "x": 87,
+          "y": 477
+        }
+      ],
+      "imgHeight": 2597,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 20.4,
+          "symWidth": 17.82207792207792,
+          "text": "YOU  ARE THE  FIRST  TO  DARE RUN  WILD  IN  FRONT OF  ME  AND  ALSO THE  LAST .",
+          "translation": "أنت أوّل من تجرأ على التمرد أمامي، وستكون الأخير أيضًا.",
+          "width": 264,
+          "x": 301,
+          "y": 910
+        }
+      ],
+      "imgHeight": 4629,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 102.3333333333333,
+          "symWidth": 40,
+          "text": "!!!",
+          "translation": "!!!",
+          "width": 153,
+          "x": 209,
+          "y": 1846
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 17.5,
+          "symWidth": 14.775,
+          "text": "IMMORTAL VENERABLE !",
+          "translation": "أيها الخالد العظيم!",
+          "width": 143,
+          "x": 126,
+          "y": 3247
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 17.4,
+          "symWidth": 14.65131313131313,
+          "text": "THANK YOU  IMMORTAL VENERABLE FOR  SAVING OUR  LIVES !",
+          "translation": "شكرًا لك أيها الخالد العظيم على إنقاذ حياتنا!",
+          "width": 165,
+          "x": 448,
+          "y": 3335
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 20.5,
+          "symWidth": 17.40714285714286,
+          "text": "LONG LIVE  THE IMMORTAL VENERABLE !",
+          "translation": "عاش الخالد العظيم!",
+          "width": 164,
+          "x": 119,
+          "y": 4136
+        }
+      ],
+      "imgHeight": 4629,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 14.2680412371134,
+          "symWidth": 12.98840206185567,
+          "text": "MAKE ARRANGEMENTS  TO REINFORCE  THE  DEFENSE LINE .  THE  SEA  CLAN  WILL NOT  LET  THIS  GO .  TODAY'S MATTER  IS  JUST  THE BEGINNING .",
+          "translation": "اتخذوا الترتيبات لتعزيز خط الدفاع.\nقبيلة البحر لن تغفر هذا.\nما حدث اليوم ما هو إلا البداية.",
+          "width": 283,
+          "x": 309,
+          "y": 677
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 15.86111111111111,
+          "symWidth": 14.40530303030303,
+          "text": "YES !  WE WILL  FOLLOW MASTER'S  ORDERS COMPLETELY !",
+          "translation": "نعم! سنطيع أوامر السيد بكل إخلاص!",
+          "width": 223,
+          "x": 338,
+          "y": 1816
+        }
+      ],
+      "imgHeight": 2607,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 16,
+          "symWidth": 13.04347826086956,
+          "text": "IT'S  OVER ... IT'S  ALL  OVER !",
+          "translation": "لقد انتهى الأمر... لقد فات الفوت!",
+          "width": 177,
+          "x": 57,
+          "y": 642
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 13.7289156626506,
+          "symWidth": 12.54759036144578,
+          "text": "TIGER  SHARK DIED  TRAGICALLY ,  AND THE  800,000  ELITES SCATTERED .  WHAT  KIND  OF MONSTER  IS  THAT  HUMAN POWERHOUSE ?",
+          "translation": "هاجم سمك النمر قدّم حياة في مأساة، وتشتّت النخبة التي كان عددهم ثمانمائة ألف.\nما هذا الوحش الذي يحمله ذلك الإنسان القوي؟",
+          "width": 287,
+          "x": 276,
+          "y": 1749
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.4,
+          "text": "SEA  KING ...",
+          "translation": "ملك البحر...",
+          "width": 149,
+          "x": 154,
+          "y": 2579
+        }
+      ],
+      "imgHeight": 2609,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 19.01546391752577,
+          "symWidth": 16.45463917525773,
+          "text": "ONLY  THE  ANCESTOR CAN  MATCH  THAT HUMAN  POWERHOUSE . EVEN  IF  IT  DISTURBS THE  ANCESTOR'S SECLUSION ,  WE  MUST ASK  THE  ANCESTOR TO  COME  OUT .",
+          "translation": "لا يضاهي ذلك الإنسان القوي إلا الجدّ الأكبر.\nوإن كان يقاطع عزلته، فلا بدّ أن نستدعِي الجدّ للخروج.",
+          "width": 275,
+          "x": 93,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 19.33333333333334,
+          "symWidth": 16.65238095238095,
+          "text": "OTHERWISE , THE  SEA  CLAN WILL  SURELY PERISH !",
+          "translation": "وإلا فستبيد قبيلة البحر بلا ريب!",
+          "width": 172,
+          "x": 380,
+          "y": 196
+        }
+      ],
+      "imgHeight": 2607,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 12.65428571428571,
+          "symWidth": 11.43238095238095,
+          "text": "ANCESTOR ! PLEASE  COME  OUT OF  SECLUSION !  THE SEA  CLAN  IS  IN  IMMINENT DANGER !  THAT  HUMAN WANTS  TO POWERHOUSE EXTERMINATE  OUR SEA  CLAN !",
+          "translation": "يا أيها السلف! أخرج من العزلة! قبيلة البحر في خطر داهم! ذلك الإنسان يريد أن يمحو قبيلتنا من الوجود!",
+          "width": 228,
+          "x": 39,
+          "y": 773
+        }
+      ],
+      "imgHeight": 2609,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [],
+      "imgHeight": 2611,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 291,
+          "symHeight": 281,
+          "symWidth": 217.3333333333333,
+          "text": "轰轰轰",
+          "translation": "رعد مدوٍ",
+          "width": 603,
+          "x": 43,
+          "y": 347
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 28.66666666666667,
+          "symWidth": 24.77777777777778,
+          "text": "TRASH !  A BUNCH  OF TRASH !",
+          "translation": "قمامة! لا أكثر من قمامة!",
+          "width": 193,
+          "x": 105,
+          "y": 1883
+        }
+      ],
+      "imgHeight": 2612,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 19.84552845528455,
+          "symWidth": 16.62412260129686,
+          "text": "AN  ARMY  OF  800,000 COULDN'T  EVEN  STOP  A WILL  FLATTEN  THE  HEAVENLY HUMAN  JUNIOR !  TODAY ,  I MAIDEN  KINGDOM ,  GRIND THAT  HUMAN  JUNIOR'S  BONES TO  DUST ,  AND  AVENGE THE  SEA  CLAN !",
+          "translation": "جيش مكون من ثمانمئة ألف لم يستطع وقف إنسان سماوي صلب! اليوم، أيها الملك العذراء، ساح عظام ذلك الإنسان إلى غبار، وانتقم لقبيلة البحر!",
+          "width": 356,
+          "x": 279,
+          "y": 829
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 145.3333333333333,
+          "symWidth": 116,
+          "text": "12 *",
+          "translation": "12 *",
+          "width": 185,
+          "x": 389,
+          "y": 1717
+        }
+      ],
+      "imgHeight": 2610,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 15.65384615384616,
+          "symWidth": 13.63645937395937,
+          "text": "ANCESTOR  SEA WHALE ,  CALM  DOWN . I  AM  SITU  YAN  OF  THE PARADISE REALM'S  LIGHT CLAN .  I  CAME  SPECIFICALLY TODAY  TO  MAKE  A  DEAL WITH  YOU .",
+          "translation": "أيها الحوت البحري العتيق، اهدأ. أنا سيتو يان من عشيرة النور في عالم الفردوس. جئت اليوم خصيصاً لأبرم صفقة معك.",
+          "width": 318,
+          "x": 49,
+          "y": 531
+        }
+      ],
+      "imgHeight": 2611,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 18.57333333333333,
+          "symWidth": 16.37868686868687,
+          "text": "LIGHT  CLAN ? THE  AFFAIRS  OF THE  KUNLUN  REALM ARE  NOT  FOR  YOU OUTSIDERS  TO INTERFERE WITH !",
+          "translation": "عشيرة النور؟ شؤون مملكة كونلون ليست من شأنكم أيها الغرباء لتتدخلوا فيها!",
+          "width": 235,
+          "x": 321,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 23.3015873015873,
+          "symWidth": 19.2015873015873,
+          "text": "GET  OUT  OF THE  NORTH SEA , OTHERWISE , I  WILL KILL  YOU  ALONG WITH  THEM !",
+          "translation": "اخرج من بحر الشمال، وإلا فإني سأقتلك مع من هم هناك!",
+          "width": 289,
+          "x": 292,
+          "y": 1508
+        },
+        {
+          "angle": 0,
+          "height": 200,
+          "symHeight": 16.22222222222222,
+          "symWidth": 14.13366686122441,
+          "text": "WHY  MUST  THE ANCESTOR  GET  ANGRY ? THAT  HUMAN  POWERHOUSE'S STRENGTH  IS  UNFATHOMABLE .  YOU JUST  CAME  OUT  OF  SECLUSION , AND  YOUR  CULTIVATION  IS  NOT  YET STABLE .  RELYING  ON  YOURSELF ALONE ,  YOU  SIMPLY  CANNOT GET  REVENGE .",
+          "translation": "لماذا يغضب السلف؟ قوة ذاك الإنسان الطاغية غامضة حدودها. لقد خرجت تواً من العزلة، ولم تستقر طاقتك بعد. وحدك، لا يمكنك الانتقام.",
+          "width": 392,
+          "x": 77,
+          "y": 2001
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 14.44444444444444,
+          "symWidth": 12.29076077431341,
+          "text": "COOPERATE  WITH  ME . I  WILL  SEND  AN  IMMORTAL KING - LEVEL  GUARD  TO  HELP  YOU KILL  HIM ,  AND  YOU  WILL  HELP  ME CONTROL  THE  KUNLUN  REALM . A  MUTUALLY  BENEFICIAL  WIN - WIN SITUATION ,  OTHERWISE ,  THE  SEA CLAN  WILL  BE  ANNIHILATED TODAY .",
+          "translation": "تعاون معي. سأرسل حارسًا ملكيًا خالدًا ليساعدك على قتله، وأنت تساعدني في السيطرة على مملكة كونلون. مكسب متبادل، وإلا فلعشيرة البحر اليوم زوال.",
+          "width": 350,
+          "x": 226,
+          "y": 3310
+        }
+      ],
+      "imgHeight": 4646,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 18.09797297297298,
+          "symWidth": 15.1218814968815,
+          "text": "I  CAN  COOPERATE WITH  YOU ,  BUT  I  HAVE  A CONDITION .  AFTER  KILLING  THAT HUMAN  JUNIOR ,  THE  LIGHT  CLAN MUST  IMMEDIATELY  WITHDRAW FROM  THE  KUNLUN  REALM  AND NOT  INTERFERE  IN  ANY  AFFAIRS OF  THE  SEA  CLAN .",
+          "translation": "أستطيع التعاون معكم، لكن لي شرطٌ واحد. بعد قتل ذلك الإنسان الصاعد، يجب على عشيرة النور الانسحاب فورًا من عالم كون لون، وألا تتدخل في شؤون عشيرة البحر.",
+          "width": 395,
+          "x": 240,
+          "y": 917
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 25.5,
+          "text": "动漫",
+          "translation": "",
+          "width": 48,
+          "x": 637,
+          "y": 1186
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 21,
+          "text": "LINEN",
+          "translation": "",
+          "width": 90,
+          "x": 581,
+          "y": 2185
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 18.29113924050633,
+          "symWidth": 16,
+          "text": "IF  YOU  DARE  PLAY ANY  TRICKS ,  EVEN  IF  I HAVE  TO  EXHAUST  ALL MY  STRENGTH ,  I  CAN DRAG  YOU  DOWN WITH  ME !",
+          "translation": "إن جرؤتم على خداعنا، فحتى إن أفرغت كل قواي، فسأسحبكم إلى الهاوية معي!",
+          "width": 295,
+          "x": 110,
+          "y": 2224
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 16.13008130081301,
+          "symWidth": 12.46341463414634,
+          "text": "GULI ,  GO  QUICKLY TO  THE  HEAVENLY  MAIDEN KINGDOM ,  KILL  THAT  HUMAN JUNIOR ,  AND  BRING  BACK HIS  HEAD  TO  REPORT .  IF YOU  FAIL ,  BRING  YOUR  OWN HEAD  TO  SEE  ME !",
+          "translation": "جولي، انطلق سريعًا إلى مملكة العذارى السماويات، اقتل ذلك الإنسان الصاعد، واجلب رأسه ليبلغني. وإن فشلت، فاصطحب رأسك لتلقاني!",
+          "width": 291,
+          "x": 289,
+          "y": 3016
+        }
+      ],
+      "imgHeight": 4646,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 22.12,
+          "symWidth": 19.2,
+          "text": "YES !  THIS SUBORDINATE OBEYS !",
+          "translation": "نعم! هذا المرؤوس يطيع!",
+          "width": 206,
+          "x": 124,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 257,
+          "symHeight": 20.76030986256035,
+          "symWidth": 18.3881863482157,
+          "text": "MY  LORD !  YOU ABSOLUTELY  MUST  NOT UNDERESTIMATE  THE  ENEMY ! THAT  HUMAN  POWERHOUSE COULD  KILL  COMMANDER TIGER  SHARK  WITH  A  RAISE OF  HIS  HAND .  HIS  STRENGTH IS  TERRIFYING  TO  THE EXTREME .  YOU  MUST BE  CAREFUL !",
+          "translation": "يا مولاي! لا تقلل من شأن العدو أبداً! ذلك العملاق البشري قادر على قتل القائد القرش النمر برفعة يده. قوته مرعبة إلى أقصى الدرجات. الحذر واجب!",
+          "width": 386,
+          "x": 201,
+          "y": 1490
+        }
+      ],
+      "imgHeight": 2625,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [],
+      "imgHeight": 2626,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [],
+      "imgHeight": 2625,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 14.98214285714286,
+          "symWidth": 12.55032111528822,
+          "text": "ARE  THEY HERE ?  PERFECT .  I WAS  FINDING  THE  SEA  CLAN TROUBLESOME  ANYWAY ,  SO  I'LL DEAL  WITH  THEM  ALL  AT  ONCE TODAY ,  AND  CONVENIENTLY  CLEAN UP  THE  TRASHES  WHO  DARE TO  INTERFERE  IN  THE KUNLUN  REALM .",
+          "translation": "هل هم هنا؟ عظيم. لقد وجدت قبيلة البحر مزعجة بالفعل، فاليوم سأقضي عليهم جميعًا دفعة واحدة، وأتولى كذلك تنظيف القمامة التي تجرأت على التدخل في عالم كونلون.",
+          "width": 346,
+          "x": 251,
+          "y": 1345
+        }
+      ],
+      "imgHeight": 2626,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 18.02,
+          "symWidth": 16.64944444444444,
+          "text": "THE IMMORTAL VENERABLE WILL  SURELY WIN !",
+          "translation": "لا محالة أن العجوز الخالد سينتصر!",
+          "width": 163,
+          "x": 412,
+          "y": 379
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 21,
+          "symWidth": 17,
+          "text": "THE  IMMORTAL VENERABLE  IS INVINCIBLE !",
+          "translation": "العجوز الخالد لا يُقهَر!",
+          "width": 194,
+          "x": 76,
+          "y": 623
+        }
+      ],
+      "imgHeight": 2428,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 14.5,
+          "symWidth": 12.67849715643833,
+          "text": "YOU  ARE  THE HUMAN  JUNIOR  WHO KILLED  TIGER  SHARK ? I  AM  THE  LIGHT  CLAN'S IMMORTAL  KING GUARD ,  GULI .",
+          "translation": "أأنت ذلك الإنسان الصغير الذي قتل قرش النمر؟ أنا جولي، الحارس الملكي الخالد من عشيرة النور.",
+          "width": 245,
+          "x": 133,
+          "y": 1219
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 15.8,
+          "symWidth": 13.92475524475524,
+          "text": "ON  LORD SITU'S  ORDERS , I  HAVE  COME  TO TAKE  YOUR  DOG LIFE .",
+          "translation": "بتعليمات الرب سيتو، جئت لأقتص من حياتك البائسة.",
+          "width": 191,
+          "x": 358,
+          "y": 1368
+        }
+      ],
+      "imgHeight": 2428,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 15.66666666666667,
+          "symWidth": 15.119708994709,
+          "text": "A  DOG  OF THE  LIGHT  CLAN DARES  TO  COME  AND ACT  PRESUMPTUOUSLY IN  FRONT  OF ME ?",
+          "translation": "كلب من عشيرة النور يجرؤ على التمادي أمامي؟",
+          "width": 271,
+          "x": 71,
+          "y": 776
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 15.6,
+          "symWidth": 12.75880952380952,
+          "text": "THIS  IS  MY TERRITORY .  SINCE YOU'VE  COME ,  DON'T EVEN  THINK  ABOUT LEAVING !",
+          "translation": "هذه أرضي. لقد أتيت، فلا تظن أنك ستغادر حيًا!",
+          "width": 235,
+          "x": 341,
+          "y": 2062
+        }
+      ],
+      "imgHeight": 2428,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 23,
+          "symWidth": 21.17078754578755,
+          "text": "YOU'RE  COURTING DEATH !  A  MERE  HUMAN DARES  TO  SPOUT !",
+          "translation": "أنت تلاعبُ بالموت! يجرؤ بشرٌ حقيرٌ أن يفوّه بذلك!",
+          "width": 342,
+          "x": 83,
+          "y": 542
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 18.5,
+          "symWidth": 16.47546296296296,
+          "text": "TODAY  I  WILL DEFINITELY  TEAR YOU  APART AND MAKE  YOU  PAY THE  PRICE !",
+          "translation": "اليوم، سأنهش جسدك وأجعلك تدفع الثمن حتمًا!",
+          "width": 214,
+          "x": 343,
+          "y": 1890
+        }
+      ],
+      "imgHeight": 2428,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [],
+      "imgHeight": 2542,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 17.5,
+          "symWidth": 15.7449044011544,
+          "text": "You HAVE  SOME  SKILL . YOU'RE  INDEED  A  BIT STRONGER  THAN THAT  SEA  CLAN TRASH .",
+          "translation": "لديك مهارةٌ ما، أنت بالفعل أقوى قليلاً من دنس عشيرة البحر تلك.",
+          "width": 282,
+          "x": 147,
+          "y": 1280
+        }
+      ],
+      "imgHeight": 2542,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 25.36371527777778,
+          "symWidth": 24.58333333333334,
+          "text": "BUT  DO  YOU  THINK  YOU CAN  WIN  AGAINST  ME LIKE  THIS ?  YOU  ARE UNDERESTIMATING  THE SO  STRONG !",
+          "translation": "هل تظن أنك تستطيع الفوز عليّ بهذا الشكل؟ أنت تُستخف بالقوة العظيمة.",
+          "width": 289,
+          "x": 125,
+          "y": 458
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 79.16666666666667,
+          "symWidth": 58.91666666666666,
+          "text": "Tolizy 00",
+          "translation": "",
+          "width": 265,
+          "x": 396,
+          "y": 710
+        }
+      ],
+      "imgHeight": 2542,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 24.72463768115942,
+          "symWidth": 22.78442028985507,
+          "text": "TODAY ,  I WILL  LET  YOU EXPERIENCE WHAT  TRUE IMMORTAL KING  COMBAT POWER  IS !",
+          "translation": "اليوم سأجعلك تذوق قوة ملك الخلود الحقيقي في القتال!",
+          "width": 237,
+          "x": 242,
+          "y": 169
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 24.87878787878788,
+          "symWidth": 20.93939393939394,
+          "text": "LIGHT JUDGMENT · HEAVEN'S PUNISHMENT !",
+          "translation": "حكم الضوء · عقاب السماء!",
+          "width": 232,
+          "x": 117,
+          "y": 1866
+        }
+      ],
+      "imgHeight": 2542,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 28.30555555555556,
+          "symWidth": 24.58333333333334,
+          "text": "BE COMPLETELY ANNIHILATED FOR  ME !",
+          "translation": "كن مدمرًا بالكامل بواسطتي!",
+          "width": 250,
+          "x": 396,
+          "y": 202
+        }
+      ],
+      "imgHeight": 2659,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 270,
+          "symHeight": 243.3333333333333,
+          "symWidth": 174.3333333333333,
+          "text": "轰轰轰",
+          "translation": "دوي دوي دوي",
+          "width": 557,
+          "x": 54,
+          "y": 658
+        }
+      ],
+      "imgHeight": 2660,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

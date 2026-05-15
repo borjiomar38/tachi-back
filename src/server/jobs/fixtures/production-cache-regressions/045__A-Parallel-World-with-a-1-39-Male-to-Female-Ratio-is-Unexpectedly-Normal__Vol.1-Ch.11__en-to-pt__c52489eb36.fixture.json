@@ -1,0 +1,153 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0045",
+  "jobId": "fixture-job-0045",
+  "licenseId": "fixture-license-0045",
+  "pageCount": 2,
+  "pageOrder": ["001.png", "002.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 16,
+          "symWidth": 12.05,
+          "text": "THANKS  FOR WAITING ... DOES  THIS LOOK  GOOD ON  ME ?",
+          "translation": "OBRIGADA POR ESPERAR... FICO BEM EM MIM?",
+          "width": 123,
+          "x": 734,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 17.65384615384615,
+          "symWidth": 12.81923076923077,
+          "text": "000H ~ IT  LOOKS GOOD  ON YOU ,  VERY CUTE !",
+          "translation": "UAU~ FICA ótimo em você, muito fofo!",
+          "width": 111,
+          "x": 677,
+          "y": 379
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19.5,
+          "symWidth": 13,
+          "text": "! ?",
+          "translation": "!?",
+          "width": 25,
+          "x": 840,
+          "y": 545
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 16.47058823529412,
+          "symWidth": 10.49264705882353,
+          "text": "... THEN , WHERE SHOULD WE  GO !?",
+          "translation": "... ENTÃO, ONDE VAMOS?",
+          "width": 87,
+          "x": 210,
+          "y": 609
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 8.88888888888889,
+          "text": "T - THANKS .",
+          "translation": "O-OBRIGADA.",
+          "width": 84,
+          "x": 781,
+          "y": 723
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 25.66666666666666,
+          "symWidth": 20.31666666666667,
+          "text": "TO  THE CONVE- NIENCE STORE ?",
+          "translation": "À LOJA DE CONVENIÊNCIA?",
+          "width": 130,
+          "x": 58,
+          "y": 725
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 17.04878048780488,
+          "symWidth": 14.4390243902439,
+          "text": "THEY  RETURNED HOME  AFTER A  10 - MINUTE ROUND  TRIP .",
+          "translation": "Eles voltaram para casa após uma rápida ida e volta de 10 minutos.",
+          "width": 171,
+          "x": 49,
+          "y": 1067
+        }
+      ],
+      "imgHeight": 1280,
+      "imgWidth": 905,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 323,
+          "symHeight": 21.83816425120773,
+          "symWidth": 16.92028985507246,
+          "text": "Sou TOLD  ME I'M  CUTE ! FOR  THE FIRST  TIME IN  MY  LIFE , SOMEONE OF  THE OPPOSITE SEX  CALLED ME  CUTE !!",
+          "translation": "Sou DISSE QUE SOU FOFA! Pela primeira vez na vida, alguém do sexo oposto me chamou de fofa!!",
+          "width": 155,
+          "x": 683,
+          "y": 100
+        },
+        {
+          "angle": 0,
+          "height": 302,
+          "symHeight": 16.86393068855449,
+          "symWidth": 12.22722298221614,
+          "text": "I'M  SURE  THAT MY  BROTHER'S FALLING  IN  LOVE WITH  ME .  ♡ NO ,  MAYBE  SOU HAS  FULLY  FALLEN HEAD  OVER  HEELS FOR  ME  ( AND ALREADY  LOVES EVERYTHING  ABOUT ME ,  HIS  ELDER SISTER ) ?  SHOULD WE  GET  MARRIED ALREADY ?",
+          "translation": "Tenho certeza que meu irmão está apaixonado por mim. ♡ Não, talvez o Sou esteja completamente encantado (e já ame tudo em mim, sua irmã mais velha)? Já devíamos nos casar?",
+          "width": 188,
+          "x": 69,
+          "y": 382
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 15.18831168831169,
+          "symWidth": 11.9051948051948,
+          "text": "I  KNOW I'M  A  BIT  OF A  LOOSE  CANNON SOMETIMES ,  BUT I  LOOK  FOR- WARD  TO  BEING WITH  YOU  FOR ETWERNITYYY ~ ♡",
+          "translation": "Sei que às vezes sou meio imprevisível, mas mal posso esperar para ficar com você para toda a eternidade~ ♡",
+          "width": 156,
+          "x": 684,
+          "y": 957
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 17.48780487804878,
+          "symWidth": 14.24390243902439,
+          "text": "THEY  RETURNED HOME  AFTER A  10 - MINUTE ROUND  TRIP .",
+          "translation": "Eles voltaram para casa após um passeio de 10 minutos.",
+          "width": 170,
+          "x": 50,
+          "y": 1074
+        }
+      ],
+      "imgHeight": 1280,
+      "imgWidth": 905,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}
