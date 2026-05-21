@@ -16,6 +16,11 @@
 /build
 /public/storybook
 /storybook-static
+.output
+.vinxi
+dist
+.tanstack
+.nitro
 
 # misc
 .DS_Store
@@ -33,6 +38,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
+.env.*
+!.env.example
 .env.local
 .env.development.local
 .env.test.local

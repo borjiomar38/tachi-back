@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { fallbackBlogArticleSummary } from '@/features/blog/fallback';
-import { buildPublicAbsoluteUrl } from '@/features/public/head';
+import { buildPublicAbsoluteUrlFromRequest } from '@/features/public/head';
 import {
   BlogSitemapEntry,
   getPublishedBlogSitemapEntries,
@@ -15,12 +15,100 @@ interface SitemapEntry {
   priority: string;
 }
 
+const routeModules = import.meta.glob(
+  ['./*.tsx', './blog/**/*.tsx', './guides/**/*.tsx', './legal/**/*.tsx'],
+  {
+    eager: true,
+    import: 'default',
+    query: '?raw',
+  }
+);
+const defaultStaticSitemapEntry = {
+  changeFrequency: 'monthly',
+  lastModified: '2026-05-04',
+  priority: '0.7',
+} satisfies Omit<SitemapEntry, 'path'>;
+const staticSitemapEntryOverrides: Record<
+  string,
+  Partial<Omit<SitemapEntry, 'path'>>
+> = {
+  '/': {
+    changeFrequency: 'weekly',
+    priority: '1.0',
+  },
+  '/blog': {
+    changeFrequency: 'daily',
+    priority: '0.9',
+  },
+  '/download': {
+    priority: '0.8',
+  },
+  '/translate-manhwa-ai': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-12',
+    priority: '0.9',
+  },
+  '/pricing': {
+    changeFrequency: 'weekly',
+    priority: '0.9',
+  },
+  '/how-it-works': {
+    priority: '0.8',
+  },
+  '/guides/mihon-nayovi-setup': {
+    lastModified: '2026-05-14',
+    priority: '0.8',
+  },
+  '/guides/mihon-tachiyomiat-setup': {
+    lastModified: '2026-05-14',
+    priority: '0.8',
+  },
+  '/legal/privacy': {
+    changeFrequency: 'yearly',
+    priority: '0.3',
+  },
+  '/legal/terms': {
+    changeFrequency: 'yearly',
+    priority: '0.3',
+  },
+  '/legal/official-sources-takedown': {
+    changeFrequency: 'yearly',
+    priority: '0.4',
+  },
+};
+const staticSitemapPathOrder = [
+  '/',
+  '/blog',
+  '/download',
+  '/translate-manhwa-ai',
+  '/pricing',
+  '/how-it-works',
+  '/support',
+  '/guides/mihon-nayovi-setup',
+  '/guides/mihon-tachiyomiat-setup',
+  '/guides/translation-support-workflow',
+  '/legal/privacy',
+  '/legal/terms',
+  '/legal/official-sources-takedown',
+];
+const excludedStaticSitemapPaths = new Set(['/robots.txt', '/sitemap.xml']);
+const excludedStaticSitemapPrefixes = [
+  '/api',
+  '/app',
+  '/checkout',
+  '/login',
+  '/logout',
+  '/manager',
+];
+
 export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
-      GET: async () => {
+      GET: async ({ request }) => {
         const blogEntries = await loadBlogSitemapEntries();
-        const sitemap = buildSitemapXml(blogEntries);
+        const sitemap = buildSitemapXml(blogEntries, (path) =>
+          buildPublicAbsoluteUrlFromRequest(request, path)
+        );
 
         return new Response(sitemap, {
           headers: {
@@ -45,7 +133,10 @@ async function loadBlogSitemapEntries() {
   }
 }
 
-function buildSitemapXml(blogEntries: BlogSitemapEntry[]) {
+function buildSitemapXml(
+  blogEntries: BlogSitemapEntry[],
+  buildAbsoluteUrl: (path: string) => string
+) {
   const allBlogEntries = mergeBlogEntries([
     {
       lastModified: fallbackBlogArticleSummary.updatedAt,
@@ -70,92 +161,105 @@ function buildSitemapXml(blogEntries: BlogSitemapEntry[]) {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...sitemapEntries.map(formatSitemapEntry),
+    ...sitemapEntries.map((entry) =>
+      formatSitemapEntry(entry, buildAbsoluteUrl)
+    ),
     '</urlset>',
   ].join('\n');
 }
 
 function buildStaticSitemapEntries(blogLastModified: string): SitemapEntry[] {
-  return [
-    {
-      changeFrequency: 'weekly',
-      lastModified: '2026-05-04',
-      path: '/',
-      priority: '1.0',
-    },
-    {
-      changeFrequency: 'daily',
-      lastModified: blogLastModified,
-      path: '/blog',
-      priority: '0.9',
-    },
-    {
-      changeFrequency: 'monthly',
-      lastModified: '2026-05-04',
-      path: '/download',
-      priority: '0.8',
-    },
-    {
-      changeFrequency: 'weekly',
-      lastModified: '2026-05-12',
-      path: '/translate-manhwa-ai',
-      priority: '0.9',
-    },
-    {
-      changeFrequency: 'weekly',
-      lastModified: '2026-05-04',
-      path: '/pricing',
-      priority: '0.9',
-    },
-    {
-      changeFrequency: 'monthly',
-      lastModified: '2026-05-04',
-      path: '/how-it-works',
-      priority: '0.8',
-    },
-    {
-      changeFrequency: 'monthly',
-      lastModified: '2026-05-04',
-      path: '/support',
-      priority: '0.7',
-    },
-    {
-      changeFrequency: 'monthly',
-      lastModified: '2026-05-14',
-      path: '/guides/mihon-nayovi-setup',
-      priority: '0.8',
-    },
-    {
-      changeFrequency: 'monthly',
-      lastModified: '2026-05-14',
-      path: '/guides/mihon-tachiyomiat-setup',
-      priority: '0.8',
-    },
-    {
-      changeFrequency: 'monthly',
-      lastModified: '2026-05-04',
-      path: '/guides/translation-support-workflow',
-      priority: '0.7',
-    },
-    {
-      changeFrequency: 'yearly',
-      lastModified: '2026-05-04',
-      path: '/legal/privacy',
-      priority: '0.3',
-    },
-    {
-      changeFrequency: 'yearly',
-      lastModified: '2026-05-04',
-      path: '/legal/terms',
-      priority: '0.3',
-    },
-    {
-      changeFrequency: 'yearly',
-      lastModified: '2026-05-04',
-      path: '/legal/official-sources-takedown',
-      priority: '0.4',
-    },
-  ];
+  return Object.keys(routeModules)
+    .map(routeFilePathToStaticSitemapPath)
+    .filter((path): path is string => Boolean(path))
+    .map((path) => buildStaticSitemapEntry(path, blogLastModified))
+    .filter((entry, index, list) => {
+      return list.findIndex((item) => item.path === entry.path) === index;
+    })
+    .sort(compareStaticSitemapEntries);
+}
+
+function routeFilePathToStaticSitemapPath(filePath: string) {
+  if (isNonRouteFilePath(filePath)) {
+    return null;
+  }
+
+  const routeSegments = filePath
+    .replace(/^\.\//, '')
+    .replace(/\.(tsx|ts)$/, '')
+    .split('/')
+    .flatMap(routeFileSegmentToPathSegments);
+  const path = routeSegments.length === 0 ? '/' : `/${routeSegments.join('/')}`;
+
+  if (!isStaticPublicSitemapPath(path)) {
+    return null;
+  }
+
+  return path;
+}
+
+function isNonRouteFilePath(filePath: string) {
+  return (
+    filePath === './__root.tsx' ||
+    /(?:^|\/)-/.test(filePath) ||
+    /\.(spec|test)\./.test(filePath) ||
+    filePath.includes('.unit.')
+  );
+}
+
+function routeFileSegmentToPathSegments(segment: string) {
+  const normalizedSegment = segment.replace(/\[\.\]/g, '.');
+
+  if (normalizedSegment === 'index' || normalizedSegment === 'route') {
+    return [];
+  }
+
+  if (normalizedSegment.endsWith('.index')) {
+    return [normalizedSegment.slice(0, -'.index'.length)];
+  }
+
+  return [normalizedSegment];
+}
+
+function isStaticPublicSitemapPath(path: string) {
+  if (path.includes('$') || excludedStaticSitemapPaths.has(path)) {
+    return false;
+  }
+
+  return !excludedStaticSitemapPrefixes.some(
+    (prefix) => path === prefix || path.startsWith(`${prefix}/`)
+  );
+}
+
+function buildStaticSitemapEntry(
+  path: string,
+  blogLastModified: string
+): SitemapEntry {
+  const overrides = staticSitemapEntryOverrides[path] ?? {};
+  const lastModified =
+    path === '/blog' ? blogLastModified : overrides.lastModified;
+
+  return {
+    ...defaultStaticSitemapEntry,
+    ...overrides,
+    lastModified: lastModified ?? defaultStaticSitemapEntry.lastModified,
+    path,
+  };
+}
+
+function compareStaticSitemapEntries(left: SitemapEntry, right: SitemapEntry) {
+  const leftIndex = staticSitemapPathOrder.indexOf(left.path);
+  const rightIndex = staticSitemapPathOrder.indexOf(right.path);
+  const normalizedLeftIndex =
+    leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex;
+  const normalizedRightIndex =
+    rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex;
+
+  if (normalizedLeftIndex !== normalizedRightIndex) {
+    return normalizedLeftIndex - normalizedRightIndex;
+  }
+
+  return left.path.localeCompare(right.path);
 }
 
 function mergeBlogEntries(entries: BlogSitemapEntry[]) {
@@ -170,10 +274,13 @@ function mergeSitemapEntries(entries: SitemapEntry[]) {
   });
 }
 
-function formatSitemapEntry(entry: SitemapEntry) {
+function formatSitemapEntry(
+  entry: SitemapEntry,
+  buildAbsoluteUrl: (path: string) => string
+) {
   return [
     '  <url>',
-    `    <loc>${escapeXml(buildPublicAbsoluteUrl(entry.path))}</loc>`,
+    `    <loc>${escapeXml(buildAbsoluteUrl(entry.path))}</loc>`,
     `    <lastmod>${escapeXml(entry.lastModified)}</lastmod>`,
     `    <changefreq>${entry.changeFrequency}</changefreq>`,
     `    <priority>${entry.priority}</priority>`,
