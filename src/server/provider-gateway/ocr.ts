@@ -284,25 +284,16 @@ function parseFullTextAnnotation(fullTextAnnotation: Record<string, unknown>) {
       }
 
       for (const paragraph of blockRecord.paragraphs) {
-        blocks.push(...parseParagraphToBlocks(paragraph));
+        const parsedParagraph = parseParagraphToBlock(paragraph);
+        if (parsedParagraph) {
+          blocks.push(parsedParagraph);
+        }
       }
     }
   }
 
   return blocks;
 }
-
-type ParsedOcrWord = {
-  angle: number;
-  height: number;
-  order: number;
-  symHeight: number;
-  symWidth: number;
-  text: string;
-  width: number;
-  x: number;
-  y: number;
-};
 
 function parseTextAnnotations(textAnnotations: unknown[]) {
   return textAnnotations.slice(1).flatMap((annotation) => {
@@ -686,185 +677,96 @@ function asRecord(value: unknown) {
     : null;
 }
 
-function parseParagraphToBlocks(paragraph: unknown) {
+function parseParagraphToBlock(paragraph: unknown) {
   const paragraphRecord = asRecord(paragraph);
   if (!paragraphRecord || !Array.isArray(paragraphRecord.words)) {
-    return [];
-  }
-
-  const words = paragraphRecord.words.flatMap((word, order) => {
-    const parsedWord = parseWordToBlock(word, order);
-    return parsedWord ? [parsedWord] : [];
-  });
-
-  return splitParagraphWordsIntoVisualSegments(words).map(mergeWordBlocks);
-}
-
-function parseWordToBlock(word: unknown, order: number): ParsedOcrWord | null {
-  const wordRecord = asRecord(word);
-  if (!wordRecord) {
-    return null;
-  }
-
-  const wordBounds = getBoundsFromBoundingBox(wordRecord.boundingBox);
-  if (!wordBounds) {
     return null;
   }
 
   const accumulator = {
+    maxX: Number.NEGATIVE_INFINITY,
+    maxY: Number.NEGATIVE_INFINITY,
+    minX: Number.POSITIVE_INFINITY,
+    minY: Number.POSITIVE_INFINITY,
     symbolCount: 0,
     symbolHeight: 0,
     symbolWidth: 0,
     text: '',
   };
-  const symbols = Array.isArray(wordRecord.symbols) ? wordRecord.symbols : [];
-  for (const symbol of symbols) {
-    appendSymbolMetrics(accumulator, symbol);
+
+  for (const word of paragraphRecord.words) {
+    collectWordMetrics(accumulator, word);
   }
 
-  const text = accumulator.text.trim();
-  if (text.length <= 1) {
+  const normalizedText = accumulator.text.trim();
+  if (
+    normalizedText.length <= 1 ||
+    !Number.isFinite(accumulator.minX) ||
+    !Number.isFinite(accumulator.minY) ||
+    !Number.isFinite(accumulator.maxX) ||
+    !Number.isFinite(accumulator.maxY)
+  ) {
     return null;
   }
 
   return {
     angle: 0,
-    height: wordBounds.height,
-    order,
+    height: Math.max(accumulator.maxY - accumulator.minY, 1),
     symHeight:
       accumulator.symbolCount > 0
         ? accumulator.symbolHeight / accumulator.symbolCount
-        : wordBounds.height,
+        : 16,
     symWidth:
       accumulator.symbolCount > 0
         ? accumulator.symbolWidth / accumulator.symbolCount
-        : Math.max(wordBounds.width / text.length, 1),
-    text,
-    width: wordBounds.width,
-    x: wordBounds.x,
-    y: wordBounds.y,
+        : 12,
+    text: normalizedText,
+    width: Math.max(accumulator.maxX - accumulator.minX, 1),
+    x: accumulator.minX,
+    y: accumulator.minY,
   };
 }
 
-function splitParagraphWordsIntoVisualSegments(words: ParsedOcrWord[]) {
-  if (words.length < 2) {
-    return words.length === 0 ? [] : [words];
+function collectWordMetrics(
+  accumulator: {
+    maxX: number;
+    maxY: number;
+    minX: number;
+    minY: number;
+    symbolCount: number;
+    symbolHeight: number;
+    symbolWidth: number;
+    text: string;
+  },
+  word: unknown
+) {
+  const wordRecord = asRecord(word);
+  if (!wordRecord) {
+    return;
   }
 
-  const lines: ParsedOcrWord[][] = [];
-  for (const word of [...words].sort(
-    (left, right) =>
-      getOcrBlockCenterY(left) - getOcrBlockCenterY(right) || left.x - right.x
-  )) {
-    const line = lines.find((candidate) =>
-      belongsToSameVisualLine(word, candidate)
-    );
-
-    if (line) {
-      line.push(word);
-    } else {
-      lines.push([word]);
-    }
+  if (accumulator.text) {
+    accumulator.text += ' ';
   }
 
-  return lines
-    .sort(
-      (left, right) =>
-        getWordGroupBounds(left).top - getWordGroupBounds(right).top ||
-        getWordGroupBounds(left).left - getWordGroupBounds(right).left
-    )
-    .flatMap(splitVisualLineByHorizontalGaps);
-}
-
-function belongsToSameVisualLine(word: ParsedOcrWord, line: ParsedOcrWord[]) {
-  const bounds = getWordGroupBounds(line);
-  const overlap =
-    Math.min(word.y + word.height, bounds.bottom) -
-    Math.max(word.y, bounds.top);
-  const minHeight = Math.min(word.height, bounds.bottom - bounds.top);
-  const overlapRatio = minHeight > 0 ? overlap / minHeight : 0;
-  const averageHeight =
-    (word.height +
-      line.reduce((sum, item) => sum + item.height, 0) / line.length) /
-    2;
-  const centerDistance = Math.abs(
-    getOcrBlockCenterY(word) - (bounds.top + bounds.bottom) / 2
-  );
-
-  return (
-    overlapRatio >= 0.55 || centerDistance <= Math.max(8, averageHeight * 0.6)
-  );
-}
-
-function splitVisualLineByHorizontalGaps(line: ParsedOcrWord[]) {
-  const segments: ParsedOcrWord[][] = [];
-
-  for (const word of [...line].sort((left, right) => left.x - right.x)) {
-    const current = segments.at(-1);
-    if (!current) {
-      segments.push([word]);
-      continue;
-    }
-
-    const currentRight = Math.max(
-      ...current.map((item) => item.x + item.width)
-    );
-    const horizontalGap = word.x - currentRight;
-    const averageSymbolWidth =
-      [...current, word].reduce((sum, item) => sum + item.symWidth, 0) /
-      (current.length + 1);
-    const averageSymbolHeight =
-      [...current, word].reduce((sum, item) => sum + item.symHeight, 0) /
-      (current.length + 1);
-    const maxInlineGap = Math.max(
-      18,
-      Math.min(42, averageSymbolWidth * 2.2, averageSymbolHeight * 1.4)
-    );
-
-    if (horizontalGap > maxInlineGap) {
-      segments.push([word]);
-    } else {
-      current.push(word);
-    }
+  const symbols = Array.isArray(wordRecord.symbols) ? wordRecord.symbols : [];
+  for (const symbol of symbols) {
+    appendSymbolMetrics(accumulator, symbol);
   }
 
-  return segments;
-}
-
-function mergeWordBlocks(words: ParsedOcrWord[]) {
-  const left = Math.min(...words.map((word) => word.x));
-  const top = Math.min(...words.map((word) => word.y));
-  const right = Math.max(...words.map((word) => word.x + word.width));
-  const bottom = Math.max(...words.map((word) => word.y + word.height));
-  const orderedWords = [...words].sort((leftWord, rightWord) => {
-    return leftWord.order - rightWord.order;
-  });
-
-  return {
-    angle: 0,
-    height: Math.max(bottom - top, 1),
-    symHeight:
-      words.reduce((sum, word) => sum + word.symHeight, 0) / words.length,
-    symWidth:
-      words.reduce((sum, word) => sum + word.symWidth, 0) / words.length,
-    text: orderedWords.map((word) => word.text).join(' '),
-    width: Math.max(right - left, 1),
-    x: left,
-    y: top,
-  };
-}
-
-function getWordGroupBounds(words: ParsedOcrWord[]) {
-  return {
-    bottom: Math.max(...words.map((word) => word.y + word.height)),
-    left: Math.min(...words.map((word) => word.x)),
-    right: Math.max(...words.map((word) => word.x + word.width)),
-    top: Math.min(...words.map((word) => word.y)),
-  };
-}
-
-function getOcrBlockCenterY(block: { height: number; y: number }) {
-  return block.y + block.height / 2;
+  const wordBounds = getBoundsFromBoundingBox(wordRecord.boundingBox);
+  if (wordBounds) {
+    accumulator.minX = Math.min(accumulator.minX, wordBounds.x);
+    accumulator.minY = Math.min(accumulator.minY, wordBounds.y);
+    accumulator.maxX = Math.max(
+      accumulator.maxX,
+      wordBounds.x + wordBounds.width
+    );
+    accumulator.maxY = Math.max(
+      accumulator.maxY,
+      wordBounds.y + wordBounds.height
+    );
+  }
 }
 
 function appendSymbolMetrics(
