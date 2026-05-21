@@ -13,7 +13,7 @@ The service is designed around a redeem-code activation model. Readers choose a 
 - Primary audience: Readers who want in-app translation without managing OCR or translation API keys.
 - Primary platform: Android.
 - Activation model: Redeem codes linked to hosted subscription/token access.
-- Public site origin: https://nayovi.com.
+- Public site origin: https://tachiyomiat.com.
 
 ## Public route map
 

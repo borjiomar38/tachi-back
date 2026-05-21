@@ -6,28 +6,28 @@ Nayovi is a reader-focused Android app and hosted backend for manga translate AI
 
 ## Primary pages
 
-- [Home](https://nayovi.com/): Product overview for a free manga AI translator, free manhwa AI translator, free manhua AI translator, hosted OCR, and Android activation.
-- [AI Manhwa Translator](https://nayovi.com/translate-manhwa-ai): SEO landing page for AI manhwa translation, hosted OCR, Android APK download, and Nayovi activation.
-- [Blog](https://nayovi.com/blog): Manhwa, manhua, manga translation, Android setup, hosted OCR, and Nayovi download articles.
-- [Download](https://nayovi.com/download): Android APK download and setup guidance.
-- [Pricing](https://nayovi.com/pricing): Free and monthly token plans for hosted OCR and manga, manhwa, and manhua AI translation.
-- [How it works](https://nayovi.com/how-it-works): Checkout, redeem-code activation, device binding, OCR, and translation flow.
-- [Support](https://nayovi.com/support): Help for billing, activation, setup, and service questions.
-- [Mihon and Nayovi setup guide](https://nayovi.com/guides/mihon-nayovi-setup): Official install guidance, hosted activation, and permission-safe setup boundaries.
-- [Mihon and TachiyomiAT setup guide](https://nayovi.com/guides/mihon-tachiyomiat-setup): Legacy guide path for TachiyomiAT, Tachiyomi, and Mihon setup searches.
-- [Translation support workflow](https://nayovi.com/guides/translation-support-workflow): Permission check, OCR, glossary, review, credit, and removal workflow.
+- [Home](https://tachiyomiat.com/): Product overview for a free manga AI translator, free manhwa AI translator, free manhua AI translator, hosted OCR, and Android activation.
+- [AI Manhwa Translator](https://tachiyomiat.com/translate-manhwa-ai): SEO landing page for AI manhwa translation, hosted OCR, Android APK download, and Nayovi activation.
+- [Blog](https://tachiyomiat.com/blog): Manhwa, manhua, manga translation, Android setup, hosted OCR, and Nayovi download articles.
+- [Download](https://tachiyomiat.com/download): Android APK download and setup guidance.
+- [Pricing](https://tachiyomiat.com/pricing): Free and monthly token plans for hosted OCR and manga, manhwa, and manhua AI translation.
+- [How it works](https://tachiyomiat.com/how-it-works): Checkout, redeem-code activation, device binding, OCR, and translation flow.
+- [Support](https://tachiyomiat.com/support): Help for billing, activation, setup, and service questions.
+- [Mihon and Nayovi setup guide](https://tachiyomiat.com/guides/mihon-nayovi-setup): Official install guidance, hosted activation, and permission-safe setup boundaries.
+- [Mihon and TachiyomiAT setup guide](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Legacy guide path for TachiyomiAT, Tachiyomi, and Mihon setup searches.
+- [Translation support workflow](https://tachiyomiat.com/guides/translation-support-workflow): Permission check, OCR, glossary, review, credit, and removal workflow.
 
 ## Policies
 
-- [Privacy Policy](https://nayovi.com/legal/privacy): Data processed for OCR, translation, source discovery, checkout, activation, and support.
-- [Terms of Service](https://nayovi.com/legal/terms): Service rules for token packs, redeem codes, app activation, and translation processing.
-- [Official sources and takedown policy](https://nayovi.com/legal/official-sources-takedown): Boundary for official sources, prohibited chapter hosting, and rights-holder review.
+- [Privacy Policy](https://tachiyomiat.com/legal/privacy): Data processed for OCR, translation, source discovery, checkout, activation, and support.
+- [Terms of Service](https://tachiyomiat.com/legal/terms): Service rules for token packs, redeem codes, app activation, and translation processing.
+- [Official sources and takedown policy](https://tachiyomiat.com/legal/official-sources-takedown): Boundary for official sources, prohibited chapter hosting, and rights-holder review.
 
 ## Machine-readable resources
 
-- [Sitemap](https://nayovi.com/sitemap.xml)
-- [Robots](https://nayovi.com/robots.txt)
-- [Full LLM context](https://nayovi.com/llms-full.txt)
+- [Sitemap](https://tachiyomiat.com/sitemap.xml)
+- [Robots](https://tachiyomiat.com/robots.txt)
+- [Full LLM context](https://tachiyomiat.com/llms-full.txt)
 
 ## Crawl notes
 

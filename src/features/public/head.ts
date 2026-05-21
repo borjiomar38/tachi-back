@@ -6,25 +6,75 @@ import {
 } from '@/features/blog/seo';
 
 const publicSiteName = 'Nayovi';
-const publicBaseUrlFallback = 'https://nayovi.com';
+const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
 const publicSiteDescription =
   'Nayovi is a free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers coming from TachiyomiAT, Tachiyomi, and Mihon-style workflows who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
+const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}`);
 
-const buildAbsoluteUrl = (path: string) => {
+const getFirstHeaderValue = (value: string | null) =>
+  value
+    ?.split(',')
+    .map((part) => part.trim())
+    .find(Boolean);
+
+const isLocalBaseUrl = (url: string) => {
+  try {
+    const hostname = new URL(url).hostname;
+
+    return ['localhost', '127.0.0.1', '0.0.0.0', '[::1]', '::1'].includes(
+      hostname
+    );
+  } catch {
+    return false;
+  }
+};
+
+const resolveConfiguredBaseUrl = () => {
   const env = import.meta.env;
   const previewUrl =
     env.VITE_VERCEL_ENV === 'preview' ? env.VITE_VERCEL_BRANCH_URL : undefined;
-  const baseUrl = previewUrl ? `https://${previewUrl}` : env.VITE_BASE_URL;
-  const normalizedBaseUrl = normalizeBaseUrl(baseUrl || publicBaseUrlFallback);
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+  if (previewUrl) {
+    return `https://${previewUrl}`;
+  }
+
+  if (env.VITE_BASE_URL && (env.DEV || !isLocalBaseUrl(env.VITE_BASE_URL))) {
+    return env.VITE_BASE_URL;
+  }
+
+  return publicBaseUrlFallback;
+};
+
+const buildAbsoluteUrl = (path: string) => {
+  const normalizedBaseUrl = normalizeBaseUrl(resolveConfiguredBaseUrl());
+  const normalizedPath = normalizePath(path);
 
   return `${normalizedBaseUrl}${normalizedPath}`;
 };
 
 export const buildPublicAbsoluteUrl = buildAbsoluteUrl;
+
+export const buildPublicAbsoluteUrlFromRequest = (
+  request: Request,
+  path: string
+) => {
+  const requestUrl = new URL(request.url);
+  const forwardedHost = getFirstHeaderValue(
+    request.headers.get('x-forwarded-host')
+  );
+  const host =
+    forwardedHost ?? getFirstHeaderValue(request.headers.get('host'));
+  const forwardedProto = getFirstHeaderValue(
+    request.headers.get('x-forwarded-proto')
+  );
+  const protocol = forwardedProto ?? requestUrl.protocol.replace(/:$/, '');
+  const origin = `${protocol}://${host ?? requestUrl.host}`;
+
+  return `${normalizeBaseUrl(origin)}${normalizePath(path)}`;
+};
 
 export const buildPublicFaqStructuredData = (
   path: string,

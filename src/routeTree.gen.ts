@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TranslateManhwaAiRouteImport } from './routes/translate-manhwa-ai'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LogoutRouteImport } from './routes/logout'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
@@ -108,6 +109,11 @@ const SupportRoute = SupportRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -550,6 +556,7 @@ export interface FileRoutesByFullPath {
   '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
@@ -634,6 +641,7 @@ export interface FileRoutesByTo {
   '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
@@ -722,6 +730,7 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
@@ -811,6 +820,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/logout'
     | '/pricing'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/support'
     | '/translate-manhwa-ai'
@@ -895,6 +905,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/logout'
     | '/pricing'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/support'
     | '/translate-manhwa-ai'
@@ -982,6 +993,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/logout'
     | '/pricing'
+    | '/robots.txt'
     | '/sitemap.xml'
     | '/support'
     | '/translate-manhwa-ai'
@@ -1070,6 +1082,7 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   LogoutRoute: typeof LogoutRoute
   PricingRoute: typeof PricingRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
   TranslateManhwaAiRoute: typeof TranslateManhwaAiRoute
@@ -1136,6 +1149,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -1866,6 +1886,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute: HowItWorksRoute,
   LogoutRoute: LogoutRoute,
   PricingRoute: PricingRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
   TranslateManhwaAiRoute: TranslateManhwaAiRoute,

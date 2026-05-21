@@ -32,6 +32,7 @@ yarn-error.log*
 
 # local env files
 .env
+.env.production
 .env.local
 .env.development.local
 .env.test.local
@@ -63,6 +64,7 @@ certificates
 app.config.timestamp_*.js
 .tanstack
 .nitro
+/tmp/
 
 # vscode
 /.vscode/*
