@@ -1,0 +1,2109 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0127",
+  "jobId": "fixture-job-0127",
+  "licenseId": "fixture-license-0127",
+  "pageCount": 40,
+  "pageOrder": [
+    "001.webp",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "020__001.jpg",
+    "020__002.jpg",
+    "021.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 25.81818181818182,
+          "text": "CAPITULO  163",
+          "translation": "الفصل ١٦٣",
+          "width": 314,
+          "x": 365,
+          "y": 54
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 44,
+          "symWidth": 30.76719576719577,
+          "text": "EL  LEGENDARIO  HIJO  MENOR www DE  LA  CASA  DEL  MARQUES",
+          "translation": "الابن الأصغر الأسطوري من بيت المَاركيز",
+          "width": 595,
+          "x": 55,
+          "y": 178
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 34,
+          "symWidth": 20.65910947712418,
+          "text": "tus  visitas  NOS  AYUDAN  para  Administrar el  scan ,  solo  subimos  en  la  web  OFICIAL ZONAOLYMPUS.COM",
+          "translation": "زيارتكم تُعيننا على إدارة الترجمة، ننشر فقط على الموقع الرسمي ZONAOLYMPUS.COM",
+          "width": 535,
+          "x": 22,
+          "y": 1117
+        }
+      ],
+      "imgHeight": 1305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 61.4074074074074,
+          "symWidth": 36.25925925925926,
+          "text": "NOS  VEMOS EN  EL  PRÓXIMO CAPÍTULO",
+          "translation": "نلتقي في الحلقة القادمة",
+          "width": 355,
+          "x": 175,
+          "y": 1140
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 47.66666666666666,
+          "symWidth": 24.97441077441077,
+          "text": "VISITANOS  EN ZONAOLYMPUS.COM SERIES  AL  DIA  CON  LA  RAW ,  SIEMPRE  NUEVOS  LANZAMIENTOS",
+          "translation": "زورونا في زون أوليمبوس.كوم، السلسلاتُ محدثة مع الـ RAW، دوماً إصدارات جديدة",
+          "width": 653,
+          "x": 17,
+          "y": 1482
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 14,
+          "text": "NOMBRE :  EL  DEVOTO  CABALLERO",
+          "translation": "الاسم: الفارسُ الورع",
+          "width": 359,
+          "x": 152,
+          "y": 1799
+        }
+      ],
+      "imgHeight": 1832,
+      "imgWidth": 704,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 256,
+          "symHeight": 119.0714285714286,
+          "symWidth": 101.9285714285714,
+          "text": "후 작가 의  역대 급 막내 아들",
+          "translation": "الابن الأصغر الأسطوري للمؤلف هو",
+          "width": 617,
+          "x": 45,
+          "y": 397
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 19,
+          "text": "만화  케이",
+          "translation": "مانغا كاي",
+          "width": 79,
+          "x": 256,
+          "y": 692
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 22,
+          "symWidth": 18.2,
+          "text": "원작  너울 히",
+          "translation": "القصة الأصلية نوول هي",
+          "width": 100,
+          "x": 381,
+          "y": 692
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 13.25,
+          "text": "163 화",
+          "translation": "الحلقة ١٦٣",
+          "width": 54,
+          "x": 324,
+          "y": 809
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 24.71111111111111,
+          "symWidth": 22.37777777777778,
+          "text": "NTESE ELE ZONAOLYMPUS.COM",
+          "translation": "زيارة إلى ZONAOLYMPUS.COM",
+          "width": 162,
+          "x": 49,
+          "y": 413
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 16.13636363636364,
+          "text": "HA  PASADO TIEMPO ,  ¿ NO ?",
+          "translation": "لقد مضى وقت طويل، أليس كذلك؟",
+          "width": 180,
+          "x": 413,
+          "y": 1215
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 41.33333333333334,
+          "symWidth": 22.66666666666667,
+          "text": "Sí .",
+          "translation": "نعم.",
+          "width": 56,
+          "x": 501,
+          "y": 1264
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 20.5,
+          "symWidth": 17.01785714285714,
+          "text": "HA  PASADO TIEMPO .",
+          "translation": "لقد مضى وقت طويل.",
+          "width": 148,
+          "x": 304,
+          "y": 2097
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 21.83333333333333,
+          "text": "OYE ...",
+          "translation": "اسمع...",
+          "width": 120,
+          "x": 470,
+          "y": 333
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 17.5,
+          "symWidth": 13.70028011204482,
+          "text": "AUNQUE  OTROS  NO , ENO  CREES  QUE  EL  JEFE GRAY  NO  DEBERÍA  COM- PORTARSE  ASĺ ?",
+          "translation": "رغم أن آخرين لا يرون ذلك، ألا تعتقد أن القائد غراي لم يكن ينبغي أن يتصرف هكذا؟",
+          "width": 268,
+          "x": 160,
+          "y": 1207
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 23,
+          "symWidth": 17.75,
+          "text": "¿ EH ?",
+          "translation": "ها؟",
+          "width": 71,
+          "x": 434,
+          "y": 1632
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 22.78571428571428,
+          "symWidth": 17.15714285714286,
+          "text": "ESTUVE POSTRADO UNA  SEMANA ,",
+          "translation": "بقيت طريح الفراش لأسبوعٍ كامل,",
+          "width": 180,
+          "x": 300,
+          "y": 102
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 41,
+          "symWidth": 68.33333333333333,
+          "text": "แหม่",
+          "translation": "...",
+          "width": 85,
+          "x": 140,
+          "y": 753
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 16.5,
+          "symWidth": 14.30555555555556,
+          "text": "Y  ME  SENTÍA SOLO ,  ¿ SABES ?",
+          "translation": "وشعرت بالوحدة، أتعلم؟",
+          "width": 182,
+          "x": 148,
+          "y": 901
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.66666666666667,
+          "symWidth": 13.4,
+          "text": "ME  PREGUNTABA CÓMO  IRÍA  LA ACADEMIA ,",
+          "translation": "كنت أتساءل كيف تسير الأمور في الأكاديمية,",
+          "width": 183,
+          "x": 368,
+          "y": 1284
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.66666666666667,
+          "symWidth": 14.08888888888889,
+          "text": "QUÉ  ESTARÍA HACIENDO  NUESTRO APUESTO  JEFE ,",
+          "translation": "وماذا يفعل قائدنا الوسيم,",
+          "width": 219,
+          "x": 421,
+          "y": 1932
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 18.5,
+          "symWidth": 14.55952380952381,
+          "text": "¿ HABRÁ COMIDO ?",
+          "translation": "وهل قد تناول طعامه؟",
+          "width": 112,
+          "x": 265,
+          "y": 2150
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 134,
+          "symWidth": 133.5,
+          "text": "반정",
+          "translation": "بانجونغ",
+          "width": 166,
+          "x": 512,
+          "y": 356
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 89.5,
+          "symWidth": 71.5,
+          "text": "HITY",
+          "translation": "HITY",
+          "width": 163,
+          "x": 44,
+          "y": 748
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 19.75,
+          "symWidth": 15.47790404040404,
+          "text": "¿ DE  VERDAD LE  PASARÍA  LA COMIDA  POR  LA GARGANTA ... ?",
+          "translation": "هل حقًّا سيمرر الطعام عبر حنجرته...؟",
+          "width": 194,
+          "x": 140,
+          "y": 1092
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 21.15151515151515,
+          "symWidth": 16.52380952380953,
+          "text": "ME  TENÍA PREOCUPADO , ¿ SABES ?",
+          "translation": "لقد كان يُقلقني، هل تدرك ذلك؟",
+          "width": 188,
+          "x": 451,
+          "y": 1315
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 14,
+          "text": "... ¿ EH ?",
+          "translation": "... ماذا؟",
+          "width": 104,
+          "x": 377,
+          "y": 1871
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 47,
+          "symWidth": 48.5,
+          "text": "88",
+          "translation": "٨٨",
+          "width": 86,
+          "x": 68,
+          "y": 1999
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.66666666666667,
+          "symWidth": 15.03535353535354,
+          "text": "OYE ... ¿ NI  ASÍ  TE  DAS CUENTA ?",
+          "translation": "أَلا تَدْرِك؟",
+          "width": 189,
+          "x": 173,
+          "y": 274
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 17,
+          "symWidth": 12.21111111111111,
+          "text": "DIJISTE  QUE ME  SERVIRÍAS , ¿ NO ?",
+          "translation": "قُلْتَ إنك ستخدمني، أليس كذلك؟",
+          "width": 153,
+          "x": 209,
+          "y": 839
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 17.3125,
+          "symWidth": 12.34166666666667,
+          "text": "QUE  INCLUSO HARÍAS  EL  TRABAJO DURO ,  ¿ NO ?",
+          "translation": "وأنك ستتحمل العبء الثقيل، أليس كذلك؟",
+          "width": 194,
+          "x": 470,
+          "y": 1020
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 46.66666666666666,
+          "symWidth": 45.66666666666666,
+          "text": "411349",
+          "translation": "",
+          "width": 80,
+          "x": 111,
+          "y": 1469
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 17,
+          "symWidth": 15.4,
+          "text": "ANTESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 165,
+          "x": 435,
+          "y": 1751
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 19,
+          "symWidth": 15.32905982905983,
+          "text": "ENTONCES , CÓMO  ES  QUE NI  UNA  VEZ  TE  DE- JASTE  VER ?",
+          "translation": "فكيف لم تترك لي فرصة واحدة لأراك؟",
+          "width": 216,
+          "x": 159,
+          "y": 2054
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30.66666666666667,
+          "symWidth": 19,
+          "text": "AH ,",
+          "translation": "آه،",
+          "width": 55,
+          "x": 439,
+          "y": 293
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 16.5,
+          "symWidth": 13.95,
+          "text": "NO  LO  MALIN- TERPRETES .",
+          "translation": "لا تسيء الفهم.",
+          "width": 155,
+          "x": 237,
+          "y": 1004
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 18.66666666666667,
+          "symWidth": 16.28256928256928,
+          "text": "NO  ES  QUE  ESTÉ MOOOLESTO  EN  LO ABSOLUTO ,",
+          "translation": "ليس أنني غاضب تماماً،",
+          "width": 245,
+          "x": 83,
+          "y": 1502
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 13.76086956521739,
+          "symWidth": 11.40398550724638,
+          "text": "DE  VERDAD ... MUCHÍSIMO ... DEMASIADO ...",
+          "translation": "حقاً... غاضب للغاية... أكثر من اللازم...",
+          "width": 122,
+          "x": 409,
+          "y": 2038
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 11.66666666666667,
+          "symWidth": 10.9021164021164,
+          "text": "PARECE  QUE SI  ESTÁ  BASTANTE MOLESTO",
+          "translation": "يبدو أنه حقاً في غاية الغضب.",
+          "width": 129,
+          "x": 525,
+          "y": 2138
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 18.33333333333333,
+          "symWidth": 15.26058201058201,
+          "text": "SOLO  ESTOY ... DOLIDO  POR DENTRO ,",
+          "translation": "فحسبُ أني... أتألمُ في النفس.",
+          "width": 190,
+          "x": 180,
+          "y": 446
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 19,
+          "symWidth": 16.08333333333334,
+          "text": "PORQUE ME  DUELE .",
+          "translation": "لأنّ الألم يسكنني.",
+          "width": 132,
+          "x": 381,
+          "y": 592
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 18.66666666666667,
+          "symWidth": 12.97592592592593,
+          "text": "... VENÍA  AQUÍ AL  MENOS  UNA VEZ  AL  DÍA .",
+          "translation": "كنتُ آتي إلى هنا مرةً على الأقل في اليوم.",
+          "width": 169,
+          "x": 356,
+          "y": 1637
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 16.25,
+          "symWidth": 12.09166666666667,
+          "text": "CADA  VEZ  QUE VENÍA ,  EL  GUARDIA DE AFUERA",
+          "translation": "في كل مرة يأتي، كان الحارس في الخارج",
+          "width": 180,
+          "x": 160,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 16.92,
+          "symWidth": 12.28428571428571,
+          "text": "DECÍA  QUE  EL ENTRENAMIENTO  DEL SEÑOR  NO  HABÍA  TER- MINADO  Y  QUE  REGRE- SARA  DESPUÉS ...",
+          "translation": "يقول إن تدريب السيد لم ينته بعد، وسيعود لاحقًا...",
+          "width": 226,
+          "x": 418,
+          "y": 774
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 13.26864801864802,
+          "text": "ASÍ  QUE  NO PUDE  ENTRAR  A  LA RESIDENCIA .",
+          "translation": "لذا لم أستطع دخول المقر.",
+          "width": 209,
+          "x": 273,
+          "y": 1422
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.06111111111111,
+          "symWidth": 13.99444444444445,
+          "text": "SI  SE  QUEDA ACOSTADO ,  SU  ROPA SE  ENSUCIARÁ .",
+          "translation": "إن استلقى، ستتسخ ملابسه.",
+          "width": 189,
+          "x": 90,
+          "y": 1594
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 12.71428571428571,
+          "text": "EEEH ...",
+          "translation": "آآه...",
+          "width": 79,
+          "x": 521,
+          "y": 1742
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15,
+          "symWidth": 14.21818181818182,
+          "text": "¿ ¿ EH ??  SEGÚN LO  QUE  DIJO  LA MAESTRO ...",
+          "translation": "ها؟ حسب قول المعلمة...",
+          "width": 166,
+          "x": 55,
+          "y": 112
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 21,
+          "text": "PFFT .",
+          "translation": "هه.",
+          "width": 102,
+          "x": 277,
+          "y": 580
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 25.66666666666667,
+          "text": "¿ OIGA ?",
+          "translation": "هل تسمع؟",
+          "width": 139,
+          "x": 149,
+          "y": 1955
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 22.5,
+          "symWidth": 27,
+          "text": "ee",
+          "translation": "هه",
+          "width": 40,
+          "x": 24,
+          "y": 2127
+        }
+      ],
+      "imgHeight": 2260,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 24.1,
+          "symWidth": 22.40833333333333,
+          "text": "NTES EILEE ee ZONADLYMPUS.COM",
+          "translation": "",
+          "width": 230,
+          "x": 0,
+          "y": 289
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 21.66666666666667,
+          "symWidth": 19.33589743589744,
+          "text": "HACE  UN  MOMENTO DIJISTE  QUE  NADIE  HABÍA VENIDO ~~~ !!!",
+          "translation": "قبل لحظة قلت إنه لم يأتِ أحد!!!",
+          "width": 338,
+          "x": 301,
+          "y": 555
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 35.66666666666666,
+          "text": "613",
+          "translation": "613",
+          "width": 77,
+          "x": 197,
+          "y": 1179
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.05555555555556,
+          "symWidth": 14.77962962962963,
+          "text": "MAESTRA ... USTED  YA  LO SABIA  TODO ...",
+          "translation": "معلمة... أنتِ كنت تعرفين كل شيء...",
+          "width": 164,
+          "x": 170,
+          "y": 1712
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16,
+          "symWidth": 14.15625,
+          "text": "ASÍ  QUE  SE  ESTÁ VENGANDO DE  ESTA MANERA ,  ENO ?",
+          "translation": "فهذا هو انتقامك، أليس كذلك؟",
+          "width": 197,
+          "x": 352,
+          "y": 1843
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 41.5,
+          "symWidth": 35,
+          "text": "♪ ~",
+          "translation": "♪ ~",
+          "width": 60,
+          "x": 554,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18.32258064516129,
+          "symWidth": 14.12903225806452,
+          "text": "HMM ...  PARECE QUE  HUBO  UN ERROR ,  ¿ NO ?",
+          "translation": "هممم... يبدو أن هناك خطأ، أليس كذلك؟",
+          "width": 167,
+          "x": 220,
+          "y": 82
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 18,
+          "symWidth": 12.94285714285714,
+          "text": "BIEN , SI  TIENES  ALGO QUE  REPORTAR , HAZLO .",
+          "translation": "حسنًا، إن كان لديك ما تبلغ به، فلتفعل.",
+          "width": 184,
+          "x": 460,
+          "y": 780
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 13.85714285714286,
+          "text": "PUES ...",
+          "translation": "حسنًا...",
+          "width": 99,
+          "x": 225,
+          "y": 184
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 13.875,
+          "text": "PRIMERO .",
+          "translation": "أولاً.",
+          "width": 109,
+          "x": 362,
+          "y": 2024
+        }
+      ],
+      "imgHeight": 2263,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 30.36363636363636,
+          "symWidth": 13.5,
+          "text": "GRAY  SHEERAN , HACE  6  DÍAS .",
+          "translation": "جراي شيران، منذ ستة أيام.",
+          "width": 157,
+          "x": 268,
+          "y": 167
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 21,
+          "symWidth": 9.499325236167342,
+          "text": "SE  CONVIRTIÓ  EN JEFE  DEL  DEPARTAMENTO DE  ESGRIMA .",
+          "translation": "تولى منصب رئيس قسم المبارزة.",
+          "width": 182,
+          "x": 97,
+          "y": 337
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 18.66666666666667,
+          "symWidth": 8.203030303030303,
+          "text": "GALADINER ,  QUIEN  ERA  EL INSTRUCTOR  PRINCIPAL  DEL DEPARTAMENTO  MILITAR .",
+          "translation": "غالاتينر، الذي كان المدرب الرئيسي للقسم العسكري.",
+          "width": 183,
+          "x": 419,
+          "y": 1423
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 22.96551724137931,
+          "symWidth": 10.74137931034483,
+          "text": "PASÓ  A  SER  EL  JEFE DEL  DEPARTAMENTO MILITAR .",
+          "translation": "صار رئيسًا للقسم العسكري.",
+          "width": 173,
+          "x": 263,
+          "y": 1583
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 11.875,
+          "text": "SEGUNDO .",
+          "translation": "ثانيًا.",
+          "width": 90,
+          "x": 210,
+          "y": 2146
+        }
+      ],
+      "imgHeight": 2262,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 19.25,
+          "symWidth": 8.657366427432217,
+          "text": "DESDE  EL  PALACIO  REAL  Y VARIOS  LUGARES  HAN  EMPEZADO A  PEDIR  INFORMACIÓN  SOBRE \" MÍ \" .",
+          "translation": "من القصر الملكي ومناطق عدة، بدأوا يطلبون معلومات عن \"أنا\".",
+          "width": 214,
+          "x": 373,
+          "y": 719
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 12.125,
+          "text": "TERCERO .",
+          "translation": "ثالثًا.",
+          "width": 88,
+          "x": 219,
+          "y": 1127
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 10.84615384615385,
+          "symWidth": 10.61538461538461,
+          "text": "1952  11.70.way",
+          "translation": "",
+          "width": 85,
+          "x": 632,
+          "y": 1780
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 16,
+          "symWidth": 14,
+          "text": "008",
+          "translation": "",
+          "width": 32,
+          "x": 566,
+          "y": 1836
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 8.339285714285715,
+          "symWidth": 10.75,
+          "text": "2233143 L'an 13 WW",
+          "translation": "",
+          "width": 113,
+          "x": 31,
+          "y": 1841
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20.35087719298246,
+          "symWidth": 9.299595141700406,
+          "text": "EN  VARIOS  REINOS  ESTÁN CIRCULANDO  RUMORES  NEGATIVOS SOBRE  LA  FACCIÓN  DURA .",
+          "translation": "في ممالك عدة تنتشر شائعات سلبية عن الفصيل المتشدد.",
+          "width": 231,
+          "x": 253,
+          "y": 1865
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 15.5,
+          "symWidth": 15.75,
+          "text": "20  of",
+          "translation": "",
+          "width": 128,
+          "x": 520,
+          "y": 1888
+        },
+        {
+          "angle": 0,
+          "height": 5,
+          "symHeight": 5,
+          "symWidth": 9.25,
+          "text": "3334",
+          "translation": "",
+          "width": 34,
+          "x": 124,
+          "y": 1950
+        },
+        {
+          "angle": 0,
+          "height": 8,
+          "symHeight": 6,
+          "symWidth": 8.333333333333334,
+          "text": "543",
+          "translation": "",
+          "width": 33,
+          "x": 133,
+          "y": 1965
+        }
+      ],
+      "imgHeight": 2262,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 15.28571428571429,
+          "text": "CUARTO .",
+          "translation": "رابعًا.",
+          "width": 98,
+          "x": 502,
+          "y": 252
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 19.29032258064516,
+          "symWidth": 9.75627240143369,
+          "text": "LOS  PUESTOS  VACANTES QUE  QUEDARON  COMPLE- TAMENTE  VACÍOS",
+          "translation": "المناصب الشاغرة التي لم تُملأ كليًا",
+          "width": 175,
+          "x": 395,
+          "y": 1398
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 25.33333333333333,
+          "symWidth": 10.96769374416433,
+          "text": "SON  MÁS  DIFÍCILES DE  LLENAR  DE  LO  QUE  SE ESPERABA  EN  LA  ACADEMIA .",
+          "translation": "أصعب مما كان متوقعًا شغلها في الأكاديمية.",
+          "width": 237,
+          "x": 182,
+          "y": 1613
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 20.41666666666667,
+          "symWidth": 20.12083333333333,
+          "text": "PILE AN EST ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 165,
+          "x": 435,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.77777777777778,
+          "text": "... BUENO ,",
+          "translation": "... حسنًا،",
+          "width": 106,
+          "x": 216,
+          "y": 501
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 15,
+          "symWidth": 13.93131313131313,
+          "text": "¿ ESTO  SERÍA LO  MÁS  IMPOR- TANTE ?",
+          "translation": "هل كان هذا هو الأهم؟",
+          "width": 151,
+          "x": 372,
+          "y": 690
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16.40625,
+          "symWidth": 14.16964285714286,
+          "text": "DEJANDO LO  DEMÁS  DE LADO ...",
+          "translation": "متجاهلين ما سواه...",
+          "width": 148,
+          "x": 223,
+          "y": 1083
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.21428571428572,
+          "symWidth": 14.48412698412698,
+          "text": "CONSEGUIR INSTRUCTORES ES  DIFÍCIL",
+          "translation": "الحصول على مدربين أمر عسير.",
+          "width": 168,
+          "x": 489,
+          "y": 1671
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18.5,
+          "symWidth": 17.5125,
+          "text": "Y  ESO  ES  LO MPORTANTE .",
+          "translation": "وهذا هو الجوهر.",
+          "width": 161,
+          "x": 351,
+          "y": 1869
+        }
+      ],
+      "imgHeight": 2263,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 17.5,
+          "symWidth": 13.43030303030303,
+          "text": "¿ CUÁNTOS  HAN RECLUTADO HASTA AHORA ?",
+          "translation": "كم عدد الذين جُندوا حتى الآن؟",
+          "width": 193,
+          "x": 271,
+          "y": 89
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 22,
+          "text": "TRES .",
+          "translation": "ثلاثة.",
+          "width": 121,
+          "x": 522,
+          "y": 716
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 20.9,
+          "symWidth": 14.5,
+          "text": "... TRES ...",
+          "translation": "... ثلاثة...",
+          "width": 125,
+          "x": 266,
+          "y": 1091
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 51.16666666666666,
+          "symWidth": 28.16666666666667,
+          "text": "HAA ...",
+          "translation": "هاه...",
+          "width": 133,
+          "x": 334,
+          "y": 1158
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 22.5,
+          "symWidth": 16.5,
+          "text": "VAYA ... TRES ...",
+          "translation": "حقاً... ثلاثة...",
+          "width": 111,
+          "x": 238,
+          "y": 1670
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 24.5,
+          "symWidth": 11.95833333333333,
+          "text": "INSTRUCTOR  DE LA  ACADEMIA .",
+          "translation": "مدرب الأكاديمية.",
+          "width": 140,
+          "x": 377,
+          "y": 2132
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 22.66666666666667,
+          "symWidth": 11.03333333333333,
+          "text": "ES  UN  PUESTO RESPETABLE  Y  CON PRESTIGIO .",
+          "translation": "هذا منصبٌ محترمٌ وذو هيبةٍ.",
+          "width": 163,
+          "x": 189,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 23.14285714285714,
+          "symWidth": 10.60714285714286,
+          "text": "Y  AUN  ASÍ  NO  LOGRAN CONSEGUIRLOS ,",
+          "translation": "ومع ذلك، هم عاجزون عن تحقيق ذلك,",
+          "width": 180,
+          "x": 461,
+          "y": 1052
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 33.0625,
+          "symWidth": 15.42857142857143,
+          "text": "DEBE  SER POR  \" MÍ \" .",
+          "translation": "لا بد أن السبب هو \"أنا\".",
+          "width": 116,
+          "x": 310,
+          "y": 1249
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 32.33333333333334,
+          "symWidth": 30.23333333333333,
+          "text": "INTEST קוד ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 169,
+          "x": 64,
+          "y": 1941
+        }
+      ],
+      "imgHeight": 2263,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 20.25,
+          "symWidth": 10.20049019607843,
+          "text": "CON  UN  PERRO RABIOSO  QUE  MATA  A CUALQUIERA  AL  MENOR ERROR .",
+          "translation": "مع كلب مسعور يزهق الأرواح لأتفه الأسباب.",
+          "width": 178,
+          "x": 309,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 24.03846153846154,
+          "symWidth": 10.41025641025641,
+          "text": "¿ QUIÉN  QUERRÍA VENIR ?",
+          "translation": "من يرغب في القدوم؟",
+          "width": 137,
+          "x": 500,
+          "y": 470
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 23.11111111111111,
+          "symWidth": 18.33333333333333,
+          "text": "... HMMMM-",
+          "translation": "... هممم—",
+          "width": 167,
+          "x": 158,
+          "y": 892
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 16.75,
+          "text": "SSSHH ...",
+          "translation": "ششش...",
+          "width": 133,
+          "x": 481,
+          "y": 1061
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 33.5,
+          "text": "MMM-",
+          "translation": "همم—",
+          "width": 122,
+          "x": 417,
+          "y": 1996
+        }
+      ],
+      "imgHeight": 2262,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21,
+          "symWidth": 18.76190476190476,
+          "text": "SI  ES  ASI NO  HAY  OTRA OPCIÓN .",
+          "translation": "إذًا، لا خيار أمامنا.",
+          "width": 187,
+          "x": 378,
+          "y": 1817
+        }
+      ],
+      "imgHeight": 2262,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18,
+          "symWidth": 14.48083333333333,
+          "text": "...  ¿ ACASO  CO- NOCE  A  PERSONAS ADECUADAS  PARA  SER INSTRUCTORES ?",
+          "translation": "... هل تعرف من يستحق أن يكون معلمًا؟",
+          "width": 253,
+          "x": 155,
+          "y": 1231
+        }
+      ],
+      "imgHeight": 2261,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 25.3,
+          "symWidth": 23.9,
+          "text": "CLARO QUE  SI",
+          "translation": "بالطبع.",
+          "width": 117,
+          "x": 471,
+          "y": 44
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.97222222222222,
+          "symWidth": 16.43611111111111,
+          "text": "DESPUÉS  DE TODO ,  SOY  ALGUIEN QUE  REGRESÓ  EN EL  TIEMPO .",
+          "translation": "أنا من عاد عبر الزمن.",
+          "width": 241,
+          "x": 211,
+          "y": 473
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 19.44444444444444,
+          "text": "JEFE  GRAY .",
+          "translation": "الرئيس غراي.",
+          "width": 185,
+          "x": 500,
+          "y": 1244
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 23.51666666666667,
+          "symWidth": 20.93333333333333,
+          "text": "ANTESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 164,
+          "x": 195,
+          "y": 1272
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 40,
+          "symWidth": 23.33333333333333,
+          "text": "Sí .",
+          "translation": "نعم.",
+          "width": 58,
+          "x": 291,
+          "y": 1704
+        }
+      ],
+      "imgHeight": 2263,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 22,
+          "symWidth": 17.96022727272727,
+          "text": "OYE ,  TE  GUSTA APOSTAR ?",
+          "translation": "هل تحب المقامرة؟",
+          "width": 232,
+          "x": 259,
+          "y": 112
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 16.21428571428572,
+          "text": "... ZA - APOSTAR ?",
+          "translation": "... المقامرة؟",
+          "width": 187,
+          "x": 281,
+          "y": 1561
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 25.73333333333333,
+          "symWidth": 24.1047619047619,
+          "text": "ANTES EILEE ZONAOLYMPUS.CO",
+          "translation": "",
+          "width": 150,
+          "x": 391,
+          "y": 2021
+        }
+      ],
+      "imgHeight": 2305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 23,
+          "text": "Sí .",
+          "translation": "نعم.",
+          "width": 60,
+          "x": 310,
+          "y": 227
+        },
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 97.33333333333333,
+          "symWidth": 138,
+          "text": "VIT",
+          "translation": "",
+          "width": 146,
+          "x": 535,
+          "y": 1299
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 55.5,
+          "symWidth": 42.91666666666666,
+          "text": "HM AH ,",
+          "translation": "هممم.",
+          "width": 69,
+          "x": 495,
+          "y": 1620
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 17.23076923076923,
+          "text": "¿ ¿ YA  COMISTE ??",
+          "translation": "هل تناولت طعامك؟",
+          "width": 222,
+          "x": 92,
+          "y": 2187
+        }
+      ],
+      "imgHeight": 2306,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 22,
+          "symWidth": 18.57142857142857,
+          "text": "AÚN  NO  HE COMIDO .",
+          "translation": "لم آكل بعد.",
+          "width": 156,
+          "x": 443,
+          "y": 1187
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 26.33333333333333,
+          "symWidth": 60.66666666666666,
+          "text": ",, ༽",
+          "translation": "",
+          "width": 67,
+          "x": 651,
+          "y": 1517
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 16.32692307692308,
+          "symWidth": 12.38461538461539,
+          "text": "COMO  FALTAN INSTRUCTORES ,  NI SIQUIERA  HAY  TIEMPO PARA  COMER .",
+          "translation": "لم يتبق وقت للطعام مع ندرة المعلمين.",
+          "width": 222,
+          "x": 237,
+          "y": 1939
+        }
+      ],
+      "imgHeight": 2305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 26,
+          "symWidth": 19.57142857142857,
+          "text": "¿ Y  CELL ?",
+          "translation": "وماذا عنسيل؟",
+          "width": 148,
+          "x": 364,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 59,
+          "symWidth": 63,
+          "text": "도리",
+          "translation": "",
+          "width": 108,
+          "x": 483,
+          "y": 310
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 63,
+          "symWidth": 62.5,
+          "text": "도리",
+          "translation": "",
+          "width": 110,
+          "x": 21,
+          "y": 372
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 19.5,
+          "symWidth": 13.57777777777778,
+          "text": "ENTONCES , PRIMERO ...",
+          "translation": "إذن، بدءًا من...",
+          "width": 139,
+          "x": 232,
+          "y": 1213
+        }
+      ],
+      "imgHeight": 2306,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 18.86842105263158,
+          "symWidth": 15.60526315789474,
+          "text": "¿ QUÉ  TAL  SI COMEMOS  PRIMERO Y  LUEGO  HABLAMOS ?",
+          "translation": "ماذا لو تناولنا الطعام أولاً ثم نتحدث؟",
+          "width": 251,
+          "x": 225,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 21.5625,
+          "symWidth": 11.375,
+          "text": "MIENTRAS TANTO ...",
+          "translation": "وفي الأثناء...",
+          "width": 86,
+          "x": 226,
+          "y": 986
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 29.96666666666667,
+          "symWidth": 12.16666666666667,
+          "text": "TERRITORIO  DEL MARQUÉS  VALANTIER .",
+          "translation": "أراضي الماركيز فالانتيير.",
+          "width": 210,
+          "x": 347,
+          "y": 1381
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 31.16666666666667,
+          "text": "PADRE ,",
+          "translation": "يا والدي،",
+          "width": 160,
+          "x": 462,
+          "y": 2028
+        }
+      ],
+      "imgHeight": 2305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 50,
+          "symWidth": 44.85714285714285,
+          "text": "¡ PADRE !",
+          "translation": "يا والدي!",
+          "width": 273,
+          "x": 83,
+          "y": 55
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 24.76470588235294,
+          "symWidth": 17,
+          "text": "¿ QUÉ  PASA , HIJA  MÍA ?",
+          "translation": "ما الأمر، يا ابنتي؟",
+          "width": 163,
+          "x": 239,
+          "y": 605
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 25.25,
+          "symWidth": 23.23333333333333,
+          "text": "HEILES ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 171,
+          "x": 488,
+          "y": 1206
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 28,
+          "symWidth": 18.2,
+          "text": "MIRE  ALLÁ , PADRE .",
+          "translation": "انظر هناك يا والدي.",
+          "width": 172,
+          "x": 156,
+          "y": 1369
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 20.7037037037037,
+          "symWidth": 16.79861111111111,
+          "text": "SON  PERSONAS QUE  VIENEN  DE  FUERA OTRA  VEZ .",
+          "translation": "هؤلاء أناس جاؤوا من الخارج مجددًا.",
+          "width": 292,
+          "x": 235,
+          "y": 2101
+        }
+      ],
+      "imgHeight": 2306,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16.33333333333333,
+          "symWidth": 12.25140056022409,
+          "text": "A  SIMPLE  VISTA PARECEN  DE  FAMILIAS NOBLES .",
+          "translation": "من الوهلة الأولى، يبدون من عائلات نبيلة.",
+          "width": 222,
+          "x": 365,
+          "y": 1838
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 54,
+          "symWidth": 38,
+          "text": "MOL",
+          "translation": "",
+          "width": 104,
+          "x": 179,
+          "y": 2256
+        }
+      ],
+      "imgHeight": 2305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 56.25,
+          "symWidth": 46,
+          "text": "Гору",
+          "translation": "",
+          "width": 96,
+          "x": 484,
+          "y": 319
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 21.92948717948718,
+          "symWidth": 18.01282051282051,
+          "text": "PERO ,  ¿ POR  QUÉ TODOS  REGRESAN  DEL MARQUÉS  CON  CARAS DE  ENOJO ?",
+          "translation": "لكن، لماذا يعود الجميع من عند الماركيز بوجوه غاضبة؟",
+          "width": 322,
+          "x": 174,
+          "y": 532
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 16.51666666666667,
+          "symWidth": 12.56309523809524,
+          "text": "DICEN  QUE  EL  HIJO MENOR  ESTÁ  FUERA  DE ¿ SERÁ CONTROL , CIERTO ?",
+          "translation": "يقولون إن الابن الأصغر خارج السيطرة، أليس كذلك؟",
+          "width": 228,
+          "x": 300,
+          "y": 1140
+        }
+      ],
+      "imgHeight": 2306,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 18,
+          "symWidth": 14.50694444444444,
+          "text": "SEGÚN  LOS RUMORES  RE- CIENTES ,",
+          "translation": "حسب الأقاويل الأخيرة،",
+          "width": 169,
+          "x": 106,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 18.66666666666667,
+          "symWidth": 15.50865800865801,
+          "text": "DICEN  QUE  EL  HIJO MENOR  ES  SOLO UN  TÍTERE ...",
+          "translation": "يقولون إن الابن الأصغر ليس إلا دمية...",
+          "width": 234,
+          "x": 256,
+          "y": 196
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 16.25,
+          "symWidth": 11.90646853146853,
+          "text": "ÚLTIMAMENTE  EL AMBIENTE  SE  ESTÁ VOLVIENDO  CADA  VEZ MÁS  TENSO ...",
+          "translation": "والأجواء تزداد توترًا مع مرور الوقت...",
+          "width": 209,
+          "x": 395,
+          "y": 817
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 18.5,
+          "symWidth": 14.19444444444444,
+          "text": "A  ESTE  PASO , NO  VAYA  A  ESTALLAR UNA  GUERRA  TERRI- TORIAL ...",
+          "translation": "على هذا المنوال، قد تنشب حرب إقليمية.",
+          "width": 242,
+          "x": 254,
+          "y": 1876
+        }
+      ],
+      "imgHeight": 2305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 24.35294117647059,
+          "symWidth": 11.72549019607843,
+          "text": "FAMILIA DEL  MARQUÉS VALANTIER",
+          "translation": "عائلة الماركيز فالانتيير",
+          "width": 119,
+          "x": 372,
+          "y": 1504
+        }
+      ],
+      "imgHeight": 2306,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 283,
+          "symHeight": 138.25,
+          "symWidth": 118.25,
+          "text": "TH 01",
+          "translation": "الث 01",
+          "width": 362,
+          "x": 239,
+          "y": 274
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 85.625,
+          "symWidth": 54.4375,
+          "text": "HEQUE  DIJISTER !!!",
+          "translation": "هيك ديجيستر!!!",
+          "width": 436,
+          "x": 185,
+          "y": 1354
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 27.84615384615385,
+          "symWidth": 12.92307692307692,
+          "text": "CABEZA  DE  LA FAMILIA  VALANTIER",
+          "translation": "رأسُ عائلة فالانتيير",
+          "width": 210,
+          "x": 160,
+          "y": 1974
+        }
+      ],
+      "imgHeight": 2305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 22.02222222222222,
+          "symWidth": 20.91111111111111,
+          "text": "ANTESE EILEE ZONAOLYMPUS.COM",
+          "translation": "أنتَس إيلي زون أوليمبوس.كوم",
+          "width": 164,
+          "x": 83,
+          "y": 400
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 30,
+          "symWidth": 14.39285714285714,
+          "text": "MARQUÉS CLARK  VALANTIER",
+          "translation": "الماركيز كلارك فالانتيير",
+          "width": 184,
+          "x": 340,
+          "y": 682
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 19,
+          "symWidth": 16.05555555555555,
+          "text": "TAL  COMO  LO HA  ESCUCHADO .",
+          "translation": "كما سمعتَ تمامًا.",
+          "width": 192,
+          "x": 111,
+          "y": 2016
+        }
+      ],
+      "imgHeight": 2306,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 39.75,
+          "symWidth": 17.13888888888889,
+          "text": "SUBCOMANDANTE  DE  LOS CABALLEROS  DE  HIERRO GONZÁLEZ",
+          "translation": "نائب قائد فرسان الحديد غونزاليس",
+          "width": 220,
+          "x": 259,
+          "y": 1240
+        }
+      ],
+      "imgHeight": 2162,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 50,
+          "symWidth": 26.57171717171717,
+          "text": "VISITANOS  EN ZONAOLYMPUS.COM SERIES  AL  DIA  CON  LA  RAW ,  SIEMPRE  NUEVOS  LANZAMIENTOS",
+          "translation": "زورونا في زون أوليمبوس.كوم، السلسلاتُ محدثة مع الـ RAW، دوماً إصدارات جديدة",
+          "width": 669,
+          "x": 22,
+          "y": 405
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 26,
+          "symWidth": 18.8859649122807,
+          "text": "LA  FAMILIA  HERMANN  HA SOLICITADO  UNA  GUERRA TERRITORIAL .",
+          "translation": "طلبت عائلة هيرمان فتح حرب إقليمية.",
+          "width": 416,
+          "x": 158,
+          "y": 932
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 23,
+          "symWidth": 15.53181818181818,
+          "text": "그림  케이  |  원작  너울 히 기획 · 발행  고렘 팩토리  |  제작  크리에이티브 126",
+          "translation": "",
+          "width": 380,
+          "x": 303,
+          "y": 1860
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 23,
+          "symWidth": 15.02380952380952,
+          "text": "C10LEM FACTORY",
+          "translation": "",
+          "width": 96,
+          "x": 419,
+          "y": 1954
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 22,
+          "symWidth": 20.58333333333333,
+          "text": "크리에이티브 0126",
+          "translation": "",
+          "width": 104,
+          "x": 571,
+          "y": 1956
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 19.66666666666667,
+          "symWidth": 14.72454212454213,
+          "text": "작품 은  저작권법 의해  보호 에 무단 전재  또는  무단 복제 ,  유포 ,  공유 할  경우  법적  책임 을  질  수",
+          "translation": "",
+          "width": 450,
+          "x": 157,
+          "y": 2041
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 20,
+          "symWidth": 12.5,
+          "text": "작물 이며 , 있습니다 .",
+          "translation": "",
+          "width": 70,
+          "x": 615,
+          "y": 2041
+        }
+      ],
+      "imgHeight": 2162,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "es",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

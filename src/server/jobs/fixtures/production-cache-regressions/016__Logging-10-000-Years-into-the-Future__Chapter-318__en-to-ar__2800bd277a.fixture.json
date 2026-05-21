@@ -1,0 +1,1210 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0016",
+  "jobId": "fixture-job-0016",
+  "licenseId": "fixture-license-0016",
+  "pageCount": 26,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "da0ca55b48d0d0335ca179d6366de634bc3add4d0123f815d9733107476c4ae6",
+      "fileName": "001__001.jpg",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "887a637e16d07ed609bcc2a1a05c4a653c1520b5ef9a59a2fc0a5544e3fcffcd",
+      "fileName": "001__002.jpg",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "5e599a11915bfdb1d540792d1b28b884c092baa42ed68c38d803ea8101e25828",
+      "fileName": "001__003.jpg",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "30f13a27cf3380510ed22b4eed3913e7a21534f3456dd47ce20b1c18551851fa",
+      "fileName": "002__001.jpg",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "8b6c7fe549b471ed4cefeaa293ad1ec8b49490ea89eaea6772d34d920f495e12",
+      "fileName": "002__002.jpg",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "b74b7302bca2374d75703dc2e962a63bfe0f8cdfecad9fcac4d69550ea1b5731",
+      "fileName": "002__003.jpg",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "eadc5bb005a5c3df01a9e27059086557664cf168d9422a2c47126b9a70d56db2",
+      "fileName": "003__001.jpg",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "c216091dfdaec5a3139f4a3fa531d3f7f3aac4ef7229443d24a356f2fa3cd9e5",
+      "fileName": "003__002.jpg",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "f232a32d73572f9bc425448505c6e4dd8afabf5edb7ad7d4eec2e460d24814ff",
+      "fileName": "003__003.jpg",
+      "pageNumber": 9
+    },
+    {
+      "checksumSha256": "fbe8fe7a78e0766de880bf7883259718c253f66ce34c9dde833726048548d45a",
+      "fileName": "004__001.jpg",
+      "pageNumber": 10
+    },
+    {
+      "checksumSha256": "eca6099624edf6101e644dc2a4cc4f12b04971dc92ca9f832f2e993564257529",
+      "fileName": "004__002.jpg",
+      "pageNumber": 11
+    },
+    {
+      "checksumSha256": "a875764c968e1569b28524d8fb5d1c4295db0c0899ed230266f6fa7529d96540",
+      "fileName": "004__003.jpg",
+      "pageNumber": 12
+    },
+    {
+      "checksumSha256": "b1ad43d721bf24574172e34b02f59db91ecf9bb9778b325900f61d6161c1c5ec",
+      "fileName": "005__001.jpg",
+      "pageNumber": 13
+    },
+    {
+      "checksumSha256": "930a559830459c8c782ea213e86fff9a12d1227f3b2bce3a41ce6d080d7eca9f",
+      "fileName": "005__002.jpg",
+      "pageNumber": 14
+    },
+    {
+      "checksumSha256": "19f676e9e20fa03e416ec8f3487a43cba4f96c60458e0fff52478e93ca58586e",
+      "fileName": "005__003.jpg",
+      "pageNumber": 15
+    },
+    {
+      "checksumSha256": "05f2933c160e5a75f78d416d50d1c271233ac0e518a4ffaa3dfc3fb616dc71e5",
+      "fileName": "006__001.jpg",
+      "pageNumber": 16
+    },
+    {
+      "checksumSha256": "30a6085e8ecba364e1f3011d19c1febbf3cce85b1dbfc1ab9f1fd9146218e922",
+      "fileName": "006__002.jpg",
+      "pageNumber": 17
+    },
+    {
+      "checksumSha256": "50f67dffe49fe70d6b1695f369e250b972ed711cfacca73834ffd6f5645533e1",
+      "fileName": "006__003.jpg",
+      "pageNumber": 18
+    },
+    {
+      "checksumSha256": "65687c2ec3e92732ad160ee674ccd0388b5fc562382c5ec6e488a9a8fe623b50",
+      "fileName": "007__001.jpg",
+      "pageNumber": 19
+    },
+    {
+      "checksumSha256": "f6abfcdf35dfbed6c4be6eb5ee04aa6a27a6558a0b30575a278d1ee5968d49c9",
+      "fileName": "007__002.jpg",
+      "pageNumber": 20
+    },
+    {
+      "checksumSha256": "ea519ea4b6329d7ca665d7f8b3069c44784b049c1db53302ba5f8acb20533243",
+      "fileName": "007__003.jpg",
+      "pageNumber": 21
+    },
+    {
+      "checksumSha256": "9411772afa5b9a1233c583c8ca258197bf76785d1aa8a1e00a52237f340fa7a5",
+      "fileName": "008__001.jpg",
+      "pageNumber": 22
+    },
+    {
+      "checksumSha256": "79368147a2b47ab14997cae21732e1b783ed67eca036cedccabc8718ffc0f205",
+      "fileName": "008__002.jpg",
+      "pageNumber": 23
+    },
+    {
+      "checksumSha256": "dc275f85d30761aea4c355c0597aed67eb6e56b32b3ec2809d91e2a87ccd3df7",
+      "fileName": "008__003.jpg",
+      "pageNumber": 24
+    },
+    {
+      "checksumSha256": "ddce62361c2a51f6703fa204473db58737bdb424b75291738c4e66c192365c89",
+      "fileName": "009__001.jpg",
+      "pageNumber": 25
+    },
+    {
+      "checksumSha256": "1c5b682371d937a0281e3304cc751edc9e9114cc4da75d35926f52ef26462227",
+      "fileName": "009__002.jpg",
+      "pageNumber": 26
+    }
+  ],
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 18.88888888888889,
+          "text": "AH !  HONEY !",
+          "translation": "آه! عزيزي!",
+          "width": 180,
+          "x": 74,
+          "y": 1747
+        }
+      ],
+      "imgHeight": 3050,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 21,
+          "symWidth": 15.23703703703704,
+          "text": "HOW  ANNOYING ~ HAVE  I  GAINED  A  LOT OF  WEIGHT ?",
+          "translation": "ما أزعجني هذا~ هل ازددت وزناً كثيراً؟",
+          "width": 242,
+          "x": 109,
+          "y": 2962
+        }
+      ],
+      "imgHeight": 3050,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 29.32098765432099,
+          "symWidth": 24.69087702421036,
+          "text": "NO  NO ,  YOU'RE STILL  THE  SAME  AS BEFORE ,  YOU'RE EVEN ...",
+          "translation": "لا، لا، أنتَ كما كنت، بل أنت...",
+          "width": 377,
+          "x": 169,
+          "y": 1393
+        }
+      ],
+      "imgHeight": 3052,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 9,
+          "symWidth": 10,
+          "text": "FREEZED",
+          "translation": "متجمد",
+          "width": 53,
+          "x": 73,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 26.66666666666667,
+          "symWidth": 18.75262515262515,
+          "text": "MORE  BEAUTIFUL AND  CHARMING  THAN BEFORE .",
+          "translation": "أكثر جمالاً وسحراً من ذي قبل.",
+          "width": 297,
+          "x": 23,
+          "y": 1314
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 21.57894736842105,
+          "symWidth": 14.73308270676692,
+          "text": "STOP  TRYING TO  COMFORT  ME ,  I KNOW  I'VE  GAINED  A LOT  OF  WEIGHT ...",
+          "translation": "كفّ عن محاولة مواساتي، فأنا أعلم أن وزني قد ازداد كثيراً...",
+          "width": 235,
+          "x": 446,
+          "y": 2389
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 27.66666666666667,
+          "text": "品  快 看",
+          "translation": "",
+          "width": 97,
+          "x": 514,
+          "y": 3054
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 20.75,
+          "symWidth": 15.30034722222222,
+          "text": "WANWAN  CAME  TO SEE  ME  A  FEW  DAYS  AGO AND  SAID  SHE  ALMOST DIDN'T  RECOGNIZE  ME .",
+          "translation": "جاءتني وانوان منذ أيام وقالت إنها كادت لا تعرفني.",
+          "width": 288,
+          "x": 269,
+          "y": 3280
+        }
+      ],
+      "imgHeight": 3703,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 43.14285714285715,
+          "symWidth": 30.71428571428572,
+          "text": "WANWAN ?",
+          "translation": "وان وان؟",
+          "width": 208,
+          "x": 75,
+          "y": 1823
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 20.875,
+          "symWidth": 14.37967171717172,
+          "text": "SHE'S  THE DAUGHTER OF  LIN ZHENGYUE , DARK THE MOON  MARTIAL SAINT .",
+          "translation": "إنها ابنة لين تشنغيوه، القديسة المقاتلة لقمر الظلام.",
+          "width": 248,
+          "x": 325,
+          "y": 2096
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 16.5,
+          "symWidth": 16,
+          "text": "30",
+          "translation": "٣٠",
+          "width": 18,
+          "x": 200,
+          "y": 3087
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 19.42857142857143,
+          "symWidth": 12.69364412431639,
+          "text": "LIN  ZHENGYUE ... AH , I  REMEMBER NOW ,  IT'S  BEEN AWHILE SINCE  I'VE  HEARD THAT  NAME ,  I'D  ALMOST FORGOTTEN  IT .",
+          "translation": "لين تشنغيوه... آه، قد تذكرت الآن، مضى وقت طويل لم أسمع فيه ذلك الاسم، كدت أنساه.",
+          "width": 308,
+          "x": 338,
+          "y": 3561
+        }
+      ],
+      "imgHeight": 3704,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 26.29545454545455,
+          "symWidth": 18.27272727272727,
+          "text": "THEN  DO  YOU STILL  REMEMBER TAN  ZHONGYU ?",
+          "translation": "هل تزال تذكر تان تشونغيو؟",
+          "width": 248,
+          "x": 243,
+          "y": 1800
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 20.2,
+          "symWidth": 14.09357142857143,
+          "text": "HE  BROKE  THROUGH AND  BECAME  THE  FIRST  MARTIAL SAINT  ON  AZURE  PLANET  TO BREAK  THROUGH TO  LEVEL  10 ,",
+          "translation": "لقد اخترق الحاجز وأصبح أول قديس مقاتل في كوكب الأزور ينال المستوى العاشر.",
+          "width": 354,
+          "x": 76,
+          "y": 3340
+        }
+      ],
+      "imgHeight": 3705,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 79.25,
+          "symWidth": 62.5,
+          "text": "Saly",
+          "translation": "سالي",
+          "width": 112,
+          "x": 157,
+          "y": 509
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 24,
+          "symWidth": 15.26323193714498,
+          "text": "AND  HAROLD ,  THE HUANYIN  MARTIAL  SAINT ,  YOU EVEN  TRICKED  THAT  DOCTOR BACK  THEN ,",
+          "translation": "وهاولد، القديس القتالي من هوايين، لقد خدعتَ ذلك الطبيب في حينه أيضًا،",
+          "width": 367,
+          "x": 70,
+          "y": 1469
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 21,
+          "symWidth": 13.92189101903388,
+          "text": "NOW  HE'S  IN  THE  CITY  HALL OF  THE SUB - JUPITER  STAR  REGION , AND  HE'S  CONSIDERED  ONE  OF  THE MOST  SUCCESSFUL  MARTIAL  SAINTS ON  AZURE  PLANET .  HE  EVEN  VISITED ME  A  WHILE  AGO ...",
+          "translation": "والآن هو في قاعة البلدية لمنطقة نجم ما تحت المشتري، ويُعتبر من أنجح القديسين القتاليين في كوكب آزور. لقد زارني قبل فترة...",
+          "width": 401,
+          "x": 249,
+          "y": 1665
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 29.66666666666667,
+          "symWidth": 13.87777777777778,
+          "text": "PRESIDENT , YOUR  UPCOMING TASKS  INCLUDE ...",
+          "translation": "رئيسي، مهامك القادمة تتضمن...",
+          "width": 192,
+          "x": 482,
+          "y": 2118
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 30.5,
+          "symWidth": 16.90277777777778,
+          "text": "THANKS  FOR YOUR  HARD",
+          "translation": "شكرًا لجهودك العظيمة",
+          "width": 153,
+          "x": 336,
+          "y": 2274
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 21.11224489795918,
+          "symWidth": 11.1941308937368,
+          "text": "LU SHENG LISTENED QUIETLY TO QINGXUE'S ALMOST ' BABBLING ' STORIES OF THE PAST , OCCASIONALLY INTERJECTING WITH A FEW WORDS",
+          "translation": "لو شينغ استمع بهدوء لحكايات تشينغ شيوه المتكررة من الماضي، متدخلًا بين الحين والآخر بعدة كلمات فقط",
+          "width": 328,
+          "x": 50,
+          "y": 3450
+        }
+      ],
+      "imgHeight": 3533,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "renderMode": "mask_only",
+          "symHeight": 20,
+          "symWidth": 11.32,
+          "text": "INTERJECTING  WITH  A  FEW  WORDS",
+          "translation": "",
+          "width": 310,
+          "x": 59,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 24,
+          "symWidth": 12.53139901034638,
+          "text": "LISTENING  TO  QINGXUE'S  LIVELY CONVERSATION ,  HE  REALIZED  THAT PREGNANCY  WAS  A  REALLY WONDERFUL  THING ,",
+          "translation": "بينما يستمع إلى حديث تشينغشوي الحيوي، أدرك أن الحمل هبة عظيمة حقًا.",
+          "width": 352,
+          "x": 81,
+          "y": 1389
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 20.83333333333333,
+          "symWidth": 11.39411545244879,
+          "text": "THE  BIRTH  OF  A  NEW  LIFE  COULD  BRING ABOUT  SUCH  A  DRAMATIC  CHANGE  IN  A WOMAN'S TEMPERAMENT ,  MAKING  HER GENTLE ,  TALKATIVE  AND  RADIANT  WITH MATERNAL  LOVE .",
+          "translation": "فولادة حياة جديدة قادرة على إحداث تغيير جذري في طباع المرأة، فتجعلها رقيقة، ثرثارة ومتلألئة بحنان الأمومة.",
+          "width": 344,
+          "x": 280,
+          "y": 2801
+        }
+      ],
+      "imgHeight": 3534,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 24.234375,
+          "symWidth": 15.03348214285714,
+          "text": "INDEED ,  A  WOMAN  IS ONLY  COMPLETE  AFTER GIVING  BIRTH ...",
+          "translation": "حقًا، لا تكتمل أنثى إلا بعد أن تلد...",
+          "width": 302,
+          "x": 64,
+          "y": 1593
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 25.05952380952381,
+          "symWidth": 16.97619047619047,
+          "text": "OH ,  BY  THE  WAY , HONEY ,  WHILE  YOU  WERE  AWAY , SOMEONE  ELSE  CAME  TO  VISIT US ,  YOU'D  NEVER  GUESS WHO  IT  WAS .",
+          "translation": "آه، على فكرة يا عزيزي، بينما كنت غائبًا، زارنا شخصٌ آخر، ولن تخمن من كان.",
+          "width": 408,
+          "x": 212,
+          "y": 1966
+        },
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 9,
+          "symWidth": 7.75,
+          "text": "1124",
+          "translation": "1124",
+          "width": 25,
+          "x": 22,
+          "y": 2886
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 30,
+          "symWidth": 24.16666666666667,
+          "text": "OH ?  WHO WAS  IT ?",
+          "translation": "آه؟ ومن كان؟",
+          "width": 178,
+          "x": 97,
+          "y": 3042
+        }
+      ],
+      "imgHeight": 3535,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 24.30769230769231,
+          "symWidth": 16.44230769230769,
+          "text": "IT  WAS  YOUR  HIGH SCHOOL  CLASSMATE , LIU  QIMING .",
+          "translation": "كان زميلك في المدرسة الثانوية، ليو تشيمينغ.",
+          "width": 275,
+          "x": 43,
+          "y": 172
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 18.92333333333333,
+          "symWidth": 11.07772727272727,
+          "text": "HEARING  THIS  NAME ,  BURIED ALMOST  IN  THE  DEEPEST  PART OF  HIS  MEMORY ,  AFTER  SO  LONG AGAIN ,  WAS  LIKE  OPENING  A  JAR  OF OLD  WINE ,  RELEASING  ITS  AROMA .",
+          "translation": "سماع هذا الاسم المدفون في أعمق زوايا ذاكرته بعد زمن طويل، كان كفتح جرة خمر قديم تفوح بعطره.",
+          "width": 319,
+          "x": 58,
+          "y": 1822
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 24,
+          "symWidth": 15.85714285714286,
+          "text": "WHAT ... HAPPENED TO  HIM ?",
+          "translation": "ماذا... حدث له؟",
+          "width": 222,
+          "x": 84,
+          "y": 2876
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 21.4765625,
+          "symWidth": 13.71875,
+          "text": "HE  ENLISTED  AGAIN .  BEFORE ENLISTING ,  HE  ASKED  ABOUT  WHERE  WE LIVED  AND  CAME  SPECIFICALLY  TO  SEE YOU ,  BUT  HE  DIDN'T  KNOW  YOU  HAD BEEN  GONE  FOR  A  LONG  TIME ...",
+          "translation": "عاد للالتحاق بالجيش. قبل ذلك، سأل عن مكان إقامتنا وجاء خصيصًا لرؤيتك، لكنه لم يكن يعلم أنك رحلت منذ وقت طويل...",
+          "width": 433,
+          "x": 218,
+          "y": 3249
+        }
+      ],
+      "imgHeight": 3825,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 23.5,
+          "symWidth": 15.0047619047619,
+          "text": "THIS  STINKY  KID ... HE'S  ADDICTED  TO BEING  A  SOLDIER .",
+          "translation": "ذلك الوغد الصغير... مدمن على كونه جنديًا.",
+          "width": 237,
+          "x": 93,
+          "y": 837
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 27.6,
+          "text": "快  快 看 漫画",
+          "translation": "",
+          "width": 181,
+          "x": 505,
+          "y": 1669
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 24,
+          "symWidth": 16.59090909090909,
+          "text": "DID  HE  LEAVE  ANY MESSAGES ?",
+          "translation": "هل ترك أي رسالة؟",
+          "width": 226,
+          "x": 387,
+          "y": 1953
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 23.5,
+          "symWidth": 15.54166666666667,
+          "text": "I'VE  ALREADY SENT  IT  TO  YOU .",
+          "translation": "لقد أرسلتها إليك بالفعل.",
+          "width": 215,
+          "x": 235,
+          "y": 3476
+        }
+      ],
+      "imgHeight": 3826,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 23,
+          "symWidth": 22.34722222222222,
+          "text": "LU  SHENG ,  WHEN YOU  COME  BACK ,  WE ABSOLUTELY  HAVE  TO GET  A  DRINK TOGETHER !",
+          "translation": "لو شينغ، حين تعود، لا بدّ أن نشرب معًا!",
+          "width": 336,
+          "x": 286,
+          "y": 234
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 25.14285714285714,
+          "symWidth": 17.57142857142857,
+          "text": "MN ,  BYE .",
+          "translation": "مم، إلى اللقاء.",
+          "width": 117,
+          "x": 186,
+          "y": 1634
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 21.40416666666667,
+          "symWidth": 15.1141223155929,
+          "text": "AH ... ALL  THOSE  DAYS OF  THE  PAST ,  BOTH  STRANGE THAT  WE'LL  HAVE  A  DRINK AND  FAMILIAR .  OKAY ,  TELL  HIM TOGETHER  WHEN  HE COMES BACK .",
+          "translation": "آه... أيام مضت، غريبة أن نشرب معًا وأليفة في آنٍ واحد. حسناً، أخبره حين يجيء.",
+          "width": 349,
+          "x": 73,
+          "y": 3546
+        }
+      ],
+      "imgHeight": 3826,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 22.15277777777778,
+          "symWidth": 15.25377859477124,
+          "text": "YOU  DON'T  NEED  TO WORRY ,  HIS  MARTIAL  ARTS  IS ALREADY  AT  LEVEL  7 ,  AND HE'S  NOT  GOING  TO  ANY DANGEROUS  PLACES .",
+          "translation": "لا تقلق، فنزاله القتالي وصل للمستوى السابع، ولن يذهب إلى أماكن خطرة.",
+          "width": 336,
+          "x": 275,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 21.57142857142857,
+          "symWidth": 14.05232169790993,
+          "text": "SINCE  THE  GENE OPTIMIZATION FLUID  APPEARED  ON AZURE  PLANET ,  MOST  PEOPLE  HAVE FULLY  UNLOCKED  THEIR  MARTIAL ARTS  POTENTIAL ;  EVEN  QINGHE IS  ALMOST  AT  LEVEL  9 .",
+          "translation": "منذ ظهور سائل تحسين الجينات على كوكب الأزور، بات معظم الناس يحققون كامل إمكانات فنونهم القتالية؛ حتى تشينغه تقارب الآن المستوى التاسع.",
+          "width": 399,
+          "x": 53,
+          "y": 1295
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 28.925,
+          "text": "THAT FAST ?",
+          "translation": "هل بهذه السرعة؟",
+          "width": 126,
+          "x": 475,
+          "y": 1927
+        },
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 22.83333333333333,
+          "symWidth": 13.58857724020196,
+          "text": "LU  SHENG  WAS  GENUINELY SURPRISED  THIS  TIME .  WHO WOULD'VE  THOUGHT  THAT  THE LITTLE  GIRL  WHO  USED  TO  ALWAYS FOLLOW  HIM  AROUND  WOULD  NOW ALMOST  BE  A  MARTIAL  SAINT ?",
+          "translation": "لو شينغ اندهش حقًا هذه المرّة. من كان يظنّ أن الفتاة الصغيرة التي كانت تلاحقه دوماً تكاد تصبح الآن قديسة قتالية؟",
+          "width": 378,
+          "x": 72,
+          "y": 2518
+        }
+      ],
+      "imgHeight": 3441,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 23.5,
+          "symWidth": 16.23958333333333,
+          "text": "QINGHE'S  PROGRESS IS  TOO  FAST ...",
+          "translation": "تقدم تشينغه سريعٌ للغاية...",
+          "width": 282,
+          "x": 88,
+          "y": 616
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 25.42857142857143,
+          "symWidth": 16.25242218099361,
+          "text": "YEAH ,  REALLY  FAST .  AS FOR  ME , MY CULTIVATION LEVEL  HAS  HARDLY CHANGED  OVER THE  YEARS .",
+          "translation": "نعم، بسرعة فائقة حقاً. أما أنا، فجسدي لم يشهد تغيراً يُذكر في مستوى التطوير عبر السنين.",
+          "width": 314,
+          "x": 58,
+          "y": 1128
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 29.33333333333333,
+          "symWidth": 37.66666666666666,
+          "text": "ONT",
+          "translation": "انطلق",
+          "width": 40,
+          "x": 600,
+          "y": 1546
+        }
+      ],
+      "imgHeight": 3442,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 41.71428571428572,
+          "symWidth": 25.14285714285714,
+          "text": "THIS ... MY  CHILD .",
+          "translation": "هذا هو... طفلي.",
+          "width": 215,
+          "x": 391,
+          "y": 618
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 23,
+          "symWidth": 17.80408653846154,
+          "text": "HOW  MUCH LONGER  DOES  THE DOCTOR  SAY  HE  HAS  TO STAY  IN  YOUR  BELLY ?",
+          "translation": "ماعُمرُ الطبيب قال إنّه ينبغي له أن يبقى في بطنك؟",
+          "width": 313,
+          "x": 263,
+          "y": 2103
+        }
+      ],
+      "imgHeight": 3443,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 21.39428571428572,
+          "symWidth": 14.30805194805195,
+          "text": "IT'LL  PROBABLY  TAKE ANOTHER  THREE  OR  FOUR YEARS ?  I'VE  BEEN  PREGNANT WITH  HIM  FOR  ALMOST  SIX  YEARS NOW ,  AND  I'VE  ALREADY  GOTTEN USED  TO  IT ...",
+          "translation": "ربما سيستغرق الأمر ثلاث أو أربع سنوات أخرى؟ لقد كنت حاملاً به منذ ما يقرب من ست سنوات، وقد اعتدت على ذلك بالفعل...",
+          "width": 377,
+          "x": 269,
+          "y": 622
+        }
+      ],
+      "imgHeight": 3762,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 25.18627450980392,
+          "symWidth": 13.55882352941176,
+          "text": "THE  TWO  OF  THEM  REMAINED SILENT ,  SIMPLY  ENJOYING THIS  PRECIOUS  MOMENT  THAT BELONGED  ENTIRELY  TO  THEIR ' FAMILY  OF  THREE ' .",
+          "translation": "ظلّا صامتين، مستمتعين بلحظة ثمينة تخص \"عائلتهما الصغيرة\" وحدها.",
+          "width": 333,
+          "x": 151,
+          "y": 751
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 25.65957446808511,
+          "symWidth": 16.19148936170213,
+          "text": "OH ,  RIGHT ,  WAIT  A MOMENT ,  I'LL  GO  CALL MOM  AND  DAD  OVER ...",
+          "translation": "آه، صحيح، انتظر قليلاً، سأذهب لأستدعي والدتي ووالدي...",
+          "width": 295,
+          "x": 329,
+          "y": 1283
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 47,
+          "text": "EH !?",
+          "translation": "هاه!؟",
+          "width": 157,
+          "x": 203,
+          "y": 2778
+        }
+      ],
+      "imgHeight": 3762,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 403,
+          "symHeight": 52.875,
+          "symWidth": 85.125,
+          "text": "NO  SIGNAL",
+          "translation": "لا إشارة",
+          "width": 126,
+          "x": 157,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 25.30434782608696,
+          "symWidth": 17.81739130434783,
+          "text": "DAMN  IT !  THE SIGNAL  WENT  DOWN RIGHT  NOW ?",
+          "translation": "اللعنة! انقطعت الإشارة الآن بالذات؟",
+          "width": 286,
+          "x": 74,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 23.08888888888889,
+          "symWidth": 16.28888888888889,
+          "text": "WHO  KNOWS  WHEN  I'LL BE  ABLE  TO  CONTACT  MY FAMILY  AGAIN ?",
+          "translation": "من يدري متى سأستطيع التواصل مع عائلتي من جديد؟",
+          "width": 325,
+          "x": 311,
+          "y": 1607
+        }
+      ],
+      "imgHeight": 3762,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 26.13207547169811,
+          "symWidth": 17.35175202156334,
+          "text": "FORGET  IT ,  LET'S SEE  IF  THERE'S  MORE ADVANCED  COMMUNICATION METHODS  WHEN  WE  GET TO  SAGITTARIUS .",
+          "translation": "انسَ الأمر، لنرَ إن وُجدت وسائل تواصل أرقى حين نصل إلى القوس.",
+          "width": 382,
+          "x": 53,
+          "y": 845
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 23,
+          "symWidth": 14.46666666666667,
+          "text": "LET'S  SPEED  UP ...",
+          "translation": "هيا، لنعجِّل الوتيرة...",
+          "width": 228,
+          "x": 402,
+          "y": 2431
+        }
+      ],
+      "imgHeight": 3465,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 20.33641975308642,
+          "symWidth": 11.06846240179573,
+          "text": "LU  SHENG  CONTINUED  TO  TAKE OUT  A  LARGE  NUMBER  OF  HIGH - GRADE ENERGY  CRYSTALS  FROM  HIS  STORAGE BRACELET  AND  BEGAN  ABSORBING THEIR  POWER  TO  CARRY  OUT  HIS  DAILY CULTIVATION  OF  THE  STELLAR  DAO .",
+          "translation": "استمر لو شينغ في استخراج عدد كبير من بلورات الطاقة عالية الدرجة من سوار تخزينه وشرع في امتصاص قوتها ليواصل تدريبه اليومي في مسلك النجوم.",
+          "width": 345,
+          "x": 308,
+          "y": 679
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 26.33333333333333,
+          "symWidth": 14.25357142857143,
+          "text": "FOUR  COSMIC  MONTHS  ALLOWED LU  SHENG'S  IMMORTAL CELLS  TO SURGE  ONCE  AGAIN .",
+          "translation": "أتاح مرور أربعة أشهر كونية لخلايا لو شينغ الخالدة أن تعاود الازدهار من جديد.",
+          "width": 366,
+          "x": 93,
+          "y": 3354
+        }
+      ],
+      "imgHeight": 3466,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3465,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 255,
+          "symHeight": 23,
+          "symWidth": 14.82191359217103,
+          "text": "GAINING  MORE  THAN  FIVE HUNDRED  THOUSAND  IMMORTAL CELLS  DURING  THIS  TIME  ISN'T EXACTLY  SLOW ,  BUT  COMPARED  TO THE  ONE  HUNDRED  MILLION  THAT  A LEVEL  12  STELLAR  IMMORTAL MARTIAL  SUPREME  BODY  CAN WITHSTAND ,  THIS  NUMBER IS  INSIGNIFICANT .",
+          "translation": "الحصول على أكثر من خمسمائة ألف خلية خالدة في هذا الوقت ليس بطيئاً حقاً، لكن مقارنة بمئة مليون التي يمكن لجسم قتالي خالدي سامٍ من المستوى الثاني عشر تحملها، هذا العدد ضئيل للغاية.",
+          "width": 428,
+          "x": 253,
+          "y": 1036
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 25,
+          "symWidth": 16.32367572760098,
+          "text": "I  NEED  MORE ,  I  NEED  A  MUCH LARGER  SOURCE  OF  ENERGY .  IF  I CAN'T  FIND  ONE ,  I'LL  HAVE  TO  FIND  A SECLUDED  PLACE  AND  USE  IMMORTAL TECHNIQUES  TO  ABSORB  COSMIC ENERGY ,  OR  EVEN  DEVOUR A  STAR  TO  LEVEL  UP ...",
+          "translation": "أحتاج المزيد، أحتاج إلى مصدر طاقة أضخم كثيراً. إن لم أجد واحداً، سأضطر إلى التواري مستخدماً تقنيات خلود لامتصاص الطاقة الكونية، أو حتى التهام نجم لترتقي بمكانيتي...",
+          "width": 482,
+          "x": 176,
+          "y": 2868
+        }
+      ],
+      "imgHeight": 3685,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 24,
+          "symWidth": 14.5,
+          "text": "AH ,  COME  IN .",
+          "translation": "آهِ، تفضل بالدخول.",
+          "width": 163,
+          "x": 126,
+          "y": 431
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 23.66666666666667,
+          "symWidth": 15.61344537815126,
+          "text": "BROTHER  LU ,  IT'S RARE  THAT  YOU'RE  NOT IN  SECLUSION .",
+          "translation": "الأخ لو، نادرًا ما أراكَ خارج عزلتك.",
+          "width": 311,
+          "x": 320,
+          "y": 1116
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 23.28571428571428,
+          "symWidth": 12.0490798883656,
+          "text": "AONON'S ATTITUDE TOWARDS  LU SHENG  WAS  MUCH  LESS  RESERVED  THAN BEFORE ,  BUT  HE  STILL  MAINTAINED  A SUBTLE  AMOUNT  OF  RESPECT .  AONON EVEN  LEARNED  SOME  OF  LU  SHENG'S PREFERENCES .",
+          "translation": "كان موقف أونون من لو شنغ أقل تحفظًا من ذي قبل، لكنه ظل يحفظ له قدرًا من الاحترام الدقيق. وتعلم أونون أيضًا بعض تفضيلات لو شنغ.",
+          "width": 389,
+          "x": 212,
+          "y": 2878
+        }
+      ],
+      "imgHeight": 3686,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 24.875,
+          "symWidth": 15.96111330698287,
+          "text": "I  ASKED AROUND ,  IT  SHOULD TAKE  AT  MOST  HALF  A  MONTH  TO REACH  SAGITTARIUS .  OUR  TRIP WENT  SURPRISINGLY  SMOOTHLY ; WE  PROBABLY  LEFT  ALL  OUR  BAD LUCK  IN  THE  INTERDIMENSIONAL BATTLEFIELD .",
+          "translation": "استقصيت الأمر، ومن المفترض ألا تستغرق الرحلة إلى القوس أكثر من نصف شهر. ذهبت رحلتنا بسلاسة مدهشة؛ ربما تركنا كل سوء الحظ في ساحة المعركة بين الأبعاد.",
+          "width": 432,
+          "x": 210,
+          "y": 488
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.5,
+          "symWidth": 16.11470588235294,
+          "text": "THAT'S  DEFINITELY  A GOOD  THING .",
+          "translation": "إنها لنبأٌ طيب بالتأكيد.",
+          "width": 259,
+          "x": 205,
+          "y": 1575
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 22.9,
+          "symWidth": 15.55098226335068,
+          "text": "BROTHER  LU ,  ARE YOU  NOT  PLANNING  TO  GO OUT  FOR  A  WALK ?  THERE'S QUITE  A FEW  INTERESTING PLACES ON THIS SPACESHIP , I  EVEN  SAW  A ...",
+          "translation": "يا أخي لو، ألست تنوي الخروج للتجول؟ في هذه السفينة الفضائية أماكن عدة تثير الفضول، حتى أنني رأيت...",
+          "width": 344,
+          "x": 51,
+          "y": 1970
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 28.83333333333333,
+          "text": "「 你  快 看 漫画",
+          "translation": "「 انظر سريعًا إلى المانغا",
+          "width": 190,
+          "x": 501,
+          "y": 3426
+        }
+      ],
+      "imgHeight": 3686,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 23.04545454545455,
+          "symWidth": 16.54545454545455,
+          "text": "GUY  WHO'S  SIMILAR TO  US ...",
+          "translation": "رجل يشبهنا...",
+          "width": 256,
+          "x": 389,
+          "y": 142
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 23.09638554216868,
+          "symWidth": 15.67469879518072,
+          "text": "SIMILAR  TO  US ... YOU  MEAN  THAT  BLUE - HAIRED WOMAN  WITH  THE  IMMORTAL -LEVEL  TRANSCENDENT PHYSIQUE ?",
+          "translation": "تشبهنا... هل تقصد تلك المرأة ذات الشعر الأزرق التي تمتلك جسداً سماويًّا خالدًا؟",
+          "width": 364,
+          "x": 263,
+          "y": 1656
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 29.90909090909091,
+          "symWidth": 16.36363636363636,
+          "text": "YEAH УЕАН ...",
+          "translation": "نعم، بالفعل...",
+          "width": 105,
+          "x": 307,
+          "y": 2603
+        }
+      ],
+      "imgHeight": 2737,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36.5,
+          "symWidth": 38,
+          "text": "PFTTT !",
+          "translation": "هاها!",
+          "width": 186,
+          "x": 89,
+          "y": 196
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 29.6,
+          "symWidth": 32.3,
+          "text": "NO  WAY ? HOW  DID  YOU KNOW ?",
+          "translation": "حقًا؟ كيف عرفت ذلك؟",
+          "width": 281,
+          "x": 241,
+          "y": 1292
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14.65217391304348,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "",
+          "width": 416,
+          "x": 253,
+          "y": 2675
+        }
+      ],
+      "imgHeight": 2738,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

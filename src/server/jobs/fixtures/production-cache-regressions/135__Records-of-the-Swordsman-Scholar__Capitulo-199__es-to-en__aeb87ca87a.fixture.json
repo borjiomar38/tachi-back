@@ -1,0 +1,3026 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0135",
+  "jobId": "fixture-job-0135",
+  "licenseId": "fixture-license-0135",
+  "pageCount": 58,
+  "pageOrder": [
+    "001.webp",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "020__001.jpg",
+    "020__002.jpg",
+    "021__001.jpg",
+    "021__002.jpg",
+    "022__001.jpg",
+    "022__002.jpg",
+    "023__001.jpg",
+    "023__002.jpg",
+    "024__001.jpg",
+    "024__002.jpg",
+    "025__001.jpg",
+    "025__002.jpg",
+    "026__001.jpg",
+    "026__002.jpg",
+    "027__001.jpg",
+    "027__002.jpg",
+    "028__001.jpg",
+    "028__002.jpg",
+    "029__001.jpg",
+    "029__002.jpg",
+    "030.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 25.18181818181818,
+          "text": "CAPITULO  199",
+          "translation": "CHAPTER 199",
+          "width": 296,
+          "x": 405,
+          "y": 76
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 50.97701149425287,
+          "symWidth": 38.0632183908046,
+          "text": "REGISTROS  DEL ERUDITO  ESPADACHIN www",
+          "translation": "SCHOLAR SWORDSMAN RECORDS",
+          "width": 650,
+          "x": 40,
+          "y": 178
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 38.51515151515152,
+          "symWidth": 23.13787878787879,
+          "text": "tus  visitas  NOS  AYUDAN  para  Administrar el  scan ,  solo  subimos  en  la  web  OFICIAL ZONAOLYMPUS.COM",
+          "translation": "Your visits help us manage the scan; we only upload on the official site ZONAOLYMPUS.COM",
+          "width": 538,
+          "x": 23,
+          "y": 1116
+        }
+      ],
+      "imgHeight": 1305,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 237,
+          "symHeight": 54.30697641375391,
+          "symWidth": 36.04134697357204,
+          "text": "Nos  vemos  en  un Proximo  capitulo ,  gracias por  leer  en  Olympus .",
+          "translation": "See you in the next chapter, thanks for reading on Olympus.",
+          "width": 462,
+          "x": 243,
+          "y": 1029
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 10.5,
+          "text": "NOMBRE :  EVOLLICION  DEMONIACA",
+          "translation": "TITLE: DEMONIC EVOLUTION",
+          "width": 264,
+          "x": 11,
+          "y": 1273
+        }
+      ],
+      "imgHeight": 1302,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 22.89285714285714,
+          "symWidth": 10.64285714285714,
+          "text": "EN  ESE  MOMENTO ,  TODA  LA CIUDAD  ESTABA  ALBOROTADA  CON  EL NOMBRE  DEL  SEÑOR  DE  LA  ESPADA DEL  DRAGÓN  AZUL .",
+          "translation": "AT THAT MOMENT, THE WHOLE CITY WAS BUZZING WITH THE NAME OF THE LORD OF THE BLUE DRAGON SWORD.",
+          "width": 292,
+          "x": 98,
+          "y": 866
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 16.46666666666667,
+          "symWidth": 15.09166666666667,
+          "text": "ANTES ILEE JELE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 129,
+          "x": 60,
+          "y": 1486
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 24.93,
+          "symWidth": 11.18,
+          "text": "DE  HECHO ,  UNHYEON  ESTABA  EN  SU ALOJAMIENTO  CLASIFICANDO  LA  INFORMACIÓN RECOPILADA  POR  JOGWAN ,  HANG  JANGIK  Y  DAM SOHA .",
+          "translation": "IN FACT, UNHYEON WAS IN HIS ROOM SORTING THROUGH THE INFORMATION GATHERED BY JOGWAN, HANG JANGIK, AND DAM SOHA.",
+          "width": 404,
+          "x": 160,
+          "y": 2336
+        }
+      ],
+      "imgHeight": 2655,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.5,
+          "symWidth": 12.79910714285714,
+          "text": "HMM ,  LA  SOCIEDAD DEL  DRAGÓN  AZUL ...",
+          "translation": "HMM, THE BLUE DRAGON SOCIETY...",
+          "width": 208,
+          "x": 440,
+          "y": 694
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 17,
+          "symWidth": 13.23848684210526,
+          "text": "¿ ES  ESTO  QUIZÁS  UNA ORGANIZACIÓN  SECRETA CREADA  POR  USTED ,  O ALGO  ASI ?",
+          "translation": "COULD THIS BE A SECRET ORGANIZATION YOU CREATED, OR SOMETHING LIKE THAT?",
+          "width": 259,
+          "x": 102,
+          "y": 2381
+        }
+      ],
+      "imgHeight": 2656,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 233,
+          "symHeight": 36.67333333333333,
+          "symWidth": 26.32,
+          "text": "72210 75241 ANTESE EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 331,
+          "x": 387,
+          "y": 189
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17,
+          "symWidth": 12.61153846153846,
+          "text": "NO ,  NUNCA  HE HECHO  TAL  COSA .",
+          "translation": "No, I've never done such a thing.",
+          "width": 185,
+          "x": 465,
+          "y": 613
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.43220338983051,
+          "symWidth": 12.27916251246261,
+          "text": "PERO  DICEN  QUE  SON  UN GRUPO  QUE  SIGUE  LA  VOLUNTAD DEL  SEÑOR  DE  LA  ESPADA  DEL DRAGÓN  AZUL ,  ¿ NO ?",
+          "translation": "But they say it's a group that follows the will of the Blue Dragon Sword Lord, right?",
+          "width": 316,
+          "x": 99,
+          "y": 1235
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 15.56349206349206,
+          "symWidth": 11.73809523809524,
+          "text": "SE  DIERON  A  CONOCER  A  RAÍZ DEL  INCIDENTE  DEL  TENIENTE  DE  LA PROVINCIA  DE  GUIZHOU ,  Y  DESDE ENTONCES  HAN  ESTADO  INTENTANDO UNA  RESISTENCIA  ESPORÁDICA CONTRA  LA  LIGA  DE  HÉROES ...",
+          "translation": "They came to light after the Guizhou province lieutenant incident, and since then they've sporadically resisted the Heroes' League...",
+          "width": 349,
+          "x": 286,
+          "y": 1458
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 90.5,
+          "symWidth": 57,
+          "text": "247h",
+          "translation": "247h",
+          "width": 144,
+          "x": 85,
+          "y": 1631
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 15.80444444444445,
+          "symWidth": 12.25365957713784,
+          "text": "TAMBIÉN  HAY  MUCHOS  CASOS EN  LOS  QUE  LA  IDENTIDAD  NO  ES CLARA ,  POR  LO  QUE  NO  SE  PUEDE CONFIRMAR  SI  EL  CEREBRO  ES REALMENTE  LA  SOCIEDAD  DEL DRAGÓN  AZUL .",
+          "translation": "There are also many cases where their identity is unclear, so we can't confirm if the Blue Dragon Society is really behind it.",
+          "width": 335,
+          "x": 283,
+          "y": 2430
+        }
+      ],
+      "imgHeight": 2655,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 15.25,
+          "symWidth": 12.07167182662539,
+          "text": "AUN  ASÍ ,  HAY  MÁS  DE DIEZ  CASOS  QUE  HEMOS SELECCIONADO  APROXI- MADAMENTE .",
+          "translation": "That said, we've roughly narrowed it down to over ten cases.",
+          "width": 242,
+          "x": 408,
+          "y": 1351
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 15.75675675675676,
+          "symWidth": 11.48018018018018,
+          "text": "HMM ...  ¿ QUIÉN  SABE ?  NO HAY  NADA  PROFUNDO .  NO SÉ  QUE  SIGNIFICA .",
+          "translation": "Hmm... who knows? There's nothing deep here. I don't know what it means.",
+          "width": 242,
+          "x": 80,
+          "y": 1540
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 16.2,
+          "symWidth": 14.71428571428571,
+          "text": "ANTES EILEE ONAOLYMPUS.COM",
+          "translation": "",
+          "width": 120,
+          "x": 437,
+          "y": 2061
+        }
+      ],
+      "imgHeight": 2656,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 16,
+          "symWidth": 12.43418803418803,
+          "text": "¿ POR  CASUALIDAD , SEÑORITA ,  SABE ALGO ?",
+          "translation": "By any chance, miss, do you know anything?",
+          "width": 180,
+          "x": 114,
+          "y": 194
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 15.82608695652174,
+          "symWidth": 12.82608695652174,
+          "text": "NO ,  PERO  NO  SOMOS NOSOTROS .",
+          "translation": "No, but it wasn’t us.",
+          "width": 209,
+          "x": 300,
+          "y": 1071
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 14.66666666666667,
+          "symWidth": 12.91111111111111,
+          "text": "NOSOTROS  NO HACEMOS  COSAS  TAN COBARDES .",
+          "translation": "We don’t do such cowardly things.",
+          "width": 210,
+          "x": 443,
+          "y": 1251
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.6,
+          "text": "¿ COBARDES ?",
+          "translation": "Cowardly?",
+          "width": 161,
+          "x": 95,
+          "y": 1894
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 15,
+          "symWidth": 8,
+          "text": "Sí .",
+          "translation": "Yes.",
+          "width": 24,
+          "x": 586,
+          "y": 2628
+        }
+      ],
+      "imgHeight": 2655,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 16,
+          "symWidth": 11.78883053221288,
+          "text": "MIRA  BIEN ,  DIJERON  QUE  NO SIGUEN  AL  SEÑOR  DE  LA ESPADA  DEL  DRAGÓN  AZUL , SINO  LA  ' VOLUNTAD  DEL DRAGÓN  AZUL ' .",
+          "translation": "LOOK CLOSELY, THEY SAID THEY DON'T FOLLOW THE LORD OF THE BLUE DRAGON SWORD, BUT THE 'WILL OF THE BLUE DRAGON'.",
+          "width": 274,
+          "x": 61,
+          "y": 556
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.48888888888889,
+          "symWidth": 17.23333333333333,
+          "text": "ANTEST EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 125,
+          "x": 382,
+          "y": 1164
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.75,
+          "symWidth": 12.08876811594203,
+          "text": "PUEDE  QUE  NO  PAREZCA  MUCHO , PERO  LA  DIFERENCIA  ES  GRANDE .  EL SEÑOR  DE  LA  ESPADA  DEL  DRAGÓN AZUL  ES  EL",
+          "translation": "IT MAY NOT SEEM LIKE MUCH, BUT THE DIFFERENCE IS HUGE. THE LORD OF THE BLUE DRAGON SWORD IS THE",
+          "width": 363,
+          "x": 122,
+          "y": 1587
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.3,
+          "text": "MAESTRO  LINHYEON ,  PERO DRAGÓN  AZUL  ES  UN  TÍTULO AMBIGUO ,  ENO ?",
+          "translation": "MASTER LINHYEON, BUT BLUE DRAGON IS AN AMBIGUOUS TITLE, RIGHT?",
+          "width": 320,
+          "x": 172,
+          "y": 1660
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 16,
+          "symWidth": 11.9,
+          "text": "SE  PREPARARON  UNA EXCUSA  PARA  MÁS  TARDE .",
+          "translation": "THEY MADE UP AN EXCUSE FOR LATER.",
+          "width": 249,
+          "x": 374,
+          "y": 1861
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.46296296296296,
+          "symWidth": 12.13133528265107,
+          "text": "AL  FINAL ,  SOLO  QUERÍAN APROVECHARSE  DE  LOS  RUMORES SOBRE  EL  SEÑOR  DE  LA  ESPADA DEL  DRAGÓN  AZUL .",
+          "translation": "IN THE END, THEY JUST WANTED TO EXPLOIT THE RUMORS ABOUT THE LORD OF THE BLUE DRAGON SWORD.",
+          "width": 338,
+          "x": 79,
+          "y": 2560
+        }
+      ],
+      "imgHeight": 2656,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 16.6,
+          "symWidth": 12.15710215710216,
+          "text": "SI  REALMENTE  FUERA  POR  UNA  CAUSA JUSTA ,  LO  HABRÍAN  REVELADO  CON ORGULLO .  ¿ QUÉ  TEME  UN  MAESTRO  DE LA  MANIFESTACIÓN  DE  LA  ENERGÍA  DE LA  ESPADA  PARA  USAR  UNA  MÁSCARA ?",
+          "translation": "IF IT WERE TRULY FOR A JUST CAUSE, THEY'D HAVE REVEALED IT PROUDLY. WHAT DOES A MASTER OF ENERGY MANIFESTATION FEAR TO HIDE BEHIND A MASK?",
+          "width": 383,
+          "x": 249,
+          "y": 160
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15,
+          "symWidth": 11.84542483660131,
+          "text": "HMM ...  PERO  TAMBIÉN  HAY CASOS  EN  LOS  QUE  NO  SE PUEDE  EVITAR .",
+          "translation": "HMM... BUT THERE ARE CASES WHERE IT CAN'T BE AVOIDED.",
+          "width": 266,
+          "x": 229,
+          "y": 1157
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 15.6,
+          "symWidth": 11.79077131564088,
+          "text": "NO  CREO  QUE  DEBAMOS  SOSPE- CHAR  AUTOMÁTICAMENTE  SOLO PORQUE  OCULTEN  SU  IDENTIDAD . SUS  INTENCIONES  PODRÍAN  SER BUENAS .",
+          "translation": "I DON'T THINK WE SHOULD AUTOMATICALLY SUSPECT JUST BECAUSE THEY CONCEAL THEIR IDENTITY. THEIR INTENTIONS COULD BE GOOD.",
+          "width": 325,
+          "x": 331,
+          "y": 1393
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15,
+          "symWidth": 12.02631578947368,
+          "text": "¿ AQUELLOS  QUE  MATARON GENTE  USANDO  EL  NOMBRE DE",
+          "translation": "WHAT ABOUT THOSE WHO KILLED OTHERS USING SOMEONE ELSE'S NAME?",
+          "width": 268,
+          "x": 92,
+          "y": 2130
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 12.41666666666667,
+          "text": "OTRA  PERSONA ?",
+          "translation": "?",
+          "width": 161,
+          "x": 161,
+          "y": 2178
+        }
+      ],
+      "imgHeight": 2655,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 17,
+          "symWidth": 11.80099637681159,
+          "text": "PREFERIRÍA  QUE  DIJERAN  QUE ES  LA  VOLUNTAD  DE  LA  GENTE ,  O POR  UNA  GRAN  CAUSA ,  ENTONCES ACEPTARÍA .",
+          "translation": "I'd rather they said it was the will of the people or for a noble cause; then I'd accept it.",
+          "width": 327,
+          "x": 312,
+          "y": 383
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 17,
+          "symWidth": 13.5,
+          "text": "LO",
+          "translation": "IT",
+          "width": 25,
+          "x": 406,
+          "y": 455
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18.5,
+          "symWidth": 10.30113636363636,
+          "text": "AUNQUE  ESO  TAMBIÉN ES  RIDÍCULO .",
+          "translation": "Though that's ridiculous too.",
+          "width": 183,
+          "x": 482,
+          "y": 520
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 15,
+          "symWidth": 12.30275824097755,
+          "text": "POR  MUY  MALVADOS  QUE SEAN ,  MATARON  GENTE  USANDO EL  NOMBRE  DEL  MAESTRO UNHYEON .",
+          "translation": "No matter how evil they are, they killed people using Master Unhyeon's name.",
+          "width": 307,
+          "x": 126,
+          "y": 1132
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 15.25,
+          "symWidth": 12.04030448717949,
+          "text": "¿ ESAS  PERSONAS QUE  CULPAN  A  OTROS , CREES  QUE  TIENEN  BUENAS INTENCIONES ?",
+          "translation": "Those who blame others—do you think they mean well?",
+          "width": 269,
+          "x": 314,
+          "y": 1375
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 14.25,
+          "symWidth": 12.81111111111111,
+          "text": "ANT TESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 124,
+          "x": 40,
+          "y": 1943
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 12.97916666666667,
+          "text": "... CADA  PALABRA  ES CIERTA",
+          "translation": "... Every word is true.",
+          "width": 194,
+          "x": 261,
+          "y": 2259
+        }
+      ],
+      "imgHeight": 2656,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 13.33333333333333,
+          "text": "TE  ASEGURO",
+          "translation": "I assure you",
+          "width": 136,
+          "x": 173,
+          "y": 232
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 16.6,
+          "symWidth": 13.34753968253968,
+          "text": "QUE ESTAS  PERSONAS  NUNCA INTENTARÁN  CONTACTAR  AL MAESTRO  UNHYEON , ¿ VERDAD ?",
+          "translation": "these people will never try to contact Master Unhyeon, right?",
+          "width": 281,
+          "x": 128,
+          "y": 232
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.25,
+          "symWidth": 12.240533625731,
+          "text": "ESO  ES ,  ANTES  DE  QUE  OB- TENGAN  UN  PODER  SEGURO . SI  NO  ME  CREES ,  PUEDES APOSTAR .",
+          "translation": "That's right, before they gain real power. If you don't believe me, you can bet on it.",
+          "width": 277,
+          "x": 308,
+          "y": 504
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 13,
+          "symWidth": 10.66666666666667,
+          "text": "¿ POR  QUÉ  HARÍAMOS UNA  APUESTA  QUE  ES OBVIO  QUE  VAMOS  A PERDER ?",
+          "translation": "Why would we bet on something we obviously will lose?",
+          "width": 174,
+          "x": 74,
+          "y": 1515
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 15.66666666666667,
+          "symWidth": 11.94285714285714,
+          "text": "MAESTRO  UNHYEON , ¿ REALMENTE  NO  ES USTED ?",
+          "translation": "Master Unhyeon, are you really not the one?",
+          "width": 193,
+          "x": 245,
+          "y": 2159
+        }
+      ],
+      "imgHeight": 2655,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 16,
+          "symWidth": 12.06363636363636,
+          "text": "NO ,  NO  TENGO NADA  QUE  VER .",
+          "translation": "No, I have nothing to do with it.",
+          "width": 146,
+          "x": 502,
+          "y": 517
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 11.875,
+          "text": "ENTONCES",
+          "translation": "Then",
+          "width": 101,
+          "x": 107,
+          "y": 1120
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15,
+          "symWidth": 12.53690476190476,
+          "text": "ES  MEJOR QUE  MANTENGA  DISTANCIA DE  ELLOS .",
+          "translation": "It's best to keep your distance from them.",
+          "width": 254,
+          "x": 86,
+          "y": 1120
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 44.58333333333334,
+          "symWidth": 44.28333333333334,
+          "text": "30  ALIANZA DEL DRAGÓN LH AZUL",
+          "translation": "30 Blue Dragon Alliance",
+          "width": 406,
+          "x": 135,
+          "y": 1415
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 18.5,
+          "symWidth": 15.96666666666667,
+          "text": "EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 126,
+          "x": 63,
+          "y": 1689
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 11.57142857142857,
+          "text": "TAMBIÉN",
+          "translation": "Also",
+          "width": 80,
+          "x": 314,
+          "y": 2126
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16,
+          "symWidth": 12.15972222222222,
+          "text": "SERÍA  BUENO  QUE  DE- CLARARA  PÚBLICAMENTE  QUE  NO TIENE  NADA  QUE  VER  CON  USTED .",
+          "translation": "It would be wise to publicly declare you have nothing to do with them.",
+          "width": 325,
+          "x": 304,
+          "y": 2126
+        }
+      ],
+      "imgHeight": 2656,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.75531914893617,
+          "symWidth": 11.48297872340425,
+          "text": "SI  ELLOS  INTENTAN CONTACTARLO ,  PRIMERO  EXIJA FIRMEMENTE  SU  DISOLUCIÓN .",
+          "translation": "If they try to contact you, demand their disbandment first.",
+          "width": 297,
+          "x": 107,
+          "y": 132
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 15.14130434782609,
+          "symWidth": 12.27173913043478,
+          "text": "SI  MUESTRA  UNA  ACTITUD  AMBIGUA , SERÁ  VENDIDO  COMO  UNO  DE  ELLOS . INCLUSO  PUEDE  PEDIRLES  QUE CAMBIEN  SU  NOMBRE .",
+          "translation": "Any hint of ambiguity, and you'll be sold as one of them. You can even make them change their name.",
+          "width": 366,
+          "x": 254,
+          "y": 420
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 12.22222222222222,
+          "text": "CIERTAMENTE  LO  HARÉ .",
+          "translation": "I definitely will.",
+          "width": 227,
+          "x": 391,
+          "y": 1360
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.07692307692308,
+          "symWidth": 12.2051282051282,
+          "text": "OH ,  NO  HABÍAS DICHO  QUE  NO  TEN- DRÍAS  CONTACTO ?",
+          "translation": "Oh, didn’t you say you’d have no contact?",
+          "width": 195,
+          "x": 87,
+          "y": 1969
+        }
+      ],
+      "imgHeight": 2412,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 14,
+          "symWidth": 12.51219512195122,
+          "text": "ES  POR  SI  ACASO .  ¿ NO SABES  LO  QUE  ES  \" POR SI  ACASO \" ?",
+          "translation": "Just in case. Don’t you know what \"just in case\" means?",
+          "width": 236,
+          "x": 399,
+          "y": 536
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16.06926406926407,
+          "symWidth": 11.91125541125541,
+          "text": "ENTONCES ,  SI  APUESTO  UNA YANG  Y  GANO ,  ¿ SERÍAN  DIEZ  MIL VECES ?  QUIERO  APOSTAR .",
+          "translation": "So if I bet one yang and win, is it ten thousand times? I wanna bet.",
+          "width": 309,
+          "x": 86,
+          "y": 1195
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.53333333333333,
+          "symWidth": 14.52698412698413,
+          "text": "ANTES PILEE  A ZONAOLYMPUS.CO",
+          "translation": "Before I pile on ZonaOlympus.co",
+          "width": 116,
+          "x": 413,
+          "y": 1808
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 28.42857142857143,
+          "symWidth": 23,
+          "text": "¿ QUÉ ? ¡ ESTO ... !",
+          "translation": "What? This...!",
+          "width": 158,
+          "x": 456,
+          "y": 2019
+        }
+      ],
+      "imgHeight": 2413,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 18.55555555555556,
+          "symWidth": 12.88888888888889,
+          "text": "¡ AH !  PERO ,  ¿ CÓMO ESO ? HIZO",
+          "translation": "Ah! But how’s that? You",
+          "width": 212,
+          "x": 201,
+          "y": 288
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 13.11111111111111,
+          "text": "¿ QUÉ  COSA ?",
+          "translation": "What are you talking about?",
+          "width": 125,
+          "x": 517,
+          "y": 1226
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.35416666666667,
+          "symWidth": 12.60416666666667,
+          "text": "ME  REFIERO  A  CÓMO ROMPIÓ  LA  ESPADA  CON UN  PALILLO  DE  PLATA .",
+          "translation": "I mean how you broke the sword with a silver toothpick.",
+          "width": 235,
+          "x": 244,
+          "y": 1828
+        }
+      ],
+      "imgHeight": 2413,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15,
+          "symWidth": 11.875,
+          "text": "¿ ROMPER  LA ESPADA ?",
+          "translation": "BREAK THE SWORD?",
+          "width": 121,
+          "x": 138,
+          "y": 617
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 11.55,
+          "text": "ECON  UN  PALILLO  DE PLATA ?",
+          "translation": "WITH A SILVER HAIRPIN?",
+          "width": 197,
+          "x": 405,
+          "y": 705
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 18.56666666666667,
+          "symWidth": 17.26666666666667,
+          "text": "ANT EILEE ESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 128,
+          "x": 267,
+          "y": 1268
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 9.777777777777779,
+          "text": "AH ,  ESO ...",
+          "translation": "AH, THAT...",
+          "width": 95,
+          "x": 517,
+          "y": 1548
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 14.75,
+          "symWidth": 11.54548229548229,
+          "text": "SOLO  TIENES  QUE PENSAR  QUE  EL  PALILLO ES  LA  PUNTA  DE  MI ESPADA .",
+          "translation": "YOU JUST HAVE TO THINK OF THE HAIRPIN AS THE TIP OF MY SWORD.",
+          "width": 234,
+          "x": 89,
+          "y": 2138
+        }
+      ],
+      "imgHeight": 2414,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 15.25,
+          "symWidth": 12.05255681818182,
+          "text": "ENTONCES ,  SIMPLEMENTE  SE CONVIERTE  EN  UN  DUELO  DE ESPADA  CONTRA  ESPADA ,  Y  EL RESTO  ES  SENCILLO .",
+          "translation": "SO IT JUST BECOMES A SWORD VS. SWORD DUEL, AND THE REST IS EASY.",
+          "width": 291,
+          "x": 344,
+          "y": 606
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 16.5,
+          "symWidth": 12.72222222222222,
+          "text": "... ¿ ESO  ES SENCILLO ?",
+          "translation": "... EASY?",
+          "width": 122,
+          "x": 115,
+          "y": 1283
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 16.54545454545455,
+          "symWidth": 11.72727272727273,
+          "text": "PARA  EL  SEÑOR UNHYEON ,  SÍ .",
+          "translation": "FOR LORD UNHYEON, YES.",
+          "width": 153,
+          "x": 472,
+          "y": 2009
+        }
+      ],
+      "imgHeight": 2412,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.66666666666667,
+          "symWidth": 13.10833333333333,
+          "text": "YA  ES  HORA  DE  CENAR , ¿ POR  QUÉ  NO  COMEMOS ALGO ?",
+          "translation": "IT'S DINNER TIME. WHY DON'T WE EAT SOMETHING?",
+          "width": 244,
+          "x": 111,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 19.075,
+          "symWidth": 17.33333333333333,
+          "text": "EE  ANT עקוד ES ZONADLYMPUS.COM",
+          "translation": "",
+          "width": 132,
+          "x": 526,
+          "y": 731
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 12.1,
+          "text": "DE  ACUERDO .",
+          "translation": "AGREED.",
+          "width": 131,
+          "x": 481,
+          "y": 1083
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.41086691086691,
+          "text": "¿ QUÉ  TE  GUSTARÍA PARA  CENAR  ESTA NOCHE ,  DAMJE ?",
+          "translation": "WHAT WOULD YOU LIKE FOR DINNER TONIGHT, DAMJE?",
+          "width": 185,
+          "x": 87,
+          "y": 1679
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 14.23214285714286,
+          "symWidth": 11.12698412698413,
+          "text": "CHENGDU ,  EN  SICHUAN , ES  FAMOSA  POR  SUS PLATOS  PICANTES ,  POR SUPUESTO .",
+          "translation": "CHENGDU, IN SICHUAN, IS FAMOUS FOR ITS SPICY DISHES, OF COURSE.",
+          "width": 206,
+          "x": 445,
+          "y": 1758
+        }
+      ],
+      "imgHeight": 2413,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 22.75,
+          "text": "UGH .",
+          "translation": "UGH.",
+          "width": 83,
+          "x": 469,
+          "y": 58
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 24.33333333333333,
+          "symWidth": 11.27033492822967,
+          "text": "ESA  TARDE ,  UNA  CARTA  DE LA  ALIANZA  DE  LA  PAZ  LLEGÓ  A UNHYEON .",
+          "translation": "THAT AFTERNOON, A LETTER FROM THE PEACE ALLIANCE ARRIVED FOR UNHYEON.",
+          "width": 257,
+          "x": 230,
+          "y": 299
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 26.8,
+          "symWidth": 11.68718067840019,
+          "text": "LA  CARTA  CONTENÍA  UNA  INVITACIÓN  FORMAL  A UNHYEON  PARA  LA  REUNIÓN  DE  LOS  LÍDERES  DE  CLANES , Y  UNA  PETICIÓN  DE  TANG  SEOLLYEON ,  LA  ESTRATEGA MILITAR  GENERAL  DE  ASUNTOS  EXTERIORES ,  PARA  UNA AUDIENCIA",
+          "translation": "THE LETTER CONTAINED A FORMAL INVITATION FOR UNHYEON TO ATTEND THE CLAN LEADERS’ MEETING, AND A REQUEST FROM TANG SEOLLYEON, THE MILITARY STRATEGIST AND FOREIGN AFFAIRS ADVISOR, FOR A PRIVATE AUDIENCE.",
+          "width": 500,
+          "x": 111,
+          "y": 829
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 10.875,
+          "text": "PRIVADA .",
+          "translation": "PRIVATE.",
+          "width": 80,
+          "x": 373,
+          "y": 993
+        }
+      ],
+      "imgHeight": 2412,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 22.4,
+          "text": "원작 · 언 라이팅  최현우",
+          "translation": "Original · Un Lighting Choi Hyunwoo",
+          "width": 241,
+          "x": 418,
+          "y": 1512
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 29,
+          "symWidth": 22.38461538461538,
+          "text": "그림 · 박성우  각색  ·  제행 무상",
+          "translation": "Art · Park Seongwoo Adaptation · Jehaeng Musang",
+          "width": 328,
+          "x": 60,
+          "y": 1513
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 48,
+          "symWidth": 36.4,
+          "text": "제  199  화",
+          "translation": "Chapter 199",
+          "width": 229,
+          "x": 245,
+          "y": 1821
+        }
+      ],
+      "imgHeight": 2413,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 22,
+          "symWidth": 11.70833333333333,
+          "text": "SEDE  DE  LA  ALIANZA DE  LA  PAZ-",
+          "translation": "HEADQUARTERS OF THE PEACE ALLIANCE-",
+          "width": 172,
+          "x": 72,
+          "y": 361
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 11.61428571428571,
+          "text": "PUEDE  ENTRAR  POR AQUÍ .",
+          "translation": "ENTRY THIS WAY.",
+          "width": 193,
+          "x": 88,
+          "y": 1868
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 16.96666666666667,
+          "symWidth": 16.46666666666667,
+          "text": "ANTESE EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 126,
+          "x": 244,
+          "y": 2129
+        }
+      ],
+      "imgHeight": 2413,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 12.25,
+          "text": "GRACIAS .",
+          "translation": "THANK YOU.",
+          "width": 104,
+          "x": 501,
+          "y": 281
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 111,
+          "symWidth": 88,
+          "text": "77",
+          "translation": "77",
+          "width": 154,
+          "x": 404,
+          "y": 811
+        }
+      ],
+      "imgHeight": 2414,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 16.17857142857143,
+          "symWidth": 15.37857142857143,
+          "text": "E  ANTESE EILE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 127,
+          "x": 90,
+          "y": 1052
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 46.33333333333334,
+          "symWidth": 76.66666666666667,
+          "text": "GHA",
+          "translation": "GHA",
+          "width": 261,
+          "x": 458,
+          "y": 2212
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 16.80769230769231,
+          "symWidth": 12.98076923076923,
+          "text": "立  ¡ BIENVENIDO , SEÑOR !",
+          "translation": "STAND ¡WELCOME, SIR!",
+          "width": 256,
+          "x": 23,
+          "y": 2217
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 12,
+          "symWidth": 21,
+          "text": "AAA",
+          "translation": "AAA",
+          "width": 47,
+          "x": 312,
+          "y": 2304
+        }
+      ],
+      "imgHeight": 2412,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 16.5,
+          "symWidth": 12.17251317523057,
+          "text": "AUNQUE  NO  CREO  QUE  NECESITE PRESENTARLOS  DE  NUEVO ,  SON EL  GRAN  HÉROE  DANG  CHEONB- YEOK ,  EL  LÍDER  DEL  CLAN  TANG ,",
+          "translation": "ALTHOUGH I DOUBT I NEED TO INTRODUCE THEM AGAIN, THEY ARE THE GREAT HERO DANG CHEONB-YEOK, LEADER OF THE TANG CLAN,",
+          "width": 323,
+          "x": 197,
+          "y": 1154
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.85714285714286,
+          "text": "Y  EL  GRAN",
+          "translation": "AND THE GREAT",
+          "width": 102,
+          "x": 141,
+          "y": 1985
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.8,
+          "text": "HÉROE",
+          "translation": "HERO",
+          "width": 64,
+          "x": 251,
+          "y": 1985
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 16.75,
+          "symWidth": 12.07619047619048,
+          "text": "JEGAL MYEONG ,  EL  LÍDER  DE  LA  FAMI- LIA  ZHUGE ,  EL  ESPADACHIN NOBLE ,",
+          "translation": "JEGAL MYEONG, LEADER OF THE ZHUGE FAMILY, THE NOBLE SWORDSMAN,",
+          "width": 298,
+          "x": 114,
+          "y": 1985
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.42857142857143,
+          "text": "Y  EL  GRAN",
+          "translation": "AND THE GREAT",
+          "width": 101,
+          "x": 290,
+          "y": 2223
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 17,
+          "symWidth": 12.02121212121212,
+          "text": "HÉROE  MOYONG  DAN- DE  LA  FAMILIA",
+          "translation": "HERO MOYONG DAN OF THE CHEON FAMILY,",
+          "width": 208,
+          "x": 399,
+          "y": 2223
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 17,
+          "symWidth": 11,
+          "text": "CHEON ,",
+          "translation": "CHEON,",
+          "width": 71,
+          "x": 298,
+          "y": 2247
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17,
+          "symWidth": 11.85714285714286,
+          "text": "EL  LÍDER MURONG ,",
+          "translation": "THE LEADER MURONG,",
+          "width": 129,
+          "x": 331,
+          "y": 2247
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 13.18181818181818,
+          "text": "GWAN  ILGEOM .",
+          "translation": "GWAN ILGEOM.",
+          "width": 140,
+          "x": 426,
+          "y": 2272
+        }
+      ],
+      "imgHeight": 2413,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 16,
+          "symWidth": 12.19148936170213,
+          "text": "Y  ESTAS  PERSONAS  SON EL  GRAN  HÉROE  GONGSUN CHUHYEON ,  QUIEN  ASISTE  EN REPRESENTACIÓN  DEL  LÍDER DEL  CLAN  GONGSUN ,",
+          "translation": "And these people are the Great Hero Gongsun Chuhyeon, here representing the leader of the Gongsun Clan,",
+          "width": 276,
+          "x": 109,
+          "y": 523
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.2,
+          "symWidth": 17.13333333333333,
+          "text": "FILES ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 126,
+          "x": 128,
+          "y": 1058
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 15.59090909090909,
+          "symWidth": 12.40909090909091,
+          "text": "EL  GRAN  HÉROE  HYEOKRYEON  PIL  DEL CLAN  HYEOKRYEON ,  EL  GRAN  HÉROE DANMOK  GI  DEL  CLAN  DANMOK ,  Y  LA SEÑORITA  HWANGBO  SEONHYE  DE  LA SECTA  DE  LA  ESPADA  DEL  MAR  DEL SUR .",
+          "translation": "The Great Hero Hyeokryeon Pil of the Hyeokryeon Clan, the Great Hero Danmok Gi of the Danmok Clan, and Miss Hwangbo Seonhye from the Southern Sea Sword Sect.",
+          "width": 371,
+          "x": 261,
+          "y": 1376
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 15.21052631578947,
+          "symWidth": 11.77631578947368,
+          "text": "EL  GRAN  HÉROE  ZHUGE GIHO ,  EL  ESTRATEGA  GENE- RAL  DE  ASUNTOS  INTERNOS DE  LA  ALIANZA  DE  LA  PAZ .",
+          "translation": "The Great Hero Zhuge Giho, Chief Strategist of Internal Affairs for the Peace Alliance.",
+          "width": 272,
+          "x": 208,
+          "y": 2090
+        }
+      ],
+      "imgHeight": 2407,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.31428571428571,
+          "symWidth": 12.81428571428571,
+          "text": "YO  SOY  TANG  SEOLLYEON , Y  ESTOY  A  CARGO  DE  LA ESTRATEGIA  GENERAL  DE ASUNTOS  EXTERNOS .",
+          "translation": "I am Tang Seollyeon, in charge of the overall foreign affairs strategy.",
+          "width": 259,
+          "x": 408,
+          "y": 594
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.66216216216216,
+          "symWidth": 12.02518427518428,
+          "text": "Y ,  COMO  TODOS  YA  SABRÁN ,  ÉL  ES EL  SEÑOR  UNHYEON ,  EL  REPRESEN- TANTE  PLENIPOTENCIARIO  DEL EUNUCO  PARK .",
+          "translation": "And, as you all know, he is Lord Unhyeon, the plenipotentiary representative of Eunuch Park.",
+          "width": 345,
+          "x": 95,
+          "y": 1316
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 27,
+          "text": "G +",
+          "translation": "",
+          "width": 43,
+          "x": 0,
+          "y": 1449
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 13,
+          "symWidth": 12.5,
+          "text": "ap",
+          "translation": "",
+          "width": 28,
+          "x": 19,
+          "y": 1697
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16.22413793103448,
+          "symWidth": 11.96379310344827,
+          "text": "UNA  VEZ  OCUPÓ  EL  CARGO  DE SECRETARIO  EN  LA  ALIANZA MURIM ...",
+          "translation": "He once served as secretary of the Murim Alliance...",
+          "width": 296,
+          "x": 344,
+          "y": 2174
+        }
+      ],
+      "imgHeight": 2408,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 15.47126436781609,
+          "symWidth": 12.14983164983165,
+          "text": "ES  EL  DISCIPULO  MENOR DEL  MONJE  DIVINO  Y  ES  MÁS CONOCIDO  POR  EL  TÍTULO  DE MAESTRO  DE  LA  ESPADA DRAGÓN  AZUL .",
+          "translation": "He is the youngest disciple of the Divine Monk, better known as the Blue Dragon Sword Master.",
+          "width": 288,
+          "x": 356,
+          "y": 431
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 17.9,
+          "symWidth": 15.43333333333333,
+          "text": "TESTE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 126,
+          "x": 213,
+          "y": 1032
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 15,
+          "symWidth": 11.29464285714286,
+          "text": "ES  UN  PLACER ,  SOY UNHYEON .",
+          "translation": "A pleasure, I am Unhyeon.",
+          "width": 194,
+          "x": 262,
+          "y": 1875
+        }
+      ],
+      "imgHeight": 2406,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 16,
+          "symWidth": 12.04807692307692,
+          "text": "POR  FAVOR ,  TOME ASIENTO  AQUÍ .",
+          "translation": "Please, have a seat here.",
+          "width": 175,
+          "x": 401,
+          "y": 219
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.33333333333333,
+          "symWidth": 15.22979797979798,
+          "text": "AL  LADO  DE  LOS LIDERES  DE  LOS CLANES ...",
+          "translation": "Next to the clan leaders...",
+          "width": 195,
+          "x": 247,
+          "y": 2123
+        }
+      ],
+      "imgHeight": 2407,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 14.66666666666667,
+          "symWidth": 12.76666666666667,
+          "text": "ANTESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 127,
+          "x": 537,
+          "y": 92
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 16.26,
+          "symWidth": 13.96793103448276,
+          "text": "NO  SE  SI  ES  POR  CORTESIA  HACIA RIO ,  O  SI  ES  POR  CONSIDERACIÓN  A EL  REPRESENTANTE  PLENIPOTENCIA-",
+          "translation": "I don't know if it's out of courtesy to Rio, or respect for the plenipotentiary representative—",
+          "width": 363,
+          "x": 227,
+          "y": 755
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15.5,
+          "symWidth": 14.21739130434783,
+          "text": "SU  POSICIÓN  COMO  DISCIPULO MENOR  DEL  MONJE  DIVINO .",
+          "translation": "or his position as the junior disciple of the Divine Monk.",
+          "width": 307,
+          "x": 254,
+          "y": 827
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 103.3333333333333,
+          "symWidth": 91,
+          "text": "쪼르륵",
+          "translation": "(sound of small footsteps)",
+          "width": 201,
+          "x": 384,
+          "y": 1720
+        }
+      ],
+      "imgHeight": 2407,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 46.83333333333334,
+          "symWidth": 27.375,
+          "text": "GRACIAS . 请 花田",
+          "translation": "Thank you.",
+          "width": 168,
+          "x": 239,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 11.28571428571429,
+          "text": "DE  NADA .",
+          "translation": "You're welcome.",
+          "width": 85,
+          "x": 528,
+          "y": 1182
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 22.75,
+          "symWidth": 29,
+          "text": "ruls",
+          "translation": "",
+          "width": 31,
+          "x": 332,
+          "y": 1903
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 20.73333333333333,
+          "symWidth": 18.16666666666666,
+          "text": "ANTESE EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 124,
+          "x": 414,
+          "y": 2262
+        }
+      ],
+      "imgHeight": 2408,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15.5,
+          "symWidth": 11.5,
+          "text": "ES  UN  TÉ  REALMENTE BUENO .",
+          "translation": "It's a really good tea.",
+          "width": 209,
+          "x": 247,
+          "y": 697
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 15.33333333333333,
+          "symWidth": 11.3202614379085,
+          "text": "ES  UNA  ESPECIALIDAD DE  SICHUAN  DIGNA  DE  UN INVITADO",
+          "translation": "A Sichuan specialty worthy of an honored guest.",
+          "width": 241,
+          "x": 347,
+          "y": 1567
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 11.33333333333333,
+          "text": "DISTINGUIDO .",
+          "translation": "Thank you for accepting the invitation, Mr. Unhyeon.",
+          "width": 126,
+          "x": 450,
+          "y": 1615
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 16,
+          "symWidth": 11.73393246187364,
+          "text": "GRACIAS  POR  ACEPTAR LA  INVITACIÓN ,  SEÑOR UNHYEON .",
+          "translation": "",
+          "width": 226,
+          "x": 110,
+          "y": 2243
+        }
+      ],
+      "imgHeight": 2407,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 16.22619047619047,
+          "symWidth": 11.48928571428571,
+          "text": "DE  NADA .  SOY  YO  QUIEN  LE AGRADECE  POR  INVITARME  A  UN LUGAR  TAN  DISTINGUIDO .",
+          "translation": "You're welcome. I'm the one who should thank you for inviting me to such a distinguished place.",
+          "width": 305,
+          "x": 295,
+          "y": 754
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 11.54861111111111,
+          "text": "ME  RECUERDA  A  LA  AN- TIGUA  ALIANZA  MURIM .",
+          "translation": "It reminds me of the old Murim Alliance.",
+          "width": 223,
+          "x": 80,
+          "y": 1424
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 15.33333333333333,
+          "symWidth": 14.44642857142857,
+          "text": "LEE ANT TES ZONAOLYMPUS.CO",
+          "translation": "",
+          "width": 114,
+          "x": 177,
+          "y": 2006
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.66666666666667,
+          "symWidth": 11.78472222222222,
+          "text": "AUNQUE  EN  AQUEL  EN- TONCES  EL  AMBIENTE  NO ERA  TAN",
+          "translation": "Although back then, the atmosphere wasn't nearly as good as this.",
+          "width": 241,
+          "x": 402,
+          "y": 2175
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 15.5,
+          "symWidth": 12.41111111111111,
+          "text": "BUENO  COMO ESTE .",
+          "translation": "",
+          "width": 133,
+          "x": 496,
+          "y": 2222
+        }
+      ],
+      "imgHeight": 2408,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 22,
+          "text": "!!!",
+          "translation": "!!!",
+          "width": 47,
+          "x": 224,
+          "y": 433
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 16.5,
+          "symWidth": 11.88571428571429,
+          "text": "¿ ES  USTED  UN OFICIAL ,  SEÑOR ?",
+          "translation": "ARE YOU AN OFFICER, SIR?",
+          "width": 162,
+          "x": 91,
+          "y": 1776
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 29.66666666666667,
+          "symWidth": 21.5,
+          "text": "詩作 田 000",
+          "translation": "",
+          "width": 125,
+          "x": 458,
+          "y": 1931
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 23.33333333333333,
+          "symWidth": 27,
+          "text": "000",
+          "translation": "",
+          "width": 32,
+          "x": 439,
+          "y": 2054
+        }
+      ],
+      "imgHeight": 2406,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 278,
+          "symHeight": 53.28571428571428,
+          "symWidth": 62.28571428571428,
+          "text": "12/03/2",
+          "translation": "12/03/2",
+          "width": 65,
+          "x": 567,
+          "y": 487
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 14.81818181818182,
+          "symWidth": 12.62424242424242,
+          "text": "EILEE  ANTESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 124,
+          "x": 130,
+          "y": 1118
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15.33333333333333,
+          "symWidth": 10.68055555555556,
+          "text": "... SE  PODRÍA  DECIR QUE SÍ .",
+          "translation": "... YOU COULD SAY THAT.",
+          "width": 186,
+          "x": 444,
+          "y": 1314
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16.66666666666667,
+          "symWidth": 11.52007797270955,
+          "text": "¿ DESDE  CUANDO ?  ¿ ACASO TAMBIÉN  ERA  ASÍ  EN  LA  AN- TIGUA  ALIANZA  MURIM ?",
+          "translation": "SINCE WHEN? WERE YOU THE SAME IN THE OLD MURIM ALLIANCE?",
+          "width": 261,
+          "x": 100,
+          "y": 1980
+        }
+      ],
+      "imgHeight": 2407,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17.5,
+          "symWidth": 16.94444444444444,
+          "text": "¡ ¿ GONGSUN ESE  TIPO ?!",
+          "translation": "GONGSUN, THAT GUY?!",
+          "width": 145,
+          "x": 148,
+          "y": 918
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 16.75,
+          "symWidth": 15.77427016156993,
+          "text": "¡ ¿ QUÉ  PRETENDES  HACER  PRO- VOCANDO  TAN  GROSERAMENTE CON  ESOS  OJOS  LLENOS  DE HOSTILIDAD ?!",
+          "translation": "WHAT ARE YOU TRYING TO DO, PROVOKING ME SO BLATANTLY WITH THOSE HOSTILE EYES?!",
+          "width": 345,
+          "x": 249,
+          "y": 1851
+        }
+      ],
+      "imgHeight": 2407,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 16,
+          "symWidth": 11.69375,
+          "text": "SI  DIJERA  QUE  NO  FUE ASÍ ,  ¿ ME  CREERÍA ?",
+          "translation": "IF I SAID IT WASN'T TRUE, WOULD YOU BELIEVE ME?",
+          "width": 222,
+          "x": 80,
+          "y": 189
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16.70370370370371,
+          "symWidth": 14.34814814814815,
+          "text": "EILEE  ANTE ESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 127,
+          "x": 448,
+          "y": 723
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 20.44444444444444,
+          "text": "THMPH ! ...",
+          "translation": "HMMPH!...",
+          "width": 154,
+          "x": 97,
+          "y": 1459
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 15.25,
+          "symWidth": 12.38576388888889,
+          "text": "¿ CÓMO  PUEDES  CREER LAS  PALABRAS  DE  ALGUIEN QUE  TRABAJA  PARA  EL GOBIERNO ?",
+          "translation": "HOW CAN YOU BELIEVE SOMEONE WHO WORKS FOR THE GOVERNMENT?",
+          "width": 259,
+          "x": 182,
+          "y": 1629
+        }
+      ],
+      "imgHeight": 2408,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 15.14634146341463,
+          "text": "... ESA  PERSONA , IBA  A  DECIR  PERRO DEL  GOBIERNO ' .",
+          "translation": "... THAT PERSON WAS GOING TO SAY 'GOVERNMENT DOG'.",
+          "width": 229,
+          "x": 336,
+          "y": 24
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 16.00588235294118,
+          "symWidth": 13.61344537815126,
+          "text": "LA  OFICINA  DEL  GOBIERNO  Y MURIM  NO  SE  LLEVABAN  BIEN ORIGINALMENTE ,  ASÍ  QUE  NO ES  ALGO  INCOMPRENSIBLE , PERO ...",
+          "translation": "The government office and Murim didn’t get along at first, so it’s not surprising, but...",
+          "width": 316,
+          "x": 158,
+          "y": 799
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 94.33333333333333,
+          "symWidth": 75.66666666666667,
+          "text": "400",
+          "translation": "400",
+          "width": 126,
+          "x": 527,
+          "y": 1319
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16,
+          "symWidth": 14.82051282051282,
+          "text": "DEBES  HACERLO MIENTRAS  OBSERVAS AL  OPONENTE .",
+          "translation": "You have to do it while watching your opponent.",
+          "width": 227,
+          "x": 139,
+          "y": 1723
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 16.66666666666667,
+          "symWidth": 15.26436781609195,
+          "text": "NO  ES  SOLO  UN  SIMPLE  FUN- CIONARIO ,  ¿ CÓMO  SE  ATREVE A  DECIR  TALES  COSAS  A  UN PLENIPOTENCIARIO  DE  LA CORTE ?",
+          "translation": "He’s not just some low-level official. How dare he speak that way to a court plenipotentiary?",
+          "width": 322,
+          "x": 246,
+          "y": 1917
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 25.36363636363636,
+          "symWidth": 23.09090909090909,
+          "text": "GONG- SUN ...",
+          "translation": "Gong-Sun...",
+          "width": 125,
+          "x": 428,
+          "y": 321
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 16,
+          "symWidth": 12.26923076923077,
+          "text": "YO  TAMBIÉN  TENGO  ALGO QUE  ME  INTRIGA .",
+          "translation": "I have something that piques my interest as well.",
+          "width": 251,
+          "x": 175,
+          "y": 458
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 23.33333333333333,
+          "text": "551",
+          "translation": "551",
+          "width": 43,
+          "x": 670,
+          "y": 895
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 15,
+          "symWidth": 12.85,
+          "text": "EILEE  ANTES ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 124,
+          "x": 295,
+          "y": 980
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 17.68421052631579,
+          "symWidth": 13.25,
+          "text": "¿ ESAS  PALABRAS  SON  SU OPINIÓN ,  O  LA  VOLUNTAD  DEL GRAN  HÉROE  GONGSUNWOL , EL  JEFE  DE  FAMILIA ?",
+          "translation": "Are those words his own, or the will of the great hero Gongsunwol, the family head?",
+          "width": 306,
+          "x": 356,
+          "y": 1941
+        }
+      ],
+      "imgHeight": 2321,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 42.66666666666666,
+          "symWidth": 30.66666666666667,
+          "text": "!!!",
+          "translation": "!!!",
+          "width": 57,
+          "x": 182,
+          "y": 659
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 24.33333333333333,
+          "symWidth": 22.11363636363636,
+          "text": "¿ CÓMO  SE ATREVE  A ... ? AL  JEFE  DE FAMILIA ... !!",
+          "translation": "How dare you... to the family head...!!",
+          "width": 206,
+          "x": 258,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 11.56176470588235,
+          "text": "EL  JEFE  DE  LA FAMILIA  GONGSUN ...",
+          "translation": "The head of the Gongsun family...",
+          "width": 188,
+          "x": 461,
+          "y": 2046
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 16.28125,
+          "symWidth": 12.30147058823529,
+          "text": "HACE  POCO ,  ENVIÓ  UNA CARTA  A  LA  CORTE  A TRAVÉS  DEL  ANCHALSA .",
+          "translation": "Recently, he sent a letter to the court through the Anchalsa.",
+          "width": 226,
+          "x": 209,
+          "y": 360
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 15.63768115942029,
+          "symWidth": 11.90265064836003,
+          "text": "DIJO  QUE  ESTÁ  DISPUESTO  A COOPERAR  CON  LAS  ACTIVIDADES DE  LA  CORTE  PARA  LA  SEGURIDAD DEL  TRÁNSITO  OFICIAL .",
+          "translation": "He said he's willing to cooperate with the court's activities for official transit security.",
+          "width": 330,
+          "x": 324,
+          "y": 603
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 17.20952380952381,
+          "symWidth": 15.77460317460318,
+          "text": "ANTESES EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 141,
+          "x": 69,
+          "y": 916
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.00641025641026,
+          "text": "TAMBIÉN  DECLARÓ  SU  INTEN- CIÓN  DE  COOPERAR  EN  TODO LO  RELACIONADO",
+          "translation": "He also declared his intention to cooperate fully on matters related",
+          "width": 289,
+          "x": 255,
+          "y": 1607
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 16,
+          "symWidth": 11.55555555555556,
+          "text": "CON  MURIM .",
+          "translation": "to Murim.",
+          "width": 113,
+          "x": 432,
+          "y": 1656
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23.5,
+          "symWidth": 23.22222222222222,
+          "text": "ESO ,  ESO  NO PUEDE  SER !  ESO",
+          "translation": "No, no way! That can't be!",
+          "width": 276,
+          "x": 314,
+          "y": 2240
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 23,
+          "symWidth": 19.66666666666667,
+          "text": "ES  ABSURDO ...",
+          "translation": "That's absurd...",
+          "width": 231,
+          "x": 339,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15.33333333333333,
+          "symWidth": 12.11683006535948,
+          "text": "ENTONCES ,  ¿ DEBERÍA- MOS  ENVIAR  UNA  CARTA AL  JEFE  DE  FAMILIA ?",
+          "translation": "So, should we send a letter to the family head?",
+          "width": 231,
+          "x": 410,
+          "y": 883
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 31.8875,
+          "symWidth": 15.51582080200501,
+          "text": "COMO  GONGSUN  CHUHYEON DEL  CLAN  GONGSUN  DICE  QUE NO  PUEDE  CONFIAR  EN  MI ,  YO TAMPOCO  PUEDO CONFIAR EN  EL ,  Y ...",
+          "translation": "Since Gongsun Chuhyeon of the Gongsun clan says he can't trust me, I can't trust him either, and...",
+          "width": 336,
+          "x": 190,
+          "y": 1631
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 109.5,
+          "symWidth": 118,
+          "text": "to",
+          "translation": "",
+          "width": 127,
+          "x": 541,
+          "y": 620
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 38.33333333333334,
+          "symWidth": 17.60955710955711,
+          "text": "DIJO  QUE  SI  NO  TRAEN SU  CABEZA ,  SE  CONSIDERARÁ UNA  MUESTRA  DE  HOSTILIDAD HACIA  LA  CORTE .",
+          "translation": "He said that if they don't bring his head, it'll be seen as an act of hostility against the court.",
+          "width": 398,
+          "x": 160,
+          "y": 905
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 33,
+          "symWidth": 20.57142857142857,
+          "text": "... ? ! ? !",
+          "translation": "...?!?!",
+          "width": 124,
+          "x": 134,
+          "y": 1698
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 22,
+          "symWidth": 21.1,
+          "text": "ANTES venet",
+          "translation": "",
+          "width": 115,
+          "x": 32,
+          "y": 2286
+        }
+      ],
+      "imgHeight": 2321,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11,
+          "text": "E - ESO  ES ...",
+          "translation": "T-That is...",
+          "width": 113,
+          "x": 351,
+          "y": 1767
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 14.66666666666667,
+          "symWidth": 18,
+          "text": "600",
+          "translation": "600",
+          "width": 20,
+          "x": 543,
+          "y": 127
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 10.33333333333333,
+          "text": "HM .",
+          "translation": "HMM.",
+          "width": 31,
+          "x": 75,
+          "y": 693
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 19.2,
+          "symWidth": 18.4,
+          "text": "EILEE ANTES",
+          "translation": "EILEE FIRST",
+          "width": 108,
+          "x": 524,
+          "y": 1260
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.66666666666667,
+          "symWidth": 12.5,
+          "text": "ES  UNA  BROMA .  NO  TENE- MOS  TIEMPO  PARA  HACER COSAS  TAN  INÚTILES .",
+          "translation": "IT'S A JOKE. WE DON'T HAVE TIME FOR SUCH USELESS THINGS.",
+          "width": 251,
+          "x": 394,
+          "y": 1537
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 14,
+          "symWidth": 11.9478021978022,
+          "text": "PERO  ES  BASTANTE DESAGRADABLE .",
+          "translation": "BUT IT'S QUITE OFFENSIVE.",
+          "width": 188,
+          "x": 69,
+          "y": 2220
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 15,
+          "symWidth": 11.14722222222222,
+          "text": "¿ ES  ESTA  LA HOSPITALIDAD  DE  LA ALIANZA  TAIPING ?",
+          "translation": "IS THIS THE HOSPITALITY OF THE TAIPING ALLIANCE?",
+          "width": 195,
+          "x": 203,
+          "y": 60
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 15.4,
+          "text": "... !!",
+          "translation": "...!!",
+          "width": 65,
+          "x": 556,
+          "y": 844
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 11.89285714285714,
+          "text": "PIDO  DISCULPAS  POR LA  DESCORTESÍA .",
+          "translation": "I APOLOGIZE FOR THE IMPOLITENESS.",
+          "width": 207,
+          "x": 75,
+          "y": 1433
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 16,
+          "symWidth": 12.38794515669516,
+          "text": "PROTESTAREMOS  ENERGICAMENTE ANTE  EL  CLAN  GONGSUN ,  YA PARTIR  DE  ESTE  MOMENTO ,  LE  RETI- RAREMOS  SU  DERECHO  A  HABLAR .",
+          "translation": "WE WILL PROTEST STRONGLY TO THE GONGSUN CLAN. FROM NOW ON, WE WILL REVOKE THEIR RIGHT TO SPEAK.",
+          "width": 351,
+          "x": 305,
+          "y": 495
+        },
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 37.91666666666666,
+          "symWidth": 55.94444444444445,
+          "text": "ANTES  F ZONAOLYMPUS.COM похо",
+          "translation": "",
+          "width": 261,
+          "x": 447,
+          "y": 1124
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 15.5,
+          "symWidth": 11.71230158730159,
+          "text": "POR  FAVOR ,  COMPRENDA QUE  SU  DESCORTESÍA  NO  ES LA  VOLUNTAD  DE  LA  ALIANZA TAIPING .",
+          "translation": "PLEASE UNDERSTAND THAT THEIR RUDENESS DOES NOT REPRESENT THE WILL OF THE TAIPING ALLIANCE.",
+          "width": 287,
+          "x": 94,
+          "y": 1453
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 40,
+          "symWidth": 27.66666666666667,
+          "text": "!!!",
+          "translation": "!!!",
+          "width": 57,
+          "x": 535,
+          "y": 1571
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15,
+          "symWidth": 11.76201923076923,
+          "text": "ENTENDIDO .  ACEPTO LAS  DISCULPAS .",
+          "translation": "UNDERSTOOD. I ACCEPT THE APOLOGY.",
+          "width": 195,
+          "x": 126,
+          "y": 2199
+        }
+      ],
+      "imgHeight": 2321,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 10,
+          "symWidth": 14.66666666666667,
+          "text": "www",
+          "translation": "www",
+          "width": 27,
+          "x": 0,
+          "y": 122
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 11,
+          "text": "GRACIAS .",
+          "translation": "THANK YOU.",
+          "width": 89,
+          "x": 502,
+          "y": 883
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26,
+          "symWidth": 20.4125,
+          "text": "¡ ESPERA ! YO ...",
+          "translation": "WAIT! I...",
+          "width": 173,
+          "x": 127,
+          "y": 1481
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 34.5,
+          "symWidth": 31.5,
+          "text": "00",
+          "translation": "00",
+          "width": 42,
+          "x": 37,
+          "y": 1676
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 21.25,
+          "symWidth": 19.425,
+          "text": "ANTESE EILEE ZONAOLYMPUS.COM 22",
+          "translation": "22",
+          "width": 126,
+          "x": 348,
+          "y": 1212
+        }
+      ],
+      "imgHeight": 2320,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 14.45454545454546,
+          "text": "UN  BASTARDO .",
+          "translation": "A BASTARD.",
+          "width": 152,
+          "x": 158,
+          "y": 1342
+        }
+      ],
+      "imgHeight": 2173,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.76190476190476,
+          "symWidth": 14.73809523809524,
+          "text": "¿ TODAVÍA  VIVES  EN LA  ILUSIÓN  DE  SER  UNA GRAN  SECTA ?",
+          "translation": "ARE YOU STILL LIVING IN THE DELUSION OF BEING A GREAT SECT?",
+          "width": 250,
+          "x": 341,
+          "y": 13
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 15.3125,
+          "symWidth": 12.1875,
+          "text": "LA  AUTORIDAD  ES  UN LUGAR  QUE  INFUNDE MIEDO  A  LOS  ILEGALES .",
+          "translation": "AUTHORITY IS A POSITION THAT INSTILLS FEAR IN ILLEGALS.",
+          "width": 234,
+          "x": 73,
+          "y": 781
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 14.20833333333333,
+          "symWidth": 12.275,
+          "text": "JEILEE  ANTESE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 130,
+          "x": 97,
+          "y": 1262
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 15.03061224489796,
+          "symWidth": 11.69387755102041,
+          "text": "SI  NO  HAN  HECHO  NADA  QUE CONTRAVENGA  LA  LEY  NACIONAL ,  NO TENDRÁN  NADA  QUE  TEMER ,  INCLUSO  SI SON  FIGURAS  PODEROSAS  DE  LA CORTE .",
+          "translation": "IF THEY HAVEN’T BROKEN NATIONAL LAW, THEY HAVE NOTHING TO FEAR, EVEN IF THEY’RE POWERFUL FIGURES IN THE COURT.",
+          "width": 382,
+          "x": 261,
+          "y": 1768
+        }
+      ],
+      "imgHeight": 2175,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 14.44444444444444,
+          "text": "¿ NO  ES  ASÍ ?",
+          "translation": "ISN’T THAT SO?",
+          "width": 152,
+          "x": 488,
+          "y": 327
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 14.5,
+          "text": "... !",
+          "translation": "...!",
+          "width": 42,
+          "x": 306,
+          "y": 1064
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 11.2,
+          "text": "AL  FINAL ...",
+          "translation": "IN THE END...",
+          "width": 105,
+          "x": 206,
+          "y": 1682
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 17,
+          "symWidth": 14.30434782608696,
+          "text": "SIGNIFICA  QUE  NO  SE UNIRAN .",
+          "translation": "IT MEANS THEY WON’T JOIN.",
+          "width": 234,
+          "x": 270,
+          "y": 1808
+        }
+      ],
+      "imgHeight": 2173,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 18,
+          "symWidth": 14.16046511627907,
+          "text": "LA  CORTE ...  NO ,  UNHYEON NO  PERMITIRA  LA  ILEGALI- DAD  EN  LA  ALIANZA  TAIPING ,",
+          "translation": "THE COURT... NO, UNHYEON WON’T ALLOW ILLEGALITY IN THE TAIPING ALLIANCE,",
+          "width": 291,
+          "x": 151,
+          "y": 546
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 17,
+          "symWidth": 14.55409356725146,
+          "text": "PORQUE  ES  UNA  DECLARA- CIÓN  DE  QUE  NO  SE  UNIRAN A  LA  ALIANZA  TAIPING .",
+          "translation": "BECAUSE IT’S A DECLARATION THAT THEY WON’T JOIN THE TAIPING ALLIANCE.",
+          "width": 298,
+          "x": 276,
+          "y": 782
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 15.5,
+          "symWidth": 12.00961538461539,
+          "text": "HAY  UNA  COSA  QUE QUIERO  PREGUNTAR .",
+          "translation": "THERE’S SOMETHING I WANT TO ASK.",
+          "width": 201,
+          "x": 459,
+          "y": 1535
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 16.66666666666667,
+          "symWidth": 15.62063492063492,
+          "text": "ANTESE EILEE ZONAOLYMPUS.CO",
+          "translation": "",
+          "width": 122,
+          "x": 130,
+          "y": 1646
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 17.5,
+          "symWidth": 21,
+          "text": "00",
+          "translation": "",
+          "width": 21,
+          "x": 159,
+          "y": 1790
+        }
+      ],
+      "imgHeight": 2175,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 16.24019607843137,
+          "symWidth": 12.23663101604278,
+          "text": "SE  DICE  QUE  RECIENTEMENTE HAY  PERSONAS  LLAMADAS  LA REUNIÓN  DEL  DRAGÓN  AZUL  AC- TIVAS .  ¿ QUIZÁS  TIENE  ALGUNA RELACIÓN  CON  ELLOS ?",
+          "translation": "I HEAR THAT RECENTLY THERE ARE PEOPLE CALLED THE BLUE DRAGON GATHERING ACTIVE. COULD THEY BE CONNECTED TO THEM?",
+          "width": 308,
+          "x": 327,
+          "y": 701
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 60,
+          "symWidth": 47,
+          "text": "AN",
+          "translation": "",
+          "width": 49,
+          "x": 19,
+          "y": 1092
+        }
+      ],
+      "imgHeight": 2173,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 16,
+          "symWidth": 10.86904761904762,
+          "text": "NO  TENGO  NINGUNA RELACIÓN .",
+          "translation": "I HAVE NO CONNECTION.",
+          "width": 190,
+          "x": 79,
+          "y": 59
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 34,
+          "symWidth": 22.2,
+          "text": "... !!",
+          "translation": "...!!",
+          "width": 87,
+          "x": 363,
+          "y": 1330
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 14.05555555555556,
+          "symWidth": 11.88888888888889,
+          "text": "TELEE  ANTE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 134,
+          "x": 45,
+          "y": 1975
+        }
+      ],
+      "imgHeight": 2174,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 143.5,
+          "symWidth": 126.5,
+          "text": "어서",
+          "translation": "Hurry",
+          "width": 133,
+          "x": 546,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 16,
+          "symWidth": 12.21578947368421,
+          "text": "PERO  DICEN  QUE  SIGUEN  LA VOLUNTAD  DEL  MAESTRO  DE LA  ESPADA  DRAGÓN  AZUL .",
+          "translation": "BUT THEY SAY THEY FOLLOW THE WILL OF THE BLUE DRAGON SWORD MASTER.",
+          "width": 274,
+          "x": 68,
+          "y": 686
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15,
+          "symWidth": 11.26948051948052,
+          "text": "YO  TAMBIÉN  TENGO CURIOSIDAD .",
+          "translation": "I'M CURIOUS TOO.",
+          "width": 186,
+          "x": 459,
+          "y": 1392
+        }
+      ],
+      "imgHeight": 2173,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16.26041666666667,
+          "symWidth": 12.06458333333333,
+          "text": "ME  PREGUNTO  CON  QUÉ  INTENCIÓN ESTÁN  MANCHANDO  MI  NOMBRE  SIN SIQUIERA  PEDIR  MI  PERMISO .",
+          "translation": "I WONDER WHAT THEIR AGENDA IS, TARNISHING MY NAME WITHOUT EVEN ASKING FOR PERMISSION.",
+          "width": 341,
+          "x": 187,
+          "y": 233
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 17.9,
+          "symWidth": 15.76666666666667,
+          "text": "EILEE ZONAOLYMPUS.COM",
+          "translation": "",
+          "width": 128,
+          "x": 219,
+          "y": 1206
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15.66666666666667,
+          "symWidth": 12.18897306397306,
+          "text": "NO  TENGO  NINGUNA  RELACIÓN CON  ELLOS ,  Y  SUS  ACCIONES  SON AJENAS  A  MI  VOLUNTAD .",
+          "translation": "I HAVE NO CONNECTION TO THEM, AND THEIR ACTIONS ARE BEYOND MY CONTROL.",
+          "width": 336,
+          "x": 87,
+          "y": 1974
+        }
+      ],
+      "imgHeight": 2175,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 17.00888888888889,
+          "symWidth": 13.22611111111111,
+          "text": "ASÍ  QUE ,  SI  POR  CASUALIDAD  LOS CONOCEN  O  SE  ENCUENTRAN  CON ELLOS ,  DIGANLES  QUE  DEJEN  INME- DIATAMENTE  DE  USAR  MI  NOMBRE DE  FORMA  COBARDE .",
+          "translation": "SO, IF YOU HAPPEN TO KNOW THEM OR RUN INTO THEM, TELL THEM TO IMMEDIATELY STOP USING MY NAME COWARDLY.",
+          "width": 376,
+          "x": 247,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 34,
+          "symWidth": 16.15734126984127,
+          "text": "ADEMÁS ,  QUE  ESTOY MUY  ENOJADO  Y  QUE  NO  LO DEJARÉ  PASAR  POR  ALTO  DE NINGUNA  MANERA .",
+          "translation": "ALSO, TELL THEM I'M REALLY ANGRY AND WON'T LET THIS SLIDE UNDER ANY CIRCUMSTANCES.",
+          "width": 332,
+          "x": 197,
+          "y": 1049
+        }
+      ],
+      "imgHeight": 2173,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 48.84615384615385,
+          "symWidth": 24.11282051282051,
+          "text": "VISITANOS  EN ZONAOLYMPUS.COM SERIES  AL  DIA  CON  LA  RAW ,  SIEMPRE  NUEVOS  LANZAMIENTOS",
+          "translation": "VISIT US AT ZONAOLYMPUS.COM FOR THE LATEST RAW SERIES AND NEW RELEASES",
+          "width": 666,
+          "x": 24,
+          "y": 112
+        }
+      ],
+      "imgHeight": 2175,
+      "imgWidth": 720,
+      "sourceLanguage": "es",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "es",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

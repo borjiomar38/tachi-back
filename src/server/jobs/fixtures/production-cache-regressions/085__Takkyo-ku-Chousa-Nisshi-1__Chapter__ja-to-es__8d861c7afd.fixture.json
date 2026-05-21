@@ -1,0 +1,657 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0085",
+  "jobId": "fixture-job-0085",
+  "licenseId": "fixture-license-0085",
+  "pageCount": 70,
+  "pageOrder": [
+    "001.avif",
+    "002.avif",
+    "003.avif",
+    "004.avif",
+    "005.avif",
+    "006.avif",
+    "007.avif",
+    "008.avif",
+    "009.avif",
+    "010.avif",
+    "011.avif",
+    "012.avif",
+    "013.avif",
+    "014.avif",
+    "015.avif",
+    "016.avif",
+    "017.avif",
+    "018.avif",
+    "019.avif",
+    "020.avif",
+    "021.avif",
+    "022.avif",
+    "023.avif",
+    "024.avif",
+    "025.avif",
+    "026.avif",
+    "027.avif",
+    "028.avif",
+    "029.avif",
+    "030.avif",
+    "031.avif",
+    "032.avif",
+    "033.avif",
+    "034.avif",
+    "035.avif",
+    "036.avif",
+    "037.avif",
+    "038.avif",
+    "039.avif",
+    "040.avif",
+    "041.avif",
+    "042.avif",
+    "043.avif",
+    "044.avif",
+    "045.avif",
+    "046.avif",
+    "047.avif",
+    "048.avif",
+    "049.avif",
+    "050.avif",
+    "051.avif",
+    "052.avif",
+    "053.avif",
+    "054.avif",
+    "055.avif",
+    "056.avif",
+    "057.avif",
+    "058.avif",
+    "059.avif",
+    "060.avif",
+    "061.avif",
+    "062.avif",
+    "063.avif",
+    "064.avif",
+    "065.avif",
+    "066.avif",
+    "067.avif",
+    "068.avif",
+    "069.avif",
+    "070.avif"
+  ],
+  "pages": {
+    "001.avif": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 25.5,
+          "symWidth": 25.225,
+          "text": "竜 居 区 調査 日誌  ① そこ なし ギガ マックス",
+          "translation": "Diario de exploración de la zona dragón ① Gigamax sin límites",
+          "width": 303,
+          "x": 121,
+          "y": 189
+        }
+      ],
+      "imgHeight": 420,
+      "imgWidth": 560,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "002.avif": {
+      "blocks": [],
+      "imgHeight": 800,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "003.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "004.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "005.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 1600,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "006.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 1600,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "007.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 1600,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "008.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "009.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "010.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "011.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "012.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "013.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "014.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "015.avif": {
+      "blocks": [],
+      "imgHeight": 800,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "016.avif": {
+      "blocks": [],
+      "imgHeight": 800,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "017.avif": {
+      "blocks": [],
+      "imgHeight": 800,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "018.avif": {
+      "blocks": [],
+      "imgHeight": 800,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "019.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "020.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 1125,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "021.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 1125,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "022.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 1125,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "023.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "024.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "025.avif": {
+      "blocks": [],
+      "imgHeight": 600,
+      "imgWidth": 800,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "026.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "027.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "028.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "029.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "030.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "ja",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "031.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "032.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "033.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "034.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "035.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "036.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "037.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "038.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "039.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "040.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "041.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "042.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 2400,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "043.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "044.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "045.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "046.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "047.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "048.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "049.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "050.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "051.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "052.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "053.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "054.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "055.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "056.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "057.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "058.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "059.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "060.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "061.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "062.avif": {
+      "blocks": [],
+      "imgHeight": 1200,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "063.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "064.avif": {
+      "blocks": [],
+      "imgHeight": 1800,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "065.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "066.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "067.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "068.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "069.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    },
+    "070.avif": {
+      "blocks": [],
+      "imgHeight": 900,
+      "imgWidth": 1688,
+      "sourceLanguage": "auto",
+      "targetLanguage": "es",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "ja",
+  "targetLanguage": "es",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

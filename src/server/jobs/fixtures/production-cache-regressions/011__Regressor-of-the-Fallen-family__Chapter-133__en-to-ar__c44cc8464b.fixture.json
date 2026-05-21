@@ -1,0 +1,2750 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0011",
+  "jobId": "fixture-job-0011",
+  "licenseId": "fixture-license-0011",
+  "pageCount": 69,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "3ae59c60d5dc64b51fdbac5a8d61ccffaa1f29d6ccd5d9544af3fa04493f457c",
+      "fileName": "001.webp",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "f02fee10b79e84bbe31ad07f7c3217c1884823f6be5774f8704fb308c30727ea",
+      "fileName": "002__001.jpg",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "36e765483e93c9ce16757a356d58c4184abe9ca7fc7c1522ad514c9a314a1196",
+      "fileName": "002__002.jpg",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "f072b2dbf1c8af0e8e74ed55dfa9cf8fc0bf627b66824f76de26617607287d09",
+      "fileName": "002__003.jpg",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "69cb00bf527fe31318692cce5da23957370639987ae82d38c3212d7acd004559",
+      "fileName": "002__004.jpg",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "a43f2ab00b264e26196511d1c9230bf49f7afddf4bf11fa12af5550233ffe05b",
+      "fileName": "003__001.jpg",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "8f0d28e0f34fa60873dfdaba376a6b612fae9878d41d1aaeff83d95dcdc21a9a",
+      "fileName": "003__002.jpg",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "530d2622475f88f4ee2f273313d6c567fd69d1856ca74232c887b98012a4eca8",
+      "fileName": "003__003.jpg",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "e630a804edc33c87b6ead2a1357b2adecb88ccaa6a239a3ca90d077f7b3c8551",
+      "fileName": "003__004.jpg",
+      "pageNumber": 9
+    },
+    {
+      "checksumSha256": "2eb938267b5284845dbceed7431ddde12b0bd4870b55ff80816bfebe1a9169a8",
+      "fileName": "004__001.jpg",
+      "pageNumber": 10
+    },
+    {
+      "checksumSha256": "a79b1384cc196f05456178fc4802a0f1ee369008b8349a9b74fa3be9c8758085",
+      "fileName": "004__002.jpg",
+      "pageNumber": 11
+    },
+    {
+      "checksumSha256": "d2c00ce6999f8731aa77f63b9a4a7b55b5993f765f83d5f453eb6aca3628a4e0",
+      "fileName": "004__003.jpg",
+      "pageNumber": 12
+    },
+    {
+      "checksumSha256": "4c95d72ab1d7524e87481e85d3d0cee82d9cabb9bea04edd734e4c31890db2e7",
+      "fileName": "004__004.jpg",
+      "pageNumber": 13
+    },
+    {
+      "checksumSha256": "ce54093453bb7d7e1717e55bd4622dcfe45dc8736e07188f9d05818e06332507",
+      "fileName": "005__001.jpg",
+      "pageNumber": 14
+    },
+    {
+      "checksumSha256": "241a932e618b5f9012efc0da146f2c4b03d93de1104791352d0106ddb91802e3",
+      "fileName": "005__002.jpg",
+      "pageNumber": 15
+    },
+    {
+      "checksumSha256": "f029ade22d18945896c3328b76a7124f59df17a56ec11db093afd930907304e0",
+      "fileName": "005__003.jpg",
+      "pageNumber": 16
+    },
+    {
+      "checksumSha256": "2f35b8e6afc26672e930d40696f8e10b1a74b1b2f70cb82c3a6619d305bfc282",
+      "fileName": "005__004.jpg",
+      "pageNumber": 17
+    },
+    {
+      "checksumSha256": "40faa926953ce84fb28bb96c11814b313f22f696c88b388db08154f8ad3b8be2",
+      "fileName": "006__001.jpg",
+      "pageNumber": 18
+    },
+    {
+      "checksumSha256": "33efff5f9aa5f969ccd7fcfaa4388ae389ee412ad42000f4bc189a13345f3d85",
+      "fileName": "006__002.jpg",
+      "pageNumber": 19
+    },
+    {
+      "checksumSha256": "7aa0d9e193778304ced8f96402b473fdb4f73888336dfe74661d58aba37147bf",
+      "fileName": "006__003.jpg",
+      "pageNumber": 20
+    },
+    {
+      "checksumSha256": "75b3c56b8c6d202f431dae72b4967ddca1a6340adae5f4f30faceda2390a0671",
+      "fileName": "007__001.jpg",
+      "pageNumber": 21
+    },
+    {
+      "checksumSha256": "f63e4d6004e0eaae7c5ad7e8e7b52f3e18659589c7a0862a37185b8282f79a5b",
+      "fileName": "007__002.jpg",
+      "pageNumber": 22
+    },
+    {
+      "checksumSha256": "144f4f64a32f3606264be9d16f9b5c40b9269b6b6179deaf23e4b640f4731c31",
+      "fileName": "007__003.jpg",
+      "pageNumber": 23
+    },
+    {
+      "checksumSha256": "6ab062e5d9160447a20e93dbec12701e22d954919e29e31ecef31fc279a7162e",
+      "fileName": "007__004.jpg",
+      "pageNumber": 24
+    },
+    {
+      "checksumSha256": "ce08b5b022c5cf76e9f315ca04a03cb76bba7047167569b3c483dd206afee0fd",
+      "fileName": "008__001.jpg",
+      "pageNumber": 25
+    },
+    {
+      "checksumSha256": "3eb4b5de5cc3295c2d66150fa4f481714028e086a4f8c2ba79a2397c8b7f9a5b",
+      "fileName": "008__002.jpg",
+      "pageNumber": 26
+    },
+    {
+      "checksumSha256": "3f6c0c84e631ba0b87ea8efc4a827f76d45a0ae7a6cfd76651cdfcda0f50bcc7",
+      "fileName": "008__003.jpg",
+      "pageNumber": 27
+    },
+    {
+      "checksumSha256": "99f06a8566ec43e2a69b93fce41a345804b04612126ec48fc1d534e6298b1e4f",
+      "fileName": "008__004.jpg",
+      "pageNumber": 28
+    },
+    {
+      "checksumSha256": "788edf707d9b6d0ccea565ef6a4573575b8e9c6a4e86fe1c8b2cba39ec676368",
+      "fileName": "009__001.jpg",
+      "pageNumber": 29
+    },
+    {
+      "checksumSha256": "9935698cb4d2b56025636461151aef466cc60a2bd7e7dabbb3d14c65aab6061b",
+      "fileName": "009__002.jpg",
+      "pageNumber": 30
+    },
+    {
+      "checksumSha256": "8d50eeed54521fea6394e9230285a227176fa9edbfdd1a23f4a30d697c0ca0a2",
+      "fileName": "009__003.jpg",
+      "pageNumber": 31
+    },
+    {
+      "checksumSha256": "c4fa4a7ab2943c3d6069ddd931802a22147490acf7e845be68b55321820ef238",
+      "fileName": "009__004.jpg",
+      "pageNumber": 32
+    },
+    {
+      "checksumSha256": "cbe9652a5d24f4362ec5f408370155dad19c16ee45e068acb71f95a626679a8d",
+      "fileName": "010__001.jpg",
+      "pageNumber": 33
+    },
+    {
+      "checksumSha256": "fe2995ff6d26aeb6e99cd55ecfa0c3d206a0b2700fe1f20269f386ca7cb93275",
+      "fileName": "010__002.jpg",
+      "pageNumber": 34
+    },
+    {
+      "checksumSha256": "085f3b3750cc759262344afb42adcf9994f3df94ae2b9e441448b54866a4bcdb",
+      "fileName": "010__003.jpg",
+      "pageNumber": 35
+    },
+    {
+      "checksumSha256": "db53c0e1d404ed426a2fc5cfd2b16f2d39765bc8b1855444807f3a495f47b6a6",
+      "fileName": "011__001.jpg",
+      "pageNumber": 36
+    },
+    {
+      "checksumSha256": "f63c99504d641cacb7bf6ec9870773d10f3495b7f08cb7226fa2238e27adbcad",
+      "fileName": "011__002.jpg",
+      "pageNumber": 37
+    },
+    {
+      "checksumSha256": "205c3542bb83f191b7385b7e5f11852f24bf7989e393c88588b128b1a845ddc4",
+      "fileName": "011__003.jpg",
+      "pageNumber": 38
+    },
+    {
+      "checksumSha256": "20fa35d38fac9d58d08aaaf03b4f99c68ca244c45434ba0697874e94e148b69c",
+      "fileName": "012__001.jpg",
+      "pageNumber": 39
+    },
+    {
+      "checksumSha256": "cd5835d242306a5372bd7b7810a767c71a94dcb073595a350bc14406ea0988c5",
+      "fileName": "012__002.jpg",
+      "pageNumber": 40
+    },
+    {
+      "checksumSha256": "7d7916c613cea7e1fbb77ae26e978e0d4f943880da9ceac8a9441908888b4bcb",
+      "fileName": "012__003.jpg",
+      "pageNumber": 41
+    },
+    {
+      "checksumSha256": "2e0a511c8127375adf2c5ea5a18b2e1aa91a900c211db66b0f3f52af6633cc71",
+      "fileName": "012__004.jpg",
+      "pageNumber": 42
+    },
+    {
+      "checksumSha256": "d0a6a59addb825af3b800bcb0d811f31a5aa11cce7fb1a2e992c464f8b246cb3",
+      "fileName": "013__001.jpg",
+      "pageNumber": 43
+    },
+    {
+      "checksumSha256": "e2f5fdf1920963a293be0093fe842ed2c4fdcb23df843058926ea51b7b096580",
+      "fileName": "013__002.jpg",
+      "pageNumber": 44
+    },
+    {
+      "checksumSha256": "4147629267bddcbd4718b132bedbb470a5fdfbc8a3b706c27eaeaf96d51f2f63",
+      "fileName": "013__003.jpg",
+      "pageNumber": 45
+    },
+    {
+      "checksumSha256": "e8f247b794798c639cf18dcab69e367c5f03013b1738b7fa6c3ef04c095f71d2",
+      "fileName": "013__004.jpg",
+      "pageNumber": 46
+    },
+    {
+      "checksumSha256": "fa8fc72c14a1f8f32dd1806201f7058a5c1af57a4b066425dc6c36dc2f358202",
+      "fileName": "014__001.jpg",
+      "pageNumber": 47
+    },
+    {
+      "checksumSha256": "a0d7bc4740f81bb9eb0b56322d2bad89f1d77392db8f3ce3dce956b070522a7e",
+      "fileName": "014__002.jpg",
+      "pageNumber": 48
+    },
+    {
+      "checksumSha256": "b63a8d85e7d96ad730a9f95f8b227a8eb7f7aebdedbdc65fd3fa2552b8ffbd95",
+      "fileName": "014__003.jpg",
+      "pageNumber": 49
+    },
+    {
+      "checksumSha256": "6d805a0c2a32ab185e1cfe6ee6608d9d62cebeaec1495e992922328873c60f60",
+      "fileName": "014__004.jpg",
+      "pageNumber": 50
+    },
+    {
+      "checksumSha256": "cb1a7598bb5dee1fc5e0d131c983c03614ebddcc9770971b7040637213e8071f",
+      "fileName": "015__001.jpg",
+      "pageNumber": 51
+    },
+    {
+      "checksumSha256": "8505ec6222ef62504bcd1db5dd0f0d099c845db34b0f4ad202d7e00dcefadad9",
+      "fileName": "015__002.jpg",
+      "pageNumber": 52
+    },
+    {
+      "checksumSha256": "f885dcc5248b9ae8c6538f9c06be293e3a9284b5581adc1d4941254f311ac6b8",
+      "fileName": "015__003.jpg",
+      "pageNumber": 53
+    },
+    {
+      "checksumSha256": "2e32201be24f803c991512c508ca2b467d5c202996a07948eb9cf40f90008b47",
+      "fileName": "015__004.jpg",
+      "pageNumber": 54
+    },
+    {
+      "checksumSha256": "eeec1cc8fee43c34dea415531ceea68d76de231d5a09ad83dc28749175ea749f",
+      "fileName": "016__001.jpg",
+      "pageNumber": 55
+    },
+    {
+      "checksumSha256": "6a29e7f1238e3697da802c9d6e6148d5a13cfdd6f79e7fcde1e3d9b37b614c21",
+      "fileName": "016__002.jpg",
+      "pageNumber": 56
+    },
+    {
+      "checksumSha256": "ae3515263101b7af43ce6521d8c6292e83cb7dec5eecbcf2d737ff93453d0060",
+      "fileName": "016__003.jpg",
+      "pageNumber": 57
+    },
+    {
+      "checksumSha256": "390a322be5cfa839b924118b3d7348848e68f5cce149a575cbfcfd9a7c7d3150",
+      "fileName": "016__004.jpg",
+      "pageNumber": 58
+    },
+    {
+      "checksumSha256": "b90c326001ce9db1bc27a525152106a6626648031f1f76ab388768addd0c79ad",
+      "fileName": "017__001.jpg",
+      "pageNumber": 59
+    },
+    {
+      "checksumSha256": "febeebd958293f7867e18de4e5bb34a3ee565a27b3db7f62bd6955a57af21ecc",
+      "fileName": "017__002.jpg",
+      "pageNumber": 60
+    },
+    {
+      "checksumSha256": "29ff1b53738d776cf3cbfbedfbbeb44aff73ddaeab38dc29383a4ee6c1ddfee9",
+      "fileName": "017__003.jpg",
+      "pageNumber": 61
+    },
+    {
+      "checksumSha256": "a6c12d442129436abcccec4d00a6ba41f47f161a3b2c614136174e0451c1d1ab",
+      "fileName": "018__001.jpg",
+      "pageNumber": 62
+    },
+    {
+      "checksumSha256": "1bc3137b6802c0b9050cd647741fa1bd8af509ce9d0e71ca5176f26e59a96ef3",
+      "fileName": "018__002.jpg",
+      "pageNumber": 63
+    },
+    {
+      "checksumSha256": "6e54cc2ec1857a7186fce4c3349a4ef6bde4da870403f283ba77e25c37987814",
+      "fileName": "018__003.jpg",
+      "pageNumber": 64
+    },
+    {
+      "checksumSha256": "a039007136e78ea5aeec67f4f791d0da4762b38a4927f49a33d874b438dead98",
+      "fileName": "019__001.jpg",
+      "pageNumber": 65
+    },
+    {
+      "checksumSha256": "b18f632d2d292e8631acbb91f29f453c301c677c4fb7ef93d8aa4675df98cfac",
+      "fileName": "019__002.jpg",
+      "pageNumber": 66
+    },
+    {
+      "checksumSha256": "896e237dfddd0740948948debaa1e99cfec42f75e12136a83c335784284102d1",
+      "fileName": "019__003.jpg",
+      "pageNumber": 67
+    },
+    {
+      "checksumSha256": "d8e66a0ef792e51c63e8d334252d49bf44a21f03ef34872123b29fe0b397583a",
+      "fileName": "019__004.jpg",
+      "pageNumber": 68
+    },
+    {
+      "checksumSha256": "fcfaa2adcda7f1ce53d61365736fa91feacbbbd4d607a4fd17bc620e79a17577",
+      "fileName": "020.webp",
+      "pageNumber": 69
+    }
+  ],
+  "pageOrder": [
+    "001.webp",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "002__004.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "003__004.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "004__004.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "005__004.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "007__004.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "008__004.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "009__004.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "012__004.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "013__003.jpg",
+    "013__004.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "014__003.jpg",
+    "014__004.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "015__003.jpg",
+    "015__004.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "016__003.jpg",
+    "016__004.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "017__003.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "018__003.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "019__003.jpg",
+    "019__004.jpg",
+    "020.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 86,
+          "symWidth": 48.66666666666666,
+          "text": "133",
+          "translation": "١٣٣",
+          "width": 150,
+          "x": 934,
+          "y": 223
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 25.05952380952381,
+          "symWidth": 16.65476190476191,
+          "text": "REGRESSOR  OF  THE FALLEN  FAMILY",
+          "translation": "المنحدر للأسرة الساقطة",
+          "width": 229,
+          "x": 672,
+          "y": 352
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 23,
+          "symWidth": 16.66666666666667,
+          "text": "PR  JOEMAMA",
+          "translation": "جيوماما",
+          "width": 164,
+          "x": 964,
+          "y": 477
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 12,
+          "text": "TL",
+          "translation": "مترجم",
+          "width": 24,
+          "x": 655,
+          "y": 495
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 19.2,
+          "symWidth": 19,
+          "text": "SLOPE",
+          "translation": "انحدار",
+          "width": 84,
+          "x": 719,
+          "y": 497
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 32.3,
+          "symWidth": 21.7,
+          "text": "AsuraScans",
+          "translation": "آسورا سكّانز",
+          "width": 200,
+          "x": 190,
+          "y": 513
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 18,
+          "symWidth": 16.5,
+          "text": "KAISER",
+          "translation": "كايزر",
+          "width": 92,
+          "x": 940,
+          "y": 562
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16.66666666666667,
+          "symWidth": 11,
+          "text": "RD .",
+          "translation": "ر.د.",
+          "width": 30,
+          "x": 867,
+          "y": 563
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 18,
+          "symWidth": 16.16666666666667,
+          "text": "KAISER",
+          "translation": "كايزر",
+          "width": 88,
+          "x": 650,
+          "y": 587
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19.5,
+          "symWidth": 12.5,
+          "text": "CL",
+          "translation": "م.ل.",
+          "width": 25,
+          "x": 574,
+          "y": 588
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 29.5625,
+          "symWidth": 15.4375,
+          "text": "asura.gg/discord",
+          "translation": "asura.gg/discord",
+          "width": 159,
+          "x": 282,
+          "y": 616
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19.5,
+          "symWidth": 17,
+          "text": "QC",
+          "translation": "قاتل",
+          "width": 28,
+          "x": 947,
+          "y": 648
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 20.5,
+          "symWidth": 19.5,
+          "text": "KILLER",
+          "translation": "القاتل",
+          "width": 109,
+          "x": 1010,
+          "y": 651
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15.5,
+          "text": "TS",
+          "translation": "قاتل",
+          "width": 28,
+          "x": 655,
+          "y": 664
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 20.16666666666667,
+          "symWidth": 19.33333333333333,
+          "text": "KILLER",
+          "translation": "القاتل",
+          "width": 105,
+          "x": 709,
+          "y": 669
+        }
+      ],
+      "imgHeight": 800,
+      "imgWidth": 1200,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 16.33333333333333,
+          "symWidth": 15,
+          "text": "216",
+          "translation": "٢١٦",
+          "width": 34,
+          "x": 545,
+          "y": 478
+        },
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 21.81904761904762,
+          "symWidth": 16.22687074829932,
+          "text": "TEAM  SUNGGU 선화  |  백부 채색  |  소고기 반찬 밑색 명암  |  기룩 배경  | 찐탱 편집  | 덴멍 PDI  정새봄",
+          "translation": "",
+          "width": 191,
+          "x": 692,
+          "y": 692
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 18.8,
+          "text": "제작  |  예스 웍스  YES  WORKS",
+          "translation": "",
+          "width": 340,
+          "x": 538,
+          "y": 948
+        }
+      ],
+      "imgHeight": 1259,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 40.55,
+          "symWidth": 33.08333333333333,
+          "text": "THE KNIGHTS ...",
+          "translation": "الفرسان...",
+          "width": 243,
+          "x": 208,
+          "y": 123
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 49,
+          "symWidth": 31,
+          "text": "SURROUNDING  ME ...",
+          "translation": "يحيطون بي...",
+          "width": 463,
+          "x": 272,
+          "y": 1824
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 61.25769230769231,
+          "symWidth": 42.08846153846154,
+          "text": "ARE  THEY  ALL SUPERHUMANS ?!",
+          "translation": "هل هم جميعًا كائنات خارقة؟!",
+          "width": 521,
+          "x": 190,
+          "y": 3064
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 460,
+          "symHeight": 97.07692307692308,
+          "symWidth": 53.46153846153846,
+          "text": "Regressor of  the  Fallen Family во",
+          "translation": "عائد من عائلة الساقطين",
+          "width": 689,
+          "x": 96,
+          "y": 2139
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 9.936170212765957,
+          "text": "Adaptation  Yang  Pyung  Art  Seong  Gu  Original  Painkiller",
+          "translation": "تأليف يانغ بيونغ، فن سونغ غو، الأصل: باينكيلر",
+          "width": 550,
+          "x": 165,
+          "y": 2744
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 23.66666666666667,
+          "text": "133",
+          "translation": "١٣٣",
+          "width": 76,
+          "x": 407,
+          "y": 2832
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 32.25,
+          "symWidth": 30.05982142857143,
+          "text": "THERE  ARE ABOUT  TEN  PEOPLE EXERTING  INTENSE PRESSURE .",
+          "translation": "هناك نحو عشرة أشخاص يمارسون ضغطًا هائلًا.",
+          "width": 439,
+          "x": 233,
+          "y": 3050
+        }
+      ],
+      "imgHeight": 3320,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 413,
+          "symHeight": 411.5,
+          "symWidth": 204,
+          "text": "gf",
+          "translation": "",
+          "width": 234,
+          "x": 599,
+          "y": 497
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 36.44,
+          "symWidth": 34.52727272727273,
+          "text": "AT  LEAST  HALF OF  THEM  ARE  ON  PAR WITH  MASTER .",
+          "translation": "لا يقل نصفهم عن مستواى الماستر.",
+          "width": 562,
+          "x": 168,
+          "y": 1738
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 38.175,
+          "symWidth": 36.35833333333333,
+          "text": "ASERIAN  ALONE HAS  SEVEN  MAGIC TOWERS .",
+          "translation": "لدى أسريون وحده سبعة أبراج سحرية.",
+          "width": 478,
+          "x": 136,
+          "y": 3070
+        }
+      ],
+      "imgHeight": 3320,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 36.92857142857143,
+          "symWidth": 34.84241071428571,
+          "text": "SEVEN  MAGIC TOWERS ,  EIGHT  EAST CORPS ,  AND  SEVEN WEST  CORPS .",
+          "translation": "سبعة أبراج سحرية، وثمانية في الفيلق الشرقي، وسبعة في الفيلق الغربي.",
+          "width": 534,
+          "x": 233,
+          "y": 241
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 39.5,
+          "symWidth": 36.00643382352941,
+          "text": "COUNTING ONLY  THEIR  LEADERS , THAT'S  THIRTY - TWO SUPERHUMANS .",
+          "translation": "ولو عدنا القادة فقط، فهنالك اثنان وثلاثون خارقًا.",
+          "width": 571,
+          "x": 154,
+          "y": 2893
+        }
+      ],
+      "imgHeight": 3320,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 35.66666666666666,
+          "symWidth": 32.43045843045843,
+          "text": "I  CAN'T BELIEVE  THE  GAP IS  THIS  VAST .",
+          "translation": "لا أصدق أن الفارق بهذا الاتساع.",
+          "width": 433,
+          "x": 231,
+          "y": 590
+        }
+      ],
+      "imgHeight": 3320,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 82.14285714285714,
+          "symWidth": 41.71428571428572,
+          "text": "... UGH !",
+          "translation": "... آه!",
+          "width": 226,
+          "x": 135,
+          "y": 2868
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 34,
+          "symWidth": 27.34615384615385,
+          "text": "I'VE  HEARD MUCH  ABOUT  YOU .",
+          "translation": "لقد سمعت الكثير عنك.",
+          "width": 408,
+          "x": 262,
+          "y": 309
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 117.75,
+          "symWidth": 85.75,
+          "text": "HUFF",
+          "translation": "زفير",
+          "width": 229,
+          "x": 93,
+          "y": 981
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 110,
+          "symWidth": 63.5,
+          "text": "HUFF",
+          "translation": "زفير",
+          "width": 166,
+          "x": 696,
+          "y": 1008
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 35,
+          "symWidth": 28.61309523809524,
+          "text": "SO  YOU'VE  KILLED A  SUPERHUMAN ?",
+          "translation": "هل قتلت إنسانًا فائق القوة؟",
+          "width": 397,
+          "x": 251,
+          "y": 1951
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 65,
+          "symWidth": 28,
+          "text": "14",
+          "translation": "١٤",
+          "width": 30,
+          "x": 807,
+          "y": 663
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 38.05827505827506,
+          "symWidth": 30.94376456876457,
+          "text": "I'VE  JUST CONFIRMED  THAT YOUR  REPUTATION IS  NO  LIE .",
+          "translation": "لقد تأكدت للتو أن سمعتك ليست كذبة.",
+          "width": 465,
+          "x": 211,
+          "y": 982
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 33.9,
+          "symWidth": 34.5,
+          "text": "WAS  HE TESTING  ME ?",
+          "translation": "هل كان يختبرني؟",
+          "width": 311,
+          "x": 182,
+          "y": 1892
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 42.66666666666666,
+          "symWidth": 34.41666666666666,
+          "text": "I  WAS MERELY  LUCKY , YOUR  MAJESTY .",
+          "translation": "لقد كنتُ محض محظوظٍ، صاحب الجلالة.",
+          "width": 428,
+          "x": 233,
+          "y": 435
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 13.25,
+          "text": "RODR",
+          "translation": "رودِر",
+          "width": 54,
+          "x": 806,
+          "y": 1519
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 37.07407407407408,
+          "symWidth": 28.48148148148148,
+          "text": "WELL ,  THAT WE  CAN  SIMPLY VERIFY .",
+          "translation": "حسنًا، يمكننا بكل يسرٍ التثبت من ذلك.",
+          "width": 370,
+          "x": 391,
+          "y": 2017
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 41.14285714285715,
+          "text": "JEROME !",
+          "translation": "جيروم!",
+          "width": 296,
+          "x": 252,
+          "y": 2421
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 54.1875,
+          "symWidth": 40.875,
+          "text": "YES ,  YOUR MAJESTY !",
+          "translation": "نعم، صاحب الجلالة!",
+          "width": 297,
+          "x": 220,
+          "y": 3144
+        }
+      ],
+      "imgHeight": 3362,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 95,
+          "symWidth": 112,
+          "text": "Mi",
+          "translation": "مي",
+          "width": 115,
+          "x": 294,
+          "y": 561
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 41.42857142857143,
+          "text": "JEROME ?",
+          "translation": "جيروم؟",
+          "width": 256,
+          "x": 188,
+          "y": 1389
+        },
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 50,
+          "symWidth": 47.40833333333333,
+          "text": "IS  HE THAT  JEROME DECAIDE ?",
+          "translation": "هل هو ذلك الجيروم ديكيد؟",
+          "width": 500,
+          "x": 200,
+          "y": 2153
+        }
+      ],
+      "imgHeight": 3362,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 33.71428571428572,
+          "text": "JEROME .",
+          "translation": "جيروم.",
+          "width": 254,
+          "x": 193,
+          "y": 2158
+        }
+      ],
+      "imgHeight": 3362,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 49.36842105263158,
+          "symWidth": 42.33157894736842,
+          "text": "WHY  DON'T AGAINST  HIM ? YOU  CONTEND",
+          "translation": "لماذا لا تتصدى له؟ ألا ترى ذلك؟",
+          "width": 460,
+          "x": 224,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 114,
+          "symWidth": 29.66666666666667,
+          "text": ". !!",
+          "translation": "!!",
+          "width": 116,
+          "x": 579,
+          "y": 2066
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 31,
+          "symWidth": 25.58818713450292,
+          "text": "OUR EMPIRE'S \" RISING  STAR \"  AGAINST GRANDIA'S HERO .",
+          "translation": "«النجم الصاعد» لإمبراطوريتنا في مواجهة بطل جرانديا.",
+          "width": 506,
+          "x": 99,
+          "y": 2977
+        }
+      ],
+      "imgHeight": 3364,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 33.5,
+          "symWidth": 28.53333333333333,
+          "text": "I  WISH  TO  SEE FOR  MYSELF  WHO  IS MORE  EXCEPTIONAL .",
+          "translation": "أرغب في أن أرى لأفحص من هو الأميز.",
+          "width": 461,
+          "x": 275,
+          "y": 962
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 46.44,
+          "symWidth": 33.64,
+          "text": "AS  YOU  COMMAND , YOUR  MAJESTY !",
+          "translation": "كما تأمر، يا جلالة الملك!",
+          "width": 419,
+          "x": 323,
+          "y": 2505
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 41.09090909090909,
+          "symWidth": 39.54545454545455,
+          "text": "A  FIGHT AS  SOON  AS I  ARRIVE ?",
+          "translation": "قتالٌ حال وصولي؟",
+          "width": 356,
+          "x": 256,
+          "y": 3259
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 37.44444444444444,
+          "symWidth": 35,
+          "text": "HE  DIDN'T EVEN  ASK  ME .",
+          "translation": "لم يستدعني حتى ليستأذنني.",
+          "width": 365,
+          "x": 344,
+          "y": 4093
+        }
+      ],
+      "imgHeight": 4260,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 41.8,
+          "text": "NO ...",
+          "translation": "لا...",
+          "width": 180,
+          "x": 194,
+          "y": 1269
+        },
+        {
+          "angle": 0,
+          "height": 204,
+          "symHeight": 43.125,
+          "symWidth": 38.675,
+          "text": "IS  THIS  WHY HE  EVEN  INVITED ME  IN  THE  FIRST PLACE ?",
+          "translation": "هل هذا سبب استدعائه لي من البداية؟",
+          "width": 496,
+          "x": 203,
+          "y": 2415
+        }
+      ],
+      "imgHeight": 4260,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 46.8695652173913,
+          "symWidth": 43.04347826086956,
+          "text": "JUST FOR  HIS  OWN AMUSEMENT ?",
+          "translation": "هل للمتعة فقط؟",
+          "width": 417,
+          "x": 238,
+          "y": 715
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 38.16666666666667,
+          "symWidth": 29.89583333333334,
+          "text": "YOUR IMPERIAL MAJESTY ,",
+          "translation": "صاحب الجلالة الإمبراطوري،",
+          "width": 241,
+          "x": 429,
+          "y": 1605
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 51,
+          "symWidth": 69,
+          "text": "ооо",
+          "translation": "ООО",
+          "width": 105,
+          "x": 521,
+          "y": 2397
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 40.71296296296296,
+          "symWidth": 34.4462962962963,
+          "text": "LORD LOGAN IS  HERE  AS  A REPRESENTATIVE OF  OUR  KINGDOM .",
+          "translation": "السيد لوغان هنا ممثلاً لمملكتنا.",
+          "width": 493,
+          "x": 290,
+          "y": 3493
+        }
+      ],
+      "imgHeight": 4260,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 31,
+          "symWidth": 27.02289377289377,
+          "text": "SUCH A  SUDDEN  DEMAND DOES  NOT  OBSERVE THE  USUAL-",
+          "translation": "هذا الطلب المفاجئ لا يلتزم بالمعتاد—",
+          "width": 427,
+          "x": 140,
+          "y": 1400
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 43.5,
+          "symWidth": 32.16666666666667,
+          "text": "I  INVITED LOGAN  MCLAIN .",
+          "translation": "لقد دعوت لوغان ماكلين.",
+          "width": 434,
+          "x": 225,
+          "y": 2409
+        }
+      ],
+      "imgHeight": 3281,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 34,
+          "symWidth": 28.54615384615385,
+          "text": "SUPERHUMAN OF  THE  KINGDOM ,",
+          "translation": "أيها المتفوق الملكي،",
+          "width": 406,
+          "x": 259,
+          "y": 646
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 48.66666666666666,
+          "symWidth": 41.78787878787879,
+          "text": "ARE  YOU OBJECTING  TO MY  DECISION ?",
+          "translation": "هل تعترض على قراري؟",
+          "width": 486,
+          "x": 202,
+          "y": 2584
+        }
+      ],
+      "imgHeight": 3282,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 357,
+          "symHeight": 298.5,
+          "symWidth": 277.5,
+          "text": "OF",
+          "translation": "من",
+          "width": 393,
+          "x": 324,
+          "y": 1992
+        }
+      ],
+      "imgHeight": 3281,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 38.83333333333334,
+          "symWidth": 30.14583333333333,
+          "text": "IF  YOUR MAJESTY  WISHES  IT , I  WILL  COMPLY .",
+          "translation": "إن كانت جلالتكم ترغب، فسأطيع.",
+          "width": 520,
+          "x": 146,
+          "y": 2822
+        }
+      ],
+      "imgHeight": 3283,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 44.02614379084967,
+          "symWidth": 34.5718954248366,
+          "text": "HOWEVER , SHOULD  ANY ACCIDENTS OCCUR ,",
+          "translation": "غير أنني، إن وقعت أي حوادث،",
+          "width": 363,
+          "x": 263,
+          "y": 1196
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 33,
+          "symWidth": 27.48571428571429,
+          "text": "I  TRUST  I WILL  NOT  BE  HELD RESPONSIBLE .",
+          "translation": "أطلب ألا أحمّل مسؤولية ما جرى.",
+          "width": 419,
+          "x": 237,
+          "y": 25
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 43,
+          "symWidth": 35.56666666666666,
+          "text": "YOU INSOLENT- !",
+          "translation": "يا لك من متعجرف!",
+          "width": 302,
+          "x": 149,
+          "y": 2460
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 66,
+          "symWidth": 41.5,
+          "text": "HAHAH !",
+          "translation": "هاهاها!",
+          "width": 234,
+          "x": 285,
+          "y": 1915
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 58.55,
+          "symWidth": 40.2,
+          "text": "ACCIDENTS ? HAHAHAHAH !",
+          "translation": "حوادث؟ هاهاهاها!",
+          "width": 355,
+          "x": 276,
+          "y": 2554
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 67.25,
+          "symWidth": 54.25,
+          "text": "7711",
+          "translation": "",
+          "width": 147,
+          "x": 0,
+          "y": 3232
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 37.74786324786325,
+          "symWidth": 32.04700854700855,
+          "text": "I  SIMPLY  WANTED TO  SEE  YOU  TWO  TEST YOUR  ABILITIES  AGAINST EACH  OTHER .",
+          "translation": "ما كان لي أن أرى بينكما اختبار قواكما فقط.",
+          "width": 514,
+          "x": 116,
+          "y": 904
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 40.90476190476191,
+          "symWidth": 32.24801587301587,
+          "text": "SURELY  YOU DIDN'T  ACTUALLY INTEND  TO  FIGHT ?",
+          "translation": "أحقاً لم تكن النيّة خوض القتال؟",
+          "width": 417,
+          "x": 258,
+          "y": 1654
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 102,
+          "symWidth": 74.5,
+          "text": "움찔",
+          "translation": "ارتجاف",
+          "width": 128,
+          "x": 130,
+          "y": 2442
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 119,
+          "symWidth": 71,
+          "text": "11",
+          "translation": "١١",
+          "width": 94,
+          "x": 471,
+          "y": 302
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 38.75925925925926,
+          "symWidth": 31.44444444444444,
+          "text": "IF  WE  ARE  TO CLASH ,  WOULD  IT  NOT BE  MORE  ENTERTAINING TO  GO  ALL  OUT ?",
+          "translation": "إذا كان يصير لنا صدام، ألَم يكن أولى أن نُظهر كل ما في جعبتنا؟",
+          "width": 605,
+          "x": 144,
+          "y": 1574
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 65,
+          "symWidth": 37,
+          "text": "HAHAHAH !",
+          "translation": "هاهاها!",
+          "width": 293,
+          "x": 135,
+          "y": 2299
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 31.5,
+          "symWidth": 26.19714285714286,
+          "text": "IT  SEEMS YOU  TRULY  BELIEVE YOU  CAN  WIN .",
+          "translation": "يبدو أنك تصدق فعلاً أنك قادر على الفوز.",
+          "width": 412,
+          "x": 349,
+          "y": 37
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 40,
+          "symWidth": 35.16137566137566,
+          "text": "JEROME , WHAT  ABOUT YOU ?",
+          "translation": "جيروم، ماذا عنك؟",
+          "width": 361,
+          "x": 166,
+          "y": 420
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 33.41975308641975,
+          "symWidth": 30.43364197530864,
+          "text": "I  WILL  NOT  BE FROM  SOME  BACKWATER BESTED  BY  MERE  TALENT COUNTRY !",
+          "translation": "لن أسمح لأنتمي لمنطقة نائية تُهزم أمام مجرد موهبة!",
+          "width": 546,
+          "x": 259,
+          "y": 2223
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 30,
+          "symWidth": 26.42765567765568,
+          "text": "I  DIDN'T THINK  I'D  END  UP FIGHTING  HIM .",
+          "translation": "لم أتوقع أن أصل إلى مواجهة معه.",
+          "width": 365,
+          "x": 139,
+          "y": 632
+        },
+        {
+          "angle": 0,
+          "height": 202,
+          "symHeight": 59.74285714285714,
+          "symWidth": 31.34978354978355,
+          "text": "IN  THE  FUTURE ,  HE WOULD  BE  KNOWN  AS  THE  FIRST SWORD  OF  THE  CONTINENT ,",
+          "translation": "في المستقبل، سيُعرف بالسيف الأول في القارة.",
+          "width": 674,
+          "x": 136,
+          "y": 1507
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 56.10526315789474,
+          "symWidth": 28.76480263157895,
+          "text": "THE  STRONGEST  AURA USER  ON  THE  CONTINENT .",
+          "translation": "وأقوى حامل لهالة في القارة.",
+          "width": 484,
+          "x": 46,
+          "y": 2651
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 55.5,
+          "symWidth": 29.60633484162896,
+          "text": "AND  AN  AMBASSADOR  TO THE  GRANDIA  LIBERATION  FRONT .",
+          "translation": "وسفير جبهة تحرير غرانديا.",
+          "width": 646,
+          "x": 145,
+          "y": 273
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 69,
+          "symWidth": 36.2,
+          "text": "HOWEVER ...",
+          "translation": "مع ذلك...",
+          "width": 300,
+          "x": 276,
+          "y": 2427
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 28.5,
+          "symWidth": 38,
+          "text": "مه",
+          "translation": "مه",
+          "width": 41,
+          "x": 762,
+          "y": 1570
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 33.5,
+          "symWidth": 25.50299145299145,
+          "text": "IN THE  MIDDLE OF  THE  IMPERIAL PALACE ... ?",
+          "translation": "في قلب القصر الإمبراطوري...؟",
+          "width": 395,
+          "x": 336,
+          "y": 3117
+        }
+      ],
+      "imgHeight": 3288,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 169.5,
+          "symWidth": 108,
+          "text": "웅성",
+          "translation": "همسات",
+          "width": 185,
+          "x": 56,
+          "y": 149
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 141.5,
+          "symWidth": 92,
+          "text": "웅성",
+          "translation": "همسات",
+          "width": 155,
+          "x": 292,
+          "y": 388
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 30.5,
+          "symWidth": 27.325,
+          "text": "WHO  COULD POSSIBLY  OPPOSE HIS  MAJESTY ?",
+          "translation": "من ذا الذي يجرؤ على معارضة جلالته؟",
+          "width": 391,
+          "x": 196,
+          "y": 1596
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 101,
+          "symWidth": 81.5,
+          "text": "싱긋",
+          "translation": "ابتسامة",
+          "width": 142,
+          "x": 464,
+          "y": 2378
+        }
+      ],
+      "imgHeight": 3288,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 31.58974358974359,
+          "symWidth": 23.69230769230769,
+          "text": "WELL ,  EVEN THEN ,  HE'S  JUST  AN ORDINARY  KNIGHT .",
+          "translation": "حسناً، رغم ذلك، هو مجرد فارس عادي.",
+          "width": 404,
+          "x": 261,
+          "y": 598
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 48.5,
+          "symWidth": 36,
+          "text": "THIS  WILL BE  QUICK .",
+          "translation": "سيكون الأمر سريعاً.",
+          "width": 324,
+          "x": 277,
+          "y": 2542
+        }
+      ],
+      "imgHeight": 3289,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 34.29268292682926,
+          "symWidth": 27.85365853658537,
+          "text": "IT  SEEMS  YOU  GOT LUCKY  ONCE  KILLING A  SUPERHUMAN ,",
+          "translation": "يبدو أنك حظيت بنجاة نادرة حين قتلت كائناً خارقاً,",
+          "width": 453,
+          "x": 312,
+          "y": 1008
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 32.66666666666666,
+          "symWidth": 26.13547237076649,
+          "text": "BUT  YOU  ARE GRAVELY  MISTAKEN  IF YOU  THINK  LUCK  LIKE THAT  STRIKES  TWICE .",
+          "translation": "ولكنك مخطئ خطأً فادحاً إن ظننت أن الحظ يعاودك مرتين.",
+          "width": 477,
+          "x": 129,
+          "y": 1473
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 98,
+          "symWidth": 124,
+          "text": "덤덤",
+          "translation": "برود",
+          "width": 208,
+          "x": 34,
+          "y": 2286
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 28.5,
+          "symWidth": 22.72615384615385,
+          "text": "YES ,  THANK YOU  FOR  THE  ADVICE . SHALL  WE  BEGIN ?",
+          "translation": "نعم، شكراً لنصيحتك. هل نبدأ؟",
+          "width": 407,
+          "x": 393,
+          "y": 2929
+        }
+      ],
+      "imgHeight": 4008,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 37.53333333333333,
+          "symWidth": 28.24242424242424,
+          "text": "... COURTING DEATH  NOW , ARE  WE ?",
+          "translation": "أتغازل الموت الآن، أليس كذلك؟",
+          "width": 301,
+          "x": 461,
+          "y": 775
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 38,
+          "symWidth": 31.56432748538012,
+          "text": "ARE  BOTH PARTICIPANTS PREPARED ?",
+          "translation": "هل كلا المشاركين مستعدان؟",
+          "width": 359,
+          "x": 270,
+          "y": 1454
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 36.82666666666666,
+          "symWidth": 34.42121212121213,
+          "text": "THE  CURRENT FIRST  SWORD  OF THE  CONTINENT , TRIS  HONSBY .",
+          "translation": "السيف الأول الراهن في القارة، تريس هونسبي.",
+          "width": 446,
+          "x": 229,
+          "y": 3409
+        }
+      ],
+      "imgHeight": 4008,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 33.4,
+          "symWidth": 32.16833333333334,
+          "text": "MOST  OF THE  PRESSURE I  FELT  EARLIER  WAS COMING  FROM THIS  MAN .",
+          "translation": "معظم الضغط الذي شعرت به سابقًا كان صادرًا من هذا الرجل.",
+          "width": 462,
+          "x": 218,
+          "y": 1732
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 30,
+          "symWidth": 25.99179292929293,
+          "text": "HOWEVER , SEEING  HIM  IN PERSON ,  HE'S RATHER ...",
+          "translation": "لكن، عندما رأيته شخصيًا، بدا لي...",
+          "width": 298,
+          "x": 398,
+          "y": 2657
+        }
+      ],
+      "imgHeight": 4009,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 45.16666666666667,
+          "symWidth": 33.46464646464646,
+          "text": "YES ,  MASTER , I'M  READY .",
+          "translation": "نعم، يا سيدي، أنا مستعد.",
+          "width": 394,
+          "x": 364,
+          "y": 213
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 13,
+          "symWidth": 13,
+          "text": "16060",
+          "translation": "16060",
+          "width": 52,
+          "x": 841,
+          "y": 891
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 44,
+          "symWidth": 29.90909090909091,
+          "text": "... I'M  READY AS  WELL .",
+          "translation": "... وأنا أيضًا مستعد.",
+          "width": 328,
+          "x": 175,
+          "y": 1813
+        }
+      ],
+      "imgHeight": 3346,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 107,
+          "symWidth": 87,
+          "text": "ne",
+          "translation": "لا",
+          "width": 152,
+          "x": 523,
+          "y": 197
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 39,
+          "symWidth": 30.14090909090909,
+          "text": "HIS  MAJESTY IS  WATCHING .",
+          "translation": "جلالته يراقب.",
+          "width": 338,
+          "x": 288,
+          "y": 2077
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 35.28571428571428,
+          "text": "DISPLAY",
+          "translation": "عرض",
+          "width": 266,
+          "x": 313,
+          "y": 3263
+        }
+      ],
+      "imgHeight": 3346,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 50.5,
+          "symWidth": 38.55,
+          "text": "YOUR  UTMOST ABILITIES !",
+          "translation": "كُل قواكِ العُليا!",
+          "width": 482,
+          "x": 208,
+          "y": 0
+        }
+      ],
+      "imgHeight": 3346,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 30.1875,
+          "symWidth": 24.88461538461539,
+          "text": "THE  USE  OF ARTIFACTS  WILL  NOT BE  ALLOWED !",
+          "translation": "لن يُسمح باستخدام التعويذات!",
+          "width": 401,
+          "x": 254,
+          "y": 1262
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 43.33333333333334,
+          "symWidth": 54.66666666666666,
+          "text": "00 %",
+          "translation": "٠٠٪",
+          "width": 67,
+          "x": 504,
+          "y": 2338
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 37.85,
+          "symWidth": 31.1,
+          "text": "JUST DON'T  DIE , KID ... !",
+          "translation": "لا تمُت فقط، أيها الفتى...!",
+          "width": 280,
+          "x": 432,
+          "y": 2586
+        }
+      ],
+      "imgHeight": 3347,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 32.84848484848485,
+          "symWidth": 26.12121212121212,
+          "text": "THAT  FOREIGNER WILL  SOON  TASTE DEFEAT .",
+          "translation": "سيتذوّق ذلك الغريب الهزيمة قريبًا.",
+          "width": 376,
+          "x": 341,
+          "y": 911
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 30.46774193548387,
+          "symWidth": 26.35483870967742,
+          "text": "HE  MAY  BE CONSIDERED  STRONG IN  A  SMALL  NATION ,",
+          "translation": "قد يُعتبر قويًا في أمة صغيرة،",
+          "width": 465,
+          "x": 208,
+          "y": 2049
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 228,
+          "symHeight": 33.875,
+          "symWidth": 27.96780303030303,
+          "text": "BUT  HE WILL  QUICKLY LEARN  WHERE  HE STANDS  WITHIN OUR  EMPIRE .",
+          "translation": "سيتعلم سريعًا موقعه ضمن إمبراطوريتنا.",
+          "width": 410,
+          "x": 242,
+          "y": 885
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 63,
+          "symWidth": 35.43333333333334,
+          "text": "THE  FIRST  SWORD  OF THE  CONTINENT  IS  STRONG .",
+          "translation": "السيف الأول في القارة قوي.",
+          "width": 650,
+          "x": 124,
+          "y": 2221
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 66.5,
+          "symWidth": 37.56666666666666,
+          "text": "AS  I  AM  NOW ,  I  CAN'T HOPE  TO  COMPARE .",
+          "translation": "بما أنا عليه الآن، لا أمل لي في المجاراة.",
+          "width": 548,
+          "x": 174,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 94.83333333333333,
+          "symWidth": 45,
+          "text": "BUT ...",
+          "translation": "لكن...",
+          "width": 202,
+          "x": 352,
+          "y": 2286
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 67,
+          "symWidth": 38.31326312576312,
+          "text": "THAT  ISN'T  THE  CASE AGAINST  THE  \" RISING  STAR OF  THE  EMPIRE \" !",
+          "translation": "ليس هذا حال \"النجم الصاعد للإمبراطورية\"!",
+          "width": 704,
+          "x": 99,
+          "y": 472
+        },
+        {
+          "angle": 0,
+          "height": 258,
+          "symHeight": 256.5,
+          "symWidth": 201.5,
+          "text": "of",
+          "translation": "من",
+          "width": 352,
+          "x": 516,
+          "y": 2346
+        }
+      ],
+      "imgHeight": 3361,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 182.4,
+          "symWidth": 70.4,
+          "text": "... !!",
+          "translation": "...!!",
+          "width": 365,
+          "x": 268,
+          "y": 1087
+        }
+      ],
+      "imgHeight": 3362,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__003.jpg": {
+      "blocks": [],
+      "imgHeight": 3361,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 57.61538461538461,
+          "symWidth": 47.80769230769231,
+          "text": "HE BLOCKED AURA ?!",
+          "translation": "هل صدّ الأورا؟!",
+          "width": 342,
+          "x": 286,
+          "y": 706
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 37.5,
+          "symWidth": 39,
+          "text": "00",
+          "translation": "00",
+          "width": 62,
+          "x": 764,
+          "y": 3151
+        }
+      ],
+      "imgHeight": 3363,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 60,
+          "symWidth": 27.07692307692308,
+          "text": "THAT'S  IT .... !",
+          "translation": "هذا هو...!",
+          "width": 289,
+          "x": 297,
+          "y": 909
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 30.625,
+          "symWidth": 41.04166666666666,
+          "text": "000 0001",
+          "translation": "000 0001",
+          "width": 118,
+          "x": 429,
+          "y": 1057
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 96.125,
+          "symWidth": 55.625,
+          "text": "I  KNEW  IT !",
+          "translation": "كنت أعلم ذلك!",
+          "width": 397,
+          "x": 267,
+          "y": 2618
+        }
+      ],
+      "imgHeight": 3243,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 336,
+          "symHeight": 67.82882882882883,
+          "symWidth": 36.42839592839592,
+          "text": "THIS  MAN  WILL GAIN  FAME  AS  THE  FIRST SWORD  OF  THE  CONTINENT IN  TWENTY  YEARS ,",
+          "translation": "سيحظى هذا الرجل بالمجد كأول سيف\nفي القارة خلال عشرين عاماً,",
+          "width": 687,
+          "x": 108,
+          "y": 1109
+        }
+      ],
+      "imgHeight": 3244,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 31.55882352941176,
+          "symWidth": 27.64705882352941,
+          "text": "BUT  HE'S  STILL INEXPERIENCED RIGHT  NOW .",
+          "translation": "لكنه لا يزال يفتقر إلى الخبرة الآن.",
+          "width": 320,
+          "x": 294,
+          "y": 231
+        }
+      ],
+      "imgHeight": 3243,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 48.5625,
+          "symWidth": 40.9125,
+          "text": "GUH- ! DAMN  HIM !",
+          "translation": "آه-! اللعنة عليه!",
+          "width": 283,
+          "x": 161,
+          "y": 1078
+        }
+      ],
+      "imgHeight": 3247,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 37.66666666666666,
+          "text": "JEROME !!!",
+          "translation": "جيروم!!!",
+          "width": 284,
+          "x": 271,
+          "y": 3133
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 25.8,
+          "text": "GH ...",
+          "translation": "غح...",
+          "width": 132,
+          "x": 155,
+          "y": 2915
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 68.66666666666667,
+          "symWidth": 39.16666666666666,
+          "text": "NOT ...",
+          "translation": "ليس بعد...",
+          "width": 184,
+          "x": 243,
+          "y": 797
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 104.2857142857143,
+          "symWidth": 57.85714285714285,
+          "text": "NOT  YET !",
+          "translation": "ليس بعد!",
+          "width": 347,
+          "x": 317,
+          "y": 1051
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 52.75,
+          "symWidth": 37.15625,
+          "text": "GIVE  ME ANOTHER  CHANCE , YOUR  MAJESTY !",
+          "translation": "أمنحني فرصة أخرى، يا صاحب الجلالة!",
+          "width": 482,
+          "x": 221,
+          "y": 3010
+        }
+      ],
+      "imgHeight": 3983,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 155,
+          "symWidth": 72.25,
+          "text": "THEY",
+          "translation": "هم",
+          "width": 168,
+          "x": 580,
+          "y": 337
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 36.57692307692308,
+          "symWidth": 29.03846153846154,
+          "text": "HOW  AMUSING . YOU  MAY  CONTINUE .",
+          "translation": "يا لها من متعة. يمكنك أن تتابع.",
+          "width": 452,
+          "x": 229,
+          "y": 1221
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 44.76470588235294,
+          "symWidth": 37.94117647058823,
+          "text": "THANK  YOU VERY  MUCH !",
+          "translation": "شكرًا جزيلًا!",
+          "width": 306,
+          "x": 359,
+          "y": 2884
+        }
+      ],
+      "imgHeight": 3984,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 57,
+          "symWidth": 44.71428571428572,
+          "text": "DAMMIT !",
+          "translation": "لعنة!",
+          "width": 279,
+          "x": 335,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 34.11363636363636,
+          "symWidth": 34.53787878787879,
+          "text": "HOW UNNECESSARILY GENEROUS !",
+          "translation": "يا له من سخاءٍ لا مبرر له!",
+          "width": 358,
+          "x": 186,
+          "y": 261
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 31.71428571428572,
+          "symWidth": 27.54761904761905,
+          "text": "WHAT ? DID  THE  RISING STAR  LOSE ?",
+          "translation": "ماذا؟ هل سقط النجم الصاعد؟",
+          "width": 315,
+          "x": 143,
+          "y": 1885
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 33.76315789473684,
+          "symWidth": 25.22368421052632,
+          "text": "NO ,  NOT  YET . HE  WAS  JUST WOUNDED ...",
+          "translation": "لا، ليس بعد. لقد جُرِح فقط...",
+          "width": 304,
+          "x": 452,
+          "y": 2702
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 25.86160714285714,
+          "symWidth": 20.52678571428572,
+          "text": "HE'S  BLEEDING  OUT , WHAT  DO  YOU  MEAN \" JUST  WOUNDED \" ?!",
+          "translation": "ينزف حتى الموت، فماذا تعني بـ\"جُرح فقط\"؟!",
+          "width": 335,
+          "x": 117,
+          "y": 3653
+        }
+      ],
+      "imgHeight": 3984,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 36.08333333333333,
+          "symWidth": 30.47619047619047,
+          "text": "HOW  CAN THIS  BE ?",
+          "translation": "كيف يكون هذا ممكناً؟",
+          "width": 224,
+          "x": 228,
+          "y": 355
+        }
+      ],
+      "imgHeight": 3495,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 37.68055555555556,
+          "symWidth": 38.22222222222222,
+          "text": "IS  HE GETTING SERIOUS NOW ?",
+          "translation": "هل بدأ يأخذ الأمر بجدية الآن؟",
+          "width": 228,
+          "x": 287,
+          "y": 529
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 43.52813852813853,
+          "symWidth": 25.65728715728716,
+          "text": "is Asuperhuman a - superhuman  after  all .",
+          "translation": "هل الأبطال الخارقون هم بالفعل أبطال خارقون؟",
+          "width": 376,
+          "x": 374,
+          "y": 794
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 33.65,
+          "symWidth": 28.2,
+          "text": "I  APOLOGIZE FOR  LOOKING DOWN  ON  YOU .",
+          "translation": "أعتذر عن الاستهانة بك.",
+          "width": 328,
+          "x": 372,
+          "y": 2128
+        }
+      ],
+      "imgHeight": 3496,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 35.65151515151516,
+          "symWidth": 27.15151515151515,
+          "text": "DESPITE  NOT BEING  AN  AURA  USER , YOU  DEFLECTED  AURA ,",
+          "translation": "رغم أنك لست من مستخدمي الهالة، فقد صدّيت الهالة.",
+          "width": 511,
+          "x": 266,
+          "y": 292
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 27,
+          "symWidth": 22.93513655462185,
+          "text": "AND  THAT TWISTING  ATTACK OF  YOURS  WAS  UNLIKE ANYTHING  I'VE  SEEN .",
+          "translation": "وذات هجومك المتلوّي كان مختلفاً عن كل ما رأيته.",
+          "width": 410,
+          "x": 128,
+          "y": 741
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 29.8,
+          "symWidth": 25.00666666666667,
+          "text": "YOU  MOST DEFINITELY DESERVE THE  TITLE  OF  YOUNG HERO .",
+          "translation": "بلا منازع، أنت تستحق لقب البطل الشاب.",
+          "width": 419,
+          "x": 146,
+          "y": 1433
+        }
+      ],
+      "imgHeight": 3495,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 327,
+          "symHeight": 55.91666666666667,
+          "symWidth": 40.325,
+          "text": "HOWEVER , YOU  HAD  BEST PREPARE  YOURSELF FOR  WHAT  COMES NEXT .",
+          "translation": "ومع ذلك، من الأفضل أن تتهيّأ لما هو قادم.",
+          "width": 537,
+          "x": 187,
+          "y": 150
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 71,
+          "symWidth": 39.13333333333333,
+          "text": "THIS  IS  MY  CHANCE .",
+          "translation": "هذه فرصتي.",
+          "width": 525,
+          "x": 188,
+          "y": 2607
+        }
+      ],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 65,
+          "symWidth": 33.31578947368421,
+          "text": "RIGHT  HERE ,  RIGHT  NOW .",
+          "translation": "هنا والآن.",
+          "width": 592,
+          "x": 153,
+          "y": 998
+        },
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 58.88679245283019,
+          "symWidth": 32.77358490566038,
+          "text": "I  WILL  UTTERLY DESTROY  THE  FUTURE  FIRST SWORD  OF  THE  CONTINENT !",
+          "translation": "سأفني بكلِّ ما أوتيت من قوة السيف المُنتظر في القارة!",
+          "width": 614,
+          "x": 143,
+          "y": 2019
+        }
+      ],
+      "imgHeight": 3375,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__004.jpg": {
+      "blocks": [],
+      "imgHeight": 3376,
+      "imgWidth": 900,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

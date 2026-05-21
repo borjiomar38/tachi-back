@@ -1,0 +1,999 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0115",
+  "jobId": "fixture-job-0115",
+  "licenseId": "fixture-license-0115",
+  "pageCount": 16,
+  "pageOrder": [
+    "003__001.jpg",
+    "002__001.jpg",
+    "007__001.jpg",
+    "001__001.jpg",
+    "002__002.jpg",
+    "001__002.jpg",
+    "005__001.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "003__002.jpg",
+    "008__001.jpg",
+    "006__001.jpg",
+    "005__002.jpg",
+    "006__002.jpg",
+    "008__002.jpg",
+    "007__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 60.91666666666666,
+          "symWidth": 45.05555555555555,
+          "text": "死灵 法师 我 即 是 天灾 、 NECROMANCER  KING  OF  THE  SCOURGE",
+          "translation": "Necromancer, I am the Scourge's King.",
+          "width": 367,
+          "x": 148,
+          "y": 689
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 36.11111111111111,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "",
+          "width": 350,
+          "x": 179,
+          "y": 996
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 19.33333333333333,
+          "symWidth": 13.93518518518519,
+          "text": "WHAT BRINGS  YOU BACK ,  KID ?",
+          "translation": "What brings you back, kid?",
+          "width": 134,
+          "x": 67,
+          "y": 2005
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 10.77272727272727,
+          "text": "ITELLING  ANTARES  ABOUT  WHAT  HAPPENED  RECENTLY ... ]",
+          "translation": "Telling Antares about what happened recently...",
+          "width": 468,
+          "x": 213,
+          "y": 3877
+        }
+      ],
+      "imgHeight": 4903,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 20,
+          "symWidth": 14.82775106837607,
+          "text": "WAIT , WHAT'S  THE NAME  OF  THAT OLD  MAN  YOU  SAID YOU MET  IN  THE PRIMORDIAL SECRET  REALM ?",
+          "translation": "Wait, what was the name of that old man you met in the Primordial Secret Realm?",
+          "width": 212,
+          "x": 105,
+          "y": 1174
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20.25,
+          "symWidth": 14.40692640692641,
+          "text": "HIS  NAME WAS  GUI  FU ,  IS SOMETHING WRONG ?",
+          "translation": "His name was Gui Fu. Why, is something wrong?",
+          "width": 171,
+          "x": 386,
+          "y": 3378
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30.2,
+          "symWidth": 41.2,
+          "text": "「  快 看 漫画",
+          "translation": "",
+          "width": 182,
+          "x": 507,
+          "y": 3683
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 16.8,
+          "symWidth": 11.31902097902098,
+          "text": "GUI  FU  WAS  IN THE TRIAL  SPACE , SO  THAT'S  WHERE HE  WENT ...",
+          "translation": "Gui Fu was in the Trial Space, so that's where he went...",
+          "width": 171,
+          "x": 67,
+          "y": 4312
+        }
+      ],
+      "imgHeight": 4905,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.66666666666667,
+          "symWidth": 11.90909090909091,
+          "text": "ANTARES , WHAT'S  WRONG WITH  YOU ?",
+          "translation": "Antares, what’s going on?",
+          "width": 149,
+          "x": 496,
+          "y": 85
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 16.21428571428572,
+          "symWidth": 11.35714285714286,
+          "text": "IS  THAT GUI  FU  REALLY THAT  SCARY ?",
+          "translation": "Is that Gui Fu really that terrifying?",
+          "width": 136,
+          "x": 447,
+          "y": 339
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 15.15384615384615,
+          "symWidth": 11.76730769230769,
+          "text": "EVEN  WHEN FACING  THE  DRAGON GOD  HEAD - ON ,  ANTARES HAS  NEVER  SHOWN  FEAR LIKE  HE'S  SHOWING NOW .",
+          "translation": "Antares has never looked this afraid, even facing the Dragon God head-on.",
+          "width": 205,
+          "x": 427,
+          "y": 721
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.5,
+          "symWidth": 11.41666666666667,
+          "text": "GUI  FU  ISN'T SCARY ,  HE'S CRUEL !",
+          "translation": "Gui Fu isn’t just scary—he’s merciless.",
+          "width": 127,
+          "x": 423,
+          "y": 1416
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 15.6,
+          "symWidth": 10.39410130718954,
+          "text": "OF  COURSE , COMPARED  TO  THE  ONE YOU  MET  IN  THE  PAVILION , GUI  FU'S  ABSOLUTELY NOTHING .",
+          "translation": "And compared to the one you saw in the pavilion, Gui Fu’s nothing.",
+          "width": 220,
+          "x": 339,
+          "y": 2350
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 12.83333333333333,
+          "symWidth": 9.043864079390396,
+          "text": "REMEMBER MY  WORDS ,  HE MUSTN'T  BE  MENTIONED , HE  MUSTN'T  BE  THOUGHT OF ,  HE  MUSTN'T  BE QUESTIONED .",
+          "translation": "Mark my words: He must never be named, never considered, never doubted.",
+          "width": 179,
+          "x": 299,
+          "y": 3281
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 13.81118881118881,
+          "symWidth": 9.463286713286713,
+          "text": "THINKING JUST ABOUT  THE  WAY  HE LOOKS ,  COMBINED  WITH YOU  MENTIONING HIM , IS  ALREADY ENOUGH FOR HIM  TO  HEAR YOU .",
+          "translation": "Just thinking or speaking his name is enough for him to hear.",
+          "width": 181,
+          "x": 72,
+          "y": 3614
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 15,
+          "symWidth": 9.583333333333334,
+          "text": "I  UNDERSTAND .",
+          "translation": "Understood.",
+          "width": 122,
+          "x": 519,
+          "y": 4057
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 13.5,
+          "symWidth": 9.708333333333332,
+          "text": "MUSTN'T BE  MENTIONED ,",
+          "translation": "Never mention him,",
+          "width": 106,
+          "x": 464,
+          "y": 4770
+        }
+      ],
+      "imgHeight": 4804,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 12.66666666666667,
+          "symWidth": 10.03156565656566,
+          "text": "MUSTN'T  BE  THOUGHT OF ,  MUSTN'T  BE QUESTIONED !",
+          "translation": "It can't be thought about, can't be questioned!",
+          "width": 159,
+          "x": 436,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 74.5,
+          "symWidth": 73.25,
+          "text": "EA7 !",
+          "translation": "EA7!",
+          "width": 159,
+          "x": 136,
+          "y": 743
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 12.8,
+          "symWidth": 8.840995115995117,
+          "text": "LET'S  NOT MENTION  THE PRIMORDIAL  SECRET REALM  ANYMORE , TALK  TO  ME  ABOUT SOMETHING  ELSE .",
+          "translation": "Let’s drop the topic of the Primordial Secret Realm. Talk to me about something else.",
+          "width": 146,
+          "x": 453,
+          "y": 796
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 7.875,
+          "text": "ALRIGHT .",
+          "translation": "Alright.",
+          "width": 66,
+          "x": 313,
+          "y": 1848
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 12.8,
+          "symWidth": 8.547041847041848,
+          "text": "BEFORE  THIS , I  ALSO  WENT  TO  THE THUNDERWIND  CONTINENT , WANTING  TO  SUBDUE  THE THUNDER  TREE  KING ...",
+          "translation": "Before this, I went to the Thunderwind Continent to try and subdue the Thunder Tree King...",
+          "width": 181,
+          "x": 46,
+          "y": 1943
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 13.45882352941176,
+          "symWidth": 9.604328836797878,
+          "text": "AS  FOR THE  ONE  YOU  MET UNDER  THE  THUNDERWIND CONTINENT ,  IT'S  JUST  A COMPANION  BEAST  OF THE  THUNDER  GOD .",
+          "translation": "The one you saw under the Thunderwind Continent? Just a companion beast of the Thunder God.",
+          "width": 194,
+          "x": 387,
+          "y": 2603
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 13.66666666666667,
+          "symWidth": 8.547619047619047,
+          "text": "ANTARES , WHO'S  STRONGER , YOU  OR  IT ?",
+          "translation": "Antares, who's stronger, you or it?",
+          "width": 132,
+          "x": 24,
+          "y": 2940
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 15.33333333333333,
+          "symWidth": 10.3973063973064,
+          "text": "NONSENSE , OF  COURSE  I'M STRONGER .",
+          "translation": "Nonsense, of course I’m stronger.",
+          "width": 132,
+          "x": 346,
+          "y": 3082
+        }
+      ],
+      "imgHeight": 4805,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 13.35151515151515,
+          "symWidth": 9.825226485226485,
+          "text": "LEVEL  96  AND LEVEL  95  ARE  THE DIVIDING  LINES  OF  THE GOD - LEVEL ;  LEVEL  96  IS THE  TRUE  STARTING  POINT OF  TOUCHING  THE LAWS !",
+          "translation": "Levels 95 and 96 mark the threshold of godhood; Level 96 is where you truly begin to master the laws!",
+          "width": 205,
+          "x": 24,
+          "y": 1338
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 13.58928571428572,
+          "symWidth": 8.718253968253968,
+          "text": "AS  LONG  AS  THE  TWO OF  THEM  SUCCESSFULLY BREAK  THROUGH  TO  LEVEL  96 , THE  STRENGTH  OF  OUR  SHENXIA EMPIRE  AND  ALL  OF  HUMANITY WILL  BE  GREATLY ENHANCED !",
+          "translation": "If either of them breaks through to Level 96, the power of the Shenxia Empire—and all humanity—will skyrocket!",
+          "width": 228,
+          "x": 113,
+          "y": 2008
+        }
+      ],
+      "imgHeight": 5304,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [],
+      "imgHeight": 5305,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 338,
+          "symHeight": 333.3333333333333,
+          "symWidth": 191.6666666666667,
+          "text": "T !!",
+          "translation": "T!!",
+          "width": 395,
+          "x": 0,
+          "y": 1
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 15.51034482758621,
+          "symWidth": 11.44193312434692,
+          "text": "THIS  AURA ... LOOKS  LIKE  OLD MENG  AND  OLD  BAI HAVE  SUCCESSFULLY MADE  THEIR  BREAK- THROUGH !",
+          "translation": "This aura... Looks like Old Meng and Old Bai finally broke through!",
+          "width": 187,
+          "x": 122,
+          "y": 1333
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 15,
+          "symWidth": 10.44642857142857,
+          "text": "THE  TWO  OF  THEM HAVE  FINALLY  TAKEN THAT  STEP !",
+          "translation": "They’ve both taken that step at last!",
+          "width": 161,
+          "x": 386,
+          "y": 2822
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 14,
+          "symWidth": 10,
+          "text": "HUMANITY HAS  USHERED  IN A  NEW  ERA .",
+          "translation": "Humanity is entering a new era.",
+          "width": 128,
+          "x": 385,
+          "y": 3551
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 33,
+          "text": "「 送  快 看 漫画",
+          "translation": "",
+          "width": 186,
+          "x": 504,
+          "y": 4099
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 16.66666666666667,
+          "symWidth": 11.32424242424243,
+          "text": "HAHA ! I'VE  FINALLY SUCCEEDED !",
+          "translation": "Haha! I've finally made it!",
+          "width": 126,
+          "x": 151,
+          "y": 4785
+        }
+      ],
+      "imgHeight": 5600,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 14.67368421052631,
+          "symWidth": 10.1052380952381,
+          "text": "IT'S  ALL THANKS  TO  THAT LIN  BOY  THAT  WE WERE  ABLE  TO  BREAK THROUGH  TO  LEVEL 96  SO  QUICKLY !",
+          "translation": "It's all thanks to that Lin boy we broke through to level 96 so fast!",
+          "width": 169,
+          "x": 448,
+          "y": 349
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 15.75,
+          "symWidth": 10.34821428571428,
+          "text": "THAT'S  RIGHT , THAT  LIN  BOY  IS OUR  HUMAN  RACE'S LUCKY  STAR ...",
+          "translation": "That's right, that Lin boy is our human race’s lucky charm...",
+          "width": 164,
+          "x": 453,
+          "y": 972
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15,
+          "symWidth": 9.36111111111111,
+          "text": "KUNLUN MOUNTAINS",
+          "translation": "Kunlun Mountains",
+          "width": 86,
+          "x": 131,
+          "y": 2912
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 12.83333333333333,
+          "symWidth": 9.092864923747277,
+          "text": "AFTER PARTING  WITH ANTARES ,  IT'S  TIME  TO CLEAR  THE  LAST  PART  OF THE  KUNLUN  MOUNTAIN DUNGEON .",
+          "translation": "After parting with Antares, it's time to clear the final section of the Kunlun Mountain dungeon.",
+          "width": 189,
+          "x": 432,
+          "y": 3220
+        }
+      ],
+      "imgHeight": 5600,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 68.33333333333333,
+          "symWidth": 47,
+          "text": "欢 湯 !",
+          "translation": "",
+          "width": 136,
+          "x": 531,
+          "y": 1730
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 17.3448275862069,
+          "symWidth": 12.82758620689655,
+          "text": "LOOK !  DID THAT  PERSON FALL  BEHIND ?",
+          "translation": "Look! Did someone get left behind?",
+          "width": 147,
+          "x": 385,
+          "y": 2584
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 16.85714285714286,
+          "symWidth": 12.40816326530612,
+          "text": "WHY  IS  THERE SOMEONE  ALONE  IN THE  LAST  STAGE  OF THE  DUNGEON ?",
+          "translation": "Why is there someone alone on the final dungeon floor?",
+          "width": 193,
+          "x": 452,
+          "y": 2996
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.27586206896552,
+          "symWidth": 11.6551724137931,
+          "text": "IF  HE'S  RUNNING THE  DUNGEON  ALONE , HE'S  PROBABLY  THAT LEGENDARY  GUY .",
+          "translation": "If he's clearing the dungeon solo, he's probably that legendary guy.",
+          "width": 217,
+          "x": 453,
+          "y": 4167
+        }
+      ],
+      "imgHeight": 4659,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 16.58620689655172,
+          "symWidth": 9.482758620689655,
+          "text": "KUNLUN  SHRINE :  LAST STAGE  DUNGEON",
+          "translation": "KUNLUN SHRINE: FINAL STAGE DUNGEON",
+          "width": 178,
+          "x": 119,
+          "y": 912
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 15.5,
+          "symWidth": 9.5,
+          "text": "I'M  FINALLY HERE .",
+          "translation": "I’VE MADE IT.",
+          "width": 101,
+          "x": 415,
+          "y": 1811
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 17.83333333333334,
+          "text": "I  KNEW IT .",
+          "translation": "I KNEW IT.",
+          "width": 109,
+          "x": 212,
+          "y": 3117
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 24.5,
+          "symWidth": 16.6,
+          "text": "HE'S ...  GOD GENERAL  LIN !",
+          "translation": "He’s... General Lin, the God!",
+          "width": 202,
+          "x": 208,
+          "y": 3814
+        }
+      ],
+      "imgHeight": 4660,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 9.4375,
+          "text": "INSIDE  THE  DUNGEON",
+          "translation": "Inside the Dungeon",
+          "width": 160,
+          "x": 26,
+          "y": 81
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 13.7027027027027,
+          "symWidth": 10.48648648648649,
+          "text": "HM ,  IN  EACH  OF THE  FOUR  DIRECTIONS OF  THE  FIELD ,  THERE'S AN  ELEMENTAL  SPIRIT GUARDING  IT .",
+          "translation": "Hmm, in each of the four directions, an elemental spirit stands guard.",
+          "width": 178,
+          "x": 236,
+          "y": 1342
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10,
+          "text": "NORTH",
+          "translation": "North",
+          "width": 47,
+          "x": 310,
+          "y": 2178
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 10.75,
+          "text": "EAST",
+          "translation": "East",
+          "width": 39,
+          "x": 606,
+          "y": 2419
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 10.5,
+          "text": "WEST",
+          "translation": "West",
+          "width": 40,
+          "x": 51,
+          "y": 2432
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 10.2,
+          "text": "SOUTH",
+          "translation": "South",
+          "width": 48,
+          "x": 319,
+          "y": 2735
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17,
+          "symWidth": 9.761904761904763,
+          "text": "FIRE  COMMANDER LEVEL : 78",
+          "translation": "Fire Commander Level: 78",
+          "width": 140,
+          "x": 458,
+          "y": 4028
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 111.6666666666667,
+          "symWidth": 57,
+          "text": "HI !",
+          "translation": "Hi!",
+          "width": 129,
+          "x": 27,
+          "y": 4089
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 13.375,
+          "symWidth": 9.732070707070708,
+          "text": "LOOKS  LIKE THE  FIRST  STAGE  OF THE  DUNGEON  IS  TO  DEAL WITH  THESE  ELEMENTAL COMMANDERS .",
+          "translation": "Looks like the first stage of the dungeon is to take down these elemental commanders.",
+          "width": 197,
+          "x": 98,
+          "y": 4894
+        }
+      ],
+      "imgHeight": 5495,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 14,
+          "symWidth": 9.3375,
+          "text": "COME  OUT , HEADLESS  KNIGHT .",
+          "translation": "Come out, Headless Knight.",
+          "width": 141,
+          "x": 69,
+          "y": 153
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 16,
+          "symWidth": 7.846153846153846,
+          "text": "KILLING  CHARGE",
+          "translation": "Killing Charge",
+          "width": 114,
+          "x": 403,
+          "y": 1915
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 16,
+          "symWidth": 10.62698412698413,
+          "text": "JUST  AS  I EXPECTED .",
+          "translation": "Just as expected.",
+          "width": 102,
+          "x": 485,
+          "y": 2943
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 16,
+          "symWidth": 11.60769230769231,
+          "text": "THE  MONSTERS HERE  ARE  NO  MATCH FOR  ME  ANYMORE .",
+          "translation": "These monsters don’t stand a chance against me now.",
+          "width": 176,
+          "x": 474,
+          "y": 4007
+        },
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 23.42978723404255,
+          "symWidth": 12.37495690125477,
+          "text": "KILLED  LEVEL  78  FIRE  COMMANDER , EXPERIENCE  +32,000,00 OBTAINED  FIRE  KEY FIRE  KEY :  ONE  OF  FOUR  ELEMENTAL KEYS ;  YOU  MUST  COLLECT  ALL  KEYS TO  UNLOCK  THE  NEXT  STAGE  OF  THE",
+          "translation": "Level 78 Fire Commander defeated. EXP +32,000,000. FIRE KEY obtained. FIRE KEY: One of four elemental keys; collect them all to unlock the next stage.",
+          "width": 353,
+          "x": 68,
+          "y": 4457
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 35.66666666666666,
+          "symWidth": 27,
+          "text": "000",
+          "translation": "000",
+          "width": 34,
+          "x": 487,
+          "y": 4849
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 30.6,
+          "text": "洞  快 看 漫画",
+          "translation": "",
+          "width": 183,
+          "x": 18,
+          "y": 5268
+        }
+      ],
+      "imgHeight": 5496,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19,
+          "symWidth": 11.88235294117647,
+          "text": "COLLECT  4 KEYS ,  HUH ?",
+          "translation": "Collect 4 keys, huh?",
+          "width": 114,
+          "x": 94,
+          "y": 64
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 85.5,
+          "symWidth": 82.5,
+          "text": "抓住",
+          "translation": "Got it",
+          "width": 141,
+          "x": 549,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15.30555555555556,
+          "symWidth": 9.683333333333334,
+          "text": "LET'S GO ,  HEADLESS KNIGHT .",
+          "translation": "Let's go, Headless Knight.",
+          "width": 118,
+          "x": 110,
+          "y": 994
+        },
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 153.6666666666667,
+          "symWidth": 147.3333333333333,
+          "text": "ALA",
+          "translation": "",
+          "width": 225,
+          "x": 38,
+          "y": 2216
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.09074074074074,
+          "text": "LOOKS  LIKE I  CAN  ENTER  THE NEXT  STAGE .",
+          "translation": "Looks like I can enter the next stage.",
+          "width": 157,
+          "x": 75,
+          "y": 4251
+        }
+      ],
+      "imgHeight": 5224,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 44,
+          "symWidth": 62,
+          "text": "ово",
+          "translation": "",
+          "width": 72,
+          "x": 145,
+          "y": 3421
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 16.5,
+          "symWidth": 9.876623376623376,
+          "text": "IS  THIS ... THE  REAL  KUNLUN SHRINE ?",
+          "translation": "Is this... the true Kunlun Shrine?",
+          "width": 162,
+          "x": 338,
+          "y": 3498
+        }
+      ],
+      "imgHeight": 5225,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 11.625,
+          "text": "GROOVES ?",
+          "translation": "Grooves?",
+          "width": 97,
+          "x": 168,
+          "y": 370
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 14.75,
+          "symWidth": 9.525378787878788,
+          "text": "PUTTING  THESE ELEMENTAL  KEYS  IN SHOULD  DO  THE TRICK .",
+          "translation": "Slotting these elemental keys should do the trick.",
+          "width": 155,
+          "x": 284,
+          "y": 1389
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 63,
+          "symWidth": 56,
+          "text": "귀 !",
+          "translation": "",
+          "width": 110,
+          "x": 268,
+          "y": 2770
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 50,
+          "symWidth": 25,
+          "text": "10",
+          "translation": "",
+          "width": 29,
+          "x": 169,
+          "y": 2998
+        }
+      ],
+      "imgHeight": 4874,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 9.909090909090908,
+          "text": "KUNLUN  GIANT  EAGLE  ( WORLD - LEVEL  BOSS )",
+          "translation": "KUNLUN GIANT EAGLE (WORLD-LEVEL BOSS)",
+          "width": 339,
+          "x": 286,
+          "y": 2271
+        },
+        {
+          "angle": 0,
+          "height": 273,
+          "symHeight": 19.2,
+          "symWidth": 10.06677051867496,
+          "text": "LEVEL :  85 STRENGTH :  1,000,000 AGILITY :  1,200,000 SPIRIT :  800,000 CONSTITUTION :  1,200,000 SKILLS :  ELEMENTAL  ASSAULT FEATURES :  FIRE  ELEMENT  IMMUNITY , WIND  ELEMENT  IMMUNITY ,  WATER ELEMENT  IMMUNITY ,  LIGHTNING IMMUNITY ELEMENT",
+          "translation": "LEVEL: 85 STRENGTH: 1,000,000 AGILITY: 1,200,000 SPIRIT: 800,000 CONSTITUTION: 1,200,000 SKILLS: ELEMENTAL ASSAULT FEATURES: IMMUNE TO FIRE, WIND, WATER, AND LIGHTNING ELEMENTS",
+          "width": 318,
+          "x": 303,
+          "y": 2347
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.91304347826087,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "Unauthorized reproduction prohibited. Legal action will be taken if found.",
+          "width": 415,
+          "x": 254,
+          "y": 4822
+        }
+      ],
+      "imgHeight": 4875,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

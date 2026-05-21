@@ -1,0 +1,109 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0050",
+  "jobId": "fixture-job-0050",
+  "licenseId": "fixture-license-0050",
+  "pageCount": 2,
+  "pageOrder": ["001.png", "002.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 450,
+          "symHeight": 40.21264367816092,
+          "symWidth": 27.27596469622332,
+          "text": "I'M  BEING DISCHARGED FROM  THE HOSPITAL TODAY ! THANK  YOU FOR  YOUR HOSPITALITY !",
+          "translation": "ESTOU SENDO ALTA DO HOSPITAL HOJE! OBRIGADO PELO CARINHO!",
+          "width": 311,
+          "x": 1478,
+          "y": 526
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 36.5,
+          "text": "MHM ~",
+          "translation": "MHM ~",
+          "width": 143,
+          "x": 333,
+          "y": 995
+        },
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 41.19354838709678,
+          "symWidth": 26.90322580645161,
+          "text": "BE  CAREFUL NOT  TO  HIT YOUR  HEAD AGAIN ~",
+          "translation": "CUIDADO PARA NÃO BATER A CABEÇA DE NOVO ~",
+          "width": 278,
+          "x": 127,
+          "y": 1443
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 231,
+          "symHeight": 95.25,
+          "symWidth": 61.875,
+          "text": "IT ENDED-",
+          "translation": "ACABOU—",
+          "width": 340,
+          "x": 1383,
+          "y": 405
+        },
+        {
+          "angle": 0,
+          "height": 235,
+          "symHeight": 99.5,
+          "symWidth": 55.07142857142857,
+          "text": "MY  FIRST LOVE ...",
+          "translation": "MEU PRIMEIRO AMOR...",
+          "width": 427,
+          "x": 15,
+          "y": 744
+        },
+        {
+          "angle": 0,
+          "height": 343,
+          "symHeight": 35.72539682539683,
+          "symWidth": 29.13333333333334,
+          "text": "IN  THE  END , I  COULDN'T GIVE  SATOU- SAN  MY CONTACT INFOR- MATION ...",
+          "translation": "NO FINAL, NÃO CONSEGUI PASSE PARA O SATOU-SAN MINHAS INFORMAÇÕES DE CONTATO...",
+          "width": 253,
+          "x": 1445,
+          "y": 1774
+        },
+        {
+          "angle": 0,
+          "height": 395,
+          "symHeight": 28.70686868686869,
+          "symWidth": 23.2450505050505,
+          "text": "TONIGHT I'M  GOING TO  CELEBRATE SATOU - SAN'S DISCHARGE FROM  THE HOSPITAL  WITH A  ONE - MAN YAKINIKU PARTY .",
+          "translation": "HOJE À NOITE VOU CELEBRAR A ALTA DO SATOU-SAN COM UMA FESTINHA DE YAKINIKU SOLO.",
+          "width": 254,
+          "x": 103,
+          "y": 1937
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

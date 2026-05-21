@@ -44,6 +44,7 @@ import {
   deleteTranslationJobPageUploads,
   getTranslationJobPageUpload,
   getTranslationJobResultManifest,
+  putTranslationJobDebugArtifact,
   putTranslationJobPageUpload,
   putTranslationJobResultManifest,
   putTranslationResultCacheManifest,
@@ -118,6 +119,11 @@ type LayoutOcrPage = {
   ocrPage: NormalizedOcrPage;
 };
 
+type OcrDebugPage = {
+  fileName: string;
+  ocrPage: NormalizedOcrPage;
+};
+
 type ReusableCachedOcrSource = {
   cacheKey: string;
   layoutPages: LayoutOcrPage[];
@@ -158,6 +164,7 @@ type JobProgressSnapshot = {
 
 export const JOB_RESULT_VERSION =
   '2026-05-06.no-mobile-layout-hints.v1' as const;
+const OCR_DEBUG_ARTIFACT_VERSION = '2026-05-22.ocr-debug.v1' as const;
 const HOSTED_OCR_MAX_BATCH_HEIGHT = 30_000;
 const HOSTED_OCR_MAX_BATCH_PIXELS = 40_000_000;
 const HOSTED_OCR_MAX_INLINE_IMAGE_BYTES = 7 * 1024 * 1024;
@@ -1091,6 +1098,8 @@ async function processStartedTranslationJob(
       uploadAssets,
     });
     let layoutPages: LayoutOcrPage[];
+    let rawOcrDebugPages: OcrDebugPage[] | null = null;
+    let lineGroupedOcrDebugPages: OcrDebugPage[] | null = null;
 
     if (reusableOcrSource) {
       await updateTranslationJobProgress({
@@ -1166,14 +1175,24 @@ async function processStartedTranslationJob(
         },
         pages: uploadedOcrPages,
       });
+      rawOcrDebugPages = cloneOcrDebugPages(ocrPages);
 
-      layoutPages = ocrPages.map((page) => ({
-        ...page,
-        ocrPage: coalesceOcrLineBlocks(page.ocrPage),
-      }));
+      layoutPages = ocrPages.map((page) => {
+        const ocrPage = withEffectiveOcrSourceLanguage(
+          page.ocrPage,
+          startedJob.sourceLanguage
+        );
+
+        return {
+          ...page,
+          ocrPage: coalesceOcrLineBlocks(ocrPage),
+        };
+      });
+      lineGroupedOcrDebugPages = cloneOcrDebugPages(layoutPages);
     }
 
     layoutPages = coalesceOcrPageContinuations(layoutPages);
+    const groupedOcrDebugPages = cloneOcrDebugPages(layoutPages);
 
     const detectedLanguages = layoutPages.map(
       (page) => page.ocrPage.sourceLanguage
@@ -1224,6 +1243,19 @@ async function processStartedTranslationJob(
           ]
         : [];
     });
+    if (rawOcrDebugPages) {
+      await storeOcrDebugArtifact({
+        dbClient,
+        groupedOcrPages: groupedOcrDebugPages,
+        job: startedJob,
+        lineGroupedOcrPages: lineGroupedOcrDebugPages ?? groupedOcrDebugPages,
+        log,
+        rawOcrPages: rawOcrDebugPages,
+        sourceLanguage,
+        translatablePages,
+      });
+    }
+
     const translationBatch =
       translatablePages.length > 0
         ? await performHostedTranslation({
@@ -2177,6 +2209,21 @@ async function getReusableCachedOcrSource(input: {
   log: Pick<typeof logger, 'error' | 'info'>;
   uploadAssets: JobAssetRecord[];
 }): Promise<ReusableCachedOcrSource | null> {
+  if (!canReuseTranslatedResultManifestAsOcrSource()) {
+    if (input.job.chapterCacheKey) {
+      input.log.info({
+        jobId: input.job.id,
+        pageCount: input.job.pageCount,
+        reason: 'translated_result_manifest_is_not_raw_ocr',
+        scope: 'jobs',
+        status: 'skipped_cached_ocr_source',
+        uploadAssetCount: input.uploadAssets.length,
+      });
+    }
+
+    return null;
+  }
+
   const cached = await getCachedTranslationSourceManifest(input);
 
   if (!cached) {
@@ -2216,6 +2263,11 @@ async function getReusableCachedOcrSource(input: {
     cacheKey: cached.cacheKey,
     layoutPages,
   };
+}
+
+function canReuseTranslatedResultManifestAsOcrSource() {
+  // A translated result manifest is already filtered/grouped. It is not raw OCR.
+  return false;
 }
 
 async function getCachedTranslationSourceManifest(input: {
@@ -2302,7 +2354,16 @@ function mapCachedManifestToOcrLayoutPages(input: {
       return null;
     }
 
-    const sanitizedPage = sanitizeHostedPageTranslation(cachedPage);
+    const sourceLanguage = resolveCachedPageSourceLanguage({
+      jobSourceLanguage: input.job.sourceLanguage,
+      manifestSourceLanguage: input.manifest.sourceLanguage,
+      pageSourceLanguage: cachedPage.sourceLanguage,
+    });
+    const sanitizedPage = sanitizeHostedPageTranslation(
+      cachedPage,
+      sourceLanguage,
+      'cached_ocr_source'
+    );
     const ocrPage = zNormalizedOcrPage.parse({
       blocks: sanitizedPage.blocks.map(
         ({ translation: _translation, ...block }) => block
@@ -2312,8 +2373,7 @@ function mapCachedManifestToOcrLayoutPages(input: {
       provider: toGatewayOcrProvider(input.job.resolvedOcrProvider),
       providerModel: 'cached_result_manifest',
       providerRequestId: input.cacheKey,
-      sourceLanguage:
-        sanitizedPage.sourceLanguage || input.manifest.sourceLanguage,
+      sourceLanguage,
       usage: {
         inputTokens: null,
         latencyMs: 0,
@@ -2372,7 +2432,14 @@ function rebindCachedManifestToJob(input: {
     }
 
     pageOrder.push(asset.originalFileName);
-    pages[asset.originalFileName] = sanitizeHostedPageTranslation(cachedPage);
+    pages[asset.originalFileName] = sanitizeHostedPageTranslation(
+      cachedPage,
+      resolveCachedPageSourceLanguage({
+        jobSourceLanguage: input.job.sourceLanguage,
+        manifestSourceLanguage: input.manifest.sourceLanguage,
+        pageSourceLanguage: cachedPage.sourceLanguage,
+      })
+    );
   }
 
   return zTranslationJobResultManifest.parse({
@@ -2610,6 +2677,129 @@ async function storeTranslationResultCache(input: {
   });
 }
 
+async function storeOcrDebugArtifact(input: {
+  dbClient: typeof db;
+  groupedOcrPages: OcrDebugPage[];
+  job: JobRecord;
+  lineGroupedOcrPages: OcrDebugPage[];
+  log: Pick<typeof logger, 'error' | 'info'>;
+  rawOcrPages: OcrDebugPage[];
+  sourceLanguage: string;
+  translatablePages: Array<{
+    blocks: Array<{
+      angle: number;
+      height: number;
+      symHeight: number;
+      symWidth: number;
+      text: string;
+      width: number;
+      x: number;
+      y: number;
+    }>;
+    pageKey: string;
+  }>;
+}) {
+  const artifactName = 'ocr-pages.json';
+  const createdAt = new Date();
+  const body = {
+    createdAt: createdAt.toISOString(),
+    groupedOcrPages: input.groupedOcrPages,
+    job: {
+      chapterCacheKey: input.job.chapterCacheKey,
+      chapterIdentity: normalizeChapterIdentity(input.job.chapterIdentity),
+      id: input.job.id,
+      pageCount: input.job.pageCount,
+      requestedSourceLanguage: input.job.sourceLanguage,
+      resolvedOcrProvider: input.job.resolvedOcrProvider,
+      resolvedTranslationProvider: input.job.resolvedTranslationProvider,
+      targetLanguage: input.job.targetLanguage,
+    },
+    lineGroupedOcrPages: input.lineGroupedOcrPages,
+    rawOcrPages: input.rawOcrPages,
+    sourceLanguage: input.sourceLanguage,
+    translatablePages: input.translatablePages,
+    version: OCR_DEBUG_ARTIFACT_VERSION,
+  };
+
+  try {
+    const storedArtifact = await putTranslationJobDebugArtifact({
+      artifactName,
+      body,
+      jobId: input.job.id,
+    });
+    const existingArtifact = await input.dbClient.jobAsset.findFirst({
+      where: {
+        jobId: input.job.id,
+        kind: 'debug_artifact',
+        originalFileName: artifactName,
+      },
+      select: {
+        id: true,
+      },
+    });
+    const assetData = {
+      bucketName: storedArtifact.bucketName,
+      metadata: {
+        artifactType: 'ocr_pages',
+        createdAt: createdAt.toISOString(),
+        pageCount: input.job.pageCount,
+        version: OCR_DEBUG_ARTIFACT_VERSION,
+      },
+      mimeType: 'application/json',
+      objectKey: storedArtifact.objectKey,
+      originalFileName: artifactName,
+      pageNumber: null,
+      sizeBytes: storedArtifact.sizeBytes,
+    };
+
+    if (existingArtifact) {
+      await input.dbClient.jobAsset.update({
+        where: {
+          id: existingArtifact.id,
+        },
+        data: assetData,
+      });
+    } else {
+      await input.dbClient.jobAsset.create({
+        data: {
+          ...assetData,
+          jobId: input.job.id,
+          kind: 'debug_artifact',
+        },
+      });
+    }
+
+    input.log.info({
+      artifactName,
+      jobId: input.job.id,
+      pageCount: input.job.pageCount,
+      scope: 'jobs',
+      status: 'stored_ocr_debug_artifact',
+    });
+  } catch (error) {
+    input.log.error({
+      artifactName,
+      err: error,
+      jobId: input.job.id,
+      message: 'Failed to store OCR debug artifact',
+      scope: 'jobs',
+    });
+  }
+}
+
+function cloneOcrDebugPages(pages: OcrDebugPage[]): OcrDebugPage[] {
+  return pages.map((page) => ({
+    fileName: page.fileName,
+    ocrPage: {
+      ...page.ocrPage,
+      blocks: page.ocrPage.blocks.map((block) => ({ ...block })),
+      usage: {
+        ...page.ocrPage.usage,
+      },
+    },
+  }));
+}
+
 function parseCachedResultManifest(rawManifest: unknown) {
   const record =
     rawManifest &&
@@ -2628,7 +2818,9 @@ function parseCachedResultManifest(rawManifest: unknown) {
 }
 
 function sanitizeHostedPageTranslation(
-  page: HostedPageTranslation
+  page: HostedPageTranslation,
+  sourceLanguage?: string,
+  mode?: 'cached_ocr_source' | 'translated_manifest'
 ): HostedPageTranslation {
   return {
     ...page,
@@ -2645,6 +2837,8 @@ function sanitizeHostedPageTranslation(
       .filter(
         (block) =>
           !shouldDropProviderTranslationBlock({
+            mode,
+            sourceLanguage: sourceLanguage ?? page.sourceLanguage,
             sourceText: block.text,
             translation: block.rawTranslation,
           })
@@ -2967,7 +3161,7 @@ function resolveEffectiveSourceLanguage(
   }
 
   const counts = detectedLanguages
-    .filter((language) => language && language !== 'auto')
+    .filter((language) => language && !isUnknownSourceLanguage(language))
     .reduce<Record<string, number>>((accumulator, language) => {
       accumulator[language] = (accumulator[language] ?? 0) + 1;
       return accumulator;
@@ -2978,6 +3172,59 @@ function resolveEffectiveSourceLanguage(
   )[0]?.[0];
 
   return dominantLanguage ?? 'auto';
+}
+
+function withEffectiveOcrSourceLanguage(
+  ocrPage: NormalizedOcrPage,
+  requestedSourceLanguage: string
+): NormalizedOcrPage {
+  const sourceLanguage = resolveOcrPageSourceLanguage({
+    detectedSourceLanguage: ocrPage.sourceLanguage,
+    fallbackSourceLanguage: requestedSourceLanguage,
+  });
+
+  if (sourceLanguage === ocrPage.sourceLanguage) {
+    return ocrPage;
+  }
+
+  return {
+    ...ocrPage,
+    sourceLanguage,
+  };
+}
+
+function resolveCachedPageSourceLanguage(input: {
+  jobSourceLanguage: string;
+  manifestSourceLanguage: string;
+  pageSourceLanguage: string;
+}) {
+  return resolveOcrPageSourceLanguage({
+    detectedSourceLanguage: input.pageSourceLanguage,
+    fallbackSourceLanguage: !isUnknownSourceLanguage(
+      input.manifestSourceLanguage
+    )
+      ? input.manifestSourceLanguage
+      : input.jobSourceLanguage,
+  });
+}
+
+function resolveOcrPageSourceLanguage(input: {
+  detectedSourceLanguage: string;
+  fallbackSourceLanguage: string;
+}) {
+  if (!isUnknownSourceLanguage(input.fallbackSourceLanguage)) {
+    return input.fallbackSourceLanguage;
+  }
+
+  if (!isUnknownSourceLanguage(input.detectedSourceLanguage)) {
+    return input.detectedSourceLanguage;
+  }
+
+  return 'auto';
+}
+
+function isUnknownSourceLanguage(sourceLanguage: string) {
+  return /^(?:auto|und|undetermined|unknown)$/i.test(sourceLanguage.trim());
 }
 
 function toPrismaTranslationProvider(

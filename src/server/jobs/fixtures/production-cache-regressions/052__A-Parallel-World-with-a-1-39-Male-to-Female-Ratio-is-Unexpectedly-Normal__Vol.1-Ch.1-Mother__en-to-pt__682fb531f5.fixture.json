@@ -1,0 +1,206 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0052",
+  "jobId": "fixture-job-0052",
+  "licenseId": "fixture-license-0052",
+  "pageCount": 3,
+  "pageOrder": ["001.png", "002.png", "003.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 307,
+          "symHeight": 88.66666666666667,
+          "symWidth": 55.46666666666667,
+          "text": "A  PARALLEL  WORLD  WITH  A 1839  MALE  TO  FEMALE  RATIO IS  UNEXPECTEDLY  NORMAL",
+          "translation": "Um mundo paralelo com uma proporção de 1 homem para 839 mulheres é surpreendentemente normal",
+          "width": 1199,
+          "x": 105,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 387,
+          "symHeight": 384,
+          "symWidth": 410.6666666666667,
+          "text": "TAM",
+          "translation": "TAM",
+          "width": 690,
+          "x": 0,
+          "y": 946
+        }
+      ],
+      "imgHeight": 1344,
+      "imgWidth": 1344,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 330,
+          "symHeight": 34.46938775510204,
+          "symWidth": 22.79591836734694,
+          "text": "SOU - CHAN , YOU  MUST BE  ANXIOUS BECAUSE OF  YOUR AMNESIA , BUT",
+          "translation": "Sou-chan, você deve estar ansiosa por causa da amnésia, mas",
+          "width": 228,
+          "x": 947,
+          "y": 293
+        },
+        {
+          "angle": 0,
+          "height": 625,
+          "symHeight": 41.20982388552559,
+          "symWidth": 26.19482663731426,
+          "text": "BY  SOME CHANCE ,  I , SATOU  SOU , WAS  SWITCHED WITH  ANOTHER ME  FROM  A PARALLEL  WORLD WHERE  THE  MALE- FEMALE  RATIO IS  1:39 ,  OR  SO  SAID THE  GODDESS  IN MY  DREAM .",
+          "translation": "Por acaso, eu, Satou Sou, fui trocado com outra versão minha de um mundo paralelo onde a proporção homem-mulher é 1:39, pelo menos foi o que a deusa disse no meu sonho.",
+          "width": 423,
+          "x": 1312,
+          "y": 299
+        },
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 38.5,
+          "symWidth": 27.23684210526316,
+          "text": "LET'S  MAKE LOTS  OF MEMORIES FROM  NOW ON ,  OKAY ?",
+          "translation": "Vamos criar muitas memórias a partir de agora, tudo bem?",
+          "width": 257,
+          "x": 117,
+          "y": 1252
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 44.85714285714285,
+          "symWidth": 29.5,
+          "text": "... THANKS , MOM .",
+          "translation": "... Obrigada, mamãe.",
+          "width": 254,
+          "x": 1081,
+          "y": 1534
+        },
+        {
+          "angle": 0,
+          "height": 280,
+          "symHeight": 44.07407407407408,
+          "symWidth": 27.9074074074074,
+          "text": "MY  MOTHER IN  THIS WORLD  IS KIND  TO ME .",
+          "translation": "Minha mãe neste mundo é gentil comigo.",
+          "width": 292,
+          "x": 1390,
+          "y": 1698
+        },
+        {
+          "angle": 0,
+          "height": 469,
+          "symHeight": 36.64501082791937,
+          "symWidth": 23.80359820089955,
+          "text": "I  HEARD  THAT MY  PARENTS IN  MY  PREVIOUS WORLD  DIS- APPEARED  WHEN I  WAS  LITTLE ,  BUT ... WAS  MY  MOTHER ALWAYS  THIS YOUNG  AND BEAUTIFUL ?",
+          "translation": "Ouvi que meus pais no mundo anterior desapareceram quando eu era pequena, mas... minha mãe sempre foi tão jovem e bonita assim?",
+          "width": 394,
+          "x": 1014,
+          "y": 1977
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "003.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 59.36363636363637,
+          "symWidth": 60.63636363636363,
+          "text": "AAAAA AAAAH ♡",
+          "translation": "AAAAA AAAAH ♡",
+          "width": 292,
+          "x": 84,
+          "y": 299
+        },
+        {
+          "angle": 0,
+          "height": 253,
+          "symHeight": 63.15384615384615,
+          "symWidth": 58.69230769230769,
+          "text": "MY  SON IS  SO COOL",
+          "translation": "MEU FILHO É TÃO INCRÍVEL",
+          "width": 362,
+          "x": 1310,
+          "y": 353
+        },
+        {
+          "angle": 0,
+          "height": 398,
+          "symHeight": 39.22425629290618,
+          "symWidth": 34.23095442410374,
+          "text": "EVEN  IF I ,  A  WOMAN COME  THIS CLOSE  TO  HIM , HE  DOESN'T SWEAR  OR HIT  ME !!",
+          "translation": "MESMO EU, UMA MULHER, CHEGANDO TÃO PERTO DELE, ELE NÃO XINGA NEM ME BATE!!",
+          "width": 410,
+          "x": 979,
+          "y": 787
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 64,
+          "symWidth": 51.33333333333334,
+          "text": "HE'S  SO KIND !!",
+          "translation": "ELE É TÃO GENTIL!!",
+          "width": 355,
+          "x": 1301,
+          "y": 1345
+        },
+        {
+          "angle": 0,
+          "height": 336,
+          "symHeight": 38.08035714285714,
+          "symWidth": 33.38392857142857,
+          "text": "I  LIKED THE  ROUGH SOU - CHAN FROM BEFORE TOO ,  BUT ...",
+          "translation": "EU GOSTAVA DO SOU-CHAN MAIS BRUTO ANTES, MAS...",
+          "width": 312,
+          "x": 1089,
+          "y": 1741
+        },
+        {
+          "angle": 0,
+          "height": 472,
+          "symHeight": 53.83653846153846,
+          "symWidth": 52.45697115384615,
+          "text": "I  LIKE THE  SUPER KIND SOU - CHAN EVEN i  MORE ♡♡",
+          "translation": "EU GOSTO AINDA MAIS DO SOU-CHAN SUPER GENTIL ♡♡",
+          "width": 345,
+          "x": 667,
+          "y": 1849
+        },
+        {
+          "angle": 0,
+          "height": 563,
+          "symHeight": 33.42463768115942,
+          "symWidth": 30.78288043478261,
+          "text": "LET'S MAKE LOTS  OF MEMORIES ONCE  YOU ARE  DIS- CHARGED , THE  FIRST WITH I  MOMMY THING  WE  i  FROM SHOULD  DO NOW ON IS  TAKE  A BATH TOGETHER",
+          "translation": "VAMOS FAZER MUITAS MEMÓRIAS QUANDO VOCÊ RECEBER ALTA, A PRIMEIRA COISA QUE DEVEMOS FAZER JUNTAS, MAMÃE E VOCÊ, É TOMAR BANHO",
+          "width": 601,
+          "x": 3,
+          "y": 1899
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

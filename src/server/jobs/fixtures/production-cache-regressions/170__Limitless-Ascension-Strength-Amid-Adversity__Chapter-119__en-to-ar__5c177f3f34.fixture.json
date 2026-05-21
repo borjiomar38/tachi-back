@@ -1,0 +1,1426 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0170",
+  "jobId": "fixture-job-0170",
+  "licenseId": "fixture-license-0170",
+  "pageCount": 30,
+  "pageOrder": [
+    "001__001.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 317,
+          "symHeight": 155.7083333333333,
+          "symWidth": 162.0416666666667,
+          "text": "遇 强 则 强 无 上限",
+          "translation": "التقِ بالقوي فتصبح قويًا لا حد له",
+          "width": 549,
+          "x": 52,
+          "y": 48
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 21.31578947368421,
+          "text": "改编 自 小说 《 遇 强 则 强 , 我 的 修 为 无 上限 》",
+          "translation": "مأخوذ عن الرواية \"التقِ بالقوي فتصبح قوتي بلا حدود\"",
+          "width": 471,
+          "x": 131,
+          "y": 480
+        },
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 38.625,
+          "symWidth": 32.86111111111111,
+          "text": "原著 / 史上 最姉 作者 监制 / 老徐  ■ 编剧 / G 周 主笔 / 英 、 凯 、 永乐 界 文化 — 凡 星 勾 线 / 龙 一 、 薯条 上色 / 赫 屿 、 殇 夕 浅 夜",
+          "translation": "المؤلف الأصلي / المؤلف الأكبر في التاريخ  الإشراف / لوشو  ■ السيناريو / جي جوه رئيس الرسم / يينغ، كاي، يونغلوه ثقافة جيا - فان شين خط الرسم / لونغ يي، شوروم تلوين / هي يو، شانغ شي، تشيان يي",
+          "width": 529,
+          "x": 141,
+          "y": 546
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 58.5,
+          "symWidth": 52.9125,
+          "text": "火球 果 漫画 HUOLONGGUO  MANHUA",
+          "translation": "فحم بالكرز مانجا 火球果 漫画",
+          "width": 441,
+          "x": 123,
+          "y": 961
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 18.36363636363636,
+          "symWidth": 14.40909090909091,
+          "text": "MOTHER , WHAT'S  GOING ON ?!",
+          "translation": "أمي، ما الذي يجري؟!",
+          "width": 173,
+          "x": 103,
+          "y": 1448
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 16.14,
+          "symWidth": 12.41274509803922,
+          "text": "YAO'ER ,  THIS YOUNG  MASTER  YOU FOUND ...  I'M  AFRAID HE'S  A  VERY  BIG SHOT !",
+          "translation": "ياوئر، هذا السيد الشاب الذي وجدته... أخشى أنه شخصية نافذة جداً!",
+          "width": 206,
+          "x": 331,
+          "y": 2498
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17,
+          "symWidth": 10.99242424242424,
+          "text": "PINGXI QUEEN ,  I  AM  HERE TO  TELL  YOU  WHAT  A TRUE  POWERHOUSE IS !",
+          "translation": "يا ملكة بنغشي، جئت لأعلمك ما هي القوة الحقيقية!",
+          "width": 213,
+          "x": 46,
+          "y": 2879
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 11.5,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "DRAKECOMIC.ORG",
+          "width": 165,
+          "x": 87,
+          "y": 3534
+        }
+      ],
+      "imgHeight": 3642,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 15.16666666666667,
+          "symWidth": 12.15203106332139,
+          "text": "THE STRONG  CANNOT  BE DEFINED .  THERE  IS  NO DISTINCTION  BETWEEN BEAUTY  AND UGLINESS .",
+          "translation": "القوي لا يُعرف بحدود. لا فرق بين الجمال والقبح.",
+          "width": 241,
+          "x": 394,
+          "y": 1022
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 18.26923076923077,
+          "symWidth": 14.5,
+          "text": "STRONG  IS STRONG !  WEAK IS  WEAK !",
+          "translation": "القوي هو قوي! والضعيف ضعيف!",
+          "width": 174,
+          "x": 86,
+          "y": 1927
+        }
+      ],
+      "imgHeight": 2328,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 21.39130434782609,
+          "symWidth": 17.65217391304348,
+          "text": "THE  WEAK CAN  BECOME STRONG .",
+          "translation": "الضعيف يمكن أن يصبح قويًا.",
+          "width": 181,
+          "x": 410,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 15.4,
+          "symWidth": 12.94456654456654,
+          "text": "AND  THE STRONG  CAN BECOME  WEAK  WHEN FACING  SOMEONE STRONGER .",
+          "translation": "والواثق من قوته قد يضعف أمام من هو أقوى منه.",
+          "width": 215,
+          "x": 88,
+          "y": 1897
+        }
+      ],
+      "imgHeight": 2329,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 24.40909090909091,
+          "symWidth": 20.97727272727273,
+          "text": "FOR  US CULTIVATORS , WE  MUST  ONLY GET  STRONGER WHEN  MEETING THE  STRONG !",
+          "translation": "نحن المزارعون لا بد لنا أن نصبح أقوى حينما نواجه القوي!",
+          "width": 245,
+          "x": 298,
+          "y": 699
+        },
+        {
+          "angle": 0,
+          "height": 235,
+          "symHeight": 39.4,
+          "symWidth": 26.90555555555556,
+          "text": "ONLY  THEN CAN  YOU BECOME ETERNALLY STRONG !!",
+          "translation": "فقط حينها يمكنك أن تصبح قويًا أبديًا!",
+          "width": 213,
+          "x": 176,
+          "y": 2637
+        }
+      ],
+      "imgHeight": 2914,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 18.38636363636364,
+          "symWidth": 15.810168997669,
+          "text": "DON'T WORRY , MASTER !  I  WILL DEFINITELY  GET STRONGER !",
+          "translation": "لا تقلق، سيدي! سأصبح أقوى لا ريب!",
+          "width": 187,
+          "x": 49,
+          "y": 367
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.20833333333333,
+          "symWidth": 15.54107142857143,
+          "text": "WHAT  A POWERHOUSE'S HEART !  SUPREME YE  IS  TRULY  A ROLE  MODEL  FOR US  CULTIVATORS !",
+          "translation": "يا له من قلب بطل! سوبرم ي بحق نموذج يحتذى به لنا نحن المزارعين!",
+          "width": 207,
+          "x": 338,
+          "y": 1378
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.84150326797386,
+          "text": "I  SEE ...  THE PATH  OF  CULTIVATION IS  ABOUT  BECOMING STRONGER ,  NOT BECOMING  MORE BEAUTIFUL ...",
+          "translation": "أدركت... طريق الزراعة هو أن تصبح أقوى، لا أن تصبح أجمل...",
+          "width": 220,
+          "x": 241,
+          "y": 1839
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 11.71428571428571,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "DRAKECOMIC.ORG",
+          "width": 165,
+          "x": 87,
+          "y": 2804
+        }
+      ],
+      "imgHeight": 2914,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 16,
+          "symWidth": 13.63541666666667,
+          "text": "WHO EXACTLY  IS  HE ?! JUST  A  FEW  WORDS ACTUALLY",
+          "translation": "من هو حقًا؟ كلمات قليلة فقط،",
+          "width": 207,
+          "x": 29,
+          "y": 88
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.83333333333333,
+          "text": "MADE  MY",
+          "translation": "جعلت",
+          "width": 95,
+          "x": 136,
+          "y": 153
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 10.91666666666667,
+          "text": "CULTIVATION ,",
+          "translation": "زراعتِي، التي كانت راكدة لسنوات، تتحرر قليلاً...",
+          "width": 134,
+          "x": 5,
+          "y": 175
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 17,
+          "symWidth": 12.31433566433567,
+          "text": "WHICH  HAS BEEN  STAGNANT  FOR YEARS ,  FAINTLY LOOSEN  UP ...",
+          "translation": "إنه لأمر مؤسف، لكن مسارك كان خاطئًا منذ البداية...",
+          "width": 233,
+          "x": 27,
+          "y": 175
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 14.5,
+          "symWidth": 10.98110119047619,
+          "text": "IT'S  A  PITY , BUT  YOUR  PATH  WAS WRONG  FROM  THE  VERY BEGINNING ...",
+          "translation": "وبينما لم ينطفئ في قلبك اللهب للدين الكامل،",
+          "width": 217,
+          "x": 316,
+          "y": 667
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 14.8,
+          "symWidth": 11.25596432552954,
+          "text": "SEEING  THAT YOUR  HEART  FOR  THE DAO  HASN'T  BEEN  COMPLETELY EXTINGUISHED ,",
+          "translation": "وأنت لم تكن سوى أداة لدى عشيرة البحر، سأعفي حياتك الآن.",
+          "width": 280,
+          "x": 210,
+          "y": 2015
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 14.2,
+          "symWidth": 11.67545454545455,
+          "text": "AND  YOU  WERE MERELY  USED  BY  THE  SEA CLAN ,  I  WILL  SPARE YOUR  LIFE  FOR NOW .",
+          "translation": "",
+          "width": 260,
+          "x": 231,
+          "y": 2071
+        }
+      ],
+      "imgHeight": 2913,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 21.5,
+          "symWidth": 16.63095238095238,
+          "text": "WAS  I ... WRONG ?",
+          "translation": "هل كنت... مخطئًا؟",
+          "width": 121,
+          "x": 396,
+          "y": 1814
+        }
+      ],
+      "imgHeight": 2915,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 21.5,
+          "symWidth": 14.28571428571428,
+          "text": "IT'S  ALL OVER ...",
+          "translation": "الأمر قد انتهى...",
+          "width": 113,
+          "x": 111,
+          "y": 775
+        }
+      ],
+      "imgHeight": 2756,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 22,
+          "symWidth": 16.06565656565657,
+          "text": "IT'S  STILL NOT  TOO  LATE .",
+          "translation": "لم يفت الأوان بعد.",
+          "width": 204,
+          "x": 277,
+          "y": 506
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 11.66666666666667,
+          "text": "THE",
+          "translation": "النار السفلية قد أعادت تشكيل روحك. لو استطعت يومًا إدراك الطريق الصحيح، سيلتئم جسدك وروحك،",
+          "width": 34,
+          "x": 284,
+          "y": 1323
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 14.14285714285714,
+          "symWidth": 11.41248401447813,
+          "text": "NETHER FIRE  HAS  ALREADY REFORGED  YOUR  SOUL .  IF ONE  DAY  YOU  CAN  COMPREHEND THE  CORRECT  PATH ,  YOUR  BODY AND  SOUL  WILL  REUNITE , AND  YOU'LL",
+          "translation": "وستستعيد مظهرك الأصلي تمامًا.",
+          "width": 290,
+          "x": 193,
+          "y": 1323
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 14.5,
+          "symWidth": 11.13693181818182,
+          "text": "COMPLETELY RESTORE  YOUR ORIGINAL APPEARANCE .",
+          "translation": "DRARECOMIC.ORG",
+          "width": 181,
+          "x": 270,
+          "y": 1435
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 11.71428571428571,
+          "text": "DRARECOMIC.ORG",
+          "translation": "أشكرك على هدايتك، أيتها الروحية. هذا المبتدئ سيحفظ",
+          "width": 165,
+          "x": 87,
+          "y": 2648
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 14.25,
+          "symWidth": 10.99955357142857,
+          "text": "THANK YOU  FOR  YOUR GUIDANCE ,  SENIOR . THIS  JUNIOR  WILL",
+          "translation": "",
+          "width": 176,
+          "x": 331,
+          "y": 2685
+        }
+      ],
+      "imgHeight": 2757,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 14.33333333333333,
+          "symWidth": 10.88194444444444,
+          "text": "ENGRAVE  YOUR  GREAT KINDNESS  IN  MY HEART .",
+          "translation": "سأنقش معروفك العظيم في قلبي.",
+          "width": 200,
+          "x": 319,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 14.41666666666667,
+          "symWidth": 11.7124613003096,
+          "text": "MASTER ,  I DON'T  KNOW  WHY ,  BUT SEEING  THIS  UGLY  FREAK MAKES  ME  MISS  ELDEST SENIOR",
+          "translation": "سيدي، لا أعلم لماذا، لكن رؤية هذا الوحش القبيح تجعلني أشتاق للأخ الأكبر الكبير قليلًا...",
+          "width": 237,
+          "x": 304,
+          "y": 1794
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 14.5,
+          "symWidth": 9.571428571428571,
+          "text": "BROTHER A  BIT ...",
+          "translation": "",
+          "width": 111,
+          "x": 391,
+          "y": 1868
+        }
+      ],
+      "imgHeight": 2756,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 28.5,
+          "text": "腾讯 动漫",
+          "translation": "تريندينغ أنمي",
+          "width": 105,
+          "x": 583,
+          "y": 193
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 13.83068783068783,
+          "symWidth": 9.782010582010583,
+          "text": "YEAH , WITHOUT  LITTLE  HONG AROUND ,  THINGS  HAVE GOTTEN  A  BIT  BORING FOR  YOUR  MASTER TOO ...",
+          "translation": "نعم، بدون هونغ الصغير، الأمور بدت مملة بعض الشيء لسيدك أيضًا...",
+          "width": 204,
+          "x": 65,
+          "y": 693
+        }
+      ],
+      "imgHeight": 2756,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 24.125,
+          "symWidth": 21.79166666666667,
+          "text": "DEAD MOSQUITO , YOU  THINK YOU'RE  THE ONLY  ONE WHO  CAN BITE ?",
+          "translation": "أيها البعوض الميت، هل تظن أنك الوحيد من يعض؟",
+          "width": 176,
+          "x": 297,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 27.5,
+          "symWidth": 25.68181818181818,
+          "text": "WATCH ME  BITE YOU  TO DEATH !",
+          "translation": "سأريك كيف أمضغك حتى الموت!",
+          "width": 150,
+          "x": 137,
+          "y": 1656
+        }
+      ],
+      "imgHeight": 2841,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 32,
+          "symWidth": 31,
+          "text": "DAMN GO !!",
+          "translation": "اللعنة اذهب!",
+          "width": 123,
+          "x": 124,
+          "y": 147
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 23.66666666666667,
+          "text": "IT !  LET",
+          "translation": "ليكن",
+          "width": 146,
+          "x": 116,
+          "y": 185
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 25.5,
+          "symWidth": 24.91666666666667,
+          "text": "YOU  MAD DOG !!!",
+          "translation": "كلبك المجنون!!!",
+          "width": 156,
+          "x": 268,
+          "y": 1893
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 11.5,
+          "text": "DRARECOMIC.ORG",
+          "translation": "DRARECOMIC.ORG",
+          "width": 166,
+          "x": 87,
+          "y": 2734
+        }
+      ],
+      "imgHeight": 2842,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 13.89655172413793,
+          "symWidth": 11.27586206896552,
+          "text": "WHAT ?  YOU  DON'T BITING  EACH  OTHER ?",
+          "translation": "ماذا؟ ألا تعضون بعضكم البعض؟",
+          "width": 192,
+          "x": 405,
+          "y": 1032
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 15.875,
+          "symWidth": 10.8125,
+          "text": "LIKE  THE  FEELING  OF",
+          "translation": "أنا أحب شعور",
+          "width": 200,
+          "x": 401,
+          "y": 1050
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 13.22727272727273,
+          "symWidth": 9.863636363636363,
+          "text": "I  GAIN BLOOD  ANYWAY ,  SO  I'M",
+          "translation": "أنني أحصل على الدم، لذلك أنا",
+          "width": 183,
+          "x": 58,
+          "y": 1993
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 9.7,
+          "text": "CULTIVATION  BY  SUCKING",
+          "translation": "أتنمى بالزراعة عن طريق الامتصاص.",
+          "width": 200,
+          "x": 50,
+          "y": 2011
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 9.285714285714286,
+          "text": "NOT  LOSING  OUT !!",
+          "translation": "لا أريد أن أخسر!",
+          "width": 141,
+          "x": 80,
+          "y": 2043
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 13,
+          "symWidth": 9.607055263577003,
+          "text": "BUT  DON'T  LET  MY CULTIVATION  SURPASS  YOURS BY  SUCKING ,  OR  I'LL  ABSOLUTELY GRIND  YOU  INTO  MEAT  PASTE FOR  STUFFING !!!",
+          "translation": "ولكن لا تدع زراعتي تفوق زراعتك بالامتصاص، وإلا سأطحنك حتى تصبح معجونًا للحشو!",
+          "width": 265,
+          "x": 211,
+          "y": 2457
+        }
+      ],
+      "imgHeight": 2841,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.25,
+          "symWidth": 10.60899725274725,
+          "text": "IMPERIAL PALACE  FORBIDDEN AREA ,  HEAVENLY MAIDEN  KINGDOM .",
+          "translation": "منطقة ممنوعة في القصر الإمبراطوري، مملكة العذارى السماويات.",
+          "width": 179,
+          "x": 62,
+          "y": 1429
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 12.66666666666667,
+          "symWidth": 9.393518518518519,
+          "text": "TSK ,  BUILDING A  FORBIDDEN  AREA  THIS EXTRAVAGANTLY ...",
+          "translation": "تس، بناء منطقة ممنوعة بهذه البذخ...",
+          "width": 214,
+          "x": 347,
+          "y": 2572
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 13,
+          "symWidth": 10.26666666666667,
+          "text": "YOU  REALLY SEE  EVERYTHING  IF  YOU LIVE  LONG  ENOUGH !",
+          "translation": "حقًا تُرى كل شيء إذا عشت طويلًا!",
+          "width": 215,
+          "x": 366,
+          "y": 2603
+        }
+      ],
+      "imgHeight": 2842,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 12.6,
+          "symWidth": 9.382938530734632,
+          "text": "DON'T  YOU  THINK  SO ,  SOUR SCHOLAR ?  IT'S  LIKE  THEY'RE  AFRAID PEOPLE  WON'T  KNOW  IT'S  A  FORBIDDEN AREA .  MASTER  WON'T  BE  IN  ANY DANGER  INSIDE ,  RIGHT ?!",
+          "translation": "ألا تظن ذلك، أيها الباحث المر؟ كأنهم يخافون أن لا يعلم الناس أنها منطقة ممنوعة. سيدنا لن يكون في خطر داخلها، أليس كذلك؟!",
+          "width": 300,
+          "x": 32,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 9.25,
+          "symWidth": 7.6453125,
+          "text": "SUPREME  YE'S  LIFE IS  NOT  IN  DANGER ,  RUMOR  HAS  IT THAT  ALL  MALE  CULTIVATORS  WHO  ENTERED THE",
+          "translation": "حياة السوبرم ي ليست في خطر، الشائعات تقول إن كل المزارعين الذكور الذين دخلوا",
+          "width": 250,
+          "x": 219,
+          "y": 1640
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 9,
+          "symWidth": 7.722222222222222,
+          "text": "FORBIDDEN  AREA  CAME  OUT  SAFE AND  SOUND ,",
+          "translation": "المنطقة الممنوعة خرجوا سالمين،",
+          "width": 197,
+          "x": 259,
+          "y": 1676
+        },
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 9,
+          "symWidth": 7.5,
+          "text": "IT'S",
+          "translation": "إنه",
+          "width": 24,
+          "x": 347,
+          "y": 1688
+        },
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 9,
+          "symWidth": 6.571428571428571,
+          "text": "JUST ...",
+          "translation": "مجرد...",
+          "width": 38,
+          "x": 375,
+          "y": 1688
+        },
+        {
+          "angle": 0,
+          "height": 10,
+          "symHeight": 10,
+          "symWidth": 7.727272727272728,
+          "text": "IT'S  JUST ...",
+          "translation": "مجرد...",
+          "width": 68,
+          "x": 311,
+          "y": 1699
+        }
+      ],
+      "imgHeight": 2474,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 17.47619047619048,
+          "symWidth": 14.93253968253968,
+          "text": "JUST WHAT ?  HURRY UP  AND  SAY IT !",
+          "translation": "مجرد ماذا؟ أسرع وقلها!",
+          "width": 157,
+          "x": 60,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 17.98666666666667,
+          "symWidth": 14.75553049289891,
+          "text": "IT'S  JUST  THAT THEY  ALL  SUFFERED LIFELONG  KIDNEY DEFICIENCY  AS  A  HIDDEN INJURY !!!",
+          "translation": "فقط أنهم عانوا من قصور كلوي مدى الحياة كإصابة خفية!!!",
+          "width": 292,
+          "x": 200,
+          "y": 727
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 11.57142857142857,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "DRAKECOMIC.ORG",
+          "width": 165,
+          "x": 87,
+          "y": 2367
+        }
+      ],
+      "imgHeight": 2475,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 12,
+          "symWidth": 9.406176640696764,
+          "text": "QUEEN  DONGFANG ,  ARE YOU  SAYING  THIS  BED  IS  THE  KEY  TO UNLOCKING  THE  RESTRICTION  ON  THE TELEPORTATION  ARRAY ?",
+          "translation": "ملكة دونغفانغ، هل تقولين إن هذه السرير هو مفتاح فك قيود مصفوفة الانتقال؟",
+          "width": 283,
+          "x": 215,
+          "y": 140
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 10.81981981981982,
+          "symWidth": 7.891185302950007,
+          "text": "SENIOR  YE ,  EXACTLY . THIS  BED  CONNECTS  TO  OUR ANCESTOR'S  IMMORTAL  SENSE  AND  IMMORTAL VEINS .",
+          "translation": "الأستاذ ي، بالضبط. هذا السرير مرتبط بحواس خالد سلفنا والأوردة الخالدة.",
+          "width": 287,
+          "x": 75,
+          "y": 1304
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 10,
+          "symWidth": 8.191269841269841,
+          "text": "THE  RESTRICTION  CAN  ONLY BE  LIFTED  BY  HELPING  THE ANCESTOR  AWAKEN .",
+          "translation": "لا يمكن رفع القيود إلا بمساعدة إيقاظ السلف.",
+          "width": 196,
+          "x": 133,
+          "y": 1343
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 10.71717171717172,
+          "symWidth": 8.577480289436812,
+          "text": "THERE  ARE  ONLY TWO  WAYS  FOR  A  REVIVED  ONE TO  AWAKEN :  SELF - HEALING  THROUGH WORLDLY  SPIRITUAL  ENERGY , OR  USING  THE  BLOODLINE  OF THEIR  KIN  TO  TRANSFER POWER .",
+          "translation": "لا طريقة سوى طريقتين ليصحوا المُحيى: الشفاء الذاتي بواسطة الطاقة الروحية الدنيوية، أو استعمال دم ذويهم لنقل الطاقة.",
+          "width": 243,
+          "x": 351,
+          "y": 1909
+        }
+      ],
+      "imgHeight": 2474,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 11,
+          "symWidth": 8.282531840140537,
+          "text": "BUT  THIS RESTRICTION  ISOLATES  THE OUTSIDE  WORLD .  SPIRITUAL  ENERGY FROM  OUTSIDE  THE  ARRAY  CAN'T  ENTER , AND  THE  ENERGY  INSIDE  WON'T LEAK  OUT  EITHER .",
+          "translation": "لكن هذه القيود تخيّط العالم الخارجي بعيدًا. الطاقة الروحية من خارج المصفوفة لا تدخل، والطاقة الداخلية لا تتسرب.",
+          "width": 268,
+          "x": 353,
+          "y": 834
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 14.5,
+          "symWidth": 11.10416666666667,
+          "text": "I  PRESUME  THE ANCESTOR  OF  THE HEAVENLY",
+          "translation": "أظن أن سلف مملكة العذارى السماويات",
+          "width": 169,
+          "x": 156,
+          "y": 2078
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 11.5,
+          "text": "MAIDEN",
+          "translation": "لم يتوقع",
+          "width": 70,
+          "x": 253,
+          "y": 2116
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11.85714285714286,
+          "text": "KINGDOM",
+          "translation": "يوم حين تصبح طاقة كونلون الروحية",
+          "width": 88,
+          "x": 161,
+          "y": 2135
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 14.66666666666667,
+          "symWidth": 11.26709401709402,
+          "text": "DIDN'T FORESEE  THE  DAY WHEN  KUNLUN'S",
+          "translation": "...",
+          "width": 204,
+          "x": 122,
+          "y": 2135
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 10.88888888888889,
+          "text": "SPIRITUAL",
+          "translation": "...",
+          "width": 92,
+          "x": 266,
+          "y": 2171
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 13.83333333333333,
+          "symWidth": 11.16666666666667,
+          "text": "ENERGY",
+          "translation": "",
+          "width": 70,
+          "x": 205,
+          "y": 2190
+        }
+      ],
+      "imgHeight": 2474,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 10.16666666666667,
+          "symWidth": 7.743927125506072,
+          "text": "SENIOR  YE PREDICTS  THINGS  LIKE  A GOD .  HOWEVER ,  THE  CULTIVATION METHOD  THE  ANCESTOR  PRACTICES  IS SPECIAL ,  SO  THE  POWER  TRANSFER ALSO",
+          "translation": "البروفيسور ي يتنبأ كالإله. غير أن طريقة الزراعة التي يمارسها السلف خاصة، إذ يعتمد نقل القوة على جوهر الرجل الحيوي.",
+          "width": 224,
+          "x": 397,
+          "y": 1802
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 9.666666666666666,
+          "symWidth": 7.693506493506494,
+          "text": "REQUIRES  A  MAN'S VITAL  ESSENCE  FOR ASSISTANCE .",
+          "translation": "وهذا يتطلب مساعدة جوهر الرجل الحيوي.",
+          "width": 132,
+          "x": 449,
+          "y": 1863
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 28.75,
+          "symWidth": 24.91666666666666,
+          "text": "OH ?  I SEE ...",
+          "translation": "آه؟ فهمت...",
+          "width": 115,
+          "x": 196,
+          "y": 2391
+        }
+      ],
+      "imgHeight": 2899,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 14,
+          "symWidth": 12.25041771094403,
+          "text": "THIS  PERSON ISN'T  A  REVIVED  ONE  AT ALL !  SINCE  THEY  DARE  TO USE",
+          "translation": "هذا الشخص ليس محتضرًا على الإطلاق! فهو يجرؤ على استخدامي، إلا أن عليه دفع الثمن بالدم!",
+          "width": 234,
+          "x": 315,
+          "y": 498
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 12.66666666666667,
+          "text": "ME ,",
+          "translation": "السلف يتطلب شروطًا قاسية. في الماضي، لتجنب تدمير أساس المزارع، كنت أخذ جزءًا صغيرًا من كل رجل. الآن، نحتاج إلى ستة ملايين وستمائة وستين ألف رجل.",
+          "width": 34,
+          "x": 375,
+          "y": 561
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 14,
+          "symWidth": 12.06643356643357,
+          "text": "THEY'LL  HAVE TO  PAY  THE  PRICE IN",
+          "translation": "ما زلنا بعيدين عن فتح القيود... لكن أستاذنا متعمق في الزراعة، فبالتالي نستطيع استخلاص المزيد قليلاً.",
+          "width": 182,
+          "x": 348,
+          "y": 561
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 12.28571428571429,
+          "text": "BLOOD !!",
+          "translation": "DRARECOMIC.ORG",
+          "width": 75,
+          "x": 409,
+          "y": 601
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 8.333333333333334,
+          "text": "THE",
+          "translation": "",
+          "width": 25,
+          "x": 147,
+          "y": 949
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 10.75,
+          "symWidth": 8.365871171652422,
+          "text": "ANCESTOR'S DEMANDS  ARE  EXTREMELY  HIGH . IN  THE  PAST ,  TO  AVOID  RUINING  A CULTIVATOR'S  FOUNDATION ,  I  ONLY  TOOK A  TINY  SLIVER  FROM  EACH  MAN .  EVEN NOW ,  WE  STILL  NEED  SIX  MILLION , SIX  HUNDRED  AND  SIXTY THOUSAND  MEN .",
+          "translation": "",
+          "width": 271,
+          "x": 67,
+          "y": 949
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 12.83333333333333,
+          "symWidth": 9.82576050358659,
+          "text": "WE'RE  STILL TOO  FAR  FROM  OPENING  THE RESTRICTION ...  BUT  SENIOR HAS  PROFOUND  CULTIVATION ,  SO NATURALLY ,  WE  CAN  EXTRACT A  BIT  MORE .",
+          "translation": "",
+          "width": 254,
+          "x": 262,
+          "y": 2335
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 11.5,
+          "text": "DRARECOMIC.ORG",
+          "translation": "",
+          "width": 166,
+          "x": 86,
+          "y": 2790
+        }
+      ],
+      "imgHeight": 2900,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 11.67708333333333,
+          "symWidth": 9.749198717948719,
+          "text": "MOTHER ,  I'M  THE ONE  WHO  FOUND  SENIOR  YE . YOU  CAN'T  HOG  HIM  ALL TO  YOURSELF !",
+          "translation": "أمي، أنا من وجد الأستاذ ي. لا يمكنك الاحتكار فقط له!",
+          "width": 226,
+          "x": 112,
+          "y": 261
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 12.56666666666667,
+          "symWidth": 9.233333333333333,
+          "text": "DON'T  WORRY ,  YOU'LL GET  YOUR  SHARE !",
+          "translation": "لا تقلقي، لك حصتك!",
+          "width": 169,
+          "x": 406,
+          "y": 1404
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.5,
+          "symWidth": 13.40833333333333,
+          "text": "SENIOR ,  WE'RE BEGINNING !",
+          "translation": "سيد، نبدأ الآن!",
+          "width": 187,
+          "x": 235,
+          "y": 1784
+        }
+      ],
+      "imgHeight": 2899,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 11.43333333333333,
+          "symWidth": 7.135257335257336,
+          "text": "TOP - TIER ! ABSOLUTELY  TOP - TIER !  I'VE RIDDEN  COUNTLESS  MEN ,  BUT  I'VE NEVER  HAD  SUCH  A  WONDROUS EXPERIENCE .",
+          "translation": "فائق المستوى! فائق المستوى حقًا! جربت مع العديد من الرجال، لكن لم أشعر بمثل هذه المتعة.",
+          "width": 224,
+          "x": 320,
+          "y": 1052
+        }
+      ],
+      "imgHeight": 2900,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 13.5,
+          "symWidth": 10.64248294346979,
+          "text": "SO  THE  FIRST TIME  IS  ACTUALLY  THIS WONDERFUL ?  MOTHER WAS  RIGHT ,  THIS  KIND  OF THING  FEELS  INCREDIBLY GOOD !",
+          "translation": "إذًا المرة الأولى هكذا مدهشة؟ كانت أمي على حق، هذا الشعور رائع بحق!",
+          "width": 217,
+          "x": 152,
+          "y": 88
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 31.5,
+          "text": "議員",
+          "translation": "議員",
+          "width": 80,
+          "x": 609,
+          "y": 1120
+        }
+      ],
+      "imgHeight": 2916,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 15.5,
+          "symWidth": 13.66646825396825,
+          "text": "HEH ,  THIS  MOTHER AND  DAUGHTER  PAIR HAVE  A  LOT  OF  NERVE , ACTUALLY  ENJOYING THEMSELVES WITH  ME .",
+          "translation": "هاه، هذه الأم وابنتها جريئتين جدًا، يستمتعان بي حقًا.",
+          "width": 229,
+          "x": 104,
+          "y": 1261
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 9.266666666666667,
+          "text": "DRAKECOMIC.ORG .",
+          "translation": "DRAKECOMIC.ORG",
+          "width": 172,
+          "x": 88,
+          "y": 2808
+        }
+      ],
+      "imgHeight": 2917,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 17.25,
+          "symWidth": 14.70643939393939,
+          "text": "USING  MY  VITAL ESSENCE  AS  BAIT , THEY  FINALLY SHOWED  UP !",
+          "translation": "بمكافأة جوهري الحيوي، أخيرًا ظهروا!",
+          "width": 203,
+          "x": 358,
+          "y": 2204
+        }
+      ],
+      "imgHeight": 2916,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 131.75,
+          "symWidth": 105.25,
+          "text": "嘿 啦啦 啦",
+          "translation": "嘿 啦啦 啦",
+          "width": 418,
+          "x": 63,
+          "y": 1830
+        }
+      ],
+      "imgHeight": 2917,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 56.63157894736842,
+          "symWidth": 34.52631578947368,
+          "text": "A  COW THROUGH  THE  AIR !!",
+          "translation": "بقرة تطير في الهواء!!",
+          "width": 433,
+          "x": 128,
+          "y": 499
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 51.25,
+          "symWidth": 37.5,
+          "text": "STRIKING",
+          "translation": "ضربة",
+          "width": 212,
+          "x": 163,
+          "y": 508
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 21.47619047619047,
+          "symWidth": 16,
+          "text": "MOTHER ,  THE GOLDEN  LIGHT",
+          "translation": "أمي، الضوء الذهبي",
+          "width": 188,
+          "x": 280,
+          "y": 2190
+        }
+      ],
+      "imgHeight": 2248,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 19.33333333333333,
+          "symWidth": 16.73674936174936,
+          "text": "IS  DRAINING  THE BLOODLINE  POWER INSIDE  MY  BODY ! I  FEEL  LIKE  I'M BEING  SUCKED DRY !",
+          "translation": "ينفد من قوة الدماء في جسدي! أشعر وكأنني أمتص حتى آخر قطرة!",
+          "width": 243,
+          "x": 253,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 18.71428571428572,
+          "symWidth": 15.40641263498406,
+          "text": "SENIOR ANCESTOR ,  A  TRACE OF  BLOODLINE POWER  IS  ENOUGH FOR  THE  TRANSFER ! PLEASE ,  SENIOR , SHOW  MERCY !",
+          "translation": "أيها السلف، قطرة من قوة الدماء تكفي للنقل! رجاءً، أرحم!",
+          "width": 236,
+          "x": 359,
+          "y": 1473
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 8.875,
+          "text": ")  DRAKECOMIC.ORG .",
+          "translation": ") DRAKECOMIC.ORG",
+          "width": 185,
+          "x": 77,
+          "y": 2139
+        }
+      ],
+      "imgHeight": 2248,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 17,
+          "symWidth": 13.50575258075258,
+          "text": "HEHEHE , BIG  BROTHER IS  SO  VIOLENT ~ YOU'VE  BRUISED THIS  CONCUBINE , COUGH  COUGH ~",
+          "translation": "ههه، الأخ الأكبر عنيف جدًا ~ لقد أوقع عليكِ كدمات، كح كح ~",
+          "width": 188,
+          "x": 253,
+          "y": 1390
+        }
+      ],
+      "imgHeight": 2861,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

@@ -1,0 +1,2622 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0071",
+  "jobId": "fixture-job-0071",
+  "licenseId": "fixture-license-0071",
+  "pageCount": 45,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "020__001.jpg",
+    "020__002.jpg",
+    "021__001.jpg",
+    "021__002.jpg",
+    "022__001.jpg",
+    "022__002.jpg",
+    "023.webp"
+  ],
+  "pages": {
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 76.45454545454545,
+          "symWidth": 60.54545454545455,
+          "text": "RIGHT NOW !!!",
+          "translation": "الآن بالضبط!!!",
+          "width": 290,
+          "x": 198,
+          "y": 12
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 30.46153846153846,
+          "text": ".... NEXT  STAGE",
+          "translation": "... المرحلة التالية",
+          "width": 415,
+          "x": 218,
+          "y": 2083
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 23.5,
+          "symWidth": 18.86111111111111,
+          "text": "Ookeu_916 도움 /  한송현",
+          "translation": "",
+          "width": 137,
+          "x": 493,
+          "y": 2401
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 23,
+          "symWidth": 18.45238095238095,
+          "text": "HITBOOK STUD  18",
+          "translation": "",
+          "width": 159,
+          "x": 478,
+          "y": 2495
+        }
+      ],
+      "imgHeight": 2585,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 41,
+          "symWidth": 29.33333333333334,
+          "text": "WHAT  DO YOU  THINK ?",
+          "translation": "ما رأيك؟",
+          "width": 231,
+          "x": 239,
+          "y": 241
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 29.22641509433962,
+          "symWidth": 18.92452830188679,
+          "text": "THREE  WEEKS  OF COLLECTIVE  TRAINING WITH  THE  BLOOD RIVER  SQUAD .",
+          "translation": "ثلاثة أسابيع من التدريب الجماعي\nمع فرقة نهر الدماء.",
+          "width": 324,
+          "x": 204,
+          "y": 2000
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 42,
+          "symWidth": 53.33333333333334,
+          "text": "பபட",
+          "translation": "",
+          "width": 209,
+          "x": 332,
+          "y": 2205
+        }
+      ],
+      "imgHeight": 2992,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 36.625,
+          "symWidth": 22.875,
+          "text": "ARE  YOU WILLING ...",
+          "translation": "هل أنت مستعد...",
+          "width": 189,
+          "x": 255,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 17.75,
+          "text": "... TO  ACCEPT ?",
+          "translation": "... لأن تقبل؟",
+          "width": 220,
+          "x": 256,
+          "y": 2187
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 23.22222222222222,
+          "text": "... IS  THIS",
+          "translation": "... هل هذا",
+          "width": 160,
+          "x": 164,
+          "y": 2936
+        }
+      ],
+      "imgHeight": 2993,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 23.30555555555556,
+          "symWidth": 18.88888888888889,
+          "text": "THE  BOLDNESS POSSESSED  BY  THE 7TH - RANKED ?",
+          "translation": "الجرأة التي يتحلى بها المصنّف في المرتبة السابعة؟",
+          "width": 259,
+          "x": 324,
+          "y": 778
+        },
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 24.19191919191919,
+          "symWidth": 18.42821067821068,
+          "text": "THE  ONES GATHERED  HERE  ARE THE  DIRECT  DISCIPLES OF  THE  HEAVENLY  DEMON , THE  LEADER  OF  THE DEMONIC  CULT .",
+          "translation": "هؤلاء المجتمعون هنا هم التلاميذ المباشرون للشياطين السماوي، قائدة الطائفة الشيطانية.",
+          "width": 327,
+          "x": 232,
+          "y": 1537
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 23.25,
+          "symWidth": 17.73324592074592,
+          "text": "THEY  ARE GIANTS  RANKED AT  LEAST  WITHIN THE  TOP  30 ...",
+          "translation": "إنهم عمالقة مصنّفون على الأقل ضمن أفضل ثلاثين.",
+          "width": 205,
+          "x": 147,
+          "y": 1849
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 23,
+          "symWidth": 16.90476190476191,
+          "text": "YET  HE  DOESN'T HESITATE .",
+          "translation": "ورغم ذلك، لا يتوانى.",
+          "width": 210,
+          "x": 111,
+          "y": 2674
+        }
+      ],
+      "imgHeight": 3235,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 37.5,
+          "symWidth": 23.75,
+          "text": "MY ,  MY ...",
+          "translation": "يا إلهي...",
+          "width": 144,
+          "x": 120,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 26,
+          "symWidth": 17.11282051282052,
+          "text": "I  SUPPOSE  I  HAVE MADE  AN  EXCESSIVE DEMAND .",
+          "translation": "أظن أنني قد طالبت بما يفوق الحد.",
+          "width": 273,
+          "x": 252,
+          "y": 251
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 24.75,
+          "symWidth": 16.17541208791209,
+          "text": "IF  I  HAVE OFFENDED  YOU , I  SHALL  OFFER  MY APOLOGIES .",
+          "translation": "إن أكون قد أسأت إليك، فإني أقدم اعتذاري.",
+          "width": 240,
+          "x": 122,
+          "y": 824
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 23.75,
+          "symWidth": 15.2409188034188,
+          "text": "IF  IT'S  NOT POSSIBLE ,  IT'S NOT  POSSIBLE , SO  WHAT  CAN-",
+          "translation": "إن لم يكن ذلك ممكناً، فهو غير ممكن، فما ذا إذن-",
+          "width": 198,
+          "x": 346,
+          "y": 1248
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 30,
+          "symWidth": 18.47802197802198,
+          "text": "THAT  PROPOSAL . I  WILL  ACCEPT  IT .",
+          "translation": "سأقبل بهذا الاقتراح.",
+          "width": 269,
+          "x": 190,
+          "y": 1519
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 26.46428571428572,
+          "symWidth": 15.53571428571429,
+          "text": "OH ...  YOU  WILL , SECOND  DISCIPLE ?",
+          "translation": "أحقاً ستفعل ذلك، يا تلميذي الثاني؟",
+          "width": 248,
+          "x": 58,
+          "y": 2580
+        }
+      ],
+      "imgHeight": 3237,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 25.66666666666667,
+          "symWidth": 16.81926406926407,
+          "text": "HOWEVER , I  HAVE  MANY  TASKS TO  ATTEND  TO .",
+          "translation": "مع ذلك، لدي العديد من المهام التي يجب عليّ القيام بها.",
+          "width": 256,
+          "x": 98,
+          "y": 105
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 25.75,
+          "symWidth": 15.33854166666667,
+          "text": "INSTEAD , I  WILL  SEND  ONE  OF  MY SUBORDINATES ,  A  FELLOW NAMED  GWI - GI .",
+          "translation": "سأرسل بدلًا من ذلك أحد مرؤوسي، يُدعى جوِي-غِي.",
+          "width": 338,
+          "x": 232,
+          "y": 312
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 24,
+          "symWidth": 16.74242424242424,
+          "text": "GWI - GI  OF  THE RED  CLOUD !",
+          "translation": "جوِي-غِي من الغيمة الحمراء!",
+          "width": 190,
+          "x": 230,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 24,
+          "symWidth": 15.35839160839161,
+          "text": "INDEED ,  THAT WOULD  BE  MORE  THAN SUFFICIENT .",
+          "translation": "حقًا، سيكون ذلك أكثر من كافٍ.",
+          "width": 291,
+          "x": 312,
+          "y": 1345
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 20.5,
+          "symWidth": 15.54709967320261,
+          "text": "... IF  IT'S  GWI - GI , I  RECALL  SEEING  HIM ON  THE  LIST  OF  SCHOOL MASTERS  DURING  THE  PAST THOUSAND  QUESTIONS EXAMINATION .",
+          "translation": "... إذا كان جوِي-غِي، فأتذكر أنه كان مدرجًا ضمن قائمة أساتذة المدرسة في امتحان الألف سؤال السابق.",
+          "width": 308,
+          "x": 124,
+          "y": 2066
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "renderMode": "mask_only",
+          "symHeight": 18.25,
+          "symWidth": 13.67445958646617,
+          "text": "HE  IS  ONE OF  THE  THREE \" CARDS \"  PARTICULARLY CHERISHED  BY  MA  HU ,",
+          "translation": "",
+          "width": 223,
+          "x": 348,
+          "y": 2883
+        }
+      ],
+      "imgHeight": 3066,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 19.625,
+          "symWidth": 14.86276864035088,
+          "text": "HE IS ONE OF THE THREE \" CARDS \" PARTICULARLY CHERISHED BY MA HU , AND IS A MASTER REPUTED TO BE ABLE TO KILL EVEN AN EXTREME DEMON MASTER IN A SURPRISE ATTACK .",
+          "translation": "إنه أحد \"الورقات\" الثلاث التي يعشقها ما هو، وسيد يُشاع بقدرته على قتل أعظم أساتذة الشياطين بهجوم مباغت.",
+          "width": 285,
+          "x": 173,
+          "y": 57
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20.33333333333333,
+          "symWidth": 14.6332671957672,
+          "text": "HIS  MAIN  WEAPONS ARE  HIDDEN WEAPONS , BUT  HE  IS  ALSO  SKILLED IN  CLOSE - QUARTERS COMBAT .",
+          "translation": "أسلحته الرئيسة هي الأسلحة الخفية، لكنه بارع أيضًا في القتال القريب.",
+          "width": 250,
+          "x": 146,
+          "y": 991
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 19.2,
+          "symWidth": 14.47651515151515,
+          "text": "BECAUSE  OF  HIS AGGRESSIVE  PERSONALITY , IT'S  SAID  THAT  EVERYWHERE HE  PASSES  IS  DRENCHED IN  BLOOD ,",
+          "translation": "وبسبب شخصيته العدوانية، يُقال إن كل مكان يمر به يغمره الدم.",
+          "width": 279,
+          "x": 306,
+          "y": 1221
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 24.5,
+          "symWidth": 17.61813186813187,
+          "text": "EARNING  HIM  THE ALIAS  RED  CLOUD '",
+          "translation": "مما أكسبه لقب السحابة الحمراء.",
+          "width": 241,
+          "x": 208,
+          "y": 1548
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.5,
+          "symWidth": 16.87692307692308,
+          "text": "HE  DEFINITELY ... INTENDS  TO  WIN .",
+          "translation": "إنه مصمم... بلا ريب، على تحقيق النصر.",
+          "width": 215,
+          "x": 177,
+          "y": 2302
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.5,
+          "symWidth": 17.4375,
+          "text": "HOW  ABOUT THE  OTHERS ?",
+          "translation": "وماذا عن الآخرين؟",
+          "width": 173,
+          "x": 275,
+          "y": 2998
+        }
+      ],
+      "imgHeight": 3066,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24,
+          "symWidth": 15.1978021978022,
+          "text": "I - I  WILL ACCEPT  AS  WELL .",
+          "translation": "سَأَقْبَلُ أَيْضًا.",
+          "width": 228,
+          "x": 148,
+          "y": 789
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 24.75,
+          "symWidth": 16.97651515151515,
+          "text": "WOULDN'T  SOMEONE LIKE  JU  SEO - RIN  UNDER MY  COMMAND  BE APPROPRIATE ?",
+          "translation": "أَلَيْسَ مِنَ الْمُنَاسِبِ أَنْ تَكُونَ جُو سُو-رِين فِي عِبَادَتِي؟",
+          "width": 308,
+          "x": 225,
+          "y": 1021
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24,
+          "symWidth": 14.16818181818182,
+          "text": "OH ?  IF  IT'S  JU SEO - RIN ...",
+          "translation": "حقًا؟ إنْ كَانَتْ جُو سُو-رِين...",
+          "width": 185,
+          "x": 141,
+          "y": 1628
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 25,
+          "symWidth": 15.85909090909091,
+          "text": "I'VE  HEARD  OF HER  AS  WELL .",
+          "translation": "لقد سمعت عنها أيضًا.",
+          "width": 194,
+          "x": 363,
+          "y": 1946
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 21.66666666666667,
+          "symWidth": 13.66386452241716,
+          "text": "SHE  IS  THE THE  THIRD STRATEGIST  ASSISTING DISCIPLE .",
+          "translation": "إنها المُساعدَةُ الثالثةُ بينَ التلاميذ الاستراتيجيين.",
+          "width": 276,
+          "x": 114,
+          "y": 2595
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 22.83333333333333,
+          "symWidth": 14.68983355825461,
+          "text": "A  ROSE  WITH  MANY THORNS  WHO  POSSESSES EXTRAORDINARY INTELLIGENCE AND  OUTSTANDING  MARTIAL  TALENT DESPITE  BEING  A  WOMAN .",
+          "translation": "وردةٌ ذات أشواكٍ كثيرة، تَفْتَكِرُ بعقلٍ فذٍّ ومَهارةٍ قتاليةٍ بارزةٍ رغم كونها امرأةً.",
+          "width": 411,
+          "x": 199,
+          "y": 2809
+        }
+      ],
+      "imgHeight": 3065,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 22,
+          "symWidth": 15.03030303030303,
+          "text": "I'VE  HEARD  THAT  HER MARTIAL  ACHIEVEMENTS  ARE SO  FAST  THAT  PEOPLE",
+          "translation": "لقد سمعتُ أن إنجازاتها القتالية سريعةٌ إلى حدٍ يتساءل الناس",
+          "width": 330,
+          "x": 107,
+          "y": 921
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 22,
+          "symWidth": 15.51336219336219,
+          "text": "WONDER  IF  SHE MIGHT  HAVE REACHED THE  EXTREME  DEMON STAGE  BY  NOW .",
+          "translation": "عما إذا كانت قد بلغت الآن مرتبة الشيطان القصوى.",
+          "width": 252,
+          "x": 294,
+          "y": 1146
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 22,
+          "symWidth": 14.0042735042735,
+          "text": "YES ,  SHE  IS A  CHILD  I  ADORE .",
+          "translation": "نعم، إنها الطفلة التي أعشقها.",
+          "width": 203,
+          "x": 434,
+          "y": 1628
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 23,
+          "symWidth": 14.64273504273504,
+          "text": "HA ,  IT  SEEMS EVERYONE  HAS  MADE UP  THEIR  MINDS .",
+          "translation": "ها، يبدو أن الجميع قد حسم أمره.",
+          "width": 248,
+          "x": 228,
+          "y": 2444
+        }
+      ],
+      "imgHeight": 3067,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 29.5,
+          "symWidth": 17.23958333333334,
+          "text": "FINE ,  IN  THAT  CASE , FROM  OUR  SIDE ,",
+          "translation": "حسناً، في هذه الحالة، من طرفنا,",
+          "width": 278,
+          "x": 157,
+          "y": 119
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 32,
+          "symWidth": 22.04545454545455,
+          "text": "WE  SHALL  SEND YO  SU - GWANG .",
+          "translation": "سوف نرسل يو سو-غوانغ.",
+          "width": 268,
+          "x": 283,
+          "y": 368
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 79.66666666666667,
+          "symWidth": 76.66666666666667,
+          "text": "www",
+          "translation": "",
+          "width": 139,
+          "x": 212,
+          "y": 1226
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 32.16666666666667,
+          "symWidth": 17.9,
+          "text": "... HEH ,  THE  FIRST DISCIPLE  IS",
+          "translation": "... ها، التلميذ الأوّل هو",
+          "width": 283,
+          "x": 113,
+          "y": 1715
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 17.75,
+          "text": "ALSO  SERIOUS .",
+          "translation": "جادٌ أيضاً.",
+          "width": 216,
+          "x": 119,
+          "y": 2300
+        }
+      ],
+      "imgHeight": 3184,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13.61538461538461,
+          "text": "YO  SU - GWANG ...",
+          "translation": "يو سو - غوانغ...",
+          "width": 159,
+          "x": 461,
+          "y": 362
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 25.34090909090909,
+          "symWidth": 19.59090909090909,
+          "text": "NO  ONE  WHO  HAS HANDLED  INFORMATION IS  UNAWARE  OF  HIM .",
+          "translation": "لا يخلو من يَملكُ معلومات من معرفته.",
+          "width": 303,
+          "x": 135,
+          "y": 784
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 22.53968253968254,
+          "symWidth": 17.82539682539683,
+          "text": "HE  IS  THE  SECRET WARRIOR  OF  SAL  MA  AND ONE  OF  THE  TWO  PEOPLE HE  CHERISHES  MOST .",
+          "translation": "إنه المحارب السري لسال ما وأحد أثنين يعزّهما أعظم قدر.",
+          "width": 308,
+          "x": 267,
+          "y": 1062
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 24.32307692307692,
+          "symWidth": 18.8,
+          "text": "SINCE  I  HADN'T SEEN  HIM  DURING  THE  PAST FIGHT  WITH  SAL  MA ,  I  CAN'T KNOW  FOR  SURE ,",
+          "translation": "لأنني لم أرَه حين المعركة الماضية مع سال ما، لا أستطيع أن أتيقن.",
+          "width": 356,
+          "x": 131,
+          "y": 1956
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 18.92233009708738,
+          "symWidth": 14.92233009708738,
+          "text": "BUT  HE  IS  A  MASTER WHO  HAS  EASILY  SURPASSED THE  EMERGING  DEMON  STAGE . HE  MIGHT  HAVE  REACHED  THE EXTREME  DEMON  STAGE ALREADY .",
+          "translation": "لكنه سيد تفوق بسهولة على الحَد الشيطاني الناشئ، وقد يكون بلغ بالفعل الغاية الشيطانية القصوى.",
+          "width": 308,
+          "x": 298,
+          "y": 2251
+        }
+      ],
+      "imgHeight": 3184,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 21.21052631578947,
+          "symWidth": 16.73684210526316,
+          "text": "IF  MA  HU'S  GWI - GI IS  AGGRESSIVE  AND HAS  NO  QUALMS  ABOUT SEEING  BLOOD ,",
+          "translation": "إذا كانت دوافع ماهو غوي هجومية ولا تمانع في رؤية الدماء،",
+          "width": 275,
+          "x": 125,
+          "y": 133
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 27.5,
+          "symWidth": 20.22222222222222,
+          "text": "YO  SU - GWANG  IS KNOWN  AS  A  TYPICAL ASSASSIN ,",
+          "translation": "فيو سو غوانغ معروف كقاتل مأجور بارع،",
+          "width": 300,
+          "x": 285,
+          "y": 423
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 18.91111111111111,
+          "symWidth": 14.78333333333333,
+          "text": "WHO  IS  EXTREMELY CAUTIOUS  AND  HANDLES PEOPLE  WITHOUT  A  SOUND OR  RUMOR .",
+          "translation": "يتمتع بحذر بالغ ويتعامل مع الناس بخفة دون أن يصدر صوت أو يترك أثراً.",
+          "width": 273,
+          "x": 224,
+          "y": 1163
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 22,
+          "symWidth": 13.2962962962963,
+          "text": "THEN  THE  REMAINING PERSON  IS ...",
+          "translation": "أما الشخص المتبقي فهو...",
+          "width": 241,
+          "x": 233,
+          "y": 2570
+        }
+      ],
+      "imgHeight": 3183,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 24.66666666666667,
+          "symWidth": 15.9457264957265,
+          "text": "SINCE  EVERYONE  IS ACTING  THIS  WAY ,  I  SHALL ACCEPT  AS  WELL .",
+          "translation": "وبما أن الجميع يتصرف هكذا، فسأقبل أنا أيضاً.",
+          "width": 321,
+          "x": 194,
+          "y": 291
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 30,
+          "symWidth": 19.0487012987013,
+          "text": "THE  ONE  I  WILL SEND  IS  SEOL  HWI .",
+          "translation": "الشخص الذي سأرسله هو سول هوي.",
+          "width": 301,
+          "x": 217,
+          "y": 1068
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 33.39130434782609,
+          "symWidth": 20.60869565217391,
+          "text": "IT  IS  THIS  PERSON NEXT  TO  ME .",
+          "translation": "هو هذا الرجل بجانبي.",
+          "width": 312,
+          "x": 211,
+          "y": 2533
+        }
+      ],
+      "imgHeight": 3185,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 23,
+          "symWidth": 13.6,
+          "text": "HMPH .",
+          "translation": "هممم.",
+          "width": 68,
+          "x": 472,
+          "y": 113
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 23,
+          "text": "OOH ~~",
+          "translation": "آه ~~",
+          "width": 105,
+          "x": 243,
+          "y": 851
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 17.5,
+          "text": "AA",
+          "translation": "آه",
+          "width": 30,
+          "x": 450,
+          "y": 1541
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 20.33333333333333,
+          "text": "HMM ...",
+          "translation": "هممم...",
+          "width": 114,
+          "x": 240,
+          "y": 2206
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 16.66666666666667,
+          "text": "VERY  WELL .",
+          "translation": "حسنًا إذن.",
+          "width": 156,
+          "x": 138,
+          "y": 2711
+        }
+      ],
+      "imgHeight": 3001,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 23.33333333333333,
+          "symWidth": 14.33846153846154,
+          "text": "THEN  ONE  SHIJIN FROM  NOW ,  IN  THE AFTERNOON ,",
+          "translation": "في غضون شِيجِنٍ واحد من الآن، عند الظهيرة،",
+          "width": 213,
+          "x": 384,
+          "y": 97
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 22,
+          "symWidth": 14.02941176470588,
+          "text": "WE  SHALL  BEGIN  THE COLLECTIVE  TRAINING .",
+          "translation": "سنبدأ التدريب الجماعي.",
+          "width": 257,
+          "x": 220,
+          "y": 299
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 8.133333333333333,
+          "text": "TL / N :  SHIJIN :  A  UNIT  OF  TIME  ( APPROXIMATELY  2  HOURS ) .",
+          "translation": "ملاحظة: الشِيجِن وحدة زمن تساوي تقريباً ساعتين.",
+          "width": 409,
+          "x": 6,
+          "y": 466
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 22,
+          "symWidth": 14.46666666666667,
+          "text": "PLEASE  SEND THE  PERSONNEL  WHO WILL  PARTICIPATE",
+          "translation": "يرجى إرسال الأشخاص الذين سيشاركون",
+          "width": 247,
+          "x": 150,
+          "y": 931
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 25.66666666666667,
+          "symWidth": 15.66096866096866,
+          "text": "TO  OUR  PAVILION IN  CHARGE  OF  THE TRAINING .",
+          "translation": "إلى جناحنا المسؤول عن التدريب.",
+          "width": 248,
+          "x": 305,
+          "y": 1141
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 15.33333333333333,
+          "text": "YES .  UNDERSTOOD .",
+          "translation": "نعم، فهمت.",
+          "width": 225,
+          "x": 347,
+          "y": 1932
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 23,
+          "symWidth": 18.06410256410256,
+          "text": "ONE  SHIJIN  FROM NOW ...  THAT'S  SOONER THAN  I  THOUGHT",
+          "translation": "شِيجِن واحد من الآن... هذا أقرب مما توقعت.",
+          "width": 285,
+          "x": 132,
+          "y": 2548
+        }
+      ],
+      "imgHeight": 3003,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 42.5,
+          "symWidth": 42,
+          "text": "To",
+          "translation": "إلى",
+          "width": 71,
+          "x": 67,
+          "y": 41
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 16,
+          "text": "DO  NOT  WORRY .",
+          "translation": "لا تقلق.",
+          "width": 189,
+          "x": 290,
+          "y": 374
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 34.33333333333334,
+          "symWidth": 46,
+          "text": "000",
+          "translation": "٠٠٠",
+          "width": 53,
+          "x": 511,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 33,
+          "symWidth": 20.65208333333333,
+          "text": "YOU  WILL  SURELY  BE ABLE  TO  PULL  IT  OFF .",
+          "translation": "ستتمكن بالتأكيد من تحقيق ذلك.",
+          "width": 357,
+          "x": 178,
+          "y": 1397
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 31.5,
+          "symWidth": 18.94444444444444,
+          "text": "ISN'T  THAT RIGHT ?",
+          "translation": "أليس كذلك؟",
+          "width": 175,
+          "x": 266,
+          "y": 2654
+        }
+      ],
+      "imgHeight": 3001,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 20.25,
+          "text": "YES .",
+          "translation": "نعم.",
+          "width": 73,
+          "x": 462,
+          "y": 565
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 37.33333333333334,
+          "symWidth": 24.05833333333333,
+          "text": "I  WILL  SHOW  YOU THAT  I  CAN  RECEIVE THE  HIGHEST  SCORE .",
+          "translation": "سأبرهن لك أنني قادر على تحقيق أعلى الدرجات.",
+          "width": 333,
+          "x": 195,
+          "y": 2347
+        }
+      ],
+      "imgHeight": 3003,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 29.58333333333333,
+          "text": "원작  -  조형근  /  만화  -  광휘",
+          "translation": "العمل الأصلي - جو هيونغ-غون / الرسم - كوانغ-هوي",
+          "width": 387,
+          "x": 155,
+          "y": 1297
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 41.55555555555556,
+          "text": "STAGE  -  180",
+          "translation": "المشهد - 180",
+          "width": 430,
+          "x": 133,
+          "y": 1515
+        }
+      ],
+      "imgHeight": 3281,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.5,
+          "symWidth": 13.25,
+          "text": "THE  PAVILION  OF  THE BLOOD  RIVER  SQUAD .",
+          "translation": "جناح كتيبة نهر الدم",
+          "width": 233,
+          "x": 235,
+          "y": 440
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 26.34848484848485,
+          "symWidth": 13.92424242424242,
+          "text": "COLLECTIVE TRAINING  HELD  TWICE  A  YEAR , IN  THIS",
+          "translation": "يُقام التدريب الجماعي مرتين في السنة، في هذا المكان",
+          "width": 352,
+          "x": 104,
+          "y": 1764
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 25.66666666666667,
+          "symWidth": 14.03333333333333,
+          "text": "THE  ELITE  MASTERS REPRESENTING  THE  BLOOD RIVER  SQUAD  ALL  GATHER .",
+          "translation": "يجتمع كل النخبة من أساتذة كتيبة نهر الدم",
+          "width": 301,
+          "x": 298,
+          "y": 1993
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 21,
+          "symWidth": 11.90133779264214,
+          "text": "THE  EDUCATION  AND  TRAINING COURSE  CONSISTS  OF  FOUR  PARTS .",
+          "translation": "تنقسم دورة التعليم والتدريب إلى أربعة أقسام",
+          "width": 323,
+          "x": 101,
+          "y": 2811
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 29.25,
+          "symWidth": 13.58901515151515,
+          "text": "FIRST ,  THEORY  CLASS . SECOND ,  COMPLEX  TRAINING  CLASS . THIRD ,  TACTICAL  EDUCATION . FOURTH ,  PRACTICAL  CLASS .",
+          "translation": "أولاً، فصل نظري. ثانياً، فصل تدريب مركّب. ثالثاً، تعليم تكتيكي. رابعاً، فصل عملي.",
+          "width": 419,
+          "x": 202,
+          "y": 3033
+        }
+      ],
+      "imgHeight": 3283,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 23.75,
+          "symWidth": 13.02631578947368,
+          "text": "EVEN  THOUGH  THOSE GATHERED  HERE  ARE  ELITE MASTERS  REPRESENTING  THE BLOOD  DEATH  PAVILION ,",
+          "translation": "رغم أن الحضور هنا من الأساتذة النخبة ممن يُمثلون جناح دم الموت،",
+          "width": 306,
+          "x": 88,
+          "y": 516
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 23.31666666666667,
+          "symWidth": 13.4,
+          "text": "THESE  TESTS  ARE  KNOWN TO  BE  SO  DIFFICULT  THAT  ONLY ONE  OR  TWO  PEOPLE  PASS .",
+          "translation": "إلا أن هذه الاختبارات معروفة بصعوبتها الشديدة، فلا يجتازها سوى واحد أو اثنان فقط.",
+          "width": 330,
+          "x": 202,
+          "y": 793
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 104,
+          "symWidth": 88.5,
+          "text": "54",
+          "translation": "٥٤",
+          "width": 144,
+          "x": 369,
+          "y": 1171
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 23.53097345132743,
+          "symWidth": 12.84955752212389,
+          "text": "THIS  THOROUGH  SKILL - ORIENTED APPROACH  IS  THE  REASON  WHY  THE  BLOOD DEATH  PAVILION  MASTER  AND  THE  BLOOD RIVER  SQUAD  BECAME  WELL - KNOWN .",
+          "translation": "هذا المنهج الدقيق المركّز على المهارة، هو سبب شهرة سيد جناح دم الموت وفرقة نهر الدم.",
+          "width": 447,
+          "x": 141,
+          "y": 1688
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 22.5,
+          "symWidth": 29,
+          "text": "00",
+          "translation": "٠٠",
+          "width": 31,
+          "x": 281,
+          "y": 2610
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 32,
+          "symWidth": 21.6,
+          "text": "HAS  EVERYONE GATHERED ?",
+          "translation": "هل تجمع الجميع؟",
+          "width": 250,
+          "x": 221,
+          "y": 2970
+        }
+      ],
+      "imgHeight": 3281,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 24.34883720930232,
+          "symWidth": 16.51162790697675,
+          "text": "IT  SEEMS  SO .  IT LOOKS  LIKE  ROUGHLY EVERYONE  IS  HERE .",
+          "translation": "يبدو أن الجميع هنا تقريبًا.",
+          "width": 285,
+          "x": 79,
+          "y": 323
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 23.42857142857143,
+          "symWidth": 12.45238095238095,
+          "text": "BLOOD  DEATH  PAVILION INSTRUCTOR  SIM WAN - CHEONG .",
+          "translation": "المعلّم في جناح موت الدم، سيم وان-تشونغ.",
+          "width": 244,
+          "x": 395,
+          "y": 821
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 25.5,
+          "symWidth": 13.84166666666667,
+          "text": "CHIEF  INSTRUCTOR SO  CHEON - GOE .",
+          "translation": "المعلّم الرئيسي سو تشيون-غو.",
+          "width": 227,
+          "x": 114,
+          "y": 1459
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31.17647058823529,
+          "symWidth": 18.94117647058824,
+          "text": "IT  SEEMS THEY  ARE ...",
+          "translation": "يبدو أنهم...",
+          "width": 185,
+          "x": 188,
+          "y": 2139
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 28.8125,
+          "symWidth": 18.375,
+          "text": "LIKELY  THE ONES  SENT  BY  THE DISCIPLES .",
+          "translation": "على الأرجح المرسلون من التلاميذ.",
+          "width": 298,
+          "x": 315,
+          "y": 2777
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 18.5,
+          "text": "OOH ...",
+          "translation": "أوه...",
+          "width": 111,
+          "x": 93,
+          "y": 3088
+        }
+      ],
+      "imgHeight": 3283,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 38,
+          "symWidth": 19.42857142857143,
+          "text": "GWI - GI .",
+          "translation": "جوي-جي.",
+          "width": 137,
+          "x": 282,
+          "y": 475
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 16,
+          "text": "YO  SU - GWANG .",
+          "translation": "يو سو-غوانغ.",
+          "width": 188,
+          "x": 162,
+          "y": 1430
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 15.8,
+          "text": "JU  SEO - RIN .",
+          "translation": "جو سو-رين.",
+          "width": 174,
+          "x": 385,
+          "y": 2763
+        }
+      ],
+      "imgHeight": 3117,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 24.33333333333333,
+          "symWidth": 15.56851851851852,
+          "text": "TO  THINK  I  CAN  FEEL THE  KILLING  INTENT  EVEN FROM  THIS  FAR  AWAY ...",
+          "translation": "وما أدهشني أنني أشعر بنية القتل حتى من هذا البُعد...",
+          "width": 321,
+          "x": 86,
+          "y": 295
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 25.47142857142857,
+          "symWidth": 16.78571428571428,
+          "text": "IT  SEEMS  WE  WILL DEFINITELY THE  4TH  STAGE . REACH",
+          "translation": "يبدو أننا بلا ريب سنبلغ المرحلة الرابعة.",
+          "width": 233,
+          "x": 371,
+          "y": 1111
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 24.75,
+          "symWidth": 16.72284226190476,
+          "text": "I  WONDER  HOW  MANY AMONG  THE  BLOOD  RIVER WILL  BE SQUAD  MEMBERS A  MATCH  FOR  THEM .",
+          "translation": "أتساءل كم من أعضاء نهر الدم سيكونون خصماً يستحق لهم.",
+          "width": 330,
+          "x": 206,
+          "y": 1333
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 24,
+          "symWidth": 15.26666666666667,
+          "text": "BUT  THE REMAINING  ONE ...",
+          "translation": "لكن الباقي منهم...",
+          "width": 224,
+          "x": 214,
+          "y": 2027
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 14.75,
+          "text": "IT'S  STRANGE .",
+          "translation": "هذا لأمر غريب.",
+          "width": 186,
+          "x": 356,
+          "y": 2682
+        }
+      ],
+      "imgHeight": 3118,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 22.5,
+          "symWidth": 15.25818452380952,
+          "text": "THE  ONE  WHO APPEARS  TO  BE  THE FOURTH  DISCIPLE'S SUBORDINATE ...",
+          "translation": "ذاك الذي يبدو خادمًا للتلميذ الرابع...",
+          "width": 246,
+          "x": 160,
+          "y": 296
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 25,
+          "symWidth": 14.46875,
+          "text": "IS  HIDDEN . AVOIDING  OUR  EYES .",
+          "translation": "يختبئ، يتجنب لقاء أعيننا.",
+          "width": 266,
+          "x": 284,
+          "y": 546
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 22,
+          "symWidth": 13.57142857142857,
+          "text": "PARDON ?",
+          "translation": "عذرًا؟",
+          "width": 99,
+          "x": 86,
+          "y": 1068
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 25.33333333333333,
+          "symWidth": 18.15384615384615,
+          "text": "WHAT  DO  YOU MEAN ?  WHY  WOULD  THEY AVOID  OUR  EYES-",
+          "translation": "ماذا تعني؟ لماذا يتجنبون لقاء أعيننا؟",
+          "width": 316,
+          "x": 88,
+          "y": 1331
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 20.75,
+          "symWidth": 13.99607843137255,
+          "text": "HE  PROBABLY JUST  DOESN'T  WANT  TO RECEIVE  UNNECESSARY ATTENTION .",
+          "translation": "ربما لا يرغب سوى في تجنب الانتباه غير المرغوب فيه.",
+          "width": 270,
+          "x": 338,
+          "y": 1521
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 13,
+          "text": "... ?",
+          "translation": "...؟",
+          "width": 47,
+          "x": 182,
+          "y": 2097
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 95,
+          "symWidth": 100,
+          "text": "ઝી",
+          "translation": "",
+          "width": 100,
+          "x": 327,
+          "y": 2301
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 24.33333333333333,
+          "symWidth": 15.41797385620915,
+          "text": "DISGUISE  TECHNIQUE AND  SPIRIT  CONCEALMENT TECHNIQUE ...",
+          "translation": "تقنية التمويه وتقنية إخفاء الروح...",
+          "width": 339,
+          "x": 230,
+          "y": 2728
+        }
+      ],
+      "imgHeight": 3117,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 24.95161290322581,
+          "symWidth": 16.27188940092166,
+          "text": "QUITE  A  SIGNIFICANT PIECE  OF  WORK  HAS COME  IN .",
+          "translation": "لقد وصلنا عملٌ ذا شأنٍ بالغ.",
+          "width": 270,
+          "x": 206,
+          "y": 582
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.54838709677419,
+          "symWidth": 15.09677419354839,
+          "text": "IT  LOOKS  LIKE  IT  WILL BE  INTERESTING .",
+          "translation": "يبدو أنه سيكون مشوّقاً.",
+          "width": 280,
+          "x": 209,
+          "y": 1931
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 50.5,
+          "symWidth": 49,
+          "text": "ли",
+          "translation": "",
+          "width": 62,
+          "x": 183,
+          "y": 2070
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.5,
+          "symWidth": 15.6578947368421,
+          "text": "THIS  BLOOD  RIVER  SQUAD COLLECTIVE  TRAINING .",
+          "translation": "تدريب جماعي لفريق نهر الدماء.",
+          "width": 344,
+          "x": 179,
+          "y": 2877
+        }
+      ],
+      "imgHeight": 3118,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 36,
+          "symWidth": 20,
+          "text": "HEY ,  HEY ~",
+          "translation": "هي، هي~",
+          "width": 158,
+          "x": 176,
+          "y": 2287
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 25,
+          "symWidth": 15.39285714285714,
+          "text": "YOUR  FACE ISN'T  FAMILIAR .",
+          "translation": "وجهك غريب عليّ.",
+          "width": 190,
+          "x": 421,
+          "y": 3201
+        }
+      ],
+      "imgHeight": 3254,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 25,
+          "symWidth": 16.52689075630252,
+          "text": "ARE  YOU  THE  AGENT SENT  BY  THE  HEAVENLY DEMON'S DISCIPLES ?",
+          "translation": "هل أنت الوكيل المرسل من تلاميذ الشيطان السماوي؟",
+          "width": 299,
+          "x": 220,
+          "y": 133
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 25.33333333333333,
+          "symWidth": 16.26666666666667,
+          "text": "YOU'RE QUITE  PRETTY , AREN'T  YOU ?",
+          "translation": "أنت جميلة جداً، أليس كذلك؟",
+          "width": 191,
+          "x": 129,
+          "y": 1029
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 25.425,
+          "symWidth": 16.15511363636364,
+          "text": "SINCE  THIS  IS A  CHANCE MEETING , WHY  DON'T  WE  HAVE A  TALK ?",
+          "translation": "بما أنها صدفة لقاء، لماذا لا نتحدث سوياً؟",
+          "width": 258,
+          "x": 358,
+          "y": 1313
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 25.25,
+          "symWidth": 14.72970085470086,
+          "text": "IF  THERE'S ANYTHING DIFFICULT , WE'LL  HELP  YOU .",
+          "translation": "إن كان هناك ما يصعب عليك، فسوف نعينك.",
+          "width": 260,
+          "x": 88,
+          "y": 1965
+        }
+      ],
+      "imgHeight": 3254,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 25,
+          "symWidth": 16.55528846153846,
+          "text": "NOW  THAT  I  THINK ABOUT  IT ,  IT  SEEMS  LIKE  IT WOULD  BE HELPFUL .",
+          "translation": "الآن وقد فكرت في الأمر، يبدو أنه سيكون ذا فائدة.",
+          "width": 350,
+          "x": 156,
+          "y": 605
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 15.44444444444444,
+          "text": "OH .  RIGHT ?",
+          "translation": "أوه، حقاً؟",
+          "width": 150,
+          "x": 81,
+          "y": 1356
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 32,
+          "symWidth": 17.42727272727273,
+          "text": "YEAH . IF  WE  HELP ...",
+          "translation": "نعم، إن ساعدنا...",
+          "width": 204,
+          "x": 361,
+          "y": 1573
+        }
+      ],
+      "imgHeight": 3253,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 30.21111111111111,
+          "symWidth": 19.37777777777778,
+          "text": "IT  WOULD  ALSO  BE HELPFUL  TO  REDUCE  THE NUMBER  OF  PEOPLE IN  ADVANCE .",
+          "translation": "وسيكون من المفيد أيضاً تقليص عدد الأشخاص مسبقاً.",
+          "width": 338,
+          "x": 190,
+          "y": 705
+        }
+      ],
+      "imgHeight": 3255,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 43.9,
+          "symWidth": 23.2,
+          "text": "UWAH ! WHAT !",
+          "translation": "يا إلهي! ماذا؟",
+          "width": 108,
+          "x": 190,
+          "y": 1874
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 38.5,
+          "symWidth": 23.45238095238095,
+          "text": "WHAT  DID YOU  DO !",
+          "translation": "ماذا فعلت؟",
+          "width": 174,
+          "x": 451,
+          "y": 2154
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 39,
+          "symWidth": 42.66666666666666,
+          "text": "DUU",
+          "translation": "دوو",
+          "width": 70,
+          "x": 466,
+          "y": 2353
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 17,
+          "text": "WHAT ?",
+          "translation": "ماذا؟",
+          "width": 83,
+          "x": 313,
+          "y": 2666
+        }
+      ],
+      "imgHeight": 2827,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 25.51851851851852,
+          "symWidth": 15.66666666666667,
+          "text": "THERE'S  NO  RULE  SAYING TRAINEES  CAN'T  KILL  EACH OTHER ,  IS  THERE ?",
+          "translation": "لا توجد قاعدة تمنع المتدربين من قتل بعضهم البعض، أليس كذلك؟",
+          "width": 340,
+          "x": 183,
+          "y": 575
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 28.31111111111111,
+          "symWidth": 16.66349206349206,
+          "text": "YOU  SAID  YOU  CAME FROM  ANOTHER  UNIT  TO RECEIVE  COLLECTIVE TRAINING ...",
+          "translation": "قلت إنك جئت من وحدة أخرى لتلقي التدريب الجماعي...",
+          "width": 318,
+          "x": 135,
+          "y": 1294
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 24,
+          "symWidth": 14.22564102564102,
+          "text": "YET  YOU  DARE  TO  USE A  KILLING  MOVE ?",
+          "translation": "ومع ذلك تجرؤ على استخدام حركة قاتلة؟",
+          "width": 251,
+          "x": 308,
+          "y": 1573
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28.48,
+          "symWidth": 15.96,
+          "text": "YOU  BXTCH .  YOU WILL  DIE  TODAY .",
+          "translation": "يا أيتها الأشد قسوة، ستموتين اليوم.",
+          "width": 215,
+          "x": 362,
+          "y": 2351
+        }
+      ],
+      "imgHeight": 2829,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 17.88888888888889,
+          "text": "COME  AT  ME .",
+          "translation": "تقدّم إليَّ.",
+          "width": 172,
+          "x": 178,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 36,
+          "symWidth": 21.08080808080808,
+          "text": "EVEN  IF  I  KILL ALL  OF  YOU ,",
+          "translation": "حتى لو قتلتكم جميعًا،",
+          "width": 246,
+          "x": 164,
+          "y": 1110
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 29.5,
+          "symWidth": 17.08653846153846,
+          "text": "IT  WON'T  AFFECT THE  TRAINING .",
+          "translation": "فلن يؤثر ذلك على التدريب.",
+          "width": 253,
+          "x": 336,
+          "y": 1346
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 16.6,
+          "text": "THA - THAT'S ... ? !",
+          "translation": "هذَا... ذلِكَ...؟!",
+          "width": 211,
+          "x": 70,
+          "y": 2029
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 22.5,
+          "symWidth": 12.69444444444444,
+          "text": "IT'S  THE  BLACK DEMON  ART .  DAMMIT ...",
+          "translation": "إنها فنون الشيطان السوداء... اللعنة!",
+          "width": 228,
+          "x": 414,
+          "y": 2765
+        }
+      ],
+      "imgHeight": 2827,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 26.66666666666667,
+          "symWidth": 20.76715876715877,
+          "text": "OOH ...  IS  SHE USING  THE  BLACK DEMON  ART ?",
+          "translation": "آه... هل تستعمل فن الشيطان الأسود؟",
+          "width": 260,
+          "x": 150,
+          "y": 555
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 22.20175438596491,
+          "symWidth": 12.42531676413255,
+          "text": "THE  BLACK  DEMON  ART IS  ONE  OF  THE  ULTIMATE DEMONIC  ARTS  REPRESENTING THE  DEMONIC  CULT ,",
+          "translation": "فَنُّ الشيطان الأسود واحد من أعظم الفنون الشيطانية\nوالذي يمثّل العقيدة الشيطانية.",
+          "width": 299,
+          "x": 165,
+          "y": 1275
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 23.25,
+          "symWidth": 13.21232057416268,
+          "text": "AND  ITS  DESTRUCTIVE  POWER IS  SECOND  TO  NONE  COMPARED TO  OTHER  MARTIAL  ARTS .",
+          "translation": "وقوته التدميرية لا ينافسها مثيل بين سائر الفنون القتالية.",
+          "width": 325,
+          "x": 290,
+          "y": 1535
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 27.5,
+          "symWidth": 14,
+          "text": "HOWEVER ,  IT  IS  JUST AS  DIFFICULT  TO  LEARN .",
+          "translation": "غير أنه من الصعوبة بمكان تعلّمه.",
+          "width": 284,
+          "x": 175,
+          "y": 1791
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 21,
+          "symWidth": 11.42222222222222,
+          "text": "ONE  MUST  BE  TRAINED  BY BEING  FED  SPECIAL  TYPES",
+          "translation": "لا بد من تدريب دقيق يُغذّى فيه المتعلّم\nبأنواع خاصة من العقاقير والسموم منذ الصغر.",
+          "width": 243,
+          "x": 134,
+          "y": 2408
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 27.33333333333333,
+          "symWidth": 14.22301228183581,
+          "text": "OF  MEDICINE  AND POISON  ALTERNATELY FROM  A  YOUNG  AGE ,",
+          "translation": "يتناوب بينهما برفق من الصغر،",
+          "width": 258,
+          "x": 332,
+          "y": 2557
+        }
+      ],
+      "imgHeight": 2828,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 49.66666666666666,
+          "symWidth": 46,
+          "text": "101",
+          "translation": "١٠١",
+          "width": 81,
+          "x": 412,
+          "y": 954
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 23.89583333333333,
+          "symWidth": 13.37462121212121,
+          "text": "AND  IF  THINGS  GO  WRONG ,  ONE MIGHT  NOT  BE  ABLE  TO  HANDLE IN  THE  BODY- THE  POISON  CIRCULATING",
+          "translation": "وإذا دارت الأمور على غير ما نشتهي، قد لا يستطيع الجسد تحمل السم المنتشر فيه",
+          "width": 328,
+          "x": 105,
+          "y": 1227
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 22.75,
+          "symWidth": 12.9421393557423,
+          "text": "A  BIZARRE  MARTIAL ART  THAT  COULD  CAUSE A  CHILD  TO  DIE  FOR NOTHING .",
+          "translation": "فن قتالي غريب قد يدفع بالطفل إلى الموت بلا سبب",
+          "width": 249,
+          "x": 349,
+          "y": 1447
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 24.33333333333333,
+          "symWidth": 13.09489633173843,
+          "text": "HOWEVER ,  AS  LONG  AS  ONE REACHES  GREAT COMPLETION ,",
+          "translation": "غير أن طالما بلغ المرء الغاية القصوى",
+          "width": 309,
+          "x": 114,
+          "y": 2314
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 23.5,
+          "symWidth": 12.98412698412698,
+          "text": "IT  IS  A  DIVINE  ART  THAT CAN  ALLOW  ONE  TO  APPROACH THE  TRANSCENDENT  REALM IN  AN  INSTANT .",
+          "translation": "فإنها فن إلهي يتيح الاقتراب من عالم الأسمى في غمضة عين",
+          "width": 309,
+          "x": 289,
+          "y": 2500
+        }
+      ],
+      "imgHeight": 3132,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 24.66666666666667,
+          "symWidth": 16.1625,
+          "text": "D - DON'T  BE  AFRAID . WE  CAN  SUPPRESS  HER IF  WE  JOIN  FORCES .",
+          "translation": "لا... لا تخَف، بإمكاننا كبحها إذا اتحدنا",
+          "width": 305,
+          "x": 194,
+          "y": 496
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 40,
+          "symWidth": 25,
+          "text": "OOH ...",
+          "translation": "أوه...",
+          "width": 144,
+          "x": 278,
+          "y": 1633
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 32,
+          "symWidth": 21.4,
+          "text": "DID  YOU  KILL OUR  MEMBERS ?",
+          "translation": "هل قتلت من بيننا؟",
+          "width": 278,
+          "x": 208,
+          "y": 2567
+        }
+      ],
+      "imgHeight": 3133,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 29,
+          "symWidth": 20.88095238095238,
+          "text": "I  DID  I  DO SOMETHING WRONG ?",
+          "translation": "هل فعلت شيئًا خاطئًا؟",
+          "width": 179,
+          "x": 159,
+          "y": 1846
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20,
+          "symWidth": 14.875,
+          "text": "WHY  SHOULDN'T YOU ?",
+          "translation": "ولمَ لا تفعل؟",
+          "width": 171,
+          "x": 280,
+          "y": 2272
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 25.25,
+          "symWidth": 16.01820728291316,
+          "text": "THE  RULE  OF  THIS  CULT IS  THE  SURVIVAL  OF  THE FITTEST .  IF  YOU'RE  WEAK , IT'S  NATURAL  TO  DIE .",
+          "translation": "قانون هذه الطائفة هو بقاء الأصلح.\nومن ضعُف فمصيره الموت لا محالة.",
+          "width": 333,
+          "x": 291,
+          "y": 2605
+        }
+      ],
+      "imgHeight": 3132,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 24.2,
+          "symWidth": 15.78939393939394,
+          "text": "I  AM  HEUK BI , WHO  LEADS THE  BLOOD SECRET  UNIT .",
+          "translation": "أنا هيوك بي، قائد وحدة السر الدموي.",
+          "width": 309,
+          "x": 121,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 24.25,
+          "symWidth": 16.72356601731602,
+          "text": "I  AM  IN  CHARGE OF  THE  COMPLEX  TRAINING CLASS  IN  THIS  COLLECTIVE PROCESS .",
+          "translation": "أنا المسؤول عن صف التدريب المعقد في هذا البرنامج الجماعي.",
+          "width": 348,
+          "x": 184,
+          "y": 1196
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 13.92857142857143,
+          "text": "H - HYEOL  BI ... ? !",
+          "translation": "ه- هيول بي...؟!",
+          "width": 196,
+          "x": 63,
+          "y": 1984
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 22,
+          "symWidth": 13.95833333333333,
+          "text": "THAT'S  THE  MOST ELITE  UNIT ...",
+          "translation": "تلك هي الوحدة الأسمى نخبةً...",
+          "width": 209,
+          "x": 415,
+          "y": 2064
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 84,
+          "symWidth": 72.5,
+          "text": "54",
+          "translation": "٥٤",
+          "width": 108,
+          "x": 375,
+          "y": 2309
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 23,
+          "symWidth": 15.64583333333333,
+          "text": "NO .  WHY  IS THAT  ELDER ...",
+          "translation": "لا، لماذا هذا الشيخ...",
+          "width": 176,
+          "x": 87,
+          "y": 2543
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.33333333333333,
+          "symWidth": 13,
+          "text": "WHAT'S  WITH  THIS COLLECTIVE  TRAINING THIS  TIME ?",
+          "translation": "ما مغزى هذا التدريب الجماعي هذه المرة؟",
+          "width": 233,
+          "x": 382,
+          "y": 2680
+        }
+      ],
+      "imgHeight": 3133,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 26,
+          "symWidth": 20.42857142857143,
+          "text": "HE'S  A MASTER ...",
+          "translation": "إنه أستاذ متمرس...",
+          "width": 139,
+          "x": 424,
+          "y": 136
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 45,
+          "symWidth": 45,
+          "text": "Im",
+          "translation": "أنا",
+          "width": 69,
+          "x": 174,
+          "y": 189
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 26.08823529411764,
+          "symWidth": 16.92533936651584,
+          "text": "BEFORE  WE  START THE  CLASS ,  I'LL  TELL  YOU THIS  IN  ADVANCE .",
+          "translation": "قبل أن نبدأ الدرس، سأُخبركم بهذا مسبقاً.",
+          "width": 333,
+          "x": 286,
+          "y": 1777
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20,
+          "symWidth": 14.59523809523809,
+          "text": "TWO  MEMBERS  OF THE  BLOOD  RIVER  SQUAD DIED  JUST  NOW .",
+          "translation": "لقد توفي عضوان من فرقة نهر الدم للتو.",
+          "width": 277,
+          "x": 254,
+          "y": 2400
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 29.73913043478261,
+          "symWidth": 18.28260869565218,
+          "text": "HOWEVER , THE  LEADER  WILL NOT  INVESTIGATE THAT  MATTER .",
+          "translation": "غير أن القائد لن يحقق في هذا الأمر.",
+          "width": 261,
+          "x": 155,
+          "y": 2626
+        }
+      ],
+      "imgHeight": 3097,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 25.57894736842105,
+          "symWidth": 16.39473684210526,
+          "text": "HE  WILL  NOT FIND  OUT  WHY  SUCH A  THING  HAPPENED ,",
+          "translation": "لن يكتشف سبب وقوع هذا الحدث،",
+          "width": 258,
+          "x": 70,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 21.38235294117647,
+          "symWidth": 14,
+          "text": "AND  HE  WILL NOT  HOLD  ANYONE RESPONSIBLE .",
+          "translation": "ولن يحمل أحدًا المسؤولية.",
+          "width": 211,
+          "x": 409,
+          "y": 595
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 26.21875,
+          "symWidth": 16.33928571428572,
+          "text": "BECAUSE ,  JUST  AS THAT  GIRL  SAID ,  THERE IS  NO  REGULATION",
+          "translation": "لأن، كما قالت تلك الفتاة، لا توجد قاعدة تمنع قتل المتدربين أثناء التدريب.",
+          "width": 292,
+          "x": 352,
+          "y": 1194
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 25,
+          "symWidth": 15.75595238095238,
+          "text": "PROHIBITING  THE  KILLING OF  OTHER  TRAINEES  DURING TRAINING  ANYWAY .",
+          "translation": "عموماً، لا تحظر قتل المتدربين في التدريب.",
+          "width": 371,
+          "x": 197,
+          "y": 1469
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 32.30434782608695,
+          "symWidth": 19.81605351170569,
+          "text": "IF  IT'S  UNFAIR , YOU  PROVE  IT  WITH STRENGTH .",
+          "translation": "إذا بدا لك ذلك جائرًا، فليكن البرهان بالقوة.",
+          "width": 328,
+          "x": 184,
+          "y": 2360
+        }
+      ],
+      "imgHeight": 3099,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 28.52380952380953,
+          "symWidth": 17.52380952380953,
+          "text": "SURVIVAL  OF THE  FITTEST .",
+          "translation": "البقاء للأصلح.",
+          "width": 198,
+          "x": 254,
+          "y": 189
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 25,
+          "symWidth": 16.47222222222222,
+          "text": "ISN'T  THAT  WHAT  IT MEANS  TO  BE  A  BLOOD  RIVER SQUAD  MEMBER ?",
+          "translation": "أليس هذا ما يعنيه أن تكون عضوًا في فرقة نهر الدم؟",
+          "width": 390,
+          "x": 148,
+          "y": 1377
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 23.28571428571428,
+          "text": "KEUK ...",
+          "translation": "كيوك...",
+          "width": 144,
+          "x": 254,
+          "y": 2078
+        }
+      ],
+      "imgHeight": 3097,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 25.32098765432099,
+          "symWidth": 17.37083333333333,
+          "text": "GOOD .  GOOD . NOW  YOU'RE  FINALLY GETTING  INTO  THE RIGHT  POSTURE .",
+          "translation": "حَسَنٌ، حَسَنٌ. الآنَ تَدخُلُ أخيرًا في الوضعيّة الصائبة.",
+          "width": 271,
+          "x": 270,
+          "y": 112
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 23.66666666666667,
+          "symWidth": 16.21717171717172,
+          "text": "THAT'S  HOW  IT SHOULD BE .",
+          "translation": "هكذا هو الأصلُ ويجب أن يكون.",
+          "width": 186,
+          "x": 111,
+          "y": 479
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 25.44444444444444,
+          "symWidth": 17.84242424242424,
+          "text": "FROM  NOW  ON , DO  NOT WASTE YOUR  ENERGY .",
+          "translation": "من الآن فصاعدًا، لا تُبددْ طاقتك.",
+          "width": 198,
+          "x": 369,
+          "y": 900
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 24.83823529411764,
+          "symWidth": 15.66764705882353,
+          "text": "THINGS  LIKE HOSTILITY  OR ANGER  DIRECTED AT  SOMEONE .",
+          "translation": "كأن تتجهَّمَ أو تغضبَ من أحد.",
+          "width": 226,
+          "x": 233,
+          "y": 1111
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 26.5,
+          "symWidth": 17.11538461538461,
+          "text": "I  SHALL  GIVE  YOU ALL  A  PROPHECY .",
+          "translation": "سأهبكم نبوءة.",
+          "width": 246,
+          "x": 229,
+          "y": 2119
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 35.97222222222222,
+          "symWidth": 24.2739898989899,
+          "text": "FROM  NOW  ON THE  LUXURY  OF HAVING  SUCH  EMOTIONS DURING  CLASS",
+          "translation": "من الآن لا يقبلُ لكم ترفُ هذه المشاعر أثناء الدرس.",
+          "width": 381,
+          "x": 158,
+          "y": 2821
+        }
+      ],
+      "imgHeight": 3099,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 43,
+          "symWidth": 30.30714285714286,
+          "text": "WILL  NOT BE  GRANTED .",
+          "translation": "فلا مكانَ لترفِ هذه الغواية.",
+          "width": 254,
+          "x": 225,
+          "y": 1085
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 39,
+          "symWidth": 29.40064102564103,
+          "text": "NOW ,  EVERYONE PAY  ATTENTION !",
+          "translation": "والآن، أيها الجميع، أُصغوا بانتباه!",
+          "width": 336,
+          "x": 191,
+          "y": 2207
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 25.72727272727273,
+          "symWidth": 21.45454545454545,
+          "text": "IT  SEEMS THERE  WAS  A  BRIEF DISTURBANCE ,",
+          "translation": "يبدو أن هناك اضطرابًا طارئًا قد حدث،",
+          "width": 317,
+          "x": 94,
+          "y": 3220
+        }
+      ],
+      "imgHeight": 3484,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 24.25,
+          "symWidth": 20.22988153594771,
+          "text": "BUT  REPRESENTING  THE BLOOD  RIVER  SQUAD ,  I WELCOME  YOU  ALL  WHO HAVE  GATHERED  HERE !",
+          "translation": "إنني، ممثلاً لفريق نهر الدماء، أرحب بكم جميعاً أيها الحاضرون!",
+          "width": 345,
+          "x": 248,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 23.5,
+          "symWidth": 18.74586540461826,
+          "text": "MY  NAME  IS  SIM WAN - CHEONG .  I  AM  IN  CHARGE OF  THE  THEORY  CLASS  FOR  THIS COLLECTIVE  TRAINING .",
+          "translation": "اسمي سيم وان - تشيونغ، وأنا مسؤول عن فصل النظرية لهذا التدريب الجماعي.",
+          "width": 442,
+          "x": 127,
+          "y": 1216
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.78095238095238,
+          "text": "THE  CONTENT THIS  INSTRUCTOR WILL  TEACH  TODAY",
+          "translation": "المادة التي سيعلمها هذا المدرس اليوم",
+          "width": 250,
+          "x": 136,
+          "y": 2000
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 21.33333333333333,
+          "symWidth": 17.96081871345029,
+          "text": "HAS  A  HIGH  LEVEL  OF PRACTICALITY  THAT  CAN BE  USED  IMMEDIATELY .",
+          "translation": "تحمل مستوى عالياً من التطبيق العملي يمكنكم استخدامه فوراً.",
+          "width": 317,
+          "x": 278,
+          "y": 2231
+        }
+      ],
+      "imgHeight": 3485,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 22.65185185185185,
+          "symWidth": 18.57278143756405,
+          "text": "THEREFORE , IF  YOU  FAIL  TO  KEEP  UP WITH  THE  PROGRESS  OF  THE CLASS  EVEN  A  LITTLE  OR  FAIL TO  CONCENTRATE ,  YOU  WILL  BE ELIMINATED  IMMEDIATELY ,",
+          "translation": "لذا، إن تخلفتم عن متابعة تقدم الفصل ولو قليلاً أو فشلتم في التركيز، فستُستبعدون فوراً،",
+          "width": 420,
+          "x": 72,
+          "y": 156
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 21.75,
+          "symWidth": 17.4796626984127,
+          "text": "AND  NATURALLY ,  YOU WILL  FAIL  TO  COMPLETE THIS  COLLECTIVE TRAINING .",
+          "translation": "وبطبيعة الحال، ستفشلون في إتمام هذا التدريب الجماعي.",
+          "width": 321,
+          "x": 283,
+          "y": 496
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 27,
+          "symWidth": 23.63636363636364,
+          "text": "I  GUARANTEE THAT  THIS  TIME  YOU SPEND  WITH  ME",
+          "translation": "أضمن لكم أن الوقت الذي تقضونه معي",
+          "width": 338,
+          "x": 198,
+          "y": 1532
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 29.5,
+          "symWidth": 25.75,
+          "text": "WILL  BE  A FOR  YOU . DREAM - LIKE  TIME",
+          "translation": "سيكون بحق وقتاً حالماً لا ينسى.",
+          "width": 321,
+          "x": 231,
+          "y": 2621
+        }
+      ],
+      "imgHeight": 3484,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 26,
+          "symWidth": 22.29166666666667,
+          "text": "BECAUSE  ALL  THE  OTHER CLASSES  WILL  BE  TRAINING THAT  CROSSES  BETWEEN LIFE  AND  DEATH !",
+          "translation": "لأن جميع الطبقات الأخرى ستتدرب\nفي الفجوة بين الحياة والموت!",
+          "width": 444,
+          "x": 132,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 39.5,
+          "symWidth": 28.26875,
+          "text": "THEN  I  SHALL BEGIN  THE  CLASS ...",
+          "translation": "إذاً سأبدأ الدرس...",
+          "width": 413,
+          "x": 159,
+          "y": 2218
+        }
+      ],
+      "imgHeight": 3485,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

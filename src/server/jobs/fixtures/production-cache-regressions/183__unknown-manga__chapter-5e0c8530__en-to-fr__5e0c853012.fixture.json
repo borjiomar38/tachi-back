@@ -1,0 +1,2898 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0183",
+  "jobId": "fixture-job-0183",
+  "licenseId": "fixture-license-0183",
+  "pageCount": 54,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "002__001.jpg",
+    "003__002.jpg",
+    "004__002.jpg",
+    "012__001.jpg",
+    "004__001.jpg",
+    "005__001.jpg",
+    "004__003.jpg",
+    "006__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__002.jpg",
+    "007__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "009__001.jpg",
+    "008__001.jpg",
+    "007__003.jpg",
+    "008__002.jpg",
+    "011__001.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__003.jpg",
+    "013__001.jpg",
+    "014__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "011__002.jpg",
+    "014__002.jpg",
+    "016__001.jpg",
+    "013__002.jpg",
+    "018__001.jpg",
+    "015__002.jpg",
+    "015__001.jpg",
+    "016__002.jpg",
+    "018__002.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "022__001.jpg",
+    "019__001.jpg",
+    "018__003.jpg",
+    "020__002.jpg",
+    "019__002.jpg",
+    "019__003.jpg",
+    "020__001.jpg",
+    "021__001.jpg",
+    "021__002.jpg",
+    "020__003.jpg",
+    "022__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 32.08620689655172,
+          "symWidth": 24.97701149425287,
+          "text": "ANY FURTHER  STRUGGLE  IS UNNECESSARY .",
+          "translation": "TOUT AUTRE COMBAT EST INUTILE.",
+          "width": 443,
+          "x": 130,
+          "y": 3421
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 24.916666666666668,
+          "text": "... BULLSHIT .",
+          "translation": "... CONNERIES.",
+          "width": 306,
+          "x": 113,
+          "y": 4561
+        }
+      ],
+      "imgHeight": 5222,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 23.333333333333332,
+          "symWidth": 20.49829931972789,
+          "text": "YOU  CAN'T POSSIBLY  DEFEAT ME  BY  MERELY  MIMICKING THE  HEAVENLY  DEMON DIVINE  ART .",
+          "translation": "TU NE PEUX PAS ME VAINCRE EN IMITANT SIMPLEMENT L’ART DIVIN DU DÉMON CÉLESTE.",
+          "width": 389,
+          "x": 160,
+          "y": 3195
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 34.90909090909091,
+          "symWidth": 33.27272727272727,
+          "text": "IN  THAT CASE ,",
+          "translation": "DANS CE CAS,",
+          "width": 201,
+          "x": 164,
+          "y": 3845
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 24,
+          "symWidth": 22.545454545454547,
+          "text": "THERE'S  ONLY ONE  WAY .",
+          "translation": "IL N’Y A QU’UNE SEULE ISSUE.",
+          "width": 231,
+          "x": 361,
+          "y": 4583
+        }
+      ],
+      "imgHeight": 5222,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 69.5,
+          "symWidth": 42.22222222222222,
+          "text": "AS  A  DRAGON KNIGHT .",
+          "translation": "EN TANT QUE CHEVALIER DRAGON.",
+          "width": 478,
+          "x": 108,
+          "y": 1606
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 20.285714285714285,
+          "text": "<  DRAGON",
+          "translation": "< DRAGON",
+          "width": 151,
+          "x": 459,
+          "y": 1978
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 14.285714285714286,
+          "text": "<  HEAVENLY  DEMON",
+          "translation": "< DÉMON CÉLESTE",
+          "width": 223,
+          "x": 81,
+          "y": 1985
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 17.714285714285715,
+          "text": "KNIGHT  >",
+          "translation": "CHEVALIER >",
+          "width": 136,
+          "x": 464,
+          "y": 2008
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 12.6,
+          "text": "DIVINE  ART  >",
+          "translation": "ART DIVIN >",
+          "width": 144,
+          "x": 119,
+          "y": 2010
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 81,
+          "symWidth": 40.5,
+          "text": "[ TRAIT  EVOLVED ]",
+          "translation": "[TRAIT ÉVOLUÉ]",
+          "width": 559,
+          "x": 70,
+          "y": 3031
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 24.5,
+          "symWidth": 28,
+          "text": "De",
+          "translation": "De",
+          "width": 44,
+          "x": 634,
+          "y": 3963
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 34,
+          "symWidth": 53.5,
+          "text": "F =",
+          "translation": "F =",
+          "width": 113,
+          "x": 307,
+          "y": 3974
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 35.44,
+          "symWidth": 32.48,
+          "text": "<  HEAVENLY  DEMON DRAGON  KING  >",
+          "translation": "< ROI DRAGON DÉMON CÉLESTE >",
+          "width": 485,
+          "x": 96,
+          "y": 4129
+        },
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 59.666666666666664,
+          "symWidth": 34.2926282051282,
+          "text": "I  WILL  MANIFEST THE  HEAVENLY  DEMON DIVINE  ART .",
+          "translation": "JE VAIS MANIFESTER L’ART DIVIN DU DÉMON CÉLESTE.",
+          "width": 595,
+          "x": 55,
+          "y": 4960
+        }
+      ],
+      "imgHeight": 5280,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 377,
+          "symHeight": 317,
+          "symWidth": 313.5,
+          "text": "of",
+          "translation": "de",
+          "width": 391,
+          "x": 49,
+          "y": 2370
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 66,
+          "symWidth": 37,
+          "text": "AHAHAHA !",
+          "translation": "AHAHAHA !",
+          "width": 252,
+          "x": 159,
+          "y": 3562
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 33.75,
+          "symWidth": 23.52896825396825,
+          "text": "YOU'VE COMPLETELY  EXCEEDED MY  EXPECTATIONS ONCE  AGAIN !",
+          "translation": "TU DÉPASSES À NOUVEAU TOUTES MES ATTENTES !",
+          "width": 396,
+          "x": 218,
+          "y": 5256
+        }
+      ],
+      "imgHeight": 5539,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 28,
+          "symWidth": 22.4,
+          "text": "RED  DRAGON .",
+          "translation": "DRAGON ROUGE.",
+          "width": 253,
+          "x": 215,
+          "y": 165
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 41.5,
+          "symWidth": 28.183333333333334,
+          "text": "LEND  ME YOUR  POWER .",
+          "translation": "PRÊTE-MOI TA PUISSANCE.",
+          "width": 299,
+          "x": 207,
+          "y": 991
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 20.413043478260867,
+          "symWidth": 18.61619684663163,
+          "text": "THE  OTHER SECRET  TECHNIQUE THAT  MAKES  UP  THE HEAVENLY  DEMON DIVINE  ART .",
+          "translation": "L’AUTRE TECHNIQUE SECRÈTE QUI CONSTITUE L’ART DIVIN DU DÉMON CÉLESTE.",
+          "width": 289,
+          "x": 210,
+          "y": 4136
+        }
+      ],
+      "imgHeight": 5280,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 101.77777777777777,
+          "symWidth": 45,
+          "text": "YES ,  MORE !",
+          "translation": "OUI, PLUS !",
+          "width": 308,
+          "x": 251,
+          "y": 432
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 57.666666666666664,
+          "symWidth": 53.123809523809534,
+          "text": "43 <  HEAVENLY  DEMON TRUE  WORDS  >",
+          "translation": "43 < PAROLES VÉRIDIQUES DU DÉMON CÉLESTE >",
+          "width": 377,
+          "x": 56,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23,
+          "symWidth": 20.789473684210527,
+          "text": "<  HEAVENLY DEMON  EYES  >",
+          "translation": "< YEUX DU DÉMON CÉLESTE >",
+          "width": 237,
+          "x": 325,
+          "y": 1177
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 177.5,
+          "symWidth": 145,
+          "text": "파랑",
+          "translation": "파랑",
+          "width": 235,
+          "x": 320,
+          "y": 1522
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 86.83333333333333,
+          "symWidth": 55,
+          "text": "MORE- !",
+          "translation": "PLUS !",
+          "width": 273,
+          "x": 342,
+          "y": 1812
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 26,
+          "symWidth": 24.894736842105264,
+          "text": "<  HEAVENLY DEMON  BODY  >",
+          "translation": "< CORPS DU DÉMON CÉLESTE >",
+          "width": 292,
+          "x": 48,
+          "y": 2151
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 20.608695652173914,
+          "symWidth": 19.26086956521739,
+          "text": "<  HEAVENLY  DEMON HOLY  SOUL >",
+          "translation": "< ÂME SAINTE DU DÉMON CÉLESTE >",
+          "width": 295,
+          "x": 330,
+          "y": 2630
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 25.074074074074073,
+          "symWidth": 20.703703703703702,
+          "text": "KHEAVENLY  DEMON FOUR  EXTREMES  >",
+          "translation": "< QUATRE EXTREMES DU DÉMON CÉLESTE >",
+          "width": 320,
+          "x": 330,
+          "y": 3457
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 88,
+          "symWidth": 46.666666666666664,
+          "text": "EVEN  MORE !",
+          "translation": "ENCORE PLUS !",
+          "width": 284,
+          "x": 110,
+          "y": 3658
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 31,
+          "symWidth": 28.464285714285715,
+          "text": "<  HEAVENLY  DEMON DIVINE  EMPEROR  >",
+          "translation": "< EMPEREUR DIVIN DU DÉMON CÉLESTE >",
+          "width": 446,
+          "x": 50,
+          "y": 4015
+        }
+      ],
+      "imgHeight": 5540,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.78125,
+          "symWidth": 22.09375,
+          "text": "RIGHT  AT THIS  MOMENT ,  IN  ALL MY  SENSES ,",
+          "translation": "À L’INSTANT PRÉCIS, DANS TOUS MES SENS,",
+          "width": 330,
+          "x": 180,
+          "y": 593
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 40,
+          "symWidth": 23.333333333333332,
+          "text": "SAINTESS .",
+          "translation": "SAINTE.",
+          "width": 200,
+          "x": 227,
+          "y": 1566
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 38.5,
+          "symWidth": 24.069444444444443,
+          "text": "THE  END  YOU SO  DESIRED ...",
+          "translation": "LA FIN QUE TU DÉSIRAIS TANT...",
+          "width": 275,
+          "x": 353,
+          "y": 1748
+        },
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 53.5,
+          "symWidth": 34.30357142857143,
+          "text": "I  SHALL GIFT  IT  TO YOU .",
+          "translation": "JE TE LA DONNERAI.",
+          "width": 285,
+          "x": 116,
+          "y": 3329
+        }
+      ],
+      "imgHeight": 4228,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 32,
+          "text": "TRAIT  EVOLVED",
+          "translation": "TRAIT ÉVOLUÉ",
+          "width": 391,
+          "x": 148,
+          "y": 1329
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 33,
+          "symWidth": 27.85763888888889,
+          "text": "< ABSOLUTE INVINCIBLE  SWORD >",
+          "translation": "< ÉPÉE ABSOLUMENT INVINCIBLE >",
+          "width": 466,
+          "x": 120,
+          "y": 1756
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 27.3,
+          "text": "FINALLY ...",
+          "translation": "ENFIN...",
+          "width": 252,
+          "x": 231,
+          "y": 3320
+        }
+      ],
+      "imgHeight": 4218,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 77.8125,
+          "symWidth": 52.36805555555556,
+          "text": "GROW  EVEN STRONGER !",
+          "translation": "DEVENIR ENCORE PLUS FORT !",
+          "width": 412,
+          "x": 133,
+          "y": 175
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 68.4,
+          "symWidth": 32.2,
+          "text": "AH ...",
+          "translation": "AH...",
+          "width": 155,
+          "x": 451,
+          "y": 1104
+        },
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 78,
+          "symWidth": 45.22222222222222,
+          "text": "OUR SAVIOR ...",
+          "translation": "NOTRE SAUVEUR...",
+          "width": 341,
+          "x": 189,
+          "y": 1683
+        }
+      ],
+      "imgHeight": 4054,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 12.384615384615385,
+          "symWidth": 24,
+          "text": "་  ་  ་ ་  ་  “ ས་  ་ ་ ་་་",
+          "translation": "་  ་  ་ ་  ་  “ ས་  ་ ་ ་་་",
+          "width": 70,
+          "x": 495,
+          "y": 461
+        },
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 55.51785714285714,
+          "symWidth": 33.339285714285715,
+          "text": "THE  HEAVENLY DEMON  DIVINE  ART  HAS BEEN  REBORN !",
+          "translation": "L’ART DIVIN DU DÉMON CÉLESTE EST RENAÎTRE !",
+          "width": 618,
+          "x": 39,
+          "y": 933
+        },
+        {
+          "angle": 0,
+          "height": 317,
+          "symHeight": 263.5,
+          "symWidth": 229,
+          "text": "of",
+          "translation": "de",
+          "width": 323,
+          "x": 339,
+          "y": 2657
+        },
+        {
+          "angle": 0,
+          "height": 660,
+          "symHeight": 643,
+          "symWidth": 372,
+          "text": "of",
+          "translation": "de",
+          "width": 571,
+          "x": 63,
+          "y": 3076
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 33.333333333333336,
+          "symWidth": 19.375,
+          "text": "THE  NURTURER  OF A  GREAT  AND  SUPREME CIVILIZATION ... !",
+          "translation": "LE NURRICIER D’UNE GRANDE ET SUPRÊME CIVILISATION... !",
+          "width": 365,
+          "x": 234,
+          "y": 147
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 57,
+          "symWidth": 36.64285714285714,
+          "text": "RULER  OF THE  STARS !",
+          "translation": "SOUVERAIN DES ÉTOILES !",
+          "width": 316,
+          "x": 191,
+          "y": 2027
+        }
+      ],
+      "imgHeight": 4020,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 112.5,
+          "symWidth": 74.58333333333333,
+          "text": "Trait Hoarder",
+          "translation": "Accumuleur de Traits",
+          "width": 540,
+          "x": 95,
+          "y": 1392
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 10,
+          "symWidth": 6.898214285714285,
+          "text": "ADAPTATION  |  NYEONG - NI DIRECTION  |  MONKERSHIN DIRECTION  JUNG  JAEYU ORIGINAL  CORAL  REEF ART  |  STUDIO",
+          "translation": "ADAPTATION | DIRECTION NYEONG-NI | DIRECTION MONKERSHIN | JUNG JAEYU ORIGINAL CORAIL RÉCIF ART | STUDIO",
+          "width": 145,
+          "x": 411,
+          "y": 1705
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 11,
+          "symWidth": 6.5,
+          "text": "INUS",
+          "translation": "INUS",
+          "width": 28,
+          "x": 488,
+          "y": 1776
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37,
+          "symWidth": 34,
+          "text": "87",
+          "translation": "87",
+          "width": 66,
+          "x": 309,
+          "y": 2042
+        }
+      ],
+      "imgHeight": 4054,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 27.2,
+          "symWidth": 22.533333333333335,
+          "text": "SAINTESS , CLEAR .",
+          "translation": "SAINTE, C’EST CLAIR.",
+          "width": 185,
+          "x": 171,
+          "y": 959
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 23.782608695652176,
+          "text": "THEN  THE  NEXT CHAPTER  IS ...",
+          "translation": "ALORS, LE CHAPITRE SUIVANT EST...",
+          "width": 291,
+          "x": 228,
+          "y": 1162
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 8.5,
+          "symWidth": 14.5,
+          "text": "9 ♡",
+          "translation": "9 ♡",
+          "width": 25,
+          "x": 385,
+          "y": 1873
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 41,
+          "symWidth": 27.208333333333336,
+          "text": "UHU , инининини ...",
+          "translation": "OUI, инининини...",
+          "width": 285,
+          "x": 281,
+          "y": 2388
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 32,
+          "symWidth": 25.583333333333332,
+          "text": "COME FORTH ...",
+          "translation": "APPARAIS...",
+          "width": 182,
+          "x": 373,
+          "y": 2995
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 44,
+          "symWidth": 38.523809523809526,
+          "text": "OLD FATHER-",
+          "translation": "VIEUX PÈRE-",
+          "width": 267,
+          "x": 175,
+          "y": 3211
+        }
+      ],
+      "imgHeight": 4055,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 41,
+          "symWidth": 25.5,
+          "text": "? !",
+          "translation": "? !",
+          "width": 54,
+          "x": 484,
+          "y": 3698
+        }
+      ],
+      "imgHeight": 4020,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 35,
+          "symWidth": 22.212797619047617,
+          "text": "... THE AFTERLIFE  BUILT BY  THE  OLD FATHER .",
+          "translation": "... L’AU-DELÀ CONSTRUIT PAR LE VIEUX PÈRE.",
+          "width": 305,
+          "x": 196,
+          "y": 786
+        }
+      ],
+      "imgHeight": 4174,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 23.466666666666665,
+          "symWidth": 19.2,
+          "text": "ALL  OF  HER AWAY ...",
+          "translation": "TOUT CE QU’ELLE A, PARTI...",
+          "width": 180,
+          "x": 165,
+          "y": 834
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 20.375,
+          "text": "BRETHREN",
+          "translation": "FRÈRES",
+          "width": 160,
+          "x": 114,
+          "y": 866
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 22.166666666666668,
+          "text": "MELTED",
+          "translation": "FUSIONNÉS",
+          "width": 116,
+          "x": 282,
+          "y": 866
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 22,
+          "symWidth": 20.47070707070707,
+          "text": "IT'S  MUCH MORE  GRAPHIC  THAN THE  GAME ... !",
+          "translation": "C’EST BIEN PLUS CHOC QUE LE JEU... !",
+          "width": 327,
+          "x": 246,
+          "y": 1043
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 32.5,
+          "symWidth": 25.007936507936506,
+          "text": "THE  MANA  IS FLUCTUATING ...",
+          "translation": "LE MANA FLUCTUE...",
+          "width": 308,
+          "x": 308,
+          "y": 3214
+        }
+      ],
+      "imgHeight": 4022,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 36,
+          "symWidth": 20.28333333333333,
+          "text": "A  WASTELAND DYED  IN  BLACK .",
+          "translation": "UN DÉsert TEINT EN NOIR.",
+          "width": 253,
+          "x": 89,
+          "y": 331
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 35.666666666666664,
+          "symWidth": 19.44345238095238,
+          "text": "AN  EMPTY SPACE  WITH  NOTHING BUT  GRAY  SOIL .",
+          "translation": "UN ESPACE VIDE AVEC RIEN QUE DU SOL GRIS.",
+          "width": 341,
+          "x": 253,
+          "y": 1740
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 42,
+          "symWidth": 21.65833333333333,
+          "text": "I  KNOW  WHERE THIS  PLACE  IS .",
+          "translation": "JE SAIS OÙ NOUS SOMMES.",
+          "width": 280,
+          "x": 206,
+          "y": 3565
+        }
+      ],
+      "imgHeight": 4173,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 39.142857142857146,
+          "symWidth": 34.76190476190476,
+          "text": "MORNING STAR ,  THE ABYSS-",
+          "translation": "ÉTOILE DU MATIN, ABYSS-",
+          "width": 245,
+          "x": 132,
+          "y": 1338
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 41.15384615384615,
+          "symWidth": 37.07692307692308,
+          "text": "ANSWER MY  CALL .",
+          "translation": "RÉPONDS À MON APPEL.",
+          "width": 247,
+          "x": 291,
+          "y": 2912
+        }
+      ],
+      "imgHeight": 4091,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 30.355263157894736,
+          "symWidth": 16.402255639097746,
+          "text": "A  FUSION OF  AN  OUTER  GOD DESCENDED  FROM AN  OTHERWORLD ,",
+          "translation": "UNE FUSION D’UN DIEU EXTÉRIEUR DESCENDU D’UN AUTRE MONDE,",
+          "width": 241,
+          "x": 131,
+          "y": 63
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 35.51851851851852,
+          "symWidth": 18.62962962962963,
+          "text": "AND  A  NATIVE  GOD BORN  ON  EARTH ...",
+          "translation": "ET D’UNE DIVINITÉ NATIVE NÉE SUR TERRE...",
+          "width": 296,
+          "x": 283,
+          "y": 297
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 29,
+          "symWidth": 26.3,
+          "text": "MY  VESSEL THE  SAVIOR  OF THE  WORLD .",
+          "translation": "MON VÉHICULE, LE SAUVEUR DU MONDE.",
+          "width": 293,
+          "x": 121,
+          "y": 1620
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 20.711111111111112,
+          "symWidth": 18.5,
+          "text": "THE  ONE WHO  WILL  BECOME THE  LIGHT  OF  THE  VOID DIMENSION .",
+          "translation": "CELUI QUI DEVIENDRA LA LUMIÈRE DE LA DIMENSION DU VIDE.",
+          "width": 327,
+          "x": 275,
+          "y": 1921
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 47.46153846153846,
+          "symWidth": 40.07692307692308,
+          "text": "NOW ,  COME TO  ME !",
+          "translation": "MAINTENANT, VIENS À MOI !",
+          "width": 336,
+          "x": 178,
+          "y": 4454
+        }
+      ],
+      "imgHeight": 4879,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 77.52941176470588,
+          "symWidth": 42.411764705882355,
+          "text": "THE  \" DIVINE REALM . \"",
+          "translation": "LE « ROYAUME DIVIN. »",
+          "width": 462,
+          "x": 117,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 33.21875,
+          "symWidth": 29.375,
+          "text": "... IT'S BEEN  A  LONG TIME .",
+          "translation": "... ÇA FAIT LONGTEMPS.",
+          "width": 293,
+          "x": 196,
+          "y": 1085
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 33.5,
+          "symWidth": 27.958333333333336,
+          "text": "A  TRULY LONG  TIME ... !",
+          "translation": "VRAIMENT LONGTEMPS... !",
+          "width": 313,
+          "x": 109,
+          "y": 2157
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 31.78888888888889,
+          "symWidth": 30.933333333333337,
+          "text": "WE FINALLY MEET .",
+          "translation": "NOUS NOUS RENCONTRONS ENFIN.",
+          "width": 170,
+          "x": 151,
+          "y": 3573
+        }
+      ],
+      "imgHeight": 4173,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 84,
+          "symWidth": 52.9,
+          "text": "OLD  FATHER !",
+          "translation": "VIEUX PÈRE !",
+          "width": 518,
+          "x": 92,
+          "y": 289
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30,
+          "symWidth": 27,
+          "text": "WOULD",
+          "translation": "IRAIS-TU",
+          "width": 124,
+          "x": 298,
+          "y": 1260
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 30.25,
+          "symWidth": 25.99267676767677,
+          "text": "YOU GO  IF  YOU  WERE ME ,  YOU  MUTT BASTARD ?!",
+          "translation": "À MA PLACE, ESPÈCE DE BASTARD DE CHIEN ?!",
+          "width": 296,
+          "x": 254,
+          "y": 1260
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 39,
+          "symWidth": 29.555555555555557,
+          "text": "FUFUFU ...",
+          "translation": "FUFUFU...",
+          "width": 241,
+          "x": 136,
+          "y": 2820
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 22.5,
+          "symWidth": 20.54901960784314,
+          "text": "HOW  COULD YOU  NOT  KNOW  THAT THE  END  OF  DESTINY  IS APPROACHING .",
+          "translation": "COMMENT NE PAS SAVOIR QUE LA FIN DU DESTIN APPROCHE.",
+          "width": 353,
+          "x": 232,
+          "y": 3030
+        },
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 27.6,
+          "symWidth": 23.2590873015873,
+          "text": "VERY  WELL . OUT  OF  RESPECT  FOR YOUR  DIVINE  SEAT ,  I SHALL  DISMANTLE YOU  MYSELF .",
+          "translation": "TRÈS BIEN. PAR RESPECT POUR TON TRÔNE DIVIN, JE TE DÉMANTÈLERAI MOI-MÊME.",
+          "width": 374,
+          "x": 162,
+          "y": 4323
+        }
+      ],
+      "imgHeight": 4881,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 262,
+          "symHeight": 68.95,
+          "symWidth": 41.55,
+          "text": "IS  ALSO EXACTLY  THE  SAME AS  THE  GAME !",
+          "translation": "C’EST EXACTEMENT COMME DANS LE JEU !",
+          "width": 610,
+          "x": 45,
+          "y": 2235
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 29.333333333333332,
+          "symWidth": 15.993387314439948,
+          "text": "I  MUST  CHIP  AWAY THE  OLD  FATHER'S  HEALTH WITHIN  THE  TIME  LIMIT .",
+          "translation": "JE DOIS ÉRODER LA SANTÉ DU VIEUX PÈRE AVANT LA FIN DU TEMPS IMPARTI.",
+          "width": 352,
+          "x": 83,
+          "y": 4685
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 31,
+          "symWidth": 15.761904761904761,
+          "text": "TO  DO  THAT ,  I  WILL REALIZE  WHAT  I  HAVE  BEEN DREAMING  OF .",
+          "translation": "POUR CELA, JE RÉALISERAI CE DONT J’AI TOUJOURS RÊVÉ.",
+          "width": 366,
+          "x": 237,
+          "y": 4936
+        }
+      ],
+      "imgHeight": 5392,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 59.64285714285714,
+          "symWidth": 39.029761904761905,
+          "text": "INSTANT  DEATH TECHNIQUE ,  STARRY ROAR > !",
+          "translation": "TECHNIQUE DE MORT INSTANTANÉE, RUGISSEMENT ÉTOILÉ > !",
+          "width": 599,
+          "x": 51,
+          "y": 178
+        }
+      ],
+      "imgHeight": 4164,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.266666666666667,
+          "text": "< LIGHTNING  DASH >",
+          "translation": "< DASH ÉCLAIR >",
+          "width": 227,
+          "x": 221,
+          "y": 750
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 14.266666666666667,
+          "text": "< LIGHTNING  DASH >",
+          "translation": "< DASH ÉCLAIR >",
+          "width": 232,
+          "x": 392,
+          "y": 899
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 43.666666666666664,
+          "symWidth": 30.533333333333335,
+          "text": "PETTY TRICKS ... !",
+          "translation": "ASTUCES MESQUINES... !",
+          "width": 251,
+          "x": 333,
+          "y": 3300
+        }
+      ],
+      "imgHeight": 4164,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 34,
+          "symWidth": 33.5,
+          "text": "+ x",
+          "translation": "+ x",
+          "width": 73,
+          "x": 437,
+          "y": 148
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 54.916666666666664,
+          "symWidth": 43.666666666666664,
+          "text": "RECEIVE THIS-",
+          "translation": "REÇOIS ÇA-",
+          "width": 286,
+          "x": 201,
+          "y": 2783
+        }
+      ],
+      "imgHeight": 4092,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 21,
+          "symWidth": 19.630000000000003,
+          "text": "HERE  IT  COMES ! THE  FIRST  ATTACK OF  PHASE  3 ...",
+          "translation": "VOILÀ ! LA PREMIÈRE ATTAQUE DE LA PHASE 3...",
+          "width": 264,
+          "x": 307,
+          "y": 571
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 39.421052631578945,
+          "symWidth": 33.10526315789474,
+          "text": "MY THIRD  DIVINE SEAT- !",
+          "translation": "MON TROISIÈME TRÔNE DIVIN- !",
+          "width": 339,
+          "x": 173,
+          "y": 1258
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 91.5,
+          "symWidth": 84,
+          "text": "LA",
+          "translation": "LA",
+          "width": 119,
+          "x": 409,
+          "y": 2576
+        }
+      ],
+      "imgHeight": 4093,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 138.5,
+          "symWidth": 129.5,
+          "text": "21",
+          "translation": "21",
+          "width": 201,
+          "x": 447,
+          "y": 1691
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 31,
+          "symWidth": 30.444444444444443,
+          "text": "SHADOW  OF THE  ABYSS !",
+          "translation": "OMBRE DE L’ABYSS !",
+          "width": 260,
+          "x": 223,
+          "y": 2690
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 18.5,
+          "symWidth": 17.34982677281439,
+          "text": "JUST  AS  I THOUGHT ,  THE  PATTERNS ARE  EXACTLY  THE  SAME AS  IN  THE  GAME !",
+          "translation": "COMME JE L’AVAIS PRÉVU, LES MOTIFS SONT EXACTEMENT LES MÊMES QUE DANS LE JEU !",
+          "width": 318,
+          "x": 166,
+          "y": 3418
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 25,
+          "symWidth": 24.857142857142858,
+          "text": "THEN  THE STRATEGY-",
+          "translation": "ALORS LA STRATÉGIE-",
+          "width": 203,
+          "x": 346,
+          "y": 3634
+        }
+      ],
+      "imgHeight": 4165,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 31.666666666666668,
+          "symWidth": 29.42760942760943,
+          "text": "CEASE  YOUR MEANINGLESS ACTIONS  NOW .",
+          "translation": "Cessez ces actes inutiles maintenant.",
+          "width": 318,
+          "x": 201,
+          "y": 3059
+        }
+      ],
+      "imgHeight": 5019,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.142857142857142,
+          "text": "< HEAVEN'S  WALL >",
+          "translation": "< MUR DU CIEL >",
+          "width": 246,
+          "x": 231,
+          "y": 490
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 19.75,
+          "text": "< DIAMOND",
+          "translation": "< DIAMANT",
+          "width": 163,
+          "x": 445,
+          "y": 769
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17,
+          "symWidth": 15.935064935064934,
+          "text": "< HEAVENLY  DEMON STRONG  WALL >",
+          "translation": "< MUR FORT DU DÉMON CÉLESTE >",
+          "width": 239,
+          "x": 59,
+          "y": 775
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 21,
+          "text": "BODY >",
+          "translation": "CORPS >",
+          "width": 96,
+          "x": 477,
+          "y": 802
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 33.5,
+          "symWidth": 24.653846153846153,
+          "text": "< TRANSCENDENT BARRIER",
+          "translation": "< BARRIÈRE TRANSCENDANTE",
+          "width": 364,
+          "x": 156,
+          "y": 1768
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 28.666666666666668,
+          "symWidth": 24.63888888888889,
+          "text": "BUT  I  STILL TOOK  THIS  MUCH DAMAGE ...",
+          "translation": "MAIS J’AI TOUT DE MÊME SUBI AUTANT DE DOMMAGES...",
+          "width": 345,
+          "x": 175,
+          "y": 4036
+        }
+      ],
+      "imgHeight": 4509,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 46.63636363636363,
+          "symWidth": 36.96969696969697,
+          "text": "THIS  TIRESOME BATTLE  IS  ALSO AT  ITS  END !",
+          "translation": "CE COMBAT FATIGANT TOUCHE AUSSI À SA FIN !",
+          "width": 438,
+          "x": 136,
+          "y": 3209
+        }
+      ],
+      "imgHeight": 4218,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 247,
+          "symHeight": 243.5,
+          "symWidth": 181.5,
+          "text": "주로",
+          "translation": "주로",
+          "width": 317,
+          "x": 76,
+          "y": 2116
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 38,
+          "symWidth": 31.666666666666668,
+          "text": "VESSEL ...",
+          "translation": "VÉHICULE ...",
+          "width": 253,
+          "x": 228,
+          "y": 3933
+        }
+      ],
+      "imgHeight": 4219,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 47.522222222222226,
+          "symWidth": 27.460317460317462,
+          "text": "A  TRIPLE FUSION  THAT  GOES  BEYOND THE  HETEROGENOUS  DUAL FUSION",
+          "translation": "UNE FUSION TRIPLE QUI DÉPASSE LA FUSION DUALE HÉTÉROGÈNE",
+          "width": 607,
+          "x": 46,
+          "y": 1625
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 29.42105263157895,
+          "symWidth": 25.63157894736842,
+          "text": "< MARS  SWORD TECHNIQUE",
+          "translation": "< TECHNIQUE D’ÉPÉE MARS",
+          "width": 289,
+          "x": 114,
+          "y": 2164
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 31,
+          "symWidth": 26.823529411764707,
+          "text": "< SWORD  OF NEPHILIM >",
+          "translation": "< ÉPÉE DES NEPHILIM >",
+          "width": 256,
+          "x": 293,
+          "y": 2684
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 33.72727272727273,
+          "text": "< KALARATRI >",
+          "translation": "< KALARATRI >",
+          "width": 380,
+          "x": 111,
+          "y": 3209
+        },
+        {
+          "angle": 0,
+          "height": 294,
+          "symHeight": 291.5,
+          "symWidth": 159,
+          "text": "#t",
+          "translation": "#t",
+          "width": 273,
+          "x": 43,
+          "y": 4735
+        }
+      ],
+      "imgHeight": 5392,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 33,
+          "symWidth": 31.128787878787875,
+          "text": "ARE  YOU KIDDING  ME ?!",
+          "translation": "TU TE FOUS DE MOI ?!",
+          "width": 312,
+          "x": 198,
+          "y": 1772
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 26.5,
+          "symWidth": 23.60606060606061,
+          "text": "I  DON'T HAVE  TIME ...",
+          "translation": "JE N’AI PAS LE TEMPS...",
+          "width": 219,
+          "x": 244,
+          "y": 4259
+        }
+      ],
+      "imgHeight": 4511,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 386,
+          "symHeight": 323.5,
+          "symWidth": 338.5,
+          "text": "Th",
+          "translation": "Th",
+          "width": 409,
+          "x": 290,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 38.42857142857143,
+          "text": "VESSEL .",
+          "translation": "VÉHICULE.",
+          "width": 259,
+          "x": 217,
+          "y": 2316
+        }
+      ],
+      "imgHeight": 3489,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 13.7,
+          "symWidth": 26.4,
+          "text": "དོན་ ་ ་་་ ་་་",
+          "translation": "དོན་ ་ ་་་ ་་་",
+          "width": 47,
+          "x": 644,
+          "y": 1136
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 73,
+          "symWidth": 31.1,
+          "text": "DAMMIT ... !",
+          "translation": "M***... !",
+          "width": 211,
+          "x": 405,
+          "y": 3952
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 19,
+          "symWidth": 15.994949494949495,
+          "text": "I  DEFINITELY BLOCKED  IT",
+          "translation": "JE L’AI CLAIREMENT BLOQUÉ",
+          "width": 215,
+          "x": 224,
+          "y": 4727
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 18.857142857142858,
+          "text": "WITH  THE",
+          "translation": "AVEC LE",
+          "width": 118,
+          "x": 376,
+          "y": 4752
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 16.09090909090909,
+          "text": "HIGHEST  TIER",
+          "translation": "TRAIT DÉFENSIF",
+          "width": 173,
+          "x": 199,
+          "y": 4775
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 17.444444444444443,
+          "text": "DEFENSIVE",
+          "translation": "DE NIVEAU LE PLUS ÉLEVÉ... !",
+          "width": 137,
+          "x": 380,
+          "y": 4775
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 12.444444444444445,
+          "text": "TRAIT ... !",
+          "translation": "",
+          "width": 94,
+          "x": 310,
+          "y": 4802
+        }
+      ],
+      "imgHeight": 5020,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42,
+          "symWidth": 31.625,
+          "text": "H - HOW ...",
+          "translation": "C-COMMENT...",
+          "width": 218,
+          "x": 335,
+          "y": 158
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 23.296296296296298,
+          "symWidth": 20.962962962962962,
+          "text": "ARCANE SEOUL'S  STRONGEST SWORD  WAS ...",
+          "translation": "L’ÉPÉE LA PLUS PUISSANTE DE SEOUL ARCANE...",
+          "width": 319,
+          "x": 107,
+          "y": 1868
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23.523809523809526,
+          "symWidth": 21.238095238095237,
+          "text": "WITH  JUST  ONE FINGER ... ?",
+          "translation": "AVEC JUSTE UN DOIGT... ?",
+          "width": 258,
+          "x": 253,
+          "y": 2088
+        }
+      ],
+      "imgHeight": 4125,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 22.4375,
+          "symWidth": 20.8125,
+          "text": "IF  I  STACK , STACK ,  AND  STACK SOME  MORE-",
+          "translation": "SI JE CUMULE, CUMULE, ET CUMULE ENCORE-",
+          "width": 289,
+          "x": 296,
+          "y": 1692
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 25.166666666666668,
+          "symWidth": 23.33055555555556,
+          "text": "I  CAN  EVEN TAKE  OUT  A  MONSTER GOD  LIKE  HIM  IN  ONE SHOT ... !",
+          "translation": "JE PEUX MÊME ABATTRE UN DIEU MONSTRE COMME LUI D’UN COUP... !",
+          "width": 389,
+          "x": 160,
+          "y": 2419
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 43.26315789473684,
+          "symWidth": 41.24736842105263,
+          "text": "WHAT  A TRULY  PITIFUL GESTURE",
+          "translation": "QUEL GESTE VRAIMENT PATHÉTIQUE.",
+          "width": 377,
+          "x": 163,
+          "y": 5005
+        }
+      ],
+      "imgHeight": 5637,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 18,
+          "text": "< INVINCIBLE  GUN >",
+          "translation": "< FUSIL INVINCIBLE >",
+          "width": 279,
+          "x": 89,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 24.727272727272727,
+          "text": "< FATAL  BLOW >",
+          "translation": "< COUP FATAL >",
+          "width": 288,
+          "x": 318,
+          "y": 383
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 20.307692307692307,
+          "text": "< PHANTOM  EYES >",
+          "translation": "< YEUX FANTÔMES >",
+          "width": 280,
+          "x": 105,
+          "y": 710
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 21.647058823529413,
+          "text": "< GOD - SLAYING  SEAT >",
+          "translation": "< TRÔNE TUEUR DE DIEUX >",
+          "width": 396,
+          "x": 223,
+          "y": 1287
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 110,
+          "symWidth": 105.5,
+          "text": "Ty",
+          "translation": "Ty",
+          "width": 231,
+          "x": 20,
+          "y": 1832
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 30.07142857142857,
+          "symWidth": 26.023809523809526,
+          "text": "I'LL  STACK ALL  THE  TRAITS I  HAVE .",
+          "translation": "JE VAIS CUMULER TOUS LES TRAITS QUE J’AI.",
+          "width": 318,
+          "x": 214,
+          "y": 3631
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.636363636363637,
+          "symWidth": 16.772727272727273,
+          "text": "< MASTER  OF  BLUNT WEAPONS >",
+          "translation": "< MAÎTRE DES ARMES CONTONDANTES >",
+          "width": 248,
+          "x": 109,
+          "y": 4096
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15.933333333333334,
+          "text": "< LIGHTNING  DASH >",
+          "translation": "< DASH ÉCLAIR >",
+          "width": 257,
+          "x": 352,
+          "y": 4391
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 21.454545454545453,
+          "symWidth": 19.863636363636363,
+          "text": "< KNIGHT  OF  THE HOLY  CROWN >",
+          "translation": "< CHEVALIER DE LA SAINTE COURONNE >",
+          "width": 249,
+          "x": 119,
+          "y": 4644
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 25,
+          "symWidth": 20.096590909090907,
+          "text": "< EXTINCTION HEAVENLY  THUNDER >",
+          "translation": "< TONNERRE CÉLESTE D’EXTINCTION >",
+          "width": 359,
+          "x": 103,
+          "y": 5180
+        }
+      ],
+      "imgHeight": 5635,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 28,
+          "symWidth": 22.112535612535613,
+          "text": "I  HAVE  BURNED EVERYTHING  I  BUILT  UP OVER  THOUSANDS",
+          "translation": "J’AI BRÛLÉ TOUT CE QUE J’AI CONSTRUIT PENDANT DES MILLIERS",
+          "width": 395,
+          "x": 140,
+          "y": 714
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 29,
+          "symWidth": 22.32142857142857,
+          "text": "OF YEARS  FOR  TODAY .",
+          "translation": "D’ANNÉES POUR AUJOURD’HUI.",
+          "width": 330,
+          "x": 187,
+          "y": 791
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 25.5,
+          "symWidth": 20.727182539682538,
+          "text": "DID  YOU THINK  A  MERE  HUMAN COULD  CATCH  UP  TO  THAT IMMEASURABLE KARMA ?",
+          "translation": "PENSAIS-TU QU’UN SIMPLE HUMAIN POUVAIT RATTRAPER CE KARMA IMMENSÉMENT GRAND ?",
+          "width": 385,
+          "x": 154,
+          "y": 1714
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 19,
+          "text": "... SHUT  UP .",
+          "translation": "... TAIS-TOI.",
+          "width": 206,
+          "x": 120,
+          "y": 2456
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 102.5,
+          "symWidth": 85.5,
+          "text": "까득",
+          "translation": "까득",
+          "width": 158,
+          "x": 90,
+          "y": 2900
+        }
+      ],
+      "imgHeight": 3491,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 39.142857142857146,
+          "text": "VESSEL-",
+          "translation": "VÉHICULE-",
+          "width": 249,
+          "x": 216,
+          "y": 714
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 27.666666666666668,
+          "symWidth": 20.64351851851852,
+          "text": "NOW , OFFER  UP  YOUR  HEART YOURSELF .",
+          "translation": "MAINTENANT, OFFRE-MOI TOI-MÊME TON CŒUR.",
+          "width": 335,
+          "x": 100,
+          "y": 1336
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 130,
+          "symWidth": 83.8,
+          "text": "Chafe",
+          "translation": "Chafe",
+          "width": 209,
+          "x": 103,
+          "y": 1820
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 106,
+          "symWidth": 69.4,
+          "text": "chase",
+          "translation": "chase",
+          "width": 204,
+          "x": 80,
+          "y": 2689
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 25.75,
+          "symWidth": 20.239285714285714,
+          "text": "I  SHALL PERSONALLY  GRANT YOU  THE  MERCY  OF  A PAINLESS  DEATH .",
+          "translation": "JE T’OFFRIRAI PERSONNELLEMENT LA MISÉRICORDE D’UNE MORT SANS DOULEUR.",
+          "width": 316,
+          "x": 272,
+          "y": 3157
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 32.333333333333336,
+          "symWidth": 23.994612794612795,
+          "text": "IF  YOU  REPEAT YOUR  MEANINGLESS DEFIANCE ,",
+          "translation": "SI TU CONTINUES TES DÉFIS INUTILES,",
+          "width": 361,
+          "x": 128,
+          "y": 3985
+        }
+      ],
+      "imgHeight": 4126,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 26,
+          "symWidth": 24.19047619047619,
+          "text": "AS  LONG AS  I  STILL  HAVE TRAITS !",
+          "translation": "TANT QUE J’AI ENCORE DES TRAITS !",
+          "width": 292,
+          "x": 207,
+          "y": 172
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.5,
+          "symWidth": 15.82638888888889,
+          "text": "< ABSOLUTE INVINCIBLE  SWORD >",
+          "translation": "< ÉPÉE ABSOLUMENT INVINCIBLE >",
+          "width": 270,
+          "x": 340,
+          "y": 626
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 13.666666666666666,
+          "symWidth": 12.104377104377106,
+          "text": "< HEAVENLY DEMON  HEAVEN - SHATTERING SWORD >",
+          "translation": "< ÉPÉE BRISANT LE CIEL DU DÉMON CÉLESTE >",
+          "width": 275,
+          "x": 76,
+          "y": 836
+        },
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 94.89473684210526,
+          "symWidth": 56.63157894736842,
+          "text": "THIS  FIGHT  IS NOT  OVER !",
+          "translation": "CE COMBAT N’EST PAS TERMINÉ !",
+          "width": 604,
+          "x": 49,
+          "y": 3621
+        }
+      ],
+      "imgHeight": 5075,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 39,
+          "symWidth": 29.428571428571427,
+          "text": "HUH ... ?",
+          "translation": "Hein... ?",
+          "width": 187,
+          "x": 105,
+          "y": 3961
+        }
+      ],
+      "imgHeight": 5076,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "022__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 60,
+          "symWidth": 38.05,
+          "text": "AND  ALL \" MY \"  LIVES .",
+          "translation": "ET TOUTES « MES » VIES.",
+          "width": 255,
+          "x": 231,
+          "y": 101
+        }
+      ],
+      "imgHeight": 3536,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 28.5,
+          "text": "AHAHAHA !",
+          "translation": "AHAHAHA !",
+          "width": 231,
+          "x": 242,
+          "y": 141
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 24,
+          "symWidth": 19.0625,
+          "text": "IS  IT ,  KIM JOONSOO ?",
+          "translation": "N’EST-CE PAS , KIM JOONSOO ?",
+          "width": 200,
+          "x": 141,
+          "y": 2247
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 24.035117056856187,
+          "symWidth": 21.28929765886288,
+          "text": "HOW  DOES  IT FEEL  TO  BE  REBORN AS  THE  GOD  KING  OF THE  NEW  WORLD ?",
+          "translation": "COMMENT CELA FAIT-IL DE REVENIR EN TANT QUE DIEU ROI DU NOUVEAU MONDE ?",
+          "width": 345,
+          "x": 254,
+          "y": 2482
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 27.473684210526315,
+          "symWidth": 22.473684210526315,
+          "text": "... ARE  YOU MOCKING  ME ?",
+          "translation": "... TU TE MOQUES DE MOI ?",
+          "width": 271,
+          "x": 162,
+          "y": 3038
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 30,
+          "symWidth": 27.8125,
+          "text": "OF  COURSE NOT !",
+          "translation": "BIEN SÛR QUE NON !",
+          "width": 245,
+          "x": 335,
+          "y": 3359
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "018__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 32.333333333333336,
+          "symWidth": 24.048076923076923,
+          "text": "YOUR  SOUL WILL  SUFFER  FOR ALL  ETERNITY .",
+          "translation": "TON ÂME SOUFFRIRA POUR L'ÉTERNITÉ.",
+          "width": 324,
+          "x": 273,
+          "y": 155
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 38.05882352941177,
+          "symWidth": 28.823529411764707,
+          "text": "HA ,  HAHA ... FUCK ...",
+          "translation": "HA, HAHA... MERDE...",
+          "width": 254,
+          "x": 344,
+          "y": 1290
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 74.5,
+          "symWidth": 40.625,
+          "text": "MY  FUCKING LIFE ...",
+          "translation": "MA PUTAIN DE VIE...",
+          "width": 444,
+          "x": 127,
+          "y": 1775
+        },
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 60.666666666666664,
+          "symWidth": 36.074074074074076,
+          "text": "JUST  WHERE THE  HELL  DID  IT  ALL GO  WRONG ...",
+          "translation": "OÙ DIABLE TOUT A-T-IL MAL TOURNÉ...",
+          "width": 590,
+          "x": 54,
+          "y": 3278
+        }
+      ],
+      "imgHeight": 4126,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 25.5,
+          "symWidth": 20.029761904761905,
+          "text": "I'M  ASKING BECAUSE  YOU  SEEM TO  BE  USING  IT  IN  A PECULIAR  WAY .",
+          "translation": "JE DEMANDE PARCE QUE TU SEMBLES L’UTILISER D’UNE FAÇON PARTICULIÈRE.",
+          "width": 332,
+          "x": 221,
+          "y": 244
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 25,
+          "symWidth": 21.03611111111111,
+          "text": "ARE  YOU SAYING  THIS  ISN'T HOW  IT'S  SUPPOSED TO  BE  USED ?",
+          "translation": "TU DIS QUE CE N’EST PAS LA BONNE FAÇON DE L’UTILISER ?",
+          "width": 321,
+          "x": 110,
+          "y": 937
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 23.75,
+          "symWidth": 19.775,
+          "text": "IT  HOLDS A  MEANING  BEYOND SIMPLE  DUPLICATION AND  FUSION .",
+          "translation": "C’EST BIEN PLUS QUE SIMPLE DUPLICATION ET FUSION.",
+          "width": 320,
+          "x": 100,
+          "y": 2257
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 38.5,
+          "symWidth": 28.621428571428574,
+          "text": "ITS  TRUE ESSENCE ...",
+          "translation": "SON VRAI ESSENTIEL...",
+          "width": 291,
+          "x": 290,
+          "y": 2536
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.333333333333332,
+          "symWidth": 18.802884615384617,
+          "text": "IS  TO  HARMONIZE LIFE  AND  SOUL ,  FATE AND  LIFE ,",
+          "translation": "EST D’HARMONISER VIE ET ÂME, DESTIN ET VIE,",
+          "width": 333,
+          "x": 99,
+          "y": 3249
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 23.333333333333332,
+          "symWidth": 18.75384615384615,
+          "text": "AND  MOLD  THEM INTO  A  TOTALITY ...  THAT IS  ITS  ESSENCE .",
+          "translation": "ET DE LES FAÇONNER EN UNE TOTALITÉ... TEL EST SON ESSENCE.",
+          "width": 348,
+          "x": 271,
+          "y": 3525
+        }
+      ],
+      "imgHeight": 4228,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 36.666666666666664,
+          "symWidth": 29.320105820105823,
+          "text": "I'M  JUST WELCOMING чои .",
+          "translation": "JE FAIS JUSTE VISITER чои.",
+          "width": 293,
+          "x": 183,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 24.25,
+          "symWidth": 20.243910256410256,
+          "text": "KIM  JOONSOO HAS  LIVED  THROUGH HIS  CURRENT  AND PAST",
+          "translation": "KIM JOONSOO A VÉCU SES VIES PASSÉES ET PRÉSENTES",
+          "width": 331,
+          "x": 93,
+          "y": 660
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 17.4,
+          "text": "LIVES",
+          "translation": "ÉVOLUANT SON ÂME AU NIVEAU DE L’OMNIPOTENCE,",
+          "width": 83,
+          "x": 263,
+          "y": 765
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 22.333333333333332,
+          "symWidth": 18.40719696969697,
+          "text": "EVOLVING  HIS SOUL  TO  THE  LEVEL  OF THE  OMNIPOTENT ,",
+          "translation": "LE SOMMET ABSOLU D’UN SURHOMME !",
+          "width": 338,
+          "x": 270,
+          "y": 955
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 22.666666666666668,
+          "symWidth": 19.43232323232323,
+          "text": "THE ABSOLUTE  PEAK  OF  A SUPERHUMAN !",
+          "translation": "MAINTENANT QUE TU VAS",
+          "width": 321,
+          "x": 281,
+          "y": 1018
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 22.5,
+          "symWidth": 17.8,
+          "text": "NOW  THAT  YOU WILL",
+          "translation": "COMPRENDRE LA RAISON DE CES INNOMBRABLES RÉINCARNATIONS,",
+          "width": 238,
+          "x": 131,
+          "y": 1977
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 22.75,
+          "symWidth": 17.95,
+          "text": "UNDERSTAND THE  REASON  BEHIND  ALL THOSE  COUNTLESS REINCARNATIONS ,",
+          "translation": "N’EST-IL PAS JUSTE DE TE SOUHAITER LA BIENVENUE ?",
+          "width": 359,
+          "x": 84,
+          "y": 2008
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 24,
+          "symWidth": 21.16774891774892,
+          "text": "ISN'T  IT  ONLY RIGHT  TO  WELCOME YOU ?",
+          "translation": "крапи",
+          "width": 330,
+          "x": 285,
+          "y": 2295
+        },
+        {
+          "angle": 0,
+          "height": 274,
+          "symHeight": 132.4,
+          "symWidth": 138.6,
+          "text": "крапи",
+          "translation": "CONNERIES... DES VIES PASSÉES QUE JE NE CONNAIS MÊME PAS,",
+          "width": 262,
+          "x": 52,
+          "y": 2563
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 24.666666666666668,
+          "symWidth": 18.241414141414143,
+          "text": "BULLSHIT ... PAST  LIVES  I  DON'T EVEN",
+          "translation": "À QUOI ÇA SERT... ?",
+          "width": 312,
+          "x": 175,
+          "y": 3804
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 20,
+          "text": "KNOW ,",
+          "translation": "",
+          "width": 101,
+          "x": 326,
+          "y": 3873
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 26,
+          "symWidth": 21.200854700854702,
+          "text": "WHAT'S THE  POINT  OF  ALL THAT ... ?",
+          "translation": "",
+          "width": 311,
+          "x": 306,
+          "y": 4062
+        }
+      ],
+      "imgHeight": 4228,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "019__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 24.25,
+          "symWidth": 19.286954365079364,
+          "text": "WHATEVER I  WAS ,  NOW  THAT  I'VE LOST ,  THERE  IS  NO LONGER ...",
+          "translation": "QUI QUE J’ÉTAIS, MAINTENANT QUE J’AI PERDU, IL N’Y A PLUS...",
+          "width": 356,
+          "x": 69,
+          "y": 372
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 41.4,
+          "symWidth": 32.666666666666664,
+          "text": "ANYTHING I  CAN  DO .",
+          "translation": "RIEN QUE JE PUISSE FAIRE.",
+          "width": 263,
+          "x": 350,
+          "y": 1661
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 29,
+          "symWidth": 21.650793650793652,
+          "text": "JUST ,  LIKE THIS ...",
+          "translation": "JUSTE, COMME ÇA...",
+          "width": 212,
+          "x": 166,
+          "y": 2683
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 28,
+          "symWidth": 23.54232804232804,
+          "text": "OTHER THAN ...  CLOSING MY  EYES ...",
+          "translation": "RIEN D’AUTRE... QUE FERMER LES YEUX...",
+          "width": 305,
+          "x": 282,
+          "y": 3385
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 39.13793103448276,
+          "symWidth": 32.48275862068966,
+          "text": "I  THINK YOU  CAN  DO BETTER  THAN THAT .",
+          "translation": "JE PENSAIS QUE TU POUVAIS FAIRE MIEUX.",
+          "width": 354,
+          "x": 180,
+          "y": 631
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 36.857142857142854,
+          "text": "< WORLD >",
+          "translation": "< MONDE >",
+          "width": 256,
+          "x": 294,
+          "y": 1260
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 51,
+          "symWidth": 44.5,
+          "text": "HUH ?",
+          "translation": "Hein ?",
+          "width": 172,
+          "x": 425,
+          "y": 2744
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 26.205128205128204,
+          "symWidth": 23.205128205128204,
+          "text": "IS  THAT THE  SUPERPOWER THE  WORLD  TREE GAVE  YOU ?",
+          "translation": "EST-CE LE POUVOIR SUPRÊME QUE L’ARBRE MONDIAL T’A DONNÉ ?",
+          "width": 326,
+          "x": 140,
+          "y": 3199
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "021__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 145.5,
+          "symWidth": 105,
+          "text": "TITELE",
+          "translation": "TITRE",
+          "width": 263,
+          "x": 85,
+          "y": 1214
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 21.782608695652172,
+          "symWidth": 20.860869565217392,
+          "text": "RIGHT NOW  THAT  I  THINK ABOUT  IT ...",
+          "translation": "MAINTENANT QUE J’Y PENSE...",
+          "width": 287,
+          "x": 208,
+          "y": 2123
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 22.083333333333332,
+          "symWidth": 21.45625,
+          "text": "THERE WAS  A  TRAIT  I  HADN'T PROPERLY  MASTERED ЧЕТ .",
+          "translation": "IL Y AVAIT UN TRAIT QUE JE N’AVAIS PAS VRAIMENT MAÎTRISÉ ЧЕТ.",
+          "width": 339,
+          "x": 123,
+          "y": 2772
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 34.16666666666667,
+          "symWidth": 32.01587301587302,
+          "text": "YOU  HAVE AN  UNMASTERED TRAIT .",
+          "translation": "TU AS UN TRAIT NON MAÎTRISÉ.",
+          "width": 421,
+          "x": 138,
+          "y": 3312
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 23,
+          "symWidth": 20.897777777777776,
+          "text": "THE  METHOD  TO DRAW  OUT  THE  TRUE POWER  OF  THE [ WORLD ]  TRAIT ...",
+          "translation": "LA MÉTHODE POUR EXTRAIRE LA VRAIE PUISSANCE DU TRAIT [MONDE]...",
+          "width": 316,
+          "x": 229,
+          "y": 3839
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.270833333333336,
+          "symWidth": 21.824404761904763,
+          "text": "I  DIDN'T REALIZE  IT  BACK THEN ,  BUT ...",
+          "translation": "JE NE L’AVAIS PAS RÉALISÉ À L’ÉPOQUE, MAIS...",
+          "width": 283,
+          "x": 144,
+          "y": 4555
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 25,
+          "symWidth": 21.873376623376622,
+          "text": "SOMEHOW ,  I  THINK I  KNOW  NOW ...",
+          "translation": "D'UNE CERTAINE FAÇON, JE PENSE LE SAVOIR MAINTENANT...",
+          "width": 311,
+          "x": 268,
+          "y": 4784
+        }
+      ],
+      "imgHeight": 5108,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "021__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 26.714285714285715,
+          "text": "< WORLD >",
+          "translation": "< MONDE >",
+          "width": 182,
+          "x": 271,
+          "y": 286
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 78,
+          "symWidth": 77,
+          "text": "70",
+          "translation": "70",
+          "width": 110,
+          "x": 462,
+          "y": 872
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 40.5,
+          "symWidth": 28.25,
+          "text": "THE  TIME  HAS FINALLY  COME ...",
+          "translation": "LE MOMENT EST ENFIN ARRIVÉ...",
+          "width": 268,
+          "x": 221,
+          "y": 1934
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 59.64705882352941,
+          "symWidth": 40.05882352941177,
+          "text": "ALL  \" MY \" WORLDS ....",
+          "translation": "TOUS « MES » MONDES....",
+          "width": 227,
+          "x": 240,
+          "y": 2799
+        }
+      ],
+      "imgHeight": 5108,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "020__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 24.80952380952381,
+          "symWidth": 18.171428571428574,
+          "text": "THE  POWER OF  THE  WORLD  TREE  IS THE  POWER  TO  WEAVE  THE MOST  FUNDAMENTAL THINGS  TOGETHER .",
+          "translation": "LE POUVOIR DE L’ARBRE MONDIAL EST CELUI DE TISSER ENSEMBLE LES CHOSES LES PLUS FONDAMENTALES.",
+          "width": 377,
+          "x": 156,
+          "y": 944
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 33.5,
+          "symWidth": 26.660714285714285,
+          "text": "HMM ...  IS THAT  SO .",
+          "translation": "HMM... VRAIMENT.",
+          "width": 206,
+          "x": 148,
+          "y": 2320
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 28.333333333333332,
+          "symWidth": 23.138461538461538,
+          "text": "I  STILL DON'T  QUITE  GET IT ,  THOUGH ~",
+          "translation": "JE NE COMPRENDS TOUJOURS PAS TOUT, CEPENDANT~",
+          "width": 341,
+          "x": 277,
+          "y": 2537
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 67.5,
+          "symWidth": 60,
+          "text": "긁적",
+          "translation": "긁적",
+          "width": 106,
+          "x": 388,
+          "y": 2794
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 26.19047619047619,
+          "symWidth": 21.454256854256855,
+          "text": "WELL ,  I  GUESS I'LL  FIGURE  IT  OUT AS  I  GO ~ !",
+          "translation": "EH BIEN, JE VAIS LE DÉCOUVRIR SUR LE TAS~ !",
+          "width": 314,
+          "x": 203,
+          "y": 3283
+        }
+      ],
+      "imgHeight": 4227,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    },
+    "022__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 53.4,
+          "symWidth": 37.87166666666667,
+          "text": "THE  TIME  HAS COME  TO  MERGE  THEM ALL  TOGETHER .",
+          "translation": "IL EST TEMPS DE FUSIONNER TOUTES CES CHOSES ENSEMBLE.",
+          "width": 499,
+          "x": 96,
+          "y": 1607
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 19.625,
+          "symWidth": 14.579166666666667,
+          "text": "원작  |  산호초 각색  | KY | 쟝 .  도라 출 작화  스튜디오  이너",
+          "translation": "원작 | 산호초 각색 | KY | 쟝 . 도라 출 작화 스튜디오 이너",
+          "width": 161,
+          "x": 515,
+          "y": 3215
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 19.5,
+          "symWidth": 17.875,
+          "text": "STUDIO LICO",
+          "translation": "STUDIO LICO",
+          "width": 101,
+          "x": 576,
+          "y": 3376
+        }
+      ],
+      "imgHeight": 3536,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "fr",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

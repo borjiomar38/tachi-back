@@ -1,0 +1,2269 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0184",
+  "jobId": "fixture-job-0184",
+  "licenseId": "fixture-license-0184",
+  "pageCount": 44,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "011__003.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "012__003.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "013__003.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "014__003.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 24.714285714285715,
+          "symWidth": 17.714285714285715,
+          "text": "I ...  LOOK FORWARD  TO WORKING  WITH YOU !",
+          "translation": "I... LOOK FORWARD TO WORKING WITH YOU!",
+          "width": 230,
+          "x": 235,
+          "y": 393
+        }
+      ],
+      "imgHeight": 3517,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 181,
+          "symWidth": 130,
+          "text": "저녁",
+          "translation": "Evening",
+          "width": 247,
+          "x": 34,
+          "y": 796
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 11.357142857142858,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 155,
+          "x": 11,
+          "y": 2577
+        }
+      ],
+      "imgHeight": 3518,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 27.384615384615387,
+          "symWidth": 16.322115384615387,
+          "text": "YOUR HIGHNESS , SIR  KAYN ,",
+          "translation": "YOUR HIGHNESS, SIR KAYN,",
+          "width": 145,
+          "x": 318,
+          "y": 61
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 42.45454545454545,
+          "symWidth": 28.09090909090909,
+          "text": "YOU'RE BACK .",
+          "translation": "WELCOME BACK.",
+          "width": 177,
+          "x": 267,
+          "y": 1502
+        }
+      ],
+      "imgHeight": 3519,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 26.136363636363637,
+          "symWidth": 17.318181818181817,
+          "text": "BUT WHO  IS  THAT PERSON ... ?",
+          "translation": "BUT WHO'S THAT PERSON...?",
+          "width": 195,
+          "x": 349,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 98,
+          "symWidth": 86.5,
+          "text": "갸웃",
+          "translation": "...",
+          "width": 143,
+          "x": 481,
+          "y": 411
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 25.448275862068968,
+          "symWidth": 19.426724137931032,
+          "text": "OHH ,  THIS IS  A  MAGE  WHO WILL  SUPPORT THIS  WAR .",
+          "translation": "OH, THAT'S THE MAGE SUPPORTING THIS WAR.",
+          "width": 234,
+          "x": 411,
+          "y": 1430
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 26.02173913043478,
+          "symWidth": 21.114906832298136,
+          "text": "THE  MAGE IS  SKILLED ,  SO DON'T  WORRY .",
+          "translation": "THE MAGE IS SKILLED, SO DON'T WORRY.",
+          "width": 223,
+          "x": 116,
+          "y": 1636
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36,
+          "symWidth": 18.11111111111111,
+          "text": "AAH ,  I  SEE .",
+          "translation": "AH, I SEE.",
+          "width": 198,
+          "x": 141,
+          "y": 2922
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 124,
+          "symWidth": 79.66666666666667,
+          "text": "Hew",
+          "translation": "Hew",
+          "width": 146,
+          "x": 428,
+          "y": 3014
+        }
+      ],
+      "imgHeight": 3638,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29.571428571428573,
+          "symWidth": 19.19047619047619,
+          "text": "I'LL  CONTINUE MY  PATROL .",
+          "translation": "I'LL CONTINUE MY PATROL.",
+          "width": 237,
+          "x": 313,
+          "y": 291
+        },
+        {
+          "angle": 0,
+          "height": 499,
+          "symHeight": 225.66666666666666,
+          "symWidth": 205.44444444444446,
+          "text": "Auth  Fligh",
+          "translation": "...",
+          "width": 574,
+          "x": 38,
+          "y": 457
+        },
+        {
+          "angle": 0,
+          "height": 255,
+          "symHeight": 221,
+          "symWidth": 210.5,
+          "text": "저녁",
+          "translation": "Evening",
+          "width": 303,
+          "x": 304,
+          "y": 672
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 25.5,
+          "symWidth": 16.807692307692307,
+          "text": "BY  THE  WAY , YOUR  HIGHNESS .",
+          "translation": "BY THE WAY, YOUR HIGHNESS.",
+          "width": 228,
+          "x": 347,
+          "y": 3196
+        }
+      ],
+      "imgHeight": 3638,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 23.5,
+          "text": "YES ?",
+          "translation": "YES?",
+          "width": 99,
+          "x": 220,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 20,
+          "symWidth": 12.071428571428571,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 159,
+          "x": 150,
+          "y": 611
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 24.666666666666668,
+          "symWidth": 15.895833333333334,
+          "text": "PLEASE GATHER  THE  KNIGHTS IMMEDIATELY .",
+          "translation": "GATHER THE KNIGHTS IMMEDIATELY.",
+          "width": 301,
+          "x": 199,
+          "y": 1189
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 27.1875,
+          "symWidth": 18.096969696969698,
+          "text": "THERE'S SOMETHING URGENT  I  NEED TO  TELL  YOU .",
+          "translation": "I HAVE SOMETHING URGENT TO TELL YOU.",
+          "width": 237,
+          "x": 231,
+          "y": 2762
+        }
+      ],
+      "imgHeight": 3640,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 88.2,
+          "symWidth": 82.2,
+          "text": "ETURN",
+          "translation": "RETURN",
+          "width": 328,
+          "x": 201,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 33.333333333333336,
+          "symWidth": 26,
+          "text": "the",
+          "translation": "the",
+          "width": 66,
+          "x": 508,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 303,
+          "symHeight": 70,
+          "symWidth": 52.37272727272727,
+          "text": "UNIN  VALED SPEAR KNIGHT Art  by  Studio",
+          "translation": "UNINVALED SPEAR KNIGHT Art by Studio",
+          "width": 425,
+          "x": 100,
+          "y": 148
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 19,
+          "symWidth": 10.43939393939394,
+          "text": "Inus Adaptation  by  Cho  Fu - sang Professor  Cho",
+          "translation": "Inus Adaptation by Cho Fu-sang Professor Cho",
+          "width": 260,
+          "x": 299,
+          "y": 431
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 19,
+          "symWidth": 10.3,
+          "text": "Original  by Planned  by  Lock  Media",
+          "translation": "Original Planned by Lock Media",
+          "width": 230,
+          "x": 309,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 135.5,
+          "symWidth": 108,
+          "text": "웅성",
+          "translation": "...",
+          "width": 179,
+          "x": 34,
+          "y": 2804
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 132.5,
+          "symWidth": 108.5,
+          "text": "웅성",
+          "translation": "...",
+          "width": 197,
+          "x": 448,
+          "y": 3135
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 63.333333333333336,
+          "symWidth": 72,
+          "text": "OFO",
+          "translation": "OFO",
+          "width": 78,
+          "x": 480,
+          "y": 3136
+        }
+      ],
+      "imgHeight": 3791,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 16.625,
+          "text": "STARTING",
+          "translation": "STARTING NOW, THE KNIGHTS BEGIN ARMING THEMSELVES AND PREPARING FOR BATTLE.",
+          "width": 135,
+          "x": 169,
+          "y": 174
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 26.666666666666668,
+          "symWidth": 17.283333333333335,
+          "text": "NOW , THE  KNIGHTS  BEGIN ARMING",
+          "translation": "PREPARING FOR COMBAT AT SUCH A CRUCIAL MOMENT?",
+          "width": 289,
+          "x": 129,
+          "y": 176
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 25.666666666666668,
+          "symWidth": 17.083333333333332,
+          "text": "THEMSELVES AND  PREPARING FOR  BATTLE .",
+          "translation": "HAS SOMETHING HAPPENED?",
+          "width": 260,
+          "x": 170,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 25.333333333333332,
+          "symWidth": 16.136752136752136,
+          "text": "PREPARING  FOR COMBAT  AT  SUCH  A CRITICAL  HOUR ?",
+          "translation": "...",
+          "width": 265,
+          "x": 271,
+          "y": 1742
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 27.5,
+          "symWidth": 17.625,
+          "text": "HAS  SOMETHING HAPPENED ?",
+          "translation": "TIME IS SHORT, SO I’LL GET STRAIGHT",
+          "width": 243,
+          "x": 161,
+          "y": 1976
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 109,
+          "symWidth": 107.5,
+          "text": "갸웃",
+          "translation": "",
+          "width": 157,
+          "x": 169,
+          "y": 2362
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 26.333333333333332,
+          "symWidth": 16.033943833943834,
+          "text": "THERE'S LITTLE  TIME ,  SO I'LL  GET  STRAIGHT",
+          "translation": "",
+          "width": 273,
+          "x": 213,
+          "y": 3680
+        }
+      ],
+      "imgHeight": 3792,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 16,
+          "text": "TO  THE  POINT .",
+          "translation": "TO THE POINT.",
+          "width": 207,
+          "x": 246,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 25.11842105263158,
+          "symWidth": 16.387426900584796,
+          "text": "A  KNIGHT'S DUEL  WITH  THE  REBEL ARMY  IS  ABOUT  TO COMMENCE .",
+          "translation": "A KNIGHT’S DUEL WITH THE REBEL ARMY IS ABOUT TO BEGIN.",
+          "width": 308,
+          "x": 127,
+          "y": 1787
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.516129032258064,
+          "symWidth": 22.741935483870968,
+          "text": "WHAT ?! A  KNIGHT'S  DUEL , SO  SUDDENLY ?",
+          "translation": "WHAT?! A KNIGHT’S DUEL, SO SUDDENLY?",
+          "width": 256,
+          "x": 188,
+          "y": 2372
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 11.785714285714286,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 155,
+          "x": 179,
+          "y": 3420
+        }
+      ],
+      "imgHeight": 3793,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 28.08695652173913,
+          "symWidth": 19.52173913043478,
+          "text": "WAS THIS  DARGO'S PROPOSAL ?",
+          "translation": "WAS THIS DARGO'S IDEA?",
+          "width": 223,
+          "x": 236,
+          "y": 278
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 73,
+          "symWidth": 78,
+          "text": "젤레",
+          "translation": "...",
+          "width": 145,
+          "x": 400,
+          "y": 752
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 27.15,
+          "symWidth": 20.65,
+          "text": "I  WAS THE  ONE  WHO MADE  IT .",
+          "translation": "I’M THE ONE WHO SUGGESTED IT.",
+          "width": 220,
+          "x": 318,
+          "y": 1446
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 23.5,
+          "text": "OHO ...",
+          "translation": "OH...",
+          "width": 140,
+          "x": 149,
+          "y": 1865
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 31.23,
+          "symWidth": 17.03857142857143,
+          "text": "IT  SEEMS MARQUIS  SUSPEN  HASN'T HEARD  THE  RUMORS  ABOUT YOU .  SIR  KAYN .",
+          "translation": "IT SEEMS MARQUIS SUSPEN DOESN’T KNOW THE RUMORS ABOUT YOU, SIR KAYN.",
+          "width": 301,
+          "x": 183,
+          "y": 3178
+        }
+      ],
+      "imgHeight": 3635,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 70,
+          "symWidth": 77.5,
+          "text": "ww",
+          "translation": "...",
+          "width": 116,
+          "x": 388,
+          "y": 150
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 31.5,
+          "symWidth": 18.795454545454547,
+          "text": "HE'S  ALREADY A  DEAD  MAN . ***",
+          "translation": "HE’S A DEAD MAN ALREADY.",
+          "width": 202,
+          "x": 388,
+          "y": 907
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 22.75,
+          "symWidth": 14.599130036630036,
+          "text": "FOR  YOUR REFERENCE ,  I  WON'T BE  PARTICIPATING  IN  THIS KNIGHT'S  DUEL .",
+          "translation": "FOR THE RECORD, I WON’T PARTICIPATE IN THIS KNIGHT’S DUEL.",
+          "width": 316,
+          "x": 174,
+          "y": 1104
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 58,
+          "symWidth": 34,
+          "text": "WHAT ?!",
+          "translation": "WHAT?!",
+          "width": 165,
+          "x": 170,
+          "y": 1697
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29,
+          "symWidth": 20.55,
+          "text": "THAT  WAS  THE CONDITION .",
+          "translation": "THAT WAS MY CONDITION.",
+          "width": 245,
+          "x": 258,
+          "y": 2913
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 36,
+          "symWidth": 22.9,
+          "text": "S - SIR  KAYN ,",
+          "translation": "S-SIR KAYN,",
+          "width": 206,
+          "x": 154,
+          "y": 3606
+        }
+      ],
+      "imgHeight": 3636,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 34,
+          "symWidth": 25.85,
+          "text": "YOU'RE  STEPPING BACK ?",
+          "translation": "YOU’RE WITHDRAWING?",
+          "width": 313,
+          "x": 102,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 35.53846153846154,
+          "symWidth": 29,
+          "text": "THAT'S ABSURD !",
+          "translation": "THAT’S ABSURD!",
+          "width": 198,
+          "x": 309,
+          "y": 1020
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 23.282608695652172,
+          "symWidth": 16.120401337792643,
+          "text": "MARQUIS  SUSPEN IS  A  CELEBRATED COMMANDER ,",
+          "translation": "MARQUIS SUSPEN IS A RENOWNED COMMANDER,",
+          "width": 226,
+          "x": 172,
+          "y": 1586
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 19.2,
+          "symWidth": 13.018160932634618,
+          "text": "ONE  OF  THE  TOP THREE  IN  THE  EMPIRE WHEN  IT  COMES  TO  KNIGHTLY DUELS  AND  SMALL - SCALE COMBAT ...",
+          "translation": "ONE OF THE EMPIRE'S TOP THREE IN KNIGHT DUELS AND SMALL BATTLES...",
+          "width": 318,
+          "x": 245,
+          "y": 1780
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 11.214285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 157,
+          "x": 11,
+          "y": 3213
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 103,
+          "symWidth": 91,
+          "text": "180",
+          "translation": "180",
+          "width": 228,
+          "x": 391,
+          "y": 3237
+        }
+      ],
+      "imgHeight": 3637,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 25,
+          "symWidth": 18.833333333333332,
+          "text": "WHY  WOULD YOU  MAKE  SUCH A  PROPOSAL ?",
+          "translation": "WHY SUGGEST THIS THEN?",
+          "width": 227,
+          "x": 148,
+          "y": 82
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 78.5,
+          "symWidth": 74,
+          "text": "웅성",
+          "translation": "...",
+          "width": 115,
+          "x": 566,
+          "y": 249
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 120.66666666666667,
+          "symWidth": 91.66666666666667,
+          "text": "YON",
+          "translation": "DID YOU LACK CONFIDENCE?",
+          "width": 145,
+          "x": 99,
+          "y": 324
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 30.5,
+          "symWidth": 19.7,
+          "text": "DID  YOU  LACK CONFIDENCE ?",
+          "translation": "...",
+          "width": 230,
+          "x": 236,
+          "y": 2096
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 140.6,
+          "symWidth": 93.4,
+          "text": "klith",
+          "translation": "...",
+          "width": 215,
+          "x": 247,
+          "y": 2427
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 141.5,
+          "symWidth": 66,
+          "text": "터벅",
+          "translation": "WHAT...?",
+          "width": 104,
+          "x": 311,
+          "y": 2455
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30,
+          "symWidth": 18.75,
+          "text": "WHAT ... ?",
+          "translation": "",
+          "width": 153,
+          "x": 383,
+          "y": 3637
+        }
+      ],
+      "imgHeight": 3705,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 32,
+          "symWidth": 24.112121212121213,
+          "text": "IF  HIS MAJESTY  WERE STILL  ALIVE",
+          "translation": "IF HIS MAJESTY WERE STILL ALIVE,",
+          "width": 229,
+          "x": 97,
+          "y": 430
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 26.5,
+          "symWidth": 20.199159663865544,
+          "text": "HE  COULD HAVE  CRUSHED  EVEN A  HUNDRED  KNIGHTS  BY HIMSELF",
+          "translation": "HE COULD HAVE TAKEN DOWN A HUNDRED KNIGHTS ALONE.",
+          "width": 290,
+          "x": 201,
+          "y": 646
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 13.5,
+          "text": "... !",
+          "translation": "...!",
+          "width": 47,
+          "x": 272,
+          "y": 2767
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 32.5,
+          "symWidth": 19.857142857142858,
+          "text": "SIR KAYN ...",
+          "translation": "SIR KAYN...",
+          "width": 132,
+          "x": 353,
+          "y": 3100
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 32,
+          "symWidth": 22.928571428571427,
+          "text": "WHAT  ARE YOU  TRYING TO  SAY ?",
+          "translation": "WHAT DO YOU MEAN?",
+          "width": 216,
+          "x": 113,
+          "y": 3344
+        }
+      ],
+      "imgHeight": 3706,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 30.666666666666668,
+          "symWidth": 20.219576719576718,
+          "text": "I  MERELY STATED  THE FACTS .",
+          "translation": "I’M JUST STATING FACTS.",
+          "width": 202,
+          "x": 174,
+          "y": 1153
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.666666666666668,
+          "symWidth": 16.06196581196581,
+          "text": "ARE  YOU  AFRAID OF  LOSING  IN  THE KNIGHT'S  DUEL ?",
+          "translation": "ARE YOU AFRAID OF LOSING THIS DUEL?",
+          "width": 242,
+          "x": 287,
+          "y": 1377
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.357142857142858,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 157,
+          "x": 11,
+          "y": 2603
+        }
+      ],
+      "imgHeight": 3707,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 21.75714285714286,
+          "text": "THEY'RE JUST  A",
+          "translation": "THESE ARE JUST A",
+          "width": 180,
+          "x": 96,
+          "y": 292
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 26.5,
+          "symWidth": 22.333333333333332,
+          "text": "MEASLY KNIGHT  ORDER !",
+          "translation": "INSIGNIFICANT KNIGHT ORDER!",
+          "width": 250,
+          "x": 87,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 21.692307692307693,
+          "text": "CONFIDENT  I  CAN",
+          "translation": "I’M CONFIDENT—",
+          "width": 236,
+          "x": 269,
+          "y": 1545
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 33,
+          "symWidth": 22.52982456140351,
+          "text": "I'M CRUSH  NOT  JUST  A  HUNDRED BUT  A  THOUSAND  OF  THEM !",
+          "translation": "I’LL CRUSH NOT JUST A HUNDRED, BUT A THOUSAND!",
+          "width": 386,
+          "x": 160,
+          "y": 1546
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 19.5,
+          "text": "AS",
+          "translation": "AS",
+          "width": 37,
+          "x": 353,
+          "y": 3328
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 28,
+          "symWidth": 17.866666666666667,
+          "text": "EXPECTED , I  KNEW  YOU'D",
+          "translation": "EXPECTED, I KNEW YOU’D",
+          "width": 219,
+          "x": 350,
+          "y": 3328
+        }
+      ],
+      "imgHeight": 3408,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 18.375,
+          "text": "SAY  THAT .",
+          "translation": "SAY THAT.",
+          "width": 152,
+          "x": 384,
+          "y": 1
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 24.5,
+          "symWidth": 14.782051282051283,
+          "text": "OF  COURSE , I  DIDN'T  MAKE  THIS PROPOSAL  WITHOUT THINKING .",
+          "translation": "OF COURSE, I DIDN’T MAKE THIS PROPOSAL WITHOUT THOUGHT.",
+          "width": 279,
+          "x": 115,
+          "y": 1568
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 25.25,
+          "text": "HUH ?",
+          "translation": "HUH?",
+          "width": 107,
+          "x": 407,
+          "y": 2630
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 24.732142857142858,
+          "symWidth": 18.989285714285714,
+          "text": "DO  YOU HAVE  SOME  OTHER STRATEGY  IN  MIND ?",
+          "translation": "HAVE YOU GOT ANOTHER STRATEGY IN MIND?",
+          "width": 266,
+          "x": 229,
+          "y": 3205
+        }
+      ],
+      "imgHeight": 3408,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 21,
+          "symWidth": 11.357142857142858,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 157,
+          "x": 11,
+          "y": 806
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 28,
+          "symWidth": 20.11111111111111,
+          "text": "OF  COURSE .",
+          "translation": "OF COURSE.",
+          "width": 195,
+          "x": 324,
+          "y": 877
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 21.32258064516129,
+          "symWidth": 13.659139784946237,
+          "text": "RIGHT  AFTER PROPOSING  THE  KNIGHT'S DUEL ,  I  REQUESTED  REIN- FORCEMENTS .",
+          "translation": "RIGHT AFTER PROPOSING THE DUEL, I REQUESTED REINFORCEMENTS.",
+          "width": 306,
+          "x": 150,
+          "y": 1048
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 28,
+          "symWidth": 18.875,
+          "text": "BUT  ISN'T  THAT TOO  LATE ?",
+          "translation": "BUT ISN’T THAT TOO LATE?",
+          "width": 239,
+          "x": 201,
+          "y": 1679
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 20.16,
+          "symWidth": 13.978571428571428,
+          "text": "THE  TIME  IT  TAKES FOR  THEM  TO  REACH  THE SOUTH  FROM  WHEREVER THEY'RE  COMING ...",
+          "translation": "THE TIME IT TAKES THEM TO REACH THE SOUTH FROM WHEREVER THEY ARE...",
+          "width": 283,
+          "x": 327,
+          "y": 3014
+        }
+      ],
+      "imgHeight": 3408,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 37,
+          "symWidth": 26.357142857142858,
+          "text": "THERE'S A  WAY .",
+          "translation": "THERE’S A WAY.",
+          "width": 176,
+          "x": 117,
+          "y": 77
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 28.333333333333332,
+          "symWidth": 20.62142857142857,
+          "text": "DO  YOU KNOW  WHAT THIS  IS ?",
+          "translation": "DO YOU KNOW WHAT THIS IS?",
+          "width": 199,
+          "x": 258,
+          "y": 1520
+        }
+      ],
+      "imgHeight": 3037,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 28.222222222222225,
+          "symWidth": 22.65384615384615,
+          "text": "IT'S A  WARP  STONE ! SO  YOU  FINALLY DEVELOPED  IT ?!",
+          "translation": "IT’S A WARP STONE! SO YOU FINALLY DEVELOPED IT?!",
+          "width": 275,
+          "x": 136,
+          "y": 595
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19,
+          "symWidth": 18.333333333333332,
+          "text": "900",
+          "translation": "900",
+          "width": 38,
+          "x": 0,
+          "y": 2145
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 22.68918918918919,
+          "symWidth": 16.079852579852577,
+          "text": "THE  PREVIOUS TOWER  MASTER  AND CURRENT  EMPRESS OF  AVALON ,",
+          "translation": "THE FORMER TOWER MASTER AND CURRENT EMPRESS OF AVALON,",
+          "width": 259,
+          "x": 142,
+          "y": 2301
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 24.25,
+          "symWidth": 14.467577597840755,
+          "text": "I'VE  HEARD  THAT ISELLIN  JIN  REBREKA  IS A  GENIUS ,  BUT  EVEN  SO , THIS  IS ... !",
+          "translation": "I’VE HEARD ISELLIN JIN REBREKA IS A GENIUS, BUT THIS IS...!",
+          "width": 320,
+          "x": 241,
+          "y": 2522
+        }
+      ],
+      "imgHeight": 3038,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 353,
+          "symHeight": 52.53125,
+          "symWidth": 55.53125,
+          "text": "【 令 回 · D = 8 + 区 令 / 回 · = + 8 GA",
+          "translation": "ISELLIN...? THE EMPRESS HERSELF DEVELOPED THIS?!",
+          "width": 426,
+          "x": 273,
+          "y": 1097
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 25.666666666666668,
+          "symWidth": 16.25079365079365,
+          "text": "ISELLIN ... ?  THE EMPRESS  HERSELF DEVELOPED  THIS ?!",
+          "translation": "RTMTH",
+          "width": 262,
+          "x": 161,
+          "y": 1471
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.857142857142858,
+          "text": "ASURASCANS.COM",
+          "translation": "",
+          "width": 157,
+          "x": 68,
+          "y": 2491
+        }
+      ],
+      "imgHeight": 3039,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26.125,
+          "symWidth": 16.375,
+          "text": "EXACTLY .",
+          "translation": "EXACTLY.",
+          "width": 127,
+          "x": 391,
+          "y": 74
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 24.5,
+          "symWidth": 16.310890151515153,
+          "text": "IT  CAN  ONLY  BE USED  ONCE ,  AND  ONLY WITH  TEN  PEOPLE  AT THAT ...",
+          "translation": "IT CAN ONLY BE USED ONCE, AND WITH ONLY TEN PEOPLE AT A TIME...",
+          "width": 297,
+          "x": 129,
+          "y": 1306
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21.5,
+          "symWidth": 13.233333333333334,
+          "text": "BUT  IT'S  AN INCREDIBLE",
+          "translation": "BUT IT’S AN INCREDIBLE",
+          "width": 204,
+          "x": 269,
+          "y": 1542
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 22.5,
+          "symWidth": 14.995364832535884,
+          "text": "ARTIFACT THAT  CAN  TRANSPORT  YOU UP  TO  THREE  HUNDRED KILOMETERS .",
+          "translation": "ARTIFACT THAT CAN TRANSPORT YOU UP TO THREE HUNDRED KILOMETERS.",
+          "width": 336,
+          "x": 237,
+          "y": 1573
+        }
+      ],
+      "imgHeight": 2884,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 14.609523809523811,
+          "text": "TH - THREE  HUNDRED KILOMETERS ... ?",
+          "translation": "THREE HUNDRED KILOMETERS...?",
+          "width": 242,
+          "x": 93,
+          "y": 282
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 113.33333333333333,
+          "symWidth": 87.33333333333333,
+          "text": "TEL",
+          "translation": "...",
+          "width": 204,
+          "x": 387,
+          "y": 1161
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 35,
+          "symWidth": 22.75,
+          "text": "THAT'S RIGHT .",
+          "translation": "THAT’S RIGHT.",
+          "width": 139,
+          "x": 358,
+          "y": 1801
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 25.333333333333332,
+          "symWidth": 16.084038768249293,
+          "text": "IT'S  A  DISTANCE THAT  WILL  EASILY  REACH THE  CAPITAL .",
+          "translation": "ENOUGH TO REACH THE CAPITAL EASILY.",
+          "width": 343,
+          "x": 179,
+          "y": 2596
+        }
+      ],
+      "imgHeight": 2884,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 11.071428571428571,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 155,
+          "x": 11,
+          "y": 1285
+        }
+      ],
+      "imgHeight": 2886,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 29.666666666666668,
+          "symWidth": 20.88888888888889,
+          "text": "YOUR HIGHNESS DARGO ,",
+          "translation": "YOUR HIGHNESS DARGO,",
+          "width": 160,
+          "x": 270,
+          "y": 1535
+        }
+      ],
+      "imgHeight": 2574,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 24.25,
+          "symWidth": 14.8,
+          "text": "WE'VE GRASPED  THE LEVEL  OF  ALL  ENEMY KNIGHTS .",
+          "translation": "WE’VE ASSESSED THE ENEMY KNIGHTS’ SKILL LEVELS.",
+          "width": 267,
+          "x": 331,
+          "y": 576
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 20.4,
+          "symWidth": 13.264766081871347,
+          "text": "EXCEPT  FOR KAYN  AND  KYRRIA ,  THERE AREN'T  EVEN  A  HUNDRED  PEOPLE WORTHY  OF  BEING  CALLED KNIGHTS .",
+          "translation": "EXCEPT FOR KAYN AND KYRRIA, THERE AREN’T EVEN A HUNDRED WORTHY KNIGHTS.",
+          "width": 364,
+          "x": 137,
+          "y": 796
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 11.214285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 157,
+          "x": 11,
+          "y": 2162
+        }
+      ],
+      "imgHeight": 2575,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 22.17,
+          "symWidth": 14.91888888888889,
+          "text": "MOREOVER , THE  REPORT  STATES THERE  ARE  AT  MOST  FIVE OF  B - RANK  OR  HIGHER .",
+          "translation": "MOREOVER, THE REPORT STATES THERE ARE AT MOST FIVE B-RANK OR HIGHER.",
+          "width": 302,
+          "x": 87,
+          "y": 92
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 23.586206896551722,
+          "symWidth": 18.75862068965517,
+          "text": "THAT'S  WITHIN THE  EXPECTED RANGE .",
+          "translation": "THAT’S WITHIN EXPECTATIONS.",
+          "width": 203,
+          "x": 388,
+          "y": 1011
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 25.333333333333332,
+          "symWidth": 19.393939393939394,
+          "text": "IT'S  BEEN  TWO YEARS  SINCE  THE WAR  BEGAN ,",
+          "translation": "IT’S BEEN TWO YEARS SINCE THE WAR BEGAN,",
+          "width": 248,
+          "x": 168,
+          "y": 1413
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 22.425531914893618,
+          "symWidth": 17.638297872340427,
+          "text": "SO  THE  SKILLED ONES  HAVE  EITHER DIED  OR  SCATTERED BY  NOW .",
+          "translation": "AND THE SKILLED ONES HAVE ALL DIED OR DISPERSED.",
+          "width": 262,
+          "x": 297,
+          "y": 1621
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 25,
+          "symWidth": 20.208333333333336,
+          "text": "THIS  IS A  BATTLE  WE  CAN NOT  LOSE .",
+          "translation": "THIS IS A BATTLE WE CANNOT LOSE.",
+          "width": 259,
+          "x": 310,
+          "y": 3099
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 183,
+          "symWidth": 143,
+          "text": "드록",
+          "translation": "...",
+          "width": 261,
+          "x": 85,
+          "y": 3628
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28.238095238095237,
+          "symWidth": 17.142857142857142,
+          "text": "WITH  THIS KNIGHT'S  DUEL ,",
+          "translation": "WITH THIS DUEL,",
+          "width": 233,
+          "x": 372,
+          "y": 4006
+        }
+      ],
+      "imgHeight": 4086,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 39.7037037037037,
+          "symWidth": 33.55555555555556,
+          "text": "WE WILL  SETTLE THE  SOUTHERN WAR .",
+          "translation": "WE WILL SETTLE THE SOUTHERN WAR.",
+          "width": 305,
+          "x": 210,
+          "y": 1363
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.785714285714286,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 155,
+          "x": 12,
+          "y": 3003
+        }
+      ],
+      "imgHeight": 4087,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 26.333333333333332,
+          "symWidth": 14.647435897435898,
+          "text": "DAYS  LATER , ON  THE  DAY  OF  THE KNIGHT'S  DUEL",
+          "translation": "DAYS LATER, ON THE DAY OF THE KNIGHT’S DUEL",
+          "width": 238,
+          "x": 191,
+          "y": 997
+        }
+      ],
+      "imgHeight": 3748,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 65.5,
+          "symWidth": 44.75,
+          "text": "ak  iz",
+          "translation": "UMM...",
+          "width": 186,
+          "x": 394,
+          "y": 50
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 21.166666666666668,
+          "text": "UMM ...",
+          "translation": "DO I REALLY HAVE TO WEAR THIS?",
+          "width": 120,
+          "x": 111,
+          "y": 87
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24.526315789473685,
+          "symWidth": 16.23157894736842,
+          "text": "DO  I  REALLY HAVE  TO  WEAR THIS ?",
+          "translation": "IT’S A BIT STIFLING.",
+          "width": 204,
+          "x": 241,
+          "y": 1334
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 25.6,
+          "symWidth": 15.65,
+          "text": "IT'S  A  BIT SUFFOCATING .",
+          "translation": "...",
+          "width": 201,
+          "x": 118,
+          "y": 1532
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 139,
+          "symWidth": 126.5,
+          "text": "철적",
+          "translation": "YES, BECAUSE",
+          "width": 212,
+          "x": 389,
+          "y": 1625
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 14.363636363636363,
+          "text": "YES ,  BECAUSE",
+          "translation": "IN A KNIGHT'S DUEL, THE COMMANDER'S DEATH MEANS DEFEAT.",
+          "width": 178,
+          "x": 95,
+          "y": 3415
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 24.25,
+          "symWidth": 15.113970588235293,
+          "text": "IN A  KNIGHT'S  DUEL ,  THE COMMANDER'S  DEATH MEANS  DEFEAT .",
+          "translation": "THE",
+          "width": 286,
+          "x": 59,
+          "y": 3415
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 73,
+          "symWidth": 63,
+          "text": "THE",
+          "translation": "",
+          "width": 126,
+          "x": 14,
+          "y": 3657
+        }
+      ],
+      "imgHeight": 3748,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 23.8,
+          "symWidth": 16.12,
+          "text": "THAT'S  THE BASIC  RULE .  EVERYONE WEARS  THE  SAME  ARMOR , SO  NO  ONE  KNOWS  WHO THE  COMMANDER  IS .",
+          "translation": "THAT’S THE BASIC RULE. EVERYONE WEARS THE SAME ARMOR, SO NO ONE KNOWS WHO THE COMMANDER IS.",
+          "width": 344,
+          "x": 177,
+          "y": 1307
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.214285714285714,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 158,
+          "x": 10,
+          "y": 3054
+        }
+      ],
+      "imgHeight": 3748,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 23.25,
+          "symWidth": 14.44337606837607,
+          "text": "IN  THAT  REGARD , THE  DON  RING  I  GAVE YOU  IS  ALSO  FORBIDDEN TO  USE .",
+          "translation": "IN THAT CASE, THE DON RING I GAVE YOU IS ALSO FORBIDDEN.",
+          "width": 304,
+          "x": 110,
+          "y": 88
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 27.2,
+          "text": "URGH !",
+          "translation": "UGH!",
+          "width": 112,
+          "x": 493,
+          "y": 427
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 19.285714285714285,
+          "symWidth": 14.153571428571428,
+          "text": "WELL ,  IF I  USE  THE  DON  RING , A  MAGIC  ARMOUR  WILL APPEAR .",
+          "translation": "USING THE DON RING MAKES A MAGIC ARMOR APPEAR.",
+          "width": 245,
+          "x": 167,
+          "y": 1543
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.5,
+          "symWidth": 14.970779220779221,
+          "text": "IT  REALLY  STANDS OUT  TOO  MUCH .",
+          "translation": "IT REALLY STANDS OUT TOO MUCH.",
+          "width": 196,
+          "x": 322,
+          "y": 1752
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 28.5,
+          "symWidth": 19.583333333333336,
+          "text": "BUT STILL ...",
+          "translation": "BUT STILL...",
+          "width": 133,
+          "x": 150,
+          "y": 3023
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 40.666666666666664,
+          "symWidth": 41.666666666666664,
+          "text": "000",
+          "translation": "...",
+          "width": 52,
+          "x": 372,
+          "y": 3185
+        }
+      ],
+      "imgHeight": 3609,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11.285714285714286,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 157,
+          "x": 11,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 24,
+          "symWidth": 16.183333333333334,
+          "text": "IT'S  ALMOST THE",
+          "translation": "IT’S ALMOST",
+          "width": 181,
+          "x": 169,
+          "y": 275
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 25,
+          "symWidth": 16.083333333333332,
+          "text": "NOON ,  AND KNIGHT'S  DUEL  IS ABOUT  TO",
+          "translation": "NOON, AND THE DUEL IS ABOUT TO",
+          "width": 231,
+          "x": 133,
+          "y": 307
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 15.666666666666666,
+          "text": "START .",
+          "translation": "BEGIN.",
+          "width": 88,
+          "x": 280,
+          "y": 372
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 25.333333333333332,
+          "symWidth": 16.43040293040293,
+          "text": "WILL  THE REINFORCEMENTS ARRIVE  ON  TIME ?",
+          "translation": "WILL THE REINFORCEMENTS ARRIVE ON TIME?",
+          "width": 248,
+          "x": 299,
+          "y": 657
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 26.5,
+          "symWidth": 23.916666666666664,
+          "text": "WHO KNOWS ?",
+          "translation": "WHO KNOWS?",
+          "width": 140,
+          "x": 143,
+          "y": 1979
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 29.714285714285715,
+          "text": "WHAT ???",
+          "translation": "WHAT???",
+          "width": 178,
+          "x": 364,
+          "y": 2958
+        }
+      ],
+      "imgHeight": 3610,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 29.568181818181817,
+          "symWidth": 22.704545454545453,
+          "text": "IF  WORSE COMES  TO  WORST , COULDN'T  YOU  JUST JOIN  IN ? !!",
+          "translation": "IF WORST COMES TO WORST, CAN’T YOU JUST JOIN IN?!",
+          "width": 292,
+          "x": 318,
+          "y": 184
+        }
+      ],
+      "imgHeight": 3610,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 34.214285714285715,
+          "symWidth": 26.928571428571427,
+          "text": "MARTIAL EMPEROR ! PRINCE  KYRRIA !",
+          "translation": "MARTIAL EMPEROR! PRINCE KYRRIA!",
+          "width": 309,
+          "x": 233,
+          "y": 891
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 155,
+          "x": 11,
+          "y": 1590
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 37.67948717948718,
+          "symWidth": 24.62820512820513,
+          "text": "I ,  DARGO  RAIN SUSPEN ,  EMPEROR OF  SOUTH  AVALON , HAVE  ARRIVED !",
+          "translation": "I, DARGO RAIN SUSPEN, EMPEROR OF SOUTH AVALON, HAVE ARRIVED!",
+          "width": 341,
+          "x": 169,
+          "y": 3446
+        }
+      ],
+      "imgHeight": 3736,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3736,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.913043478260867,
+          "symWidth": 14.059782608695652,
+          "text": "SIR  KAYN , SHOULDN'T  YOU  TELL  US WHO  THE  REINFORCEMENTS ARE  SOON ?",
+          "translation": "SIR KAYN, SHOULDN’T YOU INTRODUCE THE REINFORCEMENTS SOON?",
+          "width": 341,
+          "x": 111,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 20.13888888888889,
+          "symWidth": 16.35648148148148,
+          "text": "THE REINFORCEMENTS ARE  JUST  TEN PEOPLE ...",
+          "translation": "THE REINFORCEMENTS ARE ONLY TEN MEN...",
+          "width": 209,
+          "x": 336,
+          "y": 1479
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 28,
+          "symWidth": 23.714285714285715,
+          "text": "DARGO'S HERE ...",
+          "translation": "DARGO’S HERE...",
+          "width": 150,
+          "x": 162,
+          "y": 1727
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 22.916666666666664,
+          "symWidth": 19.254166666666666,
+          "text": "WHEN  ARE  THE REINFORCEMENTS ACTUALLY  COMING ?",
+          "translation": "WHEN ARE THEY ACTUALLY ARRIVING?",
+          "width": 261,
+          "x": 368,
+          "y": 2603
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 25.310344827586206,
+          "symWidth": 15.689655172413794,
+          "text": "EVEN  IF THEY'RE  ALL  ROYAL KNIGHTS ,",
+          "translation": "EVEN IF THEY'RE ALL ROYAL KNIGHTS,",
+          "width": 269,
+          "x": 107,
+          "y": 2865
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 26.666666666666668,
+          "symWidth": 16.62878787878788,
+          "text": "IT  WILL  STILL BE  A  DIFFICULT BATTLE .",
+          "translation": "IT’LL STILL BE A TOUGH FIGHT.",
+          "width": 224,
+          "x": 270,
+          "y": 3053
+        }
+      ],
+      "imgHeight": 3737,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 33.93333333333333,
+          "symWidth": 19.866666666666667,
+          "text": "THEY'VE ARRIVED .",
+          "translation": "THEY HAVE ARRIVED.",
+          "width": 177,
+          "x": 255,
+          "y": 2011
+        }
+      ],
+      "imgHeight": 3664,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 22,
+          "symWidth": 15.323710317460318,
+          "text": "JUST  WHO ARE  THEY  THAT  WE'VE BEEN  KEPT  WAITING LIKE  THIS ?",
+          "translation": "WHO EXACTLY ARE THESE REINFORCEMENTS WE’VE BEEN WAITING FOR?",
+          "width": 277,
+          "x": 98,
+          "y": 186
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 22.666666666666668,
+          "symWidth": 14.719017094017095,
+          "text": "I  BELIEVE WHEN  YOU  SEE  THE REINFORCEMENTS ,",
+          "translation": "I BELIEVE WHEN YOU SEE THEM,",
+          "width": 243,
+          "x": 275,
+          "y": 1684
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 29.333333333333332,
+          "symWidth": 19.62301587301587,
+          "text": "YOU'LL  BE DESPERATE  NOT TO  LOSE .",
+          "translation": "YOU’LL BE DESPERATE NOT TO LOSE.",
+          "width": 264,
+          "x": 123,
+          "y": 1893
+        }
+      ],
+      "imgHeight": 3664,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 11.142857142857142,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 155,
+          "x": 11,
+          "y": 26
+        }
+      ],
+      "imgHeight": 3666,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 87.75,
+          "symWidth": 41,
+          "text": "П.П.",
+          "translation": "P.P.",
+          "width": 219,
+          "x": 221,
+          "y": 3081
+        }
+      ],
+      "imgHeight": 3178,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 181.6,
+          "symWidth": 152.4,
+          "text": "alon 1",
+          "translation": "Y-YOU...!",
+          "width": 368,
+          "x": 83,
+          "y": 23
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 18,
+          "text": "Y - YOU ... !",
+          "translation": "TH",
+          "width": 169,
+          "x": 163,
+          "y": 1476
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 76,
+          "symWidth": 68.5,
+          "text": "TH",
+          "translation": "RTMTH",
+          "width": 91,
+          "x": 508,
+          "y": 1621
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 11,
+          "text": "ASURASCANS.COM",
+          "translation": "",
+          "width": 157,
+          "x": 11,
+          "y": 2676
+        }
+      ],
+      "imgHeight": 3179,
+      "imgWidth": 700,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 34.375,
+          "symWidth": 19.875,
+          "text": "SELIM SANDERS ... !",
+          "translation": "SELIM SANDERS...!",
+          "width": 242,
+          "x": 229,
+          "y": 1427
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 11.428571428571429,
+          "text": "ASURASCANS.COM",
+          "translation": "RTMTH",
+          "width": 154,
+          "x": 12,
+          "y": 3316
+        }
+      ],
+      "imgHeight": 3447,
+      "imgWidth": 700,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 37.51851851851852,
+          "symWidth": 32.05555555555556,
+          "text": "HASIT  BEEN ABOUT  TEN  YEARS KURRIA  SANDERS ?",
+          "translation": "HAS IT BEEN ABOUT TEN YEARS, KYRRIA SANDERS?",
+          "width": 303,
+          "x": 199,
+          "y": 2029
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 36,
+          "symWidth": 22.833333333333332,
+          "text": "ROK MEDIA",
+          "translation": "RTMTH",
+          "width": 77,
+          "x": 312,
+          "y": 3299
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 16.5,
+          "symWidth": 13.305555555555557,
+          "text": "※ 본  작품 은  저작권  법 에  의해  보호 를  받는  저작물 입니다 . 불법  복제 와  캡처  등 을  이용한  무단  전재  및  무단  복제 ,  유포 ,  공유 하는  것을  금합니다 .",
+          "translation": "RTMTH",
+          "width": 584,
+          "x": 66,
+          "y": 3399
+        }
+      ],
+      "imgHeight": 3448,
+      "imgWidth": 700,
+      "sourceLanguage": "ko",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

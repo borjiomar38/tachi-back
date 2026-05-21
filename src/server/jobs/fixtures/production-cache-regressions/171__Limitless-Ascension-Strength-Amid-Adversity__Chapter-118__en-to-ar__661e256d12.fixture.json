@@ -1,0 +1,1339 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0171",
+  "jobId": "fixture-job-0171",
+  "licenseId": "fixture-license-0171",
+  "pageCount": 18,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 305,
+          "symHeight": 154.8571428571429,
+          "symWidth": 145.2857142857143,
+          "text": "遇 强 则 强 无 上限",
+          "translation": "من يلتقي بالقوي يصبح أقوى بلا حدود",
+          "width": 546,
+          "x": 57,
+          "y": 1235
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 21,
+          "text": "改编 自 小说 《 遇 强 则 强 , 我 的 修 为 无 上限 》",
+          "translation": "مقتبس من رواية «من يلتقي بالقوي، قواي لا سقف لها»",
+          "width": 471,
+          "x": 131,
+          "y": 1665
+        },
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 38.625,
+          "symWidth": 33.28101851851852,
+          "text": "原著 / 史上 最 艸 作者 监制 / 老徐  ■ 编剧 / G 周 主笔 / 英 、 凯 、 永乐 界 文化 — 凡 星 勾 线 / 龙 一 、 薯条 上色 / 赫 屿 、 殇 夕 浅 夜",
+          "translation": "العمل الأصلي / المؤلف الأعظم في التاريخ الإشراف / اللاو زو ■ السيناريو / جي تشو الرسم الرئيسي / يينغ، كاي، يونغلَه ثقافة جيه — فانغ شين الرُسم الخطّي / لونغ يي، شرمب التلوين / خه يو، شانغ شي، تشيان يا",
+          "width": 530,
+          "x": 141,
+          "y": 1731
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 60,
+          "symWidth": 53.8,
+          "text": "火 珑 果 漫画 HUOLONGGUO  AANHUA",
+          "translation": "مانغا فوا لونغ قوه 火珑果",
+          "width": 444,
+          "x": 123,
+          "y": 2149
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 13.04065040650407,
+          "symWidth": 10.68554006968641,
+          "text": "YOUR MAJESTY ,  THE MATTER  OF  AN  IMPERIAL CONSORT  IS  NOT URGENT .",
+          "translation": "جلالتك، شأن عاهِرة الإمبراطور ليس بالأمر المستعجل.",
+          "width": 205,
+          "x": 243,
+          "y": 2574
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 13,
+          "symWidth": 10.74353448275862,
+          "text": "WE  SHOULD RESOLVE  THE  CURRENT CRISIS  FIRST .",
+          "translation": "ينبغي علينا أولاً لَملمة الأزمة الراهنة.",
+          "width": 199,
+          "x": 90,
+          "y": 2837
+        }
+      ],
+      "imgHeight": 3585,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 15.3,
+          "symWidth": 13.26666666666667,
+          "text": "YOU  MAKE A  GOOD  POINT ,  YOUNG MASTER .",
+          "translation": "وجهت كلامك على حق، أيها السيد الشاب.",
+          "width": 228,
+          "x": 368,
+          "y": 847
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 16.75,
+          "symWidth": 14.18571428571429,
+          "text": "HE  CAN ACTUALLY  REMAIN UNAFFECTED  BY  MY IMPERIAL  AURA ??",
+          "translation": "هل من الممكن أن يظل غير متأثر بهالة إمبراطوريتي؟",
+          "width": 197,
+          "x": 147,
+          "y": 2000
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 11.21428571428571,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "RTMTH",
+          "width": 163,
+          "x": 519,
+          "y": 2130
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 14.04166666666667,
+          "symWidth": 11.75138888888889,
+          "text": "YOUR  MAJESTY ! I'VE  SPENT  HALF  MY LIFE  ON  THE  BATTLEFIELD , COMPLETELY  LOYAL TO  YOU !",
+          "translation": "جلالتك! لقد قضيت نصف عمري في ساحات القتال، وأنا مخلص لك بكل جوارحي!",
+          "width": 200,
+          "x": 446,
+          "y": 3133
+        }
+      ],
+      "imgHeight": 3586,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 12.33333333333333,
+          "symWidth": 12.26507936507937,
+          "text": "NOW  MY ONLY  DAUGHTER  HAS BEEN  INNOCENTLY",
+          "translation": "الآن، قد تُهجّرت ابنتي الوحيدة بريئةً",
+          "width": 156,
+          "x": 66,
+          "y": 682
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 12,
+          "text": "AND",
+          "translation": "و",
+          "width": 31,
+          "x": 204,
+          "y": 722
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 10,
+          "text": "TRAGICALLY",
+          "translation": "مأساويةً",
+          "width": 85,
+          "x": 45,
+          "y": 741
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 13.75,
+          "symWidth": 11.06754807692308,
+          "text": "KILLED .  ARE  YOU REALLY  GOING  TO  PROTECT DONGFANG  MENGYAO , THE  MURDERER ?!",
+          "translation": "قُتِلت. هل أنت فعلاً تنوي حماية دونغفانغ مينغ ياو، القاتلة؟",
+          "width": 207,
+          "x": 49,
+          "y": 741
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 15.83333333333333,
+          "symWidth": 13.89265819964349,
+          "text": "YAN  GUANGZHU TRIED  TO  SNATCH  MY MAN  FIRST !  INNOCENT MY  ASS !  I  KILLED  HER , SO  WHAT ?!  YOU  THINK I'M  AFRAID  OF HER ?!",
+          "translation": "يان جوانغ تشو حاولت خطفي رجلي أولاً! بريئة؟ هراء! لقد قتلتها، فما المشكلة؟ هل توقعت أن أخاف منها؟",
+          "width": 206,
+          "x": 368,
+          "y": 1383
+        }
+      ],
+      "imgHeight": 3585,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 11.39473684210526,
+          "symWidth": 8.790570175438596,
+          "text": "HMPH ,  PROTECT ?! HAVE  YOU  FORGOTTEN  THE RULES  OF  THE  HEAVENLY  MAIDEN KINGDOM ?  IN  A  DUEL  OVER  A MAN ,  LIFE  AND  DEATH  ARE UP  TO  FATE !!",
+          "translation": "هممم، حماية؟ هل نسيت قوانين مملكة العذراء السماوية؟ في مبارزة من أجل رجل، الحياة والموت بيد القدر!",
+          "width": 229,
+          "x": 357,
+          "y": 82
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 12.14285714285714,
+          "symWidth": 9.831632653061224,
+          "text": "DO  I  NEED TO  LIST  OUT  ONE BY  ONE  HOW  MANY  MEN YOUR  PRECIOUS  DAUGHTER HAS  SNATCHED  AND KILLED  OVER  THE YEARS ?!",
+          "translation": "هل تريدني أن أسرد لك واحداً واحداً عدد الرجال الذين خطفتهم ابنتك العزيزة وقتلتهم على مر السنين؟",
+          "width": 212,
+          "x": 45,
+          "y": 630
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37,
+          "symWidth": 36,
+          "text": "YOU !",
+          "translation": "أنت!",
+          "width": 121,
+          "x": 350,
+          "y": 1523
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 14.66666666666667,
+          "symWidth": 12.15422077922078,
+          "text": "THAT'S  RIGHT ! YAN  GUANGZHU ROBBED  PEOPLE AND  KILLED  THEM . SHE  DESERVED TO  DIE !",
+          "translation": "صحيح! يان جوانغ تشو سرقت وقتلت! استحقت الموت!",
+          "width": 153,
+          "x": 70,
+          "y": 1995
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 15.2,
+          "symWidth": 13.54949633699634,
+          "text": "NOT  LONG AGO ,  SHE  STOLE MY  BROTHER - IN - LAW AND  EVEN  KILLED MY",
+          "translation": "منذ وقت ليس ببعيد، سرقت زوج أخي وحتى قتلت أختي!",
+          "width": 180,
+          "x": 432,
+          "y": 2175
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11.85714285714286,
+          "text": "SISTER !",
+          "translation": "أختي الكبرى!",
+          "width": 66,
+          "x": 503,
+          "y": 2264
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 13.5,
+          "symWidth": 11.93379120879121,
+          "text": "MY  OLDER SISTER  LOOKED QUITE  HANDSOME AND  HEROIC ,  AND SHE  EVEN  SNATCHED HER !",
+          "translation": "كانت أختي الكبرى ف الروسية بطلة فذة، وقد خطفتها هي الأخرى!",
+          "width": 158,
+          "x": 85,
+          "y": 2956
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 17.33333333333333,
+          "symWidth": 17.28703703703704,
+          "text": "SHE TOOK  MY  DAD TOO !",
+          "translation": "كما أخذت والدي أيضًا!",
+          "width": 150,
+          "x": 406,
+          "y": 3061
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 20,
+          "symWidth": 17.29230769230769,
+          "text": "AND  MY GRANDFATHER !!",
+          "translation": "وجدي أيضًا!",
+          "width": 168,
+          "x": 299,
+          "y": 3208
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18,
+          "symWidth": 15.75925925925926,
+          "text": "TSK TSK ,  WHAT  A BEAST ~",
+          "translation": "تشاك تشاك، يا لها من وحش!",
+          "width": 149,
+          "x": 81,
+          "y": 3620
+        }
+      ],
+      "imgHeight": 3802,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 12.25,
+          "symWidth": 10.41666666666667,
+          "text": "SCUM ! SHE  WAS  SIMPLY ... SIMPLY  WORSE  THAN A  PIG  OR  A  DOG !!",
+          "translation": "حقير! هي ببساطة... أسوأ من الخنزير أو الكلب!",
+          "width": 165,
+          "x": 423,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 27,
+          "symWidth": 11.57142857142857,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "RTMTH",
+          "width": 164,
+          "x": 67,
+          "y": 1183
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 35.57142857142857,
+          "symWidth": 31.71428571428572,
+          "text": "SHUT  UP !",
+          "translation": "اخرس!",
+          "width": 199,
+          "x": 345,
+          "y": 1188
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 16.4,
+          "symWidth": 13.40576923076923,
+          "text": "ALL  OF YOU ,  SHUT  UP !  I'M GOING  TO  SLAUGHTER ALL  OF  YOU  LOWLY PEASANTS !!",
+          "translation": "كلكم اخرسوا! سأذبحكم جميعاً أيها الفلاحون الحقيرون!",
+          "width": 195,
+          "x": 78,
+          "y": 2340
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20.33333333333333,
+          "symWidth": 19.27142857142857,
+          "text": "HOWLING WEST WIND !",
+          "translation": "ريح الغرب العاصفة!",
+          "width": 108,
+          "x": 476,
+          "y": 2635
+        }
+      ],
+      "imgHeight": 3802,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 20.5,
+          "symWidth": 15.64880952380952,
+          "text": "HOLY CRAP !  IT STINKS !!",
+          "translation": "يا إلهي! الرائحة كريهة!",
+          "width": 114,
+          "x": 284,
+          "y": 9
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.44444444444444,
+          "text": "AH !  HELP !!",
+          "translation": "آه! النجدة!",
+          "width": 118,
+          "x": 407,
+          "y": 392
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 8.166666666666666,
+          "text": "PINGXI",
+          "translation": "بينغشي",
+          "width": 41,
+          "x": 223,
+          "y": 848
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 12,
+          "symWidth": 9.183333333333334,
+          "text": "KING CONSIDERING  YOUR  GRIEF OVER",
+          "translation": "جلالتك، إذا ما توقفت الآن عن حزن فقدِ ابنتك، سأعفو عن حياتك. وإلا، فلا تلُمني على رحمي!",
+          "width": 177,
+          "x": 165,
+          "y": 848
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 9.666666666666666,
+          "text": "LOSING",
+          "translation": "كوني",
+          "width": 48,
+          "x": 204,
+          "y": 881
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11.25,
+          "text": "YOUR",
+          "translation": "",
+          "width": 36,
+          "x": 254,
+          "y": 881
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 12.5,
+          "symWidth": 9.941062801932366,
+          "text": "DAUGHTER , IF  YOU  STOP  RIGHT  NOW ,  I  WILL SPARE  YOUR  LIFE .  OTHERWISE , DON'T",
+          "translation": "",
+          "width": 201,
+          "x": 159,
+          "y": 881
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 12,
+          "symWidth": 9.755555555555556,
+          "text": "BLAME  ME  FOR RUTHLESS !",
+          "translation": "",
+          "width": 99,
+          "x": 231,
+          "y": 932
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 11,
+          "symWidth": 8.4,
+          "text": "BEING",
+          "translation": "",
+          "width": 37,
+          "x": 206,
+          "y": 948
+        }
+      ],
+      "imgHeight": 3803,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 13.83333333333333,
+          "symWidth": 11.09340659340659,
+          "text": "IT'S  THIS DAMN  IMPERIAL AURA  AGAIN !  ONCE  I SIT  ON  THE  THRONE , THIS  POWER  WILL BE  MINE !",
+          "translation": "إنها هالة الإمبراطورية اللعينة مرة أخرى! عندما أجلس على العرش، سيكون هذا القوة لي!",
+          "width": 177,
+          "x": 272,
+          "y": 169
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 17.5,
+          "symWidth": 17.4375,
+          "text": "MMPH  MMPH MMPH !!!",
+          "translation": "همف همف همف!!!",
+          "width": 129,
+          "x": 395,
+          "y": 1284
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 14.16666666666667,
+          "symWidth": 11.84444444444444,
+          "text": "DONGFANG JING !  DON'T  THINK I'M  AFRAID  OF  YOU !! TODAY ,  I'M  GOING  TO DUEL  YOU  FOR  THIS PRETTY  BOY !",
+          "translation": "دونغفانغ جينغ! لا تظن أنني أخاف منك! اليوم سأخوض معركة ضدك من أجل هذا الشاب الجميل!",
+          "width": 167,
+          "x": 93,
+          "y": 1505
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 21.66666666666667,
+          "symWidth": 18.09523809523809,
+          "text": "LIFE  AND DEATH  UP  TO FATE !!!",
+          "translation": "الحياة والموت بيد القدر!",
+          "width": 157,
+          "x": 377,
+          "y": 2568
+        }
+      ],
+      "imgHeight": 3965,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 19.4,
+          "symWidth": 17.3,
+          "text": "YOU'RE COURTING DEATH !",
+          "translation": "أنتِ تدنين الموت!",
+          "width": 122,
+          "x": 199,
+          "y": 658
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 11.28571428571429,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "RTMTH",
+          "width": 163,
+          "x": 229,
+          "y": 1420
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 18.55357142857143,
+          "symWidth": 15.60714285714286,
+          "text": "DON'T BE  AFRAID . WITH  ME  HERE , NO  ONE  CAN TOUCH  YOU !",
+          "translation": "لا تخافي، بوجودي هنا، لا يستطيع أحد أن يمسَّك!",
+          "width": 154,
+          "x": 107,
+          "y": 2138
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 13.41935483870968,
+          "symWidth": 10.90322580645161,
+          "text": "I  SHOULDN'T HAVE  KEPT  A  LOW PROFILE !!",
+          "translation": "كان علي أن لا أخفي نفسي!",
+          "width": 147,
+          "x": 541,
+          "y": 3262
+        }
+      ],
+      "imgHeight": 3966,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 15.02380952380952,
+          "symWidth": 14.23160173160173,
+          "text": "YOU DARE  FIGHT  ME FOR  A  MAN ?  YOU OVERESTIMATE YOURSELF !",
+          "translation": "هل تجرؤين على مقاتلتي من أجل رجل؟ أنتِ تفرطين في تقدير نفسك!",
+          "width": 153,
+          "x": 218,
+          "y": 119
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 15.5,
+          "symWidth": 12.08173076923077,
+          "text": "IMPERIAL MAIDEN'S  BIND !",
+          "translation": "رباط العذراء الملكية!",
+          "width": 138,
+          "x": 404,
+          "y": 416
+        }
+      ],
+      "imgHeight": 3966,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 13.5,
+          "symWidth": 13.02678571428572,
+          "text": "NOT  ONLY AM  I  GOING",
+          "translation": "لن أكتفي بخطف رجلك، بل سأسرق عرشك أيضاً!",
+          "width": 104,
+          "x": 146,
+          "y": 230
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 14.4,
+          "symWidth": 12.59047619047619,
+          "text": "TO SNATCH  YOUR  MAN , BUT  I'M  ALSO  GOING TO  SNATCH  YOUR THRONE !!",
+          "translation": "قلب المحارة / الكنوز العُليا لعشيرة البحر.",
+          "width": 168,
+          "x": 125,
+          "y": 251
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 13,
+          "symWidth": 7.314736842105264,
+          "text": "HEART  OF  THE  CONCH / THE SEA  CLAN'S  SUPREME  TREASURE .",
+          "translation": "000",
+          "width": 189,
+          "x": 452,
+          "y": 2009
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 59.66666666666666,
+          "symWidth": 56,
+          "text": "000",
+          "translation": "",
+          "width": 99,
+          "x": 187,
+          "y": 3032
+        }
+      ],
+      "imgHeight": 3809,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 11.28571428571429,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "RTMTH",
+          "width": 163,
+          "x": 220,
+          "y": 1681
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 15.53571428571428,
+          "symWidth": 12.92374639249639,
+          "text": "THAT'S THE  CONCH SHELL  USED  TO SUMMON  THE SEA  CLAN !",
+          "translation": "هذا هو الصدف الذي استُخدم لاستدعاء عشيرة البحر!",
+          "width": 133,
+          "x": 154,
+          "y": 2848
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.66666666666667,
+          "symWidth": 15.54761904761905,
+          "text": "MOTHER , ARE  YOU ALRIGHT ?!",
+          "translation": "أمي، هل أنتِ بخير؟!",
+          "width": 104,
+          "x": 234,
+          "y": 3372
+        },
+        {
+          "angle": 0,
+          "height": 252,
+          "symHeight": 135.6666666666667,
+          "symWidth": 140,
+          "text": "ARA",
+          "translation": "آرا",
+          "width": 217,
+          "x": 456,
+          "y": 3515
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 30.5,
+          "symWidth": 30,
+          "text": "00",
+          "translation": "00",
+          "width": 43,
+          "x": 645,
+          "y": 3732
+        }
+      ],
+      "imgHeight": 3810,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 13,
+          "symWidth": 10.55666185666186,
+          "text": "PINGXI  KING , HAVE  YOU  LOST  YOUR MIND ?  YOU  ACTUALLY DARED  TO  COLLUDE WITH  A  FOREIGN  RACE TO  REBEL !!",
+          "translation": "ملك بينغشي، هل فقدت عقلك؟ كيف تجرؤ على التآمر مع جنس أجنبي للتمرُّد؟!",
+          "width": 153,
+          "x": 383,
+          "y": 695
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 16.33333333333333,
+          "symWidth": 12.63492063492063,
+          "text": "HAHAHA , I  AM  REBELLING INDEED !",
+          "translation": "هاهاها، نعم، أنا الآن في تمرد!",
+          "width": 141,
+          "x": 430,
+          "y": 1660
+        }
+      ],
+      "imgHeight": 3811,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 14.5,
+          "symWidth": 12.33522727272727,
+          "text": "WHY  IS  IT  THAT BOTH  OF  US",
+          "translation": "لماذا نحن الاثنين، رغم دمنا الملكي،",
+          "width": 139,
+          "x": 487,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 16,
+          "symWidth": 10.44047619047619,
+          "text": "DESPITE HAVING",
+          "translation": "أنتِ",
+          "width": 66,
+          "x": 457,
+          "y": 647
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 12.54545454545454,
+          "text": "ROYAL  BLOOD ,",
+          "translation": "جميلة كزهرة،",
+          "width": 119,
+          "x": 516,
+          "y": 668
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 14,
+          "text": "YOU",
+          "translation": "و",
+          "width": 35,
+          "x": 451,
+          "y": 692
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11.35714285714286,
+          "text": "ARE  AS  BEAUTIFUL",
+          "translation": "أنا بشعة لا تطاق؟",
+          "width": 147,
+          "x": 488,
+          "y": 692
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 12,
+          "text": "AS",
+          "translation": "بسبب هذه القبح، تحملت نظرات ازدراء لا تنتهي وسخرية بلا حساب. مهما جدَّدت في تنميتي،",
+          "width": 24,
+          "x": 458,
+          "y": 713
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 15,
+          "symWidth": 12.43333333333333,
+          "text": "FLOWER ,  WHILE I  AM  UNBEARABLY UGLY !",
+          "translation": "كان الأمر عبثًا! كل مرة، يُقمع طموحي من قبل نصف الخنّث مثلك!",
+          "width": 158,
+          "x": 470,
+          "y": 713
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 11,
+          "symWidth": 10.14285714285714,
+          "text": "BECAUSE",
+          "translation": "'طريقة العذراء السماوية الملكية' تُصبح أسهل بالتقدم كلما كانت الجمال أكثر. هاهاها،",
+          "width": 58,
+          "x": 145,
+          "y": 1132
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 12,
+          "symWidth": 10.07692307692308,
+          "text": "OF THIS  UGLY  FACE ,",
+          "translation": "يا لها من مهزلة!",
+          "width": 109,
+          "x": 119,
+          "y": 1132
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 12.5,
+          "symWidth": 9.627558479532164,
+          "text": "I'VE ENDURED  ENDLESS  COLO STARES  AND  MOCKERY .  NO MATTER",
+          "translation": "هل لا يحق للقبيح أن يكون قويًا؟! على أساس ماذا؟! لماذا؟!!",
+          "width": 180,
+          "x": 91,
+          "y": 1150
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 13,
+          "symWidth": 8.944444444444445,
+          "text": "HOW  HARD  I  CULTIVATE ,",
+          "translation": "",
+          "width": 144,
+          "x": 141,
+          "y": 1199
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 9.25,
+          "text": "IT'S",
+          "translation": "",
+          "width": 24,
+          "x": 103,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 11.66666666666667,
+          "symWidth": 9.32570806100218,
+          "text": "USELESS !  EVERY  TIME , I  GET  SUPPRESSED  BY  A BITCH  LIKE  YOU !!",
+          "translation": "",
+          "width": 165,
+          "x": 108,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 11,
+          "text": "THE",
+          "translation": "",
+          "width": 28,
+          "x": 154,
+          "y": 2646
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 12.66666666666667,
+          "symWidth": 10.68253968253968,
+          "text": "' ROYAL HEAVENLY  MAIDEN  METHOD ' GETS",
+          "translation": "",
+          "width": 204,
+          "x": 99,
+          "y": 2646
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 13.33333333333333,
+          "symWidth": 10.83047190167933,
+          "text": "EASIER  TO  CULTIVATE THE  MORE  BEAUTIFUL  YOU ARE .  HAHAHA ,",
+          "translation": "",
+          "width": 194,
+          "x": 102,
+          "y": 2685
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 12,
+          "text": "WHAT",
+          "translation": "",
+          "width": 40,
+          "x": 217,
+          "y": 2723
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 13,
+          "text": "AN",
+          "translation": "",
+          "width": 21,
+          "x": 260,
+          "y": 2723
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 11,
+          "text": "ABSOLUTE",
+          "translation": "",
+          "width": 76,
+          "x": 134,
+          "y": 2744
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 11.4,
+          "text": "JOKE !",
+          "translation": "",
+          "width": 47,
+          "x": 215,
+          "y": 2744
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 14.90476190476191,
+          "symWidth": 13.38528138528139,
+          "text": "DOES THE  UGLY  NOT DESERVE  TO  BE STRONG ?!",
+          "translation": "",
+          "width": 137,
+          "x": 178,
+          "y": 3550
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 23,
+          "symWidth": 20.98809523809524,
+          "text": "BASED  ON WHAT ?!",
+          "translation": "",
+          "width": 141,
+          "x": 56,
+          "y": 3791
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 44,
+          "symWidth": 43.66666666666666,
+          "text": "WHY ? !!",
+          "translation": "",
+          "width": 186,
+          "x": 392,
+          "y": 4038
+        }
+      ],
+      "imgHeight": 4126,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 15,
+          "symWidth": 12.4008547008547,
+          "text": "I  DELIBERATELY REVERSED  MY CULTIVATION .",
+          "translation": "لقد عمدت إلى عكس طاقتي التنموية.",
+          "width": 140,
+          "x": 459,
+          "y": 1325
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20,
+          "symWidth": 17.48383838383839,
+          "text": "THE UGLIER  I  GET THE  STRONGER",
+          "translation": "كلما ازددت قبحًا، تصبح قوتي أعظم!",
+          "width": 178,
+          "x": 306,
+          "y": 1493
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 11.28571428571429,
+          "text": "DRAKECOMIC.ORG",
+          "translation": "RTMTH",
+          "width": 164,
+          "x": 54,
+          "y": 1583
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 18.5,
+          "text": "I  BECOME !!!",
+          "translation": "ما دمت قادرًا على سحقك تحت قدمي، فما قيمة أن أضحي بنصف سكان مملكة العذراء السماوية كطعام دموي لعشيرة البحر؟!",
+          "width": 158,
+          "x": 316,
+          "y": 1587
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 11.33333333333333,
+          "symWidth": 9.663690476190476,
+          "text": "AS  LONG  AS I  CAN  TRAMPLE  YOU UNDER  MY  FEET ,  WHAT  DOES IT  MATTER  IF  I  SACRIFICE HALF  THE  CITIZENS  OF  THE HEAVENLY",
+          "translation": "",
+          "width": 180,
+          "x": 418,
+          "y": 2104
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 11.66666666666667,
+          "symWidth": 10.06562881562881,
+          "text": "MAIDEN  KINGDOM AS  BLOOD  FOOD  FOR THE  SEA  CLAN ?!",
+          "translation": "",
+          "width": 159,
+          "x": 438,
+          "y": 2188
+        }
+      ],
+      "imgHeight": 4126,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 14.01960784313726,
+          "symWidth": 11.42826019296608,
+          "text": "CHARGE , SISTERS !  WE SWEAR  TO  LIVE AND  DIE  WITH  HER MAJESTY !!",
+          "translation": "هجوم، يا أخوات! نقسم الولاء للحياة والموت مع جلالتها!",
+          "width": 138,
+          "x": 56,
+          "y": 931
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 13.44285714285714,
+          "symWidth": 11.92857142857143,
+          "text": "LET'S FIGHT  THESE  SEA CLAN  TRASHES  TO THE  DEATH !",
+          "translation": "قاتلوا هؤلاء الحثالة من عشيرة البحر حتى آخر نفس!",
+          "width": 137,
+          "x": 353,
+          "y": 2127
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15,
+          "symWidth": 14.59210526315789,
+          "text": "SOUR SCHOLAR ,  LET'S 60  100 !",
+          "translation": "أيها العالم المتعفّن، هيا إلى القتال!",
+          "width": 145,
+          "x": 81,
+          "y": 2610
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 12.57575757575758,
+          "symWidth": 10.8030303030303,
+          "text": "ALRIGHT ! I'LL  COVER  YOU , FELLOW  DAOIST LI !",
+          "translation": "حسنًا! سأكون دائماً في ظهرك، أيها الطاووسي لي!",
+          "width": 123,
+          "x": 458,
+          "y": 3670
+        }
+      ],
+      "imgHeight": 4127,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 13.32608695652174,
+          "symWidth": 10.30434782608696,
+          "text": "ONCE  I  SEIZE THE  THRONE ,  I  WILL CULTIVATE  THE  ' REVERSED",
+          "translation": "حالما أعتلي العرش، سأمارس 'طريقة العذراء السماوية المُعكوسة'،",
+          "width": 189,
+          "x": 322,
+          "y": 2672
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 14,
+          "symWidth": 11.21052631578947,
+          "text": "MAKE  THE  ENTIRE  NATION",
+          "translation": "واجعل المملكة بأسرها تحت حكم القبح!",
+          "width": 183,
+          "x": 326,
+          "y": 2711
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 13,
+          "symWidth": 11.14718614718615,
+          "text": "HEAVENLY  MAIDEN  METHOD , ' AND  UGLINESS  WILL RULE !!!",
+          "translation": "RTMTH",
+          "width": 208,
+          "x": 319,
+          "y": 2751
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 11.28571428571429,
+          "text": "DRARECOMIC.ORG",
+          "translation": "آن الأوان لإنهاء هذه المهزلة",
+          "width": 163,
+          "x": 67,
+          "y": 2809
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17.45,
+          "symWidth": 15.3,
+          "text": "IT'S TIME  FOR THIS  FARCE",
+          "translation": "",
+          "width": 120,
+          "x": 434,
+          "y": 3720
+        }
+      ],
+      "imgHeight": 3758,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 15.16666666666667,
+          "text": "TO  END !",
+          "translation": "لتنتهي!",
+          "width": 84,
+          "x": 452,
+          "y": 46
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 25.6,
+          "text": "ABSOLUTE  DOMAIN !",
+          "translation": "السيادة المطلقة!",
+          "width": 334,
+          "x": 185,
+          "y": 1531
+        }
+      ],
+      "imgHeight": 3758,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 138,
+          "symWidth": 115,
+          "text": "da",
+          "translation": "دا",
+          "width": 199,
+          "x": 335,
+          "y": 1863
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 11.28571428571429,
+          "text": "DRARECOMIC.ORG",
+          "translation": "RTMTH",
+          "width": 164,
+          "x": 519,
+          "y": 2473
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 14.6,
+          "symWidth": 11.68407428828482,
+          "text": "WHAT  HAPPENED ? NOT  ONLY  IS  MY  BODY PARALYZED ,  BUT  I  CAN'T EVEN  FEEL  THE  AIR FLOWING !!",
+          "translation": "ما حدث؟ ليس فقط أن جسدي مشلول، بل حتى لم أعد أشعر بجريان الهواء!",
+          "width": 209,
+          "x": 122,
+          "y": 3382
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 29,
+          "symWidth": 16.125,
+          "text": "Lilibili",
+          "translation": "ليليبيلي",
+          "width": 78,
+          "x": 593,
+          "y": 3715
+        }
+      ],
+      "imgHeight": 3758,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

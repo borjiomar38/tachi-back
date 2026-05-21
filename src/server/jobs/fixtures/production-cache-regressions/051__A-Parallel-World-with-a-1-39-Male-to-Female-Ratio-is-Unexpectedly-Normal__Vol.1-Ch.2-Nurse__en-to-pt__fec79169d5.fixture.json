@@ -1,0 +1,175 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0051",
+  "jobId": "fixture-job-0051",
+  "licenseId": "fixture-license-0051",
+  "pageCount": 2,
+  "pageOrder": ["001.png", "002.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 51.33333333333334,
+          "symWidth": 31,
+          "text": "AH .",
+          "translation": "AH.",
+          "width": 81,
+          "x": 1514,
+          "y": 196
+        },
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 39.67441860465117,
+          "symWidth": 25.0546511627907,
+          "text": "SATOU - SAN , YOU  SHOULDN'T LEAVE  YOUR ROOM  WITHOUT PERMISSION .",
+          "translation": "Satou-san, você não deveria sair do quarto sem permissão.",
+          "width": 362,
+          "x": 1345,
+          "y": 836
+        },
+        {
+          "angle": 0,
+          "height": 277,
+          "symHeight": 40.89473684210526,
+          "symWidth": 26.76151315789474,
+          "text": "I - I'M SORRY ... I  HAD  TO GO  TO  THE TOILET ...",
+          "translation": "De-desculpe... Eu precisei ir ao banheiro...",
+          "width": 256,
+          "x": 51,
+          "y": 1094
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 82,
+          "symWidth": 84,
+          "text": "JOZ",
+          "translation": "JOZ",
+          "width": 147,
+          "x": 1540,
+          "y": 1767
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 25.87878787878788,
+          "symWidth": 14.9040404040404,
+          "text": "....... IF THAT'S  THE CASE  THEN IT  CAN'T BE  HELPED .",
+          "translation": "....... Se for assim, não há o que fazer.",
+          "width": 168,
+          "x": 230,
+          "y": 2065
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 108,
+          "symWidth": 108,
+          "text": "111",
+          "translation": "111",
+          "width": 213,
+          "x": 1356,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 667,
+          "symHeight": 41.83670411985019,
+          "symWidth": 35.57977528089887,
+          "text": "I  THOUGHT I  HAD  WON THE  FIERCE BATTLE  OF NURSING SATOU - KYUN BETWEEN  THE OTHER  NURSES ( FEMALE  PIGS ) , BUT  I  ACTUALLY LOST ... ! ?",
+          "translation": "Pensei que tinha ganho a feroz batalha pelos cuidados do Satou-kyun entre as outras enfermeiras (porquinhas), mas na verdade perdi…!?",
+          "width": 466,
+          "x": 145,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 273,
+          "symHeight": 48.37700534759358,
+          "symWidth": 30.94919786096257,
+          "text": "TO- TOILET !? DID  I  MISS PEE  TIME !?",
+          "translation": "Ba-banheiro!? Perdi a hora do xixi!?",
+          "width": 308,
+          "x": 1395,
+          "y": 437
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 67.5,
+          "symWidth": 68.5,
+          "text": "EE",
+          "translation": "Iiih",
+          "width": 124,
+          "x": 99,
+          "y": 1191
+        },
+        {
+          "angle": 0,
+          "height": 337,
+          "symHeight": 34.09134615384615,
+          "symWidth": 26.57451923076923,
+          "text": "OR  RATHER , AREN'T  YOU WAY  TOO DEFENSE- LESS , SATOU- KYUN !?",
+          "translation": "Ou melhor, você não está sendo longe demais, Satou-kyun!?",
+          "width": 286,
+          "x": 1437,
+          "y": 1734
+        },
+        {
+          "angle": 0,
+          "height": 334,
+          "symHeight": 33.03125,
+          "symWidth": 30.72671568627451,
+          "text": "OUTSIDE THIS  ROOM , THERE  ARE WOMEN  WHO ARE  CRAVING FOR  SOME MEN !",
+          "translation": "Fora deste quarto, há mulheres desesperadas por homens!",
+          "width": 320,
+          "x": 1088,
+          "y": 2014
+        },
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 34.18518518518518,
+          "symWidth": 25.37037037037037,
+          "text": "I  HAVE  TO PROTECT SATOU- KYUN ...",
+          "translation": "Tenho que proteger o Satou-kyun…",
+          "width": 234,
+          "x": 508,
+          "y": 2074
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 28.53846153846154,
+          "symWidth": 26.88461538461538,
+          "text": "AND SOME- DAY  GET MARRIED TO  HIM",
+          "translation": "E um dia me casar com ele",
+          "width": 197,
+          "x": 103,
+          "y": 2132
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

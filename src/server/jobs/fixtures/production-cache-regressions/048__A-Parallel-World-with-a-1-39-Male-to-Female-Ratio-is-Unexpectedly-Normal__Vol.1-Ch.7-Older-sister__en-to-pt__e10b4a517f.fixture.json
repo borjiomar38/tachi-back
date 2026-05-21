@@ -1,0 +1,230 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0048",
+  "jobId": "fixture-job-0048",
+  "licenseId": "fixture-license-0048",
+  "pageCount": 2,
+  "pageOrder": ["001.png", "002.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 36.1764705882353,
+          "symWidth": 22.11764705882353,
+          "text": "SUMIRE- NEE - SAN ...",
+          "translation": "SUMIRE- NEE - SAN...",
+          "width": 209,
+          "x": 1528,
+          "y": 258
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 30.21428571428571,
+          "symWidth": 20.27248677248677,
+          "text": "AREN'T  YOU COLD  IN  SUCH LIGHT CLOTHING ?",
+          "translation": "VOCÊ NÃO ESTÁ COM FRIO COM ESSE ROUPA LEVE?",
+          "width": 242,
+          "x": 1282,
+          "y": 410
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 29.86842105263158,
+          "symWidth": 19.95394736842105,
+          "text": "I'M  WARM BECAUSE OF  THE HEATING .",
+          "translation": "ESTOU AQUECIDA POR CAUSA DO AQUECIMENTO.",
+          "width": 174,
+          "x": 1046,
+          "y": 783
+        },
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 29.82894736842105,
+          "symWidth": 20.46315789473684,
+          "text": "EVERYONE ELSE  JUST HAS IT  TOO COLD .",
+          "translation": "TODO MUNDO MAIS É QUE ESTÁ COM MUITO FRIO.",
+          "width": 184,
+          "x": 1231,
+          "y": 973
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 37.57142857142857,
+          "symWidth": 17.85714285714286,
+          "text": "УЕАН ...",
+          "translation": "UÉAN...",
+          "width": 142,
+          "x": 1548,
+          "y": 1289
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35,
+          "symWidth": 26.8,
+          "text": "WHAT ?",
+          "translation": "O QUÊ?",
+          "width": 138,
+          "x": 1307,
+          "y": 1568
+        },
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 35.57037037037037,
+          "symWidth": 23.63703703703704,
+          "text": "NO ... IT'S  JUST ... YOU  KNOW A  LITTLE  HARD TO  LOOK ...",
+          "translation": "NÃO... É QUE... SABE, É UM POUCO DIFÍCIL DE OLHAR...",
+          "width": 293,
+          "x": 459,
+          "y": 1792
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 14.6,
+          "text": ".....",
+          "translation": ".....",
+          "width": 66,
+          "x": 125,
+          "y": 1996
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 18,
+          "text": "HUH",
+          "translation": "Hein?",
+          "width": 55,
+          "x": 1576,
+          "y": 142
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 25.6,
+          "symWidth": 18.1,
+          "text": "WHAT'S WITH  THOSE EYES ?",
+          "translation": "Que há com esses olhos?",
+          "width": 183,
+          "x": 375,
+          "y": 207
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35,
+          "symWidth": 24,
+          "text": "HUH ?",
+          "translation": "Hein?",
+          "width": 99,
+          "x": 1269,
+          "y": 208
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 48,
+          "symWidth": 34.6,
+          "text": "HUH !?",
+          "translation": "Hein!?",
+          "width": 168,
+          "x": 863,
+          "y": 252
+        },
+        {
+          "angle": 0,
+          "height": 372,
+          "symHeight": 35.625,
+          "symWidth": 25.20959821428572,
+          "text": "BEFORE , YOU  USED TO  LOOK  AT ME  LIKE  I  WAS FILTHY  AND THEN  HOLE BACK  IN  YOUR ROOM .",
+          "translation": "Antes, você me olhava como se eu fosse lixo e depois se trancava no seu quarto.",
+          "width": 292,
+          "x": 108,
+          "y": 454
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 35.85714285714285,
+          "symWidth": 24.80952380952381,
+          "text": "NOW  YOU'RE STARING AT  ME .",
+          "translation": "Agora você fica me encarando.",
+          "width": 253,
+          "x": 1446,
+          "y": 993
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 36.33333333333334,
+          "symWidth": 24.1025641025641,
+          "text": "WHATSMORE SOU  CALLED  ME \" SUMIRE - NEE- SAN \" ...",
+          "translation": "E além disso, você me chamou de \"Sumire-nee-san\"...",
+          "width": 313,
+          "x": 1319,
+          "y": 1520
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 31,
+          "symWidth": 18.88,
+          "text": "BEFORE , IT  WAS  JUST \" HEY \" AND \" YOU \" ...",
+          "translation": "Antes era só \"ei\" e \"você\"...",
+          "width": 218,
+          "x": 974,
+          "y": 1919
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 36,
+          "symWidth": 22.26428571428571,
+          "text": "SUMIRE- NEE - SAN ...",
+          "translation": "Sumire-nee-san...",
+          "width": 218,
+          "x": 552,
+          "y": 2181
+        },
+        {
+          "angle": 0,
+          "height": 242,
+          "symHeight": 35.13461538461539,
+          "symWidth": 24.6517094017094,
+          "text": "SOMEHOW MY  BODY IS  GETTING HOTTER  AND HOTTER ...",
+          "translation": "De algum modo, meu corpo está ficando cada vez mais quente...",
+          "width": 250,
+          "x": 27,
+          "y": 2198
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

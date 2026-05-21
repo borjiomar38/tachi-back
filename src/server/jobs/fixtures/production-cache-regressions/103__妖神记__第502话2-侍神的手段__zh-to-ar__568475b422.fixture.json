@@ -1,0 +1,455 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0103",
+  "jobId": "fixture-job-0103",
+  "licenseId": "fixture-license-0103",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.3125,
+          "text": "这里 是 什么 位置 ? 秘境 核心 在 哪儿 ?",
+          "translation": "ما هذا الموقع؟ أين مركز السر الغامض؟",
+          "width": 162,
+          "x": 195,
+          "y": 199
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17.5,
+          "symWidth": 14.39583333333333,
+          "text": "嗯 ? 死 15 ......",
+          "translation": "هم؟ مات 15...",
+          "width": 67,
+          "x": 528,
+          "y": 713
+        }
+      ],
+      "imgHeight": 1213,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 17.4,
+          "text": "岂有此理 !",
+          "translation": "لا معقول!",
+          "width": 93,
+          "x": 98,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19,
+          "symWidth": 16.23333333333333,
+          "text": "几个 死 傀 , 也 敢 伤 我 ? !",
+          "translation": "أعداء موتى قليلون، ويتجرؤون على إيذائي؟!",
+          "width": 116,
+          "x": 524,
+          "y": 342
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 13.5,
+          "text": "嘁 !",
+          "translation": "تف!",
+          "width": 29,
+          "x": 611,
+          "y": 276
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 15,
+          "text": "滚开 !",
+          "translation": "ابتعدوا!",
+          "width": 51,
+          "x": 212,
+          "y": 662
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.66666666666667,
+          "text": "喝 啊 !",
+          "translation": "هاه!",
+          "width": 50,
+          "x": 418,
+          "y": 686
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.6,
+          "text": "混账 … 你们 给 我 等着 …",
+          "translation": "أيها الأوغاد... انتظروا مني الحساب...!",
+          "width": 108,
+          "x": 429,
+          "y": 305
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 14.33333333333333,
+          "text": "哇 啊 !",
+          "translation": "آه!",
+          "width": 49,
+          "x": 454,
+          "y": 128
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 12,
+          "text": "啊 !",
+          "translation": "آه!",
+          "width": 26,
+          "x": 574,
+          "y": 269
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 13,
+          "text": "哇 。",
+          "translation": "واو.",
+          "width": 27,
+          "x": 531,
+          "y": 426
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19,
+          "symWidth": 17.6,
+          "text": "你 是 不是 想 死 ?",
+          "translation": "هل تتوق إلى الموت؟",
+          "width": 107,
+          "x": 202,
+          "y": 709
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.75,
+          "text": "手脚 给 我 干净 些 。",
+          "translation": "اجعل يداك وقدماك نظيفتين.",
+          "width": 87,
+          "x": 304,
+          "y": 984
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.5,
+          "text": "你 !",
+          "translation": "أنتَ!",
+          "width": 31,
+          "x": 456,
+          "y": 91
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 18.25,
+          "symWidth": 16.58333333333333,
+          "text": "这 斗篷 就 这么 大 , 挤 在一起 难免 碰撞 , 你 怪 我 干嘛 ?",
+          "translation": "هذه الرداء كبيرةٌ هكذا، والازدحام\nلا مفر من التصادم، لماذا تلومني؟",
+          "width": 123,
+          "x": 58,
+          "y": 92
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 19.625,
+          "symWidth": 17.55,
+          "text": "要不 您 也 去 跟 那 几个 死 傀 战斗 吧 , 保证 没 人 碰 你 。",
+          "translation": "أليس لك أن تذهب وتحارب مع أولئك الأموات؟\nلن يلمسك أحد هناك.",
+          "width": 109,
+          "x": 71,
+          "y": 229
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.75,
+          "symWidth": 18.17083333333333,
+          "text": "要不是 为了 聂 离 , 我 才 跟 你们 挤 在一起 !",
+          "translation": "لو لم يكن لأجل نِيَة، لما اقتنيت الازدحام معكم!",
+          "width": 109,
+          "x": 604,
+          "y": 266
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 17.6,
+          "text": "是 啊 是 啊 。",
+          "translation": "نعم، نعم بالفعل.",
+          "width": 96,
+          "x": 483,
+          "y": 446
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 23.5,
+          "text": "62",
+          "translation": "٦٢",
+          "width": 40,
+          "x": 674,
+          "y": 497
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 20,
+          "symWidth": 18.44166666666667,
+          "text": "这 秘境 的 情 况 每一 话 都 在 变 , 我们 得 小心 行事 !",
+          "translation": "حال هذه السراديب تتبدل مع كل حديث،\nوجب علينا التوخي الحذر في كل خطوة!",
+          "width": 118,
+          "x": 622,
+          "y": 574
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 21,
+          "symWidth": 17.16666666666667,
+          "text": "“ 好 了 好 了 , 现在 可不是 斗嘴 的 时候 。",
+          "translation": "حسنًا، حَسْنًا، فإنه ليس وقت المجادلة الآن.",
+          "width": 127,
+          "x": 264,
+          "y": 595
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20.44444444444444,
+          "symWidth": 18.44444444444444,
+          "text": "明明 是 她 先 找事 的 …",
+          "translation": "هي التي بَدَأت بالفتن أولًا...",
+          "width": 107,
+          "x": 213,
+          "y": 763
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18.5,
+          "symWidth": 14.625,
+          "text": "你 说 什么 ? !",
+          "translation": "ماذا قلت؟!",
+          "width": 85,
+          "x": 368,
+          "y": 1004
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.5,
+          "symWidth": 18.2,
+          "text": "没什么 没 什 么 。",
+          "translation": "لا شيء، لا شيء على الإطلاق.",
+          "width": 110,
+          "x": 74,
+          "y": 94
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 17.87698412698413,
+          "text": "话说 , 你们 刚才 到 龙 天明 那 惨 样 了 吗 ?",
+          "translation": "ألم تخبروني كيف حال لونغ تيانمين بعد تلك الكارثة؟",
+          "width": 153,
+          "x": 85,
+          "y": 215
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.15,
+          "symWidth": 18.60833333333333,
+          "text": "堂堂 龙 印 世家 天骄 , 被 打 像 条 死狗 ,",
+          "translation": "ابن عائلة لونغ يين العريقة، فتى النبوغ، هُزم وكأنه كلبٌ ميت.",
+          "width": 130,
+          "x": 452,
+          "y": 278
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 19.8,
+          "text": "真是 丢人 现",
+          "translation": "حقًا إنه ذلٌ وخزي.",
+          "width": 107,
+          "x": 617,
+          "y": 324
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 19.6,
+          "symWidth": 17.78,
+          "text": "竟然 伤 我 至 此 … 就 这么 跑 了 … 我 不 会 放过 你们 的 !",
+          "translation": "جرحني هكذا... ثم هرب بهذه السهولة... لن أرضى بذلك أبداً!",
+          "width": 108,
+          "x": 62,
+          "y": 454
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 20.16666666666667,
+          "symWidth": 17.39523809523809,
+          "text": "那 是 他 活该 , 平 日 目中无人 , 现 在 栽 了 跟头 也是 咎由自取 。",
+          "translation": "هذا جزاؤه، إذ كان متعجرفًا متكبرًا طوال الوقت، وما جناه هو حصيد ساقه.",
+          "width": 152,
+          "x": 239,
+          "y": 787
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 16.25,
+          "text": "你 现在 也 有 了 。",
+          "translation": "وقد نلت ما تستحقه الآن.",
+          "width": 108,
+          "x": 460,
+          "y": 803
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 20,
+          "symWidth": 19.03333333333333,
+          "text": "况且 , 据说 他 还跟 妖 有着 秘密 来往 …",
+          "translation": "وعلاوة على ذلك، يُقال إنه كان على تواصل سري مع الشياطين...",
+          "width": 109,
+          "x": 289,
+          "y": 937
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 12,
+          "text": "啊 !",
+          "translation": "آه!",
+          "width": 26,
+          "x": 490,
+          "y": 1014
+        }
+      ],
+      "imgHeight": 1204,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

@@ -787,6 +787,7 @@ export function mergeHostedPageTranslation(input: {
     .filter(
       (block) =>
         !shouldDropProviderTranslationBlock({
+          sourceLanguage: input.ocrPage.sourceLanguage,
           sourceText: block.text,
           translation: block.rawTranslation,
         })

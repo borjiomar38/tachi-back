@@ -1,0 +1,2956 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0090",
+  "jobId": "fixture-job-0090",
+  "licenseId": "fixture-license-0090",
+  "pageCount": 28,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 307,
+          "symHeight": 34.8,
+          "symWidth": 31.44,
+          "text": "АЛ Boy with  a Promising Future",
+          "translation": "فتي ذو مستقبل واعد",
+          "width": 192,
+          "x": 109,
+          "y": 161
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 26.5,
+          "symWidth": 28,
+          "text": "LETS",
+          "translation": "لِنصنع",
+          "width": 121,
+          "x": 795,
+          "y": 735
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 26,
+          "symWidth": 33.75,
+          "text": "MAKE",
+          "translation": "صُنْعًا",
+          "width": 133,
+          "x": 789,
+          "y": 813
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21.33333333333333,
+          "symWidth": 18.02222222222222,
+          "text": "DOJIN R18 成人 向け",
+          "translation": "دوين للكبار فقط R18",
+          "width": 82,
+          "x": 150,
+          "y": 818
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 26.5,
+          "symWidth": 29.25,
+          "text": "SURE",
+          "translation": "بالتأكيد",
+          "width": 127,
+          "x": 788,
+          "y": 891
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 11.5,
+          "symWidth": 9.125,
+          "text": "18 歳 未満 の 「 購入 , 閱寬 禁止",
+          "translation": "ممنوع للذين تقل أعمارهم عن 18 عاماً",
+          "width": 94,
+          "x": 140,
+          "y": 916
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 24,
+          "symWidth": 29.75,
+          "text": "THAT",
+          "translation": "ذلك",
+          "width": 126,
+          "x": 787,
+          "y": 971
+        },
+        {
+          "angle": 0,
+          "height": 294,
+          "symHeight": 38.28571428571428,
+          "symWidth": 35,
+          "text": "CHANGES",
+          "translation": "يُغيِّر",
+          "width": 41,
+          "x": 824,
+          "y": 1044
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 25.91666666666666,
+          "symWidth": 21.60416666666666,
+          "text": "Translated  by Inversus",
+          "translation": "ترجمة: إنفيرسوس",
+          "width": 228,
+          "x": 51,
+          "y": 1361
+        }
+      ],
+      "imgHeight": 1450,
+      "imgWidth": 1014,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 35.5,
+          "text": "きゃ",
+          "translation": "آآه",
+          "width": 65,
+          "x": 132,
+          "y": 71
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 11.71428571428572,
+          "symWidth": 10.77142857142857,
+          "text": "OKAJO IS FAST !",
+          "translation": "أوكاجو سريعٌ جداً!",
+          "width": 53,
+          "x": 741,
+          "y": 163
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 10.41666666666667,
+          "symWidth": 10.15,
+          "text": "OKAJO IS  SO AMAZING !",
+          "translation": "أوكاجو مذهلٌ بحق!",
+          "width": 67,
+          "x": 258,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 8.777777777777779,
+          "symWidth": 8.416666666666666,
+          "text": "WOW ... So COOL ...",
+          "translation": "واو... حقاً رائع...",
+          "width": 49,
+          "x": 153,
+          "y": 172
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 13.08333333333333,
+          "symWidth": 12.875,
+          "text": "NAH , HE'S BARELY BEING SERIOUS",
+          "translation": "لا، لم يأخذ الأمر على محمل الجد بعد.",
+          "width": 83,
+          "x": 461,
+          "y": 236
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 9.962121212121213,
+          "symWidth": 9.621212121212121,
+          "text": "HEY , YOU OVER THERE !",
+          "translation": "أيها الواقف هناك!",
+          "width": 47,
+          "x": 144,
+          "y": 563
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 11.16614420062696,
+          "symWidth": 10.74294670846395,
+          "text": "YOU  ARE STILL ON  THE CLOCK ! STOP FOOLING AROUND .",
+          "translation": "لا تزال في وقت العمل! كفّ عن العبث.",
+          "width": 66,
+          "x": 365,
+          "y": 755
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 8.761904761904763,
+          "symWidth": 8.345238095238095,
+          "text": "HAHAHA ! BETTER LISTEN TO KISHO-",
+          "translation": "هاهاها! من الأفضل أن تصغِ لكيتشو-",
+          "width": 53,
+          "x": 667,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 8.041666666666666,
+          "symWidth": 7.625,
+          "text": "LOOK I'M BALDIE- \" BE SERIOUS",
+          "translation": "انظر، أنا الأصلع- \" كن جاداً",
+          "width": 44,
+          "x": 748,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 11.78148148148148,
+          "symWidth": 10.54847883597884,
+          "text": "TODAY  I'M GOING  TO JERK  OFF TO  THEM ... LITTLE SHITHEADS THINKING THEY  ARE SOMETHIN",
+          "translation": "اليوم سأمارس العادة السرية عليهم... أولئك الصغار الذين يظنون أنفسهم شيئاً",
+          "width": 74,
+          "x": 331,
+          "y": 146
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 8.622222222222222,
+          "symWidth": 8.822222222222223,
+          "text": "I  CAN HEAR  YOU YOU FUCKING BRATS ...",
+          "translation": "أسمعكم أيها الصبية الحقيرون...",
+          "width": 58,
+          "x": 444,
+          "y": 169
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 9.2092151675485,
+          "symWidth": 8.278703703703705,
+          "text": "CREEPY ... HE  STARES AT  US  ALL THE  TIME , WAY HE  HAS TO  MUCH FOCUS  ON THE  GIRLS",
+          "translation": "مخيف... إنه يحدق بنا دوماً، وكأنه يركز كثيراً على الفتيات",
+          "width": 62,
+          "x": 724,
+          "y": 233
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 29,
+          "symWidth": 27.5,
+          "text": "He",
+          "translation": "هو",
+          "width": 42,
+          "x": 522,
+          "y": 254
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 8.554166666666667,
+          "symWidth": 8.047916666666666,
+          "text": "THEY ARE NOTHING COMP- ARED TO  HER ...",
+          "translation": "لا شيء يقارن بها...",
+          "width": 49,
+          "x": 452,
+          "y": 430
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 11.72916666666667,
+          "symWidth": 10.29880952380952,
+          "text": "MAKI- UCHI ... WHAT A  NICE GIRL ...",
+          "translation": "ماكي أوتشي... يا لها من فتاة رقيقة...",
+          "width": 53,
+          "x": 296,
+          "y": 513
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 62,
+          "symWidth": 77.5,
+          "text": "IJ",
+          "translation": "إي جي",
+          "width": 93,
+          "x": 765,
+          "y": 580
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 12,
+          "symWidth": 11.16638655462185,
+          "text": "IF  I  WERE A  LITTLE YOUNGER ... I  COULD HAVE  HAD A  CHANCE ...",
+          "translation": "لو كنت أصغر سنًا قليلاً... لكان لي أملٌ...",
+          "width": 95,
+          "x": 99,
+          "y": 934
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 8.925925925925926,
+          "symWidth": 8.175925925925926,
+          "text": "HUGE TITS AS WELL ...",
+          "translation": "وثديين عظيمين أيضًا...",
+          "width": 44,
+          "x": 423,
+          "y": 951
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 15,
+          "symWidth": 14.59090909090909,
+          "text": "WAIT , THAT'S MAKI- UCHI ??",
+          "translation": "انتظر، أهذا ماكي-أوتشي؟",
+          "width": 75,
+          "x": 360,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 7.714285714285714,
+          "symWidth": 7.916666666666667,
+          "text": "... WHAT IS  IT OKA ? ...",
+          "translation": "... ما الأمر يا أوكا؟...",
+          "width": 41,
+          "x": 639,
+          "y": 245
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 9,
+          "symWidth": 7.515151515151515,
+          "text": "... YOU ARE  BEING SO  TOUCHY IN  A  PLACE LIKE  THIS ...",
+          "translation": "... ها أنت تدلّل نفسك في مكان كهذا...",
+          "width": 67,
+          "x": 628,
+          "y": 294
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 9.875,
+          "symWidth": 8.75,
+          "text": "IS  THAT ... OKAJO ??",
+          "translation": "هل هذا... أوكا-جو؟",
+          "width": 65,
+          "x": 67,
+          "y": 320
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 8.375,
+          "symWidth": 8.361111111111112,
+          "text": "HUH ? WHAT'S THIS ... ?",
+          "translation": "هاه؟ ما هذا...؟",
+          "width": 42,
+          "x": 482,
+          "y": 350
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 53.02380952380953,
+          "symWidth": 38.13095238095238,
+          "text": "17 COULD IT  BE THAT THEY ... ?",
+          "translation": "هل من الممكن أنهم...؟",
+          "width": 254,
+          "x": 400,
+          "y": 501
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 8.277777777777779,
+          "symWidth": 7.361111111111111,
+          "text": "HE'S JUST  A KID ...",
+          "translation": "هو مجرد فتى...",
+          "width": 41,
+          "x": 359,
+          "y": 885
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 8.290909090909091,
+          "symWidth": 8.538484848484849,
+          "text": "OKAJO IS  WAY BETTER THAN  I EVER WAS ...",
+          "translation": "أوكا-جو أفضل بكثير مما كنت عليه أنا...",
+          "width": 44,
+          "x": 593,
+          "y": 892
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 8.891975308641975,
+          "symWidth": 8.281481481481482,
+          "text": "DAMN  IT ... EVERY SING SINGLE  ONE THEM OF IS  HEAD OVER  HEELS FOR  HIM ...",
+          "translation": "لعنة... كل واحدة منهن مشغوفة به حتى الثمالة...",
+          "width": 68,
+          "x": 169,
+          "y": 932
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 15.25,
+          "text": "JUST",
+          "translation": "فقط",
+          "width": 49,
+          "x": 667,
+          "y": 936
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 8.766666666666667,
+          "symWidth": 8.7,
+          "text": "... AND SHE  IS 50 EXCITED ...",
+          "translation": "... وهي في قمة الحماس...",
+          "width": 58,
+          "x": 296,
+          "y": 938
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 9.333333333333334,
+          "symWidth": 8.064814814814815,
+          "text": "ARE THEY DATING .. ?",
+          "translation": "هل هما على علاقة؟",
+          "width": 55,
+          "x": 670,
+          "y": 1013
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 9.285714285714286,
+          "symWidth": 7.761904761904763,
+          "text": "... I'LL FUCKING KILL  HIM",
+          "translation": "... سأقتله بلا رحمة",
+          "width": 52,
+          "x": 260,
+          "y": 1031
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 10,
+          "symWidth": 8.60989010989011,
+          "text": "HE  LOOKS SO  HANDSOME ...",
+          "translation": "يبدو وديعًا فاتنًا...",
+          "width": 96,
+          "x": 687,
+          "y": 1075
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 14.625,
+          "symWidth": 14.375,
+          "text": "LIKE THAT",
+          "translation": "هكذا فقط",
+          "width": 49,
+          "x": 519,
+          "y": 1092
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 9.666666666666666,
+          "symWidth": 8.757142857142856,
+          "text": "FUCKING LIFE  ON  EASY MODE ???",
+          "translation": "كأن الحياة وضعت على وضع السهل؟",
+          "width": 83,
+          "x": 670,
+          "y": 1147
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 9,
+          "symWidth": 6.960227272727273,
+          "text": ".... YOUR EMOTIONS ...",
+          "translation": "... عواطفك...",
+          "width": 68,
+          "x": 734,
+          "y": 135
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 8.547619047619047,
+          "symWidth": 7.461904761904762,
+          "text": "... HE INDEED  HAS WONDERFUL TALENTS ...",
+          "translation": "... إن له مواهب رائعة حقًا...",
+          "width": 68,
+          "x": 548,
+          "y": 137
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 10.6875,
+          "symWidth": 10.55208333333333,
+          "text": "... FOR LIVING IN  A UNFAIR WORLD ...",
+          "translation": "... ليعيش في عالم قاسٍ وظالم...",
+          "width": 63,
+          "x": 147,
+          "y": 142
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 12,
+          "symWidth": 9.962962962962964,
+          "text": "... YOU ARE CHOSEN ...",
+          "translation": "... أنت المختار...",
+          "width": 75,
+          "x": 425,
+          "y": 173
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 9.761904761904761,
+          "symWidth": 8.412698412698413,
+          "text": "... POWER WILL  BE GIVEN  TO YOU ...",
+          "translation": "... ستُمنح القوة...",
+          "width": 62,
+          "x": 111,
+          "y": 280
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 10.83333333333333,
+          "symWidth": 10.04365079365079,
+          "text": "UGH ... WHAT  IS THIS VOICE ??",
+          "translation": "آه... ما هذا الصوت؟",
+          "width": 61,
+          "x": 516,
+          "y": 314
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 9.885416666666666,
+          "symWidth": 9.5,
+          "text": "... IF  YOU WISH TO  PUNISH HIM ...",
+          "translation": "... إذا رغبت في عقابه...",
+          "width": 70,
+          "x": 106,
+          "y": 348
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 17,
+          "text": "900",
+          "translation": "٩٠٠",
+          "width": 45,
+          "x": 796,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 9,
+          "symWidth": 8.913194444444445,
+          "text": "THE  POWER TO  CORRUPT ANY  MAN  YOU HATE  AT  WILL .",
+          "translation": "قوة تفسد أي إنسان تكرهه كيفما تشاء.",
+          "width": 80,
+          "x": 232,
+          "y": 502
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 14.525,
+          "symWidth": 14.64444444444445,
+          "text": "... ENJOY YOUR NEWFOUND POWERS !",
+          "translation": "... فلتتمتع بقواك المكتشفة حديثًا!",
+          "width": 114,
+          "x": 478,
+          "y": 523
+        },
+        {
+          "angle": 0,
+          "height": 10,
+          "symHeight": 7.090909090909091,
+          "symWidth": 6.818181818181818,
+          "text": "CORRUPT ... ?",
+          "translation": "فاسد...؟",
+          "width": 53,
+          "x": 173,
+          "y": 645
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 8.142857142857144,
+          "symWidth": 7.706349206349207,
+          "text": "DICK  IS THROBB- ING ...",
+          "translation": "ينهض كأنه ينبض...",
+          "width": 54,
+          "x": 158,
+          "y": 800
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 8,
+          "symWidth": 8.428571428571429,
+          "text": "WHAT THE  HELL IS  THIS ?",
+          "translation": "ما هذا بحق الجحيم؟",
+          "width": 54,
+          "x": 158,
+          "y": 848
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 11.21517857142857,
+          "symWidth": 10.16696428571429,
+          "text": "WHAT  IS THIS I  CAN FEEL  IT ..  POWER ? I  WAS CHOSEN TO  BE  THE ENFORCER OF JUSTICE .",
+          "translation": "ما هذا الذي أُشعر به... قوة؟ لقد خُترتُ لأن أكون صائد العدالة.",
+          "width": 138,
+          "x": 667,
+          "y": 1012
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 11.10204081632653,
+          "symWidth": 10.29319727891157,
+          "text": "I'LL TEACH THAT BRAT THE FIRST LESSON !",
+          "translation": "سأعلّم ذلك الولد الدرس الأول!",
+          "width": 68,
+          "x": 215,
+          "y": 1028
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 17,
+          "symWidth": 16.83333333333333,
+          "text": "OKAJO !",
+          "translation": "أوكاجو!",
+          "width": 82,
+          "x": 802,
+          "y": 51
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 13.33666666666667,
+          "symWidth": 11.77666666666667,
+          "text": "はぁ UGH ... WHAT DO  YOU NEED  MR . KISHOKO ?",
+          "translation": "هاه... ما الذي تريده يا سيد كيشوكو؟",
+          "width": 73,
+          "x": 562,
+          "y": 85
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 18.61,
+          "symWidth": 18.24,
+          "text": "LET  ME HAVE  A TALK WITH YOU !",
+          "translation": "أردتُ التحدث معك!",
+          "width": 83,
+          "x": 800,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 9.25,
+          "symWidth": 9.864583333333334,
+          "text": "TAKE OFF YOUR CLOTHES !",
+          "translation": "اخلع ملابسك!",
+          "width": 65,
+          "x": 313,
+          "y": 118
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 31,
+          "text": "កា",
+          "translation": "ﺳﻔﺮ",
+          "width": 31,
+          "x": 319,
+          "y": 254
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 8.736842105263158,
+          "symWidth": 9.232894736842104,
+          "text": "SORRY BUT  I'M BUSY TRAINING FOR  THE UPCOMING TOURNAMENT ,",
+          "translation": "آسف، لكنني منشغل بالتدريب للبطولة القادمة.",
+          "width": 85,
+          "x": 741,
+          "y": 381
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 14,
+          "symWidth": 14.19166666666667,
+          "text": "HUH !? WHAT DID YO-",
+          "translation": "ها؟ ماذا كنت ت-",
+          "width": 59,
+          "x": 302,
+          "y": 393
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 10.5,
+          "symWidth": 10.075,
+          "text": "TSK ... WHAT  A SHITTY ATTITUDE .",
+          "translation": "تش... يا له من وقاحة.",
+          "width": 74,
+          "x": 419,
+          "y": 491
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 11.25,
+          "symWidth": 10.52708333333333,
+          "text": "DON'T UNDER- ESTIMATE ME !",
+          "translation": "لا تستهين بي!",
+          "width": 75,
+          "x": 418,
+          "y": 568
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 11,
+          "symWidth": 7.122222222222222,
+          "text": "... TAKE ... ... YES ...",
+          "translation": "... خذ... نعم...‌",
+          "width": 56,
+          "x": 283,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 11.55102040816327,
+          "symWidth": 10.38265306122449,
+          "text": "OKAY ... HE  IS ACTUALLY TAKING HIS CLOTHES OFF ...",
+          "translation": "حسنًا... ها هو يخلع ثيابه فعلاً...",
+          "width": 75,
+          "x": 280,
+          "y": 863
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 11.71428571428572,
+          "symWidth": 9.175,
+          "text": "... THIS POWER IS REAL .. ?",
+          "translation": "هل هذه القوة... حقيقية؟",
+          "width": 58,
+          "x": 78,
+          "y": 988
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 9.796296296296296,
+          "symWidth": 9.43015873015873,
+          "text": "HAHAHA ! THAT'S ROUGH BUDDY ! WHAT  A TINY  DICK !",
+          "translation": "هاهاها! يا له من قسوة يا صاح! يا له من ذكرٍ صغير!",
+          "width": 67,
+          "x": 722,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 10.47395833333333,
+          "symWidth": 9.479910714285715,
+          "text": "OKAJO ! SHOW  YOUR ARMPITS AND  LOWER YOUR  HIPS WITH  YOUR LEGS APART !",
+          "translation": "أوكاجو! اكشف إبطيك، وانحني منخفضًا وافرد ساقيك!",
+          "width": 75,
+          "x": 379,
+          "y": 126
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 9.975,
+          "symWidth": 8.873412698412698,
+          "text": "IS  IT  STILL POSSIBLE THAT  YOU ARE  A VIRGIN ?",
+          "translation": "هل من الممكن أنك لا تزال عذراء؟",
+          "width": 70,
+          "x": 722,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 9.321428571428571,
+          "symWidth": 8.775297619047619,
+          "text": "YOU  LOOK STUPID . STAY  JUST LIKE  THAT .",
+          "translation": "تبدو أحمقًا. ابقَ على ذلك الحال.",
+          "width": 70,
+          "x": 116,
+          "y": 344
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 15.70833333333333,
+          "symWidth": 13.95833333333333,
+          "text": "SUCK IT .",
+          "translation": "امتص.",
+          "width": 61,
+          "x": 388,
+          "y": 736
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 9.425925925925926,
+          "symWidth": 8.991843033509701,
+          "text": "YOU HAVE PROBABLY WATCHED PORN ,  MAKE ME  FEEL GOOD  LIKE THEY  DO THERE !",
+          "translation": "لا بُدّ أنك شاهدت مناظر فاحشة، اجعلني أشعر بالمتعة كما يفعلون هناك!",
+          "width": 75,
+          "x": 726,
+          "y": 122
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 9.75,
+          "symWidth": 8.520833333333334,
+          "text": "REMEMBER THE  SMELL AND  THE TASTE !",
+          "translation": "تذكَّر الرائحة والمذاق!",
+          "width": 66,
+          "x": 342,
+          "y": 331
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 10.2,
+          "symWidth": 8.577777777777778,
+          "text": "BECAUSE IT'S  GOING TO  BE  YOUR FAVORITE THING .. !",
+          "translation": "لأنها ستكون أحبُّ ما تملك..!",
+          "width": 72,
+          "x": 183,
+          "y": 361
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 9.1875,
+          "symWidth": 9.1875,
+          "text": "NOW  LET'S TEACH  YOU SOME LESSONS !",
+          "translation": "والآن دعنا نعلّمك بعض الدروس!",
+          "width": 64,
+          "x": 187,
+          "y": 435
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 11.24074074074074,
+          "symWidth": 10.28042328042328,
+          "text": "WOAH ... I  GUESS BOYS  CAN BE  SEXY TO , THAT LOOK  IS SO  DAMN EROTIC .",
+          "translation": "يا للهول... يبدو أن للأولاد جاذبية أيضا، ذلك الملمح مثيرٌ حدَّ الاستثارة.",
+          "width": 74,
+          "x": 132,
+          "y": 622
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 12.49242424242424,
+          "symWidth": 11.40909090909091,
+          "text": "... I  AM INFERIOR ...",
+          "translation": "... أنا أدنى منزلة...",
+          "width": 97,
+          "x": 693,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 16.8,
+          "symWidth": 15.6,
+          "text": "..I  AM",
+          "translation": ".. أنا كذلك",
+          "width": 66,
+          "x": 235,
+          "y": 636
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 13.63636363636364,
+          "symWidth": 11.09090909090909,
+          "text": "... I  WORSHIP BIG  DICKS ...",
+          "translation": "... أنا عبد للأعضاء الكبيرة...",
+          "width": 105,
+          "x": 692,
+          "y": 674
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.0625,
+          "symWidth": 14.7875,
+          "text": "COCK- SLAVE ...",
+          "translation": "... عبد القضيب...",
+          "width": 85,
+          "x": 231,
+          "y": 681
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24.5,
+          "symWidth": 19,
+          "text": "14",
+          "translation": "١٤",
+          "width": 25,
+          "x": 129,
+          "y": 851
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 14.24,
+          "symWidth": 13.45571428571428,
+          "text": "... I  CAN NEVER RESIST A  BIG DICK ...",
+          "translation": "... لا أقاوم قوة العضو الكبير...",
+          "width": 87,
+          "x": 675,
+          "y": 892
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 13.97976190476191,
+          "symWidth": 11.675,
+          "text": "... LIVE FOR  KENPO KISHOKO ...",
+          "translation": "... أُهْلَلُ لحكمة كينبو كيشوكو...",
+          "width": 97,
+          "x": 210,
+          "y": 927
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 12.86111111111111,
+          "symWidth": 11.86904761904762,
+          "text": "... JUST SEEING  HIM MAKES  ME HORNY ...",
+          "translation": "... مجرد رؤيته توقظ فيّ الأهواء...",
+          "width": 107,
+          "x": 206,
+          "y": 1000
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 13.4,
+          "symWidth": 13.77333333333334,
+          "text": "JERK OFF WHILE YOU SUCK !",
+          "translation": "حقّر نفسك أثناء مصك!",
+          "width": 65,
+          "x": 725,
+          "y": 130
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 10.05,
+          "symWidth": 9.971428571428572,
+          "text": "PLAY WITH YOUR NIPPLES AS  WELL !",
+          "translation": "العب بحلماتك أيضاً!",
+          "width": 63,
+          "x": 670,
+          "y": 266
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 11.25238095238095,
+          "symWidth": 10.95555555555556,
+          "text": "MORE ! MORE INTENSE THAN  YOU USUALLY DO !",
+          "translation": "أكثر! أكثر شدّة مما تفعل عادة!",
+          "width": 72,
+          "x": 359,
+          "y": 343
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 13.19238095238095,
+          "symWidth": 12.36523809523809,
+          "text": "DON'T FORGET TO  USE YOUR TOUNGE !",
+          "translation": "لا تنسَ استخدام لسانك!",
+          "width": 71,
+          "x": 341,
+          "y": 538
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 10.625,
+          "symWidth": 9.983482142857142,
+          "text": "IT  FEELS SO  GOOD TO  MAKE A  POPULAR GUY  DO SOMETHING SO  SHAME- FUL ...",
+          "translation": "كم هو رائع أن تجبر رجلاً محبوبًا على فعل أمر مخزٍ كهذا...",
+          "width": 82,
+          "x": 718,
+          "y": 837
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 13.8125,
+          "symWidth": 13.64015151515152,
+          "text": "THIS REALLY IS  THE BEST POWER !",
+          "translation": "هذه بالفعل أعظم قوة!",
+          "width": 81,
+          "x": 612,
+          "y": 1022
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 26.75,
+          "symWidth": 27,
+          "text": "1900",
+          "translation": "١٩٠٠",
+          "width": 50,
+          "x": 200,
+          "y": 1089
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 10.82857142857143,
+          "symWidth": 9.005442176870748,
+          "text": "DRINK IT  ALL AND DON'T YOU  DARE SPILL  A DROP !",
+          "translation": "اشربه كاملاً ولا تجرؤ على إسقاط قطرة واحدة!",
+          "width": 59,
+          "x": 581,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 14.66666666666667,
+          "symWidth": 12.91666666666667,
+          "text": "UGH ... I'M CUMMING !",
+          "translation": "آه... ها أنا أبلغ الذروة!",
+          "width": 102,
+          "x": 692,
+          "y": 157
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 16.6,
+          "symWidth": 15.53095238095238,
+          "text": "ENJOY TASTING MY SEMEN !",
+          "translation": "تلذذ بتذوق منيّ!",
+          "width": 79,
+          "x": 138,
+          "y": 198
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 69,
+          "symWidth": 68.5,
+          "text": "በዛ",
+          "translation": "",
+          "width": 76,
+          "x": 733,
+          "y": 377
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 10.66428571428571,
+          "symWidth": 10.12142857142857,
+          "text": "YOU  ARE  A MASOCHIST PERVERTED BITCH ,  AREN'T YOU ?",
+          "translation": "ألا تدرين أنكِ متلصصةٌ ماسوشية؟",
+          "width": 98,
+          "x": 179,
+          "y": 517
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 12.19444444444444,
+          "symWidth": 11.63095238095238,
+          "text": "NOW CUM  WITH THE  TASTE OF  SEMEN IN  YOUR THROAT ...",
+          "translation": "اصلي ونحن الطعم من منيٍّ عالقٌ في حلقك...",
+          "width": 87,
+          "x": 325,
+          "y": 523
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 12.57142857142857,
+          "symWidth": 10.85714285714286,
+          "text": "... YES .",
+          "translation": "... نعم.",
+          "width": 55,
+          "x": 98,
+          "y": 546
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 30.16666666666667,
+          "symWidth": 29.9,
+          "text": "2 - B OKAJO",
+          "translation": "2 - بوكاجو",
+          "width": 181,
+          "x": 581,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 11.08333333333333,
+          "symWidth": 10.17314814814815,
+          "text": "EVERYONE WAS  REALLY WORRIED ...",
+          "translation": "كان الجميع في غاية القلق...",
+          "width": 81,
+          "x": 359,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 11.10277777777778,
+          "symWidth": 10.09166666666667,
+          "text": "ALSO , WHAT  IF MR .  KISHOK FINDS  OUT ?",
+          "translation": "وما إن اكتشف السيد كيشوك الأمر؟",
+          "width": 78,
+          "x": 362,
+          "y": 176
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 13.06666666666667,
+          "symWidth": 12.78809523809524,
+          "text": "UMMM ... IT'S OKAY !",
+          "translation": "هممم... لا بأس!",
+          "width": 77,
+          "x": 121,
+          "y": 237
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 9.436471861471862,
+          "symWidth": 8.065800865800865,
+          "text": "wellcane YOU'RE  28 SKIPPING CLUB ACTIVITIES WITHOUT PERMISSION .",
+          "translation": "حسنًا، أنت في الثامنة والعشرين وتتغيب عن فعاليات النادي من دون إذن.",
+          "width": 118,
+          "x": 597,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 12.5,
+          "symWidth": 12.5,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 40,
+          "x": 455,
+          "y": 262
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 9.03611111111111,
+          "symWidth": 8.446693121693123,
+          "text": "I  JUST MIXED A  CLASS UP  AND GOT  LOST , I'LL  BE THERE FOR  SURE TODAY !",
+          "translation": "لقد أخطأت الفصل وتاهت، لكنني سأكون هناك بالتأكيد اليوم!",
+          "width": 58,
+          "x": 98,
+          "y": 345
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 13.41944444444444,
+          "symWidth": 12.39930555555556,
+          "text": "THAT'S NEVER HAPPENED BEFORE ...",
+          "translation": "لم يحدث هذا من قبل قط...",
+          "width": 85,
+          "x": 560,
+          "y": 402
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 85,
+          "symWidth": 36.5,
+          "text": "金 :",
+          "translation": "金:",
+          "width": 39,
+          "x": 93,
+          "y": 676
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 9.8,
+          "symWidth": 9.274444444444445,
+          "text": "I  HAVE BEEN ACTING WEIRD LATELY ...",
+          "translation": "لقد تصرّفت بغرابة في الآونة الأخيرة...",
+          "width": 58,
+          "x": 664,
+          "y": 687
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 10.02857142857143,
+          "symWidth": 9.144155844155843,
+          "text": "WHAT  DID I  DO  WHEN I  MISSED CLUB ACTIVITIES ?",
+          "translation": "ماذا فعلت عندما غبت عن نشاطات النادي؟",
+          "width": 77,
+          "x": 425,
+          "y": 736
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 10.58333333333333,
+          "symWidth": 9.5,
+          "text": "MAYBE I'M  JUST TIRED ?",
+          "translation": "ربما أنا مُتعب فقط؟",
+          "width": 60,
+          "x": 374,
+          "y": 837
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 9.333333333333334,
+          "symWidth": 8.25925925925926,
+          "text": "HE  SHOULD BE  HERE ANY  MINUTE",
+          "translation": "ينبغي أن يصل في أي لحظة",
+          "width": 64,
+          "x": 417,
+          "y": 949
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 9.4375,
+          "symWidth": 8.166666666666666,
+          "text": "INSTEAD  OF TRAINING THE  BITCH SERVES  ME IN  THE WAREHOUSE .",
+          "translation": "بدلاً من التدريب، تلك العاهرة تخدمني في المخزن.",
+          "width": 71,
+          "x": 413,
+          "y": 997
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 10.21428571428572,
+          "symWidth": 9.189285714285715,
+          "text": "THIS POWER  IS DEFINITELY WORKING ...",
+          "translation": "هذه القوة تُحدث تأثيراً بلا أدنى شك...",
+          "width": 78,
+          "x": 118,
+          "y": 1019
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 19,
+          "symWidth": 14.92307692307692,
+          "text": "334195  171019x",
+          "translation": "",
+          "width": 113,
+          "x": 684,
+          "y": 1025
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 10.4375,
+          "symWidth": 10.3125,
+          "text": "BUT  WHERE IS  HE ?",
+          "translation": "لكن أين هو إذن؟",
+          "width": 78,
+          "x": 118,
+          "y": 1090
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 12.21428571428572,
+          "symWidth": 10.70770975056689,
+          "text": "... WEAR A  MICRO BIKINI UNDER THE UNIFORM ALL  DAY ...",
+          "translation": "... أرتدي بيكيني صغيرًا تحت الزي طيلة النهار...",
+          "width": 79,
+          "x": 460,
+          "y": 104
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 12.09974747474747,
+          "symWidth": 11.51830808080808,
+          "text": "... NO  MATTER HOW  YOU LOOK  AT  IT . I'MA PERVERTED BITCH ...",
+          "translation": "... مهما نظرت إليها، فأنا شريرة منحرفة...",
+          "width": 92,
+          "x": 345,
+          "y": 191
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 12,
+          "symWidth": 11.09563492063492,
+          "text": "... ALWAYS SKIP  CLUB ACTIVITIES AND  GET FUCKED BY TEACHER ...",
+          "translation": "... أتغافل دومًا عن أنشطة النادي وأُهتك على يد المعلم...",
+          "width": 89,
+          "x": 438,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 11.9936507936508,
+          "symWidth": 11.28531746031746,
+          "text": "... AND  MY DICK  IS SHRINKING MORE  AND MORE ...",
+          "translation": "... وعضوي الذكري يزداد انكماشًا أكثر فأكثر...",
+          "width": 88,
+          "x": 285,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 12.33333333333333,
+          "symWidth": 12.02777777777778,
+          "text": "GOOD JOB OKAJO .",
+          "translation": "عمل رائع، أوكايو.",
+          "width": 62,
+          "x": 274,
+          "y": 558
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 10.70833333333333,
+          "symWidth": 10.30555555555556,
+          "text": "SHOW  ME THE  RESULTS OF  YOUR HOMEWORK .",
+          "translation": "أرني نتائج واجبك المنزلي.",
+          "width": 90,
+          "x": 156,
+          "y": 607
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 31.33333333333333,
+          "symWidth": 25.66666666666667,
+          "text": "...",
+          "translation": "...",
+          "width": 29,
+          "x": 95,
+          "y": 895
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 40.5,
+          "symWidth": 29,
+          "text": "ちま",
+          "translation": "...",
+          "width": 37,
+          "x": 563,
+          "y": 926
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 11.66666666666667,
+          "symWidth": 11.61111111111111,
+          "text": "A  MEAT - DOLL OBEYING  HIS ORDERS",
+          "translation": "دمية لحم تطيع أوامره",
+          "width": 107,
+          "x": 695,
+          "y": 1092
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 13.85,
+          "symWidth": 12.9,
+          "text": "YOUR COCK IS ...",
+          "translation": "عضوك...",
+          "width": 46,
+          "x": 469,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 12.15306122448979,
+          "symWidth": 10.77210884353741,
+          "text": "YES ... I'LL  TRY MY  BEST TO  PLEASE YOU  WITH MY  ASS- PUSSY ...",
+          "translation": "نعم... سأبذل قصارى جهدي لإرضائك بمؤخرتي وفتأتي...",
+          "width": 83,
+          "x": 560,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 9.5875,
+          "symWidth": 9.05,
+          "text": "I - IT FEELS 50 GOOD !",
+          "translation": "إنه - يشعر ببهجة لا توصف!",
+          "width": 37,
+          "x": 90,
+          "y": 167
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 11,
+          "symWidth": 10.52083333333333,
+          "text": "..so DEEP INSIDE M - ME",
+          "translation": "عميقاً جداً بداخلي...",
+          "width": 50,
+          "x": 466,
+          "y": 202
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 10.14761904761905,
+          "symWidth": 8.797619047619047,
+          "text": "MUCH BETTER T - THAN MASTUR BATING !",
+          "translation": "أحسن بكثير من العادة السرية!",
+          "width": 47,
+          "x": 94,
+          "y": 232
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 11.02777777777778,
+          "symWidth": 10.12936507936508,
+          "text": "THAT'S RIGHT . FUCK  IT HARD  AND ENJOY IT .",
+          "translation": "صحيح. اضربه بقوة واستمتع.",
+          "width": 72,
+          "x": 93,
+          "y": 416
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 11,
+          "symWidth": 10.01190476190476,
+          "text": "T - THANK YOU ... THANK YOU - U",
+          "translation": "ش - شكراً... شكراً لك.",
+          "width": 65,
+          "x": 477,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 10,
+          "symWidth": 8.97704081632653,
+          "text": "YOU  ARE GETTING BETTER AT SHAKING YOUR  ASS ! SQUEEZE !",
+          "translation": "ها قد أصبحت تجيدين هز مؤخرتك! اضغطي!",
+          "width": 71,
+          "x": 732,
+          "y": 805
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 11.87414965986395,
+          "symWidth": 10.82568027210884,
+          "text": "ARE  YOU KEEPING UP  ON TRAINING YOUR NIPPLES AS  WELL ?",
+          "translation": "هل تواصل تدريب حلماتك أيضًا؟",
+          "width": 75,
+          "x": 719,
+          "y": 116
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 10.69387755102041,
+          "symWidth": 9.491893424036281,
+          "text": "EVERY  TIME I  GO  TO  THE TOILETI MAKE  SURE THAT  I  CUM FROM  MY NIPPLES ...",
+          "translation": "في كل مرة أذهب فيها إلى المرحاض، أحرص على أن أبلغ النشوة من حلماتي...",
+          "width": 81,
+          "x": 92,
+          "y": 124
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 12.6,
+          "symWidth": 12.4,
+          "text": "Y - YES",
+          "translation": "ن- نعم",
+          "width": 50,
+          "x": 437,
+          "y": 190
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 8.611111111111112,
+          "symWidth": 8.351851851851851,
+          "text": "OH  REALLY ? YOU  ARE ALMOST",
+          "translation": "حقًا؟ لقد أصبت تقريبًا",
+          "width": 62,
+          "x": 77,
+          "y": 322
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 8.5,
+          "symWidth": 7.674603174603174,
+          "text": "PERVERTED HAHAHA !",
+          "translation": "بالانحراف، هاهاها!",
+          "width": 60,
+          "x": 78,
+          "y": 363
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 15.56746031746032,
+          "symWidth": 13.39484126984127,
+          "text": "CLIM 12 MR CLOSE ! CLOSE ! PLEASE !",
+          "translation": "اقترب أكثر، أرجوك! اقترب! اقترب!",
+          "width": 88,
+          "x": 622,
+          "y": 543
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 18,
+          "symWidth": 15.33333333333333,
+          "text": "I'M",
+          "translation": "أنا...",
+          "width": 34,
+          "x": 322,
+          "y": 549
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 11.33333333333333,
+          "symWidth": 10.21111111111111,
+          "text": "I'M CUMMING ! I'M CUMMING ! HNGH .. !!!",
+          "translation": "أنا أصل للنشوة! أنا أصل للنشوة! آه...!!!",
+          "width": 77,
+          "x": 100,
+          "y": 613
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 8.543981481481481,
+          "symWidth": 8.66633597883598,
+          "text": "CLOSER  TO SQUIRTING THAN CUMMING TO  BE HONEST",
+          "translation": "أشعر بأني سأطلق السائل أكثر من أني أصل للنشوة، لأكون صادقًا",
+          "width": 64,
+          "x": 724,
+          "y": 841
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 9.40952380952381,
+          "symWidth": 8.847619047619046,
+          "text": "MAYBE I'LL  LET YOU  CUM .",
+          "translation": "ربما سأسمح لك بالفرج.",
+          "width": 53,
+          "x": 408,
+          "y": 903
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 9.988095238095237,
+          "symWidth": 10.07142857142857,
+          "text": "ANY  TIME REALLY",
+          "translation": "في أي وقت حقًا.",
+          "width": 54,
+          "x": 411,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 12.82142857142857,
+          "symWidth": 11.80952380952381,
+          "text": "GORASH O  AHEAD ,",
+          "translation": "تابع، غوراش.",
+          "width": 63,
+          "x": 407,
+          "y": 1010
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 13.89020979020979,
+          "symWidth": 12.51573426573427,
+          "text": "SF ... PRACT AT  THIS AT  HOM  RATE  YOUR TODAY BODY  WILL BECOME AS  WEL  PERFECT FOR  A SLOPPY WHORE .",
+          "translation": "تمرّن على هذا في بيتك، فسيصبح جسدك اليوم\nمثاليًا كعاهرة مُنهكة.",
+          "width": 211,
+          "x": 277,
+          "y": 772
+        },
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 9,
+          "symWidth": 8.875,
+          "text": "... Y - YES",
+          "translation": "... ن- نعم.",
+          "width": 56,
+          "x": 107,
+          "y": 808
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 9.366666666666667,
+          "symWidth": 9.094444444444443,
+          "text": "YOUR BODY  IS SOFTENING UP  YOU KNOW .",
+          "translation": "لقد بدأ جسدك يلين، أتعلم ذلك.",
+          "width": 70,
+          "x": 747,
+          "y": 849
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 11.69373219373219,
+          "symWidth": 9.913095238095238,
+          "text": "I  HAVE  TO PULL  AN ALLNIGHTER AND  STUDY A  DILDO USE TO  ANALLY MASTURBATE UNTIL  MORNING !",
+          "translation": "عليّ السهر طوال الليل وأدرس استخدام الديلدو\nمن أجل الاستمناء الشرجي حتى الصباح!",
+          "width": 111,
+          "x": 40,
+          "y": 105
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 10.18857142857143,
+          "symWidth": 9.955324675324675,
+          "text": "I  HAVE TO  STUDY HARD  FOR THE  TEST TOMORROW ...",
+          "translation": "عليّ أن أدرس بجد للامتحان غدًا...",
+          "width": 91,
+          "x": 527,
+          "y": 310
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 11.125,
+          "symWidth": 9.959821428571429,
+          "text": "MY  GRADES HAVE  BEEN DROPPING LATELY  SO I  REALLY HAVE  TO MAKE  UP FOR  IT .",
+          "translation": "درجاتي تراجعت مؤخرًا، لذا عليّ تعويض ذلك حقًا.",
+          "width": 81,
+          "x": 482,
+          "y": 408
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 9.066666666666666,
+          "text": "COGNITIVE  CHANGE",
+          "translation": "تغير معرفي",
+          "width": 119,
+          "x": 64,
+          "y": 444
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 10,
+          "symWidth": 9.35,
+          "text": "STUDYING  EQUATES TO  MASTURBATION",
+          "translation": "الدراسة تعادل الاستمناء",
+          "width": 125,
+          "x": 61,
+          "y": 472
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 23.25,
+          "symWidth": 19,
+          "text": "HGIS",
+          "translation": "",
+          "width": 22,
+          "x": 223,
+          "y": 656
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 232,
+          "symHeight": 45.25,
+          "symWidth": 59.5,
+          "text": "Vicician",
+          "translation": "فيششيان",
+          "width": 67,
+          "x": 272,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 12.55952380952381,
+          "symWidth": 12.3031746031746,
+          "text": "I  NEED CUM TO WITH  MY ASS MORE ...",
+          "translation": "أحتاج أن أفرغ شرجي أكثر...",
+          "width": 72,
+          "x": 202,
+          "y": 879
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 8.375,
+          "symWidth": 8.257954545454545,
+          "text": "I  AM  A MASOCHISTIC HOMOSEXUAL PERVERT ...",
+          "translation": "أنا منحرف مثلي يعشق الألم...",
+          "width": 78,
+          "x": 93,
+          "y": 1019
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 13.12307692307692,
+          "symWidth": 13.71487179487179,
+          "text": "MY SHIRT AND PANTS FEELS TIGHT ...",
+          "translation": "قميصي وسروالي يشعران بالضيق...",
+          "width": 67,
+          "x": 377,
+          "y": 213
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 10.14444444444445,
+          "symWidth": 9.677777777777777,
+          "text": "HAVE  I GAINED WEIGHT RECENTLY ?",
+          "translation": "هل اكتسبت وزنًا مؤخرًا؟",
+          "width": 90,
+          "x": 727,
+          "y": 248
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 15.01851851851852,
+          "symWidth": 13.02037037037037,
+          "text": "THE  AMOUNT OF FOOD ! EAT HASN'T \\ CHANGED ...",
+          "translation": "كمية الطعام التي أتناولها لم تتغير...",
+          "width": 124,
+          "x": 22,
+          "y": 331
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 32,
+          "symWidth": 28.66666666666667,
+          "text": "fts",
+          "translation": "",
+          "width": 31,
+          "x": 413,
+          "y": 557
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 10.35714285714286,
+          "text": "COGNITIVE  BLOCK",
+          "translation": "الكتلة الإدراكية",
+          "width": 134,
+          "x": 527,
+          "y": 723
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 12,
+          "symWidth": 10.62820512820513,
+          "text": "MAKES  IT HARDER  TO  NOTICE CHANGE IN ONE'S  BODY  TYPE",
+          "translation": "تُعيق ملاحظة التغير في شكل الجسدِ",
+          "width": 218,
+          "x": 484,
+          "y": 753
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 7.222222222222222,
+          "symWidth": 7.792195767195768,
+          "text": "HEY BRO ... ? UHH ... COULD You SHOW US YOUR CHEST .. ?",
+          "translation": "يا أخي...؟ آه... هل تسمح أن تُري صدرَك؟",
+          "width": 49,
+          "x": 84,
+          "y": 780
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 11.8,
+          "symWidth": 11.56,
+          "text": "MY  BODY FEELS SUPER OUT  OF SHAPE ...",
+          "translation": "جسدي يشعر بأنّه مفارق للشكل الطبيعي...",
+          "width": 75,
+          "x": 373,
+          "y": 788
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 11.79630681818182,
+          "symWidth": 11.21013257575758,
+          "text": "... ANYWAYS , HE  SHOULD  BE NOW . HERE SEE LET'S HOW  HE  HAS CHANGED !",
+          "translation": "على أي حال، يجب أن يكون الآن. هيا، لنر كيف تغيّر!",
+          "width": 97,
+          "x": 351,
+          "y": 1067
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 10.77777777777778,
+          "symWidth": 9.086666666666668,
+          "text": "FUCK ,  I'M TIRED  OFF BEING  TOLD WHAT  TO DO ...",
+          "translation": "تبًا، لقد سئمت من أن يُملى عليّ ما أفعل...",
+          "width": 76,
+          "x": 654,
+          "y": 1069
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 11,
+          "symWidth": 9.866666666666667,
+          "text": "COGNITIVE  CHANGE",
+          "translation": "التغيير الإدراكي",
+          "width": 137,
+          "x": 144,
+          "y": 90
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 10.66666666666667,
+          "symWidth": 10.63048245614035,
+          "text": "STUDENTS  MUST  PROVIDE SEXUAL  SERVICES  TO TEACHERS",
+          "translation": "يجب على الطلاب تقديم خدمات جنسية للمعلمين",
+          "width": 184,
+          "x": 119,
+          "y": 118
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 8.385714285714286,
+          "symWidth": 8.257738095238095,
+          "text": "I  CAN'T BELIEVE THAT  I  GET TO DO  IT WITH  A  MALE STUDENT INSTEAD  OF MASTUR- BATING ...",
+          "translation": "لا أصدق أنني سأفعل ذلك مع طالب ذكر بدل الاستمناء...",
+          "width": 72,
+          "x": 499,
+          "y": 152
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 11.64047619047619,
+          "symWidth": 11.04265873015873,
+          "text": "PLEASE LET  ME SERVICE YOU  RIGHT NOW TEACHER ...",
+          "translation": "أرجوك دعني أخدمك الآن، معلمي...",
+          "width": 80,
+          "x": 226,
+          "y": 226
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 10.78068783068783,
+          "symWidth": 10.17460317460317,
+          "text": "YOU CAN'T STILL  BE POPULAR WITH  THE GIRLS LOOKING LIKE THIS ...",
+          "translation": "لا يمكنك أن تظل محبوبًا لدى الفتيات وأنت تبدو هكذا...}}",
+          "width": 69,
+          "x": 478,
+          "y": 424
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 11.03787878787879,
+          "symWidth": 10.66926406926407,
+          "text": "EVEN THOUGH YOU ALWAYS ACTED COCKY , YOU  ARE SQUEEZ- ING  LIKE A  CHEAP WHORE !",
+          "translation": "مع أنك دائمًا تُظهِر الغرور، فأنت تعصر مثل عاهرة رخيصة!",
+          "width": 65,
+          "x": 553,
+          "y": 78
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 10.37619047619048,
+          "symWidth": 9.390476190476189,
+          "text": "I  WON'T STOP EVEN  IF YOU APOL- OGIZE , SLUT !",
+          "translation": "لن أتوقف حتى تعتذرين يا ساقطة!",
+          "width": 53,
+          "x": 440,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 11.38461538461539,
+          "symWidth": 11.51807081807082,
+          "text": "IT  FEELS  SO GOOD  MR . ! PLEASE M - MORE ! I'M  CUMMING WITH  MY  ASS ! I'M  HAVING  A PROSTATE ORGASM ! YOU  ARE GOING  TO MAKE  ME CUM !",
+          "translation": "يا سيدي، هذا شعور رائع! أرجوك المزيد! أبلغ الذروة من المؤخرة! أتحسس نشوة البروستاتا! ستجعلني أبلغ الذروة!",
+          "width": 111,
+          "x": 74,
+          "y": 570
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 11.33333333333333,
+          "symWidth": 9.922619047619047,
+          "text": "UGH ... ! I'M CUMMING !",
+          "translation": "آه... أبلغ الذروة!",
+          "width": 81,
+          "x": 685,
+          "y": 598
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 11.01111111111111,
+          "symWidth": 10.73730158730159,
+          "text": "SHUT  UP ! NEVER  TELL ME  WHAT  TO DO ! YOU  ARE  A SLUT THAT IS  ONLY GOOD  FOR FUCKING !",
+          "translation": "اصمت! لا تخبرني أبداً ماذا أفعل! أنتِ دنيئة لا تصلحين إلا للجنس!",
+          "width": 91,
+          "x": 708,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 8.225,
+          "symWidth": 8.625,
+          "text": "YOU WILL NEVER AGAIN ACT COCKY OR ORDER",
+          "translation": "لن تتصرف أبداً بفوقية أو تعطي أوامر مجدداً",
+          "width": 39,
+          "x": 100,
+          "y": 384
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 9.142857142857142,
+          "symWidth": 7.857142857142857,
+          "text": "AROUND !",
+          "translation": "هكذا!",
+          "width": 50,
+          "x": 94,
+          "y": 488
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 12.05901515151515,
+          "symWidth": 11.47718614718615,
+          "text": "YOU  ARE  JUST BITCH , UNWORTHY OF  EVEN BEING  CALLED THE A  MAN ! YOU  ACTED ALL  HIGH AND  MIGHTY ...",
+          "translation": "أنتِ مجرد حقيرة، لا تستحق حتى أن تُدعى رجلاً! كنتِ تتصرفين بتعجرف وغطرسة...",
+          "width": 128,
+          "x": 669,
+          "y": 673
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 12.13873015873016,
+          "symWidth": 11.55825396825397,
+          "text": "I  MADE YOU  INTO WHAT  YOU ARE  TODAY ! DID !",
+          "translation": "أنا من صنعت منك كل ما أنتِ عليه اليوم! قد فعلت!",
+          "width": 86,
+          "x": 429,
+          "y": 682
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 9.857142857142858,
+          "symWidth": 9.80952380952381,
+          "text": "SHIT ... I'M GOING  TO сим AGAIN ! GET READY !",
+          "translation": "اللّعين... سأنتقم مجدداً! استعد!",
+          "width": 65,
+          "x": 332,
+          "y": 687
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 11.66011904761905,
+          "symWidth": 11.29627976190476,
+          "text": "SQUIRT YOUR BITCH JUICES AND  SHOW OF  YOU SHAMEFUL CLIMAX !",
+          "translation": "اقتُرِر يا من تدفق عصارتك المحتقرة وأظهر ذروة عارِكَ!",
+          "width": 80,
+          "x": 710,
+          "y": 121
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 13.95634920634921,
+          "symWidth": 14.17195767195767,
+          "text": "THERE , CAME YOU 163 SHOT AND OUT  YOUR WEAK SEMEN !",
+          "translation": "ها قد خرجت ١٦٣ طلقة ومعها منيَّتك الضعيفة!",
+          "width": 137,
+          "x": 531,
+          "y": 820
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 12.96428571428572,
+          "symWidth": 11.34285714285714,
+          "text": "YOU  DO WHAT  I TELL  YOU TO  DO !",
+          "translation": "افعل ما آمرك به دون تردد!",
+          "width": 71,
+          "x": 193,
+          "y": 854
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 10.19586167800454,
+          "symWidth": 9.846371882086169,
+          "text": "IT'S ABOUT  TIME THAT  I  PUT AN  END  TO YOUR SOCIAL LIFE .. !",
+          "translation": "قد حان الوقت لأنهي حياتك الاجتماعية...!",
+          "width": 82,
+          "x": 77,
+          "y": 926
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 12.79409171075838,
+          "symWidth": 11.02451098284432,
+          "text": "I  NEED  YOUR DICK BIG DESTROY TO MY  ASS - PUSSY AND  SCRAPE IT  OUT ... PLEASE ...",
+          "translation": "أريد قضيبك العظيم يدمر فرجي ومؤخرتي ويجرحهما... أرجوك...",
+          "width": 128,
+          "x": 366,
+          "y": 113
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 8.5,
+          "symWidth": 7.73888888888889,
+          "text": "THE DAY OF THE TOUR- NAMENT",
+          "translation": "يوم البطولة",
+          "width": 43,
+          "x": 743,
+          "y": 114
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 10.42676767676768,
+          "symWidth": 9.157828282828282,
+          "text": "PLEASE MAKE  THIS MASOCHISTIC PIG  CLIMAX ... I  BEG You ...",
+          "translation": "اجعل هذا الخنزير المازوشي يصل إلى النشوة... أرجوك ألتمس منك...",
+          "width": 89,
+          "x": 65,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 12.75,
+          "symWidth": 12.51666666666667,
+          "text": "WHERE DID OKAJO GO ?",
+          "translation": "أين ذهب أوكاجو؟",
+          "width": 61,
+          "x": 646,
+          "y": 255
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 7.632936507936509,
+          "symWidth": 7.559523809523809,
+          "text": "HE  HEAD TOWARDS THE TOILETS A  WHILE AGO ?",
+          "translation": "هل اتجه إلى المراحيض منذ قليل؟",
+          "width": 49,
+          "x": 513,
+          "y": 280
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 11.80952380952381,
+          "symWidth": 10.54563492063492,
+          "text": "... MAKE ME  YOUR SEMEN TOILET ...",
+          "translation": "اجعلني مرحاضك المملوء بالمني...",
+          "width": 64,
+          "x": 84,
+          "y": 336
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 16,
+          "text": "Toilet",
+          "translation": "مرحاض",
+          "width": 90,
+          "x": 240,
+          "y": 569
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 10,
+          "symWidth": 7,
+          "text": "TEACHER ...",
+          "translation": "أيها المعلم...",
+          "width": 51,
+          "x": 662,
+          "y": 586
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 11.78869047619048,
+          "symWidth": 10.52455357142857,
+          "text": "... IN  THE BUS ... ...  HAVE BEEN HORNY FOR  A LONG TIME ...",
+          "translation": "... في الحافلة... وأنا في حالة لهفة منذ زمن طويل...",
+          "width": 63,
+          "x": 502,
+          "y": 713
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 8.56060606060606,
+          "symWidth": 8.566774891774891,
+          "text": "NOPE . IT'S  A TOURNAMENT THAT  IS PRECIOUS TO  THEM . IT'S  TRULY SHAME TO  SEE  T IN  SUCH A  STATE .",
+          "translation": "إنها بطولة كُرمت عندهم عالياً. إنه لأمر مؤسف حقاً أن أراهم في هذا الحال.",
+          "width": 76,
+          "x": 725,
+          "y": 929
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 12.88690476190476,
+          "symWidth": 11.97448979591837,
+          "text": "I  THINK THAT  I'LL SET  YOU FREE  SO THAT  YOU CAN  HELP THEM !",
+          "translation": "أظن أنني سأطلق سراحك لتعينهم!",
+          "width": 81,
+          "x": 628,
+          "y": 1030
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 18.5,
+          "symWidth": 16.38888888888889,
+          "text": "RELEASE HYPNOSIS .",
+          "translation": "أَفرِج عن التنويم المغناطيسي.",
+          "width": 122,
+          "x": 34,
+          "y": 1050
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 13.42857142857143,
+          "symWidth": 12.03571428571429,
+          "text": "HUH ?? TEACHER , WHAT  IS GOING ON ??",
+          "translation": "ماذا؟ أستاذ، ما الذي يجري؟",
+          "width": 80,
+          "x": 251,
+          "y": 101
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 12.13636363636364,
+          "symWidth": 10.84090909090909,
+          "text": "WHAT  IS THIS ?? NO  WAY !? HOW ?",
+          "translation": "ما هذا؟ مستحيل! كيف؟",
+          "width": 72,
+          "x": 55,
+          "y": 119
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 12,
+          "symWidth": 11.5625,
+          "text": "HUH ! ?? ! ? WHAT ? ! ?",
+          "translation": "ماذا؟! ماذا؟!",
+          "width": 78,
+          "x": 700,
+          "y": 157
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 10.26666666666667,
+          "symWidth": 9.133333333333333,
+          "text": "MY BODY ... ... LOOKS LIKE  A WOMAN .. ?",
+          "translation": "جسدي... يبدو كجسد امرأة؟",
+          "width": 66,
+          "x": 232,
+          "y": 228
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 10.33333333333333,
+          "symWidth": 8.166666666666666,
+          "text": "TEACHER , ....",
+          "translation": "أستاذ...",
+          "width": 62,
+          "x": 241,
+          "y": 540
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 7.083333333333334,
+          "symWidth": 6.833333333333333,
+          "text": "... WHAT ? IS  IT NOW ALREADY ??",
+          "translation": "ماذا؟ هل حان الوقت بالفعل؟",
+          "width": 52,
+          "x": 238,
+          "y": 620
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 10.45833333333333,
+          "symWidth": 9.498397435897436,
+          "text": "WELL  THEN GOOD  LUCK IN  THE TOURNAMENT BUDDY !",
+          "translation": "حسنًا، حظًا موفقًا في البطولة يا صديقي!",
+          "width": 79,
+          "x": 316,
+          "y": 666
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 17,
+          "symWidth": 19,
+          "text": "1610",
+          "translation": "١٦١٠",
+          "width": 21,
+          "x": 217,
+          "y": 684
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 39.33333333333334,
+          "symWidth": 30.33333333333333,
+          "text": "Het",
+          "translation": "هت",
+          "width": 84,
+          "x": 635,
+          "y": 965
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 9.781212121212121,
+          "symWidth": 7.279393939393939,
+          "text": "... WAITI NEED  YOU ... ... TO  VIOLATE ... ... ME .. ? 1 - I'LL ? ... WAIT ...",
+          "translation": "... هل تريدني أن... أُخالف رشادك...؟\n— هل أنا حقاً...؟\n... انتظر...",
+          "width": 97,
+          "x": 342,
+          "y": 1031
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 12.33333333333333,
+          "symWidth": 11.5,
+          "text": "HIS WHOLE BODY  AND BRAIN  IS NOW  THAT OF  A VULGAR MASOCHIST !",
+          "translation": "جسده وعقله صارَا الآن من نصيب صارمٍ داني!",
+          "width": 95,
+          "x": 278,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 12.25,
+          "symWidth": 10.15,
+          "text": "BY  REPEATEDLY BEING  VIOLATED , OKAJO'S  BRAIN HAS  BECOME ADDICTED  TO MASOCHISTIC STIMULATION .",
+          "translation": "بسبب تكرار تنكيلهِ، استسلم عقله لتحفيز الألم والشقاء.",
+          "width": 121,
+          "x": 690,
+          "y": 111
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 11.53,
+          "symWidth": 9.95,
+          "text": "NEVERTHELESS , HE  WAS  ABLE  TO LIVE  HIS  DAILY LIFE  BECAUSE OF  THE  HYPNOSIS . THANKS  TO  THAT , HE  COULD  KEEP IT  UNDER  CONTROL .",
+          "translation": "مع ذلك، استطاع أن يعيش حياته اليومية بفضل التنويم المغناطيسي، الذي أبقاه متحكماً في الأمر.",
+          "width": 144,
+          "x": 102,
+          "y": 220
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 12,
+          "symWidth": 10.71323529411765,
+          "text": "BUT  NOW THE  HYPNOSIS IS  LIFTED",
+          "translation": "لكن التنويم قد أُزيل الآن.",
+          "width": 108,
+          "x": 731,
+          "y": 388
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 12.80952380952381,
+          "symWidth": 11.35714285714286,
+          "text": "AND  IF  OKAJO WOULD  BE  TO WALK  INTO A  CROWD  OF GUYS ...",
+          "translation": "ولو ماشى أوكايو وسط جموع الرجال...",
+          "width": 105,
+          "x": 641,
+          "y": 464
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 11.42857142857143,
+          "symWidth": 9.428571428571429,
+          "text": "OKAJO .. ! WHY ...",
+          "translation": "أوكايو..! لماذا...؟",
+          "width": 67,
+          "x": 715,
+          "y": 984
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 9.666666666666666,
+          "symWidth": 9.714285714285714,
+          "text": "SOMEONE STOP HIM !?",
+          "translation": "هل من يوقفه؟",
+          "width": 66,
+          "x": 120,
+          "y": 1006
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 10.77777777777778,
+          "symWidth": 11.44444444444444,
+          "text": "OH NO !? WHAT ?",
+          "translation": "يا للأسى! ما هذا؟",
+          "width": 50,
+          "x": 613,
+          "y": 1036
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 9.4,
+          "symWidth": 8.204041835357625,
+          "text": "WHAT ??  GUYS .. ? THAT'S DISGUSTING ... LET'S  GET OUT  OF HERE !!",
+          "translation": "ماذا؟؟ يا رفاق..؟ هذا مقزز... لنغادر هذا المكان!!",
+          "width": 89,
+          "x": 196,
+          "y": 195
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 12.3,
+          "symWidth": 10.8,
+          "text": "WHAT  A FUCKING PERVERT !",
+          "translation": "يا له من منحرف حقير!",
+          "width": 73,
+          "x": 745,
+          "y": 217
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 10.65,
+          "symWidth": 10.26666666666667,
+          "text": "IS  THIS GUY CRAZY ??",
+          "translation": "هل هذا الرجل مجنون؟",
+          "width": 63,
+          "x": 110,
+          "y": 336
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 8.5,
+          "symWidth": 7.778260869565218,
+          "text": "OKAJO KARISHIRO ? ! ? IS  THAT HIM ?!",
+          "translation": "أوكاجو كارشييرو؟! هل هو حقًا؟!",
+          "width": 80,
+          "x": 719,
+          "y": 407
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 13.1,
+          "symWidth": 11.76666666666667,
+          "text": "CALL  A TEACHER QUICKLY !",
+          "translation": "اتصلوا بمعلم بسرعة!",
+          "width": 76,
+          "x": 93,
+          "y": 482
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 28,
+          "symWidth": 16.16666666666667,
+          "text": "Toilet",
+          "translation": "المرحاض",
+          "width": 82,
+          "x": 471,
+          "y": 487
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 27.484375,
+          "symWidth": 24.078125,
+          "text": "HYPNOTIZING  A  PROMISING  YOUNG  ATHLETE WITH  A  GIRLFRIEND  INTO  A  STUPID  BITCH",
+          "translation": "تنويم رياضي شاب واعد صاحب علاقة عاطفية ليصبح غبية الدرك",
+          "width": 801,
+          "x": 46,
+          "y": 71
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 17.57142857142857,
+          "symWidth": 30.14285714285714,
+          "text": "༤ ཡན ༠༤ ཡལ",
+          "translation": "",
+          "width": 34,
+          "x": 778,
+          "y": 165
+        },
+        {
+          "angle": 0,
+          "height": 11,
+          "symHeight": 10,
+          "symWidth": 10.4,
+          "text": "HORNY",
+          "translation": "متحمس جنسيًا",
+          "width": 48,
+          "x": 201,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 15.5,
+          "symWidth": 14.875,
+          "text": "DUMB 2 .",
+          "translation": "أحمق 2.",
+          "width": 59,
+          "x": 96,
+          "y": 209
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 20.4,
+          "symWidth": 19,
+          "text": "ONTHO",
+          "translation": "",
+          "width": 22,
+          "x": 343,
+          "y": 222
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 10.66666666666667,
+          "symWidth": 9.555555555555555,
+          "text": "PISSED OFF AT",
+          "translation": "غاضب من",
+          "width": 52,
+          "x": 555,
+          "y": 253
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 9.5,
+          "text": "HYPNOSIS",
+          "translation": "تنويم",
+          "width": 72,
+          "x": 547,
+          "y": 326
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 14.08333333333333,
+          "symWidth": 13.66666666666667,
+          "text": "SMELLS FEMALE",
+          "translation": "رائحة أنثوية",
+          "width": 63,
+          "x": 21,
+          "y": 450
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 14.16666666666667,
+          "symWidth": 14.33333333333333,
+          "text": "SWEATY",
+          "translation": "مُتعرق",
+          "width": 57,
+          "x": 276,
+          "y": 456
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 13.875,
+          "symWidth": 12.375,
+          "text": "IMPOTENT",
+          "translation": "عاجز",
+          "width": 71,
+          "x": 26,
+          "y": 608
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 12,
+          "symWidth": 10.83333333333333,
+          "text": "CHANGE",
+          "translation": "تغيير",
+          "width": 57,
+          "x": 280,
+          "y": 612
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 13,
+          "text": "Toilet",
+          "translation": "مرحاض",
+          "width": 73,
+          "x": 150,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 12.78571428571428,
+          "symWidth": 11.85714285714286,
+          "text": "GAINING FAT",
+          "translation": "اكتساب الدهون",
+          "width": 58,
+          "x": 38,
+          "y": 759
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 10,
+          "symWidth": 10,
+          "text": "MANAGER",
+          "translation": "المدير",
+          "width": 59,
+          "x": 599,
+          "y": 822
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 13.875,
+          "symWidth": 12.5,
+          "text": "FRIENDLY",
+          "translation": "ودود",
+          "width": 69,
+          "x": 786,
+          "y": 841
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 14,
+          "symWidth": 13,
+          "text": "CUTE",
+          "translation": "لطيف",
+          "width": 37,
+          "x": 608,
+          "y": 859
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 13.33333333333333,
+          "symWidth": 12.41666666666667,
+          "text": "LOSING MUSCLE",
+          "translation": "فقدان العضلات",
+          "width": 61,
+          "x": 257,
+          "y": 864
+        }
+      ],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [],
+      "imgHeight": 1243,
+      "imgWidth": 888,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

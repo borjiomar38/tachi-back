@@ -1,0 +1,1599 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0041",
+  "jobId": "fixture-job-0041",
+  "licenseId": "fixture-license-0041",
+  "pageCount": 58,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 236,
+          "symHeight": 138.4285714285714,
+          "symWidth": 142.1785714285714,
+          "text": "全职 5 ( ALL ) ELEMENTS",
+          "translation": "جميع العناصر (5) متفرغ",
+          "width": 810,
+          "x": 95,
+          "y": 1865
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 45.75,
+          "text": "體 讯 动漫",
+          "translation": "رسوم متحركة رياضية",
+          "width": 173,
+          "x": 1003,
+          "y": 2079
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 300,
+          "symHeight": 324.5,
+          "symWidth": 316.5,
+          "text": "觉醒",
+          "translation": "اليقظة",
+          "width": 642,
+          "x": 300,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 69,
+          "symWidth": 35.71428571428572,
+          "text": "故事 : TONY",
+          "translation": "القصة: توني",
+          "width": 358,
+          "x": 407,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 71,
+          "symWidth": 38.85714285714285,
+          "text": "绘制 : HAMA",
+          "translation": "الرسوم: هاما",
+          "width": 375,
+          "x": 407,
+          "y": 749
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 41.2,
+          "text": "责编 : 芮芮",
+          "translation": "المحرر: روي روي",
+          "width": 329,
+          "x": 407,
+          "y": 873
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 54,
+          "symWidth": 55.2,
+          "text": "多拉格 文化",
+          "translation": "ثقافة دراغ",
+          "width": 302,
+          "x": 438,
+          "y": 1585
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 46.5,
+          "text": "展 讯 动漫",
+          "translation": "أخبار معارض الأنمي",
+          "width": 180,
+          "x": 997,
+          "y": 1986
+        }
+      ],
+      "imgHeight": 2048,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 60,
+          "symWidth": 55.85714285714285,
+          "text": "师父 今天 不在 。",
+          "translation": "المعلم غير موجود اليوم.",
+          "width": 419,
+          "x": 515,
+          "y": 356
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 62,
+          "symWidth": 55.79861111111111,
+          "text": "大家 绝对 谨记 , 不能 真的 对 神族 出手 。",
+          "translation": "عليكم جميعًا أن تذكروا جيدًا:\nلا تهاجموا الألهة حقًا.",
+          "width": 590,
+          "x": 346,
+          "y": 49
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 61.57142857142857,
+          "symWidth": 58,
+          "text": "分寸 感 很 重要 。",
+          "translation": "ضبط النفس أمر في غاية الأهمية.",
+          "width": 419,
+          "x": 459,
+          "y": 983
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 62,
+          "symWidth": 55,
+          "text": "就 你 来吧 。",
+          "translation": "تعال أنت فقط.",
+          "width": 290,
+          "x": 464,
+          "y": 1615
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 50.5,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للأنمي",
+          "width": 181,
+          "x": 995,
+          "y": 1653
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 50,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للأنمي",
+          "width": 168,
+          "x": 1005,
+          "y": 1652
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 60.83333333333334,
+          "symWidth": 68.83333333333333,
+          "text": "你 看着 就 ——",
+          "translation": "يرى المرءُ كأنّه ــ",
+          "width": 371,
+          "x": 453,
+          "y": 338
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 95.57142857142857,
+          "symWidth": 83.57142857142857,
+          "text": "很弱 鸡 的 样子 !",
+          "translation": "كانه دجاجة ضعيفة!",
+          "width": 644,
+          "x": 273,
+          "y": 1027
+        }
+      ],
+      "imgHeight": 1874,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 50.75,
+          "text": "金先生 !",
+          "translation": "السيد جين!",
+          "width": 225,
+          "x": 382,
+          "y": 364
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 51,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للأنمي",
+          "width": 169,
+          "x": 1008,
+          "y": 2080
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 55.25,
+          "symWidth": 49,
+          "text": "不如 我 来 跟 您 对决 吧 !",
+          "translation": "فليكن لي شرف المبارزة معك!",
+          "width": 261,
+          "x": 405,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 52.33333333333334,
+          "symWidth": 55,
+          "text": "0  0  0",
+          "translation": "٠ ٠ ٠",
+          "width": 103,
+          "x": 261,
+          "y": 830
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 41.6,
+          "text": "Linan",
+          "translation": "لينان",
+          "width": 154,
+          "x": 993,
+          "y": 2079
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 229,
+          "symHeight": 61.11111111111111,
+          "symWidth": 54.31111111111111,
+          "text": "也 行 吧 ! 太 菜 的 也 没 挑 战 性 !",
+          "translation": "حسناً! الضعف المفرط لا يستحق التحدي.",
+          "width": 337,
+          "x": 353,
+          "y": 397
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 60,
+          "symWidth": 55,
+          "text": "你 可要 拼 尽 全力 啊 !",
+          "translation": "عليك أن تبذل كل جهدك!",
+          "width": 288,
+          "x": 524,
+          "y": 268
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 225,
+          "symHeight": 60.28571428571428,
+          "symWidth": 58.5,
+          "text": "赤山 很快 就 败 在 了 拉克 的 剑 下 。",
+          "translation": "هزم شيسان بسرعة على يد سيف لاك.",
+          "width": 329,
+          "x": 431,
+          "y": 1714
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 60,
+          "symWidth": 55.425,
+          "text": "用 相当 拙 劣 的 演技 。",
+          "translation": "بأداء ركيك للغاية.",
+          "width": 289,
+          "x": 498,
+          "y": 1934
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 59.42857142857143,
+          "symWidth": 58.39285714285714,
+          "text": "金先生 的 实力 着实 出众 !",
+          "translation": "قوة السيد جين حقاً استثنائية!",
+          "width": 264,
+          "x": 490,
+          "y": 1889
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "renderMode": "mask_only",
+          "symHeight": 45,
+          "symWidth": 49.75,
+          "text": "腾讯 动漫",
+          "translation": "",
+          "width": 175,
+          "x": 1003,
+          "y": 2081
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 51.5,
+          "symWidth": 52.9375,
+          "text": "腾讯 动漫 我 不是 你 的 对手 。",
+          "translation": "لست خصماً لي.",
+          "width": 261,
+          "x": 612,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 61,
+          "symWidth": 48.33333333333334,
+          "text": "废物 !",
+          "translation": "أيها العاجز!",
+          "width": 156,
+          "x": 575,
+          "y": 2325
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 48,
+          "text": "讯 动漫",
+          "translation": "",
+          "width": 137,
+          "x": 1040,
+          "y": 2682
+        }
+      ],
+      "imgHeight": 2742,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 57,
+          "symWidth": 49.375,
+          "text": "下 一个 ! 你 来 !",
+          "translation": "التالي! لك الدور!",
+          "width": 225,
+          "x": 341,
+          "y": 277
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 55,
+          "text": "动漫",
+          "translation": "",
+          "width": 78,
+          "x": 1098,
+          "y": 2081
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 46,
+          "text": "腾讯 动漫",
+          "translation": "",
+          "width": 180,
+          "x": 996,
+          "y": 2081
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 47,
+          "text": "腾讯 动漫",
+          "translation": "",
+          "width": 176,
+          "x": 996,
+          "y": 2081
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "renderMode": "mask_only",
+          "symHeight": 63,
+          "symWidth": 60.5,
+          "text": "第六 工会 团 其",
+          "translation": "",
+          "width": 396,
+          "x": 447,
+          "y": 2101
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 61.5,
+          "symWidth": 59.375,
+          "text": "第六 工会 团 其 他人 也 一个 个 被 他 击败 。",
+          "translation": "نُقِضَ كلّ من نقابة الفصل السادس وغيرهم واحدًا تلو الآخر على يدِه.",
+          "width": 391,
+          "x": 450,
+          "y": 38
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 65.5,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 99,
+          "x": 1077,
+          "y": 2080
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 60.2,
+          "symWidth": 54.98333333333333,
+          "text": "喂 ! 怎么 你 们 一个 个 都 这么 菜 !",
+          "translation": "هيهات! كيف لَكُم أن تكونوا بهذا الضعف الواحد تلو الآخر!",
+          "width": 337,
+          "x": 413,
+          "y": 571
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 59.58333333333334,
+          "symWidth": 58.16666666666666,
+          "text": "能跟 我 打 两 个 回合 的 人 都 没有 。",
+          "translation": "لم أجد من يستحق أن أقاتل معه جولةً تلو الأخرى.",
+          "width": 337,
+          "x": 353,
+          "y": 461
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 62.6,
+          "symWidth": 54.6,
+          "text": "我 也 输 了 ~",
+          "translation": "لقد خسرت أيضًا~",
+          "width": 298,
+          "x": 433,
+          "y": 1405
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 58.33333333333333,
+          "symWidth": 53.5,
+          "text": "您 是 天才 战 士 啊 …",
+          "translation": "لقد كنت محاربًا فذًا بحق...",
+          "width": 324,
+          "x": 545,
+          "y": 791
+        },
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 9,
+          "symWidth": 18,
+          "text": "..",
+          "translation": "..",
+          "width": 36,
+          "x": 766,
+          "y": 897
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [],
+      "imgHeight": 1629,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 46.75,
+          "text": "腾讯 动漫",
+          "translation": "",
+          "width": 180,
+          "x": 996,
+          "y": 1537
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 59.84615384615385,
+          "symWidth": 58.76923076923077,
+          "text": "就 这样 也 配 称 最强 工会 团 么 ?",
+          "translation": "وهكذا تدعون أنكم أعظم نقابة؟",
+          "width": 294,
+          "x": 341,
+          "y": 540
+        },
+        {
+          "angle": 0,
+          "height": 317,
+          "symHeight": 287,
+          "symWidth": 226,
+          "text": "啊 !",
+          "translation": "آه!",
+          "width": 353,
+          "x": 565,
+          "y": 828
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 58,
+          "symWidth": 55.625,
+          "text": "原来 都是 垃圾 啊 ·",
+          "translation": "اتضح أنها كلها خردة.",
+          "width": 260,
+          "x": 408,
+          "y": 1194
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 47,
+          "symWidth": 51,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحركة",
+          "width": 179,
+          "x": 995,
+          "y": 1536
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 60.88888888888889,
+          "symWidth": 57.27777777777778,
+          "text": "我 得 让 底 比斯 也 来 看看 ,",
+          "translation": "علي أن أجعل ديبثيس يرى هذا أيضًا،",
+          "width": 269,
+          "x": 413,
+          "y": 527
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 61.4,
+          "symWidth": 58.55,
+          "text": "他 养着 的 这 群 废物 到底 怎么 回事 !",
+          "translation": "ما شأن هذه الحثالة التي يربّيها؟!",
+          "width": 330,
+          "x": 277,
+          "y": 814
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 43.5,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحركة",
+          "width": 177,
+          "x": 997,
+          "y": 1538
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 44,
+          "symWidth": 46.75,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحركة",
+          "width": 184,
+          "x": 991,
+          "y": 1539
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 58,
+          "symWidth": 54.08333333333333,
+          "text": "我 来做 你 对手 。",
+          "translation": "سأكون خصمك.",
+          "width": 260,
+          "x": 529,
+          "y": 1472
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 50.5,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحركة",
+          "width": 180,
+          "x": 995,
+          "y": 1538
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 45,
+          "symWidth": 46.25,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحركة",
+          "width": 184,
+          "x": 991,
+          "y": 1869
+        }
+      ],
+      "imgHeight": 1931,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 59.76666666666667,
+          "symWidth": 55.74444444444445,
+          "text": "那 是 , 我 出 狱 后 第 一次 感受到 愤怒 。",
+          "translation": "كانت أول مرة أشعر بالغضب بعد خروجي من السجن.",
+          "width": 349,
+          "x": 433,
+          "y": 321
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 58.25,
+          "symWidth": 64.23333333333333,
+          "text": "以 我 只 用 了 不到 一个 回合 ——",
+          "translation": "لم أستغرق سوى جولة واحدة فقط —",
+          "width": 327,
+          "x": 431,
+          "y": 837
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 61,
+          "symWidth": 54.83333333333334,
+          "text": "就 击败 了 他 。",
+          "translation": "لقد هزمته.",
+          "width": 356,
+          "x": 482,
+          "y": 1095
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 62.4,
+          "symWidth": 61.8,
+          "text": "第六 工会 团 并不是 都是",
+          "translation": "النقابة السادسة ليست جميعها",
+          "width": 335,
+          "x": 467,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 59.5,
+          "symWidth": 80,
+          "text": "垃圾 ——",
+          "translation": "قمامة ــ",
+          "width": 245,
+          "x": 459,
+          "y": 257
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 44,
+          "text": "动漫",
+          "translation": "أنيمي",
+          "width": 88,
+          "x": 1087,
+          "y": 2082
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "und",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 57.4,
+          "symWidth": 53.4,
+          "text": "你 还 好吧 ?",
+          "translation": "هل أنت بخير؟",
+          "width": 285,
+          "x": 220,
+          "y": 443
+        },
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 60.75,
+          "symWidth": 62.75,
+          "text": "这 小子 平 时 不 声 不 响 ………",
+          "translation": "هذا الفتى عادةً صامت لا يُسمع له صوت...",
+          "width": 267,
+          "x": 657,
+          "y": 790
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 59.71428571428572,
+          "symWidth": 60.07142857142857,
+          "text": "这次 竟然 为 我们 出 手 ……",
+          "translation": "ها هو ذا يتدخل من أجلنا هذه المرة...",
+          "width": 265,
+          "x": 518,
+          "y": 511
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 50.5,
+          "text": "腾讯 动漫",
+          "translation": "تيينسنت للأنيمي",
+          "width": 161,
+          "x": 1015,
+          "y": 937
+        }
+      ],
+      "imgHeight": 998,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 58.52380952380952,
+          "symWidth": 48.92857142857142,
+          "text": "还 怪 解气 的 … B ......",
+          "translation": "لقد كان من المفرح حقًا... ب...",
+          "width": 263,
+          "x": 516,
+          "y": 331
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 59,
+          "symWidth": 53.25,
+          "text": "所以 呢 ?",
+          "translation": "فماذا بعد؟",
+          "width": 231,
+          "x": 634,
+          "y": 578
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 72,
+          "text": "你 的 意思 ——",
+          "translation": "ما تعنيه —",
+          "width": 374,
+          "x": 435,
+          "y": 986
+        },
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 128,
+          "symWidth": 134.375,
+          "text": "抓 ! Bind",
+          "translation": "قبض عليه!",
+          "width": 377,
+          "x": 746,
+          "y": 1951
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 62.75,
+          "text": "我 是 垃圾",
+          "translation": "هل أنا قمامة؟",
+          "width": 261,
+          "x": 437,
+          "y": 1402
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 55,
+          "symWidth": 28.2,
+          "text": "吗 ? ! ? !",
+          "translation": "؟؟؟",
+          "width": 282,
+          "x": 447,
+          "y": 1490
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 60.25,
+          "text": "他 竟敢 刺",
+          "translation": "كيف تجرؤ على وطء",
+          "width": 260,
+          "x": 447,
+          "y": 1236
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 61,
+          "symWidth": 45.8,
+          "text": "伤 神族 !!",
+          "translation": "المقدّسين!!",
+          "width": 292,
+          "x": 445,
+          "y": 1318
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 47.5,
+          "symWidth": 47.75,
+          "text": "腾讯 动漫",
+          "translation": "آركان تنسنت للرسوم المتحركة",
+          "width": 166,
+          "x": 1006,
+          "y": 2081
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 352,
+          "symHeight": 71.25,
+          "symWidth": 67.70833333333333,
+          "text": "那 之后 , 我 第 一次 开始 接触 到 这个 世界 的 真相 一",
+          "translation": "بعد ذلك، بدأت لأول مرة أكتشف حقيقة هذا العالم —",
+          "width": 405,
+          "x": 376,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 611,
+          "symHeight": 222,
+          "symWidth": 208.0625,
+          "text": "全职 5 ( ALL ) ELEMENTS 觉醒",
+          "translation": "صحوة العناصر الكاملة (ALL ELEMENTS)",
+          "width": 1054,
+          "x": 49,
+          "y": 1532
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [],
+      "imgHeight": 998,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 150,
+          "symWidth": 154.4,
+          "text": "多拉格 近期",
+          "translation": "رؤى دوراغ الأخيرة",
+          "width": 786,
+          "x": 164,
+          "y": 194
+        },
+        {
+          "angle": 0,
+          "height": 196,
+          "symHeight": 196,
+          "symWidth": 178,
+          "text": "新 作 引导 !",
+          "translation": "دليل العمل الجديد!",
+          "width": 909,
+          "x": 152,
+          "y": 392
+        },
+        {
+          "angle": 0,
+          "height": 329,
+          "symHeight": 77.25,
+          "symWidth": 78,
+          "text": "奇幻  动作",
+          "translation": "خيال وحركة",
+          "width": 78,
+          "x": 1092,
+          "y": 770
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 87,
+          "symWidth": 76.53846153846153,
+          "text": "《 重生 后 我 用 镜面 反转 复仇 》",
+          "translation": "«بعد عمليّة التجديد، انتقمت بواسطة الانعكاس»",
+          "width": 1029,
+          "x": 21,
+          "y": 1193
+        },
+        {
+          "angle": 0,
+          "height": 234,
+          "symHeight": 83.25,
+          "symWidth": 78,
+          "text": "少女  西幻",
+          "translation": "فتاة وخيال غربي",
+          "width": 78,
+          "x": 45,
+          "y": 1366
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 86,
+          "symWidth": 76.5,
+          "text": "《 六岁 开始 成为 女王 》",
+          "translation": "«بدأت أُصبح ملكة منذ السادسة»",
+          "width": 774,
+          "x": 391,
+          "y": 180
+        },
+        {
+          "angle": 0,
+          "height": 251,
+          "symHeight": 83.33333333333333,
+          "symWidth": 84.33333333333333,
+          "text": "年  复仇",
+          "translation": "سنوات الانتقام",
+          "width": 92,
+          "x": 1079,
+          "y": 438
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 81,
+          "symWidth": 68,
+          "text": "《 全职 觉醒 》",
+          "translation": "«اليقظة الكاملة»",
+          "width": 428,
+          "x": 38,
+          "y": 774
+        },
+        {
+          "angle": 0,
+          "height": 321,
+          "symHeight": 75.5,
+          "symWidth": 70,
+          "text": "战斗  冒险",
+          "translation": "معركة ومغامرة",
+          "width": 71,
+          "x": 56,
+          "y": 981
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 83,
+          "symWidth": 73.75,
+          "text": "《 我 用 顶级 系统 重塑 世界 》",
+          "translation": "«بواسطتي النظام الأعلى أعيد خلق العالم»",
+          "width": 944,
+          "x": 222,
+          "y": 1400
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 46.25,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت للرسوم المتحرّكة",
+          "width": 178,
+          "x": 998,
+          "y": 1538
+        }
+      ],
+      "imgHeight": 1600,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 76,
+          "symWidth": 58.46153846153846,
+          "text": "们 会 投入 全部 的 热情 与 真诚 。",
+          "translation": "سنسخر كامل حماسنا وإخلاصنا.",
+          "width": 779,
+          "x": 169,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 69,
+          "symWidth": 59.6,
+          "text": "认真 做好 每一 部 作品 ~",
+          "translation": "نعمل على كل عمل بإتقان وجدية.",
+          "width": 622,
+          "x": 93,
+          "y": 246
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 81,
+          "symWidth": 53.30769230769231,
+          "text": "们 的 每 一个 收藏 , 点 赞 , 评论",
+          "translation": "كل إعجاب، تعليق، ومتابعة منكم",
+          "width": 780,
+          "x": 176,
+          "y": 343
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 68,
+          "symWidth": 55.125,
+          "text": "都 将 成为 我们 前进 路上 最大 的 鼓励 !",
+          "translation": "سيصبح أعظم حافز يدفعنا للأمام!",
+          "width": 937,
+          "x": 91,
+          "y": 465
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 71.53846153846153,
+          "symWidth": 60.46153846153846,
+          "text": "- 多拉格 文化 全体 创 作者 敬上",
+          "translation": "مع أسمى آيات الاحترام، فريق دوراغ الثقافي.",
+          "width": 783,
+          "x": 369,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 74,
+          "symWidth": 71.11111111111111,
+          "text": "可 在 搜索 栏 搜索 关注",
+          "translation": "ابحث في شريط البحث وابعث لنا بمتابعتك",
+          "width": 673,
+          "x": 270,
+          "y": 1121
+        }
+      ],
+      "imgHeight": 1302,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "und",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

@@ -1,0 +1,699 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0120",
+  "jobId": "fixture-job-0120",
+  "licenseId": "fixture-license-0120",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29,
+          "symWidth": 18.14285714285714,
+          "text": "colamanga.com 已 更换 广告 商 , 您 的 反馈 非常 重要",
+          "translation": "",
+          "width": 640,
+          "x": 48,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13.25,
+          "text": "什么 ? !",
+          "translation": "ما هذا؟!",
+          "width": 73,
+          "x": 459,
+          "y": 369
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 27,
+          "symWidth": 22,
+          "text": "20",
+          "translation": "20",
+          "width": 39,
+          "x": 321,
+          "y": 404
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 35.33333333333334,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 116,
+          "x": 13,
+          "y": 1170
+        }
+      ],
+      "imgHeight": 1220,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 15.125,
+          "text": "这 , 这 是 什么 ! ?",
+          "translation": "ما هذا بحق السماء؟!",
+          "width": 88,
+          "x": 86,
+          "y": 113
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 17.66666666666667,
+          "text": "呵 , 离 火 圣 子 , 你 终究 还是 落入 了 我 的 陷阱 啊 。",
+          "translation": "هاه، يا ولي النار، ها قد وقعت في مكائدي أخيرًا.",
+          "width": 153,
+          "x": 470,
+          "y": 282
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 16,
+          "text": "不可能 !",
+          "translation": "هذا مستحيل!",
+          "width": 71,
+          "x": 76,
+          "y": 569
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 30,
+          "text": "www",
+          "translation": "",
+          "width": 46,
+          "x": 244,
+          "y": 572
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 17,
+          "text": "这 究竟 是 什 么 东西 !!",
+          "translation": "ما هذه الكائنات الغريبة!!",
+          "width": 109,
+          "x": 324,
+          "y": 671
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20,
+          "symWidth": 16.83333333333334,
+          "text": "啊啊 啊 啊 !",
+          "translation": "آآآه!",
+          "width": 65,
+          "x": 666,
+          "y": 705
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 32.32142857142857,
+          "symWidth": 27.35714285714286,
+          "text": "COLÁMANGA.com ACloudMerge.com",
+          "translation": "",
+          "width": 400,
+          "x": 396,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 116,
+          "x": 12,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 13.875,
+          "text": "DA ......",
+          "translation": "دا....",
+          "width": 67,
+          "x": 80,
+          "y": 456
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.45454545454545,
+          "symWidth": 18.81818181818182,
+          "text": "这 一架 真是 把 我 掏空 了 。",
+          "translation": "لقد أرهقتني هذه المعركة حتى النخاع.",
+          "width": 118,
+          "x": 81,
+          "y": 609
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 14.33333333333333,
+          "text": "赤 蟒 ·",
+          "translation": "الأفعى الحمراء.",
+          "width": 47,
+          "x": 206,
+          "y": 901
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 18.33333333333333,
+          "text": "离 火 圣 子 呢 ?",
+          "translation": "أين ولي النار؟",
+          "width": 118,
+          "x": 530,
+          "y": 955
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 33.45,
+          "symWidth": 26.68333333333333,
+          "text": "AMANGA  .com AcloudMerge.com",
+          "translation": "",
+          "width": 393,
+          "x": 406,
+          "y": 1044
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35,
+          "symWidth": 37.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 119,
+          "x": 9,
+          "y": 1081
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.5,
+          "symWidth": 17.125,
+          "text": "啊 , 多亏 了 他 轻敌 , 我 用 阵 法 把 他 给 封印 了 。",
+          "translation": "آه، بفضل غفلته، استخدمت التشكيل السحري لختمه.",
+          "width": 130,
+          "x": 330,
+          "y": 212
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.53333333333333,
+          "text": "还不 是 说话 的 时候 , 先 疗伤 。",
+          "translation": "ليس وقت الكلام بعد، لنعالج الجراح أولاً.",
+          "width": 110,
+          "x": 430,
+          "y": 433
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.96153846153846,
+          "symWidth": 19.03296703296703,
+          "text": "离 火 圣 子 他 …… 居然 藏着 如此 可怕 的 力量 ……",
+          "translation": "ابن نار المقدّس... يخبئ قوة مخيفة إلى هذا الحد...",
+          "width": 139,
+          "x": 83,
+          "y": 446
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 17.4,
+          "text": "我 感觉 事情 不会 这样 结 束 。",
+          "translation": "أظن أن الأمور لن تنتهي هكذا.",
+          "width": 108,
+          "x": 637,
+          "y": 547
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 15.33333333333333,
+          "text": "确实 。",
+          "translation": "حقاً.",
+          "width": 50,
+          "x": 80,
+          "y": 801
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20.75,
+          "symWidth": 23.375,
+          "text": "咕咚 … 总 之一",
+          "translation": "غبطة... على أية حال،",
+          "width": 88,
+          "x": 442,
+          "y": 806
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 19.9,
+          "symWidth": 18.14166666666667,
+          "text": "秘境 深处 , 既 然 都 走到 这一 步 了 , 不妨 去 看看 究竟 有 什 么 宝物 。",
+          "translation": "لقد وصلنا إلى أعماق السر المقدس، لنر ما الكنوز الكامنة.",
+          "width": 131,
+          "x": 439,
+          "y": 914
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 19.25,
+          "symWidth": 14.75,
+          "text": "哦 , 丹药 , 怪 不好意思 的 。",
+          "translation": "آه، أقراص دوائية، عذرًا على الإزعاج.",
+          "width": 107,
+          "x": 107,
+          "y": 946
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 26,
+          "symWidth": 26.77222222222222,
+          "text": "而且 说不定 能 找到 办法 救出 其他 人 。 com AcloudMerge.com",
+          "translation": "وعسى أن نجد طريقةً لإنقاذ الآخرين.",
+          "width": 391,
+          "x": 406,
+          "y": 973
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 34.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 116,
+          "x": 13,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 18.6,
+          "text": "啊 … 无涯 子 哥哥 …………",
+          "translation": "آه... أخُو ويّا زي...",
+          "width": 109,
+          "x": 614,
+          "y": 316
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.5,
+          "symWidth": 17.6875,
+          "text": "放心 吧 , 我 会 想 办法 把 其他 人 也 出来 的 。",
+          "translation": "كن مطمئناً، سأجد وسيلة لإخراج الآخرين أيضاً.",
+          "width": 108,
+          "x": 275,
+          "y": 593
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 70,
+          "symWidth": 36.75,
+          "text": "Sing",
+          "translation": "",
+          "width": 120,
+          "x": 527,
+          "y": 821
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 24.33333333333333,
+          "symWidth": 21.87777777777778,
+          "text": "这 是 … 妖 神 宗 的 传讯 玉 符 啊 。 Co com AcloudMerge.com",
+          "translation": "هذا... تعويذة اتصال من طائفة الآلهة الشيطانية.",
+          "width": 513,
+          "x": 2,
+          "y": 966
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 15.33333333333333,
+          "text": "废物 !",
+          "translation": "أيها العقيم!",
+          "width": 52,
+          "x": 570,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.31666666666667,
+          "text": "既然如此 , 只能 亲自 动手 了 。",
+          "translation": "إذاً، لا مفر من أن أتدخّل بنفسي.",
+          "width": 95,
+          "x": 502,
+          "y": 439
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 20.5,
+          "symWidth": 19.02857142857143,
+          "text": "连 一个 未 入神 级 的 小辈 都 收拾 不 了 , 枉费 我 耗费 心血 栽培 。",
+          "translation": "حتى لا تستطيع السيطرة على صِبِيٍّ لم يبلغ مستوى الإلهام؟ لقد أهدرت جهدي في رعايتك بلا جدوى.",
+          "width": 153,
+          "x": 79,
+          "y": 471
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 19,
+          "text": "呵呵 呵",
+          "translation": "هاهاها.",
+          "width": 63,
+          "x": 372,
+          "y": 633
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 15.33333333333333,
+          "symWidth": 16.66666666666667,
+          "text": "000",
+          "translation": "",
+          "width": 59,
+          "x": 677,
+          "y": 699
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 35,
+          "symWidth": 46.5,
+          "text": "Wo",
+          "translation": "",
+          "width": 82,
+          "x": 652,
+          "y": 754
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 19.66666666666667,
+          "text": "妖 神宗 宗主 … 竟然 忤逆 于 我",
+          "translation": "رئيس طائفة الآلهة الشيطانية... جَحَدني!",
+          "width": 131,
+          "x": 375,
+          "y": 912
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 26.88461538461539,
+          "symWidth": 22.62676282051282,
+          "text": "一个月 内 , 妖 神宗 必须 归顺 , 否则 , 灭门 ! MANGA  com AcloudMerge.com",
+          "translation": "ثمّة مهلة شهر واحد، على طائفة الآلهة الشيطانية الخضوع وإلا فالهلاك!",
+          "width": 392,
+          "x": 406,
+          "y": 949
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 36,
+          "symWidth": 36,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 118,
+          "x": 11,
+          "y": 1080
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19,
+          "symWidth": 17.66666666666667,
+          "text": "宗主 说 要 见 我 。",
+          "translation": "قال السيد الأعلى إنه يريد لقائي.",
+          "width": 85,
+          "x": 152,
+          "y": 105
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18,
+          "text": "宗主 ? 让 我 感应 一下 。",
+          "translation": "السيد الأعلى؟ دعني أشعر بذلك.",
+          "width": 108,
+          "x": 598,
+          "y": 127
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 14,
+          "symWidth": 12.33333333333333,
+          "text": "修好 了",
+          "translation": "تم الإصلاح.",
+          "width": 40,
+          "x": 167,
+          "y": 233
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20,
+          "symWidth": 18.91666666666667,
+          "text": "秘境 的 核心 区 域 , 传闻 那里 藏着 龙须 界 域 最大 的 秘密 。",
+          "translation": "جوهر المنطقة السرية، يُقال إن هناك يكمن أعظم سر في مملكة شارب التنين.",
+          "width": 131,
+          "x": 471,
+          "y": 490
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 20.5,
+          "symWidth": 18.65,
+          "text": "玉符 里 有着 一 丝奇特 的 指引 之 力 , 似乎 是 通往",
+          "translation": "في قطعة اليشم قوة هداية غريبة، كأنها دليل إلى...",
+          "width": 108,
+          "x": 291,
+          "y": 601
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.33333333333333,
+          "text": "哇 啊 !",
+          "translation": "آه!",
+          "width": 50,
+          "x": 550,
+          "y": 861
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 20,
+          "symWidth": 17.76666666666667,
+          "text": "是 界 域 封锁 大 阵 !",
+          "translation": "إنه مصفوفة الحصار لمملكة الحدود!",
+          "width": 108,
+          "x": 427,
+          "y": 107
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 18,
+          "text": "怎么 回事 ?",
+          "translation": "ما القصة؟",
+          "width": 97,
+          "x": 90,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.25,
+          "symWidth": 19.11666666666667,
+          "text": "有人 准备 把 所有 进入 秘 境 的 人 一网 打 尽 !",
+          "translation": "يريدون حقًا القضاء على كل من يدخل إلى الحديقة السرية دفعة واحدة!",
+          "width": 111,
+          "x": 436,
+          "y": 308
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.3,
+          "text": "那 我们 必须 阻止 ………",
+          "translation": "إذاً علينا أن نمنعهم...",
+          "width": 109,
+          "x": 103,
+          "y": 520
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 22,
+          "symWidth": 11.83333333333333,
+          "text": "( 哈 … 哈 … )",
+          "translation": "( ها... ها... )",
+          "width": 98,
+          "x": 428,
+          "y": 993
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 33.57575757575757,
+          "symWidth": 25.64206349206349,
+          "text": "LAMANGA.com AcloudMerge.com colamanga.com 已 更换 广告 商 , 您 的 反馈 非常 重要",
+          "translation": "",
+          "width": 675,
+          "x": 123,
+          "y": 1040
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 36.66666666666666,
+          "text": "看 漫画",
+          "translation": "",
+          "width": 119,
+          "x": 10,
+          "y": 1081
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

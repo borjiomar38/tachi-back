@@ -1,0 +1,2049 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0014",
+  "jobId": "fixture-job-0014",
+  "licenseId": "fixture-license-0014",
+  "pageCount": 32,
+  "pageFingerprints": [
+    {
+      "checksumSha256": "9f75dea17f2673d747c9ebc75853f2840e06751a7a22885f5840f6ca2084a1ec",
+      "fileName": "001__001.jpg",
+      "pageNumber": 1
+    },
+    {
+      "checksumSha256": "c965eb1c09ba7ec2ec29b0dbc1e57bf502c4f1e1ad1312ce7a1cf414c64533ed",
+      "fileName": "001__002.jpg",
+      "pageNumber": 2
+    },
+    {
+      "checksumSha256": "6a56490f40e2e8039abde6f9a6508f1cd941cb91f173f88043834734ebe44928",
+      "fileName": "001__003.jpg",
+      "pageNumber": 3
+    },
+    {
+      "checksumSha256": "ad7c9a22d11467e090ad0b3ba905b59580d7c0edb9917f71d8e752ea773ca11a",
+      "fileName": "002__001.jpg",
+      "pageNumber": 4
+    },
+    {
+      "checksumSha256": "566cc3b6cd851e64cd00d8cc1010c4d054a4500b67deeec63ee8bc5733702969",
+      "fileName": "002__002.jpg",
+      "pageNumber": 5
+    },
+    {
+      "checksumSha256": "74dca774c663157745b7d5a72cdc261de78183e181b527033dd3d6c9f2da4efa",
+      "fileName": "002__003.jpg",
+      "pageNumber": 6
+    },
+    {
+      "checksumSha256": "3437a47d38cf36115f4c95577f632a261a55c70f639f17b9ea17da2f5e5a5d15",
+      "fileName": "003__001.jpg",
+      "pageNumber": 7
+    },
+    {
+      "checksumSha256": "df39de532e1382c57658c8018401179473322deaf02b30e56fe17425d0de91c1",
+      "fileName": "003__002.jpg",
+      "pageNumber": 8
+    },
+    {
+      "checksumSha256": "d01f1bdabb32a69e86d6acd278949bda22b4c668ac086227c63363fbf9b63f09",
+      "fileName": "003__003.jpg",
+      "pageNumber": 9
+    },
+    {
+      "checksumSha256": "dd8172ea7abfcf141fc46a6d6ee6ea04fae42033df6b0b2f0ac21c3e4f068668",
+      "fileName": "004__001.jpg",
+      "pageNumber": 10
+    },
+    {
+      "checksumSha256": "720077df76dc0a59ba91cf72788043f27076309ddb6fc32755c6fc29837183a6",
+      "fileName": "004__002.jpg",
+      "pageNumber": 11
+    },
+    {
+      "checksumSha256": "09656ff62d203790715af5992b7e3ce734f0c02b62d5a50e13255fd8303cfcbb",
+      "fileName": "004__003.jpg",
+      "pageNumber": 12
+    },
+    {
+      "checksumSha256": "e120a455ff0ec68070c8b95f701a4491f6ae61351e97565f6bb6b0ce242d4678",
+      "fileName": "005__001.jpg",
+      "pageNumber": 13
+    },
+    {
+      "checksumSha256": "07841e7473c28616ac715207871240ba9b2ed5b16edca26498af11cf5b5d35d2",
+      "fileName": "005__002.jpg",
+      "pageNumber": 14
+    },
+    {
+      "checksumSha256": "5b8185ee645cde9d77b168ce616c507e866a28ff02c4265dbc0f7863118501d3",
+      "fileName": "006__001.jpg",
+      "pageNumber": 15
+    },
+    {
+      "checksumSha256": "6ca0a78fc6b4886e7bae69cf2547012cee638bfeb5ca387093749be7339dfef9",
+      "fileName": "006__002.jpg",
+      "pageNumber": 16
+    },
+    {
+      "checksumSha256": "8d652cc1b25cbec4170abb019b45b81be07a9ed420ac411740455e6cb5afa60a",
+      "fileName": "006__003.jpg",
+      "pageNumber": 17
+    },
+    {
+      "checksumSha256": "eb264ed9cdf68e5951448c050f9fec83f0ae356bbd414fd3e14050a8cd836d2e",
+      "fileName": "007__001.jpg",
+      "pageNumber": 18
+    },
+    {
+      "checksumSha256": "7a30737a9288a6e0917c3ea43e8689093b79abdbf79dd0149599078c4a07b83c",
+      "fileName": "007__002.jpg",
+      "pageNumber": 19
+    },
+    {
+      "checksumSha256": "af368878da18f5c9c97fb8e313e026c4fff97c5f6c4f715e2447fc148abbdae3",
+      "fileName": "008__001.jpg",
+      "pageNumber": 20
+    },
+    {
+      "checksumSha256": "e4e5371105610be3677f4b61b7b6d6af6e4a6e2d59d2285e468c11e38c3a240b",
+      "fileName": "008__002.jpg",
+      "pageNumber": 21
+    },
+    {
+      "checksumSha256": "44570aab336fad6c73ed91e427c1476e612673e971b97e2b217b5a9ee05241b4",
+      "fileName": "008__003.jpg",
+      "pageNumber": 22
+    },
+    {
+      "checksumSha256": "75579508fb177ec60118a700ec84679dc7dc759bcc8a411b9c8cbe7f552c93d8",
+      "fileName": "009__001.jpg",
+      "pageNumber": 23
+    },
+    {
+      "checksumSha256": "710f17e829717d2fdd2325c51979fbbd87727cd46c1018d7ac39d459dd119752",
+      "fileName": "009__002.jpg",
+      "pageNumber": 24
+    },
+    {
+      "checksumSha256": "2dd28cb8f89dd50bf18b1dead790be46e42c0de929aa24307d2287fde8fb3ce6",
+      "fileName": "009__003.jpg",
+      "pageNumber": 25
+    },
+    {
+      "checksumSha256": "5b3aa9a2dfd55885792cb9c9ae523c2e4576529eb2f68849a3dc7bbca5c705ac",
+      "fileName": "010__001.jpg",
+      "pageNumber": 26
+    },
+    {
+      "checksumSha256": "46285d6ecfa94c93756a75a79f1146986bc8b9e04ac5dd87005a231f27c5a19f",
+      "fileName": "010__002.jpg",
+      "pageNumber": 27
+    },
+    {
+      "checksumSha256": "92085fc07cf844cb55d409cda1550acb5a83550c04db8531256a8ffa83efcf62",
+      "fileName": "010__003.jpg",
+      "pageNumber": 28
+    },
+    {
+      "checksumSha256": "4a394ec36e01ab61917756b11abfac90588c4ff5f11cfa38fc776986827b5111",
+      "fileName": "011__001.jpg",
+      "pageNumber": 29
+    },
+    {
+      "checksumSha256": "d59b1c3247ec7793ef3f3a05384620393b7db117bcfd2c1e1d47fd8f41ceeb42",
+      "fileName": "011__002.jpg",
+      "pageNumber": 30
+    },
+    {
+      "checksumSha256": "5ad236563b98c4b1a02626262925bcae507b1cefba976666f08908750a58c10b",
+      "fileName": "012__001.jpg",
+      "pageNumber": 31
+    },
+    {
+      "checksumSha256": "f81fc32611955853af3822bf96c0b661518b61e783abb08bd54851aeb09a009f",
+      "fileName": "012__002.jpg",
+      "pageNumber": 32
+    }
+  ],
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 278,
+          "symHeight": 26.80710608567751,
+          "symWidth": 26.52774336345765,
+          "text": "Dand Kagurab Jujutsur  Kaise Find  The  permane 455 Piece THIS  CHAPTER  IS BROUGHT  TO  YOU BY  SCYTHE  TEAM",
+          "translation": "داندا كاجوراب جوجوتسور كيف تجد القطعة الثميمة 455\nهذا الفصل مقدم إليكم من فريق سايث",
+          "width": 464,
+          "x": 66,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 19.07142857142857,
+          "symWidth": 19.08201058201058,
+          "text": "o  Seibel  No No  Koka  o moto",
+          "translation": "أو سايبيل لا لا كوكا أو موتو",
+          "width": 120,
+          "x": 539,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 17.625,
+          "symWidth": 17.75,
+          "text": "Fall  in  Lo",
+          "translation": "الوقوع في الحب",
+          "width": 71,
+          "x": 728,
+          "y": 114
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21.25,
+          "symWidth": 20.25,
+          "text": "No  Ut",
+          "translation": "لا أوت",
+          "width": 52,
+          "x": 747,
+          "y": 236
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 26,
+          "symWidth": 20.43589743589743,
+          "text": "EXCLUSIVE CHAPTERS FIRST ON",
+          "translation": "الفصول الحصرية أولاً على",
+          "width": 527,
+          "x": 137,
+          "y": 342
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 81.66666666666667,
+          "symWidth": 67,
+          "text": "这一 世",
+          "translation": "هذا العصر",
+          "width": 194,
+          "x": 309,
+          "y": 1395
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 19.55555555555556,
+          "symWidth": 13.15151515151515,
+          "text": "The  ULTIMATE of  All  Ages",
+          "translation": "العظمة المُطلقة عبر العصور",
+          "width": 203,
+          "x": 350,
+          "y": 1614
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 26.5,
+          "symWidth": 24.5,
+          "text": "改编 自 阅 文 集团 起点 中文 网 作者 太 一生 水 原创 小说 《 万古 至尊 》",
+          "translation": "مقتبس من مجموعة يودوينغ للمؤلف تاي شنغ شوي، رواية أصلية \"السلطان الأزلي\"",
+          "width": 400,
+          "x": 207,
+          "y": 1836
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34.11111111111111,
+          "symWidth": 29.11111111111111,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر! انظر، المانغا الحصرية",
+          "width": 279,
+          "x": 264,
+          "y": 2039
+        },
+        {
+          "angle": 0,
+          "height": 408,
+          "symHeight": 26.33333333333333,
+          "symWidth": 22.78661816578483,
+          "text": "原著 : 太 一生 水 漫画 改编 : A4 漫 业 脚本 : 滴水 监制 : 滴水 主笔 : 杰克 挪威 线 稿 助手 : 815110  老邢  九日 阿米巴  小 电影 色彩 助手 : JXH  FN  午夜 党  猫 小呆 责编 : 春雨",
+          "translation": "العمل الأصلي: تاي إيشنغشوي\nالمانغا مقتبسة: A4 مانغا\nالسيناريو: ديشوي\nالإشراف: ديشوي\nالرسم الأساسي: جيك\nالنرويج\nمساعد الخطوط: 815110، لاوشينغ، جيو ري، أميبا، شياو\nاللون: JXH، FN، منتصف الليل، حزب القطة، شياوداي\nالمحرر: تشونغيو",
+          "width": 439,
+          "x": 263,
+          "y": 2208
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 12.5,
+          "symWidth": 12.25,
+          "text": "www .",
+          "translation": "",
+          "width": 47,
+          "x": 456,
+          "y": 406
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 17.95,
+          "symWidth": 11.96666666666667,
+          "text": "LITTLE BROTHER  BING , LET'S  GO  HOME , STOP  MAKING A  FUSS ~",
+          "translation": "أيها الأخ الصغير بينغ، لنعد إلى البيت\nكفاك ضجيجاً!",
+          "width": 170,
+          "x": 127,
+          "y": 1231
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20.66666666666667,
+          "symWidth": 12.56926406926407,
+          "text": "RED  MOON CITY  RUAN  FAMILY -  RUAN  ZILING",
+          "translation": "مدينة القمر الأحمر\nعائلة روان - روان زي لينغ",
+          "width": 191,
+          "x": 80,
+          "y": 2100
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 17.6,
+          "symWidth": 15,
+          "text": "WHO  ARE YOU ?",
+          "translation": "من أنت؟",
+          "width": 98,
+          "x": 175,
+          "y": 2455
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 17.66666666666667,
+          "symWidth": 11.65177650007371,
+          "text": "LEAVE  IMMEDIATELY , WHETHER  I  GO  BACK  OR  NOT  IS NONE  OF  YOUR  BUSINESS !",
+          "translation": "غادر فوراً، فمروري عائد أو لا\nليس من شأنك!",
+          "width": 293,
+          "x": 231,
+          "y": 3194
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 19.5,
+          "symWidth": 12.375,
+          "text": "SO  IT'S  YOUNG MASTER  ZILING .",
+          "translation": "فَلْتَكُنَ يا أيّها السيّد الشاب زِلِنج.",
+          "width": 160,
+          "x": 178,
+          "y": 482
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19.73958333333334,
+          "symWidth": 13.29861111111111,
+          "text": "THANK  YOU , MISS  NALAN ,  FOR  TAKING CARE  OF  LITTLE  BROTHER BING  FOR  ME .",
+          "translation": "شكرًا لكِ، آنسة نالان، على اهتمامك بأخي الصغير بينغ نيابةً عنّي.",
+          "width": 267,
+          "x": 342,
+          "y": 970
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 18.88283926218709,
+          "symWidth": 12.6784255599473,
+          "text": "HOWEVER , BROTHER AS  LITTLE BING'S  GOOD  FRIEND , MISS  NALAN  SHOULDN'T  LET HIM  INTERACT  TOO  MUCH WITH  MEANINGLESS TRASH .",
+          "translation": "لكن، كونك الصديق الوفي لأخي بينغ الصغير، لا ينبغي آنسة نالان أن تسمحي له بالاختلاط كثيرًا مع قمامة لا تُحسب.",
+          "width": 286,
+          "x": 155,
+          "y": 1357
+        },
+        {
+          "angle": 0,
+          "height": 229,
+          "symHeight": 19.11169037287046,
+          "symWidth": 12.72093478784956,
+          "text": "AFTER  ALL ,  THERE IS  A  DIFFERENCE  IN  STATUS AND  A  DISPARITY  IN  POSITION ,  TO PREVENT  SOME  TOADS  WHO  DON'T KNOW  THE  IMMENSITY  OF  HEAVEN  AND EARTH  FROM  HAVING  UNREALISTIC FANTASIES  AND  GIVING  RISE TO  BAD  INTENTIONS .",
+          "translation": "فالفارق في الرتبة والموضع يمنع بعض الضفادع التي تغفل عظمة السماوات والأرض من استعجال الأحلام الباطلة ونشوء النيات الرديئة.",
+          "width": 403,
+          "x": 325,
+          "y": 1830
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 19.14024390243902,
+          "symWidth": 12.72408133307523,
+          "text": "ZHIXUAN  IS  DIFFERENT FROM  THE  NOBLE  YOUNG  MASTER ZILING ,  THE  PEOPLE  I  KNOW  ARE  ALL MEANINGLESS  TRASH ,  THERE'S NOTHING  I  CAN  DO  ABOUT  IT .",
+          "translation": "تشيشوان تختلف عن السيد النبيل زيلينغ، الأشخاص الذين أعرفهم لا قيمة لهم، لا أجد حيلة في ذلك.",
+          "width": 386,
+          "x": 175,
+          "y": 526
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 18.85810810810811,
+          "symWidth": 12.04124369584896,
+          "text": "IN  THAT  CASE , PLEASE  TRY  TO  INTERACT LESS  WITH  LITTLE  BROTHER BING  IN  THE  FUTURE , MISS  ZHIXUAN .",
+          "translation": "في هذه الحالة، أرجو منك أن تقللي من تواصلك مع الأخ الصغير بينغ مستقبلًا، يا آنسة تشيشوان.",
+          "width": 282,
+          "x": 430,
+          "y": 873
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 20.33333333333333,
+          "symWidth": 14.68484848484849,
+          "text": "RUAN  ZILING ,  TAKE YOUR  FAIR - WEATHER  FRIENDS AND  GET  LOST !",
+          "translation": "روان زيلينغ، خذ أصدقائك المنافقين واذهبوا بعيدًا!",
+          "width": 329,
+          "x": 70,
+          "y": 1462
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 19,
+          "symWidth": 14.98608058608058,
+          "text": "IS  IT  ANY OF  YOUR  BUSINESS WHO  I  INTERACT WITH ?",
+          "translation": "هل يحق لك أن تسأل مع من أختلط؟",
+          "width": 215,
+          "x": 146,
+          "y": 2203
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 19.23333333333333,
+          "symWidth": 15.9825,
+          "text": "BIG  BROTHER LUO  AND  BIG  BROTHER YUNXIAO  ARE  BOTH  MY  FRIENDS , SHUT  YOUR  STINKING MOUTH !",
+          "translation": "الأخ الأكبر لو والأخ الأكبر يونشياو كلاهما أصدقائي، فأغمض فمك النتِن!",
+          "width": 359,
+          "x": 290,
+          "y": 2331
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 19.33333333333333,
+          "symWidth": 12.51282051282051,
+          "text": "FINE ,  CONSIDER IT  MY  SLIP  OF THE  TONGUE .",
+          "translation": "حسنًا، اعتبرها زلة لسان.",
+          "width": 163,
+          "x": 411,
+          "y": 2806
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "renderMode": "mask_only",
+          "symHeight": 19,
+          "symWidth": 12.93927125506073,
+          "text": "LITTLE  BROTHER BING ,  PLEASE  COME  BACK",
+          "translation": "",
+          "width": 265,
+          "x": 489,
+          "y": 2946
+        }
+      ],
+      "imgHeight": 2991,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 18.66666666666666,
+          "symWidth": 12.98478714268188,
+          "text": "LITTLE BROTHER BING , PLEASE COME BACK WITH ME . MY ELDEST BROTHER AND AUNT ARE QUITE WORRIED ABOUT YOU .",
+          "translation": "أيها الأخ الصغير بينغ، أعد إليّ رجاءً.\nأخي الأكبر وعمتي غارقان في القلق عليك.",
+          "width": 319,
+          "x": 460,
+          "y": 14
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 19.75,
+          "symWidth": 15.90970883336612,
+          "text": "WHAT  DOES  THEIR CONCERN  FOR  ME  HAVE  TO  DO WITH  YOU ?  DIDN'T  YOU  HEAR  ME TELL  YOU  TO  GET  LOST ?",
+          "translation": "ما دخل قلقهم بيك يا تُرى؟ ألم تسمعني أقول لك رحل!",
+          "width": 360,
+          "x": 16,
+          "y": 69
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 17.33333333333333,
+          "symWidth": 11.49363197189284,
+          "text": "HAHA ,  BROTHER  ZILING ,  THIS LITTLE  BROTHER  BING  HAS  BEEN SPOILED  ROTTEN  BY  YOU  ALL !",
+          "translation": "هاها، يا أخي زيليل، لقد دلّلتم هذا الأخ الصغير بينغ حتى خُرّ.",
+          "width": 294,
+          "x": 34,
+          "y": 739
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 18.96666666666667,
+          "symWidth": 12.43452380952381,
+          "text": "IF  YOU  DON'T MIND ,  LET  ME  TAKE HER  BACK .",
+          "translation": "إن لم تمانع، دعني أعيده معها.",
+          "width": 195,
+          "x": 289,
+          "y": 1327
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19,
+          "symWidth": 10.95691056910569,
+          "text": "WESTERN  REGION'S  FIVE HEROES  TEN  THOUSAND  STARS VALLEY  CHENG  YONG",
+          "translation": "خمسة أبطال المنطقة الغربية\nوادي العشرة آلاف نجم\nتشنغ يونغ",
+          "width": 281,
+          "x": 454,
+          "y": 2533
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.75,
+          "symWidth": 16.73125,
+          "text": "WHO DO YOU THINK YOU ARE ?!",
+          "translation": "من تظن نفسك لتقول هذا؟!",
+          "width": 120,
+          "x": 167,
+          "y": 2944
+        }
+      ],
+      "imgHeight": 2991,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "renderMode": "mask_only",
+          "symHeight": 18,
+          "symWidth": 16,
+          "text": "YOU  ARE ?!",
+          "translation": "",
+          "width": 118,
+          "x": 169,
+          "y": 4
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 22.5,
+          "text": "OH ? ~",
+          "translation": "هاه؟~",
+          "width": 67,
+          "x": 600,
+          "y": 700
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.33333333333333,
+          "symWidth": 13.74512670565302,
+          "text": "THIS  IS ...  IMITATING LI  YUNXIAO'S  PREVIOUS SWORD  STRIKE !",
+          "translation": "إنها... تحاكي ضربة لي يونشياو السابقة بالسيف!",
+          "width": 239,
+          "x": 533,
+          "y": 1989
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.33333333333333,
+          "symWidth": 14.62229102167183,
+          "text": "TO  THINK  THIS  LITTLE GIRL'S  COMPREHENSION IS  SO  HIGH",
+          "translation": "لأدرك أن استيعاب هذه الفتاة الصغيرة بهذه الدرجة من الفطنة",
+          "width": 251,
+          "x": 214,
+          "y": 2675
+        }
+      ],
+      "imgHeight": 2993,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 19.25,
+          "symWidth": 12.58111111111111,
+          "text": "HEHEHEHE ~ LITTLE  BROTHER  BING  IS  INDEED BRILLIANTLY  TALENTED ,  THAT  WAS A  BEAUTIFUL  MOVE !",
+          "translation": "ههه~ الأخ الصغير بينغ حقًا نابغ، لقد كانت ضربة بديعة!",
+          "width": 340,
+          "x": 193,
+          "y": 117
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17,
+          "symWidth": 11.54563492063492,
+          "text": "BROTHER  CHENG ,  YOU ABSOLUTELY  MUST  NOT  HURT LITTLE  BROTHER  BING .",
+          "translation": "أخي تشنغ، لا يجب أن تؤذي الأخ الصغير بينغ أبدًا.",
+          "width": 265,
+          "x": 2,
+          "y": 520
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 15.25,
+          "text": "EXPLODE !",
+          "translation": "انفجر!",
+          "width": 114,
+          "x": 517,
+          "y": 1780
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 89,
+          "symWidth": 39.5,
+          "text": "!  !",
+          "translation": "!!",
+          "width": 153,
+          "x": 128,
+          "y": 1876
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 30,
+          "symWidth": 21,
+          "text": "19",
+          "translation": "١٩",
+          "width": 30,
+          "x": 607,
+          "y": 2100
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "renderMode": "mask_only",
+          "symHeight": 30.5,
+          "symWidth": 27.95,
+          "text": "MY HAND ,",
+          "translation": "",
+          "width": 153,
+          "x": 259,
+          "y": 3294
+        }
+      ],
+      "imgHeight": 3333,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 29.75,
+          "symWidth": 24.9,
+          "text": "MY HAND , I CAN'T MOVE الماز",
+          "translation": "يدي لا تتحرك، ما الأمر؟",
+          "width": 226,
+          "x": 225,
+          "y": 10
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.66666666666667,
+          "symWidth": 12.87744107744108,
+          "text": "LITTLE  BROTHER  BING , IT'S  BETTER  TO  OBEDIENTLY COME  BACK  WITH  ME .",
+          "translation": "يا أخي الصغير بينغ، من الحكمة أن تعود معي طائعاً.",
+          "width": 292,
+          "x": 118,
+          "y": 663
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 19.5,
+          "symWidth": 12.45398737227685,
+          "text": "I  DIDN'T  HAVE  MUCH INTEREST  IN  YOU  BEFORE ,  BUT  NOW I'M  VERY INTERESTED ,  HAHA ,  REMEMBER MY  FACE ,  I  WILL  DEFINITELY  WIN THE  ARENA  TOURNAMENT !",
+          "translation": "لم أكن مهتمًا بك من قبل، لكن الآن أصبح لي فيك اهتمام بالعمق، هاها، احفظ وجهي، فسأنتصر بالتأكيد في بطولة الساحة!",
+          "width": 406,
+          "x": 269,
+          "y": 860
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.07142857142857,
+          "symWidth": 17.04285714285714,
+          "text": "YOUNG MASTER !",
+          "translation": "يا مولاي الشاب!",
+          "width": 97,
+          "x": 251,
+          "y": 1230
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 10,
+          "symWidth": 9,
+          "text": "www",
+          "translation": "",
+          "width": 32,
+          "x": 601,
+          "y": 1606
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 20,
+          "symWidth": 15.92332830568125,
+          "text": "CHENG  YONG !  YOU HAVE  THE  GUTS  TO  HURT LITTLE  BROTHER  BING !",
+          "translation": "تشينغ يونغ! كيف تجرؤ على إيذاء الأخ الصغير بينغ!",
+          "width": 276,
+          "x": 215,
+          "y": 1715
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 18.375,
+          "symWidth": 13.60606179971989,
+          "text": "YOU  ARE THE  ORIGIN YIN  BODY FROM  THE  SILVER  MOON SECT  WHO  CULTIVATED  THE ORIGIN  WOMB  WONDROUS MAIDEN  ART  TO  GREAT COMPLETION ?",
+          "translation": "أأنت الجسد اليين الأصلي من طائفة القمر الفضي، الذي أتقن فن العذراء الغامضة للأصل؟",
+          "width": 285,
+          "x": 109,
+          "y": 2222
+        }
+      ],
+      "imgHeight": 3334,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 27.92857142857143,
+          "symWidth": 22.48809523809524,
+          "text": "YOU  CAN COME  WITH ME  TOO .",
+          "translation": "يمكنك أن تأتي معي أيضاً.",
+          "width": 182,
+          "x": 428,
+          "y": 212
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 19.66666666666667,
+          "symWidth": 12.76817810457516,
+          "text": "SIGH BROTHER LUO ,  I'LL  ADMIT  YOU BESTED  ME  THIS  TIME ,  TO  THINK YOUR  PATIENCE  IS  EVEN STRONGER  THAN  MINE ,",
+          "translation": "آه يا أخي لو، أقرُّ بأنك غلبتني هذه المرّة، كيف لك أن تتحلى بصبر يفوق صبري؟",
+          "width": 333,
+          "x": 198,
+          "y": 1473
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 18.5,
+          "symWidth": 13.70833333333333,
+          "text": "HOW  DID YOU  DO  IT ?",
+          "translation": "كيف فعلت ذلك؟",
+          "width": 119,
+          "x": 488,
+          "y": 1684
+        },
+        {
+          "angle": 0,
+          "height": 9,
+          "symHeight": 8,
+          "symWidth": 7,
+          "text": "..",
+          "translation": "..",
+          "width": 11,
+          "x": 713,
+          "y": 2477
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 19,
+          "symWidth": 16.58333333333333,
+          "text": "YOUNG MASTER !",
+          "translation": "يا سيدي الفاضل!",
+          "width": 99,
+          "x": 369,
+          "y": 2675
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 11,
+          "symWidth": 11.66666666666667,
+          "text": "www",
+          "translation": "",
+          "width": 32,
+          "x": 651,
+          "y": 2853
+        }
+      ],
+      "imgHeight": 3106,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 18.18,
+          "symWidth": 14.29,
+          "text": "I  WAS WAITING  FOR YOU  TO  MAKE A  MOVE .",
+          "translation": "كنتُ أترقّب حركتك.",
+          "width": 147,
+          "x": 206,
+          "y": 463
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 18.75,
+          "symWidth": 13.63175366300366,
+          "text": "WHY  DIDN'T  YOU MAKE  A  MOVE ?  WHAT KIND  OF  COOL  ARE  YOU TRYING  TO  PLAY ?",
+          "translation": "لِمَ لم تتحرك؟ ما هذا البرود الذي تحاول التظاهر به؟",
+          "width": 254,
+          "x": 501,
+          "y": 741
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.72727272727273,
+          "symWidth": 12.95454545454546,
+          "text": "BECAUSE  I  WAS  AFRAID  I COULDN'T  HOLD  BACK ,  AND  IF  I  MADE A  MOVE ,  I'D  KILL  THEM  ALL .",
+          "translation": "لأني خشيتُ أن لا أتمكّن من السيطرة، وإن حركتُ ساكنًا، لقتلت الجميع.",
+          "width": 390,
+          "x": 219,
+          "y": 2046
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18,
+          "symWidth": 13.00625,
+          "text": "I  REALLY  DON'T  WANT TO  CAUSE  TROUBLE .",
+          "translation": "لا أرغب حقًا بإثارة المتاعب.",
+          "width": 224,
+          "x": 417,
+          "y": 2310
+        }
+      ],
+      "imgHeight": 3106,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 18.58974358974359,
+          "symWidth": 13.04399766899767,
+          "text": "SO  YOU WANTED  ME TO  CAUSE  THIS TROUBLE ?",
+          "translation": "هل أردتَ مني إذن أن أثير هذه المتاعب؟",
+          "width": 152,
+          "x": 550,
+          "y": 707
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19,
+          "symWidth": 12.97587719298246,
+          "text": "YOU'VE  ALWAYS BEEN  SOMEONE  WHO  ISN'T AFRAID  OF  TROUBLE .",
+          "translation": "لطالما كنتَ من لا يخشى المتاعب.",
+          "width": 282,
+          "x": 73,
+          "y": 920
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 10.25,
+          "symWidth": 9,
+          "text": "www .",
+          "translation": "",
+          "width": 27,
+          "x": 37,
+          "y": 1201
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 19.2969696969697,
+          "symWidth": 12.53563769563769,
+          "text": "SIGH ,  YOU REALLY  HIT  THE NAIL  ON  THE  HEAD THIS  TIME ,  I  HAVE NO  CHOICE  BUT  TO TAKE  ON  THIS TROUBLE .",
+          "translation": "آه، لقد أصبتَ كبد الحقيقة هذه المرة، وليس لي من خيار سوى أن أتحمّل هذه المتاعب.",
+          "width": 200,
+          "x": 477,
+          "y": 1632
+        }
+      ],
+      "imgHeight": 3108,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 19.12820512820513,
+          "symWidth": 14.43675213675214,
+          "text": "THAT  IDIOT STANDING  UP  IS  A  FIVE - STAR MARTIAL  GRANDMASTER ,  I  COULD KILL  A  HUNDRED  OF  THEM WITH  ONE  PALM .",
+          "translation": "ذلك الأحمق القائم هو أسطورة فنون قتالية من الطراز الأول، ببابٍ واحد أستطيع أنَهي حياة مائةٍ منهم.",
+          "width": 346,
+          "x": 352,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.75,
+          "symWidth": 14.3625,
+          "text": "BUT  THE  ONE  NEXT  TO HIM  GIVES  ME  A  FEELING  OF A  DANGEROUS AURA ......",
+          "translation": "لكن ذلك الذي يقف بجانبه يبعث في نفسي هالةً من الخطر الغامض...",
+          "width": 298,
+          "x": 94,
+          "y": 1536
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 18.8,
+          "symWidth": 12.63478991596639,
+          "text": "BROTHER  ZILING , THE  RULES  OF  RED  MOON CITY  SEEM  TO  PROHIBIT CASUALLY  CAUSING TROUBLE ,  RIGHT ?",
+          "translation": "يا أخي زيلينغ، يبدو أن قوانين مدينة القمر الأحمر تمنع إثارة المتاعب على وجه العبث، أليس كذلك؟",
+          "width": 270,
+          "x": 303,
+          "y": 2027
+        }
+      ],
+      "imgHeight": 2612,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 19,
+          "symWidth": 12.63848309178744,
+          "text": "THERE  CAN  BE EXCEPTIONS ,  BROTHER  CHENG YONG  ISN'T  CAUSING  TROUBLE ,  HE'S ACTING  RIGHTEOUSLY  TO  RESCUE LITTLE  BROTHER  BING .",
+          "translation": "قد تكون هناك استثناءات، فالأخ تشينغ يونغ لا يثير الفتنة، بل يتصرف ببرّ لينقذ الأخ الصغير بينغ.",
+          "width": 375,
+          "x": 7,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 18.75,
+          "symWidth": 14.95348502304148,
+          "text": "RUAN  ZILING ! THEM ,  I  WILL  DEFINITELY IF  YOU  DARE  TOUCH HAVE  MY  MASTER KILL  YOU !",
+          "translation": "روان زي لينغ! لو تجرأت على لمسهم، فليقتلنك سيدي بلا تردد!",
+          "width": 272,
+          "x": 163,
+          "y": 485
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.66666666666667,
+          "text": "BROTHER  CHENG YONG--",
+          "translation": "الأخ تشينغ يونغ--",
+          "width": 192,
+          "x": 473,
+          "y": 1326
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 19.5047619047619,
+          "symWidth": 12.4984126984127,
+          "text": "DON'T  WORRY , BROTHER  ZILING ,  SINCE  LITTLE BROTHER  BING  HAS  SPOKEN , I  WILL  JUST  TEACH  THEM A  LITTLE  LESSON ,",
+          "translation": "لا تقلق، أيها الأخ زي لينغ، بما أن الأخ الصغير بينغ تحدث، فسأعلمهم درسًا يُفيقهم.",
+          "width": 312,
+          "x": 11,
+          "y": 1878
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 18.6,
+          "symWidth": 12.89090909090909,
+          "text": "TO  SAVE  THESE TOADS  FROM  NOT SEEING STATUS THEIR  OWN CLEARLY !",
+          "translation": "لأنقذ هؤلاء الضفادع من عماه عن إدراك حالهم الحقيقية!",
+          "width": 201,
+          "x": 238,
+          "y": 2092
+        }
+      ],
+      "imgHeight": 2613,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 1306,
+          "symHeight": 48.50769230769231,
+          "symWidth": 96.17564102564103,
+          "text": "TOVÉ  STAIRY  PROFOUND ONE  PALM  SHOCKING  WAVES ! AND  VALLEY  ULTIMATE  ART",
+          "translation": "موجات تصدم راحة اليد العميقة! وفن الوادي الأعظم",
+          "width": 257,
+          "x": 20,
+          "y": 119
+        }
+      ],
+      "imgHeight": 2998,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 35.2,
+          "text": "快  快 看 漫画",
+          "translation": "أسرع، أسرع، انظر إلى المانغا",
+          "width": 203,
+          "x": 22,
+          "y": 177
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 14.66666666666667,
+          "text": "IGNORING  ME ?!",
+          "translation": "تتجاهلني؟!",
+          "width": 168,
+          "x": 530,
+          "y": 2029
+        }
+      ],
+      "imgHeight": 2998,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [],
+      "imgHeight": 2999,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19,
+          "symWidth": 15.61746031746032,
+          "text": "WHY  HAS  THE FLOW  OF  MY  MARTIAL SKILL  CHANGED !?",
+          "translation": "لماذا غدا تدفق مهارتي القتالية متغيراً؟",
+          "width": 232,
+          "x": 488,
+          "y": 1388
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 19,
+          "symWidth": 15.05,
+          "text": "NOT  ONLY THAT ...  MY  BODY  IS ALMOST FROZEN !",
+          "translation": "ليس هذا فحسب... جسدي يكاد يتجمد!",
+          "width": 198,
+          "x": 164,
+          "y": 1875
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 19.4,
+          "symWidth": 14.4394237405107,
+          "text": "THE WHIRLPOOL OVER  THERE  FAINTLY CONTAINS ...  COULD  IT  BE  THE POWER  OF  RULES ?!",
+          "translation": "الدوامة هناك تحمل شيئًا خافتًا... هل تكون قوة القوانين؟!",
+          "width": 307,
+          "x": 261,
+          "y": 2047
+        },
+        {
+          "angle": 0,
+          "height": 203,
+          "symHeight": 20.14285714285714,
+          "symWidth": 14.48584873772844,
+          "text": "MY  MARTIAL  SKILL INSTANTLY  BECAME  LIKE A  FALLEN  LEAF  IN  THE  WIND , A  SMALL  BOAT  IN  THE  WAVES , READY  TO  BE  DESTROYED AT  ANY  MOMENT !! THIS  THIS ...",
+          "translation": "تحولت مهارتي القتالية في لمح البصر إلى ورقة شجرة تتقاذفها الرياح، وقارب صغير في الأمواج، قابلة للدمار في أي لحظة! هذا... هذا...",
+          "width": 299,
+          "x": 422,
+          "y": 2671
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 17.91666666666666,
+          "symWidth": 13.625,
+          "text": "HE  DID  ALL THIS ?!",
+          "translation": "هل فعل كل هذا؟!",
+          "width": 111,
+          "x": 182,
+          "y": 4206
+        }
+      ],
+      "imgHeight": 4320,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 606,
+          "symHeight": 46.73529411764706,
+          "symWidth": 73.76470588235294,
+          "text": "AND  CLOUDS EARTH  STIR  UP  WINDS HEAVEN  AND",
+          "translation": "والغيوم والأرض تثير الرياح والسماء",
+          "width": 289,
+          "x": 467,
+          "y": 97
+        },
+        {
+          "angle": 0,
+          "height": 1042,
+          "symHeight": 66.27037037037037,
+          "symWidth": 91.60777777777777,
+          "text": "AND  CLOUDS  ARE  ENTIRELY  UNDER THE  WINDS MY  CONTROL",
+          "translation": "والغيوم كلها تحت سيطرة رياحي",
+          "width": 386,
+          "x": 27,
+          "y": 1148
+        },
+        {
+          "angle": 0,
+          "height": 571,
+          "symHeight": 34.55111111111111,
+          "symWidth": 57.34,
+          "text": "WAVES  GREAT  AIND  AND SHOCKING CLOUD  PALM",
+          "translation": "الأمواج عظيمة واليد السحابية الصادمة",
+          "width": 238,
+          "x": 491,
+          "y": 3394
+        }
+      ],
+      "imgHeight": 4320,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3076,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 32.2,
+          "symWidth": 33.8,
+          "text": "環  快 看 漫画",
+          "translation": "اقرأ المانغا بسرعة",
+          "width": 210,
+          "x": 14,
+          "y": 193
+        }
+      ],
+      "imgHeight": 3076,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 19.5,
+          "symWidth": 15.12476996687523,
+          "text": "NO  MATTER  HOW HIGHLY  I  OVERESTIMATE THIS  YUNXIAO ,  IT  WOULDN'T BE  EXCESSIVE !!",
+          "translation": "مهما بالغت في تقدير هذا يونشياو، فذلك لن يكون مبالغة!!",
+          "width": 285,
+          "x": 70,
+          "y": 2244
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18,
+          "symWidth": 15.84615384615385,
+          "text": "BROTHER CHENG !",
+          "translation": "الأخو تشنغ!",
+          "width": 104,
+          "x": 471,
+          "y": 2409
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19,
+          "symWidth": 16.11363636363636,
+          "text": "BROTHER  CHENG YONG ,  GET  UP !",
+          "translation": "انهض، أيها الأخ تشنغ يونغ!",
+          "width": 191,
+          "x": 580,
+          "y": 2586
+        }
+      ],
+      "imgHeight": 3078,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 20.25,
+          "symWidth": 14.32696078431373,
+          "text": "HA , BROTHER  CHENG ,  STOP JOKING  AROUND ,  GET UP  QUICKLY !",
+          "translation": "ها، أيها الأخ تشنغ، كف عن المزاح وانهض سريعًا!",
+          "width": 258,
+          "x": 411,
+          "y": 84
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 18,
+          "symWidth": 14.14302059496568,
+          "text": "YOU ,  YOU ,  YOU  ACTUALLY DARE  TO  KILL  SOMEONE  FROM  THE TEN  THOUSAND  STARS  VALLEY ?",
+          "translation": "أنت، أنت... تجرؤ حقًا على قتل أحد من وادي العشرة آلاف نجم؟",
+          "width": 352,
+          "x": 54,
+          "y": 1064
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18,
+          "symWidth": 12.42105263157895,
+          "text": "SO  WHAT  IF  I KILLED  HIM ?",
+          "translation": "وماذا إن قتلتُه؟",
+          "width": 136,
+          "x": 538,
+          "y": 1322
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 19.8,
+          "symWidth": 15.38230410112763,
+          "text": "BY  KILLING SOMEONE  FROM  THE TEN  THOUSAND  STARS  VALLEY , HALF  YOUR  FOOT  HAS  ALREADY STEPPED  THROUGH  THE GATES  OF  HELL !!",
+          "translation": "بقتل أحدِ أهل وادي العشرة آلاف نجم، قد وطأت نصف قدميك أبواب الجحيم!",
+          "width": 351,
+          "x": 240,
+          "y": 1687
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19.5,
+          "symWidth": 13.30119825708061,
+          "text": "SINCE  I'M  ALREADY ABOUT  TO  ENTER  THE  GATES  OF  HELL , I  MIGHT  AS  WELL  KILL  THE  PEOPLE OF  RED  MOON  CITY  TOO !",
+          "translation": "وبما أنني على وشك دخول أبواب الجحيم، فليقتل دمراك أهلَ مدينة القمر الأحمر أيضًا!",
+          "width": 399,
+          "x": 145,
+          "y": 2365
+        }
+      ],
+      "imgHeight": 3056,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 37,
+          "symWidth": 16.66666666666667,
+          "text": "!  !  !",
+          "translation": "!!!",
+          "width": 112,
+          "x": 218,
+          "y": 883
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 22.71428571428572,
+          "text": "S - STOP !",
+          "translation": "تَـوقَّفْ!",
+          "width": 148,
+          "x": 340,
+          "y": 1385
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 18.75,
+          "symWidth": 15.3258547008547,
+          "text": "IF  YOU  KILL ME  TOO ,  YOU  WILL TRULY  DIE  WITHOUT DOUBT !",
+          "translation": "إن قتلتني أنت أيضًا، فستموت حقًا بلا ريب!",
+          "width": 220,
+          "x": 446,
+          "y": 1606
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 20.8,
+          "symWidth": 15.80569765970905,
+          "text": "RIGHT  NOW  IT'S  JUST  A LITTLE  TROUBLE .  ALTHOUGH  YOU  KILLED CHENG  YONG ,  IT  WAS  IN  SELF - DEFENSE , WHICH  IS  EXCUSABLE .  EVERYONE CAN  TESTIFY  TO  THAT !",
+          "translation": "الأمر الآن مجرد عثرة صغيرة، ومع أنّك قتلت تشنغ يونغ، فكان ذلك دفاعًا عن النفس، وهذا يعفَى عنه. الجميع يشهد على ذلك!",
+          "width": 452,
+          "x": 141,
+          "y": 1843
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 14.54166666666667,
+          "text": "TELL  ME ,  ISN'T THAT  RIGHT ?!",
+          "translation": "هل لي أن أسألك، أليس هذا صحيحًا؟!",
+          "width": 160,
+          "x": 90,
+          "y": 3007
+        }
+      ],
+      "imgHeight": 3056,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 19.5,
+          "symWidth": 15.58333333333333,
+          "text": "YOU  SAY IT'S  RIGHT ?",
+          "translation": "أتعبر ذلك صواباً؟",
+          "width": 129,
+          "x": 489,
+          "y": 134
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 20.03703703703704,
+          "symWidth": 14.55555555555556,
+          "text": "IT  WAS SELF - DEFENSE ,  WE ALL  SAW  IT !",
+          "translation": "كان دفاعاً عن النفس، وقد شهدنا جميعاً ذلك!",
+          "width": 212,
+          "x": 124,
+          "y": 226
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 16.48333333333333,
+          "symWidth": 11.79883022774327,
+          "text": "THE  FAULT  IN  THIS MATTER  LIES  WITH  CHENG  YONG , BEING  NEEDLESSLY  AGGRESSIVE  AND BELLIGERENT ,  HIS  END  CAN  BE DESCRIBED  AS  PATHETIC !",
+          "translation": "اللوم في هذا الشأن يقع على تشينغ يونغ، بسلوكه العدائي المفرط، ونهايته تُوصف بالبائسة!",
+          "width": 331,
+          "x": 24,
+          "y": 712
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 19.5,
+          "symWidth": 14.65951640271493,
+          "text": "ALTHOUGH  I  DISLIKE RUAN  ZILING ,  HE REPRESENTS THE  RED  MOON  REGION .",
+          "translation": "رغم مكروهي لرُوآن زيليغ، فهو يمثل إقليم القمر الأحمر.",
+          "width": 297,
+          "x": 436,
+          "y": 979
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 20.2,
+          "symWidth": 15.09710084033613,
+          "text": "TO  THINK  THAT  RUAN ZILING ,  WHO  I  ALWAYS THOUGHT  OF  AS  STRICT  AND COMPOSED ,  WOULD  BE SO  SPINELESS !!!",
+          "translation": "لقد ظننت دوماً أن روآن زيليغ صارم وربان أعصابه، فما باله قد خَلت شوكته؟!",
+          "width": 300,
+          "x": 245,
+          "y": 1146
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 18.72916666666667,
+          "symWidth": 12.6106684981685,
+          "text": "LITTLE  BROTHER BING ,  I'M  YOUR OLDER COUSIN !",
+          "translation": "يا بِنغ الصغير، أنا ابن عمك الأكبر!",
+          "width": 170,
+          "x": 177,
+          "y": 2058
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 18.33333333333333,
+          "symWidth": 11.655752931615,
+          "text": "HURRY  UP  AND  TELL  YOUR FRIEND ,  IT'S  A  MISUNDERSTANDING , JUST  A  MISUNDERSTANDING !",
+          "translation": "بادر وأخبر صديقك، الأمر مجرد سوء فهم، لا أكثر!",
+          "width": 329,
+          "x": 262,
+          "y": 2223
+        }
+      ],
+      "imgHeight": 3058,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 19.5,
+          "symWidth": 12.43809523809524,
+          "text": "BIG BROTHER YUNXIAO ,  LET'S  JUST  DROP THIS  MATTER  HERE .",
+          "translation": "أيها الأخ الأكبر يونشياو، دعنا نغلق هذا الأمر عند هذا الحد.",
+          "width": 275,
+          "x": 165,
+          "y": 119
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 18.5,
+          "symWidth": 12.58125,
+          "text": "IF  WE  KEEP MAKING  A  FUSS ,  I'M AFRAID  IT  WILL  BE  HARD TO  RESOLVE .",
+          "translation": "إن أصررنا على إثارة الضجة، أخشى أن يصعب حله.",
+          "width": 243,
+          "x": 320,
+          "y": 286
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 27.13541666666667,
+          "symWidth": 17.08784271284271,
+          "text": "IT'S  FINE , IT'S  FINE !  WITH  US HERE  TO  TESTIFY ,  THIS DOESN'T  COUNT  AS ANY  TROUBLE .",
+          "translation": "لا بأس، لا بأس! ونحن هنا لنشهد، فلا يُعد هذا أي مشكل.",
+          "width": 319,
+          "x": 181,
+          "y": 1558
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 23.62280701754386,
+          "symWidth": 15.89400138260432,
+          "text": "EVEN  FOR  THE TEN  THOUSAND  STARS VALLEY ,  THEY  HAVE  TO  BE REASONABLE ,  EVERYTHING IN  THIS  WORLD  CANNOT ESCAPE  REASON !",
+          "translation": "حتى وادي عشرة آلاف نجم لا بد أن يتحلى بالعقل؛ فليس في هذا العالم ما يفلت من الحكمة!",
+          "width": 338,
+          "x": 370,
+          "y": 1803
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 15.49122807017544,
+          "symWidth": 11.96929656674411,
+          "text": "THE  TEN  THOUSAND  STARS VALLEY  AND  RED  MOON CITY  ARE  BOTH  AMONG THE  SEVEN  GREAT  SUPER  FACTIONS  AND  ARE  ON  EQUAL FOOTING .  WITH  CHENG  YONG  BEING  ONE  OF  THE  WESTERN REGION'S  FIVE  HEROES ,  THIS  TROUBLE  HAS ALREADY  PIERCED  THE  HEAVENS .",
+          "translation": "وادي عشرة آلاف نجم ومدينة القمر الأحمر من أعظم الفصائل السبع العظمى، ورفيعاهما متكافئان. ومع تشنغ يونغ كأحد أبطال المنطقة الغربية الخمسة، فقد طال هذا النزاع الآفاق.",
+          "width": 473,
+          "x": 110,
+          "y": 2419
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 34.19951923076923,
+          "symWidth": 20.67307692307692,
+          "text": "Alright ,  since  you put  it  that  way .",
+          "translation": "حسنًا، إذا كان مقالك هكذا.",
+          "width": 210,
+          "x": 32,
+          "y": 2760
+        }
+      ],
+      "imgHeight": 3190,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 19.875,
+          "symWidth": 14.96231060606061,
+          "text": "BUT  SEEING  LI YUNXIAO  STILL LOOKING COMPLETELY UNCONCERNED , I  FINALLY  UNDERSTAND  LUO QINGYUN'S WORDS ,",
+          "translation": "لكن حين رأيت لي يونشياو لا يزال هادئاً تماماً، أدركت أخيراً كلمات لوو تشينغيون.",
+          "width": 301,
+          "x": 423,
+          "y": 513
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 31.2,
+          "text": "快訊  快 看 漫",
+          "translation": "",
+          "width": 168,
+          "x": 23,
+          "y": 535
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 18.8,
+          "symWidth": 14.0874025974026,
+          "text": "THE  ONLY  ONE  IN  THE  ENTIRE RED  MOON  CITY  WHO  WOULD  DARE  WATCH ME  ESCAPE  IS PROBABLY  THIS  MYSTERIOUS MAN  RIGHT  BEFORE  MY  EYES !!",
+          "translation": "الشخص الوحيد في مدينة القمر الأحمر بأسرها الذي يجرؤ على مشاهدتي أهرب، هو ربما هذا الرجل الغامض الذي أمام عيني!",
+          "width": 414,
+          "x": 107,
+          "y": 772
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 20,
+          "symWidth": 16.23977591036414,
+          "text": "ALL  OF  YOU ,  GET  LOST ! JUST LOOKING AT  YOU MAKES  ME  SICK !",
+          "translation": "كلكم، ارحلوا! مجرد رؤيتكم تُشعرني بالقرف!",
+          "width": 273,
+          "x": 433,
+          "y": 1130
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 31.5,
+          "symWidth": 55,
+          "text": "hicles",
+          "translation": "",
+          "width": 59,
+          "x": 582,
+          "y": 1350
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 17.84873949579832,
+          "symWidth": 11.61244697879152,
+          "text": "THEN  I  WON'T  DISTURB YOU  ALL ,  LITTLE  BROTHER  BING , TAKE  YOUR  TIME  AND  HAVE  FUN .  THESE FRIENDS  ARE  ALL  QUITE  GOOD ,  ALL  OF  THEM ARE OUTSTANDING  TALENTS ,  PEOPLE WORTH  BEFRIENDING--",
+          "translation": "إذاً لن أزعجكم، أيها الأخ الصغير بينغ، خذ وقتك وتنعم. هؤلاء الأصدقاء جميعهم ممتازون، كلهم مواهب فذة، جديرون بالصحبة—",
+          "width": 410,
+          "x": 8,
+          "y": 1664
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 19.27777777777778,
+          "symWidth": 16.75833333333333,
+          "text": "A  WISE MAN KNOWS  WHEN TO  RETREAT !",
+          "translation": "الرجل الحكيم يعرف متى ينسحب!",
+          "width": 150,
+          "x": 497,
+          "y": 2121
+        }
+      ],
+      "imgHeight": 3190,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 35.92307692307692,
+          "symWidth": 31.15384615384615,
+          "text": "JUST  YOU WAIT――",
+          "translation": "انتظر فقط—",
+          "width": 197,
+          "x": 186,
+          "y": 38
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 25,
+          "symWidth": 31,
+          "text": "THP EH !",
+          "translation": "تفّ!",
+          "width": 52,
+          "x": 256,
+          "y": 494
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 11.33333333333333,
+          "symWidth": 10.33333333333333,
+          "text": "11-",
+          "translation": "11-",
+          "width": 21,
+          "x": 417,
+          "y": 1048
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 37,
+          "symWidth": 30.3,
+          "text": "UNCLE HANGFENG !!",
+          "translation": "العم هانغفنغ!!",
+          "width": 287,
+          "x": 385,
+          "y": 1596
+        }
+      ],
+      "imgHeight": 3190,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 20,
+          "symWidth": 15.54166666666667,
+          "text": "UNCLE  HANGFENG ,  THIS PERSON  HAS  NO  REGARD FOR  THE  RULES  AND  KILLED BROTHER  CHENG  YONG ,",
+          "translation": "ياعمي هانغفينغ، هذا الشخص طائش لا يحترم القوانين وقد قتل الأخ تشنغ يونغ،",
+          "width": 305,
+          "x": 328,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 20.60714285714286,
+          "symWidth": 14.88809523809524,
+          "text": "PLEASE  STEP  IN  AND APPREHEND  THIS  PERSON ,  HANDING HIM  OVER  TO  THE  TEN  THOUSAND  STARS VALLEY  TO  HANDLE ,  LEST  IT  CAUSE  A RIFT  IN  THE  RELATIONSHIP  BETWEEN OUR  TWO  FACTIONS !!",
+          "translation": "أرجوكَ أن تتدخل وتقبض عليه، وتسلمه إلى وادي العشرة آلاف نجم ليُحاسب، لئلا ينشأ شقاق بين طائفَتينا!",
+          "width": 454,
+          "x": 149,
+          "y": 316
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.75,
+          "text": "YOU !",
+          "translation": "أنت!",
+          "width": 59,
+          "x": 41,
+          "y": 552
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 24.61904761904762,
+          "symWidth": 12.28571428571429,
+          "text": "Li  Yunxiao , run  quickly !",
+          "translation": "لي يونشياو، اهرب سريعًا!",
+          "width": 105,
+          "x": 620,
+          "y": 706
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.0679012345679,
+          "symWidth": 12.79128086419753,
+          "text": "UNCLE  HANGFENG ,  IT WAS  CHENG  YONG  WHO  WANTED  TO KILL  MY  FRIEND  FIRST ,  WHICH  IS  WHAT BROUGHT  UPON  THIS  FATAL DISASTER !",
+          "translation": "ياعمي هانغفينغ، تشنغ يونغ هو من حاول قتل صديقي أولاً، ولهذا نشأت هذه الكارثة المميتة!",
+          "width": 358,
+          "x": 107,
+          "y": 1081
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 17.17164179104478,
+          "symWidth": 13.52897278314311,
+          "text": "RUAN  ZILING ,  YOU  ARE TOO  SHAMELESS !  JUST  NOW  YOU EVEN  SAID  YOU  WOULD  TESTIFY  FOR BIG  BROTHER  YUNXIAO !",
+          "translation": "روان زيلينغ، يا لك من وقح! لقد قلتَ للتو إنك ستشهد لصالح الأخ الأكبر يونشياو!",
+          "width": 358,
+          "x": 252,
+          "y": 1311
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 19.70238095238095,
+          "symWidth": 13.96031746031746,
+          "text": "CASUALLY  DISPLAYING THE  GREAT  WIND  AND  CLOUD PALM  JUST  NOW ,  I'M  AFRAID  THIS NING  HANGFENG  HAS  ALREADY NOTICED  SOME  CLUES ,",
+          "translation": "بظهورك العفوي لمهارة راحة الريح السحابية العظيمة قبل قليل، أخشى أن نينغ هانغفينغ قد لاحظ بعض الأدلة بالفعل،",
+          "width": 341,
+          "x": 375,
+          "y": 2111
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 16.19565217391304,
+          "symWidth": 12.29347826086956,
+          "text": "AFTER  ALL ,  THE  NUMBER OF  UNJUSTLY  KILLED  SOULS  WHO  DIED UNDER  THIS  MOVE  IN  RED  MOON  CITY BACK  THEN  WASN'T  SMALL !",
+          "translation": "فَلْنَمُدّ العَينَ على روحهُم المَظلومة، الذين أُزهِقوا ظلماً في تلك الحركة بمديـنة القمر الأحمر في ذاك الزمان، فما كانوا بقليلين!",
+          "width": 323,
+          "x": 178,
+          "y": 2344
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 20.07216494845361,
+          "symWidth": 15.61736716891356,
+          "text": "THAT  WAS  JUST  TO STEADY  HIM ,  TO  PREVENT  HIM FROM  RUNNING  AWAY .  OTHERWISE , HOW  WOULD  WE  EXPLAIN  THIS TO  THE  TEN  THOUSAND STARS  VALLEY ?",
+          "translation": "كانت ذلك لأجل تهدئته، ومنعه من الهروب. وإلّا، فكيف نُبيّن ذلك لوادي العشرة آلاف نجم؟",
+          "width": 393,
+          "x": 362,
+          "y": 2807
+        }
+      ],
+      "imgHeight": 3460,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 19.6144578313253,
+          "symWidth": 16.06666666666667,
+          "text": "YOUR  OLDER  COUSIN IS  ALSO  DOING  THIS  FOR THE  GOOD  OF  RED  MOON CITY .  AS  FOR  MY  PERSONAL SAFETY ,  I  DISREGARDED IT  LONG  AGO !",
+          "translation": "وابن عمكم الأكبر يفعل ذلك أيضاً من أجل خير مدينة القمر الأحمر. أما سلامتي الشخصية، فقد تناسيتها منذ زمن بعيد!",
+          "width": 306,
+          "x": 69,
+          "y": 263
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 28.61904761904762,
+          "symWidth": 23.52380952380953,
+          "text": "LET'S  SEE HOW  YOU  GUYS  DIE TODAY ~~~",
+          "translation": "لنرَ كيف ستُسقى اليوم أرواحكم ~~",
+          "width": 342,
+          "x": 210,
+          "y": 657
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 19,
+          "symWidth": 17,
+          "text": "OUCH !",
+          "translation": "يا للقسوة!",
+          "width": 74,
+          "x": 501,
+          "y": 1768
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 19.85714285714286,
+          "symWidth": 13.42857142857143,
+          "text": "UNCLE ,  YOU CAN'T  BLAME--",
+          "translation": "يا عم، لا تلُم—",
+          "width": 168,
+          "x": 443,
+          "y": 2621
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 12.27272727272727,
+          "text": "DON'T  SPEAK .",
+          "translation": "لا تتكلّم.",
+          "width": 146,
+          "x": 314,
+          "y": 2786
+        }
+      ],
+      "imgHeight": 3460,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 30.78571428571428,
+          "text": "GREAT - WIND  AND .",
+          "translation": "الرياح العظيمة و...",
+          "width": 431,
+          "x": 178,
+          "y": 208
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 31.94444444444444,
+          "text": "CLOUD  PALM ?  WHERE  DID",
+          "translation": "كف يَمْنَى السَّحَاب؟ من أين تعلمته؟",
+          "width": 634,
+          "x": 74,
+          "y": 283
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 31.18181818181818,
+          "text": "YOU  LEARN  IT ?",
+          "translation": "أين اكتسبته؟",
+          "width": 360,
+          "x": 211,
+          "y": 355
+        }
+      ],
+      "imgHeight": 2233,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 397,
+          "symHeight": 91.22727272727273,
+          "symWidth": 58.22727272727273,
+          "text": "AS  EXPECTED , HE  SAW  THROUGH IT !!",
+          "translation": "كما توقعت، لقد كشف أمرها!!",
+          "width": 617,
+          "x": 95,
+          "y": 677
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 17.26086956521739,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "يحظر النقل دون إذن. وستُلاحَق قانونياً حال اكتشاف ذلك.",
+          "width": 475,
+          "x": 289,
+          "y": 1356
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 33.33333333333334,
+          "symWidth": 24.8974358974359,
+          "text": "THIS  CHAPTER  IS BROUGHT  TO  YOU BY  SCYTHE  TEAM",
+          "translation": "هذا الفصل مقدم لكم من فريق المناجل",
+          "width": 327,
+          "x": 237,
+          "y": 1841
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 23,
+          "symWidth": 19.58689839572192,
+          "text": "EXCLUSIVE  CHAPTERS  FIRST ON",
+          "translation": "فصول حصرية أولاً على",
+          "width": 386,
+          "x": 207,
+          "y": 2155
+        }
+      ],
+      "imgHeight": 2233,
+      "imgWidth": 800,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

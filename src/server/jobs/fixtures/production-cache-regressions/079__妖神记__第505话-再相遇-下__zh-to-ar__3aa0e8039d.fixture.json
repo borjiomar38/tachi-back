@@ -1,0 +1,655 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0079",
+  "jobId": "fixture-job-0079",
+  "licenseId": "fixture-license-0079",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 28.42857142857143,
+          "text": "聂 … 你 怎么 了 ?",
+          "translation": "نييه... ما بك؟",
+          "width": 227,
+          "x": 306,
+          "y": 219
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 31.27777777777778,
+          "symWidth": 27.98611111111111,
+          "text": "我 没事 , 只是 忽然 有点 眩晕 。",
+          "translation": "لا بأس، فقط داهمني دوار مفاجئ.",
+          "width": 152,
+          "x": 100,
+          "y": 844
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32.25,
+          "symWidth": 30.825,
+          "text": "似乎 有 什么 在 拉扯 我 的 意识 ……",
+          "translation": "كأن شيئًا ما يجذب وعيي بعيدًا...",
+          "width": 173,
+          "x": 130,
+          "y": 1046
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 30.5,
+          "symWidth": 25.91666666666666,
+          "text": "赤蟒 ! 赤蟒 ! 又 晕 了 ……",
+          "translation": "الأفعى الحمراء! الأفعى الحمراء! لقد أُصبت بدوار مرة أخرى...",
+          "width": 187,
+          "x": 142,
+          "y": 1571
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 33,
+          "symWidth": 34.5,
+          "text": "(  2",
+          "translation": "(2",
+          "width": 74,
+          "x": 869,
+          "y": 1659
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 33,
+          "text": "包子 漫畫",
+          "translation": "كوميك باوزي",
+          "width": 141,
+          "x": 612,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 24.40540540540541,
+          "symWidth": 20.67567567567568,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理, 更多 免費 漫畫 請 訪問",
+          "translation": "هذا الكوميك جمعته باوزي، لمزيد من الأعمال المجانية تفضل بزيارتنا",
+          "width": 525,
+          "x": 384,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 36,
+          "symWidth": 30.375,
+          "text": "● 最新 免费 漫画 中",
+          "translation": "● أحدث الكوميكس المجانية",
+          "width": 269,
+          "x": 42,
+          "y": 1915
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 49,
+          "symWidth": 54,
+          "text": "勝 动",
+          "translation": "المُنتصر للنقل",
+          "width": 140,
+          "x": 1060,
+          "y": 1943
+        }
+      ],
+      "imgHeight": 2013,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 32.33333333333334,
+          "symWidth": 29.2,
+          "text": "这 是 什么 力 量 , 竟能 把 我 拉 进来 ?",
+          "translation": "ما هذه القوة التي استولت عليّ وأدخلتني إلى هنا؟",
+          "width": 173,
+          "x": 716,
+          "y": 131
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 31,
+          "symWidth": 27.98333333333333,
+          "text": "这里 是 , 我 的 识 海 世界 。",
+          "translation": "هنا عالَمُ وعيي، بحرُ إدراكي.",
+          "width": 187,
+          "x": 120,
+          "y": 196
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 25.66666666666667,
+          "text": "师傅 !",
+          "translation": "يا سيدي!",
+          "width": 82,
+          "x": 838,
+          "y": 1217
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 30.5,
+          "symWidth": 26.36666666666667,
+          "text": "好久不见 , 聂 离 。",
+          "translation": "لم أرك منذ زمن طويل، يا ني لي.",
+          "width": 151,
+          "x": 121,
+          "y": 1234
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 46.75,
+          "text": "包子 漫畫",
+          "translation": "مانغا باوزي",
+          "width": 196,
+          "x": 111,
+          "y": 38
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 26.33333333333333,
+          "text": "师傅 !",
+          "translation": "يا سيدي!",
+          "width": 81,
+          "x": 141,
+          "y": 572
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 25.8,
+          "text": "我 好想 你 !",
+          "translation": "اشتقتُ إليك جدا!",
+          "width": 151,
+          "x": 657,
+          "y": 593
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.66666666666667,
+          "symWidth": 28.27777777777778,
+          "text": "傻 孩子 , 活 了 两 辈子 了 , 还 是 这般 模样 。",
+          "translation": "يا هذا الغبي، قد عشت حياتين، وما زلت على حالك.",
+          "width": 210,
+          "x": 112,
+          "y": 828
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 25,
+          "text": "聂 离 。",
+          "translation": "ني لي.",
+          "width": 82,
+          "x": 670,
+          "y": 1277
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32,
+          "symWidth": 28.95238095238095,
+          "text": "我 通过 一缕 意念 与 你 沟通 , 时间 有限 , 你 听 我 说 。",
+          "translation": "أتواصل معك بخيط من الأفكار، الوقت ضيق، فأصغِ إليَّ.",
+          "width": 257,
+          "x": 893,
+          "y": 1547
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 32,
+          "symWidth": 29.25,
+          "text": "师傅 已经 不 在 了 。",
+          "translation": "سيدك لم يعد بيننا.",
+          "width": 174,
+          "x": 401,
+          "y": 1588
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.96666666666667,
+          "symWidth": 30.41428571428571,
+          "text": "有 一股 强大 的 意 念 , 已经 慢慢 注 意 到 了 你 的 存在 。",
+          "translation": "هناك إرادة عظيمة\nبدأت تراعي وجودك ببطء.",
+          "width": 258,
+          "x": 776,
+          "y": 113
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 32.66666666666666,
+          "symWidth": 26.5,
+          "text": "师傅 , 您 说 。",
+          "translation": "يا أستاذ، قل لي.",
+          "width": 187,
+          "x": 125,
+          "y": 623
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 31.75,
+          "symWidth": 29.31071428571428,
+          "text": "它 的 力量 远超 你 的 想象 , 若是 被 它 盯上 , 后果 不堪设想 。",
+          "translation": "قوتها تفوق خيالك،\nإن وقعت تحت رصدها، العواقب لا تُحتمل.",
+          "width": 250,
+          "x": 933,
+          "y": 623
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 32.61111111111111,
+          "symWidth": 28.77777777777778,
+          "text": "师傅 , 这 意念 是 什么 , 你 可 知道 ?",
+          "translation": "يا أستاذ، ما هذه الإرادة؟ هل تعرف؟",
+          "width": 210,
+          "x": 521,
+          "y": 902
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 32.5,
+          "symWidth": 28.75,
+          "text": "具体 是 什么 , 我 也 不清楚 。",
+          "translation": "لا أدري تمامًا ما هي.",
+          "width": 186,
+          "x": 142,
+          "y": 1390
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 31.75,
+          "symWidth": 28.85,
+          "text": "不过 , 我 也 坚持 不了 多 久 , 你 必须 尽快 行动 。",
+          "translation": "لكن لا أستطيع الاستمرار طويلًا،\nلازم تتحرك بسرعة.",
+          "width": 174,
+          "x": 981,
+          "y": 1530
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 31.66666666666667,
+          "symWidth": 29.57936507936508,
+          "text": "但 我 可以 施展 秘 法 , 暂时 屏蔽 它 的 感知 。",
+          "translation": "لكن يمكنني استخدام سرٍّ\nليحجُب إدراكها مؤقتًا.",
+          "width": 246,
+          "x": 259,
+          "y": 1539
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 31.33333333333333,
+          "symWidth": 28.02777777777778,
+          "text": "在 这 片 秘境 的 下方 , 存在 着 一股 强大 的 力 量 。",
+          "translation": "تحت هذه الأرض الغامضة تكمن قوة عظمى.",
+          "width": 208,
+          "x": 152,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 32.33333333333334,
+          "symWidth": 29.43650793650794,
+          "text": "这 股 力量 与 圣帝 有关 , 若是 任由 它 继续 存在 ,",
+          "translation": "هذه القوة مرتبطة بالإمبراطور المقدس، وإن تركت دون كبح،",
+          "width": 242,
+          "x": 762,
+          "y": 195
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 32,
+          "symWidth": 31.51190476190476,
+          "text": "整个 龙 墟 界 域 都会 陷入 危机 。",
+          "translation": "سينزلق عالم أنقاض التنين بأسره إلى هاوية الخطر.",
+          "width": 222,
+          "x": 892,
+          "y": 427
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 31.66666666666667,
+          "symWidth": 29.05,
+          "text": "与 圣帝 有关 的 力量 ? 难道 说 ……",
+          "translation": "قوة مرتبطة بالإمبراطور المقدس؟ هل يعني ذلك...؟",
+          "width": 173,
+          "x": 137,
+          "y": 744
+        },
+        {
+          "angle": 0,
+          "height": 199,
+          "symHeight": 32.08,
+          "symWidth": 28.9,
+          "text": "没错 , 你 必 须 尽快 瓦解 这 股 力量 , 否则 后患 无 穷 。",
+          "translation": "بالضبط، يجب أن تحطم هذه القوة بسرعة، وإلا ستكون النتيجة كارثية.",
+          "width": 175,
+          "x": 696,
+          "y": 918
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 32.4375,
+          "symWidth": 30.0625,
+          "text": "今天 也 太 热闹 了 , 又来 了 这 么 多人 。",
+          "translation": "اليوم مثير جداً، هكذا أعداد من الزائرين مجدداً.",
+          "width": 141,
+          "x": 651,
+          "y": 1293
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 31,
+          "symWidth": 27.2,
+          "text": "该 清理 垃圾 了 !",
+          "translation": "حان وقت تنظيف هذه القمامة!",
+          "width": 172,
+          "x": 970,
+          "y": 1536
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 31.93333333333333,
+          "symWidth": 27.35,
+          "text": "聂 离 , 一切 小心 , 师傅 相信 你 。",
+          "translation": "نيي لي، كن حذراً، فأستاذك يثق بك.",
+          "width": 175,
+          "x": 661,
+          "y": 680
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 32,
+          "symWidth": 24.1,
+          "text": "师傅 , 我 明 白 了 。",
+          "translation": "أيها المعلم، قد أدركت.",
+          "width": 171,
+          "x": 102,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 31.25,
+          "symWidth": 29.375,
+          "text": "我 一定 会 找到 这 股 力量 的 源 头 , 将 它 彻底 毁灭 !",
+          "translation": "سأجد مصدر هذه القوة، وسأدمّرها حتى لا تبقى.",
+          "width": 207,
+          "x": 137,
+          "y": 896
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 20,
+          "text": "唔 !",
+          "translation": "همم!",
+          "width": 46,
+          "x": 996,
+          "y": 1470
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 25.5,
+          "text": "你 醒 了 !",
+          "translation": "لقد أفيقت!",
+          "width": 119,
+          "x": 501,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 32,
+          "symWidth": 27.36111111111111,
+          "text": "赤 蟒 , 你 刚才 怎么 了 ? 忽然 晕倒 了 。",
+          "translation": "تشيمانغ، ما الذي حدث لك؟ أُغمي عليك فجأة.",
+          "width": 210,
+          "x": 613,
+          "y": 403
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 34.5,
+          "symWidth": 31.69047619047619,
+          "text": "我 没事 , 不过 我 们 必须 加快 速度 了 。",
+          "translation": "لا بأس بي، لكن ينبغي أن نُسرع الخطى.",
+          "width": 248,
+          "x": 287,
+          "y": 808
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 31.3,
+          "symWidth": 30,
+          "text": "秘境 深处 有 一股 强大 的 力量 , 我们 必须 瓦解 它 !",
+          "translation": "في أعماق السرّ، ثمة قوة هائلة. وجب أن نُحطمها.",
+          "width": 188,
+          "x": 126,
+          "y": 1221
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 30.5,
+          "symWidth": 26.16666666666666,
+          "text": "出发 ! 秘境 深处 !",
+          "translation": "انطلقوا! نحو أعماق السرّ!",
+          "width": 172,
+          "x": 772,
+          "y": 1245
+        }
+      ],
+      "imgHeight": 1813,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 50,
+          "symWidth": 43.2,
+          "text": "↑  包子 漫畫",
+          "translation": "رواية باوزي المصورة",
+          "width": 260,
+          "x": 984,
+          "y": 33
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 33.5,
+          "text": "包子 漫畫",
+          "translation": "رواية باوزي المصورة",
+          "width": 141,
+          "x": 612,
+          "y": 41
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 20.59090909090909,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問",
+          "translation": "هذه الرواية المصوّرة مجمّعة ومنظمة من قبل باوزي، للمزيد من القصص المجانية يُرجى الزيارة",
+          "width": 525,
+          "x": 384,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 30.83333333333333,
+          "text": "居然 敢耍 我 …",
+          "translation": "كيف تجرؤ على خداعي...",
+          "width": 206,
+          "x": 710,
+          "y": 779
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 32.33333333333334,
+          "symWidth": 27.94444444444444,
+          "text": "嘁 , 再加 上 这 的 雾气 , 真 令人 火大 。",
+          "translation": "تَفّ، مع هذه الضبابية أيضاً، إنه لشيء يحرق الأعصاب.",
+          "width": 208,
+          "x": 745,
+          "y": 962
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 32,
+          "symWidth": 30.11904761904762,
+          "text": "那 家伙 怎么 一 眨眼 就 不见了 ?",
+          "translation": "كيف اختفى ذلك الرجل في غمضة عين؟",
+          "width": 225,
+          "x": 142,
+          "y": 1007
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 31.66666666666667,
+          "symWidth": 31.45634920634921,
+          "text": "可 别让 我 碰到 长 眼 的 妖 宗 弟子 …………",
+          "translation": "لا تجعلني ألتقي بأحد من تلامذة طائفة الشياطين ذوي البصيرة الحادة...",
+          "width": 207,
+          "x": 152,
+          "y": 1328
+        }
+      ],
+      "imgHeight": 2013,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

@@ -1,0 +1,1664 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0089",
+  "jobId": "fixture-job-0089",
+  "licenseId": "fixture-license-0089",
+  "pageCount": 23,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "008__003.jpg",
+    "009__001.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 67.41666666666667,
+          "symWidth": 62.96666666666667,
+          "text": "驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO",
+          "translation": "هل صُنَّاع التنانين أضعف المِهن؟ أنا دراكو ماجسترو",
+          "width": 412,
+          "x": 139,
+          "y": 1119
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 9.8,
+          "symWidth": 9.4,
+          "text": "GEMIN",
+          "translation": "جيمين",
+          "width": 29,
+          "x": 547,
+          "y": 1421
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 35.1,
+          "symWidth": 23.05,
+          "text": "READ AT",
+          "translation": "اقرأ على",
+          "width": 314,
+          "x": 352,
+          "y": 1474
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 12.92857142857143,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 163,
+          "x": 329,
+          "y": 1605
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.77777777777778,
+          "text": "NEW  COMICS",
+          "translation": "قصص جديدة",
+          "width": 153,
+          "x": 427,
+          "y": 1669
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 11.8,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمعٌ نشط",
+          "width": 183,
+          "x": 497,
+          "y": 1729
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 18.5,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 71,
+          "x": 508,
+          "y": 2139
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 32.33333333333334,
+          "symWidth": 23,
+          "text": "www",
+          "translation": "www",
+          "width": 23,
+          "x": 385,
+          "y": 2198
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17,
+          "symWidth": 16.01666666666667,
+          "text": "ABAO , XIAO  JI",
+          "translation": "أباو، شياو جي",
+          "width": 101,
+          "x": 517,
+          "y": 2546
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.5,
+          "symWidth": 16.28846153846154,
+          "text": "I  THOUGHT YOU  DIDN'T HAVE  HUMAN FORMS ...",
+          "translation": "ظننتُ أنهم لا يملكون أشكالاً بشرية...",
+          "width": 162,
+          "x": 480,
+          "y": 2739
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 11.92307692307692,
+          "text": "嬉皮 漫画",
+          "translation": "هِيبي مانغا",
+          "width": 168,
+          "x": 11,
+          "y": 4121
+        }
+      ],
+      "imgHeight": 4259,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 17.17391304347826,
+          "text": "CHAIN  LIGHTNING :  CHARGING",
+          "translation": "شِلَّةُ الصَّواعِقِ: جارِيُ التَّشْحِينِ",
+          "width": 408,
+          "x": 166,
+          "y": 781
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 19.16964285714286,
+          "symWidth": 13.86916208791209,
+          "text": "CHAIN  LIGHTNING :  RELEASES  A  BOLT  OF  LIGHTNING THAT  JUMPS  BETWEEN  ENEMY  TARGETS  10  TIMES . EACH  JUMP  INCREASES  THE  NEXT  JUMP'S  DAMAGE  BY 30 % .  THE  BLUE  DRAGON  ITSELF  CAN  ACT  AS  A  RELAY .",
+          "translation": "شِلَّةُ الصَّواعِقِ: تُطْلِقُ سَهْمَ صاعِقَةٍ يَقْفِزُ بَيْنَ الأَعْدَاءِ عَشَرَ مَرّاتٍ. كُلُّ قَفْزَةٍ تَزِيدُ ضَرَرَ التَّالِيَةِ بِمِئَةِ ثَلَاثِينَ فِي المِئَةِ. وَالتِّنانُ الأَزْرَقُ نَفْسُهُ قادِرٌ عَلَى العَمَلِ كَوَصْلٍ.",
+          "width": 542,
+          "x": 67,
+          "y": 1194
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 17.625,
+          "text": "HAHAHA !!",
+          "translation": "هاهاها!!",
+          "width": 136,
+          "x": 160,
+          "y": 1682
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 19.57575757575757,
+          "symWidth": 15.93939393939394,
+          "text": "BLUE  DRAGON  III :  LEVEL INCREASED  TO  78 !",
+          "translation": "التِّنانُ الأَزْرَقُ الثالثُ: تَرْقِيَةٌ إلى المُسْتَوَى ٧٨!",
+          "width": 308,
+          "x": 311,
+          "y": 2391
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 17.77304964539007,
+          "symWidth": 16.52712765957447,
+          "text": "LOOKS  LIKE ABAO  CAN'T  WAIT TO  SEE  WHAT'S DIFFERENT  ABOUT THE  HUMAN FORM .",
+          "translation": "يَبْدُو أَنَّ أبَاوَ لا يَسْتَطِيعُ مَنْتَظَرَةَ مَكْمَنِ الاخْتِلَافِ فِي الشَّكْلِ الإِنسَانِيِّ.",
+          "width": 243,
+          "x": 393,
+          "y": 3115
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 18.28571428571428,
+          "symWidth": 16.54698242933537,
+          "text": "THIS  KID PROBABLY DOESN'T KNOW THAT  THE  HUMAN FORM  DOESN'T GRANT  NEW SKILLS ...",
+          "translation": "هذَا الفَتى لَعَلَّهُ يَجْهَلُ أَنَّ الشَّكْلَ الإِنسَانِيَّ لا يَفْتَحُ بَابَ مَهَارَاتٍ جَدِيدَةٍ...",
+          "width": 223,
+          "x": 104,
+          "y": 3930
+        }
+      ],
+      "imgHeight": 4261,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 17.46783625730994,
+          "symWidth": 13.53216374269006,
+          "text": "NETHERWORLD  GUARDS :  THE  POISON  DRAGON  SPLITS  ITSELF  TO CREATE  TWO  SUICIDE - TYPE  GUARDS .  THEY  CONTINUOUSLY SPRAY  POISON  AT  ENEMIES  AND  EXPLODE  UPON  CONTACT  OR WHEN  DESTROYED ,  CREATING  A  POISONOUS  AREA .",
+          "translation": "حُرَّاس العالم السفلي: التنين السام ينقسم ليُشكّل حارسين انتحاريين. يرشون السم باستمرار على الأعداء ويفجرون أنفسهم عند الملامسة أو التدمير، مُحدثين منطقة سامة.",
+          "width": 633,
+          "x": 21,
+          "y": 201
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 16,
+          "symWidth": 10.66666666666667,
+          "text": "Jl ... !",
+          "translation": "جِل...!",
+          "width": 50,
+          "x": 311,
+          "y": 524
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 16.5,
+          "symWidth": 14.57142857142857,
+          "text": "POISON  DRAGON  III :  LEVEL INCREASED  TO  77 !",
+          "translation": "تنين السم المستوى الثالث: ارتفع المستوى إلى ٧٧!",
+          "width": 307,
+          "x": 343,
+          "y": 3027
+        }
+      ],
+      "imgHeight": 3313,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18,
+          "symWidth": 16.59111523397238,
+          "text": "NICE  ONE , XIAO  JI !  THE NETHERWORLD GUARDS IN  HUMAN FORM  ARE  ALSO HUMANOID .",
+          "translation": "عمل رائع، شياو جي! حرَّاس العالم السفلي في هيئة بشرية هم أيضًا كائنات شبيهة بالبشر.",
+          "width": 244,
+          "x": 85,
+          "y": 921
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 17.71428571428572,
+          "symWidth": 16.37953514739229,
+          "text": "AT LEAST  MORE INTIMIDATING THAN  THE HATCHLING FORM ...  I GUESS ?",
+          "translation": "على الأقل أكثر رعبًا من الهيئة الفتية... أليس كذلك؟",
+          "width": 180,
+          "x": 429,
+          "y": 1140
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 16.57142857142857,
+          "symWidth": 15.1891156462585,
+          "text": "TODAY  IS  GOING INCREDIBLY SMOOTHLY - WE'RE LEVELING  UP NONSTOP  AND  EVEN UNLOCKING  NEW FORMS !",
+          "translation": "اليوم يسير بسلاسة لا تصدق - نرتقي المستويات بلا توقف ونفتح أشكالًا جديدة!",
+          "width": 245,
+          "x": 384,
+          "y": 2416
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 15,
+          "symWidth": 13.77595899470899,
+          "text": "EVERYONE ,  GO  ALL OUT !  PUSH  STRAIGHT TO  LEVEL  90  FOR THE  FOURTH ADVANCEMENT  AND CLEAR  THIS  NEST !",
+          "translation": "يا الجميع، اجتهدوا حتى النهاية! تقدّموا مباشرة إلى المستوى ٩٠ للارتقاء الرابع وامحوا هذا العش!",
+          "width": 235,
+          "x": 374,
+          "y": 3003
+        }
+      ],
+      "imgHeight": 3314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 27.55555555555556,
+          "text": "REPRESENT",
+          "translation": "يُمثِّل",
+          "width": 189,
+          "x": 29,
+          "y": 99
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 17.33333333333333,
+          "symWidth": 16.00357442462706,
+          "text": "AND  JUST  LIKE  THAT ,  WE KEPT  SLAUGHTERING  THE UNDEAD  BEASTS  POURING OUT  OF  THE  NEST .",
+          "translation": "وهكذا، واصلنا ذبح الوحوش الأموات التي تنهال علينا من العش.",
+          "width": 332,
+          "x": 300,
+          "y": 471
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 18.3047619047619,
+          "symWidth": 13.63809523809524,
+          "text": "LAVA  BURST :  ERUPTS  FLAMES  WITHIN  THE  TARGET AREA  TO  FORM  A  LAVA  POOL  TARGETS  INSIDE  WILL GRADUALLY  SINK  INTO  THE  MAGMA  AND  TAKE MASSIVE  CONTINUOUS  DAMAGE .",
+          "translation": "انفجار الحمم: يبعث ألسنة لهب في المنطقة المستهدفة ليشكل بركة من الحمم، فتغرق الأهداف ببطء في الصهارة وتتعرض لأضرار ضخمة متواصلة.",
+          "width": 508,
+          "x": 46,
+          "y": 1330
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 18,
+          "symWidth": 15.26940911499735,
+          "text": "ROARING  THUNDER :  ROARS  AT  A  TARGET  AREA , SUMMONING  LIGHTNING  STRIKES  TO  FORM  A  STORM ZONE  THAT  DEALS  HEAVY  LIGHTNING  DAMAGE  AND PARALYZES  ENEMIES .",
+          "translation": "رعد الزئير: يزأر على المنطقة المستهدفة، مستدعيًا ضربات برق لتشكيل عاصفة تسبّب أضرارًا كهربائية بالغة وتشّل الأعداء.",
+          "width": 597,
+          "x": 51,
+          "y": 2439
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18,
+          "symWidth": 14.05555555555556,
+          "text": "A  FULL  FOUR  HOURS  PASSED , UNTIL  NIGHTFALL .",
+          "translation": "مرّ أربع ساعات كاملة حتى حلول الظلام.",
+          "width": 331,
+          "x": 341,
+          "y": 2681
+        }
+      ],
+      "imgHeight": 3313,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 18.2,
+          "symWidth": 14.12521100047416,
+          "text": "THIRTY - NINE  MILLION  STAR  ANNIHILATION :  SUMMONS A  STAR  CORE  THAT  CONTINUOUSLY  DIVIDES  AND INCREASES  IN  POWER ,  ULTIMATELY  DETONATED  BY THE  ASTRAL  DRAGON ,  DEALING  MASSIVE  DAMAGE . INITIAL  SPLIT  COUNT :  39  MILLION .",
+          "translation": "التدمير النجمِي بتسعةٍ وثلاثين مليون: يستدعي نواة نجمية تتكاثر باستمرار وتزداد قوتها، تُفجر في النهاية بواسطة التنين النجمِي، مسببة دمارا هائلا. عدد الانقسامات الأولية: تسعة وثلاثون مليون.",
+          "width": 565,
+          "x": 92,
+          "y": 299
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 19.5,
+          "symWidth": 13.6983665559247,
+          "text": "POISON  ACTIVATION :  ACTIVATES  CURRENT  POISON  INTO PARTICLES  THAT  AUTOMATICALLY  SPLIT ,  SPREAD ,  AND STACK .  SWITCHING  POISON  TYPES  DOES  NOT  AFFECT ALREADY  ACTIVATED  PARTICLES .",
+          "translation": "تفعيل السم: يُحول السم الجاري إلى جزيئات تنقسم وتنتشر وتتراكم تلقائياً. تغيير نوع السم لا يؤثر على الجزيئات المنشطة بالفعل.",
+          "width": 580,
+          "x": 60,
+          "y": 1368
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16.90740740740741,
+          "symWidth": 14.58796296296296,
+          "text": "RELEASES  MULTIPLE  WIND BLADES  THAT  DAMAGE  NEARBY  ENEMIES  AND REMOVE  ALL  THEIR  BUFFS . SHADOW BURST :",
+          "translation": "يطلق عدة شفرات رياح تُصيب الأعداء القريبين وتزيل عنهم جميع التعزيزات. انفجار الظل:",
+          "width": 489,
+          "x": 145,
+          "y": 2178
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 18,
+          "symWidth": 13.7858266590389,
+          "text": "WE  FINALLY  CLEARED  THE  TIDE OF  CORPSE  BEASTS  AT  THE  CAVE ENTRANCE ,  NOW  WE  CAN  GO DEEP  INTO  THE  NEST .",
+          "translation": "لقد تطهرنا أخيراً من وابل وحوش الجثث عند مدخل الكهف، ولذا يمكننا الغوص أعمق في العش.",
+          "width": 358,
+          "x": 39,
+          "y": 2370
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.78571428571429,
+          "text": "#teto",
+          "translation": "",
+          "width": 169,
+          "x": 520,
+          "y": 2701
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 16.5,
+          "symWidth": 14.39091614906832,
+          "text": "NATURAL  ASSIMILATION  -  SHADOW  DRAGON  KING CONTRACT :  SUMMONS  THE  SHADOW  DRAGON  KING : OBSIDIAN  BLADE .  THE  SHADOW  DRAGON  KING'S  LEVEL  IS THE  SAME  AS  THE  USER'S  LEVEL",
+          "translation": "الاستيعاب الطبيعي - عقد ملك التنين الظليل: يستدعي ملك التنين الظليل: شفرة الأوبسيديان. مستواه يعادل مستوى المُحِدِث.",
+          "width": 601,
+          "x": 49,
+          "y": 3201
+        }
+      ],
+      "imgHeight": 3521,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.75,
+          "symWidth": 16.10208333333333,
+          "text": "AND I , ALONG  WITH  ALL  MY  DRAGON PETS ,  HAVE  REACHED  LEVEL  90 .",
+          "translation": "وأنا، مع جميع حيواناتي التنينية، بلغت المستوى التاسع والتسعين.",
+          "width": 415,
+          "x": 199,
+          "y": 279
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 18.2,
+          "symWidth": 12.68801495016611,
+          "text": "FROST  WALL : SUMMONS  SOLID  ICE  TO  FORM  A  HIGHLY DURABLE  BARRIER .  WHEN  IT  FORMS  AN  ENCLOSURE ,  ENEMIES INSIDE  HAVE  THEIR  MOVEMENT  SPEED  REDUCED  BY  75 %  AND GRADUALLY  FREEZE .",
+          "translation": "جدار الصقيع: يستدعي جليدًا صلبًا ليشكل حاجزًا متينًا للغاية، وعندما يُحكم إغلاقه، يُبطأ عدو المحيطون به بنسبة ٧٥٪ ويبدأون بالتجمد تدريجيًا.",
+          "width": 568,
+          "x": 57,
+          "y": 1476
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23,
+          "symWidth": 19.71428571428572,
+          "text": "FINAL STRIKE !",
+          "translation": "ضربة النهاية!",
+          "width": 142,
+          "x": 91,
+          "y": 2472
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 19.2,
+          "symWidth": 14.75985070785071,
+          "text": "DIVINE  BONE  DESCENT :  USABLE  ONLY  WHEN  THE DIVINE  BONE GAUNTLET  IS  EQUIPPED .  GRANTS DIVINE  BONE  ARMOR  ( NO  EQUIPMENT  SLOT  USED ) , INCREASING  ALL  ATTRIBUTES  BY  300 % .",
+          "translation": "هبوط العظام الإلهية: يُستخدم فقط عند ارتداء قفاز العظام الإلهية. يمنح درع العظام الإلهية (دون شغل موضع معدات)، مضاعفًا جميع الصفات بمقدار ثلاثمائة بالمائة.",
+          "width": 561,
+          "x": 67,
+          "y": 2984
+        }
+      ],
+      "imgHeight": 3522,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 34.25,
+          "text": "快 看 漫画",
+          "translation": "اقرأ المانغا سريعًا",
+          "width": 135,
+          "x": 81,
+          "y": 1478
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17,
+          "symWidth": 10.57792207792208,
+          "text": "EMERALD  DRAGON  III :  LEVEL INCREASED  TO  90 !",
+          "translation": "التنين الزمردي III: ارتفع المستوى إلى 90!",
+          "width": 227,
+          "x": 388,
+          "y": 1928
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15.66666666666667,
+          "symWidth": 10.83405483405483,
+          "text": "BLACK  DRAGON III :  LEVEL INCREASED  TO  90 !",
+          "translation": "التنين الأسود III: ارتفع المستوى إلى 90!",
+          "width": 212,
+          "x": 33,
+          "y": 2321
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 15.5,
+          "symWidth": 11.04761904761905,
+          "text": "POISON  DRAGON  III :  LEVEL INCREASED  TO  90 !",
+          "translation": "التنين السام III: ارتفع المستوى إلى 90!",
+          "width": 226,
+          "x": 457,
+          "y": 2387
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.5,
+          "symWidth": 16.18611111111111,
+          "text": "EVERYONE , PREPARE  TO ENTER  THE CAVE !",
+          "translation": "أيها الجميع، استعدوا لدخول الكهف!",
+          "width": 170,
+          "x": 428,
+          "y": 2871
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 15.5,
+          "symWidth": 13.95454545454545,
+          "text": "LU  FAN :  LEVEL INCREASED  TO  90 !",
+          "translation": "لو فان: ارتفع المستوى إلى 90!",
+          "width": 217,
+          "x": 46,
+          "y": 2898
+        }
+      ],
+      "imgHeight": 3523,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 16.08333333333333,
+          "text": "HMPH , HAHAHA !",
+          "translation": "هممم، هاهاها!",
+          "width": 115,
+          "x": 113,
+          "y": 134
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 13.15151515151515,
+          "symWidth": 11.63636363636364,
+          "text": "BLUE  DRAGON  III :  LEVEL INCREASED  TO  90 !",
+          "translation": "التنين الأزرق الثالث: ارتفع المستوى إلى ٩٠!",
+          "width": 221,
+          "x": 192,
+          "y": 301
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 21.41666666666667,
+          "symWidth": 20.66666666666667,
+          "text": "HEY , WATCH IT !",
+          "translation": "مهلاً، انتبه!",
+          "width": 110,
+          "x": 444,
+          "y": 428
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 15.4375,
+          "symWidth": 13.03125,
+          "text": "ICE  DRAGON  III :  LEVEL INCREASED  TO  90 !",
+          "translation": "التنين الجليدي الثالث: ارتفع المستوى إلى ٩٠!",
+          "width": 236,
+          "x": 438,
+          "y": 625
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 13.5,
+          "symWidth": 13.02941176470588,
+          "text": "NEW  SKILL  OBTAINED : DOOMSDAY  CALAMITY !",
+          "translation": "مهارة جديدة مكتسبة: كارثة القيامة!",
+          "width": 226,
+          "x": 442,
+          "y": 863
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 17.5,
+          "symWidth": 16.875,
+          "text": "YING YING ~",
+          "translation": "ينغ ينغ ~",
+          "width": 77,
+          "x": 583,
+          "y": 1047
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.16666666666667,
+          "text": "GRR ...",
+          "translation": "غrrrr...",
+          "width": 74,
+          "x": 419,
+          "y": 1171
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 13,
+          "symWidth": 12.07894736842105,
+          "text": "STARRY  SKY  DRAGON  III : LEVEL  INCREASED  TO  90 !",
+          "translation": "تنين السماء النجمية الثالث: ارتفع المستوى إلى ٩٠!",
+          "width": 240,
+          "x": 35,
+          "y": 1424
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.41666666666667,
+          "symWidth": 14.66666666666667,
+          "text": "..LOOKS LIKE ,",
+          "translation": "يبدو أنّه،",
+          "width": 106,
+          "x": 131,
+          "y": 2618
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.76829268292683,
+          "symWidth": 16.23048780487805,
+          "text": "COMMANDER XU  HAS  ALSO CLEARED  THE CORPSE  PUPPETS ON  HIS  SIDE .",
+          "translation": "لقد قضى القائد شو أيضًا على دمى الجثث في صفه.",
+          "width": 239,
+          "x": 293,
+          "y": 2773
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 35.33333333333334,
+          "symWidth": 32,
+          "text": "ADD",
+          "translation": "أضف",
+          "width": 35,
+          "x": 14,
+          "y": 3717
+        }
+      ],
+      "imgHeight": 4121,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 17.78571428571428,
+          "symWidth": 16.22497294372294,
+          "text": "OVER  300,000 KILLED  IN  FOUR HOURS ,  THE WHOLE  TEAM  HAS REACHED  LEVEL 90 .",
+          "translation": "أكثر من ٣٠٠,٠٠٠ قُتلوا في أربع ساعات، الفريق بأكمله وصل إلى المستوى ٩٠.",
+          "width": 236,
+          "x": 410,
+          "y": 341
+        },
+        {
+          "angle": 0,
+          "height": 243,
+          "symHeight": 18.40079365079365,
+          "symWidth": 16.5534188034188,
+          "text": "AFTER  LEVEL 90 ,  NO  MORE EXPERIENCE  CAN BE  GAINED - YOU MUST  COMPLETE THE  FOURTH ADVANCEMENT  TO CONTINUE LEVELING .",
+          "translation": "بعد المستوى ٩٠، لا يمكن اكتساب المزيد من الخبرة - يجب إتمام التقدم الرابع للاستمرار في الارتقاء.",
+          "width": 245,
+          "x": 93,
+          "y": 552
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.59574468085106,
+          "symWidth": 16.4468085106383,
+          "text": "SOUL  MEDAL  FINE  QUALITY :  CURRENT COUNT - 304,127  SOULS .",
+          "translation": "ميدالية الروح ذات جودة فائقة: العدد الحالي - ٣٠٤,١٢٧ أرواح.",
+          "width": 487,
+          "x": 103,
+          "y": 1349
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 17.84444444444444,
+          "symWidth": 16.50172780435938,
+          "text": "BUT  NOW  ISN'T THE  TIME  FOR  FOURTH ADVANCEMENT .  IF  WE DON'T  IDENTIFY  THE SOURCE  OF  THAT BLACK  AURA  IN THE  CAVE ,",
+          "translation": "لكن ليس الآن وقت التقدم الرابع. إن لم نكشف مصدر الهالة السوداء في الكهف،",
+          "width": 295,
+          "x": 333,
+          "y": 1853
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 18.72619047619048,
+          "symWidth": 16.29232804232804,
+          "text": "THE  BEAST  TIDE WILL  RETURN , AND  ALL EFFORTS  WILL BE  WASTED .",
+          "translation": "سيرجُع مد الوحوش، وستضيع كل الجهود سدى.",
+          "width": 214,
+          "x": 86,
+          "y": 3007
+        }
+      ],
+      "imgHeight": 4122,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 120.6666666666667,
+          "symWidth": 112,
+          "text": "IL  M",
+          "translation": "آيل إم",
+          "width": 239,
+          "x": 239,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.25,
+          "symWidth": 16.19285714285714,
+          "text": "HMPH ... STOP  TRYING TO  ACT COOL .",
+          "translation": "هممم... كف عن التظاهر بالبرودة.",
+          "width": 186,
+          "x": 76,
+          "y": 1737
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 17.5,
+          "symWidth": 15.35813492063492,
+          "text": "THIS  TIME , I'LL  DEFINITELY FINISH  BEFORE YOU !",
+          "translation": "هذه المرة، سأحسم الأمر قبلك بلا شك!",
+          "width": 201,
+          "x": 443,
+          "y": 1803
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 17.83333333333333,
+          "symWidth": 16.0836038961039,
+          "text": "XINGCHEN , GUARD  THE ENTRANCE- DON'T  LET  ANY BEASTS ESCAPE .",
+          "translation": "شينغتشين، احرس المدخل—لا تدع وحوشًا تهرب.",
+          "width": 202,
+          "x": 373,
+          "y": 2903
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 20,
+          "symWidth": 18.06481481481481,
+          "text": "THE  REST , FOLLOW  ME- WE'LL COMPLETELY CLEAR  THIS CAVE !",
+          "translation": "أما البقية، فاتبعوني—سننظف هذه الكهف حتى النهاية!",
+          "width": 191,
+          "x": 119,
+          "y": 3714
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 27.4,
+          "text": "ROAR !",
+          "translation": "زئير!",
+          "width": 140,
+          "x": 468,
+          "y": 3892
+        }
+      ],
+      "imgHeight": 4121,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.28571428571428,
+          "symWidth": 15.48268398268398,
+          "text": "XIAO  JI  AND WINTER ,  DON'T FALL  BEHIND !",
+          "translation": "شياو جي والشتاء، لا تتأخرا!",
+          "width": 198,
+          "x": 438,
+          "y": 564
+        },
+        {
+          "angle": 0,
+          "height": 309,
+          "symHeight": 300,
+          "symWidth": 221,
+          "text": "瘦 一",
+          "translation": "",
+          "width": 297,
+          "x": 20,
+          "y": 1476
+        }
+      ],
+      "imgHeight": 3468,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 15.85714285714286,
+          "text": "10  MINUTES  LATER",
+          "translation": "بعد عشر دقائق",
+          "width": 233,
+          "x": 35,
+          "y": 1755
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 11,
+          "text": "嬉皮 漫画",
+          "translation": "",
+          "width": 169,
+          "x": 10,
+          "y": 1963
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 13.375,
+          "text": "THE  BEAST  TIDE  NEST",
+          "translation": "عش موجة الوحش",
+          "width": 237,
+          "x": 402,
+          "y": 2455
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 15.66666666666667,
+          "symWidth": 13.32659932659933,
+          "text": "CURRENT  TOXIN  -  FLUORESCENT MUSHROOM :  CAUSES  THE  SELF TO  EMIT  FLUORESCENCE",
+          "translation": "السم الحالي – فطر متلألئ: يسبب للإصدار الذاتي للتلألؤ",
+          "width": 324,
+          "x": 339,
+          "y": 2579
+        }
+      ],
+      "imgHeight": 3468,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 33.42857142857143,
+          "symWidth": 21.57142857142857,
+          "text": "HISS ...",
+          "translation": "صحيح...",
+          "width": 147,
+          "x": 88,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 101,
+          "symWidth": 51,
+          "text": "! ?",
+          "translation": "!؟",
+          "width": 122,
+          "x": 488,
+          "y": 1613
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 19,
+          "text": "GUH .... !!",
+          "translation": "آه...!!",
+          "width": 140,
+          "x": 124,
+          "y": 2195
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 18.5,
+          "symWidth": 16.17146164021164,
+          "text": "... I'VE NEVER  SEEN XIAOYE  THIS  ANGRY , IT'S  LIKE  HE'S ENCOUNTERED  A MORTAL  ENEMY ,",
+          "translation": "... لم أرَ شياو يي يغضب هكذا من قبل، كأنه أمام عدو مميت",
+          "width": 282,
+          "x": 331,
+          "y": 2794
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.16666666666667,
+          "symWidth": 17.22009518259518,
+          "text": "BEFORE  WE SEE  CLEARLY WHO  THE  ENEMY IS ,  WE'D  BETTER NOT  ACT RASHLY !",
+          "translation": "قبل أن نُدرك من هو العدو بوضوح، من الحكمة ألا نتصرف بتهور!",
+          "width": 217,
+          "x": 70,
+          "y": 3023
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 28.4,
+          "text": "你  快 看 漫画",
+          "translation": "",
+          "width": 185,
+          "x": 17,
+          "y": 3316
+        }
+      ],
+      "imgHeight": 3470,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 19.85714285714286,
+          "text": "HISS ...",
+          "translation": "صهيل...",
+          "width": 137,
+          "x": 430,
+          "y": 307
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 67,
+          "symWidth": 23,
+          "text": "!!",
+          "translation": "!!",
+          "width": 71,
+          "x": 470,
+          "y": 1521
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 23,
+          "symWidth": 16.71428571428572,
+          "text": "TH - THIS IS ... ! ?",
+          "translation": "هذ- هذَا...!؟",
+          "width": 136,
+          "x": 462,
+          "y": 2420
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 23.53333333333333,
+          "symWidth": 17.66666666666667,
+          "text": "HISS .... ROAR ...",
+          "translation": "همهمة... زئير...",
+          "width": 126,
+          "x": 200,
+          "y": 3487
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20,
+          "symWidth": 19.20289855072464,
+          "text": "SHADOW  GUARD  OF  THE  ANCIENT CORPSE  GOD LEVEL :  130  ???",
+          "translation": "حارس الظل لإله الجثة القديم مستوى الإله: ١٣٠؟؟؟",
+          "width": 507,
+          "x": 100,
+          "y": 3876
+        }
+      ],
+      "imgHeight": 3997,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 18.07920792079208,
+          "symWidth": 17.13861386138614,
+          "text": "THE  ANCIENT CORPSE  GOD'S SHADOW  GUARD !?  IT'S NOT  A  SUBORDINATE OF  THE  BLOOD  MOON GOD ,  BUT  THE ANCIENT  GOD'S  OWN GUARDIAN !",
+          "translation": "حراس ظل إله الجثة القديمة؟! ليسوا من أتباع إله القمر الدموي، بل هم حُراس الإله القديم بنفسه!",
+          "width": 304,
+          "x": 102,
+          "y": 699
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.36,
+          "symWidth": 15.72,
+          "text": "I  REMEMBER NOW !  THIS THING ...",
+          "translation": "لقد تذكرت الآن! هذا الكائن...",
+          "width": 169,
+          "x": 447,
+          "y": 1406
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 16,
+          "symWidth": 16.33333333333333,
+          "text": "ROOOAR !!!",
+          "translation": "رووووآر!!!",
+          "width": 147,
+          "x": 58,
+          "y": 2062
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18,
+          "symWidth": 17.34166666666667,
+          "text": "IT'S  THAT SHADOW  THAT CHASED  XIAO  YE AND  ME  NEAR  THE ANCIENT  GOD'S BLACK  COFFIN !",
+          "translation": "ذاك الظل هو نفسه الذي طاردني أنا وشياو يي قرب تابوت الإله القديم الأسود!",
+          "width": 242,
+          "x": 64,
+          "y": 2628
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 18.10952380952381,
+          "symWidth": 16.7602380952381,
+          "text": "BACK  THEN , XIAO  YE  AND  I WERE  NO MATCH - WE BARELY  ESCAPED WITH  OUR LIVES ...",
+          "translation": "حينها، لم نكن أشياو يي وأنا نُجيد المواجهة—فقد بالكاد نجونا بأرواحنا...",
+          "width": 235,
+          "x": 394,
+          "y": 3126
+        }
+      ],
+      "imgHeight": 3999,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 21.42857142857143,
+          "text": "ROAR !!!",
+          "translation": "زَئيرٌ عَنيف!!!",
+          "width": 151,
+          "x": 422,
+          "y": 111
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 14,
+          "symWidth": 13.19047619047619,
+          "text": "BLACK  DRAGON  III  FORM  SWITCH : DESTRUCTION  DRAGON",
+          "translation": "تَحَوُّلُ صِيغَةِ التّنّين الأسود الثّالثة: تَنّينُ الهَلاك",
+          "width": 341,
+          "x": 222,
+          "y": 668
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 15.6980198019802,
+          "symWidth": 11.04345434543454,
+          "text": "NATURAL  ASSIMILATION  -  SHADOW  DRAGON  KING CONTRACT :  SUMMONS  THE  SHADOW  DRAGON  KING : OBSIDIAN  BLADE .  THE  SHADOW  DRAGON  KING'S  LEVEL IS  THE  SAME  AS  THE  USER'S  LEVEL",
+          "translation": "الاستيعاب الطّبيعي - عَهْدُ مَلِكِ التّنّين الظّلّي: يَسْتَدْعِي مَلِكَ التّنّين الظّلّي: نَصلُ العِماد، مَستوى مَلِكِ التّنّين الظّلّي يُماثلُ مَستوى المستخدم",
+          "width": 422,
+          "x": 257,
+          "y": 908
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 16,
+          "symWidth": 13.78571428571429,
+          "text": "ICE  DRAGON  III ,  FORM  SWITCH : ETERNAL  WINTER  FROST",
+          "translation": "تَحَوُّلُ صِيغَةِ التّنّين الجليدي الثّالثة: صَقْعَةُ الشّتاء الأبَدِي",
+          "width": 346,
+          "x": 42,
+          "y": 1378
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18,
+          "symWidth": 15.88888888888889,
+          "text": "BUT  THINGS ARE  DIFFERENT NOW !  WE'RE ALL  LEVEL  90 ,",
+          "translation": "لكِنّ الأُمورَ الآنَ مُخْتَلِفَةٌ! جَميعُنَا فِي المُستوى ٩٠,",
+          "width": 205,
+          "x": 140,
+          "y": 1618
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18,
+          "symWidth": 14.81674208144796,
+          "text": "KILLING  YOU ... WILL  BE EFFORTLESS !",
+          "translation": "قَتْلُكَ... سَيَكُونُ هَيِّنًا!",
+          "width": 179,
+          "x": 428,
+          "y": 2220
+        },
+        {
+          "angle": 0,
+          "height": 420,
+          "symHeight": 17.6592467369723,
+          "symWidth": 20.0777939166097,
+          "text": "DRAGON  FLAPS'ITS  WINGS  RELEASING  FOUR WORLD  ALTERATION  I :  THE  DESTRUCTIO MASSIVE DAMAGE  TO  TARGETS  HIT . AT  DEAL THAT FLAMING  TORNADOES",
+          "translation": "يَرفُرُّ التّنّينُ بجَنَاحَيْهِ مُطلِقًا العاصِفَةَ العارِمَةَ الأولى: الهَلاك. أَضْرارٌ كَبيرة تُلْحَقُ بالهدفِ، تَرفُرُّ معَ الأعْصَارِ النّاريّةِ المُلتَهِبَة.",
+          "width": 161,
+          "x": 105,
+          "y": 2243
+        }
+      ],
+      "imgHeight": 3808,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 435,
+          "symHeight": 27.17619047619048,
+          "symWidth": 23.58412698412699,
+          "text": "变身 为 金  龙王 . 升 等级 * 50 . 变身 为 金 骑乘 状态 的 血脉 之 力 , 敏捷 、 精神 提 0 . 遗志 : 级 * 2 法 进入 猎 龙战 解禁 残 力量 、 耐力 期间",
+          "translation": "التحول إلى ملك التنين الذهبي. ترقية * 50. التحول إلى حالة فارس ذهبي بقوة الدماء، تزيد الرشاقة والروح 0. الإرادة المتبقية: مستوى * 2 عند دخول معركة صيد التنين، إلغاء قيود القوة والطاقة المؤقتة.",
+          "width": 196,
+          "x": 402,
+          "y": 275
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 23.66666666666667,
+          "symWidth": 23.48809523809524,
+          "text": "COME WITH  ME ! XIAO  YE !",
+          "translation": "تعال معي! شياو يي!",
+          "width": 166,
+          "x": 173,
+          "y": 344
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 20.5,
+          "symWidth": 17.61666666666667,
+          "text": "HISS .. GRRR !",
+          "translation": "همهمة.. غرير!",
+          "width": 90,
+          "x": 72,
+          "y": 943
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 20,
+          "symWidth": 18.55622895622895,
+          "text": "WINTER ,  XIAO JI ,  HOLD  IT DOWN !",
+          "translation": "وينتر، شياو جي، اثبتوا مواقفكم!",
+          "width": 211,
+          "x": 379,
+          "y": 994
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 15.06632653061224,
+          "symWidth": 14.25690276110444,
+          "text": "JUDGMENT  CLAW :  THE  GOLDEN  DRAGON  KING'S CLAWS  IGNITE  WITH  GOLDEN  FLAMES ,  CONVERTING 20 %  ENDURANCE  INTO  STRENGTH .  THE  NEXT  TWO STRIKES  DEAL  MASSIVE  DAMAGE .",
+          "translation": "مخالب الحكم: مخالب ملك التنين الذهبي تشتعل بنيران ذهبية، تُحوّل 20% من الصمود إلى قوة. الضربتان التاليتان تصيبان ضرراً هائلاً.",
+          "width": 543,
+          "x": 26,
+          "y": 2039
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 16.27777777777778,
+          "symWidth": 13.01851851851852,
+          "text": "CURRENT  TOXIN  POISON  SLIME : REDUCES  THE  TARGET'S  DEFENSE  BY  50 % FOR  10  SECONDS .",
+          "translation": "زئبق السم الحالي: يقلل دفاع الهدف بنسبة 50% لمدة 10 ثوانٍ.",
+          "width": 407,
+          "x": 43,
+          "y": 2450
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 53,
+          "symWidth": 46.5,
+          "text": "00",
+          "translation": "00",
+          "width": 88,
+          "x": 142,
+          "y": 3021
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 19,
+          "symWidth": 17.96666666666667,
+          "text": "DOOMSDAY  CALAMITY : TARGET  FROZEN !",
+          "translation": "كارثة نهاية العالم: الهدف مجمد!",
+          "width": 312,
+          "x": 139,
+          "y": 3199
+        }
+      ],
+      "imgHeight": 3808,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 18.5016835016835,
+          "symWidth": 11.95631141345427,
+          "text": "DOOMSDAY  CALAMITY  I :  THE  ICE  DRAGON  RELEASES  THE  POWER  OF  A FROST  CATACLYSM ,  DRASTICALLY  DROPPING  THE  TEMPERATURE  OF THE  TARGET  AREA  AND  ITS  SURROUNDINGS ,  DEALING  CONTINUOUS DAMAGE  AND  INFLICTING  A  FREEZING  EFFECT .",
+          "translation": "نَكْبَةُ الْهَلاَكِ الأُولى: يُفْرِجُ تِنِينُ الْجَلِيدِ عَنْ قُوَّةِ كَارِثَةِ الصَّقِيعِ، مُنْخَفِضًا بحدةٍ دَرَجَةَ حَرَارَةِ الْمِنْطَقَةِ الْمُسْتَهْدَفَةِ وَمُحِيطِهَا، مُلْحِقًا أَضْرَارًا دَائِمَةً وَمُسَبِّبًا تَأْثِيرَ الْتَجْمِيدِ.",
+          "width": 606,
+          "x": 45,
+          "y": 46
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 16.16428571428571,
+          "symWidth": 12.11845238095238,
+          "text": "NETHERWORLD  LETHAL  POISON :  RELEASES  THE  CURRENT  POISON WITHIN  THE  TARGET  AREA  TO  FORM  A  TOXIC  MIST .  ENEMIES  WITHIN THE  MIST  ACCUMULATE  STACKS ;  THE  HIGHER  THE  STACKS ,  THE HIGHER  THE  DAMAGE  PER  SECOND .  THERE  IS  NO  STACK  LIMIT .",
+          "translation": "السُّمُّ الْمَهْلِكُ لِلْعَالَمِ الْبَاطِنِ: يُفْرِجُ السُّمَّ الْحَالِيَّ فِي الْمِنْطَقَةِ لِيُكَوِّنَ ضَبَابًا سَمِّيًّا. يَتَكَوَّمُ الْأَعْدَاءُ دُرَجَاتٍ فِي الضَّبَابِ؛ وَكُلَّمَا ازْدَادَتِ الدُّرَجَاتُ، تَصَاعَدَ الْأَضْرَارُ فِي الثَّانِيَةِ. لا حَدَّ لِتَكْوِينِ الدُّرَجَاتِ.",
+          "width": 602,
+          "x": 66,
+          "y": 793
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.25,
+          "symWidth": 17.55113636363636,
+          "text": "ABAO ,  SHADOW DRAGON  KING , FOCUS  YOUR  BURST FIRE  NOW !",
+          "translation": "أَبَا، مَلِكُ التِّنَانِينِ الْمَظْلِمِ، رَكِّزْ نَارَةَ انْفِجَارِكَ الآن!",
+          "width": 272,
+          "x": 321,
+          "y": 1249
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.85966386554622,
+          "text": "SHADOW  ASSASSINATION :  TELEPORTS  BEHIND THE  TARGET  WHILE  HIDDEN ,  STRIKING  A  WEAK POINT  FOR  1600 %  STRENGTH  DAMAGE .",
+          "translation": "اقْتِلاَلُ الظِّلِّ: يَنْتَقِلُ خَلْفَ الْهدفِ وَهُوَ مُخْتَفٍ، ضَارِبًا نُقْطَةَ ضَعْفٍ بِضَرْبَةٍ تُعَادِلُ ١٦٠٠٪ مِنَ الْقُوَّةِ.",
+          "width": 436,
+          "x": 46,
+          "y": 3045
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 18.33333333333333,
+          "symWidth": 16.33986928104575,
+          "text": "HEAVEN'S  WRATH :  LOCKS  ONTO  AND  TRACKS THE  TARGET ,  UNLEASHING  RAPID  LIGHTNING STRIKES  FOR  MASSIVE  DAMAGE .",
+          "translation": "غَضَبُ السَّمَاءِ: يُرَكِّزُ عَلَى الْهدفِ وَيُتَابِعُهُ، مُطْلِقًا ضَرَبَاتِ بَرْقٍ سَرِيعَةٍ تُسَبِّبُ أَضْرَارًا هَائِلَةً.",
+          "width": 542,
+          "x": 88,
+          "y": 3628
+        }
+      ],
+      "imgHeight": 3808,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 22,
+          "symWidth": 18.42857142857143,
+          "text": "XIAO  YE , WINTER ,",
+          "translation": "شياو ييه، وينتر،",
+          "width": 137,
+          "x": 436,
+          "y": 160
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18,
+          "symWidth": 16.01161616161616,
+          "text": "LET'S  FINISH OFF THIS ANCIENT  GOD'S GUARDIAN !",
+          "translation": "لنُنهِ حارس الإله القديم هذا!",
+          "width": 210,
+          "x": 163,
+          "y": 873
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 22.66666666666667,
+          "text": "ROAR !!",
+          "translation": "زئير!!",
+          "width": 131,
+          "x": 270,
+          "y": 1870
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 15.23333333333333,
+          "symWidth": 12.83686274509804,
+          "text": "WORLD  INCINERATION  II :  THE  DESTRUCTION  DRAGON DETONATES  ALL  FLAME  TORNADOES ,  CAUSING  A MASSIVE  EXPLOSION .",
+          "translation": "حرق العالم الثاني: ينبعث التنين المدمر كل الأعاصير النارية، محدثاً انفجاراً هائلاً.",
+          "width": 500,
+          "x": 53,
+          "y": 2120
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.66505847953216,
+          "text": "DOOMSDAY  CALAMITY  II :  THE  ICE  DRAGON  DETONATES ALL  FROZEN  TARGETS ,  CREATING  AN  ICE  BURST  THAT DEALS  MASSIVE  DAMAGE .",
+          "translation": "كارثة القيامة الثانية: يفجر التنين الجليدي كل الأهداف المتجمدة، مولّداً انفجاراً ثلجياً يسبب دماراً عظيماً.",
+          "width": 503,
+          "x": 128,
+          "y": 2447
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 24.57142857142857,
+          "text": "GRAAH !!",
+          "translation": "غرااه!!",
+          "width": 167,
+          "x": 357,
+          "y": 2796
+        }
+      ],
+      "imgHeight": 3094,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 21.5,
+          "symWidth": 19.4,
+          "text": "TIMES  HAVE CHANGED ...",
+          "translation": "قد تغيرت الأيام...",
+          "width": 197,
+          "x": 101,
+          "y": 944
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.8,
+          "symWidth": 17.28874680874681,
+          "text": "I'M  NO  LONGER THE  ROOKIE  OF  THE GRIFFIN  CORPS  WHO YOU  CHASED  DOWN BACK  THEN ,",
+          "translation": "لم أعد مبتدئاً في فيلق الغريفين كما كنت ترصدني آنذاك،",
+          "width": 274,
+          "x": 112,
+          "y": 1824
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 16.55555555555555,
+          "text": "NOW  IT  HAS  NO POWER  TO  FIGHT BACK  AT  ALL ...",
+          "translation": "والآن لم يعد له أدنى قوة للرد بالمقابل...",
+          "width": 229,
+          "x": 366,
+          "y": 2045
+        }
+      ],
+      "imgHeight": 3094,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 36,
+          "text": "ROAR !",
+          "translation": "زئير!",
+          "width": 183,
+          "x": 130,
+          "y": 606
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 16.8,
+          "text": "... XIAO  YE ?",
+          "translation": "... شياو يا؟",
+          "width": 180,
+          "x": 347,
+          "y": 1514
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 30,
+          "symWidth": 27.33333333333333,
+          "text": "快 看 漫",
+          "translation": "انظر سريعًا!",
+          "width": 85,
+          "x": 83,
+          "y": 1540
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 18.71428571428572,
+          "text": "HISS ...",
+          "translation": "هسهسة...",
+          "width": 117,
+          "x": 461,
+          "y": 2178
+        }
+      ],
+      "imgHeight": 3094,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 22,
+          "symWidth": 17.52380952380952,
+          "text": "WAIT ... COULD  IT BE .. ?",
+          "translation": "لحظة... هل يكون الأمرُ كذلك..؟",
+          "width": 157,
+          "x": 311,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.5,
+          "symWidth": 16.13210227272727,
+          "text": "THIS  THING CAN'T  BE KILLED !  IT  CAN RECONSTRUCT ITS  BODY !",
+          "translation": "هذا الشيء لا يُقتل! فهو يعيد بناء جسده!",
+          "width": 197,
+          "x": 116,
+          "y": 1746
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 12.42857142857143,
+          "text": "HISS ...",
+          "translation": "هِسّ...",
+          "width": 75,
+          "x": 532,
+          "y": 1936
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 43,
+          "symWidth": 29,
+          "text": "00",
+          "translation": "00",
+          "width": 31,
+          "x": 119,
+          "y": 2868
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14.47826086956522,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 退 究 法律 责任 。",
+          "translation": "لا يُسمح بإعادة النشر دون إذن، ومن يخرق ذلك يعرض نفسه للمساءلة القانونية.",
+          "width": 416,
+          "x": 253,
+          "y": 3331
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 20.85714285714286,
+          "text": "visit  and  read  at",
+          "translation": "زر واطلع على الموقع",
+          "width": 291,
+          "x": 324,
+          "y": 3485
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 19.33333333333333,
+          "text": "for  the  fastest  releases",
+          "translation": "لأسرع الإصدارات",
+          "width": 398,
+          "x": 269,
+          "y": 3586
+        }
+      ],
+      "imgHeight": 3665,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

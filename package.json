@@ -42,6 +42,8 @@
     "db:ui": "prisma studio",
     "db:seed": "dotenv -- cross-env node ./run-jiti ./prisma/seed/index.ts",
     "translation-cache:analyze-ocr": "dotenv -- node ./run-jiti.js ./scripts/analyze-translation-cache-ocr.ts",
+    "translation-cache:analyze-regression-fixtures": "node ./run-jiti.js ./scripts/analyze-translation-cache-regression-fixtures.ts",
+    "translation-cache:export-regression-fixtures": "dotenv -- node ./run-jiti.js ./scripts/export-translation-cache-regression-fixtures.ts",
     "translation-cache:retranslate-from-ocr": "dotenv -- node ./run-jiti.js ./scripts/retranslate-translation-cache-from-ocr.ts",
     "source-discovery:import": "dotenv -- cross-env node ./run-jiti ./scripts/import-source-search-methods.ts",
     "blog:prepare-hero-images": "dotenv -- cross-env node ./run-jiti.js ./scripts/prepare-blog-hero-images.ts",

@@ -1,0 +1,1860 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0145",
+  "jobId": "fixture-job-0145",
+  "licenseId": "fixture-license-0145",
+  "pageCount": 67,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp",
+    "010.webp",
+    "011.webp",
+    "012.webp",
+    "013.webp",
+    "014.webp",
+    "015.webp",
+    "016.webp",
+    "017.webp",
+    "018.webp",
+    "019.webp",
+    "020.webp",
+    "021.webp",
+    "022.webp",
+    "023.webp",
+    "024.webp",
+    "025.webp",
+    "026.webp",
+    "027.webp",
+    "028.webp",
+    "029.webp",
+    "030.webp",
+    "031.webp",
+    "032.webp",
+    "033.webp",
+    "034.webp",
+    "035.webp",
+    "036.webp",
+    "037.webp",
+    "038.webp",
+    "039.webp",
+    "040.webp",
+    "041.webp",
+    "042.webp",
+    "043.webp",
+    "044.webp",
+    "045.webp",
+    "046.webp",
+    "047.webp",
+    "048.webp",
+    "049.webp",
+    "050.webp",
+    "051.webp",
+    "052.webp",
+    "053.webp",
+    "054.webp",
+    "055.webp",
+    "056.webp",
+    "057.webp",
+    "058.webp",
+    "059.webp",
+    "060.webp",
+    "061.webp",
+    "062.webp",
+    "063.webp",
+    "064.webp",
+    "065.webp",
+    "066.webp",
+    "067.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 494,
+          "symHeight": 248.5,
+          "symWidth": 264.875,
+          "text": "我 一个 人 砍翻 乱世",
+          "translation": "أنا وحدي أقطع أفق الفوضى",
+          "width": 1036,
+          "x": 226,
+          "y": 2161
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 42.73076923076923,
+          "text": "改编 自 阅 文 集团 作者 新丰 同名 小说 : 《 我 一个 人 砍翻 乱世 》",
+          "translation": "مقتبس من رواية بنفس الاسم للكاتب شين فنغ، من مجموعة يوان وتشن",
+          "width": 1276,
+          "x": 105,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 56,
+          "symWidth": 52.625,
+          "text": "监制 : 阿布  小涛 子",
+          "translation": "الإشراف: أبو شاو تزو",
+          "width": 509,
+          "x": 471,
+          "y": 3098
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 57.42857142857143,
+          "symWidth": 47.85714285714285,
+          "text": "责编 : momo",
+          "translation": "المحرر: مومو",
+          "width": 389,
+          "x": 470,
+          "y": 3239
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 54.25,
+          "text": "制作 : 蔷薇 事务所",
+          "translation": "الإنتاج: مكتب الورود",
+          "width": 489,
+          "x": 470,
+          "y": 3384
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 63.5,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 120,
+          "x": 1347,
+          "y": 3520
+        }
+      ],
+      "imgHeight": 3596,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 47,
+          "text": "啊啊 啊啊 啊 !",
+          "translation": "آه آه آه آه!",
+          "width": 322,
+          "x": 295,
+          "y": 1057
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 56.92857142857143,
+          "symWidth": 52.30952380952381,
+          "text": "嘶 —— ! 不好 ! 得 赶紧",
+          "translation": "همس —! سوء! يجب الإسراع",
+          "width": 398,
+          "x": 984,
+          "y": 1123
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 60.78571428571428,
+          "symWidth": 53.28571428571429,
+          "text": "得 赶紧 多 加点糖 !  这 咖啡 好 苦 !",
+          "translation": "عَلَى العَجَلِ أَنْ تَزدادَ القِطعُ مِنَ السُّكَّرِ! هذِهِ القَهوَةُ مراةٌ جداً!",
+          "width": 437,
+          "x": 389,
+          "y": 102
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 361,
+          "symHeight": 58.62857142857143,
+          "symWidth": 50.02857142857143,
+          "text": "大哥 们 , 我 刚刚 看 新闻 报道 , 人 们 变成 丧尸 了 ! 卧 槽 , 妈 , 你 怎 么 了 ? 啊啊 啊 !",
+          "translation": "يا إخوتي، لقد رأيت للتو في الأخبار أن الناس تحولوا إلى زومبي! يا للعجب، أمي، ما بك؟ آه آه آه!",
+          "width": 443,
+          "x": 722,
+          "y": 687
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 15.5,
+          "symWidth": 17.25,
+          "text": "BOST",
+          "translation": "RTMTH",
+          "width": 58,
+          "x": 1000,
+          "y": 1705
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 28,
+          "symWidth": 23.78125,
+          "text": "●  最新 免费 漫画 www.baozimh.com .",
+          "translation": "RTMTH",
+          "width": 303,
+          "x": 1177,
+          "y": 2049
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 347,
+          "symHeight": 55.3,
+          "symWidth": 43.96444444444445,
+          "text": "丧尸 ? 这么 猖狂 的 嘛 , 先 别 管 , 一波 就 一波 了 哎呀 , 卧 槽 ? 你 咬 我 做 什么 ? ! 啊啊 啊 - !!",
+          "translation": "الزومبي؟ أتت هذه الهياج؟ لا تلتفتوا، فلنواصل الموجة تلو الموجة. آه، ما هذا؟ لماذا تعضني؟!",
+          "width": 628,
+          "x": 160,
+          "y": 232
+        },
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 59.11428571428572,
+          "symWidth": 50.34404761904761,
+          "text": "啊 , 救命 ! 别 咬 我 我 是 射手 , 让 我 推掉 塔 啊 !",
+          "translation": "النجدة! لا تعضني، أنا الرامي، اتركوني أدمر البرج!",
+          "width": 501,
+          "x": 780,
+          "y": 1053
+        },
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 59.5,
+          "symWidth": 54.4875,
+          "text": "靠 , 丧尸 个屁 啊 , 你们 都 踏 马 的 发 什么 神经 ? 玩 个 推 塔 游戏 都能 遇到 小学生 ,",
+          "translation": "أيها اللعنة، زومبي؟ عن أي هراء تتحدثون؟ هل أصبحتم جميعًا مجانين؟ تُرى، حتى في لعبة تدمير الأبراج ألتقي بأطفال المدارس!",
+          "width": 626,
+          "x": 122,
+          "y": 1606
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 27.75,
+          "symWidth": 26,
+          "text": "BOET",
+          "translation": "RTMTH",
+          "width": 59,
+          "x": 656,
+          "y": 2053
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 59,
+          "symWidth": 55.6,
+          "text": "你们 就 不能不 被 家长 逮 住 嘛 , 真 尼玛 操蛋 啊 !",
+          "translation": "ألستم قادرين على الإفلات من قبضة الوالدين؟ بحق السماء، يا لها من لعنة!",
+          "width": 627,
+          "x": 644,
+          "y": 1288
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 54.75,
+          "symWidth": 57,
+          "text": "腾讯 动漫",
+          "translation": "RTMTH",
+          "width": 224,
+          "x": 1243,
+          "y": 2065
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 57.5,
+          "symWidth": 52.8,
+          "text": "喂 , 仅剩 的 这位 队友 , 你 女朋友 在 你 身边 吧 ?",
+          "translation": "هيّا، أما الزميل الوحيد المتبقّي، هل صديقتك إلى جانبك؟",
+          "width": 595,
+          "x": 138,
+          "y": 189
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 58.71428571428572,
+          "symWidth": 57.28571428571428,
+          "text": "你 会 被 她 咬 的 。",
+          "translation": "ستعضُكِ تلك.",
+          "width": 406,
+          "x": 789,
+          "y": 1577
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 50.8,
+          "symWidth": 51.8,
+          "text": "4  包子 漫畫",
+          "translation": "RTMTH",
+          "width": 271,
+          "x": 36,
+          "y": 2036
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 62.5,
+          "text": "动漫",
+          "translation": "RTMTH",
+          "width": 114,
+          "x": 1355,
+          "y": 2068
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 17.63636363636364,
+          "text": "baozimh.com",
+          "translation": "RTMTH",
+          "width": 207,
+          "x": 104,
+          "y": 2090
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 211,
+          "symHeight": 58.66666666666666,
+          "symWidth": 53.85714285714285,
+          "text": "嘿嘿 ~ 兄弟 , 你 咋 知道 的 , 预言 家 ?",
+          "translation": "هه هه~ يا أخي، كيف عرفت ذلك؟ أأنت عراف؟",
+          "width": 446,
+          "x": 132,
+          "y": 330
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 58.83333333333333,
+          "symWidth": 51.13888888888889,
+          "text": "这 都能 猜到 , 没错 , 正在 咬 呢 , 贼",
+          "translation": "هذا ما استطعتُ توقّعه، حقاً، إنه يعضّ، حقير!",
+          "width": 371,
+          "x": 989,
+          "y": 1047
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 60.5,
+          "text": "腾讯 动漫",
+          "translation": "RTMTH",
+          "width": 196,
+          "x": 1275,
+          "y": 1631
+        }
+      ],
+      "imgHeight": 1707,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 55.5,
+          "symWidth": 54,
+          "text": "诶 ?",
+          "translation": "ها؟",
+          "width": 106,
+          "x": 339,
+          "y": 832
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 56.5,
+          "symWidth": 53.42857142857143,
+          "text": "宝贝 , 你 怎么 停 了 ? 继续 ………",
+          "translation": "يا عزيزي، لما توقفت؟ واصل...",
+          "width": 436,
+          "x": 851,
+          "y": 394
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 41,
+          "text": "吼 —— !!",
+          "translation": "هاه—!!",
+          "width": 271,
+          "x": 157,
+          "y": 1612
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 46.9,
+          "text": "呀 ! 你 , 你 想 干什么 ?",
+          "translation": "يا للهول! ماذا تصنع؟",
+          "width": 595,
+          "x": 686,
+          "y": 1752
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 282,
+          "symHeight": 58.4,
+          "symWidth": 47.075,
+          "text": "松 嘴 , 松 嘴 , 你 踏 马松 嘴 啊 ! 预言 家 兄弟 , 快 …… 啊啊 啊 —— !!",
+          "translation": "ارْخِ فمك، ارْخِه، يا لَعنَةَ الله، ارْخِ فمك! أيها الأخ العظيم للعرافين، أسرع... آه آه آه ـــ!!",
+          "width": 504,
+          "x": 209,
+          "y": 947
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 57,
+          "symWidth": 73,
+          "text": "动漫",
+          "translation": "RTMTH",
+          "width": 123,
+          "x": 1348,
+          "y": 2067
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 58.66666666666666,
+          "symWidth": 52.97777777777778,
+          "text": "快 推 搭 ? 放心 在 推 , 这 局 必 拿下 。",
+          "translation": "عجِل بالدفع! لا تقلق، فالنصر حليفنا في هذه الجولة.",
+          "width": 374,
+          "x": 533,
+          "y": 664
+        },
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 57.5,
+          "symWidth": 48.88888888888889,
+          "text": "是 快 想 办法 救 我 啊 , 混蛋 ! 啊 …",
+          "translation": "أسرع وفكّ رحيلي، يا وغد! آه...",
+          "width": 376,
+          "x": 172,
+          "y": 1895
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 57.66666666666666,
+          "symWidth": 48.26190476190476,
+          "text": "呼 ~ 很好 , 没有 辜负 队友 们 …… … 拿下 !",
+          "translation": "هاه~ جيد، لم أخذل رفاقي... انتصرنا!",
+          "width": 414,
+          "x": 620,
+          "y": 1270
+        },
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 57.57142857142857,
+          "symWidth": 55,
+          "text": "这次 的 胜利 依旧 是 我们 的 !",
+          "translation": "النصر هذه المرة لنا كما عهدناه!",
+          "width": 311,
+          "x": 1038,
+          "y": 1578
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 54,
+          "symWidth": 69,
+          "text": "动漫",
+          "translation": "الرسوم المتحركة",
+          "width": 114,
+          "x": 1352,
+          "y": 2070
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 47,
+          "text": "胜利",
+          "translation": "انتصار",
+          "width": 102,
+          "x": 622,
+          "y": 2093
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 25.5,
+          "symWidth": 22.98095238095238,
+          "text": "[  最新 免费 漫画 www.baozimh.com",
+          "translation": "RTMTH",
+          "width": 305,
+          "x": 1170,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 705,
+          "symHeight": 251,
+          "symWidth": 247,
+          "text": "砰 ! 砰 !",
+          "translation": "طق! طق!",
+          "width": 904,
+          "x": 558,
+          "y": 1297
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 70.5,
+          "text": "动漫",
+          "translation": "رسوم متحركة",
+          "width": 131,
+          "x": 1341,
+          "y": 2067
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 61,
+          "symWidth": 48,
+          "text": "林凡 , 是 我 , 你",
+          "translation": "لين فان، إنّي أنا",
+          "width": 442,
+          "x": 204,
+          "y": 2109
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 58.5,
+          "symWidth": 49.96428571428572,
+          "text": "的 邻居 柳薇薇 , 快开门 !",
+          "translation": "يا جارتي ليو وي وي، أسرعي وافتحي الباب!",
+          "width": 395,
+          "x": 207,
+          "y": 38
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 53.33333333333334,
+          "text": "有事 ?",
+          "translation": "هل هناك أمر ما؟",
+          "width": 159,
+          "x": 759,
+          "y": 1777
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 436,
+          "symHeight": 58.6530612244898,
+          "symWidth": 55.71428571428572,
+          "text": "外面 有 一群 疯子 看 到 人 就 咬 , 我 逃跑 的 途中 把 钥匙 给 丢 了 ! 我 想到 你 家 躲 躲 , 你 会 帮 我 的 对 不对 ? 林凡 , 哥哥 ~",
+          "translation": "في الخارج جماعة من المجانين يعضون كل من يرونه، وأثناء فراري فقدت المفتاح! فكرت أن أختبئ في بيتك، ألن تساعدني؟ يا لين فان، يا أخي~",
+          "width": 541,
+          "x": 814,
+          "y": 586
+        },
+        {
+          "angle": 0,
+          "height": 358,
+          "symHeight": 56.5,
+          "symWidth": 52.3125,
+          "text": "嗯 , 我 可以 帮 你 , 但 你 得 先 答应 我 一 件事 —— 你 先把 眼 睛 闭上 。",
+          "translation": "همم، يمكنني مساعدتك، لكن عليك أن تعدني بأمر واحد أولًا — أغمضي عينيك.",
+          "width": 373,
+          "x": 194,
+          "y": 1330
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.webp": {
+      "blocks": [],
+      "imgHeight": 1707,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 59,
+          "symWidth": 54.82608695652174,
+          "text": "谢谢 , 林凡 哥哥 你 真好 , 我 就 知道 你 一定 会 帮 我 的 !",
+          "translation": "شكرًا لك، يا أخي لين فان، كنت واثقة أنك ستساعدني!",
+          "width": 504,
+          "x": 116,
+          "y": 261
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 58.25,
+          "symWidth": 52.9125,
+          "text": "只要 你 肯 帮 我 , 你 让 我 干 ~ 什么 ~ 都 行 !",
+          "translation": "طالما أنك ستساعدني، أطلب منك أي شيء — سأفعل كمًا شاءت إرادتك!",
+          "width": 507,
+          "x": 867,
+          "y": 1246
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 58.33333333333334,
+          "symWidth": 54.54166666666666,
+          "text": "好 了 , 我 已经 帮 你 了 , 这样 你 就 不会 变成 咬人 的 丧尸 。",
+          "translation": "حسنًا، لقد ساعدتك، فلن تتحول بعد الآن إلى زومبي يعض الناس.",
+          "width": 499,
+          "x": 230,
+          "y": 476
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 54,
+          "symWidth": 60,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 116,
+          "x": 1358,
+          "y": 2065
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 55.33333333333334,
+          "symWidth": 64.66666666666667,
+          "text": "动漫 、",
+          "translation": "أنمي،",
+          "width": 141,
+          "x": 1345,
+          "y": 2068
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.webp": {
+      "blocks": [],
+      "imgHeight": 1636,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 45.52941176470588,
+          "text": "【 击杀 1 个 潜在 丧尸 , 获得 点数 +1 】",
+          "translation": "【قتل زومبي محتمل واحد، نقاط +1】",
+          "width": 928,
+          "x": 307,
+          "y": 441
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 56,
+          "symWidth": 60,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت أنمي",
+          "width": 200,
+          "x": 1265,
+          "y": 2064
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 59,
+          "symWidth": 55.50892857142857,
+          "text": "我 叫 林凡 , 并不是 么 预言 家 , 只是 一个 普普通通 的 独 居家 装 设计师 。",
+          "translation": "اسمي لين فان، لست نبياً ولا غير ذلك، بل مجرد مصمم ديكور يعيش وحيداً وببساطة.",
+          "width": 504,
+          "x": 296,
+          "y": 961
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 286,
+          "symHeight": 58.09375,
+          "symWidth": 54.35267857142857,
+          "text": "一直 过着 平凡 又 普 通 的 生活 , 直到 一 个 小时 前 , 一切 都 改变 了 …………",
+          "translation": "عشت حياة عادية وبسيطة حتى ساعة مضت، ثم تغير كل شيء...",
+          "width": 500,
+          "x": 762,
+          "y": 1366
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 152,
+          "symHeight": 58.41935483870968,
+          "symWidth": 57.80645161290322,
+          "text": "我 好心 救助 了 一位 走投无路 的 美女 邻 居 , 不想 她 却 突然 变异 将 我 咬死 。",
+          "translation": "بنيت على حسن نيتي أن أساعد جارتي الجميلة اليائسة، لكنها فجأة تحولت وعضتني حتى الموت.",
+          "width": 506,
+          "x": 219,
+          "y": 0
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 58,
+          "symWidth": 53.0625,
+          "text": "就 在 我 死亡 的 瞬间 统 子 , 它 来 了 !",
+          "translation": "في لحظة موتي، جاء النظام! ها هو ذا!",
+          "width": 493,
+          "x": 736,
+          "y": 905
+        },
+        {
+          "angle": 0,
+          "height": 427,
+          "symHeight": 96.78571428571429,
+          "symWidth": 100.1428571428571,
+          "text": "丧尸 末世 求生 系 …… 接入 成功 。",
+          "translation": "نظام البقاء على قيد الحياة في عالم الزومبي... تم الاتصال بنجاح.",
+          "width": 584,
+          "x": 557,
+          "y": 1716
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 41.36363636363636,
+          "symWidth": 35.2,
+          "text": "④  包子 漫畫 baozinh.com",
+          "translation": "④ باوزي مانغا baozinh.com",
+          "width": 271,
+          "x": 40,
+          "y": 2034
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 56,
+          "symWidth": 58,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت أنمي",
+          "width": 224,
+          "x": 1242,
+          "y": 1557
+        }
+      ],
+      "imgHeight": 1636,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 57.44444444444444,
+          "symWidth": 52.77777777777778,
+          "text": "然后 …… 我 重生 了 。",
+          "translation": "ثم... ولدت من جديد.",
+          "width": 437,
+          "x": 230,
+          "y": 533
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20.5,
+          "symWidth": 42.5,
+          "text": "反 鱼 vozimh.com",
+          "translation": "ضد السمك vozimh.com",
+          "width": 187,
+          "x": 121,
+          "y": 2064
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 357,
+          "symHeight": 58.4,
+          "symWidth": 40.64222222222222,
+          "text": "姓名 : 林凡 。 力量 : 10 ( +1 ) 身体 : 10 速度 : 10 点数 :  0",
+          "translation": "الاسم: لين فان. القوة: 10 (+1)، الجسد: 10، السرعة: 10، النقاط: 0",
+          "width": 436,
+          "x": 802,
+          "y": 739
+        },
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 61.33333333333334,
+          "symWidth": 54,
+          "text": "点数 + 1 ………… 这 就是 系 统 的 效果 么 , 击杀 丧 尸 就 能够 得到 点数 。",
+          "translation": "نقاط +1... هل هذه هي قوة النظام؟ قتل الزومبي يجلب النقاط.",
+          "width": 572,
+          "x": 169,
+          "y": 1861
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 59,
+          "symWidth": 58.5,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت أنمي",
+          "width": 224,
+          "x": 1243,
+          "y": 2062
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 40,
+          "symWidth": 34.38181818181818,
+          "text": "④  包子 漫畫 baozimh.com",
+          "translation": "④ باوزي مانغا baozimh.com",
+          "width": 271,
+          "x": 41,
+          "y": 2036
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 52.5,
+          "symWidth": 46,
+          "text": "那 …",
+          "translation": "إذن...",
+          "width": 96,
+          "x": 1115,
+          "y": 342
+        },
+        {
+          "angle": 0,
+          "height": 206,
+          "symHeight": 161,
+          "symWidth": 186,
+          "text": "嘴 食",
+          "translation": "الفم طعام",
+          "width": 335,
+          "x": 1024,
+          "y": 1110
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 52,
+          "symWidth": 40,
+          "text": "???",
+          "translation": "???",
+          "width": 167,
+          "x": 903,
+          "y": 1325
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "046.webp": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "047.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 42,
+          "text": "DA",
+          "translation": "DA",
+          "width": 78,
+          "x": 956,
+          "y": 1328
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 68.5,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 116,
+          "x": 1353,
+          "y": 2069
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "048.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 37.9,
+          "symWidth": 33.69090909090909,
+          "text": "④  包子 漫畫 baozimh.com",
+          "translation": "④ باوزي مانغا baozimh.com",
+          "width": 260,
+          "x": 1211,
+          "y": 2035
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "049.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 58.5,
+          "symWidth": 54.07037037037037,
+          "text": "大家 都是 邻居 , 吼 什 嘛 ? 我 只是 想 再次 确 认 一下 获得 点数 的 方 法 而已 嘛 。",
+          "translation": "نحن جميعاً جيران، فلماذا الصراخ؟ فقط أردت أن أتأكد مرة أخرى من طريقة الحصول على النقاط.",
+          "width": 563,
+          "x": 148,
+          "y": 51
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "050.webp": {
+      "blocks": [],
+      "imgHeight": 2141,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "051.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 44.2,
+          "text": "【 击杀 1 个 丧尸 , 获得 点数 +1 】",
+          "translation": "【قتل زومبي واحد، نقاط +1】",
+          "width": 807,
+          "x": 330,
+          "y": 1131
+        }
+      ],
+      "imgHeight": 1707,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "052.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 362,
+          "symHeight": 60.27207977207977,
+          "symWidth": 55.08547008547009,
+          "text": "看 她 现在 的 “ 完整 度 ” , 应该 还会 吸引 来 丧尸 吧 ? 毕竟 大家 都 是 邻居 , 我 不能 就 这 么 放着 她 不管 啊 。",
+          "translation": "نظراً لحالتها 'الشاملة'، من المرجح أن تجذب المزيد من الزومبي، فالجميع جيران هنا، ولا أستطيع أن أتركها هكذا.",
+          "width": 563,
+          "x": 596,
+          "y": 400
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 57,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت أنمي",
+          "width": 218,
+          "x": 1249,
+          "y": 2604
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "053.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 57.625,
+          "symWidth": 56.95,
+          "text": "可 我 也 得 先 保护 好 自己 才行 !",
+          "translation": "لكن يجب أن أحمي نفسي أولاً!",
+          "width": 316,
+          "x": 172,
+          "y": 235
+        },
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 58.21875,
+          "symWidth": 51.96875,
+          "text": "嗯  · 还是 和 刚才 一 样 , 我 先 躲到 门 后 , 再 时不时 开门 突袭 , 守护 她 !",
+          "translation": "همم، سأفعل كما فعلت قبل قليل، أختبئ خلف الباب، ثم أفتح فجأة للتحصين والدفاع عنها!",
+          "width": 566,
+          "x": 427,
+          "y": 631
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 59.375,
+          "symWidth": 55.875,
+          "text": "一段 时间 以后 ……",
+          "translation": "بعد مرور بعض الوقت...",
+          "width": 473,
+          "x": 168,
+          "y": 2519
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "054.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 70,
+          "symWidth": 49.83333333333334,
+          "text": "【 击杀 …… 个 丧尸 , 获得 点数 ………… 】",
+          "translation": "【قتل... من الزومبي، نقاط...】",
+          "width": 995,
+          "x": 365,
+          "y": 576
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "055.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 284,
+          "symHeight": 58.46875,
+          "symWidth": 54.76041666666666,
+          "text": "好累 ·  · 不过 薇薇 你 放心 , 邻里 之间 互帮 互助 是 应该 的 我 绝不 会 ……",
+          "translation": "مرهقٌ جداً... ولكن لا تقلقي يا فيفي، التكاتف بين الجيران واجب، ولن أتخلى عنك...",
+          "width": 505,
+          "x": 786,
+          "y": 133
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 50,
+          "symWidth": 37.66666666666666,
+          "text": "???",
+          "translation": "???",
+          "width": 161,
+          "x": 600,
+          "y": 1103
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 62,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 112,
+          "x": 1358,
+          "y": 2608
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "056.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 73,
+          "symWidth": 48,
+          "text": "0  0",
+          "translation": "0 0",
+          "width": 142,
+          "x": 747,
+          "y": 62
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 58.58333333333334,
+          "symWidth": 54.08333333333334,
+          "text": "嘶 —— ! 薇薇 怎 么 不见了 ?",
+          "translation": "سسس —! أين ذهبت فيفي؟",
+          "width": 438,
+          "x": 891,
+          "y": 426
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 57,
+          "symWidth": 53.43809523809524,
+          "text": "等等 , 她 该 不会 是 已经 被 …… 吃 光 了 吧 ??",
+          "translation": "انتظر، لا أظن أنها قد التهمت... بالكامل، أليس كذلك؟",
+          "width": 441,
+          "x": 195,
+          "y": 864
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "057.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 58,
+          "symWidth": 56,
+          "text": "呃 , 这 下 有 些 棘手 了 啊",
+          "translation": "آه، هذا الأمر أصبح معقداً الآن.",
+          "width": 316,
+          "x": 1025,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 59,
+          "symWidth": 53.91666666666667,
+          "text": "好 脏 , 而且 它们 堆 在 这 肯定 会 发臭 的 !",
+          "translation": "قذر للغاية، ولن يستقيم الأمر مكدسين هنا، لا بد أن تنبعث رائحة كريهة!",
+          "width": 559,
+          "x": 465,
+          "y": 1034
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "058.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 58.78260869565217,
+          "symWidth": 55.39130434782609,
+          "text": "楼道 是 公共 区域 , 身 为 这里 的 业主 得 清理 干净 才行 !",
+          "translation": "الممر منطقة مشتركة، وكونك مالك هنا، يجب عليك تنظيفه جيدًا!",
+          "width": 564,
+          "x": 767,
+          "y": 1942
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 51,
+          "symWidth": 56,
+          "text": "动漫",
+          "translation": "",
+          "width": 110,
+          "x": 1356,
+          "y": 2605
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "059.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 112,
+          "symWidth": 120.5,
+          "text": "烤 味",
+          "translation": "رائحة مشوية",
+          "width": 203,
+          "x": 393,
+          "y": 1225
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 111.5,
+          "symWidth": 126,
+          "text": "味 味",
+          "translation": "رائحة",
+          "width": 213,
+          "x": 885,
+          "y": 1552
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "060.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 50,
+          "symWidth": 45,
+          "text": "嗯 ?",
+          "translation": "هم؟",
+          "width": 94,
+          "x": 234,
+          "y": 1484
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 54,
+          "symWidth": 58.5,
+          "text": "动漫",
+          "translation": "",
+          "width": 114,
+          "x": 1353,
+          "y": 3423
+        }
+      ],
+      "imgHeight": 3498,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "061.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 294,
+          "symHeight": 208.5,
+          "symWidth": 203.5,
+          "text": "點 ~",
+          "translation": "نقطة ~",
+          "width": 644,
+          "x": 209,
+          "y": 1635
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "062.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 127.6,
+          "symWidth": 95.4,
+          "text": "吼 —— !!",
+          "translation": "هاو ــ!!",
+          "width": 660,
+          "x": 413,
+          "y": 2298
+        }
+      ],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "063.webp": {
+      "blocks": [],
+      "imgHeight": 2679,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "064.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 58.5,
+          "text": "腾讯 动漫",
+          "translation": "تنسنت مانغا",
+          "width": 223,
+          "x": 1246,
+          "y": 1597
+        }
+      ],
+      "imgHeight": 1672,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "065.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 71,
+          "symWidth": 57.92857142857143,
+          "text": "守 株 ( 尸 〕 待 兔 ( 尸 〕 狂 刷 经验",
+          "translation": "الاقتناص والثبات (شهد) انتظار الأرانب (شهد) وقضاء الخبرة بجنون",
+          "width": 1115,
+          "x": 190,
+          "y": 429
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 70,
+          "symWidth": 67.92857142857143,
+          "text": "谁料 还有 高手 , 轮椅 丧尸 来袭 !",
+          "translation": "ومن كان يظن أن هناك محترفًا، هجوم زومبي على الكرسي المتحرك!",
+          "width": 1057,
+          "x": 190,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 86,
+          "symWidth": 85.6923076923077,
+          "text": "难道 它 是 “ 赛博 型 ” 新 丧尸 ?",
+          "translation": "هل هو زومبي من النوع السيبراني؟",
+          "width": 1246,
+          "x": 96,
+          "y": 829
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 76,
+          "symWidth": 72.3076923076923,
+          "text": "次 回 : 《 这 是 很 讲究 的 行为 》",
+          "translation": "الحلقة القادمة: «هذا سلوك يتسم بالكثير من التدقيق»",
+          "width": 1153,
+          "x": 172,
+          "y": 1275
+        }
+      ],
+      "imgHeight": 1730,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "066.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 510,
+          "symHeight": 258.5,
+          "symWidth": 247,
+          "text": "我 一个 人 砍翻 乱世",
+          "translation": "أنا وحدي أقلع بالعالم الفوضوي",
+          "width": 1042,
+          "x": 227,
+          "y": 2155
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 48,
+          "symWidth": 42.73076923076923,
+          "text": "改编 自 阅 文 集团 作者 新丰 同名 小说 : 《 我 一个 人 砍翻 乱世 》",
+          "translation": "مأخوذ عن رواية بنفس الاسم للمؤلف شين فنغ من مجموعة يوي ون",
+          "width": 1277,
+          "x": 104,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 53.625,
+          "text": "监制 : 阿布  小涛 子",
+          "translation": "المشرف: أبو، شياو تاو زِي",
+          "width": 512,
+          "x": 469,
+          "y": 3097
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 56.14285714285715,
+          "symWidth": 47.85714285714285,
+          "text": "责编 : momo",
+          "translation": "المحرر: مومو",
+          "width": 392,
+          "x": 469,
+          "y": 3239
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 59.625,
+          "symWidth": 54.25,
+          "text": "制作 : 蔷薇 事务所",
+          "translation": "الإنتاج: مكتب الورود",
+          "width": 491,
+          "x": 469,
+          "y": 3381
+        }
+      ],
+      "imgHeight": 3596,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "067.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 40.4,
+          "text": "吼 —— !!",
+          "translation": "هاو ــ!!",
+          "width": 271,
+          "x": 572,
+          "y": 332
+        },
+        {
+          "angle": 0,
+          "height": 201,
+          "symHeight": 55,
+          "symWidth": 56.33333333333334,
+          "text": "张 叔 ? 你 家 不是 在 二楼 吗 , 你 怎 么 上 七楼 来 的 ?",
+          "translation": "العمي زانغ؟ ألم يكن بيتك في الطابق الثاني؟ كيف وصلت إلى الطابق السابع؟",
+          "width": 445,
+          "x": 99,
+          "y": 2394
+        }
+      ],
+      "imgHeight": 2596,
+      "imgWidth": 1500,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

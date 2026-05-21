@@ -1,0 +1,1850 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0151",
+  "jobId": "fixture-job-0151",
+  "licenseId": "fixture-license-0151",
+  "pageCount": 24,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "001__004.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "002__004.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 55.09722222222223,
+          "symWidth": 45.4810606060606,
+          "text": "这一 世 当 西 The  ULTIMATE of  All  Ages",
+          "translation": "العصر الأعظم في كل العصور",
+          "width": 287,
+          "x": 266,
+          "y": 821
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 24,
+          "symWidth": 21.53571428571428,
+          "text": "改编 自 阅 文 集团 起点 中文 网 作者 太 一生 水 原创 小说 《 万古 至尊 》",
+          "translation": "مقتبس من رواية \"السمو الأبدي\" للمؤلف تاي إيشينغ شو على موقع \"كي ديان\" التابع لمجموعة يوان ون",
+          "width": 350,
+          "x": 181,
+          "y": 1208
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 25.55555555555556,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "انظر! انظر! مانغا حصرية",
+          "width": 241,
+          "x": 233,
+          "y": 1388
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 21,
+          "symWidth": 14.66666666666667,
+          "text": "HMM ...",
+          "translation": "همم...",
+          "width": 85,
+          "x": 285,
+          "y": 1759
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 17.33333333333333,
+          "symWidth": 12.72940233785822,
+          "text": "EVEN  IF  I  CANNOT ACHIEVE  A  COMPLETE MENTAL  UNION  WITH  AN ORDINARY  RANK - NINE  PROFOUND ARTIFACT ,  I  CAN  STILL  UNLEASH A  CERTAIN  AMOUNT  OF",
+          "translation": "حتى إن لم أستطع تحقيق اتحاد ذهني تام مع قطعة أثرية غامقة من المرتبة التاسعة العادية، لا زلت قادرًا على إطلاق قدر من القوة منها",
+          "width": 300,
+          "x": 112,
+          "y": 3239
+        }
+      ],
+      "imgHeight": 3393,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 16,
+          "symWidth": 13.25,
+          "text": "POWER  FROM  IT .",
+          "translation": "القوة منها.",
+          "width": 148,
+          "x": 186,
+          "y": 2
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 18.82142857142857,
+          "symWidth": 15.25892857142857,
+          "text": "Thunder  Hammer , come  out !",
+          "translation": "ساعد البرق، اظهر!",
+          "width": 136,
+          "x": 43,
+          "y": 140
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 15.25,
+          "symWidth": 11.04117222403836,
+          "text": "YET ,  I  STILL  CAN'T COMPLETELY  GRASP  THE  POWER OF  THE  ARTIFACT  SPIRIT  CONTAINED WITHIN  THIS  HAMMER ...",
+          "translation": "ومع ذلك، لا أستطيع استيعاب القوة كاملة لروح الأثر المختزنة في هذا المطرقة...",
+          "width": 286,
+          "x": 191,
+          "y": 534
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 17.2112676056338,
+          "symWidth": 12.99314306893996,
+          "text": "PREVIOUSLY ,  WHEN  THAT BLOOD  BEAST  USED  IT ,  IT  POSSESSED ENOUGH  POWER  TO  BREAK  THROUGH  A  REALM , BUT  IN  MY  HANDS ,  IT  COULDN'T  EVEN  KILL  TWO MARTIAL  SUPREMES .  THE  DIFFERENCE IS  SIMPLY  TOO  GREAT ...",
+          "translation": "في السابق، عندما استخدمها الوحش الدموي، كانت تملك قوة تكفي لاختراق العوالم، لكن بيدي لم تستطع حتى قتل اثنين من الأعظماء. الفارق هائل جدًا...",
+          "width": 427,
+          "x": 259,
+          "y": 1039
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.64341085271318,
+          "symWidth": 12.08046581781192,
+          "text": "I'LL  NOURISH  IT  WITH ORIGIN  POWER  FIRST ,  AND SLOWLY  REFINE  IT  TO  ACHIEVE A  MENTAL  UNION !",
+          "translation": "سأغذيها أولًا بطاقة الأصل، ثم أصقلها تدريجيًا لتحقيق اتحاد ذهني!",
+          "width": 273,
+          "x": 52,
+          "y": 1999
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 16.5018315018315,
+          "symWidth": 12.67399267399267,
+          "text": "BACK  THEN ,  THE FIVE  PROFOUND  ARTIFACTS SUSPENDED  ABOVE  THE  MOUNTAIN AND  RIVER  CAULDRON  INSIDE  MOUNT SUMERU  WERE  ALL  AT  THE PEAK  OF  RANK - NINE .",
+          "translation": "آنذاك، كانت القطع الخمس الغامقة المعلقة فوق قدر الجبل والنهر في جبل سوميرو كلها في ذروة المرتبة التاسعة.",
+          "width": 332,
+          "x": 129,
+          "y": 2648
+        }
+      ],
+      "imgHeight": 3394,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 14.5,
+          "symWidth": 11.21278825995807,
+          "text": "THE  GREAT  COMPASSION TWILIGHT  CLOUD  MIRROR ,  THE  IMPERIAL DYNASTY  BELL ,  THE  DEMONIC  HEAVEN  ARMOR , THE  COLD  SWORD  FROST ,  AND  THAT  SPEAR  OF  LUO QINGYUN'S ;  EVEN  AT  MY  PEAK  IN  MY  PREVIOUS LIFE ,  I  COULDN'T  REFINE  THEM .",
+          "translation": "مرآة الغروب العظيمة، جرس السلالة الإمبراطورية، درع السماء الشيطاني، سيف الصقيع البارد، ورمح لوو تشينغيون؛ حتى في ذروتي في حياتي السابقة، لم أستطع صقلها.",
+          "width": 389,
+          "x": 83,
+          "y": 559
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 17.41754385964913,
+          "symWidth": 12.59920616019687,
+          "text": "IT  SEEMS  THAT  IN THAT  ERA ,  THERE  WERE  AT  LEAST PEAK  RANK - NINE  ALCHEMISTS . COULD  IT  BE  THAT  THEY  WERE  ALL REFINED  USING  THE  MOUNTAIN AND  RIVER  CAULDRON ?",
+          "translation": "يبدو أنه في تلك الحقبة، كان هناك على الأقل كيميائيون في ذروة المرتبة التاسعة. هل كان ذلك لأنهم جميعًا صقلوا باستخدام قدر الجبل والنهر؟",
+          "width": 299,
+          "x": 336,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 13.66666666666667,
+          "symWidth": 10.42108977978543,
+          "text": "AFTER  ALL ,  THE  MOUNTAIN  AND RIVER  CAULDRON  IS  A  TRANSCENDENT GRADE  PROFOUND  ARTIFACT .",
+          "translation": "فبعد كل شيء، قدر الجبل والنهر هو أثر غامق من الدرجة المتعالية.",
+          "width": 264,
+          "x": 239,
+          "y": 2070
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 16.82978723404255,
+          "symWidth": 12.38581560283688,
+          "text": "LOGICALLY SPEAKING ,  I  SHOULD PROPERLY  REFINE  THESE FOUR  PROFOUND ARTIFACTS .",
+          "translation": "منطقياً، يجب أن أصقل الأربعة آثار غامقة هذه بشكل صحيح.",
+          "width": 220,
+          "x": 96,
+          "y": 2546
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 17.2,
+          "symWidth": 13.14842995169082,
+          "text": "ALTHOUGH  THERE  ARE ENOUGH  OF  THEM ,  THERE  ISN'T A  SINGLE  ONE  I  CAN  COMPLETELY REFINE .  I  MIGHT  AS  WELL  FOCUS ON  REFINING  JUST  ONE .",
+          "translation": "مع أنني أمتلك ما يكفي منها، لا يوجد قطعة واحدة أستطيع صقلها تمامًا. ربما من الأفضل أن أركز على صقل واحدة فقط.",
+          "width": 303,
+          "x": 304,
+          "y": 2675
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 33,
+          "symWidth": 24,
+          "text": "Refine  me",
+          "translation": "اصقلني",
+          "width": 136,
+          "x": 59,
+          "y": 2939
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 29.44444444444444,
+          "symWidth": 22,
+          "text": "Refine  me ~",
+          "translation": "اصقلني~",
+          "width": 142,
+          "x": 478,
+          "y": 2942
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 24.8,
+          "symWidth": 19.2,
+          "text": "baba ~",
+          "translation": "بابا~",
+          "width": 80,
+          "x": 556,
+          "y": 3153
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 23.2,
+          "symWidth": 18.8,
+          "text": "baba ~",
+          "translation": "بابا~",
+          "width": 80,
+          "x": 121,
+          "y": 3179
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 30.25,
+          "symWidth": 22,
+          "text": "Refine  me",
+          "translation": "اصقلني",
+          "width": 131,
+          "x": 72,
+          "y": 3267
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 33.5,
+          "symWidth": 24.375,
+          "text": "Refine  me",
+          "translation": "اصقلني",
+          "width": 140,
+          "x": 470,
+          "y": 3271
+        }
+      ],
+      "imgHeight": 3393,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 40.5,
+          "symWidth": 22.07289002557545,
+          "text": "THE  SWEET  TROUBLE  OF  HAVING TOO  MANY  GOOD  THINGS",
+          "translation": "محنة حلاوة الخير الزائد",
+          "width": 497,
+          "x": 99,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 33.5,
+          "symWidth": 16.03125,
+          "text": "HEAVENLY  MASTER'S GIANT  KRYPTON  RULER",
+          "translation": "حاكم كريبتون العملاق للسيد السماوي",
+          "width": 285,
+          "x": 387,
+          "y": 354
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 21,
+          "symWidth": 17.16666666666667,
+          "text": "HMM ...",
+          "translation": "همم...",
+          "width": 83,
+          "x": 221,
+          "y": 477
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17,
+          "symWidth": 14.67361111111111,
+          "text": "AS  FOR  THIS PIECENNN",
+          "translation": "أما هذه القطعة فـ",
+          "width": 114,
+          "x": 209,
+          "y": 1133
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 17,
+          "symWidth": 11.96581196581197,
+          "text": "FIRST , I'LL  REMELT  AND REFORGE  IT .",
+          "translation": "سأعيد صهرها وأعيد تشكيلها أولًا.",
+          "width": 149,
+          "x": 132,
+          "y": 1787
+        }
+      ],
+      "imgHeight": 3394,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 15.19090909090909,
+          "symWidth": 11.11212121212121,
+          "text": "ADD  A  LITTLE  MORE TIANZHAO  METEORIC  GOLD AND  NORTHERN  HEAVEN  COLD STAR  IRON .",
+          "translation": "سأضيف بعض ذهب نيزك تيانتشاو وحدید نجم الشمال البارد السماوي.",
+          "width": 243,
+          "x": 423,
+          "y": 1
+        },
+        {
+          "angle": 0,
+          "height": 273,
+          "symHeight": 175.5,
+          "symWidth": 163,
+          "text": "my",
+          "translation": "لي",
+          "width": 174,
+          "x": 524,
+          "y": 1099
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.25873015873016,
+          "text": "LET'S  CHANGE  ITS SHAPE FIRST .",
+          "translation": "لنغير شكلها أولاً.",
+          "width": 158,
+          "x": 113,
+          "y": 1542
+        }
+      ],
+      "imgHeight": 3645,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 26,
+          "symWidth": 23.5,
+          "text": "快 看 漫画",
+          "translation": "أنظر مانغا",
+          "width": 110,
+          "x": 424,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16,
+          "symWidth": 13.00952380952381,
+          "text": "THEN  ADD  THE POWER  OF  THE  FOUR PHASES :",
+          "translation": "ثم أضف قوة المراحل الأربع:",
+          "width": 201,
+          "x": 147,
+          "y": 3078
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17,
+          "symWidth": 12.30448717948718,
+          "text": "EARTH ,  WATER , FIRE ,  AND  WIND !",
+          "translation": "الأرض، الماء، النار، والريح!",
+          "width": 173,
+          "x": 177,
+          "y": 3128
+        }
+      ],
+      "imgHeight": 3646,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 17,
+          "symWidth": 12.88257575757576,
+          "text": "NOT  BAD .  INSIDE THIS  UNIVERSE  GOD MONUMENT ,  THE  ALCHEMICAL DAO  I  CAN  UNLEASH  IS  EVEN ABOVE  MY  PEAK  IN  MY PREVIOUS  LIFE .",
+          "translation": "ليس سيئًا. داخل نصب إله الكون هذا، يمكنني إطلاق طريق الكيمياء بأكثر قوة حتى من ذروتي في حياتي السابقة.",
+          "width": 261,
+          "x": 285,
+          "y": 3503
+        }
+      ],
+      "imgHeight": 3645,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.41880341880342,
+          "text": "I  AM  VERY SATISFIED  WITH THIS  ITEM !",
+          "translation": "أنا راضٍ جدًا عن هذه القطعة!",
+          "width": 137,
+          "x": 505,
+          "y": 51
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17,
+          "symWidth": 10.80555555555556,
+          "text": "SHAOHUANG ,  TEST ITS  POWER !",
+          "translation": "شاولوانغ، اختبر قوتها!",
+          "width": 166,
+          "x": 253,
+          "y": 1281
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 24,
+          "symWidth": 19.31818181818182,
+          "text": "YOUNG  MASTER YUN ,  THIS  IS-",
+          "translation": "السيد يون الشاب، هذا هو—",
+          "width": 220,
+          "x": 352,
+          "y": 2384
+        }
+      ],
+      "imgHeight": 3649,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 17.90909090909091,
+          "symWidth": 14.28030303030303,
+          "text": "HAHA ,  I FINALLY  HAVE  A  WEAPON TOO !",
+          "translation": "هاهاها، لقد أمتلك أخيرًا سلاحًا أيضًا!",
+          "width": 252,
+          "x": 72,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 72,
+          "symWidth": 41.75,
+          "text": "KING",
+          "translation": "الملك",
+          "width": 142,
+          "x": 44,
+          "y": 701
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 74.125,
+          "symWidth": 49.625,
+          "text": "KONG HOWE",
+          "translation": "كونغ هاو",
+          "width": 171,
+          "x": 30,
+          "y": 811
+        },
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 130.5,
+          "symWidth": 201.5,
+          "text": "ཆེ་",
+          "translation": "ཆེ་",
+          "width": 232,
+          "x": 434,
+          "y": 971
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 75,
+          "symWidth": 45.25,
+          "text": "ROOT",
+          "translation": "الجذر",
+          "width": 160,
+          "x": 33,
+          "y": 1034
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 21.91208791208791,
+          "symWidth": 17.34065934065934,
+          "text": "AND  IT  HAS MASTER'S  POWER OF  THE  FOUR  ELEMENTS SEALED  WITHIN ! HAHAHAHA !",
+          "translation": "ويحوي قوة السيد للعناصر الأربعة مختومة بداخله! هاهاها!",
+          "width": 300,
+          "x": 96,
+          "y": 1589
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 17,
+          "symWidth": 14.525,
+          "text": "WUWU ,  YOUNG MASTER  YUN ,  YOU  TREAT ME  TOO  WELL !",
+          "translation": "وووو، أيها السيد الشاب يون، أنتم تكرمونني كثيرًا!",
+          "width": 234,
+          "x": 421,
+          "y": 2676
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 46.55555555555556,
+          "symWidth": 42,
+          "text": "Loving  hug",
+          "translation": "عناق محب",
+          "width": 170,
+          "x": 35,
+          "y": 3174
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 16.5,
+          "symWidth": 11.68476430976431,
+          "text": "I  WAS  JUST AFRAID  YOUR  STRENGTH WASN'T  ENOUGH ,  AND YOU'D  GET  BEATEN  TO DEATH  OUT  THERE  AND LOSE  MY  FACE !",
+          "translation": "كنت أخشى أن قوتك لن تكفي، وأن تُهزم هناك وتموت، وتُفقد ماء وجهي!",
+          "width": 215,
+          "x": 310,
+          "y": 3961
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 16.67105263157895,
+          "symWidth": 12.25,
+          "text": "REFINE  IT .  ONCE YOU  SHARE  A  MENTAL  CONNECTION SLOWLY",
+          "translation": "نقِّه. عندما تربط اتصالًا ذهنيًا به ببطء",
+          "width": 316,
+          "x": 163,
+          "y": 810
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17.16279069767442,
+          "symWidth": 11.46511627906977,
+          "text": "WITH  IT ,  IT  SHOULD  PROVIDE  YOU WITH  A  MASSIVE  BOOST .",
+          "translation": "ينبغي أن يمنحك قوة هائلة.",
+          "width": 296,
+          "x": 174,
+          "y": 862
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 15.5,
+          "symWidth": 11.15079365079365,
+          "text": "THANK  YOU , MASTER !",
+          "translation": "شكرًا لك يا سيدي!",
+          "width": 107,
+          "x": 429,
+          "y": 1241
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 17.5,
+          "symWidth": 13.1,
+          "text": "HURRY  UP  AND CULTIVATE !",
+          "translation": "عجل بالزراعة!",
+          "width": 137,
+          "x": 33,
+          "y": 1349
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 17.44827586206896,
+          "symWidth": 11.12341197822141,
+          "text": "SIGH ,  I  HAVEN'T BEEN  HERE  FOR  A  LONG TIME ,  AND  THE  OLD  HOUSE IS  COMPLETELY  RUINED .",
+          "translation": "آه، لم آتِ إلى هنا منذ زمن طويل، والبيت القديم أصبح خرابًا بالكامل.",
+          "width": 242,
+          "x": 399,
+          "y": 3071
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 17,
+          "symWidth": 11.64338624338624,
+          "text": "YOUNG PEOPLE  NOWADAYS HAVE  NO  SENSE  OF PUBLIC  MORALITY AT  ALL !",
+          "translation": "الشباب اليوم يفتقرون تمامًا إلى الأخلاق العامة!",
+          "width": 174,
+          "x": 375,
+          "y": 3260
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.79166666666666,
+          "symWidth": 13.85833333333333,
+          "text": "THAT  OLD  MAN I  MET  AT  THE  BLOOD GOD  PALACE !",
+          "translation": "ذلك العجوز الذي قابلته في قصر إله الدم!",
+          "width": 191,
+          "x": 424,
+          "y": 385
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 22,
+          "symWidth": 14.33928571428571,
+          "text": "EH ? LITTLE  BROTHER , IT'S  YOU ?",
+          "translation": "آه؟ يا أخي الصغير، أنت؟",
+          "width": 202,
+          "x": 240,
+          "y": 917
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 20.75,
+          "symWidth": 14.65588235294118,
+          "text": "WHAT  A COINCIDENCE !  HEHE , ARE  YOU  HERE  TO  HELP ME  CLEAN  UP ?",
+          "translation": "يا لها من صدفة! ههه، هل جئت لمساعدتي في التنظيف؟",
+          "width": 261,
+          "x": 388,
+          "y": 1192
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 16.8,
+          "symWidth": 12.52068396120009,
+          "text": "TO  THINK  THAT  MY OCULAR  TECHNIQUE  COULDN'T  SEE THROUGH  HIS  CULTIVATION .  I  ESTIMATE HE  IS  AT  LEAST  AT  THE  MID - STAGE MARTIAL  SOVEREIGN  LEVEL !",
+          "translation": "بأن تقنيتي البصرية لم تستطع كشف مستواه في الزراعة. أقدّر أنه على الأقل في منتصف مستوى السيادة القتالية!",
+          "width": 348,
+          "x": 88,
+          "y": 2019
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 15,
+          "symWidth": 9.62202380952381,
+          "text": "IF  IT'S  AN  INTENTIONAL COINCIDENCE ,  THEN  INDEED ,  PEOPLE MEET  EVERYWHERE  IN  LIFE !",
+          "translation": "إن كانت صدفة مقصودة، فحقًا الناس يلتقون في كل مكان.",
+          "width": 294,
+          "x": 73,
+          "y": 2619
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 17.33333333333333,
+          "symWidth": 10.84241854636591,
+          "text": "WELL ,  LIFE  IS  ALWAYS  FULL OF  GATHERINGS  AND  PARTINGS , DIVIDING  AND  UNITING .",
+          "translation": "الحياة دائمًا مليئة باللقاءات والفراق، الفُرقة والوحدة.",
+          "width": 288,
+          "x": 406,
+          "y": 3492
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 22.75806451612903,
+          "symWidth": 14.98511166253102,
+          "text": "THE  KEY  IS  MEETING THE  RIGHT  PERSON  AT THE  RIGHT  TIME .",
+          "translation": "المفتاح هو لقاء الشخص المناسب في الوقت المناسب.",
+          "width": 274,
+          "x": 291,
+          "y": 3663
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 17,
+          "symWidth": 10.625,
+          "text": "WAS  THAT  LIGHTNING STRIKE  IN",
+          "translation": "هل كانت ضربة البرق تلك في",
+          "width": 191,
+          "x": 134,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.47916666666667,
+          "text": "THE  SOUTH OF  THE  CITY  EARLIER CAUSED  BY  YOU ?",
+          "translation": "جنوب المدينة قبل قليل من صنعك؟",
+          "width": 189,
+          "x": 135,
+          "y": 27
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 16.4,
+          "symWidth": 10.86429738562092,
+          "text": "FAINTLY , THERE  WERE  ACTUALLY RULES  VAGUELY  HIDDEN WITHIN  IT .  I  AM  VERY CURIOUS ~",
+          "translation": "خفت بوضوح وجود قوانين مخفية ضمنها. أثار فضولي هذا الأمر للغاية~",
+          "width": 208,
+          "x": 263,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 16.6,
+          "symWidth": 11.09464728420104,
+          "text": "CURIOSITY  CAN  EASILY GET  A  PERSON  KILLED .  YOUR  REACTION WAS  EVEN  FASTER  THAN  THE  PEOPLE OF  RED  MOON  CITY ;  IT  SEEMS  YOU ARE  VERY  ATTENTIVE !",
+          "translation": "الفضول قد يكلف الشخص حياته. كان رد فعلك أسرع من أهل مدينة القمر الأحمر؛ يبدو أنك شديد الانتباه!",
+          "width": 350,
+          "x": 191,
+          "y": 1052
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.44444444444444,
+          "text": "NONSENSE ~",
+          "translation": "هراء~",
+          "width": 112,
+          "x": 66,
+          "y": 1487
+        },
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 20.175,
+          "symWidth": 13.02699275362319,
+          "text": "I'M  JUST  AN  OLD  BAG OF  BONES .  I  HAVE  NO  OTHER MERITS ,  EXCEPT  BEING  QUITE SERIOUS  AND  RESPONSIBLE IN  MY  WORK .",
+          "translation": "أنا مجرد هيكل عظمي قديم. لا أملك سوى الجدية والمسؤولية في عملي.",
+          "width": 304,
+          "x": 357,
+          "y": 2193
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 23.5,
+          "symWidth": 15.77272727272727,
+          "text": "ONCE I  FINISH  THIS JOB ,  I'LL  REALLY RETIRE ~~~",
+          "translation": "حالما أنهي هذا العمل حقًا سأعتزل~~~",
+          "width": 210,
+          "x": 278,
+          "y": 2412
+        }
+      ],
+      "imgHeight": 3848,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 27.5,
+          "symWidth": 22.07142857142857,
+          "text": "I  KNOW  WHO YOU  ARE-",
+          "translation": "أنا أعرف من أنت—",
+          "width": 208,
+          "x": 259,
+          "y": 1742
+        }
+      ],
+      "imgHeight": 3848,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 34,
+          "symWidth": 19.5,
+          "text": "?  !",
+          "translation": "؟!",
+          "width": 59,
+          "x": 282,
+          "y": 2227
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 63.5,
+          "symWidth": 53.5,
+          "text": "AH",
+          "translation": "آه!",
+          "width": 105,
+          "x": 473,
+          "y": 3240
+        }
+      ],
+      "imgHeight": 3850,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 26,
+          "symWidth": 22.75,
+          "text": "UGH !",
+          "translation": "آه!",
+          "width": 84,
+          "x": 511,
+          "y": 2582
+        }
+      ],
+      "imgHeight": 4122,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 14.55421686746988,
+          "symWidth": 9.424570075172484,
+          "text": "THE  DEAD  CORPSE ART  THAT  COMPLETELY  ERASES  ONE'S AURA .  EVEN  WITH  AN  ABSOLUTE  ADVANTAGE IN  CULTIVATION ,  HE  DOESN'T STRIKE  IMMEDIATELY ,",
+          "translation": "فن الجثة الميتة الذي يمحو الهالة تمامًا. حتى مع تفوق مطلق في الزراعة، لا يهاجم فورًا،",
+          "width": 323,
+          "x": 80,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 17.09051724137931,
+          "symWidth": 10.94396551724138,
+          "text": "BUT  RATHER  SEEKS OUT  A  BAD  HABIT  OF  DEALING  A FATAL  BLOW .  OTHER  THAN  THE  EIGHT MANIFESTATIONS  THAT  CONTROL  THE DEATH  GOD  PALACE ,  I  CAN'T THINK  OF  ANYONE  ELSE .",
+          "translation": "بل يبحث عن عادة سيئة لتوجيه ضربة قاتلة. بخلاف تجليات الثمانية التي تسيطر على قصر إله الموت، لا أظن هناك من هو مثله.",
+          "width": 335,
+          "x": 271,
+          "y": 302
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 30.2,
+          "text": "高  快 看 漫画",
+          "translation": "RTMTH",
+          "width": 172,
+          "x": 518,
+          "y": 1137
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 17.4,
+          "symWidth": 11.3520139930035,
+          "text": "THERE  IS  NO  UNIVERSALLY CORRECT  MOVE  IN  THIS  WORLD . YOU'VE  USED  THIS  MOVE  FOR  HUNDREDS OF  YEARS ;  IT'S  ABOUT  TIME  YOU RAN  INTO  A  GHOST .",
+          "translation": "لا وجود لتحرك صحيح عالميًّا في هذا العالم. لقد استخدمت هذه الحركة مئات السنين؛ حان الوقت لتواجه ظلًّا.",
+          "width": 364,
+          "x": 50,
+          "y": 1219
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 19.82258064516129,
+          "symWidth": 13.52956989247312,
+          "text": "YOU'RE  RIGHT . I  AM  THE  ONE  WHO ,  AT THE  RIGHT  TIME ,  WILL  PUT AN  END  TO  YOUR  CAREER AS  A  KILLER !",
+          "translation": "أنت على حق. أنا من سينهي مهنتك كقاتل في التوقيت المناسب!",
+          "width": 281,
+          "x": 289,
+          "y": 1406
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 17.19718309859155,
+          "symWidth": 11.69014084507042,
+          "text": "I'VE  ALWAYS  BEEN VERY  CURIOUS ,  WHO  EXACTLY IS  THE  HEAD  OF  YOUR  EIGHT MANIFESTATIONS ?",
+          "translation": "لطالما كنت فضوليًا، من هو بالضبط رأس تجلياتكم الثمانية؟",
+          "width": 263,
+          "x": 175,
+          "y": 1837
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 20.64254952627046,
+          "symWidth": 14.39513350559862,
+          "text": "ALTHOUGH I  HAVE  A  FAINT GUESS  IN  MY  HEART ,  I STILL  HOPE  SOMEONE CAN  CONFIRM IT  FOR  ME .",
+          "translation": "رغم أن لدي شكًا خفيفًا في قلبي، إلا أنني ما زلت أرجو أن يؤكد لي أحدهم ذلك.",
+          "width": 255,
+          "x": 329,
+          "y": 1989
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 21.31400966183575,
+          "symWidth": 14.71911663216011,
+          "text": "AREN'T  YOU CURIOUS  ABOUT  MY NAME ?  YOU  COULD  AT LEAST  SATISFY  MY VANITY ,",
+          "translation": "ألا تشعر بالفضول لمعرفة اسمي؟ على الأقل أسدِّ غروري,",
+          "width": 251,
+          "x": 78,
+          "y": 2611
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 19.62162162162162,
+          "symWidth": 13.32972972972973,
+          "text": "AT  LEAST  LET PEOPLE  KNOW  THAT SUCH  A  FIGURE  ONCE EXISTED .",
+          "translation": "ودع الناس يعرفون أن هذا الكيان قد وُجد يومًا.",
+          "width": 229,
+          "x": 183,
+          "y": 2970
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 16.05683269476373,
+          "symWidth": 11.99952107279693,
+          "text": "NOT INTERESTED !  YOU  PEOPLE OPERATE  HIDDEN  IN  THE  DARKNESS TO  BEGIN  WITH .  IT'S  FINE  IF  YOUR NAME  ROTS  TOGETHER WITH  YOUR  BODY .",
+          "translation": "لا يهمني! أنتم تعملون في الخفاء في الظلام أساسًا. لا بأس إن تحلّل اسمكم مع أجسادكم.",
+          "width": 316,
+          "x": 341,
+          "y": 3644
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.36111111111111,
+          "symWidth": 11.60714285714286,
+          "text": "I  AM  ONLY INTERESTED  IN  THE  NAME OF  THE  HEAD  OF  YOUR  EIGHT MANIFESTATIONS !",
+          "translation": "أنا مهتم فقط باسم رأس تجلياتكم الثمانية!",
+          "width": 270,
+          "x": 95,
+          "y": 3967
+        }
+      ],
+      "imgHeight": 4122,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 210,
+          "symHeight": 20.59,
+          "symWidth": 14.04679841897233,
+          "text": "OH  MY ,  FIFTH BROTHER ,  YOU'RE  TRULY GETTING  OLD .  NOT  ONLY  DID YOU  FAIL  TO  KILL  THE  TARGET , BUT  YOU'RE  EVEN  ABOUT TO  LET  SOMEONE  DIG OUT  OUR  LAIR !",
+          "translation": "يا للعجب، أيها الأخ الخامس، لقد شاخ فعلاً. لم تفشل فقط في قتل الهدف، بل أوشكت حتى على السماح لأحدهم بأن يحفر مخبأنا!",
+          "width": 324,
+          "x": 255,
+          "y": 429
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 16.65625,
+          "symWidth": 10.69990079365079,
+          "text": "A  PERSON  WHO  CAN  CATCH THE  HEAD'S  ATTENTION  IS  INDEED EXTRAORDINARY .  EVEN  SENIOR  TYRANT  TIGER AMONG  OUR  EIGHT  MANIFESTATIONS COULDN'T  DO  ANYTHING  TO  YOU .",
+          "translation": "إن الشخص الذي يجذب انتباه القائد حقًا استثنائي. حتى النمر الطاغية الأكبر بين الثمانية الظواهر لم يكن بوسعه أن يفعل بك شيئًا.",
+          "width": 380,
+          "x": 268,
+          "y": 1625
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 21.7,
+          "symWidth": 14.7734126984127,
+          "text": "AND  TO  DO SO  WHEN  THE  DISPARITY IN  STRENGTH  IS  SO  MASSIVE , IT  IS  TRULY  ASTONISHING !",
+          "translation": "وأن تفعل ذلك رغم الفارق الشاسع في القوة، لشيء يبعث على الدهشة حقًا!",
+          "width": 325,
+          "x": 48,
+          "y": 2397
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 20,
+          "symWidth": 13.78115942028986,
+          "text": "ARE  YOU  ALSO ONE  OF  THE  EIGHT MANIFESTATIONS ?",
+          "translation": "هل أنت أيضًا من الثمانية الظواهر؟",
+          "width": 213,
+          "x": 194,
+          "y": 2851
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 22,
+          "symWidth": 14.63888888888889,
+          "text": "YOU  CAN CALL  ME  LITTLE EIGHT .",
+          "translation": "يمكنك مناداتي بالثماني الصغير.",
+          "width": 188,
+          "x": 266,
+          "y": 3499
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 16.5,
+          "symWidth": 12.07292673107891,
+          "text": "I  WONDER  HOW I  OFFENDED  THE  HEAD  OF YOUR  EIGHT  MANIFESTATIONS ? I  HAVE  ALWAYS  CONSIDERED  US TO  HAVE  NO  ENMITY ,  SO  WHY COME  TO  KILL  ME ?",
+          "translation": "أتساءل كيف أزعجت قائد ثمانية الظواهر؟ لطالما ظننت أننا بلا عداوة، فلماذا تأتي لتقتلني؟",
+          "width": 278,
+          "x": 302,
+          "y": 3977
+        }
+      ],
+      "imgHeight": 4123,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 16,
+          "symWidth": 11.8,
+          "text": "WHO  SAID THERE'S  NO  ENMITY OR  GRUDGES ?",
+          "translation": "ومن قال إن لا عداوة ولا ضغائن؟",
+          "width": 176,
+          "x": 44,
+          "y": 188
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.55555555555556,
+          "symWidth": 12.47685185185185,
+          "text": "OUR  DEATH GOD  PALACE  MASTER  HAS ALWAYS  CONSIDERED LIFE - AND - DEATH  ENEMY . YOU  A",
+          "translation": "سيد قصر إله الموت يعتبرنا دومًا أعداء حياة وموت. أنت...",
+          "width": 253,
+          "x": 426,
+          "y": 750
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 16.8,
+          "symWidth": 11.38849574338705,
+          "text": "MOREOVER ,  YOUR RAPID  RISE  IN  RECENT  YEARS HAS  ATTRACTED  THE  ATTENTION  OF QUITE  A  FEW  PEOPLE .  THE  HEAD IS  JUST  ONE  OF  THEM .",
+          "translation": "علاوة على ذلك، صعودك السريع في السنوات الأخيرة جذب أنظار كثيرين، والقائد واحد منهم.",
+          "width": 317,
+          "x": 259,
+          "y": 927
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 16.4,
+          "symWidth": 11.66470588235294,
+          "text": "YOU  CAN  LEAVE NOW .  SINCE  FIFTH  BROTHER COULDN'T  KILL  YOU ,  THERE'S NO  NEED  FOR  ME  TO  MAKE A  MOVE  EITHER .",
+          "translation": "يمكنك الرحيل الآن. بما أن الأخ الخامس لم يستطع قتلك، فلا حاجة لأن أتدخل أنا.",
+          "width": 257,
+          "x": 107,
+          "y": 1287
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 20,
+          "symWidth": 11.5425,
+          "text": "BESIDES , KILLING  YOU  ISN'T  MY MISSION .",
+          "translation": "فضلاً عن أن قتلك ليست مهمتي.",
+          "width": 228,
+          "x": 318,
+          "y": 1459
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 13.89732142857143,
+          "symWidth": 9.425093668514721,
+          "text": "LITTLE  EIGHT ,  LETTING  HIM GO  BACK  NOW  IS  TANTAMOUNT  TO RELEASING  A  TIGER  BACK  TO  THE  MOUNTAIN ; IT  WILL  BE  EVEN  HARDER  TO  CAPTURE AND  KILL  HIM  NEXT  TIME .",
+          "translation": "ثماني الصغير، السماح له بالعودة الآن كإطلاق نمر إلى الجبل؛ سيكون من الأصعب القبض عليه وقتله لاحقًا.",
+          "width": 336,
+          "x": 59,
+          "y": 1794
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.5,
+          "symWidth": 10.95186147186147,
+          "text": "HAVING  TAKEN  A  HIT FROM  ME ,  HE  MUST  BE  INJURED RIGHT  NOW .  THIS  IS  THE  PERFECT TIME  TO  KILL  HIM !",
+          "translation": "لقد أصابه ضرر مني، لا بد أنه جريح الآن. هذه فرصتنا الذهبية لقتله!",
+          "width": 297,
+          "x": 241,
+          "y": 2003
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 22.25,
+          "symWidth": 14.66117216117216,
+          "text": "FIFTH  BROTHER , YOUR  ERA  OF  USING ANY  MEANS  NECESSARY  TO KILL  SOMEONE  HAS ALREADY  PASSED .",
+          "translation": "أيها الأخ الخامس، زمن استعمال كل الوسائل لقتل أحدهم قد ولى.",
+          "width": 311,
+          "x": 47,
+          "y": 2635
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 18.39583333333333,
+          "symWidth": 13.42054263565891,
+          "text": "YOUR CRUSHING  DEFEAT  TODAY  IS A  DECLARATION  THAT  THE  ERA BELONGING  TO  YOU  ALL  NO LONGER  EXISTS .",
+          "translation": "هزيمتك الساحقة اليوم إعلانٌ بأن زمنكم قد انتهى.",
+          "width": 309,
+          "x": 274,
+          "y": 2909
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.49206349206349,
+          "symWidth": 12.01058201058201,
+          "text": "YOU  SHOULD JUST  SUBMIT  A  REPORT  TO  THE HEAD  AND  GO  HOME  TO  ENJOY YOUR  RETIREMENT ~",
+          "translation": "عليك فقط إرسال تقرير إلى القائد والعودة لتتمتع بتقاعدك.",
+          "width": 283,
+          "x": 88,
+          "y": 3106
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 20,
+          "symWidth": 14.18429406850459,
+          "text": "NO  MATTER  WHO  YOUR HEAD  IS ,  PASS  A  MESSAGE  TO HIM :  IF  YOU  PROVOKE  ME ,",
+          "translation": "مهما كان من هو قائدكم، بلغ رسالتي إليه: إن اعتدى عليّ،",
+          "width": 298,
+          "x": 335,
+          "y": 3677
+        }
+      ],
+      "imgHeight": 3793,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 21.4,
+          "symWidth": 14.407665317139,
+          "text": "THERE  WON'T BE  A  PLACE  FOR  YOUR EIGHT  MANIFESTATIONS IN  THE  HEAVENLY MARTIAL  REALM .",
+          "translation": "فلن يكون للثمانية الظواهر مكان في عالم القتال السماوي.",
+          "width": 278,
+          "x": 108,
+          "y": 279
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18,
+          "symWidth": 14.16363636363636,
+          "text": "LOOK  OUT  FOR YOURSELVES !",
+          "translation": "احذروا أنفسكم!",
+          "width": 169,
+          "x": 256,
+          "y": 2203
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 24.6,
+          "text": "深  快 看 漫画",
+          "translation": "RTMTH",
+          "width": 177,
+          "x": 57,
+          "y": 2668
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 20.5,
+          "symWidth": 13.55,
+          "text": "FIFTH BROTHER ,  WHAT DO  YOU  THINK  OF HIS  THREAT ?",
+          "translation": "أيها الأخ الخامس، ما رأيك في تهديده؟",
+          "width": 200,
+          "x": 75,
+          "y": 3294
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16,
+          "symWidth": 11.39238539238539,
+          "text": "FOR  NOW ,  IT  JUST SEEMS  LIKE  TOUGH  TALK TO  SAVE  FACE .",
+          "translation": "حتى الآن، يبدو مجرد تهديد من قبيل الكلام الصلب للحفاظ على ماء الوجه.",
+          "width": 221,
+          "x": 375,
+          "y": 3710
+        }
+      ],
+      "imgHeight": 3794,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.35009398496241,
+          "text": "BUT  IF WE  LET  HIM  CONTINUE TO  DEVELOP ,  IT'S  HARD TO  SAY .  MAYBE  ONE  DAY  HE REALLY  WILL  GROW  TO  THE POINT  OF  THREATENING THE  HEAD !",
+          "translation": "لكن إذا تركناه يتطور، فمن الصعب التكهن؛ قد ينمو يومًا ليهدد القائد فعلاً!",
+          "width": 248,
+          "x": 108,
+          "y": 415
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 15,
+          "symWidth": 10.44256180733163,
+          "text": "THEN  WHO  DO  YOU  THINK IS  STRONGER  BETWEEN  HIM  AND THE  PALACE  MASTER ?",
+          "translation": "من تظن الأقوى بينه وبين سيد القصر؟",
+          "width": 259,
+          "x": 243,
+          "y": 1007
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 14,
+          "text": "LI  YI ?",
+          "translation": "لي يي؟",
+          "width": 77,
+          "x": 91,
+          "y": 1237
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 16.71428571428572,
+          "symWidth": 11.01445578231293,
+          "text": "LI  YI'S  TALENT  IS INDEED  VERY  STRONG .  TO  BE ABLE  TO  TURN  FROM  A  SLAVE  INTO A  MASTER  UNDER  THE  TORTURE  OF THE  YUWEN  BROTHERS ,  BOTH  HIS SCHEMING  AND  METHODS ARE  TOP - TIER .",
+          "translation": "موهبة لي يي عظيمة حقًا. من عبد إلى سيد تحت تعذيب الإخوة يوين، مكائده وأساليبه على أعلى مستوى.",
+          "width": 312,
+          "x": 107,
+          "y": 1818
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 16.42857142857143,
+          "symWidth": 11.87791638186375,
+          "text": "WHEN  WE GUIDED  HIM  TO  THE  DEATH GOD  PALACE  BACK  THEN ,  I  NEVER EXPECTED  HIM  TO  BECOME  THE PALACE  MASTER .  DOES  THE  HEAD HOPE  FOR  THE  TWO  OF THEM",
+          "translation": "حين وجهناه إلى قصر إله الموت آنذاك، لم أتخيل أنه سيصبح سيد القصر. هل يأمل القائد أن يتقاتل الاثنان؟",
+          "width": 300,
+          "x": 306,
+          "y": 2052
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 11.5,
+          "text": "TO  FIGHT ?",
+          "translation": "هل يقصد أن يتقاتلا؟",
+          "width": 97,
+          "x": 433,
+          "y": 2205
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 28.50740740740741,
+          "symWidth": 23.26666666666667,
+          "text": "He's  quite help  me bring  him  along ! unlikable ,",
+          "translation": "إنه مزعج لكنه يساعدني كثيرًا بإحضاره معي!",
+          "width": 181,
+          "x": 182,
+          "y": 2335
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 16.75,
+          "symWidth": 18.375,
+          "text": "0800 980",
+          "translation": "RTMTH",
+          "width": 99,
+          "x": 389,
+          "y": 2399
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 17.26388888888889,
+          "symWidth": 11.25833333333333,
+          "text": "THAT  WAS  THE ORIGINAL  PLAN ,  BUT  THE TARGET  HAS  CHANGED .",
+          "translation": "كانت الخطة الأصلية كذلك، لكن الهدف تغير.",
+          "width": 220,
+          "x": 296,
+          "y": 3010
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.08318903318903,
+          "text": "THE PALACE  MASTER'S  MISSION  FOR THIS  TRIP  IS  TO  PARTICIPATE  IN  THE  ARENA TOURNAMENT  AND  MARRY  JIANG  RUOBING .  THIS WILL  GREATLY  ENHANCE  OUR  STRENGTH .  THE BATTLE  AGAINST  LI  YUNXIAO  WILL  HAVE TO  BE  POSTPONED .",
+          "translation": "مهمة سيد القصر في هذه الرحلة المشاركة في بطولة الحلبة والزواج من جيانغ روبينغ، ما سيزيد قوتنا كثيرًا. لذا قتال لي يونشياو سيؤجل.",
+          "width": 431,
+          "x": 13,
+          "y": 3180
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 17.5,
+          "symWidth": 11.26785714285714,
+          "text": "IT'S  JUST THAT ...",
+          "translation": "ما زال الأمر...",
+          "width": 92,
+          "x": 460,
+          "y": 3588
+        }
+      ],
+      "imgHeight": 3794,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 19.4,
+          "symWidth": 11.82041474654378,
+          "text": "IT'S  JUST  THAT  WE  MIGHT  HAVE  MISJUDGED THE  STRENGTH  OF  THOSE  FROM  THE  YAO RACE .  THAT  GREAT  YAO  NAMED  SHANG  GAVE ME  AN  UNCONTROLLABLE  SENSE  OF  FEAR ;  A FEELING  I'VE  ONLY  EVER  FELT  FROM  THE  HEAD .",
+          "translation": "ربما قد ظلمنا قوة من ينتمون إلى عرق ياو. ذلك ياو العظيم شانغ بث فيّ خوفًا لا يُقاوم؛ شعور لم أشعر به إلا من القائد.",
+          "width": 417,
+          "x": 73,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 16.83333333333333,
+          "symWidth": 11.67274275320252,
+          "text": "MOREOVER ,  THE  PALACE MASTER  SEEMS  VERY  IMPORTANT TO  THE  PEOPLE  OF  THE  YAO  RACE .  FOR THIS  TRIP  TO  RED  MOON  CITY ,  THERE  IS A  YAO  ACCOMPANYING  HIM  AS  A PERSONAL  BODYGUARD .",
+          "translation": "إضافة إلى ذلك، يبدو أن سيد القصر مهم جدًا لشعب ياو. في هذه الرحلة إلى مدينة القمر الأحمر، يرافقه ياو كحارس شخصي.",
+          "width": 358,
+          "x": 272,
+          "y": 551
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.23578176209755,
+          "text": "I'M  AFRAID  THAT AS  THE  PALACE  MASTER'S FACTION",
+          "translation": "أخشى أنه مع ازدياد قوة فصيل سيد القصر،",
+          "width": 254,
+          "x": 74,
+          "y": 1756
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.33333333333333,
+          "symWidth": 11.82083333333333,
+          "text": "CONTINUES  TO  GROW , HE  WILL  EVENTUALLY  SLIP OUT  OF  OUR  CONTROL .",
+          "translation": "سينفلت من سيطرتنا في النهاية.",
+          "width": 254,
+          "x": 106,
+          "y": 1807
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 16.5,
+          "symWidth": 11.50625,
+          "text": "NO  MATTER  HOW STRONG  HE  GETS ,  HE CAN  NEVER  SURPASS THE  HEAD .",
+          "translation": "مهما بلغت قوته، لن يتجاوز القائد.",
+          "width": 189,
+          "x": 410,
+          "y": 1975
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 17.28571428571428,
+          "symWidth": 11.29464285714286,
+          "text": "BESIDES ,  THOSE  YAO CAUSED  SUCH  A  MASSIVE  UPROAR IN  SONGYUE  YANG  CITY .",
+          "translation": "ولا ننسى أن ذاك الياو تسبب في فوضى عارمة بمدينة سونغيو يانغ.",
+          "width": 293,
+          "x": 125,
+          "y": 2223
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.75,
+          "symWidth": 11.2125,
+          "text": "IF  WE  REALLY WANT  TO  DEAL  WITH  THEM ,  WE  CAN JUST  LEAK  THEIR  WHEREABOUTS  TO THE",
+          "translation": "إن أردنا فعلاً التصدي لهم، بإمكاننا تسريب أماكن تواجدهم لل...",
+          "width": 320,
+          "x": 314,
+          "y": 2381
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 16.66666666666667,
+          "symWidth": 10.76521739130435,
+          "text": "SANCTUARY .  THERE'S  NO  NEED FOR  US  TO  WORRY  ABOUT THIS .",
+          "translation": "الملاذ المقدس. لا داعي للقلق حيال ذلك.",
+          "width": 272,
+          "x": 356,
+          "y": 2458
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 17.33333333333333,
+          "symWidth": 11.25036806993329,
+          "text": "LET'S  HOPE  SO . THE  HEAD'S  CALCULATIONS HAVE  ALWAYS  BEEN  FLAWLESS , AND  THIS  TIME  WON'T  BE AN EXCEPTION !",
+          "translation": "فلنأمل ذلك. حسابات القائد لم تخيب أبدًا، وهذه المرة لن تكون استثناءً!",
+          "width": 268,
+          "x": 80,
+          "y": 2939
+        }
+      ],
+      "imgHeight": 3986,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 16.6,
+          "symWidth": 13.24089635854342,
+          "text": "THIS TYRANT TIGER'S  STRENGTH  IS PROBABLY  ON  PAR  WITH  THAT BLOOD  GOD  SON !",
+          "translation": "قوّة هذا النمر الطاغية لا تُضاهى، تُقارن تقريبًا بذاك الابن الإلهي الدموي!",
+          "width": 268,
+          "x": 304,
+          "y": 2265
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 16.8,
+          "symWidth": 13.65301587301587,
+          "text": "HE  WAS  INJURED  BY THE  REBOUND  OF  HIS  OWN  POWER , WHICH  IS  CERTAINLY  RELATED  TO  HIS COMBAT  STYLE  OF  LEAVING NO  LEEWAY .",
+          "translation": "لقد أُصيب بانعكاس قوته الخاصة عليه، وهذا بلا شك مرتبط بأسلوب قتاله الذي لا يترك مجالًا للخطأ.",
+          "width": 327,
+          "x": 56,
+          "y": 2448
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 17.5,
+          "symWidth": 12.6760674413306,
+          "text": "BUT  FOR  THIS TWILIGHT  CLOUD  MIRROR  TO BE  ABLE  TO  REBOUND  EVEN  THE ATTACK  OF  A  MID - STAGE  MARTIAL SOVEREIGN  IS  BEYOND  MY EXPECTATIONS ...",
+          "translation": "لكن أن يعكس هذا المرآة الغسقية هجوم سيد القتال في منتصف المرحلة، ذلك فوق توقّعاتي...",
+          "width": 301,
+          "x": 330,
+          "y": 3311
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 17,
+          "symWidth": 12.35,
+          "text": "FURTHERMORE , THIS  MIRROR",
+          "translation": "علاوة على ذلك، هذه المرآة",
+          "width": 145,
+          "x": 116,
+          "y": 3690
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.66666666666667,
+          "symWidth": 12.44210526315789,
+          "text": "CAN TELEPORT ,  WHICH  MEANS IT  CONTAINS",
+          "translation": "قادرة على التنقل الفوري، مما يعني أنها تحوي",
+          "width": 223,
+          "x": 82,
+          "y": 3718
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 12.25,
+          "text": "AT LEAST",
+          "translation": "على الأقل",
+          "width": 81,
+          "x": 210,
+          "y": 3769
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 11.21428571428572,
+          "text": "SPATIAL RULES .",
+          "translation": "قوانين فضائية.",
+          "width": 129,
+          "x": 128,
+          "y": 3796
+        }
+      ],
+      "imgHeight": 3987,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 17,
+          "symWidth": 12.8956228956229,
+          "text": "I  NEED  TO  FIND TIME  TO  STUDY  THIS  MIRROR PROPERLY .  IT  SEEMS  TO  HAVE QUITE  A  FEW  STRANGE  ABILITIES HIDDEN  INSIDE !",
+          "translation": "يجب أن أجد وقتًا لدراسة هذه المرآة بدقة. يبدو أنها تخفي قدرات غريبة كثيرة!",
+          "width": 287,
+          "x": 47,
+          "y": 493
+        },
+        {
+          "angle": 0,
+          "height": 173,
+          "symHeight": 17.04166666666667,
+          "symWidth": 12.72916666666667,
+          "text": "GENERALLY ,  PROFOUND ARTIFACTS  ARE  OFFENSIVE ONES  LIKE  SABERS  AND  SWORDS . TOOL - TYPE  PROFOUND  ARTIFACTS LIKE  MIRRORS ,  PAGODAS ,  AND BELLS  ARE  OFTEN  EVEN MORE  TERRIFYING .",
+          "translation": "عمومًا، القطع العميقة تكون هجومية مثل السيوف والخناجر، أما القطع العميقة الأدواتية كالمرآة والبوغات والأجراس فتكون أكثر رعبًا غالبًا.",
+          "width": 308,
+          "x": 341,
+          "y": 824
+        },
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 16.6,
+          "symWidth": 12.77466666666667,
+          "text": "EVEN WITH  THE  ABILITIES OF  MY  PREVIOUS  LIFE ,  I WOULDN'T  DARE  TO  RASHLY REFINE  THESE  KINDS OF  THINGS .",
+          "translation": "حتى مع قدرات حياتي السابقة، لم أكن لأجرؤ على تكرير مثل هذه الأمور بتهور.",
+          "width": 249,
+          "x": 124,
+          "y": 1030
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.66666666666667,
+          "symWidth": 13.20833333333333,
+          "text": "THIS MIRROR  IS  NOT BAD  AT  ALL !",
+          "translation": "هذه المرآة ليست سيئة إطلاقًا!",
+          "width": 169,
+          "x": 67,
+          "y": 1562
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 59,
+          "symWidth": 66.33333333333333,
+          "text": "NER",
+          "translation": "RTMTH",
+          "width": 148,
+          "x": 305,
+          "y": 1598
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 19.75,
+          "text": "TSK !",
+          "translation": "تَش!",
+          "width": 78,
+          "x": 583,
+          "y": 1781
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 25.46153846153846,
+          "symWidth": 17.15384615384615,
+          "text": "IT'S  YOU AGAIN ?",
+          "translation": "أنت مجددًا؟",
+          "width": 114,
+          "x": 137,
+          "y": 2709
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 20.54761904761905,
+          "symWidth": 13.88095238095238,
+          "text": "WHERE  DID  YOU  GET SUCH  A  MIRROR ?  HEHE , GIVE  IT  TO  ME ~",
+          "translation": "من أين حصلت على هذه المرآة؟ ها ها، هاتها لي~",
+          "width": 249,
+          "x": 428,
+          "y": 2841
+        },
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 15.81034482758621,
+          "symWidth": 10.66379310344828,
+          "text": "I  HAVEN'T EVEN  SETTLED MY  SCORE  WITH YOU  YET !",
+          "translation": "لم أنتهِ بعدُ من حسابي معك!",
+          "width": 144,
+          "x": 56,
+          "y": 3448
+        }
+      ],
+      "imgHeight": 3624,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 19,
+          "symWidth": 12.48484848484848,
+          "text": "ISN'T  IT  JUST A  MATTER  OF  A  FEW  ORIGIN STONES ?  LET  ME  TELL  YOU SOME  GOOD  NEWS .",
+          "translation": "أليس الأمر مجرد حجر أصل بسيط؟ دعني أخبرك بأخبار طيبة.",
+          "width": 292,
+          "x": 200,
+          "y": 184
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 22.33333333333334,
+          "symWidth": 16.13888888888889,
+          "text": "WHAT GOOD  NEWS THIS  TIME ?",
+          "translation": "وأي أخبار طيبة هذه المرّة؟",
+          "width": 160,
+          "x": 218,
+          "y": 768
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 27.77777777777778,
+          "symWidth": 19.88888888888889,
+          "text": "Come ,  come",
+          "translation": "تعال، تعال",
+          "width": 130,
+          "x": 305,
+          "y": 1214
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 36.45,
+          "symWidth": 25,
+          "text": "YOU'RE  GOING TO  BE  RICH !",
+          "translation": "ستصبح ثريًا!",
+          "width": 300,
+          "x": 148,
+          "y": 1748
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 20.49382716049383,
+          "symWidth": 13.75925925925926,
+          "text": "AND  IF  I DON'T  GET  RICH , WILL  YOU  PAY  WITH YOUR  LIFE ?",
+          "translation": "وإن لم تصبح ثريًا، هل ترهن حياتك لذلك؟",
+          "width": 214,
+          "x": 192,
+          "y": 3049
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 15,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "RTMTH",
+          "width": 416,
+          "x": 253,
+          "y": 3555
+        }
+      ],
+      "imgHeight": 3625,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

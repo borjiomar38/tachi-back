@@ -1,0 +1,1251 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0067",
+  "jobId": "fixture-job-0067",
+  "licenseId": "fixture-license-0067",
+  "pageCount": 19,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 69.86666666666666,
+          "symWidth": 62.03333333333333,
+          "text": "驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل سيد التنانين أضعف المهن؟ أنا دراكو ماجسترو+",
+          "width": 406,
+          "x": 142,
+          "y": 1116
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 9.8,
+          "symWidth": 9.2,
+          "text": "GEMIN",
+          "translation": "الجُمَيْن",
+          "width": 31,
+          "x": 548,
+          "y": 1467
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 25.33333333333333,
+          "symWidth": 20.16666666666667,
+          "text": "READ  AT",
+          "translation": "اقرأ على",
+          "width": 106,
+          "x": 463,
+          "y": 1520
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 13.14285714285714,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 165,
+          "x": 328,
+          "y": 1652
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 16.66666666666667,
+          "text": "NEW  COMICS",
+          "translation": "قصص جديدة",
+          "width": 153,
+          "x": 427,
+          "y": 1714
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 12.33333333333333,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمع نشط",
+          "width": 182,
+          "x": 497,
+          "y": 1777
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 18.80701754385965,
+          "symWidth": 18.64912280701754,
+          "text": "WHAT  DO  WE DO ?  THAT  DEMON IS  HERE - AND  SHE BROUGHT  MORE PEOPLE  THAN US !",
+          "translation": "ماذا نفعل؟ ذلك الشيطان هنا\nوأحضرت معه عدداً يفوقنا!",
+          "width": 254,
+          "x": 121,
+          "y": 3831
+        }
+      ],
+      "imgHeight": 4259,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 19.6304347826087,
+          "symWidth": 18.48260869565217,
+          "text": "TSK ...  IS  THIS DRAGON  NATION GUY  FROM  HER GANG ?  RETREAT FAST !",
+          "translation": "تسخر... هل هذا الرجل من أمة التنين من عصاباتها؟ انسحبوا سريعًا!",
+          "width": 250,
+          "x": 336,
+          "y": 553
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.375,
+          "symWidth": 18.27272727272727,
+          "text": "RUN !  IF  WE DON'T ,  WE'RE ALL  DEAD !",
+          "translation": "اهربوا! إن لم نفعل، سنلقى حتفنا جميعًا!",
+          "width": 199,
+          "x": 123,
+          "y": 892
+        },
+        {
+          "angle": 0,
+          "height": 185,
+          "symHeight": 18.765625,
+          "symWidth": 16.69546568627451,
+          "text": "THE  SOUTHERN  NATION GUYS  THINK  I'M  PART  OF THIS  GANG ?  THEY  TOOK OFF  AS  SOON  AS  THEY SAW  HER - THIS  SO - CALLED GIRL  \" DEMON \"  MUST BE  A  BIG  DEAL .",
+          "translation": "هل ظن هؤلاء الرجال من الأمة الجنوبية أنني جزء من هذه العصابة؟ فروا حالما رأوها — تلك الفتاة التي يسمونها \"الشيطان\" لا بد أنها ذات شأن.",
+          "width": 348,
+          "x": 310,
+          "y": 2001
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 17.14423076923077,
+          "symWidth": 16.60032051282051,
+          "text": "THOSE  SOUTHERN DOGS  AMBUSHED  OUR HEAVENLY  DRAGON  GANG BEFORE .  TODAY ,  WE  MUST HUNT  THEM  DOWN  AND MAKE  THEM  PAY  WITH THEIR  LIVES !",
+          "translation": "لقد نصب هؤلاء الكلاب الجنوبيون كمينًا لعصابتنا التنين السماوي من قبل. واليوم، يجب أن نطاردهم ونردّ ثمن دمائهم!",
+          "width": 331,
+          "x": 18,
+          "y": 2407
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 17.775,
+          "symWidth": 16.17222222222222,
+          "text": "MISS ,  DO  WE PURSUE ?  IT'S YOUR  CALL .",
+          "translation": "آيّتها الآنسة، هل نتبعهم؟ القرار لك.",
+          "width": 174,
+          "x": 464,
+          "y": 2758
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 31,
+          "symWidth": 32.6,
+          "text": "大  快 看 漫画",
+          "translation": "",
+          "width": 187,
+          "x": 505,
+          "y": 3932
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 17.875,
+          "symWidth": 16.675,
+          "text": "..NO  NEED  TO CHASE .  I  CAN MAKE  THEM PAY  JUST  THE SAME .",
+          "translation": "لا حاجة للّحاق بهم. بإمكاني أن أجعلهم يدفعون الثمن مهما كان.",
+          "width": 190,
+          "x": 251,
+          "y": 3949
+        }
+      ],
+      "imgHeight": 4261,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 11.77777777777778,
+          "text": "EH ...  EH !?",
+          "translation": "آه... آه؟",
+          "width": 110,
+          "x": 111,
+          "y": 428
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.25,
+          "symWidth": 16.91666666666666,
+          "text": "TURN  BACK ! RUN THE OTHER  WAY !",
+          "translation": "تراجعوا! اهربوا في الاتجاه الآخر!",
+          "width": 169,
+          "x": 455,
+          "y": 1053
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18.21875,
+          "symWidth": 16.82916666666667,
+          "text": "HMPH .  YOU THINK YOU CAN  RUN ?",
+          "translation": "همم... تظنون أنكم ستهربون؟",
+          "width": 140,
+          "x": 181,
+          "y": 1374
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 23,
+          "symWidth": 19.66666666666667,
+          "text": "NO ... !  HELP , SAVE  ME !",
+          "translation": "لا...! ساعدوني، أنقذوني!",
+          "width": 188,
+          "x": 137,
+          "y": 2698
+        }
+      ],
+      "imgHeight": 3157,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 20.5,
+          "symWidth": 18.6765873015873,
+          "text": "COUGH , COUGH ... !  SPARE ME !  I  DON'T WANT  TO  DIE !",
+          "translation": "سعلة... سعلة...! ارحموني! لا أريد أن أموت!",
+          "width": 242,
+          "x": 339,
+          "y": 621
+        },
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 18.625,
+          "symWidth": 16.22145562770563,
+          "text": "TSK  TSK  TSK . A  SKILL DYING  TO LIKE  THAT ... SOUTHERNERS ARE  AS  WEAK  AS EVER .",
+          "translation": "تسك تسك تسك... مهارة تود أن تموت هكذا... الجنوبيون لا يزالون ضعفاء كما عهدنا.",
+          "width": 240,
+          "x": 42,
+          "y": 2616
+        }
+      ],
+      "imgHeight": 3158,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 19.625,
+          "symWidth": 18.375,
+          "text": "LAO  JIU ,  YOU KNOW  EVERYONE IN  SOUTH  BLACK PORT - WHO'S THAT  GUY ?",
+          "translation": "لاو جيو، أنت تعرف الجميع في ميناء الجنوب الأسود - من هذا الرجل؟",
+          "width": 242,
+          "x": 345,
+          "y": 376
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 12.5,
+          "symWidth": 15,
+          "text": "11",
+          "translation": "11",
+          "width": 22,
+          "x": 60,
+          "y": 978
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.2,
+          "symWidth": 16.57333333333333,
+          "text": "HMM ?  STRANGE , I  DON'T  RECOGNIZE HIM .  HE'S  DEFINITELY NOT  FROM  SOUTH BLACK  PORT .",
+          "translation": "همم؟ عجيب، لا أتعرف عليه. هو بالتأكيد ليس من ميناء الجنوب الأسود.",
+          "width": 272,
+          "x": 136,
+          "y": 1391
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 18.5,
+          "symWidth": 16.5698384948385,
+          "text": "IF  HE'S  NOT  FROM SOUTH  BLACK  PORT , THEN  HE'S  NOT  FROM THE  SOUTHERN NETHER  GANG  OR FLAME  GANG EITHER .",
+          "translation": "إن لم يكن من ميناء الجنوب الأسود، فليس من عصابة الجنوب السفلى ولا عصابة اللهب أيضاً.",
+          "width": 279,
+          "x": 268,
+          "y": 1770
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 20.1375,
+          "symWidth": 18.31676587301587,
+          "text": "IN  THAT  CASE , HE  CAN  ONLY BE  FROM  THE SOUTHERN NATION .",
+          "translation": "في هذه الحالة، لا بدّ أن يكون من الأمة الجنوبية.",
+          "width": 208,
+          "x": 163,
+          "y": 2779
+        }
+      ],
+      "imgHeight": 3159,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.75,
+          "symWidth": 15.94962121212122,
+          "text": "BOLD  SOUTHERN DOG - SEEING  ME AND  STILL  NOT RUNNING ...",
+          "translation": "كلب الجنوب الجريء - يراني ومع ذلك لا يفرّ...",
+          "width": 222,
+          "x": 387,
+          "y": 166
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 20.33333333333333,
+          "symWidth": 17.45454545454545,
+          "text": "LAO  QING , LAO  JIU - KILL HIM !",
+          "translation": "لاو تشينغ، لاو جيو - اقتلوه!",
+          "width": 191,
+          "x": 127,
+          "y": 1241
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 17,
+          "symWidth": 21,
+          "text": "GO !",
+          "translation": "انطلق!",
+          "width": 58,
+          "x": 272,
+          "y": 1668
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 17.33333333333333,
+          "symWidth": 17.36060606060606,
+          "text": "SOUTHERN  DOG ! I'LL  SEND  YOU ON  YOUR  WAY !",
+          "translation": "أيها الكلب الجنوبي! سأبعث بك إلى مصيرك!",
+          "width": 223,
+          "x": 140,
+          "y": 2580
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 12.25,
+          "text": "tet",
+          "translation": "",
+          "width": 170,
+          "x": 520,
+          "y": 3245
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 16.41023809523809,
+          "text": "THE  SOUTHERN  GUYS THINK  I'M  WITH  YOU , AND  YOU  THINK  I'M SOUTHERN - THIS  IS RIDICULOUS .",
+          "translation": "رجال الجنوب يظنونني منكم، وأنتم تظنونني من الجنوب — هذا العبث بعينه.",
+          "width": 280,
+          "x": 251,
+          "y": 3935
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "renderMode": "mask_only",
+          "symHeight": 17.5,
+          "symWidth": 15.55555555555556,
+          "text": "LAO  JIU ,  BE CAREFUL - THIS",
+          "translation": "",
+          "width": 184,
+          "x": 96,
+          "y": 4273
+        }
+      ],
+      "imgHeight": 4314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 18.25,
+          "symWidth": 16.19823232323233,
+          "text": "LAO JIU , BE CAREFUL - THIS PERSON SEEMS VERY STRONG . ,",
+          "translation": "يا لاو جيو، احذر - هذا الشخص يبدو قويًا جدًا.",
+          "width": 211,
+          "x": 83,
+          "y": 15
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.83333333333333,
+          "symWidth": 17.71031746031746,
+          "text": "HAHAHA !  DON'T I  KNOW  EXACTLY HOW CAPABLE SOUTHERN  NATION FIGHTERS  ARE ?",
+          "translation": "هاهاها! ألست أعلم تمام العلم بقدرات مقاتلي الأمة الجنوبية؟",
+          "width": 250,
+          "x": 116,
+          "y": 1051
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 18.75,
+          "symWidth": 17.82916666666667,
+          "text": "SIGH ...  LOOKS LIKE  I'LL  HAVE TO  CALM  YOU DOWN  FIRST .",
+          "translation": "آه... يبدو أن عليّ أولًا أن أهدئ من روعك.",
+          "width": 201,
+          "x": 230,
+          "y": 1565
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 22,
+          "symWidth": 18.75,
+          "text": "[ REPEL  THE WEAK ] !",
+          "translation": "[ردع الضعفاء]!",
+          "width": 171,
+          "x": 252,
+          "y": 2836
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 20.4,
+          "text": "UGH !?",
+          "translation": "أها؟!",
+          "width": 99,
+          "x": 225,
+          "y": 3669
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 20.16666666666667,
+          "symWidth": 14.11169462582506,
+          "text": "REPEL  THE WEAK :  RELEASES  DRACONIC  KILLING INTENT ,  DEALING  DEFENSE - IGNORING  DAMAGE  AND KNOCKBACK  TO  ALL  NEARBY  ENEMIES .  DAMAGE  IS DETERMINED  BY  THE  ATTRIBUTE  GAP ;  THE  LARGER  THE GAP ,  THE  HIGHER  THE  DAMAGE .",
+          "translation": "ردع الضعفاء: يطلق نية قتالية تنينّية، مُحدثًا ضررًا لا يُحد بإهمال الدفاع والارتداد لكل الأعداء القريبين. يرتبط الضرر بفارق السمات؛ كلما علا الفارق، ازداد الضرر.",
+          "width": 577,
+          "x": 55,
+          "y": 4067
+        }
+      ],
+      "imgHeight": 4314,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 17.75,
+          "symWidth": 17.78787878787879,
+          "text": "MASTER  QING AND  MASTER  JIU WERE  BLASTED AWAY !?",
+          "translation": "لقد تلاشى السيد تشينغ والسيد جيو في غمضة عين!؟",
+          "width": 228,
+          "x": 305,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 18,
+          "symWidth": 15.79166666666667,
+          "text": "DON'T PANIC !  I'LL HELP  YOU !",
+          "translation": "لا تفزع! سأعينك الآن!",
+          "width": 142,
+          "x": 460,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.75,
+          "symWidth": 17.09722222222222,
+          "text": "STOP ,  TELL YOUR  PEOPLE TO  STAND DOWN .",
+          "translation": "قف، فلتأمر رجالك بالتراجع.",
+          "width": 183,
+          "x": 125,
+          "y": 1361
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 19.33333333333333,
+          "text": "!  !  ?",
+          "translation": "!؟!",
+          "width": 93,
+          "x": 434,
+          "y": 2370
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 17.75,
+          "symWidth": 16.38303571428571,
+          "text": "HE'S TAKEN THE  BOSS HOSTAGE !",
+          "translation": "لقد اختطف الزعيم رهينةً!",
+          "width": 152,
+          "x": 47,
+          "y": 2693
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.75,
+          "symWidth": 15.84791666666667,
+          "text": "HOW  IS  THAT POSSIBLE !? RIGHT  IN  FRONT OF  US ... !",
+          "translation": "كيف جاز ذلك؟ أمام ناظرينا...!",
+          "width": 214,
+          "x": 440,
+          "y": 2853
+        }
+      ],
+      "imgHeight": 3339,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.16666666666667,
+          "symWidth": 16.50477272727273,
+          "text": "I'M  LU  FAN ,  THE FLAME  GUARDIAN FIGHTING  THE ANCIENT  GOD . I'M  NOT  YOUR ENEMY .",
+          "translation": "أنا لو فان، حارس اللهب الذي يقاتل الإله القديم. لست عدوكم.",
+          "width": 231,
+          "x": 50,
+          "y": 509
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18,
+          "symWidth": 15.83190883190883,
+          "text": "I  KNOW LU  FAN ... BROTHERS , LOWER  YOUR WEAPONS . ,",
+          "translation": "أنا أعرف لو فان... أيها الإخوة، أنزلوا أسلحتكم.",
+          "width": 175,
+          "x": 251,
+          "y": 913
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.25641025641026,
+          "symWidth": 17.61538461538462,
+          "text": "YOU'RE  STRONG ,  BUT CLAIMING  TO  BE  THE LU  FAN  WHO  CAN SLAY  AN  ANCIENT GOD - WHAT  PROOF DO  YOU  HAVE ?",
+          "translation": "أنت قوي، لكن تدّعي أنك لو فان القادر على قتل إله قديم - ما الدليل لديك؟",
+          "width": 287,
+          "x": 134,
+          "y": 2079
+        }
+      ],
+      "imgHeight": 3340,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 19.11392405063291,
+          "symWidth": 17.59358047016275,
+          "text": "IT  SEEMS  LONGNAN PREFECTURE  IS  AS ISOLATED  AS  THE WESTERN  FRONTIER .  AT MOST ,  PEOPLE  KNOW MY  NAME  BUT  NOT MY  FACE .",
+          "translation": "يبدو أن محافظة لونغنان معزولة كجبهة الغرب المتطرفة. على الأكثر، يعرف الناس اسمي دون أن يروا وجهي.",
+          "width": 321,
+          "x": 320,
+          "y": 365
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 17,
+          "symWidth": 11.85714285714286,
+          "text": "THEN ...",
+          "translation": "إذاً...",
+          "width": 80,
+          "x": 137,
+          "y": 1384
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20,
+          "symWidth": 19.52631578947368,
+          "text": "DO  YOU RECOGNIZE THIS ?",
+          "translation": "هل تعترف بهذا؟",
+          "width": 175,
+          "x": 195,
+          "y": 1884
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 20.19444444444444,
+          "symWidth": 16.77777777777778,
+          "text": "THIS  MEDAL .... ARE  YOU  TRULY LU  FAN !?",
+          "translation": "هذه الميدالية... هل أنت حقاً لو فان؟",
+          "width": 232,
+          "x": 80,
+          "y": 3143
+        }
+      ],
+      "imgHeight": 3341,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 18.29075630252101,
+          "symWidth": 17.00756302521008,
+          "text": "OUR  DEEPEST APOLOGIES !  WE FAILED  TO  RECOGNIZE GREATNESS - WE NEVER  EXPECTED  THE LEGENDARY  DRAGON TAMER  LU  FAN  TO BE  HERE .",
+          "translation": "نعتذر أعمق اعتذار! لقد أخفقنا في تقدير العظمة - لم نكن نتوقع حضور مُروض التنين الأسطوري لو فان.",
+          "width": 299,
+          "x": 358,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 18.125,
+          "symWidth": 17.26666666666667,
+          "text": "NO  WONDER  HE DEFEATED  US  IN  ONE MOVE ...  LAO  QING , YOU  HAD  GOOD INSTINCTS .",
+          "translation": "لا عجب أنه هزمنا بضربة واحدة... يا لاو تشينغ، كان لحدسك منطق.",
+          "width": 277,
+          "x": 84,
+          "y": 1345
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 19.1304347826087,
+          "symWidth": 17.14142379359771,
+          "text": "I  NEVER  THOUGHT I'D  MEET  A  LEGEND AT  MY  AGE .  I'M NOT  DREAMING , AM  I ...",
+          "translation": "لم أظن أنني سألتقي بأسطورة في مثل سني. هل هذا حلمٌ أم حقيقة؟",
+          "width": 276,
+          "x": 304,
+          "y": 2266
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.16666666666667,
+          "symWidth": 16.13355672105672,
+          "text": "WE'RE  THE HEAVENLY DRAGON GANG  OF  SOUTH BLACK  PORT .  I'M THE  LEADER ,  CUI ZIYI .",
+          "translation": "نحن عصابة التنين السماوي من ميناء بلاك الجنوبي. أنا القائد، كوي زييي.",
+          "width": 257,
+          "x": 135,
+          "y": 2644
+        }
+      ],
+      "imgHeight": 3885,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.73333333333333,
+          "symWidth": 15.92483660130719,
+          "text": "CUI  ZIYI - LEVEL  109 , TURBULENT  MAGE  IV ,  LEADER  OF THE  HEAVENLY  DRAGON  GANG",
+          "translation": "تسوي زيي - المستوى 109، ساحر العواصف الرابع، زعيم عصابة التنين السماوي",
+          "width": 432,
+          "x": 135,
+          "y": 89
+        },
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 19.12903225806452,
+          "symWidth": 16.82676651305683,
+          "text": "I'M  THE  YOUNGER AND  MORE  HANDSOME OF  THE  TWO  DEPUTIES- JUST  CALL  ME  LAO  JIU . THERE'S  NO  ONE  IN SOUTH  BLACK  PORT  I DON'T  KNOW .",
+          "translation": "أنا الأصغر والأكثر وسامة من بين نائبَيْ العصابة - فقط نادوني لاو جيو. لا أحد في ميناء بلاك ساوث يجهلني.",
+          "width": 309,
+          "x": 270,
+          "y": 406
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 14.33333333333333,
+          "symWidth": 13.66997354497354,
+          "text": "LAO  JIU - LEVEL  99 ,  LONGSWORD WARRIOR  IV ,  DEPUTY  OF  THE HEAVENLY  DRAGON  GANG",
+          "translation": "لاو جيو - المستوى 99، محارب السيف الطويل الرابع، نائب عصابة التنين السماوي",
+          "width": 334,
+          "x": 33,
+          "y": 1332
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 17.35,
+          "symWidth": 15.35,
+          "text": "LAO  QING - LEVEL  102 ,  GALE STALKER  IV ,  DEPUTY  OF  THE HEAVENLY  DRAGON  GANG",
+          "translation": "لاو تشينغ - المستوى 102، متعقب العواصف الرابع، نائب عصابة التنين السماوي",
+          "width": 335,
+          "x": 312,
+          "y": 1550
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.68461538461538,
+          "symWidth": 16.69142857142857,
+          "text": "I'M  LAO  QING ... THE  OTHER  DEPUTY . THANK  YOU  FOR SHOWING MERCY EARLIER ,  MR .  LU .",
+          "translation": "أنا لاو تشينغ... النائب الآخر. أشكرك يا سيد لو على رحمتك السابقة.",
+          "width": 262,
+          "x": 76,
+          "y": 1759
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19,
+          "symWidth": 17.35598290598291,
+          "text": "\" HEAVENLY DRAGON  GANG \" ... THAT  NAME SOUNDS  A  BIT ... DATED .",
+          "translation": "\"عصابة التنين السماوي\"... ذلك الاسم يبدو مُتقادمًا إلى حد ما.",
+          "width": 251,
+          "x": 122,
+          "y": 2277
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.5,
+          "text": "HUH ?",
+          "translation": "ها؟",
+          "width": 62,
+          "x": 470,
+          "y": 2598
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 14.31764705882353,
+          "symWidth": 13.67076648841355,
+          "text": "SIGH ...  THE OLD  BOSS NAMED  IT ,  AND MISS  DOESN'T WANT  TO CHANGE  IT ,",
+          "translation": "آه... الزعيم القديم هو من سمّاها، والسيدة ترفض تغيير الاسم.",
+          "width": 162,
+          "x": 483,
+          "y": 3136
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 15.16666666666667,
+          "symWidth": 14.48066979316979,
+          "text": "I  TOLD  YOU IT'D  SOUND AWKWARD WHEN INTRODUCING IT .",
+          "translation": "قلت لك إن تقديمه سيكون مرتبكًا.",
+          "width": 152,
+          "x": 185,
+          "y": 3174
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.5,
+          "symWidth": 16.49572649572649,
+          "text": "WEREN'T  YOU  SENT BY  THE  CAPITAL  TO FIGHT  THE  BEAST TIDE ?  WHY  ARE  YOU HERE  IN  A  PLACE LIKE  THIS ?",
+          "translation": "ألَسْتَ أُرسلت من العاصمة لمحاربة مدّ الوحوش؟ فما الذي جاء بك إلى هذا الموضع؟",
+          "width": 265,
+          "x": 318,
+          "y": 3579
+        }
+      ],
+      "imgHeight": 3886,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 18,
+          "symWidth": 16.74186765615337,
+          "text": "I  DID  GO  TO  THE FAR  NORTH ,  BUT  TO FIGHT  THE  ANCIENT GOD ,  I  NEED  TO COMPLETE  MY  FOURTH ADVANCEMENT QUICKLY .",
+          "translation": "لقد ذهبتُ إلى أقصى الشمال، لكن لأقاتل الإله القديم، يجب أن أكمل ترقيتي الرابعة بسرعة.",
+          "width": 304,
+          "x": 148,
+          "y": 727
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.4,
+          "symWidth": 17.08776556776557,
+          "text": "I  TEACHER  TOLD  ME THE  MATERIALS  I NEED  ARE  IN  THE ABYSS  AT  THE LONGNAN  BORDER .",
+          "translation": "أخبرني المعلم أن المواد التي أحتاجها تقع في الهاوية على حدود لونغان.",
+          "width": 270,
+          "x": 310,
+          "y": 1068
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 18.625,
+          "symWidth": 17.01349206349206,
+          "text": "FOURTH ADVANCEMENT ? WAIT - SO  YOU HAVEN'T EVEN BROKEN PAST LEVEL  90 !?",
+          "translation": "ترقية رابعة؟! مهلاً - هل لم تتجاوز حتى المستوى 90؟!",
+          "width": 213,
+          "x": 130,
+          "y": 1407
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 17.8,
+          "symWidth": 16.25078605604921,
+          "text": "TO  BE  DEFEATED  BY SOMEONE  STILL  AT THIRD  ADVANCEMENT ... HOW  EMBARRA- SSING ...",
+          "translation": "أن تُهزم من قِبَل شخص ما زال عند الترقية الثالثة... يا له من أمر مخزٍ...",
+          "width": 298,
+          "x": 307,
+          "y": 2287
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 18.16666666666667,
+          "symWidth": 17.13245768392827,
+          "text": "THE  BORDER  ABYSS ... YOU  WEREN'T  TRICKED , WERE  YOU ?  NO  ONE USES  MATERIALS  FROM THERE  FOR ADVANCEMENT .",
+          "translation": "هاوية الحدود... لم تُخدع، أليس كذلك؟ لا أحد يستخدم مواد من هناك للترقي.",
+          "width": 318,
+          "x": 72,
+          "y": 2631
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.2,
+          "symWidth": 16.98336663336663,
+          "text": "BUT  LOSING  TO  A LEGENDARY  YOUTH OF  THE  DRAGON NATION ...  I  CAN ACCEPT  THAT .",
+          "translation": "لكن أن أخسر أمام شاب أسطوري من أمة التنين... فهذا أستطيع قبوله.",
+          "width": 257,
+          "x": 37,
+          "y": 3512
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.25,
+          "symWidth": 17.57638888888889,
+          "text": "YOU  REALLY DON'T  DWELL  ON THINGS  AT  ALL , DO  YOU ?",
+          "translation": "حقاً، أنت لا تستغرق في الأمور أبداً، أليس كذلك؟",
+          "width": 221,
+          "x": 446,
+          "y": 3627
+        }
+      ],
+      "imgHeight": 3887,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 18.28571428571428,
+          "symWidth": 17.19597069597069,
+          "text": "THIS  PROFESSOR OUYANG  IS  INDEED  A BIT  STRANGE - SENDING ME  FROM  THE  FAR NORTH  TO  THE  FAR SOUTH  FOR MATERIALS .",
+          "translation": "هذا الأستاذ أويانغ غريب الأطوار حقًا - يرسلني من أقاصي الشمال إلى أقاصي الجنوب لأجل بعض المواد.",
+          "width": 309,
+          "x": 107,
+          "y": 195
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 19.25,
+          "symWidth": 17.47361111111111,
+          "text": "BUT  MY SENIOR ...  THE PRINCIPAL PERSONALLY",
+          "translation": "لكن كبيري... المدير بنفسه",
+          "width": 195,
+          "x": 369,
+          "y": 1205
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 20.5,
+          "symWidth": 17.83173076923077,
+          "text": "SAID  SHE'S  VERY CAPABLE .  THERE SHOULDN'T  BE  A PROBLEM .",
+          "translation": "قال إنها جديرة بالثقة. لا يجب أن يكون هناك أي مشكلة.",
+          "width": 251,
+          "x": 121,
+          "y": 2242
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.2,
+          "symWidth": 16.76072261072261,
+          "text": "SINCE  YOU'RE ALREADY  HERE , I'LL  TAKE  YOU  TO THE  BORDER ABYSS .",
+          "translation": "وبما أنك هنا بالفعل، سأصحبك إلى هوة الحدود.",
+          "width": 235,
+          "x": 352,
+          "y": 2590
+        }
+      ],
+      "imgHeight": 3458,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 18.28571428571428,
+          "symWidth": 16.94126984126984,
+          "text": "ONCE  YOU  SEE  IT YOURSELF , YOU'LL UNDERSTAND  WHY NO  ONE  USES MATERIALS  FROM HERE .",
+          "translation": "عندما تراه بعينيك، ستدرك لماذا لا يستخدم أحد هنا هذه المواد.",
+          "width": 244,
+          "x": 111,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17.5,
+          "symWidth": 17.15,
+          "text": "HALF  AN  HOUR LATER",
+          "translation": "بعد نصف ساعة",
+          "width": 188,
+          "x": 82,
+          "y": 380
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.5,
+          "symWidth": 17.0959595959596,
+          "text": "LONGNAN  PREFECTURE . BORDER  ABYSS",
+          "translation": "مقاطعة لونغنان. الهاوية الحدودية",
+          "width": 319,
+          "x": 279,
+          "y": 473
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 18.4,
+          "symWidth": 17.2930303030303,
+          "text": "WHAT  A MASSIVE  RIFT- SO  THIS  IS  WHAT SEPARATES  THE TWO  NATIONS ,",
+          "translation": "يا لها من صدع هائل! فهذا ما يفصل بين الأمَّتين.",
+          "width": 231,
+          "x": 126,
+          "y": 1936
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 18.34722222222222,
+          "symWidth": 16.38210400710401,
+          "text": "THIS  IS  IT .  THERE ARE  COUNTLESS SECRET  REALMS , LARGE  AND  SMALL , IN  THE  BORDER ABYSS .",
+          "translation": "ها هو ذا. في الهاوية الحدودية، تحيط أسرار لا تحصى من العوالم السرية، صغيرةً وكبيرة.",
+          "width": 257,
+          "x": 128,
+          "y": 3048
+        }
+      ],
+      "imgHeight": 3458,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17,
+          "symWidth": 16.70412698412698,
+          "text": "THE TEN  MOST IMPORTANT ONES  ARE HERE .",
+          "translation": "هنا أجمل عشرة من الأسرار.",
+          "width": 159,
+          "x": 411,
+          "y": 567
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.5,
+          "symWidth": 17.13511904761905,
+          "text": "WE  ARE CURRENTLY  RIGHT ABOVE  THE  10TH SECRET  REALM .",
+          "translation": "نحن الآن فوق العالَم السري العاشر مباشرة.",
+          "width": 242,
+          "x": 107,
+          "y": 929
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.8,
+          "symWidth": 16.39333333333333,
+          "text": "YOU  MEAN ...  MY BREAKTHROUGH MATERIALS  ARE INSIDE  THIS REALM ?",
+          "translation": "هل تعني... أن مواد اختراقي موجودة داخل هذا العالَم؟",
+          "width": 216,
+          "x": 373,
+          "y": 2086
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 18.13333333333333,
+          "symWidth": 16.43888888888889,
+          "text": "I  CAN'T GUARANTEE  IT , BUT  YOU'LL HAVE TO  TRY  FOR YOURSELF .",
+          "translation": "لا أضمن ذلك، لكن عليك أن تجرب بنفسك.",
+          "width": 222,
+          "x": 136,
+          "y": 2439
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 34.66666666666666,
+          "symWidth": 35,
+          "text": "0  0  0",
+          "translation": "",
+          "width": 65,
+          "x": 553,
+          "y": 2664
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 19.71428571428572,
+          "symWidth": 17.92554945054945,
+          "text": "ALRIGHT , THANKS  FOR  THE GUIDANCE . TIME IS  TIGHT ,  SO  I'M HEADING  OUT NOW .",
+          "translation": "حسنًا، شكرًا على الإرشاد. الوقت ضيق، فسأتجه الآن.",
+          "width": 252,
+          "x": 259,
+          "y": 3268
+        }
+      ],
+      "imgHeight": 3458,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 17.90740740740741,
+          "symWidth": 15.83333333333333,
+          "text": "FOUND  IT .  CUI ZIYI  WAS  RIGHT , THERE  REALLY  IS A  SECRET  REALM HERE .",
+          "translation": "وجدتها. كان كوي زييي على حق، فهناك حقًا عالَم سري هنا.",
+          "width": 232,
+          "x": 181,
+          "y": 2097
+        }
+      ],
+      "imgHeight": 3561,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.5,
+          "symWidth": 16.12573099415205,
+          "text": "MISS ,  THIS DOESN'T SEEM  LIKE YOU .",
+          "translation": "آنسة، هذا ليس من طباعك.",
+          "width": 142,
+          "x": 255,
+          "y": 218
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 18.32142857142857,
+          "symWidth": 16.31665074056379,
+          "text": "HE'S  THE GUARDIAN  OF  THE FLAME  PREPARING  FOR WAR .  WE  SHOULD  HELP HIM  AND  TELL  HIM THAT  THE  10TH  REALM IS  INACCESSIBLE WITHOUT  A  KEY .",
+          "translation": "هو الحارس الشعلة يُعِدّ للحرب. علينا مساعدته وإخباره أن العالم العاشر لا يُفتح إلا بمفتاح.",
+          "width": 310,
+          "x": 99,
+          "y": 1324
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.76923076923077,
+          "symWidth": 16.15384615384615,
+          "text": "LAO  JIU ,  MISS HAS  HER  OWN PLANS .",
+          "translation": "لاو جو، لدى الآنسة مخططات خاصة بها.",
+          "width": 185,
+          "x": 408,
+          "y": 2517
+        }
+      ],
+      "imgHeight": 3562,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 17.66666666666667,
+          "symWidth": 15.76889585510275,
+          "text": "LET  HIM  TRY  IT FOR  HIMSELF .  THEN HIS  GOALS  AND  THE HEAVENLY  DRAGON GANG'S  GOALS  WILL ALIGN .",
+          "translation": "دعه يجرب بنفسه، حينها ستتلاقى غاياته مع هدف عِصابة التنين السماوي.",
+          "width": 274,
+          "x": 87,
+          "y": 284
+        },
+        {
+          "angle": 0,
+          "height": 160,
+          "symHeight": 18.4,
+          "symWidth": 17.01712121212121,
+          "text": "THIS  WAY , WE  CAN  RIDE  HIS MOMENTUM ,  IN THE  NAME  OF THE  HEAVENLY DRAGON  GANG ,",
+          "translation": "وبهذا نركب موجته، باسم عِصابة التنين السماوي،",
+          "width": 222,
+          "x": 349,
+          "y": 1560
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 20.4,
+          "symWidth": 20.44666666666667,
+          "text": "AND COMPLETELY CRUSH  THOSE SOUTHERN GANGS !",
+          "translation": "ونسحق تماماً تلك العصابات الجنوبية!",
+          "width": 213,
+          "x": 369,
+          "y": 2977
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 32.5,
+          "symWidth": 20.43452380952381,
+          "text": "visit and read at for  the  fastest  releases",
+          "translation": "",
+          "width": 400,
+          "x": 269,
+          "y": 3379
+        }
+      ],
+      "imgHeight": 3561,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

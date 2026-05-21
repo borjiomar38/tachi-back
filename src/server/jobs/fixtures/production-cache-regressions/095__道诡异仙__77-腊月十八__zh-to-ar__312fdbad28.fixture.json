@@ -1,0 +1,1204 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0095",
+  "jobId": "fixture-job-0095",
+  "licenseId": "fixture-license-0095",
+  "pageCount": 37,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 306,
+          "symHeight": 144.75,
+          "symWidth": 114.9375,
+          "text": "道 仙 DAOGUIYI",
+          "translation": "الطريق المقدّس DAOGUIYI",
+          "width": 637,
+          "x": 283,
+          "y": 13
+        },
+        {
+          "angle": 0,
+          "height": 468,
+          "symHeight": 59.77999999999999,
+          "symWidth": 49.81090909090909,
+          "text": "主笔 : 汤 不 烫 脚本 : 小刀 上色 : 颜 晨 场景 : 007 责编 : 皓月 制作 方 : 有点 笔 格 工作室",
+          "translation": "رسم رئيسي: تانغ بو تانغ\nالسيناريو: شياو داو\nالتلوين: يان تشن\nالمشهد: 007\nالمحرر: هاو يوان\nالإنتاج: استوديو يوف ديان بي غي",
+          "width": 688,
+          "x": 247,
+          "y": 1887
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 38.31578947368421,
+          "text": "改编 自 作者 狐 尾 的 笔 原创 小说 《 道 诡异 仙 》",
+          "translation": "مقتبس من رواية المؤلف هولوى الأصلية «الطريق المريب المقدّس»",
+          "width": 781,
+          "x": 217,
+          "y": 2494
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 51.4,
+          "symWidth": 50,
+          "text": "【 腾讯 动漫",
+          "translation": "腾讯 动漫",
+          "width": 187,
+          "x": 985,
+          "y": 3097
+        }
+      ],
+      "imgHeight": 3167,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 33,
+          "text": "包子 漫畫",
+          "translation": "مانغا باوزي",
+          "width": 139,
+          "x": 572,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 20.95454545454545,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問",
+          "translation": "هذه المانغا من تجميع وترتيب مانغا باوزي، للمزيد من المانغا المجانية زوروا الموقع",
+          "width": 527,
+          "x": 343,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 47.41666666666666,
+          "symWidth": 43.41666666666666,
+          "text": "李 师兄 ……… 你 这 都是 什么 东西 啊 ?",
+          "translation": "الأخ لي... ما هذه الأشياء كلها؟",
+          "width": 293,
+          "x": 466,
+          "y": 557
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 47,
+          "symWidth": 43.28571428571429,
+          "text": "感觉 不像 兵器 , 倒像 是 刑具 啊 ?",
+          "translation": "لا تبدو كأسلحة، بل كما لو كانت أدوات تعذيب؟",
+          "width": 326,
+          "x": 122,
+          "y": 1850
+        }
+      ],
+      "imgHeight": 2069,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 46,
+          "symWidth": 41.57142857142857,
+          "text": "就像 这个 钳子 , 杀人 不行 ………",
+          "translation": "مثل هذه الملاقط، لا تصلح للقتل...",
+          "width": 314,
+          "x": 528,
+          "y": 472
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 44,
+          "symWidth": 63.33333333333334,
+          "text": "【 动漫",
+          "translation": "الانمي",
+          "width": 193,
+          "x": 979,
+          "y": 1805
+        }
+      ],
+      "imgHeight": 1868,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 46,
+          "symWidth": 50.29761904761905,
+          "text": "可是 拔牙 什么 的 却很 方便 ——",
+          "translation": "لكن خلع الأسنان كان سهلاً للغاية—",
+          "width": 348,
+          "x": 374,
+          "y": 211
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 53.5,
+          "symWidth": 64.5,
+          "text": "TO",
+          "translation": "إلى",
+          "width": 66,
+          "x": 852,
+          "y": 661
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 47,
+          "symWidth": 43.66666666666667,
+          "text": "让 你 打听 的 事 情 怎么 样 了 ?",
+          "translation": "هل بلغتك أخبار ما طلبت الاستعلام عنه؟",
+          "width": 302,
+          "x": 350,
+          "y": 876
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 48.625,
+          "symWidth": 38.46428571428572,
+          "text": "AMEN J ......",
+          "translation": "آمين ج......",
+          "width": 307,
+          "x": 839,
+          "y": 2024
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 38,
+          "text": "打听 好 了 !",
+          "translation": "لقد تحقق الأمر!",
+          "width": 222,
+          "x": 819,
+          "y": 3
+        },
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 46.96428571428572,
+          "symWidth": 44.71428571428572,
+          "text": "那 林 子里 有 长虫 在 吃 人 , 周遭 的 人 都 不会 去 那 …",
+          "translation": "في ذاك الغابة ثمة دُبّ قادر على التهام البشر، فلا أحد يجرؤ على الاقتراب منه...",
+          "width": 353,
+          "x": 387,
+          "y": 701
+        },
+        {
+          "angle": 0,
+          "height": 168,
+          "symHeight": 46.2,
+          "symWidth": 43.63333333333333,
+          "text": "不过 那 长虫 也 安分 得很 , 从 来 不 出来 。",
+          "translation": "غير أن ذلك الدُبّ يظل راضياً مكتفياً، لا يخرج أبداً.",
+          "width": 303,
+          "x": 267,
+          "y": 1101
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 44,
+          "symWidth": 54,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 95,
+          "x": 1076,
+          "y": 2033
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 48.41666666666667,
+          "symWidth": 39.31666666666666,
+          "text": "长虫 ………… 说 大蛇 吗 ?",
+          "translation": "هل تقصد الثعبان العظيم...؟",
+          "width": 276,
+          "x": 765,
+          "y": 823
+        }
+      ],
+      "imgHeight": 2097,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 46.5,
+          "symWidth": 44.575,
+          "text": "那 应该 没 什么 问题 。",
+          "translation": "لا ينبغي أن تكون هناك مشكلة.",
+          "width": 222,
+          "x": 392,
+          "y": 470
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 53.25,
+          "text": "腾讯 动漫",
+          "translation": "",
+          "width": 172,
+          "x": 1003,
+          "y": 2031
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 32.33333333333334,
+          "text": "最新 免费 漫画",
+          "translation": "أحدث المانغا المجانية",
+          "width": 201,
+          "x": 75,
+          "y": 2003
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 222,
+          "symHeight": 34.2,
+          "symWidth": 48,
+          "text": "走 , 出发 。",
+          "translation": "هيّا، لننطلق.",
+          "width": 56,
+          "x": 998,
+          "y": 577
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 54.33333333333334,
+          "symWidth": 49,
+          "text": "∵∴  包子 漫畫",
+          "translation": "",
+          "width": 277,
+          "x": 894,
+          "y": 1994
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 51.5,
+          "text": "动漫",
+          "translation": "",
+          "width": 94,
+          "x": 1079,
+          "y": 2034
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 38.33333333333334,
+          "symWidth": 39.61111111111111,
+          "text": "这 片 竹林 看 起 来 好像 没什么 ......",
+          "translation": "يبدو أن هذه الغابة البامبو\nخالية من أي شيء...",
+          "width": 300,
+          "x": 100,
+          "y": 1580
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [],
+      "imgHeight": 2097,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 32,
+          "symWidth": 30.42857142857143,
+          "text": "●  最新 免费 漫画",
+          "translation": "أحدث المانغا المجانية",
+          "width": 231,
+          "x": 43,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 45.875,
+          "symWidth": 42.8,
+          "text": "这 是 …… 腊月 十八 ?",
+          "translation": "هل هذا... يوم الثامن عشر من شهر كانون الأول؟",
+          "width": 226,
+          "x": 244,
+          "y": 708
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 44,
+          "symWidth": 55,
+          "text": "动漫",
+          "translation": "",
+          "width": 94,
+          "x": 1076,
+          "y": 2033
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 46.33333333333334,
+          "symWidth": 37.66666666666666,
+          "text": "不可能 …… !",
+          "translation": "مستحيل...!",
+          "width": 270,
+          "x": 406,
+          "y": 257
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 45,
+          "symWidth": 42.125,
+          "text": "它 什么 时候 出现 的 ?",
+          "translation": "متى ظهر ذلك؟",
+          "width": 246,
+          "x": 748,
+          "y": 525
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 44.75,
+          "symWidth": 47.5,
+          "text": "腾讯 动漫",
+          "translation": "",
+          "width": 174,
+          "x": 997,
+          "y": 2031
+        }
+      ],
+      "imgHeight": 2098,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 45,
+          "symWidth": 35.33333333333334,
+          "text": "等等 , 不对 !",
+          "translation": "انتظر، هذا غير صحيح!",
+          "width": 267,
+          "x": 348,
+          "y": 288
+        }
+      ],
+      "imgHeight": 2089,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 45.57142857142857,
+          "symWidth": 40.42857142857143,
+          "text": "萤火虫 ? 竹子 ?",
+          "translation": "يراعات؟ أمُ بامبو؟",
+          "width": 173,
+          "x": 400,
+          "y": 1191
+        }
+      ],
+      "imgHeight": 2089,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [],
+      "imgHeight": 2088,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 46.41666666666667,
+          "symWidth": 42.90476190476191,
+          "text": "不是 腊月 十八 , 而是 我 的 幻觉",
+          "translation": "ليس في الثامن عشر من الشهر الأخير، بل كانت أوهامي.",
+          "width": 316,
+          "x": 744,
+          "y": 276
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 47,
+          "symWidth": 44.86666666666667,
+          "text": "黑 太岁 的 效果 越来越 弱 ,",
+          "translation": "تأثير العام الأسود يضعف أكثر فأكثر،",
+          "width": 301,
+          "x": 367,
+          "y": 1053
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 44.72727272727273,
+          "symWidth": 33.54545454545455,
+          "text": "不能 再拖 ] ......",
+          "translation": "لا يمكنني المزيد من المماطلة...",
+          "width": 198,
+          "x": 399,
+          "y": 1920
+        }
+      ],
+      "imgHeight": 2089,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 47.5,
+          "symWidth": 44.7,
+          "text": "不然 之后 只 会 更 麻烦 。",
+          "translation": "فإلا فالأمر سيزداد تعقيدًا بعد ذلك.",
+          "width": 250,
+          "x": 308,
+          "y": 924
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 55.4,
+          "symWidth": 49.4,
+          "text": "④  包子 漫畫",
+          "translation": "",
+          "width": 257,
+          "x": 909,
+          "y": 1979
+        }
+      ],
+      "imgHeight": 2089,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [],
+      "imgHeight": 2089,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [],
+      "imgHeight": 2088,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [],
+      "imgHeight": 2089,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 46.66666666666666,
+          "symWidth": 44.42857142857143,
+          "text": "曹操 …… 你 知道 李 师兄 说 的 腊月 十八 是 什么 吗 ?",
+          "translation": "تساو تساو... هل تدري ما يعنيه الثامن عشر من شهر الإلهام حسب ما قال الأخ لي؟",
+          "width": 351,
+          "x": 298,
+          "y": 242
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 45.75,
+          "symWidth": 41.1875,
+          "text": "腊月 十 八 ? 那 我 哪知 道 !",
+          "translation": "الثامن عشر من شهر الإلهام؟ كيف لي أن أعلم ذاك!",
+          "width": 272,
+          "x": 246,
+          "y": 1501
+        }
+      ],
+      "imgHeight": 1905,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 47,
+          "symWidth": 41.07142857142857,
+          "text": "白 师姐 , 你 很 担心 李 师兄 啊 ?",
+          "translation": "الأخت باي، هل أنت قلقة للغاية على الأخ لي؟",
+          "width": 324,
+          "x": 793,
+          "y": 1270
+        }
+      ],
+      "imgHeight": 1905,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 47.875,
+          "symWidth": 41.925,
+          "text": "李 师兄 这次 好不容易 带 着 我们 ,",
+          "translation": "الأخ لي لم يُرسلنا هكذا عبثاً هذه المرة،",
+          "width": 250,
+          "x": 286,
+          "y": 734
+        }
+      ],
+      "imgHeight": 1905,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 46,
+          "symWidth": 45.95,
+          "text": "我 想着 能 不 能帮",
+          "translation": "كنت أفكر إن كان بإمكاني المساعدة",
+          "width": 247,
+          "x": 690,
+          "y": 115
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 41.5,
+          "text": "不需要 。",
+          "translation": "لا حاجة لذلك.",
+          "width": 172,
+          "x": 845,
+          "y": 376
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 44.66666666666666,
+          "symWidth": 39.55555555555555,
+          "text": "你们 只要 跟着 我 就好 , 明白 了 吗 ?",
+          "translation": "ما عليكم سوى اتباعي، هل فهمتم؟",
+          "width": 297,
+          "x": 429,
+          "y": 743
+        }
+      ],
+      "imgHeight": 1905,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 53.33333333333334,
+          "symWidth": 46.33333333333334,
+          "text": "∵∴  包子 漫畫",
+          "translation": "رواية باوزي المصورة",
+          "width": 272,
+          "x": 35,
+          "y": 28
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 33,
+          "symWidth": 33.75,
+          "text": "包子 漫畫",
+          "translation": "رواية باوزي المصورة",
+          "width": 141,
+          "x": 572,
+          "y": 41
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 24.81081081081081,
+          "symWidth": 20.59459459459459,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理, 更多 免費 漫畫 請 訪問",
+          "translation": "تم جمع وتنظيم هذه الرواية المصورة\nبواسطة باوزي المصورة، للمزيد من الروايات المجانية\nزوروا الموقع",
+          "width": 524,
+          "x": 344,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 67,
+          "symWidth": 48,
+          "text": "是 , 李 师兄 。",
+          "translation": "نعم، يا أستاذ لي.",
+          "width": 379,
+          "x": 571,
+          "y": 1493
+        }
+      ],
+      "imgHeight": 2105,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [],
+      "imgHeight": 1905,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 47,
+          "symWidth": 43.57142857142857,
+          "text": "不过 进去 之后 , 你们 能做 的 事情 其实 还有 一件 。",
+          "translation": "لكن بعد دخولكم، هناك أمر واحد\nيمكنكم فعله أيضاً.",
+          "width": 350,
+          "x": 209,
+          "y": 508
+        }
+      ],
+      "imgHeight": 1905,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 46.16666666666667,
+          "symWidth": 43.41666666666667,
+          "text": "假如 … 我 是 说 假如 。",
+          "translation": "لو... أقول لو فقط.",
+          "width": 273,
+          "x": 405,
+          "y": 152
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 46.33333333333333,
+          "symWidth": 43,
+          "text": "假如 我 的 行为 举止 出现 了 异 常 ··",
+          "translation": "لو تصرفاتي أو حركاتي بدت غير طبيعية...",
+          "width": 299,
+          "x": 671,
+          "y": 404
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 30.66666666666667,
+          "text": "最新 免费 漫画",
+          "translation": "أحدث الروايات المصورة المجانية",
+          "width": 201,
+          "x": 76,
+          "y": 1702
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "renderMode": "mask_only",
+          "symHeight": 47,
+          "symWidth": 41,
+          "text": "你们 就 守着 我 ,",
+          "translation": "",
+          "width": 314,
+          "x": 498,
+          "y": 1766
+        }
+      ],
+      "imgHeight": 1797,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46.5,
+          "symWidth": 42.08333333333333,
+          "text": "你们 就 守着 我 , 别让 我 乱跑 。",
+          "translation": "احرسوني، لا تدعوني أهرب.",
+          "width": 272,
+          "x": 495,
+          "y": 30
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 36,
+          "text": "是 , 李 师兄 !",
+          "translation": "نعم، أستاذ لي!",
+          "width": 272,
+          "x": 82,
+          "y": 1173
+        }
+      ],
+      "imgHeight": 1796,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 100,
+          "symWidth": 94.11111111111111,
+          "text": "常规 更新 日 为 每周 六",
+          "translation": "التحديث المعتاد يوم السبت كل أسبوع",
+          "width": 897,
+          "x": 167,
+          "y": 796
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 99,
+          "symWidth": 78.4,
+          "text": "求 点 赞 、 评论 、 收藏 !",
+          "translation": "أتوسل إليكم بالإعجاب والتعليق والحفظ!",
+          "width": 838,
+          "x": 163,
+          "y": 925
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 64,
+          "symWidth": 60.375,
+          "text": "各位 看官 多 支持 ~",
+          "translation": "أيها القراء الأعزاء، دعمكم محل تقدير!",
+          "width": 520,
+          "x": 553,
+          "y": 1431
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 53,
+          "text": "腾讯 动漫",
+          "translation": "腾讯 动漫",
+          "width": 160,
+          "x": 1011,
+          "y": 2796
+        }
+      ],
+      "imgHeight": 2860,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 132,
+          "symWidth": 131,
+          "text": "生日 活动 预告",
+          "translation": "الإعلان عن فعالية عيد الميلاد",
+          "width": 750,
+          "x": 211,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 279,
+          "symHeight": 55.64285714285714,
+          "symWidth": 50.86071428571429,
+          "text": "下周 4 月 2 日 迎来 火 子 哥 生日 , 会上 线 庆 生 主题 活动 , 有 周边 福利 以及 作者 签 绘 放送 , 欢迎 大家 来玩 ~",
+          "translation": "في الثاني من أبريل الأسبوع القادم\nنحتفل بعيد ميلاد \"النار\"،\nمع فعالية خاصة، وهدايا،\nورسم توقيع المؤلف، مرحباً بالجميع!",
+          "width": 767,
+          "x": 191,
+          "y": 749
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 11.83333333333333,
+          "symWidth": 12.16666666666667,
+          "text": "狐 尾 的 宽  原著",
+          "translation": "النسخة الأصلية لفو وي",
+          "width": 68,
+          "x": 630,
+          "y": 1892
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 8,
+          "symWidth": 8.333333333333334,
+          "text": "YUEWEN",
+          "translation": "YUEWEN",
+          "width": 42,
+          "x": 263,
+          "y": 2080
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 30.99851190476191,
+          "symWidth": 27.02976190476191,
+          "text": "《 道 诡异 仙 》 重磅 降临 狐 尾 的 笔 · 视觉 盛宴 扛 鼎 之 作 原著 之 XTOPIA",
+          "translation": "«طريق الغرابة الخالد»\nعمل بارز من فو وي،\nمُتَعة بصرية فريدة من نوعها\nالعمل الأصلي \"XTOPIA\"",
+          "width": 492,
+          "x": 526,
+          "y": 2257
+        }
+      ],
+      "imgHeight": 2538,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 30,
+          "renderMode": "mask_only",
+          "symHeight": 21.66666666666667,
+          "symWidth": 13,
+          "text": "XTOPIA",
+          "translation": "",
+          "width": 69,
+          "x": 615,
+          "y": 28
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 23.58333333333333,
+          "symWidth": 26.13333333333333,
+          "text": "徽章 列 马口铁 幻念 系 每盒 6 包  共 6 款 18 元 / 包 作 宴",
+          "translation": "شارات معدنية مطبوعة تتألف من ستة أنواع، ست عبوات في كل صندوق، السعر 18 يوان للعبوة.",
+          "width": 204,
+          "x": 447,
+          "y": 594
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 60,
+          "symWidth": 53.1875,
+          "text": "还有 神秘 头像 框 , 着 大家 来 领取 哦 ~",
+          "translation": "هناك إطارات رؤوس غامضة، احرصوا جميعًا على تحصيلها~",
+          "width": 515,
+          "x": 373,
+          "y": 1235
+        },
+        {
+          "angle": 0,
+          "height": 245,
+          "symHeight": 244,
+          "symWidth": 228.5,
+          "text": "神秘",
+          "translation": "غامض",
+          "width": 486,
+          "x": 373,
+          "y": 1571
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 18,
+          "text": "送 奶",
+          "translation": "تقديم الحليب",
+          "width": 34,
+          "x": 86,
+          "y": 2087
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 31.5,
+          "text": "本 常",
+          "translation": "مألوف",
+          "width": 80,
+          "x": 132,
+          "y": 2357
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 43,
+          "symWidth": 47,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 85,
+          "x": 1085,
+          "y": 2469
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 32.5,
+          "text": "包子 漫畫",
+          "translation": "مانغا باوزي",
+          "width": 141,
+          "x": 573,
+          "y": 2579
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 20.77272727272727,
+          "text": "本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問",
+          "translation": "هذا المانغا جمعته ونقحه مجموعة مانغا باوزي، للمزيد من المانغا المجانية، تفضلوا بزيارتنا.",
+          "width": 524,
+          "x": 344,
+          "y": 2646
+        }
+      ],
+      "imgHeight": 2737,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-05.mobile-layout-hints.v1"
+}

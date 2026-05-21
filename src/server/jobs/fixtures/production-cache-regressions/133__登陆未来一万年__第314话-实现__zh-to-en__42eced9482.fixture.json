@@ -1,0 +1,3685 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0133",
+  "jobId": "fixture-job-0133",
+  "licenseId": "fixture-license-0133",
+  "pageCount": 196,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg",
+    "059.jpg",
+    "060.jpg",
+    "061.jpg",
+    "062.jpg",
+    "063.jpg",
+    "064.jpg",
+    "065.jpg",
+    "066.jpg",
+    "067.jpg",
+    "068.jpg",
+    "069.jpg",
+    "070.jpg",
+    "071.jpg",
+    "072.jpg",
+    "073.jpg",
+    "074.jpg",
+    "075.jpg",
+    "076.jpg",
+    "077.jpg",
+    "078.jpg",
+    "079.jpg",
+    "080.jpg",
+    "081.jpg",
+    "082.jpg",
+    "083.jpg",
+    "084.jpg",
+    "085.jpg",
+    "086.jpg",
+    "087.jpg",
+    "088.jpg",
+    "089.jpg",
+    "090.jpg",
+    "091.jpg",
+    "092.jpg",
+    "093.jpg",
+    "094.jpg",
+    "095.jpg",
+    "096.jpg",
+    "097.jpg",
+    "098.jpg",
+    "099.jpg",
+    "100.jpg",
+    "101.jpg",
+    "102.jpg",
+    "103.jpg",
+    "104.jpg",
+    "105.jpg",
+    "106.jpg",
+    "107.jpg",
+    "108.jpg",
+    "109.jpg",
+    "110.jpg",
+    "111.jpg",
+    "112.jpg",
+    "113.jpg",
+    "114.jpg",
+    "115.jpg",
+    "116.jpg",
+    "117.jpg",
+    "118.jpg",
+    "119.jpg",
+    "120.jpg",
+    "121.jpg",
+    "122.jpg",
+    "123.jpg",
+    "124.jpg",
+    "125.jpg",
+    "126.jpg",
+    "127.jpg",
+    "128.jpg",
+    "129.jpg",
+    "130.jpg",
+    "131.jpg",
+    "132.jpg",
+    "133.jpg",
+    "134.jpg",
+    "135.jpg",
+    "136.jpg",
+    "137.jpg",
+    "138.jpg",
+    "139.jpg",
+    "140.jpg",
+    "141.jpg",
+    "142.jpg",
+    "143.jpg",
+    "144.jpg",
+    "145.jpg",
+    "146.jpg",
+    "147.jpg",
+    "148.jpg",
+    "149.jpg",
+    "150.jpg",
+    "151.jpg",
+    "152.jpg",
+    "153.jpg",
+    "154.jpg",
+    "155.jpg",
+    "156.jpg",
+    "157.jpg",
+    "158.jpg",
+    "159.jpg",
+    "160.jpg",
+    "161.jpg",
+    "162.jpg",
+    "163.jpg",
+    "164.jpg",
+    "165.jpg",
+    "166.jpg",
+    "167.jpg",
+    "168.jpg",
+    "169.jpg",
+    "170.jpg",
+    "171.jpg",
+    "172.jpg",
+    "173.jpg",
+    "174.jpg",
+    "175.jpg",
+    "176.jpg",
+    "177.jpg",
+    "178.jpg",
+    "179.jpg",
+    "180.jpg",
+    "181.jpg",
+    "182.jpg",
+    "183.jpg",
+    "184.jpg",
+    "185.jpg",
+    "186.jpg",
+    "187.jpg",
+    "188.jpg",
+    "189.jpg",
+    "190.jpg",
+    "191.jpg",
+    "192.jpg",
+    "193.jpg",
+    "194.jpg",
+    "195.jpg",
+    "196.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 28.16666666666667,
+          "symWidth": 24.46212121212121,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 523,
+          "x": 385,
+          "y": 38
+        },
+        {
+          "angle": 0,
+          "height": 270,
+          "symHeight": 120.875,
+          "symWidth": 110.5416666666667,
+          "text": "高 武 : 登陆 未来",
+          "translation": "High Martial Arts: Landing in the Future",
+          "width": 713,
+          "x": 285,
+          "y": 840
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 212,
+          "symHeight": 128.1666666666667,
+          "symWidth": 108.6666666666667,
+          "text": "一 万年 LEVEL  UP  IN  THE  FUTURE",
+          "translation": "10,000 Years Level Up in the Future",
+          "width": 608,
+          "x": 307,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35,
+          "text": "改编 自 飞 卢 小说 网 作者 每月 一 更",
+          "translation": "Adapted from Feilu Novel Network, updated monthly",
+          "width": 543,
+          "x": 320,
+          "y": 391
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 31.375,
+          "text": "原创 小说 《 高 武 : 登陆 未来 一 万年 》",
+          "translation": "Original Novel \"High Martial Arts: Landing in the Future, Ten Thousand Years\"",
+          "width": 601,
+          "x": 280,
+          "y": 466
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 46.44444444444444,
+          "text": "快 看 ! 快 看 漫画 独家",
+          "translation": "Look! Exclusive to KuaiKan Manhua",
+          "width": 447,
+          "x": 353,
+          "y": 615
+        },
+        {
+          "angle": 0,
+          "height": 195,
+          "symHeight": 42.33333333333334,
+          "symWidth": 37.42857142857143,
+          "text": "出品 : 快 看 漫画 原著 : 每月 一 更 制作 : 常 盘 勇者",
+          "translation": "Produced by KuaiKan Manhua, Original by Monthly Updates, Production by Changpan Yongzhe",
+          "width": 320,
+          "x": 348,
+          "y": 780
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 479,
+          "symHeight": 42.71428571428572,
+          "symWidth": 37.3388888888889,
+          "text": "监制 : 猎人 脚本 : 猎人 分 镜 : 陈小皓  荒原  廿 肆 线 稿 : 笑匠  淮山 上色 : 来 一份 炸鸡  狗狗  木棉 3D  : 贪婪 的 因果 G 责编 : 春雨",
+          "translation": "Supervisor: Hunter Script: Hunter Storyboard: Chen Xiaohao, Wasteland Twenty-four Line Art: Xiaoxiang, Huaishan Coloring: One Serving of Fried Chicken, Dog, Kapok 3D: Greedy Fate Editor: Chunyu",
+          "width": 610,
+          "x": 345,
+          "y": 7
+        }
+      ],
+      "imgHeight": 625,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 96,
+          "symHeight": 94.6,
+          "symWidth": 72,
+          "text": "总 星 长 ? !",
+          "translation": "Supreme Commander?!",
+          "width": 469,
+          "x": 626,
+          "y": 635
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 80,
+          "symWidth": 71.01666666666667,
+          "text": "你 知道 吗 , 整个 百 大 星 区",
+          "translation": "Did you know, throughout the hundred major star regions",
+          "width": 499,
+          "x": 322,
+          "y": 843
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 75,
+          "symWidth": 75.85714285714286,
+          "text": "只有 两位 总 星 长",
+          "translation": "there are only two Supreme Commanders",
+          "width": 580,
+          "x": 327,
+          "y": 46
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 93.66666666666667,
+          "symWidth": 74.66666666666667,
+          "text": "天吶 !",
+          "translation": "Heavens!",
+          "width": 260,
+          "x": 457,
+          "y": 544
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 386,
+          "symHeight": 68,
+          "symWidth": 60.98863636363637,
+          "text": "一个 是 负责 坐镇 异 空 战场 , 抵御 外 宇宙 异兽 的 侵袭 , 另一个 则 是 统帅 百 大 星 区 , 是 整个 亿 亿万 兆 星空 种族 中 最为 崇高 尊贵 的 人物 !",
+          "translation": "One is in charge of guarding the alien battlefield, fending off cosmic beasts from outer space, the other commands the hundred major star regions, the most revered figure among trillions of star races!",
+          "width": 812,
+          "x": 151,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 73,
+          "symWidth": 66.28571428571429,
+          "text": "这种 超级 大人物",
+          "translation": "How could such a colossal figure",
+          "width": 509,
+          "x": 660,
+          "y": 11
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 36.63636363636364,
+          "symWidth": 30.22727272727273,
+          "text": "包子 漫畫 baizimh.com",
+          "translation": "",
+          "width": 206,
+          "x": 105,
+          "y": 36
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 67,
+          "symWidth": 63.57142857142857,
+          "text": "怎么 会 来 这里 ?",
+          "translation": "end up here?",
+          "width": 477,
+          "x": 656,
+          "y": 104
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 337,
+          "symHeight": 67.70833333333334,
+          "symWidth": 63.39375,
+          "text": "快快 快 ! 随 我 一同 迎接 总 星 长 , 这 可是 千年 难遇 的 机会 !",
+          "translation": "Quick, quick! Join me in welcoming the Supreme Commander, a once-in-a-millennium event!",
+          "width": 540,
+          "x": 150,
+          "y": 200
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 238,
+          "symHeight": 65.8888888888889,
+          "symWidth": 60.98425925925926,
+          "text": "没错 ! 恰好 今天 是 我 族 权 位 更迭 之 际 , 只要 将 此事 宣扬 出去 ,",
+          "translation": "Exactly! Today marks the turning of power in our clan. If we spread the word,",
+          "width": 666,
+          "x": 394,
+          "y": 761
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 239,
+          "symHeight": 65.33333333333333,
+          "symWidth": 62.66296296296296,
+          "text": "哪怕 是 假借 总 星 长 的 威名 , 我们 莱尔萨斯 家族 必将 更上一层楼 !",
+          "translation": "even by borrowing the Supreme Commander's name, our Laersas family will surely rise to greater heights!",
+          "width": 674,
+          "x": 394,
+          "y": 18
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 410,
+          "symHeight": 158.5,
+          "symWidth": 169,
+          "text": "蜂拥 而出",
+          "translation": "Swarming out",
+          "width": 169,
+          "x": 781,
+          "y": 590
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [],
+      "imgHeight": 227,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 314,
+          "symHeight": 63.33333333333334,
+          "symWidth": 57.79058758006126,
+          "text": "可恶 啊 ! 根本 没 准备 的 功夫 了 , 不然 一定 要 用 最 隆重 的 仪式 迎接 总 星 长 ! 快快 !",
+          "translation": "Damn it! No time to prepare! Otherwise, we'd greet the Grand Star Lord with the grandest ceremony! Hurry!",
+          "width": 686,
+          "x": 341,
+          "y": 282
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 87.2,
+          "symWidth": 59.3,
+          "text": "总 星 长 ? 1th ...",
+          "translation": "Grand Star Lord? Th-the...",
+          "width": 349,
+          "x": 672,
+          "y": 177
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 54,
+          "symWidth": 53.25,
+          "text": "快 看 漫画",
+          "translation": "Quick, look at the comic",
+          "width": 231,
+          "x": 132,
+          "y": 336
+        },
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 57,
+          "symWidth": 51.43650793650793,
+          "text": "你 也 配 看 总 星 长 的 尊容 ? 趴下 !",
+          "translation": "You dare gaze upon the Grand Star Lord? Down on your knees!",
+          "width": 406,
+          "x": 625,
+          "y": 681
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 31.42857142857143,
+          "symWidth": 24.00892857142857,
+          "text": "最新 免费 漫画 : www.baozimh.com .",
+          "translation": "",
+          "width": 312,
+          "x": 957,
+          "y": 902
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 61.53846153846154,
+          "symWidth": 54.57692307692308,
+          "text": "大 人们 马上 就 过来 了 , 赶紧 低下头 ! 免得 脏 了 大 人们 的 眼 !",
+          "translation": "The lords are coming! Bow your heads quickly! Don’t dirty their eyes!",
+          "width": 661,
+          "x": 514,
+          "y": 277
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 78,
+          "symWidth": 63,
+          "text": "唔 啊 … !",
+          "translation": "Ugh...!",
+          "width": 315,
+          "x": 273,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 27.18181818181818,
+          "symWidth": 21.31818181818182,
+          "text": "● 最新 免费 漫画 www.baozimh.com",
+          "translation": "",
+          "width": 293,
+          "x": 959,
+          "y": 904
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 290,
+          "symHeight": 281.5,
+          "symWidth": 360,
+          "text": "叉叉",
+          "translation": "X X",
+          "width": 384,
+          "x": 894,
+          "y": 116
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 29.5,
+          "symWidth": 34.75,
+          "text": "包  畫 com",
+          "translation": "",
+          "width": 199,
+          "x": 110,
+          "y": 36
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [],
+      "imgHeight": 251,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 244,
+          "symHeight": 104.7,
+          "symWidth": 95.80000000000001,
+          "text": "恭迎 总 星 长 大人 莅临 !",
+          "translation": "Welcome, Grand Star Lord, to our presence!",
+          "width": 562,
+          "x": 493,
+          "y": 391
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 347,
+          "symHeight": 70.25,
+          "symWidth": 64.19090909090909,
+          "text": "各位 请 起 , 听闻 莱尔萨斯 家族 新任 族长 今日 继任 , 我 特 来 恭贺 , 不 请 自来 没有 打扰 吧 ?",
+          "translation": "Please rise, everyone. I’ve heard the Lyelsas family’s new clan head ascended today. I came specifically to congratulate you. I hope I’m not intruding?",
+          "width": 791,
+          "x": 215,
+          "y": 9
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 27.33333333333333,
+          "symWidth": 24.91717171717172,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 1041
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 346,
+          "symHeight": 71.68181818181819,
+          "symWidth": 64.212012987013,
+          "text": "各位 请 起 , 听闻 莱尔萨斯 家族 新任 族长 今日 继任 , 我 特 来 恭贺 , 不 请 自来 没有 打扰 吧 ?",
+          "translation": "Please rise, everyone. I’ve heard the Lyelsas family’s new clan head ascended today. I came specifically to congratulate you. I hope I’m not intruding?",
+          "width": 791,
+          "x": 215,
+          "y": 10
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 28.33333333333333,
+          "symWidth": 24.74242424242424,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 1041
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 60.75,
+          "symWidth": 56.5,
+          "text": "传说 中 尊贵 无比 的",
+          "translation": "The legendary and incomparable",
+          "width": 521,
+          "x": 161,
+          "y": 935
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 62,
+          "symWidth": 61,
+          "text": "总 星",
+          "translation": "Grand Star",
+          "width": 128,
+          "x": 161,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 60,
+          "symWidth": 57.55119047619048,
+          "text": "长大 人 竟然 真的 是 为 我们 莱尔萨斯 家族 而来 !",
+          "translation": "Lord has truly come to honor our Lyelsas family!",
+          "width": 587,
+          "x": 161,
+          "y": 16
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 51.2,
+          "text": "快快 看 漫画",
+          "translation": "Quick, look at the comic",
+          "width": 328,
+          "x": 33,
+          "y": 176
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "059.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "060.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 314,
+          "symHeight": 63.25,
+          "symWidth": 55.37182539682539,
+          "text": "特意 来 恭贺 ! 我 的 天吶 ! 我们 区区 一个 星 区 家族 , 何德何能 !",
+          "translation": "They came specially to congratulate us! My heavens! We’re a mere star sector family—how deserving are we!",
+          "width": 568,
+          "x": 136,
+          "y": 616
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "061.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 400,
+          "symHeight": 65,
+          "symWidth": 59.8313492063492,
+          "text": "众人 心中 都 震撼 不已 , 每个 人 心中 都 知道 , 莱尔萨斯 家族 从 今日 开始 , 即将 迎来 前所未有 的 辉煌 。",
+          "translation": "Everyone was utterly stunned—each heart knew the Laersas family was about to enter an unprecedented era of glory.",
+          "width": 648,
+          "x": 469,
+          "y": 407
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "062.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 77,
+          "symWidth": 70.5,
+          "text": "这下可 真是 !",
+          "translation": "This is truly!",
+          "width": 450,
+          "x": 653,
+          "y": 518
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 91.25,
+          "symWidth": 79.5,
+          "text": "了 不得 !",
+          "translation": "Unbelievable!",
+          "width": 334,
+          "x": 374,
+          "y": 889
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "063.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "064.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 50,
+          "symWidth": 35,
+          "text": "0000",
+          "translation": "0000",
+          "width": 128,
+          "x": 255,
+          "y": 679
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "065.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 75.5,
+          "symWidth": 62.3125,
+          "text": "欢迎 总 星 长大 人 , 不 打扰 ! 不 打扰 !",
+          "translation": "Welcome, Chief Star Lord. We won't disturb you!",
+          "width": 589,
+          "x": 543,
+          "y": 697
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "066.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "067.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 432,
+          "symHeight": 69.4,
+          "symWidth": 63.63214285714285,
+          "text": "发 了 ! 彻底 发 了 ! 哈哈哈 哈哈 … 我 威尔斯 终于 要 出 人头 地 一 飞 冲天 了 !",
+          "translation": "I've made it! Completely made it! Hahaha... I, Wells, am finally about to rise and soar to the heavens!",
+          "width": 562,
+          "x": 158,
+          "y": 7
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "068.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "069.jpg": {
+      "blocks": [],
+      "imgHeight": 999,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "070.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 27.66666666666667,
+          "symWidth": 25.05252525252525,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 40
+        },
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 65.9,
+          "symWidth": 57.14285714285714,
+          "text": "我 没 选 错 ! 我 果然 没 选 错 !",
+          "translation": "I didn't make a wrong choice! I really didn't!",
+          "width": 462,
+          "x": 159,
+          "y": 376
+        },
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 30,
+          "symWidth": 24.80208333333334,
+          "text": "最新 免费 漫画 wwww.bapzimh.com",
+          "translation": "",
+          "width": 301,
+          "x": 19,
+          "y": 1103
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "071.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 27.22727272727273,
+          "symWidth": 21.95454545454545,
+          "text": "● 最新 免费 漫画 www.baoziah.com",
+          "translation": "",
+          "width": 295,
+          "x": 959,
+          "y": 34
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "072.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 389,
+          "symHeight": 63.97454545454546,
+          "symWidth": 58.93363636363635,
+          "text": "莱尔萨斯 家族 竟然 还能 和 传说 中 的 总 星 长 扯上 关系 , 威尔斯 为 新 的 掌舵 手 , 而 我 …… 也 将 成为 新 时代 的 女王 !",
+          "translation": "The Laersas family can even associate with the legendary Chief Star Lord. Wells is the new helmsman, and I... will become the queen of a new era!",
+          "width": 753,
+          "x": 125,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "073.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "074.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "075.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 84.5,
+          "symWidth": 77.93333333333334,
+          "text": "既然 不 打扰 就好 , 呵呵 …",
+          "translation": "As long as I'm not disturbing you, hehe...",
+          "width": 545,
+          "x": 283,
+          "y": 757
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "076.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "077.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "078.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 266,
+          "symHeight": 72.8,
+          "symWidth": 64.76296296296296,
+          "text": "对 了 , 新 的 家 主 是 叫 … 赛亚 · 莱尔萨斯 吧 ? 他人 在 哪 ?",
+          "translation": "Right, the new family head is named... Saiya Laersas, right? Where is he?",
+          "width": 801,
+          "x": 324,
+          "y": 429
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "079.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "080.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "081.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 97,
+          "symWidth": 81,
+          "text": "哎 ? 赛 …",
+          "translation": "Eh? Sai...",
+          "width": 446,
+          "x": 214,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 100,
+          "symWidth": 86.66666666666667,
+          "text": "赛亚 ?",
+          "translation": "Saiya?",
+          "width": 286,
+          "x": 213,
+          "y": 449
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "082.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "083.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 50.5,
+          "symWidth": 49.5,
+          "text": "你 都快 看 漫画",
+          "translation": "You're almost reading the manga, huh?",
+          "width": 338,
+          "x": 25,
+          "y": 782
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "084.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "085.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 220,
+          "symHeight": 335.5,
+          "symWidth": 275,
+          "text": "安静",
+          "translation": "Quiet.",
+          "width": 590,
+          "x": 81,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 80,
+          "symWidth": 70.5,
+          "text": "啊 ?",
+          "translation": "Huh?",
+          "width": 146,
+          "x": 724,
+          "y": 349
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 106.3333333333333,
+          "symWidth": 71.33333333333333,
+          "text": "什么 ?",
+          "translation": "What?",
+          "width": 246,
+          "x": 170,
+          "y": 766
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "086.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 71.5,
+          "symWidth": 67.33333333333333,
+          "text": "我 没听 错 吧 …",
+          "translation": "I didn’t hear wrong, did I...",
+          "width": 464,
+          "x": 337,
+          "y": 911
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "087.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 77,
+          "symWidth": 73.25,
+          "text": "总 星 长大 人 刚 喊 的",
+          "translation": "Commander, you just called out",
+          "width": 634,
+          "x": 333,
+          "y": 6
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 70,
+          "symWidth": 64.6,
+          "text": "是 … 赛亚 ?",
+          "translation": "Is… Saiya?",
+          "width": 360,
+          "x": 333,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 258,
+          "symHeight": 253,
+          "symWidth": 161.5,
+          "text": "??",
+          "translation": "??",
+          "width": 270,
+          "x": 594,
+          "y": 314
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "088.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "089.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 28,
+          "symWidth": 24.72828282828283,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 526,
+          "x": 383,
+          "y": 1040
+        }
+      ],
+      "imgHeight": 1199,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "090.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "091.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 98,
+          "symWidth": 81.33333333333333,
+          "text": "可恶 !",
+          "translation": "Damn it!",
+          "width": 278,
+          "x": 219,
+          "y": 145
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 102,
+          "symWidth": 87,
+          "text": "放开 我 !",
+          "translation": "Let go of me!",
+          "width": 392,
+          "x": 218,
+          "y": 281
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "092.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 100.1666666666667,
+          "symWidth": 89.33333333333333,
+          "text": "总 星 长大 人 !",
+          "translation": "Commander!",
+          "width": 594,
+          "x": 539,
+          "y": 717
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "093.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "094.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "095.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "096.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 70,
+          "symWidth": 59.1,
+          "text": "我 ! 我 就是 赛亚 !",
+          "translation": "I am! I am Saiya!",
+          "width": 391,
+          "x": 697,
+          "y": 613
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "097.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 31,
+          "symWidth": 35.5,
+          "text": "00",
+          "translation": "00",
+          "width": 40,
+          "x": 455,
+          "y": 69
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "098.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 94.83333333333334,
+          "symWidth": 85.86666666666667,
+          "text": "哈 … 哈哈 … 咳 哈 …",
+          "translation": "Ha... haha... cough ha...",
+          "width": 508,
+          "x": 207,
+          "y": 813
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "099.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "100.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "101.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "102.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "103.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "104.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 28.51351351351352,
+          "symWidth": 26.59121621621622,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 1040
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "105.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "106.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "107.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "108.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 28.60810810810811,
+          "symWidth": 26.35472972972973,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 1041
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "109.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "110.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 282,
+          "symHeight": 78.85,
+          "symWidth": 66.48125,
+          "text": "恭喜 你 呀 , 年轻人 , 星空 亦会 会 铭记 这 一刻 的 。",
+          "translation": "Congratulations, young one. The starry sky shall remember this moment as well.",
+          "width": 686,
+          "x": 248,
+          "y": 679
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "111.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "112.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 32.5,
+          "symWidth": 32,
+          "text": "00",
+          "translation": "00",
+          "width": 32,
+          "x": 447,
+          "y": 261
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 72,
+          "symWidth": 41,
+          "text": "??",
+          "translation": "??",
+          "width": 138,
+          "x": 892,
+          "y": 306
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "113.jpg": {
+      "blocks": [],
+      "imgHeight": 999,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "114.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 27,
+          "symWidth": 24.43333333333333,
+          "text": "●  最新 免费 漫画 www.baozimh.com",
+          "translation": "",
+          "width": 297,
+          "x": 27,
+          "y": 36
+        },
+        {
+          "angle": 0,
+          "height": 209,
+          "symHeight": 57.66666666666666,
+          "symWidth": 51.63333333333333,
+          "text": "总 星 长大 人 ! 他 并不是 我们 家族 的 新任 族长 , 搞错 了 ! 我 才是 … 我 …",
+          "translation": "Commander! He is not the new chief of our clan, you’re mistaken! I am... I...",
+          "width": 625,
+          "x": 520,
+          "y": 224
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "115.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "116.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 73,
+          "symWidth": 62.4,
+          "text": "是 的 是 的 !",
+          "translation": "Yes, yes!",
+          "width": 363,
+          "x": 663,
+          "y": 314
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 56,
+          "symWidth": 53.33333333333334,
+          "text": "快 漫画",
+          "translation": "Quick manga",
+          "width": 218,
+          "x": 147,
+          "y": 317
+        },
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 75,
+          "symWidth": 62.1,
+          "text": "总 星 长 , 您 搞错 啦 !",
+          "translation": "Commander, you’re mistaken!",
+          "width": 364,
+          "x": 665,
+          "y": 413
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "117.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "118.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "119.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 346,
+          "symHeight": 70.46503496503496,
+          "symWidth": 63.25874125874127,
+          "text": "这 地方 , 难不成 有 第二 个 叫 一 赛亚 · 莱尔萨斯 的 人 吗 ?",
+          "translation": "Is it possible that there’s a second person named Saiya Lersas here?",
+          "width": 609,
+          "x": 558,
+          "y": 480
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "120.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 224,
+          "symHeight": 215.5,
+          "symWidth": 217.5,
+          "text": "无语",
+          "translation": "Speechless",
+          "width": 591,
+          "x": 98,
+          "y": 371
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 38.8,
+          "symWidth": 35,
+          "text": "④  包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 278,
+          "x": 34,
+          "y": 891
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "121.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 112.5,
+          "symWidth": 115,
+          "text": "呃 …",
+          "translation": "Uh...",
+          "width": 246,
+          "x": 146,
+          "y": 850
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "122.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "123.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "124.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 62.10526315789474,
+          "symWidth": 57.21052631578947,
+          "text": "我 所 认定 的 , 莱尔萨斯 家族 族长 只有 一个 。",
+          "translation": "The only head of the Lersas family I recognize is one.",
+          "width": 539,
+          "x": 656,
+          "y": 847
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "125.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 65.5,
+          "symWidth": 62.08333333333334,
+          "text": "那 就是 赛亚 · 莱尔萨斯 !",
+          "translation": "That is Saiya Leirsas!",
+          "width": 549,
+          "x": 200,
+          "y": 823
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "126.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "127.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "128.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "129.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 72.3888888888889,
+          "symWidth": 68.37301587301589,
+          "text": "如果 你们 选定 的 族长 不是 他 , 那 只能 证明 …",
+          "translation": "If the clan leader you choose is not him, then that only proves...",
+          "width": 543,
+          "x": 533,
+          "y": 79
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "130.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "131.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "132.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "133.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 329,
+          "symHeight": 65.32142857142857,
+          "symWidth": 61.04404761904762,
+          "text": "你们 这群 人 …… 并 不能 代表 莱尔萨斯 家族 真正 的 意志 啊 。",
+          "translation": "You lot... do not truly represent the will of the Laelsath family.",
+          "width": 454,
+          "x": 268,
+          "y": 504
+        }
+      ],
+      "imgHeight": 999,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "134.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 145,
+          "symWidth": 131.6666666666667,
+          "text": "这 ……",
+          "translation": "This...",
+          "width": 290,
+          "x": 242,
+          "y": 514
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "135.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "136.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "137.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "138.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "139.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 501,
+          "symHeight": 80.17948717948718,
+          "symWidth": 74.80528846153845,
+          "text": "以 莱尔萨斯 家族 的 荣光 起誓 ! 赛亚 · 莱尔萨斯 , 将 成为 家族 新 一任 族长 !",
+          "translation": "By the glory of the Laersas family, Saiya Laersas shall become the new clan chief!",
+          "width": 711,
+          "x": 394,
+          "y": 156
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "140.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "141.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "142.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 37,
+          "symWidth": 30.5,
+          "text": "。。",
+          "translation": "..",
+          "width": 55,
+          "x": 778,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 71,
+          "symWidth": 72.77777777777777,
+          "text": "以 莱尔萨斯 家族 的 荣",
+          "translation": "For the honor of the Learsas family",
+          "width": 694,
+          "x": 165,
+          "y": 885
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "143.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 72.5,
+          "symWidth": 62.13636363636364,
+          "text": "起誓 ! 赛亚 · 莱尔萨斯 , 将 成为 家族 新 一任 族长 !",
+          "translation": "I swear! Saiya Lersas shall become the new head of the family!",
+          "width": 812,
+          "x": 163,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "144.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "145.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 129,
+          "symWidth": 99.33333333333333,
+          "text": "赛亚 !",
+          "translation": "Saiya!",
+          "width": 345,
+          "x": 766,
+          "y": 439
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "146.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 114,
+          "symWidth": 88,
+          "text": "赛亚 !",
+          "translation": "Saiya!",
+          "width": 309,
+          "x": 208,
+          "y": 628
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "147.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 121,
+          "symWidth": 90.33333333333333,
+          "text": "赛亚 !",
+          "translation": "Saiya!",
+          "width": 325,
+          "x": 770,
+          "y": 806
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 27.66666666666667,
+          "symWidth": 24.56363636363636,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 525,
+          "x": 384,
+          "y": 1041
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "148.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 53.5,
+          "symWidth": 54.66666666666666,
+          "text": "②  快 看 漫画 A",
+          "translation": "② Quick, read the manga A",
+          "width": 351,
+          "x": 81,
+          "y": 519
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "149.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 70,
+          "symWidth": 68,
+          "text": "哥哥 …",
+          "translation": "Brother...",
+          "width": 230,
+          "x": 497,
+          "y": 0
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "150.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 27.81818181818182,
+          "symWidth": 21.36363636363636,
+          "text": "●  最新 免费 漫画 www.baozimh.com",
+          "translation": "",
+          "width": 292,
+          "x": 29,
+          "y": 903
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "151.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "152.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 63,
+          "symWidth": 60,
+          "text": "哥哥 …",
+          "translation": "Brother...",
+          "width": 212,
+          "x": 723,
+          "y": 963
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "153.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 252,
+          "symHeight": 69.44444444444444,
+          "symWidth": 65.14444444444443,
+          "text": "你 竟然 能 有 总 星 长大 人 的 支持 ?",
+          "translation": "You actually have the support of the Chief Star Officer?",
+          "width": 443,
+          "x": 721,
+          "y": 51
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 34.80681818181818,
+          "symWidth": 31.28409090909091,
+          "text": "包子 漫畫 baozimh.com",
+          "translation": "",
+          "width": 206,
+          "x": 1045,
+          "y": 895
+        }
+      ],
+      "imgHeight": 999,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "154.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 360,
+          "symHeight": 56.2,
+          "symWidth": 49.47555555555555,
+          "text": "不可能 … 这 不可能 ! 赛亚 … 赛亚 他 ? 我 我 选 错 了 ? 我 选 错 了 ! 我 真的 选 错 了 ? !",
+          "translation": "Impossible... This can't be! Saiya... Saiya, him? Did I... did I choose wrong? Did I really choose wrong?!",
+          "width": 529,
+          "x": 234,
+          "y": 237
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "155.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 255,
+          "symHeight": 31.41666666666666,
+          "symWidth": 33.66666666666667,
+          "text": "100009 100000",
+          "translation": "100009 100000",
+          "width": 172,
+          "x": 533,
+          "y": 155
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "156.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 287,
+          "symHeight": 78.6,
+          "symWidth": 70.4857142857143,
+          "text": "都是 你 威尔斯 ! 是 你 勾引 我 ! 王八蛋 !",
+          "translation": "It's all your fault, Wells! You're the one who seduced me! Bastard!",
+          "width": 557,
+          "x": 595,
+          "y": 636
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "157.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "158.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 27.66666666666667,
+          "symWidth": 24.56818181818182,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 1041
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "159.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "160.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 286,
+          "symHeight": 77.33333333333333,
+          "symWidth": 69.56349206349206,
+          "text": "都是 你 威尔斯 ! 是 你 勾引 我 ! 王八蛋 !",
+          "translation": "It's all your fault, Wells! You're the one who seduced me! Bastard!",
+          "width": 556,
+          "x": 596,
+          "y": 637
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "161.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "162.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 27,
+          "symWidth": 24.59646464646464,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 525,
+          "x": 383,
+          "y": 1040
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "163.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 192,
+          "symHeight": 92,
+          "symWidth": 85.46666666666667,
+          "text": "本来 这 一切 都 属于 我 ……",
+          "translation": "Originally, all of this was mine...",
+          "width": 503,
+          "x": 206,
+          "y": 808
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "164.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "165.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "166.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 240,
+          "symHeight": 101.875,
+          "symWidth": 83.65,
+          "text": "死 贱人 , 你 敢打 我 !",
+          "translation": "You despicable wretch, how dare you hit me!",
+          "width": 493,
+          "x": 381,
+          "y": 234
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "167.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "168.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 320,
+          "symHeight": 85.68888888888888,
+          "symWidth": 84.46666666666667,
+          "text": "不是 你 硬 贴 上来 的 吗 ! 拜金 女 !",
+          "translation": "Weren't you the one who forced yourself on me? Gold digger!",
+          "width": 490,
+          "x": 373,
+          "y": 410
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "169.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 285,
+          "symHeight": 79.1875,
+          "symWidth": 70.4375,
+          "text": "总 星 长大 人 , 哎 … 我 并不 认识 您 呀 ?",
+          "translation": "Commander Zongxing, uh... I don't actually know you?",
+          "width": 643,
+          "x": 176,
+          "y": 195
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "170.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "171.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 69,
+          "symWidth": 68.625,
+          "text": "感谢 你 在 异 空 战场",
+          "translation": "Thank you for being on the alien battlefield",
+          "width": 590,
+          "x": 365,
+          "y": 880
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "172.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 307,
+          "symHeight": 71.39999999999999,
+          "symWidth": 63.18452380952381,
+          "text": "识 的 好朋友 吧 , 嘱咐 老 摩 好好 照顾 你 , 他 离不开 战场 , 便 只能",
+          "translation": "for the dear friend you know. Please tell Old Mo to take good care of you. He can't leave the battlefield, so he can only",
+          "width": 768,
+          "x": 361,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 66,
+          "symWidth": 57,
+          "text": "拜托 我 了 。",
+          "translation": "ask me for help.",
+          "width": 326,
+          "x": 585,
+          "y": 241
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 27,
+          "symWidth": 24.8469696969697,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "",
+          "width": 524,
+          "x": 384,
+          "y": 1041
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "173.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "174.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 55,
+          "symWidth": 53.4,
+          "text": "快  快 看 漫画",
+          "translation": "Quick, quick, read the manga",
+          "width": 326,
+          "x": 39,
+          "y": 634
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "175.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "176.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "177.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 252,
+          "symHeight": 69.08333333333333,
+          "symWidth": 58.33333333333334,
+          "text": "我 明白 了 … 预言 , 是 预言 ! 全部 都 … 完美 验证 了 !",
+          "translation": "I understand now... The prophecy, it truly is a prophecy! Everything... perfectly fulfilled!",
+          "width": 585,
+          "x": 540,
+          "y": 338
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "178.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "179.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "180.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 191,
+          "symHeight": 73.80645161290323,
+          "symWidth": 64.45161290322581,
+          "text": "见 你 最初 认识 的 人 , 回到 一切 最 开始 的 地方 , 拿回 本 该 属于 你 的 东西 。",
+          "translation": "Meet the one you first knew, return to where it all began, and reclaim what rightfully belongs to you.",
+          "width": 801,
+          "x": 353,
+          "y": 809
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "181.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 260,
+          "symHeight": 71.57142857142857,
+          "symWidth": 62.98253968253969,
+          "text": "立于 群星 之 巅 , 头 戴王冠 者 , 已经 为 你 安排 好 一切 。",
+          "translation": "Standing atop the constellation's peak, the crowned one has arranged everything for you.",
+          "width": 767,
+          "x": 353,
+          "y": 85
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "182.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 274,
+          "symHeight": 73.25,
+          "symWidth": 66.95238095238095,
+          "text": "是 陆 圣 ! 陆 圣 为 我 安排 好 了 一切 !",
+          "translation": "It's Lu Sheng! Lu Sheng has arranged everything for me!",
+          "width": 523,
+          "x": 168,
+          "y": 284
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "183.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "184.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 80.66666666666667,
+          "symWidth": 71.53333333333335,
+          "text": "他 就是 那个 立于 群星 之 巅 , 头 戴王冠 的 人 !",
+          "translation": "He is the one crowned at the summit of the stars!",
+          "width": 596,
+          "x": 566,
+          "y": 737
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "185.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "186.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "187.jpg": {
+      "blocks": [],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "188.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 26.78260869565218,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "Unauthorized reproduction prohibited. Violators will be prosecuted.",
+          "width": 759,
+          "x": 464,
+          "y": 330
+        }
+      ],
+      "imgHeight": 479,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "189.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 33,
+          "symWidth": 32.75,
+          "text": "这里 可以 …… … 登录 过去 …",
+          "translation": "You can... log in here...",
+          "width": 223,
+          "x": 103,
+          "y": 170
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 63.28571428571428,
+          "text": "高 武 官方 粉丝 群",
+          "translation": "Gao Wu Official Fan Club",
+          "width": 475,
+          "x": 665,
+          "y": 267
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 69,
+          "symWidth": 43,
+          "text": "371978155",
+          "translation": "371978155",
+          "width": 384,
+          "x": 730,
+          "y": 424
+        }
+      ],
+      "imgHeight": 870,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "190.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 131,
+          "symWidth": 139.6,
+          "text": "恭迎 老爷 们",
+          "translation": "Honored guests",
+          "width": 732,
+          "x": 375,
+          "y": 337
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 136.2,
+          "symWidth": 123.6,
+          "text": "来看 漫画 !",
+          "translation": "Come read the comic!",
+          "width": 664,
+          "x": 364,
+          "y": 508
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "191.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 92.95,
+          "symWidth": 85.775,
+          "text": "夏日 双子星 即将 上 线 ! 嗜 光 嗡嗡",
+          "translation": "Summer Gemini coming soon! Glowing and buzzing",
+          "width": 925,
+          "x": 154,
+          "y": 835
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "192.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 92.94444444444444,
+          "symWidth": 83.37777777777778,
+          "text": "感谢 老爷 们 的 支持 ! 求 求 三 连 !",
+          "translation": "Thanks for your support! Please triple tap!",
+          "width": 824,
+          "x": 156,
+          "y": 524
+        }
+      ],
+      "imgHeight": 1000,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "193.jpg": {
+      "blocks": [],
+      "imgHeight": 658,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "194.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 52,
+          "symWidth": 34.22727272727273,
+          "text": "感谢 上周 加料 的 读者 ( 04.13-04.19 )",
+          "translation": "Thanks to last week's donors (04.13-04.19)",
+          "width": 876,
+          "x": 43,
+          "y": 77
+        },
+        {
+          "angle": 0,
+          "height": 120,
+          "symHeight": 47.83333333333333,
+          "symWidth": 43.04166666666667,
+          "text": "漠 H 漠  大 粉丝 木 有 简介",
+          "translation": "Mo H Mo, big fan, no intro",
+          "width": 264,
+          "x": 438,
+          "y": 305
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 44.07142857142857,
+          "symWidth": 38.37857142857143,
+          "text": ", 可能 在 世界 角落 游荡 1900  粉丝 力",
+          "translation": "Wandering somewhere in the world, 1900 fan power",
+          "width": 617,
+          "x": 442,
+          "y": 381
+        },
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 45,
+          "symWidth": 34.75,
+          "text": "东 仔  mZhzDY",
+          "translation": "Dong Zai mZhzDY",
+          "width": 315,
+          "x": 398,
+          "y": 668
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 30.57142857142857,
+          "text": "1900  粉丝 力",
+          "translation": "1900 fan power",
+          "width": 249,
+          "x": 918,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 31.07142857142857,
+          "text": "木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "No intro, possibly roaming the world...",
+          "width": 479,
+          "x": 397,
+          "y": 732
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 30.18181818181818,
+          "text": "KK 世界 居民  XT ...",
+          "translation": "KK world resident XT...",
+          "width": 374,
+          "x": 399,
+          "y": 892
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 40,
+          "symWidth": 32.14285714285715,
+          "text": "1800  粉丝 力",
+          "translation": "1800 fan power",
+          "width": 247,
+          "x": 919,
+          "y": 921
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 31.5,
+          "text": "木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "No intro, possibly roaming the world...",
+          "width": 478,
+          "x": 396,
+          "y": 951
+        }
+      ],
+      "imgHeight": 999,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "195.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 42,
+          "text": "不曾 遇见 、",
+          "translation": "Never met,",
+          "width": 213,
+          "x": 397,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 38.71428571428572,
+          "symWidth": 31.14285714285714,
+          "text": "1700  粉丝 力",
+          "translation": "1700 Followers",
+          "width": 248,
+          "x": 918,
+          "y": 139
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 31.0625,
+          "text": "木 有 简介 , 可能 在 世界 角 .....",
+          "translation": "No bio, maybe hiding in the corner of the world...",
+          "width": 484,
+          "x": 397,
+          "y": 170
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 35.66666666666666,
+          "symWidth": 25.83333333333333,
+          "text": "Yoakes ...  大 粉丝",
+          "translation": "Yoakes... Big fan",
+          "width": 334,
+          "x": 392,
+          "y": 330
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 30.14285714285714,
+          "text": "1328  粉丝 力",
+          "translation": "1328 Followers",
+          "width": 249,
+          "x": 917,
+          "y": 360
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 31.35714285714286,
+          "text": "木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "No bio, maybe hiding in the corner of the world...",
+          "width": 478,
+          "x": 397,
+          "y": 388
+        },
+        {
+          "angle": 0,
+          "height": 327,
+          "symHeight": 84.75,
+          "symWidth": 73.57142857142857,
+          "text": "a  a gxg3  大 粉丝",
+          "translation": "a a gxg3 Big fan",
+          "width": 427,
+          "x": 213,
+          "y": 527
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 40.85714285714285,
+          "symWidth": 32.42857142857143,
+          "text": "1240  粉丝 力",
+          "translation": "1240 Followers",
+          "width": 248,
+          "x": 918,
+          "y": 577
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 32.28571428571428,
+          "text": "木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "No bio, maybe hiding in the corner of the world...",
+          "width": 478,
+          "x": 397,
+          "y": 607
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 45,
+          "symWidth": 37.625,
+          "text": "世界 居民 -Tom",
+          "translation": "World Resident - Tom",
+          "width": 312,
+          "x": 396,
+          "y": 766
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 30.28571428571428,
+          "text": "1100  粉丝 力",
+          "translation": "1100 Followers",
+          "width": 249,
+          "x": 918,
+          "y": 798
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 31.2,
+          "text": "木 有 简介 , 可能 在 世界 角 ....",
+          "translation": "No bio, maybe hiding in the corner of the world...",
+          "width": 478,
+          "x": 396,
+          "y": 826
+        }
+      ],
+      "imgHeight": 999,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    },
+    "196.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 47.1,
+          "symWidth": 30.9,
+          "text": "宁 凡  xqNK9 ...",
+          "translation": "Ning Fan xqNK9...",
+          "width": 339,
+          "x": 395,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 30,
+          "text": "1100  粉丝 力",
+          "translation": "1100 Followers",
+          "width": 250,
+          "x": 917,
+          "y": 18
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 40.66666666666666,
+          "text": "木 有 简",
+          "translation": "No bio",
+          "width": 122,
+          "x": 396,
+          "y": 45
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 30.36363636363636,
+          "text": "介 , 可能 在 世界 角 ...",
+          "translation": "Maybe hiding in the corner of the world...",
+          "width": 367,
+          "x": 519,
+          "y": 45
+        },
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 49,
+          "symWidth": 30,
+          "text": "KK 世界 居民 _Rn ...",
+          "translation": "KK World Resident _Rn...",
+          "width": 379,
+          "x": 398,
+          "y": 204
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 39.85714285714285,
+          "symWidth": 31.85714285714286,
+          "text": "1000  粉丝 力",
+          "translation": "1000 Followers",
+          "width": 249,
+          "x": 918,
+          "y": 231
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 41,
+          "symWidth": 31,
+          "text": "木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "No bio, maybe hiding in the corner of the world...",
+          "width": 477,
+          "x": 398,
+          "y": 263
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 47,
+          "symWidth": 46,
+          "text": "偶尔 的 漫画 迷",
+          "translation": "Casual manga fan",
+          "width": 284,
+          "x": 397,
+          "y": 422
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 22.5,
+          "text": "10",
+          "translation": "10",
+          "width": 49,
+          "x": 92,
+          "y": 450
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 38.85714285714285,
+          "symWidth": 32,
+          "text": "1000  粉丝 力",
+          "translation": "1000 Followers",
+          "width": 250,
+          "x": 917,
+          "y": 451
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 39,
+          "symWidth": 31.57142857142857,
+          "text": "木 有 简介 , 可能 在 世界 角 ...",
+          "translation": "No bio, maybe hiding in the corner of the world...",
+          "width": 485,
+          "x": 397,
+          "y": 482
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 27.66666666666667,
+          "symWidth": 24.67727272727273,
+          "text": "包子 漫畫 本 漫畫 由 包子 漫畫 收集 整理 , 更多 免費 漫畫 請 訪問 www.baozimh.com",
+          "translation": "Baozi Manga - This manga is collected and organized by Baozi Manga. For more free manga, please visit www.baozimh.com",
+          "width": 525,
+          "x": 384,
+          "y": 705
+        }
+      ],
+      "imgHeight": 864,
+      "imgWidth": 1280,
+      "sourceLanguage": "zh",
+      "targetLanguage": "en",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "en",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

@@ -1,0 +1,1402 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0155",
+  "jobId": "fixture-job-0155",
+  "licenseId": "fixture-license-0155",
+  "pageCount": 61,
+  "pageOrder": [
+    "001.jpg",
+    "002.jpg",
+    "003.jpg",
+    "004.jpg",
+    "005.jpg",
+    "006.jpg",
+    "007.jpg",
+    "008.jpg",
+    "009.jpg",
+    "010.jpg",
+    "011.jpg",
+    "012.jpg",
+    "013.jpg",
+    "014.jpg",
+    "015.jpg",
+    "016.jpg",
+    "017.jpg",
+    "018.jpg",
+    "019.jpg",
+    "020.jpg",
+    "021.jpg",
+    "022.jpg",
+    "023.jpg",
+    "024.jpg",
+    "025.jpg",
+    "026.jpg",
+    "027.jpg",
+    "028.jpg",
+    "029.jpg",
+    "030.jpg",
+    "031.jpg",
+    "032.jpg",
+    "033.jpg",
+    "034.jpg",
+    "035.jpg",
+    "036.jpg",
+    "037.jpg",
+    "038.jpg",
+    "039.jpg",
+    "040.jpg",
+    "041.jpg",
+    "042.jpg",
+    "043.jpg",
+    "044.jpg",
+    "045.jpg",
+    "046.jpg",
+    "047.jpg",
+    "048.jpg",
+    "049.jpg",
+    "050.jpg",
+    "051.jpg",
+    "052.jpg",
+    "053.jpg",
+    "054.jpg",
+    "055.jpg",
+    "056.jpg",
+    "057.jpg",
+    "058.jpg",
+    "059.jpg",
+    "060.jpg",
+    "061.jpg"
+  ],
+  "pages": {
+    "001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 339,
+          "symHeight": 305,
+          "symWidth": 318.5,
+          "text": "全职",
+          "translation": "العمل المتكامل",
+          "width": 550,
+          "x": 65,
+          "y": 1804
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 46.5,
+          "symWidth": 27,
+          "text": "5 ( ALL ) ELEMENTS",
+          "translation": "5 (جميع) العناصر",
+          "width": 252,
+          "x": 653,
+          "y": 1976
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 42.75,
+          "symWidth": 44.5,
+          "text": "體 讯 动漫",
+          "translation": "تي شو أنمي",
+          "width": 178,
+          "x": 997,
+          "y": 2080
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 289,
+          "symHeight": 312,
+          "symWidth": 326.5,
+          "text": "觉醒",
+          "translation": "اليقظة",
+          "width": 656,
+          "x": 294,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 36.14285714285715,
+          "text": "故事 : TONY",
+          "translation": "القصة: توني",
+          "width": 355,
+          "x": 410,
+          "y": 628
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 68.85714285714286,
+          "symWidth": 38.71428571428572,
+          "text": "绘制 : HAMA",
+          "translation": "الرسوم: هاما",
+          "width": 375,
+          "x": 406,
+          "y": 749
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 69,
+          "symWidth": 43.6,
+          "text": "责编 : 芮芮",
+          "translation": "التنسيق: ريري",
+          "width": 332,
+          "x": 405,
+          "y": 871
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 57,
+          "text": "多拉格 文化",
+          "translation": "ثقافة دوراج",
+          "width": 303,
+          "x": 437,
+          "y": 1590
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 45.5,
+          "text": "體 讯 动漫",
+          "translation": "تي شو أنمي",
+          "width": 181,
+          "x": 994,
+          "y": 1987
+        }
+      ],
+      "imgHeight": 2048,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 76,
+          "symWidth": 54.17857142857143,
+          "text": "2105 年 6 月 28 日 —— - 神族 庆典 日 。",
+          "translation": "28 يونيو 2105 - عيد الاحتفال الإلهي.",
+          "width": 639,
+          "x": 203,
+          "y": 391
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 72.5,
+          "symWidth": 70.3125,
+          "text": "连续 发生 了 一系列 震惊 世界 的 大事 。",
+          "translation": "توالت أحداث مروعة هزّت العالم.",
+          "width": 631,
+          "x": 331,
+          "y": 820
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 74,
+          "symWidth": 68.60714285714286,
+          "text": "天空 之 城 坍塌 , 深渊",
+          "translation": "انهيار مدينة السماء، وال",
+          "width": 498,
+          "x": 358,
+          "y": 360
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 73,
+          "symWidth": 62.5,
+          "text": "龙 逃窜 。",
+          "translation": "هرب التنين السحيق.",
+          "width": 265,
+          "x": 596,
+          "y": 462
+        },
+        {
+          "angle": 0,
+          "height": 382,
+          "symHeight": 118.3333333333333,
+          "symWidth": 124.4166666666667,
+          "text": "天空 之 城 坍塌 深渊 魔龙 逃窜",
+          "translation": "انهيار مدينة السماء، هروب التنين السحيق",
+          "width": 672,
+          "x": 22,
+          "y": 841
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 14.5,
+          "symWidth": 15,
+          "text": "11",
+          "translation": "11",
+          "width": 22,
+          "x": 546,
+          "y": 1563
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 74,
+          "symWidth": 74.92857142857143,
+          "text": "以及 最令 世人 震 惊 的 —— 神族 刺",
+          "translation": "وأكثرها إثارة للصدمة — حادثة اغتيال الإلهية.",
+          "width": 555,
+          "x": 350,
+          "y": 1575
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 71,
+          "symWidth": 60.75,
+          "text": "杀 事件 。",
+          "translation": "حادث الاغتيال.",
+          "width": 258,
+          "x": 357,
+          "y": 60
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 275,
+          "symHeight": 75,
+          "symWidth": 65.25595238095238,
+          "text": "犯罪 嫌疑 人 被 当 场 逮捕 , 押送 至 【 天牢 】 。",
+          "translation": "ألقي القبض على المشتبه به فوراً، ونُقل إلى [السجن السماوي].",
+          "width": 552,
+          "x": 441,
+          "y": 1122
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 274,
+          "symHeight": 73.33333333333333,
+          "symWidth": 69.19047619047619,
+          "text": "当夜 同 在 现场 的 还有 神 福 者 及 一 名 女性 受害者 。",
+          "translation": "في الليلة نفسها، كانوا في مكان الحادث أيضاً مبتلُو النِعمة الإلهية وامرأة ضحية.",
+          "width": 548,
+          "x": 278,
+          "y": 722
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 16,
+          "symWidth": 21,
+          "text": "2 .",
+          "translation": "2.",
+          "width": 31,
+          "x": 159,
+          "y": 1339
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011.jpg": {
+      "blocks": [],
+      "imgHeight": 1388,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 428,
+          "symHeight": 85,
+          "symWidth": 73.8125,
+          "text": "但 他们 都 声称 自己 受到 重大 冲击 , 忘 记 了 当晚 所 发生 之 事 。",
+          "translation": "إلا أنهم جميعاً يزعمون أنهم أصيبوا بصدمة كبيرة، فنسوا ما حدث في تلك الليلة.",
+          "width": 736,
+          "x": 230,
+          "y": 332
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 281,
+          "symHeight": 75.82142857142857,
+          "symWidth": 68.45089285714286,
+          "text": "神 福 者 由于 护卫 失 职 , 剥夺 神 福 者 身 份 并将 被 定罪 。",
+          "translation": "تم تجريد المبتلِي نِعمة الإلهية من لقب الحامي بسبب الإهمال، وسيُدان.",
+          "width": 635,
+          "x": 327,
+          "y": 1297
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 69.66666666666666,
+          "symWidth": 56.6,
+          "text": "那个 , 请 等 一下 。",
+          "translation": "أمهلني لحظة.",
+          "width": 391,
+          "x": 486,
+          "y": 874
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 73,
+          "symWidth": 65.33333333333333,
+          "text": "我 想要 让 他 当 我 的 神 福 者 !",
+          "translation": "أريد أن أجعله مبتلَي نِعمتِي!",
+          "width": 462,
+          "x": 400,
+          "y": 174
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 373,
+          "symHeight": 73.68,
+          "symWidth": 66.84,
+          "text": "但却 因 另 一位 神 族 将 其 再次 选为 【 神 福 者 】 而 免 于 受刑 。",
+          "translation": "لكن بفضل اختيار إلهي آخر له مجدداً كمبتلٍ نِعمة، تمت تبرئته من العقوبة.",
+          "width": 556,
+          "x": 344,
+          "y": 372
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 108,
+          "symWidth": 103,
+          "text": "圣 何 国 觉醒 者 天牢",
+          "translation": "سجن المتيقظين بمملكة القديس هه",
+          "width": 864,
+          "x": 52,
+          "y": 691
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 32.4,
+          "symWidth": 24.6,
+          "text": "-----",
+          "translation": "-----",
+          "width": 54,
+          "x": 391,
+          "y": 1508
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 84.33333333333333,
+          "symWidth": 70,
+          "text": "000",
+          "translation": "000",
+          "width": 153,
+          "x": 1045,
+          "y": 1892
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 375,
+          "symHeight": 73.91666666666667,
+          "symWidth": 64.85714285714285,
+          "text": "除此之外 , 还有 一 人 , 因 当众 殴 打 神族 而 被 押送 至 天牢 。",
+          "translation": "بالإضافة إلى ذلك، شخص آخر أُحضر إلى السجن بتهمة ضرب إلهي العلنية.",
+          "width": 558,
+          "x": 161,
+          "y": 107
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020.jpg": {
+      "blocks": [],
+      "imgHeight": 2072,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 173,
+          "symHeight": 74,
+          "symWidth": 58.60795454545455,
+          "text": "于 2105 年 6 月 30 日 接受 大 神官 的 审判",
+          "translation": "في 30 يونيو 2105، خضع لمحاكمة أمام الكاهن الأعظم.",
+          "width": 629,
+          "x": 280,
+          "y": 428
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 272,
+          "symHeight": 71.3,
+          "symWidth": 61.1,
+          "text": "唉 , 白 以 这 回 怕 是 躲 不 过去了 。",
+          "translation": "آه، آنذاك لا مفر من المحاسبة.",
+          "width": 392,
+          "x": 185,
+          "y": 138
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 74.75,
+          "symWidth": 60.5,
+          "text": "白 以 ……",
+          "translation": "باي إي...",
+          "width": 300,
+          "x": 633,
+          "y": 876
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 264,
+          "symHeight": 68.36309523809524,
+          "symWidth": 57.61904761904762,
+          "text": "被告人 白 以 , 于 6 月 28 日晚 , 天 空 之 城 晚宴 期间",
+          "translation": "المتهم باي إي، في ليلة 28 يونيو، خلال مأدبة مدينة السماء.",
+          "width": 520,
+          "x": 200,
+          "y": 592
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "028.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 312,
+          "symHeight": 63.63333333333333,
+          "symWidth": 60.11428571428572,
+          "text": "无故 殴打 神 的 后 裔 —— 拉克 • 金 先生 , 至 其 重伤 昏迷 。",
+          "translation": "ضرب بلا سبب ورثة الإله - السيد لاك كين، حتى سقط مغشياً عليه بجروح بالغة.",
+          "width": 484,
+          "x": 391,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 324,
+          "symHeight": 63.25,
+          "symWidth": 58.08333333333334,
+          "text": "根据 神 典 第 1 章 第八 条 , 觉 醒 者 管理 条例 第 3 章 第七 条",
+          "translation": "وفقاً للقانون الإلهي الفصل الأول، المادة الثامنة، ولوائح المتيقظين الفصل الثالث، المادة السابعة.",
+          "width": 410,
+          "x": 289,
+          "y": 556
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "029.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 71,
+          "symWidth": 61.44444444444444,
+          "text": "你 【 当众 对 无 力量 者",
+          "translation": "أنت ارتكبت جريمة \"ضرب الإله\" علناً على من لا قوى له،",
+          "width": 578,
+          "x": 279,
+          "y": 944
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 71,
+          "symWidth": 57.625,
+          "text": "犯下 【 殴打 神族 】",
+          "translation": "باستخدام قوة اليقظة،",
+          "width": 536,
+          "x": 351,
+          "y": 944
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 69.5,
+          "symWidth": 57.37777777777778,
+          "text": "使用 觉醒 力量 】 , 现 本 庭 决定 判 入狱 5 年 !",
+          "translation": "ويقرر هذا المجلس سجنك لخمس سنوات!",
+          "width": 656,
+          "x": 276,
+          "y": 1128
+        }
+      ],
+      "imgHeight": 1834,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "030.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 71,
+          "symWidth": 65.23214285714286,
+          "text": "对此 判决 , 你 有 无 异议 ?",
+          "translation": "هل لديك أي اعتراض على هذا الحكم؟",
+          "width": 556,
+          "x": 388,
+          "y": 270
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "031.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "032.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 324,
+          "symHeight": 309,
+          "symWidth": 329.5,
+          "text": "全职",
+          "translation": "العمل المتكامل",
+          "width": 634,
+          "x": 58,
+          "y": 174
+        },
+        {
+          "angle": 0,
+          "height": 566,
+          "symHeight": 219.6428571428571,
+          "symWidth": 213.25,
+          "text": "5 ( ALL ) ELEMENTS 觉醒",
+          "translation": "5 (جميع) العناصر اليقظة",
+          "width": 801,
+          "x": 311,
+          "y": 330
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "033.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 97,
+          "symWidth": 71.875,
+          "text": "2 天 前  2105 年",
+          "translation": "قبل يومين، 2105 عام",
+          "width": 581,
+          "x": 182,
+          "y": 410
+        },
+        {
+          "angle": 0,
+          "height": 230,
+          "symHeight": 100.3333333333333,
+          "symWidth": 90.86111111111111,
+          "text": "6 月 28 日 深夜 —— 觉醒 者 羁押 室",
+          "translation": "ليلة 28 يونيو — غرفة احتجاز المتيقظين",
+          "width": 702,
+          "x": 183,
+          "y": 544
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "034.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 175,
+          "symHeight": 72.5,
+          "symWidth": 63.54761904761905,
+          "text": "白 以 , 我们 做 一 笔 交易 如何 ?",
+          "translation": "باي إي، ماذا لو أبرمنا صفقة؟",
+          "width": 546,
+          "x": 330,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 42,
+          "symWidth": 48.5,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 95,
+          "x": 1080,
+          "y": 1656
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "035.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 72.1875,
+          "symWidth": 62.85,
+          "text": "加入 底比斯 家族 , 为 我 工作 。",
+          "translation": "انضم إلى عائلة طيبيس، واعمل لصالحنا.",
+          "width": 580,
+          "x": 417,
+          "y": 690
+        }
+      ],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "036.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "037.jpg": {
+      "blocks": [],
+      "imgHeight": 1714,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "038.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 73.4,
+          "symWidth": 65.3,
+          "text": "你 今晚 就能 获得 自由 。",
+          "translation": "ستنال حريتك الليلة.",
+          "width": 391,
+          "x": 394,
+          "y": 911
+        },
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 50,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 88,
+          "x": 1088,
+          "y": 1688
+        }
+      ],
+      "imgHeight": 1749,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "039.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 70.5,
+          "symWidth": 63.91666666666667,
+          "text": "谢谢 你 的 好意 。",
+          "translation": "شكرًا على لطفك.",
+          "width": 311,
+          "x": 501,
+          "y": 315
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "040.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 272,
+          "symHeight": 72.33333333333333,
+          "symWidth": 68.16666666666667,
+          "text": "但 我 的 能力 等 级 怕 是 无法 担 此 重任 ………",
+          "translation": "لكني أخشى أن قدراتي ليست كافية لهذا العبء...",
+          "width": 479,
+          "x": 459,
+          "y": 1714
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "041.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 46,
+          "symWidth": 49,
+          "text": "腾讯 动漫",
+          "translation": "تينسنت أنمي",
+          "width": 186,
+          "x": 991,
+          "y": 2079
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "042.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 72.5,
+          "symWidth": 62.91666666666667,
+          "text": "不 , 你 的 能力 非常 强大 。",
+          "translation": "لا، قدراتك عظيمة جداً.",
+          "width": 469,
+          "x": 294,
+          "y": 56
+        },
+        {
+          "angle": 0,
+          "height": 272,
+          "symHeight": 73.33333333333333,
+          "symWidth": 68.8111111111111,
+          "text": "在 神族 眼皮 子 底下 能 做出 这 么 大 事件 。",
+          "translation": "أن تثير هذه الفوضى تحت أنظار الإلهة،",
+          "width": 475,
+          "x": 535,
+          "y": 1707
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "043.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "044.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 71.1,
+          "symWidth": 63.55714285714285,
+          "text": "还能 全身而退 , 不 留 痕迹 。",
+          "translation": "ثم تخرج بلا أثر،",
+          "width": 497,
+          "x": 356,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 55,
+          "text": "动漫",
+          "translation": "أنمي",
+          "width": 81,
+          "x": 1095,
+          "y": 2081
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "045.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "046.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 72.75,
+          "symWidth": 75.35,
+          "text": "听 不懂 大人 说 什",
+          "translation": "لم أفهم ما قاله سيدنا.",
+          "width": 391,
+          "x": 600,
+          "y": 766
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 74,
+          "symWidth": 49,
+          "text": "么 。",
+          "translation": "",
+          "width": 102,
+          "x": 763,
+          "y": 868
+        }
+      ],
+      "imgHeight": 1478,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "047.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 71.4,
+          "symWidth": 61.8,
+          "text": "你 听 的 懂 ,",
+          "translation": "أنت تفهم،",
+          "width": 337,
+          "x": 489,
+          "y": 351
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 71.6,
+          "symWidth": 74.4,
+          "text": "而且 你 应该",
+          "translation": "وينبغي أن تفهم.",
+          "width": 395,
+          "x": 405,
+          "y": 2028
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "048.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 75.4,
+          "symWidth": 70.2,
+          "text": "完全 理解 。",
+          "translation": "ذلك بوضوح تام.",
+          "width": 347,
+          "x": 405,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 176,
+          "symHeight": 75.14285714285714,
+          "symWidth": 66.78571428571428,
+          "text": "神族 说 什么 , 事 实 就会 是 什么 。",
+          "translation": "ما يقوله الإله، هو ما يكون.",
+          "width": 554,
+          "x": 309,
+          "y": 1845
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "049.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 360,
+          "symHeight": 70.52380952380952,
+          "symWidth": 62.66666666666666,
+          "text": "为 我 工作 , 天空 之 城 的 事情 , 从 此 不会 再 调查 到 你 身上 。",
+          "translation": "اعمل لصالحنا، وأمور مدينة السماء لن تمسّك مجدداً.",
+          "width": 543,
+          "x": 409,
+          "y": 1717
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "050.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 43,
+          "symWidth": 49.25,
+          "text": "腾讯 动漫",
+          "translation": "تينسنت أنمي",
+          "width": 174,
+          "x": 1000,
+          "y": 2082
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "051.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 70,
+          "symWidth": 62.4,
+          "text": "我 听 不懂 。",
+          "translation": "لا أفهم.",
+          "width": 344,
+          "x": 519,
+          "y": 368
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "052.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 30.75,
+          "symWidth": 42.25,
+          "text": "1000",
+          "translation": "1000",
+          "width": 58,
+          "x": 857,
+          "y": 1563
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "053.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 71.8,
+          "symWidth": 74.6,
+          "text": "明白 了 ——",
+          "translation": "فهمت —",
+          "width": 349,
+          "x": 402,
+          "y": 1363
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "054.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 47.75,
+          "text": "腾讯 动漫",
+          "translation": "تينسنت أنمي",
+          "width": 170,
+          "x": 1003,
+          "y": 1483
+        }
+      ],
+      "imgHeight": 1546,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "055.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 74,
+          "symWidth": 72,
+          "text": "看来 ……",
+          "translation": "يبدو...",
+          "width": 319,
+          "x": 438,
+          "y": 288
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "056.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 179,
+          "symHeight": 73.55,
+          "symWidth": 68.9,
+          "text": "还没 到 我们 合 作 的 时候 。",
+          "translation": "أن وقت تعاوننا لم يحن بعد.",
+          "width": 474,
+          "x": 360,
+          "y": 1021
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "057.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "058.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 71.9,
+          "symWidth": 64.98333333333333,
+          "text": "对此 判决 , 你 有无 异议 ?",
+          "translation": "هل لديك اعتراض على هذا الحكم؟",
+          "width": 433,
+          "x": 468,
+          "y": 685
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "059.jpg": {
+      "blocks": [],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "060.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 73,
+          "symWidth": 85.75,
+          "text": "没有 ——",
+          "translation": "لا —",
+          "width": 315,
+          "x": 377,
+          "y": 396
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 72,
+          "symWidth": 68.8,
+          "text": "底比斯 家族 提 出 异议 。",
+          "translation": "اعترضت عائلة طيبيس.",
+          "width": 476,
+          "x": 340,
+          "y": 1661
+        }
+      ],
+      "imgHeight": 2143,
+      "imgWidth": 1200,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "061.jpg": {
+      "blocks": [],
+      "imgHeight": 2115,
+      "imgWidth": 1200,
+      "sourceLanguage": "auto",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

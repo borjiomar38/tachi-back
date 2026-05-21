@@ -1,0 +1,850 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0130",
+  "jobId": "fixture-job-0130",
+  "licenseId": "fixture-license-0130",
+  "pageCount": 22,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 221,
+          "symHeight": 59.05555555555556,
+          "symWidth": 53.31597222222222,
+          "text": "驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل سيد التنانين أضعف المهن؟ أنا دراكو مايجسترو +",
+          "width": 410,
+          "x": 140,
+          "y": 1118
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 11.6,
+          "symWidth": 8.8,
+          "text": "GEMIN",
+          "translation": "جيمين",
+          "width": 30,
+          "x": 546,
+          "y": 1416
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 31.5,
+          "symWidth": 22.14285714285714,
+          "text": "READ  AT MANHUAFAST.NET",
+          "translation": "",
+          "width": 314,
+          "x": 351,
+          "y": 1472
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 11.21428571428571,
+          "text": "FASTEST  UPDATES",
+          "translation": "",
+          "width": 163,
+          "x": 328,
+          "y": 1600
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 15.77777777777778,
+          "text": "NEW  COMICS",
+          "translation": "",
+          "width": 151,
+          "x": 428,
+          "y": 1665
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 12,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "",
+          "width": 184,
+          "x": 496,
+          "y": 1724
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 16.22916666666666,
+          "symWidth": 16.37202380952381,
+          "text": "THE  NEXT  DAY  - DRAGON  CAPITAL ACADEMY",
+          "translation": "الْيَوْمُ التالي - أكاديمية عاصمة التنانين",
+          "width": 217,
+          "x": 53,
+          "y": 2043
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18.21739130434782,
+          "symWidth": 17.02173913043478,
+          "text": "I  CONTACTED HER  LAST NIGHT - SHE'S  AT THE  ACADEMY TODAY .",
+          "translation": "تواصلت معها ليل البارحة - هي في الأكاديمية اليوم.",
+          "width": 215,
+          "x": 381,
+          "y": 2239
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 18.1671568627451,
+          "symWidth": 15.98088235294118,
+          "text": "THE  SCENERY AROUND  HERE  FEELS UNFAMILIAR ,  I DIDN'T  EXPECT  THE ACADEMY  TO  HAVE A  PLACE  LIKE THIS ...",
+          "translation": "المشهد من حولي غريب، لم أتوقع أن للأكاديمية مكانًا كهذا...",
+          "width": 272,
+          "x": 328,
+          "y": 3701
+        }
+      ],
+      "imgHeight": 3986,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20,
+          "symWidth": 17.1625,
+          "text": "WE'VE ARRIVED .",
+          "translation": "لقد وصلنا.",
+          "width": 134,
+          "x": 405,
+          "y": 1026
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17.6,
+          "symWidth": 14.6,
+          "text": "THIS  IS  THE PLACE .",
+          "translation": "هذا هو المكان.",
+          "width": 155,
+          "x": 147,
+          "y": 3160
+        }
+      ],
+      "imgHeight": 3987,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.1,
+          "text": "THIS  IS ... ?",
+          "translation": "هذا هو...؟",
+          "width": 141,
+          "x": 195,
+          "y": 391
+        },
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 17.17708333333333,
+          "symWidth": 16.37258986928105,
+          "text": "PROFESSOR  OUYANG BAIGE'S  RESIDENCE ,  THE ARRAY  FORMATION PROFESSOR  OF  DRAGON CAPITAL  ACADEMY .",
+          "translation": "مسكن الأستاذ أويانغ بايج، أستاذ تشكيل الترتيبات في أكاديمية عاصمة التنانين.",
+          "width": 313,
+          "x": 310,
+          "y": 1434
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 18,
+          "symWidth": 17.90555555555556,
+          "text": "SHE  WAS THE  ONE  WHO OVERSAW  MY FOURTH ADVANCEMENT .",
+          "translation": "هي التي أشرفت على تقدمي الرابع.",
+          "width": 200,
+          "x": 29,
+          "y": 1696
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 18,
+          "symWidth": 16.70833333333333,
+          "text": "THOSE  WHO ADVANCE  UNDER HER  GUIDANCE  GAIN A  FAR  DEEPER UNDERSTANDING  OF THEIR  CLASS LATER  ON .",
+          "translation": "من يتقدم بإشرافها يكتسب فهماً أعمق لفئته فيما بعد.",
+          "width": 271,
+          "x": 198,
+          "y": 1878
+        }
+      ],
+      "imgHeight": 3276,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 19.85714285714286,
+          "symWidth": 18.57142857142857,
+          "text": "AN  ARRAY FORMATION PROFESSOR ...  WHAT KIND  OF  PERSON IS  SHE ?",
+          "translation": "أستاذة تشكيل الترتيبات... ما طبيعتها؟",
+          "width": 292,
+          "x": 135,
+          "y": 38
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17.5,
+          "symWidth": 15.9,
+          "text": "WHO  IS IT ?",
+          "translation": "من تكون؟",
+          "width": 96,
+          "x": 215,
+          "y": 2865
+        }
+      ],
+      "imgHeight": 3276,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 17.2,
+          "symWidth": 17.50649350649351,
+          "text": "PROFESSOR OUYANG ,  I'VE BROUGHT SOMEONE  TO SEE  YOU .",
+          "translation": "أستاذ أويانغ، جلبتُ شخصًا لزيارتك.",
+          "width": 182,
+          "x": 270,
+          "y": 827
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.89087301587302,
+          "text": "LET  HIM WAIT - YOU COME  IN .",
+          "translation": "دعه ينتظر، أنت ادخل.",
+          "width": 154,
+          "x": 187,
+          "y": 3019
+        }
+      ],
+      "imgHeight": 3276,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.33333333333333,
+          "symWidth": 16.56410256410257,
+          "text": "SO ...  I'VE  BEEN TURNED  AWAY AT  THE  DOOR ?",
+          "translation": "هل طُردت عند الباب؟",
+          "width": 199,
+          "x": 257,
+          "y": 3302
+        }
+      ],
+      "imgHeight": 3703,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 37,
+          "symWidth": 35.5,
+          "text": "00",
+          "translation": "00",
+          "width": 89,
+          "x": 550,
+          "y": 2202
+        }
+      ],
+      "imgHeight": 3704,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 22.1,
+          "symWidth": 21.15,
+          "text": "HOW  DID IT  GO ?",
+          "translation": "كيف جرت الأمور؟",
+          "width": 139,
+          "x": 304,
+          "y": 708
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 18.33333333333333,
+          "symWidth": 17.39259259259259,
+          "text": "PROFESSOR  OUYANG SAID  THAT  FOR  YOUR FOURTH  ADVANCEMENT , YOU  NEED  TO  GATHER THESE  BREAKTHROUGH MATERIALS  FIRST .",
+          "translation": "قال أستاذ أويانغ إنك تحتاج لجمع هذه المواد الثمينة أولًا للتقدم إلى المستوى الرابع.",
+          "width": 313,
+          "x": 104,
+          "y": 1863
+        }
+      ],
+      "imgHeight": 3705,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 29,
+          "symWidth": 35.33333333333334,
+          "text": "「 快  快 看 漫画",
+          "translation": "",
+          "width": 190,
+          "x": 502,
+          "y": 629
+        },
+        {
+          "angle": 0,
+          "height": 214,
+          "symHeight": 18.72307692307692,
+          "symWidth": 16.7,
+          "text": "THAT  MANY ...  THE CIRCLED  ONE  IS  CALLED AN  ABYSS  CRYSTAL , LOCATED  DEEP  WITHIN  THE ABYSS  RIFT  AT  THE  BORDER BETWEEN  THE  DRAGON NATION  AND  THE SOUTHERN  NATION .",
+          "translation": "ذلك العدد... ما بين الدوائر يسمى بلورة الهاوية، وتقع في أعماق خندق الهاوية عند الحدود بين أمة التنين والأمة الجنوبية.",
+          "width": 384,
+          "x": 81,
+          "y": 869
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 17.57894736842105,
+          "symWidth": 17,
+          "text": "WHAT'S THE  ABYSS RIFT ?",
+          "translation": "ما هو خندق الهاوية؟",
+          "width": 148,
+          "x": 43,
+          "y": 1808
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 18.65,
+          "symWidth": 17.05,
+          "text": "YOU HAVEN'T HEARD  OF IT ?",
+          "translation": "لم تسمع به؟",
+          "width": 134,
+          "x": 144,
+          "y": 2563
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 17.90909090909091,
+          "symWidth": 16.72727272727273,
+          "text": "IS  IT FAMOUS ?",
+          "translation": "هل هو مشهور؟",
+          "width": 128,
+          "x": 398,
+          "y": 3440
+        }
+      ],
+      "imgHeight": 3521,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 187,
+          "symHeight": 18.49736842105263,
+          "symWidth": 16.90239234449761,
+          "text": "AT  THE  BORDER BETWEEN  THE  TWO NATIONS  LIES  A  LONG , NARROW  ABYSS CONTAINING  MANY HIDDEN  DUNGEON ENTRANCES .",
+          "translation": "عند حدود الأمةَين يقع خندق هاوية طويل ضيق يحوي مداخل كثير لخزائن مخفية.",
+          "width": 305,
+          "x": 135,
+          "y": 292
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 19.91791044776119,
+          "symWidth": 18.05051664753157,
+          "text": "THESE  DUNGEONS ARE  HIDDEN  AT  THE BOTTOM - WITHOUT  A GUIDE ,  THEY'RE NEARLY  IMPOSSIBLE TO  LOCATE .",
+          "translation": "تلك الخزائن مختفية في الأعماق؛ وبدون دليل، من العسير جدًا الوصول إليها.",
+          "width": 293,
+          "x": 153,
+          "y": 2004
+        }
+      ],
+      "imgHeight": 3522,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19.39772727272727,
+          "symWidth": 17.98598484848485,
+          "text": "MANY  WHO  GO THERE  SEEKING MATERIALS  FAIL TO  EXPLORE THEM  FULLY ,",
+          "translation": "كثير ممن يذهبون طلبًا للمواد يفشلون في اكتشافها الكامل.",
+          "width": 235,
+          "x": 277,
+          "y": 870
+        },
+        {
+          "angle": 0,
+          "height": 139,
+          "symHeight": 18.15,
+          "symWidth": 17.48630952380952,
+          "text": "EITHER RETURNING EMPTY - HANDED OR  DYING THERE .",
+          "translation": "إما يعودون خالي الوفاض أو يموتون هناك.",
+          "width": 223,
+          "x": 188,
+          "y": 2348
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 28,
+          "symWidth": 25.4,
+          "text": "原  快 看 漫画",
+          "translation": "",
+          "width": 172,
+          "x": 512,
+          "y": 3367
+        }
+      ],
+      "imgHeight": 3523,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 298,
+          "symHeight": 17.8,
+          "symWidth": 17.02417355371901,
+          "text": "IT'S  EVEN  MORE CHAOTIC  OUTSIDE  THE SECRET  REALMS .  GANGS FROM  BOTH  NATIONS  HAVE BEEN  IN  A  CONSTANT STATE  OF  WAR  FOR  YEARS OVER  USAGE  RIGHTS .  THE AREA  AROUND  SOUTH BLACK  PORT  HAS  LONG SINCE  BECOME  A LAWLESS  LAND .",
+          "translation": "تَسود فوضى أعظم خارج العوالم السرية. عصابات من كلا القطرين تخوض حرباً دائمة لسنوات على حقوق الاستخدام. المنطقة حول الميناء الأسود الجنوبي صارت منذ زمن بعيد أرضاً بلا قانون.",
+          "width": 366,
+          "x": 100,
+          "y": 274
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 17.66666666666667,
+          "symWidth": 15.44318181818182,
+          "text": "UNDERSTOOD . I'LL  MAKE THE  TRIP .",
+          "translation": "مفهوم. سأتولى القيام بالرحلة.",
+          "width": 189,
+          "x": 327,
+          "y": 2002
+        }
+      ],
+      "imgHeight": 3521,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 19.67021276595745,
+          "symWidth": 17.92871277658512,
+          "text": "BE  EXTREMELY CAREFUL  NOT  TO  GET TANGLED  UP  WITH  THE GANGS  THERE .  AS  THE HEADMASTER , I  HAVE TO  REMAIN  AT  THE SAFETY  OUTPOST .",
+          "translation": "كن حذراً جداً حتى لا تتورط مع العصابات هناك. بوصفي المدير، وجب عليّ البقاء في المركز الآمن.",
+          "width": 318,
+          "x": 296,
+          "y": 109
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 19.71428571428572,
+          "symWidth": 18.22882117882118,
+          "text": "DON'T  WORRY ABOUT  ME .  TELL MY  AUNT  AND  THE OTHERS FIND THEM  ONCE  I'M FINISHED  HERE .",
+          "translation": "لا تقلق بشأن أمري. أخبر عمتي والآخرين أن يجدوني عندما أنتهي من هنا.",
+          "width": 264,
+          "x": 313,
+          "y": 1202
+        }
+      ],
+      "imgHeight": 3522,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 17,
+          "symWidth": 18.16666666666666,
+          "text": "THAT AFTERNOON",
+          "translation": "تلك الظهيرة",
+          "width": 162,
+          "x": 128,
+          "y": 1925
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18,
+          "symWidth": 17.11274509803922,
+          "text": "LONGNAN  PREFECTURE BORDER",
+          "translation": "حدود محافظة لونغنان",
+          "width": 303,
+          "x": 309,
+          "y": 2138
+        }
+      ],
+      "imgHeight": 3523,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.06666666666667,
+          "symWidth": 16.73333333333333,
+          "text": "SUMMON THE  SHADOW DRAGON KING .",
+          "translation": "اسْتَدْعِ مَلِكِ التِنِّينِ الظَّلَالِيّ.",
+          "width": 172,
+          "x": 229,
+          "y": 1063
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 24.5,
+          "text": "GRR !",
+          "translation": "غرْر!",
+          "width": 92,
+          "x": 429,
+          "y": 1371
+        }
+      ],
+      "imgHeight": 2975,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 18.25,
+          "symWidth": 16.41951593137255,
+          "text": "NATURAL  ASSIMILATION :  SHADOW  DRAGON KING  CONTRACT  SUMMON  SHADOW DRAGON  KING ,  BLACK  BLADE .  ITS  LEVEL MATCHES  THE  USER'S .",
+          "translation": "الامتصاص الطبيعي: عقدُ استدعاء ملك التنين الظل، السيف الأسود. مستواه مماثل لمستخدمه.",
+          "width": 536,
+          "x": 68,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 18,
+          "symWidth": 17.14285714285714,
+          "text": "STEALTH",
+          "translation": "التخفي",
+          "width": 117,
+          "x": 171,
+          "y": 1739
+        }
+      ],
+      "imgHeight": 2976,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 19.625,
+          "symWidth": 15.78125,
+          "text": "SHADOW  CLOAK :  GRANTS  \" SHADOW CONCEALMENT \"  TO  SELF  AND  ALLIES FOR  6  MINUTES .",
+          "translation": "عباءة الظل: تمنح \"التخفي في الظل\" للذات والرفاق لمدة ست دقائق.",
+          "width": 424,
+          "x": 132,
+          "y": 1371
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 18.36,
+          "symWidth": 15.86,
+          "text": "LONGNAN  PREFECTURE⚫ FOREST  SWAMP  OUTSIDE THE  BORDER  ABYSS",
+          "translation": "ولايات لونغنان ⚫ غابة مستنقع خارج حدود الهاوية",
+          "width": 309,
+          "x": 117,
+          "y": 1952
+        }
+      ],
+      "imgHeight": 2977,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 19.86666666666667,
+          "symWidth": 18.60555555555555,
+          "text": "HEH ,  THOSE DRAGON  NATION GANGS  AT  SOUTH BLACK  PORT  ARE TRASH !",
+          "translation": "هاه، تلك العصابات من أمة التنين عند الميناء الأسود الجنوبي حقًا مهلهلة!",
+          "width": 266,
+          "x": 130,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 18.3265306122449,
+          "symWidth": 17.16326530612245,
+          "text": "AND  THEY  DARE COMPETE  WITH  US FOR  THE  ABYSS RIFT ?  PATHETIC !",
+          "translation": "وهم يجرؤون على التنافس معنا على صدع الهاوية؟ أمر يثير الريب!",
+          "width": 243,
+          "x": 348,
+          "y": 1432
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 17.75,
+          "symWidth": 16.39128787878788,
+          "text": "SO  THIS  IS  THE GANG  CONFLICT SENIOR MENTIONED ?",
+          "translation": "هل هذه هي النزاعات العصابية التي أشار إليها الكبير؟",
+          "width": 217,
+          "x": 148,
+          "y": 1795
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 25.8,
+          "symWidth": 22.95,
+          "text": "WE  MISSED ONE !  KILL HIM !",
+          "translation": "لقد أخطأنا هدفًا! اقتلوه!",
+          "width": 216,
+          "x": 294,
+          "y": 3065
+        }
+      ],
+      "imgHeight": 3339,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 17.5,
+          "symWidth": 16.11666666666667,
+          "text": "YOU'RE ASKING  FOR DEATH .",
+          "translation": "أنت تناشد الموت.",
+          "width": 168,
+          "x": 130,
+          "y": 833
+        }
+      ],
+      "imgHeight": 3340,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 18,
+          "symWidth": 15.72738095238095,
+          "text": "SHADOW  BURST :  RELEASES  WIND  BLADES THAT  DAMAGE  NEARBY  ENEMIES  AND REMOVE  ALL  BUFFS .",
+          "translation": "انفجار الظل: يطلق شفرات رياح تصيب الأعداء القريبين وتبطل كل التعزيزات.",
+          "width": 491,
+          "x": 112,
+          "y": 349
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 18.5,
+          "symWidth": 14.74848484848485,
+          "text": "A  DRAGON ... BEHIND HIM ...  IT'S  A DRAGON ... /",
+          "translation": "تنين... وراءه... إنه تنين...",
+          "width": 161,
+          "x": 316,
+          "y": 2179
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 27.5,
+          "text": "漫画",
+          "translation": "",
+          "width": 58,
+          "x": 631,
+          "y": 3248
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 11.75,
+          "text": "17va",
+          "translation": "",
+          "width": 41,
+          "x": 505,
+          "y": 3260
+        }
+      ],
+      "imgHeight": 3341,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3874,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 20,
+          "symWidth": 18.66923076923077,
+          "text": "CUI  ZIYI  LEADER OF  THE  HEAVENLY DRAGON  GANG",
+          "translation": "تسوي زييي، قائد عصابة التنين السماوي",
+          "width": 256,
+          "x": 85,
+          "y": 3330
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 32,
+          "symWidth": 20.62698412698413,
+          "text": "visit  and  read  at MANHUAFAST.NET for  the  fastest  releases",
+          "translation": "",
+          "width": 398,
+          "x": 269,
+          "y": 3692
+        }
+      ],
+      "imgHeight": 3874,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

@@ -1,0 +1,963 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0143",
+  "jobId": "fixture-job-0143",
+  "licenseId": "fixture-license-0143",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 16.72,
+          "text": "colamanga.com 观看 , 最快 最 稳 , 广告 最少",
+          "translation": "RTMTH",
+          "width": 550,
+          "x": 155,
+          "y": 46
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 13.25,
+          "text": "· 人 呢 ?",
+          "translation": "أين هم؟",
+          "width": 59,
+          "x": 266,
+          "y": 256
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 17,
+          "symWidth": 16.5,
+          "text": "♡♡",
+          "translation": "♡♡",
+          "width": 28,
+          "x": 681,
+          "y": 272
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.45,
+          "text": "这 又给 我们 带 哪儿 来 了 。",
+          "translation": "إلى أين قادونا هذه المرة؟",
+          "width": 116,
+          "x": 253,
+          "y": 331
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 15.33333333333333,
+          "text": "等等 。",
+          "translation": "انتظر.",
+          "width": 52,
+          "x": 364,
+          "y": 713
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 16.75,
+          "text": "怎么 了 ?",
+          "translation": "ما الأمر؟",
+          "width": 75,
+          "x": 76,
+          "y": 1062
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 116,
+          "x": 12,
+          "y": 1150
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 34,
+          "symWidth": 25.86666666666667,
+          "text": "ACloudMerge.com",
+          "translation": "RTMTH",
+          "width": 374,
+          "x": 405,
+          "y": 1157
+        }
+      ],
+      "imgHeight": 1200,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.15384615384615,
+          "symWidth": 16.46153846153846,
+          "text": "龙 天明 ? ! 他 怎么 在 这 里 ??",
+          "translation": "هل هو لونغ تيانمينغ؟! لماذا هو هنا؟",
+          "width": 109,
+          "x": 117,
+          "y": 475
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20,
+          "symWidth": 18.53333333333333,
+          "text": "这 … 这 不是 羽 神宗 的 龙 大少爷 吗 !",
+          "translation": "أهذا ليس الابن الأكبر لعائلة لونغ من عشيرة يو شن؟",
+          "width": 109,
+          "x": 423,
+          "y": 521
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 19.86363636363636,
+          "symWidth": 18.72727272727273,
+          "text": "这 家伙 平时 总 带着 一堆 手下 , 怎么 一个 人 过 来 了 ?",
+          "translation": "عادة ما يكون محاطًا بمجموعة من الحراس، فلماذا جاء وحده؟",
+          "width": 138,
+          "x": 485,
+          "y": 624
+        },
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 20.13333333333333,
+          "symWidth": 19.02222222222222,
+          "text": "这 不是 重点 啊 , 我 们 是 为了 对抗 忽然 变 强 的 羽 神宗 才 开 放 的 神 炎 池 。 羽 神宗 龙 家 的 未来 家 主 怎么 会 在 秘境 里 !",
+          "translation": "هذا ليس جوهر المسألة، لقد فتحنا حوض اللهب الإلهي لمواجهة قوة عشيرة يو شن المتعاظمة. كيف لهذا الابن المستقبلي لعائلة لونغ أن يكون في هذا المكان السري؟",
+          "width": 258,
+          "x": 113,
+          "y": 801
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 28,
+          "symWidth": 27.75,
+          "text": "Tcom",
+          "translation": "RTMTH",
+          "width": 113,
+          "x": 283,
+          "y": 1047
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 31.5,
+          "symWidth": 27.06666666666667,
+          "text": "COMMAN AcloudMerge.com",
+          "translation": "RTMTH",
+          "width": 383,
+          "x": 1,
+          "y": 1048
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 18.5,
+          "symWidth": 15.83333333333333,
+          "text": "喂 , 你们 三个 。",
+          "translation": "مهلاً، أنتم الثلاثة.",
+          "width": 85,
+          "x": 100,
+          "y": 396
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.53333333333333,
+          "text": "你们 这 秘境 的 核心 在 哪 ?",
+          "translation": "أين مركز هذا المكان السري؟",
+          "width": 131,
+          "x": 342,
+          "y": 583
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 17.25,
+          "text": "额 那边 。",
+          "translation": "أم... هناك.",
+          "width": 74,
+          "x": 157,
+          "y": 836
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 29.66666666666667,
+          "text": "com",
+          "translation": "RTMTH",
+          "width": 93,
+          "x": 701,
+          "y": 1049
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37,
+          "symWidth": 38,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 121,
+          "x": 9,
+          "y": 1080
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 24.66666666666667,
+          "text": "ACloudMerge.com",
+          "translation": "RTMTH",
+          "width": 376,
+          "x": 406,
+          "y": 1091
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.16666666666667,
+          "symWidth": 17.33333333333333,
+          "text": "这位 大爷 , 往东 走 , 穿过 黑雾 谷 就是了 。",
+          "translation": "أيها السيد، سر شرقًا، عبر وادي الضباب الأسود.",
+          "width": 152,
+          "x": 63,
+          "y": 102
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 14,
+          "text": "哼 …",
+          "translation": "همم...",
+          "width": 33,
+          "x": 479,
+          "y": 120
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 16.75,
+          "text": "算 你们 识 相 。",
+          "translation": "لقد كنتم معقولين.",
+          "width": 87,
+          "x": 640,
+          "y": 307
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 17.25,
+          "text": "黑雾 谷 ?",
+          "translation": "وادي الضباب الأسود؟",
+          "width": 74,
+          "x": 115,
+          "y": 783
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 16.2,
+          "text": "啊 , 我 编 的",
+          "translation": "ها، ذلك اسم اخترعته للتو.",
+          "width": 107,
+          "x": 442,
+          "y": 925
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 19.5,
+          "text": "就是 我们 刚才",
+          "translation": "في الحقيقة، نحن فقط نطلقه على المكان الذي مررنا به.",
+          "width": 127,
+          "x": 613,
+          "y": 937
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 15.33333333333333,
+          "text": "名字 。",
+          "translation": "اسم فقط.",
+          "width": 51,
+          "x": 441,
+          "y": 951
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.16666666666667,
+          "text": "路过 的 地方 , 都是 黑雾 , 很 危险 吧 。",
+          "translation": "ذلك المكان تغلفه الضباب الأسود، وهو خطير جداً.",
+          "width": 131,
+          "x": 611,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 33,
+          "symWidth": 23.13333333333333,
+          "text": "CO ACloudMerge.com",
+          "translation": "RTMTH",
+          "width": 375,
+          "x": 5,
+          "y": 1047
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 17.66666666666667,
+          "text": "是 啊 , 那 个人",
+          "translation": "نعم، ذلك الشخص...",
+          "width": 129,
+          "x": 445,
+          "y": 81
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.42857142857143,
+          "text": "“ 你 疯 了 吗 ? 那",
+          "translation": "هل أصبت بالجنون؟ ذلك...",
+          "width": 137,
+          "x": 90,
+          "y": 89
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 17.875,
+          "text": "看起来 就 不好 惹 。",
+          "translation": "يبدو خطيرًا للغاية.",
+          "width": 128,
+          "x": 446,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.41666666666667,
+          "text": "边 可 全 是 噬魂 妖 蟒 。",
+          "translation": "تحيط به أفاعي شرهة الأرواح.",
+          "width": 131,
+          "x": 96,
+          "y": 115
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.66666666666667,
+          "symWidth": 19.06666666666667,
+          "text": "他 发现 了 肯 定 会 回来 找 我们 麻烦 的 。",
+          "translation": "إذا اكتشف أمرنا، سيعود حتمًا ليورطنا بالمشاكل.",
+          "width": 116,
+          "x": 273,
+          "y": 304
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 20.5,
+          "symWidth": 17.56547619047619,
+          "text": "嘿 , 他 出现 在 这 太 奇怪 了 , 我 要 看看 他 到底 想 干嘛 。",
+          "translation": "ظهوره هنا غريب جدًا، يجب أن أراقب نواياه.",
+          "width": 152,
+          "x": 76,
+          "y": 456
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.32738095238095,
+          "text": "我 还给 他 身上 弄 了 点儿 引 兽 粉 , 一 会有 他 好受 的 。",
+          "translation": "وضعت له مسحوق جذب الوحوش، سيجد الأمر غير مريح.",
+          "width": 161,
+          "x": 361,
+          "y": 595
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20.33333333333334,
+          "symWidth": 18.16666666666667,
+          "text": "就 在 他 转身 的 瞬间 。",
+          "translation": "في لحظة استداراره.",
+          "width": 129,
+          "x": 417,
+          "y": 772
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 19.75,
+          "symWidth": 17.32142857142857,
+          "text": "走吧 , 这边 也 没 域 封锁 大 阵 了 , 咱们 先 跟上 龙 天 明 看看 !",
+          "translation": "هيا، لم يعد هنا نَفَسٌ كبير من حماية المنطقة، لنلحق بلونغ تيانمينغ أولاً.",
+          "width": 160,
+          "x": 573,
+          "y": 915
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 29.02222222222222,
+          "symWidth": 25.24444444444444,
+          "text": "什么 时候 … COLAMANGA  LE AcloudMerge.com",
+          "translation": "متى حدث هذا...؟",
+          "width": 383,
+          "x": 1,
+          "y": 997
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 19.66666666666667,
+          "symWidth": 17.5,
+          "text": "这些 畜生 , 怎 么 都 冲着 我 来 了 ?",
+          "translation": "أيها الوضيعون، لماذا تهاجمونني؟",
+          "width": 131,
+          "x": 197,
+          "y": 716
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 17.14285714285714,
+          "text": "引 兽 粉 ? ! 是 那 三个 小崽子 。",
+          "translation": "مسحوق جذب الوحوش؟! هؤلاء الثلاثة الصغار.",
+          "width": 138,
+          "x": 576,
+          "y": 966
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35,
+          "text": "看 漫画",
+          "translation": "قراءة المانغا",
+          "width": 116,
+          "x": 12,
+          "y": 1083
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 33,
+          "symWidth": 24.4,
+          "text": "AcloudMerge.com",
+          "translation": "RTMTH",
+          "width": 378,
+          "x": 406,
+          "y": 1089
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.33333333333334,
+          "symWidth": 18.66666666666666,
+          "text": "一时 也 寻不到 聂 离 。",
+          "translation": "لم أجد نيي لي على الفور.",
+          "width": 130,
+          "x": 505,
+          "y": 299
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19,
+          "symWidth": 16.41666666666666,
+          "text": "就 陪 你们 玩玩 吧 。",
+          "translation": "سألاعبكم قليلاً إذن.",
+          "width": 130,
+          "x": 585,
+          "y": 414
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19,
+          "symWidth": 18.3,
+          "text": "是 啊 , 本 该 嗜血 狂暴 的",
+          "translation": "حقاً، كان يفترض أن يكون وحشاً متعطشاً للدماء.",
+          "width": 109,
+          "x": 419,
+          "y": 824
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 19.16666666666667,
+          "text": "这 确实 是 龙 印",
+          "translation": "هذا حقاً ختم التنين.",
+          "width": 129,
+          "x": 82,
+          "y": 853
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 16.6,
+          "text": "妖 蟒 , 怎么",
+          "translation": "ثعبان شيطاني، كيف ذا؟",
+          "width": 107,
+          "x": 420,
+          "y": 876
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 20.16666666666667,
+          "text": "世家 的 紫 极 剑",
+          "translation": "سيف زيجي النبيل لعائلة عريقة.",
+          "width": 129,
+          "x": 82,
+          "y": 880
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 20.6,
+          "text": "会有 组织 似",
+          "translation": "يبدو كأن هناك تنظيماً ما.",
+          "width": 108,
+          "x": 420,
+          "y": 903
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 16.8,
+          "text": "气 , 不过 …",
+          "translation": "وهذه الروح، غير أن...",
+          "width": 108,
+          "x": 80,
+          "y": 906
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 16.83333333333333,
+          "text": "的 在 攻击 他 。",
+          "translation": "يرتكزون في هجومهم عليه.",
+          "width": 116,
+          "x": 421,
+          "y": 930
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 20.6,
+          "text": "那些 妖 蟒 看",
+          "translation": "ذلك الثعبان الشيطاني يبدو...",
+          "width": 110,
+          "x": 152,
+          "y": 966
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 19.5,
+          "text": "有人 在 操控 这",
+          "translation": "هناك من يتحكم به.",
+          "width": 130,
+          "x": 605,
+          "y": 989
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 21,
+          "text": "上去 不太 对",
+          "translation": "الصعود غير مناسب.",
+          "width": 109,
+          "x": 153,
+          "y": 993
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 18.71428571428572,
+          "text": "些 野兽 啊 ( 不是",
+          "translation": "تلك الوحوش ليست بسيطة (ليست...",
+          "width": 142,
+          "x": 604,
+          "y": 1015
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 13.5,
+          "text": "劲 。",
+          "translation": "القوة.",
+          "width": 29,
+          "x": 154,
+          "y": 1020
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 8.25,
+          "text": "( 我 ) 。",
+          "translation": "(أنا).",
+          "width": 49,
+          "x": 595,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 37.66666666666666,
+          "text": "看 漫画",
+          "translation": "RTMTH",
+          "width": 121,
+          "x": 8,
+          "y": 1082
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 33,
+          "symWidth": 25.26666666666667,
+          "text": "ACloudMerge.com",
+          "translation": "RTMTH",
+          "width": 373,
+          "x": 406,
+          "y": 1088
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.35714285714286,
+          "text": "看来 这 片 秘境 , 比 我们 想象 得 还要 复杂 。",
+          "translation": "يبدو أن هذه الدهليز العبدي أعقد مما ظننا.",
+          "width": 139,
+          "x": 91,
+          "y": 100
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.55,
+          "text": "几位 看得 可 还 尽兴 ?",
+          "translation": "هل استمتعتم أيها السادة؟",
+          "width": 107,
+          "x": 177,
+          "y": 486
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 21,
+          "symWidth": 17,
+          "text": "怎么 可能 , 以 我 们 的 修 为 , 有人 靠近 居然 毫无 察 觉 !",
+          "translation": "كيف؟ بقوتنا لا يصح أن يتسلل أحد دون أن نشعر!",
+          "width": 153,
+          "x": 587,
+          "y": 594
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 54.5,
+          "symWidth": 103.5,
+          "text": "呀 !",
+          "translation": "ها!",
+          "width": 150,
+          "x": 579,
+          "y": 773
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 16,
+          "text": "看 暗器 !",
+          "translation": "هاجم بالأجهزة الخفية!",
+          "width": 72,
+          "x": 60,
+          "y": 826
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 39.36363636363637,
+          "symWidth": 38,
+          "text": "PAMAMIA  .com",
+          "translation": "RTMTH",
+          "width": 344,
+          "x": 453,
+          "y": 1036
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 37,
+          "symWidth": 37.33333333333334,
+          "text": "看 漫画",
+          "translation": "RTMTH",
+          "width": 121,
+          "x": 9,
+          "y": 1080
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 33,
+          "symWidth": 24.86666666666667,
+          "text": "ACloudMerge.com",
+          "translation": "RTMTH",
+          "width": 376,
+          "x": 406,
+          "y": 1088
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20,
+          "symWidth": 16.625,
+          "text": "怎么 , 想 动手 ?",
+          "translation": "أحقاً، تود أن تتدخل؟",
+          "width": 87,
+          "x": 122,
+          "y": 116
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 19,
+          "text": "我 这 刚 得 来 的",
+          "translation": "ها قد امتلكت للتو...",
+          "width": 129,
+          "x": 73,
+          "y": 789
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 16.2,
+          "text": "这 丫头 , 已",
+          "translation": "هذه الفتاة، قد...",
+          "width": 108,
+          "x": 416,
+          "y": 793
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 17.66666666666667,
+          "text": "焚 天 龙枪 , 正",
+          "translation": "رمح التنين المحترق، الآن...",
+          "width": 129,
+          "x": 73,
+          "y": 816
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 20.2,
+          "text": "经 把 龙 炎 修",
+          "translation": "يتقن تلبس له لهب التنين.",
+          "width": 108,
+          "x": 416,
+          "y": 819
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 21,
+          "symWidth": 19.8,
+          "text": "缺 个 试 枪 的",
+          "translation": "ينقصنا واحد لاختبار الرمح.",
+          "width": 105,
+          "x": 94,
+          "y": 841
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 20.2,
+          "text": "炼 到 这番 境",
+          "translation": "صقلت الرمح حتى أصبحت في هذا المستوى.",
+          "width": 108,
+          "x": 416,
+          "y": 846
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13,
+          "text": "品 。",
+          "translation": "النوع.",
+          "width": 29,
+          "x": 94,
+          "y": 869
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 15,
+          "text": "界 了 !",
+          "translation": "هذا هو عالمه!",
+          "width": 52,
+          "x": 415,
+          "y": 872
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 31,
+          "symWidth": 21.88333333333333,
+          "text": "CONGA colamanga.com 观看 , 最快 最 稳 , 广告 最少 AcloudMerge.com",
+          "translation": "RTMTH",
+          "width": 613,
+          "x": 1,
+          "y": 1047
+        }
+      ],
+      "imgHeight": 1219,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-03-20.phase11.v1"
+}

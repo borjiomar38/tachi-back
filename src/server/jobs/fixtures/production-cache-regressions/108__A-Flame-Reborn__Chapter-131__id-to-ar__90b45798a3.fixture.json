@@ -1,0 +1,2205 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0108",
+  "jobId": "fixture-job-0108",
+  "licenseId": "fixture-license-0108",
+  "pageCount": 52,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "009__003.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "010__003.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "016__003.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "019__003.jpg",
+    "020__001.jpg",
+    "020__002.jpg",
+    "020__003.jpg",
+    "021__001.jpg",
+    "021__002.jpg",
+    "022__001.jpg",
+    "022__002.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 32.5,
+          "symWidth": 17.54954954954955,
+          "text": "BACA  DI <  SHINIGAMI.TO .  > UNTUK  UPDATE  LEBIH  CEPAT !",
+          "translation": "اقرأ على < SHINIGAMI.TO > لأحدث التحديثات بسرعة فائقة!",
+          "width": 397,
+          "x": 161,
+          "y": 260
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 29.17857142857143,
+          "symWidth": 22.96428571428572,
+          "text": "SUATU KEHORMATAN  BISA MEMBANTU .",
+          "translation": "شرف عظيم أن أكون عوناً.",
+          "width": 347,
+          "x": 185,
+          "y": 965
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 40.95652173913044,
+          "symWidth": 24.76086956521739,
+          "text": "MULAI  DARI  TITIK  INI , AKU ,  BLAKE  OF  THE VIOLENT  CHARGE ,",
+          "translation": "من هذه اللحظة، أنا بليك، رام العاصفة الغاضبة,",
+          "width": 398,
+          "x": 155,
+          "y": 2870
+        }
+      ],
+      "imgHeight": 4203,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 40.47058823529412,
+          "symWidth": 25.74434389140271,
+          "text": "AKAN  MEMANDUMU DENGAN  AMAN  MENUJU IBUKOTA  KEKAISARAN .",
+          "translation": "سأرافقك بأمان إلى عاصمة الإمبراطورية.",
+          "width": 434,
+          "x": 144,
+          "y": 757
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 30.73684210526316,
+          "symWidth": 25.45864661654135,
+          "text": "BLAKE  OF THE  VIOLENT CHARGE ...",
+          "translation": "بليك، رام العاصفة الغاضبة...",
+          "width": 265,
+          "x": 219,
+          "y": 1808
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.47685185185185,
+          "text": "BACA  DAN  DUKUNG  TERUS  DI  WEB  KAMI SHINIGAMI.TO",
+          "translation": "اقرأ وادعم موقعنا دائماً SHINIGAMI.TO",
+          "width": 193,
+          "x": 127,
+          "y": 2853
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 29.01851851851852,
+          "symWidth": 22.77777777777778,
+          "text": "JANGAN  BILANG ... KALAU  BLAKE  EVEN DOOR  YANG  ITU ?!",
+          "translation": "لا تقل... هل هو بليك من الباب المجاور؟!",
+          "width": 353,
+          "x": 188,
+          "y": 3611
+        }
+      ],
+      "imgHeight": 4203,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 34.76595744680851,
+          "symWidth": 19,
+          "text": "DALAM  PERANG KEKAISARAN  DI KEHIDUPAN  YANG SEBELUMNYA ,",
+          "translation": "في حرب الإمبراطورية في حياة سابقة،",
+          "width": 272,
+          "x": 87,
+          "y": 1049
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 35.66666666666666,
+          "symWidth": 20.20662768031189,
+          "text": "TRANSCENDENT  PERTAMA UNTUK  MENYEBERANGI PERBATASAN  GRANDIA .",
+          "translation": "كان هو المتعالي الأول الذي عبر حدود جرانديا.",
+          "width": 427,
+          "x": 148,
+          "y": 1606
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 32,
+          "symWidth": 19.66666666666667,
+          "text": "DIA  MENGORBANKAN NYAWANYA  SENDIRI",
+          "translation": "ضحى بنفسه",
+          "width": 336,
+          "x": 82,
+          "y": 2454
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 32.8225806451613,
+          "symWidth": 18.2247311827957,
+          "text": "DAN  BERHASIL MEMBUNUH  TRANSCENDENT TERKUAT  GRANDIA .",
+          "translation": "ونجح في قتل أقوى المتعاليين في جرانديا.",
+          "width": 426,
+          "x": 198,
+          "y": 2692
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 40.99047619047619,
+          "symWidth": 22.13093964858671,
+          "text": "SETELAH  KEHILANGAN PUSAT  KEKUATANNYA , GRANDIA  HANCUR  TANPA PERLAWANAN .",
+          "translation": "بعد أن فقدت مركز قوتها، تحطمت جرانديا بلا مقاومة.",
+          "width": 474,
+          "x": 120,
+          "y": 308
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 30.5,
+          "symWidth": 27.06944444444444,
+          "text": "DAN  MEREKA MENGGUNAKAN  ORANG SEPERTI  ITU  HANYA  UNTUK MENGAWAL  TAMU ?",
+          "translation": "وهل يستعملون أمثال هؤلاء فقط لحراسة الضيوف؟",
+          "width": 527,
+          "x": 106,
+          "y": 1687
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 27.25,
+          "symWidth": 20.94507575757576,
+          "text": "ITU  PERHATIAN YANG  BERLEBIHAN . DENGAN  HORMAT  AKU MENOLAKNYA .",
+          "translation": "إنها مبالغة في التقدير، أرفض ذلك بكل احترام.",
+          "width": 386,
+          "x": 172,
+          "y": 2590
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 17.5,
+          "symWidth": 10.24537037037037,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  KAMI SHINIGAMI.TO",
+          "translation": "",
+          "width": 193,
+          "x": 72,
+          "y": 3690
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 30.25,
+          "symWidth": 23.33229166666667,
+          "text": "INI  HANYA UNTUK  MEMASTIKAN KEAMANAN  BAGI  TAMU YANG  MULIA .",
+          "translation": "هذا لضمان الأمن للضيف الكريم.",
+          "width": 443,
+          "x": 149,
+          "y": 200
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 32.5,
+          "symWidth": 24.24825174825175,
+          "text": "TOLONG ,  JANGAN MENOLAKNYA .",
+          "translation": "أرجو ألا ترفض ذلك.",
+          "width": 343,
+          "x": 101,
+          "y": 1648
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 26.03703703703704,
+          "symWidth": 22.27946127946128,
+          "text": "DIA  BAHKAN MENUNDUKKAN KEPALANYA .",
+          "translation": "حتى أنه أومأ برأسه.",
+          "width": 261,
+          "x": 315,
+          "y": 2270
+        }
+      ],
+      "imgHeight": 2901,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.04166666666667,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ واستمر بالدعم على موقعنا شينيغامي.",
+          "width": 192,
+          "x": 71,
+          "y": 305
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 68,
+          "symWidth": 30.66666666666667,
+          "text": "El .",
+          "translation": "إل.",
+          "width": 106,
+          "x": 427,
+          "y": 417
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 30.33333333333333,
+          "symWidth": 23.1957264957265,
+          "text": "JIKA  PENGAWALAN , AKU  SUDAH MELAKUKANNYA .",
+          "translation": "لو كان الحرس مطلبي، لكنت فعلتُ ذلك.",
+          "width": 367,
+          "x": 167,
+          "y": 1157
+        }
+      ],
+      "imgHeight": 2901,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 31.85333333333334,
+          "symWidth": 23.41714285714286,
+          "text": "BAHKAN  DENGAN ADANYA  KAU ,  INI TIDAK  BERUBAH BANYAK .",
+          "translation": "حتى مع وجودك، لا يكاد يتغير شيء.",
+          "width": 351,
+          "x": 176,
+          "y": 955
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 98.5,
+          "symWidth": 60,
+          "text": "피식",
+          "translation": "(ضحكة خافتة)",
+          "width": 105,
+          "x": 453,
+          "y": 1504
+        }
+      ],
+      "imgHeight": 2901,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 25.75,
+          "symWidth": 19.24150219298246,
+          "text": "SEPERTINYA  DI PEDESAAN ,  ORANG  BESAR MANAPUN  MENJADI  SI PEMIMPINNYA .",
+          "translation": "يبدو أن في الأرياف، مهما علت منزلتك، تكون الزعامة لهؤلاء القادرين.",
+          "width": 425,
+          "x": 142,
+          "y": 181
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 159,
+          "symWidth": 137,
+          "text": "My",
+          "translation": "",
+          "width": 172,
+          "x": 15,
+          "y": 534
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 58,
+          "symWidth": 35.6,
+          "text": "APA ?!",
+          "translation": "ماذا؟!",
+          "width": 180,
+          "x": 397,
+          "y": 1307
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 41,
+          "symWidth": 29.18614718614718,
+          "text": "SADARI  POSISIMU DAN  DIAMLAH , DASAR  BODOH .",
+          "translation": "ادرك موقعك واصمت، أيها الجاهل.",
+          "width": 438,
+          "x": 129,
+          "y": 2057
+        },
+        {
+          "angle": 0,
+          "height": 443,
+          "symHeight": 438,
+          "symWidth": 289,
+          "text": "78",
+          "translation": "",
+          "width": 487,
+          "x": 2,
+          "y": 3330
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 23.66666666666667,
+          "text": "... BAJINGAN .",
+          "translation": "... يا حقير.",
+          "width": 300,
+          "x": 140,
+          "y": 23
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 17.5,
+          "symWidth": 10.02777777777778,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "",
+          "width": 191,
+          "x": 73,
+          "y": 3415
+        }
+      ],
+      "imgHeight": 4160,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 167,
+          "symHeight": 31.78947368421053,
+          "symWidth": 23.89473684210526,
+          "text": "T - TUAN LOGAN .  ANDA  HARUS MENAHAN  REKAN ANDA .",
+          "translation": "س-سيدي لوغان، يجب عليك كبح جماح زميلك.",
+          "width": 419,
+          "x": 147,
+          "y": 176
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 32.18181818181819,
+          "symWidth": 23,
+          "text": "SIR  BLAKE ADALAH  JENDERAL KEKAISARAN .",
+          "translation": "السير بليك هو جنرال الإمبراطورية.",
+          "width": 389,
+          "x": 175,
+          "y": 2196
+        }
+      ],
+      "imgHeight": 2935,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 190,
+          "symHeight": 37.32456140350877,
+          "symWidth": 26.07219973009447,
+          "text": "DIA  BUKAN  ORANG YANG  BISA  DIHADAPI  OLEH SEORANG  TRANSCENDENT DARI  KERAJAAN  KECIL !",
+          "translation": "ليس هو الرجل الذي يُواجه من قِبل متعالٍ من مملكة صغرى!",
+          "width": 530,
+          "x": 101,
+          "y": 604
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 26,
+          "text": "SIR  BLAKE .",
+          "translation": "سيدي بليك.",
+          "width": 282,
+          "x": 214,
+          "y": 2532
+        }
+      ],
+      "imgHeight": 2935,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 16,
+          "symWidth": 10.27777777777778,
+          "text": "BACA  DAN  DUKUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ وادعمنا دائمًا على موقع هامي شينيغامي.",
+          "width": 192,
+          "x": 71,
+          "y": 744
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 31.92857142857143,
+          "symWidth": 22.32142857142857,
+          "text": "JIKA  KAU MENGALAHKAN SIR  LUTHER ,",
+          "translation": "إذا هزمتَ السيد ليوثر،",
+          "width": 286,
+          "x": 104,
+          "y": 1369
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 32.42857142857143,
+          "symWidth": 26.35714285714286,
+          "text": "AKU AKAN  MENERIMA PENGAWALANMU .",
+          "translation": "سأتولى حمايتك.",
+          "width": 363,
+          "x": 234,
+          "y": 1671
+        }
+      ],
+      "imgHeight": 2936,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 203,
+          "symHeight": 25.2,
+          "symWidth": 21.15666894509,
+          "text": "BUKAN  IDE  YANG  BURUK UNTUK  MEMANFAATKAN KESEMPATAN  INI  UNTUK MENGIRA - NGIRA  LEVEL SEORANG  TRANSCENDENT KEKAISARAN .",
+          "translation": "ليست فكرة سيئة استغلال هذه الفرصة لتقدير مستوى متعالٍ من الإمبراطورية.",
+          "width": 414,
+          "x": 153,
+          "y": 1318
+        },
+        {
+          "angle": 0,
+          "height": 241,
+          "symHeight": 153.3333333333333,
+          "symWidth": 130,
+          "text": "кол",
+          "translation": "",
+          "width": 272,
+          "x": 24,
+          "y": 2214
+        },
+        {
+          "angle": 0,
+          "height": 217,
+          "symHeight": 31.88888888888889,
+          "symWidth": 24.11679292929293,
+          "text": "TAPI ,  JIKA  TERJADI SESUATU .  HAL  INI  TIDAK BOLEH  MENYEBABKAN MASALAH  ANTARA NEGARA  KITA .",
+          "translation": "لكن، إن حدث أمر ما، فلا ينبغي لذلك أن يثير نزاعًا بين دولتينا.",
+          "width": 434,
+          "x": 143,
+          "y": 2709
+        }
+      ],
+      "imgHeight": 3478,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.18981481481481,
+          "text": "BACA  DAN  OUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ وتابع باستمرار على موقعنا شينيغامي.تو",
+          "width": 194,
+          "x": 71,
+          "y": 406
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 44,
+          "symWidth": 27.375,
+          "text": "BAIKLAH .",
+          "translation": "حسنًا.",
+          "width": 253,
+          "x": 216,
+          "y": 2090
+        },
+        {
+          "angle": 0,
+          "height": 280,
+          "symHeight": 225,
+          "symWidth": 172.3333333333333,
+          "text": "EUH",
+          "translation": "أوه",
+          "width": 361,
+          "x": 11,
+          "y": 2671
+        }
+      ],
+      "imgHeight": 3479,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 27,
+          "symWidth": 21.4711229946524,
+          "text": "AKAN KUTUNJUKKAN  KEPADA ORANG  KAMPUNGAN  INI SEBERAPA  LUAS  DUNIA SEBENARNYA .",
+          "translation": "سأُري هذا القروي مدى اتساع العالم حقًّا.",
+          "width": 419,
+          "x": 132,
+          "y": 157
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.23148148148148,
+          "text": "BACA  DAN  OUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ وتابع باستمرار على موقعنا شينيغامي.تو",
+          "width": 194,
+          "x": 72,
+          "y": 2575
+        }
+      ],
+      "imgHeight": 2893,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 41,
+          "symWidth": 28.24722222222222,
+          "text": "KALAU  BEGITU , MARI  LIHAT  APA YANG  KAU BISA .",
+          "translation": "إن كان الأمر كذلك، فلنرَ ماذا بوسعك أن تفعل.",
+          "width": 354,
+          "x": 159,
+          "y": 21
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 24.5,
+          "symWidth": 25,
+          "text": "00",
+          "translation": "00",
+          "width": 42,
+          "x": 268,
+          "y": 818
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 25.5,
+          "symWidth": 23,
+          "text": "10",
+          "translation": "10",
+          "width": 40,
+          "x": 179,
+          "y": 1012
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 46.5,
+          "symWidth": 39.5,
+          "text": "30",
+          "translation": "30",
+          "width": 60,
+          "x": 497,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 39,
+          "symWidth": 31.4375,
+          "text": "K - KENAPA INI  TERJADI  DI KEDIAMANKU ?!",
+          "translation": "لِمَ حدث هذا في مسكني؟!",
+          "width": 377,
+          "x": 159,
+          "y": 2345
+        }
+      ],
+      "imgHeight": 2893,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [],
+      "imgHeight": 2894,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 283,
+          "symHeight": 66.22222222222223,
+          "symWidth": 36.38492063492063,
+          "text": "Regressor dari  Keluarga yang Hancur",
+          "translation": "الخائن من العائلة المنهارة",
+          "width": 456,
+          "x": 127,
+          "y": 325
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 7.656716417910448,
+          "text": "Gambar  Seong  Gu  Karya  Asli  Painkiller  Adaptasi  Yang  Pyung  Translasi  Shinigami",
+          "translation": "رسم سيونغ جو الأصلية بقلم باينكيلر\nنقل يونغ – ترجمة شينيغامي",
+          "width": 475,
+          "x": 120,
+          "y": 690
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 24.8,
+          "text": "제  131  화",
+          "translation": "الفصل 131",
+          "width": 167,
+          "x": 279,
+          "y": 745
+        }
+      ],
+      "imgHeight": 4304,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [],
+      "imgHeight": 4304,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 189,
+          "symHeight": 35.5,
+          "symWidth": 27.40416666666667,
+          "text": "AAAH ! RUMAHKU ! JANGAN RUMAHKU !",
+          "translation": "آه! منزلي! لا، لا منزلي!",
+          "width": 243,
+          "x": 128,
+          "y": 2298
+        }
+      ],
+      "imgHeight": 2931,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 16,
+          "symWidth": 9.657407407407408,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "تابع القراءة والمتابعة باستمرار على موقعنا شينيغامي.تو",
+          "width": 191,
+          "x": 72,
+          "y": 296
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 37,
+          "symWidth": 32.501443001443,
+          "text": "LUTHER KYLE  DIDESAK MUNDUR .",
+          "translation": "لوثر كايل يُجبر على التراجع.",
+          "width": 353,
+          "x": 184,
+          "y": 609
+        }
+      ],
+      "imgHeight": 2931,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 286,
+          "symHeight": 212.5,
+          "symWidth": 193.5,
+          "text": "TH",
+          "translation": "ث",
+          "width": 278,
+          "x": 441,
+          "y": 1405
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 40,
+          "symWidth": 27.16666666666667,
+          "text": "UGH !  MIRIP DENGAN  WIKEN , TAPI  BERBEDA .",
+          "translation": "ألمح به شبيهًا بالعطلة الأسبوعية، لكنه مختلف.",
+          "width": 325,
+          "x": 90,
+          "y": 2450
+        }
+      ],
+      "imgHeight": 2931,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 29.546783625731,
+          "symWidth": 24.11775651249335,
+          "text": "KEKUATANNYA LEBIH  LEMAH DIBANDING WIKEN ,",
+          "translation": "قوته أضعف من ويكن،",
+          "width": 263,
+          "x": 216,
+          "y": 1630
+        },
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 41.5,
+          "symWidth": 28.61428571428571,
+          "text": "DASAR  TIKUS SIALAN !",
+          "translation": "أيها الجرذ الخبيث!",
+          "width": 303,
+          "x": 320,
+          "y": 2241
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 74,
+          "symWidth": 65.5,
+          "text": "00",
+          "translation": "00",
+          "width": 122,
+          "x": 203,
+          "y": 2293
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31.75,
+          "symWidth": 24.45833333333334,
+          "text": "TAPI KECEPATANNYA LEBIH TINGGI !",
+          "translation": "لكن سرعته أعلى!",
+          "width": 313,
+          "x": 197,
+          "y": 2927
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "renderMode": "mask_only",
+          "symHeight": 32,
+          "symWidth": 23.58333333333333,
+          "text": "LEBIH  TINGGI !",
+          "translation": "",
+          "width": 290,
+          "x": 209,
+          "y": 17
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 44,
+          "symWidth": 44.66666666666666,
+          "text": "444",
+          "translation": "444",
+          "width": 82,
+          "x": 534,
+          "y": 923
+        },
+        {
+          "angle": 0,
+          "height": 276,
+          "symHeight": 270.5,
+          "symWidth": 118,
+          "text": "of",
+          "translation": "of",
+          "width": 200,
+          "x": 476,
+          "y": 1196
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 30.48780487804878,
+          "symWidth": 22.60975609756098,
+          "text": "ADA  BANYAK  CARA UNTUK  MENDOMINASI SEBUAH  RUANG ,",
+          "translation": "هناك طرق كثيرة للسيطرة على مكان ما،",
+          "width": 396,
+          "x": 156,
+          "y": 808
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 33.2258064516129,
+          "symWidth": 23.29032258064516,
+          "text": "TAPI  YANG TERBAIK  ADALAH KECEPATAN .",
+          "translation": "لكن الأبلغ والأفضل هو السرعة.",
+          "width": 350,
+          "x": 198,
+          "y": 2142
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 28.13333333333333,
+          "symWidth": 21.17777777777778,
+          "text": "JIKA  KAU ADALAH  ORANG TERCEPAT  DI  MEDAN PERTEMPURAN ,",
+          "translation": "إذا كنت الأسرع في ميدان القتال،",
+          "width": 350,
+          "x": 87,
+          "y": 2755
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 17.5,
+          "symWidth": 10.2037037037037,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "",
+          "width": 192,
+          "x": 72,
+          "y": 3961
+        }
+      ],
+      "imgHeight": 4322,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 35.24,
+          "symWidth": 25.82,
+          "text": "ITU  SAJA  SUDAH MEMBERIKANMU KEUNGGULAN  DI BANYAK  SITUASI .",
+          "translation": "ذلك وحده يمنحك الأفضلية في مواقف عديدة.",
+          "width": 375,
+          "x": 175,
+          "y": 353
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 30.93478260869565,
+          "symWidth": 25.70108695652174,
+          "text": "TRANSCENDENT YANG  FOKUS  PADA KECEPATAN ?",
+          "translation": "هل هو المتسامي الذي يرنو إلى السرعة؟",
+          "width": 354,
+          "x": 168,
+          "y": 3964
+        }
+      ],
+      "imgHeight": 4322,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 22.86363636363636,
+          "symWidth": 15.45454545454546,
+          "text": "Aaah tamanky hancur !",
+          "translation": "آه، حديقتي تتدمر!",
+          "width": 97,
+          "x": 130,
+          "y": 79
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 16,
+          "symWidth": 10.49074074074074,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "",
+          "width": 192,
+          "x": 71,
+          "y": 798
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 56,
+          "symWidth": 31.41666666666666,
+          "text": "BAJINGAN INI ...",
+          "translation": "يا هذا الوغد...!",
+          "width": 299,
+          "x": 160,
+          "y": 1450
+        }
+      ],
+      "imgHeight": 4178,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [],
+      "imgHeight": 4178,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3303,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.18055555555556,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ وتابع باستمرار على موقعنا شينيغامي تو",
+          "width": 192,
+          "x": 72,
+          "y": 371
+        }
+      ],
+      "imgHeight": 3303,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 51,
+          "symWidth": 32.4212962962963,
+          "text": "ITU  SUDAH CUKUP ,  SIR BLAKE .",
+          "translation": "لقد كفى، سيدي بلايك.",
+          "width": 325,
+          "x": 220,
+          "y": 252
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 34,
+          "symWidth": 24.93181818181818,
+          "text": "HAH ? MUSTAHIL ...",
+          "translation": "هاه؟ هذا مستحيل...",
+          "width": 264,
+          "x": 216,
+          "y": 4142
+        }
+      ],
+      "imgHeight": 4272,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 15.5,
+          "symWidth": 10.04166666666667,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "تابعوا القراءة وانتظروا المزيد على موقعنا شينيغامي.تو",
+          "width": 193,
+          "x": 71,
+          "y": 600
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 35,
+          "symWidth": 28.98484848484848,
+          "text": "DIA MENGHINDARI SERANGANKU ?",
+          "translation": "هل يتفادى هجماتي؟",
+          "width": 340,
+          "x": 198,
+          "y": 997
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 29.72727272727273,
+          "symWidth": 25.84848484848485,
+          "text": "ORANG  YANG BAHKAN  BUKAN TRANSCENDENT ?",
+          "translation": "شخص ليس حتى من المتعاليين؟",
+          "width": 318,
+          "x": 204,
+          "y": 1723
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 26,
+          "symWidth": 14.09090909090909,
+          "text": "Ini  salahku .",
+          "translation": "اللوم عليّ.",
+          "width": 156,
+          "x": 131,
+          "y": 2326
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 28.95652173913043,
+          "symWidth": 18.06521739130435,
+          "text": "Tidak  apa - apa Ketidakcocokannya memang  tidak bagus .",
+          "translation": "لا بأس، ذلك السقيط لم يكن قوياً بالفعل.",
+          "width": 236,
+          "x": 366,
+          "y": 2717
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 32.52777777777778,
+          "symWidth": 26.33333333333334,
+          "text": "MEMANG  PANTAS DARI  ORANG  YANG DIPANGGIL  OLEH YANG  MULIA .",
+          "translation": "هذا جدير بمن استُدعِي من قِبل الجليل.",
+          "width": 382,
+          "x": 165,
+          "y": 3831
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 29.07692307692308,
+          "symWidth": 14.30769230769231,
+          "text": "Aku -terkejut .",
+          "translation": "لقد فاجأني.",
+          "width": 127,
+          "x": 425,
+          "y": 4070
+        }
+      ],
+      "imgHeight": 4273,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 87.5,
+          "symWidth": 75.5,
+          "text": "Ma",
+          "translation": "ما",
+          "width": 133,
+          "x": 49,
+          "y": 290
+        },
+        {
+          "angle": 0,
+          "height": 133,
+          "symHeight": 25.33333333333333,
+          "symWidth": 21.67901234567901,
+          "text": "MAU BAGAIMANAPUN , SEPERTINYA  AKULAH YANG  MENANG .",
+          "translation": "مهما يكن، يبدو أنني أنا المنتصر.",
+          "width": 324,
+          "x": 113,
+          "y": 1427
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 26.30882352941176,
+          "symWidth": 20.48663101604278,
+          "text": "BOLEHKAH AKU  MENGAWALMU MENUJU  IBUKOTA KEKAISARAN ?",
+          "translation": "هل لي أن أصحبك إلى عاصمة الإمبراطورية؟",
+          "width": 337,
+          "x": 272,
+          "y": 1736
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 33.8,
+          "symWidth": 26.86666666666667,
+          "text": "AKU MENERIMANYA .",
+          "translation": "قبول مني.",
+          "width": 333,
+          "x": 184,
+          "y": 2996
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 29.3625,
+          "symWidth": 24.67692307692307,
+          "text": "BLAKE  DIANGGAP LEMAH  DI  ANTARA PARA  TRANSCENDENT KEKAISARAN .",
+          "translation": "يعتبر بليك ضعيفاً وسط المتعاليين في الإمبراطورية.",
+          "width": 414,
+          "x": 160,
+          "y": 3743
+        }
+      ],
+      "imgHeight": 4038,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.0787037037037,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ واندمج دوماً في موقعنا شينيغامي.تو",
+          "width": 192,
+          "x": 71,
+          "y": 784
+        },
+        {
+          "angle": 0,
+          "height": 153,
+          "symHeight": 38.6,
+          "symWidth": 28.52,
+          "text": "DAN  JIKA ITU  DINILAI LEMAH ...",
+          "translation": "وإن اعتُبر ذلك ضعفاً...",
+          "width": 283,
+          "x": 224,
+          "y": 1409
+        },
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 41.88888888888889,
+          "symWidth": 27.41161616161616,
+          "text": "UNTUK  MENGHADAPI  MEREKA , KEKUATAN  SAJA  TIDAK  AKAN CUKUP .",
+          "translation": "فإن القوة وحدها لن تكفي لمواجهتهم.",
+          "width": 601,
+          "x": 60,
+          "y": 2681
+        },
+        {
+          "angle": 0,
+          "height": 146,
+          "symHeight": 67.4390243902439,
+          "symWidth": 28.34146341463414,
+          "text": "Mengingatkan  untuk selalu  baca  di  web  kami  yaa !!",
+          "translation": "تذكّروا دائماً أن تقرأوا على موقعنا!!",
+          "width": 609,
+          "x": 55,
+          "y": 2929
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 65.21428571428571,
+          "symWidth": 26.85714285714286,
+          "text": "Baca  di  web  Shinigami.to Terimakasih  semuanya !!",
+          "translation": "اقرأوا على موقع شينيغامي.تو، شكراً لكم جميعاً!!",
+          "width": 513,
+          "x": 103,
+          "y": 3139
+        },
+        {
+          "angle": 0,
+          "height": 162,
+          "symHeight": 41.70588235294117,
+          "symWidth": 29.25668449197861,
+          "text": "SIR  BLAKE , AKU  PUNYA PERMINTAAN .",
+          "translation": "السير بلايك، لديّ طلب.",
+          "width": 348,
+          "x": 181,
+          "y": 3505
+        }
+      ],
+      "imgHeight": 4039,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 16.5,
+          "symWidth": 10.12037037037037,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ واندمج دوماً في موقعنا شينيغامي.تو",
+          "width": 193,
+          "x": 72,
+          "y": 966
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 33,
+          "symWidth": 25.36666666666667,
+          "text": "BISAKAH  KAU MENGABULKANNYA ?",
+          "translation": "هل تستطيع تحقيقه؟",
+          "width": 428,
+          "x": 144,
+          "y": 1414
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 70.5,
+          "symWidth": 46.5,
+          "text": "AKU  BUTUH INFORMASI .",
+          "translation": "أحتاج إلى معلومات.",
+          "width": 400,
+          "x": 160,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 36.53333333333333,
+          "symWidth": 22.46666666666667,
+          "text": "DUA  HARI KEMUDIAN",
+          "translation": "بعد يومين",
+          "width": 192,
+          "x": 383,
+          "y": 2595
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 29,
+          "symWidth": 21.77167277167277,
+          "text": "KALIAN SUDAH  MAU  PERGI ? SAYANG  SEKALI .",
+          "translation": "هل أنتم على وشك الرحيل؟ يا للأسف العميق.",
+          "width": 362,
+          "x": 128,
+          "y": 551
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 29,
+          "symWidth": 20.18611111111111,
+          "text": "SILAHKAN KUNJUNGI  KAMI LAGI !",
+          "translation": "يسرنا أن تزورونا مجددًا!",
+          "width": 296,
+          "x": 215,
+          "y": 2747
+        }
+      ],
+      "imgHeight": 3000,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 30.96153846153846,
+          "symWidth": 25.01373626373626,
+          "text": "BERKAMU ,  KAMI MENGINAP  DENGAN NYAMAN .",
+          "translation": "بصفتي مضيفك، ستقيم بأريحية تامة.",
+          "width": 399,
+          "x": 154,
+          "y": 467
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 36.5,
+          "symWidth": 26.66287878787879,
+          "text": "SHINIGAMI.TO BACA  &  KOMEN  DI  WEB  KAMI  YA !",
+          "translation": "شينيغامي، اقرأ وعلق على موقعنا الإلكتروني!",
+          "width": 413,
+          "x": 153,
+          "y": 704
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 24.2,
+          "symWidth": 20.67435897435898,
+          "text": "SEBAIKNYA  AKU PERGI  SEBELUM DIA  MEMAKSAKU UNTUK  MEMBAYAR KERUSAKANNYA .",
+          "translation": "من الأفضل أن أغادر قبل أن يجبرني على دفع تعويضات الأضرار.",
+          "width": 290,
+          "x": 206,
+          "y": 1840
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 27.5,
+          "symWidth": 20.69444444444444,
+          "text": "B - BAIK ... TUAN  LOGAN .",
+          "translation": "ج- جيد... السيد لوغان.",
+          "width": 260,
+          "x": 238,
+          "y": 2565
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 78.5,
+          "symWidth": 94,
+          "text": "ND",
+          "translation": "",
+          "width": 95,
+          "x": 488,
+          "y": 3083
+        },
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 24.6,
+          "symWidth": 20.95328671328672,
+          "text": "JANGAN  BILANG KALAU KAU  SUNGGUH AKAN  MEMBUATKU MEMBAYAR ...",
+          "translation": "لا تقل لي أنك حقًا ستجعلني أدفع...",
+          "width": 337,
+          "x": 143,
+          "y": 3578
+        }
+      ],
+      "imgHeight": 3946,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 232,
+          "symHeight": 65.21739130434783,
+          "symWidth": 40.39130434782609,
+          "text": "TOLONG INGAT  SAYA , DMITRI .",
+          "translation": "تذكرني يا ديميتري.",
+          "width": 386,
+          "x": 174,
+          "y": 1353
+        },
+        {
+          "angle": 0,
+          "height": 270,
+          "symHeight": 198.3333333333333,
+          "symWidth": 199.3333333333333,
+          "text": "ZLL",
+          "translation": "",
+          "width": 273,
+          "x": 3,
+          "y": 2389
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 39,
+          "symWidth": 40.66666666666666,
+          "text": "000",
+          "translation": "",
+          "width": 62,
+          "x": 520,
+          "y": 3229
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.13888888888889,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "",
+          "width": 191,
+          "x": 72,
+          "y": 3372
+        }
+      ],
+      "imgHeight": 3947,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 43.4375,
+          "symWidth": 32.125,
+          "text": "... MASIH SOAL  ITU .",
+          "translation": "... المسألة ذاتها لا تزال تشغلني.",
+          "width": 270,
+          "x": 222,
+          "y": 1163
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 35.03448275862069,
+          "symWidth": 25.58620689655172,
+          "text": "TUAN  LOGAN , KITA  HARUS BERANGKAT .",
+          "translation": "سيدي لوغان، لابد أن نتحرك الآن.",
+          "width": 303,
+          "x": 301,
+          "y": 1763
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 25.37692307692308,
+          "symWidth": 14.75,
+          "text": "Kereta  kudanya sudah  siap .",
+          "translation": "عربة فرسه جاهزة.",
+          "width": 180,
+          "x": 487,
+          "y": 1980
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 46.66666666666666,
+          "symWidth": 46,
+          "text": "000",
+          "translation": "",
+          "width": 78,
+          "x": 306,
+          "y": 2409
+        },
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 34.625,
+          "symWidth": 22.875,
+          "text": "AH ,  BAIK !",
+          "translation": "حسنًا، على بركة الله!",
+          "width": 199,
+          "x": 123,
+          "y": 2556
+        }
+      ],
+      "imgHeight": 4290,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 39,
+          "symHeight": 17,
+          "symWidth": 10.25,
+          "text": "BACA  DAN  DUKUNG  TERUS  DI  WEB  KAMI SHINIGAMI.TO",
+          "translation": "اقرأ وادعم دوماً على موقعنا شينيغامي.تو",
+          "width": 190,
+          "x": 73,
+          "y": 35
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 53,
+          "symWidth": 29.42857142857143,
+          "text": "TAPI ...",
+          "translation": "لكن...",
+          "width": 207,
+          "x": 346,
+          "y": 694
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 59.66666666666666,
+          "symWidth": 55,
+          "text": "000",
+          "translation": "000",
+          "width": 77,
+          "x": 394,
+          "y": 1293
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 29.27777777777778,
+          "symWidth": 23.58333333333334,
+          "text": "APA  KAU  TAHU KENAPA  YANG  MULIA MEMANGGILMU ?",
+          "translation": "هل تدرين لماذا استدعيتِ من قِبل جلالته؟",
+          "width": 391,
+          "x": 98,
+          "y": 1949
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 44.25,
+          "symWidth": 23.25,
+          "text": "... ?",
+          "translation": "...؟",
+          "width": 79,
+          "x": 237,
+          "y": 2515
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 28.61538461538462,
+          "symWidth": 22.23076923076923,
+          "text": "AKU  TIDAK TAHU .",
+          "translation": "لا أعلم.",
+          "width": 211,
+          "x": 294,
+          "y": 2706
+        },
+        {
+          "angle": 0,
+          "height": 158,
+          "symHeight": 30.0945945945946,
+          "symWidth": 23.45945945945946,
+          "text": "MUNGKIN  DIA MENYUKAI  UPAYAKU PADA  SAAT  PERANG SAUDARA .",
+          "translation": "ربما لأجل جهودي في زمن الحرب الأهلية.",
+          "width": 378,
+          "x": 161,
+          "y": 3896
+        }
+      ],
+      "imgHeight": 4291,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 27.18627450980392,
+          "symWidth": 19.54313725490196,
+          "text": "HM ...  SEMAKIN  AKU MEMIKIRKANNYA ,  ITU TIDAK  SEPERTI  HAL  YANG AKAN  DIA  LAKUKAN .",
+          "translation": "همم... كلما تأملت الأمر أكثر، بدا لي أنه ليس من طبيعته أن يفعل ذلك.",
+          "width": 413,
+          "x": 78,
+          "y": 175
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 33.25,
+          "symWidth": 28,
+          "text": "APA MAKSUDMU ?",
+          "translation": "ماذا تعني بذلك؟",
+          "width": 271,
+          "x": 180,
+          "y": 1605
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 32.25,
+          "symWidth": 24.94230769230769,
+          "text": "AH , BUKANNYA AKU BERUSAHA MEREMEHKANMU .",
+          "translation": "آه، لست أحاول التقليل من مكانتك.",
+          "width": 302,
+          "x": 314,
+          "y": 2862
+        }
+      ],
+      "imgHeight": 2928,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "renderMode": "mask_only",
+          "symHeight": 33,
+          "symWidth": 25.38461538461538,
+          "text": "MEREMEHKANMU .",
+          "translation": "",
+          "width": 354,
+          "x": 288,
+          "y": 26
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 16,
+          "symWidth": 10.44907407407407,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  KAMI SHINIGAMI.TO",
+          "translation": "استمر بقراءتها ومتابعتها على موقعنا SHINIGAMI.TO",
+          "width": 194,
+          "x": 515,
+          "y": 1165
+        },
+        {
+          "angle": 0,
+          "height": 44,
+          "symHeight": 43,
+          "symWidth": 26.14285714285714,
+          "text": "TAPI ...",
+          "translation": "ولكن...",
+          "width": 174,
+          "x": 135,
+          "y": 1288
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 32.66666666666666,
+          "symWidth": 24.50503663003663,
+          "text": "DIA  HANYA TERTARIK  DENGAN TRANSCENDENT .",
+          "translation": "إنه مهتم فقط بما وراء الوجود.",
+          "width": 376,
+          "x": 165,
+          "y": 1869
+        }
+      ],
+      "imgHeight": 2928,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 24.75,
+          "symWidth": 18.82103174603175,
+          "text": "BAHKAN  JIKA SESEORANG  ADALAH SEBUAH PAHLAWAN KERAJAAN .",
+          "translation": "حتى ولو كان المرء بطلاً من مملكة سامية.",
+          "width": 313,
+          "x": 59,
+          "y": 42
+        },
+        {
+          "angle": 0,
+          "height": 211,
+          "symHeight": 31.33928571428572,
+          "symWidth": 26.58035714285714,
+          "text": "ORANG YANG  HANYA PEDULI  DENGAN TRANSCENDENT MEMANGGILKU ?",
+          "translation": "هل من يستحضرني هو من يهتم فقط بالمطلق؟",
+          "width": 323,
+          "x": 202,
+          "y": 858
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 29.66666666666667,
+          "symWidth": 26.61111111111111,
+          "text": "MUNGKIN KARENA BEASTNYA ?",
+          "translation": "ربما بسبب وحشه؟",
+          "width": 221,
+          "x": 175,
+          "y": 1689
+        },
+        {
+          "angle": 0,
+          "height": 346,
+          "symHeight": 63.65714285714286,
+          "symWidth": 29.17142857142857,
+          "text": "Next  Chapter baca  di  web  kami  yaa !! Baca  di  web  Shinigamito Terimakasih  semuanya !!",
+          "translation": "",
+          "width": 514,
+          "x": 105,
+          "y": 1879
+        },
+        {
+          "angle": 0,
+          "height": 124,
+          "symHeight": 23.75,
+          "symWidth": 20.05749951802584,
+          "text": "ATAU  MUNGKIN  DIA MELIHAT  POTENSI  DALAM DIRIKU  UNTUK  MENJADI TRANSCENDENT ?",
+          "translation": "أم أنه يرى فيَّ بذرةَ القدرة على أن أكون مطلقاً؟",
+          "width": 384,
+          "x": 164,
+          "y": 2363
+        }
+      ],
+      "imgHeight": 2928,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 37.10869565217391,
+          "symWidth": 29.40217391304348,
+          "text": "ORANG  YANG SEPERTI  APA  SANG KAISAR  INI ?",
+          "translation": "ما هو نوع هذا الإمبراطور؟",
+          "width": 451,
+          "x": 142,
+          "y": 1143
+        }
+      ],
+      "imgHeight": 2929,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 16.5,
+          "symWidth": 10.5787037037037,
+          "text": "BACA  DAN  DUHUNG  TERUS  DI  WEB  HAMI SHINIGAMI.TO",
+          "translation": "اقرأ وتابع دائمًا على موقعنا شينيغامي.تو",
+          "width": 193,
+          "x": 72,
+          "y": 2805
+        }
+      ],
+      "imgHeight": 2929,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 44.3125,
+          "symWidth": 31.125,
+          "text": "SELAMAT , YANG  MULIA .",
+          "translation": "أهنئكم أيها الجليل.",
+          "width": 355,
+          "x": 108,
+          "y": 669
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 25.83333333333333,
+          "symWidth": 29,
+          "text": "ROCKES",
+          "translation": "روكيز",
+          "width": 34,
+          "x": 152,
+          "y": 1549
+        },
+        {
+          "angle": 0,
+          "height": 197,
+          "symHeight": 37.18181818181818,
+          "symWidth": 28.33549783549783,
+          "text": "ANJING PETARUNG  YANG MULIA  TELAH MENANG .",
+          "translation": "لقد انتصر كلب القتال أيها الجليل.",
+          "width": 390,
+          "x": 165,
+          "y": 2097
+        }
+      ],
+      "imgHeight": 2930,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 29.5,
+          "symWidth": 22.79166666666667,
+          "text": "MEREKA ADALAH ANJING YANG  KUAT .",
+          "translation": "هم كلاب قوية.",
+          "width": 299,
+          "x": 202,
+          "y": 1153
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 28.5,
+          "symWidth": 20.5875,
+          "text": "BENAR .  MEREKA DIKUMPULKAN  DARI  GARIS KETURUNAN  TERBAIK  DARI SEPENJURU  BENUA .",
+          "translation": "صحيح، لقد جُمعوا من أفضل الأنساب من أصقاع القارة.",
+          "width": 466,
+          "x": 125,
+          "y": 2426
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 42,
+          "symWidth": 31.15,
+          "text": "YANG TERBAIK ...",
+          "translation": "الأفضل على الإطلاق...",
+          "width": 282,
+          "x": 222,
+          "y": 3187
+        }
+      ],
+      "imgHeight": 3829,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 17,
+          "symWidth": 10.49074074074074,
+          "text": "BACA  DAN  OUHUNG  TERUS  DI  WEB  KAMI SHINIGAMI.TO",
+          "translation": "اقرأ وتابع على موقعنا شينيغامي.تو",
+          "width": 192,
+          "x": 72,
+          "y": 317
+        },
+        {
+          "angle": 0,
+          "height": 183,
+          "symHeight": 36.36315789473684,
+          "symWidth": 27.83684210526316,
+          "text": "MAKA , DI  ANTARA  PARA ANJING  ITU ,  MANA YANG  TERKUAT ?",
+          "translation": "فأيُّ من هؤلاء الكلاب هو الأقوى؟",
+          "width": 425,
+          "x": 143,
+          "y": 921
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 49.75,
+          "symWidth": 33,
+          "text": "I - ITU ...",
+          "translation": "هـ-هذَا...",
+          "width": 234,
+          "x": 330,
+          "y": 2234
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29,
+          "symWidth": 23.56521739130435,
+          "text": "KAU  TIDAK  TAHU JAWABANNYA ?",
+          "translation": "ألا تدري ما هي الإجابة؟",
+          "width": 312,
+          "x": 135,
+          "y": 2742
+        }
+      ],
+      "imgHeight": 3830,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 28.765625,
+          "symWidth": 22.02291666666667,
+          "text": "MAKA ,  KALI  INI ,  BUAT MEREKA  BERTARUNG ANTAR  SESAMANYA .",
+          "translation": "إذاً، دعهم يتقاتلون فيما بينهم هذه المرة.",
+          "width": 397,
+          "x": 158,
+          "y": 186
+        }
+      ],
+      "imgHeight": 2861,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 218,
+          "symHeight": 41.2,
+          "symWidth": 30.5375,
+          "text": "DENGAN  BEGITU HANYA  YANG  TERBAIK SAJA  YANG  AKAN TERSISA .",
+          "translation": "وبذلك، لن يبقى سوى الأفضل فقط.",
+          "width": 499,
+          "x": 113,
+          "y": 659
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 31.30555555555556,
+          "symWidth": 17.66666666666666,
+          "text": "BACA  DI <  SHINIGAMI.TO  > UNTUK  UPDATE  LEBIH  CEPAT !",
+          "translation": "تابع على <شينيغامي.تو> لتحديثات أسرع!",
+          "width": 399,
+          "x": 161,
+          "y": 1976
+        },
+        {
+          "angle": 0,
+          "height": 233,
+          "symHeight": 23.96581632653061,
+          "symWidth": 17.24727891156463,
+          "text": "TEAM  SUNGGU 선화  |  백부 채색  | 머  혼 ,  난애 밑색 명암  |  기룩 배경  | 찐탱 편집  |  덴멍 PDI  정새봄",
+          "translation": "فريق العمل: سونغو 선화 | بايكبو تلوين | مورِ هون، نانيه التظليل والطبقة الأساسية | جيروك الخلفية | جينتانغ التحرير | دينمون PDI جونجسيبوم",
+          "width": 200,
+          "x": 490,
+          "y": 2533
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 19.73333333333333,
+          "text": "제작  |  예스 웍스  YES  WORKS",
+          "translation": "الإنتاج | ييس ووركس YES WORKS",
+          "width": 358,
+          "x": 330,
+          "y": 2807
+        }
+      ],
+      "imgHeight": 2861,
+      "imgWidth": 720,
+      "sourceLanguage": "id",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "id",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

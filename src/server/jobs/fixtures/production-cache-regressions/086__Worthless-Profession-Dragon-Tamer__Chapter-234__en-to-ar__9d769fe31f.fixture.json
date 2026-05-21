@@ -1,0 +1,862 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0086",
+  "jobId": "fixture-job-0086",
+  "licenseId": "fixture-license-0086",
+  "pageCount": 20,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "006__003.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "008__001.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 9,
+          "symWidth": 8.8,
+          "text": "GEMIN",
+          "translation": "جمِين",
+          "width": 29,
+          "x": 550,
+          "y": 1152
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 18.83333333333333,
+          "text": "READ  AT",
+          "translation": "اقرأ على",
+          "width": 105,
+          "x": 466,
+          "y": 1207
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 23,
+          "symWidth": 11.85714285714286,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 164,
+          "x": 329,
+          "y": 1337
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 16.33333333333333,
+          "text": "NEW  COMICS",
+          "translation": "القصص المصورة الجديدة",
+          "width": 152,
+          "x": 430,
+          "y": 1402
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 12,
+          "symWidth": 9,
+          "text": "LLIDY",
+          "translation": "ليلدي",
+          "width": 26,
+          "x": 451,
+          "y": 1443
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 11.86666666666667,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمع نشط",
+          "width": 185,
+          "x": 498,
+          "y": 1461
+        }
+      ],
+      "imgHeight": 3987,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 102,
+          "symHeight": 23.25,
+          "symWidth": 18.5,
+          "text": "IT CAN  STILL REVIVE !?",
+          "translation": "هل لا يزال بإمكانه الإحياء؟",
+          "width": 183,
+          "x": 425,
+          "y": 713
+        }
+      ],
+      "imgHeight": 3988,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 14.09090909090909,
+          "text": "tú",
+          "translation": "أنت",
+          "width": 132,
+          "x": 48,
+          "y": 515
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 19,
+          "symWidth": 13.89162679425837,
+          "text": "STORM  PRISON :  CASTS  A  LARGE - SCALE  BLIZZARD  FORMING A  PRISON .  ENEMIES  WITHIN  TAKE  CONTINUOUS  ICE DAMAGE ,  ARE  INFLICTED  WITH  FREEZE ,  AND  HAVE  THEIR MOVEMENT  SPEED  REDUCED  BY  80 %  FOR  30  SECONDS .",
+          "translation": "سجن العاصفة: يُطلق عاصفة ثلجية واسعة النطاق تشكل سجناً. الأعداء بداخله يتلقون ضررًا مستمرًا من الجليد، يُصابون بالتجمّد، وتتقلص سرعتهم في الحركة بنسبة 80% لمدة 30 ثانية.",
+          "width": 625,
+          "x": 38,
+          "y": 1452
+        }
+      ],
+      "imgHeight": 4118,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 20.5,
+          "symWidth": 19.44026539908893,
+          "text": "I  UNDERSTAND  NOW- ITS  RECONSTRUCTION ISN'T  WITHOUT  COST . EACH  TIME  IT  REVIVES , ITS  STRENGTH DECREASES !",
+          "translation": "لقد أدركت الآن—إن إعادة بنائه ليست بلا ثمن. كلما استعاد حيويته، تضعف قوته!",
+          "width": 345,
+          "x": 187,
+          "y": 348
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 19,
+          "symWidth": 14.20549900582604,
+          "text": "JUDGMENT  CLAW :  THE  GOLDEN  DRAGON  KING'S  CLAWS IGNITE  WITH  GOLDEN  FLAMES .  THE  NEXT  TWO  CLAW ATTACKS  DEAL  ADDITIONAL  DAMAGE ,  AND  THE  ARMGUARDS CONVERT  20 %  ENDURANCE  INTO  STRENGTH .",
+          "translation": "مخلب الحكم: مخالب ملك التنين الذهبي تشتعل بنيران ذهبية. الهجمتان التاليتان بالمخلب تلحقان ضررًا إضافيًا، وتحول واقيات الذراع 20% من الصلابة إلى قوة.",
+          "width": 618,
+          "x": 50,
+          "y": 3889
+        }
+      ],
+      "imgHeight": 4119,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 60.8,
+          "symWidth": 27,
+          "text": "ROAR !",
+          "translation": "زئير!",
+          "width": 94,
+          "x": 76,
+          "y": 1631
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 52,
+          "symWidth": 22,
+          "text": "ROAR !",
+          "translation": "زئير!",
+          "width": 78,
+          "x": 533,
+          "y": 2102
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 18.5,
+          "symWidth": 17.35576923076923,
+          "text": "POISON  DRAGON  III  FORM  SWITCH : NETHERWORLD  SWAMP",
+          "translation": "تبديل هيئة تنين السمّ الثالث: مستنقع العالم السفلي",
+          "width": 470,
+          "x": 95,
+          "y": 724
+        },
+        {
+          "angle": 0,
+          "height": 57,
+          "symHeight": 22.5,
+          "symWidth": 15.56695992179863,
+          "text": "CURRENT  POISON  -  POISON  SLIME :  REDUCES TARGET  DEFENSE  BY  50 %  FOR  10  SECONDS .",
+          "translation": "السم الحالي - سائل السمّ: يخفّض دفاع الهدف بنسبة 50% لمدة 10 ثوانٍ.",
+          "width": 518,
+          "x": 99,
+          "y": 1778
+        }
+      ],
+      "imgHeight": 3307,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 19.5,
+          "symWidth": 14.7110870350307,
+          "text": "POISON  TIDE  SURGE :  ACTIVATES  THE  NETHERWORLD SWAMP ,  DEALING  POISON  DAMAGE  TO  ALL  ENEMIES  IN THE  AREA  WITH  DOUBLED  STACKING  SPEED .",
+          "translation": "تدفق سمِّيّ مدمر: يُنَشِّط مستنقع العالم السفلي، مُلحقاً ضرراً سمّياً بكل الأعداء في المنطقة، مع مضاعفة سرعة التكدس.",
+          "width": 587,
+          "x": 51,
+          "y": 220
+        },
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 22.375,
+          "symWidth": 15.85227272727273,
+          "text": "HEAVEN'S  WRATH :  LOCKS  ONTO  AND  TRACKS  A TARGET ,  UNLEASHING  RAPID  LIGHTNING  STRIKES FOR  MASSIVE  DAMAGE .",
+          "translation": "غضب السموات: يحدد ويُلاحق هدفاً، مطلقاً ضربات البرق السريعة لأضرار هائلة.",
+          "width": 561,
+          "x": 60,
+          "y": 2148
+        }
+      ],
+      "imgHeight": 3308,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 22.36893203883495,
+          "symWidth": 15.10679611650485,
+          "text": "SHADOW  ASSASSINATION :  TELEPORTS  BEHIND  THE TARGET  WHILE  HIDDEN  AND  STRIKES  A  WEAK  POINT , DEALING  1600 %  STRENGTH  DAMAGE .",
+          "translation": "اغتيال الظل: ينتقل خلف الهدف وهو مختفٍ، ليصيب نقطة ضعفه مُلحِقاً ضرراً يعادل ١٦٠٠٪ من القوة.",
+          "width": 570,
+          "x": 65,
+          "y": 492
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 23.5,
+          "symWidth": 14.71277278562259,
+          "text": "SHADOW  ASSAULT :  AFTER  DEALING  DAMAGE ,  INFLICTS AN  ADDITIONAL  HIT  EQUAL  TO  20 %  OF  THAT  DAMAGE .",
+          "translation": "هجوم الظل: بعد التسبب بالضرر، يلفِق ضربة إضافية تساوي ٢٠٪ من ذلك الضرر.",
+          "width": 572,
+          "x": 64,
+          "y": 3071
+        }
+      ],
+      "imgHeight": 3308,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 21,
+          "symWidth": 20.45161290322581,
+          "text": "ANCIENT  CORPSE  GOD'S SHADOW  GUARD  * 1",
+          "translation": "ظل الحارس الإلهي للجثة القديمة * 1",
+          "width": 376,
+          "x": 108,
+          "y": 155
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 14.66666666666667,
+          "symWidth": 34.66666666666666,
+          "text": "444",
+          "translation": "٤٤٤",
+          "width": 45,
+          "x": 372,
+          "y": 365
+        },
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 21.25490196078432,
+          "symWidth": 18.86541889483066,
+          "text": "THE  CREATURE THAT  ONCE TERRIFIED  XIAO  YE HAS  FINALLY  BEEN TAKEN  DOWN  BY ME .",
+          "translation": "المخلوق الذي أرهَب شياو يي ذات يوم\nقد أسقطته أنا أخيراً.",
+          "width": 287,
+          "x": 83,
+          "y": 952
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 20.8,
+          "symWidth": 18.95698701298701,
+          "text": "WITH  THE SHADOW  GUARD DEAD ,  THIS  NEST WILL  NO  LONGER THREATEN  THE FRONT  LINES .",
+          "translation": "مع موت حارس الظل، لم يعد هذا العش\nيشكل تهديداً للخطوط الأمامية.",
+          "width": 263,
+          "x": 326,
+          "y": 1566
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20,
+          "symWidth": 17.15238095238095,
+          "text": "THIS SHADOW GUARD'S HIDE ...",
+          "translation": "جلد هذا الحارس الظلي...",
+          "width": 135,
+          "x": 378,
+          "y": 2900
+        }
+      ],
+      "imgHeight": 3618,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 20.5,
+          "symWidth": 19.62575757575758,
+          "text": "MAYBE  I  CAN TAKE  IT  TO  THE OUTPOST  FOR RESEARCH ,",
+          "translation": "ربما يمكنني أخذه إلى البعثة للبحث فيه،",
+          "width": 241,
+          "x": 372,
+          "y": 165
+        },
+        {
+          "angle": 0,
+          "height": 156,
+          "symHeight": 16.83333333333333,
+          "symWidth": 16.07066544566544,
+          "text": "IT  MIGHT HELP  IN  THE COUNTERATTACK AGAINST  THE ANCIENT  CORPSE GOD .",
+          "translation": "قد يساعدنا في الهجوم المضاد ضد إله الجثة القديم.",
+          "width": 229,
+          "x": 82,
+          "y": 656
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 22,
+          "symWidth": 18.33333333333333,
+          "text": "the",
+          "translation": "الـ",
+          "width": 44,
+          "x": 9,
+          "y": 1219
+        },
+        {
+          "angle": 0,
+          "height": 263,
+          "symHeight": 228.5,
+          "symWidth": 202,
+          "text": "CZ",
+          "translation": "CZ",
+          "width": 313,
+          "x": 35,
+          "y": 2764
+        }
+      ],
+      "imgHeight": 3618,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 11.66666666666667,
+          "symWidth": 10.66666666666667,
+          "text": "...",
+          "translation": "...",
+          "width": 19,
+          "x": 410,
+          "y": 688
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 19,
+          "symWidth": 19.3,
+          "text": "LET'S GO .",
+          "translation": "لننطلق.",
+          "width": 83,
+          "x": 183,
+          "y": 2257
+        },
+        {
+          "angle": 0,
+          "height": 87,
+          "symHeight": 19.75,
+          "symWidth": 19.76388888888889,
+          "text": "KEEP MOVING FORWARD .",
+          "translation": "تابع المسير بلا توقف.",
+          "width": 156,
+          "x": 485,
+          "y": 3034
+        }
+      ],
+      "imgHeight": 3620,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 29.8,
+          "symWidth": 26.4,
+          "text": "HUFF-",
+          "translation": "هف-",
+          "width": 117,
+          "x": 88,
+          "y": 2146
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 17,
+          "text": "HUFF-",
+          "translation": "هف-",
+          "width": 79,
+          "x": 225,
+          "y": 2331
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 122,
+          "symHeight": 67,
+          "symWidth": 67.5,
+          "text": "76",
+          "translation": "٧٦",
+          "width": 72,
+          "x": 239,
+          "y": 673
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 25,
+          "symWidth": 24.5,
+          "text": "UGH !",
+          "translation": "آه!",
+          "width": 93,
+          "x": 106,
+          "y": 1214
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 20.8,
+          "symWidth": 15.94030303030303,
+          "text": "I'VE KILLED IT  TWICE ,  AND IT  CAN  STILL REVIVE ... !",
+          "translation": "لقد قتلته مرتين، ومع ذلك لا يزال ينهض...!",
+          "width": 212,
+          "x": 95,
+          "y": 2021
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 20.5,
+          "symWidth": 17.88838383838384,
+          "text": "IF  IT  KILLS ME  IN  FLAME FUSION  FORM , THE  FUSION ENDS  BUT  I WON'T  DIE ,",
+          "translation": "إذا قتلني في هيئة الاندماج النارية، ينتهي الاندماج، ولكني لا أموت.",
+          "width": 215,
+          "x": 102,
+          "y": 2877
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.66666666666667,
+          "symWidth": 16.95,
+          "text": "BUT  IF  IT  KILLS ME  NOW ,  I'LL REALLY  DIE !",
+          "translation": "أما إذا قتلني الآن، فسأموت حقاً!",
+          "width": 224,
+          "x": 381,
+          "y": 3178
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 20.4,
+          "symWidth": 18.83252525252525,
+          "text": "FLAME FUSION STILL  HAS  5 MINUTES  OF COOLDOWN ...",
+          "translation": "انصهار اللهب لا يزال في تبريد لمدة خمس دقائق...",
+          "width": 215,
+          "x": 383,
+          "y": 46
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 19.8,
+          "symWidth": 19.895,
+          "text": "I  HAVE TO HOLD  OUT  FOR ANOTHER  5 MINUTES !",
+          "translation": "عليّ الصمود لخمس دقائق أخرى!",
+          "width": 226,
+          "x": 98,
+          "y": 670
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 46,
+          "symWidth": 17,
+          "text": "!  !",
+          "translation": "!!",
+          "width": 69,
+          "x": 480,
+          "y": 1189
+        }
+      ],
+      "imgHeight": 3822,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 26,
+          "symWidth": 22.625,
+          "text": "AAARGH- !",
+          "translation": "آآآه-!",
+          "width": 185,
+          "x": 361,
+          "y": 281
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 28.33333333333333,
+          "symWidth": 29.33333333333333,
+          "text": "The",
+          "translation": "الـ",
+          "width": 63,
+          "x": 324,
+          "y": 712
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.33392278219864,
+          "text": "I  WONDER  IF LU  FAN  IS  FACING THE  SAME SITUATION  OVER THERE .",
+          "translation": "أتساءل إن كان لو فان يواجه نفس المأزق هناك.",
+          "width": 266,
+          "x": 358,
+          "y": 3072
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 25.5,
+          "symWidth": 18.16666666666667,
+          "text": "IF  IT'S HIM ...",
+          "translation": "إن كان هو...",
+          "width": 120,
+          "x": 145,
+          "y": 3782
+        }
+      ],
+      "imgHeight": 3944,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 19.46666666666667,
+          "symWidth": 16.2,
+          "text": "4  MINUTES LEFT ...",
+          "translation": "4 دقائق فقط متبقية...",
+          "width": 160,
+          "x": 349,
+          "y": 289
+        },
+        {
+          "angle": 0,
+          "height": 141,
+          "symHeight": 19.85365853658536,
+          "symWidth": 18.4410569105691,
+          "text": "WE  ABSOLUTELY CAN'T  LET  THIS THING  WREAK HAVOC  IN  THE FAR  NORTH !",
+          "translation": "لا بد أن نمنع هذا الشيء\nمن إشاعة الخراب في أقصى الشمال!",
+          "width": 237,
+          "x": 109,
+          "y": 880
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 20.68421052631579,
+          "symWidth": 16.29736842105263,
+          "text": "EVEN  IF  I  DIE TODAY ...  I'LL STOP  IT !",
+          "translation": "وإن متُّ اليوم...\nسأوقفه مهما كلف الأمر!",
+          "width": 193,
+          "x": 404,
+          "y": 1745
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 20.23913043478261,
+          "symWidth": 15.2267920094007,
+          "text": "BURNING  BODY  SPEAR :  CONTINUOUSLY  BURNS  THE USER  TO  ENHANCE  THEIR  WEAPON .  THE  LONGER  IT BURNS ,  THE  GREATER  THE  AMPLIFICATION .",
+          "translation": "رمح الجسد المشتعل: يحرق المستخدم باستمرار\nليُعزز سلاحه. وكلما طال الأمد ازداد قوته.",
+          "width": 576,
+          "x": 57,
+          "y": 2159
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 19.25,
+          "symWidth": 19.46180555555556,
+          "text": "COME ON !  LET'S PERISH TOGETHER !",
+          "translation": "تعالَ! لنواجه الموت معًا!",
+          "width": 177,
+          "x": 425,
+          "y": 3546
+        }
+      ],
+      "imgHeight": 3944,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 148.5,
+          "symWidth": 119,
+          "text": "OR",
+          "translation": "أَو",
+          "width": 214,
+          "x": 6,
+          "y": 668
+        },
+        {
+          "angle": 0,
+          "height": 110,
+          "symHeight": 20.35376756066411,
+          "symWidth": 13.04741379310345,
+          "text": "BLADE  ARMOR  THRUST :  RAPIDLY  THRUSTS  BLADED  ARMOR , DEALING  PIERCING  DAMAGE  THAT  IGNORES  45 %  DEFENSE  TO ALL  NEARBY  ENEMIES .  WHILE  ACTIVE ,  99 %  OF  DAMAGE TAKEN  REFLECTED  BACK  TO  THE  ATTACKER . IS",
+          "translation": "ذَرْعُ التَّرْسِ الْحادِثُ: يَطْعَنُ التَّرسَ الحَادَّ بسُرْعَةٍ، مُلْحِقًا ضَرَرًا نَفْذِيًّا يَتَجَاوَزُ ٤٥٪ مِن دِفاعِ جَميعِ الأَعْدَاءِ القَريبين. وأثناء التفعيل، يُعَادُ ٩٩٪ مِن الضَرَرِ المُتَلَقَّى إلى المُهاجِمِ.",
+          "width": 612,
+          "x": 34,
+          "y": 1256
+        },
+        {
+          "angle": 0,
+          "height": 97,
+          "symHeight": 40.2,
+          "symWidth": 42.2,
+          "text": "wwwww",
+          "translation": "رررررr",
+          "width": 130,
+          "x": 176,
+          "y": 1730
+        },
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 134.5,
+          "symWidth": 107.5,
+          "text": "이런",
+          "translation": "يا للعجب",
+          "width": 183,
+          "x": 79,
+          "y": 1977
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 58,
+          "symWidth": 64,
+          "text": "ne",
+          "translation": "نعم",
+          "width": 64,
+          "x": 431,
+          "y": 2278
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 19.33333333333333,
+          "symWidth": 17.28870356793744,
+          "text": "SHADOW  BURST :  RELEASES  MULTIPLE  WIND BLADES ,  DAMAGING  NEARBY  ENEMIES  AND REMOVING  ALL  THEIR  BUFFS .",
+          "translation": "انفجار الظل: يُطلِق عدة شُرَط هوائية، يُلحق ضررًا بالأعداء المجاورين ويُزيل جُميع تعزيراتهم.",
+          "width": 580,
+          "x": 55,
+          "y": 2798
+        }
+      ],
+      "imgHeight": 3944,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.47826086956522,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "ممنوع النقل دون إذن. ومن يُضبَط يُحاسب قانونيًا.",
+          "width": 416,
+          "x": 253,
+          "y": 3176
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 21.28571428571428,
+          "text": "visit  and  read  at",
+          "translation": "زوروا واقرؤوا على",
+          "width": 289,
+          "x": 325,
+          "y": 3290
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 19.23809523809524,
+          "text": "for  the  fastest  releases",
+          "translation": "لأحدث الإصدارات بسرعة البرق",
+          "width": 399,
+          "x": 270,
+          "y": 3392
+        }
+      ],
+      "imgHeight": 3470,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

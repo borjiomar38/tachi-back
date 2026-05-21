@@ -1,0 +1,859 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0087",
+  "jobId": "fixture-job-0087",
+  "licenseId": "fixture-license-0087",
+  "pageCount": 21,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "007__003.jpg",
+    "007__004.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 57.7125,
+          "symWidth": 52.475,
+          "text": "喜 驭 龙 师 是 最弱 职业 ? I'M  DRAKO  MAJSTRO  +",
+          "translation": "هل سيد ترويض التنانين أضعف مهنة؟ أنا دراكو ماجسترو +",
+          "width": 414,
+          "x": 137,
+          "y": 1117
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 8.6,
+          "symWidth": 7.6,
+          "text": "GEMIN",
+          "translation": "جمين",
+          "width": 29,
+          "x": 550,
+          "y": 1457
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 20.33333333333333,
+          "text": "READ  AT",
+          "translation": "اقرأ على",
+          "width": 108,
+          "x": 464,
+          "y": 1511
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 13.57142857142857,
+          "text": "FASTEST  UPDATES",
+          "translation": "أسرع التحديثات",
+          "width": 166,
+          "x": 329,
+          "y": 1641
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 16.44444444444444,
+          "text": "NEW  COMICS",
+          "translation": "قصص مصورة جديدة",
+          "width": 153,
+          "x": 429,
+          "y": 1706
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 11.8,
+          "text": "ACTIVE  COMMUNITY",
+          "translation": "مجتمع نشط",
+          "width": 186,
+          "x": 498,
+          "y": 1765
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20.42857142857143,
+          "symWidth": 17.66666666666667,
+          "text": "THE  TIMING IS  JUST RIGHT .",
+          "translation": "التوقيت مثالي تمامًا.",
+          "width": 170,
+          "x": 390,
+          "y": 2191
+        }
+      ],
+      "imgHeight": 3386,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 14.66666666666667,
+          "text": "LU  FAN ... ?",
+          "translation": "لو فان...؟",
+          "width": 137,
+          "x": 414,
+          "y": 171
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20.75,
+          "symWidth": 19.42142857142857,
+          "text": "YOU'VE ALREADY CLEARED  THE OTHER  NEST ?",
+          "translation": "هل طهّرت العش الآخر بالفعل؟",
+          "width": 210,
+          "x": 115,
+          "y": 818
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 17.86206896551724,
+          "symWidth": 17.82758620689655,
+          "text": "YOU ENCOUNTERED THIS  MONSTER TOO ?",
+          "translation": "هل واجهت هذا الوحش أيضًا؟",
+          "width": 203,
+          "x": 268,
+          "y": 1059
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 17.33333333333333,
+          "symWidth": 17.20292207792208,
+          "text": "CORRECT , IT'S  A  SHADOW GUARD  OF  THE ANCIENT CORPSE  GOD . ,",
+          "translation": "صحيح، إنه الحارس الظلي لإله الجثة القديم.",
+          "width": 206,
+          "x": 41,
+          "y": 1503
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 20.61904761904762,
+          "symWidth": 18.22767857142857,
+          "text": "I  RAN  INTO IT  WHEN  I FIRST  JOINED THE  GRIFFIN CORPS .",
+          "translation": "التقيت به عندما انضممت لأول مرة إلى فيلق الغريفين.",
+          "width": 212,
+          "x": 69,
+          "y": 1790
+        },
+        {
+          "angle": 0,
+          "height": 88,
+          "symHeight": 20.8,
+          "symWidth": 19.40833333333333,
+          "text": "HE  SAYS IT  SO  NON- CHALANTLY ...",
+          "translation": "يتحدث عن ذلك بكل تبجح...",
+          "width": 190,
+          "x": 375,
+          "y": 2801
+        }
+      ],
+      "imgHeight": 3386,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 18.7070399113082,
+          "symWidth": 17.29628603104213,
+          "text": "LU  FAN  HAS  ALREADY COME  INTO  CONTACT WITH  THE  ANCIENT GOD ...  NO  WONDER GRANDFATHER  VALUES HIM  MORE ...",
+          "translation": "لو فان قد تواصل بالفعل مع الإله القديم... لا عجب أن الجد يقدّره أكثر...",
+          "width": 306,
+          "x": 318,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 45,
+          "symWidth": 35.66666666666666,
+          "text": "000",
+          "translation": "000",
+          "width": 47,
+          "x": 565,
+          "y": 1421
+        }
+      ],
+      "imgHeight": 3386,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 27,
+          "text": "AS",
+          "translation": "مثل",
+          "width": 55,
+          "x": 194,
+          "y": 2882
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 24,
+          "symWidth": 18.65,
+          "text": "EXPECTED ... IT  REVIVED AGAIN ...",
+          "translation": "متوقع... وقد عاد للحياة من جديد...",
+          "width": 203,
+          "x": 119,
+          "y": 7
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 26.25,
+          "text": "快 寺 漫画",
+          "translation": "",
+          "width": 116,
+          "x": 81,
+          "y": 698
+        },
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 15.18132942326491,
+          "text": "CURRENT  POISON  -  POISON  SLIME :  REDUCES TARGET  DEFENSE  BY  50 %  FOR  10  SECONDS .",
+          "translation": "السم الحالي - وحل السم: يُقلل دفاع الهدف\nبنسبة ٥٠٪ لمدة ١٠ ثوانٍ.",
+          "width": 496,
+          "x": 103,
+          "y": 2513
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 34,
+          "symWidth": 35.66666666666666,
+          "text": "0  0  0",
+          "translation": "٠ ٠ ٠",
+          "width": 122,
+          "x": 516,
+          "y": 520
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 18.84188034188034,
+          "symWidth": 14.21169108669109,
+          "text": "NETHERWORLD  POISON :  RELEASES  POISON  INTO  A  MIST WITHIN  THE  TARGET  AREA .  ENEMIES  ACCUMULATE STACKS - THE  HIGHER  THE  STACKS ,  THE  GREATER  THE DAMAGE  PER  SECOND ,  WITH  NO  LIMIT .",
+          "translation": "سم العالم السفلي: يُطلق سحابة سمية داخل\nمنطقة الهدف. يزداد تراكم السم على الأعداء؛\nكلما ازداد التراكم، تعاظم الضرر في الثانية بلا حد.",
+          "width": 599,
+          "x": 55,
+          "y": 832
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 18.75,
+          "symWidth": 15.4727027027027,
+          "text": "STORM  PRISON :  CASTS  A  LARGE - SCALE  BLIZZARD PRISON .  ENEMIES  INSIDE  TAKE  CONTINUOUS  ICE DAMAGE ,  ARE  FROZEN ,  AND  HAVE  MOVEMENT  SPEED REDUCED  BY  80 %  FOR  30  SECONDS .",
+          "translation": "سجن العاصفة: يُشعل سجن عاصف جليدي واسع النطاق.\nيتلقى المحاصرون ضررًا متواصلًا من الجليد،\nويتجمدون، وينخفض سرعتهم بحوالي ٨٠٪ لمدة ٣٠ ثانية.",
+          "width": 608,
+          "x": 46,
+          "y": 2551
+        }
+      ],
+      "imgHeight": 2912,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [],
+      "imgHeight": 4067,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 21.75396825396825,
+          "symWidth": 17.01875901875902,
+          "text": "SHADOW  BURST :  RELEASES  MULTIPLE  WIND BLADES ,  DAMAGING  NEARBY  ENEMIES  AND REMOVING  ALL  THEIR  BUFFS .",
+          "translation": "انفجار الظل: يُطلق شفرات رياح متعددة، تُلحق الضرر بالأعداء القريبين وتزيل عنهم جميع التعزيزات.",
+          "width": 567,
+          "x": 69,
+          "y": 205
+        },
+        {
+          "angle": 0,
+          "height": 116,
+          "symHeight": 20.25,
+          "symWidth": 17.19642857142857,
+          "text": "I ...  FOUGHT WITH  MY  LIFE ON  THE LINE ...",
+          "translation": "قاتلت حياتي على المحك...",
+          "width": 199,
+          "x": 100,
+          "y": 1447
+        },
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 20.33333333333333,
+          "symWidth": 17.49259259259259,
+          "text": "YET  THEY HANDLE  IT  SO EASILY ...",
+          "translation": "ومع ذلك، يتعاملون معها بسهولة فائقة...",
+          "width": 210,
+          "x": 360,
+          "y": 2013
+        }
+      ],
+      "imgHeight": 4068,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 23,
+          "symWidth": 16.37762237762238,
+          "text": "AURORA  JUDGMENT :  THE  ICE  DRAGON  FIRES  AN ENERGY  BEAM  THAT  IGNORES  50 %  DEFENSE  AND PIERCES  TARGETS .  DAMAGE  DECREASES  BY  10 %  PER TARGET  PIERCED ;  THE  FINAL  TARGET  IS  FROZEN .",
+          "translation": "حكم الشفق: يُطلق التنين الجليدي شعاع طاقة يتجاوز ٥٠٪ من الدفاع ويخترق الأهداف. ينخفض الضرر بنسبة ١٠٪ مع كل هدف يُخترق؛ والهدف الأخير يتجمد.",
+          "width": 626,
+          "x": 33,
+          "y": 831
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 26.5,
+          "text": "漫画",
+          "translation": "",
+          "width": 57,
+          "x": 141,
+          "y": 1927
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 20.26086956521739,
+          "symWidth": 18.21739130434782,
+          "text": "IS  IT REALLY DEAD  THIS TIME ?",
+          "translation": "هل مات حقاً هذه المرة؟",
+          "width": 161,
+          "x": 183,
+          "y": 2382
+        }
+      ],
+      "imgHeight": 4069,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [],
+      "imgHeight": 3432,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3432,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 20.87179487179487,
+          "text": "ANCIENT  CORPSE  GOD'S SHADOW  GUARD  * 1",
+          "translation": "ظل حارس إله الجثة القدامى * 1",
+          "width": 378,
+          "x": 159,
+          "y": 757
+        },
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 21.55555555555556,
+          "symWidth": 18.31654641654642,
+          "text": "WHEN  IT  TRULY DIES , IT  LEAVES  BEHIND  THIS HIDE .  TAKE  IT  BACK  FOR RESEARCH - IT MIGHT HELP  FIND  A  WAY  TO DEAL  WITH  THE ANCIENT  GOD .",
+          "translation": "حين يموت تماماً، يترك خلفه هذه الجلود. أحضرها للبحث—لعلك تجد طريقة للتصرف مع الإله القديم.",
+          "width": 370,
+          "x": 82,
+          "y": 1908
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 34.33333333333334,
+          "symWidth": 37,
+          "text": "0  0  0",
+          "translation": "٠ ٠ ٠",
+          "width": 129,
+          "x": 187,
+          "y": 2494
+        }
+      ],
+      "imgHeight": 3434,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 18.33333333333333,
+          "text": "I  LOST .",
+          "translation": "لقد خسرت.",
+          "width": 113,
+          "x": 366,
+          "y": 404
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 20.8,
+          "symWidth": 19.09727272727273,
+          "text": "UNCLE  TU  AND GRANDFATHER WERE  RIGHT- YOU'RE  THE ONE .",
+          "translation": "كان عمي تو وجدي على حق—أنت المختار.",
+          "width": 223,
+          "x": 142,
+          "y": 1621
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 20.5,
+          "symWidth": 18.39393939393939,
+          "text": "CAN  YOU LET  ME  SEE ...",
+          "translation": "هل تسمح لي أن أرى...",
+          "width": 191,
+          "x": 138,
+          "y": 3011
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.25,
+          "symWidth": 19.76558441558441,
+          "text": "HOW  MANY BEASTS  DID YOU  ACTUALLY KILL ?",
+          "translation": "كم وحشاً قتلت حقاً؟",
+          "width": 226,
+          "x": 314,
+          "y": 3971
+        }
+      ],
+      "imgHeight": 4274,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 52.5,
+          "symWidth": 40,
+          "text": "304201",
+          "translation": "304201",
+          "width": 207,
+          "x": 56,
+          "y": 1373
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 21,
+          "symWidth": 20.77728937728938,
+          "text": "OVER  300,000 !? ... I  GUESS  THAT MAKES  SENSE .  IS HE  ALREADY  LEVEL 90  NOW ?",
+          "translation": "أكثر من ٣٠٠ ألف؟\n... أظن أن ذلك منطقي.\nهل بلغ المستوى ٩٠ بالفعل؟",
+          "width": 285,
+          "x": 145,
+          "y": 3603
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 21.5,
+          "symWidth": 17.13392857142857,
+          "text": "ONLY  HAVE 6113 ...",
+          "translation": "لدي فقط ٦١١٣...",
+          "width": 168,
+          "x": 433,
+          "y": 4015
+        }
+      ],
+      "imgHeight": 4274,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 20.5,
+          "symWidth": 18.51190476190476,
+          "text": "I  ADMIT DEFEAT .",
+          "translation": "أعترف بالهزيمة.",
+          "width": 123,
+          "x": 241,
+          "y": 491
+        },
+        {
+          "angle": 0,
+          "height": 165,
+          "symHeight": 19.5,
+          "symWidth": 17.9429181929182,
+          "text": "FORGET  IT ,  ONLY SOMEONE  WITH  THIS KIND  OF  STRENGTH  IS WORTHY  OF  THE  TITLE \" GUARDIAN  OF  THE FLAME . \"",
+          "translation": "انسَ الأمر، فلا يستحق لقب «حارس الشعلة» سوى من يمتلك هذه القوة.",
+          "width": 312,
+          "x": 352,
+          "y": 1496
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 20.66666666666667,
+          "symWidth": 19.17741517741518,
+          "text": "THIS  IS  TOO VALUABLE ,  WE AGREED  BEFORE-",
+          "translation": "هذا ثمين للغاية، لقد اتفقنا من قبل—",
+          "width": 266,
+          "x": 141,
+          "y": 1992
+        },
+        {
+          "angle": 0,
+          "height": 286,
+          "symHeight": 19.4,
+          "symWidth": 14.18871158008658,
+          "text": "THREE - LEGGED  GOLDEN  CROW  SOUL  RING LEGENDARY  +  QUALITY LEVEL  REQUIREMENT :  130-  NONE STRENGTH  +265 ,  AGILITY  +312 ,  SPIRIT  +268 ENDURANCE  +296 ,  CONSTITUTION  +277 SPECIAL  EFFECT  GOLDEN  CROW  ESSENCE :  GRANTS  THE WEARER  THE  BLESSING  OF  THE  THREE - LEGGED  GOLDEN CROW .  FIRE  SKILL  DAMAGE  + 45 % ,  CRITICAL  RATE  + 15 % .  IF RECOGNIZED  BY  THE  RING ,  THE  WEARER  CAN SUMMON  ITS  ESSENCE .",
+          "translation": "خاتم روح الغراب الذهبي ثلاثي الأرجل، أسطوري +، مستوى الجودة المطلوب: ١٣٠-\nالقوة +٢٦٥، الرشاقة +٣١٢، الروح +٢٦٨، التحمل +٢٩٦، البنية +٢٧٧\nالتأثير الخاص: جوهر الغراب الذهبي: يمنح مرتديه بركة الغراب الذهبي ثلاثي الأرجل.\nزيادة ضرر مهارات النار +٤٥٪، ومعدل الضربات الحرجة +١٥٪.\nإذا تعرّف عليه الخاتم، يستطيع مرتديه استدعاء جوهره.",
+          "width": 607,
+          "x": 47,
+          "y": 3043
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 21,
+          "symWidth": 17.22727272727273,
+          "text": "EPIC  QUALITY WOULD'VE  BEEN ENOUGH ...",
+          "translation": "كنت لأكتفي بالجودة الملحمية...",
+          "width": 234,
+          "x": 353,
+          "y": 4063
+        }
+      ],
+      "imgHeight": 4275,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 20.19607843137255,
+          "symWidth": 18.88676470588235,
+          "text": "IF  NOT  FOR YOU ,  THIS  RING WOULD'VE STAYED  ON  MY CORPSE .",
+          "translation": "لولاك، لبقي هذا الخاتم على جثتي.",
+          "width": 238,
+          "x": 45,
+          "y": 75
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 19.4,
+          "symWidth": 17.93333333333333,
+          "text": "BESIDES , I'M  UNCLE  TU'S SUCCESSOR .",
+          "translation": "علاوة على ذلك، أنا وريث العم تو.",
+          "width": 226,
+          "x": 265,
+          "y": 1026
+        },
+        {
+          "angle": 0,
+          "height": 166,
+          "symHeight": 23,
+          "symWidth": 21.56603773584906,
+          "text": "I  RELY  ON STRATEGY  AND COMMAND - NOT  A SINGLE  PIECE  OF EQUIPMENT .",
+          "translation": "أعتمد على الحنكة والقيادة، لا على قطعة من العتاد.",
+          "width": 297,
+          "x": 96,
+          "y": 2224
+        },
+        {
+          "angle": 0,
+          "height": 180,
+          "symHeight": 20.95238095238095,
+          "symWidth": 19.45079365079365,
+          "text": "BUT  YOU  ARE THE  FLAME  OF DRAGON  NATION . YOU'LL  BE  FACING THE  ANCIENT GODS .",
+          "translation": "لكنّك شعلة أمة التنين، وسَتُواجه الآلهة القديمة.",
+          "width": 269,
+          "x": 163,
+          "y": 2904
+        },
+        {
+          "angle": 0,
+          "height": 181,
+          "symHeight": 21.01470588235294,
+          "symWidth": 18.23930481283423,
+          "text": "THIS  IS  A  RING MY  GRANDFATHER GAVE  ME .  IT  IS  ONLY IN  YOUR  HANDS  THAT IT  TRULY  BENEFITS THE  BATTLE .",
+          "translation": "هذا الخاتم اهداها لي جدي، وبيدك وحدك يزهر في المعركة ويخدمها حقًا.",
+          "width": 327,
+          "x": 85,
+          "y": 3935
+        }
+      ],
+      "imgHeight": 4239,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 21,
+          "symWidth": 17.78947368421053,
+          "text": "THEN  I  SHALL ACCEPT  IT .",
+          "translation": "حينها سأقبل بذلك.",
+          "width": 200,
+          "x": 386,
+          "y": 92
+        },
+        {
+          "angle": 0,
+          "height": 144,
+          "symHeight": 141.6666666666667,
+          "symWidth": 128.6666666666667,
+          "text": "THE",
+          "translation": "THE",
+          "width": 230,
+          "x": 397,
+          "y": 1661
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 29,
+          "symWidth": 26,
+          "text": "你  快 看 漫画",
+          "translation": "",
+          "width": 182,
+          "x": 15,
+          "y": 2377
+        },
+        {
+          "angle": 0,
+          "height": 186,
+          "symHeight": 17.21978021978022,
+          "symWidth": 16.68106734535306,
+          "text": "IT  ALREADY HAS  A  LEVEL- REQUIREMENT REMOVAL ENCHANTMENT , THAT  SAVES  A  LOT : OF TROUBLE .",
+          "translation": "لقد احتوت على تعويذة رفع شرط المستوى، ميسرة كثيرًا من العناء.",
+          "width": 267,
+          "x": 386,
+          "y": 2653
+        }
+      ],
+      "imgHeight": 4241,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 213,
+          "symHeight": 20.72212543554007,
+          "symWidth": 17.8905487804878,
+          "text": "HE ...  HE  GAINED RECOGNITION  FROM THE  GOLDEN  CROW ESSENCE !?  I  WORE  IT FOR  SO  LONG  AND COULDN'T  SUMMON IT ...",
+          "translation": "حصل... هل نال اعتراف جوهر الغراب الذهبي؟ لقد ارتديته طويلاً ولم أتمكن من استدعائه...",
+          "width": 331,
+          "x": 313,
+          "y": 3204
+        }
+      ],
+      "imgHeight": 3488,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [],
+      "imgHeight": 3488,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 20.6,
+          "symWidth": 17.86843156843157,
+          "text": "... IT'S EXACTLY  LIKE GRANDFATHER'S GOLDEN CROW ...",
+          "translation": "... إنه تمامًا كغراب الجد الذهبي...",
+          "width": 255,
+          "x": 296,
+          "y": 355
+        },
+        {
+          "angle": 0,
+          "height": 246,
+          "symHeight": 21,
+          "symWidth": 19.56784188034188,
+          "text": "ELDER  XU'S  RING IS  TRULY  POWERFUL . THE  GOLDEN  CROW SUMMONED FROM  IT IS  AS  STRONG  AS  XIAO YE  RIGHT  AFTER HIS  THIRD ADVANCEMENT .",
+          "translation": "خاتم الكبير شو حقًا ذو قوة هائلة، فالغراب الذهبي المستدعى منه لا يقل عن شياو يي بعد ترقيته الثالثة.",
+          "width": 375,
+          "x": 39,
+          "y": 1614
+        }
+      ],
+      "imgHeight": 3488,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 17,
+          "symWidth": 14.69565217391304,
+          "text": "未经许可 , 不能 转载 。 一 经 发现 , 必 追究 法律 责任 。",
+          "translation": "لا يُسمح بإعادة النشر دون إذن. ومن ثَمَّ، سوف تُحمَّلون المسؤولية القانونية حال ثبوت المخالفة.",
+          "width": 415,
+          "x": 253,
+          "y": 3187
+        },
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 32,
+          "symWidth": 21,
+          "text": "visit  and  read  at",
+          "translation": "زر واطلع على",
+          "width": 289,
+          "x": 325,
+          "y": 3308
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 19.33333333333333,
+          "text": "for  the  fastest  releases",
+          "translation": "للحصول على أحدث الإصدارات",
+          "width": 398,
+          "x": 269,
+          "y": 3409
+        }
+      ],
+      "imgHeight": 3488,
+      "imgWidth": 700,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

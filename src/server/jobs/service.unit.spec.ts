@@ -9,6 +9,7 @@ const {
   mockLogger,
   mockPerformHostedOcr,
   mockPerformHostedTranslation,
+  mockPutTranslationJobDebugArtifact,
   mockPutTranslationJobPageUpload,
   mockPutTranslationJobResultManifest,
   mockPutTranslationResultCacheManifest,
@@ -19,6 +20,8 @@ const {
       findUnique: vi.fn(),
     },
     jobAsset: {
+      create: vi.fn(),
+      findFirst: vi.fn(),
       update: vi.fn(),
     },
     order: {
@@ -50,6 +53,7 @@ const {
   },
   mockPerformHostedOcr: vi.fn(),
   mockPerformHostedTranslation: vi.fn(),
+  mockPutTranslationJobDebugArtifact: vi.fn(),
   mockPutTranslationJobPageUpload: vi.fn(),
   mockPutTranslationJobResultManifest: vi.fn(),
   mockPutTranslationResultCacheManifest: vi.fn(),
@@ -102,6 +106,7 @@ vi.mock('@/server/jobs/storage', () => ({
   deleteTranslationJobPageUploads: mockDeleteTranslationJobPageUploads,
   getTranslationJobPageUpload: mockGetTranslationJobPageUpload,
   getTranslationJobResultManifest: mockGetTranslationJobResultManifest,
+  putTranslationJobDebugArtifact: mockPutTranslationJobDebugArtifact,
   putTranslationJobPageUpload: mockPutTranslationJobPageUpload,
   putTranslationJobResultManifest: mockPutTranslationJobResultManifest,
   putTranslationResultCacheManifest: mockPutTranslationResultCacheManifest,
@@ -119,6 +124,8 @@ describe('job service', () => {
   beforeEach(() => {
     mockDb.$transaction.mockReset();
     mockDb.freeTrialClaim.findUnique.mockReset();
+    mockDb.jobAsset.create.mockReset();
+    mockDb.jobAsset.findFirst.mockReset();
     mockDb.jobAsset.update.mockReset();
     mockDb.order.findFirst.mockReset();
     mockDb.tokenLedger.aggregate.mockReset();
@@ -138,9 +145,16 @@ describe('job service', () => {
     mockLogger.info.mockReset();
     mockPerformHostedOcr.mockReset();
     mockPerformHostedTranslation.mockReset();
+    mockPutTranslationJobDebugArtifact.mockReset();
     mockPutTranslationJobPageUpload.mockReset();
     mockPutTranslationJobResultManifest.mockReset();
     mockPutTranslationResultCacheManifest.mockReset();
+    mockDb.jobAsset.findFirst.mockResolvedValue(null);
+    mockPutTranslationJobDebugArtifact.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job/debug/ocr-pages.json',
+      sizeBytes: 1024,
+    });
 
     mockGetProviderGatewayManifestWithRuntimeConfig.mockResolvedValue({
       ocr: {
@@ -552,12 +566,12 @@ describe('job service', () => {
     expect(result.job.uploadedPageCount).toBe(0);
     expect(result.job.resultPath).toBeNull();
     expect(mockDb.translationResultCache.findUnique).toHaveBeenCalledOnce();
-    expect(mockDb.translationResultCache.findFirst).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.findFirst).not.toHaveBeenCalled();
     expect(mockPutTranslationJobResultManifest).not.toHaveBeenCalled();
     expect(mockDb.translationResultCache.update).not.toHaveBeenCalled();
   });
 
-  it('queues a retranslation from saved chapter OCR when another target exists', async () => {
+  it('waits for uploads instead of reusing a translated result as OCR', async () => {
     const queuedAt = new Date('2026-03-20T10:05:00.000Z');
     const queueJob = vi.fn();
 
@@ -705,19 +719,12 @@ describe('job service', () => {
       }
     );
 
-    expect(result.job.status).toBe('queued');
+    expect(result.job.status).toBe('awaiting_upload');
     expect(result.job.uploadedPageCount).toBe(0);
-    expect(queueJob).toHaveBeenCalledWith({
-      where: { id: 'job-retranslate-cache-source' },
-      data: expect.objectContaining({
-        queuedAt,
-        status: 'queued',
-        uploadCompletedAt: queuedAt,
-      }),
-    });
-    expect(scheduleProcessing).toHaveBeenCalledWith(
-      'job-retranslate-cache-source'
-    );
+    expect(queueJob).not.toHaveBeenCalled();
+    expect(scheduleProcessing).not.toHaveBeenCalled();
+    expect(mockDb.translationResultCache.findUnique).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.findFirst).not.toHaveBeenCalled();
     expect(mockPutTranslationJobResultManifest).not.toHaveBeenCalled();
   });
 
@@ -1438,12 +1445,54 @@ describe('job service', () => {
     expect(result?.jobId).toBe('job-3');
     expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('bonjour');
     expect(mockDb.tokenLedger.create).toHaveBeenCalledOnce();
+    expect(mockPutTranslationJobDebugArtifact).toHaveBeenCalledWith(
+      expect.objectContaining({
+        artifactName: 'ocr-pages.json',
+        body: expect.objectContaining({
+          groupedOcrPages: [
+            expect.objectContaining({
+              fileName: '001.jpg',
+              ocrPage: expect.objectContaining({
+                blocks: [
+                  expect.objectContaining({
+                    text: 'hello',
+                  }),
+                ],
+              }),
+            }),
+          ],
+          rawOcrPages: [
+            expect.objectContaining({
+              fileName: '001.jpg',
+              ocrPage: expect.objectContaining({
+                providerRequestId: 'ocr-1',
+              }),
+            }),
+          ],
+          translatablePages: [
+            expect.objectContaining({
+              pageKey: '001.jpg',
+            }),
+          ],
+          version: '2026-05-22.ocr-debug.v1',
+        }),
+        jobId: 'job-3',
+      })
+    );
+    expect(mockDb.jobAsset.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        jobId: 'job-3',
+        kind: 'debug_artifact',
+        mimeType: 'application/json',
+        originalFileName: 'ocr-pages.json',
+      }),
+    });
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
     expect(mockPutTranslationResultCacheManifest).toHaveBeenCalledOnce();
     expect(mockDb.translationResultCache.upsert).toHaveBeenCalledOnce();
   });
 
-  it('processes a queued retranslation from saved OCR without reading uploads', async () => {
+  it('processes uploaded OCR and coalesces dialogue columns before translation', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {
         const tx = {
@@ -1453,7 +1502,9 @@ describe('job service', () => {
                 chapterCacheKey: 'chapter-cache-key',
                 id: 'job-retranslate-cached-ocr',
                 objectChecksums: ['d'.repeat(64)],
-                objectKeys: [null],
+                objectKeys: [
+                  'jobs/job-retranslate-cached-ocr/uploads/0001-001.jpg',
+                ],
                 pageCount: 1,
                 queuedAt: new Date('2026-03-20T10:09:00.000Z'),
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
@@ -1567,6 +1618,67 @@ describe('job service', () => {
         version: '2026-03-20.phase11.v1',
       },
     });
+    mockGetTranslationJobPageUpload.mockResolvedValue({
+      blob: new Blob([new Uint8Array([1, 2, 3])]),
+    });
+    mockPerformHostedOcr.mockResolvedValue({
+      blocks: [
+        {
+          angle: 0,
+          height: 46,
+          symHeight: 26.91666666666666,
+          symWidth: 18.58333333333334,
+          text: 'QUE  DE TE  DIGO',
+          width: 168,
+          x: 507,
+          y: 309,
+        },
+        {
+          angle: 0,
+          height: 15,
+          symHeight: 15,
+          symWidth: 14.44444444444444,
+          text: 'SIENTO  QUE',
+          width: 124,
+          x: 278,
+          y: 342,
+        },
+        {
+          angle: 0,
+          height: 38,
+          symHeight: 23.07142857142857,
+          symWidth: 15.28571428571429,
+          text: 'VERDAD  LO  VI !!!!',
+          width: 162,
+          x: 504,
+          y: 346,
+        },
+        {
+          angle: 0,
+          height: 40,
+          symHeight: 15.5,
+          symWidth: 13.98128342245989,
+          text: 'OBTUVE  UN  BENEFICIO INESPERADO .',
+          width: 225,
+          x: 232,
+          y: 366,
+        },
+      ],
+      imgHeight: 2320,
+      imgWidth: 720,
+      provider: 'google_cloud_vision',
+      providerModel: 'TEXT_DETECTION',
+      providerRequestId: 'ocr-uploaded-dialogue',
+      sourceLanguage: 'es',
+      usage: {
+        inputTokens: null,
+        latencyMs: 100,
+        outputTokens: null,
+        pageCount: 1,
+        providerRequestId: 'ocr-uploaded-dialogue',
+        requestCount: 1,
+      },
+    });
     mockPerformHostedTranslation.mockResolvedValue({
       pages: [
         {
@@ -1621,8 +1733,9 @@ describe('job service', () => {
       }
     );
 
-    expect(mockGetTranslationJobPageUpload).not.toHaveBeenCalled();
-    expect(mockPerformHostedOcr).not.toHaveBeenCalled();
+    expect(mockDb.translationResultCache.findFirst).not.toHaveBeenCalled();
+    expect(mockGetTranslationJobPageUpload).toHaveBeenCalledOnce();
+    expect(mockPerformHostedOcr).toHaveBeenCalledOnce();
     expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
       expect.objectContaining({
         pages: [
@@ -1676,7 +1789,10 @@ describe('job service', () => {
                 chapterCacheKey: 'chapter-cache-key',
                 id: 'job-cross-page-mask',
                 objectChecksums: ['d'.repeat(64), 'e'.repeat(64)],
-                objectKeys: [null, null],
+                objectKeys: [
+                  'jobs/job-cross-page-mask/uploads/0001-001.jpg',
+                  'jobs/job-cross-page-mask/uploads/0002-002.jpg',
+                ],
                 pageCount: 2,
                 queuedAt: new Date('2026-03-20T10:09:00.000Z'),
                 startedAt: new Date('2026-03-20T10:10:00.000Z'),
@@ -1782,6 +1898,66 @@ describe('job service', () => {
         version: '2026-03-20.phase11.v1',
       },
     });
+    mockGetTranslationJobPageUpload
+      .mockResolvedValueOnce({ blob: new Blob([new Uint8Array([1, 2, 3])]) })
+      .mockResolvedValueOnce({ blob: new Blob([new Uint8Array([4, 5, 6])]) });
+    mockPerformHostedOcr
+      .mockResolvedValueOnce({
+        blocks: [
+          {
+            angle: 0,
+            height: 108,
+            symHeight: 20,
+            symWidth: 15,
+            text: '" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL-',
+            width: 313,
+            x: 197,
+            y: 2392,
+          },
+        ],
+        imgHeight: 2500,
+        imgWidth: 709,
+        provider: 'google_cloud_vision',
+        providerModel: 'TEXT_DETECTION',
+        providerRequestId: 'ocr-cross-page-first',
+        sourceLanguage: 'en',
+        usage: {
+          inputTokens: null,
+          latencyMs: 100,
+          outputTokens: null,
+          pageCount: 1,
+          providerRequestId: 'ocr-cross-page-first',
+          requestCount: 1,
+        },
+      })
+      .mockResolvedValueOnce({
+        blocks: [
+          {
+            angle: 0,
+            height: 22,
+            symHeight: 20,
+            symWidth: 15,
+            text: 'INTENDED . "',
+            width: 132,
+            x: 287,
+            y: 11,
+          },
+        ],
+        imgHeight: 2500,
+        imgWidth: 709,
+        provider: 'google_cloud_vision',
+        providerModel: 'TEXT_DETECTION',
+        providerRequestId: 'ocr-cross-page-second',
+        sourceLanguage: 'en',
+        usage: {
+          inputTokens: null,
+          latencyMs: 100,
+          outputTokens: null,
+          pageCount: 1,
+          providerRequestId: 'ocr-cross-page-second',
+          requestCount: 1,
+        },
+      });
     mockPerformHostedTranslation.mockResolvedValue({
       pages: [
         {
@@ -1831,8 +2007,9 @@ describe('job service', () => {
       }
     );
 
-    expect(mockGetTranslationJobPageUpload).not.toHaveBeenCalled();
-    expect(mockPerformHostedOcr).not.toHaveBeenCalled();
+    expect(mockDb.translationResultCache.findFirst).not.toHaveBeenCalled();
+    expect(mockGetTranslationJobPageUpload).toHaveBeenCalledTimes(2);
+    expect(mockPerformHostedOcr).toHaveBeenCalledTimes(2);
     expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
       expect.objectContaining({
         pages: [

@@ -1,0 +1,1686 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0058",
+  "jobId": "fixture-job-0058",
+  "licenseId": "fixture-license-0058",
+  "pageCount": 24,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "001__003.jpg",
+    "001__004.jpg",
+    "001__005.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "002__003.jpg",
+    "002__004.jpg",
+    "002__005.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "003__003.jpg",
+    "003__004.jpg",
+    "003__005.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "004__003.jpg",
+    "004__004.jpg",
+    "004__005.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "005__003.jpg",
+    "005__004.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 34.44444444444444,
+          "text": "MEGA  SCANS",
+          "translation": "মেগা স্ক্যান্স",
+          "width": 320,
+          "x": 226,
+          "y": 86
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 26.5,
+          "text": "84",
+          "translation": "৮৪",
+          "width": 57,
+          "x": 532,
+          "y": 326
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 23.11111111111111,
+          "text": "YOGURT  DELIVERY  LADY",
+          "translation": "দই ডেলিভারি ভদ্রমহিলা",
+          "width": 438,
+          "x": 137,
+          "y": 835
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 18.66666666666667,
+          "text": "Bea",
+          "translation": "বিয়া",
+          "width": 56,
+          "x": 200,
+          "y": 1013
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 19,
+          "text": "PR",
+          "translation": "পিআর",
+          "width": 38,
+          "x": 390,
+          "y": 1013
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 20,
+          "symWidth": 15,
+          "text": "Alex",
+          "translation": "অ্যালেক্স",
+          "width": 60,
+          "x": 490,
+          "y": 1013
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 28,
+          "symWidth": 15.91666666666667,
+          "text": "ZED  Sein  |  Zain",
+          "translation": "জেড সেইন | জাইন",
+          "width": 234,
+          "x": 82,
+          "y": 1125
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 17,
+          "text": "Zain",
+          "translation": "জাইন",
+          "width": 66,
+          "x": 493,
+          "y": 1127
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 20,
+          "text": "OC",
+          "translation": "ওসি",
+          "width": 38,
+          "x": 386,
+          "y": 1129
+        },
+        {
+          "angle": 0,
+          "height": 26,
+          "symHeight": 24,
+          "symWidth": 13.875,
+          "text": "discord.gg/oscom",
+          "translation": "discord.gg/oscom",
+          "width": 222,
+          "x": 245,
+          "y": 1299
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 39,
+          "symWidth": 34.66444444444444,
+          "text": "MEGA  SCANS READ EARLY ON",
+          "translation": "মেগা স্ক্যান্স আগে পড়ুন",
+          "width": 501,
+          "x": 103,
+          "y": 1546
+        },
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 18.42857142857143,
+          "text": "YOUR  HUSBAND ...",
+          "translation": "তোমার স্বামী...",
+          "width": 275,
+          "x": 71,
+          "y": 3177
+        }
+      ],
+      "imgHeight": 4180,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 26,
+          "symWidth": 19.42307692307692,
+          "text": "IS  GETTING  OUT OF  JAIL  SOON ... ?",
+          "translation": "শীঘ্রই কারাগার থেকে বের হচ্ছে...?",
+          "width": 311,
+          "x": 248,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 24.16666666666667,
+          "text": "AND ...",
+          "translation": "আর...",
+          "width": 135,
+          "x": 100,
+          "y": 653
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 29.64,
+          "symWidth": 19.4,
+          "text": "YOU'RE ... STILL  MARRIED ... ?",
+          "translation": "তুমি... এখনো বিয়ে করো...?",
+          "width": 353,
+          "x": 234,
+          "y": 1637
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 29.14285714285714,
+          "symWidth": 21.85714285714286,
+          "text": "... WHY  ARE  YOU TELLING  ME",
+          "translation": "...এতটা গুরুত্বপূর্ণ কথা এখন কেন বলছো?",
+          "width": 297,
+          "x": 123,
+          "y": 1922
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 27.66666666666667,
+          "symWidth": 22.70875420875421,
+          "text": "SOMETHING SO  IMPORTANT ONLY  NOW ?",
+          "translation": "এত দেরি করে জানাচ্ছ কেন?",
+          "width": 262,
+          "x": 36,
+          "y": 2698
+        },
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 23.5,
+          "symWidth": 18.5,
+          "text": "I'M  SORRY , JUNWOO ...",
+          "translation": "দুঃখিত, জুনউ...",
+          "width": 183,
+          "x": 58,
+          "y": 3349
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 26,
+          "symWidth": 18.94117647058824,
+          "text": "IT'S  ALL  MY  FAULT ...",
+          "translation": "সবটাই আমার দোষ...",
+          "width": 351,
+          "x": 265,
+          "y": 3807
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "renderMode": "mask_only",
+          "symHeight": 25,
+          "symWidth": 19.11111111111111,
+          "text": "THIS  COULD",
+          "translation": "",
+          "width": 195,
+          "x": 359,
+          "y": 4093
+        }
+      ],
+      "imgHeight": 4180,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "001__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 25.28571428571428,
+          "symWidth": 18.8859126984127,
+          "text": "THIS COULD SOUND LIKE AN EXCUSE ... BUT I HAD NO INTENTION OF HIDING IT FROM YOU .",
+          "translation": "এটা হয়তো অজুহাতের মতো লাগতে পারে... কিন্তু আমি তোমার কাছে এটা লুকানোর কোনো ইচ্ছা রাখিনি।",
+          "width": 418,
+          "x": 247,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 104,
+          "symHeight": 27.66666666666667,
+          "symWidth": 20.68452380952381,
+          "text": "I  JUST ... DIDN'T  WANT  TO TALK  ABOUT  IT ...",
+          "translation": "আমি কেবল... এটা নিয়ে কথা বলতে চাইনি...",
+          "width": 313,
+          "x": 63,
+          "y": 1007
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 26,
+          "symWidth": 17.79047619047619,
+          "text": "IF  I  EVEN TALK  ABOUT  HIM ...",
+          "translation": "যদি আমি তার কথা বলি...",
+          "width": 329,
+          "x": 308,
+          "y": 1998
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 26.66666666666667,
+          "symWidth": 18.91666666666667,
+          "text": "I  FEEL ... UNCOMFORTABLE ...",
+          "translation": "আমার... অস্বস্তি হয়...‌",
+          "width": 339,
+          "x": 34,
+          "y": 3136
+        }
+      ],
+      "imgHeight": 4180,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "001__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 43,
+          "symHeight": 40.25,
+          "symWidth": 34.5,
+          "text": "NO--",
+          "translation": "না—",
+          "width": 123,
+          "x": 404,
+          "y": 119
+        },
+        {
+          "angle": 0,
+          "height": 76,
+          "symHeight": 33,
+          "symWidth": 25.125,
+          "text": "IT'S  MORE THAN  THAT ...",
+          "translation": "এটা তার চেয়েও বেশি...",
+          "width": 255,
+          "x": 31,
+          "y": 1430
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 37,
+          "symWidth": 26.33333333333334,
+          "text": "I  EVEN  HATE THE  IDEA ...",
+          "translation": "আমি সেই ভাবনাটাও ঘৃণা করি...",
+          "width": 313,
+          "x": 224,
+          "y": 2389
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 30.33333333333333,
+          "symWidth": 22.88888888888889,
+          "text": "SO ...  WHEN YOU  BROUGHT  UP MARRIAGE ,",
+          "translation": "তাই... তুমি যখন বিয়ের কথা বললে,",
+          "width": 346,
+          "x": 323,
+          "y": 2824
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 26.33333333333333,
+          "symWidth": 23.25925925925926,
+          "text": "YOU  MADE  ME REMEMBER  WHAT I'D  FORGOTTEN .",
+          "translation": "তুমি আমাকে আমার ভোলা স্মৃতি মনে করিয়ে দিয়েছিলে।",
+          "width": 319,
+          "x": 156,
+          "y": 3627
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 27.5,
+          "symWidth": 21.59375,
+          "text": "THAT  I'M  STILL A  MARRIED  WOMAN ...",
+          "translation": "আমি এখনও এক বিবাহিত নারী...",
+          "width": 391,
+          "x": 57,
+          "y": 4013
+        }
+      ],
+      "imgHeight": 4180,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "001__005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 157,
+          "symHeight": 25,
+          "symWidth": 19.77193974755894,
+          "text": "I  WAS  JUST OBLIVIOUS  TO  THE TRUTH  BECAUSE  I  HADN'T SEEN  HIM  FOR  THE  PAST SEVERAL  YEARS .",
+          "translation": "আমি শুধু অবজ্ঞায় দিয়েছিলাম কারণ অনেক বছর ধরে তাকে দেখিনি।",
+          "width": 433,
+          "x": 256,
+          "y": 1343
+        },
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 25.33333333333333,
+          "symWidth": 19.51785714285714,
+          "text": ".I  WON'T GIVE  YOU  ANY  MORE EXCUSES .",
+          "translation": "আর কোনো অজুহাত উঠাব না আমি।",
+          "width": 339,
+          "x": 316,
+          "y": 2966
+        }
+      ],
+      "imgHeight": 4182,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 26,
+          "symWidth": 20.47099358974359,
+          "text": "I  WON'T  SAY ANYTHING  IF  YOU  GET ANGRY  WITH  ME  OR IF  YOU  YELL .",
+          "translation": "তুমি যদি আমার প্রতি রুষ্ট হও বা চিৎকার করো, আমি কিছু বলব না।",
+          "width": 373,
+          "x": 297,
+          "y": 106
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 37.83333333333334,
+          "symWidth": 22.66666666666667,
+          "text": "AGAIN ,",
+          "translation": "আবার,",
+          "width": 151,
+          "x": 104,
+          "y": 1056
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 24.70588235294118,
+          "text": "THIS  IS  ALL  MY  FAULT .",
+          "translation": "সবটা আমার দোষ।",
+          "width": 474,
+          "x": 166,
+          "y": 2544
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 29.5,
+          "symWidth": 21.92045454545455,
+          "text": "AND  IF  THAT'S NOT  ENOUGH ...",
+          "translation": "আর যদি সেটাও যথেষ্ট না হয়…",
+          "width": 280,
+          "x": 58,
+          "y": 2912
+        }
+      ],
+      "imgHeight": 3973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 31.5,
+          "symWidth": 26.72916666666666,
+          "text": "WHATEVER YOU  CHOOSE ...",
+          "translation": "যাই তোমার সিদ্ধান্ত হোক…",
+          "width": 332,
+          "x": 310,
+          "y": 67
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 23.9,
+          "text": "AHJUMMA ...",
+          "translation": "আজুম্মা…",
+          "width": 253,
+          "x": 46,
+          "y": 1277
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 31.5,
+          "symWidth": 23.67083333333333,
+          "text": "I'M  TRULY DISAPPOINTED ...",
+          "translation": "আমি সত্যিই হতাশ।",
+          "width": 335,
+          "x": 47,
+          "y": 1592
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 52,
+          "symWidth": 34,
+          "text": "... !",
+          "translation": "...!",
+          "width": 102,
+          "x": 194,
+          "y": 3076
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 20.82352941176471,
+          "text": "YOU  NEVER  TOLD  ME ...",
+          "translation": "তুমি আমাকে কখনো বলোনি…",
+          "width": 412,
+          "x": 65,
+          "y": 3429
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 55.57142857142857,
+          "symWidth": 34.57142857142857,
+          "text": "77-0000",
+          "translation": "৭৭-০০০০",
+          "width": 159,
+          "x": 457,
+          "y": 3654
+        }
+      ],
+      "imgHeight": 3973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "002__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 32,
+          "symHeight": 31,
+          "symWidth": 22.77777777777778,
+          "text": "AND  YOU ...",
+          "translation": "আর তুমি...",
+          "width": 216,
+          "x": 77,
+          "y": 359
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 25.73684210526316,
+          "symWidth": 17.84210526315789,
+          "text": "YEAH , THAT'S  RIGHT ...",
+          "translation": "হ্যাঁ, একদম ঠিক বলছো...",
+          "width": 248,
+          "x": 331,
+          "y": 1394
+        },
+        {
+          "angle": 0,
+          "height": 28,
+          "symHeight": 28,
+          "symWidth": 18.92307692307692,
+          "text": "I  SELFISHLY ...",
+          "translation": "আমি স্বার্থপর হয়ে...",
+          "width": 255,
+          "x": 432,
+          "y": 1631
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 32.89189189189189,
+          "symWidth": 23.97297297297297,
+          "text": "YOU  SHOULDERED THE  BURDEN  ALL  ON YOUR  OWN !!!",
+          "translation": "তুমি একাই সব দায়িত্ব নিয়েছিলে!!!",
+          "width": 398,
+          "x": 72,
+          "y": 1877
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 89,
+          "symWidth": 45,
+          "text": "!!",
+          "translation": "!!",
+          "width": 77,
+          "x": 268,
+          "y": 2977
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 25.7843137254902,
+          "symWidth": 21.15686274509804,
+          "text": "YOU  SHOULD'VE BEEN  HONEST  WITH  ME WHEN  I  BROUGHT UP  MARRIAGE !",
+          "translation": "বন্ধুরূপে যখন বিয়ের কথা উঠিয়েছিলাম\nতুমি আমায় সরাসরি বলতেই পারতা!",
+          "width": 408,
+          "x": 291,
+          "y": 3306
+        }
+      ],
+      "imgHeight": 3973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "002__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 142,
+          "symHeight": 27.93421052631579,
+          "symWidth": 21.66228070175439,
+          "text": "IF  YOU  HAD , WE  COULD'VE  FIGURED SOMETHING  OUT TOGETHER !",
+          "translation": "তাইলে একসাথে কিছু ঠিক করতে পারতাম!",
+          "width": 424,
+          "x": 242,
+          "y": 535
+        },
+        {
+          "angle": 0,
+          "height": 188,
+          "symHeight": 39.09090909090909,
+          "symWidth": 30.68181818181818,
+          "text": "AND  YOU WOULDN'T  HAVE HAD  TO  DO  THAT ON  YOUR  OWN !",
+          "translation": "আর তুমি একা একা সেটা করার প্রয়োজন হত না!",
+          "width": 392,
+          "x": 38,
+          "y": 1920
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 16.5,
+          "text": "( x",
+          "translation": "( x",
+          "width": 20,
+          "x": 418,
+          "y": 3021
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 94,
+          "symWidth": 106.5,
+          "text": "_ !",
+          "translation": "_!",
+          "width": 161,
+          "x": 274,
+          "y": 3697
+        }
+      ],
+      "imgHeight": 3973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "002__005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 35,
+          "symWidth": 22.85714285714286,
+          "text": "THAT ...",
+          "translation": "এটা...",
+          "width": 163,
+          "x": 456,
+          "y": 265
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 33,
+          "symWidth": 26.83766233766234,
+          "text": "MAKES  ME SO  UPSET ... !",
+          "translation": "আমাকে অনেক কষ্ট দেয়...!",
+          "width": 277,
+          "x": 307,
+          "y": 1041
+        },
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 34,
+          "symWidth": 24.27272727272727,
+          "text": "AND ...  I  FEEL SO  SORRY ... !",
+          "translation": "আর... আমি খুব দুঃখিত বোধ করছি...!",
+          "width": 296,
+          "x": 106,
+          "y": 1399
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 23.7,
+          "text": "JUNWOO ... !",
+          "translation": "জুনউ...!",
+          "width": 252,
+          "x": 115,
+          "y": 2310
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 22.13333333333333,
+          "text": "BUT  IT'S  FINE  NOW !",
+          "translation": "কিন্তু এখন সব ঠিক আছে!",
+          "width": 387,
+          "x": 127,
+          "y": 2727
+        },
+        {
+          "angle": 0,
+          "height": 52,
+          "symHeight": 51,
+          "symWidth": 24.8,
+          "text": "꼬옥 ...",
+          "translation": "জোর করে...",
+          "width": 112,
+          "x": 568,
+          "y": 3085
+        }
+      ],
+      "imgHeight": 3973,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 24.5,
+          "symWidth": 19.3974358974359,
+          "text": "WE  CAN  FIGURE  IT OUT  TOGETHER  NOW !",
+          "translation": "এখন আমরা একসাথে সব ঠিক করতে পারব!",
+          "width": 349,
+          "x": 250,
+          "y": 129
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 29.96491228070175,
+          "symWidth": 23.72247360482655,
+          "text": "WE  DON'T KNOW  WHEN  YOUR HUSBAND  WILL  APPEAR IN  FRONT  OF  YOU ,",
+          "translation": "তোমার স্বামী কখন তোমার সামনে আসবে আমরা জানি না,",
+          "width": 463,
+          "x": 35,
+          "y": 1473
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 21.44444444444444,
+          "text": "BUT  I'LL  PROTECT  YOU !",
+          "translation": "কিন্তু আমি তোমাকে রক্ষা করব!",
+          "width": 457,
+          "x": 28,
+          "y": 2666
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 31.33333333333333,
+          "symWidth": 26.56666666666667,
+          "text": "I  WON'T EVER  LET  HIM  TAKE YOU  FROM  ME !",
+          "translation": "আমি কখনো তাকে তোমাকে আম থেকে ছিনিয়ে নিয়ে যেতে দেব না!",
+          "width": 400,
+          "x": 255,
+          "y": 3079
+        }
+      ],
+      "imgHeight": 3866,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 50,
+          "symWidth": 43,
+          "text": "AND",
+          "translation": "আর",
+          "width": 131,
+          "x": 435,
+          "y": 536
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 43,
+          "symWidth": 32.81818181818182,
+          "text": "I'LL  HELP  YOU BECOME  FREE !",
+          "translation": "আমি তোমাকে মুক্ত হতে সাহায্য করব!",
+          "width": 425,
+          "x": 179,
+          "y": 2614
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31,
+          "symWidth": 23.36363636363636,
+          "text": "I'LL  HELP  YOU DIVORCE  HIM !",
+          "translation": "আমি তোমাকে তার থেকে বিবাহ বিচ্ছেদ করাবো!",
+          "width": 304,
+          "x": 77,
+          "y": 3033
+        }
+      ],
+      "imgHeight": 3866,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "003__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 32,
+          "symWidth": 26.1,
+          "text": "JUNWOO ... !",
+          "translation": "জুনউ...!",
+          "width": 257,
+          "x": 340,
+          "y": 357
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 22.09090909090909,
+          "text": "THANK  YOU ...",
+          "translation": "ধন্যবাদ...",
+          "width": 274,
+          "x": 132,
+          "y": 2367
+        }
+      ],
+      "imgHeight": 3866,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "003__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 22.64705882352941,
+          "text": "TRULY ...  THANK  YOU !",
+          "translation": "বাক্সদের ধন্যবাদ!",
+          "width": 428,
+          "x": 198,
+          "y": 130
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 27,
+          "symWidth": 19.15384615384615,
+          "text": "I'M  SO  HAPPY ...",
+          "translation": "আমি এত খুশি...",
+          "width": 285,
+          "x": 403,
+          "y": 1534
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 31,
+          "symWidth": 23.76373626373626,
+          "text": "THAT  YOU UNDERSTAND ...",
+          "translation": "যে তুমি বোঝো...",
+          "width": 312,
+          "x": 76,
+          "y": 2535
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 31,
+          "symWidth": 22.37995337995338,
+          "text": "I  SHOULD'VE ... TOLD  YOU  ABOUT IT  SOONER ...",
+          "translation": "আমাকে আগে তোমাকে বলাই উচিত ছিল...",
+          "width": 352,
+          "x": 341,
+          "y": 2828
+        }
+      ],
+      "imgHeight": 3866,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "003__005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 40.16666666666666,
+          "symWidth": 27.33333333333333,
+          "text": "YOU ...",
+          "translation": "তুমি তো...",
+          "width": 146,
+          "x": 99,
+          "y": 466
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 29.5,
+          "symWidth": 22.53846153846154,
+          "text": "REALLY ARE  LIKE  A  CHILD , SOMETIMES ...",
+          "translation": "তুমি মাঝে মাঝে\nবই এক শিশুর মতোই...",
+          "width": 367,
+          "x": 54,
+          "y": 657
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 73.6,
+          "symWidth": 36.2,
+          "text": "... ? !",
+          "translation": "...?!",
+          "width": 174,
+          "x": 218,
+          "y": 1790
+        },
+        {
+          "angle": 0,
+          "height": 69,
+          "symHeight": 28.57894736842105,
+          "symWidth": 20.94736842105263,
+          "text": "JUNWOO ... YOU'RE ... ?",
+          "translation": "জুনউ... তুমি কি...?",
+          "width": 213,
+          "x": 357,
+          "y": 2158
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 30,
+          "symWidth": 19.2,
+          "text": "OH ...",
+          "translation": "ওহ...",
+          "width": 97,
+          "x": 247,
+          "y": 2734
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 21.4,
+          "text": "THAT'S ... !",
+          "translation": "সে তো...!",
+          "width": 216,
+          "x": 237,
+          "y": 3555
+        }
+      ],
+      "imgHeight": 3866,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 90,
+          "symHeight": 24.08571428571429,
+          "symWidth": 20.31428571428571,
+          "text": "I  JUST  GET TURNED  ON  WHENEVER YOU  TOUCH  ME !",
+          "translation": "তুমি আমাকে স্পর্শ করলে\nআমি নিজেকে থামাতে পারি না!",
+          "width": 371,
+          "x": 24,
+          "y": 116
+        },
+        {
+          "angle": 0,
+          "height": 64,
+          "symHeight": 27.5,
+          "symWidth": 19.33971291866029,
+          "text": "B - BUT  THIS  IS AGAINST  MY  WILL ,  SO ...",
+          "translation": "কিন্তু এটা আমার ইচ্ছার বিরুদ্ধে,\nতাহলে ওটা...",
+          "width": 428,
+          "x": 8,
+          "y": 1426
+        },
+        {
+          "angle": 0,
+          "height": 163,
+          "symHeight": 64.33333333333333,
+          "symWidth": 74.66666666666667,
+          "text": "OIN",
+          "translation": "",
+          "width": 78,
+          "x": 74,
+          "y": 2830
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 84,
+          "symWidth": 41,
+          "text": "? !",
+          "translation": "?!",
+          "width": 88,
+          "x": 248,
+          "y": 3111
+        }
+      ],
+      "imgHeight": 3696,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 29,
+          "symWidth": 24.91666666666667,
+          "text": "COME TO THINK  OF  IT ...",
+          "translation": "চিন্তা করলে মনে হয়...",
+          "width": 271,
+          "x": 390,
+          "y": 1317
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 29.5,
+          "symWidth": 23.57727272727273,
+          "text": "I'VE  MADE  YOU FEEL  LONELY",
+          "translation": "আমি তোমাকে একা ফেলেছি",
+          "width": 313,
+          "x": 63,
+          "y": 2536
+        }
+      ],
+      "imgHeight": 3696,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "004__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 30,
+          "symWidth": 22.56535947712418,
+          "text": "THESE  PAST FEW  DAYS ,  HAVEN'T  I ?",
+          "translation": "গত কয়েক দিন, তাই না?",
+          "width": 445,
+          "x": 230,
+          "y": 461
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 29,
+          "symWidth": 21.13472222222222,
+          "text": "I'M  SURE YOU'LL  BE  UPSET  IF  I DON'T  HELP  YOU ...",
+          "translation": "যদি আমি তোমাকে সাহায্য না করি তবে তুমি অবশ্যই রাগ করবে...",
+          "width": 424,
+          "x": 233,
+          "y": 816
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 25.3421052631579,
+          "symWidth": 22.01754385964912,
+          "text": "REALLY DON'T  HAVE  TO-- YOU",
+          "translation": "যথেষ্ট, তোমাকে সাহায্য করতে হবে না—তুমি নিজেই করতে পারো",
+          "width": 312,
+          "x": 388,
+          "y": 1650
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 91,
+          "symWidth": 59.66666666666666,
+          "text": "Oh !",
+          "translation": "আহ!",
+          "width": 148,
+          "x": 457,
+          "y": 3297
+        }
+      ],
+      "imgHeight": 3696,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "004__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 109.6666666666667,
+          "symWidth": 52.33333333333334,
+          "text": "Ah !",
+          "translation": "আহ!",
+          "width": 127,
+          "x": 279,
+          "y": 1398
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 70.33333333333333,
+          "symWidth": 67,
+          "text": "쮸움 !",
+          "translation": "জ্বীঊম!",
+          "width": 188,
+          "x": 145,
+          "y": 1650
+        },
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 70.66666666666667,
+          "symWidth": 61.66666666666666,
+          "text": "쮸읍 !",
+          "translation": "জ্বীউপ!",
+          "width": 176,
+          "x": 483,
+          "y": 2315
+        },
+        {
+          "angle": 0,
+          "height": 123,
+          "symHeight": 120.25,
+          "symWidth": 62.75,
+          "text": "Ahh !",
+          "translation": "আহহ!",
+          "width": 188,
+          "x": 76,
+          "y": 2972
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 30.5,
+          "text": "AHJUMMA !",
+          "translation": "আজুম্মা!",
+          "width": 271,
+          "x": 310,
+          "y": 3380
+        }
+      ],
+      "imgHeight": 3696,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "004__005.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 129,
+          "symHeight": 127.4,
+          "symWidth": 68.2,
+          "text": "Urgh !",
+          "translation": "আরঘ!",
+          "width": 247,
+          "x": 351,
+          "y": 1039
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 33.54166666666667,
+          "symWidth": 25.625,
+          "text": "IF  YOU  KEEP DOING  THAT ...",
+          "translation": "তুমি এভাবে করলে...",
+          "width": 306,
+          "x": 339,
+          "y": 2415
+        }
+      ],
+      "imgHeight": 3696,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 65,
+          "symHeight": 28,
+          "symWidth": 17.46428571428572,
+          "text": "I ...  WON'T ...  BE  ABLE TO  HOLD  IT  IN ... !",
+          "translation": "আমি... আর মাটিয়ে রাখতে পারব না...!",
+          "width": 379,
+          "x": 8,
+          "y": 128
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 69,
+          "symWidth": 88,
+          "text": "쮸 ... 원",
+          "translation": "쮸... 원",
+          "width": 310,
+          "x": 118,
+          "y": 851
+        },
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 84,
+          "symWidth": 42.28571428571428,
+          "text": "Haah .. !",
+          "translation": "হাহ..!",
+          "width": 218,
+          "x": 94,
+          "y": 1037
+        },
+        {
+          "angle": 0,
+          "height": 62,
+          "symHeight": 26.5,
+          "symWidth": 20.95555555555556,
+          "text": "YOU  CAN'T  CUM  YET , JUNWOO ...",
+          "translation": "জুনউ, তুমি এখনো কুরো করো নি...",
+          "width": 364,
+          "x": 162,
+          "y": 1284
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 30,
+          "symWidth": 21.92272727272727,
+          "text": "I'M  GETTING TURNED  ON ...",
+          "translation": "তোমার কোচ চুষে আমি উত্তেজিত হচ্ছি...",
+          "width": 271,
+          "x": 138,
+          "y": 2808
+        },
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 30,
+          "symWidth": 23.64335664335664,
+          "text": "JUST  BY  SUCKING YOUR  COCK ...",
+          "translation": "শুধু তোমার লেজ চুষেই...",
+          "width": 361,
+          "x": 186,
+          "y": 3955
+        }
+      ],
+      "imgHeight": 4145,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 71,
+          "symHeight": 29.9,
+          "symWidth": 23.55,
+          "text": "SO  YOU  HAVE TO  HOLD  IT  IN !",
+          "translation": "তাই তুমি সেটি মাটিয়ে রাখতে হবে!",
+          "width": 295,
+          "x": 359,
+          "y": 222
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 29.25,
+          "symWidth": 24,
+          "text": "IF  YOU  WANNA CUM ...",
+          "translation": "যদি কুরো করতে চাও...",
+          "width": 286,
+          "x": 246,
+          "y": 1176
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 23.61538461538462,
+          "text": "DO  IT  INSIDE  ME !",
+          "translation": "আমার ভিতরে করো!",
+          "width": 380,
+          "x": 250,
+          "y": 2695
+        },
+        {
+          "angle": 0,
+          "height": 127,
+          "symHeight": 42.66666666666666,
+          "symWidth": 38,
+          "text": "000",
+          "translation": "000",
+          "width": 52,
+          "x": 41,
+          "y": 3170
+        }
+      ],
+      "imgHeight": 4145,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "005__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 298,
+          "symHeight": 261,
+          "symWidth": 188,
+          "text": "Ah",
+          "translation": "আহ",
+          "width": 290,
+          "x": 72,
+          "y": 3225
+        },
+        {
+          "angle": 0,
+          "height": 208,
+          "symHeight": 195,
+          "symWidth": 138,
+          "text": "9 !",
+          "translation": "৯!",
+          "width": 215,
+          "x": 162,
+          "y": 3651
+        }
+      ],
+      "imgHeight": 4145,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    },
+    "005__004.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 79,
+          "symHeight": 31,
+          "symWidth": 17.40909090909091,
+          "text": "YOU  CAN  READ  THE  NEXT  CHAPTER EARLY  BY  SUPPORTING  US !",
+          "translation": "আপনি অগ্রিম পড়তে পারেন\nআমাদের সাহায্য করলে!",
+          "width": 468,
+          "x": 142,
+          "y": 228
+        },
+        {
+          "angle": 0,
+          "height": 82,
+          "symHeight": 32.5,
+          "symWidth": 16.125,
+          "text": "PAYMENT  METHODS : PAYPAL ,  CREDIT  CARD ,  CRYPTO .",
+          "translation": "পেমেন্ট পদ্ধতি: পেপ্যাল, ক্রেডিট কার্ড, ক্রিপ্টো।",
+          "width": 421,
+          "x": 166,
+          "y": 373
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 33,
+          "symWidth": 15.25,
+          "text": "VISIT OUR WEBSITE AT:",
+          "translation": "আমাদের ওয়েবসাইটে আসুন:",
+          "width": 561,
+          "x": 94,
+          "y": 517
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 32.80952380952381,
+          "symWidth": 15.24615975422427,
+          "text": "OR  JOIN  OUR  DISCORD  SERVER  AND  CREATE A  TICKET  FOR  MORE  INFORMATION : DISCORD.GG/OSCOM",
+          "translation": "অথবা আমাদের ডিসকর্ড সার্ভারে যোগ দিন\nএবং তথ্যের জন্য টিকেট তৈরি করুন: DISCORD.GG/OSCOM",
+          "width": 577,
+          "x": 87,
+          "y": 614
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 36,
+          "symWidth": 17.8125,
+          "text": "TO  BE  CONTINUED ...",
+          "translation": "পরবর্তী পর্বে দেখা হবে...",
+          "width": 323,
+          "x": 396,
+          "y": 947
+        },
+        {
+          "angle": 0,
+          "height": 103,
+          "symHeight": 43.16666666666667,
+          "symWidth": 37.91555555555556,
+          "text": "MEGA  SCANS READ EARLY ON",
+          "translation": "মেগা স্ক্যানস - আগে পড়ুন",
+          "width": 531,
+          "x": 102,
+          "y": 1236
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 40.8,
+          "symWidth": 42.925,
+          "text": "OMEGA  SEANS NSFW",
+          "translation": "ওমেগা স্ক্যান্স NSFW",
+          "width": 565,
+          "x": 133,
+          "y": 1401
+        },
+        {
+          "angle": 0,
+          "height": 215,
+          "symHeight": 32.41772151898734,
+          "symWidth": 27.44303797468354,
+          "text": "DO  YOU  WANT  TO READ  CHAPTERS  EARLY ? YOU  CAN  READ  CHAPTERS  EARLY BY  SUPPORTING  US  ON  OUR  WEBSITE !",
+          "translation": "আপনি কি আগে পড়তে চান? ওয়েবসাইটে আমাদের সমর্থন করে আপনি অগ্রিম পড়তে পারবেন!",
+          "width": 647,
+          "x": 42,
+          "y": 1593
+        },
+        {
+          "angle": 0,
+          "height": 41,
+          "symHeight": 29.44444444444444,
+          "symWidth": 17.94444444444444,
+          "text": "OTHER  SERIES  WE  DO !  -X",
+          "translation": "আমরা অন্যান্য সিরিজও করি! -X",
+          "width": 489,
+          "x": 178,
+          "y": 2088
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 18,
+          "symWidth": 15.59259259259259,
+          "text": "WONDERFUL NEW WORLD",
+          "translation": "অদ্ভুত নতুন বিশ্ব",
+          "width": 131,
+          "x": 301,
+          "y": 2299
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 16,
+          "symWidth": 9.557692307692308,
+          "text": "YOUR GIRLFRIEND  WAS AMAZING",
+          "translation": "তোমার বান্ধবী ছিল অসাধারণ",
+          "width": 93,
+          "x": 100,
+          "y": 2583
+        },
+        {
+          "angle": 0,
+          "height": 42,
+          "symHeight": 15.40277777777778,
+          "symWidth": 8.926587301587302,
+          "text": "IS  THERE  NO ddess  IN  MY Voddes COLLEGE",
+          "translation": "আমার ভদেস কলেজে কি কোনও দেবী নেই?",
+          "width": 126,
+          "x": 294,
+          "y": 2587
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 22.45,
+          "symWidth": 14.4,
+          "text": "HERBAL  LOVE STORY",
+          "translation": "হেরবাল প্রেমকাহিনী",
+          "width": 121,
+          "x": 307,
+          "y": 2857
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 20.71428571428572,
+          "symWidth": 15.88392857142857,
+          "text": "PAY  WITH SPERM  PAY",
+          "translation": "বীজ আর অর্থ দিয়ে পরিশোধ করুন",
+          "width": 109,
+          "x": 517,
+          "y": 2858
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 16,
+          "symWidth": 9.877777777777776,
+          "text": "PENEFACTOR DAUGHTERO",
+          "translation": "পেনফ্যাক্টর কন্যা",
+          "width": 96,
+          "x": 98,
+          "y": 2867
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 13.6875,
+          "symWidth": 10.81339285714286,
+          "text": "MILE HUNTING ANGTHERV ROCLA",
+          "translation": "মাইল শিকার অ্যান্থার্ভ রোকলা",
+          "width": 112,
+          "x": 80,
+          "y": 3131
+        },
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 19.11904761904762,
+          "symWidth": 14.88095238095238,
+          "text": "TRAPPED IN  THE  ACADEMY'S SEROGE",
+          "translation": "অ্যাকাডেমির সারোজে আটকা",
+          "width": 146,
+          "x": 292,
+          "y": 3141
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 24,
+          "symWidth": 17.375,
+          "text": "MOBY  DICK",
+          "translation": "মোবি ডিক",
+          "width": 139,
+          "x": 512,
+          "y": 3164
+        },
+        {
+          "angle": 0,
+          "height": 66,
+          "symHeight": 25.93333333333333,
+          "symWidth": 13.2375,
+          "text": "Isekai  Dragondick Knight  Commander",
+          "translation": "ইসেকাই ড্রাগনডিক নাইট কমান্ডার",
+          "width": 136,
+          "x": 82,
+          "y": 3387
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 33,
+          "symWidth": 23.44444444444444,
+          "text": "LUSTRATOR",
+          "translation": "অনুবাদক",
+          "width": 132,
+          "x": 303,
+          "y": 3415
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 28.0625,
+          "symWidth": 22.6875,
+          "text": "WE'RE  RECRUITING !",
+          "translation": "আমরা সদস্য নিচ্ছি!",
+          "width": 397,
+          "x": 171,
+          "y": 3686
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 20,
+          "text": "-  X",
+          "translation": "- X",
+          "width": 54,
+          "x": 620,
+          "y": 3689
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 33,
+          "symWidth": 15.11764705882353,
+          "text": "KOREAN  TRANSLATOR  ( NO  MTL )  -  [ PAID ] MANGA  SFX  LETTERER  ( DO  NOT  USE  FONTS )  -  [ PAID ]",
+          "translation": "কোরিয়ান অনুবাদক (MTL নয়) - [ভাতা সহ]\nমাঙ্গা SFX লেটারিং কর্তা (ফন্ট ব্যবহার করবেন না) - [ভাতা সহ]",
+          "width": 602,
+          "x": 60,
+          "y": 3793
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 30,
+          "symWidth": 12.97619047619048,
+          "text": "JOIN  OUR  DISCORD  FOR  MORE  INFO :  DISCORD.GG/OSCOM",
+          "translation": "আরও তথ্যের জন্য আমাদের ডিসকর্ডে যোগ দিন: discord.gg/oscom",
+          "width": 589,
+          "x": 69,
+          "y": 4061
+        }
+      ],
+      "imgHeight": 4148,
+      "imgWidth": 720,
+      "sourceLanguage": "en",
+      "targetLanguage": "bn",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "bn",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}

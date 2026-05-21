@@ -1,0 +1,798 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0107",
+  "jobId": "fixture-job-0107",
+  "licenseId": "fixture-license-0107",
+  "pageCount": 9,
+  "pageOrder": [
+    "001.webp",
+    "002.webp",
+    "003.webp",
+    "004.webp",
+    "005.webp",
+    "006.webp",
+    "007.webp",
+    "008.webp",
+    "009.webp"
+  ],
+  "pages": {
+    "001.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 29,
+          "symWidth": 17.2,
+          "text": "colamanga.com 观看 , 最快 最 稳 , 广告 最少",
+          "translation": "",
+          "width": 551,
+          "x": 157,
+          "y": 22
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 17.21428571428572,
+          "text": "第 五百零 四 话 · 万里 河山 图 大战",
+          "translation": "الفصل ٥٠٤ · معركة خريطة نهر وو لي الشاسعة",
+          "width": 275,
+          "x": 57,
+          "y": 143
+        },
+        {
+          "angle": 0,
+          "height": 10,
+          "symHeight": 10,
+          "symWidth": 12,
+          "text": "PY",
+          "translation": "",
+          "width": 20,
+          "x": 571,
+          "y": 577
+        }
+      ],
+      "imgHeight": 1213,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 17.7,
+          "text": "呦 , 这 是 开 什 么 大戏 呢 ?",
+          "translation": "يا لها من مسرحية تُدار هنا؟",
+          "width": 130,
+          "x": 105,
+          "y": 116
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 17.91666666666666,
+          "text": "连 图 里 都 不得 安宁 了 。",
+          "translation": "حتى الصورة لم تَلْتَئم على سكينة.",
+          "width": 131,
+          "x": 489,
+          "y": 293
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 18,
+          "text": "你 终于 来 了 。",
+          "translation": "لقد حضرت أخيرًا.",
+          "width": 117,
+          "x": 81,
+          "y": 475
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.77777777777778,
+          "symWidth": 19.04166666666666,
+          "text": "谁 知道 你 又 收 了 什 么 怪 东西 。",
+          "translation": "من يدري ما الغرائب التي استحوى عليها هذه المرة.",
+          "width": 94,
+          "x": 470,
+          "y": 532
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.09090909090909,
+          "symWidth": 18.63636363636364,
+          "text": "我 和 金 蛋 都 没法 镇压 他 。",
+          "translation": "لا مفر من قمعه، لا أنا ولا ذلك البيضة الذهبية استطعنا.",
+          "width": 116,
+          "x": 611,
+          "y": 635
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.5,
+          "symWidth": 17.29166666666666,
+          "text": "发生 什么 事 了 ?",
+          "translation": "ما الذي حدث هنا؟",
+          "width": 85,
+          "x": 267,
+          "y": 683
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 14,
+          "symWidth": 15.66666666666667,
+          "text": "www",
+          "translation": "",
+          "width": 37,
+          "x": 299,
+          "y": 828
+        },
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.33333333333333,
+          "symWidth": 17.77777777777778,
+          "text": "哈哈哈 ! 就 靠 你 这些 手段 , 也 配 与 我 为敌 ?",
+          "translation": "هاهاها! هل تظن أن هذه الوسائل الفقيرة تكفي لمخاصمتي؟",
+          "width": 140,
+          "x": 233,
+          "y": 971
+        },
+        {
+          "angle": 0,
+          "height": 63,
+          "symHeight": 27.5,
+          "symWidth": 22.16666666666666,
+          "text": "ACLOUDMLACE . COLAMANGA.COM",
+          "translation": "",
+          "width": 291,
+          "x": 1,
+          "y": 1061
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.33333333333333,
+          "symWidth": 17.83333333333333,
+          "text": "他 的 力量 似乎 无穷 无尽 ,",
+          "translation": "طُاقته تبدو بلا حدود.",
+          "width": 86,
+          "x": 442,
+          "y": 199
+        },
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 20.25,
+          "symWidth": 18.78571428571428,
+          "text": "每次 将 他 击倒 , 体内 都会 涌出 力量 让 他 恢复 到 巅峰 状态 。",
+          "translation": "في كل مرة يُسقط، تنبعث منه قوة تعيده إلى ذروة عظمته.",
+          "width": 139,
+          "x": 469,
+          "y": 311
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 17.4,
+          "text": "感受到 了 。",
+          "translation": "لقد أحسست بها.",
+          "width": 96,
+          "x": 145,
+          "y": 580
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20,
+          "symWidth": 19.25454545454546,
+          "text": "而且 这 股 力 量 … 有 一丝 圣帝 的 气息 。",
+          "translation": "وما أفعله يحمل أريج إمبراطور القداسة ذاته.",
+          "width": 118,
+          "x": 578,
+          "y": 648
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 17.8,
+          "symWidth": 16.74,
+          "text": "妖 神宗 宗主 让 我 对付 他 …… 原来 在 这个 时候 , 她 就 准备 反抗 圣 帝 了 么 。",
+          "translation": "رئيس طائفة الشياطين أمرني بمواجهته... فها هي إذًا تبدأ ثورتها على إمبراطور القداسة.",
+          "width": 117,
+          "x": 69,
+          "y": 805
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 17.6,
+          "text": "赤 蟒 ? 还不 放 我 出去 !",
+          "translation": "أنت يا الأفعى الحمراء! هل تجرؤ على منعي من الخروج؟!",
+          "width": 107,
+          "x": 434,
+          "y": 816
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 20.99047619047619,
+          "symWidth": 18.79199372056515,
+          "text": "这 下 有意思 了 , 离 火 圣 子 若是 没 掌控 妖 神宗 … 他们 说不定 还 是 友军 呢 ~ ACLOUDMEROL.COM COLAMANGA.COM",
+          "translation": "الأمر ممتع الآن، إذا كان وريث النار المقدس لا يملك زمام طائفة الشياطين... فقد يكونون حلفاء لنا لا أعداء.",
+          "width": 291,
+          "x": 1,
+          "y": 961
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.8125,
+          "symWidth": 19.5875,
+          "text": "待 神 大人 定 会将 你 碎尸 万 段 !",
+          "translation": "سيقطعك سيد الآلهة إلى أشلاء مهما كان الأمر!",
+          "width": 109,
+          "x": 623,
+          "y": 975
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.3,
+          "symWidth": 17.38333333333333,
+          "text": "侍 神 , 圣帝 ? 他 不是 我们 的 祖 神 吗 ?",
+          "translation": "الساموراي الإله، الإمبراطور المقدس؟ أليس هو إله أسلافنا؟",
+          "width": 131,
+          "x": 447,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.5,
+          "symWidth": 17.6,
+          "text": "待 神 那么 有 本事 , 让 他 进来 跟 我 打 啊 。",
+          "translation": "إذا كنت تملك القدرة، فلتدعوه يدخل ويقاتلني وجهًا لوجه.",
+          "width": 109,
+          "x": 97,
+          "y": 310
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.5,
+          "symWidth": 18.225,
+          "text": "为什么 会 要 害 我们 ?",
+          "translation": "لماذا تُريدون أن تدمّرونا؟",
+          "width": 108,
+          "x": 523,
+          "y": 349
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19.5,
+          "symWidth": 17.25,
+          "text": "他 的 能量 都 来自 于 体内 的 神 胎 。",
+          "translation": "طاقته كلها مستمدة من الجنين الإلهي في داخله.",
+          "width": 86,
+          "x": 76,
+          "y": 483
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.28571428571428,
+          "symWidth": 18.57142857142857,
+          "text": "必须 先 破坏 它 !",
+          "translation": "لا بد أن نهدمه أولاً!",
+          "width": 109,
+          "x": 257,
+          "y": 641
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 18.08333333333334,
+          "text": "你们 配合 我 , 将 他 控制住 !",
+          "translation": "تعاونوا معي\nلإخضاعه وإيقافه!",
+          "width": 117,
+          "x": 582,
+          "y": 649
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19.5,
+          "symWidth": 15,
+          "text": "上 !",
+          "translation": "اعلى!",
+          "width": 33,
+          "x": 460,
+          "y": 835
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 73,
+          "symHeight": 20.33333333333333,
+          "symWidth": 18.88333333333333,
+          "text": "你 的 力量 根本 与 我 匹敌 。",
+          "translation": "قوتك لا تضاهي قوتي.",
+          "width": 95,
+          "x": 72,
+          "y": 122
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 14.33333333333333,
+          "text": "死吧 !",
+          "translation": "امُت!",
+          "width": 51,
+          "x": 443,
+          "y": 132
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19.66666666666667,
+          "symWidth": 16.56666666666667,
+          "text": "杀 了 你 , 我 也 能 自己 出 去 。",
+          "translation": "حتى لو قتلتك، فسأخرج بنفسي.",
+          "width": 110,
+          "x": 76,
+          "y": 386
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 14,
+          "text": "呦 。",
+          "translation": "هاه.",
+          "width": 29,
+          "x": 634,
+          "y": 671
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 19,
+          "symWidth": 17.875,
+          "text": "呵呵 , 你 猜 我 为 什 么 要 封印 你 进来 。",
+          "translation": "هاها، هل تظن أنك تعرف لماذا حبستك هنا؟",
+          "width": 86,
+          "x": 437,
+          "y": 782
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 18,
+          "symWidth": 16.25,
+          "text": "躲开 了 ?",
+          "translation": "تجنبتها؟",
+          "width": 74,
+          "x": 259,
+          "y": 970
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 20,
+          "symWidth": 17.925,
+          "text": "这里 可是 我 的 世界 !",
+          "translation": "هذا هو عالمي!",
+          "width": 108,
+          "x": 619,
+          "y": 982
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.75,
+          "text": "看 招 !!",
+          "translation": "شاهد حركتي!",
+          "width": 72,
+          "x": 588,
+          "y": 179
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 17.35,
+          "text": "他 的 力量 也 变 强 了 !",
+          "translation": "لقد ازدادت قوته أيضاً!",
+          "width": 107,
+          "x": 77,
+          "y": 601
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20.33333333333334,
+          "symWidth": 17.26666666666667,
+          "text": "赤 蟒 , 你 别 得意 。",
+          "translation": "أيها الأفعى الحمراء، لا تكن مغروراً.",
+          "width": 109,
+          "x": 480,
+          "y": 93
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20.25,
+          "symWidth": 18.64880952380953,
+          "text": "离 火 圣 子 , 就 这 点 本事 ? 看来 侍 神 大人 也 没 把 你 教 得多 好啊 。",
+          "translation": "يا ولي النار، هل هذا كل ما تملك؟ يبدو أن سيد العبادة لم يعلّمك جيدًا.",
+          "width": 152,
+          "x": 88,
+          "y": 108
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 20.25,
+          "symWidth": 18.01388888888889,
+          "text": "我 神 胎 的 力量 无穷无尽 , 你 永远 也 杀不死 我 !",
+          "translation": "قوة جنيني الإلهي لا تنضب، ولن تقدر أبداً على قتلي!",
+          "width": 131,
+          "x": 595,
+          "y": 334
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 19,
+          "symWidth": 17.55555555555555,
+          "text": "嗨 呀 … 在 万里 河山 图 里 。",
+          "translation": "هاه... داخل خريطة الأنهار والجبال.",
+          "width": 85,
+          "x": 178,
+          "y": 497
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 16,
+          "symWidth": 13.91666666666667,
+          "text": "哈 啊啊 啊 !",
+          "translation": "آهاه آه آه!",
+          "width": 55,
+          "x": 62,
+          "y": 510
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 23,
+          "text": "www",
+          "translation": "",
+          "width": 44,
+          "x": 703,
+          "y": 545
+        },
+        {
+          "angle": 0,
+          "height": 68,
+          "symHeight": 18.66666666666667,
+          "symWidth": 16.46666666666667,
+          "text": "「 我 的 力量 也 可以 说 是 无限 的",
+          "translation": "\"قوتي أيضًا لا حد لها.",
+          "width": 84,
+          "x": 309,
+          "y": 643
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20,
+          "symWidth": 18.11111111111111,
+          "text": "我 用 神 炎 封印 他 的 力量 。",
+          "translation": "لقد استخدمت نار الإله لسدَّ قدرته.",
+          "width": 85,
+          "x": 91,
+          "y": 792
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 20,
+          "symWidth": 18.66666666666667,
+          "text": "你 来 切断 他 和 神 胎 的 联系 !",
+          "translation": "عليك أن تقطع صلته بجنيني الإلهي!",
+          "width": 129,
+          "x": 421,
+          "y": 972
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 34,
+          "symWidth": 37,
+          "text": "看 漫画",
+          "translation": "مشاهدة المانغا",
+          "width": 119,
+          "x": 10,
+          "y": 1082
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.5,
+          "symWidth": 17.1,
+          "text": "哼 , 你们 就 一起 上 吧 !",
+          "translation": "همم، تقدموا جميعًا معًا!",
+          "width": 108,
+          "x": 87,
+          "y": 101
+        },
+        {
+          "angle": 0,
+          "height": 45,
+          "symHeight": 19.5,
+          "symWidth": 16,
+          "text": "金 蛋 , 给 我 咬 他 !",
+          "translation": "البيضة الذهبية، امسك به بأنيابك!",
+          "width": 86,
+          "x": 573,
+          "y": 197
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 19,
+          "symWidth": 15.66666666666667,
+          "text": "啾啾 !",
+          "translation": "تغريدات!",
+          "width": 50,
+          "x": 651,
+          "y": 300
+        },
+        {
+          "angle": 0,
+          "height": 48,
+          "symHeight": 20,
+          "symWidth": 18.38888888888889,
+          "text": "这里 的 天 之 力 好 浓郁 。",
+          "translation": "قوة السماء هنا كثيفة للغاية.",
+          "width": 117,
+          "x": 138,
+          "y": 550
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19.5,
+          "symWidth": 16.75,
+          "text": "这 是 哪里 啊 ?",
+          "translation": "أين هذا المكان؟",
+          "width": 87,
+          "x": 590,
+          "y": 636
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20,
+          "symWidth": 19.21666666666667,
+          "text": "这 就是 万 里 河山 图 的 世界 吧 …",
+          "translation": "هذا هو عالم خريطة الأنهار والجبال الشاسعة...",
+          "width": 107,
+          "x": 184,
+          "y": 667
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 19.33333333333333,
+          "symWidth": 19.11111111111111,
+          "text": "而且 居然 还 族 的 武 宗 在 此 。",
+          "translation": "بل وعجيب أن هناك عباقرة فنون القتال من القبيلة هنا.",
+          "width": 109,
+          "x": 60,
+          "y": 802
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 20,
+          "symWidth": 18.8125,
+          "text": "赤 蟒 哥哥 … 刚才 是 不是 使用 妖 灵 了 ?",
+          "translation": "الأخ آتشي... هل استخدمت للتو الأرواح الشيطانية؟",
+          "width": 87,
+          "x": 428,
+          "y": 809
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 20,
+          "symWidth": 17.95555555555556,
+          "text": "但是 他 使用 了 好 几种 , 人类 能 办到 吗 ?",
+          "translation": "لكنّه استعمل عدة أنواع منها، هل يمكن للبشر أداء ذلك؟",
+          "width": 131,
+          "x": 600,
+          "y": 974
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19,
+          "symWidth": 16,
+          "text": "赤 蟒 他 到 TEE ......",
+          "translation": "آتشي، إلى أين ت...",
+          "width": 88,
+          "x": 275,
+          "y": 995
+        }
+      ],
+      "imgHeight": 1133,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009.webp": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 14.33333333333333,
+          "text": "哈 啊 !",
+          "translation": "هاه!",
+          "width": 50,
+          "x": 233,
+          "y": 98
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 18,
+          "symWidth": 15,
+          "text": "看 招 !",
+          "translation": "هاك هذه!",
+          "width": 50,
+          "x": 623,
+          "y": 224
+        },
+        {
+          "angle": 0,
+          "height": 74,
+          "symHeight": 20.57142857142857,
+          "symWidth": 16.96428571428572,
+          "text": "哇 啊 , 雨馨 姐 姐 , 咱们 得 先 帮帮 赤 蟒 哥哥 !!",
+          "translation": "آه، يا أخت يوشين، يجب أن نساعد الأخ تشي مانغ أولاً!",
+          "width": 144,
+          "x": 59,
+          "y": 779
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 21,
+          "symWidth": 16.83333333333333,
+          "text": "唔 , 现在 的 | 战斗 我们 完 全 插 不 上手 啊 。",
+          "translation": "همم، لا مكان لنا في هذه المعركة الآن.",
+          "width": 116,
+          "x": 411,
+          "y": 788
+        },
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 19.5,
+          "symWidth": 19.125,
+          "text": "等等 再想 办法 出手",
+          "translation": "انتظر، سنجد طريقة لتدخل المعركة.",
+          "width": 85,
+          "x": 655,
+          "y": 979
+        },
+        {
+          "angle": 0,
+          "height": 115,
+          "symHeight": 27.33333333333333,
+          "symWidth": 20.13196581196581,
+          "text": "ACLOUDMERCE.COM COLAMANGA.COM colamanga.com 观看 , 最快 最 稳 , 广告 最少",
+          "translation": "",
+          "width": 689,
+          "x": 100,
+          "y": 1063
+        },
+        {
+          "angle": 0,
+          "height": 35,
+          "symHeight": 35,
+          "symWidth": 35,
+          "text": "看 漫画",
+          "translation": "اقرأ المانغا",
+          "width": 117,
+          "x": 12,
+          "y": 1083
+        }
+      ],
+      "imgHeight": 1187,
+      "imgWidth": 800,
+      "sourceLanguage": "zh",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "zh",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

@@ -1,0 +1,2885 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0128",
+  "jobId": "fixture-job-0128",
+  "licenseId": "fixture-license-0128",
+  "pageCount": 55,
+  "pageOrder": [
+    "001__001.jpg",
+    "001__002.jpg",
+    "002__001.jpg",
+    "002__002.jpg",
+    "003__001.jpg",
+    "003__002.jpg",
+    "004__001.jpg",
+    "004__002.jpg",
+    "005__001.jpg",
+    "005__002.jpg",
+    "006__001.jpg",
+    "006__002.jpg",
+    "007__001.jpg",
+    "007__002.jpg",
+    "008__001.jpg",
+    "008__002.jpg",
+    "009__001.jpg",
+    "009__002.jpg",
+    "010__001.jpg",
+    "010__002.jpg",
+    "011__001.jpg",
+    "011__002.jpg",
+    "012__001.jpg",
+    "012__002.jpg",
+    "013__001.jpg",
+    "013__002.jpg",
+    "014__001.jpg",
+    "014__002.jpg",
+    "015__001.jpg",
+    "015__002.jpg",
+    "016__001.jpg",
+    "016__002.jpg",
+    "017__001.jpg",
+    "017__002.jpg",
+    "018__001.jpg",
+    "018__002.jpg",
+    "019__001.jpg",
+    "019__002.jpg",
+    "020__001.jpg",
+    "020__002.jpg",
+    "021__001.jpg",
+    "021__002.jpg",
+    "022__001.jpg",
+    "022__002.jpg",
+    "023__001.jpg",
+    "023__002.jpg",
+    "024__001.jpg",
+    "024__002.jpg",
+    "025__001.jpg",
+    "025__002.jpg",
+    "026__001.jpg",
+    "026__002.jpg",
+    "027__001.jpg",
+    "027__002.jpg",
+    "027__003.jpg"
+  ],
+  "pages": {
+    "001__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 207,
+          "symHeight": 36.37894736842105,
+          "symWidth": 15.30693779904306,
+          "text": "All  comics  on  this  website are  just  previews  of  the  original  comics , there  may  be  many  errors  in  language , character  names ,  and  storylines .",
+          "translation": "جميع القصص المصورة على هذا الموقع ليست سوى معاينات من القصص الأصلية، وقد تحتوي على العديد من الأخطاء في اللغة وأسماء الشخصيات وسير الأحداث.",
+          "width": 584,
+          "x": 62,
+          "y": 149
+        },
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 41.23076923076923,
+          "symWidth": 14.06153846153846,
+          "text": "For  the  original  version ,  please  buy  the comic  if  it  is  available  in  your  city .",
+          "translation": "للحصول على النسخة الأصلية، يُرجى شراء المانغا إن توفرت في مدينتك.",
+          "width": 566,
+          "x": 71,
+          "y": 425
+        },
+        {
+          "angle": 0,
+          "height": 40,
+          "symHeight": 40,
+          "symWidth": 35.33333333333334,
+          "text": "READ  ON",
+          "translation": "تابع القراءة",
+          "width": 237,
+          "x": 234,
+          "y": 611
+        },
+        {
+          "angle": 0,
+          "height": 59,
+          "symHeight": 59,
+          "symWidth": 43.69230769230769,
+          "text": "RESET-SCAN.CO",
+          "translation": "RESET-SCAN.CO",
+          "width": 512,
+          "x": 144,
+          "y": 721
+        },
+        {
+          "angle": 0,
+          "height": 60,
+          "symHeight": 60,
+          "symWidth": 61.5,
+          "text": "TOON",
+          "translation": "TOON",
+          "width": 240,
+          "x": 288,
+          "y": 902
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 25,
+          "symWidth": 17,
+          "text": ".net",
+          "translation": ".net",
+          "width": 75,
+          "x": 543,
+          "y": 964
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 38,
+          "symWidth": 31.6,
+          "text": "FOR  FASTER  UPDATE",
+          "translation": "للحصول على تحديثات أسرع",
+          "width": 531,
+          "x": 98,
+          "y": 1074
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 19.30337078651685,
+          "symWidth": 15.02247191011236,
+          "text": "\" YES ,  YOU'RE RIGHT .  NOT  BEING  ABLE TO  DRINK  EVEN  A  SINGLE CUP  OF  TEA  WITH  AN  EASY MIND  IS  A  WRONG  KIND OF  LIFE . \"",
+          "translation": "«نعم، أنت محقٌّ. أن تعجز عن شرب كوب واحد من الشاي وطمأنينة نفسك خطأ فادح في الحياة.»",
+          "width": 321,
+          "x": 80,
+          "y": 1707
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "001__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 15,
+          "symWidth": 11.38461538461539,
+          "text": "RESET-SCAN.CO",
+          "translation": "RESET-SCAN.CO",
+          "width": 135,
+          "x": 44,
+          "y": 79
+        },
+        {
+          "angle": 0,
+          "height": 14,
+          "symHeight": 13,
+          "symWidth": 11.75,
+          "text": "UTOON  NET",
+          "translation": "UTOON NET",
+          "width": 100,
+          "x": 587,
+          "y": 80
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 20.12727272727273,
+          "symWidth": 13.6,
+          "text": "\" BUT  FOR  SOME PEOPLE ,  THAT  HAS  ALREADY BECOME  EVERYDAY REALITY . \"",
+          "translation": "«لكن لبعض الناس، هذا هو الواقع اليومي المؤلم.»",
+          "width": 294,
+          "x": 338,
+          "y": 307
+        },
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 20.29268292682927,
+          "symWidth": 15.31707317073171,
+          "text": "\" THEN ...  SURELY YOU  DON'T  MEAN YOU ,  MY  LADY .... \"",
+          "translation": "«إذن... لا تقصدين نفسكِ، سيدتي...»",
+          "width": 218,
+          "x": 102,
+          "y": 934
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 18.71428571428572,
+          "symWidth": 13.23809523809524,
+          "text": "\" DON'T MISUNDERSTAND . \"",
+          "translation": "«لا تَسيء الفهم.»",
+          "width": 198,
+          "x": 415,
+          "y": 2055
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 24.27272727272727,
+          "symWidth": 17.62121212121212,
+          "text": "\" IF  ANYONE  IS BEING  TARGETED ,  IT'S NOT  ME .  IT'S  YOU . \"",
+          "translation": "«إن كان هناك من يُستهدف، فليس أنا، بل أنت.»",
+          "width": 334,
+          "x": 92,
+          "y": 184
+        },
+        {
+          "angle": 0,
+          "height": 132,
+          "symHeight": 24.85470085470086,
+          "symWidth": 18.12877492877493,
+          "text": "\" IF  YOU  WERE TO  BE  POISONED  HERE , THE  RESPONSIBILITY  WOULD FALL  ENTIRELY  ON  ME . \"",
+          "translation": "«لو سمِمتِ هنا، فلن أقبل إلا كامل المسؤولية.»",
+          "width": 407,
+          "x": 228,
+          "y": 441
+        },
+        {
+          "angle": 0,
+          "height": 274,
+          "symHeight": 80.66666666666667,
+          "symWidth": 205.3333333333333,
+          "text": "orl",
+          "translation": "",
+          "width": 209,
+          "x": 473,
+          "y": 1469
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 21.43333333333333,
+          "symWidth": 16.36905982905983,
+          "text": "\" THERE  ARE  MORE PEOPLE  THAN  YOU  MIGHT THINK  WHO  WOULD  LOVE TO  SEE  ME  FALL  INTO RUIN . \"",
+          "translation": "«هناك أكثر ممَن تتخيّلين ممن يرغب في رؤيتي أسقط في الهاوية.»",
+          "width": 351,
+          "x": 190,
+          "y": 1850
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "002__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 22.45833333333334,
+          "symWidth": 14.74731182795699,
+          "text": "\" DO  NOT  WORRY . THIS  SILVER  NEEDLE  IS NOT  SO  SIMPLE . \"",
+          "translation": "لا تقلق، هذه الإبرة الفضية ليست بتلك البساطة.",
+          "width": 256,
+          "x": 75,
+          "y": 164
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 21.1764705882353,
+          "symWidth": 16.00490196078431,
+          "text": "\" AND  I TASTED  THE  TEA PERSONALLY FIRST ,  SO ... \"",
+          "translation": "وقد ذقتُ الشاي بنفسي أولاً، لذا...",
+          "width": 237,
+          "x": 234,
+          "y": 338
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 29.09090909090909,
+          "symWidth": 17.27272727272727,
+          "text": "\" THAT  IS  NOT WHAT  I  MEANT . \"",
+          "translation": "ليس هذا ما قصدته.",
+          "width": 183,
+          "x": 451,
+          "y": 1169
+        },
+        {
+          "angle": 0,
+          "height": 135,
+          "symHeight": 33.66666666666666,
+          "symWidth": 21.29166666666667,
+          "text": "\" WEREN'T YOU  IN  DANGER , MY  LADY ? \"",
+          "translation": "ألم تكوني في خطر، سيدتي؟",
+          "width": 195,
+          "x": 105,
+          "y": 1797
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 32.88888888888889,
+          "symWidth": 21.14814814814815,
+          "text": "\" WHY  WOULD  YOU TAKE  SUCH  A  RISK ? \"",
+          "translation": "لماذا تحملين هذا الخطر؟",
+          "width": 280,
+          "x": 320,
+          "y": 234
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 12.625,
+          "text": "\" ... HA . \"",
+          "translation": "... ها.",
+          "width": 98,
+          "x": 131,
+          "y": 1953
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "003__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 53,
+          "symHeight": 22,
+          "symWidth": 16.46153846153846,
+          "text": "\" I  AM  A  MEMBER  OF THE  TANG  CLAN . \"",
+          "translation": "أنا من عشيرة تانغ.",
+          "width": 264,
+          "x": 60,
+          "y": 625
+        },
+        {
+          "angle": 0,
+          "height": 205,
+          "symHeight": 25.83333333333333,
+          "symWidth": 18.22268450858605,
+          "text": "\" SINCE  CHILDHOOD I'VE  BUILT  UP  RESISTANCE TO  HUNDREDS  OF  DIFFERENT SUBSTANCES ,  AND  BY  TASTING ONLY  A  TINY  SIP  I  CAN DISTINGUISH  THEM . \"",
+          "translation": "منذ طفولتي، بنيت مقاومة لمئات المواد المختلفة، وبجرة صغيرة فقط أستطيع التمييز بينها.",
+          "width": 463,
+          "x": 158,
+          "y": 820
+        },
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 24.75,
+          "symWidth": 19.48197115384615,
+          "text": "\" DO  I  LOOK  LIKE THE  SORT  OF  FOOL  WHO CHARGES  IN  WITHOUT  ANY PREPARATION ? \"",
+          "translation": "هل أبدو كالأحمق الذي يندفع دون استعداد؟",
+          "width": 389,
+          "x": 153,
+          "y": 1991
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 77,
+          "symHeight": 19.66666666666667,
+          "symWidth": 14.58974358974359,
+          "text": "\" MY  APOLOGIES . I  DID  NOT  MEAN IT  THAT  WAY ... \"",
+          "translation": "أعتذر، لم أقصد ذلك.",
+          "width": 205,
+          "x": 79,
+          "y": 210
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 11.8,
+          "text": "\" THEN  IT'S  FINE . \"",
+          "translation": "إذاً فلا بأس.",
+          "width": 180,
+          "x": 477,
+          "y": 1023
+        },
+        {
+          "angle": 0,
+          "height": 114,
+          "symHeight": 21.5,
+          "symWidth": 16.72836538461538,
+          "text": "\" AND  YOU  SHOULD NOT  LOWER  YOUR GUARD  SO  EASILY EITHER . \"",
+          "translation": "ولا ينبغي لك أن تخفضي حذرك بهذه السهولة أيضاً.",
+          "width": 244,
+          "x": 66,
+          "y": 1624
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "004__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 22.25,
+          "symWidth": 16.86850649350649,
+          "text": "\" OUR  TANG  CLAN EVEN  HAS  POISONS THAT  ARE  APPLIED TO  THE  LIPS . \"",
+          "translation": "«حتى عشيرة تانغ لدينا تمتلك سمومًا تُدهن على الشفاه.»",
+          "width": 269,
+          "x": 363,
+          "y": 11
+        },
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 25.5,
+          "symWidth": 18.86407342657343,
+          "text": "\" IF  I  HAD  THAT IN  MIND ,  I  WOULD HARDLY  BOTHER WARNING  YOU . \"",
+          "translation": "«لو كنت أعتزم ذلك، لما حملت نفسي عناء تحذيركم.»",
+          "width": 259,
+          "x": 339,
+          "y": 703
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21.5,
+          "symWidth": 18.94642857142857,
+          "text": "\" ARE  YOU SO  SURE ? \"",
+          "translation": "«هل أنت واثق من ذلك؟»",
+          "width": 162,
+          "x": 98,
+          "y": 1576
+        },
+        {
+          "angle": 0,
+          "height": 145,
+          "symHeight": 21.6,
+          "symWidth": 16.26388611388611,
+          "text": "\" THE  ESSENCE  OF USING  POISON  LIES  LESS  IN WHAT  POISON  YOU  USE  THAN  IN HOW  YOU  BREAK  DOWN  THE OTHER  PERSON'S  VIGILANCE . \"",
+          "translation": "«جوهر استعمال السم لا يكمن في ماهية السم الذي تستخدمه، بل في كيفية تحطيم يقظة الخصم.»",
+          "width": 393,
+          "x": 163,
+          "y": 2200
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 19.5,
+          "symWidth": 14.05952380952381,
+          "text": "\" IF  YOU  CAN INDUCE  A  SINGLE  INSTANT- A  FLEETING  MOMENT - OF CARELESSNESS , \"",
+          "translation": "\" إن استطعت أن تُحدث لحظةً واحدةً، خاطفةً من التهاون، \"",
+          "width": 290,
+          "x": 131,
+          "y": 807
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 21.75,
+          "symWidth": 17.11190476190476,
+          "text": "\" THEN  THE  TYPE  OF POISON  OR  THE  WAY YOU  ADMINISTER  IT HARDLY  MATTERS . \"",
+          "translation": "\" فحينها لن يُهم نوع السم أو طريقة إعطائه. \"",
+          "width": 286,
+          "x": 300,
+          "y": 1030
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 23,
+          "symWidth": 17.50252525252525,
+          "text": "\" ESPECIALLY WITH  SOMEONE LIKE  YOU . \"",
+          "translation": "\" خصوصًا مع شخص مثلك. \"",
+          "width": 225,
+          "x": 83,
+          "y": 1733
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "005__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 21.5,
+          "symWidth": 17.625,
+          "text": "\" SOMEONE LIKE  ME ? \"",
+          "translation": "\"أحدٌ مثلي؟\"",
+          "width": 160,
+          "x": 456,
+          "y": 68
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 23.5,
+          "symWidth": 16.6625,
+          "text": "\" YES .  A  TRUE MASTER , \"",
+          "translation": "\"نعم. سيدٌ حقيقي،\"",
+          "width": 184,
+          "x": 258,
+          "y": 687
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 28,
+          "symWidth": 21.72727272727273,
+          "text": "CAUTOON  NETO",
+          "translation": "",
+          "width": 159,
+          "x": 541,
+          "y": 1563
+        },
+        {
+          "angle": 0,
+          "height": 18,
+          "symHeight": 15,
+          "symWidth": 12.90909090909091,
+          "text": "RESE  SCAN.CO",
+          "translation": "",
+          "width": 133,
+          "x": 43,
+          "y": 1572
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 26.5,
+          "symWidth": 19.81313131313131,
+          "text": "\" AND  A  HERO OF  THIS  AGE . \"",
+          "translation": "\"وبطلُ هذا العصر.\"",
+          "width": 225,
+          "x": 243,
+          "y": 1651
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 20.25,
+          "symWidth": 14.19768170426065,
+          "text": "\" EVEN  AS  A  MERE FORMAL  FIGURE  OF  SPEECH , THAT'S  FLATTERING  TO  THE POINT  OF  DISCOMFORT . \"",
+          "translation": "\"ولو بدلالة لفظيةٍ فارغة، فهذا مدحٌ يزعجني حتى الألم.\"",
+          "width": 318,
+          "x": 196,
+          "y": 2348
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 13.41666666666667,
+          "text": "\" SURELY  NOT . \"",
+          "translation": "« لا أظن ذلك. »",
+          "width": 160,
+          "x": 500,
+          "y": 671
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 22.5,
+          "symWidth": 18.93465909090909,
+          "text": "\" HAVE  YOU FORGOTTEN ?  I KNOW  WHO  YOU ARE . \"",
+          "translation": "« هل نَسيتَ؟ أعلم من أنت. »",
+          "width": 235,
+          "x": 80,
+          "y": 1250
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "006__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 20.675,
+          "symWidth": 16.31580999066293,
+          "text": "REMEMBER \" I VERY CLEARLY HOW SHIN SEUNG AND THE SWORD SAINT TREATED YOU , \" \" AND HOW THE IRON - BLOODED DEATH KING AND MY GRANDFATHER SPOKE OF YOU . \"",
+          "translation": "أذكرُ تمامًا كيف عاملك شين سونغ وسيد السيف، وكيف تحدث عنك الملك القاسي وجدي.",
+          "width": 318,
+          "x": 258,
+          "y": 52
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 20,
+          "symWidth": 16.13008335976602,
+          "text": "\" I  EVEN SAW WITH  MY  OWN EYES THROUGH GRANDFATHER'S  TWELVE CRIMSON  ORCHID  LEAVES  AND HEAVENLY  FRAGRANCE NEEDLES . \" HOW  YOU  BROKE",
+          "translation": "رأيتُ بعينيّ من خلال الأوراق القرمزية الاثنتي عشرة للعنبية العظيمة وإبر العطر السماوية كيف حطمتَ...",
+          "width": 354,
+          "x": 73,
+          "y": 754
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.75,
+          "symWidth": 18.03342490842491,
+          "text": "\" AND  YET  YOU STILL  THINK  THESE ARE  JUST  POLITE WORDS ? \"",
+          "translation": "ومع ذلك، هل زَعمتَ أن هذه الكلمات مجرَّد مجاملات؟",
+          "width": 268,
+          "x": 361,
+          "y": 1605
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 22,
+          "symWidth": 18.25034722222222,
+          "text": "\" I  ALSO  KNOW VERY  WELL  WHAT  YOU  DID ON  THE  DAY  THE  MURIM ALLIANCE  FELL . \"",
+          "translation": "وأعرفُ جيدًا ما فعلته يوم سقوط تحالف موريم.",
+          "width": 377,
+          "x": 165,
+          "y": 2325
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 20.17777777777778,
+          "symWidth": 14.47777777777778,
+          "text": "\" IN  FACT ,  THERE  IS PROBABLY  NO  ONE  WHO KNOWS  YOU  BETTER THAN  I  DO . \"",
+          "translation": "لاحقًا، لا أظن أن ثمة من يعرفك أعمق مني.",
+          "width": 278,
+          "x": 62,
+          "y": 812
+        },
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 21.5,
+          "symWidth": 17,
+          "text": "\" THAT  IS  WHY I  SAY  THIS . \"",
+          "translation": "ولهذا السبب أقول هذا الكلام.",
+          "width": 191,
+          "x": 418,
+          "y": 1996
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "007__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 58,
+          "symHeight": 25.14285714285714,
+          "symWidth": 18.07142857142857,
+          "text": "\" ...  IS  THAT SO ? \"",
+          "translation": "... هل هذا حقًا؟",
+          "width": 157,
+          "x": 94,
+          "y": 110
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 13.16666666666667,
+          "text": "...  NO .",
+          "translation": "... كلا.",
+          "width": 81,
+          "x": 477,
+          "y": 929
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21,
+          "symWidth": 16.03712121212121,
+          "text": "THE  TRUE  HERO IS NOT ME ...",
+          "translation": "البطل الحقيقي لستُ أنا...",
+          "width": 224,
+          "x": 246,
+          "y": 1611
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__001.jpg": {
+      "blocks": [],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "008__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 22.26086956521739,
+          "text": "그림 · 박성우  각색 ·  제행 무상  원작  ·  언 라이팅  최현우",
+          "translation": "رسم · بارك سونغ وو مقتبس · جي هينغ موسانغ أصل القصة · أون لايتينغ تشوي هيون وو",
+          "width": 590,
+          "x": 60,
+          "y": 1550
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 20,
+          "text": "CHAPTER  201",
+          "translation": "الفصل 201",
+          "width": 230,
+          "x": 239,
+          "y": 1745
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 50.5,
+          "symWidth": 64.5,
+          "text": "OI",
+          "translation": "هيّا",
+          "width": 71,
+          "x": 251,
+          "y": 2077
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "009__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 19.75,
+          "symWidth": 15.16495098039216,
+          "text": "\" LET US MOVE ON TO THE MAIN TOPIC . MY PROPOSAL IS VERY SIMPLE . \"",
+          "translation": "دعنا ننتقل إلى جوهر الموضوع. اقتراحي بسيط للغاية.",
+          "width": 297,
+          "x": 70,
+          "y": 315
+        },
+        {
+          "angle": 0,
+          "height": 95,
+          "symHeight": 24.47222222222222,
+          "symWidth": 18.64912280701754,
+          "text": "\" IF  YOU  GIVE  ME WHAT  I  WANT ,  I  WILL  GIVE YOU  WHAT  YOU  WANT . \"",
+          "translation": "إن منحتني ما أريد، سأهبك ما تريد.",
+          "width": 388,
+          "x": 259,
+          "y": 1305
+        },
+        {
+          "angle": 0,
+          "height": 92,
+          "symHeight": 23.33333333333333,
+          "symWidth": 18.9,
+          "text": "\" DO  YOU  KNOW WHAT  IT  IS  THAT  I WANT ? \"",
+          "translation": "هل تعرف ما الذي أريده بالضبط؟",
+          "width": 264,
+          "x": 72,
+          "y": 2023
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 130,
+          "symHeight": 19.6,
+          "symWidth": 15.29599587203302,
+          "text": "\" NO ,  I  DON'T BUT  I  AM  CERTAIN  OF THIS :  WHATEVER  IT  IS  YOU WANT ,  IT  IS  SOMETHING  I AM  ABLE  TO  GIVE  YOU . \"",
+          "translation": "«لا، لست متأكدًا، ولكنني أعلم يقينًا هذا: مهما كان ما تريد، فهو أمر أستطيع منحه لك.»",
+          "width": 330,
+          "x": 319,
+          "y": 914
+        },
+        {
+          "angle": 0,
+          "height": 15,
+          "symHeight": 12,
+          "symWidth": 12.33333333333333,
+          "text": "UTOON  NETY",
+          "translation": "",
+          "width": 118,
+          "x": 585,
+          "y": 1576
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 21,
+          "symWidth": 16.92781385281385,
+          "text": "\" OTHERWISE , YOU  WOULD  HAVE  HAD NO  REASON  TO  COME ALL  THE  WAY  HERE . \"",
+          "translation": "«وإلا، لما كان لك سبب لأن تأتي حتى هنا.»",
+          "width": 285,
+          "x": 210,
+          "y": 1854
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "010__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 13.23076923076923,
+          "text": "\" THAT  IS  TRUE . \"",
+          "translation": "«هذا صحيح.»",
+          "width": 186,
+          "x": 163,
+          "y": 34
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 22.2,
+          "symWidth": 18.03376262626263,
+          "text": "\" BUT  WHAT  ONE CAN  DO  AND  WHAT ONE  ACTUALLY  DOES ARE  VERY  DIFFERENT MATTERS . \"",
+          "translation": "«لكن ما يُمكن للمرء أن يفعله وما يفعله فعليًا أمران مختلفان جدًا.»",
+          "width": 310,
+          "x": 244,
+          "y": 156
+        },
+        {
+          "angle": 0,
+          "height": 182,
+          "symHeight": 22.6,
+          "symWidth": 18.42246031746032,
+          "text": "\" JUST AS KNOWS WHAT  IS  RIGHT ,  BUT VERY  FEW  ACTUALLY DO  WHAT  IS RIGHT . \" EVERYONE",
+          "translation": "«كذلك المعرفة بالصواب، وأما الفعل به فقلة من الناس تصنعه.»",
+          "width": 300,
+          "x": 338,
+          "y": 1066
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 22.8,
+          "symWidth": 16.7991341991342,
+          "text": "\" IN  OTHER  WORDS , YOU  MEAN  THAT  WHILE  IT  MAY BE  POSSIBLE  IN  THEORY ,  YOU HAVE  NO  INTENTION  OF DOING  IT . \"",
+          "translation": "«بمعنى آخر، تقصد أنه بالرغم من إمكانية الأمر نظريًا، إلا أنك لا تنوي تنفيذه.»",
+          "width": 421,
+          "x": 253,
+          "y": 1826
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 20,
+          "symWidth": 12.46153846153846,
+          "text": "\" MOST  LIKELY . \"",
+          "translation": "«على الأرجح.»",
+          "width": 150,
+          "x": 63,
+          "y": 176
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 26,
+          "symWidth": 20.22222222222222,
+          "text": "\" HEHE ,  YOU SPEAK  AS  IF  YOU KNOW  ME  BETTER THAN  I  KNOW MYSELF . \"",
+          "translation": "«هاها، تتحدث كما لو أنك تعرفني أفضل مما أعرف نفسي.»",
+          "width": 292,
+          "x": 202,
+          "y": 758
+        },
+        {
+          "angle": 0,
+          "height": 23,
+          "symHeight": 22,
+          "symWidth": 15.33333333333333,
+          "text": "\" I  DO  NOT . \"",
+          "translation": "«لست كذلك.»",
+          "width": 158,
+          "x": 207,
+          "y": 2197
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 22.5,
+          "symWidth": 17.47105209605209,
+          "text": "\" HOWEVER ,  EVEN IF  BRANCHES  EXTEND  IN DIFFERENT  DIRECTIONS , IF  THEY  ARE  ON  THE SAME  TREE ,  THEY  ARE ONE  AT  THE  ROOT . \"",
+          "translation": "«مع ذلك، وإن تفرعت الأغصان في جهات متعددة، فإنها تتحد عند الجذع ذاته.»",
+          "width": 347,
+          "x": 281,
+          "y": 2322
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "011__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 94,
+          "symHeight": 24,
+          "symWidth": 19.41758241758242,
+          "text": "\" A  VAGUE  SAYING , BUT  I  UNDERSTAND YOUR  MEANING . \"",
+          "translation": "«قول مجمل، ولكنني أدرك مقصدك.»",
+          "width": 303,
+          "x": 140,
+          "y": 624
+        },
+        {
+          "angle": 0,
+          "height": 119,
+          "symHeight": 22.5,
+          "symWidth": 17.46085858585858,
+          "text": "\" IN  SHORT , YOU  WANT  ME  TO STAND  ON  YOUR SIDE . \"",
+          "translation": "«باختصار، تريدني أن أقف في جانبك.»",
+          "width": 250,
+          "x": 316,
+          "y": 820
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 21,
+          "symWidth": 16.09797008547008,
+          "text": "\" I  AM  SAYING  WE SHOULD  BE  THE  SAME TREE ,  EVEN  IF  WE GROW  IN DIFFERENT DIRECTIONS . \"",
+          "translation": "«أقول إنه ينبغي أن نكون في ذات الشجرة، حتى وإن نما كل منا في اتجاه مختلف.»",
+          "width": 289,
+          "x": 209,
+          "y": 1487
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 147,
+          "symHeight": 22.18965517241379,
+          "symWidth": 15.1244644723093,
+          "text": "\" I  LIKE  THAT . WHILE  WE'RE  AT  IT ,  WHY NOT  BE  INTERTWINED  LIKE YEONRIJI - TWO  TREES  GROWN TOGETHER  AS  ONE ? \"",
+          "translation": "« أحب ذلك. وبما أننا في الأمر، لما لا نكون كيانًا متشابكًا كـ (يونريجي) - شجرتان نمتا معًا كشجرة واحدة؟ »",
+          "width": 369,
+          "x": 54,
+          "y": 359
+        },
+        {
+          "angle": 0,
+          "height": 161,
+          "symHeight": 20.16666666666667,
+          "symWidth": 15.34030426307314,
+          "text": "\" YOU  AS  THE PLENIPOTENTIARY  ENVOY , AND  I  AS  THE  TAEPYEONG ALLIANCE'S  CHIEF  EXTERNAL STRATEGIST ,  TOGETHER AS  ONE . \"",
+          "translation": "« أنتَ كمبعوثٍ مفوض، وأنا كاستراتيجيّ رئيسي خارجي في تحالف تايبِيُونغ، متحدان ككلّ واحد. »",
+          "width": 355,
+          "x": 310,
+          "y": 1292
+        },
+        {
+          "angle": 0,
+          "height": 149,
+          "symHeight": 21.995,
+          "symWidth": 19.26356060606061,
+          "text": "NOT ALREADY  HAVE SOMEONE  ELSE  IN YOUR  HEART ,  MY LADY ? \" \" DO  YOU",
+          "translation": "« ألستِ تملكين في قلبك بالفعل شخصًا آخر، سيدتي؟ »",
+          "width": 270,
+          "x": 287,
+          "y": 2019
+        },
+        {
+          "angle": 0,
+          "height": 67,
+          "symHeight": 19.66666666666667,
+          "symWidth": 23,
+          "text": "000",
+          "translation": "",
+          "width": 24,
+          "x": 145,
+          "y": 2363
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "012__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 22.4,
+          "symWidth": 16.12283846872082,
+          "text": "\" PERHAPS  YOU'VE FORGOTTEN ,  BUT  I  WAS ON  HERO  NAM  GOONG - JUN'S INVESTIGATIVE  TEAM WITH  YOU . \"",
+          "translation": "« لعلّك نسيتِ، لكني كنتُ معك في فريق التحقيق التابع للبطل نام غونغ-جون. »",
+          "width": 367,
+          "x": 64,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 19.75,
+          "symWidth": 18.24345238095238,
+          "text": "\" I  WATCHED  THE TWO  OF  YOU  FROM VERY  CLOSE  BY  FOR SEVERAL  MONTHS . \"",
+          "translation": "« راقبتكما عن كثب لعدة شهور. »",
+          "width": 296,
+          "x": 354,
+          "y": 1875
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 17.83333333333333,
+          "text": "\" AND ? \"",
+          "translation": "« وماذا في ذلك؟ »",
+          "width": 99,
+          "x": 79,
+          "y": 72
+        },
+        {
+          "angle": 0,
+          "height": 154,
+          "symHeight": 23.02739726027397,
+          "symWidth": 19.27397260273973,
+          "text": "\" JUST  BECAUSE SOMEONE  IS  IN  MY HEART  DOESN'T  MEAN  I CANNOT  BECOME  ONE WITH  ANOTHER  MAN . \"",
+          "translation": "« أنّ وجود شخص في قلبي لا يمنعني من أن أكون كيانًا واحدًا مع رجل آخر. »",
+          "width": 364,
+          "x": 285,
+          "y": 903
+        },
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 14.23076923076923,
+          "text": "\" THAT  IS  TRUE . \"",
+          "translation": "« هذا صحيح. »",
+          "width": 184,
+          "x": 169,
+          "y": 1629
+        },
+        {
+          "angle": 0,
+          "height": 113,
+          "symHeight": 20.87878787878788,
+          "symWidth": 16.34721600238842,
+          "text": "\" WHAT  WE CARRY  IN  OUR  HEARTS RARELY  BECOMES REALITY ... \"",
+          "translation": "« ما نحمله في صدورنا قلما يصبح حقيقة... »",
+          "width": 286,
+          "x": 253,
+          "y": 1741
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "013__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 46,
+          "symHeight": 17.55555555555556,
+          "symWidth": 13.77777777777778,
+          "text": "\" BECAUSE  REALITY IS  WHAT  IT  IS . \"",
+          "translation": "« لأن الواقع هو ما هو عليه. »",
+          "width": 219,
+          "x": 423,
+          "y": 96
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 22.38983050847458,
+          "symWidth": 17.03389830508475,
+          "text": "\" ...  MASTER  SHIN SEUNG  RAISED  THE MURIM  ALLIANCE  IN THE  HOPE  OF PEACE , \"",
+          "translation": "«... لقد رفع المعلم شين سيونغ تحالف موريم على أمل السلام، »",
+          "width": 273,
+          "x": 222,
+          "y": 737
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 16.60550458715596,
+          "symWidth": 12.98165137614679,
+          "text": "\" YET  IN  THE  END , THE  MURIM  ALLIANCE  FELL AND  THE  MARTIAL  WORLD  WAS REORGANIZED  INTO  THE  HERO ALLIANCE  AND  THE  TAEPYEONG ALLIANCE . \"",
+          "translation": "« لكن في النهاية، سقط تحالف موريم وأعيد تنظيم العالم القتالي إلى تحالف الأبطال وتحالف تايبِيُونغ. »",
+          "width": 326,
+          "x": 320,
+          "y": 1684
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 20.58333333333333,
+          "symWidth": 14.14722222222222,
+          "text": "\" AND THAT IS EXACTLY AS THE BLOOD PRINCE MOON WANG - NO , THE DIVINE CELESTIAL- INTENDED . \"",
+          "translation": "« وهذا تمامًا ما قصده الأمير الدموي مون وانغ - لا، السماوي الإلهي. »",
+          "width": 313,
+          "x": 197,
+          "y": 2392
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 80,
+          "symHeight": 20,
+          "symWidth": 31.66666666666667,
+          "text": "000",
+          "translation": "٠٠٠",
+          "width": 35,
+          "x": 388,
+          "y": 276
+        },
+        {
+          "angle": 0,
+          "height": 56,
+          "symHeight": 23,
+          "symWidth": 19.67460317460318,
+          "text": "\" WHAT  DO YOU  MEAN ? \"",
+          "translation": "ماذا تعني بذلك؟",
+          "width": 181,
+          "x": 457,
+          "y": 716
+        },
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 19.90333333333333,
+          "symWidth": 16.06975155279503,
+          "text": "\" TO  THE  IRON - BLOODED  DEATH KING ,  MOON  WANG  OFFERED  THE POSITION  OF  MURIM  ALLIANCE  LORD , AND  TO  THE  POISON  IMMORTAL ,  HE OFFERED  THE  TITLE  OF  WORLD'S GREATEST  SECT . \"",
+          "translation": "لملك الموت الدموي، مون وانغ، عُرض منصب زعيم تحالف موريم، وللخلود السام، عُرض لقب أعظم طائفة في العالم.",
+          "width": 465,
+          "x": 127,
+          "y": 1377
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "014__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 21.12121212121212,
+          "symWidth": 16.54640151515152,
+          "text": "\" AS  A  RESULT , THE  MURIM  ALLIANCE COLLAPSED ,  AND  YEOM JUNG - BU  BECAME  THE HERO  ALLIANCE'S LEADER . \"",
+          "translation": "ونتيجة لذلك، انهار تحالف موريم، وأصبح يوم جونغ-بو زعيم تحالف الأبطال.",
+          "width": 324,
+          "x": 197,
+          "y": 783
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 22.79411764705883,
+          "symWidth": 17.74064171122995,
+          "text": "\" BUT  THERE  IS ONE  STRANGE POINT . \"",
+          "translation": "ولكن هناك نقطة غريبة.",
+          "width": 222,
+          "x": 74,
+          "y": 1523
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 14,
+          "symWidth": 11.625,
+          "text": "UTOON  NET",
+          "translation": "",
+          "width": 99,
+          "x": 585,
+          "y": 1702
+        },
+        {
+          "angle": 0,
+          "height": 75,
+          "symHeight": 19.5,
+          "symWidth": 14.95609318996416,
+          "text": "\" THE  POISON  IMMORTAL CLEARLY  REFUSED  MOON WANG'S  OFFER . \"",
+          "translation": "رفض الخلود السام عرض مون وانغ بوضوح.",
+          "width": 295,
+          "x": 107,
+          "y": 2390
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 164,
+          "symHeight": 19.94230769230769,
+          "symWidth": 16.38780364372469,
+          "text": "\" AND  YET ,  UNDER THE  NAME  OF  THE TAEPYEONG  ALLIANCE ,  THE TANG  CLAN  NOW  STANDS  AS THE  ' WORLD'S  GREATEST SECT .",
+          "translation": "ورغم ذلك، تحت اسم تحالف تايبينغ، يقف الآن عشيرة تانغ كأعظم طائفة في العالم.",
+          "width": 368,
+          "x": 249,
+          "y": 69
+        },
+        {
+          "angle": 0,
+          "height": 51,
+          "symHeight": 20.57894736842105,
+          "symWidth": 14.52631578947368,
+          "text": "\" SO  YOU'RE SAYING ... \"",
+          "translation": "هل تقول إذن...",
+          "width": 150,
+          "x": 60,
+          "y": 787
+        },
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 21.69545454545455,
+          "symWidth": 16.36515151515152,
+          "text": "\" THAT  JUST  AS THE  BLOOD  PRINCE  MOON WANG  STANDS  BEHIND  THE  HERO ALLIANCE ,  HE  ALSO  STANDS BEHIND  THE  TAEPYEONG ALLIANCE ? \"",
+          "translation": "تمامًا كما يقف الأمير الدموي مون وانغ خلف تحالف الأبطال، يقف أيضًا خلف تحالف تايبينغ؟",
+          "width": 434,
+          "x": 225,
+          "y": 1590
+        },
+        {
+          "angle": 0,
+          "height": 84,
+          "symHeight": 21.13725490196078,
+          "symWidth": 17.38599439775911,
+          "text": "\" THAT  IS  NOT EXACTLY WHAT  I MEANT . \"",
+          "translation": "ليس بالضبط ما كنت أقصده.",
+          "width": 243,
+          "x": 170,
+          "y": 2357
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "015__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 98,
+          "symHeight": 68.25,
+          "symWidth": 61,
+          "text": "절레  이야",
+          "translation": "رفْص",
+          "width": 205,
+          "x": 262,
+          "y": 103
+        },
+        {
+          "angle": 0,
+          "height": 81,
+          "symHeight": 73.5,
+          "symWidth": 71.5,
+          "text": "절레",
+          "translation": "رفْص",
+          "width": 118,
+          "x": 543,
+          "y": 284
+        },
+        {
+          "angle": 0,
+          "height": 178,
+          "symHeight": 18.75,
+          "symWidth": 14.20556043389693,
+          "text": "\" IF  YOU  CONSIDER THE  POWER  STRUGGLES THAT OCCURRED  WITHIN  THE  MURIM  ALLIANCE , YOU  COULD  SAY  THE  FOUNDING  OF  THE TAEPYEONG  ALLIANCE  WAS  BOUND  TO HAPPEN  SOONER  OR LATER  ANYWAY . \"",
+          "translation": "\"إذا تأملت الصراعات على السلطة التي عصفت بالتحالف الموريمي، يمكنك القول إن تأسيس تحالف تايبيونغ لم يكن ليُتَجنَّب، عاجلاً أم آجلاً.\"",
+          "width": 433,
+          "x": 220,
+          "y": 726
+        },
+        {
+          "angle": 0,
+          "height": 150,
+          "symHeight": 21.58333333333333,
+          "symWidth": 17.87614468864469,
+          "text": "\" YES ,  OF COURSE  THOUGH  IT COULD  NOT  HAVE HAPPENED  WITHOUT THE  TANG  CLAN . \"",
+          "translation": "\"نعم، بالطبع، ولكن هذا لم يكن ليتم لولا عشيرة تانغ.\"",
+          "width": 292,
+          "x": 119,
+          "y": 1468
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 21.25,
+          "symWidth": 15.04281845919146,
+          "text": "\" AS  YOU  SAY , WITHOUT  OUR  TANG  CLAN , WHICH  DESERVES  TO  BE  CALLED THE  ' WORLD'S  GREATEST  SECT , ' IT  WOULD  HAVE  BEEN IMPOSSIBLE . \"",
+          "translation": "\"كما قلت، بدون عشيرتنا تانغ التي تستحق لقب \"أعظم طائفة في العالم\"، ما كان لذلك أن يتحقق.\"",
+          "width": 394,
+          "x": 242,
+          "y": 1723
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 27,
+          "symWidth": 17.44444444444444,
+          "text": "\" INDEED . \"",
+          "translation": "\"حقاً.\"",
+          "width": 160,
+          "x": 482,
+          "y": 89
+        },
+        {
+          "angle": 0,
+          "height": 171,
+          "symHeight": 21.10588235294118,
+          "symWidth": 15.26288453159041,
+          "text": "\" BUT  WHEN  I LOOK  AT  YOUR  ACTIONS ,  MY  LADY , THE  TANG  CLAN'S  MOVES  DURING  THE HANGZHOU  MASSACRE ,  AND  THE  FACT THAT  MOON  WANG  SOUGHT  OUT  THE POISON  IMMORTAL ... \"",
+          "translation": "\"لكن حينما أنظر إلى أفعالك، سيدتي، إلى تحركات عشيرة تانغ خلال مذبحة هانغتشو، وإلى أن مون وانغ لجأ إلى الخالد السام...\"",
+          "width": 449,
+          "x": 47,
+          "y": 710
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 19.58333333333334,
+          "symWidth": 14.68527864044168,
+          "text": "\" I  CANNOT  HELP BUT  WONDER  WHETHER SOME  FORM  OF  UNDERSTANDING HAD  ALREADY  BEEN  REACHED BETWEEN  MOON  WANG  AND THETANG CLAN . \"",
+          "translation": "\"لا يسعني إلا أن أتساءل إن كان ثمة تفاهم قد وُقع سلفاً بين مون وانغ وعشيرة تانغ.\"",
+          "width": 408,
+          "x": 73,
+          "y": 1707
+        },
+        {
+          "angle": 0,
+          "height": 148,
+          "symHeight": 21.83333333333334,
+          "symWidth": 16.54533075856605,
+          "text": "\" FOR  EXAMPLE , ABOUT  ESTABLISHING THE  TAEPYEONG ALLIANCE AFTER  THE  MURIM  ALLIANCE , AND  SO  ON . \"",
+          "translation": "\"على سبيل المثال، حول تأسيس تحالف تايبيونغ بعد تحالف الموريم، وما إلى ذلك.\"",
+          "width": 367,
+          "x": 255,
+          "y": 1995
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "016__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 170,
+          "symHeight": 21.10232558139535,
+          "symWidth": 15.63412620699035,
+          "text": "\" HEHE ,  I'M  IMPRESSED YOU  CAN  EVEN  SEE  IT  THAT WAY ,  BUT  IN  THE  END  THAT  IS STILL  A  BIASED  CONCLUSION BASED  ON  CONJECTURE  AND ASSUMPTION . \"",
+          "translation": "\"ههه، يعجبني أنك تراها هكذا، لكن في النهاية هذا استنتاج متحيز قائم على الظن والافتراض.\"",
+          "width": 363,
+          "x": 79,
+          "y": 230
+        },
+        {
+          "angle": 0,
+          "height": 91,
+          "symHeight": 88.75,
+          "symWidth": 57.25,
+          "text": "TEZO",
+          "translation": "تيزو",
+          "width": 133,
+          "x": 75,
+          "y": 599
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 67.75,
+          "symWidth": 50.25,
+          "text": "TEZI",
+          "translation": "تيزي",
+          "width": 128,
+          "x": 483,
+          "y": 629
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 20,
+          "symWidth": 15.32152777777778,
+          "text": "\" AND  EVEN  IF IT  WERE  TRUE ,  WHAT DIFFERENCE WOULD IT  MAKE ? \"",
+          "translation": "\"وحتى لو كان ذلك صحيحاً، فما الفرق إذن؟\"",
+          "width": 253,
+          "x": 371,
+          "y": 1696
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 100,
+          "symHeight": 19.75,
+          "symWidth": 15.46421568627451,
+          "text": "\" RIGHT NOW , THE WORLD ALREADY BELONGS TO THE TAEPYEONG ALLIANCE AND THE HERO ALLIANCE . \"",
+          "translation": "« في هذه اللحظة، العالم ملك لتحالف تايبيونغ وتحالف الأبطال.»",
+          "width": 278,
+          "x": 273,
+          "y": 16
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 18.25,
+          "symWidth": 12.08219696969697,
+          "text": "\" THAT  IS  CORRECT . RIGHT  NOW  IT  IS  THE  WORLD OF  THE  TAEPYEONG  ALLIANCE AND  THE  HERO  ALLIANCE . \"",
+          "translation": "« صحيحٌ، الآن هو عالم تحالف تايبيونغ وتحالف الأبطال.»",
+          "width": 281,
+          "x": 88,
+          "y": 667
+        },
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 17,
+          "symWidth": 11.66666666666667,
+          "text": "\" WHICH  IS  WHY ... \"",
+          "translation": "« ولهذا السبب...»",
+          "width": 168,
+          "x": 447,
+          "y": 1532
+        },
+        {
+          "angle": 0,
+          "height": 106,
+          "symHeight": 27.33333333333333,
+          "symWidth": 18.46759259259259,
+          "text": "\" I  INTEND TO  CHANGE  IT A  LITTLE . \"",
+          "translation": "« أنوي أن أغيره قليلاً.»",
+          "width": 239,
+          "x": 237,
+          "y": 2112
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "017__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 55,
+          "symHeight": 22.5,
+          "symWidth": 17.10795454545455,
+          "text": "\" ...  WHAT  DID YOU  SAY ? \"",
+          "translation": "«... ماذا قلت؟»",
+          "width": 178,
+          "x": 74,
+          "y": 1325
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 34,
+          "symWidth": 21.77211538461539,
+          "text": "\" DO  YOU  REALIZE WHAT  YOU'RE  SAYING RIGHT  NOW ? \"",
+          "translation": "« هل تدرك ما تقول الآن؟»",
+          "width": 298,
+          "x": 77,
+          "y": 198
+        },
+        {
+          "angle": 0,
+          "height": 117,
+          "symHeight": 21.75,
+          "symWidth": 16.47954545454546,
+          "text": "\" I  WILL  CHANGE  THE CURRENT  MARTIAL  WORLD THAT  THE  DIVINE  CELESTIAL HAS  CREATED . \"",
+          "translation": "« سأغير عالم الفنون القتالية الذي خلقه الإله السماوي.»",
+          "width": 374,
+          "x": 171,
+          "y": 1135
+        },
+        {
+          "angle": 0,
+          "height": 172,
+          "symHeight": 21.83333333333333,
+          "symWidth": 16.00021632956415,
+          "text": "\" WHAT  HE  HAS  BOUND TOGETHER ,  I  WILL  CUT  APART ; WHAT  HE  HAS  GATHERED ,  I  WILL SCATTER .  WHEN  THAT  HAPPENS , THE  DIVINE  CELESTIAL  WILL  HAVE NO  CHOICE  BUT  TO  APPEAR . \"",
+          "translation": "« ما ربطه سأقطعه، وما جمعه سأبدده؛ وعندما يحدث ذلك، لن يكون أمام الإله السماوي من خيار سوى الظهور.»",
+          "width": 423,
+          "x": 147,
+          "y": 2260
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "018__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 131,
+          "symHeight": 19.8,
+          "symWidth": 16.87549235078647,
+          "text": "\" CAN  YOU  HANDLE HWANGCHEONDAE ,  THE GROUP  THAT  SEALED THE  NAMGOONG  CLAN'S GATES ? \"",
+          "translation": "« هل تستطيع مجابهة هوانغشوندِ، الجماعة التي أغلقت أبواب عشيرة نامغونغ؟»",
+          "width": 319,
+          "x": 85,
+          "y": 534
+        },
+        {
+          "angle": 0,
+          "height": 125,
+          "symHeight": 19,
+          "symWidth": 15.00108695652174,
+          "text": "\" CAN  YOU  DEFEAT  BLACK  SPEAR CAVALRY  AND  SHORT  BOW  CORPS , WHO  BURNED  DOWN  THE  GONGSUN CLAN  AND  DROVE  THE  BLACK  PATH SOCIETY  TO  ANNIHILATION ? \"",
+          "translation": "« هل تقدر على هزيمة فرسان الرمح الأسود وسرايا القوس القصير الذين أحرقوا عشيرة غونغسون وقادوا مجتمع الطريق الأسود إلى الهلاك؟»",
+          "width": 404,
+          "x": 212,
+          "y": 811
+        },
+        {
+          "angle": 0,
+          "height": 219,
+          "symHeight": 19.5625,
+          "symWidth": 15.24251375988992,
+          "text": "COURSE ,  IF \" OF YOU  MOBILIZE  A  HUNDRED THOUSAND  IMPERIAL  TROOPS ,  IT WOULD  NOT  BE  HARD  TO  DEAL  WITH THE  DARK  HEAVEN  EMPEROR ,  THE IRON - BLOODED  DEATH  KING ,  THE THREE  GRAND  ELDERS ,  AND  EVEN MOON  WANG  HIMSELF . \"",
+          "translation": "« بالطبع، إن جمعت مئة ألف من جنود الإمبراطورية، فلن يكون صعباً مواجهة إمبراطور السماء المظلم، ملك الموت ذو الدم الحديدي، الشيوخ الثلاثة العظماء، وحتى مونغ وانغ نفسه.»",
+          "width": 453,
+          "x": 213,
+          "y": 1759
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 24,
+          "symHeight": 24,
+          "symWidth": 16.35714285714286,
+          "text": "\" BUT  WHAT  THEN ? \"",
+          "translation": "«وماذا بعد ذلك؟»",
+          "width": 248,
+          "x": 116,
+          "y": 93
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 25.66666666666667,
+          "symWidth": 19.82456140350877,
+          "text": "\" WHAT  WILL  YOU DO  ABOUT  THE  HERO ALLIANCE ,  WHICH  FILLS THE  YANGTZE ? \"",
+          "translation": "«ماذا ستفعل حيال تحالف الأبطال الذي يغمر نهر اليانغتسي؟»",
+          "width": 357,
+          "x": 234,
+          "y": 230
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 13,
+          "symWidth": 11.875,
+          "text": "UTOON  NET",
+          "translation": "",
+          "width": 99,
+          "x": 585,
+          "y": 1000
+        },
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 24.41025641025641,
+          "symWidth": 19.54230769230769,
+          "text": "\" WHAT  ABOUT THE  WATER  BANDITS AND  THE  GREEN  FOREST BANDS ? \"",
+          "translation": "«وماذا عن قطاع الطرق على الماء وفرق الغابة الخضراء؟»",
+          "width": 383,
+          "x": 272,
+          "y": 1117
+        },
+        {
+          "angle": 0,
+          "height": 184,
+          "symHeight": 25.67009867009867,
+          "symWidth": 15.14157014157014,
+          "text": "\" WILL  YOU  MOBILIZE  THE IMPERIAL  ARMY  TO  BURN THEM  ALL  AS  WELL ?  THE  WHOLE REALM  WOULD  BE  IN  CHAOS , WOULDN'T  IT ? \"",
+          "translation": "«هل ستُعبئ الجيش الإمبراطوري لتحرقهم جميعًا؟ فسيعم الخراب أرجاء المملكة، أليس كذلك؟»",
+          "width": 287,
+          "x": 298,
+          "y": 1840
+        },
+        {
+          "angle": 0,
+          "height": 70,
+          "symHeight": 67,
+          "symWidth": 74,
+          "text": "YON",
+          "translation": "",
+          "width": 121,
+          "x": 401,
+          "y": 2430
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "019__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 19,
+          "symHeight": 19,
+          "symWidth": 12.07692307692308,
+          "text": "\" THAT  IS  TRUE . \"",
+          "translation": "«هذا صحيح.»",
+          "width": 158,
+          "x": 500,
+          "y": 303
+        },
+        {
+          "angle": 0,
+          "height": 108,
+          "symHeight": 20.46551724137931,
+          "symWidth": 16.70689655172414,
+          "text": "\" NO  MATTER  HOW GREAT  A  MASTER  YOU ARE ,  ALONE  YOU  CAN ACHIEVE  NOTHING . \"",
+          "translation": "«مهما بلغت من عظمة، فلن تنجز شيئًا بمفردك.»",
+          "width": 291,
+          "x": 126,
+          "y": 904
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 20.14583333333333,
+          "symWidth": 15.81576178451179,
+          "text": "\" THE  MARTIAL  WORLD  IS RULED  BY  POWER ,  AND THAT  POWER  COMES  NOT FROM  INDIVIDUALS  BUT FROM  FACTIONS . \"",
+          "translation": "«عالم الفنون القتالية يُحكم بالقوة، وهذه القوة لا تستمد من الأفراد، بل من الفصائل.»",
+          "width": 325,
+          "x": 265,
+          "y": 1164
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 20.5593220338983,
+          "symWidth": 15.57627118644068,
+          "text": "\" A  LONE  WANDERER ENDS  UP  AS  NOTHING  MORE THAN  AN  ECCENTRIC  OR  A MADMAN . \"",
+          "translation": "«المتجول منفردًا لا يكون سوى غريب الأطوار أو مجنون.»",
+          "width": 339,
+          "x": 335,
+          "y": 2082
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 22,
+          "symWidth": 16.27083333333334,
+          "text": "\" SO  JOIN  HANDS WITH  ME . \"",
+          "translation": "«فاتحد معي.»",
+          "width": 222,
+          "x": 248,
+          "y": 349
+        },
+        {
+          "angle": 0,
+          "height": 134,
+          "symHeight": 19.23391812865497,
+          "symWidth": 15.472334682861,
+          "text": "\" IF  YOU  ARE  WITH ME ,  YOU  WILL ,  WITHIN FIVE  YEARS ...  NO ,  THREE ,  BE ABLE  TO  BUILD  A  GREAT POWER . \"",
+          "translation": "«إن كنت معي، فخلال خمس سنوات... بل ثلاث فقط، ستبني قوة عظيمة.»",
+          "width": 377,
+          "x": 63,
+          "y": 544
+        },
+        {
+          "angle": 0,
+          "height": 177,
+          "symHeight": 22.14772727272727,
+          "symWidth": 17.94493006993007,
+          "text": "\" THEN  WHO  WOULD DARE  LAUGH  IF  YOU  SAID YOU  MEANT  TO  CHANGE  THE WORLD ?  NO - PEOPLE  WOULD GLADLY  BOW  THEIR  HEADS TO  YOUR  WILL . \"",
+          "translation": "«ومن يجرؤ على السخرية إن قلت إنك تعتزم تغيير العالم؟ لا، الناس ستنحني طوعًا أمام إرادتك.»",
+          "width": 400,
+          "x": 251,
+          "y": 1733
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "020__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 23.41176470588235,
+          "symWidth": 16.76470588235294,
+          "text": "\" THAT ,  I CANNOT  DO . \"",
+          "translation": "« ذلك، لا أقدر أن أفعله »",
+          "width": 189,
+          "x": 430,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 111,
+          "symHeight": 21.25,
+          "symWidth": 16.91269841269841,
+          "text": "\" ARE  YOU SAYING  YOU  CANNOT WAIT  EVEN THREE YEARS ? \"",
+          "translation": "« هل تقول إنك لا تطيق الانتظار حتى ثلاث سنوات؟ »",
+          "width": 282,
+          "x": 54,
+          "y": 63
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 63.15,
+          "symWidth": 42.25,
+          "text": "Tezzo 7320",
+          "translation": "",
+          "width": 322,
+          "x": 351,
+          "y": 424
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 21,
+          "symWidth": 15.7,
+          "text": "\" THAT  IS  NOT PATIENCE . \"",
+          "translation": "« تلك ليست صبرًا »",
+          "width": 186,
+          "x": 353,
+          "y": 826
+        },
+        {
+          "angle": 0,
+          "height": 78,
+          "symHeight": 20,
+          "symWidth": 15.55113122171946,
+          "text": "\" THAT  WOULD BE  NOTHING  MORE THAN  RUNNING  AWAY . \"",
+          "translation": "« ذاك لن يكون سوى هروب »",
+          "width": 267,
+          "x": 73,
+          "y": 1414
+        },
+        {
+          "angle": 0,
+          "height": 34,
+          "symHeight": 33,
+          "symWidth": 14,
+          "text": "...... !!",
+          "translation": "......!!",
+          "width": 103,
+          "x": 508,
+          "y": 2291
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 155,
+          "symHeight": 18.76954732510288,
+          "symWidth": 13.86949588477367,
+          "text": "\" IT  WOULD  ALSO MEAN  AGREEING HARMONY  WITH  THE  WORLD  THE DIVINE  CELESTIAL  HAS  BUILT  I  WILL NEVER  DO  THAT .  NOR  WILL TO  LIVE  IN I  EVER  STOP .",
+          "translation": "« وإن كان ذلك يعني الرضوخ للانسجام مع عالم الخالدين القديسين، فلن أفعل ذلك أبداً، ولن أرتضي العيش في كبح عزيمتي.»",
+          "width": 394,
+          "x": 79,
+          "y": 463
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 22.33333333333333,
+          "symWidth": 16.06810966810967,
+          "text": "IF  ANYTHING , I  WOULD  SAY  THIS  INSTEAD : CHOOSE  ME . \"",
+          "translation": "« بل أقول إن الخيار هو أن تختارني.»",
+          "width": 357,
+          "x": 258,
+          "y": 767
+        },
+        {
+          "angle": 0,
+          "height": 138,
+          "symHeight": 26.75,
+          "symWidth": 19.55398110661269,
+          "text": "\" THEN  I  WILL GLADLY  JOIN  HANDS WITH  YOU  AND  THE TAEPYEONG  ALLIANCE . \"",
+          "translation": "« حينها، سأُصافح يدك عن طيب خاطر، ومع تحالف تايبَيُونغ.»",
+          "width": 371,
+          "x": 176,
+          "y": 2056
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "021__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 20.5,
+          "symWidth": 14.93279914529915,
+          "text": "\" WHAT  A  SHAME .  I THOUGHT  PERHAPS  YOU  AND I  COULD  MAINTAIN  A  RATHER GOOD  RELATIONSHIP . \"",
+          "translation": "« يا للأسف، ظننتُ أننا قد نحافظ على علاقة طيبة إلى حدٍ ما.»",
+          "width": 325,
+          "x": 53,
+          "y": 1615
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 20,
+          "symWidth": 13.55769230769231,
+          "text": "\" THAT  POSSIBILITY IS  STILL  OPEN . \"",
+          "translation": "« ذلك الاحتمال ما زال مفتوحًا.»",
+          "width": 231,
+          "x": 424,
+          "y": 50
+        },
+        {
+          "angle": 0,
+          "height": 159,
+          "symHeight": 19.58730158730159,
+          "symWidth": 14.70563831593243,
+          "text": "\" YOU'RE  RIGHT .  RELATIONS BETWEEN  MEN  AND  WOMEN  ARE VERY  STRANGE ;  NO  MATTER HOW  HOSTILE  THEY  ARE ,  THEY CAN  BECOME  ALLIES  IN AN  INSTANT . \"",
+          "translation": "« أنت محق. العلاقات بين الرجل والمرأة غريبة؛ لا تقف العداوة حائلاً دون أن يصبحا حليفين في غمضة عين.»",
+          "width": 392,
+          "x": 137,
+          "y": 689
+        },
+        {
+          "angle": 0,
+          "height": 101,
+          "symHeight": 19,
+          "symWidth": 11.95044191919192,
+          "text": "\" IT'S  TRULY SOMETHING  I  CANNOT UNDERSTAND , ISN'T  IT ? \"",
+          "translation": "« حقاً أمر يعجز العقل عن استيعابه، أليس كذلك؟ »",
+          "width": 232,
+          "x": 72,
+          "y": 965
+        },
+        {
+          "angle": 0,
+          "height": 105,
+          "symHeight": 19.44444444444444,
+          "symWidth": 15.5959595959596,
+          "text": "\" UH ,  WELL ... THAT'S  NOT EXACTLY  WHAT I  MEANT ...",
+          "translation": "« آه، حسنًا... لم أقصد ذلك بالضبط...»",
+          "width": 206,
+          "x": 421,
+          "y": 1669
+        },
+        {
+          "angle": 0,
+          "height": 47,
+          "symHeight": 19,
+          "symWidth": 15.36666666666667,
+          "text": "\" THREE  DAYS FROM  NOW . \"",
+          "translation": "« بعد ثلاثة أيام من الآن.»",
+          "width": 148,
+          "x": 102,
+          "y": 2298
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "022__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 85,
+          "symHeight": 21.33333333333333,
+          "symWidth": 15.74603174603175,
+          "text": "\" THERE  WILL  BE ONE  LAST  PRIVATE BANQUET . \"",
+          "translation": "\" سيكون هناك مأدبة خاصة أخيرة. \"",
+          "width": 244,
+          "x": 139,
+          "y": 1079
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21.66666666666667,
+          "symWidth": 17.63852813852814,
+          "text": "\" UNTIL  THEN ,  YOU MAY  COME  FIND ME  ANYTIME . \"",
+          "translation": "\" حتى ذلك الحين، لك أن تأتي إليّ في أي وقت. \"",
+          "width": 241,
+          "x": 300,
+          "y": 1276
+        },
+        {
+          "angle": 0,
+          "height": 86,
+          "symHeight": 21.33333333333333,
+          "symWidth": 16.11574074074074,
+          "text": "\" BUT  ONCE  T HAT  BANQUET  IS OVER ... \"",
+          "translation": "\" ولكن حين تنقضي تلك المأدبة... \"",
+          "width": 231,
+          "x": 419,
+          "y": 2205
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 24.5,
+          "symWidth": 19.01953463203463,
+          "text": "\" I  WILL  NEVER AGAIN  BE  THE  ONE  TO EXTEND  MY  HAND TO  YOU . \"",
+          "translation": "\" لن أمد يدي إليك مرة أخرى أبداً. \"",
+          "width": 345,
+          "x": 183,
+          "y": 368
+        },
+        {
+          "angle": 0,
+          "height": 25,
+          "symHeight": 25,
+          "symWidth": 14.42857142857143,
+          "text": "\" ... THANK  YOU . \"",
+          "translation": "\"... شكراً لك. \"",
+          "width": 186,
+          "x": 66,
+          "y": 1523
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 13,
+          "symWidth": 11.25,
+          "text": "JTOON  NET",
+          "translation": "",
+          "width": 94,
+          "x": 588,
+          "y": 2214
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "023__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 49,
+          "symHeight": 19.5,
+          "symWidth": 14.11666666666667,
+          "text": "\" I  WILL  KEEP THAT  IN  MIND . \"",
+          "translation": "\" سأحتفظ بهذا في بالي. \"",
+          "width": 172,
+          "x": 371,
+          "y": 436
+        },
+        {
+          "angle": 0,
+          "height": 143,
+          "symHeight": 24.53763440860215,
+          "symWidth": 12.24250141482739,
+          "text": "WHILE  SICHUAN PROVINCE  WAS  BUSTLING WITH  LIFE  THANKS  TO  THE TAEPYEONG ALLIANCE ,",
+          "translation": "بينما كانت مقاطعة سيتشوان تعج بالحياة بفضل تحالف تابيونغ،",
+          "width": 273,
+          "x": 116,
+          "y": 2051
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 24.8,
+          "symWidth": 13.35418437397842,
+          "text": "ALONG  THE  LONG STRETCH  OF  THE  YANGTZE RIVER ,  THE  HERO  ALLIANCE'S BRANCH  TOURNAMENTS  WERE UNDERWAY .",
+          "translation": "على طول وادي نهر اليانغتسي، كانت بطولات الفروع لتحالف الأبطال تنعقد.",
+          "width": 319,
+          "x": 279,
+          "y": 2285
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 126,
+          "symHeight": 21,
+          "symWidth": 10.7020202020202,
+          "text": "YET  NOWHERE  ALONG THE  YANGTZE  WAS  THERE  ANY  LIVELY EXCITEMENT  ABOUT  THE  HERO ALLIANCE'S  TOURNAMENTS .",
+          "translation": "مع ذلك، لم يكن هناك أي حماس نحو بطولات تحالف الأبطال على طول اليانغتسي.",
+          "width": 323,
+          "x": 193,
+          "y": 1307
+        },
+        {
+          "angle": 0,
+          "height": 118,
+          "symHeight": 19.75,
+          "symWidth": 8.941398326572008,
+          "text": "BECAUSE  THE  HERO  ALLIANCE'S BRANCH  GATHERINGS  INEVITABLY  TURNED INTO  SCENES  OF  HORROR ,  FILLED  WITH PILLAGE  AND  MURDER ,",
+          "translation": "لأن اجتماعات فروع تحالف الأبطال لا محالة تتحول إلى مشاهد رعب، مليئة بالنهب والقتل،",
+          "width": 297,
+          "x": 58,
+          "y": 2009
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "024__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 37,
+          "symWidth": 19.55555555555556,
+          "text": "AND  ARSON .",
+          "translation": "والحرق العمد.",
+          "width": 204,
+          "x": 383,
+          "y": 447
+        },
+        {
+          "angle": 0,
+          "height": 169,
+          "symHeight": 28.99,
+          "symWidth": 13.90020186335404,
+          "text": "AMONG  THE TARGETS  WAS  JEONGGAJANG ,  A LONG - STANDING ,  PRESTIGIOUS SECT  NEAR  WUHAN .",
+          "translation": "وكان من بين الأهداف جيونجاجانغ، فرقة مرموقة ذات تاريخ طويل بالقرب من ووهان.",
+          "width": 328,
+          "x": 189,
+          "y": 1072
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 18.33333333333333,
+          "text": "\" HOLD  THEM !! \"",
+          "translation": "\" أمسكوا بهم!! \"",
+          "width": 166,
+          "x": 403,
+          "y": 1678
+        },
+        {
+          "angle": 0,
+          "height": 223,
+          "symHeight": 62,
+          "symWidth": 45.40625,
+          "text": "XHY ! \" GET  THE  HOUSEHOLD MEMBERS  TO  SAFETY , QUICKLY !! \"",
+          "translation": "إكس إتش واي! \" أسرعوا بإخلاء أعضاء العائلة للسلامة! \"",
+          "width": 619,
+          "x": 88,
+          "y": 1988
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 93,
+          "symHeight": 34.93103448275862,
+          "symWidth": 21.06896551724138,
+          "text": "\" GOOD !  KILL  THAT BASTARD  FIRST !! \"",
+          "translation": "حَسَناً! اقتلوا ذلك الوغد أولاً!!",
+          "width": 266,
+          "x": 149,
+          "y": 154
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 36,
+          "symWidth": 19.7,
+          "text": "\" UAAAGH !! \"",
+          "translation": "آآآغ!!",
+          "width": 167,
+          "x": 498,
+          "y": 421
+        },
+        {
+          "angle": 0,
+          "height": 193,
+          "symHeight": 104,
+          "symWidth": 109.5,
+          "text": "Wo",
+          "translation": "وو",
+          "width": 115,
+          "x": 311,
+          "y": 957
+        },
+        {
+          "angle": 0,
+          "height": 89,
+          "symHeight": 34.96551724137931,
+          "symWidth": 20.24137931034483,
+          "text": "\" YES !  KILL  THEM ! HAHAHAHAHAHA !! \"",
+          "translation": "نَعَم! اقتلوهم! هاهاهاهاها!!",
+          "width": 255,
+          "x": 379,
+          "y": 1677
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "025__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 140,
+          "symHeight": 20.64285714285714,
+          "symWidth": 14.65584415584416,
+          "text": "\" UM ,  SIR  TAEJU . DOING  THIS  TO  JEONGGAJANG COULD  BE  A  BIT  PROBLEMATIC , DON'T  YOU  THINK ?  IF  THE ALLIANCE  QUESTIONS  US ... \"",
+          "translation": "أم، سيدي تايجو، إن فعل هذا لجونغا جانغ قد يثير بعض المشاكل، ألا تعتقد؟ إن شكّ التحالف بنا...",
+          "width": 385,
+          "x": 111,
+          "y": 416
+        },
+        {
+          "angle": 0,
+          "height": 128,
+          "symHeight": 30.92307692307692,
+          "symWidth": 20.23076923076923,
+          "text": "\" NOW ,  NOW ,  NO NEED  TO  WORRY  ABOUT SUCH  THINGS . \"",
+          "translation": "لا عليك الآن، لا حاجة للقلق بشأن أمور كهذه.",
+          "width": 311,
+          "x": 332,
+          "y": 1309
+        },
+        {
+          "angle": 0,
+          "height": 194,
+          "symHeight": 20.4,
+          "symWidth": 16.27741935483871,
+          "text": "\" WE  MERELY  HEARD  THAT JEONGGAJANG  WAS  DISSATISFIED WITH  THE  ALLIANCE'S  POLICIES ,  SO THE  CHIVALROUS  HEROES  OF  THE YANGTZE  STEPPED  FORWARD  OF THEIR  OWN  ACCORD .  WHAT'S WRONG  WITH  THAT ? \"",
+          "translation": "سمعنا فقط أن جونغا جانغ مستاء من سياسات التحالف، فبادر أبطال اليانغتسي بفروسية من تلقاء أنفسهم. ما الخطأ في ذلك؟",
+          "width": 446,
+          "x": 97,
+          "y": 2015
+        },
+        {
+          "angle": 0,
+          "height": 99,
+          "symHeight": 18.81132075471698,
+          "symWidth": 14.58490566037736,
+          "text": "\" IF  YOU'RE  SO WORRIED ,  WE  JUST WON'T  REPORT  IT TO  THE  ALLIANCE . \"",
+          "translation": "إن كنت قلقاً لهذه الدرجة، فلن نُبلغ التحالف بالأمر.",
+          "width": 230,
+          "x": 376,
+          "y": 2313
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 22,
+          "symHeight": 22,
+          "symWidth": 13.875,
+          "text": "\" UGH ... \"",
+          "translation": "آه...",
+          "width": 111,
+          "x": 505,
+          "y": 638
+        },
+        {
+          "angle": 0,
+          "height": 121,
+          "symHeight": 21.84375,
+          "symWidth": 15.390625,
+          "text": "\" BUT JEONGGAJANG IS  NOT  AN  EASY OPPONENT . \"",
+          "translation": "لكن جونغا جانغ ليس خصماً سهلاً.",
+          "width": 205,
+          "x": 75,
+          "y": 1212
+        },
+        {
+          "angle": 0,
+          "height": 109,
+          "symHeight": 20.5,
+          "symWidth": 13.5569130216189,
+          "text": "\" THEIR  MASTER , ONE - SLASH  SWORD ,  IS A  FORMIDABLE  MARTIAL ARTIST ... \"",
+          "translation": "سيدهم، سيف الضربة الواحدة، فنان قتالي جليل...",
+          "width": 279,
+          "x": 176,
+          "y": 1421
+        },
+        {
+          "angle": 0,
+          "height": 112,
+          "symHeight": 37,
+          "symWidth": 35,
+          "text": "***",
+          "translation": "***",
+          "width": 52,
+          "x": 270,
+          "y": 2069
+        },
+        {
+          "angle": 0,
+          "height": 137,
+          "symHeight": 33.40909090909091,
+          "symWidth": 22.75,
+          "text": "\" SO  WHAT  IF  HE  IS ? IT'S  NOT  AS  IF  A  SWORD WON'T  CUT  HIM ! \"",
+          "translation": "وماذا في ذلك؟ كأن السيف لن يقطعه!",
+          "width": 368,
+          "x": 259,
+          "y": 2242
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "026__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 20.66666666666667,
+          "symWidth": 15.30975877192982,
+          "text": "\" BEFORE  THE  THREE FIENDS  OF  TAEWON , THINGS  LIKE  ONE - SLASH SWORD  ARE  NOTHING , HEHEHE . \"",
+          "translation": "أمام الثلاثة الأشداء من تاي وون، أمثال سيف الضربة الواحدة لا شيء، هاهاها.",
+          "width": 294,
+          "x": 68,
+          "y": 457
+        },
+        {
+          "angle": 0,
+          "height": 83,
+          "symHeight": 21.33333333333333,
+          "symWidth": 14.67543859649123,
+          "text": "\" INDEED .  IT'S EASIER  THAN  TWISTING  A CHILD'S  ARM ,  KUKUK . \"",
+          "translation": "حقاً، أسهل من إحداث التواء في ذراع طفل، كو كوك.",
+          "width": 320,
+          "x": 242,
+          "y": 1843
+        }
+      ],
+      "imgHeight": 2500,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027__001.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 174,
+          "symHeight": 18.73182957393484,
+          "symWidth": 13.8218045112782,
+          "text": "CUGH ...  THESE  INFAMOUS UNORTHODOX  MASTERS ,  WHO  ONCE SPREAD  TERROR  BEFORE  SUFFERING GRAVE  WOUNDS  AT  THE  HANDS  OF  THE MURIM  ALLIANCE  AND  DISAPPEARING  INTO- SECLUSION ,  HAVE  SUDDENLY RESURFACED . )",
+          "translation": "آه... هؤلاء السادة غير التقليديين الخبيثين، الذين نشروا الرعب فيما مضى قبل أن يُصابوا بجراح بالغة على يد تحالف الموريم ويختفون في العزلة، قد عادوا فجأة إلى الظهور.",
+          "width": 464,
+          "x": 133,
+          "y": 730
+        },
+        {
+          "angle": 0,
+          "height": 107,
+          "symHeight": 20.54666666666667,
+          "symWidth": 14.71726495726496,
+          "text": "( THEIR  MOTIVES ARE  OBVIOUS ,  BUT  I CAN'T  SAY  ANYTHING ABOUT  IT . )",
+          "translation": "دوافعهم واضحة، لكن لا أستطيع الإفصاح عن شيء.",
+          "width": 256,
+          "x": 351,
+          "y": 1565
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 35,
+          "symWidth": 21.77777777777778,
+          "text": "\" GYAHK !! \"",
+          "translation": "«غياخ!!»",
+          "width": 152,
+          "x": 63,
+          "y": 2290
+        },
+        {
+          "angle": 0,
+          "height": 54,
+          "symHeight": 43.66666666666666,
+          "symWidth": 36.66666666666666,
+          "text": "0-0",
+          "translation": "٠-٠",
+          "width": 72,
+          "x": 367,
+          "y": 2369
+        }
+      ],
+      "imgHeight": 3102,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027__002.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 50,
+          "symHeight": 21.5,
+          "symWidth": 17.4,
+          "text": "\" HM ?  WHAT'S THAT  GUY ? \"",
+          "translation": "مم؟ ما شأن ذلك الرجل؟",
+          "width": 180,
+          "x": 451,
+          "y": 0
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 21,
+          "symWidth": 14.38888888888889,
+          "text": "\" YOU  SCOUNDRELS !!! \"",
+          "translation": "أيها الأوغاد!!!",
+          "width": 243,
+          "x": 230,
+          "y": 1846
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 12,
+          "symWidth": 11.875,
+          "text": "UTOON  NET",
+          "translation": "",
+          "width": 99,
+          "x": 586,
+          "y": 2033
+        }
+      ],
+      "imgHeight": 3102,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    },
+    "027__003.jpg": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 61,
+          "symHeight": 25,
+          "symWidth": 18.94791666666666,
+          "text": "\" DO  YOU  HAVE  NO FEAR  OF  HEAVEN ? !! \"",
+          "translation": "هل لا تخشى الله؟!!",
+          "width": 308,
+          "x": 204,
+          "y": 402
+        },
+        {
+          "angle": 0,
+          "height": 198,
+          "symHeight": 15.0436507936508,
+          "symWidth": 11.8792328042328,
+          "text": "박성우 STAFF  ·  최혜경 ,  도 한샘 ,  강지 인 그림 · 박성우 각색 .  제행 무상 원작 . 언 라이팅  최현우 PODOOO  NEMEZIUM 레드 아이스  스튜디오",
+          "translation": "",
+          "width": 206,
+          "x": 470,
+          "y": 1651
+        },
+        {
+          "angle": 0,
+          "height": 38,
+          "symHeight": 16.5,
+          "symWidth": 11.95528455284553,
+          "text": "※ 본  저작물 은  REDICE  STUDIO 가  저작권자 와 의  계약 에  따라  발행 한  것으로 저작권법 의  보호 를  받는  저작물 입니다 .  본서 의  내용 을  무단  전재  및  무단  복제 하는  것을  금합니다 .",
+          "translation": "",
+          "width": 601,
+          "x": 76,
+          "y": 1871
+        },
+        {
+          "angle": 0,
+          "height": 21,
+          "symHeight": 18,
+          "symWidth": 14.96428571428571,
+          "text": "COMMISSION  YOUR  FAVORITE  SERIES",
+          "translation": "",
+          "width": 433,
+          "x": 16,
+          "y": 2016
+        },
+        {
+          "angle": 0,
+          "height": 36,
+          "symHeight": 6.458333333333334,
+          "symWidth": 5.769041783380018,
+          "text": "WE  HAVE  RIGHT  TO  MAKE  THE  SERIES  ON HOLD  OR TO PAY DISCONTINUE IT IF THE US AND IF ANOTHER READER EXPRESSES INTEREST IN SPONSORING IT HE CAN CONTACT US AT OUR SITE COMMISSIONERS  FAIL",
+          "translation": "",
+          "width": 214,
+          "x": 334,
+          "y": 2062
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 11,
+          "symWidth": 10.53055229142186,
+          "text": "NOW  YOU  CAN  COMMISSION  YOUR  FAVORITE  SERIES MANGA  HANUR  &  MANHWA  NOVELS",
+          "translation": "",
+          "width": 240,
+          "x": 44,
+          "y": 2064
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 7.891891891891892,
+          "text": "2  WE  CAN  DO  DROPPED  AND  UNCLAIMED  &  NEW  SERIES",
+          "translation": "",
+          "width": 276,
+          "x": 21,
+          "y": 2115
+        },
+        {
+          "angle": 0,
+          "height": 10,
+          "symHeight": 9,
+          "symWidth": 6.772727272727272,
+          "text": "WE  WON'T  DO  ANY  NSFW  SERIES",
+          "translation": "",
+          "width": 135,
+          "x": 335,
+          "y": 2120
+        },
+        {
+          "angle": 0,
+          "height": 17,
+          "symHeight": 7,
+          "symWidth": 5.896110056925997,
+          "text": "PAYMENTS  METHODS  CAN  DISCUSSED  WITH  THE ADMINS  THROUGH  CONTACT  US  AT  THE  SITE",
+          "translation": "",
+          "width": 190,
+          "x": 335,
+          "y": 2167
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 7.5,
+          "symWidth": 6.243637327677624,
+          "text": "OUR  PRICE  RATE  FOR  COMMISSIONS  IS  SET  PER  CHAPTER THE  RATE  MIGHT  BE  VARIANT  BASED  ON  EACH  SPECIFIC  SERIES",
+          "translation": "",
+          "width": 254,
+          "x": 44,
+          "y": 2168
+        },
+        {
+          "angle": 0,
+          "height": 8,
+          "symHeight": 8,
+          "symWidth": 8,
+          "text": "YOU  CAN  CONTACT  US  AT  OUR  SITE",
+          "translation": "",
+          "width": 197,
+          "x": 29,
+          "y": 2222
+        },
+        {
+          "angle": 0,
+          "height": 319,
+          "symHeight": 22.625,
+          "symWidth": 11.43411895814913,
+          "text": "RESET  SCANS ATTENTION ! RESET  SCANS  IS  RECRUITING ! JAPANESE  TRANSLATORS :  [ OPEN ] KOREAN  TRANSLATORS :  [ OPEN ] CHINESE  TRANSLATORS :  [ OPEN EDITORS  ( TS ) :  [ OPEN ] DISCORD.COM/INVITE/RZ87REZHQB",
+          "translation": "",
+          "width": 426,
+          "x": 14,
+          "y": 2275
+        },
+        {
+          "angle": 0,
+          "height": 37,
+          "symHeight": 15,
+          "symWidth": 7.314285714285715,
+          "text": "SUPPORT  US  AT :  P  PAYPAL.COM/PAYPALME/DEVMAXI | ⚫PATREON.COM / DEVMAX  1  P  KO-FI.COM/RESETSCANS",
+          "translation": "ادعمونا عبر: P PAYPAL.COM/PAYPALME/DEVMAXI | ⚫PATREON.COM / DEVMAX 1 P KO-FI.COM/RESETSCANS",
+          "width": 303,
+          "x": 12,
+          "y": 2627
+        },
+        {
+          "angle": 0,
+          "height": 20,
+          "symHeight": 20,
+          "symWidth": 9.022727272727273,
+          "text": "RESET  SCANS  HOME  MANGA  CONTACT  SEARCH  ON  RESET  SCANS",
+          "translation": "RESET SCANS الرئيسية مانغا تواصل بحث على RESET SCANS",
+          "width": 467,
+          "x": 13,
+          "y": 2703
+        },
+        {
+          "angle": 0,
+          "height": 72,
+          "symHeight": 18,
+          "symWidth": 9.583058608058609,
+          "text": "SPECIAL  THANKS  TO  OUR  PATREONS KENICHI92  -  FAYNE DIAMOND",
+          "translation": "شكر خاص لداعميّنا KENICHI92 - FAYNE DIAMOND",
+          "width": 409,
+          "x": 12,
+          "y": 2768
+        },
+        {
+          "angle": 0,
+          "height": 16,
+          "symHeight": 14,
+          "symWidth": 8,
+          "text": "PLATINUM  A",
+          "translation": "بلاتينيوم A",
+          "width": 87,
+          "x": 9,
+          "y": 2873
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 6.9,
+          "text": "NEVERPUNCH-  BAAL  SIH  SPACEPANCAKE",
+          "translation": "NEVERPUNCH- BAAL SIH SPACEPANCAKE",
+          "width": 228,
+          "x": 117,
+          "y": 2876
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 12,
+          "symWidth": 7.25,
+          "text": "GOLD",
+          "translation": "ذهب",
+          "width": 29,
+          "x": 15,
+          "y": 2926
+        },
+        {
+          "angle": 0,
+          "height": 12,
+          "symHeight": 12,
+          "symWidth": 7.222222222222222,
+          "text": "ONOMAD333",
+          "translation": "ONOMAD333",
+          "width": 65,
+          "x": 117,
+          "y": 2929
+        },
+        {
+          "angle": 0,
+          "height": 29,
+          "symHeight": 11.5,
+          "symWidth": 6.086050724637682,
+          "text": "GOATBEARDS - KSAREDFX  JAKUB MARIUS - RAPHAEL  -  RICARDO  C",
+          "translation": "GOATBEARDS - KSAREDFX JAKUB MARIUS - RAPHAEL - RICARDO C",
+          "width": 155,
+          "x": 117,
+          "y": 2971
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 6.166666666666667,
+          "text": "SILVER",
+          "translation": "فضة",
+          "width": 38,
+          "x": 18,
+          "y": 2981
+        },
+        {
+          "angle": 0,
+          "height": 27,
+          "symHeight": 10.5,
+          "symWidth": 5.723484848484849,
+          "text": "ALISTAIR  DRAGENDAVE  ED  TAYLOR  PHILIPP SILICONMAGE - GUDPLAYUR - NICOLE",
+          "translation": "ALISTAIR DRAGENDAVE ED TAYLOR PHILIPP SILICONMAGE - GUDPLAYUR - NICOLE",
+          "width": 226,
+          "x": 117,
+          "y": 3024
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 7.333333333333333,
+          "text": "BRONZE",
+          "translation": "برونز",
+          "width": 43,
+          "x": 15,
+          "y": 3034
+        },
+        {
+          "angle": 0,
+          "height": 13,
+          "symHeight": 13,
+          "symWidth": 6.1875,
+          "text": "PATREON.COM/DEVMAX1  DISCORD.COM/INVITE/Rz87  REZHQB",
+          "translation": "PATREON.COM/DEVMAX1 DISCORD.COM/INVITE/Rz87 REZHQB",
+          "width": 333,
+          "x": 33,
+          "y": 3086
+        }
+      ],
+      "imgHeight": 3102,
+      "imgWidth": 709,
+      "sourceLanguage": "en",
+      "targetLanguage": "ar",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "ar",
+  "translatorType": "openai",
+  "version": "2026-05-03.ocr-grouping.v1"
+}

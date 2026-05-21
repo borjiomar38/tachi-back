@@ -1,0 +1,248 @@
+{
+  "completedAt": "2026-01-01T00:00:00.000Z",
+  "deviceId": "fixture-device-0049",
+  "jobId": "fixture-job-0049",
+  "licenseId": "fixture-license-0049",
+  "pageCount": 4,
+  "pageOrder": ["001.png", "002.png", "003.png", "004.png"],
+  "pages": {
+    "001.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 307,
+          "symHeight": 25.01830174656261,
+          "symWidth": 16.46832032701598,
+          "text": "THIS  IS YOUR YOUNGER SISTER SAKURA . SHE'S  A JUNIOR  HIGH SCHOOL STUDENT .",
+          "translation": "Esta é sua irmã mais nova, Sakura. Ela está no ensino fundamental.",
+          "width": 173,
+          "x": 1193,
+          "y": 283
+        },
+        {
+          "angle": 0,
+          "height": 267,
+          "symHeight": 32.79761904761905,
+          "symWidth": 20.85822510822511,
+          "text": "I'LL INTRODUCE YOU  TO  YOUR SISTERS  SINCE SOU - CHAN HAS  AMNESIA .",
+          "translation": "Vou apresentar suas irmãs, já que Sou-chan está com amnésia.",
+          "width": 268,
+          "x": 1456,
+          "y": 297
+        },
+        {
+          "angle": 0,
+          "height": 271,
+          "symHeight": 24.42857142857143,
+          "symWidth": 16.08707482993198,
+          "text": "THIS  IS YOUR OLDER SISTER SUMIRE . SHE'S  A COLLEGE STUDENT .",
+          "translation": "Esta é sua irmã mais velha, Sumire. Ela é universitária.",
+          "width": 128,
+          "x": 416,
+          "y": 308
+        },
+        {
+          "angle": 0,
+          "height": 31,
+          "symHeight": 31,
+          "symWidth": 27.6,
+          "text": "AKANE",
+          "translation": "Akane",
+          "width": 148,
+          "x": 900,
+          "y": 1184
+        },
+        {
+          "angle": 0,
+          "height": 30,
+          "symHeight": 30,
+          "symWidth": 23.66666666666667,
+          "text": "SUMIRE",
+          "translation": "Sumire",
+          "width": 162,
+          "x": 99,
+          "y": 1354
+        },
+        {
+          "angle": 0,
+          "height": 33,
+          "symHeight": 31,
+          "symWidth": 28.5,
+          "text": "SAKURA",
+          "translation": "Sakura",
+          "width": 176,
+          "x": 1494,
+          "y": 1381
+        },
+        {
+          "angle": 0,
+          "height": 294,
+          "symHeight": 35.17948717948718,
+          "symWidth": 24.97435897435897,
+          "text": "AND  I'M SOU - CHAN'S MAMA . PLEASE CALL  ME AKANE ♡",
+          "translation": "Eu sou a mamãe do Sou-chan. Pode me chamar de Akane ♡",
+          "width": 237,
+          "x": 439,
+          "y": 1507
+        },
+        {
+          "angle": 0,
+          "height": 136,
+          "symHeight": 34.47619047619047,
+          "symWidth": 23.90476190476191,
+          "text": "I'LL  JUST STICK  WITH MOM .",
+          "translation": "Vou ficar só com a mamãe.",
+          "width": 232,
+          "x": 827,
+          "y": 2108
+        },
+        {
+          "angle": 0,
+          "height": 267,
+          "symHeight": 42.27272727272727,
+          "symWidth": 26.11363636363636,
+          "text": "MOM  SURE LOOKS  YOUNG . IT'S  LIKE  I HAVE  THREE SISTERS .",
+          "translation": "Mamãe parece tão jovem. É como se eu tivesse três irmãs.",
+          "width": 330,
+          "x": 108,
+          "y": 2112
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "002.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 377,
+          "symHeight": 38.82456140350877,
+          "symWidth": 26.52631578947368,
+          "text": "SAKURA KNOWS ... HE'S COMPLETELY DIFFERENT FROM  \" THAT PERSON \" ...",
+          "translation": "Sakura sabe... ele é completamente diferente da \"aquela pessoa\"...",
+          "width": 284,
+          "x": 1415,
+          "y": 228
+        },
+        {
+          "angle": 0,
+          "height": 232,
+          "symHeight": 34.34285714285714,
+          "symWidth": 24.02857142857143,
+          "text": "SOMEHOW THERE'S A  SOFTER ATMOS- PHERE ...",
+          "translation": "De algum jeito, há uma atmosfera mais suave...",
+          "width": 205,
+          "x": 535,
+          "y": 411
+        },
+        {
+          "angle": 0,
+          "height": 315,
+          "symHeight": 37.91489361702128,
+          "symWidth": 26.06382978723404,
+          "text": "WILL  \" THIS PERSON \" BE  ABLE  TO GET  ALONG WELL  WITH SAKURA ?",
+          "translation": "Será que \"essa pessoa\" vai se dar bem com a Sakura?",
+          "width": 256,
+          "x": 635,
+          "y": 1581
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "003.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 248,
+          "symHeight": 37.32432432432432,
+          "symWidth": 25.21621621621622,
+          "text": "Sou ... YOU  REALLY LOST  YOUR MEMORY , ... HUH ?",
+          "translation": "Então... você realmente perdeu a memória, né?",
+          "width": 247,
+          "x": 1053,
+          "y": 269
+        },
+        {
+          "angle": 0,
+          "height": 300,
+          "symHeight": 35.78431372549019,
+          "symWidth": 23.88235294117647,
+          "text": "HE DOESN'T LOOK  AWAY AND  HE'S NOT  AGGRE- SSIVE ...",
+          "translation": "Ele não desvia o olhar e não é agressivo...",
+          "width": 255,
+          "x": 772,
+          "y": 963
+        },
+        {
+          "angle": 0,
+          "height": 267,
+          "symHeight": 33.23157894736842,
+          "symWidth": 21.17263672000514,
+          "text": "PERHAPS HE  WON'T  BE HOLING  HIMSELF UP  IN  HIS ROOM  LIKE HE  USED  TO ...",
+          "translation": "Talvez ele não fique mais trancado no quarto como antes...",
+          "width": 301,
+          "x": 302,
+          "y": 1766
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    },
+    "004.png": {
+      "blocks": [
+        {
+          "angle": 0,
+          "height": 151,
+          "symHeight": 40,
+          "symWidth": 26.31818181818182,
+          "text": "SOU - CHAN IS  SHY . HOW  CUTE ~",
+          "translation": "Sou-chan é tímido. Que fofo~",
+          "width": 261,
+          "x": 1347,
+          "y": 317
+        },
+        {
+          "angle": 0,
+          "height": 349,
+          "symHeight": 43.63095238095238,
+          "symWidth": 30.97619047619048,
+          "text": "MAYBE IT'S  TOO SOON  FOR HIM  TO CALL  ME \" MAMA \" ... ?",
+          "translation": "Talvez seja cedo demais para ele me chamar de \"mamãe\"...?",
+          "width": 279,
+          "x": 275,
+          "y": 537
+        },
+        {
+          "angle": 0,
+          "height": 441,
+          "symHeight": 52.53763440860215,
+          "symWidth": 38.20645161290323,
+          "text": "BUT , ONE  DAY , SOU - CHAN WILL  MAKE MAMA  INTO A  MAMA",
+          "translation": "Mas, um dia, Sou-chan transformará a mamãe em uma mãe de verdade",
+          "width": 340,
+          "x": 351,
+          "y": 1769
+        }
+      ],
+      "imgHeight": 2560,
+      "imgWidth": 1810,
+      "sourceLanguage": "en",
+      "targetLanguage": "pt",
+      "translatorType": "openai"
+    }
+  },
+  "sourceLanguage": "en",
+  "targetLanguage": "pt",
+  "translatorType": "openai",
+  "version": "2026-05-06.no-mobile-layout-hints.v1"
+}
