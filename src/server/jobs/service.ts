@@ -2184,6 +2184,21 @@ async function getReusableCachedOcrSource(input: {
   log: Pick<typeof logger, 'error' | 'info'>;
   uploadAssets: JobAssetRecord[];
 }): Promise<ReusableCachedOcrSource | null> {
+  if (!canReuseTranslatedResultManifestAsOcrSource()) {
+    if (input.job.chapterCacheKey) {
+      input.log.info({
+        jobId: input.job.id,
+        pageCount: input.job.pageCount,
+        reason: 'translated_result_manifest_is_not_raw_ocr',
+        scope: 'jobs',
+        status: 'skipped_cached_ocr_source',
+        uploadAssetCount: input.uploadAssets.length,
+      });
+    }
+
+    return null;
+  }
+
   const cached = await getCachedTranslationSourceManifest(input);
 
   if (!cached) {
@@ -2223,6 +2238,11 @@ async function getReusableCachedOcrSource(input: {
     cacheKey: cached.cacheKey,
     layoutPages,
   };
+}
+
+function canReuseTranslatedResultManifestAsOcrSource() {
+  // A translated result manifest is already filtered/grouped. It is not raw OCR.
+  return false;
 }
 
 async function getCachedTranslationSourceManifest(input: {
