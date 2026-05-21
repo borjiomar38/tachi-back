@@ -29,6 +29,13 @@ export function buildJobResultObjectKey(jobId: string) {
   return `jobs/${jobId}/results/translation-manifest.json`;
 }
 
+export function buildJobDebugArtifactObjectKey(input: {
+  artifactName: string;
+  jobId: string;
+}) {
+  return `jobs/${input.jobId}/debug/${sanitizeFileName(input.artifactName)}`;
+}
+
 export function buildTranslationResultCacheObjectKey(cacheKey: string) {
   return `cache/translation-results/${cacheKey}/translation-manifest.json`;
 }
@@ -147,6 +154,40 @@ export async function putTranslationJobResultManifest(
   return {
     bucketName: objectStorageBuckets.results,
     objectKey,
+  };
+}
+
+export async function putTranslationJobDebugArtifact(input: {
+  artifactName: string;
+  body: unknown;
+  jobId: string;
+}) {
+  const objectKey = buildJobDebugArtifactObjectKey(input);
+  const json = JSON.stringify(input.body);
+  const sizeBytes = Buffer.byteLength(json);
+
+  if (shouldUseInlineObjectStorage) {
+    return {
+      bucketName: INLINE_STORAGE_BUCKET,
+      objectKey: buildInlineObjectKey({
+        body: Buffer.from(json),
+        contentType: 'application/json',
+      }),
+      sizeBytes,
+    };
+  }
+
+  await putObject(uploadClient, {
+    body: json,
+    bucket: objectStorageBuckets.results,
+    contentType: 'application/json',
+    key: objectKey,
+  });
+
+  return {
+    bucketName: objectStorageBuckets.results,
+    objectKey,
+    sizeBytes,
   };
 }
 

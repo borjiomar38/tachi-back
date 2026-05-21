@@ -9,6 +9,7 @@ const {
   mockLogger,
   mockPerformHostedOcr,
   mockPerformHostedTranslation,
+  mockPutTranslationJobDebugArtifact,
   mockPutTranslationJobPageUpload,
   mockPutTranslationJobResultManifest,
   mockPutTranslationResultCacheManifest,
@@ -19,6 +20,8 @@ const {
       findUnique: vi.fn(),
     },
     jobAsset: {
+      create: vi.fn(),
+      findFirst: vi.fn(),
       update: vi.fn(),
     },
     order: {
@@ -50,6 +53,7 @@ const {
   },
   mockPerformHostedOcr: vi.fn(),
   mockPerformHostedTranslation: vi.fn(),
+  mockPutTranslationJobDebugArtifact: vi.fn(),
   mockPutTranslationJobPageUpload: vi.fn(),
   mockPutTranslationJobResultManifest: vi.fn(),
   mockPutTranslationResultCacheManifest: vi.fn(),
@@ -102,6 +106,7 @@ vi.mock('@/server/jobs/storage', () => ({
   deleteTranslationJobPageUploads: mockDeleteTranslationJobPageUploads,
   getTranslationJobPageUpload: mockGetTranslationJobPageUpload,
   getTranslationJobResultManifest: mockGetTranslationJobResultManifest,
+  putTranslationJobDebugArtifact: mockPutTranslationJobDebugArtifact,
   putTranslationJobPageUpload: mockPutTranslationJobPageUpload,
   putTranslationJobResultManifest: mockPutTranslationJobResultManifest,
   putTranslationResultCacheManifest: mockPutTranslationResultCacheManifest,
@@ -119,6 +124,8 @@ describe('job service', () => {
   beforeEach(() => {
     mockDb.$transaction.mockReset();
     mockDb.freeTrialClaim.findUnique.mockReset();
+    mockDb.jobAsset.create.mockReset();
+    mockDb.jobAsset.findFirst.mockReset();
     mockDb.jobAsset.update.mockReset();
     mockDb.order.findFirst.mockReset();
     mockDb.tokenLedger.aggregate.mockReset();
@@ -138,9 +145,16 @@ describe('job service', () => {
     mockLogger.info.mockReset();
     mockPerformHostedOcr.mockReset();
     mockPerformHostedTranslation.mockReset();
+    mockPutTranslationJobDebugArtifact.mockReset();
     mockPutTranslationJobPageUpload.mockReset();
     mockPutTranslationJobResultManifest.mockReset();
     mockPutTranslationResultCacheManifest.mockReset();
+    mockDb.jobAsset.findFirst.mockResolvedValue(null);
+    mockPutTranslationJobDebugArtifact.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job/debug/ocr-pages.json',
+      sizeBytes: 1024,
+    });
 
     mockGetProviderGatewayManifestWithRuntimeConfig.mockResolvedValue({
       ocr: {
@@ -1431,6 +1445,48 @@ describe('job service', () => {
     expect(result?.jobId).toBe('job-3');
     expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('bonjour');
     expect(mockDb.tokenLedger.create).toHaveBeenCalledOnce();
+    expect(mockPutTranslationJobDebugArtifact).toHaveBeenCalledWith(
+      expect.objectContaining({
+        artifactName: 'ocr-pages.json',
+        body: expect.objectContaining({
+          groupedOcrPages: [
+            expect.objectContaining({
+              fileName: '001.jpg',
+              ocrPage: expect.objectContaining({
+                blocks: [
+                  expect.objectContaining({
+                    text: 'hello',
+                  }),
+                ],
+              }),
+            }),
+          ],
+          rawOcrPages: [
+            expect.objectContaining({
+              fileName: '001.jpg',
+              ocrPage: expect.objectContaining({
+                providerRequestId: 'ocr-1',
+              }),
+            }),
+          ],
+          translatablePages: [
+            expect.objectContaining({
+              pageKey: '001.jpg',
+            }),
+          ],
+          version: '2026-05-22.ocr-debug.v1',
+        }),
+        jobId: 'job-3',
+      })
+    );
+    expect(mockDb.jobAsset.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        jobId: 'job-3',
+        kind: 'debug_artifact',
+        mimeType: 'application/json',
+        originalFileName: 'ocr-pages.json',
+      }),
+    });
     expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
     expect(mockPutTranslationResultCacheManifest).toHaveBeenCalledOnce();
     expect(mockDb.translationResultCache.upsert).toHaveBeenCalledOnce();
