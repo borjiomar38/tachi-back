@@ -1,0 +1,115 @@
+name: 🚀 Deploy Contabo
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Environment to deploy
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+concurrency:
+  group: contabo-${{ github.event_name == 'workflow_dispatch' && inputs.target || github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy ${{ github.event_name == 'workflow_dispatch' && inputs.target || github.ref_name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Resolve target environment
+        id: target
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            target="${{ inputs.target }}"
+          else
+            case "${GITHUB_REF_NAME}" in
+              master) target="production" ;;
+              staging) target="staging" ;;
+              *)
+                echo "::error::Unsupported branch for Contabo deploy: ${GITHUB_REF_NAME}"
+                exit 1
+                ;;
+            esac
+          fi
+
+          echo "target=${target}" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        shell: bash
+        env:
+          CONTABO_SSH_HOST: ${{ secrets.CONTABO_SSH_HOST }}
+          CONTABO_SSH_PORT: ${{ secrets.CONTABO_SSH_PORT || '22' }}
+          CONTABO_SSH_KEY: ${{ secrets.CONTABO_SSH_KEY }}
+        run: |
+          set -euo pipefail
+
+          : "${CONTABO_SSH_HOST:?Missing CONTABO_SSH_HOST secret}"
+          : "${CONTABO_SSH_KEY:?Missing CONTABO_SSH_KEY secret}"
+
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${CONTABO_SSH_KEY}" > ~/.ssh/contabo_key
+          chmod 600 ~/.ssh/contabo_key
+          ssh-keyscan -p "${CONTABO_SSH_PORT}" "${CONTABO_SSH_HOST}" >> ~/.ssh/known_hosts
+
+      - name: Sync source to Contabo
+        shell: bash
+        env:
+          CONTABO_SSH_HOST: ${{ secrets.CONTABO_SSH_HOST }}
+          CONTABO_SSH_PORT: ${{ secrets.CONTABO_SSH_PORT || '22' }}
+          CONTABO_SSH_USER: ${{ secrets.CONTABO_SSH_USER }}
+          CONTABO_APP_DIR: ${{ secrets.CONTABO_APP_DIR || '/opt/tachi-back' }}
+        run: |
+          set -euo pipefail
+
+          : "${CONTABO_SSH_USER:?Missing CONTABO_SSH_USER secret}"
+
+          rsync -az --delete \
+            --exclude '.git/' \
+            --exclude '.env*' \
+            --exclude '.vercel/' \
+            --exclude '.output/' \
+            --exclude '.vinxi/' \
+            --exclude '.nitro/' \
+            --exclude 'node_modules/' \
+            --exclude 'coverage/' \
+            --exclude 'playwright-report/' \
+            --exclude 'test-results/' \
+            --exclude 'tmp/' \
+            --exclude 'src/server/db/generated/' \
+            --exclude 'deploy/contabo/postgres-backups/' \
+            --exclude 'deploy/contabo/dns-backups/' \
+            -e "ssh -i ~/.ssh/contabo_key -p ${CONTABO_SSH_PORT}" \
+            ./ "${CONTABO_SSH_USER}@${CONTABO_SSH_HOST}:${CONTABO_APP_DIR}/"
+
+      - name: Run Contabo deployment
+        shell: bash
+        env:
+          CONTABO_SSH_HOST: ${{ secrets.CONTABO_SSH_HOST }}
+          CONTABO_SSH_PORT: ${{ secrets.CONTABO_SSH_PORT || '22' }}
+          CONTABO_SSH_USER: ${{ secrets.CONTABO_SSH_USER }}
+          CONTABO_APP_DIR: ${{ secrets.CONTABO_APP_DIR || '/opt/tachi-back' }}
+          TARGET_ENV: ${{ steps.target.outputs.target }}
+        run: |
+          set -euo pipefail
+
+          ssh -i ~/.ssh/contabo_key -p "${CONTABO_SSH_PORT}" "${CONTABO_SSH_USER}@${CONTABO_SSH_HOST}" \
+            "chmod +x '${CONTABO_APP_DIR}/deploy/contabo/deploy-from-ci.sh' && TACHI_APP_DIR='${CONTABO_APP_DIR}' '${CONTABO_APP_DIR}/deploy/contabo/deploy-from-ci.sh' '${TARGET_ENV}'"

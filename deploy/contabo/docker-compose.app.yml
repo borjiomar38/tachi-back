@@ -1,0 +1,78 @@
+services:
+  app:
+    image: tachi-back:${TACHI_ENV_SLUG:?set TACHI_ENV_SLUG}-contabo
+    container_name: tachi-${TACHI_ENV_SLUG}-app
+    build:
+      context: ../..
+      dockerfile: deploy/contabo/Dockerfile
+      target: runner
+      args:
+        VITE_BASE_URL: ${VITE_BASE_URL:?set VITE_BASE_URL}
+        VITE_ENV_NAME: ${VITE_ENV_NAME:-PRODUCTION}
+        VITE_ENV_EMOJI: ${VITE_ENV_EMOJI:-}
+        VITE_ENV_COLOR: ${VITE_ENV_COLOR:-plum}
+        VITE_IS_DEMO: ${VITE_IS_DEMO:-false}
+        VITE_LEMONSQUEEZY_STORE_URL: ${VITE_LEMONSQUEEZY_STORE_URL:-}
+        VITE_S3_BUCKET_PUBLIC_URL: ${VITE_S3_BUCKET_PUBLIC_URL:?set VITE_S3_BUCKET_PUBLIC_URL}
+        VITE_GOOGLE_SITE_VERIFICATION: ${VITE_GOOGLE_SITE_VERIFICATION:-}
+    env_file:
+      - ${TACHI_ENV_FILE:?set TACHI_ENV_FILE}
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - private
+      - proxy
+
+  migrate:
+    image: tachi-back-migrator:${TACHI_ENV_SLUG:?set TACHI_ENV_SLUG}-contabo
+    container_name: tachi-${TACHI_ENV_SLUG}-migrate
+    build:
+      context: ../..
+      dockerfile: deploy/contabo/Dockerfile
+      target: migrator
+    env_file:
+      - ${TACHI_ENV_FILE:?set TACHI_ENV_FILE}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles:
+      - tools
+    networks:
+      - private
+      - proxy
+
+  postgres:
+    image: postgres:17
+    container_name: tachi-${TACHI_ENV_SLUG}-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?set POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER:?set POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres-backups/${TACHI_ENV_SLUG}:/backups
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks:
+      - private
+
+volumes:
+  postgres-data:
+    name: tachi-${TACHI_ENV_SLUG}-postgres-data
+
+networks:
+  private:
+    internal: true
+  proxy:
+    external: true
+    name: ${TACHI_PROXY_NETWORK:-tachi-proxy}

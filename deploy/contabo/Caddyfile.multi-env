@@ -1,0 +1,9 @@
+{$PRODUCTION_APP_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy tachi-production-app:3000
+}
+
+{$STAGING_APP_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy tachi-staging-app:3000
+}
