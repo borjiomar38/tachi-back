@@ -339,6 +339,8 @@ function getTopicVisualHint(title: string) {
       'Use dungeon-ranker energy: tower floors, dark gates, glowing inventory shards, masked silhouettes without recognizable costumes, and sharp progression-game lighting.',
     'Solo Leveling':
       'Use dungeon-action energy: shadow gates, blue-black portals, monster-scale silhouettes, rank interface shapes without text, and fast vertical-chapter momentum.',
+    'Teenage Mercenary':
+      'Use urban action manhwa energy: night city streets, school corridor tension, tactical motion, disciplined fighter silhouettes, protective family stakes, and sharp survival-thriller lighting.',
     'The Beginning After the End':
       'Use reincarnation fantasy energy: academy halls, magic circles, dragon-scale textures, royal banners without symbols, and warm-to-dark spell lighting.',
     'Tower of God':
@@ -349,7 +351,7 @@ function getTopicVisualHint(title: string) {
 
   return (
     hints[title] ??
-    'Use genre-specific manga/manhwa/manhua energy from the topic: setting cues, action mood, symbolic props, and reading workflow details tied to the article subject.'
+    'Use genre-specific manga/manhwa/manhua energy from the topic: urban action, fantasy, romance, martial arts, school, thriller, or adventure setting cues; symbolic props; and reading workflow details tied to the article subject.'
   );
 }
 

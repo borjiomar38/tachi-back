@@ -28,7 +28,7 @@ export function runAnimeMangaImageReviewAgent(input: {
     {
       note: 'Prompt includes genre or setting cues so the image is not generic app artwork.',
       passed:
-        /adventure|cultivation|dungeon|fantasy|murim|occult|palace|romance|tower|urban|ocean|martial|apocalyptic/i.test(
+        /action|adventure|apocalyptic|cultivation|dungeon|fantasy|military|murim|occult|ocean|palace|romance|school|survival|thriller|tower|urban|martial/i.test(
           input.imagePrompt
         ),
     },
