@@ -61,6 +61,8 @@ import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
+import { Route as ApiCronPublishCodexBlogArticleRouteImport } from './routes/api/cron/publish-codex-blog-article'
+import { Route as ApiCronGenerateCodexBlogPromptRouteImport } from './routes/api/cron/generate-codex-blog-prompt'
 import { Route as ApiCronGenerateBlogArticleRouteImport } from './routes/api/cron/generate-blog-article'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
@@ -360,6 +362,18 @@ const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
   path: '/api/download/apk',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronPublishCodexBlogArticleRoute =
+  ApiCronPublishCodexBlogArticleRouteImport.update({
+    id: '/api/cron/publish-codex-blog-article',
+    path: '/api/cron/publish-codex-blog-article',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiCronGenerateCodexBlogPromptRoute =
+  ApiCronGenerateCodexBlogPromptRouteImport.update({
+    id: '/api/cron/generate-codex-blog-prompt',
+    path: '/api/cron/generate-codex-blog-prompt',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiCronGenerateBlogArticleRoute =
   ApiCronGenerateBlogArticleRouteImport.update({
     id: '/api/cron/generate-blog-article',
@@ -579,6 +593,8 @@ export interface FileRoutesByFullPath {
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
+  '/api/cron/generate-codex-blog-prompt': typeof ApiCronGenerateCodexBlogPromptRoute
+  '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -664,6 +680,8 @@ export interface FileRoutesByTo {
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
+  '/api/cron/generate-codex-blog-prompt': typeof ApiCronGenerateCodexBlogPromptRoute
+  '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -753,6 +771,8 @@ export interface FileRoutesById {
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
+  '/api/cron/generate-codex-blog-prompt': typeof ApiCronGenerateCodexBlogPromptRoute
+  '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -843,6 +863,8 @@ export interface FileRouteTypes {
     | '/api/activation/redeem'
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
+    | '/api/cron/generate-codex-blog-prompt'
+    | '/api/cron/publish-codex-blog-article'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
@@ -928,6 +950,8 @@ export interface FileRouteTypes {
     | '/api/activation/redeem'
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
+    | '/api/cron/generate-codex-blog-prompt'
+    | '/api/cron/publish-codex-blog-article'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
@@ -1016,6 +1040,8 @@ export interface FileRouteTypes {
     | '/api/activation/redeem'
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
+    | '/api/cron/generate-codex-blog-prompt'
+    | '/api/cron/publish-codex-blog-article'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
@@ -1102,6 +1128,8 @@ export interface RootRouteChildren {
   ApiActivationRedeemRoute: typeof ApiActivationRedeemRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiCronGenerateBlogArticleRoute: typeof ApiCronGenerateBlogArticleRoute
+  ApiCronGenerateCodexBlogPromptRoute: typeof ApiCronGenerateCodexBlogPromptRoute
+  ApiCronPublishCodexBlogArticleRoute: typeof ApiCronPublishCodexBlogArticleRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
@@ -1492,6 +1520,20 @@ declare module '@tanstack/react-router' {
       path: '/api/download/apk'
       fullPath: '/api/download/apk'
       preLoaderRoute: typeof ApiDownloadApkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cron/publish-codex-blog-article': {
+      id: '/api/cron/publish-codex-blog-article'
+      path: '/api/cron/publish-codex-blog-article'
+      fullPath: '/api/cron/publish-codex-blog-article'
+      preLoaderRoute: typeof ApiCronPublishCodexBlogArticleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cron/generate-codex-blog-prompt': {
+      id: '/api/cron/generate-codex-blog-prompt'
+      path: '/api/cron/generate-codex-blog-prompt'
+      fullPath: '/api/cron/generate-codex-blog-prompt'
+      preLoaderRoute: typeof ApiCronGenerateCodexBlogPromptRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/cron/generate-blog-article': {
@@ -1906,6 +1948,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiActivationRedeemRoute: ApiActivationRedeemRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiCronGenerateBlogArticleRoute: ApiCronGenerateBlogArticleRoute,
+  ApiCronGenerateCodexBlogPromptRoute: ApiCronGenerateCodexBlogPromptRoute,
+  ApiCronPublishCodexBlogArticleRoute: ApiCronPublishCodexBlogArticleRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
