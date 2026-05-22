@@ -1,0 +1,27 @@
+services:
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: tachi-caddy
+    env_file:
+      - ${TACHI_CADDY_ENV_FILE:-/opt/tachi-back/.env.caddy}
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./Caddyfile.multi-env:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    restart: unless-stopped
+    networks:
+      - proxy
+
+volumes:
+  caddy-data:
+    name: tachi-caddy-data
+  caddy-config:
+    name: tachi-caddy-config
+
+networks:
+  proxy:
+    external: true
+    name: ${TACHI_PROXY_NETWORK:-tachi-proxy}
