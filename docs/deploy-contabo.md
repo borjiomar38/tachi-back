@@ -101,18 +101,35 @@ Expected: HTTP `401` with `{"error":{"code":"invalid_session"},"ok":false}`.
 
 ## Cron Replacement
 
-Vercel currently runs `/api/cron/generate-blog-article` daily. On Contabo, install a host cron after the app is live:
+Vercel currently runs `/api/cron/generate-blog-article` daily. On Contabo,
+prefer the Codex CLI cron so the host asks Codex to research a current topic,
+then lets the app validate the JSON draft with Zod, reject duplicate titles from
+the database, generate the hero image, and publish.
 
 ```bash
-sudo install -m 0755 deploy/contabo/run-blog-cron.sh /usr/local/bin/tachi-back-blog-cron
+sudo install -m 0755 deploy/contabo/run-codex-blog-cron.sh /usr/local/bin/tachi-back-codex-blog-cron
 sudo crontab -e
 ```
 
 Cron entry:
 
 ```cron
-0 1 * * * TACHI_ENV_FILE=/opt/tachi-back/.env.production /usr/local/bin/tachi-back-blog-cron >> /var/log/tachi-back-blog-cron.log 2>&1
+0 1 * * * TACHI_ENV_FILE=/opt/tachi-back/.env.production /usr/local/bin/tachi-back-codex-blog-cron >> /var/log/tachi-back-codex-blog-cron.log 2>&1
 ```
+
+The Codex cron defaults to `gpt-5.5` with `model_reasoning_effort="xhigh"` and
+enables Codex web search. Override only if needed:
+
+```env
+BLOG_CODEX_MODEL=gpt-5.5
+BLOG_CODEX_REASONING_EFFORT=xhigh
+BLOG_CODEX_SEARCH_ENABLED=true
+BLOG_CODEX_CLI_PATH=codex
+```
+
+The old curl-only script remains available as `/usr/local/bin/tachi-back-blog-cron`
+if you explicitly want the app to call its configured LLM API provider instead
+of Codex CLI.
 
 ## Updates
 
