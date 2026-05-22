@@ -16,7 +16,7 @@ on:
           - production
 
 concurrency:
-  group: contabo-${{ github.event_name == 'workflow_dispatch' && inputs.target || github.ref_name }}
+  group: contabo-deploy
   cancel-in-progress: false
 
 permissions:

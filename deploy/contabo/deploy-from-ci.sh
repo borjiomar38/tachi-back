@@ -3,6 +3,7 @@ set -euo pipefail
 
 env_slug="${1:-}"
 app_dir="${TACHI_APP_DIR:-/opt/tachi-back}"
+lock_file="${TACHI_DEPLOY_LOCK_FILE:-/tmp/tachi-back-deploy.lock}"
 proxy_project="${TACHI_CADDY_PROJECT:-tachi-caddy}"
 proxy_env_file="${TACHI_CADDY_ENV_FILE:-${app_dir}/.env.caddy}"
 proxy_compose_file="deploy/contabo/docker-compose.caddy.yml"
@@ -16,6 +17,15 @@ case "${env_slug}" in
     exit 2
     ;;
 esac
+
+if [[ "${TACHI_DEPLOY_LOCKED:-}" != "1" ]]; then
+  exec 9>"${lock_file}"
+  echo "Waiting for Contabo deployment lock: ${lock_file}"
+  flock 9
+  echo "Acquired Contabo deployment lock"
+  TACHI_DEPLOY_LOCKED=1 "$0" "$@"
+  exit $?
+fi
 
 env_file="${app_dir}/.env.${env_slug}"
 app_project="tachi-${env_slug}"
