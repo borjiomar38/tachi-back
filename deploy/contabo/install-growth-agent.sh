@@ -102,7 +102,7 @@ GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES=8
 GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS=600
 GROWTH_AGENT_INBOUND_MARK_SEEN=true
 GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
-GROWTH_AGENT_VALIDATION_COMMAND="pnpm lint:ts"
+GROWTH_AGENT_VALIDATION_COMMAND="./node_modules/.bin/tsc --noEmit"
 GROWTH_AGENT_PRIMARY_SITE=https://tachiyomiat.com
 GROWTH_AGENT_BRAND_SITE=https://nayovi.com
 GROWTH_AGENT_SEO_SITE=https://translate-manhwa-ai.com
@@ -137,6 +137,7 @@ ensure_env_default GROWTH_AGENT_INBOUND_MARK_SEEN true
 ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED false
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_MODE true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
+ensure_env_default GROWTH_AGENT_VALIDATION_COMMAND '"./node_modules/.bin/tsc --noEmit"'
 ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS '"OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"'
 chmod 600 "${ENV_FILE}"
 chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
