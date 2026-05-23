@@ -280,3 +280,49 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## 2026-05-23 Sent Outreach Log
+
+### XDA Developers Android apps
+
+Category: press
+Contact path: editorial@xda-developers.com, found on the public XDA about/contact flow for topic ideas and editorial inquiries.
+Rationale: XDA's Android power-user audience overlaps with APK installs, hosted backend workflows, reader utilities, and users who can evaluate a permission-safe app flow.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Review access for a hosted OCR manga translation APK
+
+Hi XDA editorial team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+The angle for XDA readers is practical: official APK install, redeem-code activation, free trial access, token plans, and a support path on the Nayovi site. Nayovi does not host or distribute chapters; it focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Would a hands-on app review, setup walkthrough, or short mention fit your Android app coverage? I can provide screenshots, a reviewer code, pricing context, and the compliance note before you decide.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### AndroidGuys app review
+
+Category: press
+Contact path: reviews@androidguys.com, listed on the public AndroidGuys contact page for product and accessory reviews.
+Rationale: AndroidGuys covers Android tools and reviews, making a reviewer-code walkthrough a clear fit without scraping private contacts.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Review code for Nayovi Android manga translation workflow
+
+Hi AndroidGuys reviews team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys.
+
+The review path is simple: install the official APK from tachiyomiat.com, activate a review code, test the free-trial-to-token-plan flow, and compare the permission-safe support policy. Nayovi does not host or distribute chapters; it focuses on translation support for content the reader is allowed to process.
+
+Would a hands-on app review or setup walkthrough fit AndroidGuys? I can send screenshots, the demo link, pricing context, and a dedicated review code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
