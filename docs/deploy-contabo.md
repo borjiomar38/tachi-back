@@ -146,8 +146,9 @@ sudo TACHI_DEPLOY_USER=borjiomar38 deploy/contabo/install-growth-agent.sh --enab
 
 The installer creates `/opt/tachi-back/.env.growth-agent` from the defaults in
 `deploy/contabo/.env.growth-agent.example`, installs
-`/usr/local/bin/tachi-growth-agent`, and registers
-`tachi-growth-agent.service` with `Restart=always`.
+`/usr/local/bin/tachi-growth-agent` plus the optional inbound mail bridge, and
+registers `tachi-growth-agent.service` and `tachi-growth-mail-bridge.service`
+with `Restart=always`.
 
 Important defaults:
 
@@ -159,6 +160,7 @@ GROWTH_AGENT_EMAIL_SEND_MODE=draft
 GROWTH_AGENT_GIT_BRANCH=growth/autonomous
 GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
 GROWTH_AGENT_GIT_PUSH_ENABLED=false
+GROWTH_AGENT_INBOUND_ENABLED=false
 ```
 
 Keep `GROWTH_AGENT_EMAIL_SEND_MODE=draft` until every outreach rule and sender
@@ -173,6 +175,37 @@ Operational commands:
 sudo systemctl status tachi-growth-agent --no-pager
 sudo journalctl -u tachi-growth-agent -f
 sudo systemctl restart tachi-growth-agent
+sudo systemctl status tachi-growth-mail-bridge --no-pager
+sudo journalctl -u tachi-growth-mail-bridge -f
+```
+
+The inbound mail bridge lets the owner reply to agent emails and attach files
+for the next growth cycle. Replies are accepted only from
+`GROWTH_AGENT_INBOUND_ALLOWED_SENDERS`; attachments are stored under
+`/var/lib/tachi-growth-agent/inbound/attachments`, and queued instructions are
+stored under `/var/lib/tachi-growth-agent/inbound/queue`. Video attachments are
+kept as files and, when `ffmpeg` is available, the bridge also extracts
+`ffprobe` metadata, key frames, and a short audio file for the next Codex cycle
+to inspect.
+
+Enable inbound replies only after adding IMAP credentials to
+`/opt/tachi-back/.env.growth-agent`:
+
+```env
+GROWTH_AGENT_INBOUND_ENABLED=true
+GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
+GROWTH_AGENT_INBOUND_IMAP_HOST=imap.example.com
+GROWTH_AGENT_INBOUND_IMAP_PORT=993
+GROWTH_AGENT_INBOUND_IMAP_USER=growth-agent@nayovi.com
+GROWTH_AGENT_INBOUND_IMAP_PASSWORD=change-me
+GROWTH_AGENT_INBOUND_IMAP_MAILBOX=INBOX
+GROWTH_AGENT_INBOUND_IMAP_SSL=true
+```
+
+After changing the env file:
+
+```bash
+sudo systemctl restart tachi-growth-mail-bridge
 ```
 
 The LWS mailbox helper uses `/opt/tachi-back/.env.lws`, which is expected to be
