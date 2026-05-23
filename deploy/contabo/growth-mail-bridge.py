@@ -60,6 +60,7 @@ class BridgeConfig:
   seen_file: pathlib.Path
   trigger_file: pathlib.Path
   allowed_senders: set[str]
+  require_authenticated_sender: bool
   imap_host: str
   imap_port: int
   imap_user: str
@@ -132,6 +133,9 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     ),
     allowed_senders=parse_csv_set(
       values.get('GROWTH_AGENT_INBOUND_ALLOWED_SENDERS', 'borjiomar38@gmail.com')
+    ),
+    require_authenticated_sender=is_true(
+      values.get('GROWTH_AGENT_INBOUND_REQUIRE_AUTHENTICATED_SENDER', 'true')
     ),
     imap_host=imap['host'],
     imap_port=int(imap['port']),
@@ -299,6 +303,10 @@ def process_message(config: BridgeConfig, message: Message) -> bool:
     print(f'ignored inbound message from unauthorized sender: {sender}')
     append_seen_id(config.seen_file, message_key)
     return False
+  if not authenticated_sender_passed(config, message, sender):
+    print(f'ignored inbound message from unauthenticated allowed sender: {sender}')
+    append_seen_id(config.seen_file, message_key)
+    return False
 
   command_id = command_identifier(message)
   command_dir = config.attachment_dir / command_id
@@ -364,6 +372,52 @@ def message_sender(message: Message) -> str:
     return ''
 
   return addresses[0][1].strip().lower()
+
+
+def authenticated_sender_passed(
+  config: BridgeConfig, message: Message, sender: str
+) -> bool:
+  if not config.require_authenticated_sender:
+    return True
+
+  domain = sender_domain(sender)
+  if not domain:
+    return False
+
+  auth_headers = message.get_all('Authentication-Results', [])
+  spf_headers = message.get_all('Received-SPF', [])
+  if not auth_headers and not spf_headers:
+    return False
+
+  header_text = normalize_authentication_text(auth_headers + spf_headers)
+  sender_pattern = re.escape(sender)
+  domain_pattern = re.escape(domain)
+
+  dmarc_pass = re.search(r'\bdmarc=pass\b', header_text) and re.search(
+    rf'\bheader\.from={domain_pattern}\b', header_text
+  )
+  dkim_pass = re.search(r'\bdkim=pass\b', header_text) and (
+    re.search(rf'\bheader\.d={domain_pattern}\b', header_text)
+    or re.search(rf'\bheader\.i=[^;\s]*@{domain_pattern}\b', header_text)
+  )
+  spf_pass = re.search(r'\bspf=pass\b', header_text) and (
+    re.search(rf'\bsmtp\.mailfrom={sender_pattern}\b', header_text)
+    or re.search(rf'\benvelope-from={sender_pattern}\b', header_text)
+    or re.search(rf'\bdomain of {sender_pattern}\b', header_text)
+  )
+
+  return bool(dmarc_pass or dkim_pass or spf_pass)
+
+
+def sender_domain(sender: str) -> str:
+  if '@' not in sender:
+    return ''
+
+  return sender.rsplit('@', 1)[1].strip().lower()
+
+
+def normalize_authentication_text(values: list[str]) -> str:
+  return ' '.join(' '.join(str(value).lower().split()) for value in values)
 
 
 def decode_header_value(value: str) -> str:

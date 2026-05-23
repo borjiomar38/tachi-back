@@ -163,6 +163,8 @@ GROWTH_AGENT_GIT_BRANCH=growth/autonomous
 GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
 GROWTH_AGENT_GIT_PUSH_ENABLED=true
 GROWTH_AGENT_INBOUND_ENABLED=false
+GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
+GROWTH_AGENT_INBOUND_REQUIRE_AUTHENTICATED_SENDER=true
 GROWTH_AGENT_NOTIFY_ON_INBOUND=false
 GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
 GROWTH_AGENT_DAILY_SUMMARY_ENABLED=true
@@ -187,6 +189,9 @@ Owner email notifications are intentionally low-volume:
   sent, the daily summary is skipped until the next summary interval.
 - Reply-ingestion confirmations are disabled by default to avoid mail loops and
   noisy acknowledgements.
+- Inbound replies are queued only when the sender address is allow-listed and
+  the mail server reports passing SPF, DKIM, or DMARC authentication for that
+  sender. Other messages are marked seen and never become agent instructions.
 
 Operational commands:
 
