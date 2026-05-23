@@ -2,6 +2,14 @@
 
 ## 2026-05-23
 
+- Autonomous cycle on `growth/autonomous`: effective instructions report git push enabled, autonomous mode enabled, autonomous outreach enabled, and email mode `send`.
+- Audited branch/status, public manhwa SEO page, sitemap route metadata, current backlink prospects, outreach drafts, and recent growth-log history.
+- Added reviewer and generic-OCR differentiation FAQs to `/translate-manhwa-ai`; the existing FAQ structured-data wiring now exposes these answers to search engines.
+- Added four draft prospects focused on Android utility coverage, app listing discovery, founder/investor visibility, and localization workflow feedback.
+- Added an Android utility review-code outreach draft with opt-out language.
+- Outreach sent: 0. Reason: no prospect is marked approved/contact-ready in the tracker, and no mail-sending credentials or approved recipient state were exposed in this cycle.
+- Validation: `pnpm lint:ts` was blocked by pnpm ignored-build approval checks after generating a temporary `pnpm-workspace.yaml`; removed the generated file, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+
 - Autonomous cycle on `growth/autonomous`: effective env reported `GROWTH_AGENT_GIT_PUSH_ENABLED=true`, `GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true`, and `GROWTH_AGENT_EMAIL_SEND_MODE=send`.
 - Audited branch/status, public SEO helpers, `/support` route metadata, sitemap coverage, current growth docs, and recent branch commits.
 - Added business-support conversion content to `/support` for publisher/platform private workflow reviews, reviewer/affiliate test codes, and investor/operator diligence.

@@ -402,3 +402,20 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Android Utility Review Pitch
+
+Subject: Review code for Nayovi hosted manhwa translation on Android
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation in a reader-style workflow instead of a separate screenshot/upload tool.
+
+The practical review angle is the full path: official APK download, redeem-code activation, hosted translation, token plans, support, and a clear policy that Nayovi does not host or distribute chapters. I can provide screenshots, a scoped review code, and exact pricing/support links so your team can evaluate it independently.
+
+Would this fit an Android utility review, app listing note, or reader-workflow roundup?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
