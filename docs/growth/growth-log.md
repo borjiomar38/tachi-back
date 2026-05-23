@@ -2,6 +2,12 @@
 
 ## 2026-05-23
 
+- Autonomous cycle on `growth/autonomous`: live home, pricing, and sitemap checks returned `200`; sitemap includes core public, guide, legal, and blog URLs.
+- Expanded support/pricing FAQs with cancellation, billing/refund support details, and reviewer/partner test-code guidance to reduce paid-subscription friction.
+- Added four draft prospects focused on Android reviews, software listings, mobile operator feedback, and revenue-oriented investor research.
+- Added reviewer test-code and investor revenue-signal outreach drafts. No email was sent because send mode is draft.
+- Validation: live `curl` checks passed; `pnpm lint:ts` was blocked by pnpm ignored-build approval checks after generating a temporary approval template; removed that template and direct `./node_modules/.bin/tsc --noEmit` passed.
+- Push skipped because `GROWTH_AGENT_GIT_PUSH_ENABLED=false`.
 - Added the initial growth-agent operating files for backlink tracking, outreach drafts, and recurring cycle reports.
 - First server target: run the Codex growth agent from Contabo with `gpt-5.5` and low reasoning effort.
 - First Contabo cycle created local branch `growth/autonomous` and commit `505ff15` with pricing FAQ, backlink prospects, and outreach drafts.

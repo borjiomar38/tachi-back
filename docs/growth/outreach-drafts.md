@@ -207,3 +207,35 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Reviewer Test Code Draft
+
+Subject: Test code for a Nayovi Android workflow review
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The app uses official download, redeem-code activation, monthly token plans, and support paths rather than asking readers to manage provider API keys.
+
+If your team covers Android utilities or niche subscription products, I can provide a scoped test code, screenshots, pricing context, and a short note on what Nayovi does and does not do. Nayovi does not host or distribute chapters; the review should use content the tester is allowed to process.
+
+Would a hands-on review or short app note be useful?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Investor Revenue Signal Draft
+
+Subject: Nayovi revenue signal update
+
+Hi {{name}},
+
+I am building Nayovi, a narrow Android subscription product for hosted manga, manhwa, and manhua OCR/AI translation. The funnel is SEO page to official APK download, free trial, redeem-code activation, and monthly token plans.
+
+I am tracking investor-fit channels for when there is enough MRR, activation-to-paid conversion, and retention data to make the conversation useful. If relevant, I can send a concise update with current revenue, churn, acquisition channels, and the next growth experiments.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.

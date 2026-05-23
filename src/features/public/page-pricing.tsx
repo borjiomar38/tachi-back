@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-import { type PublicTokenPack,supportFaqs } from '@/features/public/data';
+import { type PublicTokenPack, supportFaqs } from '@/features/public/data';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
 
