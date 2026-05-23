@@ -91,6 +91,24 @@ const comparisonRows = [
   },
 ] as const;
 
+const intentRows = [
+  {
+    search: 'Translate Korean manhwa on Android',
+    fit: 'Best fit when readers need vertical-page OCR, short-dialogue translation, and one APK-to-plan flow.',
+    action: 'Start with the free trial, then move to Pro if translation becomes a weekly reading habit.',
+  },
+  {
+    search: 'Translate manga or manhua from a reader app',
+    fit: 'Useful when the reading workflow already feels like TachiyomiAT, Tachiyomi, or Mihon and screenshots feel slow.',
+    action: 'Download the official APK and keep pricing, support, and activation on Nayovi instead of using mirrors.',
+  },
+  {
+    search: 'Review, affiliate, or community test',
+    fit: 'Good fit when a blog, community, or partner needs a review code, public pricing page, and compliance note.',
+    action: 'Request a dedicated code before publishing a walkthrough or sending readers to a trial.',
+  },
+] as const;
+
 const reviewSignals = [
   {
     title: 'Reviewer-ready flow',
@@ -320,6 +338,54 @@ export const PageTranslateManhwaAi = () => {
             </Card>
           ))}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Search intent"
+        title="Match the workflow before choosing a plan"
+        description="Nayovi should earn subscriptions from readers who need repeat translation, not one-off curiosity clicks. These are the highest-fit use cases."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {intentRows.map((row) => (
+            <Card key={row.search} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.search}</CardTitle>
+                <CardDescription>
+                  <span className="block font-medium text-foreground">
+                    Fit signal
+                  </span>
+                  <span className="mt-1 block">{row.fit}</span>
+                  <span className="mt-4 block font-medium text-foreground">
+                    Next step
+                  </span>
+                  <span className="mt-1 block">{row.action}</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <KeyRoundIcon className="size-4" />
+                Built around activation, not anonymous uploads
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The best path is to install the official APK, test hosted
+                translation with free access, and upgrade only when the token
+                plan matches real reading volume.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Compare plans
+            </a>
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection
