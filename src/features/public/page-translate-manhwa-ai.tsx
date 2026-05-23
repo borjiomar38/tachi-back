@@ -127,6 +127,24 @@ const reviewSignals = [
   },
 ] as const;
 
+const reviewRequestRows = [
+  {
+    audience: 'Android app reviewers',
+    request:
+      'Ask for a redeem code, APK link, screenshots, pricing context, and the permission-safe workflow note before testing.',
+  },
+  {
+    audience: 'Affiliate or community pilots',
+    request:
+      'Request a dedicated code and point members to the official download, pricing, support, and cancellation paths.',
+  },
+  {
+    audience: 'Localization or publisher teams',
+    request:
+      'Start with approved samples or public-domain material so the OCR and translation workflow can be reviewed responsibly.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -427,6 +445,31 @@ export const PageTranslateManhwaAi = () => {
             >
               Request review code
             </a>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardHeader>
+            <CardTitle className="text-lg">
+              What partners should request before publishing
+            </CardTitle>
+            <CardDescription>
+              A review or pilot should send qualified readers to the official
+              Nayovi funnel and keep the use case transparent.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-3 pt-0 lg:grid-cols-3">
+            {reviewRequestRows.map((row) => (
+              <div
+                key={row.audience}
+                className="rounded-2xl border border-border bg-background p-4"
+              >
+                <p className="text-sm font-semibold">{row.audience}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {row.request}
+                </p>
+              </div>
+            ))}
           </CardContent>
         </Card>
       </PublicSection>
