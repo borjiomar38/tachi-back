@@ -179,6 +179,21 @@ export const supportFaqs: ContentBlock[] = [
       'Starter is good for trying the service, Pro is best for regular reading, and Power is for heavy readers.',
   },
   {
+    title: 'When should I upgrade from the free trial?',
+    description:
+      'Upgrade when you translate regularly, need more monthly chapters, or want a redeem code that can support several devices or readers.',
+  },
+  {
+    title: 'Can a reading group, agency, or creator team use one plan?',
+    description:
+      'Yes. Pick the monthly token plan that matches the group volume, share the redeem code with approved users, and contact support if you need a custom monthly limit.',
+  },
+  {
+    title: 'Which plan is best for affiliates or community demos?',
+    description:
+      'Start with Pro if you need enough monthly chapters for repeat demos, reviews, or a small community test. Ask support for a dedicated code before publishing a public walkthrough.',
+  },
+  {
     title: 'Is it monthly?',
     description:
       'Yes. The plans renew every month until you cancel them.',
