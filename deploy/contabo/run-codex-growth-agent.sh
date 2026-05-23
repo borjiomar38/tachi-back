@@ -41,6 +41,8 @@ run_codex_cycle() {
     return 1
   fi
 
+  prepare_git_workspace "${repo_dir}" "${branch}"
+
   cat >"${prompt_file}" <<PROMPT
 You are the Nayovi autonomous growth agent running on the Contabo production VPS.
 
@@ -113,6 +115,44 @@ PROMPT
   fi
 
   log "Completed Codex growth cycle ${cycle_id}; report=${report_file}"
+}
+
+prepare_git_workspace() {
+  local repo_dir="$1"
+  local branch="$2"
+
+  if [[ ! -d "${repo_dir}/.git" ]]; then
+    return 0
+  fi
+
+  (
+    cd "${repo_dir}"
+
+    git config user.name "${GROWTH_AGENT_GIT_AUTHOR_NAME:-Nayovi Growth Agent}"
+    git config user.email "${GROWTH_AGENT_GIT_AUTHOR_EMAIL:-growth-agent@nayovi.com}"
+
+    if [[ "${GROWTH_AGENT_AUTO_CHECKOUT_BRANCH:-true}" != "true" ]]; then
+      return 0
+    fi
+
+    if ! git diff --quiet || ! git diff --cached --quiet; then
+      log "Git workspace has local changes; skipping branch sync."
+      return 0
+    fi
+
+    git fetch origin master
+
+    if git show-ref --verify --quiet "refs/heads/${branch}"; then
+      git checkout "${branch}"
+      if git merge-base --is-ancestor HEAD origin/master; then
+        git merge --ff-only origin/master
+      else
+        log "Growth branch has local commits not in origin/master; leaving it unchanged."
+      fi
+    else
+      git checkout -B "${branch}" origin/master
+    fi
+  )
 }
 
 run_loop() {
