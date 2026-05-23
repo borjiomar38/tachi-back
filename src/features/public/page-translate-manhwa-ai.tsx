@@ -145,6 +145,24 @@ const reviewRequestRows = [
   },
 ] as const;
 
+const proofRows = [
+  {
+    signal: 'Before installing',
+    proof:
+      'Readers can inspect the official APK path, pricing page, setup guides, and support route before trusting the workflow.',
+  },
+  {
+    signal: 'Before paying',
+    proof:
+      'Free trial access and chapter estimates make the upgrade decision tied to real manga, manhwa, or manhua reading volume.',
+  },
+  {
+    signal: 'Before publishing',
+    proof:
+      'Reviewers can request a redeem code and cite the permission-safe policy instead of sending readers to an unofficial mirror.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -401,6 +419,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Compare plans
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Buyer proof"
+        title="Clear checkpoints before readers commit"
+        description="Qualified traffic should know what can be verified before installing, paying, or recommending Nayovi to another Android reader."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {proofRows.map((row) => (
+            <Card key={row.signal} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.signal}</CardTitle>
+                <CardDescription>{row.proof}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ShieldCheckIcon className="size-4" />
+                Useful for serious readers and reviewers
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The best Nayovi user can verify the official download,
+                activation path, support options, and plan fit before turning
+                hosted translation into a repeat paid workflow.
+              </p>
+            </div>
+            <a
+              href="/download"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Verify download path
             </a>
           </CardContent>
         </Card>
