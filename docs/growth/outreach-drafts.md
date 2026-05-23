@@ -419,3 +419,18 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## App Listing Metadata Fit Draft
+
+Subject: Official app listing fit for Nayovi Android translation workflow
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK for hosted manga, manhwa, and manhua OCR/AI translation. I am checking whether {{directory_or_marketplace}} accepts accurate developer-submitted listings for tools like this.
+
+The listing would point readers to the official APK, pricing, support, and source-boundary pages. Nayovi does not host or distribute chapters, and I am not looking for paid reviews or incentivized ratings. If the product fits your catalog rules, I can provide screenshots, category copy, support contact details, and a scoped review code.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.

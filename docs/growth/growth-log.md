@@ -3,6 +3,15 @@
 ## 2026-05-23
 
 - Autonomous cycle on `growth/autonomous`: effective instructions report git push enabled, autonomous mode enabled, autonomous outreach enabled, and email mode `send`.
+- Audited branch/status, setup-guide content, sitemap metadata, current backlink prospects, outreach drafts, and recent growth-log history.
+- Added a reviewer, affiliate, and directory checklist to the Mihon/TachiyomiAT/Nayovi setup guide so coverage and listings can follow the official install, paid activation, support, and source-boundary path.
+- Refreshed the `/guides/mihon-nayovi-setup` sitemap last-modified date.
+- Added four draft prospects focused on APK discovery, Android app listings, comics press, and localization ethics feedback.
+- Added an app-listing metadata fit outreach draft with opt-out language.
+- Outreach sent: 0. Reason: all new and existing prospect rows are still marked `draft`; no contact-ready approved recipient state was exposed in this cycle.
+- Validation: `pnpm lint:ts` was blocked by pnpm ignored-build approval checks after generating a temporary `pnpm-workspace.yaml`; removed the generated file, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+
+- Autonomous cycle on `growth/autonomous`: effective instructions report git push enabled, autonomous mode enabled, autonomous outreach enabled, and email mode `send`.
 - Audited branch/status, public manhwa SEO page, sitemap route metadata, current backlink prospects, outreach drafts, and recent growth-log history.
 - Added reviewer and generic-OCR differentiation FAQs to `/translate-manhwa-ai`; the existing FAQ structured-data wiring now exposes these answers to search engines.
 - Added four draft prospects focused on Android utility coverage, app listing discovery, founder/investor visibility, and localization workflow feedback.

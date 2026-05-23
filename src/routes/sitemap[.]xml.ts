@@ -61,7 +61,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.8',
   },
   '/guides/mihon-nayovi-setup': {
-    lastModified: '2026-05-14',
+    lastModified: '2026-05-23',
     priority: '0.8',
   },
   '/guides/mihon-tachiyomiat-setup': {

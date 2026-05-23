@@ -1,8 +1,10 @@
 import {
   ArrowRightIcon,
   BookOpenCheckIcon,
+  CircleDollarSignIcon,
   FileCheck2Icon,
   LanguagesIcon,
+  MessageSquareTextIcon,
   ScaleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
@@ -64,6 +66,27 @@ const readerLineageNotes = [
     title: 'Keep sources separate',
     description:
       'Use official reader project channels for reader setup and use Nayovi for translation support. Nayovi does not host manga chapters, extension lists, or unauthorized chapter sources.',
+  },
+] as const;
+
+const reviewerActivationChecks = [
+  {
+    icon: SmartphoneIcon,
+    title: 'Install path',
+    description:
+      'Start from the official Nayovi APK page, then note the build label, pricing page, and support route used during the test.',
+  },
+  {
+    icon: CircleDollarSignIcon,
+    title: 'Paid signal',
+    description:
+      'Use a trial, paid plan, or scoped review code that matches the monthly chapter volume being demonstrated.',
+  },
+  {
+    icon: MessageSquareTextIcon,
+    title: 'Coverage notes',
+    description:
+      'Evaluate hosted OCR, translation output, glossary consistency, activation, cancellation support, and source-boundary messaging.',
   },
 ] as const;
 
@@ -150,6 +173,10 @@ interface SetupGuideCopy {
   title: string;
 }
 
+interface SetupGuidePageProps {
+  copy: SetupGuideCopy;
+}
+
 const mihonNayoviSetupGuideCopy: SetupGuideCopy = {
   description:
     'Set up Nayovi as a hosted OCR and translation workflow for Mihon, Tachiyomi, and TachiyomiAT-style Android readers without turning the project into a chapter source, extension list, or piracy index.',
@@ -176,7 +203,7 @@ export const PageMihonTachiyomiAtSetupGuide = () => {
   return <SetupGuidePage copy={mihonTachiyomiAtSetupGuideCopy} />;
 };
 
-const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
+const SetupGuidePage = (props: SetupGuidePageProps) => {
   return (
     <PublicShell>
       <PublicSection
@@ -246,6 +273,29 @@ const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
             </div>
           </CardContent>
         </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Review path"
+        title="Checklist for reviewers, affiliates, and directories"
+        description="Use the same install-to-activation sequence that a paying reader would follow, then link readers back to the official download, pricing, support, and policy pages."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerActivationChecks.map((check) => {
+            const Icon = check.icon;
+            return (
+              <Card key={check.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{check.title}</CardTitle>
+                  <CardDescription>{check.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
       </PublicSection>
 
       <PublicSection
