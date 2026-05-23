@@ -160,8 +160,12 @@ GROWTH_AGENT_AUTONOMOUS_MODE=true
 GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
 GROWTH_AGENT_EMAIL_SEND_MODE=send
 GROWTH_AGENT_GIT_BRANCH=growth/autonomous
+GROWTH_AGENT_GIT_BRANCH_PREFIX=growth/autonomous
+GROWTH_AGENT_PER_CYCLE_BRANCHES=true
 GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
 GROWTH_AGENT_GIT_PUSH_ENABLED=true
+GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true
+GROWTH_AGENT_AUTO_MERGE_BASE_BRANCH=master
 GROWTH_AGENT_INBOUND_ENABLED=false
 GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
 GROWTH_AGENT_INBOUND_REQUIRE_AUTHENTICATED_SENDER=true
@@ -176,9 +180,11 @@ GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
 without owner approval. It must still use public business contact paths,
 individualized messages, opt-out language, and the daily cap. It must not buy
 backlinks, use scraped private lists, send deceptive claims, or evade rate
-limits. `GROWTH_AGENT_GIT_PUSH_ENABLED=true` lets the agent push only its
-configured growth branch. The agent must never push or merge `master`; pushing
-`master` deploys production.
+limits. With `GROWTH_AGENT_PER_CYCLE_BRANCHES=true`, each cycle starts from the
+latest `master` on a branch named like `growth/autonomous-20260523T190000Z`.
+With `GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true`, the runner validates successful
+cycle work, pushes the cycle branch, merges it into `master`, and pushes
+`master`. Pushing `master` deploys production.
 
 Owner email notifications are intentionally low-volume:
 

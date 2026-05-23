@@ -23,7 +23,7 @@ log() {
 }
 
 run_codex_cycle() {
-  local cycle_id prompt_file report_file inbound_list_file repo_dir codex_bin codex_model codex_effort codex_sandbox branch
+  local auto_merge_enabled base_branch branch branch_prefix codex_bin codex_effort codex_model codex_sandbox cycle_id inbound_list_file prompt_file report_file repo_dir
 
   mkdir -p "${STATE_DIR}/prompts" "${STATE_DIR}/reports" "${LOG_DIR}"
   cycle_id="$(date -u +%Y%m%dT%H%M%SZ)"
@@ -35,14 +35,21 @@ run_codex_cycle() {
   codex_model="${GROWTH_AGENT_CODEX_MODEL:-gpt-5.5}"
   codex_effort="${GROWTH_AGENT_CODEX_REASONING_EFFORT:-low}"
   codex_sandbox="${GROWTH_AGENT_CODEX_SANDBOX:-workspace-write}"
-  branch="${GROWTH_AGENT_GIT_BRANCH:-growth/autonomous}"
+  base_branch="${GROWTH_AGENT_AUTO_MERGE_BASE_BRANCH:-master}"
+  branch_prefix="${GROWTH_AGENT_GIT_BRANCH_PREFIX:-${GROWTH_AGENT_GIT_BRANCH:-growth/autonomous}}"
+  auto_merge_enabled="${GROWTH_AGENT_AUTO_MERGE_TO_MASTER:-true}"
+  if [[ "${GROWTH_AGENT_PER_CYCLE_BRANCHES:-true}" == "true" ]]; then
+    branch="${branch_prefix%/}-${cycle_id}"
+  else
+    branch="${GROWTH_AGENT_GIT_BRANCH:-growth/autonomous}"
+  fi
 
   if [[ ! -d "${repo_dir}" ]]; then
     log "Repo directory does not exist: ${repo_dir}"
     return 1
   fi
 
-  prepare_git_workspace "${repo_dir}" "${branch}"
+  prepare_git_workspace "${repo_dir}" "${branch}" "${base_branch}"
 
   cat >"${prompt_file}" <<PROMPT
 You are the Nayovi autonomous growth agent running on the Contabo production VPS.
@@ -53,6 +60,7 @@ Brand domain: ${GROWTH_AGENT_BRAND_SITE:-https://nayovi.com}
 SEO domain: ${GROWTH_AGENT_SEO_SITE:-https://translate-manhwa-ai.com}
 Repo directory: ${repo_dir}
 Working branch: ${branch}
+Production branch: ${base_branch}
 
 Business goal:
 - Increase qualified traffic, backlinks, partnerships, investor interest, and paid subscriptions for Nayovi.
@@ -66,11 +74,11 @@ Allowed work:
 - Maintain docs/growth/backlink-prospects.csv with relevant, white-hat backlink and partnership opportunities.
 - Maintain docs/growth/outreach-drafts.md with concise personalized drafts for agencies, blogs, communities, potential affiliates, and investors.
 - Maintain docs/growth/growth-log.md with cycle results, commits, and next actions.
-- Create a Git branch named ${branch}, commit focused changes, and push that branch when GROWTH_AGENT_GIT_PUSH_ENABLED=true.
+- Work only on the branch named ${branch}, commit focused changes there, and push that branch when GROWTH_AGENT_GIT_PUSH_ENABLED=true.
 - When autonomous outreach is enabled and email mode is send, choose high-fit public business contacts or official forms, send individualized compliant outreach, and log recipients, rationale, and follow-up state.
 
 Hard constraints:
-- Do not push, merge, rebase, or force-push master.
+- Do not manually push, merge, rebase, or force-push ${base_branch}. The runner publishes successful cycle branches to ${base_branch} when GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true.
 - Do not run Vercel production deploy commands.
 - Do not buy backlinks, use PBNs, scrape private data, evade rate limits, or send spam.
 - Do not send bulk, deceptive, repeated, or noncompliant outreach. Use public business contacts or official forms only, personalize every message, include opt-out language, and stay under the daily cap.
@@ -86,6 +94,7 @@ Operational preferences:
 - Email mode: ${GROWTH_AGENT_EMAIL_SEND_MODE:-draft}
 - Daily outreach cap: ${GROWTH_AGENT_MAX_OUTREACH_EMAILS_PER_DAY:-10}
 - Git push enabled: ${GROWTH_AGENT_GIT_PUSH_ENABLED:-false}
+- Auto-merge to production branch: ${auto_merge_enabled}
 - Autonomous mode: ${GROWTH_AGENT_AUTONOMOUS_MODE:-false}
 - Autonomous outreach enabled: ${GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED:-false}
 
@@ -96,7 +105,7 @@ Cycle checklist:
 4. Make only safe code/content changes.
 5. Run the light validation command if practical: ${GROWTH_AGENT_VALIDATION_COMMAND:-pnpm lint:ts}
 6. Commit on ${branch} if files changed.
-7. Push ${branch} only if enabled.
+7. Push ${branch} only if enabled. Do not push ${base_branch}; the runner handles production publication.
 8. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
 9. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
 PROMPT
@@ -125,6 +134,7 @@ PROMPT
     "${codex_bin}" --search -a never "${codex_args[@]}" <"${prompt_file}"
   fi
 
+  publish_growth_branch "${repo_dir}" "${branch}" "${base_branch}" "${cycle_id}" "${report_file}"
   maybe_send_owner_notification "${cycle_id}" "${report_file}" "${repo_dir}" "${inbound_list_file}"
   archive_inbound_contexts "${inbound_list_file}" "${cycle_id}"
 
@@ -285,9 +295,150 @@ csv_to_egrep() {
     | sed -e 's/[[:space:]]*,[[:space:]]*/|/g' -e 's/[[:space:]]\\+/ /g'
 }
 
+publish_growth_branch() {
+  local repo_dir="$1"
+  local branch="$2"
+  local base_branch="$3"
+  local cycle_id="$4"
+  local report_file="$5"
+  local branch_head merge_message remote_base
+
+  if [[ "${GROWTH_AGENT_AUTO_MERGE_TO_MASTER:-true}" != "true" ]]; then
+    append_report_note "${report_file}" "Auto-merge disabled; leaving ${branch} unmerged."
+    return 0
+  fi
+
+  if [[ ! -d "${repo_dir}/.git" ]]; then
+    return 0
+  fi
+
+  (
+    cd "${repo_dir}"
+    cleanup_transient_runtime_files
+
+    git config user.name "${GROWTH_AGENT_GIT_AUTHOR_NAME:-Nayovi Growth Agent}"
+    git config user.email "${GROWTH_AGENT_GIT_AUTHOR_EMAIL:-growth-agent@nayovi.com}"
+
+    if ! git show-ref --verify --quiet "refs/heads/${branch}"; then
+      append_report_note "${report_file}" "Auto-merge skipped; branch ${branch} does not exist."
+      return 0
+    fi
+
+    git checkout "${branch}"
+    if ! auto_commit_cycle_changes "${cycle_id}" "${report_file}"; then
+      append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Auto-merge skipped because the cycle left unsafe or uncommittable changes."
+      return 0
+    fi
+
+    if ! git diff --quiet || ! git diff --cached --quiet; then
+      append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Auto-merge skipped because the workspace is still dirty after auto-commit."
+      return 0
+    fi
+
+    git fetch origin "${base_branch}"
+    remote_base="origin/${base_branch}"
+    if ! git merge-base --is-ancestor "${remote_base}" HEAD; then
+      if ! git merge --no-edit "${remote_base}"; then
+        git merge --abort >/dev/null 2>&1 || true
+        append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Auto-merge skipped because ${branch} conflicts with ${remote_base}."
+        return 0
+      fi
+    fi
+
+    if [[ "$(git rev-list --count "${remote_base}..HEAD")" == "0" ]]; then
+      append_report_note "${report_file}" "Auto-merge skipped; ${branch} has no commits ahead of ${remote_base}."
+      return 0
+    fi
+
+    if [[ -n "${GROWTH_AGENT_VALIDATION_COMMAND:-}" ]]; then
+      if ! bash -lc "${GROWTH_AGENT_VALIDATION_COMMAND}"; then
+        append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Auto-merge skipped because validation failed: ${GROWTH_AGENT_VALIDATION_COMMAND}"
+        return 0
+      fi
+    fi
+
+    branch_head="$(git rev-parse --short HEAD)"
+    if [[ "${GROWTH_AGENT_GIT_PUSH_ENABLED:-false}" == "true" ]]; then
+      if ! git push --no-verify origin "${branch}"; then
+        append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Auto-merge skipped because pushing ${branch} failed."
+        return 0
+      fi
+    fi
+
+    git checkout -B "${base_branch}" "${remote_base}"
+    merge_message="Merge ${branch} autonomous growth cycle ${cycle_id}"
+    if ! git merge --no-ff --no-edit -m "${merge_message}" "${branch}"; then
+      git merge --abort >/dev/null 2>&1 || true
+      git checkout "${branch}"
+      append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Auto-merge into ${base_branch} failed for ${branch}."
+      return 0
+    fi
+
+    if ! git push --no-verify origin "${base_branch}"; then
+      git checkout "${branch}"
+      append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: ${branch} merged locally, but pushing ${base_branch} failed."
+      return 0
+    fi
+    append_report_note "${report_file}" "Published ${branch} (${branch_head}) to ${base_branch}; production deploy triggered by ${base_branch} push."
+  )
+}
+
+auto_commit_cycle_changes() {
+  local cycle_id="$1"
+  local report_file="$2"
+  local status_output
+
+  cleanup_transient_runtime_files
+  status_output="$(git status --porcelain=v1)"
+  if [[ -z "${status_output}" ]]; then
+    return 0
+  fi
+
+  if has_sensitive_status_paths "${status_output}"; then
+    append_report_note "${report_file}" "OWNER_ACTION_REQUIRED: Refusing to auto-commit sensitive-looking paths."
+    return 1
+  fi
+
+  git add -A
+  if git diff --cached --quiet; then
+    return 0
+  fi
+
+  git commit -m "Autonomous growth cycle ${cycle_id}"
+}
+
+has_sensitive_status_paths() {
+  local status_output="$1"
+
+  printf '%s\n' "${status_output}" \
+    | sed -E 's/^...//' \
+    | grep -Eiq '(^|/)(\.env($|[.])|id_rsa|id_dsa|id_ecdsa|id_ed25519|[^/]*(secret|token|credential|private-key|private_key)[^/]*|[^/]*\.(pem|key|p12|pfx))($|[[:space:]]| -> )'
+}
+
+cleanup_transient_runtime_files() {
+  if [[ -f pnpm-workspace.yaml ]] \
+    && ! git ls-files --error-unmatch pnpm-workspace.yaml >/dev/null 2>&1 \
+    && grep -q 'allowBuilds:' pnpm-workspace.yaml \
+    && grep -q 'set this to true or false' pnpm-workspace.yaml; then
+    rm -f pnpm-workspace.yaml
+  fi
+}
+
+append_report_note() {
+  local report_file="$1"
+  local message="$2"
+
+  {
+    printf '\n\n## Runner Publication\n\n'
+    printf '%s\n' "${message}"
+  } >>"${report_file}"
+  log "${message}"
+}
+
 prepare_git_workspace() {
   local repo_dir="$1"
   local branch="$2"
+  local base_branch="$3"
 
   if [[ ! -d "${repo_dir}/.git" ]]; then
     return 0
@@ -298,6 +449,7 @@ prepare_git_workspace() {
 
     git config user.name "${GROWTH_AGENT_GIT_AUTHOR_NAME:-Nayovi Growth Agent}"
     git config user.email "${GROWTH_AGENT_GIT_AUTHOR_EMAIL:-growth-agent@nayovi.com}"
+    cleanup_transient_runtime_files
 
     if [[ "${GROWTH_AGENT_AUTO_CHECKOUT_BRANCH:-true}" != "true" ]]; then
       return 0
@@ -308,17 +460,19 @@ prepare_git_workspace() {
       return 0
     fi
 
-    git fetch origin master
+    git fetch origin "${base_branch}"
 
-    if git show-ref --verify --quiet "refs/heads/${branch}"; then
+    if [[ "${GROWTH_AGENT_PER_CYCLE_BRANCHES:-true}" == "true" ]]; then
+      git checkout -B "${branch}" "origin/${base_branch}"
+    elif git show-ref --verify --quiet "refs/heads/${branch}"; then
       git checkout "${branch}"
-      if git merge-base --is-ancestor HEAD origin/master; then
-        git merge --ff-only origin/master
+      if git merge-base --is-ancestor HEAD "origin/${base_branch}"; then
+        git merge --ff-only "origin/${base_branch}"
       else
-        log "Growth branch has local commits not in origin/master; leaving it unchanged."
+        log "Growth branch has local commits not in origin/${base_branch}; leaving it unchanged."
       fi
     else
-      git checkout -B "${branch}" origin/master
+      git checkout -B "${branch}" "origin/${base_branch}"
     fi
   )
 }
