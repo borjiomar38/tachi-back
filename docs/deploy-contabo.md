@@ -158,6 +158,7 @@ GROWTH_AGENT_CODEX_REASONING_EFFORT=low
 GROWTH_AGENT_CODEX_SANDBOX=danger-full-access
 GROWTH_AGENT_AUTONOMOUS_MODE=true
 GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
+GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true
 GROWTH_AGENT_EMAIL_SEND_MODE=send
 GROWTH_AGENT_GIT_BRANCH=growth/autonomous
 GROWTH_AGENT_GIT_BRANCH_PREFIX=growth/autonomous
@@ -178,9 +179,11 @@ GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
 
 `GROWTH_AGENT_EMAIL_SEND_MODE=send` and
 `GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true` let the agent advance outreach
-without owner approval. It must still use public business contact paths,
-individualized messages, opt-out language, and the daily cap. It must not buy
-backlinks, use scraped private lists, send deceptive claims, or evade rate
+without owner approval. `GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true`
+lets the agent move prospects from draft to approved/contacted using human
+business judgment from the app context. It must still use public business
+contact paths, individualized messages, opt-out language, and the daily cap.
+It must not buy backlinks, use scraped private lists, send deceptive claims, or evade rate
 limits. With `GROWTH_AGENT_PER_CYCLE_BRANCHES=true`, each cycle starts from the
 latest `master` on a branch named like `growth/autonomous-20260523T190000Z`.
 With `GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true`, the runner validates successful
@@ -188,6 +191,10 @@ cycle work, pushes the cycle branch, merges it into `master`, and pushes
 `master`. Pushing `master` deploys production. The server validation command
 uses direct `tsc` by default to avoid interactive `pnpm approve-builds` prompts
 blocking autonomous publication on the VPS.
+
+External outreach email is sent through `/usr/local/bin/tachi-growth-outreach-send`,
+which enforces the daily cap, requires opt-out language, and logs every delivery
+under `/var/lib/tachi-growth-agent/outreach`.
 
 Owner email notifications are intentionally low-volume:
 

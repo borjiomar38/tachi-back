@@ -40,6 +40,7 @@ install -m 0755 -d /usr/local/lib/tachi-back
 install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-growth-agent.sh" /usr/local/bin/tachi-growth-agent
 install -m 0755 "${APP_DIR}/deploy/contabo/create-lws-mailbox.py" /usr/local/bin/tachi-create-lws-mailbox
 install -m 0755 "${APP_DIR}/deploy/contabo/send-growth-owner-notification.py" /usr/local/bin/tachi-growth-owner-notify
+install -m 0755 "${APP_DIR}/deploy/contabo/send-growth-outreach.py" /usr/local/bin/tachi-growth-outreach-send
 install -m 0755 "${APP_DIR}/deploy/contabo/growth-mail-bridge.py" /usr/local/bin/tachi-growth-mail-bridge
 apt-get update
 apt-get install -y ca-certificates curl ffmpeg file git jq poppler-utils python3 ripgrep
@@ -75,6 +76,7 @@ GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true
 GROWTH_AGENT_AUTO_MERGE_BASE_BRANCH=master
 GROWTH_AGENT_AUTONOMOUS_MODE=true
 GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
+GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true
 GROWTH_AGENT_EMAIL_SEND_MODE=send
 GROWTH_AGENT_MAX_OUTREACH_EMAILS_PER_DAY=10
 GROWTH_AGENT_NOTIFY_ENABLED=true
@@ -137,6 +139,7 @@ ensure_env_default GROWTH_AGENT_INBOUND_MARK_SEEN true
 ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED false
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_MODE true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
+ensure_env_default GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED true
 ensure_env_default GROWTH_AGENT_VALIDATION_COMMAND '"./node_modules/.bin/tsc --noEmit"'
 ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS '"OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"'
 chmod 600 "${ENV_FILE}"

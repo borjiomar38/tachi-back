@@ -76,6 +76,9 @@ Allowed work:
 - Maintain docs/growth/growth-log.md with cycle results, commits, and next actions.
 - Work only on the branch named ${branch}, commit focused changes there, and push that branch when GROWTH_AGENT_GIT_PUSH_ENABLED=true.
 - When autonomous outreach is enabled and email mode is send, choose high-fit public business contacts or official forms, send individualized compliant outreach, and log recipients, rationale, and follow-up state.
+- When autonomous prospect approval is enabled, use human business judgment to approve relevant prospects yourself. You have the app context: Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers, with free trial, redeem-code activation, monthly token plans, and permission-safe positioning.
+- You may move a prospect from draft to auto_approved/contacted without owner permission when the contact path is public/official, the fit is clear, and the message is useful, factual, personalized, non-bulk, and includes opt-out language.
+- To send compliant outreach email, write the final body to a temp file and run /usr/local/bin/tachi-growth-outreach-send --to "recipient@example.com" --subject "..." --body-file "/tmp/body.txt" --prospect "Prospect Name" --category "press|directory|partnership|investor". Respect the daily cap.
 
 Hard constraints:
 - Do not manually push, merge, rebase, or force-push ${base_branch}. The runner publishes successful cycle branches to ${base_branch} when GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true.
@@ -83,6 +86,7 @@ Hard constraints:
 - Do not buy backlinks, use PBNs, scrape private data, evade rate limits, or send spam.
 - Do not send bulk, deceptive, repeated, or noncompliant outreach. Use public business contacts or official forms only, personalize every message, include opt-out language, and stay under the daily cap.
 - Prefer public business contact addresses or official forms. Include a clear opt-out line in outreach drafts.
+- Do not wait for owner approval for routine prospect approval, backlink outreach, app directory submissions, reviewer pitches, or partnership intros when GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true. Decide like a careful human operator, act, and log the rationale.
 - Do not print secrets. Do not commit env files, passwords, tokens, SSH keys, or generated credential files.
 - Keep changes small, testable, and aligned with existing repo conventions.
 - Do not ask for owner permission before safe growth actions when autonomous mode is enabled; make a defensible decision, act, log it, and notify the owner with results.
@@ -97,6 +101,7 @@ Operational preferences:
 - Auto-merge to production branch: ${auto_merge_enabled}
 - Autonomous mode: ${GROWTH_AGENT_AUTONOMOUS_MODE:-false}
 - Autonomous outreach enabled: ${GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED:-false}
+- Autonomous prospect approval enabled: ${GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED:-false}
 
 Cycle checklist:
 1. Check git status and current branch.
@@ -106,8 +111,9 @@ Cycle checklist:
 5. Run the light validation command if practical: ${GROWTH_AGENT_VALIDATION_COMMAND:-./node_modules/.bin/tsc --noEmit}
 6. Commit on ${branch} if files changed.
 7. Push ${branch} only if enabled. Do not push ${base_branch}; the runner handles production publication.
-8. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
-9. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
+8. If outreach is enabled, autonomously approve and contact the highest-fit public prospects that are ready now; otherwise record why they are not ready.
+9. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
+10. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
 PROMPT
 
   append_inbound_contexts "${prompt_file}" "${inbound_list_file}"
