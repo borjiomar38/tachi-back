@@ -434,3 +434,20 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Subscription Metadata Listing Draft
+
+Subject: Accurate subscription metadata for Nayovi Android APK listing
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK for hosted manga, manhwa, and manhua OCR/AI translation. I am checking whether {{directory_or_marketplace}} supports developer-submitted listings that include official APK, support, free trial, and paid monthly token-plan metadata.
+
+The useful directory angle is accuracy rather than promotion: readers can see the official download path, token-plan pricing, hosted-processing support, and source-boundary policy before installing. Nayovi does not host or distribute chapters, and I am not looking for paid reviews or incentivized ratings.
+
+Would this fit your software or app listing rules once screenshots and current pricing details are ready?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.

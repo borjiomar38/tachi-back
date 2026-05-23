@@ -4,7 +4,11 @@ import {
   buildPublicSeoKeywords,
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
-import { PUBLIC_SUPPORT_EMAIL } from '@/features/public/data';
+import {
+  fallbackPublicTokenPacks,
+  formatCurrency,
+  PUBLIC_SUPPORT_EMAIL,
+} from '@/features/public/data';
 
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
@@ -67,6 +71,23 @@ const buildAbsoluteUrl = (path: string) => {
 
 export const buildPublicAbsoluteUrl = buildAbsoluteUrl;
 
+const buildPublicAppOffers = () =>
+  fallbackPublicTokenPacks.map((tokenPack) => ({
+    '@type': 'Offer',
+    name: tokenPack.name,
+    price: (tokenPack.priceAmountCents / 100).toFixed(2),
+    priceCurrency: tokenPack.currency,
+    availability: 'https://schema.org/InStock',
+    category: tokenPack.priceAmountCents === 0 ? 'FreeTrial' : 'Subscription',
+    description:
+      tokenPack.description ??
+      `${formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)} monthly Nayovi token plan for hosted manga, manhwa, and manhua AI translation.`,
+    url:
+      tokenPack.priceAmountCents === 0
+        ? buildAbsoluteUrl('/')
+        : buildAbsoluteUrl('/pricing'),
+  }));
+
 export const buildPublicAbsoluteUrlFromRequest = (
   request: Request,
   path: string
@@ -128,6 +149,7 @@ const buildStructuredData = (
   const baseUrl = buildAbsoluteUrl('/');
   const organizationId = `${baseUrl}#organization`;
   const websiteId = `${baseUrl}#website`;
+  const publicAppOffers = buildPublicAppOffers();
 
   return {
     '@context': 'https://schema.org',
@@ -193,12 +215,11 @@ const buildStructuredData = (
         description: publicSiteDescription,
         downloadUrl: buildAbsoluteUrl('/api/download/apk'),
         softwareHelp: buildAbsoluteUrl('/support'),
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-          description:
-            'Free Nayovi trial access for manga, manhwa, and manhua AI translation.',
+        offers: publicAppOffers,
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Nayovi monthly token plans',
+          itemListElement: publicAppOffers,
         },
       },
       ...extraGraph,

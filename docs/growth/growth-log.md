@@ -3,6 +3,14 @@
 ## 2026-05-23
 
 - Autonomous cycle on `growth/autonomous`: effective instructions report git push enabled, autonomous mode enabled, autonomous outreach enabled, and email mode `send`.
+- Audited branch/status, public structured-data helper, fallback token-plan data, current backlink prospects, outreach drafts, and recent growth-log history.
+- Added SoftwareApplication structured data offers for the free trial plus monthly token plans, including an OfferCatalog so app directories and search engines can see the official paid subscription path.
+- Added four draft prospects focused on software/app directories and mobile app discovery where accurate subscription metadata can support qualified traffic and partner review.
+- Added a subscription-metadata listing outreach draft with opt-out language.
+- Outreach sent: 0. Reason: all prospect rows remain `draft`; no row is explicitly approved/contact-ready for autonomous sending.
+- Validation: `pnpm lint:ts` was blocked by pnpm ignored-build approval checks after generating a temporary `pnpm-workspace.yaml`; removed the generated file, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+
+- Autonomous cycle on `growth/autonomous`: effective instructions report git push enabled, autonomous mode enabled, autonomous outreach enabled, and email mode `send`.
 - Audited branch/status, setup-guide content, sitemap metadata, current backlink prospects, outreach drafts, and recent growth-log history.
 - Added a reviewer, affiliate, and directory checklist to the Mihon/TachiyomiAT/Nayovi setup guide so coverage and listings can follow the official install, paid activation, support, and source-boundary path.
 - Refreshed the `/guides/mihon-nayovi-setup` sitemap last-modified date.
