@@ -103,7 +103,7 @@ Cycle checklist:
 2. Audit SEO and conversion gaps.
 3. Add or refine growth assets/backlink prospects/outreach drafts.
 4. Make only safe code/content changes.
-5. Run the light validation command if practical: ${GROWTH_AGENT_VALIDATION_COMMAND:-pnpm lint:ts}
+5. Run the light validation command if practical: ${GROWTH_AGENT_VALIDATION_COMMAND:-./node_modules/.bin/tsc --noEmit}
 6. Commit on ${branch} if files changed.
 7. Push ${branch} only if enabled. Do not push ${base_branch}; the runner handles production publication.
 8. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
