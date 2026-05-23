@@ -104,6 +104,8 @@ GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES=8
 GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS=600
 GROWTH_AGENT_INBOUND_MARK_SEEN=true
 GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
+GROWTH_AGENT_STATUS_REPLY_ENABLED=true
+GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,avance sur quoi,quoi maintenant,progress,what are you doing"
 GROWTH_AGENT_VALIDATION_COMMAND="./node_modules/.bin/tsc --noEmit"
 GROWTH_AGENT_PRIMARY_SITE=https://tachiyomiat.com
 GROWTH_AGENT_BRAND_SITE=https://nayovi.com
@@ -137,6 +139,8 @@ ensure_env_default GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES 8
 ensure_env_default GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS 600
 ensure_env_default GROWTH_AGENT_INBOUND_MARK_SEEN true
 ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED false
+ensure_env_default GROWTH_AGENT_STATUS_REPLY_ENABLED true
+ensure_env_default GROWTH_AGENT_STATUS_REPLY_KEYWORDS '"avancement,status,update,tu fais quoi,tu fais quoi la,avance sur quoi,quoi maintenant,progress,what are you doing"'
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_MODE true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED true

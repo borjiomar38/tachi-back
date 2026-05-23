@@ -173,6 +173,7 @@ GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
 GROWTH_AGENT_INBOUND_REQUIRE_AUTHENTICATED_SENDER=true
 GROWTH_AGENT_NOTIFY_ON_INBOUND=false
 GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
+GROWTH_AGENT_STATUS_REPLY_ENABLED=true
 GROWTH_AGENT_DAILY_SUMMARY_ENABLED=true
 GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
 ```
@@ -205,6 +206,10 @@ Owner email notifications are intentionally low-volume:
   sent, the daily summary is skipped until the next summary interval.
 - Reply-ingestion confirmations are disabled by default to avoid mail loops and
   noisy acknowledgements.
+- Owner status replies are enabled by default. A short authenticated owner mail
+  such as `avancement`, `status`, `update`, or `tu fais quoi` receives an
+  immediate snapshot from the mail bridge and is not queued as growth-agent
+  work.
 - Inbound replies are queued only when the sender address is allow-listed and
   the mail server reports passing SPF, DKIM, or DMARC authentication for that
   sender. Other messages are marked seen and never become agent instructions.
@@ -228,6 +233,13 @@ kept as files and, when `ffmpeg` is available, the bridge also extracts
 `ffprobe` metadata, key frames, and a short audio file for the next Codex cycle
 to inspect.
 
+Short status-only owner emails are handled before attachment extraction and
+before the growth-agent trigger. The bridge replies immediately with active
+services, cycle state, current repo branch/status, recent commits, pending
+inbound queue count, recent outreach deliveries, and the latest report excerpt.
+Action emails and emails with attachments still go into the normal queue for
+the next growth cycle.
+
 Enable inbound replies only after adding IMAP credentials to
 `/opt/tachi-back/.env.growth-agent`:
 
@@ -240,6 +252,8 @@ GROWTH_AGENT_INBOUND_IMAP_USER=growth-agent@nayovi.com
 GROWTH_AGENT_INBOUND_IMAP_PASSWORD=change-me
 GROWTH_AGENT_INBOUND_IMAP_MAILBOX=INBOX
 GROWTH_AGENT_INBOUND_IMAP_SSL=true
+GROWTH_AGENT_STATUS_REPLY_ENABLED=true
+GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,avance sur quoi,quoi maintenant,progress,what are you doing"
 ```
 
 After changing the env file:

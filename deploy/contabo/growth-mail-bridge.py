@@ -11,21 +11,36 @@ import os
 import pathlib
 import re
 import shutil
+import smtplib
 import subprocess
 import sys
 import time
+import ssl
+import unicodedata
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.header import decode_header, make_header
-from email.message import Message
+from email.message import EmailMessage, Message
 from email.parser import BytesParser
 from email.policy import default
-from email.utils import getaddresses, parsedate_to_datetime
+from email.utils import formatdate, getaddresses, parseaddr, parsedate_to_datetime
 from urllib.parse import unquote, urlparse
 
 
 DEFAULT_ENV_FILE = pathlib.Path('/opt/tachi-back/.env.growth-agent')
 DEFAULT_STATE_DIR = pathlib.Path('/var/lib/tachi-growth-agent')
+DEFAULT_STATUS_REPLY_KEYWORDS = (
+  'avancement',
+  'status',
+  'update',
+  'tu fais quoi',
+  'tu fais quoi la',
+  'tu fais quoi là',
+  'avance sur quoi',
+  'quoi maintenant',
+  'progress',
+  'what are you doing',
+)
 VIDEO_EXTENSIONS = {
   '.3g2',
   '.3gp',
@@ -54,6 +69,7 @@ class BridgeConfig:
   enabled: bool
   env_file: pathlib.Path
   state_dir: pathlib.Path
+  repo_dir: pathlib.Path
   inbound_dir: pathlib.Path
   queue_dir: pathlib.Path
   attachment_dir: pathlib.Path
@@ -72,9 +88,12 @@ class BridgeConfig:
   max_attachment_bytes: int
   mark_seen: bool
   confirmation_enabled: bool
+  status_reply_enabled: bool
+  status_reply_keywords: tuple[str, ...]
   notifier_path: pathlib.Path
   notify_email: str
   notify_env_file: pathlib.Path
+  interval_seconds: int
   max_video_frames: int
   max_video_audio_seconds: int
 
@@ -124,6 +143,9 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     enabled=is_true(values.get('GROWTH_AGENT_INBOUND_ENABLED', 'false')),
     env_file=env_file,
     state_dir=state_dir,
+    repo_dir=pathlib.Path(
+      values.get('GROWTH_AGENT_REPO_DIR', '/opt/tachi-growth-agent/repo')
+    ),
     inbound_dir=inbound_dir,
     queue_dir=inbound_dir / 'queue',
     attachment_dir=inbound_dir / 'attachments',
@@ -153,6 +175,15 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     confirmation_enabled=is_true(
       values.get('GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED', 'false')
     ),
+    status_reply_enabled=is_true(values.get('GROWTH_AGENT_STATUS_REPLY_ENABLED', 'true')),
+    status_reply_keywords=tuple(
+      parse_csv_list(
+        values.get(
+          'GROWTH_AGENT_STATUS_REPLY_KEYWORDS',
+          ','.join(DEFAULT_STATUS_REPLY_KEYWORDS),
+        )
+      )
+    ),
     notifier_path=pathlib.Path(
       values.get('GROWTH_AGENT_NOTIFY_BIN', '/usr/local/bin/tachi-growth-owner-notify')
     ),
@@ -160,6 +191,7 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     notify_env_file=pathlib.Path(
       values.get('GROWTH_AGENT_NOTIFY_ENV_FILE', '/opt/tachi-back/.env.production')
     ),
+    interval_seconds=max(60, int(values.get('GROWTH_AGENT_INTERVAL_SECONDS', '21600'))),
     max_video_frames=max(1, int(values.get('GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES', '8'))),
     max_video_audio_seconds=max(
       30, int(values.get('GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS', '600'))
@@ -221,6 +253,10 @@ def is_true(value: str | bool) -> bool:
 
 def parse_csv_set(value: str) -> set[str]:
   return {item.strip().lower() for item in value.split(',') if item.strip()}
+
+
+def parse_csv_list(value: str) -> list[str]:
+  return [item.strip() for item in value.split(',') if item.strip()]
 
 
 def ensure_directories(config: BridgeConfig) -> None:
@@ -308,12 +344,19 @@ def process_message(config: BridgeConfig, message: Message) -> bool:
     append_seen_id(config.seen_file, message_key)
     return False
 
+  subject = decode_header_value(message.get('Subject', '(no subject)'))
+  body = strip_quoted_reply(extract_body_text(message)).strip()
+  if is_status_request(config, message, subject, body):
+    sent = send_status_reply(config, message, sender, subject)
+    append_seen_id(config.seen_file, message_key)
+    if sent:
+      print(f'sent owner status reply for message: {subject[:120]}')
+    return True
+
   command_id = command_identifier(message)
   command_dir = config.attachment_dir / command_id
   command_dir.mkdir(parents=True, exist_ok=True)
 
-  subject = decode_header_value(message.get('Subject', '(no subject)'))
-  body = strip_quoted_reply(extract_body_text(message)).strip()
   attachments = extract_attachments(config, message, command_dir)
   context_path = config.queue_dir / f'{command_id}.md'
   context = render_context_markdown(
@@ -331,6 +374,364 @@ def process_message(config: BridgeConfig, message: Message) -> bool:
   maybe_send_confirmation(config, command_id, subject, context_path)
   print(f'queued owner reply {command_id}: {context_path}')
   return True
+
+
+def is_status_request(
+  config: BridgeConfig,
+  message: Message,
+  subject: str,
+  body: str,
+) -> bool:
+  if not config.status_reply_enabled or message_has_attachments(message):
+    return False
+
+  owner_text = normalize_status_text(body) or normalize_status_text(subject)
+  if not owner_text or len(owner_text) > 500:
+    return False
+
+  combined = normalize_status_text(f'{subject}\n{body}')
+  keywords = [normalize_status_text(keyword) for keyword in config.status_reply_keywords]
+  if not any(keyword and keyword in combined for keyword in keywords):
+    return False
+
+  action_pattern = (
+    r'\b(add|ajoute|change|configure|contacte|create|delete|deploy|envoie|'
+    r'fix|install|installe|merge|modifie|push|remove|restart|send|start|stop)\b'
+  )
+  if re.search(action_pattern, owner_text) and not re.search(
+    r'\b(avancement|status|progress|quoi|avance)\b',
+    owner_text,
+  ):
+    return False
+
+  return True
+
+
+def message_has_attachments(message: Message) -> bool:
+  for part in message.walk():
+    if part.is_multipart():
+      continue
+
+    disposition = (part.get_content_disposition() or '').lower()
+    filename = part.get_filename()
+    content_type = part.get_content_type()
+    if filename or disposition == 'attachment':
+      return True
+    if content_type.startswith(('image/', 'video/', 'audio/', 'application/pdf')):
+      return True
+
+  return False
+
+
+def normalize_status_text(value: str) -> str:
+  normalized = unicodedata.normalize('NFKD', value)
+  without_accents = ''.join(
+    char for char in normalized if not unicodedata.combining(char)
+  )
+  lower = without_accents.lower().replace("'", ' ')
+  words = re.sub(r'[^a-z0-9@./:_-]+', ' ', lower)
+  return re.sub(r'\s+', ' ', words).strip()
+
+
+def send_status_reply(
+  config: BridgeConfig,
+  original_message: Message,
+  recipient: str,
+  original_subject: str,
+) -> bool:
+  try:
+    app_env = read_env(config.notify_env_file)
+    smtp_url = app_env.get('EMAIL_SERVER', '')
+    email_from = app_env.get('EMAIL_FROM', '')
+    if not smtp_url or not email_from:
+      print('status reply skipped: EMAIL_SERVER and EMAIL_FROM must be set.', file=sys.stderr)
+      return False
+
+    reply = EmailMessage()
+    reply['From'] = email_from
+    reply['To'] = recipient
+    reply['Subject'] = reply_subject(original_subject)
+    reply['Date'] = formatdate(localtime=True)
+    message_id = original_message.get('Message-ID', '').strip()
+    if message_id:
+      reply['In-Reply-To'] = message_id
+      reply['References'] = message_id
+    reply.set_content(build_status_reply_body(config))
+
+    send_smtp_message(smtp_url, reply, email_from)
+    return True
+  except Exception as error:  # noqa: BLE001 - bridge must keep polling.
+    print(f'owner status reply failed: {error}', file=sys.stderr)
+    return False
+
+
+def reply_subject(subject: str) -> str:
+  cleaned = subject.strip() or 'Nayovi growth agent status'
+  if cleaned.lower().startswith('re:'):
+    return cleaned[:140]
+
+  return f'Re: {cleaned[:136]}'
+
+
+def build_status_reply_body(config: BridgeConfig) -> str:
+  generated_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
+  latest_prompt = newest_file(config.state_dir / 'prompts', 'growth-*.md')
+  latest_report = newest_file(config.state_dir / 'reports', 'growth-*.md')
+  codex_processes = process_lines('codex')
+  growth_processes = process_lines('tachi-growth-agent')
+  cycle_state = infer_cycle_state(config, latest_prompt, latest_report, codex_processes)
+
+  lines = [
+    'Nayovi growth agent status',
+    f'Generated at: {generated_at}',
+    '',
+    'Services',
+    f'- tachi-growth-agent: {service_status("tachi-growth-agent.service")}',
+    f'- tachi-growth-mail-bridge: {service_status("tachi-growth-mail-bridge.service")}',
+    f'- Cycle state: {cycle_state}',
+    *process_status_lines('Codex processes', codex_processes),
+    *process_status_lines('Growth runner processes', growth_processes),
+    '',
+    'Repo',
+    *repo_status_lines(config),
+    '',
+    'Inbound',
+    f'- Pending owner commands: {count_files(config.queue_dir, "*.md")}',
+    f'- Run-now trigger queued: {yes_no(config.trigger_file.exists())}',
+    '',
+    'Recent outreach',
+    *recent_outreach_lines(config),
+    '',
+    'Latest report',
+    *latest_report_lines(latest_report),
+    '',
+  ]
+  return '\n'.join(lines)
+
+
+def service_status(service_name: str) -> str:
+  if not shutil.which('systemctl'):
+    return 'systemctl unavailable'
+
+  result = run_command(['systemctl', 'is-active', service_name], timeout=5)
+  output = str(result['stdout']).strip()
+  if output:
+    return output
+
+  return f'unknown (code {result["returncode"]})'
+
+
+def process_lines(pattern: str) -> list[str]:
+  if not shutil.which('pgrep'):
+    return []
+
+  result = run_command(['pgrep', '-af', pattern], timeout=5)
+  if result['returncode'] not in {0, 1}:
+    return []
+
+  lines = []
+  for line in str(result['stdout']).splitlines():
+    if 'tachi-growth-mail-bridge' in line:
+      continue
+    lines.append(line[:220])
+  return lines[:5]
+
+
+def process_status_lines(label: str, lines: list[str]) -> list[str]:
+  if not lines:
+    return [f'- {label}: none detected']
+
+  result = [f'- {label}:']
+  result.extend(f'  {line}' for line in lines)
+  return result
+
+
+def infer_cycle_state(
+  config: BridgeConfig,
+  latest_prompt: pathlib.Path | None,
+  latest_report: pathlib.Path | None,
+  codex_processes: list[str],
+) -> str:
+  if codex_processes:
+    return 'running now (Codex/growth process active)'
+  if config.trigger_file.exists():
+    return 'run requested; waiting for next agent wake-up'
+  if latest_prompt and (
+    latest_report is None or latest_prompt.stat().st_mtime > latest_report.stat().st_mtime
+  ):
+    return f'cycle likely in progress since {format_mtime(latest_prompt)}'
+  if latest_report:
+    next_wake = datetime.fromtimestamp(
+      latest_report.stat().st_mtime + config.interval_seconds,
+      timezone.utc,
+    ).isoformat(timespec='seconds')
+    return f'idle/sleeping; next regular wake around {next_wake}'
+
+  return 'idle; no completed report found yet'
+
+
+def repo_status_lines(config: BridgeConfig) -> list[str]:
+  if not (config.repo_dir / '.git').exists():
+    return [f'- Repo not found: {config.repo_dir}']
+
+  branch = git_output(config, ['branch', '--show-current'])
+  status = git_output(config, ['status', '--short', '--branch'])
+  latest_commit = git_output(
+    config,
+    ['log', '-1', '--pretty=format:%h %ci %s'],
+  )
+  master_commit = git_output(
+    config,
+    ['log', '-1', '--pretty=format:%h %ci %s', 'origin/master'],
+  )
+  recent_commits = git_output(
+    config,
+    ['log', '-3', '--pretty=format:- %h %ci %s'],
+  )
+
+  status_lines = status.splitlines()
+  dirty_lines = [line for line in status_lines[1:] if line.strip()]
+  lines = [
+    f'- Path: {config.repo_dir}',
+    f'- Current branch: {branch or "(unknown)"}',
+    f'- Workspace: {"dirty" if dirty_lines else "clean"}',
+    f'- HEAD: {latest_commit or "(unknown)"}',
+    f'- origin/master: {master_commit or "(unknown)"}',
+  ]
+  if dirty_lines:
+    lines.append('- Modified files:')
+    lines.extend(f'  {line[:180]}' for line in dirty_lines[:12])
+  if recent_commits:
+    lines.append('- Recent commits:')
+    lines.extend(recent_commits.splitlines()[:3])
+  return lines
+
+
+def git_output(config: BridgeConfig, args: list[str], timeout: int = 10) -> str:
+  result = run_command(['git', *args], timeout=timeout, cwd=config.repo_dir)
+  if result['returncode'] != 0:
+    return ''
+
+  return str(result['stdout']).strip()
+
+
+def recent_outreach_lines(config: BridgeConfig, limit: int = 3) -> list[str]:
+  log_path = config.state_dir / 'outreach' / 'sent.jsonl'
+  if not log_path.exists():
+    return ['- None logged yet']
+
+  raw_lines = tail_lines(log_path, limit)
+  items = []
+  for raw_line in raw_lines:
+    try:
+      item = json.loads(raw_line)
+    except json.JSONDecodeError:
+      continue
+
+    items.append(
+      '- {sent_at}: {prospect} <{to}> ({category}) subject="{subject}"'.format(
+        sent_at=str(item.get('sent_at', ''))[:19],
+        prospect=item.get('prospect', 'unknown'),
+        to=item.get('to', 'unknown'),
+        category=item.get('category', 'unknown'),
+        subject=item.get('subject', ''),
+      )[:240]
+    )
+
+  return items or ['- None logged yet']
+
+
+def latest_report_lines(latest_report: pathlib.Path | None) -> list[str]:
+  if latest_report is None:
+    return ['- No report found yet']
+
+  excerpt = trim_text(
+    latest_report.read_text(encoding='utf-8', errors='replace').strip(),
+    2200,
+  )
+  return [
+    f'- File: {latest_report}',
+    f'- Updated: {format_mtime(latest_report)}',
+    '',
+    excerpt or '(empty report)',
+  ]
+
+
+def newest_file(directory: pathlib.Path, pattern: str) -> pathlib.Path | None:
+  if not directory.exists():
+    return None
+
+  matches = list(directory.glob(pattern))
+  if not matches:
+    return None
+
+  return max(matches, key=lambda path: path.stat().st_mtime)
+
+
+def count_files(directory: pathlib.Path, pattern: str) -> int:
+  if not directory.exists():
+    return 0
+
+  return sum(1 for _ in directory.glob(pattern))
+
+
+def tail_lines(path: pathlib.Path, limit: int) -> list[str]:
+  if limit <= 0:
+    return []
+
+  return path.read_text(encoding='utf-8', errors='replace').splitlines()[-limit:]
+
+
+def format_mtime(path: pathlib.Path) -> str:
+  return datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(
+    timespec='seconds'
+  )
+
+
+def trim_text(value: str, max_chars: int) -> str:
+  if len(value) <= max_chars:
+    return value
+
+  return value[:max_chars].rstrip() + '\n... truncated ...'
+
+
+def yes_no(value: bool) -> str:
+  return 'yes' if value else 'no'
+
+
+def send_smtp_message(smtp_url: str, message: EmailMessage, email_from: str) -> None:
+  parsed = urlparse(smtp_url)
+  host = parsed.hostname
+  if not host:
+    raise ValueError('EMAIL_SERVER must include an SMTP host.')
+
+  port = parsed.port or (465 if parsed.scheme == 'smtps' else 587)
+  username = unquote(parsed.username) if parsed.username else None
+  password = unquote(parsed.password) if parsed.password else None
+  sender = parseaddr(email_from)[1] or email_from
+
+  if parsed.scheme == 'smtps':
+    with smtplib.SMTP_SSL(host, port, context=ssl.create_default_context()) as smtp:
+      login_if_needed(smtp, username, password)
+      smtp.send_message(message, from_addr=sender)
+    return
+
+  with smtplib.SMTP(host, port) as smtp:
+    smtp.ehlo()
+    if parsed.scheme == 'smtp' and port != 25:
+      smtp.starttls(context=ssl.create_default_context())
+      smtp.ehlo()
+    login_if_needed(smtp, username, password)
+    smtp.send_message(message, from_addr=sender)
+
+
+def login_if_needed(
+  smtp: smtplib.SMTP | smtplib.SMTP_SSL,
+  username: str | None,
+  password: str | None,
+) -> None:
+  if username and password:
+    smtp.login(username, password)
 
 
 def read_seen_ids(path: pathlib.Path) -> set[str]:
@@ -737,7 +1138,11 @@ def extract_pdf_text(path: pathlib.Path) -> dict[str, object]:
   return info
 
 
-def run_command(args: list[str], timeout: int) -> dict[str, object]:
+def run_command(
+  args: list[str],
+  timeout: int,
+  cwd: pathlib.Path | None = None,
+) -> dict[str, object]:
   try:
     completed = subprocess.run(
       args,
@@ -745,6 +1150,7 @@ def run_command(args: list[str], timeout: int) -> dict[str, object]:
       check=False,
       text=True,
       timeout=timeout,
+      cwd=str(cwd) if cwd else None,
     )
     return {
       'returncode': completed.returncode,
@@ -756,6 +1162,12 @@ def run_command(args: list[str], timeout: int) -> dict[str, object]:
       'returncode': 124,
       'stdout': error.stdout or '',
       'stderr': f'timed out after {timeout}s',
+    }
+  except OSError as error:
+    return {
+      'returncode': 127,
+      'stdout': '',
+      'stderr': str(error),
     }
 
 
