@@ -126,23 +126,22 @@ export const PageLanding = (props: {
               size="lg"
               className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
             >
-              Free manga, manhwa & manhua AI translator
+              TachiyomiAT APK + free manga AI translator
             </Badge>
 
             <div className="space-y-5">
               <p className="text-sm font-semibold tracking-[0.22em] text-brand-100 uppercase">
-                Simple AI translation inside Nayovi
+                For TachiyomiAT, Tachiyomi and Mihon readers
               </p>
               <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
-                Try a free manga AI translator.
+                TachiyomiAT APK with free AI manga translation.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                Use Nayovi as a free manga AI translator, free manhwa AI
-                translator, and free manhua AI translator with hosted OCR,
-                clean translation, redeem-code activation, and one Android APK
-                download. Readers coming from TachiyomiAT, Tachiyomi, or
-                Mihon-style workflows get the same simple Android path with
-                Nayovi branding.
+                Install the Nayovi Android APK from tachiyomiat.com when you
+                search for TachiyomiAT, Tachiyomi AT, or Tachiyomi download.
+                The app keeps a familiar reader flow while adding hosted OCR,
+                free manga AI translation, redeem-code activation, and
+                Mihon-style setup guidance.
               </p>
             </div>
 
@@ -155,7 +154,7 @@ export const PageLanding = (props: {
                 )}
               >
                 <span className="flex items-center gap-2">
-                  Download Android APK
+                  Download Nayovi APK
                   <DownloadIcon className="size-4" />
                 </span>
               </a>

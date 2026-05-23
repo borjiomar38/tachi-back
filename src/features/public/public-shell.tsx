@@ -238,6 +238,7 @@ export const PublicSection = (props: {
   description?: string;
   children: ReactNode;
   className?: string;
+  titleAs?: 'h1' | 'h2';
 }) => {
   return (
     <section
@@ -253,9 +254,15 @@ export const PublicSection = (props: {
             {props.eyebrow}
           </Badge>
         ) : null}
-        <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          {props.title}
-        </h2>
+        {props.titleAs === 'h1' ? (
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            {props.title}
+          </h1>
+        ) : (
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            {props.title}
+          </h2>
+        )}
         {props.description ? (
           <p className="text-base leading-7 text-muted-foreground md:text-lg">
             {props.description}

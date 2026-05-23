@@ -26,9 +26,10 @@ export const PageDownload = () => {
     <PublicShell>
       <PublicSection
         eyebrow="Download"
-        title="Download Nayovi for Android"
-        description="Install the Android APK for readers coming from TachiyomiAT, Tachiyomi, or Mihon-style workflows, activate hosted mode with a redeem code, and start translating manga or manhwa chapters from the app."
+        title="Download the TachiyomiAT-style Nayovi APK"
+        description="Install the Android APK from tachiyomiat.com for readers coming from TachiyomiAT, Tachiyomi AT, Tachiyomi, or Mihon workflows, then activate hosted mode with a redeem code and start translating manga or manhwa chapters from the app."
         className="pt-7 md:pt-10"
+        titleAs="h1"
       >
         <Card className="public-brand-panel mb-4 overflow-hidden rounded-[1.5rem] text-neutral-50 md:rounded-[1.75rem]">
           <CardContent className="grid gap-4 p-5 sm:p-6 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -38,13 +39,13 @@ export const PageDownload = () => {
               </div>
               <div className="space-y-2">
                 <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-                  Latest Android APK
+                  Latest TachiyomiAT-style Android APK
                 </h2>
                 <p className="max-w-2xl text-sm leading-6 text-neutral-300 md:leading-7">
                   Universal APK for Android devices. Download it directly from
                   the official Nayovi backend if you searched for
-                  TachiyomiAT APK, Tachiyomi download, or Mihon translation
-                  setup.
+                  TachiyomiAT APK, Tachiyomi AT download, Tachiyomi download,
+                  or Mihon translation setup.
                 </p>
               </div>
             </div>
@@ -183,9 +184,9 @@ export const PageDownload = () => {
           <CardContent className="flex flex-wrap items-center justify-between gap-3 p-6">
             <div className="space-y-1">
               <p className="font-medium">Ready to install?</p>
-          <p className="text-sm text-brand-950 dark:text-brand-100">
-                This APK link always points to the latest uploaded Nayovi
-                Android build.
+              <p className="text-sm text-brand-950 dark:text-brand-100">
+                This APK link always points to the latest uploaded Nayovi build
+                for TachiyomiAT-style Android readers.
               </p>
             </div>
             <a
