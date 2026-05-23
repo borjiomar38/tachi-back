@@ -91,6 +91,24 @@ const comparisonRows = [
   },
 ] as const;
 
+const reviewSignals = [
+  {
+    title: 'Reviewer-ready flow',
+    description:
+      'The official APK, pricing page, support path, and setup guides give blogs and communities a clear product path to evaluate.',
+  },
+  {
+    title: 'Affiliate-friendly upgrade path',
+    description:
+      'Free trial access lets readers test the workflow before monthly token plans create a direct subscription signal.',
+  },
+  {
+    title: 'Permission-safe positioning',
+    description:
+      'Nayovi focuses on OCR, translation support, activation, and reader workflow instead of hosting or distributing chapters.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -302,6 +320,49 @@ export const PageTranslateManhwaAi = () => {
             </Card>
           ))}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="For partners"
+        title="Built for reviews, demos, and community tests"
+        description="Nayovi gives affiliates, Android blogs, and manga communities a concrete flow to inspect: official download, free trial, token plans, support, and a clear permission-safe use policy."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewSignals.map((signal) => (
+            <Card
+              key={signal.title}
+              className="public-brand-panel-muted rounded-[1.5rem]"
+            >
+              <CardHeader>
+                <CardTitle className="text-lg">{signal.title}</CardTitle>
+                <CardDescription>{signal.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Review access without API-key setup
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Bloggers, communities, and affiliates can test the Android
+                workflow through a redeem code, compare the public pricing
+                page, and link readers to the official APK instead of an
+                unofficial mirror.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request review code
+            </a>
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection

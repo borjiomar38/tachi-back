@@ -139,3 +139,37 @@ Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhw
 Long description:
 
 Nayovi helps Android readers translate manga, manhwa, and manhua pages through a hosted OCR and AI translation workflow. It is designed for people comparing TachiyomiAT, Tachiyomi, Mihon, and manga translation app workflows, while keeping download, activation, pricing, and support on the official Nayovi site. Nayovi does not host or distribute chapters.
+
+## Android App Review Code Pitch
+
+Subject: Review code for Nayovi Android manga translation workflow
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys.
+
+The review path is simple: install the official APK, activate a review code, test the free-trial-to-token-plan flow, and compare the permission-safe support policy. Nayovi does not host or distribute chapters; it focuses on translation support for content the reader is allowed to process.
+
+Would a hands-on app review or setup walkthrough fit your Android coverage?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Mobile Growth Case Study Pitch
+
+Subject: Niche Android subscription funnel case study
+
+Hi {{name}},
+
+I am building Nayovi, a niche Android subscription product around hosted OCR and AI translation for manga, manhwa, and manhua readers. The funnel combines SEO landing pages, official APK download, redeem-code activation, free trial usage, and monthly token plans.
+
+Once we have enough activation-to-paid data, I would like to share a concise case study on what worked and what did not for converting high-intent search traffic into paid subscribers.
+
+Would that type of mobile growth teardown be useful for your audience?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
