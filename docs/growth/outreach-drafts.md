@@ -264,3 +264,20 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Founder Story Pitch
+
+Subject: Narrow Android AI subscription story for {{publication}}
+
+Hi {{name}},
+
+I am building Nayovi, a focused Android subscription product for manga, manhwa, and manhua OCR/AI translation. The funnel combines SEO landing pages, official APK download, free trial access, redeem-code activation, and monthly token plans.
+
+I am not looking to pitch a generic AI story. Once the numbers are strong enough, I can share a concise founder teardown with MRR, activation-to-paid conversion, retention, support load, and what we learned about permission-safe positioning in a niche reader workflow.
+
+Would that kind of revenue-focused founder story be useful for {{publication}}?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.

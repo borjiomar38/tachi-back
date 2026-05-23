@@ -2,7 +2,7 @@
 
 > Free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers coming from TachiyomiAT, Tachiyomi, and Mihon-style workflows, with hosted OCR, clean AI translation, monthly token plans, redeem-code activation, and APK download.
 
-Nayovi is a reader-focused Android app and hosted backend for manga translate AI, manhwa translate AI, and manhua translate AI workflows. It preserves setup and download intent for TachiyomiAT, Tachiyomi, and Mihon readers while explaining the service, pricing, download path, activation flow, support options, privacy policy, and terms.
+Nayovi is a reader-focused Android app and hosted backend for manga translate AI, manhwa translate AI, and manhua translate AI workflows. It preserves setup and download intent for TachiyomiAT, Tachiyomi, and Mihon readers while explaining the service, pricing, download path, activation flow, support options, privacy policy, and terms. The primary public site is https://tachiyomiat.com, the brand domain is https://nayovi.com, and the SEO domain is https://translate-manhwa-ai.com.
 
 ## Primary pages
 

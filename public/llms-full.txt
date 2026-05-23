@@ -14,6 +14,8 @@ The service is designed around a redeem-code activation model. Readers choose a 
 - Primary platform: Android.
 - Activation model: Redeem codes linked to hosted subscription/token access.
 - Public site origin: https://tachiyomiat.com.
+- Brand domain: https://nayovi.com.
+- SEO domain: https://translate-manhwa-ai.com.
 
 ## Public route map
 

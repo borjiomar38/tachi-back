@@ -7,8 +7,16 @@ import {
 
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
+const publicBrandUrl = 'https://nayovi.com';
+const publicSeoUrl = 'https://translate-manhwa-ai.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
-const publicBrandAliases = ['TachiyomiAT', 'Tachiyomi AT', 'tachiyomiat.com'];
+const publicBrandAliases = [
+  'TachiyomiAT',
+  'Tachiyomi AT',
+  'tachiyomiat.com',
+  'nayovi.com',
+  'translate-manhwa-ai.com',
+];
 const publicSiteDescription =
   'Nayovi is a TachiyomiAT-style Android APK for free manga AI translation, free manhwa AI translation, and free manhua AI translation with hosted OCR, clean AI output, and redeem-code activation.';
 
@@ -129,6 +137,7 @@ const buildStructuredData = (
         name: publicSiteName,
         alternateName: publicBrandAliases,
         url: baseUrl,
+        sameAs: [publicBrandUrl, publicSeoUrl],
         logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
       },
       {
@@ -137,6 +146,7 @@ const buildStructuredData = (
         name: 'Nayovi Manga Translator',
         alternateName: publicBrandAliases,
         url: baseUrl,
+        sameAs: [publicBrandUrl, publicSeoUrl],
         description: publicSiteDescription,
         inLanguage: 'en',
         publisher: {
