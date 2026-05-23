@@ -68,6 +68,29 @@ const workflowSteps = [
   },
 ] as const;
 
+const comparisonRows = [
+  {
+    need: 'Android reader workflow',
+    nayovi: 'Official APK, redeem-code activation, and hosted translation stay connected.',
+    generic:
+      'Browser tools usually require screenshots, copy-paste steps, or separate upload flows.',
+  },
+  {
+    need: 'Manhwa page handling',
+    nayovi:
+      'Hosted OCR is positioned around vertical pages, short dialogue, and dense panels.',
+    generic:
+      'General OCR tools often treat pages as documents instead of reader layouts.',
+  },
+  {
+    need: 'Paid support signal',
+    nayovi:
+      'Token plans, support, and activation give serious readers a direct upgrade path.',
+    generic:
+      'Free web tools rarely include app support, account recovery, or usage controls.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -253,6 +276,32 @@ export const PageTranslateManhwaAi = () => {
             </a>
           </CardContent>
         </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Comparison"
+        title="Why readers choose Nayovi instead of generic translators"
+        description="The best-fit user is not just looking for an AI translation demo. They need an Android workflow that can turn high-intent manga and manhwa translation searches into repeat usage."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {comparisonRows.map((row) => (
+            <Card key={row.need} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.need}</CardTitle>
+                <CardDescription>
+                  <span className="block font-medium text-foreground">
+                    Nayovi
+                  </span>
+                  <span className="mt-1 block">{row.nayovi}</span>
+                  <span className="mt-4 block font-medium text-foreground">
+                    Generic translator
+                  </span>
+                  <span className="mt-1 block">{row.generic}</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </PublicSection>
 
       <PublicSection

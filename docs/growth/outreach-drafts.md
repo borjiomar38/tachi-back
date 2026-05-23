@@ -110,3 +110,32 @@ If this is relevant, I can send a short traction and roadmap summary.
 
 Best,
 Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Localization Industry Pitch
+
+Subject: Responsible OCR translation workflow for manga and manhwa readers
+
+Hi {{name}},
+
+I am building Nayovi, a hosted OCR and AI translation workflow for Android manga, manhwa, and manhua readers. The product is intentionally narrow: official APK download, redeem-code activation, hosted OCR, token plans, and clear positioning that Nayovi does not host or distribute chapters.
+
+Your audience covers localization, language technology, or creator workflows, so the useful angle is the operational problem rather than a generic AI claim: vertical pages, short dialogue, reader context, permission-safe samples, and the paid support path that makes the workflow sustainable.
+
+Would a concise founder note, workflow teardown, or data-backed guest contribution be useful once I can share screenshots and traction metrics?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Software Directory Submission Note
+
+Short description:
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It provides official app download, redeem-code activation, token plans, and support for permission-safe translation use cases.
+
+Long description:
+
+Nayovi helps Android readers translate manga, manhwa, and manhua pages through a hosted OCR and AI translation workflow. It is designed for people comparing TachiyomiAT, Tachiyomi, Mihon, and manga translation app workflows, while keeping download, activation, pricing, and support on the official Nayovi site. Nayovi does not host or distribute chapters.
