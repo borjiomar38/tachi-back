@@ -281,3 +281,20 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Affiliate Partner Fit Draft
+
+Subject: Affiliate test for a narrow Android AI translator
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The product has an official APK download, free trial access, redeem-code activation, and monthly token plans.
+
+I am researching a small affiliate test for reviewers and communities that can send qualified readers rather than broad traffic. The ideal setup would use a scoped review code, clear disclosure, official pricing links, and support expectations before any public promotion.
+
+Would your partner program or marketplace be a fit once commission terms, refund handling, and tracking are ready?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.

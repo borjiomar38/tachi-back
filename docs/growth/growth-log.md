@@ -2,6 +2,14 @@
 
 ## 2026-05-23
 
+- Autonomous cycle on `growth/autonomous`: processed owner inbound command `20260523T153915Z-ed4ecb1c0a43` requesting "Go push"; effective env still reported `GROWTH_AGENT_GIT_PUSH_ENABLED=false`, so push remains skipped unless the flag changes.
+- Audited git branch/status, live home, `/translate-manhwa-ai`, and `/sitemap.xml`; public routes returned `200`.
+- Tightened public FAQ copy around redeem-code sharing so shared codes are framed as approved group/reviewer usage tied to matching monthly usage, reducing ambiguity that could weaken paid subscription signals.
+- Added four draft prospects focused on affiliate tracking, app discovery, and subscription-intent app listings.
+- Added an affiliate partner fit draft. No outreach was sent because send mode is draft.
+- Validation: `pnpm lint:ts` and the default pre-commit hook were blocked by pnpm ignored-build approval checks after generating a temporary approval template; removed the template, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+- Push skipped because `GROWTH_AGENT_GIT_PUSH_ENABLED=false`.
+
 - Autonomous cycle on `growth/autonomous`: audited live home, `/translate-manhwa-ai`, and `/llms.txt`; all returned `200`.
 - Added `nayovi.com` and `translate-manhwa-ai.com` as brand/SEO domain signals in public structured data and LLM context.
 - Added four draft prospects focused on AI directories and founder/investor-visible revenue stories.

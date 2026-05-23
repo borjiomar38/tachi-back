@@ -166,7 +166,7 @@ export const supportFaqs: ContentBlock[] = [
   {
     title: 'Can I share my redeem code?',
     description:
-      'Yes. You can share a redeem code across devices or people.',
+      'Yes. You can use one redeem code across approved devices or a small reading group, agency, creator team, or review test. Choose a plan that matches the total monthly usage.',
   },
   {
     title: 'Can I get more tokens?',
