@@ -345,3 +345,27 @@ Best,
 Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+### Android Headlines app coverage
+
+Category: press
+Contact path: tips@androidheadlines.com, listed on the public Android Headlines news tips page.
+Rationale: Android Headlines covers Android apps and practical mobile news; Nayovi fits as a hands-on APK workflow with hosted OCR, activation, free trial access, token plans, and a permission-safe content policy.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Nayovi Android APK demo for hosted manga translation
+
+Hi Android Headlines team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without setting up provider API keys on the device.
+
+The Android app angle is practical: official APK install, redeem-code activation, free trial access, monthly token plans, and support from the Nayovi site. I also added a short demo-quality checklist so reviewers can evaluate whether the flow is actually useful: readable OCR output, continuity from APK to translation, and enough pricing/support context for readers to decide whether a paid plan makes sense.
+
+Nayovi does not host or distribute chapters. It is intended for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Would a hands-on app demo, setup walkthrough, or short Android app mention fit your coverage? I can provide screenshots, a reviewer code, pricing context, and the permission-safe workflow note before you decide.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.

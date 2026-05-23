@@ -145,6 +145,24 @@ const reviewRequestRows = [
   },
 ] as const;
 
+const demoEvaluationRows = [
+  {
+    checkpoint: 'Readable OCR result',
+    signal:
+      'Speech bubbles, narration boxes, and short SFX-adjacent text should produce text a reader can inspect before spending tokens repeatedly.',
+  },
+  {
+    checkpoint: 'Reader workflow continuity',
+    signal:
+      'The demo should show the official APK, activation, and translation flow without forcing users into screenshot uploads or provider API-key setup.',
+  },
+  {
+    checkpoint: 'Upgrade confidence',
+    signal:
+      'Pricing, support, trial access, and cancellation paths should be visible enough that reviewers can explain why a paid plan is useful.',
+  },
+] as const;
+
 const proofRows = [
   {
     signal: 'Before installing',
@@ -458,6 +476,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Verify download path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Demo quality"
+        title="What a strong Nayovi demo should prove"
+        description="A useful demo should not only look impressive. It should help a reader, reviewer, or partner decide whether the Android workflow is reliable enough to test and recommend."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {demoEvaluationRows.map((row) => (
+            <Card key={row.checkpoint} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.checkpoint}</CardTitle>
+                <CardDescription>{row.signal}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ScanTextIcon className="size-4" />
+                Built for demo follow-up
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Reviewers should be able to request screenshots, a redeem code,
+                pricing context, and a permission-safe workflow note before
+                publishing a setup guide or app review.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request demo assets
             </a>
           </CardContent>
         </Card>
