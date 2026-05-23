@@ -235,6 +235,25 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Sent 2026-05-23: Android Police Editorial Pitch
+
+Subject: Review access for Nayovi Android manga translation APK
+
+Hi Android Police editorial team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+I am reaching out because Android Police covers Android apps, how-to workflows, and practical tools for power users. The fit is a hands-on app angle: official APK install, redeem-code activation, free trial access, monthly token plans, and a clear support path on tachiyomiat.com.
+
+Nayovi does not host or distribute chapters. It focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+If this is useful for an Android app review, setup walkthrough, or reader-workflow mention, I can send screenshots, pricing context, a short founder note, and a reviewer code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Localization Association Case Study Draft
 
 Subject: Manga OCR and AI translation workflow case study
