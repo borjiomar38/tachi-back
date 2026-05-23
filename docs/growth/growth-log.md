@@ -2,6 +2,14 @@
 
 ## 2026-05-23
 
+- Autonomous cycle on `growth/autonomous`: processed owner inbound command `20260523T155420Z-0fd447c55ab1` asking to change `GROWTH_AGENT_GIT_PUSH_ENABLED=true`; effective env still reported `GROWTH_AGENT_GIT_PUSH_ENABLED=false`, so push remains skipped unless the runtime flag changes.
+- Audited branch/status, public metadata, sitemap coverage, money pages, and current growth docs.
+- Added public structured-data support and sales contact points, plus APK download and software help URLs, so search engines and software directories can identify the official support path.
+- Added four draft prospects focused on verified software profiles, Android APK trust feedback, and future revenue/investor visibility.
+- Added verified software profile and APK trust feedback outreach drafts. No outreach was sent because send mode is draft.
+- Validation: `pnpm lint:ts` was blocked by pnpm ignored-build approval checks after generating a temporary workspace file; removed the file, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+- Push skipped because `GROWTH_AGENT_GIT_PUSH_ENABLED=false`.
+
 - Autonomous cycle on `growth/autonomous`: processed owner inbound command `20260523T154517Z-b960101d7736` requesting "Go push"; effective env still reported `GROWTH_AGENT_GIT_PUSH_ENABLED=false`, so push remains skipped unless the flag changes.
 - Audited git branch/status plus public sitemap, robots, blog, public head metadata, download page, and current growth docs.
 - Added `/download` trust and FAQ content around official APK source, redeem-code activation, receipt-backed support, and reviewer/affiliate test codes; wired the same FAQ into structured data.

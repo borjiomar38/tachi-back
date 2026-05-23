@@ -4,6 +4,7 @@ import {
   buildPublicSeoKeywords,
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
+import { PUBLIC_SUPPORT_EMAIL } from '@/features/public/data';
 
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
@@ -139,6 +140,22 @@ const buildStructuredData = (
         url: baseUrl,
         sameAs: [publicBrandUrl, publicSeoUrl],
         logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'customer support',
+            email: PUBLIC_SUPPORT_EMAIL,
+            url: buildAbsoluteUrl('/support'),
+            availableLanguage: ['en', 'fr'],
+          },
+          {
+            '@type': 'ContactPoint',
+            contactType: 'sales',
+            email: PUBLIC_SUPPORT_EMAIL,
+            url: buildAbsoluteUrl('/pricing'),
+            availableLanguage: ['en', 'fr'],
+          },
+        ],
       },
       {
         '@type': 'WebSite',
@@ -174,6 +191,8 @@ const buildStructuredData = (
         operatingSystem: 'Android',
         url: buildAbsoluteUrl('/download'),
         description: publicSiteDescription,
+        downloadUrl: buildAbsoluteUrl('/api/download/apk'),
+        softwareHelp: buildAbsoluteUrl('/support'),
         offers: {
           '@type': 'Offer',
           price: '0',

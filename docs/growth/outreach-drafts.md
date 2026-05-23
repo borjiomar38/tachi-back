@@ -32,6 +32,36 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Verified Software Profile Draft
+
+Subject: Vendor profile fit for Nayovi hosted OCR translation
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The commercial path is intentionally clear: official download, free trial access, redeem-code activation, monthly token plans, and receipt-backed support through the Nayovi site.
+
+I am checking whether {{directory_or_platform}} accepts a product like this as a verified software profile. If it fits, I can provide neutral category copy, official URLs, support contact details, pricing context, and screenshots. I am not looking for paid reviews or incentivized ratings.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## APK Trust Feedback Draft
+
+Subject: Feedback on official APK activation and support flow
+
+Hi {{community_or_moderator}},
+
+I am working on Nayovi, an Android APK for hosted manga, manhwa, and manhua OCR/AI translation. I am not asking for promotion; I would like feedback on whether the official download path, redeem-code activation, hosted-processing disclosure, and support contact are clear enough for cautious Android users.
+
+If a short feedback post is allowed, I can share the download page, support page, and permission-safe workflow guide. If it is not a fit for your rules, I will skip posting.
+
+Thanks,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Community Feedback Draft
 
 Subject: Feedback request: permission-safe Android translation workflow
