@@ -18,17 +18,34 @@ import time
 import ssl
 import unicodedata
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timezone, tzinfo
 from email.header import decode_header, make_header
 from email.message import EmailMessage, Message
 from email.parser import BytesParser
 from email.policy import default
 from email.utils import formatdate, getaddresses, parseaddr, parsedate_to_datetime
 from urllib.parse import unquote, urlparse
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 DEFAULT_ENV_FILE = pathlib.Path('/opt/tachi-back/.env.growth-agent')
 DEFAULT_STATE_DIR = pathlib.Path('/var/lib/tachi-growth-agent')
+TUNISIA_TIMEZONE = 'Africa/Tunis'
+FRENCH_MONTHS = (
+  '',
+  'janvier',
+  'février',
+  'mars',
+  'avril',
+  'mai',
+  'juin',
+  'juillet',
+  'août',
+  'septembre',
+  'octobre',
+  'novembre',
+  'décembre',
+)
 DEFAULT_STATUS_REPLY_KEYWORDS = (
   'avancement',
   'status',
@@ -456,7 +473,8 @@ def send_status_reply(
     if message_id:
       reply['In-Reply-To'] = message_id
       reply['References'] = message_id
-    reply.set_content(build_status_reply_body(config))
+    technical = is_technical_status_request(original_subject, extract_body_text(original_message))
+    reply.set_content(build_status_reply_body(config, technical=technical))
 
     send_smtp_message(smtp_url, reply, email_from)
     return True
@@ -473,8 +491,77 @@ def reply_subject(subject: str) -> str:
   return f'Re: {cleaned[:136]}'
 
 
-def build_status_reply_body(config: BridgeConfig) -> str:
-  generated_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
+def is_technical_status_request(subject: str, body: str) -> bool:
+  text = normalize_status_text(f'{subject}\n{body}')
+  return any(
+    keyword in text
+    for keyword in (
+      'status technique',
+      'technical status',
+      'debug',
+      'logs',
+      'log',
+      'details technique',
+      'detail technique',
+    )
+  )
+
+
+def build_status_reply_body(config: BridgeConfig, technical: bool = False) -> str:
+  if technical:
+    return build_technical_status_reply_body(config)
+
+  latest_report = newest_file(config.state_dir / 'reports', 'growth-*.md')
+  latest_prompt = newest_file(config.state_dir / 'prompts', 'growth-*.md')
+  codex_processes = process_lines('codex')
+  report_text = read_text_if_exists(latest_report)
+  done_items = extract_report_section_items(
+    report_text,
+    ('j ai avance sur', 'jai avance sur', 'fait', 'done'),
+    limit=4,
+  )
+  outreach_items = extract_report_section_items(
+    report_text,
+    ('outreach envoye', 'outreach sent', 'contacts envoyes'),
+    limit=3,
+  )
+  recent_outreach = recent_outreach_items(config, limit=3)
+
+  lines = [
+    'Update Nayovi Growth Agent',
+    f'Date: {format_tunisia_datetime(datetime.now(timezone.utc))}',
+    '',
+    'Résumé:',
+    f'- {business_status_sentence(config, latest_prompt, latest_report, codex_processes)}',
+    '',
+    'Fait:',
+    *business_done_lines(done_items, outreach_items, latest_report),
+    '',
+    'Pourquoi c’est utile:',
+    '- Ces actions peuvent aider Nayovi à obtenir des backlinks, des reviews, du trafic qualifié et plus de confiance avant abonnement.',
+    '- Les améliorations de page aident à convertir ce trafic en installations, essais, paiements ou conversations business.',
+    '',
+    'Derniers contacts:',
+    *business_recent_outreach_lines(recent_outreach),
+    '',
+    'En cours:',
+    f'- {business_current_work_sentence(config, latest_prompt, latest_report, codex_processes)}',
+    '',
+    'Ensuite:',
+    '- Continuer la prospection presse, backlinks propres, app directories et communautés pertinentes.',
+    '- Surveiller les réponses; si un média, partenaire ou investisseur demande un call, je te préviens.',
+    '',
+    'Besoin de toi:',
+    f'- {owner_need_sentence(report_text, config)}',
+    '',
+    'Pour le rapport complet: réponds avec "status technique" ou "logs".',
+    '',
+  ]
+  return '\n'.join(lines)
+
+
+def build_technical_status_reply_body(config: BridgeConfig) -> str:
+  generated_at = format_tunisia_datetime(datetime.now(timezone.utc))
   latest_prompt = newest_file(config.state_dir / 'prompts', 'growth-*.md')
   latest_report = newest_file(config.state_dir / 'reports', 'growth-*.md')
   codex_processes = process_lines('codex')
@@ -564,10 +651,160 @@ def infer_cycle_state(
     next_wake = datetime.fromtimestamp(
       latest_report.stat().st_mtime + config.interval_seconds,
       timezone.utc,
-    ).isoformat(timespec='seconds')
-    return f'idle/sleeping; next regular wake around {next_wake}'
+    )
+    return (
+      'idle/sleeping; next regular wake around '
+      f'{format_tunisia_datetime(next_wake)}'
+    )
 
   return 'idle; no completed report found yet'
+
+
+def business_status_sentence(
+  config: BridgeConfig,
+  latest_prompt: pathlib.Path | None,
+  latest_report: pathlib.Path | None,
+  codex_processes: list[str],
+) -> str:
+  if codex_processes:
+    return 'L’agent travaille maintenant sur un cycle growth.'
+  if config.trigger_file.exists():
+    return 'Un nouveau cycle est demandé; il va démarrer au prochain réveil.'
+  if latest_report:
+    next_wake = datetime.fromtimestamp(
+      latest_report.stat().st_mtime + config.interval_seconds,
+      timezone.utc,
+    )
+    return (
+      f'Dernier cycle terminé le {format_mtime(latest_report)}. '
+      f'Prochain cycle prévu vers {format_tunisia_datetime(next_wake)}.'
+    )
+  if latest_prompt:
+    return f'Un cycle a commencé le {format_mtime(latest_prompt)} et attend son rapport.'
+
+  return 'L’agent est actif, mais aucun rapport terminé n’a encore été trouvé.'
+
+
+def business_current_work_sentence(
+  config: BridgeConfig,
+  latest_prompt: pathlib.Path | None,
+  latest_report: pathlib.Path | None,
+  codex_processes: list[str],
+) -> str:
+  if codex_processes:
+    return 'Je suis en train d’auditer le SEO, les prospects backlinks et les actions revenue.'
+  if config.trigger_file.exists():
+    return 'Je vais lancer le cycle demandé et traiter les instructions en attente.'
+  if latest_prompt and (
+    latest_report is None or latest_prompt.stat().st_mtime > latest_report.stat().st_mtime
+  ):
+    return f'Cycle en cours depuis {format_mtime(latest_prompt)}.'
+
+  return 'Je suis en pause entre deux cycles; le mail bridge reste actif pour les réponses et demandes de status.'
+
+
+def business_done_lines(
+  done_items: list[str],
+  outreach_items: list[str],
+  latest_report: pathlib.Path | None,
+) -> list[str]:
+  lines: list[str] = []
+  if latest_report:
+    lines.append(f'- Dernière mise à jour: {format_mtime(latest_report)}.')
+
+  for item in done_items:
+    lines.append(f'- {item}')
+  for item in outreach_items:
+    lines.append(f'- {item}')
+
+  if len(lines) > 1:
+    return lines[:6]
+
+  return lines + ['- Pas de nouvelle action business lisible dans le dernier rapport.']
+
+
+def business_recent_outreach_lines(items: list[dict[str, str]]) -> list[str]:
+  if not items:
+    return ['- Aucun contact envoyé récemment.']
+
+  lines = []
+  for item in items:
+    sent_at = parse_iso_datetime(item.get('sent_at', ''))
+    date = format_tunisia_datetime(sent_at) if sent_at else 'date inconnue'
+    prospect = item.get('prospect') or 'Prospect'
+    to_address = item.get('to') or 'email inconnu'
+    subject = item.get('subject') or 'sans sujet'
+    lines.append(f'- {date}: {prospect} ({to_address}) - {subject}')
+  return lines
+
+
+def owner_need_sentence(report_text: str, config: BridgeConfig) -> str:
+  lowered = report_text.lower()
+  if any(
+    marker.lower() in lowered
+    for marker in ('OWNER_ACTION_REQUIRED', 'MEETING_REQUIRED', 'CALL_REQUIRED')
+  ):
+    return 'Oui, le dernier rapport contient une action propriétaire ou un call à gérer.'
+
+  pending_count = count_files(config.queue_dir, '*.md')
+  if pending_count:
+    return f'{pending_count} message(s) propriétaire sont en attente pour le prochain cycle.'
+
+  return 'Rien pour l’instant.'
+
+
+def extract_report_section_items(
+  report_text: str,
+  labels: tuple[str, ...],
+  limit: int,
+) -> list[str]:
+  items: list[str] = []
+  capture = False
+  normalized_labels = tuple(normalize_status_text(label) for label in labels)
+
+  for raw_line in report_text.splitlines():
+    line = raw_line.strip()
+    normalized = normalize_status_text(line.rstrip(':'))
+    if any(label and label in normalized for label in normalized_labels):
+      capture = True
+      continue
+
+    if not capture:
+      continue
+    if not line:
+      continue
+    if line.startswith('##') or (line.endswith(':') and not line.startswith('-')):
+      break
+    if not line.startswith(('-', '*')):
+      continue
+
+    cleaned = clean_business_report_item(line.lstrip('-* '))
+    if cleaned:
+      items.append(cleaned)
+    if len(items) >= limit:
+      break
+
+  return items
+
+
+def clean_business_report_item(value: str) -> str:
+  cleaned = re.sub(r'`([^`]+)`', r'\1', value).strip()
+  cleaned = re.sub(r'^/?[\w./-]+\s*:\s*', '', cleaned)
+  cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+  if not cleaned:
+    return ''
+
+  if re.search(r'\b(tsc|git|commit|branch|pushed|validation|no-verify)\b', cleaned, re.I):
+    return ''
+
+  return cleaned[:220]
+
+
+def read_text_if_exists(path: pathlib.Path | None) -> str:
+  if not path or not path.exists():
+    return ''
+
+  return path.read_text(encoding='utf-8', errors='replace')
 
 
 def repo_status_lines(config: BridgeConfig) -> list[str]:
@@ -616,21 +853,16 @@ def git_output(config: BridgeConfig, args: list[str], timeout: int = 10) -> str:
 
 
 def recent_outreach_lines(config: BridgeConfig, limit: int = 3) -> list[str]:
-  log_path = config.state_dir / 'outreach' / 'sent.jsonl'
-  if not log_path.exists():
+  items = recent_outreach_items(config, limit)
+  if not items:
     return ['- None logged yet']
 
-  raw_lines = tail_lines(log_path, limit)
-  items = []
-  for raw_line in raw_lines:
-    try:
-      item = json.loads(raw_line)
-    except json.JSONDecodeError:
-      continue
-
-    items.append(
+  lines = []
+  for item in items:
+    sent_at = parse_iso_datetime(item.get('sent_at', ''))
+    lines.append(
       '- {sent_at}: {prospect} <{to}> ({category}) subject="{subject}"'.format(
-        sent_at=str(item.get('sent_at', ''))[:19],
+        sent_at=format_tunisia_datetime(sent_at) if sent_at else 'unknown date',
         prospect=item.get('prospect', 'unknown'),
         to=item.get('to', 'unknown'),
         category=item.get('category', 'unknown'),
@@ -638,7 +870,25 @@ def recent_outreach_lines(config: BridgeConfig, limit: int = 3) -> list[str]:
       )[:240]
     )
 
-  return items or ['- None logged yet']
+  return lines
+
+
+def recent_outreach_items(config: BridgeConfig, limit: int = 3) -> list[dict[str, str]]:
+  log_path = config.state_dir / 'outreach' / 'sent.jsonl'
+  if not log_path.exists():
+    return []
+
+  items = []
+  for raw_line in tail_lines(log_path, limit):
+    try:
+      item = json.loads(raw_line)
+    except json.JSONDecodeError:
+      continue
+
+    if isinstance(item, dict):
+      items.append({str(key): str(value) for key, value in item.items()})
+
+  return items
 
 
 def latest_report_lines(latest_report: pathlib.Path | None) -> list[str]:
@@ -683,9 +933,36 @@ def tail_lines(path: pathlib.Path, limit: int) -> list[str]:
 
 
 def format_mtime(path: pathlib.Path) -> str:
-  return datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(
-    timespec='seconds'
+  return format_tunisia_datetime(datetime.fromtimestamp(path.stat().st_mtime, timezone.utc))
+
+
+def format_tunisia_datetime(value: datetime) -> str:
+  if value.tzinfo is None:
+    value = value.replace(tzinfo=timezone.utc)
+
+  local = value.astimezone(tunisia_timezone())
+  month = FRENCH_MONTHS[local.month]
+  return (
+    f'{local.day} {month} {local.year} à '
+    f'{local.hour:02d}:{local.minute:02d} (Tunisie)'
   )
+
+
+def tunisia_timezone() -> tzinfo:
+  try:
+    return ZoneInfo(TUNISIA_TIMEZONE)
+  except ZoneInfoNotFoundError:
+    return timezone.utc
+
+
+def parse_iso_datetime(value: str) -> datetime | None:
+  if not value:
+    return None
+
+  try:
+    return datetime.fromisoformat(value.replace('Z', '+00:00'))
+  except ValueError:
+    return None
 
 
 def trim_text(value: str, max_chars: int) -> str:

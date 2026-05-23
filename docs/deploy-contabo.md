@@ -209,8 +209,8 @@ Owner email notifications are intentionally low-volume:
   noisy acknowledgements.
 - Owner status replies are enabled by default. A short authenticated owner mail
   such as `avancement`, `status`, `update`, or `tu fais quoi` receives an
-  immediate snapshot from the mail bridge and is not queued as growth-agent
-  work.
+  immediate business-readable update from the mail bridge and is not queued as
+  growth-agent work. Dates are formatted in Tunisia time.
 - Inbound replies are queued only when the sender address is allow-listed and
   the mail server reports passing SPF, DKIM, or DMARC authentication for that
   sender. Other messages are marked seen and never become agent instructions.
@@ -235,11 +235,14 @@ kept as files and, when `ffmpeg` is available, the bridge also extracts
 to inspect.
 
 Short status-only owner emails are handled before attachment extraction and
-before the growth-agent trigger. The bridge replies immediately with active
-services, cycle state, current repo branch/status, recent commits, pending
-inbound queue count, recent outreach deliveries, and the latest report excerpt.
-Action emails and emails with attachments still go into the normal queue for
-the next growth cycle.
+before the growth-agent trigger. The bridge replies immediately with a simple
+business update: what was done, why it matters, recent contacts, what is in
+progress, next actions, and whether the owner is needed. Dates are shown in
+Tunisia time. Send `status technique`, `debug`, or `logs` to get the detailed
+technical version with services, repo branch/status, commits, queue count,
+recent outreach deliveries, and the latest report excerpt. Action emails and
+emails with attachments still go into the normal queue for the next growth
+cycle.
 
 Enable inbound replies only after adding IMAP credentials to
 `/opt/tachi-back/.env.growth-agent`:
