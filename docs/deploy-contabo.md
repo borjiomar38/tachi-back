@@ -163,6 +163,10 @@ GROWTH_AGENT_GIT_BRANCH=growth/autonomous
 GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
 GROWTH_AGENT_GIT_PUSH_ENABLED=true
 GROWTH_AGENT_INBOUND_ENABLED=false
+GROWTH_AGENT_NOTIFY_ON_INBOUND=false
+GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
+GROWTH_AGENT_DAILY_SUMMARY_ENABLED=true
+GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
 ```
 
 `GROWTH_AGENT_EMAIL_SEND_MODE=send` and
@@ -173,6 +177,16 @@ backlinks, use scraped private lists, send deceptive claims, or evade rate
 limits. `GROWTH_AGENT_GIT_PUSH_ENABLED=true` lets the agent push only its
 configured growth branch. The agent must never push or merge `master`; pushing
 `master` deploys production.
+
+Owner email notifications are intentionally low-volume:
+
+- Immediate email is reserved for blocker/emergency reports where the agent
+  cannot continue without an owner reply. The agent marks these reports with
+  `OWNER_ACTION_REQUIRED`, `MEETING_REQUIRED`, or `CALL_REQUIRED`.
+- Normal progress sends at most one daily summary. If an emergency email was
+  sent, the daily summary is skipped until the next summary interval.
+- Reply-ingestion confirmations are disabled by default to avoid mail loops and
+  noisy acknowledgements.
 
 Operational commands:
 

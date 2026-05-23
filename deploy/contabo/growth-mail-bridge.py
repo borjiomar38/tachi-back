@@ -147,7 +147,7 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     ),
     mark_seen=is_true(values.get('GROWTH_AGENT_INBOUND_MARK_SEEN', 'true')),
     confirmation_enabled=is_true(
-      values.get('GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED', 'true')
+      values.get('GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED', 'false')
     ),
     notifier_path=pathlib.Path(
       values.get('GROWTH_AGENT_NOTIFY_BIN', '/usr/local/bin/tachi-growth-owner-notify')

@@ -77,8 +77,10 @@ GROWTH_AGENT_NOTIFY_ENABLED=true
 GROWTH_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 GROWTH_AGENT_NOTIFY_ENV_FILE=${APP_DIR}/.env.production
 GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX="Nayovi growth lead"
-GROWTH_AGENT_NOTIFY_ON_INBOUND=true
-GROWTH_AGENT_NOTIFY_KEYWORDS=investor,investment,partnership,partenariat,prospect,outreach,backlink,collaboration,affiliate,investisseur,investissement,agence,lead,meeting,call,rendez-vous,demo,pilot,partner
+GROWTH_AGENT_NOTIFY_ON_INBOUND=false
+GROWTH_AGENT_NOTIFY_KEYWORDS="OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"
+GROWTH_AGENT_DAILY_SUMMARY_ENABLED=true
+GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
 GROWTH_AGENT_TRIGGER_FILE=/var/lib/tachi-growth-agent/run-now
 GROWTH_AGENT_INBOUND_ENABLED=false
 GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
@@ -94,7 +96,7 @@ GROWTH_AGENT_INBOUND_MAX_ATTACHMENT_MB=100
 GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES=8
 GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS=600
 GROWTH_AGENT_INBOUND_MARK_SEEN=true
-GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=true
+GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
 GROWTH_AGENT_VALIDATION_COMMAND="pnpm lint:ts"
 GROWTH_AGENT_PRIMARY_SITE=https://tachiyomiat.com
 GROWTH_AGENT_BRAND_SITE=https://nayovi.com
@@ -104,7 +106,9 @@ EOF
   chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
 fi
 
-ensure_env_default GROWTH_AGENT_NOTIFY_ON_INBOUND true
+ensure_env_default GROWTH_AGENT_NOTIFY_ON_INBOUND false
+ensure_env_default GROWTH_AGENT_DAILY_SUMMARY_ENABLED true
+ensure_env_default GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS 86400
 ensure_env_default GROWTH_AGENT_TRIGGER_FILE /var/lib/tachi-growth-agent/run-now
 ensure_env_default GROWTH_AGENT_INBOUND_ENABLED false
 ensure_env_default GROWTH_AGENT_INBOUND_ALLOWED_SENDERS borjiomar38@gmail.com
@@ -120,10 +124,10 @@ ensure_env_default GROWTH_AGENT_INBOUND_MAX_ATTACHMENT_MB 100
 ensure_env_default GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES 8
 ensure_env_default GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS 600
 ensure_env_default GROWTH_AGENT_INBOUND_MARK_SEEN true
-ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED true
+ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED false
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_MODE true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
-ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS investor,investment,partnership,partenariat,prospect,outreach,backlink,collaboration,affiliate,investisseur,investissement,agence,lead,meeting,call,rendez-vous,demo,pilot,partner
+ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS '"OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"'
 chmod 600 "${ENV_FILE}"
 chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
 

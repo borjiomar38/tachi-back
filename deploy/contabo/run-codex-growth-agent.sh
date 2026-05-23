@@ -78,6 +78,7 @@ Hard constraints:
 - Do not print secrets. Do not commit env files, passwords, tokens, SSH keys, or generated credential files.
 - Keep changes small, testable, and aligned with existing repo conventions.
 - Do not ask for owner permission before safe growth actions when autonomous mode is enabled; make a defensible decision, act, log it, and notify the owner with results.
+- If you truly cannot continue without the owner, include exact marker OWNER_ACTION_REQUIRED in the final report. If the owner must personally attend a meeting or call, include MEETING_REQUIRED or CALL_REQUIRED.
 
 Operational preferences:
 - Model target: ${codex_model}
@@ -135,7 +136,7 @@ maybe_send_owner_notification() {
   local report_file="$2"
   local repo_dir="$3"
   local inbound_list_file="${4:-}"
-  local notify_to notify_env_file notify_keywords subject
+  local daily_state_file daily_summary_enabled emergency_match notification_kind notify_env_file notify_keywords notify_to subject
 
   if [[ "${GROWTH_AGENT_NOTIFY_ENABLED:-false}" != "true" ]]; then
     return 0
@@ -146,16 +147,40 @@ maybe_send_owner_notification() {
     return 0
   fi
 
-  notify_keywords="${GROWTH_AGENT_NOTIFY_KEYWORDS:-investor,investment,partnership,partenariat,prospect,outreach,backlink,collaboration,affiliate}"
-  if [[ "${GROWTH_AGENT_NOTIFY_ON_INBOUND:-true}" == "true" && -s "${inbound_list_file}" ]]; then
-    log "Inbound owner context processed for ${cycle_id}; sending owner notification."
-  elif ! grep -Eiq "$(csv_to_egrep "${notify_keywords}")" "${report_file}"; then
-    log "No notification keywords matched for ${cycle_id}."
+  daily_state_file="${GROWTH_AGENT_DAILY_SUMMARY_STATE_FILE:-${STATE_DIR}/last-owner-daily-summary-at}"
+  notify_keywords="${GROWTH_AGENT_NOTIFY_KEYWORDS:-OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required}"
+  emergency_match="false"
+  if grep -Eiq "$(csv_to_egrep "${notify_keywords}")" "${report_file}"; then
+    emergency_match="true"
+  fi
+
+  if [[ "${emergency_match}" == "true" ]]; then
+    notification_kind="emergency"
+    subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: emergency ${cycle_id}"
+  elif [[ "${GROWTH_AGENT_NOTIFY_ON_INBOUND:-false}" == "true" && -s "${inbound_list_file}" ]]; then
+    notification_kind="inbound"
+    subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: inbound ${cycle_id}"
+  else
+    daily_summary_enabled="${GROWTH_AGENT_DAILY_SUMMARY_ENABLED:-true}"
+    if [[ "${daily_summary_enabled}" != "true" ]]; then
+      log "No emergency notification matched for ${cycle_id}; daily summary disabled."
+      return 0
+    fi
+
+    if ! daily_summary_due "${daily_state_file}" "${GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS:-86400}"; then
+      log "No emergency notification matched for ${cycle_id}; daily summary not due."
+      return 0
+    fi
+
+    notification_kind="daily"
+    subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: daily summary ${cycle_id}"
+  fi
+
+  if [[ -z "${notification_kind:-}" ]]; then
     return 0
   fi
 
   notify_env_file="${GROWTH_AGENT_NOTIFY_ENV_FILE:-${APP_DIR}/.env.production}"
-  subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: ${cycle_id}"
 
   if ! /usr/local/bin/tachi-growth-owner-notify \
     --env-file "${notify_env_file}" \
@@ -165,7 +190,37 @@ maybe_send_owner_notification() {
     --repo-dir "${repo_dir}" \
     --cycle-id "${cycle_id}"; then
     log "Owner notification failed for ${cycle_id}; continuing."
+    return 0
   fi
+
+  if [[ "${notification_kind}" == "daily" || "${notification_kind}" == "emergency" ]]; then
+    mark_daily_summary_sent "${daily_state_file}"
+  fi
+}
+
+daily_summary_due() {
+  local state_file="$1"
+  local interval_seconds="$2"
+  local last_sent now
+
+  if [[ ! -f "${state_file}" ]]; then
+    return 0
+  fi
+
+  last_sent="$(cat "${state_file}" 2>/dev/null || printf '0')"
+  if ! [[ "${last_sent}" =~ ^[0-9]+$ ]]; then
+    return 0
+  fi
+
+  now="$(date +%s)"
+  (( now - last_sent >= interval_seconds ))
+}
+
+mark_daily_summary_sent() {
+  local state_file="$1"
+
+  mkdir -p "$(dirname "${state_file}")"
+  date +%s >"${state_file}"
 }
 
 append_inbound_contexts() {
