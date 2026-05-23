@@ -4,6 +4,7 @@ import {
   DownloadIcon,
   KeyRoundIcon,
   PlayCircleIcon,
+  ReceiptTextIcon,
   ShieldCheckIcon,
 } from 'lucide-react';
 
@@ -20,6 +21,52 @@ import {
 
 import { androidApkDownload, youtubeDemo } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
+
+const downloadFaqs = [
+  {
+    title: 'Is this the official Nayovi APK download?',
+    description:
+      'Yes. Use this page for the official Nayovi Android APK instead of mirror sites. The APK download, setup help, pricing, and support links stay on tachiyomiat.com.',
+  },
+  {
+    title: 'Do I need a redeem code after installing the APK?',
+    description:
+      'Yes. Install the APK, then activate hosted OCR and AI translation with a redeem code from a free trial, token plan, reviewer test, or approved partner code.',
+  },
+  {
+    title: 'What should I do if my APK or redeem code does not work?',
+    description:
+      'Contact support with the checkout receipt email, redeem code, APK build label, and a short description of the install or activation issue so the team can review payment and device status.',
+  },
+  {
+    title: 'Can reviewers or affiliates test the APK before publishing?',
+    description:
+      'Yes. Android reviewers, affiliates, community moderators, and publisher or platform teams can request a scoped test code before publishing a walkthrough or partnership note.',
+  },
+] as const;
+
+const trustSignals = [
+  {
+    title: 'Official source',
+    description:
+      'Download from the Nayovi site so readers land on the same pricing, support, and activation path.',
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: 'Redeem-code activation',
+    description:
+      'Free trial, paid plans, and review codes all activate through the hosted flow.',
+    icon: KeyRoundIcon,
+  },
+  {
+    title: 'Receipt-backed support',
+    description:
+      'Support can review payment status, token delivery, and activation attempts from one ticket.',
+    icon: ReceiptTextIcon,
+  },
+] as const;
+
+export { downloadFaqs };
 
 export const PageDownload = () => {
   return (
@@ -138,6 +185,31 @@ export const PageDownload = () => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Trust"
+        title="Use the official APK path"
+        description="Readers, reviewers, and affiliates should evaluate Nayovi from the same official download, activation, pricing, and support flow."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {trustSignals.map((signal) => {
+            const Icon = signal.icon;
+
+            return (
+              <Card key={signal.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{signal.title}</CardTitle>
+                  <CardDescription>{signal.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
         id="install"
         eyebrow="Install"
         title="Install in three steps"
@@ -200,6 +272,25 @@ export const PageDownload = () => {
             </a>
           </CardContent>
         </Card>
+      </PublicSection>
+
+      <PublicSection
+        id="faq"
+        eyebrow="FAQ"
+        title="APK download questions"
+        description="Use these answers before installing, reviewing, or activating Nayovi."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {downloadFaqs.map((faq) => (
+            <Card key={faq.title} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{faq.title}</CardTitle>
+                <CardDescription>{faq.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </PublicSection>
 
       <PublicSection

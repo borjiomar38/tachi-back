@@ -298,3 +298,30 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## APK Listing Submission Note
+
+Short description:
+
+Nayovi is an official Android APK for hosted manga, manhwa, and manhua OCR/AI translation. Readers install the APK, activate hosted mode with a redeem code, and manage pricing or support through the Nayovi website.
+
+Long description:
+
+Nayovi helps Android readers evaluate a complete translation workflow from one official path: APK download, free trial or paid redeem-code activation, hosted OCR, AI translation, token plans, and support. It is built for readers comparing TachiyomiAT, Tachiyomi, Mihon, manga translation, and manhwa translation workflows. Nayovi does not host or distribute chapters; it supports content the reader owns, public-domain material, official samples, or material they have permission to process.
+
+## APK Trust Review Pitch
+
+Subject: Official APK workflow for hosted manga AI translation
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua OCR/AI translation. I am looking for reviewers who care about the full install-to-activation path rather than a generic app mention.
+
+The review angle is practical: official APK download, redeem-code activation, hosted provider routing, token plans, receipt-backed support, and clear positioning that Nayovi does not host or distribute chapters.
+
+Would a hands-on review or app listing note be useful for {{publication_or_directory}} once screenshots and a scoped review code are ready?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.

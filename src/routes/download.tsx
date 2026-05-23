@@ -1,8 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { publicSeoKeywords } from '@/features/blog/seo';
-import { buildPublicPageHead } from '@/features/public/head';
-import { PageDownload } from '@/features/public/page-download';
+import {
+  buildPublicFaqStructuredData,
+  buildPublicPageHead,
+} from '@/features/public/head';
+import {
+  downloadFaqs,
+  PageDownload,
+} from '@/features/public/page-download';
 
 export const Route = createFileRoute('/download')({
   component: RouteComponent,
@@ -25,6 +31,10 @@ export const Route = createFileRoute('/download')({
           'Nayovi APK download',
           'Android manga translator APK',
         ],
+        structuredDataGraph: buildPublicFaqStructuredData(
+          '/download',
+          downloadFaqs
+        ),
       }
     ),
 });
