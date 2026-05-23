@@ -794,10 +794,28 @@ def clean_business_report_item(value: str) -> str:
   if not cleaned:
     return ''
 
-  if re.search(r'\b(tsc|git|commit|branch|pushed|validation|no-verify)\b', cleaned, re.I):
+  if re.search(
+    r'\b(tsc|git|commit|branch|pushed|validation|no-verify|inbound|cycle logg)\b',
+    cleaned,
+    re.I,
+  ):
     return ''
 
-  return cleaned[:220]
+  cleaned = re.sub(r'\bpassé en contacted\b', 'marqué comme contacté', cleaned, flags=re.I)
+  cleaned = re.sub(
+    r"corps final de l[’']email envoyé ajouté",
+    'email envoyé archivé dans le suivi',
+    cleaned,
+    flags=re.I,
+  )
+  return sentence_case(cleaned[:220])
+
+
+def sentence_case(value: str) -> str:
+  if not value:
+    return value
+
+  return value[0].upper() + value[1:]
 
 
 def read_text_if_exists(path: pathlib.Path | None) -> str:
