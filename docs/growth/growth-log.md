@@ -2,6 +2,15 @@
 
 ## 2026-05-23
 
+- Autonomous cycle on `growth/autonomous`: effective env reported `GROWTH_AGENT_GIT_PUSH_ENABLED=true`, `GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true`, and `GROWTH_AGENT_EMAIL_SEND_MODE=send`.
+- Audited branch/status, public SEO helpers, `/support` route metadata, sitemap coverage, current growth docs, and recent branch commits.
+- Added business-support conversion content to `/support` for publisher/platform private workflow reviews, reviewer/affiliate test codes, and investor/operator diligence.
+- Expanded support FAQ schema with publisher/platform review and business inquiry answers; refreshed `/support` sitemap metadata.
+- Added four draft prospects focused on manga education, comics press, localization community review, and app metadata discovery.
+- Added publisher private workflow review and localization community feedback outreach drafts with opt-out language.
+- Outreach sent: 0. Reason: all prospect rows remain `draft`; no row is explicitly approved for autonomous sending.
+- Validation: `pnpm lint:ts`, the default pre-commit hook, and the default pre-push hook were blocked by pnpm ignored-build approval checks after Prisma/build-info generation; removed the generated `pnpm-workspace.yaml`, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+
 - Autonomous cycle on `growth/autonomous`: effective env reported `GROWTH_AGENT_GIT_PUSH_ENABLED=true` and `GROWTH_AGENT_EMAIL_SEND_MODE=send`; no outreach was sent because no prospect row is marked approved.
 - Audited branch/status, live home, live `/pricing`, live `/sitemap.xml`, public guide content, sitemap coverage, and current growth docs.
 - Added partner/reviewer/publisher FAQ content to the translation support workflow guide and wired the FAQ into page structured data for search, directories, and partnership due diligence.

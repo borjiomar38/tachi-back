@@ -1,5 +1,7 @@
 import {
   ArrowRightIcon,
+  BadgeCheckIcon,
+  Building2Icon,
   MailIcon,
   MessageCircleIcon,
   ShieldCheckIcon,
@@ -24,6 +26,27 @@ import {
   supportFaqs,
 } from '@/features/public/data';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
+
+const businessSupportItems: readonly {
+  description: string;
+  title: string;
+}[] = [
+  {
+    title: 'Publisher and platform review',
+    description:
+      'Ask for a private walkthrough of approved-sample translation, hosted OCR, glossary review, and source-policy boundaries before considering a public collaboration.',
+  },
+  {
+    title: 'Reviewer and affiliate access',
+    description:
+      'Request a scoped test code for screenshots, setup walkthroughs, community demos, or affiliate evaluation without exposing customer billing credentials.',
+  },
+  {
+    title: 'Investor or operator diligence',
+    description:
+      'Use the support email for traction, funnel, pricing, retention, and roadmap questions that need a founder response.',
+  },
+];
 
 export const PageSupport = () => {
   return (
@@ -112,6 +135,40 @@ export const PageSupport = () => {
             </CardContent>
           </Card>
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Business"
+        title="Partner, reviewer, and investor support"
+        description="Use the same support routes for commercial due diligence, private test access, and permission-safe collaboration questions."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {businessSupportItems.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-positive-100 text-positive-700 ring-1 ring-positive-200 dark:bg-positive-500/15 dark:text-positive-200 dark:ring-positive-500/25">
+                  <BadgeCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardHeader className="gap-3">
+            <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+              <Building2Icon className="size-5" />
+            </div>
+            <CardTitle className="text-xl">Business inquiry format</CardTitle>
+            <CardDescription>
+              Email support with the subject line "Nayovi business inquiry" and
+              include your organization, requested review path, intended use
+              case, and any timing constraints.
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </PublicSection>
 
       <PublicSection

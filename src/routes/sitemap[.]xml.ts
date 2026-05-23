@@ -55,6 +55,11 @@ const staticSitemapEntryOverrides: Record<
   '/how-it-works': {
     priority: '0.8',
   },
+  '/support': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-23',
+    priority: '0.8',
+  },
   '/guides/mihon-nayovi-setup': {
     lastModified: '2026-05-14',
     priority: '0.8',

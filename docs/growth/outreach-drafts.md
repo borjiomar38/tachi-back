@@ -221,6 +221,36 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Publisher Private Workflow Review Draft
+
+Subject: Private review of Nayovi approved-sample translation workflow
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. Nayovi does not host chapters, source lists, or unauthorized catalog material; the useful partnership question is narrower: whether approved samples, public-domain material, accessibility tests, or creator-authorized previews can be handled clearly.
+
+Would your team be open to a private review of the workflow page, support route, and test-code path before I ask for any public mention? I can keep the review scoped to source boundaries, glossary handling, takedown-ready support, and what would need to be true for a legitimate collaboration.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Localization Community Feedback Draft
+
+Subject: Feedback on manga OCR translation workflow boundaries
+
+Hi {{name}},
+
+I am building Nayovi, a narrow hosted OCR and AI translation workflow for Android manga, manhwa, and manhua readers. I am looking for localization feedback on the workflow constraints: vertical pages, short dialogue, recurring terms, glossary expectations, and permission-safe source boundaries.
+
+If a feedback request fits your community or editorial scope, I can share the public workflow guide and support page. I am not asking for a promotional post or paid review.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Founder Community Feedback Draft
 
 Subject: Feedback on a narrow Android subscription funnel

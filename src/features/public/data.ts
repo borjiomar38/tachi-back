@@ -209,6 +209,16 @@ export const supportFaqs: ContentBlock[] = [
       'Yes. Reviewers, affiliates, community moderators, and publisher or platform teams can contact support for a scoped test code before publishing a walkthrough or partnership note.',
   },
   {
+    title: 'Can publishers or platforms request a private workflow review?',
+    description:
+      'Yes. Publisher, platform, and creator teams can ask support for a private review of approved-sample translation, glossary handling, hosted processing, and takedown-ready support before any public collaboration.',
+  },
+  {
+    title: 'Where should business or investor questions go?',
+    description:
+      'Use the support email with the subject line "Nayovi business inquiry" and include whether the request is about partnerships, affiliate tests, publisher workflows, or investor due diligence.',
+  },
+  {
     title: 'Is it monthly?',
     description:
       'Yes. The plans renew every month until you cancel them.',
