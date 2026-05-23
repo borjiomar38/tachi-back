@@ -14,6 +14,10 @@ import { type PublicTokenPack, supportFaqs } from '@/features/public/data';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
 
+interface PagePricingProps {
+  tokenPacks: PublicTokenPack[];
+}
+
 const pricingNotes = [
   {
     icon: CoinsIcon,
@@ -35,7 +39,7 @@ const pricingNotes = [
   },
 ] as const;
 
-export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
+export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
   );

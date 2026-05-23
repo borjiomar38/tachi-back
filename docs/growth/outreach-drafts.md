@@ -239,3 +239,28 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## AI Directory Submission Draft
+
+Short description:
+
+Nayovi is an Android APK for hosted manga, manhwa, and manhua OCR/AI translation with official download, free trial access, redeem-code activation, and monthly token plans.
+
+Long description:
+
+Nayovi helps Android readers translate manga, manhwa, and manhua pages through a hosted OCR and AI translation workflow. It is built for readers comparing TachiyomiAT, Tachiyomi, Mihon, and manga translation app workflows, while keeping download, activation, pricing, and support on the official Nayovi site. Nayovi does not host or distribute chapters and should be used with content the reader owns, public-domain material, official samples, or material they have permission to process.
+
+## Deal Marketplace Research Draft
+
+Subject: Fit check for a narrow Android AI translation product
+
+Hi {{name}},
+
+I am building Nayovi, a narrow Android subscription product for hosted OCR and AI translation around manga, manhwa, and manhua reader workflows. The product uses official APK download, free trial access, redeem-code activation, and monthly token plans.
+
+I am researching whether a limited partner offer could create qualified paid demand without overloading support or weakening recurring subscription economics. Before applying, I would like to understand what metrics, refund terms, and support expectations you need from AI utility products.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
