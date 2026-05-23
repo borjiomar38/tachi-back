@@ -165,7 +165,7 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     imap_password=imap['password'],
     imap_mailbox=imap['mailbox'],
     imap_ssl=is_true(str(imap['ssl'])),
-    poll_seconds=max(30, int(values.get('GROWTH_AGENT_INBOUND_POLL_SECONDS', '180'))),
+    poll_seconds=max(30, int(values.get('GROWTH_AGENT_INBOUND_POLL_SECONDS', '60'))),
     max_messages=max(1, int(values.get('GROWTH_AGENT_INBOUND_MAX_MESSAGES', '10'))),
     max_attachment_bytes=max(
       1024 * 1024,
