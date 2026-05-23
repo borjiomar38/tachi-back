@@ -1,8 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { publicSeoKeywords } from '@/features/blog/seo';
-import { buildPublicPageHead } from '@/features/public/head';
-import { PageTranslationSupportWorkflow } from '@/features/public/page-ethical-guides';
+import {
+  buildPublicFaqStructuredData,
+  buildPublicPageHead,
+} from '@/features/public/head';
+import {
+  PageTranslationSupportWorkflow,
+  translationSupportWorkflowFaqs,
+} from '@/features/public/page-ethical-guides';
 
 export const Route = createFileRoute('/guides/translation-support-workflow')({
   component: RouteComponent,
@@ -18,7 +24,13 @@ export const Route = createFileRoute('/guides/translation-support-workflow')({
           'manhwa ai translation workflow',
           'manhua ai translation workflow',
           'hosted OCR translation workflow',
+          'permission safe manga translation',
+          'manga localization workflow',
         ],
+        structuredDataGraph: buildPublicFaqStructuredData(
+          '/guides/translation-support-workflow',
+          translationSupportWorkflowFaqs
+        ),
       }
     ),
 });

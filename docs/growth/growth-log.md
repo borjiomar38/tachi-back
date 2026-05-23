@@ -2,6 +2,13 @@
 
 ## 2026-05-23
 
+- Autonomous cycle on `growth/autonomous`: effective env reported `GROWTH_AGENT_GIT_PUSH_ENABLED=true` and `GROWTH_AGENT_EMAIL_SEND_MODE=send`; no outreach was sent because no prospect row is marked approved.
+- Audited branch/status, live home, live `/pricing`, live `/sitemap.xml`, public guide content, sitemap coverage, and current growth docs.
+- Added partner/reviewer/publisher FAQ content to the translation support workflow guide and wired the FAQ into page structured data for search, directories, and partnership due diligence.
+- Added four draft prospects focused on publisher-platform feedback, localization communities/press, and manga research credibility.
+- Added a publisher sample-workflow feedback draft with opt-out language.
+- Validation: `pnpm lint:ts` was blocked by pnpm ignored-build approval checks after Prisma/build-info generation; removed the generated `pnpm-workspace.yaml`, `git diff --check` passed, and direct `./node_modules/.bin/tsc --noEmit` passed.
+
 - Autonomous cycle on `growth/autonomous`: processed owner inbound command `20260523T155420Z-0fd447c55ab1` asking to change `GROWTH_AGENT_GIT_PUSH_ENABLED=true`; effective env still reported `GROWTH_AGENT_GIT_PUSH_ENABLED=false`, so push remains skipped unless the runtime flag changes.
 - Audited branch/status, public metadata, sitemap coverage, money pages, and current growth docs.
 - Added public structured-data support and sales contact points, plus APK download and software help URLs, so search engines and software directories can identify the official support path.

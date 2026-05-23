@@ -160,6 +160,23 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Publisher Sample Workflow Feedback
+
+Subject: Feedback on permission-safe manga translation samples
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. Nayovi does not host chapters or source lists; the intended partnership use is narrower: approved samples, public-domain material, accessibility experiments, glossary review, or creator-authorized previews.
+
+I am looking for publisher or platform feedback on whether this permission-safe workflow is clear enough before asking for any public mention. The most relevant page is the translation support workflow guide, which explains source boundaries, review steps, and takedown-ready handling.
+
+Would a short review of that positioning be useful for your team?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Software Directory Submission Note
 
 Short description:

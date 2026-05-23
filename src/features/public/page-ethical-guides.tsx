@@ -120,6 +120,29 @@ const takedownSteps = [
   'Good-faith correction requests are welcome for attribution, terminology, source labeling, and policy wording.',
 ] as const;
 
+export const translationSupportWorkflowFaqs = [
+  {
+    title: 'Can an agency use this workflow for approved client samples?',
+    description:
+      'Yes, if the client owns the material or has explicit permission to process it. Nayovi is best positioned for scoped samples, glossary review, and hosted OCR or translation support rather than bulk unauthorized chapter distribution.',
+  },
+  {
+    title: 'Can reviewers test Nayovi without publishing private content?',
+    description:
+      'Yes. Reviewers can use public-domain pages, creator-approved samples, or their own test material, then focus coverage on APK install, redeem-code activation, OCR quality, pricing, and support flow.',
+  },
+  {
+    title: 'Does Nayovi host manga, manhwa, or manhua chapters?',
+    description:
+      'No. Nayovi provides Android setup, hosted OCR, AI translation support, activation, and customer support. It does not host chapter libraries, extension indexes, or unauthorized source lists.',
+  },
+  {
+    title: 'What should a publisher or creator do if they have a concern?',
+    description:
+      'Use the official sources and takedown policy page or contact support with the work title, affected URL or feature, rights-holder relationship, and reliable contact address.',
+  },
+] as const;
+
 interface SetupGuideCopy {
   description: string;
   eyebrow: string;
@@ -326,8 +349,18 @@ export const PageTranslationSupportWorkflow = () => {
         eyebrow="Policy"
         title="Keep the workflow linkable"
         description="Directories and communities are more likely to accept a project when the public pages make the legal boundary clear."
-        className="pb-20"
       >
+        <div className="mb-8 grid gap-4 lg:grid-cols-2">
+          {translationSupportWorkflowFaqs.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
         <div className="flex flex-wrap gap-3">
           <a
             href="/legal/official-sources-takedown"
