@@ -29,6 +29,7 @@ fi
 install -m 0755 -d /usr/local/lib/tachi-back
 install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-growth-agent.sh" /usr/local/bin/tachi-growth-agent
 install -m 0755 "${APP_DIR}/deploy/contabo/create-lws-mailbox.py" /usr/local/bin/tachi-create-lws-mailbox
+install -m 0755 "${APP_DIR}/deploy/contabo/send-growth-owner-notification.py" /usr/local/bin/tachi-growth-owner-notify
 apt-get update
 apt-get install -y ca-certificates curl git jq python3 ripgrep
 
@@ -55,6 +56,10 @@ GROWTH_AGENT_GIT_AUTHOR_EMAIL=growth-agent@nayovi.com
 GROWTH_AGENT_GIT_PUSH_ENABLED=false
 GROWTH_AGENT_EMAIL_SEND_MODE=draft
 GROWTH_AGENT_MAX_OUTREACH_EMAILS_PER_DAY=10
+GROWTH_AGENT_NOTIFY_ENABLED=true
+GROWTH_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
+GROWTH_AGENT_NOTIFY_ENV_FILE=${APP_DIR}/.env.production
+GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX="Nayovi growth lead"
 GROWTH_AGENT_VALIDATION_COMMAND="pnpm lint:ts"
 GROWTH_AGENT_PRIMARY_SITE=https://tachiyomiat.com
 GROWTH_AGENT_BRAND_SITE=https://nayovi.com

@@ -114,7 +114,51 @@ PROMPT
     "${codex_bin}" --search -a never "${codex_args[@]}" <"${prompt_file}"
   fi
 
+  maybe_send_owner_notification "${cycle_id}" "${report_file}" "${repo_dir}"
+
   log "Completed Codex growth cycle ${cycle_id}; report=${report_file}"
+}
+
+maybe_send_owner_notification() {
+  local cycle_id="$1"
+  local report_file="$2"
+  local repo_dir="$3"
+  local notify_to notify_env_file notify_keywords subject
+
+  if [[ "${GROWTH_AGENT_NOTIFY_ENABLED:-false}" != "true" ]]; then
+    return 0
+  fi
+
+  notify_to="${GROWTH_AGENT_NOTIFY_EMAIL:-}"
+  if [[ -z "${notify_to}" || ! -s "${report_file}" ]]; then
+    return 0
+  fi
+
+  notify_keywords="${GROWTH_AGENT_NOTIFY_KEYWORDS:-investor,investment,partnership,partenariat,prospect,outreach,backlink,collaboration,affiliate}"
+  if ! grep -Eiq "$(csv_to_egrep "${notify_keywords}")" "${report_file}"; then
+    log "No notification keywords matched for ${cycle_id}."
+    return 0
+  fi
+
+  notify_env_file="${GROWTH_AGENT_NOTIFY_ENV_FILE:-${APP_DIR}/.env.production}"
+  subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: ${cycle_id}"
+
+  if ! /usr/local/bin/tachi-growth-owner-notify \
+    --env-file "${notify_env_file}" \
+    --to "${notify_to}" \
+    --subject "${subject}" \
+    --report-file "${report_file}" \
+    --repo-dir "${repo_dir}" \
+    --cycle-id "${cycle_id}"; then
+    log "Owner notification failed for ${cycle_id}; continuing."
+  fi
+}
+
+csv_to_egrep() {
+  local value="$1"
+
+  printf '%s' "${value}" \
+    | sed -e 's/[[:space:]]*,[[:space:]]*/|/g' -e 's/[[:space:]]\\+/ /g'
 }
 
 prepare_git_workspace() {
