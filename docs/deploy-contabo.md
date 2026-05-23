@@ -131,6 +131,58 @@ The old curl-only script remains available as `/usr/local/bin/tachi-back-blog-cr
 if you explicitly want the app to call its configured LLM API provider instead
 of Codex CLI.
 
+## Growth Agent
+
+The Contabo host can also run a supervised Codex growth agent for SEO,
+backlinks, partnership research, and outreach drafts. It is intentionally
+separate from the production app containers.
+
+Install from the deployed source tree:
+
+```bash
+cd /opt/tachi-back
+sudo TACHI_DEPLOY_USER=borjiomar38 deploy/contabo/install-growth-agent.sh --enable
+```
+
+The installer creates `/opt/tachi-back/.env.growth-agent` from the defaults in
+`deploy/contabo/.env.growth-agent.example`, installs
+`/usr/local/bin/tachi-growth-agent`, and registers
+`tachi-growth-agent.service` with `Restart=always`.
+
+Important defaults:
+
+```env
+GROWTH_AGENT_CODEX_MODEL=gpt-5.5
+GROWTH_AGENT_CODEX_REASONING_EFFORT=low
+GROWTH_AGENT_EMAIL_SEND_MODE=draft
+GROWTH_AGENT_GIT_BRANCH=growth/autonomous
+GROWTH_AGENT_GIT_PUSH_ENABLED=false
+```
+
+Keep `GROWTH_AGENT_EMAIL_SEND_MODE=draft` until every outreach rule and sender
+reputation limit is reviewed. Keep `GROWTH_AGENT_GIT_PUSH_ENABLED=false` until
+the VPS has a dedicated GitHub deploy key or another deliberately scoped write
+credential. The agent must never push or merge `master`; pushing `master`
+deploys production.
+
+Operational commands:
+
+```bash
+sudo systemctl status tachi-growth-agent --no-pager
+sudo journalctl -u tachi-growth-agent -f
+sudo systemctl restart tachi-growth-agent
+```
+
+The LWS mailbox helper uses `/opt/tachi-back/.env.lws`, which is expected to be
+IP-restricted to the Contabo server:
+
+```bash
+sudo -u borjiomar38 tachi-create-lws-mailbox partnerships@nayovi.com
+```
+
+Generated mailbox credentials are stored under `/opt/tachi-back/.secrets/` with
+mode `600` and must not be committed.
+
 ## Updates
 
 ```bash
