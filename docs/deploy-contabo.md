@@ -156,18 +156,23 @@ Important defaults:
 GROWTH_AGENT_CODEX_MODEL=gpt-5.5
 GROWTH_AGENT_CODEX_REASONING_EFFORT=low
 GROWTH_AGENT_CODEX_SANDBOX=danger-full-access
-GROWTH_AGENT_EMAIL_SEND_MODE=draft
+GROWTH_AGENT_AUTONOMOUS_MODE=true
+GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
+GROWTH_AGENT_EMAIL_SEND_MODE=send
 GROWTH_AGENT_GIT_BRANCH=growth/autonomous
 GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
-GROWTH_AGENT_GIT_PUSH_ENABLED=false
+GROWTH_AGENT_GIT_PUSH_ENABLED=true
 GROWTH_AGENT_INBOUND_ENABLED=false
 ```
 
-Keep `GROWTH_AGENT_EMAIL_SEND_MODE=draft` until every outreach rule and sender
-reputation limit is reviewed. Keep `GROWTH_AGENT_GIT_PUSH_ENABLED=false` until
-the VPS has a dedicated GitHub deploy key or another deliberately scoped write
-credential. The agent must never push or merge `master`; pushing `master`
-deploys production.
+`GROWTH_AGENT_EMAIL_SEND_MODE=send` and
+`GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true` let the agent advance outreach
+without owner approval. It must still use public business contact paths,
+individualized messages, opt-out language, and the daily cap. It must not buy
+backlinks, use scraped private lists, send deceptive claims, or evade rate
+limits. `GROWTH_AGENT_GIT_PUSH_ENABLED=true` lets the agent push only its
+configured growth branch. The agent must never push or merge `master`; pushing
+`master` deploys production.
 
 Operational commands:
 

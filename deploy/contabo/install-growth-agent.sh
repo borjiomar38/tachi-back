@@ -68,14 +68,17 @@ GROWTH_AGENT_GIT_BRANCH=growth/autonomous
 GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
 GROWTH_AGENT_GIT_AUTHOR_NAME="Nayovi Growth Agent"
 GROWTH_AGENT_GIT_AUTHOR_EMAIL=growth-agent@nayovi.com
-GROWTH_AGENT_GIT_PUSH_ENABLED=false
-GROWTH_AGENT_EMAIL_SEND_MODE=draft
+GROWTH_AGENT_GIT_PUSH_ENABLED=true
+GROWTH_AGENT_AUTONOMOUS_MODE=true
+GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
+GROWTH_AGENT_EMAIL_SEND_MODE=send
 GROWTH_AGENT_MAX_OUTREACH_EMAILS_PER_DAY=10
 GROWTH_AGENT_NOTIFY_ENABLED=true
 GROWTH_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 GROWTH_AGENT_NOTIFY_ENV_FILE=${APP_DIR}/.env.production
 GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX="Nayovi growth lead"
 GROWTH_AGENT_NOTIFY_ON_INBOUND=true
+GROWTH_AGENT_NOTIFY_KEYWORDS=investor,investment,partnership,partenariat,prospect,outreach,backlink,collaboration,affiliate,investisseur,investissement,agence,lead,meeting,call,rendez-vous,demo,pilot,partner
 GROWTH_AGENT_TRIGGER_FILE=/var/lib/tachi-growth-agent/run-now
 GROWTH_AGENT_INBOUND_ENABLED=false
 GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
@@ -118,6 +121,9 @@ ensure_env_default GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES 8
 ensure_env_default GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS 600
 ensure_env_default GROWTH_AGENT_INBOUND_MARK_SEEN true
 ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED true
+ensure_env_default GROWTH_AGENT_AUTONOMOUS_MODE true
+ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
+ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS investor,investment,partnership,partenariat,prospect,outreach,backlink,collaboration,affiliate,investisseur,investissement,agence,lead,meeting,call,rendez-vous,demo,pilot,partner
 chmod 600 "${ENV_FILE}"
 chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
 

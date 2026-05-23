@@ -57,6 +57,8 @@ Working branch: ${branch}
 Business goal:
 - Increase qualified traffic, backlinks, partnerships, investor interest, and paid subscriptions for Nayovi.
 - Prioritize durable revenue signals over vanity traffic.
+- Advance autonomously without asking the owner for routine permission when GROWTH_AGENT_AUTONOMOUS_MODE=true.
+- Notify the owner when a human action is needed, such as a collaboration call, investor conversation, demo meeting, pilot, or legal/financial decision.
 
 Allowed work:
 - Inspect the repository and public site.
@@ -65,15 +67,17 @@ Allowed work:
 - Maintain docs/growth/outreach-drafts.md with concise personalized drafts for agencies, blogs, communities, potential affiliates, and investors.
 - Maintain docs/growth/growth-log.md with cycle results, commits, and next actions.
 - Create a Git branch named ${branch}, commit focused changes, and push that branch when GROWTH_AGENT_GIT_PUSH_ENABLED=true.
+- When autonomous outreach is enabled and email mode is send, choose high-fit public business contacts or official forms, send individualized compliant outreach, and log recipients, rationale, and follow-up state.
 
 Hard constraints:
 - Do not push, merge, rebase, or force-push master.
 - Do not run Vercel production deploy commands.
 - Do not buy backlinks, use PBNs, scrape private data, evade rate limits, or send spam.
-- Do not send outreach email unless a prospect row is explicitly marked approved and GROWTH_AGENT_EMAIL_SEND_MODE=send.
+- Do not send bulk, deceptive, repeated, or noncompliant outreach. Use public business contacts or official forms only, personalize every message, include opt-out language, and stay under the daily cap.
 - Prefer public business contact addresses or official forms. Include a clear opt-out line in outreach drafts.
 - Do not print secrets. Do not commit env files, passwords, tokens, SSH keys, or generated credential files.
 - Keep changes small, testable, and aligned with existing repo conventions.
+- Do not ask for owner permission before safe growth actions when autonomous mode is enabled; make a defensible decision, act, log it, and notify the owner with results.
 
 Operational preferences:
 - Model target: ${codex_model}
@@ -81,6 +85,8 @@ Operational preferences:
 - Email mode: ${GROWTH_AGENT_EMAIL_SEND_MODE:-draft}
 - Daily outreach cap: ${GROWTH_AGENT_MAX_OUTREACH_EMAILS_PER_DAY:-10}
 - Git push enabled: ${GROWTH_AGENT_GIT_PUSH_ENABLED:-false}
+- Autonomous mode: ${GROWTH_AGENT_AUTONOMOUS_MODE:-false}
+- Autonomous outreach enabled: ${GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED:-false}
 
 Cycle checklist:
 1. Check git status and current branch.
@@ -90,7 +96,8 @@ Cycle checklist:
 5. Run the light validation command if practical: ${GROWTH_AGENT_VALIDATION_COMMAND:-pnpm lint:ts}
 6. Commit on ${branch} if files changed.
 7. Push ${branch} only if enabled.
-8. Write a concise final report with files changed, validation result, risks, and next revenue-focused actions.
+8. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
+9. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
 PROMPT
 
   append_inbound_contexts "${prompt_file}" "${inbound_list_file}"
