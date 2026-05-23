@@ -156,31 +156,5 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "pnpm": {
-    "supportedArchitectures": {
-      "os": [
-        "current",
-        "linux"
-      ],
-      "cpu": [
-        "current",
-        "x64"
-      ],
-      "libc": [
-        "current",
-        "glibc"
-      ]
-    },
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@prisma/client",
-      "@prisma/engines",
-      "@tailwindcss/oxide",
-      "esbuild",
-      "lefthook",
-      "prisma",
-      "sharp"
-    ]
   }
 }
