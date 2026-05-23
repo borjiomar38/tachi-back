@@ -155,36 +155,36 @@ export const PageHowItWorks = () => {
       </PublicSection>
 
       <PublicSection
-        eyebrow="Important boundary"
-        title="What still needs polish"
-        description="The core hosted flow is live, but rollout polish and support tooling still continue."
+        eyebrow="Launch readiness"
+        title="A concrete flow for reviewers and partners"
+        description="Nayovi is easiest to evaluate when reviewers can follow the same path as readers: official APK, hosted activation, token plans, and support."
         className="pb-20"
       >
         <Card className="public-brand-panel-muted rounded-[1.5rem]">
           <CardHeader className="gap-2">
-            <CardTitle className="text-lg">Current follow-up work</CardTitle>
+            <CardTitle className="text-lg">Review access and partner tests</CardTitle>
             <CardDescription className="text-brand-950 dark:text-brand-100">
-              Lemon Squeezy checkout, webhook fulfillment, redeem-code
-              activation, device-bound mobile sessions, and Android hosted mode
-              are in place. Remaining work is around recovery UX, review mode,
-              refund tooling, and launch hardening.
+              Blogs, communities, affiliates, and publisher partners can test
+              the Android workflow with a dedicated redeem code, compare the
+              public pricing page, and review the permission-safe translation
+              policy before linking readers to the official APK.
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-3">
             <a
-              href="/pricing"
+              href="/#contact"
               className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
             >
               <span className="flex items-center gap-2">
-                Review pricing
+                Request review code
                 <ArrowRightIcon className="size-4" />
               </span>
             </a>
             <a
-              href="/download"
+              href="/pricing"
               className={buttonVariants({ variant: 'secondary', size: 'lg' })}
             >
-              Download guidance
+              Review pricing
             </a>
           </CardContent>
         </Card>

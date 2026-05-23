@@ -173,3 +173,37 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Founder Community Feedback Draft
+
+Subject: Feedback on a narrow Android subscription funnel
+
+Hi {{name}},
+
+I am building Nayovi, a hosted OCR and AI translation product for Android manga, manhwa, and manhua readers. The current funnel is intentionally narrow: SEO page, official APK download, free trial, redeem-code activation, and monthly token plans.
+
+I am looking for practical feedback on activation-to-paid conversion, pricing clarity, and whether the permission-safe positioning is credible before I publish a fuller teardown.
+
+Would a short founder note with the product page, pricing, and early conversion metrics be appropriate for your community?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Android Newsletter Submission Draft
+
+Subject: Android APK workflow with hosted OCR and redeem-code activation
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK that connects a familiar reader workflow with hosted OCR, AI translation, redeem-code activation, and monthly token plans. The backend handles provider calls so readers do not need to manage API keys on the device.
+
+The practical angle for Android builders is the product flow: official APK distribution, server-side translation jobs, free trial access, paid activation, and support without hosting or distributing chapters.
+
+Would a concise product note or technical walkthrough be a fit for {{newsletter_or_site}}?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
