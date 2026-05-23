@@ -251,3 +251,32 @@ Best,
 {{sender_name}}
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## Android APK Directory Submission Draft
+
+Short description:
+
+Nayovi is an official Android APK for hosted OCR and AI translation in manga, manhwa, and manhua reading workflows. It includes free trial access, redeem-code activation, token plans, and support from the official Nayovi site.
+
+Submission note:
+
+Nayovi should be listed as the official app download and activation path only. The app is for readers who want hosted OCR and AI translation without managing provider API keys on the device, and it does not host or distribute chapters. The best category fit is Android tools, reading utilities, OCR translation, or manga/manhwa translation workflow.
+
+If a directory requires screenshots, use the current official APK screenshots and link back to https://tachiyomiat.com/download or https://tachiyomiat.com/translate-manhwa-ai rather than an unofficial mirror page.
+
+## Mobile Localization Guest Pitch
+
+Subject: Android manga OCR workflow lessons from Nayovi
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The product has a narrow localization problem: vertical pages, short dialogue, recurring names, reader context, app activation, and token usage limits.
+
+Once I can share enough activation and paid-plan data, I would like to contribute a concise guest note or case study for {{publication_or_community}} about what this niche workflow teaches mobile localization teams. The piece would focus on OCR constraints, permission-safe use cases, and subscription conversion rather than a generic AI product announcement.
+
+Would that be relevant for your editorial calendar?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
