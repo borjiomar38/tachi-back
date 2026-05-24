@@ -2,6 +2,7 @@ import {
   ArrowRightIcon,
   BadgeCheckIcon,
   DownloadIcon,
+  HandshakeIcon,
   KeyRoundIcon,
   LanguagesIcon,
   ScanTextIcon,
@@ -160,6 +161,24 @@ const demoEvaluationRows = [
     checkpoint: 'Upgrade confidence',
     signal:
       'Pricing, support, trial access, and cancellation paths should be visible enough that reviewers can explain why a paid plan is useful.',
+  },
+] as const;
+
+const partnerUseCases = [
+  {
+    useCase: 'Approved sample chapters',
+    value:
+      'Publishers, reviewers, or creators can test OCR and translation on approved previews before discussing a public workflow.',
+  },
+  {
+    useCase: 'Accessibility and reader research',
+    value:
+      'Teams can evaluate whether hosted OCR makes short dialogue and vertical-page context easier to inspect for multilingual readers.',
+  },
+  {
+    useCase: 'Affiliate or reviewer pilots',
+    value:
+      'Partners can use dedicated codes, official APK links, and pricing context to measure qualified installs without sending readers to mirrors.',
   },
 ] as const;
 
@@ -515,6 +534,48 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request demo assets
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Partner use cases"
+        title="Permission-safe reasons to test Nayovi"
+        description="The strongest partner conversations start with approved material, transparent testing, and a clear path from review access to paid reader demand."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerUseCases.map((useCase) => (
+            <Card key={useCase.useCase} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <HandshakeIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{useCase.useCase}</CardTitle>
+                <CardDescription>{useCase.value}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Designed for accountable pilots
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A serious pilot should name the approved source material, use a
+                dedicated review or affiliate code, and measure whether trial
+                users become repeat token-plan subscribers.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Discuss a pilot
             </a>
           </CardContent>
         </Card>

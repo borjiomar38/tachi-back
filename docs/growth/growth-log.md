@@ -2,6 +2,10 @@
 
 ## 2026-05-24
 
+- Autonomous cycle on `growth/autonomous-20260524T092048Z`: audited the current branch, public SEO routes, sitemap generation, and growth trackers.
+- Added a permission-safe partner use-case section to `/translate-manhwa-ai` so publishers, reviewers, affiliates, and communities can see accountable pilot paths for approved samples, accessibility research, and dedicated review/affiliate codes.
+- Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.
+- Auto-approved Android Central apps coverage as a medium-fit press prospect after current public web verification found Android app/help coverage and contactable staff paths; sent an individualized APK review pitch through the configured outreach sender with opt-out language.
 - Autonomous cycle on `growth/autonomous-20260524T031520Z`: processed owner inbound note `20260524T031511Z-demo-video-asset` confirming a finished English manhwa translation demo video is available at `/var/lib/tachi-growth-agent/assets/nayovi-demo-english-manhwa.mp4` with note file `/var/lib/tachi-growth-agent/assets/nayovi-demo-english-manhwa.txt`.
 - Logged the demo asset for selective use in reviewer, partner, investor, app-directory, and collaboration conversations where proof material is specifically relevant.
 - Auto-approved 9to5Google Android apps as a medium-fit press prospect after current public web verification found Android app coverage and a public tips address; prepared and sent an individualized demo-backed APK workflow pitch with opt-out language.
