@@ -2,6 +2,7 @@ import {
   ArrowRightIcon,
   BadgeCheckIcon,
   DownloadIcon,
+  HandshakeIcon,
   KeyRoundIcon,
   LanguagesIcon,
   ScanTextIcon,
@@ -65,6 +66,137 @@ const workflowSteps = [
     description:
       'Send page text through the hosted translation flow and continue reading.',
     icon: SparklesIcon,
+  },
+] as const;
+
+const comparisonRows = [
+  {
+    need: 'Android reader workflow',
+    nayovi: 'Official APK, redeem-code activation, and hosted translation stay connected.',
+    generic:
+      'Browser tools usually require screenshots, copy-paste steps, or separate upload flows.',
+  },
+  {
+    need: 'Manhwa page handling',
+    nayovi:
+      'Hosted OCR is positioned around vertical pages, short dialogue, and dense panels.',
+    generic:
+      'General OCR tools often treat pages as documents instead of reader layouts.',
+  },
+  {
+    need: 'Paid support signal',
+    nayovi:
+      'Token plans, support, and activation give serious readers a direct upgrade path.',
+    generic:
+      'Free web tools rarely include app support, account recovery, or usage controls.',
+  },
+] as const;
+
+const intentRows = [
+  {
+    search: 'Translate Korean manhwa on Android',
+    fit: 'Best fit when readers need vertical-page OCR, short-dialogue translation, and one APK-to-plan flow.',
+    action: 'Start with the free trial, then move to Pro if translation becomes a weekly reading habit.',
+  },
+  {
+    search: 'Translate manga or manhua from a reader app',
+    fit: 'Useful when the reading workflow already feels like TachiyomiAT, Tachiyomi, or Mihon and screenshots feel slow.',
+    action: 'Download the official APK and keep pricing, support, and activation on Nayovi instead of using mirrors.',
+  },
+  {
+    search: 'Review, affiliate, or community test',
+    fit: 'Good fit when a blog, community, or partner needs a review code, public pricing page, and compliance note.',
+    action: 'Request a dedicated code before publishing a walkthrough or sending readers to a trial.',
+  },
+] as const;
+
+const reviewSignals = [
+  {
+    title: 'Reviewer-ready flow',
+    description:
+      'The official APK, pricing page, support path, and setup guides give blogs and communities a clear product path to evaluate.',
+  },
+  {
+    title: 'Affiliate-friendly upgrade path',
+    description:
+      'Free trial access lets readers test the workflow before monthly token plans create a direct subscription signal.',
+  },
+  {
+    title: 'Permission-safe positioning',
+    description:
+      'Nayovi focuses on OCR, translation support, activation, and reader workflow instead of hosting or distributing chapters.',
+  },
+] as const;
+
+const reviewRequestRows = [
+  {
+    audience: 'Android app reviewers',
+    request:
+      'Ask for a redeem code, APK link, screenshots, pricing context, and the permission-safe workflow note before testing.',
+  },
+  {
+    audience: 'Affiliate or community pilots',
+    request:
+      'Request a dedicated code and point members to the official download, pricing, support, and cancellation paths.',
+  },
+  {
+    audience: 'Localization or publisher teams',
+    request:
+      'Start with approved samples or public-domain material so the OCR and translation workflow can be reviewed responsibly.',
+  },
+] as const;
+
+const demoEvaluationRows = [
+  {
+    checkpoint: 'Readable OCR result',
+    signal:
+      'Speech bubbles, narration boxes, and short SFX-adjacent text should produce text a reader can inspect before spending tokens repeatedly.',
+  },
+  {
+    checkpoint: 'Reader workflow continuity',
+    signal:
+      'The demo should show the official APK, activation, and translation flow without forcing users into screenshot uploads or provider API-key setup.',
+  },
+  {
+    checkpoint: 'Upgrade confidence',
+    signal:
+      'Pricing, support, trial access, and cancellation paths should be visible enough that reviewers can explain why a paid plan is useful.',
+  },
+] as const;
+
+const partnerUseCases = [
+  {
+    useCase: 'Approved sample chapters',
+    value:
+      'Publishers, reviewers, or creators can test OCR and translation on approved previews before discussing a public workflow.',
+  },
+  {
+    useCase: 'Accessibility and reader research',
+    value:
+      'Teams can evaluate whether hosted OCR makes short dialogue and vertical-page context easier to inspect for multilingual readers.',
+  },
+  {
+    useCase: 'Affiliate or reviewer pilots',
+    value:
+      'Partners can use dedicated codes, official APK links, and pricing context to measure qualified installs without sending readers to mirrors.',
+  },
+] as const;
+
+const proofRows = [
+  {
+    signal: 'Before installing',
+    proof:
+      'Readers can inspect the official APK path, pricing page, setup guides, and support route before trusting the workflow.',
+  },
+  {
+    signal: 'Before paying',
+    proof:
+      'Free trial access and chapter estimates make the upgrade decision tied to real manga, manhwa, or manhua reading volume.',
+  },
+  {
+    signal: 'Before publishing',
+    proof:
+      'Reviewers can request a redeem code and cite the permission-safe policy instead of sending readers to an unofficial mirror.',
   },
 ] as const;
 
@@ -251,6 +383,268 @@ export const PageTranslateManhwaAi = () => {
             >
               Read workflow guide
             </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Comparison"
+        title="Why readers choose Nayovi instead of generic translators"
+        description="The best-fit user is not just looking for an AI translation demo. They need an Android workflow that can turn high-intent manga and manhwa translation searches into repeat usage."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {comparisonRows.map((row) => (
+            <Card key={row.need} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.need}</CardTitle>
+                <CardDescription>
+                  <span className="block font-medium text-foreground">
+                    Nayovi
+                  </span>
+                  <span className="mt-1 block">{row.nayovi}</span>
+                  <span className="mt-4 block font-medium text-foreground">
+                    Generic translator
+                  </span>
+                  <span className="mt-1 block">{row.generic}</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Search intent"
+        title="Match the workflow before choosing a plan"
+        description="Nayovi should earn subscriptions from readers who need repeat translation, not one-off curiosity clicks. These are the highest-fit use cases."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {intentRows.map((row) => (
+            <Card key={row.search} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.search}</CardTitle>
+                <CardDescription>
+                  <span className="block font-medium text-foreground">
+                    Fit signal
+                  </span>
+                  <span className="mt-1 block">{row.fit}</span>
+                  <span className="mt-4 block font-medium text-foreground">
+                    Next step
+                  </span>
+                  <span className="mt-1 block">{row.action}</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <KeyRoundIcon className="size-4" />
+                Built around activation, not anonymous uploads
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The best path is to install the official APK, test hosted
+                translation with free access, and upgrade only when the token
+                plan matches real reading volume.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Compare plans
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Buyer proof"
+        title="Clear checkpoints before readers commit"
+        description="Qualified traffic should know what can be verified before installing, paying, or recommending Nayovi to another Android reader."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {proofRows.map((row) => (
+            <Card key={row.signal} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.signal}</CardTitle>
+                <CardDescription>{row.proof}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ShieldCheckIcon className="size-4" />
+                Useful for serious readers and reviewers
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The best Nayovi user can verify the official download,
+                activation path, support options, and plan fit before turning
+                hosted translation into a repeat paid workflow.
+              </p>
+            </div>
+            <a
+              href="/download"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Verify download path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Demo quality"
+        title="What a strong Nayovi demo should prove"
+        description="A useful demo should not only look impressive. It should help a reader, reviewer, or partner decide whether the Android workflow is reliable enough to test and recommend."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {demoEvaluationRows.map((row) => (
+            <Card key={row.checkpoint} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.checkpoint}</CardTitle>
+                <CardDescription>{row.signal}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ScanTextIcon className="size-4" />
+                Built for demo follow-up
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Reviewers should be able to request screenshots, a redeem code,
+                pricing context, and a permission-safe workflow note before
+                publishing a setup guide or app review.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request demo assets
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Partner use cases"
+        title="Permission-safe reasons to test Nayovi"
+        description="The strongest partner conversations start with approved material, transparent testing, and a clear path from review access to paid reader demand."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerUseCases.map((useCase) => (
+            <Card key={useCase.useCase} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <HandshakeIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{useCase.useCase}</CardTitle>
+                <CardDescription>{useCase.value}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Designed for accountable pilots
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A serious pilot should name the approved source material, use a
+                dedicated review or affiliate code, and measure whether trial
+                users become repeat token-plan subscribers.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Discuss a pilot
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="For partners"
+        title="Built for reviews, demos, and community tests"
+        description="Nayovi gives affiliates, Android blogs, and manga communities a concrete flow to inspect: official download, free trial, token plans, support, and a clear permission-safe use policy."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewSignals.map((signal) => (
+            <Card
+              key={signal.title}
+              className="public-brand-panel-muted rounded-[1.5rem]"
+            >
+              <CardHeader>
+                <CardTitle className="text-lg">{signal.title}</CardTitle>
+                <CardDescription>{signal.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Review access without API-key setup
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Bloggers, communities, and affiliates can test the Android
+                workflow through a redeem code, compare the public pricing
+                page, and link readers to the official APK instead of an
+                unofficial mirror.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request review code
+            </a>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardHeader>
+            <CardTitle className="text-lg">
+              What partners should request before publishing
+            </CardTitle>
+            <CardDescription>
+              A review or pilot should send qualified readers to the official
+              Nayovi funnel and keep the use case transparent.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-3 pt-0 lg:grid-cols-3">
+            {reviewRequestRows.map((row) => (
+              <div
+                key={row.audience}
+                className="rounded-2xl border border-border bg-background p-4"
+              >
+                <p className="text-sm font-semibold">{row.audience}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {row.request}
+                </p>
+              </div>
+            ))}
           </CardContent>
         </Card>
       </PublicSection>

@@ -28,13 +28,16 @@ export const Route = createFileRoute('/')({
   },
   head: () =>
     buildPublicPageHead(
-      'Free Manga AI Translator App',
-      'Nayovi helps TachiyomiAT, Tachiyomi, and Mihon-style Android readers try a free manga AI translator, free manhwa AI translator, and free manhua AI translator with hosted OCR, clean translation, redeem-code activation, and Android APK download.',
+      'TachiyomiAT APK and AI Manga Translator',
+      'TachiyomiAT Android readers can install Nayovi for free manga, manhwa, and manhua AI translation with hosted OCR, APK download, redeem-code activation, and Mihon-style setup.',
       '/',
       {
         keywords: [
           ...publicSeoKeywords,
           'TachiyomiAT',
+          'Tachiyomi AT',
+          'TachiyomiAT APK',
+          'TachiyomiAT download',
           'TachiyomiAT manga translator',
           'Tachiyomi manga translator',
           'Mihon manga translator',

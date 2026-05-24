@@ -8,8 +8,9 @@ import {
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
+const publicBrandAliases = ['TachiyomiAT', 'Tachiyomi AT', 'tachiyomiat.com'];
 const publicSiteDescription =
-  'Nayovi is a free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers coming from TachiyomiAT, Tachiyomi, and Mihon-style workflows who want hosted OCR, clean AI translation, APK download, and redeem-code activation.';
+  'Nayovi is a TachiyomiAT-style Android APK for free manga AI translation, free manhwa AI translation, and free manhua AI translation with hosted OCR, clean AI output, and redeem-code activation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}`);
@@ -126,6 +127,7 @@ const buildStructuredData = (
         '@type': 'Organization',
         '@id': organizationId,
         name: publicSiteName,
+        alternateName: publicBrandAliases,
         url: baseUrl,
         logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
       },
@@ -133,6 +135,7 @@ const buildStructuredData = (
         '@type': 'WebSite',
         '@id': websiteId,
         name: 'Nayovi Manga Translator',
+        alternateName: publicBrandAliases,
         url: baseUrl,
         description: publicSiteDescription,
         inLanguage: 'en',
@@ -156,6 +159,7 @@ const buildStructuredData = (
         '@type': 'SoftwareApplication',
         '@id': `${baseUrl}#android-app`,
         name: publicSiteName,
+        alternateName: publicBrandAliases,
         applicationCategory: 'MultimediaApplication',
         operatingSystem: 'Android',
         url: buildAbsoluteUrl('/download'),

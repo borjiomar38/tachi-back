@@ -96,6 +96,7 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
         try {
           const activation = await redeemLicenseToDevice(parsedInput.data, {
             clientIp,
+            userAgent,
           });
           const auth = await createMobileSession(
             {

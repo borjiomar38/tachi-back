@@ -1,7 +1,14 @@
+x-tachi-json-logging: &tachi-json-logging
+  driver: json-file
+  options:
+    max-file: '7'
+    max-size: 50m
+
 services:
   app:
     image: tachi-back:${TACHI_ENV_SLUG:?set TACHI_ENV_SLUG}-contabo
     container_name: tachi-${TACHI_ENV_SLUG}-app
+    logging: *tachi-json-logging
     build:
       context: ../..
       dockerfile: deploy/contabo/Dockerfile
@@ -32,6 +39,7 @@ services:
   migrate:
     image: tachi-back-migrator:${TACHI_ENV_SLUG:?set TACHI_ENV_SLUG}-contabo
     container_name: tachi-${TACHI_ENV_SLUG}-migrate
+    logging: *tachi-json-logging
     build:
       context: ../..
       dockerfile: deploy/contabo/Dockerfile
@@ -50,6 +58,7 @@ services:
   postgres:
     image: postgres:17
     container_name: tachi-${TACHI_ENV_SLUG}-postgres
+    logging: *tachi-json-logging
     environment:
       POSTGRES_DB: ${POSTGRES_DB:?set POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER:?set POSTGRES_USER}

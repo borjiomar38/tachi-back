@@ -3,11 +3,19 @@ import { createFileRoute } from '@tanstack/react-router';
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
 import {
+  buildApiErrorResponse,
+  buildApiOkResponse,
+  buildHttpRequestContext,
+  buildInvalidRequestResponse,
+  buildRateLimitedResponse,
+  buildTextResponse,
+} from '@/server/http/route-utils';
+import {
   buildFreeAccessIpBlockedErrorBody,
   isFreeAccessIpBlockedError,
 } from '@/server/licenses/free-access-ip-block';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
-import { getClientIp } from '@/server/licenses/utils';
+import { logger } from '@/server/logger';
 import { zRefreshMobileSessionInput } from '@/server/mobile-auth/schema';
 import {
   MobileAuthError,
@@ -18,25 +26,29 @@ export const Route = createFileRoute('/api/mobile/auth/refresh')({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        const requestContext = buildHttpRequestContext(request);
+
         if (envClient.VITE_IS_DEMO) {
-          return new Response('Demo Mode', { status: 405 });
+          return buildTextResponse('Demo Mode', {
+            requestId: requestContext.requestId,
+            status: 405,
+          });
         }
 
         if (!envServer.MOBILE_API_ENABLED) {
-          return Response.json(
-            {
-              error: {
-                code: 'mobile_api_disabled',
-              },
-              ok: false,
-            },
-            { status: 503 }
-          );
+          return buildApiErrorResponse({
+            code: 'mobile_api_disabled',
+            requestId: requestContext.requestId,
+            status: 503,
+          });
         }
 
-        const clientIp = getClientIp(request);
+        const clientIp =
+          requestContext.clientIp === 'unknown'
+            ? null
+            : requestContext.clientIp;
         const rateLimitIp = clientIp ?? 'unknown';
-        const userAgent = request.headers.get('user-agent');
+        const userAgent = requestContext.userAgent;
         const windowMs = envServer.REDEEM_RATE_LIMIT_WINDOW_SECONDS * 1000;
 
         let payload: unknown;
@@ -44,13 +56,27 @@ export const Route = createFileRoute('/api/mobile/auth/refresh')({
         try {
           payload = await request.json();
         } catch {
-          return invalidRequestResponse();
+          logMobileAuthRefreshFailure({
+            code: 'invalid_request',
+            requestContext,
+            statusCode: 400,
+          });
+
+          return buildInvalidRequestResponse(requestContext.requestId);
         }
 
         const parsedInput = zRefreshMobileSessionInput.safeParse(payload);
 
         if (!parsedInput.success) {
-          return invalidRequestResponse(parsedInput.error.flatten());
+          const details = parsedInput.error.flatten();
+
+          logMobileAuthRefreshFailure({
+            code: 'invalid_request',
+            requestContext,
+            statusCode: 400,
+          });
+
+          return buildInvalidRequestResponse(requestContext.requestId, details);
         }
 
         const rateLimit = consumeInMemoryRateLimit({
@@ -60,40 +86,67 @@ export const Route = createFileRoute('/api/mobile/auth/refresh')({
         });
 
         if (!rateLimit.allowed) {
-          return buildRateLimitedResponse(rateLimit.retryAfterMs);
+          logMobileAuthRefreshFailure({
+            code: 'rate_limited',
+            input: parsedInput.data,
+            requestContext,
+            statusCode: 429,
+          });
+
+          return buildRateLimitedResponse(
+            requestContext.requestId,
+            rateLimit.retryAfterMs
+          );
         }
 
         try {
           const auth = await refreshMobileSession(parsedInput.data, {
             clientIp,
+            log: logger.child({
+              requestId: requestContext.requestId,
+            }),
             userAgent,
           });
 
-          return Response.json({
-            data: auth,
-            ok: true,
+          return buildApiOkResponse(auth, {
+            requestId: requestContext.requestId,
           });
         } catch (error) {
           if (isFreeAccessIpBlockedError(error)) {
+            logMobileAuthRefreshFailure({
+              code: error.code,
+              input: parsedInput.data,
+              requestContext,
+              statusCode: error.statusCode,
+            });
+
             return Response.json(
               {
                 error: buildFreeAccessIpBlockedErrorBody(error),
                 ok: false,
               },
-              { status: error.statusCode }
+              {
+                headers: {
+                  'X-Request-ID': requestContext.requestId,
+                },
+                status: error.statusCode,
+              }
             );
           }
 
           if (error instanceof MobileAuthError) {
-            return Response.json(
-              {
-                error: {
-                  code: error.code,
-                },
-                ok: false,
-              },
-              { status: error.statusCode }
-            );
+            logMobileAuthRefreshFailure({
+              code: error.code,
+              input: parsedInput.data,
+              requestContext,
+              statusCode: error.statusCode,
+            });
+
+            return buildApiErrorResponse({
+              code: error.code,
+              requestId: requestContext.requestId,
+              status: error.statusCode,
+            });
           }
 
           throw error;
@@ -103,32 +156,32 @@ export const Route = createFileRoute('/api/mobile/auth/refresh')({
   },
 });
 
-function invalidRequestResponse(details?: unknown) {
-  return Response.json(
+function logMobileAuthRefreshFailure(input: {
+  code: string;
+  input?: {
+    appBuild?: string | null;
+    appVersion?: string | null;
+    installationId: string;
+    refreshToken: string;
+  };
+  requestContext: ReturnType<typeof buildHttpRequestContext>;
+  statusCode: number;
+}) {
+  logger.warn(
     {
-      error: {
-        code: 'invalid_request',
-        details,
-      },
-      ok: false,
+      appBuild: input.input?.appBuild,
+      appVersion: input.input?.appVersion,
+      clientIp: input.requestContext.clientIp,
+      errorCode: input.code,
+      installationIdPrefix: input.input?.installationId.slice(0, 18),
+      path: '/api/mobile/auth/refresh',
+      refreshTokenLength: input.input?.refreshToken.length,
+      requestId: input.requestContext.requestId,
+      scope: 'mobile_auth',
+      statusCode: input.statusCode,
+      type: 'POST',
+      userAgent: input.requestContext.userAgent,
     },
-    { status: 400 }
-  );
-}
-
-function buildRateLimitedResponse(retryAfterMs: number) {
-  return Response.json(
-    {
-      error: {
-        code: 'rate_limited',
-      },
-      ok: false,
-    },
-    {
-      headers: {
-        'Retry-After': Math.max(Math.ceil(retryAfterMs / 1000), 1).toString(),
-      },
-      status: 429,
-    }
+    'Mobile auth refresh failed'
   );
 }

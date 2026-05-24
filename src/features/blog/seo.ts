@@ -10,8 +10,11 @@ export const requiredBlogSeoKeyword = 'manhwa translate ai';
 
 export const legacyReaderSeoKeywords = [
   'TachiyomiAT',
+  'Tachiyomi AT',
   'TachiyomiAT download',
+  'Tachiyomi AT download',
   'TachiyomiAT APK',
+  'Tachiyomi AT APK',
   'TachiyomiAT manga translator',
   'TachiyomiAT manhwa translator',
   'Tachiyomi',

@@ -20,6 +20,8 @@
 # misc
 .DS_Store
 *.pem
+*.pyc
+__pycache__/
 .idea/
 .eslintcache
 .db
@@ -37,6 +39,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.secrets/
 
 # vercel
 .vercel

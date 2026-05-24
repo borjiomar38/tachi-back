@@ -41,6 +41,7 @@ export async function redeemLicenseToDevice(
     dbClient?: typeof db;
     log?: Pick<typeof logger, 'info' | 'warn'>;
     now?: Date;
+    userAgent?: string | null;
   } = {}
 ) {
   const input = zRedeemActivationInput.parse(rawInput);
@@ -365,18 +366,69 @@ export async function redeemLicenseToDevice(
       data: {
         metadata: mergeJsonObject(redeemCode.metadata, {
           buildChannel: input.buildChannel,
-          installationId: input.installationId,
           integrityVerdict: input.integrityVerdict,
-          redeemedAt: now.toISOString(),
+          firstRedeemedInstallationId:
+            redeemCode.redeemedByDeviceId === null
+              ? input.installationId
+              : undefined,
+          lastRedeemedAt: now.toISOString(),
+          lastRedeemedDeviceId: device.id,
+          lastRedeemedInstallationId: input.installationId,
         }),
         redeemedAt: redeemCode.redeemedAt ?? now,
-        redeemedByDeviceId: device.id,
+        redeemedByDeviceId: redeemCode.redeemedByDeviceId ?? device.id,
         status: 'redeemed',
       },
       select: {
         code: true,
         redeemedAt: true,
         status: true,
+      },
+    });
+
+    await tx.redeemActivation.upsert({
+      where: {
+        redeemCodeId_deviceId: {
+          deviceId: device.id,
+          redeemCodeId: redeemCode.id,
+        },
+      },
+      create: {
+        appBuild: input.appBuild,
+        appVersion: input.appVersion,
+        buildChannel: input.buildChannel,
+        deviceId: device.id,
+        firstActivatedAt: now,
+        installationId: input.installationId,
+        lastActivatedAt: now,
+        lastIpAddress: deps.clientIp ?? undefined,
+        licenseId: redeemCode.license.id,
+        locale: input.locale,
+        metadata: mergeJsonObject(null, {
+          integrityVerdict: input.integrityVerdict,
+        }),
+        redeemCodeId: redeemCode.id,
+        userAgent: deps.userAgent ?? undefined,
+      },
+      update: {
+        activationCount: {
+          increment: 1,
+        },
+        appBuild: input.appBuild,
+        appVersion: input.appVersion,
+        buildChannel: input.buildChannel,
+        installationId: input.installationId,
+        lastActivatedAt: now,
+        lastIpAddress: deps.clientIp ?? undefined,
+        locale: input.locale,
+        ...(input.integrityVerdict
+          ? {
+              metadata: mergeJsonObject(null, {
+                integrityVerdict: input.integrityVerdict,
+              }),
+            }
+          : {}),
+        userAgent: deps.userAgent ?? undefined,
       },
     });
 

@@ -1,4 +1,13 @@
-import { ArrowRightIcon, CoinsIcon, KeyRoundIcon, ShieldCheckIcon } from 'lucide-react';
+import {
+  ArrowRightIcon,
+  BookOpenCheckIcon,
+  CoinsIcon,
+  KeyRoundIcon,
+  MousePointerClickIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
+  UsersRoundIcon,
+} from 'lucide-react';
 
 import { cn } from '@/lib/tailwind/utils';
 
@@ -10,9 +19,17 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-import { type PublicTokenPack,supportFaqs } from '@/features/public/data';
+import {
+  formatCurrency,
+  type PublicTokenPack,
+  supportFaqs,
+} from '@/features/public/data';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
+
+interface PagePricingProps {
+  tokenPacks: PublicTokenPack[];
+}
 
 const pricingNotes = [
   {
@@ -35,7 +52,64 @@ const pricingNotes = [
   },
 ] as const;
 
-export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
+const planFitCards = [
+  {
+    icon: BookOpenCheckIcon,
+    title: 'Trying the workflow',
+    description:
+      'Start free when you need a low-risk test of OCR quality, app activation, and manga or manhwa translation output.',
+  },
+  {
+    icon: CoinsIcon,
+    title: 'Regular reading',
+    description:
+      'Choose a paid monthly plan when you translate chapters every week and want recurring hosted OCR tokens.',
+  },
+  {
+    icon: UsersRoundIcon,
+    title: 'Groups and reviews',
+    description:
+      'Use a shareable redeem code for approved reading groups, affiliate walkthroughs, or community demos.',
+  },
+] as const;
+
+const pricingDecisionCards = [
+  {
+    icon: MousePointerClickIcon,
+    title: 'Start free',
+    getDescription: (tokenPack: PublicTokenPack | undefined) => {
+      if (!tokenPack) {
+        return 'Use the free trial to check OCR quality and activation before choosing a paid monthly plan.';
+      }
+
+      return `Use ${tokenPack.name} to test about ${tokenPack.marketedChaptersPerMonth} chapters before choosing a paid monthly plan.`;
+    },
+  },
+  {
+    icon: SparklesIcon,
+    title: 'Upgrade when it becomes weekly',
+    getDescription: (tokenPack: PublicTokenPack | undefined) => {
+      if (!tokenPack) {
+        return 'Pick the regular-reader plan when hosted OCR and AI translation become part of weekly reading.';
+      }
+
+      return `${tokenPack.name} is the default upgrade path for repeat readers at ${formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)} per month.`;
+    },
+  },
+  {
+    icon: UsersRoundIcon,
+    title: 'Ask for review or group access',
+    getDescription: (tokenPack: PublicTokenPack | undefined) => {
+      if (!tokenPack) {
+        return 'Use support when a reviewer, affiliate, or approved reading group needs a dedicated redeem code.';
+      }
+
+      return `${tokenPack.name} gives heavier tests about ${tokenPack.marketedChaptersPerMonth} chapters per month before a custom code is needed.`;
+    },
+  },
+] as const;
+
+export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
   );
@@ -46,6 +120,14 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
     paidTokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
     paidTokenPacks[1] ??
     paidTokenPacks[0];
+  const powerTokenPack =
+    paidTokenPacks.find((tokenPack) => tokenPack.key === 'power') ??
+    paidTokenPacks.at(-1);
+  const decisionTokenPacks = [
+    freeTokenPack,
+    featuredTokenPack,
+    powerTokenPack,
+  ] as const;
 
   return (
     <PublicShell>
@@ -66,6 +148,59 @@ export const PagePricing = (props: { tokenPacks: PublicTokenPack[] }) => {
                   </div>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                   <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Plan fit"
+        title="Choose by reading volume"
+        description="Nayovi plans are built around practical hosted translation usage: test first, upgrade when reading becomes regular, and use redeem codes when more than one approved reader needs access."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {planFitCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <Card
+                key={item.title}
+                className="public-brand-panel-muted rounded-[1.5rem]"
+              >
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Upgrade path"
+        title="Turn trial usage into the right monthly plan"
+        description="The best subscription signal is repeat reading. Start with the smallest useful test, then upgrade only when the number of translated chapters justifies recurring hosted OCR tokens."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {pricingDecisionCards.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <Card key={item.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>
+                    {item.getDescription(decisionTokenPacks[index])}
+                  </CardDescription>
                 </CardHeader>
               </Card>
             );

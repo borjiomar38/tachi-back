@@ -131,6 +131,151 @@ The old curl-only script remains available as `/usr/local/bin/tachi-back-blog-cr
 if you explicitly want the app to call its configured LLM API provider instead
 of Codex CLI.
 
+## Growth Agent
+
+The Contabo host can also run a supervised Codex growth agent for SEO,
+backlinks, partnership research, and outreach drafts. It is intentionally
+separate from the production app containers.
+
+Install from the deployed source tree:
+
+```bash
+cd /opt/tachi-back
+sudo TACHI_DEPLOY_USER=borjiomar38 deploy/contabo/install-growth-agent.sh --enable
+```
+
+The installer creates `/opt/tachi-back/.env.growth-agent` from the defaults in
+`deploy/contabo/.env.growth-agent.example`, installs
+`/usr/local/bin/tachi-growth-agent` plus the optional inbound mail bridge, and
+registers `tachi-growth-agent.service` and `tachi-growth-mail-bridge.service`
+with `Restart=always`.
+
+Important defaults:
+
+```env
+GROWTH_AGENT_CODEX_MODEL=gpt-5.5
+GROWTH_AGENT_CODEX_REASONING_EFFORT=low
+GROWTH_AGENT_CODEX_SANDBOX=danger-full-access
+GROWTH_AGENT_AUTONOMOUS_MODE=true
+GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
+GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true
+GROWTH_AGENT_EMAIL_SEND_MODE=send
+GROWTH_AGENT_GIT_BRANCH=growth/autonomous
+GROWTH_AGENT_GIT_BRANCH_PREFIX=growth/autonomous
+GROWTH_AGENT_PER_CYCLE_BRANCHES=true
+GROWTH_AGENT_AUTO_CHECKOUT_BRANCH=true
+GROWTH_AGENT_GIT_PUSH_ENABLED=true
+GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true
+GROWTH_AGENT_AUTO_MERGE_BASE_BRANCH=master
+GROWTH_AGENT_VALIDATION_COMMAND="./node_modules/.bin/tsc --noEmit"
+GROWTH_AGENT_INBOUND_ENABLED=false
+GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
+GROWTH_AGENT_INBOUND_REQUIRE_AUTHENTICATED_SENDER=true
+GROWTH_AGENT_INBOUND_POLL_SECONDS=60
+GROWTH_AGENT_NOTIFY_ON_INBOUND=false
+GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
+GROWTH_AGENT_STATUS_REPLY_ENABLED=true
+GROWTH_AGENT_DAILY_SUMMARY_ENABLED=true
+GROWTH_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
+```
+
+`GROWTH_AGENT_EMAIL_SEND_MODE=send` and
+`GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true` let the agent advance outreach
+without owner approval. `GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true`
+lets the agent move prospects from draft to approved/contacted using human
+business judgment from the app context. It must still use public business
+contact paths, individualized messages, opt-out language, and the daily cap.
+It must not buy backlinks, use scraped private lists, send deceptive claims, or evade rate
+limits. With `GROWTH_AGENT_PER_CYCLE_BRANCHES=true`, each cycle starts from the
+latest `master` on a branch named like `growth/autonomous-20260523T190000Z`.
+With `GROWTH_AGENT_AUTO_MERGE_TO_MASTER=true`, the runner validates successful
+cycle work, pushes the cycle branch, merges it into `master`, and pushes
+`master`. Pushing `master` deploys production. The server validation command
+uses direct `tsc` by default to avoid interactive `pnpm approve-builds` prompts
+blocking autonomous publication on the VPS.
+
+External outreach email is sent through `/usr/local/bin/tachi-growth-outreach-send`,
+which enforces the daily cap, requires opt-out language, and logs every delivery
+under `/var/lib/tachi-growth-agent/outreach`.
+
+Owner email notifications are intentionally low-volume:
+
+- Immediate email is reserved for blocker/emergency reports where the agent
+  cannot continue without an owner reply. The agent marks these reports with
+  `OWNER_ACTION_REQUIRED`, `MEETING_REQUIRED`, or `CALL_REQUIRED`.
+- Normal progress sends at most one daily summary. If an emergency email was
+  sent, the daily summary is skipped until the next summary interval.
+- Reply-ingestion confirmations are disabled by default to avoid mail loops and
+  noisy acknowledgements.
+- Owner status replies are enabled by default. A short authenticated owner mail
+  such as `avancement`, `status`, `update`, or `tu fais quoi` receives an
+  immediate business-readable update from the mail bridge and is not queued as
+  growth-agent work. Dates are formatted in Tunisia time.
+- Inbound replies are queued only when the sender address is allow-listed and
+  the mail server reports passing SPF, DKIM, or DMARC authentication for that
+  sender. Other messages are marked seen and never become agent instructions.
+
+Operational commands:
+
+```bash
+sudo systemctl status tachi-growth-agent --no-pager
+sudo journalctl -u tachi-growth-agent -f
+sudo systemctl restart tachi-growth-agent
+sudo systemctl status tachi-growth-mail-bridge --no-pager
+sudo journalctl -u tachi-growth-mail-bridge -f
+```
+
+The inbound mail bridge lets the owner reply to agent emails and attach files
+for the next growth cycle. Replies are accepted only from
+`GROWTH_AGENT_INBOUND_ALLOWED_SENDERS`; attachments are stored under
+`/var/lib/tachi-growth-agent/inbound/attachments`, and queued instructions are
+stored under `/var/lib/tachi-growth-agent/inbound/queue`. Video attachments are
+kept as files and, when `ffmpeg` is available, the bridge also extracts
+`ffprobe` metadata, key frames, and a short audio file for the next Codex cycle
+to inspect.
+
+Short status-only owner emails are handled before attachment extraction and
+before the growth-agent trigger. The bridge replies immediately with a simple
+business update: what was done, why it matters, recent contacts, what is in
+progress, next actions, and whether the owner is needed. Dates are shown in
+Tunisia time. Send `status technique`, `debug`, or `logs` to get the detailed
+technical version with services, repo branch/status, commits, queue count,
+recent outreach deliveries, and the latest report excerpt. Action emails and
+emails with attachments still go into the normal queue for the next growth
+cycle.
+
+Enable inbound replies only after adding IMAP credentials to
+`/opt/tachi-back/.env.growth-agent`:
+
+```env
+GROWTH_AGENT_INBOUND_ENABLED=true
+GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
+GROWTH_AGENT_INBOUND_IMAP_HOST=imap.example.com
+GROWTH_AGENT_INBOUND_IMAP_PORT=993
+GROWTH_AGENT_INBOUND_IMAP_USER=growth-agent@nayovi.com
+GROWTH_AGENT_INBOUND_IMAP_PASSWORD=change-me
+GROWTH_AGENT_INBOUND_IMAP_MAILBOX=INBOX
+GROWTH_AGENT_INBOUND_IMAP_SSL=true
+GROWTH_AGENT_STATUS_REPLY_ENABLED=true
+GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,avance sur quoi,quoi maintenant,progress,what are you doing"
+```
+
+After changing the env file:
+
+```bash
+sudo systemctl restart tachi-growth-mail-bridge
+```
+
+The LWS mailbox helper uses `/opt/tachi-back/.env.lws`, which is expected to be
+IP-restricted to the Contabo server:
+
+```bash
+sudo -u borjiomar38 tachi-create-lws-mailbox partnerships@nayovi.com
+```
+
+Generated mailbox credentials are stored under `/opt/tachi-back/.secrets/` with
+mode `600` and must not be committed.
+
 ## Updates
 
 ```bash
