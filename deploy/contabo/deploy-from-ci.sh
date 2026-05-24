@@ -86,7 +86,34 @@ case "${env_slug}" in
     ;;
 esac
 
-curl -fsSI "${health_url}" >/dev/null
+health_attempts="${TACHI_DEPLOY_HEALTH_ATTEMPTS:-30}"
+health_delay_seconds="${TACHI_DEPLOY_HEALTH_DELAY_SECONDS:-5}"
+
+echo "Checking deployment health: ${health_url}"
+for ((attempt = 1; attempt <= health_attempts; attempt++)); do
+  if curl -fsSI --max-time 10 "${health_url}" >/dev/null; then
+    echo "Health check passed on attempt ${attempt}/${health_attempts}"
+    break
+  fi
+
+  if ((attempt == health_attempts)); then
+    echo "Health check failed after ${health_attempts} attempts: ${health_url}" >&2
+    docker compose \
+      --env-file "${env_file}" \
+      -p "${app_project}" \
+      -f "${app_compose_file}" \
+      ps >&2 || true
+    docker compose \
+      --env-file "${proxy_env_file}" \
+      -p "${proxy_project}" \
+      -f "${proxy_compose_file}" \
+      ps >&2 || true
+    exit 1
+  fi
+
+  echo "Health check not ready on attempt ${attempt}/${health_attempts}; retrying in ${health_delay_seconds}s" >&2
+  sleep "${health_delay_seconds}"
+done
 
 docker compose \
   --env-file "${env_file}" \
