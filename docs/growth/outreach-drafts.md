@@ -235,6 +235,23 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Narrated Demo Press Pitch
+
+Subject: Narrated Nayovi demo for Android manga translation
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+The review angle is now easier to inspect because I have a 53-second narrated demo that shows the real workflow: original chapter content, language selection, translation/loading, and the final English result. Nayovi still keeps the official APK, free trial, redeem-code activation, token plans, and support path on tachiyomiat.com, and it does not host or distribute chapters.
+
+Would a hands-on app note, setup walkthrough, or reader utility mention fit {{site_or_newsletter}}? I can send the demo, screenshots, pricing context, and a reviewer code before you decide.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Sent 2026-05-23: Android Police Editorial Pitch
 
 Subject: Review access for Nayovi Android manga translation APK
@@ -355,6 +372,17 @@ The owner-provided English manhwa translation demo is available on the VPS for s
 
 Use this asset when a reviewer, partner, investor, or directory specifically needs proof, a walkthrough, or review material. Do not attach it blindly to bulk outreach; mention it only when it supports the individual prospect.
 
+## 2026-05-24 Current Narrated Demo Asset Note
+
+The preferred/current Nayovi demo asset is now the polished narrated demo:
+
+- Current video symlink: `/var/lib/tachi-growth-agent/assets/nayovi-demo-current.mp4`
+- Current poster symlink: `/var/lib/tachi-growth-agent/assets/nayovi-demo-current-poster.jpg`
+- Concrete video: `/var/lib/tachi-growth-agent/assets/nayovi-translation-demo-narrated.mp4`
+- Concrete poster: `/var/lib/tachi-growth-agent/assets/nayovi-translation-demo-narrated-poster.jpg`
+
+Use this current demo instead of the older simple reader-only video when proof is useful for reviewers, partners, investors, directories, and collaboration leads. It is about 53 seconds and shows the real workflow: original chapter content, language choice, translation/loading, and final English result. Do not attach it blindly to bulk outreach; offer it selectively when it strengthens a specific pitch or reply.
+
 ## 2026-05-24 Sent Outreach Log
 
 ### 9to5Google Android apps
@@ -423,6 +451,30 @@ I am reaching out because Android Central covers Android apps, reader-friendly h
 Nayovi does not host or distribute chapters. It focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
 
 If this is useful for an Android app review, setup walkthrough, or reader-workflow mention, I can send screenshots, pricing context, a short founder note, and a reviewer code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### MakeUseOf Android
+
+Category: press
+Contact path: editorial@makeuseof.com, selected after current public verification found MUO's about/editorial pages describe practical Android app and how-to coverage and list the editorial address for content issues.
+Rationale: MUO's mainstream Android how-to audience overlaps with practical APK setup, reader utility workflows, and users who need a clear hosted OCR flow before trying a paid plan.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Narrated Nayovi demo for Android manga translation
+
+Hi MakeUseOf editorial team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+I am reaching out because MUO covers practical Android apps and how-to workflows for mainstream users. Nayovi may fit as a hands-on setup angle: official APK install from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, and support in one place.
+
+The review path is now easier to inspect because I have a 53-second narrated demo that shows the real workflow: original chapter content, language selection, translation/loading, and the final English result. Nayovi does not host or distribute chapters; it focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Would a practical app note, setup walkthrough, or reader utility mention fit MakeUseOf? I can send the demo, screenshots, pricing context, and a reviewer code before you decide.
 
 Best,
 Nayovi team
