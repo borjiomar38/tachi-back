@@ -218,6 +218,24 @@ const proofRows = [
   },
 ] as const;
 
+const installConfidenceRows = [
+  {
+    concern: 'Is this the real app?',
+    answer:
+      'Use tachiyomiat.com or nayovi.com as the source of truth for the current APK, support route, pricing, and redeem-code activation.',
+  },
+  {
+    concern: 'Will the trial prove enough?',
+    answer:
+      'Start with free trial access, test real page flow, then choose a token plan only when repeat translation volume is clear.',
+  },
+  {
+    concern: 'Can reviewers cite it responsibly?',
+    answer:
+      'Reference hosted OCR and translation support for owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -552,6 +570,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Verify download path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Install confidence"
+        title="Reduce risk before downloading the APK"
+        description="High-intent Android readers, directory editors, and reviewers need a short trust path before they install or recommend a manga translation APK."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {installConfidenceRows.map((row) => (
+            <Card key={row.concern} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.concern}</CardTitle>
+                <CardDescription>{row.answer}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ShieldCheckIcon className="size-4" />
+                Official source, trial, then plan
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The strongest conversion path is not a mirror download. It is
+                an official APK, free trial, visible pricing, support, and a
+                responsible translation-use note that reviewers can verify.
+              </p>
+            </div>
+            <a
+              href="/download"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open official download
             </a>
           </CardContent>
         </Card>
