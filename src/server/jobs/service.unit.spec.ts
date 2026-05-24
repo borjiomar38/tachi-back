@@ -414,6 +414,187 @@ describe('job service', () => {
     expect(mockDb.translationResultCache.update).toHaveBeenCalledOnce();
   });
 
+  it('loads a completed chapter cache when auto source language resolves differently', async () => {
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            createMany: vi.fn(),
+          },
+          translationJob: {
+            create: vi.fn().mockResolvedValue({
+              id: 'job-chapter-cache-auto-source',
+            }),
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                chapterIdentity: {
+                  chapterUrl: '/manga/absolute-regression/chapter-97',
+                  sourceId: '1234',
+                },
+                id: 'job-chapter-cache-auto-source',
+                objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                sourceLanguage: 'auto',
+                status: 'awaiting_upload',
+                targetLanguage: 'ar',
+              })
+            ),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+          },
+          translationJob: {
+            findUniqueOrThrow: vi.fn().mockResolvedValue(
+              buildJobRecord({
+                chapterCacheKey: 'chapter-cache-key',
+                chapterIdentity: {
+                  chapterUrl: '/manga/absolute-regression/chapter-97',
+                  sourceId: '1234',
+                },
+                completedAt: new Date('2026-03-20T10:00:00.000Z'),
+                id: 'job-chapter-cache-auto-source',
+                objectChecksums: ['a'.repeat(64), 'b'.repeat(64)],
+                objectKeys: [null, null],
+                pageCount: 2,
+                sourceLanguage: 'en',
+                spentTokens: 10,
+                status: 'completed',
+                targetLanguage: 'ar',
+                uploadCompletedAt: new Date('2026-03-20T10:00:00.000Z'),
+              })
+            ),
+            update: vi.fn(),
+          },
+          translationResultCache: {
+            update: mockDb.translationResultCache.update,
+          },
+        };
+
+        return await callback(tx);
+      });
+    mockDb.translationResultCache.findUnique.mockResolvedValue(null);
+    mockDb.translationResultCache.findFirst.mockResolvedValue({
+      bucketName: 'results',
+      cacheKey: 'chapter-cache-key-result',
+      objectKey:
+        'cache/translation-results/chapter-cache-key-result/translation-manifest.json',
+      resultManifest: {
+        completedAt: new Date('2026-03-20T09:00:00.000Z'),
+        deviceId: 'device-original',
+        jobId: 'job-original',
+        licenseId: 'license-original',
+        pageCount: 2,
+        pageFingerprints: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: 'old-001.jpg',
+            pageNumber: 1,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: 'old-002.jpg',
+            pageNumber: 2,
+          },
+        ],
+        pageOrder: ['old-001.jpg', 'old-002.jpg'],
+        pages: {
+          'old-001.jpg': {
+            blocks: [],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'en',
+            targetLanguage: 'ar',
+            translatorType: 'gemini',
+          },
+          'old-002.jpg': {
+            blocks: [],
+            imgHeight: 100,
+            imgWidth: 80,
+            sourceLanguage: 'en',
+            targetLanguage: 'ar',
+            translatorType: 'gemini',
+          },
+        },
+        sourceLanguage: 'en',
+        targetLanguage: 'ar',
+        translatorType: 'gemini',
+        version: '2026-05-06.no-mobile-layout-hints.v1',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'jobs/job-chapter-cache-auto-source/results/translation-manifest.json',
+    });
+
+    const result = await createTranslationJob(
+      {
+        chapterIdentity: {
+          chapterUrl: '/manga/absolute-regression/chapter-97',
+          sourceId: '1234',
+        },
+        pages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: '002.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 2048,
+          },
+        ],
+        sourceLanguage: 'auto',
+        targetLanguage: 'ar',
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+      }
+    );
+
+    expect(result.job.status).toBe('completed');
+    expect(result.job.sourceLanguage).toBe('en');
+    expect(result.job.uploadedPageCount).toBe(0);
+    expect(mockDb.translationResultCache.findUnique).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.findFirst).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          chapterCacheKey: 'chapter-cache-key',
+          pageCount: 2,
+          targetLanguage: 'ar',
+        }),
+      })
+    );
+    expect(mockPutTranslationJobResultManifest).toHaveBeenCalledOnce();
+    expect(mockDb.translationResultCache.update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: {
+          cacheKey: 'chapter-cache-key-result',
+        },
+      })
+    );
+  });
+
   it('does not reuse a chapter URL cache when the client sees fewer pages', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {
@@ -566,7 +747,7 @@ describe('job service', () => {
     expect(result.job.uploadedPageCount).toBe(0);
     expect(result.job.resultPath).toBeNull();
     expect(mockDb.translationResultCache.findUnique).toHaveBeenCalledOnce();
-    expect(mockDb.translationResultCache.findFirst).not.toHaveBeenCalled();
+    expect(mockDb.translationResultCache.findFirst).toHaveBeenCalledOnce();
     expect(mockPutTranslationJobResultManifest).not.toHaveBeenCalled();
     expect(mockDb.translationResultCache.update).not.toHaveBeenCalled();
   });
@@ -724,7 +905,7 @@ describe('job service', () => {
     expect(queueJob).not.toHaveBeenCalled();
     expect(scheduleProcessing).not.toHaveBeenCalled();
     expect(mockDb.translationResultCache.findUnique).toHaveBeenCalledOnce();
-    expect(mockDb.translationResultCache.findFirst).not.toHaveBeenCalled();
+    expect(mockDb.translationResultCache.findFirst).toHaveBeenCalledOnce();
     expect(mockPutTranslationJobResultManifest).not.toHaveBeenCalled();
   });
 

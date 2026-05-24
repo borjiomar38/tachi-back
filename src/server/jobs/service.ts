@@ -2165,7 +2165,7 @@ async function getCachedTranslationResultManifest(input: {
     : null;
 
   if (!cachedResult) {
-    return null;
+    return await getCachedTranslationResultManifestByChapter(input);
   }
 
   try {
@@ -2181,6 +2181,7 @@ async function getCachedTranslationResultManifest(input: {
       job: input.job,
       manifest: cachedManifest,
       now: input.now,
+      requireFingerprints: false,
       uploadAssets: input.uploadAssets,
     });
 
@@ -2201,6 +2202,112 @@ async function getCachedTranslationResultManifest(input: {
 
     return null;
   }
+}
+
+async function getCachedTranslationResultManifestByChapter(input: {
+  dbClient: typeof db;
+  job: JobRecord;
+  log: Pick<typeof logger, 'error' | 'info'>;
+  now: Date;
+  uploadAssets: JobAssetRecord[];
+}) {
+  if (!input.job.chapterCacheKey) {
+    return null;
+  }
+
+  const cachedResult = await input.dbClient.translationResultCache.findFirst({
+    where: {
+      chapterCacheKey: input.job.chapterCacheKey,
+      pageCount: input.job.pageCount,
+      providerSignature: buildTranslationCacheProviderSignature(input.job),
+      targetLanguage: input.job.targetLanguage,
+    },
+    orderBy: {
+      updatedAt: 'desc',
+    },
+  });
+
+  if (!cachedResult) {
+    return null;
+  }
+
+  try {
+    const cachedManifest =
+      cachedResult.resultManifest == null
+        ? await getTranslationJobResultManifest({
+            bucketName: cachedResult.bucketName,
+            objectKey: cachedResult.objectKey,
+          })
+        : parseCachedResultManifest(cachedResult.resultManifest);
+
+    if (
+      !isCachedSourceLanguageCompatible({
+        cachedSourceLanguage: cachedManifest.sourceLanguage,
+        requestedSourceLanguage: input.job.sourceLanguage,
+      })
+    ) {
+      input.log.info({
+        cacheKey: cachedResult.cacheKey,
+        cachedSourceLanguage: cachedManifest.sourceLanguage,
+        jobId: input.job.id,
+        requestedSourceLanguage: input.job.sourceLanguage,
+        scope: 'jobs',
+        status: 'skipped_chapter_result_cache_source_mismatch',
+      });
+      return null;
+    }
+
+    const manifest = rebindCachedManifestToJob({
+      job: input.job,
+      manifest: cachedManifest,
+      now: input.now,
+      requireFingerprints: true,
+      uploadAssets: input.uploadAssets,
+    });
+
+    if (!manifest) {
+      return null;
+    }
+
+    input.log.info({
+      cacheKey: cachedResult.cacheKey,
+      jobId: input.job.id,
+      pageCount: input.job.pageCount,
+      scope: 'jobs',
+      status: 'chapter_result_cache_hit',
+    });
+
+    return {
+      cacheKey: cachedResult.cacheKey,
+      manifest,
+    };
+  } catch (error) {
+    input.log.error({
+      cacheKey: cachedResult.cacheKey,
+      err: error,
+      jobId: input.job.id,
+      message: 'Failed to read chapter translation result cache',
+      scope: 'jobs',
+    });
+
+    return null;
+  }
+}
+
+function isCachedSourceLanguageCompatible(input: {
+  cachedSourceLanguage: string;
+  requestedSourceLanguage: string;
+}) {
+  const requestedSourceLanguage = input.requestedSourceLanguage
+    .trim()
+    .toLowerCase();
+  const cachedSourceLanguage = input.cachedSourceLanguage.trim().toLowerCase();
+
+  if (!requestedSourceLanguage || requestedSourceLanguage === 'auto') {
+    return true;
+  }
+
+  return requestedSourceLanguage === cachedSourceLanguage;
 }
 
 async function getReusableCachedOcrSource(input: {
@@ -2397,6 +2504,7 @@ function rebindCachedManifestToJob(input: {
   job: JobRecord;
   manifest: TranslationJobResultManifest;
   now: Date;
+  requireFingerprints: boolean;
   uploadAssets: JobAssetRecord[];
 }) {
   if (
@@ -2404,7 +2512,7 @@ function rebindCachedManifestToJob(input: {
     getCachedManifestCompatibilityIssue({
       job: input.job,
       manifest: input.manifest,
-      requireFingerprints: false,
+      requireFingerprints: input.requireFingerprints,
       uploadAssets: input.uploadAssets,
     })
   ) {
