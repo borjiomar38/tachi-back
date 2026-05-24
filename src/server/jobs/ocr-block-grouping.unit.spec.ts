@@ -182,6 +182,151 @@ describe('OCR block grouping', () => {
     ]);
   });
 
+  it('uses dynamic page scale to merge small ManhuaUS speech bubble lines', () => {
+    const first = block({
+      height: 19,
+      symHeight: 19,
+      symWidth: 16.67,
+      text: "THIS  ISN'T",
+      width: 156,
+      x: 134,
+      y: 1539,
+    });
+    const second = block({
+      height: 18,
+      symHeight: 18,
+      symWidth: 17.67,
+      text: 'WORKING .  EVEN',
+      width: 217,
+      x: 103,
+      y: 1576,
+    });
+    const page = {
+      ...buildOcrPage([first, second]),
+      imgHeight: 3339,
+      imgWidth: 700,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second)).toBe(false);
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(true);
+  });
+
+  it('uses dynamic page scale to merge ManhuaUS same-row OCR fragments', () => {
+    const first = block({
+      height: 20,
+      symHeight: 20,
+      symWidth: 17.2,
+      text: 'CAN  NO',
+      width: 96,
+      x: 103,
+      y: 1684,
+    });
+    const second = block({
+      height: 20,
+      symHeight: 20,
+      symWidth: 18.33,
+      text: 'LONGER',
+      width: 112,
+      x: 210,
+      y: 1684,
+    });
+    const page = {
+      ...buildOcrPage([first, second]),
+      imgHeight: 3339,
+      imgWidth: 700,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second)).toBe(false);
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(true);
+  });
+
+  it('merges the measured ManhuaUS Chapter 246 speech bubble', () => {
+    const page = {
+      ...buildOcrPage([
+        block({
+          height: 19,
+          symHeight: 19,
+          symWidth: 16.67,
+          text: "THIS  ISN'T",
+          width: 156,
+          x: 134,
+          y: 1539,
+        }),
+        block({
+          height: 18,
+          symHeight: 18,
+          symWidth: 17.67,
+          text: 'WORKING .  EVEN',
+          width: 217,
+          x: 103,
+          y: 1576,
+        }),
+        block({
+          height: 20,
+          symHeight: 20,
+          symWidth: 17,
+          text: 'IF  I  DRAIN  ITS',
+          width: 211,
+          x: 106,
+          y: 1611,
+        }),
+        block({
+          height: 19,
+          symHeight: 19,
+          symWidth: 16.85,
+          text: 'ENERGY  UNTIL  IT',
+          width: 240,
+          x: 93,
+          y: 1648,
+        }),
+        block({
+          height: 20,
+          symHeight: 20,
+          symWidth: 17.2,
+          text: 'CAN  NO',
+          width: 96,
+          x: 103,
+          y: 1684,
+        }),
+        block({
+          height: 20,
+          symHeight: 20,
+          symWidth: 18.33,
+          text: 'LONGER',
+          width: 112,
+          x: 210,
+          y: 1684,
+        }),
+        block({
+          height: 19,
+          symHeight: 19,
+          symWidth: 16.81,
+          text: "REGENERATE ,  IT'LL",
+          width: 265,
+          x: 79,
+          y: 1721,
+        }),
+        block({
+          height: 56,
+          symHeight: 19.5,
+          symWidth: 18.8,
+          text: 'TAKE  WAY  TOO LONG !',
+          width: 197,
+          x: 112,
+          y: 1757,
+        }),
+      ]),
+      imgHeight: 3339,
+      imgWidth: 700,
+    };
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      "THIS  ISN'T WORKING .  EVEN IF  I  DRAIN  ITS ENERGY  UNTIL  IT CAN  NO LONGER REGENERATE ,  IT'LL TAKE  WAY  TOO LONG !",
+    ]);
+  });
+
   it('does not treat tall vertical text columns as horizontal row fragments', () => {
     const first = block({
       height: 629,
