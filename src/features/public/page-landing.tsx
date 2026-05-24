@@ -6,7 +6,6 @@ import {
   LanguagesIcon,
   MailIcon,
   MessageCircleIcon,
-  PlayCircleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
@@ -36,7 +35,8 @@ import {
   type PublicTokenPack,
   supportFaqs,
 } from '@/features/public/data';
-import { androidApkDownload, youtubeDemo } from '@/features/public/download-assets';
+import { DemoVideo } from '@/features/public/demo-video';
+import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
 
@@ -241,34 +241,12 @@ export const PageLanding = (props: {
           <CardHeader className="gap-2 border-b border-white/10">
             <CardTitle className="text-2xl">Video demo</CardTitle>
             <CardDescription className="text-neutral-300">
-              The final product demo will be embedded from YouTube so visitors
-              can watch it online without downloading a video file.
+              Watch the current Android app flow from activation-ready library
+              state to hosted translation.
             </CardDescription>
           </CardHeader>
           <CardContent className="grid gap-4 p-0 lg:grid-cols-[1.15fr_0.85fr]">
-            {youtubeDemo.embedUrl ? (
-              <div className="aspect-video w-full">
-                <iframe
-                  src={youtubeDemo.embedUrl}
-                  title="Nayovi translation demo"
-                  className="h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
-              </div>
-            ) : (
-              <div className="flex aspect-video w-full items-center justify-center bg-black">
-                <div className="max-w-sm space-y-3 px-6 text-center">
-                  <PlayCircleIcon className="mx-auto size-12 text-brand-300" />
-                  <p className="text-lg font-semibold">YouTube demo coming soon</p>
-                  <p className="text-sm leading-6 text-neutral-300">
-                    Upload the final tutorial to YouTube, then add the embed
-                    link here.
-                  </p>
-                </div>
-              </div>
-            )}
+            <DemoVideo />
             <div className="p-6">
               <p className="text-sm font-medium tracking-[0.2em] text-neutral-400 uppercase">
                 Why it matters

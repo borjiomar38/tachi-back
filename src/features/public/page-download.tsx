@@ -3,7 +3,6 @@ import {
   BadgeCheckIcon,
   DownloadIcon,
   KeyRoundIcon,
-  PlayCircleIcon,
   ShieldCheckIcon,
 } from 'lucide-react';
 
@@ -18,7 +17,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-import { androidApkDownload, youtubeDemo } from '@/features/public/download-assets';
+import { DemoVideo } from '@/features/public/demo-video';
+import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 export const PageDownload = () => {
@@ -113,27 +113,17 @@ export const PageDownload = () => {
             </CardContent>
           </Card>
 
-          {youtubeDemo.watchUrl ? (
-            <Card className="rounded-[1.5rem]">
-              <CardHeader className="gap-3">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-                  <PlayCircleIcon className="size-5" />
-                </div>
-                <CardTitle className="text-xl">Video demo</CardTitle>
-                <CardDescription>
-                  Watch the app flow online from YouTube.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <a
-                  href={youtubeDemo.watchUrl}
-                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
-                >
-                  Watch on YouTube
-                </a>
-              </CardContent>
-            </Card>
-          ) : null}
+          <Card className="overflow-hidden rounded-[1.5rem]">
+            <CardHeader className="gap-3">
+              <CardTitle className="text-xl">Video demo</CardTitle>
+              <CardDescription>
+                Watch the current Android app flow before installing the APK.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-0">
+              <DemoVideo className="py-5" />
+            </CardContent>
+          </Card>
         </div>
       </PublicSection>
 

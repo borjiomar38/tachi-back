@@ -10,7 +10,8 @@ export const androidApkDownload = {
   objectKey: 'public/downloads/tachiyomiat-latest.apk',
 } as const;
 
-export const youtubeDemo = {
-  watchUrl: 'https://www.youtube.com/shorts/8To9Cx8lDdc',
-  embedUrl: 'https://www.youtube.com/embed/8To9Cx8lDdc',
+export const demoVideo = {
+  label: 'Nayovi narrated translation demo',
+  posterUrl: '/videos/nayovi-translation-demo-narrated-poster.jpg',
+  src: '/videos/nayovi-translation-demo-narrated.mp4',
 } as const;

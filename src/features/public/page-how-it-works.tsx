@@ -2,7 +2,6 @@ import {
   ArrowRightIcon,
   DownloadIcon,
   KeyRoundIcon,
-  PlayCircleIcon,
   ServerIcon,
   SmartphoneIcon,
 } from 'lucide-react';
@@ -19,7 +18,8 @@ import {
 } from '@/components/ui/card';
 
 import { activationSteps } from '@/features/public/data';
-import { androidApkDownload, youtubeDemo } from '@/features/public/download-assets';
+import { DemoVideo } from '@/features/public/demo-video';
+import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 const flowNotes = [
@@ -73,33 +73,12 @@ export const PageHowItWorks = () => {
       <PublicSection
         eyebrow="Demo"
         title="Watch the Nayovi translation flow"
-        description="The final tutorial video should live on YouTube and play online from this page. The APK remains a direct Android download."
+        description="The demo shows the current Android app flow from reader library to hosted translation. The APK remains a direct Android download."
       >
         <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
           <Card className="public-ink-panel overflow-hidden rounded-[1.75rem] text-neutral-50">
             <CardContent className="p-0">
-              {youtubeDemo.embedUrl ? (
-                <div className="aspect-video w-full">
-                  <iframe
-                    src={youtubeDemo.embedUrl}
-                    title="Nayovi translation demo"
-                    className="h-full w-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <div className="flex aspect-video w-full items-center justify-center bg-black">
-                  <div className="max-w-sm space-y-3 px-6 text-center">
-                    <PlayCircleIcon className="mx-auto size-12 text-brand-300" />
-                    <p className="text-lg font-semibold">YouTube demo coming soon</p>
-                    <p className="text-sm leading-6 text-neutral-300">
-                      Add the YouTube embed link once the final video is online.
-                    </p>
-                  </div>
-                </div>
-              )}
+              <DemoVideo />
             </CardContent>
           </Card>
 
@@ -113,7 +92,7 @@ export const PageHowItWorks = () => {
             </CardHeader>
             <CardContent className="grid gap-3 text-sm leading-7 text-muted-foreground">
               <div className="rounded-xl border border-border/70 px-4 py-3">
-                Watch the YouTube demo to understand the translation flow before
+                Watch the app demo to understand the translation flow before
                 installing.
               </div>
               <div className="rounded-xl border border-border/70 px-4 py-3">
