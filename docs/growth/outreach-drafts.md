@@ -346,6 +346,41 @@ Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## 2026-05-24 Demo Asset Note
+
+The owner-provided English manhwa translation demo is available on the VPS for selective proof use:
+
+- Video: `/var/lib/tachi-growth-agent/assets/nayovi-demo-english-manhwa.mp4`
+- Note: `/var/lib/tachi-growth-agent/assets/nayovi-demo-english-manhwa.txt`
+
+Use this asset when a reviewer, partner, investor, or directory specifically needs proof, a walkthrough, or review material. Do not attach it blindly to bulk outreach; mention it only when it supports the individual prospect.
+
+## 2026-05-24 Sent Outreach Log
+
+### 9to5Google Android apps
+
+Category: press
+Contact path: tips@9to5g.com, found through current public 9to5Google Android app coverage where the publication invites tips.
+Rationale: 9to5Google covers Android apps, APK-related workflows, and power-user Android utility stories; Nayovi now has an English manhwa demo asset plus official APK, activation, trial, pricing, and permission-safe positioning.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Nayovi Android APK demo for hosted manga translation
+
+Hi 9to5Google team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+The Android angle is practical: official APK install from tachiyomiat.com, redeem-code activation, free trial access, monthly token plans, and a support path for readers who need help. Nayovi does not host or distribute chapters; it focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+I now have a short English manhwa translation demo available for reviewers, so your team can inspect the app flow before deciding whether it fits an Android apps note, hands-on walkthrough, or reader utility mention.
+
+Would this be useful for 9to5Google's Android app coverage? I can send the demo, screenshots, pricing context, and a reviewer code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### Android Headlines app coverage
 
 Category: press

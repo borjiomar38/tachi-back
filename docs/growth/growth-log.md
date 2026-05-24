@@ -1,5 +1,11 @@
 # Nayovi Growth Log
 
+## 2026-05-24
+
+- Autonomous cycle on `growth/autonomous-20260524T031520Z`: processed owner inbound note `20260524T031511Z-demo-video-asset` confirming a finished English manhwa translation demo video is available at `/var/lib/tachi-growth-agent/assets/nayovi-demo-english-manhwa.mp4` with note file `/var/lib/tachi-growth-agent/assets/nayovi-demo-english-manhwa.txt`.
+- Logged the demo asset for selective use in reviewer, partner, investor, app-directory, and collaboration conversations where proof material is specifically relevant.
+- Auto-approved 9to5Google Android apps as a medium-fit press prospect after current public web verification found Android app coverage and a public tips address; prepared and sent an individualized demo-backed APK workflow pitch with opt-out language.
+
 ## 2026-05-23
 
 - Autonomous cycle on `growth/autonomous-20260523T225755Z`: processed owner inbound command `20260523T225656Z-712c48bff32f` asking whether the sent demo video had been analyzed.
