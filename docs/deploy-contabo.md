@@ -243,7 +243,10 @@ Tunisia time. Send `status technique`, `debug`, or `logs` to get the detailed
 technical version with services, repo branch/status, commits, queue count,
 recent outreach deliveries, and the latest report excerpt. Action emails and
 emails with attachments still go into the normal queue for the next growth
-cycle.
+cycle. Any owner email that asks for a concrete action, for example
+`update the website demo`, `contact APKPure`, or `send the demo to investors`,
+is queued as growth-agent work and triggers the agent instead of being treated
+as a status reply.
 
 Enable inbound replies only after adding IMAP credentials to
 `/opt/tachi-back/.env.growth-agent`:

@@ -414,17 +414,70 @@ def is_status_request(
   if not any(keyword and keyword in combined for keyword in keywords):
     return False
 
-  action_pattern = (
-    r'\b(add|ajoute|change|configure|contacte|create|delete|deploy|envoie|'
-    r'fix|install|installe|merge|modifie|push|remove|restart|send|start|stop)\b'
-  )
-  if re.search(action_pattern, owner_text) and not re.search(
-    r'\b(avancement|status|progress|quoi|avance)\b',
-    owner_text,
-  ):
+  if looks_like_specific_owner_request(owner_text):
     return False
 
   return True
+
+
+def looks_like_specific_owner_request(owner_text: str) -> bool:
+  if is_plain_status_request(owner_text):
+    return False
+
+  action_pattern = (
+    r'\b(add|ajoute|analyse|analyze|change|configure|contact|contacte|'
+    r'create|delete|deploy|do|execute|executer|exécuter|envoie|fix|go|'
+    r'install|installe|lance|merge|modifie|publish|push|remove|reply|'
+    r'repond|répond|restart|send|start|stop|traite|treat|update|upload|'
+    r'use|utilise)\b'
+  )
+  if re.search(action_pattern, owner_text):
+    return True
+
+  return False
+
+
+def is_plain_status_request(owner_text: str) -> bool:
+  plain_status_phrases = {
+    'any update',
+    'any updates',
+    'avancement',
+    'donne moi avancement',
+    'donne moi le status',
+    'donne moi update',
+    'give me an update',
+    'give me update',
+    'progress',
+    'send me an update',
+    'send me update',
+    'status',
+    'tu fais quoi',
+    'tu fais quoi la',
+    'update',
+    'update me',
+    'what are u doing',
+    'what are you doing',
+    'what r u doing',
+    'what you doing',
+  }
+  if owner_text in plain_status_phrases:
+    return True
+
+  status_only_pattern = (
+    r'^(please |stp |svp |can you |could you |peux tu |tu peux )?'
+    r'((give|send|donne|envoie) (me |moi )?(an? |un |le )?)?'
+    r'(avancement|status|progress|update|updates?)'
+    r'( please| stp| svp)?$'
+  )
+  if re.fullmatch(status_only_pattern, owner_text):
+    return True
+
+  casual_status_pattern = (
+    r'^(please |stp |svp )?'
+    r'(tu fais quoi( la)?|what (are|r) (you|u) doing|what you doing)'
+    r'( please| stp| svp)?$'
+  )
+  return bool(re.fullmatch(casual_status_pattern, owner_text))
 
 
 def message_has_attachments(message: Message) -> bool:
