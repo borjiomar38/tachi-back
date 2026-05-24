@@ -182,6 +182,24 @@ const partnerUseCases = [
   },
 ] as const;
 
+const directoryReadinessRows = [
+  {
+    signal: 'Official APK source',
+    detail:
+      'Directory visitors should land on Nayovi for the current Android APK, setup guidance, pricing, and support instead of an unofficial mirror.',
+  },
+  {
+    signal: 'Transparent app metadata',
+    detail:
+      'Reviewers can cite the hosted OCR workflow, redeem-code activation, free trial, token plans, and support policy in one place.',
+  },
+  {
+    signal: 'Responsible usage note',
+    detail:
+      'Listings should describe Nayovi as translation support for owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
 const proofRows = [
   {
     signal: 'Before installing',
@@ -456,6 +474,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Compare plans
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="App listings"
+        title="What app directories and reviewers can verify"
+        description="Nayovi is best listed as an official Android workflow with hosted OCR, paid activation, and clear support instead of another anonymous file mirror."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {directoryReadinessRows.map((row) => (
+            <Card key={row.signal} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.signal}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <DownloadIcon className="size-4" />
+                Built for high-intent APK traffic
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A useful listing should send readers to the official download
+                and explain why hosted translation, activation, and token plans
+                matter before they install.
+              </p>
+            </div>
+            <a
+              href="/download"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Check APK details
             </a>
           </CardContent>
         </Card>
