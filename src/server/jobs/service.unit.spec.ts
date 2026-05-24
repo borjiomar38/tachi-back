@@ -6,9 +6,11 @@ const {
   mockGetProviderGatewayManifestWithRuntimeConfig,
   mockGetTranslationJobPageUpload,
   mockGetTranslationJobResultManifest,
+  mockHeadTranslationJobPageUpload,
   mockLogger,
   mockPerformHostedOcr,
   mockPerformHostedTranslation,
+  mockPresignTranslationJobPageUpload,
   mockPutTranslationJobDebugArtifact,
   mockPutTranslationJobPageUpload,
   mockPutTranslationJobResultManifest,
@@ -47,12 +49,14 @@ const {
   mockGetProviderGatewayManifestWithRuntimeConfig: vi.fn(),
   mockGetTranslationJobPageUpload: vi.fn(),
   mockGetTranslationJobResultManifest: vi.fn(),
+  mockHeadTranslationJobPageUpload: vi.fn(),
   mockLogger: {
     error: vi.fn(),
     info: vi.fn(),
   },
   mockPerformHostedOcr: vi.fn(),
   mockPerformHostedTranslation: vi.fn(),
+  mockPresignTranslationJobPageUpload: vi.fn(),
   mockPutTranslationJobDebugArtifact: vi.fn(),
   mockPutTranslationJobPageUpload: vi.fn(),
   mockPutTranslationJobResultManifest: vi.fn(),
@@ -103,9 +107,17 @@ vi.mock('@/server/provider-gateway/service', () => ({
 }));
 
 vi.mock('@/server/jobs/storage', () => ({
+  buildJobUploadObjectStorageTarget: vi.fn(
+    ({ fileName, jobId, pageNumber }) => ({
+      bucketName: 'uploads',
+      objectKey: `jobs/${jobId}/uploads/${String(pageNumber).padStart(4, '0')}-${fileName}`,
+    })
+  ),
   deleteTranslationJobPageUploads: mockDeleteTranslationJobPageUploads,
   getTranslationJobPageUpload: mockGetTranslationJobPageUpload,
   getTranslationJobResultManifest: mockGetTranslationJobResultManifest,
+  headTranslationJobPageUpload: mockHeadTranslationJobPageUpload,
+  presignTranslationJobPageUpload: mockPresignTranslationJobPageUpload,
   putTranslationJobDebugArtifact: mockPutTranslationJobDebugArtifact,
   putTranslationJobPageUpload: mockPutTranslationJobPageUpload,
   putTranslationJobResultManifest: mockPutTranslationJobResultManifest,
@@ -115,6 +127,7 @@ vi.mock('@/server/jobs/storage', () => ({
 import sharp from 'sharp';
 
 import {
+  completeDirectTranslationJobPageUpload,
   completeTranslationJobUpload,
   createTranslationJob,
   processTranslationJob,
@@ -141,10 +154,12 @@ describe('job service', () => {
     mockGetProviderGatewayManifestWithRuntimeConfig.mockReset();
     mockGetTranslationJobPageUpload.mockReset();
     mockGetTranslationJobResultManifest.mockReset();
+    mockHeadTranslationJobPageUpload.mockReset();
     mockLogger.error.mockReset();
     mockLogger.info.mockReset();
     mockPerformHostedOcr.mockReset();
     mockPerformHostedTranslation.mockReset();
+    mockPresignTranslationJobPageUpload.mockReset();
     mockPutTranslationJobDebugArtifact.mockReset();
     mockPutTranslationJobPageUpload.mockReset();
     mockPutTranslationJobResultManifest.mockReset();
@@ -278,6 +293,100 @@ describe('job service', () => {
         ],
       })
     );
+  });
+
+  it('returns direct object storage upload URLs for new upload jobs', async () => {
+    mockPresignTranslationJobPageUpload.mockImplementation(
+      async (input: {
+        contentType: string;
+        fileName: string;
+        jobId: string;
+        pageNumber: number;
+      }) => ({
+        bucketName: 'uploads',
+        headers: {
+          'content-length': '1024',
+          'content-type': input.contentType,
+        },
+        objectKey: `jobs/${input.jobId}/uploads/${String(input.pageNumber).padStart(4, '0')}-${input.fileName}`,
+        uploadUrl: `https://r2.example.test/upload/${input.pageNumber}`,
+      })
+    );
+
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        jobAsset: {
+          createMany: vi.fn(),
+        },
+        translationJob: {
+          create: vi.fn().mockResolvedValue({
+            id: 'job-direct',
+          }),
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              id: 'job-direct',
+              objectKeys: [null, null],
+              pageCount: 2,
+              status: 'awaiting_upload',
+            })
+          ),
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const result = await createTranslationJob(
+      {
+        pages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: '002.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 1024,
+          },
+        ],
+        targetLanguage: 'en',
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+      }
+    );
+
+    expect(result.upload.mode).toBe('direct_object_storage');
+    expect(result.upload.pages).toEqual([
+      {
+        confirmPath: '/api/mobile/jobs/job-direct/pages/1/complete',
+        headers: {
+          'content-length': '1024',
+          'content-type': 'image/jpeg',
+        },
+        method: 'PUT',
+        pageNumber: 1,
+        uploadUrl: 'https://r2.example.test/upload/1',
+      },
+      {
+        confirmPath: '/api/mobile/jobs/job-direct/pages/2/complete',
+        headers: {
+          'content-length': '1024',
+          'content-type': 'image/jpeg',
+        },
+        method: 'PUT',
+        pageNumber: 2,
+        uploadUrl: 'https://r2.example.test/upload/2',
+      },
+    ]);
+    expect(mockPresignTranslationJobPageUpload).toHaveBeenCalledTimes(2);
   });
 
   it('creates a completed job immediately when a cached result matches the page checksums', async () => {
@@ -1371,6 +1480,82 @@ describe('job service', () => {
     });
     expect(mockDb.tokenLedger.create).not.toHaveBeenCalled();
     expect(scheduleProcessing).toHaveBeenCalledWith('job-retry');
+  });
+
+  it('marks a directly uploaded page after verifying the R2 object', async () => {
+    const updateAsset = vi.fn();
+
+    mockDb.translationJob.findUnique.mockResolvedValue(
+      buildJobRecord({
+        id: 'job-direct-confirm',
+        objectKeys: [null],
+        pageCount: 1,
+        status: 'awaiting_upload',
+      })
+    );
+    mockHeadTranslationJobPageUpload.mockResolvedValue({
+      contentLength: 1024,
+      contentType: 'image/jpeg',
+      eTag: '"etag"',
+      metadata: {},
+      taggingCount: 0,
+    });
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        jobAsset: {
+          update: updateAsset,
+        },
+        translationJob: {
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              id: 'job-direct-confirm',
+              objectKeys: ['jobs/job-direct-confirm/uploads/0001-001.jpg'],
+              pageCount: 1,
+              status: 'awaiting_upload',
+            })
+          ),
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const result = await completeDirectTranslationJobPageUpload(
+      {
+        jobId: 'job-direct-confirm',
+        pageNumber: 1,
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+        now: new Date('2026-03-20T10:04:00.000Z'),
+      }
+    );
+
+    expect(result.uploadedPageCount).toBe(1);
+    expect(mockHeadTranslationJobPageUpload).toHaveBeenCalledWith({
+      bucketName: 'uploads',
+      objectKey: 'jobs/job-direct-confirm/uploads/0001-001.jpg',
+    });
+    expect(updateAsset).toHaveBeenCalledWith({
+      where: {
+        id: 'asset-1',
+      },
+      data: {
+        bucketName: 'uploads',
+        metadata: {
+          uploadedAt: '2026-03-20T10:04:00.000Z',
+          uploadMode: 'direct_object_storage',
+          uploadStatus: 'uploaded',
+        },
+        mimeType: 'image/jpeg',
+        objectKey: 'jobs/job-direct-confirm/uploads/0001-001.jpg',
+        sizeBytes: 1024,
+      },
+    });
   });
 
   it('completes a fully uploaded job immediately when a cached result exists', async () => {
