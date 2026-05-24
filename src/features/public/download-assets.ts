@@ -3,9 +3,9 @@ export const androidApkDownload = {
   filename: 'nayovi-latest.apk',
   label: 'Download Android APK',
   sizeLabel: '64 MB',
-  buildLabel: 'Android arm64 signed release 0.17.14',
+  buildLabel: 'Android arm64 signed release 0.17.20',
   sha256:
-    '0b2e4598a7ce477885a0c1047747ca1b7eb2d81962acdc46b3eb4ceef3feceed',
+    '2ed1c271c01aff57c375c64b3ec42d7b7f643556c3c13263243a105c705ddb03',
   // Keep the existing blob key until the signed APK is reuploaded under the Nayovi name.
   objectKey: 'public/downloads/tachiyomiat-latest.apk',
 } as const;
