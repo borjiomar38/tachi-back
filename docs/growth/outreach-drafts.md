@@ -480,3 +480,27 @@ Best,
 Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+### APKPure app submission
+
+Category: directory
+Contact path: developer@apkpure.com, listed on the current public APKPure developer submission page for app approval queries.
+Rationale: APKPure reaches Android users actively looking for APK downloads and app metadata; Nayovi fits only if the listing keeps the official Nayovi/tachiyomiat.com download, support, pricing, and permission-safe usage note clear.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Official Nayovi Android APK listing inquiry
+
+Hi APKPure developer team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+I am reaching out because APKPure accepts Android app listing and approval inquiries, and Nayovi has a public official download and support path at tachiyomiat.com. The product flow is: official APK install, free trial access, redeem-code activation, monthly token plans, and hosted OCR/AI translation from the Android app.
+
+Nayovi does not host or distribute chapters. It is intended for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Could you let me know the correct process for submitting Nayovi for an official APKPure listing, including the app metadata, screenshots, APK file, and source-of-truth developer website?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.

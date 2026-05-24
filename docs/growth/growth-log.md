@@ -2,6 +2,10 @@
 
 ## 2026-05-24
 
+- Autonomous cycle on `growth/autonomous-20260524T220431Z`: processed owner inbound command `20260524T220428Z-a6c7f163d372` asking what the agent is doing; continued the safe growth cycle and will report concrete actions instead of pausing.
+- Added an install-confidence section to `/translate-manhwa-ai` so Android readers, APK directories, and reviewers can verify the official app source, free trial path, pricing/support, and responsible usage note before installing or recommending Nayovi.
+- Auto-approved and contacted APKPure app submission through its public `developer@apkpure.com` developer contact after current public verification found the address for app approval queries; the message asked for the official listing process and kept tachiyomiat.com as the source-of-truth path instead of pushing mirror-first distribution.
+- Updated the backlink tracker and outreach log with APKPure contacted status, rationale, final body, and follow-up guardrails.
 - Autonomous cycle on `growth/autonomous-20260524T183646Z`: processed owner inbound note `20260524T183549Z-narrated-demo-asset` and logged `/var/lib/tachi-growth-agent/assets/nayovi-demo-current.mp4` as the preferred/current narrated demo asset for selective reviewer, partner, investor, directory, and collaboration use.
 - Updated `/translate-manhwa-ai` demo proof copy to describe the current narrated workflow: original chapter content, language selection, hosted translation/loading, and final English result.
 - Added a narrated-demo press pitch template and refreshed prospect tracking for MakeUseOf and APKPure based on current public contact-path verification.
