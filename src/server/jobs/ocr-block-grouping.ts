@@ -250,11 +250,17 @@ function getMaxVerticalGap(
     return currentGap;
   }
 
-  const scaleAwareCap = isAsianSourceLanguage(page.sourceLanguage) ? 44 : 32;
+  const pageWidth = Math.max(1, page.imgWidth);
+  const verticalScaleRate = clampNumber(
+    1.12 - 4.8 * (averageSymbolHeight / pageWidth),
+    0.82,
+    0.99
+  );
+  const scaleAwareCap = isAsianSourceLanguage(page.sourceLanguage) ? 44 : 40;
   const scaleAwareGap = Math.min(
     scaleAwareCap,
-    averageSymbolHeight * 0.65,
-    page.imgWidth * 0.035
+    averageSymbolHeight * verticalScaleRate,
+    pageWidth * 0.04
   );
 
   return Math.max(currentGap, scaleAwareGap);
@@ -272,10 +278,16 @@ function shouldCoalesceHorizontalRowFragments(
   const averageSymbolHeight = getAverageSymbolHeight(leftBlock, rightBlock);
   const averageSymbolWidth = (leftBlock.symWidth + rightBlock.symWidth) / 2;
   const horizontalGap = rightBlock.x - (leftBlock.x + leftBlock.width);
+  const pageWidth = Math.max(1, page.imgWidth);
+  const horizontalScaleRate = clampNumber(
+    0.75 - 4.5 * (averageSymbolWidth / pageWidth),
+    0.35,
+    0.7
+  );
   const maxHorizontalGap = Math.min(
-    8,
-    averageSymbolWidth * 0.35,
-    page.imgWidth * 0.015
+    14,
+    averageSymbolWidth * horizontalScaleRate,
+    pageWidth * 0.02
   );
 
   if (horizontalGap < 0 || horizontalGap > maxHorizontalGap) {
@@ -310,6 +322,10 @@ function getAverageSymbolHeight(
   nextBlock: NormalizedOcrPage['blocks'][number]
 ) {
   return (previousBlock.symHeight + nextBlock.symHeight) / 2;
+}
+
+function clampNumber(value: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, value));
 }
 
 function shouldCoalesceOcrPageContinuationBlocks(input: {
