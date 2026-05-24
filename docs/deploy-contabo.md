@@ -208,9 +208,10 @@ Owner email notifications are intentionally low-volume:
 - Reply-ingestion confirmations are disabled by default to avoid mail loops and
   noisy acknowledgements.
 - Owner status replies are enabled by default. A short authenticated owner mail
-  such as `avancement`, `status`, `update`, or `tu fais quoi` receives an
-  immediate business-readable update from the mail bridge and is not queued as
-  growth-agent work. Dates are formatted in Tunisia time.
+  such as `avancement`, `status`, `update`, `tu fais quoi`, or
+  `what are u doing` receives an immediate business-readable update from the
+  mail bridge and is not queued as growth-agent work. Dates are formatted in
+  Tunisia time.
 - Inbound replies are queued only when the sender address is allow-listed and
   the mail server reports passing SPF, DKIM, or DMARC authentication for that
   sender. Other messages are marked seen and never become agent instructions.
@@ -257,7 +258,7 @@ GROWTH_AGENT_INBOUND_IMAP_PASSWORD=change-me
 GROWTH_AGENT_INBOUND_IMAP_MAILBOX=INBOX
 GROWTH_AGENT_INBOUND_IMAP_SSL=true
 GROWTH_AGENT_STATUS_REPLY_ENABLED=true
-GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,avance sur quoi,quoi maintenant,progress,what are you doing"
+GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,tu fais quoi là,avance sur quoi,quoi maintenant,progress,what are you doing,what are u doing,what r u doing,what you doing"
 ```
 
 After changing the env file:

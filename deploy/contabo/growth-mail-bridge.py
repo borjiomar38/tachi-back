@@ -57,6 +57,9 @@ DEFAULT_STATUS_REPLY_KEYWORDS = (
   'quoi maintenant',
   'progress',
   'what are you doing',
+  'what are u doing',
+  'what r u doing',
+  'what you doing',
 )
 VIDEO_EXTENSIONS = {
   '.3g2',
