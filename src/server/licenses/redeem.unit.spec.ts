@@ -86,6 +86,11 @@ describe('license redeem activation', () => {
           status: 'redeemed',
         }),
       },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({
+          id: 'activation-1',
+        }),
+      },
       tokenLedger: {
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
@@ -118,6 +123,21 @@ describe('license redeem activation', () => {
     expect(result.license.availableTokens).toBe(2750);
     expect(result.device.installationId).toBe('install-1234567890abcd');
     expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+    expect(tx.redeemActivation.upsert).toHaveBeenCalledWith(
+      expect.objectContaining({
+        create: expect.objectContaining({
+          deviceId: 'device-1',
+          installationId: 'install-1234567890abcd',
+          redeemCodeId: 'redeem-1',
+        }),
+        where: {
+          redeemCodeId_deviceId: {
+            deviceId: 'device-1',
+            redeemCodeId: 'redeem-1',
+          },
+        },
+      })
+    );
     expect(mockLogger.info).toHaveBeenCalledOnce();
   });
 
@@ -202,6 +222,11 @@ describe('license redeem activation', () => {
           status: 'redeemed',
         }),
       },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({
+          id: 'activation-1',
+        }),
+      },
       tokenLedger: {
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
@@ -240,6 +265,7 @@ describe('license redeem activation', () => {
       })
     );
     expect(tx.licenseDevice.update).toHaveBeenCalledOnce();
+    expect(tx.redeemActivation.upsert).toHaveBeenCalledOnce();
   });
 
   it('replaces a different active license binding only for the same installation', async () => {
@@ -317,6 +343,11 @@ describe('license redeem activation', () => {
           status: 'redeemed',
         }),
       },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({
+          id: 'activation-new',
+        }),
+      },
       tokenLedger: {
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
@@ -372,6 +403,15 @@ describe('license redeem activation', () => {
       },
     });
     expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+    expect(tx.redeemActivation.upsert).toHaveBeenCalledWith(
+      expect.objectContaining({
+        create: expect.objectContaining({
+          deviceId: 'device-1',
+          licenseId: 'license-new',
+          redeemCodeId: 'redeem-new',
+        }),
+      })
+    );
   });
 
   it('allows a non-expired redeemed code on another installation', async () => {
@@ -437,6 +477,11 @@ describe('license redeem activation', () => {
           status: 'redeemed',
         }),
       },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({
+          id: 'activation-2',
+        }),
+      },
       tokenLedger: {
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
@@ -464,10 +509,19 @@ describe('license redeem activation', () => {
     expect(result.activationStatus).toBe('activated');
     expect(result.device.id).toBe('device-2');
     expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+    expect(tx.redeemActivation.upsert).toHaveBeenCalledWith(
+      expect.objectContaining({
+        create: expect.objectContaining({
+          deviceId: 'device-2',
+          installationId: 'install-1234567890abcd',
+          redeemCodeId: 'redeem-1',
+        }),
+      })
+    );
     expect(tx.redeemCode.update).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
-          redeemedByDeviceId: 'device-2',
+          redeemedByDeviceId: 'device-1',
           status: 'redeemed',
         }),
       })
@@ -750,6 +804,11 @@ describe('license redeem activation', () => {
           status: 'redeemed',
         }),
       },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({
+          id: 'activation-2',
+        }),
+      },
       tokenLedger: {
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
@@ -777,6 +836,7 @@ describe('license redeem activation', () => {
     expect(result.activationStatus).toBe('activated');
     expect(result.license.deviceLimit).toBe(1);
     expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+    expect(tx.redeemActivation.upsert).toHaveBeenCalledOnce();
   });
 
   it('treats deviceLimit=0 as unlimited', async () => {
@@ -838,6 +898,11 @@ describe('license redeem activation', () => {
           status: 'redeemed',
         }),
       },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({
+          id: 'activation-3',
+        }),
+      },
       tokenLedger: {
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
@@ -865,5 +930,6 @@ describe('license redeem activation', () => {
     expect(result.activationStatus).toBe('activated');
     expect(result.license.deviceLimit).toBe(0);
     expect(tx.licenseDevice.create).toHaveBeenCalledOnce();
+    expect(tx.redeemActivation.upsert).toHaveBeenCalledOnce();
   });
 });

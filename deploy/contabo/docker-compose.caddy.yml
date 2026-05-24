@@ -1,7 +1,14 @@
+x-tachi-json-logging: &tachi-json-logging
+  driver: json-file
+  options:
+    max-file: '7'
+    max-size: 50m
+
 services:
   caddy:
     image: caddy:2.8-alpine
     container_name: tachi-caddy
+    logging: *tachi-json-logging
     env_file:
       - ${TACHI_CADDY_ENV_FILE:-/opt/tachi-back/.env.caddy}
     ports:
@@ -9,6 +16,7 @@ services:
       - '443:443'
     volumes:
       - ./Caddyfile.multi-env:/etc/caddy/Caddyfile:ro
+      - /var/log/tachi-back/caddy:/var/log/caddy
       - caddy-data:/data
       - caddy-config:/config
     restart: unless-stopped
