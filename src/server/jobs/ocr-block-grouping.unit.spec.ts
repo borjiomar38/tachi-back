@@ -91,6 +91,122 @@ describe('OCR block grouping', () => {
     expect(result.blocks).toHaveLength(2);
   });
 
+  it('uses page scale to merge Asian stacked lines on high-resolution pages', () => {
+    const first = block({
+      height: 61,
+      symHeight: 57.75,
+      symWidth: 56,
+      text: '我 是 垃圾',
+      width: 260,
+      x: 439,
+      y: 1400,
+    });
+    const second = block({
+      height: 60,
+      symHeight: 56.4,
+      symWidth: 56,
+      text: '吗 ? ! ? !',
+      width: 281,
+      x: 445,
+      y: 1487,
+    });
+    const page = {
+      ...buildOcrPage([first, second], 'zh'),
+      imgWidth: 1200,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second)).toBe(false);
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(true);
+
+    const result = coalesceOcrLineBlocks(page);
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      '我 是 垃圾 吗 ? ! ? !',
+    ]);
+  });
+
+  it('does not use a fixed vertical floor for tiny OCR artifacts', () => {
+    const first = block({
+      height: 7,
+      symHeight: 4.75,
+      symWidth: 3,
+      text: 'A..M',
+      width: 8,
+      x: 408,
+      y: 300,
+    });
+    const second = block({
+      height: 7,
+      symHeight: 5.5,
+      symWidth: 3,
+      text: 'MY',
+      width: 8,
+      x: 399,
+      y: 316,
+    });
+    const page = {
+      ...buildOcrPage([first, second], 'zh'),
+      imgWidth: 1200,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(false);
+    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(2);
+  });
+
+  it('merges close same-row OCR fragments using symbol-width scale', () => {
+    const first = block({
+      height: 14,
+      symHeight: 14,
+      symWidth: 10,
+      text: 'YOU',
+      width: 35,
+      x: 451,
+      y: 692,
+    });
+    const second = block({
+      height: 14,
+      symHeight: 14,
+      symWidth: 15.36,
+      text: 'ARE AS BEAUTIFUL',
+      width: 147,
+      x: 488,
+      y: 692,
+    });
+    const page = buildOcrPage([first, second]);
+
+    expect(shouldCoalesceOcrBlocks(first, second)).toBe(false);
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(true);
+
+    const result = coalesceOcrLineBlocks(page);
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'YOU ARE AS BEAUTIFUL',
+    ]);
+  });
+
+  it('does not treat tall vertical text columns as horizontal row fragments', () => {
+    const first = block({
+      height: 629,
+      symHeight: 31,
+      symWidth: 31,
+      text: '子宮 だけ で ハメる 裏 ワザ で なく 、 正式 に ハメ 込 んで いく 。',
+      width: 69,
+      x: 92,
+      y: 420,
+    });
+    const second = block({
+      height: 646,
+      symHeight: 31,
+      symWidth: 31,
+      text: 'ンナノホ は あくまで ギガフタ を 満足 さ せる ため に 存在 する 。',
+      width: 239,
+      x: 169,
+      y: 420,
+    });
+    const page = buildOcrPage([first, second], 'ja');
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(false);
+    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(2);
+  });
+
   it('does not merge close dialogue with a standalone watermark block', () => {
     const page = buildOcrPage([
       block({ text: 'THIS IS IMPORTANT.', x: 80, y: 920, width: 180 }),

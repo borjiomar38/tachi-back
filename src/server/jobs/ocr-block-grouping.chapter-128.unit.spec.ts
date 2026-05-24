@@ -79,16 +79,16 @@ describe('OCR block grouping chapter 128 end-to-end regression', () => {
     expect(expectedChineseTexts).not.toEqual([]);
 
     for (const expectedText of expectedChineseTexts) {
+      const normalizedExpectedText = normalizeOcrText(expectedText);
+
       expect(
-        translatableBlocks.some(
-          (block) =>
-            normalizeOcrText(block.text) === normalizeOcrText(expectedText)
+        translatableBlocks.some((block) =>
+          normalizeOcrText(block.text).includes(normalizedExpectedText)
         )
       ).toBe(true);
       expect(
-        maskOnlyBlocks.some(
-          (block) =>
-            normalizeOcrText(block.text) === normalizeOcrText(expectedText)
+        maskOnlyBlocks.some((block) =>
+          normalizeOcrText(block.text).includes(normalizedExpectedText)
         )
       ).toBe(false);
     }

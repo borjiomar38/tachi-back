@@ -56,7 +56,7 @@ export function coalesceOcrLineBlocks(
         continue;
       }
 
-      if (shouldCoalesceOcrBlocks(leftBlock, rightBlock)) {
+      if (shouldCoalesceOcrBlocks(leftBlock, rightBlock, sanitizedPage)) {
         union(leftIndex, rightIndex);
       }
     }
@@ -161,7 +161,8 @@ export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(
 
 export function shouldCoalesceOcrBlocks(
   previousBlock: NormalizedOcrPage['blocks'][number],
-  nextBlock: NormalizedOcrPage['blocks'][number]
+  nextBlock: NormalizedOcrPage['blocks'][number],
+  page?: NormalizedOcrPage
 ) {
   if (
     previousBlock.renderMode === 'mask_only' ||
@@ -177,11 +178,23 @@ export function shouldCoalesceOcrBlocks(
     return false;
   }
 
-  const previousBottom = previousBlock.y + previousBlock.height;
-  const verticalGap = nextBlock.y - previousBottom;
-  const averageSymbolHeight =
-    (previousBlock.symHeight + nextBlock.symHeight) / 2;
-  const maxVerticalGap = Math.max(6, Math.min(24, averageSymbolHeight * 0.85));
+  if (shouldCoalesceVertically(previousBlock, nextBlock, page)) {
+    return true;
+  }
+
+  return page
+    ? shouldCoalesceHorizontalRowFragments(previousBlock, nextBlock, page)
+    : false;
+}
+
+function shouldCoalesceVertically(
+  previousBlock: NormalizedOcrPage['blocks'][number],
+  nextBlock: NormalizedOcrPage['blocks'][number],
+  page?: NormalizedOcrPage
+) {
+  const averageSymbolHeight = getAverageSymbolHeight(previousBlock, nextBlock);
+  const verticalGap = nextBlock.y - (previousBlock.y + previousBlock.height);
+  const maxVerticalGap = getMaxVerticalGap(previousBlock, nextBlock, page);
   const maxVerticalOverlap = Math.max(10, averageSymbolHeight * 1.2);
   const previousCenterY = previousBlock.y + previousBlock.height / 2;
   const nextCenterY = nextBlock.y + nextBlock.height / 2;
@@ -223,6 +236,80 @@ export function shouldCoalesceOcrBlocks(
     overlapRatio >= 0.25 ||
     Math.abs(previousCenter - nextCenter) <= maxCenterDistance
   );
+}
+
+function getMaxVerticalGap(
+  previousBlock: NormalizedOcrPage['blocks'][number],
+  nextBlock: NormalizedOcrPage['blocks'][number],
+  page?: NormalizedOcrPage
+) {
+  const averageSymbolHeight = getAverageSymbolHeight(previousBlock, nextBlock);
+  const currentGap = Math.max(6, Math.min(24, averageSymbolHeight * 0.85));
+
+  if (!page) {
+    return currentGap;
+  }
+
+  const scaleAwareCap = isAsianSourceLanguage(page.sourceLanguage) ? 44 : 32;
+  const scaleAwareGap = Math.min(
+    scaleAwareCap,
+    averageSymbolHeight * 0.65,
+    page.imgWidth * 0.035
+  );
+
+  return Math.max(currentGap, scaleAwareGap);
+}
+
+function shouldCoalesceHorizontalRowFragments(
+  firstBlock: NormalizedOcrPage['blocks'][number],
+  secondBlock: NormalizedOcrPage['blocks'][number],
+  page: NormalizedOcrPage
+) {
+  const [leftBlock, rightBlock] =
+    firstBlock.x <= secondBlock.x
+      ? [firstBlock, secondBlock]
+      : [secondBlock, firstBlock];
+  const averageSymbolHeight = getAverageSymbolHeight(leftBlock, rightBlock);
+  const averageSymbolWidth = (leftBlock.symWidth + rightBlock.symWidth) / 2;
+  const horizontalGap = rightBlock.x - (leftBlock.x + leftBlock.width);
+  const maxHorizontalGap = Math.min(
+    8,
+    averageSymbolWidth * 0.35,
+    page.imgWidth * 0.015
+  );
+
+  if (horizontalGap < 0 || horizontalGap > maxHorizontalGap) {
+    return false;
+  }
+
+  const verticalOverlap =
+    Math.min(leftBlock.y + leftBlock.height, rightBlock.y + rightBlock.height) -
+    Math.max(leftBlock.y, rightBlock.y);
+  const minHeight = Math.min(leftBlock.height, rightBlock.height);
+  const maxHeight = Math.max(leftBlock.height, rightBlock.height);
+  const verticalOverlapRatio = minHeight > 0 ? verticalOverlap / minHeight : 0;
+  const centerYDistance = Math.abs(
+    leftBlock.y + leftBlock.height / 2 - (rightBlock.y + rightBlock.height / 2)
+  );
+  const maxLineSlots = Math.max(
+    leftBlock.height / Math.max(1, leftBlock.symHeight),
+    rightBlock.height / Math.max(1, rightBlock.symHeight)
+  );
+  const heightRatio = maxHeight / Math.max(1, minHeight);
+
+  return (
+    verticalOverlapRatio >= 0.6 &&
+    centerYDistance <= Math.max(8, averageSymbolHeight * 0.75) &&
+    maxLineSlots <= 2.2 &&
+    heightRatio <= 2.2
+  );
+}
+
+function getAverageSymbolHeight(
+  previousBlock: NormalizedOcrPage['blocks'][number],
+  nextBlock: NormalizedOcrPage['blocks'][number]
+) {
+  return (previousBlock.symHeight + nextBlock.symHeight) / 2;
 }
 
 function shouldCoalesceOcrPageContinuationBlocks(input: {
