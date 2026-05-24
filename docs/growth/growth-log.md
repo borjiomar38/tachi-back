@@ -2,6 +2,10 @@
 
 ## 2026-05-24
 
+- Autonomous cycle on `growth/autonomous-20260524T183646Z`: processed owner inbound note `20260524T183549Z-narrated-demo-asset` and logged `/var/lib/tachi-growth-agent/assets/nayovi-demo-current.mp4` as the preferred/current narrated demo asset for selective reviewer, partner, investor, directory, and collaboration use.
+- Updated `/translate-manhwa-ai` demo proof copy to describe the current narrated workflow: original chapter content, language selection, hosted translation/loading, and final English result.
+- Added a narrated-demo press pitch template and refreshed prospect tracking for MakeUseOf and APKPure based on current public contact-path verification.
+- Auto-approved and contacted MakeUseOf Android through its public editorial contact path after current public verification found practical Android app/how-to coverage and an editorial address; the individualized pitch referenced the narrated demo, official APK, free trial, redeem-code activation, token plans, and permission-safe positioning with opt-out language.
 - Autonomous cycle on `growth/autonomous-20260524T152821Z`: audited branch state, public SEO routes, the manhwa landing page, sitemap generation, and growth trackers.
 - Added an app-listing verification section to `/translate-manhwa-ai` so APK directory, reviewer, and high-intent download traffic can verify the official APK source, app metadata, and responsible usage note before installing or publishing.
 - Reviewed Android Weekly as a medium-fit newsletter prospect through current public web results; kept it in draft because the compliant contact path is an official submit form for links, not a direct email address, and a stronger technical write-up URL is needed before submission.

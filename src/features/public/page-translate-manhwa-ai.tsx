@@ -148,19 +148,19 @@ const reviewRequestRows = [
 
 const demoEvaluationRows = [
   {
-    checkpoint: 'Readable OCR result',
+    checkpoint: 'Original page to English result',
     signal:
-      'Speech bubbles, narration boxes, and short SFX-adjacent text should produce text a reader can inspect before spending tokens repeatedly.',
+      'The current narrated demo shows original Chinese content, language selection, translation progress, and the final English result in one Android flow.',
   },
   {
     checkpoint: 'Reader workflow continuity',
     signal:
-      'The demo should show the official APK, activation, and translation flow without forcing users into screenshot uploads or provider API-key setup.',
+      'Reviewers can inspect the hosted translation path without asking readers to upload pages to a generic web tool or manage provider API keys.',
   },
   {
-    checkpoint: 'Upgrade confidence',
+    checkpoint: 'Reviewer-ready proof',
     signal:
-      'Pricing, support, trial access, and cancellation paths should be visible enough that reviewers can explain why a paid plan is useful.',
+      'Narration, subtitles, a presenter avatar, and a compressed wait section make the workflow easier to evaluate before requesting a review code.',
   },
 ] as const;
 
@@ -559,8 +559,8 @@ export const PageTranslateManhwaAi = () => {
 
       <PublicSection
         eyebrow="Demo quality"
-        title="What a strong Nayovi demo should prove"
-        description="A useful demo should not only look impressive. It should help a reader, reviewer, or partner decide whether the Android workflow is reliable enough to test and recommend."
+        title="What the current Nayovi demo proves"
+        description="The preferred narrated demo is built for reviewers, partners, and directories that need to understand the real Android translation workflow before asking for a review code."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {demoEvaluationRows.map((row) => (
@@ -581,9 +581,10 @@ export const PageTranslateManhwaAi = () => {
                 Built for demo follow-up
               </div>
               <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
-                Reviewers should be able to request screenshots, a redeem code,
-                pricing context, and a permission-safe workflow note before
-                publishing a setup guide or app review.
+                The current demo asset shows the original chapter, language
+                choice, hosted translation/loading flow, and English result.
+                Reviewers can request it with screenshots, pricing context, and
+                a permission-safe workflow note before publishing.
               </p>
             </div>
             <a
