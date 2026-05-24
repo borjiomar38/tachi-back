@@ -1,6 +1,7 @@
 import {
   deleteObjects,
   getObject,
+  headObject,
   putObject,
 } from '@better-upload/server/helpers';
 
@@ -23,6 +24,17 @@ export function buildJobUploadObjectKey(input: {
   pageNumber: number;
 }) {
   return `jobs/${input.jobId}/uploads/${String(input.pageNumber).padStart(4, '0')}-${sanitizeFileName(input.fileName)}`;
+}
+
+export function buildJobUploadObjectStorageTarget(input: {
+  fileName: string;
+  jobId: string;
+  pageNumber: number;
+}) {
+  return {
+    bucketName: objectStorageBuckets.uploads,
+    objectKey: buildJobUploadObjectKey(input),
+  };
 }
 
 export function buildJobResultObjectKey(jobId: string) {
@@ -70,6 +82,67 @@ export async function putTranslationJobPageUpload(input: {
     bucketName: objectStorageBuckets.uploads,
     objectKey,
   };
+}
+
+export async function presignTranslationJobPageUpload(input: {
+  contentType: string;
+  expiresInSeconds: number;
+  fileName: string;
+  jobId: string;
+  pageNumber: number;
+  sizeBytes: number;
+}) {
+  if (shouldUseInlineObjectStorage) {
+    return null;
+  }
+
+  const { bucketName, objectKey } = buildJobUploadObjectStorageTarget(input);
+  const url = new URL(
+    `${uploadClient.buildBucketUrl(bucketName)}/${objectKey}`
+  );
+  url.searchParams.set('X-Amz-Expires', String(input.expiresInSeconds));
+  url.searchParams.set('X-Amz-Content-Sha256', 'UNSIGNED-PAYLOAD');
+
+  const signed = await uploadClient.s3.sign(url.toString(), {
+    method: 'PUT',
+    headers: {
+      'content-length': String(input.sizeBytes),
+      'content-type': input.contentType,
+    },
+    aws: {
+      allHeaders: true,
+      signQuery: true,
+    },
+  });
+
+  return {
+    bucketName,
+    headers: {
+      'content-length': String(input.sizeBytes),
+      'content-type': input.contentType,
+    },
+    objectKey,
+    uploadUrl: signed.url,
+  };
+}
+
+export async function headTranslationJobPageUpload(input: {
+  bucketName: string;
+  objectKey: string;
+}) {
+  if (input.bucketName === INLINE_STORAGE_BUCKET) {
+    const inline = parseInlineObjectKey(input.objectKey);
+
+    return {
+      contentLength: inline.body.byteLength,
+      contentType: inline.contentType,
+    };
+  }
+
+  return await headObject(uploadClient, {
+    bucket: input.bucketName,
+    key: input.objectKey,
+  });
 }
 
 export async function getTranslationJobPageUpload(input: {

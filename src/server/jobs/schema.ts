@@ -111,6 +111,14 @@ export const zTranslationJobPageSummary = z.object({
   uploadStatus: z.enum(['pending', 'uploaded']),
 });
 
+export const zTranslationJobDirectPageUpload = z.object({
+  confirmPath: z.string(),
+  headers: z.record(z.string(), z.string()),
+  method: z.literal('PUT'),
+  pageNumber: z.number().int().positive(),
+  uploadUrl: z.url(),
+});
+
 export const zTranslationJobSummary = z.object({
   completedAt: z.date().nullish(),
   createdAt: z.date(),
@@ -161,7 +169,8 @@ export const zCreateTranslationJobResponse = z.object({
   upload: z.object({
     expiresAt: z.date().nullish(),
     method: z.literal('PUT'),
-    mode: z.literal('server_multipart'),
+    mode: z.enum(['direct_object_storage', 'server_multipart']),
+    pages: z.array(zTranslationJobDirectPageUpload).optional(),
   }),
 });
 

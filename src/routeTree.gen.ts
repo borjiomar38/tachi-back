@@ -97,6 +97,7 @@ import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobil
 import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/complete'
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
+import { Route as ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
 
 const TranslateManhwaAiRoute = TranslateManhwaAiRouteImport.update({
   id: '/translate-manhwa-ai',
@@ -560,6 +561,12 @@ const ApiMobileJobsJobIdPagesPageNumberRoute =
     path: '/$jobId/pages/$pageNumber',
     getParentRoute: () => ApiMobileJobsRoute,
   } as any)
+const ApiMobileJobsJobIdPagesPageNumberCompleteRoute =
+  ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport.update({
+    id: '/complete',
+    path: '/complete',
+    getParentRoute: () => ApiMobileJobsJobIdPagesPageNumberRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -649,7 +656,8 @@ export interface FileRoutesByFullPath {
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
-  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRoute
+  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -736,7 +744,8 @@ export interface FileRoutesByTo {
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
   '/api/mobile/jobs/$jobId': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update': typeof ManagerUsersIdUpdateIndexRoute
-  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRoute
+  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -827,7 +836,8 @@ export interface FileRoutesById {
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
-  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRoute
+  '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -920,6 +930,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1007,6 +1018,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId'
     | '/manager/users/$id/update'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   id:
     | '__root__'
     | '/'
@@ -1097,6 +1109,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1774,6 +1787,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileJobsJobIdPagesPageNumberRouteImport
       parentRoute: typeof ApiMobileJobsRoute
     }
+    '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': {
+      id: '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
+      path: '/complete'
+      fullPath: '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
+      preLoaderRoute: typeof ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport
+      parentRoute: typeof ApiMobileJobsJobIdPagesPageNumberRoute
+    }
   }
 }
 
@@ -1861,11 +1881,26 @@ const ManagerRouteRouteWithChildren = ManagerRouteRoute._addFileChildren(
   ManagerRouteRouteChildren,
 )
 
+interface ApiMobileJobsJobIdPagesPageNumberRouteChildren {
+  ApiMobileJobsJobIdPagesPageNumberCompleteRoute: typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
+}
+
+const ApiMobileJobsJobIdPagesPageNumberRouteChildren: ApiMobileJobsJobIdPagesPageNumberRouteChildren =
+  {
+    ApiMobileJobsJobIdPagesPageNumberCompleteRoute:
+      ApiMobileJobsJobIdPagesPageNumberCompleteRoute,
+  }
+
+const ApiMobileJobsJobIdPagesPageNumberRouteWithChildren =
+  ApiMobileJobsJobIdPagesPageNumberRoute._addFileChildren(
+    ApiMobileJobsJobIdPagesPageNumberRouteChildren,
+  )
+
 interface ApiMobileJobsRouteChildren {
   ApiMobileJobsJobIdCompleteRoute: typeof ApiMobileJobsJobIdCompleteRoute
   ApiMobileJobsJobIdResultRoute: typeof ApiMobileJobsJobIdResultRoute
   ApiMobileJobsJobIdIndexRoute: typeof ApiMobileJobsJobIdIndexRoute
-  ApiMobileJobsJobIdPagesPageNumberRoute: typeof ApiMobileJobsJobIdPagesPageNumberRoute
+  ApiMobileJobsJobIdPagesPageNumberRoute: typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
 }
 
 const ApiMobileJobsRouteChildren: ApiMobileJobsRouteChildren = {
@@ -1873,7 +1908,7 @@ const ApiMobileJobsRouteChildren: ApiMobileJobsRouteChildren = {
   ApiMobileJobsJobIdResultRoute: ApiMobileJobsJobIdResultRoute,
   ApiMobileJobsJobIdIndexRoute: ApiMobileJobsJobIdIndexRoute,
   ApiMobileJobsJobIdPagesPageNumberRoute:
-    ApiMobileJobsJobIdPagesPageNumberRoute,
+    ApiMobileJobsJobIdPagesPageNumberRouteWithChildren,
 }
 
 const ApiMobileJobsRouteWithChildren = ApiMobileJobsRoute._addFileChildren(

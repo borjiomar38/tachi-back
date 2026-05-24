@@ -41,9 +41,12 @@ import {
   zTranslationJobSummary,
 } from './schema';
 import {
+  buildJobUploadObjectStorageTarget,
   deleteTranslationJobPageUploads,
   getTranslationJobPageUpload,
   getTranslationJobResultManifest,
+  headTranslationJobPageUpload,
+  presignTranslationJobPageUpload,
   putTranslationJobDebugArtifact,
   putTranslationJobPageUpload,
   putTranslationJobResultManifest,
@@ -350,11 +353,7 @@ export async function createTranslationJob(
 
     return zCreateTranslationJobResponse.parse({
       job: buildTranslationJobSummary(completedJob),
-      upload: {
-        expiresAt: completedJob.expiresAt,
-        method: 'PUT',
-        mode: 'server_multipart',
-      },
+      upload: buildServerTranslationJobUpload(completedJob),
     });
   }
 
@@ -390,22 +389,90 @@ export async function createTranslationJob(
 
     return zCreateTranslationJobResponse.parse({
       job: buildTranslationJobSummary(queuedJob),
-      upload: {
-        expiresAt: queuedJob.expiresAt,
-        method: 'PUT',
-        mode: 'server_multipart',
-      },
+      upload: buildServerTranslationJobUpload(queuedJob),
     });
   }
 
   return zCreateTranslationJobResponse.parse({
     job: buildTranslationJobSummary(job),
-    upload: {
-      expiresAt: job.expiresAt,
-      method: 'PUT',
-      mode: 'server_multipart',
-    },
+    upload: await buildTranslationJobUploadInstructions(job, log),
   });
+}
+
+function buildServerTranslationJobUpload(job: Pick<JobRecord, 'expiresAt'>) {
+  return {
+    expiresAt: job.expiresAt,
+    method: 'PUT' as const,
+    mode: 'server_multipart' as const,
+  };
+}
+
+async function buildTranslationJobUploadInstructions(
+  job: JobRecord,
+  log: Pick<typeof logger, 'error' | 'info'>
+) {
+  const uploadAssets = job.assets
+    .filter((asset) => asset.kind === 'page_upload')
+    .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
+
+  try {
+    const pages = await Promise.all(
+      uploadAssets.map(async (asset) => {
+        if (
+          !asset.originalFileName ||
+          !asset.mimeType ||
+          !asset.pageNumber ||
+          !asset.sizeBytes
+        ) {
+          return null;
+        }
+
+        const directUpload = await presignTranslationJobPageUpload({
+          contentType: asset.mimeType,
+          expiresInSeconds: envServer.JOB_PAGE_UPLOAD_URL_TTL_SECONDS,
+          fileName: asset.originalFileName,
+          jobId: job.id,
+          pageNumber: asset.pageNumber,
+          sizeBytes: asset.sizeBytes,
+        });
+
+        if (!directUpload) {
+          return null;
+        }
+
+        return {
+          confirmPath: `/api/mobile/jobs/${job.id}/pages/${asset.pageNumber}/complete`,
+          headers: directUpload.headers,
+          method: 'PUT' as const,
+          pageNumber: asset.pageNumber,
+          uploadUrl: directUpload.uploadUrl,
+        };
+      })
+    );
+
+    if (pages.some((page) => page === null)) {
+      return buildServerTranslationJobUpload(job);
+    }
+
+    return {
+      expiresAt: job.expiresAt,
+      method: 'PUT' as const,
+      mode: 'direct_object_storage' as const,
+      pages: pages.filter((page): page is NonNullable<typeof page> =>
+        Boolean(page)
+      ),
+    };
+  } catch (error) {
+    log.error({
+      err: error,
+      jobId: job.id,
+      message: 'Failed to create direct mobile job page upload URLs',
+      scope: 'jobs',
+      type: 'mutation',
+    });
+
+    return buildServerTranslationJobUpload(job);
+  }
 }
 
 export async function uploadTranslationJobPage(
@@ -546,6 +613,141 @@ export async function uploadTranslationJobPage(
       },
       select: translationJobSelect,
     });
+  });
+
+  return zTranslationJobSummary.parse(buildTranslationJobSummary(updatedJob));
+}
+
+export async function completeDirectTranslationJobPageUpload(
+  rawInput: unknown,
+  deps: {
+    actor: MobileJobActor;
+    dbClient?: typeof db;
+    log?: Pick<typeof logger, 'error' | 'info'>;
+    now?: Date;
+  }
+) {
+  const input = zTranslationJobPageUploadInput.parse(rawInput);
+  const dbClient = deps.dbClient ?? db;
+  const log = deps.log ?? logger;
+  const now = deps.now ?? new Date();
+  const startedAt = Date.now();
+  const job = await getAuthorizedJob(input.jobId, deps.actor, {
+    dbClient,
+  });
+
+  if (job.status !== 'awaiting_upload' && job.status !== 'created') {
+    throw new TranslationJobError('invalid_job_state', 409);
+  }
+
+  if (job.expiresAt && job.expiresAt <= now) {
+    await dbClient.translationJob.update({
+      where: { id: job.id },
+      data: {
+        errorCode: 'upload_expired',
+        errorMessage: 'The upload window has expired for this job.',
+        failedAt: now,
+        status: 'expired',
+      },
+    });
+
+    throw new TranslationJobError('upload_expired', 410);
+  }
+
+  const pageAsset = job.assets.find(
+    (asset) =>
+      asset.kind === 'page_upload' && asset.pageNumber === input.pageNumber
+  );
+
+  if (
+    !pageAsset?.originalFileName ||
+    !pageAsset.mimeType ||
+    !pageAsset.sizeBytes
+  ) {
+    throw new TranslationJobError('invalid_upload', 404);
+  }
+
+  const contentType = pageAsset.mimeType.trim();
+
+  if (!/^image\/[a-z0-9.+-]+$/i.test(contentType)) {
+    throw new TranslationJobError('invalid_upload', 400);
+  }
+
+  const upload = buildJobUploadObjectStorageTarget({
+    fileName: pageAsset.originalFileName,
+    jobId: job.id,
+    pageNumber: input.pageNumber,
+  });
+  let objectMetadata;
+
+  try {
+    objectMetadata = await headTranslationJobPageUpload(upload);
+  } catch (error) {
+    log.error({
+      err: error,
+      jobId: job.id,
+      message: 'Failed to verify direct mobile job page upload',
+      objectKey: upload.objectKey,
+      pageNumber: input.pageNumber,
+      totalDurationMs: Date.now() - startedAt,
+      type: 'mutation',
+    });
+
+    throw new TranslationJobError('invalid_upload', 409);
+  }
+
+  if (objectMetadata.contentLength !== pageAsset.sizeBytes) {
+    throw new TranslationJobError('invalid_upload', 409, {
+      details: {
+        actualSizeBytes: objectMetadata.contentLength,
+        expectedSizeBytes: pageAsset.sizeBytes,
+      },
+      message: 'The direct page upload size did not match the expected page.',
+    });
+  }
+
+  const storedContentType = objectMetadata.contentType?.trim() || contentType;
+
+  if (!/^image\/[a-z0-9.+-]+$/i.test(storedContentType)) {
+    throw new TranslationJobError('invalid_upload', 409);
+  }
+
+  const updatedJob = await dbClient.$transaction(async (tx) => {
+    await tx.jobAsset.update({
+      where: {
+        id: pageAsset.id,
+      },
+      data: {
+        bucketName: upload.bucketName,
+        metadata: mergeAssetMetadata(pageAsset.metadata, {
+          uploadedAt: now.toISOString(),
+          uploadMode: 'direct_object_storage',
+          uploadStatus: 'uploaded',
+        }) as Prisma.InputJsonValue,
+        mimeType: storedContentType,
+        objectKey: upload.objectKey,
+        sizeBytes: objectMetadata.contentLength,
+      },
+    });
+
+    return await tx.translationJob.findUniqueOrThrow({
+      where: {
+        id: job.id,
+      },
+      select: translationJobSelect,
+    });
+  });
+
+  log.info({
+    bucketName: upload.bucketName,
+    contentType: storedContentType,
+    jobId: job.id,
+    message: 'Confirmed direct mobile job page upload',
+    objectKey: upload.objectKey,
+    pageNumber: input.pageNumber,
+    sizeBytes: objectMetadata.contentLength,
+    totalDurationMs: Date.now() - startedAt,
+    type: 'mutation',
   });
 
   return zTranslationJobSummary.parse(buildTranslationJobSummary(updatedJob));
