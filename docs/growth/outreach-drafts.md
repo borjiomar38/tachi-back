@@ -404,3 +404,27 @@ Best,
 Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+### Android Central apps coverage
+
+Category: press
+Contact path: tips@androidcentral.com, selected as the public tips route after current public review found Android Central's about page describing Android apps, help, and how-to coverage plus contactable staff paths.
+Rationale: Android Central reaches Android users who look for practical app guidance, reviews, and setup help; Nayovi fits as a hands-on APK workflow with hosted OCR, activation, trial access, pricing, and permission-safe positioning.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Review access for Nayovi Android manga translation APK
+
+Hi Android Central editorial team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+I am reaching out because Android Central covers Android apps, reader-friendly how-to guidance, and practical mobile workflows. The fit is a hands-on app angle: official APK install, redeem-code activation, free trial access, monthly token plans, and a clear support path on tachiyomiat.com.
+
+Nayovi does not host or distribute chapters. It focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+If this is useful for an Android app review, setup walkthrough, or reader-workflow mention, I can send screenshots, pricing context, a short founder note, and a reviewer code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
