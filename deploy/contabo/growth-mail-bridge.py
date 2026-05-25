@@ -405,7 +405,9 @@ def is_status_request(
   if not config.status_reply_enabled or message_has_attachments(message):
     return False
 
-  owner_text = normalize_status_text(body) or normalize_status_text(subject)
+  owner_text = normalize_status_text(strip_status_signature(body)) or normalize_status_text(
+    subject
+  )
   if not owner_text or len(owner_text) > 500:
     return False
 
@@ -414,10 +416,86 @@ def is_status_request(
   if not any(keyword and keyword in combined for keyword in keywords):
     return False
 
+  if any(
+    is_plain_status_request(candidate)
+    for candidate in status_request_candidates(subject, body)
+  ):
+    return True
+
   if looks_like_specific_owner_request(owner_text):
     return False
 
   return True
+
+
+def status_request_candidates(subject: str, body: str) -> list[str]:
+  candidates = [
+    normalize_status_text(strip_status_signature(body)),
+    normalize_status_text(subject),
+  ]
+  first_line = first_meaningful_line(body)
+
+  if first_line and remaining_lines_look_like_signature(body):
+    candidates.append(normalize_status_text(first_line))
+
+  return [candidate for candidate in candidates if candidate]
+
+
+def strip_status_signature(value: str) -> str:
+  lines = value.splitlines()
+  kept: list[str] = []
+
+  for line in lines:
+    stripped = line.strip()
+    normalized = normalize_status_text(stripped)
+    if not stripped and kept:
+      kept.append(line)
+      continue
+    if normalized in {'borji omar', 'senior frontend developer'}:
+      break
+    if stripped.startswith(('--', '—')):
+      break
+    if stripped.startswith(('*Borji', '📧', '📱')):
+      break
+    kept.append(line)
+
+  return '\n'.join(kept).strip()
+
+
+def first_meaningful_line(value: str) -> str:
+  for line in value.splitlines():
+    stripped = line.strip()
+    if stripped:
+      return stripped
+
+  return ''
+
+
+def remaining_lines_look_like_signature(value: str) -> bool:
+  lines = [line.strip() for line in value.splitlines() if line.strip()]
+  if len(lines) <= 1:
+    return True
+
+  tail = lines[1:]
+  if len(tail) > 8:
+    return False
+
+  signature_hits = 0
+  for line in tail:
+    normalized = normalize_status_text(line)
+    if (
+      '@' in line
+      or re.search(r'\+?\d[\d\s().-]{5,}', line)
+      or normalized in {'borji omar', 'senior frontend developer'}
+      or normalized.startswith(('borji ', 'senior ', 'frontend '))
+      or line.startswith(('*', '📧', '📱'))
+    ):
+      signature_hits += 1
+      continue
+
+    return False
+
+  return signature_hits > 0
 
 
 def looks_like_specific_owner_request(owner_text: str) -> bool:
