@@ -2161,6 +2161,49 @@ async function cleanupCompletedJobPageUploads(input: {
     return;
   }
 
+  if (envServer.TRANSLATION_QA_AGENT_ENABLED) {
+    const qaRetentionExpiresAt = new Date(
+      input.now.getTime() +
+        envServer.TRANSLATION_QA_UPLOAD_RETENTION_HOURS * 60 * 60 * 1000
+    ).toISOString();
+
+    try {
+      await Promise.all(
+        uploadedAssets.map((asset) =>
+          input.dbClient.jobAsset.update({
+            where: {
+              id: asset.id,
+            },
+            data: {
+              metadata: mergeAssetMetadata(asset.metadata, {
+                qaRetainedAt: input.now.toISOString(),
+                qaRetentionExpiresAt,
+                qaStatus: 'pending',
+                storageStatus: 'retained_for_translation_qa',
+              }),
+            },
+          })
+        )
+      );
+
+      input.log.info({
+        jobId: input.jobId,
+        message: 'Retained completed job page uploads for translation QA',
+        retainedPageCount: uploadedAssets.length,
+        scope: 'jobs',
+      });
+    } catch (error) {
+      input.log.error({
+        err: error,
+        jobId: input.jobId,
+        message: 'Failed to mark completed job page uploads for translation QA',
+        scope: 'jobs',
+      });
+    }
+
+    return;
+  }
+
   try {
     await deleteTranslationJobPageUploads({
       objects: uploadedAssets.map((asset) => ({

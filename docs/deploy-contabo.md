@@ -270,6 +270,50 @@ After changing the env file:
 sudo systemctl restart tachi-growth-mail-bridge
 ```
 
+## Translation QA Agent
+
+The Contabo host can run a second, separate Codex agent for translation quality
+analysis. This agent does not work on Git branches and does not modify source
+code. It scans completed translation jobs, downloads the retained original page
+images plus the OCR/debug artifacts, asks Codex CLI for a structured QA report,
+stores that report as a `translation-qa-report.json` job debug artifact, and
+only then deletes the original page uploads from object storage.
+
+Install from the deployed source tree:
+
+```bash
+cd /opt/tachi-back
+sudo TACHI_DEPLOY_USER=borjiomar38 deploy/contabo/install-translation-qa-agent.sh --enable
+```
+
+Important defaults:
+
+```env
+TRANSLATION_QA_AGENT_ENABLED=true
+TRANSLATION_QA_UPLOAD_RETENTION_HOURS=168
+TRANSLATION_QA_AGENT_RUN_FOREVER=true
+TRANSLATION_QA_AGENT_INTERVAL_SECONDS=300
+TRANSLATION_QA_AGENT_CODEX_MODEL=gpt-5.5
+TRANSLATION_QA_AGENT_CODEX_REASONING_EFFORT=low
+TRANSLATION_QA_AGENT_CODEX_SANDBOX=danger-full-access
+```
+
+When `TRANSLATION_QA_AGENT_ENABLED=true`, completed job uploads are marked
+`retained_for_translation_qa` instead of being deleted by the normal job
+finalizer. The QA service later marks them `deleted` after its report has been
+stored. Reports and run files live under
+`/var/lib/tachi-translation-qa-agent`; service logs are available through
+systemd.
+
+Operational commands:
+
+```bash
+sudo systemctl status tachi-translation-qa-agent --no-pager
+sudo journalctl -u tachi-translation-qa-agent -f
+sudo systemctl restart tachi-translation-qa-agent
+sudo touch /var/lib/tachi-translation-qa-agent/run-now
+```
+
 The LWS mailbox helper uses `/opt/tachi-back/.env.lws`, which is expected to be
 IP-restricted to the Contabo server:
 
