@@ -296,6 +296,8 @@ TRANSLATION_QA_AGENT_INTERVAL_SECONDS=300
 TRANSLATION_QA_AGENT_CODEX_MODEL=gpt-5.5
 TRANSLATION_QA_AGENT_CODEX_REASONING_EFFORT=low
 TRANSLATION_QA_AGENT_CODEX_SANDBOX=danger-full-access
+TRANSLATION_QA_AGENT_REWRITE_DATABASE_URL=true
+TRANSLATION_QA_AGENT_POSTGRES_CONTAINER=tachi-production-postgres
 ```
 
 When `TRANSLATION_QA_AGENT_ENABLED=true`, completed job uploads are marked
@@ -303,7 +305,9 @@ When `TRANSLATION_QA_AGENT_ENABLED=true`, completed job uploads are marked
 finalizer. The QA service later marks them `deleted` after its report has been
 stored. Reports and run files live under
 `/var/lib/tachi-translation-qa-agent`; service logs are available through
-systemd.
+systemd. Because the production Postgres hostname is normally a Docker-network
+alias, the host-side QA service rewrites `postgres:5432` to the current
+`tachi-production-postgres` container IP at startup.
 
 Operational commands:
 

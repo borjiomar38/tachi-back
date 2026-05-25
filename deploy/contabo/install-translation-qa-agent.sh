@@ -38,7 +38,7 @@ ensure_env_default() {
 
 install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-translation-qa-agent.sh" /usr/local/bin/tachi-translation-qa-agent
 apt-get update
-apt-get install -y ca-certificates file git jq ripgrep
+apt-get install -y ca-certificates file git jq python3 ripgrep
 
 install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/lib/tachi-translation-qa-agent
 install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/lib/tachi-translation-qa-agent/work
@@ -55,6 +55,8 @@ TRANSLATION_QA_AGENT_CODEX_MODEL=gpt-5.5
 TRANSLATION_QA_AGENT_CODEX_REASONING_EFFORT=low
 TRANSLATION_QA_AGENT_CODEX_SANDBOX=danger-full-access
 TRANSLATION_QA_AGENT_APP_ENV_FILE=${APP_ENV_FILE}
+TRANSLATION_QA_AGENT_REWRITE_DATABASE_URL=true
+TRANSLATION_QA_AGENT_POSTGRES_CONTAINER=tachi-production-postgres
 TRANSLATION_QA_AGENT_STATE_DIR=/var/lib/tachi-translation-qa-agent
 TRANSLATION_QA_AGENT_LOG_DIR=/var/log/tachi-translation-qa-agent
 TRANSLATION_QA_AGENT_TRIGGER_FILE=/var/lib/tachi-translation-qa-agent/run-now
@@ -69,11 +71,17 @@ ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_CODEX_MODEL gpt-5.5
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_CODEX_REASONING_EFFORT low
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_CODEX_SANDBOX danger-full-access
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_APP_ENV_FILE "${APP_ENV_FILE}"
+ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_REWRITE_DATABASE_URL true
+ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_POSTGRES_CONTAINER tachi-production-postgres
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_STATE_DIR /var/lib/tachi-translation-qa-agent
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_LOG_DIR /var/log/tachi-translation-qa-agent
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_TRIGGER_FILE /var/lib/tachi-translation-qa-agent/run-now
 chmod 600 "${ENV_FILE}"
 chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
+
+if [[ "${TRANSLATION_QA_AGENT_INSTALL_NODE_MODULES:-true}" == "true" ]]; then
+  sudo -u "${DEPLOY_USER}" bash -lc "cd '${APP_DIR}' && pnpm install --frozen-lockfile"
+fi
 
 if [[ -f "${APP_ENV_FILE}" ]]; then
   ensure_env_default "${APP_ENV_FILE}" TRANSLATION_QA_AGENT_ENABLED true
