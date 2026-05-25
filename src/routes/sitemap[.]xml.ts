@@ -55,12 +55,21 @@ const staticSitemapEntryOverrides: Record<
   '/how-it-works': {
     priority: '0.8',
   },
+  '/support': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-25',
+    priority: '0.8',
+  },
   '/guides/mihon-nayovi-setup': {
-    lastModified: '2026-05-14',
+    lastModified: '2026-05-25',
     priority: '0.8',
   },
   '/guides/mihon-tachiyomiat-setup': {
-    lastModified: '2026-05-14',
+    lastModified: '2026-05-25',
+    priority: '0.8',
+  },
+  '/guides/translation-support-workflow': {
+    lastModified: '2026-05-25',
     priority: '0.8',
   },
   '/legal/privacy': {

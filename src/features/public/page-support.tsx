@@ -1,5 +1,6 @@
 import {
   ArrowRightIcon,
+  FileCheck2Icon,
   MailIcon,
   MessageCircleIcon,
   ShieldCheckIcon,
@@ -24,6 +25,24 @@ import {
   supportFaqs,
 } from '@/features/public/data';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
+
+const reviewerRequestItems = [
+  {
+    title: 'Review-code access',
+    description:
+      'Android blogs, affiliates, communities, and directory editors can request a dedicated redeem code before testing the APK, free trial, token plans, or hosted translation flow.',
+  },
+  {
+    title: 'Evidence pack',
+    description:
+      'Ask for current screenshots, narrated demo context, pricing notes, APK source details, and permission-safe usage language before publishing a review or listing.',
+  },
+  {
+    title: 'Qualified pilot routing',
+    description:
+      'Use this support path for small reading-group pilots, publisher-approved samples, or affiliate tests that need clear disclosure and measurable install-to-paid signals.',
+  },
+] as const;
 
 export const PageSupport = () => {
   return (
@@ -111,6 +130,50 @@ export const PageSupport = () => {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Review access"
+        title="Reviewer and partner requests"
+        description="Use support when a public review, directory listing, affiliate test, or approved sample pilot needs a verifiable Nayovi contact path."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerRequestItems.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <FileCheck2Icon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href={`mailto:${PUBLIC_SUPPORT_EMAIL}?subject=Nayovi%20review%20code%20request`}
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Request review code
+              <MailIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/translate-manhwa-ai"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Product evidence
+          </a>
+          <a
+            href="/guides/translation-support-workflow"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Translation workflow
+          </a>
         </div>
       </PublicSection>
 
