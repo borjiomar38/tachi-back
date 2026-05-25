@@ -60,6 +60,7 @@ TRANSLATION_QA_AGENT_POSTGRES_CONTAINER=tachi-production-postgres
 TRANSLATION_QA_AGENT_STATE_DIR=/var/lib/tachi-translation-qa-agent
 TRANSLATION_QA_AGENT_LOG_DIR=/var/log/tachi-translation-qa-agent
 TRANSLATION_QA_AGENT_TRIGGER_FILE=/var/lib/tachi-translation-qa-agent/run-now
+LOGGER_LEVEL=error
 EOF
 fi
 
@@ -76,6 +77,7 @@ ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_POSTGRES_CONTAINER tachi-p
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_STATE_DIR /var/lib/tachi-translation-qa-agent
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_LOG_DIR /var/log/tachi-translation-qa-agent
 ensure_env_default "${ENV_FILE}" TRANSLATION_QA_AGENT_TRIGGER_FILE /var/lib/tachi-translation-qa-agent/run-now
+ensure_env_default "${ENV_FILE}" LOGGER_LEVEL error
 chmod 600 "${ENV_FILE}"
 chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
 
