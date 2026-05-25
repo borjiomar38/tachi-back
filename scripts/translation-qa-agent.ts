@@ -79,6 +79,14 @@ type DownloadedPage = {
   sizeBytes: number | null;
 };
 
+type MissingPageUpload = {
+  assetId: string;
+  errorMessage: string;
+  objectKey: string;
+  originalFileName: string | null;
+  pageNumber: number | null;
+};
+
 type QaHeuristicIssue = {
   blockIndex?: number;
   kind: string;
@@ -162,19 +170,21 @@ async function prepareNextQaJob(options: CliOptions) {
   const ocrDebug = ocrDebugAsset
     ? await getTranslationJobJsonAsset(ocrDebugAsset)
     : null;
-  const downloadedPages = await downloadPageUploads({
+  const pageDownload = await downloadPageUploads({
     pageUploadAssets,
     workDir: options.workDir,
   });
   const heuristicReport = buildHeuristicReport({
     job,
     manifest,
+    missingPageUploads: pageDownload.missingPageUploads,
     ocrDebugAvailable: Boolean(ocrDebug),
     top: options.top,
   });
   const context = buildQaContext({
-    downloadedPages,
+    downloadedPages: pageDownload.downloadedPages,
     job,
+    missingPageUploads: pageDownload.missingPageUploads,
     ocrDebugAsset,
     pageUploadAssets,
     resultManifestAsset,
@@ -397,12 +407,16 @@ function isProcessableQaCandidate(job: CandidateJob) {
 
 function findRetainedPageUploadAssets(job: CandidateJob) {
   return job.assets
-    .filter(
-      (asset): asset is StoredObjectAsset =>
+    .filter((asset): asset is StoredObjectAsset => {
+      const storageStatus = getMetadataString(asset.metadata, 'storageStatus');
+
+      return (
         asset.kind === JobAssetKind.page_upload &&
         Boolean(asset.bucketName && asset.objectKey) &&
-        getMetadataString(asset.metadata, 'storageStatus') !== 'deleted'
-    )
+        storageStatus !== 'deleted' &&
+        storageStatus !== 'missing'
+      );
+    })
     .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
 }
 
@@ -445,32 +459,52 @@ async function downloadPageUploads(input: {
   await mkdir(pageDir, { recursive: true });
 
   const downloadedPages: DownloadedPage[] = [];
+  const missingPageUploads: MissingPageUpload[] = [];
 
   for (const asset of input.pageUploadAssets) {
-    const object = await getTranslationJobPageUpload({
-      bucketName: asset.bucketName,
-      objectKey: asset.objectKey,
-    });
-    const pagePath = path.join(pageDir, buildDownloadedPageFileName(asset));
-    await writeFile(pagePath, Buffer.from(await object.blob.arrayBuffer()));
-    downloadedPages.push({
-      assetId: asset.id,
-      checksumSha256: asset.checksumSha256,
-      localPath: pagePath,
-      mimeType: asset.mimeType,
-      objectKey: asset.objectKey,
-      originalFileName: asset.originalFileName,
-      pageNumber: asset.pageNumber,
-      sizeBytes: asset.sizeBytes,
-    });
+    try {
+      const object = await getTranslationJobPageUpload({
+        bucketName: asset.bucketName,
+        objectKey: asset.objectKey,
+      });
+      const pagePath = path.join(pageDir, buildDownloadedPageFileName(asset));
+      await writeFile(pagePath, Buffer.from(await object.blob.arrayBuffer()));
+      downloadedPages.push({
+        assetId: asset.id,
+        checksumSha256: asset.checksumSha256,
+        localPath: pagePath,
+        mimeType: asset.mimeType,
+        objectKey: asset.objectKey,
+        originalFileName: asset.originalFileName,
+        pageNumber: asset.pageNumber,
+        sizeBytes: asset.sizeBytes,
+      });
+    } catch (error) {
+      const errorMessage = getErrorMessage(error);
+      await markPageUploadMissing({
+        asset,
+        errorMessage,
+      });
+      missingPageUploads.push({
+        assetId: asset.id,
+        errorMessage,
+        objectKey: asset.objectKey,
+        originalFileName: asset.originalFileName,
+        pageNumber: asset.pageNumber,
+      });
+    }
   }
 
-  return downloadedPages;
+  return {
+    downloadedPages,
+    missingPageUploads,
+  };
 }
 
 function buildHeuristicReport(input: {
   job: CandidateJob;
   manifest: TranslationJobResultManifest;
+  missingPageUploads: MissingPageUpload[];
   ocrDebugAvailable: boolean;
   top: number;
 }) {
@@ -491,6 +525,18 @@ function buildHeuristicReport(input: {
       },
     })),
     ...detectTranslationQaIssues(input.manifest),
+    ...input.missingPageUploads.map(
+      (pageUpload) =>
+        ({
+          kind: 'source_page_upload_missing',
+          message:
+            'The original uploaded page object is missing from object storage, so visual QA for this page is unavailable.',
+          pageKey:
+            pageUpload.originalFileName ??
+            `page-${pageUpload.pageNumber ?? 'unknown'}`,
+          severity: 'warning',
+        }) satisfies QaHeuristicIssue
+    ),
     ...(input.ocrDebugAvailable
       ? []
       : [
@@ -607,6 +653,7 @@ function detectTranslationQaIssues(manifest: TranslationJobResultManifest) {
 function buildQaContext(input: {
   downloadedPages: DownloadedPage[];
   job: CandidateJob;
+  missingPageUploads: MissingPageUpload[];
   ocrDebugAsset: StoredObjectAsset | null;
   pageUploadAssets: StoredObjectAsset[];
   resultManifestAsset: StoredObjectAsset;
@@ -633,8 +680,28 @@ function buildQaContext(input: {
     },
     downloadedPages: input.downloadedPages,
     job: buildJobSummary(input.job),
+    missingPageUploads: input.missingPageUploads,
     version: 'translation-qa-context.v1',
   };
+}
+
+async function markPageUploadMissing(input: {
+  asset: StoredObjectAsset;
+  errorMessage: string;
+}) {
+  await db.jobAsset.update({
+    data: {
+      metadata: mergeMetadata(input.asset.metadata, {
+        missingAt: new Date().toISOString(),
+        missingError: truncateSnippet(input.errorMessage, 500),
+        qaStatus: 'source_upload_missing',
+        storageStatus: 'missing',
+      }),
+    },
+    where: {
+      id: input.asset.id,
+    },
+  });
 }
 
 function buildJobSummary(job: CandidateJob) {
@@ -941,6 +1008,10 @@ function truncateSnippet(value: string | undefined, maxLength = 180) {
   return normalized.length <= maxLength
     ? normalized
     : `${normalized.slice(0, maxLength - 3)}...`;
+}
+
+function getErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : String(error);
 }
 
 function parseArgs(args: string[]): CliOptions {
