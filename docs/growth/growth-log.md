@@ -2,6 +2,10 @@
 
 ## 2026-05-25
 
+- Autonomous cycle on `growth/autonomous-20260525T130153Z`: processed owner inbound command `20260525T130128Z-10fe41f09f95` asking for an update and continued the safe growth cycle.
+- Added a review/affiliate disclosure block to `/translate-manhwa-ai` so Android reviewers, affiliates, and community pilots can verify review-code terms, disclosure expectations, and outcome metrics before sending qualified readers to Nayovi.
+- Auto-approved and contacted Talk Android app reviews after current public verification found its contact page routes review requests to Peter Holden, Editor in Chief, at `peter.h@talkandroid.com`; sent an individualized review-code pitch with permission-safe positioning and opt-out language.
+- Updated the backlink tracker and outreach log with Talk Android contacted status, rationale, final body, and follow-up guardrails.
 - Autonomous cycle on `growth/autonomous-20260525T101824Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, existing outreach history, and current public Aptoide submission docs.
 - Added an alternative Android store readiness section to `/translate-manhwa-ai` so Aptoide-style store reviewers can understand developer-owned listing requirements, install decision context, and why Nayovi should avoid a mirror-first funnel.
 - Added Aptoide Connect as a high-priority distribution prospect after current public verification showed Aptoide Connect supports Android distribution across Aptoide products and partner stores, and its docs describe app file upload, metadata, ownership, country/channel, and manual admin review steps.
