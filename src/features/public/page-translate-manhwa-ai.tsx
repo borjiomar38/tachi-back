@@ -200,6 +200,24 @@ const directoryReadinessRows = [
   },
 ] as const;
 
+const storeReadinessRows = [
+  {
+    requirement: 'Developer-owned listing',
+    detail:
+      'Alternative stores should list Nayovi only from the official developer path, with tachiyomiat.com and nayovi.com kept as the source of truth.',
+  },
+  {
+    requirement: 'Install decision context',
+    detail:
+      'The listing should make the free trial, redeem-code activation, monthly token plans, and support route clear before readers install.',
+  },
+  {
+    requirement: 'No mirror-first funnel',
+    detail:
+      'Nayovi should use app stores for qualified discovery while still sending trust, pricing, and support questions back to the official site.',
+  },
+] as const;
+
 const proofRows = [
   {
     signal: 'Before installing',
@@ -549,6 +567,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Check APK details
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Alternative stores"
+        title="Ready for official Android store submissions"
+        description="Nayovi can pursue qualified Android discovery without turning the product into an anonymous APK mirror. The right listing keeps ownership, support, and pricing verifiable."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {storeReadinessRows.map((row) => (
+            <Card key={row.requirement} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.requirement}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Submission-first, mirror-last
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A responsible alternative-store listing should verify developer
+                ownership, show accurate app metadata, and preserve the
+                official download, pricing, and support path for paid users.
+              </p>
+            </div>
+            <a
+              href="/download"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Review APK details
             </a>
           </CardContent>
         </Card>
