@@ -137,6 +137,7 @@ async function buildTranslationQaRecord(
   const chapterIdentity = normalizeChapterIdentity(
     reportJob?.chapterIdentity ?? asset.job.chapterIdentity
   );
+  const chapterNumber = extractChapterNumber(chapterIdentity);
   const issueCounts = countIssueSeverities(codexReport.issues);
 
   return {
@@ -144,6 +145,7 @@ async function buildTranslationQaRecord(
     item: {
       assetId: asset.id,
       chapterIdentity,
+      chapterNumber,
       cleanupAnalysisCompleted: codexReport.cleanupAnalysisCompleted,
       cleanupCanDeleteOriginalUploads:
         codexReport.cleanupCanDeleteOriginalUploads,
@@ -176,11 +178,14 @@ function buildUnavailableTranslationQaRecord(
   asset: QaReportAssetRow,
   summary: string
 ): TranslationQaRecord {
+  const chapterIdentity = normalizeChapterIdentity(asset.job.chapterIdentity);
+
   return {
     issues: [],
     item: {
       assetId: asset.id,
-      chapterIdentity: normalizeChapterIdentity(asset.job.chapterIdentity),
+      chapterIdentity,
+      chapterNumber: extractChapterNumber(chapterIdentity),
       cleanupAnalysisCompleted: null,
       cleanupCanDeleteOriginalUploads: null,
       criticalIssueCount: 0,
@@ -201,6 +206,28 @@ function buildUnavailableTranslationQaRecord(
       warningIssueCount: 0,
     },
   };
+}
+
+function extractChapterNumber(
+  chapterIdentity: TranslationQaListItem['chapterIdentity']
+) {
+  const candidates = [
+    chapterIdentity?.chapterName,
+    chapterIdentity?.chapterUrl,
+  ].filter((value): value is string => typeof value === 'string');
+
+  for (const candidate of candidates) {
+    const match =
+      candidate.match(/chapter[\s/_-]*(\d+(?:\.\d+)?)/i) ??
+      candidate.match(/chapitre[\s/_-]*(\d+(?:\.\d+)?)/i) ??
+      candidate.match(/(?:^|[\s/_-])(\d+(?:\.\d+)?)(?:$|[\s/_-])/);
+
+    if (match?.[1]) {
+      return match[1];
+    }
+  }
+
+  return null;
 }
 
 function parseCodexReport(rawCodexReport: unknown) {

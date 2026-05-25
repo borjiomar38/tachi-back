@@ -113,6 +113,7 @@ export const zBackofficeTranslationQaListItem = z.object({
       sourceName: z.string().nullish(),
     })
     .nullish(),
+  chapterNumber: z.string().nullish(),
   cleanupAnalysisCompleted: z.boolean().nullish(),
   cleanupCanDeleteOriginalUploads: z.boolean().nullish(),
   criticalIssueCount: z.number().int().nonnegative(),

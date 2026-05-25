@@ -106,6 +106,7 @@ describe('translation QA router', () => {
       expect(result.items).toHaveLength(2);
       expect(result.items[0]).toMatchObject({
         assetId: 'qa-asset-1',
+        chapterNumber: '12',
         cleanupCanDeleteOriginalUploads: false,
         criticalIssueCount: 1,
         issueCount: 2,
