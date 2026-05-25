@@ -218,6 +218,24 @@ const proofRows = [
   },
 ] as const;
 
+const citationRows = [
+  {
+    field: 'Product summary',
+    value:
+      'Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.',
+  },
+  {
+    field: 'Best-fit audience',
+    value:
+      'Android readers, app reviewers, affiliates, and communities that need a TachiyomiAT, Tachiyomi, or Mihon-style translation path.',
+  },
+  {
+    field: 'Responsible use',
+    value:
+      'Use Nayovi with owned content, public-domain material, official samples, or content the reader has permission to process.',
+  },
+] as const;
+
 const installConfidenceRows = [
   {
     concern: 'Is this the real app?',
@@ -570,6 +588,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Verify download path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Citation ready"
+        title="Short facts for listings and articles"
+        description="Directories, Android blogs, affiliates, and community moderators can cite Nayovi consistently without guessing what the product does or what usage it supports."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {citationRows.map((row) => (
+            <Card key={row.field} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.field}</CardTitle>
+                <CardDescription>{row.value}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Best citation path
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Link readers to the official download or pricing page, mention
+                the free trial before paid token plans, and request a review
+                code when testing the hosted translation workflow publicly.
+              </p>
+            </div>
+            <a
+              href="/#contact"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request citation details
             </a>
           </CardContent>
         </Card>

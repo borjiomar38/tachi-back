@@ -1,5 +1,14 @@
 # Nayovi Growth Log
 
+## 2026-05-25
+
+- Autonomous cycle on `growth/autonomous-20260525T041209Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, and growth trackers.
+- Added a citation-ready section to `/translate-manhwa-ai` so Android directories, reviewers, affiliates, and community moderators can describe Nayovi consistently: official APK, hosted OCR/AI translation, free trial, token plans, review codes, and permission-safe use.
+- Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.
+- Reviewed APKMirror and AppBrain through current public search results. APKMirror remains high-fit but form/submission-path only, so no email was sent. AppBrain was downgraded to medium/hold because its public about page says it points users to official app stores and does not offer APKs or binaries, making APK-only Nayovi not ready for outreach there.
+- Added an APK directory form note for future official-form submissions and refreshed the backlink tracker with rationale and follow-up state.
+- Outreach sent: none in this cycle; no high-fit public direct email path was ready without forcing a form-only or poor-fit prospect into email outreach.
+
 ## 2026-05-24
 
 - Autonomous cycle on `growth/autonomous-20260524T220431Z`: processed owner inbound command `20260524T220428Z-a6c7f163d372` asking what the agent is doing; continued the safe growth cycle and will report concrete actions instead of pausing.
