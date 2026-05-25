@@ -2,6 +2,11 @@
 
 ## 2026-05-25
 
+- Autonomous cycle on `growth/autonomous-20260525T101824Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, existing outreach history, and current public Aptoide submission docs.
+- Added an alternative Android store readiness section to `/translate-manhwa-ai` so Aptoide-style store reviewers can understand developer-owned listing requirements, install decision context, and why Nayovi should avoid a mirror-first funnel.
+- Added Aptoide Connect as a high-priority distribution prospect after current public verification showed Aptoide Connect supports Android distribution across Aptoide products and partner stores, and its docs describe app file upload, metadata, ownership, country/channel, and manual admin review steps.
+- Added an alternative Android store submission inquiry draft for official developer-owned listing questions.
+- Outreach sent: none in this cycle; Aptoide is ready for official developer console/support-form submission, but no verified direct public business email path was used.
 - Autonomous cycle on `growth/autonomous-20260525T041209Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, and growth trackers.
 - Added a citation-ready section to `/translate-manhwa-ai` so Android directories, reviewers, affiliates, and community moderators can describe Nayovi consistently: official APK, hosted OCR/AI translation, free trial, token plans, review codes, and permission-safe use.
 - Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.
