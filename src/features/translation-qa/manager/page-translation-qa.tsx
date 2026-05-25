@@ -376,6 +376,7 @@ function getChapterTitle(item: {
 }
 
 function getChapterSubtitle(item: {
+  chapterNumber?: string | null;
   chapterIdentity?:
     | {
         chapterName?: string | null;
@@ -391,7 +392,9 @@ function getChapterSubtitle(item: {
   }
 
   return [
-    item.chapterIdentity.chapterName ?? 'Unknown chapter',
+    item.chapterNumber
+      ? `Chapter ${item.chapterNumber}`
+      : (item.chapterIdentity.chapterName ?? 'Unknown chapter'),
     item.chapterIdentity.sourceName ?? 'Unknown source',
     item.chapterIdentity.chapterUrl,
   ]
