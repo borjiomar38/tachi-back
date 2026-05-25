@@ -315,6 +315,24 @@ export async function getTranslationJobResultManifest(input: {
   );
 }
 
+export async function getTranslationJobJsonAsset(input: {
+  bucketName: string;
+  objectKey: string;
+}) {
+  if (input.bucketName === INLINE_STORAGE_BUCKET) {
+    const inline = parseInlineObjectKey(input.objectKey);
+
+    return JSON.parse(Buffer.from(inline.body).toString('utf8')) as unknown;
+  }
+
+  const object = await getObject(uploadClient, {
+    bucket: input.bucketName,
+    key: input.objectKey,
+  });
+
+  return JSON.parse(await object.blob.text()) as unknown;
+}
+
 function sanitizeFileName(fileName: string) {
   const normalized = fileName
     .trim()

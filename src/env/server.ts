@@ -140,6 +140,12 @@ const envServerBase = createEnv({
       .positive()
       .default(900),
     JOB_RESULT_RETENTION_HOURS: z.coerce.number().int().positive().default(24),
+    TRANSLATION_QA_AGENT_ENABLED: z.stringbool().default(true),
+    TRANSLATION_QA_UPLOAD_RETENTION_HOURS: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(168),
     CHECKOUT_RATE_LIMIT_MAX_ATTEMPTS: z.coerce
       .number()
       .int()
