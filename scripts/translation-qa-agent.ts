@@ -848,10 +848,11 @@ function isPendingQaCandidate(input: {
   job: CandidateJob;
   minRetainedAt: Date;
 }) {
-  return (
-    findRetainedPageUploadAssets(input.job, input.minRetainedAt).length > 0 &&
-    !findJsonDebugArtifact(input.job, QA_REPORT_ARTIFACT_NAME)
-  );
+  if (!input.job.completedAt || input.job.completedAt < input.minRetainedAt) {
+    return false;
+  }
+
+  return !findJsonDebugArtifact(input.job, QA_REPORT_ARTIFACT_NAME);
 }
 
 function findRetainedPageUploadAssets(job: CandidateJob, minRetainedAt: Date) {
