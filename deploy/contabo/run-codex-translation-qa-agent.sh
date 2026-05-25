@@ -23,6 +23,71 @@ log() {
   printf '[%s] %s\n' "$(date -Is)" "$*"
 }
 
+rewrite_database_url() {
+  local database_url="$1"
+  local host="$2"
+
+  python3 - "${database_url}" "${host}" <<'PY'
+import sys
+from urllib.parse import urlsplit, urlunsplit
+
+database_url = sys.argv[1]
+replacement_host = sys.argv[2]
+parts = urlsplit(database_url)
+userinfo, separator, hostport = parts.netloc.rpartition("@")
+
+if hostport.startswith("["):
+    end = hostport.find("]")
+    hostname = hostport[1:end]
+    port = hostport[end + 2:] if len(hostport) > end + 1 and hostport[end + 1] == ":" else ""
+elif ":" in hostport:
+    hostname, port = hostport.rsplit(":", 1)
+else:
+    hostname = hostport
+    port = ""
+
+if hostname not in {"postgres", "tachi-production-postgres"}:
+    print(database_url)
+    raise SystemExit(0)
+
+new_hostport = f"{replacement_host}:{port or '5432'}"
+new_netloc = f"{userinfo}{separator}{new_hostport}" if separator else new_hostport
+print(urlunsplit((parts.scheme, new_netloc, parts.path, parts.query, parts.fragment)))
+PY
+}
+
+rewrite_database_urls_for_host_agent() {
+  local postgres_container postgres_host
+
+  if [[ "${TRANSLATION_QA_AGENT_REWRITE_DATABASE_URL:-true}" != "true" ]]; then
+    return 0
+  fi
+
+  if [[ -z "${DATABASE_URL:-}" ]]; then
+    return 0
+  fi
+
+  if [[ "${DATABASE_URL}" != *"@postgres:"* && "${DATABASE_URL}" != *"//postgres:"* ]]; then
+    return 0
+  fi
+
+  postgres_container="${TRANSLATION_QA_AGENT_POSTGRES_CONTAINER:-tachi-production-postgres}"
+  postgres_host="$(docker inspect -f '{{range .NetworkSettings.Networks}}{{if .IPAddress}}{{.IPAddress}}{{end}}{{end}}' "${postgres_container}" 2>/dev/null | head -n 1)"
+
+  if [[ -z "${postgres_host}" ]]; then
+    log "Could not resolve ${postgres_container} IP for host-side database access."
+    return 1
+  fi
+
+  export DATABASE_URL
+  DATABASE_URL="$(rewrite_database_url "${DATABASE_URL}" "${postgres_host}")"
+
+  if [[ -n "${DATABASE_URL_UNPOOLED:-}" ]]; then
+    export DATABASE_URL_UNPOOLED
+    DATABASE_URL_UNPOOLED="$(rewrite_database_url "${DATABASE_URL_UNPOOLED}" "${postgres_host}")"
+  fi
+}
+
 run_translation_qa_cycle() {
   local codex_bin codex_effort codex_model codex_report_file codex_sandbox complete_result_file cycle_id prepare_result_file prompt_file work_dir
 
@@ -46,7 +111,7 @@ run_translation_qa_cycle() {
   cd "${APP_DIR}"
   log "Preparing translation QA cycle ${cycle_id}"
 
-  if ! pnpm translation-qa:agent -- prepare-next --work-dir "${work_dir}" >"${prepare_result_file}"; then
+  if ! pnpm --silent translation-qa:agent -- prepare-next --work-dir "${work_dir}" >"${prepare_result_file}"; then
     log "Prepare step failed for ${cycle_id}"
     return 1
   fi
@@ -86,7 +151,7 @@ run_translation_qa_cycle() {
 
   "${codex_bin}" -a never "${codex_args[@]}" <"${prompt_file}"
 
-  if ! pnpm translation-qa:agent -- complete --work-dir "${work_dir}" >"${complete_result_file}"; then
+  if ! pnpm --silent translation-qa:agent -- complete --work-dir "${work_dir}" >"${complete_result_file}"; then
     log "Complete step failed for ${cycle_id}; original uploads were not cleaned."
     return 1
   fi
@@ -112,6 +177,7 @@ sleep_until_next_cycle() {
 main() {
   load_env_file "${APP_ENV_FILE}"
   load_env_file "${ENV_FILE}"
+  rewrite_database_urls_for_host_agent
 
   if [[ "${TRANSLATION_QA_AGENT_ENABLED:-true}" != "true" ]]; then
     log "Translation QA agent disabled."
