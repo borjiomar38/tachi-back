@@ -146,6 +146,24 @@ const reviewRequestRows = [
   },
 ] as const;
 
+const disclosureRows = [
+  {
+    title: 'Review code terms',
+    description:
+      'Reviewers can request a time-limited redeem code for hands-on testing without promising coverage, ranking, or a positive article.',
+  },
+  {
+    title: 'Affiliate clarity',
+    description:
+      'Any affiliate pilot should disclose the relationship and send readers to the official download, pricing, and support paths.',
+  },
+  {
+    title: 'Measurable outcome',
+    description:
+      'A useful test should track qualified installs, trial activation, and repeat token-plan intent instead of only raw clicks.',
+  },
+] as const;
+
 const demoEvaluationRows = [
   {
     checkpoint: 'Original page to English result',
@@ -849,6 +867,31 @@ export const PageTranslateManhwaAi = () => {
             >
               Request review code
             </a>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardHeader>
+            <CardTitle className="text-lg">
+              Disclosure rules for review and affiliate tests
+            </CardTitle>
+            <CardDescription>
+              Nayovi should win qualified coverage through a useful workflow,
+              clear review access, and transparent partner terms.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-3 pt-0 lg:grid-cols-3">
+            {disclosureRows.map((row) => (
+              <div
+                key={row.title}
+                className="rounded-2xl border border-border bg-background p-4"
+              >
+                <p className="text-sm font-semibold">{row.title}</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {row.description}
+                </p>
+              </div>
+            ))}
           </CardContent>
         </Card>
 
