@@ -3,6 +3,7 @@ import {
   ActivityIcon,
   BookOpenTextIcon,
   CpuIcon,
+  FileSearchIcon,
   HistoryIcon,
   InboxIcon,
   KeyRoundIcon,
@@ -204,6 +205,21 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                               <span>
                                 <ActivityIcon />
                                 <span>{t('layout:nav.jobs')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link to="/manager/translation-qa">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <FileSearchIcon />
+                                <span>{t('layout:nav.translationQa')}</span>
                               </span>
                             }
                           />

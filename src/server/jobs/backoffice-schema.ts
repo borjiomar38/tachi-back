@@ -64,6 +64,104 @@ export const zBackofficeJobListResponse = z.object({
   total: z.number().int().nonnegative(),
 });
 
+export const zBackofficeTranslationQaStatus = z.enum([
+  'all',
+  'ok',
+  'issues_found',
+  'blocked',
+  'unavailable',
+]);
+
+export const zBackofficeTranslationQaListInput = z.object({
+  limit: z.coerce.number().int().positive().max(100).default(50),
+  status: zBackofficeTranslationQaStatus.default('all'),
+});
+
+export const zBackofficeTranslationQaIssueSeverity = z.enum([
+  'critical',
+  'warning',
+  'info',
+]);
+
+export const zBackofficeTranslationQaIssuePreview = z.object({
+  blockIndex: z.number().int().nonnegative().nullish(),
+  evidence: z.string().nullish(),
+  kind: z.string(),
+  message: z.string(),
+  pageKey: z.string(),
+  severity: zBackofficeTranslationQaIssueSeverity,
+});
+
+export const zBackofficeTranslationQaReportStatus =
+  zBackofficeTranslationQaStatus.exclude(['all']);
+
+export const zBackofficeTranslationQaInspectionMode = z.enum([
+  'visual_and_manifest',
+  'manifest_only',
+  'unknown',
+]);
+
+export const zBackofficeTranslationQaListItem = z.object({
+  assetId: z.string(),
+  chapterIdentity: z
+    .object({
+      chapterName: z.string().nullish(),
+      chapterUrl: z.string(),
+      mangaTitle: z.string().nullish(),
+      mangaUrl: z.string().nullish(),
+      sourceId: z.string().nullish(),
+      sourceName: z.string().nullish(),
+    })
+    .nullish(),
+  cleanupAnalysisCompleted: z.boolean().nullish(),
+  cleanupCanDeleteOriginalUploads: z.boolean().nullish(),
+  criticalIssueCount: z.number().int().nonnegative(),
+  infoIssueCount: z.number().int().nonnegative(),
+  inspectionMode: zBackofficeTranslationQaInspectionMode,
+  issueCount: z.number().int().nonnegative(),
+  jobCompletedAt: z.date().nullish(),
+  jobCreatedAt: z.date(),
+  jobId: z.string(),
+  pageCount: z.number().int().nonnegative(),
+  reportCreatedAt: z.date(),
+  sourceLanguage: z.string(),
+  status: zBackofficeTranslationQaReportStatus,
+  summary: z.string(),
+  targetLanguage: z.string(),
+  topIssues: z.array(zBackofficeTranslationQaIssuePreview),
+  trainingSignals: z.array(z.string()),
+  warningIssueCount: z.number().int().nonnegative(),
+});
+
+export const zBackofficeTranslationQaDimensionStat = z.object({
+  count: z.number().int().nonnegative(),
+  value: z.string(),
+});
+
+export const zBackofficeTranslationQaStats = z.object({
+  blockedReportCount: z.number().int().nonnegative(),
+  cleanupBlockedCount: z.number().int().nonnegative(),
+  criticalIssueCount: z.number().int().nonnegative(),
+  infoIssueCount: z.number().int().nonnegative(),
+  issueReportCount: z.number().int().nonnegative(),
+  manifestOnlyReportCount: z.number().int().nonnegative(),
+  okReportCount: z.number().int().nonnegative(),
+  sourceLanguages: z.array(zBackofficeTranslationQaDimensionStat),
+  targetLanguages: z.array(zBackofficeTranslationQaDimensionStat),
+  topIssueKinds: z.array(zBackofficeTranslationQaDimensionStat),
+  totalIssues: z.number().int().nonnegative(),
+  totalReports: z.number().int().nonnegative(),
+  unavailableReportCount: z.number().int().nonnegative(),
+  visualReportCount: z.number().int().nonnegative(),
+  warningIssueCount: z.number().int().nonnegative(),
+});
+
+export const zBackofficeTranslationQaListResponse = z.object({
+  items: z.array(zBackofficeTranslationQaListItem),
+  stats: zBackofficeTranslationQaStats,
+  total: z.number().int().nonnegative(),
+});
+
 export const zBackofficeDeviceListInput = z.object({
   country: z.string().trim().max(64).default('all'),
   limit: z.coerce.number().int().positive().max(100).default(50),

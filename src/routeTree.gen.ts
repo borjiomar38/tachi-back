@@ -39,6 +39,7 @@ import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
+import { Route as ManagerTranslationQaIndexRouteImport } from './routes/manager/translation-qa/index'
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
@@ -252,6 +253,12 @@ const ManagerUsersIndexRoute = ManagerUsersIndexRouteImport.update({
   path: '/users/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerTranslationQaIndexRoute =
+  ManagerTranslationQaIndexRouteImport.update({
+    id: '/translation-qa/',
+    path: '/translation-qa/',
+    getParentRoute: () => ManagerRouteRoute,
+  } as any)
 const ManagerProvidersIndexRoute = ManagerProvidersIndexRouteImport.update({
   id: '/providers/',
   path: '/providers/',
@@ -624,6 +631,7 @@ export interface FileRoutesByFullPath {
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
+  '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
@@ -712,6 +720,7 @@ export interface FileRoutesByTo {
   '/manager/jobs': typeof ManagerJobsIndexRoute
   '/manager/licenses': typeof ManagerLicensesIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
+  '/manager/translation-qa': typeof ManagerTranslationQaIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/versions': typeof ManagerVersionsIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
@@ -804,6 +813,7 @@ export interface FileRoutesById {
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
+  '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
@@ -897,6 +907,7 @@ export interface FileRouteTypes {
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
+    | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
     | '/api/blog/heroes/$slug'
@@ -985,6 +996,7 @@ export interface FileRouteTypes {
     | '/manager/jobs'
     | '/manager/licenses'
     | '/manager/providers'
+    | '/manager/translation-qa'
     | '/manager/users'
     | '/manager/versions'
     | '/api/blog/heroes/$slug'
@@ -1076,6 +1088,7 @@ export interface FileRouteTypes {
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
+    | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
     | '/api/blog/heroes/$slug'
@@ -1379,6 +1392,13 @@ declare module '@tanstack/react-router' {
       path: '/users'
       fullPath: '/manager/users/'
       preLoaderRoute: typeof ManagerUsersIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/translation-qa/': {
+      id: '/manager/translation-qa/'
+      path: '/translation-qa'
+      fullPath: '/manager/translation-qa/'
+      preLoaderRoute: typeof ManagerTranslationQaIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
     '/manager/providers/': {
@@ -1838,6 +1858,7 @@ interface ManagerRouteRouteChildren {
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
+  ManagerTranslationQaIndexRoute: typeof ManagerTranslationQaIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
   ManagerVersionsIndexRoute: typeof ManagerVersionsIndexRoute
   ManagerChaptersCacheKeyIndexRoute: typeof ManagerChaptersCacheKeyIndexRoute
@@ -1863,6 +1884,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
+  ManagerTranslationQaIndexRoute: ManagerTranslationQaIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
   ManagerVersionsIndexRoute: ManagerVersionsIndexRoute,
   ManagerChaptersCacheKeyIndexRoute: ManagerChaptersCacheKeyIndexRoute,
