@@ -157,6 +157,23 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Talk Android Review Pitch Sent 2026-05-25
+
+Subject: Review code for a hosted OCR Android manga translator
+
+Hi Peter,
+
+I saw that Talk Android routes review requests to you, and your recent Android app and guide coverage looks like the right context for a practical utility pitch.
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device. The review path is straightforward: install the official APK from tachiyomiat.com, activate a review code, test the free-trial-to-token-plan flow, and compare the support and permission-safe usage policy.
+
+Nayovi does not host or distribute chapters; it focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process. I can send screenshots, the current narrated demo, pricing context, and a dedicated review code if a hands-on review or setup walkthrough would fit Talk Android.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Mobile Growth Case Study Pitch
 
 Subject: Niche Android subscription funnel case study
