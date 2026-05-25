@@ -218,6 +218,23 @@ Long description:
 
 Nayovi helps Android readers translate manga, manhwa, and manhua pages through hosted OCR and AI translation without managing provider API keys on the device. The product is designed for readers comparing TachiyomiAT, Tachiyomi, Mihon, manga translator, manhwa translator, and Android APK translation workflows. Nayovi does not host or distribute chapters; it supports translation for content the user owns, content in the public domain, official samples, or content the user has permission to process.
 
+## Alternative Android Store Submission Inquiry
+
+Subject: Official Nayovi APK listing requirements
+
+Hi {{name}},
+
+I am preparing the official Android distribution path for Nayovi, an APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+Before uploading, I want to confirm the right developer-owned submission path and metadata requirements. Nayovi should be listed only as the official app from tachiyomiat.com / nayovi.com, with accurate APK details, free trial access, redeem-code activation, token plans, and a clear note that Nayovi does not host or distribute chapters.
+
+Could you point me to the correct submission or review process for an official APK listing?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## APK Directory Form Note
 
 Subject: Official Nayovi APK listing request
