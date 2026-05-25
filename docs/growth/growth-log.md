@@ -2,6 +2,11 @@
 
 ## 2026-05-25
 
+- Autonomous cycle on `growth/autonomous-20260525T190853Z`: audited branch state, sitemap coverage, support/review-code paths, existing outreach history, and current public Droid Life contact pages.
+- Added a reviewer and partner request section to `/support` so Android blogs, directory editors, affiliates, and approved sample pilots have a clear path for review codes, screenshots, demo context, APK source details, pricing notes, and permission-safe language.
+- Refreshed sitemap metadata for `/support`, `/guides/mihon-nayovi-setup`, `/guides/mihon-tachiyomiat-setup`, and `/guides/translation-support-workflow` so current support and compliance assets are prioritized alongside the money pages.
+- Reviewed Droid Life as a medium-fit Android press prospect. Its current public contact page accepts apps and reviews via an official JavaScript form, but no direct public business email path was used, so no outreach email was sent this cycle.
+- Added a Droid Life contact-form note for future official-form submission and updated the backlink tracker with rationale and follow-up state.
 - Autonomous cycle on `growth/autonomous-20260525T130153Z`: processed owner inbound command `20260525T130128Z-10fe41f09f95` asking for an update and continued the safe growth cycle.
 - Added a review/affiliate disclosure block to `/translate-manhwa-ai` so Android reviewers, affiliates, and community pilots can verify review-code terms, disclosure expectations, and outcome metrics before sending qualified readers to Nayovi.
 - Auto-approved and contacted Talk Android app reviews after current public verification found its contact page routes review requests to Peter Holden, Editor in Chief, at `peter.h@talkandroid.com`; sent an individualized review-code pitch with permission-safe positioning and opt-out language.
