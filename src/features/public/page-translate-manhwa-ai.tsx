@@ -200,6 +200,24 @@ const partnerUseCases = [
   },
 ] as const;
 
+const pilotReadinessRows = [
+  {
+    checkpoint: 'Approved material first',
+    detail:
+      'A publisher, community, or reviewer should define the sample pages, rights context, and language pair before Nayovi is tested publicly.',
+  },
+  {
+    checkpoint: 'Dedicated access path',
+    detail:
+      'Use a review or pilot redeem code so trial usage, support questions, and conversion quality can be separated from normal readers.',
+  },
+  {
+    checkpoint: 'Revenue signal after proof',
+    detail:
+      'Expand only when the pilot shows repeat translation need, qualified installs, or a clear path to paid token-plan usage.',
+  },
+] as const;
+
 const directoryReadinessRows = [
   {
     signal: 'Official APK source',
@@ -952,6 +970,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Discuss a pilot
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Pilot readiness"
+        title="A cleaner path for communities and publisher conversations"
+        description="Nayovi should avoid vague AI translation pitches. The strongest pilot starts with approved pages, dedicated access, and a measurable reason to continue."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {pilotReadinessRows.map((row) => (
+            <Card key={row.checkpoint} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ShieldCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.checkpoint}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Built for accountable tests
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A useful partner test should name the approved source material,
+                define the support route, and decide in advance whether success
+                means review coverage, affiliate conversion, or paid reader
+                activation.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request pilot access
             </a>
           </CardContent>
         </Card>

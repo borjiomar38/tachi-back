@@ -288,6 +288,23 @@ Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## AI Manga Translator Tools Page Pitch Sent 2026-05-26
+
+Subject: Nayovi Android APK for your manga translation tools page
+
+Hi AI Manga Translator team,
+
+I saw your manga translation tools page and the broader guides around manga, manhwa, manhua, OCR, inpainting, and local-file translation workflows. The page is useful because it compares actual workflow fit instead of treating every OCR tool the same.
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The specific difference is mobile: official APK download, free trial access, redeem-code activation, monthly token plans, and support from tachiyomiat.com / nayovi.com. Nayovi does not host or distribute chapters; it supports translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+If you maintain resource listings for manga translation tools, would Nayovi be a useful Android APK entry or comparison note? A neutral description would be fine: Android hosted OCR/AI translation workflow with free trial, token plans, and permission-safe usage notes. I can send screenshots, demo context, or concise listing metadata if useful.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## APK Directory Form Note
 
 Subject: Official Nayovi APK listing request
