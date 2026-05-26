@@ -2,6 +2,9 @@
 
 ## 2026-05-26
 
+- Autonomous cycle on `growth/autonomous-20260526T072251Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, current growth trackers, and a new public Android directory contact path.
+- Added a directory-fit section to `/translate-manhwa-ai` so Android directories can qualify Nayovi around free trial access, official source verification, paid token-plan context, and responsible non-hosting usage before listing.
+- Auto-approved and contacted AndroidFreeware through its public `contact@androidfreeware.net` developer-relations path after current public verification found the page invites Android developers to email app details. The message asked eligibility first because AndroidFreeware emphasizes free apps and Nayovi has a free trial plus paid token plans.
 - Autonomous cycle on `growth/autonomous-20260526T011631Z`: audited the branch, public SEO route, sitemap metadata, and growth outreach trackers.
 - Added a subscription-fit section to `/translate-manhwa-ai` to qualify paid intent around weekly translation, reviewer/affiliate tests, and community pilots before sending readers to pricing.
 - Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.

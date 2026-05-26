@@ -269,6 +269,25 @@ Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## AndroidFreeware Listing Fit Inquiry Sent 2026-05-26
+
+Subject: Nayovi Android app listing fit question
+
+Hi AndroidFreeware team,
+
+I saw that your contact page invites Android developers to email app details for publishing and distribution-channel questions, so I wanted to ask whether Nayovi is a fit before submitting metadata.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It has free trial access for evaluation, redeem-code activation, monthly token plans for heavier use, and official support from tachiyomiat.com / nayovi.com.
+
+Because your page emphasizes free apps, I do not want to force a poor-fit listing. If a free-trial Android utility with paid token plans can be reviewed, I can send package metadata, screenshots, APK source details, and the responsible-use note. Nayovi does not host or distribute chapters; it supports translation for content the reader owns, public-domain material, official samples, or content the reader has permission to process.
+
+Could you point me to the right submission path, or let me know if this is not eligible for AndroidFreeware?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## APK Directory Form Note
 
 Subject: Official Nayovi APK listing request
