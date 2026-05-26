@@ -2,6 +2,11 @@
 
 ## 2026-05-26
 
+- Autonomous cycle on `growth/autonomous-20260526T193516Z`: audited branch state, pricing conversion flow, sitemap metadata, current growth trackers, and current public Android directory submission paths.
+- Added a revenue-signal section to `/pricing` so readers, reviewers, affiliates, and group pilots are prompted to upgrade only when repeat title demand, approved-use confidence, or referral-ready access makes paid tokens justified.
+- Updated `/sitemap.xml` metadata for `/pricing` after the conversion copy refresh.
+- Added FungoApp and Androidblue as draft Android directory prospects after current public verification showed relevant app metadata/listing surfaces; kept both in draft because the verified contact paths are form/submission-path based or still need a direct official path before email outreach.
+- Outreach sent: none in this cycle; no new high-fit direct public business email path was verified without forcing a form-only directory into email outreach.
 - Autonomous cycle on `growth/autonomous-20260526T132852Z`: audited branch state, current growth trackers, `/translate-manhwa-ai`, sitemap metadata, and current public manga translation resource/contact paths.
 - Added a pilot-readiness section to `/translate-manhwa-ai` so communities, publishers, reviewers, and affiliates can qualify approved source material, dedicated redeem-code access, support routing, and paid activation signals before testing Nayovi.
 - Auto-approved and contacted AI Manga Translator's tools/resource page through its public `hello@ai-manga-translator.com` contact path after current public verification found a manga translation tools page covering OCR and manga/manhwa/manhua translation workflows. The pitch requested a neutral Android APK resource entry and included opt-out language.

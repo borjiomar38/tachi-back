@@ -109,6 +109,27 @@ const pricingDecisionCards = [
   },
 ] as const;
 
+const revenueSignalCards = [
+  {
+    icon: BookOpenCheckIcon,
+    title: 'Repeat title demand',
+    description:
+      'Upgrade when the same reader or group translates multiple chapters from the same title instead of testing one page.',
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: 'Approved-use confidence',
+    description:
+      'Keep paid pilots focused on owned content, public-domain pages, official samples, or material the tester can process.',
+  },
+  {
+    icon: UsersRoundIcon,
+    title: 'Referral-ready access',
+    description:
+      'Ask support for a dedicated code when a reviewer, affiliate, or group needs trackable activation before sending readers here.',
+  },
+] as const;
+
 export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
@@ -231,6 +252,51 @@ export const PagePricing = (props: PagePricingProps) => {
               featured={tokenPack.id === featuredTokenPack?.id}
             />
           ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Revenue signals"
+        title="Upgrade when the translation habit is real"
+        description="Qualified traffic should become paid only after the reader, reviewer, or pilot has a clear repeat-use reason for hosted OCR tokens."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {revenueSignalCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <Card
+                key={item.title}
+                className="public-brand-panel-muted rounded-[1.5rem]"
+              >
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/support"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Request a pilot code
+              <UsersRoundIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/guides/translation-support-workflow"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Check responsible use
+          </a>
         </div>
       </PublicSection>
 

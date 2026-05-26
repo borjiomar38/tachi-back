@@ -50,6 +50,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/pricing': {
     changeFrequency: 'weekly',
+    lastModified: '2026-05-26',
     priority: '0.9',
   },
   '/how-it-works': {
