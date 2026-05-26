@@ -290,6 +290,30 @@ const installConfidenceRows = [
   },
 ] as const;
 
+const subscriptionIntentRows = [
+  {
+    intent: 'Weekly manhwa translation',
+    signal:
+      'The reader already has repeat chapters to process and needs hosted OCR, clean text, and a stable Android workflow.',
+    nextStep:
+      'Start with the free trial, then compare token plans once the same title or reading habit becomes recurring.',
+  },
+  {
+    intent: 'Reviewer or affiliate test',
+    signal:
+      'The publisher needs screenshots, demo proof, pricing context, and a review code before recommending the workflow.',
+    nextStep:
+      'Request a dedicated code and link readers to the official download, pricing, and support paths.',
+  },
+  {
+    intent: 'Community or group use',
+    signal:
+      'A moderator, club, or language-learning group wants a controlled trial without sending members to mirrors.',
+    nextStep:
+      'Define the approved material, responsible-use note, and success metric before expanding beyond a small pilot.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -741,6 +765,54 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open official download
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Subscription fit"
+        title="When Nayovi is worth a paid plan"
+        description="The best conversion signal is repeat translation need. Nayovi should upgrade readers, reviewers, and small communities only when hosted OCR and Android support become part of a real workflow."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {subscriptionIntentRows.map((row) => (
+            <Card key={row.intent} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.intent}</CardTitle>
+                <CardDescription>
+                  <span className="block font-medium text-foreground">
+                    Paid signal
+                  </span>
+                  <span className="mt-1 block">{row.signal}</span>
+                  <span className="mt-4 block font-medium text-foreground">
+                    Next step
+                  </span>
+                  <span className="mt-1 block">{row.nextStep}</span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <SparklesIcon className="size-4" />
+                Trial first, paid when repeat usage is clear
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Nayovi is strongest when the reader can verify translation
+                quality in the free trial, then choose a monthly token plan
+                because the same workflow saves time across repeat chapters.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Choose a plan
             </a>
           </CardContent>
         </Card>

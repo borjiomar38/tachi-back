@@ -252,6 +252,23 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## APKFab App Submission Inquiry Sent 2026-05-26
+
+Subject: Official Nayovi APK listing requirements
+
+Hi APKFab team,
+
+I saw that your contact page accepts app submission and developer-support messages, so I wanted to ask about the right official listing path for Nayovi.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The product has an official download path, free trial access, redeem-code activation, monthly token plans, and support from tachiyomiat.com / nayovi.com. Nayovi does not host or distribute chapters; it supports translation for content the reader owns, public-domain material, official samples, or content the reader has permission to process.
+
+Could you point me to the correct developer-owned submission or review process for an APKFab listing, including any package metadata, signature, screenshot, or policy notes you need before review?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## APK Directory Form Note
 
 Subject: Official Nayovi APK listing request
