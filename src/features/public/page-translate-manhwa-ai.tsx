@@ -314,6 +314,24 @@ const subscriptionIntentRows = [
   },
 ] as const;
 
+const directoryFitRows = [
+  {
+    question: 'Can free-trial users evaluate it?',
+    answer:
+      'Yes. A listing should mention free trial access before monthly token plans so readers can test real page flow first.',
+  },
+  {
+    question: 'Is the app source verifiable?',
+    answer:
+      'Yes. Direct users to tachiyomiat.com or nayovi.com for the current APK, support, pricing, and activation details.',
+  },
+  {
+    question: 'Does it avoid chapter hosting?',
+    answer:
+      'Yes. Nayovi is positioned as OCR and translation support for owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -813,6 +831,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Choose a plan
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Directory fit"
+        title="Questions app directories should answer before listing Nayovi"
+        description="The most useful Android directory placement qualifies readers before install: official source, free-trial access, paid plan context, and responsible translation use."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {directoryFitRows.map((row) => (
+            <Card key={row.question} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.question}</CardTitle>
+                <CardDescription>{row.answer}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                List the product, not a loose APK
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Directory editors should cite the hosted OCR workflow, free
+                trial, token plans, and official support path so qualified
+                readers understand the subscription before they install.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Review pricing context
             </a>
           </CardContent>
         </Card>
