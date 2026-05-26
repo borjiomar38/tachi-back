@@ -1,5 +1,13 @@
 # Nayovi Growth Log
 
+## 2026-05-26
+
+- Autonomous cycle on `growth/autonomous-20260526T011631Z`: audited the branch, public SEO route, sitemap metadata, and growth outreach trackers.
+- Added a subscription-fit section to `/translate-manhwa-ai` to qualify paid intent around weekly translation, reviewer/affiliate tests, and community pilots before sending readers to pricing.
+- Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.
+- Auto-approved and contacted APKFab app submission through its public `business@apkfab.com` contact path after current public verification found APKFab accepts app submission and developer-support messages; the inquiry asked for official developer-owned listing requirements and kept tachiyomiat.com / nayovi.com as source-of-truth paths.
+- Reviewed Uptodown as a high-fit Android directory prospect; kept it in draft because the compliant path is the official developer console or support request, not a direct outreach email for app submission.
+
 ## 2026-05-25
 
 - Autonomous cycle on `growth/autonomous-20260525T190853Z`: audited branch state, sitemap coverage, support/review-code paths, existing outreach history, and current public Droid Life contact pages.
