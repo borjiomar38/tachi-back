@@ -2,6 +2,9 @@
 
 ## 2026-05-26
 
+- Autonomous cycle on `growth/autonomous-20260526T132852Z`: audited branch state, current growth trackers, `/translate-manhwa-ai`, sitemap metadata, and current public manga translation resource/contact paths.
+- Added a pilot-readiness section to `/translate-manhwa-ai` so communities, publishers, reviewers, and affiliates can qualify approved source material, dedicated redeem-code access, support routing, and paid activation signals before testing Nayovi.
+- Auto-approved and contacted AI Manga Translator's tools/resource page through its public `hello@ai-manga-translator.com` contact path after current public verification found a manga translation tools page covering OCR and manga/manhwa/manhua translation workflows. The pitch requested a neutral Android APK resource entry and included opt-out language.
 - Autonomous cycle on `growth/autonomous-20260526T072251Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, current growth trackers, and a new public Android directory contact path.
 - Added a directory-fit section to `/translate-manhwa-ai` so Android directories can qualify Nayovi around free trial access, official source verification, paid token-plan context, and responsible non-hosting usage before listing.
 - Auto-approved and contacted AndroidFreeware through its public `contact@androidfreeware.net` developer-relations path after current public verification found the page invites Android developers to email app details. The message asked eligibility first because AndroidFreeware emphasizes free apps and Nayovi has a free trial plus paid token plans.
