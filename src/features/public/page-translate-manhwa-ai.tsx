@@ -422,6 +422,24 @@ const submissionPacketRows = [
   },
 ] as const;
 
+const reviewerPacketRows = [
+  {
+    item: 'Hands-on path',
+    detail:
+      'Give reviewers the official APK link, a review code, the narrated demo, and the exact setup path from install to translated result.',
+  },
+  {
+    item: 'Decision context',
+    detail:
+      'Include pricing, free trial limits, token-plan fit, support routes, and cancellation guidance before readers are sent to install.',
+  },
+  {
+    item: 'Responsible framing',
+    detail:
+      'State that Nayovi supports OCR and translation for owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1119,6 +1137,46 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request listing assets
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reviewer packet"
+        title="Give Android reviewers a complete test path"
+        description="Reviewer traffic converts better when the article can point readers through the official APK, review-code flow, demo proof, support, and paid-plan context without leaving gaps."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerPacketRows.map((row) => (
+            <Card key={row.item} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.item}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ScanTextIcon className="size-4" />
+                Review coverage should drive qualified tests
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A useful Android app review should let readers verify the APK,
+                understand the hosted OCR workflow, try the free access path,
+                and upgrade only when repeat manga, manhwa, or manhua
+                translation volume is clear.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request review code
             </a>
           </CardContent>
         </Card>

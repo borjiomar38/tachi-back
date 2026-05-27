@@ -689,3 +689,29 @@ Best,
 Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+## 2026-05-27 Sent Outreach Log
+
+### Mobigyaan app coverage
+
+Category: press
+Contact path: apps@mobigyaan.com, listed on the current public Mobigyaan submit-app page for Android, iOS, Windows Phone, Symbian, Bada, or Java application coverage.
+Rationale: Mobigyaan invites app details for mobile coverage, and its mobile audience can evaluate Nayovi as an Android APK workflow with official download, hosted OCR, review-code access, free trial, token plans, and permission-safe positioning.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Review code for Nayovi Android manga translation APK
+
+Hi Mobigyaan team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who want hosted OCR and AI translation without managing provider API keys on the device.
+
+I found your app submission page inviting Android app details for coverage. Nayovi may fit a practical mobile app note or hands-on review: official APK install from tachiyomiat.com, redeem-code activation, free trial access, monthly token plans, support in one place, and a short narrated demo that shows original chapter content, language selection, translation/loading, and the final English result.
+
+Nayovi does not host or distribute chapters. It focuses on translation support for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Would a review code, screenshots, demo link, and pricing context be useful for deciding whether Nayovi fits Mobigyaan?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
