@@ -1,5 +1,13 @@
 # Nayovi Growth Log
 
+## 2026-05-27
+
+- Autonomous cycle on `growth/autonomous-20260527T014154Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, current growth trackers, and current public APKCombo search results.
+- Added a conversion-proof section to `/translate-manhwa-ai` so directory listings, affiliate tests, and reviews qualify traffic by install confidence, activation, and repeat paid translation use instead of raw visits.
+- Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.
+- Added APKCombo as a high-priority draft directory prospect after current public search results exposed an official submit path; kept it in draft because no compliant direct public business email path was verified for outreach sender use.
+- Outreach sent: none in this cycle; remaining ready prospects are official-form or developer-console paths rather than verified direct public email paths.
+
 ## 2026-05-26
 
 - Autonomous cycle on `growth/autonomous-20260526T193516Z`: audited branch state, pricing conversion flow, sitemap metadata, current growth trackers, and current public Android directory submission paths.

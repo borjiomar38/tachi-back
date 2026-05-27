@@ -350,6 +350,24 @@ const directoryFitRows = [
   },
 ] as const;
 
+const conversionEvidenceRows = [
+  {
+    checkpoint: 'Qualified install',
+    detail:
+      'Readers arrive from an official listing, understand the APK source, and start with free trial access instead of a blind mirror download.',
+  },
+  {
+    checkpoint: 'Activated test',
+    detail:
+      'A reviewer, affiliate, or reader uses a redeem code or trial flow to inspect real hosted OCR and AI translation on approved material.',
+  },
+  {
+    checkpoint: 'Paid repeat use',
+    detail:
+      'The strongest revenue signal is a reader upgrading because the same Android translation workflow is useful across repeat chapters.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -888,6 +906,46 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Review pricing context
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Conversion proof"
+        title="What a useful listing should measure after the click"
+        description="Nayovi should treat directories, reviews, and affiliates as qualified subscription channels. The useful signal is not a raw visit; it is install confidence, activation, and repeat paid translation need."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {conversionEvidenceRows.map((row) => (
+            <Card key={row.checkpoint} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.checkpoint}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ArrowRightIcon className="size-4" />
+                Track the path from listing to plan fit
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A high-quality partner mention should point readers to the
+                official APK, explain the free trial, and make monthly token
+                plans visible before they need more recurring translation
+                volume.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Review plan fit
             </a>
           </CardContent>
         </Card>

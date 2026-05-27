@@ -45,7 +45,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/translate-manhwa-ai': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-26',
+    lastModified: '2026-05-27',
     priority: '0.9',
   },
   '/pricing': {

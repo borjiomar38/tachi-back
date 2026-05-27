@@ -339,6 +339,23 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## APKCombo Submit Path Note
+
+Subject: Official Nayovi Android APK listing request
+
+Hi APKCombo team,
+
+I am submitting Nayovi for review as the official Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+The listing should point users back to tachiyomiat.com / nayovi.com as the source of truth for the current APK, free trial access, redeem-code activation, monthly token plans, support, and responsible-use note. Nayovi does not host or distribute chapters; it supports translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Please let me know if you need package metadata, screenshots, APK signature details, or a developer verification step before review.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Droid Life Contact Form Note
 
 Subject: Review code for hosted OCR Android manga translation workflow
