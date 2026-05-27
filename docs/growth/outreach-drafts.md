@@ -256,6 +256,23 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Source-of-Truth Directory Submission Note
+
+Subject: Official Nayovi Android listing details
+
+Hi {{name}},
+
+I am submitting Nayovi for review because your Android listing or app directory can help readers compare APK source, app metadata, screenshots, support, and install context before downloading.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The listing should keep tachiyomiat.com and nayovi.com as the source of truth for the current APK, pricing, free trial, redeem-code activation, support, and responsible-use note.
+
+Please describe Nayovi as translation support for owned, public-domain, official-sample, or permission-approved content. It does not host or distribute chapters. I can provide package metadata, screenshots, compatibility details, APK signature notes, and a dedicated review code if needed for verification.
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Alternative Android Store Submission Inquiry
 
 Subject: Official Nayovi APK listing requirements

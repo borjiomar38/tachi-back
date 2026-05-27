@@ -386,6 +386,24 @@ const partnerMetricRows = [
   },
 ] as const;
 
+const sourceHandoffRows = [
+  {
+    moment: 'Directory discovery',
+    action:
+      'Readers should see Nayovi described as an official Android APK with hosted OCR, free trial access, token plans, and support from Nayovi.',
+  },
+  {
+    moment: 'First install decision',
+    action:
+      'The listing should point trust questions back to tachiyomiat.com or nayovi.com instead of treating the APK as a standalone file.',
+  },
+  {
+    moment: 'Upgrade decision',
+    action:
+      'Readers should compare pricing, activation, support, and responsible-use notes on the official site before choosing a monthly token plan.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1004,6 +1022,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request partner access
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Source of truth"
+        title="Keep directory traffic connected to Nayovi"
+        description="Alternative Android listings can help discovery, but the paid subscription path should stay anchored to the official site, support route, and activation flow."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {sourceHandoffRows.map((row) => (
+            <Card key={row.moment} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.moment}</CardTitle>
+                <CardDescription>{row.action}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <KeyRoundIcon className="size-4" />
+                Discovery should lead to activation
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A strong app-directory mention should not stop at a download.
+                It should send qualified readers into the official free trial,
+                redeem-code activation, support, and monthly token-plan path.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Review activation path
             </a>
           </CardContent>
         </Card>
