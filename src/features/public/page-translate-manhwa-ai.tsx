@@ -368,6 +368,24 @@ const conversionEvidenceRows = [
   },
 ] as const;
 
+const partnerMetricRows = [
+  {
+    metric: 'Install-to-trial quality',
+    detail:
+      'Useful partner traffic should produce readers who understand the official APK source, responsible-use note, and free trial before asking for support.',
+  },
+  {
+    metric: 'Trial-to-activation intent',
+    detail:
+      'Review codes, affiliate codes, and community pilots should separate serious testers from generic visitors before any paid plan is promoted.',
+  },
+  {
+    metric: 'Repeat-token demand',
+    detail:
+      'The strongest partnership outcome is a reader returning for more translated pages because hosted OCR and Android workflow continuity saved time.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -946,6 +964,46 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Review plan fit
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Partner metrics"
+        title="Measure partner traffic by paid-intent signals"
+        description="Nayovi should prioritize directories, reviewers, affiliates, and communities that can send qualified readers into the official APK, trial, activation, and token-plan funnel."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerMetricRows.map((row) => (
+            <Card key={row.metric} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.metric}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Partner mentions should qualify subscribers
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A good review, listing, or pilot should make the free trial,
+                review-code path, support route, and monthly token plans clear
+                before sending readers who need repeat manga, manhwa, or
+                manhua translation.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request partner access
             </a>
           </CardContent>
         </Card>
