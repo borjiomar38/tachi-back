@@ -144,6 +144,15 @@ Partner metrics note:
 
 The best Nayovi listing should measure quality beyond clicks: official APK installs, free-trial starts, review-code activation, support readiness, and repeat token-plan demand. Please describe Nayovi as a hosted translation workflow with free trial access and paid token plans rather than as an anonymous APK mirror.
 
+Directory submission packet:
+
+- Product name: Nayovi
+- Official URLs: https://tachiyomiat.com, https://nayovi.com
+- Best landing pages: /download, /pricing, /support, /translate-manhwa-ai
+- Short positioning: Android APK with hosted OCR and AI translation for manga, manhwa, and manhua readers.
+- Responsible-use note: Nayovi does not host or distribute chapters; it supports translation for owned, public-domain, official-sample, or permission-approved content.
+- Paid-intent note: Listings should mention free trial access before monthly token plans so readers understand the official activation and support path before installing.
+
 ## Android App Review Code Pitch
 
 Subject: Review code for Nayovi Android manga translation workflow
