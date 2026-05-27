@@ -2,6 +2,11 @@
 
 ## 2026-05-27
 
+- Autonomous cycle on `growth/autonomous-20260527T200019Z`: audited branch state, `/translate-manhwa-ai`, sitemap metadata, and current Android directory submission prospects.
+- Added a submission-packet section to `/translate-manhwa-ai` so directory editors and review sites can verify listing description, trust links, APK/support/pricing source-of-truth paths, demo assets, and responsible-use positioning before approving Nayovi.
+- Added Kivode+, APK4Fun, and APKLoon as draft directory prospects after current public search results showed official submission portals/forms; kept them in draft because no separate direct public business email path was verified and APKLoon needs more quality/reputation review before any submission.
+- Added a reusable directory submission packet to outreach drafts for official-form submissions and future listing workflows.
+- Outreach sent: none in this cycle; the highest-fit newly found paths are form/submission workflows, not compliant sender-based email outreach targets.
 - Autonomous cycle on `growth/autonomous-20260527T135346Z`: audited branch state, `/translate-manhwa-ai`, current growth trackers, and current public Android directory/search results.
 - Added a source-of-truth handoff section to `/translate-manhwa-ai` so app-directory traffic is guided from discovery to official APK trust, free trial, redeem-code activation, support, and monthly token-plan decisions.
 - Added Accessible Android and Zyra App Store as draft directory prospects after current public search results showed official form/submission surfaces; kept both in draft because no compliant direct public business email path was verified for sender-based outreach.

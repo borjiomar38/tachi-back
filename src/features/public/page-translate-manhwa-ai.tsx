@@ -404,6 +404,24 @@ const sourceHandoffRows = [
   },
 ] as const;
 
+const submissionPacketRows = [
+  {
+    item: 'Listing description',
+    detail:
+      'Describe Nayovi as an official Android APK with hosted OCR, AI translation, free trial access, redeem-code activation, token plans, and support.',
+  },
+  {
+    item: 'Trust links',
+    detail:
+      'Use tachiyomiat.com and nayovi.com as source-of-truth links for APK details, pricing, support, privacy, terms, and responsible-use guidance.',
+  },
+  {
+    item: 'Review assets',
+    detail:
+      'Provide screenshots, the narrated demo, package metadata, compatibility details, and a short note that Nayovi does not host or distribute chapters.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1061,6 +1079,46 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Review activation path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Submission packet"
+        title="What directories need before approving Nayovi"
+        description="App directories and review sites convert better when the listing packet explains the app, the official source, and the paid activation path before a reader installs."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {submissionPacketRows.map((row) => (
+            <Card key={row.item} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.item}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Built for approval and qualified installs
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A good submission should make it easy for editors to verify
+                ownership, cite the current APK, and send readers toward the
+                official free trial, activation, support, and token-plan
+                workflow.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request listing assets
             </a>
           </CardContent>
         </Card>
