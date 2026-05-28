@@ -132,3 +132,17 @@ This file is maintained by the SEO distribution agent.
 - Added independent APK distribution trust checks, Android developer showcase feedback packet, and localization podcast talking points to `link-assets.md`.
 - Drafted exact r/androiddev showcase comment, Nimdzi LIVE topic pitch, and Mangasplaining feedback note in `platform-drafts.md`.
 - Next actions: add signing-certificate details and screenshots to the review packet, owner-review podcast/media notes, and keep Reddit blocked until an authorized account and current thread rules confirm the exact action is allowed.
+
+## 2026-05-28 Cycle 10
+
+- Verified branch `seo/distribution-20260528T193548Z`; account registry still allows owned GitHub/docs only, so external posting stayed draft-only.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding human-review and credit safeguards: AI output is draft support, credits stay attached, automation should be disclosed, and public sharing is blocked when permission or quality is unclear.
+- Researched rotated authority opportunities:
+  - The Beat / Comics Beat: public contact path and current manga/anime coverage make it a fit for a transparency-first editorial note, especially because the site has covered AI-assisted manga localization skepticism.
+  - Taddy / Inkverse: creator-oriented webcomics tooling and API surface; potential fit is creator-controlled approved-sample feedback, not a product listing.
+  - Manga Studies journal: high-authority research surface, but watch-only until Nayovi has original approved-sample measurements and a non-promotional research angle.
+- Added those three opportunities to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added human-review transparency checklist to `content-calendar.md` and `link-assets.md`.
+- Drafted exact Comics Beat transparency note, Taddy creator-tool feedback note, and Manga Studies guardrail in `platform-drafts.md`.
+- Next actions: owner-review the Comics Beat no-link note, gather approved-sample screenshots/measurements, and keep research submissions blocked until there is original data rather than product copy.
