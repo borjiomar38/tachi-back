@@ -321,6 +321,47 @@ const androidTranslatorReadinessRows = [
   },
 ] as const;
 
+const tokenPlanDecisionRows = [
+  {
+    label: 'One-time curiosity',
+    detail:
+      'Stay on the free trial when you only need to confirm install confidence, one permitted sample, and basic OCR readability.',
+  },
+  {
+    label: 'Repeat chapters',
+    detail:
+      'Use a paid token plan when several sessions show that hosted OCR, translation, support, and activation are part of a recurring reading workflow.',
+  },
+  {
+    label: 'Reviewer testing',
+    detail:
+      'Ask for a review code when the goal is a fair public article, directory listing, or comparison rather than personal repeat reading.',
+  },
+  {
+    label: 'Partner pilot',
+    detail:
+      'Use separated pilot access when a creator, publisher, or community needs approved-sample evidence before any public recommendation.',
+  },
+] as const;
+
+const tokenPlanSignals = [
+  {
+    title: 'Upgrade signal',
+    description:
+      'The reader has already tested OCR coverage, wants to process more than a sample, and values the official APK, support, and device recovery path.',
+  },
+  {
+    title: 'Hold signal',
+    description:
+      'The user has not verified source permission, translation quality, language-pair fit, or whether the workflow will repeat beyond one page.',
+  },
+  {
+    title: 'Route to support',
+    description:
+      'Editors, affiliates, directory reviewers, and partner teams should request review or pilot access before spending or publishing.',
+  },
+] as const;
+
 const approvedSampleTestingSteps = [
   {
     title: '1. Choose the sample with permission',
@@ -1406,6 +1447,101 @@ const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
             className={buttonVariants({ variant: 'ghost', size: 'lg' })}
           >
             Source and takedown policy
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
+export const PageFreeTrialVsPaidTokenPlan = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="Pricing decision"
+        title="Free trial vs paid token plan for manga translation"
+        description="Use the free trial to prove fit. Move to a monthly token plan only when hosted OCR and AI translation become a repeat Android workflow."
+        className="pt-10"
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {tokenPlanDecisionRows.map((row) => (
+            <Card key={row.label} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{row.label}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Upgrade signals"
+        title="Pay for repeat value, not first-click curiosity"
+        description="A durable subscription signal appears after a user has tested official install confidence, translation quality, and repeat need."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {tokenPlanSignals.map((signal) => (
+            <Card key={signal.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{signal.title}</CardTitle>
+                <CardDescription>{signal.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reader path"
+        title="A clean path from trial to paid use"
+        description="The strongest paid users arrive with a permission-safe sample, verify the Android workflow, and upgrade because they expect more translation sessions."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Start from the official APK download page so source, support,
+              pricing, and responsible-use links stay attached before install.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Use the free trial to test OCR coverage, reading order, glossary
+              consistency, and translation readability on permitted content.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Upgrade only when the workflow is recurring enough that monthly
+              token access is more useful than one-off testing.
+            </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Next"
+        title="Choose the right access route"
+        description="Readers should compare plans after a successful trial. Reviewers and partners should request a code so testing stays attributable and fair."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/pricing"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Compare plans
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/download"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Download APK
+          </a>
+          <a
+            href="/support"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Request review access
           </a>
         </div>
       </PublicSection>

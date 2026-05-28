@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T225358Z`: audited branch state, public SEO/conversion routes, current growth trackers, latest SEO distribution shared report, and outreach sender history.
+- Added `/guides/free-trial-vs-paid-token-plan` as a paid-intent decision guide for readers comparing Nayovi free trial access against monthly token plans, with separate routing for repeat readers, reviewers, and approved-sample partner pilots.
+- Added Article and ItemList structured data plus sitemap coverage for the new trial-to-paid guide, and marked the topic shipped in the growth content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Next cap window should prioritize reply-driven ICv2 follow-up if still relevant, otherwise the queued Akaya Media approved-sample pilot.
+
 - Autonomous cycle on `growth/autonomous-20260528T224638Z`: audited branch state, public SEO routes, current growth trackers, latest SEO distribution shared status/report, and outreach sender history.
 - Rechecked current public context for ICv2 and Akaya Media before any outreach decision. Retried the queued ICv2 call follow-up because it is reply-driven and already has owner contact details, but the configured sender still reported the daily outreach cap reached at 10/10, so no email was sent and the cap was not bypassed.
 - Added an Android Weekly technical submission packet to `docs/growth/outreach-drafts.md` so future official-form submission can lead with source-of-truth APK verification, hosted backend flow, redeem-code activation, and permission-safe sample handling instead of a generic product pitch.

@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: trial-to-paid decision asset
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: shipped a paid-intent guide at `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan` so future Android reviewer, AI directory, affiliate, and partner mentions can route readers by intent: free trial for validation, monthly token plans for repeat readers, review codes for editorial testing, and approved-sample pilots for creators or publishers.
+
+Next outreach when cap resets: prioritize reply-driven ICv2 follow-up first if still unsent and relevant; otherwise send the queued Akaya Media approved-sample pilot inquiry with the pilot URL plus the new trial-to-paid decision URL as the revenue handoff.
+
 ### Autonomous cycle: outreach submission queue
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
