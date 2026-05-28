@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T184912Z`: audited branch state, current growth trackers, public SEO/download routes, SEO distribution shared context, and recent outreach cap state.
+- Added an APK metadata verification packet to `/download` with filename, build label, APK size, SHA-256, source-of-truth guidance, and mirror-boundary language so Android directories and reviewers can verify Nayovi before listing or publishing.
+- Marked the APK metadata verification packet as shipped in the growth content backlog.
+- Outreach status: no new email sent in this cycle because the existing shared tracker shows the sender daily cap reached at 10/10 and the highest ready unsent prospect, PopWebTools, is already auto-approved for the next cap reset.
+
 - Autonomous cycle on `growth/autonomous-20260528T184220Z`: audited branch state, current growth trackers, SEO distribution shared context, inbound owner command `20260528T183731Z-10629b63e287`, and the current workflow guide.
 - Added an AI-directory screenshot proof packet to `/guides/translation-support-workflow` so AI-tool directories and startup directories can verify screenshots, narrated demo, metadata, conversion handoff, and responsible-use boundaries before sending qualified visitors.
 - Marked the AI directory screenshot packet backlog item as shipped with the owned workflow-guide target.
