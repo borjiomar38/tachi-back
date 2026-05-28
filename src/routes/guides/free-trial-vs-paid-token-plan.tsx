@@ -61,6 +61,23 @@ const trialTokenPlanStructuredData = () => {
         'Use a dedicated code and approved sample when a partner needs private evidence before screenshots, articles, listings, or recommendations.',
     },
   ] as const;
+  const recoverySignals = [
+    {
+      name: 'Activation support',
+      description:
+        'Keep the order email, redeem code, device type, and activation screenshot ready so support can resolve account or code issues.',
+    },
+    {
+      name: 'Device recovery',
+      description:
+        'Use support for legitimate device changes instead of sharing a code or buying duplicate access before the account history is checked.',
+    },
+    {
+      name: 'Review code separation',
+      description:
+        'Give reviewers, affiliates, directories, and partners a dedicated code so evaluation access stays separate from normal paid reader usage.',
+    },
+  ] as const;
 
   return [
     {
@@ -106,6 +123,17 @@ const trialTokenPlanStructuredData = () => {
       '@id': `${url}#checkout-proof`,
       name: 'Nayovi checkout and referral proof checks',
       itemListElement: checkoutProofSignals.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#support-recovery`,
+      name: 'Nayovi paid plan support and recovery checks',
+      itemListElement: recoverySignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
