@@ -2,6 +2,33 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28 cycle: official setup and APK trust packet
+
+Account setup progress:
+- Advanced Google Play Console/package identity setup with exact owner-only confirmation fields, credential reference `SEO_AGENT_GOOGLE_PLAY_CONSOLE_REFERENCE`, package/signing/verification guardrails, and post-connection capability.
+- Advanced official screenshot asset library setup with exact public screenshot list, sample-rights rules, credential reference `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`, and reuse scope for YouTube, Product Hunt, LinkedIn, directories, and reviewer packets.
+
+Owned content changed:
+- Created `docs/seo-distribution/android-apk-trust-profile.md` as a repo-native source-of-truth packet for reviewers, APK directories, app testers, newsletters, partner diligence, and investor review.
+- Added an owner-confirmed APK fields section to `https://tachiyomiat.com/download` plus structured data for confirmed vs pending APK trust fields.
+
+Authority targets discovered or refreshed:
+- Google Android developer verification: official Android trust context for independent APK package/signing proof and owner-only verification steps.
+- FreeAIList: AI/free-trial directory candidate; fit depends on whether free-trial plus paid-token wording qualifies without a forever-free claim.
+- AppTesterHub: Android app-testing candidate for install, activation, support, and OCR workflow trust evidence after owner-approved APK/sample scope.
+
+Draft distribution assets prepared:
+- Added an AppTesterHub/AppTester-style safe APK test task packet with no APK upload or public report until owner approval.
+- Added an owner note for Google Play Console/package identity facts so the growth agent can request package name, signing fingerprint, and verification status without guessing.
+
+Compliance notes:
+- No third-party account creation, login, form submission, public posting, APK upload, or outreach send was attempted.
+- Only owned repo/docs and public website files were changed.
+
+Next actions:
+- Owner confirms package name, signing-certificate fingerprint, Android developer verification status, package registration status, and public screenshot set.
+- After owner approval, reuse the APK trust profile in Android reviewer, newsletter, app-testing, and high-quality directory drafts.
+
 ## 2026-05-28T22:20Z Cycle
 
 Branch: `seo/distribution-20260528T222043Z`

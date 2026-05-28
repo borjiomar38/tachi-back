@@ -80,6 +80,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Medium | Official Nayovi profile/publication | Canonical OCR QA checklist article | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | AUTHORIZED_ACCOUNT_REQUIRED: official Medium profile and canonical policy approval required before publishing. |
 | watch | Android policy/community | Keep Android Open or similar independent Android discussions | Direct APK trust checklist context only | None by default | WATCH_ONLY: no product links in policy debates; use owned APK proof packet as internal context. |
 | draft | AI directory | ScriptByAI-style AI tools directory | Nayovi listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify accurate pricing/source-link fields and skip misleading free/open-source submissions. |
+| draft | Official Android trust | Google Play Console / Android developer verification | Owner-confirmed package identity packet for independent APK reviewers | docs/seo-distribution/android-apk-trust-profile.md | OWNER_ACTION_REQUIRED: owner must complete identity/package/terms steps and confirm facts before agent cites any verified status. |
+| draft | App testing | AppTesterHub-style Android tester marketplace | Safe APK test task packet using approved samples | docs/seo-distribution/android-apk-trust-profile.md | OWNER_REVIEW_REQUIRED: no APK upload, campaign, tester invite, or public report approval without owner consent. |
 
 ## Draft Bodies
 
@@ -267,6 +269,62 @@ Best,
 Nayovi team
 
 If this is not relevant, no problem and I will not follow up.
+
+### App testing task packet
+
+Status: draft
+Target: AppTesterHub, AppTester.co, Beta Family, or similar app-testing portals that accept official Android app test tasks.
+Audience: mobile QA testers, Android reviewers, investor diligence, directory editors.
+Rules risk: medium; do not upload APKs, start campaigns, invite testers, or approve public reports without owner consent.
+No-link variant: provide the test brief summary only and ask whether their process supports approved-sample testing.
+Link variant: docs/seo-distribution/android-apk-trust-profile.md and https://tachiyomiat.com/download after owner approval.
+
+Task title:
+Safe Android OCR workflow test for Nayovi
+
+Brief:
+
+Nayovi needs a human app test focused on install confidence, activation clarity, hosted OCR workflow, support path, and screenshot boundaries.
+
+Test scope:
+- Install only from the official Nayovi download page.
+- Record Android version, device model, install source, and whether the APK hash matches the published SHA-256.
+- Test free-trial or redeem-code activation only with an owner-approved code.
+- Use public-domain, owned, official-sample, or partner-approved pages only.
+- Check whether OCR detects speech bubbles, narration boxes, small labels, vertical text, and reading order.
+- Note missing text, merged bubbles, mistranslations, confusing loading states, and support/recovery questions.
+- Do not publish copyrighted chapter screenshots, private codes, payment data, emails, or device identifiers.
+
+Success criteria:
+- Tester can install from the official source.
+- Activation path is understandable.
+- OCR and translation progress are visible.
+- The app does not look like a chapter host or APK mirror.
+- Report distinguishes product bugs from sample permission or source-quality issues.
+
+Public report permission:
+No public tester report, badge, screenshot, recording, directory listing, or quote may be published until the owner approves the exact sample, media, and wording.
+
+### Google Play Console package identity owner note
+
+Status: draft
+Target: owner/internal setup queue before Android press, APK directories, or app-testing submissions.
+Audience: founder, release owner, growth agent.
+Rules risk: low as an internal checklist; high if verification status is claimed before confirmation.
+No-link variant: internal only.
+Link variant: docs/seo-distribution/android-apk-trust-profile.md
+
+Owner note:
+
+Before Nayovi asks Android reviewers or APK directories to cite package trust, please confirm these exact public facts:
+- Android package name.
+- Signing-certificate fingerprint.
+- Current APK SHA-256 from the official download page.
+- Whether Android developer verification is complete, pending, not started, or not applicable.
+- Whether the independently distributed package is registered where required.
+- Whether public screenshots can show install, activation, support, and approved-sample OCR flow.
+
+Until those facts are confirmed, all public packets should say owner confirmation required rather than claiming verified developer or package ownership status.
 
 ### Android newsletter technical tip draft
 

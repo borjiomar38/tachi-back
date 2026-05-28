@@ -211,6 +211,24 @@ const updateSourceRows = [
   },
 ] as const;
 
+const ownerConfirmationRows = [
+  {
+    label: 'Confirmed now',
+    value:
+      'Official domains, download URL, current APK file metadata, pricing, support, privacy, terms, and responsible-use links.',
+  },
+  {
+    label: 'Owner must confirm',
+    value:
+      'Package name, signing-certificate fingerprint, Android developer verification status, official screenshots, and any public tester report rights.',
+  },
+  {
+    label: 'Do not infer',
+    value:
+      'Do not copy package or verification claims from mirrors, screenshots, third-party APK pages, or community comments.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -564,6 +582,44 @@ export const PageDownload = () => {
               Reviewers can request a redeem code and sample-safe test context
               through support before publishing a hands-on Android OCR
               translation review.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Owner confirmation"
+        title="Which APK trust fields are confirmed"
+        description="Use this before publishing a directory listing, app review, newsletter item, or partner packet so pending verification details are not guessed."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {ownerConfirmationRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              A repo-native trust profile is available for reviewers who need a
+              neutral packet instead of a product page:
+              docs/seo-distribution/android-apk-trust-profile.md.
+            </p>
+            <p>
+              Keep any missing package, signing, or verification fields marked
+              as owner-confirmation required until Nayovi confirms the exact
+              values.
             </p>
           </CardContent>
         </Card>
