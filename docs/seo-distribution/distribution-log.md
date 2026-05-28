@@ -47,3 +47,17 @@ This file is maintained by the SEO distribution agent.
 - Added linkable asset entries for the reviewer/directory verification packet, WEBTOON approved-sample feedback packet, and AI directory listing packet.
 - Drafted exact Android Central review-code pitch, WEBTOON approved-sample feedback note, and AI Workbench listing packet in `platform-drafts.md`.
 - Next actions: add APK package metadata and screenshots to the review packet, owner-review Android Central and WEBTOON messages, and keep all external sends blocked until authorized owner workflow confirms the exact contact path.
+
+## 2026-05-28 Cycle 4
+
+- Verified branch `seo/distribution-20260528T180325Z`; external platform posting remains draft-only except owned GitHub/docs, and Git push is enabled.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/translate-manhwa-ai` by adding a technical OCR evaluation checklist for OCR completeness, block order/grouping, glossary review, and permission status before translation quality is judged.
+- Researched current authority opportunities across rotated categories:
+  - kba/awesome-ocr: active GitHub OCR resource list with OCR software, services, evaluation, libraries, datasets, and literature categories; best action is a maintainer-first fit question, not a promotional PR.
+  - LocWorld: current 2026 localization conference context includes multilingual AI, media localization, technical localization, quality evaluation, and human-machine collaboration; best action is a future non-promotional proposal after approved-sample evidence exists.
+  - Women in Localization: current public site shows a large localization community, AI/event programming, chapters, partnership paths, and member community routes; best action is a value-first topic note, not a backlink request.
+- Added those three opportunities to `authority-opportunities.md` and the broader `docs/growth/backlink-prospects.csv` tracker.
+- Added the manga OCR evaluation checklist and LocWorld proposal outline to `link-assets.md`.
+- Drafted exact GitHub maintainer-first copy, LocWorld proposal outline, and Women in Localization topic note in `platform-drafts.md`.
+- Next actions: create a neutral markdown version of the OCR checklist, gather approved-sample screenshots/measurements, owner-review community/conference notes, and keep external posting blocked until authorized account workflows and rules are confirmed.
