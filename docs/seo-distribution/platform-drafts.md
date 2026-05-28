@@ -63,6 +63,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | AI directory | Acid Tools | AI directory eligibility filter | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify listing rules and skip paid/reciprocal-link paths. |
 | draft | Localization resource | SandVox | Webtoon OCR QA checklist feedback | None by default | OWNER_REVIEW_REQUIRED: product-light resource note only; no backlink ask. |
 | draft | Reddit | r/droidappshowcase | Technical Android APK/OCR feedback request | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: current rules review, official account, disclosure, and no-link-first variant required. |
+| draft | Indie Hackers | Founder/build-in-public post | What changed after treating APK trust as part of the product | None by default | AUTHORIZED_ACCOUNT_REQUIRED: founder-owned profile, current rules review, and owner-approved metrics required before posting. |
+| draft | Localization service | MediBang TraDe / Wave Literature-style localization teams | Approved-sample OCR QA checklist feedback | None by default | OWNER_REVIEW_REQUIRED: official contact only; no backlink ask, no catalog translation implication, and link only if requested. |
+| watch | AI directory | BestSaaSList / AINovaTools | AI directory listing eligibility filter | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify submit rules, pricing fields, and no paid/reciprocal link requirement before any submission. |
 
 ## Draft Bodies
 
@@ -277,6 +280,76 @@ If useful, I can send the checklist and a short Android-side observation packet.
 
 Best,
 Nayovi team
+
+### Indie Hackers build-in-public update
+
+Status: draft
+Target: founder-owned Indie Hackers or build-in-public profile
+Audience: founders, indie app builders, subscription operators
+Rules risk: medium; post only from a truthful founder-owned profile after current community rules review and owner approval of any public metrics.
+No-link variant: recommended
+Link variant only if requested or clearly allowed: https://tachiyomiat.com/download
+
+Title:
+What I changed after treating APK trust as part of the product
+
+Post:
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+The unexpected product work has been trust infrastructure, not only OCR quality:
+- keeping the APK source of truth on the owned site
+- documenting support, pricing, redeem-code activation, and review-code access
+- separating approved-sample testing from anything that looks like chapter hosting
+- preparing screenshot and reviewer packets that avoid copyrighted pages
+- making directory/reviewer copy accurate enough that third parties do not turn the app into a mirror-first download
+
+Current question for other founders: when your product is outside a default app-store flow, what proof actually made users or reviewers trust the install path?
+
+Disclosure: I work on Nayovi. No link in this post unless people ask for the public checklist or download context.
+
+### Localization service approved-sample QA note
+
+Status: draft
+Target: MediBang TraDe, Wave Literature, Nini Webtoon, or similar manga/webtoon localization teams after owner review.
+Audience: localization operators, production teams, partner teams.
+Rules risk: medium; use only through official contact paths and do not imply permission to process client, publisher, or platform content.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Approved-sample OCR QA checklist for webtoon localization workflows
+
+Message:
+
+Hi {{team_name}} team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webtoon reader workflows.
+
+I found your team while researching professional manga and webtoon localization workflows. I am not asking for a backlink, and I am not proposing that Nayovi process any publisher, client, or platform content without explicit approval.
+
+The useful question is narrower: would a permission-first OCR QA checklist be useful to review for approved sample pages? The checklist focuses on sample permission, missing text regions, reading order, merged bubbles/captions, glossary consistency, human correction, and the decision about whether an output can be shared or cited.
+
+If that is useful, I can send the checklist and a short Android workflow note using only approved sample material. If it is not relevant, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### BestSaaSList / AINovaTools listing eligibility filter
+
+Status: watch
+Target: AI directory submit paths after current rule review.
+Audience: AI-tool directory editors and high-intent tool searchers.
+Rules risk: medium; do not submit if the listing hides official APK/source links, requires payment for link placement, requires reciprocal backlinks, or cannot represent free trial plus paid token plans accurately.
+No-link variant: not applicable; use only for internal eligibility review.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Listing fields to prepare only after eligibility is confirmed:
+- Name: `Nayovi`
+- Category: `Android app`, `AI OCR`, `AI translation`, `Manga translation workflow`
+- Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows, with official APK access, free trial, redeem-code activation, monthly token plans, and support.`
+- Responsible-use note: `Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+- Source links: official download, pricing, support, workflow guide, privacy, and terms.
 
 ### OCR Vendors resource fit note
 
