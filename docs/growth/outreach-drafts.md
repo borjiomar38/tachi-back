@@ -201,6 +201,30 @@ Nayovi does not host or distribute manga, manhwa, or manhua chapters. It support
 Submission note:
 If the form asks for a listing URL, use the official website links above rather than a mirror-first APK URL. If the form requires a paid placement, skip it unless the owner explicitly approves the spend.
 
+## Akaya Media Approved-Sample Pilot Draft
+
+Status: queued for next outreach cap reset. Prospect is already auto-approved in `docs/growth/backlink-prospects.csv`; do not send again if a later cycle has already contacted Akaya.
+
+Subject: Approved-sample Android OCR pilot idea for Akaya
+
+Hi Akaya Media team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Akaya while reviewing creator and publisher platforms that work across manga, comics, webcomics, localization, and international collaboration. I am not asking to translate your catalog or request a backlink. The useful question is whether a small approved-sample pilot would be worth discussing for Android reader workflow feedback.
+
+The pilot would stay narrow: Akaya or a creator chooses any approved sample pages, defines the language pair and rights context, and Nayovi provides a dedicated review/pilot code. The result can stay private unless Akaya approves public wording.
+
+Pilot brief:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Technical OCR Resource Maintainer Draft
 
 Use for GitHub OCR resource maintainers, Android developer newsletters, or localization editors only when the contact path explicitly welcomes useful resources. Lead with the neutral checklist and avoid asking for a product listing unless invited.
