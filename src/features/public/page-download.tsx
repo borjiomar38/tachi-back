@@ -3,6 +3,7 @@ import {
   BadgeCheckIcon,
   ClipboardCheckIcon,
   DownloadIcon,
+  FingerprintIcon,
   KeyRoundIcon,
   ShieldCheckIcon,
 } from 'lucide-react';
@@ -56,6 +57,24 @@ const appMetadataRows = [
   {
     label: 'SHA-256',
     value: androidApkDownload.sha256,
+  },
+] as const;
+
+const trustRows = [
+  {
+    title: 'Start from the owned domain',
+    description:
+      'Use tachiyomiat.com or nayovi.com as the source of truth before installing or reviewing an APK from any directory listing.',
+  },
+  {
+    title: 'Match the published hash',
+    description:
+      'Compare the SHA-256 value on this page with the downloaded file before citing, mirroring, or reviewing the build.',
+  },
+  {
+    title: 'Keep support and policy links attached',
+    description:
+      'A trustworthy listing should include support, pricing, privacy, terms, and the responsible translation workflow guide.',
   },
 ] as const;
 
@@ -265,6 +284,43 @@ export const PageDownload = () => {
             >
               Review workflow guide
             </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Trust"
+        title="Independent APK distribution checks"
+        description="Android app reviewers, directory editors, and readers can use these checks before treating any Nayovi APK link as authoritative."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {trustRows.map((row) => (
+            <Card key={row.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <FingerprintIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.title}</CardTitle>
+                <CardDescription>{row.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              Nayovi is distributed as an official Android APK with hosted OCR
+              and AI translation services. It should not be presented as an
+              unaffiliated mirror, modded reader, chapter source, or replacement
+              for publisher permission.
+            </p>
+            <p>
+              If a directory, forum, or review page cannot preserve these
+              source-of-truth details, use the official download page instead of
+              creating a separate listing.
+            </p>
           </CardContent>
         </Card>
       </PublicSection>
