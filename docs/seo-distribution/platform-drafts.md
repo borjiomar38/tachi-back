@@ -20,6 +20,10 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | GitHub | kba/awesome-ocr maintainer issue | Ask whether a manga OCR evaluation checklist belongs as a resource | https://tachiyomiat.com/translate-manhwa-ai | AUTHORIZED_ACCOUNT_REQUIRED: ask first; no promotional PR unless maintainer confirms fit. |
 | draft | LocWorld | Future CFP or networking note | Visual-storytelling OCR QA for multilingual AI workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: hold until approved-sample evidence exists; no sales pitch. |
 | draft | Women in Localization | Event/community topic note | OCR QA for visual storytelling localization | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: use official membership/partnership/event path; no backlink ask. |
+| draft | BetaList | Startup submission | Recently launched Android OCR translation workflow | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: founder-authorized submission only; paid priority needs explicit approval. |
+| draft | Hacker News | Show HN | Android APK for hosted OCR translation in manga/manhwa workflows | https://tachiyomiat.com/guides/translation-support-workflow | AUTHORIZED_ACCOUNT_REQUIRED: founder-owned manual post only; no generated comments or vote requests. |
+| watch | Stack Exchange | Anime & Manga Stack Exchange | Permission-safe OCR workflow answer without product link | None by default | HIGH_RISK: overt self-promotion is discouraged; disclose affiliation if Nayovi is mentioned. |
+| draft | Newsletter | TLDR AI or similar AI newsletter tip | OCR block QA checklist for image-heavy translation workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: submit only through official editorial/contact path after screenshots are ready. |
 
 ## Draft Bodies
 
@@ -177,6 +181,113 @@ The scope would be approved samples only: creator-owned material, public-domain 
 The public workflow guide covers the current review checklist: OCR block order, merged speech bubbles, glossary consistency, source-of-truth install links, and takedown-ready handling.
 
 If this is relevant, I can send the guide, screenshots, and demo context for feedback. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### BetaList startup listing draft
+
+Status: draft
+Target: BetaList startup submission
+Audience: early adopters, startup watchers, investors
+Rules risk: medium; BetaList requires founder/authorized submission, a working site on a custom domain, and editorial acceptance. Paid priority requires explicit owner budget approval.
+No-link variant: not applicable for a startup listing; use the owned website URL only.
+Link variant: https://tachiyomiat.com/download
+
+Startup name:
+Nayovi
+
+Tagline:
+Android OCR translation workflow for manga and manhwa readers
+
+Short description:
+Nayovi is an Android APK with hosted OCR, AI translation, free trial access, redeem-code activation, monthly token plans, and support for permission-safe manga, manhwa, and manhua reading workflows.
+
+Longer listing copy:
+Nayovi helps Android readers translate manga, manhwa, and manhua pages without managing OCR or translation provider keys on the phone. Readers install the official APK from Nayovi, activate hosted mode with a redeem code, test with free trial access, and upgrade to monthly token plans when the workflow becomes useful.
+
+The product is intentionally source-of-truth focused: official download, pricing, support, privacy, terms, and responsible-use guidance stay on Nayovi-owned pages. Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Assets needed before submission:
+- Product screenshot set
+- Narrated demo link
+- Founder-approved launch timing
+- Public support and pricing links
+- Responsible-use wording
+
+### Hacker News Show HN draft
+
+Status: draft
+Target: Hacker News Show HN
+Audience: technical founders, Android developers, OCR/localization builders
+Rules risk: medium; Show HN should present something users can try, and comments must be human-written by the founder. Do not automate replies, request votes, or paste generated comments.
+No-link variant: do not post until the owner can manually participate.
+Link variant: https://tachiyomiat.com/guides/translation-support-workflow
+
+Title:
+Show HN: Nayovi, an Android APK for hosted manga OCR translation
+
+URL:
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Founder comment:
+
+I built Nayovi because manga/manhwa OCR translation on Android usually breaks before the translation model sees a sentence. The hard parts are speech-bubble detection, panel order, merged OCR blocks, glossary consistency, and making sure the sample is allowed to be processed.
+
+The current product is narrow: an Android APK, hosted OCR/translation, redeem-code activation, free trial access, token plans, and support. It does not host or distribute chapters.
+
+I am interested in technical feedback on the workflow and trust packet more than launch praise: what would you need to inspect before trusting an Android OCR translator with image-heavy pages?
+
+### Stack Exchange no-link answer guardrail
+
+Status: watch
+Target: Anime & Manga Stack Exchange or similar Q&A only when a question directly asks about manga translation legality, OCR workflow, or tool evaluation
+Audience: Q&A readers and moderators
+Rules risk: high; overt self-promotion can be flagged as spam, and affiliation disclosure is required if Nayovi is mentioned.
+No-link variant: required by default.
+Link variant: omit unless a moderator or exact question context clearly makes the official policy link necessary.
+
+Answer pattern:
+
+For OCR or machine-translation tools, I would separate the technical question from the rights question.
+
+Technical checks:
+- Does the OCR detect all speech bubbles, narration boxes, side notes, and vertical text?
+- Does the block order follow the actual panel or long-strip reading order?
+- Are unrelated bubbles merged into one translation unit?
+- Are names, places, titles, and recurring terms reviewed with a glossary?
+
+Rights checks:
+- Is the material owned by the user, public-domain, an official sample, or explicitly approved for processing?
+- Is the output staying private, or is someone planning to publish it?
+- Is there a clear takedown or correction path if a creator or rights holder objects?
+
+I work on Nayovi, an Android OCR translation workflow, so I am biased toward this checklist. The general point applies beyond my tool: do not judge translation quality until the OCR input is complete, ordered, and allowed to be processed.
+
+### TLDR AI newsletter tip draft
+
+Status: draft
+Target: TLDR AI or similar AI newsletter/resource tip path
+Audience: AI builders, technical operators, startup readers
+Rules risk: medium; this should be a technical resource pitch, not a generic app promo.
+No-link variant: pitch the checklist and offer screenshots only if requested.
+Link variant: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Resource tip: OCR QA checklist for manga/manhwa translation workflows
+
+Message:
+
+Hi TLDR AI team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+The useful AI angle is not a broad "AI translator" claim. I put together a public checklist around the failure points that happen before translation quality can be judged: OCR completeness, speech-bubble order, merged text blocks, glossary consistency, approved sample status, and reviewer handoff.
+
+If TLDR AI ever includes niche AI workflow resources, this may be a useful example of image-heavy OCR QA for consumer Android workflows:
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Nayovi does not host or distribute chapters; the checklist is written around owned content, public-domain material, official samples, or permission-approved content.
 
 Best,
 Nayovi team

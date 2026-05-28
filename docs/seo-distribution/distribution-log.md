@@ -61,3 +61,18 @@ This file is maintained by the SEO distribution agent.
 - Added the manga OCR evaluation checklist and LocWorld proposal outline to `link-assets.md`.
 - Drafted exact GitHub maintainer-first copy, LocWorld proposal outline, and Women in Localization topic note in `platform-drafts.md`.
 - Next actions: create a neutral markdown version of the OCR checklist, gather approved-sample screenshots/measurements, owner-review community/conference notes, and keep external posting blocked until authorized account workflows and rules are confirmed.
+
+## 2026-05-28 Cycle 5
+
+- Verified branch `seo/distribution-20260528T185125Z`; external platform accounts remain draft-only except owned GitHub/docs, and Git push is enabled.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting so this cycle supports the active outreach pipeline and respects account limits.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding a community submission readiness section for startup launch communities, Q&A/forums, GitHub resource lists, newsletters/resource pages, and Reddit/social posts.
+- Researched current authority opportunities across rotated categories:
+  - BetaList: current public criteria require a technology startup, decent custom-domain landing page, and visitor access such as signup/download; terms require founder or authorized representative submission and paid priority needs owner approval.
+  - Hacker News Show HN: official guidance says the work should be ready for users to try; best action is founder-owned manual posting with a technical backstory and no automated comments or vote requests.
+  - Anime & Manga Stack Exchange: help center warns against overt self-promotion and requires affiliation disclosure, so this is watch-only for no-link answers to genuinely relevant questions.
+  - TLDR AI: newsletter/resource opportunity for a technical OCR block QA checklist pitch after screenshots or demo proof are ready.
+- Added BetaList, Hacker News Show HN, Anime & Manga Stack Exchange, and TLDR AI rows to `authority-opportunities.md` and the broader `docs/growth/backlink-prospects.csv` tracker.
+- Added community submission readiness, BetaList listing packet, and Hacker News Show HN packet to `link-assets.md`.
+- Drafted exact BetaList listing copy, Show HN title/founder comment, Stack Exchange no-link answer guardrail, and TLDR AI newsletter tip in `platform-drafts.md`.
+- Next actions: prepare a screenshot set, owner-review launch timing and account ownership for BetaList/HN, keep Stack Exchange linkless unless a directly relevant question and disclosure-safe context appears, and use TLDR AI only as a technical resource pitch.

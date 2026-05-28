@@ -252,6 +252,34 @@ const pilotBriefRows = [
   },
 ] as const;
 
+const communitySubmissionRows = [
+  {
+    channel: 'Startup launch communities',
+    readiness:
+      'Use only founder-owned accounts for BetaList, Product Hunt, or Show HN-style launches, and send people to a working Nayovi page with APK access, demo context, pricing, and support.',
+  },
+  {
+    channel: 'Q&A and forum communities',
+    readiness:
+      'Answer only when the question is genuinely about OCR workflow, Android setup, or permission-safe translation. Disclose Nayovi affiliation and omit links unless the rules clearly allow a relevant source.',
+  },
+  {
+    channel: 'GitHub resource lists',
+    readiness:
+      'Ask maintainers whether a neutral OCR checklist or documentation page fits before opening a pull request. Do not submit a product link as a generic resource.',
+  },
+  {
+    channel: 'Newsletters and resource pages',
+    readiness:
+      'Pitch the workflow checklist, reviewer packet, or approved-sample brief as a useful reader resource. Skip any placement that requires paid link insertion or weak directory pages.',
+  },
+  {
+    channel: 'Reddit and social posts',
+    readiness:
+      'Use no-link feedback drafts first, check community rules, and avoid generated or repeated comments. A link belongs only when it helps the discussion and is allowed.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -622,6 +650,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.label}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Community readiness"
+        title="Where Nayovi can be mentioned without looking like a link drop"
+        description="Use this section before submitting Nayovi to launch communities, Q&A sites, GitHub resource lists, newsletters, or social discussions."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {communitySubmissionRows.map((row) => (
+              <div
+                key={row.channel}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.channel}
+                </span>
+                <span>{row.readiness}</span>
               </div>
             ))}
           </CardContent>
