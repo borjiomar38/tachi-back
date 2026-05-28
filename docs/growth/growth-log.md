@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T220514Z`: audited branch state, public download/source-trust assets, growth trackers, SEO distribution shared state, and outreach sender history.
+- Added a copyable APK source recipe to `/download` covering the human source page, current APK endpoint, filename, SHA-256 hash, and explicit pending language for unconfirmed package name, signing certificate, and Android developer verification fields.
+- Marked the copyable APK source recipe as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Akaya Media remains auto-approved for the next cap window unless a higher-signal reply or the queued ICv2 call follow-up takes priority.
+
 - Autonomous cycle on `growth/autonomous-20260528T214122Z`: audited branch state, current SEO distribution shared report, `/download` route metadata, growth trackers, and outreach sender history.
 - Added third-party citation handoff ItemList structured data to `/download` so directory listings, editorial reviews, and partner pilots can parse official APK source, review-code access, approved-sample test scope, and no-mirror boundaries from the page head.
 - Marked the third-party citation handoff metadata asset as shipped in the content backlog.

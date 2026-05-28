@@ -211,6 +211,25 @@ const updateSourceRows = [
   },
 ] as const;
 
+const updateRecipeRows = [
+  {
+    label: 'Human page',
+    value: 'https://tachiyomiat.com/download',
+  },
+  {
+    label: 'APK endpoint',
+    value: androidApkDownload.href,
+  },
+  {
+    label: 'Current file',
+    value: androidApkDownload.filename,
+  },
+  {
+    label: 'Current hash',
+    value: androidApkDownload.sha256,
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -720,6 +739,38 @@ export const PageDownload = () => {
               repository or automatic update catalog. Treat external tracker
               setup as a personal convenience until a listing is reviewed and
               approved through an official path.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardHeader>
+            <CardTitle className="text-lg">
+              Copyable source recipe for review packets
+            </CardTitle>
+            <CardDescription>
+              Keep these fields together when using a personal APK tracker,
+              preparing a directory packet, or asking an editor to verify the
+              official build.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-3 p-5 pt-0 text-sm leading-7 text-muted-foreground md:p-6 md:pt-0">
+            {updateRecipeRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span className="break-all">{row.value}</span>
+              </div>
+            ))}
+            <p>
+              Package-name, signing-certificate, and Android developer
+              verification details should be added only when they are confirmed
+              in the release packet. Until then, mark those fields as pending
+              instead of guessing.
             </p>
           </CardContent>
         </Card>
