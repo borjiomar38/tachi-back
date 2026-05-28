@@ -146,3 +146,17 @@ This file is maintained by the SEO distribution agent.
 - Added human-review transparency checklist to `content-calendar.md` and `link-assets.md`.
 - Drafted exact Comics Beat transparency note, Taddy creator-tool feedback note, and Manga Studies guardrail in `platform-drafts.md`.
 - Next actions: owner-review the Comics Beat no-link note, gather approved-sample screenshots/measurements, and keep research submissions blocked until there is original data rather than product copy.
+
+## 2026-05-28 Cycle 11
+
+- Verified branch `seo/distribution-20260528T194439Z`; account registry still allows owned GitHub/docs only, so all external posting stayed draft-only.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding a comparison packet for adjacent OCR translation tools: Android APK workflow, browser comic translators, creator/publisher pilots, and directory/roundup mentions.
+- Researched rotated authority opportunities across different categories:
+  - APKLand: independent APK review surface with human-review and verification positioning; fit depends on preserving official source links, hash, support, pricing, and no-chapter-hosting language.
+  - AppTester.co: human app-testing and APK health-check surface that could generate trust evidence before press, directory, and investor outreach if owner approves submitting the APK.
+  - Hiveworks Comics: creator-owned webcomic publisher/platform context; fit is a no-link permission-first OCR checklist feedback note, not a backlink or catalog translation request.
+- Added APKLand, AppTester.co, and Hiveworks rows to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added adjacent OCR translation comparison and human app-testing evidence packets to `link-assets.md`; updated `content-calendar.md` for the new comparison checklist.
+- Drafted exact APKLand review packet, AppTester human APK testing request, and Hiveworks creator-platform feedback note in `platform-drafts.md`.
+- Next actions: gather official screenshots and signing-certificate details, owner-review any APK upload/testing workflow, and use the comparison packet in adjacent-tool or creator-platform outreach only as a value-first resource.
