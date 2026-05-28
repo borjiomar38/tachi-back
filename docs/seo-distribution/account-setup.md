@@ -16,6 +16,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
 | medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
 | medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_prepared | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Owner reviews directory quality filter before any form submission. |
+| medium | Hacker News founder account | Technical founder feedback and Show HN readiness | setup_packet_prepared_owner_action_required | Founder uses an existing real account or creates one manually; no automated posting or voting | Founder-approved bio, Show HN title/comment, working APK/demo/support links | `SEO_AGENT_HN_ACCOUNT_REFERENCE`; no password/API secret in docs | Draft manual founder posts and reply notes only | Founder confirms account eligibility and posts manually only when ready to answer comments. |
+| medium | Android newsletter submission profiles | Developer-facing trust links for Android newsletters | setup_packet_prepared_owner_action_required | Owner approves official submit-form use and any publication-specific byline | Technical link packet, APK review packet, screenshot policy, non-promotional short note | `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`, `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE` | Submit owner-approved technical links only through official forms | Owner approves whether Android Weekly/Kotlin Weekly-style link submissions may cite the APK trust packet. |
 | medium | App testing and reviewer portals | Third-party install trust evidence before press and directory outreach | setup_packet_prepared | Owner approves exact APK sharing, tester scope, sample pages, and publication rights before any upload | Signed APK link, SHA-256, safe sample plan, redeem code, support link, screenshot rules | Per-platform credential reference only; optional `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` | Request reviewer/tester reports only through approved portals or official editorial paths | Owner approves whether Nayovi can share APK/redeem-code access with testing services. |
 | high | Android developer verification and package registry | APK install trust, package ownership, reviewer confidence | setup_packet_prepared | Owner completes official Android developer verification and package registration when eligible | Package name, signed APK, SHA-256, signing-certificate fingerprint, official domains, support links | `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE` | Let agent cite verified/pending status in reviewer packets after owner confirms it | Owner confirms package name, signing fingerprint, and verification status; agent must not infer. |
 | medium | Newsletter/podcast contributor profiles | Editorial trust for localization, Android, and creator-platform pitches | setup_packet_prepared | Owner creates official contributor/byline profile only where invited or required | Founder byline, headshot/logo, bio, canonical links, non-promotional article/topic packet | Per-publication credential reference only | Submit owner-approved non-promotional topic pitches or author bios | Owner approves byline and which publications may receive topic notes. |
@@ -783,3 +785,62 @@ Agent capability after connection:
 
 Next action:
 - Owner decides whether to use a human app-testing service before the next Android press or directory push, and confirms which approved sample pages may be used.
+
+### Hacker News Founder Account / Show HN Packet
+
+Status: OWNER_ACTION_REQUIRED for founder-owned account use, manual posting, and manual reply handling.
+
+Use case:
+- Only use Hacker News if Nayovi is ready for technical scrutiny: working APK download, clear support path, pricing, responsible-use guide, and no misleading claims about hosted content.
+- The agent must not create accounts, post automatically, request votes, generate reply floods, or post from a brand/fake persona.
+
+Profile and submission fields:
+- Account: founder-owned real account, not a throwaway.
+- Title option: `Show HN: Nayovi - Android APK for hosted manga OCR translation`
+- URL option: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` if the founder wants a technical checklist-first submission, or `https://tachiyomiat.com/download` if the APK itself is the main thing being shown.
+- First comment summary: `I am building Nayovi as an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The product does not host chapters. I am looking for technical feedback on APK source-of-truth links, hosted OCR flow, OCR block ordering, glossary consistency, and permission-safe sample handling.`
+
+Required assets:
+- Founder-approved public identity.
+- Current APK metadata and source-of-truth download link.
+- Technical checklist URL.
+- Demo or screenshots using approved samples only.
+- Support/pricing/privacy/terms links.
+
+Credential reference:
+- `SEO_AGENT_HN_ACCOUNT_REFERENCE` for a non-secret workflow note only. Do not store passwords, session cookies, recovery details, or private HN messages in docs or Git.
+
+Agent capability after connection:
+- The agent can prepare title/comment variants and summarize feedback after the founder posts manually. It must not publish, vote, reply, or automate engagement.
+
+Next action:
+- Founder confirms whether Nayovi is ready for a manual Show HN and whether the checklist-first or download-first URL is safer for the first submission.
+
+### Android Newsletter Submission Profiles
+
+Status: OWNER_ACTION_REQUIRED for owner-approved byline, submit-form use, and publication-specific rules review.
+
+Use case:
+- Android Weekly, Kotlin Weekly, and similar developer newsletters are useful only for developer-facing assets, not consumer app promotion.
+- The strongest angle is independent APK trust plus hosted OCR workflow review: source-of-truth download, SHA-256, package/signing placeholders, safe samples, screenshot policy, and support links.
+
+Submission fields:
+- Suggested title: `A source-of-truth checklist for reviewing an independent Android OCR APK`
+- Suggested URL: `docs/nayovi-apk-review-packet.md` until a public GitHub URL is chosen, or `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` for a public web URL.
+- Short note: `This is a developer-facing checklist for reviewing an independent Android APK with hosted OCR/AI translation: official source links, SHA-256, support/pricing/legal links, safe sample handling, and screenshot boundaries. It is useful for Android builders and reviewers evaluating direct APK distribution without mirror-first listings.`
+
+Required assets:
+- Public URL for the APK review packet or checklist.
+- Owner-confirmed package name, signing fingerprint, and developer verification status when available.
+- Approved screenshots or demo references.
+- Non-promotional submitter byline.
+
+Credential references:
+- `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`
+- `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare owner-approved link submissions and submit only through official newsletter forms if current rules allow. No paid sponsored submission, reciprocal links, or generic consumer app pitches without explicit owner approval.
+
+Next action:
+- Owner chooses the public URL to cite and confirms whether Android newsletter submissions should wait for package/signing fields or proceed with pending-language placeholders.

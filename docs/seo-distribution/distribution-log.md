@@ -2,6 +2,41 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T22:56Z Cycle
+
+Branch: `seo/distribution-20260528T225619Z`
+
+Account setup progress:
+- Advanced Hacker News founder/Show HN setup with a manual-only founder account packet, title/comment options, checklist-first vs download-first URL guidance, `SEO_AGENT_HN_ACCOUNT_REFERENCE`, and no-vote/no-automation guardrails.
+- Advanced Android newsletter submission setup with Android Weekly/Kotlin Weekly-style submit-form guidance, developer-facing copy, `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE` / `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE`, and owner-only byline/rules approval.
+
+Owned content changed:
+- Updated `docs/seo-distribution/account-setup.md`, `content-calendar.md`, and `link-assets.md` with founder-community and Android-newsletter trust assets.
+- Added directory eligibility and Show HN drafts to `docs/seo-distribution/platform-drafts.md`.
+
+Authority targets discovered or refreshed:
+- SpotFreeAI: AI/free-trial directory candidate; fit depends on accurate trial/paid-token labeling and preserving official source links.
+- AiMatch: AI tool comparison directory candidate with pricing/API/use-case filters; requires checking whether focused Android APK OCR workflows are accepted.
+- Verified App Reviews: app review trust surface; usable only for real-use, non-incentivized review paths that cite official links.
+- ComFor Translating Comics workshop: research/community context for visual-storytelling OCR QA; watch-only until approved-sample measurements exist.
+
+Draft distribution assets prepared:
+- Prepared a founder-owned Show HN first-comment draft focused on technical feedback for APK trust, hosted OCR, OCR block order, glossary consistency, and permission-safe sample handling.
+- Prepared a SpotFreeAI/AiMatch-style directory eligibility note that rejects reciprocal backlinks, paid-link placement, hidden redirects, mirror-first APK links, and misleading forever-free claims.
+
+Outreach tracker:
+- Added SpotFreeAI, AiMatch, Verified App Reviews, and ComFor Translating Comics workshop to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, app review request, directory submission, Reddit comment, or public outreach was performed. Registry still permits only owned GitHub/docs work.
+
+Validation:
+- Passed: `./node_modules/.bin/tsc --noEmit`.
+
+Next actions:
+- Owner confirms founder account readiness, public screenshot set, package name, signing fingerprint, and whether Android newsletter submissions should wait for confirmed package/signing fields.
+- Verify SpotFreeAI/AiMatch submission fields before any owner-reviewed listing and skip any reciprocal, paid-link, or misleading free-only flow.
+
 ## 2026-05-28 cycle: official setup and APK trust packet
 
 Account setup progress:
