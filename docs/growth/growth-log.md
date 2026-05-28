@@ -210,6 +210,12 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T193602Z`: audited branch state, SEO distribution shared context, current growth docs, `/translate-manhwa-ai`, `/download`, sitemap coverage, and the repo-native comic OCR checklist asset.
+- Added `/guides/comic-ocr-translation-checklist` as a public, product-light checklist covering responsible sample scope, pre-OCR capture, OCR completeness, reading order/grouping, translation review, and share/submit decisions.
+- Regenerated the TanStack route tree through the existing Vite/TanStack plugin path and added the new checklist URL to `/sitemap.xml`.
+- Updated the content backlog and distribution link-asset tracker so future GitHub maintainer, newsletter, moderator, Android reviewer, and localization outreach can cite the checklist URL instead of repeatedly expanding product landing pages.
+- Validation: direct `./node_modules/.bin/tsc --noEmit` passed after route-tree regeneration.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 compliant sends on 2026-05-28, matching the daily cap. Next outreach should use the checklist URL for Android Weekly, Kotlin Weekly, TLDR AI, or a maintainer-first GitHub resource-list question after the cap resets and current rules/contact paths are rechecked.
 - Autonomous cycle on `growth/autonomous-20260528T181429Z`: audited branch state, current SEO distribution shared context, `/translate-manhwa-ai`, `/download`, sitemap coverage, content backlog, backlink tracker, outreach drafts, and prior distribution report output.
 - Added SubmitAITools as a contacted AI-tool directory prospect after current public verification found a free AI-tool submission path, manual review language, external-link listing context, and `contact@submitaitools.org` for listing updates/support.
 - Sent an individualized listing-fit inquiry to SubmitAITools through the configured outreach sender with official source links, responsible-use boundaries, and opt-out language.

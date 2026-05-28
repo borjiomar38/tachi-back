@@ -423,6 +423,63 @@ const neutralChecklistRows = [
   },
 ] as const;
 
+const standaloneChecklistSections = [
+  {
+    title: 'Responsible sample scope',
+    items: [
+      'Confirm the sample is owned, public-domain, an official preview, creator-approved, or otherwise permission-approved for OCR and translation testing.',
+      'Do not use platform catalog pages, paid chapters, or third-party scans as public demo material without explicit permission.',
+      'Keep source, permission status, language pair, and review date with the QA notes.',
+      'Do not share translated output publicly until the permission status supports that use.',
+    ],
+  },
+  {
+    title: 'Pre-OCR capture',
+    items: [
+      'Confirm the full page, double-page spread, or long-strip segment is present before OCR starts.',
+      'Check that speech bubbles, narration boxes, side comments, small labels, handwritten effects, and vertical text are visible enough to inspect.',
+      'Record whether the sample is manga, manhwa, manhua, webtoon, western comic, or mixed format because reading order changes the review.',
+      'Keep a copy of the original page image beside the OCR output during review.',
+    ],
+  },
+  {
+    title: 'OCR completeness',
+    items: [
+      'Count whether all visible text regions were detected.',
+      'Flag missing text regions before judging translation quality.',
+      'Mark uncertain regions where stylized lettering, low contrast, or small print may need manual correction.',
+      'Keep original OCR text visible so reviewers can distinguish OCR mistakes from translation mistakes.',
+    ],
+  },
+  {
+    title: 'Reading order and grouping',
+    items: [
+      'Compare OCR block order with the page reading flow.',
+      'Check that unrelated speech bubbles, captions, and sound effects were not merged into one translation unit.',
+      'Check that a single sentence split across bubbles has not been separated in a way that changes meaning.',
+      'Review long-strip ordering separately from page-by-page ordering.',
+    ],
+  },
+  {
+    title: 'Translation review',
+    items: [
+      'Track glossary decisions for names, places, ranks, techniques, honorifics, and recurring terms.',
+      'Verify that speaker tone and relationship context survive the translation.',
+      'Check that UI labels, source names, filenames, and other non-dialogue metadata were not translated accidentally.',
+      'Review failed OCR blocks before retrying translation so the model is not asked to fix missing or corrupted input.',
+    ],
+  },
+  {
+    title: 'Share or submit decision',
+    items: [
+      'For public examples, include only approved samples and summarize sensitive details when permission is narrow.',
+      'For GitHub or newsletter submissions, use this checklist as the resource and mention Nayovi only when the context allows affiliation disclosure.',
+      'For forums, Reddit, Q&A, or community replies, use a no-link version unless product links are explicitly allowed and useful.',
+      'For Android reviewers and directories, pair the checklist with official source links, support path, pricing, privacy, terms, and responsible-use notes.',
+    ],
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -479,6 +536,91 @@ export const PageMihonNayoviSetupGuide = () => {
 
 export const PageMihonTachiyomiAtSetupGuide = () => {
   return <SetupGuidePage copy={mihonTachiyomiAtSetupGuideCopy} />;
+};
+
+export const PageComicOcrChecklist = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="OCR checklist"
+        title="Comic OCR translation QA checklist"
+        description="A neutral review checklist for manga, manhwa, manhua, webtoon, and comic OCR translation tests. Use it before sending samples to editors, maintainers, moderators, directories, or partners."
+        className="pt-10"
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              This checklist is intentionally useful without requiring a
+              product link. It helps reviewers separate sample permission, OCR
+              completeness, reading order, glossary review, and public sharing
+              decisions.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Use approved samples first. Nayovi does not host chapters or
+              replace rights-holder permission for public translation examples.
+            </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Review steps"
+        title="What to verify before judging translation quality"
+        description="Most translation complaints start earlier in the workflow: missing text, bad grouping, unclear rights, or glossary drift."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {standaloneChecklistSections.map((section) => (
+            <Card key={section.title} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{section.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="grid gap-3 text-sm leading-7 text-muted-foreground">
+                {section.items.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-xl border border-border/70 px-4 py-3"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Use the asset"
+        title="Share it without turning it into a sales pitch"
+        description="For maintainers, newsletter editors, moderators, and localization teams, lead with the checklist and disclose Nayovi affiliation only where relevant."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/guides/translation-support-workflow"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Full workflow guide
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/download"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            APK verification packet
+          </a>
+          <a
+            href="/support"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Request review access
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
 };
 
 const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
