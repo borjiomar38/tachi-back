@@ -2,6 +2,39 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T21:20Z Cycle
+
+Branch: `seo/distribution-20260528T204735Z`
+
+Account setup progress:
+- Advanced Android developer verification/package registry setup with owner-only identity and terms gates, package-name/signing/verification status fields, `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE`, and a rule that the agent must mark unconfirmed details as pending.
+- Advanced newsletter/podcast contributor setup with owner-approved byline fields, publication-specific credential references, canonical links, and no automated booking or bulk editorial submission guardrails.
+
+Owned content changed:
+- Added a release-proof section to `https://tachiyomiat.com/download` explaining what reviewers should ask for before publishing: package ownership, signing evidence, Android verification status, and approved sample test scope.
+- Updated `content-calendar.md` and `link-assets.md` with APK release proof and an Obtainium-style official source setup note.
+
+Authority discovery:
+- Added Obtainium app-source setup as an owned Android direct-APK trust workflow after reviewing current app-source/update-tracking documentation.
+- Added IzzyOnDroid app inclusion as a watch-only Android repository quality bar because its current public policy favors free/open-source developer-signed APKs.
+- Added Product Hunt image/OCR translation alternatives as launch positioning research because current Product Hunt surfaces already include image, OCR, manga, and translation tools.
+- Added NoohTech as watch-only broad AI directory research pending submit-rule and source-link quality verification.
+
+Drafts prepared:
+- Added an Obtainium app-source setup note for owned docs or rule-compliant Android community use.
+- Added IzzyOnDroid eligibility guardrail, Product Hunt alternatives positioning note, and NoohTech AI-directory eligibility filter.
+
+Outreach tracker:
+- Added Obtainium, IzzyOnDroid, Product Hunt alternatives, and NoohTech to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, identity verification, APK upload, paid placement, or community comment was performed. Registry still permits only owned GitHub/docs actions.
+
+Next actions:
+- Owner confirms Nayovi package name, signing-certificate fingerprint, and Android developer verification status so the download-page release packet can be completed.
+- Test whether the official APK URL can support an Obtainium-style source note before publishing that guidance.
+- Owner-review Product Hunt launch timing and maker account setup before using alternatives positioning.
+
 ## 2026-05-28T23:45Z Cycle
 
 Branch: `seo/distribution-20260528T203753Z`

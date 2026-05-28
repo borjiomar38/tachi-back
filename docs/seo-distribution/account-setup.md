@@ -16,6 +16,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
 | medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
 | medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_needed | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Prioritize high-reputation directories first. |
+| high | Android developer verification and package registry | APK install trust, package ownership, reviewer confidence | setup_packet_prepared | Owner completes official Android developer verification and package registration when eligible | Package name, signed APK, SHA-256, signing-certificate fingerprint, official domains, support links | `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE` | Let agent cite verified/pending status in reviewer packets after owner confirms it | Owner confirms package name, signing fingerprint, and verification status; agent must not infer. |
+| medium | Newsletter/podcast contributor profiles | Editorial trust for localization, Android, and creator-platform pitches | setup_packet_prepared | Owner creates official contributor/byline profile only where invited or required | Founder byline, headshot/logo, bio, canonical links, non-promotional article/topic packet | Per-publication credential reference only | Submit owner-approved non-promotional topic pitches or author bios | Owner approves byline and which publications may receive topic notes. |
 
 ## 2026-05-28 Setup Packets
 
@@ -214,3 +216,59 @@ Agent capability after connection:
 
 Next action:
 - Owner creates/connects the official account, approves the handle and bio, and decides whether the agent should remain draft-only or publish approved posts through the API.
+
+### Android Developer Verification and Package Registry
+
+Status: OWNER_ACTION_REQUIRED for identity verification, terms acceptance, package registration, and any Play Console or Android Developer Console steps.
+
+Public packet fields:
+- Official app name: `Nayovi`
+- Official download URL: `https://tachiyomiat.com/download`
+- Brand URL: `https://nayovi.com`
+- Support URL: `https://tachiyomiat.com/support`
+- Responsible-use URL: `https://tachiyomiat.com/guides/translation-support-workflow`
+- Package name: owner must confirm.
+- SHA-256: use the current public value from the download page.
+- Signing-certificate fingerprint: owner must confirm from the release signing process.
+- Android developer verification status: owner must confirm as `complete`, `pending`, `not started`, or `not applicable`.
+
+Verification checklist:
+- Use only the official Google/Android developer verification flow for identity and package registration.
+- Do not upload government ID, accept terms, or complete identity checks through the agent.
+- Keep package ownership and signing evidence in the release packet before approaching directories, app reviewers, or Android newsletters.
+- If verification is incomplete, drafts must say `pending` rather than implying verified status.
+
+Credential reference:
+- Store any non-public workflow reference as `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE`; do not store identity documents, private keys, signing keys, screenshots with secrets, or console cookies in docs or Git.
+
+Agent capability after connection:
+- The agent can update reviewer packets and directory drafts with owner-confirmed package name, signing fingerprint, and verification status. It must not submit identity documents, create developer accounts, or upload packages without explicit owner action.
+
+Next action:
+- Owner confirms package name, signing-certificate fingerprint, and Android developer verification status. Then the agent can add those exact public fields to the download-page release packet and directory submissions.
+
+### Newsletter and Podcast Contributor Profiles
+
+Status: OWNER_ACTION_REQUIRED for author/byline approval and publication-specific account setup.
+
+Profile fields:
+- Contributor name: owner-approved founder or official Nayovi team byline.
+- Short bio: `Nayovi builds an Android hosted OCR and AI translation workflow for manga, manhwa, and manhua reader workflows, with permission-safe sample review and official APK support.`
+- Long bio: `Nayovi provides an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, webtoon, and comic reader workflows. It does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+- Primary link: `https://nayovi.com`
+- Technical link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- APK trust link: `https://tachiyomiat.com/download`
+
+Required assets:
+- Founder-approved byline and optional headshot, or official logo when a publication accepts company bylines.
+- Non-promotional topic packet for Android APK trust, OCR QA for visual storytelling, human review, or approved-sample workflow design.
+- Screenshot/demo assets that avoid copyrighted chapter pages.
+
+Credential references:
+- Use publication-specific references only, such as `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`, `SEO_AGENT_TLDR_AI_SUBMISSION_REFERENCE`, or `SEO_AGENT_NIMDZI_TOPIC_REFERENCE`, after owner approval. Do not store publication passwords, cookies, or editor correspondence secrets.
+
+Agent capability after connection:
+- Prepare and submit owner-approved topic notes only through official submission forms or editor-approved paths. No automated podcast booking, newsletter spam, or syndicated article posting without a publication's explicit workflow.
+
+Next action:
+- Owner approves the contributor byline and whether Android Weekly, TLDR AI, Nimdzi LIVE, or similar outlets may receive non-promotional topic notes.

@@ -83,6 +83,29 @@ const trustRows = [
   },
 ] as const;
 
+const releaseProofRows = [
+  {
+    label: 'Package ownership',
+    value:
+      'Confirm the package name, release owner, and official download URL before citing any third-party APK page.',
+  },
+  {
+    label: 'Signing evidence',
+    value:
+      'Attach the SHA-256 hash and signing-certificate fingerprint when the release packet exposes them.',
+  },
+  {
+    label: 'Verification status',
+    value:
+      'State whether Android developer verification is complete, pending, or not applicable instead of leaving reviewers to infer it.',
+  },
+  {
+    label: 'Test scope',
+    value:
+      'Use public-domain, official-sample, or owner-approved pages only when testing OCR and translation output.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -376,6 +399,45 @@ export const PageDownload = () => {
             <p>
               Avoid listings that present the APK as an unaffiliated mirror or
               imply that Nayovi hosts manga, manhwa, or manhua chapters.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Release proof"
+        title="What reviewers should ask for before publishing"
+        description="Use this release packet when a directory, newsletter, app reviewer, or partner needs evidence beyond a download button."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {releaseProofRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              If a listing cannot show package ownership, signing evidence,
+              source links, support, pricing, and the no-chapter-hosting
+              boundary together, treat it as a discovery mention and send
+              installation traffic back to the official Nayovi download page.
+            </p>
+            <p>
+              Reviewers can request a redeem code and sample-safe test context
+              through support before publishing a hands-on Android OCR
+              translation review.
             </p>
           </CardContent>
         </Card>
