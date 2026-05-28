@@ -9,9 +9,9 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | Google Search Console | Search indexing, sitemap monitoring, canonical ownership signal | setup_packet_prepared_owner_action_required | Verify `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS` | Submit sitemaps, monitor indexing, detect SEO issues | Owner verifies properties and submits sitemap; agent can inspect only after API credential is connected. |
 | high | Bing Webmaster Tools | Secondary search indexing and sitemap submission | setup_packet_prepared_owner_action_required | Verify domains with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_BING_WEBMASTER_API_KEY` | Submit sitemaps and monitor crawl/index data | Owner imports from GSC or verifies manually; agent can inspect only after API credential is connected. |
 | high | GitHub official Nayovi repo/profile | Technical trust, docs, release notes, linkable OCR/QA assets | configured_owned_repo | Keep official repo/profile truthful and current | README, demo links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned docs and technical assets | Keep owned docs synced with SEO/link assets. |
-| high | YouTube official channel | Demo video proof for reviewers, directories, and partners | setup_packet_prepared_owner_action_required | Create/connect official Nayovi channel and authorize API if automated uploads are wanted | Demo video, poster, title, description, canonical links | SEO_AGENT_YOUTUBE_REFRESH_TOKEN | Upload/update official demo videos and descriptions | Owner creates channel, uploads/approves demo assets, and connects OAuth only if automated metadata updates are wanted. |
+| high | YouTube official channel | Demo video proof for reviewers, directories, and partners | setup_packet_prepared_owner_action_required | Create/connect official Nayovi channel, upload only approved-sample demo media, and authorize API only if automated metadata updates are wanted | Demo video, poster, avatar/banner, title, description, playlist names, canonical links, screenshot policy | SEO_AGENT_YOUTUBE_REFRESH_TOKEN | Upload/update official demo videos and descriptions after owner approval | Owner creates channel, approves first demo title/description below, and connects OAuth only if automated metadata updates are wanted. |
 | high | LinkedIn company/founder profile | Founder/company trust, partner/investor visibility | setup_packet_prepared_owner_action_required | Create/connect official company page or founder-owned page | Logo, banner, company bio, website links | SEO_AGENT_LINKEDIN_ACCESS_TOKEN, SEO_AGENT_LINKEDIN_ORGANIZATION_ID | Publish official build-in-public and partnership posts | Owner creates/connects page and approves first post queue; agent remains draft-only until API access exists. |
-| medium | Product Hunt maker/company | Launch credibility and early product feedback | needs_owner_setup | Create/connect official maker/company account | Logo, tagline, demo video, product screenshots | SEO_AGENT_PRODUCTHUNT_TOKEN | Prepare launch page and authorized comments | Prepare launch asset checklist. |
+| medium | Product Hunt maker/company | Launch credibility and early product feedback | setup_packet_prepared_owner_action_required | Create/connect official maker/company account and accept launch terms manually | Logo, tagline, demo video, product screenshots, pricing/support links, maker comment | SEO_AGENT_PRODUCTHUNT_TOKEN | Prepare launch page and authorized maker comments | Owner chooses launch timing, creates/connects maker profile, and approves the launch packet below; no upvote requests or automated comments. |
 | medium | DEV/Medium technical publishing | Technical authority for OCR, merge QA, hosted Android workflow | needs_owner_setup | Connect official publication/profile account | Canonical article drafts, profile bio, logo | SEO_AGENT_DEVTO_API_KEY, SEO_AGENT_MEDIUM_INTEGRATION_TOKEN | Publish canonical technical articles where allowed | Prepare public-safe OCR QA article packet. |
 | medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
 | medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
@@ -250,6 +250,69 @@ Profile fields:
 - Primary product URL: `https://tachiyomiat.com/download`
 - Short description: `Nayovi is an Android APK with hosted OCR, AI translation, free trial access, redeem-code activation, monthly token plans, and support for permission-safe manga, manhwa, and manhua reader workflows.`
 - Responsible-use line: `Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+
+### YouTube Official Channel Packet
+
+Status: OWNER_ACTION_REQUIRED for channel creation, brand verification, video upload, terms acceptance, and any OAuth connection.
+
+Profile fields:
+- Channel name: `Nayovi`
+- Handle preference: `@nayovi` if available, otherwise owner-approved official handle.
+- Description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. Official APK access, free trial, redeem-code activation, monthly token plans, support, and permission-safe sample testing are available from the official site. Nayovi does not host or distribute chapters.`
+- Primary link: `https://nayovi.com`
+- Product/download link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+
+First demo metadata:
+- Title: `Nayovi Android OCR Translation Workflow Demo`
+- Description: `A short official demo of Nayovi's Android APK, hosted OCR/AI translation flow, activation path, and support links. Demo media should use owned, public-domain, official-sample, or permission-approved content only. Official APK: https://tachiyomiat.com/download`
+- Playlist: `Nayovi demos`
+- Visibility: owner-approved public or unlisted only; no automated upload until OAuth and approval are configured.
+
+Required assets:
+- Square logo/avatar and banner.
+- 30-90 second demo video using only approved samples.
+- Poster image that does not expose copyrighted chapter pages without permission.
+- Reviewer screenshot policy: `docs/reviewer-screenshot-policy.md`.
+
+Credential reference:
+- `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` only if the owner explicitly enables API metadata updates. Store the actual token only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- The agent can prepare metadata, captions, descriptions, playlists, and source links. It must not upload videos, reply to comments, or publish Shorts automatically unless the owner approves the exact scope.
+
+Next action:
+- Owner creates/connects the official channel, approves safe demo assets, and confirms whether the agent remains draft-only or may update metadata through the API.
+
+### Product Hunt Launch Packet
+
+Status: OWNER_ACTION_REQUIRED for maker profile creation, launch scheduling, terms acceptance, and any API connection.
+
+Launch fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR translation workflow for manga and manhwa`
+- Website: `https://tachiyomiat.com/download`
+- Short description: `Nayovi is an Android APK with hosted OCR, AI translation, free trial access, redeem-code activation, monthly token plans, and support for permission-safe manga, manhwa, and manhua reader workflows.`
+- Topics: `Android`, `AI`, `OCR`, `Translation`, `Language Learning`, `Productivity`
+
+Maker comment:
+`I built Nayovi for Android readers who want manga, manhwa, and manhua OCR translation without managing provider API keys on the phone. The product is intentionally narrow: official APK download, hosted OCR and translation, redeem-code activation, free trial access, token plans, and support. It does not host or distribute chapters, and it is designed for owned content, public-domain material, official samples, or permission-approved use. I am looking for feedback from Android reviewers, localization operators, creator platforms, and readers who know where OCR translation workflows break.`
+
+Required assets:
+- Logo/avatar and gallery screenshots.
+- Demo video from the YouTube packet or an owner-approved upload.
+- Three to five safe screenshots following `docs/reviewer-screenshot-policy.md`.
+- Pricing and support summary.
+- Owner-approved public metrics, if any.
+
+Credential reference:
+- `SEO_AGENT_PRODUCTHUNT_TOKEN` only if Product Hunt exposes an authorized workflow and the owner enables it. Store the actual value only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- The agent can keep launch copy current and draft authorized maker replies. It must not request upvotes, automate comments, use fake makers, or post from unauthorized accounts.
+
+Next action:
+- Owner creates/connects the maker profile, chooses launch timing, approves the screenshot/video packet, and confirms whether any API workflow is allowed.
 
 Required assets:
 - Logo/avatar and banner.
