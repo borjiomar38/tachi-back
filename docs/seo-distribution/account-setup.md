@@ -908,3 +908,62 @@ Agent capability after connection:
 
 Next action:
 - Owner chooses the public URL to cite and confirms whether Android newsletter submissions should wait for package/signing fields or proceed with pending-language placeholders.
+
+### LinkedIn Company / Founder Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for official page/profile setup, manual identity steps, and API connection.
+
+Use case:
+- LinkedIn is a high-trust surface for partners, Android reviewers, localization operators, investors, and creator-platform teams. Use it for official build updates and partner context, not repeated promotional link drops.
+- The agent must not create a LinkedIn page, impersonate a founder, scrape contacts, send DMs, or post without an official owner-connected workflow.
+
+Public profile fields:
+- Company/page name: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Website: `https://nayovi.com`
+- Product/download URL in posts: `https://tachiyomiat.com/download`
+- About text: `Nayovi provides official APK download, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation for permission-safe manga, manhwa, and manhua reader workflows. Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+- Categories: `Mobile app`, `Language technology`, `AI`, `OCR`, `Translation`, `Android`.
+
+Required assets:
+- Official logo/avatar.
+- Banner using only owner-approved workflow visuals or neutral brand graphics.
+- Public screenshot set governed by `docs/seo-distribution/creator-platform-screenshot-rights-packet.md`.
+- Founder-approved public identity if a founder profile is used.
+- First post queue from `docs/seo-distribution/platform-drafts.md`.
+
+Credential references:
+- `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`
+- `SEO_AGENT_LINKEDIN_ORGANIZATION_ID`
+- Store actual values only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- Draft and publish owner-approved official posts only when the account, organization ID, and posting scope are connected. No automated DMs, mass comments, connection scraping, engagement automation, or personal-looking personas.
+
+Next action:
+- Owner creates/connects the official company page or founder-owned profile, confirms public founder/company fields, and chooses whether LinkedIn remains manual-only or API-assisted for approved company posts.
+
+### Creator Platform Screenshot Rights Packet
+
+Status: OWNER_ACTION_REQUIRED for approved sample set and public/private asset scope.
+
+Use case:
+- YouTube, Product Hunt, LinkedIn, directories, Android reviewers, Reddit drafts, partner pilots, and creator-platform notes all need reusable visuals that do not imply unauthorized catalog processing.
+- The agent should reuse `docs/seo-distribution/creator-platform-screenshot-rights-packet.md` before drafting or submitting any screenshot-heavy profile, listing, demo, or review packet.
+
+Required assets:
+- Owner-created, public-domain, official-sample, or creator-approved pages.
+- Written approval reference for any creator-provided samples.
+- Public caption text with no-chapter-hosting and permission-safe boundaries.
+- Asset library reference such as `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`; do not store private contracts, raw credentials, or unpublished user material in docs.
+
+Credential/reference guardrails:
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+- Optional `SEO_AGENT_DEMO_VIDEO_REFERENCE`
+- These are non-secret references only. Actual private asset locations, tokens, or approval documents belong in the approved secret store or owner-controlled storage.
+
+Agent capability after owner confirmation:
+- Reuse approved asset references and captions in setup packets, directory drafts, app-review packets, and platform posts. The agent must not publish screenshots, upload videos, or share sample pages externally unless the exact channel/action is owner-approved.
+
+Next action:
+- Owner approves the initial screenshot/demo asset set and marks which assets are public, partner-only, private-support-only, or blocked.
