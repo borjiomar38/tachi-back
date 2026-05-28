@@ -118,6 +118,52 @@ const ocrChecklistRows = [
   },
 ] as const;
 
+const reviewerFailureModes = [
+  {
+    title: 'Merged unrelated bubbles',
+    description:
+      'Two nearby bubbles, captions, or sound effects are grouped into one translation unit and change the speaker or timing.',
+  },
+  {
+    title: 'Lost vertical or small text',
+    description:
+      'Vertical dialogue, handwritten notes, small UI labels, or side comments are skipped even though they affect the page meaning.',
+  },
+  {
+    title: 'Broken name continuity',
+    description:
+      'A character, place, rank, or technique appears under multiple translations because the glossary was not checked before output.',
+  },
+  {
+    title: 'Unclear sharing permission',
+    description:
+      'The translated result looks technically readable, but the source material is not owned, public-domain, an official sample, or otherwise approved.',
+  },
+] as const;
+
+const trustPacketRows = [
+  {
+    label: 'Official install path',
+    detail:
+      'Use the Nayovi download page as the source of truth for APK access, build context, setup help, and support.',
+  },
+  {
+    label: 'Reviewer access',
+    detail:
+      'Use redeem codes, free trial access, screenshots, and the narrated demo when editors need to test without guessing how activation works.',
+  },
+  {
+    label: 'Public policy link',
+    detail:
+      'Use the official sources and takedown policy when a moderator, creator, or directory reviewer needs the content boundary in writing.',
+  },
+  {
+    label: 'No chapter hosting',
+    detail:
+      'Describe Nayovi as hosted OCR and translation support. Do not describe it as a manga source, chapter mirror, extension index, or library.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -365,6 +411,45 @@ export const PageTranslationSupportWorkflow = () => {
             );
           })}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reviewer checklist"
+        title="Common OCR translation failure modes"
+        description="These are the checks Nayovi reviewers, Android app editors, and partner teams can use when judging an approved sample."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {reviewerFailureModes.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Trust packet"
+        title="What to include in a review, listing, or partner note"
+        description="A clear source-of-truth packet makes Nayovi easier to evaluate without sending people to unofficial mirrors or unsupported communities."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {trustPacketRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection
