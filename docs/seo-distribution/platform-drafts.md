@@ -44,6 +44,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android policy/resource | Android developer communities | APK verification checklist for 2026 developer verification rollout | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use as owned trust asset or technical resource only; do not claim verified status until confirmed. |
 | draft | Adjacent tool | ToonFlow | OCR stage-review checklist exchange | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink swap and no replacement pitch. |
 | draft | Localization workflow | ComixSuite | Android OCR verification checklist feedback | None by default | OWNER_REVIEW_REQUIRED: official contact only; professional workflow angle, not consumer promotion. |
+| draft | Creator platform | WEBTOON CANVAS localization context | Approved-sample OCR packet for creator-controlled material | None by default | OWNER_REVIEW_REQUIRED: choose official department; do not imply catalog processing or request backlinks. |
+| draft | Localization studio | Bayi Studios | Mobile OCR QA checklist for webcomic localization operators | None by default | OWNER_REVIEW_REQUIRED: official contact only; hold until screenshots exist. |
+| draft | Adjacent tool | Inkover | OCR review checklist comparison note | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: no backlink swap and no replacement/superiority claim. |
 
 ## Draft Bodies
 
@@ -910,6 +913,60 @@ I found Mangasplaining while looking for manga-literate places to sanity-check h
 The quality checklist focuses on OCR completeness, reading order, merged speech bubbles, glossary consistency, and human review before translated output is shared.
 
 If this is something you would be willing to react to, I can send the short checklist. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### WEBTOON CANVAS approved-sample note
+
+Status: draft
+Target: WEBTOON official business, partnership, or creator-program contact path selected by owner
+Audience: creator-platform, localization, or partnership reviewers
+Rules risk: medium; do not send to general support unless owner confirms it is the correct path. No catalog translation implication and no backlink request.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Question about approved-sample OCR workflow feedback
+
+Message:
+
+Hi WEBTOON team,
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and webcomic-style pages.
+
+I saw WEBTOON's recent CANVAS international platform and localization context while researching creator-controlled translation workflows. I do not want to imply that Nayovi can process WEBTOON catalog content without permission, and this is not a backlink request.
+
+The question is narrower: would an approved-sample OCR review packet be useful feedback for creator-controlled material? The packet records sample source, permission scope, OCR block evidence, corrected text, glossary notes, human review, and whether any screenshot or before/after output is allowed to be shared.
+
+If this is relevant to a creator, partnership, or localization team, I can send the checklist and wait for guidance on acceptable sample scope. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Inkover adjacent-tool resource note
+
+Status: draft
+Target: Inkover official contact or support path after owner review
+Audience: adjacent AI comic localization product team
+Rules risk: medium; do not pitch a replacement, backlink swap, or comparison claim.
+No-link variant: lead with the checklist summary only.
+Link variant only if requested: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+OCR review checklist exchange for comic translation workflows
+
+Message:
+
+Hi Inkover team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Inkover while mapping adjacent comic translation tools because your public materials emphasize OCR, translation, typesetting, review, and version history. I am not asking for a backlink or suggesting Nayovi replaces an editor-based workflow.
+
+The useful artifact is a product-light approved-sample checklist: permission scope, OCR completeness, reading order, block grouping, glossary decisions, reviewer correction, and public-use decision before output is shared.
+
+Would that kind of checklist be useful to compare notes on comic OCR workflow quality? If so, I can send the public guide and a short markdown version. If not, no problem and I will not follow up.
 
 Best,
 Nayovi team

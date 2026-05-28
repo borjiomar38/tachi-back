@@ -174,3 +174,17 @@ This file is maintained by the SEO distribution agent.
 - Added Android developer verification review packet and adjacent webtoon localization checklist exchange to `link-assets.md`; updated `content-calendar.md` with the new Android verification checklist intent.
 - Drafted exact Android developer verification checklist pitch and ToonFlow adjacent-tool note in `platform-drafts.md`.
 - Next actions: fill in Nayovi package name, signing-certificate fingerprint, and Android Developer Console verification status when owner confirms them; owner-review adjacent-tool notes; keep all external posting blocked until official contact paths and account authorization are confirmed.
+
+## 2026-05-28 Cycle 13
+
+- Verified branch `seo/distribution-20260528T200255Z`; external posting remains draft-only for LinkedIn, Reddit, directories, newsletters, forums, launch communities, podcasts, creator platforms, and partner publications. Owned GitHub/docs remain the only configured owned channel.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding an approved-sample packet for creator/platform feedback: sample source, permission scope, OCR evidence, glossary/review notes, and public-use decision.
+- Researched rotated authority opportunities across different categories:
+  - WEBTOON CANVAS localization context: high-authority creator-platform context from WEBTOON's 2026 international CANVAS/localization announcement; safe angle is approved-sample feedback only.
+  - Bayi Studios: webcomic localization and production operator; possible fit for workflow-first OCR QA learning after screenshots and sample metrics exist.
+  - Inkover: adjacent AI comic localization tool with OCR, translation, typesetting, review, and version-history positioning; possible checklist exchange with no backlink swap or replacement claim.
+- Added those three opportunities to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added approved-sample OCR translation packet to `content-calendar.md` and `link-assets.md`.
+- Drafted exact WEBTOON CANVAS approved-sample note and Inkover adjacent-tool resource note in `platform-drafts.md`.
+- Next actions: collect one approved or public-domain sample packet with screenshots, OCR block counts, corrected OCR text, glossary notes, and share scope; owner-review WEBTOON and Inkover drafts before any contact; keep external posting blocked until official contact paths are confirmed.

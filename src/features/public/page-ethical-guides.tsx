@@ -321,6 +321,29 @@ const pilotBriefRows = [
   },
 ] as const;
 
+const approvedSamplePacketRows = [
+  {
+    label: 'Sample source',
+    detail:
+      'Use creator-provided pages, official previews, public-domain panels, internal test art, or written permission from the rights holder. Keep the source note with the packet.',
+  },
+  {
+    label: 'Permission scope',
+    detail:
+      'Record whether Nayovi can process the sample privately, cite metrics publicly, show cropped screenshots, or share before-and-after output.',
+  },
+  {
+    label: 'Review evidence',
+    detail:
+      'Attach original page context, OCR block count, corrected OCR text, glossary notes, final translation notes, and unresolved quality issues.',
+  },
+  {
+    label: 'Public-use decision',
+    detail:
+      'Mark the packet as private review, partner-only, public screenshot allowed, or blocked. Do not publish examples when permission or quality is unclear.',
+  },
+] as const;
+
 const communitySubmissionRows = [
   {
     channel: 'Startup launch communities',
@@ -993,6 +1016,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {pilotBriefRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Approved sample packet"
+        title="Proof to collect before asking creators or platforms for feedback"
+        description="Use this packet when a creator platform, webtoon studio, localization team, newsletter, or manga media outlet wants to understand the workflow without processing unauthorized catalog content."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {approvedSamplePacketRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
