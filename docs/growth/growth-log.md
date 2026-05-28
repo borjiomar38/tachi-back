@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T203330Z`: audited branch state, growth trackers, SEO distribution shared snapshot, public download/pricing routes, and the outreach sender history.
+- Added SoftwareApplication, Offer, and HowTo structured data to `/download` so search engines, APK directories, and Android reviewers can parse official APK source, build label, size, SHA-256, free trial/pricing handoff, and redeem-code activation.
+- Marked the download APK structured-data asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily outreach cap. The prepared ICv2 call follow-up remains queued for the next cap window unless an inbound reply arrives first.
+
 - Autonomous cycle on `growth/autonomous-20260528T202130Z`: audited branch state, SEO distribution shared state/report, public SEO pages, current growth trackers, and the outreach sender history.
 - Added ItemList and HowTo structured data to `/how-it-works` for the hosted Android activation sequence: plan choice, redeem-code receipt, app activation, and chapter translation.
 - Updated `/sitemap.xml` metadata for `/how-it-works` and marked the activation structured-data asset as shipped in the content backlog.
