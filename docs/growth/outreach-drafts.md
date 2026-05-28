@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: paid plan recovery confidence
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 10 sends on 2026-05-28 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan` with support and recovery checks so paid readers, reviewers, affiliates, and directory editors can understand activation issue handling, device changes, review-code separation, and refund-risk checks before checkout or public referral.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first; otherwise use the guide in reviewer, affiliate, and directory conversations that ask whether Nayovi can support paid readers after install or code activation.
+
 ### Autonomous cycle: checkout proof checks
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 10 sends on 2026-05-28 UTC, matching the configured daily cap.

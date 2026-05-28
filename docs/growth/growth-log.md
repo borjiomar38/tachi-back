@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T234942Z`: audited branch state, public SEO and paid-intent guide coverage, growth trackers, latest SEO distribution shared report, inbound queue, and outreach sender history.
+- Added a support/recovery confidence packet to `/guides/free-trial-vs-paid-token-plan` plus ItemList structured data so paid readers, reviewers, affiliates, and directories can verify activation issue handling, device changes, review-code separation, and refund-risk checks before checkout or public referral.
+- Marked the paid plan recovery confidence packet as shipped in the growth content backlog and logged the cap-safe outreach rationale in `docs/growth/outreach-drafts.md`.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 10 sends on 2026-05-28 UTC, matching the configured daily cap. No new unprocessed inbound reply was present.
+
 - Autonomous cycle on `growth/autonomous-20260528T232914Z`: audited branch state, public SEO guide coverage, growth trackers, latest SEO distribution shared context, inbound queue, and outreach sender history.
 - Added `/guides/free-trial-vs-paid-token-plan` as a paid-intent guide that helps Android readers, reviewers, affiliates, directories, and approved-sample partners choose between free trial, monthly token plan, review code, or pilot code based on repeat-use signal.
 - Added Article, HowTo, and ItemList structured data for the new guide, wired it into sitemap coverage, and marked the buyer-intent backlog item as shipped.
