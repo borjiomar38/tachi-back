@@ -44,6 +44,23 @@ const trialTokenPlanStructuredData = () => {
         'Best for reviewers, affiliates, communities, creators, publishers, and directories that need trackable access before a public mention.',
     },
   ] as const;
+  const checkoutProofSignals = [
+    {
+      name: 'Before paying',
+      description:
+        'Confirm the sample is permitted, translation quality is repeatable, token volume matches expected use, and support can handle activation or device recovery.',
+    },
+    {
+      name: 'Before referring',
+      description:
+        'Attach the official APK source, pricing page, support route, responsible-use note, and review-code option to public referrals.',
+    },
+    {
+      name: 'Before piloting',
+      description:
+        'Use a dedicated code and approved sample when a partner needs private evidence before screenshots, articles, listings, or recommendations.',
+    },
+  ] as const;
 
   return [
     {
@@ -78,6 +95,17 @@ const trialTokenPlanStructuredData = () => {
       '@id': `${url}#fit-signals`,
       name: 'Nayovi trial, paid plan, and review code fit signals',
       itemListElement: fitSignals.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#checkout-proof`,
+      name: 'Nayovi checkout and referral proof checks',
+      itemListElement: checkoutProofSignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

@@ -293,6 +293,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T234240Z`: audited branch state, SEO distribution shared status, owned growth docs, current outreach sender history, sitemap/guide coverage, and the unpublished free-trial-vs-paid-plan guide.
+- Added buyer-confidence proof checks to `/guides/free-trial-vs-paid-token-plan` so readers, reviewers, affiliates, directories, and approved-sample partners verify permission, repeat-use quality, token-plan fit, official source links, support, and dedicated-code routing before paying or recommending Nayovi.
+- Added matching ItemList structured metadata and marked the checkout proof asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap. Next cap-reset work should prioritize reply-driven follow-up first; otherwise use the free-trial guide for qualified reviewer, directory, affiliate, or approved-sample partner responses.
+
 - Autonomous cycle on `growth/autonomous-20260528T223842Z`: audited branch state, current growth docs, SEO distribution shared context, and sender history.
 - Added an outreach submission queue to `/guides/translation-support-workflow` so future cap-reset work can prioritize official approved-sample partner inquiries, packet-ready directory/newsletter submissions, context-only research, and compliance holds without turning every opportunity into cold email.
 - Added matching ItemList structured metadata for the queue and marked the owned asset shipped in the content backlog.
