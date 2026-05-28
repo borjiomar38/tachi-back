@@ -41,6 +41,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/download': {
+    lastModified: '2026-05-28',
     priority: '0.8',
   },
   '/translate-manhwa-ai': {

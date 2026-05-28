@@ -14,6 +14,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Product Hunt | Nayovi launch page | Android APK for hosted manga/manhwa OCR translation | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: official maker account only; never request upvotes. |
 | draft | DEV Community | Canonical technical post | OCR translation QA checklist for manga and manhwa pages | https://tachiyomiat.com/guides/translation-support-workflow | AUTHORIZED_ACCOUNT_REQUIRED: use canonical_url to owned guide if cross-posting. |
 | draft | GlobalComix | Creator/platform partnership contact | Permission-safe OCR workflow feedback for approved samples | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: official contact path; no catalog translation implication. |
+| draft | Android Central | Android app/editorial pitch | Review-code access for a hosted Android OCR translation workflow | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use only public author/contact paths; no private contact scraping. |
+| draft | WEBTOON | Partnership or IP/business contact | Approved-sample OCR workflow feedback for creator/platform review | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: choose the correct official department before any send. |
+| draft | AI Workbench | AI tool directory submission | Nayovi listing packet for hosted manga/manhwa OCR translation | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: submit only if listing preserves official source links and is not paid link placement. |
 
 ## Draft Bodies
 
@@ -174,3 +177,82 @@ If this is relevant, I can send the guide, screenshots, and demo context for fee
 
 Best,
 Nayovi team
+
+### Android Central review-code pitch
+
+Status: draft
+Target: Android Central public author/contact path
+Audience: Android app editors, app reviewers, and Android workflow writers
+Rules risk: medium; send only after owner review, using public contact routes, and do not imply paid coverage or request a backlink.
+No-link variant: offer screenshots and review code first, then send the download page only if requested.
+Link variant: https://tachiyomiat.com/download
+
+Subject:
+Review code for a hosted Android manga translation workflow
+
+Message:
+
+Hi Android Central team,
+
+I am building Nayovi, an Android APK for manga, manhwa, and manhua readers who need hosted OCR and AI translation without managing provider API keys on the phone.
+
+The review angle is practical Android workflow rather than generic AI hype: official APK install, redeem-code activation, free trial access, monthly token plans, support, and a narrated demo that shows original page input, language selection, translation progress, and final output.
+
+Nayovi does not host or distribute chapters. It is positioned for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Would a hands-on app review, Android utility note, or reviewer feedback pass be relevant? I can provide a time-limited review code, screenshots, package metadata, pricing/support context, and the responsible-use guide before any public mention.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### WEBTOON approved-sample feedback draft
+
+Status: draft
+Target: WEBTOON official partnership, IP/business, or press path after owner chooses the correct department
+Audience: creator-platform, rights, or partnership team
+Rules risk: medium; no catalog translation implication, no backlink ask, and no external send without owner review.
+No-link variant: describe the workflow and offer to send the guide only if relevant.
+Link variant: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Approved-sample OCR translation workflow feedback
+
+Message:
+
+Hi WEBTOON team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webcomic readers.
+
+I am not asking to translate WEBTOON catalog content or to send readers to an unofficial source. The only potential fit I want to test is approved-sample workflow feedback: creator-owned material, public-domain material, official previews, or content where a creator, platform, or rights holder has explicitly allowed processing.
+
+The product focus is Android install, redeem-code activation, hosted OCR, translation QA, free trial access, monthly token plans, and support. Nayovi does not host or distribute chapters.
+
+If this is useful from a creator-platform, IP, or partnership perspective, I can send the workflow guide, screenshots, and a small approved-sample demo context for review.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### AI Workbench listing packet
+
+Status: draft
+Target: AI Workbench official submit form
+Audience: AI-tool searchers, builders, and directory editors
+Rules risk: medium; submit only through the official form after owner review and only if source-of-truth links are preserved.
+No-link variant: do not submit; keep the listing copy for owned docs and future directories.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Tool name:
+Nayovi
+
+Short description:
+Android APK with hosted OCR and AI translation for manga, manhwa, and manhua readers.
+
+Long description:
+Nayovi helps Android readers translate manga, manhwa, and manhua pages through an official APK, hosted OCR, AI translation, redeem-code activation, free trial access, monthly token plans, and support. It is designed for readers comparing TachiyomiAT, Tachiyomi, Mihon, and manga translation app workflows while keeping download, pricing, support, privacy, terms, and responsible-use guidance on Nayovi-owned pages.
+
+Responsible-use note:
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.

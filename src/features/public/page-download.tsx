@@ -1,6 +1,7 @@
 import {
   ArrowRightIcon,
   BadgeCheckIcon,
+  ClipboardCheckIcon,
   DownloadIcon,
   KeyRoundIcon,
   ShieldCheckIcon,
@@ -20,6 +21,24 @@ import {
 import { DemoVideo } from '@/features/public/demo-video';
 import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
+
+const verificationRows = [
+  {
+    title: 'Official source links',
+    description:
+      'Use tachiyomiat.com and nayovi.com for APK details, pricing, support, privacy, terms, and responsible-use notes.',
+  },
+  {
+    title: 'Review access',
+    description:
+      'Ask for a redeem code, screenshots, narrated demo context, and package metadata before publishing a hands-on review.',
+  },
+  {
+    title: 'Usage boundary',
+    description:
+      'Describe Nayovi as hosted OCR and translation support for owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
 
 export const PageDownload = () => {
   return (
@@ -187,6 +206,45 @@ export const PageDownload = () => {
                 Download APK
                 <DownloadIcon className="size-4" />
               </span>
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Verification"
+        title="Reviewer and directory checklist"
+        description="Use this packet when evaluating Nayovi for Android app coverage, app-directory listing, affiliate review, or creator-platform feedback."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {verificationRows.map((row) => (
+            <Card key={row.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.title}</CardTitle>
+                <CardDescription>{row.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="flex flex-wrap items-center justify-between gap-3 p-6">
+            <div className="space-y-1">
+              <p className="font-medium">Need review-code context?</p>
+              <p className="text-sm text-muted-foreground">
+                Send editors to the support path for a test code and cite the
+                translation workflow guide for the no-chapter-hosting policy.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Review workflow guide
             </a>
           </CardContent>
         </Card>
