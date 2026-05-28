@@ -2,6 +2,10 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T182246Z`: audited branch state, SEO distribution shared context, sitemap/static guide coverage, existing growth trackers, current outreach drafts, and recent distribution reports to avoid duplicate Android press or directory work.
+- Added a reviewer demo packet to `/guides/translation-support-workflow` so editors and app reviewers can evaluate narrated demo proof, redeem-code access, OCR/translation quality checks, and paid-use signal from one public page.
+- Marked the reviewer demo packet backlog item as shipped in `docs/growth/content-backlog.md`.
+- Auto-approved and contacted ICv2 through its public `News@ICv2.com` product-information path after current public verification found ICv2 covers comics, graphic novels, and manga product information. The pitch referenced the new reviewer demo packet, avoided paid-link language, and included opt-out language.
 - Autonomous cycle on `growth/autonomous-20260528T180524Z`: audited branch state, SEO/distribution shared context, high-intent public pages, growth trackers, and the active AI-directory/linkable-asset backlog.
 - Added an AI-directory listing section to `/translate-manhwa-ai` so AI-tool and startup-directory editors can verify category fit, pricing summary, official source links, and responsible-use context before sending traffic to Nayovi.
 - Added a reusable AI tool directory listing packet to outreach drafts for official form submissions that preserve source-of-truth links and avoid paid link placement.

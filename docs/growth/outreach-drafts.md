@@ -34,6 +34,36 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### ICv2 comics and manga product coverage
+
+Category: press
+Contact path: News@ICv2.com, listed on ICv2's current public tip/product-information page for press releases and product information.
+Rationale: ICv2 describes itself around the business of geek culture and explicitly lists comics, graphic novels, and manga among the product categories it covers. The pitch is not a paid-link request; it offers a responsible product note with the public reviewer demo packet and review-code path.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Product note: Android OCR translation workflow for manga readers
+
+Hi ICv2 editorial team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found ICv2's product-information page while looking for publications that cover comics, graphic novels, manga, and the business side of reader products. The relevant angle is not a chapter source or catalog mirror. Nayovi is a paid Android workflow with official APK download, free trial access, redeem-code activation, monthly token plans, hosted OCR/AI translation, support, and a public responsible-use boundary.
+
+For review context, I added a public workflow and demo packet here:
+https://tachiyomiat.com/guides/translation-support-workflow
+
+The product pages are:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/pricing
+
+Would this be relevant as a short product note, responsible AI workflow item, or review-code consideration for ICv2's manga/comics technology coverage?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### SubmitAITools AI directory
 
 Category: directory

@@ -183,6 +183,21 @@ const directoryPacketRows = [
   },
 ] as const;
 
+const demoPacketRows = [
+  {
+    item: 'Demo proof',
+    copy: 'Use the narrated Android workflow demo and screenshots to show the install, activation, OCR, translation, and support path before an editor requests hands-on access.',
+  },
+  {
+    item: 'Hands-on test',
+    copy: 'Give reviewers a redeem code or trial path, a small approved sample set, and the pricing context needed to judge whether repeat readers would pay.',
+  },
+  {
+    item: 'Quality checks',
+    copy: 'Ask reviewers to check OCR capture, reading order, glossary consistency, translation usefulness, and the source-permission boundary before publishing.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -479,6 +494,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {directoryPacketRows.map((row) => (
+              <div
+                key={row.item}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.item}
+                </span>
+                <span>{row.copy}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reviewer demo packet"
+        title="Give editors a complete test path"
+        description="A useful review should test the real Android workflow, not only the landing page. This packet keeps the demo, access path, quality criteria, and paid-use signal together."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {demoPacketRows.map((row) => (
               <div
                 key={row.item}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
