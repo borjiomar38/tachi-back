@@ -66,7 +66,7 @@ Business goal:
 - Increase qualified traffic, backlinks, partnerships, investor interest, and paid subscriptions for Nayovi.
 - Prioritize durable revenue signals over vanity traffic.
 - Advance autonomously without asking the owner for routine permission when GROWTH_AGENT_AUTONOMOUS_MODE=true.
-- Notify the owner when a human action is needed, such as a collaboration call, investor conversation, demo meeting, pilot, or legal/financial decision.
+- Email the owner only when a human decision is truly needed, such as choosing a meeting time, confirming a commercial/legal/financial commitment, or answering a blocker the agent cannot resolve. Routine progress belongs in the once-daily summary.
 
 Allowed work:
 - Inspect the repository and public site.
@@ -92,6 +92,14 @@ Hard constraints:
 - Keep changes small, testable, and aligned with existing repo conventions.
 - Do not ask for owner permission before safe growth actions when autonomous mode is enabled; make a defensible decision, act, log it, and notify the owner with results.
 - If you truly cannot continue without the owner, include exact marker OWNER_ACTION_REQUIRED in the final report. If the owner must personally attend a meeting or call, include MEETING_REQUIRED or CALL_REQUIRED.
+- Do not include OWNER_ACTION_REQUIRED, MEETING_REQUIRED, or CALL_REQUIRED just to summarize routine work. Use those markers only when the next step is blocked until the owner replies.
+
+Owner email and call handling:
+- The owner wants low-volume email. Do not ask for permission or confirmation when you can safely continue.
+- If an inbound owner reply says "je confirme", "oui", "go", "ok", or provides a new time, treat it as direct scheduling/action instruction and continue without sending another owner email unless you are still blocked.
+- If a lead asks for a call and the owner has already provided contact details or a usable time window, reply to the lead with a clear scheduling proposal or ask the lead for availability. Do not email the owner just to say a lead exists.
+- If the owner must choose between concrete call slots, include MEETING_REQUIRED or CALL_REQUIRED and ask one short question with 2-3 specific options.
+- If the owner proposes a time, use Tunisia time in notes and convert only when the lead's timezone is known. Keep the follow-up factual and concise.
 
 Operational preferences:
 - Model target: ${codex_model}
@@ -114,7 +122,7 @@ Cycle checklist:
 6. Commit on ${branch} if files changed.
 7. Push ${branch} only if enabled. Do not push ${base_branch}; the runner handles production publication.
 8. If outreach is enabled, autonomously approve and contact the highest-fit public prospects that are ready now; otherwise record why they are not ready.
-9. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
+9. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make it prominent in the final report. Add OWNER_ACTION_REQUIRED / MEETING_REQUIRED / CALL_REQUIRED only when the agent cannot continue without an owner reply.
 10. Reuse current social/backlink drafts and linkable assets where relevant, and avoid duplicating work already queued by the SEO distribution agent.
 11. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
 PROMPT
@@ -180,9 +188,6 @@ maybe_send_owner_notification() {
   if [[ "${emergency_match}" == "true" ]]; then
     notification_kind="emergency"
     subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: emergency ${cycle_id}"
-  elif [[ "${GROWTH_AGENT_NOTIFY_ON_INBOUND:-false}" == "true" && -s "${inbound_list_file}" ]]; then
-    notification_kind="inbound"
-    subject="${GROWTH_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi growth lead}: inbound ${cycle_id}"
   else
     daily_summary_enabled="${GROWTH_AGENT_DAILY_SUMMARY_ENABLED:-true}"
     if [[ "${daily_summary_enabled}" != "true" ]]; then
