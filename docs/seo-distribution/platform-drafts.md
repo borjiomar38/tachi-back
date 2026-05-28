@@ -74,6 +74,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android APK review | APKLand or similar independent APK review sites | Owned review packet for source-of-truth Android testing | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: official contact/submission path only; do not upload APK or create mirror-first listing without owner approval. |
 | draft | AI directory | ToolDirectory.AI / Best-AI.org | Quality-filtered Nayovi AI OCR listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify fields and skip paid, reciprocal, misleading free-tool, or hidden APK mirror flows. |
 | draft | Android newsletter | Android Weekly / Kotlin Weekly-style editors | Developer-facing independent APK and OCR test checklist | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: submit only through official link/contact paths and keep the pitch technical, not consumer promotional. |
+| draft | App testing | AppTester.co app health check | Safe Android OCR app health-check task packet | docs/reviewer-screenshot-policy.md | OWNER_REVIEW_REQUIRED: do not upload APK, start tester campaign, or approve public report use until owner confirms sample assets and test scope. |
+| draft | Android press | Android Central / sideloading coverage context | Independent APK trust packet under 2026 Android verification changes | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: cite only owner-confirmed package/signing/developer verification facts. |
+| watch | Technical workshop | GEM at ACL 2026 | Future OCR/translation evaluation note for visual-storytelling samples | None by default | WATCH_ONLY: use only after approved-sample measurements exist; no product pitch. |
 
 ## Draft Bodies
 
@@ -318,6 +321,40 @@ If this is not relevant, no problem and I will not follow up.
 
 Best,
 Nayovi team
+
+### AppTester.co app health-check task packet
+
+Status: draft
+Target: AppTester.co or similar app-testing portals that accept Android APK testing through an official builder workflow.
+Audience: mobile QA testers, Android reviewers, investor diligence, directory editors.
+Rules risk: medium; do not upload an APK, start a test, or request public badges/reports without owner approval.
+No-link variant: use the task packet internally and omit public URL until the tester asks for source context.
+Link variant: docs/reviewer-screenshot-policy.md plus https://tachiyomiat.com/download
+
+Task brief:
+
+I am preparing a safe app health-check for Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+The requested test should avoid copyrighted chapter pages unless the tester owns the content or the sample is public-domain, official, or explicitly approved for review.
+
+Please check:
+- Install confidence from the official source page.
+- Whether the APK hash/source information is easy to find.
+- Activation, redeem-code, trial, pricing, and support clarity.
+- OCR/translation progress states on approved samples only.
+- Whether any screenshot or report exposes private data, copyrighted chapter pages, tokens, account fields, or support conversations.
+- Whether the app clearly avoids hosting or distributing chapters.
+
+Public report permission:
+- Do not publish screenshots or recordings until Nayovi approves the exact media.
+- Do not upload the APK to mirrors or create mirror-first listing pages.
+- If a report is public, cite the official download/support links and the responsible-use boundary.
+
+Owner action required before use:
+- Approve APK sharing.
+- Approve sample pages.
+- Approve reviewer code or test account scope.
+- Approve whether any tester report can be public.
 
 ### ToolIndex / NavTools AI directory listing draft
 
