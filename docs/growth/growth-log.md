@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T201315Z`: audited branch state, public SEO/conversion routes, current growth trackers, SEO distribution shared context, and the outreach sender history for 2026-05-28.
+- Added an activation-handoff section to `/translate-manhwa-ai` so partner mentions from editorial reviews, AI/APK directories, and creator/community pilots route readers through official APK trust, trial or review-code activation, support clarity, and repeat token-plan demand.
+- Marked the partner activation handoff as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily outreach cap. The prepared ICv2 call follow-up and any new high-fit outreach should wait for the next cap window unless an inbound reply arrives first.
+
 - Autonomous cycle on `growth/autonomous-20260528T194809Z`: audited branch state, SEO distribution shared snapshot, current growth trackers, outreach cap state, and the newly shipped public OCR checklist route.
 - Added ItemList and HowTo structured data to `/guides/comic-ocr-translation-checklist` so search engines, maintainers, newsletter editors, and reviewers can parse the neutral checklist steps as a citation-ready resource.
 - Added a GitHub resource-list maintainer question draft that asks permission before suggesting the neutral checklist and offers a Markdown-only entry instead of opening with a product link.

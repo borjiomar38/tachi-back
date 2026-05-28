@@ -513,6 +513,24 @@ const partnerComparisonRows = [
   },
 ] as const;
 
+const activationHandoffRows = [
+  {
+    source: 'Editorial review or roundup',
+    handoff:
+      'Send readers to the official APK and review-code path first, then make free trial, pricing, and responsible-use details visible before they install.',
+  },
+  {
+    source: 'AI-tool or APK directory',
+    handoff:
+      'Keep the listing source-of-truth anchored to Nayovi pages so support, package details, monthly token plans, and cancellation context stay current.',
+  },
+  {
+    source: 'Creator or community pilot',
+    handoff:
+      'Use a dedicated redeem code, approved sample scope, and support route so activation quality can be measured before promoting a paid plan.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1640,6 +1658,49 @@ export const PageTranslateManhwaAi = () => {
                 </p>
               </div>
             ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Activation handoff"
+        title="Turn partner mentions into qualified activations"
+        description="Backlinks and directory traffic are useful only when readers understand the official APK, trial path, support route, and paid-plan fit before they start translating."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {activationHandoffRows.map((row) => (
+            <Card key={row.source} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <KeyRoundIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.source}</CardTitle>
+                <CardDescription>{row.handoff}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ArrowRightIcon className="size-4" />
+                Measure activation before reach
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A useful partner path should create install confidence, trial
+                activation, support clarity, and repeat token demand. Raw
+                referral traffic matters less than readers who can turn Nayovi
+                into a recurring Android translation workflow.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request activation path
+            </a>
           </CardContent>
         </Card>
       </PublicSection>
