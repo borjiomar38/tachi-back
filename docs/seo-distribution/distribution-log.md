@@ -2,6 +2,42 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T24:20Z Cycle
+
+Branch: `seo/distribution-20260528T211146Z`
+
+Account setup progress:
+- Advanced Google Search Console and Bing Webmaster rows from generic owner setup to prepared owner-action packets with exact credential references, sitemap steps, inspected URL list, and post-connection capabilities.
+- Added official Bluesky account setup packet with handle/domain-verification options, profile bio, first post queue, `SEO_AGENT_BLUESKY_APP_PASSWORD` reference, and no automated reply/trend-hijack guardrails.
+- Added Crunchbase organization profile setup packet with public company fields, category suggestions, canonical links, `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE`, and owner-only verification/claiming guardrails.
+
+Owned content changed:
+- Added a screenshot and reviewer proof packet to `https://tachiyomiat.com/download` covering screenshot rights, device matrix, OCR proof, official source packet fields, and publication boundaries for approved samples.
+- Updated `content-calendar.md` and `link-assets.md` to track the citable screenshot/reviewer proof packet, OCR resource fit packet, and webtoon localization resource note.
+
+Authority discovery:
+- Added OCR Vendors as a medium-fit OCR comparison/resource opportunity after current public search showed free OCR comparison, Android/iOS support, page limits, free-tier quality, and paywall checks.
+- Added Acid Tools as watch-only AI-directory research because current public search showed broad mobile/freemium AI tool listings but submission quality and source-link handling still need verification.
+- Added SandVox as a high-fit webtoon localization resource opportunity after current public search showed vertical scroll formatting, text constraints, onomatopoeia, and cultural adaptation coverage.
+- Added `r/droidappshowcase` as a medium-fit Android community draft opportunity for no-link technical feedback only after official-account and current-rules review.
+
+Drafts prepared:
+- Added OCR Vendors no-link-first resource fit note.
+- Added SandVox webtoon localization OCR checklist feedback note.
+- Added `r/droidappshowcase` disclosed no-link technical feedback draft focused on APK trust evidence and screenshot/reviewer proof.
+- Added Acid Tools to the directory quality filter as watch-only.
+
+Outreach tracker:
+- Added OCR Vendors, Acid Tools, SandVox, and `r/droidappshowcase` to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, identity verification, APK upload, paid listing, Reddit comment, or directory submission was performed. Registry still permits only owned GitHub/docs work.
+
+Next actions:
+- Owner verifies GSC/Bing, confirms package name/signing/developer verification fields, and approves screenshot/sample assets.
+- Owner creates/connects official Bluesky and Crunchbase profiles only if those surfaces should become citable trust signals.
+- Verify Acid Tools submit rules before any listing; owner-review OCR Vendors and SandVox notes before contact.
+
 ## 2026-05-28T23:58Z Cycle
 
 Branch: `seo/distribution-20260528T205632Z`

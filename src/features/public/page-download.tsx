@@ -129,6 +129,29 @@ const appTestRows = [
   },
 ] as const;
 
+const evidenceRows = [
+  {
+    label: 'Screenshot rights',
+    value:
+      'Publish only install, activation, support, or approved-sample workflow screenshots; do not show copyrighted chapter pages unless the owner approved public use.',
+  },
+  {
+    label: 'Device matrix',
+    value:
+      'Record at least one phone model, Android version, install source, network condition, and whether the reviewer tested free trial or redeem-code access.',
+  },
+  {
+    label: 'OCR proof',
+    value:
+      'Keep before/after notes for detected text, missed regions, merged bubbles, reading order, correction notes, and final translation status.',
+  },
+  {
+    label: 'Source packet',
+    value:
+      'Attach the official download URL, APK hash, support URL, pricing URL, responsible-use guide, and sample permission note with every review or directory listing.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -500,6 +523,46 @@ export const PageDownload = () => {
               hosted OCR progress, translation review, support clarity, and the
               no-chapter-hosting boundary rather than only confirming that the
               APK opens.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Evidence"
+        title="Screenshot and reviewer proof packet"
+        description="Use this when an Android reviewer, app-testing service, directory editor, newsletter, or partner asks for proof they can cite publicly."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {evidenceRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              A strong Nayovi review packet should make the install path,
+              activation path, OCR behavior, sample permission, and support
+              route visible without depending on unsupported APK mirrors or
+              unauthorized manga, manhwa, or manhua pages.
+            </p>
+            <p>
+              If a reviewer wants a public screenshot set, use neutral Android
+              workflow screens or owner-approved sample pages first, then keep
+              any chapter-specific evidence private unless publication rights
+              are explicit.
             </p>
           </CardContent>
         </Card>

@@ -59,6 +59,10 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | AI directory | ToolifyNav | Nayovi Android OCR workflow listing fit check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify current free submit fields and skip if paid/reciprocal link placement is required. |
 | draft | AI directory | AiMatch | Owner-claimed AI OCR listing packet | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official claim/submit path only; preserve pricing, support, and official APK links. |
 | draft | Localization podcast/media | SlatorPod | Visual-storytelling OCR QA topic pitch | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_REVIEW_REQUIRED: hold until approved-sample screenshots and measurements exist; no consumer-app pitch. |
+| draft | OCR resource | OCR Vendors | Niche Android comic OCR checklist resource fit | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_REVIEW_REQUIRED: no-link-first note; do not pitch Nayovi as a general document-scanner replacement. |
+| watch | AI directory | Acid Tools | AI directory eligibility filter | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify listing rules and skip paid/reciprocal-link paths. |
+| draft | Localization resource | SandVox | Webtoon OCR QA checklist feedback | None by default | OWNER_REVIEW_REQUIRED: product-light resource note only; no backlink ask. |
+| draft | Reddit | r/droidappshowcase | Technical Android APK/OCR feedback request | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: current rules review, official account, disclosure, and no-link-first variant required. |
 
 ## Draft Bodies
 
@@ -273,6 +277,86 @@ If useful, I can send the checklist and a short Android-side observation packet.
 
 Best,
 Nayovi team
+
+### OCR Vendors resource fit note
+
+Status: draft
+Target: OCR Vendors editorial/contact path if a public resource-suggestion route is found
+Audience: OCR software comparison editors and Android OCR readers
+Rules risk: medium; use no-link-first wording and do not claim Nayovi is a general document scanner.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Niche comic OCR review checklist fit?
+
+Message:
+
+Hi OCR Vendors team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I found your OCR comparison content while reviewing resource pages that explain practical OCR evaluation, free-tier limits, mobile support, and output quality. Nayovi is not a general document scanner, so I am not asking for a standard listing. The possible fit is narrower: a neutral checklist for evaluating OCR on comic and webtoon pages where reading order, missed speech bubbles, merged text, vertical lettering, and permission status matter.
+
+If a comic OCR checklist is useful for your readers, I can send the product-light resource and a short note about approved-sample testing. If it is not relevant, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### SandVox webtoon localization resource note
+
+Status: draft
+Target: SandVox official contact/editorial path
+Audience: webtoon localization, game localization, and content adaptation teams
+Rules risk: medium; send only after owner review and only as resource feedback.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Approved-sample OCR QA checklist for webtoon localization readers
+
+Message:
+
+Hi SandVox team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webtoon reader workflows.
+
+I found your webtoon localization article while researching teams that discuss vertical scroll formatting, onomatopoeia, panel constraints, cultural adaptation, and human localization work. I am not asking for a backlink or pitching Nayovi as a replacement for professional localization. The useful angle is a neutral OCR QA checklist for approved samples before any AI translation draft is trusted.
+
+The checklist covers sample permission, OCR coverage, reading order, merged text blocks, glossary consistency, reviewer correction, and whether the result is safe to share or cite. If that is useful for future resource notes or internal feedback, I can send it over. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### r/droidappshowcase technical feedback draft
+
+Status: draft
+Target: `r/droidappshowcase` only after current subreddit rules confirm app showcase posts are allowed
+Audience: Android app users, indie Android developers, APK-trust reviewers
+Rules risk: high; use official/founder Reddit account, disclose affiliation, and omit link unless the active rules clearly allow it.
+No-link variant: recommended
+Link variant only if allowed: https://tachiyomiat.com/download
+
+Title:
+Android OCR translation APK feedback: what proof would make you trust it?
+
+Body:
+
+Disclosure: I work on Nayovi.
+
+I am preparing an Android APK and hosted OCR/AI translation workflow for manga/manhwa/manhua reader workflows, and I am trying to make the review packet useful before asking anyone to trust the app.
+
+The proof I am planning to publish:
+- official download URL and APK hash
+- package/signing details when confirmed
+- support, pricing, privacy, and terms links
+- no-chapter-hosting/responsible-use wording
+- screenshots that avoid copyrighted pages unless a sample owner approved publication
+- a test checklist for install, activation, OCR progress, missed text, reading order, and translation latency
+
+For Android users who inspect APKs or review indie apps: what evidence would you want before trying it?
+
+No-link variant: omit the product URL and keep the question about reviewer evidence only.
 
 ### ToolifyNav and AiMatch listing fit draft
 
