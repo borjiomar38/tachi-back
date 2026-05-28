@@ -42,6 +42,14 @@ Revenue rationale: added a public reply triage packet to `https://tachiyomiat.co
 
 Next outreach when cap resets: prioritize reply-driven follow-up first. Use the triage packet to avoid owner email for routine support/review-code or approved-sample next steps, and escalate only real call scheduling, investor, commercial, legal, or financial decisions.
 
+### Autonomous cycle: reply qualification matrix
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the daily cap.
+
+Revenue rationale: added a visible reply qualification matrix to `https://tachiyomiat.com/guides/translation-support-workflow` so future replies are advanced only when they create review access, approved-sample pilots, credible listing packets, founder interviews, commercial diligence, or a concrete owner decision. Weak paid-link, reciprocal-link, scraped-listing, mirror-first, hidden-pricing, or unauthorized-catalog requests should be declined cleanly.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first; otherwise send the queued Akaya Media approved-sample pilot inquiry if no later cycle has already contacted Akaya. Use the qualification matrix before spending review codes, founder time, or outreach capacity.
+
 ### Autonomous cycle: cap-reset outreach packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the daily cap.
