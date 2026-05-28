@@ -300,7 +300,7 @@ SEO_AGENT_CODEX_MODEL=gpt-5.5
 SEO_AGENT_CODEX_REASONING_EFFORT=low
 SEO_AGENT_CODEX_SANDBOX=danger-full-access
 SEO_AGENT_GIT_PUSH_ENABLED=true
-SEO_AGENT_AUTO_MERGE_TO_MASTER=false
+SEO_AGENT_AUTO_MERGE_TO_MASTER=true
 SEO_AGENT_EXTERNAL_POSTING_MODE=draft
 SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED=false
 ```
@@ -319,7 +319,9 @@ working in isolation. The SEO distribution agent also reads the growth docs
 inside the repo so its platform drafts support the active backlink and
 partnership pipeline.
 
-External social posting is draft-only by default. To post on LinkedIn, Reddit,
+The agent can auto-merge owned-site and repo changes after validation, so useful
+SEO/linkable assets become visible without waiting for manual approval. External
+social posting is draft-only by default. To post on LinkedIn, Reddit,
 GitHub, Dev.to, Medium, X/Twitter, YouTube, Product Hunt, or another platform,
 configure an official account/API workflow for that
 platform first and only enable actions that respect the platform and community

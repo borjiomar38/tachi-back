@@ -188,7 +188,7 @@ json_status() {
     EXTERNAL_POSTING_MODE="${SEO_AGENT_EXTERNAL_POSTING_MODE:-draft}" \
     ACCOUNT_CREATION_ENABLED="${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}" \
     GIT_PUSH_ENABLED="${SEO_AGENT_GIT_PUSH_ENABLED:-true}" \
-    AUTO_MERGE_TO_MASTER="${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}" \
+    AUTO_MERGE_TO_MASTER="${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}" \
     python3 - "${status_file}" <<'PY'
 import json
 import os
@@ -364,7 +364,7 @@ Operational preferences:
 - Account creation enabled: ${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}
 - Account registry: ${STATE_DIR}/accounts.json
 - Git push enabled: ${SEO_AGENT_GIT_PUSH_ENABLED:-true}
-- Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}
+- Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}
 - Validation command: ${SEO_AGENT_VALIDATION_COMMAND:-./node_modules/.bin/tsc --noEmit}
 
 Agent coordination:
@@ -453,6 +453,7 @@ publish_cycle_branch() {
   local base_branch="$3"
   local cycle_id="$4"
   local report_file="$5"
+  local branch_head merge_message remote_base
 
   if [[ ! -d "${repo_dir}/.git" ]]; then
     return 0
@@ -471,26 +472,71 @@ publish_cycle_branch() {
     fi
 
     git checkout "${branch}"
-    auto_commit_cycle_changes "${cycle_id}" "${report_file}"
+    if ! auto_commit_cycle_changes "${cycle_id}" "${report_file}"; then
+      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-publish skipped because the cycle left unsafe or uncommittable changes."
+      return 0
+    fi
 
     if ! git diff --quiet || ! git diff --cached --quiet; then
       append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: workspace is still dirty after auto-commit."
       return 0
     fi
 
+    git fetch origin "${base_branch}"
+    remote_base="origin/${base_branch}"
+    if ! git merge-base --is-ancestor "${remote_base}" HEAD; then
+      if ! git merge --no-edit "${remote_base}"; then
+        git merge --abort >/dev/null 2>&1 || true
+        append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-publish skipped because ${branch} conflicts with ${remote_base}."
+        return 0
+      fi
+    fi
+
+    if [[ "$(git rev-list --count "${remote_base}..HEAD")" == "0" ]]; then
+      append_report_note "${report_file}" "Auto-publish skipped; ${branch} has no commits ahead of ${remote_base}."
+      return 0
+    fi
+
+    if [[ -n "${SEO_AGENT_VALIDATION_COMMAND:-}" ]]; then
+      if ! bash -lc "${SEO_AGENT_VALIDATION_COMMAND}"; then
+        append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-publish skipped because validation failed: ${SEO_AGENT_VALIDATION_COMMAND}"
+        return 0
+      fi
+    fi
+
+    branch_head="$(git rev-parse --short HEAD)"
+
     if [[ "${SEO_AGENT_GIT_PUSH_ENABLED:-true}" == "true" ]]; then
       if ! git push --no-verify origin "${branch}"; then
         append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: pushing ${branch} failed."
         return 0
       fi
-      append_report_note "${report_file}" "Pushed ${branch}. Master was not pushed."
+      append_report_note "${report_file}" "Pushed ${branch}."
     else
       append_report_note "${report_file}" "Git push disabled; left ${branch} local. Master was not pushed."
+      return 0
     fi
 
-    if [[ "${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}" == "true" ]]; then
-      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: SEO_AGENT_AUTO_MERGE_TO_MASTER is disabled for this social/backlink runner; master was not pushed."
+    if [[ "${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}" != "true" ]]; then
+      append_report_note "${report_file}" "Auto-merge disabled; left ${branch} unmerged."
+      return 0
     fi
+
+    git checkout -B "${base_branch}" "${remote_base}"
+    merge_message="Merge ${branch} SEO distribution cycle ${cycle_id}"
+    if ! git merge --no-ff --no-edit -m "${merge_message}" "${branch}"; then
+      git merge --abort >/dev/null 2>&1 || true
+      git checkout "${branch}"
+      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-merge into ${base_branch} failed for ${branch}."
+      return 0
+    fi
+
+    if ! git push --no-verify origin "${base_branch}"; then
+      git checkout "${branch}"
+      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: ${branch} merged locally, but pushing ${base_branch} failed."
+      return 0
+    fi
+    append_report_note "${report_file}" "Published ${branch} (${branch_head}) to ${base_branch}; production deploy triggered by ${base_branch} push."
   )
 }
 
@@ -507,7 +553,7 @@ auto_commit_cycle_changes() {
 
   if has_sensitive_status_paths "${status_output}"; then
     append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: refusing to auto-commit sensitive-looking paths."
-    return 0
+    return 1
   fi
 
   git add -A
