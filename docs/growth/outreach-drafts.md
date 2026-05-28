@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: APK source setup note
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: strengthened the official download URL before future APK directory, Android reviewer, and power-user outreach by adding source setup guidance for APK trackers and update-minded readers. This helps keep third-party mentions pointed at the official Nayovi page instead of unsupported mirror-first APK pages.
+
+Next outreach when cap resets: send the queued Akaya Media approved-sample pilot inquiry if no later cycle has already contacted Akaya, and keep the ICv2 call follow-up queued if the sender cap is available and no reply has superseded it.
+
 ### Autonomous cycle: pilot decision packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
