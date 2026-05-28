@@ -172,7 +172,7 @@ GROWTH_AGENT_INBOUND_ENABLED=false
 GROWTH_AGENT_INBOUND_ALLOWED_SENDERS=borjiomar38@gmail.com
 GROWTH_AGENT_INBOUND_REQUIRE_AUTHENTICATED_SENDER=true
 GROWTH_AGENT_INBOUND_POLL_SECONDS=60
-GROWTH_AGENT_NOTIFY_ON_INBOUND=false
+GROWTH_AGENT_NOTIFY_ON_INBOUND=true
 GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
 GROWTH_AGENT_STATUS_REPLY_ENABLED=true
 GROWTH_AGENT_DAILY_SUMMARY_ENABLED=true
@@ -206,12 +206,18 @@ Owner email notifications are intentionally low-volume:
 - Normal progress sends at most one daily summary. If an emergency email was
   sent, the daily summary is skipped until the next summary interval.
 - Reply-ingestion confirmations are disabled by default to avoid mail loops and
-  noisy acknowledgements.
+  noisy acknowledgements before work is done. Action replies still receive a
+  processed-result reply after the growth cycle handles them.
 - Owner status replies are enabled by default. A short authenticated owner mail
   such as `avancement`, `status`, `update`, `tu fais quoi`, or
   `what are u doing` receives an immediate business-readable update from the
   mail bridge and is not queued as growth-agent work. Dates are formatted in
   Tunisia time.
+- Owner action replies are enabled by default. A concrete authenticated reply,
+  for example `planifier un call`, `contacte ce lead`, or `utilise cette
+  vidéo`, is queued for the next growth cycle. After that cycle processes the
+  reply, the owner receives a concise result email in the same thread when the
+  original message ID is available.
 - Inbound replies are queued only when the sender address is allow-listed and
   the mail server reports passing SPF, DKIM, or DMARC authentication for that
   sender. Other messages are marked seen and never become agent instructions.
@@ -246,7 +252,9 @@ emails with attachments still go into the normal queue for the next growth
 cycle. Any owner email that asks for a concrete action, for example
 `update the website demo`, `contact APKPure`, or `send the demo to investors`,
 is queued as growth-agent work and triggers the agent instead of being treated
-as a status reply.
+as a status reply. After the growth cycle processes that queued action, the
+owner receives a concise result reply in the same mail thread when the original
+message ID is available.
 
 Enable inbound replies only after adding IMAP credentials to
 `/opt/tachi-back/.env.growth-agent`:
@@ -260,6 +268,7 @@ GROWTH_AGENT_INBOUND_IMAP_USER=growth-agent@nayovi.com
 GROWTH_AGENT_INBOUND_IMAP_PASSWORD=change-me
 GROWTH_AGENT_INBOUND_IMAP_MAILBOX=INBOX
 GROWTH_AGENT_INBOUND_IMAP_SSL=true
+GROWTH_AGENT_NOTIFY_ON_INBOUND=true
 GROWTH_AGENT_STATUS_REPLY_ENABLED=true
 GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,tu fais quoi là,avance sur quoi,quoi maintenant,progress,what are you doing,what are u doing,what r u doing,what you doing"
 ```
