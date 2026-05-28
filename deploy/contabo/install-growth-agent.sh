@@ -57,7 +57,7 @@ if [[ ! -f "${ENV_FILE}" ]]; then
   cat >"${ENV_FILE}" <<EOF
 GROWTH_AGENT_ENABLED=true
 GROWTH_AGENT_RUN_FOREVER=true
-GROWTH_AGENT_INTERVAL_SECONDS=21600
+GROWTH_AGENT_INTERVAL_SECONDS=60
 GROWTH_AGENT_CODEX_CLI_PATH=codex
 GROWTH_AGENT_CODEX_MODEL=gpt-5.5
 GROWTH_AGENT_CODEX_REASONING_EFFORT=low
@@ -110,12 +110,14 @@ GROWTH_AGENT_VALIDATION_COMMAND="./node_modules/.bin/tsc --noEmit"
 GROWTH_AGENT_PRIMARY_SITE=https://tachiyomiat.com
 GROWTH_AGENT_BRAND_SITE=https://nayovi.com
 GROWTH_AGENT_SEO_SITE=https://translate-manhwa-ai.com
+GROWTH_AGENT_SEO_DISTRIBUTION_STATE_DIR=/var/lib/tachi-seo-distribution-agent
 EOF
   chmod 600 "${ENV_FILE}"
   chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
 fi
 
 ensure_env_default GROWTH_AGENT_NOTIFY_ON_INBOUND false
+ensure_env_default GROWTH_AGENT_INTERVAL_SECONDS 60
 ensure_env_default GROWTH_AGENT_GIT_BRANCH_PREFIX growth/autonomous
 ensure_env_default GROWTH_AGENT_PER_CYCLE_BRANCHES true
 ensure_env_default GROWTH_AGENT_AUTO_MERGE_TO_MASTER true
@@ -146,6 +148,7 @@ ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED true
 ensure_env_default GROWTH_AGENT_VALIDATION_COMMAND '"./node_modules/.bin/tsc --noEmit"'
 ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS '"OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"'
+ensure_env_default GROWTH_AGENT_SEO_DISTRIBUTION_STATE_DIR /var/lib/tachi-seo-distribution-agent
 chmod 600 "${ENV_FILE}"
 chown "${DEPLOY_USER}:${DEPLOY_USER}" "${ENV_FILE}"
 

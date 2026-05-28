@@ -9,6 +9,7 @@ import freeTrialRouter from './routers/free-trial';
 import jobRouter from './routers/job';
 import licenseRouter from './routers/license';
 import providerRouter from './routers/provider';
+import seoDistributionRouter from './routers/seo-distribution';
 import translationQaRouter from './routers/translation-qa';
 import userRouter from './routers/user';
 
@@ -26,5 +27,6 @@ export const router = {
   device: deviceRouter,
   freeTrial: freeTrialRouter,
   job: jobRouter,
+  seoDistribution: seoDistributionRouter,
   translationQa: translationQaRouter,
 };
