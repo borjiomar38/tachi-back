@@ -31,6 +31,28 @@ const translationWorkflowStructuredData = () => {
         'Avoid paid placement, reciprocal links, hidden support links, private data scraping, and unauthorized-catalog claims.',
     },
   ] as const;
+  const capResetPacket = [
+    {
+      name: 'Reply-driven follow-up',
+      description:
+        'Prioritize qualified replies and call or review-code requests before opening new outreach.',
+    },
+    {
+      name: 'Approved-sample partner inquiry',
+      description:
+        'Use the pilot brief, OCR checklist, official download page, support route, and pricing page when contacting creator platforms, publishers, localization teams, or manga communities.',
+    },
+    {
+      name: 'Directory or newsletter submission',
+      description:
+        'Submit only after screenshots, APK metadata, pricing, support, responsible-use language, and review-code context are ready.',
+    },
+    {
+      name: 'Skip weak placements',
+      description:
+        'Avoid paid placement, reciprocal links, hidden official support links, and pitches that imply unauthorized catalog translation.',
+    },
+  ] as const;
 
   return [
     {
@@ -39,6 +61,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi outreach submission queue',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: queue.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#cap-reset-packet`,
+      name: 'Nayovi cap-reset outreach packet',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: capResetPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
