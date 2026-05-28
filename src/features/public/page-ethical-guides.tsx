@@ -431,6 +431,24 @@ const tokenPlanLinkRows = [
   },
 ] as const;
 
+const tokenPlanProofRows = [
+  {
+    label: 'Before paying',
+    detail:
+      'Confirm one permitted sample translates well enough to repeat, the token plan matches expected page volume, and support can handle activation or device recovery.',
+  },
+  {
+    label: 'Before referring',
+    detail:
+      'Keep the APK source, pricing page, support route, responsible-use note, and review-code option attached to any article, directory listing, or affiliate mention.',
+  },
+  {
+    label: 'Before piloting',
+    detail:
+      'Use a dedicated code and approved sample when a creator, publisher, community, or reviewer needs private evidence before public screenshots or recommendations.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1491,6 +1509,28 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
                 className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
               >
                 <span className="font-semibold">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Buyer confidence"
+        title="Verify the repeat-use case before checkout"
+        description="A paid plan should follow proof that Nayovi is useful for the reader's language pair, source material, and Android workflow. Public referrals need the same proof attached."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {tokenPlanProofRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
                 <span>{row.detail}</span>
               </div>
             ))}

@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: checkout proof checks
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 10 sends on 2026-05-28 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan` with buyer-confidence proof checks so Android readers, reviewers, affiliates, directories, and approved-sample partners can verify permitted samples, repeat-use quality, official links, support, and dedicated-code routing before paid checkout or public recommendation.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first; otherwise use this guide when a reviewer, directory, or partner asks whether Nayovi should be trialed, paid, listed, or tested through a dedicated review/pilot code.
+
 ### Autonomous cycle: free trial vs paid token-plan guide
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 10 sends on 2026-05-28 UTC, matching the configured daily cap.
