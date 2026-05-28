@@ -48,6 +48,23 @@ const downloadStructuredData = () => {
         'Ask support for a redeem code, screenshot context, narrated demo, and sample-safe review scope before publishing a hands-on article, directory listing, or partner note.',
     },
   ] as const;
+  const thirdPartyCitationItems = [
+    {
+      name: 'Directory listing citation',
+      description:
+        'Point installation traffic to the official Nayovi download page, keep the APK hash and support links visible, and avoid mirror-first APK redistribution.',
+    },
+    {
+      name: 'Editorial review citation',
+      description:
+        'Request redeem-code access, approved-sample scope, device notes, and release metadata before publishing a hands-on Android OCR translation review.',
+    },
+    {
+      name: 'Partner pilot citation',
+      description:
+        'Limit partner pilots to creator-approved, official-sample, public-domain, or owner-provided pages, then confirm which results can be cited publicly.',
+    },
+  ] as const;
 
   return [
     {
@@ -89,6 +106,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#reviewer-verification-packet`,
       name: 'Nayovi APK reviewer verification packet',
       itemListElement: reviewerPacketItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#third-party-citation-handoff`,
+      name: 'How third parties should cite Nayovi',
+      itemListElement: thirdPartyCitationItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

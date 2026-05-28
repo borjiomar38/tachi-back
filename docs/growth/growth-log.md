@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T214122Z`: audited branch state, current SEO distribution shared report, `/download` route metadata, growth trackers, and outreach sender history.
+- Added third-party citation handoff ItemList structured data to `/download` so directory listings, editorial reviews, and partner pilots can parse official APK source, review-code access, approved-sample test scope, and no-mirror boundaries from the page head.
+- Marked the third-party citation handoff metadata asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Akaya Media remains auto-approved and queued for the next cap window unless a reply-driven action takes priority.
+
 - Autonomous cycle on `growth/autonomous-20260528T213445Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared state, and outreach sender history.
 - Added ItemList structured data to `/translate-manhwa-ai` for qualified activation signals and partner handoff paths, making official APK source, free trial to paid token flow, review/pilot code access, and permission-safe workflow details parseable for search engines, AI directories, Android reviewers, and creator/community pilots.
 - Marked the manhwa translator partner handoff metadata asset as shipped in the content backlog.
