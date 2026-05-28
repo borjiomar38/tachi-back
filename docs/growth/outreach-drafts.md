@@ -34,6 +34,37 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### ICv2 comics and manga product coverage
+
+Category: press
+Contact path: News@ICv2.com, selected after prior-cycle public verification found ICv2's product-info page covers comics, graphic novels, and manga and lists the address for product/release information.
+Rationale: ICv2's trade audience may care about a permission-safe Android OCR/AI translation workflow if framed as reviewer/product coverage, not a request to translate catalog content or buy links.
+Status: contacted in prior cycle; owner inbound command `20260528T183731Z-10629b63e287` asked to schedule a call. A concise call follow-up with Borji Omar's email and phone was prepared, but the sender reported daily outreach cap reached at 10/10, so no follow-up email was sent this cycle.
+
+Subject prepared for next cap reset: Call option for Nayovi product note
+
+Hi ICv2 team,
+
+Quick follow-up on the Nayovi product note I sent earlier.
+
+If a short call would help you decide whether this fits ICv2 product coverage, Borji Omar can make time to walk through the Android APK, hosted OCR/AI translation workflow, reviewer code path, and responsible-use boundaries.
+
+Contact options:
+Email: borjiomar38@gmail.com
+Phone/WhatsApp: +216 23 655 086
+
+The useful context is still here:
+https://tachiyomiat.com/guides/translation-support-workflow
+https://tachiyomiat.com/download
+https://tachiyomiat.com/pricing
+
+Nayovi does not host or distribute chapters; it supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### PopWebTools AI directory
 
 Category: directory

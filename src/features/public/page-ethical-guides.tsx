@@ -206,6 +206,34 @@ const demoPacketRows = [
   },
 ] as const;
 
+const aiDirectoryProofRows = [
+  {
+    label: 'Screenshot set',
+    detail:
+      'Use a short Android screenshot set that proves install confidence, redeem-code activation, translation progress, output review, pricing, and support paths.',
+  },
+  {
+    label: 'Demo link',
+    detail:
+      'Pair screenshots with the narrated demo so AI-tool directories can verify the workflow without guessing whether Nayovi is only a generic upload site.',
+  },
+  {
+    label: 'Listing metadata',
+    detail:
+      'Classify Nayovi as an Android app, AI OCR workflow, manga translation support, manhwa translation support, and hosted reader utility.',
+  },
+  {
+    label: 'Conversion handoff',
+    detail:
+      'Send directory visitors to the official download, pricing, support, and workflow pages so qualified traffic can move from trial to paid token plans.',
+  },
+  {
+    label: 'Responsible boundary',
+    detail:
+      'Keep every listing clear that Nayovi does not host or distribute chapters and should be tested with owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
 const pilotBriefRows = [
   {
     label: 'Approved sample',
@@ -548,6 +576,28 @@ export const PageTranslationSupportWorkflow = () => {
               >
                 <span className="font-semibold text-foreground">
                   {row.item}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="AI directory proof"
+        title="Screenshot packet for AI-tool listings"
+        description="Use this packet when AI-tool directories, startup directories, or SaaS roundups need visual proof and category metadata before sending qualified visitors to Nayovi."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {aiDirectoryProofRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
                 </span>
                 <span>{row.detail}</span>
               </div>
