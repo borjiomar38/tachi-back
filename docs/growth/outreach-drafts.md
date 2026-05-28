@@ -34,6 +34,36 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### SubmitAITools AI directory
+
+Category: directory
+Contact path: contact@submitaitools.org, listed on the current public SubmitAITools site for listing updates/support.
+Rationale: SubmitAITools describes a free AI-tool submission path, manual review, categorized listings, and external links, which can create qualified AI-tool discovery if Nayovi is listed with official APK, pricing, support, and responsible-use context.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Nayovi listing fit for SubmitAITools
+
+Hi SubmitAITools team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found SubmitAITools while reviewing AI-tool directories that allow free submissions and manual review. Nayovi may fit if your directory accepts focused consumer AI apps with clear source-of-truth links: official APK install from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, support, and hosted OCR/AI translation from the Android app.
+
+Nayovi does not host or distribute chapters. It supports translation for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Would SubmitAITools consider Nayovi for a standard reviewed listing, and should I use the free submission path or send the full listing packet by email?
+
+Useful source links:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/pricing
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## AI Tool Directory Listing Packet
 
 Use for official AI-tool, SaaS, or startup-directory submission forms when the directory allows an accurate source-of-truth listing and does not require paid link placement.
