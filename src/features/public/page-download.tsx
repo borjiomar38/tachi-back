@@ -152,6 +152,24 @@ const evidenceRows = [
   },
 ] as const;
 
+const reviewerHandoffRows = [
+  {
+    title: 'Directory listing',
+    description:
+      'Use the official download URL, current hash, pricing link, support link, and responsible-use guide. Do not republish the APK as an unsupported mirror-first download.',
+  },
+  {
+    title: 'Editorial review',
+    description:
+      'Request a redeem code, approved-sample screenshots, device notes, and package/signing metadata before publishing a hands-on app review.',
+  },
+  {
+    title: 'Partner pilot',
+    description:
+      'Keep the pilot limited to creator-approved, official-sample, public-domain, or owner-provided pages and confirm whether any result can be cited publicly.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -563,6 +581,43 @@ export const PageDownload = () => {
               workflow screens or owner-approved sample pages first, then keep
               any chapter-specific evidence private unless publication rights
               are explicit.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Handoff"
+        title="How third parties should cite Nayovi"
+        description="Use this handoff before adding Nayovi to an app directory, writing a review, preparing a newsletter mention, or asking for a creator-platform pilot."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerHandoffRows.map((row) => (
+            <Card key={row.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.title}</CardTitle>
+                <CardDescription>{row.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              The safest public citation is the official download page plus the
+              comic OCR checklist. That gives readers the install source,
+              metadata, support route, pricing context, and sample-permission
+              boundary in one place.
+            </p>
+            <p>
+              If a third-party listing cannot show those details clearly, cite
+              Nayovi as an Android hosted OCR workflow and send install traffic
+              back here instead of publishing a separate APK copy.
             </p>
           </CardContent>
         </Card>

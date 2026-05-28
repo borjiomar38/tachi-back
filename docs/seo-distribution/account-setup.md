@@ -23,6 +23,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Crunchbase organization profile | Investor and partner trust signal for company/entity discovery | setup_packet_prepared | Owner creates or claims official organization profile and completes any verification manually | Company description, website, logo, founding/founder fields, product category, canonical links | `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE`; no private login data | Keep public company profile fields consistent after owner approval | Owner verifies whether Nayovi has an eligible company profile and approves public fields before submission. |
 | high | Google Business/Profile-style web entity packet | Cross-surface entity consistency for search, AI answers, press, and partner diligence | setup_packet_prepared_owner_action_required | Owner confirms whether Nayovi has an eligible public business/entity profile and completes any manual verification | Legal/public company name, website, logo, support URL, public contact path, service area or online-only positioning | `SEO_AGENT_BUSINESS_PROFILE_REFERENCE`; no private verification data | Let agent keep public entity fields consistent across owned docs, directories, and profile packets | Owner confirms eligibility and public entity fields; agent must not create or verify profiles automatically. |
 | medium | Indie Hackers/build-in-public founder profile | Founder credibility, transparent product updates, and revenue/feedback community participation | setup_packet_prepared_owner_action_required | Founder creates or connects an official founder-owned profile with truthful Nayovi affiliation | Founder bio, product URL, no-link launch/update drafts, metrics owner approves for public use | `SEO_AGENT_INDIEHACKERS_PROFILE_REFERENCE`; API token only if a compliant workflow exists | Draft build-in-public posts and answer feedback only from authorized founder account | Owner creates/connects founder profile and approves which metrics, screenshots, or posts can be public. |
+| high | Android Play Console / developer identity | Developer verification, package ownership, and APK trust for 2026 Android install changes | setup_packet_prepared_owner_action_required | Owner completes any official developer identity, package registration, ID, fee, and terms steps manually | Package name, signed APK, signing certificate fingerprint, official domains, support URL, privacy/terms URLs | `SEO_AGENT_ANDROID_PLAY_CONSOLE_REFERENCE`; do not store IDs or verification docs | Agent can cite only owner-confirmed verification/package status in reviewer packets | Owner confirms package name, signing fingerprint, developer verification status, and whether Play Console or Android Developer Console access may be referenced. |
+| high | GitHub public docs/release surface | Owned technical proof for APK metadata, OCR checklist, and reviewer handoff | configured_owned_repo_needs_content_sync | Use owned repo/docs only; no external PR unless maintainer invites it | Markdown checklist, release notes, APK hash, source links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned markdown docs and release proof on the current branch | Agent added website handoff copy 2026-05-28; next mirror the public checklist into an owned GitHub docs page if owner wants an external repository citation. |
 
 ## 2026-05-28 Setup Packets
 
@@ -177,6 +179,62 @@ Agent capability after connection:
 
 Next action:
 - Founder creates/connects the official profile, confirms whether Nayovi can be mentioned under the founder identity, and approves which product metrics may be public.
+
+### Android Play Console / Developer Identity Packet
+
+Status: OWNER_ACTION_REQUIRED for any identity verification, package registration, fee payment, terms acceptance, or government-ID workflow.
+
+Public fields to confirm before any reviewer or directory packet cites them:
+- App/product name: `Nayovi`
+- Official website: `https://nayovi.com`
+- Official APK/source page: `https://tachiyomiat.com/download`
+- Support URL: `https://tachiyomiat.com/support`
+- Privacy URL: `https://tachiyomiat.com/legal/privacy`
+- Terms URL: `https://tachiyomiat.com/legal/terms`
+- Responsible workflow guide: `https://tachiyomiat.com/guides/translation-support-workflow`
+- Package name: owner-confirmed value only; do not infer from APK filename.
+- Signing-certificate fingerprint: owner-confirmed value only.
+- Developer verification status: owner-confirmed `complete`, `pending`, `not started`, or `not applicable`.
+
+Required assets:
+- Signed APK or release artifact.
+- SHA-256 APK hash.
+- Signing-certificate fingerprint.
+- Package ownership notes.
+- Owner-approved public developer/contact fields.
+- Safe screenshot set using install, activation, support, or approved-sample screens only.
+
+Credential reference:
+- `SEO_AGENT_ANDROID_PLAY_CONSOLE_REFERENCE` for a non-secret workflow reference only. Do not store identity documents, account screenshots, recovery codes, cookies, phone/email challenges, or verification tokens in docs or Git.
+
+Agent capability after connection:
+- The agent can keep reviewer packets consistent and cite only owner-confirmed package and verification facts. It must not upload APKs, accept terms, pay fees, verify identity, or register package ownership automatically.
+
+Next action:
+- Owner confirms package name, signing fingerprint, and current verification status so the download-page release packet can stop using pending language.
+
+### GitHub Owned Release Docs Packet
+
+Status: CONFIGURED_OWNED_REPO, content sync pending.
+
+Recommended public docs:
+- `docs/nayovi-apk-review-packet.md`: official APK source, hash, package/signing fields, support, pricing, privacy, terms, and responsible-use links.
+- `docs/comic-ocr-checklist.md`: neutral checklist already maintained in `docs/seo-distribution/comic-ocr-checklist.md`.
+- `docs/reviewer-screenshot-policy.md`: screenshot rights, approved samples, device matrix, and no-chapter-hosting boundary.
+
+Required assets:
+- Current APK metadata from `src/features/public/download-assets.ts`.
+- Owner-confirmed package/signing details.
+- Public URLs from the official profile linking checklist.
+
+Credential reference:
+- SSH remote is already enough for owned repo work. Use `SEO_AGENT_GITHUB_TOKEN` only if API publishing or release metadata updates are explicitly configured.
+
+Agent capability after connection:
+- The agent can publish owned markdown docs, update release notes, and link them from website pages. External awesome-list issues or PRs remain draft-only unless a maintainer asks for the resource.
+
+Next action:
+- Mirror the neutral checklist into an owned docs surface once the owner chooses whether the public citation should be the website route, GitHub docs, or both.
 
 ### YouTube Official Channel
 
