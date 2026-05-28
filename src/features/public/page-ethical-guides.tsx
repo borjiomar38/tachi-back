@@ -372,6 +372,65 @@ const approvedSampleEvidenceRows = [
   },
 ] as const;
 
+const trialTokenDecisionRows = [
+  {
+    title: 'Start with the free trial',
+    description:
+      'Use the trial to confirm the APK installs cleanly, activation works, OCR finds the text, and the translated page is readable on material you are allowed to process.',
+  },
+  {
+    title: 'Upgrade only after repeat use',
+    description:
+      'Choose a monthly token plan when you have recurring manga, manhwa, or manhua translation needs and the hosted OCR workflow saves enough time to justify paid access.',
+  },
+  {
+    title: 'Use review or pilot codes for public tests',
+    description:
+      'Reviewers, affiliates, creator teams, and communities should request a dedicated code when they need attribution, support tracking, screenshots, or approved-sample evidence.',
+  },
+] as const;
+
+const tokenPlanFitRows = [
+  {
+    label: 'Trial signal',
+    detail:
+      'The reader completes install, activation, and one small approved translation test without needing manual support.',
+  },
+  {
+    label: 'Paid signal',
+    detail:
+      'The same reader returns with more pages, repeated language pairs, device recovery needs, or a regular title workflow.',
+  },
+  {
+    label: 'Hold signal',
+    detail:
+      'The user only wants one curiosity test, cannot confirm source permission, or needs a public result before quality and rights are clear.',
+  },
+  {
+    label: 'Partner signal',
+    detail:
+      'A reviewer, directory, creator, publisher, or community can send qualified readers only after official links, disclosure, and responsible-use notes are attached.',
+  },
+] as const;
+
+const tokenPlanLinkRows = [
+  {
+    label: 'Install first',
+    detail:
+      'Use the official download page so APK source, current build context, support, and no-mirror guidance stay attached.',
+  },
+  {
+    label: 'Check quality',
+    detail:
+      'Use the OCR checklist and approved-sample guide before assuming a paid plan is useful for a specific language pair or title.',
+  },
+  {
+    label: 'Compare plans',
+    detail:
+      'Open pricing only after the trial proves repeat value, or when a reviewer or group pilot needs a trackable code.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1369,6 +1428,103 @@ export const PageApprovedSampleTestingGuide = () => {
             className={buttonVariants({ variant: 'ghost', size: 'lg' })}
           >
             Request review code
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
+export const PageFreeTrialVsTokenPlanGuide = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="Pricing guide"
+        title="Free trial vs paid token plan for manga translation"
+        description="A practical decision guide for Android readers, reviewers, affiliates, and approved-sample pilots deciding when Nayovi should stay a trial, become a paid plan, or use a dedicated code."
+        className="pt-10"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {trialTokenDecisionRows.map((row) => (
+            <Card key={row.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{row.title}</CardTitle>
+                <CardDescription>{row.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Upgrade signals"
+        title="Pay for recurring translation, not curiosity"
+        description="The strongest revenue signal is repeated Android translation demand after install, activation, OCR quality, and support expectations are clear."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {tokenPlanFitRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Source-of-truth path"
+        title="Keep trial and paid traffic on official links"
+        description="Directories, reviewers, affiliates, and communities should send readers through the same verified path before anyone pays or publishes a recommendation."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            {tokenPlanLinkRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Next"
+        title="Test the APK, then choose the right access path"
+        description="Use the free trial for one small permitted test. Move to pricing when the workflow repeats; use support when a reviewer, affiliate, or partner needs a dedicated code."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/download"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Download APK
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/pricing"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Compare token plans
+          </a>
+          <a
+            href="/support"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Request a code
           </a>
         </div>
       </PublicSection>
