@@ -29,6 +29,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Newsletter | Android Weekly | Developer-facing OCR and APK review checklist | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: submit only through official Android Weekly path; pitch technical checklist, not consumer app promotion. |
 | draft | Reddit | r/androidapps megathread | Android OCR translator feedback request | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: current megathread/rules review required; no normal subreddit post and no automated replies. |
 | watch | Resource directory | OpenSourceAlternative.to | Open-source companion checklist idea | None yet | Weak fit unless Nayovi publishes a genuine open-source docs/checklist repo; do not submit hosted APK as open-source. |
+| draft | Adjacent tool | Comic Translate | Neutral OCR checklist and Android workflow feedback | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: public contact path only; no claim that Nayovi replaces their product. |
+| draft | Directory | SpotFreeAI | Free-trial AI tool listing fit check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official submit form only; skip if free-trial/paid-token wording cannot be accurate. |
+| draft | Newsletter | Kotlin Weekly | Developer checklist link suggestion | docs/seo-distribution/comic-ocr-checklist.md | OWNER_REVIEW_REQUIRED: submit only after checklist has a public URL; sponsored link requires budget approval. |
 
 ## Draft Bodies
 
@@ -189,6 +192,65 @@ If this is relevant, I can send the guide, screenshots, and demo context for fee
 
 Best,
 Nayovi team
+
+### Comic Translate adjacent-tool note
+
+Status: draft
+Target: Comic Translate public support/contact path
+Audience: adjacent AI comic and manga translation product team
+Rules risk: medium; this should be a resource-awareness or feedback note, not a backlink swap or competitor pitch.
+No-link variant: mention the checklist bullets and offer to send the link if useful.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Android workflow checklist for comic OCR translation
+
+Message:
+
+Hi Comic Translate team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Comic Translate while reviewing tools that handle comic OCR, translation, and editing. This is not a replacement pitch. The useful overlap may be a neutral checklist for evaluating OCR translation before judging translation quality: permission status, missed text regions, reading order, block grouping, glossary consistency, and whether translated output is safe to share.
+
+If that kind of Android workflow checklist is useful for your readers or internal feedback, I can send the short markdown version. Nayovi does not host or distribute chapters, and the checklist is written to work with owned, public-domain, official-preview, or permission-approved samples only.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### SpotFreeAI listing fit check
+
+Status: draft
+Target: SpotFreeAI official submit-tool path
+Audience: AI tool directory editors and users looking for free/freemium AI utilities
+Rules risk: medium; submit only if the form allows accurate free-trial and paid-token disclosure.
+No-link variant: do not submit if pricing cannot be represented clearly.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Listing copy:
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It offers official APK download, free trial access, redeem-code activation, monthly token plans, and support from tachiyomiat.com.
+
+Pricing note:
+Free trial access is available. Continued hosted OCR/translation use is tied to monthly token plans.
+
+Responsible-use note:
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+### Kotlin Weekly checklist suggestion
+
+Status: draft
+Target: Kotlin Weekly official submit path
+Audience: Kotlin and Android developers
+Rules risk: medium; use only after the markdown checklist or a technical article has a public URL. Do not submit consumer launch copy.
+No-link variant: hold internally until a public technical URL exists.
+Link variant after public URL exists: https://tachiyomiat.com/guides/translation-support-workflow
+
+Suggested link note:
+
+This is a practical checklist for reviewing OCR translation workflows on image-heavy Android reader apps before judging model output. It covers sample permission, full-page capture, OCR completeness, reading order, block grouping, glossary consistency, and share decisions. It is based on Nayovi's hosted Android OCR workflow, but the checklist is product-light and should be useful to developers building or reviewing OCR/translation features.
 
 ### AppHunt Android review packet
 
