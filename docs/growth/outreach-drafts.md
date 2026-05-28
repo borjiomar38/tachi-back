@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: approved-sample testing guide
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: shipped a high-intent approved-sample testing guide for reviewers, communities, publishers, and partner teams. This gives future Akaya Media, creator-platform, Android-review, and localization outreach a safer proof URL that routes qualified leads toward review codes, support, APK verification, and paid-plan decisions.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first; otherwise use the queued Akaya Media approved-sample pilot inquiry and cite `https://tachiyomiat.com/guides/test-ai-manhwa-translation-approved-samples` plus the existing pilot brief.
+
 ### Autonomous cycle: APK source setup note
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
