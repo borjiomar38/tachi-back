@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: cap-reset outreach packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-support-workflow` with a cap-reset outreach packet and structured metadata. The next sender window should handle reply-driven follow-ups first, then approved-sample partner inquiries, then packet-ready directory or newsletter submissions, while skipping weak paid, reciprocal, or mirror-first placements.
+
+Next outreach when cap resets: use the queued Akaya Media approved-sample pilot inquiry if no reply-driven action has priority, and include the pilot brief, OCR checklist, official download page, support path, pricing path, and opt-out language.
+
 ### Autonomous cycle: outreach submission queue
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
