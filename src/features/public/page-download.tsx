@@ -170,6 +170,29 @@ const reviewerHandoffRows = [
   },
 ] as const;
 
+const updateSourceRows = [
+  {
+    label: 'Source URL',
+    value:
+      'Use the official download page as the human-readable source, then use the current APK button endpoint only as the file URL.',
+  },
+  {
+    label: 'Update check',
+    value:
+      'Compare the published build label, file name, size, and SHA-256 hash before accepting an update from any tracker or directory.',
+  },
+  {
+    label: 'Mirror boundary',
+    value:
+      'Do not treat third-party APK pages as the canonical source; they should point readers back to tachiyomiat.com for support, pricing, and policy links.',
+  },
+  {
+    label: 'Power-user note',
+    value:
+      'If using an APK source tracker, keep this page attached as the source-of-truth note so future reviews can verify the same release metadata.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -618,6 +641,46 @@ export const PageDownload = () => {
               If a third-party listing cannot show those details clearly, cite
               Nayovi as an Android hosted OCR workflow and send install traffic
               back here instead of publishing a separate APK copy.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Updates"
+        title="APK source setup note"
+        description="Use this note when an Android power user, APK tracker, directory editor, or reviewer wants to follow the official Nayovi APK source without relying on unsupported mirrors."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {updateSourceRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              A correct source setup should store the official Nayovi download
+              page, the current APK endpoint, the SHA-256 hash, and the support
+              URL together. That keeps update-minded Android users on the same
+              source-of-truth path as reviewers and directories.
+            </p>
+            <p>
+              Nayovi does not currently claim inclusion in any third-party APK
+              repository or automatic update catalog. Treat external tracker
+              setup as a personal convenience until a listing is reviewed and
+              approved through an official path.
             </p>
           </CardContent>
         </Card>

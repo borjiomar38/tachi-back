@@ -65,6 +65,23 @@ const downloadStructuredData = () => {
         'Limit partner pilots to creator-approved, official-sample, public-domain, or owner-provided pages, then confirm which results can be cited publicly.',
     },
   ] as const;
+  const apkSourceSetupItems = [
+    {
+      name: 'Keep the download page as the source of truth',
+      description:
+        'Store the official Nayovi download page with the APK endpoint so support, pricing, privacy, terms, and responsible-use context stay attached to the file.',
+    },
+    {
+      name: 'Verify each update before citing it',
+      description:
+        'Compare the published build label, file name, size, and SHA-256 hash before accepting an update from an APK tracker, directory, or review packet.',
+    },
+    {
+      name: 'Avoid mirror-first references',
+      description:
+        'Treat third-party APK pages as discovery surfaces only unless they preserve the official source links, metadata, support route, and no-chapter-hosting boundary.',
+    },
+  ] as const;
 
   return [
     {
@@ -117,6 +134,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#third-party-citation-handoff`,
       name: 'How third parties should cite Nayovi',
       itemListElement: thirdPartyCitationItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#apk-source-setup-note`,
+      name: 'Nayovi APK source setup note',
+      itemListElement: apkSourceSetupItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
