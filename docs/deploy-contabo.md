@@ -273,11 +273,16 @@ sudo systemctl restart tachi-growth-mail-bridge
 ## SEO Distribution Agent
 
 The SEO distribution agent is a separate parallel Codex agent focused on
-trust-building surfaces that make outreach less isolated: LinkedIn post drafts,
-Reddit/community drafts, GitHub-ready docs, linkable assets, app-directory
-angles, and owned SEO content. It runs without a GUI on Contabo and uses Codex
-web search plus Git. It does not create third-party accounts or bypass platform
-auth systems.
+trust-building surfaces that make outreach less isolated. It is not limited to
+LinkedIn, Reddit, and GitHub: every cycle should discover and prioritize
+high-authority surfaces such as Android press, app directories, SaaS/AI tool
+directories, manga/webtoon/creator platforms, newsletters, podcasts, YouTube
+channels, Product Hunt/launch communities, Indie Hackers/build-in-public spaces,
+Dev.to/Medium technical blogs, GitHub awesome lists, resource pages, forums,
+Q&A sites, partner pages, accelerators, investor directories, affiliate/resource
+pages, and localization communities. It runs without a GUI on Contabo and uses
+Codex web search plus Git. It does not create third-party accounts or bypass
+platform auth systems.
 
 Install from the deployed source tree:
 
@@ -304,7 +309,8 @@ The agent writes live status and reports under
 `/var/lib/tachi-seo-distribution-agent`. The production app mounts that
 directory read-only so the manager page at `/manager/seo-distribution` can show
 agent status, current branch, recent reports, configured account capabilities,
-content backlog, platform drafts, and linkable assets.
+authority opportunity pipeline, content backlog, platform drafts, and linkable
+assets.
 
 The growth agent reads the SEO distribution state from
 `/var/lib/tachi-seo-distribution-agent` before each cycle. This lets the email
@@ -314,7 +320,8 @@ inside the repo so its platform drafts support the active backlink and
 partnership pipeline.
 
 External social posting is draft-only by default. To post on LinkedIn, Reddit,
-GitHub, or another platform, configure an official account/API workflow for that
+GitHub, Dev.to, Medium, X/Twitter, YouTube, Product Hunt, or another platform,
+configure an official account/API workflow for that
 platform first and only enable actions that respect the platform and community
 rules. The agent must not create fake accounts, solve CAPTCHAs, mass-comment,
 buy backlinks, or post link drops.
@@ -330,6 +337,11 @@ SEO_AGENT_REDDIT_CLIENT_ID=
 SEO_AGENT_REDDIT_CLIENT_SECRET=
 SEO_AGENT_REDDIT_REFRESH_TOKEN=
 SEO_AGENT_GITHUB_TOKEN=
+SEO_AGENT_X_ACCESS_TOKEN=
+SEO_AGENT_PRODUCTHUNT_TOKEN=
+SEO_AGENT_DEVTO_API_KEY=
+SEO_AGENT_MEDIUM_INTEGRATION_TOKEN=
+SEO_AGENT_YOUTUBE_REFRESH_TOKEN=
 ```
 
 Operational commands:
