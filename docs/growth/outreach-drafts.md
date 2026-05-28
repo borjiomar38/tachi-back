@@ -71,6 +71,30 @@ Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Mangadraft Partnership Draft Sent 2026-05-28
+
+Category: partnership
+Contact path: contact@mangadraft.com, exposed on the current public Google Play listing as the app support email.
+Rationale: Mangadraft is an Android manga and webtoon platform for independent authors and readers, with page-level feedback and community context. Nayovi can ask for creator-safe workflow feedback around approved samples without suggesting unauthorized catalog translation.
+Status: contacted 2026-05-28; wait for reply before any follow-up.
+
+Subject: Creator-safe Android translation workflow feedback
+
+Hi Mangadraft team,
+
+I found Mangadraft while reviewing manga and webtoon Android platforms, and noticed the app focuses on independent authors, reader feedback, and page-level engagement.
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. Nayovi does not host or distribute chapters; it supports translation for owned, public-domain, official-sample, or permission-approved content.
+
+The possible fit would be cautious and creator-safe: feedback on whether a hosted Android translation workflow could ever be useful for approved samples, accessibility-style reader research, or multilingual discovery where the author/platform has explicitly allowed testing. I am not asking Mangadraft to send readers to an unofficial mirror or to translate catalog content without permission.
+
+If this is relevant, I can send the public product page, APK flow, demo context, pricing/support notes, and responsible-use language for review.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Community Feedback Draft
 
 Subject: Feedback request: permission-safe Android translation workflow
