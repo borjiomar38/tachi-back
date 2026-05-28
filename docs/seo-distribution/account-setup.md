@@ -15,7 +15,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | DEV/Medium technical publishing | Technical authority for OCR, merge QA, hosted Android workflow | needs_owner_setup | Connect official publication/profile account | Canonical article drafts, profile bio, logo | SEO_AGENT_DEVTO_API_KEY, SEO_AGENT_MEDIUM_INTEGRATION_TOKEN | Publish canonical technical articles where allowed | Prepare public-safe OCR QA article packet. |
 | medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
 | medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
-| medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_needed | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Prioritize high-reputation directories first. |
+| medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_prepared | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Owner reviews directory quality filter before any form submission. |
+| medium | App testing and reviewer portals | Third-party install trust evidence before press and directory outreach | setup_packet_prepared | Owner approves exact APK sharing, tester scope, sample pages, and publication rights before any upload | Signed APK link, SHA-256, safe sample plan, redeem code, support link, screenshot rules | Per-platform credential reference only; optional `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` | Request reviewer/tester reports only through approved portals or official editorial paths | Owner approves whether Nayovi can share APK/redeem-code access with testing services. |
 | high | Android developer verification and package registry | APK install trust, package ownership, reviewer confidence | setup_packet_prepared | Owner completes official Android developer verification and package registration when eligible | Package name, signed APK, SHA-256, signing-certificate fingerprint, official domains, support links | `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE` | Let agent cite verified/pending status in reviewer packets after owner confirms it | Owner confirms package name, signing fingerprint, and verification status; agent must not infer. |
 | medium | Newsletter/podcast contributor profiles | Editorial trust for localization, Android, and creator-platform pitches | setup_packet_prepared | Owner creates official contributor/byline profile only where invited or required | Founder byline, headshot/logo, bio, canonical links, non-promotional article/topic packet | Per-publication credential reference only | Submit owner-approved non-promotional topic pitches or author bios | Owner approves byline and which publications may receive topic notes. |
 
@@ -272,3 +273,67 @@ Agent capability after connection:
 
 Next action:
 - Owner approves the contributor byline and whether Android Weekly, TLDR AI, Nimdzi LIVE, or similar outlets may receive non-promotional topic notes.
+
+### AI and App Directory Developer Profiles
+
+Status: OWNER_ACTION_REQUIRED for any directory account creation, terms acceptance, paid listing decision, or form submission.
+
+Listing fields:
+- Product name: `Nayovi`
+- Category: `Android app`, `AI OCR`, `manga translation workflow`, `manhwa translation`, `language technology`
+- Website: `https://tachiyomiat.com/download`
+- Brand URL: `https://nayovi.com`
+- Technical URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Pricing URL: `https://tachiyomiat.com/pricing`
+- Support URL: `https://tachiyomiat.com/support`
+- Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers, with free trial access, redeem-code activation, monthly token plans, and official support.`
+- Responsible-use note: `Nayovi does not host or distribute chapters; it supports content users own, public-domain material, official samples, or content they have permission to process.`
+
+Directory quality filter:
+- Use only official submit, claim, or developer-owner paths.
+- Skip directories that require paid link packages, reciprocal backlinks, hidden redirects, mirror-first APK links, fake reviews, or unclear pricing/support fields.
+- Prefer listings that can show official website, pricing, screenshots, support, and responsible-use context together.
+- If the directory accepts `Free trial`, `Freemium`, or `Paid` labels, use the accurate pricing label rather than forcing Nayovi into a free-only category.
+
+Required assets:
+- Logo/avatar.
+- 3-5 screenshots using approved or neutral sample material.
+- Demo video URL when available.
+- Current APK filename, build label, size, SHA-256, package name, signing fingerprint, and Android verification status once owner confirms them.
+
+Credential references:
+- Use per-platform non-secret references only, for example `SEO_AGENT_TOOLWORTHY_ACCOUNT_REFERENCE`, `SEO_AGENT_AIMATCH_ACCOUNT_REFERENCE`, or `SEO_AGENT_DIRECTORY_PORTAL_REFERENCE`.
+- Do not store directory passwords, cookies, payment details, or verification tokens in docs or Git.
+
+Agent capability after connection:
+- Prepare and submit owner-approved listings only where the platform preserves source-of-truth links and does not require paid/reciprocal link placement. No account creation, CAPTCHA, payment, or terms acceptance through the agent.
+
+Next action:
+- Owner approves the directory quality filter and confirms whether ToolWorthy-style directories can be used when paid submissions exist but editorial criteria are applied equally.
+
+### App Testing and Reviewer Portals
+
+Status: OWNER_ACTION_REQUIRED for APK sharing, tester/reviewer access, redeem-code issuance, terms acceptance, or any paid testing decision.
+
+Test profile fields:
+- App name: `Nayovi`
+- Official download URL: `https://tachiyomiat.com/download`
+- Support URL: `https://tachiyomiat.com/support`
+- Responsible workflow URL: `https://tachiyomiat.com/guides/translation-support-workflow`
+- Test goal: `Validate install trust, redeem-code activation, hosted OCR progress, translation review, and support clarity for permission-safe sample pages.`
+
+Required assets:
+- Current APK metadata and SHA-256.
+- Owner-approved redeem code or free-trial path.
+- Public-domain, official-sample, or owner-approved test images.
+- Screenshot/video publication rules.
+- Device/Android-version matrix if the tester portal requests it.
+
+Credential reference:
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` or a per-platform reference after the owner connects an official workflow. Do not store APK portal passwords, payment details, identity checks, or tester personal data in docs.
+
+Agent capability after connection:
+- Prepare test instructions and ingest non-secret report summaries after owner-approved testing. The agent must not upload APKs, issue redeem codes, start paid campaigns, or publish test videos without explicit owner action.
+
+Next action:
+- Owner decides whether to use a human app-testing service before the next Android press or directory push, and confirms which approved sample pages may be used.

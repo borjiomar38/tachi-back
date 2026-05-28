@@ -56,6 +56,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Android repository | IzzyOnDroid eligibility | Release metadata quality bar, not current submission | None by default | Weak fit while Nayovi is not a qualifying open-source Android app; do not submit product listing. |
 | draft | Product Hunt | Image/OCR translation alternatives positioning | Android-hosted manga OCR workflow distinct from browser/image translation tools | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: use only in official launch assets or requested comments; no upvote requests. |
 | watch | AI directory | NoohTech | AI directory listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify no paid/reciprocal-link requirement and accurate pricing fields before drafting a submission. |
+| draft | AI directory | ToolifyNav | Nayovi Android OCR workflow listing fit check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify current free submit fields and skip if paid/reciprocal link placement is required. |
+| draft | AI directory | AiMatch | Owner-claimed AI OCR listing packet | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official claim/submit path only; preserve pricing, support, and official APK links. |
+| draft | Localization podcast/media | SlatorPod | Visual-storytelling OCR QA topic pitch | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_REVIEW_REQUIRED: hold until approved-sample screenshots and measurements exist; no consumer-app pitch. |
 
 ## Draft Bodies
 
@@ -267,6 +270,68 @@ I found Translexi while researching localization teams that already think about 
 The resource is intentionally product-light: it covers approved sample scope, OCR text coverage, reading order, grouped bubbles, glossary consistency, human correction, and whether a sample should be shared publicly. Nayovi does not host or distribute chapters and this is not a request to process Translexi client work without permission.
 
 If useful, I can send the checklist and a short Android-side observation packet. If not, no follow-up is needed.
+
+Best,
+Nayovi team
+
+### ToolifyNav and AiMatch listing fit draft
+
+Status: draft
+Target: ToolifyNav, AiMatch, or similar AI directory that allows accurate free-trial/paid-plan labeling
+Audience: AI tool directory editors and users looking for OCR or translation workflows
+Rules risk: medium; use only official submit/claim paths and skip paid backlink, reciprocal link, or mirror-first listing requirements.
+No-link variant: not applicable for a directory listing; use the official website field only.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Listing summary:
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It includes official APK download, free trial access, redeem-code activation, monthly token plans, and support from tachiyomiat.com.
+
+Category fields:
+- Android app
+- AI OCR
+- Image translation
+- Manga/manhwa translation workflow
+- Language technology
+
+Source links:
+- Official APK and reviewer packet: https://tachiyomiat.com/download
+- AI translation page: https://tachiyomiat.com/translate-manhwa-ai
+- Pricing: https://tachiyomiat.com/pricing
+- Support: https://tachiyomiat.com/support
+- Responsible workflow guide: https://tachiyomiat.com/guides/translation-support-workflow
+
+Responsible-use note:
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for content users own, public-domain material, official samples, or content they have permission to process.
+
+Submission guardrail:
+
+Do not submit if the directory requires paid link placement, reciprocal backlinks, fake reviews, hidden redirects, or hides the official download/support/pricing context.
+
+### SlatorPod visual-storytelling OCR topic pitch
+
+Status: draft
+Target: SlatorPod or similar language-industry podcast/editorial contact
+Audience: localization operators, language AI teams, media localization buyers
+Rules risk: medium; use only official editorial/contact paths and hold until approved-sample evidence exists.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Visual-storytelling OCR QA topic for language AI coverage
+
+Message:
+
+Hi SlatorPod team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I am not looking to pitch a consumer app review or ask for a backlink. The localization topic that may be more useful for your audience is how visual-storytelling OCR fails before translation even begins: missed regions, under-segmented speech balloons, reading-order mistakes, glossary drift, and unclear permission status for sample pages.
+
+The current checklist is focused on approved samples, human review, and deciding whether output should remain private, be corrected, or be cited publicly. Nayovi does not host or distribute chapters.
+
+If that workflow angle is relevant for language AI or media-localization coverage, I can send a short topic brief with approved-sample screenshots and QA counts once the sample owner has cleared them.
 
 Best,
 Nayovi team

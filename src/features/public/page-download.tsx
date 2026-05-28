@@ -106,6 +106,29 @@ const releaseProofRows = [
   },
 ] as const;
 
+const appTestRows = [
+  {
+    label: 'Install confidence',
+    value:
+      'Record Android version, device model, browser or file manager used, install prompt behavior, and whether the SHA-256 hash matched.',
+  },
+  {
+    label: 'Activation path',
+    value:
+      'Test free trial or redeem-code activation, token-balance visibility, device binding, and the support path for recovery questions.',
+  },
+  {
+    label: 'OCR workflow',
+    value:
+      'Use only public-domain, official-sample, or owner-approved pages and note OCR progress, block order, missing text, and translation latency.',
+  },
+  {
+    label: 'Review boundary',
+    value:
+      'Keep screenshots free of copyrighted chapter pages unless the sample owner approved publication, and state that Nayovi does not host chapters.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -438,6 +461,45 @@ export const PageDownload = () => {
               Reviewers can request a redeem code and sample-safe test context
               through support before publishing a hands-on Android OCR
               translation review.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Testing"
+        title="Safe Android app test packet"
+        description="Use this packet when a reviewer, beta-testing service, directory editor, or partner needs a repeatable test plan before recommending the APK."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {appTestRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              Do not upload the APK to an external testing platform or send a
+              redeem code until the owner approves the exact tester scope,
+              sample pages, and publication rights for screenshots or videos.
+            </p>
+            <p>
+              A useful test report should cover install trust, activation,
+              hosted OCR progress, translation review, support clarity, and the
+              no-chapter-hosting boundary rather than only confirming that the
+              APK opens.
             </p>
           </CardContent>
         </Card>
