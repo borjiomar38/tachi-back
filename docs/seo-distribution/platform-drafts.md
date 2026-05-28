@@ -44,6 +44,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android policy/resource | Android developer communities | APK verification checklist for 2026 developer verification rollout | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use as owned trust asset or technical resource only; do not claim verified status until confirmed. |
 | draft | Adjacent tool | ToonFlow | OCR stage-review checklist exchange | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink swap and no replacement pitch. |
 | draft | Localization workflow | ComixSuite | Android OCR verification checklist feedback | None by default | OWNER_REVIEW_REQUIRED: official contact only; professional workflow angle, not consumer promotion. |
+| draft | Creator platform | WEBTOON partnerships/contact | Approved-sample OCR workflow feedback | None by default | OWNER_REVIEW_REQUIRED: use official partnership/contact path only; no catalog translation implication and no backlink ask. |
+| draft | AI directory | Panadroid | Nayovi AI OCR listing fit check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify current submit/contact path; skip paid or reciprocal link placement. |
 
 ## Draft Bodies
 
@@ -204,6 +206,73 @@ If this is relevant, I can send the guide, screenshots, and demo context for fee
 
 Best,
 Nayovi team
+
+### WEBTOON approved-sample feedback draft
+
+Status: draft
+Target: WEBTOON official partnership/contact path
+Audience: creator-platform, partnerships, or IP/business review team
+Rules risk: medium; send only through the correct official contact path after owner review. This is not a request to translate WEBTOON catalog content.
+No-link variant: yes
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Approved-sample OCR workflow feedback for webtoon translation QA
+
+Message:
+
+Hi WEBTOON team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, webtoon, and comic reader workflows.
+
+I am not asking to process WEBTOON catalog content or request a backlink. I wanted to ask whether a permission-first OCR QA checklist would be useful for platform, creator, or localization feedback when the sample is explicitly approved by the creator or rights holder.
+
+The checklist covers:
+- confirming the sample is owned, public-domain, an official preview, creator-provided, or otherwise approved
+- checking OCR coverage for bubbles, captions, vertical text, sound effects, and small labels
+- reviewing reading order and merged text blocks before translation quality is judged
+- preserving glossary and human correction notes
+- blocking public sharing when rights context or output quality is unclear
+
+If this is useful, I can send the public checklist and a short Android workflow demo using only approved sample material. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Panadroid AI directory listing-fit draft
+
+Status: draft
+Target: Panadroid official contact or submit-tool path
+Audience: AI tool directory editor
+Rules risk: medium; use only if the listing can preserve official links and accurate pricing.
+No-link variant: send the summary and offer the source links on request.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Subject:
+Nayovi listing fit for Panadroid AI tools directory
+
+Message:
+
+Hi Panadroid team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Panadroid while reviewing curated AI-tool directories that include free and paid tools. Nayovi may fit if your directory accepts focused Android AI apps with accurate metadata: official APK download from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, support, and hosted OCR/AI translation from the Android app.
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Should I use a public submit path for this, or would you prefer a short listing packet by email first?
+
+Useful source links:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/pricing
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
 
 ### APKLand review packet
 
