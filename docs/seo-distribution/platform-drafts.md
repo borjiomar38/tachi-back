@@ -52,6 +52,10 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Localization studio | Translexi | Comic OCR checklist exchange | None by default | OWNER_REVIEW_REQUIRED: public contact path only; no replacement pitch or backlink ask. |
 | draft | App testing | Beta Family | Safe Android beta test task packet | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: do not upload APK or start tests until owner approves package sharing and sample policy. |
 | watch | AI directory | Flynto.online | AI directory listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify quality, pricing, and no reciprocal/paid-link terms before any submission. |
+| draft | Owned docs / Android community | Obtainium app-source setup note | Official Nayovi APK source setup for update-minded Android users | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED before any external community mention; test update detection first and keep source-of-truth links attached. |
+| watch | Android repository | IzzyOnDroid eligibility | Release metadata quality bar, not current submission | None by default | Weak fit while Nayovi is not a qualifying open-source Android app; do not submit product listing. |
+| draft | Product Hunt | Image/OCR translation alternatives positioning | Android-hosted manga OCR workflow distinct from browser/image translation tools | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: use only in official launch assets or requested comments; no upvote requests. |
+| watch | AI directory | NoohTech | AI directory listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify no paid/reciprocal-link requirement and accurate pricing fields before drafting a submission. |
 
 ## Draft Bodies
 
@@ -307,6 +311,82 @@ Eligibility filter:
 
 Decision:
 Watch only until the current submit/contact path and listing terms are verified. Prioritize Android, creator, and localization surfaces first.
+
+### Obtainium app-source setup note
+
+Status: draft
+Target: owned Nayovi docs first; Android app-source communities only if current rules invite source setup notes.
+Audience: Android power users who prefer official direct APK sources and update tracking.
+Rules risk: medium; do not post externally until the source URL is tested, current community rules allow it, and an authorized account exists.
+No-link variant: describe the source-of-truth checks without naming the product.
+Link variant after owner review: https://tachiyomiat.com/download
+
+Draft:
+
+For users who install Android apps directly from developer sites, the important part is not just finding an APK link. The source should keep the official domain, package metadata, hash, support route, pricing, and policy context together.
+
+For Nayovi, the safe setup path is:
+- start from the official download page
+- compare the published SHA-256 before citing or mirroring a build
+- keep support, pricing, privacy, terms, and responsible-use links attached
+- mark package name, signing certificate, and Android developer verification status as pending until the owner confirms them
+- use only approved sample material when testing OCR and translation
+
+No-link variant:
+Use this as a general checklist for any direct APK source. Avoid mirror-first listings when the app requires support, activation, pricing, or policy context.
+
+Link variant:
+Official Nayovi APK source packet: https://tachiyomiat.com/download
+
+### IzzyOnDroid eligibility guardrail
+
+Status: watch
+Target: IzzyOnDroid or similar F-Droid-compatible repositories.
+Audience: Android users who prioritize transparent signed APKs and open-source app repositories.
+Rules risk: medium; weak product fit unless Nayovi has a genuine open-source Android app or companion project.
+No-link variant: internal quality bar only.
+Link variant: none by default.
+
+Guardrail:
+Do not submit Nayovi to IzzyOnDroid while it is a closed hosted paid-token APK. Use IzzyOnDroid's app-inclusion standards as a release-quality benchmark: clear repository or source context, developer-signed APK, non-debug build, package metadata, transparent update source, and safety notes.
+
+### Product Hunt alternatives positioning note
+
+Status: draft
+Target: Product Hunt launch assets or requested Product Hunt discussion only.
+Audience: makers, image-translation users, Android power users, investors.
+Rules risk: medium; Product Hunt requires authorized maker participation and should not be used for automated comments or upvote requests.
+No-link variant: not applicable for launch copy; use product URL only in official launch context.
+Link variant: https://tachiyomiat.com/download
+
+Positioning:
+Product Hunt already has browser/image translation tools and manga/image OCR products. Nayovi should not claim to replace them. The launch distinction should be:
+- Android APK workflow rather than browser extension or desktop overlay
+- hosted OCR and AI translation without phone-side provider API keys
+- redeem-code activation, free trial access, monthly token plans, and support
+- official source-of-truth APK page with hash and reviewer packet
+- explicit no-chapter-hosting and approved-sample boundaries
+
+Maker comment add-on:
+The comparison I care about is workflow fit, not a broad "best translator" claim. Some tools are great for browser pages or desktop screenshots. Nayovi is focused on Android APK users who need install trust, activation, hosted OCR, and a responsible way to test approved manga, manhwa, manhua, or comic samples.
+
+### NoohTech AI directory eligibility note
+
+Status: watch
+Target: NoohTech submit-tool path if current rules pass quality review.
+Audience: AI-tool directory editor.
+Rules risk: medium; broad AI directories can become low-quality backlinks if they hide pricing, source links, or paid placement requirements.
+No-link variant: internal eligibility note only.
+Link variant if eligible: https://tachiyomiat.com/translate-manhwa-ai
+
+Eligibility filter:
+- Can the listing show Nayovi as an Android APK plus hosted OCR workflow?
+- Can it represent free trial access and paid token plans without implying a permanently free tool?
+- Can it link to official download, pricing, support, and responsible-use pages?
+- Does it avoid reciprocal links, paid backlink packages, scraped descriptions, and mirror-first APK URLs?
+
+Decision:
+Watch until the submit path, editorial quality, and pricing/source-link fields are verified. Android, creator-platform, and localization opportunities remain higher priority.
 
 ### ToolsVerse free-tool eligibility guardrail
 
