@@ -603,6 +603,25 @@ const submissionReadinessRows = [
   },
 ] as const;
 
+const submissionQueueRows = [
+  {
+    lane: 'Ready after cap reset',
+    fit: 'Approved-sample partner inquiries where the public contact path is official and the message asks for workflow feedback, not catalog access or backlink placement.',
+  },
+  {
+    lane: 'Needs packet first',
+    fit: 'AI-tool directories, Android app directories, and newsletters that require screenshots, package metadata, pricing, and review-code context before a useful submission.',
+  },
+  {
+    lane: 'Use as context only',
+    fit: 'Policy discussions, research papers, and community threads that can improve Nayovi copy or QA standards but should not receive a product pitch.',
+  },
+  {
+    lane: 'Hold or skip',
+    fit: 'Any listing that requires paid placement, reciprocal links, hidden support links, private data scraping, or a claim that Nayovi can translate unauthorized catalogs.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -1710,6 +1729,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.item}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Submission queue"
+        title="Which outreach should happen next"
+        description="Use this queue after the daily cap resets so partner, directory, and resource-page work starts with the strongest revenue signal and the cleanest compliance path."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {submissionQueueRows.map((row) => (
+              <div
+                key={row.lane}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.lane}
+                </span>
+                <span>{row.fit}</span>
               </div>
             ))}
           </CardContent>

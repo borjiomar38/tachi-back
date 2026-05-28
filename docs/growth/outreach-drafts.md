@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: outreach submission queue
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: added a visible and structured next-submission queue to `https://tachiyomiat.com/guides/translation-support-workflow` so cap-reset outreach can prioritize official approved-sample partner inquiries first, then packet-ready directories or newsletters, while holding context-only or noncompliant surfaces.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first; otherwise send the queued Akaya Media approved-sample pilot inquiry and cite the pilot brief plus the workflow submission queue. Keep the ICv2 call follow-up queued only if no reply has superseded it.
+
 ### Autonomous cycle: qualified APK comparison intent
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
