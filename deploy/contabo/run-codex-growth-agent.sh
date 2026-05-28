@@ -156,7 +156,8 @@ maybe_send_owner_notification() {
   local report_file="$2"
   local repo_dir="$3"
   local inbound_list_file="${4:-}"
-  local daily_state_file daily_summary_enabled emergency_match notification_kind notify_env_file notify_keywords notify_to subject
+  local daily_state_file daily_summary_enabled emergency_match notification_kind notify_env_file notify_keywords notify_to reply_context_file subject
+  local -a notify_args
 
   if [[ "${GROWTH_AGENT_NOTIFY_ENABLED:-false}" != "true" ]]; then
     return 0
@@ -173,6 +174,8 @@ maybe_send_owner_notification() {
   if grep -Eiq "$(csv_to_egrep "${notify_keywords}")" "${report_file}"; then
     emergency_match="true"
   fi
+
+  reply_context_file="$(first_inbound_context_file "${inbound_list_file}")"
 
   if [[ "${emergency_match}" == "true" ]]; then
     notification_kind="emergency"
@@ -202,13 +205,20 @@ maybe_send_owner_notification() {
 
   notify_env_file="${GROWTH_AGENT_NOTIFY_ENV_FILE:-${APP_DIR}/.env.production}"
 
-  if ! /usr/local/bin/tachi-growth-owner-notify \
-    --env-file "${notify_env_file}" \
-    --to "${notify_to}" \
-    --subject "${subject}" \
-    --report-file "${report_file}" \
-    --repo-dir "${repo_dir}" \
-    --cycle-id "${cycle_id}"; then
+  notify_args=(
+    /usr/local/bin/tachi-growth-owner-notify
+    --env-file "${notify_env_file}"
+    --to "${notify_to}"
+    --subject "${subject}"
+    --report-file "${report_file}"
+    --repo-dir "${repo_dir}"
+    --cycle-id "${cycle_id}"
+  )
+  if [[ -n "${reply_context_file}" ]]; then
+    notify_args+=(--reply-context-file "${reply_context_file}")
+  fi
+
+  if ! "${notify_args[@]}"; then
     log "Owner notification failed for ${cycle_id}; continuing."
     return 0
   fi
@@ -216,6 +226,22 @@ maybe_send_owner_notification() {
   if [[ "${notification_kind}" == "daily" || "${notification_kind}" == "emergency" ]]; then
     mark_daily_summary_sent "${daily_state_file}"
   fi
+}
+
+first_inbound_context_file() {
+  local inbound_list_file="${1:-}"
+  local context_file
+
+  if [[ -z "${inbound_list_file}" || ! -s "${inbound_list_file}" ]]; then
+    return 0
+  fi
+
+  while IFS= read -r context_file; do
+    if [[ -f "${context_file}" ]]; then
+      printf '%s\n' "${context_file}"
+      return 0
+    fi
+  done <"${inbound_list_file}"
 }
 
 daily_summary_due() {

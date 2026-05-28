@@ -45,6 +45,13 @@ def main() -> int:
   parser.add_argument('--report-file', required=True)
   parser.add_argument('--repo-dir', required=True)
   parser.add_argument('--cycle-id', required=True)
+  parser.add_argument(
+    '--reply-context-file',
+    help=(
+      'Optional owner inbound context file. When provided, the notification '
+      'is sent as a reply in the same mail thread.'
+    ),
+  )
   args = parser.parse_args()
 
   env = read_env(pathlib.Path(args.env_file))
@@ -55,17 +62,20 @@ def main() -> int:
     return 1
 
   report = pathlib.Path(args.report_file).read_text(encoding='utf-8')
+  reply_context = read_reply_context(args.reply_context_file)
   body = build_body(
     cycle_id=args.cycle_id,
     report=report,
     report_file=args.report_file,
     repo_dir=args.repo_dir,
+    reply_context=reply_context,
   )
   message = EmailMessage()
   message['From'] = email_from
   message['To'] = args.to
-  message['Subject'] = args.subject
+  message['Subject'] = notification_subject(args.subject, reply_context)
   message['Date'] = formatdate(localtime=True)
+  apply_reply_headers(message, reply_context)
   message.set_content(body)
 
   send_message(smtp_url, message, email_from)
@@ -94,7 +104,14 @@ def clean_env_value(value: str) -> str:
   return cleaned
 
 
-def build_body(*, cycle_id: str, report: str, report_file: str, repo_dir: str) -> str:
+def build_body(
+  *,
+  cycle_id: str,
+  report: str,
+  report_file: str,
+  repo_dir: str,
+  reply_context: dict[str, str] | None = None,
+) -> str:
   done_items = extract_section_items(
     report,
     ('changed', 'j ai avance sur', 'jai avance sur', 'fait', 'done'),
@@ -107,11 +124,24 @@ def build_body(*, cycle_id: str, report: str, report_file: str, repo_dir: str) -
   )
   owner_items = owner_action_items(report)
 
-  return '\n'.join(
+  lines = [
+    'Update Nayovi Growth Agent',
+    f'Date: {format_tunisia_datetime(datetime.now(timezone.utc))}',
+    '',
+  ]
+
+  if reply_context:
+    lines.extend(
+      [
+        'Réponse traitée:',
+        f'- J’ai traité ton mail dans le cycle {cycle_id}.',
+        f'- Demande reçue: {owner_reply_excerpt(reply_context)}',
+        '',
+      ]
+    )
+
+  lines.extend(
     [
-      'Update Nayovi Growth Agent',
-      f'Date: {format_tunisia_datetime(datetime.now(timezone.utc))}',
-      '',
       'Résumé:',
       f'- {summary_sentence(report)}',
       '',
@@ -137,6 +167,108 @@ def build_body(*, cycle_id: str, report: str, report_file: str, repo_dir: str) -
       '',
     ]
   )
+  return '\n'.join(lines)
+
+
+def read_reply_context(path_value: str | None) -> dict[str, str] | None:
+  if not path_value:
+    return None
+
+  path = pathlib.Path(path_value)
+  if not path.exists():
+    return None
+
+  text = path.read_text(encoding='utf-8', errors='replace')
+  context: dict[str, str] = {'path': str(path)}
+  for raw_line in text.splitlines():
+    line = raw_line.strip()
+    if line.startswith('- Subject:'):
+      context['subject'] = line.split(':', 1)[1].strip()
+    elif line.startswith('- Message-ID:'):
+      context['message_id'] = line.split(':', 1)[1].strip()
+    elif line.startswith('- From:'):
+      context['from'] = line.split(':', 1)[1].strip()
+
+  owner_reply = extract_owner_reply(text)
+  if owner_reply:
+    context['owner_reply'] = owner_reply
+
+  return context
+
+
+def extract_owner_reply(text: str) -> str:
+  marker = '## Owner Reply'
+  marker_index = text.find(marker)
+  if marker_index < 0:
+    return ''
+
+  remainder = text[marker_index + len(marker) :]
+  fence_start = remainder.find('```')
+  if fence_start < 0:
+    return ''
+
+  after_start = remainder[fence_start + 3 :]
+  first_newline = after_start.find('\n')
+  if first_newline >= 0:
+    after_start = after_start[first_newline + 1 :]
+
+  fence_end = after_start.find('```')
+  if fence_end < 0:
+    return after_start.strip()
+
+  return after_start[:fence_end].strip()
+
+
+def owner_reply_excerpt(reply_context: dict[str, str]) -> str:
+  reply = reply_context.get('owner_reply', '').strip()
+  if not reply:
+    return '(mail propriétaire sans texte lisible)'
+
+  first_lines = []
+  for line in reply.splitlines():
+    stripped = line.strip()
+    if not stripped:
+      continue
+    if stripped.startswith(('*', '📧', '📱')):
+      break
+    if normalize_text(stripped) in {'borji omar', 'senior frontend developer'}:
+      break
+    first_lines.append(stripped)
+    if len(' '.join(first_lines)) >= 180:
+      break
+
+  excerpt = ' '.join(first_lines).strip() or reply.splitlines()[0].strip()
+  return excerpt[:240]
+
+
+def notification_subject(fallback_subject: str, reply_context: dict[str, str] | None) -> str:
+  if reply_context and reply_context.get('subject'):
+    return reply_subject(reply_context['subject'])
+
+  return fallback_subject
+
+
+def reply_subject(subject: str) -> str:
+  cleaned = subject.strip() or 'Nayovi growth agent'
+  if cleaned.lower().startswith('re:'):
+    return cleaned[:140]
+
+  return f'Re: {cleaned[:136]}'
+
+
+def apply_reply_headers(
+  message: EmailMessage,
+  reply_context: dict[str, str] | None,
+) -> None:
+  if not reply_context:
+    return
+
+  message_id = reply_context.get('message_id', '').strip()
+  if not message_id:
+    return
+
+  message['In-Reply-To'] = message_id
+  message['References'] = message_id
 
 
 def summary_sentence(report: str) -> str:
