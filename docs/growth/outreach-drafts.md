@@ -258,6 +258,23 @@ I am submitting Nayovi for review because your Android directory helps users com
 
 Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The official source of truth is tachiyomiat.com / nayovi.com. The listing should describe free trial access, monthly token plans, redeem-code activation, support, and the responsible-use note: Nayovi does not host or distribute chapters, and supports translation for owned, public-domain, official-sample, or permission-approved content.
 
+## Manga Translator Partnership Note Sent 2026-05-28
+
+Subject: Android workflow feedback for manga translation readers
+
+Hi Manga Translator team,
+
+I found your contact page while reviewing manga translation tools and noticed you support service inquiries and product feedback.
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. The angle is different from a browser-first translator: Nayovi keeps the official APK download, free trial, redeem-code activation, support, and monthly token plans on tachiyomiat.com / nayovi.com, and it does not host or distribute chapters.
+
+I wanted to ask whether there is any useful feedback or partnership path around readers who specifically need an Android workflow rather than another upload tool. A neutral resource mention, workflow comparison, or feedback exchange could be useful only if it fits your editorial and product direction.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 Please let me know if you need package metadata, screenshots, APK signature details, a developer verification step, or a dedicated review code before publishing.
 
 Best,
