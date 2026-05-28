@@ -30,6 +30,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Android newsletter/editorial contributor paths | Editorial trust for Android APK, hosted OCR, and developer-facing checklist content | setup_packet_prepared_owner_action_required | Owner approves byline/contact path and any editor-specific submission before outreach | APK review packet, comic OCR checklist, demo video, screenshot policy, founder byline | Per-publication credential/contact reference only; no passwords or cookies | Agent can prepare individualized newsletter/editorial tips from owned docs | Owner approves whether Android Weekly/Kotlin Weekly-style submissions may cite the owned review packet. |
 | high | Official profile field packet | Consistent entity copy across search profiles, launch pages, directories, partner packets, and reviewer handoffs | configured_owned_repo_content_synced | Keep public profile fields synchronized before any owner submits profiles | `docs/nayovi-official-profile-fields.md`, logo, screenshots, canonical links, public contact path | No secret required; use per-platform credential references only when owner connects accounts | Agent can prepare platform-specific profile/listing drafts from one source-of-truth packet | Owner confirms public contact fields and package/signing/verification facts; agent keeps credential values out of docs. |
 | medium | Medium publication/profile | Canonical or republished technical articles for OCR QA, APK trust, and permission-safe workflow topics | setup_packet_prepared_owner_action_required | Owner creates/connects official Medium profile or publication and decides canonical/republication policy | Profile bio, logo/avatar, article draft, canonical URL, approved screenshots | `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` only if owner enables official API workflow | Publish or update owner-approved canonical articles after account connection | Owner confirms whether Medium should be a canonical syndication surface or draft-only profile. |
+| high | Google Play Console package identity packet | Independent APK trust and future Android verification proof for reviewers/directories | setup_packet_prepared_owner_action_required | Owner confirms package name, signing-certificate fingerprint, developer account verification status, and whether Play Console package registration exists | Signed APK, SHA-256, package name, signing fingerprint, support/privacy/terms URLs, approved screenshots | `SEO_AGENT_GOOGLE_PLAY_CONSOLE_REFERENCE`; no identity documents or login data | Agent can cite owner-confirmed package/signing/verification status in download-page and reviewer packets | Owner supplies the exact public package/signing/verification facts; agent keeps pending language until then. |
+| high | Official screenshot asset library | Reusable approved visual proof for YouTube, Product Hunt, app directories, press, and tester packets | setup_packet_prepared_owner_action_required | Owner approves sample rights, screenshot list, publication scope, and storage location | Logo/avatar, banner, install screen, activation screen, support screen, approved-sample OCR before/after, demo thumbnail | `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`; no private media credentials | Agent can reuse approved screenshot names/URLs in profile packets and listing drafts after owner approval | Owner adds approved screenshots to an allowed asset store and confirms which can be public. |
 
 ## 2026-05-28 Setup Packets
 
@@ -237,6 +239,68 @@ Credential reference:
 
 Agent capability after connection:
 - The agent can publish owned markdown docs, update release notes, and link them from website pages. External awesome-list issues or PRs remain draft-only unless a maintainer asks for the resource.
+
+### Google Play Console Package Identity Packet
+
+Status: OWNER_ACTION_REQUIRED for package identity, signing-certificate, developer verification, fee, ID, terms, or package-registration steps.
+
+Public fields to confirm:
+- App/product name: `Nayovi`
+- Official website: `https://nayovi.com`
+- Official APK source: `https://tachiyomiat.com/download`
+- Support URL: `https://tachiyomiat.com/support`
+- Privacy URL: `https://tachiyomiat.com/legal/privacy`
+- Terms URL: `https://tachiyomiat.com/legal/terms`
+- Package name: owner-confirmed value only.
+- Signing-certificate fingerprint: owner-confirmed value only.
+- Android developer verification status: owner-confirmed value only.
+- Package registration status for independently distributed APKs: owner-confirmed value only.
+
+Required assets:
+- Signed APK or release artifact reference.
+- Current SHA-256 from the official download page.
+- Signing-certificate fingerprint.
+- Owner-approved public developer/contact fields.
+- Approved screenshot set using install, activation, support, or permission-safe sample screens.
+
+Credential reference:
+- `SEO_AGENT_GOOGLE_PLAY_CONSOLE_REFERENCE` for a non-secret workflow reference only. Do not store identity documents, account screenshots, phone/email challenges, payment records, cookies, recovery codes, or verification tokens in docs or Git.
+
+Agent capability after connection:
+- The agent can update public reviewer packets and directory drafts with owner-confirmed release identity facts. It must not register packages, accept terms, upload identity documents, pay fees, or claim verified status automatically.
+
+Next action:
+- Owner confirms package name, signing fingerprint, developer verification status, and whether any Play Console or Android Developer Console package registration can be cited.
+
+### Official Screenshot Asset Library
+
+Status: OWNER_ACTION_REQUIRED for sample rights, screenshot approval, and storage reference.
+
+Recommended public screenshot set:
+- Square logo/avatar.
+- Wide banner for YouTube, LinkedIn, Product Hunt, and directories.
+- Android install/download screen.
+- Redeem-code or free-trial activation screen with private codes hidden.
+- Token/pricing or account state screen with private data hidden.
+- Support/recovery screen.
+- Approved-sample OCR input screen.
+- Approved-sample OCR block/translation result screen.
+- Short demo thumbnail that does not show unauthorized chapter pages.
+
+Publication rules:
+- Use only owned, public-domain, official-sample, or partner-approved pages.
+- Hide private codes, emails, device identifiers, payment details, and internal admin data.
+- Keep creator/publisher/sample credit context attached when applicable.
+- Do not publish copyrighted chapter screenshots unless public use is explicitly approved.
+
+Credential reference:
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE` for the non-secret asset-library path or approved media-folder reference. Do not store private asset service credentials in docs or Git.
+
+Agent capability after connection:
+- The agent can reuse approved screenshots and file names in profile setup packets, app directory listing drafts, Product Hunt launch assets, YouTube metadata, and reviewer handoffs after owner approval.
+
+Next action:
+- Owner provides or approves the screenshot library, names which assets are public, and confirms whether they can be used in directory/listing drafts.
 
 Next action:
 - Add owner-confirmed package name, signing-certificate fingerprint, and Android developer verification status when available; keep public citation language in pending mode until then.

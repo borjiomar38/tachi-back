@@ -99,6 +99,23 @@ const downloadStructuredData = () => {
         'Treat third-party APK pages as discovery surfaces only unless they preserve the official source links, metadata, support route, and no-chapter-hosting boundary.',
     },
   ] as const;
+  const ownerConfirmationItems = [
+    {
+      name: 'Use confirmed fields now',
+      description:
+        'Cite official domains, the current download URL, APK file metadata, pricing, support, privacy, terms, and responsible-use links.',
+    },
+    {
+      name: 'Wait for owner-confirmed release identity',
+      description:
+        'Do not publish package name, signing-certificate fingerprint, Android developer verification status, screenshots, or public tester report claims until the owner confirms them.',
+    },
+    {
+      name: 'Keep pending fields explicit',
+      description:
+        'Mark missing package, signing, and verification details as owner-confirmation required instead of copying claims from mirrors or third-party pages.',
+    },
+  ] as const;
   return [
     {
       '@type': 'SoftwareApplication',
@@ -172,6 +189,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#apk-source-setup-note`,
       name: 'Nayovi APK source setup note',
       itemListElement: apkSourceSetupItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#owner-confirmed-apk-fields`,
+      name: 'Nayovi owner-confirmed APK trust fields',
+      itemListElement: ownerConfirmationItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
