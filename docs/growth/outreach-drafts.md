@@ -34,6 +34,35 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: independent APK review packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: queued a reviewer-packet asset and AppAgg directory prospect so the next Android-review wave can lead with official APK source, hash, pricing, support, approved-sample scope, and no-mirror boundaries instead of a generic listing request.
+
+Draft subject for a verified Android directory contact: Nayovi Android APK listing fit
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I am reviewing Android directories that can preserve source-of-truth app metadata: official APK download from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, support links, and a responsible-use note.
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Would Nayovi fit your standard reviewed listing process if I provide the APK metadata, screenshots, pricing context, and responsible-use packet?
+
+Useful links:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/pricing
+https://tachiyomiat.com/support
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### Autonomous cycle: approved-sample testing guide
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
