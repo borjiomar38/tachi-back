@@ -280,6 +280,29 @@ const communitySubmissionRows = [
   },
 ] as const;
 
+const submissionReadinessRows = [
+  {
+    item: 'Submit only official links',
+    detail:
+      'Use tachiyomiat.com download, pricing, support, workflow, privacy, terms, and takedown URLs so a listing does not become a mirror-first install path.',
+  },
+  {
+    item: 'Package evidence',
+    detail:
+      'Include the APK build label, SHA-256, screenshots, narrated demo, review-code path, and a concise pricing summary before asking an editor to test Nayovi.',
+  },
+  {
+    item: 'Qualify the audience',
+    detail:
+      'Prioritize Android readers, AI-tool directories, localization operators, and creator-platform partners who can send trial activations or pilot conversations.',
+  },
+  {
+    item: 'Avoid weak placements',
+    detail:
+      'Skip paid link insertion, scraped directories, listings that hide official support links, or communities where product links would not help the discussion.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -672,6 +695,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.channel}
                 </span>
                 <span>{row.readiness}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Submission checklist"
+        title="Before sending Nayovi to a directory or resource page"
+        description="Use this checklist to decide whether a public listing, resource-page pitch, or official submit form is likely to create qualified installs instead of low-quality links."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {submissionReadinessRows.map((row) => (
+              <div
+                key={row.item}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.item}
+                </span>
+                <span>{row.detail}</span>
               </div>
             ))}
           </CardContent>
