@@ -93,6 +93,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Creator ecosystem | Creator/platform partner note | Screenshot rights and approved-sample OCR checklist feedback | None by default | OWNER_REVIEW_REQUIRED: no backlink ask and no implication that publisher/platform catalog content can be processed. |
 | draft | WEBTOON | Official contact departments | Approved-sample OCR workflow feedback with screenshot-rights boundary | None by default | OWNER_REVIEW_REQUIRED: choose product help vs IP/licensing vs partnership vs press path; no catalog-processing implication. |
 | draft | AI directory | Skowers / HiAiScout | Accurate AI OCR listing eligibility for trial plus paid-token workflow | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit rules and skip paid, reciprocal, hidden-redirect, or forever-free-only listings. |
+| draft | Official newsletter | Substack/newsletter profile | What reviewers should verify before citing an independent Android OCR APK | docs/seo-distribution/android-developer-verification-readiness.md | OWNER_ACTION_REQUIRED: official newsletter account/profile required; no contact import, bulk email, or public issue until owner approves. |
+| draft | Android reviewers/directories | Developer verification readiness note | Owner-confirmed package identity packet for Nayovi APK review | docs/seo-distribution/android-developer-verification-readiness.md | OWNER_REVIEW_REQUIRED: cite only owner-confirmed package/signing/verification facts and use pending language otherwise. |
+| draft | AI/free-trial directory | Try.fm-style software trial directories | Accurate free-trial listing fit check for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submission fields and skip forever-free, reciprocal-link, paid-link, or hidden-redirect flows. |
 
 ## Draft Bodies
 
@@ -2038,6 +2041,63 @@ The important listing constraints:
 - Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or permission-approved content.
 
 If this fits your editorial standards, I can send the short listing packet with screenshots and source links. If the directory requires a reciprocal backlink, paid link placement, or a forever-free claim, we should skip it.
+
+Best,
+Nayovi team
+
+### Official newsletter first issue draft
+
+Status: draft
+Target: official Nayovi newsletter profile or public archive only
+Audience: Android reviewers, app-directory editors, partners, investors, Android power users
+Rules risk: low if published as an owned opt-in/public archive; high if used for imported contacts or unsolicited bulk email.
+No-link variant: publish only the checklist summary and omit the download link until package/signing fields are owner-confirmed.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Title:
+What reviewers should verify before citing an independent Android OCR APK
+
+Body:
+
+Nayovi is a direct Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. Because the app is distributed from an official web flow, the trust work around the APK matters as much as the product demo.
+
+Before any directory, reviewer, newsletter, or partner cites Nayovi, the useful checks are:
+- start from the official download page, not an APK mirror
+- compare the current APK hash against the public download page
+- ask for owner-confirmed package name and signing fingerprint when release identity matters
+- keep Android developer verification status in pending language unless the owner has confirmed it
+- test only with owned, public-domain, official-sample, or permission-approved content
+- keep screenshots inside approved sample and publication rules
+- route readers to pricing, support, privacy, terms, and responsible-use pages
+
+Nayovi does not host or distribute chapters. The goal is a source-of-truth Android OCR workflow that reviewers can inspect without relying on mirror-first APK listings or unsupported claims.
+
+Canonical packet for owner review:
+`docs/seo-distribution/android-developer-verification-readiness.md`
+
+### Android developer verification readiness note
+
+Status: draft
+Target: Android reviewers, APK directories, Android newsletter editors, app-testing portals
+Audience: editors or testers who ask how to verify a direct APK before citing it
+Rules risk: low as a reply or owner-reviewed packet; medium if sent cold before package/signing facts are confirmed.
+No-link variant: send the checklist summary and offer the packet only if useful.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Subject:
+Nayovi APK review packet and Android verification status
+
+Message:
+
+Hi team,
+
+I am preparing Nayovi for direct Android APK review and wanted to keep the verification context clear before any listing or coverage.
+
+The current source-of-truth path is the official download page, with APK metadata, hash context, support/pricing/legal links, and responsible-use language. Package name, signing-certificate fingerprint, Android developer verification status, and package registration status should be cited only after the owner confirms those facts.
+
+Nayovi does not host or distribute chapters. Testing should use owned content, public-domain material, official samples, or content the tester has permission to process.
+
+If this is useful for your review process, I can send the owner-reviewed packet with the current APK hash, screenshot rules, support path, and reviewer-code scope. If you require a mirror-first APK upload, reciprocal backlink, paid review, fake rating, or unsupported verification claim, we should skip the listing.
 
 Best,
 Nayovi team
