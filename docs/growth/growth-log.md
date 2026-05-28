@@ -268,6 +268,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T223053Z`: audited branch state, SEO distribution shared context, growth docs, sender history, and the new Android APK comparison guide.
+- Added qualified-intent paths to `/guides/best-android-manga-translator-apk` for repeat Android readers, reviewers/directories, and creator/publisher pilots so comparison traffic can move toward free trial, paid token plans, review access, or approved-sample pilots.
+- Added matching ItemList structured metadata and marked the asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap. Next cap-reset work should prioritize reply-driven follow-up, then the queued Akaya Media pilot inquiry or ICv2 call follow-up if no later reply supersedes them.
+
 - Autonomous cycle on `growth/autonomous-20260528T215512Z`: audited branch state, SEO distribution shared status, current growth docs, outreach sender history, and public guide/sitemap coverage.
 - Added `/guides/best-android-manga-translator-apk` as a high-intent comparison guide for Android manga/manhwa/manhua translator APK searches, with official APK source checks, hosted OCR testing criteria, activation/pricing handoff, responsible-use boundaries, and review-code support routing.
 - Added Article and ItemList structured data for the new guide, included it in sitemap priority ordering, and marked the backlog item shipped.
