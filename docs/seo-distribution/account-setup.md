@@ -28,6 +28,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | Android review packet repository doc | Owned citation surface for app reviewers, directories, newsletters, and partner diligence | configured_owned_repo_content_synced | Keep `docs/nayovi-apk-review-packet.md` current with release metadata and owner-confirmed package facts | APK filename, build label, SHA-256, official links, support/pricing/legal links, responsible-use boundary | SSH remote already configured; `SEO_AGENT_GITHUB_TOKEN` optional for API workflows | Publish and cite an owned Markdown review packet from the current branch | Add package name, signing-certificate fingerprint, and Android developer verification status only after owner confirms them. |
 | medium | Startup and launch profile accounts | Product discovery and investor trust across BetaList, launch communities, and startup directories | setup_packet_prepared_owner_action_required | Founder creates/claims only official Nayovi/founder profiles and approves launch timing | Logo, tagline, screenshots, demo video, pricing, support links, public metrics approved by owner | Per-platform non-secret profile reference; `SEO_AGENT_PRODUCTHUNT_TOKEN` only for Product Hunt API | Agent can draft listing copy and launch comments after authorized account connection | Owner chooses which startup profiles are eligible and whether public metrics can be shared. |
 | medium | Android newsletter/editorial contributor paths | Editorial trust for Android APK, hosted OCR, and developer-facing checklist content | setup_packet_prepared_owner_action_required | Owner approves byline/contact path and any editor-specific submission before outreach | APK review packet, comic OCR checklist, demo video, screenshot policy, founder byline | Per-publication credential/contact reference only; no passwords or cookies | Agent can prepare individualized newsletter/editorial tips from owned docs | Owner approves whether Android Weekly/Kotlin Weekly-style submissions may cite the owned review packet. |
+| high | Official profile field packet | Consistent entity copy across search profiles, launch pages, directories, partner packets, and reviewer handoffs | configured_owned_repo_content_synced | Keep public profile fields synchronized before any owner submits profiles | `docs/nayovi-official-profile-fields.md`, logo, screenshots, canonical links, public contact path | No secret required; use per-platform credential references only when owner connects accounts | Agent can prepare platform-specific profile/listing drafts from one source-of-truth packet | Owner confirms public contact fields and package/signing/verification facts; agent keeps credential values out of docs. |
+| medium | Medium publication/profile | Canonical or republished technical articles for OCR QA, APK trust, and permission-safe workflow topics | setup_packet_prepared_owner_action_required | Owner creates/connects official Medium profile or publication and decides canonical/republication policy | Profile bio, logo/avatar, article draft, canonical URL, approved screenshots | `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` only if owner enables official API workflow | Publish or update owner-approved canonical articles after account connection | Owner confirms whether Medium should be a canonical syndication surface or draft-only profile. |
 
 ## 2026-05-28 Setup Packets
 
@@ -238,6 +240,61 @@ Agent capability after connection:
 
 Next action:
 - Add owner-confirmed package name, signing-certificate fingerprint, and Android developer verification status when available; keep public citation language in pending mode until then.
+
+### Official Profile Field Packet
+
+Status: CONFIGURED_OWNED_REPO, content synced in `docs/nayovi-official-profile-fields.md`.
+
+Purpose:
+- Keep Nayovi profile copy consistent across Google/Bing properties, LinkedIn, YouTube, Product Hunt, DEV/Medium, Bluesky, Crunchbase, Android directories, AI directories, app-testing portals, and partner/reviewer handoffs.
+- Reduce profile drift between `nayovi.com`, `tachiyomiat.com`, and `translate-manhwa-ai.com`.
+- Give the growth agent a public, non-secret source of truth for profile/listing drafts.
+
+Included public fields:
+- Short and long descriptions.
+- Responsible-use line.
+- Canonical links.
+- Category tags.
+- Asset checklist.
+- Credential-handling rules.
+- Submission skip rules for paid, reciprocal, mirror-first, fake-review, and misleading free/open-source flows.
+
+Credential reference:
+- No secret is required for the owned Markdown packet.
+- Per-platform credentials remain referenced only by environment variable name and stored outside Git.
+
+Next action:
+- Owner confirms public contact fields, official logo/banner choice, approved screenshot set, package name, signing-certificate fingerprint, and Android developer verification status.
+
+### Medium Official Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for official account/profile creation, publication membership, and integration-token approval.
+
+Profile fields:
+- Display name: `Nayovi`
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. Permission-safe samples only; no chapter hosting.`
+- Website: `https://nayovi.com`
+- Primary article canonical URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+First article angle:
+- Title: `A practical OCR QA checklist for comic and webtoon translation samples`
+- Canonical source: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Summary: explain permission scope, OCR coverage, reading order, merged bubbles, glossary consistency, human review, and share decisions without making the app the whole article.
+
+Required assets:
+- Logo/avatar.
+- Approved sample screenshots only if rights are clear.
+- Canonical URL decision: keep `tachiyomiat.com` as source of truth unless owner explicitly wants Medium-first publication.
+
+Credential reference:
+- `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` only if the owner enables official API publishing. Store the actual token only in `/opt/tachi-back/.env.seo-distribution-agent`.
+
+Agent capability after connection:
+- Prepare canonical article drafts and update owner-approved posts through official API workflow if available.
+- No automated comments, claps, follows, scraping, or publication submissions.
+
+Next action:
+- Owner creates/connects official Medium profile, confirms canonical policy, and approves whether the first article should be syndicated after the public guide is screenshot-ready.
 
 ### Startup and Launch Profile Packet
 
