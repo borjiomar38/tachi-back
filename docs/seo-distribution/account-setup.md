@@ -6,8 +6,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| high | Google Search Console | Search indexing, sitemap monitoring, canonical ownership signal | needs_owner_setup | Verify `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` with official owner account | Domains, sitemap URLs, verification method | Credential reference only; no token in repo | Submit sitemaps, monitor indexing, detect SEO issues | Prepare property list and verification checklist. |
-| high | Bing Webmaster Tools | Secondary search indexing and sitemap submission | needs_owner_setup | Verify domains with official owner account | Domains, sitemap URLs, verification method | Credential reference only; no token in repo | Submit sitemaps and monitor crawl/index data | Prepare Bing setup packet. |
+| high | Google Search Console | Search indexing, sitemap monitoring, canonical ownership signal | setup_packet_prepared_owner_action_required | Verify `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS` | Submit sitemaps, monitor indexing, detect SEO issues | Owner verifies properties and submits sitemap; agent can inspect only after API credential is connected. |
+| high | Bing Webmaster Tools | Secondary search indexing and sitemap submission | setup_packet_prepared_owner_action_required | Verify domains with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_BING_WEBMASTER_API_KEY` | Submit sitemaps and monitor crawl/index data | Owner imports from GSC or verifies manually; agent can inspect only after API credential is connected. |
 | high | GitHub official Nayovi repo/profile | Technical trust, docs, release notes, linkable OCR/QA assets | configured_owned_repo | Keep official repo/profile truthful and current | README, demo links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned docs and technical assets | Keep owned docs synced with SEO/link assets. |
 | high | YouTube official channel | Demo video proof for reviewers, directories, and partners | needs_owner_setup | Create/connect official Nayovi channel and authorize API if automated uploads are wanted | Demo video, poster, title, description, canonical links | SEO_AGENT_YOUTUBE_REFRESH_TOKEN | Upload/update official demo videos and descriptions | Prepare channel bio and upload metadata packet. |
 | high | LinkedIn company/founder profile | Founder/company trust, partner/investor visibility | needs_owner_setup | Create/connect official company page or founder-owned page | Logo, banner, company bio, website links | SEO_AGENT_LINKEDIN_ACCESS_TOKEN, SEO_AGENT_LINKEDIN_ORGANIZATION_ID | Publish official build-in-public and partnership posts | Prepare exact company bio and first 3 posts. |
@@ -19,6 +19,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | App testing and reviewer portals | Third-party install trust evidence before press and directory outreach | setup_packet_prepared | Owner approves exact APK sharing, tester scope, sample pages, and publication rights before any upload | Signed APK link, SHA-256, safe sample plan, redeem code, support link, screenshot rules | Per-platform credential reference only; optional `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` | Request reviewer/tester reports only through approved portals or official editorial paths | Owner approves whether Nayovi can share APK/redeem-code access with testing services. |
 | high | Android developer verification and package registry | APK install trust, package ownership, reviewer confidence | setup_packet_prepared | Owner completes official Android developer verification and package registration when eligible | Package name, signed APK, SHA-256, signing-certificate fingerprint, official domains, support links | `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE` | Let agent cite verified/pending status in reviewer packets after owner confirms it | Owner confirms package name, signing fingerprint, and verification status; agent must not infer. |
 | medium | Newsletter/podcast contributor profiles | Editorial trust for localization, Android, and creator-platform pitches | setup_packet_prepared | Owner creates official contributor/byline profile only where invited or required | Founder byline, headshot/logo, bio, canonical links, non-promotional article/topic packet | Per-publication credential reference only | Submit owner-approved non-promotional topic pitches or author bios | Owner approves byline and which publications may receive topic notes. |
+| medium | Bluesky official account | Lightweight public trust signal, founder/build updates, and source-of-truth profile linking | setup_packet_prepared | Create/connect official Nayovi or founder-owned account manually | Avatar, banner, bio, canonical links, first post queue | `SEO_AGENT_BLUESKY_APP_PASSWORD` only if owner enables API posting | Publish concise official updates if API/rules allow | Owner creates official account, stores app password only in approved secret store, and confirms draft-only or publish scope. |
+| medium | Crunchbase organization profile | Investor and partner trust signal for company/entity discovery | setup_packet_prepared | Owner creates or claims official organization profile and completes any verification manually | Company description, website, logo, founding/founder fields, product category, canonical links | `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE`; no private login data | Keep public company profile fields consistent after owner approval | Owner verifies whether Nayovi has an eligible company profile and approves public fields before submission. |
 
 ## 2026-05-28 Setup Packets
 
@@ -62,6 +64,61 @@ Verification checklist:
 
 Agent capability after connection:
 - The agent can monitor crawl/index diagnostics only after an approved Bing API workflow exists. Use credential reference `SEO_AGENT_BING_WEBMASTER_API_KEY`.
+
+### Bluesky Official Account
+
+Status: OWNER_ACTION_REQUIRED for official account creation, handle selection, and any app-password/API connection.
+
+Profile fields:
+- Display name: `Nayovi`
+- Handle preference: `@nayovi.com` if domain verification is available, otherwise `@nayovi.app` or owner-approved official handle.
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; use with owned, public-domain, official-sample, or permission-approved content.`
+- Primary link: `https://nayovi.com`
+- Secondary link for posts: `https://tachiyomiat.com/download`
+
+Required assets:
+- Square logo/avatar.
+- Banner showing neutral Android workflow or approved-sample UI only.
+- First post queue:
+  - `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It focuses on official APK access, redeem-code activation, support, and permission-safe use.`
+  - `We keep a public comic OCR checklist for approved samples: permission scope, OCR coverage, reading order, glossary consistency, reviewer correction, and sharing decisions.`
+  - `Looking for feedback from Android reviewers, localization operators, and creator-platform teams on what makes an APK-based OCR workflow trustworthy.`
+
+Credential reference:
+- `SEO_AGENT_BLUESKY_APP_PASSWORD` only if the owner creates an official account and enables API posting. Store the actual value only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- The agent can prepare or publish owner-approved official updates only after API credentials are configured and posting scope is confirmed. No automated replies, trend hijacking, repetitive link posting, or personal-looking persona behavior.
+
+Next action:
+- Owner creates or connects the official account, chooses whether to verify a domain handle, and confirms whether the agent remains draft-only.
+
+### Crunchbase Organization Profile
+
+Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, and any manual verification.
+
+Public profile fields:
+- Organization name: `Nayovi`
+- Website: `https://nayovi.com`
+- Product URL: `https://tachiyomiat.com/download`
+- Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Long description: `Nayovi provides official APK download, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation for permission-safe reader workflows. Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+- Categories: `Android`, `Artificial Intelligence`, `OCR`, `Translation`, `Mobile Apps`, `Language Technology`.
+
+Required assets:
+- Logo.
+- Approved founder/company details.
+- Canonical links to download, pricing, support, and responsible workflow guide.
+- Public contact path that does not expose private phone numbers or credentials unless owner explicitly approves.
+
+Credential reference:
+- `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE` for a non-secret profile/workflow reference only. Do not store login credentials, verification documents, cookies, or private account screenshots in docs or Git.
+
+Agent capability after connection:
+- The agent can keep draft profile copy and consistency notes current. It must not create, claim, verify, or submit profile fields automatically unless Crunchbase provides an authorized API workflow and owner-approved credentials are configured.
+
+Next action:
+- Owner confirms company/profile eligibility and approves public founder/company fields before any manual submission.
 
 ### YouTube Official Channel
 
