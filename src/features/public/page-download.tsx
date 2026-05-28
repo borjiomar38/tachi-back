@@ -76,6 +76,11 @@ const trustRows = [
     description:
       'A trustworthy listing should include support, pricing, privacy, terms, and the responsible translation workflow guide.',
   },
+  {
+    title: 'Record signing and verification status',
+    description:
+      'Reviewers should keep the APK hash, signing-certificate notes, package name, and Android developer verification status with the listing packet.',
+  },
 ] as const;
 
 export const PageDownload = () => {
@@ -291,10 +296,10 @@ export const PageDownload = () => {
       <PublicSection
         eyebrow="Trust"
         title="Independent APK distribution checks"
-        description="Android app reviewers, directory editors, and readers can use these checks before treating any Nayovi APK link as authoritative."
+        description="Android app reviewers, directory editors, and readers can use these checks before treating any Nayovi APK link as authoritative, especially as Android developer verification changes how independent APKs are evaluated."
         className="pt-0"
       >
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-4">
           {trustRows.map((row) => (
             <Card key={row.title} className="rounded-[1.5rem]">
               <CardHeader className="gap-3">
@@ -315,6 +320,13 @@ export const PageDownload = () => {
               and AI translation services. It should not be presented as an
               unaffiliated mirror, modded reader, chapter source, or replacement
               for publisher permission.
+            </p>
+            <p>
+              If a reviewer or app directory is preparing coverage for the 2026
+              Android developer verification rollout, cite this page as the
+              source for current APK metadata and note any missing package-name,
+              signing-certificate, or verification details as pending rather
+              than guessing.
             </p>
             <p>
               If a directory, forum, or review page cannot preserve these

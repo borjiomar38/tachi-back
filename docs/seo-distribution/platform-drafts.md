@@ -41,6 +41,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | APK review | APKLand | Independent APK review packet for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official contact/submission path only; preserve official source links and no-chapter-hosting boundary. |
 | draft | App testing | AppTester.co | Human APK testing evidence request | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: submit APK only with owner approval; use test report as trust evidence, not a backlink purchase. |
 | draft | Creator platform | Hiveworks Comics | Permission-first OCR checklist feedback | None by default | OWNER_REVIEW_REQUIRED: public contact only; no catalog translation implication and no backlink ask. |
+| draft | Android policy/resource | Android developer communities | APK verification checklist for 2026 developer verification rollout | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use as owned trust asset or technical resource only; do not claim verified status until confirmed. |
+| draft | Adjacent tool | ToonFlow | OCR stage-review checklist exchange | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink swap and no replacement pitch. |
+| draft | Localization workflow | ComixSuite | Android OCR verification checklist feedback | None by default | OWNER_REVIEW_REQUIRED: official contact only; professional workflow angle, not consumer promotion. |
 
 ## Draft Bodies
 
@@ -275,6 +278,70 @@ I am building Nayovi, an Android hosted OCR and AI translation workflow for mang
 I found Hiveworks while researching creator-owned webcomic platforms and industry resources. I am not asking for a listing or a backlink. The feedback question is whether a permission-first OCR checklist would be useful for creator-controlled samples: confirm rights first, detect missed text regions, preserve reading order, avoid merged speakers, keep human review visible, and block public sharing when permission or quality is unclear.
 
 If this is useful for creator-resource feedback, I can send the short checklist. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Android developer verification checklist pitch
+
+Status: draft
+Target: Android developer newsletters, app-distribution communities, and reviewer contacts that welcome technical resources
+Audience: Android app reviewers, APK directory editors, mobile developers, investor diligence readers
+Rules risk: medium; useful as a technical checklist, but do not post in communities that ban product links. Do not claim Nayovi is verified until the owner confirms Android Developer Console status.
+No-link variant: recommended first
+Link variant after owner review: https://tachiyomiat.com/download
+
+Subject:
+APK source-of-truth checklist for Android's 2026 verification rollout
+
+Message:
+
+Hi {{name}},
+
+I am maintaining a short checklist for evaluating independent Android APK products as Android developer verification rolls out in 2026.
+
+The useful part is not a product pitch. The checklist asks reviewers and directory editors to keep these details attached to any APK listing:
+- official owned-domain download page
+- SHA-256 hash and package metadata
+- signing-certificate notes
+- developer verification status when available
+- support, privacy, terms, pricing, and responsible-use links
+- a clear warning if a mirror or directory cannot preserve the source-of-truth context
+
+I am using it for Nayovi, an Android hosted OCR/AI translation workflow for manga, manhwa, and manhua pages. Nayovi does not host or distribute chapters, and the checklist is written so reviewers can mark package-name, signing, or verification details as pending instead of guessing.
+
+No-link version:
+If this is useful for your readers, I can send the checklist bullets in Markdown without product-install copy.
+
+Link version only if requested:
+The current public source-of-truth packet is here: https://tachiyomiat.com/download
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### ToonFlow adjacent-tool checklist note
+
+Status: draft
+Target: ToonFlow public contact/support path if one is confirmed
+Audience: webtoon localization tool team
+Rules risk: medium; no backlink swap, no competitive replacement claim, no implication that Nayovi can process creator work without permission.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+OCR stage-review checklist for approved webtoon samples
+
+Message:
+
+Hi ToonFlow team,
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and webtoon reader use cases.
+
+I found ToonFlow while reviewing tools that separate detection, recognition, translation, and editing stages for webtoon localization. I am not asking for a backlink or pitching Nayovi as a replacement. The possible overlap is a neutral checklist for approved samples: confirm sample permission, catch missed text regions, preserve reading order, avoid merged speakers, keep human correction visible, and decide whether translated output is safe to share.
+
+If that checklist is useful for your workflow notes or internal feedback, I can send the short markdown version. It is intentionally written for creator-owned, public-domain, official-preview, or permission-approved material only.
 
 Best,
 Nayovi team
