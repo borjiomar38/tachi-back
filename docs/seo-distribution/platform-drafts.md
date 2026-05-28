@@ -77,6 +77,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | App testing | AppTester.co app health check | Safe Android OCR app health-check task packet | docs/reviewer-screenshot-policy.md | OWNER_REVIEW_REQUIRED: do not upload APK, start tester campaign, or approve public report use until owner confirms sample assets and test scope. |
 | draft | Android press | Android Central / sideloading coverage context | Independent APK trust packet under 2026 Android verification changes | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: cite only owner-confirmed package/signing/developer verification facts. |
 | watch | Technical workshop | GEM at ACL 2026 | Future OCR/translation evaluation note for visual-storytelling samples | None by default | WATCH_ONLY: use only after approved-sample measurements exist; no product pitch. |
+| draft | Medium | Official Nayovi profile/publication | Canonical OCR QA checklist article | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | AUTHORIZED_ACCOUNT_REQUIRED: official Medium profile and canonical policy approval required before publishing. |
+| watch | Android policy/community | Keep Android Open or similar independent Android discussions | Direct APK trust checklist context only | None by default | WATCH_ONLY: no product links in policy debates; use owned APK proof packet as internal context. |
+| draft | AI directory | ScriptByAI-style AI tools directory | Nayovi listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify accurate pricing/source-link fields and skip misleading free/open-source submissions. |
 
 ## Draft Bodies
 
@@ -291,6 +294,61 @@ If this kind of independent APK and OCR review checklist is useful for your read
 
 Best,
 Nayovi team
+
+### Medium canonical OCR QA article draft
+
+Status: draft
+Target: official Nayovi Medium profile or publication
+Audience: developers, localization operators, technical founders, AI workflow readers
+Rules risk: medium; publish only from an official account and only with a canonical URL back to the owned guide.
+No-link variant: publish only on the owned site and keep Medium as an empty official profile.
+Link variant: canonical_url: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Title:
+A practical OCR QA checklist for comic and webtoon translation samples
+
+Deck:
+Before judging an AI translation, check whether the page was allowed to be processed, whether the text was detected, and whether the reading order still makes sense.
+
+Body:
+
+For image-heavy comics, the translation model is rarely the first thing to inspect.
+
+The review starts one step earlier:
+- Is the sample owned, public-domain, official, or explicitly approved for processing?
+- Did OCR find speech bubbles, captions, side notes, vertical text, small labels, and sound effects that matter?
+- Does the block order match the page or long-scroll reading flow?
+- Were unrelated bubbles merged into one translation unit?
+- Are names, ranks, places, techniques, and honorific choices handled consistently?
+- Is there a human correction pass before anything is shared publicly?
+
+Nayovi uses this kind of checklist because the product is an Android APK plus hosted OCR/AI workflow, not a chapter host. That boundary matters for reviewers, creator platforms, and localization teams: a translation demo is only useful when the sample rights and QA process are clear.
+
+The owned checklist is maintained here:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+### ScriptByAI-style AI directory eligibility note
+
+Status: draft
+Target: AI tools directories with submit paths and free/open-source framing.
+Audience: directory editors and AI-tool search users.
+Rules risk: medium; submit only if Nayovi can be labeled accurately as free trial plus paid token plans.
+No-link variant: ask whether an Android OCR workflow with paid token plans is eligible before sending links.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Message:
+
+Hi {{directory_name}} team,
+
+I am checking whether Nayovi fits your AI tools directory before submitting it.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It has official APK download, free trial access, redeem-code activation, monthly token plans, support, and responsible-use guidance.
+
+It should not be listed as open source or free forever. The accurate category is closer to Android app, AI OCR, translation workflow, and language technology.
+
+Nayovi does not host or distribute chapters. It supports owned content, public-domain material, official samples, or content users have permission to process.
+
+If your directory can represent that accurately and preserve the official source links, I can send screenshots and the listing packet. If the directory requires reciprocal backlinks, paid placement, or a free-forever/open-source label, I will skip submission.
 
 ### Android reviewer APK handoff note
 

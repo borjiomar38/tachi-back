@@ -2,6 +2,43 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T22:20Z Cycle
+
+Branch: `seo/distribution-20260528T222043Z`
+
+Account setup progress:
+- Advanced the official profile setup queue with `docs/nayovi-official-profile-fields.md`, a repo-owned source-of-truth packet for public Nayovi identity, canonical links, category tags, asset requirements, credential references, and submission boundaries.
+- Added Medium official profile/publication setup with exact public profile copy, first article angle, canonical URL policy, `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` guardrails, and owner-only account/API gates.
+
+Owned content changed:
+- Created `docs/nayovi-official-profile-fields.md` so future LinkedIn, YouTube, Product Hunt, DEV/Medium, Bluesky, Crunchbase, directory, launch, app-testing, and reviewer setup packets use consistent non-secret public copy.
+- Updated `content-calendar.md` and `link-assets.md` to track the official profile fields packet and Medium canonical OCR QA article.
+
+Authority discovery:
+- Added the owned official profile consistency packet as a high-priority search/entity trust opportunity.
+- Added Medium as a medium-fit technical publishing opportunity for canonical OCR QA syndication after owner account connection.
+- Added Keep Android Open as watch-only Android policy/community context for direct-APK trust language; no product links or campaign participation.
+- Added ScriptByAI as a medium-fit AI directory eligibility target because current public search shows a submit path and free/open-source framing that must be verified before use.
+
+Drafts prepared:
+- Added a Medium canonical OCR QA article draft focused on permission scope, OCR coverage, reading order, merged bubbles, glossary consistency, and human correction.
+- Added a ScriptByAI-style directory eligibility note that asks about accurate free-trial/paid-token representation before sharing links and rejects reciprocal, paid-link, or misleading free/open-source requirements.
+- Added Keep Android Open as watch-only policy context in platform drafts.
+
+Outreach tracker:
+- Added official profile consistency packet, Medium official Nayovi profile, Keep Android Open campaign context, and ScriptByAI tools directory to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, directory submission, paid placement, Reddit comment, Medium post, or public outreach was performed. Registry still permits only owned GitHub/docs work.
+
+Validation:
+- Passed: `./node_modules/.bin/tsc --noEmit`.
+
+Next actions:
+- Owner confirms public contact fields, logo/banner choice, approved screenshot set, package name, signing-certificate fingerprint, and Android developer verification status.
+- Owner creates/connects official Medium profile only if canonical syndication is desired.
+- Verify ScriptByAI submission fields before any owner-reviewed listing; skip if it requires reciprocal placement or misleading free/open-source labels.
+
 ## 2026-05-28T22:11Z Cycle
 
 Branch: `seo/distribution-20260528T221157Z`
