@@ -33,6 +33,23 @@ const androidTranslatorStructuredData = () => {
         'Use tools that do not host chapters and that limit public examples to owned, public-domain, official-sample, or approved content.',
     },
   ] as const;
+  const revenueSignals = [
+    {
+      name: 'Repeat Android reader',
+      description:
+        'Use the free trial first, then compare monthly token plans when hosted OCR and translation become a repeat reading workflow.',
+    },
+    {
+      name: 'Reviewer or directory editor',
+      description:
+        'Request review access and cite the official APK, pricing, support, demo, and responsible-use links before publishing a listing or comparison.',
+    },
+    {
+      name: 'Creator or publisher pilot',
+      description:
+        'Start with approved samples, private evidence, separated pilot access, and a clear continue or stop decision before any public mention.',
+    },
+  ] as const;
 
   return [
     {
@@ -57,6 +74,18 @@ const androidTranslatorStructuredData = () => {
       name: 'Android manga translator APK comparison checklist',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: criteria.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#qualified-intent`,
+      name: 'Qualified intent paths for Android manga translator APK comparisons',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: revenueSignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

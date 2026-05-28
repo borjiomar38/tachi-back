@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: qualified APK comparison intent
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: strengthened the `/guides/best-android-manga-translator-apk` guide with reader, reviewer, and creator/publisher readiness paths so future APK directory, Android press, AI directory, and partner outreach can route visitors toward free trial, paid token plans, review codes, or approved-sample pilots.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first; otherwise use the queued Akaya Media approved-sample pilot inquiry or ICv2 call follow-up if no later reply has superseded them.
+
 ### Autonomous cycle: approved-sample testing guide
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.

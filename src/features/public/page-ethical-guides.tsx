@@ -297,6 +297,30 @@ const androidTranslatorLinkRows = [
   },
 ] as const;
 
+const androidTranslatorReadinessRows = [
+  {
+    audience: 'Repeat Android readers',
+    signal:
+      'They translate more than one sample, care about device recovery and support, and want one official APK source instead of juggling generic upload tools.',
+    nextStep:
+      'Start with the free trial, then compare monthly token plans after OCR quality and reading cadence are clear.',
+  },
+  {
+    audience: 'Reviewers and directories',
+    signal:
+      'They need APK metadata, screenshots, demo proof, pricing context, and responsible-use language before mentioning Nayovi publicly.',
+    nextStep:
+      'Request a review code and cite the download, pricing, support, and workflow pages from the official site.',
+  },
+  {
+    audience: 'Creators and publishers',
+    signal:
+      'They control the sample and want private evidence before considering accessibility notes, reader research, or a broader pilot.',
+    nextStep:
+      'Use the approved-sample pilot brief and keep screenshots, translations, and partner names private until approved.',
+  },
+] as const;
+
 const approvedSampleTestingSteps = [
   {
     title: '1. Choose the sample with permission',
@@ -1106,6 +1130,26 @@ export const PageBestAndroidMangaTranslatorApk = () => {
             ))}
           </CardContent>
         </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Qualified intent"
+        title="Know when an APK comparison can become revenue"
+        description="A durable mention should send the right person to the right action: reader trial, paid plan, review access, or an approved-sample pilot."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {androidTranslatorReadinessRows.map((row) => (
+            <Card key={row.audience} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.audience}</CardTitle>
+                <CardDescription>{row.signal}</CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm leading-7 text-muted-foreground">
+                {row.nextStep}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </PublicSection>
 
       <PublicSection
