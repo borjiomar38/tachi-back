@@ -31,6 +31,7 @@ import { Route as LegalOfficialSourcesTakedownRouteImport } from './routes/legal
 import { Route as GuidesTranslationSupportWorkflowRouteImport } from './routes/guides/translation-support-workflow'
 import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
+import { Route as GuidesComicOcrTranslationChecklistRouteImport } from './routes/guides/comic-ocr-translation-checklist'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
 import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
@@ -214,6 +215,12 @@ const GuidesMihonNayoviSetupRoute = GuidesMihonNayoviSetupRouteImport.update({
   path: '/guides/mihon-nayovi-setup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesComicOcrTranslationChecklistRoute =
+  GuidesComicOcrTranslationChecklistRouteImport.update({
+    id: '/guides/comic-ocr-translation-checklist',
+    path: '/guides/comic-ocr-translation-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
   id: '/checkout/success',
   path: '/checkout/success',
@@ -601,6 +608,7 @@ export interface FileRoutesByFullPath {
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
@@ -691,6 +699,7 @@ export interface FileRoutesByTo {
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
@@ -785,6 +794,7 @@ export interface FileRoutesById {
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
@@ -880,6 +890,7 @@ export interface FileRouteTypes {
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/translation-support-workflow'
@@ -970,6 +981,7 @@ export interface FileRouteTypes {
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/translation-support-workflow'
@@ -1063,6 +1075,7 @@ export interface FileRouteTypes {
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/translation-support-workflow'
@@ -1157,6 +1170,7 @@ export interface RootRouteChildren {
   CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
   CheckoutCancelRoute: typeof CheckoutCancelRoute
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
+  GuidesComicOcrTranslationChecklistRoute: typeof GuidesComicOcrTranslationChecklistRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
   GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
   GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
@@ -1349,6 +1363,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/mihon-nayovi-setup'
       fullPath: '/guides/mihon-nayovi-setup'
       preLoaderRoute: typeof GuidesMihonNayoviSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/comic-ocr-translation-checklist': {
+      id: '/guides/comic-ocr-translation-checklist'
+      path: '/guides/comic-ocr-translation-checklist'
+      fullPath: '/guides/comic-ocr-translation-checklist'
+      preLoaderRoute: typeof GuidesComicOcrTranslationChecklistRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout/success': {
@@ -2017,6 +2038,8 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
   CheckoutCancelRoute: CheckoutCancelRoute,
   CheckoutSuccessRoute: CheckoutSuccessRoute,
+  GuidesComicOcrTranslationChecklistRoute:
+    GuidesComicOcrTranslationChecklistRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
   GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
   GuidesTranslationSupportWorkflowRoute: GuidesTranslationSupportWorkflowRoute,
