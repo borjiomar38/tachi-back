@@ -410,3 +410,21 @@ Next actions:
 - Added Android developer verification review packet and adjacent webtoon localization checklist exchange to `link-assets.md`; updated `content-calendar.md` with the new Android verification checklist intent.
 - Drafted exact Android developer verification checklist pitch and ToonFlow adjacent-tool note in `platform-drafts.md`.
 - Next actions: fill in Nayovi package name, signing-certificate fingerprint, and Android Developer Console verification status when owner confirms them; owner-review adjacent-tool notes; keep all external posting blocked until official contact paths and account authorization are confirmed.
+
+## 2026-05-28 Cycle 13
+
+- Verified branch `seo/distribution-20260528T213017Z`; account registry still permits owned GitHub/docs only, so no external posting, account creation, form submission, login, or APK upload was attempted.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Android Play Console / developer identity packet for package name, signing-certificate fingerprint, official verification status, and credential-reference handling. Status remains OWNER_ACTION_REQUIRED because identity, terms, fee, and verification steps must be manual.
+  - GitHub owned release docs packet for a public APK review packet, comic OCR checklist, and screenshot policy. Status is configured owned repo, content sync pending.
+- Improved owned content at `https://tachiyomiat.com/download` by adding a third-party citation handoff section for directory listings, editorial reviews, and partner pilots. It tells third parties to cite official source links, avoid unsupported mirror-first APK copies, request review-code context, and use approved samples only.
+- Researched rotated authority opportunities:
+  - Official Android developer verification documentation: source-of-truth context for September 2026 Android install trust and package registration, but owner-confirmed status is required before citation.
+  - Solaire Tools and TheAIFest: AI directory targets with submit-tool/editorial-review surfaces; use only if official APK, pricing, support, and responsible-use context remain visible and there is no paid/reciprocal link requirement.
+  - WEBTOON Translate guidance: platform translation context that reinforces approved-sample-only outreach and no catalog-processing implication.
+  - ImageTrans by BasicCAT: adjacent comic/image translation tool with OCR and text-area merging context; possible checklist-feedback surface, not a replacement pitch.
+- Added the new opportunities to `authority-opportunities.md` and broader prospects to `docs/growth/backlink-prospects.csv`.
+- Added the reviewer handoff block, owned GitHub APK review packet, and WEBTOON translation-context note to `content-calendar.md` and `link-assets.md`.
+- Drafted exact Android reviewer APK handoff note, quality-filtered AI directory listing note, and WEBTOON Translate context note in `platform-drafts.md`.
+- Next actions: owner confirms package name, signing fingerprint, developer verification status, and screenshot assets; owner chooses whether to mirror the checklist into owned GitHub docs; keep Solaire/TheAIFest submissions blocked until current forms and terms pass the quality filter.
