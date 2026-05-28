@@ -102,7 +102,7 @@ Garde ton email et WhatsApp disponibles. Si ICv2 ou un autre contact répond, je
 Category: press
 Contact path: News@ICv2.com, selected after prior-cycle public verification found ICv2's product-info page covers comics, graphic novels, and manga and lists the address for product/release information.
 Rationale: ICv2's trade audience may care about a permission-safe Android OCR/AI translation workflow if framed as reviewer/product coverage, not a request to translate catalog content or buy links.
-Status: contacted in prior cycle; owner inbound command `20260528T183731Z-10629b63e287` asked to schedule a call. A concise call follow-up with Borji Omar's email and phone was prepared, but the sender reported daily outreach cap reached at 10/10, so no follow-up email was sent this cycle.
+Status: contacted in prior cycle; owner inbound command `20260528T183731Z-10629b63e287` asked to schedule a call. A concise call follow-up with Borji Omar's email and phone was prepared, but the sender reported daily outreach cap reached at 10/10, so no follow-up email was sent this cycle. Retried during the 2026-05-28T224638Z autonomous cycle after rechecking current public ICv2 context; the sender still reported daily outreach cap reached at 10/10, so delivery was not attempted outside the cap.
 
 Subject prepared for next cap reset: Call option for Nayovi product note
 
@@ -217,6 +217,27 @@ Best,
 Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
+
+### Android Weekly technical submission packet
+
+Status: queued for official submit-form use only after the next cap/reset cycle confirms the link target is stable and no stronger reply-driven action takes priority.
+
+Submission title:
+Building a source-of-truth Android APK workflow for hosted manga OCR translation
+
+Suggested URL:
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Short note:
+Nayovi is an Android APK with a hosted OCR/AI translation backend, redeem-code activation, free trial access, and monthly token plans. This technical write-up is useful for Android builders because it documents the trust handoff around official APK source links, reviewer verification, backend translation flow, and approved-sample testing boundaries without asking readers to trust mirror-first APK listings.
+
+Why Android developers may care:
+- It shows how an APK-only product can keep official source, support, pricing, and update context attached to third-party mentions.
+- It explains a hosted backend path for OCR and translation so readers do not manage provider API keys on the device.
+- It keeps sample handling permission-safe: owned content, public-domain material, official samples, or content the tester has explicit permission to process.
+- It routes reviewers and directory editors to verification assets before any public listing.
+
+Do not submit as a generic consumer app pitch. Use this only as a technical link suggestion through Android Weekly's official submit path, and skip the submission if the form requires paid placement, reciprocal links, or unauthenticated account automation.
 
 ## AI Tool Directory Listing Packet
 

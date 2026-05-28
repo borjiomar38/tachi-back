@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T224638Z`: audited branch state, public SEO routes, current growth trackers, latest SEO distribution shared status/report, and outreach sender history.
+- Rechecked current public context for ICv2 and Akaya Media before any outreach decision. Retried the queued ICv2 call follow-up because it is reply-driven and already has owner contact details, but the configured sender still reported the daily outreach cap reached at 10/10, so no email was sent and the cap was not bypassed.
+- Added an Android Weekly technical submission packet to `docs/growth/outreach-drafts.md` so future official-form submission can lead with source-of-truth APK verification, hosted backend flow, redeem-code activation, and permission-safe sample handling instead of a generic product pitch.
+- Marked the Android newsletter technical submission packet as shipped in the growth content backlog.
+
 - Autonomous cycle on `growth/autonomous-20260528T221306Z`: audited branch state, current public SEO routes, sitemap coverage, growth trackers, SEO distribution shared state, and outreach sender history.
 - Added `/guides/test-ai-manhwa-translation-approved-samples` as a permission-safe guide for reviewers, communities, publishers, creators, and partner teams testing Nayovi with approved manga, manhwa, or manhua samples before any public mention.
 - Added Article and HowTo structured data plus sitemap coverage for the new approved-sample testing guide, with handoffs to official APK download, OCR checklist, support/review-code request, and paid-plan decision paths.
