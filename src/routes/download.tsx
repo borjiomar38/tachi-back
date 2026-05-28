@@ -65,6 +65,23 @@ const downloadStructuredData = () => {
         'Limit partner pilots to creator-approved, official-sample, public-domain, or owner-provided pages, then confirm which results can be cited publicly.',
     },
   ] as const;
+  const directoryQualityItems = [
+    {
+      name: 'Preserve official source links',
+      description:
+        'Accept only listings that keep the official download, pricing, support, privacy, terms, and responsible-use links visible.',
+    },
+    {
+      name: 'Reject paid or reciprocal link gates',
+      description:
+        'Do not use directories that require dofollow backlinks, paid placement, review swaps, or badges as a condition for listing.',
+    },
+    {
+      name: 'Represent access and pricing accurately',
+      description:
+        'Describe Nayovi as free trial plus redeem-code access and paid hosted OCR/AI translation token plans.',
+    },
+  ] as const;
 
   return [
     {
@@ -117,6 +134,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#third-party-citation-handoff`,
       name: 'How third parties should cite Nayovi',
       itemListElement: thirdPartyCitationItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#directory-quality-filter`,
+      name: 'Nayovi directory listing quality filter',
+      itemListElement: directoryQualityItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
