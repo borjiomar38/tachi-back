@@ -30,3 +30,20 @@ This file is maintained by the SEO distribution agent.
 - Added Product Hunt launch packet and DEV canonical checklist ideas to linkable assets.
 - Drafted exact Product Hunt maker copy, DEV canonical front matter/body, and GlobalComix feedback pitch in `platform-drafts.md`.
 - Next actions: collect launch screenshots, prepare an approved-sample demo image set, owner-review the GlobalComix message, and keep Product Hunt/DEV posting blocked until authorized accounts are configured.
+
+## 2026-05-28 Cycle 3
+
+- Verified branch `seo/distribution-20260528T175439Z`; external posting remains draft-only except owned GitHub/docs, and Git push is enabled.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/download` by adding a reviewer and directory verification checklist covering official source links, review access, and responsible-use boundaries.
+- Updated sitemap metadata for `/download` with `lastModified` set to `2026-05-28`.
+- Researched current authority opportunities across rotated categories:
+  - Android Central: Android editorial/review surface with public about/editorial context; best next action is an owner-reviewed review-code pitch through public contact paths.
+  - WEBTOON contact paths: creator/platform, IP/licensing, partnership, support, and press contact paths exist; best next action is approved-sample feedback only, no catalog translation implication.
+  - AI Workbench: AI tool directory with free reviewed submission path and official website link potential; best next action is owner-reviewed listing submission only if listing quality remains acceptable.
+  - Stork.AI: watchlist AI tools directory with paid submission; hold until budget and traffic quality justify it.
+- Added Android Central, WEBTOON, AI Workbench, and Stork.AI rows to the authority pipeline.
+- Added Android Central, WEBTOON, and AI Workbench opportunities to the broader backlink prospects tracker.
+- Added linkable asset entries for the reviewer/directory verification packet, WEBTOON approved-sample feedback packet, and AI directory listing packet.
+- Drafted exact Android Central review-code pitch, WEBTOON approved-sample feedback note, and AI Workbench listing packet in `platform-drafts.md`.
+- Next actions: add APK package metadata and screenshots to the review packet, owner-review Android Central and WEBTOON messages, and keep all external sends blocked until authorized owner workflow confirms the exact contact path.
