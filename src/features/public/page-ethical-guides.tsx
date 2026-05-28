@@ -367,6 +367,29 @@ const pilotOutcomeRows = [
   },
 ] as const;
 
+const pilotReportRows = [
+  {
+    label: 'Sample summary',
+    detail:
+      'Record the page count, language pair, source permission, reviewer role, Android device, and whether the test used a trial, review code, or pilot code.',
+  },
+  {
+    label: 'Quality evidence',
+    detail:
+      'Send missed text counts, merged bubble notes, glossary corrections, translation edits, and a private before/after comparison when sharing is approved.',
+  },
+  {
+    label: 'Business signal',
+    detail:
+      'Track whether the pilot produced qualified installs, support questions, repeat translation intent, affiliate interest, or a next conversation with the partner.',
+  },
+  {
+    label: 'Stop condition',
+    detail:
+      'Pause public discussion if rights are unclear, the sample cannot be shared, OCR misses key dialogue, or the partner cannot explain a useful reader outcome.',
+  },
+] as const;
+
 const communitySubmissionRows = [
   {
     channel: 'Startup launch communities',
@@ -776,6 +799,28 @@ export const PagePermissionSafePilotBrief = () => {
             </Card>
           ))}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Pilot report"
+        title="What to send back after a test"
+        description="A useful pilot produces reviewer evidence and a revenue-relevant next step, not just a polite opinion about AI translation."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {pilotReportRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection
