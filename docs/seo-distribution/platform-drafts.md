@@ -38,6 +38,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Comics media | The Beat / Comics Beat | AI-assisted manga translation transparency note | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no request for review coverage. |
 | draft | Creator tooling | Taddy / Inkverse | Permission-first OCR checklist for creator-controlled samples | None by default | OWNER_REVIEW_REQUIRED: identify official contact path; no directory/listing submission. |
 | watch | Research | Manga Studies journal | Future OCR transparency article angle | None yet | HIGH_RISK: formal non-promotional submission only after original measurements exist. |
+| draft | APK review | APKLand | Independent APK review packet for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official contact/submission path only; preserve official source links and no-chapter-hosting boundary. |
+| draft | App testing | AppTester.co | Human APK testing evidence request | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: submit APK only with owner approval; use test report as trust evidence, not a backlink purchase. |
+| draft | Creator platform | Hiveworks Comics | Permission-first OCR checklist feedback | None by default | OWNER_REVIEW_REQUIRED: public contact only; no catalog translation implication and no backlink ask. |
 
 ## Draft Bodies
 
@@ -195,6 +198,83 @@ The scope would be approved samples only: creator-owned material, public-domain 
 The public workflow guide covers the current review checklist: OCR block order, merged speech bubbles, glossary consistency, source-of-truth install links, and takedown-ready handling.
 
 If this is relevant, I can send the guide, screenshots, and demo context for feedback. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### APKLand review packet
+
+Status: draft
+Target: APKLand official contact or submission path
+Audience: Android APK reviewers and readers who compare independent app downloads
+Rules risk: medium; use only if the review surface preserves source-of-truth links, hash verification, support, pricing, and responsible-use context.
+No-link variant: send the packet summary first and offer the download URL only if requested.
+Link variant after owner review: https://tachiyomiat.com/download
+
+Subject:
+Review packet for independent Nayovi APK evaluation
+
+Message:
+
+Hi APKLand team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found APKLand while reviewing independent Android APK review surfaces. Nayovi may fit only if the review can keep the source-of-truth details clear: official download from tachiyomiat.com, SHA-256 verification, package metadata, pricing, support, privacy/terms, and the responsible-use boundary.
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+If this is a fit, I can send the review packet with screenshots, demo context, a review-code path, APK metadata, and the workflow checklist. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### AppTester human APK testing request
+
+Status: draft
+Target: AppTester.co official builder or app-health submission path
+Audience: human app testers, indie builders, Android reviewers
+Rules risk: medium; do not upload the APK or create an account without owner approval.
+No-link variant: ask about fit and required test scope before sharing a download link.
+Link variant after owner review: https://tachiyomiat.com/download
+
+Subject:
+APK health-check fit for hosted OCR Android workflow
+
+Message:
+
+Hi AppTester team,
+
+I am building Nayovi, an Android APK for hosted OCR and AI translation in manga, manhwa, and manhua reader workflows.
+
+I am interested in a human test report rather than promotional coverage: install confidence, permissions, activation with a redeem code, hosted OCR/translation flow, support path, and whether the app clearly avoids presenting itself as a chapter source.
+
+Would an APK health check or builder test be appropriate for this kind of independent Android app? If yes, I can provide the official download page, APK metadata, test account or redeem-code context, and the responsible-use checklist after owner approval.
+
+Best,
+Nayovi team
+
+### Hiveworks creator-platform feedback note
+
+Status: draft
+Target: Hiveworks public contact path
+Audience: creator-owned webcomic publisher/platform team
+Rules risk: medium; no backlink ask, no product listing request, and no implication that Nayovi can process Hiveworks comics without creator permission.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Permission-first OCR checklist for creator-controlled comic samples
+
+Message:
+
+Hi Hiveworks team,
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and comic-style pages.
+
+I found Hiveworks while researching creator-owned webcomic platforms and industry resources. I am not asking for a listing or a backlink. The feedback question is whether a permission-first OCR checklist would be useful for creator-controlled samples: confirm rights first, detect missed text regions, preserve reading order, avoid merged speakers, keep human review visible, and block public sharing when permission or quality is unclear.
+
+If this is useful for creator-resource feedback, I can send the short checklist. If not, no problem and I will not follow up.
 
 Best,
 Nayovi team
