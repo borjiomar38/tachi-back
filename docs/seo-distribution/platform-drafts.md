@@ -35,6 +35,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Reddit | r/androiddev showcase thread | Technical feedback request for hosted Android OCR workflow | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: current thread/rules review required; no automated replies and no link unless allowed. |
 | draft | Podcast/media | Nimdzi LIVE | Visual-storytelling OCR QA topic pitch | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: official contact or guest path only; hold until approved-sample evidence exists. |
 | draft | Podcast/newsletter | Mangasplaining | Translation workflow feedback note | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no implied catalog/content permission. |
+| draft | Comics media | The Beat / Comics Beat | AI-assisted manga translation transparency note | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no request for review coverage. |
+| draft | Creator tooling | Taddy / Inkverse | Permission-first OCR checklist for creator-controlled samples | None by default | OWNER_REVIEW_REQUIRED: identify official contact path; no directory/listing submission. |
+| watch | Research | Manga Studies journal | Future OCR transparency article angle | None yet | HIGH_RISK: formal non-promotional submission only after original measurements exist. |
 
 ## Draft Bodies
 
@@ -241,6 +244,84 @@ Free trial access is available. Continued hosted OCR/translation use is tied to 
 
 Responsible-use note:
 Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+### Comics Beat transparency note
+
+Status: draft
+Target: The Beat / Comics Beat public contact path
+Audience: comics and manga trade editors who already track AI-assisted manga localization concerns
+Rules risk: medium; send only after owner review, no repeated follow-up, no backlink ask, and no request for favorable coverage.
+No-link variant: yes, recommended first.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Transparency-first note on AI-assisted manga OCR workflows
+
+Message:
+
+Hi Comics Beat team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I am not writing to ask for a review or a backlink. I found your manga coverage while researching how comics media discusses AI-assisted localization concerns, especially the questions around human review, translation credit, and whether AI output is being presented as a replacement for professional localization work.
+
+The only useful angle I want to sanity-check is a permission-first workflow note:
+- Nayovi does not host or distribute chapters.
+- It is scoped to owned material, public-domain works, official samples, creator-provided pages, or content the user has permission to process.
+- AI output is treated as draft support, not official localization.
+- Reviewers should keep OCR text, correction notes, glossary choices, source permission, and unresolved quality issues visible before citing or sharing any result.
+
+No-link version:
+If this topic is useful for future coverage or critique, I can send a short, product-light checklist for how we think Android OCR translation tools should disclose automation, human review, and sample permission.
+
+Link version only if useful:
+The current public checklist is here: https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### Taddy creator-tool feedback note
+
+Status: draft
+Target: Taddy / Inkverse official creator or contact path
+Audience: creator-tool operators and self-published comics creators
+Rules risk: medium; use only through an official path and do not submit Nayovi as a comic, feed, or directory listing.
+No-link variant: recommended.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Permission-first OCR checklist for creator-controlled samples
+
+Message:
+
+Hi Taddy team,
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and webcomic reader use cases.
+
+I found Taddy while reviewing creator-controlled comics tools. I am not asking for a listing or backlink. The possible fit is a creator feedback question: when a creator owns the sample pages, what should an OCR translation tool prove before anyone treats the result as useful?
+
+The checklist I am using starts with sample permission, missed text regions, reading order, block grouping, glossary consistency, human correction notes, and a share/no-share decision. It is meant for creator-owned, public-domain, official-preview, or permission-approved material only.
+
+If that kind of product-light checklist would be useful to creators or tooling teams, I can send the short markdown version for feedback.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### Manga Studies research guardrail
+
+Status: watch
+Target: Manga Studies journal / formal manga research venues
+Audience: researchers, manga studies editors, OCR and translation scholars
+Rules risk: high; do not pitch Nayovi as a product and do not submit without original measurements, citations, and formal owner review.
+No-link variant: required.
+
+Guardrail:
+
+Do not submit a Nayovi marketing article. A future submission would need original approved-sample measurements, clear methods, citations, rights-safe examples, and a non-promotional research question such as how OCR block grouping and human correction affect readability in visual storytelling translation workflows.
 
 ### Kotlin Weekly checklist suggestion
 

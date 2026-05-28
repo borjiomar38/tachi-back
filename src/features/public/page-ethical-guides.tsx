@@ -141,6 +141,29 @@ const researchCitationRows = [
   },
 ] as const;
 
+const transparencyRows = [
+  {
+    label: 'Human review stays visible',
+    detail:
+      'Treat AI output as a draft for permitted samples. Keep reviewer notes, corrected OCR text, glossary choices, and unresolved quality issues visible before anyone cites the result.',
+  },
+  {
+    label: 'Do not replace credits',
+    detail:
+      'If a creator, translator, letterer, editor, or publisher contributed to the sample, keep that credit context attached and avoid presenting machine output as official localization.',
+  },
+  {
+    label: 'Say what was automated',
+    detail:
+      'When sharing a test, explain whether Nayovi helped with OCR detection, block grouping, translation drafting, glossary review, or Android workflow testing.',
+  },
+  {
+    label: 'Block public sharing when unclear',
+    detail:
+      'Do not publish translated pages, screenshots, or before-and-after examples when source permission, reviewer approval, or output quality is uncertain.',
+  },
+] as const;
+
 const technicalEvaluationRows = [
   {
     label: 'Sample manifest',
@@ -592,6 +615,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {researchCitationRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Transparency"
+        title="Human-review and credit safeguards"
+        description="Use this section when manga media, creator platforms, or localization communities need to see that Nayovi is not positioning AI output as a replacement for professional translation work."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {transparencyRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
