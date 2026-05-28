@@ -49,6 +49,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | AI directory | ToolsVerse | Free-tool eligibility question | None by default | OWNER_REVIEW_REQUIRED: do not submit unless Nayovi qualifies under the directory's free-tool standards. |
 | hold | AI directory | AIToolSync | Paid listing compliance hold | None | HIGH_RISK: current paid/backlink package language conflicts with no paid-links rule; no submission. |
 | draft | Creator/localization studio | Bayi Studios | Approved-sample OCR checklist feedback | None by default | OWNER_REVIEW_REQUIRED: public contact path only; no backlink ask or catalog/content permission implication. |
+| draft | Localization studio | Translexi | Comic OCR checklist exchange | None by default | OWNER_REVIEW_REQUIRED: public contact path only; no replacement pitch or backlink ask. |
+| draft | App testing | Beta Family | Safe Android beta test task packet | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: do not upload APK or start tests until owner approves package sharing and sample policy. |
+| watch | AI directory | Flynto.online | AI directory listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify quality, pricing, and no reciprocal/paid-link terms before any submission. |
 
 ## Draft Bodies
 
@@ -236,6 +239,74 @@ If this is not relevant, no problem and I will not follow up.
 
 Best,
 Nayovi team
+
+### Translexi comic localization checklist note
+
+Status: draft
+Target: Translexi official contact path
+Audience: comic, manga, and webtoon localization team
+Rules risk: medium; send only after owner review and only as a product-light resource awareness note.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Approved-sample OCR QA checklist for comic localization workflows
+
+Message:
+
+Hi Translexi team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and comic reader workflows.
+
+I found Translexi while researching localization teams that already think about speech bubbles, sound effects, captions, translation, and lettering as one workflow. I wanted to ask whether a neutral OCR QA checklist would be useful from your perspective.
+
+The resource is intentionally product-light: it covers approved sample scope, OCR text coverage, reading order, grouped bubbles, glossary consistency, human correction, and whether a sample should be shared publicly. Nayovi does not host or distribute chapters and this is not a request to process Translexi client work without permission.
+
+If useful, I can send the checklist and a short Android-side observation packet. If not, no follow-up is needed.
+
+Best,
+Nayovi team
+
+### Beta Family safe app testing task packet
+
+Status: draft
+Target: Beta Family or comparable mobile beta-testing surface
+Audience: mobile testers and product QA reviewers
+Rules risk: medium; do not submit or upload APK until owner approves package sharing, tester instructions, and sample boundaries.
+No-link variant: not applicable if a test campaign requires an app URL.
+Link variant: https://tachiyomiat.com/download
+
+Test objective:
+Verify Android install confidence, redeem-code activation, hosted OCR/translation progress, support-path clarity, and responsible-use messaging without using copyrighted chapter pages.
+
+Tester tasks:
+- Install only from the official Nayovi download page.
+- Confirm whether the APK source, pricing, support, and responsible-use links are visible before activation.
+- Use only owner-provided public-domain, official-sample, or permission-approved images.
+- Record where OCR progress, language choice, and final output are clear or confusing.
+- Report any point where the app feels like a chapter source, mirror, or unsupported manga library.
+
+Submission note:
+Nayovi does not host or distribute chapters. Testers should not upload manga, manhwa, manhua, or webtoon pages unless the test packet explicitly marks the sample as approved.
+
+### Flynto.online AI directory eligibility note
+
+Status: watch
+Target: Flynto.online or comparable broad AI-tool directory
+Audience: AI-tool directory editors
+Rules risk: medium; use only if current submission rules preserve official source links and do not require payment, reciprocal backlinks, or misleading free-tool claims.
+No-link variant: internal eligibility note only.
+Link variant if eligible: https://tachiyomiat.com/translate-manhwa-ai
+
+Eligibility filter:
+- Can the listing identify Nayovi as an Android app and hosted OCR translation workflow?
+- Can it show free trial access and paid monthly token plans accurately?
+- Can it link to official download, pricing, support, and responsible workflow pages?
+- Does it avoid mirror-first APK downloads, scraped descriptions, paid backlink packages, and reciprocal-link requirements?
+- Is there a clear editorial or owner-authorized submit path?
+
+Decision:
+Watch only until the current submit/contact path and listing terms are verified. Prioritize Android, creator, and localization surfaces first.
 
 ### ToolsVerse free-tool eligibility guardrail
 

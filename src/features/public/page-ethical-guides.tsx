@@ -526,6 +526,29 @@ const standaloneChecklistSections = [
   },
 ] as const;
 
+const citationReadinessRows = [
+  {
+    label: 'Who should cite it',
+    detail:
+      'Use this page for Android reviewers, OCR resource maintainers, localization editors, moderators, and creator-platform teams that need a product-light quality checklist.',
+  },
+  {
+    label: 'Best link context',
+    detail:
+      'Pair the checklist with approved-sample notes, screenshot packets, reviewer-code requests, or maintainer questions instead of a generic app-install pitch.',
+  },
+  {
+    label: 'When to omit the link',
+    detail:
+      'Skip the URL in communities that restrict self-promotion, unanswered moderation threads, or conversations where a no-link workflow answer is enough.',
+  },
+  {
+    label: 'Disclosure',
+    detail:
+      'When Nayovi is mentioned, disclose the relationship and keep the useful checklist separate from claims about app rankings, endorsements, or third-party approval.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -633,6 +656,28 @@ export const PageComicOcrChecklist = () => {
             </Card>
           ))}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Citation ready"
+        title="How to use this checklist in public"
+        description="The safest distribution path is to make the checklist useful on its own, then add the Nayovi product link only when the audience asks for implementation details."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {citationReadinessRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection
