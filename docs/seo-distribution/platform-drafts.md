@@ -32,6 +32,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Adjacent tool | Comic Translate | Neutral OCR checklist and Android workflow feedback | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: public contact path only; no claim that Nayovi replaces their product. |
 | draft | Directory | SpotFreeAI | Free-trial AI tool listing fit check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official submit form only; skip if free-trial/paid-token wording cannot be accurate. |
 | draft | Newsletter | Kotlin Weekly | Developer checklist link suggestion | docs/seo-distribution/comic-ocr-checklist.md | OWNER_REVIEW_REQUIRED: submit only after checklist has a public URL; sponsored link requires budget approval. |
+| draft | Reddit | r/androiddev showcase thread | Technical feedback request for hosted Android OCR workflow | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: current thread/rules review required; no automated replies and no link unless allowed. |
+| draft | Podcast/media | Nimdzi LIVE | Visual-storytelling OCR QA topic pitch | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: official contact or guest path only; hold until approved-sample evidence exists. |
+| draft | Podcast/newsletter | Mangasplaining | Translation workflow feedback note | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no implied catalog/content permission. |
 
 ## Draft Bodies
 
@@ -602,6 +605,83 @@ I am researching OCR and translation QA for manga, manhwa, manhua, and comic-sty
 Would a practical community topic around visual storytelling OCR QA be useful for an event, chapter discussion, or member resource? The angle would be workflow-first and permission-safe: approved samples, public-domain material, creator-approved previews, and human review decisions before anything is shared.
 
 If this fits, I can send a short outline and checklist. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### r/androiddev showcase feedback comment
+
+Status: draft
+Target: recurring r/androiddev interesting Android apps or showcase thread, only when the active thread allows app demos and feedback requests
+Audience: Android developers, app reviewers, indie Android founders
+Rules risk: high; Reddit account is not configured, and the exact active thread rules must be checked before posting. Do not post this as a normal subreddit submission.
+No-link variant: yes
+Link variant only if allowed: https://tachiyomiat.com/download
+
+Comment:
+
+I am building an Android APK called Nayovi for hosted OCR and AI translation in manga/manhwa-style reading workflows, and I would value developer feedback on the trust and packaging side more than promotion.
+
+The pieces I am trying to make reviewable:
+- official download page rather than mirror-first distribution
+- SHA-256 shown next to the APK metadata
+- hosted OCR/translation so provider keys are not shipped to the device
+- redeem-code testing for reviewers
+- clear support, pricing, privacy, terms, and responsible-use links
+- explicit boundary that the app does not host chapters and is for owned, public-domain, official-sample, or permission-approved content
+
+No-link version: I can summarize the verification checklist here if useful. The main question is whether this is enough context for an Android reviewer to trust an independent APK before installing it.
+
+### Nimdzi LIVE topic pitch
+
+Status: draft
+Target: Nimdzi LIVE official contact or guest/topic suggestion path
+Audience: localization operators, language technology teams, media localization professionals
+Rules risk: medium; use only after owner review and approved-sample evidence. This should be a topic pitch, not a product booking request.
+No-link variant: pitch the topic and offer the checklist only if requested.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Topic idea: OCR QA before AI translation in visual storytelling
+
+Message:
+
+Hi Nimdzi team,
+
+I am working on Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and comic-style pages.
+
+The topic that may fit Nimdzi LIVE is not a product demo. It is the localization workflow problem before translation: missed speech bubbles, wrong reading order, under-segmented balloons, merged captions, terminology drift, and the need to confirm that samples are approved for processing before judging AI translation quality.
+
+Would a short topic around visual-storytelling OCR QA and human review be useful for a future discussion or article idea? The angle would be permission-safe and sample-based: owned content, public-domain material, official previews, or creator-approved samples only.
+
+If this is relevant, I can send a concise checklist and approved-sample notes for review. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Mangasplaining feedback note
+
+Status: draft
+Target: Mangasplaining public contact path
+Audience: manga podcast/newsletter editors and translation-aware manga readers
+Rules risk: medium; use as a no-link feedback note only. Do not ask for a backlink and do not imply permission to process or translate titles discussed by the show.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Question about manga OCR translation workflow boundaries
+
+Message:
+
+Hi Mangasplaining team,
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Mangasplaining while looking for manga-literate places to sanity-check how to talk about translation tooling responsibly. The feedback I am looking for is not a review request or a backlink ask. It is whether the public language around the workflow is clear enough: Nayovi does not host or distribute chapters, and the intended scope is owned content, public-domain material, official samples, or content the reader has permission to process.
+
+The quality checklist focuses on OCR completeness, reading order, merged speech bubbles, glossary consistency, and human review before translated output is shared.
+
+If this is something you would be willing to react to, I can send the short checklist. If not, no problem and I will not follow up.
 
 Best,
 Nayovi team

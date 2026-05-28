@@ -118,3 +118,17 @@ This file is maintained by the SEO distribution agent.
 - Added standalone checklist and adjacent-tool comparison angle to `link-assets.md`; updated `content-calendar.md` to track the markdown checklist asset.
 - Drafted exact Comic Translate adjacent-tool note, SpotFreeAI listing copy, and Kotlin Weekly checklist suggestion in `platform-drafts.md`.
 - Next actions: expose the checklist through a public owned URL or GitHub README/docs surface, gather screenshots/package metadata, and owner-review any adjacent-tool or directory submission before sending.
+
+## 2026-05-28 Cycle 9
+
+- Verified branch `seo/distribution-20260528T192507Z`; external posting remains draft-only for LinkedIn, Reddit, directories, newsletters, forums, launch communities, podcasts, and partner publications. Owned GitHub/docs remain the only configured owned channel.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/download` by adding independent APK distribution trust checks: owned-domain source of truth, SHA-256 matching, support/policy links, and warning against mirror-first or chapter-source positioning.
+- Researched rotated authority opportunities:
+  - r/androiddev recurring Android app showcase threads: possible technical feedback surface for APK trust and hosted OCR architecture, but high risk unless the active thread explicitly allows app demos.
+  - Nimdzi LIVE: localization media/podcast surface that fits a workflow-first topic around visual-storytelling OCR QA and human review after approved-sample evidence exists.
+  - Mangasplaining: manga podcast/newsletter contact path that may fit a no-link sanity-check note about responsible translation-workflow language, not a review or backlink ask.
+- Added those three opportunities to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added independent APK distribution trust checks, Android developer showcase feedback packet, and localization podcast talking points to `link-assets.md`.
+- Drafted exact r/androiddev showcase comment, Nimdzi LIVE topic pitch, and Mangasplaining feedback note in `platform-drafts.md`.
+- Next actions: add signing-certificate details and screenshots to the review packet, owner-review podcast/media notes, and keep Reddit blocked until an authorized account and current thread rules confirm the exact action is allowed.
