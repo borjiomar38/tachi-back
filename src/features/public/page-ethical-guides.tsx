@@ -645,6 +645,29 @@ const capResetPacketRows = [
   },
 ] as const;
 
+const replyTriageRows = [
+  {
+    reply: 'Review-code request',
+    response:
+      'Send the support path with official APK source, screenshots, narrated demo context, pricing, and responsible-use language so the reviewer can test without guessing activation details.',
+  },
+  {
+    reply: 'Approved-sample pilot',
+    response:
+      'Keep the first test private and limited to owned, public-domain, official preview, creator-provided, or otherwise approved samples before any public mention is discussed.',
+  },
+  {
+    reply: 'Call or interview request',
+    response:
+      'Use owner-provided contact details or ask for concrete availability only when the reply indicates a real editorial, partnership, investor, or commercial conversation.',
+  },
+  {
+    reply: 'Weak or noncompliant reply',
+    response:
+      'Decline paid link placement, reciprocal backlink gates, mirror-first APK uploads, hidden pricing or support links, and claims about unauthorized catalog translation.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -1796,6 +1819,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.field}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply triage"
+        title="How to handle qualified replies"
+        description="Use this packet after an editor, directory, partner, or investor replies so routine follow-up moves forward while true owner decisions stay visible."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {replyTriageRows.map((row) => (
+              <div
+                key={row.reply}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.reply}
+                </span>
+                <span>{row.response}</span>
               </div>
             ))}
           </CardContent>

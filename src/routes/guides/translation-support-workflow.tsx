@@ -53,6 +53,28 @@ const translationWorkflowStructuredData = () => {
         'Avoid paid placement, reciprocal links, hidden official support links, and pitches that imply unauthorized catalog translation.',
     },
   ] as const;
+  const replyTriagePacket = [
+    {
+      name: 'Review-code request',
+      description:
+        'Route Android reviewers, directory editors, and affiliate testers to support with APK source, pricing, screenshots, demo, and responsible-use context attached.',
+    },
+    {
+      name: 'Approved-sample pilot',
+      description:
+        'Ask creator platforms, publishers, localization teams, or communities to keep the first test private, sample-limited, and permission-approved.',
+    },
+    {
+      name: 'Call or interview request',
+      description:
+        'Use the owner-provided contact details or ask for concrete availability only when a real editorial, partner, investor, or commercial conversation is requested.',
+    },
+    {
+      name: 'Weak or noncompliant reply',
+      description:
+        'Decline paid link placement, reciprocal backlink gates, mirror-first APK uploads, catalog-translation claims, or requests that hide support and pricing context.',
+    },
+  ] as const;
 
   return [
     {
@@ -73,6 +95,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi cap-reset outreach packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: capResetPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-triage`,
+      name: 'Nayovi reply triage packet',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: replyTriagePacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
