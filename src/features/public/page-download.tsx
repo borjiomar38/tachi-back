@@ -40,6 +40,25 @@ const verificationRows = [
   },
 ] as const;
 
+const appMetadataRows = [
+  {
+    label: 'File name',
+    value: androidApkDownload.filename,
+  },
+  {
+    label: 'Build',
+    value: androidApkDownload.buildLabel,
+  },
+  {
+    label: 'APK size',
+    value: androidApkDownload.sizeLabel,
+  },
+  {
+    label: 'SHA-256',
+    value: androidApkDownload.sha256,
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -246,6 +265,44 @@ export const PageDownload = () => {
             >
               Review workflow guide
             </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="APK metadata"
+        title="Source-of-truth app details"
+        description="Directory editors and Android reviewers can use these details to verify that a listing points back to the official Nayovi APK instead of an unsupported mirror."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {appMetadataRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[8rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span className="break-all">{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              A correct listing should name Nayovi as an Android APK with
+              hosted OCR and AI translation support, then send install, pricing,
+              support, privacy, terms, and responsible-use questions back to
+              tachiyomiat.com or nayovi.com.
+            </p>
+            <p>
+              Avoid listings that present the APK as an unaffiliated mirror or
+              imply that Nayovi hosts manga, manhwa, or manhua chapters.
+            </p>
           </CardContent>
         </Card>
       </PublicSection>
