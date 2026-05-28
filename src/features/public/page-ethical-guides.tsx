@@ -183,6 +183,24 @@ const directoryPacketRows = [
   },
 ] as const;
 
+const pilotBriefRows = [
+  {
+    label: 'Approved sample',
+    detail:
+      'Name the pages, language pair, rights context, and reviewer before Nayovi processes a publisher, creator, or community pilot.',
+  },
+  {
+    label: 'Dedicated access',
+    detail:
+      'Use a review or pilot redeem code so support questions, trial usage, and follow-up conversion can be separated from normal readers.',
+  },
+  {
+    label: 'Success signal',
+    detail:
+      'Continue only when the pilot shows useful OCR review, qualified Android installs, affiliate interest, or repeat paid token demand.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -487,6 +505,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.item}
                 </span>
                 <span>{row.copy}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Pilot brief"
+        title="A clean starting point for publisher and community tests"
+        description="Use this brief when a partner wants to evaluate Nayovi with approved material before any public mention, directory listing, or affiliate test."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {pilotBriefRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
               </div>
             ))}
           </CardContent>

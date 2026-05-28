@@ -34,6 +34,36 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### TopAiTools.io AI directory
+
+Category: directory
+Contact path: hello@TopAiTools.ai, listed on the current public TopAiTools.io contact page for general inquiries, partnerships, and support questions.
+Rationale: TopAiTools.io has a public AI-tool submit form and says submissions are reviewed within 2-3 business days. Nayovi may fit if the listing preserves official APK, pricing, support, and responsible-use links rather than treating the app as a mirror-first download.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Nayovi listing fit for TopAiTools.io
+
+Hi TopAiTools.io team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found your AI-tool submit page and saw that TopAiTools.io reviews submitted tools within 2-3 business days. Nayovi may fit if your directory accepts focused Android AI apps with clear source-of-truth links: official APK install from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, support, and hosted OCR/AI translation from the Android app.
+
+Nayovi does not host or distribute chapters. It supports translation for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Should I use the public submit form for this, or would you prefer a short listing packet by email first?
+
+Useful source links:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/pricing
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### SubmitAITools AI directory
 
 Category: directory

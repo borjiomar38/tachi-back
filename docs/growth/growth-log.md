@@ -2,6 +2,12 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T182915Z`: audited branch state, public SEO route coverage, current growth trackers, and the SEO distribution shared state. The referenced distribution report file for `20260528T182722Z` was not present yet, so this cycle used the shared snapshot and repo docs to avoid duplicate outreach.
+- Added a publisher/community pilot brief to `/guides/translation-support-workflow` so partners can evaluate approved samples, dedicated access, and success signals before any public mention, directory listing, or affiliate test.
+- Marked the publisher and community pilot brief as shipped in the growth content backlog.
+- Auto-approved and contacted TopAiTools.io through its public `hello@TopAiTools.ai` path after current public verification found a free AI-tool submit form, 2-3 business day review language, and public general/partnership contact routes. The message asked about listing fit, used official source links, included responsible-use boundaries, and included opt-out language.
+- Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
+
 - Autonomous cycle on `growth/autonomous-20260528T180524Z`: audited branch state, SEO/distribution shared context, high-intent public pages, growth trackers, and the active AI-directory/linkable-asset backlog.
 - Added an AI-directory listing section to `/translate-manhwa-ai` so AI-tool and startup-directory editors can verify category fit, pricing summary, official source links, and responsible-use context before sending traffic to Nayovi.
 - Added a reusable AI tool directory listing packet to outreach drafts for official form submissions that preserve source-of-truth links and avoid paid link placement.
