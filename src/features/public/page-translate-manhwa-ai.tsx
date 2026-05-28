@@ -1,6 +1,7 @@
 import {
   ArrowRightIcon,
   BadgeCheckIcon,
+  ClipboardCheckIcon,
   DownloadIcon,
   HandshakeIcon,
   KeyRoundIcon,
@@ -437,6 +438,24 @@ const reviewerPacketRows = [
     item: 'Responsible framing',
     detail:
       'State that Nayovi supports OCR and translation for owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
+const directoryReviewRows = [
+  {
+    item: 'Metadata review',
+    detail:
+      'Editors should verify the app name, Android APK source, package details, support route, and source-of-truth links before publishing a listing.',
+  },
+  {
+    item: 'Proof assets',
+    detail:
+      'The listing packet should include screenshots, the narrated demo, pricing context, and a review-code path so evaluators can test real translation flow.',
+  },
+  {
+    item: 'Qualified handoff',
+    detail:
+      'Directory traffic should land on Nayovi pages that explain free trial access, token plans, cancellation, and responsible-use limits before install.',
   },
 ] as const;
 
@@ -1137,6 +1156,48 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request listing assets
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Directory review"
+        title="Keep app-directory approval tied to buyer confidence"
+        description="The best directory submissions do more than publish an APK link. They give editors enough context to verify the app and send serious readers into the official trial and plan flow."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {directoryReviewRows.map((row) => (
+            <Card key={row.item} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.item}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ClipboardCheckIcon className="size-4" />
+                Approval should protect the subscription path
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A strong listing should make it clear why readers install from
+                the official source, how the free trial works, and when a
+                monthly token plan makes sense for repeat translation.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Request directory packet
             </a>
           </CardContent>
         </Card>

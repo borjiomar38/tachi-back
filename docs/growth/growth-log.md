@@ -1,5 +1,14 @@
 # Nayovi Growth Log
 
+## 2026-05-28
+
+- Autonomous cycle on `growth/autonomous-20260528T022008Z`: audited branch state, public SEO route coverage, `/translate-manhwa-ai`, sitemap metadata, and current growth trackers.
+- Added a directory-review section to `/translate-manhwa-ai` so app-directory editors can verify metadata, proof assets, official source links, pricing/support context, and qualified handoff before listing Nayovi.
+- Updated `/sitemap.xml` metadata for `/translate-manhwa-ai` after the content refresh.
+- Added FindUpApp as a draft directory prospect after current public verification showed a login-free submission page, but held outreach because the form expects official Google Play or App Store URLs rather than APK/direct-download listings.
+- Auto-approved and contacted Manga Translator through its public `support@mangatranslate.com` contact path after current public verification found a contact page for service inquiries and product feedback; sent a cautious Android-workflow feedback/partnership note with opt-out language.
+- Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
+
 ## 2026-05-27
 
 - Autonomous cycle on `growth/autonomous-20260527T201325Z`: processed inbound command `20260527T201227Z-33b57bb06876` and classified it as a LinkedIn network digest from a noreply address, not a direct partner, backlink, investor, pilot, or collaboration reply. No response was sent to LinkedIn and no owner action is required from that inbound item.
