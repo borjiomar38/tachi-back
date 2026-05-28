@@ -130,6 +130,27 @@ const revenueSignalCards = [
   },
 ] as const;
 
+const reviewerHandoffCards = [
+  {
+    icon: ShieldCheckIcon,
+    title: 'Verify the official path',
+    description:
+      'Reviewers and directories should cite the official APK, pricing, support, privacy, terms, and workflow pages before sending readers here.',
+  },
+  {
+    icon: KeyRoundIcon,
+    title: 'Use a trackable code',
+    description:
+      'Ask support for a dedicated redeem code when a review, affiliate test, or approved sample pilot needs activation evidence.',
+  },
+  {
+    icon: CoinsIcon,
+    title: 'Measure paid intent',
+    description:
+      'Treat repeat weekly translation, multiple approved samples, or group demand as the signal that monthly tokens are justified.',
+  },
+] as const;
+
 export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
@@ -296,6 +317,48 @@ export const PagePricing = (props: PagePricingProps) => {
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
             Check responsible use
+          </a>
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reviewer handoff"
+        title="Send qualified readers to pricing"
+        description="Reviews, directories, and partner pilots should route people here only after they can verify the official APK path, activation flow, responsible-use boundary, and reason to choose monthly tokens."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerHandoffCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <Card key={item.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/download"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Verify APK source
+              <ShieldCheckIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/guides/permission-safe-manga-translation-pilot"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Review pilot brief
           </a>
         </div>
       </PublicSection>

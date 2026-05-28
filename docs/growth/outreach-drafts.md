@@ -178,6 +178,31 @@ Nayovi does not host or distribute manga, manhwa, or manhua chapters. It support
 Submission note:
 If the form asks for a listing URL, use the official website links above rather than a mirror-first APK URL. If the form requires a paid placement, skip it unless the owner explicitly approves the spend.
 
+## Creator Platform Approved-Sample Pilot Follow-Up
+
+Use for auto-approved creator platforms after the daily cap resets and only when a public partnership/business contact path is verified. Do not ask for a backlink or imply Nayovi can process a platform's catalog without permission.
+
+Subject: Approved-sample Android OCR pilot for {{prospect}}
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found {{prospect}} while reviewing creator and publishing teams with manga, comic, webcomic, localization, or international collaboration context. I do not want to pitch Nayovi as a catalog translation tool or ask for a backlink. The useful question is narrower: would an approved-sample pilot be worth considering for a creator, publisher, or reviewer who controls the sample pages?
+
+Pilot brief:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Pricing and activation context:
+https://tachiyomiat.com/pricing
+
+The pilot would use a dedicated redeem code, approved sample scope, language pair, rights context, hosted OCR review, translation draft review, and private correction notes. Nayovi does not host or distribute chapters, and nothing from the pilot should be published unless the sample owner approves it.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Technical OCR Resource Maintainer Draft
 
 Use for GitHub OCR resource maintainers, Android developer newsletters, or localization editors only when the contact path explicitly welcomes useful resources. Lead with the neutral checklist and avoid asking for a product listing unless invited.

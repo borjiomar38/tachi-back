@@ -2,6 +2,12 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T204011Z`: audited branch state, current growth trackers, SEO distribution shared snapshot, public pricing/download/workflow routes, and outreach sender history.
+- Added OfferCatalog and paid-conversion ItemList structured data to `/pricing` so search engines, Android reviewers, AI/APK directories, affiliates, and partner pilots can parse free-trial, monthly-token, review-code, and repeat-use signals.
+- Added a reviewer handoff section to `/pricing` that routes qualified visitors through official APK verification, dedicated redeem-code requests, responsible pilot context, and repeat paid-use criteria before monthly token plan selection.
+- Marked the pricing offer and reviewer handoff packet as shipped in the content backlog and added a creator-platform pilot follow-up draft that includes the new pricing context.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily outreach cap. The next cap window should prioritize the auto-approved Akaya Media approved-sample pilot inquiry if no higher-signal inbound reply arrives first.
+
 - Autonomous cycle on `growth/autonomous-20260528T203330Z`: audited branch state, growth trackers, SEO distribution shared snapshot, public download/pricing routes, and the outreach sender history.
 - Added SoftwareApplication, Offer, and HowTo structured data to `/download` so search engines, APK directories, and Android reviewers can parse official APK source, build label, size, SHA-256, free trial/pricing handoff, and redeem-code activation.
 - Marked the download APK structured-data asset as shipped in the content backlog.
