@@ -11,8 +11,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | GitHub official Nayovi repo/profile | Technical trust, docs, release notes, linkable OCR/QA assets | configured_owned_repo | Keep official repo/profile truthful and current | README, demo links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned docs and technical assets | Keep owned docs synced with SEO/link assets. |
 | high | YouTube official channel | Demo video proof for reviewers, directories, and partners | setup_packet_prepared_owner_action_required | Create/connect official Nayovi channel, upload only approved-sample demo media, and authorize API only if automated metadata updates are wanted | Demo video, poster, avatar/banner, title, description, playlist names, canonical links, screenshot policy | SEO_AGENT_YOUTUBE_REFRESH_TOKEN | Upload/update official demo videos and descriptions after owner approval | Owner creates channel, approves first demo title/description below, and connects OAuth only if automated metadata updates are wanted. |
 | high | LinkedIn company/founder profile | Founder/company trust, partner/investor visibility | setup_packet_prepared_owner_action_required | Create/connect official company page or founder-owned page | Logo, banner, company bio, website links | SEO_AGENT_LINKEDIN_ACCESS_TOKEN, SEO_AGENT_LINKEDIN_ORGANIZATION_ID | Publish official build-in-public and partnership posts | Owner creates/connects page and approves first post queue; agent remains draft-only until API access exists. |
-| medium | Product Hunt maker/company | Launch credibility and early product feedback | setup_packet_prepared_owner_action_required | Create/connect official maker/company account and accept launch terms manually | Logo, tagline, demo video, product screenshots, pricing/support links, maker comment | SEO_AGENT_PRODUCTHUNT_TOKEN | Prepare launch page and authorized maker comments | Owner chooses launch timing, creates/connects maker profile, and approves the launch packet below; no upvote requests or automated comments. |
-| medium | DEV/Medium technical publishing | Technical authority for OCR, merge QA, hosted Android workflow | needs_owner_setup | Connect official publication/profile account | Canonical article drafts, profile bio, logo | SEO_AGENT_DEVTO_API_KEY, SEO_AGENT_MEDIUM_INTEGRATION_TOKEN | Publish canonical technical articles where allowed | Prepare public-safe OCR QA article packet. |
+| medium | Product Hunt maker/company | Launch credibility and early product feedback | setup_packet_prepared_owner_action_required_profile_fields_synced | Create/connect official maker/company account and accept launch terms manually | Logo, tagline, demo video, product screenshots, pricing/support links, maker comment | SEO_AGENT_PRODUCTHUNT_TOKEN | Prepare launch page and authorized maker comments | Owner chooses launch timing, creates/connects maker profile, and approves the launch packet below; no upvote requests or automated comments. |
+| medium | DEV/Medium technical publishing | Technical authority for OCR, merge QA, hosted Android workflow | setup_packet_prepared_owner_action_required_profile_fields_synced | Connect official publication/profile account | Canonical article drafts, profile bio, logo | SEO_AGENT_DEVTO_API_KEY, SEO_AGENT_MEDIUM_INTEGRATION_TOKEN | Publish canonical technical articles where allowed | Owner creates/connects official profiles and approves canonical/republication policy before any syndication. |
 | medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
 | medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
 | medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_prepared | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Owner reviews directory quality filter before any form submission. |
@@ -719,3 +719,63 @@ Agent capability after connection:
 
 Next action:
 - Owner decides whether to use a human app-testing service before the next Android press or directory push, and confirms which approved sample pages may be used.
+
+### Product Hunt Maker / Company Packet
+
+Status: OWNER_ACTION_REQUIRED for maker/company account creation, launch timing, terms acceptance, and any manual launch submission.
+
+Profile fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR translation workflow for manga and manhwa`
+- Website: `https://tachiyomiat.com/download`
+- Brand URL: `https://nayovi.com`
+- Short description: `Nayovi is an Android APK with hosted OCR, AI translation, redeem-code activation, free trial access, token plans, and support for permission-safe manga, manhwa, and manhua reader workflows.`
+- Maker comment source: `docs/seo-distribution/platform-drafts.md`
+
+Required assets:
+- Logo/avatar and gallery screenshots from approved or neutral sample material.
+- Short demo video or GIF showing install, activation, OCR progress, and translated output without unauthorized chapter pages.
+- Pricing, support, privacy, terms, and responsible workflow links.
+- Owner-approved launch date and public metrics. If metrics are not approved, use qualitative progress only.
+
+Credential reference:
+- `SEO_AGENT_PRODUCTHUNT_TOKEN` only if the owner enables an official API workflow. Store actual token values only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- Prepare owner-approved launch copy, image alt text, maker comment, and reply suggestions. No account creation, launch scheduling, upvote requests, automated comments, or artificial engagement.
+
+Next action:
+- Owner creates/connects the official maker profile, confirms launch timing, approves screenshots/demo assets, and decides whether API publishing is desired or manual launch is preferred.
+
+### DEV / Medium Technical Publishing Packet
+
+Status: OWNER_ACTION_REQUIRED for official profile creation, canonical URL policy, publication membership, and API token connection.
+
+Profile fields:
+- Display name: `Nayovi`
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. Permission-safe samples only; no chapter hosting.`
+- Website: `https://nayovi.com`
+- Primary technical link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Product link: `https://tachiyomiat.com/download`
+
+Canonical publishing rules:
+- Owned pages stay canonical unless the owner explicitly chooses otherwise.
+- DEV posts should use `canonical_url` pointing to the owned guide.
+- Medium posts should include a canonical link or publication note when the platform allows it.
+- Do not publish duplicate product copy; syndicate only the technical OCR QA article or a shorter resource note.
+
+Required assets:
+- Official logo/avatar.
+- Markdown article draft from `docs/seo-distribution/platform-drafts.md`.
+- Approved screenshots only if they use owned, public-domain, official-sample, or permission-approved material.
+- Public disclosure line: `Nayovi maintains this checklist as part of its Android hosted OCR workflow work.`
+
+Credential references:
+- `SEO_AGENT_DEVTO_API_KEY`
+- `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`
+
+Agent capability after connection:
+- Prepare drafts, update front matter, and publish only owner-approved canonical technical articles through official API workflows. No automated comments, claps, follows, or cross-post spam.
+
+Next action:
+- Owner creates/connects official DEV and/or Medium profiles, approves the canonical URL policy, and confirms whether the first article should be published manually or through a configured API token.

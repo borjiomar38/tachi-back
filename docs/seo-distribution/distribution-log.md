@@ -566,3 +566,19 @@ Next actions:
 - Added the reviewer handoff block, owned GitHub APK review packet, and WEBTOON translation-context note to `content-calendar.md` and `link-assets.md`.
 - Drafted exact Android reviewer APK handoff note, quality-filtered AI directory listing note, and WEBTOON Translate context note in `platform-drafts.md`.
 - Next actions: owner confirms package name, signing fingerprint, developer verification status, and screenshot assets; owner chooses whether to mirror the checklist into owned GitHub docs; keep Solaire/TheAIFest submissions blocked until current forms and terms pass the quality filter.
+
+## 2026-05-28 Cycle 14
+
+- Verified branch `seo/distribution-20260528T222948Z`; account registry still permits owned GitHub/docs only, so no external posting, account creation, login, form submission, APK upload, or CAPTCHA/terms workflow was attempted.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Product Hunt maker/company packet: profile fields, tagline, launch assets, credential reference, launch timing guardrails, and no-upvote/no-automated-comment rules.
+  - DEV/Medium technical publishing packet: official profile fields, canonical URL policy, approved screenshot boundaries, disclosure line, and API credential references.
+- Added owned trust asset `docs/seo-distribution/directory-listing-quality-filter.md` so future AI-tool, APK, SaaS, startup, and app-directory work can reject paid-link, reciprocal, fake-review, mirror-first, and misleading free-tool submissions before outreach.
+- Researched rotated authority opportunities from different categories:
+  - Google Play developer verification help: official Android trust context for package ownership and identity verification, but owner-confirmed facts are required before public claims.
+  - Best AI Agent Tools free directory: useful exclusion example because free-only/no-trial standards conflict with Nayovi's free-trial plus paid-token model unless a proper category exists.
+  - MultiLingual editorial submissions: high-fit localization editorial surface for a non-promotional OCR QA and human-review topic query.
+  - r/indiehackers AI-directory discussion: current community context supports the quality-over-volume directory filter; no Reddit participation without an authorized account and rule review.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new filter, setup status, opportunities, and a free-only directory exclusion draft.
+- Next actions: owner creates/connects Product Hunt and DEV/Medium profiles if desired, confirms launch/canonical policies, supplies approved screenshots and package/signing facts, and uses the directory quality filter before any ToolIndex/NavTools/TheAIFest-style submission.
