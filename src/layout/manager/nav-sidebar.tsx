@@ -10,6 +10,7 @@ import {
   LayoutDashboardIcon,
   MapPinnedIcon,
   PanelLeftIcon,
+  Share2Icon,
   ShieldAlertIcon,
   SmartphoneIcon,
   UsersIcon,
@@ -220,6 +221,21 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                               <span>
                                 <FileSearchIcon />
                                 <span>{t('layout:nav.translationQa')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link to="/manager/seo-distribution">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <Share2Icon />
+                                <span>{t('layout:nav.seoDistribution')}</span>
                               </span>
                             }
                           />

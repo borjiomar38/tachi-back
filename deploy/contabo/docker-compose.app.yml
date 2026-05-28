@@ -28,6 +28,9 @@ services:
       NODE_ENV: production
       HOST: 0.0.0.0
       PORT: 3000
+      SEO_DISTRIBUTION_AGENT_STATE_DIR: /var/lib/tachi-seo-distribution-agent
+    volumes:
+      - ${TACHI_SEO_AGENT_STATE_DIR:-/var/lib/tachi-seo-distribution-agent}:/var/lib/tachi-seo-distribution-agent:ro
     depends_on:
       postgres:
         condition: service_healthy

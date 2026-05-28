@@ -40,6 +40,7 @@ import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
 import { Route as ManagerTranslationQaIndexRouteImport } from './routes/manager/translation-qa/index'
+import { Route as ManagerSeoDistributionIndexRouteImport } from './routes/manager/seo-distribution/index'
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
@@ -257,6 +258,12 @@ const ManagerTranslationQaIndexRoute =
   ManagerTranslationQaIndexRouteImport.update({
     id: '/translation-qa/',
     path: '/translation-qa/',
+    getParentRoute: () => ManagerRouteRoute,
+  } as any)
+const ManagerSeoDistributionIndexRoute =
+  ManagerSeoDistributionIndexRouteImport.update({
+    id: '/seo-distribution/',
+    path: '/seo-distribution/',
     getParentRoute: () => ManagerRouteRoute,
   } as any)
 const ManagerProvidersIndexRoute = ManagerProvidersIndexRouteImport.update({
@@ -631,6 +638,7 @@ export interface FileRoutesByFullPath {
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
+  '/manager/seo-distribution/': typeof ManagerSeoDistributionIndexRoute
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
@@ -720,6 +728,7 @@ export interface FileRoutesByTo {
   '/manager/jobs': typeof ManagerJobsIndexRoute
   '/manager/licenses': typeof ManagerLicensesIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
+  '/manager/seo-distribution': typeof ManagerSeoDistributionIndexRoute
   '/manager/translation-qa': typeof ManagerTranslationQaIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/versions': typeof ManagerVersionsIndexRoute
@@ -813,6 +822,7 @@ export interface FileRoutesById {
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
+  '/manager/seo-distribution/': typeof ManagerSeoDistributionIndexRoute
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
@@ -907,6 +917,7 @@ export interface FileRouteTypes {
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
+    | '/manager/seo-distribution/'
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
@@ -996,6 +1007,7 @@ export interface FileRouteTypes {
     | '/manager/jobs'
     | '/manager/licenses'
     | '/manager/providers'
+    | '/manager/seo-distribution'
     | '/manager/translation-qa'
     | '/manager/users'
     | '/manager/versions'
@@ -1088,6 +1100,7 @@ export interface FileRouteTypes {
     | '/manager/jobs/'
     | '/manager/licenses/'
     | '/manager/providers/'
+    | '/manager/seo-distribution/'
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
@@ -1399,6 +1412,13 @@ declare module '@tanstack/react-router' {
       path: '/translation-qa'
       fullPath: '/manager/translation-qa/'
       preLoaderRoute: typeof ManagerTranslationQaIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/seo-distribution/': {
+      id: '/manager/seo-distribution/'
+      path: '/seo-distribution'
+      fullPath: '/manager/seo-distribution/'
+      preLoaderRoute: typeof ManagerSeoDistributionIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
     '/manager/providers/': {
@@ -1858,6 +1878,7 @@ interface ManagerRouteRouteChildren {
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
+  ManagerSeoDistributionIndexRoute: typeof ManagerSeoDistributionIndexRoute
   ManagerTranslationQaIndexRoute: typeof ManagerTranslationQaIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
   ManagerVersionsIndexRoute: typeof ManagerVersionsIndexRoute
@@ -1884,6 +1905,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
+  ManagerSeoDistributionIndexRoute: ManagerSeoDistributionIndexRoute,
   ManagerTranslationQaIndexRoute: ManagerTranslationQaIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
   ManagerVersionsIndexRoute: ManagerVersionsIndexRoute,

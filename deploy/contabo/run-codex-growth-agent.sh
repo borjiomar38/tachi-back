@@ -74,6 +74,7 @@ Allowed work:
 - Maintain docs/growth/backlink-prospects.csv with relevant, white-hat backlink and partnership opportunities.
 - Maintain docs/growth/outreach-drafts.md with concise personalized drafts for agencies, blogs, communities, potential affiliates, and investors.
 - Maintain docs/growth/growth-log.md with cycle results, commits, and next actions.
+- Coordinate with the SEO distribution agent by reading its shared state and drafts when available. Use social/GitHub/Reddit/LinkedIn trust assets to make email outreach more credible instead of sending isolated cold emails.
 - Work only on the branch named ${branch}, commit focused changes there, and push that branch when GROWTH_AGENT_GIT_PUSH_ENABLED=true.
 - When autonomous outreach is enabled and email mode is send, choose high-fit public business contacts or official forms, send individualized compliant outreach, and log recipients, rationale, and follow-up state.
 - When autonomous prospect approval is enabled, use human business judgment to approve relevant prospects yourself. You have the app context: Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers, with free trial, redeem-code activation, monthly token plans, and permission-safe positioning.
@@ -102,6 +103,7 @@ Operational preferences:
 - Autonomous mode: ${GROWTH_AGENT_AUTONOMOUS_MODE:-false}
 - Autonomous outreach enabled: ${GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED:-false}
 - Autonomous prospect approval enabled: ${GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED:-false}
+- SEO distribution shared state: ${GROWTH_AGENT_SEO_DISTRIBUTION_STATE_DIR:-/var/lib/tachi-seo-distribution-agent}
 
 Cycle checklist:
 1. Check git status and current branch.
@@ -113,9 +115,11 @@ Cycle checklist:
 7. Push ${branch} only if enabled. Do not push ${base_branch}; the runner handles production publication.
 8. If outreach is enabled, autonomously approve and contact the highest-fit public prospects that are ready now; otherwise record why they are not ready.
 9. If there is a reply, meeting request, investor/collaboration signal, or owner action needed, make that prominent in the final report.
-10. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
+10. Reuse current social/backlink drafts and linkable assets where relevant, and avoid duplicating work already queued by the SEO distribution agent.
+11. Write a concise final report with files changed, validation result, outreach sent or drafted, risks, and next revenue-focused actions.
 PROMPT
 
+  append_seo_distribution_context "${prompt_file}"
   append_inbound_contexts "${prompt_file}" "${inbound_list_file}"
 
   log "Starting Codex growth cycle ${cycle_id} in ${repo_dir}"
@@ -272,6 +276,45 @@ append_inbound_contexts() {
       cat "${context_file}"
       printf '\n--- END INBOUND CONTEXT: %s ---\n' "${context_file}"
     done <"${inbound_list_file}"
+  } >>"${prompt_file}"
+}
+
+append_seo_distribution_context() {
+  local prompt_file="$1"
+  local seo_state_dir docs_snapshot accounts status
+
+  seo_state_dir="${GROWTH_AGENT_SEO_DISTRIBUTION_STATE_DIR:-/var/lib/tachi-seo-distribution-agent}"
+  status="${seo_state_dir}/status.json"
+  accounts="${seo_state_dir}/accounts.json"
+  docs_snapshot="${seo_state_dir}/docs-snapshot.json"
+
+  if [[ ! -s "${status}" && ! -s "${accounts}" && ! -s "${docs_snapshot}" ]]; then
+    return 0
+  fi
+
+  {
+    printf '\n\nSEO/social distribution agent shared context:\n'
+    printf -- '- Use this context to make outreach more credible and avoid duplicate work.\n'
+    printf -- '- Do not print or request secrets. Account registry is non-secret and only shows configured capability.\n'
+    printf -- '- If social accounts are not configured, cite drafts/assets only; do not claim posts were published.\n\n'
+
+    if [[ -s "${status}" ]]; then
+      printf '\n--- BEGIN SEO DISTRIBUTION STATUS ---\n'
+      head -c 6000 "${status}"
+      printf '\n--- END SEO DISTRIBUTION STATUS ---\n'
+    fi
+
+    if [[ -s "${accounts}" ]]; then
+      printf '\n--- BEGIN SEO DISTRIBUTION ACCOUNT REGISTRY ---\n'
+      head -c 6000 "${accounts}"
+      printf '\n--- END SEO DISTRIBUTION ACCOUNT REGISTRY ---\n'
+    fi
+
+    if [[ -s "${docs_snapshot}" ]]; then
+      printf '\n--- BEGIN SEO DISTRIBUTION DOC SNAPSHOT ---\n'
+      head -c 12000 "${docs_snapshot}"
+      printf '\n--- END SEO DISTRIBUTION DOC SNAPSHOT ---\n'
+    fi
   } >>"${prompt_file}"
 }
 
@@ -486,7 +529,7 @@ prepare_git_workspace() {
 run_loop() {
   local interval
 
-  interval="${GROWTH_AGENT_INTERVAL_SECONDS:-21600}"
+  interval="${GROWTH_AGENT_INTERVAL_SECONDS:-60}"
   while true; do
     if ! run_codex_cycle; then
       log "Growth cycle failed; continuing after backoff."

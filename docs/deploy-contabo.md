@@ -270,6 +270,77 @@ After changing the env file:
 sudo systemctl restart tachi-growth-mail-bridge
 ```
 
+## SEO Distribution Agent
+
+The SEO distribution agent is a separate parallel Codex agent focused on
+trust-building surfaces that make outreach less isolated: LinkedIn post drafts,
+Reddit/community drafts, GitHub-ready docs, linkable assets, app-directory
+angles, and owned SEO content. It runs without a GUI on Contabo and uses Codex
+web search plus Git. It does not create third-party accounts or bypass platform
+auth systems.
+
+Install from the deployed source tree:
+
+```bash
+cd /opt/tachi-back
+sudo TACHI_DEPLOY_USER=borjiomar38 deploy/contabo/install-seo-distribution-agent.sh --enable
+```
+
+Important defaults:
+
+```env
+SEO_AGENT_RUN_FOREVER=true
+SEO_AGENT_INTERVAL_SECONDS=60
+SEO_AGENT_CODEX_MODEL=gpt-5.5
+SEO_AGENT_CODEX_REASONING_EFFORT=low
+SEO_AGENT_CODEX_SANDBOX=danger-full-access
+SEO_AGENT_GIT_PUSH_ENABLED=true
+SEO_AGENT_AUTO_MERGE_TO_MASTER=false
+SEO_AGENT_EXTERNAL_POSTING_MODE=draft
+SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED=false
+```
+
+The agent writes live status and reports under
+`/var/lib/tachi-seo-distribution-agent`. The production app mounts that
+directory read-only so the manager page at `/manager/seo-distribution` can show
+agent status, current branch, recent reports, configured account capabilities,
+content backlog, platform drafts, and linkable assets.
+
+The growth agent reads the SEO distribution state from
+`/var/lib/tachi-seo-distribution-agent` before each cycle. This lets the email
+outreach agent reuse social/GitHub/Reddit/LinkedIn trust assets instead of
+working in isolation. The SEO distribution agent also reads the growth docs
+inside the repo so its platform drafts support the active backlink and
+partnership pipeline.
+
+External social posting is draft-only by default. To post on LinkedIn, Reddit,
+GitHub, or another platform, configure an official account/API workflow for that
+platform first and only enable actions that respect the platform and community
+rules. The agent must not create fake accounts, solve CAPTCHAs, mass-comment,
+buy backlinks, or post link drops.
+
+Configured account capability is reported through a non-secret
+`accounts.json`. Tokens stay in `/opt/tachi-back/.env.seo-distribution-agent`
+or another secret store and must never be committed:
+
+```env
+SEO_AGENT_LINKEDIN_ACCESS_TOKEN=
+SEO_AGENT_LINKEDIN_ORGANIZATION_ID=
+SEO_AGENT_REDDIT_CLIENT_ID=
+SEO_AGENT_REDDIT_CLIENT_SECRET=
+SEO_AGENT_REDDIT_REFRESH_TOKEN=
+SEO_AGENT_GITHUB_TOKEN=
+```
+
+Operational commands:
+
+```bash
+sudo systemctl status tachi-seo-distribution-agent --no-pager
+sudo journalctl -u tachi-seo-distribution-agent -f
+sudo systemctl restart tachi-seo-distribution-agent
+sudo touch /var/lib/tachi-seo-distribution-agent/run-now
+```
+
 ## Translation QA Agent
 
 The Contabo host can run a second, separate Codex agent for translation quality

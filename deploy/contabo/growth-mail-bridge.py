@@ -211,7 +211,7 @@ def load_config(env_file: pathlib.Path) -> BridgeConfig:
     notify_env_file=pathlib.Path(
       values.get('GROWTH_AGENT_NOTIFY_ENV_FILE', '/opt/tachi-back/.env.production')
     ),
-    interval_seconds=max(60, int(values.get('GROWTH_AGENT_INTERVAL_SECONDS', '21600'))),
+    interval_seconds=max(60, int(values.get('GROWTH_AGENT_INTERVAL_SECONDS', '60'))),
     max_video_frames=max(1, int(values.get('GROWTH_AGENT_INBOUND_MAX_VIDEO_FRAMES', '8'))),
     max_video_audio_seconds=max(
       30, int(values.get('GROWTH_AGENT_INBOUND_MAX_VIDEO_AUDIO_SECONDS', '600'))
