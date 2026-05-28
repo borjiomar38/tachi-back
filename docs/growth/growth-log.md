@@ -2,6 +2,13 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T194809Z`: audited branch state, SEO distribution shared snapshot, current growth trackers, outreach cap state, and the newly shipped public OCR checklist route.
+- Added ItemList and HowTo structured data to `/guides/comic-ocr-translation-checklist` so search engines, maintainers, newsletter editors, and reviewers can parse the neutral checklist steps as a citation-ready resource.
+- Added a GitHub resource-list maintainer question draft that asks permission before suggesting the neutral checklist and offers a Markdown-only entry instead of opening with a product link.
+- Marked the structured checklist metadata asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap. Next cap window should prioritize maintainer/newsletter fit for the checklist only after current rules/contact paths are rechecked.
+- Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
+
 - Autonomous cycle on `growth/autonomous-20260528T192152Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared context, and the current OCR/resource-list outreach backlog.
 - Added a technical OCR evaluation packet to `/guides/translation-support-workflow` covering sample manifest, error counts, before/after evidence, and go/no-go review criteria so GitHub OCR maintainers, newsletters, and localization operators can evaluate a useful checklist before any product mention.
 - Added a reusable technical OCR resource maintainer draft that leads with the neutral checklist and offers a Markdown-only version instead of asking for a product listing.
