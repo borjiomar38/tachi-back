@@ -2,6 +2,39 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T23:45Z Cycle
+
+Branch: `seo/distribution-20260528T213940Z`
+
+Account setup progress:
+- Advanced YouTube official channel setup from generic owner setup to a prepared owner-action packet with channel copy, upload metadata, pinned comment, demo asset requirements, and `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` guardrails.
+- Advanced LinkedIn official company/founder setup with company fields, canonical links, first 3 post drafts, public-metric approval requirement, and `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` / `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` guardrails.
+
+Owned content changed:
+- Created `docs/nayovi-apk-review-packet.md` as an owned GitHub-ready APK review packet covering official source links, reviewer checks, safe test scope, listing copy, metadata confirmation gates, and screenshot/publication boundaries.
+- Updated `content-calendar.md`, `link-assets.md`, and `account-setup.md` to track the new owned reviewer packet as a shipped citation asset.
+
+Authority discovery:
+- Added Babel Gomme as a high-fit manga/webtoon localization-service opportunity after current public search showed manga, manhwa, and webtoon translation, correction, lettering/layout, multilingual production support, and a public contact path.
+- Added AppTester.co as a medium-fit app-testing opportunity after current public search showed Android APK/IPA uploads, human testing, bug reports, screen recordings, and app health checks.
+- Added SpotFreeAI as a watch-only AI-directory opportunity after current public search showed curated free AI tools, free/freemium/trial labels, and a submit-tool path.
+
+Drafts prepared:
+- Added a French no-link Babel Gomme feedback note around approved-sample OCR QA, human review, onomatopoeia, reading order, and no replacement pitch.
+- Added an AppTester.co health-check scope draft that keeps APK upload, tester campaign, and paid testing owner-gated.
+- Added a SpotFreeAI eligibility note that asks about free-trial/freemium fit before any listing submission.
+
+Outreach tracker:
+- Added Babel Gomme, AppTester.co, and SpotFreeAI to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, identity verification, APK upload, paid listing, directory submission, Reddit comment, LinkedIn post, or YouTube upload was performed. Registry still permits only owned GitHub/docs work.
+
+Next actions:
+- Owner creates/connects YouTube and LinkedIn only if those official surfaces should become citable/publishable.
+- Owner confirms package name, SHA-256, signing-certificate fingerprint, Android developer verification status, and approved screenshots for the APK review packet.
+- Owner-review the Babel Gomme and AppTester drafts before any contact or app-sharing action.
+
 ## 2026-05-28T21:55Z Cycle
 
 Branch: `seo/distribution-20260528T212220Z`

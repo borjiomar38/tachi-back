@@ -69,6 +69,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android reviewers/directories | APK review handoff | Source-of-truth APK citation packet for 2026 Android verification context | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use only with public editorial/contact paths; do not claim verified status until owner confirms package/signing details. |
 | draft | AI directory | Solaire Tools / TheAIFest | Quality-filtered AI OCR listing packet | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official submit path only; skip if pricing/support/source links cannot be represented accurately. |
 | draft | Creator platform | WEBTOON Translate context | Approved-sample OCR checklist feedback, no catalog translation | None by default | OWNER_REVIEW_REQUIRED: official contact path only; no link unless requested and no product-install pressure. |
+| draft | Localization service | Babel Gomme | Approved-sample manga/webtoon OCR QA checklist feedback | None by default | OWNER_REVIEW_REQUIRED: public contact only; no replacement pitch, no backlink ask, and link only if requested. |
+| draft | App testing | AppTester.co health check | Safe Android APK test packet for install, activation, OCR, and support clarity | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, or account creation until owner approves scope. |
+| watch | AI directory | SpotFreeAI | Free-trial AI OCR listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify trial-only/freemium rules and skip if pricing/source links cannot be represented accurately. |
 
 ## Draft Bodies
 
@@ -226,6 +229,84 @@ The scope would be approved samples only: creator-owned material, public-domain 
 The public workflow guide covers the current review checklist: OCR block order, merged speech bubbles, glossary consistency, source-of-truth install links, and takedown-ready handling.
 
 If this is relevant, I can send the guide, screenshots, and demo context for feedback. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Babel Gomme localization feedback note
+
+Status: draft
+Target: Babel Gomme public contact path
+Audience: manga, manhwa, and webtoon localization operators
+Rules risk: medium; use no-link-first and do not pitch Nayovi as a replacement for professional translation, correction, or lettering work.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Question retour QA OCR manga/webtoon sur echantillons approuves
+
+Message:
+
+Bonjour l'equipe Babel Gomme,
+
+Je travaille sur Nayovi, un workflow Android d'OCR et de traduction IA pour des pages manga, manhwa et manhua.
+
+Je ne vous contacte pas pour remplacer un travail de traduction, correction ou lettrage professionnel, ni pour demander un backlink. La question utile est plus limitee: est-ce qu'une checklist QA sur l'OCR de pages approuvees pourrait etre interessante pour des equipes qui travaillent deja sur manga/webtoon?
+
+Le perimetre est volontairement strict: contenus possedes par l'utilisateur, domaine public, echantillons officiels, ou pages explicitement autorisees. Nayovi n'heberge pas et ne distribue pas de chapitres.
+
+Les points de controle portent sur l'ordre de lecture, les bulles manquees, les blocs OCR fusionnes, les onomatopees, la coherence des noms/termes, la relecture humaine et la decision de ne pas partager publiquement si le droit ou la qualite ne sont pas clairs.
+
+Si ce sujet vous interesse, je peux envoyer la courte checklist pour avis. Sinon aucun souci, je ne relancerai pas.
+
+Cordialement,
+Equipe Nayovi
+
+### AppTester.co health-check packet
+
+Status: draft
+Target: AppTester.co or similar human app-testing portal
+Audience: mobile QA testers, Android reviewers, investor diligence
+Rules risk: medium; no APK upload, account creation, tester campaign, or paid testing decision without owner approval.
+No-link variant: summarize the packet and send the link only if requested.
+Link variant after owner review: docs/nayovi-apk-review-packet.md
+
+Subject:
+Nayovi Android APK health-check scope before reviewer outreach
+
+Message:
+
+Hi AppTester.co team,
+
+I am preparing a safe Android test scope for Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+Before any APK upload or tester campaign, I want to confirm the right scope. The goal would be to test install confidence, redeem-code activation, support clarity, OCR progress, language choice, and translation output using only owned, public-domain, official-sample, or permission-approved material.
+
+Nayovi does not host or distribute chapters. Screenshots or recordings should avoid copyrighted chapter pages unless explicit permission exists, and any public test report would need owner approval.
+
+The review packet defines the source links, metadata fields, and safe test boundaries. If this fits your health-check workflow, I can provide the official packet, APK metadata, and an owner-approved test plan.
+
+Best,
+Nayovi team
+
+### SpotFreeAI listing eligibility note
+
+Status: watch
+Target: SpotFreeAI submit path, only after rules review
+Audience: AI tools directory editor
+Rules risk: medium; current fit depends on whether free-trial or freemium tools are accepted without misleading users.
+No-link variant: ask eligibility before sending a product listing.
+Link variant after owner review: https://tachiyomiat.com/translate-manhwa-ai
+
+Eligibility question:
+
+Hi SpotFreeAI team,
+
+I am checking whether Nayovi would fit before submitting anything.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It has official APK access, free trial support, redeem-code activation, monthly token plans, support, and a responsible-use boundary: it does not host or distribute chapters and should be used with owned, public-domain, official-sample, or permission-approved content.
+
+Does SpotFreeAI accept Android AI tools that have a free trial plus paid token plans if the pricing is clearly labeled as trial/freemium rather than fully free? If not, I will skip submission rather than force a poor-fit listing.
 
 Best,
 Nayovi team
