@@ -90,3 +90,17 @@ This file is maintained by the SEO distribution agent.
 - Added research-backed OCR QA and AppHunt review packet rows to `link-assets.md`.
 - Drafted exact AppHunt review packet and research-backed OCR checklist pitch in `platform-drafts.md`.
 - Next actions: prepare the neutral markdown checklist, gather screenshot/package metadata for Android review submissions, and keep AppBrain blocked until eligibility and budget are owner-confirmed.
+
+## 2026-05-28 Cycle 7
+
+- Verified branch `seo/distribution-20260528T190934Z`; external posting remains draft-only for LinkedIn, Reddit, directories, newsletters, forums, and launch communities. Owned GitHub/docs remain the only configured owned channel.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding a neutral markdown-style checklist section for maintainers, newsletter editors, moderators, and localization communities.
+- Researched rotated authority opportunities:
+  - Android Weekly: Android/Kotlin developer newsletter that publicly invites Android development submissions; fit is a technical checklist pitch, not consumer app promotion.
+  - r/androidapps self-promotion megathread: current public threads direct app promotion into recurring megathreads; any Nayovi mention must be authorized-account, current-rules reviewed, and preferably no-link.
+  - OpenSourceAlternative.to: watch-only because the directory is open-source oriented and Nayovi's hosted APK is not a fit unless a genuine public companion repo exists.
+- Added Android Weekly, r/androidapps, and OpenSourceAlternative.to rows to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added neutral comic OCR checklist and Android Weekly pitch assets to `link-assets.md` and `content-calendar.md`.
+- Drafted exact Android Weekly pitch, r/androidapps megathread feedback comment, and open-source-directory guardrail note in `platform-drafts.md`.
+- Next actions: mirror the neutral checklist into an owned GitHub markdown doc, gather screenshots/package metadata, owner-review Android Weekly and Reddit drafts, and keep OpenSourceAlternative.to blocked until a real open-source asset exists.
