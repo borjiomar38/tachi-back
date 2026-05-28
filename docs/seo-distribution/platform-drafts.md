@@ -24,6 +24,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Hacker News | Show HN | Android APK for hosted OCR translation in manga/manhwa workflows | https://tachiyomiat.com/guides/translation-support-workflow | AUTHORIZED_ACCOUNT_REQUIRED: founder-owned manual post only; no generated comments or vote requests. |
 | watch | Stack Exchange | Anime & Manga Stack Exchange | Permission-safe OCR workflow answer without product link | None by default | HIGH_RISK: overt self-promotion is discouraged; disclose affiliation if Nayovi is mentioned. |
 | draft | Newsletter | TLDR AI or similar AI newsletter tip | OCR block QA checklist for image-heavy translation workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: submit only through official editorial/contact path after screenshots are ready. |
+| draft | Android review | AppHunt | Official Android APK review packet for hosted OCR translation | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit path only; wait for screenshots, package metadata, and review-code readiness. |
+| draft | Technical newsletter/GitHub | Research-backed OCR checklist | Manga OCR QA checks before translation | https://tachiyomiat.com/guides/translation-support-workflow | Use current Manga109-v2026 research as context only; do not imply academic endorsement. |
 
 ## Draft Bodies
 
@@ -184,6 +186,48 @@ If this is relevant, I can send the guide, screenshots, and demo context for fee
 
 Best,
 Nayovi team
+
+### AppHunt Android review packet
+
+Status: draft
+Target: AppHunt Android app review submission
+Audience: Android app discovery readers and reviewers
+Rules risk: medium; use the official submission path only and avoid promising incentives, rankings, or paid link placement.
+No-link variant: hold until screenshots/package metadata are ready.
+Link variant: https://tachiyomiat.com/download
+
+App name:
+Nayovi
+
+Short review pitch:
+Nayovi is an Android APK for hosted OCR and AI translation in manga, manhwa, and manhua reader workflows. The useful review angle is not a generic AI translator claim: it is the Android setup, redeem-code activation, free trial access, hosted OCR, monthly token plans, support, and responsible-use boundary in one official workflow.
+
+Submission note:
+Please use the official Nayovi download page as the source of truth for APK access, pricing, support, privacy, terms, and responsible-use context. Nayovi does not host or distribute chapters. It supports OCR and translation for owned material, public-domain works, official samples, or content the reader has permission to process.
+
+Assets to attach after owner review:
+- Android install and activation screenshots
+- Translation progress and final output screenshots
+- Package metadata and APK signature notes
+- Narrated demo link
+- Reviewer redeem code request path
+
+### Research-backed OCR checklist pitch
+
+Status: draft
+Target: technical newsletters, GitHub maintainer questions, and localization editors
+Audience: OCR developers, localization operators, technical founders, and Android reviewers
+Rules risk: low on owned pages; medium on external communities if the product link appears promotional.
+No-link variant: share the checklist bullets only and offer the owned guide if requested.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Pitch:
+
+I am maintaining a practical manga/comic OCR QA checklist focused on failure modes that show up before translation quality can be judged: missed text regions, under-segmented speech balloons, transcription drift, reading-order mistakes, and glossary inconsistency.
+
+The checklist is informed by current manga-understanding research and by Android-hosted OCR workflow testing. It is intentionally workflow-first: confirm permission, compare detected text against the full page, review block order/grouping, keep the original OCR text visible for correction, and only then evaluate the translated output.
+
+Would a neutral markdown version of this checklist be useful for your readers or resource list? I can send it without product-first language.
 
 ### BetaList startup listing draft
 

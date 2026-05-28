@@ -76,3 +76,17 @@ This file is maintained by the SEO distribution agent.
 - Added community submission readiness, BetaList listing packet, and Hacker News Show HN packet to `link-assets.md`.
 - Drafted exact BetaList listing copy, Show HN title/founder comment, Stack Exchange no-link answer guardrail, and TLDR AI newsletter tip in `platform-drafts.md`.
 - Next actions: prepare a screenshot set, owner-review launch timing and account ownership for BetaList/HN, keep Stack Exchange linkless unless a directly relevant question and disclosure-safe context appears, and use TLDR AI only as a technical resource pitch.
+
+## 2026-05-28 Cycle 6
+
+- Verified branch `seo/distribution-20260528T185953Z`; external platform accounts remain draft-only except owned GitHub/docs, and Git push is enabled.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding a research-backed QA section for missing OCR regions, under-segmented balloons, transcription drift, and reviewer correction before translation.
+- Researched rotated authority opportunities:
+  - AppBrain featured product path: high Android discovery value, but hold until store-listing eligibility or direct APK acceptance is confirmed.
+  - AppHunt Android review submission: medium-fit Android review surface for a source-of-truth APK review packet after screenshots/package metadata are ready.
+  - Manga109-v2026 research paper: high-value technical citation for OCR QA drafts because it documents manga OCR annotation problems relevant to Nayovi's checklist.
+- Added AppBrain, AppHunt, and Manga109-v2026 rows to `authority-opportunities.md`.
+- Added research-backed OCR QA and AppHunt review packet rows to `link-assets.md`.
+- Drafted exact AppHunt review packet and research-backed OCR checklist pitch in `platform-drafts.md`.
+- Next actions: prepare the neutral markdown checklist, gather screenshot/package metadata for Android review submissions, and keep AppBrain blocked until eligibility and budget are owner-confirmed.

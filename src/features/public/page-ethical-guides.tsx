@@ -118,6 +118,29 @@ const ocrChecklistRows = [
   },
 ] as const;
 
+const researchCitationRows = [
+  {
+    label: 'Missing regions',
+    detail:
+      'Compare detected OCR blocks against the full page so dialogue, captions, sound effects, and small notes are not silently skipped.',
+  },
+  {
+    label: 'Under-segmented balloons',
+    detail:
+      'Flag bubbles that combine multiple speakers or dialogue turns before sending the text to translation.',
+  },
+  {
+    label: 'Transcription drift',
+    detail:
+      'Keep the original OCR text visible for reviewer correction when a model reads stylized lettering, vertical text, or low-contrast pages incorrectly.',
+  },
+  {
+    label: 'Research context',
+    detail:
+      'Recent manga-understanding research has called out transcription errors, missing text regions, overlapping dialogue, onomatopoeia, and under-segmented speech balloons as OCR annotation problems worth checking explicitly.',
+  },
+] as const;
+
 const reviewerFailureModes = [
   {
     title: 'Merged unrelated bubbles',
@@ -479,6 +502,28 @@ export const PageTranslationSupportWorkflow = () => {
               >
                 <span className="font-semibold text-foreground">
                   {row.checkpoint}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Research-backed QA"
+        title="Checks that match modern manga OCR research"
+        description="Use this section when technical reviewers, localization editors, or GitHub maintainers need a non-promotional reason to cite the workflow checklist."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {researchCitationRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
                 </span>
                 <span>{row.detail}</span>
               </div>
