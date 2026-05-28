@@ -29,6 +29,24 @@ const pilotStructuredData = () => {
       text: 'Continue only when rights are clear and the pilot creates useful OCR evidence, qualified installs, affiliate interest, or a partner conversation.',
     },
   ] as const;
+  const decisionItems = [
+    {
+      name: 'Proceed to review',
+      text: 'Move forward when the partner approves the sample, OCR issues are minor, reviewer corrections are documented, and public wording can preserve credits and source boundaries.',
+    },
+    {
+      name: 'Proceed to private pilot',
+      text: 'Keep the pilot private when the workflow is useful but screenshots, translated pages, or partner names are not approved for public citation.',
+    },
+    {
+      name: 'Pause and fix',
+      text: 'Pause when OCR misses key dialogue, glossary drift changes terms, support cannot reproduce activation, or the partner cannot identify a useful reader outcome.',
+    },
+    {
+      name: 'Stop outreach',
+      text: 'Stop when source rights are unclear, the sample owner is not involved, paid link placement is requested, or the review would imply unauthorized catalog translation.',
+    },
+  ] as const;
 
   return [
     {
@@ -72,6 +90,17 @@ const pilotStructuredData = () => {
         position: index + 1,
         name: step.name,
         description: step.text,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#pilot-decision-packet`,
+      name: 'Permission-safe pilot decision packet',
+      itemListElement: decisionItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.text,
       })),
     },
   ];

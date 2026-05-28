@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: pilot decision packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap.
+
+Revenue rationale: strengthened the approved-sample pilot URL before the queued Akaya Media outreach by adding a continue/private-test/fix/stop decision packet. This gives creator platforms, publishers, reviewers, and localization partners a concrete way to turn a pilot into either public review, private testing, remediation, or a clean stop.
+
+Next outreach when cap resets: send the existing Akaya Media approved-sample pilot inquiry if no later cycle has already contacted Akaya, and cite `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`.
+
 ### Owner reply: what Borji should do next
 
 Inbound command: `20260528T204438Z-e8db7d056bb1`

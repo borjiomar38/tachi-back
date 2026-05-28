@@ -390,6 +390,29 @@ const pilotReportRows = [
   },
 ] as const;
 
+const pilotDecisionRows = [
+  {
+    label: 'Proceed to review',
+    detail:
+      'Move forward when the partner approves the sample, OCR misses are minor, reviewer corrections are documented, and a public note can preserve credits and source boundaries.',
+  },
+  {
+    label: 'Proceed to private pilot',
+    detail:
+      'Keep the pilot private when the workflow is useful but screenshots, translated pages, or partner names are not approved for public citation.',
+  },
+  {
+    label: 'Pause and fix',
+    detail:
+      'Pause when OCR misses key dialogue, glossary drift changes names or terms, support cannot reproduce activation, or the partner cannot identify a useful reader outcome.',
+  },
+  {
+    label: 'Stop outreach',
+    detail:
+      'Stop the thread when source rights are unclear, the sample owner is not involved, the partner asks for paid link placement, or the review would imply unauthorized catalog translation.',
+  },
+] as const;
+
 const communitySubmissionRows = [
   {
     channel: 'Startup launch communities',
@@ -809,6 +832,28 @@ export const PagePermissionSafePilotBrief = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {pilotReportRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Decision packet"
+        title="How to decide the next step"
+        description="Use this section after a pilot so creator-platform, publisher, reviewer, or localization conversations turn into a clear continue, private-test, fix, or stop decision."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {pilotDecisionRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
