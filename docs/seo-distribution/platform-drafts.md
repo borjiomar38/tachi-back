@@ -26,6 +26,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Newsletter | TLDR AI or similar AI newsletter tip | OCR block QA checklist for image-heavy translation workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: submit only through official editorial/contact path after screenshots are ready. |
 | draft | Android review | AppHunt | Official Android APK review packet for hosted OCR translation | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit path only; wait for screenshots, package metadata, and review-code readiness. |
 | draft | Technical newsletter/GitHub | Research-backed OCR checklist | Manga OCR QA checks before translation | https://tachiyomiat.com/guides/translation-support-workflow | Use current Manga109-v2026 research as context only; do not imply academic endorsement. |
+| draft | Newsletter | Android Weekly | Developer-facing OCR and APK review checklist | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: submit only through official Android Weekly path; pitch technical checklist, not consumer app promotion. |
+| draft | Reddit | r/androidapps megathread | Android OCR translator feedback request | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: current megathread/rules review required; no normal subreddit post and no automated replies. |
+| watch | Resource directory | OpenSourceAlternative.to | Open-source companion checklist idea | None yet | Weak fit unless Nayovi publishes a genuine open-source docs/checklist repo; do not submit hosted APK as open-source. |
 
 ## Draft Bodies
 
@@ -258,6 +261,67 @@ Assets needed before submission:
 - Founder-approved launch timing
 - Public support and pricing links
 - Responsible-use wording
+
+### Android Weekly developer pitch
+
+Status: draft
+Target: Android Weekly official submission/contact path
+Audience: Android and Kotlin developers, mobile technical readers
+Rules risk: medium; useful only if framed as Android development/testing context rather than a consumer app listing.
+No-link variant: send the neutral checklist bullets only and offer the owned guide if the editor wants context.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Android OCR workflow QA checklist for image-heavy translation apps
+
+Pitch:
+
+Hi Android Weekly team,
+
+I am maintaining a short Android workflow checklist for testing image-heavy OCR translation apps before reviewers judge the translated output.
+
+The developer angle is practical rather than promotional: verify the APK source, use approved test samples, compare OCR completeness against the full image, check block order and merged bubbles, keep reviewer correction visible, and record when a sample should not be shared because rights or quality are unclear.
+
+Would a concise markdown version of that checklist fit Android Weekly's developer resources? I can send the neutral version without app-install copy.
+
+Best,
+Nayovi team
+
+### r/androidapps megathread feedback draft
+
+Status: draft
+Target: current r/androidapps self-promotion megathread only
+Audience: Android users willing to test apps and give direct feedback
+Rules risk: high; post only from an authorized Reddit account after checking the current megathread and subreddit rules. Do not post as a standalone thread.
+No-link variant: recommended first.
+Link variant only if current rules allow app links: https://tachiyomiat.com/download
+
+Comment:
+
+I am building Nayovi, an Android APK for hosted OCR and AI translation in manga/manhwa/manhua reading workflows.
+
+I am mainly looking for feedback on the Android trust and testing flow:
+- does the official download page give enough install context before trying an APK?
+- is redeem-code activation clear enough for reviewers/testers?
+- would you expect screenshots for install, activation, translation progress, and final output before testing?
+- what would make you distrust an OCR translation result: missed text, wrong reading order, merged bubbles, inconsistent names, or unclear source-permission wording?
+
+Nayovi does not host or distribute chapters; the intended test material is owned content, public-domain material, official samples, or content the user has permission to process.
+
+No-link variant: remove the product name and link, and ask only for Android OCR app testing expectations.
+
+### Open-source directory watch note
+
+Status: watch
+Target: OpenSourceAlternative.to or similar open-source directories
+Audience: open-source software users and maintainers
+Rules risk: medium; weak fit for the hosted paid-token APK.
+No-link variant: do not submit.
+Link variant: none until a real open-source companion repo exists.
+
+Decision note:
+
+Do not submit Nayovi itself to open-source alternative directories right now. The better future asset would be a small owned GitHub repository with the neutral comic OCR QA checklist, sample review template, and responsible-use notes. That repository could be submitted only if it is genuinely public and useful without requiring Nayovi installation.
 
 ### Hacker News Show HN draft
 

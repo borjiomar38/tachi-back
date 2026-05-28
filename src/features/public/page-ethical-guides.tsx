@@ -326,6 +326,34 @@ const submissionReadinessRows = [
   },
 ] as const;
 
+const neutralChecklistRows = [
+  {
+    prompt: 'Permission status',
+    checklist:
+      'Name whether the sample is owned, public-domain, an official preview, creator-provided, or otherwise approved before reviewing OCR or translation quality.',
+  },
+  {
+    prompt: 'OCR completeness',
+    checklist:
+      'Compare detected text against the full page and mark missed bubbles, captions, sound effects, small labels, vertical text, or handwritten notes.',
+  },
+  {
+    prompt: 'Block order and grouping',
+    checklist:
+      'Confirm reading order and flag unrelated bubbles, captions, or speakers that were merged into one translation unit.',
+  },
+  {
+    prompt: 'Reviewer correction path',
+    checklist:
+      'Keep original OCR text, merged blocks, glossary notes, and final output visible enough for a human reviewer to correct names, terms, and tone.',
+  },
+  {
+    prompt: 'Share decision',
+    checklist:
+      'Record whether the result is private-use only, ready for an approved sample note, or blocked because source rights or output quality are unclear.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -762,6 +790,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.item}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Neutral excerpt"
+        title="Markdown checklist for maintainers and editors"
+        description="Use this value-first version when a GitHub maintainer, newsletter editor, moderator, or localization community wants the checklist without product-first copy."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {neutralChecklistRows.map((row) => (
+              <div
+                key={row.prompt}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.prompt}
+                </span>
+                <span>{row.checklist}</span>
               </div>
             ))}
           </CardContent>
