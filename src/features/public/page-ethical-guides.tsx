@@ -252,6 +252,29 @@ const pilotBriefRows = [
   },
 ] as const;
 
+const pilotOnePagerRows = [
+  {
+    label: 'Who should use it',
+    detail:
+      'Creator platforms, publishers, reviewers, localization teams, and reader communities that can choose approved material before testing the workflow.',
+  },
+  {
+    label: 'What Nayovi tests',
+    detail:
+      'Hosted OCR coverage, reading order, glossary consistency, Android activation, support handling, and repeat translation intent.',
+  },
+  {
+    label: 'What stays out',
+    detail:
+      'No catalog scraping, chapter hosting, mirror promotion, paid link placement, or public translation of material without rights-holder approval.',
+  },
+  {
+    label: 'Decision checkpoint',
+    detail:
+      'Continue only when the pilot produces useful reviewer notes, qualified installs, or a clear path to paid token-plan demand.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -614,6 +637,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {pilotBriefRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="One-pager"
+        title="Permission-safe pilot summary"
+        description="Use this short summary when a creator platform, publisher, localization group, or reviewer needs to decide whether a Nayovi pilot is worth discussing."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {pilotOnePagerRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"

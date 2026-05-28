@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T185526Z`: audited branch state, current growth trackers, the SEO distribution shared report, `/download`, `/translate-manhwa-ai`, and `/guides/translation-support-workflow`.
+- Added a permission-safe pilot one-pager to `/guides/translation-support-workflow` so creator platforms, publishers, localization teams, reviewers, and communities can evaluate pilot fit, test scope, excluded behavior, and revenue/qualified-install checkpoints before any outreach or listing.
+- Marked the permission-safe pilot one-pager backlog item as shipped with the owned workflow-guide target.
+- Outreach status: no new email sent because the configured sender still reports the daily cap reached at 10/10; the already auto-approved PopWebTools listing-fit inquiry remains queued for the next cap reset.
+
 - Autonomous cycle on `growth/autonomous-20260528T184912Z`: audited branch state, current growth trackers, public SEO/download routes, SEO distribution shared context, and recent outreach cap state.
 - Added an APK metadata verification packet to `/download` with filename, build label, APK size, SHA-256, source-of-truth guidance, and mirror-boundary language so Android directories and reviewers can verify Nayovi before listing or publishing.
 - Marked the APK metadata verification packet as shipped in the growth content backlog.
