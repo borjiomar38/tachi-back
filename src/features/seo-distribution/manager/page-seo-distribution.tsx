@@ -69,7 +69,7 @@ export const PageSeoDistribution = () => {
             ))
             .match('default', (data) => (
               <div className="space-y-4">
-                <div className="grid gap-4 md:grid-cols-5">
+                <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
                   <SummaryCard
                     label="Agent"
                     subLabel={formatDateTime(data.status.generatedAt)}
@@ -91,6 +91,11 @@ export const PageSeoDistribution = () => {
                     value={`${data.stats.configuredAccountCount}/${data.accounts.length}`}
                   />
                   <SummaryCard
+                    label="Authority"
+                    subLabel={`${data.stats.highAuthorityOpportunityCount} high priority`}
+                    value={data.stats.authorityOpportunityCount.toString()}
+                  />
+                  <SummaryCard
                     label="Link assets"
                     subLabel="Reusable backlink angles"
                     value={data.stats.linkAssetCount.toString()}
@@ -105,8 +110,22 @@ export const PageSeoDistribution = () => {
                 <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_22rem]">
                   <div className="space-y-4">
                     <SectionCard
+                      title="Authority Opportunities"
+                      description="Continuous discovery queue for high-authority sites, communities, resource pages, directories, partners, and launch surfaces."
+                    >
+                      <RowsTable
+                        empty="No authority opportunities found yet."
+                        rows={data.authorityOpportunities}
+                        primaryKey="Target"
+                        secondaryKey="Fit"
+                        metaKeys={['Authority tier', 'Category']}
+                        trailingKey="Next action"
+                      />
+                    </SectionCard>
+
+                    <SectionCard
                       title="Platform Drafts"
-                      description="LinkedIn, Reddit, GitHub, community, and directory actions prepared by the agent."
+                      description="Specific posts, comments, listings, pitches, and messages prepared by the agent."
                     >
                       <RowsTable
                         empty="No platform drafts found yet."

@@ -32,6 +32,11 @@ write_account_registry() {
     REDDIT_CLIENT_SECRET_PRESENT="${SEO_AGENT_REDDIT_CLIENT_SECRET:+true}" \
     REDDIT_REFRESH_TOKEN_PRESENT="${SEO_AGENT_REDDIT_REFRESH_TOKEN:+true}" \
     GITHUB_TOKEN_PRESENT="${SEO_AGENT_GITHUB_TOKEN:+true}" \
+    X_ACCESS_TOKEN_PRESENT="${SEO_AGENT_X_ACCESS_TOKEN:+true}" \
+    PRODUCTHUNT_TOKEN_PRESENT="${SEO_AGENT_PRODUCTHUNT_TOKEN:+true}" \
+    DEVTO_API_KEY_PRESENT="${SEO_AGENT_DEVTO_API_KEY:+true}" \
+    MEDIUM_TOKEN_PRESENT="${SEO_AGENT_MEDIUM_INTEGRATION_TOKEN:+true}" \
+    YOUTUBE_REFRESH_TOKEN_PRESENT="${SEO_AGENT_YOUTUBE_REFRESH_TOKEN:+true}" \
     GITHUB_REPO_URL="${SEO_AGENT_REPO_URL:-}" \
     EXTERNAL_POSTING_MODE="${SEO_AGENT_EXTERNAL_POSTING_MODE:-draft}" \
     ACCOUNT_CREATION_ENABLED="${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}" \
@@ -44,10 +49,10 @@ from datetime import datetime, timezone
 
 target = pathlib.Path(sys.argv[1])
 
-def present(name: str) -> bool:
+def present(name):
     return os.environ.get(name) == "true"
 
-def account(platform: str, display_name: str, configured: bool, required: list[str], action_mode: str, notes: str):
+def account(platform, display_name, configured, required, action_mode, notes):
     return {
         "platform": platform,
         "displayName": display_name,
@@ -85,11 +90,67 @@ accounts = [
     ),
     account(
         "directories",
-        "App directories and partner publications",
+        "App directories and listing portals",
         False,
         ["Per-platform account/API token when available"],
         "draft",
-        "Most directories require browser/form submission or a verified developer console.",
+        "Use official submit paths only after reputation and listing rules are checked.",
+    ),
+    account(
+        "press-newsletters-podcasts",
+        "Press, newsletters, podcasts, and resource pages",
+        False,
+        ["Public editorial contact or official submission form"],
+        "draft",
+        "Discover high-authority editorial surfaces continuously; use individualized pitches, not bulk outreach.",
+    ),
+    account(
+        "creator-platforms",
+        "Manga, webtoon, and localization partners",
+        False,
+        ["Public business contact or official partner form"],
+        "draft",
+        "Use permission-safe partnership angles for approved samples, pilots, accessibility, or reader research.",
+    ),
+    account(
+        "x-twitter",
+        "X/Twitter official account",
+        present("X_ACCESS_TOKEN_PRESENT"),
+        ["SEO_AGENT_X_ACCESS_TOKEN"],
+        posting_mode,
+        "Use official API/OAuth only and avoid repetitive promotional posting.",
+    ),
+    account(
+        "producthunt",
+        "Product Hunt and launch communities",
+        present("PRODUCTHUNT_TOKEN_PRESENT"),
+        ["SEO_AGENT_PRODUCTHUNT_TOKEN"],
+        posting_mode,
+        "Prepare launch assets and comments; post only through official account/API workflow when allowed.",
+    ),
+    account(
+        "devto-medium",
+        "Dev.to, Medium, and technical blogs",
+        present("DEVTO_API_KEY_PRESENT") or present("MEDIUM_TOKEN_PRESENT"),
+        ["SEO_AGENT_DEVTO_API_KEY", "SEO_AGENT_MEDIUM_INTEGRATION_TOKEN"],
+        posting_mode,
+        "Publish technical trust assets only where canonical links and duplicate-content handling are clear.",
+    ),
+    account(
+        "youtube",
+        "YouTube demo and video surfaces",
+        present("YOUTUBE_REFRESH_TOKEN_PRESENT"),
+        ["SEO_AGENT_YOUTUBE_REFRESH_TOKEN"],
+        posting_mode,
+        "Use official API/OAuth only for owned video uploads, descriptions, and channel updates.",
+    ),
+    account(
+        "forums-qa-communities",
+        "Forums, Q&A, and niche communities",
+        False,
+        ["Per-community authorized account when available"],
+        "draft",
+        "Research rules first; contribute useful answers without links unless links are clearly welcome.",
     ),
 ]
 
@@ -127,7 +188,7 @@ json_status() {
     EXTERNAL_POSTING_MODE="${SEO_AGENT_EXTERNAL_POSTING_MODE:-draft}" \
     ACCOUNT_CREATION_ENABLED="${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}" \
     GIT_PUSH_ENABLED="${SEO_AGENT_GIT_PUSH_ENABLED:-true}" \
-    AUTO_MERGE_TO_MASTER="${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}" \
+    AUTO_MERGE_TO_MASTER="${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}" \
     python3 - "${status_file}" <<'PY'
 import json
 import os
@@ -140,7 +201,7 @@ status_path = pathlib.Path(sys.argv[1])
 repo_dir = pathlib.Path(os.environ["REPO_DIR"])
 report_file = pathlib.Path(os.environ["REPORT_FILE"]) if os.environ["REPORT_FILE"] else None
 
-def git_output(*args: str) -> str | None:
+def git_output(*args):
     try:
         return subprocess.check_output(
             ["git", *args],
@@ -151,13 +212,13 @@ def git_output(*args: str) -> str | None:
     except Exception:
         return None
 
-def report_excerpt(path: pathlib.Path | None) -> str:
+def report_excerpt(path):
     if not path or not path.exists():
         return ""
     text = path.read_text(encoding="utf-8", errors="replace").strip()
     return text[:5000]
 
-  payload = {
+payload = {
     "version": "seo-distribution-agent-status.v1",
     "generatedAt": datetime.now(timezone.utc).isoformat(),
     "stage": os.environ["STAGE"],
@@ -199,6 +260,7 @@ files = {}
 for rel in [
     "docs/seo-distribution/content-calendar.md",
     "docs/seo-distribution/platform-drafts.md",
+    "docs/seo-distribution/authority-opportunities.md",
     "docs/seo-distribution/link-assets.md",
     "docs/seo-distribution/distribution-log.md",
     "docs/growth/backlink-prospects.csv",
@@ -270,10 +332,12 @@ What Nayovi is:
 
 Allowed work:
 - Inspect the repo and public sites.
-- Use web search to find currently relevant social/backlink opportunities across LinkedIn, Reddit, GitHub, app directories, Android press, creator platforms, newsletters, forums, and partner publications.
+- Use web search to continuously discover currently relevant social/backlink opportunities across high-authority surfaces, not only LinkedIn/Reddit/GitHub. Include Android press, app directories, SaaS/tool directories, AI tool directories, manga/webtoon/creator platforms, newsletters, podcasts, YouTube channels, Product Hunt/launch communities, Indie Hackers/build-in-public communities, Dev.to/Medium/technical blogs, GitHub awesome lists, resource pages, forums, Q&A sites, publisher/platform partner pages, accelerators, investor directories, affiliate/resource pages, and niche localization communities.
+- Prioritize opportunities by authority, topical relevance, likelihood of acceptance, traffic quality, compliance risk, and revenue potential. Avoid low-quality link farms even if they are easy.
 - Create or improve owned SEO pages, article drafts, comparisons, guides, internal links, metadata, schema, sitemap coverage, and linkable assets on owned properties.
 - Maintain docs/seo-distribution/content-calendar.md with article topics, keywords, search intent, target URL, status, and next action.
 - Maintain docs/seo-distribution/platform-drafts.md with platform-specific posts/comments/messages for LinkedIn, Reddit, GitHub, community forums, newsletters, app directories, and partner publications.
+- Maintain docs/seo-distribution/authority-opportunities.md as the discovery pipeline for high-authority sites and communities. Each row must include authority tier, category, target, URL, fit, action type, account/API requirement, risk, status, and next action.
 - Maintain docs/seo-distribution/link-assets.md with linkable resources, assets, comparisons, tutorials, data points, screenshots, demo video angles, and GitHub-ready documentation ideas.
 - Maintain docs/seo-distribution/distribution-log.md with cycle results, drafts prepared, owned content changed, links discovered, and next actions.
 - Maintain docs/growth/backlink-prospects.csv when a backlink/contact opportunity belongs in the broader outreach tracker.
@@ -300,7 +364,7 @@ Operational preferences:
 - Account creation enabled: ${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}
 - Account registry: ${STATE_DIR}/accounts.json
 - Git push enabled: ${SEO_AGENT_GIT_PUSH_ENABLED:-true}
-- Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}
+- Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}
 - Validation command: ${SEO_AGENT_VALIDATION_COMMAND:-./node_modules/.bin/tsc --noEmit}
 
 Agent coordination:
@@ -309,15 +373,16 @@ Agent coordination:
 - Read ${STATE_DIR}/accounts.json. If a platform is not configured, draft the post/comment/message and mark AUTHORIZED_ACCOUNT_REQUIRED instead of attempting to post.
 - If a platform is configured, still check whether the exact action is allowed by that platform/community before posting. If rules are unclear, draft only.
 - Prefer owned channels first: owned GitHub docs/repo, Nayovi site pages, official company/founder posts, and app-directory profiles that preserve source-of-truth links.
+- Do not repeat the same three platforms every cycle. Rotate discovery across authority categories and add new targets when they are high-fit.
 
 Cycle checklist:
 1. Check git status and current branch.
 2. Audit owned content and identify 1-3 high-intent SEO or trust-building opportunities.
 3. Add or improve one owned SEO/linkable asset where practical.
-4. Research at least one social/backlink surface from LinkedIn, Reddit, GitHub, creator platforms, app directories, or partner publications.
-5. Draft exact value-first posts/comments/messages in docs/seo-distribution/platform-drafts.md. Include target, audience, rules risk, no-link variant, and link variant.
+4. Research at least 3 authority opportunities from different categories and update docs/seo-distribution/authority-opportunities.md.
+5. For the best ready opportunity, draft the exact value-first post/comment/message/listing/pitch in docs/seo-distribution/platform-drafts.md. Include target, audience, rules risk, no-link variant, and link variant.
 6. Add linkable assets or pitch angles to docs/seo-distribution/link-assets.md.
-7. Update docs/seo-distribution/distribution-log.md with concrete work and next steps.
+7. Update docs/seo-distribution/distribution-log.md with concrete work, authority targets discovered, actions prepared, and next steps.
 8. Run validation if practical.
 9. Commit on ${branch} if files changed.
 10. Push ${branch} only if enabled. Never force-push.
@@ -388,6 +453,7 @@ publish_cycle_branch() {
   local base_branch="$3"
   local cycle_id="$4"
   local report_file="$5"
+  local branch_head merge_message remote_base
 
   if [[ ! -d "${repo_dir}/.git" ]]; then
     return 0
@@ -406,26 +472,71 @@ publish_cycle_branch() {
     fi
 
     git checkout "${branch}"
-    auto_commit_cycle_changes "${cycle_id}" "${report_file}"
+    if ! auto_commit_cycle_changes "${cycle_id}" "${report_file}"; then
+      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-publish skipped because the cycle left unsafe or uncommittable changes."
+      return 0
+    fi
 
     if ! git diff --quiet || ! git diff --cached --quiet; then
       append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: workspace is still dirty after auto-commit."
       return 0
     fi
 
+    git fetch origin "${base_branch}"
+    remote_base="origin/${base_branch}"
+    if ! git merge-base --is-ancestor "${remote_base}" HEAD; then
+      if ! git merge --no-edit "${remote_base}"; then
+        git merge --abort >/dev/null 2>&1 || true
+        append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-publish skipped because ${branch} conflicts with ${remote_base}."
+        return 0
+      fi
+    fi
+
+    if [[ "$(git rev-list --count "${remote_base}..HEAD")" == "0" ]]; then
+      append_report_note "${report_file}" "Auto-publish skipped; ${branch} has no commits ahead of ${remote_base}."
+      return 0
+    fi
+
+    if [[ -n "${SEO_AGENT_VALIDATION_COMMAND:-}" ]]; then
+      if ! bash -lc "${SEO_AGENT_VALIDATION_COMMAND}"; then
+        append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-publish skipped because validation failed: ${SEO_AGENT_VALIDATION_COMMAND}"
+        return 0
+      fi
+    fi
+
+    branch_head="$(git rev-parse --short HEAD)"
+
     if [[ "${SEO_AGENT_GIT_PUSH_ENABLED:-true}" == "true" ]]; then
       if ! git push --no-verify origin "${branch}"; then
         append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: pushing ${branch} failed."
         return 0
       fi
-      append_report_note "${report_file}" "Pushed ${branch}. Master was not pushed."
+      append_report_note "${report_file}" "Pushed ${branch}."
     else
       append_report_note "${report_file}" "Git push disabled; left ${branch} local. Master was not pushed."
+      return 0
     fi
 
-    if [[ "${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}" == "true" ]]; then
-      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: SEO_AGENT_AUTO_MERGE_TO_MASTER is disabled for this social/backlink runner; master was not pushed."
+    if [[ "${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}" != "true" ]]; then
+      append_report_note "${report_file}" "Auto-merge disabled; left ${branch} unmerged."
+      return 0
     fi
+
+    git checkout -B "${base_branch}" "${remote_base}"
+    merge_message="Merge ${branch} SEO distribution cycle ${cycle_id}"
+    if ! git merge --no-ff --no-edit -m "${merge_message}" "${branch}"; then
+      git merge --abort >/dev/null 2>&1 || true
+      git checkout "${branch}"
+      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: auto-merge into ${base_branch} failed for ${branch}."
+      return 0
+    fi
+
+    if ! git push --no-verify origin "${base_branch}"; then
+      git checkout "${branch}"
+      append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: ${branch} merged locally, but pushing ${base_branch} failed."
+      return 0
+    fi
+    append_report_note "${report_file}" "Published ${branch} (${branch_head}) to ${base_branch}; production deploy triggered by ${base_branch} push."
   )
 }
 
@@ -442,7 +553,7 @@ auto_commit_cycle_changes() {
 
   if has_sensitive_status_paths "${status_output}"; then
     append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: refusing to auto-commit sensitive-looking paths."
-    return 0
+    return 1
   fi
 
   git add -A
