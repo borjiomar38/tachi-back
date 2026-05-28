@@ -622,6 +622,29 @@ const submissionQueueRows = [
   },
 ] as const;
 
+const capResetPacketRows = [
+  {
+    field: 'First outreach lane',
+    detail:
+      'Handle reply-driven follow-ups first, then approved-sample partner inquiries such as creator platforms, publishers, localization teams, or manga communities with official public contact paths.',
+  },
+  {
+    field: 'Proof links to include',
+    detail:
+      'Use the permission-safe pilot brief, comic OCR checklist, official download page, support path, and pricing page so every recipient can verify scope before replying.',
+  },
+  {
+    field: 'Message boundary',
+    detail:
+      'Ask for feedback on a small approved-sample workflow; do not ask for catalog access, unpaid labor, a guaranteed article, paid placement, or a backlink as the first outcome.',
+  },
+  {
+    field: 'Revenue signal to track',
+    detail:
+      'Log whether the conversation can create a review code request, partner pilot, qualified install path, affiliate test, investor introduction, or paid-plan signal.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -1751,6 +1774,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.lane}
                 </span>
                 <span>{row.fit}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Cap-reset packet"
+        title="What to send when outreach capacity opens"
+        description="Use this packet to keep the next email or official-form submission focused on reply quality, approved samples, and paid-use evidence instead of generic backlink collection."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {capResetPacketRows.map((row) => (
+              <div
+                key={row.field}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.field}
+                </span>
+                <span>{row.detail}</span>
               </div>
             ))}
           </CardContent>

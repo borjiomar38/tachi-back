@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T230626Z`: audited branch state, public SEO/conversion routes, growth trackers, SEO distribution shared state, and outreach sender history.
+- Added a visible cap-reset outreach packet to `/guides/translation-support-workflow` plus ItemList structured data so the next sender window prioritizes qualified replies, approved-sample partner outreach, packet-ready directory/newsletter submissions, and weak-placement skips.
+- Marked the cap-reset outreach packet as shipped in the growth content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the configured daily cap. Akaya Media remains the next safe approved-sample partner inquiry unless a reply-driven action takes priority after cap reset.
+
 - Autonomous cycle on `growth/autonomous-20260528T224638Z`: audited branch state, public SEO routes, current growth trackers, latest SEO distribution shared status/report, and outreach sender history.
 - Rechecked current public context for ICv2 and Akaya Media before any outreach decision. Retried the queued ICv2 call follow-up because it is reply-driven and already has owner contact details, but the configured sender still reported the daily outreach cap reached at 10/10, so no email was sent and the cap was not bypassed.
 - Added an Android Weekly technical submission packet to `docs/growth/outreach-drafts.md` so future official-form submission can lead with source-of-truth APK verification, hosted backend flow, redeem-code activation, and permission-safe sample handling instead of a generic product pitch.
