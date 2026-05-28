@@ -233,6 +233,28 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Anime UK News Editorial Pitch Sent 2026-05-28
+
+Category: press
+Contact path: hello@animeuknews.net, listed on the current public Anime UK News contact page for direct contact.
+Rationale: Anime UK News covers anime and manga news/reviews, rejects paid link insertions, and is a better fit for an editorial review-code or workflow-feedback pitch than a backlink request.
+Status: contacted 2026-05-28; wait for reply before any follow-up.
+
+Subject: Editorial feedback on a permission-safe manga OCR workflow
+
+Hi Anime UK News team,
+
+I found your contact page while reviewing manga and anime editorial sites, and noticed you explicitly avoid paid link insertions and unmarked paid content. That is the right boundary for this note: I am not asking for a paid link.
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It keeps the official APK download, free trial, redeem-code activation, pricing, support, and responsible-use notes on tachiyomiat.com / nayovi.com. Nayovi does not host or distribute chapters; it supports translation for owned, public-domain, official-sample, or permission-approved content.
+
+The most useful editorial angle may be practical review criteria rather than a generic AI story. I added a public OCR checklist for approved samples that covers text detection, reading order, glossary consistency, and human review decisions. If a hands-on workflow note, responsible-use critique, or review-code test would fit Anime UK News, I can send screenshots, the narrated demo, pricing context, and a dedicated review code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Talk Android Review Pitch Sent 2026-05-25
 
 Subject: Review code for a hosted OCR Android manga translator
