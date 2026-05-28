@@ -164,6 +164,25 @@ const trustPacketRows = [
   },
 ] as const;
 
+const directoryPacketRows = [
+  {
+    item: 'One-line listing description',
+    copy: 'Nayovi is an Android APK for hosted OCR and AI translation support in manga, manhwa, and manhua reader workflows.',
+  },
+  {
+    item: 'Primary link',
+    copy: 'Use https://tachiyomiat.com/download for installs and keep pricing, support, and activation questions on the official Nayovi site.',
+  },
+  {
+    item: 'Review-code path',
+    copy: 'Editors, directory reviewers, and affiliate testers can request a redeem code through support before publishing a hands-on walkthrough.',
+  },
+  {
+    item: 'Responsible-use wording',
+    copy: 'Nayovi should be tested only with owned material, public-domain works, official samples, or content the user has permission to process.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -446,6 +465,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.label}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Directory packet"
+        title="Citation-ready app listing details"
+        description="Use these details when an Android directory, app reviewer, newsletter, or partner needs a short, accurate description before deciding whether Nayovi belongs in a listing."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {directoryPacketRows.map((row) => (
+              <div
+                key={row.item}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.item}
+                </span>
+                <span>{row.copy}</span>
               </div>
             ))}
           </CardContent>

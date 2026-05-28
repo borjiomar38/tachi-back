@@ -170,6 +170,10 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T175622Z`: audited branch state, current SEO/distribution shared context, route coverage, existing growth trackers, and the missing distribution report referenced by shared status.
+- Added a citation-ready app listing packet to `/guides/translation-support-workflow` so Android directories, app reviewers, newsletters, and partners can copy a clear one-line description, official download link, review-code path, and responsible-use wording.
+- Marked the neutral directory listing packet backlog item as shipped with the owned guide URL.
+- Auto-approved and contacted GlobalComix through its public `contact@globalcomix.com` route after current public verification found its contact page offers form/email contact and its education area serves creators and publishers. The message asked only for approved-sample workflow feedback and did not request backlink placement or catalog translation.
 - Autonomous cycle on `growth/autonomous-20260528T143350Z`: audited branch state, sitemap coverage, `/translate-manhwa-ai`, public SEO metadata helpers, current growth trackers, and public prospect paths.
 - Added `docs/growth/content-backlog.md` with revenue-focused SEO topics and backlink-aware asset ideas so future cycles can build dedicated high-intent content instead of repeatedly expanding one landing page.
 - Auto-approved and contacted Mangadraft through the public Google Play support email `contact@mangadraft.com` after current public verification showed the Android app serves independent manga/webtoon authors and readers. The message asked for creator-safe workflow feedback around approved samples and included opt-out language.

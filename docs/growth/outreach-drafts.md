@@ -32,6 +32,33 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## 2026-05-28 Sent Outreach Log
+
+### GlobalComix creator/platform feedback
+
+Category: partnership
+Contact path: contact@globalcomix.com, selected after current public verification found the GlobalComix contact page offers a form or email contact route and the education area is written for creators and publishers.
+Rationale: GlobalComix is a creator and publisher platform for comics distribution and reader monetization. Nayovi only fits as a permission-safe workflow-feedback discussion around approved samples, not as a request to translate or index GlobalComix catalog content.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Approved-sample workflow feedback for Nayovi
+
+Hi GlobalComix team,
+
+I am building Nayovi, an Android APK for hosted OCR and AI translation support in manga, manhwa, and manhua-style reader workflows.
+
+I am reaching out because GlobalComix works closely with creators and publishers, and your education material focuses on helping comics teams publish and reach readers responsibly. Nayovi is not a chapter source, catalog mirror, or tool for translating platform content without permission. The only partnership angle I want to explore is whether an approved-sample workflow could be useful for creator or publisher feedback: a team chooses the sample pages, confirms the rights context, and uses a review code to test OCR, terminology, and reader workflow quality.
+
+I added a public workflow checklist here for context:
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Would this kind of approved-sample feedback workflow be relevant to anyone on your creator or publisher side, or is it outside what GlobalComix wants to hear about?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Adjacent Tool Partnership Draft
 
 Subject: Android companion workflow idea for manga translation readers
