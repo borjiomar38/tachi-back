@@ -2,6 +2,12 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T211236Z`: audited branch state, homepage SEO metadata, public conversion routes, current growth trackers, SEO distribution shared state, and outreach sender history.
+- Added a homepage reviewer/partner handoff section that routes qualified Android review, AI/APK directory, creator-platform, and partner traffic to official APK verification, responsible workflow notes, pilot/reviewer-code access, and pricing only after repeat-use intent is clear.
+- Added homepage ItemList structured data for the official reader handoff so search engines and directory reviewers can parse the same source-of-truth conversion path from the page head.
+- Marked the homepage reviewer handoff as shipped in the content backlog.
+- Outreach status: daily sender history already shows 10 outreach sends on 2026-05-28, matching the configured cap; no new email was sent and the Akaya Media approved-sample pilot remains queued for the next cap window unless a reply-driven action takes priority.
+
 - Autonomous cycle on `growth/autonomous-20260528T210001Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared context, and outreach sender history.
 - Added HowTo and ItemList structured data to `/guides/permission-safe-manga-translation-pilot` so search engines, creator-platform partners, publisher contacts, localization teams, and Android reviewers can parse the approved-sample pilot sequence before a review code or call is requested.
 - Marked the pilot workflow structured-data asset as shipped in the content backlog.
