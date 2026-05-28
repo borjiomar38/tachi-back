@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T210001Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared context, and outreach sender history.
+- Added HowTo and ItemList structured data to `/guides/permission-safe-manga-translation-pilot` so search engines, creator-platform partners, publisher contacts, localization teams, and Android reviewers can parse the approved-sample pilot sequence before a review code or call is requested.
+- Marked the pilot workflow structured-data asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Akaya Media remains auto-approved and queued for the next cap window unless a reply-driven action takes priority.
+
 - Autonomous cycle on `growth/autonomous-20260528T204710Z`: audited branch state, SEO distribution shared context, public guide coverage, growth trackers, outreach drafts, sender history, and owner inbound command `20260528T204438Z-e8db7d056bb1`.
 - Processed the owner question "Je fais quoi exactement ?" into a concrete French owner-action brief: no technical action now; stay available for warm replies; personally handle calls, demos, pilots, review codes, legal/financial decisions, or business metrics when requested.
 - Outreach status: no new external outreach sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Akaya Media remains the highest-fit auto-approved partnership follow-up for the next cap window unless a reply-driven action takes priority.
