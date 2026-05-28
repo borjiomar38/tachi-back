@@ -141,6 +141,29 @@ const researchCitationRows = [
   },
 ] as const;
 
+const technicalEvaluationRows = [
+  {
+    label: 'Sample manifest',
+    detail:
+      'Record the sample title, page count, language pair, rights context, source quality, and reviewer before running OCR or translation.',
+  },
+  {
+    label: 'Error counts',
+    detail:
+      'Count missed text regions, merged speakers, incorrect reading order, transcription errors, glossary misses, and output lines that need human correction.',
+  },
+  {
+    label: 'Before and after',
+    detail:
+      'Keep the original page, OCR text, corrected OCR text, glossary notes, and final translation together so a reviewer can reproduce the decision.',
+  },
+  {
+    label: 'Go or no-go',
+    detail:
+      'Publish or cite the sample only when rights are clear, OCR coverage is acceptable, correction notes are preserved, and support can answer follow-up questions.',
+  },
+] as const;
+
 const reviewerFailureModes = [
   {
     title: 'Merged unrelated bubbles',
@@ -569,6 +592,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {researchCitationRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Technical packet"
+        title="A reproducible review packet for OCR maintainers"
+        description="Use this packet when a GitHub maintainer, newsletter editor, or localization operator wants evidence rather than a product pitch."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {technicalEvaluationRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"

@@ -178,6 +178,26 @@ Nayovi does not host or distribute manga, manhwa, or manhua chapters. It support
 Submission note:
 If the form asks for a listing URL, use the official website links above rather than a mirror-first APK URL. If the form requires a paid placement, skip it unless the owner explicitly approves the spend.
 
+## Technical OCR Resource Maintainer Draft
+
+Use for GitHub OCR resource maintainers, Android developer newsletters, or localization editors only when the contact path explicitly welcomes useful resources. Lead with the neutral checklist and avoid asking for a product listing unless invited.
+
+Subject: Neutral manga OCR review checklist for possible resource fit
+
+Hi {{name}},
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, and manhua readers, and I wanted to ask about a resource fit before opening any PR or submission.
+
+The useful part is a neutral checklist, not a product pitch: permission status, OCR completeness, block order, reviewer correction, sample manifest, error counts, before/after evidence, and a go/no-go decision for whether a sample can be cited. It is written for approved samples and does not ask readers to use unauthorized chapter sources.
+
+Checklist:
+https://tachiyomiat.com/guides/translation-support-workflow
+
+If a manga/comic OCR QA checklist is useful for your readers, I can send a shorter Markdown-only version with no promotional copy. If it is not relevant, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### AI Workbench tool listing
 
 Category: directory
