@@ -81,6 +81,20 @@ Recommended handoff:
 5. Use approved samples only.
 6. Keep public screenshots private until publication rights are confirmed.
 
+## Pre-Submission Gate
+
+Before Nayovi is submitted to an app-testing portal, APK review site, AI directory, startup directory, newsletter, or public launch page, verify these gates:
+
+- Source links: the listing can keep `https://tachiyomiat.com/download`, pricing, support, privacy, terms, and responsible-use links visible.
+- APK identity: file name, build label, size, and SHA-256 are current; package name, signing fingerprint, and developer verification status stay pending unless owner-confirmed.
+- Sample safety: test pages are owned, public-domain, official-sample, or explicitly permission-approved.
+- Screenshot safety: private codes, emails, payment data, device identifiers, and unauthorized chapter pages are hidden or omitted.
+- Pricing accuracy: the listing can say free trial plus paid monthly token plans; it must not call Nayovi forever-free, open-source, a chapter source, or an official manga catalog.
+- Review integrity: the surface does not require fake reviews, incentivized ratings, vote requests, dofollow reciprocal backlinks, mirror-first APK redistribution, or paid placement as a backlink condition.
+- Owner approval: any APK upload, tester campaign, public report, launch submission, or directory form remains owner-reviewed until an authorized platform/API workflow is configured.
+
+If any gate fails, keep the opportunity in `watch`, `hold`, or `OWNER_REVIEW_REQUIRED` status instead of submitting.
+
 ## Credential Boundary
 
 No credentials, tokens, identity documents, account screenshots, cookies, recovery codes, or verification challenges belong in this document. Store only non-secret references in setup docs. Actual values belong in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions or another approved secret store.
