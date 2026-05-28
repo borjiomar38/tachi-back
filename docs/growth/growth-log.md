@@ -252,6 +252,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T212722Z`: audited branch state, SEO distribution shared context, latest distribution report, outreach cap history, growth trackers, `/translate-manhwa-ai`, and the approved-sample pilot brief.
+- Added a pilot decision packet to `/guides/permission-safe-manga-translation-pilot` so creator-platform, publisher, reviewer, and localization partner pilots can end in a clear continue, private-test, fix, or stop decision.
+- Added matching structured `ItemList` metadata for the pilot decision packet and marked the asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap. Next cap-reset outreach should send the queued Akaya Media approved-sample pilot inquiry unless a later cycle has already contacted Akaya.
+
 - Autonomous cycle on `growth/autonomous-20260528T205314Z`: audited branch state, SEO distribution shared context, growth trackers, outreach history, `/translate-manhwa-ai`, sitemap coverage, and the approved-sample pilot page.
 - Added a pilot report-back section to `/guides/permission-safe-manga-translation-pilot` so creator, publisher, reviewer, and localization partners can return sample summary, quality evidence, business signal, and stop-condition notes after an approved-sample test.
 - Updated sitemap freshness for the pilot URL and marked the pilot report packet shipped in the content backlog.
