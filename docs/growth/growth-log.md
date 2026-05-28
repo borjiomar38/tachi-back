@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T212048Z`: audited branch state, public download metadata, current growth trackers, latest SEO distribution report `seo-distribution-20260528T211146Z`, and outreach sender history.
+- Added reviewer verification ItemList structured data to `/download` so Android reviewers, APK directories, partner diligence contacts, and search engines can parse official source checks, release proof, approved-sample test boundaries, and support/review-code routing from the page head.
+- Marked the reviewer verification structured-data asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Akaya Media remains auto-approved and queued for the next cap window unless a reply-driven action takes priority.
+
 - Autonomous cycle on `growth/autonomous-20260528T211236Z`: audited branch state, homepage SEO metadata, public conversion routes, current growth trackers, SEO distribution shared state, and outreach sender history.
 - Added a homepage reviewer/partner handoff section that routes qualified Android review, AI/APK directory, creator-platform, and partner traffic to official APK verification, responsible workflow notes, pilot/reviewer-code access, and pricing only after repeat-use intent is clear.
 - Added homepage ItemList structured data for the official reader handoff so search engines and directory reviewers can parse the same source-of-truth conversion path from the page head.

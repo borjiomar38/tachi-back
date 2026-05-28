@@ -26,6 +26,28 @@ const downloadStructuredData = () => {
         'Open the Android app, enter a redeem code, and use hosted OCR and AI translation for approved manga, manhwa, or manhua content.',
     },
   ] as const;
+  const reviewerPacketItems = [
+    {
+      name: 'Confirm the official APK source',
+      description:
+        'Start from tachiyomiat.com or nayovi.com, then keep the official download, pricing, support, privacy, terms, and responsible-use links attached to the listing.',
+    },
+    {
+      name: 'Record release proof',
+      description:
+        'Attach the APK filename, build label, size, SHA-256 hash, package ownership notes, signing evidence, and Android developer verification status when those details are available.',
+    },
+    {
+      name: 'Test only approved samples',
+      description:
+        'Use public-domain, official-sample, owned, or permission-approved pages when checking OCR coverage, reading order, translation latency, and review screenshots.',
+    },
+    {
+      name: 'Route serious testers through support',
+      description:
+        'Ask support for a redeem code, screenshot context, narrated demo, and sample-safe review scope before publishing a hands-on article, directory listing, or partner note.',
+    },
+  ] as const;
 
   return [
     {
@@ -60,6 +82,17 @@ const downloadStructuredData = () => {
         '@type': 'HowToStep',
         name: step.name,
         text: step.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reviewer-verification-packet`,
+      name: 'Nayovi APK reviewer verification packet',
+      itemListElement: reviewerPacketItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
       })),
     },
   ];
