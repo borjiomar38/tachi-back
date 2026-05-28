@@ -183,6 +183,29 @@ const directoryPacketRows = [
   },
 ] as const;
 
+const demoPacketRows = [
+  {
+    item: 'Narrated demo',
+    detail:
+      'Offer the current short demo when an editor wants to see source page context, language choice, hosted translation progress, and the final English result before requesting access.',
+  },
+  {
+    item: 'Screenshots',
+    detail:
+      'Use official Android screenshots that show install confidence, activation, translation flow, support, and pricing context without exposing unrelated reader libraries.',
+  },
+  {
+    item: 'Reviewer code',
+    detail:
+      'Provide a dedicated redeem code only for hands-on evaluation, with no promise of coverage, ranking, link placement, or positive review.',
+  },
+  {
+    item: 'Decision links',
+    detail:
+      'Include download, pricing, support, workflow, privacy, terms, and takedown-policy links so readers can verify the product before installing or paying.',
+  },
+] as const;
+
 const pilotBriefRows = [
   {
     label: 'Approved sample',
@@ -505,6 +528,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.item}
                 </span>
                 <span>{row.copy}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Demo packet"
+        title="Review assets for editors and directory teams"
+        description="Use this packet when an Android reviewer, app directory, AI-tool directory, or partner asks for proof before testing Nayovi or publishing a listing."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {demoPacketRows.map((row) => (
+              <div
+                key={row.item}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.item}
+                </span>
+                <span>{row.detail}</span>
               </div>
             ))}
           </CardContent>

@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T183645Z`: audited branch state, current SEO distribution shared context, growth trackers, outreach drafts, `/translate-manhwa-ai`, and the public translation workflow guide.
+- Added a reviewer demo packet to `/guides/translation-support-workflow` so Android press, AI-tool directories, app directories, and partner teams can request or verify the narrated demo, screenshots, reviewer code, decision links, and responsible no-pay-for-coverage boundaries before publishing or testing.
+- Marked the reviewer demo packet backlog item as shipped with the owned workflow-guide target.
+- Auto-approved PopWebTools as a medium-fit AI-tool directory prospect after current public verification found `contact@popwebtools.com` for submission questions plus guidance to include a tool URL and screenshots. Outreach was not sent because the configured sender reported the daily cap was already reached at 10/10.
+
 - Autonomous cycle on `growth/autonomous-20260528T182915Z`: audited branch state, public SEO route coverage, current growth trackers, and the SEO distribution shared state. The referenced distribution report file for `20260528T182722Z` was not present yet, so this cycle used the shared snapshot and repo docs to avoid duplicate outreach.
 - Added a publisher/community pilot brief to `/guides/translation-support-workflow` so partners can evaluate approved samples, dedicated access, and success signals before any public mention, directory listing, or affiliate test.
 - Marked the publisher and community pilot brief as shipped in the growth content backlog.
