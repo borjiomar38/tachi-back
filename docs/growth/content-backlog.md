@@ -14,6 +14,6 @@
 
 | priority | asset | likely linker | why it can earn links |
 | --- | --- | --- | --- |
-| high | Neutral directory listing packet | Android directories and app-review blogs | Makes it easy to cite the official APK, source-of-truth links, screenshots, pricing, and responsible-use language. |
+| shipped 2026-05-28 | Neutral directory listing packet | Android directories and app-review blogs | Added citation-ready listing details to `/guides/translation-support-workflow` so reviewers can cite the APK, source-of-truth link, review-code path, and responsible-use language. |
 | high | Reviewer demo packet | Android press and manga-tool roundups | Gives reviewers a low-friction path to test the app without API-key setup or unclear chapter-hosting assumptions. |
 | medium | Permission-safe pilot one-pager | creator platforms, publishers, localization communities | Frames Nayovi around approved samples and measurable reader demand rather than broad unauthorized translation. |
