@@ -73,6 +73,10 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-28',
     priority: '0.8',
   },
+  '/guides/manhwa-ocr-glossary-checklist': {
+    lastModified: '2026-05-28',
+    priority: '0.8',
+  },
   '/legal/privacy': {
     changeFrequency: 'yearly',
     priority: '0.3',
@@ -97,6 +101,7 @@ const staticSitemapPathOrder = [
   '/guides/mihon-nayovi-setup',
   '/guides/mihon-tachiyomiat-setup',
   '/guides/translation-support-workflow',
+  '/guides/manhwa-ocr-glossary-checklist',
   '/legal/privacy',
   '/legal/terms',
   '/legal/official-sources-takedown',

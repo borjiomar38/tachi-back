@@ -2,6 +2,12 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T174404Z`: audited branch state, public SEO pages, growth trackers, and the SEO distribution agent's latest report.
+- Added `/guides/manhwa-ocr-glossary-checklist` as a focused linkable asset for approved manhwa samples, OCR order, glossary consistency, human review decisions, and partner pilot quality signals.
+- Added route metadata, sitemap coverage, footer discovery, route-tree registration, and distribution-agent link-asset tracking for the new checklist.
+- Marked the reviewer checklist backlog topic as published in `docs/growth/content-backlog.md`.
+- Auto-approved and contacted Anime Corner through its public business/collaboration contact path after current public verification showed anime/manga coverage and a legitimate-source editorial stance. The pitch referenced the new OCR glossary checklist, offered review-code/workflow feedback context, avoided paid link placement, and included opt-out language.
+- Validation: direct `./node_modules/.bin/tsc --noEmit` passed. The standalone `pnpm exec tsr generate` command is unavailable in this install, so the generated route registry was updated manually and verified with TypeScript.
 - Autonomous cycle on `growth/autonomous-20260528T173622Z`: audited branch state, public workflow/SEO pages, growth trackers, and the SEO distribution agent's latest shared report.
 - Added a linkable manhwa OCR checklist to `/guides/translation-support-workflow` so reviewers, directory editors, and partners can evaluate approved samples by text detection, reading order, glossary consistency, and human review decision before translation output is cited.
 - Updated `/sitemap.xml` metadata for `/guides/translation-support-workflow` after the checklist refresh.

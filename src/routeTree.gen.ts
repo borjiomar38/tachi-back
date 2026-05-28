@@ -29,6 +29,7 @@ import { Route as LegalTermsRouteImport } from './routes/legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
 import { Route as LegalOfficialSourcesTakedownRouteImport } from './routes/legal/official-sources-takedown'
 import { Route as GuidesTranslationSupportWorkflowRouteImport } from './routes/guides/translation-support-workflow'
+import { Route as GuidesManhwaOcrGlossaryChecklistRouteImport } from './routes/guides/manhwa-ocr-glossary-checklist'
 import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
@@ -201,6 +202,12 @@ const GuidesTranslationSupportWorkflowRoute =
   GuidesTranslationSupportWorkflowRouteImport.update({
     id: '/guides/translation-support-workflow',
     path: '/guides/translation-support-workflow',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesManhwaOcrGlossaryChecklistRoute =
+  GuidesManhwaOcrGlossaryChecklistRouteImport.update({
+    id: '/guides/manhwa-ocr-glossary-checklist',
+    path: '/guides/manhwa-ocr-glossary-checklist',
     getParentRoute: () => rootRouteImport,
   } as any)
 const GuidesMihonTachiyomiatSetupRoute =
@@ -603,6 +610,7 @@ export interface FileRoutesByFullPath {
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -693,6 +701,7 @@ export interface FileRoutesByTo {
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -787,6 +796,7 @@ export interface FileRoutesById {
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -882,6 +892,7 @@ export interface FileRouteTypes {
     | '/checkout/success'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -972,6 +983,7 @@ export interface FileRouteTypes {
     | '/checkout/success'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1065,6 +1077,7 @@ export interface FileRouteTypes {
     | '/checkout/success'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1159,6 +1172,7 @@ export interface RootRouteChildren {
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
   GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
+  GuidesManhwaOcrGlossaryChecklistRoute: typeof GuidesManhwaOcrGlossaryChecklistRoute
   GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
   LegalOfficialSourcesTakedownRoute: typeof LegalOfficialSourcesTakedownRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
@@ -1335,6 +1349,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/translation-support-workflow'
       fullPath: '/guides/translation-support-workflow'
       preLoaderRoute: typeof GuidesTranslationSupportWorkflowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/manhwa-ocr-glossary-checklist': {
+      id: '/guides/manhwa-ocr-glossary-checklist'
+      path: '/guides/manhwa-ocr-glossary-checklist'
+      fullPath: '/guides/manhwa-ocr-glossary-checklist'
+      preLoaderRoute: typeof GuidesManhwaOcrGlossaryChecklistRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/mihon-tachiyomiat-setup': {
@@ -2019,6 +2040,8 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutSuccessRoute: CheckoutSuccessRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
   GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
+  GuidesManhwaOcrGlossaryChecklistRoute:
+    GuidesManhwaOcrGlossaryChecklistRoute,
   GuidesTranslationSupportWorkflowRoute: GuidesTranslationSupportWorkflowRoute,
   LegalOfficialSourcesTakedownRoute: LegalOfficialSourcesTakedownRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,

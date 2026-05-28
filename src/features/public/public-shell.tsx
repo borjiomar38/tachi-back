@@ -167,6 +167,12 @@ export const PublicShell = (props: { children: ReactNode }) => {
                   >
                     Translation workflow
                   </a>
+                  <a
+                    href="/guides/manhwa-ocr-glossary-checklist"
+                    className="hover:text-foreground"
+                  >
+                    OCR glossary checklist
+                  </a>
                 </div>
               </div>
               <div className="space-y-3">
