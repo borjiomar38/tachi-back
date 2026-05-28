@@ -34,6 +34,29 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Owner reply: what Borji should do next
+
+Inbound command: `20260528T204438Z-e8db7d056bb1`
+Status: owner guidance prepared for reply; no external outreach sent from this item.
+
+Short answer in French:
+
+Borji, pour l'instant tu n'as pas besoin de faire une action technique.
+
+Ce que je fais automatiquement:
+- J'améliore les pages SEO et les preuves publiques: téléchargement APK, workflow OCR, checklist, pricing, support, sitemap, structured data.
+- Je cherche des opportunités propres: presse Android, annuaires APK/AI, plateformes manga/webcomic, localisation, investisseurs/fondateurs.
+- J'envoie seulement des messages personnalisés à des contacts publics/officiels, avec opt-out, sans achat de backlink ni spam.
+
+Ce que tu dois faire uniquement quand je te le signale:
+- Répondre si un partenaire demande un call, une démo, un pilote, un deal, un prix spécial, ou une décision légale/financière.
+- Être prêt à donner un créneau de 15-20 minutes pour ICv2 ou un autre contact chaud.
+- Fournir un code review/pilot si un média, annuaire, ou partenaire qualifié le demande.
+- Me donner des chiffres business quand disponibles: abonnements payants, essais activés, taux activation -> paiement, rétention, screenshots approuvés.
+
+Action immédiate recommandée:
+Garde ton email et WhatsApp disponibles. Si ICv2 ou un autre contact répond, je le marque comme `MEETING_REQUIRED` ou `CALL_REQUIRED` avec le contexte exact. Sinon je continue le SEO, les backlinks propres, les drafts et les prospects.
+
 ### ICv2 comics and manga product coverage
 
 Category: press
