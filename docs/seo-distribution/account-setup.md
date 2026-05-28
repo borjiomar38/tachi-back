@@ -13,8 +13,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | LinkedIn company/founder profile | Founder/company trust, partner/investor visibility | needs_owner_setup | Create/connect official company page or founder-owned page | Logo, banner, company bio, website links | SEO_AGENT_LINKEDIN_ACCESS_TOKEN, SEO_AGENT_LINKEDIN_ORGANIZATION_ID | Publish official build-in-public and partnership posts | Prepare exact company bio and first 3 posts. |
 | medium | Product Hunt maker/company | Launch credibility and early product feedback | needs_owner_setup | Create/connect official maker/company account | Logo, tagline, demo video, product screenshots | SEO_AGENT_PRODUCTHUNT_TOKEN | Prepare launch page and authorized comments | Prepare launch asset checklist. |
 | medium | DEV/Medium technical publishing | Technical authority for OCR, merge QA, hosted Android workflow | needs_owner_setup | Connect official publication/profile account | Canonical article drafts, profile bio, logo | SEO_AGENT_DEVTO_API_KEY, SEO_AGENT_MEDIUM_INTEGRATION_TOKEN | Publish canonical technical articles where allowed | Prepare public-safe OCR QA article packet. |
-| medium | Reddit official account | Community listening and careful no-link feedback posts | needs_owner_setup | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Prepare subreddit-specific rule map. |
-| medium | X/Twitter official account | Lightweight product updates and partner discovery | needs_owner_setup | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Prepare official profile copy and first post queue. |
+| medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
+| medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
 | medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_needed | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Prioritize high-reputation directories first. |
 
 ## 2026-05-28 Setup Packets
@@ -158,3 +158,59 @@ Agent capability after connection:
 
 Next action:
 - Owner creates official publication/profile, reviews byline preference, and connects API tokens if automated publishing is wanted.
+
+### Reddit Official Account
+
+Status: OWNER_ACTION_REQUIRED for account creation, email verification, subreddit rule review, and OAuth connection.
+
+Profile fields:
+- Username preference: `NayoviOfficial`, `NayoviApp`, or founder-owned account with clear Nayovi affiliation.
+- Display name: `Nayovi`
+- Bio: `Official Nayovi account for Android hosted OCR and AI translation workflow feedback. Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, or permission-approved content.`
+- Primary profile link: `https://nayovi.com`
+- Support link when profile supports more than one URL: `https://tachiyomiat.com/support`
+
+Required assets:
+- Square logo/avatar.
+- Short disclosure line for any subreddit post or comment: `Disclosure: I work on Nayovi.`
+- No-link feedback drafts from `docs/seo-distribution/platform-drafts.md`.
+- Subreddit rule notes for each exact target before posting; do not rely on old rules or generic Reddit advice.
+
+Credential references:
+- `SEO_AGENT_REDDIT_CLIENT_ID`
+- `SEO_AGENT_REDDIT_CLIENT_SECRET`
+- `SEO_AGENT_REDDIT_REFRESH_TOKEN`
+
+Agent capability after connection:
+- The agent can draft and, only after owner authorization plus current community rule review, publish no-link or link-allowed comments through the official Reddit API. No automated replies, voting, brigading, or repeated promotional submissions.
+
+Next action:
+- Owner creates the official account manually, confirms whether it is a brand or founder-owned account, and reviews the first target rules for `r/androidapps`, `r/androiddev`, and any manga/manhwa community before API posting is enabled.
+
+### X/Twitter Official Account
+
+Status: OWNER_ACTION_REQUIRED for account creation, phone/email verification, terms acceptance, and API connection.
+
+Profile fields:
+- Name: `Nayovi`
+- Handle preference: `@nayovi`, `@nayoviapp`, or another owner-approved official handle.
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; use with owned, public-domain, official-sample, or permission-approved content.`
+- Website: `https://nayovi.com`
+- Pinned link target: `https://tachiyomiat.com/download`
+
+Required assets:
+- Square logo/avatar.
+- Banner that shows neutral Android workflow or approved-sample UI only.
+- First post queue:
+  - `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It focuses on official APK access, redeem-code activation, support, and permission-safe use.`
+  - `We published a neutral comic OCR QA checklist for approved samples: permission scope, text coverage, reading order, glossary consistency, and sharing decisions.`
+  - `Looking for feedback from Android reviewers, localization operators, and creator-platform teams on what proof makes an APK-based OCR workflow trustworthy.`
+
+Credential reference:
+- `SEO_AGENT_X_ACCESS_TOKEN`
+
+Agent capability after connection:
+- The agent can prepare or publish concise official updates only after API credentials are configured and owner posting scope is confirmed. No automated replies, trend hijacking, repetitive link posting, or personal-looking persona behavior.
+
+Next action:
+- Owner creates/connects the official account, approves the handle and bio, and decides whether the agent should remain draft-only or publish approved posts through the API.
