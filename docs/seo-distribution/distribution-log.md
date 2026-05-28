@@ -2,6 +2,40 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T23:59Z Cycle
+
+Branch: `seo/distribution-20260528T235128Z`
+
+Account setup progress:
+- Advanced GitHub organization/profile polish with exact official bio, canonical links, public docs to pin/cite, `SEO_AGENT_GITHUB_TOKEN` guardrails, and owner-only public contact confirmation.
+- Advanced Mastodon/Fediverse official account setup with profile fields, no-link first post queue, instance-rules review, `SEO_AGENT_MASTODON_ACCESS_TOKEN` guardrails, and no automated replies/follows/boosts.
+
+Owned content changed:
+- Strengthened `docs/seo-distribution/android-apk-trust-profile.md` with a pre-submission gate for app-testing portals, APK review sites, AI directories, startup directories, newsletters, and public launches.
+- Updated content calendar and linkable assets so GitHub profile polish, Fediverse setup, and the pre-submission gate are visible to future growth cycles.
+
+Authority targets discovered or refreshed:
+- AppTester.co: human app-testing and APK health-check surface; use only after owner approves APK sharing, sample scope, screenshots, and public report permission.
+- APKLoon submit APK: possible APK review/submission surface; hold until source-link handling, mirror policy, package facts, and signing facts are verified.
+- tryweb.site AI tools directory: possible free-trial directory; fit depends on accurate trial plus paid-token wording and no reciprocal/paid-link requirement.
+- MangaReborn: rights-sensitive manga localization/community context; watch-only unless an approved-sample creator workflow exists.
+
+Draft distribution assets prepared:
+- Added an AppTester.co-style safe test packet with install, activation, OCR progress, support clarity, screenshot boundaries, no-chapter-hosting language, and no APK upload or public report without owner approval.
+
+Outreach tracker:
+- Added AppTester.co, APKLoon, tryweb.site, and MangaReborn to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, tester campaign, directory submission, public report approval, Reddit comment, LinkedIn post, or outreach send was performed. Registry remains draft mode except owned GitHub/docs.
+
+Validation:
+- Passed: `./node_modules/.bin/tsc --noEmit`.
+
+Next actions:
+- Owner confirms official GitHub organization/profile scope, Mastodon instance/handle, package name, signing fingerprint, Android verification status, and approved screenshot/sample assets.
+- Apply the pre-submission gate before AppTester.co, APKLoon, tryweb.site, SpotFreeAI, or any similar listing/test surface.
+
 ## 2026-05-28T23:42Z Cycle
 
 Branch: `seo/distribution-20260528T234242Z`
