@@ -321,6 +321,52 @@ const pilotBriefRows = [
   },
 ] as const;
 
+const pilotOnePagerRows = [
+  {
+    label: 'Who chooses the sample',
+    detail:
+      'The creator, publisher, community moderator, or reviewer chooses the pages and confirms the sample can be used for OCR and translation testing.',
+  },
+  {
+    label: 'What Nayovi tests',
+    detail:
+      'The pilot checks Android activation, hosted OCR coverage, reading order, glossary consistency, translation draft quality, and reviewer correction needs.',
+  },
+  {
+    label: 'What stays private',
+    detail:
+      'Source files, translated pages, screenshots, and correction notes stay private unless the rights holder or sample owner approves public use.',
+  },
+  {
+    label: 'How access is separated',
+    detail:
+      'A dedicated redeem code keeps pilot usage, support questions, and conversion signals separate from normal reader trials.',
+  },
+  {
+    label: 'When to continue',
+    detail:
+      'Continue only when the pilot produces useful OCR evidence, responsible public wording, qualified installs, affiliate interest, or repeat paid token demand.',
+  },
+] as const;
+
+const pilotOutcomeRows = [
+  {
+    title: 'Useful for publishers',
+    description:
+      'Evaluate approved sample pages without implying Nayovi can translate a catalog or replace professional localization.',
+  },
+  {
+    title: 'Useful for creators',
+    description:
+      'Test whether an Android reader workflow can help with preview pages, accessibility checks, or multilingual audience feedback.',
+  },
+  {
+    title: 'Useful for reviewers',
+    description:
+      'Publish a fair app review with source-of-truth links, pricing context, APK verification, and the no-chapter-hosting boundary.',
+  },
+] as const;
+
 const communitySubmissionRows = [
   {
     channel: 'Startup launch communities',
@@ -616,6 +662,104 @@ export const PageComicOcrChecklist = () => {
             className={buttonVariants({ variant: 'ghost', size: 'lg' })}
           >
             Request review access
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
+export const PagePermissionSafePilotBrief = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="Pilot brief"
+        title="Permission-safe manga translation pilot brief"
+        description="A short evaluation plan for creators, publishers, communities, reviewers, and localization partners who want to test Nayovi with approved samples before any public mention."
+        className="pt-10"
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              This page is for approved-sample pilots. Nayovi does not host
+              manga, manhwa, or manhua chapters and does not replace creator,
+              publisher, or rights-holder permission.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Use it when a partner needs a concise way to decide whether a
+              review code, affiliate test, creator feedback loop, or
+              localization workflow conversation is worth scheduling.
+            </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Pilot scope"
+        title="What the pilot covers"
+        description="The goal is to measure OCR and translation workflow fit without creating public examples from unclear source material."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {pilotOnePagerRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Partner fit"
+        title="When this is a good use of time"
+        description="Use the brief for serious review, partnership, or feedback conversations where the partner controls or approves the sample."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {pilotOutcomeRows.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Next"
+        title="Request a review or pilot code"
+        description="Send the sample scope, language pair, rights context, and reviewer goal through support before uploading or publishing anything."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/support"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Contact support
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/guides/comic-ocr-translation-checklist"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            OCR checklist
+          </a>
+          <a
+            href="/guides/translation-support-workflow"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Full workflow
           </a>
         </div>
       </PublicSection>

@@ -79,6 +79,11 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-28',
     priority: '0.8',
   },
+  '/guides/permission-safe-manga-translation-pilot': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-28',
+    priority: '0.8',
+  },
   '/legal/privacy': {
     changeFrequency: 'yearly',
     priority: '0.3',
@@ -104,6 +109,7 @@ const staticSitemapPathOrder = [
   '/guides/mihon-tachiyomiat-setup',
   '/guides/translation-support-workflow',
   '/guides/comic-ocr-translation-checklist',
+  '/guides/permission-safe-manga-translation-pilot',
   '/legal/privacy',
   '/legal/terms',
   '/legal/official-sources-takedown',

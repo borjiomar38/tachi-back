@@ -218,6 +218,63 @@ If this kind of checklist fits your resource list, I can prepare a short Markdow
 Best,
 Nayovi team
 
+## Approved-Sample Creator Platform Pilot Draft
+
+Use for creator platforms, publisher partnerships, and webcomic communities only when the contact path is public or official and the message is about approved samples, not catalog translation or backlink placement.
+
+Subject: Approved-sample Android OCR pilot for {{prospect}}
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found {{prospect}} while reviewing platforms that work with comics, manga, webcomics, publishing, localization, or creator partnerships. I do not want to pitch Nayovi as a catalog translation tool or ask for a backlink. The useful question is narrower: would an approved-sample pilot be worth considering for a creator, publisher, or reviewer who controls the sample pages?
+
+Pilot brief:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+The pilot would use a dedicated redeem code, approved sample scope, language pair, rights context, hosted OCR review, translation draft review, and private correction notes. Nayovi does not host or distribute chapters, and nothing from the pilot should be published unless the sample owner approves it.
+
+Useful context:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+https://tachiyomiat.com/download
+https://tachiyomiat.com/support
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### Akaya Media partnership inquiry
+
+Category: partnership
+Contact path: global@akayamedia.com, selected after current public verification found Akaya Media describes manga, comic, and webcomic publishing/localization plus international collaboration opportunities and lists the address for partnership inquiries.
+Rationale: Akaya's Latin American publishing and localization context makes an approved-sample Android OCR pilot more relevant than a generic app pitch. The correct angle is feedback on creator or publisher-approved samples, not catalog translation, backlink placement, or directory listing.
+Status: auto-approved; not contacted because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28. Send after the daily cap resets if no stronger reply-driven action takes priority.
+
+Subject: Approved-sample Android OCR pilot for Akaya Media
+
+Hi Akaya Media team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Akaya while reviewing platforms that work with manga, comics, webcomics, publishing, localization, and international audience expansion. I do not want to pitch Nayovi as a catalog translation tool or ask for a backlink. The useful question is narrower: would an approved-sample pilot be worth considering for a creator, publisher, or reviewer who controls the sample pages?
+
+Pilot brief:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+The pilot would use a dedicated redeem code, approved sample scope, language pair, rights context, hosted OCR review, translation draft review, and private correction notes. Nayovi does not host or distribute chapters, and nothing from the pilot should be published unless the sample owner approves it.
+
+Useful context:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+https://tachiyomiat.com/download
+https://tachiyomiat.com/support
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### AI Workbench tool listing
 
 Category: directory
