@@ -170,6 +170,24 @@ const reviewerHandoffRows = [
   },
 ] as const;
 
+const directoryQualityRows = [
+  {
+    title: 'Preserve the source of truth',
+    description:
+      'A directory profile should link to the official download page, pricing, support, privacy, terms, and OCR checklist instead of hiding users behind a mirror page.',
+  },
+  {
+    title: 'Avoid reciprocal-link gates',
+    description:
+      'Skip listings that require dofollow backlinks, paid placement, review swaps, or homepage badges as the condition for indexing Nayovi.',
+  },
+  {
+    title: 'Represent pricing accurately',
+    description:
+      'Use free trial, redeem-code access, and paid token plans language; do not label Nayovi as a forever-free open-source app unless that becomes true.',
+  },
+] as const;
+
 const updateSourceRows = [
   {
     label: 'Source URL',
@@ -489,6 +507,27 @@ export const PageDownload = () => {
             </p>
           </CardContent>
         </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Directories"
+        title="When a listing is acceptable"
+        description="Use this filter before submitting Nayovi to AI-tool, APK, startup, or app-review directories."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {directoryQualityRows.map((row) => (
+            <Card key={row.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.title}</CardTitle>
+                <CardDescription>{row.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </PublicSection>
 
       <PublicSection

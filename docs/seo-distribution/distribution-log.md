@@ -2,6 +2,39 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T22:49Z Cycle
+
+Branch: `seo/distribution-20260528T214910Z`
+
+Account setup progress:
+- Advanced LinkedIn company/founder setup from generic `needs_owner_setup` to a prepared owner-action packet with exact public profile fields, first post queue, canonical links, assets, and `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` / `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` guardrails.
+- Kept YouTube in prepared owner-action mode with channel metadata, demo upload requirements, and `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` guardrails; owner still must create/connect the channel and approve demo assets.
+
+Owned content changed:
+- Added a public directory quality filter to `https://tachiyomiat.com/download` explaining when AI-tool, APK, startup, or app-review listings are acceptable.
+- Added structured data for the directory quality filter so crawlers can connect the download page with source-of-truth, no reciprocal-link, and accurate pricing requirements.
+
+Authority discovery:
+- Added SeekTool.ai as a hold item because the current submit page requires a dofollow backlink before review.
+- Added NavTools AI as watch-only pending terms, form-field, and source-link review.
+- Added ToolIndex as a medium-fit draft opportunity because its submit path supports free/freemium/free-trial/paid classifications and direct website links.
+- Added the official Android Play Console developer verification guide as owner-action context for package registration and ownership proof.
+
+Drafts prepared:
+- Added a ToolIndex/NavTools AI listing packet with official source links, category suggestions, responsible-use language, and skip rules for paid/reciprocal/mirror-first listings.
+- Added SeekTool.ai hold language so future cycles do not treat its reciprocal-link flow as an easy backlink.
+
+Outreach tracker:
+- Added SeekTool.ai, NavTools AI, and ToolIndex to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, identity verification, APK upload, directory submission, paid placement, Reddit comment, or public outreach was performed. Registry still permits only owned GitHub/docs work.
+
+Next actions:
+- Owner creates/connects official LinkedIn and YouTube accounts if those surfaces should become publishable.
+- Owner confirms package name, signing fingerprint, and Android developer verification status before stronger APK directory outreach.
+- Verify NavTools/ToolIndex submission terms before any owner-reviewed listing submission; keep SeekTool.ai blocked unless a no-reciprocal editorial path exists.
+
 ## 2026-05-28T21:55Z Cycle
 
 Branch: `seo/distribution-20260528T212220Z`

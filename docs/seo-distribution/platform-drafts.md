@@ -69,6 +69,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android reviewers/directories | APK review handoff | Source-of-truth APK citation packet for 2026 Android verification context | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use only with public editorial/contact paths; do not claim verified status until owner confirms package/signing details. |
 | draft | AI directory | Solaire Tools / TheAIFest | Quality-filtered AI OCR listing packet | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official submit path only; skip if pricing/support/source links cannot be represented accurately. |
 | draft | Creator platform | WEBTOON Translate context | Approved-sample OCR checklist feedback, no catalog translation | None by default | OWNER_REVIEW_REQUIRED: official contact path only; no link unless requested and no product-install pressure. |
+| draft | AI directory | ToolIndex / NavTools AI | Quality-filtered listing packet for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit paths only; skip any paid, reciprocal-link, or mirror-first listing requirement. |
+| hold | AI directory | SeekTool.ai | Reciprocal backlink submission rejected | None | HIGH_RISK: current submit flow requires a dofollow backlink before review, so do not submit or add a homepage backlink. |
 
 ## Draft Bodies
 
@@ -259,6 +261,27 @@ If this is not relevant, no problem and I will not follow up.
 
 Best,
 Nayovi team
+
+### ToolIndex / NavTools AI directory listing draft
+
+Status: draft
+Target: quality-filtered AI tool directories with official submit paths.
+Audience: AI-tool searchers, app reviewers, Android power users.
+Rules risk: medium; submit only if the directory preserves official source links and does not require paid placement, reciprocal backlinks, or hidden mirror-first APK pages.
+No-link variant: not applicable for a directory listing; use official source-of-truth URLs only if owner approves submission.
+Link variant: https://tachiyomiat.com/download
+
+Short description:
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It provides official APK download, free trial access, redeem-code activation, monthly token plans, and support from tachiyomiat.com.
+
+Category suggestions:
+AI OCR, translation, Android app, manga translation workflow, manhwa translation, language technology.
+
+Listing notes:
+- Use `https://tachiyomiat.com/download` as the primary app URL when the form asks where users should install or review the Android app.
+- Include `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`, and `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only where the form supports support/resource links.
+- State that Nayovi does not host or distribute chapters and supports owned, public-domain, official-sample, or permission-approved content.
+- Do not submit if the form requires a dofollow backlink, paid featured package, review swap, badge placement, or unaffiliated APK mirror.
 
 ### Quality-filtered AI directory listing note
 
