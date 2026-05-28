@@ -666,3 +666,19 @@ Next actions:
 - Added the reviewer handoff block, owned GitHub APK review packet, and WEBTOON translation-context note to `content-calendar.md` and `link-assets.md`.
 - Drafted exact Android reviewer APK handoff note, quality-filtered AI directory listing note, and WEBTOON Translate context note in `platform-drafts.md`.
 - Next actions: owner confirms package name, signing fingerprint, developer verification status, and screenshot assets; owner chooses whether to mirror the checklist into owned GitHub docs; keep Solaire/TheAIFest submissions blocked until current forms and terms pass the quality filter.
+
+## 2026-05-28 Cycle 14
+
+- Verified branch `seo/distribution-20260528T231632Z`; account registry still allows owned GitHub/docs only, so no external posting, account creation, login, form submission, or APK upload was attempted.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with three official setup items:
+  - Added `docs/seo-distribution/official-profile-asset-library.md` as a reusable non-secret packet for logos, banners, screenshots, demo video, canonical links, approved profile copy, and package/signing placeholders.
+  - Added a Google Search Console action-packet row with exact first URLs to verify and inspect after owner-owned domain verification.
+  - Added a YouTube official profile packet with first-demo scope: install, activation, OCR progress, support path, and approved samples only.
+- Researched rotated authority opportunities across different categories:
+  - Android Developer Newsletter: high-trust Android developer surface; fit is a technical APK trust/OCR testing packet only after package and screenshot facts are owner-confirmed.
+  - Try.fm and ToolsVerse: free-trial or curated AI directory surfaces that may fit only if Nayovi is labeled accurately as trial plus paid-token workflow and keeps source-of-truth links.
+  - UK Comics Creators Research Report 2026 and Kodansha creator-program context: useful creator-rights background for approved-sample and screenshot-policy language, not direct backlink targets.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md`: Android developer newsletter technical tip, free-trial AI directory eligibility/listing packet, and creator/platform approved-screenshot feedback note with no-link-first language.
+- Next actions: owner approves official asset references, package/signing/developer-verification facts, and public screenshot scope; then use the directory packet only on quality-filtered official submit paths and keep creator/platform notes no-link-first.
