@@ -11,6 +11,24 @@ const pilotStructuredData = () => {
   const url = buildPublicAbsoluteUrl(
     '/guides/permission-safe-manga-translation-pilot'
   );
+  const pilotSteps = [
+    {
+      name: 'Confirm approved sample scope',
+      text: 'Name the sample pages, language pair, rights context, reviewer role, and permission status before any OCR or translation test.',
+    },
+    {
+      name: 'Separate pilot access',
+      text: 'Use a dedicated review or pilot redeem code so support questions, usage, and conversion signals are not mixed with normal reader trials.',
+    },
+    {
+      name: 'Review OCR and translation evidence',
+      text: 'Check OCR coverage, reading order, glossary consistency, translation draft quality, and reviewer corrections before sharing any result.',
+    },
+    {
+      name: 'Decide whether to continue',
+      text: 'Continue only when rights are clear and the pilot creates useful OCR evidence, qualified installs, affiliate interest, or a partner conversation.',
+    },
+  ] as const;
 
   return [
     {
@@ -28,6 +46,33 @@ const pilotStructuredData = () => {
         'manhwa translation workflow',
         'Android manga translator review',
       ],
+    },
+    {
+      '@type': 'HowTo',
+      '@id': `${url}#pilot-howto`,
+      name: 'How to run a permission-safe manga translation pilot',
+      description:
+        'A four-step approved-sample workflow for testing Nayovi Android hosted OCR and AI translation with creators, publishers, reviewers, and localization partners.',
+      mainEntityOfPage: {
+        '@id': `${url}#webpage`,
+      },
+      step: pilotSteps.map((step, index) => ({
+        '@type': 'HowToStep',
+        position: index + 1,
+        name: step.name,
+        text: step.text,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#pilot-checklist`,
+      name: 'Permission-safe pilot readiness checklist',
+      itemListElement: pilotSteps.map((step, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: step.name,
+        description: step.text,
+      })),
     },
   ];
 };
