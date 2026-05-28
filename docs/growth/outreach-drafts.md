@@ -198,6 +198,26 @@ If a manga/comic OCR QA checklist is useful for your readers, I can send a short
 Best,
 Nayovi team
 
+## GitHub Resource List Maintainer Question
+
+Use only for public GitHub issues, discussions, or maintainer contact paths that explicitly welcome resource suggestions. Do not open a pull request with a product link as the first touch.
+
+Subject: Neutral comic OCR QA checklist resource fit?
+
+Hi {{name}},
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and comic readers, and I wanted to ask before suggesting a resource.
+
+The resource is a neutral QA checklist for approved samples: permission scope, OCR coverage, reading order, glossary consistency, human correction, and the decision about whether a result can be shared or cited. It is intentionally useful without requiring a product link and now includes structured checklist metadata.
+
+Checklist:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+If this kind of checklist fits your resource list, I can prepare a short Markdown-only entry and avoid promotional wording. If it is not relevant, no follow-up is needed.
+
+Best,
+Nayovi team
+
 ### AI Workbench tool listing
 
 Category: directory
