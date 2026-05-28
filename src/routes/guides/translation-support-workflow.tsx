@@ -9,7 +9,7 @@ export const Route = createFileRoute('/guides/translation-support-workflow')({
   head: () =>
     buildPublicPageHead(
       'Manga AI Translation Support Workflow',
-      'A permission-safe manga AI translation workflow for Nayovi hosted OCR, glossary control, human review, contributor credit, manhwa translate ai support, and takedown-ready handling.',
+      'A permission-safe manga AI translation workflow for Nayovi hosted OCR, glossary control, reviewer QA, source-of-truth links, manhwa translate ai support, and takedown-ready handling.',
       '/guides/translation-support-workflow',
       {
         keywords: [
