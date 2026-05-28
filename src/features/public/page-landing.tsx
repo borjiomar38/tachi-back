@@ -82,6 +82,33 @@ const contactCards = [
   },
 ] as const;
 
+const partnerHandoffRows = [
+  {
+    title: 'Official source',
+    description:
+      'Reviewers and directories should point installs to the Nayovi download page, not an unsupported APK mirror.',
+    href: '/download',
+    cta: 'Verify APK',
+    icon: DownloadIcon,
+  },
+  {
+    title: 'Responsible workflow',
+    description:
+      'Use owned, public-domain, official-sample, or permission-approved pages when testing OCR and translation.',
+    href: '/guides/translation-support-workflow',
+    cta: 'Read workflow',
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: 'Pilot access',
+    description:
+      'Creator platforms, publishers, and reviewers can use a dedicated code before any public mention or paid-plan handoff.',
+    href: '/guides/permission-safe-manga-translation-pilot',
+    cta: 'Open pilot brief',
+    icon: KeyRoundIcon,
+  },
+] as const;
+
 export const PageLanding = (props: {
   contactStatus?: 'sent' | 'error' | 'invalid';
   tokenPacks: PublicTokenPack[];
@@ -408,6 +435,47 @@ export const PageLanding = (props: {
         <p className="mt-4 text-sm leading-6 text-muted-foreground">
           Chapter estimates are simple approximations for normal monthly use.
         </p>
+      </PublicSection>
+
+      <PublicSection
+        id="official-reader-handoff"
+        eyebrow="Reviewer handoff"
+        title="Send qualified readers to the right next step"
+        description="Use these source-of-truth links when an Android review, AI-tool directory, creator platform, or partner note sends readers to Nayovi."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerHandoffRows.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card
+                key={item.title}
+                className="rounded-[1.5rem] dark:border-white/10 dark:bg-white/[0.03]"
+              >
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:border dark:border-brand-300/20 dark:bg-brand-300/12 dark:text-brand-100">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <a
+                    href={item.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-primary"
+                  >
+                    <span>{item.cta}</span>
+                    <ArrowRightIcon className="size-4" />
+                  </a>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <div className="mt-4 rounded-[1.5rem] border bg-card px-5 py-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-white/[0.03]">
+          The strongest referral path is install confidence first, then trial or
+          reviewer-code activation, then pricing only when repeat translation
+          demand is clear.
+        </div>
       </PublicSection>
 
       <PublicSection
