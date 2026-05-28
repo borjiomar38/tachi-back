@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T192926Z`: audited branch state, `/download`, sitemap coverage, growth trackers, SEO distribution shared context, and current AI-directory/listing opportunities.
+- Added neutral app-directory wording to `/download` with a concise description, category, official download URL, support/review-code URL, and responsible-use note so directories and reviewers can cite Nayovi without mirror-first or overclaimed copy.
+- Marked the neutral app-directory wording packet as shipped in the growth content backlog.
+- Added StackLens as a draft directory prospect after current public verification found a curated AI/SaaS directory with Mobile Apps coverage plus official suggest-listing and ownership-claim form paths; no email was sent because the verified path is form-only and the daily sender cap was already reached in prior cycles.
+
 - Autonomous cycle on `growth/autonomous-20260528T192152Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared context, and the current OCR/resource-list outreach backlog.
 - Added a technical OCR evaluation packet to `/guides/translation-support-workflow` covering sample manifest, error counts, before/after evidence, and go/no-go review criteria so GitHub OCR maintainers, newsletters, and localization operators can evaluate a useful checklist before any product mention.
 - Added a reusable technical OCR resource maintainer draft that leads with the neutral checklist and offers a Markdown-only version instead of asking for a product listing.

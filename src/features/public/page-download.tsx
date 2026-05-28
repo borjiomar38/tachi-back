@@ -59,6 +59,31 @@ const appMetadataRows = [
   },
 ] as const;
 
+const directoryListingRows = [
+  {
+    label: 'One-line description',
+    value:
+      'Nayovi is an Android APK for hosted OCR and AI translation support across manga, manhwa, and manhua reader workflows.',
+  },
+  {
+    label: 'Category',
+    value: 'Android app, AI translation, OCR, manga reader workflow',
+  },
+  {
+    label: 'Official download',
+    value: 'https://tachiyomiat.com/download',
+  },
+  {
+    label: 'Support and review codes',
+    value: 'https://tachiyomiat.com/support',
+  },
+  {
+    label: 'Responsible-use note',
+    value:
+      'Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, or permission-approved content.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -303,6 +328,29 @@ export const PageDownload = () => {
               Avoid listings that present the APK as an unaffiliated mirror or
               imply that Nayovi hosts manga, manhwa, or manhua chapters.
             </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Listing copy"
+        title="Neutral app-directory wording"
+        description="Use this wording when a directory, newsletter, or reviewer needs concise public metadata before approving a Nayovi mention."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {directoryListingRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
           </CardContent>
         </Card>
       </PublicSection>

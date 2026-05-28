@@ -34,6 +34,23 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### StackLens AI and SaaS directory
+
+Category: directory
+Contact path: official suggest-listing or ownership-claim form; no direct public business email verified.
+Rationale: StackLens has a curated AI/SaaS directory with a Mobile Apps category and an ownership-claim flow with manual review. Nayovi may fit only as a neutral Android APK / hosted OCR listing that preserves official download, pricing, support, and responsible-use links.
+Status: draft/form-only; no sender-based outreach sent.
+
+Suggested form copy:
+
+Nayovi is an Android APK for hosted OCR and AI translation support across manga, manhwa, and manhua reader workflows. It gives readers an official APK download, free trial access, redeem-code activation, monthly token plans, and support from tachiyomiat.com.
+
+Official download: https://tachiyomiat.com/download
+Support and review codes: https://tachiyomiat.com/support
+Workflow and responsible-use notes: https://tachiyomiat.com/guides/translation-support-workflow
+
+Responsible-use note: Nayovi does not host or distribute chapters; it is intended for owned, public-domain, official-sample, or permission-approved content.
+
 ### ICv2 comics and manga product coverage
 
 Category: press
