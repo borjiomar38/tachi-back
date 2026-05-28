@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: reply triage packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the daily cap.
+
+Revenue rationale: added a public reply triage packet to `https://tachiyomiat.com/guides/translation-support-workflow` so incoming editor, directory, partner, and investor replies can be routed into review-code requests, approved-sample pilots, call/interview scheduling, or clean declines for weak placements.
+
+Next outreach when cap resets: prioritize reply-driven follow-up first. Use the triage packet to avoid owner email for routine support/review-code or approved-sample next steps, and escalate only real call scheduling, investor, commercial, legal, or financial decisions.
+
 ### Autonomous cycle: cap-reset outreach packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the daily cap.
