@@ -25,6 +25,9 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Indie Hackers/build-in-public founder profile | Founder credibility, transparent product updates, and revenue/feedback community participation | setup_packet_prepared_owner_action_required | Founder creates or connects an official founder-owned profile with truthful Nayovi affiliation | Founder bio, product URL, no-link launch/update drafts, metrics owner approves for public use | `SEO_AGENT_INDIEHACKERS_PROFILE_REFERENCE`; API token only if a compliant workflow exists | Draft build-in-public posts and answer feedback only from authorized founder account | Owner creates/connects founder profile and approves which metrics, screenshots, or posts can be public. |
 | high | Android Play Console / developer identity | Developer verification, package ownership, and APK trust for 2026 Android install changes | setup_packet_prepared_owner_action_required | Owner completes any official developer identity, package registration, ID, fee, and terms steps manually | Package name, signed APK, signing certificate fingerprint, official domains, support URL, privacy/terms URLs | `SEO_AGENT_ANDROID_PLAY_CONSOLE_REFERENCE`; do not store IDs or verification docs | Agent can cite only owner-confirmed verification/package status in reviewer packets | Owner confirms package name, signing fingerprint, developer verification status, and whether Play Console or Android Developer Console access may be referenced. |
 | high | GitHub public docs/release surface | Owned technical proof for APK metadata, OCR checklist, and reviewer handoff | configured_owned_repo_needs_content_sync | Use owned repo/docs only; no external PR unless maintainer invites it | Markdown checklist, release notes, APK hash, source links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned markdown docs and release proof on the current branch | Agent added website handoff copy 2026-05-28; next mirror the public checklist into an owned GitHub docs page if owner wants an external repository citation. |
+| high | Android review packet repository doc | Owned citation surface for app reviewers, directories, newsletters, and partner diligence | configured_owned_repo_content_synced | Keep `docs/nayovi-apk-review-packet.md` current with release metadata and owner-confirmed package facts | APK filename, build label, SHA-256, official links, support/pricing/legal links, responsible-use boundary | SSH remote already configured; `SEO_AGENT_GITHUB_TOKEN` optional for API workflows | Publish and cite an owned Markdown review packet from the current branch | Add package name, signing-certificate fingerprint, and Android developer verification status only after owner confirms them. |
+| medium | Startup and launch profile accounts | Product discovery and investor trust across BetaList, launch communities, and startup directories | setup_packet_prepared_owner_action_required | Founder creates/claims only official Nayovi/founder profiles and approves launch timing | Logo, tagline, screenshots, demo video, pricing, support links, public metrics approved by owner | Per-platform non-secret profile reference; `SEO_AGENT_PRODUCTHUNT_TOKEN` only for Product Hunt API | Agent can draft listing copy and launch comments after authorized account connection | Owner chooses which startup profiles are eligible and whether public metrics can be shared. |
+| medium | Android newsletter/editorial contributor paths | Editorial trust for Android APK, hosted OCR, and developer-facing checklist content | setup_packet_prepared_owner_action_required | Owner approves byline/contact path and any editor-specific submission before outreach | APK review packet, comic OCR checklist, demo video, screenshot policy, founder byline | Per-publication credential/contact reference only; no passwords or cookies | Agent can prepare individualized newsletter/editorial tips from owned docs | Owner approves whether Android Weekly/Kotlin Weekly-style submissions may cite the owned review packet. |
 
 ## 2026-05-28 Setup Packets
 
@@ -215,10 +218,10 @@ Next action:
 
 ### GitHub Owned Release Docs Packet
 
-Status: CONFIGURED_OWNED_REPO, content sync pending.
+Status: CONFIGURED_OWNED_REPO, content synced for APK review packet.
 
 Recommended public docs:
-- `docs/nayovi-apk-review-packet.md`: official APK source, hash, package/signing fields, support, pricing, privacy, terms, and responsible-use links.
+- `docs/nayovi-apk-review-packet.md`: official APK source, hash, package/signing fields, support, pricing, privacy, terms, and responsible-use links. Created 2026-05-28.
 - `docs/comic-ocr-checklist.md`: neutral checklist already maintained in `docs/seo-distribution/comic-ocr-checklist.md`.
 - `docs/reviewer-screenshot-policy.md`: screenshot rights, approved samples, device matrix, and no-chapter-hosting boundary.
 
@@ -234,7 +237,61 @@ Agent capability after connection:
 - The agent can publish owned markdown docs, update release notes, and link them from website pages. External awesome-list issues or PRs remain draft-only unless a maintainer asks for the resource.
 
 Next action:
-- Mirror the neutral checklist into an owned docs surface once the owner chooses whether the public citation should be the website route, GitHub docs, or both.
+- Add owner-confirmed package name, signing-certificate fingerprint, and Android developer verification status when available; keep public citation language in pending mode until then.
+
+### Startup and Launch Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for any account creation, profile claim, launch submission, terms acceptance, or paid placement decision.
+
+Profile fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow for manga and manhwa reader workflows.`
+- Website: `https://nayovi.com`
+- Primary product URL: `https://tachiyomiat.com/download`
+- Short description: `Nayovi is an Android APK with hosted OCR, AI translation, free trial access, redeem-code activation, monthly token plans, and support for permission-safe manga, manhwa, and manhua reader workflows.`
+- Responsible-use line: `Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+
+Required assets:
+- Logo/avatar and banner.
+- Demo video and poster.
+- Three to five safe screenshots from install, activation, support, demo, or approved-sample flows.
+- Pricing summary and support URL.
+- Owner-approved public metrics, if any. If metrics are unavailable, use qualitative product progress only.
+
+Credential reference:
+- Use a per-platform non-secret profile reference such as `SEO_AGENT_BETALIST_PROFILE_REFERENCE` or `SEO_AGENT_STARTUP_DIRECTORY_REFERENCE`.
+- Use `SEO_AGENT_PRODUCTHUNT_TOKEN` only for an official Product Hunt workflow authorized by the owner.
+
+Agent capability after connection:
+- Draft launch copy, maker comments, and profile fields. No account creation, terms acceptance, paid priority placement, upvote requests, or automated comment engagement.
+
+Next action:
+- Owner confirms which launch/startup profiles are eligible and whether Nayovi should wait for package/signing fields before submitting.
+
+### Android Newsletter / Editorial Contributor Packet
+
+Status: OWNER_ACTION_REQUIRED for any byline approval, editorial submission, or publication-specific account setup.
+
+Submission angle:
+- Developer-facing: independent APK review packet, hosted OCR workflow, and responsible test plan.
+- Technical-resource: comic OCR checklist for permission status, OCR coverage, reading order, merged blocks, glossary consistency, and reviewer correction.
+- Reviewer-facing: source-of-truth APK metadata, hash, support/pricing/legal links, and screenshot boundaries.
+
+Required assets:
+- `docs/nayovi-apk-review-packet.md`.
+- `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`.
+- Demo video/poster.
+- Owner-approved founder byline or official Nayovi team byline.
+- Screenshot rights note for approved samples only.
+
+Credential reference:
+- Per-publication non-secret reference only, such as `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE` or `SEO_AGENT_EDITORIAL_CONTACT_REFERENCE`.
+
+Agent capability after connection:
+- Prepare individualized tips and article queries. No mass submissions, sponsored placement decisions, or claims of Android developer verification until owner confirms the underlying facts.
+
+Next action:
+- Owner approves whether Android Weekly, Kotlin Weekly, or similar editorial submissions can cite the owned review packet.
 
 ### LinkedIn Company / Founder Profile
 
