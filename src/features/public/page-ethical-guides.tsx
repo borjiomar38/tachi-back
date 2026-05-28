@@ -372,6 +372,29 @@ const submissionReadinessRows = [
   },
 ] as const;
 
+const comparisonPacketRows = [
+  {
+    format: 'Android APK workflow',
+    check:
+      'Verify the official download page, APK metadata, redeem-code activation, support path, and hosted OCR behavior before sending readers to install.',
+  },
+  {
+    format: 'Browser comic translator',
+    check:
+      'Compare upload handling, text-block editing, layout preservation, version history, and whether the tool can document human review before sharing output.',
+  },
+  {
+    format: 'Creator or publisher pilot',
+    check:
+      'Start with creator-controlled samples, official previews, public-domain pages, or explicit written permission before evaluating localization quality.',
+  },
+  {
+    format: 'Directory or roundup mention',
+    check:
+      'Prefer listings that preserve source-of-truth links, pricing, support, and the no-chapter-hosting boundary instead of treating the app as a mirror.',
+  },
+] as const;
+
 const neutralChecklistRows = [
   {
     prompt: 'Permission status',
@@ -1022,6 +1045,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.item}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Comparison packet"
+        title="How to compare Nayovi with adjacent OCR translation tools"
+        description="Use this product-light checklist when an editor, creator platform, adjacent tool, or directory wants a fair comparison instead of a promotional claim."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {comparisonPacketRows.map((row) => (
+              <div
+                key={row.format}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.format}
+                </span>
+                <span>{row.check}</span>
               </div>
             ))}
           </CardContent>
