@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T213445Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared state, and outreach sender history.
+- Added ItemList structured data to `/translate-manhwa-ai` for qualified activation signals and partner handoff paths, making official APK source, free trial to paid token flow, review/pilot code access, and permission-safe workflow details parseable for search engines, AI directories, Android reviewers, and creator/community pilots.
+- Marked the manhwa translator partner handoff metadata asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. The next cap window should prioritize queued reply-driven follow-up or the auto-approved Akaya Media approved-sample pilot if still uncontacted.
+
 - Autonomous cycle on `growth/autonomous-20260528T212048Z`: audited branch state, public download metadata, current growth trackers, latest SEO distribution report `seo-distribution-20260528T211146Z`, and outreach sender history.
 - Added reviewer verification ItemList structured data to `/download` so Android reviewers, APK directories, partner diligence contacts, and search engines can parse official source checks, release proof, approved-sample test boundaries, and support/review-code routing from the page head.
 - Marked the reviewer verification structured-data asset as shipped in the content backlog.
