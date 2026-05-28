@@ -46,6 +46,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Localization workflow | ComixSuite | Android OCR verification checklist feedback | None by default | OWNER_REVIEW_REQUIRED: official contact only; professional workflow angle, not consumer promotion. |
 | draft | Creator platform | WEBTOON partnerships/contact | Approved-sample OCR workflow feedback | None by default | OWNER_REVIEW_REQUIRED: use official partnership/contact path only; no catalog translation implication and no backlink ask. |
 | draft | AI directory | Panadroid | Nayovi AI OCR listing fit check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify current submit/contact path; skip paid or reciprocal link placement. |
+| watch | AI directory | ToolsVerse | Free-tool eligibility question | None by default | OWNER_REVIEW_REQUIRED: do not submit unless Nayovi qualifies under the directory's free-tool standards. |
+| hold | AI directory | AIToolSync | Paid listing compliance hold | None | HIGH_RISK: current paid/backlink package language conflicts with no paid-links rule; no submission. |
+| draft | Creator/localization studio | Bayi Studios | Approved-sample OCR checklist feedback | None by default | OWNER_REVIEW_REQUIRED: public contact path only; no backlink ask or catalog/content permission implication. |
 
 ## Draft Bodies
 
@@ -206,6 +209,57 @@ If this is relevant, I can send the guide, screenshots, and demo context for fee
 
 Best,
 Nayovi team
+
+### Bayi Studios approved-sample feedback note
+
+Status: draft
+Target: Bayi Studios public contact path
+Audience: webcomics localization, production, or partnership team
+Rules risk: medium; use only after owner review and only as an approved-sample feedback request.
+No-link variant: recommended
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Approved-sample OCR workflow feedback for webcomic localization
+
+Message:
+
+Hi Bayi Studios team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webcomic reader workflows.
+
+I found Bayi while researching teams with real webcomic localization context. I am not asking for a backlink or proposing that Nayovi process Bayi-controlled content without permission. The useful question is narrower: would a permission-first OCR QA checklist be worth reviewing for creator-approved or studio-approved samples?
+
+The checklist covers sample permission, OCR coverage, reading order, merged text blocks, glossary consistency, human correction notes, and whether output is safe to share or cite. If this is useful, I can send the public checklist and a short Android workflow demo using only approved sample material.
+
+If this is not relevant, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### ToolsVerse free-tool eligibility guardrail
+
+Status: watch
+Target: ToolsVerse submit path only if eligibility is confirmed
+Audience: AI directory editor
+Rules risk: medium; do not submit while Nayovi is only a free trial plus paid token plans if the directory requires genuinely free tools.
+No-link variant: yes
+Link variant only if eligibility is confirmed: https://tachiyomiat.com/translate-manhwa-ai
+
+Guardrail:
+ToolsVerse currently positions its free directory around manually verified, genuinely free tools and says submitted free tools are tested. Keep Nayovi watch-only unless the owner confirms a forever-free tier or the editor confirms that the free trial can be represented accurately without misleading users.
+
+### AIToolSync compliance hold
+
+Status: hold
+Target: AIToolSync submit path
+Audience: AI directory editor
+Rules risk: high because the current page emphasizes paid listing/review packages, SEO pages, social promotion, and backlink value.
+No-link variant: not applicable
+Link variant: none
+
+Guardrail:
+Do not submit Nayovi through AIToolSync or pay for a package under the SEO distribution workflow. Reconsider only if the owner explicitly approves an advertising spend and the placement is not framed or purchased as a backlink.
 
 ### WEBTOON approved-sample feedback draft
 

@@ -103,3 +103,58 @@ Required assets:
 
 Agent capability after connection:
 - Draft or publish official company posts only after `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` and `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` are configured and the owner approves posting scope.
+
+### Product Hunt Maker/Product Profile
+
+Status: OWNER_ACTION_REQUIRED for official maker account creation, product ownership, launch timing, and any terms acceptance.
+
+Profile fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR translation workflow for manga and manhwa`
+- Website: `https://tachiyomiat.com/download`
+- Brand link: `https://nayovi.com`
+- Short description: `Nayovi is an Android APK with hosted OCR, AI translation, redeem-code activation, free trial access, token plans, and support for permission-safe manga, manhwa, and manhua reader workflows.`
+
+Required assets:
+- Product logo/avatar.
+- 3-5 screenshots showing install, activation, language choice, OCR/translation status, and support/recovery paths without copyrighted chapter pages.
+- 30-90 second narrated demo video or GIF.
+- Maker comment from `docs/seo-distribution/platform-drafts.md`.
+- Responsible-use note and support/pricing links.
+
+Credential reference:
+- Use `SEO_AGENT_PRODUCTHUNT_TOKEN` only after the owner connects an official maker/company workflow. Do not request upvotes, automate comments, or create accounts.
+
+Agent capability after connection:
+- Prepare launch copy, update draft fields, and publish only when the owner confirms account authorization, launch date, and exact scope.
+
+Next action:
+- Owner chooses launch timing and confirms whether Nayovi should launch from a founder-owned maker profile or an official company profile.
+
+### DEV and Medium Technical Publishing
+
+Status: OWNER_ACTION_REQUIRED for official publication/profile creation, canonical-link policy review, and API/token connection.
+
+Profile fields:
+- Publication/profile name: `Nayovi`
+- Bio: `Android hosted OCR and AI translation workflow for manga, manhwa, and manhua reader workflows, with permission-safe sample review and official APK support.`
+- Primary link: `https://nayovi.com`
+- Technical resource link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Support link: `https://tachiyomiat.com/support`
+
+Required assets:
+- Logo/avatar.
+- Author/founder byline approved by owner.
+- Canonical article drafts from `docs/seo-distribution/platform-drafts.md`.
+- Canonical URL pointing to the owned guide when cross-posting is allowed.
+- Screenshot or approved-sample visual only when rights context is documented.
+
+Credential references:
+- DEV: `SEO_AGENT_DEVTO_API_KEY`
+- Medium: `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`
+
+Agent capability after connection:
+- Publish or update canonical technical posts only through authorized API workflows and only where duplicate-content/canonical handling is clear.
+
+Next action:
+- Owner creates official publication/profile, reviews byline preference, and connects API tokens if automated publishing is wanted.
