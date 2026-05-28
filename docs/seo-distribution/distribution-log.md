@@ -566,3 +566,20 @@ Next actions:
 - Added the reviewer handoff block, owned GitHub APK review packet, and WEBTOON translation-context note to `content-calendar.md` and `link-assets.md`.
 - Drafted exact Android reviewer APK handoff note, quality-filtered AI directory listing note, and WEBTOON Translate context note in `platform-drafts.md`.
 - Next actions: owner confirms package name, signing fingerprint, developer verification status, and screenshot assets; owner chooses whether to mirror the checklist into owned GitHub docs; keep Solaire/TheAIFest submissions blocked until current forms and terms pass the quality filter.
+
+## 2026-05-28 Cycle 14
+
+- Verified branch `seo/distribution-20260528T223858Z`; account registry still permits owned GitHub/docs only, so no external posting, account creation, form submission, login, or APK upload was attempted.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Android newsletter submission profile for Android Weekly/Kotlin Weekly-style technical tips, byline approval, repo-native APK review packet citation, and current rules review. Status remains OWNER_ACTION_REQUIRED because submissions must use official paths and owner-approved identity.
+  - YouTube demo channel content packet for official channel profile fields, safe approved-sample demo title/description, canonical links, and OAuth metadata scope. Status remains OWNER_ACTION_REQUIRED because channel creation, media approval, and OAuth are manual.
+- Added three rotated authority opportunities:
+  - Android Weekly: developer newsletter opportunity for APK trust and hosted OCR testing checklist, not consumer app promotion.
+  - Bayi Studios: webtoon/localization studio feedback target for no-link approved-sample OCR QA.
+  - ListYourTool: AI directory watch target because AI Manga/Comic/OCR category language may fit only if official links, pricing, and responsible-use context are preserved.
+- Updated `docs/growth/backlink-prospects.csv` with those three prospects so the broader outreach tracker can coordinate future owner-reviewed actions.
+- Added linkable asset rows for Android newsletter submissions, webtoon studio OCR QA feedback, and AI manga/comic OCR directory filtering.
+- Drafted exact Android Weekly technical tip, Bayi Studios no-link OCR QA feedback note, and ListYourTool listing/skip packet in `platform-drafts.md`.
+- Updated `content-calendar.md` with Android newsletter and webtoon studio checklist opportunities.
+- Next actions: owner approves newsletter byline and YouTube channel setup, confirms safe screenshots/package metadata, and reviews Bayi/ListYourTool drafts before any external action.

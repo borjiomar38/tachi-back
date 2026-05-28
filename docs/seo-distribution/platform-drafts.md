@@ -1672,3 +1672,76 @@ If this is something you would be willing to react to, I can send the short chec
 
 Best,
 Nayovi team
+
+### Android Weekly technical tip
+
+Status: draft
+Target: Android Weekly official submit path
+Audience: Android developers, Kotlin/Android newsletter editors, mobile founders
+Rules risk: medium; use only through the official submit path after owner approves the public byline and confirms the current rules allow practical APK/testing resources. Do not frame this as a consumer app promotion.
+No-link variant: summarize the APK trust checklist and offer the repo-native packet only if the editor wants a URL.
+Link variant after owner review: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Technical checklist for reviewing direct APK + hosted OCR Android workflows
+
+Message:
+
+Hi Android Weekly team,
+
+I am maintaining a practical checklist for reviewing direct-distribution Android apps that run hosted OCR and AI translation workflows.
+
+The developer-facing angle is APK trust and test scope rather than app promotion: source-of-truth download URL, SHA-256, support/privacy/terms links, package/signing fields, reviewer-code access, hosted OCR behavior, approved-sample-only screenshots, and how to avoid unsafe mirror-first APK references.
+
+Would a concise resource like this fit Android Weekly's submitted links if the public page stays checklist-first and avoids a consumer install pitch?
+
+No problem if it is outside scope.
+
+Best,
+Nayovi team
+
+### Bayi Studios OCR QA feedback note
+
+Status: draft
+Target: Bayi Studios official contact path
+Audience: webtoon studio operators, localizers, creator workflow teams
+Rules risk: medium; no backlink ask, no replacement-service pitch, and no implication that Nayovi can process any Bayi or client content without explicit permission.
+No-link variant: recommended; offer the checklist only if they are open to reviewing it.
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Feedback question on webtoon OCR QA with approved samples
+
+Message:
+
+Hi Bayi Studios team,
+
+I am building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, manhua, and webtoon-style reader workflows.
+
+I am not asking for a backlink or proposing to process any studio/client material. I am looking for professional feedback on a permission-safe OCR QA checklist: approved samples only, vertical-scroll reading order, missed text regions, merged balloons, captions, glossary consistency, human correction, and whether translated output should stay private.
+
+If that kind of checklist is useful to react to from a webtoon localization workflow perspective, I can send the short version. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### ListYourTool eligibility note
+
+Status: draft
+Target: ListYourTool official submit path
+Audience: AI-tool directory editors and searchers comparing manga/comic OCR tools
+Rules risk: medium; use only if the current form preserves official source-of-truth links, supports free-trial plus paid-token pricing, and does not require reciprocal backlinks, paid placement, fake reviews, or misleading free/open-source labels.
+No-link variant: keep this as an internal listing packet.
+Link variant after owner review: https://tachiyomiat.com/translate-manhwa-ai
+
+Listing copy:
+
+Tool name: Nayovi
+
+Short description: Android APK with hosted OCR and AI translation for manga, manhwa, and manhua reader workflows.
+
+Long description: Nayovi provides official APK download, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation from Android. It is built for permission-safe reader workflows and does not host or distribute chapters.
+
+Responsible-use line: Use Nayovi with owned content, public-domain material, official samples, or content you have permission to process.
+
+Directory skip rule: Do not submit if the listing hides the official APK/support/pricing links, requires a reciprocal backlink, positions Nayovi as free forever/open source, or encourages mirror-first APK downloads.
