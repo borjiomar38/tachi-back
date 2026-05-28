@@ -34,6 +34,53 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+## AI Tool Directory Listing Packet
+
+Use for official AI-tool, SaaS, or startup-directory submission forms when the directory allows an accurate source-of-truth listing and does not require paid link placement.
+
+Short description:
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers, with free trial access, redeem-code activation, monthly token plans, and official support from tachiyomiat.com.
+
+Category:
+Android app, AI OCR, manga translation, manhwa translation, reader workflow, language technology.
+
+Source-of-truth links:
+Official APK and install context: https://tachiyomiat.com/download
+AI translation landing page: https://tachiyomiat.com/translate-manhwa-ai
+Pricing: https://tachiyomiat.com/pricing
+Support and review-code requests: https://tachiyomiat.com/support
+Responsible workflow guide: https://tachiyomiat.com/guides/translation-support-workflow
+
+Responsible-use note:
+Nayovi does not host or distribute manga, manhwa, or manhua chapters. It supports OCR and translation for owned, public-domain, official-sample, or permission-approved content.
+
+Submission note:
+If the form asks for a listing URL, use the official website links above rather than a mirror-first APK URL. If the form requires a paid placement, skip it unless the owner explicitly approves the spend.
+
+### AI Workbench tool listing
+
+Category: directory
+Contact path: support@aiworkbench.tech, listed on the current public AI Workbench submit/advertise pages for questions and direct support.
+Rationale: AI Workbench describes a free reviewed AI-tool submission flow, which can create qualified AI-tool discovery if the listing preserves Nayovi's official APK, pricing, support, and responsible-use context.
+Status: contacted; wait for reply before any follow-up.
+
+Subject: Nayovi listing fit for AI Workbench
+
+Hi AI Workbench team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found your AI tool submission page while reviewing free, reviewed AI directories. Nayovi may fit if your directory accepts narrow consumer AI apps with a clear source-of-truth website: official APK install from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, support, and hosted OCR/AI translation from the Android app.
+
+Nayovi does not host or distribute chapters. It supports translation for content the reader owns, public-domain material, official samples, or content they have permission to process.
+
+Would AI Workbench consider Nayovi for a standard reviewed listing, and is the submit form the right path for an Android APK product with hosted subscription plans? I can provide the short description, category, pricing summary, screenshots, and responsible-use note if useful.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### GlobalComix creator/platform feedback
 
 Category: partnership
