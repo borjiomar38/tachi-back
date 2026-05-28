@@ -34,6 +34,36 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### PopWebTools AI directory
+
+Category: directory
+Contact path: contact@popwebtools.com, listed on the current public PopWebTools contact page for questions, partnerships, and help with submissions.
+Rationale: PopWebTools describes an AI tools directory and asks submitters to include the tool URL and screenshots. Nayovi may fit if the listing preserves official APK, pricing, support, and responsible-use links.
+Status: auto-approved but not contacted; outreach sender reported daily cap reached at 10/10 on 2026-05-28.
+
+Subject: Nayovi listing fit for PopWebTools
+
+Hi PopWebTools team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found your contact page while reviewing AI-tool directories that accept legitimate tool submissions and mention including the tool URL and screenshots. Nayovi may fit if PopWebTools accepts focused Android AI apps with clear source-of-truth links: official APK install from tachiyomiat.com, free trial access, redeem-code activation, monthly token plans, support, and hosted OCR/AI translation from the Android app.
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Should I use your submit-a-tool path for Nayovi, or would you prefer a short packet by email first? I can provide screenshots, the narrated demo, pricing summary, APK source links, and the responsible-use note.
+
+Useful source links:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/pricing
+https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### TopAiTools.io AI directory
 
 Category: directory
