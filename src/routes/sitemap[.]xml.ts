@@ -85,6 +85,11 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-28',
     priority: '0.8',
   },
+  '/guides/best-android-manga-translator-apk': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-28',
+    priority: '0.85',
+  },
   '/legal/privacy': {
     changeFrequency: 'yearly',
     priority: '0.3',
@@ -111,6 +116,7 @@ const staticSitemapPathOrder = [
   '/guides/translation-support-workflow',
   '/guides/comic-ocr-translation-checklist',
   '/guides/permission-safe-manga-translation-pilot',
+  '/guides/best-android-manga-translator-apk',
   '/legal/privacy',
   '/legal/terms',
   '/legal/official-sources-takedown',
