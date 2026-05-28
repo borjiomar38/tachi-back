@@ -34,6 +34,7 @@ import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
 import { Route as GuidesComicOcrTranslationChecklistRouteImport } from './routes/guides/comic-ocr-translation-checklist'
 import { Route as GuidesBestAndroidMangaTranslatorApkRouteImport } from './routes/guides/best-android-manga-translator-apk'
+import { Route as GuidesTestAiManhwaTranslationApprovedSamplesRouteImport } from './routes/guides/test-ai-manhwa-translation-approved-samples'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
 import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
@@ -233,6 +234,12 @@ const GuidesBestAndroidMangaTranslatorApkRoute =
   GuidesBestAndroidMangaTranslatorApkRouteImport.update({
     id: '/guides/best-android-manga-translator-apk',
     path: '/guides/best-android-manga-translator-apk',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesTestAiManhwaTranslationApprovedSamplesRoute =
+  GuidesTestAiManhwaTranslationApprovedSamplesRouteImport.update({
+    id: '/guides/test-ai-manhwa-translation-approved-samples',
+    path: '/guides/test-ai-manhwa-translation-approved-samples',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
@@ -627,6 +634,7 @@ export interface FileRoutesByFullPath {
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
+  '/guides/test-ai-manhwa-translation-approved-samples': typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -720,6 +728,7 @@ export interface FileRoutesByTo {
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
+  '/guides/test-ai-manhwa-translation-approved-samples': typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -817,6 +826,7 @@ export interface FileRoutesById {
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
+  '/guides/test-ai-manhwa-translation-approved-samples': typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -915,6 +925,7 @@ export interface FileRouteTypes {
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
+    | '/guides/test-ai-manhwa-translation-approved-samples'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1008,6 +1019,7 @@ export interface FileRouteTypes {
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
+    | '/guides/test-ai-manhwa-translation-approved-samples'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1104,6 +1116,7 @@ export interface FileRouteTypes {
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
+    | '/guides/test-ai-manhwa-translation-approved-samples'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1201,6 +1214,7 @@ export interface RootRouteChildren {
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
   GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
   GuidesPermissionSafeMangaTranslationPilotRoute: typeof GuidesPermissionSafeMangaTranslationPilotRoute
+  GuidesTestAiManhwaTranslationApprovedSamplesRoute: typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
   LegalOfficialSourcesTakedownRoute: typeof LegalOfficialSourcesTakedownRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
@@ -1412,6 +1426,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/best-android-manga-translator-apk'
       fullPath: '/guides/best-android-manga-translator-apk'
       preLoaderRoute: typeof GuidesBestAndroidMangaTranslatorApkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/test-ai-manhwa-translation-approved-samples': {
+      id: '/guides/test-ai-manhwa-translation-approved-samples'
+      path: '/guides/test-ai-manhwa-translation-approved-samples'
+      fullPath: '/guides/test-ai-manhwa-translation-approved-samples'
+      preLoaderRoute: typeof GuidesTestAiManhwaTranslationApprovedSamplesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout/success': {
@@ -2088,6 +2109,8 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
   GuidesPermissionSafeMangaTranslationPilotRoute:
     GuidesPermissionSafeMangaTranslationPilotRoute,
+  GuidesTestAiManhwaTranslationApprovedSamplesRoute:
+    GuidesTestAiManhwaTranslationApprovedSamplesRoute,
   GuidesTranslationSupportWorkflowRoute: GuidesTranslationSupportWorkflowRoute,
   LegalOfficialSourcesTakedownRoute: LegalOfficialSourcesTakedownRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,

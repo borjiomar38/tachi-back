@@ -90,6 +90,11 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-28',
     priority: '0.85',
   },
+  '/guides/test-ai-manhwa-translation-approved-samples': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-28',
+    priority: '0.85',
+  },
   '/legal/privacy': {
     changeFrequency: 'yearly',
     priority: '0.3',
@@ -117,6 +122,7 @@ const staticSitemapPathOrder = [
   '/guides/comic-ocr-translation-checklist',
   '/guides/permission-safe-manga-translation-pilot',
   '/guides/best-android-manga-translator-apk',
+  '/guides/test-ai-manhwa-translation-approved-samples',
   '/legal/privacy',
   '/legal/terms',
   '/legal/official-sources-takedown',

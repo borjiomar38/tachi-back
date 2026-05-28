@@ -297,6 +297,57 @@ const androidTranslatorLinkRows = [
   },
 ] as const;
 
+const approvedSampleTestingSteps = [
+  {
+    title: '1. Choose the sample with permission',
+    description:
+      'Use owned pages, public-domain material, official previews, creator-provided samples, or written partner approval before running OCR or translation.',
+  },
+  {
+    title: '2. Record the test scope',
+    description:
+      'Write down the title, language pair, page count, source context, reviewer role, and whether the test uses a free trial, review code, or pilot code.',
+  },
+  {
+    title: '3. Run a small OCR pass first',
+    description:
+      'Check text detection, reading order, merged bubbles, vertical text, sound effects, and glossary terms before asking anyone to judge final translation quality.',
+  },
+  {
+    title: '4. Review the translation privately',
+    description:
+      'Keep original OCR, corrected OCR, glossary notes, and final output together so a human reviewer can explain what passed and what still needs correction.',
+  },
+  {
+    title: '5. Decide what can be shared',
+    description:
+      'Publish only approved screenshots, summaries, or review notes. Keep the test private when rights, sample approval, or output quality are not clear.',
+  },
+] as const;
+
+const approvedSampleEvidenceRows = [
+  {
+    label: 'For reviewers',
+    detail:
+      'Provide the official APK source, narrated demo, review-code path, pricing context, support link, and the no-chapter-hosting boundary before any public article.',
+  },
+  {
+    label: 'For creators',
+    detail:
+      'Keep source pages and translated output private unless the creator approves a public excerpt, screenshot, or case-study summary.',
+  },
+  {
+    label: 'For communities',
+    detail:
+      'Use a no-link explanation first when rules are strict, and link the checklist only when moderators or readers ask for a concrete QA workflow.',
+  },
+  {
+    label: 'For partners',
+    detail:
+      'Track whether the test creates qualified Android installs, support questions, repeat translation intent, affiliate interest, or a next pilot conversation.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1078,6 +1129,108 @@ export const PageBestAndroidMangaTranslatorApk = () => {
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
             Compare plans
+          </a>
+          <a
+            href="/support"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Request review code
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
+export const PageApprovedSampleTestingGuide = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="Approved samples"
+        title="How to test AI manhwa translation safely"
+        description="A practical guide for reviewers, creators, communities, and partner teams testing Nayovi OCR and AI translation with approved manga, manhwa, or manhua samples."
+        className="pt-10"
+      >
+        <div className="grid gap-4">
+          {approvedSampleTestingSteps.map((step) => (
+            <Card key={step.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{step.title}</CardTitle>
+                <CardDescription>{step.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Evidence"
+        title="Make the test useful before anyone shares it"
+        description="A safe test should produce a clear quality decision, a support handoff, and a business signal without turning unclear source material into public marketing."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {approvedSampleEvidenceRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Nayovi test path"
+        title="Use trial access, review codes, or pilot codes deliberately"
+        description="Readers can start with the free trial. Reviewers and partners should request a code when they need clean attribution, support tracking, and a fair product evaluation."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Install from the official Nayovi APK page so the current build,
+              support path, pricing context, and source-of-truth links stay
+              attached to the test.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Use the OCR checklist before judging translation quality. Missing
+              text, bad reading order, or glossary drift should be fixed before
+              anyone treats the output as review evidence.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Continue to a monthly token plan only when the test shows repeat
+              translation demand, not just a one-off curiosity.
+            </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Next"
+        title="Start with the smallest approved test"
+        description="Use one approved sample, keep reviewer notes private, and choose the next step only after permission, OCR quality, and activation are clear."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/download"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Download APK
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/guides/comic-ocr-translation-checklist"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            OCR checklist
           </a>
           <a
             href="/support"

@@ -2,6 +2,12 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T221306Z`: audited branch state, current public SEO routes, sitemap coverage, growth trackers, SEO distribution shared state, and outreach sender history.
+- Added `/guides/test-ai-manhwa-translation-approved-samples` as a permission-safe guide for reviewers, communities, publishers, creators, and partner teams testing Nayovi with approved manga, manhwa, or manhua samples before any public mention.
+- Added Article and HowTo structured data plus sitemap coverage for the new approved-sample testing guide, with handoffs to official APK download, OCR checklist, support/review-code request, and paid-plan decision paths.
+- Marked the approved-sample testing guide as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the configured daily cap. Next cap window should prioritize reply-driven follow-up, then the queued Akaya Media approved-sample pilot if still uncontacted.
+
 - Autonomous cycle on `growth/autonomous-20260528T214122Z`: audited branch state, current SEO distribution shared report, `/download` route metadata, growth trackers, and outreach sender history.
 - Added third-party citation handoff ItemList structured data to `/download` so directory listings, editorial reviews, and partner pilots can parse official APK source, review-code access, approved-sample test scope, and no-mirror boundaries from the page head.
 - Marked the third-party citation handoff metadata asset as shipped in the content backlog.
