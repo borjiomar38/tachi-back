@@ -104,3 +104,17 @@ This file is maintained by the SEO distribution agent.
 - Added neutral comic OCR checklist and Android Weekly pitch assets to `link-assets.md` and `content-calendar.md`.
 - Drafted exact Android Weekly pitch, r/androidapps megathread feedback comment, and open-source-directory guardrail note in `platform-drafts.md`.
 - Next actions: mirror the neutral checklist into an owned GitHub markdown doc, gather screenshots/package metadata, owner-review Android Weekly and Reddit drafts, and keep OpenSourceAlternative.to blocked until a real open-source asset exists.
+
+## 2026-05-28 Cycle 8
+
+- Verified branch `seo/distribution-20260528T191745Z`; external posting remains draft-only for LinkedIn, Reddit, directories, newsletters, forums, and third-party communities. Owned GitHub/docs remain the only configured owned channel.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Added owned asset `docs/seo-distribution/comic-ocr-checklist.md`, a neutral markdown QA checklist covering responsible sample scope, OCR completeness, reading order, grouping, translation review, and share/submit decisions.
+- Researched rotated authority opportunities:
+  - Comic Translate: adjacent AI comic/manga translator surface; best action is a no-link resource awareness note or checklist exchange, not a competitor pitch.
+  - SpotFreeAI: free AI tools directory with submit-tool positioning; only viable if Nayovi's free trial plus paid token plans can be represented accurately.
+  - Kotlin Weekly: Kotlin/Android developer newsletter with submit/sponsored paths; fit is a developer-facing checklist link after a public URL exists, not consumer app promotion.
+- Added Comic Translate, SpotFreeAI, and Kotlin Weekly rows to `authority-opportunities.md`.
+- Added standalone checklist and adjacent-tool comparison angle to `link-assets.md`; updated `content-calendar.md` to track the markdown checklist asset.
+- Drafted exact Comic Translate adjacent-tool note, SpotFreeAI listing copy, and Kotlin Weekly checklist suggestion in `platform-drafts.md`.
+- Next actions: expose the checklist through a public owned URL or GitHub README/docs surface, gather screenshots/package metadata, and owner-review any adjacent-tool or directory submission before sending.
