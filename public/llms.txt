@@ -16,6 +16,7 @@ Nayovi is a reader-focused Android app and hosted backend for manga translate AI
 - [Mihon and Nayovi setup guide](https://tachiyomiat.com/guides/mihon-nayovi-setup): Official install guidance, hosted activation, and permission-safe setup boundaries.
 - [Mihon and TachiyomiAT setup guide](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Legacy guide path for TachiyomiAT, Tachiyomi, and Mihon setup searches.
 - [Translation support workflow](https://tachiyomiat.com/guides/translation-support-workflow): Permission check, OCR, glossary, review, credit, and removal workflow.
+- [Comic OCR translation checklist](https://tachiyomiat.com/guides/comic-ocr-translation-checklist): Neutral QA checklist for approved comic, manga, manhwa, and manhua samples.
 
 ## Policies
 
