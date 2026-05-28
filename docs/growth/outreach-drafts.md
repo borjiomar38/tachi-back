@@ -69,8 +69,8 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 Category: directory
 Contact path: contact@popwebtools.com, listed on the current public PopWebTools contact page for questions, partnerships, and help with submissions.
-Rationale: PopWebTools describes an AI tools directory and asks submitters to include the tool URL and screenshots. Nayovi may fit if the listing preserves official APK, pricing, support, and responsible-use links.
-Status: auto-approved but not contacted; outreach sender reported daily cap reached at 10/10 on 2026-05-28.
+Rationale: PopWebTools describes an AI tools directory and asks submitters to include the tool URL and screenshots. Nayovi may fit only if the listing preserves official APK, pricing, support, and responsible-use links without requiring payment or reciprocal backlink placement.
+Status: hold; not contacted. Re-reviewed 2026-05-28T19:15Z after the sender cap block, and the current public submit page advertises a free path that requires a backlink plus paid featured options. Do not send this draft unless PopWebTools confirms an editorial listing route that does not require payment, reciprocal backlink placement, or paid link promotion.
 
 Subject: Nayovi listing fit for PopWebTools
 
