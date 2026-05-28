@@ -459,6 +459,24 @@ const directoryReviewRows = [
   },
 ] as const;
 
+const aiDirectoryRows = [
+  {
+    field: 'Category fit',
+    guidance:
+      'List Nayovi as an Android manga, manhwa, and manhua OCR translation workflow, not as a general chatbot or chapter-hosting site.',
+  },
+  {
+    field: 'Pricing summary',
+    guidance:
+      'Mention free trial access, redeem-code activation, and monthly token plans so AI-tool visitors understand the paid workflow before installing.',
+  },
+  {
+    field: 'Source links',
+    guidance:
+      'Use tachiyomiat.com for the APK, pricing, support, privacy, terms, and the responsible-use policy, with nayovi.com as the brand domain.',
+  },
+] as const;
+
 const partnerComparisonRows = [
   {
     partner: 'Web manga translation tools',
@@ -1216,6 +1234,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request directory packet
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="AI directories"
+        title="Give AI-tool listings a qualified install path"
+        description="AI and startup directories can bring useful discovery when the listing explains the Android workflow, free trial, pricing, and responsible content boundary before readers install."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {aiDirectoryRows.map((row) => (
+            <Card key={row.field} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <BadgeCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.field}</CardTitle>
+                <CardDescription>{row.guidance}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <SparklesIcon className="size-4" />
+                Keep AI traffic tied to revenue proof
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A useful AI-directory listing should send readers to the
+                official APK, trial, pricing, support, and workflow pages
+                instead of creating a generic traffic spike with no activation
+                or subscription intent.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Check pricing path
             </a>
           </CardContent>
         </Card>

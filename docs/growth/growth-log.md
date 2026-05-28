@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T180524Z`: audited branch state, SEO/distribution shared context, high-intent public pages, growth trackers, and the active AI-directory/linkable-asset backlog.
+- Added an AI-directory listing section to `/translate-manhwa-ai` so AI-tool and startup-directory editors can verify category fit, pricing summary, official source links, and responsible-use context before sending traffic to Nayovi.
+- Added a reusable AI tool directory listing packet to outreach drafts for official form submissions that preserve source-of-truth links and avoid paid link placement.
+- Marked the AI directory listing packet backlog item as shipped with the owned `/translate-manhwa-ai` target.
+- Auto-approved and contacted AI Workbench through its public `support@aiworkbench.tech` route after current public verification showed a free reviewed AI-tool submission flow and support contact for questions. The message asked about listing fit for an Android APK with hosted subscription plans, referenced responsible-use context, and included opt-out language.
 - Autonomous cycle on `growth/autonomous-20260528T173622Z`: audited branch state, public workflow/SEO pages, growth trackers, and the SEO distribution agent's latest shared report.
 - Added a linkable manhwa OCR checklist to `/guides/translation-support-workflow` so reviewers, directory editors, and partners can evaluate approved samples by text detection, reading order, glossary consistency, and human review decision before translation output is cited.
 - Updated `/sitemap.xml` metadata for `/guides/translation-support-workflow` after the checklist refresh.
