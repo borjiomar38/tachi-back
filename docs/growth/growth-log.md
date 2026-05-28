@@ -268,6 +268,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T223842Z`: audited branch state, current growth docs, SEO distribution shared context, and sender history.
+- Added an outreach submission queue to `/guides/translation-support-workflow` so future cap-reset work can prioritize official approved-sample partner inquiries, packet-ready directory/newsletter submissions, context-only research, and compliance holds without turning every opportunity into cold email.
+- Added matching ItemList structured metadata for the queue and marked the owned asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily cap. Next cap-reset work should prioritize reply-driven follow-up, then the queued Akaya Media approved-sample pilot inquiry or ICv2 call follow-up if no later reply supersedes them.
+
 - Autonomous cycle on `growth/autonomous-20260528T223053Z`: audited branch state, SEO distribution shared context, growth docs, sender history, and the new Android APK comparison guide.
 - Added qualified-intent paths to `/guides/best-android-manga-translator-apk` for repeat Android readers, reviewers/directories, and creator/publisher pilots so comparison traffic can move toward free trial, paid token plans, review access, or approved-sample pilots.
 - Added matching ItemList structured metadata and marked the asset shipped in the content backlog.
