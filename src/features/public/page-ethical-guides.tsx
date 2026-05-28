@@ -449,6 +449,29 @@ const tokenPlanProofRows = [
   },
 ] as const;
 
+const tokenPlanRecoveryRows = [
+  {
+    label: 'Activation issue',
+    detail:
+      'Keep the order email, redeem code, device type, and screenshot of the activation state together before contacting support.',
+  },
+  {
+    label: 'Device change',
+    detail:
+      'Ask support to review the account and device history instead of buying a second plan or sharing a code across unrelated devices.',
+  },
+  {
+    label: 'Reviewer access',
+    detail:
+      'Use a dedicated review or pilot code when an editor, affiliate, directory, or partner needs test access separated from normal paid readers.',
+  },
+  {
+    label: 'Refund-risk check',
+    detail:
+      'Do the free trial and one small approved translation test first so paid access is tied to repeat value, not a misunderstood one-off install.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1531,6 +1554,26 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
                 <span className="font-semibold text-foreground">
                   {row.label}
                 </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Support confidence"
+        title="Know the recovery path before a paid plan"
+        description="Paid readers, reviewers, and affiliates should understand how activation, device changes, review codes, and refund-risk checks are handled before recommending or buying."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            {tokenPlanRecoveryRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold">{row.label}</span>
                 <span>{row.detail}</span>
               </div>
             ))}
