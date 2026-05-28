@@ -81,6 +81,34 @@ const trustRows = [
     description:
       'Reviewers should keep the APK hash, signing-certificate notes, package name, and Android developer verification status with the listing packet.',
   },
+  {
+    title: 'Separate file hash from certificate identity',
+    description:
+      'Record both the downloaded file SHA-256 and the signing-certificate SHA-256 fingerprint so readers can verify the exact file and the developer identity used for updates.',
+  },
+] as const;
+
+const reviewerVerificationRows = [
+  {
+    label: 'File integrity',
+    detail:
+      'Compare the downloaded APK file SHA-256 against the value on this page before publishing screenshots, mirrors, or installation instructions.',
+  },
+  {
+    label: 'Signing certificate',
+    detail:
+      'Use Android signing tools or Play Console certificate details to record the app signing certificate SHA-256 fingerprint when it is available from the release owner.',
+  },
+  {
+    label: 'Package identity',
+    detail:
+      'Keep the package name, build label, filename, APK size, and signing-certificate note together so future updates can be matched to the same official app.',
+  },
+  {
+    label: 'Pending fields',
+    detail:
+      'If package name, certificate fingerprint, Play Console developer verification, or store metadata is not confirmed yet, mark it pending instead of guessing.',
+  },
 ] as const;
 
 export const PageDownload = () => {
@@ -358,6 +386,20 @@ export const PageDownload = () => {
             ))}
           </CardContent>
         </Card>
+
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          {reviewerVerificationRows.map((row) => (
+            <Card key={row.label} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <FingerprintIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.label}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
 
         <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">

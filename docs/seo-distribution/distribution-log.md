@@ -174,3 +174,22 @@ This file is maintained by the SEO distribution agent.
 - Added Android developer verification review packet and adjacent webtoon localization checklist exchange to `link-assets.md`; updated `content-calendar.md` with the new Android verification checklist intent.
 - Drafted exact Android developer verification checklist pitch and ToonFlow adjacent-tool note in `platform-drafts.md`.
 - Next actions: fill in Nayovi package name, signing-certificate fingerprint, and Android Developer Console verification status when owner confirms them; owner-review adjacent-tool notes; keep all external posting blocked until official contact paths and account authorization are confirmed.
+
+## 2026-05-28 Cycle 13
+
+- Verified branch `seo/distribution-20260528T200858Z`; external posting remains draft-only for LinkedIn, Reddit, directories, newsletters, forums, launch communities, podcasts, and partner publications. Owned GitHub/docs remain the only configured channel in `/var/lib/tachi-seo-distribution-agent/accounts.json`.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and the account registry before drafting so this cycle supports the active growth pipeline without violating account or posting constraints.
+- Advanced account setup priority tasks:
+  - Google Search Console moved to `owner_action_required` with exact domain properties, sitemap URL, DNS verification path, and API credential reference guidance.
+  - Bing Webmaster Tools moved to `owner_action_required` with domain/import setup, sitemap submission, and `SEO_AGENT_BING_WEBMASTER_API_KEY` reference guidance.
+  - YouTube channel and AI/app directory developer profiles now have setup-ready packets with bios, assets, secret references, and post-connection publish capabilities.
+- Improved owned content at `https://tachiyomiat.com/download` by adding reviewer verification cards that separate APK file SHA-256, signing-certificate SHA-256 fingerprint, package identity, and pending metadata fields.
+- Researched rotated authority opportunities across different categories:
+  - ToolIndex: reviewed AI-tool submission path with direct website links and pricing fields; use only if official source links and accurate free-trial/paid-token wording are preserved.
+  - NavTools AI: free reviewed AI-tool listing surface; fit depends on no reciprocal-link requirement and accurate Android APK workflow representation.
+  - ToolsAIApp: curated directory asking for official URL and screenshots; possible screenshot-backed listing after owner review.
+  - Google Android Developer Console SHA-256 fingerprint guide: official trust-resource citation for APK review packets, not an outreach target.
+- Added those opportunities to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added APK certificate fingerprint reviewer packet and AI directory source-of-truth listing packet v2 to `link-assets.md`; updated `content-calendar.md` for the APK fingerprint search intent.
+- Drafted exact AI directory listing packet v2 and Android APK fingerprint verification note in `platform-drafts.md`.
+- Next actions: owner should verify Search Console/Bing properties, confirm YouTube/channel ownership if video publishing is wanted, provide package name/signing-certificate fingerprint/Developer Console status, and owner-review AI directory submissions after screenshot assets are ready.

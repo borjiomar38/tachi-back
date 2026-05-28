@@ -44,6 +44,10 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android policy/resource | Android developer communities | APK verification checklist for 2026 developer verification rollout | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use as owned trust asset or technical resource only; do not claim verified status until confirmed. |
 | draft | Adjacent tool | ToonFlow | OCR stage-review checklist exchange | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink swap and no replacement pitch. |
 | draft | Localization workflow | ComixSuite | Android OCR verification checklist feedback | None by default | OWNER_REVIEW_REQUIRED: official contact only; professional workflow angle, not consumer promotion. |
+| draft | AI directory | ToolIndex | Source-of-truth listing for Nayovi Android OCR workflow | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official submit form only; no account creation or paid placement. |
+| draft | AI directory | NavTools AI | Free reviewed listing fit for Nayovi | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: use only if the form preserves official source links and accurate pricing. |
+| draft | AI directory | ToolsAIApp | Screenshot-backed AI tool submission packet | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: submit only when screenshots and category/pricing fields are ready. |
+| draft | Android reviewer packet | APK/directories | File SHA-256 and signing-certificate verification note | https://tachiyomiat.com/download | Use as owned packet copy only; do not claim certificate fingerprint until owner confirms release signing data. |
 
 ## Draft Bodies
 
@@ -231,6 +235,60 @@ If this is a fit, I can send the review packet with screenshots, demo context, a
 
 Best,
 Nayovi team
+
+### AI directory source-of-truth listing packet v2
+
+Status: draft
+Targets: ToolIndex, NavTools AI, ToolsAIApp, and similar reviewed AI-tool directories
+Audience: AI-tool directory editors, Android AI app users, builders comparing OCR tools
+Rules risk: medium; use official submission forms only, skip paid-link placement, and avoid any listing that hides pricing/support or requires a reciprocal backlink.
+No-link variant: not useful for listing forms; if asking a directory editor first, send the summary without URLs and offer the packet.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Tool name:
+Nayovi
+
+Short description:
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows, with official APK download, free trial access, redeem-code activation, monthly token plans, and support.
+
+Categories:
+AI OCR, Android app, translation, manga translation, manhwa translation, reader workflow, language technology.
+
+Pricing:
+Free trial access plus paid monthly token plans. Do not mark as fully free unless the form allows free-trial or freemium wording.
+
+Official links:
+Primary product page: https://tachiyomiat.com/translate-manhwa-ai
+Official APK and reviewer packet: https://tachiyomiat.com/download
+Pricing: https://tachiyomiat.com/pricing
+Support: https://tachiyomiat.com/support
+Responsible workflow: https://tachiyomiat.com/guides/translation-support-workflow
+
+Responsible-use note:
+Nayovi does not host or distribute chapters. It supports OCR and translation for content the user owns, public-domain material, official samples, or content the user has permission to process.
+
+Reviewer metadata:
+Use the download page for current file name, build label, APK size, file SHA-256, and pending signing-certificate/package fields. Do not invent package name, certificate fingerprint, Play Console status, or store metadata.
+
+### Android APK fingerprint verification note
+
+Status: draft
+Target: Android reviewers, APK directories, app-testing services, and AI directories that accept Android APK tools
+Audience: editors who need to verify an independent APK before listing or reviewing it
+Rules risk: low as owned packet copy; medium if a third-party listing cannot preserve source-of-truth links.
+No-link variant: use the checklist text without product URLs when asking if a reviewer wants the packet.
+Link variant: https://tachiyomiat.com/download
+
+Copy:
+
+For review, please keep two verification fields separate:
+
+- APK file SHA-256: verifies the exact file downloaded for this review.
+- Signing-certificate SHA-256 fingerprint: verifies the certificate identity used to sign the app and match future updates.
+
+The current public download page lists the file name, build label, APK size, and APK file SHA-256. Package name, signing-certificate fingerprint, and Android developer verification status should be marked pending until the release owner confirms them. Please do not infer those values from a mirror, unofficial listing, or unrelated app-store entry.
+
+Nayovi should be listed as the official Android APK and hosted OCR/AI translation workflow from tachiyomiat.com, not as a chapter source, manga mirror, modified reader, or unaffiliated APK mirror.
 
 ### AppTester human APK testing request
 
