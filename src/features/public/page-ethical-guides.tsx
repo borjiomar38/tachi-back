@@ -668,6 +668,29 @@ const replyTriageRows = [
   },
 ] as const;
 
+const replyQualificationRows = [
+  {
+    signal: 'High-value reply',
+    action:
+      'Advance when the contact asks for review access, an approved-sample pilot, a technical listing packet, a founder interview, or commercial diligence tied to real testing.',
+  },
+  {
+    signal: 'Needs one clarifier',
+    action:
+      'Ask for the exact sample scope, listing requirements, audience, timeline, or review-code need before sending assets, scheduling time, or involving the owner.',
+  },
+  {
+    signal: 'Owner escalation',
+    action:
+      'Escalate only when the next step requires a live call, commercial commitment, legal decision, custom pricing, investor materials, or the owner choosing a time.',
+  },
+  {
+    signal: 'Decline cleanly',
+    action:
+      'Close the thread when the reply asks for paid backlinks, reciprocal links, scraped listings, mirror-first APK uploads, hidden pricing, or unauthorized catalog translation.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -1841,6 +1864,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.reply}
                 </span>
                 <span>{row.response}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply qualification"
+        title="Which replies deserve the next action"
+        description="Use this matrix before spending review codes, founder time, or outreach capacity so replies move toward paid use, credible listings, or clean partner tests."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {replyQualificationRows.map((row) => (
+              <div
+                key={row.signal}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.signal}
+                </span>
+                <span>{row.action}</span>
               </div>
             ))}
           </CardContent>

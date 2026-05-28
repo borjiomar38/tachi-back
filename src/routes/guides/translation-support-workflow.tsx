@@ -75,6 +75,28 @@ const translationWorkflowStructuredData = () => {
         'Decline paid link placement, reciprocal backlink gates, mirror-first APK uploads, catalog-translation claims, or requests that hide support and pricing context.',
     },
   ] as const;
+  const replyQualificationPacket = [
+    {
+      name: 'High-value reply',
+      description:
+        'Advance replies that request review access, approved-sample pilots, technical listing packets, founder interviews, or commercial diligence tied to real testing.',
+    },
+    {
+      name: 'Needs one clarifier',
+      description:
+        'Ask for sample scope, listing requirements, audience, timeline, or review-code need before sending assets, scheduling time, or involving the owner.',
+    },
+    {
+      name: 'Owner escalation',
+      description:
+        'Escalate only when the next step requires a live call, commercial commitment, legal decision, custom pricing, investor materials, or the owner choosing a time.',
+    },
+    {
+      name: 'Decline cleanly',
+      description:
+        'Close replies that ask for paid backlinks, reciprocal links, scraped listings, mirror-first APK uploads, hidden pricing, or unauthorized catalog translation.',
+    },
+  ] as const;
 
   return [
     {
@@ -107,6 +129,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi reply triage packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: replyTriagePacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-qualification`,
+      name: 'Nayovi reply qualification matrix',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: replyQualificationPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
