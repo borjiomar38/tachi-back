@@ -91,6 +91,11 @@ export const PageSeoDistribution = () => {
                     value={`${data.stats.configuredAccountCount}/${data.accounts.length}`}
                   />
                   <SummaryCard
+                    label="Setup"
+                    subLabel={`${data.stats.accountSetupNeedsOwnerCount} need owner/API`}
+                    value={data.stats.accountSetupCount.toString()}
+                  />
+                  <SummaryCard
                     label="Authority"
                     subLabel={`${data.stats.highAuthorityOpportunityCount} high priority`}
                     value={data.stats.authorityOpportunityCount.toString()}
@@ -109,6 +114,20 @@ export const PageSeoDistribution = () => {
 
                 <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_22rem]">
                   <div className="space-y-4">
+                    <SectionCard
+                      title="Official Account Setup"
+                      description="Nayovi-owned profiles to create or connect before external distribution."
+                    >
+                      <RowsTable
+                        empty="No account setup tasks found yet."
+                        rows={data.accountSetup}
+                        primaryKey="Platform"
+                        secondaryKey="Purpose"
+                        metaKeys={['Priority', 'Status']}
+                        trailingKey="Next action"
+                      />
+                    </SectionCard>
+
                     <SectionCard
                       title="Authority Opportunities"
                       description="Continuous discovery queue for high-authority sites, communities, resource pages, directories, partners, and launch surfaces."

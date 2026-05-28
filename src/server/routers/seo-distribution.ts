@@ -24,6 +24,7 @@ const zSeoDistributionAccount = z.object({
 
 const zSeoDistributionOverview = z.object({
   accounts: z.array(zSeoDistributionAccount),
+  accountSetup: z.array(zDistributionRow),
   authorityOpportunities: z.array(zDistributionRow),
   contentCalendar: z.array(zDistributionRow),
   docsGeneratedAt: z.string().nullable(),
@@ -45,6 +46,8 @@ const zSeoDistributionOverview = z.object({
   ),
   stats: z.object({
     authorizedAccountRequiredCount: z.number(),
+    accountSetupCount: z.number(),
+    accountSetupNeedsOwnerCount: z.number(),
     authorityOpportunityCount: z.number(),
     highAuthorityOpportunityCount: z.number(),
     configuredAccountCount: z.number(),
@@ -103,6 +106,9 @@ async function buildOverview(): Promise<
   const platformDrafts = parseMarkdownTable(
     getString(docsFiles, 'docs/seo-distribution/platform-drafts.md')
   );
+  const accountSetup = parseMarkdownTable(
+    getString(docsFiles, 'docs/seo-distribution/account-setup.md')
+  );
   const authorityOpportunities = parseMarkdownTable(
     getString(docsFiles, 'docs/seo-distribution/authority-opportunities.md')
   );
@@ -117,6 +123,7 @@ async function buildOverview(): Promise<
 
   return {
     accounts,
+    accountSetup,
     authorityOpportunities,
     contentCalendar,
     docsGeneratedAt: getString(docsSnapshot, 'generatedAt'),
@@ -129,6 +136,10 @@ async function buildOverview(): Promise<
         Object.values(row.columns).some((value) =>
           /AUTHORIZED_ACCOUNT_REQUIRED/i.test(value)
         )
+      ).length,
+      accountSetupCount: accountSetup.length,
+      accountSetupNeedsOwnerCount: accountSetup.filter((row) =>
+        /owner|manual|setup|needed/i.test(row.columns.Status ?? '')
       ).length,
       authorityOpportunityCount: authorityOpportunities.length,
       highAuthorityOpportunityCount: authorityOpportunities.filter((row) =>

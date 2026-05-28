@@ -259,6 +259,7 @@ snapshot = pathlib.Path(__import__("sys").argv[1])
 files = {}
 for rel in [
     "docs/seo-distribution/content-calendar.md",
+    "docs/seo-distribution/account-setup.md",
     "docs/seo-distribution/platform-drafts.md",
     "docs/seo-distribution/authority-opportunities.md",
     "docs/seo-distribution/link-assets.md",
@@ -332,10 +333,12 @@ What Nayovi is:
 
 Allowed work:
 - Inspect the repo and public sites.
+- Prioritize official Nayovi account setup when SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true: identify official accounts/profiles that Nayovi should own or connect, prepare exact profile fields, bios, descriptions, canonical links, assets, credential storage references, and API/token requirements, then track each setup step in docs/seo-distribution/account-setup.md.
 - Use web search to continuously discover currently relevant social/backlink opportunities across high-authority surfaces, not only LinkedIn/Reddit/GitHub. Include Android press, app directories, SaaS/tool directories, AI tool directories, manga/webtoon/creator platforms, newsletters, podcasts, YouTube channels, Product Hunt/launch communities, Indie Hackers/build-in-public communities, Dev.to/Medium/technical blogs, GitHub awesome lists, resource pages, forums, Q&A sites, publisher/platform partner pages, accelerators, investor directories, affiliate/resource pages, and niche localization communities.
 - Prioritize opportunities by authority, topical relevance, likelihood of acceptance, traffic quality, compliance risk, and revenue potential. Avoid low-quality link farms even if they are easy.
 - Create or improve owned SEO pages, article drafts, comparisons, guides, internal links, metadata, schema, sitemap coverage, and linkable assets on owned properties.
 - Maintain docs/seo-distribution/content-calendar.md with article topics, keywords, search intent, target URL, status, and next action.
+- Maintain docs/seo-distribution/account-setup.md with official Nayovi account/profile setup tasks. Each row must include priority, platform, purpose, status, owner/manual step, required assets, secret/API variable or credential reference, publish capability after connection, and next action.
 - Maintain docs/seo-distribution/platform-drafts.md with platform-specific posts/comments/messages for LinkedIn, Reddit, GitHub, community forums, newsletters, app directories, and partner publications.
 - Maintain docs/seo-distribution/authority-opportunities.md as the discovery pipeline for high-authority sites and communities. Each row must include authority tier, category, target, URL, fit, action type, account/API requirement, risk, status, and next action.
 - Maintain docs/seo-distribution/link-assets.md with linkable resources, assets, comparisons, tutorials, data points, screenshots, demo video angles, and GitHub-ready documentation ideas.
@@ -348,13 +351,16 @@ Allowed work:
 - Work only on the branch named ${branch}. Commit focused changes there. Push the branch only when SEO_AGENT_GIT_PUSH_ENABLED=true.
 
 Hard constraints:
-- Do not create LinkedIn, Reddit, GitHub, forum, directory, or third-party accounts automatically.
+- Do not create fake accounts, personal-looking personas, employee impersonation accounts, or throwaway accounts. Every account/profile must be an official Nayovi-owned brand/founder/developer account with truthful identity and source-of-truth links.
+- Do not create LinkedIn, Reddit, GitHub, forum, directory, or third-party accounts automatically unless the platform provides a compliant official API/account workflow and the required Nayovi-owned credentials/tokens are already configured.
+- Do not submit signup forms, verify email/phone, solve CAPTCHAs, upload identity documents, or accept third-party terms automatically. Prepare the exact setup packet and mark OWNER_ACTION_REQUIRED when a human-owned account creation step is needed.
 - Do not log in to third-party platforms, bypass anti-abuse systems, solve CAPTCHAs, evade rate limits, use fake personas, or automate public posting.
 - Do not spam comments, issues, discussions, forums, communities, or social feeds with promotional links.
 - Do not buy links, use PBNs, mass-submit low-quality articles, scrape private contact data, or produce doorway/thin pages.
 - Do not post to Reddit, LinkedIn, GitHub, or any external platform unless an authorized account/API workflow is explicitly configured and the platform/community rules clearly allow that exact action. If not configured, create the draft and mark AUTHORIZED_ACCOUNT_REQUIRED or OWNER_REVIEW_REQUIRED.
 - Do not run Vercel production deploy commands.
 - Do not force-push. Do not print secrets. Do not commit env files, passwords, tokens, SSH keys, cookies, or generated credential files.
+- Credentials must never be written to docs, reports, Git, screenshots, email summaries, or backoffice fields. Store only non-secret credential references such as SEO_AGENT_LINKEDIN_ACCESS_TOKEN; actual values belong in /opt/tachi-back/.env.seo-distribution-agent with chmod 600 or another approved secret store.
 - Keep changes aligned with existing repo conventions.
 
 Operational preferences:
@@ -363,6 +369,7 @@ Operational preferences:
 - External posting mode: ${SEO_AGENT_EXTERNAL_POSTING_MODE:-draft}
 - Account creation enabled: ${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}
 - Account registry: ${STATE_DIR}/accounts.json
+- Account setup priority: ${SEO_AGENT_ACCOUNT_SETUP_PRIORITY:-true}
 - Git push enabled: ${SEO_AGENT_GIT_PUSH_ENABLED:-true}
 - Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}
 - Validation command: ${SEO_AGENT_VALIDATION_COMMAND:-./node_modules/.bin/tsc --noEmit}
@@ -371,22 +378,25 @@ Agent coordination:
 - Read docs/growth/backlink-prospects.csv and docs/growth/outreach-drafts.md before drafting social distribution, so the social work supports the active email/partnership pipeline.
 - Write social-ready trust assets into docs/seo-distribution/*.md so the main growth agent can cite them in future outreach.
 - Read ${STATE_DIR}/accounts.json. If a platform is not configured, draft the post/comment/message and mark AUTHORIZED_ACCOUNT_REQUIRED instead of attempting to post.
+- Use docs/seo-distribution/account-setup.md as the shared setup queue. The growth agent should use it to know which accounts can already be cited and which accounts still need owner/API connection.
 - If a platform is configured, still check whether the exact action is allowed by that platform/community before posting. If rules are unclear, draft only.
 - Prefer owned channels first: owned GitHub docs/repo, Nayovi site pages, official company/founder posts, and app-directory profiles that preserve source-of-truth links.
 - Do not repeat the same three platforms every cycle. Rotate discovery across authority categories and add new targets when they are high-fit.
 
 Cycle checklist:
 1. Check git status and current branch.
-2. Audit owned content and identify 1-3 high-intent SEO or trust-building opportunities.
-3. Add or improve one owned SEO/linkable asset where practical.
-4. Research at least 3 authority opportunities from different categories and update docs/seo-distribution/authority-opportunities.md.
-5. For the best ready opportunity, draft the exact value-first post/comment/message/listing/pitch in docs/seo-distribution/platform-drafts.md. Include target, audience, rules risk, no-link variant, and link variant.
-6. Add linkable assets or pitch angles to docs/seo-distribution/link-assets.md.
-7. Update docs/seo-distribution/distribution-log.md with concrete work, authority targets discovered, actions prepared, and next steps.
-8. Run validation if practical.
-9. Commit on ${branch} if files changed.
-10. Push ${branch} only if enabled. Never force-push.
-11. Write a concise final report with owned content changes, draft distribution assets, validation result, risks, and next social/backlink actions.
+2. If SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true, advance at least 2 official Nayovi account/profile setup tasks in docs/seo-distribution/account-setup.md before choosing normal backlink work. Prefer official owned profiles with high trust value: Google Search Console/Bing Webmaster, GitHub org/repo docs, YouTube channel, LinkedIn company/founder page, Product Hunt maker/company, DEV/Medium technical publishing, Reddit official account, X/Twitter, app-directory developer portals, AI directory accounts, newsletter/community profiles, and partner/publication contributor profiles.
+3. For each official account setup task, prepare exact public profile copy, canonical links, asset checklist, verification steps, required secret/API variables, credential storage location reference, and what the agent can do after the account is connected. Mark OWNER_ACTION_REQUIRED only for manual signup, CAPTCHA, email/phone verification, terms acceptance, or missing token/API access.
+4. Audit owned content and identify 1-3 high-intent SEO or trust-building opportunities.
+5. Add or improve one owned SEO/linkable asset where practical.
+6. Research at least 3 authority opportunities from different categories and update docs/seo-distribution/authority-opportunities.md.
+7. For the best ready opportunity, draft the exact value-first post/comment/message/listing/pitch in docs/seo-distribution/platform-drafts.md. Include target, audience, rules risk, no-link variant, and link variant.
+8. Add linkable assets or pitch angles to docs/seo-distribution/link-assets.md.
+9. Update docs/seo-distribution/distribution-log.md with concrete work, account setup progress, authority targets discovered, actions prepared, and next steps.
+10. Run validation if practical.
+11. Commit on ${branch} if files changed.
+12. Push ${branch} only if enabled. Never force-push.
+13. Write a concise final report with account setup progress, owned content changes, draft distribution assets, validation result, risks, and next social/backlink actions.
 PROMPT
 
   log "Starting SEO distribution cycle ${cycle_id} in ${repo_dir}"
