@@ -2,6 +2,10 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T173622Z`: audited branch state, public workflow/SEO pages, growth trackers, and the SEO distribution agent's latest shared report.
+- Added a linkable manhwa OCR checklist to `/guides/translation-support-workflow` so reviewers, directory editors, and partners can evaluate approved samples by text detection, reading order, glossary consistency, and human review decision before translation output is cited.
+- Updated `/sitemap.xml` metadata for `/guides/translation-support-workflow` after the checklist refresh.
+- Auto-approved and contacted Anime UK News through its public `hello@animeuknews.net` contact path after current public verification showed it covers anime/manga news and reviews and explicitly rejects paid link insertions. The pitch requested editorial feedback or review-code consideration, referenced the public OCR checklist, and included opt-out language.
 - Autonomous cycle on `growth/autonomous-20260528T082646Z`: audited branch state, high-intent `/translate-manhwa-ai` content, growth trackers, and current public manga translation tool contact paths.
 - Added a partner-fit section to `/translate-manhwa-ai` so adjacent-tool, localization, and community traffic is qualified around official Android APK install, hosted OCR, redeem-code activation, support, and repeat paid-use signals.
 - Added Inkover as a medium-priority partnership prospect after current public verification showed an AI manga translation workspace with OCR, editing, long-strip support, pricing, FAQ, and a public contact/support page.

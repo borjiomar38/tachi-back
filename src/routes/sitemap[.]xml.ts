@@ -70,7 +70,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.8',
   },
   '/guides/translation-support-workflow': {
-    lastModified: '2026-05-25',
+    lastModified: '2026-05-28',
     priority: '0.8',
   },
   '/legal/privacy': {

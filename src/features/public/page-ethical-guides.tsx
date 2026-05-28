@@ -95,6 +95,29 @@ const workflowSteps = [
   },
 ] as const;
 
+const ocrChecklistRows = [
+  {
+    checkpoint: 'Text detection',
+    detail:
+      'Confirm speech bubbles, narration boxes, vertical text, sound effects, and small UI labels are captured before judging translation quality.',
+  },
+  {
+    checkpoint: 'Reading order',
+    detail:
+      'Compare the OCR blocks against panel order so short replies, side comments, and long-strip manhwa panels do not get translated out of context.',
+  },
+  {
+    checkpoint: 'Glossary consistency',
+    detail:
+      'Track names, places, ranks, attacks, honorifics, and recurring terms in one reviewer note before processing another chapter or sample.',
+  },
+  {
+    checkpoint: 'Human review decision',
+    detail:
+      'Mark whether the result is ready for private reading, needs correction, or should not be shared because permission or source quality is unclear.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -278,6 +301,28 @@ export const PageTranslationSupportWorkflow = () => {
             </Card>
           ))}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="OCR checklist"
+        title="Manhwa OCR review before translation"
+        description="Use this checklist when a reviewer, directory editor, or partner needs a concrete way to evaluate Nayovi output on approved samples."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {ocrChecklistRows.map((row) => (
+              <div
+                key={row.checkpoint}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.checkpoint}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection
