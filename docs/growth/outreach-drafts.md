@@ -32,6 +32,45 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Adjacent Tool Partnership Draft
+
+Subject: Android companion workflow idea for manga translation readers
+
+Hi {{name}},
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. I found {{product}} because it also works on manga translation, OCR, editing, or long-strip workflows, so the potential fit is not a replacement pitch.
+
+The useful angle may be complementary: readers who want an Android install, redeem-code activation, free trial, support, and monthly token plans can use Nayovi as a mobile workflow while still keeping source-of-truth links and responsible-use notes clear. Nayovi does not host or distribute chapters; it supports translation for owned, public-domain, official-sample, or permission-approved content.
+
+Would a short resource mention, feedback exchange, or Android workflow comparison be useful for your users?
+
+Best,
+{{sender_name}}
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+## Inkover Partnership Draft Reviewed 2026-05-28
+
+Category: partnership
+Contact path: support@inkover.ink, listed on the current public Inkover contact/support page for service questions.
+Rationale: Inkover is an adjacent AI manga translation workspace with OCR, translation, editing, pricing, and long-strip positioning. Nayovi can be introduced as a complementary Android APK and hosted activation workflow without asking for a generic backlink.
+Status: contacted 2026-05-28; wait for reply before any follow-up.
+
+Subject: Android companion workflow idea for manga translation readers
+
+Hi Inkover team,
+
+I found Inkover while reviewing manga translation tools and noticed the product is focused on OCR, translation, editing control, and long-strip workflows. I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers, so I wanted to ask whether a cautious resource exchange or workflow feedback note could be useful.
+
+The angle is complementary rather than competitive: Nayovi is aimed at readers who want an Android install, redeem-code activation, free trial access, support, and monthly token plans from the official Nayovi site. Nayovi does not host or distribute chapters; it supports translation for owned, public-domain, official-sample, or permission-approved content.
+
+Would a short Android workflow comparison, resource mention, or feedback exchange be useful for Inkover users who specifically need a mobile APK path?
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Community Feedback Draft
 
 Subject: Feedback request: permission-safe Android translation workflow
