@@ -38,6 +38,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | Official profile asset library | Reusable public profile, launch, directory, and reviewer asset packet | configured_owned_repo_content_synced | Owner approves public logo/banner/screenshot/demo references and package facts | `docs/seo-distribution/official-profile-asset-library.md`, official logo, banner, screenshot set, demo video, APK metadata | `SEO_AGENT_LOGO_ASSET_REFERENCE`, `SEO_AGENT_BANNER_ASSET_REFERENCE`, `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`, `SEO_AGENT_DEMO_VIDEO_REFERENCE`, `SEO_AGENT_ANDROID_PACKAGE_REFERENCE` | Agent can reuse consistent non-secret profile copy and asset references in setup packets and listing drafts | Owner approves asset references and public/private screenshot scope; agent must keep package/signing facts pending until confirmed. |
 | high | Google Search Console action packet | Owner-owned search verification and sitemap submission sequence | setup_packet_prepared_owner_action_required | Owner signs in with official Google account, verifies domains, submits sitemap, and stores API credential only if agent monitoring is desired | Domain DNS/meta verification, sitemap URL, priority URL list, support/download/workflow links | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS`; no verification token values in docs | Agent can inspect indexing and sitemap diagnostics only after API credential exists | Owner verifies `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com`; first inspections: `/download`, `/translate-manhwa-ai`, `/guides/comic-ocr-translation-checklist`, `/guides/translation-support-workflow`. |
 | high | YouTube official profile packet | Public demo proof for app reviewers, Product Hunt, directories, and partner diligence | setup_packet_prepared_owner_action_required | Owner creates official channel, approves demo media, and accepts terms manually | Logo, banner, approved demo video, thumbnail, description, playlist names, canonical links | `SEO_AGENT_YOUTUBE_REFRESH_TOKEN`, optional `SEO_AGENT_DEMO_VIDEO_REFERENCE` | Agent can draft video metadata or update owner-approved descriptions after OAuth connection | Owner confirms approved-sample video assets; first upload should be a no-chapter-hosting demo of install, activation, OCR progress, and support path. |
+| high | Android developer verification readiness packet | Independent APK trust and reviewer confidence before Android 2026 verification rollout | configured_owned_repo_content_synced | Owner confirms package name, signing fingerprint, verification status, and package registration state manually | `docs/seo-distribution/android-developer-verification-readiness.md`, APK hash, official download URL, screenshot policy, approved samples | `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE`, `SEO_AGENT_GOOGLE_PLAY_CONSOLE_REFERENCE`, `SEO_AGENT_ANDROID_PACKAGE_REFERENCE` | Agent can update review packets and drafts with owner-confirmed public Android identity facts | Owner supplies package/signing/verification facts; agent keeps pending language until confirmed. |
+| medium | Substack/newsletter official profile | Owned subscriber channel for APK trust notes, OCR QA updates, and partner-friendly release context | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi newsletter profile and accepts terms manually | Profile bio, logo, first issue draft, canonical links, screenshot rules, public contact path | `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`; optional API/RSS reference only if owner enables it | Agent can draft official newsletter issues or archive links after owner-approved account connection | Owner chooses whether newsletter is manual-only, confirms profile handle, and approves first issue topic. |
 
 ## 2026-05-28 Setup Packets
 
@@ -967,3 +969,72 @@ Agent capability after owner confirmation:
 
 Next action:
 - Owner approves the initial screenshot/demo asset set and marks which assets are public, partner-only, private-support-only, or blocked.
+
+### Android Developer Verification Readiness Packet
+
+Status: OWNER_ACTION_REQUIRED for package identity, signing fingerprint, developer verification status, and package registration facts.
+
+Use case:
+- Android reviewers, APK directories, app-testing portals, and Android newsletters now need more than a download button. They need official source links, APK hash context, package ownership facts, screenshot boundaries, and clear pending language for Android developer verification.
+- The owned packet lives at `docs/seo-distribution/android-developer-verification-readiness.md`.
+
+Public profile fields to confirm:
+- Android package name: pending owner confirmation.
+- Signing-certificate fingerprint: pending owner confirmation.
+- Current APK SHA-256: use the public download page value only.
+- Android developer verification status: pending owner confirmation.
+- Package registration status: pending owner confirmation.
+- Public screenshot/demo set: pending owner confirmation.
+
+Required assets:
+- Official APK download URL.
+- Current APK metadata and SHA-256.
+- Approved sample images or public-domain pages for testing.
+- Reviewer screenshot policy.
+- Support, pricing, privacy, terms, and responsible-use URLs.
+
+Credential/reference guardrails:
+- `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE`
+- `SEO_AGENT_GOOGLE_PLAY_CONSOLE_REFERENCE`
+- `SEO_AGENT_ANDROID_PACKAGE_REFERENCE`
+- Store only non-secret references in docs. Do not store identity documents, verification tokens, screenshots of private consoles, login sessions, or signing material in Git.
+
+Agent capability after owner confirmation:
+- Update reviewer packets, directory drafts, Android newsletter notes, and public pending/confirmed language. The agent must not complete identity verification, accept terms, upload APKs, or cite verification as complete unless the owner has confirmed the exact public facts.
+
+Next action:
+- Owner confirms package name, signing fingerprint, Android developer verification status, package registration state, and which facts may be public.
+
+### Substack / Official Newsletter Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation, handle choice, terms acceptance, and any publishing workflow.
+
+Use case:
+- A lightweight official newsletter gives partners, reviewers, investors, and creator platforms an owned trust surface for release notes, APK verification updates, OCR QA checklists, and approved-sample pilot lessons.
+- It should not become a mass-email or scraped-contact channel. Use it only for opt-in subscribers and public archive pages.
+
+Public profile fields:
+- Publication name: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow notes for manga, manhwa, and manhua reader workflows.`
+- About text: `Nayovi shares official APK trust notes, OCR QA checklists, responsible-use updates, and approved-sample workflow lessons for Android manga, manhwa, and manhua translation. Nayovi does not host or distribute chapters; it supports owned, public-domain, official-sample, or permission-approved content.`
+- Website: `https://nayovi.com`
+- Download URL: `https://tachiyomiat.com/download`
+- First issue topic: `What reviewers should verify before citing an independent Android OCR APK`
+
+Required assets:
+- Official logo/avatar.
+- Public profile copy from `docs/nayovi-official-profile-fields.md`.
+- Android developer verification readiness packet.
+- Approved screenshot policy.
+- Canonical links to download, pricing, support, privacy, terms, and OCR checklist.
+
+Credential/reference guardrails:
+- `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`
+- Optional future API/RSS reference only if owner enables a compliant workflow.
+- Store no passwords, cookies, recovery codes, subscriber exports, or private account screenshots in docs or Git.
+
+Agent capability after owner connection:
+- Draft official newsletter issues and profile updates. Publishing remains owner-reviewed unless a compliant account/API workflow is configured for the exact action.
+
+Next action:
+- Owner decides whether an official newsletter profile should exist, chooses a handle, and approves the first issue draft before any public publication.
