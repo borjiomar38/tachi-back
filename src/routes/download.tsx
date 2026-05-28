@@ -82,7 +82,23 @@ const downloadStructuredData = () => {
         'Describe Nayovi as free trial plus redeem-code access and paid hosted OCR/AI translation token plans.',
     },
   ] as const;
-
+  const apkSourceSetupItems = [
+    {
+      name: 'Keep the download page as the source of truth',
+      description:
+        'Store the official Nayovi download page with the APK endpoint so support, pricing, privacy, terms, and responsible-use context stay attached to the file.',
+    },
+    {
+      name: 'Verify each update before citing it',
+      description:
+        'Compare the published build label, file name, size, and SHA-256 hash before accepting an update from an APK tracker, directory, or review packet.',
+    },
+    {
+      name: 'Avoid mirror-first references',
+      description:
+        'Treat third-party APK pages as discovery surfaces only unless they preserve the official source links, metadata, support route, and no-chapter-hosting boundary.',
+    },
+  ] as const;
   return [
     {
       '@type': 'SoftwareApplication',
@@ -145,6 +161,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#directory-quality-filter`,
       name: 'Nayovi directory listing quality filter',
       itemListElement: directoryQualityItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#apk-source-setup-note`,
+      name: 'Nayovi APK source setup note',
+      itemListElement: apkSourceSetupItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
