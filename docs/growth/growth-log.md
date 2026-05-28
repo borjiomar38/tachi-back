@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T202130Z`: audited branch state, SEO distribution shared state/report, public SEO pages, current growth trackers, and the outreach sender history.
+- Added ItemList and HowTo structured data to `/how-it-works` for the hosted Android activation sequence: plan choice, redeem-code receipt, app activation, and chapter translation.
+- Updated `/sitemap.xml` metadata for `/how-it-works` and marked the activation structured-data asset as shipped in the content backlog.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28, matching the daily outreach cap. The prepared ICv2 call follow-up should wait for the next cap window unless an inbound reply arrives first.
+
 - Autonomous cycle on `growth/autonomous-20260528T201315Z`: audited branch state, public SEO/conversion routes, current growth trackers, SEO distribution shared context, and the outreach sender history for 2026-05-28.
 - Added an activation-handoff section to `/translate-manhwa-ai` so partner mentions from editorial reviews, AI/APK directories, and creator/community pilots route readers through official APK trust, trial or review-code activation, support clarity, and repeat token-plan demand.
 - Marked the partner activation handoff as shipped in the content backlog.
