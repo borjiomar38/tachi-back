@@ -459,6 +459,24 @@ const directoryReviewRows = [
   },
 ] as const;
 
+const partnerComparisonRows = [
+  {
+    partner: 'Web manga translation tools',
+    value:
+      'Nayovi can be positioned as the Android companion path when readers need mobile install, hosted OCR, and redeem-code activation instead of a browser workspace.',
+  },
+  {
+    partner: 'Localization services',
+    value:
+      'The useful discussion is workflow fit: vertical-page OCR, short dialogue, language-pair demand, and permission-approved samples before any public campaign.',
+  },
+  {
+    partner: 'Reader communities',
+    value:
+      'Community tests should start with official APK links, free trial access, support context, and a responsible-use note before sending members to paid plans.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1198,6 +1216,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request directory packet
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Partner fit"
+        title="Make adjacent-tool traffic useful instead of generic"
+        description="Partnerships with manga translation tools, localization operators, and reader communities should qualify what Nayovi adds: Android install confidence, hosted OCR, official activation, and repeat paid-use signals."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerComparisonRows.map((row) => (
+            <Card key={row.partner} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <HandshakeIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.partner}</CardTitle>
+                <CardDescription>{row.value}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Partner tests should prove qualified demand
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The right collaboration sends readers through the official
+                APK, trial, support, and token-plan path, then measures whether
+                Android translation becomes a repeat workflow instead of a
+                one-time click.
+              </p>
+            </div>
+            <a
+              href="/support"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Discuss partner test
             </a>
           </CardContent>
         </Card>
