@@ -17,6 +17,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Android Central | Android app/editorial pitch | Review-code access for a hosted Android OCR translation workflow | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: use only public author/contact paths; no private contact scraping. |
 | draft | WEBTOON | Partnership or IP/business contact | Approved-sample OCR workflow feedback for creator/platform review | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: choose the correct official department before any send. |
 | draft | AI Workbench | AI tool directory submission | Nayovi listing packet for hosted manga/manhwa OCR translation | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: submit only if listing preserves official source links and is not paid link placement. |
+| draft | GitHub | kba/awesome-ocr maintainer issue | Ask whether a manga OCR evaluation checklist belongs as a resource | https://tachiyomiat.com/translate-manhwa-ai | AUTHORIZED_ACCOUNT_REQUIRED: ask first; no promotional PR unless maintainer confirms fit. |
+| draft | LocWorld | Future CFP or networking note | Visual-storytelling OCR QA for multilingual AI workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: hold until approved-sample evidence exists; no sales pitch. |
+| draft | Women in Localization | Event/community topic note | OCR QA for visual storytelling localization | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: use official membership/partnership/event path; no backlink ask. |
 
 ## Draft Bodies
 
@@ -256,3 +259,68 @@ Nayovi helps Android readers translate manga, manhwa, and manhua pages through a
 
 Responsible-use note:
 Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+### GitHub awesome-ocr maintainer-first draft
+
+Status: draft
+Target: kba/awesome-ocr issue or maintainer discussion before any PR
+Audience: OCR developers, maintainers, and resource-list readers
+Rules risk: medium; this is not a pure OCR library, so ask fit first and omit the link if it reads promotional.
+No-link variant: describe the checklist and offer to prepare a neutral markdown resource if the maintainer wants it.
+Link variant only if invited: https://tachiyomiat.com/translate-manhwa-ai
+
+Title:
+Would a manga/comic OCR evaluation checklist fit the resource list?
+
+Body:
+
+Hi maintainers,
+
+I am working on a practical OCR evaluation checklist for manga, manhwa, and comic pages. The focus is not model benchmarking or a product announcement; it is the review process around OCR completeness, speech-bubble order, merged text blocks, glossary consistency, and whether a sample is approved for processing before translation output is evaluated.
+
+Would a neutral resource like that fit anywhere in this list, or is the scope limited to OCR engines, libraries, datasets, and academic resources?
+
+If it is useful, I can prepare a concise markdown version without promotional language. If it is outside the project scope, no worries and I will not open a PR.
+
+### LocWorld proposal outline draft
+
+Status: draft
+Target: future LocWorld CFP, networking note, or editorial conversation after approved-sample evidence exists
+Audience: localization managers, multilingual AI teams, media localization operators
+Rules risk: medium; official CFP guidance rejects sales pitches and requires fresh, specific material.
+No-link variant: use this as internal proposal copy only until evidence exists.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Working title:
+Before the Translation Model: OCR QA for Visual Storytelling Workflows
+
+Synopsis:
+
+Comic and webtoon translation quality can fail before the translation model sees a sentence. Speech bubbles are missed, side comments are skipped, vertical text is misordered, and unrelated bubbles are merged into one unit. This session would walk through a narrow approved-sample workflow for visual storytelling localization: source permission, OCR completeness, block order, grouping review, glossary consistency, and human review decisions before output is shared.
+
+The useful takeaway is a repeatable QA checklist for multilingual AI teams evaluating image-heavy content. The talk should use approved samples only and avoid product-first positioning.
+
+### Women in Localization topic note
+
+Status: draft
+Target: Women in Localization official event, partnership, or chapter/community path
+Audience: localization professionals, AI localization practitioners, media localization teams
+Rules risk: medium; use as a learning/community topic, not a backlink request.
+No-link variant: pitch the topic without a URL and offer the checklist only if requested.
+Link variant after owner review: https://tachiyomiat.com/translate-manhwa-ai
+
+Subject:
+Topic idea: OCR QA for visual storytelling localization
+
+Message:
+
+Hi Women in Localization team,
+
+I am researching OCR and translation QA for manga, manhwa, manhua, and comic-style pages, where the hard problem is often before translation: detecting all text, preserving panel order, avoiding bad text-block merges, and keeping terminology consistent.
+
+Would a practical community topic around visual storytelling OCR QA be useful for an event, chapter discussion, or member resource? The angle would be workflow-first and permission-safe: approved samples, public-domain material, creator-approved previews, and human review decisions before anything is shared.
+
+If this fits, I can send a short outline and checklist. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team

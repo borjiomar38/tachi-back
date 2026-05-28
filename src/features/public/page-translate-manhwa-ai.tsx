@@ -93,6 +93,24 @@ const comparisonRows = [
   },
 ] as const;
 
+const technicalEvaluationRows = [
+  {
+    checkpoint: 'OCR completeness',
+    detail:
+      'Compare detected bubbles, narration boxes, vertical text, side notes, and sound effects before judging the translated result.',
+  },
+  {
+    checkpoint: 'Block order and grouping',
+    detail:
+      'Review whether merged OCR blocks preserve speaker turns, panel flow, and long-strip reading order without combining unrelated text.',
+  },
+  {
+    checkpoint: 'Translation review',
+    detail:
+      'Check names, places, honorifics, techniques, and recurring terms against a glossary before sharing or expanding a pilot.',
+  },
+] as const;
+
 const intentRows = [
   {
     search: 'Translate Korean manhwa on Android',
@@ -688,6 +706,49 @@ export const PageTranslateManhwaAi = () => {
             </Card>
           ))}
         </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Technical checklist"
+        title="Evaluate OCR quality before translation quality"
+        description="For developers, localization teams, and reviewers, the useful test is whether the source page becomes clean translation input before any AI output is trusted."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {technicalEvaluationRows.map((row) => (
+            <Card key={row.checkpoint} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.checkpoint}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ClipboardCheckIcon className="size-4" />
+                Built for technical citations
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                This checklist gives OCR, localization, and Android reviewers a
+                concrete way to discuss Nayovi without relying on generic AI
+                claims: inspect the detected text, the grouping, the glossary,
+                and the permission status first.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open workflow guide
+            </a>
+          </CardContent>
+        </Card>
       </PublicSection>
 
       <PublicSection
