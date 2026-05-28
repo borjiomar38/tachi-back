@@ -303,6 +303,29 @@ const submissionReadinessRows = [
   },
 ] as const;
 
+const directoryTriageRows = [
+  {
+    question: 'Will the listing preserve source links?',
+    decision:
+      'Use the placement only if the editor can keep the official download, pricing, support, workflow, privacy, terms, and takedown links visible.',
+  },
+  {
+    question: 'Can the audience become paid users?',
+    decision:
+      'Prioritize Android readers, AI-tool buyers, localization operators, reviewers, and creator-platform partners over directories that only sell backlinks.',
+  },
+  {
+    question: 'Is the submission path compliant?',
+    decision:
+      'Use public business email, official submit forms, or maintainer issues. Skip scraped contacts, repeated follow-ups, paid link insertion, and hidden mirror uploads.',
+  },
+  {
+    question: 'What proof should be attached?',
+    decision:
+      'Attach the APK metadata packet, screenshot set, narrated demo context, review-code route, pricing summary, and responsible-use wording before asking for publication.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -717,6 +740,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.item}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Submission triage"
+        title="Approve only listings that can create qualified demand"
+        description="This triage keeps directory outreach tied to official source trust, compliant contact paths, and paid-use potential before a listing goes live."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {directoryTriageRows.map((row) => (
+              <div
+                key={row.question}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.question}
+                </span>
+                <span>{row.decision}</span>
               </div>
             ))}
           </CardContent>
