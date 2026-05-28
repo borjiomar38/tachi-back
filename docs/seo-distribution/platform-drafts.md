@@ -20,6 +20,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | GitHub | kba/awesome-ocr maintainer issue | Ask whether a manga OCR evaluation checklist belongs as a resource | https://tachiyomiat.com/translate-manhwa-ai | AUTHORIZED_ACCOUNT_REQUIRED: ask first; no promotional PR unless maintainer confirms fit. |
 | draft | LocWorld | Future CFP or networking note | Visual-storytelling OCR QA for multilingual AI workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: hold until approved-sample evidence exists; no sales pitch. |
 | draft | Women in Localization | Event/community topic note | OCR QA for visual storytelling localization | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: use official membership/partnership/event path; no backlink ask. |
+| draft | Bayi Studios | Creator studio partnership contact | Approved-sample OCR QA workflow feedback for webtoon localization | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: official contact path only; no catalog translation or backlink ask. |
+| draft | KitsuTL | Manga translation tools comparison editor/update path | Neutral Android hosted OCR workflow entry | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: find public contact path first; omit link unless an update is invited. |
 
 ## Draft Bodies
 
@@ -321,6 +323,60 @@ I am researching OCR and translation QA for manga, manhwa, manhua, and comic-sty
 Would a practical community topic around visual storytelling OCR QA be useful for an event, chapter discussion, or member resource? The angle would be workflow-first and permission-safe: approved samples, public-domain material, creator-approved previews, and human review decisions before anything is shared.
 
 If this fits, I can send a short outline and checklist. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Bayi Studios approved-sample feedback draft
+
+Status: draft
+Target: Bayi Studios official contact path
+Audience: webtoon production, IP development, and localization operators
+Rules risk: medium; send only through an owner-reviewed official contact route, with no request to translate studio catalog material or add a backlink.
+No-link variant: describe the approved-sample pilot packet and offer to send the public guide only if relevant.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Approved-sample OCR QA workflow for webtoon localization
+
+Message:
+
+Hi Bayi Studios team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webtoon-style pages.
+
+I found Bayi while researching webtoon studios that work across production, IP development, and localization. The only fit I want to test is a narrow approved-sample workflow review: a creator or studio chooses the sample pages, confirms the rights context, and uses a small private test to evaluate OCR completeness, reading order, terminology notes, and reviewer decisions.
+
+Nayovi does not host or distribute chapters, and I am not asking to process Bayi catalog material without permission. The goal would be workflow feedback from people who understand webtoon localization constraints.
+
+If this is relevant, I can send the approved-sample pilot packet, screenshots, and review-code context. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### KitsuTL comparison update pitch
+
+Status: draft
+Target: KitsuTL editor/contact path if a public route is found
+Audience: manga translation tool researchers and comparison-page readers
+Rules risk: medium; resource-page updates can read like link requests, so lead with an accurate workflow delta and omit the URL unless invited.
+No-link variant: describe the Android hosted OCR category and offer details if the editor is updating the comparison.
+Link variant after owner review: https://tachiyomiat.com/translate-manhwa-ai
+
+Subject:
+Possible Android hosted OCR entry for your manga translation tools comparison
+
+Message:
+
+Hi KitsuTL team,
+
+I found your 2026 manga translation tools comparison while reviewing resources that explain OCR, translation workflow, and tool tradeoffs.
+
+If you update the guide, Nayovi may fit as a distinct category rather than a replacement for browser or desktop tools: an Android APK with hosted OCR/AI translation, redeem-code activation, free trial access, monthly token plans, support, and a public responsible-use workflow. It is aimed at readers who want an Android install and hosted processing instead of managing provider keys or moving pages through a separate web workspace.
+
+Nayovi does not host or distribute chapters. It supports owned content, public-domain material, official samples, or content the reader has permission to process.
+
+If that category is useful for a future update, I can send a concise listing packet and screenshots. If not, no problem and I will not follow up.
 
 Best,
 Nayovi team

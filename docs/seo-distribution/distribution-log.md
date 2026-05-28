@@ -61,3 +61,17 @@ This file is maintained by the SEO distribution agent.
 - Added the manga OCR evaluation checklist and LocWorld proposal outline to `link-assets.md`.
 - Drafted exact GitHub maintainer-first copy, LocWorld proposal outline, and Women in Localization topic note in `platform-drafts.md`.
 - Next actions: create a neutral markdown version of the OCR checklist, gather approved-sample screenshots/measurements, owner-review community/conference notes, and keep external posting blocked until authorized account workflows and rules are confirmed.
+
+## 2026-05-28 Cycle 5
+
+- Verified branch `seo/distribution-20260528T183658Z`; external posting remains draft-only except owned GitHub/docs, and git push is enabled.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/guides/translation-support-workflow` by adding an approved-sample pilot packet for creators, publishers, reviewers, and community moderators. The new packet covers sample owner, test scope, review artifacts, and public-mention approval.
+- Researched current authority opportunities across rotated categories:
+  - Bayi Studios: public webtoon production, IP development, and localization positioning makes it a strong creator-studio feedback target for approved-sample OCR QA.
+  - MANGA POST / MANGA EDIT: creator submission and speech-bubble AI translation context makes it an adjacent creator-platform target after an official contact path is found.
+  - KitsuTL manga translation tools comparison: recent comparison/resource page can be a neutral update opportunity if the editor accepts Android hosted OCR workflow entries.
+- Added those three opportunities to `authority-opportunities.md` and the broader `docs/growth/backlink-prospects.csv` tracker.
+- Added the approved-sample pilot packet to `content-calendar.md` and `link-assets.md`.
+- Drafted exact Bayi Studios approved-sample feedback copy and KitsuTL comparison update copy in `platform-drafts.md`.
+- Next actions: find official contact paths for Bayi, MANGA POST, and KitsuTL; collect one approved or public-domain screenshot set; keep all external sends blocked until owner review and platform rules are clear.

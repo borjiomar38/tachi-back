@@ -201,6 +201,29 @@ const pilotBriefRows = [
   },
 ] as const;
 
+const approvedSampleRows = [
+  {
+    label: 'Sample owner',
+    detail:
+      'Identify the creator, publisher, reviewer, or public-domain source that can confirm the material is allowed for testing.',
+  },
+  {
+    label: 'Test scope',
+    detail:
+      'Limit the pilot to a small page set, one language pair, one reviewer, and a clear decision on whether results stay private or can be cited.',
+  },
+  {
+    label: 'Review artifacts',
+    detail:
+      'Keep the original page, OCR blocks, merged blocks, glossary notes, translated output, and reviewer decision together for auditability.',
+  },
+  {
+    label: 'Public mention',
+    detail:
+      'Publish only the partner-approved summary, screenshot, or quote. Do not share source pages, output, or partner names without explicit approval.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -519,6 +542,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {pilotBriefRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Approved samples"
+        title="Pilot packet for creators, publishers, and reviewers"
+        description="This packet gives partner teams a narrow way to test Nayovi without turning a workflow review into a public content distribution problem."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {approvedSampleRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
