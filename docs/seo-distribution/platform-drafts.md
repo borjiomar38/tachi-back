@@ -20,6 +20,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | GitHub | kba/awesome-ocr maintainer issue | Ask whether a manga OCR evaluation checklist belongs as a resource | https://tachiyomiat.com/translate-manhwa-ai | AUTHORIZED_ACCOUNT_REQUIRED: ask first; no promotional PR unless maintainer confirms fit. |
 | draft | LocWorld | Future CFP or networking note | Visual-storytelling OCR QA for multilingual AI workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: hold until approved-sample evidence exists; no sales pitch. |
 | draft | Women in Localization | Event/community topic note | OCR QA for visual storytelling localization | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: use official membership/partnership/event path; no backlink ask. |
+| draft | SaaSHub | Product submission | Nayovi software-directory listing for Android hosted OCR translation | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: official submit flow only; avoid paid placement unless approved. |
+| draft | Hacker News | Show HN | Show HN: Nayovi, Android OCR translation for manga/manhwa pages | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: founder-owned HN account only; no vote solicitation. |
+| draft | Reddit | r/machinetranslation active mobile manga workflow thread | No-link OCR workflow checklist answer for mobile manga/manhwa translation | https://tachiyomiat.com/translate-manhwa-ai | AUTHORIZED_ACCOUNT_REQUIRED: check subreddit rules; use no-link variant unless product links are explicitly welcome. |
 
 ## Draft Bodies
 
@@ -180,6 +183,93 @@ If this is relevant, I can send the guide, screenshots, and demo context for fee
 
 Best,
 Nayovi team
+
+### SaaSHub listing packet
+
+Status: draft
+Target: SaaSHub official product submit flow
+Audience: software-directory visitors, startup researchers, Android power users, AI-tool searchers
+Rules risk: medium; submit only through the official flow after owner review, with accurate category metadata and no paid link-buying.
+No-link variant: keep this as owned listing copy for future directories.
+Link variant: https://tachiyomiat.com/translate-manhwa-ai
+
+Product name:
+Nayovi
+
+One-liner:
+Android APK with hosted OCR and AI translation for manga, manhwa, and manhua readers.
+
+Short description:
+Nayovi gives Android readers an official APK, hosted OCR, AI translation, redeem-code activation, free trial access, monthly token plans, and support for manga, manhwa, and manhua translation workflows. It is best for readers comparing TachiyomiAT, Tachiyomi, Mihon, and mobile manga translator setups while keeping download, pricing, support, privacy, terms, and responsible-use guidance on official Nayovi pages.
+
+Responsible-use note:
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Source links:
+- Official APK: https://tachiyomiat.com/download
+- AI translation page: https://tachiyomiat.com/translate-manhwa-ai
+- Pricing: https://tachiyomiat.com/pricing
+- Support: https://tachiyomiat.com/support
+- Workflow guide: https://tachiyomiat.com/guides/translation-support-workflow
+
+### Hacker News Show HN draft
+
+Status: draft
+Target: Hacker News Show HN
+Audience: technical founders, Android developers, OCR/localization builders
+Rules risk: medium; post only from a founder-owned account when the app is directly usable, and do not ask for votes.
+No-link variant: not applicable for Show HN; if not ready, do not post.
+Link variant: https://tachiyomiat.com/download
+
+Title:
+Show HN: Nayovi, Android OCR translation for manga/manhwa pages
+
+Text:
+
+I built Nayovi, an Android APK that runs hosted OCR and AI translation for manga, manhwa, and manhua page workflows.
+
+The narrow problem is not just "translate this image." The app has to preserve page flow, OCR blocks, language choice, loading state, and support/recovery paths while keeping provider keys off the phone.
+
+The product has:
+- official APK download
+- redeem-code activation and free trial access
+- monthly token plans
+- hosted OCR/translation
+- support and cancellation paths
+- a public responsible-use note
+
+Nayovi does not host or distribute chapters. It is meant for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+I would value technical feedback on the Android workflow, OCR block grouping, and whether the pricing/support path is clear before install.
+
+### Reddit r/machinetranslation no-link answer draft
+
+Status: draft
+Target: r/machinetranslation thread about mobile manga/manhwa panel translation
+Audience: readers comparing mobile AI manga/manhwa translation workflows
+Rules risk: high; active Reddit thread, no authorized account configured, and product links may be treated as promotion.
+No-link variant: preferred.
+Link variant only if rules allow and the original poster asks for an Android APK option: https://tachiyomiat.com/translate-manhwa-ai
+
+Comment:
+
+The first thing I would check is whether the tool is trying to create a polished edited page or just make the text understandable while you read. Those are different workflows.
+
+For mobile manga/manhwa pages, I would test:
+- whether it detects small side text, narration boxes, vertical text, and speech bubbles
+- whether the reading order stays correct on long vertical pages
+- whether unrelated bubbles get merged into one translation unit
+- whether names, ranks, and recurring terms stay consistent
+- whether it explains what happens to uploaded screenshots/pages
+- whether pricing, trial limits, and support are clear before you rely on it
+- whether the content is something you own, is public-domain, is an official sample, or is otherwise approved for processing
+
+If you specifically need inpainting and natural overlay, screen-translation apps or browser-based manga translators may fit better. If you mostly need readable OCR plus translation inside an Android workflow, I would compare hosted OCR apps and look at block order/terms before judging the final translated sentence.
+
+No-link variant: use the comment exactly as written above.
+
+Link variant addendum only if allowed:
+I am building one Android APK in this space called Nayovi, focused on hosted OCR/translation rather than full inpainting. The evaluation checklist and official APK path are here: https://tachiyomiat.com/translate-manhwa-ai
 
 ### Android Central review-code pitch
 

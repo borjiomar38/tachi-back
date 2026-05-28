@@ -513,6 +513,24 @@ const partnerComparisonRows = [
   },
 ] as const;
 
+const communityAnswerRows = [
+  {
+    scenario: 'Reader asks for mobile manga translation options',
+    response:
+      'Answer with workflow checks first: source material permission, OCR completeness, block order, language pair, and whether the app explains pricing before install.',
+  },
+  {
+    scenario: 'Community rules are unclear about app links',
+    response:
+      'Use a no-link answer that explains how to evaluate OCR translation quality and offer to share the official APK page only if moderators or the original poster ask.',
+  },
+  {
+    scenario: 'Moderator, editor, or partner wants proof',
+    response:
+      'Send the official download page, workflow guide, pricing page, support path, and review-code request path instead of a generic promotional homepage.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1640,6 +1658,46 @@ export const PageTranslateManhwaAi = () => {
                 </p>
               </div>
             ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Community answers"
+        title="Useful even when a link is not welcome"
+        description="Forums, Q&A sites, and Reddit threads can still evaluate Nayovi's workflow without turning the answer into a promotional link drop."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {communityAnswerRows.map((row) => (
+            <Card key={row.scenario} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.scenario}</CardTitle>
+                <CardDescription>{row.response}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Value-first distribution
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                The strongest community answer is a checklist readers can use
+                on any mobile OCR translator. Nayovi links should appear only
+                when they help the original question and the community rules
+                allow official product references.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open checklist
+            </a>
           </CardContent>
         </Card>
       </PublicSection>

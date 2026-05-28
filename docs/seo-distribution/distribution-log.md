@@ -61,3 +61,17 @@ This file is maintained by the SEO distribution agent.
 - Added the manga OCR evaluation checklist and LocWorld proposal outline to `link-assets.md`.
 - Drafted exact GitHub maintainer-first copy, LocWorld proposal outline, and Women in Localization topic note in `platform-drafts.md`.
 - Next actions: create a neutral markdown version of the OCR checklist, gather approved-sample screenshots/measurements, owner-review community/conference notes, and keep external posting blocked until authorized account workflows and rules are confirmed.
+
+## 2026-05-28 Cycle 5
+
+- Verified branch `seo/distribution-20260528T184344Z`; external platform accounts remain draft-only except owned GitHub/docs, and git push is enabled.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/translate-manhwa-ai` by adding a community-answer section for no-link-first Reddit, forum, and Q&A participation.
+- Researched current authority opportunities across rotated categories:
+  - SaaSHub Submit: active software-directory and launch surface for niche products; best action is official submit flow with accurate Android AI OCR metadata.
+  - Hacker News Show HN: viable founder-community feedback path only when the APK/demo/pricing/support flow is directly usable and posted from a founder-owned account.
+  - r/machinetranslation active mobile manga/manhwa workflow thread: relevant Q&A opportunity, but high risk without subreddit-rule review and an authorized Reddit account.
+- Added these opportunities to `authority-opportunities.md` and the broader `docs/growth/backlink-prospects.csv` tracker.
+- Added no-link community answer, SaaSHub listing packet, and Show HN launch copy to `link-assets.md`.
+- Drafted exact SaaSHub listing copy, Show HN copy, and a no-link-first Reddit comment in `platform-drafts.md`.
+- Next actions: owner-review Reddit rules before any comment, prepare screenshots for SaaSHub, hold Show HN until founder-owned posting and launch readiness are confirmed, and keep external posting blocked until authorized account workflows are configured.
