@@ -241,6 +241,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T210640Z`: audited branch state, SEO distribution shared status/snapshot, current growth trackers, `/download`, sitemap coverage, and the 2026-05-28 outreach sender log.
+- Added an official APK update-tracking packet to `/download` and extended the download HowTo structured data so Android power users, APK directories, reviewers, and update-source tools can cite the canonical APK endpoint, build label, file size, SHA-256 hash, support/pricing links, and no-chapter-hosting boundary together.
+- Marked the update-tracking packet shipped in the content backlog so future Obtainium-style setup notes, APK directory outreach, and Android app review pitches can cite the owned download page instead of detached mirror metadata.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 compliant sends on 2026-05-28, matching the daily cap. Keep Akaya Media as the next auto-approved partnership send after the cap resets unless a higher-fit reply arrives first.
+
 - Autonomous cycle on `growth/autonomous-20260528T205314Z`: audited branch state, SEO distribution shared context, growth trackers, outreach history, `/translate-manhwa-ai`, sitemap coverage, and the approved-sample pilot page.
 - Added a pilot report-back section to `/guides/permission-safe-manga-translation-pilot` so creator, publisher, reviewer, and localization partners can return sample summary, quality evidence, business signal, and stop-condition notes after an approved-sample test.
 - Updated sitemap freshness for the pilot URL and marked the pilot report packet shipped in the content backlog.

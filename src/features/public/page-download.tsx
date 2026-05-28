@@ -106,6 +106,29 @@ const releaseProofRows = [
   },
 ] as const;
 
+const updateTrackingRows = [
+  {
+    label: 'Canonical source',
+    value:
+      'Track the official Nayovi download page or API download endpoint, not a rehosted APK page, so support and policy links remain visible.',
+  },
+  {
+    label: 'Before updating',
+    value:
+      'Compare the visible build label, file size, SHA-256 hash, and release notes context before installing a newer APK.',
+  },
+  {
+    label: 'Directory listings',
+    value:
+      'If a third-party listing changes the APK URL, preserve a prominent link back to this page as the source of truth.',
+  },
+  {
+    label: 'Reviewer workflow',
+    value:
+      'Keep the demo, review-code path, pricing page, and permission-safe testing scope with any update note or changelog mention.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -438,6 +461,45 @@ export const PageDownload = () => {
               Reviewers can request a redeem code and sample-safe test context
               through support before publishing a hands-on Android OCR
               translation review.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Updates"
+        title="Official APK update tracking"
+        description="Readers, app directories, and Android power users can use this page as the stable update reference for Nayovi instead of relying on detached mirror metadata."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {updateTrackingRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[10rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              Nayovi should be treated as an official APK plus hosted OCR and
+              AI translation service. Update notes should keep the APK source,
+              support path, pricing context, and no-chapter-hosting boundary
+              together.
+            </p>
+            <p>
+              Android update-tracking tools and directory editors can cite this
+              page as the canonical release packet while sending install traffic
+              to the official download endpoint.
             </p>
           </CardContent>
         </Card>
