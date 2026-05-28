@@ -2,6 +2,42 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T23:25Z Cycle
+
+Branch: `seo/distribution-20260528T232520Z`
+
+Account setup progress:
+- Advanced LinkedIn company/founder setup with exact official profile fields, required logo/banner/screenshot assets, `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` / `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` credential references, and explicit no-DM/no-scraping/no-persona automation guardrails.
+- Advanced the screenshot/demo asset setup into `docs/seo-distribution/creator-platform-screenshot-rights-packet.md`, with allowed sample types, public visual checklist, reusable no-chapter-hosting caption, partner pilot boundaries, and owner confirmation requirements.
+
+Owned content changed:
+- Created `docs/seo-distribution/creator-platform-screenshot-rights-packet.md` as a reusable owned trust asset for creator platforms, app reviewers, directories, Product Hunt, YouTube, LinkedIn, and partner pilots.
+- Updated `content-calendar.md` and `link-assets.md` so the screenshot-rights packet and LinkedIn setup packet are tracked as active trust-building assets.
+
+Authority targets discovered or refreshed:
+- WEBTOON official contact departments: current public contact page separates product help, IP/rights/licensing, advertising/partnerships, and press; fit is a cautious no-link approved-sample workflow feedback note only.
+- Skowers: AI/free-trial directory candidate; fit depends on official source links and accurate trial/paid-token pricing.
+- HiAiScout: AI/OCR/translation directory candidate; fit depends on category accuracy and no paid/reciprocal/misleading free listing flow.
+- WEBTOON 2026 CANVAS translation program coverage: context-only source reinforcing creator-controlled opt-in localization and no-catalog-processing boundaries.
+
+Draft distribution assets prepared:
+- Added a WEBTOON no-link approved-sample workflow feedback note with optional checklist link only if requested.
+- Added a Skowers/HiAiScout directory eligibility note that rejects reciprocal backlinks, paid link placement, hidden redirects, mirror-first APK links, and misleading forever-free claims.
+
+Outreach tracker:
+- Added WEBTOON official contact departments, Skowers, HiAiScout, and WEBTOON 2026 CANVAS translation-program coverage to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, directory submission, Reddit comment, LinkedIn post, WEBTOON contact, or public outreach was performed. Account registry remains draft mode with account creation disabled.
+
+Validation:
+- Passed: `./node_modules/.bin/tsc --noEmit`.
+
+Next actions:
+- Owner confirms LinkedIn company/founder profile fields, public screenshot/demo assets, and whether LinkedIn should remain manual-only or API-assisted.
+- Owner chooses the correct WEBTOON department before any no-link feedback note is sent.
+- Verify Skowers and HiAiScout submission rules before any owner-reviewed listing packet.
+
 ## 2026-05-28T23:18Z Cycle
 
 Branch: `seo/distribution-20260528T230521Z`
