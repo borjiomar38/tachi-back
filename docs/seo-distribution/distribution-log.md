@@ -160,3 +160,17 @@ This file is maintained by the SEO distribution agent.
 - Added adjacent OCR translation comparison and human app-testing evidence packets to `link-assets.md`; updated `content-calendar.md` for the new comparison checklist.
 - Drafted exact APKLand review packet, AppTester human APK testing request, and Hiveworks creator-platform feedback note in `platform-drafts.md`.
 - Next actions: gather official screenshots and signing-certificate details, owner-review any APK upload/testing workflow, and use the comparison packet in adjacent-tool or creator-platform outreach only as a value-first resource.
+
+## 2026-05-28 Cycle 12
+
+- Verified branch `seo/distribution-20260528T195403Z`; external posting remains draft-only for LinkedIn, Reddit, directories, newsletters, forums, launch communities, podcasts, and partner publications. Owned GitHub/docs remain the only configured owned channel.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Improved owned content at `https://tachiyomiat.com/download` by adding Android developer verification context to the independent APK distribution checklist: reviewers should preserve SHA-256, signing-certificate notes, package name, developer verification status, and source-of-truth links, and mark missing details as pending rather than guessing.
+- Researched rotated authority opportunities across different categories:
+  - Android developer verification docs: official Android policy context for independent APK trust and reviewer packets, not an outreach target by itself.
+  - ToonFlow: adjacent webtoon localization pipeline with detection, recognition, translation, and editable stages; fit is a no-link checklist exchange around approved samples.
+  - ComixSuite: professional comics/manga/webtoon localization workflow surface with translation management and human validation language; fit is a workflow feedback note, not a consumer app pitch.
+- Added those three opportunities to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added Android developer verification review packet and adjacent webtoon localization checklist exchange to `link-assets.md`; updated `content-calendar.md` with the new Android verification checklist intent.
+- Drafted exact Android developer verification checklist pitch and ToonFlow adjacent-tool note in `platform-drafts.md`.
+- Next actions: fill in Nayovi package name, signing-certificate fingerprint, and Android Developer Console verification status when owner confirms them; owner-review adjacent-tool notes; keep all external posting blocked until official contact paths and account authorization are confirmed.
