@@ -21,6 +21,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Newsletter/podcast contributor profiles | Editorial trust for localization, Android, and creator-platform pitches | setup_packet_prepared | Owner creates official contributor/byline profile only where invited or required | Founder byline, headshot/logo, bio, canonical links, non-promotional article/topic packet | Per-publication credential reference only | Submit owner-approved non-promotional topic pitches or author bios | Owner approves byline and which publications may receive topic notes. |
 | medium | Bluesky official account | Lightweight public trust signal, founder/build updates, and source-of-truth profile linking | setup_packet_prepared | Create/connect official Nayovi or founder-owned account manually | Avatar, banner, bio, canonical links, first post queue | `SEO_AGENT_BLUESKY_APP_PASSWORD` only if owner enables API posting | Publish concise official updates if API/rules allow | Owner creates official account, stores app password only in approved secret store, and confirms draft-only or publish scope. |
 | medium | Crunchbase organization profile | Investor and partner trust signal for company/entity discovery | setup_packet_prepared | Owner creates or claims official organization profile and completes any verification manually | Company description, website, logo, founding/founder fields, product category, canonical links | `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE`; no private login data | Keep public company profile fields consistent after owner approval | Owner verifies whether Nayovi has an eligible company profile and approves public fields before submission. |
+| high | Google Business/Profile-style web entity packet | Cross-surface entity consistency for search, AI answers, press, and partner diligence | setup_packet_prepared_owner_action_required | Owner confirms whether Nayovi has an eligible public business/entity profile and completes any manual verification | Legal/public company name, website, logo, support URL, public contact path, service area or online-only positioning | `SEO_AGENT_BUSINESS_PROFILE_REFERENCE`; no private verification data | Let agent keep public entity fields consistent across owned docs, directories, and profile packets | Owner confirms eligibility and public entity fields; agent must not create or verify profiles automatically. |
+| medium | Indie Hackers/build-in-public founder profile | Founder credibility, transparent product updates, and revenue/feedback community participation | setup_packet_prepared_owner_action_required | Founder creates or connects an official founder-owned profile with truthful Nayovi affiliation | Founder bio, product URL, no-link launch/update drafts, metrics owner approves for public use | `SEO_AGENT_INDIEHACKERS_PROFILE_REFERENCE`; API token only if a compliant workflow exists | Draft build-in-public posts and answer feedback only from authorized founder account | Owner creates/connects founder profile and approves which metrics, screenshots, or posts can be public. |
 
 ## 2026-05-28 Setup Packets
 
@@ -119,6 +121,62 @@ Agent capability after connection:
 
 Next action:
 - Owner confirms company/profile eligibility and approves public founder/company fields before any manual submission.
+
+### Search Entity / Business Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for eligibility review, public entity fields, and any manual verification.
+
+Use this packet for search/business/entity profiles that improve trust in public results, AI answers, directory checks, and partner diligence. This is not permission to create accounts automatically.
+
+Public profile fields:
+- Public name: `Nayovi`
+- Website: `https://nayovi.com`
+- Product/download URL: `https://tachiyomiat.com/download`
+- Support URL: `https://tachiyomiat.com/support`
+- Category language: `Android app`, `AI OCR`, `Translation workflow`, `Language technology`
+- Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Responsible-use line: `Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
+
+Required assets:
+- Square logo/avatar.
+- Public contact path approved by owner.
+- Canonical links to download, pricing, support, workflow guide, privacy, and terms.
+- Entity details the owner is comfortable making public. Do not infer legal address, phone number, founder identity fields, or verification status.
+
+Credential reference:
+- `SEO_AGENT_BUSINESS_PROFILE_REFERENCE` for a non-secret workflow/profile reference only. Do not store verification documents, phone/email challenges, cookies, account screenshots, or recovery details in docs or Git.
+
+Agent capability after connection:
+- The agent can keep official profile copy consistent and cite only owner-confirmed public fields. It must not submit verification steps, accept terms, upload identity documents, or publish private contact details.
+
+Next action:
+- Owner confirms which search/entity profiles are eligible and approves the exact public contact and company fields.
+
+### Indie Hackers / Build-In-Public Founder Profile
+
+Status: OWNER_ACTION_REQUIRED for founder-owned account creation, community rules review, and public-metric approval.
+
+Profile fields:
+- Name/display: owner-approved founder name with clear Nayovi affiliation.
+- Bio: `Building Nayovi, an Android hosted OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. Permission-safe samples only; no chapter hosting.`
+- Website: `https://nayovi.com`
+- Product URL: `https://tachiyomiat.com/download`
+- Support/resource link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Founder-approved avatar or logo.
+- Short product screenshot set using only approved sample material.
+- Metrics the owner explicitly approves for public mention, such as trial activations, paid subscriptions, retention, or activation-to-paid conversion. If metrics are unavailable, use qualitative progress only.
+- First post draft from `docs/seo-distribution/platform-drafts.md`.
+
+Credential reference:
+- `SEO_AGENT_INDIEHACKERS_PROFILE_REFERENCE` for a non-secret profile reference. Add an API/token reference only if Indie Hackers or another build-in-public platform exposes an authorized workflow and the owner wants automated publishing.
+
+Agent capability after connection:
+- Draft transparent founder updates and reply suggestions. No automated engagement, vote requests, scraped DMs, or repetitive product links.
+
+Next action:
+- Founder creates/connects the official profile, confirms whether Nayovi can be mentioned under the founder identity, and approves which product metrics may be public.
 
 ### YouTube Official Channel
 
