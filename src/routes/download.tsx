@@ -1,8 +1,69 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { publicSeoKeywords } from '@/features/blog/seo';
-import { buildPublicPageHead } from '@/features/public/head';
+import { androidApkDownload } from '@/features/public/download-assets';
+import {
+  buildPublicAbsoluteUrl,
+  buildPublicPageHead,
+} from '@/features/public/head';
 import { PageDownload } from '@/features/public/page-download';
+
+const downloadStructuredData = () => {
+  const url = buildPublicAbsoluteUrl('/download');
+  const steps = [
+    {
+      name: 'Download the official Nayovi APK',
+      description:
+        'Use the official tachiyomiat.com download endpoint for the current Nayovi Android APK.',
+    },
+    {
+      name: 'Verify the APK metadata',
+      description: `Compare the APK filename, build label, size, and SHA-256 hash before reviewing or listing the app. Current SHA-256: ${androidApkDownload.sha256}.`,
+    },
+    {
+      name: 'Activate hosted translation',
+      description:
+        'Open the Android app, enter a redeem code, and use hosted OCR and AI translation for approved manga, manhwa, or manhua content.',
+    },
+  ] as const;
+
+  return [
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${url}#apk`,
+      name: 'Nayovi Android APK',
+      alternateName: ['TachiyomiAT APK', 'Tachiyomi AT APK'],
+      applicationCategory: 'MultimediaApplication',
+      operatingSystem: 'Android',
+      downloadUrl: buildPublicAbsoluteUrl(androidApkDownload.href),
+      fileSize: androidApkDownload.sizeLabel,
+      softwareVersion: androidApkDownload.buildLabel,
+      url,
+      offers: [
+        {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+          description:
+            'Free trial access before monthly hosted OCR and AI translation token plans.',
+          url: buildPublicAbsoluteUrl('/pricing'),
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      '@id': `${url}#install-howto`,
+      name: 'How to install and activate the Nayovi Android APK',
+      description:
+        'Download the official Nayovi APK, verify source-of-truth metadata, then activate hosted OCR and AI translation with a redeem code.',
+      step: steps.map((step) => ({
+        '@type': 'HowToStep',
+        name: step.name,
+        text: step.description,
+      })),
+    },
+  ];
+};
 
 export const Route = createFileRoute('/download')({
   component: RouteComponent,
@@ -25,6 +86,7 @@ export const Route = createFileRoute('/download')({
           'Nayovi APK download',
           'Android manga translator APK',
         ],
+        structuredDataGraph: downloadStructuredData(),
       }
     ),
 });
