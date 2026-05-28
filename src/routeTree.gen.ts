@@ -29,6 +29,7 @@ import { Route as LegalTermsRouteImport } from './routes/legal/terms'
 import { Route as LegalPrivacyRouteImport } from './routes/legal/privacy'
 import { Route as LegalOfficialSourcesTakedownRouteImport } from './routes/legal/official-sources-takedown'
 import { Route as GuidesTranslationSupportWorkflowRouteImport } from './routes/guides/translation-support-workflow'
+import { Route as GuidesPermissionSafeMangaTranslationPilotRouteImport } from './routes/guides/permission-safe-manga-translation-pilot'
 import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
 import { Route as GuidesComicOcrTranslationChecklistRouteImport } from './routes/guides/comic-ocr-translation-checklist'
@@ -202,6 +203,12 @@ const GuidesTranslationSupportWorkflowRoute =
   GuidesTranslationSupportWorkflowRouteImport.update({
     id: '/guides/translation-support-workflow',
     path: '/guides/translation-support-workflow',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesPermissionSafeMangaTranslationPilotRoute =
+  GuidesPermissionSafeMangaTranslationPilotRouteImport.update({
+    id: '/guides/permission-safe-manga-translation-pilot',
+    path: '/guides/permission-safe-manga-translation-pilot',
     getParentRoute: () => rootRouteImport,
   } as any)
 const GuidesMihonTachiyomiatSetupRoute =
@@ -611,6 +618,7 @@ export interface FileRoutesByFullPath {
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -702,6 +710,7 @@ export interface FileRoutesByTo {
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -797,6 +806,7 @@ export interface FileRoutesById {
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
+  '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
   '/legal/official-sources-takedown': typeof LegalOfficialSourcesTakedownRoute
   '/legal/privacy': typeof LegalPrivacyRoute
@@ -893,6 +903,7 @@ export interface FileRouteTypes {
     | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/permission-safe-manga-translation-pilot'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -984,6 +995,7 @@ export interface FileRouteTypes {
     | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/permission-safe-manga-translation-pilot'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1078,6 +1090,7 @@ export interface FileRouteTypes {
     | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
+    | '/guides/permission-safe-manga-translation-pilot'
     | '/guides/translation-support-workflow'
     | '/legal/official-sources-takedown'
     | '/legal/privacy'
@@ -1173,6 +1186,7 @@ export interface RootRouteChildren {
   GuidesComicOcrTranslationChecklistRoute: typeof GuidesComicOcrTranslationChecklistRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
   GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
+  GuidesPermissionSafeMangaTranslationPilotRoute: typeof GuidesPermissionSafeMangaTranslationPilotRoute
   GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
   LegalOfficialSourcesTakedownRoute: typeof LegalOfficialSourcesTakedownRoute
   LegalPrivacyRoute: typeof LegalPrivacyRoute
@@ -1349,6 +1363,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/translation-support-workflow'
       fullPath: '/guides/translation-support-workflow'
       preLoaderRoute: typeof GuidesTranslationSupportWorkflowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/permission-safe-manga-translation-pilot': {
+      id: '/guides/permission-safe-manga-translation-pilot'
+      path: '/guides/permission-safe-manga-translation-pilot'
+      fullPath: '/guides/permission-safe-manga-translation-pilot'
+      preLoaderRoute: typeof GuidesPermissionSafeMangaTranslationPilotRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/mihon-tachiyomiat-setup': {
@@ -2042,6 +2063,8 @@ const rootRouteChildren: RootRouteChildren = {
     GuidesComicOcrTranslationChecklistRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
   GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
+  GuidesPermissionSafeMangaTranslationPilotRoute:
+    GuidesPermissionSafeMangaTranslationPilotRoute,
   GuidesTranslationSupportWorkflowRoute: GuidesTranslationSupportWorkflowRoute,
   LegalOfficialSourcesTakedownRoute: LegalOfficialSourcesTakedownRoute,
   LegalPrivacyRoute: LegalPrivacyRoute,
