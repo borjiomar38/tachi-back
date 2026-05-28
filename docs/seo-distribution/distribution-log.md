@@ -2,6 +2,39 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T21:55Z Cycle
+
+Branch: `seo/distribution-20260528T212220Z`
+
+Account setup progress:
+- Advanced official search/entity profile setup with owner-only eligibility, public contact, logo, canonical-link, verification, and `SEO_AGENT_BUSINESS_PROFILE_REFERENCE` guardrails.
+- Advanced Indie Hackers/build-in-public founder profile setup with truthful founder affiliation, public-metric approval, first-post assets, and `SEO_AGENT_INDIEHACKERS_PROFILE_REFERENCE` guardrails.
+
+Owned content changed:
+- Added official entity profile and build-in-public account packets to `docs/seo-distribution/account-setup.md` so future social/directory work uses consistent public fields without storing credentials.
+- Updated `content-calendar.md` and `link-assets.md` with the official entity profile packet, founder-community trust update, localization-service OCR QA note, and AI-directory source-of-truth filter.
+
+Authority discovery:
+- Added MediBang TraDe as a high-fit manga/webtoon localization opportunity after current public search showed manga/webtoon localization, global distribution, and 10,000+ localized-title context.
+- Added Wave Literature comic localization as a high-fit localization-service opportunity after current public search showed manga/webtoon localization service context and language-pair examples.
+- Added BestSaaSList and AINovaTools as watch-only AI-directory opportunities after current public search showed submit-tool surfaces, OCR or AI Translation category context, and the need to verify pricing/source-link handling.
+
+Drafts prepared:
+- Added a no-link Indie Hackers/build-in-public post about APK trust as product work.
+- Added a no-link localization-service approved-sample OCR QA note for MediBang/Wave Literature-style teams.
+- Added a BestSaaSList/AINovaTools listing eligibility filter with source-of-truth, pricing, support, and responsible-use requirements.
+
+Outreach tracker:
+- Added MediBang TraDe, Wave Literature, BestSaaSList, and AINovaTools to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, verification, APK upload, directory submission, Reddit comment, paid placement, or public outreach was performed. Registry still permits only owned GitHub/docs work.
+
+Next actions:
+- Owner confirms public entity/profile fields and which founder metrics may be shared.
+- Owner-review localization-service drafts before any contact.
+- Verify BestSaaSList and AINovaTools submission rules before preparing or submitting listings.
+
 ## 2026-05-28T24:20Z Cycle
 
 Branch: `seo/distribution-20260528T211146Z`
