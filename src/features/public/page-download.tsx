@@ -289,6 +289,12 @@ export const PageDownload = () => {
             >
               Review workflow guide
             </a>
+            <a
+              href="/guides/comic-ocr-translation-checklist"
+              className={cn(buttonVariants({ variant: 'ghost', size: 'lg' }))}
+            >
+              Comic OCR checklist
+            </a>
           </CardContent>
         </Card>
       </PublicSection>

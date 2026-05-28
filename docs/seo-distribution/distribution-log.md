@@ -2,6 +2,42 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T22:35Z Cycle
+
+Branch: `seo/distribution-20260528T202053Z`
+
+Account setup progress:
+- Advanced Google Search Console setup with exact property list, sitemap URL, verification checklist, inspected URLs, credential reference, and post-connection capability.
+- Advanced Bing Webmaster Tools setup with import/manual verification steps, sitemap submission list, credential reference, and post-connection capability.
+- Added official YouTube channel profile copy, upload metadata, asset checklist, and `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` requirement.
+- Added official LinkedIn company page fields, canonical links, asset checklist, and `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` / `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` requirements.
+
+Owned content changed:
+- Added a direct download-page CTA from the reviewer/directory checklist to `/guides/comic-ocr-translation-checklist`, so APK reviewers can move from source-of-truth metadata to the neutral OCR QA asset.
+- Updated the content calendar with the APK-to-OCR-checklist internal-link opportunity and webmaster verification trust signal.
+
+Authority discovery:
+- Added Panadroid as a medium-priority AI directory opportunity after current public search showed a 2026 curated AI tools directory.
+- Added WEBTOON contact/partnership path as a high-priority creator-platform opportunity with strict approved-sample/no-catalog-translation boundaries.
+- Added ToolWorthy as a medium-priority AI directory opportunity that requires current submission-rule verification before use.
+- Added current Indie Hackers directory-submission discussion as a watch-only prioritization note: favor browsed, relevant directories over mass low-quality AI directory submissions.
+
+Drafts prepared:
+- Added a no-link-first WEBTOON approved-sample OCR workflow feedback draft.
+- Added a Panadroid AI directory listing-fit draft with official source links and responsible-use language.
+
+Outreach tracker:
+- Added WEBTOON, Panadroid, and ToolWorthy to `docs/growth/backlink-prospects.csv` as draft/owner-review opportunities.
+
+External actions:
+- No third-party posting, account creation, signup, login, CAPTCHA, or form submission performed. Social tokens remain unconfigured and account creation is disabled.
+
+Next actions:
+- Owner verifies GSC/Bing properties and submits `https://tachiyomiat.com/sitemap.xml`.
+- Owner creates/connects official YouTube and LinkedIn properties if those accounts should become publishable.
+- Add package name, signing-certificate fingerprint, verified-developer status, and screenshots to the download/reviewer packet when confirmed.
+- Owner-review WEBTOON and Panadroid drafts before any send.
+
 ## Operating Rules
 
 - Build owned content first: articles, tutorials, comparisons, internal links, schema, and metadata.
