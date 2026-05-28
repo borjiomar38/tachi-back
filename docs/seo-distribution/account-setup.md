@@ -967,3 +967,68 @@ Agent capability after owner confirmation:
 
 Next action:
 - Owner approves the initial screenshot/demo asset set and marks which assets are public, partner-only, private-support-only, or blocked.
+
+### Android Developer Verification / Package Identity Packet
+
+Status: OWNER_ACTION_REQUIRED for owner-only identity, package, and verification steps.
+
+Purpose:
+- Give Android reviewers, APK directories, app-testing teams, newsletters, and investor diligence a clear source-of-truth for package ownership without claiming verified status prematurely.
+- Prepare Nayovi for Android developer-verification requirements affecting independently distributed APKs.
+
+Owner-only steps:
+- Confirm the public Android package name.
+- Confirm the signing-certificate SHA-256 fingerprint.
+- Confirm the current APK filename, version label, file size, and SHA-256 on `https://tachiyomiat.com/download`.
+- Confirm whether the package is registered in an official Android developer workflow.
+- Confirm whether developer verification is `verified`, `pending`, `not_started`, or `not_applicable`.
+- Confirm which public wording may be used in reviewer packets.
+
+Required assets:
+- Signed APK source-of-truth URL.
+- Current SHA-256 from the official download page.
+- Package name and signing fingerprint after owner confirmation.
+- Support, privacy, terms, pricing, and takedown URLs.
+- Approved screenshot or demo references only after sample rights are confirmed.
+
+Credential reference:
+- `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE` or `SEO_AGENT_GOOGLE_PLAY_CONSOLE_REFERENCE` for a non-secret workflow reference only. Do not store identity documents, login data, verification screenshots, challenge tokens, payment details, or private account emails in docs or Git.
+
+Agent capability after connection:
+- The agent can keep `docs/seo-distribution/android-apk-trust-profile.md`, `docs/nayovi-apk-review-packet.md`, directory drafts, and Android newsletter pitches synchronized with owner-confirmed package facts.
+- The agent must keep public copy in pending language until the owner explicitly confirms the fields.
+
+Next action:
+- Owner supplies only the public-safe package/signing/verification facts. Until then, all outreach and listing packets must say those fields are pending owner confirmation.
+
+### Bing Webmaster Action Packet
+
+Status: OWNER_ACTION_REQUIRED for domain verification, sitemap submission, and optional API access.
+
+Public properties:
+- `https://tachiyomiat.com/`
+- `https://nayovi.com/`
+- `https://translate-manhwa-ai.com/`
+
+Sitemap:
+- `https://tachiyomiat.com/sitemap.xml`
+
+Verification path:
+- Prefer importing already verified properties from Google Search Console when available.
+- Otherwise use Bing's official DNS, CNAME, XML file, or meta-tag method chosen by the owner.
+- Submit the sitemap and inspect `/download`, `/translate-manhwa-ai`, `/guides/comic-ocr-translation-checklist`, and `/guides/translation-support-workflow`.
+
+Required assets:
+- Domain ownership access.
+- Sitemap URL.
+- Canonical priority URL list.
+- Non-secret API credential reference only if owner enables monitoring.
+
+Credential reference:
+- `SEO_AGENT_BING_WEBMASTER_API_KEY`. Store the actual value only in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions or another approved secret store.
+
+Agent capability after connection:
+- The agent can monitor sitemap submission, crawl errors, and indexing coverage after API access exists.
+
+Next action:
+- Owner imports from Search Console or verifies each domain manually, submits the sitemap, and confirms whether API monitoring should be enabled.

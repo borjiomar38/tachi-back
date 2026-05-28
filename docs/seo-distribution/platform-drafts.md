@@ -93,6 +93,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Creator ecosystem | Creator/platform partner note | Screenshot rights and approved-sample OCR checklist feedback | None by default | OWNER_REVIEW_REQUIRED: no backlink ask and no implication that publisher/platform catalog content can be processed. |
 | draft | WEBTOON | Official contact departments | Approved-sample OCR workflow feedback with screenshot-rights boundary | None by default | OWNER_REVIEW_REQUIRED: choose product help vs IP/licensing vs partnership vs press path; no catalog-processing implication. |
 | draft | AI directory | Skowers / HiAiScout | Accurate AI OCR listing eligibility for trial plus paid-token workflow | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit rules and skip paid, reciprocal, hidden-redirect, or forever-free-only listings. |
+| draft | Creator/localization platform | Comikey / Bayi Studios-style localization teams | Approved-sample OCR QA feedback note | None by default | OWNER_REVIEW_REQUIRED: official contact only; no backlink ask, no catalog-processing implication, and checklist link only if requested. |
+| draft | AI directory | FindAIDir-style submit forms | Nayovi listing eligibility check | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: verify current fields and skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only listings. |
 
 ## Draft Bodies
 
@@ -118,6 +120,38 @@ Current focus:
 I am looking for feedback from Android reviewers, localization operators, creator platforms, and manga/webtoon teams who care about permission-safe translation workflows.
 
 Link variant: https://tachiyomiat.com/download
+
+### Comikey / Bayi Studios approved-sample feedback note
+
+Status: draft
+Target: official contact path for Comikey, Bayi Studios, or similar official manga/webtoon localization teams
+Audience: localization operators, creator-platform teams, publisher partnership teams
+Rules risk: medium; send only after owner review and only through an official contact path.
+No-link variant: yes
+Link variant: include `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if the recipient asks for context.
+
+Subject:
+Approved-sample OCR QA checklist for webtoon and manga translation workflows
+
+No-link message:
+
+Hi team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I found your work while reviewing official comics and webtoon localization teams. I wanted to ask whether a short product-light OCR QA checklist would be useful from a localization workflow perspective.
+
+The scope is approved samples only: creator-owned material, public-domain pages, official previews where processing is allowed, or content where the rights holder has explicitly approved testing. Nayovi does not host or distribute chapters, and this is not a request to process your catalog or client material.
+
+The checklist focuses on practical review issues: OCR coverage, reading order, merged speech bubbles, onomatopoeia, glossary consistency, human correction, and whether screenshots are safe to share.
+
+If that kind of checklist is useful, I can send the public version for feedback. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+Link variant, only if contextually requested:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 
 ### Reddit value-first post
 
