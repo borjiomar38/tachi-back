@@ -111,6 +111,24 @@ const technicalEvaluationRows = [
   },
 ] as const;
 
+const researchReferenceRows = [
+  {
+    reference: 'Manga109-style annotations',
+    takeaway:
+      'Modern manga understanding research treats panels, text regions, characters, and page structure as separate signals, which supports checking OCR completeness before translation.',
+  },
+  {
+    reference: 'Automated manga translation papers',
+    takeaway:
+      'Research on manga translation repeatedly shows that bubble order, visual context, and text-image layout affect translation quality more than plain sentence translation alone.',
+  },
+  {
+    reference: 'Longer-context translation',
+    takeaway:
+      'A reviewer should inspect whether neighboring bubbles and panel context are preserved before trusting names, speaker turns, and short dialogue in the translated result.',
+  },
+] as const;
+
 const intentRows = [
   {
     search: 'Translate Korean manhwa on Android',
@@ -764,6 +782,46 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open workflow guide
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Research references"
+        title="Use manga OCR research as a review lens"
+        description="Nayovi's public checklist is intentionally practical, but the review criteria map to recurring problems in manga understanding and machine translation research: text regions, reading order, visual context, and permission-safe samples."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {researchReferenceRows.map((row) => (
+            <Card key={row.reference} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.reference}</CardTitle>
+                <CardDescription>{row.takeaway}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ClipboardCheckIcon className="size-4" />
+                Practical evaluation asset
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                For GitHub maintainers, localization editors, and technical
+                communities, the strongest contribution is a neutral checklist:
+                verify text regions, block order, context, glossary behavior,
+                and sample permission before discussing product fit.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Read full checklist
             </a>
           </CardContent>
         </Card>

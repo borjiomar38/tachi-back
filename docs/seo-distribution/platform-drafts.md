@@ -20,6 +20,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | GitHub | kba/awesome-ocr maintainer issue | Ask whether a manga OCR evaluation checklist belongs as a resource | https://tachiyomiat.com/translate-manhwa-ai | AUTHORIZED_ACCOUNT_REQUIRED: ask first; no promotional PR unless maintainer confirms fit. |
 | draft | LocWorld | Future CFP or networking note | Visual-storytelling OCR QA for multilingual AI workflows | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: hold until approved-sample evidence exists; no sales pitch. |
 | draft | Women in Localization | Event/community topic note | OCR QA for visual storytelling localization | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: use official membership/partnership/event path; no backlink ask. |
+| draft | Manga Mavericks | Podcast/newsletter business inquiry | Responsible manga OCR translation QA interview/topic pitch | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: public business inquiry path only; no backlink ask. |
+| draft | Anime Herald | Contributor/interview form | Non-promotional article query on manga OCR QA before AI translation | https://tachiyomiat.com/guides/translation-support-workflow | OWNER_REVIEW_REQUIRED: official form only; hold until neutral article outline is polished. |
 
 ## Draft Bodies
 
@@ -177,6 +179,62 @@ The scope would be approved samples only: creator-owned material, public-domain 
 The public workflow guide covers the current review checklist: OCR block order, merged speech bubbles, glossary consistency, source-of-truth install links, and takedown-ready handling.
 
 If this is relevant, I can send the guide, screenshots, and demo context for feedback. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+### Manga Mavericks podcast/newsletter pitch
+
+Status: draft
+Target: Manga Mavericks public business inquiry path
+Audience: manga industry podcast/newsletter editors, reviewers, and localization-interested listeners
+Rules risk: medium; send only after owner review, through the public contact route, and do not ask for a backlink.
+No-link variant: describe the topic and offer to send the checklist only if relevant.
+Link variant after owner review: https://tachiyomiat.com/translate-manhwa-ai
+
+Subject:
+Topic idea: what breaks before AI manga translation
+
+Message:
+
+Hi Manga Mavericks team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Manga Mavericks while researching manga-industry podcasts and newsletters that discuss manga as both a medium and an industry. I wanted to ask whether a practical, non-promotional topic would be useful for a future conversation or newsletter note: what breaks before AI manga translation quality can even be judged.
+
+The angle is not "AI replaces localization." It is workflow QA: missing text regions, under-segmented speech balloons, overlapping dialogue and sound effects, reading order, glossary consistency, and the need to use owned, public-domain, official-sample, or permission-approved material before testing anything publicly.
+
+Nayovi is the product context, but the useful discussion is broader: how manga OCR and translation tools should be evaluated responsibly, where Android reader workflows create friction, and why source-of-truth install/support links matter when readers are comparing tools.
+
+If this is relevant, I can send a short outline, the public checklist, and screenshots/demo context. If not, no problem and I will not follow up.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### Anime Herald contributor/interview query
+
+Status: draft
+Target: Anime Herald official contact or contributor path
+Audience: anime and manga publication editors
+Rules risk: medium; use only the official form and avoid product-first guest content.
+No-link variant: pitch the article thesis without a URL and offer the checklist only if requested.
+Link variant after owner review: https://tachiyomiat.com/guides/translation-support-workflow
+
+Subject:
+Article idea: evaluating manga OCR before AI translation
+
+Message:
+
+Hi Anime Herald team,
+
+I am researching manga/manhwa OCR and AI translation workflows from the perspective of responsible reader tooling. I wanted to ask whether a practical contributor or interview angle could fit your anime and manga coverage.
+
+The proposed article would not be a product announcement. It would explain why manga AI translation often fails before the translation model does: missed text regions, speech balloons merged incorrectly, sound effects overlapping dialogue, panel order mistakes, and glossary drift across pages. It would also cover why tests should use owned, public-domain, official-sample, or permission-approved material.
+
+I can prepare this as a neutral workflow piece and keep Nayovi as brief context only if relevant to the editor.
 
 Best,
 Nayovi team

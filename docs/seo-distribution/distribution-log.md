@@ -61,3 +61,17 @@ This file is maintained by the SEO distribution agent.
 - Added the manga OCR evaluation checklist and LocWorld proposal outline to `link-assets.md`.
 - Drafted exact GitHub maintainer-first copy, LocWorld proposal outline, and Women in Localization topic note in `platform-drafts.md`.
 - Next actions: create a neutral markdown version of the OCR checklist, gather approved-sample screenshots/measurements, owner-review community/conference notes, and keep external posting blocked until authorized account workflows and rules are confirmed.
+
+## 2026-05-28 Cycle 5
+
+- Verified branch `seo/distribution-20260528T182722Z`; external posting remains draft-only except owned GitHub/docs, and the registry shows no configured LinkedIn, Reddit, directory, press, podcast, DEV/Medium, Product Hunt, or YouTube posting account.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting so this cycle supports the active outreach pipeline.
+- Improved owned content at `https://tachiyomiat.com/translate-manhwa-ai` with a research-reference section that frames Nayovi's OCR checklist around manga understanding and translation issues: text regions, reading order, visual context, glossary consistency, and permission-safe samples.
+- Researched rotated authority opportunities across different categories:
+  - Manga109-v2026 / manga OCR research: current arXiv research identifies transcription errors, missing text regions, overlapping dialogue/onomatopoeia, and under-segmented speech balloons, which supports a neutral research-backed checklist.
+  - Manga Mavericks: manga news, reviews, interviews, podcasts, and newsletter surface with a public business inquiry path; best action is a topic/interview pitch, not a backlink request.
+  - Anime Herald: anime/manga publication with public contact and contributor/interview context; best action is a neutral article query after the research checklist is polished.
+- Added those opportunities to `authority-opportunities.md` and the broader `docs/growth/backlink-prospects.csv` tracker.
+- Added research-backed manga OCR QA and Manga Mavericks interview/topic packet ideas to `link-assets.md`.
+- Drafted exact Manga Mavericks podcast/newsletter pitch and Anime Herald contributor/interview query in `platform-drafts.md`, including no-link and link variants.
+- Next actions: prepare a neutral markdown research checklist with academic links, owner-review Manga Mavericks before any send, and hold Anime Herald until the article outline is non-promotional enough for contributor review.
