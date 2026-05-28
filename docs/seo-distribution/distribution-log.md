@@ -2,6 +2,39 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-28T23:10Z Cycle
+
+Branch: `seo/distribution-20260528T203029Z`
+
+Account setup progress:
+- Advanced Product Hunt setup with official product/profile fields, launch assets, owner-only account/terms gates, `SEO_AGENT_PRODUCTHUNT_TOKEN` reference, and no-upvote/no-automated-comment guardrails.
+- Advanced DEV/Medium setup with official profile fields, canonical technical-resource links, byline and screenshot requirements, `SEO_AGENT_DEVTO_API_KEY` / `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` references, and canonical cross-posting constraints.
+
+Owned content changed:
+- Added `docs/seo-distribution/official-profile-linking-checklist.md` for canonical profile links, responsible-use copy, media requirements, and credential-handling guardrails.
+- Added the public comic OCR checklist URL to `public/llms.txt` and `public/llms-full.txt` so machine-readable context includes the neutral QA asset.
+- Updated content calendar and link-assets tracking for the official profile checklist and AI directory eligibility filter.
+
+Authority discovery:
+- Added ToolsVerse as watch-only after current public review showed strict manually verified free-tool standards that may exclude Nayovi's free-trial plus paid-token model.
+- Added AIToolSync as hold after current public review showed paid package/backlink/social-promotion language, which conflicts with the no paid-links rule.
+- Added Bayi Studios as a high-fit creator/localization opportunity for an approved-sample OCR workflow feedback note.
+
+Drafts prepared:
+- Added Bayi Studios no-link approved-sample OCR checklist feedback draft.
+- Added ToolsVerse eligibility guardrail and AIToolSync compliance-hold language.
+
+Outreach tracker:
+- Added ToolsVerse, AIToolSync, and Bayi Studios to `docs/growth/backlink-prospects.csv` with watch/hold/draft statuses.
+
+External actions:
+- No third-party posting, account creation, signup, login, CAPTCHA, form submission, paid placement, or social automation performed. Registry still permits only owned GitHub/docs work.
+
+Next actions:
+- Owner connects Product Hunt, DEV, or Medium only through official Nayovi/founder accounts if those channels should become publishable.
+- Owner-review the Bayi Studios note before any contact.
+- Keep AIToolSync blocked unless a compliant no-payment editorial route exists or owner explicitly approves non-link advertising spend.
+
 ## 2026-05-28T22:35Z Cycle
 
 Branch: `seo/distribution-20260528T202053Z`
