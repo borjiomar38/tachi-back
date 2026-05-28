@@ -233,6 +233,70 @@ const trustPacketRows = [
   },
 ] as const;
 
+const androidTranslatorCriteria = [
+  {
+    title: 'Official APK source',
+    description:
+      'Use a translator app with a public download page, build context, support route, and pricing handoff instead of a mirror-first APK page.',
+  },
+  {
+    title: 'Hosted OCR workflow',
+    description:
+      'Prefer hosted OCR and translation when readers should not manage provider API keys, local OCR engines, or screenshot upload chains on the device.',
+  },
+  {
+    title: 'Reader-fit page handling',
+    description:
+      'Check whether the workflow accounts for vertical manhwa pages, speech bubbles, narration boxes, names, recurring terms, and short dialogue.',
+  },
+  {
+    title: 'Responsible-use boundary',
+    description:
+      'A serious tool should say it does not host chapters and should limit review, pilot, or public examples to owned, public-domain, official-sample, or approved content.',
+  },
+] as const;
+
+const androidTranslatorDecisionRows = [
+  {
+    label: 'Free trial fit',
+    detail:
+      'Use the free trial when you want to confirm install, activation, OCR coverage, and translation readability before paying.',
+  },
+  {
+    label: 'Paid reader fit',
+    detail:
+      'Move to a monthly token plan when translation becomes a repeat reading workflow and support, device recovery, and usage controls matter.',
+  },
+  {
+    label: 'Reviewer fit',
+    detail:
+      'Ask for a review code when you need screenshots, APK source details, pricing context, demo proof, and responsible-use language before publishing.',
+  },
+  {
+    label: 'Partner fit',
+    detail:
+      'Use an approved-sample pilot when a creator, publisher, community, or localization team wants private evidence before any public mention.',
+  },
+] as const;
+
+const androidTranslatorLinkRows = [
+  {
+    label: 'Install',
+    detail:
+      'Start from the Nayovi download page so the APK source, current build, support path, and mirror boundary stay attached.',
+  },
+  {
+    label: 'Evaluate quality',
+    detail:
+      'Use the comic OCR checklist to inspect text detection, reading order, glossary consistency, and sharing permission.',
+  },
+  {
+    label: 'Decide plan',
+    detail:
+      'Use pricing after the free trial confirms that hosted translation is a repeat workflow, not a one-off curiosity.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -895,6 +959,131 @@ export const PagePermissionSafePilotBrief = () => {
             className={buttonVariants({ variant: 'ghost', size: 'lg' })}
           >
             Full workflow
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
+export const PageBestAndroidMangaTranslatorApk = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="Android APK guide"
+        title="Best Android manga translator APK: what to check"
+        description="A practical checklist for readers, reviewers, directories, and communities comparing Android manga, manhwa, and manhua translation apps without relying on unofficial mirrors."
+        className="pt-10"
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {androidTranslatorCriteria.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Why Nayovi fits"
+        title="Use official install, hosted OCR, and clear activation"
+        description="Nayovi is built around an Android APK, redeem-code activation, hosted OCR and AI translation, free trial access, token plans, and support from the official site."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Official APK: {androidApkDownload.filename} from the Nayovi
+              download page, with version context, source-of-truth links, and
+              support attached.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Workflow: install the APK, activate trial or review access, test
+              OCR and translation on permitted samples, then decide whether a
+              paid token plan fits repeat reading.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Boundary: Nayovi does not host or distribute chapters. Use it
+              for owned content, public-domain material, official samples, or
+              content you have permission to process.
+            </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Decision path"
+        title="Choose the right next step"
+        description="The best translator APK is the one that produces a clear install, test, upgrade, or stop decision."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {androidTranslatorDecisionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Compare"
+        title="Keep every comparison tied to source-of-truth links"
+        description="Directories, reviewers, and communities should be able to cite the same official install, quality, and pricing path."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {androidTranslatorLinkRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Next"
+        title="Install, test, then choose a plan"
+        description="Start with the official APK and free trial. Reviewers, partners, and communities can request codes before publishing a comparison or sending readers to Nayovi."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/download"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Download APK
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/pricing"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Compare plans
+          </a>
+          <a
+            href="/support"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Request review code
           </a>
         </div>
       </PublicSection>

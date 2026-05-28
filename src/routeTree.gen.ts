@@ -33,6 +33,7 @@ import { Route as GuidesPermissionSafeMangaTranslationPilotRouteImport } from '.
 import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
 import { Route as GuidesComicOcrTranslationChecklistRouteImport } from './routes/guides/comic-ocr-translation-checklist'
+import { Route as GuidesBestAndroidMangaTranslatorApkRouteImport } from './routes/guides/best-android-manga-translator-apk'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
 import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
@@ -226,6 +227,12 @@ const GuidesComicOcrTranslationChecklistRoute =
   GuidesComicOcrTranslationChecklistRouteImport.update({
     id: '/guides/comic-ocr-translation-checklist',
     path: '/guides/comic-ocr-translation-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuidesBestAndroidMangaTranslatorApkRoute =
+  GuidesBestAndroidMangaTranslatorApkRouteImport.update({
+    id: '/guides/best-android-manga-translator-apk',
+    path: '/guides/best-android-manga-translator-apk',
     getParentRoute: () => rootRouteImport,
   } as any)
 const CheckoutSuccessRoute = CheckoutSuccessRouteImport.update({
@@ -615,6 +622,7 @@ export interface FileRoutesByFullPath {
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/best-android-manga-translator-apk': typeof GuidesBestAndroidMangaTranslatorApkRoute
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
@@ -707,6 +715,7 @@ export interface FileRoutesByTo {
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/best-android-manga-translator-apk': typeof GuidesBestAndroidMangaTranslatorApkRoute
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
@@ -803,6 +812,7 @@ export interface FileRoutesById {
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
   '/checkout/success': typeof CheckoutSuccessRoute
+  '/guides/best-android-manga-translator-apk': typeof GuidesBestAndroidMangaTranslatorApkRoute
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
@@ -900,6 +910,7 @@ export interface FileRouteTypes {
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/best-android-manga-translator-apk'
     | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
@@ -992,6 +1003,7 @@ export interface FileRouteTypes {
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/best-android-manga-translator-apk'
     | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
@@ -1087,6 +1099,7 @@ export interface FileRouteTypes {
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
     | '/checkout/success'
+    | '/guides/best-android-manga-translator-apk'
     | '/guides/comic-ocr-translation-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
@@ -1183,6 +1196,7 @@ export interface RootRouteChildren {
   CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
   CheckoutCancelRoute: typeof CheckoutCancelRoute
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
+  GuidesBestAndroidMangaTranslatorApkRoute: typeof GuidesBestAndroidMangaTranslatorApkRoute
   GuidesComicOcrTranslationChecklistRoute: typeof GuidesComicOcrTranslationChecklistRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
   GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
@@ -1391,6 +1405,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/comic-ocr-translation-checklist'
       fullPath: '/guides/comic-ocr-translation-checklist'
       preLoaderRoute: typeof GuidesComicOcrTranslationChecklistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/best-android-manga-translator-apk': {
+      id: '/guides/best-android-manga-translator-apk'
+      path: '/guides/best-android-manga-translator-apk'
+      fullPath: '/guides/best-android-manga-translator-apk'
+      preLoaderRoute: typeof GuidesBestAndroidMangaTranslatorApkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout/success': {
@@ -2059,6 +2080,8 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
   CheckoutCancelRoute: CheckoutCancelRoute,
   CheckoutSuccessRoute: CheckoutSuccessRoute,
+  GuidesBestAndroidMangaTranslatorApkRoute:
+    GuidesBestAndroidMangaTranslatorApkRoute,
   GuidesComicOcrTranslationChecklistRoute:
     GuidesComicOcrTranslationChecklistRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
