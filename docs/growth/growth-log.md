@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T232155Z`: audited branch state, growth trackers, public workflow guide, sitemap/metadata coverage, latest SEO distribution shared snapshot, and outreach sender history.
+- Added a visible reply qualification matrix to `/guides/translation-support-workflow` plus ItemList structured data so incoming replies are advanced only when they create review access, approved-sample pilots, credible listing packets, founder interviews, commercial diligence, or a true owner decision.
+- Marked the reply qualification matrix as shipped in the growth content backlog and logged the outreach-cap-safe next action in `docs/growth/outreach-drafts.md`.
+- Outreach status: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` still shows 10 sends on 2026-05-28 UTC, matching the configured daily cap. Next cap-reset work should prioritize reply-driven follow-up, then the queued Akaya Media approved-sample pilot if no hotter reply needs action.
+
 - Autonomous cycle on `growth/autonomous-20260528T231344Z`: audited branch state, public SEO/conversion guide assets, growth trackers, SEO distribution shared state, and outreach sender history.
 - Added a visible reply triage packet to `/guides/translation-support-workflow` plus ItemList structured data so incoming editor, directory, partner, and investor replies route into review-code requests, approved-sample pilots, call/interview handling, or clean declines for weak placements.
 - Marked the reply triage packet as shipped in the growth content backlog and logged the outreach rationale in `docs/growth/outreach-drafts.md`.
