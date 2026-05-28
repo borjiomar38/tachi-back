@@ -217,6 +217,10 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T195601Z`: audited branch state, latest SEO distribution shared report, public route coverage, `/download`, `/pricing`, growth backlog, and the outreach send ledger.
+- Added SoftwareApplication and BreadcrumbList structured data to `/download` so search engines, Android directories, and app reviewers can parse the official APK download URL, build label, file size, free trial offer, and verification context without relying only on visible copy.
+- Marked the download-page structured APK metadata asset as shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 compliant sends on 2026-05-28, matching the configured daily cap. Next outreach after cap reset should prioritize prospects that can cite `/download` or `/guides/comic-ocr-translation-checklist` with official-source and responsible-use context.
 - Autonomous cycle on `growth/autonomous-20260528T193602Z`: audited branch state, SEO distribution shared context, current growth docs, `/translate-manhwa-ai`, `/download`, sitemap coverage, and the repo-native comic OCR checklist asset.
 - Added `/guides/comic-ocr-translation-checklist` as a public, product-light checklist covering responsible sample scope, pre-OCR capture, OCR completeness, reading order/grouping, translation review, and share/submit decisions.
 - Regenerated the TanStack route tree through the existing Vite/TanStack plugin path and added the new checklist URL to `/sitemap.xml`.
