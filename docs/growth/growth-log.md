@@ -175,6 +175,10 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T181429Z`: audited branch state, current SEO distribution shared context, `/translate-manhwa-ai`, `/download`, sitemap coverage, content backlog, backlink tracker, outreach drafts, and prior distribution report output.
+- Added SubmitAITools as a contacted AI-tool directory prospect after current public verification found a free AI-tool submission path, manual review language, external-link listing context, and `contact@submitaitools.org` for listing updates/support.
+- Sent an individualized listing-fit inquiry to SubmitAITools through the configured outreach sender with official source links, responsible-use boundaries, and opt-out language.
+- Added an AI directory screenshot packet backlog item so future form-only submissions can reuse screenshots, demo, pricing summary, APK source links, and responsible-use copy without ad hoc listing text.
 - Autonomous cycle on `growth/autonomous-20260528T175622Z`: audited branch state, current SEO/distribution shared context, route coverage, existing growth trackers, and the missing distribution report referenced by shared status.
 - Added a citation-ready app listing packet to `/guides/translation-support-workflow` so Android directories, app reviewers, newsletters, and partners can copy a clear one-line description, official download link, review-code path, and responsible-use wording.
 - Marked the neutral directory listing packet backlog item as shipped with the owned guide URL.
