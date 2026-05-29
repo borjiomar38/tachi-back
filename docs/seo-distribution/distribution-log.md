@@ -1338,3 +1338,20 @@ Next actions:
 - Drafted exact value-first AI comparison directory eligibility note and short-video demo caption packet in `platform-drafts.md`.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, launch listing, short-video upload, APK upload, public report approval, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
 - Next actions: owner approves official submitter identity, directory source-link handling, short-video account choice, sample-safe clips, captions, package/signing facts, and whether any video or listing action remains manual-only.
+
+## 2026-05-29 Cycle 11
+
+- Verified branch `seo/distribution-20260529T054100Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Directory and app-review submission registry with official submitter identity, package/signing/screenshot owner gates, credential references, and source-first rejection rules.
+  - Technical publishing and newsletter canonical profile with official byline, canonical URL policy, screenshot rights, and DEV/Medium/Hashnode/newsletter credential references.
+- Added owned trust asset `docs/seo-distribution/directory-submission-scorecard.md` for AI directories, free-trial software directories, APK review portals, startup launch directories, newsletters, and app-testing surfaces.
+- Researched current authority opportunities across different categories:
+  - ToolsVerse: verified AI directory with Submit Tool and trial/pricing context; possible fit only if official APK, OCR/Translation category, support, pricing, and responsible-use links remain visible.
+  - AIToolSync: submit-a-tool path with free listing language; possible fit only after live fields pass the scorecard and avoid hidden paid-link or free/open-source overclaims.
+  - Reddit/webtoon AI translation discussion context: useful high-risk community signal for no-link OCR QA language, not a posting target without an authorized official account and rule review.
+- Updated `account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv`.
+- Drafted exact value-first no-link fit question for ToolsVerse/AIToolSync-style directories, technical publishing profile copy, and Reddit no-link OCR QA answer.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, APK upload, review-code grant, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium/DEV publication, newsletter send, or YouTube upload was attempted.
+- Next actions: owner confirms official submitter/byline identity, package/signing/hash facts, sample-safe screenshot/demo rights, canonical publishing policy, and which directory or technical publishing surfaces may receive manual owner-reviewed actions.
