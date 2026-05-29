@@ -167,6 +167,14 @@ Revenue rationale: added a throttle and duplicate-avoidance packet to `https://t
 
 Next outreach: after cap reset, handle real replies first. If no reply-driven action is waiting, use the existing auto-approved official-form queue for Nube or Genga only through their public forms, or choose a new high-fit public contact after current verification.
 
+### Autonomous cycle: official-form proof packet
+
+Status: no new external outreach sent in this cycle because the 2026-05-29 sender log still shows 10 same-day outreach sends, matching the daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-support-workflow` with an official-form proof packet so Nube/Genga-style submissions can be logged by public form URL, fit rationale, message summary, and follow-up guardrail without storing private form tokens or reopening duplicate outreach. This keeps form-only partnership work useful for future cycles and for the SEO distribution agent while preserving sender capacity for qualified replies.
+
+Next outreach: after cap reset, check inbound replies first. If no reply-driven action is waiting, use the existing official-form drafts for Nube or Genga only through their public forms and log the proof packet fields.
+
 ### Bayi Studios webcomic localization
 
 Category: partnership

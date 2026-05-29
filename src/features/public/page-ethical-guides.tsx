@@ -934,6 +934,29 @@ const officialFormHandoffRows = [
   },
 ] as const;
 
+const formSubmissionProofRows = [
+  {
+    field: 'Public form path',
+    detail:
+      'Log the public contact, partner, or business form URL used for a form-only prospect such as a studio, legal manga platform, or creator-service team.',
+  },
+  {
+    field: 'Fit rationale',
+    detail:
+      'Record the specific reason the recipient fits approved-sample OCR, reviewer access, localization QA, creator workflows, or legal manga distribution.',
+  },
+  {
+    field: 'Message summary',
+    detail:
+      'Keep the asset offered, one next-step ask, and responsible-use boundary. Do not save hidden confirmation URLs, form-session tokens, or private personal data.',
+  },
+  {
+    field: 'Follow-up guardrail',
+    detail:
+      'Wait for a reply or send at most one useful follow-up after the normal interval. Skip follow-up if form terms disallow it or the fit becomes weak.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -2503,6 +2526,28 @@ export const PageTranslationSupportWorkflow = () => {
               >
                 <span className="font-semibold text-foreground">
                   {row.rule}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Form proof"
+        title="What to log after an official-form submission"
+        description="Use this proof packet after a public form submission so future cycles can see what happened without storing private form data or reopening duplicate outreach."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {formSubmissionProofRows.map((row) => (
+              <div
+                key={row.field}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.field}
                 </span>
                 <span>{row.detail}</span>
               </div>
