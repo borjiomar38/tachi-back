@@ -78,6 +78,69 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-29 Current Cycle Setup Advancement
 
+### Directory and App-Review Submission Registry
+
+Status: OWNER_ACTION_REQUIRED for official submitter identity, manual account setup, terms acceptance, package/signing facts, approved screenshots/demo assets, and per-platform submission approval.
+
+Prepared packet:
+- `docs/seo-distribution/directory-submission-scorecard.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Submitter identity: owner-approved official Nayovi, founder, or developer identity only.
+- One-line description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Primary source: `https://nayovi.com`
+- Official APK source: `https://tachiyomiat.com/download`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Support: `https://tachiyomiat.com/support`
+- Responsible-use line: `No chapter hosting; use only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Credential references:
+- `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`
+- `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`
+- `SEO_AGENT_APK_DIRECTORY_PROFILE_REFERENCE`
+- `SEO_AGENT_APK_REVIEW_PORTAL_REFERENCE`
+- `SEO_AGENT_STARTUP_LAUNCH_PROFILE_REFERENCE`
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare field-level listing copy, score targets with the directory scorecard, and reject paid-link, reciprocal-link, hidden-redirect, mirror-first APK, fake-review, unsafe-screenshot, or misleading pricing flows.
+- The agent must not create accounts, submit forms, upload APKs, accept terms, pay for listings, grant review codes, or claim acceptance without explicit owner approval.
+
+Next action:
+- Owner chooses which directory/app-review surfaces may receive manual fit questions and confirms package/signing/hash facts, screenshot/demo rights, public submitter identity, and whether any APK upload is allowed.
+
+### Technical Publishing and Newsletter Canonical Profile
+
+Status: OWNER_ACTION_REQUIRED for official byline, account creation or claim, canonical URL policy, visual asset approval, manual terms acceptance, and optional API token connection.
+
+Prepared packets:
+- `docs/seo-distribution/technical-publishing-syndication-packet.md`
+- `docs/seo-distribution/android-newsletter-submission-packet.md`
+- `docs/seo-distribution/official-newsletter-first-issue.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Byline: owner-approved founder name or `Nayovi team`; do not invent a personal persona.
+- Bio: `Nayovi builds an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; use only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+- Canonical URL for OCR article: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- APK source: `https://tachiyomiat.com/download`
+- Support: `https://tachiyomiat.com/support`
+
+Credential references:
+- `SEO_AGENT_DEVTO_API_KEY`
+- `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`
+- `SEO_AGENT_HASHNODE_TOKEN`
+- `SEO_AGENT_NEWSLETTER_API_TOKEN`
+- `SEO_AGENT_TECHNICAL_PUBLISHING_PROFILE_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare canonical technical posts, newsletter link suggestions, and profile metadata after owner approval and rules review.
+- The agent must not publish articles, import contacts, send bulk email, comment, cross-post without canonical handling, or use unsafe screenshots automatically.
+
+Next action:
+- Owner chooses DEV, Medium, Hashnode, newsletter archive, or manual-only publishing, approves canonical policy and screenshots, and confirms whether any API publishing is allowed.
+
 ### Webmaster and AI Search Entity Verification
 
 Status: OWNER_ACTION_REQUIRED for domain verification, official owner account access, public contact approval, API credential connection, and owner-confirmed package/signing facts.

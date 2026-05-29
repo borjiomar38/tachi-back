@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | AI/free-trial directory | ToolsVerse / AIToolSync-style submit paths | Directory scorecard fit question before listing Nayovi | docs/seo-distribution/directory-submission-scorecard.md | OWNER_REVIEW_REQUIRED: verify live fields, pricing labels, and source-link behavior; no form submission, signup, payment, reciprocal link, or hidden redirect. |
+| draft | Technical publishing/newsletter | DEV / Medium / Hashnode / Nayovi Notes | Canonical technical profile and OCR checklist syndication | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_ACTION_REQUIRED: official byline, canonical URL policy, account setup, screenshots, and publication approval required. |
+| watch | Reddit/community context | r/webtoons AI translation discussions | No-link OCR QA support answer when users ask about AI translation quality | None by default | AUTHORIZED_ACCOUNT_REQUIRED: high rules risk; use only disclosed official account, no links unless directly allowed and contextually requested. |
 | draft | DEV / Medium / Hashnode | Official technical publishing profile | Canonical comic OCR review checklist article | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_ACTION_REQUIRED: official account, canonical URL support, screenshot rights, byline approval, and exact publication approval required. |
 | draft | Reddit / Q&A | Official Nayovi support account | No-link answer on evaluating OCR translator quality and APK source trust | None by default | AUTHORIZED_ACCOUNT_REQUIRED: owner-created official account and community rule review required; links only when directly requested or clearly allowed. |
 | watch | Localization podcast | Nimdzi LIVE / Slator-style localization media | Future visual-storytelling OCR QA topic | None by default | WATCH_ONLY: needs approved-sample observations, byline, screenshots, and product-light angle; no backlink ask. |
@@ -161,6 +164,83 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Short-video official profile | TikTok / YouTube Shorts / Reels manual-only setup | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, approved clips, sample rights, caption approval, and optional API credential required before any upload or metadata update. |
 
 ## Draft Bodies
+
+### ToolsVerse / AIToolSync directory scorecard fit question
+
+Status: draft
+Target: ToolsVerse, AIToolSync, or comparable AI/free-trial directory after owner review
+Audience: directory editors and software directory reviewers
+Rules risk: medium; use only official submit/contact paths, and skip any flow that requires payment for SEO links, reciprocal backlinks, hidden redirects, fake reviews, or inaccurate free/open-source claims.
+No-link variant: yes for unclear forms.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi team,
+
+I am checking listing fit before submitting Nayovi.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The listing would need to stay precise: official APK source, trial plus paid monthly token plans, pricing and support links, and a responsible-use boundary for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+It should not be represented as forever-free, open source, a generic chatbot, an app-store-only product, a chapter source, or a mirrored APK.
+
+Would your directory support that kind of source-first listing, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+Workflow context:
+`https://tachiyomiat.com/translate-manhwa-ai`
+
+### Technical publishing canonical profile note
+
+Status: draft
+Target: official DEV, Medium, Hashnode, or Nayovi Notes profile after owner setup
+Audience: developers, OCR reviewers, Android reviewers, AI directory editors, localization operators
+Rules risk: medium; requires canonical URL support, affiliation disclosure, sample-safe screenshots, and owner approval.
+No-link variant: yes for profile setup or newsletter pitch.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Profile/about copy:
+
+Nayovi builds an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. Posts here focus on direct-APK trust, OCR review quality, approved-sample testing, and responsible use. Nayovi does not host chapters.
+
+First post angle:
+
+Before reviewing any manga or webtoon OCR translator, separate source permission from output quality. Permission comes first: owned pages, public-domain material, official samples, creator-provided pages, or otherwise approved material. Then check whether the OCR captured small side text, overlapping balloons, vertical text, SFX, and reading order before judging the translated sentence.
+
+Link variant:
+
+Full owned checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Disclosure: maintained by the Nayovi team.
+
+### Reddit webtoon AI translation no-link context answer
+
+Status: watch
+Target: Reddit/webtoon or manga communities only if official participation is allowed and a user directly asks about AI translation quality
+Audience: webtoon readers, creators, localization watchers
+Rules risk: high; no post, comment, vote, DM, or link without official account authorization and subreddit rule review.
+No-link variant: yes and strongly preferred.
+Link variant after owner/community approval: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link answer:
+
+Official Nayovi account here.
+
+For AI translation on comics, I would judge the workflow before judging only the final sentence. The first question is whether the sample is allowed to be processed at all. The second is whether OCR found every text region, preserved reading order, separated overlapping balloons, and kept enough human review context to catch mistranslations.
+
+For creator-controlled or opt-in translation programs, the safest feedback loop is usually approved samples plus clear error reports: missed text, wrong speaker grouping, name/glossary drift, SFX handling, and places where the translation sounds fluent but does not match the panel context.
+
+I would avoid dropping tool links into threads unless the community explicitly asks for them and rules allow disclosed official accounts to answer.
 
 ### Android Weekly APK trust checklist link suggestion
 
