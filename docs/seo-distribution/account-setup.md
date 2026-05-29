@@ -258,6 +258,34 @@ Next action:
 
 ### Official Open Social Profile
 
+### Creator Resource Hub / Education Profile
+
+Status: OWNER_ACTION_REQUIRED for official byline, manual account/contact setup where required, resource-team department choice, screenshot/sample-rights approval, and any link inclusion.
+
+Prepared packet:
+- `docs/seo-distribution/creator-resource-hub-fit-packet.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Byline option: owner-approved founder name or `Nayovi team`; do not invent a personal persona.
+- Resource title: `Checklist for reviewing OCR and AI translation on approved comic samples`
+- Canonical checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Permission-safe pilot context: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+- Responsible-use line: `Nayovi does not host chapters; use only with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+
+Credential/reference guardrails:
+- `SEO_AGENT_CREATOR_RESOURCE_PROFILE_REFERENCE`
+- `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`
+- `SEO_AGENT_PARTNER_CONTACT_REFERENCE`
+- Store no private creator emails, platform contacts, unpublished samples, screenshots, credentials, review codes, or partner terms in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare no-link-first creator-resource notes after owner approval and current rules review.
+- Contact forms, account creation, terms acceptance, screenshot upload, creator-platform posting, and public comments remain owner/manual actions unless a compliant official API is explicitly connected.
+
+Next action:
+- Owner decides whether WEBTOON creator-resource context, manga newsletters, or localization education outlets may receive this no-link-first resource fit question and approves byline, sample scope, screenshots, and link policy.
+
 ## 2026-05-29 Cycle 12 Setup Advancement
 
 ### Search and Webmaster Verification Follow-Through

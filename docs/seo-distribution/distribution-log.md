@@ -125,7 +125,7 @@ This file is maintained by the SEO distribution agent.
 - No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, contact form submission, email send, directory submission, payment, APK upload, review-code grant, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, GitHub issue/PR/comment, accelerator application, or public outreach send was attempted.
 - Next actions: owner reviews the GitHub trust packet, confirms official GitHub profile strategy, approves Android editorial package facts/media assets/review-code boundaries, and keeps Mozilla Builders/TAAFT as watch or owner-reviewed only until eligibility and listing quality are clear.
 
-## 2026-05-29 Cycle 13
+## 2026-05-29 Current Branch Cycle 061555Z
 
 - Verified branch `seo/distribution-20260529T041419Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
 - Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
@@ -1407,3 +1407,18 @@ Next actions:
 - Drafted exact no-link and link-if-invited variants for a localization media OCR QA pitch and Reddit/founder-community APK trust answer.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, media pitch, Reddit post/comment/DM/vote, directory submission, APK upload, review-code grant, Product Hunt action, Medium/DEV publication, newsletter send, or YouTube upload was attempted.
 - Next actions: owner verifies webmaster properties, confirms official public profile URLs, approves package/signing/hash wording, and decides whether localization media should receive a product-light OCR QA pitch after sample-safe evidence is ready.
+## 2026-05-29 Cycle 13
+
+- Verified branch `seo/distribution-20260529T061555Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action tasks:
+  - Added Creator Resource Hub / Education Profile setup details in `account-setup.md` with official byline, sample-rights, credential/reference guardrails, and no-link-first publishing rules.
+  - Reinforced independent app-review setup by drafting Apps Tested-style source-first review copy tied to `app-testing-review-brief.md` and reviewer gates.
+- Added owned trust asset `docs/seo-distribution/creator-resource-hub-fit-packet.md` for creator-resource hubs, manga newsletters, and localization education outlets.
+- Researched rotated authority opportunities across different categories:
+  - WEBTOON 2026 creator-program/resource-hub context: high authority but high risk; only a no-link approved-sample OCR QA resource question is acceptable.
+  - Apps Tested independent app reviews: source-first app health-check fit after owner approves package facts, sample scope, and review-code/public-report policy.
+  - ROAR localization podcast: watch-only media/education topic until approved-sample visual OCR QA evidence exists.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new setup packet, opportunities, and exact no-link/link-if-invited drafts.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, contact form submission, app-review request, APK upload, review-code grant, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium/DEV publication, newsletter send, or YouTube upload was attempted.
+- Next actions: owner approves creator-resource byline, sample/screenshot rights, package/signing/hash facts, and whether WEBTOON/resource-hub or Apps Tested-style surfaces may receive a manual no-link fit question.
