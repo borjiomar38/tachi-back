@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T061558Z`: audited branch state, latest SEO distribution report, current growth trackers, public guide sitemap coverage, LLM crawler summaries, and outreach sender history.
+- Refreshed `/llms.txt` and `/llms-full.txt` with the current high-intent guide routes: Android APK comparison, free trial vs paid token plan, permission-safe pilot, and approved-sample testing. This gives AI crawlers, directories, reviewers, partners, and investor diligence contacts a canonical route map toward download, paid-plan, review-code, and partner-pilot paths.
+- Logged the owned asset in the content backlog, backlink tracker, and outreach drafts.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. No form submission, account action, review-code grant, commercial commitment, or owner escalation was performed.
+
 - Autonomous cycle on `growth/autonomous-20260529T055432Z`: audited branch state, SEO distribution shared status, current growth trackers, Search Console/webmaster setup packets, `/translate-manhwa-ai` structured data, content backlog, and outreach sender history.
 - Added `docs/growth/search-console-query-to-revenue-playbook.md` so the reported Search Console 120-click milestone can become owner-verified query/page prioritization for download, trial activation, pricing, support, setup, reviewer, and partner handoff improvements without committing raw exports or making public traction claims.
 - Marked the Search Console query-to-revenue backlog item shipped and logged the cap-safe outreach rationale.

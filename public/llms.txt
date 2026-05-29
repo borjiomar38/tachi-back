@@ -27,6 +27,10 @@ For citations, app directories, editorial reviews, partner diligence, or investo
 - [Mihon and TachiyomiAT setup guide](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Legacy guide path for TachiyomiAT, Tachiyomi, and Mihon setup searches.
 - [Translation support workflow](https://tachiyomiat.com/guides/translation-support-workflow): Permission check, OCR, glossary, review, credit, and removal workflow.
 - [Comic OCR translation checklist](https://tachiyomiat.com/guides/comic-ocr-translation-checklist): Neutral QA checklist for approved comic, manga, manhwa, and manhua samples.
+- [Best Android manga translator APK](https://tachiyomiat.com/guides/best-android-manga-translator-apk): Comparison guide for official APK source, hosted OCR quality, activation, pricing, support, and responsible-use checks.
+- [Free trial vs paid token plan](https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan): Buyer-intent guide for choosing free trial, monthly token plans, reviewer access, or partner pilot access.
+- [Permission-safe manga translation pilot](https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot): Partner pilot brief for approved samples, private evaluation, review-code routing, and go/no-go decisions.
+- [Testing AI manhwa translation with approved samples](https://tachiyomiat.com/guides/test-ai-manhwa-translation-approved-samples): Reviewer and partner checklist for testing OCR and AI translation only with approved manga, manhwa, or manhua samples.
 
 ## Policies
 
