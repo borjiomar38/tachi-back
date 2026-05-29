@@ -657,6 +657,24 @@ const sourceToCheckoutRows = [
   },
 ] as const;
 
+const postReplyAttributionRows = [
+  {
+    signal: 'Listing approval',
+    measure:
+      'Count the placement as qualified only when the live listing keeps official APK, pricing, support, cancellation, and responsible-use links visible.',
+  },
+  {
+    signal: 'Review access',
+    measure:
+      'Separate review-code activations from normal checkout so public coverage can be judged by install confidence, support load, and repeat-use intent.',
+  },
+  {
+    signal: 'Partner pilot',
+    measure:
+      'Track approved sample scope, activation quality, follow-up request, and paid-plan fit before escalating custom terms or founder time.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2123,6 +2141,48 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Compare access paths
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Post-reply attribution"
+        title="Measure the result after a useful reply"
+        description="A positive reply is not the goal by itself. The next step should show whether the channel can preserve source trust, create clean activations, and support repeat paid use."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {postReplyAttributionRows.map((row) => (
+            <Card key={row.signal} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.signal}</CardTitle>
+                <CardDescription>{row.measure}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ArrowRightIcon className="size-4" />
+                Follow replies with attribution, not volume
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                After a directory, reviewer, or partner replies, log the exact
+                access path used and the outcome it can measure before sending
+                more prospects into the same channel.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open attribution workflow
             </a>
           </CardContent>
         </Card>
