@@ -164,6 +164,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Localization media/podcast | SlatorPod / Slator-style language industry media | Future approved-sample visual OCR QA topic | None by default | WATCH_ONLY: hold until owner approves screenshots, sample evidence, byline, and non-promotional topic; no backlink ask or consumer APK pitch. |
 | draft | AI comparison/free-trial directories | AiMatch / ToolDirectory.AI / Try.fm-style surfaces | Pricing-aware Nayovi listing eligibility question | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit/contact path only; verify category, pricing, source-link, and responsible-use fields; skip paid backlinks, reciprocal links, hidden redirects, generic chatbot labels, mirror-first APK pages, and forever-free/open-source claims. |
 | draft | Short-video official profile | TikTok / YouTube Shorts / Reels manual-only setup | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, approved clips, sample rights, caption approval, and optional API credential required before any upload or metadata update. |
+| draft | Localization media | Agile Localization / SlatorPod / ROAR-style outlets | Product-light visual-storytelling OCR QA topic | None by default | OWNER_REVIEW_REQUIRED: approved-sample observations, byline, screenshot rights, and public contact path required; no consumer APK pitch or backlink ask. |
+| watch | Android policy/community | Keep Android Open / direct-APK verification discussions | Direct APK source-trust context for owned copy | None | WATCH_ONLY: use as context for official-source proof; do not post product links in policy threads. |
+| draft | Reddit / founder communities | r/SideProject-style AI manga translator threads | No-link feedback answer about APK trust and OCR QA | None by default | AUTHORIZED_ACCOUNT_REQUIRED: no Reddit post/comment/DM/vote without official account, current rules review, and owner approval. |
 
 ## Draft Bodies
 
@@ -3868,6 +3871,62 @@ The source-of-truth packet starts with the official download page and reviewer c
 
 The product-light OCR QA checklist is here:
 `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### Localization media visual-storytelling OCR QA topic
+
+Status: draft
+Target: Agile Localization, SlatorPod, ROAR, IAMT Journal, or manga/localization media after owner review
+Audience: localization operators, language technology readers, manga/webtoon media, partner diligence contacts
+Rules risk: medium; use only public editorial/contact paths, and do not pitch app installs, backlinks, unsupported metrics, or creator-catalog processing.
+No-link variant: yes.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi {{editor_or_host}},
+
+I am preparing a product-light topic about OCR QA for manga, manhwa, and webtoon-style pages before AI translation output is trusted.
+
+The useful angle is not a consumer app pitch. It is a practical checklist for visual storytelling: confirm source permission, detect missing text regions, avoid merged speakers, preserve reading order, track glossary drift, and keep human review visible before any approved sample is shared.
+
+Would that kind of topic fit your localization or language-technology coverage, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Official Android APK comparison context:
+`https://tachiyomiat.com/guides/best-android-manga-translator-apk`
+
+### Reddit / founder-community no-link APK trust answer
+
+Status: draft
+Target: r/SideProject-style threads where a user directly asks about AI manga translation, OCR quality, APK trust, or responsible samples
+Audience: builders, Android power users, AI workflow testers
+Rules risk: high; no posting without an authorized official account, current rule review, and owner approval. Omit links by default.
+No-link variant: yes.
+Link variant only if directly requested and rules allow: `https://tachiyomiat.com/guides/best-android-manga-translator-apk`
+
+No-link answer:
+
+Speaking from the Nayovi side, the trust checks I would want before trying any Android manga OCR workflow are source-first rather than feature-first.
+
+Use only the official APK source, confirm there is a support path, check whether pricing and trial limits are stated plainly, and test OCR on a small page you are allowed to process. For manga/manhwa pages, the common failure points are missed small text, merged speech bubbles, reading-order mistakes, name/glossary drift, and unclear permission to share screenshots or output.
+
+I would avoid any tool or listing that asks you to trust a mirrored APK, reposted build, anonymous review, vote campaign, or public demo using material that is not clearly approved.
+
+Link variant:
+
+Same as above, then add only if invited:
+
+Nayovi keeps the public checklist here:
+`https://tachiyomiat.com/guides/best-android-manga-translator-apk`
 
 Do not send if the outlet requires paid placement, reciprocal links, review swaps, guessed verification facts, or screenshots from unauthorized manga/manhwa/manhua pages.
 

@@ -1390,3 +1390,20 @@ Next actions:
 - Drafted exact value-first no-link fit question for ToolsVerse/AIToolSync-style directories, technical publishing profile copy, and Reddit no-link OCR QA answer.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, APK upload, review-code grant, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium/DEV publication, newsletter send, or YouTube upload was attempted.
 - Next actions: owner confirms official submitter/byline identity, package/signing/hash facts, sample-safe screenshot/demo rights, canonical publishing policy, and which directory or technical publishing surfaces may receive manual owner-reviewed actions.
+
+## 2026-05-29 Cycle 12
+
+- Verified branch `seo/distribution-20260529T060702Z`; account registry still has external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two owner-action packets:
+  - Search and webmaster verification follow-through for `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com`, including sitemap URLs, credential references, and no-token/no-dashboard-data guardrails.
+  - Localization media contributor profile for Agile Localization, SlatorPod, ROAR, IAMT Journal, and manga/localization media, with official byline, approved-sample evidence, screenshot-rights, and product-light topic requirements.
+- Improved owned SEO/linkable content by adding an official-profile evidence section to `https://tachiyomiat.com/guides/best-android-manga-translator-apk` and updating its sitemap freshness date to `2026-05-29`.
+- Researched rotated authority opportunities across different categories:
+  - Keep Android Open/direct-APK policy context: useful for owned source-trust copy only, not a product posting surface.
+  - Agile Localization podcast/media: future high-trust localization topic after approved-sample OCR QA evidence exists.
+  - r/SideProject-style AI manga translator discussions: high-risk community context for no-link answers only when directly relevant and authorized.
+- Updated `account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv`.
+- Drafted exact no-link and link-if-invited variants for a localization media OCR QA pitch and Reddit/founder-community APK trust answer.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, media pitch, Reddit post/comment/DM/vote, directory submission, APK upload, review-code grant, Product Hunt action, Medium/DEV publication, newsletter send, or YouTube upload was attempted.
+- Next actions: owner verifies webmaster properties, confirms official public profile URLs, approves package/signing/hash wording, and decides whether localization media should receive a product-light OCR QA pitch after sample-safe evidence is ready.

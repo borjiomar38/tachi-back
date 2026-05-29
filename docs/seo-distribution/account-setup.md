@@ -258,6 +258,61 @@ Next action:
 
 ### Official Open Social Profile
 
+## 2026-05-29 Cycle 12 Setup Advancement
+
+### Search and Webmaster Verification Follow-Through
+
+Status: OWNER_ACTION_REQUIRED for domain verification, official owner account access, API credential connection, and confirmation that no verification tokens or dashboard metrics are published.
+
+Prepared public profile fields:
+- Primary brand: `Nayovi`
+- Primary site: `https://tachiyomiat.com`
+- Brand domain: `https://nayovi.com`
+- SEO domain: `https://translate-manhwa-ai.com`
+- Primary sitemap: `https://tachiyomiat.com/sitemap.xml`
+- High-intent pages: `https://tachiyomiat.com/download`, `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/guides/best-android-manga-translator-apk`, `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Domain ownership access, sitemap URL list, canonical link list, public support URL, privacy/terms URLs, and owner-approved profile fields.
+
+Credential references:
+- `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS`
+- `SEO_AGENT_BING_WEBMASTER_API_KEY`
+- `SEO_AGENT_CANONICAL_PROFILE_REGISTRY_REFERENCE`
+
+Publish capability after connection:
+- Agent can prepare sitemap submission notes, indexing issue summaries, and public entity consistency checks after owner connects approved credentials.
+- Agent must not write verification tokens, DNS records, dashboard screenshots, private crawl metrics, private query data, or credential values to docs or Git.
+
+Next action:
+- Owner verifies the three owned domains in Google Search Console and Bing Webmaster Tools, submits `https://tachiyomiat.com/sitemap.xml`, and approves which public profile URLs may be treated as official citations.
+
+### Localization Media Contributor Profile
+
+Status: OWNER_ACTION_REQUIRED for official byline, public contact path, approved-sample evidence, screenshot/demo approval, and manual acceptance of publication or podcast terms.
+
+Prepared public profile fields:
+- Display name: `Nayovi`
+- Byline: owner-approved founder name or `Nayovi team`; do not invent a personal persona.
+- Bio: `Nayovi builds an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It does not host chapters and is designed for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Topic angle: `What Android manga OCR reviewers should check before trusting AI translation output: source permission, text-region coverage, speaker grouping, glossary drift, and human review.`
+- Canonical links: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`, `https://tachiyomiat.com/guides/best-android-manga-translator-apk`, `https://tachiyomiat.com/translate-manhwa-ai`
+
+Required assets:
+- Approved-sample observations, screenshot rights, owner-approved byline, public contact route, media kit references, and product-light topic outline.
+
+Credential references:
+- `SEO_AGENT_MEDIA_CONTRIBUTOR_PROFILE_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+- `SEO_AGENT_DEMO_VIDEO_REFERENCE`
+
+Publish capability after connection:
+- Agent can draft no-link-first podcast/newsletter pitches and contributor bios after owner approval.
+- Agent must not pitch app installs, claim endorsement, cite private metrics, upload samples, submit forms, or contact editors automatically.
+
+Next action:
+- Owner chooses whether SlatorPod, Agile Localization, ROAR, IAMT Journal, or manga-specific media should receive a product-light approved-sample topic after evidence exists.
+
 Status: OWNER_ACTION_REQUIRED for official handle/instance, manual account setup, email verification, terms acceptance, asset approval, and optional API token connection.
 
 Prepared packet:

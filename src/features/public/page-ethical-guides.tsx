@@ -302,6 +302,29 @@ const androidTranslatorLinkRows = [
   },
 ] as const;
 
+const androidTranslatorProfileEvidenceRows = [
+  {
+    label: 'Official profiles',
+    detail:
+      'Treat LinkedIn, YouTube, Product Hunt, DEV, Medium, Reddit, X, Bluesky, or directory pages as official only when they link back to Nayovi-owned source URLs and use the same responsible-use language.',
+  },
+  {
+    label: 'Review packets',
+    detail:
+      'Ask for the public APK source, pricing, support, OCR checklist, screenshot policy, and review-code path before relying on a directory listing or social post.',
+  },
+  {
+    label: 'Unverified mentions',
+    detail:
+      'Do not treat mirrors, scraped listings, anonymous comments, vote requests, or reposted APK files as evidence that Nayovi approved a channel.',
+  },
+  {
+    label: 'Partner checks',
+    detail:
+      'Creators, publishers, investors, and app reviewers should confirm the sample scope, source permission, and public citation rules before sharing screenshots or test results.',
+  },
+] as const;
+
 const androidTranslatorReadinessRows = [
   {
     audience: 'Repeat Android readers',
@@ -1789,6 +1812,28 @@ export const PageBestAndroidMangaTranslatorApk = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {androidTranslatorLinkRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Trust signals"
+        title="Check official profiles before trusting a mention"
+        description="A real Nayovi profile, listing, video, or article should point back to the same official source links and should not replace the download, pricing, support, or responsible-use pages."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {androidTranslatorProfileEvidenceRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
