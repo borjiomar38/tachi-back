@@ -97,6 +97,28 @@ const translationWorkflowStructuredData = () => {
         'Close replies that ask for paid backlinks, reciprocal links, scraped listings, mirror-first APK uploads, hidden pricing, or unauthorized catalog translation.',
     },
   ] as const;
+  const qualifiedReplyAssets = [
+    {
+      name: 'Reviewer or directory packet',
+      description:
+        'Send the official APK source, narrated demo, screenshots, pricing summary, support path, responsible-use note, and a dedicated review-code route.',
+    },
+    {
+      name: 'Approved-sample partner packet',
+      description:
+        'Send the pilot brief, OCR checklist, sample intake fields, stop conditions, private-result boundary, and support route before issuing a pilot code.',
+    },
+    {
+      name: 'Investor or commercial packet',
+      description:
+        'Send only qualified traction, activation, retention, paid-plan, and partnership signals; escalate when custom terms, legal review, or founder time is required.',
+    },
+    {
+      name: 'Clean decline packet',
+      description:
+        'Use a concise refusal when the request depends on paid links, reciprocal placement, hidden pricing, mirror-first APK distribution, or unauthorized catalog processing.',
+    },
+  ] as const;
 
   return [
     {
@@ -141,6 +163,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi reply qualification matrix',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: replyQualificationPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#qualified-reply-assets`,
+      name: 'Nayovi qualified reply asset bundle',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: qualifiedReplyAssets.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

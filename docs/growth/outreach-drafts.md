@@ -36,6 +36,54 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Mangasplaining podcast and MSX
+
+Category: press
+Contact path: `mangasplaining@gmail.com`, verified through the current public Mangasplaining contact page before sending.
+Rationale: Mangasplaining combines manga criticism, publishing experience, translation context, creators, editors, and reader education through MSX, so the note led with a permission-safe approved-sample OCR workflow instead of a consumer app pitch, catalog-processing claim, or backlink ask.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if there is a clearer workflow critique, approved-sample, or review-code packet to add.
+
+Subject: Approved-sample OCR workflow note for manga readers
+
+Hi Mangasplaining team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Mangasplaining while reviewing manga podcasts and publishing-adjacent projects because your team combines manga criticism, publishing experience, translations, creators, editors, and reader education through Mangasplaining Extra. That is why I wanted to send a narrow workflow note rather than a consumer app pitch.
+
+The useful question is whether a small, permission-safe OCR checklist is worth keeping on your radar for approved samples: source rights, text-region coverage, reading order, bubble grouping, glossary drift, human review, and the stop point before public sharing. Nayovi does not host or distribute chapters, and I am not asking to translate MSX material, buy placement, or request a backlink.
+
+If this is ever useful for a reader-tools discussion, workflow critique, or private approved-sample test, I can send the short packet, demo context, and a review code. The public workflow note is here: https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
+### Behind The Manga podcast
+
+Category: press
+Contact path: `contact@behindthemanga.com`, verified through current public Behind The Manga site context before sending.
+Rationale: Behind The Manga covers manga/anime podcast and news context, so the note asked whether a responsible OCR and approved-sample workflow topic could fit rather than pitching app installs, catalog translation, paid placement, or a backlink.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if there is a clearer approved-sample or review-code packet to add.
+
+Subject: Permission-safe manga OCR workflow note
+
+Hi Behind The Manga team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Behind The Manga while reviewing manga industry podcasts and news outlets that cover license announcements, interviews, reviews, and the business side of manga. That makes this a better fit for a responsible workflow note than a generic app pitch.
+
+The angle I wanted to share is a permission-safe checklist for testing manga OCR and translation on approved samples: source permission, text detection, reading order, bubble grouping, glossary consistency, human review, and when not to share output. Nayovi does not host or distribute chapters, and I am not asking for catalog access, paid placement, or a backlink.
+
+If this ever fits a podcast topic, article note, or behind-the-scenes discussion about reader tools and AI boundaries, I can send the short workflow packet, demo context, and a review code. The public checklist is here: https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### GOXTOON approved-sample workflow feedback
 
 Category: partnership
