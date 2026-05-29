@@ -4,6 +4,23 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-05-29 Current Branch Cycle
 
+- Verified branch `seo/distribution-20260529T055102Z`; account registry remains draft-only with account creation disabled and no authorized external posting workflow used.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official owner-action tasks:
+  - AlternativeTo/software recommendation official profile setup packet with exact profile fields, canonical links, categories, asset requirements, credential references, and anti-vote/review automation guardrails.
+  - Open-source directory eligibility guardrail for F-Droid/IzzyOnDroid-style repositories, keeping Nayovi watch-only unless a genuine qualifying open-source companion is owner-confirmed.
+- Added owned trust asset `docs/seo-distribution/app-store-source-eligibility-packet.md` to separate official APK source, pricing, screenshots, developer verification wording, mirror policy, and true open-source eligibility before any listing or app-store action.
+- Researched rotated authority opportunities using current public search:
+  - AlternativeTo: software recommendation/profile surface for official source-linked listing only after owner profile setup.
+  - F-Droid inclusion policy: high-authority open-source Android eligibility gate and metadata quality reference, not a current submission target.
+  - `kba/awesome-ocr`: GitHub OCR resource-list candidate for a product-light comic OCR QA checklist only if contribution scope allows it.
+- Updated `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv` with new rows and exact no-link/link variants.
+- Drafted platform-ready copy for AlternativeTo-style listing fields, F-Droid/IzzyOnDroid eligibility language, and an awesome-ocr maintainer-first resource question.
+- No external posting, account creation, login, signup, CAPTCHA, terms acceptance, identity verification, software listing, open-source submission, GitHub issue/PR/comment, vote/like/review, APK upload, mirror permission, or backlink request was attempted.
+- Next actions: owner confirms package name, SHA-256, signing fingerprint, developer verification status wording, approved screenshots/demo assets, whether AlternativeTo belongs in the official trust stack, and whether any real open-source companion exists before open-source directory work proceeds.
+
+## 2026-05-29 Current Branch Cycle
+
 - Verified branch `seo/distribution-20260529T051652Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
 - Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and current SEO distribution docs before drafting.
 - Advanced account setup priority with two owner-gated official profile tasks:

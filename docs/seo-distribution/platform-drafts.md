@@ -4115,3 +4115,71 @@ Same as above, then add:
 
 Checklist:
 `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### AlternativeTo-style official software profile listing
+
+Status: draft
+Target: AlternativeTo or comparable software recommendation directory after owner creates or claims official profile
+Audience: Android power users, AI/OCR tool evaluators, software comparison readers, partner diligence readers
+Rules risk: medium; OWNER_ACTION_REQUIRED. No account creation, duplicate listing, fake reviews, likes, votes, category stuffing, or automated publication.
+No-link variant: no; directory profiles need canonical links if accepted.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Listing copy:
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+It provides an official APK source, free trial or redeem-code activation, hosted OCR/AI translation, support, and monthly token plans without requiring device-side provider API keys.
+
+Nayovi does not host or distribute chapters. It is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Suggested fields:
+- Website: `https://tachiyomiat.com`
+- Download: `https://tachiyomiat.com/download`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Tags: Android, OCR, AI Translation, Manga, Manhwa, Reader Workflow
+
+Owner gate:
+- Confirm package name, signing fingerprint, SHA-256, screenshots, developer verification status wording, pricing label, and whether the platform preserves official source links.
+
+### F-Droid / IzzyOnDroid eligibility note
+
+Status: watch-only
+Target: F-Droid, IzzyOnDroid, or comparable open-source Android repository
+Audience: open-source Android users, app-store reviewers, Android trust researchers
+Rules risk: low for internal use, high for submission if Nayovi is not FLOSS. Do not submit Nayovi's hosted paid APK as open source.
+No-link variant: yes and preferred.
+Link variant after owner review: only for a real open-source companion repo or public docs asset.
+
+No-link note:
+
+Nayovi should not be submitted to open-source Android repositories unless the owner confirms a qualifying open-source app, build flavor, or companion repository with a clear license and build path.
+
+The useful takeaway for Nayovi today is metadata quality: official source URL, package identity, signing proof, update path, anti-feature disclosure if relevant, privacy/support links, and clear pending-vs-confirmed developer verification language.
+
+### awesome-ocr maintainer-first resource suggestion
+
+Status: draft
+Target: `kba/awesome-ocr` or comparable OCR resource list after contribution guidelines are checked
+Audience: OCR maintainers, technical readers, localization developers
+Rules risk: medium; AUTHORIZED_ACCOUNT_REQUIRED for GitHub issue/PR/comment. Use only if the checklist is useful without a Nayovi product pitch.
+No-link variant: yes for first maintainer question.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi maintainers,
+
+I am maintaining a product-light checklist for evaluating OCR on comics, manga, manhwa, and manhua pages. It focuses on permission status, missing text regions, under-segmented balloons, reading order, onomatopoeia, transcription drift, reviewer correction, and when not to publish a result.
+
+Would a resource like that fit this list's scope, or is the list intended only for OCR engines, datasets, and libraries?
+
+I am affiliated with Nayovi, so I want to check fit before suggesting a link.
+
+Link variant:
+
+Same as above, then add:
+
+Checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
