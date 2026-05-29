@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 7
+
+- Verified branch `seo/distribution-20260529T022019Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official owner-action setup packets:
+  - Crunchbase/startup-directory official profile packet with exact company copy, canonical links, category tags, public metric guardrails, asset checklist, and non-secret `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE` / `SEO_AGENT_STARTUP_DIRECTORY_PROFILE_REFERENCE` references.
+  - Official newsletter/Substack profile packet with publication fields, first APK-trust issue angle, no contact-import rule, approved-screenshot requirements, and non-secret `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE` / `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE` references.
+- Improved owned linkable assets by adding the startup profile packet, official newsletter first-issue packet, and AI Gear Base rubric-aligned listing note to `account-setup.md`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md`.
+- Researched rotated authority opportunities across different categories:
+  - AI Gear Base / AI Cloudbase: higher-quality AI directory candidate because current public copy says vendors cannot buy placement, submissions are reviewed, pricing is normalized, and marketing-only submissions are declined.
+  - Keep Android Open: Android policy/community context for independent APK trust and source-of-truth language only; not a product-promotion surface.
+  - Manga109-v2026 project context: technical research background for OCR QA language around transcription errors, missing regions, overlapping dialogue, onomatopoeia, and under-segmented balloons.
+- Updated `authority-opportunities.md` and `docs/growth/backlink-prospects.csv` with the new discovery pipeline entries.
+- Drafted exact value-first assets in `platform-drafts.md` for AI Gear Base eligibility, Keep Android Open context, and a Manga109-v2026 maintainer-first technical resource question.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, newsletter publication, directory submission, APK upload, campaign participation, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach send was attempted.
+- Next actions: owner decides whether Crunchbase/startup directories and an official newsletter belong in the trust stack, approves public profile/contact fields, confirms package/signing/screenshot facts, and reviews AI Gear Base listing fields before any manual submission.
+
 ## 2026-05-29 Cycle 6
 
 - Verified branch `seo/distribution-20260529T013724Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.

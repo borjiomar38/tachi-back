@@ -1640,3 +1640,66 @@ Publish capability after connection:
 
 Next action:
 - Owner creates or connects the official channel, approves the first demo asset and metadata, and decides whether YouTube API updates are enabled.
+
+### 2026-05-29 Cycle 4 - Crunchbase / Startup Directory Official Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for official company profile creation, founder/company verification, terms acceptance, and any API or editor workflow.
+
+Public profile copy:
+- Company name: `Nayovi`
+- Short description: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Description: `Nayovi provides an official Android APK and hosted OCR/AI translation workflow for readers working with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved manga, manhwa, and manhua pages. Nayovi supports official APK access, free trial or redeem-code activation, monthly token plans, and support paths. It does not host or distribute chapters.`
+- Website: `https://nayovi.com`
+- Product/download URL: `https://tachiyomiat.com/download`
+- Category tags: `Android`, `OCR`, `AI translation`, `creator tools`, `localization workflow`
+
+Required assets:
+- Official logo/avatar and optional banner.
+- Owner-approved founding/company identity and public contact path.
+- Public media-kit packet from `docs/seo-distribution/press-media-kit-draft.md`.
+- Owner-confirmed public metrics only; keep private revenue, customer, and investor data out of docs unless explicitly approved.
+
+Credential/reference guardrails:
+- `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE`
+- `SEO_AGENT_STARTUP_DIRECTORY_PROFILE_REFERENCE`
+- Store no account passwords, private emails, verification documents, cookies, investor notes, or paid-plan receipts in docs or Git.
+
+Publish capability after connection:
+- Agent can keep profile field drafts, founder-safe boilerplate, and directory listing packets current after owner approval. Profile creation, verification, paid upgrades, and public edits remain manual unless an official API workflow is connected and explicitly authorized.
+
+Next action:
+- Owner decides whether Crunchbase or an equivalent startup directory should be part of Nayovi's public diligence stack and approves the public company profile fields above.
+
+### 2026-05-29 Cycle 4 - Official Newsletter / Substack Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for official account creation, sender identity, terms acceptance, and first issue approval.
+
+Public profile fields:
+- Publication name: `Nayovi Notes`
+- Subtitle: `Android APK trust, OCR QA, and permission-safe manga/manhwa translation workflow notes.`
+- About: `Nayovi Notes is the official update archive for Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. Posts cover official APK source checks, reviewer-safe screenshots, OCR QA, approved-sample testing, support paths, and responsible-use boundaries. Nayovi does not host or distribute chapters.`
+- Primary link: `https://nayovi.com`
+- Download link: `https://tachiyomiat.com/download`
+- Checklist link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+First issue packet:
+- Title: `What reviewers should verify before citing an independent Android OCR APK`
+- Angle: source-of-truth download URL, APK hash, package/signing owner-confirmed fields, support/privacy/terms links, approved-sample screenshots, review-code boundaries, and no mirror-first APK uploads.
+- Link policy: include official source links only; do not import contacts, bulk-send, scrape subscribers, or ask for backlinks.
+
+Required assets:
+- Official logo/avatar.
+- Owner-approved sender name and public contact path.
+- Approved screenshot/demo references only.
+- Package/signing/developer-verification facts remain pending until owner confirms exact public language.
+
+Credential/reference guardrails:
+- `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`
+- `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`
+- Store no subscriber lists, private emails, API tokens, cookies, verification documents, or analytics exports in docs or Git.
+
+Publish capability after connection:
+- Agent can draft official issues and update archive copy after owner approval. Publication, subscriber import, paid newsletter setup, and API posting are not authorized without explicit owner action.
+
+Next action:
+- Owner creates or connects the official newsletter profile, approves the sender identity, and confirms whether the first APK trust issue should be published manually.
