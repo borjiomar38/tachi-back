@@ -39,6 +39,13 @@ const homeStructuredData = () => [
         description:
           'Send readers with repeat manga, manhwa, or manhua translation needs to monthly token plans only after install and activation are clear.',
       },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: 'Qualify partner proof before escalation',
+        description:
+          'Route press, directory, creator, publisher, and investor contacts through APK proof, approved-sample scope, and measurable activation context before codes, calls, or custom terms.',
+      },
     ],
   },
 ];

@@ -34,6 +34,7 @@ const staticSitemapEntryOverrides: Record<
 > = {
   '/': {
     changeFrequency: 'weekly',
+    lastModified: '2026-05-29',
     priority: '1.0',
   },
   '/blog': {

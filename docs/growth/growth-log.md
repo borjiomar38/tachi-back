@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T032528Z`: audited branch state, SEO distribution shared context, current growth docs, homepage conversion flow, sitemap coverage, and outreach sender history.
+- Added a homepage partner-proof packet so press, directory, creator-platform, commercial, and investor visitors can choose official APK proof, approved-sample pilot scope, or diligence context before requesting review codes, calls, custom terms, or owner time.
+- Added matching homepage ItemList metadata, refreshed the homepage sitemap date to 2026-05-29, and marked the asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next sender window should process qualified replies first; if no replies are waiting, use only current-verified official-form queue items or recheck AIAnyTool's submit/contact terms before any send.
+
 - Autonomous cycle on `growth/autonomous-20260529T031758Z`: audited branch state, SEO distribution shared context, growth trackers, `/translate-manhwa-ai`, sitemap coverage, and outreach sender history.
 - Added a commercial reply qualification packet to `/translate-manhwa-ai` so warm partner, publisher, directory, or investor replies identify concrete use case, measurable activation path, and decision-ready next step before founder time, custom terms, or a meeting are escalated.
 - Added matching ItemList structured metadata and marked the qualification packet shipped in the content backlog.
