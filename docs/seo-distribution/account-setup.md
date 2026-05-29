@@ -2630,3 +2630,71 @@ Publish capability after connection:
 
 Next action:
 - Owner confirms whether any open-source companion exists. If not, keep F-Droid/IzzyOnDroid watch-only and use their policies only as APK trust and metadata quality references.
+
+## 2026-05-29 Current Branch Cycle Newsletter Setup Advancement
+
+### Android Newsletter / Resource Curator Profile
+
+Status: OWNER_REVIEW_REQUIRED for editor contact path, owner-approved package facts, sample-safe screenshots, and manual submission approval.
+
+Prepared packet:
+- `docs/seo-distribution/android-newsletter-resource-pitch.md`
+- `docs/seo-distribution/android-newsletter-submission-packet.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Submitter/byline: owner-approved founder, developer, or `Nayovi team`; do not invent a personal persona.
+- One-line resource description: `Reviewer checklist for independent Android APK source links, hosted OCR testing, sample-safe screenshots, and manga/manhwa translation workflows.`
+- Primary resource: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Supporting source: `https://tachiyomiat.com/download`
+- Responsible-use line: `No chapter hosting; test only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Required assets:
+- Owner-confirmed package name, SHA-256, signing-certificate fingerprint if cited, Android developer verification status wording if cited, sample-safe screenshots, public editor contact path, and approved reviewer packet reference.
+
+Credential references:
+- `SEO_AGENT_ANDROID_NEWSLETTER_PROFILE_REFERENCE`
+- `SEO_AGENT_EDITORIAL_SUBMISSION_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+- No editor login, submission password, private contacts, screenshot files, or dashboard data in docs.
+
+Publish capability after connection:
+- Agent can prepare owner-approved link-suggestion copy and field-level resource descriptions after current outlet rules are reviewed.
+- Agent must not submit forms, create accounts, accept terms, upload screenshots, send bulk pitches, claim verification, or publish newsletter comments automatically.
+
+Next action:
+- Owner confirms package/signing/hash public language, approves screenshots, and chooses whether Android Weekly, Kotlin Weekly, or another Android curator may receive the manual resource suggestion.
+
+### Launch Directory / Indie Maker Profile
+
+Status: OWNER_ACTION_REQUIRED for founder/company submitter identity, terms acceptance, public launch-stage copy, visual assets, and manual submission approval.
+
+Prepared packet:
+- `docs/seo-distribution/startup-launch-directory-packet.md`
+
+Public profile fields:
+- Product name: `Nayovi`
+- Tagline: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Category candidates: Android, AI, OCR, Translation, Creator Tools, Productivity.
+- Website: `https://nayovi.com`
+- Official APK/source link: `https://tachiyomiat.com/download`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Support: `https://tachiyomiat.com/support`
+- Responsible-use line: `Nayovi does not host chapters and is intended for owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Required assets:
+- Founder/company submitter profile, logo/avatar, approved screenshots, demo video if available, pricing/support links, package-fact safe wording, and no unsupported traction or revenue metrics.
+
+Credential references:
+- `SEO_AGENT_STARTUP_LAUNCH_PROFILE_REFERENCE`
+- `SEO_AGENT_BETALIST_PROFILE_REFERENCE`
+- `SEO_AGENT_FASTLAUNCH_PROFILE_REFERENCE`
+- `SEO_AGENT_SMOLLAUNCH_PROFILE_REFERENCE`
+- No passwords, payment receipts, vote/review data, private metrics, or account recovery data in docs.
+
+Publish capability after connection:
+- Agent can prepare owner-approved listing fields and maker comments after rules review.
+- Agent must not create profiles, submit listings, pay for placement, request votes, post comments, import contacts, or claim launch traction automatically.
+
+Next action:
+- Owner decides whether launch directories belong in the current trust stack and rejects any flow built around paid backlinks, reciprocal links, hidden redirects, artificial reviews, or vote requests.
