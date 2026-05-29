@@ -1248,3 +1248,20 @@ Next actions:
 - Drafted exact value-first no-link fit questions for app testing portals and free-trial AI directories in `platform-drafts.md`.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, portal action, APK upload, public report approval, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
 - Next actions: owner confirms APK filename/build/SHA-256, package/signing/developer-verification facts or pending-language copy, sample pages, screenshot rights, review-code scope, and which app-testing or free-trial directory surfaces may preserve source links.
+
+## 2026-05-29 Cycle 9
+
+- Verified branch `seo/distribution-20260529T044330Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - App review/testing portal profile with APK upload gates, source-first testing scope, screenshot and review-code requirements, `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`, and no fake-review/no-mirror/no-upload guardrails.
+  - Manga/localization media contributor profile with owner-approved byline, approved-sample evidence requirements, product-light topic scope, `SEO_AGENT_MEDIA_CONTRIBUTOR_PROFILE_REFERENCE`, and no catalog-processing/no-backlink/no-endorsement guardrails.
+- Improved owned SEO/linkable content by adding a public reviewer handoff section to `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` for app testers, AI directories, manga media, and research-note contexts.
+- Researched rotated authority opportunities across different categories:
+  - APKLand: independent Android APK review surface; possible fit only if official source, no-mirror boundaries, package/hash facts, pricing/support context, and approved-sample OCR testing remain attached.
+  - Try.fm: free-trial software directory; possible fit only if trial plus paid-token pricing, official APK links, support, and responsible-use boundaries are preserved.
+  - Manga109-v2026: current manga OCR research context; useful for owned checklist language around missing regions and segmentation, not an endorsement or benchmark.
+- Updated `account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv`.
+- Drafted exact APKLand-style review fit question, Try.fm-style free-trial directory eligibility question, and manga OCR research citation note in `platform-drafts.md`.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, APK upload, public report approval, review-code grant, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
+- Next actions: owner confirms package/signing/hash facts, approved sample pages, screenshot scope, review-code expiry, APK sharing policy, public-report permission, and whether APKLand/Try.fm-style surfaces may preserve Nayovi source links.
