@@ -77,7 +77,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/comic-ocr-translation-checklist': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-29',
     priority: '0.8',
   },
   '/guides/permission-safe-manga-translation-pilot': {

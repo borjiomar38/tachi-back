@@ -316,7 +316,16 @@ SEO_AGENT_AUTO_MERGE_TO_MASTER=true
 SEO_AGENT_EXTERNAL_POSTING_MODE=draft
 SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED=false
 SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true
+SEO_AGENT_NOTIFY_ENABLED=false
+SEO_AGENT_DAILY_SUMMARY_ENABLED=true
+SEO_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
 ```
+
+`SEO_AGENT_NOTIFY_ENABLED` should normally stay `false` because the main growth
+agent already sends the owner daily summary. If it is enabled for debugging, the
+SEO agent still must not email after every cycle: it only sends when a final
+report starts a line with a real owner-action marker such as
+`OWNER_ACTION_REQUIRED:` or when the once-daily summary interval is due.
 
 The agent writes live status and reports under
 `/var/lib/tachi-seo-distribution-agent`. The production app mounts that

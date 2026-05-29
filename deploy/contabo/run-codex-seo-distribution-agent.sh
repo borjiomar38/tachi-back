@@ -353,7 +353,7 @@ Allowed work:
 Hard constraints:
 - Do not create fake accounts, personal-looking personas, employee impersonation accounts, or throwaway accounts. Every account/profile must be an official Nayovi-owned brand/founder/developer account with truthful identity and source-of-truth links.
 - Do not create LinkedIn, Reddit, GitHub, forum, directory, or third-party accounts automatically unless the platform provides a compliant official API/account workflow and the required Nayovi-owned credentials/tokens are already configured.
-- Do not submit signup forms, verify email/phone, solve CAPTCHAs, upload identity documents, or accept third-party terms automatically. Prepare the exact setup packet and mark OWNER_ACTION_REQUIRED when a human-owned account creation step is needed.
+- Do not submit signup forms, verify email/phone, solve CAPTCHAs, upload identity documents, or accept third-party terms automatically. Prepare the exact setup packet and write OWNER_ACTION_REQUIRED: as the first text on a report line only when a human-owned account creation step blocks the next autonomous action.
 - Do not log in to third-party platforms, bypass anti-abuse systems, solve CAPTCHAs, evade rate limits, use fake personas, or automate public posting.
 - Do not spam comments, issues, discussions, forums, communities, or social feeds with promotional links.
 - Do not buy links, use PBNs, mass-submit low-quality articles, scrape private contact data, or produce doorway/thin pages.
@@ -386,7 +386,7 @@ Agent coordination:
 Cycle checklist:
 1. Check git status and current branch.
 2. If SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true, advance at least 2 official Nayovi account/profile setup tasks in docs/seo-distribution/account-setup.md before choosing normal backlink work. Prefer official owned profiles with high trust value: Google Search Console/Bing Webmaster, GitHub org/repo docs, YouTube channel, LinkedIn company/founder page, Product Hunt maker/company, DEV/Medium technical publishing, Reddit official account, X/Twitter, app-directory developer portals, AI directory accounts, newsletter/community profiles, and partner/publication contributor profiles.
-3. For each official account setup task, prepare exact public profile copy, canonical links, asset checklist, verification steps, required secret/API variables, credential storage location reference, and what the agent can do after the account is connected. Mark OWNER_ACTION_REQUIRED only for manual signup, CAPTCHA, email/phone verification, terms acceptance, or missing token/API access.
+3. For each official account setup task, prepare exact public profile copy, canonical links, asset checklist, verification steps, required secret/API variables, credential storage location reference, and what the agent can do after the account is connected. Use OWNER_ACTION_REQUIRED: only at the beginning of a final report line when manual signup, CAPTCHA, email/phone verification, terms acceptance, or missing token/API access blocks useful autonomous work.
 4. Audit owned content and identify 1-3 high-intent SEO or trust-building opportunities.
 5. Add or improve one owned SEO/linkable asset where practical.
 6. Research at least 3 authority opportunities from different categories and update docs/seo-distribution/authority-opportunities.md.
@@ -433,7 +433,7 @@ maybe_send_owner_notification() {
   local cycle_id="$1"
   local report_file="$2"
   local repo_dir="$3"
-  local notify_env_file notify_to subject
+  local daily_state_file daily_summary_enabled emergency_match notification_kind notify_env_file notify_keywords notify_to subject
 
   if [[ "${SEO_AGENT_NOTIFY_ENABLED:-false}" != "true" ]]; then
     return 0
@@ -445,7 +445,32 @@ maybe_send_owner_notification() {
     return 0
   fi
 
-  subject="${SEO_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi SEO distribution}: ${cycle_id}"
+  daily_state_file="${SEO_AGENT_DAILY_SUMMARY_STATE_FILE:-${STATE_DIR}/last-owner-daily-summary-at}"
+  notify_keywords="${SEO_AGENT_NOTIFY_KEYWORDS:-OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required}"
+  emergency_match="false"
+  if report_requires_owner_notification "${report_file}" "${notify_keywords}"; then
+    emergency_match="true"
+  fi
+
+  if [[ "${emergency_match}" == "true" ]]; then
+    notification_kind="emergency"
+    subject="${SEO_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi SEO distribution}: emergency ${cycle_id}"
+  else
+    daily_summary_enabled="${SEO_AGENT_DAILY_SUMMARY_ENABLED:-true}"
+    if [[ "${daily_summary_enabled}" != "true" ]]; then
+      log "No SEO owner action notification matched for ${cycle_id}; daily summary disabled."
+      return 0
+    fi
+
+    if ! daily_summary_due "${daily_state_file}" "${SEO_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS:-86400}"; then
+      log "No SEO owner action notification matched for ${cycle_id}; daily summary not due."
+      return 0
+    fi
+
+    notification_kind="daily"
+    subject="${SEO_AGENT_NOTIFY_SUBJECT_PREFIX:-Nayovi SEO distribution}: daily summary ${cycle_id}"
+  fi
+
   if ! /usr/local/bin/tachi-growth-owner-notify \
     --env-file "${notify_env_file}" \
     --to "${notify_to}" \
@@ -454,7 +479,110 @@ maybe_send_owner_notification() {
     --repo-dir "${repo_dir}" \
     --cycle-id "${cycle_id}"; then
     log "SEO owner notification failed for ${cycle_id}; continuing."
+    return 0
   fi
+
+  if [[ "${notification_kind}" == "daily" || "${notification_kind}" == "emergency" ]]; then
+    mark_daily_summary_sent "${daily_state_file}"
+  fi
+}
+
+report_requires_owner_notification() {
+  local report_file="$1"
+  local notify_keywords="${2:-}"
+
+  python3 - "${report_file}" "${notify_keywords}" <<'PY'
+import re
+import sys
+import unicodedata
+from pathlib import Path
+
+path = Path(sys.argv[1])
+keywords = [item.strip() for item in sys.argv[2].split(",") if item.strip()]
+
+marker_keywords = {
+    "OWNER_ACTION_REQUIRED",
+    "EMERGENCY_OWNER_REPLY_REQUIRED",
+    "MEETING_REQUIRED",
+    "CALL_REQUIRED",
+}
+
+def normalize(value: str) -> str:
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(ch for ch in value if not unicodedata.combining(ch))
+    value = value.replace("’", "'")
+    return value.lower()
+
+negative_patterns = [
+    r"\bno\b.{0,50}\b(owner action|required|meeting|call)\b",
+    r"\bnot required\b",
+    r"\bno\b.{0,50}\baction is required\b",
+    r"\baucun(e)?\b.{0,60}\b(action|besoin|reponse|rdv|rendez|call)\b",
+    r"\brien\b.{0,40}\b(pour l'instant|a faire|necessaire)\b",
+    r"\bdo not include\b.{0,80}\b(owner_action_required|meeting_required|call_required)\b",
+    r"\buse\b.{0,80}\b(owner_action_required|meeting_required|call_required)\b.{0,80}\bonly\b",
+]
+
+line_marker_re = re.compile(
+    r"^\s{0,3}(?:[-*]\s*)?(?:`{0,3})("
+    + "|".join(re.escape(marker) for marker in sorted(marker_keywords))
+    + r")(?:`{0,3})\s*[:\-]",
+    re.IGNORECASE,
+)
+
+positive_phrases = {
+    normalize(keyword)
+    for keyword in keywords
+    if keyword.upper() not in marker_keywords and len(keyword) >= 6
+}
+
+try:
+    lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+except FileNotFoundError:
+    sys.exit(1)
+
+for raw_line in lines:
+    line = raw_line.strip()
+    if not line:
+        continue
+
+    normalized = normalize(line)
+    if any(re.search(pattern, normalized) for pattern in negative_patterns):
+        continue
+
+    if line_marker_re.search(line):
+        sys.exit(0)
+
+    if any(phrase in normalized for phrase in positive_phrases):
+        sys.exit(0)
+
+sys.exit(1)
+PY
+}
+
+daily_summary_due() {
+  local state_file="$1"
+  local interval_seconds="$2"
+  local last_sent now
+
+  if [[ ! -f "${state_file}" ]]; then
+    return 0
+  fi
+
+  last_sent="$(cat "${state_file}" 2>/dev/null || printf '0')"
+  if ! [[ "${last_sent}" =~ ^[0-9]+$ ]]; then
+    return 0
+  fi
+
+  now="$(date +%s)"
+  (( now - last_sent >= interval_seconds ))
+}
+
+mark_daily_summary_sent() {
+  local state_file="$1"
+
+  mkdir -p "$(dirname "${state_file}")"
+  date +%s >"${state_file}"
 }
 
 publish_cycle_branch() {
