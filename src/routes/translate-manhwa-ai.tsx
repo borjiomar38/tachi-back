@@ -205,6 +205,23 @@ const translateManhwaAiStructuredData = () => {
         'Advance only when the thread names approved material, user segment, success metric, and the decision needed before custom terms or a call.',
     },
   ] as const;
+  const replyEvidenceItems = [
+    {
+      name: 'Source-preserving referral',
+      description:
+        'Continue only when the live mention keeps readers on official APK, pricing, support, cancellation, and responsible-use pages before install.',
+    },
+    {
+      name: 'Measured activation quality',
+      description:
+        'Keep review codes, affiliate links, and partner codes separate so support load, trial completion, and paid-plan intent can be read cleanly.',
+    },
+    {
+      name: 'Revenue-ready follow-up',
+      description:
+        'Escalate only when the reply adds a named audience, approved sample scope, buyer path, or decision owner that can produce repeat paid use.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -326,6 +343,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#reply-to-revenue`,
       name: 'Nayovi reply-to-revenue routing for qualified growth follow-up',
       itemListElement: replyRevenueItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-evidence-ledger`,
+      name: 'Nayovi reply evidence ledger for revenue-qualified follow-up',
+      itemListElement: replyEvidenceItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
