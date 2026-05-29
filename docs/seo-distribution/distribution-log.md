@@ -961,3 +961,19 @@ Next actions:
 - Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup and opportunity work.
 - Drafted exact value-first assets in `platform-drafts.md`: Android developer newsletter technical tip, free-trial AI directory eligibility/listing packet, and creator/platform approved-screenshot feedback note with no-link-first language.
 - Next actions: owner approves official asset references, package/signing/developer-verification facts, and public screenshot scope; then use the directory packet only on quality-filtered official submit paths and keep creator/platform notes no-link-first.
+
+## 2026-05-29 Cycle 1
+
+- Verified branch `seo/distribution-20260529T014637Z`; account registry allows owned GitHub/docs only, so no external posting, account creation, login, form submission, CAPTCHA, terms acceptance, or APK upload was attempted.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and the SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Google Search Console and Bing Webmaster verification packet for `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com`, including sitemap/inspection queue, credential references, and no-secret handling.
+  - Official Substack/newsletter archive packet with profile fields, first-issue angle, required assets, credential reference, and no contact-import/bulk-send guardrails.
+- Researched current authority opportunities across rotated categories:
+  - Official Android developer verification documentation: high-trust source context for September 2026 verified-developer and signed-APK ownership language; owner-confirmed package facts are still required.
+  - ToolIndex submit tool: medium-fit AI directory because the current submit surface supports pricing choices including Free, Freemium, Free Trial, and Paid.
+  - Manga109-v2026: recent technical research context for OCR checklist language around missing regions, transcription errors, overlapping dialogue/onomatopoeia, and under-segmented speech balloons.
+- Added those opportunities to `authority-opportunities.md` and `docs/growth/backlink-prospects.csv`.
+- Added ToolIndex listing copy to `platform-drafts.md` with no-link constraints, source-link preservation checks, pricing guidance, and owner-action gates.
+- Updated `content-calendar.md` and `link-assets.md` with webmaster verification, official newsletter archive, and ToolIndex listing assets.
+- Next actions: owner verifies webmaster properties, chooses the official newsletter profile, confirms Android package/signing/verification facts, and reviews ToolIndex form fields before any manual submission.

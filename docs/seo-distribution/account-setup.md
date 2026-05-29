@@ -239,6 +239,76 @@ Required assets:
 Credential reference:
 - `SEO_AGENT_BLUESKY_APP_PASSWORD` only if the owner creates an official account and enables API posting. Store the actual value only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
 
+## 2026-05-29 Account Setup Advancement
+
+### Google Search Console and Bing Webmaster Verification Packet
+
+Status: OWNER_ACTION_REQUIRED for owner-controlled domain verification and API credential connection.
+
+Public properties:
+- `https://tachiyomiat.com/`
+- `https://nayovi.com/`
+- `https://translate-manhwa-ai.com/`
+
+Initial sitemap and inspection queue:
+- `https://tachiyomiat.com/sitemap.xml`
+- `https://tachiyomiat.com/download`
+- `https://tachiyomiat.com/translate-manhwa-ai`
+- `https://tachiyomiat.com/guides/translation-support-workflow`
+- `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+- `https://tachiyomiat.com/llms.txt`
+
+Owner verification steps:
+- Prefer DNS verification for each domain so the ownership signal survives deploy changes.
+- If DNS is not available, use the owner-generated HTML file or meta-tag method and deploy only the public verification token intentionally.
+- Submit the sitemap after verification and inspect the priority URLs above.
+- Do not paste verification tokens, API keys, property access screenshots, or account emails into this repo.
+
+Credential references:
+- `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS`
+- `SEO_AGENT_BING_WEBMASTER_API_KEY`
+
+Agent capability after connection:
+- Monitor sitemap coverage, indexing status, canonical mismatches, crawl errors, and query/page discovery for the official APK, guide, and trust-packet URLs.
+- Keep recommendations in docs only; no domain, DNS, or webmaster account action without owner approval.
+
+Next action:
+- Owner verifies all three domains and stores any API credential values only in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions.
+
+### Official Substack / Newsletter Archive Packet
+
+Status: OWNER_ACTION_REQUIRED for official account creation, sender identity, terms acceptance, and first-issue approval.
+
+Profile fields:
+- Publication name: `Nayovi`
+- Short description: `Official updates on Nayovi's Android APK, OCR/AI translation workflow, APK trust packets, approved-sample testing, and responsible-use notes.`
+- Primary link: `https://nayovi.com`
+- Product/download link: `https://tachiyomiat.com/download`
+- Technical checklist link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+First issue packet:
+- Title: `What reviewers should verify before citing an independent Android OCR APK`
+- Angle: official source link, APK hash/source context, package/signing fields as owner-confirmed facts only, approved-sample screenshots, support path, pricing/trial context, and no chapter hosting.
+- No-link summary: `Nayovi keeps APK review, OCR QA, and approved-sample guidance in public source-of-truth packets so reviewers, partners, and directories do not need to infer identity from mirrors or social posts.`
+- Link variant: cite the official download page and the comic OCR checklist only where newsletter platform rules allow canonical links.
+
+Required assets:
+- Official avatar/logo.
+- Owner-approved banner or neutral product screenshot.
+- Public contact path selected by owner.
+- No contact imports, scraped subscriber lists, private codes, or customer data.
+
+Credential reference:
+- `SEO_AGENT_NEWSLETTER_ACCOUNT_REFERENCE`; optional API/token reference only if the platform provides an approved official API workflow.
+
+Agent capability after connection:
+- Draft owner-approved public issues and keep the archive aligned with APK trust, OCR checklist, and partner-pilot updates.
+- No bulk sending, audience import, paid promotion, or automated replies without explicit owner approval.
+
+Next action:
+- Owner creates/connects the official newsletter profile and approves whether the first issue should stay manual-only or use an authorized API.
+
 Agent capability after connection:
 - The agent can prepare or publish owner-approved official updates only after API credentials are configured and posting scope is confirmed. No automated replies, trend hijacking, repetitive link posting, or personal-looking persona behavior.
 
