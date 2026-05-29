@@ -477,6 +477,29 @@ const tokenPlanRecoveryRows = [
   },
 ] as const;
 
+const tokenPlanContinuationRows = [
+  {
+    label: 'Continue',
+    detail:
+      'Keep the paid plan when the same reader, title, or language pair creates repeat hosted OCR work and the monthly token volume is predictable.',
+  },
+  {
+    label: 'Adjust',
+    detail:
+      'Ask support before renewing when activation, device recovery, or expected page volume changed enough that the current plan no longer fits.',
+  },
+  {
+    label: 'Review code',
+    detail:
+      'Move public reviewers, affiliates, and partner tests to a dedicated code instead of mixing evaluation traffic with a normal paid account.',
+  },
+  {
+    label: 'Stop',
+    detail:
+      'Do not renew when the user only needed a one-off translation, cannot confirm source permission, or the approved sample did not meet the quality bar.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1897,6 +1920,28 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
                 className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
               >
                 <span className="font-semibold">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Renewal decision"
+        title="Continue only when the plan still matches real usage"
+        description="Use the first paid month or reviewer test to decide whether Nayovi should continue as recurring access, move to support, use a separate review code, or stop cleanly."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {tokenPlanContinuationRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
                 <span>{row.detail}</span>
               </div>
             ))}
