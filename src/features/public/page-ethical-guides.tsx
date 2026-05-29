@@ -842,6 +842,29 @@ const qualifiedReplyAssetRows = [
   },
 ] as const;
 
+const revenueRoutingRows = [
+  {
+    signal: 'Review access',
+    route:
+      'Issue review access only when the contact can test, list, compare, or publish with official APK, support, pricing, demo, and responsible-use links intact.',
+  },
+  {
+    signal: 'Partner pilot',
+    route:
+      'Use a pilot code when a creator platform, publisher, localization team, or community can define approved samples, evaluation goals, private-result boundaries, and a feedback owner.',
+  },
+  {
+    signal: 'Paid-plan evidence',
+    route:
+      'Treat a placement as qualified only when it can send readers toward free trial, pricing, monthly token-plan fit, support recovery, or repeat-use feedback.',
+  },
+  {
+    signal: 'Investor or commercial',
+    route:
+      'Escalate when a reply asks for traction, retention, partner economics, custom terms, founder time, or a decision that changes legal, pricing, or commercial commitments.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -2280,6 +2303,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.packet}
                 </span>
                 <span>{row.contents}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Revenue routing"
+        title="How a reply becomes qualified growth"
+        description="Use this routing check before sending codes or scheduling calls so outreach creates review access, approved-sample pilots, paid-plan evidence, or real commercial diligence."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {revenueRoutingRows.map((row) => (
+              <div
+                key={row.signal}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.signal}
+                </span>
+                <span>{row.route}</span>
               </div>
             ))}
           </CardContent>

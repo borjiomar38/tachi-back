@@ -36,6 +36,62 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### PopWebTools AI directory
+
+Category: directory
+Contact path: `contact@popwebtools.com`, selected after current public search showed PopWebTools exposes the address for questions, partnerships, and help with submissions.
+Rationale: PopWebTools is an AI-tool directory with a submit-tool path, so the message asked whether Nayovi fits as an Android APK plus hosted OCR/AI translation workflow and preserved official source links, pricing/support context, and responsible-use boundaries.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if PopWebTools asks for screenshots, listing fields, or review context.
+
+Subject: Nayovi listing fit for PopWebTools
+
+Hi PopWebTools team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found PopWebTools while reviewing AI-tool directories with public contact and submit-tool paths. The listing fit is narrow: Nayovi is not a generic chatbot or chapter-hosting site; it is an Android workflow with official APK download, redeem-code activation, free trial, monthly token plans, and permission-safe handling for owned, public-domain, official-sample, or otherwise approved content.
+
+Would Nayovi be appropriate for your directory if the listing keeps the official source links and responsible-use context attached?
+
+Useful source links:
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/download
+https://tachiyomiat.com/guides/translation-support-workflow
+
+If this is relevant, I can send screenshots, pricing summary, and the narrated demo link. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
+### AIDive AI tools directory
+
+Category: directory
+Contact path: `aidive.org@gmail.com`, selected after current public search showed AIDive lists the address for AI tool submissions, feedback, suggestions, partnerships, and collaboration.
+Rationale: AIDive is an AI-tool directory, so the message asked for listing-fit confirmation before submission and framed Nayovi as an Android hosted OCR/translation workflow, not a chapter host or generic AI chatbot.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if AIDive asks for screenshots, pricing context, review-code path, or listing fields.
+
+Subject: Nayovi Android OCR workflow listing fit
+
+Hi AIDive team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found AIDive while reviewing AI-tool directories that accept tool submissions and partnership or feedback messages. Nayovi may fit only if the category can stay accurate: Android app plus hosted OCR/translation workflow, with official APK source, free trial, monthly token plans, and clear responsible-use boundaries.
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+Would this be a fit for AIDive, or should I avoid submitting it?
+
+Source links:
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/download
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+If useful, I can send screenshots, pricing context, and a short review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Official-form approved-sample queue: Nube Consulting and Genga
 
 Status: auto-approved, not emailed. Both contacts should use their official contact forms only unless a direct public business email is verified later.
