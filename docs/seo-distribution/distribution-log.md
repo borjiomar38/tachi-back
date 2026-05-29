@@ -1093,3 +1093,19 @@ Next actions:
 - Updated `authority-opportunities.md` and `docs/growth/backlink-prospects.csv` with the new targets and compliance gates.
 - Drafted exact value-first packets in `platform-drafts.md`: Product Hunt launch copy and maker comment, Nayovi Notes profile/first-issue summary, and AINovaTools directory eligibility note.
 - Next actions: owner creates/connects Product Hunt and newsletter profiles, approves screenshots/demo/package facts, verifies AINovaTools submit fields, holds Mangacast until a French-language angle exists, and reviews whether AppTester-style APK sharing is allowed.
+
+## 2026-05-29 Cycle 6
+
+- Verified and moved work onto branch `seo/distribution-20260529T031443Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and the SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Official APK directory developer/reviewer profile with source-first APK listing requirements, package/hash/signing owner gates, `SEO_AGENT_APK_DIRECTORY_PROFILE_REFERENCE`, `SEO_AGENT_APK_REVIEW_PORTAL_REFERENCE`, and no-upload/no-mirror guardrails.
+  - Official AI directory submitter profile with accurate Translation/OCR category fields, pricing/support/responsible-use requirements, `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`, and paid/reciprocal/hidden-redirect rejection gates.
+- Added owned trust asset `docs/seo-distribution/directory-quality-gate.md`, a reusable pre-submission gate for AI directories, APK directories, startup directories, app-review portals, and software directories.
+- Researched rotated authority opportunities across different categories:
+  - APKApps: APK review/listing portal context around hash/scanning/human review, owner-gated because APK upload and mirroring risk are high.
+  - IAToolFinder: AI-tool directory/comparison surface, possible fit only with accurate Android OCR/AI translation category and trial plus paid-token pricing.
+  - Mangacast: French manga/anime podcast/newsletter context, watch-only until a French-language approved-sample OCR QA note exists.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new setup packets, directory quality gate, and APKApps/IAToolFinder drafts.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, APK upload, mirror permission, Reddit/LinkedIn/GitHub external comment, Product Hunt action, or YouTube upload was attempted.
+- Next actions: owner confirms package/signing/hash facts, mirror policy, screenshot/demo rights, official submitter contact, and whether APKApps-style upload/review or IAToolFinder-style listing flows preserve Nayovi source-of-truth links.

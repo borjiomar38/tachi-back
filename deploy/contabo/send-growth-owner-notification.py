@@ -79,7 +79,7 @@ def main() -> int:
   message.set_content(body)
 
   send_message(smtp_url, message, email_from)
-  print(f'notification sent to {args.to}')
+  print(f'notification sent to {args.to} subject="{message["Subject"]}"')
   return 0
 
 
