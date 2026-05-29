@@ -16,6 +16,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | BetaList / startup launch directories | Founder/official Nayovi launch profile | Recently launched Android OCR translation workflow listing | https://nayovi.com | OWNER_ACTION_REQUIRED: founder/company submitter identity, product-stage eligibility, current rules review, manual submission, and no paid-backlink or unsupported-metric flow. |
 | draft | Android/open-source tooling | Obtainium-style direct APK source discussions | Official source URL and direct-APK trust note | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED for external GitHub/community comments; use owned docs first and link only if a maintainer/user explicitly asks for examples. |
 | draft | AI/free-trial directory | ToolPilot / pricing-aware AI directories | Accurate free-trial plus paid-token listing eligibility | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify current submit rules and source-link fields; skip paid backlink, reciprocal link, hidden redirect, mirror-first APK, forever-free, or open-source mislabeling. |
+| draft | Android editorial media | Android Authority-style app/product contact | Independent APK trust and hosted OCR testing source note | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: public official contact only after package facts, screenshots, media contact, and review-code boundaries are owner-approved; no private contact scraping or app-install pressure. |
+| watch | Open-source AI program | Mozilla Builders-style accelerator | Eligibility memo for an open-source AI companion or privacy-preserving workflow | None by default | WATCH_ONLY: no application or endorsement claim unless owner confirms open-source scope, founder identity, public metrics, and program eligibility. |
+| watch | AI aggregator | There's An AI For That-style large AI directory | Accurate listing risk check for trial plus paid-token Android OCR workflow | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: skip paid SEO placement, hidden redirects, reciprocal links, forever-free wording, open-source mislabeling, or generic chatbot categories. |
 | draft | Product Hunt | Official Nayovi maker/company profile | Launch packet asking for APK trust and OCR workflow feedback | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official maker/company account, launch timing, approved screenshots/demo media, and no-upvote-request policy required before launch. |
 | draft | Official newsletter | Nayovi Notes public archive | First issue introducing APK trust checks and approved-sample OCR QA | docs/seo-distribution/official-newsletter-first-issue.md | OWNER_ACTION_REQUIRED: official newsletter account, sender identity, and publication approval required; no contact import or bulk email. |
 | draft | AI directory | AINovaTools submit-tool path | Accurate AI Translation/OCR listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
@@ -209,6 +212,60 @@ Source packet:
 
 Reviewer access packet:
 `docs/seo-distribution/reviewer-access-packet.md`
+
+### Android Authority-style source-first editorial note
+
+Status: draft
+Target: Android Authority or comparable Android editorial/product contact path after owner approves media contact, package/signing facts, screenshots, and review-code boundaries
+Audience: Android app editors, Android security/app-discovery writers, independent APK reviewers
+Rules risk: medium; use only official public contact paths, no private contact scraping, no app-install pressure, no unsupported verification claims, and no review-code disclosure in the draft.
+No-link variant: yes for first contact if the form permits plain text.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link variant:
+
+Hi Android Authority team,
+
+I am checking whether a source-first Android app note would fit before sending anything promotional.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The editorial angle is independent APK trust rather than a generic app launch: official source link, support and pricing clarity, owner-confirmed package/signing facts, review-code routing, and screenshot-safe testing with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Nayovi does not host or distribute chapters, and I do not want to pitch it in a way that encourages unsafe APK mirrors or unauthorized sample screenshots.
+
+Would this kind of source-first review packet be appropriate for your Android apps coverage, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+Workflow overview:
+`https://tachiyomiat.com/translate-manhwa-ai`
+
+Reviewer packet:
+`docs/seo-distribution/reviewer-access-packet.md`
+
+### Mozilla Builders-style eligibility memo
+
+Status: watch
+Target: Mozilla Builders or comparable open-source AI builder programs only after owner confirms eligibility
+Audience: accelerator reviewers, open-source AI builders, investor diligence readers
+Rules risk: medium; no application, endorsement claim, or public pitch until there is a real open-source component or companion docs project and owner-approved metrics.
+No-link variant: yes.
+Link variant after owner review: owned GitHub/docs only.
+
+No-link variant:
+
+Nayovi is currently not ready for an open-source AI accelerator pitch unless the owner confirms a qualifying open-source component, companion docs project, or privacy-preserving workflow contribution.
+
+Potential future angle: a neutral Android OCR trust and sample-safety toolkit for image-heavy translation workflows, with clear boundaries around official APK sources, permission-approved samples, and human review before public sharing.
+
+Next step is an eligibility check, not an application.
 
 ### Mangasplaining/MSX approved-sample OCR QA topic note
 
