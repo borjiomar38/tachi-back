@@ -549,6 +549,24 @@ const activationHandoffRows = [
   },
 ] as const;
 
+const replyPacketRows = [
+  {
+    reply: 'Directory editor asks for listing fields',
+    nextStep:
+      'Send the official APK source, one-line description, pricing summary, support route, screenshots, and responsible-use note before any listing goes live.',
+  },
+  {
+    reply: 'Reviewer asks for hands-on access',
+    nextStep:
+      'Issue or request a dedicated review code only after the reviewer has the demo, approved sample scope, pricing context, and no-pay-for-coverage terms.',
+  },
+  {
+    reply: 'Partner asks about a pilot',
+    nextStep:
+      'Define the sample owner, language pair, success metric, support path, and stop condition before expanding to a creator, publisher, or community test.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1757,6 +1775,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request activation path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply packet"
+        title="Move useful replies toward revenue proof"
+        description="When directories, reviewers, or partners answer outreach, the next step should collect the exact facts needed for a qualified listing, review, or approved-sample pilot."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {replyPacketRows.map((row) => (
+            <Card key={row.reply} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.reply}</CardTitle>
+                <CardDescription>{row.nextStep}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Replies should become qualified actions
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A good reply should produce a complete listing packet, a
+                measurable review-code test, or an approved-sample pilot.
+                Anything that asks for paid links, mirror-first APK placement,
+                or vague catalog processing should be declined.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open reply workflow
             </a>
           </CardContent>
         </Card>
