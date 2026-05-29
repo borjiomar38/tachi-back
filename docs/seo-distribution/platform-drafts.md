@@ -105,6 +105,64 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ## Draft Bodies
 
+### Official newsletter first issue
+
+Status: draft
+Target: owner-created Nayovi newsletter/Substack-style public archive
+Audience: Android reviewers, app directories, partner diligence, investors, creator-platform teams
+Rules risk: low if owner-created and opt-in only; no contact import, scraped list, bulk send, or automated account creation.
+No-link variant: publish as a public archive issue with only source-of-truth references in the footer.
+Link variant: `https://tachiyomiat.com/download` and `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Title:
+What reviewers should verify before citing an independent Android OCR APK
+
+Body:
+
+Nayovi is preparing public trust notes for reviewers, app directories, and partner teams that need to evaluate an independent Android APK before citing it.
+
+The useful checklist is not a launch announcement. It is a review boundary:
+- use the official download page instead of mirror-first APK links
+- keep package name, signing fingerprint, developer verification status, and package registration as pending until owner-confirmed
+- test only with owned, public-domain, official-sample, or permission-approved pages
+- preserve support, pricing, privacy, terms, and responsible-use links near any listing
+- separate OCR failures from translation failures by checking missing regions, reading order, grouping, and transcription first
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+Useful source links, if links are appropriate:
+https://tachiyomiat.com/download
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+### Medium canonical OCR QA article
+
+Status: draft
+Target: official Nayovi Medium profile/publication
+Audience: developers, localization operators, OCR builders, Android reviewers
+Rules risk: low if canonical URL is supported and owner approves official profile/API scope.
+No-link variant: use only the article text with source links in the profile, not body links.
+Link variant: canonical URL `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Title:
+Comic OCR translation QA checks before judging AI output
+
+Body:
+
+Before scoring an AI translation for manga, manhwa, manhua, webtoon, or comic pages, reviewers should inspect the OCR layer.
+
+Start with permission. The sample should be owned, public-domain, an official preview, creator-provided, or otherwise approved for OCR and translation testing. Do not use paid chapters or third-party scans as public demo material without explicit permission.
+
+Then review the pre-translation evidence:
+- Were all visible bubbles, narration boxes, sound effects, small labels, handwritten notes, and vertical text detected?
+- Did the OCR preserve reading order for the page, spread, or long-strip format?
+- Were unrelated bubbles, captions, or speakers merged into the same translation unit?
+- Is the original OCR text visible enough for a human reviewer to separate transcription mistakes from translation mistakes?
+- Are names, places, ranks, techniques, honorifics, and recurring terms tracked in a glossary?
+
+The share decision should come last. If rights context is unclear, keep the result private. If OCR coverage is weak, record the failure before judging the translation model. If the output will be cited publicly, preserve permission status, sample scope, correction notes, and disclosure.
+
+Disclosure: this checklist is prepared by the Nayovi team. Nayovi is an Android APK and hosted OCR/AI translation workflow; it does not host or distribute chapters.
+
 ### Android newsletter technical resource pitch
 
 Status: draft
