@@ -1126,3 +1126,21 @@ Next actions:
 - Drafted exact GitHub maintainer-first no-link and link-if-invited variants in `platform-drafts.md`.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, Medium publication, Crunchbase claim, GitHub issue/PR/comment, directory submission, APK upload, Reddit/LinkedIn post, Product Hunt action, or YouTube upload was attempted.
 - Next actions: owner decides whether Crunchbase belongs in the public trust stack, creates/connects Medium if canonical syndication is approved, and authorizes any GitHub maintainer contact only after current maintainer rules are reviewed.
+
+## 2026-05-29 Cycle 8
+
+- Verified branch `seo/distribution-20260529T033726Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Official app testing/reviewer submitter profile with source-first portal rules, APK sharing gates, sample/screenshot approval, review-code scope, `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`, and no fake-review/no-mirror/no-upload guardrails.
+  - AI/free-trial directory submitter profile with accurate trial plus paid-token wording, source-link preservation, `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`, and rejection gates for forever-free, paid-link, reciprocal, hidden-redirect, or mirror-first flows.
+- Added owned trust asset `docs/seo-distribution/app-testing-review-brief.md` for app-testing portals, APK reviewers, directory editors, and partner diligence teams. The brief covers official source links, test scope, public-report rules, owner approval gates, and a no-link fit question.
+- Researched rotated authority opportunities across different categories:
+  - AppTester.co app health check: app testing/review trust surface, owner-gated because APK upload, tester campaigns, public report permission, and any payment/review request require explicit approval.
+  - SpotFreeAI: free-tier/trial-only AI directory context, possible fit only if free trial plus paid monthly token wording is accepted.
+  - Try.fm: free-trial software directory context, possible fit only if source links, pricing, support, and responsible-use copy remain visible.
+  - Android Developers newsletter and Manga109-v2026 were refreshed as supporting technical context; no external submission was made.
+- Updated `account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv`.
+- Drafted exact value-first no-link fit questions for app testing portals and free-trial AI directories in `platform-drafts.md`.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, portal action, APK upload, public report approval, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
+- Next actions: owner confirms APK filename/build/SHA-256, package/signing/developer-verification facts or pending-language copy, sample pages, screenshot rights, review-code scope, and which app-testing or free-trial directory surfaces may preserve source links.

@@ -131,6 +131,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | AI/free-trial directory | Flynto-style AI directory | Accurate Translation category listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit path and skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flow. |
 | draft | APK directory | APKApps-style review portal | Official-source-only APK listing fit check | docs/seo-distribution/directory-quality-gate.md | OWNER_REVIEW_REQUIRED: no APK upload, account creation, form submission, mirror permission, or review request until package/signing facts and source-link handling are approved. |
 | draft | AI directory | IAToolFinder-style submit path | Android OCR/AI Translation listing eligibility | docs/seo-distribution/directory-quality-gate.md | OWNER_REVIEW_REQUIRED: verify live submit fields, pricing labels, and source-link handling; skip paid, reciprocal, hidden-redirect, or misleading free/open-source flows. |
+| draft | App testing portal | AppTester.co / APKLand / AppsTested-style reviewers | Source-first Android OCR app health-check fit question | docs/seo-distribution/app-testing-review-brief.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report approval, payment, fake review, or mirror permission until owner approves portal, sample scope, and package facts. |
+| draft | AI/free-trial directory | SpotFreeAI / Try.fm-style directories | Accurate free-trial plus paid-token listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields and skip forever-free, reciprocal-link, hidden-redirect, paid-placement, open-source, or mirror-first APK flows. |
 
 ## Draft Bodies
 
@@ -258,6 +260,61 @@ I am checking whether Nayovi would fit your Android app testing or review workfl
 Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A useful test would focus on install clarity, permission prompts, activation or redeem-code flow, OCR progress, translation loading, support paths, and whether reviewer screenshots use only approved sample material.
 
 I am not asking for paid positive reviews, fake app-store reviews, mirror-first APK redistribution, or a guaranteed backlink. Nayovi does not host or distribute chapters and should only be tested with owned, public-domain, official-sample, creator-provided, or otherwise approved content.
+
+### Current-cycle AppTester.co / independent app testing fit question
+
+Status: draft
+Target: AppTester.co, APKLand, AppsTested, or comparable Android app-testing and review portals
+Audience: Android testers, independent app reviewers, directory editors, partner diligence readers
+Rules risk: medium to high; OWNER_REVIEW_REQUIRED. No APK upload, tester campaign, paid positive review, fake rating, public report approval, or mirror permission without owner approval.
+No-link variant: yes.
+Link variant after owner review: `docs/seo-distribution/app-testing-review-brief.md`
+
+No-link variant:
+
+Hi team,
+
+I am checking whether Nayovi fits your Android app testing or review workflow before submitting anything.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A useful test would focus on official source links, install clarity, permission prompts, trial or redeem-code activation, OCR progress states, translation loading, support paths, pricing clarity, and whether screenshots use approved sample pages only.
+
+I am not asking for a paid positive review, fake rating, review swap, guaranteed backlink, or mirror-first APK listing. Nayovi does not host or distribute chapters and should only be tested with owned, public-domain, official-sample, creator-provided, or otherwise approved content.
+
+Would that kind of source-first app-health-check fit your process, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+If helpful, here is the reviewer brief with source links and test boundaries:
+`docs/seo-distribution/app-testing-review-brief.md`
+
+Please keep any public citation tied to the official download page, approved screenshots, and owner-confirmed package/signing facts only.
+
+### SpotFreeAI / Try.fm free-trial directory eligibility note
+
+Status: draft
+Target: SpotFreeAI, Try.fm, ToolDirectory.AI, AiMatch, or comparable free-trial/pricing-aware directories
+Audience: AI directory editors and high-intent users looking for OCR, Translation, Android, or workflow tools
+Rules risk: medium; OWNER_REVIEW_REQUIRED. Submit only through official paths after current form review.
+No-link variant: yes.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Eligibility question:
+
+Hi team,
+
+I am checking whether Nayovi fits your directory before preparing a submission.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A correct listing would need to describe the access model accurately: official APK, free trial or redeem-code activation, paid monthly token plans, support path, and responsible-use boundaries.
+
+Nayovi should not be listed as forever-free, open-source, app-store-only, a generic chatbot, an APK mirror, or a chapter-hosting service. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+Would this fit a Free Trial, Freemium, Translation, OCR, Android, or AI workflow category, or should I skip submission?
+
+Best,
+Nayovi team
 
 Would this fit your testing/review process if the owner supplies package facts, hash, screenshot rules, and a safe sample plan first?
 
