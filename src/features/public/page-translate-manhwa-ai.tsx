@@ -567,6 +567,24 @@ const replyPacketRows = [
   },
 ] as const;
 
+const placementFilterRows = [
+  {
+    signal: 'Mirror-first APK placement',
+    response:
+      'Decline listings that make a third-party APK page the main source instead of pointing readers back to Nayovi for hash checks, support, pricing, and policy links.',
+  },
+  {
+    signal: 'Reciprocal or paid-link gate',
+    response:
+      'Skip directories that require dofollow backlinks, badges, paid placement, review swaps, hidden redirects, or ranking promises before evaluation.',
+  },
+  {
+    signal: 'Unqualified AI traffic',
+    response:
+      'Hold any mention that cannot explain Android install intent, free trial fit, monthly token plans, support expectations, and permission-safe test material.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1818,6 +1836,48 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open reply workflow
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Placement filter"
+        title="Decline weak mentions before they waste the funnel"
+        description="Qualified backlinks and partnerships should preserve Nayovi's official source, pricing clarity, and responsible-use boundary. Weak placements can create support load without paid subscribers."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {placementFilterRows.map((row) => (
+            <Card key={row.signal} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ShieldCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.signal}</CardTitle>
+                <CardDescription>{row.response}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ClipboardCheckIcon className="size-4" />
+                Protect qualified revenue signals
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A good listing should make the official APK, trial, pricing,
+                support, and approved-material boundary more visible. If the
+                placement hides those facts, wait for a better channel.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open placement checklist
             </a>
           </CardContent>
         </Card>
