@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 11
+
+- Verified branch `seo/distribution-20260529T052457Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Official newsletter/public update archive setup for `Nayovi Notes`, including profile fields, first-issue reference, credential references, no contact-import guardrails, and manual/API publish gates.
+  - Official app testing/reviewer portal profile, including source-first submitter fields, sample/screenshot gates, review-code boundaries, portal credential references, and no-upload/no-fake-review/no-public-report guardrails.
+- Improved owned linkable content by adding a portal quality screen to `docs/seo-distribution/app-testing-review-brief.md` for AppTester.co/TestFi-style app-testing, APK review, and closed-testing marketplace decisions.
+- Researched rotated authority opportunities across different categories:
+  - TestFi Android APK crowdtesting: possible app-testing trust evidence only after owner-approved source-link handling, sample scope, budget, and public-report rules.
+  - Android closed-testing/test-exchange Reddit communities: watch-only because install swaps, review-like exchanges, and link-heavy threads create high compliance and spam risk.
+  - Compare OCR Tools-style OCR comparison resources: possible product-light checklist citation if editorial suggestions are accepted and Nayovi is not mislabeled as generic free document OCR.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `platform-drafts.md`, `content-calendar.md`, and `link-assets.md` with the new setup work, authority targets, and draft packets.
+- Drafted exact value-first no-link and link-if-approved messages for TestFi/AppTester-style app-testing fit checks and OCR resource page checklist suggestions.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, payment, APK upload/link share, tester campaign, public report approval, review-code grant, Reddit action, directory submission, email send, Product Hunt action, YouTube upload, Medium publication, or backlink request was attempted.
+- Next actions: owner confirms official newsletter profile, app-testing budget and portal eligibility, APK package/signing/hash facts, approved sample pages, screenshot scope, review-code policy, and whether any app-testing report may cite Nayovi publicly.
+
 ## 2026-05-29 Current Branch Cycle
 
 - Verified branch `seo/distribution-20260529T051652Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
