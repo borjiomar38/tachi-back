@@ -151,6 +151,27 @@ const publicReferralCards = [
   },
 ] as const;
 
+const commercialFitCards = [
+  {
+    icon: UsersRoundIcon,
+    title: 'Higher-volume reader',
+    description:
+      'Use normal checkout when the reader already knows the recurring chapter volume and does not need custom access, attribution, or public review context.',
+  },
+  {
+    icon: KeyRoundIcon,
+    title: 'Partner or affiliate code',
+    description:
+      'Ask support for a dedicated code when a partner needs separated attribution, approved-sample testing, or review access before recommending Nayovi.',
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: 'Custom terms pause',
+    description:
+      'Pause checkout when the request depends on commercial terms, legal review, investor materials, unsupported metrics, or processing material without clear permission.',
+  },
+] as const;
+
 export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
@@ -263,6 +284,33 @@ export const PagePricing = (props: PagePricingProps) => {
               <Card key={item.title} className="rounded-[1.5rem]">
                 <CardHeader className="gap-3">
                   <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Commercial fit"
+        title="Separate normal subscriptions from partner requests"
+        description="Pricing should convert repeat readers directly while routing affiliates, reviewers, directories, and approved-sample partners through support when attribution or scope matters."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {commercialFitCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <Card
+                key={item.title}
+                className="public-brand-panel-muted rounded-[1.5rem]"
+              >
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Icon className="size-5" />
                   </div>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
