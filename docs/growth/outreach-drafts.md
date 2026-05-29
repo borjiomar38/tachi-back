@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: homepage partner proof packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/#partner-proof` with a partner-proof packet for press, directories, creator-platform partners, commercial reviewers, and investor diligence contacts. The packet routes qualified visitors toward official APK proof, approved-sample pilot scope, or diligence context before spending review codes, founder time, custom terms, or meeting capacity.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use only the Nube/Genga official-form queue or recheck AIAnyTool's current submit/contact terms before any send.
+
 ### Autonomous cycle: commercial reply qualification packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

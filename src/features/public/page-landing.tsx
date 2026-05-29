@@ -109,6 +109,33 @@ const partnerHandoffRows = [
   },
 ] as const;
 
+const partnerProofRows = [
+  {
+    title: 'Press or directory review',
+    description:
+      'Use the demo, official APK page, setup workflow, and pricing handoff before publishing a mention.',
+    href: '/download',
+    cta: 'Open APK proof',
+    icon: DownloadIcon,
+  },
+  {
+    title: 'Creator or publisher pilot',
+    description:
+      'Start with approved samples, source permission, OCR QA, and a clear stop point before any public sharing.',
+    href: '/guides/permission-safe-manga-translation-pilot',
+    cta: 'Read pilot scope',
+    icon: ShieldCheckIcon,
+  },
+  {
+    title: 'Investor or commercial diligence',
+    description:
+      'Check the Android workflow, repeat-use signal, support path, and separated trial, review-code, and paid-plan attribution.',
+    href: '/translate-manhwa-ai#diligence-packet',
+    cta: 'View diligence packet',
+    icon: CoinsIcon,
+  },
+] as const;
+
 export const PageLanding = (props: {
   contactStatus?: 'sent' | 'error' | 'invalid';
   tokenPacks: PublicTokenPack[];
@@ -475,6 +502,47 @@ export const PageLanding = (props: {
           The strongest referral path is install confidence first, then trial or
           reviewer-code activation, then pricing only when repeat translation
           demand is clear.
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        id="partner-proof"
+        eyebrow="Partner proof"
+        title="Useful context before a listing, pilot, or diligence reply"
+        description="Qualified contacts can verify the official APK, responsible sample scope, and revenue signal path before asking for a code, call, or custom terms."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerProofRows.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card
+                key={item.title}
+                className="rounded-[1.5rem] dark:border-white/10 dark:bg-white/[0.03]"
+              >
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:border dark:border-brand-300/20 dark:bg-brand-300/12 dark:text-brand-100">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <a
+                    href={item.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-primary"
+                  >
+                    <span>{item.cta}</span>
+                    <ArrowRightIcon className="size-4" />
+                  </a>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+        <div className="mt-4 rounded-[1.5rem] border bg-card px-5 py-5 text-sm leading-7 text-muted-foreground dark:border-white/10 dark:bg-white/[0.03]">
+          The best next step is a measurable test: install from the official
+          source, activate trial or review access, use approved material, and
+          decide whether the traffic is likely to become repeat paid usage.
         </div>
       </PublicSection>
 
