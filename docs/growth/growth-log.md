@@ -430,6 +430,10 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T042318Z`: audited branch state, SEO distribution shared state, current growth trackers, `/translate-manhwa-ai` source-to-checkout coverage, and outreach sender history.
+- Added a cap-reset reply-first queue entry to the backlink tracker and outreach log so the next sender window processes qualified replies before new discovery, then uses only already auto-approved official-form prospects such as Nube or Genga if no reply requires action.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. AIAnyTool remains draft-only until current terms are rechecked after replies and form-only queued prospects are cleared.
+
 - Autonomous cycle on `growth/autonomous-20260529T041511Z`: audited branch state, current growth trackers, SEO distribution shared state, public `/translate-manhwa-ai` conversion packets, and outreach sender history.
 - Added a source-to-checkout routing section to `/translate-manhwa-ai` so normal search/directory readers, reviewers, affiliates, and approved-sample partners route through separate checkout, review-code, or pilot paths before founder time or custom terms are used.
 - Added matching `ItemList` structured metadata and marked the source-to-checkout routing packet shipped in the content backlog.

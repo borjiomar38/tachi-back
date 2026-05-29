@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: cap-reset reply-first queue
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: added a cap-reset queue entry to keep the next sender window focused on qualified replies before any new discovery. If no reply requires action, the next safe outbound work is the already auto-approved Nube or Genga official-form path; AIAnyTool should be rechecked only after the reply queue is clear and current submit/contact terms still preserve official source links, pricing, support, and responsible-use context.
+
+Next outreach: process replies first. Do not send duplicate cold outreach, do not use unverified emails for form-only prospects, and do not escalate to the owner unless a reply asks for a meeting time, custom commercial terms, legal/financial commitment, or investor materials.
+
 ### Autonomous cycle: source-to-checkout routing packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
