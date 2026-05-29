@@ -36,6 +36,33 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### The Beat / Comics Beat editorial feedback note
+
+Category: press
+Contact path: `info@comicsbeat.com`, rechecked through the current public Comics Beat contact page before sending.
+Rationale: Comics Beat reaches comics, graphic novel, and manga trade readers and accepts tips/news/event listings. The note used a transparency-first OCR QA checklist angle instead of a product-review or backlink request, and explicitly avoided endorsement, catalog-processing, and AI-replacement claims.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if there is approved-sample evidence, a concise founder quote, or a clearer editorial hook.
+
+Subject: Manga OCR QA checklist for responsible AI coverage
+
+Hi Comics Beat team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I am reaching out carefully because Comics Beat covers comics and manga industry conversations where AI-assisted translation can be sensitive. This is not a backlink request, catalog-processing pitch, or claim that AI should replace translators, letterers, editors, or publishers.
+
+The useful item is a public checklist we maintain for evaluating OCR and translation on approved samples only:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+The checklist focuses on issues that are easy to miss in manga-style pages: missing text regions, merged speech balloons, vertical or stylized text, reading order, glossary drift, human correction notes, credit boundaries, and when not to publish screenshots or translated examples. I also added a research-context note so technical references are treated as background, not as endorsement of Nayovi.
+
+Nayovi does not host or distribute chapters. It is intended for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+If this is useful as background for a future responsible AI/manga tooling note, I can send a short founder comment or approved-sample test brief. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Akaya Media partnership inquiry
 
 Category: partnership
