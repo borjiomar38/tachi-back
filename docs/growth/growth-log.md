@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T054034Z`: audited branch state, SEO distribution shared context, current growth trackers, `/translate-manhwa-ai`, structured-data route metadata, and outreach sender history.
+- Added an access-exception gate to `/translate-manhwa-ai` so discount, extended-trial, review-code, affiliate-code, and partner-code requests require audience fit, source-link preservation, separated attribution, approved-sample scope, and paid-plan follow-up evidence before special access or founder escalation.
+- Added matching ItemList structured metadata and marked the access-exception owned packet shipped in the content backlog and backlink tracker.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next sender window should prioritize qualified replies asking for listing fields, review access, affiliate context, partner access, or discount/trial exceptions before new prospects.
+
 - Autonomous cycle on `growth/autonomous-20260529T053255Z`: audited branch state, SEO distribution shared context, growth trackers, paid-intent guide coverage, and outreach sender history.
 - Added a discount and access exception guardrail to `/guides/free-trial-vs-paid-token-plan` plus ItemList metadata so trial extensions, discounts, free codes, affiliate requests, reviewer access, and partner codes are granted only when they protect attribution or prove qualified paid demand.
 - Added the owned guardrail packet to the prospect tracker and outreach drafts for reply-driven use after cap reset.
