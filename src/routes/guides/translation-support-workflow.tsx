@@ -119,6 +119,28 @@ const translationWorkflowStructuredData = () => {
         'Use a concise refusal when the request depends on paid links, reciprocal placement, hidden pricing, mirror-first APK distribution, or unauthorized catalog processing.',
     },
   ] as const;
+  const revenueRoutingPacket = [
+    {
+      name: 'Review access',
+      description:
+        'Send a review code only when the contact can publish, list, test, or compare Nayovi with official links, responsible-use context, and source-of-truth APK details intact.',
+    },
+    {
+      name: 'Partner pilot',
+      description:
+        'Offer a pilot code when a creator platform, publisher, localization team, or community can define approved samples, evaluation goals, and private-result boundaries.',
+    },
+    {
+      name: 'Paid-plan signal',
+      description:
+        'Route repeat-reader, affiliate, or directory traffic toward free trial, pricing, support, and monthly token-plan evidence before treating the placement as qualified.',
+    },
+    {
+      name: 'Investor or commercial signal',
+      description:
+        'Escalate only when the reply asks for traction, retention, partnership economics, founder time, or terms that could change business, legal, or pricing commitments.',
+    },
+  ] as const;
 
   return [
     {
@@ -175,6 +197,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi qualified reply asset bundle',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: qualifiedReplyAssets.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#revenue-routing`,
+      name: 'Nayovi reply revenue routing packet',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: revenueRoutingPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
