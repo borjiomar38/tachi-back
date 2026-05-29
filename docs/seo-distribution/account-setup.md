@@ -42,6 +42,9 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Substack/newsletter official profile | Owned subscriber channel for APK trust notes, OCR QA updates, and partner-friendly release context | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi newsletter profile and accepts terms manually | Profile bio, logo, first issue draft, canonical links, screenshot rules, public contact path | `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`; optional API/RSS reference only if owner enables it | Agent can draft official newsletter issues or archive links after owner-approved account connection | Owner chooses whether newsletter is manual-only, confirms profile handle, and approves first issue topic. |
 | high | GitHub organization/profile polish | Owned technical trust surface for repo docs, review packets, release notes, and official links | setup_packet_prepared_owner_action_required | Owner confirms or creates only an official Nayovi organization/profile and public contact fields | Logo, organization bio, website, pinned docs/repo list, support URL, responsible-use line | `SEO_AGENT_GITHUB_TOKEN` optional for API updates; SSH remote is enough for current repo | Agent can update owned docs, profile README drafts, and release packets after owner confirms org/profile scope | Owner confirms whether the official GitHub surface is a user profile, organization, or repo-only public docs surface. |
 | medium | Mastodon/Fediverse official account | Public source-of-truth social profile for Android, localization, and open-web communities | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi account manually on an owner-approved instance and accepts terms | Avatar, banner, bio, canonical links, first no-link posts, moderation/rules review | `SEO_AGENT_MASTODON_ACCESS_TOKEN` only if owner enables official API posting | Agent can draft concise official updates after account connection and instance rules review | Owner chooses instance/handle, stores token only in approved secret store if API posting is wanted, and confirms draft-only or publish scope. |
+| high | Official social/profile proof packet | Reusable source-of-truth setup packet for official profiles, launch pages, directories, newsletters, and reviewer diligence | shipped_owned_doc | Owner approves logo, banner, screenshots, demo clip, package facts, and public contact path | `docs/seo-distribution/official-social-profile-proof-packet.md`, approved visual assets, package/signing facts | Platform-specific references only; no credential values in docs | Agent can reuse the packet when preparing official profile fields and owner-reviewed listings | Owner fills approved asset references and confirms package/signing/developer verification facts. |
+| medium | Substack/newsletter official profile | Opt-in public update archive for APK trust, reviewer notes, and partner diligence | setup_packet_prepared_owner_action_required | Owner creates/connects official newsletter profile manually and approves first issue before publication | Logo, banner, sender name, public archive URL, first issue copy, support/pricing/source links | `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`; no subscriber import or private list data in docs | Agent can draft public newsletter issues and archive copy after owner approval | Owner creates official profile, confirms no contact import, and approves the first issue title/description below. |
+| high | Product Hunt official launch profile | Launch credibility, early adopter feedback, investor discovery, and canonical source links | setup_packet_prepared_owner_action_required | Owner creates/connects official maker/company account, accepts launch terms manually, and chooses launch timing | Logo, gallery screenshots, demo video, maker comment, pricing/support links, responsible-use line | `SEO_AGENT_PRODUCTHUNT_TOKEN` only if owner enables official API workflow | Agent can prepare launch fields and owner-approved maker comments; no vote requests or engagement automation | Owner confirms launch date, first gallery assets, and whether the official product URL should be `https://tachiyomiat.com/download` or `https://nayovi.com`. |
 
 ## 2026-05-28 Setup Packets
 
@@ -238,6 +241,56 @@ Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, an
 Public profile fields:
 - Organization name: `Nayovi`
 - Website: `https://nayovi.com`
+
+### Substack / Newsletter Official Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation, sender/profile approval, and any publication workflow.
+
+Profile fields:
+- Publication name: `Nayovi Updates`
+- Short description: `Official updates on Nayovi's Android OCR and AI translation workflow, APK trust notes, reviewer packets, and permission-safe manga, manhwa, and manhua sample testing.`
+- Website: `https://nayovi.com`
+- Primary source link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+
+First issue packet:
+- Title: `What reviewers should verify before citing an independent Android OCR APK`
+- Angle: source-of-truth APK URL, SHA-256/build metadata, support path, pricing path, screenshot rights, review-code scope, and no-chapter-hosting boundaries.
+- Link target: `docs/seo-distribution/android-developer-verification-readiness.md` until the owner approves a public web version.
+
+Credential reference:
+- `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE` only. Do not store login data, subscriber exports, verification tokens, or private mailing lists in docs.
+
+Agent capability after connection:
+- The agent can draft public newsletter issues and archive copy after owner approval. It must not import contacts, send bulk email, scrape subscribers, or publish without an official account and owner-approved issue copy.
+
+Next action:
+- Owner creates/connects the official newsletter profile, confirms sender identity, and approves whether the first issue should remain a public archive-only trust signal.
+
+### Product Hunt Official Launch Profile
+
+Status: OWNER_ACTION_REQUIRED for maker/company setup, terms acceptance, launch timing, and gallery assets.
+
+Public product fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR translation workflow for manga and manhwa`
+- Short description: `Nayovi is an Android APK with hosted OCR, AI translation, redeem-code activation, free trial access, token plans, and support for permission-safe manga, manhwa, and manhua reading workflows.`
+- Website: owner chooses `https://nayovi.com` for brand-level launch or `https://tachiyomiat.com/download` for direct APK conversion.
+
+Required assets:
+- Square logo.
+- Three to five gallery screenshots from approved samples only.
+- Demo video showing official source, activation, OCR progress, language choice, and translation output.
+- Maker comment disclosing the no-chapter-hosting boundary and asking for Android/OCR workflow feedback, not votes.
+
+Credential reference:
+- `SEO_AGENT_PRODUCTHUNT_TOKEN` only if owner enables official API workflow. Store actual values only in the approved secret store.
+
+Agent capability after connection:
+- The agent can maintain launch field drafts and owner-approved maker comments. It must not request upvotes, automate comments, or post from unauthenticated/non-official accounts.
+
+Next action:
+- Owner confirms launch timing, official URL choice, and first gallery/demo assets before any launch submission.
 - Product URL: `https://tachiyomiat.com/download`
 - Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
 - Long description: `Nayovi provides official APK download, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation for permission-safe reader workflows. Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`

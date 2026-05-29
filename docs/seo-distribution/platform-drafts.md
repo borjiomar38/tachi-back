@@ -99,6 +99,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | App testing | AppTester.co human app health check | Safe Android APK trust test using approved samples | docs/seo-distribution/android-apk-trust-profile.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report approval, or account creation without owner approval. |
 | watch | APK review | APKLoon-style APK submission portal | Official source-link preservation check before APK review | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: verify quality and mirror policy; hold until package/signing facts are owner-confirmed. |
 | draft | AI/free-trial directory | tryweb.site-style AI tools directory | Accurate free-trial plus paid-token listing fit check | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit fields and skip if forever-free, paid-link, reciprocal, or hidden-redirect placement is required. |
+| draft | Webtoon localization platform | Alandal-style localization team | Approved-sample OCR QA feedback note | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask, no catalog-processing implication, and no claim of platform permission. |
+| draft | Localization studio | Bayi Studios-style webcomic localization contact | Screenshot-rights and OCR QA checklist exchange | None by default | OWNER_REVIEW_REQUIRED: no replacement pitch or backlink ask; include checklist link only if useful. |
+| hold | Reddit | r/AndroidClosedTesting-style reciprocal testing threads | Closed testing/review swap request | None | HIGH_RISK: review-swap and reciprocal install behavior is not compliant with Nayovi rules; do not use. |
 
 ## Draft Bodies
 
@@ -218,6 +221,57 @@ Android OCR translation workflow for manga and manhwa
 
 Short description:
 Nayovi is an Android APK with hosted OCR, AI translation, redeem-code activation, free trial access, token plans, and support for permission-safe manga, manhwa, and manhua reading workflows.
+
+### Alandal-style approved-sample feedback note
+
+Status: draft
+Target: webtoon localization platforms or teams with official contact paths
+Audience: localization operators, webtoon QA teams, platform partnerships
+Rules risk: medium; no backlink ask, no catalog-processing implication, and no claim that Nayovi can process platform content without explicit permission.
+No-link variant: yes
+Link variant: only include `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` if requested or clearly relevant.
+
+Message:
+
+Hi team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I am not asking to process your catalog or for a backlink. I am looking for feedback on whether our approved-sample OCR QA checklist is useful to localization teams that already manage creator permission, glossary consistency, lettering, and human review.
+
+The specific Android-side checks are:
+- whether OCR preserves speech bubbles, captions, and reading order
+- whether merged text blocks accidentally combine unrelated content
+- whether names and terms stay consistent before translation
+- whether public screenshots are limited to owned, public-domain, official-sample, or permission-approved pages
+- whether the workflow clearly says it does not host or distribute chapters
+
+If this is not useful for your team, no reply is needed. If it is useful, I can send the checklist and a short approved-sample test scope.
+
+Best,
+Nayovi team
+
+### Bayi Studios-style localization checklist note
+
+Status: draft
+Target: webcomic localization studios with public contact paths
+Audience: localization studio operators, translators, QA leads
+Rules risk: medium; use no-link first and avoid positioning Nayovi as a replacement for professional localization.
+No-link variant: yes
+Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Message:
+
+Hi team,
+
+I am preparing a permission-safe OCR QA checklist for Nayovi, an Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+Your public work around webcomic localization makes me think the checklist may be most useful as a small QA reference, not as a product pitch. It covers OCR order, merged bubbles, glossary consistency, human correction, screenshot rights, and when not to share outputs publicly.
+
+Would a short checklist be useful for feedback from a localization perspective? I can send it without asking for a link or promotional mention.
+
+Best,
+Nayovi team
 
 Maker comment:
 
