@@ -911,6 +911,29 @@ const revenueRoutingRows = [
   },
 ] as const;
 
+const reviewCodeGateRows = [
+  {
+    gate: 'Public context',
+    detail:
+      'Confirm the reviewer, directory, partner, or affiliate can keep the official APK, pricing, support, and responsible-use links attached to any public note.',
+  },
+  {
+    gate: 'Test scope',
+    detail:
+      'Ask what they will test, which approved samples they can use, and whether the result is a private evaluation, listing check, article, or partner pilot.',
+  },
+  {
+    gate: 'Tracking need',
+    detail:
+      'Issue a dedicated code only when separating reviewer usage, pilot access, support questions, and conversion evidence will improve the follow-up decision.',
+  },
+  {
+    gate: 'Stop condition',
+    detail:
+      'Do not issue a code when the request depends on hidden pricing, mirror-first APK distribution, unauthorized content, paid placement, or guaranteed coverage.',
+  },
+] as const;
+
 const officialFormHandoffRows = [
   {
     rule: 'Use official forms only',
@@ -2506,6 +2529,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.signal}
                 </span>
                 <span>{row.route}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Review-code gate"
+        title="When to issue reviewer or pilot access"
+        description="Use this gate before spending redeem codes so access goes to contacts that can produce review evidence, approved-sample feedback, qualified listings, or paid-plan signal."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {reviewCodeGateRows.map((row) => (
+              <div
+                key={row.gate}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.gate}
+                </span>
+                <span>{row.detail}</span>
               </div>
             ))}
           </CardContent>
