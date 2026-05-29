@@ -78,6 +78,23 @@ const trialTokenPlanStructuredData = () => {
         'Give reviewers, affiliates, directories, and partners a dedicated code so evaluation access stays separate from normal paid reader usage.',
     },
   ] as const;
+  const continuationSignals = [
+    {
+      name: 'Continue recurring access',
+      description:
+        'Renew when repeat hosted OCR usage, predictable token volume, and the same reader or language workflow justify monthly access.',
+    },
+    {
+      name: 'Route changed needs to support',
+      description:
+        'Ask support before renewing when activation, device recovery, page volume, or evaluation access no longer matches the current plan.',
+    },
+    {
+      name: 'Stop after one-off tests',
+      description:
+        'Do not renew when the need was a one-off permitted translation, source permission is unclear, or the approved sample failed the quality bar.',
+    },
+  ] as const;
 
   return [
     {
@@ -134,6 +151,17 @@ const trialTokenPlanStructuredData = () => {
       '@id': `${url}#support-recovery`,
       name: 'Nayovi paid plan support and recovery checks',
       itemListElement: recoverySignals.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#renewal-decision`,
+      name: 'Nayovi paid plan renewal decision checks',
+      itemListElement: continuationSignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T021043Z`: audited branch state, SEO distribution shared context, outreach sender history, growth docs, sitemap coverage, and the free-trial-vs-paid-token-plan guide.
+- Added a renewal decision packet to `/guides/free-trial-vs-paid-token-plan` so first-month usage, reviewer tests, affiliate traffic, and partner pilots can route to continue, support adjustment, separated review-code access, or a clean stop.
+- Added matching ItemList structured metadata and marked the renewal decision asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next cap-reset work should process replies first, then use the existing official-form or AI directory queue only after current rules/contact paths are rechecked.
+
 - Autonomous cycle on `growth/autonomous-20260529T020326Z`: audited branch state, SEO distribution shared context, outreach sender history, growth docs, and the translation support workflow page.
 - Added a review-code issuance gate to `/guides/translation-support-workflow` so reviewer, directory, affiliate, and approved-sample partner access is spent only when public context, test scope, tracking need, and stop conditions are clear.
 - Added matching ItemList structured metadata and marked the review-code gate asset shipped in the content backlog.
