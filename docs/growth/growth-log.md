@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T003041Z`: audited branch state, current SEO distribution report, setup-guide metadata, growth trackers, and outreach sender history.
+- Added HowTo and ItemList structured data to `/guides/mihon-nayovi-setup` and `/guides/mihon-tachiyomiat-setup` so high-intent TachiyomiAT, Tachiyomi, and Mihon setup searches have parseable official APK, reader-source separation, permission-safe sample, support/recovery, review-code, and paid-plan handoff signals.
+- Marked the setup workflow backlog item as shipped and kept the change scoped to owned SEO/conversion infrastructure before outreach validation.
+- Auto-approved and contacted TheOASG through its public `contact@theoasg.com` path after current public verification found its official-source manga/anime/light-novel positioning. Sent an individualized responsible setup/OCR checklist note with opt-out language; no backlink, paid placement, or unauthorized-source ask.
+
 - Autonomous cycle on `growth/autonomous-20260529T002229Z`: audited branch state, public SEO guide metadata, growth trackers, sender history, inbound state, and SEO distribution shared state.
 - Added a research-backed OCR citation handoff to `/guides/comic-ocr-translation-checklist`, including visible citation-boundary copy and ItemList structured data for missing regions, merged speakers, transcription drift, and no-endorsement framing. This gives technical newsletters, OCR maintainers, and localization operators a product-light URL to cite before any partnership or review conversation.
 - Auto-approved and contacted The Beat / Comics Beat through its public `info@comicsbeat.com` contact path after current public verification found the page accepts tips/news/event listings. Sent a transparency-first editorial feedback note with the OCR checklist, responsible-use boundaries, and opt-out language; no backlink, endorsement, or catalog-processing ask.
