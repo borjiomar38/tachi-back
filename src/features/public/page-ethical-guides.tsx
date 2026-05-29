@@ -546,6 +546,29 @@ const tokenPlanCommercialRows = [
   },
 ] as const;
 
+const tokenPlanAccessGuardrailRows = [
+  {
+    label: 'Discount request',
+    detail:
+      'Do not discount recurring access just because a contact offers traffic. Ask what approved sample, qualified install path, or paid-use signal the discount would prove.',
+  },
+  {
+    label: 'Trial extension',
+    detail:
+      'Extend access only when support needs more time to resolve activation, device recovery, or a real reviewer test. One-off curiosity should stay on the normal trial path.',
+  },
+  {
+    label: 'Partner code',
+    detail:
+      'Issue a separate code when the partner can report source-preserving attribution, approved-sample feedback, support load, and whether users return toward paid plans.',
+  },
+  {
+    label: 'Decline',
+    detail:
+      'Decline requests that trade free access for vague promotion, hide pricing or support links, require an APK mirror, or cannot explain source permission.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -2098,6 +2121,26 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
                 <span className="font-semibold text-foreground">
                   {row.label}
                 </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Access guardrails"
+        title="Protect paid signal before granting exceptions"
+        description="Discounts, trial extensions, and partner codes should prove qualified demand or unblock real evaluation, not replace normal checkout for weak promotion."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            {tokenPlanAccessGuardrailRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold">{row.label}</span>
                 <span>{row.detail}</span>
               </div>
             ))}
