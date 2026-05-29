@@ -1338,3 +1338,21 @@ Next actions:
 - Drafted exact value-first AI comparison directory eligibility note and short-video demo caption packet in `platform-drafts.md`.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, launch listing, short-video upload, APK upload, public report approval, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
 - Next actions: owner approves official submitter identity, directory source-link handling, short-video account choice, sample-safe clips, captions, package/signing facts, and whether any video or listing action remains manual-only.
+
+## 2026-05-29 Cycle 11
+
+- Verified branch `seo/distribution-20260529T053257Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and the current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action items:
+  - Direct APK source URL profile for Android newsletters, app-source tooling, direct APK directories, and reviewers. It is blocked on owner-confirmed package name, SHA-256, signing fingerprint, Android developer verification status, and approved screenshots.
+  - Official Discord/community support rules profile for a possible support/community trust surface. It is blocked on owner-created community, rules approval, invite policy, and any authorized API/bot scope.
+- Added owned trust asset `docs/seo-distribution/direct-apk-source-url-packet.md` with official source links, no-mirror citation rules, owner-confirmed package fact gates, rejection criteria, and no-link/link variants.
+- Researched rotated authority opportunities across different categories:
+  - Android Weekly: active Android developer newsletter with a suggest-a-link path; fit is source-first direct APK/OCR reviewer checklist after owner approval.
+  - OpenAPK: open Android app directory, but FOSS-only positioning makes Nayovi no-submit unless an open-source companion exists.
+  - Unclouded: direct APK and Obtainium-style discovery context; possible fit only if proprietary/direct APK source citations are allowed and source context is preserved.
+  - offa/android-foss: high-trust GitHub Android resource list, but FOSS-focused and watch-only unless a genuinely relevant open-source asset exists.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `platform-drafts.md`, `content-calendar.md`, and `link-assets.md` with the source-URL packet, support-community rules packet, and new opportunities.
+- Drafted exact value-first source URL eligibility note and official support community rules/welcome copy in `platform-drafts.md`.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, newsletter suggestion, directory submission, GitHub external issue/PR/comment, APK upload, mirror permission, Discord/community creation, Reddit/LinkedIn/Product Hunt action, Medium publication, or YouTube upload was attempted.
+- Next actions: owner confirms package/signing/hash/developer-verification facts, approved screenshot/demo references, and whether source-first Android surfaces may cite the official download page; owner decides whether a community support surface belongs in the trust stack.

@@ -4035,3 +4035,70 @@ Same as above, then add:
 
 Checklist:
 `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### Direct APK source URL eligibility note
+
+Status: draft
+Target: Android Weekly, Unclouded-style direct APK discovery surfaces, app-source tooling maintainers, Android newsletter editors, or directory reviewers after target rules are checked
+Audience: Android developers, independent APK reviewers, app-source tooling users, directory editors
+Rules risk: medium; OWNER_REVIEW_REQUIRED. Use only through official suggestion/contact paths or authorized owned GitHub/docs. No external GitHub issue, PR, comment, directory submission, APK upload, or mirror permission automatically.
+No-link variant: yes and preferred when rules are unclear.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi team,
+
+I am preparing Nayovi's direct-APK source packet for Android reviewers and app-source directories.
+
+The useful angle is not a generic app promotion. It is how reviewers should cite a direct Android APK workflow without sending users to mirrors or stripping pricing, support, package-fact, and responsible-use context.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It does not host chapters, and public testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Would a source-first checklist about official APK URLs, package/hash fields, screenshot rights, and no-mirror review boundaries fit your resource guidelines, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+Reviewer checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### Official support community rules packet
+
+Status: draft
+Target: Future official Discord/community support surface if the owner decides it belongs in the trust stack
+Audience: beta testers, reviewers, approved-sample pilot contacts, support users
+Rules risk: medium; OWNER_ACTION_REQUIRED. No server creation, invite publication, terms acceptance, moderation action, bot setup, or automated posting by the agent.
+No-link variant: yes for rules/welcome copy.
+Link variant after owner review: `https://tachiyomiat.com/support`
+
+Welcome copy:
+
+Welcome to the official Nayovi support community.
+
+This space is for install questions, activation help, reviewer access routing, OCR workflow feedback, and approved-sample testing questions.
+
+Do not upload, request, trade, or link manga, manhwa, or manhua chapters here. Do not share private redeem codes, private screenshots, account credentials, or copyrighted pages that you do not have permission to process.
+
+For public examples, use only owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Support routing:
+- APK source and install context: official download page
+- Activation, free trial, redeem code, or token-plan questions: support path
+- Reviewer or partner testing: owner-approved review-code route only
+- Unsafe sample requests or chapter-sharing requests: stop and remove
+
+Link variant:
+
+Official support:
+`https://tachiyomiat.com/support`
+
+Official APK source:
+`https://tachiyomiat.com/download`
