@@ -18,6 +18,21 @@ Nayovi is distributed as an official Android APK from the Nayovi-owned web flow.
 
 Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the user has permission to process.
 
+## 2026 Android Verification Context
+
+Current official Android developer verification documentation says apps installed on certified Android devices in select regions must be registered by a verified developer starting in September 2026. Treat this as source context for Nayovi's reviewer packet, not as proof that Nayovi is already verified, Play-listed, or package-registered.
+
+Safe public wording before owner confirmation:
+
+> Nayovi can provide official source links and current APK metadata now. Package name, signing-certificate fingerprint, Android developer verification status, and package registration state are pending owner confirmation and should not be inferred from third-party mirrors.
+
+Blocked wording before owner confirmation:
+
+- Do not claim Nayovi is verified by Google.
+- Do not claim Nayovi is available through Google Play or any Android app store unless the owner confirms it.
+- Do not publish package name or signing-certificate fingerprint from mirrors, screenshots, APK tools, or community posts.
+- Do not describe package registration as complete, pending, rejected, or not applicable unless the owner supplies exact public language.
+
 ## Owner-Confirmed Fields Needed
 
 Do not publish or cite these fields until the owner confirms them.

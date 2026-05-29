@@ -115,6 +115,28 @@ const downloadStructuredData = () => {
       description:
         'Mark missing package, signing, and verification details as owner-confirmation required instead of copying claims from mirrors or third-party pages.',
     },
+    {
+      name: 'Prepare Android 2026 verification language',
+      description:
+        'For Android developer verification coverage, cite package, signing, registration, and verification status as pending owner confirmation until the official owner supplies exact public facts.',
+    },
+  ] as const;
+  const androidVerificationItems = [
+    {
+      name: 'Use pending-language readiness',
+      description:
+        'Nayovi can cite official APK source links and current file metadata now, while package name, signing fingerprint, developer verification status, and package registration state remain owner-confirmation required.',
+    },
+    {
+      name: 'Avoid unsupported verification claims',
+      description:
+        'Do not imply Google Play approval, Android developer verification, store availability, or third-party endorsement before the owner confirms those public facts.',
+    },
+    {
+      name: 'Preserve source-of-truth context',
+      description:
+        'Reviewer and directory citations should keep download, pricing, support, privacy, terms, responsible-use, and screenshot-policy context attached to the APK metadata.',
+    },
   ] as const;
   const citationReadinessItems = [
     {
@@ -222,6 +244,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#owner-confirmed-apk-fields`,
       name: 'Nayovi owner-confirmed APK trust fields',
       itemListElement: ownerConfirmationItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#android-developer-verification-readiness`,
+      name: 'Nayovi Android developer verification readiness',
+      itemListElement: androidVerificationItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Android reviewers/directories | Android 2026 developer verification context | Pending-language direct APK trust note | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: cite official Android verification context only as background; do not claim Nayovi is verified, Play-listed, or package-registered until owner confirms facts. |
+| draft | AI directory | ToolDirectory.AI-style AI tool directories | Accurate trial plus paid-token listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit fields and skip paid, reciprocal, hidden-redirect, mirror-first, forever-free, or open-source mislabeling flows. |
+| draft | GitHub/newsletter | Manga OCR QA resource note | Research-context comic OCR checklist | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Use Manga109-v2026 only as context for missing regions, transcription drift, overlapping dialogue, and segmentation checks; no benchmark or endorsement claim. |
 | draft | Creator platform | WEBTOON official contact departments | Approved-sample OCR pilot contact-path note | https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot | OWNER_REVIEW_REQUIRED: owner chooses product help vs IP/business vs partnership vs press before any send; no catalog-processing implication. |
 | draft | Localization studio | Webtoonix-style webtoon localization teams | Android-side OCR QA feedback note for creator-controlled samples | None by default | OWNER_REVIEW_REQUIRED: no-link first; use public contact path only; no replacement pitch or backlink ask. |
 | watch | Conference/research | IAMCR Comic Art / GEM-style venues | Future visual-storytelling OCR QA topic outline | None by default | WATCH_ONLY: no submission until original approved-sample measurements exist and owner approves byline/scope. |
@@ -112,6 +115,73 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Creator program context | KADOKAWA WORLD MANGA ATELIER | Creator-safe approved-sample language context | None | WATCH_ONLY: no outreach or endorsement claim; use only to improve owned creator-safe copy. |
 
 ## Draft Bodies
+
+### Android 2026 developer verification pending-language note
+
+Status: draft
+Target: Android reviewers, APK directories, Android newsletters, app-testing portals
+Audience: editors or reviewers asking whether Nayovi is ready for direct-APK coverage under Android developer verification changes
+Rules risk: low for owned/editorial packets; medium if sent as a pitch before package facts are owner-confirmed.
+No-link variant: yes.
+Link variant: `https://tachiyomiat.com/download`
+
+Subject:
+Nayovi direct APK verification context
+
+Body:
+
+Hi team,
+
+Nayovi is an official Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+For any review or directory note under the 2026 Android developer verification rollout, please treat package name, signing-certificate fingerprint, Android developer verification status, and package registration state as owner-confirmation-required fields. I do not want those facts inferred from mirrors, screenshots, community posts, or APK index pages.
+
+The currently safe citation packet is the official download page, current APK metadata, SHA-256, pricing, support, privacy, terms, responsible-use guide, and screenshot policy. Nayovi does not host or distribute chapters and should be tested only with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved pages.
+
+No-link version: I can provide the current source-of-truth packet and reviewer-safe pending language if useful.
+
+Link version: The source-of-truth download and reviewer packet starts here: https://tachiyomiat.com/download
+
+Best,
+Nayovi team
+
+### ToolDirectory.AI-style listing eligibility note
+
+Status: draft
+Target: AI tool directories with pricing/category filters
+Audience: directory editors or submit-form reviewers
+Rules risk: medium; use official submit/contact path only, no paid placement, no reciprocal backlink, no hidden redirect, no mirror-first APK copy.
+No-link variant: yes.
+Link variant: `https://tachiyomiat.com/download` or `https://tachiyomiat.com/translate-manhwa-ai` only if accepted fields preserve source-of-truth context.
+
+Short listing copy:
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It provides official APK access, free trial or redeem-code activation, monthly hosted OCR/translation token plans, support paths, and permission-safe testing for owned, public-domain, official-sample, creator-provided, or otherwise approved pages. Nayovi does not host or distribute chapters.
+
+Eligibility question:
+
+Would Nayovi fit your directory as an Android OCR/translation workflow if the listing can show official APK source, trial plus paid-token pricing, support, privacy/terms, and responsible-use boundaries? If your directory requires forever-free wording, open-source labeling, reciprocal links, paid backlink placement, hidden redirects, or mirror-first APK hosting, please treat Nayovi as not eligible.
+
+### Manga OCR QA research-context note
+
+Status: draft
+Target: GitHub OCR maintainers, Android newsletters, technical editors, localization communities
+Audience: technical readers who need a product-light OCR QA resource
+Rules risk: low if the note is useful without the backlink and does not imply research endorsement.
+No-link variant: yes.
+Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Body:
+
+I am maintaining a product-light comic OCR QA checklist for approved manga, manhwa, manhua, and webtoon samples.
+
+The checklist starts before translation quality: permission scope, missing text regions, vertical text, sound effects, overlapping dialogue, under-segmented balloons, reading order, glossary consistency, human correction, and whether any output can be shared publicly.
+
+Current manga OCR research, including Manga109-v2026, is useful background because annotation and OCR issues can affect translation review before the model ever sees clean text. I am using that as context only, not claiming dataset access, benchmark performance, or external endorsement.
+
+No-link version: happy to summarize the checklist if this is useful for resource review.
+
+Link version: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
 
 ### WEBTOON department-specific approved-sample note
 
