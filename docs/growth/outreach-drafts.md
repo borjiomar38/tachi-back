@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: pricing referral quality packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/pricing` with a referral-quality packet for reviewers, affiliates, directories, and approved communities. The packet keeps normal readers on checkout, routes review or pilot needs to support for dedicated codes, and holds weak placements that cannot preserve the official APK, pricing, support, and responsible-use context.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, recheck current rules/contact paths before contacting any new AI directory, or use existing Nube/Genga official-form drafts only through public official forms.
+
 ### Autonomous cycle: manhwa translator renewal proof packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
