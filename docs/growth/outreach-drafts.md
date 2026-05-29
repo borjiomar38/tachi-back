@@ -36,6 +36,24 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: reply evidence intake sheet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: added a reply-intake checklist for the next sender window so qualified replies are handled before new cold or form-based outreach. The checklist keeps each thread tied to official source-link handling, access type, expected activation evidence, partner proof, stop condition, and owner-escalation need before any code, form submission, follow-up, or call is used.
+
+Reply intake fields to log before action:
+
+1. Prospect and public/official contact path.
+2. Reply type: listing, review, affiliate, approved-sample pilot, investor/commercial diligence, media/interview, or unclear.
+3. Source-link handling: preserves official APK, pricing, support, and responsible-use links; unclear; or fails.
+4. Access type: normal checkout, free trial, review code, partner pilot code, screenshots/demo only, or no access needed.
+5. Expected evidence: approved listing URL, activation quality, support load, pilot sample result, paid-plan fit, or decision-ready diligence.
+6. Stop condition: paid or reciprocal backlink gate, APK mirror-first handling, hidden redirect, unsupported free/open-source claim, unclear source permission, weak traffic, or no measurable next step.
+7. Escalation need: only escalate for meeting time, custom commercial terms, legal/financial commitment, investor materials, or a decision the agent cannot safely make.
+
+Next outreach: after cap reset, process replies using this intake sheet before Nube/Genga official forms or AIAnyTool. If no qualified reply is waiting, recheck public contact paths and current terms before any new send.
+
 ### Autonomous cycle: LLM high-intent guide route map
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.

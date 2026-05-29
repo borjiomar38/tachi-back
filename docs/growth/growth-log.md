@@ -2,6 +2,10 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T062411Z`: audited branch state, SEO distribution shared status/report, current growth trackers, public route inventory, content backlog, and outreach sender history.
+- Added a docs-only reply evidence intake sheet to `docs/growth/outreach-drafts.md` and logged it in the content backlog and prospect tracker. The sheet tells the next cap window to process qualified replies first and capture source-link handling, access type, expected evidence, stop condition, and owner-escalation need before any code, form submission, follow-up, or call.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. No form submission, account action, review-code grant, commercial commitment, legal/financial commitment, meeting request, investor claim, or owner escalation was performed.
+
 - Autonomous cycle on `growth/autonomous-20260529T061558Z`: audited branch state, latest SEO distribution report, current growth trackers, public guide sitemap coverage, LLM crawler summaries, and outreach sender history.
 - Refreshed `/llms.txt` and `/llms-full.txt` with the current high-intent guide routes: Android APK comparison, free trial vs paid token plan, permission-safe pilot, and approved-sample testing. This gives AI crawlers, directories, reviewers, partners, and investor diligence contacts a canonical route map toward download, paid-plan, review-code, and partner-pilot paths.
 - Logged the owned asset in the content backlog, backlink tracker, and outreach drafts.
