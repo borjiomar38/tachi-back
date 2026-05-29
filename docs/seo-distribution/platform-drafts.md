@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | LinkedIn | Official Nayovi company/founder profile | Source-of-truth profile launch and partner trust post | https://nayovi.com | AUTHORIZED_ACCOUNT_REQUIRED: owner-created official profile and API/manual posting approval required; no automated DMs, comments, or scraped targeting. |
+| draft | YouTube | Official Nayovi channel | Sample-safe Android OCR workflow demo metadata | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official channel, approved demo asset, thumbnail rights, and optional API token required before upload or metadata update. |
+| draft | AI directory | FutureTools-style submit path | Quality-filtered Nayovi OCR/translation listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: submit only if official APK, pricing, support, and responsible-use links remain visible and no paid/reciprocal/hidden-redirect flow is required. |
 | draft | AI directory | ToolIndex submit tool | Accurate Android OCR/AI translation workflow listing | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit form only; use Freemium or Free Trial plus Paid only if the current form supports exact wording; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
 | draft | AI directory | Cocoon AI Tools Directory | Human-reviewed Translation category listing for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit form only; use Freemium pricing, plain-English one-line description, and no hidden paid/reciprocal/misleading free claims. |
 | watch | Resource directory | Whipscribe tools directory | Translation/OCR taxonomy context, not a ready listing | None by default | WATCH_ONLY: current fit is speech/transcription-heavy; do not submit unless a visual OCR category or official contact path is verified. |
@@ -120,6 +123,81 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Creator program context | KADOKAWA WORLD MANGA ATELIER | Creator-safe approved-sample language context | None | WATCH_ONLY: no outreach or endorsement claim; use only to improve owned creator-safe copy. |
 
 ## Draft Bodies
+
+### LinkedIn official profile launch post
+
+Status: draft
+Target: Official Nayovi LinkedIn company page or founder-owned profile
+Audience: partners, Android reviewers, creator-platform teams, localization operators, investors
+Rules risk: medium; requires official profile ownership, manual review, and API or owner-posting authorization. No automated DMs or comment campaigns.
+No-link variant: yes.
+Link variant: `https://nayovi.com` and `https://tachiyomiat.com/download`
+
+No-link variant:
+
+Nayovi is setting up its official public trust surfaces before wider outreach.
+
+The product is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The boundaries matter: Nayovi does not host or distribute chapters, and testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+The immediate focus is source-of-truth links, reviewer-safe screenshots, APK trust context, support paths, and approved-sample OCR QA.
+
+Link variant:
+
+Nayovi is setting up its official public trust surfaces before wider outreach.
+
+The product is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It does not host or distribute chapters, and testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Source-of-truth links:
+- Brand: https://nayovi.com
+- Official APK: https://tachiyomiat.com/download
+- OCR QA checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+- Approved-sample pilot guide: https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+### YouTube official demo metadata
+
+Status: draft
+Target: Official Nayovi YouTube channel
+Audience: Android reviewers, AI directory editors, Product Hunt viewers, partners, investors
+Rules risk: medium; requires official channel, owner-approved video/thumbnail, and no unauthorized chapter footage.
+No-link variant: no; YouTube description should include official source links.
+Link variant: `https://tachiyomiat.com/download`
+
+Title:
+Nayovi Android OCR translation workflow demo
+
+Description:
+
+Official Nayovi demo using approved sample material only.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It supports official APK access, free trial or redeem-code activation, monthly token plans, support paths, and sample-safe OCR testing.
+
+Nayovi does not host or distribute chapters. Use it with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved content.
+
+Official links:
+- Brand: https://nayovi.com
+- APK download: https://tachiyomiat.com/download
+- OCR checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+- Approved-sample pilot guide: https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Pinned comment:
+Official source links: https://nayovi.com and https://tachiyomiat.com/download. Please use approved samples only; Nayovi does not host or distribute chapters.
+
+### FutureTools-style AI directory eligibility note
+
+Status: draft
+Target: AI directory submit/contact path where current rules preserve official source links
+Audience: AI directory reviewer
+Rules risk: medium; directory quality varies and submission must stop if paid placement, reciprocal links, hidden redirects, forever-free wording, open-source labeling, or APK mirroring are required.
+No-link variant: yes for initial eligibility email; no for actual listing form.
+Link variant: `https://tachiyomiat.com/download`
+
+Eligibility question:
+
+Would Nayovi fit your directory as an Android OCR/AI translation workflow if the listing can keep official APK, pricing, support, privacy/terms, and responsible-use links visible?
+
+Nayovi provides official APK access, free trial or redeem-code activation, monthly hosted OCR/translation token plans, and support paths. It does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+If the directory requires paid backlink placement, reciprocal links, hidden redirects, mirror-first APK hosting, forever-free claims, or open-source labeling, please treat Nayovi as not eligible.
 
 ### Android 2026 developer verification pending-language note
 
