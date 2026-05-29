@@ -63,6 +63,70 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Android newsletter/editorial submitter profile | Technical trust surface for independent APK review and hosted OCR testing resources | setup_packet_prepared_owner_action_required | Owner approves submitter identity, package/signing facts, screenshot set, and publication-specific submission path manually | `docs/seo-distribution/android-newsletter-submission-packet.md`, APK review packet, screenshot policy, package/signing facts, approved screenshots | `SEO_AGENT_ANDROID_NEWSLETTER_SUBMISSION_REFERENCE`; no private editor contacts or account credentials | Agent can prepare official newsletter/editorial submissions after owner confirms exact facts and official paths | Owner reviews the Android newsletter packet and confirms package/signing/screenshot fields before any Android Weekly/Kotlin Weekly/Android Developers-style submission. |
 | high | Official app-testing/reviewer portal profiles | Third-party APK trust evidence for reviewers, AI directories, Android newsletters, and partner diligence | setup_packet_prepared_owner_action_required | Owner creates or authorizes only official Nayovi submitter profiles and manually approves any APK upload, tester scope, public report permission, and portal terms | APK review packet, signed APK URL, SHA-256, package/signing placeholders, approved screenshots, reviewer screenshot policy, safe sample plan, support/pricing/legal links | `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`; per-portal token only if an official API exists; no private login data | Agent can prepare portal-specific test briefs and review packets after owner approval; no upload, campaign, or review request without explicit authorization | Owner reviews AppTester.co/APKLand/AppsTested-style portal quality, confirms package facts and sample rights, and decides whether any public report may cite Nayovi. |
 | medium | OCR/resource directory submitter profile | Product-light citation surface for comic OCR QA checklist and hosted Android OCR workflow | setup_packet_prepared_owner_action_required | Owner creates/connects official submitter identity only where a directory requires login or terms acceptance; agent must not submit forms automatically | Checklist title, canonical URL, neutral description, category tags, pricing/support context if product is listed, approved screenshots only if requested | `SEO_AGENT_OCR_RESOURCE_DIRECTORY_REFERENCE`; per-directory API token only if owner enables one | Agent can prepare no-link-first resource notes or accurate listings after current rules review | Owner approves whether OCR Vendors/Capterra-style OCR directories are resource-context only or eligible for an official listing; skip bid-placement, paid-link, reciprocal, or generic document-scanner mislabeling flows. |
+| high | Official app testing/reviewer submitter profile | Owner-controlled Android app-health-check and independent review routing without fake reviews, mirror-first APK uploads, or unsafe screenshots | setup_packet_prepared_owner_action_required | Owner chooses eligible portals, approves terms manually, confirms APK sharing scope, sample pages, review-code policy, and whether any public report may cite Nayovi | `docs/seo-distribution/app-testing-review-brief.md`, APK trust profile, screenshot policy, signed APK URL, SHA-256, package/signing pending language, approved sample references | `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`; per-portal token only if official API exists; no private login data | Agent can prepare portal-specific fit questions and reviewer briefs after owner approval; no upload, tester campaign, public report approval, payment, or review request without explicit authorization | Owner reviews AppTester.co, APKLand, AppsTested, and similar portals against the brief, confirms source-link/no-mirror rules, and decides whether any testing path is allowed. |
+| medium | AI/free-trial directory submitter profile | Accurate listing on directories that evaluate free trials, pricing, APIs, OCR, Translation, and workflow categories | setup_packet_prepared_owner_action_required | Owner approves official submitter identity, contact path, pricing label, category, and form-specific source-link handling manually | One-line description, long description, canonical links, pricing/support URLs, responsible-use line, screenshots only if approved, directory quality gate | `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`; per-directory token only if official API exists | Agent can prepare eligibility questions for SpotFreeAI, Try.fm, ToolDirectory.AI, AiMatch, and similar surfaces after rules review | Owner confirms Nayovi can be represented as free trial plus paid monthly token plans and rejects forever-free, reciprocal-link, hidden-redirect, paid-placement, or mirror-first flows. |
+
+## 2026-05-29 Current Cycle Setup Advancement
+
+### Official App Testing / Reviewer Submitter Profile
+
+Status: OWNER_ACTION_REQUIRED for portal choice, manual account or terms steps, APK sharing scope, sample approval, review-code policy, and public-report permission.
+
+Prepared packet:
+- `docs/seo-distribution/app-testing-review-brief.md`
+- `docs/seo-distribution/android-apk-trust-profile.md`
+- `docs/reviewer-screenshot-policy.md`
+- `docs/nayovi-apk-review-packet.md`
+
+Profile and submission fields:
+- Product name: `Nayovi`
+- Category: `Android OCR and AI translation workflow`
+- One-line description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Official APK URL: `https://tachiyomiat.com/download`
+- Brand URL: `https://nayovi.com`
+- Support URL: `https://tachiyomiat.com/support`
+- Pricing URL: `https://tachiyomiat.com/pricing`
+- Responsible-use line: `Nayovi does not host or distribute chapters; testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+
+Credential reference:
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` for a non-secret portal/account reference only.
+- Per-portal API token only if the owner later authorizes an official API workflow.
+- Do not store portal passwords, cookies, verification screenshots, private reviewer codes, or identity documents in docs.
+
+Agent capability after connection:
+- The agent can prepare portal-specific fit questions and reviewer briefs.
+- The agent must not upload APK files, start tester campaigns, buy reviews, request ratings, approve public reports, or grant mirror permission without explicit owner approval.
+
+Next action:
+- Owner reviews AppTester.co, APKLand, AppsTested, and similar portals against `app-testing-review-brief.md`, confirms package/signing facts or pending-language copy, and chooses whether any portal may test from the official download page.
+
+### AI / Free-Trial Directory Submitter Profile
+
+Status: OWNER_ACTION_REQUIRED for official submitter identity, directory-specific rule review, contact path, category, pricing label, and source-link preservation.
+
+Priority surfaces to evaluate:
+- SpotFreeAI-style free-tier and trial-only directories.
+- Try.fm-style free-trial software directories.
+- ToolDirectory.AI-style pricing and category directories.
+- AiMatch-style comparison directories with OCR, API, and Translation filters.
+
+Required listing fields:
+- Tool name: `Nayovi`
+- Short description: `Android hosted OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Category candidates: `Translation`, `OCR`, `Android`, `AI workflow`, or `Productivity` only if the live form supports accurate labels.
+- Pricing: `Free trial` or `Freemium` only when the form allows paid monthly token plans to be described clearly.
+- Canonical links: `https://tachiyomiat.com/download`, `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`.
+- Responsible-use line: `No chapter hosting; use with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Credential reference:
+- `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`; per-directory token only if the platform provides an official API workflow and owner authorization exists.
+
+Agent capability after connection:
+- The agent can prepare exact field-level listing copy and reject low-quality flows.
+- The agent must not submit forms, create accounts, accept terms, pay for listings, or add reciprocal backlinks automatically.
+
+Next action:
+- Owner approves submitter identity and confirms which directories preserve source links and pricing context before any manual or authorized submission.
 
 ## 2026-05-28 Setup Packets
 
