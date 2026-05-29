@@ -227,6 +227,34 @@ const ownerConfirmationRows = [
     value:
       'Do not copy package or verification claims from mirrors, screenshots, third-party APK pages, or community comments.',
   },
+  {
+    label: '2026 rollout',
+    value:
+      'For Android developer verification coverage, cite pending package, signing, and registration fields as owner-confirmation required until the official owner supplies exact public facts.',
+  },
+] as const;
+
+const androidVerificationRows = [
+  {
+    label: 'Reviewer wording',
+    value:
+      'Nayovi is an official direct APK workflow; package name, signing fingerprint, developer verification status, and package registration state are pending owner confirmation.',
+  },
+  {
+    label: 'Owner evidence',
+    value:
+      'The owner must confirm package identity, signing-certificate fingerprint, Android Developer Console or Play Console registration state, and any public verification language.',
+  },
+  {
+    label: 'Allowed citation',
+    value:
+      'Cite the official download page, current APK metadata, support, pricing, privacy, terms, and responsible-use guide while those release identity fields remain pending.',
+  },
+  {
+    label: 'Blocked citation',
+    value:
+      'Do not state or imply Google Play approval, Android developer verification, store availability, or third-party endorsement before those facts are confirmed.',
+  },
 ] as const;
 
 const citationReadinessRows = [
@@ -643,6 +671,46 @@ export const PageDownload = () => {
               Keep any missing package, signing, or verification fields marked
               as owner-confirmation required until Nayovi confirms the exact
               values.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Android 2026"
+        title="Developer verification readiness"
+        description="Use this language for reviewers, directories, and Android newsletters that ask how Nayovi handles the 2026 Android developer verification rollout."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {androidVerificationRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[11rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              The correct public stance is pending-language readiness: Nayovi
+              can provide official source links and current APK metadata now,
+              while package registration, signing fingerprint, and Android
+              developer verification fields must wait for owner-confirmed
+              release identity facts.
+            </p>
+            <p>
+              This protects reviewers from copying unsupported mirror claims
+              and gives directory editors a clear reason to preserve the
+              official download page as the source of truth.
             </p>
           </CardContent>
         </Card>
