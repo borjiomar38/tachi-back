@@ -13,6 +13,7 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | LinkedIn company/founder profile | Founder/company trust, partner/investor visibility | setup_packet_prepared_owner_action_required | Create/connect official company page or founder-owned page | Logo, banner, company bio, website links | SEO_AGENT_LINKEDIN_ACCESS_TOKEN, SEO_AGENT_LINKEDIN_ORGANIZATION_ID | Publish official build-in-public and partnership posts | Owner creates/connects page and approves first post queue; agent remains draft-only until API access exists. |
 | medium | Product Hunt maker/company | Launch credibility and early product feedback | setup_packet_prepared_owner_action_required | Create/connect official maker/company account and accept launch terms manually | Logo, tagline, demo video, product screenshots, pricing/support links, maker comment | SEO_AGENT_PRODUCTHUNT_TOKEN | Prepare launch page and authorized maker comments | Owner chooses launch timing, creates/connects maker profile, and approves the launch packet below; no upvote requests or automated comments. |
 | medium | DEV/Medium technical publishing | Technical authority for OCR, merge QA, hosted Android workflow | setup_packet_prepared_owner_action_required | Connect official publication/profile account and approve canonical policy | Canonical article drafts, profile bio, logo, approved screenshots | SEO_AGENT_DEVTO_API_KEY, SEO_AGENT_MEDIUM_INTEGRATION_TOKEN | Publish canonical technical articles where allowed | Owner creates/connects official DEV or Medium profile; agent can publish only after approved API scope exists. |
+| medium | Medium official publication/profile | Canonical technical trust archive for OCR QA, APK trust, and responsible-use notes | setup_packet_prepared_owner_action_required | Owner creates/connects official Medium profile or publication and approves canonical import policy manually | Profile bio, logo/avatar, canonical URLs, article draft, approved screenshots only | `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` | Publish owner-approved canonical posts only after account/API scope exists | Owner confirms whether Medium can syndicate the public comic OCR checklist with canonical URL back to Nayovi. |
 | medium | Reddit official account | Community listening and careful no-link feedback posts | setup_packet_prepared_owner_action_required | Create official brand/founder account manually and review subreddit rules | Profile bio, no-link post drafts, support links, affiliation disclosure | SEO_AGENT_REDDIT_CLIENT_ID, SEO_AGENT_REDDIT_CLIENT_SECRET, SEO_AGENT_REDDIT_REFRESH_TOKEN | Draft or post rule-compliant no-link/value-first content | Owner creates official account, reviews target subreddit rules, and connects API only if posting is desired. |
 | medium | X/Twitter official account | Lightweight product updates and partner discovery | setup_packet_prepared | Create/connect official Nayovi account | Bio, avatar, banner, first posts | SEO_AGENT_X_ACCESS_TOKEN | Publish concise official updates if API/rules allow | Owner creates official account and confirms whether API posting should be enabled. |
 | medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_prepared | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Owner reviews directory quality filter before any form submission. |
@@ -237,6 +238,70 @@ Next action:
 ### Crunchbase Organization Profile
 
 Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, and any manual verification.
+
+## 2026-05-29 Setup Packets
+
+### Official Newsletter / Substack Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation, terms acceptance, sender identity, and first issue approval.
+
+Public profile fields:
+- Publication name: `Nayovi Updates`
+- One-line description: `Official notes on Nayovi Android APK trust, OCR translation QA, approved-sample testing, and responsible AI-assisted manga, manhwa, and manhua reader workflows.`
+- About text: `Nayovi is an Android APK and hosted OCR/AI translation workflow. It does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content the reader has permission to process.`
+- Primary link: `https://nayovi.com`
+- APK/source link: `https://tachiyomiat.com/download`
+- Technical checklist link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+First issue packet:
+- Title: `What reviewers should verify before citing an independent Android OCR APK`
+- Angle: official source links, package/signing facts as pending until owner-confirmed, screenshot permission, review-code path, support/pricing links, and no chapter hosting.
+- Do not import contacts, scrape emails, bulk-send, or turn this into outreach automation.
+
+Required assets:
+- Official logo/avatar.
+- Optional banner using only product UI or approved-sample visuals.
+- Owner-approved public sender/byline.
+- Approved screenshot references only; no unauthorized pages or private redeem codes.
+
+Credential reference:
+- `SEO_AGENT_NEWSLETTER_API_TOKEN` only if the owner enables a compliant official API workflow. Store actual values only in `/opt/tachi-back/.env.seo-distribution-agent` or approved secret store.
+
+Agent capability after connection:
+- The agent can draft official issues, update public profile copy, and prepare canonical links after owner approval. It must not import contacts, send bulk email, or publish issues without explicit account/API authorization.
+
+Next action:
+- Owner creates/connects the official newsletter profile, approves sender identity and first issue scope, and confirms whether the agent remains draft-only.
+
+### Medium Official Publication/Profile
+
+Status: OWNER_ACTION_REQUIRED for profile creation, canonical policy approval, and optional API token connection.
+
+Public profile fields:
+- Display name: `Nayovi`
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; approved samples and permission-safe use only.`
+- Website: `https://nayovi.com`
+- Primary technical link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+First article packet:
+- Title: `Comic OCR translation QA checks before judging AI output`
+- Canonical URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Angle: sample permission, OCR coverage, reading order, segmentation drift, glossary consistency, human correction, screenshot boundaries, and responsible public sharing.
+- Disclosure: `Written by the Nayovi team as a product-light OCR QA checklist; Nayovi is an Android APK and hosted OCR/AI translation workflow.`
+
+Required assets:
+- Official logo/avatar.
+- Canonical markdown draft from `docs/seo-distribution/platform-drafts.md`.
+- Approved screenshots only if the owner confirms sample rights.
+
+Credential reference:
+- `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` only after owner-authorized API setup. Store actual values only in the approved secret store.
+
+Agent capability after connection:
+- The agent can prepare or publish owner-approved canonical Medium posts only when profile/API scope is connected. It must not automate claps, follows, replies, or duplicate syndication without canonical handling.
+
+Next action:
+- Owner creates/connects the official Medium profile or publication and confirms whether the comic OCR checklist can be syndicated with canonical URL back to Nayovi.
 
 ## 2026-05-29 Setup Packet Additions
 

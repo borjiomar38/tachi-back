@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 1
+
+- Verified branch `seo/distribution-20260529T002418Z`; `/var/lib/tachi-seo-distribution-agent/accounts.json` shows owned GitHub/docs are configured and all external social/directory channels remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and the account registry before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Official newsletter/Substack-style public archive packet for APK trust notes, OCR QA updates, approved-sample lessons, and strict no contact-import/no bulk-send guardrails.
+  - Medium official profile/publication packet for canonical syndication of the comic OCR QA checklist with official profile fields and `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` as the non-secret credential reference.
+- Improved owned content at `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` by adding a research-context section for missing OCR regions, segmentation drift, transcription checks, and evidence boundaries before translation quality is judged.
+- Researched rotated authority opportunities across different categories:
+  - WEBTOON's 2026 unified CANVAS/Translation Program context: useful background for creator-controlled, opt-in, permission-safe language, not a backlink or catalog-processing target.
+  - Official newsletter/Substack-style archive: owned trust surface for reviewers, partners, investors, and app directories after owner account setup.
+  - FutureTools-style AI directory quality filter: possible high-intent discovery only if official APK, pricing, support, and responsible-use links are preserved without paid/reciprocal/forever-free mislabeling.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned content, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md`: official newsletter first issue and Medium canonical OCR QA article.
+- No external posting, account creation, form submission, login, terms acceptance, or APK upload was attempted.
+- Next actions: owner creates/connects newsletter and Medium profiles, confirms package/signing/developer-verification facts, approves screenshots, and then owner-reviews any directory or platform submission.
+
 ## 2026-05-29T00:43Z Cycle
 
 Branch: `seo/distribution-20260529T001538Z`
