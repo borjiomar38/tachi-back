@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Indie Hackers / founder communities | Official founder-owned Nayovi profile | No-link APK trust and OCR workflow feedback post | None by default | OWNER_ACTION_REQUIRED: founder-owned truthful profile, affiliation disclosure, rules review, and manual posting required; no scraped DMs, voting, or engagement automation. |
+| draft | Android/open-source tooling | Obtainium-style direct APK source discussions | Official source URL and direct-APK trust note | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED for external GitHub/community comments; use owned docs first and link only if a maintainer/user explicitly asks for examples. |
+| draft | AI/free-trial directory | ToolPilot / pricing-aware AI directories | Accurate free-trial plus paid-token listing eligibility | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify current submit rules and source-link fields; skip paid backlink, reciprocal link, hidden redirect, mirror-first APK, forever-free, or open-source mislabeling. |
 | draft | Product Hunt | Official Nayovi maker/company profile | Launch packet asking for APK trust and OCR workflow feedback | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official maker/company account, launch timing, approved screenshots/demo media, and no-upvote-request policy required before launch. |
 | draft | Official newsletter | Nayovi Notes public archive | First issue introducing APK trust checks and approved-sample OCR QA | docs/seo-distribution/official-newsletter-first-issue.md | OWNER_ACTION_REQUIRED: official newsletter account, sender identity, and publication approval required; no contact import or bulk email. |
 | draft | AI directory | AINovaTools submit-tool path | Accurate AI Translation/OCR listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
@@ -137,6 +140,58 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Localization media/podcast | SlatorPod / Slator-style language industry media | Future approved-sample visual OCR QA topic | None by default | WATCH_ONLY: hold until owner approves screenshots, sample evidence, byline, and non-promotional topic; no backlink ask or consumer APK pitch. |
 
 ## Draft Bodies
+
+### Founder community no-link APK trust feedback post
+
+Status: draft
+Target: Indie Hackers, founder-owned Product Hunt maker profile update, Hacker News-style founder feedback thread, or comparable build-in-public community after current rules review
+Audience: founders, Android builders, technical marketers, AI workflow testers
+Rules risk: medium; founder-owned official profile, affiliation disclosure, manual posting, and community-specific rules review are required. No automated comments, vote requests, scraped DMs, or repeated reposting.
+No-link variant: yes and preferred.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link variant:
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+The product question I am trying to validate is not "can AI translate a page?" It is whether a direct-APK workflow can be trusted enough for reviewers, partners, and serious users:
+- official download source and support path
+- clear free trial or redeem-code activation before paid token plans
+- safe screenshots using owned, public-domain, official-sample, creator-provided, or permission-approved material
+- no chapter hosting or catalog distribution
+- package/signing/developer verification facts that are confirmed by the owner before being cited
+
+For people who review Android tools or AI workflows, what would you need to see before trusting an independent APK in this category?
+
+Link variant:
+
+Same as above, then add:
+
+The current source-of-truth page is here if context helps: `https://tachiyomiat.com/download`
+
+I am looking for trust objections and workflow feedback, not signups or promotional comments.
+
+### Obtainium-style direct APK source note
+
+Status: draft
+Target: owned docs first; external GitHub/community mention only if a maintainer/user explicitly asks for direct-APK source examples
+Audience: Android power users, direct-APK reviewers, app-source tooling maintainers
+Rules risk: medium; do not open promotional issues or discussions. Disclose affiliation if Nayovi is mentioned externally.
+No-link variant: yes for external communities.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Owned-doc note:
+
+Nayovi should be treated as a source-first direct APK workflow. Any app-source, reviewer, or directory context should start with the official download URL, support route, pricing route, responsible-use boundary, and owner-confirmed package/signing facts. APK mirrors, hidden redirects, and listings that separate the APK from support or pricing context should be rejected.
+
+External no-link variant:
+
+I work on Nayovi, so treat this as an affiliated example rather than a recommendation. For direct-APK workflows, the trust questions we are documenting are: official source URL, visible support/pricing links, package/signing facts, update path, no-mirror policy, and whether screenshots use approved sample material.
+
+External link variant:
+
+Only if requested:
+`https://tachiyomiat.com/download`
 
 ### Product Hunt launch packet
 
