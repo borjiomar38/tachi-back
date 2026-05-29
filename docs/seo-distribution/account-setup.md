@@ -2753,3 +2753,74 @@ Publish capability after connection:
 
 Next action:
 - Owner decides whether launch directories belong in the current trust stack and rejects any flow built around paid backlinks, reciprocal links, hidden redirects, artificial reviews, or vote requests.
+
+## 2026-05-29 Current Branch Cycle Pricing-Aware Setup Advancement
+
+### Pricing-Aware Software Directory Submitter Profile
+
+Status: OWNER_REVIEW_REQUIRED for official submitter identity, current directory fields, trial/pricing wording, source-link handling, visual assets, and manual submission approval.
+
+Prepared packet:
+- `docs/seo-distribution/pricing-aware-directory-fit-packet.md`
+- `docs/seo-distribution/free-trial-directory-listing-brief.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Submitter/byline: owner-approved official Nayovi, founder, or developer identity only.
+- One-line description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Pricing label: `Free Trial`, `Trial`, or `Freemium` only when paid monthly token-plan context remains visible.
+- Primary source: `https://nayovi.com`
+- App/download source: `https://tachiyomiat.com/download`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Support: `https://tachiyomiat.com/support`
+- Responsible-use line: `No chapter hosting; use only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Required assets:
+- Logo/avatar, approved screenshots, current trial/token-plan wording, support/privacy/terms links, package facts only if owner confirms them, and no unsafe sample media.
+
+Credential references:
+- `SEO_AGENT_PRICING_AWARE_DIRECTORY_PROFILE_REFERENCE`
+- `SEO_AGENT_TRYFM_PROFILE_REFERENCE`
+- `SEO_AGENT_FINDAIDIR_PROFILE_REFERENCE`
+- `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`
+- No passwords, cookies, payment receipts, email verification links, private review codes, or account recovery data in docs.
+
+Publish capability after connection:
+- Agent can prepare field-level listing copy and eligibility questions after owner approval and current rules review.
+- Agent must not submit forms, create accounts, accept terms, pay for listings, request votes or reviews, upload APKs, or claim directory acceptance automatically.
+
+Next action:
+- Owner reviews whether Try.fm, FindAIDir, or comparable pricing-aware directories can preserve trial plus paid monthly token-plan wording and official source links before any manual submission.
+
+### Official Newsletter / Owned Update Archive Profile
+
+Status: OWNER_ACTION_REQUIRED for official newsletter account setup, sender identity, publication approval, visual assets, and manual terms acceptance.
+
+Prepared packet:
+- `docs/seo-distribution/official-newsletter-first-issue.md`
+- `docs/seo-distribution/official-profile-readiness-checklist.md`
+
+Public profile fields:
+- Display name: `Nayovi Notes`
+- Description: `Official Nayovi updates about Android APK source trust, hosted OCR/AI translation workflow checks, approved-sample boundaries, support paths, and reviewer handoffs.`
+- Primary link: `https://nayovi.com`
+- App source: `https://tachiyomiat.com/download`
+- OCR checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Support: `https://tachiyomiat.com/support`
+- Responsible-use line: `Nayovi does not host chapters; public examples must use owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Required assets:
+- Logo/avatar, banner if supported, sender identity, public contact path, first issue copy, approved screenshots only if owner approves them, and package-fact pending language.
+
+Credential references:
+- `SEO_AGENT_NEWSLETTER_API_TOKEN`
+- `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+- No subscriber lists, private contacts, email verification links, API secrets, analytics exports, or draft credentials in docs.
+
+Publish capability after connection:
+- Agent can prepare public archive issues and profile metadata after owner approval and authorized API connection.
+- Agent must not import contacts, send bulk email, publish issues, scrape subscribers, or cross-post automatically.
+
+Next action:
+- Owner decides whether the newsletter is a public archive only or opt-in email plus archive, creates/connects the official profile manually, and approves the first APK trust issue before publication.

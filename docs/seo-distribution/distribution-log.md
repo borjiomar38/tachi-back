@@ -4,6 +4,23 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-05-29 Current Branch Cycle
 
+- Verified branch `seo/distribution-20260529T062412Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and the current SEO distribution docs before drafting.
+- Advanced account setup priority with two owner-gated official setup tasks:
+  - Pricing-aware software directory submitter profile for Try.fm, FindAIDir, and comparable directories, with exact public fields, pricing/source-link guardrails, asset checklist, credential references, and no-submit/no-payment rules.
+  - Official newsletter / owned update archive profile for `Nayovi Notes`, with sender identity, first-issue scope, approved visual asset gates, credential references, and no contact-import/bulk-email rules.
+- Added owned trust asset `docs/seo-distribution/pricing-aware-directory-fit-packet.md` for source-first directory eligibility questions and accurate free-trial plus paid monthly token-plan wording.
+- Researched rotated authority opportunities through current public search:
+  - Android Weekly: current issue and submit path still fit a technical Android reviewer checklist only after package/screenshot owner approval.
+  - Try.fm: pricing-aware free-trial software directory that may fit if trial plus paid monthly token-plan context and official links stay visible.
+  - FindAIDir: AI submit-tool path that needs directory quality review before any owner-approved listing.
+- Updated `account-setup.md`, `authority-opportunities.md`, `content-calendar.md`, `link-assets.md`, `platform-drafts.md`, and `docs/growth/backlink-prospects.csv` with setup tasks, opportunity rows, draft copy, and linkable asset references.
+- Drafted exact value-first copy in `platform-drafts.md` for Try.fm/FindAIDir-style no-link eligibility questions plus owner setup guidance for the owned newsletter archive.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, contact form submission, directory submission, newsletter publication, contact import, payment, vote/review request, APK upload, review-code grant, LinkedIn/Reddit/GitHub action, YouTube upload, Product Hunt action, or public outreach was attempted.
+- Next actions: owner reviews Try.fm/FindAIDir live fields, confirms submitter identity and pricing wording, creates/connects `Nayovi Notes` if desired, approves first issue scope, and confirms package/signing/screenshot facts before any manual external action.
+
+## 2026-05-29 Previous Branch Cycle
+
 - Verified branch `seo/distribution-20260529T055924Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
 - Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and current SEO distribution docs before drafting so the social/backlink queue supports the active outreach pipeline.
 - Advanced account setup priority with two owner-gated official profile tasks:

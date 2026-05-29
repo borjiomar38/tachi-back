@@ -8,6 +8,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Pricing-aware software directory | Try.fm / FindAIDir-style directories | Free-trial plus paid-token listing eligibility question | docs/seo-distribution/pricing-aware-directory-fit-packet.md | OWNER_REVIEW_REQUIRED: verify live fields, category fit, source-link behavior, pricing labels, and no paid/reciprocal/hidden-redirect requirement before any manual submission. |
+| draft | Official newsletter | Nayovi Notes public archive | First official APK trust and OCR QA update | docs/seo-distribution/official-newsletter-first-issue.md | OWNER_ACTION_REQUIRED: official newsletter account, sender identity, first issue approval, and no contact import or bulk email before publication. |
 | draft | Android newsletter/resource curator | Android Weekly / Kotlin Weekly-style newsletters | Independent APK trust and hosted OCR reviewer checklist | docs/seo-distribution/android-newsletter-resource-pitch.md | OWNER_REVIEW_REQUIRED: manual suggestion only after current rules, package facts, and screenshots are approved; no paid placement or consumer app pitch. |
 | draft | Startup launch directories | Smol Launch / BetterLaunch / FastLaunch-style surfaces | Founder-approved launch listing with source-link and no-vote guardrails | docs/seo-distribution/startup-launch-directory-packet.md | OWNER_ACTION_REQUIRED: founder/company profile and manual submission only; skip vote/review requests, paid backlink packages, hidden redirects, or unsupported metrics. |
 | draft | AI/free-trial directory | ToolsVerse / AIToolSync-style submit paths | Directory scorecard fit question before listing Nayovi | docs/seo-distribution/directory-submission-scorecard.md | OWNER_REVIEW_REQUIRED: verify live fields, pricing labels, and source-link behavior; no form submission, signup, payment, reciprocal link, or hidden redirect. |
@@ -169,6 +171,58 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Reddit / founder communities | r/SideProject-style AI manga translator threads | No-link feedback answer about APK trust and OCR QA | None by default | AUTHORIZED_ACCOUNT_REQUIRED: no Reddit post/comment/DM/vote without official account, current rules review, and owner approval. |
 
 ## Draft Bodies
+
+### Try.fm / FindAIDir pricing-aware directory fit question
+
+Status: draft
+Target: Try.fm, FindAIDir, or comparable pricing-aware software and AI directory after owner review
+Audience: software directory editors, AI-tool directory reviewers, high-intent free-trial searchers
+Rules risk: medium; use only official submit/contact paths and skip any flow that requires paid backlinks, reciprocal links, hidden redirects, fake reviews, vote requests, forever-free wording, open-source mislabeling, or mirror-first APK handling.
+No-link variant: yes for fit questions.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi team,
+
+I am checking listing fit before submitting Nayovi.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A listing would need to preserve official source links, show free-trial plus paid monthly token-plan context, and include the responsible-use boundary: Nayovi does not host chapters and is intended for owned, public-domain, official-sample, creator-provided, or permission-approved material.
+
+Would that type of pricing-aware, source-first listing fit your directory, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Official site:
+`https://nayovi.com`
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+Pricing:
+`https://tachiyomiat.com/pricing`
+
+### Nayovi Notes official newsletter first issue setup note
+
+Status: draft
+Target: official Nayovi newsletter/profile only after owner creates or connects it
+Audience: Android reviewers, AI directories, app-testing portals, creator-platform partners, investor diligence readers
+Rules risk: low for owned archive, medium for email distribution. OWNER_ACTION_REQUIRED; no contact import, bulk email, scraping, or cross-posting automatically.
+No-link variant: not applicable for owned archive.
+Link variant after owner review: `docs/seo-distribution/official-newsletter-first-issue.md`
+
+Owner setup message:
+
+Nayovi Notes should start as a public source-of-truth archive, not a broadcast list.
+
+The first issue should cover official APK source links, package-fact pending language, hosted OCR/AI translation workflow checks, approved-sample boundaries, support/pricing routes, and reviewer-code separation. It should not include private metrics, unapproved screenshots, package/signing facts that the owner has not confirmed, or any subscriber/contact import.
+
+After the owner approves the official profile and sender identity, the agent can keep future issue drafts aligned with the same source-of-truth links.
 
 ### Android newsletter resource suggestion
 
