@@ -229,6 +229,28 @@ const translationWorkflowStructuredData = () => {
         'Wait for a reply or send at most one useful follow-up after the normal interval; skip if the form terms prohibit follow-up or the fit becomes weak.',
     },
   ] as const;
+  const replyPipelinePacket = [
+    {
+      name: 'Waiting',
+      description:
+        'Leave the thread alone when there is no reply, the daily cap is full, or the only next action would be another low-context follow-up.',
+    },
+    {
+      name: 'Send assets',
+      description:
+        'Send the smallest relevant packet when the contact asks for listing fields, screenshots, demo context, reviewer access, or approved-sample pilot details.',
+    },
+    {
+      name: 'Issue tracked access',
+      description:
+        'Use a dedicated review or pilot code only when the source context, sample scope, public link handling, and support path are clear enough to measure.',
+    },
+    {
+      name: 'Escalate or stop',
+      description:
+        'Escalate meetings, custom terms, legal or financial commitments, and investor materials; stop paid-link, mirror-first, hidden-pricing, or unauthorized-catalog threads.',
+    },
+  ] as const;
 
   return [
     {
@@ -345,6 +367,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi official form submission proof packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: formSubmissionProofPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-pipeline`,
+      name: 'Nayovi reply pipeline ledger',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: replyPipelinePacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
