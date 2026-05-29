@@ -977,3 +977,19 @@ Next actions:
 - Added ToolIndex listing copy to `platform-drafts.md` with no-link constraints, source-link preservation checks, pricing guidance, and owner-action gates.
 - Updated `content-calendar.md` and `link-assets.md` with webmaster verification, official newsletter archive, and ToolIndex listing assets.
 - Next actions: owner verifies webmaster properties, chooses the official newsletter profile, confirms Android package/signing/verification facts, and reviews ToolIndex form fields before any manual submission.
+
+## 2026-05-29 Cycle 2
+
+- Verified branch `seo/distribution-20260529T015458Z`; account registry still allows owned GitHub/docs only, so no external posting, account creation, login, form submission, CAPTCHA, terms acceptance, or APK upload was attempted.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two owner-action items:
+  - Added an Android newsletter/editorial submitter profile row and full packet for official Android newsletter submission paths.
+  - Reused the existing official newsletter/Substack setup queue as the owned archive path for APK trust updates, with external newsletter submissions kept separate and owner-gated.
+- Created owned asset `docs/seo-distribution/android-newsletter-submission-packet.md` for a developer-facing independent APK trust and hosted OCR testing checklist. It includes source links, required owner facts, no-link and link variants, and explicit rejection rules for paid placement, reciprocal links, guessed verification facts, and unsafe screenshots.
+- Researched rotated authority opportunities across different categories:
+  - Android Developers newsletter ecosystem: high-trust Android developer surface for technical APK trust and OCR testing content after owner-confirmed package/signing/screenshot facts.
+  - AiMatch: AI comparison directory with pricing/use-case/OCR/Translation filters; possible fit only if official APK, support, pricing, and responsible-use context are preserved.
+  - TopTools.ai: active AI tools directory with Translation Tools entries; possible fit only after current submit rules pass the directory quality filter.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new packet and opportunities.
+- Drafted exact Android newsletter no-link/link submission copy and AiMatch/TopTools-style directory eligibility note in `platform-drafts.md`.
+- Next actions: owner confirms package name, signing fingerprint, Android verification/package registration status, APK hash, approved screenshots, and public submitter path; then use the newsletter packet only through official submission channels.

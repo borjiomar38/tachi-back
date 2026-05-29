@@ -56,6 +56,7 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Android app review/submission profiles | Reviewer-safe Android listing and app-test access | setup_packet_prepared_owner_action_required | Owner approves any app-review portal account, APK sharing scope, screenshot rights, and review-code access manually | APK review packet, SHA-256, package/signing placeholders, approved screenshots, support/pricing/legal links | `SEO_AGENT_ANDROID_REVIEW_PORTAL_REFERENCE`; no private portal login data | Agent can prepare portal-specific packets after owner confirms portal quality and approved test scope | Owner confirms package facts and whether APK upload or reviewer-code access is allowed before any external submission. |
 | high | Owned press/media kit packet | Repo-native source-of-truth packet for journalists, podcasts, newsletters, directories, partners, and investors | owner_review_required | Owner confirms public contact path, profile identity, founder quote policy, logo/screenshot/demo rights, package facts, and public metrics manually | `docs/seo-distribution/press-media-kit-draft.md`, official profile fields, APK review packet, screenshot policy, OCR checklist, approved-sample pilot guide | `SEO_AGENT_PRESS_CONTACT_REFERENCE`, `SEO_AGENT_DEMO_VIDEO_REFERENCE`, `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`; no secrets in docs | Agent can sync owner-approved media-kit copy into directory, newsletter, podcast, LinkedIn, YouTube, Product Hunt, and partner drafts after approval | Owner reviews `docs/seo-distribution/press-media-kit-draft.md` and decides whether it becomes a public site page, repo-native packet, or both. |
 | medium | Official AI directory submitter profile - Cocoon | Accurate reviewed AI-directory listing for Translation category without reciprocal, paid-link, or forever-free mislabeling | setup_packet_prepared_owner_action_required | Owner creates or authorizes official submitter identity, confirms email/contact path, and approves form fields manually | Tool name, website URL, Translation category, Freemium pricing, one-line plain-English description, responsible-use line, official source links | `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`; per-directory token only if official API exists | Agent can prepare owner-approved listing fields and track review status only after account/contact approval | Owner reviews Cocoon listing packet; no form submission until official account/contact and listing copy are approved. |
+| medium | Android newsletter/editorial submitter profile | Technical trust surface for independent APK review and hosted OCR testing resources | setup_packet_prepared_owner_action_required | Owner approves submitter identity, package/signing facts, screenshot set, and publication-specific submission path manually | `docs/seo-distribution/android-newsletter-submission-packet.md`, APK review packet, screenshot policy, package/signing facts, approved screenshots | `SEO_AGENT_ANDROID_NEWSLETTER_SUBMISSION_REFERENCE`; no private editor contacts or account credentials | Agent can prepare official newsletter/editorial submissions after owner confirms exact facts and official paths | Owner reviews the Android newsletter packet and confirms package/signing/screenshot fields before any Android Weekly/Kotlin Weekly/Android Developers-style submission. |
 
 ## 2026-05-28 Setup Packets
 
@@ -1545,3 +1546,31 @@ Agent capability after owner connection:
 
 Next action:
 - Owner confirms whether Nayovi should prepare a future practitioner topic only after approved-sample measurements exist.
+
+### Android Newsletter / Editorial Submission Packet
+
+Status: OWNER_ACTION_REQUIRED for package/signing confirmation, approved screenshots, public submitter identity, and publication-specific path review.
+
+Use case:
+- Android newsletters and technical editors can cite a developer-facing trust checklist before app-directory or press outreach scales.
+- This should be a technical resource about independent APK verification, hosted OCR testing, approved samples, and screenshot rules, not a consumer app announcement.
+
+Prepared owned asset:
+- `docs/seo-distribution/android-newsletter-submission-packet.md`
+
+Required assets:
+- Owner-confirmed package name and signing-certificate fingerprint.
+- Current APK SHA-256 if a fresh build is cited.
+- Owner-confirmed Android developer verification/package registration status.
+- Approved screenshot/demo references only.
+- Public editor/submission contact path; no private scraped contacts.
+
+Credential/reference guardrails:
+- `SEO_AGENT_ANDROID_NEWSLETTER_SUBMISSION_REFERENCE`
+- Store no newsletter logins, private editor emails, passwords, cookies, or unpublished correspondence in docs or Git.
+
+Agent capability after owner connection:
+- Draft Android Weekly/Kotlin Weekly/Android Developers-style submissions and technical tip copy. The agent remains draft-only until owner confirms the path and account/contact authorization.
+
+Next action:
+- Owner reviews the packet and supplies package/signing/screenshot facts before any manual newsletter submission.
