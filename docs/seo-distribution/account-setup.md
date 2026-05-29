@@ -48,6 +48,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Discord/community official server profile | Controlled support/community presence for reviewers, beta testers, and creator-pilot feedback | setup_packet_prepared_owner_action_required | Owner creates/connects only an official Nayovi server/profile and accepts terms manually | Server purpose, rules, support boundaries, approved invite policy, no-piracy/no-chapter-sharing rules | `SEO_AGENT_DISCORD_BOT_TOKEN` only if owner enables a compliant bot workflow; no user tokens | Agent can draft server rules, pinned links, and support handoff copy after owner approval | Owner confirms whether Nayovi should have a Discord server and approves moderation rules before any public invite is cited. |
 | high | Official press/media kit page | Owned source-of-truth profile packet for journalists, podcasters, newsletters, directories, and partner diligence | configured_owned_repo_needs_content_sync | Owner confirms public media contact path, founder quote policy, logo/screenshot rights, and which metrics can be public | Brand bio, founder-approved quote, logo/avatar, screenshots, demo video, APK trust packet, public contact path | No secret required; optional `SEO_AGENT_PRESS_CONTACT_REFERENCE` for non-secret routing only | Agent can keep an owned media kit draft and platform-specific media notes synchronized | Create an owned press kit draft that cites download-page citation readiness, OCR checklist, and approved-sample pilot guide without exposing private contacts. |
 | medium | Podcast/newsletter source profiles | Public identity consistency for manga podcasts, Android newsletters, and localization newsletters | setup_packet_prepared_owner_action_required | Owner approves whether Nayovi/founder should create any publication-specific profile, byline, or source profile manually | Short bio, one-sentence responsible-use line, topic angles, canonical links, public contact path, approved screenshots only | Per-publication profile reference only; optional `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`; no passwords or cookies | Agent can draft topic notes and source bios after owner confirms account/profile scope | Owner chooses which source profiles are appropriate; agent stays draft-only and uses official contact/submission paths. |
+| medium | AI directory submitter profiles | Accurate AI/OCR directory discovery without weak link schemes | setup_packet_prepared_owner_action_required | Owner creates/connects only official submitter accounts when a directory requires login, terms acceptance, or email verification | Official profile fields, listing copy, pricing/support links, screenshots, responsible-use line, directory quality filter | `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`; per-directory token only if official API exists | Agent can prepare or submit owner-approved listings only after the official account/API is connected and rules are checked | Owner approves which directories qualify; skip paid-link, reciprocal-link, forever-free-only, hidden-redirect, or mirror-first flows. |
+| medium | Android app review/submission profiles | Reviewer-safe Android listing and app-test access | setup_packet_prepared_owner_action_required | Owner approves any app-review portal account, APK sharing scope, screenshot rights, and review-code access manually | APK review packet, SHA-256, package/signing placeholders, approved screenshots, support/pricing/legal links | `SEO_AGENT_ANDROID_REVIEW_PORTAL_REFERENCE`; no private portal login data | Agent can prepare portal-specific packets after owner confirms portal quality and approved test scope | Owner confirms package facts and whether APK upload or reviewer-code access is allowed before any external submission. |
 
 ## 2026-05-28 Setup Packets
 
@@ -269,6 +271,62 @@ Agent capability after owner approval:
 
 Next action:
 - Create the owned press kit draft after owner confirms public contact path, approved visual assets, and whether metrics or founder quotes can be public.
+
+### AI Directory Submitter Profiles
+
+Status: OWNER_ACTION_REQUIRED for any directory account creation, terms acceptance, paid submission decision, or API/token connection.
+
+Profile/listing fields:
+- Submitter/public name: `Nayovi`
+- Product name: `Nayovi`
+- Category: `Android app`, `AI OCR`, `AI translation`, `comic OCR`, or the closest supported directory category.
+- One-line description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Pricing: `Free trial plus monthly token plans`; never `free forever` unless a directory supports exact trial wording.
+- Primary URL: `https://tachiyomiat.com/download`
+- Supporting URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Responsible-use line: `Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, or permission-approved content.`
+
+Required assets:
+- Logo/avatar and screenshots from the owner-approved asset library only.
+- Current APK build label and SHA-256 from the official download/review packet.
+- Public support, pricing, privacy, terms, and responsible-use links.
+- No private portal credentials, cookies, verification codes, or payment details in docs.
+
+Credential reference:
+- `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`; use per-directory credential references only after the owner connects an official workflow. Store actual values only in `/opt/tachi-back/.env.seo-distribution-agent` or another approved secret store.
+
+Agent capability after connection:
+- The agent can prepare directory-specific copy and, only after owner approval plus rule review, submit listings that preserve source-of-truth links and accurate pricing. The agent must skip paid-link packages, reciprocal backlinks, hidden redirects, mirror-first APK pages, fake reviews, and misleading free/open-source claims.
+
+Next action:
+- Owner approves whether AINovaTools, AI Tools Explorer, Best-AI.org, or similar directories are worth manual account setup after their current submission rules are reviewed.
+
+### Android App Review / Submission Profiles
+
+Status: OWNER_ACTION_REQUIRED for portal account creation, APK upload, reviewer-code issuance, terms acceptance, or public report approval.
+
+Profile/listing fields:
+- Product name: `Nayovi`
+- Short description: `Official Android APK for hosted OCR and AI translation support in manga, manhwa, and manhua reader workflows.`
+- Primary URL: `https://tachiyomiat.com/download`
+- Review packet: `docs/nayovi-apk-review-packet.md`
+- Screenshot policy: `docs/reviewer-screenshot-policy.md`
+- Test boundary: use only owned, public-domain, official-sample, creator-provided, or permission-approved material.
+
+Required assets:
+- Signed APK source link from the official site, not a mirror-first upload unless the owner approves the portal.
+- SHA-256, package name, signing fingerprint, and Android developer verification status when owner-confirmed.
+- Approved screenshots, narrated demo, support URL, pricing URL, privacy URL, terms URL, and takedown policy.
+- Review or pilot redeem code only after owner approval.
+
+Credential reference:
+- `SEO_AGENT_ANDROID_REVIEW_PORTAL_REFERENCE`; actual account credentials, portal tokens, and private report links stay out of Git and docs.
+
+Agent capability after connection:
+- The agent can prepare reviewer-safe portal packets and status notes. It must not upload APKs, start tester campaigns, approve public reports, request positive reviews, or create account sessions without owner approval.
+
+Next action:
+- Owner confirms package/signing facts, screenshot assets, and which review portals may receive APK or review-code access.
 
 ### Podcast / Newsletter Source Profiles
 
