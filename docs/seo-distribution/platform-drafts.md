@@ -105,6 +105,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Manga podcast/newsletter | Behind The Manga | Manga OCR QA topic note for approved samples | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no product-install pressure. |
 | draft | Comics localization studio | Nube Consulting | Approved-sample OCR constraints feedback note | None by default | OWNER_REVIEW_REQUIRED: official contact path only; no replacement-localization pitch or catalog-processing implication. |
 | watch | FOSS Android distribution | F-Droid ecosystem | APK verification/source expectations context | None | WATCH_ONLY: Nayovi is not currently a FOSS app-store submission fit; do not submit unless a genuine open-source companion exists. |
+| draft | AI directory | AINovaTools / AI Tools Explorer | Accurate Android OCR workflow listing packet | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit rules; skip paid-link, reciprocal-link, hidden-redirect, mirror-first, or forever-free-only flows. |
+| watch | Creator program context | KADOKAWA WORLD MANGA ATELIER | Creator-safe approved-sample language context | None | WATCH_ONLY: no outreach or endorsement claim; use only to improve owned creator-safe copy. |
 
 ## Draft Bodies
 
@@ -194,6 +196,50 @@ Nayovi does not host or distribute chapters. It supports OCR and translation for
 Useful source links, if links are appropriate:
 https://tachiyomiat.com/download
 https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+### AI directory listing packet
+
+Status: draft
+Target: AINovaTools, AI Tools Explorer, Best-AI.org, or similar AI directories after current rules review
+Audience: AI tool searchers, Android readers, directory editors, partner diligence
+Rules risk: medium; submit only through official paths and only when pricing, official APK source, support, and responsible-use links remain visible.
+No-link variant: use the listing copy as an internal eligibility packet and do not submit.
+Link variant: `https://tachiyomiat.com/download` as primary; `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` as supporting context when fields allow resources.
+
+Listing name:
+Nayovi
+
+Short description:
+Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+Long description:
+Nayovi provides an official Android APK, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation for permission-safe reader workflows. It does not host or distribute chapters. Use it with owned content, public-domain material, official samples, creator-provided pages, or content the user has permission to process.
+
+Category suggestions:
+AI OCR, AI Translation, Android app, comic OCR, manga translation, mobile translation workflow.
+
+Pricing:
+Free trial plus monthly token plans. Do not list Nayovi as free forever, open source, or an app-store-only product.
+
+Submission gate:
+- Reject paid backlink packages, reciprocal homepage links, hidden redirects, mirror-first APK downloads, scraped listings, fake reviews, and misleading free/open-source labels.
+- Use only owner-approved screenshots and the official APK/download page.
+- Mark `OWNER_REVIEW_REQUIRED` until the submit form, account requirement, and terms are checked by the owner.
+
+### KADOKAWA creator-program context note
+
+Status: watch
+Target: owned copy and partner drafts only
+Audience: creator-platform partners, publisher reviewers, localization operators
+Rules risk: low for internal context; high if used as endorsement or platform permission.
+No-link variant: yes, use as background only.
+Link variant: none by default.
+
+Context:
+Current creator-support and manga-atelier programs reinforce that creator workflows, sample rights, editorial review, and public submissions are platform-controlled. Nayovi drafts should keep asking for approved-sample feedback, avoid catalog-processing language, and avoid implying that publisher or platform content may be processed without explicit permission.
+
+Reusable sentence:
+For creator-platform conversations, Nayovi should test only pages the creator, publisher, reviewer, or rights holder provides or approves; screenshots, translated excerpts, and partner names stay private unless public use is approved.
 
 ### Medium canonical OCR QA article
 
