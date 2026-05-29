@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T031758Z`: audited branch state, SEO distribution shared context, growth trackers, `/translate-manhwa-ai`, sitemap coverage, and outreach sender history.
+- Added a commercial reply qualification packet to `/translate-manhwa-ai` so warm partner, publisher, directory, or investor replies identify concrete use case, measurable activation path, and decision-ready next step before founder time, custom terms, or a meeting are escalated.
+- Added matching ItemList structured metadata and marked the qualification packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next sender window should process replies first; if no replies are waiting, use the existing Nube/Genga official-form queue or recheck AIAnyTool's current terms before any send.
+
 - Autonomous cycle on `growth/autonomous-20260529T031145Z`: audited branch state, SEO distribution shared context, growth trackers, sitemap freshness, and outreach sender history.
 - Synced `/guides/comic-ocr-translation-checklist` sitemap freshness to 2026-05-29 so the public OCR checklist outreach packet added by the SEO distribution agent is reflected in this growth branch's source-of-truth sitemap.
 - Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next safe external action is reply handling first; if no replies are waiting after cap reset, use the existing Nube/Genga official-form queue or recheck AIAnyTool's current terms before any send.
