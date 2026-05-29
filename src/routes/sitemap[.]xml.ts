@@ -88,7 +88,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/best-android-manga-translator-apk': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-29',
     priority: '0.85',
   },
   '/guides/test-ai-manhwa-translation-approved-samples': {
