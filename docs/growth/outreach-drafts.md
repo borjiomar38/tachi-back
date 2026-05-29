@@ -44,6 +44,14 @@ Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai#rep
 
 Next outreach: after cap reset, process qualified replies first. If none are waiting, use only current-verified official forms or public business contacts with individualized messages, factual source links, and opt-out language.
 
+### Autonomous cycle: reply pipeline ledger
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-support-workflow#reply-pipeline` so qualified replies move through wait, send-assets, issue tracked access, escalate, or stop decisions before outreach capacity, review codes, or founder time are spent.
+
+Next outreach: after cap reset, process qualified replies first. Send the smallest relevant packet when a contact asks for listing fields, screenshots, demo context, review access, or approved-sample pilot details. Issue tracked access only when source context, sample scope, public link handling, and support routing are measurable.
+
 ### Autonomous cycle: reply evidence ledger
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
