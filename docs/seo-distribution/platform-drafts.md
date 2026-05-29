@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Webmaster/search entity | Google Search Console / Bing Webmaster Tools | Official domain verification and sitemap submission packet | docs/seo-distribution/webmaster-and-entity-verification-packet.md | OWNER_ACTION_REQUIRED: owner verifies domains and connects credentials; do not write tokens, DNS values, dashboard screenshots, or private crawl data to docs. |
+| draft | Android developer newsletter | Android Weekly link suggestion | Independent APK trust and hosted OCR QA checklist | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_REVIEW_REQUIRED: use official suggestion path only; include link only if current rules invite suggested resources and owner confirms package/screenshot facts. |
+| watch | Localization media | SlatorPod / Slator-style language AI coverage | Visual-storytelling OCR QA topic for approved samples | None by default | WATCH_ONLY: needs approved-sample evidence, byline, screenshots, and product-light angle before any pitch; no backlink or consumer APK ask. |
 | draft | Creator platform / publisher contact | WEBTOON / Lezhin / NEDAMI-style official contact paths | No-link approved-sample OCR QA and creator-control note | None by default | OWNER_REVIEW_REQUIRED: choose correct department, byline, sample scope, and current rules/contact path; no catalog-processing implication, endorsement claim, or backlink ask. |
 | draft | AI/free-trial directory | SpotFreeAI Trial Only / Freemium submit-tool path | Accurate free-trial plus paid-token listing eligibility | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify live fields and source-link handling; skip forever-free, paid-link, reciprocal, hidden-redirect, open-source, or mirror-first APK flows. |
 | draft | Indie Hackers / founder communities | Official founder-owned Nayovi profile | No-link APK trust and OCR workflow feedback post | None by default | OWNER_ACTION_REQUIRED: founder-owned truthful profile, affiliation disclosure, rules review, and manual posting required; no scraped DMs, voting, or engagement automation. |
@@ -152,6 +155,40 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Short-video official profile | TikTok / YouTube Shorts / Reels manual-only setup | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, approved clips, sample rights, caption approval, and optional API credential required before any upload or metadata update. |
 
 ## Draft Bodies
+
+### Android Weekly APK trust checklist link suggestion
+
+Status: draft
+Target: Android Weekly or comparable Android developer newsletter after owner review
+Audience: Android developers, app reviewers, direct-APK testers, technical newsletter editors
+Rules risk: medium; use only an official link-suggestion path, do not submit as consumer app promotion, and do not claim package verification until owner confirms facts.
+No-link variant: yes for rule checks.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link variant:
+
+Hi Android Weekly team,
+
+I am checking whether a technical checklist would fit your link suggestions before submitting anything.
+
+The angle is independent Android APK review for a hosted OCR workflow: official source URL, support/pricing clarity, permission-safe samples, screenshot boundaries, review-code separation, and checks for OCR region coverage, reading order, grouped dialogue, glossary drift, and human review.
+
+Nayovi is the product behind the checklist, but the piece is intended as reviewer guidance rather than an install pitch. Nayovi does not host or distribute chapters and is intended only for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+If that is not a fit for Android Weekly, I will skip it.
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Official APK source, if context is needed:
+`https://tachiyomiat.com/download`
 
 ### Creator platform approved-sample OCR QA note
 
