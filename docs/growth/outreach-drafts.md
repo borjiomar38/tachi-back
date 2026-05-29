@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: reply follow-up checklist
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai#reply-follow-up-checklist` so the next sender window spends an email, review code, or partner note only when official source links, separated access type, and expected evidence are defined.
+
+Next outreach: after cap reset, process qualified replies first. Use this checklist before replying, issuing review access, or escalating; hold any thread that cannot preserve source links, separate activation attribution, or produce measurable proof.
+
 ### Autonomous cycle: reply decision SLA packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
