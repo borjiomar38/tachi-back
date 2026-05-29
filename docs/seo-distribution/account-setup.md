@@ -242,6 +242,60 @@ Credential reference:
 
 ## 2026-05-29 Account Setup Advancement
 
+### Product Hunt Official Maker and Company Packet
+
+Status: OWNER_ACTION_REQUIRED for official maker/company account creation, launch timing, terms acceptance, product screenshots, and any API token connection.
+
+Public profile fields:
+- Maker/company name: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow for manga, manhwa, and manhua readers.`
+- Website: `https://nayovi.com`
+- Product URL: `https://tachiyomiat.com/download`
+- Support URL: `https://tachiyomiat.com/support`
+- Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It supports official APK access, free trial or redeem-code activation, monthly token plans, and permission-safe testing with owned, public-domain, official-sample, creator-provided, or otherwise approved material.`
+
+Required launch assets:
+- Square logo/avatar and Product Hunt thumbnail.
+- 3-5 approved screenshots that do not expose unauthorized chapters, private redeem codes, user data, or third-party catalog pages.
+- Optional sample-safe demo video using the approved narrated demo or owner-approved replacement.
+- Owner-confirmed package name, APK hash, signing fingerprint, Android developer verification status, and package registration state if those facts will be mentioned.
+- Pricing summary that distinguishes free trial/redeem-code access from monthly token plans.
+
+Credential reference:
+- `SEO_AGENT_PRODUCTHUNT_TOKEN` only if the owner enables an official Product Hunt API workflow. Store the actual token only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- The agent can keep launch copy, maker comment, screenshot captions, and reply drafts current after owner approval. It must not request upvotes, automate comments, message users, or post from a non-official account.
+
+Next action:
+- Owner creates or connects the official maker/company profile, chooses whether Nayovi should launch now or only collect pre-launch feedback, and approves the Product Hunt draft in `docs/seo-distribution/platform-drafts.md`.
+
+### Official Newsletter / Public Update Archive Packet
+
+Status: OWNER_ACTION_REQUIRED for official newsletter account creation, sender identity, terms acceptance, first issue approval, and any API token connection.
+
+Public profile fields:
+- Publication name: `Nayovi Notes`
+- Description: `Official updates on Nayovi's Android OCR and AI translation workflow, APK trust checks, approved-sample testing, and responsible-use boundaries.`
+- Website: `https://nayovi.com`
+- Primary source link: `https://tachiyomiat.com/download`
+- Recommended footer line: `Nayovi does not host or distribute chapters. Use approved samples, owned material, public-domain works, or content you have permission to process.`
+
+Required assets:
+- Logo/avatar and optional banner using approved product UI or neutral brand graphics.
+- First issue draft in `docs/seo-distribution/official-newsletter-first-issue.md`.
+- Official links: brand domain, APK download, support, pricing, privacy, terms, OCR checklist, approved-sample pilot guide, and `llms.txt`.
+- Owner-confirmed sender identity and reply/contact policy.
+
+Credential reference:
+- `SEO_AGENT_NEWSLETTER_API_TOKEN` or platform-specific credential reference only after owner enables an official API workflow. Do not store subscriber lists, imports, private emails, or tokens in docs.
+
+Agent capability after connection:
+- The agent can prepare owner-approved public archive issues and metadata. It must not import contacts, bulk-send email, scrape subscribers, or publish without explicit owner approval.
+
+Next action:
+- Owner creates/connects the official newsletter profile and approves whether the first issue should be published as a public archive post only, an email send, or both.
+
 ### Google Search Console and Bing Webmaster Verification Packet
 
 Status: OWNER_ACTION_REQUIRED for owner-controlled domain verification and API credential connection.
