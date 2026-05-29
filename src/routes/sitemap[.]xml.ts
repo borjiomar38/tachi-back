@@ -72,7 +72,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.8',
   },
   '/guides/translation-support-workflow': {
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-29',
     priority: '0.8',
   },
   '/guides/comic-ocr-translation-checklist': {

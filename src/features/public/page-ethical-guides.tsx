@@ -819,6 +819,29 @@ const replyQualificationRows = [
   },
 ] as const;
 
+const qualifiedReplyAssetRows = [
+  {
+    packet: 'Reviewer or directory',
+    contents:
+      'Send the official APK source, narrated demo, screenshots, pricing summary, support path, responsible-use note, and a dedicated review-code route.',
+  },
+  {
+    packet: 'Approved-sample partner',
+    contents:
+      'Send the pilot brief, OCR checklist, sample intake fields, private-result boundary, stop conditions, and support route before issuing a pilot code.',
+  },
+  {
+    packet: 'Investor or commercial',
+    contents:
+      'Send only qualified traction, activation, retention, paid-plan, and partner-signal context. Escalate when custom terms, legal review, or founder time is required.',
+  },
+  {
+    packet: 'Clean decline',
+    contents:
+      'Close requests that depend on paid links, reciprocal placement, hidden pricing, mirror-first APK distribution, or unauthorized catalog processing.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -2235,6 +2258,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.signal}
                 </span>
                 <span>{row.action}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Qualified assets"
+        title="What to send after a useful reply"
+        description="Use this bundle when a reply is real enough to deserve assets, but still needs a clear path toward review access, approved-sample testing, paid-plan evidence, or a clean decline."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {qualifiedReplyAssetRows.map((row) => (
+              <div
+                key={row.packet}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.packet}
+                </span>
+                <span>{row.contents}</span>
               </div>
             ))}
           </CardContent>
