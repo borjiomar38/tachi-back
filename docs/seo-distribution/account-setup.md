@@ -77,6 +77,60 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-29 Current Cycle Setup Advancement
 
+### Creator Platform / Publisher Contact Profile
+
+Status: OWNER_ACTION_REQUIRED for official byline or brand identity, correct department selection, sample-rights approval, manual terms/contact steps, and any future partner permission.
+
+Prepared packet:
+- `docs/seo-distribution/creator-platform-ai-translation-context.md`
+- `docs/seo-distribution/creator-platform-screenshot-rights-packet.md`
+- `docs/seo-distribution/reviewer-routing-packet.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Byline option: owner-approved founder name or `Nayovi team`; do not invent a personal persona.
+- Bio: `Nayovi builds an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It does not host chapters and is designed for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Primary source link: `https://nayovi.com`
+- Workflow link: `https://tachiyomiat.com/translate-manhwa-ai`
+- Approved-sample pilot link: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+
+Credential/reference guardrails:
+- `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`
+- `SEO_AGENT_PARTNER_CONTACT_REFERENCE`
+- Store no private platform contacts, unpublished samples, creator emails, partner terms, review codes, or screenshots in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare no-link-first platform-specific notes after owner approval. Contact form submission, partner applications, account creation, sample upload, terms acceptance, and public posting remain owner actions unless a compliant official API workflow is explicitly configured.
+
+Next action:
+- Owner chooses whether WEBTOON, Lezhin, NEDAMI, Bayi, or another creator/platform surface should receive a no-link approved-sample OCR QA question, then approves byline, department, sample scope, and whether any source links may be included.
+
+### SpotFreeAI / Free-Trial Directory Submitter Profile
+
+Status: OWNER_REVIEW_REQUIRED for official submitter identity, trial/pricing label approval, current submit-field review, and source-link preservation.
+
+Prepared packet:
+- `docs/seo-distribution/free-trial-directory-listing-brief.md`
+- `docs/seo-distribution/directory-quality-gate.md`
+
+Listing fields:
+- Tool name: `Nayovi`
+- Short description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Pricing label: `Trial Only` or `Freemium` only if the current directory fields preserve paid monthly token-plan context.
+- Canonical links: `https://nayovi.com`, `https://tachiyomiat.com/download`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`
+- Responsible-use line: `No chapter hosting; use with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Credential/reference guardrails:
+- `SEO_AGENT_SPOTFREEAI_PROFILE_REFERENCE`
+- `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`
+- Store no submitter passwords, cookies, email verification links, paid-placement receipts, private review codes, or analytics in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare exact field-level listing copy after owner approval and current rules review. The agent must reject flows requiring forever-free wording, paid backlinks, reciprocal links, hidden redirects, open-source mislabeling, mirror-first APK handling, or unsupported ranking claims.
+
+Next action:
+- Owner reviews whether SpotFreeAI's current `Trial Only` or `Freemium` filters can accurately represent Nayovi before any manual submit-tool action.
+
 ### Official Open Social Profile
 
 Status: OWNER_ACTION_REQUIRED for official handle/instance, manual account setup, email verification, terms acceptance, asset approval, and optional API token connection.
