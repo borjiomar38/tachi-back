@@ -99,6 +99,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | App testing | AppTester.co human app health check | Safe Android APK trust test using approved samples | docs/seo-distribution/android-apk-trust-profile.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report approval, or account creation without owner approval. |
 | watch | APK review | APKLoon-style APK submission portal | Official source-link preservation check before APK review | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: verify quality and mirror policy; hold until package/signing facts are owner-confirmed. |
 | draft | AI/free-trial directory | tryweb.site-style AI tools directory | Accurate free-trial plus paid-token listing fit check | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit fields and skip if forever-free, paid-link, reciprocal, or hidden-redirect placement is required. |
+| draft | TikTok/short-video | Official Nayovi account | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, terms acceptance, approved clips, and sample rights required before any upload. |
+| draft | Discord/community | Official Nayovi server/profile | No-piracy support rules and reviewer-code handoff | None by default | OWNER_ACTION_REQUIRED: owner must create/approve server, moderation rules, invite policy, and any bot/API scope. |
+| draft | Webtoon localization studio | Alandal/Bayi-style localization teams | Approved-sample OCR QA feedback note | None by default | OWNER_REVIEW_REQUIRED: use official contact only; no backlink ask, catalog access implication, or replacement pitch. |
 
 ## Draft Bodies
 
@@ -262,6 +265,85 @@ Checklist:
 - Mark whether the sample is approved for processing before judging whether it is ready to share.
 
 This is the review pattern behind Nayovi's hosted Android OCR workflow. The useful part for other builders is simple: do not evaluate the translated sentence until you know the input blocks are complete, ordered, and allowed to be processed.
+
+### Short-video official caption packet
+
+Status: draft
+Target: official Nayovi TikTok/short-video profile only
+Audience: Android reviewers, directories, Product Hunt viewers, reader discovery surfaces
+Rules risk: medium; no upload, account creation, terms acceptance, or API posting without owner action and approved sample media.
+No-link variant: use the caption without a URL and point viewers to the official profile bio.
+Link variant: https://tachiyomiat.com/download
+
+Caption option 1:
+
+Official APK check before trying any Android OCR translator:
+1. Start from the source-of-truth download page.
+2. Check support, pricing, and responsible-use notes.
+3. Use only owned, public-domain, official-sample, or permission-approved pages.
+4. Keep screenshots sample-safe.
+
+Nayovi does not host or distribute chapters.
+
+Caption option 2:
+
+What a reviewer should see in a safe Nayovi demo: official APK source, redeem-code or trial activation, OCR progress, language choice, translation result, support path, and no chapter-hosting claim.
+
+Use only with content you own, public-domain material, official samples, or content you have permission to process.
+
+### Discord official community rules draft
+
+Status: draft
+Target: official Nayovi Discord/community profile only
+Audience: beta testers, app reviewers, creator-pilot contacts, support users
+Rules risk: medium; owner must create and moderate the server manually before any public invite.
+No-link variant: rules only, no public invite.
+Link variant: none until owner approves an official invite.
+
+Welcome note:
+
+This is the official Nayovi community/support space for Android APK setup, free-trial or redeem-code activation questions, OCR workflow feedback, and permission-safe sample testing.
+
+Rules:
+- Do not share manga, manhwa, manhua, webtoon, or comic chapters here.
+- Do not request scanlations, piracy links, or help processing content you do not own or have permission to use.
+- Do not post private redeem codes, payment details, phone numbers, account screenshots, or identity documents.
+- Use owned, public-domain, official-sample, or permission-approved pages for any OCR feedback.
+- Public screenshots need owner-approved sample rights and must not expose private data.
+- Nayovi does not host or distribute chapters.
+
+Pinned links:
+- Official site: https://nayovi.com
+- Official APK: https://tachiyomiat.com/download
+- Support: https://tachiyomiat.com/support
+- Comic OCR checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+### Webtoon localization studio feedback note
+
+Status: draft
+Target: Alandal/Bayi-style webtoon localization studios or creator-controlled localization teams
+Audience: localization operators, webtoon production teams, creator-pilot reviewers
+Rules risk: medium; no backlink ask, no catalog-processing implication, and official contact path only.
+No-link variant: yes
+Link variant only if requested: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Subject:
+Approved-sample OCR QA checklist for webtoon translation workflows
+
+Body:
+
+Hi team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I am not asking to process your catalog or replace a professional localization workflow. The useful overlap may be narrower: OCR QA observations for creator-controlled or approved samples, especially around reading order, merged speech bubbles, vertical-scroll pages, glossary consistency, and human correction before anything is shared publicly.
+
+If that kind of Android-side checklist is useful to your team, I can send a short product-light resource. If not, no follow-up is needed.
+
+Nayovi does not host or distribute chapters; it is intended only for owned content, public-domain material, official samples, or content the user has permission to process.
+
+Best,
+Nayovi team
 
 ### GlobalComix partnership feedback draft
 

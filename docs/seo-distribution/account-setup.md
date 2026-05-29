@@ -42,6 +42,9 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Substack/newsletter official profile | Owned subscriber channel for APK trust notes, OCR QA updates, and partner-friendly release context | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi newsletter profile and accepts terms manually | Profile bio, logo, first issue draft, canonical links, screenshot rules, public contact path | `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`; optional API/RSS reference only if owner enables it | Agent can draft official newsletter issues or archive links after owner-approved account connection | Owner chooses whether newsletter is manual-only, confirms profile handle, and approves first issue topic. |
 | high | GitHub organization/profile polish | Owned technical trust surface for repo docs, review packets, release notes, and official links | setup_packet_prepared_owner_action_required | Owner confirms or creates only an official Nayovi organization/profile and public contact fields | Logo, organization bio, website, pinned docs/repo list, support URL, responsible-use line | `SEO_AGENT_GITHUB_TOKEN` optional for API updates; SSH remote is enough for current repo | Agent can update owned docs, profile README drafts, and release packets after owner confirms org/profile scope | Owner confirms whether the official GitHub surface is a user profile, organization, or repo-only public docs surface. |
 | medium | Mastodon/Fediverse official account | Public source-of-truth social profile for Android, localization, and open-web communities | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi account manually on an owner-approved instance and accepts terms | Avatar, banner, bio, canonical links, first no-link posts, moderation/rules review | `SEO_AGENT_MASTODON_ACCESS_TOKEN` only if owner enables official API posting | Agent can draft concise official updates after account connection and instance rules review | Owner chooses instance/handle, stores token only in approved secret store if API posting is wanted, and confirms draft-only or publish scope. |
+| high | Official social proof matrix | Connect account setup to verifiable public trust signals before outreach | configured_owned_repo_content_synced | Owner uses the matrix to decide which official profiles are live and citable | `docs/seo-distribution/official-social-proof-matrix.md`, official profile fields, screenshot policy, Android package facts | Non-secret references only; actual values stay in approved secret store | Agent can cite only confirmed live official profiles and keep inactive profiles marked owner-action-required | Owner completes GSC/Bing, Android package facts, screenshot assets, LinkedIn, YouTube, and canonical publishing setup in priority order. |
+| medium | TikTok/short-video official account | Short demo proof and creator-safe visual snippets for Android reviewers and reader discovery | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi account manually and approves short demo media plus platform terms | Avatar, bio, official links, 15-30 second approved-sample clips, no-chapter-hosting captions | `SEO_AGENT_TIKTOK_ACCOUNT_REFERENCE`; API token only if a compliant official workflow is approved | Agent can draft short-video captions and metadata after owner-approved account/media connection | Owner decides whether short video is appropriate, approves sample rights, and keeps account manual unless an official API workflow is configured. |
+| medium | Discord/community official server profile | Controlled support/community presence for reviewers, beta testers, and creator-pilot feedback | setup_packet_prepared_owner_action_required | Owner creates/connects only an official Nayovi server/profile and accepts terms manually | Server purpose, rules, support boundaries, approved invite policy, no-piracy/no-chapter-sharing rules | `SEO_AGENT_DISCORD_BOT_TOKEN` only if owner enables a compliant bot workflow; no user tokens | Agent can draft server rules, pinned links, and support handoff copy after owner approval | Owner confirms whether Nayovi should have a Discord server and approves moderation rules before any public invite is cited. |
 
 ## 2026-05-28 Setup Packets
 
@@ -257,6 +260,70 @@ Agent capability after connection:
 
 Next action:
 - Owner confirms company/profile eligibility and approves public founder/company fields before any manual submission.
+
+## 2026-05-29 Setup Packets
+
+### Official Social Proof Matrix
+
+Status: CONFIGURED_OWNED_REPO_CONTENT_SYNCED.
+
+Owned asset:
+- `docs/seo-distribution/official-social-proof-matrix.md`
+
+Use:
+- Treat the matrix as the owner/growth-agent checklist for which official profiles are live, citable, still manual, or still blocked on credentials.
+- Use the public copy in the matrix for LinkedIn, YouTube, DEV/Medium, Product Hunt, Reddit, Substack, Bluesky, Mastodon, and GitHub profile drafts.
+- Do not cite inactive profiles in outreach. Mark them `OWNER_ACTION_REQUIRED` or `AUTHORIZED_ACCOUNT_REQUIRED`.
+
+Next action:
+- Owner completes GSC/Bing verification, confirms Android package facts, approves the screenshot/demo asset set, and then creates/connects LinkedIn plus YouTube first.
+
+### TikTok / Short-Video Official Account
+
+Status: OWNER_ACTION_REQUIRED for account creation, terms acceptance, sample rights, and any API connection.
+
+Profile fields:
+- Display name: `Nayovi`
+- Handle preference: owner-approved official handle, ideally matching Nayovi brand naming.
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. Official APK, free trial, support, and permission-safe samples.`
+- Primary link: `https://nayovi.com`
+- Demo link for captions when allowed: `https://tachiyomiat.com/download`
+
+First short-video angles:
+- Official APK install and source-of-truth check.
+- Redeem-code activation and free-trial path without showing private codes.
+- OCR progress on an owned, public-domain, official-sample, or permission-approved page.
+- Support path and responsible-use boundary.
+
+Required assets:
+- Square logo/avatar.
+- Approved short demo clips only.
+- Caption line: `Nayovi does not host or distribute chapters; use it only with owned, public-domain, official-sample, or permission-approved content.`
+
+Credential reference:
+- `SEO_AGENT_TIKTOK_ACCOUNT_REFERENCE`; no password, cookies, private session tokens, or verification screenshots in docs.
+
+Agent capability after connection:
+- The agent can draft captions and metadata. It must not upload videos, accept terms, follow accounts, comment, scrape, or automate engagement unless a compliant official API workflow and owner approval exist.
+
+### Discord / Official Community Profile
+
+Status: OWNER_ACTION_REQUIRED for server/profile creation, moderation rules, terms acceptance, and any bot/API connection.
+
+Purpose:
+- Support reviewer-code questions, beta-test feedback, creator-pilot discussions, and Android install/support handoff without using unofficial social DMs.
+
+Server rules draft:
+- No chapter sharing, piracy requests, scanlation requests, or unauthorized sample uploads.
+- Support only official APK/download, activation, OCR workflow, pricing, and permission-safe sample testing.
+- Do not post private redeem codes, payment details, phone numbers, or account screenshots.
+- Staff/founder identities must be official and disclosed.
+
+Credential reference:
+- `SEO_AGENT_DISCORD_BOT_TOKEN` only if the owner later enables a compliant bot workflow. Never store user tokens or private invite controls in docs.
+
+Agent capability after connection:
+- The agent can draft server rules, pinned resource links, onboarding copy, and support triage responses. It must not create the server, invite users, DM members, scrape members, or automate replies without explicit authorized workflow.
 
 ### Search Entity / Business Profile Packet
 
