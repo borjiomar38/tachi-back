@@ -69,8 +69,69 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | AI/free-trial directory submitter profile | Accurate listing on directories that evaluate free trials, pricing, APIs, OCR, Translation, and workflow categories | setup_packet_prepared_owner_action_required | Owner approves official submitter identity, contact path, pricing label, category, and form-specific source-link handling manually | One-line description, long description, canonical links, pricing/support URLs, responsible-use line, screenshots only if approved, directory quality gate | `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`; per-directory token only if official API exists | Agent can prepare eligibility questions for SpotFreeAI, Try.fm, ToolDirectory.AI, AiMatch, and similar surfaces after rules review | Owner confirms Nayovi can be represented as free trial plus paid monthly token plans and rejects forever-free, reciprocal-link, hidden-redirect, paid-placement, or mirror-first flows. |
 | high | Official reviewer access packet | Source-of-truth handoff for Android reviewers, app-testing portals, AI directories, newsletters, podcasts, partners, and investor diligence | setup_packet_prepared_owner_action_required | Owner confirms public reviewer contact path, review-code policy, sample/screenshot scope, package facts, and whether any portal may publish test reports | `docs/seo-distribution/reviewer-access-packet.md`, APK review packet, screenshot policy, approved-sample pilot guide, support/pricing/privacy/terms links, approved demo references | `SEO_AGENT_REVIEWER_PACKET_REFERENCE`, `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`, `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`; no private codes in docs | Agent can answer qualified reviewer/listing replies with source links and owner-approved access instructions after account/contact approval | Owner confirms package/signing facts, approved screenshots, review-code expiry/revocation policy, and which reviewers or portals may receive access. |
 | medium | Official Q&A/support profile | Truthful support/community profile for Stack Overflow-style, Quora-style, Reddit support, Discord, or forum answers when users ask direct Nayovi questions | setup_packet_prepared_owner_action_required | Owner creates or confirms official support identity manually, accepts terms, approves affiliation disclosure, and decides whether answers remain manual-only | Profile bio, support URL, official source links, no-piracy support rules, no-link answer drafts, escalation policy | `SEO_AGENT_SUPPORT_COMMUNITY_PROFILE_REFERENCE`; per-community token only if owner authorizes an official API workflow | Agent can draft useful no-link support answers and cite official pages only when contextually requested and allowed | Owner chooses eligible Q&A/community surfaces and confirms no automated answers, scraped DMs, or promotional link drops. |
+| medium | Official open social profile | Truthful Nayovi-owned public update surface for Mastodon, Bluesky, Fediverse-compatible profiles, and open-web communities | setup_packet_prepared_owner_action_required | Owner chooses official handle/instance, completes manual signup, email verification, terms acceptance, and approves profile copy/assets | `docs/seo-distribution/open-social-profile-packet.md`, logo/avatar, banner, canonical links, approved first post, public contact path | `SEO_AGENT_BLUESKY_HANDLE`, `SEO_AGENT_BLUESKY_APP_PASSWORD`, `SEO_AGENT_BLUESKY_PDS_URL`, `SEO_AGENT_MASTODON_INSTANCE_URL`, `SEO_AGENT_MASTODON_ACCESS_TOKEN`, `SEO_AGENT_OPEN_SOCIAL_PROFILE_REFERENCE` | Agent can prepare or publish owner-approved profile metadata and official updates only after account/API connection and rules review | Owner chooses whether Bluesky, Mastodon, or another open-social profile belongs in the trust stack and whether API posting stays disabled. |
+| medium | Startup launch directory profile | Curated startup/launch-directory trust surface for BetaList, MicroLaunch, Uneed, Launching Next, Dev Hunt, and similar launch communities | setup_packet_prepared_owner_action_required | Founder/owner approves submitter identity, product stage, public contact path, terms acceptance, and any paid/priority review decision manually | `docs/seo-distribution/startup-launch-directory-packet.md`, logo/avatar, screenshots, canonical links, pricing/support links, founder-approved copy | `SEO_AGENT_STARTUP_LAUNCH_PROFILE_REFERENCE`, `SEO_AGENT_BETALIST_PROFILE_REFERENCE`, `SEO_AGENT_MICROLAUNCH_PROFILE_REFERENCE`, `SEO_AGENT_UNEED_PROFILE_REFERENCE` | Agent can prepare exact field-level listings and founder/maker comments after owner approval; no form submission or paid listing action automatically | Owner decides whether Nayovi qualifies as recently launched/pre-launch for each directory and rejects paid-backlink, reciprocal, hidden-redirect, or unsupported-metric flows. |
 
 ## 2026-05-29 Current Cycle Setup Advancement
+
+### Official Open Social Profile
+
+Status: OWNER_ACTION_REQUIRED for official handle/instance, manual account setup, email verification, terms acceptance, asset approval, and optional API token connection.
+
+Prepared packet:
+- `docs/seo-distribution/open-social-profile-packet.md`
+
+Profile fields:
+- Display name: `Nayovi`
+- Bio: `Official Nayovi updates for the Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; use only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+- Primary link: `https://nayovi.com`
+- APK source: `https://tachiyomiat.com/download`
+- Support: `https://tachiyomiat.com/support`
+- Technical checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Credential references:
+- `SEO_AGENT_BLUESKY_HANDLE`
+- `SEO_AGENT_BLUESKY_APP_PASSWORD`
+- `SEO_AGENT_BLUESKY_PDS_URL`
+- `SEO_AGENT_MASTODON_INSTANCE_URL`
+- `SEO_AGENT_MASTODON_ACCESS_TOKEN`
+- `SEO_AGENT_OPEN_SOCIAL_PROFILE_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare or publish owner-approved profile metadata and public update posts only after an official API workflow exists and the exact action is allowed.
+- The agent must not create accounts, verify email/phone, accept terms, solve CAPTCHA, scrape DMs, auto-follow, auto-like, auto-reply, or use the profile for repetitive backlink posting.
+
+Next action:
+- Owner chooses official handle/instance, approves profile copy and visual assets, and decides whether open-social posting stays manual-only or API-enabled.
+
+### Startup Launch Directory Profile
+
+Status: OWNER_ACTION_REQUIRED for founder/company submitter identity, product-stage approval, public contact path, manual terms acceptance, visual assets, and any paid/priority-review decision.
+
+Prepared packet:
+- `docs/seo-distribution/startup-launch-directory-packet.md`
+
+Listing fields:
+- Startup name: `Nayovi`
+- One-line description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Website: `https://nayovi.com`
+- Product/source page: `https://tachiyomiat.com/translate-manhwa-ai`
+- APK source: `https://tachiyomiat.com/download`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Support: `https://tachiyomiat.com/support`
+
+Credential references:
+- `SEO_AGENT_STARTUP_LAUNCH_PROFILE_REFERENCE`
+- `SEO_AGENT_BETALIST_PROFILE_REFERENCE`
+- `SEO_AGENT_MICROLAUNCH_PROFILE_REFERENCE`
+- `SEO_AGENT_UNEED_PROFILE_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare exact field-level listing copy and founder/maker comments after owner approval.
+- The agent must not submit forms, create accounts, accept terms, pay for priority review, publish unsupported metrics, request votes, or batch-submit directory listings automatically.
+
+Next action:
+- Owner confirms whether Nayovi is eligible as pre-launch or recently launched for each directory and approves the startup-directory packet before any manual submission.
 
 ### Reviewer Access / Review-Code Routing Profile
 

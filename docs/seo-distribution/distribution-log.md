@@ -2,6 +2,26 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 13
+
+- Verified branch `seo/distribution-20260529T041419Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two new official owner-action setup packets:
+  - Official open social profile packet for Mastodon, Bluesky, and Fediverse-compatible profiles, with exact profile fields, first-post variants, canonical links, asset checklist, credential references, and no auto-engagement guardrails.
+  - Startup launch directory profile packet for BetaList, MicroLaunch, Uneed, Launching Next, Dev Hunt, and similar curated launch communities, with exact listing fields, founder/maker comment, eligibility checks, and rejection rules for paid backlinks or unsupported claims.
+- Improved owned public citation guidance in `src/routes/llms[.]txt.ts` so editors and AI answer systems are told to cite `tachiyomiat.com` or `nayovi.com` as source-of-truth links and not treat social profiles, APK mirrors, directory snippets, or unverified package claims as primary sources.
+- Added owned trust assets:
+  - `docs/seo-distribution/open-social-profile-packet.md`
+  - `docs/seo-distribution/startup-launch-directory-packet.md`
+- Researched rotated authority opportunities across different categories using current public search:
+  - Mastodon profile documentation: open-social official profile metadata and link-verification context.
+  - Bluesky official profile/API credential context: official account plus app-password workflow only after owner approval.
+  - BetaList submission guidelines/terms: curated startup launch candidate only if Nayovi is eligible as pre-launch or recently launched and owner is the authorized submitter.
+  - Android Weekly: Android developer newsletter/link-suggestion surface for technical independent-APK trust or hosted OCR testing guidance.
+- Updated `account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv` with the new setup tasks, opportunity rows, and no-link/link variants.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, app-password creation, directory submission, paid/priority review, newsletter submission, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, GitHub issue/PR/comment, or public outreach send was attempted.
+- Next actions: owner chooses whether Mastodon/Bluesky belong in the trust stack, approves handles/assets/profile copy, confirms whether open-social posting remains manual-only, and confirms whether Nayovi is eligible for BetaList-style launch directories before any manual submission.
+
 ## 2026-05-29 Cycle 12
 
 - Verified branch `seo/distribution-20260529T040534Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
