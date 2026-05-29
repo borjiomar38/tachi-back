@@ -1019,6 +1019,29 @@ const comicOcrResearchRows = [
   },
 ] as const;
 
+const checklistDistributionRows = [
+  {
+    label: 'Newsletter fit',
+    detail:
+      'Submit this checklist only as a technical resource about OCR review, approved samples, and Android trust. Do not pitch it as consumer app news unless the editor asks for product context.',
+  },
+  {
+    label: 'Directory fit',
+    detail:
+      'Use AI or app directories only when they preserve the official download, pricing, support, and responsible-use links without reciprocal backlinks or mirror-first APK pages.',
+  },
+  {
+    label: 'Community fit',
+    detail:
+      'For Reddit, forums, Q&A, and maintainer discussions, start with a no-link checklist summary and include a URL only when rules allow it and the link answers the question.',
+  },
+  {
+    label: 'Partner fit',
+    detail:
+      'For creator platforms, publishers, and localization teams, ask for approved-sample workflow feedback instead of implying catalog processing, replacement localization, or endorsement.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -1158,6 +1181,28 @@ export const PageComicOcrChecklist = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {comicOcrResearchRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Distribution fit"
+        title="Where this checklist can be shared safely"
+        description="Use the checklist as a quality resource first. A Nayovi product link belongs only when the target accepts official implementation details."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {checklistDistributionRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"

@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 3
+
+- Verified branch `seo/distribution-20260529T005949Z`; account registry shows owned GitHub/docs are configured and LinkedIn, Reddit, YouTube, Product Hunt, directories, newsletters, forums, and other external channels remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - AI directory submitter profiles with exact listing fields, pricing wording, responsible-use line, asset checklist, `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`, and directory quality gates.
+  - Android app review/submission profiles with review-packet fields, APK/screenshot/test-scope owner gates, `SEO_AGENT_ANDROID_REVIEW_PORTAL_REFERENCE`, and no-upload/no-fake-review guardrails.
+- Improved owned content at `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` with a public distribution-fit block covering newsletter, directory, community, and partner sharing rules.
+- Researched rotated authority opportunities across different categories:
+  - AINovaTools AI directory: possible AI/OCR directory fit only with accurate trial plus paid-token wording and source-of-truth links.
+  - AI Tools Explorer: AI translation/app discovery directory fit check only after current rules review.
+  - KADOKAWA WORLD MANGA ATELIER: creator-program context only for approved-sample and screenshot-rights language; not an outreach or backlink target.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned content, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md` for AI directory listing eligibility and KADOKAWA creator-program context, with no-link/watch variants and strict owner-review gates.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, app-test campaign, directory submission, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach was attempted.
+- Next actions: owner reviews AI directory submit rules, approves screenshot/demo assets, confirms package/signing/developer-verification facts, and decides whether any Android review portal may receive APK or redeem-code access.
+
 ## 2026-05-29 Cycle 2
 
 - Verified branch `seo/distribution-20260529T003302Z`; account registry still shows owned GitHub/docs are configured and external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, and forum actions remain draft/manual.
