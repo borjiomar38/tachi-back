@@ -163,6 +163,28 @@ const translationWorkflowStructuredData = () => {
         'Record the form URL, organization fit, message summary, date, and follow-up guardrail without storing private confirmation tokens or form-session data.',
     },
   ] as const;
+  const outreachThrottlePacket = [
+    {
+      name: 'Count same-day sends first',
+      description:
+        'Check the outreach send log before opening a new prospect so the daily cap is preserved for replies, review-code requests, and high-fit official contact paths.',
+    },
+    {
+      name: 'Do not duplicate active threads',
+      description:
+        'Skip any prospect that was already contacted, auto-approved for a form-only path, or queued by the SEO distribution agent unless a reply changes the next action.',
+    },
+    {
+      name: 'Prefer reply value over volume',
+      description:
+        'Use remaining capacity for contacts that can create review access, approved-sample pilots, credible listings, paid-plan evidence, or commercial diligence.',
+    },
+    {
+      name: 'Log the reason for waiting',
+      description:
+        'When the cap is full, record the best next action and guardrail instead of sending lower-fit outreach or creating another cold draft.',
+    },
+  ] as const;
 
   return [
     {
@@ -243,6 +265,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi official form outreach handoff',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: officialFormPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#outreach-throttle`,
+      name: 'Nayovi outreach throttle and duplicate guardrail',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: outreachThrottlePacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
