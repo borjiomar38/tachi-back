@@ -9,6 +9,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
 | draft | Indie Hackers / founder communities | Official founder-owned Nayovi profile | No-link APK trust and OCR workflow feedback post | None by default | OWNER_ACTION_REQUIRED: founder-owned truthful profile, affiliation disclosure, rules review, and manual posting required; no scraped DMs, voting, or engagement automation. |
+| draft | App testing portal | TestFi / AppTester.co-style Android app testing | Source-first Nayovi APK health-check fit question | docs/seo-distribution/reviewer-access-packet.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, account creation, review-code grant, payment, or public report permission until owner approves package facts and sample scope. |
+| draft | Manga podcast/newsletter | Mangasplaining / MSX | Product-light approved-sample comic OCR QA topic note | None by default | OWNER_REVIEW_REQUIRED: public contact only after owner approves byline, sample-safe evidence, and no-link editorial angle; no app-install pitch or backlink ask. |
+| draft | Support/Q&A communities | Official Nayovi support profile | No-link support answer for direct APK trust and responsible-use questions | None by default | OWNER_ACTION_REQUIRED: official account, affiliation disclosure, current rules review, and manual posting required; links only when explicitly useful and allowed. |
 | draft | Android/open-source tooling | Obtainium-style direct APK source discussions | Official source URL and direct-APK trust note | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED for external GitHub/community comments; use owned docs first and link only if a maintainer/user explicitly asks for examples. |
 | draft | AI/free-trial directory | ToolPilot / pricing-aware AI directories | Accurate free-trial plus paid-token listing eligibility | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify current submit rules and source-link fields; skip paid backlink, reciprocal link, hidden redirect, mirror-first APK, forever-free, or open-source mislabeling. |
 | draft | Product Hunt | Official Nayovi maker/company profile | Launch packet asking for APK trust and OCR workflow feedback | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official maker/company account, launch timing, approved screenshots/demo media, and no-upvote-request policy required before launch. |
@@ -170,6 +173,96 @@ Same as above, then add:
 The current source-of-truth page is here if context helps: `https://tachiyomiat.com/download`
 
 I am looking for trust objections and workflow feedback, not signups or promotional comments.
+
+### App testing portal source-first fit question
+
+Status: draft
+Target: TestFi, AppTester.co, or comparable Android app-testing/app-health-check portal after current rules and upload requirements are reviewed
+Audience: human app testers, Android QA reviewers, app-health-check editors, partner diligence readers
+Rules risk: medium; owner approval is required before any APK upload, account creation, tester campaign, review-code grant, payment, screen recording, or public report permission.
+No-link variant: yes for first contact.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link variant:
+
+Hi team,
+
+I am checking whether Nayovi would fit your Android app-testing or app-health-check workflow before preparing anything for review.
+
+Nayovi is a direct Android APK plus hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The useful test would be source-first and practical: install clarity, permission prompts, activation or free-trial path, OCR progress, translation result flow, support route, pricing clarity, and screenshot safety.
+
+The important boundary is that Nayovi does not host or distribute chapters. Testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material. We also need to avoid APK mirrors, fake reviews, rating requests, public private codes, and screenshots from unauthorized pages.
+
+Would that fit your testing scope, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Source packet:
+`https://tachiyomiat.com/download`
+
+Reviewer access packet:
+`docs/seo-distribution/reviewer-access-packet.md`
+
+### Mangasplaining/MSX approved-sample OCR QA topic note
+
+Status: draft
+Target: Mangasplaining / MSX or comparable manga podcast/newsletter after owner approves byline, screenshots, and sample-safe evidence
+Audience: manga editors, manga translation readers, newsletter editors, localization-aware manga fans
+Rules risk: medium; use public contact only, no backlink ask, no app-install pitch, and no implication that Nayovi can process publisher catalogs or fan-scan material.
+No-link variant: yes and preferred.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link variant:
+
+Hi Mangasplaining team,
+
+I am working on Nayovi, an Android OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I am not asking for coverage, app installs, or a backlink. I wanted to ask whether a product-light topic would ever be useful for MSX: what can go wrong when visual-storytelling pages are run through OCR before translation.
+
+The angle would be approved samples only: missing text regions, under-segmented speech balloons, overlapping dialogue, onomatopoeia, reading order, glossary drift, and the human-review step before anything is shared publicly.
+
+Nayovi does not host or distribute chapters, and any examples would need to use owned, public-domain, official-sample, creator-provided, or permission-approved material.
+
+If this is not a fit, no worries and I will skip it.
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+The neutral checklist draft is here if context helps:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### Official Q&A/support no-link answer
+
+Status: draft
+Target: Quora-style, Reddit support, forum, or Q&A threads only when a real user asks about Nayovi, direct APK trust, OCR translation setup, or responsible-use boundaries
+Audience: Android users, manga/manhwa readers, app reviewers, moderators
+Rules risk: high on most Q&A/community surfaces; official/founder account, affiliation disclosure, current rules review, and manual posting are required.
+No-link variant: yes and preferred.
+Link variant after owner review: `https://tachiyomiat.com/support`
+
+No-link variant:
+
+Affiliation disclosure: I work on Nayovi.
+
+For a direct Android APK workflow, I would check four things before installing or reviewing: whether the download source is official, whether support and pricing are easy to find, whether package/signing or verification claims are owner-confirmed, and whether screenshots or examples use material the tester has permission to process.
+
+For Nayovi specifically, it is an Android OCR/AI translation workflow and does not host or distribute chapters. Use it only with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Link variant:
+
+Only if the thread asks for official support/source links:
+`https://tachiyomiat.com/support`
+`https://tachiyomiat.com/download`
 
 ### Obtainium-style direct APK source note
 

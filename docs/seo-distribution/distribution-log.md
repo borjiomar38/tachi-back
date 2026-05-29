@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 12
+
+- Verified branch `seo/distribution-20260529T040534Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup tasks:
+  - Official reviewer access packet for Android reviewers, app-testing portals, AI directories, newsletters, podcasts, creator-platform partners, and investor diligence, with source links, review-code guardrails, no-mirror rules, screenshot boundaries, credential references, and owner approval gates.
+  - Official Q&A/support profile packet for disclosed no-link support answers on Q&A, forum, Reddit, Discord, or community surfaces only when a real user asks and current rules allow the answer.
+- Added owned trust asset `docs/seo-distribution/reviewer-access-packet.md` so qualified reviewer/listing replies can receive a non-secret handoff before any review code, APK test, screenshot, or public report is approved.
+- Researched rotated authority opportunities across different categories using current public search:
+  - TestFi: Android app-testing context that supports direct APK URL testing; owner-reviewed source-first fit only.
+  - AppTester.co: human app-testing/app-health-check surface for install, permission, activation, OCR progress, support, and screenshot-safety testing.
+  - Mangasplaining / MSX: manga podcast/newsletter surface for a future no-link approved-sample OCR QA topic.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new discovery, setup tasks, owned reviewer packet, and exact value-first drafts.
+- Drafted exact no-link and link variants for app-testing portal fit questions, a Mangasplaining/MSX approved-sample OCR QA topic note, and an official Q&A/support answer.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, directory submission, APK upload, tester campaign, review-code grant, public report approval, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, GitHub issue/PR/comment, media pitch, or public outreach send was attempted.
+- Next actions: owner confirms package/signing facts, approved screenshot/demo assets, public reviewer contact path, review-code expiry/revocation policy, and whether TestFi/AppTester.co-style portals or Mangasplaining/MSX-style editorial contacts may be approached manually.
+
 ## 2026-05-29 Cycle 11
 
 - Verified branch `seo/distribution-20260529T035643Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.

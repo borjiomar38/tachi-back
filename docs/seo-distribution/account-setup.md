@@ -67,8 +67,68 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | OCR/resource directory submitter profile | Product-light citation surface for comic OCR QA checklist and hosted Android OCR workflow | setup_packet_prepared_owner_action_required | Owner creates/connects official submitter identity only where a directory requires login or terms acceptance; agent must not submit forms automatically | Checklist title, canonical URL, neutral description, category tags, pricing/support context if product is listed, approved screenshots only if requested | `SEO_AGENT_OCR_RESOURCE_DIRECTORY_REFERENCE`; per-directory API token only if owner enables one | Agent can prepare no-link-first resource notes or accurate listings after current rules review | Owner approves whether OCR Vendors/Capterra-style OCR directories are resource-context only or eligible for an official listing; skip bid-placement, paid-link, reciprocal, or generic document-scanner mislabeling flows. |
 | high | Official app testing/reviewer submitter profile | Owner-controlled Android app-health-check and independent review routing without fake reviews, mirror-first APK uploads, or unsafe screenshots | setup_packet_prepared_owner_action_required | Owner chooses eligible portals, approves terms manually, confirms APK sharing scope, sample pages, review-code policy, and whether any public report may cite Nayovi | `docs/seo-distribution/app-testing-review-brief.md`, APK trust profile, screenshot policy, signed APK URL, SHA-256, package/signing pending language, approved sample references | `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`; per-portal token only if official API exists; no private login data | Agent can prepare portal-specific fit questions and reviewer briefs after owner approval; no upload, tester campaign, public report approval, payment, or review request without explicit authorization | Owner reviews AppTester.co, APKLand, AppsTested, and similar portals against the brief, confirms source-link/no-mirror rules, and decides whether any testing path is allowed. |
 | medium | AI/free-trial directory submitter profile | Accurate listing on directories that evaluate free trials, pricing, APIs, OCR, Translation, and workflow categories | setup_packet_prepared_owner_action_required | Owner approves official submitter identity, contact path, pricing label, category, and form-specific source-link handling manually | One-line description, long description, canonical links, pricing/support URLs, responsible-use line, screenshots only if approved, directory quality gate | `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`; per-directory token only if official API exists | Agent can prepare eligibility questions for SpotFreeAI, Try.fm, ToolDirectory.AI, AiMatch, and similar surfaces after rules review | Owner confirms Nayovi can be represented as free trial plus paid monthly token plans and rejects forever-free, reciprocal-link, hidden-redirect, paid-placement, or mirror-first flows. |
+| high | Official reviewer access packet | Source-of-truth handoff for Android reviewers, app-testing portals, AI directories, newsletters, podcasts, partners, and investor diligence | setup_packet_prepared_owner_action_required | Owner confirms public reviewer contact path, review-code policy, sample/screenshot scope, package facts, and whether any portal may publish test reports | `docs/seo-distribution/reviewer-access-packet.md`, APK review packet, screenshot policy, approved-sample pilot guide, support/pricing/privacy/terms links, approved demo references | `SEO_AGENT_REVIEWER_PACKET_REFERENCE`, `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`, `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`; no private codes in docs | Agent can answer qualified reviewer/listing replies with source links and owner-approved access instructions after account/contact approval | Owner confirms package/signing facts, approved screenshots, review-code expiry/revocation policy, and which reviewers or portals may receive access. |
+| medium | Official Q&A/support profile | Truthful support/community profile for Stack Overflow-style, Quora-style, Reddit support, Discord, or forum answers when users ask direct Nayovi questions | setup_packet_prepared_owner_action_required | Owner creates or confirms official support identity manually, accepts terms, approves affiliation disclosure, and decides whether answers remain manual-only | Profile bio, support URL, official source links, no-piracy support rules, no-link answer drafts, escalation policy | `SEO_AGENT_SUPPORT_COMMUNITY_PROFILE_REFERENCE`; per-community token only if owner authorizes an official API workflow | Agent can draft useful no-link support answers and cite official pages only when contextually requested and allowed | Owner chooses eligible Q&A/community surfaces and confirms no automated answers, scraped DMs, or promotional link drops. |
 
 ## 2026-05-29 Current Cycle Setup Advancement
+
+### Reviewer Access / Review-Code Routing Profile
+
+Status: OWNER_ACTION_REQUIRED for reviewer contact path, private review-code policy, package facts, screenshot/demo approval, and portal-specific permission.
+
+Prepared packet:
+- `docs/seo-distribution/reviewer-access-packet.md`
+- `docs/nayovi-apk-review-packet.md`
+- `docs/reviewer-screenshot-policy.md`
+- `docs/seo-distribution/app-testing-review-brief.md`
+
+Required public fields:
+- Product name: `Nayovi`
+- Official source: `https://tachiyomiat.com/download`
+- Workflow source: `https://tachiyomiat.com/translate-manhwa-ai`
+- Support: `https://tachiyomiat.com/support`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Responsible-use line: `Nayovi does not host or distribute chapters; testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+
+Credential references:
+- `SEO_AGENT_REVIEWER_PACKET_REFERENCE`
+- `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`
+- Store private codes only in the approved secret store or owner-managed system, never in Git or docs.
+
+Agent capability after connection:
+- The agent can reply to qualified reviewer/editor/listing requests with source links and owner-approved access instructions.
+- The agent must not generate, publish, email, or grant review codes; upload APKs; approve public reports; or permit screenshots without owner approval.
+
+Next action:
+- Owner confirms review-code expiry/revocation policy, public reviewer contact route, package/signing facts, approved screenshot references, and whether AppTester.co/TestFi/APKLand-style portals may receive access.
+
+### Official Q&A / Support Community Profile
+
+Status: OWNER_ACTION_REQUIRED for official identity, platform terms, affiliation disclosure, manual posting policy, and support escalation rules.
+
+Priority surfaces to evaluate:
+- Quora-style product questions only if asked organically and answer rules allow affiliation disclosure.
+- Stack Exchange-style answers only when the answer is independently useful without a product link.
+- Reddit support threads only after current subreddit rules review and official/founder account approval.
+- Discord/forum support only if owner approves a no-piracy rule set and moderation scope.
+
+Profile fields:
+- Display name: `Nayovi`
+- Bio: `Official Nayovi support profile for Android OCR and AI translation workflow questions. No chapter hosting; use with owned, public-domain, official-sample, creator-provided, or permission-approved content.`
+- Primary link: `https://nayovi.com`
+- Support link: `https://tachiyomiat.com/support`
+- Download source: `https://tachiyomiat.com/download`
+
+Credential reference:
+- `SEO_AGENT_SUPPORT_COMMUNITY_PROFILE_REFERENCE`; per-community token only if the owner authorizes an official API workflow.
+
+Agent capability after connection:
+- The agent can draft no-link-first support answers and cite official support/download pages only when contextually requested and allowed.
+- The agent must not scrape questions, auto-answer, create personal personas, send DMs, or use Q&A surfaces for promotional link drops.
+
+Next action:
+- Owner decides which support/community surfaces are official enough to cite and whether all answers remain manual-only.
 
 ### Free-Trial AI/Software Directory Submitter Profile
 
