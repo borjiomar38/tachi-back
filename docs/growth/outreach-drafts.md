@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: warm reply intake packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai` with a warm reply intake packet for directory editors, reviewers, affiliates, partner leads, and investor diligence contacts. The packet keeps replies focused on category/source-link requirements, approved sample scope, review-code attribution, pricing/support context, decision owners, and clear escalation thresholds before founder time or custom terms are used.
+
+Next outreach: after cap reset, process qualified replies first. If no replies are waiting, use the Nube/Genga official-form queue or recheck AIAnyTool's current submit/contact terms before any send.
+
 ### Autonomous cycle: homepage partner proof packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

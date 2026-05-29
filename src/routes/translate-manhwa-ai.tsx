@@ -137,6 +137,23 @@ const translateManhwaAiStructuredData = () => {
         'Escalate only when a reply requires custom terms, a real pilot owner, a commercial commitment, investor materials, or a meeting time.',
     },
   ] as const;
+  const replyIntakeItems = [
+    {
+      name: 'Directory listing intake',
+      description:
+        'Confirm category, source links, pricing label, screenshot needs, and official APK/support context before accepting a listing path.',
+    },
+    {
+      name: 'Review or affiliate code intake',
+      description:
+        'Ask for coverage format, audience, approved sample scope, disclosure needs, and separated code attribution before issuing access.',
+    },
+    {
+      name: 'Partner or investor intake',
+      description:
+        'Collect decision owner, sample rights, commercial objective, activation metric, and exact next decision before escalating founder time.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -214,6 +231,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#commercial-qualification`,
       name: 'Nayovi commercial qualification signals for serious replies',
       itemListElement: commercialQualificationItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-intake`,
+      name: 'Nayovi warm reply intake for qualified growth follow-up',
+      itemListElement: replyIntakeItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

@@ -621,6 +621,24 @@ const commercialQualificationRows = [
   },
 ] as const;
 
+const replyIntakeRows = [
+  {
+    request: 'Directory listing',
+    intake:
+      'Confirm category, source links, pricing label, screenshot needs, and whether the directory preserves official APK and support context.',
+  },
+  {
+    request: 'Review or affiliate code',
+    intake:
+      'Ask for coverage format, expected audience, approved sample scope, disclosure needs, and how code usage should be separated from normal paid readers.',
+  },
+  {
+    request: 'Partner or investor follow-up',
+    intake:
+      'Collect the named decision owner, sample rights, commercial objective, activation metric, and exact next decision before escalating founder time.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2001,6 +2019,50 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open qualification workflow
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply intake"
+        title="Turn warm replies into qualified next steps"
+        description="When a directory, reviewer, partner, or investor answers, the first response should collect enough context to protect review codes, support time, and paid-reader attribution."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {replyIntakeRows.map((row) => (
+            <Card key={row.request} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.request}</CardTitle>
+                <CardDescription>{row.intake}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Preserve the revenue signal
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A qualified reply should make the official install path,
+                responsible sample boundary, attribution route, and paid-plan
+                handoff clearer. If a response asks for hidden pricing,
+                mirror-first distribution, paid links, or unapproved catalog
+                processing, close the thread instead of issuing access.
+              </p>
+            </div>
+            <a
+              href="/guides/free-trial-vs-paid-token-plan"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open access routing guide
             </a>
           </CardContent>
         </Card>
