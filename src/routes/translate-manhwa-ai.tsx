@@ -52,6 +52,23 @@ const translateManhwaAiStructuredData = () => {
         'Use a dedicated redeem code, approved sample scope, and support route so activation quality can be measured before promoting paid use.',
     },
   ] as const;
+  const renewalProofItems = [
+    {
+      name: 'Repeat title or workflow',
+      description:
+        'Treat a reader, reviewer, affiliate, or community pilot as high quality when the same Android translation workflow is useful after the first trial.',
+    },
+    {
+      name: 'Supportable official setup',
+      description:
+        'Keep APK download, activation, pricing, support, cancellation, and responsible-use context on official Nayovi pages before asking for renewal or recommendation.',
+    },
+    {
+      name: 'Permission-safe material',
+      description:
+        'Use renewal, review, and partner claims only around owned, public-domain, official-sample, or permission-approved material.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -74,6 +91,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#partner-handoff`,
       name: 'Nayovi partner handoff paths for Android manhwa translation',
       itemListElement: partnerHandoffItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#renewal-proof`,
+      name: 'Nayovi renewal proof signals for Android manhwa translation',
+      itemListElement: renewalProofItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
