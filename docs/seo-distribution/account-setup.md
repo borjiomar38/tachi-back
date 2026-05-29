@@ -1703,3 +1703,68 @@ Publish capability after connection:
 
 Next action:
 - Owner creates or connects the official newsletter profile, approves the sender identity, and confirms whether the first APK trust issue should be published manually.
+
+## 2026-05-29 Cycle 8 Account Setup Advancement
+
+### AI Search / AI Answers Entity Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for owner-confirmed public entity fields, domain ownership, and any webmaster or structured-data validation account connection.
+
+Public entity fields:
+- Name: `Nayovi`
+- Primary website: `https://nayovi.com`
+- Product source: `https://tachiyomiat.com/download`
+- SEO discovery URL: `https://translate-manhwa-ai.com`
+- One-line description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Responsible-use line: `Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved content.`
+- Support path: `https://tachiyomiat.com/support`
+- Trust packet: `https://tachiyomiat.com/llms.txt`
+
+Required assets:
+- Owner-confirmed public contact path.
+- Official logo/avatar and approved screenshot/demo references.
+- Owner-confirmed Android package name, signing fingerprint, developer verification status, and package registration state before any verified-language claims.
+- Consistent profile copy from `docs/nayovi-official-profile-fields.md`.
+
+Credential/reference guardrails:
+- `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS`
+- `SEO_AGENT_BING_WEBMASTER_API_KEY`
+- `SEO_AGENT_AI_SEARCH_ENTITY_REFERENCE`
+- Store no webmaster verification tokens, private contacts, cookies, analytics exports, or API keys in docs or Git.
+
+Publish capability after connection:
+- Agent can keep entity fields, `llms.txt` handoff copy, sitemap/indexing notes, and directory profile drafts synchronized after owner approval. It must not claim AI answer inclusion, search ranking, verification, or endorsement.
+
+Next action:
+- Owner verifies the three domains in GSC/Bing, confirms public entity fields, and decides whether AI-answer entity tracking remains manual or uses approved API credentials.
+
+### Official Startup Directory Submitter Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for founder-owned profile creation, terms acceptance, public company identity approval, and any paid-feature decision.
+
+Public profile fields:
+- Company/product: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Description: `Nayovi provides an official Android APK and hosted OCR/AI translation workflow for readers testing owned, public-domain, official-sample, creator-provided, or otherwise permission-approved manga, manhwa, and manhua pages. It supports official APK access, free trial or redeem-code activation, monthly token plans, and support paths. Nayovi does not host or distribute chapters.`
+- Website: `https://nayovi.com`
+- Product URL: `https://tachiyomiat.com/download`
+- Category tags: `Android`, `AI translation`, `OCR`, `reader workflow`, `creator tools`
+- Pricing line: `Free trial or redeem-code activation, then monthly hosted OCR/translation token plans.`
+
+Required assets:
+- Official logo/avatar.
+- Approved screenshots or demo video only.
+- Public media-kit packet.
+- Owner-approved public metrics only; no private revenue, user counts, investor notes, or customer names unless explicitly approved.
+
+Credential/reference guardrails:
+- `SEO_AGENT_STARTUP_DIRECTORY_PROFILE_REFERENCE`
+- `SEO_AGENT_REVENUEFAST_PROFILE_REFERENCE`
+- `SEO_AGENT_PRODUCTHUNT_TOKEN` only for Product Hunt-specific workflows.
+- Store no passwords, paid listing receipts, private founder emails, or analytics exports in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare directory-specific listing drafts and keep founder-safe copy consistent. Manual signup, email verification, paid upgrades, profile publication, and launch scheduling remain owner actions unless a compliant official API workflow is connected and explicitly authorized.
+
+Next action:
+- Owner chooses eligible startup directories, rejects paid-link or reciprocal-link flows, and approves the exact submitter identity before any form is used.
