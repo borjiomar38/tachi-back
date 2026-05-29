@@ -1049,6 +1049,29 @@ const formSubmissionProofRows = [
   },
 ] as const;
 
+const replyPipelineRows = [
+  {
+    state: 'Waiting',
+    nextStep:
+      'Do nothing when there is no reply, the daily cap is full, or the only available move is another low-context follow-up.',
+  },
+  {
+    state: 'Send assets',
+    nextStep:
+      'Send the smallest relevant packet when the contact asks for listing fields, screenshots, demo context, reviewer access, or approved-sample pilot details.',
+  },
+  {
+    state: 'Issue tracked access',
+    nextStep:
+      'Use a dedicated review or pilot code only when source context, sample scope, public link handling, and support routing are clear enough to measure.',
+  },
+  {
+    state: 'Escalate or stop',
+    nextStep:
+      'Escalate meetings, custom terms, legal or financial commitments, and investor materials. Stop paid-link, mirror-first, hidden-pricing, or unauthorized-catalog threads.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -2773,6 +2796,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.field}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply pipeline"
+        title="How to move a reply without wasting access"
+        description="Use this ledger after a qualified reply so follow-up stays tied to source-preserving links, measured review access, paid-plan evidence, and true owner decisions."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {replyPipelineRows.map((row) => (
+              <div
+                key={row.state}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.state}
+                </span>
+                <span>{row.nextStep}</span>
               </div>
             ))}
           </CardContent>

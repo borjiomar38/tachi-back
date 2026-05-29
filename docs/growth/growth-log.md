@@ -449,6 +449,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T050332Z`: audited branch state, SEO distribution shared status, current growth trackers, `/guides/translation-support-workflow`, and outreach sender history.
+- Added a reply pipeline ledger to `/guides/translation-support-workflow` so qualified replies can move through wait, send-assets, issue tracked access, escalate, or stop decisions before outreach capacity, review codes, or founder time are spent.
+- Added matching `ItemList` structured metadata and marked the reply pipeline ledger shipped in the content backlog and backlink tracker.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next sender window should process qualified replies first; if none are waiting, use the ledger before contacting any new prospect.
+
 - Autonomous cycle on `growth/autonomous-20260529T044209Z`: audited branch state, SEO distribution shared status/report, current growth trackers, `/translate-manhwa-ai`, and outreach sender history.
 - Added a reply-to-revenue handoff section to `/translate-manhwa-ai` so qualified directory, reviewer, affiliate, partner, and diligence replies route toward source-preserving listing approval, review-code attribution, paid-plan conversion checks, approved-sample pilots, or clean stop decisions before founder time, custom terms, or calls are escalated.
 - Added matching ItemList structured metadata and marked the reply-to-revenue handoff packet shipped in the content backlog and backlink tracker.
