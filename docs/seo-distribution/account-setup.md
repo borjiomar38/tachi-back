@@ -1574,3 +1574,69 @@ Agent capability after owner connection:
 
 Next action:
 - Owner reviews the packet and supplies package/signing/screenshot facts before any manual newsletter submission.
+
+### 2026-05-29 Cycle 3 - LinkedIn Official Company/Founder Packet
+
+Status: OWNER_ACTION_REQUIRED for company page or founder-owned profile creation, manual verification, and API connection.
+
+Public profile copy:
+- Name: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- About: `Nayovi provides an official Android APK and hosted OCR/AI translation workflow for readers who work with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved manga, manhwa, and manhua pages. It supports official APK access, free trial or redeem-code activation, monthly token plans, support paths, and reviewer-safe testing. Nayovi does not host or distribute chapters.`
+- Website: `https://nayovi.com`
+- Product/download link for posts: `https://tachiyomiat.com/download`
+- Trust asset for posts: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Official logo/avatar and banner.
+- Owner-approved founder/company identity.
+- Public contact path or company page contact setting.
+- Approved screenshots or demo references only.
+- Owner-confirmed package/signing/verification facts before any APK trust claims.
+
+Credential/reference guardrails:
+- `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`
+- `SEO_AGENT_LINKEDIN_ORGANIZATION_ID`
+- Store no passwords, cookies, scraped contacts, private DMs, phone-verification data, or verification screenshots in docs or Git.
+
+Publish capability after connection:
+- Agent can draft or publish owner-approved company posts only if official API access is connected and the exact action is authorized. Partner DMs, comments, and founder posts remain owner-review/manual unless separately authorized.
+
+Next action:
+- Owner creates or connects the official LinkedIn company/founder surface, approves the copy above, and confirms whether API-assisted company posting is allowed.
+
+### 2026-05-29 Cycle 3 - YouTube Official Demo Channel Packet
+
+Status: OWNER_ACTION_REQUIRED for official channel creation, manual terms/verification steps, sample-safe video approval, and optional API connection.
+
+Public channel fields:
+- Channel name: `Nayovi`
+- Handle preference: owner-approved official handle matching `nayovi` where available.
+- Description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. Videos show official APK access, activation, OCR progress, translation workflow, support paths, and approved-sample testing only. Nayovi does not host or distribute chapters.`
+- Primary link: `https://nayovi.com`
+- Download link: `https://tachiyomiat.com/download`
+- Checklist link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+First video packet:
+- Title: `Nayovi Android OCR translation workflow demo`
+- Description: `Official Nayovi demo using approved sample material only. Nayovi supports Android APK access, hosted OCR/AI translation, free trial or redeem-code activation, monthly token plans, and support paths. It does not host or distribute chapters; use it with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved content.`
+- Tags/topics: `Android`, `OCR`, `AI translation`, `manga`, `manhwa`, `workflow`
+- Pinned comment draft: `Official links: https://nayovi.com and https://tachiyomiat.com/download. Reviewer checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist.`
+
+Required assets:
+- Approved demo video or clip.
+- Poster/thumbnail image using approved-sample UI only.
+- Logo/avatar and banner.
+- Screenshot-rights confirmation from `docs/seo-distribution/creator-platform-screenshot-rights-packet.md`.
+
+Credential/reference guardrails:
+- `SEO_AGENT_YOUTUBE_REFRESH_TOKEN`
+- `SEO_AGENT_DEMO_VIDEO_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+- Store no OAuth refresh-token values, private videos, customer pages, unpublished samples, cookies, or verification documents in docs or Git.
+
+Publish capability after connection:
+- Agent can draft metadata and, only if owner approves API scope and the video asset, update official video descriptions or playlists. No automated commenting, subscriber solicitation, or reposting is authorized.
+
+Next action:
+- Owner creates or connects the official channel, approves the first demo asset and metadata, and decides whether YouTube API updates are enabled.
