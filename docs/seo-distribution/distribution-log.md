@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 5
+
+- Verified branch `seo/distribution-20260529T012745Z`; account registry shows external posting mode is `draft` and account creation is disabled, so no third-party posting, login, signup, form submission, APK upload, tester campaign, or account creation was attempted.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, `android-developer-verification-readiness.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Android Developer Console verification workflow with package registration, signed-APK proof, identity/terms owner gates, and `SEO_AGENT_ANDROID_DEVELOPER_CONSOLE_REFERENCE`.
+  - Official press/media kit page with public contact, founder quote, logo/screenshot/demo asset, package fact, and metrics owner gates plus `SEO_AGENT_PRESS_CONTACT_REFERENCE`.
+- Improved owned content at `https://tachiyomiat.com/download` with a public Android 2026 developer-verification readiness block and structured data. The copy uses pending-language readiness and does not claim Nayovi is verified, Play-listed, or package-registered.
+- Strengthened `docs/seo-distribution/android-developer-verification-readiness.md` with exact safe/blocked wording for reviewers and directories.
+- Researched rotated authority opportunities across different categories:
+  - Official Android developer verification documentation: high-trust Android context for direct-APK reviewer packets.
+  - Manga109-v2026: technical research context for missing regions, transcription drift, overlapping dialogue, onomatopoeia, and under-segmented balloons in OCR QA.
+  - ToolDirectory.AI: AI directory eligibility review only if source links, pricing, support, and responsible-use context are preserved.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned content, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md` for Android 2026 pending-language reviewer notes, ToolDirectory.AI-style listing eligibility, and Manga OCR research-context resource notes.
+- Next actions: owner confirms package name, signing fingerprint, developer verification status, package registration state, public media contact, screenshot/demo rights, and whether any AI directory submit flow is acceptable.
+
 ## 2026-05-29 Cycle 4
 
 - Verified branch `seo/distribution-20260529T011732Z`; account registry shows owned GitHub/docs are configured and all external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, forum, and creator-platform accounts remain draft/manual.
