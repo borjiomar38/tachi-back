@@ -603,6 +603,24 @@ const diligenceRows = [
   },
 ] as const;
 
+const commercialQualificationRows = [
+  {
+    signal: 'Concrete use case',
+    detail:
+      'Advance commercial replies when the partner names the audience, approved material, language pair, and why an Android hosted-OCR workflow is needed.',
+  },
+  {
+    signal: 'Measurable activation path',
+    detail:
+      'Use dedicated codes, official APK links, support routing, and pricing context so trial activation can be separated from normal checkout traffic.',
+  },
+  {
+    signal: 'Decision-ready next step',
+    detail:
+      'Escalate only when the reply asks for custom terms, a real pilot owner, a commercial commitment, or a meeting time that requires founder input.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1939,6 +1957,50 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open pilot packet
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Commercial qualification"
+        title="Advance serious replies without wasting founder time"
+        description="Revenue-focused replies should identify the use case, activation path, and decision owner before custom terms, investor materials, or a call are requested."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {commercialQualificationRows.map((row) => (
+            <Card key={row.signal} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <HandshakeIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.signal}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ClipboardCheckIcon className="size-4" />
+                Qualify before escalation
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A strong commercial thread should already include approved
+                sample scope, audience fit, tracking needs, and the exact
+                decision requested. Routine listing, review-code, or pilot
+                questions can stay in the support workflow until a commitment
+                or meeting is actually needed.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open qualification workflow
             </a>
           </CardContent>
         </Card>

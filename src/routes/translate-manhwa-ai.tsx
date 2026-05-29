@@ -120,6 +120,23 @@ const translateManhwaAiStructuredData = () => {
         'Keep normal checkout, reviewer codes, affiliate referrals, and approved-sample pilots separate so paid demand is not mixed with evaluation access.',
     },
   ] as const;
+  const commercialQualificationItems = [
+    {
+      name: 'Concrete use case',
+      description:
+        'Advance commercial replies when the partner names the audience, approved material, language pair, and Android hosted-OCR workflow need.',
+    },
+    {
+      name: 'Measurable activation path',
+      description:
+        'Use dedicated codes, official APK links, support routing, and pricing context so activation quality can be measured separately from normal checkout traffic.',
+    },
+    {
+      name: 'Decision-ready next step',
+      description:
+        'Escalate only when a reply requires custom terms, a real pilot owner, a commercial commitment, investor materials, or a meeting time.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -186,6 +203,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#diligence-packet`,
       name: 'Nayovi diligence packet for publishers, partners, and investors',
       itemListElement: diligenceItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#commercial-qualification`,
+      name: 'Nayovi commercial qualification signals for serious replies',
+      itemListElement: commercialQualificationItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
