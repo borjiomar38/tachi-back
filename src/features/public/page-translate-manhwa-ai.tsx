@@ -729,6 +729,24 @@ const replyDecisionSlaRows = [
   },
 ] as const;
 
+const replyFollowUpRows = [
+  {
+    check: 'Source path preserved',
+    action:
+      'Reply only when the next message can keep official APK, pricing, support, cancellation, and responsible-use links attached to the contact path.',
+  },
+  {
+    check: 'Access type separated',
+    action:
+      'Choose normal checkout, review code, affiliate attribution, or approved-sample pilot access before sending assets or issuing a code.',
+  },
+  {
+    check: 'Evidence expected',
+    action:
+      'Name the proof the follow-up should create: listing fields, screenshots reviewed, activated test, qualified install, pilot notes, or a clean stop.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2370,6 +2388,50 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Route qualified replies
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        id="reply-follow-up-checklist"
+        eyebrow="Reply follow-up checklist"
+        title="Send the next follow-up only when it can create proof"
+        description="Before spending another email, review code, or partner note, the thread should preserve official links, separate the access type, and define the evidence expected from the next step."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {replyFollowUpRows.map((row) => (
+            <Card key={row.check} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.check}</CardTitle>
+                <CardDescription>{row.action}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Use proof to choose reply, hold, or escalate
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                If a reply cannot produce a source-preserving listing,
+                separated activation signal, approved-sample note, or paid-plan
+                intent, hold it instead of spending another follow-up. Escalate
+                only when a real business decision is needed.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow#reply-pipeline"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Review reply pipeline
             </a>
           </CardContent>
         </Card>
