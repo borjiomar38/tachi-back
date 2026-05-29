@@ -2,6 +2,22 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 7
+
+- Verified branch `seo/distribution-20260529T020325Z`; `/var/lib/tachi-seo-distribution-agent/accounts.json` still has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and the account registry before drafting.
+- Advanced account setup priority with two official setup tasks:
+  - Search webmaster verification console packet for Google Search Console and Bing Webmaster Tools across `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com`, with `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS` and `SEO_AGENT_BING_WEBMASTER_API_KEY` as non-secret references only.
+  - Official newsletter/public update archive packet with `docs/seo-distribution/newsletter-first-issue-draft.md`, sender identity/compliance owner gates, `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`, and no contact-import/no bulk-send rules.
+- Improved owned trust assets by creating `docs/seo-distribution/newsletter-first-issue-draft.md`, a first-issue draft about independent Android OCR APK reviewer checks, source-of-truth links, screenshot rights, no-mirror listings, and package/signing facts that remain owner-confirmation-required.
+- Researched rotated authority opportunities across different categories:
+  - SpotFreeAI submit-tool surface: AI/free-trial directory fit only if Trial Only or Freemium wording accurately preserves Nayovi's trial plus paid-token model.
+  - APKLand official-source Android review surface: possible fit only if review keeps official source links and owner-confirmed package/signing/screenshot facts.
+  - IzzyOnDroid/F-Droid reproducible source expectations: watch-only FOSS Android trust benchmark; not a current Nayovi listing fit.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the discovery notes, draft listing/review packets, and owner-review gates.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, newsletter account action, contact import, bulk email, directory submission, APK upload, tester campaign, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach send was attempted.
+- Next actions: owner verifies GSC/Bing properties, reviews the newsletter first issue, confirms package/signing/developer-verification facts, and approves screenshot/demo assets before any public archive, Android review packet, or directory submission.
+
 ## 2026-05-29 Cycle 6
 
 - Verified branch `seo/distribution-20260529T013724Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
