@@ -405,6 +405,24 @@ const partnerMetricRows = [
   },
 ] as const;
 
+const renewalProofRows = [
+  {
+    proof: 'Repeat title or workflow',
+    detail:
+      'A paid plan makes sense when the same reader, reviewer, or community keeps returning to similar manga, manhwa, or manhua page flows after the trial.',
+  },
+  {
+    proof: 'Supportable Android setup',
+    detail:
+      'Qualified referrals should know where the APK, activation, support, pricing, and cancellation paths live before they recommend Nayovi.',
+  },
+  {
+    proof: 'Permission-safe material',
+    detail:
+      'Renewal or public recommendation should stay tied to owned, public-domain, official-sample, or permission-approved material.',
+  },
+] as const;
+
 const sourceHandoffRows = [
   {
     moment: 'Directory discovery',
@@ -1192,6 +1210,45 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Request partner access
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Renewal proof"
+        title="Separate paid readers from one-time testers"
+        description="The strongest backlink or partner mention is one that creates recurring Android translation demand, not a spike of unqualified trial traffic."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {renewalProofRows.map((row) => (
+            <Card key={row.proof} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.proof}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Prefer durable revenue signals
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Use reviews, directories, and community pilots to confirm
+                repeat translation intent, support clarity, and permission-safe
+                material before treating traffic as subscription quality.
+              </p>
+            </div>
+            <a
+              href="/guides/free-trial-vs-paid-token-plan"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Check renewal fit
             </a>
           </CardContent>
         </Card>
