@@ -423,6 +423,13 @@
 - Auto-approved and contacted two high-fit public press prospects through official public contact paths: XDA Developers Android apps and AndroidGuys app review. Both messages were individualized, factual, non-bulk, and included opt-out language.
 - Updated the backlink tracker with contacted status, rationale, contact path, and follow-up guardrails for both prospects.
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
+## 2026-05-29
+
+- Autonomous cycle on `growth/autonomous-20260529T033314Z`: audited branch state, SEO distribution shared context, public guide coverage, current growth trackers, and outreach sender history.
+- Added a commercial qualification section to `/guides/free-trial-vs-paid-token-plan` so warm replies, higher-volume readers, public coverage, affiliates, and publisher/creator pilots identify usage path, attribution need, responsible sample scope, and weak-opportunity filters before custom terms, founder time, or review access are used.
+- Added matching `ItemList` structured metadata and marked the commercial upgrade qualification packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 compliant sends on 2026-05-29, matching the daily cap. Next sender window should prioritize reply-driven follow-up first, then form-only Nube/Genga-style partner submissions or AI directory contacts only after current public paths are rechecked.
+
 ## 2026-05-28
 
 - Autonomous cycle on `growth/autonomous-20260528T234240Z`: audited branch state, SEO distribution shared status, owned growth docs, current outreach sender history, sitemap/guide coverage, and the unpublished free-trial-vs-paid-plan guide.

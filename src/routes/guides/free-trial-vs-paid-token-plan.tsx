@@ -117,6 +117,23 @@ const trialTokenPlanStructuredData = () => {
         'Keep creator, publisher, localization, and community pilots on approved samples with separated access and private evidence.',
     },
   ] as const;
+  const commercialSignals = [
+    {
+      name: 'Higher-volume reader',
+      description:
+        'Route repeat page volume to a normal monthly plan after trial quality, source permission, and support expectations are proven.',
+    },
+    {
+      name: 'Reviewer or affiliate',
+      description:
+        'Use a dedicated code and tracking note when public coverage, screenshots, comparison context, or referral quality needs measurement.',
+    },
+    {
+      name: 'Publisher or creator partner',
+      description:
+        'Keep the conversation on approved samples, private evidence, commercial objective, and stop conditions before discussing custom access.',
+    },
+  ] as const;
 
   return [
     {
@@ -195,6 +212,17 @@ const trialTokenPlanStructuredData = () => {
       '@id': `${url}#access-attribution`,
       name: 'Nayovi paid checkout, review code, referral, and pilot access routing',
       itemListElement: attributionSignals.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#commercial-qualification`,
+      name: 'Nayovi commercial upgrade and partner qualification signals',
+      itemListElement: commercialSignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

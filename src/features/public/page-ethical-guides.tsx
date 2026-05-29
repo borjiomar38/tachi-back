@@ -523,6 +523,29 @@ const tokenPlanAttributionRows = [
   },
 ] as const;
 
+const tokenPlanCommercialRows = [
+  {
+    label: 'Volume reader',
+    detail:
+      'Ask for expected pages, language pair, device count, and support needs before moving beyond the standard monthly token plans.',
+  },
+  {
+    label: 'Public coverage',
+    detail:
+      'Use a dedicated review or affiliate code when a writer, directory, or community can keep official APK, pricing, support, and responsible-use links attached.',
+  },
+  {
+    label: 'Partner use case',
+    detail:
+      'Keep publisher, creator, localization, and community requests on approved samples with a clear business objective before custom access or founder time is considered.',
+  },
+  {
+    label: 'No escalation',
+    detail:
+      'Do not escalate vague traffic offers, paid-link requests, mirror-first listings, or unsupported catalog-processing claims as commercial opportunities.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1985,6 +2008,28 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
                 className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
               >
                 <span className="font-semibold">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Commercial qualification"
+        title="Escalate only measurable paid or partner demand"
+        description="Warm replies and higher-volume requests should identify the usage path, attribution need, and responsible sample scope before custom terms, founder time, or review access are used."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {tokenPlanCommercialRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
                 <span>{row.detail}</span>
               </div>
             ))}
