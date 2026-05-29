@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | AI directory | TheAIFest submit-tool path | Accurate Android OCR/AI translation listing fit question | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current fields and source-link handling; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
+| draft | AI directory | Aitoolnet submit/contact path | Source-of-truth Nayovi listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit path only; no automated form submission or paid backlink package. |
+| draft | Reddit | r/androiddev monthly showcase or similar allowed thread | No-link Android APK trust and OCR workflow feedback request | None by default | AUTHORIZED_ACCOUNT_REQUIRED: official/founder account and current rules review required; include link only if the thread explicitly allows app links. |
 | draft | Product Hunt | Official Nayovi maker/company profile | Launch packet asking for APK trust and OCR workflow feedback | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official maker/company account, launch timing, approved screenshots/demo media, and no-upvote-request policy required before launch. |
 | draft | Official newsletter | Nayovi Notes public archive | First issue introducing APK trust checks and approved-sample OCR QA | docs/seo-distribution/official-newsletter-first-issue.md | OWNER_ACTION_REQUIRED: official newsletter account, sender identity, and publication approval required; no contact import or bulk email. |
 | draft | AI directory | AINovaTools submit-tool path | Accurate AI Translation/OCR listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
@@ -128,6 +131,59 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Creator program context | KADOKAWA WORLD MANGA ATELIER | Creator-safe approved-sample language context | None | WATCH_ONLY: no outreach or endorsement claim; use only to improve owned creator-safe copy. |
 
 ## Draft Bodies
+
+### TheAIFest / Aitoolnet AI directory eligibility note
+
+Status: draft
+Target: TheAIFest, Aitoolnet, or a comparable reviewed AI tools directory after current rules review
+Audience: AI directory reviewers and high-intent OCR/translation tool searchers
+Rules risk: medium; use only official submit/contact paths after owner review.
+No-link variant: yes for eligibility question.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link eligibility question:
+
+Hi team,
+
+I am checking whether Nayovi fits your AI tools directory before preparing a submission.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A correct listing would need to keep the official APK source, support path, free trial or redeem-code activation, monthly token plans, and responsible-use boundary visible.
+
+It should not be listed as forever-free, open-source, app-store-only, an APK mirror, a generic chatbot, or a chapter-hosting service. Nayovi is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+Would this fit an AI Translation, OCR, Android, productivity, or workflow category, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant only if the listing form requires a URL:
+
+Primary URL: https://tachiyomiat.com/download
+Supporting workflow: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+Responsible-use guide: https://tachiyomiat.com/guides/translation-support-workflow
+
+### r/androiddev showcase feedback draft
+
+Status: draft
+Target: r/androiddev monthly showcase or a comparable explicitly allowed app-feedback thread
+Audience: Android developers who can critique APK trust, install friction, and mobile OCR workflow clarity
+Rules risk: high; AUTHORIZED_ACCOUNT_REQUIRED and current rules review required. No automated posting, replies, voting, or link drops.
+No-link variant: yes and preferred.
+Link variant: only if the current thread explicitly allows app URLs.
+
+No-link variant:
+
+I am working on an Android APK workflow for hosted OCR and AI translation on image-heavy comic pages, and I am trying to make the trust surface clearer before asking anyone to install it.
+
+The feedback I am looking for is Android-specific: what would you expect to see before trusting a direct APK workflow in 2026? Current checklist items are official source page, APK filename/build/size/hash, package/signing fields once owner-confirmed, privacy/support links, free trial or redeem-code activation, and a clear rule that demo screenshots use only approved samples.
+
+No product link here because I do not want to turn the thread into promotion. I would value comments on missing verification details, install wording, or reviewer packet expectations for an independent APK.
+
+Link variant only if allowed:
+
+Official APK trust packet: https://tachiyomiat.com/download
+
+Disclosure: I am affiliated with Nayovi. It does not host or distribute chapters; testing should use owned, public-domain, official-sample, creator-provided, or permission-approved content.
 
 ### Product Hunt launch packet
 

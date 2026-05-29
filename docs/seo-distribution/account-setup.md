@@ -4,6 +4,18 @@ This file is maintained by the SEO distribution agent.
 
 Only official Nayovi-owned accounts belong here. Do not add fake personas, throwaway accounts, passwords, tokens, recovery codes, cookies, or private credentials. Store secret values only in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions or an approved secret store; this document may reference variable names only.
 
+## 2026-05-29 Cycle Progress
+
+Advanced setup tasks before normal backlink work:
+- Google Search Console and Bing Webmaster remain high-priority OWNER_ACTION_REQUIRED tasks. The exact properties, sitemap URL, verification methods, credential references, and post-connection agent capability are already listed below. No API credential is configured in `/var/lib/tachi-seo-distribution-agent/accounts.json`, so the agent did not inspect or submit search-console data.
+- YouTube and LinkedIn remain high-priority official trust profiles. The profile copy, first-post/demo packet, required visual assets, canonical links, and credential references are already prepared below. Both are blocked only by owner-created official accounts, approved visuals, and optional OAuth/API connection.
+- Added this cycle's practical handoff to the public OCR checklist: editors, maintainers, directories, and localization partners should receive the checklist summary and affiliation disclosure before any product link, and the workflow stops on paid-link, reciprocal, mirror-first APK, unauthorized sample, or undisclosed-promotion requirements.
+
+Current account registry result:
+- `github` is configured for owned repo/docs work.
+- `linkedin`, `reddit`, `directories`, `press-newsletters-podcasts`, `creator-platforms`, `x-twitter`, `producthunt`, `devto-medium`, `youtube`, and `forums-qa-communities` are draft-only or owner-action-required.
+- External posting remains draft-only until a platform has an official Nayovi-owned account/API workflow and the exact action is rule-compliant.
+
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | high | Android Developer Console verification workflow | Owner-controlled package registration and direct-APK trust under the 2026 Android developer verification rollout | setup_packet_prepared_owner_action_required | Owner completes identity, terms, package registration, and any required signed-APK proof manually; agent must not upload identity documents or accept terms | Package name, signed APK, signing-certificate fingerprint, current SHA-256, official download URL, support/privacy/terms URLs, approved screenshot policy | `SEO_AGENT_ANDROID_DEVELOPER_CONSOLE_REFERENCE`; no identity documents or login data | Agent can update reviewer packets and directory drafts with owner-confirmed public package/signing/verification facts only | Owner confirms whether Nayovi uses Android Developer Console, Play Console, or another official registration path and supplies exact public status language. |

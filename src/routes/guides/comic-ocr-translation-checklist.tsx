@@ -58,6 +58,23 @@ const checklistStructuredData = () => {
         'Use current manga OCR research as background for reviewer checks only, without implying external endorsement of Nayovi.',
     },
   ] as const;
+  const outreachPacketChecks = [
+    {
+      name: 'Send the checklist before a product link',
+      description:
+        'Lead with sample permission, OCR coverage, reading order, glossary review, and affiliation disclosure before sending an APK or product URL.',
+    },
+    {
+      name: 'Include Nayovi only when implementation details are welcome',
+      description:
+        'Add the official download or review packet only when a maintainer, editor, directory reviewer, or partner asks for an Android hosted OCR workflow path.',
+    },
+    {
+      name: 'Stop on unsafe placement requirements',
+      description:
+        'Do not continue if the target requires paid links, reciprocal badges, mirror-first APK distribution, unauthorized chapter examples, or undisclosed promotion.',
+    },
+  ] as const;
 
   return [
     {
@@ -95,6 +112,17 @@ const checklistStructuredData = () => {
         description: check.description,
       })),
       citation: 'https://arxiv.org/abs/2605.21182',
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#outreach-packet`,
+      name: 'Comic OCR checklist outreach packet',
+      itemListElement: outreachPacketChecks.map((check, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: check.name,
+        description: check.description,
+      })),
     },
   ];
 };

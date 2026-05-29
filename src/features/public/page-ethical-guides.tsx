@@ -1203,6 +1203,29 @@ const checklistDistributionRows = [
   },
 ] as const;
 
+const checklistOutreachPacketRows = [
+  {
+    label: 'What to send first',
+    detail:
+      'Send the checklist summary, approved-sample boundary, and affiliation disclosure before sending an APK link, screenshots, or review-code request.',
+  },
+  {
+    label: 'When to include Nayovi',
+    detail:
+      'Mention Nayovi only when the recipient wants an Android implementation path, official source links, or hosted OCR workflow details.',
+  },
+  {
+    label: 'When to stop',
+    detail:
+      'Stop if the target requires paid links, reciprocal badges, APK mirroring, unauthorized chapter examples, undisclosed promotion, or unsupported performance claims.',
+  },
+  {
+    label: 'Useful follow-up',
+    detail:
+      'Offer package facts, a safe sample plan, support routing, and reviewer-code scope only after the owner confirms the public metadata and sample rights.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -1364,6 +1387,28 @@ export const PageComicOcrChecklist = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {checklistDistributionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Outreach packet"
+        title="What editors and maintainers need before a link"
+        description="This packet keeps GitHub resource notes, newsletter tips, directory eligibility questions, and localization-partner messages useful even when the link is omitted."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {checklistOutreachPacketRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
