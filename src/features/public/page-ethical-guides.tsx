@@ -773,6 +773,29 @@ const capResetPacketRows = [
   },
 ] as const;
 
+const outreachThrottleRows = [
+  {
+    field: 'Same-day cap check',
+    detail:
+      'Count today\'s outreach sends before approving a new message so reply handling, review-code requests, and high-fit official contact paths are not crowded out.',
+  },
+  {
+    field: 'Duplicate guardrail',
+    detail:
+      'Skip prospects already contacted, form-only approved, or queued by the SEO distribution agent unless a reply creates a new concrete next action.',
+  },
+  {
+    field: 'Capacity priority',
+    detail:
+      'Use remaining capacity for contacts that can create review access, approved-sample pilots, credible listings, paid-plan evidence, or commercial diligence.',
+  },
+  {
+    field: 'Wait log',
+    detail:
+      'When the cap is full, log the next best action and follow-up guardrail instead of sending weaker outreach or drafting another generic cold email.',
+  },
+] as const;
+
 const replyTriageRows = [
   {
     reply: 'Review-code request',
@@ -2297,6 +2320,28 @@ export const PageTranslationSupportWorkflow = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {capResetPacketRows.map((row) => (
+              <div
+                key={row.field}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.field}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Throttle guardrail"
+        title="How to avoid cap waste and duplicate outreach"
+        description="Use this check before sending new messages so the daily cap stays reserved for replies, official contact paths, and prospects that can create revenue-relevant evidence."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {outreachThrottleRows.map((row) => (
               <div
                 key={row.field}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
