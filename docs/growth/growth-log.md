@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T055432Z`: audited branch state, SEO distribution shared status, current growth trackers, Search Console/webmaster setup packets, `/translate-manhwa-ai` structured data, content backlog, and outreach sender history.
+- Added `docs/growth/search-console-query-to-revenue-playbook.md` so the reported Search Console 120-click milestone can become owner-verified query/page prioritization for download, trial activation, pricing, support, setup, reviewer, and partner handoff improvements without committing raw exports or making public traction claims.
+- Marked the Search Console query-to-revenue backlog item shipped and logged the cap-safe outreach rationale.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. No form submission, account action, review-code grant, commercial commitment, or owner escalation was performed.
+
 - Autonomous cycle on `growth/autonomous-20260529T054710Z`: audited branch state, SEO distribution shared status, current growth trackers, `/translate-manhwa-ai`, sitemap coverage, and outreach sender history.
 - Added a docs-only cap-reset revenue queue to `docs/growth/outreach-drafts.md` so the next UTC sender window handles qualified replies first, then Nube/Genga official-form partner notes, then AIAnyTool only after current terms are rechecked.
 - Added the cap-reset queue to the content backlog and backlink tracker as an owned operational asset with evidence requirements: public contact path, source-link handling, access type, expected activation or partner proof, stop condition, and opt-out language.
