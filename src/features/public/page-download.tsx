@@ -229,6 +229,29 @@ const ownerConfirmationRows = [
   },
 ] as const;
 
+const citationReadinessRows = [
+  {
+    label: 'Media or podcast note',
+    value:
+      'Lead with the OCR QA checklist, approved-sample boundary, and human-review notes before mentioning install links or review codes.',
+  },
+  {
+    label: 'Directory note',
+    value:
+      'Confirm the listing can show trial plus paid-token pricing, source-of-truth links, support, privacy, terms, and no-chapter-hosting language.',
+  },
+  {
+    label: 'Localization partner note',
+    value:
+      'Use a no-link resource note first and ask whether approved-sample OCR observations are useful; do not imply catalog access or replacement of professional localization.',
+  },
+  {
+    label: 'Android policy note',
+    value:
+      'Keep package name, signing fingerprint, and developer verification status marked owner-confirmation required until the exact public facts are confirmed.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -620,6 +643,46 @@ export const PageDownload = () => {
               Keep any missing package, signing, or verification fields marked
               as owner-confirmation required until Nayovi confirms the exact
               values.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Citation readiness"
+        title="Before a third party mentions Nayovi"
+        description="Use this packet before sending Nayovi to manga media, Android newsletters, AI directories, app reviewers, localization teams, or creator-platform contacts."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {citationReadinessRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              A useful third-party mention should help readers verify the
+              official APK source, understand the hosted OCR workflow, and know
+              which samples are safe to process before it sends anyone to a
+              download button.
+            </p>
+            <p>
+              If the platform is mainly a podcast, newsletter, creator
+              community, or localization studio, use the comic OCR checklist or
+              approved-sample pilot guide as the first reference and keep the
+              product link optional.
             </p>
           </CardContent>
         </Card>

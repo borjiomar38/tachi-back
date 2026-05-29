@@ -102,8 +102,69 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | TikTok/short-video | Official Nayovi account | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, terms acceptance, approved clips, and sample rights required before any upload. |
 | draft | Discord/community | Official Nayovi server/profile | No-piracy support rules and reviewer-code handoff | None by default | OWNER_ACTION_REQUIRED: owner must create/approve server, moderation rules, invite policy, and any bot/API scope. |
 | draft | Webtoon localization studio | Alandal/Bayi-style localization teams | Approved-sample OCR QA feedback note | None by default | OWNER_REVIEW_REQUIRED: use official contact only; no backlink ask, catalog access implication, or replacement pitch. |
+| draft | Manga podcast/newsletter | Behind The Manga | Manga OCR QA topic note for approved samples | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no product-install pressure. |
+| draft | Comics localization studio | Nube Consulting | Approved-sample OCR constraints feedback note | None by default | OWNER_REVIEW_REQUIRED: official contact path only; no replacement-localization pitch or catalog-processing implication. |
+| watch | FOSS Android distribution | F-Droid ecosystem | APK verification/source expectations context | None | WATCH_ONLY: Nayovi is not currently a FOSS app-store submission fit; do not submit unless a genuine open-source companion exists. |
 
 ## Draft Bodies
+
+### Behind The Manga topic note
+
+Status: draft
+Target: Behind The Manga podcast/contact path
+Audience: manga readers, manga industry listeners, localization-curious fans
+Rules risk: medium; use public contact only, no automated submission, no backlink ask, and no claim that Nayovi can process covered titles without permission.
+No-link variant: yes, preferred.
+Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if source context is requested.
+
+Subject:
+Topic idea: manga OCR QA before judging AI translation
+
+Body:
+
+Hi Behind The Manga team,
+
+I am building Nayovi, an Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I wanted to share a topic idea rather than ask for a product mention: what has to be checked before anyone judges AI translation quality on manga-style pages.
+
+The issues are practical and easy to miss: missing text regions, vertical or stylized lettering, merged speech balloons, reading order, onomatopoeia, glossary drift, and whether the sample is actually approved for public screenshots or discussion.
+
+Nayovi does not host or distribute chapters. Any public demo or review should use owned content, public-domain pages, official samples, or permission-approved material only.
+
+If this is useful background for a future discussion about manga translation tools, I can send the short checklist. If not, no follow-up is needed.
+
+Best,
+Nayovi team
+
+### Nube Consulting localization feedback note
+
+Status: draft
+Target: Nube Consulting or similar comics/webtoon localization studios
+Audience: professional localization operators, letterers, visual-storytelling production teams
+Rules risk: medium; use official contact only, no backlink ask, no claim that Nayovi replaces translators, editors, letterers, or studio workflows.
+No-link variant: yes, preferred.
+Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if the studio asks for context.
+
+Subject:
+Approved-sample OCR QA note for comics and webtoon localization
+
+Body:
+
+Hi Nube Consulting team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, webtoon, and comic reader workflows.
+
+Your work sits directly at the intersection of translation, lettering, and visual storytelling, so I wanted to ask a narrow feedback question rather than pitch a replacement tool.
+
+For creator-approved or public-domain samples, what OCR checks would you want to see before any AI draft is considered reviewable? Our current checklist focuses on text detection, reading order, merged bubbles, small labels, sound effects, glossary consistency, and when a result should stay private because sample rights or quality are unclear.
+
+Nayovi does not host chapters and should not be used to imply catalog access without permission. The useful conversation is only around approved-sample OCR evidence and human review boundaries.
+
+If this is relevant, I can send the checklist. If not, no worries and I will not follow up.
+
+Best,
+Nayovi team
 
 ### Official newsletter first issue
 
