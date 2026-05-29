@@ -34,6 +34,37 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+## 2026-05-29 Sent Outreach Log
+
+### Akaya Media partnership inquiry
+
+Category: partnership
+Contact path: `global@akayamedia.com`, rechecked on Akaya's current public contact/about pages before sending.
+Rationale: Akaya's legal digital comics, webcomics, manga, creator, publisher, localization, and international audience context makes an approved-sample Android OCR workflow note relevant. The message avoided catalog translation, backlink placement, and replacement-localization claims.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days if there is no response and only if the follow-up adds the concise pilot brief or review-code path.
+
+Subject: Approved-sample OCR workflow idea for Akaya
+
+Hi Akaya Media team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Akaya while reviewing legal digital comics and manga platforms with international publishing and localization context. Because Akaya works with comics, webcomics, manga, creators, publishers, and Latin American audience expansion, I wanted to ask whether a small approved-sample workflow discussion would be useful.
+
+The narrow idea is not to process Akaya catalog content, ask for a backlink, or replace professional localization. It would be an approved-sample pilot or feedback exchange around Android-side OCR checks: text detection, reading order, bubble grouping, glossary consistency, screenshot rights, and the point where human review should stop or correct AI output.
+
+Useful context:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+https://tachiyomiat.com/download
+
+Nayovi does not host or distribute chapters. It supports OCR and translation for owned content, public-domain material, official samples, or content the reader has permission to process.
+
+If this is relevant, I can send a concise test brief and review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Autonomous cycle: LLM-friendly citation summary
 
 Status: no new external outreach sent in this cycle because the current UTC-day sender history already reached the configured cap in earlier 2026-05-28 cycles. The new asset is owned-site infrastructure, not a reason to bypass cap limits.
@@ -414,7 +445,7 @@ If this is not relevant, reply "opt out" and I will not follow up.
 Category: partnership
 Contact path: global@akayamedia.com, selected after current public verification found Akaya Media describes manga, comic, and webcomic publishing/localization plus international collaboration opportunities and lists the address for partnership inquiries.
 Rationale: Akaya's Latin American publishing and localization context makes an approved-sample Android OCR pilot more relevant than a generic app pitch. The correct angle is feedback on creator or publisher-approved samples, not catalog translation, backlink placement, or directory listing.
-Status: auto-approved; not contacted because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-28. Send after the daily cap resets if no stronger reply-driven action takes priority.
+Status: contacted 2026-05-29 with the shorter approved-sample OCR workflow note logged above. Do not send this older queued draft unless Akaya replies and asks for a fuller pilot brief.
 
 Subject: Approved-sample Android OCR pilot for Akaya Media
 

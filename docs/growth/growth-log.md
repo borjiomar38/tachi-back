@@ -1,5 +1,11 @@
 # Nayovi Growth Log
 
+## 2026-05-29
+
+- Autonomous cycle on `growth/autonomous-20260529T000621Z`: audited branch state, growth trackers, outreach sender history, current SEO distribution shared state, and the queued Akaya Media partnership lead.
+- Rechecked Akaya Media's current public contact/about context, confirmed `global@akayamedia.com` remains an official contact path, and sent one individualized approved-sample Android OCR workflow note with opt-out language.
+- Updated `docs/growth/backlink-prospects.csv` and `docs/growth/outreach-drafts.md` so Akaya is now `contacted`, with follow-up limited to one useful reply or one 7-business-day no-response follow-up.
+
 ## 2026-05-28
 
 - Autonomous cycle on `growth/autonomous-20260528T235632Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared state, and the advertised LLM summary link in the site head and robots.txt.
