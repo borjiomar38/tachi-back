@@ -137,6 +137,23 @@ const translateManhwaAiStructuredData = () => {
         'Escalate only when a reply requires custom terms, a real pilot owner, a commercial commitment, investor materials, or a meeting time.',
     },
   ] as const;
+  const replyAssetItems = [
+    {
+      name: 'Listing packet',
+      description:
+        'Send only official APK source, one-line product summary, pricing context, screenshots, support route, and responsible-use note.',
+    },
+    {
+      name: 'Reviewer packet',
+      description:
+        'Send narrated demo, review-code path, approved sample scope, no-pay-for-coverage language, and cancellation or support links.',
+    },
+    {
+      name: 'Partner packet',
+      description:
+        'Send the pilot one-pager only when the contact can name the sample owner, language pair, success metric, and stop condition.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -214,6 +231,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#commercial-qualification`,
       name: 'Nayovi commercial qualification signals for serious replies',
       itemListElement: commercialQualificationItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-assets`,
+      name: 'Nayovi proportional reply assets for directory, reviewer, and partner follow-up',
+      itemListElement: replyAssetItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
