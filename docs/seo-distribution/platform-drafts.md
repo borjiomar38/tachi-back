@@ -8,6 +8,7 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | AI directory | ToolIndex submit tool | Accurate Android OCR/AI translation workflow listing | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit form only; use Freemium or Free Trial plus Paid only if the current form supports exact wording; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
 | draft | AI directory | Cocoon AI Tools Directory | Human-reviewed Translation category listing for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit form only; use Freemium pricing, plain-English one-line description, and no hidden paid/reciprocal/misleading free claims. |
 | watch | Resource directory | Whipscribe tools directory | Translation/OCR taxonomy context, not a ready listing | None by default | WATCH_ONLY: current fit is speech/transcription-heavy; do not submit unless a visual OCR category or official contact path is verified. |
 | draft | Android reviewers/directories | Android 2026 developer verification context | Pending-language direct APK trust note | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: cite official Android verification context only as background; do not claim Nayovi is verified, Play-listed, or package-registered until owner confirms facts. |
@@ -192,6 +193,35 @@ Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhw
 Eligibility question:
 
 Would Nayovi fit your directory as an Android OCR/translation workflow if the listing can show official APK source, trial plus paid-token pricing, support, privacy/terms, and responsible-use boundaries? If your directory requires forever-free wording, open-source labeling, reciprocal links, paid backlink placement, hidden redirects, or mirror-first APK hosting, please treat Nayovi as not eligible.
+
+### ToolIndex AI directory listing packet
+
+Status: draft
+Target: ToolIndex submit tool
+Audience: AI directory reviewer for translation, OCR, mobile, or productivity categories
+Rules risk: medium; use official submit form only after owner review. Do not submit if the current flow requires paid placement, reciprocal links, hidden redirects, inaccurate free/open-source claims, or APK mirroring.
+No-link variant: no, directory submission requires a website URL.
+Link variant: `https://tachiyomiat.com/download` as primary website; use `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only in optional notes if allowed.
+
+Suggested fields:
+
+- Tool name: `Nayovi`
+- Website URL: `https://tachiyomiat.com/download`
+- Category: `Translation` or `OCR`, whichever the current ToolIndex form supports most accurately.
+- Pricing: `Freemium` if only one pricing field exists; otherwise `Free Trial` plus `Paid`.
+- Short description: `Android APK and hosted OCR/AI translation workflow for permission-safe manga, manhwa, and manhua reader workflows.`
+- Submitter identity: OWNER_ACTION_REQUIRED public Nayovi-owned contact only.
+
+Optional note:
+
+Nayovi provides official APK access, free trial or redeem-code activation, monthly hosted OCR/translation token plans, support paths, and responsible-use guidance. It does not host or distribute chapters. It is intended for content the user owns, public-domain material, official samples, creator-provided pages, or content the tester has permission to process.
+
+Quality gate:
+
+- Confirm ToolIndex preserves the official website URL and does not replace it with a mirror-first APK link.
+- Confirm the listing can show trial plus paid-token context without implying the product is forever-free.
+- Use only owner-approved screenshots or omit screenshots.
+- Stop if a form, payment, login, CAPTCHA, email verification, or terms acceptance step requires a human owner.
 
 ### Manga OCR QA research-context note
 
