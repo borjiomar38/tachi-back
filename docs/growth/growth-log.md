@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T044929Z`: audited branch state, current SEO distribution report, growth trackers, `/translate-manhwa-ai`, sitemap coverage, and outreach sender history.
+- Added a reply evidence ledger to `/translate-manhwa-ai` so directory, reviewer, affiliate, partner, and investor follow-up is advanced only when it proves source-preserving referral quality, separated activation measurement, and repeat paid-use potential.
+- Added matching ItemList structured metadata and marked the reply evidence ledger shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next sender window should process qualified replies first; if none are waiting, use only current-verified official forms or public business contacts with a logged expected evidence path.
+
 - Autonomous cycle on `growth/autonomous-20260529T043452Z`: audited branch state, current `origin/master`, latest SEO distribution publication, prior skipped growth branch `growth/autonomous-20260529T042901Z`, `/translate-manhwa-ai`, growth trackers, and outreach sender history.
 - Resolved the previous auto-merge blocker by applying the post-reply attribution packet onto the latest master state while preserving the newly published SEO trust prospects from the distribution agent.
 - Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next cap-reset action remains reply-first: handle qualified replies before any new directory, reviewer, affiliate, or partner outreach.

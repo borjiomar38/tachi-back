@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: reply evidence ledger
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai#reply-evidence-ledger` so future directory, reviewer, affiliate, partner, and investor replies are advanced only when they leave proof of source-preserving referral quality, separated activation measurement, and repeat paid-use potential.
+
+Next outreach: after cap reset, process qualified replies first. If no replies are waiting, use the existing official-form queue only after current public contact paths are rechecked, and log the evidence expected before spending review codes or another follow-up.
+
 ### Autonomous cycle: reply-to-revenue handoff packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

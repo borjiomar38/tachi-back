@@ -693,6 +693,24 @@ const replyRevenueRows = [
   },
 ] as const;
 
+const replyEvidenceRows = [
+  {
+    evidence: 'Source-preserving referral',
+    decision:
+      'Continue only when the live mention keeps readers on official APK, pricing, support, cancellation, and responsible-use pages before install.',
+  },
+  {
+    evidence: 'Measured activation quality',
+    decision:
+      'Keep review codes, affiliate links, and partner codes separate so support load, trial completion, and paid-plan intent can be read cleanly.',
+  },
+  {
+    evidence: 'Revenue-ready follow-up',
+    decision:
+      'Escalate only when the reply adds a named audience, approved sample scope, buyer path, or decision owner that can produce repeat paid use.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2245,6 +2263,51 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Check paid plan path
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        id="reply-evidence-ledger"
+        eyebrow="Reply evidence ledger"
+        title="Record the proof before spending the next follow-up"
+        description="Useful replies should leave evidence that the channel can create qualified installs, clean activations, and repeat paid intent. Otherwise the safest business action is to pause the thread."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {replyEvidenceRows.map((row) => (
+            <Card key={row.evidence} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.evidence}</CardTitle>
+                <CardDescription>{row.decision}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Promote the channel only after proof
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A reply becomes a revenue asset when it preserves the official
+                source path, produces measurable activation, and points toward
+                repeat paid use. Weak listings, vague collaboration asks, and
+                unsupported custom terms should stop before they use more
+                review access.
+              </p>
+            </div>
+            <a
+              href="/guides/free-trial-vs-paid-token-plan"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Check paid intent
             </a>
           </CardContent>
         </Card>
