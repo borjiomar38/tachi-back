@@ -7,6 +7,7 @@ import {
 
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
+const publicBrandUrl = 'https://nayovi.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
 const publicBrandAliases = ['TachiyomiAT', 'Tachiyomi AT', 'tachiyomiat.com'];
 const publicSiteDescription =
@@ -130,6 +131,23 @@ const buildStructuredData = (
         alternateName: publicBrandAliases,
         url: baseUrl,
         logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
+        sameAs: [publicBrandUrl],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            contactType: 'customer support',
+            email: 'support@nayovi.com',
+            url: buildAbsoluteUrl('/support'),
+            availableLanguage: ['en', 'fr'],
+          },
+          {
+            '@type': 'ContactPoint',
+            contactType: 'partnerships and review access',
+            email: 'support@nayovi.com',
+            url: buildAbsoluteUrl('/guides/permission-safe-manga-translation-pilot'),
+            availableLanguage: ['en', 'fr'],
+          },
+        ],
       },
       {
         '@type': 'WebSite',
