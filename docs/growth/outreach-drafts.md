@@ -36,6 +36,65 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Official-form approved-sample queue: Nube Consulting and Genga
+
+Status: auto-approved, not emailed. Both contacts should use their official contact forms only unless a direct public business email is verified later.
+
+Revenue rationale: these are higher-quality partnership surfaces than broad AI directories because they work directly in comics, manga, webtoon, localization, licensing, AI-assisted translation, human review, or creator/publisher workflows. The safe ask is feedback on an approved-sample OCR/translation QA packet, not app installs, backlinks, catalog processing, or replacement of professional localization.
+
+Nube Consulting form note:
+
+Subject: Approved-sample comic OCR workflow feedback
+
+Hi Nube Consulting team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and comics readers.
+
+I found Nube while reviewing sequential-art localization teams because your public site describes comics, webtoon, manhwa, manga, graphic-novel, translation, lettering, copy-editing, proofreading, and multilingual publishing work. That makes this a better fit for a narrow workflow-feedback note than a generic app pitch.
+
+The useful question is whether a permission-safe Android OCR QA checklist would ever be worth reviewing for approved samples: source permission, text-region coverage, reading order, bubble grouping, glossary drift, human review, and the stop point before any public sharing. I am not asking to process Nube client work, replace localization teams, buy placement, or request a backlink.
+
+Workflow packet:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Approved-sample pilot scope:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+If this is relevant, I can send a concise test brief and review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
+Genga form note:
+
+Subject: Approved-sample manga OCR QA note
+
+Hi Genga team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Genga while reviewing legal manga localization and creator-platform workflows because your public site emphasizes licensed manga, creator rights, AI-assisted translation, native-speaker review, and anti-piracy positioning. That makes this a strong fit for a permission-safe QA note rather than a consumer app pitch.
+
+The useful question is whether a small approved-sample OCR checklist would be worth keeping on your radar for creator-controlled or publisher-approved samples: source rights, text detection, reading order, bubble grouping, glossary consistency, human review, and what should not be shared publicly. I am not asking to process Genga catalog content, replace your localization workflow, buy placement, or request a backlink.
+
+Checklist:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Partner scope:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Official identity summary:
+https://tachiyomiat.com/llms.txt
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+If this is relevant, I can send a concise test brief and review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Autonomous cycle: brand-domain LLM diligence handoff
 
 Status: no new external outreach sent in this cycle until sender capacity and reply priority are rechecked after the owned-site update.
