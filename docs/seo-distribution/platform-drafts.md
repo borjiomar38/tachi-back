@@ -8,6 +8,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Android newsletter/resource curator | Android Weekly / Kotlin Weekly-style newsletters | Independent APK trust and hosted OCR reviewer checklist | docs/seo-distribution/android-newsletter-resource-pitch.md | OWNER_REVIEW_REQUIRED: manual suggestion only after current rules, package facts, and screenshots are approved; no paid placement or consumer app pitch. |
+| draft | Startup launch directories | Smol Launch / BetterLaunch / FastLaunch-style surfaces | Founder-approved launch listing with source-link and no-vote guardrails | docs/seo-distribution/startup-launch-directory-packet.md | OWNER_ACTION_REQUIRED: founder/company profile and manual submission only; skip vote/review requests, paid backlink packages, hidden redirects, or unsupported metrics. |
 | draft | AI/free-trial directory | ToolsVerse / AIToolSync-style submit paths | Directory scorecard fit question before listing Nayovi | docs/seo-distribution/directory-submission-scorecard.md | OWNER_REVIEW_REQUIRED: verify live fields, pricing labels, and source-link behavior; no form submission, signup, payment, reciprocal link, or hidden redirect. |
 | draft | Technical publishing/newsletter | DEV / Medium / Hashnode / Nayovi Notes | Canonical technical profile and OCR checklist syndication | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_ACTION_REQUIRED: official byline, canonical URL policy, account setup, screenshots, and publication approval required. |
 | watch | Reddit/community context | r/webtoons AI translation discussions | No-link OCR QA support answer when users ask about AI translation quality | None by default | AUTHORIZED_ACCOUNT_REQUIRED: high rules risk; use only disclosed official account, no links unless directly allowed and contextually requested. |
@@ -164,6 +166,72 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Short-video official profile | TikTok / YouTube Shorts / Reels manual-only setup | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, approved clips, sample rights, caption approval, and optional API credential required before any upload or metadata update. |
 
 ## Draft Bodies
+
+### Android newsletter resource suggestion
+
+Status: draft
+Target: Android Weekly, Kotlin Weekly, or comparable Android resource curator after owner review
+Audience: Android developers, APK reviewers, direct-APK testers, technical founders
+Rules risk: medium; use only official link-suggestion or editorial paths, and do not submit until package facts and screenshots are owner-approved.
+No-link variant: yes for unclear resource rules.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi {{editor_or_curator}},
+
+I am preparing a technical resource for Android reviewers who evaluate independent APKs with hosted OCR workflows.
+
+The useful part is a checklist, not a product announcement: confirm the official APK source, package/signing facts, hash, support/privacy/terms links, screenshot rights, and sample scope before publishing a review or directory listing. For manga, manhwa, and manhua OCR tests, the sample should be owned, public-domain, an official sample, creator-provided, or otherwise permission-approved.
+
+Would that kind of reviewer checklist fit your Android resources queue, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Resource:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+### Startup launch-directory eligibility note
+
+Status: draft
+Target: Smol Launch, BetterLaunch, FastLaunch, or comparable startup launch directory after owner review
+Audience: indie founders, early adopters, startup directory editors, investor diligence readers
+Rules risk: medium to high; many launch surfaces emphasize votes, reviews, or paid visibility.
+No-link variant: yes for fit questions.
+Link variant after owner review: `https://nayovi.com`
+
+No-link message:
+
+Hi team,
+
+I am checking launch-directory fit before submitting Nayovi.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A listing would need to preserve the official source, pricing/support links, and responsible-use boundary: Nayovi does not host chapters and is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+I do not want to use vote requests, review swaps, paid backlink packages, unsupported metrics, or a listing that hides the official source links.
+
+Would that kind of listing fit your directory, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Official site:
+`https://nayovi.com`
+
+Download/source:
+`https://tachiyomiat.com/download`
 
 ### ToolsVerse / AIToolSync directory scorecard fit question
 

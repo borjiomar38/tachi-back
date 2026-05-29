@@ -4,6 +4,24 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-05-29 Current Branch Cycle
 
+- Verified branch `seo/distribution-20260529T055924Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and current SEO distribution docs before drafting so the social/backlink queue supports the active outreach pipeline.
+- Advanced account setup priority with two owner-gated official profile tasks:
+  - Android newsletter/resource curator profile with exact public byline fields, resource description, canonical links, required package/screenshot facts, credential references, and no-form-submission guardrails.
+  - Launch directory/indie maker profile with founder/company submitter fields, canonical links, asset checklist, credential references, and rejection rules for paid backlinks, vote requests, fake reviews, hidden redirects, and unsupported metrics.
+- Added owned trust asset `docs/seo-distribution/android-newsletter-resource-pitch.md` for Android Weekly/Kotlin Weekly-style resource suggestions centered on independent APK trust, sample-safe OCR testing, and screenshot boundaries.
+- Researched rotated authority opportunities through current public search:
+  - Android Weekly: high-fit Android developer newsletter/resource suggestion path for the OCR reviewer checklist after owner approval.
+  - Smol Launch: startup launch surface with vote/comment/review mechanics, kept owner-gated because of artificial-engagement risk.
+  - BetterLaunch: startup listing surface with screenshots and links, possible only if source links, pricing, and responsible-use copy remain visible.
+  - Manga109-v2026 arXiv paper: current manga OCR annotation research context for owned QA language only, with no benchmark or endorsement claim.
+- Updated `account-setup.md`, `authority-opportunities.md`, `content-calendar.md`, `link-assets.md`, `platform-drafts.md`, and `docs/growth/backlink-prospects.csv` with new setup tasks, opportunity rows, draft copy, and linkable asset references.
+- Drafted exact value-first copy in `platform-drafts.md` for Android newsletter resource suggestions and startup launch-directory eligibility questions, each with no-link and link variants.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, contact form submission, directory submission, newsletter suggestion, vote/review request, APK upload, payment, review-code grant, social post, Reddit comment, LinkedIn action, YouTube upload, Product Hunt action, GitHub external comment, or public outreach was attempted.
+- Next actions: owner confirms package/signing/hash public language, screenshot/demo rights, and whether Android Weekly/Kotlin Weekly-style suggestions or Smol Launch/BetterLaunch/FastLaunch-style launch listings belong in the current trust stack.
+
+## 2026-05-29 Current Branch Cycle
+
 - Verified branch `seo/distribution-20260529T055102Z`; account registry remains draft-only with account creation disabled and no authorized external posting workflow used.
 - Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
 - Advanced account setup priority with two official owner-action tasks:
