@@ -141,6 +141,28 @@ const translationWorkflowStructuredData = () => {
         'Escalate only when the reply asks for traction, retention, partnership economics, founder time, or terms that could change business, legal, or pricing commitments.',
     },
   ] as const;
+  const reviewCodeGatePacket = [
+    {
+      name: 'Public context',
+      description:
+        'Confirm that any reviewer, directory, partner, or affiliate can preserve official APK, pricing, support, and responsible-use links in public context.',
+    },
+    {
+      name: 'Test scope',
+      description:
+        'Ask what will be tested, which approved samples are available, and whether the result is a private evaluation, listing check, article, or partner pilot.',
+    },
+    {
+      name: 'Tracking need',
+      description:
+        'Issue a dedicated code only when separated reviewer usage, pilot access, support questions, and conversion evidence improve the follow-up decision.',
+    },
+    {
+      name: 'Stop condition',
+      description:
+        'Do not issue access for hidden pricing, mirror-first APK distribution, unauthorized content, paid placement, or guaranteed coverage.',
+    },
+  ] as const;
   const officialFormPacket = [
     {
       name: 'Use official forms only',
@@ -275,6 +297,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi reply revenue routing packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: revenueRoutingPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#review-code-gate`,
+      name: 'Nayovi review-code issuance gate',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: reviewCodeGatePacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

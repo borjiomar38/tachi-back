@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T020326Z`: audited branch state, SEO distribution shared context, outreach sender history, growth docs, and the translation support workflow page.
+- Added a review-code issuance gate to `/guides/translation-support-workflow` so reviewer, directory, affiliate, and approved-sample partner access is spent only when public context, test scope, tracking need, and stop conditions are clear.
+- Added matching ItemList structured metadata and marked the review-code gate asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next cap-reset work should handle replies first, then use the gate before issuing reviewer or pilot access.
+
 - Autonomous cycle on `growth/autonomous-20260529T013939Z`: audited branch state, SEO distribution shared status, current growth trackers, public route coverage, and outreach sender history.
 - Added AIAnyTool as a medium-priority AI-directory draft prospect after current public search showed a submit-tool path and public `contact@aianytool.com`; kept it draft until current terms are rechecked after the sender cap resets.
 - Added a compliant AIAnyTool listing-fit draft that asks whether Nayovi is appropriate before submission, preserves official APK/pricing/support/responsible-use links, and rejects paid placement, reciprocal links, hidden redirects, forever-free wording, and mirror-first APK handling.
