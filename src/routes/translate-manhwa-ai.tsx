@@ -188,6 +188,23 @@ const translateManhwaAiStructuredData = () => {
         'Measure approved-sample pilots by named sample scope, activation quality, follow-up request, and paid-plan fit before escalating custom terms.',
     },
   ] as const;
+  const replyRevenueItems = [
+    {
+      name: 'Listing or directory approval',
+      description:
+        'Publish only when source links, pricing, support, and responsible-use context stay visible, then measure whether visitors activate trial or paid plans.',
+    },
+    {
+      name: 'Reviewer or affiliate interest',
+      description:
+        'Use a dedicated code and review packet so coverage, installs, support load, and paid-plan conversion stay separate from normal checkout.',
+    },
+    {
+      name: 'Partner or investor diligence',
+      description:
+        'Advance only when the thread names approved material, user segment, success metric, and the decision needed before custom terms or a call.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -298,6 +315,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#post-reply-attribution`,
       name: 'Nayovi post-reply attribution checks for partner and directory follow-up',
       itemListElement: postReplyAttributionItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-to-revenue`,
+      name: 'Nayovi reply-to-revenue routing for qualified growth follow-up',
+      itemListElement: replyRevenueItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

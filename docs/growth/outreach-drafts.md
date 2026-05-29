@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: reply-to-revenue handoff packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai#reply-to-revenue` so qualified directory, reviewer, affiliate, partner, and diligence replies can be routed toward source-preserving listing approval, review-code attribution, paid-plan conversion checks, approved-sample pilots, or clean stop decisions before custom terms, founder time, or calls are used.
+
+Next outreach: after cap reset, process replies first. If no qualified replies are waiting, recheck current public contact paths before using only individualized public/official form or business-contact outreach that preserves official APK links, pricing/support context, and opt-out language.
+
 ### Autonomous cycle: merge-safe post-reply attribution packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
