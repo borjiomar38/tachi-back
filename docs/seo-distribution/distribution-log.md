@@ -2,6 +2,22 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 15
+
+- Verified branch `seo/distribution-20260529T043358Z`; `/var/lib/tachi-seo-distribution-agent/accounts.json` still has external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two owner-gated setup packets:
+  - Creator platform / publisher contact profile packet with byline, department-selection, sample-rights, `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`, and no-catalog-processing guardrails.
+  - SpotFreeAI / free-trial directory submitter profile with trial/freemium pricing labels, source-link preservation, `SEO_AGENT_SPOTFREEAI_PROFILE_REFERENCE`, and directory-quality rejection gates.
+- Added owned trust asset `docs/seo-distribution/creator-platform-ai-translation-context.md` to frame WEBTOON/Lezhin/NEDAMI-style work around approved samples, creator control, OCR QA, human review, and no chapter hosting.
+- Researched rotated authority opportunities across different categories using current public search:
+  - WEBTOON official contact departments and 2026 CANVAS translation context: high-fit creator-platform context for no-link approved-sample OCR QA only.
+  - SpotFreeAI: trial-only/freemium AI directory fit check if Nayovi's free trial plus paid monthly token plans and official source links stay visible.
+  - Lezhin Entertainment: webtoon publisher/localization context, watch-only until owner approves a professional no-link approved-sample note.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new packets, opportunity rows, and exact no-link/link-variant drafts.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, contact form submission, email send, directory submission, payment, APK upload, review-code grant, Reddit/LinkedIn/GitHub external comment, Product Hunt action, YouTube upload, or public outreach was attempted.
+- Next actions: owner chooses WEBTOON/Lezhin/NEDAMI department and byline, approves sample-safe evidence, verifies SpotFreeAI live submit fields, confirms trial/freemium wording, and keeps all external actions blocked until official accounts or owner-reviewed manual workflows exist.
+
 ## 2026-05-29 Cycle 14
 
 - Verified branch `seo/distribution-20260529T042634Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.

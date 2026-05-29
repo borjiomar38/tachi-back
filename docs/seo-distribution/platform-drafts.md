@@ -8,6 +8,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Creator platform / publisher contact | WEBTOON / Lezhin / NEDAMI-style official contact paths | No-link approved-sample OCR QA and creator-control note | None by default | OWNER_REVIEW_REQUIRED: choose correct department, byline, sample scope, and current rules/contact path; no catalog-processing implication, endorsement claim, or backlink ask. |
+| draft | AI/free-trial directory | SpotFreeAI Trial Only / Freemium submit-tool path | Accurate free-trial plus paid-token listing eligibility | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify live fields and source-link handling; skip forever-free, paid-link, reciprocal, hidden-redirect, open-source, or mirror-first APK flows. |
 | draft | Indie Hackers / founder communities | Official founder-owned Nayovi profile | No-link APK trust and OCR workflow feedback post | None by default | OWNER_ACTION_REQUIRED: founder-owned truthful profile, affiliation disclosure, rules review, and manual posting required; no scraped DMs, voting, or engagement automation. |
 | draft | App testing portal | TestFi / AppTester.co-style Android app testing | Source-first Nayovi APK health-check fit question | docs/seo-distribution/reviewer-access-packet.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, account creation, review-code grant, payment, or public report permission until owner approves package facts and sample scope. |
 | draft | Manga podcast/newsletter | Mangasplaining / MSX | Product-light approved-sample comic OCR QA topic note | None by default | OWNER_REVIEW_REQUIRED: public contact only after owner approves byline, sample-safe evidence, and no-link editorial angle; no app-install pitch or backlink ask. |
@@ -148,6 +150,77 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Localization media/podcast | SlatorPod / Slator-style language industry media | Future approved-sample visual OCR QA topic | None by default | WATCH_ONLY: hold until owner approves screenshots, sample evidence, byline, and non-promotional topic; no backlink ask or consumer APK pitch. |
 
 ## Draft Bodies
+
+### Creator platform approved-sample OCR QA note
+
+Status: draft
+Target: WEBTOON official contact departments, Lezhin business contact, NEDAMI-style creator/localization contact paths, or comparable creator-platform/publisher surfaces after owner review
+Audience: creator-platform partnership teams, publisher contacts, localization operators, manga/webtoon newsletter editors
+Rules risk: medium to high; owner must choose the correct public department, approve byline and sample scope, and avoid any catalog-processing, endorsement, replacement-localization, or backlink language.
+No-link variant: yes and preferred.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link variant:
+
+Hi team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I am not asking to process your catalog, replace localization teams, request a backlink, or promote app installs. The narrow question is whether a permission-safe OCR QA checklist would be useful when a creator or reviewer is testing an approved sample: source permission, text-region coverage, reading order, bubble grouping, glossary drift, human review, and the point where public sharing should stop.
+
+Nayovi does not host or distribute chapters. It is intended only for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+If this is not relevant, I will skip it.
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+OCR QA checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Approved-sample pilot scope:
+`https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+
+### SpotFreeAI trial/freemium listing eligibility note
+
+Status: draft
+Target: SpotFreeAI or comparable trial-only/freemium AI directory after live submit fields are reviewed
+Audience: AI directory editors and trial-search users
+Rules risk: medium; official submit path only, no account automation, no paid backlink, no reciprocal link, no hidden redirect, no forever-free/open-source mislabeling, and no mirror-first APK handling.
+No-link variant: yes for eligibility questions.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link variant:
+
+Hi SpotFreeAI team,
+
+I am checking fit before submitting Nayovi because the pricing and source context need to stay accurate.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It has free trial or redeem-code activation and then monthly hosted OCR/translation token plans, so it should not be described as forever-free or open source.
+
+Nayovi does not host or distribute chapters. It is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Would a trial-only or freemium listing be appropriate if the official APK, pricing, support, and responsible-use links remain visible?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Official APK:
+`https://tachiyomiat.com/download`
+
+Pricing:
+`https://tachiyomiat.com/pricing`
+
+Support:
+`https://tachiyomiat.com/support`
 
 ### Founder community no-link APK trust feedback post
 
