@@ -86,6 +86,23 @@ const translateManhwaAiStructuredData = () => {
         'Move to a pilot only after sample owner, language pair, success metric, support path, and stop condition are defined.',
     },
   ] as const;
+  const placementFilterItems = [
+    {
+      name: 'Decline mirror-first APK placement',
+      description:
+        'Skip listings that make a third-party APK page the main source instead of preserving official Nayovi hash checks, support, pricing, and policy links.',
+    },
+    {
+      name: 'Decline reciprocal or paid-link gates',
+      description:
+        'Reject placements that require dofollow backlinks, badges, paid placement, review swaps, hidden redirects, or ranking promises before evaluation.',
+    },
+    {
+      name: 'Hold unqualified AI traffic',
+      description:
+        'Avoid mentions that cannot explain Android install intent, free trial fit, monthly token plans, support expectations, and permission-safe test material.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -130,6 +147,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#reply-packet`,
       name: 'Nayovi reply packet for directory, reviewer, and partner follow-up',
       itemListElement: replyPacketItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#placement-filter`,
+      name: 'Nayovi placement filter for backlink and directory quality',
+      itemListElement: placementFilterItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
