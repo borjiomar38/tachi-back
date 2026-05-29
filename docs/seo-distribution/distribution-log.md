@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 9
+
+- Verified branch `seo/distribution-20260529T025339Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official owner-action setup packets:
+  - Official app-testing/reviewer portal profiles with APK upload, tester scope, public report, package facts, screenshot policy, and `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` guardrails.
+  - OCR/resource directory submitter profile with canonical checklist fields, no-link-first resource notes, category/pricing guardrails, and `SEO_AGENT_OCR_RESOURCE_DIRECTORY_REFERENCE`.
+- Improved owned SEO/linkable planning assets by adding app-testing trust evidence and comic OCR resource listing entries to `content-calendar.md`, `link-assets.md`, and `platform-drafts.md`.
+- Researched rotated authority opportunities across different categories using current public search:
+  - AppTester.co: app-testing/app health-check trust evidence candidate if APK upload, tester scope, screenshots, and public report permission are owner-approved.
+  - APKLand and AppsTested: Android APK/app review watch targets that require mirror-policy and editorial-fit review before any action.
+  - Capterra OCR category: OCR taxonomy and paid-placement guardrail context, not a backlink-first target.
+- Updated `authority-opportunities.md` and `docs/growth/backlink-prospects.csv` with the new discovery pipeline entries.
+- Drafted exact value-first assets in `platform-drafts.md` for a safe app-testing portal health-check fit question and a product-light OCR resource directory note.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, directory submission, APK upload, tester campaign, paid review, public report permission, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach send was attempted.
+- Next actions: owner confirms package name, signing fingerprint, approved screenshot/sample set, and whether AppTester.co/APKLand/AppsTested-style portals may receive any APK or review-code access; keep OCR resource pitches no-link-first until rules are verified.
+
 ## 2026-05-29 Cycle 8
 
 - Verified branch `seo/distribution-20260529T022907Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.

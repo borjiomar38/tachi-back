@@ -118,6 +118,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | AI/free-trial directory | tryweb.site-style AI tools directory | Accurate free-trial plus paid-token listing fit check | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit fields and skip if forever-free, paid-link, reciprocal, or hidden-redirect placement is required. |
 | draft | TikTok/short-video | Official Nayovi account | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, terms acceptance, approved clips, and sample rights required before any upload. |
 | draft | Discord/community | Official Nayovi server/profile | No-piracy support rules and reviewer-code handoff | None by default | OWNER_ACTION_REQUIRED: owner must create/approve server, moderation rules, invite policy, and any bot/API scope. |
+| draft | App testing portal | AppTester.co / APKLand / AppsTested-style review surfaces | Safe Android APK health-check request packet | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report, or review request until package facts, sample scope, and portal rules are approved. |
+| draft | OCR resource directory | OCR Vendors / Capterra-style OCR category pages | Product-light comic OCR QA resource note | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_REVIEW_REQUIRED: use no-link-first note unless resource submissions are clearly allowed; skip paid placement, bid-only listings, or generic document-scanner mislabeling. |
 | draft | Webtoon localization studio | Alandal/Bayi-style localization teams | Approved-sample OCR QA feedback note | None by default | OWNER_REVIEW_REQUIRED: use official contact only; no backlink ask, catalog access implication, or replacement pitch. |
 | draft | Manga podcast/newsletter | Behind The Manga | Manga OCR QA topic note for approved samples | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no product-install pressure. |
 | draft | Comics localization studio | Nube Consulting | Approved-sample OCR constraints feedback note | None by default | OWNER_REVIEW_REQUIRED: official contact path only; no replacement-localization pitch or catalog-processing implication. |
@@ -201,6 +203,52 @@ Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhw
 Nayovi should not be listed as forever-free, open-source, app-store-only, an APK mirror, a generic chatbot, or a chapter-hosting service. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
 
 Would this fit an AI Translation, OCR, Android, or workflow category, or should I skip submission?
+
+Best,
+Nayovi team
+
+### App-testing portal safe health-check request
+
+Status: draft
+Target: AppTester.co, APKLand, AppsTested, or comparable app-testing/review surfaces after current rules review
+Audience: Android testers, independent app reviewers, directory editors, investor diligence readers
+Rules risk: medium to high; OWNER_REVIEW_REQUIRED. No APK upload, tester campaign, public report permission, paid review, fake review, or mirror-first listing without owner approval.
+No-link variant: yes for fit question.
+Link variant after owner review: `docs/nayovi-apk-review-packet.md`
+
+No-link fit question:
+
+Hi team,
+
+I am checking whether Nayovi would fit your Android app testing or review workflow before submitting anything.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A useful test would focus on install clarity, permission prompts, activation or redeem-code flow, OCR progress, translation loading, support paths, and whether reviewer screenshots use only approved sample material.
+
+I am not asking for paid positive reviews, fake app-store reviews, mirror-first APK redistribution, or a guaranteed backlink. Nayovi does not host or distribute chapters and should only be tested with owned, public-domain, official-sample, creator-provided, or otherwise approved content.
+
+Would this fit your testing/review process if the owner supplies package facts, hash, screenshot rules, and a safe sample plan first?
+
+Best,
+Nayovi team
+
+### OCR resource directory product-light note
+
+Status: draft
+Target: OCR Vendors, Capterra-style OCR categories, or comparable OCR resource editors after rules review
+Audience: OCR resource editors, technical newsletter writers, app directory reviewers
+Rules risk: medium; OWNER_REVIEW_REQUIRED. Avoid paid placement as link acquisition, reciprocal links, bid-only categories, and generic document-scanner mislabeling.
+No-link variant: yes.
+Link variant only if resource suggestions are allowed: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link note:
+
+Hi team,
+
+I am checking whether a comic and webtoon OCR QA checklist would be useful as a resource before sending a link.
+
+The checklist is product-light and focuses on visual-storytelling OCR issues that generic document OCR pages often miss: text-region coverage, vertical and stylized text, reading order, bubble grouping, overlapping onomatopoeia, glossary drift, human correction, and sample permission boundaries.
+
+If your resource page accepts niche OCR QA references, I can send the canonical checklist. If your directory is only for document OCR vendors, paid placement, or bid-ranked software listings, Nayovi is probably not a fit and I will skip it.
 
 Best,
 Nayovi team
