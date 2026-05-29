@@ -36,6 +36,24 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: reviewer access evidence gate
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: added a reviewer access gate for qualified replies from Android reviewers, app-testing portals, AI directories, newsletters, podcasts, creator-platform partners, or investor diligence contacts. The gate keeps review codes, APK testing, screenshots, directory fields, and app-testing flows tied to source-preserving evidence before access or owner time is spent.
+
+Use with `docs/seo-distribution/reviewer-access-packet.md` and log these fields before action:
+
+1. Prospect and public or official contact path.
+2. Request type: directory fields, hands-on review, app-testing portal, screenshots/demo only, approved-sample pilot, newsletter/media note, or diligence context.
+3. Source handling: preserves official download, pricing, support, privacy, terms, OCR checklist, and responsible-use links; unclear; or fails.
+4. Test scope: owned material, public-domain material, official sample, creator-provided page, permission-approved material, or not acceptable.
+5. Access artifact: no access, screenshots/demo, normal free trial, private review code, partner pilot code, or app-testing upload request.
+6. Expected evidence: public listing URL, review article, tester report, screenshot approval record, activation quality, support load, paid-plan fit, or partner proof.
+7. Stop condition: APK mirror-first handling, hidden redirects, reciprocal or paid backlink gate, fake review/upvote request, unsupported open-source/free claim, unapproved screenshot need, unclear sample permission, or no measurable next step.
+
+Next outreach: after cap reset, process qualified replies first. Do not issue review codes, upload APKs to testing portals, send screenshots, or escalate owner time until the gate is complete and the next action is source-preserving.
+
 ### Autonomous cycle: reply evidence intake sheet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.
