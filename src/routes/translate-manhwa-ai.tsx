@@ -273,6 +273,23 @@ const translateManhwaAiStructuredData = () => {
         'Require approved sample scope, language pair, success metric, and stop condition before issuing access or asking for founder-level terms.',
     },
   ] as const;
+  const partnerProofBundleItems = [
+    {
+      name: 'Source-preserving listing',
+      description:
+        'Confirm the live page keeps official APK, pricing, support, cancellation, and responsible-use links visible before treating the placement as qualified.',
+    },
+    {
+      name: 'Tracked evaluation access',
+      description:
+        'Use review, affiliate, or pilot codes only when the contact path, audience, sample scope, and expected activation evidence are recorded.',
+    },
+    {
+      name: 'Revenue follow-up trigger',
+      description:
+        'Advance the thread only when it can produce paid-plan intent, repeat-use signal, approved-sample notes, or a concrete commercial decision.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -438,6 +455,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#access-exception-gate`,
       name: 'Nayovi access exception gate for discounts, affiliate codes, and partner access',
       itemListElement: accessExceptionItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#partner-proof-bundle`,
+      name: 'Nayovi partner proof bundle for source-preserving replies',
+      itemListElement: partnerProofBundleItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
