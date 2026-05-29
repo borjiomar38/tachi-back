@@ -2,6 +2,24 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Current Cycle
+
+- Verified branch `seo/distribution-20260529T004852Z`; `/var/lib/tachi-seo-distribution-agent/accounts.json` still shows owned GitHub/docs are configured and all external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, forum, and press actions remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and the account registry before drafting.
+- Advanced account setup priority with two official setup tasks:
+  - Converted the official press/media kit packet into a live owned route at `https://tachiyomiat.com/media-kit`, while keeping public contact, screenshots, founder quote, package/signing facts, verification status, and public metrics owner-confirmation-required.
+  - Added an AI directory owner/listing profile packet for AI Cloudbase/AiMatch-style submissions with exact fields, media-kit link, pricing/trial language, quality gate, and per-directory non-secret credential references only.
+- Improved owned content by adding the public `/media-kit` route with SEO metadata, structured data, official citation links, audience-specific review checks, responsible-use copy, and sitemap coverage.
+- Researched rotated authority opportunities across different categories:
+  - AI Cloudbase AI tools directory: possible AI/OCR listing only after current submit fields, category fit, pricing labels, and source-link handling pass the quality gate.
+  - ToolsVerse AI/free-trial directory: watch-only until current rules confirm accurate trial plus paid-token wording without reciprocal or paid SEO requirements.
+  - WEBTOON Creator Resource Hub expansion: creator-platform context only for approved-sample and no-catalog-processing language; not a backlink or outreach target.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `account-setup.md` with the new route, setup packets, and opportunity research.
+- Drafted an exact AI Cloudbase/AiMatch-style directory listing packet in `platform-drafts.md` with no-link and link variants, category/pricing guidance, official links, and owner-review checks.
+- No external posting, account creation, login, submit-form action, terms acceptance, CAPTCHA, APK upload, tester campaign, directory submission, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach was attempted.
+- Validation: passed `./node_modules/.bin/tsc --noEmit` after synchronizing the TanStack route tree for `/media-kit`.
+- Next actions: owner confirms approved screenshots, package name, signing fingerprint, Android developer verification status, founder quote, public metrics, and which AI directories may be submitted manually from official accounts.
+
 ## 2026-05-29 Cycle 2
 
 - Verified branch `seo/distribution-20260529T003302Z`; account registry still shows owned GitHub/docs are configured and external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, and forum actions remain draft/manual.

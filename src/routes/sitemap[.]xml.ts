@@ -63,6 +63,11 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-25',
     priority: '0.8',
   },
+  '/media-kit': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-29',
+    priority: '0.8',
+  },
   '/guides/mihon-nayovi-setup': {
     lastModified: '2026-05-25',
     priority: '0.8',
@@ -121,6 +126,7 @@ const staticSitemapPathOrder = [
   '/pricing',
   '/how-it-works',
   '/support',
+  '/media-kit',
   '/guides/mihon-nayovi-setup',
   '/guides/mihon-tachiyomiat-setup',
   '/guides/translation-support-workflow',

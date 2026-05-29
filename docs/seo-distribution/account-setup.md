@@ -6,6 +6,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Owned media kit page | Source-of-truth page for journalists, reviewers, directories, podcasts, newsletters, partners, and investors | configured_owned_route_content_synced | Owner confirms public media contact, screenshot rights, founder quote policy, package/signing facts, and public metrics before those fields are added | `https://tachiyomiat.com/media-kit`, logo, approved screenshots, demo video, APK review packet, support/pricing/legal links | No secret required; optional `SEO_AGENT_PRESS_CONTACT_REFERENCE` for non-secret routing only | Agent can cite the owned media kit in drafts and keep public claims pending until owner confirms missing facts | Owner supplies approved screenshots, founder quote, metrics, package name, signing fingerprint, and Android developer verification status. |
+| medium | AI directory owner/listing profiles | High-intent AI/OCR directory discovery while preserving official source links and accurate pricing | setup_packet_prepared_owner_action_required | Owner creates/claims official directory profiles only where the directory quality filter passes and any terms are accepted manually | Media kit URL, short description, category, pricing/trial wording, official APK/support/privacy/terms links, screenshots after approval | Per-directory profile reference only; no passwords in docs | Agent can prepare listing copy and update owner-approved profile fields after an authorized account/API workflow exists | Owner approves which directories are eligible; first candidates are AI Cloudbase and AiMatch only after current submit fields are verified. |
 | high | Google Search Console | Search indexing, sitemap monitoring, canonical ownership signal | setup_packet_prepared_owner_action_required | Verify `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS` | Submit sitemaps, monitor indexing, detect SEO issues | Owner verifies properties and submits sitemap; agent can inspect only after API credential is connected. |
 | high | Bing Webmaster Tools | Secondary search indexing and sitemap submission | setup_packet_prepared_owner_action_required | Verify domains with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_BING_WEBMASTER_API_KEY` | Submit sitemaps and monitor crawl/index data | Owner imports from GSC or verifies manually; agent can inspect only after API credential is connected. |
 | high | GitHub official Nayovi repo/profile | Technical trust, docs, release notes, linkable OCR/QA assets | configured_owned_repo | Keep official repo/profile truthful and current | README, demo links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned docs and technical assets | Keep owned docs synced with SEO/link assets. |
@@ -243,7 +245,10 @@ Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, an
 
 ### Official Press / Media Kit Page
 
-Status: OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, and any public metrics.
+Status: CONFIGURED_OWNED_ROUTE_CONTENT_SYNCED for the public route; OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, package/signing facts, and any public metrics.
+
+Public URL:
+- `https://tachiyomiat.com/media-kit`
 
 Public profile fields:
 - Name: `Nayovi`
@@ -258,6 +263,50 @@ Required assets:
 - Official logo/avatar and banner reference.
 - Approved screenshots or clear `OWNER_ACTION_REQUIRED` placeholder if screenshots are not yet approved.
 - Demo video reference if owner confirms public sample rights.
+
+Credential reference:
+- No secret is required for the owned page.
+- Use `SEO_AGENT_PRESS_CONTACT_REFERENCE` only as a non-secret routing reference if the owner creates a separate public media contact workflow.
+
+Agent capability after connection:
+- The agent can cite the media kit in directory, podcast, newsletter, reviewer, partner, and investor drafts immediately.
+- The agent must keep package name, signing-certificate fingerprint, Android developer verification status, screenshot claims, founder quotes, and metrics pending until owner confirms them.
+
+Next action:
+- Owner approves the public media contact path, founder quote policy, screenshot/demo references, package/signing facts, and any public metrics.
+
+### AI Directory Owner / Listing Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for any third-party account, submit-form terms, listing claim, CAPTCHA, email verification, payment decision, or API access.
+
+First owner-reviewed candidates:
+- AI Cloudbase: `https://aicloudbase.com/`
+- AiMatch: `https://aimatch.pro/`
+- ToolsVerse: `https://thetoolsverse.com/` remains watch-only until current terms are checked.
+
+Profile/listing fields:
+- Product name: `Nayovi`
+- Short description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; use with owned, public-domain, official-sample, creator-provided, or permission-approved content.`
+- Category: `OCR`, `Translation`, `Android`, or closest accurate AI-tools category.
+- Website: `https://nayovi.com`
+- Source-of-truth media kit: `https://tachiyomiat.com/media-kit`
+- APK/source link: `https://tachiyomiat.com/download`
+- Pricing link: `https://tachiyomiat.com/pricing`
+- Support link: `https://tachiyomiat.com/support`
+
+Submission quality gate:
+- Keep official APK, pricing, support, privacy, terms, and responsible-use links visible.
+- Describe access as free trial plus paid monthly token plans; do not claim forever-free or open-source status.
+- Reject reciprocal backlink gates, paid SEO packages, hidden redirects, fake reviews, mirror-first APK pages, or scraped duplicate listings.
+- Do not submit until the owner accepts any directory-specific terms manually.
+
+Credential reference:
+- Use only a per-directory non-secret reference such as `SEO_AGENT_AI_CLOUDBASE_PROFILE_REFERENCE` after the owner creates or claims a profile.
+- Store any real token or login credential only in the approved secret store, never in docs.
+
+Agent capability after connection:
+- The agent can prepare owner-approved listing copy and keep fields synchronized with the media kit after an authorized account or API workflow exists.
+- The agent must not submit forms, claim listings, accept terms, or pay for placements automatically.
 - Founder-approved quote and whether revenue, trial, token, or usage metrics can be public.
 - Public contact path; do not include private phone, WhatsApp, email aliases, credentials, or verification screenshots unless they are already intended for public use.
 

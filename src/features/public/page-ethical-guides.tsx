@@ -238,6 +238,75 @@ const trustPacketRows = [
   },
 ] as const;
 
+const mediaKitSourceRows = [
+  {
+    label: 'Primary brand site',
+    detail: 'https://nayovi.com',
+  },
+  {
+    label: 'Official APK and release context',
+    detail: 'https://tachiyomiat.com/download',
+  },
+  {
+    label: 'Pricing and trial path',
+    detail: 'https://tachiyomiat.com/pricing',
+  },
+  {
+    label: 'Support and review access',
+    detail: 'https://tachiyomiat.com/support',
+  },
+  {
+    label: 'OCR QA checklist',
+    detail: 'https://tachiyomiat.com/guides/comic-ocr-translation-checklist',
+  },
+  {
+    label: 'Approved-sample pilot guide',
+    detail:
+      'https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot',
+  },
+] as const;
+
+const mediaKitAudienceRows = [
+  {
+    title: 'Android reviewers and app directories',
+    description:
+      'Start from the official download page, keep APK metadata and support links attached, and request review-code context before publishing a hands-on test.',
+  },
+  {
+    title: 'Podcasts, newsletters, and editorial teams',
+    description:
+      'Lead with responsible OCR QA, approved-sample boundaries, and human-review checks instead of treating Nayovi as a generic app-install pitch.',
+  },
+  {
+    title: 'Creator platforms and localization partners',
+    description:
+      'Use only owned, public-domain, official-sample, creator-provided, or permission-approved pages for pilots, screenshots, and public examples.',
+  },
+  {
+    title: 'Investors and commercial partners',
+    description:
+      'Evaluate the Android APK, hosted OCR workflow, redeem-code activation, paid token plans, support path, and source-of-truth links together.',
+  },
+] as const;
+
+const mediaKitClaimRows = [
+  {
+    label: 'Safe short description',
+    detail:
+      'Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.',
+  },
+  {
+    label: 'Responsible-use line',
+    detail:
+      'Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, creator-provided, or permission-approved content.',
+  },
+  {
+    label: 'Do not claim yet',
+    detail:
+      'Do not cite package name, signing fingerprint, Android developer verification status, public screenshots, or tester-report results until the owner confirms them.',
+  },
+] as const;
+
 const androidTranslatorCriteria = [
   {
     title: 'Official APK source',
@@ -1154,6 +1223,69 @@ export const PageComicOcrChecklist = () => {
           >
             Request review access
           </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
+export const PageMediaKit = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="Media kit"
+        title="Nayovi source-of-truth packet"
+        description="Official profile, citation, and review context for Android reviewers, app directories, podcasts, newsletters, creator platforms, localization teams, and partners."
+        className="pt-10"
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-4 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            {mediaKitClaimRows.map((row) => (
+              <div
+                key={row.label}
+                className="rounded-xl border border-border/70 bg-background/45 px-4 py-3"
+              >
+                <div className="font-semibold text-foreground">{row.label}</div>
+                <div className="text-muted-foreground">{row.detail}</div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Official links"
+        title="Use these links when citing Nayovi"
+        description="Keep third-party mentions pointed at source-of-truth pages so readers can verify APK access, pricing, support, sample rules, and review context."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {mediaKitSourceRows.map((row) => (
+            <Card key={row.label} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.label}</CardTitle>
+              </CardHeader>
+              <CardContent className="break-words text-sm leading-7 text-muted-foreground">
+                {row.detail}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Audience fit"
+        title="What each reviewer should verify"
+        description="The media kit keeps public claims narrow until assets, screenshots, package identity, and verification status are confirmed by the owner."
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {mediaKitAudienceRows.map((row) => (
+            <Card key={row.title} className="rounded-[1.5rem]">
+              <CardHeader>
+                <CardTitle className="text-lg">{row.title}</CardTitle>
+                <CardDescription>{row.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
         </div>
       </PublicSection>
     </PublicShell>

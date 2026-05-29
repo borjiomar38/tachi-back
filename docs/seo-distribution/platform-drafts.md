@@ -8,6 +8,7 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | AI directory | AI Cloudbase / AiMatch-style owner listing | Accurate Nayovi AI OCR listing packet with media-kit citation | https://tachiyomiat.com/media-kit | OWNER_REVIEW_REQUIRED: verify current submit fields and skip paid, reciprocal, forever-free, fake-review, or hidden-redirect flows. |
 | draft | LinkedIn | Nayovi company page or founder profile | Short build-in-public post showing Android OCR translation workflow and responsible-use stance | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: needs official LinkedIn account/session or API workflow. |
 | draft | Reddit | Manga/manhwa reader communities that allow tools discussion | How to evaluate an OCR translator for panel order, language choice, and privacy | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: check subreddit rules; use no-link variant first if unsure. |
 | draft | GitHub | Owned Nayovi docs or a relevant awesome-list candidate | Technical note on OCR block merging, translation QA, and hosted Android workflow | https://tachiyomiat.com/translate-manhwa-ai | Use owned repo/docs unless a maintainer explicitly welcomes a resource PR. |
@@ -107,6 +108,45 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | FOSS Android distribution | F-Droid ecosystem | APK verification/source expectations context | None | WATCH_ONLY: Nayovi is not currently a FOSS app-store submission fit; do not submit unless a genuine open-source companion exists. |
 
 ## Draft Bodies
+
+### AI Cloudbase / AiMatch directory listing packet
+
+Status: draft
+Target: AI Cloudbase, AiMatch, or similar quality-filtered AI/OCR directories
+Audience: AI-tool searchers, Android readers, directory editors, affiliate reviewers
+Rules risk: medium; use official submit paths only, no paid backlink packages, no reciprocal links, no fake reviews, no hidden redirects, and no forever-free/open-source claim.
+No-link variant: use the description and category fields only if the form allows no URLs beyond the official website.
+Link variant: `https://tachiyomiat.com/media-kit` as the source-of-truth citation, plus `https://tachiyomiat.com/download` only in an official APK/source field.
+
+Listing title:
+Nayovi
+
+Short description:
+Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+Long description:
+Nayovi provides an official Android APK with hosted OCR and AI translation, free trial access, redeem-code activation, monthly token plans, and support for reader workflows around manga, manhwa, and manhua pages.
+
+Nayovi does not host or distribute chapters. It is intended for content the user owns, public-domain material, official samples, creator-provided pages, or content the user has permission to process.
+
+Best category fit:
+OCR, Translation, Android, AI productivity, or Media tools; do not select open-source, forever-free, browser extension, or document-scanner-only categories unless the directory has a more accurate field.
+
+Pricing:
+Free trial plus paid monthly hosted OCR/AI translation token plans.
+
+Official links:
+- Media kit: https://tachiyomiat.com/media-kit
+- Official APK: https://tachiyomiat.com/download
+- Pricing: https://tachiyomiat.com/pricing
+- Support: https://tachiyomiat.com/support
+- OCR checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Owner-review checklist before submission:
+- Current form preserves official website, source, support, pricing, and responsible-use links.
+- No reciprocal backlink, paid placement as backlink acquisition, fake review, badge requirement, or mirror-first APK copy is required.
+- Category and pricing labels allow trial plus paid-token wording.
+- Screenshots are omitted until the owner confirms approved public screenshot assets.
 
 ### Behind The Manga topic note
 

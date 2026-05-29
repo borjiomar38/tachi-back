@@ -14,6 +14,7 @@ import { Route as SupportRouteImport } from './routes/support'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as MediaKitRouteImport } from './routes/media-kit'
 import { Route as LogoutRouteImport } from './routes/logout'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
@@ -130,6 +131,11 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaKitRoute = MediaKitRouteImport.update({
+  id: '/media-kit',
+  path: '/media-kit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LogoutRoute = LogoutRouteImport.update({
@@ -632,6 +638,7 @@ export interface FileRoutesByFullPath {
   '/how-it-works': typeof HowItWorksRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
+  '/media-kit': typeof MediaKitRoute
   '/pricing': typeof PricingRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -728,6 +735,7 @@ export interface FileRoutesByTo {
   '/how-it-works': typeof HowItWorksRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
+  '/media-kit': typeof MediaKitRoute
   '/pricing': typeof PricingRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -828,6 +836,7 @@ export interface FileRoutesById {
   '/how-it-works': typeof HowItWorksRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
+  '/media-kit': typeof MediaKitRoute
   '/pricing': typeof PricingRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -929,6 +938,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/llms.txt'
     | '/logout'
+    | '/media-kit'
     | '/pricing'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -1025,6 +1035,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/llms.txt'
     | '/logout'
+    | '/media-kit'
     | '/pricing'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -1124,6 +1135,7 @@ export interface FileRouteTypes {
     | '/how-it-works'
     | '/llms.txt'
     | '/logout'
+    | '/media-kit'
     | '/pricing'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -1224,6 +1236,7 @@ export interface RootRouteChildren {
   HowItWorksRoute: typeof HowItWorksRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   LogoutRoute: typeof LogoutRoute
+  MediaKitRoute: typeof MediaKitRoute
   PricingRoute: typeof PricingRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -1313,6 +1326,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media-kit': {
+      id: '/media-kit'
+      path: '/media-kit'
+      fullPath: '/media-kit'
+      preLoaderRoute: typeof MediaKitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/logout': {
@@ -2132,6 +2152,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowItWorksRoute: HowItWorksRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   LogoutRoute: LogoutRoute,
+  MediaKitRoute: MediaKitRoute,
   PricingRoute: PricingRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
