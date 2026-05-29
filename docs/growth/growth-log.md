@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T013939Z`: audited branch state, SEO distribution shared status, current growth trackers, public route coverage, and outreach sender history.
+- Added AIAnyTool as a medium-priority AI-directory draft prospect after current public search showed a submit-tool path and public `contact@aianytool.com`; kept it draft until current terms are rechecked after the sender cap resets.
+- Added a compliant AIAnyTool listing-fit draft that asks whether Nayovi is appropriate before submission, preserves official APK/pricing/support/responsible-use links, and rejects paid placement, reciprocal links, hidden redirects, forever-free wording, and mirror-first APK handling.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next cap window should process replies first; if none are waiting, recheck AIAnyTool or use the existing Nube/Genga official-form queue.
+
 - Autonomous cycle on `growth/autonomous-20260529T013204Z`: audited branch state, SEO distribution shared status, current growth trackers, workflow guide coverage, and outreach sender history.
 - Added an official-form submission proof packet to `/guides/translation-support-workflow` so form-only partner submissions can be tracked by public form URL, fit rationale, message summary, and follow-up guardrail without storing private form-session data or creating duplicate outreach.
 - Added matching ItemList structured metadata and marked the proof packet shipped in the content backlog.

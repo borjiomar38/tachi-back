@@ -36,6 +36,35 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### AIAnyTool AI tools directory
+
+Category: directory
+Contact path: `contact@aianytool.com`, found through current public search alongside a visible submit-tool path.
+Rationale: AIAnyTool is a broad AI-tool directory, so the fit is only acceptable if Nayovi can be represented accurately as an Android APK plus hosted OCR/AI translation workflow with official APK, support, free trial, paid monthly token plans, and responsible-use boundaries. Do not send if the current submit path requires paid placement, reciprocal links, hidden redirects, forever-free wording, or mirror-first APK handling.
+Status: draft 2026-05-29; not contacted because the sender log already shows 10 same-day outreach sends. Recheck current submission terms after cap reset and handle replies first.
+
+Subject: Nayovi listing fit for AIAnyTool
+
+Hi AIAnyTool team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found AIAnyTool while reviewing AI-tool directories with public submit-tool and contact paths. Nayovi may fit only if the listing can stay precise: Android app, hosted OCR and AI translation, official APK source, free trial, monthly token plans, support route, and responsible-use boundaries.
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+Would this be appropriate for AIAnyTool, or should I skip submission?
+
+Source links:
+https://tachiyomiat.com/translate-manhwa-ai
+https://tachiyomiat.com/download
+https://tachiyomiat.com/guides/translation-support-workflow
+
+If useful, I can send screenshots, pricing context, and a short review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### PopWebTools AI directory
 
 Category: directory
