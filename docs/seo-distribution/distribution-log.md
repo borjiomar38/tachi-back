@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 10
+
+- Verified branch `seo/distribution-20260529T034716Z`; account registry shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official owner-action setup packets:
+  - Free-trial AI/software directory submitter profile with exact listing fields, category/pricing rules, canonical links, credential reference `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`, and rejection rules for paid backlinks, reciprocal links, hidden redirects, mirror-first APK handling, and misleading free/open-source labels.
+  - Localization media/podcast contributor profile with owner-approved founder/team byline, source links, credential reference `SEO_AGENT_MEDIA_CONTRIBUTOR_PROFILE_REFERENCE`, and a no-link topic scope for approved-sample visual OCR QA.
+- Added owned linkable asset `docs/seo-distribution/free-trial-directory-listing-brief.md` so future FreeAIList, AI Cloudbase, TheAIFest, SpotFreeAI, Try.fm, ToolDirectory.AI, and AiMatch submissions can be reviewed from one source-of-truth packet.
+- Researched rotated authority opportunities across different categories using current public search:
+  - FreeAIList: free AI tools, credits, and quotas directory; possible only with accurate trial plus paid-token wording.
+  - AI Cloudbase: 2026 AI directory/comparison surface; listing fit depends on category/source-link handling.
+  - TheAIFest: editorially verified submit-tool directory; possible only without paid/reciprocal or misleading category flows.
+  - SlatorPod: language industry podcast/media watch target for future approved-sample OCR QA evidence.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new discovery, setup, owned brief, no-link eligibility question, and media topic note.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, directory submission, paid placement, APK upload, media pitch, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach send was attempted.
+- Next actions: owner approves official directory submitter identity, public contact path, package/signing facts, screenshot/demo assets, and whether any free-trial directory preserves source links and pricing context well enough for manual submission.
+
 ## 2026-05-29 Cycle 9
 
 - Verified branch `seo/distribution-20260529T025339Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
