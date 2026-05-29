@@ -77,6 +77,67 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-29 Current Cycle Setup Advancement
 
+### Webmaster and AI Search Entity Verification
+
+Status: OWNER_ACTION_REQUIRED for domain verification, official owner account access, public contact approval, API credential connection, and owner-confirmed package/signing facts.
+
+Prepared packet:
+- `docs/seo-distribution/webmaster-and-entity-verification-packet.md`
+
+Public verification fields:
+- Primary app site: `https://tachiyomiat.com`
+- Brand domain: `https://nayovi.com`
+- SEO domain: `https://translate-manhwa-ai.com`
+- Primary sitemap: `https://tachiyomiat.com/sitemap.xml`
+- Official APK source: `https://tachiyomiat.com/download`
+- Workflow page: `https://tachiyomiat.com/translate-manhwa-ai`
+- Support: `https://tachiyomiat.com/support`
+- Pricing: `https://tachiyomiat.com/pricing`
+
+Credential references:
+- `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS`
+- `SEO_AGENT_BING_WEBMASTER_API_KEY`
+- `SEO_AGENT_AI_SEARCH_ENTITY_REFERENCE`
+- `SEO_AGENT_CANONICAL_PROFILE_REGISTRY_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare sitemap submission notes, indexing issue summaries, and entity consistency checks after the owner verifies domains and connects approved API credentials.
+- The agent must not publish search-console screenshots, private crawl metrics, verification tokens, DNS records, package-signing facts, or dashboard data in docs or Git.
+
+Next action:
+- Owner verifies `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` in Google Search Console and Bing Webmaster Tools, approves canonical public profile fields, and confirms which profile links are source-of-truth.
+
+### Official LinkedIn and YouTube Profile Setup
+
+Status: OWNER_ACTION_REQUIRED for official account creation or claim, manual terms acceptance, public identity approval, visual asset approval, optional API/OAuth connection, and post/video approval.
+
+Prepared public profile copy:
+- Display name: `Nayovi`
+- LinkedIn tagline: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- YouTube description: `Official Nayovi demos and APK trust updates for the Android app and hosted OCR/AI translation workflow. Nayovi does not host chapters; demos should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Primary link: `https://nayovi.com`
+- APK source: `https://tachiyomiat.com/download`
+- Workflow link: `https://tachiyomiat.com/translate-manhwa-ai`
+- Support: `https://tachiyomiat.com/support`
+- Technical checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Logo/avatar, banner image, approved screenshots, approved sample-safe demo video, public support/contact path, pricing/support links, package-fact pending language, and review-code policy reference.
+
+Credential references:
+- `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`
+- `SEO_AGENT_LINKEDIN_ORGANIZATION_ID`
+- `SEO_AGENT_YOUTUBE_REFRESH_TOKEN`
+- `SEO_AGENT_DEMO_VIDEO_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+
+Agent capability after connection:
+- The agent can prepare profile metadata updates, post drafts, and video descriptions after owner approval and authorized API connection.
+- The agent must not create accounts, verify email/phone, accept terms, scrape targets, send DMs, comment, upload videos, request followers, request upvotes, or publish repetitive backlink posts automatically.
+
+Next action:
+- Owner creates or claims official LinkedIn and YouTube surfaces, approves public copy and sample-safe assets, then decides whether posting remains manual-only or uses authorized API credentials.
+
 ### Creator Platform / Publisher Contact Profile
 
 Status: OWNER_ACTION_REQUIRED for official byline or brand identity, correct department selection, sample-rights approval, manual terms/contact steps, and any future partner permission.

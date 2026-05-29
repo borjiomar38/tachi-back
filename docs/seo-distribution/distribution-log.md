@@ -2,6 +2,24 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 16
+
+- Verified branch `seo/distribution-20260529T050129Z`; account registry still has external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured for direct work.
+- Re-read the growth prospect and outreach trackers plus the SEO setup, opportunity, platform draft, content calendar, link asset, and distribution log docs before drafting.
+- Advanced account setup priority with two owner-gated official profile tasks:
+  - Webmaster and AI search entity verification for `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com`, with sitemap/source fields, credential references, and no-secret dashboard guardrails.
+  - Official LinkedIn and YouTube profile setup with exact public copy, canonical links, visual asset checklist, API credential references, and manual-only account creation gates.
+- Added owned trust asset `docs/seo-distribution/webmaster-and-entity-verification-packet.md` so search-console setup, AI answer surfaces, directories, and canonical profile work share one source-of-truth packet.
+- Researched rotated authority opportunities across different categories using current public search:
+  - Google Search Console / Bing Webmaster Tools: owned domain verification and sitemap monitoring infrastructure before outreach scales.
+  - Android Weekly: high-fit Android developer newsletter link-suggestion surface for an independent APK trust and hosted OCR QA checklist.
+  - SlatorPod / Slator-style language AI media: watch-only localization media surface until approved-sample observations and screenshots exist.
+  - Compare OCR Tools: OCR comparison/resource context for a product-light checklist suggestion only if editorial resource rules allow it.
+- Drafted an Android Weekly no-link-first link suggestion in `platform-drafts.md` with a link variant for the public OCR checklist after owner review.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, `platform-drafts.md`, and `account-setup.md`.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, domain verification, DNS change, API action, contact form submission, email send, newsletter submission, directory submission, APK upload, review-code grant, LinkedIn post, YouTube upload, Reddit comment, GitHub external comment, payment, or public outreach was attempted.
+- Next actions: owner verifies domains in GSC/Bing, approves official LinkedIn/YouTube assets, confirms package/signing/screenshot facts, and reviews whether Android Weekly may receive the checklist suggestion through its official path.
+
 ## 2026-05-29 Cycle 15
 
 - Verified branch `seo/distribution-20260529T043358Z`; `/var/lib/tachi-seo-distribution-agent/accounts.json` still has external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
