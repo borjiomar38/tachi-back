@@ -922,6 +922,29 @@ const citationReadinessRows = [
   },
 ] as const;
 
+const comicOcrResearchRows = [
+  {
+    label: 'Missing regions',
+    detail:
+      'Treat undetected bubbles, captions, sound effects, and small labels as OCR failures before judging translation quality.',
+  },
+  {
+    label: 'Segmentation drift',
+    detail:
+      'Flag under-segmented or over-merged speech balloons because a fluent translation can still be based on the wrong text unit.',
+  },
+  {
+    label: 'Transcription checks',
+    detail:
+      'Keep original OCR text visible so reviewers can separate transcription mistakes from glossary, tone, or model-output mistakes.',
+  },
+  {
+    label: 'Evidence standard',
+    detail:
+      'Use current manga OCR research as context only; do not imply dataset access, benchmark performance, or third-party endorsement without proof.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -1039,6 +1062,28 @@ export const PageComicOcrChecklist = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {citationReadinessRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Research context"
+        title="Quality checks that belong before translation"
+        description="Current manga OCR and document-understanding work reinforces the same practical rule: missing text regions and bad segmentation should be recorded before anyone scores the translated sentence."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {comicOcrResearchRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
