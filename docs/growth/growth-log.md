@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T012423Z`: audited branch state, SEO distribution shared state, current growth docs, workflow guide coverage, and outreach sender history.
+- Added an outreach throttle guardrail to `/guides/translation-support-workflow` so future cycles check same-day sender cap, avoid duplicate prospects already contacted or queued by the SEO distribution agent, prioritize reply-value over volume, and log wait reasons when the cap is full.
+- Added matching ItemList structured metadata and marked the outreach throttle guardrail shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29, matching the daily cap. Next cap-reset work should handle qualified replies first, then use existing official-form queue items such as Nube or Genga if no reply supersedes them.
+
 - Autonomous cycle on `growth/autonomous-20260529T011656Z`: audited branch state, SEO distribution shared status, growth trackers, sender history, and the current translation workflow guide.
 - Added an official-form partner handoff to `/guides/translation-support-workflow` for high-fit prospects such as comics localization studios, legal manga platforms, creator services, and form-only partner pages. The handoff requires official public forms, useful approved-sample assets, one clear next-step ask, and logging without private form-session data.
 - Added matching ItemList structured metadata and marked the official-form handoff asset shipped in the content backlog.

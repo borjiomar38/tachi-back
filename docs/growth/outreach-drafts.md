@@ -159,6 +159,14 @@ Revenue rationale: strengthened `https://tachiyomiat.com/llms.txt` and `https://
 
 Next outreach: prioritize reply-driven actions first. If no higher-signal reply is waiting and sender capacity remains, use the updated LLM handoff only for high-fit public contacts or official forms that need concise identity and APK-source verification.
 
+### Autonomous cycle: outreach throttle guardrail
+
+Status: no new external outreach sent in this cycle because the 2026-05-29 sender log already shows 10 same-day outreach sends, matching the daily cap.
+
+Revenue rationale: added a throttle and duplicate-avoidance packet to `https://tachiyomiat.com/guides/translation-support-workflow` so future cycles preserve sender capacity for qualified replies, review-code requests, approved-sample pilots, credible listings, paid-plan evidence, and commercial diligence instead of filling the cap with lower-fit cold outreach.
+
+Next outreach: after cap reset, handle real replies first. If no reply-driven action is waiting, use the existing auto-approved official-form queue for Nube or Genga only through their public forms, or choose a new high-fit public contact after current verification.
+
 ### Bayi Studios webcomic localization
 
 Category: partnership
