@@ -138,6 +138,28 @@ const downloadStructuredData = () => {
         'Keep package name, signing fingerprint, and developer verification status marked owner-confirmation required until the exact public facts are confirmed.',
     },
   ] as const;
+  const submissionGateItems = [
+    {
+      name: 'Android newsletter submission',
+      description:
+        'Use a developer-facing checklist about independent APK trust, hosted OCR testing, and reviewer-safe screenshots before any consumer app pitch.',
+    },
+    {
+      name: 'Creator platform submission',
+      description:
+        'Use only approved-sample language and avoid implying platform, publisher, or creator catalog pages may be processed without explicit permission.',
+    },
+    {
+      name: 'AI directory submission',
+      description:
+        'Preserve trial plus paid-token wording, official source links, support, privacy, terms, and responsible-use context.',
+    },
+    {
+      name: 'Owner confirmation gate',
+      description:
+        'Wait when a submission requires package name, signing fingerprint, verification status, screenshots, login, form acceptance, or public metrics.',
+    },
+  ] as const;
   return [
     {
       '@type': 'SoftwareApplication',
@@ -233,6 +255,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#third-party-citation-readiness`,
       name: 'Nayovi third-party citation readiness packet',
       itemListElement: citationReadinessItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#submission-gate`,
+      name: 'Nayovi newsletter and platform submission gate',
+      itemListElement: submissionGateItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

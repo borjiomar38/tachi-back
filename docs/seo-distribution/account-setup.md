@@ -19,6 +19,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | AI/app directory developer profiles | Directory backlinks and install trust | setup_packet_prepared | Use each directory's official developer portal/form | APK metadata, screenshots, demo, pricing, support, responsible-use copy | Per-directory credential reference only | Submit official listings that preserve source-of-truth links | Owner reviews directory quality filter before any form submission. |
 | medium | Hacker News founder account | Technical founder feedback and Show HN readiness | setup_packet_prepared_owner_action_required | Founder uses an existing real account or creates one manually; no automated posting or voting | Founder-approved bio, Show HN title/comment, working APK/demo/support links | `SEO_AGENT_HN_ACCOUNT_REFERENCE`; no password/API secret in docs | Draft manual founder posts and reply notes only | Founder confirms account eligibility and posts manually only when ready to answer comments. |
 | medium | Android newsletter submission profiles | Developer-facing trust links for Android newsletters | setup_packet_prepared_owner_action_required | Owner approves official submit-form use and any publication-specific byline | Technical link packet, APK review packet, screenshot policy, non-promotional short note | `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`, `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE` | Submit owner-approved technical links only through official forms | Owner approves whether Android Weekly/Kotlin Weekly-style link submissions may cite the APK trust packet. |
+| high | Android Weekly link suggestion | High-trust Android developer newsletter submission for APK trust and hosted OCR testing checklist | setup_packet_prepared_owner_action_required | Owner confirms whether the official suggestion form may receive a developer-facing checklist link and whether pending package/signing language is acceptable | APK review packet, download-page submission gate, screenshot policy, owner-confirmed package facts when available | `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`; no login or private credentials in docs | Agent can prepare exact link suggestion text after owner approval; submission remains manual/form-only unless an authorized workflow exists | Owner reviews the Android Weekly-style pitch and confirms package/signing/screenshot facts or approves pending-language submission. |
+| medium | MANGA Plus Creators by SHUEISHA research/profile context | Creator-platform context for approved-sample and screenshot-rights language, not a posting or backlink surface | setup_packet_prepared_owner_action_required | Owner decides whether Nayovi should engage creator-platform contacts only for approved-sample workflow feedback and never through creator impersonation | Creator-safe bio, no-catalog-processing line, screenshot-rights packet, approved-sample pilot guide | `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`; per-platform official account only if owner creates one manually | Agent can draft creator-platform notes and citation-safe language only after owner confirms correct official contact/profile scope | Owner confirms no MANGA Plus Creators account action is needed unless a real Nayovi/founder-owned creator-platform profile is appropriate. |
 | medium | App testing and reviewer portals | Third-party install trust evidence before press and directory outreach | setup_packet_prepared | Owner approves exact APK sharing, tester scope, sample pages, and publication rights before any upload | Signed APK link, SHA-256, safe sample plan, redeem code, support link, screenshot rules | Per-platform credential reference only; optional `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE` | Request reviewer/tester reports only through approved portals or official editorial paths | Owner approves whether Nayovi can share APK/redeem-code access with testing services. |
 | high | Android developer verification and package registry | APK install trust, package ownership, reviewer confidence | setup_packet_prepared | Owner completes official Android developer verification and package registration when eligible | Package name, signed APK, SHA-256, signing-certificate fingerprint, official domains, support links | `SEO_AGENT_ANDROID_DEVELOPER_VERIFICATION_REFERENCE` | Let agent cite verified/pending status in reviewer packets after owner confirms it | Owner confirms package name, signing fingerprint, and verification status; agent must not infer. |
 | medium | Newsletter/podcast contributor profiles | Editorial trust for localization, Android, and creator-platform pitches | setup_packet_prepared | Owner creates official contributor/byline profile only where invited or required | Founder byline, headshot/logo, bio, canonical links, non-promotional article/topic packet | Per-publication credential reference only | Submit owner-approved non-promotional topic pitches or author bios | Owner approves byline and which publications may receive topic notes. |
@@ -50,6 +52,58 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Podcast/newsletter source profiles | Public identity consistency for manga podcasts, Android newsletters, and localization newsletters | setup_packet_prepared_owner_action_required | Owner approves whether Nayovi/founder should create any publication-specific profile, byline, or source profile manually | Short bio, one-sentence responsible-use line, topic angles, canonical links, public contact path, approved screenshots only | Per-publication profile reference only; optional `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`; no passwords or cookies | Agent can draft topic notes and source bios after owner confirms account/profile scope | Owner chooses which source profiles are appropriate; agent stays draft-only and uses official contact/submission paths. |
 | medium | AI directory submitter profiles | Accurate AI/OCR directory discovery without weak link schemes | setup_packet_prepared_owner_action_required | Owner creates/connects only official submitter accounts when a directory requires login, terms acceptance, or email verification | Official profile fields, listing copy, pricing/support links, screenshots, responsible-use line, directory quality filter | `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`; per-directory token only if official API exists | Agent can prepare or submit owner-approved listings only after the official account/API is connected and rules are checked | Owner approves which directories qualify; skip paid-link, reciprocal-link, forever-free-only, hidden-redirect, or mirror-first flows. |
 | medium | Android app review/submission profiles | Reviewer-safe Android listing and app-test access | setup_packet_prepared_owner_action_required | Owner approves any app-review portal account, APK sharing scope, screenshot rights, and review-code access manually | APK review packet, SHA-256, package/signing placeholders, approved screenshots, support/pricing/legal links | `SEO_AGENT_ANDROID_REVIEW_PORTAL_REFERENCE`; no private portal login data | Agent can prepare portal-specific packets after owner confirms portal quality and approved test scope | Owner confirms package facts and whether APK upload or reviewer-code access is allowed before any external submission. |
+
+## 2026-05-29 Setup Packets
+
+### Android Weekly Link Suggestion
+
+Status: OWNER_ACTION_REQUIRED for owner approval of the official suggestion form, any byline/contact field, and package/signing language.
+
+Public submission fields:
+- Suggested link: `https://tachiyomiat.com/download` only if the editor needs the APK trust packet; otherwise use `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` for a product-light checklist.
+- Suggested title: `Independent Android APK and OCR review checklist`
+- Short note: `A developer-facing checklist for reviewing a direct Android APK with hosted OCR: source-of-truth links, SHA-256 checks, pending package/signing fields, reviewer-safe screenshots, and approved-sample OCR boundaries. Nayovi is the example, but the checklist is useful without a consumer app mention.`
+- Affiliation disclosure: `Submitted by the Nayovi team.`
+
+Required assets:
+- Download-page submission gate.
+- `docs/nayovi-apk-review-packet.md`.
+- `docs/reviewer-screenshot-policy.md`.
+- Owner-confirmed package name, signing fingerprint, developer verification status, and screenshots if the owner wants stronger than pending language.
+
+Credential reference:
+- `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE` for non-secret submission tracking only. Do not store form sessions, passwords, cookies, private editor replies, or verification data in docs.
+
+Agent capability after connection:
+- The agent can keep a technical link suggestion draft current. It must not submit the form, create accounts, or imply package verification until the owner confirms the exact facts.
+
+Next action:
+- Owner reviews whether Android Weekly-style submission should cite the download-page submission gate now with pending package/signing language, or wait until package/signing/screenshot facts are complete.
+
+### MANGA Plus Creators by SHUEISHA Context
+
+Status: OWNER_ACTION_REQUIRED for any official creator-platform profile decision; context-only until owner confirms a real Nayovi/founder-owned account or contact purpose.
+
+Public profile fields if an owner-approved official profile is ever appropriate:
+- Display name: `Nayovi`
+- Bio: `Android OCR and AI translation workflow for approved manga, manhwa, and manhua samples. No chapter hosting; use only with owned, public-domain, official-sample, creator-provided, or permission-approved pages.`
+- Primary link: `https://nayovi.com`
+- Supporting link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Creator-platform screenshot-rights packet.
+- Approved-sample pilot guide.
+- No-catalog-processing and no-impersonation language.
+- Owner-approved sample/media rights before any screenshots or examples.
+
+Credential reference:
+- `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE` only if the owner creates an official account manually. Actual credentials stay in the approved secret store and are never written to docs.
+
+Agent capability after connection:
+- The agent can draft creator-platform feedback notes and profile copy. It must not create creator accounts, post works, comment, contact users, or imply permission to process MANGA Plus, Shueisha, MediBang, WEBTOON, publisher, or creator catalog pages.
+
+Next action:
+- Keep MANGA Plus Creators as creator-rights context for approved-sample language. Owner decides whether any official creator-platform profile is appropriate; otherwise no account action is needed.
 
 ## 2026-05-28 Setup Packets
 

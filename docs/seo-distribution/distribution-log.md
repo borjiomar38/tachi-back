@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 4
+
+- Verified branch `seo/distribution-20260529T010953Z`; account registry still shows owned GitHub/docs are configured and LinkedIn, Reddit, YouTube, Product Hunt, directories, newsletters, forums, and social channels remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Android Weekly link suggestion setup with exact title, note, affiliation disclosure, required APK/reviewer assets, `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`, and pending package/signing guardrails.
+  - MANGA Plus Creators by SHUEISHA context/profile setup with official bio fields, `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`, approved-sample boundaries, and no account/posting/endorsement automation.
+- Improved owned content at `https://tachiyomiat.com/download` with a newsletter/platform submission gate covering Android newsletter, creator-platform, AI-directory, and owner-confirmation blockers, plus matching structured data.
+- Researched rotated authority opportunities across different categories:
+  - Android Weekly link suggestion: high-trust Android developer newsletter surface for a technical checklist submission after owner review.
+  - MANGA Plus Creators by SHUEISHA: creator-platform context for opt-in approved-sample language only, not a backlink or posting target.
+  - WeeklyLinks-style link submission surfaces: possible resource/newsletter fit only for checklist-first links that remain useful without a product backlink.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned content, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md` for the Android Weekly technical link suggestion and MANGA Plus Creators context note, with no-link/watch variants and strict owner-review gates.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, app-test campaign, directory submission, newsletter form submission, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, creator-platform action, or public outreach was attempted.
+- Next actions: owner confirms package name, signing fingerprint, developer verification status, screenshot/demo assets, and whether Android Weekly-style link suggestions can be submitted through official forms.
+
 ## 2026-05-29 Cycle 3
 
 - Verified branch `seo/distribution-20260529T005949Z`; account registry shows owned GitHub/docs are configured and LinkedIn, Reddit, YouTube, Product Hunt, directories, newsletters, forums, and other external channels remain draft/manual.

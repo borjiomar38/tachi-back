@@ -8,6 +8,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Android newsletter | Android Weekly link suggestion | Independent APK trust and hosted OCR review checklist | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official suggestion form only; use pending package/signing language unless owner confirms facts. |
+| watch | Creator platform | MANGA Plus Creators by SHUEISHA context | Approved-sample OCR and screenshot-rights language | None by default | WATCH_ONLY: no creator account action, posting, comments, or endorsement claim. |
 | draft | LinkedIn | Nayovi company page or founder profile | Short build-in-public post showing Android OCR translation workflow and responsible-use stance | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: needs official LinkedIn account/session or API workflow. |
 | draft | Reddit | Manga/manhwa reader communities that allow tools discussion | How to evaluate an OCR translator for panel order, language choice, and privacy | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: check subreddit rules; use no-link variant first if unsure. |
 | draft | GitHub | Owned Nayovi docs or a relevant awesome-list candidate | Technical note on OCR block merging, translation QA, and hosted Android workflow | https://tachiyomiat.com/translate-manhwa-ai | Use owned repo/docs unless a maintainer explicitly welcomes a resource PR. |
@@ -109,6 +111,39 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Creator program context | KADOKAWA WORLD MANGA ATELIER | Creator-safe approved-sample language context | None | WATCH_ONLY: no outreach or endorsement claim; use only to improve owned creator-safe copy. |
 
 ## Draft Bodies
+
+### Android Weekly technical link suggestion
+
+Status: draft
+Target: Android Weekly official link suggestion form
+Audience: Android developers, mobile app reviewers, Kotlin/Android newsletter readers
+Rules risk: medium; use the official suggestion form only after owner review, keep it technical, disclose Nayovi affiliation, and do not imply package/signing/developer verification facts before owner confirmation.
+No-link variant: use `docs/nayovi-apk-review-packet.md` internally and wait for a public docs URL.
+Link variant: `https://tachiyomiat.com/download` if the editor needs the public submission gate; `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` if a product-light checklist is better.
+
+Suggested title:
+Independent Android APK and OCR review checklist
+
+Suggested note:
+
+Submitted by the Nayovi team. This is a developer-facing checklist for reviewing a direct Android APK that uses hosted OCR: source-of-truth download links, SHA-256 checks, support/pricing/policy links, reviewer-safe screenshots, approved-sample test scope, and pending-vs-confirmed package/signing fields.
+
+The checklist is useful even if the consumer app link is omitted. It is meant for Android reviewers, directory editors, app testers, and developers who need to evaluate direct APK trust without relying on mirrors or unsafe sample screenshots.
+
+### MANGA Plus Creators context note
+
+Status: watch
+Target: owned creator-safe copy and future owner-reviewed platform notes
+Audience: creator-platform reviewers, publisher partners, creator-support teams
+Rules risk: low for internal context; high if used as endorsement, creator impersonation, catalog-processing implication, or public posting.
+No-link variant: yes, default.
+Link variant: none by default; use `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if an owner-approved recipient asks for source context.
+
+Reusable language:
+
+Creator-platform workflows should stay opt-in and sample-specific. Nayovi should test only pages supplied or approved by the creator, publisher, reviewer, or rights holder. Public screenshots, translated excerpts, and platform names stay private unless public use is explicitly approved.
+
+Do not imply that MANGA Plus, Shueisha, MediBang, WEBTOON, publisher catalogs, or creator submissions may be processed by Nayovi without explicit permission.
 
 ### Behind The Manga topic note
 
