@@ -430,6 +430,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T035442Z`: audited branch state, SEO distribution shared status/report, current growth trackers, public pricing/guide coverage, and outreach sender history.
+- Added a commercial pricing-fit section to `/pricing` so higher-volume readers can continue to normal checkout while affiliates, reviewers, directories, approved-sample partners, custom-term requests, and unclear-permission asks route through support or pause before founder time, legal review, or unsupported claims are introduced.
+- Added matching `ItemList` structured metadata and marked the commercial pricing fit packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 compliant sends on 2026-05-29 UTC, matching the configured daily cap. Next sender window should process replies first, then use official form-only Nube/Genga-style partner paths or recheck AIAnyTool/current directory terms before any new send.
+
 - Autonomous cycle on `growth/autonomous-20260529T033314Z`: audited branch state, SEO distribution shared context, public guide coverage, current growth trackers, and outreach sender history.
 - Added a commercial qualification section to `/guides/free-trial-vs-paid-token-plan` so warm replies, higher-volume readers, public coverage, affiliates, and publisher/creator pilots identify usage path, attribution need, responsible sample scope, and weak-opportunity filters before custom terms, founder time, or review access are used.
 - Added matching `ItemList` structured metadata and marked the commercial upgrade qualification packet shipped in the content backlog.

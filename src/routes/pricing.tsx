@@ -44,6 +44,23 @@ const pricingStructuredData = () => {
         'The strongest plan signal is a reader returning for repeat chapter translation after the trial proves the Android workflow is useful.',
     },
   ] as const;
+  const commercialFitItems = [
+    {
+      name: 'Normal paid reader checkout',
+      description:
+        'Use public pricing when a higher-volume reader knows their recurring chapter volume and does not need custom access or attribution.',
+    },
+    {
+      name: 'Dedicated partner or affiliate code',
+      description:
+        'Route reviewers, affiliates, directories, and approved-sample partners through support when attribution, sample scope, or review access needs separation.',
+    },
+    {
+      name: 'Custom terms pause',
+      description:
+        'Do not treat a request as normal checkout when it needs commercial terms, legal review, investor materials, unsupported metrics, or unclear content permission.',
+    },
+  ] as const;
 
   return [
     {
@@ -62,6 +79,17 @@ const pricingStructuredData = () => {
       '@id': `${url}#referral-quality`,
       name: 'Nayovi referral quality signals before checkout',
       itemListElement: referralQualityItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#commercial-fit`,
+      name: 'Nayovi commercial pricing and partner access fit',
+      itemListElement: commercialFitItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
