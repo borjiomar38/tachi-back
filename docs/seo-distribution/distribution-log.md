@@ -1265,3 +1265,20 @@ Next actions:
 - Drafted exact APKLand-style review fit question, Try.fm-style free-trial directory eligibility question, and manga OCR research citation note in `platform-drafts.md`.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, APK upload, public report approval, review-code grant, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
 - Next actions: owner confirms package/signing/hash facts, approved sample pages, screenshot scope, review-code expiry, APK sharing policy, public-report permission, and whether APKLand/Try.fm-style surfaces may preserve Nayovi source links.
+
+## 2026-05-29 Cycle 10
+
+- Verified branch `seo/distribution-20260529T045150Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - AI comparison / free-trial directory submitter profile for AiMatch, ToolDirectory.AI, Try.fm, and similar pricing-aware directories, with exact listing fields, credential references, and rejection gates for paid links, reciprocal links, hidden redirects, mirror-first APK handling, and misleading pricing/category labels.
+  - Official short-video demo profile for TikTok/YouTube Shorts/Reels-style surfaces, with sample-safe profile copy, caption scope, asset requirements, credential references, and no-upload/no-automation guardrails.
+- Maintained owned SEO/linkable assets by updating `content-calendar.md` and `link-assets.md` with the AI comparison directory packet and sample-safe short-video demo packet.
+- Researched rotated authority opportunities across different categories:
+  - AiMatch: pricing/use-case AI directory surface with OCR and Translation context; possible fit only if official APK, pricing, support, and responsible-use links remain visible.
+  - ToolDirectory.AI: curated AI directory with free/freemium/free-trial/paid pricing context; possible fit only after live submit fields preserve source-of-truth links.
+  - FastLaunch: indie launch directory surface; possible fit only from an authorized founder/company profile with truthful launch-stage copy and no vote/backlink manipulation.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `account-setup.md`.
+- Drafted exact value-first AI comparison directory eligibility note and short-video demo caption packet in `platform-drafts.md`.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, launch listing, short-video upload, APK upload, public report approval, Reddit/LinkedIn/GitHub external comment, Product Hunt action, Medium publication, or YouTube upload was attempted.
+- Next actions: owner approves official submitter identity, directory source-link handling, short-video account choice, sample-safe clips, captions, package/signing facts, and whether any video or listing action remains manual-only.

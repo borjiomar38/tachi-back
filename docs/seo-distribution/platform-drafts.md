@@ -148,6 +148,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | AI/free-trial directory | SpotFreeAI / Try.fm-style directories | Accurate free-trial plus paid-token listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields and skip forever-free, reciprocal-link, hidden-redirect, paid-placement, open-source, or mirror-first APK flows. |
 | draft | AI/free-trial directory | FreeAIList / AI Cloudbase / TheAIFest | Accurate free-trial plus paid-token Android OCR listing | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: official submit path only; use no-link eligibility question first if rules are unclear; skip paid, reciprocal, hidden-redirect, mirror-first, forever-free, or open-source flows. |
 | watch | Localization media/podcast | SlatorPod / Slator-style language industry media | Future approved-sample visual OCR QA topic | None by default | WATCH_ONLY: hold until owner approves screenshots, sample evidence, byline, and non-promotional topic; no backlink ask or consumer APK pitch. |
+| draft | AI comparison/free-trial directories | AiMatch / ToolDirectory.AI / Try.fm-style surfaces | Pricing-aware Nayovi listing eligibility question | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit/contact path only; verify category, pricing, source-link, and responsible-use fields; skip paid backlinks, reciprocal links, hidden redirects, generic chatbot labels, mirror-first APK pages, and forever-free/open-source claims. |
+| draft | Short-video official profile | TikTok / YouTube Shorts / Reels manual-only setup | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, approved clips, sample rights, caption approval, and optional API credential required before any upload or metadata update. |
 
 ## Draft Bodies
 
@@ -221,6 +223,67 @@ Pricing:
 
 Support:
 `https://tachiyomiat.com/support`
+
+### AI comparison directory pricing-aware eligibility note
+
+Status: draft
+Target: AiMatch, ToolDirectory.AI, Try.fm, or similar pricing-aware AI/free-trial directories after live fields are reviewed
+Audience: AI directory editors, trial-software searchers, OCR/Translation tool evaluators
+Rules risk: medium; official submit/contact path only. No account automation, paid backlink, reciprocal link, hidden redirect, forever-free/open-source mislabeling, generic chatbot positioning, mirror-first APK handling, or unsupported ranking claim.
+No-link variant: yes and preferred if rules or fields are unclear.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link variant:
+
+Hi team,
+
+I am checking listing fit before submitting Nayovi because the category and pricing need to stay precise.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It has a free trial or redeem-code activation path and paid monthly hosted OCR/translation token plans, so it should not be labeled as forever-free, open source, app-store-only, or a generic chatbot.
+
+Nayovi does not host or distribute chapters. It is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Would your directory support a listing that keeps the official APK source, pricing, support, and responsible-use context visible?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Official APK:
+`https://tachiyomiat.com/download`
+
+Pricing:
+`https://tachiyomiat.com/pricing`
+
+Support:
+`https://tachiyomiat.com/support`
+
+Workflow context:
+`https://tachiyomiat.com/translate-manhwa-ai`
+
+### Short-video official demo caption packet
+
+Status: draft
+Target: Official Nayovi TikTok, YouTube Shorts, Instagram Reels, or manual-only short-video profile after owner account setup
+Audience: Android reviewers, AI directory editors, Product Hunt viewers, partners, investor diligence readers
+Rules risk: medium; official account and owner-approved media are required. No upload, account creation, comment automation, follow/like automation, private-code exposure, or unauthorized chapter samples.
+No-link variant: yes for platforms where profile link already exists.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Caption no-link variant:
+
+Nayovi is testing a source-first Android workflow: official APK download, redeem-code or free-trial activation, hosted OCR/AI translation, and review on approved sample pages only.
+
+No chapter hosting. No catalog processing. Use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Caption link variant:
+
+Same as above, then add:
+
+Official source: `https://tachiyomiat.com/download`
 
 ### Founder community no-link APK trust feedback post
 
