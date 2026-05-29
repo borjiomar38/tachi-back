@@ -621,6 +621,24 @@ const commercialQualificationRows = [
   },
 ] as const;
 
+const replyAssetRows = [
+  {
+    asset: 'Listing packet',
+    detail:
+      'Send only the official APK source, one-line product summary, pricing context, screenshots, support route, and responsible-use note.',
+  },
+  {
+    asset: 'Reviewer packet',
+    detail:
+      'Send the narrated demo, review-code path, approved sample scope, no-pay-for-coverage language, and cancellation/support links.',
+  },
+  {
+    asset: 'Partner packet',
+    detail:
+      'Send the pilot one-pager only when the contact can name the sample owner, language pair, success metric, and stop condition.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2001,6 +2019,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open qualification workflow
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply assets"
+        title="Send the smallest packet that fits the reply"
+        description="Qualified follow-up should answer the exact request without turning every directory, reviewer, or partner thread into a founder escalation."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {replyAssetRows.map((row) => (
+            <Card key={row.asset} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.asset}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <ArrowRightIcon className="size-4" />
+                Keep follow-up proportional
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A listing editor usually needs fields, a reviewer needs test
+                access, and a partner needs approved-sample scope. Escalate to
+                founder time only when the reply asks for a commercial,
+                financial, legal, or scheduling decision.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open follow-up workflow
             </a>
           </CardContent>
         </Card>
