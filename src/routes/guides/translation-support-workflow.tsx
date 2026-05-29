@@ -97,6 +97,28 @@ const translationWorkflowStructuredData = () => {
         'Close replies that ask for paid backlinks, reciprocal links, scraped listings, mirror-first APK uploads, hidden pricing, or unauthorized catalog translation.',
     },
   ] as const;
+  const replySlaPacket = [
+    {
+      name: 'Classify the reply first',
+      description:
+        'Identify whether the contact needs listing fields, review access, approved-sample pilot context, investor or commercial diligence, or a clean decline before sending assets.',
+    },
+    {
+      name: 'Send one matched packet',
+      description:
+        'Use only the official APK, pricing, support, responsible-use, and proof links that match the reply so the first response stays useful and proportionate.',
+    },
+    {
+      name: 'Gate access and founder time',
+      description:
+        'Ask for sample scope, audience, timeline, and success signal before spending review codes, pilot codes, custom terms, investor materials, or meeting capacity.',
+    },
+    {
+      name: 'Log the next decision',
+      description:
+        'Record the follow-up date and revenue signal, then stop cleanly when the thread asks for paid links, hidden pricing, mirror uploads, or unauthorized content.',
+    },
+  ] as const;
   const qualifiedReplyAssets = [
     {
       name: 'Reviewer or directory packet',
@@ -273,6 +295,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi reply qualification matrix',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: replyQualificationPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-sla`,
+      name: 'Nayovi first reply service-level handoff',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: replySlaPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

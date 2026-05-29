@@ -102,6 +102,14 @@ Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai` wi
 
 Next outreach: after cap reset, process qualified replies first. If none are waiting, use the existing Nube/Genga official-form queue or recheck AIAnyTool's current terms/contact path before any send.
 
+### Autonomous cycle: first reply SLA packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-support-workflow#reply-sla` with a first-reply handoff for editors, directories, partners, investors, and commercial contacts. The packet keeps inbound replies tied to one matched asset bundle, clear gates before codes or calls, and logged revenue signal before owner time, custom terms, investor materials, or meeting capacity are used.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use the Nube/Genga official-form queue or recheck AIAnyTool's current terms/contact path before any send.
+
 ### Autonomous cycle: paid access attribution packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

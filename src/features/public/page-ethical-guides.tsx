@@ -934,6 +934,29 @@ const replyQualificationRows = [
   },
 ] as const;
 
+const replySlaRows = [
+  {
+    moment: 'Same day',
+    action:
+      'Confirm whether the reply is a listing, review, approved-sample pilot, investor, commercial, or decline path before sending links or access.',
+  },
+  {
+    moment: 'First useful response',
+    action:
+      'Send one matched packet with official APK, pricing, support, responsible-use, and proof links instead of a broad collection of assets.',
+  },
+  {
+    moment: 'Before codes or calls',
+    action:
+      'Ask for sample scope, audience, timeline, and success signal when they are missing so review codes and founder time are not spent on vague interest.',
+  },
+  {
+    moment: 'After handoff',
+    action:
+      'Log the next decision, follow-up date, and revenue signal, then stop if the thread asks for paid links, hidden pricing, mirror uploads, or unauthorized content.',
+  },
+] as const;
+
 const qualifiedReplyAssetRows = [
   {
     packet: 'Reviewer or directory',
@@ -2616,6 +2639,28 @@ export const PageTranslationSupportWorkflow = () => {
               >
                 <span className="font-semibold text-foreground">
                   {row.signal}
+                </span>
+                <span>{row.action}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reply SLA"
+        title="What to do in the first reply window"
+        description="Use this handoff when a real contact replies so the first response is useful, proportional, and tied to review access, partner pilots, paid-plan evidence, or a clean stop."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {replySlaRows.map((row) => (
+              <div
+                key={row.moment}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.moment}
                 </span>
                 <span>{row.action}</span>
               </div>
