@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T003801Z`: audited branch state, growth trackers, current SEO distribution shared status, owned pilot/checklist guide surfaces, outreach sender history, and current public webtoon/localization contact paths.
+- Added a visible partner intake packet and ItemList structured data to `/guides/permission-safe-manga-translation-pilot` so partner replies can include sample owner, test material, evaluation goal, and revenue/trust signal before review-code access, owner time, or a call is needed.
+- Updated sitemap metadata and the content backlog for the pilot-intake refresh.
+- Auto-approved and contacted GOXTOON through its public `hello@goxtoon.com` business contact after current public verification found webtoon, licensing, project assistance, and anime/manga/webtoon audience marketing fit. Sent an individualized approved-sample Android OCR workflow feedback note with opt-out language; no backlink, paid placement, catalog-processing, or unauthorized-source ask.
+
 - Autonomous cycle on `growth/autonomous-20260529T003041Z`: audited branch state, current SEO distribution report, setup-guide metadata, growth trackers, and outreach sender history.
 - Added HowTo and ItemList structured data to `/guides/mihon-nayovi-setup` and `/guides/mihon-tachiyomiat-setup` so high-intent TachiyomiAT, Tachiyomi, and Mihon setup searches have parseable official APK, reader-source separation, permission-safe sample, support/recovery, review-code, and paid-plan handoff signals.
 - Marked the setup workflow backlog item as shipped and kept the change scoped to owned SEO/conversion infrastructure before outreach validation.

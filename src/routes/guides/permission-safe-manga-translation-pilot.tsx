@@ -47,6 +47,24 @@ const pilotStructuredData = () => {
       text: 'Stop when source rights are unclear, the sample owner is not involved, paid link placement is requested, or the review would imply unauthorized catalog translation.',
     },
   ] as const;
+  const intakeItems = [
+    {
+      name: 'Sample owner',
+      text: 'Identify the creator, publisher, reviewer, moderator, or rights holder who can approve the sample and any public citation.',
+    },
+    {
+      name: 'Test material',
+      text: 'List the title, page count, format, source language, target language, and whether screenshots or translated excerpts may be shared.',
+    },
+    {
+      name: 'Evaluation goal',
+      text: 'Choose whether the pilot is for private feedback, review-code access, affiliate testing, accessibility research, or a partner workflow conversation.',
+    },
+    {
+      name: 'Revenue or trust signal',
+      text: 'Record whether success means qualified Android installs, repeat paid translation intent, review coverage, an approved case note, or a next partner call.',
+    },
+  ] as const;
 
   return [
     {
@@ -97,6 +115,17 @@ const pilotStructuredData = () => {
       '@id': `${url}#pilot-decision-packet`,
       name: 'Permission-safe pilot decision packet',
       itemListElement: decisionItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.text,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#partner-intake-packet`,
+      name: 'Permission-safe pilot partner intake packet',
+      itemListElement: intakeItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
