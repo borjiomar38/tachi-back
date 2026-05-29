@@ -65,6 +65,24 @@ const pilotStructuredData = () => {
       text: 'Record whether success means qualified Android installs, repeat paid translation intent, review coverage, an approved case note, or a next partner call.',
     },
   ] as const;
+  const contactPathItems = [
+    {
+      name: 'Creator platform',
+      text: 'Use official partnership, IP, creator-support, or press paths only after confirming which department should review approved-sample workflow feedback.',
+    },
+    {
+      name: 'Localization team',
+      text: 'Send a no-link workflow note first and ask whether Android-side OCR QA observations are useful for creator-controlled samples.',
+    },
+    {
+      name: 'Reviewer or directory',
+      text: 'Share the official APK source, review packet, pricing, support, and screenshot policy before any review code, upload, listing, or public article.',
+    },
+    {
+      name: 'Stop condition',
+      text: 'Stop when the path requires paid link placement, reciprocal backlinks, unauthorized sample examples, fake reviews, or unclear sample ownership.',
+    },
+  ] as const;
 
   return [
     {
@@ -126,6 +144,17 @@ const pilotStructuredData = () => {
       '@id': `${url}#partner-intake-packet`,
       name: 'Permission-safe pilot partner intake packet',
       itemListElement: intakeItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.text,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#partner-contact-paths`,
+      name: 'Permission-safe pilot partner contact paths',
+      itemListElement: contactPathItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

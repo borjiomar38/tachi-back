@@ -680,6 +680,29 @@ const pilotIntakeRows = [
   },
 ] as const;
 
+const pilotContactPathRows = [
+  {
+    label: 'Creator platform',
+    detail:
+      'Use the official partnership, IP, or creator-support path only after the platform confirms which department should review approved-sample workflow feedback.',
+  },
+  {
+    label: 'Localization team',
+    detail:
+      'Send a no-link note first and ask whether Android-side OCR QA observations are useful for creator-controlled samples, not whether Nayovi can process client catalogs.',
+  },
+  {
+    label: 'Reviewer or directory',
+    detail:
+      'Share the APK review packet, official download page, pricing, support, and screenshot policy before any code, upload, listing, or public article.',
+  },
+  {
+    label: 'Stop condition',
+    detail:
+      'Do not continue when the contact path requires paid link placement, reciprocal backlinks, unauthorized page examples, fake reviews, or unclear sample ownership.',
+  },
+] as const;
+
 const communitySubmissionRows = [
   {
     channel: 'Startup launch communities',
@@ -1413,6 +1436,28 @@ export const PagePermissionSafePilotBrief = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {pilotIntakeRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Contact path"
+        title="How to route partner and reviewer requests"
+        description="Use the lowest-risk official path for each audience before sharing codes, screenshots, APK files, or public examples."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {pilotContactPathRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
