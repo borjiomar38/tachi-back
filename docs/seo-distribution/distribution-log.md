@@ -1109,3 +1109,20 @@ Next actions:
 - Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new setup packets, directory quality gate, and APKApps/IAToolFinder drafts.
 - No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, directory submission, APK upload, mirror permission, Reddit/LinkedIn/GitHub external comment, Product Hunt action, or YouTube upload was attempted.
 - Next actions: owner confirms package/signing/hash facts, mirror policy, screenshot/demo rights, official submitter contact, and whether APKApps-style upload/review or IAToolFinder-style listing flows preserve Nayovi source-of-truth links.
+
+## 2026-05-29 Cycle 7
+
+- Verified branch `seo/distribution-20260529T032323Z`; account registry still shows external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and the SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Crunchbase or equivalent startup entity profile packet with public company fields, category tags, responsible-use line, owner-approved metrics guardrail, `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE`, and no automated claim/payment/verification action.
+  - Medium canonical publishing packet with official profile fields, canonical URL policy for the comic OCR checklist, `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`, approved screenshot requirements, and no automated engagement.
+- Researched rotated authority opportunities across different categories:
+  - `kba/awesome-ocr`: GitHub OCR resource list where contributions and feedback are welcome; fit is a no-link maintainer-first question about whether a comic OCR QA checklist is useful, not a promotional PR.
+  - Crunchbase: startup/investor trust surface blocked on owner-created or owner-claimed official profile and public field approval.
+  - Medium: canonical technical publishing surface for OCR QA checklist syndication after owner account and canonical policy approval.
+  - IAMT Journal: localization-industry media watch target for future approved-sample OCR QA evidence, not a consumer APK pitch today.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup packets, authority targets, and linkable assets.
+- Drafted exact GitHub maintainer-first no-link and link-if-invited variants in `platform-drafts.md`.
+- No external posting, account creation, login, signup form, terms acceptance, CAPTCHA, email send, Medium publication, Crunchbase claim, GitHub issue/PR/comment, directory submission, APK upload, Reddit/LinkedIn post, Product Hunt action, or YouTube upload was attempted.
+- Next actions: owner decides whether Crunchbase belongs in the public trust stack, creates/connects Medium if canonical syndication is approved, and authorizes any GitHub maintainer contact only after current maintainer rules are reviewed.

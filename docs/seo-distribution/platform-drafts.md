@@ -212,6 +212,34 @@ Would this fit an AI Translation, OCR, Android, or workflow category, or should 
 Best,
 Nayovi team
 
+### GitHub awesome-ocr maintainer-first resource question
+
+Status: draft
+Target: `kba/awesome-ocr` or similar OCR resource lists after rules/account review
+Audience: OCR maintainers, document-understanding builders, technical newsletter editors
+Rules risk: medium; AUTHORIZED_ACCOUNT_REQUIRED for any GitHub issue, PR, or discussion outside owned repositories. Do not open a PR for a product backlink. Use only if maintainers invite resource suggestions and the checklist is genuinely useful as OCR QA context.
+No-link variant: yes.
+Link variant only if invited: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link variant:
+
+Hi,
+
+I am maintaining a product-light checklist for comic and manga OCR QA. It focuses on checks that matter before translation quality is judged: permission scope, missed text regions, reading order, merged or under-segmented speech balloons, overlapping dialogue and onomatopoeia, glossary drift, human correction, and publication boundaries for screenshots.
+
+Would a resource like that be useful for OCR evaluation or showcase readers, or would it be too application-specific for this list?
+
+No link needed if external application resources are not welcome. I am asking first because I do not want to open a promotional PR.
+
+Link variant after maintainer invitation:
+
+Hi,
+
+Following up with the resource link after confirming that OCR evaluation/showcase resources are welcome:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+The checklist is intentionally product-light. It is meant to help readers evaluate comic-image OCR coverage, ordering, segmentation, and human-review boundaries before any translation quality claim is made.
+
 ### App-testing portal safe health-check request
 
 Status: draft

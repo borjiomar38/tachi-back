@@ -276,6 +276,60 @@ Agent capability after connection:
 Next action:
 - Owner creates or connects the official maker/company profile, chooses whether Nayovi should launch now or only collect pre-launch feedback, and approves the Product Hunt draft in `docs/seo-distribution/platform-drafts.md`.
 
+### Crunchbase / Startup Entity Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for official company-profile creation or claim, terms acceptance, public company fields, and any verification step.
+
+Public profile fields:
+- Organization name: `Nayovi`
+- Website: `https://nayovi.com`
+- Product/download URL: `https://tachiyomiat.com/download`
+- Category tags: `Android`, `OCR`, `AI Translation`, `Manga`, `Manhwa`, `Mobile Apps`, `Localization`
+- Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Responsible-use line: `Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Public contact: owner-approved public support or media path only; do not expose private emails in docs.
+
+Required assets:
+- Official logo/avatar.
+- Founder/company identity only if owner approves it for public display.
+- Approved public boilerplate from `docs/nayovi-official-profile-fields.md`.
+- No private revenue, retention, investor, customer, or contact data unless the owner explicitly approves it for public use.
+
+Credential reference:
+- `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE` or equivalent non-secret startup-profile reference only. Store no login data, cookies, tokens, verification documents, or paid-plan receipts in docs.
+
+Agent capability after connection:
+- The agent can keep public company facts synchronized across directory, investor, press, and partner drafts after the owner confirms the live profile. The agent must not claim funding, employees, traction, partnerships, store approvals, or verification status unless owner-confirmed.
+
+Next action:
+- Owner decides whether Crunchbase or an equivalent startup profile belongs in the public trust stack, creates/claims the official profile manually, and approves which company fields and metrics are public.
+
+### Medium Canonical Publishing Packet
+
+Status: OWNER_ACTION_REQUIRED for official Medium profile/publication creation, canonical import policy, article approval, and any integration token.
+
+Public profile fields:
+- Display name: `Nayovi`
+- Bio: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. No chapter hosting; approved samples and permission-safe use only.`
+- Website: `https://nayovi.com`
+- Canonical article URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- First article title: `OCR translation QA checks for manga and manhwa pages`
+
+Required assets:
+- Official logo/avatar.
+- Owner-approved screenshot references only; no unauthorized chapter pages.
+- Canonical markdown sourced from owned checklist content, with clear affiliation disclosure.
+- Link back to the original canonical URL when syndicating.
+
+Credential reference:
+- `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN` only if the owner enables official API publishing. Store the actual value only in `/opt/tachi-back/.env.seo-distribution-agent` or another approved secret store.
+
+Agent capability after connection:
+- The agent can prepare or publish owner-approved canonical Medium posts only after the official account and token scope are connected. No automated comments, follows, claps, contact scraping, or duplicate-content syndication without a canonical URL.
+
+Next action:
+- Owner creates/connects the official Medium profile or publication and approves whether the comic OCR checklist can be syndicated as a canonical, product-light technical article.
+
 ### Official Newsletter / Public Update Archive Packet
 
 Status: OWNER_ACTION_REQUIRED for official newsletter account creation, sender identity, terms acceptance, first issue approval, and any API token connection.
