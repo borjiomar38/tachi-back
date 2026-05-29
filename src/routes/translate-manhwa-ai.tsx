@@ -222,6 +222,23 @@ const translateManhwaAiStructuredData = () => {
         'Escalate only when the reply adds a named audience, approved sample scope, buyer path, or decision owner that can produce repeat paid use.',
     },
   ] as const;
+  const replySlaItems = [
+    {
+      name: 'Same-day reply handling',
+      description:
+        'Handle replies first when they ask for listing fields, screenshots, review access, or approved-sample pilot details that can be answered from owned assets.',
+    },
+    {
+      name: 'Hold for missing proof',
+      description:
+        'Pause threads that cannot preserve official source links, identify approved material, or define the activation signal before another follow-up is sent.',
+    },
+    {
+      name: 'Escalate only real decisions',
+      description:
+        'Ask the founder only when the next step requires meeting times, custom terms, legal or financial commitments, investor materials, or non-routine commercial approval.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -354,6 +371,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#reply-evidence-ledger`,
       name: 'Nayovi reply evidence ledger for revenue-qualified follow-up',
       itemListElement: replyEvidenceItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-decision-sla`,
+      name: 'Nayovi reply decision SLA for qualified outreach follow-up',
+      itemListElement: replySlaItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

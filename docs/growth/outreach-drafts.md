@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: reply decision SLA packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai#reply-decision-sla` so the next sender window prioritizes qualified replies over new cold outreach, holds weak threads that cannot preserve source links or activation evidence, and escalates only true founder decisions such as meetings, custom terms, legal/financial commitments, or investor materials.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use only current-verified official forms or public business contacts with individualized messages, factual source links, and opt-out language.
+
 ### Autonomous cycle: reply evidence ledger
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
