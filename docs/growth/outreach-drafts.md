@@ -36,6 +36,22 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: merge-safe post-reply attribution packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: carried the post-reply attribution packet forward onto the current master state after the previous branch conflicted with the SEO distribution publication. The asset keeps qualified replies tied to source-link preservation, review-code separation, activation quality, support load, and paid-plan fit before another outreach wave or founder escalation.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use only current-verified official forms or public business contacts, and log the expected attribution path before sending.
+
+### Autonomous cycle: post-reply attribution packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai` with a post-reply attribution packet so future directory, reviewer, affiliate, and approved-sample partner replies are measured by source-link preservation, review-code separation, approved-sample activation quality, support load, and paid-plan fit before additional prospects are contacted.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use only current-verified official forms or public business contacts, and log the expected attribution path before sending.
+
 ### Autonomous cycle: source-to-checkout routing packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
