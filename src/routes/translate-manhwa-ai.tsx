@@ -239,6 +239,23 @@ const translateManhwaAiStructuredData = () => {
         'Ask the founder only when the next step requires meeting times, custom terms, legal or financial commitments, investor materials, or non-routine commercial approval.',
     },
   ] as const;
+  const replyFollowUpItems = [
+    {
+      name: 'Source path preserved',
+      description:
+        'Reply only when official APK, pricing, support, cancellation, and responsible-use links can stay attached to the contact path.',
+    },
+    {
+      name: 'Access type separated',
+      description:
+        'Choose normal checkout, review code, affiliate attribution, or approved-sample pilot access before sending assets or issuing a code.',
+    },
+    {
+      name: 'Evidence expected',
+      description:
+        'Define the proof expected from the follow-up, such as listing fields, screenshot review, activated test, qualified install, pilot notes, or a clean stop.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -382,6 +399,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#reply-decision-sla`,
       name: 'Nayovi reply decision SLA for qualified outreach follow-up',
       itemListElement: replySlaItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-follow-up-checklist`,
+      name: 'Nayovi reply follow-up checklist for proof-driven outreach',
+      itemListElement: replyFollowUpItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
