@@ -103,6 +103,23 @@ const translateManhwaAiStructuredData = () => {
         'Avoid mentions that cannot explain Android install intent, free trial fit, monthly token plans, support expectations, and permission-safe test material.',
     },
   ] as const;
+  const diligenceItems = [
+    {
+      name: 'Rights-safe sample scope',
+      description:
+        'Evaluate Nayovi only with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved pages.',
+    },
+    {
+      name: 'Evidence before claims',
+      description:
+        'Use the narrated demo, screenshots, OCR checklist, pricing page, and support path before public promotion or commercial discussion.',
+    },
+    {
+      name: 'Separated revenue signals',
+      description:
+        'Keep normal checkout, reviewer codes, affiliate referrals, and approved-sample pilots separate so paid demand is not mixed with evaluation access.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -158,6 +175,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#placement-filter`,
       name: 'Nayovi placement filter for backlink and directory quality',
       itemListElement: placementFilterItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#diligence-packet`,
+      name: 'Nayovi diligence packet for publishers, partners, and investors',
+      itemListElement: diligenceItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

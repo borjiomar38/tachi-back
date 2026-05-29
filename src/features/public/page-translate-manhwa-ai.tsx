@@ -585,6 +585,24 @@ const placementFilterRows = [
   },
 ] as const;
 
+const diligenceRows = [
+  {
+    check: 'Rights-safe sample scope',
+    detail:
+      'Partner or investor diligence should start with owned, public-domain, official-sample, creator-provided, or otherwise permission-approved pages.',
+  },
+  {
+    check: 'Evidence before claims',
+    detail:
+      'Use the narrated demo, screenshots, OCR checklist, pricing page, and support path to show how the workflow is evaluated before public promotion.',
+  },
+  {
+    check: 'Revenue signal separation',
+    detail:
+      'Keep normal checkout, reviewer codes, affiliate referrals, and approved-sample pilots separate so paid demand is not confused with evaluation access.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -1878,6 +1896,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open placement checklist
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Diligence packet"
+        title="Give publishers, partners, and investors the facts first"
+        description="High-quality conversations should evaluate Nayovi by sample rights, workflow proof, support readiness, and separated revenue signals before any public campaign or commercial discussion."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {diligenceRows.map((row) => (
+            <Card key={row.check} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <BadgeCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.check}</CardTitle>
+                <CardDescription>{row.detail}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Keep diligence tied to measurable use
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A strong partner or investor thread should ask whether Nayovi
+                can create qualified installs, repeat translation sessions,
+                supportable Android activation, and paid token-plan demand
+                without processing unapproved catalogs or buying placement.
+              </p>
+            </div>
+            <a
+              href="/guides/permission-safe-manga-translation-pilot"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open pilot packet
             </a>
           </CardContent>
         </Card>
