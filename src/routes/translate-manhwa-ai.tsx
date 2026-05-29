@@ -256,6 +256,23 @@ const translateManhwaAiStructuredData = () => {
         'Define the proof expected from the follow-up, such as listing fields, screenshot review, activated test, qualified install, pilot notes, or a clean stop.',
     },
   ] as const;
+  const accessExceptionItems = [
+    {
+      name: 'Discount or extended trial request',
+      description:
+        'Approve only when the contact names the audience, expected usage, support path, and why normal free trial or monthly token plans are not enough.',
+    },
+    {
+      name: 'Review or affiliate code request',
+      description:
+        'Use dedicated access only when the public mention can preserve official source links, disclose the relationship, and separate attribution from normal checkout.',
+    },
+    {
+      name: 'Partner pilot access request',
+      description:
+        'Require approved sample scope, language pair, success metric, and stop condition before issuing access or asking for founder-level terms.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -410,6 +427,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#reply-follow-up-checklist`,
       name: 'Nayovi reply follow-up checklist for proof-driven outreach',
       itemListElement: replyFollowUpItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#access-exception-gate`,
+      name: 'Nayovi access exception gate for discounts, affiliate codes, and partner access',
+      itemListElement: accessExceptionItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
