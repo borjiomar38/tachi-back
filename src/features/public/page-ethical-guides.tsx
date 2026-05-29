@@ -865,6 +865,29 @@ const revenueRoutingRows = [
   },
 ] as const;
 
+const officialFormHandoffRows = [
+  {
+    rule: 'Use official forms only',
+    detail:
+      'When a studio, legal manga platform, or creator service has no verified public business email, submit only through its official contact, partnership, or business form.',
+  },
+  {
+    rule: 'Lead with a useful asset',
+    detail:
+      'Reference the approved-sample pilot brief, OCR checklist, or reviewer packet so the note helps the recipient evaluate workflow fit without needing a product pitch.',
+  },
+  {
+    rule: 'Ask for one next step',
+    detail:
+      'Ask whether a small approved-sample workflow note or private pilot would be useful. Do not ask for catalog access, replacement localization, a guaranteed backlink, or paid placement.',
+  },
+  {
+    rule: 'Log without secrets',
+    detail:
+      'Record the public form URL, rationale, message summary, date, and follow-up guardrail. Do not store form-session tokens, private confirmation links, or personal contact data.',
+  },
+] as const;
+
 const comparisonPacketRows = [
   {
     format: 'Android APK workflow',
@@ -2370,6 +2393,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.signal}
                 </span>
                 <span>{row.route}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Official forms"
+        title="How to handle form-only partner prospects"
+        description="Use this handoff when a high-fit studio, legal manga platform, creator service, or localization team exposes an official form but no verified public business email."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {officialFormHandoffRows.map((row) => (
+              <div
+                key={row.rule}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.rule}
+                </span>
+                <span>{row.detail}</span>
               </div>
             ))}
           </CardContent>

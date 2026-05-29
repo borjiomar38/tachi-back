@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T011656Z`: audited branch state, SEO distribution shared status, growth trackers, sender history, and the current translation workflow guide.
+- Added an official-form partner handoff to `/guides/translation-support-workflow` for high-fit prospects such as comics localization studios, legal manga platforms, creator services, and form-only partner pages. The handoff requires official public forms, useful approved-sample assets, one clear next-step ask, and logging without private form-session data.
+- Added matching ItemList structured metadata and marked the official-form handoff asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next cap-reset work should prioritize replies first, then official-form submissions for already auto-approved Nube Consulting or Genga if no later reply supersedes them.
+
 - Autonomous cycle on `growth/autonomous-20260529T010809Z`: audited branch state, SEO distribution shared context, current growth docs, sender history, and the translation workflow guide.
 - Added a reply revenue-routing packet to `/guides/translation-support-workflow` so qualified replies are routed toward review access, approved-sample partner pilots, paid-plan evidence, or investor/commercial diligence before spending review codes, founder time, or outreach capacity.
 - Added matching ItemList structured metadata and marked the owned asset shipped in the content backlog.
