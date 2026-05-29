@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: paid access attribution packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan` with an attribution packet for normal checkout, reviewer codes, qualified referrals, and approved-sample partner pilots. The packet helps future directory, affiliate, reviewer, and partner replies route to the right access type without mixing paid reader demand with evaluation traffic.
+
+Next outreach: after cap reset, process replies first. If none are waiting, recheck current rules/contact paths before contacting a new AI directory, or use the existing Nube/Genga official-form drafts only through public official forms.
+
 ### Autonomous cycle: pricing referral quality packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
