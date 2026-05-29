@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 2
+
+- Verified branch `seo/distribution-20260529T003302Z`; account registry still shows owned GitHub/docs are configured and external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, and forum actions remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, platform drafts, link assets, and the account registry before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Official press/media kit page packet with public profile fields, canonical links, asset checklist, quote/metric owner gates, and `SEO_AGENT_PRESS_CONTACT_REFERENCE` as a non-secret routing reference only.
+  - Podcast/newsletter source profile packet with founder/brand bio, topic angles, approved screenshot boundaries, and `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE` as a non-secret profile reference.
+- Improved owned content at `https://tachiyomiat.com/download` with a third-party citation-readiness block for podcast/newsletter notes, directory listings, localization partner notes, and Android policy/package-verification references.
+- Researched rotated authority opportunities across different categories:
+  - Behind The Manga podcast/newsletter: no-link manga OCR QA topic note only.
+  - Nube Consulting comics localization studio: no-link approved-sample OCR constraints feedback note only.
+  - F-Droid ecosystem: watch-only Android distribution-quality benchmark; not a current Nayovi app submission fit.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned content, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md` for Behind The Manga and Nube Consulting, both with no-link variants and optional checklist link only if requested.
+- No external posting, account creation, login, form submission, terms acceptance, CAPTCHA, APK upload, tester campaign, podcast contact, directory submission, forum post, Reddit comment, LinkedIn post, or public outreach was attempted.
+- Next actions: owner confirms public media contact, approved screenshots/demo assets, founder quote policy, and whether podcast/newsletter source profiles should be founder-led or brand-led.
+
 ## 2026-05-29 Cycle 1
 
 - Verified branch `seo/distribution-20260529T002418Z`; `/var/lib/tachi-seo-distribution-agent/accounts.json` shows owned GitHub/docs are configured and all external social/directory channels remain draft/manual.

@@ -46,6 +46,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | high | Official social proof matrix | Connect account setup to verifiable public trust signals before outreach | configured_owned_repo_content_synced | Owner uses the matrix to decide which official profiles are live and citable | `docs/seo-distribution/official-social-proof-matrix.md`, official profile fields, screenshot policy, Android package facts | Non-secret references only; actual values stay in approved secret store | Agent can cite only confirmed live official profiles and keep inactive profiles marked owner-action-required | Owner completes GSC/Bing, Android package facts, screenshot assets, LinkedIn, YouTube, and canonical publishing setup in priority order. |
 | medium | TikTok/short-video official account | Short demo proof and creator-safe visual snippets for Android reviewers and reader discovery | setup_packet_prepared_owner_action_required | Owner creates/connects official Nayovi account manually and approves short demo media plus platform terms | Avatar, bio, official links, 15-30 second approved-sample clips, no-chapter-hosting captions | `SEO_AGENT_TIKTOK_ACCOUNT_REFERENCE`; API token only if a compliant official workflow is approved | Agent can draft short-video captions and metadata after owner-approved account/media connection | Owner decides whether short video is appropriate, approves sample rights, and keeps account manual unless an official API workflow is configured. |
 | medium | Discord/community official server profile | Controlled support/community presence for reviewers, beta testers, and creator-pilot feedback | setup_packet_prepared_owner_action_required | Owner creates/connects only an official Nayovi server/profile and accepts terms manually | Server purpose, rules, support boundaries, approved invite policy, no-piracy/no-chapter-sharing rules | `SEO_AGENT_DISCORD_BOT_TOKEN` only if owner enables a compliant bot workflow; no user tokens | Agent can draft server rules, pinned links, and support handoff copy after owner approval | Owner confirms whether Nayovi should have a Discord server and approves moderation rules before any public invite is cited. |
+| high | Official press/media kit page | Owned source-of-truth profile packet for journalists, podcasters, newsletters, directories, and partner diligence | configured_owned_repo_needs_content_sync | Owner confirms public media contact path, founder quote policy, logo/screenshot rights, and which metrics can be public | Brand bio, founder-approved quote, logo/avatar, screenshots, demo video, APK trust packet, public contact path | No secret required; optional `SEO_AGENT_PRESS_CONTACT_REFERENCE` for non-secret routing only | Agent can keep an owned media kit draft and platform-specific media notes synchronized | Create an owned press kit draft that cites download-page citation readiness, OCR checklist, and approved-sample pilot guide without exposing private contacts. |
+| medium | Podcast/newsletter source profiles | Public identity consistency for manga podcasts, Android newsletters, and localization newsletters | setup_packet_prepared_owner_action_required | Owner approves whether Nayovi/founder should create any publication-specific profile, byline, or source profile manually | Short bio, one-sentence responsible-use line, topic angles, canonical links, public contact path, approved screenshots only | Per-publication profile reference only; optional `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`; no passwords or cookies | Agent can draft topic notes and source bios after owner confirms account/profile scope | Owner chooses which source profiles are appropriate; agent stays draft-only and uses official contact/submission paths. |
 
 ## 2026-05-28 Setup Packets
 
@@ -238,6 +240,65 @@ Next action:
 ### Crunchbase Organization Profile
 
 Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, and any manual verification.
+
+### Official Press / Media Kit Page
+
+Status: OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, and any public metrics.
+
+Public profile fields:
+- Name: `Nayovi`
+- Category: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows`
+- Short description: `Nayovi provides an official Android APK and hosted OCR/AI translation workflow for reader-owned, public-domain, official-sample, or permission-approved comic pages. It does not host or distribute chapters.`
+- Primary website: `https://nayovi.com`
+- APK source: `https://tachiyomiat.com/download`
+- OCR QA resource: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Approved-sample pilot guide: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+
+Required assets:
+- Official logo/avatar and banner reference.
+- Approved screenshots or clear `OWNER_ACTION_REQUIRED` placeholder if screenshots are not yet approved.
+- Demo video reference if owner confirms public sample rights.
+- Founder-approved quote and whether revenue, trial, token, or usage metrics can be public.
+- Public contact path; do not include private phone, WhatsApp, email aliases, credentials, or verification screenshots unless they are already intended for public use.
+
+Credential reference:
+- No secret is required for an owned static press kit. Use `SEO_AGENT_PRESS_CONTACT_REFERENCE` only as a non-secret routing label if the owner defines one.
+
+Agent capability after owner approval:
+- The agent can maintain an owned media kit draft and reuse it in podcast/newsletter/editorial notes. External publication profiles remain owner-action-required unless an official account/API workflow is connected.
+
+Next action:
+- Create the owned press kit draft after owner confirms public contact path, approved visual assets, and whether metrics or founder quotes can be public.
+
+### Podcast / Newsletter Source Profiles
+
+Status: OWNER_ACTION_REQUIRED for any publication-specific profile, byline, source account, or terms acceptance.
+
+Profile fields:
+- Display name: `Nayovi` or founder-approved real founder identity with clear Nayovi affiliation.
+- Bio: `Building Nayovi, an Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows. Permission-safe samples only; no chapter hosting.`
+- Primary link: `https://nayovi.com`
+- Technical resource link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Media/reviewer link: `https://tachiyomiat.com/download`
+
+Topic angles:
+- Manga OCR QA before judging AI translation output.
+- Why independent Android APK reviews need source-of-truth links, hashes, package identity, and screenshot rules.
+- Permission-safe approved-sample pilots for creator platforms and localization teams.
+
+Required assets:
+- Founder-approved bio/byline.
+- Logo/avatar and optional headshot if owner wants founder-led profiles.
+- Approved screenshots only; no copyrighted chapter pages or private tester data.
+
+Credential reference:
+- Per-publication source profile reference only. Use `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE` if the owner later provides a non-secret profile handle/reference. Store actual credentials only in the approved secret store.
+
+Agent capability after connection:
+- The agent can prepare source bios and individualized topic pitches. It must not create accounts, subscribe/import contacts, post comments, or submit forms without owner approval and a compliant official workflow.
+
+Next action:
+- Owner chooses whether manga podcasts/newsletters, Android newsletters, or localization media should receive source-profile bios; agent prepares drafts only.
 
 ## 2026-05-29 Setup Packets
 
