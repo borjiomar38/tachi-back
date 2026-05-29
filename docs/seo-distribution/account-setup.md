@@ -238,6 +238,66 @@ Profile fields:
 - Support link: `https://tachiyomiat.com/support`
 - Download source: `https://tachiyomiat.com/download`
 
+## 2026-05-29 Cycle 9 Setup Advancement
+
+### App Review / Testing Portal Profile
+
+Status: OWNER_ACTION_REQUIRED for manual portal account steps, APK upload permission, tester scope, screenshot policy, review-code policy, public-report permission, and any payment/terms approval.
+
+Prepared packet:
+- `docs/seo-distribution/app-testing-review-brief.md`
+- `docs/seo-distribution/reviewer-access-packet.md`
+- `docs/seo-distribution/directory-quality-gate.md`
+- Public handoff: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Profile fields:
+- Display name: `Nayovi`
+- Product type: `Android APK and hosted OCR/AI translation workflow`
+- Test scope: `Install source, permissions, activation, OCR coverage on approved samples, support path, pricing clarity, and screenshot safety.`
+- Responsible-use line: `Nayovi does not host or distribute chapters; tests must use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Canonical links: `https://nayovi.com`, `https://tachiyomiat.com/download`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`
+
+Credential/reference guardrails:
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`
+- `SEO_AGENT_REVIEWER_PACKET_REFERENCE`
+- `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`
+- Store no APK upload credentials, portal passwords, private review codes, tester identities, unpublished reports, device IDs, screenshots, or payment records in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare portal-specific test instructions and owner-approved reviewer replies after account/API connection.
+- Agent must not upload APKs, start tester campaigns, approve public reports, request ratings, create fake reviews, accept terms, or pay for testing without explicit owner action.
+
+Next action:
+- Owner confirms APK filename/build, SHA-256, package name, signing fingerprint, Android developer verification/package-registration language, approved sample pages, screenshot boundaries, review-code expiry/revocation, and whether AppTester.co, APKLand, AppsTested, or similar portals may test Nayovi.
+
+### Manga / Localization Media Contributor Profile
+
+Status: OWNER_REVIEW_REQUIRED for byline, topic scope, approved-sample evidence, screenshots, source citations, and manual editorial contact.
+
+Prepared packet:
+- `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- `docs/seo-distribution/creator-platform-ai-translation-context.md`
+- `docs/seo-distribution/creator-platform-screenshot-rights-packet.md`
+- `docs/seo-distribution/platform-drafts.md`
+
+Contributor fields:
+- Byline: owner-approved founder name or `Nayovi team`; do not invent a personal persona.
+- Topic: `How to evaluate OCR quality for manga, manhwa, manhua, webtoon, and comic pages before translating approved samples.`
+- Source boundary: `No catalog processing, no chapter hosting, no replacement-localization claim, no backlink ask.`
+- Source links: checklist first; product links only when the editor asks for implementation context.
+
+Credential/reference guardrails:
+- `SEO_AGENT_MEDIA_CONTRIBUTOR_PROFILE_REFERENCE`
+- `SEO_AGENT_APPROVED_SAMPLE_EVIDENCE_REFERENCE`
+- Store no private editor emails, unpublished screenshots, private samples, contracts, paid placement records, or embargoed media details in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare no-link-first topic notes and editor-ready outlines after owner approval.
+- Agent must not submit guest pitches, accept publication terms, upload media, claim metrics, or send follow-ups automatically.
+
+Next action:
+- Owner approves whether Mangasplaining/MSX, Mangacast, SlatorPod, IAMT Journal, or another media surface should receive a product-light OCR QA topic after approved-sample observations exist.
+
 Credential reference:
 - `SEO_AGENT_SUPPORT_COMMUNITY_PROFILE_REFERENCE`; per-community token only if the owner authorizes an official API workflow.
 
