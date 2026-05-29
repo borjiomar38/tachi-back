@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: LLM route-map freshness sync
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: refreshed the static `https://tachiyomiat.com/llms.txt` and `https://tachiyomiat.com/llms-full.txt` citation surfaces so AI crawlers, directory editors, reviewers, partners, and investor diligence contacts can find the newer paid-plan, APK comparison, approved-sample, pilot, workflow, and proportional diligence packets without relying on older route maps.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use only current-verified official forms or recheck AIAnyTool's current submit/contact terms before any send.
+
 ### Autonomous cycle: proportional reply asset packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
