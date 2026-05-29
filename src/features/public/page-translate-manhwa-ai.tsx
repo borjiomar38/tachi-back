@@ -765,6 +765,24 @@ const accessExceptionRows = [
   },
 ] as const;
 
+const partnerProofBundleRows = [
+  {
+    proof: 'Source-preserving listing',
+    bundle:
+      'Confirm the live page keeps official APK, pricing, support, cancellation, and responsible-use links visible before treating the placement as qualified.',
+  },
+  {
+    proof: 'Tracked evaluation access',
+    bundle:
+      'Use review, affiliate, or pilot codes only when the contact path, audience, sample scope, and expected activation evidence are recorded.',
+  },
+  {
+    proof: 'Revenue follow-up trigger',
+    bundle:
+      'Advance the thread only when it can produce paid-plan intent, a repeat-use signal, approved-sample notes, or a concrete commercial decision.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2494,6 +2512,50 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open access guardrails
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        id="partner-proof-bundle"
+        eyebrow="Partner proof bundle"
+        title="Turn useful replies into source-preserving evidence"
+        description="Directory, reviewer, affiliate, and partner replies should leave a clear proof trail before another code, follow-up, or founder escalation is spent."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {partnerProofBundleRows.map((row) => (
+            <Card key={row.proof} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ClipboardCheckIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.proof}</CardTitle>
+                <CardDescription>{row.bundle}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <HandshakeIcon className="size-4" />
+                Keep the next reply measurable
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A positive reply should become a listing proof, an activated
+                review test, an approved-sample note, or a clean stop. Hold
+                threads that cannot preserve source links or separate paid
+                reader demand from evaluation access.
+              </p>
+            </div>
+            <a
+              href="/guides/translation-support-workflow#reply-pipeline"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open reply ledger
             </a>
           </CardContent>
         </Card>
