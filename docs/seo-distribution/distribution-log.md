@@ -1059,3 +1059,20 @@ Next actions:
 - Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup work, owned asset, and authority targets.
 - Drafted exact Product Hunt launch copy, official newsletter teaser/summary, and Alandal-style localization studio no-link note in `platform-drafts.md`.
 - Next actions: owner creates/connects Product Hunt and newsletter profiles, approves screenshots/demo/package facts, reviews the first newsletter issue, verifies Stackviv submit fields, holds AppBrain until package facts are public, and uses the Alandal note only through official contact paths after sample-safe scope is approved.
+
+## 2026-05-29 Cycle 5
+
+- Verified branch `seo/distribution-20260529T024555Z`; account registry still allows owned GitHub/docs only, so no external posting, account creation, login, form submission, CAPTCHA, terms acceptance, Product Hunt launch, newsletter publication, directory submission, Reddit/LinkedIn posting, or APK upload was attempted.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two owner-action packets:
+  - Product Hunt official maker/company packet with public profile fields, launch assets, source links, pricing/support/responsible-use requirements, `SEO_AGENT_PRODUCTHUNT_TOKEN` reference, and no-upvote/no-automation guardrails.
+  - Official newsletter / public update archive packet for `Nayovi Notes` with publication fields, first issue reference, sender/account requirements, `SEO_AGENT_NEWSLETTER_API_TOKEN` reference, and no contact-import/bulk-send guardrails.
+- Maintained owned SEO/linkable assets by updating `content-calendar.md` and `link-assets.md` with Product Hunt launch readiness, the official newsletter archive, and an AINovaTools AI Translation listing packet.
+- Researched rotated authority opportunities across different categories:
+  - Product Hunt launch guide and maker profile: high-authority launch/community surface after official account and approved assets exist.
+  - AINovaTools AI Tools Directory: AI Translation directory fit only if official APK, trial plus paid-token pricing, support, and responsible-use links remain visible.
+  - Mangacast: French manga/anime podcast context, watch-only until a French/European approved-sample OCR QA angle is owner-approved.
+  - AppTester.co: app testing/APK trust surface for install, activation, OCR progress, support clarity, and screenshot-boundary evidence after owner-approved APK sharing.
+- Updated `authority-opportunities.md` and `docs/growth/backlink-prospects.csv` with the new targets and compliance gates.
+- Drafted exact value-first packets in `platform-drafts.md`: Product Hunt launch copy and maker comment, Nayovi Notes profile/first-issue summary, and AINovaTools directory eligibility note.
+- Next actions: owner creates/connects Product Hunt and newsletter profiles, approves screenshots/demo/package facts, verifies AINovaTools submit fields, holds Mangacast until a French-language angle exists, and reviews whether AppTester-style APK sharing is allowed.
