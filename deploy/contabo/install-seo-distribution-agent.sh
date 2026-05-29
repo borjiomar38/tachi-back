@@ -82,6 +82,9 @@ SEO_AGENT_NOTIFY_ENABLED=false
 SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 SEO_AGENT_NOTIFY_ENV_FILE=${APP_DIR}/.env.growth-mail
 SEO_AGENT_NOTIFY_SUBJECT_PREFIX="Nayovi SEO distribution"
+SEO_AGENT_DAILY_SUMMARY_ENABLED=true
+SEO_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS=86400
+SEO_AGENT_NOTIFY_KEYWORDS="OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"
 SEO_AGENT_TRIGGER_FILE=/var/lib/tachi-seo-distribution-agent/run-now
 SEO_AGENT_VALIDATION_COMMAND="./node_modules/.bin/tsc --noEmit"
 SEO_AGENT_PRIMARY_SITE=https://tachiyomiat.com
@@ -126,6 +129,9 @@ ensure_env_default SEO_AGENT_NOTIFY_ENABLED false
 ensure_env_default SEO_AGENT_NOTIFY_EMAIL borjiomar38@gmail.com
 ensure_env_default SEO_AGENT_NOTIFY_ENV_FILE "${APP_DIR}/.env.growth-mail"
 ensure_env_default SEO_AGENT_NOTIFY_SUBJECT_PREFIX '"Nayovi SEO distribution"'
+ensure_env_default SEO_AGENT_DAILY_SUMMARY_ENABLED true
+ensure_env_default SEO_AGENT_DAILY_SUMMARY_INTERVAL_SECONDS 86400
+ensure_env_default SEO_AGENT_NOTIFY_KEYWORDS '"OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"'
 ensure_env_default SEO_AGENT_TRIGGER_FILE /var/lib/tachi-seo-distribution-agent/run-now
 ensure_env_default SEO_AGENT_VALIDATION_COMMAND '"./node_modules/.bin/tsc --noEmit"'
 ensure_env_default SEO_AGENT_PRIMARY_SITE https://tachiyomiat.com
