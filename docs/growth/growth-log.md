@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T024049Z`: audited branch state, SEO distribution shared context, growth docs, pricing route coverage, and outreach sender history.
+- Added a pricing referral-quality packet to `/pricing` so reviewer, affiliate, directory, and community traffic can route to normal checkout, dedicated support/review-code access, or a clean hold when official APK, support, pricing, and responsible-use context cannot be preserved.
+- Added matching ItemList structured metadata and marked the pricing referral packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. After cap reset, process replies first; if none are waiting, use only current-verified high-fit prospects or existing official-form queue items.
+
 - Autonomous cycle on `growth/autonomous-20260529T023325Z`: audited branch state, SEO distribution shared context, latest distribution report, outreach sender history, growth trackers, and `/translate-manhwa-ai`.
 - Added a placement-filter section to `/translate-manhwa-ai` so directory, APK listing, AI directory, and partner-review opportunities can be declined when they require mirror-first APK placement, reciprocal or paid-link gates, hidden redirects, or traffic that cannot explain trial, token-plan, support, and permission-safe material fit.
 - Added matching ItemList structured metadata and marked the placement-filter asset shipped in the content backlog.

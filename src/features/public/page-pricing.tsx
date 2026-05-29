@@ -130,6 +130,27 @@ const revenueSignalCards = [
   },
 ] as const;
 
+const publicReferralCards = [
+  {
+    icon: ShieldCheckIcon,
+    title: 'Directory or reviewer traffic',
+    description:
+      'Send visitors to pricing only when the listing can preserve the official APK, free trial, token plans, support route, and responsible-use note.',
+  },
+  {
+    icon: KeyRoundIcon,
+    title: 'Dedicated code traffic',
+    description:
+      'Use support before checkout when a reviewer, affiliate, or approved community needs a trackable redeem code instead of a normal reader plan.',
+  },
+  {
+    icon: MousePointerClickIcon,
+    title: 'Ready-to-pay readers',
+    description:
+      'Move directly to checkout when the reader already tested OCR quality and knows the monthly chapter volume they need.',
+  },
+] as const;
+
 export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
@@ -222,6 +243,30 @@ export const PagePricing = (props: PagePricingProps) => {
                   <CardDescription>
                     {item.getDescription(decisionTokenPacks[index])}
                   </CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Referral traffic"
+        title="Route public mentions to the right payment path"
+        description="Reviewer, affiliate, directory, and community traffic should land on the plan path that matches intent: normal checkout for repeat readers, support for dedicated codes, and no checkout when the source cannot preserve Nayovi's trust context."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {publicReferralCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <Card key={item.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
                 </CardHeader>
               </Card>
             );
