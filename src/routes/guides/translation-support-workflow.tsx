@@ -141,6 +141,28 @@ const translationWorkflowStructuredData = () => {
         'Escalate only when the reply asks for traction, retention, partnership economics, founder time, or terms that could change business, legal, or pricing commitments.',
     },
   ] as const;
+  const officialFormPacket = [
+    {
+      name: 'Use official forms only',
+      description:
+        'Submit through the public business, partnership, or contact form when no direct business email is verified; do not guess staff addresses or scrape private contacts.',
+    },
+    {
+      name: 'Lead with the useful asset',
+      description:
+        'Open with the approved-sample pilot brief, OCR checklist, or reviewer packet so the form note is useful even if the recipient never lists or reviews Nayovi.',
+    },
+    {
+      name: 'Ask for one clear next step',
+      description:
+        'Ask whether a small approved-sample workflow note or private pilot is useful; avoid backlink, catalog translation, replacement-localization, or paid-placement requests.',
+    },
+    {
+      name: 'Log submission evidence',
+      description:
+        'Record the form URL, organization fit, message summary, date, and follow-up guardrail without storing private confirmation tokens or form-session data.',
+    },
+  ] as const;
 
   return [
     {
@@ -209,6 +231,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi reply revenue routing packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: revenueRoutingPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#official-form-handoff`,
+      name: 'Nayovi official form outreach handoff',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: officialFormPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
