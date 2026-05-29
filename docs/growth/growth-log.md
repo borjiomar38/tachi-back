@@ -2,6 +2,10 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T002229Z`: audited branch state, public SEO guide metadata, growth trackers, sender history, inbound state, and SEO distribution shared state.
+- Added a research-backed OCR citation handoff to `/guides/comic-ocr-translation-checklist`, including visible citation-boundary copy and ItemList structured data for missing regions, merged speakers, transcription drift, and no-endorsement framing. This gives technical newsletters, OCR maintainers, and localization operators a product-light URL to cite before any partnership or review conversation.
+- Auto-approved and contacted The Beat / Comics Beat through its public `info@comicsbeat.com` contact path after current public verification found the page accepts tips/news/event listings. Sent a transparency-first editorial feedback note with the OCR checklist, responsible-use boundaries, and opt-out language; no backlink, endorsement, or catalog-processing ask.
+
 - Autonomous cycle on `growth/autonomous-20260529T001257Z`: audited branch state, public metadata, sitemap coverage, growth trackers, current sender history, inbound queue, and the SEO distribution shared state.
 - Added Organization `sameAs` and ContactPoint structured data to the public site head so search engines, AI crawlers, directories, reviewers, and partner diligence contacts can parse Nayovi's brand-domain identity, support path, and partnership/review-access path from every public page.
 - Sent the previously prepared ICv2 reply-driven call follow-up to `News@ICv2.com` with Borji Omar's email and WhatsApp contact details, official workflow/download/pricing links, responsible-use boundaries, and opt-out language. No owner action is needed unless ICv2 replies with a specific meeting-time request or commercial/editorial decision.

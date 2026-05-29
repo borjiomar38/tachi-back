@@ -36,6 +36,28 @@ const checklistStructuredData = () => {
         'Share or cite results only when rights context is clear, OCR coverage is acceptable, human correction notes are preserved, and public examples are approved.',
     },
   ] as const;
+  const researchChecks = [
+    {
+      name: 'Missing OCR regions',
+      description:
+        'Compare detected text blocks against the full approved page so dialogue, captions, sound effects, and small notes are not skipped.',
+    },
+    {
+      name: 'Merged speakers or under-segmented balloons',
+      description:
+        'Flag OCR blocks that combine multiple speakers, captions, or dialogue turns before sending text to translation.',
+    },
+    {
+      name: 'Transcription drift',
+      description:
+        'Keep the original OCR text visible for human correction when stylized lettering, vertical text, or low-contrast pages are misread.',
+    },
+    {
+      name: 'Citation boundary',
+      description:
+        'Use current manga OCR research as background for reviewer checks only, without implying external endorsement of Nayovi.',
+    },
+  ] as const;
 
   return [
     {
@@ -61,6 +83,18 @@ const checklistStructuredData = () => {
         name: step.name,
         text: step.description,
       })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#research-backed-qa`,
+      name: 'Research-backed manga OCR QA checks',
+      itemListElement: researchChecks.map((check, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: check.name,
+        description: check.description,
+      })),
+      citation: 'https://arxiv.org/abs/2605.21182',
     },
   ];
 };
