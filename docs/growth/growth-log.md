@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T053255Z`: audited branch state, SEO distribution shared context, growth trackers, paid-intent guide coverage, and outreach sender history.
+- Added a discount and access exception guardrail to `/guides/free-trial-vs-paid-token-plan` plus ItemList metadata so trial extensions, discounts, free codes, affiliate requests, reviewer access, and partner codes are granted only when they protect attribution or prove qualified paid demand.
+- Added the owned guardrail packet to the prospect tracker and outreach drafts for reply-driven use after cap reset.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next sender window should process qualified replies first and use the guardrail before any discount, extension, or partner-code follow-up.
+
 - Autonomous cycle on `growth/autonomous-20260529T052535Z`: audited branch state, latest SEO distribution publication, growth trackers, public route inventory, sender history, and recent Gmail inbox signals.
 - Gmail reply check found no qualified external lead requiring a response; Google Search Console reported `tachiyomiat.com` reached 120 clicks over the prior 28 days, so this was logged as an internal query-to-revenue prioritization signal rather than a public traction claim.
 - Added a high-priority backlog item to review Search Console top queries/pages and improve download, free-trial, pricing, support, and review-code handoffs on pages that already earn clicks.

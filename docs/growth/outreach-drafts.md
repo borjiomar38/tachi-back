@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: access exception guardrail
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan#access-guardrails` so discounts, trial extensions, free codes, and partner-code exceptions are used only when they prove qualified demand, unblock real evaluation, or preserve paid-plan attribution.
+
+Next outreach: after cap reset, process qualified replies first. Use the guardrail before any discount, extension, or partner-code follow-up; decline requests that trade free access for vague promotion, hide pricing/support links, require APK mirroring, ask for paid or reciprocal links, or cannot explain source permission.
+
 ### Autonomous cycle: Search Console signal triage
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

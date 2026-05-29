@@ -134,6 +134,28 @@ const trialTokenPlanStructuredData = () => {
         'Keep the conversation on approved samples, private evidence, commercial objective, and stop conditions before discussing custom access.',
     },
   ] as const;
+  const accessGuardrailSignals = [
+    {
+      name: 'Discount request',
+      description:
+        'Use discounts only when the request can prove approved-sample evidence, qualified installs, repeat paid-use signal, or another measurable commercial outcome.',
+    },
+    {
+      name: 'Trial extension',
+      description:
+        'Extend trial access only for activation recovery, device recovery, or a real reviewer test that needs more time to evaluate the official workflow.',
+    },
+    {
+      name: 'Partner code',
+      description:
+        'Use a separate partner code when attribution, approved-sample feedback, support load, and paid-plan follow-up need to be measured separately.',
+    },
+    {
+      name: 'Decline weak exceptions',
+      description:
+        'Decline free-access or discount requests tied to vague promotion, hidden pricing or support links, APK mirrors, or unclear source permission.',
+    },
+  ] as const;
 
   return [
     {
@@ -223,6 +245,17 @@ const trialTokenPlanStructuredData = () => {
       '@id': `${url}#commercial-qualification`,
       name: 'Nayovi commercial upgrade and partner qualification signals',
       itemListElement: commercialSignals.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#access-guardrails`,
+      name: 'Nayovi discount, trial extension, and partner code guardrails',
+      itemListElement: accessGuardrailSignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
