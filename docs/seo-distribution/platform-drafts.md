@@ -8,6 +8,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | AI directory | Cocoon AI Tools Directory | Human-reviewed Translation category listing for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit form only; use Freemium pricing, plain-English one-line description, and no hidden paid/reciprocal/misleading free claims. |
+| watch | Resource directory | Whipscribe tools directory | Translation/OCR taxonomy context, not a ready listing | None by default | WATCH_ONLY: current fit is speech/transcription-heavy; do not submit unless a visual OCR category or official contact path is verified. |
 | draft | Android reviewers/directories | Android 2026 developer verification context | Pending-language direct APK trust note | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: cite official Android verification context only as background; do not claim Nayovi is verified, Play-listed, or package-registered until owner confirms facts. |
 | draft | AI directory | ToolDirectory.AI-style AI tool directories | Accurate trial plus paid-token listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit fields and skip paid, reciprocal, hidden-redirect, mirror-first, forever-free, or open-source mislabeling flows. |
 | draft | GitHub/newsletter | Manga OCR QA resource note | Research-context comic OCR checklist | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Use Manga109-v2026 only as context for missing regions, transcription drift, overlapping dialogue, and segmentation checks; no benchmark or endorsement claim. |
@@ -144,6 +146,35 @@ Link version: The source-of-truth download and reviewer packet starts here: http
 
 Best,
 Nayovi team
+
+### Cocoon AI directory listing packet
+
+Status: draft
+Target: Cocoon AI Tools Directory
+Audience: directory reviewer for the Translation category
+Rules risk: medium; use official submit form only after owner review. Do not submit if the final flow requires paid placement, reciprocal links, hidden redirects, forever-free wording, open-source labeling, mirror-first APK hosting, or any misleading safety claim.
+No-link variant: no, directory form requires a website URL.
+Link variant: `https://tachiyomiat.com/download` as primary website if the form supports only one URL; add `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` in optional notes if allowed.
+
+Form fields:
+
+- Tool name: `Nayovi`
+- Website URL: `https://tachiyomiat.com/download`
+- Category: `Translation`
+- Pricing: `Freemium (free + paid)`
+- One-line description: `Android APK and hosted OCR/AI translation workflow for permission-safe manga, manhwa, and manhua reader workflows.`
+- Submitter email: OWNER_ACTION_REQUIRED public directory contact or owner-approved submitter email only.
+
+Optional note:
+
+Nayovi provides official APK access, free trial or redeem-code activation, monthly hosted OCR/translation token plans, support paths, and responsible-use guidance. It does not host or distribute chapters. It is intended for content the user owns, public-domain material, official samples, creator-provided pages, or content the tester has permission to process.
+
+Owner-review checklist:
+
+- Confirm the directory can preserve official source links and pricing context.
+- Confirm the selected submitter email is a public Nayovi-owned contact path.
+- Confirm screenshots are not required, or use only approved-sample screenshots.
+- Do not submit if the form changes to require paid placement, reciprocal backlink, hidden redirect, or inaccurate free/open-source labeling.
 
 ### ToolDirectory.AI-style listing eligibility note
 
