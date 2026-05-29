@@ -3685,3 +3685,93 @@ Same as above, then add:
 
 Source page:
 `https://tachiyomiat.com/translate-manhwa-ai`
+
+### APKLand-style independent APK review fit question
+
+Status: draft
+Target: APKLand or comparable independent Android APK review surface after current contact/submit path and mirror policy are reviewed
+Audience: Android app reviewers, APK safety readers, directory editors, partner diligence readers
+Rules risk: high; OWNER_REVIEW_REQUIRED. No APK upload, account creation, mirror permission, public report approval, review-code grant, payment, or review request until owner confirms package facts, sample scope, and source-link handling.
+No-link variant: yes and preferred for first contact.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi team,
+
+I am preparing a review packet for Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+Before submitting anything, I want to check fit and boundaries. Nayovi should only be reviewed from its official source page, with pricing, support, responsible-use context, and approved-sample testing attached. It should not be mirrored, relabeled as a chapter source, or tested with unauthorized manga pages.
+
+The useful review angle would be install clarity, permission prompts, activation, OCR coverage on approved samples, support path, and whether the source links remain easy for readers to verify.
+
+Would that kind of source-first review fit your process, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Reviewer checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Official source:
+`https://tachiyomiat.com/download`
+
+### Try.fm-style free-trial directory eligibility question
+
+Status: draft
+Target: Try.fm or comparable free-tier/free-trial software directory after live submit fields are checked
+Audience: software trial searchers, AI/OCR tool evaluators, directory editors
+Rules risk: medium; OWNER_REVIEW_REQUIRED. No form submission, account action, reciprocal link, paid placement, hidden redirect, or forever-free claim.
+No-link variant: yes for eligibility question.
+Link variant after owner review: `https://tachiyomiat.com/pricing`
+
+No-link message:
+
+Hi team,
+
+I am checking whether Nayovi is appropriate for a free-trial software directory before submitting.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It has official APK download, free trial or redeem-code activation, support, and monthly token plans.
+
+The listing would need to stay precise: Android workflow, hosted OCR/translation, trial plus paid-token pricing, official source links, and responsible-use boundaries. Nayovi does not host or distribute chapters, and testing should use owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Does that fit your trial directory, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Pricing and access:
+`https://tachiyomiat.com/pricing`
+
+Official source:
+`https://tachiyomiat.com/download`
+
+### Manga OCR research citation note
+
+Status: draft
+Target: technical blog, Medium/DEV canonical syndication, Android newsletter, OCR maintainer/resource discussion, or manga/localization media after owner approval
+Audience: OCR maintainers, localization editors, Android reviewers, manga-media editors
+Rules risk: low for owned publication; medium for external publication or maintainer discussion. Disclose Nayovi affiliation and do not claim endorsement, dataset access, benchmark performance, or author approval.
+No-link variant: yes for forum or maintainer contexts.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link note:
+
+Recent manga OCR research is a useful reminder that translation quality cannot be judged only from the final sentence. Reviewers should record missing text regions, under-segmented balloons, overlapping dialogue, onomatopoeia handling, and transcription drift before scoring the translation layer.
+
+For an Android OCR workflow, that becomes a practical checklist: confirm sample permission, compare detected text blocks against the full page, preserve corrected OCR text, review glossary continuity, and block public sharing when rights or quality are unclear.
+
+Link variant:
+
+Same as above, then add:
+
+Checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`

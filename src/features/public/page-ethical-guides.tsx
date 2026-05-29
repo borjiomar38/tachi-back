@@ -1226,6 +1226,29 @@ const checklistDistributionRows = [
   },
 ] as const;
 
+const checklistReviewerHandoffRows = [
+  {
+    label: 'App testers',
+    detail:
+      'Use this checklist to define the test task before any APK upload: official source, install path, permissions, activation, OCR coverage, support route, and screenshot rules.',
+  },
+  {
+    label: 'AI directories',
+    detail:
+      'Give editors the checklist only when the listing can preserve Android APK, hosted OCR, trial plus paid-token pricing, support, and responsible-use context.',
+  },
+  {
+    label: 'Manga media',
+    detail:
+      'Pitch the checklist as a visual-storytelling OCR QA resource, not as a claim that Nayovi can process catalog titles or replace licensed localization.',
+  },
+  {
+    label: 'Research notes',
+    detail:
+      'Cite current manga OCR research as background for failure modes only. Do not claim dataset access, benchmark performance, or third-party endorsement.',
+  },
+] as const;
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -1387,6 +1410,28 @@ export const PageComicOcrChecklist = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {checklistDistributionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Reviewer handoff"
+        title="How third parties can evaluate the workflow"
+        description="Use this section when a tester, directory editor, newsletter writer, or manga-media contact asks what would make the checklist reviewable."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {checklistReviewerHandoffRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
