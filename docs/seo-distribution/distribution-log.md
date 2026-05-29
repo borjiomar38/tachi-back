@@ -2,6 +2,22 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 6
+
+- Verified branch `seo/distribution-20260529T013724Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup tasks:
+  - Owned press/media kit packet with exact source-of-truth links, boilerplate, citation rules, asset checklist, screenshot/demo boundaries, review-code scope, credential references, and owner-review gates in `docs/seo-distribution/press-media-kit-draft.md`.
+  - Cocoon AI directory submitter profile/listing packet with Translation category, Freemium pricing, one-line description, owner-approved submitter email requirement, `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`, and no paid/reciprocal/misleading-free guardrails.
+- Improved owned trust assets by creating `docs/seo-distribution/press-media-kit-draft.md`, a repo-native media kit draft for journalists, podcasts, newsletters, AI directories, Android reviewers, creator-platform partners, and investors.
+- Researched rotated authority opportunities across different categories:
+  - Cocoon AI Tools Directory: human-reviewed free AI directory form with Translation category and Freemium pricing field; owner-reviewed listing only.
+  - Whipscribe tools directory: current translation/transcription taxonomy context, watch-only because it is speech/transcription-heavy rather than comic-image OCR.
+  - KADOKAWA WORLD MANGA ATELIER: current 2026 creator-support context for creator-controlled sample boundaries, not a backlink or product pitch.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with the new setup packet, discovery notes, and Cocoon listing draft.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, directory submission, APK upload, tester campaign, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach send was attempted.
+- Next actions: owner reviews the media-kit draft, confirms public contact/profile identity/approved assets/package facts, and decides whether Cocoon is acceptable for a manual reviewed listing.
+
 ## 2026-05-29 Cycle 5
 
 - Verified branch `seo/distribution-20260529T012745Z`; account registry shows external posting mode is `draft` and account creation is disabled, so no third-party posting, login, signup, form submission, APK upload, tester campaign, or account creation was attempted.
