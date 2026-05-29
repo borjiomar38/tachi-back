@@ -95,6 +95,28 @@ const trialTokenPlanStructuredData = () => {
         'Do not renew when the need was a one-off permitted translation, source permission is unclear, or the approved sample failed the quality bar.',
     },
   ] as const;
+  const attributionSignals = [
+    {
+      name: 'Normal paid checkout',
+      description:
+        'Use public pricing only when the reader has proven repeat translation demand after a permitted free-trial test.',
+    },
+    {
+      name: 'Dedicated review code',
+      description:
+        'Use separate reviewer access when screenshots, attribution, comparison context, or reproducible evaluation steps are needed.',
+    },
+    {
+      name: 'Qualified referral traffic',
+      description:
+        'Treat affiliate, directory, and community referrals as qualified only when official APK, pricing, support, cancellation, and responsible-use links remain attached.',
+    },
+    {
+      name: 'Partner pilot code',
+      description:
+        'Keep creator, publisher, localization, and community pilots on approved samples with separated access and private evidence.',
+    },
+  ] as const;
 
   return [
     {
@@ -162,6 +184,17 @@ const trialTokenPlanStructuredData = () => {
       '@id': `${url}#renewal-decision`,
       name: 'Nayovi paid plan renewal decision checks',
       itemListElement: continuationSignals.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#access-attribution`,
+      name: 'Nayovi paid checkout, review code, referral, and pilot access routing',
+      itemListElement: attributionSignals.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

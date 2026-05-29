@@ -97,7 +97,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/free-trial-vs-paid-token-plan': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-29',
     priority: '0.85',
   },
   '/legal/privacy': {
