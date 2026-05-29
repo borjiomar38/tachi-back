@@ -150,6 +150,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | App testing portal | AppTester.co / APKLand / AppsTested-style reviewers | Source-first Android OCR app health-check fit question | docs/seo-distribution/app-testing-review-brief.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report approval, payment, fake review, or mirror permission until owner approves portal, sample scope, and package facts. |
 | draft | AI/free-trial directory | SpotFreeAI / Try.fm-style directories | Accurate free-trial plus paid-token listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields and skip forever-free, reciprocal-link, hidden-redirect, paid-placement, open-source, or mirror-first APK flows. |
 | draft | AI/free-trial directory | FreeAIList / AI Cloudbase / TheAIFest | Accurate free-trial plus paid-token Android OCR listing | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: official submit path only; use no-link eligibility question first if rules are unclear; skip paid, reciprocal, hidden-redirect, mirror-first, forever-free, or open-source flows. |
+| draft | AI/free-trial directory | FreeAIList / ToolsVerse | Trial plus paid-token listing eligibility question | docs/seo-distribution/free-trial-and-review-handoff-packet.md | OWNER_REVIEW_REQUIRED: no account automation or form submission; verify whether trial plus paid monthly token wording and official APK/support links can be preserved. |
+| draft | APK review | APKLand-style Android APK review surface | Source-first independent APK review fit question | docs/seo-distribution/free-trial-and-review-handoff-packet.md | OWNER_REVIEW_REQUIRED: no APK upload, mirror permission, public review request, payment, or review-code grant until owner approves package facts and sample-safe screenshots. |
 | watch | Localization media/podcast | SlatorPod / Slator-style language industry media | Future approved-sample visual OCR QA topic | None by default | WATCH_ONLY: hold until owner approves screenshots, sample evidence, byline, and non-promotional topic; no backlink ask or consumer APK pitch. |
 | draft | AI comparison/free-trial directories | AiMatch / ToolDirectory.AI / Try.fm-style surfaces | Pricing-aware Nayovi listing eligibility question | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: official submit/contact path only; verify category, pricing, source-link, and responsible-use fields; skip paid backlinks, reciprocal links, hidden redirects, generic chatbot labels, mirror-first APK pages, and forever-free/open-source claims. |
 | draft | Short-video official profile | TikTok / YouTube Shorts / Reels manual-only setup | Sample-safe APK install and OCR workflow caption packet | https://tachiyomiat.com/download | OWNER_ACTION_REQUIRED: official account, approved clips, sample rights, caption approval, and optional API credential required before any upload or metadata update. |
@@ -260,6 +262,77 @@ Pricing:
 
 Support:
 `https://tachiyomiat.com/support`
+
+### FreeAIList / ToolsVerse free-trial listing eligibility note
+
+Status: draft
+Target: FreeAIList, ToolsVerse, or comparable free-trial/free-tier AI directories after live fields and rules are checked
+Audience: directory editors and high-intent users comparing free trials, credits, and practical AI workflows
+Rules risk: medium; do not submit if the surface requires forever-free, open-source, no-card, paid-placement, reciprocal-link, hidden-redirect, or generic-chatbot wording.
+No-link variant: yes and preferred when asking eligibility.
+Link variant after owner review: `https://tachiyomiat.com/translate-manhwa-ai`
+
+No-link variant:
+
+Hi team,
+
+I am checking fit before submitting Nayovi because the free-tier wording needs to stay precise.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It can support free trial or redeem-code activation, but the ongoing product is paid monthly hosted OCR/translation token plans. It should not be described as forever-free, open source, or a generic chatbot.
+
+Nayovi also does not host or distribute chapters. It is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Would a listing be appropriate if it clearly says free trial plus paid token plans and keeps official APK, pricing, support, and responsible-use links visible?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Workflow:
+`https://tachiyomiat.com/translate-manhwa-ai`
+
+Official APK:
+`https://tachiyomiat.com/download`
+
+Pricing:
+`https://tachiyomiat.com/pricing`
+
+### APKLand-style source-first review fit question
+
+Status: draft
+Target: APKLand or comparable Android APK review/testing surfaces after owner review
+Audience: Android APK reviewers, app-testing editors, directory reviewers
+Rules risk: high; use only public official contact/submit paths after owner approval. Do not upload APKs, grant review codes, pay for review, request fake reviews, allow mirror-first redistribution, or claim package verification until facts are owner-confirmed.
+No-link variant: yes for first fit check.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link variant:
+
+Hi team,
+
+I am checking whether Nayovi would fit your Android APK review process before sending any APK details or review access.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The review scope would need to stay source-first: official download source, install clarity, permission prompts, redeem-code/free-trial activation, hosted OCR progress, pricing/support visibility, and screenshot safety for approved sample material.
+
+Nayovi does not host or distribute chapters, and I am not asking for fake reviews, rating incentives, or mirror-first APK redistribution.
+
+Would that review scope fit your process, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Same as above, then add:
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+Review handoff packet:
+`docs/seo-distribution/free-trial-and-review-handoff-packet.md`
 
 ### AI comparison directory pricing-aware eligibility note
 
