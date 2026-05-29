@@ -171,6 +171,23 @@ const translateManhwaAiStructuredData = () => {
         'Require approved samples, success metrics, and a stop condition before any commercial or founder-level discussion.',
     },
   ] as const;
+  const postReplyAttributionItems = [
+    {
+      name: 'Listing approval signal',
+      description:
+        'Track whether the listing preserves official APK source, pricing, support, and responsible-use context before counting referral traffic as qualified.',
+    },
+    {
+      name: 'Review access signal',
+      description:
+        'Separate review-code activations from normal checkout so public coverage can be evaluated by install confidence, support load, and repeat-use intent.',
+    },
+    {
+      name: 'Partner pilot signal',
+      description:
+        'Measure approved-sample pilots by named sample scope, activation quality, follow-up request, and paid-plan fit before escalating custom terms.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -270,6 +287,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#source-to-checkout-routing`,
       name: 'Nayovi source-to-checkout routing for qualified referral traffic',
       itemListElement: sourceToCheckoutItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#post-reply-attribution`,
+      name: 'Nayovi post-reply attribution checks for partner and directory follow-up',
+      itemListElement: postReplyAttributionItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
