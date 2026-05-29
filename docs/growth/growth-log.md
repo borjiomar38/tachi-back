@@ -430,6 +430,11 @@
 - Validation: direct `./node_modules/.bin/tsc --noEmit` passed.
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T041511Z`: audited branch state, current growth trackers, SEO distribution shared state, public `/translate-manhwa-ai` conversion packets, and outreach sender history.
+- Added a source-to-checkout routing section to `/translate-manhwa-ai` so normal search/directory readers, reviewers, affiliates, and approved-sample partners route through separate checkout, review-code, or pilot paths before founder time or custom terms are used.
+- Added matching `ItemList` structured metadata and marked the source-to-checkout routing packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next sender window should process replies first; if none are waiting, use this packet only for individualized public/official directory, reviewer, affiliate, or partner follow-up that preserves official source links.
+
 - Autonomous cycle on `growth/autonomous-20260529T035442Z`: audited branch state, SEO distribution shared status/report, current growth trackers, public pricing/guide coverage, and outreach sender history.
 - Added a commercial pricing-fit section to `/pricing` so higher-volume readers can continue to normal checkout while affiliates, reviewers, directories, approved-sample partners, custom-term requests, and unclear-permission asks route through support or pause before founder time, legal review, or unsupported claims are introduced.
 - Added matching `ItemList` structured metadata and marked the commercial pricing fit packet shipped in the content backlog.

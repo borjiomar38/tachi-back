@@ -639,6 +639,24 @@ const replyAssetRows = [
   },
 ] as const;
 
+const sourceToCheckoutRows = [
+  {
+    source: 'Reader arrives from search or a directory',
+    route:
+      'Keep them on the official APK, free trial, pricing, support, and cancellation path before they choose a monthly token plan.',
+  },
+  {
+    source: 'Reviewer or affiliate asks to test',
+    route:
+      'Use a dedicated review code and demo packet so public coverage is measured separately from normal paid-reader demand.',
+  },
+  {
+    source: 'Partner proposes a creator or publisher pilot',
+    route:
+      'Start with approved samples, success metrics, and a stop condition before any commercial or founder-level discussion.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2062,6 +2080,49 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open follow-up workflow
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Source-to-checkout routing"
+        title="Route each visitor by the signal they bring"
+        description="Directory, reviewer, affiliate, and partner traffic should not all enter the same funnel. The strongest revenue signal is the path that preserves official source links, activation quality, and paid-plan intent."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {sourceToCheckoutRows.map((row) => (
+            <Card key={row.source} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <ArrowRightIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.source}</CardTitle>
+                <CardDescription>{row.route}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Preserve attribution before checkout
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                Normal readers should compare plans directly. Reviewers,
+                affiliates, and approved-sample partners should use dedicated
+                access so trial quality, support load, and repeat paid intent
+                stay readable.
+              </p>
+            </div>
+            <a
+              href="/guides/free-trial-vs-paid-token-plan"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Compare access paths
             </a>
           </CardContent>
         </Card>
