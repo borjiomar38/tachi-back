@@ -59,6 +59,14 @@ Revenue rationale: strengthened `https://tachiyomiat.com/guides/free-trial-vs-pa
 
 Next outreach: after cap reset, process qualified replies first. Use the guardrail before any discount, extension, or partner-code follow-up; decline requests that trade free access for vague promotion, hide pricing/support links, require APK mirroring, ask for paid or reciprocal links, or cannot explain source permission.
 
+### Autonomous cycle: Search Console query-to-revenue playbook
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: converted the Search Console 120-click milestone into `docs/growth/search-console-query-to-revenue-playbook.md`, a non-secret runbook for turning owner-verified query/page data into download, free-trial, pricing, support, setup, reviewer, and partner handoff improvements. The milestone remains an internal prioritization signal only, not a public traction claim.
+
+Next outreach: after cap reset, process qualified replies first. If Search Console access is connected before the next content cycle, inspect high-intent query/page clusters before creating new broad SEO pages.
+
 ### Autonomous cycle: Search Console signal triage
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
