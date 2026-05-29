@@ -2,6 +2,10 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T030430Z`: audited branch state, SEO distribution shared context, current growth trackers, public sitemap/head structure, and outreach sender history.
+- Added a reply-only investor and commercial diligence source packet to the growth prospect and outreach trackers, pointing qualified future replies to `/translate-manhwa-ai#diligence-packet` for rights-safe sample scope, workflow evidence, support readiness, attribution separation, and paid-plan signal quality.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next outreach should process qualified replies first; if none are waiting after cap reset, use existing official-form queues or recheck current AI-directory terms before any send.
+
 - Autonomous cycle on `growth/autonomous-20260529T025646Z`: audited branch state, SEO distribution shared context, current growth trackers, `/translate-manhwa-ai`, sitemap freshness, and outreach sender history.
 - Added a publisher/investor diligence packet to `/translate-manhwa-ai` so higher-value partner, commercial, and investor conversations can verify rights-safe sample scope, workflow evidence, support readiness, and separated revenue signals before any public campaign or commercial discussion.
 - Added matching ItemList structured metadata and marked the diligence packet shipped in the content backlog.

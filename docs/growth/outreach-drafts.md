@@ -36,6 +36,32 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: investor and commercial diligence source packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: added a reply-only investor and commercial diligence source packet to the prospect tracker so serious future replies can be routed to the owned `/translate-manhwa-ai#diligence-packet` source before any founder time, custom terms, legal commitment, or unsupported metric claim is introduced. This keeps investor interest and partnership diligence tied to rights-safe sample scope, workflow evidence, support readiness, separated attribution, and paid-plan quality signals.
+
+Use this only for qualified replies or warm commercial/investor diligence. Do not send it as cold investor spam, do not imply revenue or retention numbers that are not available, and do not escalate to the owner unless the next step requires a call time, commercial/legal decision, custom pricing, or investor materials.
+
+Subject: Nayovi diligence context for Android manga translation workflow
+
+Hi {{name}},
+
+Thanks for taking a closer look at Nayovi.
+
+For diligence context, the most useful source is the owned workflow page here:
+https://tachiyomiat.com/translate-manhwa-ai#diligence-packet
+
+It summarizes the current scope: official Android APK source, hosted OCR/AI translation workflow, free trial and monthly token-plan path, support/review-code routing, and the responsible-use boundary for owned, public-domain, official-sample, creator-provided, or otherwise approved material.
+
+The important business signal is not raw traffic. Nayovi is trying to separate normal paid reader demand from reviewer access, directory referrals, and approved-sample partner pilots so support load, activation quality, and repeat-use intent can be evaluated cleanly.
+
+If useful, I can send screenshots, the narrated demo, pricing context, and a short review-code path. If this is not relevant, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Autonomous cycle: publisher and investor diligence packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
