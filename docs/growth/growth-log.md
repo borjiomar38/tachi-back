@@ -2,6 +2,11 @@
 
 ## 2026-05-28
 
+- Autonomous cycle on `growth/autonomous-20260528T235632Z`: audited branch state, public SEO routes, growth trackers, SEO distribution shared state, and the advertised LLM summary link in the site head and robots.txt.
+- Added `/llms.txt` as a source-of-truth plain-text summary for AI crawlers, directory editors, Android reviewers, partner diligence contacts, and editorial researchers, covering official APK, pricing, support, reviewer/partner guides, and responsible-use boundaries.
+- Excluded `/llms.txt` from XML sitemap generation because it is already exposed through robots.txt and root metadata as an alternate text summary rather than a search landing page.
+- Outreach status: no new email sent because the existing 2026-05-28 UTC sender history has already reached the configured daily cap. Use the new LLM summary in future directory, reviewer, newsletter, and partner replies after cap reset.
+
 - Autonomous cycle on `growth/autonomous-20260528T234942Z`: audited branch state, public SEO and paid-intent guide coverage, growth trackers, latest SEO distribution shared report, inbound queue, and outreach sender history.
 - Added a support/recovery confidence packet to `/guides/free-trial-vs-paid-token-plan` plus ItemList structured data so paid readers, reviewers, affiliates, and directories can verify activation issue handling, device changes, review-code separation, and refund-risk checks before checkout or public referral.
 - Marked the paid plan recovery confidence packet as shipped in the growth content backlog and logged the cap-safe outreach rationale in `docs/growth/outreach-drafts.md`.

@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LogoutRouteImport } from './routes/logout'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as ManagerRouteRouteImport } from './routes/manager/route'
@@ -134,6 +135,11 @@ const PricingRoute = PricingRouteImport.update({
 const LogoutRoute = LogoutRouteImport.update({
   id: '/logout',
   path: '/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -624,6 +630,7 @@ export interface FileRoutesByFullPath {
   '/manager': typeof ManagerRouteRouteWithChildren
   '/download': typeof DownloadRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -719,6 +726,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/download': typeof DownloadRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -818,6 +826,7 @@ export interface FileRoutesById {
   '/manager': typeof ManagerRouteRouteWithChildren
   '/download': typeof DownloadRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
   '/pricing': typeof PricingRoute
   '/robots.txt': typeof RobotsDottxtRoute
@@ -918,6 +927,7 @@ export interface FileRouteTypes {
     | '/manager'
     | '/download'
     | '/how-it-works'
+    | '/llms.txt'
     | '/logout'
     | '/pricing'
     | '/robots.txt'
@@ -1013,6 +1023,7 @@ export interface FileRouteTypes {
     | '/'
     | '/download'
     | '/how-it-works'
+    | '/llms.txt'
     | '/logout'
     | '/pricing'
     | '/robots.txt'
@@ -1111,6 +1122,7 @@ export interface FileRouteTypes {
     | '/manager'
     | '/download'
     | '/how-it-works'
+    | '/llms.txt'
     | '/logout'
     | '/pricing'
     | '/robots.txt'
@@ -1210,6 +1222,7 @@ export interface RootRouteChildren {
   ManagerRouteRoute: typeof ManagerRouteRouteWithChildren
   DownloadRoute: typeof DownloadRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   LogoutRoute: typeof LogoutRoute
   PricingRoute: typeof PricingRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
@@ -1307,6 +1320,13 @@ declare module '@tanstack/react-router' {
       path: '/logout'
       fullPath: '/logout'
       preLoaderRoute: typeof LogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -2110,6 +2130,7 @@ const rootRouteChildren: RootRouteChildren = {
   ManagerRouteRoute: ManagerRouteRouteWithChildren,
   DownloadRoute: DownloadRoute,
   HowItWorksRoute: HowItWorksRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   LogoutRoute: LogoutRoute,
   PricingRoute: PricingRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
