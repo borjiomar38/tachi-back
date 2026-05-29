@@ -116,6 +116,28 @@ const downloadStructuredData = () => {
         'Mark missing package, signing, and verification details as owner-confirmation required instead of copying claims from mirrors or third-party pages.',
     },
   ] as const;
+  const citationReadinessItems = [
+    {
+      name: 'Media or podcast citation',
+      description:
+        'Lead with the OCR QA checklist, approved-sample boundary, and human-review notes before mentioning install links or review codes.',
+    },
+    {
+      name: 'Directory citation',
+      description:
+        'Confirm the listing can show trial plus paid-token pricing, source-of-truth links, support, privacy, terms, and no-chapter-hosting language.',
+    },
+    {
+      name: 'Localization partner citation',
+      description:
+        'Use a no-link resource note first and ask whether approved-sample OCR observations are useful without implying catalog access or replacement of professional localization.',
+    },
+    {
+      name: 'Android policy citation',
+      description:
+        'Keep package name, signing fingerprint, and developer verification status marked owner-confirmation required until the exact public facts are confirmed.',
+    },
+  ] as const;
   return [
     {
       '@type': 'SoftwareApplication',
@@ -200,6 +222,17 @@ const downloadStructuredData = () => {
       '@id': `${url}#owner-confirmed-apk-fields`,
       name: 'Nayovi owner-confirmed APK trust fields',
       itemListElement: ownerConfirmationItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#third-party-citation-readiness`,
+      name: 'Nayovi third-party citation readiness packet',
+      itemListElement: citationReadinessItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
