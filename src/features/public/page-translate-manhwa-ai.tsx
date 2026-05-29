@@ -675,6 +675,24 @@ const postReplyAttributionRows = [
   },
 ] as const;
 
+const replyRevenueRows = [
+  {
+    reply: 'Listing or directory approval',
+    route:
+      'Publish only when source links, pricing, support, and responsible-use context stay visible, then watch whether visitors activate trial or paid plans.',
+  },
+  {
+    reply: 'Reviewer or affiliate interest',
+    route:
+      'Use a dedicated code and review packet so coverage, installs, support load, and paid-plan conversion stay separate from normal checkout.',
+  },
+  {
+    reply: 'Partner or investor diligence',
+    route:
+      'Advance only when the thread names approved material, user segment, success metric, and the decision needed before custom terms or a call.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2183,6 +2201,50 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Open attribution workflow
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        id="reply-to-revenue"
+        eyebrow="Reply to revenue"
+        title="Turn qualified replies into the right next action"
+        description="After a prospect answers, keep the follow-up tied to the commercial path it can actually measure: listing quality, review-code demand, paid conversion, or a clean stop."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {replyRevenueRows.map((row) => (
+            <Card key={row.reply} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <HandshakeIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.reply}</CardTitle>
+                <CardDescription>{row.route}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Stop weak threads before they spend review access
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                A useful reply should produce a source-preserving listing,
+                measurable reviewer access, an approved-sample pilot, or a
+                clear reason to stop. Do not escalate vague traffic, mirror
+                placement, or unsupported commercial claims.
+              </p>
+            </div>
+            <a
+              href="/pricing"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Check paid plan path
             </a>
           </CardContent>
         </Card>
