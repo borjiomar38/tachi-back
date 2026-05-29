@@ -2,6 +2,15 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T010106Z`: audited branch state, growth trackers, sender history, current SEO distribution shared context, and current public contact surfaces for Nube Consulting and Genga.
+- Auto-approved Nube Consulting and Genga as high-fit official-form-only partnership prospects after current public verification found sequential-art localization, lettering, manga/webtoon, legal distribution, AI-assisted translation, native-speaker review, creator-rights, and anti-piracy context.
+- Added compliant form-ready approved-sample OCR QA drafts to the outreach tracker and marked the content backlog handoff as shipped. No email was sent because neither prospect exposed a direct public business email during verification; next contact should use only official forms unless a direct public address is verified later.
+
+- Autonomous cycle on `growth/autonomous-20260529T005455Z`: audited branch state, current growth trackers, SEO distribution shared context, sender history, and owned LLM citation summaries.
+- Added a brand-domain diligence handoff to `/llms.txt` and `/llms-full.txt`, covering `nayovi.com`, `tachiyomiat.com`, `translate-manhwa-ai.com`, the official APK source, support/reviewer access path, and no-mirror citation guidance for directories, editorial researchers, partners, and investor notes.
+- Auto-approved and contacted Bayi Studios through its public `info@bayi.world` path after current public verification found webcomic, novel, anime, game, and software localization context. Sent an individualized approved-sample Android OCR workflow note with opt-out language and no backlink, catalog-processing, paid-placement, or replacement-localization ask.
+- Logged the asset and outreach result in the content backlog, backlink tracker, and outreach drafts so future follow-up is limited to one useful reply after 7 business days.
+
 - Autonomous cycle on `growth/autonomous-20260529T004538Z`: audited branch state, SEO distribution shared context, growth docs, sender history, and the public translation workflow asset.
 - Added a qualified-reply asset bundle to `/guides/translation-support-workflow` plus ItemList structured metadata and sitemap freshness so replies can be routed into reviewer packets, approved-sample partner packets, investor/commercial packets, or clean declines before spending review codes or founder time.
 - Auto-approved and contacted two manga media/podcast prospects through current public contact paths: Behind The Manga (`contact@behindthemanga.com`) and Mangasplaining/MSX (`mangasplaining@gmail.com`). Both notes were individualized, factual, opt-out compliant, and framed around permission-safe OCR workflow feedback rather than catalog translation, paid placement, or backlink requests.
