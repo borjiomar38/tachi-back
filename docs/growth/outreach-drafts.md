@@ -36,6 +36,21 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Cap-reset revenue queue
+
+Status: draft operational queue for the next UTC outreach cap window. No external outreach, form submission, review-code grant, commercial commitment, or owner escalation was performed while the 2026-05-29 sender cap is full.
+
+Priority order:
+
+1. Qualified inbound replies that ask for listing fields, screenshots, demo context, review access, approved-sample pilot scope, affiliate attribution, or diligence context.
+2. Nube Consulting official-form note only if no qualified reply is waiting and the public form still fits an approved-sample OCR QA question with no backlink, catalog-processing, or replacement-localization ask.
+3. Genga official-form note only if no qualified reply is waiting and the public form still fits a legal-manga, creator-rights, human-review, approved-sample QA question.
+4. AIAnyTool contact only after current submit/contact terms are rechecked and the flow preserves official APK, trial-plus-paid pricing, support, responsible-use, and no mirror-first source handling.
+
+Evidence to log before any send: public/official contact path, source-link handling, access type requested or offered, expected activation or partner proof, stop condition, and whether the message includes opt-out language.
+
+Skip conditions: paid or reciprocal backlink gates, hidden redirects, forever-free or open-source mislabeling, APK mirror-first placement, unclear source permission, broad investor spam, or any request that needs custom terms, legal/financial commitment, or a meeting time before the owner has to decide.
+
 ### Autonomous cycle: access exception guardrail
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

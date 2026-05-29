@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T054710Z`: audited branch state, SEO distribution shared status, current growth trackers, `/translate-manhwa-ai`, sitemap coverage, and outreach sender history.
+- Added a docs-only cap-reset revenue queue to `docs/growth/outreach-drafts.md` so the next UTC sender window handles qualified replies first, then Nube/Genga official-form partner notes, then AIAnyTool only after current terms are rechecked.
+- Added the cap-reset queue to the content backlog and backlink tracker as an owned operational asset with evidence requirements: public contact path, source-link handling, access type, expected activation or partner proof, stop condition, and opt-out language.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. No form submission or review-code action was performed.
+
 - Autonomous cycle on `growth/autonomous-20260529T054034Z`: audited branch state, SEO distribution shared context, current growth trackers, `/translate-manhwa-ai`, structured-data route metadata, and outreach sender history.
 - Added an access-exception gate to `/translate-manhwa-ai` so discount, extended-trial, review-code, affiliate-code, and partner-code requests require audience fit, source-link preservation, separated attribution, approved-sample scope, and paid-plan follow-up evidence before special access or founder escalation.
 - Added matching ItemList structured metadata and marked the access-exception owned packet shipped in the content backlog and backlink tracker.
