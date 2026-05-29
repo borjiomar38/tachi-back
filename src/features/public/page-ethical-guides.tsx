@@ -500,6 +500,29 @@ const tokenPlanContinuationRows = [
   },
 ] as const;
 
+const tokenPlanAttributionRows = [
+  {
+    label: 'Normal reader',
+    detail:
+      'Send direct reader demand to the public pricing page only after the trial proves repeat translation value and support expectations are clear.',
+  },
+  {
+    label: 'Reviewer',
+    detail:
+      'Use a dedicated review code when an article, directory listing, or comparison page needs screenshots, attribution, or a reproducible test path.',
+  },
+  {
+    label: 'Affiliate',
+    detail:
+      'Require official APK, pricing, support, cancellation, and responsible-use links before treating a referral as qualified paid traffic.',
+  },
+  {
+    label: 'Partner pilot',
+    detail:
+      'Keep creator, publisher, localization, and community tests on approved samples with a separate code so pilot evidence is not mixed with normal checkout.',
+  },
+] as const;
+
 const directoryPacketRows = [
   {
     item: 'One-line listing description',
@@ -1942,6 +1965,26 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
                 <span className="font-semibold text-foreground">
                   {row.label}
                 </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Attribution"
+        title="Separate paid demand from review and pilot access"
+        description="Use the access path that matches the source of the lead so checkout, support, attribution, and approved-sample evidence stay measurable."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            {tokenPlanAttributionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 bg-background/45 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold">{row.label}</span>
                 <span>{row.detail}</span>
               </div>
             ))}

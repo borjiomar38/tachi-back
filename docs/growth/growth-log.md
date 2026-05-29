@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T024829Z`: audited branch state, SEO distribution shared context, growth trackers, paid-intent guide coverage, sitemap freshness, and outreach sender history.
+- Added a paid access attribution packet to `/guides/free-trial-vs-paid-token-plan` so normal checkout, reviewer codes, qualified referral traffic, and approved-sample partner pilots stay separated for cleaner revenue, attribution, and support measurement.
+- Added matching ItemList structured metadata and refreshed the guide sitemap date to 2026-05-29.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. After cap reset, process replies first; if none are waiting, recheck current AI directory terms or use Nube/Genga official forms only through public form paths.
+
 - Autonomous cycle on `growth/autonomous-20260529T024049Z`: audited branch state, SEO distribution shared context, growth docs, pricing route coverage, and outreach sender history.
 - Added a pricing referral-quality packet to `/pricing` so reviewer, affiliate, directory, and community traffic can route to normal checkout, dedicated support/review-code access, or a clean hold when official APK, support, pricing, and responsible-use context cannot be preserved.
 - Added matching ItemList structured metadata and marked the pricing referral packet shipped in the content backlog.
