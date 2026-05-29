@@ -82,7 +82,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/permission-safe-manga-translation-pilot': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-29',
     priority: '0.8',
   },
   '/guides/best-android-manga-translator-apk': {

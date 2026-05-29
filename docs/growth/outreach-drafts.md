@@ -36,6 +36,36 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### GOXTOON approved-sample workflow feedback
+
+Category: partnership
+Contact path: `hello@goxtoon.com`, verified through current public GOXTOON search/site context before sending.
+Rationale: GOXTOON describes webtoon work, licensing, and anime/manga/webtoon audience content marketing, so the note asked for feedback on a narrow approved-sample Android OCR workflow rather than catalog translation, backlink placement, or a generic app listing.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if there is a clearer intake packet, test brief, or review-code path to add.
+
+Subject: Approved-sample Android OCR workflow feedback
+
+Hi GOXTOON team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found GOXTOON while reviewing webtoon, licensing, and anime/manga/webtoon audience marketing teams. Your mix of webtoon project work, licensing, and community-focused marketing makes this a better fit for a narrow workflow-feedback note than a generic app pitch.
+
+The useful question is whether an approved-sample Android OCR workflow would ever be worth testing for a creator, publisher, reviewer, or campaign partner who controls the sample pages. I am not asking to translate GOXTOON catalog content, buy placement, or request a backlink.
+
+I added a short partner intake packet here so the scope stays concrete before any review or pilot code is issued:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Supporting checklist:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+If this is relevant, I can send a concise test brief and review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### TheOASG responsible setup note
 
 Category: press
