@@ -69,6 +69,23 @@ const translateManhwaAiStructuredData = () => {
         'Use renewal, review, and partner claims only around owned, public-domain, official-sample, or permission-approved material.',
     },
   ] as const;
+  const replyPacketItems = [
+    {
+      name: 'Directory listing reply',
+      description:
+        'Advance only when the editor can preserve official APK source links, pricing summary, support route, screenshots, and responsible-use context.',
+    },
+    {
+      name: 'Hands-on reviewer reply',
+      description:
+        'Issue review access only after demo proof, approved sample scope, pricing context, and no-pay-for-coverage terms are clear.',
+    },
+    {
+      name: 'Approved-sample partner reply',
+      description:
+        'Move to a pilot only after sample owner, language pair, success metric, support path, and stop condition are defined.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -102,6 +119,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#renewal-proof`,
       name: 'Nayovi renewal proof signals for Android manhwa translation',
       itemListElement: renewalProofItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#reply-packet`,
+      name: 'Nayovi reply packet for directory, reviewer, and partner follow-up',
+      itemListElement: replyPacketItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
