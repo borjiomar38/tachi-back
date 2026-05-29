@@ -2,6 +2,44 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29T00:25Z Cycle
+
+Branch: `seo/distribution-20260529T000702Z`
+
+Account setup progress:
+- Advanced the official profile setup queue with `docs/seo-distribution/official-social-proof-matrix.md`, mapping GSC, Bing, GitHub, LinkedIn, YouTube, Android developer verification, DEV/Medium, Product Hunt, Reddit, Substack, Bluesky, and Mastodon to citable trust signals, owner blockers, and non-secret credential references.
+- Added TikTok/short-video official account setup with profile fields, approved-sample video requirements, no-chapter-hosting captions, `SEO_AGENT_TIKTOK_ACCOUNT_REFERENCE`, and no upload/account automation without owner action.
+- Added Discord/community official setup with support/community purpose, no-piracy rules, reviewer-code handoff boundaries, `SEO_AGENT_DISCORD_BOT_TOKEN` guardrails, and no server creation, invites, scraping, or automated replies without owner approval.
+
+Owned content changed:
+- Created `docs/seo-distribution/official-social-proof-matrix.md` as a repo-native trust asset so future outreach cites only confirmed official profiles.
+- Updated `account-setup.md`, `content-calendar.md`, and `link-assets.md` so the social proof matrix, short-video profile packet, and official community rules packet are visible to the growth agent.
+
+Authority targets discovered or refreshed:
+- Alandal: webtoon IP and AI-assisted localization studio; fit is a no-link approved-sample OCR QA resource conversation only.
+- Bayi Studios: webcomic localization studio; fit is professional feedback around approved-sample OCR constraints, not consumer-app promotion.
+- SpotFreeAI: refreshed current free-tier/trial directory surface; fit depends on accurate trial-only/paid-token wording and no reciprocal/paid-link flow.
+- r/AndroidClosedTesting: rules-research context only; no posting because Reddit is not configured and review/tester manipulation risk is high.
+- Manga109-v2026: technical research citation for manga OCR annotation and QA checklist language; context only, no endorsement claim.
+
+Draft distribution assets prepared:
+- Added short-video official caption options for APK source checks, activation/demo proof, OCR progress, support, and permission-safe sample use.
+- Added official Discord/community rules draft with no chapter sharing, no piracy/scanlation requests, no private-code leaks, sample-rights limits, and pinned source-of-truth links.
+- Added Alandal/Bayi-style webtoon localization studio feedback note with no-link-first copy and optional checklist link only if requested.
+
+Outreach tracker:
+- Added Alandal, Bayi Studios, SpotFreeAI refresh, r/AndroidClosedTesting context, and Manga109-v2026 to `docs/growth/backlink-prospects.csv`.
+
+External actions:
+- No third-party posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, APK upload, tester campaign, directory submission, Discord server action, TikTok upload, Reddit comment, LinkedIn post, or outreach send was performed. Account registry remains draft mode except owned GitHub/docs.
+
+Validation:
+- Passed: `./node_modules/.bin/tsc --noEmit`.
+
+Next actions:
+- Owner completes GSC/Bing verification, confirms Android package/signing/developer verification facts, approves screenshot/demo assets, then creates/connects LinkedIn and YouTube before social posting.
+- Verify SpotFreeAI fields and Alandal/Bayi official contact paths before any owner-reviewed contact. Keep Reddit/Discord/TikTok draft-only until official accounts and rules are approved.
+
 ## 2026-05-28T23:59Z Cycle
 
 Branch: `seo/distribution-20260528T235128Z`
