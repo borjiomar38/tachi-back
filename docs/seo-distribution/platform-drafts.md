@@ -105,6 +105,35 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ## Draft Bodies
 
+### Android newsletter technical resource pitch
+
+Status: draft
+Target: Android Developers newsletter-style submissions, Android Weekly, Kotlin Weekly, or similar Android developer editors
+Audience: Android developers, mobile founders, reviewer-tooling editors
+Rules risk: medium; submit only through official editorial/link-submission paths and only after owner confirms package/signing fields or approves pending-language submission.
+No-link variant: pitch the checklist topic without a product URL and offer the repo-native packet on request.
+Link variant: `docs/seo-distribution/android-developer-verification-readiness.md` or `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Subject:
+Technical checklist for reviewing independent Android OCR APKs
+
+Body:
+
+Hi editor team,
+
+I am preparing a developer-facing checklist for reviewing an independent Android APK that uses hosted OCR and AI translation for image-heavy reader workflows.
+
+The useful angle for Android developers is not the app launch itself. It is the review process: source-of-truth download links, APK hash checks, pending vs confirmed package/signing facts, safe screenshot rules, hosted OCR progress states, and how to avoid mirror-first or unverifiable APK citations.
+
+The checklist is written for Android reviewers, app-testing portals, and newsletter editors who need to decide whether a direct APK workflow is safe to mention before package identity and screenshot permissions are fully confirmed.
+
+No product claim depends on Google Play approval or Android developer verification. Those fields stay pending until the owner confirms them.
+
+If this fits your Android development links, I can send the concise checklist URL and keep the submission technical rather than promotional.
+
+Best,
+Nayovi team
+
 ### LinkedIn build-in-public post
 
 Status: draft
