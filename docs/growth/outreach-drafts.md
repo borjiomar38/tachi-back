@@ -36,6 +36,35 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### TheOASG responsible setup note
+
+Category: press
+Contact path: `contact@theoasg.com`, rechecked through the current public TheOASG about page before sending.
+Rationale: TheOASG covers anime, manga, and light novels with an explicit official-source support angle, so the outreach led with responsible TachiyomiAT-style setup guidance and the OCR QA checklist rather than a generic product pitch, backlink request, or unauthorized-source workflow.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if there is a concrete founder-note, review-code, or approved-sample asset to add.
+
+Subject: Responsible TachiyomiAT-style setup note for Nayovi
+
+Hi TheOASG team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found TheOASG while reviewing manga and light-novel sites that explicitly focus on supporting official sources. That makes your audience a better fit for a responsible-use note than a generic app pitch.
+
+The useful angle is narrow: Nayovi now has setup guidance for readers who search TachiyomiAT, Tachiyomi, or Mihon-style workflows, plus an OCR QA checklist that can be used on approved samples only.
+
+Relevant context:
+https://tachiyomiat.com/guides/mihon-tachiyomiat-setup
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+https://tachiyomiat.com/download
+
+Nayovi does not host or distribute chapters, extension lists, or unauthorized sources. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the reader has permission to process.
+
+If a responsible manga tooling note, interview question, or reviewer feedback pass would ever be useful, I can send a concise founder note, screenshots, and a review-code path. If this is not relevant, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### The Beat / Comics Beat editorial feedback note
 
 Category: press
