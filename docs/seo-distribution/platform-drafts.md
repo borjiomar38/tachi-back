@@ -104,6 +104,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Webtoon localization studio | Alandal/Bayi-style localization teams | Approved-sample OCR QA feedback note | None by default | OWNER_REVIEW_REQUIRED: use official contact only; no backlink ask, catalog access implication, or replacement pitch. |
 | draft | Manga podcast/newsletter | Behind The Manga | Manga OCR QA topic note for approved samples | None by default | OWNER_REVIEW_REQUIRED: public contact only; no backlink ask and no product-install pressure. |
 | draft | Comics localization studio | Nube Consulting | Approved-sample OCR constraints feedback note | None by default | OWNER_REVIEW_REQUIRED: official contact path only; no replacement-localization pitch or catalog-processing implication. |
+| draft | Android/Kotlin newsletter | Android Weekly / Dove Letter / KMP Weekly-style editors | Independent Android APK trust and hosted OCR testing checklist | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: official submit/contact path only; technical checklist, no consumer launch pitch, and no unconfirmed package/signing claims. |
+| draft | AI/free-trial directory | Try.fm / SpotFreeAI / AIxploria / ToolDirectory.AI-style directories | Accurate Nayovi free-trial AI OCR listing packet | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current fields; skip paid, reciprocal, hidden-redirect, mirror-first, or forever-free-only flows. |
 | watch | FOSS Android distribution | F-Droid ecosystem | APK verification/source expectations context | None | WATCH_ONLY: Nayovi is not currently a FOSS app-store submission fit; do not submit unless a genuine open-source companion exists. |
 
 ## Draft Bodies
@@ -252,6 +254,69 @@ If this fits your Android development links, I can send the concise checklist UR
 
 Best,
 Nayovi team
+
+### Android/Kotlin newsletter source suggestion
+
+Status: draft
+Target: Android Weekly, Dove Letter, KMP Weekly, Kotlin Weekly, or similar Android/Kotlin developer newsletters
+Audience: Android developers, mobile founders, app reviewers, Kotlin/Android newsletter editors
+Rules risk: medium; use only official submission/contact paths, and submit only after owner approves byline and pending package-fact language.
+No-link variant: offer the checklist topic and send the repo-native packet only if requested.
+Link variant: `docs/nayovi-apk-review-packet.md` or `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Subject:
+Technical checklist for independent Android APK review
+
+Body:
+
+Hi editor team,
+
+I am preparing a developer-facing checklist for reviewing independent Android APKs that use hosted OCR or AI processing.
+
+The useful angle for Android developers is the review process, not a consumer app announcement: source-of-truth download links, hash checks, pending vs owner-confirmed package and signing facts, safe screenshot rules, hosted OCR progress states, and how to avoid unverifiable mirror-first APK citations.
+
+The packet uses Nayovi as the concrete example, but the checklist is written so reviewers and mobile teams can apply the same checks to other direct APK workflows.
+
+Nayovi does not host or distribute chapters, and any OCR test should use owned, public-domain, official-sample, or permission-approved pages.
+
+If this fits an upcoming Android/Kotlin links issue, I can send the concise checklist URL. If not, no follow-up is needed.
+
+Best,
+Nayovi team
+
+### Free-trial AI directory listing packet
+
+Status: draft
+Target: Try.fm, SpotFreeAI, AIxploria, ToolDirectory.AI, Skowers, and similar free-trial AI/software directories
+Audience: AI tool searchers, Android readers, app directory editors, OCR/translation tool researchers
+Rules risk: medium; owner must review each current submit flow and skip any paid-link, reciprocal-link, hidden-redirect, mirror-first APK, fake-review, or forever-free-only requirement.
+No-link variant: directory listing should be skipped if source links cannot remain visible.
+Link variant: `https://tachiyomiat.com/download`
+
+Listing name:
+Nayovi
+
+Short description:
+Android APK with hosted OCR and AI translation for manga, manhwa, and manhua reader workflows.
+
+Long description:
+Nayovi provides official APK download, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation for reader-owned, public-domain, official-sample, or permission-approved comic pages. Nayovi does not host or distribute chapters.
+
+Category suggestions:
+AI OCR, Translation, Android app, Manga translation, Comic OCR, Mobile productivity
+
+Pricing:
+Free trial plus paid monthly token plans.
+
+Official links:
+- Website/source: https://tachiyomiat.com/download
+- Brand: https://nayovi.com
+- Pricing: https://tachiyomiat.com/pricing
+- Support: https://tachiyomiat.com/support
+- Responsible-use guide: https://tachiyomiat.com/guides/translation-support-workflow
+
+Submission note:
+Please keep the official download, pricing, support, privacy, terms, and responsible-use links visible. Do not list Nayovi as forever-free, open-source, an official manga catalog, or a chapter source.
 
 ### LinkedIn build-in-public post
 

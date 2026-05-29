@@ -48,6 +48,9 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 | medium | Discord/community official server profile | Controlled support/community presence for reviewers, beta testers, and creator-pilot feedback | setup_packet_prepared_owner_action_required | Owner creates/connects only an official Nayovi server/profile and accepts terms manually | Server purpose, rules, support boundaries, approved invite policy, no-piracy/no-chapter-sharing rules | `SEO_AGENT_DISCORD_BOT_TOKEN` only if owner enables a compliant bot workflow; no user tokens | Agent can draft server rules, pinned links, and support handoff copy after owner approval | Owner confirms whether Nayovi should have a Discord server and approves moderation rules before any public invite is cited. |
 | high | Official press/media kit page | Owned source-of-truth profile packet for journalists, podcasters, newsletters, directories, and partner diligence | configured_owned_repo_needs_content_sync | Owner confirms public media contact path, founder quote policy, logo/screenshot rights, and which metrics can be public | Brand bio, founder-approved quote, logo/avatar, screenshots, demo video, APK trust packet, public contact path | No secret required; optional `SEO_AGENT_PRESS_CONTACT_REFERENCE` for non-secret routing only | Agent can keep an owned media kit draft and platform-specific media notes synchronized | Create an owned press kit draft that cites download-page citation readiness, OCR checklist, and approved-sample pilot guide without exposing private contacts. |
 | medium | Podcast/newsletter source profiles | Public identity consistency for manga podcasts, Android newsletters, and localization newsletters | setup_packet_prepared_owner_action_required | Owner approves whether Nayovi/founder should create any publication-specific profile, byline, or source profile manually | Short bio, one-sentence responsible-use line, topic angles, canonical links, public contact path, approved screenshots only | Per-publication profile reference only; optional `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`; no passwords or cookies | Agent can draft topic notes and source bios after owner confirms account/profile scope | Owner chooses which source profiles are appropriate; agent stays draft-only and uses official contact/submission paths. |
+| high | Official media kit packet | Source-of-truth public packet for press, newsletters, podcasts, directories, partners, and investor diligence | configured_owned_repo_content_synced | Owner confirms public contact path, founder quote policy, asset rights, public metrics, and package/signing facts | `docs/seo-distribution/official-media-kit.md`, logo/avatar, banner, approved screenshots, demo video, APK review packet | No secret required; optional `SEO_AGENT_PRESS_CONTACT_REFERENCE` only for non-secret routing | Agent can reuse approved public copy and source links in platform drafts and reviewer handoffs | Owner approves contact, quote, visual asset, and package identity fields before third parties cite media-kit claims. |
+| medium | Android/Kotlin newsletter source profile | Developer-facing submission identity for Android Weekly, Kotlin Weekly, Dove Letter, KMP Weekly, and similar newsletters | setup_packet_prepared_owner_action_required | Owner approves byline/contact path and whether submissions use brand or founder identity | Technical checklist URL, APK review packet, logo/avatar, public bio, pending package-fact language | `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`, `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE`, optional per-newsletter reference | Agent can draft official technical link suggestions after owner approval; no consumer launch copy | Owner confirms byline and whether the independent APK/OCR checklist may be submitted through official newsletter paths. |
+| medium | Free-trial AI directory owner profiles | Accurate listing control for Try.fm, SpotFreeAI, Skowers, AIxploria-style directories, and similar discovery surfaces | setup_packet_prepared_owner_action_required | Owner reviews each submit flow, accepts terms manually, and rejects paid/reciprocal/misleading listing requirements | Official profile fields, pricing copy, APK source link, support/privacy/terms links, screenshots | Per-directory profile reference only; no passwords or cookies | Agent can prepare listing packets after owner confirms rules and account access | Verify that each directory supports free-trial plus paid-token wording and official source links before any owner-reviewed submission. |
 
 ## 2026-05-28 Setup Packets
 
@@ -243,7 +246,7 @@ Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, an
 
 ### Official Press / Media Kit Page
 
-Status: OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, and any public metrics.
+Status: CONTENT_SYNCED_OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, and any public metrics.
 
 Public profile fields:
 - Name: `Nayovi`
@@ -258,6 +261,65 @@ Required assets:
 - Official logo/avatar and banner reference.
 - Approved screenshots or clear `OWNER_ACTION_REQUIRED` placeholder if screenshots are not yet approved.
 - Demo video reference if owner confirms public sample rights.
+
+Owned packet:
+- `docs/seo-distribution/official-media-kit.md`
+
+Agent capability after owner approval:
+- Reuse the media-kit copy in podcast, newsletter, press, directory, partner, and investor drafts.
+- Keep package/signing/developer verification facts pending until the owner confirms them.
+- Keep private contact details, credentials, and verification artifacts out of docs.
+
+Next action:
+- Owner confirms public contact path, founder quote policy, public metrics, screenshot/demo asset rights, and package identity facts before external media-kit citation.
+
+### Android/Kotlin Newsletter Source Profile
+
+Status: OWNER_ACTION_REQUIRED for byline approval, official submission-path approval, and any publication-specific profile.
+
+Profile/byline fields:
+- Name: `Nayovi` or founder-approved real byline with clear Nayovi affiliation.
+- Bio: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Technical topic: `Independent Android APK trust checks for hosted OCR workflows`
+- Primary source link: `docs/nayovi-apk-review-packet.md`
+- Public checklist link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Submission boundaries:
+- Submit only technical checklist or APK trust resources through official newsletter paths.
+- Do not submit consumer launch copy, affiliate links, or package/signing claims that are not owner-confirmed.
+- Use pending language for package name, signing fingerprint, Android developer verification, and package registration until the owner confirms those fields.
+
+Credential references:
+- `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`
+- `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE`
+- Per-newsletter non-secret reference only if a publication requires a profile.
+
+Next action:
+- Owner approves the byline, technical checklist angle, and whether Android Weekly/Kotlin Weekly/Dove Letter/KMP Weekly-style submissions may be prepared from official paths.
+
+### Free-Trial AI Directory Owner Profiles
+
+Status: OWNER_ACTION_REQUIRED for each directory account, submit-form terms, and listing review.
+
+Profile/listing fields:
+- Name: `Nayovi`
+- Category: `AI OCR`, `Translation`, `Android app`, or closest supported category.
+- Short description: `Android APK with hosted OCR and AI translation for manga, manhwa, and manhua reader workflows.`
+- Pricing: `Free trial plus paid monthly token plans.`
+- Website/source link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+- Responsible-use line: `Nayovi does not host or distribute chapters; use it only with owned, public-domain, official-sample, or permission-approved content.`
+
+Required review before submission:
+- Directory supports trial or freemium labels without implying forever-free access.
+- Listing can keep official APK, pricing, support, privacy, terms, and responsible-use links visible.
+- Directory does not require reciprocal backlinks, paid placement as a link condition, hidden redirects, fake reviews, or mirror-first APK hosting.
+
+Credential reference:
+- Per-directory non-secret profile reference only. Do not store login data, cookies, passwords, or API keys in docs.
+
+Next action:
+- Owner selects which free-trial directories are worth manual account creation; agent prepares listing packets only after current rules and fields are verified.
 - Founder-approved quote and whether revenue, trial, token, or usage metrics can be public.
 - Public contact path; do not include private phone, WhatsApp, email aliases, credentials, or verification screenshots unless they are already intended for public use.
 

@@ -2,6 +2,26 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 3
+
+- Verified branch `seo/distribution-20260529T004144Z`; account registry still shows owned GitHub/docs are configured and LinkedIn, Reddit, directories, press/newsletters, creator platforms, X, Product Hunt, DEV/Medium, YouTube, and communities remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, platform drafts, link assets, content calendar, authority opportunities, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Android/Kotlin newsletter source profile packet for Android Weekly/Kotlin Weekly/Dove Letter/KMP Weekly-style technical submissions, with byline approval, official submit-path boundaries, pending package-fact language, and non-secret credential references.
+  - Free-trial AI directory owner profile packet for Try.fm, SpotFreeAI, AIxploria, ToolDirectory.AI, Skowers-style listings, with trial/paid-token wording, official source-link requirements, and rejection rules for paid/reciprocal/hidden/mirror-first flows.
+- Added owned trust asset `docs/seo-distribution/official-media-kit.md` with public identity copy, recommended source links by use case, topics Nayovi can comment on, topics to avoid, asset checklist, and credential boundaries.
+- Researched rotated authority opportunities across different categories:
+  - Android Weekly current submit path: developer-newsletter fit for independent APK trust and hosted OCR testing checklist.
+  - Dove Letter: Android/Kotlin newsletter fit check only if external resource suggestions are accepted.
+  - AIxploria free-trial tools: directory eligibility review for accurate trial plus paid-token OCR/translation wording.
+  - ToolDirectory.AI: AI directory eligibility review focused on pricing labels, source-link handling, and no hidden redirects.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned media kit, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md`:
+  - Android/Kotlin newsletter source suggestion with no-link and link variants.
+  - Free-trial AI directory listing packet with official links, pricing wording, category suggestions, and submission rejection criteria.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, newsletter submission, directory form submission, APK upload, tester campaign, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or outreach send was performed.
+- Next actions: owner confirms media contact, founder quote policy, approved screenshots/demo assets, package/signing/developer verification facts, newsletter byline, and which directory profiles are worth manual setup.
+
 ## 2026-05-29 Cycle 2
 
 - Verified branch `seo/distribution-20260529T003302Z`; account registry still shows owned GitHub/docs are configured and external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, and forum actions remain draft/manual.
