@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T025646Z`: audited branch state, SEO distribution shared context, current growth trackers, `/translate-manhwa-ai`, sitemap freshness, and outreach sender history.
+- Added a publisher/investor diligence packet to `/translate-manhwa-ai` so higher-value partner, commercial, and investor conversations can verify rights-safe sample scope, workflow evidence, support readiness, and separated revenue signals before any public campaign or commercial discussion.
+- Added matching ItemList structured metadata and marked the diligence packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. After cap reset, process replies first; if none are waiting, use the Nube/Genga official-form queue or recheck AIAnyTool current terms before any send.
+
 - Autonomous cycle on `growth/autonomous-20260529T024829Z`: audited branch state, SEO distribution shared context, growth trackers, paid-intent guide coverage, sitemap freshness, and outreach sender history.
 - Added a paid access attribution packet to `/guides/free-trial-vs-paid-token-plan` so normal checkout, reviewer codes, qualified referral traffic, and approved-sample partner pilots stay separated for cleaner revenue, attribution, and support measurement.
 - Added matching ItemList structured metadata and refreshed the guide sitemap date to 2026-05-29.

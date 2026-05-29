@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: publisher and investor diligence packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai` with a diligence packet for publishers, localization partners, commercial reviewers, and investor contacts. The packet keeps higher-value conversations tied to rights-safe sample scope, demo/screenshots/OCR-checklist evidence, support readiness, and separated paid/reviewer/partner attribution before any campaign or commercial discussion.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use the existing Nube/Genga official-form queue or recheck AIAnyTool's current terms/contact path before any send.
+
 ### Autonomous cycle: paid access attribution packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
