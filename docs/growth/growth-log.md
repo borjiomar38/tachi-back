@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T013204Z`: audited branch state, SEO distribution shared status, current growth trackers, workflow guide coverage, and outreach sender history.
+- Added an official-form submission proof packet to `/guides/translation-support-workflow` so form-only partner submissions can be tracked by public form URL, fit rationale, message summary, and follow-up guardrail without storing private form-session data or creating duplicate outreach.
+- Added matching ItemList structured metadata and marked the proof packet shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29, matching the daily cap. After cap reset, handle inbound replies first; if none are waiting, use the existing Nube or Genga official-form drafts and log the proof fields.
+
 - Autonomous cycle on `growth/autonomous-20260529T012423Z`: audited branch state, SEO distribution shared state, current growth docs, workflow guide coverage, and outreach sender history.
 - Added an outreach throttle guardrail to `/guides/translation-support-workflow` so future cycles check same-day sender cap, avoid duplicate prospects already contacted or queued by the SEO distribution agent, prioritize reply-value over volume, and log wait reasons when the cap is full.
 - Added matching ItemList structured metadata and marked the outreach throttle guardrail shipped in the content backlog.

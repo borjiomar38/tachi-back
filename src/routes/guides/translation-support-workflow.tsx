@@ -185,6 +185,28 @@ const translationWorkflowStructuredData = () => {
         'When the cap is full, record the best next action and guardrail instead of sending lower-fit outreach or creating another cold draft.',
     },
   ] as const;
+  const formSubmissionProofPacket = [
+    {
+      name: 'Public form path',
+      description:
+        'Record the public contact, partner, or business form URL used for a high-fit form-only prospect.',
+    },
+    {
+      name: 'Fit rationale',
+      description:
+        'Note why the recipient is relevant to approved-sample OCR, reviewer access, localization QA, creator workflows, or legal manga distribution.',
+    },
+    {
+      name: 'Message summary',
+      description:
+        'Log the asset offered, the single next-step ask, and the responsible-use boundary without saving private form tokens or hidden confirmation URLs.',
+    },
+    {
+      name: 'Follow-up guardrail',
+      description:
+        'Wait for a reply or send at most one useful follow-up after the normal interval; skip if the form terms prohibit follow-up or the fit becomes weak.',
+    },
+  ] as const;
 
   return [
     {
@@ -277,6 +299,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi outreach throttle and duplicate guardrail',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: outreachThrottlePacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#form-submission-proof`,
+      name: 'Nayovi official form submission proof packet',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: formSubmissionProofPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
