@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: manhwa translator renewal proof packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai` with a renewal-proof packet for reviewers, directories, affiliates, and creator/community pilots. The packet pushes partner traffic toward repeat workflow use, official supportable setup, permission-safe material, and paid-plan fit instead of treating raw visits or one-time trial curiosity as success.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, recheck the current rules/contact path for AIAnyTool or use the Nube/Genga official-form queue only through public official forms.
+
 ### AIAnyTool AI tools directory
 
 Category: directory

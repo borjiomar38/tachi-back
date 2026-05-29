@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T021803Z`: audited branch state, SEO distribution shared report, growth docs, `/translate-manhwa-ai`, sitemap coverage, and outreach sender history.
+- Added a renewal-proof packet to `/translate-manhwa-ai` so directories, reviewers, affiliates, and creator/community pilots qualify traffic by repeat workflow use, supportable official setup, permission-safe material, and paid-plan fit instead of raw visits.
+- Added matching ItemList structured metadata and refreshed `/translate-manhwa-ai` sitemap freshness to 2026-05-29.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. Next cap-reset work should process replies first, then recheck AIAnyTool or use existing Nube/Genga official-form queue items if no reply supersedes them.
+
 - Autonomous cycle on `growth/autonomous-20260529T021043Z`: audited branch state, SEO distribution shared context, outreach sender history, growth docs, sitemap coverage, and the free-trial-vs-paid-token-plan guide.
 - Added a renewal decision packet to `/guides/free-trial-vs-paid-token-plan` so first-month usage, reviewer tests, affiliate traffic, and partner pilots can route to continue, support adjustment, separated review-code access, or a clean stop.
 - Added matching ItemList structured metadata and marked the renewal decision asset shipped in the content backlog.
