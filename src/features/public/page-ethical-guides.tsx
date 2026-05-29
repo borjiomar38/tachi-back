@@ -139,6 +139,11 @@ const researchCitationRows = [
     detail:
       'Recent manga-understanding research has called out transcription errors, missing text regions, overlapping dialogue, onomatopoeia, and under-segmented speech balloons as OCR annotation problems worth checking explicitly.',
   },
+  {
+    label: 'Citation handoff',
+    detail:
+      'When citing this checklist in a technical note, frame Nayovi as an Android workflow that turns these known OCR risks into reviewer checks for approved samples, not as a claim that any external paper endorses the product.',
+  },
 ] as const;
 
 const transparencyRows = [
@@ -1827,6 +1832,21 @@ export const PageTranslationSupportWorkflow = () => {
                 <span>{row.detail}</span>
               </div>
             ))}
+            <div className="rounded-xl border border-border/70 px-4 py-3">
+              <p>
+                Research reference for context:{' '}
+                <a
+                  href="https://arxiv.org/abs/2605.21182"
+                  className="font-semibold text-foreground underline-offset-4 hover:underline"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Manga109-v2026 on arXiv
+                </a>
+                . Use it as background for OCR QA language only; it is not a
+                Nayovi endorsement.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </PublicSection>
