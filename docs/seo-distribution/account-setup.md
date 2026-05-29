@@ -2306,3 +2306,72 @@ Publish capability after connection:
 
 Next action:
 - Owner creates/connects the official newsletter profile, reviews `docs/seo-distribution/official-newsletter-first-issue.md`, and decides whether the first issue should publish manually as an opt-in archive post.
+
+## 2026-05-29 Cycle 10 Setup Advancement
+
+### AI Comparison / Free-Trial Directory Submitter Profile
+
+Status: OWNER_REVIEW_REQUIRED for official submitter identity, current form-field review, pricing label approval, source-link preservation, and any directory terms acceptance.
+
+Prepared packet:
+- `docs/seo-distribution/free-trial-directory-listing-brief.md`
+- `docs/seo-distribution/directory-quality-gate.md`
+
+Priority surfaces:
+- AiMatch-style AI comparison directories with use-case, OCR, Translation, and pricing filters.
+- ToolDirectory.AI-style curated AI directories with free, freemium, free-trial, and paid labels.
+- Try.fm-style software trial directories only if Android APK, hosted OCR, pricing, support, and responsible-use links stay visible.
+
+Profile/listing fields:
+- Tool name: `Nayovi`
+- Category: `AI Translation`, `OCR`, or `Android productivity` only where the directory supports an accurate category.
+- Short description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Pricing label: `Free Trial` plus paid monthly token plans, or `Freemium` only if the directory allows paid-plan context beside the free/trial field.
+- Canonical links: `https://nayovi.com`, `https://tachiyomiat.com/download`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`
+- Responsible-use line: `Nayovi does not host chapters; use with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Credential/reference guardrails:
+- `SEO_AGENT_AI_COMPARISON_DIRECTORY_REFERENCE`
+- `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`
+- Store no submitter passwords, cookies, email verification links, paid-placement receipts, private reviewer codes, or analytics exports in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare exact owner-approved listing fields after current directory rules are reviewed.
+- Agent must reject paid backlink packages, reciprocal-link gates, hidden redirects, mirror-first APK pages, forever-free wording, open-source mislabeling, generic chatbot categories, or unsupported ranking claims.
+
+Next action:
+- Owner reviews whether AiMatch, ToolDirectory.AI, Try.fm, or a similar directory preserves official source links and exact pricing context before any manual form action.
+
+### Official Short-Video Demo Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation, terms acceptance, handle choice, approved clips, thumbnail/cover assets, sample rights, caption approval, and optional API authorization.
+
+Prepared packet:
+- `docs/seo-distribution/official-profile-asset-library.md`
+- `docs/seo-distribution/creator-platform-screenshot-rights-packet.md`
+- `docs/seo-distribution/reviewer-access-packet.md`
+
+Profile fields:
+- Display name: `Nayovi`
+- Bio: `Official short demos for Nayovi, the Android APK and hosted OCR/AI translation workflow. No chapter hosting; approved samples only.`
+- Primary link: `https://nayovi.com`
+- APK/source link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+
+First demo scope:
+- Show official download source, install/activation path, OCR progress, translation result review, support route, and responsible-use caption.
+- Use only owner-approved sample pages, public-domain material, official samples, creator-provided pages, or permission-approved material.
+- Do not show private redeem codes, account emails, payment details, unpublished content, copyrighted chapter pages without permission, or unsupported Android verification claims.
+
+Credential/reference guardrails:
+- `SEO_AGENT_SHORT_VIDEO_PROFILE_REFERENCE`
+- `SEO_AGENT_TIKTOK_ACCESS_TOKEN`
+- `SEO_AGENT_YOUTUBE_SHORTS_REFERENCE`
+- Store no passwords, cookies, recovery codes, account emails, unpublished media, or private tokens in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare captions, descriptions, titles, and metadata for owner-approved clips after official account/API connection.
+- Agent must not create accounts, upload clips, accept terms, scrape comments, automate follows/likes, or repost the same link repeatedly.
+
+Next action:
+- Owner chooses whether TikTok, YouTube Shorts, Instagram Reels, or manual-only video posting belongs in the trust stack and approves the first sample-safe clip/caption set.
