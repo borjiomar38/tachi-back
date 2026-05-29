@@ -2566,3 +2566,67 @@ Publish capability after connection:
 
 Next action:
 - Owner chooses whether an official support/Q&A profile should exist and which communities are eligible; until then all Reddit/forum/Q&A work remains draft-only.
+
+## 2026-05-29 Current Branch Cycle App Store Setup Advancement
+
+### AlternativeTo / Software Recommendation Official Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation or claim, truthful company identity, manual terms acceptance, category/pricing approval, and optional credential reference.
+
+Prepared packet:
+- `docs/seo-distribution/app-store-source-eligibility-packet.md`
+- `docs/nayovi-official-profile-fields.md`
+
+Profile fields:
+- Name: `Nayovi`
+- Tagline: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Description: `Nayovi provides an official Android APK download path, hosted OCR/AI translation workflow, free trial or redeem-code activation, support, and monthly token plans. Nayovi does not host or distribute chapters and is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Official website: `https://tachiyomiat.com`
+- Download/source URL: `https://tachiyomiat.com/download`
+- Pricing URL: `https://tachiyomiat.com/pricing`
+- Support/source context: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Category candidates: Android, OCR, AI Translation, Manga/Manhwa reader workflow, Productivity.
+
+Required assets:
+- Official logo/avatar, approved screenshots, package name, SHA-256, signing-certificate fingerprint, developer verification status wording, pricing label, support/privacy/terms links, and no-chapter-hosting line.
+
+Credential references:
+- `SEO_AGENT_ALTERNATIVETO_PROFILE_REFERENCE`
+- `SEO_AGENT_APP_STORE_PROFILE_REFERENCE`
+- No passwords, cookies, recovery codes, or account emails in docs.
+
+Publish capability after connection:
+- Agent can prepare owner-approved listing fields and factual updates after the official account or API workflow is connected.
+- Agent must not create accounts, vote, like, review, scrape users, request likes, submit duplicate listings, or publish without owner approval.
+
+Next action:
+- Owner decides whether AlternativeTo or a similar software recommendation profile belongs in the trust stack, creates or claims the official profile manually, and confirms listing fields before any publication.
+
+### Open-Source Directory Eligibility Guardrail
+
+Status: OWNER_ACTION_REQUIRED only if Nayovi has a genuine qualifying open-source app, build flavor, companion repo, or public docs asset.
+
+Prepared packet:
+- `docs/seo-distribution/app-store-source-eligibility-packet.md`
+- `docs/seo-distribution/android-apk-trust-profile.md`
+
+Profile fields if a qualifying open-source companion exists:
+- Project name: owner-approved companion asset name, not the closed hosted APK unless it qualifies.
+- Repository URL: owner-approved public repo only.
+- License: owner-confirmed SPDX license.
+- Website: `https://tachiyomiat.com`
+- Responsible-use context: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Public source repository, license, build instructions, release metadata, signed APK or companion release facts, anti-feature disclosure if relevant, privacy/support links, and maintenance commitment.
+
+Credential references:
+- `SEO_AGENT_OPEN_SOURCE_DIRECTORY_REFERENCE`
+- `SEO_AGENT_GITHUB_TOKEN` only if owner authorizes official repo metadata updates.
+
+Publish capability after connection:
+- Agent can prepare eligibility memos and owner-approved metadata for open-source directories.
+- Agent must not submit Nayovi to F-Droid, IzzyOnDroid, OSS directories, or resource lists as open source unless owner confirms the exact qualifying source and license.
+
+Next action:
+- Owner confirms whether any open-source companion exists. If not, keep F-Droid/IzzyOnDroid watch-only and use their policies only as APK trust and metadata quality references.
