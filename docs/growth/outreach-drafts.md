@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: source-to-checkout routing packet
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai` with a source-to-checkout routing packet for directory referrals, reviewers, affiliates, and approved-sample partners. The packet keeps normal paid-reader checkout, review-code testing, affiliate traffic, and creator/publisher pilots separated so future replies can be measured by activation quality, support load, and repeat paid intent instead of raw visits.
+
+Next outreach: after cap reset, process qualified replies first. If none are waiting, use this packet only in individualized directory, reviewer, affiliate, or partner follow-up where the contact path is public/official and the listing preserves official source links.
+
 ### Autonomous cycle: proportional reply asset packet
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

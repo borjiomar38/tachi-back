@@ -154,6 +154,23 @@ const translateManhwaAiStructuredData = () => {
         'Send the pilot one-pager only when the contact can name the sample owner, language pair, success metric, and stop condition.',
     },
   ] as const;
+  const sourceToCheckoutItems = [
+    {
+      name: 'Reader search or directory visit',
+      description:
+        'Route normal readers through official APK download, free trial, pricing, support, and cancellation context before monthly token-plan checkout.',
+    },
+    {
+      name: 'Reviewer or affiliate test',
+      description:
+        'Use dedicated review access and demo proof so public coverage is measured separately from normal paid-reader demand.',
+    },
+    {
+      name: 'Creator or publisher pilot',
+      description:
+        'Require approved samples, success metrics, and a stop condition before any commercial or founder-level discussion.',
+    },
+  ] as const;
 
   return [
     ...buildPublicFaqStructuredData(
@@ -242,6 +259,17 @@ const translateManhwaAiStructuredData = () => {
       '@id': `${url}#reply-assets`,
       name: 'Nayovi proportional reply assets for directory, reviewer, and partner follow-up',
       itemListElement: replyAssetItems.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#source-to-checkout-routing`,
+      name: 'Nayovi source-to-checkout routing for qualified referral traffic',
+      itemListElement: sourceToCheckoutItems.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
