@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: LLM guide index freshness
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: refreshed `https://tachiyomiat.com/llms.txt` and `https://tachiyomiat.com/llms-full.txt` so AI crawlers, directory reviewers, Android editors, partner diligence contacts, and future reply handlers can discover the current APK comparison, approved-sample testing, and free-trial vs paid token-plan paths from the machine-readable source summary.
+
+Next outreach: after cap reset, process qualified replies first. Use the refreshed LLM summary only as a source-of-truth citation in individualized replies or official forms; do not use it as bulk cold-outreach filler.
+
 ### Autonomous cycle: reply follow-up checklist
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 outreach sends on 2026-05-29 UTC, matching the configured daily cap.

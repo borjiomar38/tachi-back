@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T051850Z`: audited branch state, SEO distribution shared context, machine-readable public summaries, growth trackers, inbound prompts, and outreach sender history.
+- Updated `/llms.txt` and `/llms-full.txt` so AI crawlers, directory editors, Android reviewers, partner diligence contacts, and future outreach replies can discover the current APK comparison guide, approved-sample testing guide, and free-trial vs paid token-plan guide from the source-of-truth LLM summary.
+- Marked the LLM guide index freshness asset as shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap. The current inbound prompt list for this cycle did not contain a new qualified reply requiring owner escalation.
+
 - Autonomous cycle on `growth/autonomous-20260529T051131Z`: audited branch state, SEO distribution shared context, growth trackers, `/translate-manhwa-ai`, and outreach sender history.
 - Added a reply follow-up checklist to `/translate-manhwa-ai` so the next sender window spends email, review codes, or partner notes only when official source links, separated access type, and expected evidence are defined.
 - Added matching ItemList structured metadata and marked the reply follow-up checklist shipped in the content backlog.
