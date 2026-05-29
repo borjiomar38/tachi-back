@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: partner proof bundle
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/translate-manhwa-ai#partner-proof-bundle` so useful directory, reviewer, affiliate, and approved-sample partner replies leave source-preserving listing proof, tracked evaluation access, and a revenue follow-up trigger before another code, follow-up, or founder escalation is spent.
+
+Next outreach: after cap reset, process qualified replies first. Before sending assets or issuing access, log the live source-link handling, access type, expected evidence, and stop condition; hold threads that cannot preserve source links or separate paid reader demand from evaluation access.
+
 ### Cap-reset revenue queue
 
 Status: draft operational queue for the next UTC outreach cap window. No external outreach, form submission, review-code grant, commercial commitment, or owner escalation was performed while the 2026-05-29 sender cap is full.
