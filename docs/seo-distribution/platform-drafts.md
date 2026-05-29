@@ -96,6 +96,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | Official newsletter | Substack/newsletter profile | What reviewers should verify before citing an independent Android OCR APK | docs/seo-distribution/android-developer-verification-readiness.md | OWNER_ACTION_REQUIRED: official newsletter account/profile required; no contact import, bulk email, or public issue until owner approves. |
 | draft | Android reviewers/directories | Developer verification readiness note | Owner-confirmed package identity packet for Nayovi APK review | docs/seo-distribution/android-developer-verification-readiness.md | OWNER_REVIEW_REQUIRED: cite only owner-confirmed package/signing/verification facts and use pending language otherwise. |
 | draft | AI/free-trial directory | Try.fm-style software trial directories | Accurate free-trial listing fit check for Nayovi | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submission fields and skip forever-free, reciprocal-link, paid-link, or hidden-redirect flows. |
+| draft | App testing | AppTester.co human app health check | Safe Android APK trust test using approved samples | docs/seo-distribution/android-apk-trust-profile.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report approval, or account creation without owner approval. |
+| watch | APK review | APKLoon-style APK submission portal | Official source-link preservation check before APK review | docs/nayovi-apk-review-packet.md | OWNER_REVIEW_REQUIRED: verify quality and mirror policy; hold until package/signing facts are owner-confirmed. |
+| draft | AI/free-trial directory | tryweb.site-style AI tools directory | Accurate free-trial plus paid-token listing fit check | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify submit fields and skip if forever-free, paid-link, reciprocal, or hidden-redirect placement is required. |
 
 ## Draft Bodies
 
@@ -121,6 +124,38 @@ Current focus:
 I am looking for feedback from Android reviewers, localization operators, creator platforms, and manga/webtoon teams who care about permission-safe translation workflows.
 
 Link variant: https://tachiyomiat.com/download
+
+### AppTester.co safe test packet
+
+Status: draft
+Target: AppTester.co-style app health check or human app testing portal
+Audience: mobile app testers, Android reviewers, investor diligence, directory editors
+Rules risk: medium; no APK upload, tester campaign, account creation, or public report approval without owner consent.
+No-link variant: use the task brief only and omit product links until the portal confirms source-link handling.
+Link variant: docs/seo-distribution/android-apk-trust-profile.md and https://tachiyomiat.com/download
+
+Submission note:
+
+Hi AppTester.co team,
+
+I am preparing a safe test packet for Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+Before uploading an APK or starting a tester campaign, I want to confirm whether your app health check can preserve the source-of-truth context: official download URL, SHA-256/build metadata, support path, pricing path, privacy/terms links, and a clear no-chapter-hosting boundary.
+
+The intended test scope is narrow:
+- install confidence from the official APK source
+- activation with free trial or owner-approved review code
+- OCR progress and translation result visibility
+- support/recovery path clarity
+- screenshots only from owned, public-domain, official-sample, or permission-approved pages
+- no public report or screen recording until sample rights and owner approval are confirmed
+
+Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content the user has permission to process.
+
+If this scope fits your testing process, I can prepare the owner-approved APK packet and safe sample instructions.
+
+Best,
+Nayovi team
 
 ### Reddit value-first post
 
