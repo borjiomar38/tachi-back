@@ -45,6 +45,33 @@ Use this before any Android press pitch, directory submission, app-testing uploa
 7. Route readers back to official download, pricing, support, privacy, terms, and responsible-use pages.
 8. Reject mirror-first listings, hidden redirects, paid backlink packages, reciprocal-link gates, fake reviews, and unsupported APK republishing.
 
+## Review Packet To Share Before Owner Confirmation
+
+Use this owner-safe packet when a reviewer, directory editor, newsletter editor, or partner asks for Android trust context before package/signing facts are confirmed.
+
+- Product: Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+- Official source: `https://tachiyomiat.com/download`
+- Brand domain: `https://nayovi.com`
+- Trial/pricing: `https://tachiyomiat.com/pricing`
+- Support: `https://tachiyomiat.com/support`
+- Responsible-use guide: `https://tachiyomiat.com/guides/translation-support-workflow`
+- Comic OCR checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Screenshot policy: `docs/reviewer-screenshot-policy.md`
+- Current package/signing language: `Package name, signing fingerprint, developer verification status, and package registration status are pending owner confirmation and should not be inferred from third-party mirrors.`
+- Safe test scope: install from the official source, activate with trial or owner-approved review code, test only owned/public-domain/official-sample/permission-approved pages, and publish no screenshots until sample rights are approved.
+
+Do not send package names, signing fingerprints, APK mirror links, reviewer codes, private screenshots, or verification claims unless the owner has supplied those exact public facts.
+
+## Target-Specific Readiness Gate
+
+| Target type | Minimum packet before contact | Hold condition |
+| --- | --- | --- |
+| Android press/reviewers | Official download URL, APK hash from public page, support/pricing/legal links, responsible-use line, screenshot policy | Hold package/signing claims until owner confirms them. |
+| APK directories | Official source URL, no-mirror boundary, current hash, pricing/support links, owner-approved metadata | Hold if the directory requires mirror-first downloads, hidden redirects, fake reviews, or package facts not yet confirmed. |
+| App-testing portals | Safe sample rules, activation path, device/test matrix, screenshot/public-report permission | Hold all uploads or tester campaigns until owner approves APK sharing and sample scope. |
+| Android newsletters | Developer-facing checklist URL, verification-readiness packet, hosted OCR testing angle | Hold consumer-launch submissions until package/signing facts and screenshots are ready. |
+| Creator/platform partners | Approved-sample scope, no-chapter-hosting boundary, screenshot-rights packet, no-catalog-processing language | Hold if the ask implies platform catalog translation, rights clearance, or public screenshots without permission. |
+
 ## Owner Manual Steps
 
 These steps require the owner. The agent must not accept terms, upload identity documents, submit verification challenges, or store private verification details.
