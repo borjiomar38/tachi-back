@@ -36,6 +36,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: LLM high-intent guide route map
+
+Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.
+
+Revenue rationale: refreshed `https://tachiyomiat.com/llms.txt` and `https://tachiyomiat.com/llms-full.txt` so AI crawlers, directories, reviewers, partners, and investor diligence contacts can discover the current Android APK comparison guide, free-trial versus paid-plan guide, approved-sample pilot brief, and approved-sample testing guide from one canonical route map.
+
+Next outreach: after cap reset, process qualified replies first. Use the LLM route map only when a contact needs concise source-of-truth context; send the page-specific guide when the ask is about listing fields, review access, paid-plan fit, approved-sample testing, or partner-pilot scope.
+
 ### Autonomous cycle: partner proof bundle
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the configured daily cap.
