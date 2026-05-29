@@ -8,6 +8,9 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Creator platform | WEBTOON official contact departments | Approved-sample OCR pilot contact-path note | https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot | OWNER_REVIEW_REQUIRED: owner chooses product help vs IP/business vs partnership vs press before any send; no catalog-processing implication. |
+| draft | Localization studio | Webtoonix-style webtoon localization teams | Android-side OCR QA feedback note for creator-controlled samples | None by default | OWNER_REVIEW_REQUIRED: no-link first; use public contact path only; no replacement pitch or backlink ask. |
+| watch | Conference/research | IAMCR Comic Art / GEM-style venues | Future visual-storytelling OCR QA topic outline | None by default | WATCH_ONLY: no submission until original approved-sample measurements exist and owner approves byline/scope. |
 | draft | LinkedIn | Nayovi company page or founder profile | Short build-in-public post showing Android OCR translation workflow and responsible-use stance | https://tachiyomiat.com/download | AUTHORIZED_ACCOUNT_REQUIRED: needs official LinkedIn account/session or API workflow. |
 | draft | Reddit | Manga/manhwa reader communities that allow tools discussion | How to evaluate an OCR translator for panel order, language choice, and privacy | https://tachiyomiat.com/translate-manhwa-ai | OWNER_REVIEW_REQUIRED: check subreddit rules; use no-link variant first if unsure. |
 | draft | GitHub | Owned Nayovi docs or a relevant awesome-list candidate | Technical note on OCR block merging, translation QA, and hosted Android workflow | https://tachiyomiat.com/translate-manhwa-ai | Use owned repo/docs unless a maintainer explicitly welcomes a resource PR. |
@@ -109,6 +112,83 @@ External platform drafts are for authorized-account posting only. Do not create 
 | watch | Creator program context | KADOKAWA WORLD MANGA ATELIER | Creator-safe approved-sample language context | None | WATCH_ONLY: no outreach or endorsement claim; use only to improve owned creator-safe copy. |
 
 ## Draft Bodies
+
+### WEBTOON department-specific approved-sample note
+
+Status: draft
+Target: WEBTOON official contact department selected by owner
+Audience: creator-platform, IP/business, partnership, or press reviewer
+Rules risk: medium; owner must choose the correct department and approve the sample-safe scope. No catalog translation, no backlink request, no claim that WEBTOON titles may be processed.
+No-link variant: yes, preferred.
+Link variant: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot` only if the department asks for source context.
+
+Subject:
+Approved-sample OCR workflow feedback question
+
+Body:
+
+Hi WEBTOON team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webtoon reader workflows.
+
+I am not asking to process WEBTOON catalog content, request a backlink, or pitch a public listing. The narrow question is whether an approved-sample pilot checklist would ever be useful for creator-controlled or platform-approved sample pages.
+
+The checklist covers sample permission, Android activation, OCR coverage, reading order, glossary consistency, human review, screenshot boundaries, and when results should stay private.
+
+Nayovi does not host or distribute chapters. It should be tested only with owned pages, public-domain material, official samples, creator-provided pages, or content the reviewer has permission to process.
+
+If this belongs with a different team, I would appreciate the correct routing. If it is not relevant, no follow-up is needed.
+
+Best,
+Nayovi team
+
+### Webtoonix-style localization studio feedback note
+
+Status: draft
+Target: Webtoonix or similar manga/manhwa/webtoon localization and typesetting teams
+Audience: professional localization operators, typesetters, letterers, and webtoon production teams
+Rules risk: medium; use official public contact path only, no backlink ask, no replacement pitch, no catalog/client-work implication.
+No-link variant: yes, preferred.
+Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if requested.
+
+Subject:
+Approved-sample OCR QA question for webtoon localization
+
+Body:
+
+Hi Webtoonix team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, manhua, and webtoon reader workflows.
+
+Your public materials focus on localization, typesetting, lettering, cleanup, and adapting comics across languages, so I wanted to ask a workflow-feedback question rather than pitch a replacement tool.
+
+For creator-approved or public-domain samples, what Android-side OCR checks would be worth seeing before any AI translation draft is reviewable? The areas I am tracking are text-region coverage, vertical text, sound effects, merged bubbles, reading order, glossary consistency, and whether screenshots or translated excerpts can be shared publicly.
+
+Nayovi does not host chapters and should not be used to imply client-catalog access. The useful conversation is only around approved samples and human review boundaries.
+
+If this is relevant, I can send the short checklist. If not, no worries and I will not follow up.
+
+Best,
+Nayovi team
+
+### Future conference topic outline
+
+Status: watch
+Target: IAMCR Comic Art, GEM-style evaluation workshops, AMTA/LocWorld-style localization venues
+Audience: comics researchers, localization operators, language-technology evaluators
+Rules risk: low as internal planning; high if submitted before original evidence exists. Do not submit AI-generated abstracts where rules discourage or prohibit them.
+No-link variant: yes.
+Link variant: none by default.
+
+Working title:
+Evaluating OCR before translation in visual storytelling samples
+
+Outline:
+- Define the approved-sample boundary: owner-provided, public-domain, official-sample, or rights-holder-approved pages only.
+- Separate OCR errors from translation errors: missed regions, under-segmented balloons, speaker grouping, reading order, sound effects, and transcription drift.
+- Record human correction evidence before public claims: original OCR text, corrected OCR text, glossary notes, and stop conditions.
+- Explain Android reviewer constraints: source-of-truth APK, screenshot rights, review-code scope, and private-result boundaries.
+- Present only original approved-sample measurements when available; cite external manga OCR research as context, not endorsement.
 
 ### Behind The Manga topic note
 

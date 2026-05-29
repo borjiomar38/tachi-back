@@ -2,6 +2,24 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 4
+
+- Verified branch `seo/distribution-20260529T011732Z`; account registry shows owned GitHub/docs are configured and all external social, directory, Reddit, LinkedIn, YouTube, Product Hunt, newsletter, forum, and creator-platform accounts remain draft/manual.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official setup packets:
+  - Creator platform partner profile/contact packet with public profile fields, no-catalog-processing boundaries, required asset list, `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`, and `SEO_AGENT_PARTNER_CONTACT_REFERENCE`.
+  - Academic/conference contributor profile packet with founder/byline fields, original-measurement requirements, `SEO_AGENT_CONFERENCE_PROFILE_REFERENCE`, and `SEO_AGENT_RESEARCH_SUBMISSION_REFERENCE`.
+- Improved owned content at `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot` with a partner/reviewer contact-path block and matching structured data for creator platforms, localization teams, reviewers/directories, and stop conditions.
+- Researched rotated authority opportunities across different categories:
+  - WEBTOON official contact paths: high-authority creator-platform surface, owner-reviewed department-specific no-link note only.
+  - Webtoonix localization studio: webtoon/manga localization and typesetting team, no-link approved-sample OCR QA feedback note only.
+  - IAMCR Comic Art Working Group 2026: conference/research context only; no submission because deadline has passed and AI-prepared abstracts are discouraged.
+  - GEM at ACL 2026: evaluation-workshop context for future OCR/translation error analysis, no product pitch or benchmark claim.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup, owned content, and opportunity work.
+- Drafted exact value-first assets in `platform-drafts.md` for WEBTOON department-specific routing, Webtoonix-style localization feedback, and a future conference topic outline.
+- No external posting, account creation, login, form submission, terms acceptance, CAPTCHA, email send, APK upload, tester campaign, directory submission, conference submission, Reddit comment, LinkedIn post, YouTube upload, or public outreach was attempted.
+- Next actions: owner chooses correct WEBTOON department, approves localization-studio no-link outreach scope, confirms public contact/byline fields, and supplies approved-sample measurements before any conference or research submission is considered.
+
 ## 2026-05-29 Cycle 3
 
 - Verified branch `seo/distribution-20260529T005949Z`; account registry shows owned GitHub/docs are configured and LinkedIn, Reddit, YouTube, Product Hunt, directories, newsletters, forums, and other external channels remain draft/manual.

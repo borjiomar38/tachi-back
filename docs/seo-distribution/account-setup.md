@@ -6,6 +6,8 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Creator platform partner profiles/contact paths | Official approved-sample feedback routing for creator platforms, publisher programs, and webtoon ecosystems | setup_packet_prepared_owner_action_required | Owner chooses eligible platforms/departments and approves no-link-first contact scope manually | Official profile fields, pilot brief, OCR checklist, screenshot-rights packet, approved-sample rules | `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`, `SEO_AGENT_PARTNER_CONTACT_REFERENCE` | Agent can draft department-specific no-link notes after owner approval; no account creation or form submission without authorization | Owner selects correct WEBTOON-style department paths and confirms sample-safe scope before any send. |
+| medium | Academic/conference contributor profile | Future non-promotional comics, localization, and OCR QA authority after original measurements exist | setup_packet_prepared_owner_action_required | Owner approves founder/byline, evidence scope, and submission eligibility manually | Founder bio, technical checklist, pilot brief, original approved-sample measurements, approved screenshots | `SEO_AGENT_CONFERENCE_PROFILE_REFERENCE`, `SEO_AGENT_RESEARCH_SUBMISSION_REFERENCE` | Agent can draft abstracts/topic outlines after owner-approved evidence exists; no submission/registration/payment action | Hold until approved-sample measurements and byline policy are ready. |
 | high | Google Search Console | Search indexing, sitemap monitoring, canonical ownership signal | setup_packet_prepared_owner_action_required | Verify `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS` | Submit sitemaps, monitor indexing, detect SEO issues | Owner verifies properties and submits sitemap; agent can inspect only after API credential is connected. |
 | high | Bing Webmaster Tools | Secondary search indexing and sitemap submission | setup_packet_prepared_owner_action_required | Verify domains with official owner account | Domains, sitemap URLs, verification method | `SEO_AGENT_BING_WEBMASTER_API_KEY` | Submit sitemaps and monitor crawl/index data | Owner imports from GSC or verifies manually; agent can inspect only after API credential is connected. |
 | high | GitHub official Nayovi repo/profile | Technical trust, docs, release notes, linkable OCR/QA assets | configured_owned_repo | Keep official repo/profile truthful and current | README, demo links, support links, responsible-use copy | SEO_AGENT_GITHUB_TOKEN optional; SSH remote already configured | Publish owned docs and technical assets | Keep owned docs synced with SEO/link assets. |
@@ -1405,3 +1407,67 @@ Agent capability after owner connection:
 
 Next action:
 - Owner decides whether an official newsletter profile should exist, chooses a handle, and approves the first issue draft before any public publication.
+
+### Creator Platform Partner Profile / Contact Packet
+
+Status: OWNER_ACTION_REQUIRED for official owner approval, department selection, and any platform-specific profile or contact workflow.
+
+Use case:
+- Creator platforms, publisher programs, and webtoon ecosystems can become legitimate partner conversations only when Nayovi asks for approved-sample workflow feedback and avoids catalog-processing or backlink requests.
+- The public handoff page is `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`.
+
+Public profile/contact fields:
+- Name: `Nayovi`
+- Category: `Android OCR and AI translation workflow for approved manga, manhwa, and manhua samples`
+- Short description: `Nayovi provides an official Android APK and hosted OCR/AI translation workflow for owned, public-domain, official-sample, creator-provided, or permission-approved pages. It does not host or distribute chapters.`
+- Primary site: `https://nayovi.com`
+- Pilot brief: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+- OCR checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Required assets:
+- Official profile fields from `docs/nayovi-official-profile-fields.md`.
+- Screenshot-rights packet and approved-sample rules.
+- Owner-approved public contact path and founder/company byline.
+- Optional reviewer/pilot-code policy after owner approval.
+
+Credential/reference guardrails:
+- `SEO_AGENT_CREATOR_PLATFORM_PROFILE_REFERENCE`
+- `SEO_AGENT_PARTNER_CONTACT_REFERENCE`
+- Store no platform passwords, verification emails, terms-acceptance screenshots, private contacts, or account cookies in docs or Git.
+
+Agent capability after owner connection:
+- Draft official partner profile fields and no-link approved-sample notes. The agent must not create profiles, choose departments, submit forms, or imply platform content may be processed without explicit permission.
+
+Next action:
+- Owner chooses which creator-platform paths are eligible, confirms the correct public department for each platform, and approves no-link-first copy before any send.
+
+### Academic / Conference Contributor Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for founder/byline approval and formal submission eligibility review.
+
+Use case:
+- Comics, localization, and language-technology conferences can provide authority only when Nayovi has original approved-sample evidence, measurable OCR QA notes, and a non-promotional topic.
+- This is not a product-submission surface today; it is a future research or practitioner byline setup packet.
+
+Public profile fields:
+- Byline: owner-approved founder or Nayovi team identity only.
+- Bio: `Building Nayovi, an Android hosted OCR and AI translation workflow for approved manga, manhwa, and manhua reader workflows. Focused on source permission, OCR QA, human review, and safe public evidence.`
+- Website: `https://nayovi.com`
+- Technical resource: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Pilot brief: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+
+Required assets:
+- Original approved-sample measurements before any abstract, talk, or paper.
+- Owner-approved screenshots or anonymized QA tables.
+- Clear disclosure that Nayovi is a product/workflow and that external research is cited as context only.
+
+Credential/reference guardrails:
+- `SEO_AGENT_CONFERENCE_PROFILE_REFERENCE`
+- `SEO_AGENT_RESEARCH_SUBMISSION_REFERENCE`
+- Store no conference login data, reviewer correspondence, unpublished manuscripts, private sample media, or acceptance documents in Git.
+
+Agent capability after owner connection:
+- Draft non-promotional abstracts, contributor bios, and topic outlines after owner confirms evidence and byline scope. No submission, terms acceptance, registration, or payment action is authorized.
+
+Next action:
+- Owner confirms whether Nayovi should prepare a future practitioner topic only after approved-sample measurements exist.
