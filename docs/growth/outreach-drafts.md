@@ -204,6 +204,14 @@ Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-supp
 
 Next outreach: after cap reset, check inbound replies first. If no reply-driven action is waiting, use the existing official-form drafts for Nube or Genga only through their public forms and log the proof packet fields.
 
+### Autonomous cycle: adjacent OCR comparison metadata
+
+Status: no new external outreach sent in this cycle because the 2026-05-29 sender log still shows 10 same-day outreach sends, matching the daily cap.
+
+Revenue rationale: added structured metadata for the existing adjacent OCR comparison packet on `https://tachiyomiat.com/guides/translation-support-workflow`. The packet helps editors, directories, creator platforms, and adjacent OCR tools compare Nayovi fairly against browser comic translators, private creator/publisher pilots, and directory mentions while keeping official APK source, pricing, support, and no-chapter-hosting boundaries attached.
+
+Next outreach: after cap reset, handle real replies first. If no reply-driven action is waiting, use this comparison packet only for contacts that ask for category fit, alternatives, or a neutral workflow comparison; avoid using it as a generic backlink pitch.
+
 ### Bayi Studios webcomic localization
 
 Category: partnership

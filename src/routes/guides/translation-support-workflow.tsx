@@ -207,6 +207,28 @@ const translationWorkflowStructuredData = () => {
         'Wait for a reply or send at most one useful follow-up after the normal interval; skip if the form terms prohibit follow-up or the fit becomes weak.',
     },
   ] as const;
+  const comparisonPacket = [
+    {
+      name: 'Android APK workflow',
+      description:
+        'Verify the official download page, APK metadata, redeem-code activation, support path, and hosted OCR behavior before sending readers to install.',
+    },
+    {
+      name: 'Browser comic translator',
+      description:
+        'Compare upload handling, text-block editing, layout preservation, version history, and whether the tool can document human review before sharing output.',
+    },
+    {
+      name: 'Creator or publisher pilot',
+      description:
+        'Start with creator-controlled samples, official previews, public-domain pages, or explicit written permission before evaluating localization quality.',
+    },
+    {
+      name: 'Directory or roundup mention',
+      description:
+        'Prefer listings that preserve source-of-truth links, pricing, support, and the no-chapter-hosting boundary instead of treating the app as a mirror.',
+    },
+  ] as const;
 
   return [
     {
@@ -311,6 +333,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi official form submission proof packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: formSubmissionProofPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#comparison-packet`,
+      name: 'Nayovi adjacent OCR translation comparison packet',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: comparisonPacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

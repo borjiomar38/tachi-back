@@ -2,6 +2,10 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T014804Z`: audited branch state, SEO distribution shared status, public workflow metadata, growth trackers, and outreach sender history.
+- Added ItemList structured metadata for the visible adjacent OCR translation comparison packet on `/guides/translation-support-workflow`, covering Android APK workflow, browser comic translators, creator/publisher pilots, and directory mentions with official source, pricing, support, and no-chapter-hosting boundaries intact.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29 UTC, matching the daily cap. Next cap window should process replies first; if no reply-driven action is waiting, use the comparison packet only for contacts asking for category fit or neutral alternatives.
+
 - Autonomous cycle on `growth/autonomous-20260529T013939Z`: audited branch state, SEO distribution shared status, current growth trackers, public route coverage, and outreach sender history.
 - Added AIAnyTool as a medium-priority AI-directory draft prospect after current public search showed a submit-tool path and public `contact@aianytool.com`; kept it draft until current terms are rechecked after the sender cap resets.
 - Added a compliant AIAnyTool listing-fit draft that asks whether Nayovi is appropriate before submission, preserves official APK/pricing/support/responsible-use links, and rejects paid placement, reciprocal links, hidden redirects, forever-free wording, and mirror-first APK handling.
