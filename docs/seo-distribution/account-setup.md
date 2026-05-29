@@ -1768,3 +1768,64 @@ Publish capability after connection:
 
 Next action:
 - Owner chooses eligible startup directories, rejects paid-link or reciprocal-link flows, and approves the exact submitter identity before any form is used.
+
+## 2026-05-29 Cycle 9 Account Setup Advancement
+
+### Product Hunt Maker / Company Launch Packet
+
+Status: OWNER_ACTION_REQUIRED for official maker/company profile creation, terms acceptance, launch timing, and any API/token connection.
+
+Public profile and launch fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Short description: `Nayovi provides an official Android APK and hosted OCR/AI translation workflow for readers testing owned, public-domain, official-sample, creator-provided, or otherwise permission-approved pages. It supports official APK access, free trial or redeem-code activation, monthly token plans, and support paths.`
+- Website: `https://nayovi.com`
+- Launch URL: `https://tachiyomiat.com/download`
+- Category tags: `Android`, `AI`, `OCR`, `translation`, `creator tools`
+- Maker comment angle: source-of-truth APK access, reviewer-safe screenshots, no chapter hosting, and approved-sample OCR QA.
+
+Required assets:
+- Logo/avatar and launch thumbnail.
+- Approved screenshot set or sample-safe demo video.
+- Public media kit and review packet.
+- Owner-approved public metrics only; do not use private revenue, user counts, or investor notes without explicit approval.
+
+Credential/reference guardrails:
+- `SEO_AGENT_PRODUCTHUNT_TOKEN`
+- `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE`
+- Store no passwords, cookies, private founder emails, launch analytics exports, or payment receipts in docs or Git.
+
+Publish capability after connection:
+- Agent can prepare launch copy, maker comments, gallery captions, and answer templates after owner approval. Product launch scheduling, public posting, upvote requests, comment replies, paid boosts, and account creation remain owner actions unless a compliant official API workflow is connected and explicitly authorized.
+
+Next action:
+- Owner creates/connects the official maker or company profile, approves launch timing, and confirms whether Nayovi should launch only after package/signing facts and screenshots are public.
+
+### Official Newsletter First Issue Packet
+
+Status: OWNER_ACTION_REQUIRED for official newsletter profile creation, sender identity approval, terms acceptance, and publication approval.
+
+Public profile fields:
+- Publication name: `Nayovi Notes`
+- Subtitle: `Android APK trust, OCR QA, and permission-safe manga/manhwa translation workflow notes.`
+- About: `Official updates from Nayovi on APK source checks, reviewer-safe screenshots, OCR QA, approved-sample testing, support paths, and responsible-use boundaries. Nayovi does not host or distribute chapters.`
+- Primary link: `https://nayovi.com`
+- Download link: `https://tachiyomiat.com/download`
+- First issue draft: `docs/seo-distribution/official-newsletter-first-issue.md`
+
+Required assets:
+- Official logo/avatar.
+- Owner-approved sender name and public contact path.
+- Package/signing/developer-verification facts only after owner confirmation.
+- Approved screenshot/demo references only.
+
+Credential/reference guardrails:
+- `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE`
+- `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`
+- Store no subscriber lists, private emails, cookies, verification documents, tokens, or analytics exports in docs or Git.
+
+Publish capability after connection:
+- Agent can keep official issue drafts and profile copy current after owner review. Publication, subscriber import, paid newsletter setup, and API posting are not authorized without explicit owner action.
+
+Next action:
+- Owner creates/connects the official newsletter profile, reviews `docs/seo-distribution/official-newsletter-first-issue.md`, and decides whether the first issue should publish manually as an opt-in archive post.

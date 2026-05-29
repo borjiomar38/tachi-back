@@ -1043,3 +1043,19 @@ Next actions:
 - Updated `authority-opportunities.md`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md` with profile setup, video-demo, AI-directory, and localization-media actions.
 - Drafted exact LinkedIn launch post, YouTube demo metadata, and FutureTools-style eligibility note in `platform-drafts.md`.
 - Next actions: owner approves public contact path, logo/banner/screenshot/demo references, package/signing/developer-verification facts, LinkedIn company/founder setup, and YouTube channel/video asset before any publication or API connection.
+
+## 2026-05-29 Cycle 4
+
+- Verified branch `seo/distribution-20260529T023703Z`; account registry allows owned GitHub/docs only, so no external posting, account creation, login, form submission, terms acceptance, Product Hunt launch, newsletter publication, directory submission, or APK upload was attempted.
+- Re-read `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two official owner-action packets:
+  - Product Hunt maker/company launch packet with tagline, launch description, maker-comment angle, source links, asset requirements, token references, and no-upvote/no-automation guardrails.
+  - Official newsletter first issue packet with `Nayovi Notes` profile fields, sender/account requirements, first issue draft reference, credential references, and no contact-import/bulk-send guardrails.
+- Added owned trust asset `docs/seo-distribution/official-newsletter-first-issue.md`, a repo-native first issue draft about what reviewers should verify before citing an independent Android OCR APK.
+- Researched rotated authority opportunities across different categories:
+  - Stackviv AI tools directory: possible OCR/translation directory fit only after category, pricing, and source-link handling are verified.
+  - AppBrain app intelligence/review context: high-authority Android discovery surface, but blocked until owner confirms package/store compatibility and public package facts.
+  - Alandal webtoon localization studio: professional localization fit for a no-link approved-sample OCR QA resource question, not a backlink or replacement-localization pitch.
+- Updated `authority-opportunities.md`, `docs/growth/backlink-prospects.csv`, `content-calendar.md`, and `link-assets.md` with the new setup work, owned asset, and authority targets.
+- Drafted exact Product Hunt launch copy, official newsletter teaser/summary, and Alandal-style localization studio no-link note in `platform-drafts.md`.
+- Next actions: owner creates/connects Product Hunt and newsletter profiles, approves screenshots/demo/package facts, reviews the first newsletter issue, verifies Stackviv submit fields, holds AppBrain until package facts are public, and uses the Alandal note only through official contact paths after sample-safe scope is approved.
