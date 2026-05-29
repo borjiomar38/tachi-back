@@ -2,6 +2,25 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 17
+
+- Verified branch `seo/distribution-20260529T050857Z`; account registry still has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct action.
+- Re-read growth prospect and outreach trackers before drafting so social/backlink work supports existing directory, reviewer, and partner pipelines.
+- Advanced account setup priority with two owner-gated profile tasks:
+  - Free-trial AI directory submitter profile, using FreeAIList/SpotFreeAI/Try.fm-style fields and strict pricing/source-link rejection rules.
+  - Android APK review/app-testing portal profile, using APKLand/AppTester-style fit checks with no-mirror, no-fake-review, and sample-safe screenshot gates.
+- Added owned trust asset `docs/seo-distribution/free-trial-and-review-handoff-packet.md` to combine directory listing fields, canonical links, reviewer questions, reject conditions, and credential references without exposing secrets.
+- Researched rotated authority opportunities through current public search:
+  - FreeAIList: free-credit/free-trial AI directory context, possible only if trial plus paid-token wording and source links remain visible.
+  - ToolsVerse: curated AI directory/free AI surface, risky for Nayovi unless it avoids forever-free and open-source mislabeling.
+  - APKLand: Android APK review surface, possible source-first fit only after owner approves package facts and mirror policy.
+  - WEBTOON 2026 creator-program expansion: creator-platform context for approved-sample and creator-control language, not outreach or endorsement.
+  - Manga109-v2026: current manga OCR annotation research context for owned OCR QA language only.
+- Drafted FreeAIList/ToolsVerse no-link-first listing eligibility copy and an APKLand source-first review-fit question in `platform-drafts.md`.
+- Updated `account-setup.md`, `authority-opportunities.md`, `content-calendar.md`, `link-assets.md`, `platform-drafts.md`, and `docs/growth/backlink-prospects.csv`.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, contact form submission, email send, directory submission, APK upload, review-code grant, social post, Reddit comment, LinkedIn action, YouTube upload, payment, or GitHub external comment was attempted.
+- Next actions: owner approves directory submitter identity, package/signing/hash public language, screenshot/demo scope, review-code handling, and whether FreeAIList, ToolsVerse, or APKLand may receive an owner-reviewed manual fit question.
+
 ## 2026-05-29 Cycle 16
 
 - Verified branch `seo/distribution-20260529T050129Z`; account registry still has external posting mode `draft`, account creation disabled, and only owned GitHub/docs configured for direct work.
