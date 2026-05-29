@@ -747,6 +747,24 @@ const replyFollowUpRows = [
   },
 ] as const;
 
+const accessExceptionRows = [
+  {
+    request: 'Discount or extended trial',
+    gate:
+      'Approve only when the contact names the audience, expected usage, support path, and why normal free trial or monthly token plans are not enough.',
+  },
+  {
+    request: 'Review or affiliate code',
+    gate:
+      'Use dedicated access only when the public mention can preserve official source links, disclose the relationship, and separate attribution from normal checkout.',
+  },
+  {
+    request: 'Partner pilot access',
+    gate:
+      'Require approved sample scope, language pair, success metric, and stop condition before issuing access or asking for founder-level terms.',
+  },
+] as const;
+
 const faqs = [
   {
     title: 'Is Nayovi a free manhwa AI translator?',
@@ -2432,6 +2450,50 @@ export const PageTranslateManhwaAi = () => {
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
               Review reply pipeline
+            </a>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        id="access-exception-gate"
+        eyebrow="Access exception gate"
+        title="Qualify discount, affiliate, and partner-code requests"
+        description="Special access should protect paid-plan attribution. Use exceptions only when they create measurable review, affiliate, or approved-sample evidence instead of replacing normal checkout."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {accessExceptionRows.map((row) => (
+            <Card key={row.request} className="rounded-[1.5rem]">
+              <CardHeader>
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                  <KeyRoundIcon className="size-5" />
+                </div>
+                <CardTitle className="text-lg">{row.request}</CardTitle>
+                <CardDescription>{row.gate}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-5 p-6 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+                <BadgeCheckIcon className="size-4" />
+                Keep special access tied to evidence
+              </div>
+              <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+                If a request cannot show a qualified audience, preserved source
+                links, separated attribution, and a paid-plan follow-up signal,
+                route the reader through normal free trial and pricing instead
+                of issuing discounted or partner access.
+              </p>
+            </div>
+            <a
+              href="/guides/free-trial-vs-paid-token-plan#access-guardrails"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Open access guardrails
             </a>
           </CardContent>
         </Card>
