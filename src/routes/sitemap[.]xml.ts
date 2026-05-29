@@ -133,7 +133,11 @@ const staticSitemapPathOrder = [
   '/legal/terms',
   '/legal/official-sources-takedown',
 ];
-const excludedStaticSitemapPaths = new Set(['/robots.txt', '/sitemap.xml']);
+const excludedStaticSitemapPaths = new Set([
+  '/llms.txt',
+  '/robots.txt',
+  '/sitemap.xml',
+]);
 const excludedStaticSitemapPrefixes = [
   '/api',
   '/app',

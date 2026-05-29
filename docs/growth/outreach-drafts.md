@@ -34,6 +34,14 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+### Autonomous cycle: LLM-friendly citation summary
+
+Status: no new external outreach sent in this cycle because the current UTC-day sender history already reached the configured cap in earlier 2026-05-28 cycles. The new asset is owned-site infrastructure, not a reason to bypass cap limits.
+
+Revenue rationale: shipped `https://tachiyomiat.com/llms.txt` so AI crawlers, directory editors, Android reviewers, partner diligence contacts, and editorial researchers can parse the official APK source, pricing path, support path, reviewer/partner guides, and responsible-use boundaries from one text endpoint already advertised in robots.txt and the document head.
+
+Next outreach when cap resets: use the LLM summary as a source-of-truth citation in directory, newsletter, reviewer, and partner replies that need a concise product overview before deciding on a listing, review code, affiliate test, or approved-sample pilot.
+
 ### Autonomous cycle: paid plan recovery confidence
 
 Status: no new external outreach sent in this cycle because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 10 sends on 2026-05-28 UTC, matching the configured daily cap.
