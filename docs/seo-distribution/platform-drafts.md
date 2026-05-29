@@ -133,6 +133,8 @@ External platform drafts are for authorized-account posting only. Do not create 
 | draft | AI directory | IAToolFinder-style submit path | Android OCR/AI Translation listing eligibility | docs/seo-distribution/directory-quality-gate.md | OWNER_REVIEW_REQUIRED: verify live submit fields, pricing labels, and source-link handling; skip paid, reciprocal, hidden-redirect, or misleading free/open-source flows. |
 | draft | App testing portal | AppTester.co / APKLand / AppsTested-style reviewers | Source-first Android OCR app health-check fit question | docs/seo-distribution/app-testing-review-brief.md | OWNER_REVIEW_REQUIRED: no APK upload, tester campaign, public report approval, payment, fake review, or mirror permission until owner approves portal, sample scope, and package facts. |
 | draft | AI/free-trial directory | SpotFreeAI / Try.fm-style directories | Accurate free-trial plus paid-token listing eligibility | https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current submit fields and skip forever-free, reciprocal-link, hidden-redirect, paid-placement, open-source, or mirror-first APK flows. |
+| draft | AI/free-trial directory | FreeAIList / AI Cloudbase / TheAIFest | Accurate free-trial plus paid-token Android OCR listing | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: official submit path only; use no-link eligibility question first if rules are unclear; skip paid, reciprocal, hidden-redirect, mirror-first, forever-free, or open-source flows. |
+| watch | Localization media/podcast | SlatorPod / Slator-style language industry media | Future approved-sample visual OCR QA topic | None by default | WATCH_ONLY: hold until owner approves screenshots, sample evidence, byline, and non-promotional topic; no backlink ask or consumer APK pitch. |
 
 ## Draft Bodies
 
@@ -213,6 +215,64 @@ Would this fit an AI Translation, OCR, Android, or workflow category, or should 
 
 Best,
 Nayovi team
+
+### Free-trial AI directory eligibility note
+
+Status: draft
+Target: FreeAIList, AI Cloudbase, TheAIFest, SpotFreeAI, Try.fm, ToolDirectory.AI, AiMatch, or comparable free-trial/pricing-aware AI directories after current rules review
+Audience: AI directory editors and high-intent users comparing OCR, Translation, Android, and workflow tools
+Rules risk: medium; OWNER_REVIEW_REQUIRED. No account creation, form submission, paid listing, reciprocal link, hidden redirect, APK mirror permission, or forever-free/open-source wording.
+No-link variant: yes for eligibility question.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link eligibility question:
+
+Hi team,
+
+I am checking whether Nayovi fits your directory before preparing a submission.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A correct listing would need to describe it as a free trial plus paid monthly token-plan product, with official APK, support, pricing, and responsible-use links visible.
+
+It should not be listed as forever-free, open-source, app-store-only, an APK mirror, a generic chatbot, or a chapter-hosting service. Nayovi is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+Would that fit your OCR, Translation, Android, AI workflow, or Productivity categories, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant after owner approval:
+
+Hi team,
+
+Following up with the official source links after confirming that a trial plus paid-plan Android OCR workflow is eligible:
+
+- Official APK: https://tachiyomiat.com/download
+- Workflow overview: https://tachiyomiat.com/translate-manhwa-ai
+- Pricing: https://tachiyomiat.com/pricing
+- Support: https://tachiyomiat.com/support
+
+The listing copy should keep the responsible-use line attached: Nayovi does not host or distribute chapters and is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+### Localization media approved-sample topic note
+
+Status: watch
+Target: SlatorPod, Slator, Mangasplaining/MSX, Mangacast, or comparable localization and manga media after owner evidence approval
+Audience: localization operators, manga/webtoon media editors, language AI listeners, partner diligence readers
+Rules risk: medium; OWNER_REVIEW_REQUIRED. No backlink ask, no consumer app-install pitch, no unsupported metrics, no claim of publisher/platform permission.
+No-link variant: yes.
+Link variant after owner request: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link topic note:
+
+Hi team,
+
+I am building Nayovi, an Android OCR and AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+I am not asking for app coverage or a backlink. The topic I am tracking is narrower: what a permission-safe OCR QA process should check before anyone judges AI translation quality on visual storytelling pages.
+
+The practical issues are missed text regions, reading order, overlapping dialogue and onomatopoeia, under-segmented speech balloons, glossary drift, human correction, and when screenshots or outputs should not be shared publicly.
+
+If that kind of approved-sample workflow topic is useful for your localization or manga audience, I can send a short source packet after owner-approved screenshots and observations are ready. If not, I will leave it there.
 
 ### GitHub awesome-ocr maintainer-first resource question
 

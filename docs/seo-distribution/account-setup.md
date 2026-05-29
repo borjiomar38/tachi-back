@@ -68,6 +68,65 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-29 Current Cycle Setup Advancement
 
+### Free-Trial AI/Software Directory Submitter Profile
+
+Status: OWNER_ACTION_REQUIRED for official submitter identity, directory-specific account or terms steps, category/pricing approval, and source-link preservation.
+
+Prepared packet:
+- `docs/seo-distribution/free-trial-directory-listing-brief.md`
+- `docs/seo-distribution/directory-quality-gate.md`
+
+Priority surfaces to evaluate from current discovery:
+- FreeAIList-style free-credit and free-trial directories.
+- AI Cloudbase-style reviewed AI directories with trial/deal context.
+- TheAIFest-style editorially verified submit-tool directories.
+- SpotFreeAI, Try.fm, ToolDirectory.AI, and AiMatch-style pricing/filter directories already in the queue.
+
+Required public fields:
+- Tool name: `Nayovi`
+- Short description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Pricing: `Free trial` when trial plus paid monthly token plans can be explained; `Freemium` only if paid token-plan context remains visible.
+- Canonical links: `https://tachiyomiat.com/download`, `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`.
+- Responsible-use line: `No chapter hosting; use with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Credential reference:
+- `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`; per-directory token only if the platform offers an official API workflow and the owner authorizes it.
+- Do not store submitter passwords, cookies, email verification links, paid-placement receipts, or private review-code data in docs.
+
+Agent capability after connection:
+- The agent can prepare exact listing fields and reject directories that require paid backlinks, reciprocal links, hidden redirects, mirror-first APK handling, forever-free wording, or open-source mislabeling.
+- The agent must not submit forms, create accounts, accept terms, pay for listings, or upload APK assets automatically.
+
+Next action:
+- Owner approves the official submitter identity and decides whether FreeAIList, AI Cloudbase, TheAIFest, SpotFreeAI, Try.fm, ToolDirectory.AI, or AiMatch preserve source links and pricing context well enough for manual submission.
+
+### Localization Media / Podcast Contributor Profile
+
+Status: OWNER_ACTION_REQUIRED for byline or brand identity, public contact path, approved sample evidence, screenshots, and topic scope.
+
+Priority surfaces to evaluate from current discovery:
+- SlatorPod and Slator-style language industry media.
+- Mangasplaining/MSX and Mangacast-style manga podcasts/newsletters.
+- Android/newsletter surfaces only when the angle is APK trust and hosted OCR testing rather than consumer promotion.
+
+Profile fields:
+- Display name: `Nayovi`
+- Byline option: owner-approved founder name or `Nayovi team`; do not invent a personal persona.
+- Bio: `Nayovi builds an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It does not host chapters and is designed for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Primary source link: `https://nayovi.com`
+- Workflow source link: `https://tachiyomiat.com/translate-manhwa-ai`
+- Technical source link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Credential reference:
+- `SEO_AGENT_MEDIA_CONTRIBUTOR_PROFILE_REFERENCE`; no media logins, private contacts, interview notes, embargoed materials, or unpublished metrics in docs.
+
+Agent capability after connection:
+- The agent can draft product-light topic notes and source packets after owner approval.
+- The agent must not pitch unsupported metrics, claim platform permission, request backlinks, or imply Nayovi can process publisher catalogs.
+
+Next action:
+- Owner approves whether the first media angle should be `visual-storytelling OCR QA for approved samples`, `independent Android APK trust checks`, or `reader workflow boundaries for AI translation`.
+
 ### Official App Testing / Reviewer Submitter Profile
 
 Status: OWNER_ACTION_REQUIRED for portal choice, manual account or terms steps, APK sharing scope, sample approval, review-code policy, and public-report permission.
