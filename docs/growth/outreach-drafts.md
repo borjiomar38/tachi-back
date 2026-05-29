@@ -36,6 +36,47 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-29 Sent Outreach Log
 
+### Autonomous cycle: brand-domain LLM diligence handoff
+
+Status: no new external outreach sent in this cycle until sender capacity and reply priority are rechecked after the owned-site update.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/llms.txt` and `https://tachiyomiat.com/llms-full.txt` with Nayovi's brand domain, SEO discovery domain, official APK source, support/reviewer access path, and no-mirror citation guidance. This gives Android directories, AI-tool listings, editorial researchers, partner diligence contacts, and investor notes a clearer source-of-truth packet before they decide whether to list, review, test, or discuss Nayovi.
+
+Next outreach: prioritize reply-driven actions first. If no higher-signal reply is waiting and sender capacity remains, use the updated LLM handoff only for high-fit public contacts or official forms that need concise identity and APK-source verification.
+
+### Bayi Studios webcomic localization
+
+Category: partnership
+Contact path: `info@bayi.world`, verified through current public Bayi site content before sending.
+Rationale: Bayi describes webcomic, novel, anime, game, and software localization work, including webtoon production and extensive webcomic localization experience. The outreach asked for approved-sample Android OCR workflow feedback, not catalog processing, paid placement, replacement-localization claims, or a backlink.
+Status: contacted 2026-05-29; wait for reply. Send at most one follow-up after 7 business days only if there is a clearer approved-sample test brief or review-code path.
+
+Subject: Approved-sample Android OCR workflow feedback
+
+Hi Bayi Studios team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found Bayi while reviewing webcomic and localization teams because your public site describes webcomic, novel, anime, game, and software localization work, including full production and a long-running webtoon production track. That makes this a better fit for a narrow workflow-feedback note than a generic app pitch.
+
+The useful question is whether an approved-sample Android OCR workflow would ever be worth testing for a creator, publisher, reviewer, or production partner who controls the sample pages. I am not asking to process Bayi catalog work, buy placement, replace localization teams, or request a backlink.
+
+A concise partner-intake packet is here so the scope stays clear before any review or pilot code is issued:
+https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+Supporting checklist:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Official identity and APK source summary:
+https://tachiyomiat.com/llms.txt
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+If this is relevant, I can send a concise test brief and review-code path. If not, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Mangasplaining podcast and MSX
 
 Category: press

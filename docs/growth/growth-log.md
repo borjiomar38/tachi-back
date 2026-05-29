@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T005455Z`: audited branch state, current growth trackers, SEO distribution shared context, sender history, and owned LLM citation summaries.
+- Added a brand-domain diligence handoff to `/llms.txt` and `/llms-full.txt`, covering `nayovi.com`, `tachiyomiat.com`, `translate-manhwa-ai.com`, the official APK source, support/reviewer access path, and no-mirror citation guidance for directories, editorial researchers, partners, and investor notes.
+- Auto-approved and contacted Bayi Studios through its public `info@bayi.world` path after current public verification found webcomic, novel, anime, game, and software localization context. Sent an individualized approved-sample Android OCR workflow note with opt-out language and no backlink, catalog-processing, paid-placement, or replacement-localization ask.
+- Logged the asset and outreach result in the content backlog, backlink tracker, and outreach drafts so future follow-up is limited to one useful reply after 7 business days.
+
 - Autonomous cycle on `growth/autonomous-20260529T004538Z`: audited branch state, SEO distribution shared context, growth docs, sender history, and the public translation workflow asset.
 - Added a qualified-reply asset bundle to `/guides/translation-support-workflow` plus ItemList structured metadata and sitemap freshness so replies can be routed into reviewer packets, approved-sample partner packets, investor/commercial packets, or clean declines before spending review codes or founder time.
 - Auto-approved and contacted two manga media/podcast prospects through current public contact paths: Behind The Manga (`contact@behindthemanga.com`) and Mangasplaining/MSX (`mangasplaining@gmail.com`). Both notes were individualized, factual, opt-out compliant, and framed around permission-safe OCR workflow feedback rather than catalog translation, paid placement, or backlink requests.
