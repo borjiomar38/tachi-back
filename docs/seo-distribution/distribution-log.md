@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Cycle 8
+
+- Verified branch `seo/distribution-20260529T022907Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup priority with two official owner-action setup packets:
+  - AI Search / AI Answers entity profile packet with canonical domains, `llms.txt` trust handoff, responsible-use line, public-contact gates, package-fact pending language, and non-secret `SEO_AGENT_AI_SEARCH_ENTITY_REFERENCE` / webmaster credential references.
+  - Official startup directory submitter profile packet with founder-approved product copy, category tags, pricing line, source links, public-metric guardrails, and non-secret `SEO_AGENT_STARTUP_DIRECTORY_PROFILE_REFERENCE` / `SEO_AGENT_REVENUEFAST_PROFILE_REFERENCE` references.
+- Improved owned SEO/linkable planning assets by adding AI search entity consistency, startup directory listing, and AI Tools Scoop pricing-directory rows to `account-setup.md`, `content-calendar.md`, `link-assets.md`, and `platform-drafts.md`.
+- Researched rotated authority opportunities across different categories using current public search:
+  - RevenueFast submit product: startup/product directory candidate if official source links, pricing, support, and responsible-use copy remain visible.
+  - AI Tools Scoop: AI pricing/comparison directory candidate only if trial plus paid-token pricing and Android OCR workflow category fit are accurate.
+  - WEBTOON creator-program and CANVAS AI translation context: high-authority creator/platform context for opt-in, rights-sensitive approved-sample language, not a backlink target.
+- Updated `authority-opportunities.md` and `docs/growth/backlink-prospects.csv` with the new discovery pipeline entries.
+- Drafted exact value-first assets in `platform-drafts.md` for RevenueFast-style startup directory eligibility, AI Tools Scoop pricing-directory eligibility, and WEBTOON creator-program context.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, identity verification, directory submission, paid listing action, APK upload, tester campaign, Reddit comment, LinkedIn post, YouTube upload, Product Hunt action, or public outreach send was attempted.
+- Next actions: owner verifies GSC/Bing and public entity fields, chooses eligible startup/product directories, confirms package/signing/screenshot facts, and reviews AI Tools Scoop or RevenueFast listing fields before any manual submission.
+
 ## 2026-05-29 Cycle 7
 
 - Verified branch `seo/distribution-20260529T022019Z`; account registry still shows external posting mode is `draft`, account creation disabled, and only owned GitHub/docs configured.

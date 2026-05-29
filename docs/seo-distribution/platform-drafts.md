@@ -124,6 +124,71 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ## Draft Bodies
 
+### RevenueFast-style startup directory listing eligibility note
+
+Status: draft
+Target: RevenueFast or similar startup/product directory official submit path
+Audience: startup directory reviewer and early product discovery readers
+Rules risk: medium; submit only through the official path after owner review. Skip paid SEO placement, reciprocal backlink, hidden redirect, inflated metric, or unsupported endorsement flows.
+No-link variant: yes for eligibility question.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Eligibility question:
+
+Hi team,
+
+I am checking whether Nayovi fits your startup/product directory before preparing a submission.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. The useful audience is Android readers, app reviewers, creator-platform teams, localization operators, and partners evaluating permission-safe OCR workflow support.
+
+A correct listing would need to keep the official APK source, free trial or redeem-code activation, monthly token plans, support path, privacy/terms links, and responsible-use boundary visible. Nayovi does not host or distribute chapters and should not be presented as an APK mirror, forever-free app, open-source app, scanlation service, or chapter-hosting site.
+
+If this fits your directory, I can send the exact listing fields after owner approval. If the flow requires reciprocal links, paid backlink placement, hidden redirects, or unsupported metrics, please treat Nayovi as not eligible.
+
+Best,
+Nayovi team
+
+### AI Tools Scoop pricing-directory eligibility note
+
+Status: draft
+Target: AI Tools Scoop or comparable AI pricing/comparison directory
+Audience: AI directory reviewer and high-intent OCR/translation tool searchers
+Rules risk: medium; no account automation or listing submission until live rules and source-link handling are verified.
+No-link variant: yes for eligibility question.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Eligibility question:
+
+Hi team,
+
+I am checking whether Nayovi fits your AI tools directory before submitting a listing.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It has official APK access, free trial or redeem-code activation, monthly hosted OCR/translation token plans, support paths, and responsible-use guidance.
+
+The listing would need to show accurate pricing and source links. Nayovi should not be labeled as forever-free, open-source, app-store-only, a generic chatbot, an APK mirror, or a chapter-hosting service. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+Would this fit a Translation, OCR, Android, or workflow category, or should I skip submission?
+
+Best,
+Nayovi team
+
+### WEBTOON creator-program context note
+
+Status: watch
+Target: owned creator-trust copy, screenshot-rights packet, owner-reviewed platform contact only
+Audience: creator-platform teams, localization operators, reviewers, and partner diligence
+Rules risk: low for owned context; medium for external contact. Do not imply WEBTOON endorsement, title-processing permission, or catalog access.
+No-link variant: yes.
+Link variant after owner review: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+
+No-link context:
+
+Current creator-platform translation programs reinforce that AI translation for comics is most credible when it is opt-in, creator/platform controlled, rights-aware, and reviewable by people responsible for the work.
+
+For Nayovi, the safe outreach angle is not "translate platform catalogs." It is a narrow approved-sample workflow question: source permission, screenshot rights, OCR region coverage, reading order, glossary consistency, human correction, and the point where public sharing should stop.
+
+Use this only as background in owned packets or owner-reviewed partner notes.
+
 ### LinkedIn official profile launch post
 
 Status: draft
