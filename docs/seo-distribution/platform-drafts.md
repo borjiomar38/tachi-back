@@ -2759,3 +2759,67 @@ Would this fit your Translation/OCR/workflow categories, or should I skip submis
 
 Best,
 Nayovi team
+
+### AI Gear Base rubric-aligned listing eligibility note
+
+Status: draft
+Target: AI Gear Base / AI Cloudbase official submit path
+Audience: AI directory reviewer using pricing, trust, support, docs, and methodology criteria
+Rules risk: medium; submit only through the official path after owner review. Do not claim ranking, scoring, acceptance, or editorial endorsement. Skip if the current flow changes to paid placement, reciprocal links, hidden redirects, mirror-first APK hosting, inaccurate free/open-source labels, or unsupported performance claims.
+No-link variant: yes for eligibility email.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+Eligibility question:
+
+Hi team,
+
+I am checking whether Nayovi is a fit for AI Gear Base before preparing a submission.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A fair listing would need to show the official APK source, free trial or redeem-code activation, monthly token plans, support path, privacy/terms links, and responsible-use boundary.
+
+Nayovi does not host or distribute chapters. It is intended for owned material, public-domain works, official samples, creator-provided pages, or content the tester has permission to process.
+
+If the directory review can evaluate Android OCR workflow, pricing clarity, trust/security, support/docs, and methodology without paid placement or reciprocal links, I can send the exact listing fields and screenshots after owner approval. If marketing-only submissions are declined or this is too niche for the current taxonomy, please treat Nayovi as not eligible.
+
+Optional source links after owner review:
+- Official APK: https://tachiyomiat.com/download
+- OCR QA checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+- Responsible workflow: https://tachiyomiat.com/guides/translation-support-workflow
+
+Best,
+Nayovi team
+
+### Keep Android Open context note
+
+Status: watch
+Target: owned APK trust docs, Android policy-aware reviewers, founder manual discussion only if directly relevant
+Audience: Android reviewers, open-web developers, direct-APK users
+Rules risk: medium; this is policy/community context, not a product-promotion surface. Do not post product links in campaign discussions.
+No-link variant: yes.
+Link variant: use only owned source-of-truth URLs in reviewer packets, not campaign/community posts.
+
+No-link variant:
+
+The current Android developer-verification debate is a reminder that direct APK distribution needs unusually clear source-of-truth language: official domain, package/signing fields, hash, support path, privacy/terms links, and a distinction between pending and owner-confirmed verification facts.
+
+For Nayovi, that means reviewer packets should avoid guessed package identity, mirror-first APK pages, or unsupported verification claims. Any public note should stay focused on user trust and source verification, not promotion.
+
+### Manga109-v2026 technical resource note
+
+Status: draft
+Target: owned GitHub/docs, technical newsletters, OCR maintainer-first resource questions
+Audience: OCR, document understanding, localization, and Android workflow readers
+Rules risk: low for owned docs; medium for external maintainer contact. Do not imply benchmark performance, dataset access, or author endorsement.
+No-link variant: yes.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Maintainer-first question:
+
+Hi,
+
+I am maintaining a product-light checklist for manga/manhwa OCR translation QA. The checklist focuses on issues that matter before translation quality is judged: missed text regions, transcription drift, reading order, merged or under-segmented balloons, overlapping dialogue/onomatopoeia, glossary consistency, and human correction boundaries.
+
+Would a checklist like this be useful as a resource for people evaluating comic-image OCR workflows, or is it too application-specific for your list/newsletter?
+
+No link needed if external resources are not welcome. If links are accepted after review, the current checklist is here:
+https://tachiyomiat.com/guides/comic-ocr-translation-checklist
