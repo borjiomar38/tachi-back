@@ -911,6 +911,29 @@ const revenueRoutingRows = [
   },
 ] as const;
 
+const commercialDiligenceRows = [
+  {
+    signal: 'Qualified installs',
+    proof:
+      'Record whether a listing, review, or partner note can send readers to the official APK page, free trial, pricing, and support path without mirror-first detours.',
+  },
+  {
+    signal: 'Repeat-use evidence',
+    proof:
+      'Look for weekly reading intent, more than one approved sample, device recovery needs, or language pairs that justify monthly token-plan usage.',
+  },
+  {
+    signal: 'Partner value',
+    proof:
+      'Keep the approved sample owner, evaluation goal, private-result boundary, and feedback owner visible before issuing a pilot code or asking for founder time.',
+  },
+  {
+    signal: 'Escalation threshold',
+    proof:
+      'Escalate only when the next step changes pricing, legal terms, public endorsement, investor materials, or a scheduled commercial conversation.',
+  },
+] as const;
+
 const officialFormHandoffRows = [
   {
     rule: 'Use official forms only',
@@ -2506,6 +2529,28 @@ export const PageTranslationSupportWorkflow = () => {
                   {row.signal}
                 </span>
                 <span>{row.route}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Commercial diligence"
+        title="What evidence justifies codes or founder time"
+        description="Use this packet when a partner, directory, editor, or investor reply needs proof that the next step can create installs, paid-plan signal, or a concrete pilot."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {commercialDiligenceRows.map((row) => (
+              <div
+                key={row.signal}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.signal}
+                </span>
+                <span>{row.proof}</span>
               </div>
             ))}
           </CardContent>

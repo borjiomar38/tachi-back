@@ -204,6 +204,14 @@ Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-supp
 
 Next outreach: after cap reset, check inbound replies first. If no reply-driven action is waiting, use the existing official-form drafts for Nube or Genga only through their public forms and log the proof packet fields.
 
+### Autonomous cycle: commercial diligence packet
+
+Status: no new external outreach sent in this cycle because the 2026-05-29 sender log still shows 10 same-day outreach sends, matching the daily cap.
+
+Revenue rationale: strengthened `https://tachiyomiat.com/guides/translation-support-workflow` with a commercial-diligence packet so replies, listing discussions, approved-sample pilots, and investor or commercial signals are checked for qualified installs, repeat-use evidence, partner value, and escalation threshold before review codes, pilot codes, founder time, or investor materials are spent.
+
+Next outreach: after cap reset, handle real replies first. If no reply-driven action is waiting, use the diligence packet to decide whether Nube/Genga official-form work, a directory listing packet, or a creator-platform partner note has enough revenue signal to justify the next contact.
+
 ### Bayi Studios webcomic localization
 
 Category: partnership

@@ -141,6 +141,28 @@ const translationWorkflowStructuredData = () => {
         'Escalate only when the reply asks for traction, retention, partnership economics, founder time, or terms that could change business, legal, or pricing commitments.',
     },
   ] as const;
+  const commercialDiligencePacket = [
+    {
+      name: 'Qualified installs',
+      description:
+        'Confirm the opportunity can send readers to the official APK page, free trial, pricing, and support path without mirror-first detours.',
+    },
+    {
+      name: 'Repeat-use evidence',
+      description:
+        'Look for weekly reading intent, more than one approved sample, device recovery needs, or language pairs that justify monthly token-plan usage.',
+    },
+    {
+      name: 'Partner value',
+      description:
+        'Keep the approved sample owner, evaluation goal, private-result boundary, and feedback owner visible before issuing a pilot code or asking for founder time.',
+    },
+    {
+      name: 'Escalation threshold',
+      description:
+        'Escalate only when the next step changes pricing, legal terms, public endorsement, investor materials, or a scheduled commercial conversation.',
+    },
+  ] as const;
   const officialFormPacket = [
     {
       name: 'Use official forms only',
@@ -275,6 +297,18 @@ const translationWorkflowStructuredData = () => {
       name: 'Nayovi reply revenue routing packet',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: revenueRoutingPacket.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        description: item.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#commercial-diligence`,
+      name: 'Nayovi commercial diligence packet',
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: commercialDiligencePacket.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,

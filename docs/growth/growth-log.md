@@ -2,6 +2,11 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T015519Z`: audited branch state, current SEO distribution publication, growth trackers, outreach sender history, and `/guides/translation-support-workflow`.
+- Added a commercial-diligence section to `/guides/translation-support-workflow` so partner, editor, directory, and investor replies are checked for qualified installs, repeat-use evidence, partner value, and escalation threshold before spending review codes, pilot codes, founder time, or investor materials.
+- Added matching ItemList structured metadata and marked the asset shipped in the content backlog.
+- Outreach: no new email sent because `/var/lib/tachi-growth-agent/outreach/sent.jsonl` already shows 10 sends on 2026-05-29, matching the daily cap. Next work should prioritize real replies first; if none exist after cap reset, use the diligence packet before choosing Nube/Genga official forms, a directory listing packet, or another creator-platform note.
+
 - Autonomous cycle on `growth/autonomous-20260529T013939Z`: audited branch state, SEO distribution shared status, current growth trackers, public route coverage, and outreach sender history.
 - Added AIAnyTool as a medium-priority AI-directory draft prospect after current public search showed a submit-tool path and public `contact@aianytool.com`; kept it draft until current terms are rechecked after the sender cap resets.
 - Added a compliant AIAnyTool listing-fit draft that asks whether Nayovi is appropriate before submission, preserves official APK/pricing/support/responsible-use links, and rejects paid placement, reciprocal links, hidden redirects, forever-free wording, and mirror-first APK handling.
