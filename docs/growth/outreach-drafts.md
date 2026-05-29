@@ -189,9 +189,9 @@ Garde ton email et WhatsApp disponibles. Si ICv2 ou un autre contact répond, je
 Category: press
 Contact path: News@ICv2.com, selected after prior-cycle public verification found ICv2's product-info page covers comics, graphic novels, and manga and lists the address for product/release information.
 Rationale: ICv2's trade audience may care about a permission-safe Android OCR/AI translation workflow if framed as reviewer/product coverage, not a request to translate catalog content or buy links.
-Status: contacted in prior cycle; owner inbound command `20260528T183731Z-10629b63e287` asked to schedule a call. A concise call follow-up with Borji Omar's email and phone was prepared, but the sender reported daily outreach cap reached at 10/10, so no follow-up email was sent this cycle. Retried during the 2026-05-28T224638Z autonomous cycle after rechecking current public ICv2 context; the sender still reported daily outreach cap reached at 10/10, so delivery was not attempted outside the cap.
+Status: initial product note sent 2026-05-28. Owner inbound command `20260528T183731Z-10629b63e287` asked to schedule a call; the follow-up was cap-blocked on 2026-05-28, then sent 2026-05-29 after cap reset with Borji Omar's email and WhatsApp contact details. Wait for reply; do not send another follow-up unless ICv2 responds with a useful next step.
 
-Subject prepared for next cap reset: Call option for Nayovi product note
+Subject sent 2026-05-29: Call option for Nayovi product note
 
 Hi ICv2 team,
 

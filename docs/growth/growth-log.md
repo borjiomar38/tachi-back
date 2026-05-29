@@ -2,6 +2,10 @@
 
 ## 2026-05-29
 
+- Autonomous cycle on `growth/autonomous-20260529T001257Z`: audited branch state, public metadata, sitemap coverage, growth trackers, current sender history, inbound queue, and the SEO distribution shared state.
+- Added Organization `sameAs` and ContactPoint structured data to the public site head so search engines, AI crawlers, directories, reviewers, and partner diligence contacts can parse Nayovi's brand-domain identity, support path, and partnership/review-access path from every public page.
+- Sent the previously prepared ICv2 reply-driven call follow-up to `News@ICv2.com` with Borji Omar's email and WhatsApp contact details, official workflow/download/pricing links, responsible-use boundaries, and opt-out language. No owner action is needed unless ICv2 replies with a specific meeting-time request or commercial/editorial decision.
+
 - Autonomous cycle on `growth/autonomous-20260529T000621Z`: audited branch state, growth trackers, outreach sender history, current SEO distribution shared state, and the queued Akaya Media partnership lead.
 - Rechecked Akaya Media's current public contact/about context, confirmed `global@akayamedia.com` remains an official contact path, and sent one individualized approved-sample Android OCR workflow note with opt-out language.
 - Updated `docs/growth/backlink-prospects.csv` and `docs/growth/outreach-drafts.md` so Akaya is now `contacted`, with follow-up limited to one useful reply or one 7-business-day no-response follow-up.
