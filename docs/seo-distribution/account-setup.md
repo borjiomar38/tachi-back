@@ -2437,3 +2437,69 @@ Publish capability after connection:
 
 Next action:
 - Owner chooses whether TikTok, YouTube Shorts, Instagram Reels, or manual-only video posting belongs in the trust stack and approves the first sample-safe clip/caption set.
+
+## 2026-05-29 Current Branch Cycle Setup Advancement
+
+### DEV / Medium / Technical Publishing Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation or claim, truthful byline, canonical syndication policy, manual terms acceptance, screenshot rights, and optional API credential connection.
+
+Prepared packet:
+- `docs/seo-distribution/technical-publishing-syndication-packet.md`
+
+Profile fields:
+- Display name: `Nayovi`
+- Bio: `Nayovi builds an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It does not host chapters and is intended for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.`
+- Disclosure: `Posts are maintained by the Nayovi team and link to Nayovi-owned source material.`
+- Canonical guide: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Workflow link: `https://tachiyomiat.com/translate-manhwa-ai`
+- APK source: `https://tachiyomiat.com/download`
+
+Required assets:
+- Logo/avatar, founder/team byline decision, canonical URL policy, approved screenshots only if sample-safe, article tags, source links, support/pricing links, and owner-confirmed package-fact wording.
+
+Credential references:
+- `SEO_AGENT_DEVTO_API_KEY`
+- `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`
+- `SEO_AGENT_HASHNODE_TOKEN`
+- `SEO_AGENT_TECHNICAL_PUBLISHING_PROFILE_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+
+Publish capability after connection:
+- Agent can prepare owner-approved canonical metadata, excerpts, tags, and article drafts after authorized API connection.
+- Agent must not create accounts, accept terms, publish, comment, import contacts, request followers, or cross-post without exact owner approval.
+
+Next action:
+- Owner chooses DEV, Medium, Hashnode, or manual-only technical publishing, approves the canonical policy, and confirms whether screenshots may be used.
+
+### Reddit / Q&A Official Support Profile
+
+Status: OWNER_ACTION_REQUIRED for official account identity, affiliation disclosure, subreddit/forum rule review, manual terms acceptance, and optional API credential connection.
+
+Prepared packet:
+- `docs/seo-distribution/technical-publishing-syndication-packet.md`
+- `docs/seo-distribution/reviewer-routing-packet.md`
+- `docs/seo-distribution/official-profile-readiness-checklist.md`
+
+Profile fields:
+- Display name: `Nayovi`
+- Disclosure: `Official Nayovi account. Answers should disclose affiliation and avoid promotional links unless the community asks for source material.`
+- No-link answer theme: `How to evaluate OCR and translation quality for permission-approved manga/manhwa/manhua samples.`
+- Canonical source if allowed: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Support link if directly requested: `https://tachiyomiat.com/support`
+
+Required assets:
+- Official account handle, affiliation disclosure, moderator/rule notes per community, no-link answer templates, source-link variants, escalation path for support, and owner-approved blocked-topic list.
+
+Credential references:
+- `SEO_AGENT_REDDIT_CLIENT_ID`
+- `SEO_AGENT_REDDIT_CLIENT_SECRET`
+- `SEO_AGENT_REDDIT_REFRESH_TOKEN`
+- `SEO_AGENT_FORUM_QA_PROFILE_REFERENCE`
+
+Publish capability after connection:
+- Agent can prepare or publish owner-approved answers only where the exact community rules allow official participation and the answer is useful without a backlink.
+- Agent must not create accounts, evade moderation, post promotional threads, send DMs, scrape users, mass-comment, ask for votes, or link unless contextually helpful and allowed.
+
+Next action:
+- Owner chooses whether an official support/Q&A profile should exist and which communities are eligible; until then all Reddit/forum/Q&A work remains draft-only.

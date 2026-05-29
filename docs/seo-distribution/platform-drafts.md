@@ -8,6 +8,10 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | DEV / Medium / Hashnode | Official technical publishing profile | Canonical comic OCR review checklist article | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_ACTION_REQUIRED: official account, canonical URL support, screenshot rights, byline approval, and exact publication approval required. |
+| draft | Reddit / Q&A | Official Nayovi support account | No-link answer on evaluating OCR translator quality and APK source trust | None by default | AUTHORIZED_ACCOUNT_REQUIRED: owner-created official account and community rule review required; links only when directly requested or clearly allowed. |
+| watch | Localization podcast | Nimdzi LIVE / Slator-style localization media | Future visual-storytelling OCR QA topic | None by default | WATCH_ONLY: needs approved-sample observations, byline, screenshots, and product-light angle; no backlink ask. |
+| draft | APK review portal | APKLoon-style APK submission page | Source-link preservation question before APK upload | docs/seo-distribution/reviewer-access-packet.md | OWNER_REVIEW_REQUIRED: no APK upload, account action, mirror permission, or form submission until source-link/no-mirror and package facts are approved. |
 | draft | Webmaster/search entity | Google Search Console / Bing Webmaster Tools | Official domain verification and sitemap submission packet | docs/seo-distribution/webmaster-and-entity-verification-packet.md | OWNER_ACTION_REQUIRED: owner verifies domains and connects credentials; do not write tokens, DNS values, dashboard screenshots, or private crawl data to docs. |
 | draft | Android developer newsletter | Android Weekly link suggestion | Independent APK trust and hosted OCR QA checklist | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_REVIEW_REQUIRED: use official suggestion path only; include link only if current rules invite suggested resources and owner confirms package/screenshot facts. |
 | watch | Localization media | SlatorPod / Slator-style language AI coverage | Visual-storytelling OCR QA topic for approved samples | None by default | WATCH_ONLY: needs approved-sample evidence, byline, screenshots, and product-light angle before any pitch; no backlink or consumer APK ask. |
@@ -166,6 +170,89 @@ Audience: Android developers, app reviewers, direct-APK testers, technical newsl
 Rules risk: medium; use only an official link-suggestion path, do not submit as consumer app promotion, and do not claim package verification until owner confirms facts.
 No-link variant: yes for rule checks.
 Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### DEV / Medium canonical OCR review article
+
+Status: draft
+Target: official DEV, Medium, Hashnode, or newsletter technical publishing profile after owner setup
+Audience: developers, OCR evaluators, Android reviewers, localization operators, AI directory editors
+Rules risk: medium; requires affiliation disclosure, canonical URL support, screenshot rights, and owner approval before publication.
+No-link variant: yes for communities that prefer summaries without links.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link intro:
+
+Comic OCR review needs a different checklist from ordinary document OCR. Before judging the translated sentence, reviewers should check whether the workflow found all text regions, preserved reading order, separated overlapping dialogue, handled sound effects and small side text, and kept the corrected OCR text available for human review.
+
+For manga, manhwa, and manhua samples, the first gate is permission: owned pages, public-domain material, official samples, creator-provided pages, or otherwise approved material only. If the rights or screenshot scope are unclear, the review should stop before public sharing.
+
+Link variant:
+
+Same as above, then add:
+
+Full checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Disclosure: maintained by the Nayovi team.
+
+### Reddit / Q&A no-link official support answer
+
+Status: draft
+Target: subreddit, forum, or Q&A thread only where official participation is allowed and a user asks about OCR translator quality, APK source trust, or responsible-use boundaries
+Audience: manga/manhwa readers, Android power users, side-project builders, support communities
+Rules risk: high; no posting without official account, affiliation disclosure, and community rules review. Prefer no-link answer.
+No-link variant: yes and preferred.
+Link variant after owner/community approval: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link answer:
+
+Official Nayovi account here.
+
+For any comic OCR translator, I would separate the review into two parts before trusting the final translation:
+
+1. Source and permission: use owned, public-domain, official-sample, creator-provided, or otherwise approved pages only.
+2. OCR quality: check whether the tool captured small side text, overlapping balloons, SFX, vertical text, and reading order before judging the translated wording.
+
+If the OCR misses text or merges balloons incorrectly, the translation can look fluent while still being wrong. I would also avoid tools or listings that hide the official app source, pricing, support path, or screenshot boundaries.
+
+Link variant:
+
+Same as above, then add only if the community allows source links:
+
+Checklist I maintain:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### APKLoon-style source preservation fit question
+
+Status: draft
+Target: APKLoon or comparable APK submission/review portal after owner review
+Audience: APK reviewers and Android directory editors
+Rules risk: high; no APK upload, form submission, mirror permission, account action, or review request until owner confirms package facts and source-link handling.
+No-link variant: yes for fit question.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi team,
+
+I am checking fit before submitting anything for Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.
+
+The important boundary is that Nayovi should be reviewed from the official source with pricing, support, responsible-use context, and approved-sample testing attached. It should not be mirrored, relabeled as a chapter source, or tested with unauthorized manga pages.
+
+Would your review process allow a source-first listing that preserves those boundaries, or should I skip submission?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Official source:
+`https://tachiyomiat.com/download`
+
+Reviewer checklist:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 
 No-link variant:
 

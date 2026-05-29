@@ -2,6 +2,25 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Current Branch Cycle
+
+- Verified branch `seo/distribution-20260529T051652Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and current SEO distribution docs before drafting.
+- Advanced account setup priority with two owner-gated official profile tasks:
+  - DEV / Medium / Hashnode technical publishing profile with canonical URL policy, affiliation disclosure, screenshot-rights gate, and `SEO_AGENT_DEVTO_API_KEY`, `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`, `SEO_AGENT_HASHNODE_TOKEN`, and `SEO_AGENT_TECHNICAL_PUBLISHING_PROFILE_REFERENCE` references.
+  - Reddit / Q&A official support profile with disclosed official identity, subreddit/forum rule review, no-link-first answer templates, and `SEO_AGENT_REDDIT_CLIENT_ID`, `SEO_AGENT_REDDIT_CLIENT_SECRET`, `SEO_AGENT_REDDIT_REFRESH_TOKEN`, and `SEO_AGENT_FORUM_QA_PROFILE_REFERENCE` references.
+- Added owned trust asset `docs/seo-distribution/technical-publishing-syndication-packet.md` to turn the OCR checklist into a canonical, product-light technical article plan without leaking secrets or using unsafe screenshots.
+- Researched rotated authority opportunities through current public search:
+  - DEV/Medium technical publishing: possible canonical syndication surface after owner connects official profile and approves screenshots.
+  - Reddit manga/webtoon/Android/SideProject discussions: active but high-risk; draft-only no-link official answers until rules and account authorization exist.
+  - APKLoon: current APK/XAPK submission surface with upload/moderation context; high-risk unless no-mirror and source-link preservation are owner-approved.
+  - Nimdzi LIVE localization podcast: watch-only media surface for future language-AI/OCR QA lessons after approved-sample observations exist.
+  - Manga109-v2026: current research context for owned OCR QA language only, with no benchmark or endorsement claim.
+- Drafted exact value-first assets in `platform-drafts.md` for canonical technical publishing, Reddit/Q&A no-link official support answers, and APKLoon-style source-preservation fit checks.
+- Updated `account-setup.md`, `authority-opportunities.md`, `content-calendar.md`, `link-assets.md`, `platform-drafts.md`, and `docs/growth/backlink-prospects.csv`.
+- No external posting, account creation, login, signup form, CAPTCHA, terms acceptance, contact form submission, directory submission, APK upload, review-code grant, social post, Reddit comment, LinkedIn action, YouTube upload, Product Hunt action, payment, or GitHub external comment was attempted.
+- Next actions: owner chooses official technical publishing and Q&A profiles, approves canonical/screenshot policy, confirms APK package facts and no-mirror stance, and decides whether APKLoon-style portals may receive a fit question without upload.
+
 ## 2026-05-29 Cycle 17
 
 - Verified branch `seo/distribution-20260529T050857Z`; account registry still has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct action.
