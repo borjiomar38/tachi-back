@@ -303,7 +303,7 @@ Next outreach: after cap reset, process qualified replies first. If none are wai
 Category: directory
 Contact path: `contact@aianytool.com`, found through current public search alongside a visible submit-tool path.
 Rationale: AIAnyTool is a broad AI-tool directory, so the fit is only acceptable if Nayovi can be represented accurately as an Android APK plus hosted OCR/AI translation workflow with official APK, support, free trial, paid monthly token plans, and responsible-use boundaries. Do not send if the current submit path requires paid placement, reciprocal links, hidden redirects, forever-free wording, or mirror-first APK handling.
-Status: draft 2026-05-29; not contacted because the sender log already shows 10 same-day outreach sends. Recheck current submission terms after cap reset and handle replies first.
+Status: contacted 2026-05-30; wait for reply before follow-up. Send at most one follow-up after 7 business days only if they ask for listing fields, policy constraints, or review-code expectations.
 
 Subject: Nayovi listing fit for AIAnyTool
 

@@ -41,7 +41,7 @@ const approvedSampleStructuredData = () => {
       headline:
         'How to test AI manhwa translation safely with approved samples',
       description:
-        'A permission-safe guide for testing AI manhwa, manga, and manhua translation with approved samples, OCR review, private QA, review codes, and partner pilot decisions.',
+        'A permission-safe guide for testing AI manhwa, manga, and manhua translation with approved samples, OCR review, private QA, free-trial fit checks, and partner pilot decisions before public sharing or paid-plan escalation.',
       mainEntityOfPage: {
         '@id': `${url}#webpage`,
       },
@@ -63,6 +63,34 @@ const approvedSampleStructuredData = () => {
         text: step.text,
       })),
     },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#readiness-checks`,
+      name: 'Approved-sample review readiness checks',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Screenshot permission is documented',
+          description:
+            'The allowed sample excerpt, source type, sample owner, and attribution note are clear before any public before-and-after screenshot.',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Review access preserves official source links',
+          description:
+            'A reviewer can cite the official APK page, pricing context, support route, and no-chapter-hosting boundary before receiving a dedicated code.',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Partner follow-up has a measurable reason',
+          description:
+            'The pilot has a named feedback owner, language pair, private quality result, and a path toward paid use, review evidence, or a clean stop decision.',
+        },
+      ],
+    },
   ];
 };
 
@@ -73,7 +101,7 @@ export const Route = createFileRoute(
   head: () =>
     buildPublicPageHead(
       'Test AI Manhwa Translation Safely',
-      'Learn how reviewers, creators, communities, and partners can test AI manhwa translation with approved samples, OCR review, private QA, review codes, and responsible sharing decisions.',
+      'Learn how reviewers, creators, and community members can test AI manhwa translation with approved samples, OCR review, private QA, review-code routing, free-trial checks, and clear paid-plan progression.',
       '/guides/test-ai-manhwa-translation-approved-samples',
       {
         keywords: [
@@ -83,6 +111,9 @@ export const Route = createFileRoute(
           'permission safe manga translation',
           'manhwa OCR testing',
           'AI manga translation review code',
+          'Android manga translator APK trial',
+          'Nayovi free trial',
+          'paid token plan',
         ],
         structuredDataGraph: approvedSampleStructuredData(),
       }
