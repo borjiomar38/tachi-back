@@ -44,3 +44,11 @@ This neutral checklist is maintained as a linkable Nayovi trust asset for review
 - For forums, Reddit, Q&A, or community replies, use a no-link version unless product links are explicitly allowed and useful.
 - For Android reviewers and directories, pair the checklist with official source links, support path, pricing, privacy, terms, and responsible-use notes.
 
+
+## SEO Linkability Additions (2026-05-30)
+
+### Compliance-first workflow section
+- Add one comparative matrix for: manual screenshot OCR, built-in mobile OCR, and Nayovi mobile workflow.
+- Publish this matrix with explicit fields: input ownership, permission handling, cloud usage, offline mode readiness, and expected accuracy.
+- Add `FAQ` blocks with direct anchor opportunities to owned pages (`/support`, `/permissions`, `/terms`) without external claims.
+- Include internal links to trial activation and pricing page from checklist steps so outbound referral flow remains high quality and user-task aligned.

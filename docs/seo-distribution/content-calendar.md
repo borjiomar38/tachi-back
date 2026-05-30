@@ -141,3 +141,14 @@ This file is maintained by the SEO distribution agent.
 | draft | official app-review-readiness | Android APK direct source trust language | docs/seo-distribution/android-verification-public-profile-packet.md | Add a public verification-languages section that explains pending vs confirmed package/signing status so reviewers get accurate trust signal without overclaiming. | Owner approves packet fields and package/hash language before publishing any related outbound draft. |
 | draft | evaluate app directory fit | APKPure submit path in app-directory profile | docs/seo-distribution/platform-drafts.md | Source-first APK source and anti-mirror fit draft for official app-directory channels with screenshot/permissions and test-scope boundaries. | Owner confirms form fields and package/hash facts before external submission. |
 | draft | prepare AI directory listing readiness | ToolDirectory.AI free-trial/premium field fit | docs/seo-distribution/platform-drafts.md | Prepare pricing-model-safe and responsibility-first eligibility message for AI directories with Android/translation fit if pricing and supported channels are verified. | Owner approves no-link-first question and final fit before posting. |
+
+## 2026-05-30 Planned Owned Content
+
+| date | topic | keywords | search_intent | target_url | status | next_action |
+|---|---|---|---|---|---|---|
+| 2026-05-30 | Build a safer manga OCR + translation workflow without violating publisher rights | manga OCR checklist, AI manga translation, safe OCR workflow | informational + trust | https://tachiyomiat.com/comic-ocr-checklist | in_progress | Add Android-specific checklist and 2 case-use screenshots |
+| 2026-05-30 | Nayovi legal-safe translation comparison guide | Nayovi vs manual OCR workflow, Nayovi safe workflow, OCR accuracy |
+| transaction/comparison | https://tachiyomiat.com/comic-ocr-checklist | draft_ready | Publish short comparison bullets and internal links to free trial + support page |
+| 2026-05-30 | Product launch narrative draft for external launch communities | AI translation tool launch, manga translation AI, OCR mobile workflow | commercial intent | https://nayovi.com | draft_ready | Convert to Product Hunt/LinkedIn-ready text variant and no-link variant |
+
+| 2026-05-30 | Nayovi legal-safe translation comparison guide | Nayovi comparison, manual OCR vs app workflow, translation permissions | transaction/comparison | https://nayovi.com | draft_ready | Add comparison matrix with legal/technical criteria and publish linkable example |

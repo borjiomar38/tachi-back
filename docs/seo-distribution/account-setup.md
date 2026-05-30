@@ -2837,3 +2837,11 @@ Next action:
   - **Secret/API reference:** `SEO_AGENT_APK_DIRECTORY_PROFILE_REFERENCE` (no secret required for draft copy).
   - **Publish capability after connection:** Keep directory drafts review-only until official package metadata and submission authorization are approved.
   - **Next action:** Owner confirms package name and whether APKPure terms allow no-link-first fit question before any contact.
+
+## 2026-05-30 Cycle Additions
+
+| priority | platform | purpose | status | owner/manual step | required assets | secret/API or credential reference | credential storage location | publish capability after connection | next action |
+|---|---|---|---|---|---|---|---|---|---|
+| P0 | Google Search Console (GSC) | Confirm ownership and index control for trust and search health | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: add official property and complete verification in GSC (no automation allowed) | Homepages, sitemap URL, canonical pages, org info for profile | SEO_AGENT_GSC_VERIFICATION_METHOD; SEO_AGENT_GSC_VERIFICATION_TOKEN | `/opt/tachi-back/.env.seo-distribution-agent` (chmod 600) | Run indexing requests and coverage monitoring on key assets once verified | Prepare exact canonical proof copy and request OWNER verification |
+| P1 | Bing Webmaster (URL Submission + indexing) | Secondary search/index trust signal and query visibility | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/claim property and submit sitemap (manual ownership step only) | sitemap.xml, robots.txt, privacy policy, support page | SEO_AGENT_BING_VERIFICATION_TOKEN | `/opt/tachi-back/.env.seo-distribution-agent` (chmod 600) | Enable crawl/coverage checks and submit top priority pages after property ownership | Prepare submission packet with brand profile and legal links |
+| P2 | YouTube Brand Channel | Publish workflow demos and permission-safe product education | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create official channel and complete brand setup | Channel banner, profile bio, demo script, 1–2 short videos | SEO_AGENT_YOUTUBE_CHANNEL_ID; SEO_AGENT_YOUTUBE_API_TOKEN | `/opt/tachi-back/.env.seo-distribution-agent` (chmod 600) | Publish no-sales-first tutorials and pinned non-promotional resources | Create publish-ready playlist and ownership links in About |

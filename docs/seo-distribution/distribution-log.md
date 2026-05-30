@@ -1422,3 +1422,12 @@ Next actions:
   - `docs/growth/backlink-prospects.csv` entries added for this cycle’s targets.
 - No form submissions, APK uploads, verification actions, review-code grants, social posts, Reddit/LinkedIn/YouTube actions, or GitHub external comments were performed.
 - Next actions: owner confirms package/signing facts, then we can move the APKPure and ToolDirectory rows from fit-question to authorized external draft/submit mode with strict anti-mirror rules.
+
+## 2026-05-30 Distribution Cycle (seo/distribution-20260530T230908Z)
+
+- Account setup queue advanced with 3 setup packets: Google Search Console, Bing Webmaster, and official Nayovi YouTube channel. Two are marked OWNER_ACTION_REQUIRED and one is prepared for immediate follow-up.
+- Authority discovery added: APKMirror dev listings (Android directory), FutureTools AI directory submission, and Product Hunt launch path.
+- Linkable owned asset updated by adding new structured expansion plan for `comic-ocr-checklist` and trust-asset framing for Nayovi profile canonicalization.
+- Prepared platform drafts for FutureTools, APKMirror, and Product Hunt, including no-link and link variants to reduce rule risk.
+- Added content-calendar and link-assets rows aligned to the safe workflow + verification narrative and launch storytelling.
+- No external posting executed in this run (authorized account/API workflow not fully configured).
