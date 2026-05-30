@@ -4,6 +4,26 @@ This file is maintained by the SEO distribution agent.
 
 Only official Nayovi-owned accounts belong here. Do not add fake personas, throwaway accounts, passwords, tokens, recovery codes, cookies, or private credentials. Store secret values only in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions or an approved secret store; this document may reference variable names only.
 
+## 2026-05-30 Current Cycle Setup Advancement
+
+Status: OWNER_ACTION_REQUIRED for platform creation and manual account setup on two high-priority official surfaces. No external posting or form-submission actions were attempted this cycle.
+
+### Priority official setup tasks advanced
+
+1. LinkedIn company/founder profile setup
+- Platform: LinkedIn (`accounts.json` entry is `draft`, not configured)
+- Exact profile fields prepared: canonical links, display name, official APK/supported links, pricing/support URLs, responsible-use line, package-status pending language, and disclosure-ready founder/company bio.
+- Required assets/reference: `docs/seo-distribution/official-profile-readiness-checklist.md`, `docs/seo-distribution/official-launch-profile-packet.md`, `docs/seo-distribution/platform-drafts.md` (LinkedIn row).
+- Secret/API references: `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`, `SEO_AGENT_LINKEDIN_ORGANIZATION_ID`.
+- Next action: owner creates/claims official account and approves whether publishing remains manual-only or API-assisted.
+
+2. Reddit official/community account setup
+- Platform: Reddit (`accounts.json` entry is `draft`, not configured)
+- Exact profile fields prepared: official Nayovi/founder affiliation disclosure, no-link-first support-first templates, support path, and community-rules checklist before any posting.
+- Required assets/reference: `docs/seo-distribution/official-profile-readiness-checklist.md`, `docs/seo-distribution/platform-drafts.md` (Reddit rows), `docs/seo-distribution/technical-publishing-syndication-packet.md`.
+- Secret/API references: `SEO_AGENT_REDDIT_CLIENT_ID`, `SEO_AGENT_REDDIT_CLIENT_SECRET`, `SEO_AGENT_REDDIT_REFRESH_TOKEN`.
+- Next action: owner creates official account and approves subreddit/community strategy before any external response.
+
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | high | Official launch/profile readiness packet | Shared profile fields for Product Hunt, YouTube, LinkedIn, DEV, Medium, and launch-community trust surfaces | setup_packet_prepared_owner_action_required | Owner approves official profile identity, public contact path, screenshots/demo media, launch timing, API scope, and package/signing language | `docs/seo-distribution/official-launch-profile-packet.md`, logo/avatar, banner, approved screenshots, demo video, official links, review-code policy reference | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_YOUTUBE_REFRESH_TOKEN`, `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`, `SEO_AGENT_LINKEDIN_ORGANIZATION_ID`, `SEO_AGENT_DEVTO_API_KEY`, `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`; no secret values in docs | Agent can sync owner-approved copy and metadata after authorized account/API connection; no public posting, upload, comments, DMs, or launch action while accounts are unconfigured | Owner reviews the packet, approves which profiles are official, and confirms screenshots/demo/package facts before any profile goes live. |

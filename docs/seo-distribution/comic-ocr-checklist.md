@@ -2,6 +2,26 @@
 
 This neutral checklist is maintained as a linkable Nayovi trust asset for reviewer packets, GitHub maintainer questions, Android/newsletter submissions, and community moderator review. It is intentionally useful without requiring a product link.
 
+## How to cite this asset
+
+- Owned review packet link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Supporting flow page: `https://tachiyomiat.com/guides/translation-support-workflow`
+- Responsible-sample policy: `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+- Android verification context language: `docs/seo-distribution/android-verification-public-profile-packet.md`
+
+## Index snippet
+
+Use this short summary in directories, newsletters, and community posts where a structured trust signal is needed:
+
+`Nayovi uses a structured comic OCR reviewer checklist for manga, manhwa, and webtoon workflows. The review process verifies sample permission, text-region coverage, reading-order handling, OCR completeness, and glossary consistency before translation quality conclusions. The checklist is product-light and links to public permission and support assets only when rules allow links.`
+
+## Structured publishing fields
+
+- Audience fit: app reviewers, localization teams, OCR researchers, technical communities
+- Search intent: OCR checklist, manga/manhwa AI translation QA, Android direct APK trust
+- Recommended anchor text: "comic OCR translation QA checklist"
+- No-spam policy: no link required in the first response unless rules and context allow explicit references
+
 ## Responsible Sample Scope
 
 - Confirm the sample is owned, public-domain, an official preview, creator-approved, or otherwise permission-approved for OCR and translation testing.
@@ -43,4 +63,3 @@ This neutral checklist is maintained as a linkable Nayovi trust asset for review
 - For GitHub or newsletter submissions, use this checklist as the resource and mention Nayovi only when the context allows affiliation disclosure.
 - For forums, Reddit, Q&A, or community replies, use a no-link version unless product links are explicitly allowed and useful.
 - For Android reviewers and directories, pair the checklist with official source links, support path, pricing, privacy, terms, and responsible-use notes.
-

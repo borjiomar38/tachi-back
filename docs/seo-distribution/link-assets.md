@@ -2,6 +2,12 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-30 Added Assets
+
+| Status | Asset | Audience | Link target | Why it can earn links | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | Android verification and responsible-source checklist packet | Android reviewers, app-testing portals, Android newsletters | docs/seo-distribution/android-verification-public-profile-packet.md | Product-light trust packet now includes pending verification language and no-mirror stop conditions so reviewers can evaluate a source-first APK trust approach before link requests. | Owner approves package/signing public wording and screenshot-policy before use. |
+
 | Status | Asset | Audience | Link target | Why it can earn links | Next action |
 | --- | --- | --- | --- | --- | --- |
 | draft | Android newsletter resource pitch | Android Weekly-style editors, Android developers, APK reviewers, technical founders | docs/seo-distribution/android-newsletter-resource-pitch.md | Turns Nayovi's OCR checklist into a developer-facing resource suggestion about independent APK source checks, sample-safe OCR testing, screenshot boundaries, and reviewer access separation without asking for a consumer app backlink. | Owner approves package facts, screenshots, and current outlet rules before any manual submission. |

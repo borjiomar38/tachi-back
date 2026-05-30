@@ -2,6 +2,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-30 Current Cycle Additions
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | independent Android APK trust and verification readiness | android verified app review fit and source-first pitch | docs/seo-distribution/android-verification-public-profile-packet.md | Build a reusable no-link-first internal pitch for Android review and listing surfaces that verifies official source links, supported samples, and package-signing boundaries. | Keep draft-only until owner confirms package fields and screenshot permissions. |
+| draft | source-trust support for localization podcast/community | visual storytelling OCR QA | docs/seo-distribution/platform-drafts.md | Prepare a no-link visual-storytelling OCR QA talking point for Nimdzi/Slator-style audiences focused on reading order, glossary control, and caption safety. | Add as topic watch-only until approved-sample observations and media-byline are approved. |
+| draft | high-authority app review directories and editorial programs | verified app review and Android feature program watchlist | docs/seo-distribution/authority-opportunities.md | Document qualified no-link-to-link fit checks for AndroidAuthority, Verified App Reviews, and AppBrain features before any manual submission. | Validate current terms on each surface during the next account-action review window. |
+
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
 | draft | suggest Android newsletter resource without app spam | Android APK OCR reviewer checklist | docs/seo-distribution/android-newsletter-resource-pitch.md | Android Weekly-style newsletters can cite Nayovi's checklist only if the pitch is a resource about independent APK trust, sample-safe OCR testing, and screenshot boundaries rather than a consumer app launch. | Owner confirms package/signing/hash wording and screenshots before any manual link suggestion. |
