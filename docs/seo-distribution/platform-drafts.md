@@ -4,6 +4,14 @@ This file is maintained by the SEO distribution agent.
 
 External platform drafts are for authorized-account posting only. Do not create accounts, bypass platform login, or post promotional backlinks automatically. Every draft should be useful without the backlink and should include a no-link variant when the community may reject links.
 
+## 2026-05-30 Cycle Additions
+
+| Status | Platform | Community/location | Draft topic | Link target | Review notes |
+| --- | --- | --- | --- | --- | --- |
+| draft | Android Authority | Android media and app safety coverage | Source-of-truth Android APK trust and hosted OCR QA checklist pitch | docs/seo-distribution/android-verification-public-profile-packet.md | OWNER_REVIEW_REQUIRED: owner-configured channels only. This row is draft-only and avoids app-install or review-code asks until package/signing facts are approved. |
+| draft | AppBrain | Android app directory / featured apps candidate | Accuracy-first listing packet for official-source APK, free trial + paid tokens, and permissions policy | https://nayovi.com or https://tachiyomiat.com/download | OWNER_REVIEW_REQUIRED: verify current listing fields before any manual submission; no mirror-first APK framing, no reciprocal-link claims, and no paid placement. |
+| watch | Verified App Reviews | Consumer Android review/helpful-safety context | Product-light no-link watchlist question for reviewer-safe source handling and permission-safe OCR claims | None by default | OWNER_REVIEW_REQUIRED: do not engage public threads automatically; use only if an editor explicitly requests source details and allows reference links. |
+
 ## Draft Queue
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
