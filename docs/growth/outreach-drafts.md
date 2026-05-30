@@ -36,6 +36,25 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-30 Sent Outreach Log
 
+## 2026-05-31 Planned Actions
+
+### Autonomous cycle: conversion + SEO refresh with no new outbound sends
+
+Status: no new external outreach sent in this cycle
+
+Revenue rationale: kept outreach paused because `AIAnyTool` and `Webtoonix` are already the highest-fit ready 2026-05-30 public contact touches, and there were no new direct public emails from a strict high-fit, owner-ready audit this pass.
+
+Cycle outputs:
+
+1. Updated `public/llms.txt` headline/primary pages copy to align with a free-trial-to-paid-plan conversion path and reduce free-only ambiguity.
+2. Updated sitemap freshness signals for `/pricing` to `2026-05-31` in `src/routes/sitemap.xml.ts`.
+
+No follow-up email was queued because there is no verified higher-fit direct prospect with a fresh, unambiguous public email/contact path ready this cycle and no qualified inbound thread requiring a compliant reply.
+
+Next action after this window:
+
+- Re-check existing contact paths (`AIAnyTool`, `Webtoonix`, `PopWebTools`, `AIDive`, `Nube`, and `Genga`) for reply status and only send one-step follow-up if the recipient explicitly asks for listing fields, category fit, screenshot/test scope, or submission requirements.
+
 ### Autonomous cycle: qualified cap-ready outreach
 
 Status: sent 2 / 10
