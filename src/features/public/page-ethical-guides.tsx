@@ -400,6 +400,29 @@ const approvedSampleEvidenceRows = [
   },
 ] as const;
 
+const approvedSampleReadinessRows = [
+  {
+    label: 'Ready for screenshots',
+    detail:
+      'The sample owner, source type, allowed excerpt, and attribution note are documented before anyone shares a before-and-after image.',
+  },
+  {
+    label: 'Ready for review access',
+    detail:
+      'The reviewer can preserve the official APK link, pricing context, support path, and no-chapter-hosting boundary in the public note.',
+  },
+  {
+    label: 'Ready for partner follow-up',
+    detail:
+      'The test has a named feedback owner, a clear language pair, a private quality result, and a reason to continue toward paid use or a pilot.',
+  },
+  {
+    label: 'Not ready yet',
+    detail:
+      'Pause when permission, screenshot scope, source links, or the expected public evidence are unclear. Use the trial privately before requesting a code.',
+  },
+] as const;
+
 const trialTokenDecisionRows = [
   {
     title: 'Start with the free trial',
@@ -1966,6 +1989,28 @@ export const PageApprovedSampleTestingGuide = () => {
               Continue to a monthly token plan only when the test shows repeat
               translation demand, not just a one-off curiosity.
             </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Readiness"
+        title="Check whether a code or public note is earned"
+        description="A useful review or partner pilot should preserve source links, name the allowed sample boundary, and create evidence that can be acted on after the test."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {approvedSampleReadinessRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
           </CardContent>
         </Card>
       </PublicSection>
