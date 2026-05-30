@@ -4310,3 +4310,46 @@ Same as above, then add:
 
 Checklist:
 `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+| draft | Android app directory | APKPure submission path | Source-first APK directory fit question for direct-source trust surfaces | docs/seo-distribution/platform-drafts.md | Official APKPure submission path (OWNER_REVIEW_REQUIRED) |
+
+### APKPure fit question draft
+
+Status: draft
+Target: APKPure app directory reviewers and submission checkers
+Audience: Android users and app readers evaluating direct APK sources
+Rules risk: medium; keep to owner-reviewed fit question with explicit source-first and anti-mirror constraints.
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link draft:
+
+Hi,
+
+I am checking whether a listing fit exists for an Android OCR + hosted AI translation workflow with an official download URL and explicit no-chapter-hosting policy.
+
+Nayovi works in `manga`, `manhwa`, and `manhua` reader workflows and does not host protected catalog content. We focus on owned/public-domain/official-sample use cases and publish source paths for support, pricing, and policy transparently.
+
+I want to avoid mirror-heavy or misleading entries. Before submitting a listing, do you accept entries that keep official download links and do not require APK upload, mirror hosting, or open-source/forever-free labeling for this type of workflow?
+
+If the fit is acceptable, I can provide the non-promotional official packet in your preferred format.
+
+Best,
+Nayovi team
+
+Link variant:
+
+Hi,
+
+I am checking listing fit for one official workflow page:
+`https://tachiyomiat.com/download`
+
+Use-case: Android manga/manhwa/manhua reader workflow with hosted OCR + translation guidance, official support/pricing pages, and a no-chapter-hosting responsible-use policy. I can also provide:
+- `https://tachiyomiat.com/support`
+- `https://tachiyomiat.com/pricing`
+- `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+I want to ensure your listing rules allow source-first entries without APK mirroring requirements.
+
+Best,
+Nayovi team

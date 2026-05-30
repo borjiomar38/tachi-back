@@ -258,6 +258,69 @@ Next action:
 
 ### Official Open Social Profile
 
+## 2026-05-30 Current Cycle Setup Advancement
+
+### Android Verification Public Profile Packet
+
+Status: OWNER_ACTION_REQUIRED for package registration, identity verification, terms acceptance, package/signing/hash confirmation, screenshot/demo approval, and any API credential connection.
+
+Prepared packet:
+- `docs/seo-distribution/android-verification-public-profile-packet.md`
+
+Public profile fields:
+- Display name: `Nayovi`
+- Short description: `Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Brand domain: `https://nayovi.com`
+- Official APK source: `https://tachiyomiat.com/download`
+- Primary app site: `https://tachiyomiat.com`
+- Support: `https://tachiyomiat.com/support`
+- Responsible-use line: `No chapter hosting; use only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Required assets:
+- Package name, current APK filename/version, APK SHA-256, signing-certificate fingerprint, developer-verification status wording, approved screenshots, approved demo clips, sample-safe pages, review-code policy, and public support path.
+
+Credential references:
+- `SEO_AGENT_ANDROID_DEVELOPER_CONSOLE_REFERENCE`
+- `SEO_AGENT_PLAY_CONSOLE_REFERENCE`
+- `SEO_AGENT_APK_DIRECTORY_PROFILE_REFERENCE`
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`
+- `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`
+- `SEO_AGENT_SCREENSHOT_ASSET_REFERENCE`
+
+Publish capability after connection:
+- Agent can prepare owner-approved Android profile metadata, app-testing briefs, reviewer replies, and directory fields after package facts and official credentials are connected.
+- Agent must not create accounts, accept terms, verify identity, upload APKs, submit packages, grant private codes, publish screenshots, or claim verified status automatically.
+
+Next action:
+- Owner completes Android developer verification or package-registration steps manually, confirms public package/signing/hash wording, approves screenshot/demo assets, and decides which APK review or app-testing surfaces may receive the packet.
+
+### Pricing-Aware AI Directory Submitter Profile
+
+Status: OWNER_REVIEW_REQUIRED for official submitter identity, source-link behavior, pricing label, terms acceptance, category choice, and any manual listing action.
+
+Prepared packet:
+- `docs/seo-distribution/free-trial-directory-listing-brief.md`
+- `docs/seo-distribution/directory-submission-scorecard.md`
+
+Public profile fields:
+- Tool name: `Nayovi`
+- Category candidates: `Translation`, `OCR`, `Productivity`, `Android`, or `Reading` only where the directory supports accurate categorization.
+- Pricing label: `Free Trial`, `Trial Only`, or `Freemium` only if paid monthly token plans remain visible.
+- Canonical links: `https://nayovi.com`, `https://tachiyomiat.com/download`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support`
+- Responsible-use line: `Nayovi does not host chapters; use only with owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Credential references:
+- `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`
+- `SEO_AGENT_AI_FREE_TRIAL_DIRECTORY_REFERENCE`
+- `SEO_AGENT_DIRECTORY_SUBMITTER_PROFILE_REFERENCE`
+
+Publish capability after connection:
+- Agent can prepare exact field-level copy for SpotFreeAI, FreeAIList, Try.fm, ToolDirectory.AI, AiMatch, AI Cloudbase, and comparable directories after owner approval and live-field review.
+- Agent must reject forever-free, open-source, mirror-first APK, reciprocal-link, paid-backlink, hidden-redirect, fake-review, or unsupported-ranking flows.
+
+Next action:
+- Owner chooses which pricing-aware directory may receive a manual fit question first and confirms whether trial plus paid-token wording is acceptable for that surface.
+
 ## 2026-05-29 Cycle 12 Setup Advancement
 
 ### Search and Webmaster Verification Follow-Through
@@ -2753,3 +2816,24 @@ Publish capability after connection:
 
 Next action:
 - Owner decides whether launch directories belong in the current trust stack and rejects any flow built around paid backlinks, reciprocal links, hidden redirects, artificial reviews, or vote requests.
+## 2026-05-30 Cycle Setup Advancement
+
+- **Priority advanced:** Official Android verification public profile packet
+  - **Status:** setup_packet_prepared
+  - **Platform:** Android verification profile / public trust copy
+  - **Purpose:** Keep one public Android-verification support asset for GSC, app-testing, APK directories, and media contacts so no claim of completed verification is published.
+  - **Progress:** Public profile copy and stop conditions were added to `docs/seo-distribution/android-verification-public-profile-packet.md` with non-secret credential references and package/signing gates.
+  - **Required assets:** Official domain/app links, package/hash template, pending-language template, screenshot/safety checklist, review-code policy placeholder.
+  - **Secret/API reference:** `SEO_AGENT_ANDROID_DEVELOPER_CONSOLE_REFERENCE`, `SEO_AGENT_PLAY_CONSOLE_REFERENCE`, `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`.
+  - **Publish capability after connection:** Prepare source-first review replies, directory fit questions, and APK/Android verification readiness language only after owner confirms public package/signing facts.
+  - **Next action:** Owner creates official Android verification public profile packet in the approved secret store and confirms package name/hash/developer-verification language.
+
+- **Priority advanced:** APKPure / app directory public profile readiness
+  - **Status:** setup_packet_prepared_owner_action_required
+  - **Platform:** Android app directory (APKPure)
+  - **Purpose:** Prepare a no-link-first fit question and owner-approved package fields before any manual form actions.
+  - **Progress:** Added owner action and stop conditions; platform requires API/form handling review and no upload without verified package/signing facts.
+  - **Required assets:** Official APK source, pricing/support links, screenshot set, package/signing status, review-code policy, responsible-use line.
+  - **Secret/API reference:** `SEO_AGENT_APK_DIRECTORY_PROFILE_REFERENCE` (no secret required for draft copy).
+  - **Publish capability after connection:** Keep directory drafts review-only until official package metadata and submission authorization are approved.
+  - **Next action:** Owner confirms package name and whether APKPure terms allow no-link-first fit question before any contact.
