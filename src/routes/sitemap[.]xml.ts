@@ -93,7 +93,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/test-ai-manhwa-translation-approved-samples': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-30',
     priority: '0.85',
   },
   '/guides/free-trial-vs-paid-token-plan': {

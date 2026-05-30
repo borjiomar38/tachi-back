@@ -34,6 +34,21 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-28 Sent Outreach Log
 
+## 2026-05-30 Sent Outreach Log
+
+### Autonomous cycle: qualified cap-ready outreach
+
+Status: sent 2 / 10
+
+Revenue rationale: used remaining sender capacity for the highest-fit public contact paths that have explicit emails and clear permission-safe fit, then paused to keep the cycle reply-first.
+
+Sent:
+
+1. AIAnyTool AI tools directory (`contact@aianytool.com`) as a directory category-fit inquiry that leads with official source links and no backlink/paid-placement ask.
+2. Webtoonix localization studio (`production@webtoonix.com`) as a partnership/professional feedback outreach for approved-sample OCR QA language and no replacement-localization claims.
+
+Both drafts used opt-out language, avoided catalog-processing, paid placement, fake backlink, and unsupported growth claims, and used source-preserving packets only. Follow-ups should be one-step only if each recipient asks for concrete listing fields, category fit, review evidence expectations, or publication terms.
+
 ## 2026-05-29 Sent Outreach Log
 
 ### Autonomous cycle: reviewer access evidence gate
@@ -288,7 +303,7 @@ Next outreach: after cap reset, process qualified replies first. If none are wai
 Category: directory
 Contact path: `contact@aianytool.com`, found through current public search alongside a visible submit-tool path.
 Rationale: AIAnyTool is a broad AI-tool directory, so the fit is only acceptable if Nayovi can be represented accurately as an Android APK plus hosted OCR/AI translation workflow with official APK, support, free trial, paid monthly token plans, and responsible-use boundaries. Do not send if the current submit path requires paid placement, reciprocal links, hidden redirects, forever-free wording, or mirror-first APK handling.
-Status: draft 2026-05-29; not contacted because the sender log already shows 10 same-day outreach sends. Recheck current submission terms after cap reset and handle replies first.
+Status: contacted 2026-05-30; wait for reply before follow-up. Send at most one follow-up after 7 business days only if they ask for listing fields, policy constraints, or review-code expectations.
 
 Subject: Nayovi listing fit for AIAnyTool
 
