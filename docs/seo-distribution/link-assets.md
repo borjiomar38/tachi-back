@@ -161,3 +161,10 @@ This file is maintained by the SEO distribution agent.
 
 | draft | Android verification public profile packet | Android reviewers, app directories, AI directories, partner diligence, growth agent | docs/seo-distribution/android-verification-public-profile-packet.md | A source-of-truth packet for package status, source links, verification pending language, screenshot policy, and review-code boundaries for Android-facing opportunities. | Keep as owned gate before any APK directory/media/editorial action. |
 | draft | APKPure fit message template | APKPure and Android app directory review surfaces | docs/seo-distribution/platform-drafts.md | Source-first fit question and safe no-link wording avoids mirror/engagement manipulation and focuses on official-source checks and approved sample scopes. | Keep as no-link first; only send link variant after API/owner confirmation. |
+
+## 2026-05-30 Cycle Additions
+
+| asset_name | type | target_url | intent | source_type | publish_ready | owner_review | notes |
+|---|---|---|---|---|---|---|---|
+| Comic OCR Checklist + Trust Package | Owned guide page update | https://tachiyomiat.com/comic-ocr-checklist (or canonical equivalent) | Transactional + trust + SEO anchor | On-site checklist + guide hub | partial (content section added) | pending | Expand checklist into comparison and workflow examples before external pitching |
+| Nayovi Ownership + Verification Checklist | Trust asset (meta-doc) | https://nayovi.com (company/about + links) | Commercial intent + reassurance | Company pages + profile bios | not_ready | pending | Use canonicalized company profile snippet as reusable source-of-truth for every platform draft |

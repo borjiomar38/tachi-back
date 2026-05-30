@@ -4353,3 +4353,29 @@ I want to ensure your listing rules allow source-first entries without APK mirro
 
 Best,
 Nayovi team
+
+## 2026-05-30 Priority Drafts
+
+### Opportunity: FutureTools / AI directory
+- target: futuretools.io submission listing
+- audience: AI productivity + creator users searching translation tooling
+- rules risk: unknown exact listing limits; keep non-promotional, no false claims
+- no-link variant: "For creators handling foreign scripts, safe workflow checklists matter before any OCR automation." + invite to comment and share their workflow checklist.
+- link variant: "If helpful, our public checklist shows a permission-safe process for OCR/translation tasks." with canonical link to `https://tachiyomiat.com/comic-ocr-checklist`.
+- draft_status: ready_to_send_on_authorized_account
+
+### Opportunity: APKMirror developer visibility
+- target: https://www.apkmirror.com/developers/
+- audience: Android users comparing official APK distributors and tooling quality
+- rules risk: must provide only truthful ownership/provenance details and avoid promotional-only wording
+- no-link variant: community note only: "Need a checksum-safe, permission-safe mobile translation workflow with no screenshot storage?"
+- link variant: include product homepage + privacy-safe permissions summary only after profile approval
+- draft_status: ready_to_send_on_authorized_account
+
+### Opportunity: Product Hunt launch prep
+- target: Product Hunt launch page
+- audience: builders, translators, localization creators
+- rules risk: launch-only timing and no spammy pre-sales wording
+- no-link variant: launch teaser message with value-first pain points and 3 bullet outcomes
+- link variant: founder/company page + checklist resource as secondary proof after account confirmation
+- draft_status: draft_ready_pending_account_setup
