@@ -2114,6 +2114,54 @@ The owner-provided English manhwa translation demo is available on the VPS for s
 
 Use this asset when a reviewer, partner, investor, or directory specifically needs proof, a walkthrough, or review material. Do not attach it blindly to bulk outreach; mention it only when it supports the individual prospect.
 
+## 2026-05-28 Publisher and Localization Partner Drafts
+
+### WEBTOON partnership feedback hold
+
+Category: creator platform
+Contact path: `dl_linewebtoon_ad@webtoonscorp.com` for advertising and partnership opportunities, listed on WEBTOON's current public contact page. The same page also lists separate product support, IP/licensing, and press routes.
+Rationale: WEBTOON is a large creator and webcomic platform. Nayovi should only approach with a permission-safe, approved-sample workflow note, not a catalog translation pitch or backlink request.
+Status: draft only; daily cap is already full for 2026-05-28 and the exact department/angle should be rechecked before sending.
+
+Subject: Approved-sample Android translation workflow feedback
+
+Hi WEBTOON partnerships team,
+
+I am building Nayovi, an Android APK for readers and reviewers who need hosted OCR and AI translation support for approved manga, manhwa, manhua, and webcomic samples.
+
+I am not asking to translate WEBTOON catalog content or use creator work without permission. The fit I am exploring is narrower: whether a permission-safe Android workflow could help with approved samples, accessibility-style evaluation, reader research, or partner review codes where the creator or rights holder explicitly allows testing.
+
+The public pilot brief is here: https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot
+
+If this is useful for your partnerships or creator-facing team, I can send screenshots, a short narrated demo, and a private review code. If it is not relevant, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
+### Amimaru OCR QA consultation hold
+
+Category: localization partner
+Contact path: `sales@amimaru.com`, listed on Amimaru's public site for quotes, questions, and consultation.
+Rationale: Amimaru is a professional manga translation and typesetting service with explicit quality-control positioning. The only acceptable angle is expert feedback on OCR QA and human-review handoff, not positioning Nayovi as a replacement for professional localization.
+Status: draft only; hold until approved-sample screenshots or QA measurements are ready.
+
+Subject: Manga OCR QA checklist feedback request
+
+Hi Amimaru team,
+
+I am building Nayovi, an Android APK that helps readers and reviewers run hosted OCR and AI translation on approved manga/manhwa/manhua samples.
+
+I am reaching out because your team focuses on professional manga translation, typesetting, and quality control. I would value feedback on whether our public OCR QA checklist covers the right review points before a sample is shared or used in a pilot: permission scope, OCR coverage, reading order, glossary consistency, and human correction notes.
+
+Checklist: https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+
+Nayovi is not meant to replace professional localization or process publisher content without approval. The goal is a clearer handoff for approved samples and reader/reviewer tests.
+
+If this is useful, I can send a short demo and the current approved-sample pilot brief. If it is not relevant, reply "opt out" and I will not follow up.
+
+Best,
+Nayovi team
+
 ## 2026-05-24 Current Narrated Demo Asset Note
 
 The preferred/current Nayovi demo asset is now the polished narrated demo:
