@@ -67,7 +67,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     ],
   },
   excerpt:
-    'A practical guide to Nayovi for readers searching for manhwa, manhua, manga translation, and a consistent Android APK download path.',
+    'A practical guide to Nayovi for readers searching for manhwa, manhua, manga translation, and a consistent Android APK download path from free trial to monthly token plans.',
   heroImageUrl: null,
   imageAlt:
     'Dark cinematic manhwa-style Nayovi reader scene with an Android translation workflow.',
@@ -99,12 +99,12 @@ export const fallbackBlogArticle: BlogArticleDetail = {
   manhwaTitle: 'Nayovi',
   manhwaType: 'manhwa',
   metaDescription:
-    'Download Nayovi for Android and learn how the app supports TachiyomiAT, Tachiyomi, Mihon, manga, manhwa, and manhua translation with hosted OCR and redeem-code activation.',
+    'Download Nayovi for Android and learn how the app supports TachiyomiAT, Tachiyomi, Mihon, manga, manhwa, and manhua translation with free trial, redeem-code activation, and monthly token plans.',
   publishedAt: '2026-05-01T00:00:00.000Z',
   searchIntent: 'TachiyomiAT Tachiyomi Mihon download manhwa translation app',
   slug: 'download-nayovi-for-manhwa-translation',
   title: 'Download Nayovi for Manhwa and Manga Translation',
-  updatedAt: '2026-05-01T00:00:00.000Z',
+  updatedAt: '2026-05-31T00:00:00.000Z',
   uxReview: {
     notes: [
       'Article uses the fixed introduction, section, reading profile, CTA, FAQ, and disclaimer structure.',
