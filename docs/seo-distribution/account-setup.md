@@ -1325,6 +1325,56 @@ Next action:
 Public profile fields:
 - Organization name: `Nayovi`
 - Website: `https://nayovi.com`
+
+### Substack / Newsletter Official Profile
+
+Status: OWNER_ACTION_REQUIRED for official account creation, sender/profile approval, and any publication workflow.
+
+Profile fields:
+- Publication name: `Nayovi Updates`
+- Short description: `Official updates on Nayovi's Android OCR and AI translation workflow, APK trust notes, reviewer packets, and permission-safe manga, manhwa, and manhua sample testing.`
+- Website: `https://nayovi.com`
+- Primary source link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+
+First issue packet:
+- Title: `What reviewers should verify before citing an independent Android OCR APK`
+- Angle: source-of-truth APK URL, SHA-256/build metadata, support path, pricing path, screenshot rights, review-code scope, and no-chapter-hosting boundaries.
+- Link target: `docs/seo-distribution/android-developer-verification-readiness.md` until the owner approves a public web version.
+
+Credential reference:
+- `SEO_AGENT_SUBSTACK_PROFILE_REFERENCE` only. Do not store login data, subscriber exports, verification tokens, or private mailing lists in docs.
+
+Agent capability after connection:
+- The agent can draft public newsletter issues and archive copy after owner approval. It must not import contacts, send bulk email, scrape subscribers, or publish without an official account and owner-approved issue copy.
+
+Next action:
+- Owner creates/connects the official newsletter profile, confirms sender identity, and approves whether the first issue should remain a public archive-only trust signal.
+
+### Product Hunt Official Launch Profile
+
+Status: OWNER_ACTION_REQUIRED for maker/company setup, terms acceptance, launch timing, and gallery assets.
+
+Public product fields:
+- Product name: `Nayovi`
+- Tagline: `Android OCR translation workflow for manga and manhwa`
+- Short description: `Nayovi is an Android APK with hosted OCR, AI translation, redeem-code activation, free trial access, token plans, and support for permission-safe manga, manhwa, and manhua reading workflows.`
+- Website: owner chooses `https://nayovi.com` for brand-level launch or `https://tachiyomiat.com/download` for direct APK conversion.
+
+Required assets:
+- Square logo.
+- Three to five gallery screenshots from approved samples only.
+- Demo video showing official source, activation, OCR progress, language choice, and translation output.
+- Maker comment disclosing the no-chapter-hosting boundary and asking for Android/OCR workflow feedback, not votes.
+
+Credential reference:
+- `SEO_AGENT_PRODUCTHUNT_TOKEN` only if owner enables official API workflow. Store actual values only in the approved secret store.
+
+Agent capability after connection:
+- The agent can maintain launch field drafts and owner-approved maker comments. It must not request upvotes, automate comments, or post from unauthenticated/non-official accounts.
+
+Next action:
+- Owner confirms launch timing, official URL choice, and first gallery/demo assets before any launch submission.
 - Product URL: `https://tachiyomiat.com/download`
 - Short description: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
 - Long description: `Nayovi provides official APK download, free trial access, redeem-code activation, monthly token plans, support paths, and hosted OCR/AI translation for permission-safe reader workflows. Nayovi does not host or distribute chapters; it supports owned content, public-domain material, official samples, or content users have permission to process.`
