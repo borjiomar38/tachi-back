@@ -107,6 +107,10 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-31',
     priority: '0.85',
   },
+  '/guides/manhwa-ocr-glossary-checklist': {
+    lastModified: '2026-05-28',
+    priority: '0.8',
+  },
   '/legal/privacy': {
     changeFrequency: 'yearly',
     priority: '0.3',

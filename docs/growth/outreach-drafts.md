@@ -1603,6 +1603,28 @@ Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+## Anime Corner Collaboration Pitch Sent 2026-05-28
+
+Category: press
+Contact path: business@animecorner.me, listed on the current public Anime Corner contact page for business and collaboration inquiries.
+Rationale: Anime Corner covers anime and manga news, exposes a business/collaboration contact path, and its editorial policy emphasizes legitimate sources. The new OCR glossary checklist gives a concrete responsible-review angle rather than a generic backlink request.
+Status: contacted 2026-05-28; wait for reply before any follow-up.
+
+Subject: Responsible Android manga OCR workflow for review
+
+Hi Anime Corner team,
+
+I found Anime Corner while reviewing anime and manga editorial sites that are careful about source quality. Your contact page points business and collaboration questions to this address, and your editorial policy's legitimate-source stance is exactly why I am sending this as a cautious review-code / workflow-feedback note rather than a paid link request.
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. Nayovi keeps the official APK, free trial, redeem-code activation, pricing, support, and responsible-use notes on tachiyomiat.com / nayovi.com. It does not host or distribute chapters; it supports translation for owned, public-domain, official-sample, or permission-approved content.
+
+The useful angle for Anime Corner may be practical: I just published a manhwa OCR glossary checklist for approved samples, covering OCR order, recurring names/world terms, and the human review decision before any output is cited or shared. If a responsible-use critique, Android workflow note, or review-code test would fit your audience, I can send screenshots, the narrated demo, pricing context, and a dedicated review code.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## Talk Android Review Pitch Sent 2026-05-25
 
 Subject: Review code for a hosted OCR Android manga translator

@@ -3112,6 +3112,88 @@ export const PageTranslationSupportWorkflow = () => {
   );
 };
 
+export const PageManhwaOcrGlossaryChecklist = () => {
+  return (
+    <PublicShell>
+      <PublicSection
+        eyebrow="OCR checklist"
+        title="Manhwa OCR glossary checklist"
+        description="A reviewer-ready checklist for approved manhwa samples before Nayovi output is cited, shared with partners, or used to judge paid translation fit."
+        className="pt-10"
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {glossaryChecklistRows.map((row) => (
+            <Card key={row.checkpoint} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{row.checkpoint}</CardTitle>
+                <CardDescription>{row.reviewerQuestion}</CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm leading-7 text-muted-foreground">
+                {row.partnerSignal}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Partner use"
+        title="Use it before review codes or pilots"
+        description="The checklist gives Android reviewers, manga communities, localization teams, and creator platforms a shared quality bar for permission-safe tests."
+      >
+        <Card className="public-brand-panel-muted rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Start with owned, public-domain, official-sample, or
+              permission-approved pages so the review stays safe to discuss.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Record terminology decisions before expanding a test to more
+              pages, reviewers, affiliates, or community members.
+            </div>
+            <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
+              Measure qualified installs, review-code activation, support
+              questions, and repeat token-plan intent after the sample quality
+              is clear.
+            </div>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Next"
+        title="Continue to the full workflow"
+        description="Use the broader workflow page when a reviewer, directory, or partner needs setup, permission boundaries, and takedown-ready handling."
+        className="pb-20"
+      >
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="/guides/translation-support-workflow"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Translation workflow
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/translate-manhwa-ai"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Manhwa AI page
+          </a>
+          <a
+            href="/#contact"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Request review code
+          </a>
+        </div>
+      </PublicSection>
+    </PublicShell>
+  );
+};
+
 export const PageOfficialSourcesTakedown = () => {
   return (
     <PublicShell>
