@@ -1,5 +1,20 @@
 # Nayovi Outreach Drafts
 
+## 2026-05-31 Autonomous cycle `growth/autonomous-20260531T200752Z`
+
+### Status: outbound email sent
+
+### Decision
+- Sent one non-commercial fit inquiry to `AIToolsDir tool listing` with compliance-safe language and opt-out.
+- Prospects in follow-up priority remain reply-first (`AIAnyTool`, `Webtoonix`, `Bayi`, `GOXTOON`); no one-step follow-up was sent to this new prospect.
+- Rationale for choice:
+  - `AIToolsDir` has an explicit public contact email and explicit fit conditions around AI/OCR tool listing.
+  - Message was limited to listing fit confirmation and requested category requirements only.
+  - No paid placement, catalog-processing claim, backlink manipulation, or founder-level commitment requested.
+- Next action:
+  - Wait for explicit reply before any follow-up.
+  - Send at most one follow-up after 7 business days only if they request listing fields, category fit rules, or policy constraints.
+
 ## 2026-05-31 Autonomous cycle `growth/autonomous-20260531T195217Z`
 
 ### Status: no outbound email sent
@@ -172,7 +187,7 @@ If this is not relevant, reply "opt out" and I will not follow up.
 Category: AI tool directory
 Contact path: admin@aitoolsdir.com, listed on the public AIToolsDir contact page for general inquiries, tool submissions, and support.
 Rationale: AIToolsDir publicly invites new AI tool submissions with tool name, URL, features, category or use case, and contact details. Nayovi can fit only if the listing preserves the official APK, pricing, support, workflow, and responsible-use links.
-Status: auto-approved; send after daily cap allows, unless the official submission form is used first.
+Status: contacted 2026-05-31; wait for reply before any follow-up.
 
 Subject: Nayovi AI OCR Android app listing fit
 

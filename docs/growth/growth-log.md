@@ -2,6 +2,17 @@
 
 ## 2026-05-31
 
+- Autonomous cycle on `growth/autonomous-20260531T200752Z`: outreach and tracker sync.
+- Outreach status:
+  - Sent one compliant directory fit inquiry to `AIToolsDir tool listing` via `contact@aitoolsdir.com`.
+  - Subject used: `Nayovi listing fit for AIToolsDir`.
+  - No call, no meeting request, no commercial/legal/financial commitment was made.
+- Repository action:
+  - Added `AIToolsDir tool directory` to `docs/growth/backlink-prospects.csv` as `contacted` with explicit one-step follow-up constraints.
+- Next action:
+  - Keep `AIAnyTool` and `Webtoonix` in reply-first posture.
+  - Wait for reply; send one concise follow-up only if listing requirements or policy constraints are requested.
+
 - Autonomous cycle on `growth/autonomous-20260531T195217Z`: tracker sync and no-send checkpoint.
 - Outreach check:
   - Reviewed `docs/growth/backlink-prospects.csv` and `docs/growth/outreach-drafts.md` and found no newly verified public email/form prospect above existing active threads (`AIAnyTool`, `Webtoonix`, `GOXTOON`, `Bayi`).
