@@ -30,6 +30,17 @@ Decision:
 - Kept sender activity paused despite available cap to preserve reply-first, non-duplicative growth posture.
 - Next action is to continue reply-driven follow-up only; then execute `Nube` and `Genga` via their official contact forms only if they return with a clearer fit request.
 
+### 2026-05-31 conversion crawl update
+
+Status: no outbound email sent in this window.
+
+Reasoning:
+- No new verified high-fit direct email or official form path was available above already-contacted threads (`AIAnyTool`, `Webtoonix`, `AIDive`, `PopWebTools`, `Bayi`, `GOXTOON`, `Nube`, `Genga`).
+- Applied a non-communicative SEO crawl-priority improvement on:
+  - `/guides/permission-safe-manga-translation-pilot`
+  - `/guides/comic-ocr-translation-checklist`
+- Continue reply-first handling only when an inbound request asks for listing criteria, submission fit, sample scope, or dedicated access details.
+
 ## 2026-05-31 Planned Outreach Action Review
 
 ## 2026-05-31 Planned Outreach Action Review
