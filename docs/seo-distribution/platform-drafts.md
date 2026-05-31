@@ -4797,3 +4797,40 @@ Best,
 Nayovi team
 
 Next action: keep this as a no-link-first draft until owner confirms official profile/terms acceptance and community posting policy; publish only on explicit relevance and with disclosure.
+
+## 2026-05-31 Priority Draft Bundle
+
+### LinkedIn/LinkedIn-like professional pitches
+
+- Platform: Android Authority editorial contacts
+  - Target: `news@androidauthority.com` and general contact path on contact form
+  - Audience: Android reviewers, app discovery readers, and editorial decision-makers
+  - Rules risk: publication-first pitch expected; avoid direct app-install call; no guaranteed placement
+  - No-link variant:
+    - "Nayovi builds a permission-safe Android OCR + AI translation workflow for readers who use owned or approved content workflows. I’m not asking for placement — if this fits your Android review/editorial standards, I can share a one-page technical packet for context on verification-safe use and support."
+  - Link variant:
+    - same as no-link, plus link text only after explicit in-scope request: official `/support`, `/guides/permission-safe-manga-translation-pilot`, and `/translate-manhwa-ai`.
+
+### Launch community drafts
+
+- Platform: Product Hunt
+  - Target: Launch Day founder visibility and maker-feedback collection
+  - Audience: early adopters, AI tooling community, Android readers
+  - Rules risk: requires personal account and maker to post; no company account posting or API-only autoposting without owner API setup
+  - No-link variant:
+    - Draft title: "Nayovi — Android OCR and AI translation for manga readers"
+    - Short copy: value-first product story, source-of-truth links, no backlink promise.
+    - Ask: "Would this category fit a launch this month, or should we publish a short use-case article first?"
+  - Link variant:
+    - Add official TachiyomiAT download and official pages (`/translate-manhwa-ai`, `/pricing`) after a confirmed launch-ready window.
+
+### GitHub discovery / technical community drafts
+
+- Platform: GitHub topic discovery (`github.com/topics/manga-translator`)
+  - Target: technical ecosystem visibility for OCR and manga translation tooling users
+  - Audience: developers, reviewers, translation engineers, creator tooling builders
+  - Rules risk: low; only useful if contribution is genuinely helpful and clearly related to existing topic curation
+  - No-link variant:
+    - Issue/clarification draft template: "I can add a short OCR+Android workflow entry only if this topic list accepts practical, non-promotional utility references and includes source-of-truth links."
+  - Link variant:
+    - Include `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if category fit review is approved and no-link-first is not preferred by the site.

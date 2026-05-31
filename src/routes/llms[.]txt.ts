@@ -55,6 +55,12 @@ const guideLinks = [
       'Reviewer and partner checklist for evaluating OCR and translation without unauthorized catalog use.',
   },
   {
+    title: 'Best Android manga translator APK',
+    path: '/guides/best-android-manga-translator-apk',
+    description:
+      'Comparative buyer guide focused on workflow fit, responsible-use boundaries, and verification-ready product signals for Android readers.',
+  },
+  {
     title: 'Comic OCR translation checklist',
     path: '/guides/comic-ocr-translation-checklist',
     description:
