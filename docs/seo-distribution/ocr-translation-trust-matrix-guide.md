@@ -161,3 +161,14 @@ Use this section for media, partner, and directory notes that request ownership 
 
 - **What is the safe reusable one-liner?**  
   `Nayovi is an Android workflow for manga/manhwa/manhua OCR and translation support on officially owned, permission-safe source material, with free-trial-to-paid-token workflow and human review guidance.`
+
+## 2026-05-31 Cycle Implementation Note
+
+### Practical trust asset for outbound drafts
+
+- Added internal linking extension: `https://tachiyomiat.com/guides/translation-support-workflow` and `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` should only be introduced together in one sentence so link intent remains explicit.
+- Internal-use rule: any external draft must start with the no-link variant and include links only after the target confirms link-preservation and citation rules.
+- Comparison-ready copy for high-trust outreach: use one row format in proposals:
+  - **Claim-safe angle:** source provenance + pricing transparency + responsible-use
+  - **Blocked angle:** broad claims, unverified verification status, or unlimited access promises
+

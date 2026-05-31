@@ -5184,3 +5184,42 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
 | draft | Stack Overflow | OCR + Android translation tags | No-link-first technical checklist and quality gate draft | docs/seo-distribution/platform-drafts.md | AUTHORIZED_ACCOUNT_REQUIRED: only share resource links if community rules permit and account is verified |
+
+## 2026-05-31 Cycle Draft Additions (Authority-ready next actions)
+
+### AppBrain listing readiness draft
+
+- Target: https://www.appbrain.com/product/featured
+- Status: draft
+- Audience: Android distribution and discovery users who check independent app catalogs
+- Rules risk: medium (must keep claims to verifiable official fields)
+- No-link variant: "I can provide a concise, source-safe Android listing metadata packet if your directory format accepts official APK links, pricing split, support path, and responsible-use boundaries without chapter-hosting claims."
+- Link variant: `https://tachiyomiat.com/download`, `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support` and `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Next action: Keep this as a fit-check-only draft until owner confirms package/screenshot facts and directory acceptance path.
+
+### Product Hunt launch post draft
+
+- Target: https://www.producthunt.com/launch
+- Status: AUTHORIZED_ACCOUNT_REQUIRED
+- Audience: Android/AI builders, developers, localization professionals
+- Rules risk: medium (maker account only; anti-spam, no company account posting)
+- No-link variant:
+  - "I built a trust-first Android workflow for permission-safe manga/manhwa OCR and translation support with official policy gates and trial-to-paid-token clarity. I can provide the process summary first; links can be shared only if the launch format allows it."
+- Link variant:
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://tachiyomiat.com/translate-manhwa-ai`
+- Next action: prepare for manual post only after Product Hunt account ownership and launch-week cadence are approved.
+
+### Mangasplaining creator-media draft (topic-first)
+
+- Target: https://www.mangasplaining.com/contact-us/
+- Status: draft
+- Audience: creators, manga readers, localization communities
+- Rules risk: low-to-medium
+- No-link variant:
+  - "Would a topic note on approved-sample OCR + glossary consistency + human review for manga/manhwa translation workflows be useful for your episode/review format? I can share a short founder-authored process summary only if helpful."
+- Link variant:
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Next action: Keep this as an invitation-first message and send only after owner approves founder/media posture.
+
