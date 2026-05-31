@@ -6,6 +6,22 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-31 Cycle Owner-Action Advancement
 
+## 2026-05-31 Cycle Advancement Addendum (this pass)
+
+### Priority setup tasks advanced before normal backlink work
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | X/Twitter official account | Authoritative short-form update path for Android verification context and trust updates | owner_action_required | OWNER_ACTION_REQUIRED: create/claim official brand or founder handle manually; approve anti-spam and no-link-first default policy before any posting | `docs/seo-distribution/account-setup.md`, verified Nayovi profile fields, canonical links, one-line no-link support templates, responsible-use line | `SEO_AGENT_X_ACCESS_TOKEN` | Publish only from `authorized` or manually-approved official account; no automated posting or recurring self-promo | Complete owner account verification and copy approval, then enable API updates only if risk rules remain manual-first |
+| high | App directories and platform API profile readiness | Source-of-truth profile setup for AI/app-review and app-testing directories, especially listing-fit eligibility checks | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: choose official submitter identity manually; decide whether directories are enabled for trial-only/freemium entries; approve package/screenshot/supported-sample boundaries | `docs/seo-distribution/directory-submission-scorecard.md`, `docs/seo-distribution/free-trial-directory-listing-brief.md`, package/screenshot policy checklist, support/proof fields | Per-platform token/reference only after owner approves submission path (example: `SEO_AGENT_AI_DIRECTORY_PROFILE_REFERENCE`) | Run source-link-fit checks and prepare no-link/follow-up link variants only after official account/profile scope is approved | Keep as ready-to-post only after owner confirms pricing/verification language and confirms no paid/link-farm requirements |
+
+### Required public packet updates (this pass)
+
+- `docs/seo-distribution/account-setup.md` now includes explicit OWNER_ACTION_REQUIRED rows for:
+  - X/Twitter setup (official-brand/founder ownership + anti-spam posture)
+  - app-directory submitter readiness (trial/freemium + package-signing-pending language + no-mirror policy)
+- No third-party credentials were stored in docs; all secrets remain in `/opt/tachi-back/.env.seo-distribution-agent` and remain unset when absent.
+
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | high | Google Search Console | Search indexing and crawl visibility control for owned trust pages | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: verify `tachiyomiat.com`, `nayovi.com`, `translate-manhwa-ai.com` in official account and record verification method | Official primary URLs, sitemap endpoints, robots/llms routes, privacy/support links, organization fields | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS` | After owner confirmation, run URL inspection for newly published trust assets and monitor index coverage | Keep status unchanged until owner shares domain verification proof and first crawl audit notes |

@@ -2,6 +2,13 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-31 Owned trust-asset additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Android verification-ready trust FAQ block | `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` | Android reviewers, app directories, technical publishers, creator-platform due diligence | Adds explicit link-gating and claim-control FAQ for external fit checks (what to link, what not to claim) | draft | Publish FAQ block in trust pages before any Android editorial or directory list submission |
+| FutureTools fit packet | `docs/seo-distribution/platform-drafts.md` | AI directory submitters and platform editors | Keeps listing requests limited to trial+paid-token and responsible-use language with no-link default | draft | Verify live form fields and confirm category before any submission request |
+
 ## 2026-05-29 Linkable Asset Additions
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |

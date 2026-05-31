@@ -18,6 +18,37 @@ External platform drafts are for authorized-account posting only. Do not create 
 - Core copy draft:
   "I am preparing a source-first Android utility note for independent APK workflows. I can share a short trust checklist that focuses on official source URL, support/screenshot policy, pricing transparency, and no chapter-hosting boundaries if this section is open for review."
 
+### 2026-05-31 best-ready cycle draft (editorial fit + submission-gate pair)
+
+#### FutureTools (AI directory, no-link-first first)
+
+- Target: FutureTools submission workflow (`https://www.futuretools.io/submit-a-tool`)
+- Audience: AI tool-curators, comparison editors, and Android/translation workflow readers
+- Rules risk: medium (category clarity and paid/free model validation required)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link variant: "I am currently preparing a product-light listing package for an Android OCR + translation workflow and want to confirm category + pricing field compatibility before submitting anything."
+- Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Publish/fit intent:
+  - Use only after owner confirms trial vs paid-token framing, no-replacement-service language, and screenshot/review-code boundaries.
+  - If FutureTools fields block official APK + source support links, stay no-link-only and either hold or rework the description.
+
+#### Proposed message body (first contact if category fit is accepted)
+
+Hi Team,
+
+I have a product-light candidate for your review queue, prepared as an Android OCR + translation workflow that is not a chapter-hosting service.
+
+Our current fit check:
+- Official workflow intent: hosted OCR and translation support for manga/manhwa/manhua users with permission-safe content expectations
+- Access model: free trial + paid monthly token plans
+- Source-of-truth pages: official APK source, support, pricing, and policy/ownership summary
+- Risk posture: no catalog-processing pitch; responsible-use boundary included
+
+If you confirm your preferred category and pricing-format fields accept this model, I can submit the exact listing packet and the finalized no-marketing text next.
+
+Best,
+Nayovi team
+
 ### 2026-05-31 SaaSHub listing readiness note
 
 - Target: SaaSHub (`https://www.saashub.com/submit`)
