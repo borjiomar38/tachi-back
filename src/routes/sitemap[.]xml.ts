@@ -89,17 +89,17 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/best-android-manga-translator-apk': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-29',
+    lastModified: '2026-05-31',
     priority: '0.85',
   },
   '/guides/test-ai-manhwa-translation-approved-samples': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-30',
+    lastModified: '2026-05-31',
     priority: '0.85',
   },
   '/guides/free-trial-vs-paid-token-plan': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-29',
+    lastModified: '2026-05-31',
     priority: '0.85',
   },
   '/legal/privacy': {
