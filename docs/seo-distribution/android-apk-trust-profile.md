@@ -37,6 +37,25 @@ Reviewers and directory editors should attach these fields before publishing:
 
 Do not infer package ownership, signing-certificate details, or developer verification status from the APK filename, third-party mirrors, or screenshots.
 
+## 2026 Android Verification Readiness
+
+Current Android developer-verification guidance makes package ownership and developer identity more important for independently distributed APKs. Nayovi should keep public wording factual and pending until the owner confirms each field.
+
+Owner-confirmed fields needed before reviewer, directory, newsletter, or investor claims:
+
+- Public package name.
+- Signing-certificate SHA-256 fingerprint.
+- Current APK filename, version label, file size, and SHA-256.
+- Whether the package is registered in an official Android developer workflow.
+- Whether the developer identity is verified, pending, not started, or not applicable.
+- Whether a Play Console, Android Developer Console, or other official package-management reference may be cited publicly.
+
+Public wording until owner confirmation:
+
+`Package name, signing-certificate fingerprint, and Android developer-verification status are pending owner confirmation. Reviewers should use the official download URL and current SHA-256 from tachiyomiat.com rather than third-party mirrors.`
+
+Do not publish identity-document details, account screenshots, payment details, verification challenges, private emails, or verification tokens. Store only non-secret references in setup docs.
+
 ## Safe Test Scope
 
 Approved testing can use:
