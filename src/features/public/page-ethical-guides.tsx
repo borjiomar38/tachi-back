@@ -141,6 +141,37 @@ const ocrChecklistRows = [
   },
 ] as const;
 
+const glossaryChecklistRows = [
+  {
+    checkpoint: 'Text region coverage',
+    reviewerQuestion:
+      'Did OCR capture dialogue, narration, vertical text, small labels, and sound effects before translation?',
+    partnerSignal:
+      'A partner can compare missed-region counts before deciding whether a sample is useful for public review.',
+  },
+  {
+    checkpoint: 'Reading order and speaker turns',
+    reviewerQuestion:
+      'Are bubbles, panels, long-strip manhwa sequences, and short replies kept in the correct order?',
+    partnerSignal:
+      'Order notes help reviewers explain whether output quality failed because of OCR order, context, or translation wording.',
+  },
+  {
+    checkpoint: 'Glossary and names',
+    reviewerQuestion:
+      'Are names, places, ranks, techniques, honorifics, and recurring UI terms recorded before expanding the test?',
+    partnerSignal:
+      'Glossary notes make repeat chapters, review codes, and partner pilots easier to compare over time.',
+  },
+  {
+    checkpoint: 'Approved-sample decision',
+    reviewerQuestion:
+      'Is the source owned, public-domain, official-sample, creator-provided, or otherwise approved for this review?',
+    partnerSignal:
+      'Permission status decides whether results can stay private, become a case note, or must not be shared.',
+  },
+] as const;
+
 const researchCitationRows = [
   {
     label: 'Missing regions',
@@ -558,6 +589,29 @@ const approvedSampleReadinessRows = [
     label: 'Not ready yet',
     detail:
       'Pause when permission, screenshot scope, source links, or the expected public evidence are unclear. Use the trial privately before requesting a code.',
+  },
+] as const;
+
+const approvedSamplePacketRows = [
+  {
+    label: 'Sample source',
+    detail:
+      'Name whether the pages are owned, public-domain, official previews, creator-provided samples, or otherwise approved for OCR and translation testing.',
+  },
+  {
+    label: 'Review evidence',
+    detail:
+      'Keep original pages, OCR text, corrections, glossary notes, translated output, and reviewer decision together before sharing anything publicly.',
+  },
+  {
+    label: 'Public boundary',
+    detail:
+      'Publish only screenshots, excerpts, summaries, or partner names that the rights holder or sample owner approved.',
+  },
+  {
+    label: 'Next action',
+    detail:
+      'Route useful tests toward review access, support follow-up, paid-use evidence, or a private partner pilot instead of generic backlink outreach.',
   },
 ] as const;
 
@@ -1555,10 +1609,6 @@ interface SetupGuideCopy {
   eyebrow: string;
   firstRunIntro: string;
   title: string;
-}
-
-interface SetupGuidePageProps {
-  copy: SetupGuideCopy;
 }
 
 const mihonNayoviSetupGuideCopy: SetupGuideCopy = {

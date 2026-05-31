@@ -88,6 +88,27 @@ const trustRows = [
   },
 ] as const;
 
+const trustSignals = [
+  {
+    icon: ShieldCheckIcon,
+    title: 'Official source',
+    description:
+      'Start from the owned Nayovi download page before installing, reviewing, or listing the APK anywhere else.',
+  },
+  {
+    icon: BadgeCheckIcon,
+    title: 'Review-ready evidence',
+    description:
+      'Keep the APK hash, build label, pricing, support, privacy, terms, and responsible-use notes attached to every public mention.',
+  },
+  {
+    icon: FingerprintIcon,
+    title: 'Pending identity fields',
+    description:
+      'Mark package, signing-certificate, and Android developer verification facts as owner-confirmation required until they are public.',
+  },
+] as const;
+
 const reviewerVerificationRows = [
   {
     label: 'File integrity',
@@ -236,6 +257,25 @@ const updateSourceRows = [
     label: 'Power-user note',
     value:
       'If using an APK source tracker, keep this page attached as the source-of-truth note so future reviews can verify the same release metadata.',
+  },
+] as const;
+
+const updateRecipeRows = [
+  {
+    label: 'Download page',
+    value: 'https://tachiyomiat.com/download',
+  },
+  {
+    label: 'APK endpoint',
+    value: '/api/download/apk',
+  },
+  {
+    label: 'SHA-256',
+    value: androidApkDownload.sha256,
+  },
+  {
+    label: 'Support',
+    value: 'https://tachiyomiat.com/support',
   },
 ] as const;
 

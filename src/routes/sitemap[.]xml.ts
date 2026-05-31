@@ -69,11 +69,6 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-31',
     priority: '0.8',
   },
-  '/support': {
-    changeFrequency: 'weekly',
-    lastModified: '2026-05-23',
-    priority: '0.8',
-  },
   '/media-kit': {
     changeFrequency: 'weekly',
     lastModified: '2026-05-29',

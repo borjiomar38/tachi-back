@@ -172,6 +172,27 @@ const commercialFitCards = [
   },
 ] as const;
 
+const reviewerHandoffCards = [
+  {
+    icon: ShieldCheckIcon,
+    title: 'Verify source first',
+    description:
+      'Send public traffic to pricing only after the listing preserves the official APK, support, policy, and responsible-use context.',
+  },
+  {
+    icon: KeyRoundIcon,
+    title: 'Use codes for reviews',
+    description:
+      'Route reviewers, affiliates, and approved groups through support when they need scoped access or attribution before checkout.',
+  },
+  {
+    icon: UsersRoundIcon,
+    title: 'Keep partner asks separate',
+    description:
+      'Commercial, investor, legal, media, or creator-platform requests should stay outside normal monthly checkout until scope is clear.',
+  },
+] as const;
+
 export const PagePricing = (props: PagePricingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'

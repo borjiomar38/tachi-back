@@ -7,12 +7,12 @@ import {
 import {
   fallbackPublicTokenPacks,
   formatCurrency,
-  PUBLIC_SUPPORT_EMAIL,
 } from '@/features/public/data';
 
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const publicBrandUrl = 'https://nayovi.com';
+const publicSeoUrl = 'https://translate-manhwa-ai.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
 const publicBrandAliases = [
   'TachiyomiAT',
@@ -148,8 +148,6 @@ const buildStructuredData = (
   const baseUrl = buildAbsoluteUrl('/');
   const organizationId = `${baseUrl}#organization`;
   const websiteId = `${baseUrl}#website`;
-  const publicAppOffers = buildPublicAppOffers();
-
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -161,7 +159,6 @@ const buildStructuredData = (
         url: baseUrl,
         sameAs: [publicBrandUrl, publicSeoUrl],
         logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
-        sameAs: [publicBrandUrl],
         contactPoint: [
           {
             '@type': 'ContactPoint',
@@ -213,13 +210,7 @@ const buildStructuredData = (
         operatingSystem: 'Android',
         url: buildAbsoluteUrl('/download'),
         description: publicSiteDescription,
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-          description:
-            'Free trial access with upgrade-ready monthly token plans for continued usage.',
-        },
+        offers: buildPublicAppOffers(),
       },
       ...extraGraph,
     ],
