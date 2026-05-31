@@ -4834,3 +4834,22 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
     - Issue/clarification draft template: "I can add a short OCR+Android workflow entry only if this topic list accepts practical, non-promotional utility references and includes source-of-truth links."
   - Link variant:
     - Include `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if category fit review is approved and no-link-first is not preferred by the site.
+
+## 2026-05-31 Priority Draft: Hacker News Founders Channel
+
+- Platform: Hacker News (Show HN)
+- Target: `https://news.ycombinator.com/submit` with `show` tag context
+- Audience: AI builders, Android utility creators, localization tooling teams, startup scouts
+- Rules risk: public comment visibility, no growth metrics without evidence, community sensitivity to launch spam, no affiliate-style copy, transparent process-first framing only
+- No-link variant:
+  - Title: `Nayovi: Android OCR + AI workflow for permission-safe manga/manhwa translation`
+  - Body:
+    - `Nayovi is an Android workflow tool for manga/manhwa/manhua readers who use content they own, public-domain content, official samples, or explicit permission-based material.`
+    - `We are building the public checklist around verification-safe APK sources, activation clarity, OCR limitations, and human review paths for translation quality.`
+    - `If useful to this community, we can share the checklist and support-first process we use before asking for any feedback.`
+    - `No link to download in the first post unless the thread explicitly asks for tooling references.`
+- Link variant:
+  - Keep the above body and add one sentence at the end:
+    - `Reference docs for this process are available at https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide and https://tachiyomiat.com/guides/comic-ocr-translation-checklist after policy and ownership checks are complete.`
+- Owner status: AUTHORIZED_ACCOUNT_REQUIRED currently (no configured HN or launch identity)
+- Post status: draft only
