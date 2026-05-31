@@ -6,6 +6,14 @@ Use this as the continuous discovery pipeline for high-authority SEO, backlink, 
 
 ## 2026-05-31 Fresh Opportunity Additions
 
+### 2026-05-31 Cycle-added discovery (fresh)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | Android developer/editorial media | XDA Developers app-review stream | https://www.xda-developers.com/tag/app-review/ | Strong topical fit for technical app-review language with no-link-first support-only angle; useful only if publication contact accepts source-context fit queries | Source-fit question draft, editorial contact review before any mention | AUTHORIZED_ACCOUNT_REQUIRED for official API/web-post workflow; no direct action yet | medium | Keep draft-only until owner confirms allowed publication path, then send only source-first fit question with no-link-first fallback |
+| draft | medium | AI software directory | SaaSHub | https://www.saashub.com/submit | High fit only if submission supports product-light profile with official APK source, trial-vs-paid-token clarity, and required responsible-use links | Listing draft and fit review; verify category, pricing, and source-link fields before submission | AUTHORIZED_ACCOUNT_REQUIRED (if an official portal account/API is used) | medium-high (paid listing and low-quality surface risk) | Verify form fields; skip if pricing verification, mirror statements, or traffic-driving claims cannot be kept accurate |
+| draft | medium | Technical publishing / social proof | Paper with Code OCR task directory | https://paperswithcode.com/task/optical-character-recognition | Strong research-context fit for OCR limitation notes and benchmark caution language, no placement pitch | Research context note and maintainer/author-contact watch log | No account required for context-only update | medium | Use only as research context until owner approves non-promotion technical note for potential editorial/community reuse |
+
 ### 2026-05-31 Social + repository discoveries (expanded)
 
 | Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |

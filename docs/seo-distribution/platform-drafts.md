@@ -4,6 +4,32 @@ This file is maintained by the SEO distribution agent.
 
 External platform drafts are for authorized-account posting only. Do not create accounts, bypass platform login, or post promotional backlinks automatically. Every draft should be useful without the backlink and should include a no-link variant when the community may reject links.
 
+## 2026-05-31 Cycle-Ready Drafts
+
+### 2026-05-31 best-ready cross-platform post
+
+- Target: XDA Developers app-review stream (`https://www.xda-developers.com/tag/app-review/`)
+- Audience: Android app reviewers, Android newsletter readers, and Android utility users
+- Why now: high topical relevance for independent APK trust language and technical review hygiene.
+- Rules risk: medium
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link variant: no-link-first question about independent APK source/source-link trust and responsible-use boundaries.
+- Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Core copy draft:
+  "I am preparing a source-first Android utility note for independent APK workflows. I can share a short trust checklist that focuses on official source URL, support/screenshot policy, pricing transparency, and no chapter-hosting boundaries if this section is open for review."
+
+### 2026-05-31 SaaSHub listing readiness note
+
+- Target: SaaSHub (`https://www.saashub.com/submit`)
+- Audience: AI/translation tooling directories and startup discovery readers
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- Category fit: AI + translation / productivity tooling
+- No-link variant:
+  "I have a review-ready Android OCR translation workflow that is currently in a resource-ready state. If your listing process accepts source-first entries with explicit no-mirror and no-catalog-processing notes, I can share the exact fields."
+- Link variant:
+  - Guide: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - Product landing: `https://tachiyomiat.com/download`
+
 ## Draft Queue
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |

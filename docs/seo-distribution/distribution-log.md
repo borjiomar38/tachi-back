@@ -6,6 +6,20 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-05-31 Current Cycle (this run)
 
+- Advanced account setup queue as required before backlink actions:
+  - Added owner-action status notes for Google Search Console and Bing Webmaster in `docs/seo-distribution/account-setup.md` with explicit credential references and crawl-audit gate.
+  - Kept `docs/seo-distribution/account-setup.md` unchanged for non-owners accounts; no profile/API values were written to docs.
+- Added 3+ authority opportunities across categories in `docs/seo-distribution/authority-opportunities.md`:
+  - Android editorial/app-review surface (XDA Developers)
+  - AI directory submission surface (SaaSHub)
+  - Research-backed OCR context source (Papers with Code OCR task page)
+- Added one draft package in `docs/seo-distribution/platform-drafts.md` for XDA + one SaaSHub listing-fit package, both with no-link-first and link-variant guidance.
+- Updated `docs/seo-distribution/link-assets.md` with reusable claim-boundary and editorial-fit pack entries.
+- Updated `docs/seo-distribution/content-calendar.md` with two fresh draft rows for source-first Android editorial and AI directory readiness.
+- Added `docs/growth/backlink-prospects.csv` rows for XDA, SaaSHub, and OCR research watch targets (status draft, owner action required).
+- Updated `src/routes/llms[.]txt.ts` with clearer ownership-citation guidance and trust-boundary copy for reusable route indexing.
+- No external posting, account creation, login, form submission, app-testing contact, directory submission, Reddit/LinkedIn/GitHub/press posting, review-code grant, or APK upload/verification action performed this cycle.
+
 - Advanced 2 account-setup priorities before normal backlink work:
   - X/Twitter official profile setup packet (owner-action + anti-spam policy)
   - Open-source AI accelerator watch profile packet (eligibility-first, no eligibility claims)
