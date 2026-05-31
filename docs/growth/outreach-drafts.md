@@ -154,6 +154,32 @@ Best,
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+### AIToolsDir tool submission
+
+Category: AI tool directory
+Contact path: admin@aitoolsdir.com, listed on the public AIToolsDir contact page for general inquiries, tool submissions, and support.
+Rationale: AIToolsDir publicly invites new AI tool submissions with tool name, URL, features, category or use case, and contact details. Nayovi can fit only if the listing preserves the official APK, pricing, support, workflow, and responsible-use links.
+Status: auto-approved; send after daily cap allows, unless the official submission form is used first.
+
+Subject: Nayovi AI OCR Android app listing fit
+
+Hi AIToolsDir team,
+
+I am building Nayovi, an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers.
+
+I found your public contact page inviting new AI tool submissions by email. Nayovi may fit your directory as an AI OCR and translation-support app if the listing can keep the official source links clear: APK download, pricing, support, workflow guide, and responsible-use policy.
+
+Short listing description: Nayovi is an Android APK for hosted OCR and AI translation support in manga, manhwa, and manhua reader workflows. It uses official APK download, free trial access, redeem-code activation, monthly token plans, and support through tachiyomiat.com.
+
+Responsible-use note: Nayovi does not host or distribute chapters. It should be tested with owned material, public-domain works, official samples, or content the user has permission to process.
+
+Would Nayovi be eligible for a neutral AI tools listing? I can send screenshots, demo context, and the listing metadata packet if useful.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ## 2026-05-28 Sent Outreach Log
 
 ## 2026-05-30 Sent Outreach Log
