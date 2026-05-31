@@ -100,22 +100,22 @@ export const publicHighlights: ContentBlock[] = [
   {
     title: 'Free manga AI translator',
     description:
-      'Open a chapter, launch AI translation, and keep reading without complex setup in a TachiyomiAT, Tachiyomi, or Mihon-style Android workflow.',
+      'Open a chapter, launch AI translation, and move from the free trial to monthly token plans only when hosted OCR + translation proves useful.',
   },
   {
     title: 'Free manhwa AI translator',
     description:
-      'Text is detected cleanly on vertical manhwa pages, even when the layout is busy.',
+      'Text is detected cleanly on vertical manhwa pages, then you can scale to monthly token plans for repeat weekly reading.',
   },
   {
     title: 'Free manhua AI translator',
     description:
-      'Keep names, realms, and recurring terms consistent while reading manhua.',
+      'Keep names, realms, and recurring terms consistent while reading manhua, with a clear path to paid recurring access when usage repeats.',
   },
   {
     title: 'Easy activation',
     description:
-      'No technical account setup. Install Nayovi, add your redeem code, and start translating from the Android app.',
+      'No technical account setup. Install the APK, add your redeem code, and upgrade to a monthly plan when trial volume turns recurring.',
   },
 ];
 
@@ -177,6 +177,11 @@ export const supportFaqs: ContentBlock[] = [
     title: 'Which plan should I choose?',
     description:
       'Starter is good for trying the service, Pro is best for regular reading, and Power is for heavy readers.',
+  },
+  {
+    title: 'When should I switch to paid plans?',
+    description:
+      'Upgrade when one or more readers consistently translate multiple chapters per week; trial access is the test phase before recurring monthly tokens.',
   },
   {
     title: 'When should I upgrade from the free trial?',
