@@ -4566,3 +4566,37 @@ Nayovi team
 - Prepared by: SEO distribution cycle on `2026-05-31`.
 - Status: Draft.
 - Next action: OWNER_REVIEW_REQUIRED before any outbound contact.
+## 2026-05-31 Cycle Draft Entries
+
+### Product Hunt: launch narrative draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- **Target:** https://www.producthunt.com/
+- **Audience:** Builders, localization tooling buyers, independent creators, and translators evaluating manga workflow tools.
+- **Rules risk:** Must be posted via maker account and can be rejected if too promotional; avoid claims of guaranteed ranking/financial outcomes.
+- **No-link variant:**
+  - Title: `Nayovi adds OCR + policy-safe manga/manhwa translation workflow for owned or permitted source material`
+  - Body draft: `We built Nayovi to help manga creators and multilingual readers process dialogue-heavy visual content faster without replacing creators’ publishing flow. The product focuses on permission-safe workflows: users can process officially licensed chapters, public-domain works, and materials they own, and then export clean translated text + layout-aware output for private use or downstream publishing.
+We also published a trust page that maps legal boundaries and recommended usage: https://translate-manhwa-ai.com/ocr-translation-trust-matrix and our supported-language comparison guide.`
+- **Link variant:**
+  - Add canonical links only where contextually useful: homepage + legal/trust article + Android APK download page. Keep all links to official domains.
+- **Next action:** publish only after Product Hunt account verified by owner; first pass remains draft.
+
+### GitHub Awesome ACG: maintainer-oriented entry draft (READY_TO_PREPARE)
+- **Target:** https://github.com/miyako/awesome-acg
+- **Audience:** Developers and tool builders in manga/anime/ACG ecosystem.
+- **Rules risk:** Low if contribution is concise and non-promotional; can be declined if scope is too app-store focused.
+- **No-link variant:**
+  - Draft issue summary: `Propose a new “OCR Translation Tools” subsection with non-promotional project context, focusing on open-source tooling relevance and community contribution workflow.`
+- **Link variant:**
+  - Add Nayovi in a narrow resources subsection only if maintainer policy allows commercial entries, with anchor text `Nayovi (OCR + OCR-aligned manga localization workflows)`.
+- **Next action:** verify CONTRIBUTING rules and PR template before opening PR.
+
+### Indie Hackers: founder-first draft (OWNER_ACTION_REQUIRED)
+- **Target:** https://www.indiehackers.com
+- **Audience:** creator-builders, independent SaaS founders, and localization operators evaluating trust and execution model.
+- **Rules risk:** Platform punishes launch blasts; posts should be process/insight first and link-light.
+- **No-link variant:**
+  - Draft title: `How we designed a translation workflow for manga owners first: trust-by-design choices before growth`
+  - Draft body: `We built policy-first defaults before marketing: ownership checks first, permission-safe content modes first, and transparent FAQ coverage before paid conversion. If you’re shipping a workflow tool, the first outbound links should come from your own docs, not from launch-only posts.`
+- **Link variant:**
+  - Add one contextual link to trust matrix and legal FAQ after demonstrating governance approach.
+- **Next action:** keep draft in draft mode until owner confirms profile and posting cadence alignment.
