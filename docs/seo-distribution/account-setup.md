@@ -1608,6 +1608,72 @@ Credential reference:
 Next action:
 - Owner confirms public contact fields, official logo/banner choice, approved screenshot set, package name, signing-certificate fingerprint, and Android developer verification status.
 
+### Android Newsletter Submission Profile
+
+Status: OWNER_ACTION_REQUIRED for byline approval, current submission rule review, and any form/email submission.
+
+Use this packet for Android Weekly, Kotlin Weekly, Android developer blogs, and similar editorial/newsletter surfaces. The goal is developer-facing trust content, not a consumer install ad.
+
+Public submitter fields:
+- Organization/product: `Nayovi`
+- Website: `https://nayovi.com`
+- Technical resource URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- APK review packet: `docs/nayovi-apk-review-packet.md`
+- Short byline: `Nayovi builds an Android hosted OCR and AI translation workflow for permission-safe manga, manhwa, and manhua reader workflows.`
+
+Submission angle:
+- Direct APK trust: official source URL, SHA-256, support, privacy, terms, and package/signing fields.
+- Hosted OCR testing: reviewer-code path, approved samples only, and no provider keys shipped to the device.
+- Screenshot/publication safety: use public-domain, official-sample, or owner-approved material only.
+- No chapter hosting or mirror-first APK distribution.
+
+Required assets:
+- Current APK review packet.
+- Screenshot policy.
+- Owner-approved public screenshot set.
+- Owner-confirmed package name, signing-certificate fingerprint, and Android developer verification status when available.
+
+Credential reference:
+- Per-publication non-secret reference only, such as `SEO_AGENT_ANDROID_NEWSLETTER_CONTACT_REFERENCE`. Do not store editor credentials, private email threads, tokens, or form screenshots in docs or Git.
+
+Agent capability after connection:
+- The agent can draft individualized newsletter tips and submission text. It must not submit forms, accept terms, or send from an unofficial account unless the owner approves the exact current publication path and an authorized account/workflow exists.
+
+Next action:
+- Owner approves the public byline and whether Android Weekly/Kotlin Weekly-style tips may cite the repo-native review packet and public checklist.
+
+### YouTube Demo Channel Packet
+
+Status: OWNER_ACTION_REQUIRED for official channel creation/connection, safe demo media approval, and OAuth/API scope if automated metadata updates are wanted.
+
+Profile fields:
+- Channel name: `Nayovi`
+- Handle preference: `@nayovi` if available, otherwise owner-approved official handle.
+- About text: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. It provides official APK access, free trial/redeem-code activation, monthly token plans, and support. Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, or permission-approved content.`
+- Primary link: `https://nayovi.com`
+- Product/download link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+
+First demo video draft:
+- Title: `Nayovi Android OCR translation workflow with approved samples`
+- Description: `This demo shows the Nayovi Android APK workflow for hosted OCR and AI translation using approved sample material only. Nayovi does not host or distribute manga, manhwa, or manhua chapters. Use the app with owned content, public-domain material, official samples, or content you have permission to process. Official download and support: https://tachiyomiat.com/download`
+- Playlist: `Nayovi Android demos`
+
+Required assets:
+- Square logo/avatar.
+- Channel banner with official website and product name.
+- Approved-sample demo clip only; no unauthorized chapter pages.
+- Optional short video thumbnail using app UI and safe sample material.
+
+Credential reference:
+- `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` only if the owner creates/connects the official channel and explicitly enables metadata updates. Store the actual value only in `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+Agent capability after connection:
+- The agent can prepare or update owner-approved video titles, descriptions, playlists, and canonical links. It must not upload unapproved media, reply to comments automatically, or use copyrighted samples without explicit permission.
+
+Next action:
+- Owner creates/connects the official YouTube channel, approves the first demo media/script, and confirms whether the agent remains draft-only or can update metadata through OAuth.
+
 ### Medium Official Profile Packet
 
 Status: OWNER_ACTION_REQUIRED for official account/profile creation, publication membership, and integration-token approval.
