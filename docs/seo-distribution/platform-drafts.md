@@ -4869,3 +4869,23 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   - "Reference copy lives in https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide and https://tachiyomiat.com/guides/translation-support-workflow."
 - Owner status: AUTHORIZED_ACCOUNT_REQUIRED (`accounts.json` has no authorized Android directory posting flow for APKPure)
 - Post/comment action: draft only; do not submit until owner confirms developer account and package identity.
+
+### 2026-05-31 Additional best-ready draft
+
+- Target: Stack Overflow OCR/translation tags (`https://stackoverflow.com/questions/tagged/ocr`) and Android-focused QA communities
+- Audience: Android developers, localization contributors, mobile OCR implementers
+- Why now: high topicality for technical guidance without link-only dependency
+- Rules risk: medium
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link variant: "You can use OCR responsibly by treating it as a suggestion layer, keeping screenshot quality checks and translator review explicit; I can share a short checklist if useful in your current flow."
+- Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Core copy draft:
+  "For APK or Android workflow quality checks, a practical stack is: image preprocessing, OCR confidence scoring, manual review for intent changes, and explicit language-boundary rules. I can share a copy-ready checklist if that helps.
+
+"
+
+## 2026-05-31 Draft Queue Add
+
+| Status | Platform | Community/location | Draft topic | Link target | Review notes |
+| --- | --- | --- | --- | --- | --- |
+| draft | Stack Overflow | OCR + Android translation tags | No-link-first technical checklist and quality gate draft | docs/seo-distribution/platform-drafts.md | AUTHORIZED_ACCOUNT_REQUIRED: only share resource links if community rules permit and account is verified |
