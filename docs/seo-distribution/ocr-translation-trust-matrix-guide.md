@@ -132,3 +132,13 @@ Use this section for media, partner, and directory notes that request ownership 
 
 - **What is the quickest safe sentence for non-promo trust leads?**  
   "Nayovi is an Android OCR + translation workflow for readers with permission-safe content; it uses an official source page, official support/pricing, and a human-review-first quality posture."
+
+## 2026-05-31 SEO/Trust Addendum
+
+### Claim-control matrix for outbound use
+
+- What we can claim: Nayovi provides an Android-only OCR + AI workflow for owned/authorized material, official support and pricing paths, and transparent support-first troubleshooting guidance.
+- What we cannot claim: platform verification status, open-source or mirror permissions, or universal translation quality across all titles without sample-specific evidence.
+- What to publish first: checklist links and process notes in `/guides/comic-ocr-translation-checklist` before any directory or community link variant.
+- What to avoid in first contact: hard conversion language, unverifiable traffic metrics, and referral claims.
+- Link gating rule: use no-link-first by default; include links only when a target path explicitly requests source references.

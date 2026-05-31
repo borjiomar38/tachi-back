@@ -231,3 +231,9 @@ This file is maintained by the SEO distribution agent.
 | draft | review packet | Android press pitch template | docs/seo-distribution/platform-drafts.md | Android editorial engagement | medium | Keep first-contact copy no-link-first; add official links only after target accepts context and fit check. |
 | draft | platform draft | Product Hunt launch packet | pending external posting | Launch + founder visibility | medium | Include maker-first narrative + one-click trial + free vs paid plan framing; avoid hard lead-generation language. |
 | watch | topic asset | GitHub topic contribution references | https://github.com/topics/manga-translator | Developer trust + technical discovery | high | Submit only to repository lists that accept practical tools and require non-promotional, source-aligned entries.
+
+## 2026-05-31 Added Linkable Assets (Community-ready)
+
+| Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
+| --- | --- | --- | --- | --- | --- | --- |
+| Trust asset | Founder-first HN draft packet | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Supports founder-led technical credibility and review-first positioning in startup/AI communities | Founder channels, build-in-public communities, investor curiosity readers | Includes explicit no-link-first guardrails and pending-language rules for verification/status claims | No-link first, optional link variant only after thread invites references |

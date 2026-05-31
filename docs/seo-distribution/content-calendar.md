@@ -201,3 +201,10 @@ This file is maintained by the SEO distribution agent.
 | Permission-safe manga translation pilot playbook | permission-safe manga translation pilot | high-intent educational | /guides/permission-safe-manga-translation-pilot | draft_ready | Add one FAQ section on approved sample intake and partner expectations for creators/publishers. |
 | Best Android manga translation APK guide | android manga translation app | commercial comparison intent | /guides/best-android-manga-translator-apk | draft_ready | Add concise “why this is different” section focused on source-of-truth, free-trial to paid plan flow, and OCR quality checks. |
 | Translation troubleshooting for OCR + AI workflow | comic ocr workflow error handling | support intent | /guides/translation-support-workflow | draft_ready | Add a short section on review-code routing and non-technical handoff for external editors. |
+
+## 2026-05-31 Additional High-Intent Content Rows
+
+| date | topic | keywords | search_intent | target_url | status | next_action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-31 | Permission-safe OCR pilot playbook for manga/localization teams | manga OCR pipeline, permission-safe translation, review workflow | informational + commercial trust | https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot | draft | Add short checklist section for approval workflow, supported/unsupported input sources, and escalation path for rejected translations |
+| 2026-05-31 | APK distribution trust: verification-ready checklists and what to avoid claiming | android apk verification, OCR app trust checklist | high-intent trust / compliance | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | draft | Add source-of-truth fields and no-link-first callouts for reviewer-facing pages; keep claims pending until owner confirmation |
