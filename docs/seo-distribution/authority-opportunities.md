@@ -6,6 +6,14 @@ Use this as the continuous discovery pipeline for high-authority SEO, backlink, 
 
 ## 2026-05-31 Fresh Opportunity Additions
 
+### 2026-05-31 Social + repository discoveries (expanded)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | medium | Reddit community | Android app recommendations community (self-promo split) | https://www.reddit.com/r/droidappshowcase/ | r/androidapps now routes self-promo to r/droidappshowcase, so Nayovi can only engage in discussion/answers with strict no-promo defaults | No-link onboarding fit question in approved subcommunities, then link only when rules explicitly allow | AUTHORIZED_ACCOUNT_REQUIRED + `SEO_AGENT_REDDIT_CLIENT_ID` / secret trio if posting is used | medium-high (strict promo controls) | Keep watch-only until owner approves subreddit-specific policy and no-link-first draft language is approved. |
+| draft | high | GitHub resource discovery | Awesome ACG resource list for ACG/Manga tooling | https://github.com/miyako/awesome-acg | Curated ACG repository list with strong topical relevance for visual OCR/localization tooling visibility if maintainers accept product-light checklist references | Maintainer-first contribution/issue check and request permission before adding any link | AUTHORIZED_ACCOUNT_REQUIRED for GitHub API workflow | medium | Keep as maintainer-only resource question first; include no-link variant and request explicit allowed-fit confirmation. |
+| draft | medium | AI/tool directory | FutureTools submission flow | https://www.futuretools.io/submit-a-tool | High topical relevance for Android + AI OCR translation tool discoverability when trial + paid-token model and anti-spam requirements are satisfied | Directory fit question draft + `toollisting` form behavior verification | OWNER_REVIEW_REQUIRED; AUTHORIZED_ACCOUNT_REQUIRED for official portal workflow | medium | Verify manual-review checklist on form before sharing link variant; keep no-link-first unless the directory confirms link policy. |
+
 | Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | draft | high | Android editorial media | Android Authority review methodology | https://www.androidauthority.com/how-we-review/ | High-authority review context where a technical, non-promotional source-first check note can be useful. | No-link-first source-check fit question, then optional link variant after owner clearance. | OWNER_REVIEW_REQUIRED: owner-approved media contact path + package/screenshot facts. | medium | Keep messaging focused on verification hygiene, package source links, and approved-sample constraints. |
