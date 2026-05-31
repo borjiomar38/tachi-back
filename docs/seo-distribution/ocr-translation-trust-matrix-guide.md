@@ -142,3 +142,22 @@ Use this section for media, partner, and directory notes that request ownership 
 - What to publish first: checklist links and process notes in `/guides/comic-ocr-translation-checklist` before any directory or community link variant.
 - What to avoid in first contact: hard conversion language, unverifiable traffic metrics, and referral claims.
 - Link gating rule: use no-link-first by default; include links only when a target path explicitly requests source references.
+
+## 2026-05-31 Cycle Addendum
+
+### Distribution-safe FAQ update (publish when owner confirms pending fields)
+
+- **Can we use package and verification claims now?**  
+  No. Use only: `pending public verification language` until the owner confirms package name, signing status, and Android developer verification state.
+
+- **What link format is safest in outreach?**  
+  Default to `no-link-first` and attach only one stable guide link when a contact channel allows source references.
+
+- **What should every draft include before a link variant?**  
+  Official app source, pricing model summary, support path, and responsible-use boundary.
+
+- **What should we block in community or directory copies?**  
+  Play Store verification certainty, catalog-processing promises, mirror/source impersonation language, and any claim requiring unverified traffic metrics.
+
+- **What is the safe reusable one-liner?**  
+  `Nayovi is an Android workflow for manga/manhwa/manhua OCR and translation support on officially owned, permission-safe source material, with free-trial-to-paid-token workflow and human review guidance.`

@@ -2,6 +2,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-31 Cycle Additions
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | independent Android APK trust and verification-ready wording | android apk verification trust matrix, source-first checklist | docs/seo-distribution/ocr-translation-trust-matrix-guide.md | Publish a short claim-control FAQ section so external outreach can use one no-link-first safe reference for package/signing and source-link boundaries. | Add FAQ section now; keep published content pending-language for verification and signing status. |
+| draft | trial + paid-token directory positioning for AI OCR workflows | AI directory listing fit, free-trial Android app | docs/seo-distribution/free-trial-directory-listing-brief.md | Add a direct comparison matrix for trial vs paid-token framing to avoid listing errors and overclaiming. | Keep internal until target form field compatibility is confirmed. |
+| draft | submission-ready FutureTools fit draft | futuretools submit-a-tool OCR checklist fit | docs/seo-distribution/platform-drafts.md | Prepare compliant no-link-first and link-ready copy for a manual FutureTools submission check. | Update draft fields after owner confirms category and pricing language. |
+
 ## 2026-05-30 Current Cycle Additions
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
