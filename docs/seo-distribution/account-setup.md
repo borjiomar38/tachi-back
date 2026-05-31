@@ -481,6 +481,65 @@ Agent capability after connection:
 Next action:
 - Owner confirms whether Nayovi is eligible as pre-launch or recently launched for each directory and approves the startup-directory packet before any manual submission.
 
+### Official Newsletter and Public Update Archive
+
+Status: OWNER_ACTION_REQUIRED for official newsletter account setup, sender identity approval, public archive URL, manual terms acceptance, visual assets, and optional API/token connection.
+
+Prepared packet:
+- `docs/seo-distribution/official-newsletter-first-issue.md`
+
+Profile fields:
+- Publication name: `Nayovi Notes`
+- Short description: `Official Nayovi updates about Android APK trust, hosted OCR/AI translation workflow testing, approved-sample boundaries, and reviewer guidance.`
+- Primary link: `https://nayovi.com`
+- Official APK: `https://tachiyomiat.com/download`
+- OCR checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Responsible-use line: `Nayovi does not host chapters; use owned, public-domain, official-sample, creator-provided, or permission-approved material.`
+
+Required assets:
+- Logo/avatar, optional banner, approved public contact path, approved screenshot/demo references if any, package-fact pending language, and owner-approved sender/byline.
+
+Credential references:
+- `SEO_AGENT_NEWSLETTER_PROFILE_REFERENCE`
+- `SEO_AGENT_NEWSLETTER_API_TOKEN`
+- `SEO_AGENT_PRESS_CONTACT_REFERENCE`
+
+Publish capability after connection:
+- Agent can prepare owner-approved archive issue metadata, excerpts, and source-link summaries after an official account/API workflow exists.
+- Agent must not import contacts, scrape emails, bulk-send, auto-subscribe users, publish without approval, or expose private metrics, contact lists, verification tokens, or review codes.
+
+Next action:
+- Owner creates or connects the official newsletter/public archive profile, approves the first issue, confirms sender identity and public contact path, and decides whether publishing remains manual-only.
+
+### Official App Testing / Reviewer Portal Profile
+
+Status: OWNER_ACTION_REQUIRED for official submitter identity, portal eligibility choice, APK sharing scope, sample/screenshot approval, terms acceptance, budget approval where relevant, and any public-report permission.
+
+Prepared packet:
+- `docs/seo-distribution/app-testing-review-brief.md`
+
+Profile fields:
+- Submitter/display name: `Nayovi`
+- Product type: `Android APK and hosted OCR/AI translation workflow`
+- Test goal: `Verify official source links, install flow, permission prompts, activation, OCR progress states, support clarity, pricing context, and screenshot safety.`
+- Official APK: `https://tachiyomiat.com/download`
+- Support: `https://tachiyomiat.com/support`
+- Pricing: `https://tachiyomiat.com/pricing`
+- Screenshot rule: approved samples only; no scraped chapters, paywalled pages, private libraries, private codes, or device identifiers.
+
+Credential references:
+- `SEO_AGENT_APP_TESTING_PORTAL_REFERENCE`
+- `SEO_AGENT_REVIEWER_PACKET_REFERENCE`
+- `SEO_AGENT_REVIEW_CODE_POLICY_REFERENCE`
+- Per-portal credential reference only if an official API workflow is later authorized.
+
+Publish capability after connection:
+- Agent can prepare portal-specific fit questions, test-scope summaries, and owner-approved reviewer packets.
+- Agent must not upload APKs, start tester campaigns, approve public reports, buy reviews, request ratings, issue review codes, or accept terms automatically.
+
+Next action:
+- Owner reviews AppTester.co-style health checks, TestFi-style crowdtesting, and APK review portals against the portal quality screen, then confirms APK facts, sample scope, source-link handling, and whether any report may be public.
+
 ### Reviewer Access / Review-Code Routing Profile
 
 Status: OWNER_ACTION_REQUIRED for reviewer contact path, private review-code policy, package facts, screenshot/demo approval, and portal-specific permission.

@@ -59,6 +59,33 @@ Before any app-testing or review portal action, the owner must confirm:
 - Which sample pages and screenshots are approved for testing and publication.
 - Whether any public report may cite Nayovi, and under which source-link/no-mirror rules.
 
+## Portal Quality Screen
+
+Use this screen before preparing any AppTester.co, TestFi, closed-testing marketplace, APK review, or app-health-check request.
+
+Accept only if the portal can:
+
+- Test from the official download page or an owner-approved APK upload path.
+- Preserve `https://tachiyomiat.com/download` as the source-of-truth APK URL.
+- Let Nayovi describe the product as an Android APK plus hosted OCR/AI translation workflow.
+- Keep pricing visible as free trial or redeem-code activation plus paid monthly token plans.
+- Support approved sample pages, public-domain pages, official samples, creator-provided samples, or otherwise permission-approved material only.
+- Report install, permission, activation, OCR progress, translation loading, support clarity, and screenshot-safety findings without requiring a public rating.
+
+Reject or hold if the portal requires:
+
+- Fake positive reviews, app-store ratings, review swaps, or vote exchange.
+- Reciprocal backlinks, paid link placement, hidden redirects, or guaranteed ranking claims.
+- Mirror-first APK hosting, APK rebranding, or removal of official source links.
+- Unsafe screenshots, scraped chapters, paywalled pages, private libraries, private codes, or device identifiers.
+- Public package/signing/developer-verification claims before the owner confirms exact language.
+
+Current fit notes:
+
+- AppTester.co-style app-health-check flows may fit if the owner approves APK sharing, sample scope, and public-report rules first.
+- TestFi-style crowdtesting may fit only as paid usability testing after the owner approves budget, tester scope, APK source handling, and screenshots.
+- Test-exchange communities and closed-testing subreddits are high risk because review swaps, install swaps, and link-heavy threads can look spammy; use them only for rule-compliant no-link learning, if at all.
+
 ## Draft Fit Question
 
 Hi team,
