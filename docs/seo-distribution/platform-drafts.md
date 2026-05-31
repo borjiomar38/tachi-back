@@ -10,6 +10,7 @@ External platform drafts are for authorized-account posting only. Do not create 
 | --- | --- | --- | --- | --- | --- |
 | draft | Android newsletter/resource curator | Android Weekly / Kotlin Weekly-style newsletters | Independent APK trust and hosted OCR reviewer checklist | docs/seo-distribution/android-newsletter-resource-pitch.md | OWNER_REVIEW_REQUIRED: manual suggestion only after current rules, package facts, and screenshots are approved; no paid placement or consumer app pitch. |
 | draft | Startup launch directories | Smol Launch / BetterLaunch / FastLaunch-style surfaces | Founder-approved launch listing with source-link and no-vote guardrails | docs/seo-distribution/startup-launch-directory-packet.md | OWNER_ACTION_REQUIRED: founder/company profile and manual submission only; skip vote/review requests, paid backlink packages, hidden redirects, or unsupported metrics. |
+| draft | AI directory (TheAIFest / similar) | Trial-aware AI directory listings | Product-light free-trial + paid-token fit question | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify live fields and remove any paid/reciprocal/hidden-redirect requirements before any manual submission request. |
 | draft | AI/free-trial directory | ToolsVerse / AIToolSync-style submit paths | Directory scorecard fit question before listing Nayovi | docs/seo-distribution/directory-submission-scorecard.md | OWNER_REVIEW_REQUIRED: verify live fields, pricing labels, and source-link behavior; no form submission, signup, payment, reciprocal link, or hidden redirect. |
 | draft | Technical publishing/newsletter | DEV / Medium / Hashnode / Nayovi Notes | Canonical technical profile and OCR checklist syndication | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_ACTION_REQUIRED: official byline, canonical URL policy, account setup, screenshots, and publication approval required. |
 | watch | Reddit/community context | r/webtoons AI translation discussions | No-link OCR QA support answer when users ask about AI translation quality | None by default | AUTHORIZED_ACCOUNT_REQUIRED: high rules risk; use only disclosed official account, no links unless directly allowed and contextually requested. |
@@ -198,6 +199,43 @@ Same as above, then add:
 
 Resource:
 `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### TheAIFest / trial-aware AI directory fit message
+
+Status: draft
+Target: `https://theaifest.org/` (or equivalent category/submit page after owner confirmation)
+Audience: AI tools buyers, developers, and localization-minded founders evaluating OCR workflows
+Rules risk: medium; many directories accept free-trial submissions but require precise fit fields and can reject mismatched category or pricing language
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/translate-manhwa-ai`
+
+No-link message:
+
+Hi,
+
+I am checking fit for a trial-aware AI tools listing.
+
+Nayovi is an Android-only OCR + AI translation workflow for manga, manhwa, and manhua reading with free onboarding and paid monthly token plans. It does not host chapters.
+
+I would like to confirm whether your submission form accepts a source-first Android product description with official APK source and trial/paid split. If not, I will skip submission.
+
+Core required fields I can provide (once confirmed):
+- Official app source: `https://tachiyomiat.com/download`
+- Brand site: `https://nayovi.com`
+- Workflow page: `https://tachiyomiat.com/translate-manhwa-ai`
+- Pricing overview: `https://tachiyomiat.com/pricing`
+- Support path: `https://tachiyomiat.com/support`
+- Responsible-use statement: own-owned content only, public-domain/creator-provided/permission-approved samples
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Submission URL:
+`https://tachiyomiat.com/translate-manhwa-ai`
 
 Official APK source:
 `https://tachiyomiat.com/download`

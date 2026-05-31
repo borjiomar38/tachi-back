@@ -55,6 +55,19 @@ Use this structured comparison text in any draft that asks for a source-first re
 | Technical publisher | Trial-to-paid path + official links + checklist philosophy | "Unlimited free access", "open source", or screenshot claims without owner clearance |
 | Creator/localization partner | Approved-sample workflow + glossary consistency + human review + no catalog processing | Any statement implying full catalog processing permissions |
 
+## FAQ: when to include links
+
+- Q: Should we send a link by default?
+  - A: Use no-link-first by default. Add links only after the target confirms link-preservation fields and policy constraints are acceptable.
+- Q: Can we mention package or signing status in first contact?
+  - A: Use pending/public placeholders only until the owner confirms package name, signing, and verification status.
+- Q: What is the safest launch-independent first paragraph?
+  - A: "Nayovi is an Android OCR + translation workflow for manga/manhwa/manhua reader use cases. It does not host chapters and uses official support channels only."
+- Q: Which links are always safe to include in trusted channels?
+  - A: Primary app source, workflow page, pricing, and support pages only, after owner sign-off.
+- Q: What claims should be blocked?
+  - A: Play Store verification claims, unlimited free-tier claims, open-source claims, and any catalog-processing claims until owner confirmation.
+
 Next action:
 - Add this section into one owned landing or guide page as a short FAQ block only if owner-confirmed public links and package/screenshot policies stay unchanged.
 - Keep the legal-safe copy unchanged until package/signing facts are approved in account setup packets.
