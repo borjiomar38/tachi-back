@@ -2,6 +2,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-31 Cycle Additions (this pass)
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | official-source trust FAQ and launch-safe copy | permission-safe OCR app trust, Android APK verification wording | `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` | Build one reusable FAQ block that converts no-link-first queries into link-safe follow-up language for editorial and directory replies | Publish this FAQ in one owned draft asset and use as the first fallback in all high-risk surface drafts |
+| draft | AI directory comparison fit | free-trial + paid-token translation app listing criteria | `docs/seo-distribution/free-trial-directory-listing-brief.md` | Add a comparison section for directories requiring Free/Freemium/Trial fields before any submission action | Finalize matrix and keep submission drafts as owner-review-only |
+| draft | Android editorial reviewer resource | Android independent APK trust and screenshot policy | `src/routes/guides/comic-ocr-translation-checklist.tsx` (guides route reference) | Add one claim-control section focused on official source links, verification boundaries, and link-gating so editorial reviewers can cite an owned checklist page safely | Keep guide updates copy-only and source-claim compliant; queue for owner confirmation before indexing-focused outreach |
+
 ## 2026-05-31 Cycle Additions
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
@@ -241,4 +249,3 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | draft | permissions-first Android OCR workflow comparison | permission-safe manga OCR workflow comparison | /guides/comic-ocr-translation-checklist | Publish an internal comparison block (workflow quality, ownership, support path, trial/token split) with a short FAQ so outbound drafts can link only to owned evidence | Add one comparison block with claim-control bullets and internal links to `/guides/translation-support-workflow`, `/pricing`, and `/support` before next prospect action |
 | draft | creator-focused localization trust | manga OCR localization quality checklist | /guides/permission-safe-manga-translation-pilot | Expand into a creator-partner-ready primer explaining approved-sample process, glossary consistency checks, and escalation expectations | Publish creator-facing checklist section so media and localization pitches can reference one owned source without promotional framing |
-

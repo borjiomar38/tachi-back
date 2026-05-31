@@ -172,3 +172,28 @@ Use this section for media, partner, and directory notes that request ownership 
   - **Claim-safe angle:** source provenance + pricing transparency + responsible-use
   - **Blocked angle:** broad claims, unverified verification status, or unlimited access promises
 
+## 2026-05-31 Guide-ready reusable section
+
+## Distribution-ready claim matrix
+
+### What to keep first in any draft
+
+1. Source provenance (`tachiyomiat.com/download`, support, pricing, workflow page)
+2. Permission boundary (owned/public-domain/official samples or approved creator consent only)
+3. Human-review framing (no final output claim, especially for translation quality)
+4. Verification posture (official verification only when owner confirms; no implied platform endorsements)
+
+### What to avoid unless owner confirms
+
+- Verified-on-all-devices or Play Store equivalence language
+- Unlimited free-tier claims or permanent trial framing
+- Chapter-hosting or catalog-level processing claims
+- Paid ranking, referral, reciprocal-link, or mirror-first positioning
+
+### Reusable no-link-first sentence
+
+`Nayovi is an Android APK workflow for permission-safe manga/manhwa/manhua OCR review and translation support with free-trial onboarding, monthly token plans, and official support channels.`
+
+### Reusable link-safe follow-up
+
+`Use only when the target explicitly accepts resources: https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
