@@ -6,6 +6,14 @@ Use this as the continuous discovery pipeline for high-authority SEO, backlink, 
 
 ## 2026-05-31 Fresh Opportunity Additions
 
+### 2026-05-31 Cycle Discovery Push (new this pass)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | medium | Android app distribution | AppBrain featured developer surface | https://www.appbrain.com/product/featured | Strong fit for independent Android APK trust if official developer metadata (support, screenshots, pricing, policy) is clean and not over-promotional | Claim/review fit packet + no-link-first query draft | OWNER_ACTION_REQUIRED for official dev profile and manual form/publishing path | medium | Verify AppBrain current developer requirements before any mention, keep non-promotional and no-mirror language |
+| medium | software recommendation directory | AlternativeTo listing fit | https://alternativeto.net/ | Product can fit if it is represented as an owned official website link without open-source/mirror misclassification and with explicit trial + paid-token framing | Listing-ready checklist and maintainers/platform rules review | No API required for manual watch/discovery; AUTHORIZED_ACCOUNT_REQUIRED for posting if official workflow is later added | high | Keep as watch/draft unless platform accepts source-link-only listings and no paid-upvote requirement |
+| high | founder/community / launch community | Indie Hackers founder audience and build-in-public cadence | https://www.indiehackers.com/ | Possible founder-trust fit for process-first product updates and architecture/QA transparency; avoid vanity growth metrics | Founder-owned draft + no-link-first technical post option | OWNER_ACTION_REQUIRED for official founder account creation and manual posting policy | medium | Prepare draft only; post only if founder-owned account is active and rules permit non-promotional value-first context |
+
 ### 2026-05-31 Cycle-added discovery (fresh)
 
 | Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
