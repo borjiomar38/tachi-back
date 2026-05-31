@@ -42,7 +42,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/download': {
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-31',
     priority: '0.8',
   },
   '/translate-manhwa-ai': {
@@ -56,12 +56,12 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/how-it-works': {
-    lastModified: '2026-05-28',
+    lastModified: '2026-05-31',
     priority: '0.8',
   },
   '/support': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-25',
+    lastModified: '2026-05-31',
     priority: '0.8',
   },
   '/guides/mihon-nayovi-setup': {

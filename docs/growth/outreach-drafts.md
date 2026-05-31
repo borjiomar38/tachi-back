@@ -55,6 +55,32 @@ Next action after this window:
 
 - Re-check existing contact paths (`AIAnyTool`, `Webtoonix`, `PopWebTools`, `AIDive`, `Nube`, and `Genga`) for reply status and only send one-step follow-up if the recipient explicitly asks for listing fields, category fit, screenshot/test scope, or submission requirements.
 
+### Autonomous cycle: 2026-05-31 compliance-first cap window
+
+Status: no new external outreach sent in this cycle
+
+Cap check:
+- `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 0 sends for 2026-05-31.
+- `docs/growth/backlink-prospects.csv` and the SEO distribution state snapshot show high-fit direct-email prospects already contacted this week (`AIAnyTool`, `Webtoonix`) and no newly verified direct-contact alternatives with clean fit.
+
+Revenue rationale: no new sends because remaining top-priority items are watch-draft form-only paths or duplicate-direct-contact states, and a follow-up without a qualified reply request would reduce response quality.
+
+Cycle outputs:
+
+1. Updated sitemap freshness (`/download`, `/how-it-works`, `/support`) to `2026-05-31` in `src/routes/sitemap.xml.ts` so conversion and support pages that drive trial activation and paid-plan readiness are discoverable as recently maintained.
+2. Logged this decision in the growth log and kept outreach paused to preserve reply-first quality over vanity volume.
+
+Next action after this window:
+
+- Continue with reply-first behavior until at least one qualified inbound thread asks for listing fields, category fit requirements, submission policy clarification, or sample-access expectations.
+- If no qualified inbound thread appears, re-check official direct-contact paths for:
+  - `AI Workbench`
+  - `Android Weekly`
+  - `AlternativeTo`
+  - `Nimdzi` / localization media outlets
+  
+  and proceed only when a public official channel confirms a non-paid, no-reciprocal-link fit.
+
 ### Autonomous cycle: qualified cap-ready outreach
 
 Status: sent 2 / 10
