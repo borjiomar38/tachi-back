@@ -78,6 +78,18 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-29 Current Cycle Setup Advancement
 
+## 2026-05-31 Current Cycle Setup Advancement
+
+### High-priority official setup packets prepared in this cycle
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Google Search Console | Domain ownership and sitemap validation for three properties | setup_packet_prepared_owner_action_required | Owner verifies `tachiyomiat.com`, `nayovi.com`, `translate-manhwa-ai.com` properties and confirms verification method | Domain list, sitemap URLs, crawler-access notes, `docs/seo-distribution/webmaster-and-entity-verification-packet.md` | `SEO_AGENT_GSC_CREDENTIALS_JSON`, `SEO_AGENT_BING_WEBMASTER_CREDENTIALS` | Agent can sync verification status and submit owned sitemap updates after owner approval; no secret values entered | Owner completes verification once credentials are available, then confirm sitemap submission status can be monitored |
+| high | Product Hunt + Launch profile readiness | Maker/company trust surface with launch-safe profile copy and no-link-first positioning | setup_packet_prepared_owner_action_required | Owner creates or confirms official maker/company profile, accepts terms, approves launch timing, and approves screenshot/demo rights | Canonical links, launch copy, screenshot set, legal-safe claims checklist, video or image proof references, launch FAQ | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | Agent can only draft launch packet updates, status text, no-link-first launch checklist, and comments once token/profile is connected | Owner confirms profile ownership and launch timing; then platform-specific draft can proceed with manual posting only |
+| medium | GitHub repo docs publisher profile | Repo-native trust surface for SEO, support docs, and reviewer-ready source references | setup_packet_prepared_owner_action_required | Owner confirms official GitHub org/profile ownership and whether a docs-first public profile update is approved | `docs/seo-distribution/official-github-trust-packet.md`, org avatar/logo, social links, support contact path | `SEO_AGENT_GITHUB_ORG_NAME` (reference only), `SEO_AGENT_GITHUB_APP_TOKEN` only if owner enables workflow | Agent can normalize README/docs copy and prepare maintainer-facing review notes after profile settings are connected | Owner confirms if API publishing is allowed or manual update only; then keep all edits owner-approved |
+| medium | Android newsletter editor packet (Android Weekly/Kotlin Weekly) | Credible technical editorial submission path for APK trust and checklist assets | setup_packet_prepared_owner_action_required | Owner approves packet ownership fields and editorial style constraints before any outreach | `docs/seo-distribution/android-newsletter-resource-pitch.md`, package facts, screenshot policy, canonical links | `SEO_AGENT_ANDROID_NEWSLETTER_REFERENCE` | Agent can prepare one exact suggestion variant only after owner-approved packet fields and manual submission rules are confirmed | OWNER_ACTION_REQUIRED: official manual submission workflow cannot run autonomously until owner confirms package and sample-safe references |
+
+
 ### Directory and App-Review Submission Registry
 
 Status: OWNER_ACTION_REQUIRED for official submitter identity, manual account setup, terms acceptance, package/signing facts, approved screenshots/demo assets, and per-platform submission approval.

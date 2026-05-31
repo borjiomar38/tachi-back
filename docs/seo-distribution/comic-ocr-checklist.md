@@ -45,10 +45,27 @@ This neutral checklist is maintained as a linkable Nayovi trust asset for review
 - For Android reviewers and directories, pair the checklist with official source links, support path, pricing, privacy, terms, and responsible-use notes.
 
 
-## SEO Linkability Additions (2026-05-30)
+## SEO Linkability Additions (2026-05-31)
 
-### Compliance-first workflow section
-- Add one comparative matrix for: manual screenshot OCR, built-in mobile OCR, and Nayovi mobile workflow.
-- Publish this matrix with explicit fields: input ownership, permission handling, cloud usage, offline mode readiness, and expected accuracy.
-- Add `FAQ` blocks with direct anchor opportunities to owned pages (`/support`, `/permissions`, `/terms`) without external claims.
-- Include internal links to trial activation and pricing page from checklist steps so outbound referral flow remains high quality and user-task aligned.
+### Compliance-first workflow matrix
+
+| Approach | Input ownership | Permission handling | Cloud use | Offline readiness | Expected accuracy profile |
+| --- | --- | --- | --- | --- | --- |
+| Manual screenshot OCR review | User-owned screenshot or approved sample page | Explicit sample-by-sample rights confirmation before sharing or review | Optional (optional upload or manual transfer steps) | High (no network needed for local review workflows) | Strong on small, high-contrast text; weakest on stylized sound effects and dense layout |
+| Device-native OCR tools | Device/system OCR output only | Usually user-managed, no explicit translator workflow scope | Usually on-device with optional cloud fallback | Very high | Good for discoverability and speed; low control over post-processing policy |
+| Nayovi Android workflow | User-owned/public-domain/chapter-safe sample, no catalog assumption | Requires explicit approval boundaries, no chapter-collection or replacement promises, and human-in-the-loop review | Optional if user enabled online mode in trial/paid settings | Medium-to-high when cache + retry strategy are enabled | Useful for manga/manhwa workflow consistency when combined with post-translation review checks |
+
+### FAQ for internal linking
+
+- What is the best way to keep translation quality high?  
+  Start from clean source images, verify OCR completeness, then review glossary continuity before any final merge.
+- What should users check after a bad line breaks OCR?  
+  Check reading order first, then compare OCR boundaries and sentence grouping before trusting the translated output.
+- Which legal or permission checks matter before sharing results?  
+  Use only owned, public-domain, or explicit-approval content; never process private catalog content or unsupported chapter archives.
+
+### Structured internal link path
+
+- Link this checklist to support-facing, permission, and onboarding pages where users expect trust signals: `https://tachiyomiat.com/support`, `https://tachiyomiat.com/permissions`, `https://tachiyomiat.com/terms`.
+- Keep a direct path from trial and pricing pages to the checklist so the trust layer remains conversion-relevant.
+- Use `docs/seo-distribution/android-newsletter-resource-pitch.md` and the reviewer packet as canonical companion assets when sharing externally.
