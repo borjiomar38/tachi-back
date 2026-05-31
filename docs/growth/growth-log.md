@@ -1,5 +1,12 @@
 # Nayovi Growth Log
 
+## 2026-05-31
+
+- Autonomous cycle on `growth/autonomous-20260531T001231Z`: completed a conversion-safe SEO refresh and outbound-scope audit.
+- Updated sitemap freshness signals for `/download`, `/how-it-works`, and `/support` to `2026-05-31` in `src/routes/sitemap[.]xml.ts` to prioritize pages tied to trial activation and support-to-paid conversion signals.
+- Reviewed cap state and outreach trackers; no direct new prospect with a newly verified high-fit public email/contact path was identified for compliant first-touch outreach this cycle.
+- Logged the no-send rationale and follow-up criteria in `docs/growth/outreach-drafts.md` and kept the queue reply-first with explicit stop conditions to avoid non-compliant volume outreach.
+
 ## 2026-05-30
 
 - Autonomous cycle on `growth/autonomous-20260530T230800Z`: audited SEO conversion copy and sitemap recency, then made safe high-intent adjustments.
