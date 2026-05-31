@@ -4388,6 +4388,8 @@ Nayovi team
 | draft | AI directory | FutureTools submit-a-tool | Trial + paid-token listing eligibility for manga OCR workflow | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify live submission form, confirm no affiliate-only fields or backlink expectation, and only use link variant after rules check. |
 | draft | Product launch | Product Hunt official maker submission | Build-in-public launch packet with no-upvote-request policy | docs/seo-distribution/platform-drafts.md | OWNER_ACTION_REQUIRED: official maker profile, launch timeline, approved screenshots/demos, and no-link fallback for unsupported submission timing. |
 | draft | Android community/media | XDA Developers app review stream | Independent APK trust and no-mirror review context | docs/seo-distribution/ocr-translation-trust-matrix-guide.md | AUTHORIZED_ACCOUNT_REQUIRED: official community account and subreddit/forum moderation review required; keep no-link-first by default. |
+| draft | LinkedIn | Nayovi official founder/company page | Trust-first build-in-public post and founder-led profile consistency note | docs/seo-distribution/official-launch-profile-packet.md | AUTHORIZED_ACCOUNT_REQUIRED: official LinkedIn account required; no direct promotion links unless the owner approves and platform rules allow. |
+| draft | GitHub | kba/awesome-ocr maintainer contact note | OCR evaluation checklist fit question before any issue or PR | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | AUTHORIZED_ACCOUNT_REQUIRED: only after maintainer policy review and with explicit maintainer acceptance if any outside-link references are used. |
 
 ### FutureTools submit-a-tool message
 
@@ -4407,6 +4409,51 @@ I am checking listing fit before submission.
 Nayovi is an Android APK + hosted OCR/AI workflow for manga/manhwa/webtoon readers who prefer sample-safe translation support. The fit only holds if the listing can preserve source links, an explicit trial + paid-token pricing model, support path, and a responsible-use statement (owned material, public-domain, official sample, creator-provided, or permission-approved content only).
 
 We do not host chapters and we do not claim open-source/APK mirror placement unless owner confirms source fields. Please confirm whether this format is accepted for the current review and category structure.
+
+Best,
+Nayovi team
+
+### LinkedIn trust-update draft
+
+Status: draft
+Target: Nayovi official LinkedIn company/founder profile
+Audience: Android builders, localization operators, startup founders, technical partners
+Rules risk: medium; community policy limits account farming, engagement incentives, and repeated link-first updates
+No-link variant: yes
+Link variant after owner review: `https://nayovi.com` or `https://tachiyomiat.com/download`
+
+No-link message:
+
+I am sharing a practical trust update for users evaluating Android OCR workflows:
+
+- official source of truth is always the website
+- free-trial + paid token plans with support path are clearly separated
+- no chapter hosting or catalog-level processing assumptions are claimed
+- approved-sample and screenshot policy are part of the default review approach
+
+I will only share source links when a post is appropriate and allowed by profile rules.
+
+Best,
+Nayovi team
+
+### GitHub community note draft (awesome-ocr maintainer path)
+
+Status: draft
+Target: kba/awesome-ocr maintainer path
+Audience: OCR maintainers, documentation editors, newsletter partners
+Rules risk: medium; unsolicited resource suggestions are often rejected
+No-link variant: yes
+Link variant after maintainer approval: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi,
+
+I am checking whether a short, neutral comic OCR checklist note would be useful in your resources.
+
+The note would stay narrowly scoped to source-first OCR review practices: approved content scope, panel/reading-order handling, OCR region misses, glossary consistency, and manual review handoff criteria.
+
+No product links are included by default. If your contribution guidelines allow, I can format this as a non-promotional resource-only reference.
 
 Best,
 Nayovi team
@@ -4481,4 +4528,3 @@ Nayovi team
 - Prepared by: SEO distribution cycle on `2026-05-31`.
 - Status: Draft.
 - Next action: OWNER_REVIEW_REQUIRED before any outbound contact.
-

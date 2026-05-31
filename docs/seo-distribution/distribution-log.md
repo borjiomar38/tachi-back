@@ -1472,3 +1472,13 @@ Next actions:
 - Link asset update: added trust-matrix usage entry to `docs/seo-distribution/link-assets.md` as a reusable, review-safe pitch anchor.
 - Content planning: added cycle row to `docs/seo-distribution/content-calendar.md` for the claim/avoid matrix and creator-facing guidance.
 - Outstanding: owner approval required before all outbound external publication/contact actions.
+
+## 2026-05-31 Cycle Addendum
+
+- Cycle actions completed: continued work on the same branch with owned content and distribution planning without any external posting.
+- `docs/seo-distribution/content-calendar.md`: added one owned asset conversion row for expanding the comic OCR guide with trust FAQ guardrails.
+- `docs/seo-distribution/platform-drafts.md`: added draft-ready entries and bodies for LinkedIn profile trust updates and GitHub maintainer-fit resource outreach (both no-link-first posture).
+- `docs/seo-distribution/link-assets.md`: added an operational asset row to keep profile consistency assets reusable across launch surfaces.
+- `docs/growth/backlink-prospects.csv`: already includes 2026-05-31 cycle rows for FutureTools, ProductHunt, XDA, Android Weekly, IAToolFinder, SpotFreeAI, etc.; no external action taken.
+- `docs/seo-distribution/ocr-translation-trust-matrix-guide.md`: remains the core owned trust anchor for no-link-first outreach preparation and source-link restraint.
+- Account posture check: read `/var/lib/tachi-seo-distribution-agent/accounts.json` and confirmed `externalPostingMode=draft` and no configured external action tokens.
