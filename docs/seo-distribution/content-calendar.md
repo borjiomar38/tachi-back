@@ -2,6 +2,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-30 Current Cycle Additions
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | independent Android APK trust and verification readiness | android verified app review fit and source-first pitch | docs/seo-distribution/android-verification-public-profile-packet.md | Build a reusable no-link-first internal pitch for Android review and listing surfaces that verifies official source links, supported samples, and package-signing boundaries. | Keep draft-only until owner confirms package fields and screenshot permissions. |
+| draft | source-trust support for localization podcast/community | visual storytelling OCR QA | docs/seo-distribution/platform-drafts.md | Prepare a no-link visual-storytelling OCR QA talking point for Nimdzi/Slator-style audiences focused on reading order, glossary control, and caption safety. | Add as topic watch-only until approved-sample observations and media-byline are approved. |
+| draft | high-authority app review directories and editorial programs | verified app review and Android feature program watchlist | docs/seo-distribution/authority-opportunities.md | Document qualified no-link-to-link fit checks for AndroidAuthority, Verified App Reviews, and AppBrain features before any manual submission. | Validate current terms on each surface during the next account-action review window. |
+
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
 | draft | place Nayovi in creator education without implying platform permission | creator resource OCR translation checklist | docs/seo-distribution/creator-resource-hub-fit-packet.md | Creator-resource hubs and manga/localization media can cite a product-light checklist only when the angle is approved-sample OCR QA, screenshot rights, and human review rather than catalog translation or app promotion. | Owner approves byline, sample scope, screenshots, current contact path, and no-link-first policy before any creator-resource note. |
