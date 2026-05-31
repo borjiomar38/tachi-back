@@ -49,6 +49,15 @@ run_codex_cycle() {
     return 1
   fi
 
+  if ! ensure_no_unmerged_agent_branches \
+    "${repo_dir}" \
+    "${base_branch}" \
+    "${report_file}" \
+    "${GROWTH_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES:-true}" \
+    "${GROWTH_AGENT_UNMERGED_BRANCH_PATTERN:-^origin/(growth|seo)/}"; then
+    return 0
+  fi
+
   prepare_git_workspace "${repo_dir}" "${branch}" "${base_branch}"
 
   cat >"${prompt_file}" <<PROMPT
@@ -513,6 +522,54 @@ append_report_note() {
     printf '%s\n' "${message}"
   } >>"${report_file}"
   log "${message}"
+}
+
+ensure_no_unmerged_agent_branches() {
+  local repo_dir="$1"
+  local base_branch="$2"
+  local report_file="$3"
+  local enabled="$4"
+  local branch_pattern="$5"
+  local pending
+
+  if [[ "${enabled}" != "true" ]]; then
+    return 0
+  fi
+
+  if [[ ! -d "${repo_dir}/.git" ]]; then
+    return 0
+  fi
+
+  (
+    cd "${repo_dir}"
+
+    if ! git fetch --prune origin; then
+      append_report_note "${report_file}" "Agent branch guard blocked this growth cycle because origin/${base_branch} could not be fetched. No new branch was created."
+      return 1
+    fi
+
+    if ! git rev-parse --verify --quiet "origin/${base_branch}" >/dev/null; then
+      append_report_note "${report_file}" "Agent branch guard blocked this growth cycle because origin/${base_branch} is unavailable. No new branch was created."
+      return 1
+    fi
+
+    pending="$(git branch -r --no-merged "origin/${base_branch}" --format='%(refname:short)' | grep -E "${branch_pattern}" || true)"
+    if [[ -z "${pending}" ]]; then
+      return 0
+    fi
+
+    append_report_note "${report_file}" "Agent branch guard blocked this growth cycle because existing agent branches are not merged into origin/${base_branch}. No new branch was created."
+    {
+      printf '\nPending unmerged agent branches:\n'
+      printf '%s\n' "${pending}"
+    } >>"${report_file}"
+
+    while IFS= read -r pending_branch; do
+      [[ -n "${pending_branch}" ]] && log "Pending unmerged agent branch: ${pending_branch}"
+    done <<<"${pending}"
+
+    return 1
+  )
 }
 
 prepare_git_workspace() {
