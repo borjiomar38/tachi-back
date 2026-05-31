@@ -80,3 +80,27 @@ Owner review required for any public claim touching:
 - signing fingerprint
 - developer verification status
 - APK metadata scope and screenshot rights
+## 2026-05-31 Linkable Trust Additions
+
+### Policy-safe launch posture for partnerships
+
+- **Ownership-first workflow:** The product should be positioned as a workflow tool that helps teams process content they are licensed to handle, own, or work on through public-domain channels.
+- **Distribution statement:** No chapter hosting or redistribution is performed by Nayovi. Output is a working file for the user’s next authorized step.
+- **Risk reduction copy:** Pair every feature claim with explicit limitations (e.g., "model output is first draft text" and "human review required for publication decisions").
+- **Partnership angle:** These points are intentionally reusable for app directories, launch pages, and technical contributor content where trust is scored above raw conversion language.
+
+### Suggested comparison block (for future editorial linking)
+
+```text
+Nayovi vs. local OCR-only pipeline:
+- OCR accuracy focus: image quality and speech bubble layout preservation.
+- Translation control: post-translation editing before finalization.
+- Compliance posture: explicit ownership and permission checklists.
+- Distribution model: local processing outputs only, no chapter hosting.
+```
+
+### Suggested anchor concepts for high-intent backlinks
+- `permission-safe manga OCR workflow`
+- `OCR translator for manga owners`
+- `AI localization for creators`
+- `manual review + AI translation workflow`

@@ -1494,3 +1494,25 @@ Next actions:
 - `docs/growth/backlink-prospects.csv`: already includes 2026-05-31 cycle rows for FutureTools, ProductHunt, XDA, Android Weekly, IAToolFinder, SpotFreeAI, etc.; no external action taken.
 - `docs/seo-distribution/ocr-translation-trust-matrix-guide.md`: remains the core owned trust anchor for no-link-first outreach preparation and source-link restraint.
 - Account posture check: read `/var/lib/tachi-seo-distribution-agent/accounts.json` and confirmed `externalPostingMode=draft` and no configured external action tokens.
+## 2026-05-31 Current Cycle
+
+- Cycle objective completed: advanced account setup planning first (account priority mode active), then targeted authority discovery and distribution drafts.
+- Account setup progress:
+  - Added official setup packets for Google Search Console, Bing Webmaster, Product Hunt Maker, and YouTube Brand Channel with credential placeholders and required public assets.
+  - Marked manual steps as `OWNER_ACTION_REQUIRED` where platform signup/identity verification or CAPTCHAs are required.
+- Owned content work:
+  - Added ownership-linked trust asset plan updates in `link-assets.md` and `content-calendar.md` for trust matrix/comparison expansion.
+  - Prepared a ready-to-implement structure for permission-safe workflow assets and tutorial scaffolding.
+- Authority discovery:
+  - Added cross-category opportunities spanning app indexing (Google Play), launch/community channels (Product Hunt), indie communities (Indie Hackers), and curated repository paths (Awesome ACG / GitHub).
+- Distribution drafts prepared:
+  - Added Product Hunt founder narrative draft, GitHub resource list draft, and Indie Hackers process-first draft in `platform-drafts.md` with link/no-link variants.
+- Pipeline impact:
+  - Prioritized two+ owned-account setup rows before normal outreach actions as required.
+  - Prepared follow-up actions for domain verification, maintainer checks, and launch-ready content gating.
+- Risks:
+  - Manual account actions remain blocked by missing platform access (no authorized posting APIs for LinkedIn/Reddit/Product Hunt/YouTube).
+  - Some opportunity rows may need maintainer policy confirmation before PR/submission.
+- Next actions:
+  - Owner to complete account ownership steps and provide official API references.
+  - Then execute linkable-asset publication and submit approved opportunities.
