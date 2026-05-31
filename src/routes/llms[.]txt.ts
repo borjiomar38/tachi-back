@@ -16,6 +16,12 @@ const primaryLinks = [
       'Source-of-truth Android APK download, setup, version, support, and mirror-boundary context.',
   },
   {
+    title: 'Official setup support',
+    path: '/guides/mihon-nayovi-setup',
+    description:
+      'Guided setup path for Android readers who search for TachiyomiAT/Tachiyomi/Mihon-compatible workflows.',
+  },
+  {
     title: 'Free manhwa AI translator',
     path: '/translate-manhwa-ai',
     description:
@@ -41,12 +47,6 @@ const guideLinks = [
     path: '/guides/translation-support-workflow',
     description:
       'Responsible-use workflow, submission queue, reply triage, and partner-review handoff notes.',
-  },
-  {
-    title: 'Permission-safe manga translation pilot',
-    path: '/guides/permission-safe-manga-translation-pilot',
-    description:
-      'Approved-sample pilot brief for creators, publishers, localization teams, reviewers, and communities.',
   },
   {
     title: 'Test AI manhwa translation with approved samples',
