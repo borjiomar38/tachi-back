@@ -47,7 +47,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/translate-manhwa-ai': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-29',
+    lastModified: '2026-05-31',
     priority: '0.9',
   },
   '/pricing': {
@@ -56,6 +56,11 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/how-it-works': {
+    lastModified: '2026-05-31',
+    priority: '0.8',
+  },
+  '/guides/translation-support-workflow': {
+    changeFrequency: 'weekly',
     lastModified: '2026-05-31',
     priority: '0.8',
   },
@@ -70,10 +75,6 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/mihon-tachiyomiat-setup': {
     lastModified: '2026-05-31',
-    priority: '0.8',
-  },
-  '/guides/translation-support-workflow': {
-    lastModified: '2026-05-29',
     priority: '0.8',
   },
   '/guides/comic-ocr-translation-checklist': {
