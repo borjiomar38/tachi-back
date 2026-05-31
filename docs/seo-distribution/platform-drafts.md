@@ -8,6 +8,7 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 | Status | Platform | Community/location | Draft topic | Link target | Review notes |
 | --- | --- | --- | --- | --- | --- |
+| draft | Reddit | r/androidapps / r/droidappshowcase | Android verification/rule-aware no-link support question and posting boundary draft | docs/seo-distribution/platform-drafts.md | AUTHORIZED_ACCOUNT_REQUIRED: high rules risk; only authorized and disclosed replies, no self-promo in r/androidapps; link only if subreddit-specific rules and owner approval allow it. |
 | draft | Android newsletter/resource curator | Android Weekly / Kotlin Weekly-style newsletters | Independent APK trust and hosted OCR reviewer checklist | docs/seo-distribution/android-newsletter-resource-pitch.md | OWNER_REVIEW_REQUIRED: manual suggestion only after current rules, package facts, and screenshots are approved; no paid placement or consumer app pitch. |
 | draft | Startup launch directories | Smol Launch / BetterLaunch / FastLaunch-style surfaces | Founder-approved launch listing with source-link and no-vote guardrails | docs/seo-distribution/startup-launch-directory-packet.md | OWNER_ACTION_REQUIRED: founder/company profile and manual submission only; skip vote/review requests, paid backlink packages, hidden redirects, or unsupported metrics. |
 | draft | GitHub resource list | awesome-acg (anime, comics, games) | Product-light OCR/translation checklist fit question and maintainer scope check | https://github.com/miyako/awesome-acg | AUTHORIZED_ACCOUNT_REQUIRED: no link-first draft to avoid maintainer overfit; include official no-link contribution path only. |
@@ -199,6 +200,35 @@ Link variant:
 Same as above, then add:
 
 Resource:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### Reddit policy-aware Android apps participation note (no-link then link-safe)
+
+Status: draft
+Target: r/androidapps moderators and official account policy readers
+Audience: Android power users and support communities seeking independent APK safety guidance
+Rules risk: medium-high; cross-posting is restricted and only official/disclosed accounts with explicit rules review can participate
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi team,
+
+I want to check subreddit-fit before sharing any product detail.
+
+Nayovi uses an official APK source + hosted OCR workflow for manga/manhwa/manhua translation support. To avoid community risk, I only want to post a compliance-focused checklist note if the subreddit allows utility-focused support replies: confirm official source, package/signing status language, screenshot permissions, sample policy, support path, and trial-versus-paid-token clarity.
+
+Would a brief community post on these verification checks be appropriate in r/droidappshowcase or another thread format? If not, I will keep it out.
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Resource for process reference:
 `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 
 ### TheAIFest / trial-aware AI directory fit message

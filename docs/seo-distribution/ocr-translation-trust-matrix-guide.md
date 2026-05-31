@@ -115,3 +115,20 @@ Use this section for media, partner, and directory notes that request ownership 
 - **What must remain pending until owner confirmation:** package hash, signing identity, and verification status wording.
 - **What must not be claimed:** complete verification status, full chain-of-custody across third-party stores, or open-source/source-availability claims not explicitly confirmed.
 - **Recommended link policy:** default to no-link-first for community questions; use link variant only in channels that explicitly allow resource references.
+
+## 2026-05-31 Practical Distribution FAQ
+
+- **Can we mention package verification now?**  
+  Only as pending/publicly confirmed language from official account setup packets. Do not name verification status or signed APK details until owner-confirmed.
+
+- **Can we discuss APK source security?**  
+  Yes, only as "official APK source + support path + screenshot constraints". Do not mention mirror sources, hash values, or private test credentials.
+
+- **Do we send links in first community replies?**  
+  No-link-first by default. Use a link variant only after the target route explicitly accepts resource links and no promotion-risk flags are flagged.
+
+- **What should be blocked in outreach now?**  
+  Fake verification claims, open-source framing, unrestricted catalog-processing claims, and any statement implying no-mirror or full platform trust when owner confirmation is incomplete.
+
+- **What is the quickest safe sentence for non-promo trust leads?**  
+  "Nayovi is an Android OCR + translation workflow for readers with permission-safe content; it uses an official source page, official support/pricing, and a human-review-first quality posture."
