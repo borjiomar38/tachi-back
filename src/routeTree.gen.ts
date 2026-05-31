@@ -1469,6 +1469,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesComicOcrTranslationChecklistRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/free-trial-vs-paid-token-plan': {
+      id: '/guides/free-trial-vs-paid-token-plan'
+      path: '/guides/free-trial-vs-paid-token-plan'
+      fullPath: '/guides/free-trial-vs-paid-token-plan'
+      preLoaderRoute: typeof GuidesFreeTrialVsPaidTokenPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/guides/best-android-manga-translator-apk': {
       id: '/guides/best-android-manga-translator-apk'
       path: '/guides/best-android-manga-translator-apk'
