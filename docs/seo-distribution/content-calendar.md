@@ -234,3 +234,11 @@ This file is maintained by the SEO distribution agent.
 | 2026-05-31 | Compare manga translation workflows | manga translation app comparison, OCR vs cloud translation, Android manga tools | commercial + educational | https://tachiyomiat.com/guides/best-android-manga-translator-apk | draft_ready | Add one side-by-side row for data handling and privacy posture; link to support workflow from each comparison point. |
 | 2026-05-31 | OCR workflow comparison and ownership clarity section | OCR workflow comparison, hosted translation vs APK, manga/manhwa permissions | informational + trust | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | draft_ready | Publish a short comparison block plus “What we own today / what remains pending” section |
 | 2026-05-31 | Creator-facing support and rights-first pitch | creator-platform rights handoff, reviewer messaging, creator workflows | informational + partnership | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | draft_ready | Build a rights-aware pitch and no-link contact variant for creator/platform contexts and avoid overstating support scope |
+
+## 2026-05-31 Cycle content and trust pages
+
+| status | search_intent | target_keyword | target_url | angle | next_action |
+| --- | --- | --- | --- | --- | --- |
+| draft | permissions-first Android OCR workflow comparison | permission-safe manga OCR workflow comparison | /guides/comic-ocr-translation-checklist | Publish an internal comparison block (workflow quality, ownership, support path, trial/token split) with a short FAQ so outbound drafts can link only to owned evidence | Add one comparison block with claim-control bullets and internal links to `/guides/translation-support-workflow`, `/pricing`, and `/support` before next prospect action |
+| draft | creator-focused localization trust | manga OCR localization quality checklist | /guides/permission-safe-manga-translation-pilot | Expand into a creator-partner-ready primer explaining approved-sample process, glossary consistency checks, and escalation expectations | Publish creator-facing checklist section so media and localization pitches can reference one owned source without promotional framing |
+

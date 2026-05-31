@@ -1659,3 +1659,18 @@ Next actions:
 - Added a new linkable asset row for an OCR comparison matrix in `docs/seo-distribution/link-assets.md`.
 - Kept cycle rules-compliant: no external posting, no API submissions, and no direct third-party account actions were performed.
 - Added 3 new outbound authority/watch entries to `docs/growth/backlink-prospects.csv` (Product Hunt, Android-focused QA, ToolIndex submission).
+
+## 2026-05-31 Cycle 2nd-pass update (this execution)
+
+- Setup tasks advanced before backlink work as required:
+  - Added explicit LinkedIn and Product Hunt owner-action rows with exact fields, credential references, publish gates, and no-link-first compliance checks to `docs/seo-distribution/account-setup.md`.
+  - Kept these as `OWNER_ACTION_REQUIRED` to prevent unauthorized posting until identity and official policy steps are completed.
+- Added 3 high-quality opportunities in `docs/seo-distribution/authority-opportunities.md` across fresh categories:
+  - AppBrain directory feature path (app discovery)
+  - Product Hunt launch workflow (founder/launch community)
+  - Mangasplaining creator media contact (creator/localization media)
+- Added new no-link-first+link variant drafts for AppBrain, Product Hunt, and Mangasplaining in `docs/seo-distribution/platform-drafts.md`.
+- Improved owned trust content in `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` with explicit claim-safe internal-linking and comparison-use guidance.
+- Added aligned rows to `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/growth/backlink-prospects.csv` for workflow continuity.
+- Validation not run (documentation-heavy, no schema-facing code changes requested).
+
