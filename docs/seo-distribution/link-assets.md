@@ -203,3 +203,11 @@ This file is maintained by the SEO distribution agent.
 | Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
 | --- | --- | --- | --- | --- | --- | --- |
 | GitHub contribution asset | Awesome ACG maintainer inquiry draft | https://github.com/miyako/awesome-acg | Low-friction maintainer-first contribution with no-link default for inclusion in ACG resource directories | Maintainers, contributors, curation editors | Prevents spam signal; aligns with “ask before adding” policy; reusable for similar lists | Draft only; link variant only after explicit approval |
+
+## 2026-05-31 Owned Asset Additions
+
+| Status | Asset | Audience | Link target | Why it can earn links | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | AppBrain submission-fit check packet | Android app directory editors and quality-focused Android users | https://tachiyomiat.com/translate-manhwa-ai | Keeps the first outbound Android directory contact strictly source-first and avoids paid/manipulation framing | Validate AppBrain submission fields and keep this as no-link-first until official confirmation is received. |
+| draft | SaaSHub eligibility note | AI directory reviewers, startup discoverability readers | https://www.saashub.com/submit | Enables an entry focused on supported Android workflows and trial-to-paid pricing without affiliate links or generic sales claims | Confirm category + listing constraints before any link variant |
+| draft | Reddit dev-posting policy alignment note | r/droidappshowcase moderators/community reviewers | https://www.reddit.com/r/droidappshowcase | Helps avoid removed posts by matching platform-specific link and post-frequency rules before any community drafting | Keep no-link-first and use official app-link allowances only |

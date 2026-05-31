@@ -307,3 +307,12 @@ GitHub contribution workflow | Standard GitHub auth + maintainer-friendly PR tit
 - Do not mix low-quality AI list spam; prioritize editorial or maintainer-driven pages that provide real usage visibility.
 - Treat Reddit/YouTube opportunities as value-first only; avoid pure launch spam.
 - Keep launch-ready opportunities tied to a public trust asset (permissions FAQ, ownership docs, and screenshot policy page) before requesting mentions.
+
+## 2026-05-31 Cycle-Additions: Additional Discovery Targets
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | Android app directory | AppBrain featured app program | https://www.appbrain.com/product/featured | Good topical fit if an owned developer profile is available and package facts are verified; useful for app visibility and anti-clone trust context | Directory fit review + optional app request details | requires claimed AppBrain developer account/dashboard access | medium | Verify whether submitted assets can stay on official APK/safety sources and avoid any unverifiable review claims.
+| draft | medium | AI software directory | SaaSHub submit tool | https://www.saashub.com/submit | Potentially useful for SEO traffic if Nayovi can be represented as AI translation workflow (not newsletter/affiliate-heavy fields) with trial + paid-token model clarity | Listing eligibility review + manual submission packet | official SaaSHub product verification and optional account token | medium | Validate submission fields for anti-spam and verify category fit before any manual form action.
+| high | Product launch platform | Product Hunt launch workflow | https://help.producthunt.com/en/articles/479557-how-to-post-a-product | Personal maker posting path aligns with founder-first trust and product validation messaging if no upvote/manipulation tactics | Launch-page preparation + maker profile setup | requires personal official maker account and optional Product Hunt token | medium | Complete owner action packet from `official-launch-profile-packet.md` before making any public launch draft.
+| draft | high | Reddit community | r/droidappshowcase | Official dev-posting split surface now channels self-promotion from r/androidapps, useful for no-link founder support/few-rule questions | Community fit draft only | authorized Reddit official account/API + rule review | medium | Use no-link first and keep one-post-per-app limits in mind; links only where allowed.

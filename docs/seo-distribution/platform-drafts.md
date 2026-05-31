@@ -4632,3 +4632,72 @@ We also published a trust page that maps legal boundaries and recommended usage:
 - **Link variant:**
   - Add one contextual link to trust matrix and legal FAQ after demonstrating governance approach.
 - **Next action:** keep draft in draft mode until owner confirms profile and posting cadence alignment.
+
+## 2026-05-31 Cycle Draft Additions (Action candidates)
+
+### AppBrain featured app submission fit check
+
+Status: draft
+
+Target: https://www.appbrain.com/product/featured
+
+Audience: Android builders, Android app discovery communities, quality-focused APK users
+
+Rules risk: medium; AppBrain focuses on claimed developer profiles and reviewable listings, so claims should stay limited to official package/safety facts.
+
+No-link variant:
+
+Hi AppBrain team,
+
+I am checking fit before submitting an owned Android workflow product from an official source. Nayovi is an official APK-hosted OCR+translation workflow with a trial-to-token model, official support URL, and explicit source-link policy.
+
+I can share listing metadata only if your listing format allows APK workflow entries without catalog-processing claims.
+
+Best,
+Nayovi team
+
+Link variant:
+
+Hi AppBrain team,
+
+If the format fits, I can share
+- official source/download page: https://tachiyomiat.com/download
+- product overview: https://tachiyomiat.com/translate-manhwa-ai
+- trial-policy and support details: https://tachiyomiat.com/pricing and https://tachiyomiat.com/support
+
+Best,
+Nayovi team
+
+### SaaSHub AI tool listing eligibility draft
+
+Status: draft
+
+Target: https://www.saashub.com/submit
+
+Audience: AI directory browsers and translation workflow evaluators
+
+Rules risk: medium; directory likely prefers product pages with clear pricing and no affiliate links.
+
+No-link variant:
+
+Hi SaaSHub team,
+
+I am checking whether an Android OCR+translation workflow with official download and trial-to-paid token model fits your directory. We want to share only if the listing can stay source-first and policy-compliant.
+
+Could you confirm required fields for owned products and whether Android APK + trial/paid split is accepted?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Hi SaaSHub team,
+
+If accepted, I can provide:
+- https://tachiyomiat.com/download
+- https://tachiyomiat.com/translate-manhwa-ai
+- https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+- pricing/support: https://tachiyomiat.com/pricing, https://tachiyomiat.com/support
+
+Best,
+Nayovi team
