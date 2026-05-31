@@ -4380,3 +4380,82 @@ Nayovi team
 - link variant: founder/company page + checklist resource as secondary proof after account confirmation
 - draft_status: draft_ready_pending_account_setup
 | draft | Android newsletter/editorial | Android Weekly / Kotlin Weekly submission teams | No-link resource first, then optional checklist link | None by default; optional `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` in link variant | Audience: Android developers, reviewer communities, independent APK users. Rules risk: manual editorial gate only, no mass-subreddit behavior, no paid placement claims, no claim of store verification. Link risk: include checklist link only if official fields are approved. |
+
+## 2026-05-31 Cycle Draft Entries
+
+| Status | Platform | Community/location | Draft topic | Link target | Review notes |
+| --- | --- | --- | --- | --- | --- |
+| draft | AI directory | FutureTools submit-a-tool | Trial + paid-token listing eligibility for manga OCR workflow | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify live submission form, confirm no affiliate-only fields or backlink expectation, and only use link variant after rules check. |
+| draft | Product launch | Product Hunt official maker submission | Build-in-public launch packet with no-upvote-request policy | docs/seo-distribution/platform-drafts.md | OWNER_ACTION_REQUIRED: official maker profile, launch timeline, approved screenshots/demos, and no-link fallback for unsupported submission timing. |
+| draft | Android community/media | XDA Developers app review stream | Independent APK trust and no-mirror review context | docs/seo-distribution/ocr-translation-trust-matrix-guide.md | AUTHORIZED_ACCOUNT_REQUIRED: official community account and subreddit/forum moderation review required; keep no-link-first by default. |
+
+### FutureTools submit-a-tool message
+
+Status: draft
+Target: FutureTools submit-a-tool
+Audience: Android OCR workflow curators and AI-tool reviewers
+Rules risk: medium; submission may decline marketing-only or low-specificity tools
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/download`, `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi {{editor_or_reviewer}},
+
+I am checking listing fit before submission.
+
+Nayovi is an Android APK + hosted OCR/AI workflow for manga/manhwa/webtoon readers who prefer sample-safe translation support. The fit only holds if the listing can preserve source links, an explicit trial + paid-token pricing model, support path, and a responsible-use statement (owned material, public-domain, official sample, creator-provided, or permission-approved content only).
+
+We do not host chapters and we do not claim open-source/APK mirror placement unless owner confirms source fields. Please confirm whether this format is accepted for the current review and category structure.
+
+Best,
+Nayovi team
+
+Link variant:
+
+Add this only after owner approval:
+
+- Download/source: `https://tachiyomiat.com/download`
+- Product workflow: `https://tachiyomiat.com/translate-manhwa-ai`
+- Pricing and support: `https://tachiyomiat.com/pricing` | `https://tachiyomiat.com/support`
+
+### Product Hunt launch check draft
+
+Status: draft
+Target: https://www.producthunt.com/products/submitting
+Audience: Android builders, AI workflow communities, early adopters
+Rules risk: high; follows launch timing and maker identity constraints
+No-link variant: yes
+Link variant after owner review: `https://nayovi.com` or `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi Product Hunt team,
+
+I am preparing a maker listing plan for Nayovi and want to confirm whether launch timing and format fit current submission rules.
+
+Nayovi is a focused Android APK workflow for manga/manhwa/webtoon OCR and translation support, with official source-of-truth pages, free-trial entry with paid monthly token plans, and an explicit no chapter-hosting policy. If launch is allowed, we will keep the post link-safe, transparent, and feedback-first.
+
+Please confirm the preferred channel for a no-manipulation launch with maker comment follow-up only.
+
+### XDA app-review thread draft
+
+Status: draft
+Target: https://www.xda-developers.com/tag/app-review/
+Audience: Android developers and independent APK reviewers
+Rules risk: medium; community moderation varies by topic
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` only if explicitly allowed
+
+No-link message:
+
+Hi,
+
+I am checking whether a source-first review note format would be useful for your app review community.
+
+Nayovi is an Android APK and hosted OCR workflow for manga/manhwa/manhua translation support. We are prepared to keep submissions source-safe (official APK link, support path, pricing model, screenshot policy, and no-mirror language) and would prefer a no-push fit check before any listing.
+
+If your community accepts technical contributor context, I can provide a short checklist for review framing and stop conditions. If not, please ignore this note.
+
+Best,
+Nayovi team
