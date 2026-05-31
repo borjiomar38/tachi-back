@@ -4,6 +4,22 @@ This file is maintained by the SEO distribution agent.
 
 External platform drafts are for authorized-account posting only. Do not create accounts, bypass platform login, or post promotional backlinks automatically. Every draft should be useful without the backlink and should include a no-link variant when the community may reject links.
 
+### 2026-05-31 Best-ready cycle draft (authority opportunity lock)
+
+- Target: ToolIndex AI directory submit flow (`https://www.toolindex.ai/submit/`)
+- Category: AI directory (trial/paid model fields + Android OCR)
+- Audience: AI tooling curators and directory reviewers
+- Rules risk: medium (only if category/pricing/source-link fields allow official Android + trial/paid-token framing)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- Target rule notes: This surface is highest-priority for direct discovery because it supports structured pricing fields and is less dependent on social proof than typical mass directories.
+- No-link-first draft:
+  "I am preparing a product-light checklist-based listing packet for an Android OCR + translation workflow focused on permission-safe content and human review. I can share field compatibility first if your submission process accepts APK-focused utilities with official APK source, support, and subscription/usage model details."
+- Link variant (use only if allowed by the submission flow):
+  `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` and `https://tachiyomiat.com/pricing`
+- Action intent:
+  1. Confirm category and field compatibility in one response.
+  2. Add link variant only if field parity supports official source links and no-mirror/no-promotional limits.
+
 ## 2026-05-31 Cycle-Ready Drafts
 
 ### 2026-05-31 best-ready cross-platform post
@@ -5222,4 +5238,3 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
   - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 - Next action: Keep this as an invitation-first message and send only after owner approves founder/media posture.
-

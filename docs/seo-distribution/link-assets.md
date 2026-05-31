@@ -2,6 +2,15 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-31 Cycle Additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Claim-boundary FAQ extension for OCR/trust | `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` | Reviewers, directories, creators, Android publishers, investors | Provides a reusable no-link default plus gated link variant language with a blocked-claim matrix and FAQ for safe first-contact responses | draft | Keep in sync with `docs/seo-distribution/account-setup.md` until package/signing wording is owner-confirmed |
+| Android editorial trust comparison draft pack | `https://www.xda-developers.com/tag/app-review/` | Android technical reviewers and editorial curators | Keeps submission language source-first and avoids catalog-processing claims, mirror claims, and unsupported verification statements | draft | Use as the no-link-first fallback for any Android editorial inquiry, with optional checklist link if rules allow |
+| ToolIndex AI directory readiness packet | `https://www.toolindex.ai/submit/` | AI directory curators, SEO tools seekers, paid/free-trial comparison readers | Structured listing packet for trial + paid-token Android OCR workflow fit checks, with no-link-first default and explicit risk blocks | draft | Verify live form fields and keep this as the only listing candidate for this cycle unless field parity is confirmed |
+| Awesome-ocr maintainer-safe note | `https://github.com/kba/awesome-ocr` | OCR maintainers, technical readers, AI workflow researchers | Supports a maintainer-first product-light resource question for future resource-list inclusion only if maintainers invite a fit check | draft | Hold as relationship-first query; only proceed if maintainer request appears and no promotional language is required |
+
 ## 2026-05-31 Owned trust-asset additions
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |
@@ -270,4 +279,3 @@ This file is maintained by the SEO distribution agent.
 | draft | AppBrain submission-fit packet | Android discoverability editors | docs/seo-distribution/platform-drafts.md | Converts distribution planning into a source-first metadata question before any public listing submission | Keep as no-link-first; only add public links if directory accepts official fields |
 | draft | Product Hunt launch checklist asset | Founder communities and launch reviewers | https://www.producthunt.com/launch | Keeps launch copy compliant with personal account rules and no-spam expectations while preserving claim-control | Align maker timeline and owner approval before queueing public submission |
 | draft | Mangasplaining topic pitch | Creator-locale media and publisher-adjacent audiences | docs/seo-distribution/platform-drafts.md | Product-light topic pitch for visual storytelling OCR QA and approval-safety context | Use no-link-first invitation draft first; link variant only when invited |
-
