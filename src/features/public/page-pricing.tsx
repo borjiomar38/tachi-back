@@ -394,6 +394,48 @@ export const PagePricing = (props: PagePricingProps) => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Reviewer handoff"
+        title="Send qualified readers to pricing"
+        description="Reviews, directories, and partner pilots should route people here only after they can verify the official APK path, activation flow, responsible-use boundary, and reason to choose monthly tokens."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerHandoffCards.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <Card key={item.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="/download"
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          >
+            <span className="flex items-center gap-2">
+              Verify APK source
+              <ShieldCheckIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/guides/permission-safe-manga-translation-pilot"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Review pilot brief
+          </a>
+        </div>
+      </PublicSection>
+
+      <PublicSection
         eyebrow="FAQ"
         title="Questions people ask about monthly plans"
         description="The website should set expectations clearly around webhook fulfillment, activation, renewal, and support."
