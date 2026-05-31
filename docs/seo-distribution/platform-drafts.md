@@ -4731,3 +4731,43 @@ If accepted, I can provide:
 
 Best,
 Nayovi team
+
+## 2026-05-31 Best-ready draft (cross-category)
+
+### Papers with Code / AI Stack Exchange opportunity draft
+
+Status: draft
+
+Target: https://paperswithcode.com/task/optical-character-recognition and https://ai.stackexchange.com/questions/tagged/ocr
+
+Audience: OCR practitioners, AI builders, translation workflow evaluators, startup diligence readers
+
+Rules risk: high on AI Stack Exchange due strict anti-self-promotion rules; low on research-citation context if no overt promotion
+
+No-link variant:
+
+Hi,
+
+I am sharing a short OCR trust checklist for hosted manga/manhwa OCR workflows that prioritizes responsible use and verification language before commercialization.
+
+The checklist focuses on:
+- reading-order and bubble cluster handling
+- missing/overlapping text region failures
+- glossary consistency and manual correction flow
+- ownership-safe processing boundaries (official/permissioned/public-domain)
+- no-mirror package/source claims without verified evidence
+
+I can also share a short comparison matrix for trial versus paid-token product models, but I can keep this technical-only unless you prefer a resource context only.
+
+Best,
+Nayovi team
+
+Link variant (research-community allowed only):
+
+You can review the structured trust template here:
+- https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide
+
+Best,
+Nayovi team
+
+Next action: keep this as a no-link-first draft until owner confirms official profile/terms acceptance and community posting policy; publish only on explicit relevance and with disclosure.
