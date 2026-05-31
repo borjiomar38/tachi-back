@@ -201,6 +201,74 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ## Draft Bodies
 
+### Creator resource hub fit question
+
+Status: draft
+Target: WEBTOON creator-resource context, manga creator newsletters, or localization education outlets after owner review
+Audience: creator education teams, manga/newsletter editors, localization workflow readers
+Rules risk: high for creator platforms; avoid links unless invited and do not imply platform permission, endorsement, or catalog processing.
+No-link variant: yes.
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi {{editor_or_resource_team}},
+
+I am checking whether a creator-resource note would fit before sending anything promotional.
+
+The useful piece is a checklist for reviewing OCR and AI translation on approved comic samples: text-region coverage, reading order, speaker grouping, glossary drift, and human-review handoff. It is written for owned, public-domain, official-sample, creator-provided, or otherwise permission-approved material.
+
+Nayovi is the team maintaining the checklist, but this should not be treated as a catalog-translation pitch or a request to process platform content.
+
+Would that kind of resource fit your creator education or localization workflow queue, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Resource:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Permission-safe pilot context:
+`https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+
+### Apps Tested-style independent app review fit question
+
+Status: draft
+Target: Apps Tested or comparable independent app-review surface after owner review
+Audience: app reviewers, Android testers, AI app comparison editors
+Rules risk: medium; no APK upload, review-code grant, payment, or public report approval without owner action.
+No-link variant: yes for fit question.
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi {{review_team}},
+
+I am checking review fit before sending an APK, screenshots, or access.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows. A useful review would need to preserve the official APK source, pricing/support context, and the responsible-use boundary: no chapter hosting, and testing only with owned, public-domain, official-sample, creator-provided, or permission-approved material.
+
+The review angle would be install clarity, permissions, activation, OCR progress, support routing, and whether the app can be evaluated without unsafe screenshots or mirror-first APK handling.
+
+Would that kind of source-first app health check fit your process, or should I skip it?
+
+Best,
+Nayovi team
+
+Link variant:
+
+Same as above, then add:
+
+Official APK source:
+`https://tachiyomiat.com/download`
+
+Reviewer packet:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
 ### Android newsletter resource suggestion
 
 Status: draft
