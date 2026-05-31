@@ -1614,3 +1614,13 @@ Next actions:
 - Linkable assets: added 2 guide and process assets in `link-assets.md` to support creator/platform outreach without thin linking.
 - Outreach posting status: `OWNER_ACTION_REQUIRED` / `AUTHORIZED_ACCOUNT_REQUIRED` for all non-owned actions due no active third-party tokens or account-ready flows.
 - Backlink tracker: unchanged this cycle because all newly found opportunities remain blocked from action by account setup and policy gating.
+
+## 2026-05-31 Cycle 3 updates
+
+- Added 3 additional official account-setup rows with explicit owner-action requirements for Google Play Console, Product Hunt, and LinkedIn (in `docs/seo-distribution/account-setup.md`).
+- Added 4 authority discovery rows across documentation, community, and GitHub resource categories in `docs/seo-distribution/authority-opportunities.md`.
+- Added 2 additional content-cycle row entries to `docs/seo-distribution/content-calendar.md` for OCR comparison and rights-aware creator-facing pitch assets.
+- Added an additional best-ready cross-channel draft for Stack Overflow/Android QA and queue tracking in `docs/seo-distribution/platform-drafts.md`.
+- Added a new linkable asset row for an OCR comparison matrix in `docs/seo-distribution/link-assets.md`.
+- Kept cycle rules-compliant: no external posting, no API submissions, and no direct third-party account actions were performed.
+- Added 3 new outbound authority/watch entries to `docs/growth/backlink-prospects.csv` (Product Hunt, Android-focused QA, ToolIndex submission).
