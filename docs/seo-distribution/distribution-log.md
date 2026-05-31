@@ -1522,7 +1522,7 @@ Next actions:
 - New authority opportunities added to `docs/seo-distribution/authority-opportunities.md`:
   - Android Authority review methodology page (Android press/editorial workflow).
   - manga-ocr maintainer community and contribution point (GitHub/OSS ecosystem).
-  - G2 image translator review listing (software review ecosystem).
+- G2 image translator review listing (software review ecosystem).
 - Distribution draft prepared: added an Android editorial no-link + link variant draft in `docs/seo-distribution/platform-drafts.md` tied to the Android Authority authority opportunity.
 - Link asset update: added trust-matrix usage entry to `docs/seo-distribution/link-assets.md` as a reusable, review-safe pitch anchor.
 - Content planning: added cycle row to `docs/seo-distribution/content-calendar.md` for the claim/avoid matrix and creator-facing guidance.
