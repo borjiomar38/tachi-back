@@ -308,6 +308,29 @@ const citationReadinessRows = [
   },
 ] as const;
 
+const newsletterSubmissionRows = [
+  {
+    label: 'Android newsletter',
+    value:
+      'Submit only a developer-facing checklist about independent APK trust, hosted OCR testing, and reviewer-safe screenshots; keep consumer install copy secondary.',
+  },
+  {
+    label: 'Creator platform',
+    value:
+      'Use approved-sample language only and do not imply that platform, publisher, or creator catalog pages may be processed without explicit permission.',
+  },
+  {
+    label: 'AI directory',
+    value:
+      'Use accurate trial plus paid-token wording and reject listings that hide pricing, source links, support, privacy, terms, or responsible-use context.',
+  },
+  {
+    label: 'When to wait',
+    value:
+      'Hold any submission that needs package name, signing fingerprint, verification status, screenshots, account login, form acceptance, or public metrics until the owner confirms them.',
+  },
+] as const;
+
 export const PageDownload = () => {
   return (
     <PublicShell>
@@ -818,6 +841,46 @@ export const PageDownload = () => {
               community, or localization studio, use the comic OCR checklist or
               approved-sample pilot guide as the first reference and keep the
               product link optional.
+            </p>
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Submissions"
+        title="Before submitting Nayovi to newsletters or platforms"
+        description="Use this gate before suggesting Nayovi to Android newsletters, creator-platform contacts, AI directories, or launch communities."
+        className="pt-0"
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {newsletterSubmissionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[11rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.value}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <Card className="public-brand-panel-muted mt-4 rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-6 text-sm leading-7 text-brand-950 dark:text-brand-100">
+            <p>
+              A strong submission should be useful even if the editor removes
+              the product link. Lead with the checklist, the APK source packet,
+              or the approved-sample pilot scope before asking anyone to review
+              the Android app.
+            </p>
+            <p>
+              Do not use a submit form, creator portal, or newsletter tip line
+              if it requires account creation, terms acceptance, private
+              credentials, uploaded identity documents, or unsupported claims
+              about Nayovi package verification.
             </p>
           </CardContent>
         </Card>
