@@ -61,7 +61,23 @@ Status: no new external outreach sent in this cycle
 
 Cap check:
 - `/var/lib/tachi-growth-agent/outreach/sent.jsonl` shows 0 sends for 2026-05-31.
-- `docs/growth/backlink-prospects.csv` and the SEO distribution state snapshot show high-fit direct-email prospects already contacted this week (`AIAnyTool`, `Webtoonix`) and no newly verified direct-contact alternatives with clean fit.
+- `docs/growth/backlink-prospects.csv` and the SEO distribution state snapshot show remaining high-fit direct-email prospects already contacted this week (`AIAnyTool`, `Webtoonix`), while draft items lack newly verified public business emails or direct-form-ready paths.
+
+### Autonomous cycle: 2026-05-31 conversion-safe crawl priority update
+
+Status: no new external outreach sent in this cycle
+
+Revenue rationale: no newly verified direct-fit contact path with explicit public email/form details appeared after the cap reset; reply-first processing remains higher-value than cold substitution in this window.
+
+Cycle outputs:
+
+1. Updated sitemap recency for two high-intent conversion assets in `src/routes/sitemap[.]xml.ts`:
+   - `/translate-manhwa-ai` -> `lastModified: 2026-05-31`
+   - `/guides/translation-support-workflow` -> `lastModified: 2026-05-31`
+2. Kept path priority by including `/guides/translation-support-workflow` in explicit sitemap ordering so XML generation does not deprioritize it among guide routes.
+
+Next action:
+- Re-check qualified replies from already-contacted prospects (`AIAnyTool`, `Webtoonix`, `PopWebTools`, `AIDive`, `Bayi Studios`, `GOXTOON`) and only send one-step follow-up if each asks for listing fields, submission policy, sample-access expectations, or category fit.
 
 Revenue rationale: no new sends because remaining top-priority items are watch-draft form-only paths or duplicate-direct-contact states, and a follow-up without a qualified reply request would reduce response quality.
 
