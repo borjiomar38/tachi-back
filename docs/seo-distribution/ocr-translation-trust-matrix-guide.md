@@ -43,6 +43,22 @@ trial onboarding and paid monthly token plans. It does not host chapters.
 2. Use as the first fallback when a prospect asks for quality criteria.
 3. Use as a citation bridge before any launch/submit action.
 
+## Distribution-ready linkable section
+
+Use this structured comparison text in any draft that asks for a source-first review signal:
+
+### Quick comparison for prospect-facing use
+
+| Surface | What to include first | What to avoid in first contact |
+| --- | --- | --- |
+| App directory/editorial contact | APK source + support + pricing split + responsible-use | Any claim of official platform verification or chapter hosting unless owner-confirmed |
+| Technical publisher | Trial-to-paid path + official links + checklist philosophy | "Unlimited free access", "open source", or screenshot claims without owner clearance |
+| Creator/localization partner | Approved-sample workflow + glossary consistency + human review + no catalog processing | Any statement implying full catalog processing permissions |
+
+Next action:
+- Add this section into one owned landing or guide page as a short FAQ block only if owner-confirmed public links and package/screenshot policies stay unchanged.
+- Keep the legal-safe copy unchanged until package/signing facts are approved in account setup packets.
+
 ## Open follow-up
 
 Owner review required for any public claim touching:
@@ -51,4 +67,3 @@ Owner review required for any public claim touching:
 - signing fingerprint
 - developer verification status
 - APK metadata scope and screenshot rights
-

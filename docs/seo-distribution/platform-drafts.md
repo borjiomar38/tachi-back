@@ -4459,3 +4459,26 @@ If your community accepts technical contributor context, I can provide a short c
 
 Best,
 Nayovi team
+
+## 2026-05-31 Cycle Draft Additions
+
+### Draft (Android/SEO Press outreach)
+- Target URL: `https://www.androidauthority.com/how-to-get-your-app-reviewed/`
+- Target audience: Android app review editors and indie Android tooling journalists.
+- Category: App directory/editorial opportunity follow-up.
+- Objective: Position Nayovi as a lawful OCR translation workflow for owned user content and invite practical editorial review.
+- Suggested title/subject: `Independent OCR Translation Workflow for Manga Creators`.
+- Value-first angle:
+  - Share a concrete verification and trust checklist used for localization support cases.
+  - Emphasize safety posture and permission-first processing model.
+  - Offer publisher/creator workflow examples for trial period and token-based paid plans.
+- Rules risk: Low-to-medium; platform-specific press etiquette applies.
+- No-link variant:
+  - “Hi [Editor Name], I’d like to share a lightweight trust checklist we use for user-facing AI translation workflows in comics and manga creator channels. It focuses on permission-safe processing, privacy controls, and audit logs for support handoff. Happy to send a one-page PDF if useful.”
+- Link variant:
+  - “Hi [Editor Name], we publish a practical trust matrix for OCR translation providers (permission, data safety, output boundaries, support workflow): `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`. We’re happy to provide screenshots or test notes if you want to review it for Android audience coverage.”
+- Author note: avoid platform claims and include only evidence-backed metrics in any final copy.
+- Prepared by: SEO distribution cycle on `2026-05-31`.
+- Status: Draft.
+- Next action: OWNER_REVIEW_REQUIRED before any outbound contact.
+
