@@ -208,3 +208,10 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-05-31 | Permission-safe OCR pilot playbook for manga/localization teams | manga OCR pipeline, permission-safe translation, review workflow | informational + commercial trust | https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot | draft | Add short checklist section for approval workflow, supported/unsupported input sources, and escalation path for rejected translations |
 | 2026-05-31 | APK distribution trust: verification-ready checklists and what to avoid claiming | android apk verification, OCR app trust checklist | high-intent trust / compliance | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | draft | Add source-of-truth fields and no-link-first callouts for reviewer-facing pages; keep claims pending until owner confirmation |
+
+## 2026-05-31 T173116Z New SEO asset rows
+
+| date | topic | keywords | search_intent | target_url | status | next_action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-31 | OCR + AI manga translation permission workflow checklist | OCR manga translation permissions, public-domain translation, creator approval checklist | informational + trust | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | draft_ready | Add ownership-first section on sample intake, unsupported source types, and appeal pathway for inaccurate output. |
+| 2026-05-31 | Compare manga translation workflows | manga translation app comparison, OCR vs cloud translation, Android manga tools | commercial + educational | https://tachiyomiat.com/guides/best-android-manga-translator-apk | draft_ready | Add one side-by-side row for data handling and privacy posture; link to support workflow from each comparison point. |

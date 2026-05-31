@@ -4853,3 +4853,19 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
     - `Reference docs for this process are available at https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide and https://tachiyomiat.com/guides/comic-ocr-translation-checklist after policy and ownership checks are complete.`
 - Owner status: AUTHORIZED_ACCOUNT_REQUIRED currently (no configured HN or launch identity)
 - Post status: draft only
+
+## 2026-05-31 T173116Z Best ready opportunity draft
+
+### Target: APKPure Developer Submission Support Contact
+
+- Platform: Android distribution/press trust channel
+- Category: App distribution listing and verification readiness
+- Audience: Android app owners, reviewers, users seeking trusted manga/manhwa tool alternatives
+- Rules risk: Medium — requires account setup and manual submission form; no automated posting. Developer terms require compliance verification and approved asset use.
+- No-link variant:
+  - "Nayovi is preparing a permission-safe OCR + AI translation workflow focused on owned-content input only (public samples, own library, creator-supplied material). Our docs now include an OCR limitation matrix and a support handoff workflow for disputed translations. We can share the checklist with moderators/reviewers if they are evaluating workflow transparency requirements."
+- Link variant:
+  - Keep the no-link variant and append:
+  - "Reference copy lives in https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide and https://tachiyomiat.com/guides/translation-support-workflow."
+- Owner status: AUTHORIZED_ACCOUNT_REQUIRED (`accounts.json` has no authorized Android directory posting flow for APKPure)
+- Post/comment action: draft only; do not submit until owner confirms developer account and package identity.

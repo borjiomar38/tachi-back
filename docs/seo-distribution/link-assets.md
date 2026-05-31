@@ -237,3 +237,10 @@ This file is maintained by the SEO distribution agent.
 | Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
 | --- | --- | --- | --- | --- | --- | --- |
 | Trust asset | Founder-first HN draft packet | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Supports founder-led technical credibility and review-first positioning in startup/AI communities | Founder channels, build-in-public communities, investor curiosity readers | Includes explicit no-link-first guardrails and pending-language rules for verification/status claims | No-link first, optional link variant only after thread invites references |
+
+## 2026-05-31 T173116Z New linkable assets and updates
+
+| status | asset_type | title | target_url | intent | required_update | notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| draft | comparison guide | Permission-safe manga translation comparison: OCR limits + trial workflow | https://tachiyomiat.com/guides/best-android-manga-translator-apk | trust + commercial comparison | medium | Expand with 3-section comparison grid: setup claims, ownership boundaries, support handoff path. Reuse in partner/directories where comparisons are accepted. |
+| draft | process asset | Android OCR permission workflow FAQ | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | technical trust + support depth | low | Add canonical FAQ blocks for unsupported file types, model quality caveats, and review-code escalation; keep legal-safe phrasing. |

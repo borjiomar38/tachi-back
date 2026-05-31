@@ -1603,3 +1603,14 @@ Next actions:
 - Draft prep: added one priority, link-gated draft in `platform-drafts.md` for HN Show HN with explicit no-link and link variants.
 - Link assets: added one community-ready trust asset row in `link-assets.md` for founder-first technical support context.
 - Tracker updates: no entries were promoted beyond draft; all actions remain compliant with draft posting mode and no external posting or form actions.
+
+## 2026-05-31 T173116Z Cycle log
+
+- Branch: `seo/distribution-20260531T173116Z`
+- Account setup advanced: appended `docs/seo-distribution/account-setup.md` with 3 new owner-action packets (LinkedIn, YouTube, Hacker News).
+- Owned SEO content opportunities: added 2 new content-calendar rows with target URLs and next actions.
+- Discovery: added 3 authority opportunities in `authority-opportunities.md` (APKPure developer portal, Futurepedia, Awesome Translations).
+- Draft prepared: added best-ready APKPure draft in `platform-drafts.md` with no-link/link variants and rule-risk notes.
+- Linkable assets: added 2 guide and process assets in `link-assets.md` to support creator/platform outreach without thin linking.
+- Outreach posting status: `OWNER_ACTION_REQUIRED` / `AUTHORIZED_ACCOUNT_REQUIRED` for all non-owned actions due no active third-party tokens or account-ready flows.
+- Backlink tracker: unchanged this cycle because all newly found opportunities remain blocked from action by account setup and policy gating.
