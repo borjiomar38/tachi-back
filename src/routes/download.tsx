@@ -103,6 +103,11 @@ const downloadStructuredData = () => {
       description:
         'Treat third-party APK pages as discovery surfaces only unless they preserve the official source links, metadata, support route, and no-chapter-hosting boundary.',
     },
+    {
+      name: 'Mark unconfirmed package fields as pending',
+      description:
+        'Include package name, signing-certificate fingerprint, and Android developer verification details only after the release packet confirms them.',
+    },
   ] as const;
   const ownerConfirmationItems = [
     {
