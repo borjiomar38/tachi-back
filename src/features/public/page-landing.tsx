@@ -180,7 +180,7 @@ export const PageLanding = (props: {
               size="lg"
               className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
             >
-              TachiyomiAT APK + free manga AI translator
+              TachiyomiAT APK + hosted OCR trial
             </Badge>
 
             <div className="space-y-5">
@@ -188,13 +188,13 @@ export const PageLanding = (props: {
                 For TachiyomiAT, Tachiyomi and Mihon readers
               </p>
               <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
-                TachiyomiAT APK with free AI manga translation.
+                TachiyomiAT APK with free trial and monthly token plans
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
                 Install the Nayovi Android APK from tachiyomiat.com when you
                 search for TachiyomiAT, Tachiyomi AT, or Tachiyomi download.
                 The app keeps a familiar reader flow while adding hosted OCR,
-                free manga AI translation, redeem-code activation, and
+                paid token plans, redeem-code activation, and
                 Mihon-style setup guidance.
               </p>
             </div>
@@ -360,7 +360,7 @@ export const PageLanding = (props: {
                       Choose the chapter you want to read.
                     </div>
                     <div className="rounded-xl bg-white/5 px-3 py-3">
-                      Add your redeem code once.
+                      Start on a free trial, then add a redeem code if needed.
                     </div>
                     <div className="rounded-xl bg-white/5 px-3 py-3">
                       Launch the translation and keep reading.
@@ -393,9 +393,9 @@ export const PageLanding = (props: {
                   Simple result
                 </p>
                 <p className="mt-2 text-sm leading-7 text-neutral-200">
-                  The goal is to keep free manga AI translator, free manhwa AI
-                  translator, and free manhua AI translator workflows smooth
-                  inside Nayovi.
+                  The goal is a smooth reading workflow that starts with low-risk
+                  testing and upgrades to recurring token plans when reading
+                  becomes weekly.
                 </p>
               </div>
             </CardContent>
@@ -438,7 +438,7 @@ export const PageLanding = (props: {
         id="pricing"
         eyebrow="Pricing"
         title="Simple monthly plans"
-        description="Choose the offer that matches how much manga, manhwa, or manhua you want to translate every month."
+        description="Start with the official free trial, then choose a monthly plan that matches your normal chapter volume and reading rhythm."
       >
         {freeTokenPack ? (
           <div className="mb-4 grid gap-4 lg:grid-cols-3">
