@@ -2,6 +2,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-29 Linkable Asset Additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Comic OCR checklist outreach packet | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | GitHub maintainers, Android newsletter editors, AI directory reviewers, Reddit moderators, localization teams | Product-light trust asset that explains what to send before a link, when to mention Nayovi, when to stop, and what owner-confirmed metadata belongs in follow-up | shipped | Use as the no-link-first asset in platform drafts and only add product/download URLs when rules allow. |
+| TheAIFest/Aitoolnet directory eligibility note | `docs/seo-distribution/platform-drafts.md` | AI directory editors and high-intent OCR/translation tool searchers | Accurate listing packet for reviewed 2026 AI directories without claiming forever-free, open-source, generic chatbot, or chapter-hosting status | draft | Verify live fields and source-link handling before any owner-reviewed submission. |
+| r/androiddev APK trust feedback draft | `docs/seo-distribution/platform-drafts.md` | Android developers | No-link request for feedback on direct-APK trust details, install wording, package/signing pending language, and approved-sample demo boundaries | draft | Owner/founder account and current subreddit rules review required before any manual post. |
+
 | Status | Asset | Audience | Link target | Why it can earn links | Next action |
 | --- | --- | --- | --- | --- | --- |
 | draft | Android editorial fit note pack | Android app reviewers, Android editorial contacts, release teams | docs/seo-distribution/platform-drafts.md | Converts directory/editorial outreach into a value-first no-link option for XDA, Android Authority, and Android press with explicit mirror boundary and source-of-truth requirements | Keep link variant gated until official submission path is verified |
