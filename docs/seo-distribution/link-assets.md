@@ -197,3 +197,9 @@ This file is maintained by the SEO distribution agent.
 | Media asset | Permission-safe workflow screenshot pack (blurred source/destination examples) | https://translate-manhwa-ai.com/resources/media/ocr-permission-safe-workflow | Support PRs, community posts, and directory submissions with high-quality visuals | TODO | Prepare 3 screenshots + 1 short demo clip once owner grants YouTube/account permissions |
 | Technical comparison | OCR + AI translator benchmark comparison | https://translate-manhwa-ai.com/comparison/ocr-translation | Build keyword intent around “OCR manga translator legal”, “permission-safe translation workflow” | TODO | Add competitor-neutral benchmark table and publish in next content cycle |
 | GitHub docs | ORPC/PR checklist for trust claims | https://github.com/nayovi/ (docs section) | Enable developer confidence and structured PR references | READY | Add docs anchor to support section and include no-promo language for code/distribution trust
+
+## 2026-05-31 Distribution-Asset Updates
+
+| Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
+| --- | --- | --- | --- | --- | --- | --- |
+| GitHub contribution asset | Awesome ACG maintainer inquiry draft | https://github.com/miyako/awesome-acg | Low-friction maintainer-first contribution with no-link default for inclusion in ACG resource directories | Maintainers, contributors, curation editors | Prevents spam signal; aligns with “ask before adding” policy; reusable for similar lists | Draft only; link variant only after explicit approval |

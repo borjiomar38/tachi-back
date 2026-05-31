@@ -10,6 +10,7 @@ External platform drafts are for authorized-account posting only. Do not create 
 | --- | --- | --- | --- | --- | --- |
 | draft | Android newsletter/resource curator | Android Weekly / Kotlin Weekly-style newsletters | Independent APK trust and hosted OCR reviewer checklist | docs/seo-distribution/android-newsletter-resource-pitch.md | OWNER_REVIEW_REQUIRED: manual suggestion only after current rules, package facts, and screenshots are approved; no paid placement or consumer app pitch. |
 | draft | Startup launch directories | Smol Launch / BetterLaunch / FastLaunch-style surfaces | Founder-approved launch listing with source-link and no-vote guardrails | docs/seo-distribution/startup-launch-directory-packet.md | OWNER_ACTION_REQUIRED: founder/company profile and manual submission only; skip vote/review requests, paid backlink packages, hidden redirects, or unsupported metrics. |
+| draft | GitHub resource list | awesome-acg (anime, comics, games) | Product-light OCR/translation checklist fit question and maintainer scope check | https://github.com/miyako/awesome-acg | AUTHORIZED_ACCOUNT_REQUIRED: no link-first draft to avoid maintainer overfit; include official no-link contribution path only. |
 | draft | AI directory (TheAIFest / similar) | Trial-aware AI directory listings | Product-light free-trial + paid-token fit question | docs/seo-distribution/free-trial-directory-listing-brief.md | OWNER_REVIEW_REQUIRED: verify live fields and remove any paid/reciprocal/hidden-redirect requirements before any manual submission request. |
 | draft | AI/free-trial directory | ToolsVerse / AIToolSync-style submit paths | Directory scorecard fit question before listing Nayovi | docs/seo-distribution/directory-submission-scorecard.md | OWNER_REVIEW_REQUIRED: verify live fields, pricing labels, and source-link behavior; no form submission, signup, payment, reciprocal link, or hidden redirect. |
 | draft | Technical publishing/newsletter | DEV / Medium / Hashnode / Nayovi Notes | Canonical technical profile and OCR checklist syndication | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | OWNER_ACTION_REQUIRED: official byline, canonical URL policy, account setup, screenshots, and publication approval required. |
@@ -4492,6 +4493,37 @@ I am checking whether a short, neutral comic OCR checklist note would be useful 
 The note would stay narrowly scoped to source-first OCR review practices: approved content scope, panel/reading-order handling, OCR region misses, glossary consistency, and manual review handoff criteria.
 
 No product links are included by default. If your contribution guidelines allow, I can format this as a non-promotional resource-only reference.
+
+### GitHub resource-list draft (awesome-acg maintainer path)
+
+Status: draft
+Target: https://github.com/miyako/awesome-acg
+Audience: ACG developers, tooling maintainers, OCR/localization contributors
+Rules risk: low-to-medium; unsolicited resource additions are frequently declined; submit only after maintainer scope check
+No-link variant: yes
+Link variant after maintainer approval: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi,
+
+I am checking whether a short resource section around visual Story-focused OCR/translation evaluation is useful for awesome-acg.
+
+I maintain a product-light, source-first checklist for comic/manhwa/manhua OCR quality workflows that focuses on:
+- approval-safe usage scope
+- reading-order and speech-bubble layout constraints
+- OCR misses, translation consistency, and human review handoff
+- and clear “not supported” boundaries
+
+No product links are included by default because I want to confirm that this topic fits your current resource structure.
+
+Best,
+Nayovi team
+
+Link variant (after maintainer approval):
+
+You can find the current checklist at:
+`https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 
 Best,
 Nayovi team
