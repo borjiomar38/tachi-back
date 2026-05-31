@@ -2,6 +2,18 @@
 
 ## 2026-05-31 SEO distribution cycle coordination
 
+## 2026-05-31 Autonomous no-send checkpoint: llms.txt citation cleanup
+
+Status: no outbound email sent in this cycle.
+
+Decision:
+- `src/routes/llms[.]txt.ts` was sanitized to remove duplicate guide entries and route high-intent traffic to official setup and conversion pages.
+- No public business email contact was verified as higher-signal than existing `AIAnyTool`/`Webtoonix` after this queue refresh.
+- Keep reply-first handling; only send follow-ups if a contacted prospect requests listing rules, category-fit fields, sample policy, or submission fit details.
+
+Next action:
+- Continue to monitor `/var/lib/tachi-growth-agent/outreach/sent.jsonl` for qualified replies and maintain no-link-first handling until a fresh direct-fit contact or inbound reply is present.
+
 Status: no external send in this cycle.
 
 Reasoning:
