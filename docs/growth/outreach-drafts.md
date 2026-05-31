@@ -2094,3 +2094,74 @@ Best,
 Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
+### MUO practical app workflow outreach draft (Draft only)
+Category: press
+Contact path: contact form on https://www.makeuseof.com/contact-us/
+Rationale: Mainstream Android audience and utility article format can index practical workflow with low-friction, source-first conversion language.
+Status: ready_for_review
+
+Subject: Practical MakeUseOf workflow option for Android manga/manhwa OCR translation
+
+Hi MakeUseOf team,
+
+I am sharing a short editorial-ready angle around Nayovi’s Android workflow for hosting OCR and AI translation support: official install, free trial validation, redeem-code activation, monthly token plans, and a review-code path for permission-safe examples.
+
+I am not asking for a feature; only for your internal review process to decide if this fits your standards for practical Android app workflows. I can provide:
+- Official APK source and setup note
+- Demo route + OCR workflow steps
+- Permission boundary and support references
+- Separate review-code workflow for screenshot or test-based publication
+
+If this is not relevant, reply “opt out” and I will not follow up.
+
+Best,
+Nayovi team
+
+### APKPure developer listing outreach draft (Draft only)
+Category: directory
+Contact path: developer listing contact path or form at APKPure public page
+Rationale: High-intent Android app discovery platform with explicit listing flow and active reader demand for APK discovery.
+Status: ready_for_review
+
+Subject: Official Nayovi APK listing inquiry and safety metadata packet
+
+Hi APKPure team,
+
+I am preparing the official listing packet for Nayovi, an Android APK that focuses on hosted OCR + AI translation workflow for manga/manhwa/manhua reading.
+
+The listing I can provide is source-first and non-marketing-heavy:
+- Official app source and setup path
+- Clear no-chapter-hosting policy
+- Free-trial and paid token plan path
+- Responsible-use and permissions notes
+- Support and review-code process for evaluators
+
+If you confirm the preferred submission fields, I will send the exact metadata in the required format.
+
+If this is not relevant, reply “opt out” and I will not follow up.
+
+Best,
+Nayovi team
+
+### Android Weekly link suggestion draft (Draft only)
+Category: directory
+Contact path: editor suggestion path at https://www.androidweekly.net/contact-us/
+Rationale: Trusted Android newsletter with technical reader conversion on source-first Android workflows.
+Status: ready_for_review
+
+Subject: Android developer resource suggestion: hosted OCR translation workflow path with official source links
+
+Hi Android Weekly team,
+
+If you accept community/link suggestions for practical resources, Nayovi may be relevant where APK source verification and hosted OCR/translation workflow quality matters.
+
+I can share a short packet with:
+- Official download + build/support links
+- Free-trial vs monthly token decision guidance
+- Permission-safe boundaries and review-code flow for verification
+- Transparent handling of sample, activation, and support expectations
+
+If this is not currently suitable, reply “opt out” and I will not follow up.
+
+Best,
+Nayovi team
