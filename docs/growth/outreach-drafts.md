@@ -2,6 +2,19 @@
 
 ## 2026-05-31 SEO distribution cycle coordination
 
+## 2026-05-31 Branch `growth/autonomous-20260531T162209Z` compliance checkpoint
+
+Status: no outbound email sent in this cycle.
+
+Decision:
+- Audited `/var/lib/tachi-growth-agent/outreach/sent.jsonl`; there is room in the sender cap window.
+- No newly verified high-fit public official email/contact path exceeded already-contacted priority threads (`AIAnyTool`, `Webtoonix`, `PopWebTools`, `AIDive`).
+- Kept reply-first and no-link-first posture after no qualified inbound reply requiring immediate follow-up or owner action was found.
+
+Revenue-safe next action:
+- Continue monitoring replied threads first and use only one-step follow-up when a contact requests: listing-fit fields, submission policy, sample scope, or activation evidence.
+- Recheck `Nube` and `Genga` official-form queues only if they signal specific fit and avoid any catalog, backlink, or paid-placement ask in the first message.
+
 ## 2026-05-31 Autonomous no-send checkpoint: llms.txt citation cleanup
 
 Status: no outbound email sent in this cycle.
