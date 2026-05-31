@@ -80,6 +80,15 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-31 Current Cycle Setup Advancement
 
+## 2026-05-31 Cycle-Advancement Update (this pass)
+
+### Setup tasks advanced (priority)
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Product Hunt + LinkedIn launch readiness | Official source-first launch and social trust setup for no-upvote/build-in-public spam controls | owner_action_required | Owner confirms maker/company identity, profile ownership, and launch timing in approved account(s) | `docs/seo-distribution/platform-drafts.md` launch queue, launch-safe checklist, canonical links, demo/screenshot policy, package-fact pending language | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`, `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` | Manual/authorized posting only after owner approval; no auto-engagement or upvote tactics | OWNER_ACTION_REQUIRED: official account creation + terms + launch-window confirmation before any publish actions |
+| high | Reddit official support/community profile | Official policy-safe support posture for direct Q&A / technical trust questions | owner_action_required | Owner chooses whether official Reddit presence is approved and creates/claims the official account manually | Official one-line bio, disclosure text, no-link answer template, canonical links, test-data permission rules | `SEO_AGENT_REDDIT_CLIENT_ID`, `SEO_AGENT_REDDIT_CLIENT_SECRET`, `SEO_AGENT_REDDIT_REFRESH_TOKEN` | No posting until owner confirms rules and manual review path; no comments without authorization | OWNER_ACTION_REQUIRED: official account setup, subreddit risk review, and approved no-link-first response policy |
+
 ### High-priority official setup packets prepared in this cycle
 
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable | Publish capability after connection | Next action |

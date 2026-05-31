@@ -178,3 +178,9 @@ This file is maintained by the SEO distribution agent.
 | draft | FutureTools listing fit packet | AI tool directories and review communities | docs/seo-distribution/free-trial-directory-listing-brief.md | Standardized fit packet for free-trial + paid-token products with Android APK context and responsible-use boundaries | Verify live FutureTools form fields before any external fit submission |
 | draft | Product Hunt launch launch-readiness packet | Build-in-public, founder/early-adopter audiences | docs/seo-distribution/platform-drafts.md | Keeps launch post focused on trust, attribution, and responsible-use language instead of engagement gaming or vanity metrics | Confirm maker identity and launch window before owner-triggered submission |
 | draft | XDA app-review contributor note | Android dev community and technical review contributors | docs/seo-distribution/ocr-translation-trust-matrix-guide.md | Converts the trust matrix into a practical review check that avoids catalog-processing claims and unsafe promotional claims | Keep draft-only until official community profile and moderation fit are approved |
+
+## 2026-05-31 Cycle Linkable Asset Updates
+
+| Asset Type | Asset | URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
+| --- | --- | --- | --- | --- | --- | --- |
+| Trust asset | OCR Translation Trust Matrix Guide (extended) | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Pitch foundation for journalists, creators, platform partners, and launch communities | Android app teams, creator communities, B2B partnership editors, compliance-focused founders | Includes what to include vs avoid matrix; needs owner review before public claim-level updates | No-link first; add a link variant only in review-appropriate contexts |
