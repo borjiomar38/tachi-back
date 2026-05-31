@@ -212,3 +212,9 @@ This file is maintained by the SEO distribution agent.
 | draft | AppBrain submission-fit check packet | Android app directory editors and quality-focused Android users | https://tachiyomiat.com/translate-manhwa-ai | Keeps the first outbound Android directory contact strictly source-first and avoids paid/manipulation framing | Validate AppBrain submission fields and keep this as no-link-first until official confirmation is received. |
 | draft | SaaSHub eligibility note | AI directory reviewers, startup discoverability readers | https://www.saashub.com/submit | Enables an entry focused on supported Android workflows and trial-to-paid pricing without affiliate links or generic sales claims | Confirm category + listing constraints before any link variant |
 | draft | Reddit dev-posting policy alignment note | r/droidappshowcase moderators/community reviewers | https://www.reddit.com/r/droidappshowcase | Helps avoid removed posts by matching platform-specific link and post-frequency rules before any community drafting | Keep no-link-first and use official app-link allowances only |
+
+## 2026-05-31 Added Linkable Asset
+
+| Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
+| --- | --- | --- | --- | --- | --- | --- |
+| Trust asset | OCR limitation matrix for visual storytelling | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Technical trust standard for community drafts and media replies | AI Stack Exchange practitioners, Papers with Code readers, localization professionals | Includes claim vs non-claim boundaries and safe process language for OCR workflow review; no API claims | No-link first; include link in channel where citation is explicitly requested |

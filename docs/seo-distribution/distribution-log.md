@@ -1546,3 +1546,12 @@ Next actions:
 - Added linkability mapping rows in `docs/seo-distribution/link-assets.md` so outbound outreach reuses owned trust assets and avoids paid-link or spam patterns.
 - Updated content planning and tracked outbound opportunities for 2026-05-31 in `docs/seo-distribution/content-calendar.md`.
 - Account registry and posting-state constraints remain unchanged (`externalPostingMode=draft`, accountCreationEnabled=false), so all work stays in owner-review draft state.
+
+## 2026-05-31 Current Cycle Update
+
+- Account setup priority remained first: added two new setup packets for Crunchbase profile and Substack newsletter profile in `account-setup.md` with OWNER_ACTION_REQUIRED blockers.
+- Authority discovery advanced with 3 fresh entries in `authority-opportunities.md` covering Papers with Code, AI Stack Exchange, and Hugging Face OCR/task listing contexts.
+- Owned content updated in `content-calendar.md` with a concrete trust-matrix expansion row for the claim/anti-claim section and link reuse path.
+- Draft prep: added a best-ready cross-category no-link-first draft in `platform-drafts.md` mapped to `paperswithcode` + `ai.stackexchange` usage, with explicit link variant gating.
+- Link assets updated with a dedicated OCR limitation trust matrix asset and intended publish variants in `link-assets.md`.
+- No external platform posting, account automation, CAPTCHA, form submission, APK upload, or paid directory actions were executed.

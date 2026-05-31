@@ -185,3 +185,9 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | draft | comparison + trust | trial vs paid token plan OCR manga translator | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add an explicit “what we can claim / cannot claim” section for package verification, source-only claims, and no-mirror language | Expand section and add internal links to support and pricing before listing action |
 | draft | high-intent review readiness | Android OCR workflow no-link community answers | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Create reusable no-link community response snippets for Reddit and forums before any authorized posting | Prepare 3 scenario-specific snippets with a link variant gate |
+
+## 2026-05-31 Owned SEO/Trust Build Addendum
+
+| date | topic | keywords | search_intent | target_url | status | next_action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-31 | Publish trust-first OCR limitation checklist for non-source-bound workflows | OCR limitations, manga OCR translation trust, content ownership boundaries | informational + commercial trust | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | draft | Add a dedicated claim/anti-claim matrix and cross-link to support, pricing, and review handoff sections so community drafts can reuse the same owned standard |
