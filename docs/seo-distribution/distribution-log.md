@@ -1525,3 +1525,12 @@ Next actions:
 - Content planning: added a companion content-calendar row for GitHub maintainer readiness and a link-asset entry for the maintainer draft variant.
 - Backlink tracking: added new prospect rows in `docs/growth/backlink-prospects.csv` for awesome-acg, Reddit droidappshowcase/android app community, and FutureTools.
 - Execution constraints: maintained `draft`/manual mode; no posting, no account automation, no form submissions, no platform signups, and no credential writing.
+
+## 2026-05-31 Cycle Continuation (Fresh Docs Update)
+
+- Expanded account-setup priority queue with two additional official account tasks: Hacker News founder profile readiness and X/Twitter official updates policy.
+- Added cross-category authority opportunities from current discovery: AppBrain featured apps, SaaSHub submit path, Product Hunt maker posting rules, and updated Reddit `r/droidappshowcase` posting split.
+- Added ready-to-send draft candidates for AppBrain and SaaSHub in `docs/seo-distribution/platform-drafts.md` with explicit no-link-first and link variants.
+- Added linkability mapping rows in `docs/seo-distribution/link-assets.md` so outbound outreach reuses owned trust assets and avoids paid-link or spam patterns.
+- Updated content planning and tracked outbound opportunities for 2026-05-31 in `docs/seo-distribution/content-calendar.md`.
+- Account registry and posting-state constraints remain unchanged (`externalPostingMode=draft`, accountCreationEnabled=false), so all work stays in owner-review draft state.

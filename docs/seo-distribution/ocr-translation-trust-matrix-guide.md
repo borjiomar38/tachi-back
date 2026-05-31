@@ -104,3 +104,14 @@ Nayovi vs. local OCR-only pipeline:
 - `OCR translator for manga owners`
 - `AI localization for creators`
 - `manual review + AI translation workflow`
+
+## 2026-05-31 Trust Matrix Addendum
+
+### Publisher-facing due-diligence checklist
+
+Use this section for media, partner, and directory notes that request ownership proof.
+
+- **What can be claimed (today):** official download/support/pricing pages, official policy to avoid chapter hosting, free-trial + paid-token path, and responsible-use statement.
+- **What must remain pending until owner confirmation:** package hash, signing identity, and verification status wording.
+- **What must not be claimed:** complete verification status, full chain-of-custody across third-party stores, or open-source/source-availability claims not explicitly confirmed.
+- **Recommended link policy:** default to no-link-first for community questions; use link variant only in channels that explicitly allow resource references.

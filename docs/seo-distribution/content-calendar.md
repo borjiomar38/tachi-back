@@ -175,3 +175,10 @@ This file is maintained by the SEO distribution agent.
 | Permission-safe manga localization with OCR workflows for creators | permission-safe manga translation, OCR manga translator legal, manga translation workflow | Commercial + informational (trust and due diligence) | https://translate-manhwa-ai.com/ocr-translation-trust-matrix | DRAFT | Add examples for creator-owned and public-domain scenarios, then publish with structured FAQ FAQ blocks |
 | How Nayovi compares to OCR + AI translation setup options | OCR translator for comics, manga OCR translation workflow, comic text extraction translation | Research + commercial intent, comparison searchers | https://translate-manhwa-ai.com/comparison/ocr-translation | READY_TO_DRAFT | Publish a concise comparison matrix using non-promotional, evidence-first language |
 | Where developers source reliable translation tooling for localization teams | translation workflow tools, manga localization stack, AI localization tools | Informational for partnership/investor audiences | https://translate-manhwa-ai.com/resources/translation-stack | PLANNED | Create short architecture diagram and link it from trust matrix + startup deck assets |
+
+## 2026-05-31 Added Content Rows
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | comparison + trust | trial vs paid token plan OCR manga translator | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add an explicit “what we can claim / cannot claim” section for package verification, source-only claims, and no-mirror language | Expand section and add internal links to support and pricing before listing action |
+| draft | high-intent review readiness | Android OCR workflow no-link community answers | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Create reusable no-link community response snippets for Reddit and forums before any authorized posting | Prepare 3 scenario-specific snippets with a link variant gate |
