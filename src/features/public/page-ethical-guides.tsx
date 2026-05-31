@@ -236,6 +236,11 @@ const trustPacketRows = [
     detail:
       'Describe Nayovi as hosted OCR and translation support. Do not describe it as a manga source, chapter mirror, extension index, or library.',
   },
+  {
+    label: 'Shareable review packet',
+    detail:
+      'Use a no-spam, permission-safe review packet with sample manifest, rights status, correction log, and source-of-truth links so partner blogs, directories, and creator channels can verify fit before recommending Nayovi.',
+  },
 ] as const;
 
 const androidTranslatorCriteria = [

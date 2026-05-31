@@ -160,7 +160,19 @@ This file is maintained by the SEO distribution agent.
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | Android APK source transparency and trust | Android APK source visibility and no-mirror policy | https://www.apkmirror.com/developers/ | Build a review-safe source narrative for approved APK metadata, official support, and responsible-use boundaries before any listing request | Add source-transparency checklist notes tied to `/download`, `/support`, and `/guides/comic-ocr-translation-checklist` |
 | draft | Android OCR trust checklist + trial-to-paid clarity | manga OCR translator checklist Android | /docs/seo-distribution/ocr-translation-trust-matrix-guide.md | Create a short internal trust matrix and review checklist for directories, reviewers, and launch surfaces without claims about verification status | Publish draft section in the repo and reuse as the first link target in Android/creator/media drafts |
 | draft | AI tools directory submission readiness | FutureTools submission AI manga OCR workflow | https://www.futuretools.io/submit-a-tool | Prepare a no-link-first + link-safe draft that preserves source links and trial/paid-token wording | Verify live submission fields and submit only if rules allow accurate representation |
 | draft | Android launch authority readiness | Product Hunt launch checklist for APK tools | https://www.producthunt.com/products/submitting | Convert owned trust packet into a clean launch sequence and maker-comment policy for a safe build-in-public cadence | Owner approves launch timing and maker identity before any submission attempt |
 | draft | Android app-review community notes | XDA app review stream trust language | https://www.xda-developers.com/tag/app-review/ | Draft a non-promotional app review fitness note focused on source-first install/safety language | Keep as no-link variant until rules are verified |
+| draft | independent trust-source copy quality update | official Android verification and no-mirror language | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide.md | Publish owned anti-overclaim language for package status, hash/signer disclosure, and review readiness so every external draft points to one canonical trust source | Keep in no-link draft mode until package/signing status is owner-confirmed |
+| draft | AI directory trial-token listing alignment | free-trial AI/translation directory qualification | docs/seo-distribution/directory-submission-scorecard.md | Prepare a reusable listing packet with exact fit criteria and fallback no-link response templates for AiMatch, ToolDirectory.AI, SpotFreeAI, Try.fm, and similar surfaces | Hold publish until owner confirms package facts, pricing language, screenshot permissions, and direct-submit rules |
+
+### Cycle 2026-05-31 owned-content actions
+
+| Date target | Topic | Primary keyword | Search intent | Target URL | Status | Next action |
+|---|---|---|---|---|---|---|
+| 2026-06-05 | Policy-safe manga AI translation workflow for Android users | `safe manga translation app` | Transactional + trust lookup | `/guides/safe-manga-translation-workflow` | Draft | Create guide page and internal links to ethical usage + pricing |
+| 2026-06-07 | OCR accuracy comparison: Nayovi vs generic phone OCR tools | `OCR manga translator comparison` | Commercial investigation | `/guides/ocr-translator-comparison` | Planned | Draft comparison table and publish one controlled benchmark section |
+| 2026-06-10 | What happens to my data when I scan manga pages with AI translation? | `manga translation privacy` | Informational / trust assurance | `/guides/manga-translation-privacy` | Draft | Expand FAQ with consent boundaries and data retention statements |
+

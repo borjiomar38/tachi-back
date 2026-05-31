@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-05-31 Current Branch Cycle
+
+- Verified branch `seo/distribution-20260531T033209Z`; account registry confirms `accountCreationEnabled: false`, external posting mode `draft`, and owned GitHub/docs remains the only configured pathway.
+- Re-read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `docs/seo-distribution/account-setup.md`, `authority-opportunities.md`, `platform-drafts.md`, `content-calendar.md`, `link-assets.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup tasks:
+  - LinkedIn profile packet advanced with explicit fields (bio, canonical links, contact path, logo/banner, responsible-use policy, trial-to-paid language) and `OWNER_ACTION_REQUIRED` owner steps.
+  - Product Hunt and DEV/Medium publication packets advanced with explicit canonical + manual-review fields, and no-auto-publish policy until owner approvals are done.
+- Added/updated owned trust asset in `src/features/public/page-ethical-guides.tsx` by inserting a practical `OCR trust matrix` section and support-copy on `/guides/comic-ocr-translation-checklist` for link-safe comparison and reviewer routing.
+- Updated `authority-opportunities.md` with 3 new category-rotated entries:
+  - APKMirror developer visibility
+  - FutureTools submit-a-tool listing
+  - XDA app-review stream contributor fit
+- Added cycle entries in `content-calendar.md`, `link-assets.md`, and `docs/growth/backlink-prospects.csv` for cycle readiness, reusable linkable assets, and outreach prospect tracking.
+- Drafted a new ready `XDA app review stream` value-first opportunity in `platform-drafts.md` with target, audience, rules risk, and both no-link and link variants.
+- No external posting, account creation, login, signup form, CAPTCHA, term acceptance, social post, Reddit comment, GitHub external issue/comment, APK upload, paid listing, or manual outreach send was attempted.
+- Next actions: owner approves account setup statuses for LinkedIn/Product Hunt/DEV/Medium, validates package/signing public-language and screenshot rights, then converts the drafted XDA/FutureTools notes into manual outreach only if submission rules are accepted.
+
 ## 2026-05-29 Current Branch Cycle
 
 - Verified branch `seo/distribution-20260529T055924Z`; account registry has account creation disabled, external posting mode `draft`, and only owned GitHub/docs configured for direct work.
@@ -1467,8 +1484,39 @@ Next actions:
 - New authority opportunities added to `docs/seo-distribution/authority-opportunities.md`:
   - Android Authority review methodology page (Android press/editorial workflow).
   - manga-ocr maintainer community and contribution point (GitHub/OSS ecosystem).
-  - G2 image translator review listing (software review ecosystem).
+- G2 image translator review listing (software review ecosystem).
 - Distribution draft prepared: added an Android editorial no-link + link variant draft in `docs/seo-distribution/platform-drafts.md` tied to the Android Authority authority opportunity.
 - Link asset update: added trust-matrix usage entry to `docs/seo-distribution/link-assets.md` as a reusable, review-safe pitch anchor.
 - Content planning: added cycle row to `docs/seo-distribution/content-calendar.md` for the claim/avoid matrix and creator-facing guidance.
 - Outstanding: owner approval required before all outbound external publication/contact actions.
+
+## 2026-05-31 Cycle 13 - Account setup, high-fit opportunities, and outreach prep
+
+- Verified branch `seo/distribution-20260531T043742Z` and re-read:
+  - `/var/lib/tachi-seo-distribution-agent/accounts.json`
+  - `docs/growth/backlink-prospects.csv`
+  - `docs/growth/outreach-drafts.md`
+  - all `docs/seo-distribution/*.md` docs
+- Account setup queue advanced with two additional official trust-surface tasks:
+  - LinkedIn company/founder profile packet with exact public fields and role/ownership constraints, marked `setup_fields_prepared_owner_action_required`.
+  - Search-console/webmaster infrastructure readiness status review for `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` with canonical proof rules and no-automation guardrails.
+- Discovered and added authority opportunities from rotated high-trust categories (search trust, review ecosystems, creator support):
+  - Android review/safety context (developer verification guidance and Android policy)
+  - Software review marketplaces and directories (G2, TechRadar context)
+  - Testing surface and directory risk controls (AppTester, AppBrain, AppTrust contexts)
+- Prepared and appended one ready draft:
+  - G2 listing readiness no-link + link-variant draft in `docs/seo-distribution/platform-drafts.md` with explicit no-link-first rule.
+- Added owned content/copy improvements in:
+  - `docs/seo-distribution/content-calendar.md` (new 2026-05-31 campaign rows)
+  - `docs/seo-distribution/link-assets.md` (new distribution-ready assets for matrix verification and app-testing packet usage)
+- Updated `docs/growth/backlink-prospects.csv` with 3 additional prospect entries using existing CSV schema.
+- No external posting, account creation, login, signup form, CAPTCHA, email/DM send, directory submission, APK upload, or paid placement action was performed. `OWNER_ACTION_REQUIRED` remains for any outbound operations.
+
+### Cycle 2026-05-31 (autonomous plan + docs update)
+- Completed account-setup queue expansion with Google Search Console, Bing Webmaster, YouTube, Product Hunt, and DEV/Medium preparation packets.
+- Added authority discovery entries in new categories: app directories, Android industry press, AI directories, indie founder communities, and developer publication channels.
+- Added three high-intent owned content opportunities focused on policy-safe OCR workflows, privacy trust, and OCR comparison narratives.
+- Prepared platform-ready draft set for LinkedIn, Dev.to, app directories, and Reddit-style value comments with both link and no-link variants.
+- Added additional linkable assets for comparison docs, privacy policy summaries, and onboarding checklists.
+- Next cycle action: run manual OWNER_ACTION_REQUIRED account setup steps, then publish first owned guide and submit one app directory + one industry directory listing.
+

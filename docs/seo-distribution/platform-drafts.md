@@ -4482,3 +4482,120 @@ Nayovi team
 - Status: Draft.
 - Next action: OWNER_REVIEW_REQUIRED before any outbound contact.
 
+### Draft (FutureTools listing + no-link fallback)
+
+Status: draft
+Target: https://www.futuretools.io/submit-a-tool
+Audience: AI-tool directory maintainers and editors
+Rules risk: medium; category and pricing-field accuracy can be strict
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+No-link message:
+
+Hi there,
+
+I’m checking whether `AI translation` and `OCR` entries with free-trial + paid-token workflows are accepted under current category rules.
+
+Nayovi is an Android APK workflow for manga/manhwa/webtoon OCR support and hosted translation. I can share a concise trust packet that covers official source-of-truth pages, screenshot policy, support path, trial boundaries, and no chapter-hosting statement if you want to evaluate fit.
+
+If your directory only accepts link-ready entries, I can submit details after the right source-link alignment is confirmed.
+
+Best,
+Nayovi team
+
+Link message:
+
+- Official download and support entry: `https://tachiyomiat.com/download`
+- OCR review checklist and trial guidance: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Source links and terms: `https://tachiyomiat.com/support` and `https://tachiyomiat.com/legal/official-sources-takedown`
+- Pricing context: `https://tachiyomiat.com/pricing`
+
+### Draft (APKMirror developer visibility fit check)
+
+Status: draft
+Target: https://www.apkmirror.com/developers/
+Audience: Android reviewers and users who prefer source-verified APK metadata
+Rules risk: low-to-medium; no claims should be made without owner-confirmed facts
+No-link variant: yes
+Link variant after owner review: `https://tachiyomiat.com/download`
+
+No-link message:
+
+Hi,
+
+I am checking whether a developer visibility format that keeps official source URL, support path, pricing context, and responsible-use boundaries can be represented consistently for Nayovi in the directory.
+
+I can share package-level metadata and support documentation once owner-confirmed facts are ready, but only if it fits your current format.
+
+Best,
+Nayovi team
+
+Link message:
+
+- Download source URL: `https://tachiyomiat.com/download`
+- Review support and policy: `https://tachiyomiat.com/support`
+- OCR trust checklist: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Official pricing and plans: `https://tachiyomiat.com/pricing`
+
+## 2026-05-31 Cycle Draft Additions
+
+### Draft (G2 review marketplace readiness check)
+
+Status: draft
+Target: https://www.g2.com/products/image-translator/reviews
+Audience: AI translation and OCR comparison readers, platform reviewers
+Rules risk: medium; listing visibility and review posting rules vary by category and often ban promotional statements without clear evidence
+No-link variant: yes
+Link variant after owner review: `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+
+No-link message:
+
+Hi there,
+
+I am checking whether a no-promotion source-of-truth utility note is useful for review marketplaces that compare AI translation tools.
+
+Nayovi is a focused Android-hosted OCR+translation workflow for manga/manhwa/webtoon readers. We do not host full comics, use official-source pages only, and keep a clear distinction between free trial and paid token plans. We can share our published checklist on reviewer-safe workflows, responsible-use notes, and source attribution only if your category format allows it.
+
+If relevant, I can provide an official one-paragraph trust note plus links to the public checklist, official support, and pricing pages after we confirm format compatibility.
+
+Best,
+Nayovi team
+
+Link message:
+
+- OCR translation trust matrix: `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+- App and onboarding source: `https://tachiyomiat.com/download`
+- Support and usage policy: `https://tachiyomiat.com/support`
+- Ethical/legal boundaries: `https://tachiyomiat.com/legal/official-sources-takedown`
+
+## Cycle 2026-05-31 outreach drafts
+
+### 1) LinkedIn founder/company post (link variant)
+- Target: `LinkedIn` official Nayovi page + founder feed
+- Audience: Mobile productivity builders, creator-tech founders, and translation/product teams
+- Rules risk: Low, but keep no hard sales and avoid link stuffing
+- No-link variant: “If you build in multiple scripts (JP/EN/zh), OCR quality and policy clarity become the real product differentiator. We recently published an internal playbook on safe translation workflows and data handling. Happy to share a one-page process map.”
+- Link variant: “We just published a policy-safe workflow for manga/manhwa/manhua AI translation on Android (`/guides/safe-manga-translation-workflow`). If helpful, I can share our one-page checklist.”
+
+### 2) Dev.to technical announcement draft
+- Target: `dev.to` (technical community)
+- Audience: Engineers building OCR/translation tooling and localization teams
+- Rules risk: Medium if promotional; keep educational framing and no vanity analytics claims
+- No-link variant: “I’ve been documenting a practical OCR pipeline for manga translation that reduces common privacy mistakes. One section covers permission-safe workflow design and error handling across scripts.”
+- Link variant: “I published a practical guide with architecture notes and safety boundaries: `/guides/safe-manga-translation-workflow` and `/guides/manga-translation-privacy`.”
+
+### 3) Android / app-directory listing content draft
+- Target: APKPure / APKMirror support pages
+- Audience: Android users searching for trustworthy scanning translators
+- Rules risk: Medium (manual moderation checks) and duplicate listing risk
+- No-link variant: “Need trust-first OCR translation? We include clear usage boundaries and do not host source content.”
+- Link variant: “Add listing text that points only to official Nayovi install and policy pages: `https://nayovi.com` and `/ethical-usage/`.”
+
+### 4) Reddit value-first comment draft (for related manga/translation communities)
+- Target: `r/learnpython`, `r/AppStore`, or relevant manga localization subreddit
+- Audience: OCR tool users and translators evaluating AI workflows
+- Rules risk: Moderation sensitivity for promotional links; many communities require link omission in comments
+- No-link variant: “For people asking about translation scripts, I recommend separating scan cleanup, legal rights checks, and translation output review; that keeps quality high and legal risk lower.”
+- Link variant: “If someone needs a concrete starter flow, see: `https://nayovi.com` with dedicated `/ethical-usage/` guidance and trial onboarding.”
+
