@@ -1905,6 +1905,35 @@ Nayovi team
 
 If this is not relevant, reply "opt out" and I will not follow up.
 
+### Hacker News Show HN draft (hold)
+
+Category: founder / technical
+Contact path: owner-posted Show HN thread at https://news.ycombinator.com/show and https://news.ycombinator.com/submit
+Rationale: Show HN is a high-trust technical visibility channel for founders, but it is only viable after owner-approved founder messaging and verified public metrics are ready. It should not be used as a low-signal launch spam channel.
+Status: draft watch; only send internally by owner/manual posting when official narrative, retention signal, and support-readiness are approved.
+
+Subject: Show HN: Android APK workflow for hosted OCR manga/visual translation
+
+Hi,
+
+I am the founder of Nayovi, an Android APK that combines hosted OCR with AI-assisted manga, manhwa, and comic translation support.
+
+What we do well is narrow: one workflow for users with permission-safe source material plus a practical install path on Android. The paid path is monthly token plans and redeem-code activation. We do not host or distribute manga chapter files.
+
+I am open to founder-level questions and practical critiques on:
+
+- official APK sourcing and trial setup
+- OCR edge cases for comic layouts
+- how token usage maps to recurring translation demand
+- support and trial-to-paid conversion tradeoffs
+
+If this does not fit your founder-interest criteria, you can ignore this.
+
+Best,
+Nayovi team
+
+If this is not relevant, reply "opt out" and I will not follow up.
+
 ### AndroidGuys app review
 
 Category: press
