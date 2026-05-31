@@ -804,6 +804,16 @@ const faqs = [
     description:
       'Yes. Nayovi keeps the Android reading workflow familiar for people searching TachiyomiAT, Tachiyomi, or Mihon, then adds hosted OCR, AI translation, redeem-code activation, and support.',
   },
+  {
+    title: 'Can reviewers test Nayovi before writing about it?',
+    description:
+      'Yes. Android blogs, app directories, and community moderators can request a scoped review code so they can inspect the official APK, hosted translation flow, pricing, support, and permission-safe policy before publishing.',
+  },
+  {
+    title: 'What makes Nayovi different from a generic OCR tool?',
+    description:
+      'Nayovi connects the Android reader workflow, hosted OCR, AI translation, redeem-code activation, token plans, and support in one official path instead of asking readers to move pages through separate screenshot or upload tools.',
+  },
 ] as const;
 
 export const translateManhwaAiFaqs = faqs;

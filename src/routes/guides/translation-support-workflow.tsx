@@ -402,6 +402,8 @@ export const Route = createFileRoute('/guides/translation-support-workflow')({
           'manhwa ai translation workflow',
           'manhua ai translation workflow',
           'hosted OCR translation workflow',
+          'permission safe manga translation',
+          'manga localization workflow',
         ],
         structuredDataGraph: translationWorkflowStructuredData(),
       }

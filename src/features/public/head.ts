@@ -4,12 +4,23 @@ import {
   buildPublicSeoKeywords,
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
+import {
+  fallbackPublicTokenPacks,
+  formatCurrency,
+  PUBLIC_SUPPORT_EMAIL,
+} from '@/features/public/data';
 
 const publicSiteName = 'Nayovi';
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
 const publicBrandUrl = 'https://nayovi.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
-const publicBrandAliases = ['TachiyomiAT', 'Tachiyomi AT', 'tachiyomiat.com'];
+const publicBrandAliases = [
+  'TachiyomiAT',
+  'Tachiyomi AT',
+  'tachiyomiat.com',
+  'nayovi.com',
+  'translate-manhwa-ai.com',
+];
 const publicSiteDescription =
   'Nayovi is a TachiyomiAT-style Android APK with hosted OCR, redeem-code activation, free trial access, and monthly token plans for manga, manhwa, and manhua translation.';
 
@@ -58,6 +69,23 @@ const buildAbsoluteUrl = (path: string) => {
 };
 
 export const buildPublicAbsoluteUrl = buildAbsoluteUrl;
+
+const buildPublicAppOffers = () =>
+  fallbackPublicTokenPacks.map((tokenPack) => ({
+    '@type': 'Offer',
+    name: tokenPack.name,
+    price: (tokenPack.priceAmountCents / 100).toFixed(2),
+    priceCurrency: tokenPack.currency,
+    availability: 'https://schema.org/InStock',
+    category: tokenPack.priceAmountCents === 0 ? 'FreeTrial' : 'Subscription',
+    description:
+      tokenPack.description ??
+      `${formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)} monthly Nayovi token plan for hosted manga, manhwa, and manhua AI translation.`,
+    url:
+      tokenPack.priceAmountCents === 0
+        ? buildAbsoluteUrl('/')
+        : buildAbsoluteUrl('/pricing'),
+  }));
 
 export const buildPublicAbsoluteUrlFromRequest = (
   request: Request,
@@ -120,6 +148,7 @@ const buildStructuredData = (
   const baseUrl = buildAbsoluteUrl('/');
   const organizationId = `${baseUrl}#organization`;
   const websiteId = `${baseUrl}#website`;
+  const publicAppOffers = buildPublicAppOffers();
 
   return {
     '@context': 'https://schema.org',
@@ -130,6 +159,7 @@ const buildStructuredData = (
         name: publicSiteName,
         alternateName: publicBrandAliases,
         url: baseUrl,
+        sameAs: [publicBrandUrl, publicSeoUrl],
         logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
         sameAs: [publicBrandUrl],
         contactPoint: [
@@ -155,6 +185,7 @@ const buildStructuredData = (
         name: 'Nayovi Manga Translator',
         alternateName: publicBrandAliases,
         url: baseUrl,
+        sameAs: [publicBrandUrl, publicSeoUrl],
         description: publicSiteDescription,
         inLanguage: 'en',
         publisher: {

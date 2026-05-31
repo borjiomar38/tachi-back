@@ -1,8 +1,10 @@
 import {
   ArrowRightIcon,
   BookOpenCheckIcon,
+  CircleDollarSignIcon,
   FileCheck2Icon,
   LanguagesIcon,
+  MessageSquareTextIcon,
   ScaleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
@@ -64,6 +66,27 @@ const readerLineageNotes = [
     title: 'Keep sources separate',
     description:
       'Use official reader project channels for reader setup and use Nayovi for translation support. Nayovi does not host manga chapters, extension lists, or unauthorized chapter sources.',
+  },
+] as const;
+
+const reviewerActivationChecks = [
+  {
+    icon: SmartphoneIcon,
+    title: 'Install path',
+    description:
+      'Start from the official Nayovi APK page, then note the build label, pricing page, and support route used during the test.',
+  },
+  {
+    icon: CircleDollarSignIcon,
+    title: 'Paid signal',
+    description:
+      'Use a trial, paid plan, or scoped review code that matches the monthly chapter volume being demonstrated.',
+  },
+  {
+    icon: MessageSquareTextIcon,
+    title: 'Coverage notes',
+    description:
+      'Evaluate hosted OCR, translation output, glossary consistency, activation, cancellation support, and source-boundary messaging.',
   },
 ] as const;
 
@@ -1366,11 +1389,38 @@ const takedownSteps = [
   'Good-faith correction requests are welcome for attribution, terminology, source labeling, and policy wording.',
 ] as const;
 
+export const translationSupportWorkflowFaqs = [
+  {
+    title: 'Can an agency use this workflow for approved client samples?',
+    description:
+      'Yes, if the client owns the material or has explicit permission to process it. Nayovi is best positioned for scoped samples, glossary review, and hosted OCR or translation support rather than bulk unauthorized chapter distribution.',
+  },
+  {
+    title: 'Can reviewers test Nayovi without publishing private content?',
+    description:
+      'Yes. Reviewers can use public-domain pages, creator-approved samples, or their own test material, then focus coverage on APK install, redeem-code activation, OCR quality, pricing, and support flow.',
+  },
+  {
+    title: 'Does Nayovi host manga, manhwa, or manhua chapters?',
+    description:
+      'No. Nayovi provides Android setup, hosted OCR, AI translation support, activation, and customer support. It does not host chapter libraries, extension indexes, or unauthorized source lists.',
+  },
+  {
+    title: 'What should a publisher or creator do if they have a concern?',
+    description:
+      'Use the official sources and takedown policy page or contact support with the work title, affected URL or feature, rights-holder relationship, and reliable contact address.',
+  },
+] as const;
+
 interface SetupGuideCopy {
   description: string;
   eyebrow: string;
   firstRunIntro: string;
   title: string;
+}
+
+interface SetupGuidePageProps {
+  copy: SetupGuideCopy;
 }
 
 const mihonNayoviSetupGuideCopy: SetupGuideCopy = {
@@ -2345,6 +2395,29 @@ const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Review path"
+        title="Checklist for reviewers, affiliates, and directories"
+        description="Use the same install-to-activation sequence that a paying reader would follow, then link readers back to the official download, pricing, support, and policy pages."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {reviewerActivationChecks.map((check) => {
+            const Icon = check.icon;
+            return (
+              <Card key={check.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{check.title}</CardTitle>
+                  <CardDescription>{check.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
         eyebrow="Next"
         title="Continue with the workflow"
         description="After installation, use the translation workflow guide for review, glossary, and takedown-ready handling."
@@ -3005,8 +3078,18 @@ export const PageTranslationSupportWorkflow = () => {
         eyebrow="Policy"
         title="Keep the workflow linkable"
         description="Directories and communities are more likely to accept a project when the public pages make the legal boundary clear."
-        className="pb-20"
       >
+        <div className="mb-8 grid gap-4 lg:grid-cols-2">
+          {translationSupportWorkflowFaqs.map((item) => (
+            <Card key={item.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+
         <div className="flex flex-wrap gap-3">
           <a
             href="/legal/official-sources-takedown"

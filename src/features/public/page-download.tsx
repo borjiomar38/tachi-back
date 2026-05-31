@@ -387,6 +387,31 @@ export const PageDownload = () => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Trust"
+        title="Use the official APK path"
+        description="Readers, reviewers, and affiliates should evaluate Nayovi from the same official download, activation, pricing, and support flow."
+        className="pt-0"
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {trustSignals.map((signal) => {
+            const Icon = signal.icon;
+
+            return (
+              <Card key={signal.title} className="rounded-[1.5rem]">
+                <CardHeader className="gap-3">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                    <Icon className="size-5" />
+                  </div>
+                  <CardTitle className="text-lg">{signal.title}</CardTitle>
+                  <CardDescription>{signal.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            );
+          })}
+        </div>
+      </PublicSection>
+
+      <PublicSection
         id="install"
         eyebrow="Install"
         title="Install in three steps"

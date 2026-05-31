@@ -166,12 +166,22 @@ export const supportFaqs: ContentBlock[] = [
   {
     title: 'Can I share my redeem code?',
     description:
-      'Yes. You can share a redeem code across devices or people.',
+      'Yes. You can use one redeem code across approved devices or a small reading group, agency, creator team, or review test. Choose a plan that matches the total monthly usage.',
   },
   {
     title: 'Can I get more tokens?',
     description:
       'Yes. If your monthly tokens run out, ask support for an additional redeem code.',
+  },
+  {
+    title: 'How do I cancel a monthly plan?',
+    description:
+      'Use the billing link from your checkout receipt or contact support with the receipt email so the subscription can be located and cancellation guidance can be sent.',
+  },
+  {
+    title: 'What should I send for refund or billing help?',
+    description:
+      'Send the checkout receipt email, redeem code, and a short description of the issue so support can review payment status, token delivery, and recent activation attempts.',
   },
   {
     title: 'Which plan should I choose?',
@@ -197,6 +207,21 @@ export const supportFaqs: ContentBlock[] = [
     title: 'Which plan is best for affiliates or community demos?',
     description:
       'Start with Pro if you need enough monthly chapters for repeat demos, reviews, or a small community test. Ask support for a dedicated code before publishing a public walkthrough.',
+  },
+  {
+    title: 'Can reviewers or partners get a test code?',
+    description:
+      'Yes. Reviewers, affiliates, community moderators, and publisher or platform teams can contact support for a scoped test code before publishing a walkthrough or partnership note.',
+  },
+  {
+    title: 'Can publishers or platforms request a private workflow review?',
+    description:
+      'Yes. Publisher, platform, and creator teams can ask support for a private review of approved-sample translation, glossary handling, hosted processing, and takedown-ready support before any public collaboration.',
+  },
+  {
+    title: 'Where should business or investor questions go?',
+    description:
+      'Use the support email with the subject line "Nayovi business inquiry" and include whether the request is about partnerships, affiliate tests, publisher workflows, or investor due diligence.',
   },
   {
     title: 'Is it monthly?',
