@@ -25,6 +25,11 @@ const downloadStructuredData = () => {
       description:
         'Open the Android app, enter a redeem code, and use hosted OCR and AI translation for approved manga, manhwa, or manhua content.',
     },
+    {
+      name: 'Check official updates',
+      description:
+        'Return to the official Nayovi download page before updating so the APK URL, build label, size, hash, support links, and responsible-use notes stay attached.',
+    },
   ] as const;
   const reviewerPacketItems = [
     {
