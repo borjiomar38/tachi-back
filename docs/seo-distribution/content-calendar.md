@@ -193,3 +193,11 @@ This file is maintained by the SEO distribution agent.
 | date | topic | keywords | search_intent | target_url | status | next_action |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-05-31 | Publish trust-first OCR limitation checklist for non-source-bound workflows | OCR limitations, manga OCR translation trust, content ownership boundaries | informational + commercial trust | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | draft | Add a dedicated claim/anti-claim matrix and cross-link to support, pricing, and review handoff sections so community drafts can reuse the same owned standard |
+
+## 2026-05-31 Cycle Content Plan
+
+| topic | primary_keyword | intent | target_url | status | next_action |
+| --- | --- | --- | --- | --- | --- |
+| Permission-safe manga translation pilot playbook | permission-safe manga translation pilot | high-intent educational | /guides/permission-safe-manga-translation-pilot | draft_ready | Add one FAQ section on approved sample intake and partner expectations for creators/publishers. |
+| Best Android manga translation APK guide | android manga translation app | commercial comparison intent | /guides/best-android-manga-translator-apk | draft_ready | Add concise “why this is different” section focused on source-of-truth, free-trial to paid plan flow, and OCR quality checks. |
+| Translation troubleshooting for OCR + AI workflow | comic ocr workflow error handling | support intent | /guides/translation-support-workflow | draft_ready | Add a short section on review-code routing and non-technical handoff for external editors. |
