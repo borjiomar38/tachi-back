@@ -1687,3 +1687,15 @@ Next actions:
 - Improved owned trust content in `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` with explicit claim-safe internal-linking and comparison-use guidance.
 - Added aligned rows to `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/growth/backlink-prospects.csv` for workflow continuity.
 - Validation not run (documentation-heavy, no schema-facing code changes requested).
+
+### 2026-05-31 cycle note
+
+- Account setup (priority phase): advanced 3 official setup tasks with explicit owner blockers.
+  - LinkedIn company/founder profile: blocked by manual signup and verification; queued with `OWNER_ACTION_REQUIRED` in `account-setup.md`.
+  - Product Hunt maker account: queued with identity/creator verification; queued with `OWNER_ACTION_REQUIRED`.
+  - YouTube channel: queued for owner execution with OAuth token prep note.
+- Owned content trust work: added a reusable permission-safe linkable asset concept (`nayovi-ocr-trust-anchor-20260531`) in `link-assets.md` and scheduled three owned SEO topics in `content-calendar.md`.
+- Discovery work: added 3 distinct authority opportunities in `authority-opportunities.md` (Android Central press pitch, Google Play developer profile trust setup, GitHub awesome-ocr contribution path).
+- Distribution prep: added one GitHub-ready PR draft and one community submission draft in `platform-drafts.md`; both currently draft-only due missing required platform authorization.
+- Constraint log: external posting remains restricted by account policy (`externalPostingMode=draft`, no verified platform posting workflows configured), and no outbound posting was performed.
+- Next actions: owner executes LinkedIn + Product Hunt setup, then convert GitHub opportunity draft to PR-ready checklist and run Android Central pitch-only first version.

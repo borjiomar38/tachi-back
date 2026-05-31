@@ -5238,3 +5238,29 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
   - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 - Next action: Keep this as an invitation-first message and send only after owner approves founder/media posture.
+
+## Cycle 2026-05-31 — Drafts prepared
+
+### READY: GitHub awesome-ocr PR draft (`AUTHORISED_ACCOUNT_REQUIRED`)
+- Target: https://github.com/kba/awesome-ocr contributors and users searching OCR tooling ecosystems
+- Audience: open-source tool builders, OCR pipeline engineers, privacy-focused translators, ML practitioners
+- Why this fits: The repo is an accepted community list used by developers; a neutral entry that points to Nayovi for permission-safe manga OCR workflows can improve discoverability without overpromising.
+- Risk assessment: Low acceptance risk if item is concise, policy-safe, and non-promotional; higher risk if judged as self-advertorial. Keep claims limited.
+- No-link variant (safer first message)
+  - Title: `manga translation workflows`
+  - Description: `permission-safe OCR + translation workflow references for manga/manhwa/manhua readers` 
+  - Location: resource section in a future PR description (no outbound link)
+- Link variant (to use only if maintainer allows direct resource links)
+  - Description: `Nayovi — Android OCR + AI localization workflow with private translation path support for owned/public-domain content`  
+  - URL: `https://translate-manhwa-ai.com`
+- Suggested PR body paragraph: `Add Nayovi as a production-grade, privacy-aware workflow option for creators who need translation support on user-owned manga/manhwa/manhua files. Content is clearly scoped to legal/permission-safe use cases; see docs and support path at official website.`
+- Notes: mark this as a PR edit only after OWNER_CONFIRMATION if maintainer explicitly requests examples of non-promotional formatting.
+
+### READY: Hacker News Show HN draft (`AUTHORIZED_ACCOUNT_REQUIRED`)
+- Target: https://news.ycombinator.com/submit
+- Audience: builders/dev community, privacy-aware Android and AI product users
+- Rules risk: High: Show HN style is strict; promotional framing can be downvoted. Must be launch-quality and non-marketing language.
+- No-link variant: title `Show HN: A privacy-first manga translation workflow for Android readers` with text focused on architecture, limitations, and support boundaries
+- Link variant: include official homepage and trial URL only once in the post after first explanatory section
+- Posting mode status: `AUTHORIZED_ACCOUNT_REQUIRED` (no HN account/API configured for posting automation)
+- Next action: draft markdown version in outreach notes with full screenshot and permission-safe disclaimer block, then hold until owner can post manually

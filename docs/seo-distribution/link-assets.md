@@ -279,3 +279,15 @@ This file is maintained by the SEO distribution agent.
 | draft | AppBrain submission-fit packet | Android discoverability editors | docs/seo-distribution/platform-drafts.md | Converts distribution planning into a source-first metadata question before any public listing submission | Keep as no-link-first; only add public links if directory accepts official fields |
 | draft | Product Hunt launch checklist asset | Founder communities and launch reviewers | https://www.producthunt.com/launch | Keeps launch copy compliant with personal account rules and no-spam expectations while preserving claim-control | Align maker timeline and owner approval before queueing public submission |
 | draft | Mangasplaining topic pitch | Creator-locale media and publisher-adjacent audiences | docs/seo-distribution/platform-drafts.md | Product-light topic pitch for visual storytelling OCR QA and approval-safety context | Use no-link-first invitation draft first; link variant only when invited |
+
+## Cycle 2026-05-31 — New linkable asset plans
+
+- Asset ID: `nayovi-ocr-trust-anchor-20260531`
+  - Type: Owned SEO page concept (documentation-first trust asset)
+  - Topic: Permission-safe OCR + AI translation for manga/manhwa/manhua
+  - Primary URL target: `https://translate-manhwa-ai.com`
+  - Supporting URLs: `https://tachiyomiat.com`, `https://nayovi.com`
+  - Description: A comparison-style page draft showing lawful use patterns (`owned content`, `public-domain`, `official sample`), privacy claims boundaries, and practical translation workflow. Use this as reference for GitHub PR description, directory listings, and publication queries.
+  - Visual asset angle: 60-second workflow diagram + screenshot stack (upload/import, OCR pass, context verification, translated output)
+  - Conversion use: Add as resource link in community posts only where accepted, otherwise keep as no-link mention in discussion drafts.
+  - Draft status: `NEEDS_OWNER_APPROVAL` (content draft in docs only)
