@@ -77,15 +77,15 @@ const staticSitemapEntryOverrides: Record<
     lastModified: '2026-05-31',
     priority: '0.8',
   },
-  '/guides/comic-ocr-translation-checklist': {
-    changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
-    priority: '0.8',
-  },
   '/guides/permission-safe-manga-translation-pilot': {
     changeFrequency: 'weekly',
     lastModified: '2026-05-31',
-    priority: '0.8',
+    priority: '0.85',
+  },
+  '/guides/comic-ocr-translation-checklist': {
+    changeFrequency: 'weekly',
+    lastModified: '2026-05-31',
+    priority: '0.85',
   },
   '/guides/best-android-manga-translator-apk': {
     changeFrequency: 'weekly',
