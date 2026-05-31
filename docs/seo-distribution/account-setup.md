@@ -1088,7 +1088,7 @@ Status: OWNER_ACTION_REQUIRED for profile claim/creation, eligibility review, an
 
 ### Official Press / Media Kit Page
 
-Status: OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, and any public metrics.
+Status: CONTENT_SYNCED_OWNER_REVIEW_REQUIRED for public media contact, logo/screenshot rights, founder quote policy, and any public metrics.
 
 Public profile fields:
 - Name: `Nayovi`
@@ -1103,6 +1103,65 @@ Required assets:
 - Official logo/avatar and banner reference.
 - Approved screenshots or clear `OWNER_ACTION_REQUIRED` placeholder if screenshots are not yet approved.
 - Demo video reference if owner confirms public sample rights.
+
+Owned packet:
+- `docs/seo-distribution/official-media-kit.md`
+
+Agent capability after owner approval:
+- Reuse the media-kit copy in podcast, newsletter, press, directory, partner, and investor drafts.
+- Keep package/signing/developer verification facts pending until the owner confirms them.
+- Keep private contact details, credentials, and verification artifacts out of docs.
+
+Next action:
+- Owner confirms public contact path, founder quote policy, public metrics, screenshot/demo asset rights, and package identity facts before external media-kit citation.
+
+### Android/Kotlin Newsletter Source Profile
+
+Status: OWNER_ACTION_REQUIRED for byline approval, official submission-path approval, and any publication-specific profile.
+
+Profile/byline fields:
+- Name: `Nayovi` or founder-approved real byline with clear Nayovi affiliation.
+- Bio: `Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua reader workflows.`
+- Technical topic: `Independent Android APK trust checks for hosted OCR workflows`
+- Primary source link: `docs/nayovi-apk-review-packet.md`
+- Public checklist link: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+Submission boundaries:
+- Submit only technical checklist or APK trust resources through official newsletter paths.
+- Do not submit consumer launch copy, affiliate links, or package/signing claims that are not owner-confirmed.
+- Use pending language for package name, signing fingerprint, Android developer verification, and package registration until the owner confirms those fields.
+
+Credential references:
+- `SEO_AGENT_ANDROID_WEEKLY_SUBMISSION_REFERENCE`
+- `SEO_AGENT_KOTLIN_WEEKLY_SUBMISSION_REFERENCE`
+- Per-newsletter non-secret reference only if a publication requires a profile.
+
+Next action:
+- Owner approves the byline, technical checklist angle, and whether Android Weekly/Kotlin Weekly/Dove Letter/KMP Weekly-style submissions may be prepared from official paths.
+
+### Free-Trial AI Directory Owner Profiles
+
+Status: OWNER_ACTION_REQUIRED for each directory account, submit-form terms, and listing review.
+
+Profile/listing fields:
+- Name: `Nayovi`
+- Category: `AI OCR`, `Translation`, `Android app`, or closest supported category.
+- Short description: `Android APK with hosted OCR and AI translation for manga, manhwa, and manhua reader workflows.`
+- Pricing: `Free trial plus paid monthly token plans.`
+- Website/source link: `https://tachiyomiat.com/download`
+- Support link: `https://tachiyomiat.com/support`
+- Responsible-use line: `Nayovi does not host or distribute chapters; use it only with owned, public-domain, official-sample, or permission-approved content.`
+
+Required review before submission:
+- Directory supports trial or freemium labels without implying forever-free access.
+- Listing can keep official APK, pricing, support, privacy, terms, and responsible-use links visible.
+- Directory does not require reciprocal backlinks, paid placement as a link condition, hidden redirects, fake reviews, or mirror-first APK hosting.
+
+Credential reference:
+- Per-directory non-secret profile reference only. Do not store login data, cookies, passwords, or API keys in docs.
+
+Next action:
+- Owner selects which free-trial directories are worth manual account creation; agent prepares listing packets only after current rules and fields are verified.
 - Founder-approved quote and whether revenue, trial, token, or usage metrics can be public.
 - Public contact path; do not include private phone, WhatsApp, email aliases, credentials, or verification screenshots unless they are already intended for public use.
 
