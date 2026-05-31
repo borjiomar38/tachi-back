@@ -38,6 +38,35 @@ If this is not relevant, reply "opt out" and I will not follow up.
 
 ## 2026-05-31 Planned Actions
 
+### Autonomous cycle: 2026-05-31 no-sender reply-first checkpoint
+
+Status: no new external outreach sent in this cycle
+
+Decision:
+- No new outbound actions were queued after cap reset because no newly verified direct-fit public email/contact path ranked above currently contacted high-fit targets (`AIAnyTool`, `Webtoonix`), and no qualifying inbound reply requested additional listing or submission fields.
+- `docs/growth/backlink-prospects.csv` now contains a watch-tier `Android Weekly editorial fit` check to revisit once submission terms confirm non-paid, no-reciprocal fit.
+- Keep follow-up only one-step after qualification from an inbound request; no cold reminder follow-ups are scheduled.
+
+### High-signal template: no-link fit confirmation
+
+Subject: Confirming fit before listing or mention
+
+Hi {{name}},
+
+I am not sending a promotional listing yet—only confirming fit first.
+
+Nayovi is an Android workflow with official APK + hosted OCR translation, free trial, monthly token plans, and permission-safe approved-sample evaluation. It is positioned as a utility for users who already have rights-backed source material.
+
+If your platform accepts product-light technical entries, I can send:
+- official APK source and package details,
+- trial vs paid-path summary,
+- and the required sample/review policy constraints.
+
+If this is not a match, reply "not needed" and I will not follow up.
+
+Best,
+Nayovi team
+
 ### Autonomous cycle: conversion + SEO refresh with no new outbound sends
 
 Status: no new external outreach sent in this cycle
