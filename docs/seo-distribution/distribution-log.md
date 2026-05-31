@@ -4,6 +4,22 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-05-31 Current Cycle (this pass)
 
+- Branch check: `seo/distribution-20260531T232211Z` verified before edits.
+- Read all required inputs first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md` files.
+- Advanced two owner-action setup tasks in `docs/seo-distribution/account-setup.md`:
+  - Product Hunt maker profile setup packet (`OWNER_ACTION_REQUIRED` + anti-upvote controls)
+  - YouTube official channel metadata and ownership gate
+- Added 3+ new authority opportunities in `docs/seo-distribution/authority-opportunities.md` from distinct categories:
+  - AppBrain (app distribution)
+  - AlternativeTo (software recommendation directory)
+  - Indie Hackers (founder/community)
+- Added one best-ready no-link-first draft in `docs/seo-distribution/platform-drafts.md` for AppBrain featured-app readiness with a conditional link variant.
+- Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` for new owned-asset positioning and link-gating.
+- Appended new prospect rows in `docs/growth/backlink-prospects.csv` for AppBrain, AlternativeTo, and Indie Hackers with owner-gated status.
+- Kept all actions draft-only due `externalPostingMode=draft`, missing authorized APIs, and explicit posting gates.
+- Validation not run (docs-only ownership/asset updates; no code-path changes).
+- Next action: owner creates/approves Product Hunt + YouTube official setup and then converts the AppBrain/AlternativeTo rows when external profile rules are confirmed.
+
 - Updated branch check: `seo/distribution-20260531T195217Z`; external posting remained draft-only with `accountCreationEnabled=false`.
 - Read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all `docs/seo-distribution/*.md` inputs before drafting.
 - Advanced two required owner-action setup tasks in `docs/seo-distribution/account-setup.md`:

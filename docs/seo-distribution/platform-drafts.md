@@ -6,6 +6,23 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ### 2026-05-31 Best-ready cycle draft (authority opportunity lock)
 
+### 2026-05-31 Additional best-ready draft (new: app-directory readiness)
+
+- Target: AppBrain Featured App flow (`https://www.appbrain.com/product/featured`)
+- Category: Android app directory and developer trust listing
+- Audience: Android app-review readers and distribution-aware technical users
+- Rules risk: medium-high (depends on official developer account readiness and metadata quality requirements)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- Target rule notes: Keep initial approach metadata-only. Only send link variant after AppBrain confirms listing fields and official source-link behavior.
+- No-link-first draft:
+  - "I maintain an official Android OCR translation utility for manga/manhwa/manhua users with permission-safe material workflows. I can provide a source-first metadata check for supported fields (download/support/pricing/ responsible-use boundaries) if your featured app listing supports this structure."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  1. Confirm required submitter role and metadata requirements first.
+  2. Add source links only after rules confirmation and owner approval; avoid any listing claims before that.
+
 - Target: ToolIndex AI directory submit flow (`https://www.toolindex.ai/submit/`)
 - Category: AI directory (trial/paid model fields + Android OCR)
 - Audience: AI tooling curators and directory reviewers

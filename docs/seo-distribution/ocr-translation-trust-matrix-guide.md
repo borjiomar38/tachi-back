@@ -68,6 +68,14 @@ Use this structured comparison text in any draft that asks for a source-first re
 - Q: What claims should be blocked?
   - A: Play Store verification claims, unlimited free-tier claims, open-source claims, and any catalog-processing claims until owner confirmation.
 
+## 2026-05-31 Owned Distribution Expansion (this pass)
+
+- **Primary gate:** every external draft should begin with a no-link variant and only switch to links when the target explicitly accepts resource references.
+- **Preferred source route for external trust checks:** `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` and `https://tachiyomiat.com/download` (in that order).
+- **Disallowed in first-contact copy:** verification status claims, chapter processing promises, mirror-source recommendations, and any claim requiring package/signing confirmation.
+- **Allowed process note:** keep first touchpoints to policy/metadata fit (`official source, support, pricing split, responsible-use)`, then request whether links are acceptable.
+- **One-sentence reusable fallback:** `Nayovi is a permission-safe Android OCR + translation workflow for manga/manhwa/manhua readers, with official support links, free-trial onboarding, and a transparent paid-token path for deeper usage.`
+
 Next action:
 - Add this section into one owned landing or guide page as a short FAQ block only if owner-confirmed public links and package/screenshot policies stay unchanged.
 - Keep the legal-safe copy unchanged until package/signing facts are approved in account setup packets.

@@ -6,6 +6,15 @@ Only official Nayovi-owned accounts belong here. Do not add fake personas, throw
 
 ## 2026-05-31 Cycle Owner-Action Advancement
 
+## 2026-05-31 Cycle Priority Setup Push
+
+### 2026-05-31 Cycle Advancement (new this pass)
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Product Hunt official maker/company profile | Launch and founder-trust surface for technical tools with transparent, non-promotional value-first updates | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/claim official maker profile manually, confirm launch timing, and approve policy for no-upvote or manipulation behavior | `docs/seo-distribution/official-launch-profile-packet.md`, logo/avatar, concise launch copy, support URL, pricing split, screenshot policy, responsible-use line | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | Agent can prepare maker comments/description and post only after owner manual publish approval; no automated launch posting without explicit token scope approval | Owner confirms approved launch text and public support link policy, then keep draft-only until launch window is approved |
+| medium | YouTube official Nayovi channel | Durable trust channel for demonstration snippets, OCR failure-mode explainers, and support-first guidance | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/verify official channel and claim ownership manually, upload approved brand art, and approve canonical link blocklist | `docs/seo-distribution/account-setup.md`, approved demo/screenshot list, channel bio template, canonical links, no-mirror statement | `SEO_AGENT_YOUTUBE_CHANNEL_ID`, `SEO_AGENT_YOUTUBE_API_KEY` | Agent can draft channel section copy and prepared publish queue after owner approval; no video uploads or metadata changes without authorized account/session | Owner approves publish policy, demo selection, and no-link-first support copy before API-connected metadata updates |
+
 ## 2026-05-31 Cycle Advancement Addendum (this pass)
 
 ### 2026-05-31 Cycle Execution Addendum
