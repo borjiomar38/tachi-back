@@ -262,3 +262,12 @@ This file is maintained by the SEO distribution agent.
 | draft | comparison guide | Permission-safe manga translation comparison: OCR limits + trial workflow | https://tachiyomiat.com/guides/best-android-manga-translator-apk | trust + commercial comparison | medium | Expand with 3-section comparison grid: setup claims, ownership boundaries, support handoff path. Reuse in partner/directories where comparisons are accepted. |
 | draft | process asset | Android OCR permission workflow FAQ | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | technical trust + support depth | low | Add canonical FAQ blocks for unsupported file types, model quality caveats, and review-code escalation; keep legal-safe phrasing. |
 | draft | OCR checklist comparison matrix asset | Android developers, localization teams, creator ops reviewers | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Adds compare-and-review clarity for independent APK + hosted translation flows; reduces overclaim risk and improves linkability by clarifying claim boundaries | Publish checklist block in the guide and route all outbound links through official identity packets only |
+
+## 2026-05-31 Cycle Linkable Assets (new for this run)
+
+| Status | Asset | Audience | Link target | Why it can earn links | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | AppBrain submission-fit packet | Android discoverability editors | docs/seo-distribution/platform-drafts.md | Converts distribution planning into a source-first metadata question before any public listing submission | Keep as no-link-first; only add public links if directory accepts official fields |
+| draft | Product Hunt launch checklist asset | Founder communities and launch reviewers | https://www.producthunt.com/launch | Keeps launch copy compliant with personal account rules and no-spam expectations while preserving claim-control | Align maker timeline and owner approval before queueing public submission |
+| draft | Mangasplaining topic pitch | Creator-locale media and publisher-adjacent audiences | docs/seo-distribution/platform-drafts.md | Product-light topic pitch for visual storytelling OCR QA and approval-safety context | Use no-link-first invitation draft first; link variant only when invited |
+
