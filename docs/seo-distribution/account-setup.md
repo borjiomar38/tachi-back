@@ -1787,6 +1787,9 @@ Agent capability after connection:
 Next action:
 - Owner creates/connects the official company page or founder-owned profile, confirms the organization ID, and approves whether public metrics can be mentioned.
 
+Owned docs created:
+- `docs/nayovi-apk-review-packet.md` now provides a GitHub-ready reviewer packet with official links, safe test scope, listing copy, metadata fields that require owner confirmation, and screenshot/publication boundaries.
+
 ### YouTube Official Channel
 
 Status: OWNER_ACTION_REQUIRED for channel creation, terms acceptance, and OAuth connection.
@@ -1808,6 +1811,13 @@ First upload metadata:
 - Title: `Nayovi Android OCR Translation Workflow Demo`
 - Description: `Official Nayovi demo for Android APK install, redeem-code activation, hosted OCR, and AI translation support. Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, or permission-approved content. Download and support: https://tachiyomiat.com/download`
 - Tags: `Nayovi, Android OCR, manga translation workflow, manhwa translation, hosted OCR`
+- Pinned comment: `Official links: https://tachiyomiat.com/download for APK access and https://tachiyomiat.com/support for review-code or support questions. Nayovi does not host or distribute chapters; use it with owned, public-domain, official-sample, or permission-approved content.`
+
+Verification steps:
+- Owner creates or claims the official channel and accepts any YouTube terms manually.
+- Owner uploads only demo footage that avoids copyrighted chapter pages unless explicit permission exists.
+- Owner stores OAuth refresh token only as `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` in `/opt/tachi-back/.env.seo-distribution-agent` if agent-assisted uploads/descriptions are wanted.
+- Agent remains draft-only until channel, terms, and OAuth scope are confirmed.
 
 Agent capability after connection:
 - Upload/update demo metadata only after `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` is configured. No automatic account creation or terms acceptance.
@@ -1827,9 +1837,15 @@ Required assets:
 - Logo/avatar.
 - Banner that shows the Android app flow or neutral product UI.
 - Canonical links to download, pricing, support, and workflow guide.
+- Founder-approved public metrics, if any. If metrics are not approved, use product progress and trust-building updates only.
+
+First 3 post drafts:
+- APK trust: `We are treating APK trust as part of the product: official source links, support, pricing, privacy, terms, review-code flow, and clear responsible-use boundaries before any reviewer or directory mention.`
+- OCR QA: `For manga, manhwa, and manhua OCR, translation quality starts before translation: page flow, bubble order, merged OCR blocks, glossary consistency, and human review on approved samples.`
+- Partner feedback: `Nayovi is looking for feedback from Android reviewers, localization operators, creator-platform teams, and publisher partners on permission-safe OCR workflows for approved samples.`
 
 Agent capability after connection:
-- Draft or publish official company posts only after `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` and `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` are configured and the owner approves posting scope.
+- Draft or publish official company posts only after `SEO_AGENT_LINKEDIN_ACCESS_TOKEN` and `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` are configured and the owner approves posting scope. No automated DMs, scraped targeting, engagement pods, repetitive promotional comments, or personal-looking impersonation accounts.
 
 ### Product Hunt Maker/Product Profile
 
