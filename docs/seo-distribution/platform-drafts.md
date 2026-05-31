@@ -2479,6 +2479,32 @@ Nayovi uses this kind of checklist because the product is an Android APK plus ho
 The owned checklist is maintained here:
 https://tachiyomiat.com/guides/comic-ocr-translation-checklist
 
+### Free-only AI directory exclusion note
+
+Status: watch
+Target: directories that require tools to be free forever, no-credit-card, open-source, or no-upgrade.
+Audience: owner and growth agent
+Rules risk: medium if submitted inaccurately; low if used only as an internal filter.
+No-link variant: use the filter only and do not contact the directory.
+Link variant: `docs/seo-distribution/directory-listing-quality-filter.md`
+
+Decision note:
+
+Do not submit Nayovi to a free-only AI directory if the listing cannot represent free trial access, redeem-code activation, and paid monthly token plans accurately.
+
+Use this response only if the directory has a legitimate eligibility question path:
+
+Hi {{name}},
+
+I am checking eligibility before submitting Nayovi.
+
+Nayovi is an Android APK and hosted OCR/AI translation workflow for manga, manhwa, and manhua readers. It has free trial access and redeem-code activation, but it also has paid monthly token plans, so I do not want to submit it if your directory is limited to free-forever or open-source tools.
+
+If you have a freemium, free-trial, or paid-app category that preserves official source links, pricing, support, and responsible-use context, I can send a concise listing packet. If not, I will skip the submission.
+
+Best,
+Nayovi team
+
 ### ScriptByAI-style AI directory eligibility note
 
 Status: draft
