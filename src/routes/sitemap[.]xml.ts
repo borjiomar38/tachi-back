@@ -34,7 +34,7 @@ const staticSitemapEntryOverrides: Record<
 > = {
   '/': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-29',
+    lastModified: '2026-05-31',
     priority: '1.0',
   },
   '/blog': {
@@ -65,11 +65,11 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.8',
   },
   '/guides/mihon-nayovi-setup': {
-    lastModified: '2026-05-25',
+    lastModified: '2026-05-31',
     priority: '0.8',
   },
   '/guides/mihon-tachiyomiat-setup': {
-    lastModified: '2026-05-25',
+    lastModified: '2026-05-31',
     priority: '0.8',
   },
   '/guides/translation-support-workflow': {
