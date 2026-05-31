@@ -249,3 +249,11 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | draft | permissions-first Android OCR workflow comparison | permission-safe manga OCR workflow comparison | /guides/comic-ocr-translation-checklist | Publish an internal comparison block (workflow quality, ownership, support path, trial/token split) with a short FAQ so outbound drafts can link only to owned evidence | Add one comparison block with claim-control bullets and internal links to `/guides/translation-support-workflow`, `/pricing`, and `/support` before next prospect action |
 | draft | creator-focused localization trust | manga OCR localization quality checklist | /guides/permission-safe-manga-translation-pilot | Expand into a creator-partner-ready primer explaining approved-sample process, glossary consistency checks, and escalation expectations | Publish creator-facing checklist section so media and localization pitches can reference one owned source without promotional framing |
+
+## 2026-05-31
+
+| Topic | Keywords | Search intent | Target URL | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| OCR workflow trust guide for manga translation apps | manga OCR workflow, permission-safe translation, privacy OCR manga | Informational + commercial investigation | https://translate-manhwa-ai.com | DRAFT | Publish a short guide with decision tree for legal use and include FAQ JSON-LD for `HowTo` + `FAQ` |
+| Android reader AI translator comparison | android manga translator, manga reader AI translate, offline OCR app | Commercial comparison intent | https://translate-manhwa-ai.com/compare/nayovi-vs-native-apps | DRAFT | Create a comparison matrix with clear acceptance criteria and non-deceptive limitations section |
+| Publisher-safe content localization checklist | legal manga localization, owner-owned content workflow, localization QA checklist | Intent: trust/security for creators | https://translate-manhwa-ai.com/blog/legal-localization-checklist | IDEATION | Draft creator-first checklist using existing support docs and include schema-ready section titles |
