@@ -48,7 +48,7 @@ const pricingNotes = [
     icon: ShieldCheckIcon,
     title: 'Recurring fulfillment path',
     description:
-      'Webhook fulfillment credits monthly tokens after paid billing events, while refund tooling and some recovery flows remain follow-up work.',
+      'Webhook fulfillment credits monthly tokens after paid billing events so recurring users keep a predictable upgrade and renewal path.',
   },
 ] as const;
 

@@ -11,7 +11,7 @@ const publicBrandUrl = 'https://nayovi.com';
 const socialImagePath = '/og/nayovi-social-preview.jpg';
 const publicBrandAliases = ['TachiyomiAT', 'Tachiyomi AT', 'tachiyomiat.com'];
 const publicSiteDescription =
-  'Nayovi is a TachiyomiAT-style Android APK for free manga AI translation, free manhwa AI translation, and free manhua AI translation with hosted OCR, clean AI output, and redeem-code activation.';
+  'Nayovi is a TachiyomiAT-style Android APK with hosted OCR, redeem-code activation, free trial access, and monthly token plans for manga, manhwa, and manhua translation.';
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}`);
@@ -187,7 +187,7 @@ const buildStructuredData = (
           price: '0',
           priceCurrency: 'USD',
           description:
-            'Free Nayovi trial access for manga, manhwa, and manhua AI translation.',
+            'Free trial access with upgrade-ready monthly token plans for continued usage.',
         },
       },
       ...extraGraph,
