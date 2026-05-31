@@ -2,6 +2,15 @@
 
 ## 2026-05-31
 
+- Autonomous cycle on `growth/autonomous-20260531T195217Z`: tracker sync and no-send checkpoint.
+- Outreach check:
+  - Reviewed `docs/growth/backlink-prospects.csv` and `docs/growth/outreach-drafts.md` and found no newly verified public email/form prospect above existing active threads (`AIAnyTool`, `Webtoonix`, `GOXTOON`, `Bayi`).
+  - No qualified inbound reply in `/var/lib/tachi-growth-agent/outreach/sent.jsonl` required immediate one-step follow-up or owner escalation.
+  - No outbound emails were sent in this cycle.
+- Repository actions:
+  - Added this cycle checkpoint and rationale in `docs/growth/outreach-drafts.md` to keep the reply-first queue explicit for cap-reset handling.
+  - Kept all prospect handling on reply-first and no-link-first for reviewed tracked rows, especially `Nube`, `Genga`, `Android Weekly`, and `AIAnyTool`.
+
 - Autonomous cycle on `growth/autonomous-20260531T183056Z`: outreach and SEO tracker audit.
 - Outreach check:
   - No outbound emails sent in this cycle.
