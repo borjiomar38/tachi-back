@@ -4379,3 +4379,4 @@ Nayovi team
 - no-link variant: launch teaser message with value-first pain points and 3 bullet outcomes
 - link variant: founder/company page + checklist resource as secondary proof after account confirmation
 - draft_status: draft_ready_pending_account_setup
+| draft | Android newsletter/editorial | Android Weekly / Kotlin Weekly submission teams | No-link resource first, then optional checklist link | None by default; optional `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` in link variant | Audience: Android developers, reviewer communities, independent APK users. Rules risk: manual editorial gate only, no mass-subreddit behavior, no paid placement claims, no claim of store verification. Link risk: include checklist link only if official fields are approved. |
