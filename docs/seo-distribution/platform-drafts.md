@@ -5679,3 +5679,38 @@ If this does not fit your policy, please reply "opt out".
   - Include one link to `https://nayovi.com/guides/comic-ocr-translation-checklist` after first 2–3 paragraphs, and only if allowed by post review outcome.
 - Submission note: `AUTHORIZED_ACCOUNT_REQUIRED`; no autonomous HN posting now because no official account is connected.
 - Success criteria: one high-quality technical link, no promotional claims, concise failure-mode examples.
+
+## 2026-06-02 Drafts for best-ready opportunities
+
+### Android editorial: XDA app-review context note
+
+- Target: XDA app-review readers and editorial contacts at `editorial@xda-developers.com`
+- Audience: Android readers/tools users, independent APK reviewers, app quality-focused creators
+- Rules risk: medium; use source-first value path only and avoid product-hype claims
+- No-link variant:
+  - `XDA audiences often ask practical review signals. We focus on source-first checks and responsible workflows: supported sample scope, privacy, permissions, pricing, and source link transparency. Can we share a short internal fit template for your team to evaluate this approach?`
+- Link variant (only if invited):
+  - `If helpful, we can share official details on official download/support links, trial-to-token path, and non-mirror source policy for a reviewer-style resource check.`
+- Compliance note: AUTHORIZED_ACCOUNT_REQUIRED for XDA posting because official account/authorization is not yet configured.
+
+### Software directory: AlternativeTo listing prep note
+
+- Target: `alternativeto.net`
+- Audience: Android and comparison tool decision readers
+- Rules risk: medium; keep listing fields factual and avoid ranking language
+- No-link variant:
+  - `For a potential listing review, Nayovi should appear as a permission-safe translation utility with official website links only; avoid any chapter-hosting or mirror-language framing.`
+- Link variant:
+  - `Official profile fields can be added for official website, platform coverage, and source-of-truth pages if AlternateTo contributor flow allows owner-verified software entries.`
+- Compliance note: only proceed after official account/profile creation is confirmed and category fit is approved.
+
+### Repository ecosystem: `kba/awesome-ocr` maintainer-first contribution message
+
+- Target: `https://github.com/kba/awesome-ocr`
+- Audience: OCR maintainers and technical users browsing resource lists
+- Rules risk: medium; maintainer-only contribution path with no promotional links
+- No-link variant:
+  - `Would this project accept a short resource entry for a permission-safe product for manga/manhwa/manhua OCR workflows? We can provide no-promo notes for official checklists and responsible-use wording.`
+- Link variant:
+  - `If allowed, entry text can include one official link: https://nayovi.com/download and checklist assets in a narrow resource reference format.`
+- Compliance note: wait for maintainer confirmation and do not open PRs without explicit invitation.
