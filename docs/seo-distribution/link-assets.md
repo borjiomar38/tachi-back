@@ -2,6 +2,13 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-06-01 Linkable Assets Added
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| ToolIndex fit checklist packet | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` + `https://tachiyomiat.com/translate-manhwa-ai` | AI directories and technical curators | Product-light compatibility copy for directory and community channels with no-link-first default and link gating policy | draft | Keep as no-link-first asset until ToolIndex/API path accepts official APK + trial/paid-token fields |
+| Translator forum no-link playbook | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | Reddit localization and creator translator communities | Enables value-first support posts with optional resource link only after moderation approval | draft | Reuse from `platform-drafts.md` and keep manual-only without approved Reddit account |
+
 ## 2026-05-31 Cycle Additions
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |
@@ -316,4 +323,3 @@ This file is maintained by the SEO distribution agent.
 | AppBrain metadata packet | `https://www.appbrain.com/product/featured` | Android utility users / app distribution readers | Keeps external submissions technical-first: app source URL, trial-to-paid clarity, support route, responsible-use boundary | draft | Confirm AppBrain eligibility (claimed dev account + release criteria) before converting to submission-ready variant |
 | Try.fm trial directory readiness pack | `https://www.try.fm/` | AI trial users / comparison readers / procurement research | Product-light, category-safe listing language and risk gate for free-tier + trial + token pricing | draft | Verify if Android APK entries are accepted and whether links can remain canonical and transparent |
 | Indie Hackers founder trust note | `https://www.indiehackers.com/` | Founder communities / startup discoverability / investors | Value-first founder post template on permissions-first workflow design and Android APK trust | draft | Prepare founder-owned official account and post-approval path; post only if rules allow external linking |
-

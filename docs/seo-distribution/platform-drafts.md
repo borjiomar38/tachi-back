@@ -4,6 +4,34 @@ This file is maintained by the SEO distribution agent.
 
 External platform drafts are for authorized-account posting only. Do not create accounts, bypass platform login, or post promotional backlinks automatically. Every draft should be useful without the backlink and should include a no-link variant when the community may reject links.
 
+### 2026-06-01 New cycle priority drafts
+
+- Target: ToolIndex AI directory submit flow (`https://www.toolindex.ai/submit/`)
+- Category: AI directory (trial/paid model fields + Android OCR)
+- Audience: AI tooling curators and directory reviewers
+- Rules risk: medium (category and field compatibility may reject APK-centric entries)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I am checking fit for a product-light listing: Nayovi is an Android OCR + translation workflow for users with permission-safe content only. It has official source, support, and paid-token continuation details, plus explicit no chapter-hosting language."
+- Link variant:
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+- Action intent:
+  1. Confirm category/field compatibility before sharing links.
+  2. Send full link block only if the flow accepts official source-link fields and trial + paid-token framing without affiliate terms.
+
+- Target: `https://www.reddit.com/r/translator/`
+- Category: translator/Q&A forum
+- Audience: localization contributors and creators asking OCR quality questions
+- Rules risk: medium-high (high moderation + no-promo expectation)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I am not posting a sales pitch. I can share a practical OCR + translation QA checklist for authorized content workflows when a thread asks for implementation guidance."
+- Link variant (only after explicit moderator/thread approval):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  - Keep replies short and stop after first useful response unless a follow-up is invited.
+
 ### 2026-05-31 Best-ready cycle draft (authority opportunity lock)
 
 ### 2026-05-31 Additional best-ready draft (new: app-directory readiness)
@@ -5349,4 +5377,3 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   - `https://tachiyomiat.com/download`
   - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 - Publish intent: Keep no-link-first until fit is confirmed; reject any paid placement or reciprocal-link requirements.
-

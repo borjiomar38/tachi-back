@@ -2,6 +2,23 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-06-01 Cycle (current pass)
+
+- Branch check: `seo/distribution-20260601T034159Z` verified at start.
+- Read required files first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md`.
+- Advanced account setup queue before backlink work per `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true`:
+  - Added `LinkedIn company/founder official page setup` (status `setup_packet_prepared_owner_action_required`).
+  - Added `Reddit official community support profile` (status `setup_packet_prepared_owner_action_required`).
+- Added 3 new authority opportunities in `docs/seo-distribution/authority-opportunities.md`:
+  - AppBrain featured apps
+  - ToolIndex AI submission flow
+  - Indie Hackers founder trust notes
+- Added two platform-ready no-link-first draft packets in `docs/seo-distribution/platform-drafts.md` (ToolIndex + r/translator).
+- Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/seo-distribution/account-setup.md` to keep setup/discovery/content aligned.
+- Updated `docs/growth/backlink-prospects.csv` with 3 new prospect rows for this cycle and kept all as draft/owner action due unauthorized external posting.
+- No external posting, account creation, CAPTCHA solving, directory submission, or API-enabled social posting was executed because `externalPostingMode` remains `draft` and configured accounts are missing.
+- Validation not run (docs-only + planning cycle, no build-impacting files changed).
+
 ## 2026-05-31 Current Cycle (this pass)
 
 - Branch check: `seo/distribution-20260531T232211Z` verified before edits.
@@ -1757,4 +1774,3 @@ Next actions:
 - Appended 3 new outreach prospect rows in `docs/growth/backlink-prospects.csv` under `draft` status.
 - Kept all work draft-only due `accountCreationEnabled=false`, `externalPostingMode=draft`, and no authorized API-posting workflow.
 - Validation command not run: docs-only documentation changes.
-

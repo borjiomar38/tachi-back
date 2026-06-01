@@ -2,6 +2,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-06-01 Cycle Additions (owned-content + discovery support)
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | launch-safe technical publishing readiness | technical founder publishing, OCR workflow transparency, permissions-first translation | docs/seo-distribution/platform-drafts.md | Prepare one value-first founder post draft for DEV/Medium using published trust matrix and no-link-first first contact | Wait for official DEV/Medium profile/account approval, then publish draft as owner-authorized post |
+| draft | AI directory compatibility | OCR + translation tool listing fields, trial plus paid-token model, no chapter hosting | docs/seo-distribution/authority-opportunities.md | Build one reusable field-compatibility block that can be reused for ToolIndex and similar directories | Keep in draft and attach only once category constraints are confirmed |
+| draft | Android translator support trust | Reddit translator forum posting policy + support guidance | docs/seo-distribution/platform-drafts.md | Add translation-quality FAQ snippets that are answer-first and non-promotional | Draft snippets now; post only from authorized official account |
+
 ## 2026-05-31 Cycle Additions (this pass)
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
@@ -283,4 +291,3 @@ This file is maintained by the SEO distribution agent.
 | draft | owned trust pages / distribution readiness | Android app distribution + official launch readiness | https://appbrain.com/product/featured | Build metadata-fit packet for official listing surfaces with no-link-first policy and trial-to-paid framing | Add an AppBrain fit checklist section under owned launch/guide documentation when Play/public availability is confirmed |
 | draft | high-intent trial directory positioning | free trial and paid token OCR translation utility listing | https://www.try.fm/ | Create a reusable directory entry compatibility matrix for trial, pricing, support, and responsible-use fields | Verify current listing rules; prepare non-promotional field copy only if fit passes |
 | draft | founder trust and investor signaling | permission-safe AI localization workflow, developer process transparency | https://nayovi.com | Add a non-promotional founder-facing trust section for build-in-public credibility without follower/engagement mechanics | Wait on LinkedIn/Product Hunt profile approvals; draft official-byline variants only |
-
