@@ -1951,3 +1951,13 @@ Next actions:
 - Extended link-assets with an owned cross-platform trust matrix anchor and added one new linkable draft block.
 - Added a new owner-review Facebook story post draft to the configured queue for an invented fantasy teaser with required CTA.
 - Next action: await owner completion for account steps, then publish authorized drafts only and keep all actions no-link-first by default.
+
+## 2026-06-02 execution log
+
+- Account setup focus executed first: added 4 follow-up setup rows for Google Search Console, LinkedIn, Product Hunt, and YouTube with explicit verification steps, required assets, and owner/action requirements.
+- Discovered 3 new authority opportunities across categories (Android journalism, product launch media, technical launch community) and marked as draft discovery with account/API risk notes.
+- Prepared 3 new platform drafts: Product Hunt launch packet, XDA editorial pitch, and HN-safe community copy.
+- Added 3 linkable asset ideas to strengthen ownership trust signals and owned-content depth.
+- Added 3 content-calendar topics with one mapped to existing guide refinements and one planned new docs draft.
+- Added one Facebook Page queue item draft with rotating lead archetype and no placeholder publish behavior due missing image asset.
+- Next action: finalize credentials for Google Search Console, LinkedIn, Product Hunt, and YouTube; then convert `AUTHORIZED_ACCOUNT_REQUIRED` drafts to publish-ready once manual account setup is done.

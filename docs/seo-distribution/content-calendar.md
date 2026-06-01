@@ -357,3 +357,11 @@ This file is maintained by the SEO distribution agent.
 | draft | official-trust landing and support readiness | comic translation ownership and reviewer trust | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Add a short owned section: "How to evaluate a direct-APK translation utility" with explicit links to support, pricing, and responsible-use boundaries | Expand page section with a 5-line claim ladder and share internally as the link first-response reference |
 | draft | technical launch-readiness media packet | hosted OCR mobile workflow + permissions-safe UX | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a comparison block for direct APK workflows vs cloud-only tools and include stop conditions to reduce misleading claims | Reuse this block as `docs/seo-distribution/link-assets.md` source in launch and directory-facing drafts |
 | draft | build-in-public trust updates without spam claims | creator-first translation QA checklist | https://nayovi.com/guides/permission-safe-manga-translation-pilot | Add a no-link-first paragraph for founders and creators on sample rights, review policy, and test scope | Publish only after account setup for X/Twitter/LinkedIn/Reddit is confirmed and rules-reviewed |
+
+## 2026-06-02 addendum
+
+| topic | intent | target_url | status | next_action |
+| --- | --- | --- | --- | --- |
+| Permission-safe manga translation workflows in 2026 | transactional | https://nayovi.com/guides/permission-safe-manga-translation-pilot | drafted | convert existing checklist notes into an internal case study format and schedule publish within 7 days |
+| OCR accuracy baselines for multilingual comics | informational/comparative | https://nayovi.com/guides/comic-ocr-translation-checklist | refine | add section on language-specific preprocessing and publish updated schema snippet |
+| Translating public-domain comics on Android: risks and safe alternatives | commercial-intent guide | docs draft (to be created) | planned | write landing copy and collect two sample links from open repositories for reference |

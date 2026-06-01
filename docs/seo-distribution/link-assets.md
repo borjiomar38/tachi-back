@@ -400,3 +400,15 @@ This file is maintained by the SEO distribution agent.
 | Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
 | --- | --- | --- | --- | --- | --- | --- |
 | Operational asset | Cross-platform OCR trust check matrix (owned draft) | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Helps unify external drafts across platforms with claim-vs-proof boundaries (trial/paid mix, support, permissions, package ownership) | Android communities, directory reviewers, localization editors, startup founders | Add a small reusable section: what we can claim, what we cannot claim, and when a link is appropriate | No-link first; add link-safe variant only when context allows |
+
+## New linkable assets for next cycle
+
+- `guides.permission_safe_pilot` (priority: medium): update internal share path so it is explicitly framed as public-domain + owned-content workflow and permission-safe OCR baseline.
+  - publish target: `https://nayovi.com/guides/permission-safe-manga-translation-pilot`
+  - trust angle: policy clarity + practical checklists + anti-abuse FAQ
+  - asset variants: short checklist PDF, visual flowchart (poster-safe) and issue-specific FAQ entries.
+- `asset.translation_governance_matrix` (priority: medium): create a reusable comparison asset (permissions, user responsibility, technical limitations, workflow guardrails) for publisher partners and creator communities.
+  - publish target: docs-linked landing block + in-guide callout at `src` route pages.
+  - pitch angle: “legal-risk reduction first, then translation efficiency.”
+- `asset.android_ocr_reference_tests` (priority: low): add structured screenshots or sample inputs used only for docs/testimonial-free process explanation.
+  - publish target: internal media library references for future partner pitches and investor review docs.
