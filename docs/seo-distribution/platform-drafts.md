@@ -28,6 +28,23 @@
   1. Keep only no-link fit check open until a manual official submission workflow is available.
   2. Add links only if the listing accepts official APK source + paid-token split fields.
 
+## 2026-06-01 Priority draft: Developer-first comparison and schema support copy
+
+- Target: `https://www.toolindex.ai/submit/`
+- Category: AI directory listing fit + technical editorial review
+- Audience: AI tooling curators and editor audiences evaluating quality-first Android entries
+- Rules risk: medium (requires accepted category fields and anti-promotional first-contact language)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I have a checklist-first listing fit packet for an Android OCR + translation workflow using approved samples and no chapter-hosting language. I can provide metadata details first and only add links once fields are validated."
+- Link variant:
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/pricing`
+- Action intent:
+  1. Validate field compatibility (category + pricing + support links) before sending link variant.
+  2. Keep it process-first: source/link order, no claim overreach, no mirror framing.
+
 # Nayovi Platform Drafts
 
 This file is maintained by the SEO distribution agent.

@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { publicSeoKeywords } from '@/features/blog/seo';
 import {
   buildPublicAbsoluteUrl,
+  buildPublicFaqStructuredData,
   buildPublicPageHead,
 } from '@/features/public/head';
 import { PageComicOcrChecklist } from '@/features/public/page-ethical-guides';
@@ -75,6 +76,23 @@ const checklistStructuredData = () => {
         'Do not continue if the target requires paid links, reciprocal badges, mirror-first APK distribution, unauthorized chapter examples, or undisclosed promotion.',
     },
   ] as const;
+  const claimFaqs = [
+    {
+      title: 'Does Nayovi host manga chapters?',
+      description:
+        'No. Nayovi provides an Android OCR + translation workflow for owned/public-domain/approved samples and does not host chapter files or replacement catalogs.',
+    },
+    {
+      title: 'What is the first step before sharing a public test?',
+      description:
+        'Share a no-link-first summary first: sample permission, OCR coverage, reading order issues, glossary consistency checks, and what cannot be shared yet.',
+    },
+    {
+      title: 'What links should be included in outreach drafts?',
+      description:
+        'Use official links only when the target allows resource references: download, pricing, support, and this checklist page.',
+    },
+  ] as const;
 
   return [
     {
@@ -124,6 +142,34 @@ const checklistStructuredData = () => {
         description: check.description,
       })),
     },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: buildPublicAbsoluteUrl('/'),
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Guides',
+          item: buildPublicAbsoluteUrl('/guides'),
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Comic OCR Translation Checklist',
+          item: url,
+        },
+      ],
+    },
+    ...buildPublicFaqStructuredData(
+      '/guides/comic-ocr-translation-checklist',
+      claimFaqs
+    ),
   ];
 };
 

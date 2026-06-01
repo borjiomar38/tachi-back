@@ -8,6 +8,13 @@
   - Added new backlog rows in `docs/growth/backlink-prospects.csv` for AI Workbench, NavTools, and AltJapan with owner-review gates.
   - Did not perform external posting, account creation, CAPTCHA, directory form submission, or any public posting actions due `externalPostingMode=draft` and missing authorized credentials.
 
+- Active-cycle checkpoint for `seo/distribution-20260601T135704Z`:
+  - Selected one owned-high-intent growth move: schema + trust-control improvement on `src/routes/guides/comic-ocr-translation-checklist.tsx` and aligned markdown trackers.
+  - Added FAQ + breadcrumb structured data for intent clarity on the guide URL, while keeping claim boundaries and no overclaim language unchanged.
+  - Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/seo-distribution/platform-drafts.md` with one new draft cycle row.
+  - Added one draft Facebook queue object in `/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl` with status `draft` and owner-review-safe topic language.
+  - Kept all actions in draft mode; no external posting, directory posting, API posts, or third-party account automation were performed.
+
 - Branch check: `seo/distribution-20260601T101515Z` verified before edits.
 - Completed required preflight: read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md` files.
 - Advanced account setup priority (2 rows) for official trust/profile readiness in `docs/seo-distribution/account-setup.md`: HackerNoon publication and Product Hunt maker profile packets.
