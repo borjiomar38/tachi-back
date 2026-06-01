@@ -1,3 +1,9 @@
+## 2026-06-01 SEO cycle (own-page upgrade)
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | citation ladder + implementation follow-up | comic OCR checklist citation ladder, checklist follow-up flow, approved-sample workflow | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Add a no-link-first ladder and official follow-up URL map (trial, pricing, support, pilot) for reusable SEO citations. | Published via owned-page update; keep community replies no-link-first unless policy allows links. |
+
 ## 2026-06-01 Cycle Additions (owned content + trust)
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |

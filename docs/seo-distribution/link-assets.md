@@ -1,3 +1,9 @@
+## 2026-06-01 SEO cycle link asset update
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Comic OCR checklist no-link escalation cluster | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Android reviewers, AI directories, creator platforms, localization teams | Added explicit official follow-up URL cluster (download, pricing, support, pilot brief) for safe link escalation after no-link-first replies. | draft | Keep this as the first link option only after the platform ask clearly requests implementation details. |
+
 ## 2026-06-01 Cycle Additions
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |

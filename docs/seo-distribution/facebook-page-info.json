@@ -16,7 +16,8 @@
     "complianceNotes": [
       "No chapter-hosting or catalog-processing claims",
       "No unsupported verification or ranking claims",
-      "No mirror-first APK promotion"
+      "No mirror-first APK promotion",
+      "Keep posts no-link-first unless implementation context is explicitly requested"
     ],
     "links": {
       "download": "https://tachiyomiat.com/download",

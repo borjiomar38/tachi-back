@@ -305,10 +305,12 @@ const mediaKitSourceRows = [
   {
     label: 'Official APK and release context',
     detail: 'https://tachiyomiat.com/download',
+    href: '/download',
   },
   {
     label: 'Pricing and trial path',
     detail: 'https://tachiyomiat.com/pricing',
+    href: '/pricing',
   },
   {
     label: 'Support and review access',
@@ -317,6 +319,7 @@ const mediaKitSourceRows = [
   {
     label: 'OCR QA checklist',
     detail: 'https://tachiyomiat.com/guides/comic-ocr-translation-checklist',
+    href: '/guides/comic-ocr-translation-checklist',
   },
   {
     label: 'Approved-sample pilot guide',
@@ -1514,18 +1517,22 @@ const citationResourceRows = [
   {
     label: 'Primary guide',
     detail: 'https://tachiyomiat.com/guides/comic-ocr-translation-checklist',
+    href: '/guides/comic-ocr-translation-checklist',
   },
   {
     label: 'Official onboarding',
     detail: 'https://tachiyomiat.com/download',
+    href: '/download',
   },
   {
     label: 'Support and pricing details',
     detail: 'https://tachiyomiat.com/pricing',
+    href: '/pricing',
   },
   {
     label: 'Review help and pilot path',
     detail: 'https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot',
+    href: '/guides/permission-safe-manga-translation-pilot',
   },
 ];
 
@@ -1785,7 +1792,12 @@ export const PageComicOcrChecklist = () => {
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
               >
                 <span className="font-semibold text-foreground">{row.label}</span>
-                <span className="break-words">{row.detail}</span>
+                <a
+                  href={row.href}
+                  className="break-words underline-offset-4 hover:underline"
+                >
+                  {row.detail}
+                </a>
               </div>
             ))}
           </CardContent>

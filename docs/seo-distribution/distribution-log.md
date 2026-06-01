@@ -1,5 +1,19 @@
 ## 2026-06-01 Cycle (active branch current)
 
+- Branch check: `seo/distribution-20260601T154030Z` verified before edits.
+- Site audit completed for high-intent owned-page opportunities (citation ladder + implementation follow-up).
+- Owned asset improved: `src/routes/guides/comic-ocr-translation-checklist.tsx` and `src/features/public/page-ethical-guides.tsx` now include stronger citation FAQ, follow-up schema, and explicit internal links to official pages.
+- Documentation synchronized:
+  - Added one owned-content cycle row in `docs/seo-distribution/content-calendar.md`.
+  - Added one reusable linkability asset in `docs/seo-distribution/link-assets.md`.
+  - Added one reusable platform draft in `docs/seo-distribution/platform-drafts.md`.
+- Social prep:
+  - Added one `facebook` queue item aligned to community-safe, value-first positioning in `docs/seo-distribution/social-post-queue.jsonl` with `auto_publish` status.
+- Ownership and compliance:
+  - No account creation, no external posting, no directory/submit actions, no CAPTCHAs, no credentials, no paid placements.
+
+## 2026-06-01 Cycle (active branch current)
+
 - Branch check: `seo/distribution-20260601T143341Z` verified at start.
 - Completed website audit and opportunity scan for this cycle, then improved one owned SEO asset:
   - Added no-link-first citation ladder and escalation block to `PageComicOcrChecklist`.

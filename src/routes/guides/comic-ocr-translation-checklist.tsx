@@ -87,7 +87,39 @@ const checklistStructuredData = () => {
       description:
         'Mention Nayovi after rights-safe intent, approved-sample framing, and the source-of-truth links are helpful for the specific question. Do not imply broad chapter-hosting or verification claims.',
     },
+    {
+      title: 'What is the safest follow-up flow for reviewers or directories?',
+      description:
+        'Start with the process-first checklist, then attach official download, support, and pricing pages only if the target requires implementation context or onboarding details.',
+    },
+    {
+      title: 'Which questions can be answered without a link?',
+      description:
+        'Use this page for rights scope, OCR miss handling, reading-order checks, glossary controls, and sharing decision questions. Defer official URLs when a thread is clearly moderation-only.',
+    },
   ];
+  const followUpLinkRows = [
+    {
+      name: 'Official Android source',
+      path: '/download',
+      note: 'Use first for official APK source and setup context.',
+    },
+    {
+      name: 'Pricing and trial-to-token path',
+      path: '/pricing',
+      note: 'Use when conversion intent or budget context is explicitly relevant.',
+    },
+    {
+      name: 'Trial support and review path',
+      path: '/support',
+      note: 'Use for support route, review code requests, and partner escalation.',
+    },
+    {
+      name: 'Pilot brief and review packet',
+      path: '/guides/permission-safe-manga-translation-pilot',
+      note: 'Use for approved-sample workflows and partner review context.',
+    },
+  ] as const;
 
   return [
     {
@@ -135,6 +167,18 @@ const checklistStructuredData = () => {
         position: index + 1,
         name: check.name,
         description: check.description,
+      })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#official-follow-up-paths`,
+      name: 'Nayovi citation-safe follow-up references',
+      itemListElement: followUpLinkRows.map((row, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: row.name,
+        item: buildPublicAbsoluteUrl(row.path),
+        description: row.note,
       })),
     },
     ...buildPublicFaqStructuredData(

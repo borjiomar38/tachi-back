@@ -1,3 +1,22 @@
+### 2026-06-01 SEO cycle draft sync (owned guide follow-up)
+
+- Target: community replies, AI directories, Android reviewer notes
+- Category: citation ladder + official link escalation
+- Audience: creators, localization teams, editors, app reviewers
+- Rules risk: medium (link should remain no-link-first unless request is implementation-specific)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "If you need a practical citation resource for OCR translation QA, use the checklist first (permission scope, missing text regions, reading order, glossary consistency, sharing boundary). I can share implementation links only if you need official setup, pricing, support, or pilot context."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/pricing`
+  - `https://tachiyomiat.com/support`
+  - `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+- Action intent:
+  1. Use this as an owned reusable draft for community/directories that allow link escalation.
+  2. Keep link variant gated by explicit request and affiliate/posting policy approval.
+
 ### 2026-06-01 Cycle-Added Draft Priorities
 
 - Target: https://www.indiehackers.com/
