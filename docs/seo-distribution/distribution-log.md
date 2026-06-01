@@ -1,5 +1,13 @@
 ## 2026-06-01 Cycle (active branch current)
 
+- Completed this cycle’s high-intent SEO update on branch `seo/distribution-20260601T133215Z`:
+  - Audited owned assets and identified one owned landing page opportunity around `/guides/comic-ocr-translation-checklist`.
+  - Added a claim-control section and link-gating framing in the checklist UI, including a new CTA to the trust matrix guide and FAQ-style messaging.
+  - Added route-level structured data enhancement for `/guides/comic-ocr-translation-checklist` (claim-safe FAQ schema) to improve crawler understanding and reduce overclaim framing.
+  - Advanced distribution drafts in `docs/seo-distribution/platform-drafts.md` and planning logs for ToolIndex fit and claim-safe outreach.
+  - Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, `/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl`, and `/var/lib/tachi-seo-distribution-agent/facebook-page-info.json` with branch-ready draft items.
+  - Kept actions in draft state only (`externalPostingMode=draft`, `ACCOUNT_CREATION_ENABLED=false`, no autonomous posting), no external posts/submissions were attempted.
+
 - Completed cycle checkpoint for `seo/distribution-20260601T112301Z`:
   - Advanced account setup priority with official trust profiles for high-intent surfaces (GitHub org/docs, DEV/Medium/Hashnode publication, Crunchbase/startup proof) and explicit owner-action packets for owner/API requirements.
   - Added a top-tier authority-discovery rotation across AI directories and creator-localization ecosystem: AI Workbench, NavTools, AltJapan.

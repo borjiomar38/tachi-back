@@ -1464,6 +1464,29 @@ const standaloneChecklistSections = [
   },
 ] as const;
 
+const claimSafeDistributionRows = [
+  {
+    label: 'What we can state',
+    detail:
+      'This checklist is shareable as a neutral resource for approved samples and workflow decisions.',
+  },
+  {
+    label: 'What we cannot state',
+    detail:
+      'Do not claim external verification, unsupported ranking results, or blanket chapter-hosting capability.',
+  },
+  {
+    label: 'How to share next',
+    detail:
+      'Link only after permission is confirmed, and include support, pricing, and source-link fields from the official pages.',
+  },
+  {
+    label: 'When to stop',
+    detail:
+      'Pause and do not proceed when a target requires reciprocal links, paid link insertions, mirrors, or undisclosed promo posting.',
+  },
+] as const;
+
 const citationReadinessRows = [
   {
     label: 'Who should cite it',
@@ -1689,6 +1712,26 @@ export const PageComicOcrChecklist = () => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Claim-safe distribution"
+        title="How this checklist should be introduced"
+        description="Keep the checklist independent first, then add affiliation details only when the audience explicitly asks for implementation specifics."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {claimSafeDistributionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
         eyebrow="Citation ready"
         title="How to use this checklist in public"
         description="The safest distribution path is to make the checklist useful on its own, then add the Nayovi product link only when the audience asks for implementation details."
@@ -1791,6 +1834,12 @@ export const PageComicOcrChecklist = () => {
               Full workflow guide
               <ArrowRightIcon className="size-4" />
             </span>
+          </a>
+          <a
+            href="/translate-manhwa-ai"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Trust matrix guide
           </a>
           <a
             href="/download"

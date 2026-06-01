@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { publicSeoKeywords } from '@/features/blog/seo';
 import {
   buildPublicAbsoluteUrl,
+  buildPublicFaqStructuredData,
   buildPublicPageHead,
 } from '@/features/public/head';
 import { PageComicOcrChecklist } from '@/features/public/page-ethical-guides';
@@ -127,6 +128,25 @@ const checklistStructuredData = () => {
   ];
 };
 
+const comicOcrChecklistFaqs = () =>
+  [
+    {
+      title: 'How should this checklist be used in public?',
+      description:
+        'Start with the checklist itself. Mention Nayovi only when the audience asks for implementation details such as official install source, pricing context, and support path.',
+    },
+    {
+      title: 'Can I share translated results from this checklist?',
+      description:
+        'Only when sample permission is explicit and rights are clear. If the permission scope is narrow, keep the notes private and summarize process quality without screenshots or direct translation excerpts.',
+    },
+    {
+      title: 'What does this checklist avoid?',
+      description:
+        'It intentionally avoids any ranking claims, unsupported verification statements, and chapter-hosting language. It focuses on permission, quality checks, and review-ready handoff conditions.',
+    },
+  ] as const;
+
 export const Route = createFileRoute('/guides/comic-ocr-translation-checklist')(
   {
     component: RouteComponent,
@@ -144,7 +164,13 @@ export const Route = createFileRoute('/guides/comic-ocr-translation-checklist')(
             'AI comic translation review',
             'manga translation quality checklist',
           ],
-          structuredDataGraph: checklistStructuredData(),
+          structuredDataGraph: [
+            ...checklistStructuredData(),
+            ...buildPublicFaqStructuredData(
+              '/guides/comic-ocr-translation-checklist',
+              comicOcrChecklistFaqs()
+            ),
+          ],
         }
       ),
   }

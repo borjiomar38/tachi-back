@@ -53,6 +53,23 @@ External platform drafts are for authorized-account posting only. Do not create 
   1. Confirm whether AI Workbench accepts official-source Android workflows with trial/free + paid token model labeling.
   2. Keep no-link-first until category and field compatibility is approved.
 
+### 2026-06-01 New cycle priority draft: ToolIndex listing fit + review packet
+
+- Target: `https://www.toolindex.ai/submit/`
+- Category: AI directory listing fit
+- Audience: AI tooling curators evaluating Android OCR + translation workflows
+- Rules risk: medium
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I can share a product-light listing fit packet if useful. We focus on Android OCR + translation workflow support, official APK source path, responsible-use policy, and transparent trial-to-paid-token model."
+- Link variant (conditional only after a compatibility check):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+- Action intent:
+  1. Confirm required listing fields for APK utilities and paid-token labeling first.
+  2. Keep no-link-first unless form rules explicitly allow a link-safe listing variant.
+
 ## 2026-06-01 Priority draft (best-ready): HackerNoon technical publish fit
 
 - Target: `https://help.hackernoon.com/how-do-i-get-published`
