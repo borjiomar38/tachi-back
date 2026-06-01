@@ -1896,3 +1896,30 @@ Next actions:
 - Authority opportunities: added APKPure, AlternativeTo, and `awesome-ocr` as cross-category prospects (app directory, software recommendation directory, and GitHub resource list).
 - Drafts: prepared no-link and link-eligible variants in `platform-drafts.md` and marked each by account-policy state.
 - Compliance: no claims posted externally; all work retained as account/manual-gate states because external accounts are not yet configured and posting mode is `draft`.
+
+## 2026-06-01 SEO distribution cycle
+
+- Completed account setup progression for this cycle under `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true`:
+  - Advanced `Google Search Console + Bing Webmaster` to `ready_for_owner_review` with explicit verification packet steps.
+  - Advanced `LinkedIn company + founder pages` to `ready_for_owner_review` with profile field checklist and manual action blockers documented.
+  - Advanced `GitHub official org/repo docs` to `ready_for_owner_review` with maintainer-safe publication flow.
+- Added 5 authority opportunities across new categories in `docs/seo-distribution/authority-opportunities.md`:
+  - HN Show HN
+  - Android Authority editorial contact
+  - DEV publishing/help path
+  - Awesome OCR GitHub resource list
+  - Android developer trust documentation context
+- Added one high-signal draft for best ready action in `docs/seo-distribution/platform-drafts.md`:
+  - HN Show HN value-first post draft with no-link and link variants.
+  - Marked as `AUTHORIZED_ACCOUNT_REQUIRED` due no connected account.
+- Added owned asset plan entries in `docs/seo-distribution/link-assets.md` and `docs/seo-distribution/content-calendar.md` for:
+  - permission-safe localization matrix
+  - OCR checklist expansion
+  - comparison resource draft path
+- Added Facebook teaser queue item to `docs/seo-distribution/social-post-queue.jsonl` as `owner_review_required` (story-first, no app-brand messaging).
+- Confirmed posting/account constraints:
+  - `/var/lib/.../accounts.json` shows configured state only for GitHub; LinkedIn/Reddit/ProductHunt/X/YouTube/others remain unconfigured.
+- Next actions:
+  - Await owner completion on account-creation/manual verification blockers for LinkedIn, Google/Bing, and Product Hunt.
+  - Convert HN draft and DEV/article plan to publish after official account/verification completion.
+  - Generate one poster asset in `/var/lib/tachi-seo-distribution-agent/generated-images` if we intend to move any Facebook queue entry to auto_publish.
