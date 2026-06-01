@@ -56,7 +56,7 @@ SEO_AGENT_ENABLED=true
 SEO_AGENT_RUN_FOREVER=true
 SEO_AGENT_INTERVAL_SECONDS=86400
 SEO_AGENT_CODEX_CLI_PATH=codex
-SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
+SEO_AGENT_CODEX_MODEL=gpt-5.5
 SEO_AGENT_CODEX_REASONING_EFFORT=medium
 SEO_AGENT_CODEX_SEARCH_ENABLED=true
 SEO_AGENT_CODEX_SANDBOX=danger-full-access
@@ -122,7 +122,7 @@ fi
 ensure_env_default SEO_AGENT_RUN_FOREVER true
 ensure_env_default SEO_AGENT_INTERVAL_SECONDS 86400
 ensure_env_default SEO_AGENT_CODEX_CLI_PATH codex
-ensure_env_default SEO_AGENT_CODEX_MODEL gpt-5.3-codex-spark
+ensure_env_default SEO_AGENT_CODEX_MODEL gpt-5.5
 ensure_env_default SEO_AGENT_CODEX_REASONING_EFFORT medium
 ensure_env_default SEO_AGENT_CODEX_SEARCH_ENABLED true
 ensure_env_default SEO_AGENT_CODEX_SANDBOX danger-full-access

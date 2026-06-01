@@ -2,7 +2,7 @@
 set -euo pipefail
 
 codex_bin="${CODEX_IMAGE_CODEX_CLI_PATH:-codex}"
-codex_model="${CODEX_IMAGE_CODEX_MODEL:-gpt-5.3-codex-spark}"
+codex_model="${CODEX_IMAGE_CODEX_MODEL:-gpt-5.5}"
 codex_reasoning_effort="${CODEX_IMAGE_CODEX_REASONING_EFFORT:-low}"
 min_bytes="${CODEX_IMAGE_MIN_BYTES:-500000}"
 output_file=""
@@ -15,7 +15,7 @@ Usage: generate-codex-image.sh --prompt-file PROMPT.md --output-file OUT.png
 
 Environment:
   CODEX_IMAGE_CODEX_CLI_PATH        Codex CLI path, default codex
-  CODEX_IMAGE_CODEX_MODEL           Codex model, default gpt-5.3-codex-spark
+  CODEX_IMAGE_CODEX_MODEL           Codex model, default gpt-5.5
   CODEX_IMAGE_CODEX_REASONING_EFFORT Reasoning effort, default low
   CODEX_IMAGE_MIN_BYTES             Minimum accepted PNG size, default 500000
 EOF
