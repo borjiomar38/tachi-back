@@ -33,6 +33,15 @@ This file is maintained by the SEO distribution agent.
 
 Use this as the continuous discovery pipeline for high-authority SEO, backlink, and trust-building surfaces. The agent should add new targets every cycle, rotate categories, and avoid low-quality link farms or mass-comment surfaces.
 
+## 2026-06-01 Discovery Additions (priority cycle refresh)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | AI directory | ToolIndex AI submit workflow | https://www.toolindex.ai/submit/ | Best fit for trial + paid-token + hosted OCR workflow if official fields accept official source/support/pricing in explicit form sections | Listing compatibility check + no-link-first fit scan | AUTHORIZED_ACCOUNT_REQUIRED (manual form when no API workflow is used) | medium | Confirm category field and pricing field rules, then prepare listing metadata packet with no marketing first-contact text |
+| high | Android app distribution | AppBrain Featured Apps Program | https://www.appbrain.com/blog/featured-apps-program | Strong match if a claimed developer profile can publish accurate source-link and policy fields; useful for Android trust framing and editor awareness | Metadata compatibility check + listing requirement review | OWNER_ACTION_REQUIRED (submitter identity and source readiness) | medium | Verify whether official metadata path accepts non-Play source-link fields and official support/risk language before drafting any link variant |
+| high | Technical publishing | HackerNoon publication fit | https://help.hackernoon.com/how-do-i-get-published | Credible channel for engineering-first process notes and OCR quality standards if publication is non-advertorial and founder-owned byline is present | Draft publish packet + canonical policy checklist | AUTHORIZED_ACCOUNT_REQUIRED | medium | Prepare a no-link-first draft and only progress to link variant after profile ownership and editorial policy confirmation |
+| draft | high | Android community/news | XDA Developers app review tag | https://www.xda-developers.com/tag/app-review/ | Good fit for source-first app-review positioning only when no claims about chapter hosting are made | Contact/fit check + FAQ packet | OWNER_ACTION_REQUIRED | medium | Keep no-link-first policy note ready; progress only once screenshot/permissions/support fields are owner-confirmed |
+
 ## 2026-06-01 Discovery Additions (web-refresh)
 
 ### 2026-06-01 Discovery Additions (high-authority expansion + category rotation)

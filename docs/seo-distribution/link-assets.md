@@ -14,6 +14,14 @@
 
 # Nayovi Linkable Assets
 
+## 2026-06-01 Cycle Linkable Asset Additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Trust-and-compliance link ladder | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | Android reviewers, AI directories, creator/localization partners | Add one reusable no-link-first escalation block: 1) process-first boundaries, 2) what to share, 3) what to avoid, 4) what to share if accepted | draft | Keep this as the default first-touch source before any platform link variant |
+| Source-link package and policy packet | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | Technical publishers, founders, creators | Use this as the canonical policy-first packet for listing and founder posts that need a compact "can say / cannot say" framing | draft | Prepare finalized publish copy only after account setup and package/screenshot policy are owner-approved |
+| App directory compatibility matrix | `https://www.appbrain.com/product/featured` + `https://www.toolindex.ai/submit/` | Android and AI directory reviewers | Provide category+pricing compatibility questions, official-source field checklist, and safe link order for listing-fit follow-ups | draft | Keep no-link-first by default; add link variant only after category/field compatibility is confirmed |
+
 This file is maintained by the SEO distribution agent.
 
 ## 2026-06-01 Linkable Assets Added
