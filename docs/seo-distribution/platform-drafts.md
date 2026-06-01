@@ -5714,3 +5714,40 @@ If this does not fit your policy, please reply "opt out".
 - Link variant:
   - `If allowed, entry text can include one official link: https://nayovi.com/download and checklist assets in a narrow resource reference format.`
 - Compliance note: wait for maintainer confirmation and do not open PRs without explicit invitation.
+
+## 2026-06-02 draft package (ready to queue)
+
+### 1) Product Hunt launch draft
+- platform: Product Hunt
+- target audience: mobile readers, AI translation power users, Android beta readers, early manga/manhwa creators
+- rules risk: launch must be truthful, non-exaggerated claims, no paid review language, no legal/rights ambiguity
+- format: launch-ready public copy
+- status: draft
+- no-link variant:
+  - Title: `Nayovi: Permission-safe AI OCR + workflow for manga/manhwa readers`
+  - Body: `A mobile workflow for readers who already own material or use public-domain content, with OCR + AI translation assistance and clear permission-safe defaults. Built for practical reading workflows and trial-based onboarding.`
+  - CTA text: `Visit official domain in comments.`
+- link variant:
+  - Title: `Nayovi — AI-powered manga reading workflow with OCR and built-in permission safety`
+  - URL: `https://nayovi.com`
+  - Body: `Launch notes: free trial, monthly token plans, redemption flow, Android APK download, and support paths are all documented on one official site.`
+  - CTA link: `https://nayovi.com`
+- notes: keep link optional in first pass; use link only if community rules and review state allow.
+
+### 2) XDA external press note draft
+- platform: XDA Developers
+- target audience: Android users and creator-dev readers
+- rules risk: no sponsored angle; editors require editorial value and reproducibility
+- format: concise tip idea for editor contact
+- status: draft
+- value-first title/body: `How manga readers can keep OCR translation workflows safe without cloud-unsafe settings` (topic pitch with reproducible process + privacy controls)
+- no-link variant: describe practical pain points and invite independent review; include verification email `editorial@xda-developers.com`.
+- link variant: use `https://nayovi.com/guides/permission-safe-manga-translation-pilot` for technical details and `https://nayovi.com/guides/comic-ocr-translation-checklist` for checklist references.
+
+### 3) Reddit HN-like community pivot draft (no posting yet)
+- platform: Hacker News (`https://news.ycombinator.com/submit`)
+- risk: strict moderation against pure promotional posts
+- audience: technical founders, developers, translators
+- no-link variant: `Show HN: I built an Android OCR/translation workflow that enforces permission-safe defaults` with short problem/approach/results
+- link variant: append `https://nayovi.com/guides/comic-ocr-translation-checklist`
+- action type: draft only until owner confirms final posting account and time-window strategy.
