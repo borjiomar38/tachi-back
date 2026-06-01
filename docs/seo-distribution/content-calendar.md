@@ -2,6 +2,10 @@
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | trust documentation + launch readiness | Android verification-aware trust matrix, developer policy alignment | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a short subsection that maps app verification signals (unsupported vs owner-approved claims) and safe source-link ladder for APK + trial/token users | Add reviewer-safe claim-control block so external drafts can reference one canonical trust section |
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
 | draft | startup trust and founder signal | OCR manga translation founder workflow, permission-first translation utilities | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a compact founder + launch checklist segment (what to claim vs cannot claim, trial-to-token plan, official source links) to make this guide linkable from build-in-public profiles | Expand section with owned verification notes and a no-link-first draft for founder/community use |
 
 # Nayovi SEO Content Calendar

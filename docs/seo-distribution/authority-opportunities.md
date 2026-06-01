@@ -1,3 +1,11 @@
+## 2026-06-01 Discovery Additions (high-authority expansion)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | Android app distribution | AppBrain Featured Apps Program | https://www.appbrain.com/blog/featured-apps-program | High topical fit if a claimed developer profile can publish accurate official source-link fields and verification-safe metadata | Listing metadata compatibility check + developer account readiness | OWNER_ACTION_REQUIRED | medium | Keep as no-link-first discovery; request form requirements before linking any public URL |
+| draft | high | Android trust policy context | Android verification requirements article | https://www.androidauthority.com/android-developer-verification-requirements-3590911/ | Useful for grounding responsible APK messaging and review-readiness language, not direct promotion | Editorial policy and messaging check | OWNER_ACTION_REQUIRED | medium-high | Use only factual alignment notes in draft packets; no links until owner approves package/signing and claim boundaries |
+| draft | medium | GitHub OCR resources | awesome-ocr topic/list ecosystem | https://github.com/kba/awesome-ocr | Product-light technical resource fit if maintainer policy allows no-promotional references | Maintainer-first fit request + contribution rules check | AUTHORIZED_ACCOUNT_REQUIRED | low | Keep no-link-first and wait for maintainer acceptance before publishing link variant |
+
 ## 2026-06-01 Discovery Additions (web-refresh)
 
 | Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |

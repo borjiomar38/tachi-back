@@ -1,4 +1,13 @@
-## 2026-06-01 Cycle (active branch run)
+## 2026-06-01 Cycle (active branch current)
+
+- Branch check: `seo/distribution-20260601T065533Z` verified before edits.
+- Read required coordination files first: `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and active `docs/seo-distribution/*.md` files.
+- Advanced `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true` queue with two new owner-action rows in `docs/seo-distribution/account-setup.md` (Google Search Console + Android distribution submission readiness).
+- Added/cleaned discovery rows in `docs/seo-distribution/authority-opportunities.md` for AppBrain, Android editorial policy references, and GitHub OCR resource fit.
+- Added AppBrain verification-first draft packet in `docs/seo-distribution/platform-drafts.md` and kept it as `no-link-first` + `link variant` fallback with AUTHORIZED/OWNER gates.
+- Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/growth/backlink-prospects.csv` with linked-cycle entries.
+- Kept all work draft-only due `accountCreationEnabled=false`, `externalPostingMode=draft`, and missing posting credentials.
+
 
 - Branch check: `seo/distribution-20260601T055112Z` verified at start.
 - Reviewed required inputs first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all `docs/seo-distribution/*.md` trackers.
