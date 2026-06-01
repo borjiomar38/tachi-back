@@ -5490,3 +5490,59 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
 - Action intent:
   1. Keep as invite-only topic note only.
   2. Add links only after a specific interview/topic confirmation.
+
+## 2026-06-01 Best-ready cycle draft (owner-review required)
+
+### AlternativeTo + GitHub resource + Product Hunt sequencing draft
+
+#### Category: high-value trust surface sequencing
+
+- Target: AlternativeTo software recommendation listing + official profile claiming
+- Audience: Android utility + AI translation users checking crowdsourced alternatives
+- Rules risk: medium (requires accurate listing text, no manipulation claims, no review inflation)
+- Status: draft_review (OWNER_REVIEW_REQUIRED)
+- No-link variant: "I have a niche Android OCR + manga/manhwa translation utility with permission-safe scope and published source-of-truth docs; I can share fit details before deciding whether a listing makes sense."
+- Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+#### Draft copy
+
+Hi,
+
+I am sharing a no-promo fit note for your listing and comparison workflow:
+
+- Official workflow: Android APK with hosted OCR + AI translation support
+- Use case scope: own content, public-domain material, official samples, or content with explicit permissions
+- Trial model: free trial, monthly token plans, redeem-code activation
+- Trust pages: official APK source, support, pricing, and permission-safe policy
+
+I am not asking for ranking support. If your category + submission path accepts a non-promotional, source-first entry with explicit policy language, I can share the final copy and official links.
+
+Best,
+Nayovi team
+
+If this does not fit your policy, please reply "opt out".
+
+### GitHub resource list note (watch-and-ready)
+
+- Target: `awesome-ocr` and other maintainer-curated OCR lists
+- Audience: OCR contributors and maintainers
+- Rules risk: medium-high (promotion-heavy additions are commonly rejected)
+- Status: draft_review (OWNER_REVIEW_REQUIRED)
+- No-link variant: "I can share a product-light checklist excerpt only if your list policy allows resource-style references that are not commercial." 
+- Link variant: not included until maintainer requests explicit policy fit
+- Keep to one follow-up only and only after maintainer policy is visible.
+
+### Product Hunt maker profile preparation
+
+- Target: Product Hunt maker profile / alternatives context for OCR translation
+- Audience: launch and AI/tool discovery audience
+- Rules risk: high (token/launch abuse controls)
+- Status: setup_packet_prepared_owner_action_required
+- No-link variant: "I have a source-first OCR translation utility currently in founder validation and can share a readiness note before any public launch interaction."
+- Link variant: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+### 2026-06-01 Cross-channel sequence
+
+1) Complete account/setup packet tasks in `docs/seo-distribution/account-setup.md`.
+2) Run no-link outreach first on each category.
+3) Add links only after explicit owner/platform approval and category-specific policy checks.

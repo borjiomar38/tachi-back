@@ -17,6 +17,12 @@ This file is maintained by the SEO distribution agent.
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | build-in-public trust and creator-first ownership | nayovi android manga ocr trust checklist | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Build a publisher-safe trust section for Android verification-aware language and supported-sample policy before partner/press mentions | Expand guide with a 5-line `Claim / proof / avoid / stop` block and link all future drafts to it |
+| draft | android app distribution + source credibility | how to publish apk safely in a responsible translation workflow | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Add a developer-facing section explaining source-of-truth links, trial-to-paid-token handoff, and no-mirror language | Add a checklist block and connect to `docs/seo-distribution/link-assets.md` |
+| draft | dev publishing + technical comparisons | manga ocr translation checklist vs general OCR tooling | https://dev.to/ and translate-manhwa-ai.com crosspost strategy | Keep the first article technical and non-promotional, with no ranking claims and explicit permission-safe scope | Prepare one canonical draft using `docs/seo-distribution/platform-drafts.md`; publish only after account approval |
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
 | draft | launch-safe technical publishing readiness | technical founder publishing, OCR workflow transparency, permissions-first translation | docs/seo-distribution/platform-drafts.md | Prepare one value-first founder post draft for DEV/Medium using published trust matrix and no-link-first first contact | Wait for official DEV/Medium profile/account approval, then publish draft as owner-authorized post |
 | draft | AI directory compatibility | OCR + translation tool listing fields, trial plus paid-token model, no chapter hosting | docs/seo-distribution/authority-opportunities.md | Build one reusable field-compatibility block that can be reused for ToolIndex and similar directories | Keep in draft and attach only once category constraints are confirmed |
 | draft | Android translator support trust | Reddit translator forum posting policy + support guidance | docs/seo-distribution/platform-drafts.md | Add translation-quality FAQ snippets that are answer-first and non-promotional | Draft snippets now; post only from authorized official account |
