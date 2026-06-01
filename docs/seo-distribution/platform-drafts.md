@@ -5642,3 +5642,22 @@ If this does not fit your policy, please reply "opt out".
 - Risk: high (promotion-heavy entries rejected quickly)
 - Rule note: only one follow-up, contributor-only query with no links unless maintainer explicitly accepts resource-style reference.
 - Suggested posting style: “I can share a short checklist section only if your policy allows non-promotional resource additions for translation QA workflows.”
+
+### 2026-06-01 Cycle draft prep
+
+#### 1) Hacker News / Show HN draft (priority focus: developer trust signal)
+
+- Target: `https://news.ycombinator.com/show`
+- Audience: Android tool builders, OCR/translation engineers, indie productivity users
+- Rules risk: Medium—HN is strict about self-promotional framing and duplicate launches; title must be clear and no manipulative phrasing
+- Value-first no-link variant:
+  - Title: `Show HN: Android workflow for OCR + manga/manhwa translation from owned material only`
+  - Body draft:
+    - Built a narrow-purpose Android translation workflow for comic pages using hosted OCR and model-assisted text cleanup.
+    - What makes this specific: it is positioned for manga/manhwa/manhua readers using sources they already own, plus official sample content.
+    - I added a permission-safe path and a support-first FAQ to avoid catalog-processing or redistribution claims.
+    - Happy to share the comparison of failure modes and fallback behaviors if useful.
+- Link variant (use only after platform approval):
+  - Include one link to `https://nayovi.com/guides/comic-ocr-translation-checklist` after first 2–3 paragraphs, and only if allowed by post review outcome.
+- Submission note: `AUTHORIZED_ACCOUNT_REQUIRED`; no autonomous HN posting now because no official account is connected.
+- Success criteria: one high-quality technical link, no promotional claims, concise failure-mode examples.

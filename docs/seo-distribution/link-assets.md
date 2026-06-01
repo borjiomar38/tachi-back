@@ -369,3 +369,20 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | Pilot-to-checklist bridge block | `https://nayovi.com/guides/comic-ocr-translation-checklist` and `/guides/permission-safe-manga-translation-pilot` | creators, publishers, localization partners | Adds a handoff ladder from QA checklist to intake/decision phases so outreach can stay link-safe and process-first | draft | Add schema-backed cross-link section with explicit stop conditions |
 | APK submission readiness packet | `https://apkpure.com/developer.html` | Android discovery teams | Reusable package-fact-sheet for official source, support, pricing, and permissions language | draft | Fill package hash/status and verification fields after owner confirms ownership language |
+
+### 2026-06-01 Trust asset additions
+
+- `Nayovi Permission-Safe Localization Matrix` (planned owned page)
+  - URL target: `https://nayovi.com/guides/permission-safe-manga-translation-pilot`
+  - Use case: clarify allowed content sources, legal boundaries, review checkpoints, and retry workflow for trial users.
+  - Link angle: high authority outreach on creator/platform and dev surfaces can reference only this owned policy page.
+
+- `Comic OCR Translation Troubleshooting Guide` (owned guide extension)
+  - URL target: `https://nayovi.com/guides/comic-ocr-translation-checklist`
+  - Use case: provide practical checklist for preprocessing, panel edge cases, font artifacts, and supported image formats.
+  - SEO value: supports long-tail problem-driven search intent and can be cited as non-promotional public asset.
+
+- `Nayovi Trust & Product Comparison Sheet` (draft)
+  - URL target: `https://nayovi.com/resources/nayovi-vs-alternatives`
+  - Data points: install path, Android permissions approach, free trial + redeem model, paid tokens, support SLA, and responsible-use scope.
+  - Useful for editorial/publisher conversations and developer-community replies where explicit link sharing is allowed.
