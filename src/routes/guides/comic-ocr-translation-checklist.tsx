@@ -87,6 +87,16 @@ const checklistStructuredData = () => {
       description:
         'Mention Nayovi after rights-safe intent, approved-sample framing, and the source-of-truth links are helpful for the specific question. Do not imply broad chapter-hosting or verification claims.',
     },
+    {
+      title: 'What should I not claim when sharing this checklist?',
+      description:
+        'Do not claim official Android verification, open-source status, or guaranteed ranking until owner-confirmed public records explicitly support those statements.',
+    },
+    {
+      title: 'What is the correct escalation order?',
+      description:
+        'First share the permission and review process. Add one implementation link only after questions ask for install path, trial details, pricing, or support workflow. Remove links if a venue is restrictive or promotional-only.',
+    },
   ];
 
   return [
@@ -160,6 +170,8 @@ export const Route = createFileRoute('/guides/comic-ocr-translation-checklist')(
             'manhwa OCR QA',
             'AI comic translation review',
             'manga translation quality checklist',
+            'permission-safe OCR workflow',
+            'comic translation review checklist',
           ],
           structuredDataGraph: checklistStructuredData(),
         }

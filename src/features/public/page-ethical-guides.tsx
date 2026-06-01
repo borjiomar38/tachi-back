@@ -1510,6 +1510,24 @@ const citationLadderRows = [
   },
 ];
 
+const citationClaimControlRows = [
+  {
+    label: 'Can state',
+    detail:
+      'Official Android source, trial onboarding, support process, trial-to-token progression, and review-code access only when the request is clearly about implementation details.',
+  },
+  {
+    label: 'Should avoid',
+    detail:
+      'Chapter hosting, catalog processing, mirror-only APK flow, unsupported verification status, guaranteed rankings, or inferred third-party endorsements.',
+  },
+  {
+    label: 'Proof trigger',
+    detail:
+      'Share links only when the target allows implementation details and the question is directly asking for official pages, then stop adding links after those pages are attached.',
+  },
+];
+
 const citationResourceRows = [
   {
     label: 'Primary guide',
@@ -1763,6 +1781,26 @@ export const PageComicOcrChecklist = () => {
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Claim controls"
+        title="Claim controls for safe replies and referrals"
+        description="Use this compact matrix as a final quality gate before sharing links publicly."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {citationClaimControlRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
               >
                 <span className="font-semibold text-foreground">{row.label}</span>
                 <span>{row.detail}</span>

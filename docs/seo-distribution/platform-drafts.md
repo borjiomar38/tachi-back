@@ -55,6 +55,24 @@ External platform drafts are for authorized-account posting only. Do not create 
   2. Post/submit only from an authorized official account.
   3. Add links only when platform rules allow helpful implementation details and the thread asks for them.
 
+### 2026-06-01 New best-ready draft: Claim-control follow-up for comic OCR checklist
+
+- Target: r/translator / r/manga / Android and AI newsletter communities
+- Category: community replies and directory submissions with no-link escalation
+- Audience: creators, moderation teams, localization operators, Android reviewers
+- Rules risk: medium (strict no-promo handling in many threads)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "If helpful, I can share a review ladder for OCR QA that stays process-first: permission check, region coverage, reading order, glossary consistency, and a clear stop condition when claims should not be made. I can keep this as a guide-only reply unless implementation links are requested."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/pricing`
+  - `https://tachiyomiat.com/support`
+- Action intent:
+  1. Keep no-link by default.
+  2. Use the link variant only when the request asks for official implementation details.
+
 ### 2026-06-01 Best-ready draft: AI Workbench listing fit
 
 - Target: `https://www.aiworkbench.tech/submit/`

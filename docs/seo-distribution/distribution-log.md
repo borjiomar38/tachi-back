@@ -70,6 +70,11 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-06-01 Cycle (current pass)
 
+- Added one owned SEO improvement to the Comic OCR checklist page at `src/features/public/page-ethical-guides.tsx` and route metadata at `src/routes/guides/comic-ocr-translation-checklist.tsx`: added claim-control/claim-boundary guidance and explicit FAQ ladder language for safer no-link-first distribution.
+- Added one new `2026-06-01` content/calendar row for the checklist escalation cluster and one new claim-safe platform draft in `docs/seo-distribution/platform-drafts.md`.
+- Added a claim-control linkable asset row in `docs/seo-distribution/link-assets.md` and one auto-publish Facebook draft post in `/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl`.
+- Next: run image render for the new Facebook post concept, then convert platform drafts from owner-review to owner-approved action only after channel policy confirmation.
+
 - Branch check: `seo/distribution-20260601T034159Z` verified at start.
 - Read required files first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md`.
 - Advanced account setup queue before backlink work per `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true`:
