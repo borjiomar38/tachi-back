@@ -1,5 +1,21 @@
 ## 2026-06-01 Cycle (active branch current)
 
+- Branch check: `seo/distribution-20260601T175059Z` verified at start.
+- SEO opportunity audit completed for high-intent surfaces: AI directories, Android review/editorial channels, and founder/community technical channels.
+- Owned page improvement:
+  - Added a new no-link-first citation ladder and link escalation section to `src/features/public/page-ethical-guides.tsx` under `PageComicOcrChecklist`.
+  - Expanded `src/routes/guides/comic-ocr-translation-checklist.tsx` structured FAQ schema with practical link-order guidance for community and directory requests.
+- Supporting artifacts:
+  - Added one cycle row to `docs/seo-distribution/content-calendar.md` for internal-link and escalation keyword support.
+  - Added one AppBrain fit draft and updated one existing platform set in `docs/seo-distribution/platform-drafts.md`.
+  - Added one linkable-asset row for the same checklist in `docs/seo-distribution/link-assets.md`.
+  - Appended one `auto_publish` Facebook queue row in `docs/seo-distribution/social-post-queue.jsonl` with owner-safe no-promo framing.
+  - Added two owned workflow links in `docs/seo-distribution/facebook-page-info.json` for translation workflow and trial-versus-plan context.
+- Next actions:
+  - Render the new Facebook visual asset and keep final publish under the owner-configured daily post limit.
+  - Convert platform drafts to post-ready only after authorized account and rule approvals.
+- Validation status: not run in this cycle pending your request for optional command execution.
+
 - Branch check: `seo/distribution-20260601T143341Z` verified at start.
 - Completed website audit and opportunity scan for this cycle, then improved one owned SEO asset:
   - Added no-link-first citation ladder and escalation block to `PageComicOcrChecklist`.

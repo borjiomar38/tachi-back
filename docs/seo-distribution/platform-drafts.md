@@ -72,6 +72,24 @@ External platform drafts are for authorized-account posting only. Do not create 
   1. Confirm whether AI Workbench accepts official-source Android workflows with trial/free + paid token model labeling.
   2. Keep no-link-first until category and field compatibility is approved.
 
+### 2026-06-01 New best-ready draft: AppBrain featured-app metadata fit
+
+- Target: `https://www.appbrain.com/product/featured`
+- Category: Android app discovery and editorial review
+- Audience: Android app reviewers, directory curators, technical utility readers
+- Rules risk: medium-high (requires official-source metadata and no-mirror behavior)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I have a process-first metadata packet for an Android OCR + translation workflow. It focuses on official source URL, support path, trial onboarding, trial-to-paid-token fit, and clear no chapter-hosting boundaries. I can share fields only and add links only if your form confirms category compatibility."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+  - `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan`
+- Action intent:
+  1. Keep this as an owned fit-check note from an authorized account.
+  2. Add links only when the listing accepts official-source fields and no mirror-first APK constraints.
+
 ## 2026-06-01 Priority draft (best-ready): HackerNoon technical publish fit
 
 - Target: `https://help.hackernoon.com/how-do-i-get-published`

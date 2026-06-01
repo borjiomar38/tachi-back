@@ -87,6 +87,21 @@ const checklistStructuredData = () => {
       description:
         'Mention Nayovi after rights-safe intent, approved-sample framing, and the source-of-truth links are helpful for the specific question. Do not imply broad chapter-hosting or verification claims.',
     },
+    {
+      title: 'What is the preferred sharing order in communities?',
+      description:
+        'Use the value checks first: permission scope, OCR completeness, reading order, glossary consistency, and sharing decision. Add implementation links only if the audience requests official install, pricing, or support context.',
+    },
+    {
+      title: 'Which link paths are allowed for directory or review requests?',
+      description:
+        'Prefer /guides/comic-ocr-translation-checklist, /guides/permission-safe-manga-translation-pilot, /download, /pricing, and /support only when the request explicitly asks for official metadata or partner review details.',
+    },
+    {
+      title: 'When should a reply stop without any link?',
+      description:
+        'Stop and do not push a link when the surface requests paid placements, reciprocal links, mirror-first APK flows, fake reviews, or unsupported verification claims.',
+    },
   ];
 
   return [
@@ -157,9 +172,12 @@ export const Route = createFileRoute('/guides/comic-ocr-translation-checklist')(
             ...publicSeoKeywords,
             'comic OCR checklist',
             'manga OCR translation checklist',
+            'manga OCR quality checklist',
             'manhwa OCR QA',
             'AI comic translation review',
             'manga translation quality checklist',
+            'approved sample OCR workflow',
+            'Nayovi OCR reviewer packet',
           ],
           structuredDataGraph: checklistStructuredData(),
         }

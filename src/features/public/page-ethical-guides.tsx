@@ -1520,12 +1520,43 @@ const citationResourceRows = [
     detail: 'https://tachiyomiat.com/download',
   },
   {
-    label: 'Support and pricing details',
+    label: 'Pricing and trial-path',
     detail: 'https://tachiyomiat.com/pricing',
   },
   {
-    label: 'Review help and pilot path',
+    label: 'Review and pilot handoff path',
     detail: 'https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot',
+  },
+  {
+    label: 'Trial, plan choice, and upgrade notes',
+    detail: 'https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan',
+  },
+  {
+    label: 'Technical workflow reference',
+    detail: 'https://tachiyomiat.com/guides/translation-support-workflow',
+  },
+];
+
+const citationDistributionLadderRows = [
+  {
+    label: '1) Value-first',
+    detail:
+      'Lead with scope checks and human-review workflow. This is useful as a standalone citation and avoids overclaiming in communities.',
+  },
+  {
+    label: '2) Permission check',
+    detail:
+      'Share what is approved before publishing examples: ownership, support level, public-domain or creator-approved sample scope, and private correction notes.',
+  },
+  {
+    label: '3) Official-path links',
+    detail:
+      'Use official pages only when the request is about install details, plan choice, troubleshooting, support handoff, or reviewer metadata.',
+  },
+  {
+    label: '4) Stop if risky',
+    detail:
+      'Pause link sharing when the thread requests spam behavior, ranking claims, mirror-first APKs, reciprocal links, or unsupported verification language.',
   },
 ];
 
@@ -1760,6 +1791,26 @@ export const PageComicOcrChecklist = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {citationLadderRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Escalation script"
+        title="4-step distribution ladder for high-risk surfaces"
+        description="Use this short ladder when a response is likely to be moderated, reviewed, or converted into a public reference."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {citationDistributionLadderRows.map((row) => (
               <div
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"

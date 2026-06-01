@@ -23,7 +23,9 @@
       "support": "https://tachiyomiat.com/support",
       "checklist": "https://tachiyomiat.com/guides/comic-ocr-translation-checklist",
       "pilot": "https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot",
-      "pricing": "https://tachiyomiat.com/pricing"
+      "pricing": "https://tachiyomiat.com/pricing",
+      "translationSupportWorkflow": "https://tachiyomiat.com/guides/translation-support-workflow",
+      "trialPricingGuide": "https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan"
     }
   }
 }
