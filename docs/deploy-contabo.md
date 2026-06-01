@@ -252,6 +252,7 @@ SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true
 SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
+SEO_AGENT_SOCIAL_IMAGE_PROMOTE_RENDERED_STATUS=auto_publish
 ```
 
 In autonomous mode, the agent may create queue items with
@@ -273,6 +274,10 @@ not call OpenAI image APIs and must not use `OPENAI_API_KEY`; that key is
 reserved for Tachiback translation runtime only. If the Codex CLI runtime does
 not expose built-in `image_gen`, the renderer reports `IMAGEGEN_TOOL_UNAVAILABLE`
 and leaves the queue item unpublishable instead of creating a weak placeholder.
+When `SEO_AGENT_FACEBOOK_POSTING_MODE=publish` and
+`SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true`, the runner passes
+`--promote-rendered-status auto_publish` so a draft/owner-review story post is
+eligible for publishing immediately after Codex generates a valid poster image.
 Visual concepts must avoid copyrighted characters, manga panels, third-party
 logos, phone/app UI, fake UI screenshots, readable text, sexualized minors, and
 unsupported claims.

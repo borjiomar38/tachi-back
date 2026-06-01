@@ -465,7 +465,7 @@ maybe_render_social_images() {
   local cycle_id="$1"
   local report_file="$2"
   local repo_dir="$3"
-  local image_dir image_renderer queue_file
+  local image_dir image_renderer promote_rendered_status queue_file
 
   image_renderer="${SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH:-}"
   queue_file="${SEO_AGENT_SOCIAL_QUEUE_FILE:-${repo_dir}/docs/seo-distribution/social-post-queue.jsonl}"
@@ -486,11 +486,24 @@ maybe_render_social_images() {
     return 0
   fi
 
-  if "${image_renderer}" \
-    --queue-file "${queue_file}" \
-    --image-dir "${image_dir}" \
-    --limit "${SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT:-20}" \
-    >>"${report_file}" 2>&1; then
+  local renderer_args=(
+    --queue-file "${queue_file}"
+    --image-dir "${image_dir}"
+    --limit "${SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT:-20}"
+  )
+
+  promote_rendered_status="${SEO_AGENT_SOCIAL_IMAGE_PROMOTE_RENDERED_STATUS:-}"
+  if [[ -z "${promote_rendered_status}" \
+    && "${SEO_AGENT_FACEBOOK_POSTING_MODE:-draft}" == "publish" \
+    && "${SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED:-false}" == "true" ]]; then
+    promote_rendered_status="auto_publish"
+  fi
+
+  if [[ -n "${promote_rendered_status}" ]]; then
+    renderer_args+=(--promote-rendered-status "${promote_rendered_status}")
+  fi
+
+  if "${image_renderer}" "${renderer_args[@]}" >>"${report_file}" 2>&1; then
     append_report_note "${report_file}" "Social image renderer checked queue for ${cycle_id}."
   else
     append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: social image renderer failed for ${cycle_id}; see report output above."

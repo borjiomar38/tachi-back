@@ -13,6 +13,7 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -22,6 +23,8 @@ from typing import Any
 
 DEFAULT_IMAGE_DIR = pathlib.Path('/var/lib/tachi-seo-distribution-agent/generated-images')
 DEFAULT_CODEX_IMAGE_SCRIPT = pathlib.Path('/usr/local/bin/tachi-codex-image-generator')
+PROMOTABLE_STATUSES = {'draft', 'owner_review_required'}
+ALLOWED_PROMOTED_STATUSES = {'approved', 'auto_publish', 'owner_review_required', 'draft'}
 
 LEAD_ARCHETYPES = {
   'male_hero': 'one original powerful male hero with a memorable silhouette, heroic but not copied from any existing series',
@@ -54,6 +57,11 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument('--limit', type=int, default=20)
   parser.add_argument('--force', action='store_true')
   parser.add_argument('--codex-image-script', default=str(DEFAULT_CODEX_IMAGE_SCRIPT))
+  parser.add_argument(
+    '--promote-rendered-status',
+    default=os.environ.get('SEO_AGENT_SOCIAL_IMAGE_PROMOTE_RENDERED_STATUS', ''),
+    help='Optional status to set on draft/owner_review_required items after a valid image is generated.',
+  )
   return parser.parse_args()
 
 
@@ -185,9 +193,14 @@ def main() -> int:
   image_dir = pathlib.Path(args.image_dir)
   codex_image_script = pathlib.Path(args.codex_image_script)
   statuses = {status.strip().lower() for status in args.statuses.split(',') if status.strip()}
+  promote_rendered_status = str(args.promote_rendered_status or '').strip().lower()
   items = read_queue(queue_file)
   rendered = 0
   failures = 0
+
+  if promote_rendered_status and promote_rendered_status not in ALLOWED_PROMOTED_STATUSES:
+    print(f'Invalid promoted status: {promote_rendered_status}')
+    return 2
 
   if not codex_image_script.exists() or not codex_image_script.is_file():
     print(f'Codex image script is missing: {codex_image_script}')
@@ -227,6 +240,10 @@ def main() -> int:
       item.setdefault('image_alt', f'Original manhwa-style poster art for {post_id}.')
       item['image_generated_by'] = 'codex-cli-imagegen'
       item['image_generated_at'] = dt.datetime.now(dt.UTC).isoformat().replace('+00:00', 'Z')
+      if promote_rendered_status and str(item.get('status') or '').lower() in PROMOTABLE_STATUSES:
+        item['status'] = promote_rendered_status
+        item['status_promoted_by'] = 'codex-cli-imagegen'
+        item['status_promoted_at'] = item['image_generated_at']
       rendered += 1
       print(f'rendered {post_id}: {output_path}')
 
