@@ -70,6 +70,22 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-06-01 Cycle (current pass)
 
+- Branch check: `seo/distribution-20260601T214819Z` confirmed and unchanged at start of this pass.
+- Read `docs/seo-distribution/*`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json` before drafting.
+- Advanced account setup queue as required by `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true` with new explicit packets:
+  - Product Hunt maker profile setup
+  - HackerNoon technical publishing profile setup
+  - LinkedIn official company/founder page setup
+- Added three fresh authority opportunities (different categories):
+  - AppBrain Featured Apps Program (app distribution)
+  - ToolIndex AI submit-a-tool flow (AI directory)
+  - XDA app-review contact/tag path (Android editorial)
+- Prepared one best-ready draft in `platform-drafts.md` for ToolIndex listing readiness with an explicit no-link-first + conditional link variant flow.
+- Added/updated owned-content planning rows in `content-calendar.md`, reusable trust copy entries in `link-assets.md`, and a new setup/action row in `account-setup.md`.
+- Added one new draft Facebook queue item for story-first publishing format with `story_title`, `story_hook`, invented title in uppercase, and `story` follow-up question structure in `/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl`.
+- No external account logins, posts, CAPTCHA, signup, or directory submissions were executed; all work remains manual/authorized-account gated.
+- Next action: owner/action review for Product Hunt/LinkedIn/HackerNoon + final decision on authorized posting mode before queue promotion.
+
 - Branch check: `seo/distribution-20260601T034159Z` verified at start.
 - Read required files first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md`.
 - Advanced account setup queue before backlink work per `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true`:

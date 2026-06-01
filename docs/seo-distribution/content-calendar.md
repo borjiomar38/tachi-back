@@ -23,6 +23,14 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-06-01 Cycle Additions (owned-asset expansion)
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | launch trust + directory alignment | manga OCR checklist citation-ladder source-of-truth | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Add a short ownership + link escalation section that locks the default no-link-first sequence before any external directories or media links | Update FAQ and link-order blocks so every draft points first to checklist and pilot brief |
+| draft | technical publishing readiness | OCR translation workflow transparency, trial/token disclosures | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Publish a claim-safe technical section with "can state / should omit / share after request" language to support non-promotional backlinks | Convert this section into the default pre-draft block for HN/DEV/Medium/LinkedIn owner reviews |
+| draft | creator/language industry positioning | creator-approved sample OCR QA process | https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot | Create a one-page “approved-sample and localization QA” route summary for creator, localization, and partner queries | Keep this as no-link-first until partner category fit is owner-approved |
+
 ## 2026-06-01 Cycle Additions (owned-content + discovery support)
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |

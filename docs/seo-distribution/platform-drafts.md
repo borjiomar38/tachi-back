@@ -34,6 +34,24 @@ This file is maintained by the SEO distribution agent.
 
 External platform drafts are for authorized-account posting only. Do not create accounts, bypass platform login, or post promotional backlinks automatically. Every draft should be useful without the backlink and should include a no-link variant when the community may reject links.
 
+### 2026-06-01 Priority Draft (best-ready): ToolIndex listing fit with account-setup gate
+
+- Target: https://www.toolindex.ai/submit/
+- Category: AI directory listing fit
+- Audience: AI tooling curators and comparison editors
+- Rules risk: medium (category and pricing-field compatibility check required)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I am preparing a listing-fit packet for an Android OCR + translation workflow. It is source-link first, includes free trial + paid-token framing, and includes explicit rights/screenshot/support constraints. I can answer your category and pricing compatibility questions first."
+- Link variant (conditional only if field requirements are confirmed):
+  - https://tachiyomiat.com/download
+  - https://tachiyomiat.com/guides/comic-ocr-translation-checklist
+  - https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide
+- Action intent:
+  1. Confirm that tool-type and pricing fields support Android APK utilities without unsupported verification claims.
+  2. Keep as watch-only until owner approves package/screenshot policy fields.
+  3. Add a short canonical link list only if manual submission path accepts link-safe fields.
+
 ### 2026-06-01 New cycle priority drafts
 
 ### 2026-06-01 New best-ready draft: Comic OCR checklist citation ladder (official no-link-first)

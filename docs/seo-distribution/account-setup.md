@@ -1,5 +1,13 @@
 ## 2026-06-01 Official Account Setup Continuation
 
+### 2026-06-01 Cycle setup advance (priority packets ready for owner action)
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Product Hunt maker/company page | Controlled launch and founder visibility with no-spam rules before any promotional burst | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/claim maker account, add canonical links, define anti-upvote policy, and approve publication timing + disclosure wording | `docs/seo-distribution/official-launch-profile-packet.md`, support link pack, short launch-safe founder text, logo/avatar | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | Value-first maker posts or launch page copy can run only when ownership + policy are confirmed | Owner sets launch window and confirms no growth-hacking policy |
+| high | HackerNoon technical publishing profile | Founder/engineering-first publishing channel for process-first transparency posts | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: claim official profile, confirm no-promotional editorial policy, and choose safe article angle and canonical URL routing | `docs/seo-distribution/official-launch-profile-packet.md`, `docs/seo-distribution/platform-drafts.md`, image policy notes | `SEO_AGENT_HACKERNOON_PROFILE_REFERENCE` | Owner can publish a single process-first technical draft only after editorial policy review; posts should include no-link opening when not requested | Prepare the profile packet first, then keep post packet as OWNER_REVIEW_REQUIRED |
+| high | LinkedIn official company/founder pages | Founder and investor trust surface with explicit affiliation and no-manipulation controls | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/confirm official company page + founder role, approve headline + mission text, and confirm no-link-first defaults in founder outreach | `docs/seo-distribution/official-launch-profile-packet.md`, logo/avatar, support URL, mission statement | `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`, `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` | Owner can publish founder/company updates only after account identity is confirmed and policy lock is complete | Keep LinkedIn/Founder drafts in `docs/seo-distribution/platform-drafts.md` until account setup is approved |
+
 ### 2026-06-01 Cycle Advancement
 
 | Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
