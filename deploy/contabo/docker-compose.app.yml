@@ -29,8 +29,10 @@ services:
       HOST: 0.0.0.0
       PORT: 3000
       SEO_DISTRIBUTION_AGENT_STATE_DIR: /var/lib/tachi-seo-distribution-agent
+      SEO_DISTRIBUTION_AGENT_TRIGGER_FILE: /var/lib/tachi-seo-distribution-agent/run-now
+      SEO_DISTRIBUTION_DAILY_CRON_SCHEDULE: 0 3 * * *
     volumes:
-      - ${TACHI_SEO_AGENT_STATE_DIR:-/var/lib/tachi-seo-distribution-agent}:/var/lib/tachi-seo-distribution-agent:ro
+      - ${TACHI_SEO_AGENT_STATE_DIR:-/var/lib/tachi-seo-distribution-agent}:/var/lib/tachi-seo-distribution-agent:rw
     depends_on:
       postgres:
         condition: service_healthy

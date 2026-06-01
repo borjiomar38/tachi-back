@@ -184,7 +184,7 @@ json_status() {
     REPORT_FILE="${report_file}" \
     REPO_DIR="${repo_dir}" \
     STATE_DIR="${STATE_DIR}" \
-    INTERVAL_SECONDS="${SEO_AGENT_INTERVAL_SECONDS:-43200}" \
+    INTERVAL_SECONDS="${SEO_AGENT_INTERVAL_SECONDS:-86400}" \
     EXTERNAL_POSTING_MODE="${SEO_AGENT_EXTERNAL_POSTING_MODE:-draft}" \
     ACCOUNT_CREATION_ENABLED="${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}" \
     GIT_PUSH_ENABLED="${SEO_AGENT_GIT_PUSH_ENABLED:-true}" \
@@ -913,7 +913,7 @@ prepare_git_workspace() {
 run_loop() {
   local interval remaining step trigger_file
 
-  interval="${SEO_AGENT_INTERVAL_SECONDS:-43200}"
+  interval="${SEO_AGENT_INTERVAL_SECONDS:-86400}"
   while true; do
     if ! run_codex_cycle; then
       log "SEO distribution cycle failed; continuing after backoff."

@@ -36,6 +36,7 @@ ensure_env_default() {
 }
 
 install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-seo-distribution-agent.sh" /usr/local/bin/tachi-seo-distribution-agent
+install -m 0755 "${APP_DIR}/deploy/contabo/run-seo-distribution-cron.sh" /usr/local/bin/tachi-seo-distribution-cron
 install -m 0755 "${APP_DIR}/deploy/contabo/publish-facebook-page-post.py" /usr/local/bin/tachi-facebook-page-publisher
 install -m 0755 "${APP_DIR}/deploy/contabo/render-social-image.py" /usr/local/bin/tachi-social-image-renderer
 apt-get update
@@ -52,7 +53,7 @@ if [[ ! -f "${ENV_FILE}" ]]; then
   cat >"${ENV_FILE}" <<EOF
 SEO_AGENT_ENABLED=true
 SEO_AGENT_RUN_FOREVER=true
-SEO_AGENT_INTERVAL_SECONDS=43200
+SEO_AGENT_INTERVAL_SECONDS=86400
 SEO_AGENT_CODEX_CLI_PATH=codex
 SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
 SEO_AGENT_CODEX_REASONING_EFFORT=medium
@@ -118,7 +119,7 @@ EOF
 fi
 
 ensure_env_default SEO_AGENT_RUN_FOREVER true
-ensure_env_default SEO_AGENT_INTERVAL_SECONDS 43200
+ensure_env_default SEO_AGENT_INTERVAL_SECONDS 86400
 ensure_env_default SEO_AGENT_CODEX_CLI_PATH codex
 ensure_env_default SEO_AGENT_CODEX_MODEL gpt-5.3-codex-spark
 ensure_env_default SEO_AGENT_CODEX_REASONING_EFFORT medium

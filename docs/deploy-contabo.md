@@ -153,7 +153,7 @@ passed.
 Important defaults:
 
 ```env
-SEO_AGENT_INTERVAL_SECONDS=43200
+SEO_AGENT_INTERVAL_SECONDS=86400
 SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
 SEO_AGENT_CODEX_REASONING_EFFORT=medium
 SEO_AGENT_CODEX_SEARCH_ENABLED=true
@@ -198,6 +198,13 @@ sudo systemctl status tachi-seo-distribution-agent --no-pager
 sudo journalctl -u tachi-seo-distribution-agent -f
 sudo systemctl restart tachi-seo-distribution-agent
 sudo -u borjiomar38 touch /var/lib/tachi-seo-distribution-agent/run-now
+```
+
+The manager page at `/manager/seo-distribution` can also trigger the same
+`run-now` file. For a daily Contabo cron, install:
+
+```cron
+0 3 * * * TACHI_ENV_FILE=/opt/tachi-back/.env.production /usr/local/bin/tachi-seo-distribution-cron >> /var/log/tachi-seo-distribution-cron.log 2>&1
 ```
 
 ### Facebook Page publisher

@@ -1,9 +1,14 @@
 /* eslint-disable no-process-env */
+import { ORPCError } from '@orpc/server';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
 
 import { protectedProcedure } from '@/server/orpc';
+import {
+  readSeoDistributionControlState,
+  triggerSeoDistributionCycle,
+} from '@/server/seo-distribution/control';
 
 const tags = ['seo-distribution'];
 const defaultStateDir = '/var/lib/tachi-seo-distribution-agent';
@@ -26,6 +31,20 @@ const zSeoDistributionOverview = z.object({
   accounts: z.array(zSeoDistributionAccount),
   accountSetup: z.array(zDistributionRow),
   authorityOpportunities: z.array(zDistributionRow),
+  control: z.object({
+    cronEndpoint: z.string(),
+    dailyCronSchedule: z.string(),
+    lastTrigger: z
+      .object({
+        requestedAt: z.string(),
+        source: z.string(),
+      })
+      .nullable(),
+    stateDir: z.string(),
+    triggerFile: z.string(),
+    triggerPending: z.boolean(),
+    triggerUpdatedAt: z.string().nullable(),
+  }),
   contentCalendar: z.array(zDistributionRow),
   docsGeneratedAt: z.string().nullable(),
   latestReport: z
@@ -86,6 +105,29 @@ export default {
     })
     .output(zSeoDistributionOverview)
     .handler(async () => buildOverview()),
+  triggerRun: protectedProcedure({
+    permissions: {
+      job: ['retry'],
+    },
+  })
+    .route({
+      method: 'POST',
+      path: '/seo-distribution/trigger-run',
+      tags,
+    })
+    .output(zSeoDistributionOverview.shape.control)
+    .handler(async () => {
+      try {
+        return await triggerSeoDistributionCycle({ source: 'admin' });
+      } catch (error) {
+        throw new ORPCError('INTERNAL_SERVER_ERROR', {
+          message:
+            error instanceof Error
+              ? `Unable to trigger SEO distribution: ${error.message}`
+              : 'Unable to trigger SEO distribution.',
+        });
+      }
+    }),
 };
 
 async function buildOverview(): Promise<
@@ -93,10 +135,11 @@ async function buildOverview(): Promise<
 > {
   const stateDir =
     process.env.SEO_DISTRIBUTION_AGENT_STATE_DIR ?? defaultStateDir;
-  const [status, docsSnapshot, recentReports] = await Promise.all([
+  const [status, docsSnapshot, recentReports, control] = await Promise.all([
     readJsonFile(path.join(stateDir, 'status.json')),
     readJsonFile(path.join(stateDir, 'docs-snapshot.json')),
     readRecentReports(path.join(stateDir, 'reports')),
+    readSeoDistributionControlState(),
   ]);
   const accounts = parseAccounts(
     await readJsonFile(path.join(stateDir, 'accounts.json'))
@@ -125,6 +168,7 @@ async function buildOverview(): Promise<
     accounts,
     accountSetup,
     authorityOpportunities,
+    control,
     contentCalendar,
     docsGeneratedAt: getString(docsSnapshot, 'generatedAt'),
     latestReport,

@@ -1,12 +1,14 @@
 import { getUiState } from '@bearstudio/ui-state';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
-import { ExternalLinkIcon } from 'lucide-react';
+import { ExternalLinkIcon, PlayIcon } from 'lucide-react';
 import { ReactNode } from 'react';
+import { toast } from 'sonner';
 
 import { orpc } from '@/lib/orpc/client';
 
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -28,6 +30,7 @@ import {
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionJob } from '@/features/auth/permissions';
+import { WithPermissions } from '@/features/auth/with-permissions';
 import {
   PageLayout,
   PageLayoutContent,
@@ -36,7 +39,21 @@ import {
 } from '@/layout/manager/page-layout';
 
 export const PageSeoDistribution = () => {
+  const queryClient = useQueryClient();
   const overviewQuery = useQuery(orpc.seoDistribution.overview.queryOptions());
+  const triggerRun = useMutation(
+    orpc.seoDistribution.triggerRun.mutationOptions({
+      onError: () => {
+        toast.error('Unable to trigger the SEO distribution cron.');
+      },
+      onSuccess: async () => {
+        toast.success('SEO distribution cron queued.');
+        await queryClient.invalidateQueries({
+          queryKey: orpc.seoDistribution.overview.key(),
+        });
+      },
+    })
+  );
   const ui = getUiState((set) => {
     if (overviewQuery.status === 'pending') {
       return set('pending');
@@ -52,7 +69,22 @@ export const PageSeoDistribution = () => {
   return (
     <GuardPermissions permissions={[permissionJob.read]}>
       <PageLayout>
-        <PageLayoutTopBar>
+        <PageLayoutTopBar
+          endActions={
+            <WithPermissions permissions={[permissionJob.retry]}>
+              <Button
+                size="sm"
+                loading={triggerRun.isPending}
+                onClick={() => {
+                  triggerRun.mutate(undefined);
+                }}
+              >
+                <PlayIcon />
+                Run cron now
+              </Button>
+            </WithPermissions>
+          }
+        >
           <PageLayoutTopBarTitle>SEO Distribution</PageLayoutTopBarTitle>
         </PageLayoutTopBar>
         <PageLayoutContent containerClassName="max-w-7xl">
@@ -69,7 +101,7 @@ export const PageSeoDistribution = () => {
             ))
             .match('default', (data) => (
               <div className="space-y-4">
-                <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
+                <div className="grid gap-4 md:grid-cols-3 xl:grid-cols-7">
                   <SummaryCard
                     label="Agent"
                     subLabel={formatDateTime(data.status.generatedAt)}
@@ -84,6 +116,11 @@ export const PageSeoDistribution = () => {
                     label="Interval"
                     subLabel="Wake delay"
                     value={`${data.status.intervalSeconds}s`}
+                  />
+                  <SummaryCard
+                    label="Cron"
+                    subLabel={data.control.dailyCronSchedule}
+                    value={data.control.triggerPending ? 'Queued' : 'Ready'}
                   />
                   <SummaryCard
                     label="Accounts"
@@ -186,6 +223,65 @@ export const PageSeoDistribution = () => {
                   </div>
 
                   <div className="space-y-4">
+                    <Card>
+                      <CardHeader>
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <CardTitle>Automation</CardTitle>
+                            <CardDescription>
+                              Daily cron and manual run share the same trigger.
+                            </CardDescription>
+                          </div>
+                          <Badge
+                            variant={
+                              data.control.triggerPending
+                                ? 'positive'
+                                : 'secondary'
+                            }
+                          >
+                            {data.control.triggerPending ? 'Queued' : 'Ready'}
+                          </Badge>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="space-y-3 text-sm">
+                        <KeyValue
+                          label="Schedule"
+                          value={data.control.dailyCronSchedule}
+                        />
+                        <KeyValue
+                          label="Endpoint"
+                          value={data.control.cronEndpoint}
+                        />
+                        <KeyValue
+                          label="Trigger"
+                          value={data.control.triggerFile}
+                        />
+                        <KeyValue
+                          label="Requested"
+                          value={
+                            data.control.lastTrigger
+                              ? `${formatDateTime(
+                                  data.control.lastTrigger.requestedAt
+                                )} (${data.control.lastTrigger.source})`
+                              : '-'
+                          }
+                        />
+                        <WithPermissions permissions={[permissionJob.retry]}>
+                          <Button
+                            size="sm"
+                            className="w-full"
+                            loading={triggerRun.isPending}
+                            onClick={() => {
+                              triggerRun.mutate(undefined);
+                            }}
+                          >
+                            <PlayIcon />
+                            Run cron now
+                          </Button>
+                        </WithPermissions>
+                      </CardContent>
+                    </Card>
+
                     <Card>
                       <CardHeader>
                         <CardTitle>Current Cycle</CardTitle>
