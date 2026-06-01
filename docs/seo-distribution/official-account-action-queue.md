@@ -32,3 +32,10 @@ Canonical links:
 - Responsible workflow guide: `https://tachiyomiat.com/guides/translation-support-workflow`
 
 Store actual secret values only in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions or another approved secret store.
+
+| Priority | Account/profile | Manual action | Public fields to use | Required assets | Credential reference | Agent capability after connection | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| high | LinkedIn company/founder page | Create/claim official Nayovi profile manually; publish owner-approved trust-first intro only | `Nayovi`; short official bio; `https://nayovi.com`; `https://tachiyomiat.com/download`; support/pricing links only after verification | Logo, banner, ownership statement, responsible-use statement | `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`, `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` | Publish manual/API updates only after owner approval and anti-spam checks | OWNER_ACTION_REQUIRED |
+| medium | YouTube official channel | Create official Nayovi channel and approve approved-sample demo policy before upload | `Nayovi`; official website links; responsible-use line | Avatar/banner, approved demo media, canonical links | `SEO_AGENT_YOUTUBE_REFRESH_TOKEN` | Publish owner-approved metadata/videos only when account owner confirms launch posture | OWNER_ACTION_REQUIRED |
+| medium | Product Hunt maker/company profile | Create/claim maker and company profile manually; finalize launch-ready posting order and no-upvote policy | `Nayovi`; product tagline; official links; pricing and support policy | Logo, screenshots, short launch copy, demo clip if approved | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | Post official launch/support content in draft/manual mode after launch timing approval | OWNER_ACTION_REQUIRED |
+
