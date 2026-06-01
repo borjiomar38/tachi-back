@@ -1,3 +1,24 @@
+## 2026-06-01 Cycle 20260601 (seo/distribution-20260601T185514Z)
+
+- Branch check: `seo/distribution-20260601T185514Z` verified at start.
+- Owned SEO asset improved:
+  - `src/routes/guides/comic-ocr-translation-checklist.tsx`: expanded FAQ and related-guide schema for better SERP clarity and internal topical clustering.
+  - `src/features/public/page-ethical-guides.tsx`: added link-safe escalation guidance and internal action links from the OCR checklist page to the workflow, pilot, support, and pricing pages.
+- Distribution planning updates:
+  - Added 1-cycle row to `docs/seo-distribution/content-calendar.md` for the OCR checklist citation-ladder cluster.
+  - Added owner-review draft in `docs/seo-distribution/platform-drafts.md` for Reddit/GitHub/community no-link-first rollout and conditional link follow-up.
+  - Added/revised linkable asset row in `docs/seo-distribution/link-assets.md` for the citation ladder cluster.
+  - Updated `docs/seo-distribution/social-post-queue.jsonl` with one Facebook queue item (`status=auto_publish`) and no-spam visual concept.
+  - Added one Facebook page info entry validation point unchanged in `docs/seo-distribution/facebook-page-info.json` (auto_sync mode maintained).
+- 2026-06-01 Opportunity scan outcome:
+  - 1) Comic OCR checklist as core topical anchor for editorial, directory, and pilot query intents.
+  - 2) Permission-safe pilot flow as conversion bridge for community queries that request implementation detail.
+  - 3) Translation support workflow as a high-intent complementary page cluster.
+- Risks and next actions:
+  - Validate image generation and queue rendering path for the updated Facebook post.
+  - Keep auto-publish volume within one post/day and use OWNER_REVIEW_REQUIRED drafts for all external community targets.
+  - Run optional metadata check after any publish path changes.
+
 ## 2026-06-01 Cycle (active branch current)
 
 - Branch check: `seo/distribution-20260601T143341Z` verified at start.

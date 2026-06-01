@@ -87,6 +87,11 @@ const checklistStructuredData = () => {
       description:
         'Mention Nayovi after rights-safe intent, approved-sample framing, and the source-of-truth links are helpful for the specific question. Do not imply broad chapter-hosting or verification claims.',
     },
+    {
+      title: 'Where should readers go next?',
+      description:
+        'Readers should move from checklist guidance to /guides/translation-support-workflow for end-to-end onboarding, or /guides/permission-safe-manga-translation-pilot for approved-sample partnership planning.',
+    },
   ];
 
   return [
@@ -136,6 +141,27 @@ const checklistStructuredData = () => {
         name: check.name,
         description: check.description,
       })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${url}#related-guides`,
+      name: 'Related trust-safe guides',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Translation support workflow',
+          url: buildPublicAbsoluteUrl('/guides/translation-support-workflow'),
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Permission-safe pilot brief',
+          url: buildPublicAbsoluteUrl(
+            '/guides/permission-safe-manga-translation-pilot'
+          ),
+        },
+      ],
     },
     ...buildPublicFaqStructuredData(
       '/guides/comic-ocr-translation-checklist',

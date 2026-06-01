@@ -1508,6 +1508,11 @@ const citationLadderRows = [
     detail:
       'Pause distribution if the target requires paid placement, reciprocal links, hidden redirects, unsupported verification claims, or mirror-first APK handling.',
   },
+  {
+    label: '5) Offer next-step references',
+    detail:
+      'If the reader needs implementation detail, link the support-ready checklist follow-up pages in this order: translation workflow, pilot brief, pricing, then support.',
+  },
 ];
 
 const citationResourceRows = [
@@ -1885,6 +1890,21 @@ export const PageComicOcrChecklist = () => {
             className={buttonVariants({ variant: 'ghost', size: 'lg' })}
           >
             Request review access
+          </a>
+          <a
+            href="/guides/permission-safe-manga-translation-pilot"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            <span className="flex items-center gap-2">
+              Permission-safe pilot brief
+              <ArrowRightIcon className="size-4" />
+            </span>
+          </a>
+          <a
+            href="/pricing"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Review trial vs token plan
           </a>
         </div>
       </PublicSection>

@@ -2,6 +2,10 @@
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |
 | --- | --- | --- | --- | --- | --- |
+| Citation-ladder cluster | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Reddit moderators, AI directories, newsletter editors, creator-platform partners | Internal link cluster now includes related guides (workflow, pilot, pricing, support) and citation-safe escalation language; supports one reply per thread and safe ownership disclosure | draft | Keep as a no-link default in replies; share link variant only after explicit request |
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
 | Trust-matrix founder-ready pitch block | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | Builders, founder audiences, creator communities, publishers | Adds a founder-facing no-link + optional link variant section for launch transparency, permission boundaries, and support model; useful before Indie Hackers/LinkedIn posting | draft | Keep draft-only until founder account is configured and launch policy is approved |
 | Citation-ladder guide block | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | Reddit/translation communities, AI directories, Android review contacts, creator-platform partners | Adds a no-link-first to link-safe escalation ladder (value first, allowed link points, and stop conditions) for community responses and directory fit checks | draft | Use as the default first-reply framework and gate link variant on explicit request or approved channel policy |
 | AI directory metadata ladder | `https://www.aiworkbench.tech/submit/` and `https://navtools.ai/submit` | AI directory curators, Android workflow publishers | Reusable no-link-first + link-optional language for AI Workbench/NavTools listing submission checks with category and pricing-field validation | draft | Keep in queue until category, free-trial vs paid-token mapping and no-paywall backlink rules are owner-approved |

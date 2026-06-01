@@ -14,6 +14,23 @@
   1. Confirm founder account ownership and whether no-link format is accepted.
   2. Convert to owner-post only if rules permit a non-promotional process-first publish.
 
+### 2026-06-02 Draft add: citation ladder follow-up (owner review first)
+
+- Target: Reddit, GitHub README/discussion comments, and creator communities discussing OCR QA
+- Category: community support answer + link escalation
+- Audience: translation workflow readers, directory editors, localization moderators
+- Rules risk: medium-low (always start without links)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "If you want a practical test path, start with permission scope, OCR coverage, reading order, glossary control, and a private/public sharing decision. For setup, I can add the official Nayovi links only when the request is explicitly asking for implementation details."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+  - `https://tachiyomiat.com/pricing`
+- Action intent:
+  1. Keep no-link version as default draft for all community replies.
+  2. Switch to link variant only after explicit request and clear moderation permission.
+
 - Target: `https://www.toolindex.ai/submit/`
 - Category: AI directory listing fit
 - Audience: AI tooling and comparison curators
