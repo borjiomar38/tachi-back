@@ -79,6 +79,7 @@ GROWTH_AGENT_AUTONOMOUS_MODE=true
 GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED=true
 GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED=true
 GROWTH_AGENT_EMAIL_SEND_MODE=send
+GROWTH_AGENT_OUTREACH_ENV_FILE=${APP_DIR}/.env.production
 GROWTH_AGENT_MAX_OUTREACH_EMAILS_PER_DAY=10
 GROWTH_AGENT_NOTIFY_ENABLED=true
 GROWTH_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
@@ -107,6 +108,20 @@ GROWTH_AGENT_INBOUND_MARK_SEEN=true
 GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED=false
 GROWTH_AGENT_STATUS_REPLY_ENABLED=true
 GROWTH_AGENT_STATUS_REPLY_KEYWORDS="avancement,status,update,tu fais quoi,tu fais quoi la,tu fais quoi là,avance sur quoi,quoi maintenant,progress,what are you doing,what are u doing,what r u doing,what you doing"
+GROWTH_AGENT_PARTNER_REPLIES_ENABLED=true
+GROWTH_AGENT_PARTNER_NOTIFY_ENABLED=true
+GROWTH_AGENT_PARTNER_REQUIRE_AUTHENTICATED_SENDER=true
+GROWTH_AGENT_INTERNAL_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com,dev-ring.com
+GROWTH_AGENT_LEGACY_INBOUND_ENABLED=false
+GROWTH_AGENT_LEGACY_INBOUND_NAME=legacy-dev-ring
+GROWTH_AGENT_LEGACY_INBOUND_PARTNER_REPLIES_ENABLED=true
+GROWTH_AGENT_LEGACY_INBOUND_MIGRATION_REPLY_ENABLED=true
+GROWTH_AGENT_LEGACY_INBOUND_IMAP_HOST=
+GROWTH_AGENT_LEGACY_INBOUND_IMAP_PORT=993
+GROWTH_AGENT_LEGACY_INBOUND_IMAP_USER=
+GROWTH_AGENT_LEGACY_INBOUND_IMAP_PASSWORD=
+GROWTH_AGENT_LEGACY_INBOUND_IMAP_MAILBOX=INBOX
+GROWTH_AGENT_LEGACY_INBOUND_IMAP_SSL=true
 GROWTH_AGENT_VALIDATION_COMMAND="./node_modules/.bin/tsc --noEmit"
 GROWTH_AGENT_PRIMARY_SITE=https://tachiyomiat.com
 GROWTH_AGENT_BRAND_SITE=https://nayovi.com
@@ -145,9 +160,24 @@ ensure_env_default GROWTH_AGENT_INBOUND_MARK_SEEN true
 ensure_env_default GROWTH_AGENT_INBOUND_CONFIRMATION_ENABLED false
 ensure_env_default GROWTH_AGENT_STATUS_REPLY_ENABLED true
 ensure_env_default GROWTH_AGENT_STATUS_REPLY_KEYWORDS '"avancement,status,update,tu fais quoi,tu fais quoi la,tu fais quoi là,avance sur quoi,quoi maintenant,progress,what are you doing,what are u doing,what r u doing,what you doing"'
+ensure_env_default GROWTH_AGENT_PARTNER_REPLIES_ENABLED true
+ensure_env_default GROWTH_AGENT_PARTNER_NOTIFY_ENABLED true
+ensure_env_default GROWTH_AGENT_PARTNER_REQUIRE_AUTHENTICATED_SENDER true
+ensure_env_default GROWTH_AGENT_INTERNAL_DOMAINS nayovi.com,tachiyomiat.com,translate-manhwa-ai.com,dev-ring.com
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_ENABLED false
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_NAME legacy-dev-ring
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_PARTNER_REPLIES_ENABLED true
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_MIGRATION_REPLY_ENABLED true
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_IMAP_HOST ''
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_IMAP_PORT 993
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_IMAP_USER ''
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_IMAP_PASSWORD ''
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_IMAP_MAILBOX INBOX
+ensure_env_default GROWTH_AGENT_LEGACY_INBOUND_IMAP_SSL true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_MODE true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_OUTREACH_ENABLED true
 ensure_env_default GROWTH_AGENT_AUTONOMOUS_PROSPECT_APPROVAL_ENABLED true
+ensure_env_default GROWTH_AGENT_OUTREACH_ENV_FILE "${APP_DIR}/.env.production"
 ensure_env_default GROWTH_AGENT_VALIDATION_COMMAND '"./node_modules/.bin/tsc --noEmit"'
 ensure_env_default GROWTH_AGENT_NOTIFY_KEYWORDS '"OWNER_ACTION_REQUIRED,EMERGENCY_OWNER_REPLY_REQUIRED,MEETING_REQUIRED,CALL_REQUIRED,cannot continue without owner,cant continue without owner,can not continue without owner,owner reply required"'
 ensure_env_default GROWTH_AGENT_SEO_DISTRIBUTION_STATE_DIR /var/lib/tachi-seo-distribution-agent

@@ -131,6 +131,197 @@ The old curl-only script remains available as `/usr/local/bin/tachi-back-blog-cr
 if you explicitly want the app to call its configured LLM API provider instead
 of Codex CLI.
 
+## SEO Distribution Agent
+
+The SEO distribution agent is separate from the blog cron and growth agent. Its
+job is to build owned SEO assets and prepare platform-specific distribution
+drafts. It must not create Reddit, GitHub, forum, directory, or other third-party
+accounts, and it must not auto-post promotional backlinks on external platforms.
+
+Install from the deployed source tree:
+
+```bash
+cd /opt/tachi-back
+sudo TACHI_DEPLOY_USER=borjiomar38 deploy/contabo/install-seo-distribution-agent.sh
+```
+
+The installer creates `/opt/tachi-back/.env.seo-distribution-agent`, installs
+`/usr/local/bin/tachi-seo-distribution-agent`, and registers
+`tachi-seo-distribution-agent.service`. It is not enabled unless `--enable` is
+passed.
+
+Important defaults:
+
+```env
+SEO_AGENT_INTERVAL_SECONDS=43200
+SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
+SEO_AGENT_CODEX_REASONING_EFFORT=medium
+SEO_AGENT_CODEX_SEARCH_ENABLED=true
+SEO_AGENT_GIT_BRANCH_PREFIX=seo/distribution
+SEO_AGENT_GIT_PUSH_ENABLED=false
+SEO_AGENT_AUTO_MERGE_TO_MASTER=false
+SEO_AGENT_EXTERNAL_POSTING_MODE=draft
+SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED=false
+SEO_AGENT_SOCIAL_QUEUE_FILE=/opt/tachi-seo-distribution-agent/repo/docs/seo-distribution/social-post-queue.jsonl
+SEO_AGENT_FACEBOOK_POSTING_MODE=draft
+SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=draft
+SEO_AGENT_FACEBOOK_GRAPH_VERSION=v25.0
+SEO_AGENT_FACEBOOK_PAGE_ID=""
+SEO_AGENT_FACEBOOK_PAGE_ACCESS_TOKEN=""
+SEO_AGENT_FACEBOOK_PAGE_INFO_FILE=/var/lib/tachi-seo-distribution-agent/facebook-page-info.json
+SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=false
+SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=false
+SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
+SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
+SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
+SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
+SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
+SEO_AGENT_NOTIFY_ENV_FILE=/opt/tachi-back/.env.growth-mail
+```
+
+The agent maintains:
+
+- `docs/seo-distribution/content-calendar.md`
+- `docs/seo-distribution/platform-drafts.md`
+- `docs/seo-distribution/social-post-queue.jsonl`
+- `docs/seo-distribution/facebook-page-info.json`
+- `docs/seo-distribution/link-assets.md`
+- `docs/seo-distribution/distribution-log.md`
+
+Operational commands:
+
+```bash
+sudo systemctl status tachi-seo-distribution-agent --no-pager
+sudo journalctl -u tachi-seo-distribution-agent -f
+sudo systemctl restart tachi-seo-distribution-agent
+sudo -u borjiomar38 touch /var/lib/tachi-seo-distribution-agent/run-now
+```
+
+### Facebook Page publisher
+
+The SEO distribution agent can publish to an owner-controlled Facebook Page
+through Meta's official Pages API. It does not use Chrome on the VPS and it does
+not create Facebook accounts. The owner must create or connect the Facebook app
+and Page first, then store only the Page ID and Page access token in the private
+Contabo env file.
+
+Required private env values:
+
+```env
+SEO_AGENT_FACEBOOK_POSTING_MODE=draft
+SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=draft
+SEO_AGENT_FACEBOOK_GRAPH_VERSION=v25.0
+SEO_AGENT_FACEBOOK_PAGE_ID="1234567890"
+SEO_AGENT_FACEBOOK_PAGE_ACCESS_TOKEN="EA..."
+SEO_AGENT_FACEBOOK_PAGE_INFO_FILE=/var/lib/tachi-seo-distribution-agent/facebook-page-info.json
+SEO_AGENT_FACEBOOK_POST_LIMIT=1
+SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
+SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=false
+SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=false
+SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
+SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
+```
+
+Use `draft` while testing. Switch `SEO_AGENT_FACEBOOK_POSTING_MODE` to
+`publish` only after the Page access token works and at least one queue item has
+been manually changed to `"status":"approved"`. Switch
+`SEO_AGENT_FACEBOOK_PAGE_INFO_MODE` to `sync` only after
+`facebook-page-info.json` has the exact owner-approved fields and
+`"status":"approved"`.
+
+After Meta token setup is complete, autonomous mode can be enabled:
+
+```env
+SEO_AGENT_FACEBOOK_POSTING_MODE=publish
+SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true
+SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
+SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
+```
+
+In autonomous mode, the agent may create queue items with
+`"status":"auto_publish"`. The Codex CLI cycle writes commercial post copy with
+`gpt-5.3-codex-spark` and supplies `genre` / `visual_style` hints. The local
+`/usr/local/bin/tachi-social-image-renderer` CLI then creates an original PNG
+under `/var/lib/tachi-seo-distribution-agent/generated-images` and writes
+`image_path` plus `image_alt` back to the queue. The publisher does not call
+OpenAI image APIs and must not use `OPENAI_API_KEY`; that key is reserved for
+Tachiback translation runtime only. Visual concepts must avoid copyrighted
+characters, manga panels, third-party logos, fake UI screenshots, readable text,
+and unsupported claims.
+
+The publisher reads JSONL entries from the configured
+`SEO_AGENT_SOCIAL_QUEUE_FILE`; production uses
+`/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl` so runtime queue
+updates do not require committing generated state. Example:
+
+```json
+{"id":"facebook-example-20260601","platform":"facebook","status":"auto_publish","message":"Useful official post text here.","link":"https://tachiyomiat.com","scheduled_at":"2026-06-02T09:00:00Z","genre":"action","visual_style":"attractive original manhwa-inspired Android OCR translation visual, neon scan lines, speech bubbles, no readable text","image_path":"/var/lib/tachi-seo-distribution-agent/generated-images/facebook-example-20260601.png","image_alt":"Original Nayovi social image for Android OCR translation workflow."}
+```
+
+Dry-run the queue:
+
+```bash
+/usr/local/bin/tachi-facebook-page-publisher \
+  --env-file /opt/tachi-back/.env.seo-distribution-agent \
+  --queue-file /opt/tachi-seo-distribution-agent/repo/docs/seo-distribution/social-post-queue.jsonl \
+  --dry-run
+```
+
+Verify the Page token can read the Page:
+
+```bash
+/usr/local/bin/tachi-facebook-page-publisher \
+  --env-file /opt/tachi-back/.env.seo-distribution-agent \
+  --verify-access
+```
+
+Dry-run Page information sync:
+
+```bash
+/usr/local/bin/tachi-facebook-page-publisher \
+  --env-file /opt/tachi-back/.env.seo-distribution-agent \
+  --page-info-file /opt/tachi-seo-distribution-agent/repo/docs/seo-distribution/facebook-page-info.json \
+  --sync-page-info \
+  --dry-run
+```
+
+Sync owner-approved Page information:
+
+```bash
+SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=sync \
+/usr/local/bin/tachi-facebook-page-publisher \
+  --env-file /opt/tachi-back/.env.seo-distribution-agent \
+  --page-info-file /opt/tachi-seo-distribution-agent/repo/docs/seo-distribution/facebook-page-info.json \
+  --sync-page-info
+```
+
+Publish one approved due item:
+
+```bash
+SEO_AGENT_FACEBOOK_POSTING_MODE=publish \
+/usr/local/bin/tachi-facebook-page-publisher \
+  --env-file /opt/tachi-back/.env.seo-distribution-agent \
+  --queue-file /opt/tachi-seo-distribution-agent/repo/docs/seo-distribution/social-post-queue.jsonl \
+  --limit 1
+```
+
+Meta setup checklist:
+
+- Use a Page access token, not a User token.
+- The app/person needs Page publishing permissions such as
+  `pages_manage_posts` and `pages_read_engagement` for posts.
+- Updating Page fields can require Page-management permissions such as
+  `pages_manage_metadata`, depending on the Page, app mode, and current Meta
+  review state.
+- The app user must have the necessary Page tasks to create content.
+- Keep tokens out of git; store them only in
+  `/opt/tachi-back/.env.seo-distribution-agent` or an approved secret store.
+
+By default, the service can create local cycle branches but does not push them.
+If `SEO_AGENT_GIT_PUSH_ENABLED=true`, it may push `seo/distribution-*` branches
+for review. It never pushes `master`, even if `SEO_AGENT_AUTO_MERGE_TO_MASTER`
+is set.
+
 ## Growth Agent
 
 The Contabo host can also run a supervised Codex growth agent for SEO,
@@ -196,7 +387,11 @@ blocking autonomous publication on the VPS.
 
 External outreach email is sent through `/usr/local/bin/tachi-growth-outreach-send`,
 which enforces the daily cap, requires opt-out language, and logs every delivery
-under `/var/lib/tachi-growth-agent/outreach`.
+under `/var/lib/tachi-growth-agent/outreach`. Set
+`GROWTH_AGENT_OUTREACH_ENV_FILE` to a dedicated SMTP env file when partnership
+mail should come from a human contact mailbox instead of the app transactional
+sender. If `/opt/tachi-back/.env.growth-mail` exists, the outreach helper uses
+it by default.
 
 Owner email notifications are intentionally low-volume:
 
@@ -220,9 +415,18 @@ Owner email notifications are intentionally low-volume:
   reply, the owner receives another email only if the agent still needs a human
   decision or the once-daily summary is due. If an email is needed, it is sent
   in the same thread when the original message ID is available.
-- Inbound replies are queued only when the sender address is allow-listed and
-  the mail server reports passing SPF, DKIM, or DMARC authentication for that
-  sender. Other messages are marked seen and never become agent instructions.
+- Owner inbound replies are queued only when the sender address is allow-listed
+  and the mail server reports passing SPF, DKIM, or DMARC authentication for
+  that sender. Other messages are marked seen and never become agent
+  instructions.
+- If `GROWTH_AGENT_PARTNER_REPLIES_ENABLED=true`, authenticated external
+  messages that classify as Nayovi partner/media/investor/backlink replies are
+  queued for the growth agent and can notify the owner. Other messages are
+  marked seen and never become agent instructions.
+- `GROWTH_AGENT_LEGACY_INBOUND_ENABLED=true` can keep a legacy mailbox such as
+  `contact@dev-ring.com` monitored. When a relevant Nayovi reply arrives there,
+  the bridge queues it and, if migration replies are enabled, answers from
+  `contact@nayovi.com` asking the contact to continue on the Nayovi address.
 
 Operational commands:
 

@@ -184,11 +184,11 @@ json_status() {
     REPORT_FILE="${report_file}" \
     REPO_DIR="${repo_dir}" \
     STATE_DIR="${STATE_DIR}" \
-    INTERVAL_SECONDS="${SEO_AGENT_INTERVAL_SECONDS:-60}" \
+    INTERVAL_SECONDS="${SEO_AGENT_INTERVAL_SECONDS:-43200}" \
     EXTERNAL_POSTING_MODE="${SEO_AGENT_EXTERNAL_POSTING_MODE:-draft}" \
     ACCOUNT_CREATION_ENABLED="${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}" \
     GIT_PUSH_ENABLED="${SEO_AGENT_GIT_PUSH_ENABLED:-true}" \
-    AUTO_MERGE_TO_MASTER="${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}" \
+    AUTO_MERGE_TO_MASTER="${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}" \
     python3 - "${status_file}" <<'PY'
 import json
 import os
@@ -292,8 +292,8 @@ run_codex_cycle() {
   report_file="${STATE_DIR}/reports/seo-distribution-${cycle_id}.md"
   repo_dir="${SEO_AGENT_REPO_DIR:-${APP_DIR}}"
   codex_bin="${SEO_AGENT_CODEX_CLI_PATH:-codex}"
-  codex_model="${SEO_AGENT_CODEX_MODEL:-gpt-5.5}"
-  codex_effort="${SEO_AGENT_CODEX_REASONING_EFFORT:-low}"
+  codex_model="${SEO_AGENT_CODEX_MODEL:-gpt-5.3-codex-spark}"
+  codex_effort="${SEO_AGENT_CODEX_REASONING_EFFORT:-medium}"
   codex_sandbox="${SEO_AGENT_CODEX_SANDBOX:-danger-full-access}"
   base_branch="${SEO_AGENT_BASE_BRANCH:-master}"
   branch_prefix="${SEO_AGENT_GIT_BRANCH_PREFIX:-seo/distribution}"
@@ -350,6 +350,8 @@ Allowed work:
 - Maintain docs/seo-distribution/content-calendar.md with article topics, keywords, search intent, target URL, status, and next action.
 - Maintain docs/seo-distribution/account-setup.md with official Nayovi account/profile setup tasks. Each row must include priority, platform, purpose, status, owner/manual step, required assets, secret/API variable or credential reference, publish capability after connection, and next action.
 - Maintain docs/seo-distribution/platform-drafts.md with platform-specific posts/comments/messages for LinkedIn, Reddit, GitHub, community forums, newsletters, app directories, and partner publications.
+- Maintain docs/seo-distribution/social-post-queue.jsonl or the configured SEO_AGENT_SOCIAL_QUEUE_FILE with Facebook Page posts. Use JSONL objects with id, platform, status, message, optional link, optional scheduled_at, optional genre, optional visual_style, optional image_path, and optional image_alt.
+- Maintain docs/seo-distribution/facebook-page-info.json or the configured SEO_AGENT_FACEBOOK_PAGE_INFO_FILE with official Facebook Page profile field changes.
 - Maintain docs/seo-distribution/authority-opportunities.md as the discovery pipeline for high-authority sites and communities. Each row must include authority tier, category, target, URL, fit, action type, account/API requirement, risk, status, and next action.
 - Maintain docs/seo-distribution/link-assets.md with linkable resources, assets, comparisons, tutorials, data points, screenshots, demo video angles, and GitHub-ready documentation ideas.
 - Maintain docs/seo-distribution/distribution-log.md with cycle results, drafts prepared, owned content changed, links discovered, and next actions.
@@ -368,8 +370,11 @@ Hard constraints:
 - Do not spam comments, issues, discussions, forums, communities, or social feeds with promotional links.
 - Do not buy links, use PBNs, mass-submit low-quality articles, scrape private contact data, or produce doorway/thin pages.
 - Do not post to Reddit, LinkedIn, GitHub, or any external platform unless an authorized account/API workflow is explicitly configured and the platform/community rules clearly allow that exact action. If not configured, create the draft and mark AUTHORIZED_ACCOUNT_REQUIRED or OWNER_REVIEW_REQUIRED.
+- For Facebook Page posting, if SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true and SEO_AGENT_FACEBOOK_POSTING_MODE=publish, you may create status=auto_publish queue items for useful official Page posts. Otherwise create only status=draft or status=owner_review_required queue items. Never create manipulative, repetitive, or unsupported posts.
+- For Facebook Page info updates, if SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=true and SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=sync, you may create status=auto_sync changes for truthful official Page profile fields. Otherwise create only status=draft or status=owner_review_required changes.
 - Do not run Vercel production deploy commands.
 - Do not force-push. Do not print secrets. Do not commit env files, passwords, tokens, SSH keys, cookies, or generated credential files.
+- Do not use OPENAI_API_KEY, SEO_AGENT_OPENAI_API_KEY, or direct image-generation API calls for social images or social posts. The local renderer creates original PNGs from queue metadata.
 - Credentials must never be written to docs, reports, Git, screenshots, email summaries, or backoffice fields. Store only non-secret credential references such as SEO_AGENT_LINKEDIN_ACCESS_TOKEN; actual values belong in /opt/tachi-back/.env.seo-distribution-agent with chmod 600 or another approved secret store.
 - Keep changes aligned with existing repo conventions.
 
@@ -380,8 +385,15 @@ Operational preferences:
 - Account creation enabled: ${SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED:-false}
 - Account registry: ${STATE_DIR}/accounts.json
 - Account setup priority: ${SEO_AGENT_ACCOUNT_SETUP_PRIORITY:-true}
+- Facebook posting mode: ${SEO_AGENT_FACEBOOK_POSTING_MODE:-draft}
+- Facebook page info mode: ${SEO_AGENT_FACEBOOK_PAGE_INFO_MODE:-draft}
+- Facebook autonomous post approval: ${SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED:-false}
+- Facebook autonomous page info sync: ${SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED:-false}
+- Facebook daily post limit: ${SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT:-1}
+- Social image directory: ${SEO_AGENT_SOCIAL_IMAGE_DIR:-/var/lib/tachi-seo-distribution-agent/generated-images}
+- Social queue file: ${SEO_AGENT_SOCIAL_QUEUE_FILE:-${repo_dir}/docs/seo-distribution/social-post-queue.jsonl}
 - Git push enabled: ${SEO_AGENT_GIT_PUSH_ENABLED:-true}
-- Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}
+- Auto-merge to production branch: ${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}
 - Validation command: ${SEO_AGENT_VALIDATION_COMMAND:-./node_modules/.bin/tsc --noEmit}
 
 Agent coordination:
@@ -402,11 +414,13 @@ Cycle checklist:
 6. Research at least 3 authority opportunities from different categories and update docs/seo-distribution/authority-opportunities.md.
 7. For the best ready opportunity, draft the exact value-first post/comment/message/listing/pitch in docs/seo-distribution/platform-drafts.md. Include target, audience, rules risk, no-link variant, and link variant.
 8. Add linkable assets or pitch angles to docs/seo-distribution/link-assets.md.
-9. Update docs/seo-distribution/distribution-log.md with concrete work, account setup progress, authority targets discovered, actions prepared, and next steps.
-10. Run validation if practical.
-11. Commit on ${branch} if files changed.
-12. Push ${branch} only if enabled. Never force-push.
-13. Write a concise final report with account setup progress, owned content changes, draft distribution assets, validation result, risks, and next social/backlink actions.
+9. Add Facebook Page posts to the configured social queue when useful. Use status=auto_publish only when autonomous Facebook publishing is enabled; otherwise use status=draft. Write commercial copy that is punchy, specific, benefit-led, and not spammy. Set genre and visual_style so the local CLI renderer can create an attractive original manhwa-inspired PNG. Image concepts must be original and brand-safe: no copyrighted characters, manga panels, third-party logos, fake UI text, or readable unsupported claims.
+10. Add or refine Facebook Page profile fields when useful. Use status=auto_sync only when autonomous Page info sync is enabled; otherwise use status=draft.
+11. Update docs/seo-distribution/distribution-log.md with concrete work, account setup progress, authority targets discovered, actions prepared, and next steps.
+12. Run validation if practical.
+13. Commit on ${branch} if files changed.
+14. Push ${branch} only if enabled. Never force-push.
+15. Write a concise final report with account setup progress, owned content changes, draft distribution assets, validation result, risks, and next social/backlink actions.
 PROMPT
 
   log "Starting SEO distribution cycle ${cycle_id} in ${repo_dir}"
@@ -433,10 +447,78 @@ PROMPT
 
   publish_cycle_branch "${repo_dir}" "${branch}" "${base_branch}" "${cycle_id}" "${report_file}"
   write_docs_snapshot "${repo_dir}"
+  maybe_render_social_images "${cycle_id}" "${report_file}" "${repo_dir}"
+  maybe_publish_social_queue "${cycle_id}" "${report_file}" "${repo_dir}"
   maybe_send_owner_notification "${cycle_id}" "${report_file}" "${repo_dir}"
   json_status "sleeping" "${cycle_id}" "${branch}" "${report_file}" "${repo_dir}"
 
   log "Completed SEO distribution cycle ${cycle_id}; report=${report_file}"
+}
+
+maybe_render_social_images() {
+  local cycle_id="$1"
+  local report_file="$2"
+  local repo_dir="$3"
+  local image_dir image_renderer queue_file
+
+  image_renderer="${SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH:-/usr/local/bin/tachi-social-image-renderer}"
+  queue_file="${SEO_AGENT_SOCIAL_QUEUE_FILE:-${repo_dir}/docs/seo-distribution/social-post-queue.jsonl}"
+  image_dir="${SEO_AGENT_SOCIAL_IMAGE_DIR:-/var/lib/tachi-seo-distribution-agent/generated-images}"
+
+  if [[ ! -x "${image_renderer}" ]]; then
+    append_report_note "${report_file}" "Social image renderer not installed at ${image_renderer}; skipped."
+    return 0
+  fi
+
+  if [[ ! -f "${queue_file}" ]]; then
+    append_report_note "${report_file}" "No social queue file at ${queue_file}; social image renderer skipped."
+    return 0
+  fi
+
+  if "${image_renderer}" \
+    --queue-file "${queue_file}" \
+    --image-dir "${image_dir}" \
+    --limit "${SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT:-20}" \
+    >>"${report_file}" 2>&1; then
+    append_report_note "${report_file}" "Social image renderer checked queue for ${cycle_id}."
+  else
+    append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: social image renderer failed for ${cycle_id}; see report output above."
+  fi
+}
+
+maybe_publish_social_queue() {
+  local cycle_id="$1"
+  local report_file="$2"
+  local repo_dir="$3"
+  local facebook_publisher queue_file
+
+  facebook_publisher="${SEO_AGENT_FACEBOOK_PUBLISHER_PATH:-/usr/local/bin/tachi-facebook-page-publisher}"
+  queue_file="${SEO_AGENT_SOCIAL_QUEUE_FILE:-${repo_dir}/docs/seo-distribution/social-post-queue.jsonl}"
+
+  if [[ "${SEO_AGENT_FACEBOOK_POSTING_MODE:-draft}" == "off" ]]; then
+    append_report_note "${report_file}" "Facebook publisher off for ${cycle_id}."
+    return 0
+  fi
+
+  if [[ ! -x "${facebook_publisher}" ]]; then
+    append_report_note "${report_file}" "Facebook publisher not installed at ${facebook_publisher}; skipped."
+    return 0
+  fi
+
+  if [[ ! -f "${queue_file}" ]]; then
+    append_report_note "${report_file}" "No social queue file at ${queue_file}; Facebook publisher skipped."
+    return 0
+  fi
+
+  if "${facebook_publisher}" \
+    --env-file "${ENV_FILE}" \
+    --queue-file "${queue_file}" \
+    --limit "${SEO_AGENT_FACEBOOK_POST_LIMIT:-1}" \
+    >>"${report_file}" 2>&1; then
+    append_report_note "${report_file}" "Facebook publisher checked queue for ${cycle_id}."
+  else
+    append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: Facebook publisher failed for ${cycle_id}; see report output above."
+  fi
 }
 
 maybe_send_owner_notification() {
@@ -665,7 +747,7 @@ publish_cycle_branch() {
       return 0
     fi
 
-    if [[ "${SEO_AGENT_AUTO_MERGE_TO_MASTER:-true}" != "true" ]]; then
+    if [[ "${SEO_AGENT_AUTO_MERGE_TO_MASTER:-false}" != "true" ]]; then
       append_report_note "${report_file}" "Auto-merge disabled; left ${branch} unmerged."
       return 0
     fi
@@ -821,7 +903,7 @@ prepare_git_workspace() {
 run_loop() {
   local interval remaining step trigger_file
 
-  interval="${SEO_AGENT_INTERVAL_SECONDS:-60}"
+  interval="${SEO_AGENT_INTERVAL_SECONDS:-43200}"
   while true; do
     if ! run_codex_cycle; then
       log "SEO distribution cycle failed; continuing after backoff."

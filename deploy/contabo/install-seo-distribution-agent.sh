@@ -36,6 +36,8 @@ ensure_env_default() {
 }
 
 install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-seo-distribution-agent.sh" /usr/local/bin/tachi-seo-distribution-agent
+install -m 0755 "${APP_DIR}/deploy/contabo/publish-facebook-page-post.py" /usr/local/bin/tachi-facebook-page-publisher
+install -m 0755 "${APP_DIR}/deploy/contabo/render-social-image.py" /usr/local/bin/tachi-social-image-renderer
 apt-get update
 apt-get install -y ca-certificates curl git jq python3 ripgrep
 
@@ -43,16 +45,17 @@ install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /opt/tachi-seo-distri
 install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/lib/tachi-seo-distribution-agent
 install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/lib/tachi-seo-distribution-agent/prompts
 install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/lib/tachi-seo-distribution-agent/reports
+install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/lib/tachi-seo-distribution-agent/generated-images
 install -m 0755 -d -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /var/log/tachi-seo-distribution-agent
 
 if [[ ! -f "${ENV_FILE}" ]]; then
   cat >"${ENV_FILE}" <<EOF
 SEO_AGENT_ENABLED=true
 SEO_AGENT_RUN_FOREVER=true
-SEO_AGENT_INTERVAL_SECONDS=60
+SEO_AGENT_INTERVAL_SECONDS=43200
 SEO_AGENT_CODEX_CLI_PATH=codex
-SEO_AGENT_CODEX_MODEL=gpt-5.5
-SEO_AGENT_CODEX_REASONING_EFFORT=low
+SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
+SEO_AGENT_CODEX_REASONING_EFFORT=medium
 SEO_AGENT_CODEX_SEARCH_ENABLED=true
 SEO_AGENT_CODEX_SANDBOX=danger-full-access
 SEO_AGENT_REPO_DIR=${REPO_DIR}
@@ -64,7 +67,7 @@ SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES=true
 SEO_AGENT_GIT_AUTHOR_NAME="Nayovi SEO Distribution Agent"
 SEO_AGENT_GIT_AUTHOR_EMAIL=seo-agent@nayovi.com
 SEO_AGENT_GIT_PUSH_ENABLED=true
-SEO_AGENT_AUTO_MERGE_TO_MASTER=true
+SEO_AGENT_AUTO_MERGE_TO_MASTER=false
 SEO_AGENT_EXTERNAL_POSTING_MODE=draft
 SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED=false
 SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true
@@ -79,6 +82,23 @@ SEO_AGENT_PRODUCTHUNT_TOKEN=
 SEO_AGENT_DEVTO_API_KEY=
 SEO_AGENT_MEDIUM_INTEGRATION_TOKEN=
 SEO_AGENT_YOUTUBE_REFRESH_TOKEN=
+SEO_AGENT_SOCIAL_QUEUE_FILE=/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl
+SEO_AGENT_FACEBOOK_POSTING_MODE=draft
+SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=draft
+SEO_AGENT_FACEBOOK_GRAPH_VERSION=v25.0
+SEO_AGENT_FACEBOOK_PAGE_ID=
+SEO_AGENT_FACEBOOK_PAGE_ACCESS_TOKEN=
+SEO_AGENT_FACEBOOK_APP_ID=
+SEO_AGENT_FACEBOOK_APP_SECRET=
+SEO_AGENT_FACEBOOK_PAGE_INFO_FILE=/var/lib/tachi-seo-distribution-agent/facebook-page-info.json
+SEO_AGENT_FACEBOOK_POST_LIMIT=1
+SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
+SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=false
+SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=false
+SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
+SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
+SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
+SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT=20
 SEO_AGENT_NOTIFY_ENABLED=false
 SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 SEO_AGENT_NOTIFY_ENV_FILE=${APP_DIR}/.env.growth-mail
@@ -97,10 +117,10 @@ EOF
 fi
 
 ensure_env_default SEO_AGENT_RUN_FOREVER true
-ensure_env_default SEO_AGENT_INTERVAL_SECONDS 60
+ensure_env_default SEO_AGENT_INTERVAL_SECONDS 43200
 ensure_env_default SEO_AGENT_CODEX_CLI_PATH codex
-ensure_env_default SEO_AGENT_CODEX_MODEL gpt-5.5
-ensure_env_default SEO_AGENT_CODEX_REASONING_EFFORT low
+ensure_env_default SEO_AGENT_CODEX_MODEL gpt-5.3-codex-spark
+ensure_env_default SEO_AGENT_CODEX_REASONING_EFFORT medium
 ensure_env_default SEO_AGENT_CODEX_SEARCH_ENABLED true
 ensure_env_default SEO_AGENT_CODEX_SANDBOX danger-full-access
 ensure_env_default SEO_AGENT_REPO_DIR "${REPO_DIR}"
@@ -112,7 +132,7 @@ ensure_env_default SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES true
 ensure_env_default SEO_AGENT_GIT_AUTHOR_NAME '"Nayovi SEO Distribution Agent"'
 ensure_env_default SEO_AGENT_GIT_AUTHOR_EMAIL seo-agent@nayovi.com
 ensure_env_default SEO_AGENT_GIT_PUSH_ENABLED true
-ensure_env_default SEO_AGENT_AUTO_MERGE_TO_MASTER true
+ensure_env_default SEO_AGENT_AUTO_MERGE_TO_MASTER false
 ensure_env_default SEO_AGENT_EXTERNAL_POSTING_MODE draft
 ensure_env_default SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED false
 ensure_env_default SEO_AGENT_ACCOUNT_SETUP_PRIORITY true
@@ -127,6 +147,23 @@ ensure_env_default SEO_AGENT_PRODUCTHUNT_TOKEN '""'
 ensure_env_default SEO_AGENT_DEVTO_API_KEY '""'
 ensure_env_default SEO_AGENT_MEDIUM_INTEGRATION_TOKEN '""'
 ensure_env_default SEO_AGENT_YOUTUBE_REFRESH_TOKEN '""'
+ensure_env_default SEO_AGENT_SOCIAL_QUEUE_FILE /var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl
+ensure_env_default SEO_AGENT_FACEBOOK_POSTING_MODE draft
+ensure_env_default SEO_AGENT_FACEBOOK_PAGE_INFO_MODE draft
+ensure_env_default SEO_AGENT_FACEBOOK_GRAPH_VERSION v25.0
+ensure_env_default SEO_AGENT_FACEBOOK_PAGE_ID '""'
+ensure_env_default SEO_AGENT_FACEBOOK_PAGE_ACCESS_TOKEN '""'
+ensure_env_default SEO_AGENT_FACEBOOK_APP_ID '""'
+ensure_env_default SEO_AGENT_FACEBOOK_APP_SECRET '""'
+ensure_env_default SEO_AGENT_FACEBOOK_PAGE_INFO_FILE /var/lib/tachi-seo-distribution-agent/facebook-page-info.json
+ensure_env_default SEO_AGENT_FACEBOOK_POST_LIMIT 1
+ensure_env_default SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT 1
+ensure_env_default SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED false
+ensure_env_default SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED false
+ensure_env_default SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
+ensure_env_default SEO_AGENT_SOCIAL_IMAGE_DIR /var/lib/tachi-seo-distribution-agent/generated-images
+ensure_env_default SEO_AGENT_SOCIAL_IMAGE_REQUIRED true
+ensure_env_default SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT 20
 ensure_env_default SEO_AGENT_NOTIFY_ENABLED false
 ensure_env_default SEO_AGENT_NOTIFY_EMAIL borjiomar38@gmail.com
 ensure_env_default SEO_AGENT_NOTIFY_ENV_FILE "${APP_DIR}/.env.growth-mail"

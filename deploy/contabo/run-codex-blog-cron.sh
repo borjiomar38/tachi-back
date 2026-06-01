@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ENV_FILE="${TACHI_ENV_FILE:-/opt/tachi-back/.env.production}"
-LOCK_FILE="${TACHI_CODEX_BLOG_LOCK_FILE:-/tmp/tachi-back-codex-blog-cron.lock}"
+LOCK_FILE="${TACHI_CODEX_BLOG_LOCK_FILE:-/var/lock/tachi-back-codex-blog-cron.lock}"
 
 read_env_value() {
   local key="$1"

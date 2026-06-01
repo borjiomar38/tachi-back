@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import pathlib
 import smtplib
 import ssl
@@ -13,7 +14,19 @@ from email.utils import formatdate, parseaddr
 from urllib.parse import unquote, urlparse
 
 
-DEFAULT_APP_ENV_FILE = pathlib.Path('/opt/tachi-back/.env.production')
+def default_app_env_file() -> pathlib.Path:
+  configured = os.environ.get('GROWTH_AGENT_OUTREACH_ENV_FILE')
+  if configured:
+    return pathlib.Path(configured)
+
+  growth_mail_env = pathlib.Path('/opt/tachi-back/.env.growth-mail')
+  if growth_mail_env.exists():
+    return growth_mail_env
+
+  return pathlib.Path('/opt/tachi-back/.env.production')
+
+
+DEFAULT_APP_ENV_FILE = default_app_env_file()
 DEFAULT_GROWTH_ENV_FILE = pathlib.Path('/opt/tachi-back/.env.growth-agent')
 DEFAULT_STATE_DIR = pathlib.Path('/var/lib/tachi-growth-agent/outreach')
 OPT_OUT_MARKERS = ('opt out', 'not relevant', 'not interested', 'will not follow up')
