@@ -54,6 +54,15 @@ This file is maintained by the SEO distribution agent.
 
 ## 2026-06-01 Cycle (current pass)
 
+- Added owned SEO asset improvement on `/guides/comic-ocr-translation-checklist`:
+  - Added trial-vs-paid-token decision content block in-page.
+  - Added internal links to `/guides/free-trial-vs-paid-token-plan` and `/pricing`.
+  - Added checklist FAQ structured data with clear, policy-safe claim boundaries.
+- Added new queue/tracker alignment:
+  - `docs/seo-distribution/content-calendar.md` opportunity row for trial-to-token intent.
+  - `docs/seo-distribution/platform-drafts.md` authorized-community response draft.
+  - `docs/seo-distribution/link-assets.md` linkable asset entry for the checklist decision matrix.
+- Added draft social queue refresh (docs + /var/lib path) and new Facebook draft profile file for owner review.
 - Branch check: `seo/distribution-20260601T034159Z` verified at start.
 - Read required files first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md`.
 - Advanced account setup queue before backlink work per `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true`:

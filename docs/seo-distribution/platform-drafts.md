@@ -53,6 +53,23 @@ External platform drafts are for authorized-account posting only. Do not create 
   1. Confirm whether AI Workbench accepts official-source Android workflows with trial/free + paid token model labeling.
   2. Keep no-link-first until category and field compatibility is approved.
 
+### 2026-06-01 New draft: Reddit technical workflow fit response
+
+- Target: `https://www.reddit.com/r/androidapps/`
+- Category: translator/mobile workflow Q&A
+- Audience: users asking about whether to use free trial or paid plans before AI translation setup
+- Rules risk: medium-high
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "Use the checklist first: confirm sample permission, OCR coverage, reading-order quality, and glossary consistency with a non-link trial-vs-token decision summary before linking. I can share the full checklist if this thread is asking for implementation details."
+- Link variant:
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan`
+  - `https://tachiyomiat.com/pricing`
+- Action intent:
+  1. Keep this as a no-link answer draft until official Reddit posting access is approved.
+  2. Use the link variant only when subreddit rules and thread context explicitly allow implementation links.
+
 ## 2026-06-01 Priority draft (best-ready): HackerNoon technical publish fit
 
 - Target: `https://help.hackernoon.com/how-do-i-get-published`

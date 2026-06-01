@@ -2,6 +2,10 @@
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | review path + monetization clarity | comic OCR checklist trial vs paid token plan | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Add a decision block that helps Android users and reviewers choose trial testing first, then recurring token plans, before public sharing or recommendations | Keep one no-link-first and one link-safe variant; cross-link to `/pricing` and `/guides/free-trial-vs-paid-token-plan` |
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
 | draft | trust documentation + launch readiness | Android verification-aware trust matrix, developer policy alignment | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a short subsection that maps app verification signals (unsupported vs owner-approved claims) and safe source-link ladder for APK + trial/token users | Add reviewer-safe claim-control block so external drafts can reference one canonical trust section |
 | draft | creator/publication-ready comparison landing | permission-safe OCR translation claim controls | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide + https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Convert comparison text into a short claim/avoid matrix for media, directory, and developer audiences, including exact no-link first-contact language | Add a copy block with 5 lines (claim, avoid, proof, next stop condition, optional link variant) and reuse in next launch/community drafts |
 

@@ -3,12 +3,41 @@ import { createFileRoute } from '@tanstack/react-router';
 import { publicSeoKeywords } from '@/features/blog/seo';
 import {
   buildPublicAbsoluteUrl,
+  buildPublicFaqStructuredData,
   buildPublicPageHead,
 } from '@/features/public/head';
 import { PageComicOcrChecklist } from '@/features/public/page-ethical-guides';
 
 const checklistStructuredData = () => {
   const url = buildPublicAbsoluteUrl('/guides/comic-ocr-translation-checklist');
+  const faqItems = [
+    {
+      title: 'Does Nayovi host or distribute manga chapters?',
+      description:
+        'No. Nayovi supports OCR and translation workflow on Android for owned or approved samples. It does not host chapters, mirror libraries, or third-party catalogs.',
+    },
+    {
+      title: 'Which content can be reviewed with this checklist?',
+      description:
+        'Use owned material, public-domain works, official previews, creator-provided samples, or explicit rights-holder permission. Skip unauthorized scans, paid chapter pages, and catalog leaks.',
+    },
+    {
+      title: 'Should I use a free trial first?',
+      description:
+        'Yes. For most first-time users and technical evaluators, start with a free trial to validate install, activation, OCR completeness, and permission-safe workflow fit.',
+    },
+    {
+      title: 'When should a reader move to paid token plans?',
+      description:
+        'Only after repeat, approved use indicates a recurring workflow need for hosted OCR and translation support on Android.',
+    },
+    {
+      title: 'Can this page be used without sharing product links?',
+      description:
+        'Yes. Share the checklist and quality gates first, then add official links only when the audience asks for implementation details.',
+    },
+  ] as const;
+
   const steps = [
     {
       name: 'Confirm sample permission',
@@ -124,6 +153,10 @@ const checklistStructuredData = () => {
         description: check.description,
       })),
     },
+    ...buildPublicFaqStructuredData(
+      '/guides/comic-ocr-translation-checklist',
+      faqItems
+    ),
   ];
 };
 

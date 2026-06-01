@@ -1556,6 +1556,24 @@ const checklistReviewerHandoffRows = [
   },
 ] as const;
 
+const trialDecisionRows = [
+  {
+    label: 'Start with free trial',
+    detail:
+      'Use the free trial to validate install quality, OCR coverage, and human-review workflow before any repeat reading commitment.',
+  },
+  {
+    label: 'Move to paid token plan when repeat use is clear',
+    detail:
+      'Choose monthly token plans when testing shows sustained usage, not for one-off sample checks.',
+  },
+  {
+    label: 'Request review or pilot code for public publication',
+    detail:
+      'Editors, directories, creator teams, and affiliates should request dedicated reviewer access before public recommendations.',
+  },
+];
+
 const sourceBoundaries = [
   {
     title: 'Allowed sources',
@@ -1777,6 +1795,28 @@ export const PageComicOcrChecklist = () => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Trial decision path"
+        title="Which route to choose for this workflow"
+        description="Help readers choose between test scope and paid usage with a clear, non-promotional decision grid."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {trialDecisionRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
         eyebrow="Use the asset"
         title="Share it without turning it into a sales pitch"
         description="For maintainers, newsletter editors, moderators, and localization teams, lead with the checklist and disclose Nayovi affiliation only where relevant."
@@ -1803,6 +1843,18 @@ export const PageComicOcrChecklist = () => {
             className={buttonVariants({ variant: 'ghost', size: 'lg' })}
           >
             Request review access
+          </a>
+          <a
+            href="/guides/free-trial-vs-paid-token-plan"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Trial vs paid plan
+          </a>
+          <a
+            href="/pricing"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            Pricing
           </a>
         </div>
       </PublicSection>
