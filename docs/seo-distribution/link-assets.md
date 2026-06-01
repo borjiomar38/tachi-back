@@ -5,12 +5,19 @@
 | Trust-matrix founder-ready pitch block | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | Builders, founder audiences, creator communities, publishers | Adds a founder-facing no-link + optional link variant section for launch transparency, permission boundaries, and support model; useful before Indie Hackers/LinkedIn posting | draft | Keep draft-only until founder account is configured and launch policy is approved |
 | AppBrain submission fit packet | `docs/seo-distribution/platform-drafts.md` | Android app discoverability editors and review-oriented surfaces | A repeatable, non-promotional packet to answer AppBrain featured-app fit and metadata compatibility before submitting any listing; keeps Android APK trust and policy language source-first with no mirror claims. | draft | Keep link variant gated behind official developer-identity proof and package/signing language confirmation. |
 | Direct Product Hunt launch packet (owner-owned) | `docs/seo-distribution/official-launch-profile-packet.md` + `docs/seo-distribution/platform-drafts.md` | Product Hunt launch community, startup founders, investors | Ready-to-use launch-ready but no-link-first profile and packet with no-upvote-control and verification-safe language | draft | Link variant only when official maker profile, token scope, and launch approval are in place |
+| HackerNoon technical publication packet | `https://hackernoon.com/publish/` + `docs/seo-distribution/platform-drafts.md` | AI builders, Android publishers, technical founders | A non-promotional value-first technical publication draft and channel rules checklist to test eligibility before public writing access and tags are ready | draft | Keep no-link-first draft-only until owner account exists; add link variant only after editorial policy and tagging fit is confirmed |
+| Android app-review lane review packet | `https://apphunt.org/submit-your-android-app-for-review` + `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` | Android developers and app-review communities | Source-first review lane prep for possible app discoverability without conversion-first claims or unsupported verification language | draft | Keep channel watch-first until owner approves package/support/screenshot policy and review submission timing |
 
 # Nayovi Linkable Assets
 
 This file is maintained by the SEO distribution agent.
 
 ## 2026-06-01 Linkable Assets Added
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Trust-first directory onboarding block | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | App editors, AI directories, creator-platform contacts | Adds a reusable claim-boundary ladder (what to state first, what to omit) and link-gated follow-up sequence for non-promotional outreach | draft | Keep as no-link-first; add links only after target confirms citation path and source-link fields |
+| Android verification-aware FAQ ladder | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | Android developer/press audiences, investors, publishers | Supports policy-aware response copy around sideload verification context, official-source limits, and proof order before link insertion | draft | Use only when target allows technical context and asks for verification-fit requirements |
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |
 | --- | --- | --- | --- | --- | --- |
