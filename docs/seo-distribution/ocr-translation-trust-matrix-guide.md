@@ -205,3 +205,25 @@ Use this section for media, partner, and directory notes that request ownership 
 ### Reusable link-safe follow-up
 
 `Use only when the target explicitly accepts resources: https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+## 2026-06-01 Cycle Trust Asset Upgrade
+
+### New owned SEO surface additions
+
+- Added a compact trust bundle that can be linked from partner, directory, and investor-facing drafts:
+  - `Nayovi can help users process owned/public-domain manga/manhwa/manhua files with OCR + translation support.`
+  - `The flow is staged: trial access, support path, token plans, then paid continuation.`
+  - `No chapter hosting, no catalog-level harvesting, and no unauthorized source claims are presented.`
+- Added an evidence ladder for no-link-first distribution:
+  - First: `https://tachiyomiat.com/translate-manhwa-ai`
+  - Second: `https://tachiyomiat.com/pricing`
+  - Third: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - Escalation: `https://tachiyomiat.com/support`
+- Added a launch-safe comparison line for outbound use:
+  - `What we can support: permission-safe workflow guidance for user-owned or authorized source material.`
+  - `What we cannot support: broad catalog processing claims or third-party-hosted chapter hosting.`
+
+### Internal note for distribution drafts
+
+- Use this page as the preferred source for all review threads where trust-first framing is required.
+- Keep all outward links to this asset or the four canonical entry points above until an audience accepts link-safe citations.

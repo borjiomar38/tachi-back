@@ -300,3 +300,11 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | Reddit translator QA template (no-link-first) | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | localization communities, translators, Reddit creators | Enables compliant first-response posture in creator forums where direct links are often off-topic while maintaining factual referral standards | draft | Keep as no-link-first template for r/translator and similar translation communities; attach link only when rule-approved |
 | LinkedIn/Crowdfunding trust profile checklist | `docs/seo-distribution/account-setup.md` | investors, operators, founders, B2B partners | Standard checklist for official profile claims (legal, support, source links, no-mirror policy, paid token framing) before any external trust surface action | draft | Finalize exact profile fields and copy after owner manual account claim on LinkedIn/Crunchbase |
+
+## 2026-06-01 Linkable assets and formats
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| OCR trust matrix guide (owned, high-trust) | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | founders, reviewers, creators, directories, technical communities | Demonstrates claims-control, permission boundary, comparison matrix, and what not-to-claim; useful for no-link-to-link escalation in outreach | draft | Update with final section headings/metadata once owner approves latest feature status |
+| Product page deep-link pack | `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support` | directories, creator communities, investors, app review contacts | Standardized canonical packet for trust-first outreach that prevents overclaim and avoids mirror-language | draft | Keep as reusable source bundle with 3-part anchor ladder and strict moderation-safe posting policy |
+| Creator compliance FAQ add-on | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | creators, translators, localization readers | Supports policy-safe translation quality discussion without chapter-hosting claims | draft | Reuse this asset as the default no-link-first evidence anchor before any public link insertion |
