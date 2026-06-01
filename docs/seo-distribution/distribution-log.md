@@ -1,3 +1,23 @@
+## 2026-06-01 Cycle (active branch run)
+
+- Branch check: `seo/distribution-20260601T055112Z` verified at start.
+- Reviewed required inputs first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all `docs/seo-distribution/*.md` trackers.
+- Advanced account setup queue per `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true`:
+  - Added/advanced `Google Search Console + Bing Webmaster` setup packet with explicit owner-verify + approval gating.
+  - Added/advanced `Product Hunt maker/company profile` setup packet with launch policy and no-spam controls.
+  - Added/advanced `Press/media kit source-of-truth page` setup row as `setup_packet_prepared_owner_action_required`.
+- Added three new 2026-06-01 authority discovery rows across different categories:
+  - AppBrain product intelligence fit (`high`, Android app distribution)
+  - ToolIndex AI submit workflow (`high`, AI directory)
+  - Indie Hackers founder readiness (`medium`, founder/build-in-public)
+- Updated `docs/seo-distribution/platform-drafts.md` with one best-ready draft pair for ToolIndex and an owner-reviewed Indie Hackers no-link variant.
+- Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, `docs/seo-distribution/authority-opportunities.md`, and `docs/seo-distribution/account-setup.md` for aligned queue state.
+- `docs/growth/backlink-prospects.csv` updated with 2026-06-01 rows and draft/watch states for ToolIndex, AppBrain, and Indie Hackers opportunities.
+- `externalPostingMode` remained `draft` and no external posting, account signup, CAPTCHA flow, directory submission, or API posting action was attempted.
+- Next actions:
+  - Owner review and manual approval of Product Hunt + webmaster assets.
+  - Keep no-link-first drafts parked in `draft` until official account credentials and policy approvals are confirmed.
+
 # Nayovi SEO Distribution Log
 
 This file is maintained by the SEO distribution agent.

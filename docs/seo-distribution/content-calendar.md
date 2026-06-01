@@ -1,3 +1,9 @@
+## 2026-06-01 Cycle Additions (owned content + trust)
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | startup trust and founder signal | OCR manga translation founder workflow, permission-first translation utilities | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a compact founder + launch checklist segment (what to claim vs cannot claim, trial-to-token plan, official source links) to make this guide linkable from build-in-public profiles | Expand section with owned verification notes and a no-link-first draft for founder/community use |
+
 # Nayovi SEO Content Calendar
 
 This file is maintained by the SEO distribution agent.

@@ -1,3 +1,11 @@
+## 2026-06-01 Discovery Additions (web-refresh)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | Android application directory | AppBrain product intelligence/visibility | https://www.appbrain.com | Strong topical fit if a non-Play metadata workflow path is accepted and source-link claims can remain accurate without unsupported trust language | Listing-eligibility check + requirement review | OWNER_ACTION_REQUIRED | medium | Confirm independent APK metadata or listing pathways that accept source-first fields before any submission; keep no-link draft only
+| draft | high | AI directory | ToolIndex AI submit workflow | https://www.toolindex.ai/submit/ | Strong fit for free-trial + paid-token OCR workflow if only direct website URLs and no prohibited link policy are required | Eligibility check + pricing category compatibility check + no-upvote policy confirmation | AUTHORIZED_ACCOUNT_REQUIRED or OWNER_ACTION_REQUIRED (manual path only) | medium | Keep draft-first; proceed with link variant only after pricing/categories and affiliate/link policy are confirmed
+| draft | high | Founder/build-in-public community | Indie Hackers founder startup notes | https://www.indiehackers.com/ | Potentially useful for credibility and trust posts focused on translation policy, verification, and paid-token rollouts | Founder-profile draft + value-first topic plan | OWNER_ACTION_REQUIRED | medium | Keep no-link-first until founder account and content-policy are approved
+
 # Nayovi Authority Opportunities
 
 This file is maintained by the SEO distribution agent.
