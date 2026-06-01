@@ -37,6 +37,7 @@ ensure_env_default() {
 
 install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-seo-distribution-agent.sh" /usr/local/bin/tachi-seo-distribution-agent
 install -m 0755 "${APP_DIR}/deploy/contabo/run-seo-distribution-cron.sh" /usr/local/bin/tachi-seo-distribution-cron
+install -m 0755 "${APP_DIR}/deploy/contabo/generate-codex-image.sh" /usr/local/bin/tachi-codex-image-generator
 install -m 0755 "${APP_DIR}/deploy/contabo/publish-facebook-page-post.py" /usr/local/bin/tachi-facebook-page-publisher
 install -m 0755 "${APP_DIR}/deploy/contabo/render-social-image.py" /usr/local/bin/tachi-social-image-renderer
 apt-get update
@@ -99,7 +100,7 @@ SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=false
 SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
-SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=
+SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
 SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT=20
 SEO_AGENT_NOTIFY_ENABLED=false
 SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
@@ -165,7 +166,7 @@ ensure_env_default SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED false
 ensure_env_default SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_DIR /var/lib/tachi-seo-distribution-agent/generated-images
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_REQUIRED true
-ensure_env_default SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH '""'
+ensure_env_default SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH /usr/local/bin/tachi-social-image-renderer
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT 20
 ensure_env_default SEO_AGENT_NOTIFY_ENABLED false
 ensure_env_default SEO_AGENT_NOTIFY_EMAIL borjiomar38@gmail.com

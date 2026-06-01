@@ -6,7 +6,7 @@ import {
   CodexBlogDuplicateTopicError,
   publishCodexBlogArticleDraft,
 } from '@/server/blog/codex';
-import { zCodexBlogArticleDraft } from '@/server/blog/codex-draft';
+import { zCodexBlogArticlePublishPayload } from '@/server/blog/codex-draft';
 import {
   buildApiErrorResponse,
   buildApiOkResponse,
@@ -33,14 +33,15 @@ export const Route = createFileRoute('/api/cron/publish-codex-blog-article')({
         }
 
         try {
-          const rawDraft = await request.json();
-          const draft = zCodexBlogArticleDraft.parse(rawDraft);
+          const rawPayload = await request.json();
+          const payload = zCodexBlogArticlePublishPayload.parse(rawPayload);
           const article = await publishCodexBlogArticleDraft({
             codexModel: request.headers.get('x-codex-model'),
             codexReasoningEffort: request.headers.get(
               'x-codex-reasoning-effort'
             ),
-            draft,
+            draft: payload,
+            heroImage: payload.heroImage,
           });
 
           return buildApiOkResponse(

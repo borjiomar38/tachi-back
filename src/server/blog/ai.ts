@@ -34,7 +34,7 @@ const zGeneratedBlogArticle = z.object({
   title: z.string().min(18).max(86),
 });
 
-type BlogGenerationProvider = 'anthropic' | 'gemini' | 'openai';
+type BlogGenerationProvider = 'anthropic' | 'gemini';
 
 export interface GeneratedBlogArticleDraft {
   body: z.infer<typeof zBlogArticleBody>;
@@ -92,11 +92,12 @@ export async function generateBlogArticleDraft(input: {
 function resolveBlogGenerationProvider(): BlogGenerationProvider {
   const preferred =
     envServer.BLOG_GENERATION_PROVIDER ??
-    envServer.TRANSLATION_PROVIDER_PRIMARY;
+    (envServer.TRANSLATION_PROVIDER_PRIMARY === 'anthropic'
+      ? 'anthropic'
+      : 'gemini');
   const candidates: BlogGenerationProvider[] = [
     preferred,
     'gemini',
-    'openai',
     'anthropic',
   ];
 
@@ -104,7 +105,6 @@ function resolveBlogGenerationProvider(): BlogGenerationProvider {
     const hasKeyByProvider: Record<BlogGenerationProvider, boolean> = {
       anthropic: Boolean(envServer.ANTHROPIC_API_KEY),
       gemini: Boolean(envServer.GEMINI_API_KEY),
-      openai: Boolean(envServer.OPENAI_API_KEY),
     };
 
     return hasKeyByProvider[candidate];
@@ -519,8 +519,6 @@ async function generateJsonWithProvider(input: {
       generateJsonWithAnthropic(input.prompt, modelName, input.fetchFn),
     gemini: () =>
       generateJsonWithGemini(input.prompt, modelName, input.fetchFn),
-    openai: () =>
-      generateJsonWithOpenAI(input.prompt, modelName, input.fetchFn),
   };
 
   return {
@@ -582,61 +580,6 @@ async function generateJsonWithGemini(
     ProviderType.gemini,
     text,
     'Gemini returned invalid blog article JSON'
-  );
-}
-
-async function generateJsonWithOpenAI(
-  prompt: string,
-  modelName: string,
-  fetchFn?: typeof fetch
-) {
-  const apiKey = envServer.OPENAI_API_KEY;
-  if (!apiKey) {
-    throw createProviderConfigError(
-      ProviderType.openai,
-      'OPENAI_API_KEY is not configured.'
-    );
-  }
-
-  const response = await fetchTextWithTimeout({
-    body: JSON.stringify({
-      max_completion_tokens: 4096,
-      messages: [
-        {
-          content:
-            'You are a precise editorial JSON API for ethical manhwa SEO content. Return only valid JSON.',
-          role: 'system',
-        },
-        {
-          content: prompt,
-          role: 'user',
-        },
-      ],
-      model: modelName,
-      response_format: {
-        type: 'json_object',
-      },
-    }),
-    fetchFn,
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    provider: ProviderType.openai,
-    timeoutMs: envServer.PROVIDER_REQUEST_TIMEOUT_MS,
-    url: 'https://api.openai.com/v1/chat/completions',
-  });
-  const json = parseJsonResponse<Record<string, unknown>>(
-    ProviderType.openai,
-    response.text,
-    'OpenAI returned malformed JSON'
-  );
-  const text = extractOpenAIText(json);
-
-  return parseJsonObjectText(
-    ProviderType.openai,
-    text,
-    'OpenAI returned invalid blog article JSON'
   );
 }
 
@@ -715,19 +658,6 @@ function extractGeminiText(json: Record<string, unknown>) {
     .join('\n');
 }
 
-function extractOpenAIText(json: Record<string, unknown>) {
-  const choices = Array.isArray(json.choices) ? json.choices : [];
-  const choice = choices[0];
-  const message =
-    choice && typeof choice === 'object' && 'message' in choice
-      ? choice.message
-      : null;
-
-  return message && typeof message === 'object' && 'content' in message
-    ? String(message.content ?? '')
-    : '';
-}
-
 function extractAnthropicText(json: Record<string, unknown>) {
   const contentBlocks = Array.isArray(json.content) ? json.content : [];
 
@@ -752,7 +682,6 @@ function resolveModelName(provider: BlogGenerationProvider) {
   const modelByProvider: Record<BlogGenerationProvider, string> = {
     anthropic: envServer.ANTHROPIC_TRANSLATION_MODEL,
     gemini: envServer.GEMINI_TRANSLATION_MODEL,
-    openai: envServer.OPENAI_TRANSLATION_MODEL,
   };
 
   return modelByProvider[provider];
@@ -762,7 +691,6 @@ function mapGenerationProvider(provider: BlogGenerationProvider) {
   const providerTypeByProvider: Record<BlogGenerationProvider, ProviderType> = {
     anthropic: ProviderType.anthropic,
     gemini: ProviderType.gemini,
-    openai: ProviderType.openai,
   };
 
   return providerTypeByProvider[provider];

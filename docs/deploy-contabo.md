@@ -103,10 +103,12 @@ Expected: HTTP `401` with `{"error":{"code":"invalid_session"},"ok":false}`.
 
 Vercel currently runs `/api/cron/generate-blog-article` daily. On Contabo,
 prefer the Codex CLI cron so the host asks Codex to research a current topic,
-then lets the app validate the JSON draft with Zod, reject duplicate titles from
-the database, generate the hero image, and publish.
+generate a Codex CLI image, then lets the app validate the JSON draft with Zod,
+reject duplicate titles from the database, upload the provided hero image, and
+publish. The backend must not call OpenAI image APIs for blog heroes.
 
 ```bash
+sudo install -m 0755 deploy/contabo/generate-codex-image.sh /usr/local/bin/tachi-codex-image-generator
 sudo install -m 0755 deploy/contabo/run-codex-blog-cron.sh /usr/local/bin/tachi-back-codex-blog-cron
 sudo crontab -e
 ```
@@ -125,6 +127,9 @@ BLOG_CODEX_MODEL=gpt-5.5
 BLOG_CODEX_REASONING_EFFORT=xhigh
 BLOG_CODEX_SEARCH_ENABLED=true
 BLOG_CODEX_CLI_PATH=codex
+BLOG_CODEX_IMAGE_GENERATION_ENABLED=true
+BLOG_CODEX_IMAGE_REQUIRED=true
+BLOG_CODEX_IMAGE_SCRIPT_PATH=/usr/local/bin/tachi-codex-image-generator
 ```
 
 The old curl-only script remains available as `/usr/local/bin/tachi-back-blog-cron`
@@ -177,7 +182,7 @@ SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
 SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
-SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=
+SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
 SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 SEO_AGENT_NOTIFY_ENV_FILE=/opt/tachi-back/.env.growth-mail
 ```
@@ -246,7 +251,7 @@ SEO_AGENT_FACEBOOK_POSTING_MODE=publish
 SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true
 SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
-SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=
+SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
 ```
 
 In autonomous mode, the agent may create queue items with
@@ -257,13 +262,16 @@ one reader question, and a final short CTA to `https://nayovi.com/download`. It
 must avoid internal SEO or developer language such as checklists, metadata,
 schema, backlink work, or “no-link-first”.
 
-The local `/usr/local/bin/tachi-social-image-renderer` placeholder is disabled
-by default with `SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=` because it is not good
-enough for auto-published manhwa poster posts. The publisher does not call
-OpenAI image APIs and must not use `OPENAI_API_KEY`; that key is reserved for
-Tachiback translation runtime only. Visual concepts must avoid copyrighted
-characters, manga panels, third-party logos, phone/app UI, fake UI screenshots,
-readable text, sexualized minors, and unsupported claims.
+The local `/usr/local/bin/tachi-social-image-renderer` calls
+`/usr/local/bin/tachi-codex-image-generator`, which in turn invokes Codex CLI and
+requires a real built-in imagegen PNG under `~/.codex/generated_images`. It does
+not call OpenAI image APIs and must not use `OPENAI_API_KEY`; that key is
+reserved for Tachiback translation runtime only. If the Codex CLI runtime does
+not expose built-in `image_gen`, the renderer reports `IMAGEGEN_TOOL_UNAVAILABLE`
+and leaves the queue item unpublishable instead of creating a weak placeholder.
+Visual concepts must avoid copyrighted characters, manga panels, third-party
+logos, phone/app UI, fake UI screenshots, readable text, sexualized minors, and
+unsupported claims.
 
 The publisher reads JSONL entries from the configured
 `SEO_AGENT_SOCIAL_QUEUE_FILE`; production uses

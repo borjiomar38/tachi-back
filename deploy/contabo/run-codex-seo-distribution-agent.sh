@@ -379,7 +379,7 @@ Hard constraints:
 - For Facebook Page info updates, if SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=true and SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=sync, you may create status=auto_sync changes for truthful official Page profile fields. Otherwise create only status=draft or status=owner_review_required changes.
 - Do not run Vercel production deploy commands.
 - Do not force-push. Do not print secrets. Do not commit env files, passwords, tokens, SSH keys, cookies, or generated credential files.
-- Do not use OPENAI_API_KEY, SEO_AGENT_OPENAI_API_KEY, or direct OpenAI image-generation API calls for social images or social posts. The local placeholder renderer is disabled by default and is not acceptable for auto-published Facebook story posters.
+- Do not use OPENAI_API_KEY, SEO_AGENT_OPENAI_API_KEY, or direct OpenAI image-generation API calls for social images or social posts. Social images must be generated through the Codex CLI image renderer. If Codex CLI imagegen is unavailable, keep posts in draft/owner_review_required and report IMAGEGEN_TOOL_UNAVAILABLE instead of making placeholders.
 - Credentials must never be written to docs, reports, Git, screenshots, email summaries, or backoffice fields. Store only non-secret credential references such as SEO_AGENT_LINKEDIN_ACCESS_TOKEN; actual values belong in /opt/tachi-back/.env.seo-distribution-agent with chmod 600 or another approved secret store.
 - Keep changes aligned with existing repo conventions.
 

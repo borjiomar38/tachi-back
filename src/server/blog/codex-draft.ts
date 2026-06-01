@@ -32,7 +32,25 @@ export const zCodexBlogArticleDraft = z
   })
   .strict();
 
+export const zCodexBlogHeroImagePayload = z
+  .object({
+    contentType: z.enum(['image/png', 'image/jpeg', 'image/webp']),
+    dataBase64: z.string().min(1_000).max(18_000_000),
+    generatedBy: z.literal('codex-cli'),
+    prompt: z.string().min(80).max(2_000),
+  })
+  .strict();
+
+export const zCodexBlogArticlePublishPayload = zCodexBlogArticleDraft
+  .extend({
+    heroImage: zCodexBlogHeroImagePayload.optional(),
+  })
+  .strict();
+
 export type CodexBlogArticleDraft = z.infer<typeof zCodexBlogArticleDraft>;
+export type CodexBlogArticlePublishPayload = z.infer<
+  typeof zCodexBlogArticlePublishPayload
+>;
 
 export interface ExistingBlogTopic {
   manhwaTitle: string;

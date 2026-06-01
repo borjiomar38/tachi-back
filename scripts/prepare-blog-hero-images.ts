@@ -1,7 +1,11 @@
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+
 import {
   buildBlogTopicHeroImageAlt,
   buildBlogTopicHeroImagePrompt,
-  generatePrebuiltBlogHeroImage,
+  buildBlogTopicHeroImageSlug,
+  uploadPrebuiltBlogHeroImage,
 } from '@/server/blog/images';
 import {
   combineBlogImageReviews,
@@ -17,6 +21,14 @@ import { db } from '@/server/db';
 const force = process.argv.includes('--force');
 const nextCountArg = process.argv.find((arg) => arg.startsWith('--next='));
 const nextCount = nextCountArg ? Number(nextCountArg.split('=')[1]) : 10;
+const imageDirArg = process.argv.find((arg) => arg.startsWith('--image-dir='));
+const imageDir = imageDirArg?.split('=').slice(1).join('=');
+
+if (!imageDir) {
+  throw new Error(
+    'Blog hero image preparation now uploads Codex CLI images only. Pass --image-dir=/path/to/codex-generated-images.'
+  );
+}
 
 function dateKey(date: Date) {
   return date.toISOString().slice(0, 10);
@@ -160,8 +172,13 @@ for (const topic of topicMap.values()) {
     );
   }
 
-  const image = await generatePrebuiltBlogHeroImage({
+  const imagePath = path.join(
+    imageDir,
+    `${buildBlogTopicHeroImageSlug(topic)}.png`
+  );
+  const image = await uploadPrebuiltBlogHeroImage({
     force,
+    image: await readFile(imagePath),
     topic,
   });
 

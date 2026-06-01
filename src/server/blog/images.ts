@@ -1,29 +1,12 @@
 import { headObject, putObject } from '@better-upload/server/helpers';
 import sharp from 'sharp';
-import { z } from 'zod';
 
 import { envServer } from '@/env/server';
 import { runGeneratedHeroImageAssetReviewAgent } from '@/server/blog/review-agents';
 import { BlogGenerationTopic } from '@/server/blog/topics';
 import { ProviderType } from '@/server/db/generated/client';
 import { createProviderConfigError } from '@/server/provider-gateway/errors';
-import {
-  fetchTextWithTimeout,
-  parseJsonResponse,
-  retryProviderCall,
-} from '@/server/provider-gateway/utils';
 import { objectStorageBuckets, uploadClient } from '@/server/s3';
-
-const zOpenAIImageResponse = z.object({
-  data: z
-    .array(
-      z.object({
-        b64_json: z.string().optional(),
-        url: z.url().optional(),
-      })
-    )
-    .min(1),
-});
 
 export interface GeneratedBlogHeroImage {
   heroImageObjectKey: string;
@@ -34,51 +17,40 @@ export interface BlogHeroImageAsset extends GeneratedBlogHeroImage {
   slug: string;
 }
 
-export async function generateBlogHeroImage(input: {
-  fetchFn?: typeof fetch;
-  imagePrompt: string;
+export async function uploadGeneratedBlogHeroImage(input: {
+  image: Buffer;
+  metadata?: Record<string, string>;
   slug: string;
 }): Promise<GeneratedBlogHeroImage> {
-  if (!envServer.BLOG_IMAGE_GENERATION_ENABLED) {
+  assertBlogImageGenerationEnabled();
+  const publicBaseUrl = resolvePublicAssetBaseUrl();
+  const image = await normalizeGeneratedImage(input.image);
+  const assetReview = await runGeneratedHeroImageAssetReviewAgent({
+    image,
+  });
+
+  if (!assetReview.passed) {
     throw createProviderConfigError(
       ProviderType.internal,
-      'BLOG_IMAGE_GENERATION_ENABLED is false.'
+      `Codex CLI hero image failed asset review: ${assetReview.notes.join(' ')}`
     );
   }
 
-  if (!envServer.OPENAI_API_KEY) {
-    throw createProviderConfigError(
-      ProviderType.openai,
-      'OPENAI_API_KEY is required for blog hero image generation.'
-    );
-  }
+  const objectKey = buildBlogHeroImageObjectKey(input.slug);
 
-  const publicBaseUrl = resolvePublicAssetBaseUrl();
+  await putObject(uploadClient, {
+    body: bufferToBlob(image, 'image/png'),
+    bucket: objectStorageBuckets.legacyPublic,
+    cacheControl: 'public, max-age=31536000, immutable',
+    contentType: 'image/png',
+    key: objectKey,
+    metadata: input.metadata,
+  });
 
-  return await retryProviderCall(
-    async () => {
-      const image = await requestOpenAIImage({
-        fetchFn: input.fetchFn,
-        imagePrompt: input.imagePrompt,
-      });
-      const objectKey = buildBlogHeroImageObjectKey(input.slug);
-
-      await putObject(uploadClient, {
-        body: bufferToBlob(image.body, image.contentType),
-        bucket: objectStorageBuckets.legacyPublic,
-        contentType: image.contentType,
-        key: objectKey,
-      });
-
-      return {
-        heroImageObjectKey: objectKey,
-        heroImageUrl: buildPublicObjectUrl(publicBaseUrl, objectKey),
-      };
-    },
-    {
-      maxAttempts: envServer.PROVIDER_RETRY_MAX_ATTEMPTS,
-    }
-  );
+  return {
+    heroImageObjectKey: objectKey,
+    heroImageUrl: buildPublicObjectUrl(publicBaseUrl, objectKey),
+  };
 }
 
 export async function findPrebuiltBlogHeroImage(input: {
@@ -103,9 +75,9 @@ export async function findPrebuiltBlogHeroImage(input: {
   };
 }
 
-export async function generatePrebuiltBlogHeroImage(input: {
-  fetchFn?: typeof fetch;
+export async function uploadPrebuiltBlogHeroImage(input: {
   force?: boolean;
+  image: Buffer;
   topic: BlogGenerationTopic;
 }): Promise<BlogHeroImageAsset> {
   const slug = buildBlogTopicHeroImageSlug(input.topic);
@@ -121,29 +93,27 @@ export async function generatePrebuiltBlogHeroImage(input: {
     }
   }
 
-  const image = await requestOpenAIImage({
-    fetchFn: input.fetchFn,
-    imagePrompt: buildBlogTopicHeroImagePrompt(input.topic),
-  });
+  const image = await normalizeGeneratedImage(input.image);
   const assetReview = await runGeneratedHeroImageAssetReviewAgent({
-    image: image.body,
+    image,
   });
 
   if (!assetReview.passed) {
     throw createProviderConfigError(
-      ProviderType.openai,
-      `Generated image failed hero asset review: ${assetReview.notes.join(' ')}`
+      ProviderType.internal,
+      `Codex CLI prebuilt image failed hero asset review: ${assetReview.notes.join(' ')}`
     );
   }
 
   await putObject(uploadClient, {
-    body: bufferToBlob(image.body, image.contentType),
+    body: bufferToBlob(image, 'image/png'),
     bucket: objectStorageBuckets.legacyPublic,
     cacheControl: 'public, max-age=31536000, immutable',
-    contentType: image.contentType,
+    contentType: 'image/png',
     key: objectKey,
     metadata: {
       'blog-image-alt': buildBlogTopicHeroImageAlt(input.topic),
+      'blog-image-generated-by': 'codex-cli',
       'blog-search-intent': input.topic.searchIntent,
       'blog-topic': input.topic.manhwaTitle,
       'blog-type': input.topic.manhwaType,
@@ -155,98 +125,6 @@ export async function generatePrebuiltBlogHeroImage(input: {
     heroImageUrl: buildPublicObjectUrl(resolvePublicAssetBaseUrl(), objectKey),
     slug,
   };
-}
-
-async function requestOpenAIImage(input: {
-  fetchFn?: typeof fetch;
-  imagePrompt: string;
-}) {
-  const response = await fetchTextWithTimeout({
-    body: JSON.stringify({
-      model: envServer.BLOG_IMAGE_GENERATION_MODEL,
-      n: 1,
-      prompt: input.imagePrompt,
-      quality: envServer.BLOG_IMAGE_GENERATION_QUALITY,
-      size: envServer.BLOG_IMAGE_GENERATION_SIZE,
-    }),
-    fetchFn: input.fetchFn,
-    headers: {
-      Authorization: `Bearer ${envServer.OPENAI_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    provider: ProviderType.openai,
-    timeoutMs: envServer.PROVIDER_REQUEST_TIMEOUT_MS,
-    url: 'https://api.openai.com/v1/images/generations',
-  });
-  const parsed = zOpenAIImageResponse.parse(
-    parseJsonResponse<Record<string, unknown>>(
-      ProviderType.openai,
-      response.text,
-      'OpenAI returned malformed image JSON'
-    )
-  );
-  const generatedImage = parsed.data[0];
-
-  if (!generatedImage) {
-    throw createProviderConfigError(
-      ProviderType.openai,
-      'OpenAI image generation returned an empty image list.'
-    );
-  }
-
-  if (generatedImage.b64_json) {
-    return {
-      body: await normalizeGeneratedImage(
-        Buffer.from(generatedImage.b64_json, 'base64')
-      ),
-      contentType: 'image/png',
-    };
-  }
-
-  if (generatedImage.url) {
-    return await fetchGeneratedImageUrl({
-      fetchFn: input.fetchFn,
-      url: generatedImage.url,
-    });
-  }
-
-  throw createProviderConfigError(
-    ProviderType.openai,
-    'OpenAI image generation did not return an image payload.'
-  );
-}
-
-async function fetchGeneratedImageUrl(input: {
-  fetchFn?: typeof fetch;
-  url: string;
-}) {
-  const controller = new AbortController();
-  const timeout = setTimeout(
-    () => controller.abort(),
-    envServer.PROVIDER_REQUEST_TIMEOUT_MS
-  );
-
-  try {
-    const response = await (input.fetchFn ?? fetch)(input.url, {
-      signal: controller.signal,
-    });
-
-    if (!response.ok) {
-      throw createProviderConfigError(
-        ProviderType.openai,
-        `Failed to download generated image: ${response.status}.`
-      );
-    }
-
-    return {
-      body: await normalizeGeneratedImage(
-        Buffer.from(await response.arrayBuffer())
-      ),
-      contentType: response.headers.get('content-type') ?? 'image/png',
-    };
-  } finally {
-    clearTimeout(timeout);
-  }
 }
 
 export function buildBlogTopicHeroImageAlt(topic: BlogGenerationTopic) {
@@ -302,17 +180,24 @@ function resolvePublicAssetBaseUrl() {
 }
 
 async function normalizeGeneratedImage(image: Buffer) {
-  const metadata = await sharp(image).metadata();
+  const createPipeline = () =>
+    sharp(image, {
+      failOn: 'none',
+    }).rotate();
+  const metadata = await createPipeline().metadata();
 
   if (!metadata.width || !metadata.height) {
-    return image;
+    throw createProviderConfigError(
+      ProviderType.internal,
+      'Codex CLI hero image has unreadable dimensions.'
+    );
   }
 
   if (metadata.width >= 1400 && metadata.width / metadata.height >= 1.4) {
-    return image;
+    return await createPipeline().png().toBuffer();
   }
 
-  return await sharp(image)
+  return await createPipeline()
     .resize({
       fit: 'cover',
       height: 1024,
@@ -321,6 +206,15 @@ async function normalizeGeneratedImage(image: Buffer) {
     })
     .png()
     .toBuffer();
+}
+
+function assertBlogImageGenerationEnabled() {
+  if (!envServer.BLOG_IMAGE_GENERATION_ENABLED) {
+    throw createProviderConfigError(
+      ProviderType.internal,
+      'BLOG_IMAGE_GENERATION_ENABLED is false.'
+    );
+  }
 }
 
 function getTopicVisualHint(title: string) {

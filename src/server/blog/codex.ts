@@ -10,7 +10,7 @@ import {
 import {
   buildBlogTopicHeroImageAlt,
   buildBlogTopicHeroImagePrompt,
-  generateBlogHeroImage,
+  uploadGeneratedBlogHeroImage,
 } from '@/server/blog/images';
 import {
   combineBlogImageReviews,
@@ -68,6 +68,12 @@ export async function publishCodexBlogArticleDraft(input: {
   codexReasoningEffort?: string | null;
   date?: Date;
   draft: CodexBlogArticleDraft;
+  heroImage?: {
+    contentType: 'image/jpeg' | 'image/png' | 'image/webp';
+    dataBase64: string;
+    generatedBy: 'codex-cli';
+    prompt: string;
+  };
 }): Promise<CodexBlogPublishResult> {
   const publicationDate = input.date ?? new Date();
   const generationDate = publicationDate.toISOString().slice(0, 10);
@@ -114,13 +120,20 @@ export async function publishCodexBlogArticleDraft(input: {
     title: input.draft.title,
   });
   const slug = await buildUniqueSlug(input.draft.slugBase, generationDate);
-  const heroImage =
-    envServer.BLOG_IMAGE_GENERATION_ENABLED && imageReview.passed
-      ? await generateBlogHeroImage({
-          imagePrompt,
-          slug,
-        })
-      : null;
+  const heroImage = input.heroImage
+    ? await uploadGeneratedBlogHeroImage({
+        image: decodeCodexHeroImage(input.heroImage.dataBase64),
+        metadata: {
+          'blog-image-alt': imageAlt,
+          'blog-image-generated-by': input.heroImage.generatedBy,
+          'blog-image-prompt': input.heroImage.prompt.slice(0, 1_024),
+          'blog-search-intent': topic.searchIntent,
+          'blog-topic': topic.manhwaTitle,
+          'blog-type': topic.manhwaType,
+        },
+        slug,
+      })
+    : null;
   const publishable =
     imageReview.score >= 80 &&
     uxReview.score >= 80 &&
@@ -168,6 +181,16 @@ function buildCodexGenerationModel(input: {
   const reasoningEffort = input.codexReasoningEffort?.trim() || 'xhigh';
 
   return `codex-cli:${model}:${reasoningEffort}`;
+}
+
+function decodeCodexHeroImage(dataBase64: string) {
+  const image = Buffer.from(dataBase64, 'base64');
+
+  if (image.byteLength < 500_000) {
+    throw new Error('Codex CLI hero image is too small to publish.');
+  }
+
+  return image;
 }
 
 async function getExistingBlogTopics(): Promise<ExistingBlogTopic[]> {
