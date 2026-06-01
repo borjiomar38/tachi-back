@@ -7,6 +7,10 @@
   - Updated linkable assets and owned-content planning in `docs/seo-distribution/link-assets.md` and `docs/seo-distribution/content-calendar.md`.
   - Added new backlog rows in `docs/growth/backlink-prospects.csv` for AI Workbench, NavTools, and AltJapan with owner-review gates.
   - Did not perform external posting, account creation, CAPTCHA, directory form submission, or any public posting actions due `externalPostingMode=draft` and missing authorized credentials.
+  - Added one owned checklist SEO upgrade:
+    - FAQPage structured data on `comic-ocr-translation-checklist`.
+    - Internal answer-first copy block for external communities.
+    - Internal cross-links from checklist CTA to pilot + media-kit pages.
 
 - Branch check: `seo/distribution-20260601T101515Z` verified before edits.
 - Completed required preflight: read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md` files.

@@ -1533,6 +1533,24 @@ const checklistDistributionRows = [
   },
 ] as const;
 
+export const comicOcrChecklistFaqRows = [
+  {
+    title: 'Can I share OCR output publicly?',
+    description:
+      'Only when the sample is owned, public-domain, officially previewed, creator-approved, or otherwise permission-approved. Keep original OCR text, glossary notes, and correction history with the decision.',
+  },
+  {
+    title: 'Do I need to link to Nayovi for every answer?',
+    description:
+      'No. Lead with the checklist itself. Add the official source links only when the question asks for implementation details, Android setup, or official policy context.',
+  },
+  {
+    title: 'What should I avoid mentioning?',
+    description:
+      'Do not claim verified Android status, ranking superiority, official verification details, or benchmark performance unless the owner has confirmed those facts. Keep claims inside the published source boundaries.',
+  },
+] as const;
+
 const checklistReviewerHandoffRows = [
   {
     label: 'App testers',
@@ -1711,6 +1729,26 @@ export const PageComicOcrChecklist = () => {
       </PublicSection>
 
       <PublicSection
+        eyebrow="Content reuse"
+        title="Answer-first copy for external channels"
+        description="Use this block as a ready-made draft when answering technical communities or editorial requests before sharing a link."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {comicOcrChecklistFaqRows.map((row) => (
+              <div
+                key={row.title}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[16rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">{row.title}</span>
+                <span>{row.description}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
         eyebrow="Research context"
         title="Quality checks that belong before translation"
         description="Current manga OCR and document-understanding work reinforces the same practical rule: missing text regions and bad segmentation should be recorded before anyone scores the translated sentence."
@@ -1793,10 +1831,22 @@ export const PageComicOcrChecklist = () => {
             </span>
           </a>
           <a
+            href="/guides/permission-safe-manga-translation-pilot"
+            className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+          >
+            Permission-safe pilot brief
+          </a>
+          <a
             href="/download"
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
             APK verification packet
+          </a>
+          <a
+            href="/media-kit"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Media kit
           </a>
           <a
             href="/support"

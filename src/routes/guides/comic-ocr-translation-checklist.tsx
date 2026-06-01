@@ -3,9 +3,13 @@ import { createFileRoute } from '@tanstack/react-router';
 import { publicSeoKeywords } from '@/features/blog/seo';
 import {
   buildPublicAbsoluteUrl,
+  buildPublicFaqStructuredData,
   buildPublicPageHead,
 } from '@/features/public/head';
-import { PageComicOcrChecklist } from '@/features/public/page-ethical-guides';
+import {
+  comicOcrChecklistFaqRows,
+  PageComicOcrChecklist,
+} from '@/features/public/page-ethical-guides';
 
 const checklistStructuredData = () => {
   const url = buildPublicAbsoluteUrl('/guides/comic-ocr-translation-checklist');
@@ -144,7 +148,13 @@ export const Route = createFileRoute('/guides/comic-ocr-translation-checklist')(
             'AI comic translation review',
             'manga translation quality checklist',
           ],
-          structuredDataGraph: checklistStructuredData(),
+          structuredDataGraph: [
+            ...checklistStructuredData(),
+            ...buildPublicFaqStructuredData(
+              '/guides/comic-ocr-translation-checklist',
+              comicOcrChecklistFaqRows
+            ),
+          ],
         }
       ),
   }

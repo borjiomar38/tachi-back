@@ -1,5 +1,20 @@
 ### 2026-06-01 Cycle-Added Draft Priorities
 
+### 2026-06-01 Best-ready draft: OCR checklist answer variant
+
+- Target: `https://www.reddit.com/r/translator/`
+- Category: technical forum answer template
+- Audience: translator moderators, localization contributors, technical OCR readers
+- Rules risk: medium-high (forum anti-promo and answer-first expectations)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I have a practical OCR+translation checklist that is designed for approved samples first: permission status, region coverage, block order, glossary consistency, and qualified sharing conditions. If your community rules allow, I can share this as a no-link response and a short source-link block only when required for implementation."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  1. Keep no-link-first until a thread asks for implementation detail or official source links.
+  2. Add the link variant only after moderator confirmation and owner approval.
+
 - Target: https://www.indiehackers.com/
 - Category: founder community / startup trust notes
 - Audience: solo founders, builders, investor-facing credibility seekers

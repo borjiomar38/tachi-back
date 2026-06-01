@@ -1,0 +1,22 @@
+{
+  "status": "draft",
+  "notes": "Owner-approved draft fields only. Do not mark approved unless the exact Facebook Page fields are explicitly approved by owner.",
+  "fields": {
+    "name": "Nayovi",
+    "about": "Nayovi builds Android-first OCR and translation workflows for manga, manhwa, and manhua readers.",
+    "description": "Product-light Android workflow for permission-safe comic translation support with clear source links, support contact, and responsible-use boundaries.",
+    "website": "https://nayovi.com",
+    "emails": ["contact@nayovi.com"],
+    "category": "TechCompany",
+    "location": {
+      "city": "TBD",
+      "country": "United States"
+    },
+    "links": {
+      "download": "https://tachiyomiat.com/download",
+      "support": "https://tachiyomiat.com/support",
+      "checklist": "https://tachiyomiat.com/guides/comic-ocr-translation-checklist",
+      "pilot": "https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot"
+    }
+  }
+}
