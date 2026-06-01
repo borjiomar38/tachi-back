@@ -165,7 +165,7 @@ def build_image_prompt(item: dict[str, Any]) -> str:
     f'Style/medium: {visual_style or "polished Korean manhwa cover art, cinematic commercial key art"}',
     'Composition/framing: 16:9 landscape poster, the requested lead archetype must be visually obvious, strong silhouette, epic background, high contrast, social-feed readable.',
     'Lighting/mood: dramatic, powerful, emotional, mysterious, premium poster lighting.',
-    'Constraints: original invented character and setting; no copyrighted characters; no manga panels; no app screenshots; no phone; no UI; no Nayovi logo; no readable text; no watermark; no fake typography; no sexualized minors.',
+    'Constraints: original invented character and setting; no copyrighted characters; no manga panels; no device mockups; no software interface; no Nayovi logo; no readable text; no watermark; no fake typography; no sexualized minors.',
     'Avoid: always defaulting to female leads, developer imagery, OCR diagrams, translation UI, generic stock art, weak placeholder graphics, low-detail procedural art.',
   ])
 

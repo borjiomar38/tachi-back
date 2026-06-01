@@ -374,7 +374,7 @@ Hard constraints:
 - Facebook posts are for normal manga/manhwa/manhua readers, not developers. Write in English. The post must feel like a teaser for an invented epic manhwa story, not like an app ad, image prompt, or technical update.
 - Facebook caption format: invented title in uppercase, then a short cinematic story hook in 5-9 plain English lines, then one reader question, then a final short Nayovi Android CTA. Use https://nayovi.com/download as the CTA link. Do not use tachiyomiat.com in new social posts unless the owner explicitly asks for legacy branding.
 - Facebook story captions must narrate the fictional manhwa world and character stakes. Avoid prompt-like summaries such as "a fallen princess wakes under a black sun"; instead write like story copy: "Seraya was born inside the moon..." Avoid internal SEO/developer phrases such as OCR checklist, no-link-first, citation ladder, schema, metadata, compliance, backlinks, ranking, API, or workflow.
-- Facebook visuals must be story-first invented manhwa poster art: original strong hero, heroine, duo, team, antihero, or iconic non-human threat, epic background, dramatic powers, no copyrighted characters, no phone, no app UI, no Nayovi logo, no translation overlay, no screenshots, no fake readable text, and no sexualized minors.
+- Facebook visuals must be story-first invented manhwa poster art: original strong hero, heroine, duo, team, antihero, or iconic non-human threat, epic background, dramatic powers, no copyrighted characters, no device mockups, no software interface, no Nayovi logo, no translation overlay, no captured screens, no fake readable text, and no sexualized minors.
 - Facebook character rotation is required. Do not keep creating female-led posters by default. Across every 10 new Facebook queue items, target roughly 4 male-led stories, 4 female-led stories, and 2 duo/team/antihero/creature-led stories. Avoid repeating the same lead archetype, setting, power color, or title structure from the most recent Facebook queue items. Each new Facebook item should set lead_archetype to one of male_hero, female_heroine, duo_team, antihero, creature_threat, or ensemble.
 - Use status=auto_publish only when the queue item already has a high-quality story-poster image_path or image_url. If there is only an image_prompt or visual_style and no generated image asset, keep it as draft or owner_review_required with IMAGE_BACKEND_REQUIRED in the report instead of auto-publishing a weak placeholder.
 - For Facebook Page info updates, if SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=true and SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=sync, you may create status=auto_sync changes for truthful official Page profile fields. Otherwise create only status=draft or status=owner_review_required changes.
@@ -420,7 +420,7 @@ Cycle checklist:
 6. Research at least 3 authority opportunities from different categories and update docs/seo-distribution/authority-opportunities.md.
 7. For the best ready opportunity, draft the exact value-first post/comment/message/listing/pitch in docs/seo-distribution/platform-drafts.md. Include target, audience, rules risk, no-link variant, and link variant.
 8. Add linkable assets or pitch angles to docs/seo-distribution/link-assets.md.
-9. Add Facebook Page posts to the configured social queue when useful. Use status=auto_publish only when autonomous Facebook publishing is enabled and the post already has a high-quality image_path or image_url. Otherwise use status=draft or status=owner_review_required. Write an English invented manhwa teaser story, not product copy: title, cinematic hook, 5-9 short story lines, one reader question, and a final short CTA to https://nayovi.com/download. Set story_title, story_hook, genre, lead_archetype, visual_style, image_prompt, image_path, and image_alt where available. Rotate lead_archetype instead of defaulting to women: use male_hero, female_heroine, duo_team, antihero, creature_threat, and ensemble across cycles. Image concepts must be original and brand-safe: no copyrighted characters, manga panels, third-party logos, phone/app UI, fake UI text, sexualized minors, or readable unsupported claims.
+9. Add Facebook Page posts to the configured social queue when useful. Use status=auto_publish only when autonomous Facebook publishing is enabled and the post already has a high-quality image_path or image_url. Otherwise use status=draft or status=owner_review_required. Write an English invented manhwa teaser story, not product copy: title, cinematic hook, 5-9 short story lines, one reader question, and a final short CTA to https://nayovi.com/download. Set story_title, story_hook, genre, lead_archetype, visual_style, image_prompt, image_path, and image_alt where available. Rotate lead_archetype instead of defaulting to women: use male_hero, female_heroine, duo_team, antihero, creature_threat, and ensemble across cycles. Image concepts must be original and brand-safe: no copyrighted characters, manga panels, third-party logos, device mockups, software interfaces, fake readable text, sexualized minors, or readable unsupported claims.
 10. Add or refine Facebook Page profile fields when useful. Use status=auto_sync only when autonomous Page info sync is enabled; otherwise use status=draft.
 11. Update docs/seo-distribution/distribution-log.md with concrete work, account setup progress, authority targets discovered, actions prepared, and next steps.
 12. Run validation if practical.
@@ -924,8 +924,34 @@ prepare_git_workspace() {
   )
 }
 
+wait_for_next_cycle() {
+  local remaining="$1"
+  local step trigger_file
+
+  trigger_file="${SEO_AGENT_TRIGGER_FILE:-${STATE_DIR}/run-now}"
+  while (( remaining > 0 )); do
+    if [[ -f "${trigger_file}" ]]; then
+      rm -f "${trigger_file}"
+      log "Run-now trigger detected; starting next SEO distribution cycle."
+      break
+    fi
+    step=60
+    if (( remaining < step )); then
+      step="${remaining}"
+    fi
+    sleep "${step}"
+    remaining=$(( remaining - step ))
+  done
+}
+
 run_loop() {
-  local interval remaining step trigger_file
+  local initial_sleep interval
+
+  initial_sleep="${SEO_AGENT_INITIAL_SLEEP_SECONDS:-0}"
+  if (( initial_sleep > 0 )); then
+    log "Initial SEO distribution sleep for ${initial_sleep}s before first automatic cycle."
+    wait_for_next_cycle "${initial_sleep}"
+  fi
 
   interval="${SEO_AGENT_INTERVAL_SECONDS:-86400}"
   while true; do
@@ -934,21 +960,7 @@ run_loop() {
       json_status "failed"
     fi
 
-    trigger_file="${SEO_AGENT_TRIGGER_FILE:-${STATE_DIR}/run-now}"
-    remaining="${interval}"
-    while (( remaining > 0 )); do
-      if [[ -f "${trigger_file}" ]]; then
-        rm -f "${trigger_file}"
-        log "Run-now trigger detected; starting next SEO distribution cycle."
-        break
-      fi
-      step=60
-      if (( remaining < step )); then
-        step="${remaining}"
-      fi
-      sleep "${step}"
-      remaining=$(( remaining - step ))
-    done
+    wait_for_next_cycle "${interval}"
   done
 }
 
