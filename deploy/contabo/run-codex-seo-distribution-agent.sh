@@ -292,7 +292,7 @@ run_codex_cycle() {
   report_file="${STATE_DIR}/reports/seo-distribution-${cycle_id}.md"
   repo_dir="${SEO_AGENT_REPO_DIR:-${APP_DIR}}"
   codex_bin="${SEO_AGENT_CODEX_CLI_PATH:-codex}"
-  codex_model="${SEO_AGENT_CODEX_MODEL:-gpt-5.5}"
+  codex_model="${SEO_AGENT_CODEX_MODEL:-gpt-5.3-codex-spark}"
   codex_effort="${SEO_AGENT_CODEX_REASONING_EFFORT:-medium}"
   codex_sandbox="${SEO_AGENT_CODEX_SANDBOX:-danger-full-access}"
   base_branch="${SEO_AGENT_BASE_BRANCH:-master}"

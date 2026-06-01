@@ -119,11 +119,11 @@ Cron entry:
 0 1 * * * TACHI_ENV_FILE=/opt/tachi-back/.env.production /usr/local/bin/tachi-back-codex-blog-cron >> /var/log/tachi-back-codex-blog-cron.log 2>&1
 ```
 
-The Codex cron defaults to `gpt-5.5` with `model_reasoning_effort="xhigh"` and
+The Codex cron defaults to `gpt-5.3-codex-spark` with `model_reasoning_effort="xhigh"` and
 enables Codex web search. Override only if needed:
 
 ```env
-BLOG_CODEX_MODEL=gpt-5.5
+BLOG_CODEX_MODEL=gpt-5.3-codex-spark
 BLOG_CODEX_REASONING_EFFORT=xhigh
 BLOG_CODEX_SEARCH_ENABLED=true
 BLOG_CODEX_CLI_PATH=codex
@@ -159,7 +159,7 @@ Important defaults:
 
 ```env
 SEO_AGENT_INTERVAL_SECONDS=86400
-SEO_AGENT_CODEX_MODEL=gpt-5.5
+SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
 SEO_AGENT_CODEX_REASONING_EFFORT=medium
 SEO_AGENT_CODEX_SEARCH_ENABLED=true
 SEO_AGENT_GIT_BRANCH_PREFIX=seo/distribution
@@ -368,7 +368,7 @@ with `Restart=always`.
 Important defaults:
 
 ```env
-GROWTH_AGENT_CODEX_MODEL=gpt-5.5
+GROWTH_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
 GROWTH_AGENT_CODEX_REASONING_EFFORT=low
 GROWTH_AGENT_CODEX_SANDBOX=danger-full-access
 GROWTH_AGENT_AUTONOMOUS_MODE=true
@@ -536,7 +536,7 @@ Important defaults:
 ```env
 SEO_AGENT_RUN_FOREVER=true
 SEO_AGENT_INTERVAL_SECONDS=60
-SEO_AGENT_CODEX_MODEL=gpt-5.5
+SEO_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
 SEO_AGENT_CODEX_REASONING_EFFORT=low
 SEO_AGENT_CODEX_SANDBOX=danger-full-access
 SEO_AGENT_GIT_PUSH_ENABLED=true
@@ -635,7 +635,7 @@ TRANSLATION_QA_AGENT_ENABLED=true
 TRANSLATION_QA_UPLOAD_RETENTION_HOURS=168
 TRANSLATION_QA_AGENT_RUN_FOREVER=true
 TRANSLATION_QA_AGENT_INTERVAL_SECONDS=300
-TRANSLATION_QA_AGENT_CODEX_MODEL=gpt-5.5
+TRANSLATION_QA_AGENT_CODEX_MODEL=gpt-5.3-codex-spark
 TRANSLATION_QA_AGENT_CODEX_REASONING_EFFORT=low
 TRANSLATION_QA_AGENT_CODEX_SANDBOX=danger-full-access
 TRANSLATION_QA_AGENT_REWRITE_DATABASE_URL=true

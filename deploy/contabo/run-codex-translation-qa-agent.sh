@@ -99,7 +99,7 @@ run_translation_qa_cycle() {
   codex_report_file="${work_dir}/codex-report.json"
   prompt_file="${work_dir}/prompt.md"
   codex_bin="${TRANSLATION_QA_AGENT_CODEX_CLI_PATH:-codex}"
-  codex_model="${TRANSLATION_QA_AGENT_CODEX_MODEL:-gpt-5.5}"
+  codex_model="${TRANSLATION_QA_AGENT_CODEX_MODEL:-gpt-5.3-codex-spark}"
   codex_effort="${TRANSLATION_QA_AGENT_CODEX_REASONING_EFFORT:-low}"
   codex_sandbox="${TRANSLATION_QA_AGENT_CODEX_SANDBOX:-danger-full-access}"
 

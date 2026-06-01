@@ -177,7 +177,7 @@ function buildCodexGenerationModel(input: {
   codexModel?: string | null;
   codexReasoningEffort?: string | null;
 }) {
-  const model = input.codexModel?.trim() || 'gpt-5.5';
+  const model = input.codexModel?.trim() || 'gpt-5.3-codex-spark';
   const reasoningEffort = input.codexReasoningEffort?.trim() || 'xhigh';
 
   return `codex-cli:${model}:${reasoningEffort}`;

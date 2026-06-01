@@ -32,7 +32,7 @@ run_codex_cycle() {
   inbound_list_file="${STATE_DIR}/prompts/inbound-${cycle_id}.list"
   repo_dir="${GROWTH_AGENT_REPO_DIR:-${APP_DIR}}"
   codex_bin="${GROWTH_AGENT_CODEX_CLI_PATH:-codex}"
-  codex_model="${GROWTH_AGENT_CODEX_MODEL:-gpt-5.5}"
+  codex_model="${GROWTH_AGENT_CODEX_MODEL:-gpt-5.3-codex-spark}"
   codex_effort="${GROWTH_AGENT_CODEX_REASONING_EFFORT:-low}"
   codex_sandbox="${GROWTH_AGENT_CODEX_SANDBOX:-workspace-write}"
   base_branch="${GROWTH_AGENT_AUTO_MERGE_BASE_BRANCH:-master}"
