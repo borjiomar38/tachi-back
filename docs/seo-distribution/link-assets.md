@@ -362,3 +362,10 @@ This file is maintained by the SEO distribution agent.
 - Reusable angle: editorial reviews, directory fit questions, GitHub technical discussions, partner briefings.
 - Suggested proof block: official APK source, pricing path, support path, no chapter hosting, no mirror claim, screenshot policy.
 - Next action: prepare canonical link block and publish draft-safe claim-control section.
+
+## 2026-06-01 Cycle asset updates
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Pilot-to-checklist bridge block | `https://nayovi.com/guides/comic-ocr-translation-checklist` and `/guides/permission-safe-manga-translation-pilot` | creators, publishers, localization partners | Adds a handoff ladder from QA checklist to intake/decision phases so outreach can stay link-safe and process-first | draft | Add schema-backed cross-link section with explicit stop conditions |
+| APK submission readiness packet | `https://apkpure.com/developer.html` | Android discovery teams | Reusable package-fact-sheet for official source, support, pricing, and permissions language | draft | Fill package hash/status and verification fields after owner confirms ownership language |
