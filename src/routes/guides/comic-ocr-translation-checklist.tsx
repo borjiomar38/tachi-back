@@ -87,6 +87,11 @@ const checklistStructuredData = () => {
       description:
         'Mention Nayovi after rights-safe intent, approved-sample framing, and the source-of-truth links are helpful for the specific question. Do not imply broad chapter-hosting or verification claims.',
     },
+    {
+      title: 'Which owned next step pairs with this checklist?',
+      description:
+        'Use the Permission-Safe Manga Translation Pilot Brief next for planning intake, decision gates, and stop conditions when a creator, publisher, or localization partner asks for a source-first process.',
+    },
   ];
 
   return [

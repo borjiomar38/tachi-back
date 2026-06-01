@@ -325,3 +325,11 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | draft | creator-media outreach readiness | creator localization OCR QA, manga translation workflow | https://mangasplaining.com/contact-us/ | Prepare owner-approved invitation-only no-link-first note about approved-sample OCR workflow and glossary consistency for localization audiences | Reuse platform draft and keep topic-first until media fit confirmation |
 | draft | AI directory fit check | OCR translation AI tool listing, trial token model, Android workflow | https://futuretoolai.com/submit | Build a field-compatibility packet (pricing and categories) before directory submission | Keep no-link-first until submission fields are confirmed |
+
+## 2026-06-01 Cycle Plan Additions
+
+| Topic | Search intent | Keywords | Target URL | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| OCR translation checklist to pilot handoff | transactional + operational | `comic OCR checklist`, `permission-safe pilot intake`, `reader own content translation`, `android OCR trial` | `/guides/comic-ocr-translation-checklist` | draft | Add one short “next-step ladder” section pointing from checklist to pilot brief and pricing/support pages |
+| Pilot readiness + decision gates | process search + B2B workflow | `permission safe manga pilot`, `translation partner intake`, `OCR pilot stop conditions` | `/guides/permission-safe-manga-translation-pilot` | draft | Publish once pilot page metadata fields include related-guide links |
+| Android distribution profile readiness | informational | `official download source`, `AI translation directory checklist`, `supported platform policy` | `/docs/seo-distribution/account-setup.md` | published | Keep as internal trust page to share only through owner-approved outreach and no automated posting |

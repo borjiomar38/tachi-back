@@ -5613,3 +5613,32 @@ If this does not fit your policy, please reply "opt out".
 1) Complete account/setup packet tasks in `docs/seo-distribution/account-setup.md`.
 2) Run no-link outreach first on each category.
 3) Add links only after explicit owner/platform approval and category-specific policy checks.
+
+## 2026-06-01 Best-ready category drafts
+
+### APKPure developer submission packet
+
+- Target: APKPure developer listing team
+- Status: OWNER_REVIEW_REQUIRED
+- Audience: Android distribution readers and practical app utility discoverability
+- Risk: medium (submission quality + package verification + mirror policy)
+- No-link variant: “Nayovi focuses on permission-safe manga/manhwa/manhua OCR support for users with rights-cleared content. Before sharing any links, I can send an ownership-safe intake packet with official pages, support route, and compliance notes.”
+- Link variant: `https://nayovi.com/guides/comic-ocr-translation-checklist`
+
+### AlternativeTo listing preparation draft
+
+- Target: AlternativeTo
+- Status: AUTHORIZED_ACCOUNT_REQUIRED
+- Audience: comparison and recommendation audiences in software tooling
+- Risk: medium (category and ranking policy alignment)
+- No-link variant: keep profile and summary language claim-safe; include category, trial, token pricing context, and no unsupported ranking language.
+- Link variant: `https://nayovi.com/download` (only after official profile fields are claimed and reviewed)
+
+### GitHub awesome-resource contribution note
+
+- Target: `kba/awesome-ocr` and related community OCR lists
+- Status: WATCH
+- Audience: maintainers + readers sourcing OCR utility references
+- Risk: high (promotion-heavy entries rejected quickly)
+- Rule note: only one follow-up, contributor-only query with no links unless maintainer explicitly accepts resource-style reference.
+- Suggested posting style: “I can share a short checklist section only if your policy allows non-promotional resource additions for translation QA workflows.”

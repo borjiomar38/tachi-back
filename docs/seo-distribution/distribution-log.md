@@ -1887,3 +1887,12 @@ Next actions:
   - Prepared new backlink prospect row in `docs/growth/backlink-prospects.csv` for future manual action.
 - Compliance and posting mode:
   - Kept all actions as drafts or owner-review and marked `AUTHORIZED_ACCOUNT_REQUIRED` where no platform credentials/account ownership is in place.
+
+## 2026-06-01 Cycle Log Entry
+
+- Cycle objective: continue account setup first, then deliver 3 categories of authority discovery and one reusable draft pipeline.
+- Account setup: advanced LinkedIn and Product Hunt setup packets to `ready_for_owner_review` with exact copy and policy requirements.
+- Owned content: updated `comic-ocr-translation-checklist` FAQ block and planned link ladder between checklist and pilot brief.
+- Authority opportunities: added APKPure, AlternativeTo, and `awesome-ocr` as cross-category prospects (app directory, software recommendation directory, and GitHub resource list).
+- Drafts: prepared no-link and link-eligible variants in `platform-drafts.md` and marked each by account-policy state.
+- Compliance: no claims posted externally; all work retained as account/manual-gate states because external accounts are not yet configured and posting mode is `draft`.
