@@ -4,6 +4,14 @@ This file is maintained by the SEO distribution agent.
 
 Use this as the continuous discovery pipeline for high-authority SEO, backlink, and trust-building surfaces. The agent should add new targets every cycle, rotate categories, and avoid low-quality link farms or mass-comment surfaces.
 
+## 2026-06-01 Discovery Additions (web-refresh)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | Android distribution directory | AppBrain featured apps | https://www.appbrain.com/product/featured | Strong topical fit if developer identity and Play/API fields can remain transparent and non-promotional | Metadata-fit check + submission packet | OWNER_REVIEW_REQUIRED (manual AppBrain verification + metadata readiness) | medium | Verify required directory fields, then move to no-link fit request only if official source-link + responsible-use fields are accepted |
+| draft | medium | AI directory | ToolIndex AI submission flow | https://www.toolindex.ai/submit/ | Good fit for OCR + AI translation workflow with trial/paid token model and explicit responsibility framing | Submission readiness matrix + category/field compatibility test | AUTHORIZED_ACCOUNT_REQUIRED if API workflow is added; otherwise manual form watch | medium | Confirm accepted listing formats and remove any paid/affiliate or reciprocal-link dependencies before drafting outbound request |
+| draft | high | Founder/build-in-public community | Indie Hackers startup notes | https://www.indiehackers.com/ | Potential founder trust-building channel for process-first launch updates and compliance posture | Founder profile draft + value-first thread plan | OWNER_ACTION_REQUIRED for official profile and posting policy | medium | Keep draft-only until owner confirms founder account and rules around link policy |
+
 ## 2026-05-31 Fresh Opportunity Additions
 
 ### 2026-05-31 Cycle Discovery Push (new this pass)
@@ -440,4 +448,3 @@ GitHub contribution workflow | Standard GitHub auth + maintainer-friendly PR tit
 | draft | high | Android app distribution | AppBrain featured apps | https://www.appbrain.com/product/featured | Strong fit if the app can support claimed trial + paid-token model and official source links; AppBrain requires claimed developer account and a published app path. | Metadata-fit check + draft-first submission packet | OWNER_REVIEW_REQUIRED (manual AppBrain developer account) | medium | Verify required fields before any submission intent; keep no-link-first in case official app release criteria are not confirmed |
 | draft | medium | AI software directory | try.fm | https://www.try.fm/ | Strong fit for free-trial + paid-token Android utility categories if pricing and source-link fields can be represented without open-source/affiliate distortion. | Listing fit question + safe field compatibility draft | AUTHORIZED_ACCOUNT_REQUIRED for any API-assisted submission; otherwise manual form/watch-only | medium | Verify whether paywall/coupon/upgrade rules block APK workflow entries before adding a link variant |
 | draft | high | Founder community | Indie Hackers | https://www.indiehackers.com/ | High fit for build-in-public founder notes on trust-first distribution and permissions policy without growth-engineering incentives. | Official founder profile draft + founder-post checklist | OWNER_ACTION_REQUIRED (official founder profile) | medium | Draft value-first founder post/threads and keep watch-only until profile ownership and rule fit are approved |
-

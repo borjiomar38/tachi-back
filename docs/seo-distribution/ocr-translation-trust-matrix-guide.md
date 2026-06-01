@@ -227,3 +227,25 @@ Use this section for media, partner, and directory notes that request ownership 
 
 - Use this page as the preferred source for all review threads where trust-first framing is required.
 - Keep all outward links to this asset or the four canonical entry points above until an audience accepts link-safe citations.
+
+## 2026-06-01 Owned content update: comparison-ready trust block
+
+### What users can verify in one pass (non-promotional)
+
+- Source path: `https://tachiyomiat.com/download`
+- Policy path: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Support path: `https://tachiyomiat.com/support`
+- Monetization path: `https://tachiyomiat.com/pricing`
+
+### Publishable comparison snippet for owned guide surfaces
+
+| Question | Trust-safe answer |
+| --- | --- |
+| Is this a chapter-hosting platform? | No. Nayovi supports OCR + translation workflow for content users already own, have explicit permission for, or is public-domain/official-sample content. |
+| How does onboarding work? | Official APK access + support path + free-trial-to-paid-token progression. |
+| What are the quality boundaries? | OCR and translation output is a first-pass tool; it is intended for review, comparison, and human correction workflows. |
+| What do we avoid claiming? | Unsupported verification status, universal accuracy claims, mirror-source status, or catalog-wide processing claims. |
+
+### One-line reference ladder for link-gated outreach
+
+`https://tachiyomiat.com/translate-manhwa-ai` → `https://tachiyomiat.com/pricing` → `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
