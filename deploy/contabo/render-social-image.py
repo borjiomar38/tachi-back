@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import pathlib
 import re
@@ -21,6 +22,28 @@ from typing import Any
 
 DEFAULT_IMAGE_DIR = pathlib.Path('/var/lib/tachi-seo-distribution-agent/generated-images')
 DEFAULT_CODEX_IMAGE_SCRIPT = pathlib.Path('/usr/local/bin/tachi-codex-image-generator')
+
+LEAD_ARCHETYPES = {
+  'male_hero': 'one original powerful male hero with a memorable silhouette, heroic but not copied from any existing series',
+  'female_heroine': 'one original powerful female heroine with a memorable silhouette, heroic but not copied from any existing series',
+  'duo_team': 'two original leads or a small team with clear complementary silhouettes and shared story stakes',
+  'antihero': 'one original dark antihero with a morally dangerous aura, strong silhouette, and readable emotional conflict',
+  'creature_threat': 'one iconic original monster, spirit, dragon, or cosmic threat as the central poster presence with a human-scale figure for drama',
+  'ensemble': 'an original ensemble cast with one clear focal lead and varied silhouettes, avoiding clutter',
+}
+
+DEFAULT_ROTATION = [
+  'male_hero',
+  'male_hero',
+  'male_hero',
+  'male_hero',
+  'female_heroine',
+  'female_heroine',
+  'female_heroine',
+  'female_heroine',
+  'duo_team',
+  'antihero',
+]
 
 
 def parse_args() -> argparse.Namespace:
@@ -37,6 +60,42 @@ def parse_args() -> argparse.Namespace:
 def safe_filename(value: str) -> str:
   normalized = re.sub(r'[^a-zA-Z0-9._-]+', '-', value).strip('-._')
   return normalized[:96] or 'social-image'
+
+
+def normalize_lead_archetype(value: str) -> str | None:
+  normalized = re.sub(r'[^a-z0-9]+', '_', value.lower()).strip('_')
+  if normalized in LEAD_ARCHETYPES:
+    return normalized
+  if 'male' in normalized or normalized in {'hero', 'man', 'boy'}:
+    return 'male_hero'
+  if 'female' in normalized or 'heroine' in normalized or normalized in {'woman', 'girl'}:
+    return 'female_heroine'
+  if 'duo' in normalized or 'team' in normalized or 'pair' in normalized:
+    return 'duo_team'
+  if 'anti' in normalized or 'villain' in normalized or 'rogue' in normalized:
+    return 'antihero'
+  if 'creature' in normalized or 'monster' in normalized or 'dragon' in normalized or 'spirit' in normalized:
+    return 'creature_threat'
+  if 'ensemble' in normalized or 'cast' in normalized or 'group' in normalized:
+    return 'ensemble'
+  return None
+
+
+def choose_lead_archetype(item: dict[str, Any]) -> tuple[str, str]:
+  requested = str(
+    item.get('lead_archetype')
+    or item.get('character_archetype')
+    or item.get('protagonist_archetype')
+    or ''
+  )
+  normalized = normalize_lead_archetype(requested)
+  if normalized:
+    return normalized, LEAD_ARCHETYPES[normalized]
+
+  seed = str(item.get('id') or item.get('story_title') or item.get('message') or 'nayovi')
+  digest = hashlib.sha256(seed.encode('utf-8')).digest()
+  fallback = DEFAULT_ROTATION[digest[0] % len(DEFAULT_ROTATION)]
+  return fallback, LEAD_ARCHETYPES[fallback]
 
 
 def read_queue(path: pathlib.Path) -> list[dict[str, Any]]:
@@ -80,10 +139,11 @@ def build_image_prompt(item: dict[str, Any]) -> str:
   genre = str(item.get('genre') or 'epic fantasy').strip()
   visual_style = str(item.get('visual_style') or '').strip()
   image_prompt = str(item.get('image_prompt') or '').strip()
+  lead_key, lead_description = choose_lead_archetype(item)
 
   primary_request = image_prompt or (
     f'Original epic manhwa poster for an invented story titled {title}. '
-    f'{hook} {message[:900]}'
+    f'{hook} {message[:900]} Feature {lead_description}.'
   )
 
   return '\n'.join([
@@ -93,11 +153,12 @@ def build_image_prompt(item: dict[str, Any]) -> str:
     f'Story title: {title}',
     f'Story hook: {hook}',
     f'Genre: {genre}',
+    f'Lead archetype: {lead_key} - {lead_description}',
     f'Style/medium: {visual_style or "polished Korean manhwa cover art, cinematic commercial key art"}',
-    'Composition/framing: 16:9 landscape poster, one unforgettable original hero or heroine, strong silhouette, epic background, high contrast, social-feed readable.',
+    'Composition/framing: 16:9 landscape poster, the requested lead archetype must be visually obvious, strong silhouette, epic background, high contrast, social-feed readable.',
     'Lighting/mood: dramatic, powerful, emotional, mysterious, premium poster lighting.',
     'Constraints: original invented character and setting; no copyrighted characters; no manga panels; no app screenshots; no phone; no UI; no Nayovi logo; no readable text; no watermark; no fake typography; no sexualized minors.',
-    'Avoid: developer imagery, OCR diagrams, translation UI, generic stock art, weak placeholder graphics, low-detail procedural art.',
+    'Avoid: always defaulting to female leads, developer imagery, OCR diagrams, translation UI, generic stock art, weak placeholder graphics, low-detail procedural art.',
   ])
 
 

@@ -260,7 +260,11 @@ In autonomous mode, the agent may create queue items with
 for manga/manhwa readers: invented title, cinematic hook, 5-9 short story lines,
 one reader question, and a final short CTA to `https://nayovi.com/download`. It
 must avoid internal SEO or developer language such as checklists, metadata,
-schema, backlink work, or “no-link-first”.
+schema, backlink work, or “no-link-first”. Facebook queue items can set
+`lead_archetype` to `male_hero`, `female_heroine`, `duo_team`, `antihero`,
+`creature_threat`, or `ensemble`. The agent should rotate the lead type instead
+of defaulting to women: roughly 4 male-led, 4 female-led, and 2
+duo/team/antihero/creature-led concepts per 10 new posts.
 
 The local `/usr/local/bin/tachi-social-image-renderer` calls
 `/usr/local/bin/tachi-codex-image-generator`, which in turn invokes Codex CLI and
@@ -279,7 +283,7 @@ The publisher reads JSONL entries from the configured
 updates do not require committing generated state. Example:
 
 ```json
-{"id":"facebook-eclipse-crown-20260601","platform":"facebook","status":"auto_publish","story_title":"The Eclipse Crown","story_hook":"A moon-born queen returns when her living crown wakes.","message":"THE ECLIPSE CROWN\n\nSeraya was born inside the moon, in a prison built for children who could kill gods.\n\nFor a thousand years, the world forgot her name.\n\nThen the black sun rose.\nHer living crown opened its eyes.\nAnd the chains around the moon began to break.\n\nNow the kingdom that betrayed her is looking at the sky...\n\nBecause the queen is coming back.\n\nWould you read chapter 1?\n\nInstall Nayovi on Android:\nhttps://nayovi.com/download","link":"https://nayovi.com/download","scheduled_at":"2026-06-02T09:00:00Z","genre":"fantasy","visual_style":"original epic manhwa poster, strong moon-born queen, black sun, broken lunar chains, floating ruined kingdom, dramatic silver violet power, no text, no logo, no phone, no app UI","image_path":"/var/lib/tachi-seo-distribution-agent/generated-images/facebook-eclipse-crown-20260601.png","image_alt":"Original manhwa-style poster of a moon-born queen beneath a black sun and broken lunar chains."}
+{"id":"facebook-eclipse-crown-20260601","platform":"facebook","status":"auto_publish","story_title":"The Eclipse Crown","story_hook":"A moon-born queen returns when her living crown wakes.","message":"THE ECLIPSE CROWN\n\nSeraya was born inside the moon, in a prison built for children who could kill gods.\n\nFor a thousand years, the world forgot her name.\n\nThen the black sun rose.\nHer living crown opened its eyes.\nAnd the chains around the moon began to break.\n\nNow the kingdom that betrayed her is looking at the sky...\n\nBecause the queen is coming back.\n\nWould you read chapter 1?\n\nInstall Nayovi on Android:\nhttps://nayovi.com/download","link":"https://nayovi.com/download","scheduled_at":"2026-06-02T09:00:00Z","genre":"fantasy","lead_archetype":"female_heroine","visual_style":"original epic manhwa poster, strong moon-born queen, black sun, broken lunar chains, floating ruined kingdom, dramatic silver violet power, no text, no logo, no phone, no app UI","image_path":"/var/lib/tachi-seo-distribution-agent/generated-images/facebook-eclipse-crown-20260601.png","image_alt":"Original manhwa-style poster of a moon-born queen beneath a black sun and broken lunar chains."}
 ```
 
 Dry-run the queue:
