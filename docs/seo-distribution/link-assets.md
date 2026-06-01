@@ -346,3 +346,14 @@ This file is maintained by the SEO distribution agent.
 | FutureToolAI submission readiness packet | `docs/seo-distribution/platform-drafts.md` + `https://futuretoolai.com/` | AI tooling directories and free-trial-to-paid searchers | Reusable no-link-first submission-fit packet with category/pricing field check for official APK + trial/token positioning | draft | Convert to link variant only if form confirms official source-link field handling |
 | Creator media pitch packet (approved-sample OCR QA) | `docs/seo-distribution/platform-drafts.md` + `https://www.mangasplaining.com/contact-us/` | Localization creators, manga media readers | Invitation-first topic pitch for visual storytelling OCR quality and translation governance without consumer promotion | draft | Keep as watch until owner approves byline and explicit invitation path |
 | Nimdzi LIVE localization topic note | `docs/seo-distribution/platform-drafts.md` + `https://www.nimdzi.com/nimdzi-live/` | Localization practitioners and language AI media | Topic-ready no-link-first technical note for OCR QA process and glossary consistency before external media asks | draft | Keep as owner-review watch asset; publish only after explicit fit confirmation |
+
+## 2026-06-01 Added linkable assets
+
+### 1. Android OCR trust matrix add-on (owned)
+
+- Asset type: owned guide section (trust policy + comparison-ready copy)
+- URL: `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` (official owned page)
+- Description: Add a compact trust matrix block with "claim / proof / avoid / stop condition / optional link" lines for official APK trial, token plans, and permission-safe scope.
+- Reusable angle: editorial reviews, directory fit questions, GitHub technical discussions, partner briefings.
+- Suggested proof block: official APK source, pricing path, support path, no chapter hosting, no mirror claim, screenshot policy.
+- Next action: prepare canonical link block and publish draft-safe claim-control section.
