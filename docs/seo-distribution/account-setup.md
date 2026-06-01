@@ -30,6 +30,14 @@
 
 Only non-secret references are written in docs. Use `/opt/tachi-back/.env.seo-distribution-agent` for secret values.
 
+### 2026-06-01 Cycle advancement (new)
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | HackerNoon publishing profile | Technical founder thought-leadership and process-first SEO content without brand-only PR language | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: claim official owner profile, enable profile bio + website fields, and define non-advertorial publication policy and one safe article angle | `docs/seo-distribution/official-launch-profile-packet.md`, `docs/seo-distribution/platform-drafts.md`, supported image asset pack | `SEO_AGENT_HACKERNOON_PROFILE_REFERENCE` | Manual publication of product-light posts only after profile ownership and anti-PR policy approval | Keep draft-only until profile ownership and article outline are approved; maintain no-link-first opening paragraph for first draft |
+| medium | Product Hunt maker profile | Credible maker-facing launch and founder trust surface before social proof campaigns | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: claim maker/company page, add official links, logo, canonical launch URL set, and define comment policy (no upvote manipulation) | `docs/seo-distribution/official-launch-profile-packet.md`, logo/avatar assets, launch one-liner, no-spam policy checklist | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | API/manual posting possible only after owner confirms launch policy and post templates | Prepare draft page + no-link-first maker comment while awaiting owner confirmation; convert to public packet only post-approval |
+
+
 # Nayovi Official Account Setup
 
 This file is maintained by the SEO distribution agent.

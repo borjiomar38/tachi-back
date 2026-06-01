@@ -7,6 +7,11 @@
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | technical publishing readiness | Android OCR workflow publishing without PR language | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide + https://hackernoon.com/publish/ | Prepare one non-promotional article draft for technical platforms that starts with no-link-first process framing | Add reusable no-link and link-safe variants in `docs/seo-distribution/platform-drafts.md` and hold until profile ownership is completed |
+| draft | podcast/media credibility readiness | localization AI + manga reading workflow angle | https://tachiyomiat.com/guides/comic-ocr-translation-checklist + https://www.nimdzi.com/nimdzi-live/ | Build a practical explainer for translation teams on OCR failure modes, approval flow, and allowed sample boundaries | Create a media-ready one-pager and route publication through authorized founder/community profile once available |
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
 | draft | startup trust and founder signal | OCR manga translation founder workflow, permission-first translation utilities | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a compact founder + launch checklist segment (what to claim vs cannot claim, trial-to-token plan, official source links) to make this guide linkable from build-in-public profiles | Expand section with owned verification notes and a no-link-first draft for founder/community use |
 
 # Nayovi SEO Content Calendar

@@ -6,6 +6,21 @@ This document is a practical, low-friction asset for reviewers, directories, and
 It consolidates how the app should be presented without overclaiming and without linking to unpublished
 verification states.
 
+## 2026-06-01 Cycle Trust-Lift Addendum
+
+- Added a review-ready evidence ladder for outbound first contact:
+  - What to share first: `tachiyomiat.com/download`, `tachiyomiat.com/pricing`, `tachiyomiat.com/support`.
+  - What to follow with: `translate-manhwa-ai` feature context and comparison checklist.
+  - What to hold: any verification or verification-like claims unless owner confirms official status.
+- Added channel-safe language variants for non-promotional use:
+  - Android editorial surfaces: keep process + boundaries first, links only when the format accepts resource references.
+  - Technical publishers: emphasize workflow and policy, avoid conversion language.
+  - Creator/localization audiences: emphasize approved-sample workflows and glossary consistency support.
+- Added a no-link escalation rule for localization media and launch communities:
+  - Start with a process insight.
+  - Ask whether a short canonical link list is useful before sharing URLs.
+- Added a conservative source-link order to reduce over-linking risk in first-response contexts.
+
 ## One-line product truth
 
 Nayovi is an Android APK workflow for manga, manhwa, and manhua OCR + translation support with free
