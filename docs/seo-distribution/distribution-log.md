@@ -1939,3 +1939,15 @@ Next actions:
   - Await owner completion on account-creation/manual verification blockers for LinkedIn, Google/Bing, and Product Hunt.
   - Convert HN draft and DEV/article plan to publish after official account/verification completion.
   - Generate one poster asset in `/var/lib/tachi-seo-distribution-agent/generated-images` if we intend to move any Facebook queue entry to auto_publish.
+
+## 2026-06-02 Distribution Log
+
+### Cycle: 2026-06-01T224436Z - June 2 update
+
+- Advanced account-setup queue with two new high-priority tasks: YouTube official channel setup and Search Console/Bing Webmaster verification readiness for three owned domains.
+- Added three high-fit authority opportunities: XDA Developers app-review context, AlternativeTo software listing, and maintainer-first `awesome-ocr` resource path.
+- Prepared three platform drafts for best-ready opportunity handling: XDA context note, AlternativeTo listing note, and maintainer-first resource contribution draft.
+- Extended content calendar with one owned checklist expansion task and one trust comparison asset angle.
+- Extended link-assets with an owned cross-platform trust matrix anchor and added one new linkable draft block.
+- Added a new owner-review Facebook story post draft to the configured queue for an invented fantasy teaser with required CTA.
+- Next action: await owner completion for account steps, then publish authorized drafts only and keep all actions no-link-first by default.

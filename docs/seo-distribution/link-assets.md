@@ -394,3 +394,9 @@ This file is maintained by the SEO distribution agent.
   - URL target: `https://nayovi.com/resources/nayovi-vs-alternatives`
   - Data points: install path, Android permissions approach, free trial + redeem model, paid tokens, support SLA, and responsible-use scope.
   - Useful for editorial/publisher conversations and developer-community replies where explicit link sharing is allowed.
+
+## 2026-06-02 Cycle Link Assets
+
+| Asset Type | Asset | Target URL | Use Case | Suggested Audience/Target | Evidence/Notes | Publish Variant |
+| --- | --- | --- | --- | --- | --- | --- |
+| Operational asset | Cross-platform OCR trust check matrix (owned draft) | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Helps unify external drafts across platforms with claim-vs-proof boundaries (trial/paid mix, support, permissions, package ownership) | Android communities, directory reviewers, localization editors, startup founders | Add a small reusable section: what we can claim, what we cannot claim, and when a link is appropriate | No-link first; add link-safe variant only when context allows |
