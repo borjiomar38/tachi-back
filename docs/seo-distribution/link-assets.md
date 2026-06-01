@@ -3,6 +3,7 @@
 | Asset | Target URL/file | Audience | Use | Status | Next action |
 | --- | --- | --- | --- | --- | --- |
 | Trust-matrix founder-ready pitch block | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | Builders, founder audiences, creator communities, publishers | Adds a founder-facing no-link + optional link variant section for launch transparency, permission boundaries, and support model; useful before Indie Hackers/LinkedIn posting | draft | Keep draft-only until founder account is configured and launch policy is approved |
+| AppBrain submission fit packet | `docs/seo-distribution/platform-drafts.md` | Android app discoverability editors and review-oriented surfaces | A repeatable, non-promotional packet to answer AppBrain featured-app fit and metadata compatibility before submitting any listing; keeps Android APK trust and policy language source-first with no mirror claims. | draft | Keep link variant gated behind official developer-identity proof and package/signing language confirmation. |
 | Direct Product Hunt launch packet (owner-owned) | `docs/seo-distribution/official-launch-profile-packet.md` + `docs/seo-distribution/platform-drafts.md` | Product Hunt launch community, startup founders, investors | Ready-to-use launch-ready but no-link-first profile and packet with no-upvote-control and verification-safe language | draft | Link variant only when official maker profile, token scope, and launch approval are in place |
 
 # Nayovi Linkable Assets
