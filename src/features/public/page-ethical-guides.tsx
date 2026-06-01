@@ -1487,6 +1487,48 @@ const citationReadinessRows = [
   },
 ] as const;
 
+const citationLadderRows = [
+  {
+    label: '1) Value first',
+    detail:
+      'Start each reply with the process checks: permission scope, OCR completeness, reading order, glossary consistency, and sharing decision.',
+  },
+  {
+    label: '2) Link only when needed',
+    detail:
+      'Include official links only if the audience asks for implementation details such as official source, pricing, support, or review access.',
+  },
+  {
+    label: '3) Keep boundaries explicit',
+    detail:
+      'Keep no chapter-hosting, no-catalog-processing, and rights-sensitive use explicit so reviews do not overstate official guarantees.',
+  },
+  {
+    label: '4) Stop on risk',
+    detail:
+      'Pause distribution if the target requires paid placement, reciprocal links, hidden redirects, unsupported verification claims, or mirror-first APK handling.',
+  },
+];
+
+const citationResourceRows = [
+  {
+    label: 'Primary guide',
+    detail: 'https://tachiyomiat.com/guides/comic-ocr-translation-checklist',
+  },
+  {
+    label: 'Official onboarding',
+    detail: 'https://tachiyomiat.com/download',
+  },
+  {
+    label: 'Support and pricing details',
+    detail: 'https://tachiyomiat.com/pricing',
+  },
+  {
+    label: 'Review help and pilot path',
+    detail: 'https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot',
+  },
+];
+
 const comicOcrResearchRows = [
   {
     label: 'Missing regions',
@@ -1704,6 +1746,46 @@ export const PageComicOcrChecklist = () => {
                   {row.label}
                 </span>
                 <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Citation ladder"
+        title="No-link-first and escalation path"
+        description="This section helps keep community replies safe: add process guidance first, then add source links only if the thread needs official implementation details."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {citationLadderRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">{row.label}</span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Source pages"
+        title="Official pages for link-safe follow-up"
+        description="Use these URLs only when the contact asks for implementation context and publication rules allow direct links."
+      >
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {citationResourceRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">{row.label}</span>
+                <span className="break-words">{row.detail}</span>
               </div>
             ))}
           </CardContent>

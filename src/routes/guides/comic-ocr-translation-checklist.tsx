@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { publicSeoKeywords } from '@/features/blog/seo';
 import {
   buildPublicAbsoluteUrl,
+  buildPublicFaqStructuredData,
   buildPublicPageHead,
 } from '@/features/public/head';
 import { PageComicOcrChecklist } from '@/features/public/page-ethical-guides';
@@ -75,6 +76,18 @@ const checklistStructuredData = () => {
         'Do not continue if the target requires paid links, reciprocal badges, mirror-first APK distribution, unauthorized chapter examples, or undisclosed promotion.',
     },
   ] as const;
+  const faqRows = [
+    {
+      title: 'Can this checklist be cited without linking to Nayovi?',
+      description:
+        'Yes. Use the checklist alone for moderation-safe advice, then include official source links only when the reader or editor explicitly needs install path, pricing, or support details.',
+    },
+    {
+      title: 'When should Nayovi be mentioned?',
+      description:
+        'Mention Nayovi after rights-safe intent, approved-sample framing, and the source-of-truth links are helpful for the specific question. Do not imply broad chapter-hosting or verification claims.',
+    },
+  ];
 
   return [
     {
@@ -124,6 +137,10 @@ const checklistStructuredData = () => {
         description: check.description,
       })),
     },
+    ...buildPublicFaqStructuredData(
+      '/guides/comic-ocr-translation-checklist',
+      faqRows
+    ),
   ];
 };
 

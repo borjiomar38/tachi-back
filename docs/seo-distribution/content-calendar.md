@@ -3,6 +3,7 @@
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
 | draft | trust documentation + launch readiness | Android verification-aware trust matrix, developer policy alignment | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a short subsection that maps app verification signals (unsupported vs owner-approved claims) and safe source-link ladder for APK + trial/token users | Add reviewer-safe claim-control block so external drafts can reference one canonical trust section |
+| draft | no-link-first + link escalation SEO cluster | comic OCR translation checklist citation ladder | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Publish a 4-step claim ladder and safe link escalation block so community and directory drafts can reuse one high-intent source with minimal spam risk | Update guide copy now and reuse in platform-draft + link-asset rows |
 | draft | creator/publication-ready comparison landing | permission-safe OCR translation claim controls | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide + https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Convert comparison text into a short claim/avoid matrix for media, directory, and developer audiences, including exact no-link first-contact language | Add a copy block with 5 lines (claim, avoid, proof, next stop condition, optional link variant) and reuse in next launch/community drafts |
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
