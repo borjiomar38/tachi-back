@@ -23,6 +23,7 @@ import json
 import mimetypes
 import os
 import pathlib
+import re
 import sys
 import tempfile
 import urllib.error
@@ -60,12 +61,34 @@ DEFAULT_ALLOWED_LINK_DOMAINS = {
   'translate-manhwa-ai.com',
 }
 BLOCKED_MESSAGE_PHRASES = {
+  'backlink',
+  'citation ladder',
+  'compliance checklist',
+  'developer update',
+  'image prompt',
+  'metadata',
+  'no-link-first',
+  'ocr checklist',
+  'officially endorsed by google',
+  'poster prompt',
+  'schema',
   'guaranteed ranking',
   'guaranteed seo',
-  'officially endorsed by google',
   'free forever',
   'unlimited translation',
   'copyright-free manga',
+}
+BLOCKED_VISUAL_PROMPT_PHRASES = {
+  'app screen',
+  'app ui',
+  'mobile app',
+  'nayovi logo',
+  'ocr overlay',
+  'phone',
+  'screenshot',
+  'smartphone',
+  'translation overlay',
+  'ui mockup',
 }
 
 
@@ -190,6 +213,15 @@ def link_domain(link: str) -> str:
   return (parsed.hostname or '').lower().removeprefix('www.')
 
 
+def contains_unnegated_phrase(text: str, phrase: str) -> bool:
+  for match in re.finditer(re.escape(phrase), text):
+    prefix = text[max(0, match.start() - 24):match.start()].strip()
+    if prefix.endswith(('no', 'not', 'without', 'avoid')):
+      continue
+    return True
+  return False
+
+
 def validate_item(
   item: dict[str, Any],
   *,
@@ -238,6 +270,13 @@ def validate_item(
     return 'image_prompt is too short'
   if image_prompt and len(image_prompt) > 1800:
     return 'image_prompt is too long'
+  visual_text = ' '.join(
+    str(item.get(key) or '')
+    for key in ('image_prompt', 'visual_style', 'image_alt')
+  ).lower()
+  for phrase in BLOCKED_VISUAL_PROMPT_PHRASES:
+    if contains_unnegated_phrase(visual_text, phrase):
+      return f'visual concept contains blocked phrase: {phrase}'
   return None
 
 

@@ -162,6 +162,7 @@ SEO_AGENT_GIT_PUSH_ENABLED=false
 SEO_AGENT_AUTO_MERGE_TO_MASTER=false
 SEO_AGENT_EXTERNAL_POSTING_MODE=draft
 SEO_AGENT_EXTERNAL_ACCOUNT_CREATION_ENABLED=false
+SEO_AGENT_PRIMARY_SITE=https://nayovi.com
 SEO_AGENT_SOCIAL_QUEUE_FILE=/opt/tachi-seo-distribution-agent/repo/docs/seo-distribution/social-post-queue.jsonl
 SEO_AGENT_FACEBOOK_POSTING_MODE=draft
 SEO_AGENT_FACEBOOK_PAGE_INFO_MODE=draft
@@ -175,6 +176,7 @@ SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
 SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
+SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=
 SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 SEO_AGENT_NOTIFY_ENV_FILE=/opt/tachi-back/.env.growth-mail
 ```
@@ -236,18 +238,24 @@ SEO_AGENT_FACEBOOK_POSTING_MODE=publish
 SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true
 SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
+SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=
 ```
 
 In autonomous mode, the agent may create queue items with
-`"status":"auto_publish"`. The Codex CLI cycle writes commercial post copy with
-`gpt-5.3-codex-spark` and supplies `genre` / `visual_style` hints. The local
-`/usr/local/bin/tachi-social-image-renderer` CLI then creates an original PNG
-under `/var/lib/tachi-seo-distribution-agent/generated-images` and writes
-`image_path` plus `image_alt` back to the queue. The publisher does not call
+`"status":"auto_publish"` only when the item already has a high-quality
+`image_path` or `image_url`. The Codex CLI cycle writes English story-first copy
+for manga/manhwa readers: invented title, cinematic hook, 5-9 short story lines,
+one reader question, and a final short CTA to `https://nayovi.com/download`. It
+must avoid internal SEO or developer language such as checklists, metadata,
+schema, backlink work, or “no-link-first”.
+
+The local `/usr/local/bin/tachi-social-image-renderer` placeholder is disabled
+by default with `SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=` because it is not good
+enough for auto-published manhwa poster posts. The publisher does not call
 OpenAI image APIs and must not use `OPENAI_API_KEY`; that key is reserved for
 Tachiback translation runtime only. Visual concepts must avoid copyrighted
-characters, manga panels, third-party logos, fake UI screenshots, readable text,
-and unsupported claims.
+characters, manga panels, third-party logos, phone/app UI, fake UI screenshots,
+readable text, sexualized minors, and unsupported claims.
 
 The publisher reads JSONL entries from the configured
 `SEO_AGENT_SOCIAL_QUEUE_FILE`; production uses
@@ -255,7 +263,7 @@ The publisher reads JSONL entries from the configured
 updates do not require committing generated state. Example:
 
 ```json
-{"id":"facebook-example-20260601","platform":"facebook","status":"auto_publish","message":"Useful official post text here.","link":"https://tachiyomiat.com","scheduled_at":"2026-06-02T09:00:00Z","genre":"action","visual_style":"attractive original manhwa-inspired Android OCR translation visual, neon scan lines, speech bubbles, no readable text","image_path":"/var/lib/tachi-seo-distribution-agent/generated-images/facebook-example-20260601.png","image_alt":"Original Nayovi social image for Android OCR translation workflow."}
+{"id":"facebook-eclipse-crown-20260601","platform":"facebook","status":"auto_publish","story_title":"The Eclipse Crown","story_hook":"A moon-born queen returns when her living crown wakes.","message":"THE ECLIPSE CROWN\n\nSeraya was born inside the moon, in a prison built for children who could kill gods.\n\nFor a thousand years, the world forgot her name.\n\nThen the black sun rose.\nHer living crown opened its eyes.\nAnd the chains around the moon began to break.\n\nNow the kingdom that betrayed her is looking at the sky...\n\nBecause the queen is coming back.\n\nWould you read chapter 1?\n\nInstall Nayovi on Android:\nhttps://nayovi.com/download","link":"https://nayovi.com/download","scheduled_at":"2026-06-02T09:00:00Z","genre":"fantasy","visual_style":"original epic manhwa poster, strong moon-born queen, black sun, broken lunar chains, floating ruined kingdom, dramatic silver violet power, no text, no logo, no phone, no app UI","image_path":"/var/lib/tachi-seo-distribution-agent/generated-images/facebook-eclipse-crown-20260601.png","image_alt":"Original manhwa-style poster of a moon-born queen beneath a black sun and broken lunar chains."}
 ```
 
 Dry-run the queue:

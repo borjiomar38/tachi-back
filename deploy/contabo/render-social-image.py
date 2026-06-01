@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Render brand-safe Nayovi social images for queued posts.
+"""Render placeholder Nayovi social images for queued posts.
 
 This is a local CLI renderer. It does not call image-generation APIs and does
 not read OPENAI_API_KEY. Codex prepares the post/visual direction; this script
 turns that direction into an original PNG file and writes image_path back into
-the JSONL queue.
+the JSONL queue. It is disabled by default for production Facebook posting
+and renders draft placeholders only unless statuses are explicitly overridden,
+because auto-published story posters require higher-quality generated art.
 """
 
 from __future__ import annotations
@@ -43,7 +45,7 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument('--queue-file', required=True)
   parser.add_argument('--image-dir', default=str(DEFAULT_IMAGE_DIR))
   parser.add_argument('--size', type=int, default=DEFAULT_SIZE)
-  parser.add_argument('--statuses', default='auto_publish,approved')
+  parser.add_argument('--statuses', default='draft')
   parser.add_argument('--limit', type=int, default=20)
   parser.add_argument('--force', action='store_true')
   return parser.parse_args()
@@ -168,6 +170,55 @@ def circle(
         blend(image, width, height, x, y, color, alpha * min(1.0, edge + 0.2))
 
 
+def ellipse(
+  image: bytearray,
+  width: int,
+  height: int,
+  cx: int,
+  cy: int,
+  rx: int,
+  ry: int,
+  color: tuple[int, int, int],
+  alpha: float = 1.0,
+) -> None:
+  if rx <= 0 or ry <= 0:
+    return
+  for y in range(max(0, cy - ry), min(height, cy + ry + 1)):
+    ny = (y - cy) / ry
+    for x in range(max(0, cx - rx), min(width, cx + rx + 1)):
+      nx = (x - cx) / rx
+      d = nx * nx + ny * ny
+      if d <= 1.0:
+        edge = max(0.0, min(1.0, (1.0 - d) / 0.16))
+        blend(image, width, height, x, y, color, alpha * min(1.0, edge + 0.18))
+
+
+def polygon(
+  image: bytearray,
+  width: int,
+  height: int,
+  points: list[tuple[int, int]],
+  color: tuple[int, int, int],
+  alpha: float = 1.0,
+) -> None:
+  if len(points) < 3:
+    return
+  min_y = max(0, min(y for _, y in points))
+  max_y = min(height - 1, max(y for _, y in points))
+  for y in range(min_y, max_y + 1):
+    xs: list[float] = []
+    for i, (x0, y0) in enumerate(points):
+      x1, y1 = points[(i + 1) % len(points)]
+      if y0 == y1:
+        continue
+      if (y0 <= y < y1) or (y1 <= y < y0):
+        xs.append(x0 + (y - y0) * (x1 - x0) / (y1 - y0))
+    xs.sort()
+    for left, right in zip(xs[0::2], xs[1::2]):
+      for x in range(max(0, math.ceil(left)), min(width, math.floor(right) + 1)):
+        blend(image, width, height, x, y, color, alpha)
+
+
 def line(
   image: bytearray,
   width: int,
@@ -207,6 +258,90 @@ def panel(
   rect(image, width, height, x0 + 10, y0 + 10, x0 + w - 10, y0 + h - 10, color, alpha)
   for offset in range(24, h - 24, 34):
     line(image, width, height, x0 + 30, y0 + offset, x0 + w - 30, y0 + offset - 12, border, 3, 0.2)
+
+
+def draw_manhwa_character(
+  image: bytearray,
+  width: int,
+  height: int,
+  rng: random.Random,
+  bg0: tuple[int, int, int],
+  accent: tuple[int, int, int],
+  accent2: tuple[int, int, int],
+  glow: tuple[int, int, int],
+  paper: tuple[int, int, int],
+) -> None:
+  skin = (238, 198, 172)
+  blush = (238, 118, 138)
+  ink = (8, 10, 18)
+  hair = mix(bg0, accent2, 0.38)
+  hair_shadow = mix(bg0, ink, 0.66)
+  armor = mix(bg0, accent, 0.52)
+  light = mix(paper, glow, 0.34)
+
+  cx = int(width * 0.36 + rng.randint(-24, 16))
+  head_y = int(height * 0.27 + rng.randint(-8, 14))
+  head_r = int(width * 0.075)
+  body_y = head_y + int(height * 0.16)
+
+  polygon(
+    image,
+    width,
+    height,
+    [
+      (cx - 120, head_y + 68),
+      (cx - 330, int(height * 0.86)),
+      (cx - 38, int(height * 0.76)),
+      (cx + 66, int(height * 0.88)),
+      (cx + 218, int(height * 0.48)),
+      (cx + 86, head_y + 72),
+    ],
+    mix(bg0, accent2, 0.32),
+    0.88,
+  )
+  for strand in range(9):
+    sx = cx + rng.randint(-70, 75)
+    sy = head_y + rng.randint(-42, 28)
+    ex = sx + rng.randint(-190, 170)
+    ey = int(height * rng.uniform(0.58, 0.86))
+    line(image, width, height, sx, sy, ex, ey, hair_shadow if strand % 2 else hair, rng.randint(18, 34), 0.76)
+
+  ellipse(image, width, height, cx, head_y + 20, head_r + 34, head_r + 58, hair_shadow, 0.98)
+  ellipse(image, width, height, cx - 10, head_y, head_r + 18, head_r + 26, hair, 0.94)
+  circle(image, width, height, cx, head_y + 8, head_r, skin, 0.98)
+
+  for offset in (-52, -22, 8, 36):
+    polygon(
+      image,
+      width,
+      height,
+      [(cx + offset, head_y - 72), (cx + offset + rng.randint(-20, 20), head_y + 8), (cx + offset + 58, head_y - 44)],
+      hair,
+      0.92,
+    )
+
+  ellipse(image, width, height, cx - 30, head_y + 10, 16, 8, paper, 0.95)
+  ellipse(image, width, height, cx + 30, head_y + 10, 16, 8, paper, 0.95)
+  ellipse(image, width, height, cx - 29, head_y + 10, 7, 9, accent2, 0.98)
+  ellipse(image, width, height, cx + 29, head_y + 10, 7, 9, accent2, 0.98)
+  line(image, width, height, cx - 52, head_y - 8, cx - 13, head_y - 3, ink, 4, 0.82)
+  line(image, width, height, cx + 12, head_y - 3, cx + 54, head_y - 8, ink, 4, 0.82)
+  ellipse(image, width, height, cx - 44, head_y + 36, 12, 5, blush, 0.25)
+  ellipse(image, width, height, cx + 44, head_y + 36, 12, 5, blush, 0.25)
+  line(image, width, height, cx - 16, head_y + 48, cx + 18, head_y + 46, ink, 3, 0.55)
+
+  polygon(image, width, height, [(cx - 126, body_y), (cx + 126, body_y), (cx + 78, int(height * 0.67)), (cx - 82, int(height * 0.67))], armor, 0.94)
+  polygon(image, width, height, [(cx - 178, body_y + 34), (cx - 78, body_y + 4), (cx - 100, body_y + 110), (cx - 230, body_y + 158)], mix(accent, paper, 0.18), 0.82)
+  polygon(image, width, height, [(cx + 76, body_y + 4), (cx + 185, body_y + 42), (cx + 252, body_y + 176), (cx + 116, body_y + 124)], mix(accent2, paper, 0.14), 0.84)
+  polygon(image, width, height, [(cx - 42, body_y + 8), (cx + 44, body_y + 8), (cx + 16, body_y + 176), (cx - 18, body_y + 176)], mix(bg0, paper, 0.18), 0.95)
+  line(image, width, height, cx - 132, body_y + 8, cx + 132, body_y + 8, light, 6, 0.42)
+  line(image, width, height, cx - 68, body_y + 78, cx + 72, body_y + 78, glow, 5, 0.34)
+
+  line(image, width, height, cx - 250, int(height * 0.80), cx + 268, int(height * 0.18), paper, 10, 0.50)
+  line(image, width, height, cx - 250, int(height * 0.80), cx + 268, int(height * 0.18), glow, 22, 0.20)
+  circle(image, width, height, cx + 145, body_y + 112, 34, light, 0.78)
+  rect(image, width, height, cx + 126, body_y + 78, cx + 168, body_y + 158, ink, 0.82)
+  rect(image, width, height, cx + 132, body_y + 86, cx + 162, body_y + 150, glow, 0.34)
 
 
 def render_item(item: dict[str, Any], output_path: pathlib.Path, size: int) -> None:
@@ -271,23 +406,7 @@ def render_item(item: dict[str, Any], output_path: pathlib.Path, size: int) -> N
       0.32,
     )
 
-  phone_w = int(width * 0.34)
-  phone_h = int(height * 0.62)
-  phone_x = int(width * 0.54 + rng.randint(-30, 30))
-  phone_y = int(height * 0.18 + rng.randint(-20, 20))
-  rect(image, width, height, phone_x - 14, phone_y - 14, phone_x + phone_w + 14, phone_y + phone_h + 14, (2, 4, 10), 0.86)
-  rect(image, width, height, phone_x, phone_y, phone_x + phone_w, phone_y + phone_h, mix(bg0, paper, 0.10), 0.95)
-
-  for row in range(5):
-    y = phone_y + 55 + row * int(phone_h * 0.14)
-    bubble_w = rng.randint(int(phone_w * 0.38), int(phone_w * 0.72))
-    x = phone_x + rng.randint(24, max(25, phone_w - bubble_w - 24))
-    rect(image, width, height, x, y, x + bubble_w, y + 34, paper, 0.72)
-    rect(image, width, height, x + 12, y + 13, x + bubble_w - 18, y + 18, rng.choice((accent, accent2, glow)), 0.42)
-
-  for row in range(8):
-    y = phone_y + 35 + row * int(phone_h * 0.10)
-    line(image, width, height, phone_x - 80, y, phone_x + phone_w + 80, y + rng.randint(-18, 18), glow, 3, 0.25)
+  draw_manhwa_character(image, width, height, rng, bg0, accent, accent2, glow, paper)
 
   for _ in range(8):
     circle(
@@ -360,12 +479,12 @@ def main() -> int:
     output_path = image_dir / f'{safe_filename(post_id)}.png'
     if output_path.exists() and not args.force:
       item['image_path'] = str(output_path)
-      item.setdefault('image_alt', 'Original Nayovi social image for Android OCR and translation workflow.')
+      item.setdefault('image_alt', 'Original placeholder manhwa-style Nayovi social image.')
       continue
 
     render_item(item, output_path, max(512, min(1600, args.size)))
     item['image_path'] = str(output_path)
-    item.setdefault('image_alt', 'Original Nayovi social image for Android OCR and translation workflow.')
+    item.setdefault('image_alt', 'Original placeholder manhwa-style Nayovi social image.')
     item['image_generated_by'] = 'tachi-social-image-renderer'
     item['image_generated_at'] = dt.datetime.now(dt.UTC).isoformat().replace('+00:00', 'Z')
     rendered += 1
