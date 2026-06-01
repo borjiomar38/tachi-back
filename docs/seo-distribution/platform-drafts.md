@@ -36,6 +36,23 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ### 2026-06-01 New cycle priority drafts
 
+## 2026-06-01 Priority draft (verification-first AppBrain)
+
+- Target: AppBrain Featured Apps Program (`https://www.appbrain.com/product/featured`)
+- Category: Android app discovery / distribution trust
+- Audience: Android utility readers and distribution-aware communities
+- Rules risk: medium (requires verified developer listing posture and field compatibility)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I’m preparing an official-source metadata check for AppBrain’s Featured Apps style entry. It focuses on official APK source path, support/procurement details, trial-token split, and responsible-use boundary. I can share exact required fields once the submission schema is confirmed."
+- Link variant (conditional after category/form confirmation):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/pricing`
+- Action intent:
+  1. Confirm whether the current AppBrain flow supports external utility apps with official APK links and non-verified source restrictions.
+  2. Add links only after owner confirms package/signing and package screenshot policy.
+
 - Target: ToolIndex AI directory submit flow (`https://www.toolindex.ai/submit/`)
 - Category: AI directory (trial/paid model fields + Android OCR)
 - Audience: AI tooling curators and directory reviewers
