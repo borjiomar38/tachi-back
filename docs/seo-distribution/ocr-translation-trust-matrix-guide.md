@@ -270,3 +270,29 @@ Use this block when the first contact is uncertain:
 ### Comparison-ready line for creator/media lanes
 
 `Nayovi is an Android workflow for permission-safe manga/manhwa/manhua OCR and translation support with official trial support, paid token continuation, and human-review-first quality guidance.`
+
+## 2026-06-01 Channel-ready trust block expansion
+
+### No-link-first contact ladder (copy-ready)
+
+1. **Start with intent and boundary**
+   - "Nayovi is an Android OCR + translation workflow for permission-safe material."
+   - "We do not host or distribute full chapters."
+2. **Share policy before links**
+   - Official source + support path
+   - Free-trial then token continuation
+   - Human-review-first quality posture
+3. **Only then provide links**
+   - `https://tachiyomiat.com/download`
+   - `https://tachiyomiat.com/support`
+   - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+4. **Close with stop condition**
+   - "If this format is not allowed by your channel rules, I can keep it text-only."
+
+### Reusable comparison snippet for media/editorial use
+
+| Claim bucket | Allowed wording | Blocked wording |
+| --- | --- | --- |
+| Trust posture | "official APK source + official support + clear pricing split" | "officially verified on all stores", "no limitations", "all chapter-safe" |
+| Quality scope | "first-pass OCR/trans output for review workflows" | "final publish-grade output", "perfect accuracy guarantee" |
+| Distribution model | "user-owned workflow, explicit source-policy boundaries" | "complete catalog processing", "publisher-scale conversion service" |

@@ -36,6 +36,22 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ### 2026-06-01 New cycle priority drafts
 
+## 2026-06-01 Priority draft: Futurepedia no-link-first fit path
+
+- Target: `https://www.futurepedia.io/submit-tool`
+- Category: AI directory listing fit
+- Audience: AI workflow curators, paid-token audiences, Android APK trust reviewers
+- Rules risk: medium (requires category match and listing-field clarity)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I’m checking if Futurepedia accepts Android APK workflow products with hosted OCR/translation support, official source-link + support fields, and a free-trial-to-paid-token model. I can provide metadata next if your form accepts this category and policy posture."
+- Link variant:
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+- Action intent:
+  1. Confirm category and paid-token form requirements before sharing any link variant.
+  2. Keep this as product-light and value-first if the directory rejects APK-only or mirror-restricted models.
+
 ## 2026-06-01 Priority draft (verification-first AppBrain)
 
 - Target: AppBrain Featured Apps Program (`https://www.appbrain.com/product/featured`)
@@ -66,6 +82,21 @@ External platform drafts are for authorized-account posting only. Do not create 
 - Action intent:
   1. Confirm category/field compatibility before sharing links.
   2. Send full link block only if the flow accepts official source-link fields and trial + paid-token framing without affiliate terms.
+
+- Target: AppHunt Android review lane (`https://apphunt.org/submit-your-android-app-for-review`)
+- Category: Android app-review / distribution trust
+- Audience: Android testers, app-review communities, APK validation-minded readers
+- Rules risk: medium (source-link, screenshot, and unsupported verification claims are heavily screened)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I have a process-first review packet ready for a direct-APK Android utility workflow. I can share fields only (source URL, support path, pricing split, and responsible-use boundaries) first; no conversion copy."
+- Link variant (conditional if review lane accepts official-source entries):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+- Action intent:
+  1. Keep review outreach no-link-first until AppHunt or equivalent lane confirms allowed link and media fields.
+  2. Convert to link-safe variant only after owner confirms package, screenshot, and support policy are ready.
 
 - Target: `https://www.reddit.com/r/translator/`
 - Category: translator/Q&A forum

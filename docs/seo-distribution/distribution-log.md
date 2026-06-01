@@ -1815,3 +1815,18 @@ Next actions:
 - Appended 3 rows to `docs/growth/backlink-prospects.csv` for these new opportunities, all blocked on owner/manual approval.
 - Added one owned trust enhancement section in `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` for publish-ready link ordering and topic framing.
 - Compliance: no external posting, no third-party signup, no CAPTCHAs, and no API form posting completed due `externalPostingMode=draft` + missing authorized account completion.
+
+## 2026-06-01 Cycle (continuing pass)
+
+- Branch check: confirmed on `seo/distribution-20260601T080100Z` before final updates.
+- Re-verified `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/seo-distribution/account-setup.md`, and all `docs/seo-distribution/*.md` before drafting.
+- Content and discovery progression:
+  - Added a no-link-first/HackerNoon readiness row and AppHunt review-lane opportunity in `docs/seo-distribution/authority-opportunities.md` with action/risk metadata.
+  - Added AppHunt review packet and HackerNoon prepublish packets to `docs/seo-distribution/link-assets.md`.
+  - Added one owned content row in `docs/seo-distribution/content-calendar.md` for the trust matrix comparison lane.
+  - Added a final AppHunt review draft in `docs/seo-distribution/platform-drafts.md`.
+  - Added aligned prospect rows to `docs/growth/backlink-prospects.csv` for HackerNoon, AI Stack Exchange, and AppHunt.
+  - Expanded `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` with a channel-ready no-link-first ladder and blocked-vs-allowed comparison snippet.
+- Account-setup requirement status: `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true` remains satisfied; two additional official setup packets for this pass were already prepared earlier (Crunchbase startup profile + Bluesky/Mastodon stream) and remain `OWNER_ACTION_REQUIRED`.
+- Validation command not run (docs-only changes).
+- Compliance remains in draft mode: no account creation, no external posting, no CAPTCHA/terms acceptance actions, and no API form submit.
