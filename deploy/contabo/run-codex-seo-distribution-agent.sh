@@ -309,7 +309,7 @@ run_codex_cycle() {
     "${repo_dir}" \
     "${base_branch}" \
     "${report_file}" \
-    "${SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES:-true}" \
+    "${SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES:-false}" \
     "${SEO_AGENT_UNMERGED_BRANCH_PATTERN:-^origin/(growth|seo)/}"; then
     json_status "blocked_unmerged_branches" "${cycle_id}" "${branch}" "${report_file}" "${repo_dir}"
     return 0

@@ -63,7 +63,7 @@ SEO_AGENT_REPO_URL=${REPO_URL}
 SEO_AGENT_BASE_BRANCH=master
 SEO_AGENT_GIT_BRANCH_PREFIX=seo/distribution
 SEO_AGENT_AUTO_CHECKOUT_BRANCH=true
-SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES=true
+SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES=false
 SEO_AGENT_GIT_AUTHOR_NAME="Nayovi SEO Distribution Agent"
 SEO_AGENT_GIT_AUTHOR_EMAIL=seo-agent@nayovi.com
 SEO_AGENT_GIT_PUSH_ENABLED=true
@@ -129,7 +129,7 @@ ensure_env_default SEO_AGENT_REPO_URL "${REPO_URL}"
 ensure_env_default SEO_AGENT_BASE_BRANCH master
 ensure_env_default SEO_AGENT_GIT_BRANCH_PREFIX seo/distribution
 ensure_env_default SEO_AGENT_AUTO_CHECKOUT_BRANCH true
-ensure_env_default SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES true
+ensure_env_default SEO_AGENT_BLOCK_ON_UNMERGED_AGENT_BRANCHES false
 ensure_env_default SEO_AGENT_GIT_AUTHOR_NAME '"Nayovi SEO Distribution Agent"'
 ensure_env_default SEO_AGENT_GIT_AUTHOR_EMAIL seo-agent@nayovi.com
 ensure_env_default SEO_AGENT_GIT_PUSH_ENABLED true
