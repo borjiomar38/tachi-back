@@ -5299,3 +5299,20 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   1. Keep post/comment value-first and support-first; include only internal checklist request.
   2. Add link variant only if a moderator or thread context explicitly permits non-promotional source links.
   3. Stop at first correction signal; no follow-up in same thread without request.
+
+## 2026-06-01 Ready draft for execution queue
+
+### Hacker News Show HN draft (`AUTHORIZED_ACCOUNT_REQUIRED`)
+
+- Target: https://news.ycombinator.com/submit
+- Status: draft
+- Audience: builders, privacy-conscious AI/localization practitioners, Android developer communities
+- Rules risk: high (Show HN strongly favors launch narrative, anti-promotional tone required, no link-first framing)
+- Targeted angle: non-promotional trust-first statement describing responsible OCR translation support for owned/public-domain workflows and clear support boundaries.
+- No-link variant:
+  - "I recently documented a permission-safe Android workflow for manga/manhwa/manhua OCR and translation support with clear ownership constraints, trial-to-token onboarding, and a human-review handoff. I can share the trust matrix first; if useful, I can then provide official source links after reading your post rules."
+- Link variant:
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://tachiyomiat.com/support`
+- Next action: keep as draft; post only when an authorized official account exists and a title/body review confirms Show HN language compliance.
