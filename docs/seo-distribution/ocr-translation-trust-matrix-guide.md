@@ -249,3 +249,24 @@ Use this section for media, partner, and directory notes that request ownership 
 ### One-line reference ladder for link-gated outreach
 
 `https://tachiyomiat.com/translate-manhwa-ai` → `https://tachiyomiat.com/pricing` → `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+
+## 2026-06-01 Channel-specific trust support add-on
+
+### No-link-first landing block for media and AI directories
+
+Use this block when the first contact is uncertain:
+
+- `Start with process-first proof: official workflow summary, support path, and responsible-use boundaries.`
+- `Do not claim any third-party verification status unless confirmed by owner-controlled account setup.`
+- `Use link-ladder only after the channel confirms resource or listing fields`.
+
+### Reference ladder for approved channels
+
+1. `https://tachiyomiat.com/translate-manhwa-ai`
+2. `https://tachiyomiat.com/pricing`
+3. `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+4. `https://tachiyomiat.com/support`
+
+### Comparison-ready line for creator/media lanes
+
+`Nayovi is an Android workflow for permission-safe manga/manhwa/manhua OCR and translation support with official trial support, paid token continuation, and human-review-first quality guidance.`
