@@ -1774,3 +1774,15 @@ Next actions:
 - Appended 3 new outreach prospect rows in `docs/growth/backlink-prospects.csv` under `draft` status.
 - Kept all work draft-only due `accountCreationEnabled=false`, `externalPostingMode=draft`, and no authorized API-posting workflow.
 - Validation command not run: docs-only documentation changes.
+
+## 2026-06-01 Cycle (this pass)
+
+- Branch check: `seo/distribution-20260601T044719Z` confirmed before edits.
+- Re-verified `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and `/var/lib/tachi-seo-distribution-agent/accounts.json`.
+- Account-setup progress: added LinkedIn founder and Mangasplaining creator-media setup packets with `OWNER_ACTION_REQUIRED`/`setup_packet_prepared_owner_action_required` status so only owner-approved manual profile actions can proceed.
+- Added 3 fresh authority opportunities from web discovery in distinct categories: AI directory (`futuretoolai.com`), creator media (`mangasplaining.com`), and localization podcast lane (`nimdzi.com/nimdzi-live/`).
+- Updated `docs/seo-distribution/platform-drafts.md` with one best-ready FutureToolAI no-link-first draft and one creator-media invitation draft.
+- Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, `docs/seo-distribution/authority-opportunities.md`, `docs/seo-distribution/account-setup.md` to keep discovery and drafting pipeline aligned.
+- Appended 3 rows to `docs/growth/backlink-prospects.csv` for these new opportunities, all blocked on owner/manual approval.
+- Added one owned trust enhancement section in `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` for publish-ready link ordering and topic framing.
+- Compliance: no external posting, no third-party signup, no CAPTCHAs, and no API form posting completed due `externalPostingMode=draft` + missing authorized account completion.

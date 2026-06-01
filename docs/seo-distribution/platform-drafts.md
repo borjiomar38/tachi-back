@@ -5377,3 +5377,38 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   - `https://tachiyomiat.com/download`
   - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
 - Publish intent: Keep no-link-first until fit is confirmed; reject any paid placement or reciprocal-link requirements.
+
+## 2026-06-01 Best-ready draft queue additions
+
+### FutureToolAI submission readiness draft
+
+- Target: FutureToolAI directory submission form (`https://futuretoolai.com/`)
+- Category: AI directory (trial + paid listing)
+- Audience: AI tooling curators and high-intent Android workflow searchers
+- Rules risk: medium (submission form policy and review criteria are not yet validated for APK-specific entries)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I’m preparing a compliance-safe source-first listing for an Android OCR + translation workflow. Before sending a public entry, I want to confirm whether your category model accepts APK workflow products with trial + paid token fields and direct official source links."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/pricing`
+- Action intent:
+  1. Verify category and field compatibility.
+  2. Add only trial + paid metadata if the form accepts official APK metadata without affiliate/link-rejection conditions.
+
+### Mangasplaining creator-media pitch (creator/translation lane)
+
+- Target: Mangasplaining podcast contact and community lane (`https://www.mangasplaining.com/contact-us/`)
+- Category: creator media + localization audience
+- Audience: manga readers, localization practitioners, translation teams
+- Rules risk: medium-high (podcast-specific topic fit and explicit invitation expected)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I would like to share one narrow, process-first topic for possible guest or feature: how we keep OCR translation checks safe for user-owned or public-domain content, including glossary consistency and human-review handoff."
+- Link variant (conditional):
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  1. Keep as invite-only topic note only.
+  2. Add links only after a specific interview/topic confirmation.

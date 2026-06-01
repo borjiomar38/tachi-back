@@ -291,3 +291,10 @@ This file is maintained by the SEO distribution agent.
 | draft | owned trust pages / distribution readiness | Android app distribution + official launch readiness | https://appbrain.com/product/featured | Build metadata-fit packet for official listing surfaces with no-link-first policy and trial-to-paid framing | Add an AppBrain fit checklist section under owned launch/guide documentation when Play/public availability is confirmed |
 | draft | high-intent trial directory positioning | free trial and paid token OCR translation utility listing | https://www.try.fm/ | Create a reusable directory entry compatibility matrix for trial, pricing, support, and responsible-use fields | Verify current listing rules; prepare non-promotional field copy only if fit passes |
 | draft | founder trust and investor signaling | permission-safe AI localization workflow, developer process transparency | https://nayovi.com | Add a non-promotional founder-facing trust section for build-in-public credibility without follower/engagement mechanics | Wait on LinkedIn/Product Hunt profile approvals; draft official-byline variants only |
+
+## 2026-06-01 Cycle Additions (owned + discovery support)
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | creator-media outreach readiness | creator localization OCR QA, manga translation workflow | https://mangasplaining.com/contact-us/ | Prepare owner-approved invitation-only no-link-first note about approved-sample OCR workflow and glossary consistency for localization audiences | Reuse platform draft and keep topic-first until media fit confirmation |
+| draft | AI directory fit check | OCR translation AI tool listing, trial token model, Android workflow | https://futuretoolai.com/submit | Build a field-compatibility packet (pricing and categories) before directory submission | Keep no-link-first until submission fields are confirmed |
