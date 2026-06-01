@@ -5316,3 +5316,37 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
   - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
   - `https://tachiyomiat.com/support`
 - Next action: keep as draft; post only when an authorized official account exists and a title/body review confirms Show HN language compliance.
+
+## 2026-06-01 Priority Ready Drafts
+
+### AppBrain featured app submission (high priority)
+
+- Target: AppBrain Featured Apps Program (`https://www.appbrain.com/product/featured`)
+- Category: Android app directory + trust visibility
+- Audience: Android distribution-focused users and app-review aware readers
+- Rules risk: medium (submission requires claimed developer account and live Google Play availability)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- Source-fit: AppBrain requires official developer account + quality compliance. Current fit only valid after package and Play availability status is owner-approved.
+- No-link-first draft:
+  - `I can provide an official metadata packet for an official-source Android workflow entry (download URL, responsible-use boundary, pricing, and support page). If your submission flow accepts this structure, I can send the exact fields for review.`
+- Link variant (conditional):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Publish intent:
+  1. Confirm target allows official APK source entries that are not chapter-hosting claims.
+  2. Attach one-line responsible-use boundary only after owner confirmation.
+  3. Submit only if publication timing and policy fit are clear.
+
+### Try.fm trial software directory (secondary)
+
+- Target: Try.fm (`https://www.try.fm/`)
+- Category: AI trial/free software directory
+- Audience: high-intent comparison and trial-search users
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - `I have a trial-plus-paid-token Android OCR/translation utility and want to confirm your listing field constraints before submitting a compliant entry.`
+- Link variant (conditional):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Publish intent: Keep no-link-first until fit is confirmed; reject any paid placement or reciprocal-link requirements.
+

@@ -308,3 +308,12 @@ This file is maintained by the SEO distribution agent.
 | OCR trust matrix guide (owned, high-trust) | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | founders, reviewers, creators, directories, technical communities | Demonstrates claims-control, permission boundary, comparison matrix, and what not-to-claim; useful for no-link-to-link escalation in outreach | draft | Update with final section headings/metadata once owner approves latest feature status |
 | Product page deep-link pack | `https://tachiyomiat.com/translate-manhwa-ai`, `https://tachiyomiat.com/pricing`, `https://tachiyomiat.com/support` | directories, creator communities, investors, app review contacts | Standardized canonical packet for trust-first outreach that prevents overclaim and avoids mirror-language | draft | Keep as reusable source bundle with 3-part anchor ladder and strict moderation-safe posting policy |
 | Creator compliance FAQ add-on | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | creators, translators, localization readers | Supports policy-safe translation quality discussion without chapter-hosting claims | draft | Reuse this asset as the default no-link-first evidence anchor before any public link insertion |
+
+## 2026-06-01 Linkable Assets Added
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| AppBrain metadata packet | `https://www.appbrain.com/product/featured` | Android utility users / app distribution readers | Keeps external submissions technical-first: app source URL, trial-to-paid clarity, support route, responsible-use boundary | draft | Confirm AppBrain eligibility (claimed dev account + release criteria) before converting to submission-ready variant |
+| Try.fm trial directory readiness pack | `https://www.try.fm/` | AI trial users / comparison readers / procurement research | Product-light, category-safe listing language and risk gate for free-tier + trial + token pricing | draft | Verify if Android APK entries are accepted and whether links can remain canonical and transparent |
+| Indie Hackers founder trust note | `https://www.indiehackers.com/` | Founder communities / startup discoverability / investors | Value-first founder post template on permissions-first workflow design and Android APK trust | draft | Prepare founder-owned official account and post-approval path; post only if rules allow external linking |
+

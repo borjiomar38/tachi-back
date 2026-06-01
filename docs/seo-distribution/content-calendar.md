@@ -275,3 +275,12 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | draft | trust-first AI translation workflow | manga OCR trust matrix, permission-safe translation, trial + token model | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Publish a concise claim-control guide for reviewers, investors, and creators with no-spam language and explicit non-hosting boundaries | Add the page as a published owned asset draft in cycle review and wire internal links to pricing/support/download pages |
 | draft | launch narrative quality check | Show HN founder post for Android OCR workflow | docs/seo-distribution/platform-drafts.md | Prepare a launch-quality technical story with no-metrics-first framing and human-review-first claims | Keep in draft until official account is authorized and post-readiness approved |
+
+## 2026-06-01 Cycle Additions
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | owned trust pages / distribution readiness | Android app distribution + official launch readiness | https://appbrain.com/product/featured | Build metadata-fit packet for official listing surfaces with no-link-first policy and trial-to-paid framing | Add an AppBrain fit checklist section under owned launch/guide documentation when Play/public availability is confirmed |
+| draft | high-intent trial directory positioning | free trial and paid token OCR translation utility listing | https://www.try.fm/ | Create a reusable directory entry compatibility matrix for trial, pricing, support, and responsible-use fields | Verify current listing rules; prepare non-promotional field copy only if fit passes |
+| draft | founder trust and investor signaling | permission-safe AI localization workflow, developer process transparency | https://nayovi.com | Add a non-promotional founder-facing trust section for build-in-public credibility without follower/engagement mechanics | Wait on LinkedIn/Product Hunt profile approvals; draft official-byline variants only |
+
