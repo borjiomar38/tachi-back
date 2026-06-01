@@ -1,3 +1,33 @@
+### 2026-06-01 Cycle-Added Draft Priorities
+
+- Target: https://www.indiehackers.com/
+- Category: founder community / startup trust notes
+- Audience: solo founders, builders, investor-facing credibility seekers
+- Rules risk: medium (requires founder identity + no-launch spam controls)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I publish process notes only: how we run a permission-safe OCR+translation workflow, what we do not claim (no chapter hosting), and how we expose support/pricing verification. Let me know if a founder community note in this format is useful."
+- Link variant:
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  1. Confirm founder account ownership and whether no-link format is accepted.
+  2. Convert to owner-post only if rules permit a non-promotional process-first publish.
+
+- Target: `https://www.toolindex.ai/submit/`
+- Category: AI directory listing fit
+- Audience: AI tooling and comparison curators
+- Rules risk: medium
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I have a product-light listing fit prepared for an OCR + translation workflow with official source URL and free-trial/premium token model. Before sharing any links, can you confirm category/pricing field compatibility and any trust-boundary restrictions?"
+- Link variant:
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+- Action intent:
+  1. Keep only no-link fit check open until a manual official submission workflow is available.
+  2. Add links only if the listing accepts official APK source + paid-token split fields.
+
 # Nayovi Platform Drafts
 
 This file is maintained by the SEO distribution agent.

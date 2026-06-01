@@ -1,3 +1,10 @@
+## 2026-06-01 Cycle Additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Trust-matrix founder-ready pitch block | `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide` | Builders, founder audiences, creator communities, publishers | Adds a founder-facing no-link + optional link variant section for launch transparency, permission boundaries, and support model; useful before Indie Hackers/LinkedIn posting | draft | Keep draft-only until founder account is configured and launch policy is approved |
+| Direct Product Hunt launch packet (owner-owned) | `docs/seo-distribution/official-launch-profile-packet.md` + `docs/seo-distribution/platform-drafts.md` | Product Hunt launch community, startup founders, investors | Ready-to-use launch-ready but no-link-first profile and packet with no-upvote-control and verification-safe language | draft | Link variant only when official maker profile, token scope, and launch approval are in place |
+
 # Nayovi Linkable Assets
 
 This file is maintained by the SEO distribution agent.

@@ -1,3 +1,15 @@
+## 2026-06-01 Official Account Setup Continuation
+
+### 2026-06-01 Cycle Advancement (new)
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | Google Search Console + Bing Webmaster | Search indexing and crawl governance for trusted trust properties before external backlink distribution | owner_action_required | OWNER_ACTION_REQUIRED: verify `tachiyomiat.com`, `nayovi.com`, and `translate-manhwa-ai.com` in official consoles and approve verification language before external citation claims | `docs/seo-distribution/webmaster-and-entity-verification-packet.md`, sitemap URLs, support/pricing pages, crawl issue notes, responsible-use boundaries | `SEO_AGENT_GOOGLE_SEARCH_CONSOLE_CREDENTIALS`, `SEO_AGENT_BING_WEBMASTER_API_KEY` | Owner can run verification/report checks and keep only owned crawl evidence in owned pages and logs after approval | After credentials are connected by owner, capture verification proofs and update all drafts that mention index-readiness |
+| high | Product Hunt maker/company profile | Controlled launch + founder credibility surface for launch audiences, not growth hacks | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/claim official maker profile and organization/company page, set launch policy, set no-upvote / no-spam posting mode, and confirm canonical links | `docs/seo-distribution/official-launch-profile-packet.md`, logo/avatar/banner, official APK link, pricing/support links, no-spam playbook | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | Manual or approved API posting only when launch is cleared by owner; use only founder-verified link-safe material | Finalize profile fields and launch timing in ticketed owner action review |
+| high | Press/media kit source-of-truth page | Durable review and partner reference for editorial, creator, and partner outreach before outreach | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: add or update a public press/media note with canonical brand URL, support/contact path, and explicit package/screenshot facts | `docs/seo-distribution/official-launch-profile-packet.md`, `docs/seo-distribution/creator-platform-ai-translation-context.md`, official links, approved demo policy, screenshot policy | `SEO_AGENT_PRESS_CONTACT_REFERENCE`, `SEO_AGENT_MEDIA_CONTACT_REFERENCE` | Owner can reference stable press/ media packet from email/editorial contacts only; no automated outreach with links | Keep press/media pitch copy draft-only until official contact path and compliance review are confirmed |
+
+Only non-secret references are written in docs. Use `/opt/tachi-back/.env.seo-distribution-agent` for secret values.
+
 # Nayovi Official Account Setup
 
 This file is maintained by the SEO distribution agent.
