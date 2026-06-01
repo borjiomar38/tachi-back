@@ -36,6 +36,37 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ### 2026-06-01 New cycle priority drafts
 
+## 2026-06-01 Priority draft (best-ready): HackerNoon technical publish fit
+
+- Target: `https://help.hackernoon.com/how-do-i-get-published`
+- Category: technical publishing / founder education
+- Audience: engineers, translators, Android/mobile tooling readers
+- Rules risk: medium
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I have a process-first note for permission-safe Android OCR and translation workflows. It focuses on no chapter hosting, trial-to-token onboarding, official source/support links, and quality review boundaries. I can share the metadata packet first if your process expects a technical publisher draft."
+- Link variant (conditional after profile and editorial rule clearance):
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://tachiyomiat.com/download`
+- Action intent:
+  1. Confirm publication path and author policy (no advertorial framing).
+  2. Only convert to link variant if HackerNoon publishing approval is possible from official profile ownership.
+
+## 2026-06-01 Priority draft: Nimdzi LIVE topical engagement draft
+
+- Target: `https://www.nimdzi.com/nimdzi-live/`
+- Category: localization media conversation topic
+- Audience: localization leaders, translators, localization-tech reviewers
+- Rules risk: medium-low
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "If useful, we can share how we structure OCR QA checkpoints for manga/manhwa/manhua workflows using approved samples and human review. We focus on process controls, not replacement of upstream editorial teams."
+- Link variant (conditional only if topic request is explicit):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  1. Keep as a topic-only outreach note until contact or format acceptance is explicit.
+  2. Offer one link only after a positive response and only if no chapter-hosting or catalog-processing implication is accepted.
+
 ## 2026-06-01 Priority draft: Futurepedia no-link-first fit path
 
 - Target: `https://www.futurepedia.io/submit-tool`

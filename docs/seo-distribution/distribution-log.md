@@ -1,5 +1,18 @@
 ## 2026-06-01 Cycle (active branch current)
 
+- Branch check: `seo/distribution-20260601T101515Z` verified before edits.
+- Completed required preflight: read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all active `docs/seo-distribution/*.md` files.
+- Advanced account setup priority (2 rows) for official trust/profile readiness in `docs/seo-distribution/account-setup.md`: HackerNoon publication and Product Hunt maker profile packets.
+- Added discovery rows across categories in `docs/seo-distribution/authority-opportunities.md`:
+  - r/droidappshowcase subreddit rules path.
+  - HackerNoon editorial fit path.
+  - Nimdzi LIVE localization media topic.
+- Prepared best-ready draft in `docs/seo-distribution/platform-drafts.md` for HackerNoon plus optional conditional link variant.
+- Updated content/calendar alignment in `docs/seo-distribution/content-calendar.md` for trust-matrix and compare-to-podcast assets.
+- Updated one owned trust asset + channel linkability bundle in `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` and `docs/seo-distribution/link-assets.md`.
+- Synced `docs/seo-distribution/link-assets.md` and `docs/growth/backlink-prospects.csv` with 2026-06-01 rows and owner-gated status notes.
+- Kept all external actions draft-only due missing postable accounts/APIs (`accountCreationEnabled=false`, `externalPostingMode=draft`).
+
 - Branch check: `seo/distribution-20260601T065533Z` verified before edits.
 - Read required coordination files first: `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and active `docs/seo-distribution/*.md` files.
 - Advanced `SEO_AGENT_ACCOUNT_SETUP_PRIORITY=true` queue with two new owner-action rows in `docs/seo-distribution/account-setup.md` (Google Search Console + Android distribution submission readiness).
