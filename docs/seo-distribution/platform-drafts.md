@@ -5281,3 +5281,21 @@ Next action: keep this as a no-link-first draft until owner confirms official pr
 - Link variant: include official homepage and trial URL only once in the post after first explanatory section
 - Posting mode status: `AUTHORIZED_ACCOUNT_REQUIRED` (no HN account/API configured for posting automation)
 - Next action: draft markdown version in outreach notes with full screenshot and permission-safe disclaimer block, then hold until owner can post manually
+
+## 2026-06-01 Best-ready draft
+
+- Target: Reddit translator community (`https://www.reddit.com/r/translator/`)
+- Category: community Q&A and creator support
+- Audience: localization creators, translators, volunteer reviewers
+- Rules risk: medium-high (strict self-promo limits, anti-commercial thread hygiene)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- Target rule notes: Start with a value-first answer only. No URL in first reply unless a mod-approved follow-up request allows non- promotional linking.
+- No-link-first draft:
+  - "I’m avoiding hard sales and only sharing implementation guidance for manga/webtoon OCR quality. If helpful, I can share a short checklist that distinguishes what can be publicly stated (official support path, app permissions, trial/paid-token boundaries) from what cannot without explicit permission."
+- Link variant (only if explicitly permitted by moderators/community rules):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot`
+- Action intent:
+  1. Keep post/comment value-first and support-first; include only internal checklist request.
+  2. Add link variant only if a moderator or thread context explicitly permits non-promotional source links.
+  3. Stop at first correction signal; no follow-up in same thread without request.

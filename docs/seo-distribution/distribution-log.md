@@ -1715,3 +1715,17 @@ Next actions:
 - Distribution prep: added one GitHub-ready PR draft and one community submission draft in `platform-drafts.md`; both currently draft-only due missing required platform authorization.
 - Constraint log: external posting remains restricted by account policy (`externalPostingMode=draft`, no verified platform posting workflows configured), and no outbound posting was performed.
 - Next actions: owner executes LinkedIn + Product Hunt setup, then convert GitHub opportunity draft to PR-ready checklist and run Android Central pitch-only first version.
+
+## 2026-06-01 Cycle
+
+- Cycle start: confirmed branch `seo/distribution-20260601T002747Z`.
+- Read required inputs first: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and active SEO distribution trackers.
+- Advanced official account setup work in `docs/seo-distribution/account-setup.md` by adding owner-action packets for:
+  - LinkedIn company profile
+  - Crunchbase/startup profile
+- Added 3 high-authority opportunities in `docs/seo-distribution/authority-opportunities.md` spanning Android editorial, AI directory, and translation community categories.
+- Prepared one best-ready draft in `docs/seo-distribution/platform-drafts.md` for r/translator with strict no-link-first fallback and conditional link variant.
+- Updated `docs/seo-distribution/content-calendar.md`, `docs/seo-distribution/link-assets.md`, and `docs/seo-distribution/ocr-translation-trust-matrix-guide.md` with reusable trust-link-gating angles.
+- Added new entries to `docs/growth/backlink-prospects.csv` for linked-cycle opportunities and maintained draft/owner-review gating.
+- No external account creation, posting, directory submissions, CAPTCHAs, API posting, app uploads, or paid placements were performed (all draft and owner-gated).
+- Validation not run; changes are documentation and planning-only.

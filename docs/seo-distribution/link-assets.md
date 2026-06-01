@@ -293,3 +293,10 @@ This file is maintained by the SEO distribution agent.
   - Visual asset angle: 60-second workflow diagram + screenshot stack (upload/import, OCR pass, context verification, translated output)
   - Conversion use: Add as resource link in community posts only where accepted, otherwise keep as no-link mention in discussion drafts.
   - Draft status: `NEEDS_OWNER_APPROVAL` (content draft in docs only)
+
+## 2026-06-01 Linkable assets
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| Reddit translator QA template (no-link-first) | `https://tachiyomiat.com/guides/comic-ocr-translation-checklist` | localization communities, translators, Reddit creators | Enables compliant first-response posture in creator forums where direct links are often off-topic while maintaining factual referral standards | draft | Keep as no-link-first template for r/translator and similar translation communities; attach link only when rule-approved |
+| LinkedIn/Crowdfunding trust profile checklist | `docs/seo-distribution/account-setup.md` | investors, operators, founders, B2B partners | Standard checklist for official profile claims (legal, support, source links, no-mirror policy, paid token framing) before any external trust surface action | draft | Finalize exact profile fields and copy after owner manual account claim on LinkedIn/Crunchbase |
