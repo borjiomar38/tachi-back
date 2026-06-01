@@ -36,6 +36,23 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ### 2026-06-01 New cycle priority drafts
 
+### 2026-06-01 Best-ready draft: AI Workbench listing fit
+
+- Target: `https://www.aiworkbench.tech/submit/`
+- Category: AI directory listing fit
+- Audience: AI tooling curators evaluating Android OCR workflows
+- Rules risk: medium (free submit pathway but field compatibility must be confirmed)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I have a process-first listing packet for an Android OCR + translation workflow. It includes official APK source, support path, trial onboarding, paid-token model, and responsible-use boundary. I can confirm required fields before any link is shared."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+- Action intent:
+  1. Confirm whether AI Workbench accepts official-source Android workflows with trial/free + paid token model labeling.
+  2. Keep no-link-first until category and field compatibility is approved.
+
 ## 2026-06-01 Priority draft (best-ready): HackerNoon technical publish fit
 
 - Target: `https://help.hackernoon.com/how-do-i-get-published`

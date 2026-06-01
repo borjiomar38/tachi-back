@@ -35,6 +35,14 @@ Use this as the continuous discovery pipeline for high-authority SEO, backlink, 
 
 ## 2026-06-01 Discovery Additions (web-refresh)
 
+### 2026-06-01 Discovery Additions (high-authority expansion + category rotation)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | AI directory | AI Workbench listing readiness | https://www.aiworkbench.tech/submit/ | Strong topical fit if category, trial/pricing, and source-link fields support a direct mobile OCR workflow with no-paid placement | Listing compatibility check + no-link compatibility template | OWNER_ACTION_REQUIRED (manual form review) | low | Keep no-link until category + pricing fields are confirmed; then prepare value-first listing copy |
+| draft | medium | AI directory | NavTools AI tool submission fit | https://navtools.ai/submit | Fits a curated AI-tools format if paid-tier labeling can stay truthful for free-trial + token model and no-reciprocal-link terms are required | Listing-readiness scan + source-link policy check | OWNER_ACTION_REQUIRED | medium | Confirm free/paid tier labeling, contact/approval path, and backlink expectations before preparing link variant |
+| draft | medium | localization_partner | AltJapan creator localization collaborator note | https://www.altjapan.com/loc | Strong topical fit for creator and publisher education notes; only product-light approved-sample checklist language is compliant | Product-light topic pitch draft | OWNER_ACTION_REQUIRED (official partner/public contact path) | medium | Prepare topic-only no-link draft for approved-sample workflow and quality review; no backlink ask |
+
 | Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | draft | high | Android distribution directory | AppBrain featured apps | https://www.appbrain.com/product/featured | Strong topical fit if developer identity and Play/API fields can remain transparent and non-promotional | Metadata-fit check + submission packet | OWNER_REVIEW_REQUIRED (manual AppBrain verification + metadata readiness) | medium | Verify required directory fields, then move to no-link fit request only if official source-link + responsible-use fields are accepted |

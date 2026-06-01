@@ -40,6 +40,15 @@ Only non-secret references are written in docs. Use `/opt/tachi-back/.env.seo-di
 
 # Nayovi Official Account Setup
 
+## 2026-06-01 Cycle Account Setup (priority advance)
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | GitHub official org/repo docs | Keep all owned technical trust assets and repo documentation under a single official publisher identity | ready_for_owner_review | OWNER_ACTION_REQUIRED: confirm official org/owner profile name and canonical pages for README/docs before any public listing references | `docs/seo-distribution/official-github-trust-packet.md`, source docs route list, release note schedule, support/contact path | `SEO_AGENT_GITHUB_TOKEN optional; SSH remote is enough for owned repo branches` | Owner can publish neutral trust and process-first docs, and open maintainer-safe issues only when clearly invited by third-party policy | Confirm org/repo ownership details and pin the trust packet to repo docs pages |
+| high | DEV / Medium / Hashnode official technical publishing | Canonical technical publishing profile for claim-control and trust-ready SEO backlinks | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create or connect official author profile; define no-promotional post policy; confirm canonical URL mapping and byline ownership | `docs/seo-distribution/official-launch-profile-packet.md`, `docs/seo-distribution/ocr-translation-trust-matrix-guide.md`, preferred publishing profile copy, approved screenshots list | `SEO_AGENT_DEVTO_API_KEY`, `SEO_AGENT_MEDIUM_INTEGRATION_TOKEN`, `SEO_AGENT_HASHNODE_TOKEN` | Owner can publish process-first posts from official profile after policy review; no link-first outreach without approval | Prepare draft post now; convert to link-ready only after official profile and policy are active |
+| high | Crunchbase / startup proof profile | Investor and diligence trust surface for founders/partners before backlink conversion | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/confirm official company profile and fields; decide whether public metrics are approved for profile | `docs/seo-distribution/official-launch-profile-packet.md`, company bio, support link list, responsible-use statement, launch stage notes | `SEO_AGENT_CRUNCHBASE_PROFILE_REFERENCE` | Owner can point diligence-ready outreach and founder content to a single verified startup profile when complete | Keep public profile references as owner-review-only until submission is complete |
+
+
 This file is maintained by the SEO distribution agent.
 
 Only official Nayovi-owned accounts belong here. Do not add fake personas, throwaway accounts, passwords, tokens, recovery codes, cookies, or private credentials. Store secret values only in `/opt/tachi-back/.env.seo-distribution-agent` with strict permissions or an approved secret store; this document may reference variable names only.

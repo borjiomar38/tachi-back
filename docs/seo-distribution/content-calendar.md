@@ -7,6 +7,10 @@
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | directory + founder trust pairing | no-link-first AI directory listing copy + developer profile readiness | AI Workbench / NavTools / Crunchbase entries | High-intent owned content expansion for owned directory-fit and investor-readiness lanes | Build a single `claim-safe / no-link-first / link-optional` block and reuse before all external submissions |
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
 | draft | technical publishing readiness | Android OCR workflow publishing without PR language | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide + https://hackernoon.com/publish/ | Prepare one non-promotional article draft for technical platforms that starts with no-link-first process framing | Add reusable no-link and link-safe variants in `docs/seo-distribution/platform-drafts.md` and hold until profile ownership is completed |
 | draft | podcast/media credibility readiness | localization AI + manga reading workflow angle | https://tachiyomiat.com/guides/comic-ocr-translation-checklist + https://www.nimdzi.com/nimdzi-live/ | Build a practical explainer for translation teams on OCR failure modes, approval flow, and allowed sample boundaries | Create a media-ready one-pager and route publication through authorized founder/community profile once available |
 
