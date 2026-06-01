@@ -1,0 +1,29 @@
+{
+  "status": "auto_sync",
+  "status_notes": "Drafts are sync-ready because operational flags allow autonomous page info sync. Keep content literal and owner-safe.",
+  "fields": {
+    "name": "Nayovi",
+    "about": "Nayovi builds Android-first OCR and translation workflows for manga, manhwa, and manhua readers.",
+    "description": "Product-light Android workflow focused on permission-safe comic translation, review transparency, and responsible-use boundaries.",
+    "mission": "Share practical OCR translation guidance focused on permission-aware testing, review checkpoints, and clear support handoff criteria.",
+    "website": "https://nayovi.com",
+    "emails": ["contact@nayovi.com"],
+    "category": "TechCompany",
+    "location": {
+      "city": "TBD",
+      "country": "United States"
+    },
+    "complianceNotes": [
+      "No chapter-hosting or catalog-processing claims",
+      "No unsupported verification or ranking claims",
+      "No mirror-first APK promotion"
+    ],
+    "links": {
+      "download": "https://tachiyomiat.com/download",
+      "support": "https://tachiyomiat.com/support",
+      "checklist": "https://tachiyomiat.com/guides/comic-ocr-translation-checklist",
+      "pilot": "https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot",
+      "pricing": "https://tachiyomiat.com/pricing"
+    }
+  }
+}

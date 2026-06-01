@@ -1,5 +1,21 @@
 ## 2026-06-01 Cycle (active branch current)
 
+- Branch check: `seo/distribution-20260601T143341Z` verified at start.
+- Completed website audit and opportunity scan for this cycle, then improved one owned SEO asset:
+  - Added no-link-first citation ladder and escalation block to `PageComicOcrChecklist`.
+  - Added FAQ schema rows to `src/routes/guides/comic-ocr-translation-checklist.tsx` for better citation intent.
+- Tracked distribution and publishing prep updates:
+  - Added new content row in `docs/seo-distribution/content-calendar.md` for citation ladder and trusted link escalation.
+  - Added best-ready draft and community copy in `docs/seo-distribution/platform-drafts.md`.
+  - Added reusable internal-linkable clip rows to `docs/seo-distribution/link-assets.md`.
+  - Added Facebook queue entry in `/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl` and page-info draft in `docs/seo-distribution/facebook-page-info.json`.
+  - Kept posting posture draft-first / owner-review where required; this cycle uses one `auto_publish` Facebook queue item only because autonomous Facebook page-posting mode is enabled.
+- Validation: `./node_modules/.bin/tsc --noEmit` executed successfully; changes are scoped to one owned route + guide and SEO tracking docs.
+- Next actions:
+  - Render a manhwa-style visual for the new Facebook queue item if required by owner before publish.
+  - Convert draft platform copies to owner action only if official community account access is approved.
+- Note: did not create accounts, bypass CAPTCHAs, perform directory submissions, or post to external communities directly.
+
 - Completed cycle checkpoint for `seo/distribution-20260601T112301Z`:
   - Advanced account setup priority with official trust profiles for high-intent surfaces (GitHub org/docs, DEV/Medium/Hashnode publication, Crunchbase/startup proof) and explicit owner-action packets for owner/API requirements.
   - Added a top-tier authority-discovery rotation across AI directories and creator-localization ecosystem: AI Workbench, NavTools, AltJapan.

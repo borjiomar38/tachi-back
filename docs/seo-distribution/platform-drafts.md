@@ -36,6 +36,25 @@ External platform drafts are for authorized-account posting only. Do not create 
 
 ### 2026-06-01 New cycle priority drafts
 
+### 2026-06-01 New best-ready draft: Comic OCR checklist citation ladder (official no-link-first)
+
+- Target: r/translator / r/manga / r/indiegame?community threads that ask for translation QC guidance
+- Category: community guidance and source link escalation
+- Audience: creators, localization helpers, moderators, Android reviewers
+- Rules risk: medium (no-link-first defaults, one-link escalation only)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I can share a practical manga/manhwa OCR QA checklist focused on permission scope, reading order, missing text coverage, glossary consistency, and private vs public sharing decisions. I can keep this answer implementation-first and link-free unless you explicitly want official setup details."
+- Link variant (conditional):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+  - `https://tachiyomiat.com/pricing`
+  - `https://tachiyomiat.com/support`
+- Action intent:
+  1. Use this only as a direct reply or thread answer with disclosed affiliation.
+  2. Post/submit only from an authorized official account.
+  3. Add links only when platform rules allow helpful implementation details and the thread asks for them.
+
 ### 2026-06-01 Best-ready draft: AI Workbench listing fit
 
 - Target: `https://www.aiworkbench.tech/submit/`
