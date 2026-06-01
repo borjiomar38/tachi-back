@@ -374,6 +374,7 @@ Hard constraints:
 - Facebook posts are for normal manga/manhwa/manhua readers, not developers. Write in English. The post must feel like a teaser for an invented epic manhwa story, not like an app ad, image prompt, or technical update.
 - Facebook caption format: invented title in uppercase, then a short cinematic story hook in 5-9 plain English lines, then one reader question, then a final short Nayovi Android CTA. Use https://nayovi.com/download as the CTA link. Do not use tachiyomiat.com in new social posts unless the owner explicitly asks for legacy branding.
 - Facebook story captions must narrate the fictional manhwa world and character stakes. Avoid prompt-like summaries such as "a fallen princess wakes under a black sun"; instead write like story copy: "Seraya was born inside the moon..." Avoid internal SEO/developer phrases such as OCR checklist, no-link-first, citation ladder, schema, metadata, compliance, backlinks, ranking, API, or workflow.
+- Facebook story seeds should rotate popular manhwa subgenres: murim martial sect revenge, regressed duke / second-life noble revenge, tower hunter rank-up, constellation academy, villainess duchess politics, and necromancer returner. The dedicated social story generator refines these seeds with gpt-5.5 before poster generation.
 - Facebook visuals must be story-first invented manhwa poster art: original strong hero, heroine, duo, team, antihero, or iconic non-human threat, epic background, dramatic powers, no copyrighted characters, no device mockups, no software interface, no Nayovi logo, no translation overlay, no captured screens, no fake readable text, and no sexualized minors.
 - Facebook character rotation is required. Do not keep creating female-led posters by default. Across every 10 new Facebook queue items, target roughly 4 male-led stories, 4 female-led stories, and 2 duo/team/antihero/creature-led stories. Avoid repeating the same lead archetype, setting, power color, or title structure from the most recent Facebook queue items. Each new Facebook item should set lead_archetype to one of male_hero, female_heroine, duo_team, antihero, creature_threat, or ensemble.
 - Use status=auto_publish only when the queue item already has a high-quality story-poster image_path or image_url. If there is only an image_prompt or visual_style and no generated image asset, keep it as draft or owner_review_required with IMAGE_BACKEND_REQUIRED in the report instead of auto-publishing a weak placeholder.
@@ -396,6 +397,7 @@ Operational preferences:
 - Facebook autonomous post approval: ${SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED:-false}
 - Facebook autonomous page info sync: ${SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED:-false}
 - Facebook daily post limit: ${SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT:-1}
+- Social story concept model: ${SEO_AGENT_SOCIAL_STORY_CODEX_MODEL:-gpt-5.5}
 - Social image directory: ${SEO_AGENT_SOCIAL_IMAGE_DIR:-/var/lib/tachi-seo-distribution-agent/generated-images}
 - Social queue file: ${SEO_AGENT_SOCIAL_QUEUE_FILE:-${repo_dir}/docs/seo-distribution/social-post-queue.jsonl}
 - Git push enabled: ${SEO_AGENT_GIT_PUSH_ENABLED:-true}
@@ -453,12 +455,54 @@ PROMPT
 
   publish_cycle_branch "${repo_dir}" "${branch}" "${base_branch}" "${cycle_id}" "${report_file}"
   write_docs_snapshot "${repo_dir}"
+  maybe_generate_social_stories "${cycle_id}" "${report_file}" "${repo_dir}"
   maybe_render_social_images "${cycle_id}" "${report_file}" "${repo_dir}"
   maybe_publish_social_queue "${cycle_id}" "${report_file}" "${repo_dir}"
   maybe_send_owner_notification "${cycle_id}" "${report_file}" "${repo_dir}"
   json_status "sleeping" "${cycle_id}" "${branch}" "${report_file}" "${repo_dir}"
 
   log "Completed SEO distribution cycle ${cycle_id}; report=${report_file}"
+}
+
+maybe_generate_social_stories() {
+  local cycle_id="$1"
+  local report_file="$2"
+  local repo_dir="$3"
+  local codex_bin codex_effort codex_model queue_file story_generator
+
+  if [[ "${SEO_AGENT_SOCIAL_STORY_ENABLED:-true}" != "true" ]]; then
+    append_report_note "${report_file}" "Social story generator disabled for ${cycle_id}."
+    return 0
+  fi
+
+  story_generator="${SEO_AGENT_SOCIAL_STORY_GENERATOR_PATH:-/usr/local/bin/tachi-social-story-generator}"
+  queue_file="${SEO_AGENT_SOCIAL_QUEUE_FILE:-${repo_dir}/docs/seo-distribution/social-post-queue.jsonl}"
+  codex_bin="${SEO_AGENT_SOCIAL_STORY_CODEX_CLI_PATH:-${SEO_AGENT_CODEX_CLI_PATH:-codex}}"
+  codex_model="${SEO_AGENT_SOCIAL_STORY_CODEX_MODEL:-gpt-5.5}"
+  codex_effort="${SEO_AGENT_SOCIAL_STORY_CODEX_REASONING_EFFORT:-medium}"
+
+  if [[ ! -x "${story_generator}" ]]; then
+    append_report_note "${report_file}" "Social story generator not installed at ${story_generator}; skipped."
+    return 0
+  fi
+
+  if [[ ! -f "${queue_file}" ]]; then
+    append_report_note "${report_file}" "No social queue file at ${queue_file}; social story generator skipped."
+    return 0
+  fi
+
+  if "${story_generator}" \
+    --queue-file "${queue_file}" \
+    --limit "${SEO_AGENT_SOCIAL_STORY_LIMIT:-1}" \
+    --statuses "${SEO_AGENT_SOCIAL_STORY_STATUSES:-draft,owner_review_required}" \
+    --codex-bin "${codex_bin}" \
+    --model "${codex_model}" \
+    --reasoning-effort "${codex_effort}" \
+    >>"${report_file}" 2>&1; then
+    append_report_note "${report_file}" "Social story generator refined queue for ${cycle_id} with ${codex_model}."
+  else
+    append_report_note "${report_file}" "OWNER_REVIEW_REQUIRED: social story generator failed for ${cycle_id}; see report output above."
+  fi
 }
 
 maybe_render_social_images() {

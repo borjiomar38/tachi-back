@@ -183,6 +183,11 @@ SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
 SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
+SEO_AGENT_SOCIAL_STORY_ENABLED=true
+SEO_AGENT_SOCIAL_STORY_GENERATOR_PATH=/usr/local/bin/tachi-social-story-generator
+SEO_AGENT_SOCIAL_STORY_CODEX_MODEL=gpt-5.5
+SEO_AGENT_SOCIAL_STORY_CODEX_REASONING_EFFORT=medium
+SEO_AGENT_SOCIAL_STORY_LIMIT=1
 SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
 SEO_AGENT_NOTIFY_EMAIL=borjiomar38@gmail.com
 SEO_AGENT_NOTIFY_ENV_FILE=/opt/tachi-back/.env.growth-mail
@@ -251,6 +256,11 @@ After Meta token setup is complete, autonomous mode can be enabled:
 SEO_AGENT_FACEBOOK_POSTING_MODE=publish
 SEO_AGENT_FACEBOOK_AUTONOMOUS_APPROVAL_ENABLED=true
 SEO_AGENT_FACEBOOK_DAILY_POST_LIMIT=1
+SEO_AGENT_SOCIAL_STORY_ENABLED=true
+SEO_AGENT_SOCIAL_STORY_GENERATOR_PATH=/usr/local/bin/tachi-social-story-generator
+SEO_AGENT_SOCIAL_STORY_CODEX_MODEL=gpt-5.5
+SEO_AGENT_SOCIAL_STORY_CODEX_REASONING_EFFORT=medium
+SEO_AGENT_SOCIAL_STORY_LIMIT=1
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
 SEO_AGENT_SOCIAL_IMAGE_PROMOTE_RENDERED_STATUS=auto_publish
@@ -262,11 +272,19 @@ In autonomous mode, the agent may create queue items with
 for manga/manhwa readers: invented title, cinematic hook, 5-9 short story lines,
 one reader question, and a final short CTA to `https://nayovi.com/download`. It
 must avoid internal SEO or developer language such as checklists, metadata,
-schema, backlink work, or “no-link-first”. Facebook queue items can set
+schema, backlink work, or “no-link-first”. Before image generation, the local
+`/usr/local/bin/tachi-social-story-generator` refines draft Facebook queue items
+with Codex CLI `gpt-5.5` so the invented story, subgenre, caption, visual style,
+and image prompt are more manhwa-native. The broader SEO distribution agent can
+remain on `gpt-5.3-codex-spark`; `gpt-5.5` is reserved for the creative social
+concept and image generation stages. Facebook queue items can set
 `lead_archetype` to `male_hero`, `female_heroine`, `duo_team`, `antihero`,
 `creature_threat`, or `ensemble`. The agent should rotate the lead type instead
 of defaulting to women: roughly 4 male-led, 4 female-led, and 2
 duo/team/antihero/creature-led concepts per 10 new posts.
+The social story generator also rotates popular manhwa subgenres such as
+`murim`, `regressed_duke`, `tower_hunter`, `constellation_academy`,
+`villainess_duchess`, and `necromancer_returner`.
 
 The local `/usr/local/bin/tachi-social-image-renderer` calls
 `/usr/local/bin/tachi-codex-image-generator`, which in turn invokes Codex CLI and

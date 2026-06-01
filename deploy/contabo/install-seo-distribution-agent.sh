@@ -39,6 +39,7 @@ install -m 0755 "${APP_DIR}/deploy/contabo/run-codex-seo-distribution-agent.sh" 
 install -m 0755 "${APP_DIR}/deploy/contabo/run-seo-distribution-cron.sh" /usr/local/bin/tachi-seo-distribution-cron
 install -m 0755 "${APP_DIR}/deploy/contabo/generate-codex-image.sh" /usr/local/bin/tachi-codex-image-generator
 install -m 0755 "${APP_DIR}/deploy/contabo/publish-facebook-page-post.py" /usr/local/bin/tachi-facebook-page-publisher
+install -m 0755 "${APP_DIR}/deploy/contabo/generate-social-story-concept.py" /usr/local/bin/tachi-social-story-generator
 install -m 0755 "${APP_DIR}/deploy/contabo/render-social-image.py" /usr/local/bin/tachi-social-image-renderer
 apt-get update
 apt-get install -y ca-certificates curl git jq python3 ripgrep
@@ -100,6 +101,11 @@ SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED=false
 SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS=nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 SEO_AGENT_SOCIAL_IMAGE_DIR=/var/lib/tachi-seo-distribution-agent/generated-images
 SEO_AGENT_SOCIAL_IMAGE_REQUIRED=true
+SEO_AGENT_SOCIAL_STORY_ENABLED=true
+SEO_AGENT_SOCIAL_STORY_GENERATOR_PATH=/usr/local/bin/tachi-social-story-generator
+SEO_AGENT_SOCIAL_STORY_CODEX_MODEL=gpt-5.5
+SEO_AGENT_SOCIAL_STORY_CODEX_REASONING_EFFORT=medium
+SEO_AGENT_SOCIAL_STORY_LIMIT=1
 SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-social-image-renderer
 SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT=20
 SEO_AGENT_NOTIFY_ENABLED=false
@@ -166,6 +172,11 @@ ensure_env_default SEO_AGENT_FACEBOOK_PAGE_INFO_AUTONOMOUS_ENABLED false
 ensure_env_default SEO_AGENT_FACEBOOK_ALLOWED_LINK_DOMAINS nayovi.com,tachiyomiat.com,translate-manhwa-ai.com
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_DIR /var/lib/tachi-seo-distribution-agent/generated-images
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_REQUIRED true
+ensure_env_default SEO_AGENT_SOCIAL_STORY_ENABLED true
+ensure_env_default SEO_AGENT_SOCIAL_STORY_GENERATOR_PATH /usr/local/bin/tachi-social-story-generator
+ensure_env_default SEO_AGENT_SOCIAL_STORY_CODEX_MODEL gpt-5.5
+ensure_env_default SEO_AGENT_SOCIAL_STORY_CODEX_REASONING_EFFORT medium
+ensure_env_default SEO_AGENT_SOCIAL_STORY_LIMIT 1
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_RENDERER_PATH /usr/local/bin/tachi-social-image-renderer
 ensure_env_default SEO_AGENT_SOCIAL_IMAGE_RENDER_LIMIT 20
 ensure_env_default SEO_AGENT_NOTIFY_ENABLED false
