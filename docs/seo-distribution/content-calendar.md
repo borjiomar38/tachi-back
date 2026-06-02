@@ -365,3 +365,11 @@ This file is maintained by the SEO distribution agent.
 | Permission-safe manga translation workflows in 2026 | transactional | https://nayovi.com/guides/permission-safe-manga-translation-pilot | drafted | convert existing checklist notes into an internal case study format and schedule publish within 7 days |
 | OCR accuracy baselines for multilingual comics | informational/comparative | https://nayovi.com/guides/comic-ocr-translation-checklist | refine | add section on language-specific preprocessing and publish updated schema snippet |
 | Translating public-domain comics on Android: risks and safe alternatives | commercial-intent guide | docs draft (to be created) | planned | write landing copy and collect two sample links from open repositories for reference |
+
+## 2026-06-02 Cycle Additions
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | no-link-first trust ladder | Android verification-aware crawler and crawl-claim language | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a crawler-safe crawl/readiness paragraph linking crawl claim order to official ownership checks without verification overclaims | Add a brief section with exact approved language and internal link to support + sitemap policy |
+| draft | high-intent directory eligibility | trial versus paid-token AI listing fit | docs/seo-distribution/platform-drafts.md + https://tooldirectory.ai/ | Build one reusable listing-fit copy that stays no-link-first unless form fields permit direct source-link ordering | Prepare one product-light draft and route links to checklist + pricing only if category match is approved |
+| draft | creator/platform due diligence | visual-storytelling OCR localization quality checkpoints | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Expand owned angle on approved-sample workflow and human review checkpoints for creator and localization audiences | Add a short section usable as a publisher-facing background note |

@@ -412,3 +412,11 @@ This file is maintained by the SEO distribution agent.
   - pitch angle: “legal-risk reduction first, then translation efficiency.”
 - `asset.android_ocr_reference_tests` (priority: low): add structured screenshots or sample inputs used only for docs/testimonial-free process explanation.
   - publish target: internal media library references for future partner pitches and investor review docs.
+
+## 2026-06-02 Linkable Asset Additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| ToolDirectory.AI listing metadata ladder | https://tooldirectory.ai/ | AI directory reviewers and Android utility editors | Reusable no-link-first field-compatibility text + conditional link order for free-trial and paid-token model | draft | Keep as draft until field schema is validated; then permit link-safe listing packet |
+| Android verifier trust ladder | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Android reviewers, app distributors, creators | Adds explicit `can state / cannot state / escalate to official links` language for policy-sensitive Android press and directory mentions | draft | Sync this block with `PageComicOcrChecklist` and use for all high-risk first-touch outreach |
+| ToolWorthy listing fit summary | https://www.toolworthy.ai/ | AI directory editors and launch-curious readers | Product-light comparison entry with paid-submission and token-model gating for a no-link-first first touch | draft | Verify submit terms; convert to conditional link variant only if terms allow safe source-link and paid-plan representation |

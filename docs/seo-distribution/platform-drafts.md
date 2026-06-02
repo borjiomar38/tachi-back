@@ -5751,3 +5751,38 @@ If this does not fit your policy, please reply "opt out".
 - no-link variant: `Show HN: I built an Android OCR/translation workflow that enforces permission-safe defaults` with short problem/approach/results
 - link variant: append `https://nayovi.com/guides/comic-ocr-translation-checklist`
 - action type: draft only until owner confirms final posting account and time-window strategy.
+
+## 2026-06-02 Best-ready and watch draft additions
+
+### 2026-06-02 Ready draft: ToolDirectory.AI listing compatibility
+
+- Target: `https://tooldirectory.ai/`
+- Category: AI directory listing
+- Audience: AI-tool reviewers and comparison editors
+- Rules risk: medium (free-trial + paid-token labels and APK fields must map correctly)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I am checking listing compatibility before sharing any links. Nayovi is an Android-first OCR + translation workflow with official source URL, support path, free-trial + paid token plans, and explicit rights boundaries for approved content. If your process accepts this model, I can send an exact field-compliant metadata packet."
+- Link variant (only if fields match and official submission method is approved):
+  - `https://nayovi.com/download`
+  - `https://nayovi.com/guides/comic-ocr-translation-checklist`
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+- Action intent:
+  1. Confirm that the directory allows official APK utility entries without unsupported ranking claims.
+  2. Keep no-link-first draft until field compatibility is validated.
+  3. Send link variant only after owner approves pricing and policy fields.
+
+### 2026-06-02 Topic draft: AndroidCentral press note alignment (context only)
+
+- Target: `https://www.androidcentral.com/apps-software/sideloading-apps-onto-android-phones-from-random-sources-wont-be-an-option-starting-in-2026`
+- Category: Android press context
+- Audience: Android policy-aware readers and independent APK trust audiences
+- Rules risk: medium
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "If you evaluate independent APK workflows in your coverage, we can provide an issue-ready trust checklist for supported source-link fields, package/screenshot disclosure boundaries, and responsible-use wording for content-processing tools."
+- Link variant (conditional):
+  - `https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide`
+  - `https://nayovi.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  - Use only as a context note if outreach is explicitly requested by an official editorial path.
