@@ -1961,3 +1961,18 @@ Next actions:
 - Added 3 content-calendar topics with one mapped to existing guide refinements and one planned new docs draft.
 - Added one Facebook Page queue item draft with rotating lead archetype and no placeholder publish behavior due missing image asset.
 - Next action: finalize credentials for Google Search Console, LinkedIn, Product Hunt, and YouTube; then convert `AUTHORIZED_ACCOUNT_REQUIRED` drafts to publish-ready once manual account setup is done.
+
+## 2026-06-02 Cycle (active branch)
+
+- Branch check: `seo/distribution-20260602T010051Z` confirmed at start of cycle.
+- Read required files first: `/var/lib/tachi-seo-distribution-agent/accounts.json`, `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, and all `docs/seo-distribution/*.md` trackers before drafting.
+- Advanced official setup queue with two owner-action tasks:
+  - Google Search Console + Bing Webmaster crawl-readiness packet completion status and evidence controls.
+  - YouTube channel setup packet with official identity and anti-spam guardrails.
+- Added a new authority row set spanning AI directory, app distribution context, and technical media topics with updated risk and action controls.
+- Drafted two platform copy blocks for:
+  - ToolDirectory.AI listing compatibility (no-link-first first, conditional link variant).
+  - Android sideloading policy-context editorial framing.
+- Extended `docs/seo-distribution/content-calendar.md` and `docs/seo-distribution/link-assets.md` with one each 2026-06-02 row.
+- Added one new Facebook queue draft item in `docs/seo-distribution/social-post-queue.jsonl` for cycle-owned creator storytelling.
+- No external posting, account setup actions requiring manual verification, CAPTCHA, directory submissions, or API posts were performed; cycle remains OWNER_REVIEW_REQUIRED / AUTHORIZED_ACCOUNT_REQUIRED where appropriate.
