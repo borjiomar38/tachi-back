@@ -1,0 +1,30 @@
+{
+  "character_id": "elianor-veyr",
+  "poses": [
+    {
+      "id": "standing-neutral",
+      "description": "Neutral full-body standing pose for scale and costume continuity.",
+      "use_when": "establishing shots and character reintroduction"
+    },
+    {
+      "id": "face-close-up",
+      "description": "Close-up face angle preserving eyes, nose, lips, hairline, and expression style.",
+      "use_when": "dialogue, shock, internal thought, emotional beats"
+    },
+    {
+      "id": "hands-action",
+      "description": "Hands interacting with chains, weapon, relic, document, or clothing without anatomy drift.",
+      "use_when": "detail panels and legal/relic reveals"
+    },
+    {
+      "id": "prison-lying-full-body",
+      "description": "Lying on prison floor, full body visible from hair to feet, torn white dress, chains, bruised wrists and legs, non-sexual tragic framing.",
+      "use_when": "chapter 1 panels 1-3 and continuity from panel 1 into panel 2"
+    },
+    {
+      "id": "upright-in-chains",
+      "description": "Pushing herself upright despite chains, shoulders straight, injured but dignified.",
+      "use_when": "resolve panels and refusal scenes"
+    }
+  ]
+}

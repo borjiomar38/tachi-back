@@ -1,0 +1,16 @@
+{
+  "age_label": "",
+  "bubble_placement_rule": "place Varrien bubbles near his elevated face, ringed hand, or imperial dais",
+  "bubble_style": "formal ivory speech bubbles with clean imperial border, controlled and symmetrical",
+  "canon_prompt": "Late forties, refined golden-haired emperor, amber eyes, white and gold imperial robes, ringed hands, porcelain composure, cold public smile.",
+  "id": "emperor-varrien-solm",
+  "name": "Varrien",
+  "role": "emperor antagonist",
+  "thought_style": "rare, narrow caption-like inner line if needed",
+  "visual_identity_lock": [
+    "Do not change face structure between panels.",
+    "Do not change body proportions between panels.",
+    "Do not change primary costume unless the chapter context explicitly says so.",
+    "Use reference images from this folder before rendering chapter panels."
+  ]
+}

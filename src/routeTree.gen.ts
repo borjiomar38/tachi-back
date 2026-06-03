@@ -23,6 +23,7 @@ import { Route as ManagerRouteRouteImport } from './routes/manager/route'
 import { Route as LoginRouteRouteImport } from './routes/login/route'
 import { Route as AppRouteRouteImport } from './routes/app/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ManhwaIndexRouteImport } from './routes/manhwa/index'
 import { Route as ManagerIndexRouteImport } from './routes/manager/index'
 import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
@@ -35,9 +36,9 @@ import { Route as GuidesTestAiManhwaTranslationApprovedSamplesRouteImport } from
 import { Route as GuidesPermissionSafeMangaTranslationPilotRouteImport } from './routes/guides/permission-safe-manga-translation-pilot'
 import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
+import { Route as GuidesManhwaOcrGlossaryChecklistRouteImport } from './routes/guides/manhwa-ocr-glossary-checklist'
 import { Route as GuidesFreeTrialVsPaidTokenPlanRouteImport } from './routes/guides/free-trial-vs-paid-token-plan'
 import { Route as GuidesComicOcrTranslationChecklistRouteImport } from './routes/guides/comic-ocr-translation-checklist'
-import { Route as GuidesManhwaOcrGlossaryChecklistRouteImport } from './routes/guides/manhwa-ocr-glossary-checklist'
 import { Route as GuidesBestAndroidMangaTranslatorApkRouteImport } from './routes/guides/best-android-manga-translator-apk'
 import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
@@ -45,6 +46,8 @@ import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tok
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as ManhwaSlugRouteRouteImport } from './routes/manhwa/$slug/route'
+import { Route as ManhwaSlugIndexRouteImport } from './routes/manhwa/$slug/index'
 import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
 import { Route as ManagerTranslationQaIndexRouteImport } from './routes/manager/translation-qa/index'
@@ -71,10 +74,10 @@ import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
+import { Route as ApiCronSeoDistributionRouteImport } from './routes/api/cron/seo-distribution'
 import { Route as ApiCronPublishCodexBlogArticleRouteImport } from './routes/api/cron/publish-codex-blog-article'
 import { Route as ApiCronGenerateCodexBlogPromptRouteImport } from './routes/api/cron/generate-codex-blog-prompt'
 import { Route as ApiCronGenerateBlogArticleRouteImport } from './routes/api/cron/generate-blog-article'
-import { Route as ApiCronSeoDistributionRouteImport } from './routes/api/cron/seo-distribution'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
 import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users/new.index'
@@ -86,6 +89,7 @@ import { Route as ManagerDevicesMapIndexRouteImport } from './routes/manager/dev
 import { Route as ManagerDevicesIdIndexRouteImport } from './routes/manager/devices/$id.index'
 import { Route as ManagerContactsIdIndexRouteImport } from './routes/manager/contacts/$id.index'
 import { Route as ManagerChaptersCacheKeyIndexRouteImport } from './routes/manager/chapters/$cacheKey.index'
+import { Route as ManhwaSlugChapterChapterRouteImport } from './routes/manhwa/$slug/chapter/$chapter'
 import { Route as ApiOpenapiAuthSchemaRouteImport } from './routes/api/openapi/auth.schema'
 import { Route as ApiOpenapiAppSchemaRouteImport } from './routes/api/openapi/app.schema'
 import { Route as ApiMobileSubscriptionUpgradeRouteImport } from './routes/api/mobile/subscription/upgrade'
@@ -109,6 +113,8 @@ import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mob
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 import { Route as ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
+import { Route as ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRouteImport } from './routes/api/manhwa-private/$slug/character/$character/reference/$reference'
+import { Route as ApiManhwaPrivateSlugChapterChapterPanelPanelRouteImport } from './routes/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
 
 const TranslateManhwaAiRoute = TranslateManhwaAiRouteImport.update({
   id: '/translate-manhwa-ai',
@@ -180,6 +186,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManhwaIndexRoute = ManhwaIndexRouteImport.update({
+  id: '/manhwa/',
+  path: '/manhwa/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ManagerIndexRoute = ManagerIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -245,6 +256,12 @@ const GuidesMihonNayoviSetupRoute = GuidesMihonNayoviSetupRouteImport.update({
   path: '/guides/mihon-nayovi-setup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesManhwaOcrGlossaryChecklistRoute =
+  GuidesManhwaOcrGlossaryChecklistRouteImport.update({
+    id: '/guides/manhwa-ocr-glossary-checklist',
+    path: '/guides/manhwa-ocr-glossary-checklist',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const GuidesFreeTrialVsPaidTokenPlanRoute =
   GuidesFreeTrialVsPaidTokenPlanRouteImport.update({
     id: '/guides/free-trial-vs-paid-token-plan',
@@ -255,12 +272,6 @@ const GuidesComicOcrTranslationChecklistRoute =
   GuidesComicOcrTranslationChecklistRouteImport.update({
     id: '/guides/comic-ocr-translation-checklist',
     path: '/guides/comic-ocr-translation-checklist',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const GuidesManhwaOcrGlossaryChecklistRoute =
-  GuidesManhwaOcrGlossaryChecklistRouteImport.update({
-    id: '/guides/manhwa-ocr-glossary-checklist',
-    path: '/guides/manhwa-ocr-glossary-checklist',
     getParentRoute: () => rootRouteImport,
   } as any)
 const GuidesBestAndroidMangaTranslatorApkRoute =
@@ -298,6 +309,16 @@ const ApiContactRoute = ApiContactRouteImport.update({
   id: '/api/contact',
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ManhwaSlugRouteRoute = ManhwaSlugRouteRouteImport.update({
+  id: '/manhwa/$slug',
+  path: '/manhwa/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManhwaSlugIndexRoute = ManhwaSlugIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ManhwaSlugRouteRoute,
 } as any)
 const ManagerVersionsIndexRoute = ManagerVersionsIndexRouteImport.update({
   id: '/versions/',
@@ -432,6 +453,11 @@ const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
   path: '/api/download/apk',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronSeoDistributionRoute = ApiCronSeoDistributionRouteImport.update({
+  id: '/api/cron/seo-distribution',
+  path: '/api/cron/seo-distribution',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCronPublishCodexBlogArticleRoute =
   ApiCronPublishCodexBlogArticleRouteImport.update({
     id: '/api/cron/publish-codex-blog-article',
@@ -450,11 +476,6 @@ const ApiCronGenerateBlogArticleRoute =
     path: '/api/cron/generate-blog-article',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ApiCronSeoDistributionRoute = ApiCronSeoDistributionRouteImport.update({
-  id: '/api/cron/seo-distribution',
-  path: '/api/cron/seo-distribution',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
@@ -511,6 +532,12 @@ const ManagerChaptersCacheKeyIndexRoute =
     id: '/chapters/$cacheKey/',
     path: '/chapters/$cacheKey/',
     getParentRoute: () => ManagerRouteRoute,
+  } as any)
+const ManhwaSlugChapterChapterRoute =
+  ManhwaSlugChapterChapterRouteImport.update({
+    id: '/chapter/$chapter',
+    path: '/chapter/$chapter',
+    getParentRoute: () => ManhwaSlugRouteRoute,
   } as any)
 const ApiOpenapiAuthSchemaRoute = ApiOpenapiAuthSchemaRouteImport.update({
   id: '/schema',
@@ -641,6 +668,18 @@ const ApiMobileJobsJobIdPagesPageNumberCompleteRoute =
     path: '/complete',
     getParentRoute: () => ApiMobileJobsJobIdPagesPageNumberRoute,
   } as any)
+const ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute =
+  ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRouteImport.update({
+    id: '/api/manhwa-private/$slug/character/$character/reference/$reference',
+    path: '/api/manhwa-private/$slug/character/$character/reference/$reference',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiManhwaPrivateSlugChapterChapterPanelPanelRoute =
+  ApiManhwaPrivateSlugChapterChapterPanelPanelRouteImport.update({
+    id: '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel',
+    path: '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -657,6 +696,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
+  '/manhwa/$slug': typeof ManhwaSlugRouteRouteWithChildren
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -665,8 +705,8 @@ export interface FileRoutesByFullPath {
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/best-android-manga-translator-apk': typeof GuidesBestAndroidMangaTranslatorApkRoute
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
-  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/free-trial-vs-paid-token-plan': typeof GuidesFreeTrialVsPaidTokenPlanRoute
+  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
@@ -679,6 +719,7 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/login/': typeof LoginIndexRoute
   '/manager/': typeof ManagerIndexRoute
+  '/manhwa/': typeof ManhwaIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
@@ -711,6 +752,7 @@ export interface FileRoutesByFullPath {
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
+  '/manhwa/$slug/': typeof ManhwaSlugIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
@@ -727,6 +769,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/subscription/upgrade': typeof ApiMobileSubscriptionUpgradeRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manhwa/$slug/chapter/$chapter': typeof ManhwaSlugChapterChapterRoute
   '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
@@ -742,6 +785,8 @@ export interface FileRoutesByFullPath {
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
+  '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRoutesByTo {
@@ -764,8 +809,8 @@ export interface FileRoutesByTo {
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/best-android-manga-translator-apk': typeof GuidesBestAndroidMangaTranslatorApkRoute
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
-  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/free-trial-vs-paid-token-plan': typeof GuidesFreeTrialVsPaidTokenPlanRoute
+  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
@@ -778,6 +823,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/login': typeof LoginIndexRoute
   '/manager': typeof ManagerIndexRoute
+  '/manhwa': typeof ManhwaIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
@@ -810,6 +856,7 @@ export interface FileRoutesByTo {
   '/manager/translation-qa': typeof ManagerTranslationQaIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/versions': typeof ManagerVersionsIndexRoute
+  '/manhwa/$slug': typeof ManhwaSlugIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
@@ -826,6 +873,7 @@ export interface FileRoutesByTo {
   '/api/mobile/subscription/upgrade': typeof ApiMobileSubscriptionUpgradeRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manhwa/$slug/chapter/$chapter': typeof ManhwaSlugChapterChapterRoute
   '/manager/chapters/$cacheKey': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id': typeof ManagerDevicesIdIndexRoute
@@ -841,6 +889,8 @@ export interface FileRoutesByTo {
   '/api/mobile/jobs/$jobId': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
+  '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRoutesById {
@@ -859,6 +909,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
+  '/manhwa/$slug': typeof ManhwaSlugRouteRouteWithChildren
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -867,8 +918,8 @@ export interface FileRoutesById {
   '/checkout/success': typeof CheckoutSuccessRoute
   '/guides/best-android-manga-translator-apk': typeof GuidesBestAndroidMangaTranslatorApkRoute
   '/guides/comic-ocr-translation-checklist': typeof GuidesComicOcrTranslationChecklistRoute
-  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/free-trial-vs-paid-token-plan': typeof GuidesFreeTrialVsPaidTokenPlanRoute
+  '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
   '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
@@ -881,6 +932,7 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/login/': typeof LoginIndexRoute
   '/manager/': typeof ManagerIndexRoute
+  '/manhwa/': typeof ManhwaIndexRoute
   '/api/activation/redeem': typeof ApiActivationRedeemRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
@@ -913,6 +965,7 @@ export interface FileRoutesById {
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
+  '/manhwa/$slug/': typeof ManhwaSlugIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
@@ -929,6 +982,7 @@ export interface FileRoutesById {
   '/api/mobile/subscription/upgrade': typeof ApiMobileSubscriptionUpgradeRoute
   '/api/openapi/app/schema': typeof ApiOpenapiAppSchemaRoute
   '/api/openapi/auth/schema': typeof ApiOpenapiAuthSchemaRoute
+  '/manhwa/$slug/chapter/$chapter': typeof ManhwaSlugChapterChapterRoute
   '/manager/chapters/$cacheKey/': typeof ManagerChaptersCacheKeyIndexRoute
   '/manager/contacts/$id/': typeof ManagerContactsIdIndexRoute
   '/manager/devices/$id/': typeof ManagerDevicesIdIndexRoute
@@ -944,6 +998,8 @@ export interface FileRoutesById {
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
+  '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRouteTypes {
@@ -963,6 +1019,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support'
     | '/translate-manhwa-ai'
+    | '/manhwa/$slug'
     | '/api/contact'
     | '/api/upload'
     | '/blog/$slug'
@@ -971,8 +1028,8 @@ export interface FileRouteTypes {
     | '/checkout/success'
     | '/guides/best-android-manga-translator-apk'
     | '/guides/comic-ocr-translation-checklist'
-    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/free-trial-vs-paid-token-plan'
+    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
@@ -985,6 +1042,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/login/'
     | '/manager/'
+    | '/manhwa/'
     | '/api/activation/redeem'
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
@@ -1017,6 +1075,7 @@ export interface FileRouteTypes {
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
+    | '/manhwa/$slug/'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
@@ -1033,6 +1092,7 @@ export interface FileRouteTypes {
     | '/api/mobile/subscription/upgrade'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manhwa/$slug/chapter/$chapter'
     | '/manager/chapters/$cacheKey/'
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
@@ -1048,6 +1108,8 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
+    | '/api/manhwa-private/$slug/character/$character/reference/$reference'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -1070,8 +1132,8 @@ export interface FileRouteTypes {
     | '/checkout/success'
     | '/guides/best-android-manga-translator-apk'
     | '/guides/comic-ocr-translation-checklist'
-    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/free-trial-vs-paid-token-plan'
+    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
@@ -1084,6 +1146,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/login'
     | '/manager'
+    | '/manhwa'
     | '/api/activation/redeem'
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
@@ -1116,6 +1179,7 @@ export interface FileRouteTypes {
     | '/manager/translation-qa'
     | '/manager/users'
     | '/manager/versions'
+    | '/manhwa/$slug'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
@@ -1132,6 +1196,7 @@ export interface FileRouteTypes {
     | '/api/mobile/subscription/upgrade'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manhwa/$slug/chapter/$chapter'
     | '/manager/chapters/$cacheKey'
     | '/manager/contacts/$id'
     | '/manager/devices/$id'
@@ -1147,6 +1212,8 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId'
     | '/manager/users/$id/update'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
+    | '/api/manhwa-private/$slug/character/$character/reference/$reference'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   id:
     | '__root__'
@@ -1164,6 +1231,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support'
     | '/translate-manhwa-ai'
+    | '/manhwa/$slug'
     | '/api/contact'
     | '/api/upload'
     | '/blog/$slug'
@@ -1172,8 +1240,8 @@ export interface FileRouteTypes {
     | '/checkout/success'
     | '/guides/best-android-manga-translator-apk'
     | '/guides/comic-ocr-translation-checklist'
-    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/free-trial-vs-paid-token-plan'
+    | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/mihon-nayovi-setup'
     | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
@@ -1186,11 +1254,13 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/login/'
     | '/manager/'
+    | '/manhwa/'
     | '/api/activation/redeem'
     | '/api/auth/$'
     | '/api/cron/generate-blog-article'
     | '/api/cron/generate-codex-blog-prompt'
     | '/api/cron/publish-codex-blog-article'
+    | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
@@ -1217,6 +1287,7 @@ export interface FileRouteTypes {
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
+    | '/manhwa/$slug/'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/mobile/auth/activate'
@@ -1233,6 +1304,7 @@ export interface FileRouteTypes {
     | '/api/mobile/subscription/upgrade'
     | '/api/openapi/app/schema'
     | '/api/openapi/auth/schema'
+    | '/manhwa/$slug/chapter/$chapter'
     | '/manager/chapters/$cacheKey/'
     | '/manager/contacts/$id/'
     | '/manager/devices/$id/'
@@ -1248,6 +1320,8 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
+    | '/api/manhwa-private/$slug/character/$character/reference/$reference'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   fileRoutesById: FileRoutesById
 }
@@ -1266,6 +1340,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
   TranslateManhwaAiRoute: typeof TranslateManhwaAiRoute
+  ManhwaSlugRouteRoute: typeof ManhwaSlugRouteRouteWithChildren
   ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -1274,8 +1349,8 @@ export interface RootRouteChildren {
   CheckoutSuccessRoute: typeof CheckoutSuccessRoute
   GuidesBestAndroidMangaTranslatorApkRoute: typeof GuidesBestAndroidMangaTranslatorApkRoute
   GuidesComicOcrTranslationChecklistRoute: typeof GuidesComicOcrTranslationChecklistRoute
-  GuidesManhwaOcrGlossaryChecklistRoute: typeof GuidesManhwaOcrGlossaryChecklistRoute
   GuidesFreeTrialVsPaidTokenPlanRoute: typeof GuidesFreeTrialVsPaidTokenPlanRoute
+  GuidesManhwaOcrGlossaryChecklistRoute: typeof GuidesManhwaOcrGlossaryChecklistRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
   GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
   GuidesPermissionSafeMangaTranslationPilotRoute: typeof GuidesPermissionSafeMangaTranslationPilotRoute
@@ -1285,6 +1360,7 @@ export interface RootRouteChildren {
   LegalPrivacyRoute: typeof LegalPrivacyRoute
   LegalTermsRoute: typeof LegalTermsRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ManhwaIndexRoute: typeof ManhwaIndexRoute
   ApiActivationRedeemRoute: typeof ApiActivationRedeemRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiCronGenerateBlogArticleRoute: typeof ApiCronGenerateBlogArticleRoute
@@ -1315,6 +1391,8 @@ export interface RootRouteChildren {
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
   ApiMobileSubscriptionUpgradeRoute: typeof ApiMobileSubscriptionUpgradeRoute
+  ApiManhwaPrivateSlugChapterChapterPanelPanelRoute: typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
+  ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute: typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1417,6 +1495,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manhwa/': {
+      id: '/manhwa/'
+      path: '/manhwa'
+      fullPath: '/manhwa/'
+      preLoaderRoute: typeof ManhwaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/manager/': {
       id: '/manager/'
       path: '/'
@@ -1501,20 +1586,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuidesMihonNayoviSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/guides/free-trial-vs-paid-token-plan': {
-      id: '/guides/free-trial-vs-paid-token-plan'
-      path: '/guides/free-trial-vs-paid-token-plan'
-      fullPath: '/guides/free-trial-vs-paid-token-plan'
-      preLoaderRoute: typeof GuidesFreeTrialVsPaidTokenPlanRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/comic-ocr-translation-checklist': {
-      id: '/guides/comic-ocr-translation-checklist'
-      path: '/guides/comic-ocr-translation-checklist'
-      fullPath: '/guides/comic-ocr-translation-checklist'
-      preLoaderRoute: typeof GuidesComicOcrTranslationChecklistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/guides/manhwa-ocr-glossary-checklist': {
       id: '/guides/manhwa-ocr-glossary-checklist'
       path: '/guides/manhwa-ocr-glossary-checklist'
@@ -1527,6 +1598,13 @@ declare module '@tanstack/react-router' {
       path: '/guides/free-trial-vs-paid-token-plan'
       fullPath: '/guides/free-trial-vs-paid-token-plan'
       preLoaderRoute: typeof GuidesFreeTrialVsPaidTokenPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/comic-ocr-translation-checklist': {
+      id: '/guides/comic-ocr-translation-checklist'
+      path: '/guides/comic-ocr-translation-checklist'
+      fullPath: '/guides/comic-ocr-translation-checklist'
+      preLoaderRoute: typeof GuidesComicOcrTranslationChecklistRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/best-android-manga-translator-apk': {
@@ -1577,6 +1655,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/contact'
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/manhwa/$slug': {
+      id: '/manhwa/$slug'
+      path: '/manhwa/$slug'
+      fullPath: '/manhwa/$slug'
+      preLoaderRoute: typeof ManhwaSlugRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manhwa/$slug/': {
+      id: '/manhwa/$slug/'
+      path: '/'
+      fullPath: '/manhwa/$slug/'
+      preLoaderRoute: typeof ManhwaSlugIndexRouteImport
+      parentRoute: typeof ManhwaSlugRouteRoute
     }
     '/manager/versions/': {
       id: '/manager/versions/'
@@ -1760,6 +1852,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiDownloadApkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cron/seo-distribution': {
+      id: '/api/cron/seo-distribution'
+      path: '/api/cron/seo-distribution'
+      fullPath: '/api/cron/seo-distribution'
+      preLoaderRoute: typeof ApiCronSeoDistributionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/cron/publish-codex-blog-article': {
       id: '/api/cron/publish-codex-blog-article'
       path: '/api/cron/publish-codex-blog-article'
@@ -1779,13 +1878,6 @@ declare module '@tanstack/react-router' {
       path: '/api/cron/generate-blog-article'
       fullPath: '/api/cron/generate-blog-article'
       preLoaderRoute: typeof ApiCronGenerateBlogArticleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/cron/seo-distribution': {
-      id: '/api/cron/seo-distribution'
-      path: '/api/cron/seo-distribution'
-      fullPath: '/api/cron/seo-distribution'
-      preLoaderRoute: typeof ApiCronSeoDistributionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/auth/$': {
@@ -1864,6 +1956,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/manager/chapters/$cacheKey/'
       preLoaderRoute: typeof ManagerChaptersCacheKeyIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
+    }
+    '/manhwa/$slug/chapter/$chapter': {
+      id: '/manhwa/$slug/chapter/$chapter'
+      path: '/chapter/$chapter'
+      fullPath: '/manhwa/$slug/chapter/$chapter'
+      preLoaderRoute: typeof ManhwaSlugChapterChapterRouteImport
+      parentRoute: typeof ManhwaSlugRouteRoute
     }
     '/api/openapi/auth/schema': {
       id: '/api/openapi/auth/schema'
@@ -2026,6 +2125,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport
       parentRoute: typeof ApiMobileJobsJobIdPagesPageNumberRoute
     }
+    '/api/manhwa-private/$slug/character/$character/reference/$reference': {
+      id: '/api/manhwa-private/$slug/character/$character/reference/$reference'
+      path: '/api/manhwa-private/$slug/character/$character/reference/$reference'
+      fullPath: '/api/manhwa-private/$slug/character/$character/reference/$reference'
+      preLoaderRoute: typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': {
+      id: '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
+      path: '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
+      fullPath: '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
+      preLoaderRoute: typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -2117,6 +2230,20 @@ const ManagerRouteRouteWithChildren = ManagerRouteRoute._addFileChildren(
   ManagerRouteRouteChildren,
 )
 
+interface ManhwaSlugRouteRouteChildren {
+  ManhwaSlugIndexRoute: typeof ManhwaSlugIndexRoute
+  ManhwaSlugChapterChapterRoute: typeof ManhwaSlugChapterChapterRoute
+}
+
+const ManhwaSlugRouteRouteChildren: ManhwaSlugRouteRouteChildren = {
+  ManhwaSlugIndexRoute: ManhwaSlugIndexRoute,
+  ManhwaSlugChapterChapterRoute: ManhwaSlugChapterChapterRoute,
+}
+
+const ManhwaSlugRouteRouteWithChildren = ManhwaSlugRouteRoute._addFileChildren(
+  ManhwaSlugRouteRouteChildren,
+)
+
 interface ApiMobileJobsJobIdPagesPageNumberRouteChildren {
   ApiMobileJobsJobIdPagesPageNumberCompleteRoute: typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
@@ -2205,6 +2332,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,
   TranslateManhwaAiRoute: TranslateManhwaAiRoute,
+  ManhwaSlugRouteRoute: ManhwaSlugRouteRouteWithChildren,
   ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,
   BlogSlugRoute: BlogSlugRoute,
@@ -2215,9 +2343,8 @@ const rootRouteChildren: RootRouteChildren = {
     GuidesBestAndroidMangaTranslatorApkRoute,
   GuidesComicOcrTranslationChecklistRoute:
     GuidesComicOcrTranslationChecklistRoute,
-  GuidesManhwaOcrGlossaryChecklistRoute:
-    GuidesManhwaOcrGlossaryChecklistRoute,
   GuidesFreeTrialVsPaidTokenPlanRoute: GuidesFreeTrialVsPaidTokenPlanRoute,
+  GuidesManhwaOcrGlossaryChecklistRoute: GuidesManhwaOcrGlossaryChecklistRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
   GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
   GuidesPermissionSafeMangaTranslationPilotRoute:
@@ -2229,6 +2356,7 @@ const rootRouteChildren: RootRouteChildren = {
   LegalPrivacyRoute: LegalPrivacyRoute,
   LegalTermsRoute: LegalTermsRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ManhwaIndexRoute: ManhwaIndexRoute,
   ApiActivationRedeemRoute: ApiActivationRedeemRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiCronGenerateBlogArticleRoute: ApiCronGenerateBlogArticleRoute,
@@ -2261,6 +2389,10 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
   ApiMobileSubscriptionUpgradeRoute: ApiMobileSubscriptionUpgradeRoute,
+  ApiManhwaPrivateSlugChapterChapterPanelPanelRoute:
+    ApiManhwaPrivateSlugChapterChapterPanelPanelRoute,
+  ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute:
+    ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

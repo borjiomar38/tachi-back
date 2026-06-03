@@ -1,0 +1,16 @@
+{
+  "age_label": "",
+  "bubble_placement_rule": "place Elianor-owned bubbles near her face, hand, eye reflection, or posture so the reader knows the thought belongs to her",
+  "bubble_style": "normal spoken lines use elegant ivory speech bubbles with thin black ink outline and refined serif text",
+  "canon_prompt": "Early twenties, tall slender fallen princess, moon-pale skin, long black hair with blue-black sheen, ash-gray eyes that turn silver during eclipse magic, sharp delicate features, torn white execution dress with faded silver embroidery, bruised wrists, restrained sorrowful expression, never sexualized.",
+  "id": "elianor-veyr",
+  "name": "Elianor Veyr",
+  "role": "fallen princess and protagonist",
+  "thought_style": "internal thoughts may use black-silver bordered ivory bubbles with soft moonlight, placed close to her face or eye",
+  "visual_identity_lock": [
+    "Do not change face structure between panels.",
+    "Do not change body proportions between panels.",
+    "Do not change primary costume unless the chapter context explicitly says so.",
+    "Use reference images from this folder before rendering chapter panels."
+  ]
+}

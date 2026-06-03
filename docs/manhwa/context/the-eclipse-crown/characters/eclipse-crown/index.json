@@ -1,0 +1,62 @@
+{
+  "character_id": "eclipse-crown",
+  "profile": "characters/eclipse-crown/profile.json",
+  "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown",
+  "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference",
+  "reference_plan": "characters/eclipse-crown/reference-plan.json",
+  "reference_status": {
+    "generated_count": 0,
+    "missing_count": 5,
+    "missing_reference_ids": [
+      "identity-front-full-body",
+      "identity-three-quarter",
+      "face-expression-sheet",
+      "hands-props-detail",
+      "chapter-001-key-pose"
+    ],
+    "references": [
+      {
+        "generated": false,
+        "id": "identity-front-full-body",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/identity-front-full-body.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-front-full-body",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-front-full-body",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "identity-three-quarter",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/identity-three-quarter.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-three-quarter",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-three-quarter",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "face-expression-sheet",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/face-expression-sheet.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/face-expression-sheet",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/face-expression-sheet",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "hands-props-detail",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/hands-props-detail.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/hands-props-detail",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/hands-props-detail",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "chapter-001-key-pose",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/chapter-001-key-pose.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/chapter-001-key-pose",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/chapter-001-key-pose",
+        "status": "missing"
+      }
+    ],
+    "required_before_chapter_render": true
+  },
+  "pose_bank": "characters/eclipse-crown/pose-bank.json"
+}

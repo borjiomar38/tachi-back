@@ -1,0 +1,445 @@
+{
+  "character_ids": [
+    "elianor-veyr",
+    "eclipse-crown",
+    "caelan-rhovir",
+    "archpriestess-maerith",
+    "emperor-varrien-solm",
+    "selene-voss",
+    "prince-luceren-solm"
+  ],
+  "characters": {
+    "elianor-veyr": {
+      "name": "Elianor Veyr",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "fallen princess and protagonist"
+    },
+    "eclipse-crown": {
+      "name": "Eclipse Crown",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "living crown and supernatural inner voice"
+    },
+    "caelan-rhovir": {
+      "name": "Caelan Rhovir",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "regressed northern duke"
+    },
+    "archpriestess-maerith": {
+      "name": "Maerith",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "archpriestess antagonist"
+    },
+    "emperor-varrien-solm": {
+      "name": "Varrien",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "emperor antagonist"
+    },
+    "selene-voss": {
+      "name": "Selene Voss",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "loyal palace maid"
+    },
+    "prince-luceren-solm": {
+      "name": "Luceren",
+      "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm",
+      "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference",
+      "reference_status": {
+        "generated_count": 0,
+        "missing_count": 5,
+        "missing_reference_ids": [
+          "identity-front-full-body",
+          "identity-three-quarter",
+          "face-expression-sheet",
+          "hands-props-detail",
+          "chapter-001-key-pose"
+        ],
+        "references": [
+          {
+            "generated": false,
+            "id": "identity-front-full-body",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/identity-front-full-body.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-front-full-body",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-front-full-body",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "identity-three-quarter",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/identity-three-quarter.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-three-quarter",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-three-quarter",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "face-expression-sheet",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/face-expression-sheet.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/face-expression-sheet",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/face-expression-sheet",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "hands-props-detail",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/hands-props-detail.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/hands-props-detail",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/hands-props-detail",
+            "status": "missing"
+          },
+          {
+            "generated": false,
+            "id": "chapter-001-key-pose",
+            "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/chapter-001-key-pose.png",
+            "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/chapter-001-key-pose",
+            "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/chapter-001-key-pose",
+            "status": "missing"
+          }
+        ],
+        "required_before_chapter_render": true
+      },
+      "role": "guarded prince"
+    }
+  },
+  "reference_status": {
+    "generated_count": 0,
+    "missing_count": 35,
+    "next_missing_reference": {
+      "character_id": "elianor-veyr",
+      "reference_id": "identity-front-full-body",
+      "local_file": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr/identity-front-full-body.png",
+      "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/identity-front-full-body"
+    },
+    "total_count": 35
+  },
+  "rule": "Each recurring character must have reference images generated before regular chapter panels use them."
+}

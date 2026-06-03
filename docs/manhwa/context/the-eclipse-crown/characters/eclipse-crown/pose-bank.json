@@ -1,0 +1,15 @@
+{
+  "character_id": "eclipse-crown",
+  "poses": [
+    {
+      "id": "eye-reflection",
+      "description": "Crown appears only as black-silver thorn reflection inside Elianor eye.",
+      "use_when": "inner voice and magical identity reveal"
+    },
+    {
+      "id": "shadow-crown",
+      "description": "Crown visible in shadow or blade reflection, not physically sitting on head.",
+      "use_when": "execution tension and magic restraint"
+    }
+  ]
+}

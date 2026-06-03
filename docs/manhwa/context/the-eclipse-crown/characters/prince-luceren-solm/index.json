@@ -1,0 +1,62 @@
+{
+  "character_id": "prince-luceren-solm",
+  "profile": "characters/prince-luceren-solm/profile.json",
+  "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm",
+  "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference",
+  "reference_plan": "characters/prince-luceren-solm/reference-plan.json",
+  "reference_status": {
+    "generated_count": 0,
+    "missing_count": 5,
+    "missing_reference_ids": [
+      "identity-front-full-body",
+      "identity-three-quarter",
+      "face-expression-sheet",
+      "hands-props-detail",
+      "chapter-001-key-pose"
+    ],
+    "references": [
+      {
+        "generated": false,
+        "id": "identity-front-full-body",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/identity-front-full-body.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-front-full-body",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-front-full-body",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "identity-three-quarter",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/identity-three-quarter.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-three-quarter",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-three-quarter",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "face-expression-sheet",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/face-expression-sheet.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/face-expression-sheet",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/face-expression-sheet",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "hands-props-detail",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/hands-props-detail.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/hands-props-detail",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/hands-props-detail",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "chapter-001-key-pose",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/chapter-001-key-pose.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/chapter-001-key-pose",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/chapter-001-key-pose",
+        "status": "missing"
+      }
+    ],
+    "required_before_chapter_render": true
+  },
+  "pose_bank": "characters/prince-luceren-solm/pose-bank.json"
+}

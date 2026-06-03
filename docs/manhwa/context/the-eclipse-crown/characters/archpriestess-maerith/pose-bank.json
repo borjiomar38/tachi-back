@@ -1,0 +1,20 @@
+{
+  "character_id": "archpriestess-maerith",
+  "poses": [
+    {
+      "id": "standing-neutral",
+      "description": "Neutral full-body standing pose for scale and costume continuity.",
+      "use_when": "establishing shots and character reintroduction"
+    },
+    {
+      "id": "face-close-up",
+      "description": "Close-up face angle preserving eyes, nose, lips, hairline, and expression style.",
+      "use_when": "dialogue, shock, internal thought, emotional beats"
+    },
+    {
+      "id": "hands-action",
+      "description": "Hands interacting with chains, weapon, relic, document, or clothing without anatomy drift.",
+      "use_when": "detail panels and legal/relic reveals"
+    }
+  ]
+}

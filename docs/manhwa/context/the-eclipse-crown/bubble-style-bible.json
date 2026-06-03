@@ -1,0 +1,27 @@
+{
+  "style_name": "Eclipse Gothic Manhwa Lettering",
+  "general_rule": "Keep one coherent bubble and lettering system across all panels. Bubbles must look generated as part of the illustrated manhwa panel, not UI overlays.",
+  "narration_caption": {
+    "shape": "black gothic rectangular title-card box",
+    "border": "thin ivory or silver ornamental filigree border",
+    "font": "elegant white serif lettering, cinematic and readable",
+    "placement": "atmospheric negative space, never covering a main face"
+  },
+  "normal_dialogue": {
+    "shape": "clean white or warm ivory manhwa speech bubble",
+    "border": "inked black or dark charcoal outline with subtle paper texture",
+    "font": "readable dark serif lettering with graceful line breaks",
+    "tail": "natural tail pointing clearly to the visible speaker"
+  },
+  "supernatural_thought": {
+    "shape": "warm ivory oval or circular thought bubble",
+    "border": "thin black-silver decorative ring with moonlit glow",
+    "font": "dark elegant serif lettering, slightly mystical but highly readable",
+    "tail": "small thought-dot chain or glow pointing to the magical source, relic, reflection, or receiving character"
+  },
+  "background_text": {
+    "rule": "Use only short exact place/time/context captions when they clarify the scene.",
+    "style": "small gothic engraved plaque, ritual title card, or atmospheric serif caption integrated into the environment",
+    "avoid": "random decorative words, fake letters, logos, watermarks, or long exposition"
+  }
+}

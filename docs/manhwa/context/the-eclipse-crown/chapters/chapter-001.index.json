@@ -1,0 +1,723 @@
+{
+  "chapter_number": 1,
+  "generated_from": {
+    "context": "chapters/chapter-001.json",
+    "package": "../../generated/the-eclipse-crown-chapter-001.json"
+  },
+  "panel_lookup": {
+    "1": {
+      "background_text": "Imperial Prison - three hours before execution",
+      "bubble_layout_plan": "The Crown line is a supernatural thought received by Elianor. Place the thought bubble near Elianor but leave her face visible; use small dots or glow pointing to her forehead, eye reflection, or the invisible crown source.",
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [
+        {
+          "speaker": "Eclipse Crown",
+          "text": "Wake, little sovereign. The blade is still three hours away."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "Use the accepted Eclipse Gothic style: black ornamental narration card, luminous ivory Crown thought bubble, elegant serif lettering with high contrast.",
+      "prompt_keys": [
+        "chapter:001",
+        "character:elianor-veyr",
+        "speaker:Eclipse Crown"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "The next panel must begin from this lower edge instead of jumping to a disconnected shot."
+    },
+    "2": {
+      "background_text": "",
+      "bubble_layout_plan": "Elianor's line belongs to her mouth/face; the Crown reply must feel like a reflection or inner voice from her eye.",
+      "characters_present": ["elianor-veyr", "eclipse-crown"],
+      "dialogue": [
+        {
+          "speaker": "Elianor",
+          "text": "I died."
+        },
+        {
+          "speaker": "Eclipse Crown",
+          "text": "Briefly. Inefficiently."
+        }
+      ],
+      "image_prompt_addendum": "Do not start as an isolated eye close-up. Start by continuing vertically from the bottom of panel 1: show Elianor's lower body, bruised legs, bare feet or prison slippers, torn white dress hem, chains, wet stone floor, and strands of black hair. Then transition the viewer's gaze upward or into an inset/reflection close-up of her eye where the Crown is visible. The panel should feel like the camera panned downward from panel 1 before moving into the eye beat.",
+      "lettering_plan": "Keep the same black ornamental narration card and ivory thought/speech bubble system.",
+      "prompt_keys": [
+        "chapter:002",
+        "character:elianor-veyr",
+        "character:eclipse-crown",
+        "speaker:Elianor",
+        "speaker:Eclipse Crown"
+      ],
+      "visual_continuity_in": "Direct continuation from panel 1 bottom edge. Reveal the cropped lower body and feet so the vertical scroll does not feel abruptly cut.",
+      "visual_continuity_out": "End on the eye/reflection motif so the following panel can move into Elianor pushing herself upright."
+    },
+    "3": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [
+        {
+          "speaker": "Elianor",
+          "text": "Then I still have time."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:003",
+        "character:elianor-veyr",
+        "speaker:Elianor"
+      ],
+      "visual_continuity_in": "Continue from panel 2: Elianor's eye reflection or silver glint becomes the next visual focus.",
+      "visual_continuity_out": "Her posture begins low and rises, supporting the chapter's survival arc."
+    },
+    "4": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": ["chapter:004", "character:elianor-veyr"],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Quiet foreshadowing panel; symbol is visual only and not readable script."
+    },
+    "5": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["caelan-rhovir"],
+      "dialogue": [
+        {
+          "speaker": "Caelan",
+          "text": "No. Not again."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:005",
+        "character:caelan-rhovir",
+        "speaker:Caelan"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Correct body continuity: bare hand while waking, gloves nearby but not worn."
+    },
+    "6": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["caelan-rhovir"],
+      "dialogue": [
+        {
+          "speaker": "Caelan",
+          "text": "Saddle the black relay. Wake no herald who cannot lie."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:006",
+        "character:caelan-rhovir",
+        "speaker:Caelan"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Transition from private memory to public duke identity with gloves and coat."
+    },
+    "7": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "archpriestess-maerith",
+        "emperor-varrien-solm",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Maerith",
+          "text": "Let every loyal heart witness the moon's correction."
+        },
+        {
+          "speaker": "Varrien",
+          "text": "A lawful death leaves no ghosts."
+        },
+        {
+          "speaker": "Luceren",
+          "text": "Then let it be lawful."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:007",
+        "character:archpriestess-maerith",
+        "character:emperor-varrien-solm",
+        "character:prince-luceren-solm",
+        "speaker:Maerith",
+        "speaker:Varrien",
+        "speaker:Luceren"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Establish antagonist motives and limits through placement: priest at rite, emperor at law-seat, prince apart."
+    },
+    "8": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr", "selene-voss"],
+      "dialogue": [
+        {
+          "speaker": "Selene",
+          "text": "Your Highness... look left when the bell rings."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "You should not be here."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:008",
+        "character:elianor-veyr",
+        "character:selene-voss",
+        "speaker:Selene",
+        "speaker:Elianor"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Adds human reaction and a route from prison to plaza before the scaffold."
+    },
+    "9": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr", "archpriestess-maerith"],
+      "dialogue": [
+        {
+          "speaker": "Maerith",
+          "text": "Confess, child, and the crowd may remember you gently."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "I will not make your fear holy."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:009",
+        "character:elianor-veyr",
+        "character:archpriestess-maerith",
+        "speaker:Maerith",
+        "speaker:Elianor"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Builds direct confrontation before magic; keep Elianor standing."
+    },
+    "10": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "elianor-veyr",
+        "emperor-varrien-solm",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Varrien",
+          "text": "Elianor Veyr, the empire offers one mercy: kneel."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "The empire has mistaken kneeling for truth."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:010",
+        "character:elianor-veyr",
+        "character:emperor-varrien-solm",
+        "character:prince-luceren-solm",
+        "speaker:Varrien",
+        "speaker:Elianor"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Court hierarchy reads vertically from emperor above to Elianor below."
+    },
+    "11": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "elianor-veyr",
+        "eclipse-crown",
+        "archpriestess-maerith"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Eclipse Crown",
+          "text": "Let me eat."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "Not all of it. Not me."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:011",
+        "character:elianor-veyr",
+        "character:eclipse-crown",
+        "character:archpriestess-maerith",
+        "speaker:Eclipse Crown",
+        "speaker:Elianor"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Magic escalates but Crown remains reflection/shadow-based; reaction beat before rescue."
+    },
+    "12": {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "elianor-veyr",
+        "caelan-rhovir",
+        "emperor-varrien-solm",
+        "archpriestess-maerith",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Caelan",
+          "text": "I contest the verdict because Princess Elianor Veyr was murdered once already."
+        }
+      ],
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "prompt_keys": [
+        "chapter:012",
+        "character:elianor-veyr",
+        "character:caelan-rhovir",
+        "character:emperor-varrien-solm",
+        "character:archpriestess-maerith",
+        "character:prince-luceren-solm",
+        "speaker:Caelan"
+      ],
+      "visual_continuity_in": "",
+      "visual_continuity_out": "End with vertical power reversal: duke kneels below, princess standing above, emperor exposed above them."
+    }
+  },
+  "panels": [
+    {
+      "background_text": "Imperial Prison - three hours before execution",
+      "bubble_layout_plan": "The Crown line is a supernatural thought received by Elianor. Place the thought bubble near Elianor but leave her face visible; use small dots or glow pointing to her forehead, eye reflection, or the invisible crown source.",
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [
+        {
+          "speaker": "Eclipse Crown",
+          "text": "Wake, little sovereign. The blade is still three hours away."
+        }
+      ],
+      "image_prompt": "Tall vertical opening panel, prison ceiling dissolving into a barred view of the chained moon, Elianor Veyr lying on cold stone in torn white execution dress, bruised wrists, long black hair spread like ink, faint crown shape only reflected in one ash-gray eye, original dark royal fantasy manhwa, no readable text",
+      "image_prompt_addendum": "",
+      "lettering_plan": "Use the accepted Eclipse Gothic style: black ornamental narration card, luminous ivory Crown thought bubble, elegant serif lettering with high contrast.",
+      "narration": "The moon was still chained when Elianor opened her eyes.",
+      "panel_number": 1,
+      "prompt_keys": [
+        "chapter:001",
+        "character:elianor-veyr",
+        "speaker:Eclipse Crown"
+      ],
+      "top_anchor": "Chained moon behind prison bars, gothic ironwork, black sky.",
+      "bottom_anchor": "Elianor's body continues downward out of frame: torn white dress, bruised legs partly cropped, prison floor, loose hair, chains dragging toward the bottom edge.",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "The next panel must begin from this lower edge instead of jumping to a disconnected shot."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "Elianor's line belongs to her mouth/face; the Crown reply must feel like a reflection or inner voice from her eye.",
+      "characters_present": ["elianor-veyr", "eclipse-crown"],
+      "dialogue": [
+        {
+          "speaker": "Elianor",
+          "text": "I died."
+        },
+        {
+          "speaker": "Eclipse Crown",
+          "text": "Briefly. Inefficiently."
+        }
+      ],
+      "image_prompt": "Close-up of Elianor's eye and trembling breath in cold air, silver glint in iris, black-silver thorn crown visible only in the wet reflection of her pupil, no physical crown seen by the room, prison darkness and moonlight bands",
+      "image_prompt_addendum": "Do not start as an isolated eye close-up. Start by continuing vertically from the bottom of panel 1: show Elianor's lower body, bruised legs, bare feet or prison slippers, torn white dress hem, chains, wet stone floor, and strands of black hair. Then transition the viewer's gaze upward or into an inset/reflection close-up of her eye where the Crown is visible. The panel should feel like the camera panned downward from panel 1 before moving into the eye beat.",
+      "lettering_plan": "Keep the same black ornamental narration card and ivory thought/speech bubble system.",
+      "narration": "Memory returned as metal, crowd noise, and a smile from the throne.",
+      "panel_number": 2,
+      "prompt_keys": [
+        "chapter:002",
+        "character:elianor-veyr",
+        "character:eclipse-crown",
+        "speaker:Elianor",
+        "speaker:Eclipse Crown"
+      ],
+      "top_anchor": "Continuation of panel 1 lower edge: prison floor, torn dress, chains, legs and feet.",
+      "bottom_anchor": "Elianor's eye reflection or silver glint becomes the next visual focus.",
+      "visual_continuity_in": "Direct continuation from panel 1 bottom edge. Reveal the cropped lower body and feet so the vertical scroll does not feel abruptly cut.",
+      "visual_continuity_out": "End on the eye/reflection motif so the following panel can move into Elianor pushing herself upright."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [
+        {
+          "speaker": "Elianor",
+          "text": "Then I still have time."
+        }
+      ],
+      "image_prompt": "Elianor pushing herself upright against stone wall, shoulders straight despite chains, torn white dress with faded silver embroidery, bruised wrists visible, moonlight crossing the floor like thin chains, no other characters",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "Terror asked her to kneel. Pride answered first.",
+      "panel_number": 3,
+      "prompt_keys": [
+        "chapter:003",
+        "character:elianor-veyr",
+        "speaker:Elianor"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "Continue from panel 2: Elianor's eye reflection or silver glint becomes the next visual focus.",
+      "visual_continuity_out": "Her posture begins low and rises, supporting the chapter's survival arc."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [],
+      "image_prompt": "Insert atmosphere panel of the execution writ on the cell floor without readable text, wax seals abstract and blurred, one distinct non-readable broken crescent over a sword-shaped legal seal, Elianor's chained hand hovering near it, cold blue-gray moonlight",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "Among the imperial seals was an older mark: a crescent over a sword, from a law the palace had tried to bury.",
+      "panel_number": 4,
+      "prompt_keys": ["chapter:004", "character:elianor-veyr"],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Quiet foreshadowing panel; symbol is visual only and not readable script."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["caelan-rhovir"],
+      "dialogue": [
+        {
+          "speaker": "Caelan",
+          "text": "No. Not again."
+        }
+      ],
+      "image_prompt": "Northern ducal bedroom before dawn, Caelan Rhovir jolting awake with bare hand pressed to old pale heart scar, thin scar crossing left eyebrow visible, winter-gray hair loose to jaw, dark teal eyes haunted, black gloves lying untouched on bedside table",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "Far north of the scaffold, another death woke with her.",
+      "panel_number": 5,
+      "prompt_keys": [
+        "chapter:005",
+        "character:caelan-rhovir",
+        "speaker:Caelan"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Correct body continuity: bare hand while waking, gloves nearby but not worn."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["caelan-rhovir"],
+      "dialogue": [
+        {
+          "speaker": "Caelan",
+          "text": "Saddle the black relay. Wake no herald who cannot lie."
+        }
+      ],
+      "image_prompt": "Caelan half-dressed in black high-collared ducal coat, fastening silver clasp, fur-lined cape thrown over shoulder, gloved hands now being pulled on, dawn snow outside window, urgency controlled rather than frantic",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "He had arrived late once. His body remembered the cost before his mind finished screaming.",
+      "panel_number": 6,
+      "prompt_keys": [
+        "chapter:006",
+        "character:caelan-rhovir",
+        "speaker:Caelan"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Transition from private memory to public duke identity with gloves and coat."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "archpriestess-maerith",
+        "emperor-varrien-solm",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Maerith",
+          "text": "Let every loyal heart witness the moon's correction."
+        },
+        {
+          "speaker": "Varrien",
+          "text": "A lawful death leaves no ghosts."
+        },
+        {
+          "speaker": "Luceren",
+          "text": "Then let it be lawful."
+        }
+      ],
+      "image_prompt": "Execution plaza from high angle, scaffold beneath chained moon, Maerith arranging dark glass beads and crescent-tattooed fingers, Emperor Varrien elevated in white-gold robes with ringed hands tense, Luceren in pale blue jacket smiling faintly but avoiding the blade, crowd below as indistinct witnesses",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "The rite needed fear. The emperor needed law. The prince needed distance.",
+      "panel_number": 7,
+      "prompt_keys": [
+        "chapter:007",
+        "character:archpriestess-maerith",
+        "character:emperor-varrien-solm",
+        "character:prince-luceren-solm",
+        "speaker:Maerith",
+        "speaker:Varrien",
+        "speaker:Luceren"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Establish antagonist motives and limits through placement: priest at rite, emperor at law-seat, prince apart."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr", "selene-voss"],
+      "dialogue": [
+        {
+          "speaker": "Selene",
+          "text": "Your Highness... look left when the bell rings."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "You should not be here."
+        }
+      ],
+      "image_prompt": "Narrow transition panel as guards lead Elianor through a shadowed corridor toward blinding plaza light, Selene partly hidden behind servants with chestnut bob and broken-crescent hairpin, quick warning glance, no readable signs",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "A loyal face survived where Elianor had expected only stone.",
+      "panel_number": 8,
+      "prompt_keys": [
+        "chapter:008",
+        "character:elianor-veyr",
+        "character:selene-voss",
+        "speaker:Selene",
+        "speaker:Elianor"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Adds human reaction and a route from prison to plaza before the scaffold."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": ["elianor-veyr", "archpriestess-maerith"],
+      "dialogue": [
+        {
+          "speaker": "Maerith",
+          "text": "Confess, child, and the crowd may remember you gently."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "I will not make your fear holy."
+        }
+      ],
+      "image_prompt": "Medium vertical panel on scaffold steps, Maerith serene under silver-black veil offering prayer beads, Elianor upright with chained wrists and ash-gray eyes, crowd blurred behind them, moon-chain shadows falling over both women",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "The priestess spoke softly because cruelty sounded cleaner that way.",
+      "panel_number": 9,
+      "prompt_keys": [
+        "chapter:009",
+        "character:elianor-veyr",
+        "character:archpriestess-maerith",
+        "speaker:Maerith",
+        "speaker:Elianor"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Builds direct confrontation before magic; keep Elianor standing."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "elianor-veyr",
+        "emperor-varrien-solm",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Varrien",
+          "text": "Elianor Veyr, the empire offers one mercy: kneel."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "The empire has mistaken kneeling for truth."
+        }
+      ],
+      "image_prompt": "Long scaffold panel, Elianor framed below imperial dais, Varrien's cold public smile with tense ringed fingers, Luceren watching from behind with lowered eyes, execution blade implied as shadow only, no gore",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "She saw the contradiction at last: a tyrant who could kill her only if the world agreed to call it justice.",
+      "panel_number": 10,
+      "prompt_keys": [
+        "chapter:010",
+        "character:elianor-veyr",
+        "character:emperor-varrien-solm",
+        "character:prince-luceren-solm",
+        "speaker:Varrien",
+        "speaker:Elianor"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Court hierarchy reads vertically from emperor above to Elianor below."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "elianor-veyr",
+        "eclipse-crown",
+        "archpriestess-maerith"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Eclipse Crown",
+          "text": "Let me eat."
+        },
+        {
+          "speaker": "Elianor",
+          "text": "Not all of it. Not me."
+        }
+      ],
+      "image_prompt": "Blade shadow crossing Elianor's throat without impact, eclipse darkness flaring around scaffold, black-silver Crown visible in the polished blade and Elianor's shadow but not on her head, Maerith's calm cracking for the first time, crowd silhouettes recoiling, elegant magical tension",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "The Crown opened its hunger like a second sky, and Elianor held the leash with both hands.",
+      "panel_number": 11,
+      "prompt_keys": [
+        "chapter:011",
+        "character:elianor-veyr",
+        "character:eclipse-crown",
+        "character:archpriestess-maerith",
+        "speaker:Eclipse Crown",
+        "speaker:Elianor"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "Magic escalates but Crown remains reflection/shadow-based; reaction beat before rescue."
+    },
+    {
+      "background_text": "",
+      "bubble_layout_plan": "",
+      "characters_present": [
+        "elianor-veyr",
+        "caelan-rhovir",
+        "emperor-varrien-solm",
+        "archpriestess-maerith",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Caelan",
+          "text": "I contest the verdict because Princess Elianor Veyr was murdered once already."
+        }
+      ],
+      "image_prompt": "Final cliffhanger panel, Caelan kneeling at base of scaffold beneath northern banner, black ducal coat and fur-lined cape, gloved hand over heart, eyebrow scar visible, Elianor above him stunned but upright, Varrien rigid on dais, Maerith's beads frozen mid-prayer, chained moon looming overhead, no readable banners",
+      "image_prompt_addendum": "",
+      "lettering_plan": "",
+      "narration": "The plaza forgot how to breathe.",
+      "panel_number": 12,
+      "prompt_keys": [
+        "chapter:012",
+        "character:elianor-veyr",
+        "character:caelan-rhovir",
+        "character:emperor-varrien-solm",
+        "character:archpriestess-maerith",
+        "character:prince-luceren-solm",
+        "speaker:Caelan"
+      ],
+      "top_anchor": "",
+      "bottom_anchor": "",
+      "visual_continuity_in": "",
+      "visual_continuity_out": "End with vertical power reversal: duke kneels below, princess standing above, emperor exposed above them."
+    }
+  ],
+  "title": "The Moon Is Chained",
+  "transitions": [
+    {
+      "from_panel": 1,
+      "to_panel": 2,
+      "instruction": "Direct continuation from panel 1 bottom edge. Reveal the cropped lower body and feet so the vertical scroll does not feel abruptly cut."
+    },
+    {
+      "from_panel": 2,
+      "to_panel": 3,
+      "instruction": "Continue from panel 2: Elianor's eye reflection or silver glint becomes the next visual focus."
+    },
+    {
+      "from_panel": 3,
+      "to_panel": 4,
+      "instruction": ""
+    },
+    {
+      "from_panel": 4,
+      "to_panel": 5,
+      "instruction": ""
+    },
+    {
+      "from_panel": 5,
+      "to_panel": 6,
+      "instruction": ""
+    },
+    {
+      "from_panel": 6,
+      "to_panel": 7,
+      "instruction": ""
+    },
+    {
+      "from_panel": 7,
+      "to_panel": 8,
+      "instruction": ""
+    },
+    {
+      "from_panel": 8,
+      "to_panel": 9,
+      "instruction": ""
+    },
+    {
+      "from_panel": 9,
+      "to_panel": 10,
+      "instruction": ""
+    },
+    {
+      "from_panel": 10,
+      "to_panel": 11,
+      "instruction": ""
+    },
+    {
+      "from_panel": 11,
+      "to_panel": 12,
+      "instruction": ""
+    }
+  ]
+}

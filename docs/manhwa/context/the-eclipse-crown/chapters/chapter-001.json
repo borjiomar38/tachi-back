@@ -1,0 +1,28 @@
+{
+  "chapter_number": 1,
+  "title": "The Moon Is Chained",
+  "scenario_source": "../../generated/the-eclipse-crown-chapter-001.json",
+  "chapter_lettering_goal": "Make the chapter read like a finished vertical manhwa scan with integrated gothic captions, coherent speech bubbles, and clear thought ownership.",
+  "panels": [
+    {
+      "panel_number": 1,
+      "background_text": "Imperial Prison - three hours before execution",
+      "lettering_plan": "Use the accepted Eclipse Gothic style: black ornamental narration card, luminous ivory Crown thought bubble, elegant serif lettering with high contrast.",
+      "bubble_layout_plan": "The Crown line is a supernatural thought received by Elianor. Place the thought bubble near Elianor but leave her face visible; use small dots or glow pointing to her forehead, eye reflection, or the invisible crown source.",
+      "top_anchor": "Chained moon behind prison bars, gothic ironwork, black sky.",
+      "bottom_anchor": "Elianor's body continues downward out of frame: torn white dress, bruised legs partly cropped, prison floor, loose hair, chains dragging toward the bottom edge.",
+      "visual_continuity_out": "The next panel must begin from this lower edge instead of jumping to a disconnected shot."
+    },
+    {
+      "panel_number": 2,
+      "background_text": "",
+      "lettering_plan": "Keep the same black ornamental narration card and ivory thought/speech bubble system.",
+      "bubble_layout_plan": "Elianor's line belongs to her mouth/face; the Crown reply must feel like a reflection or inner voice from her eye.",
+      "image_prompt_addendum": "Do not start as an isolated eye close-up. Start by continuing vertically from the bottom of panel 1: show Elianor's lower body, bruised legs, bare feet or prison slippers, torn white dress hem, chains, wet stone floor, and strands of black hair. Then transition the viewer's gaze upward or into an inset/reflection close-up of her eye where the Crown is visible. The panel should feel like the camera panned downward from panel 1 before moving into the eye beat.",
+      "top_anchor": "Continuation of panel 1 lower edge: prison floor, torn dress, chains, legs and feet.",
+      "bottom_anchor": "Elianor's eye reflection or silver glint becomes the next visual focus.",
+      "visual_continuity_in": "Direct continuation from panel 1 bottom edge. Reveal the cropped lower body and feet so the vertical scroll does not feel abruptly cut.",
+      "visual_continuity_out": "End on the eye/reflection motif so the following panel can move into Elianor pushing herself upright."
+    }
+  ]
+}

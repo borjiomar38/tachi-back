@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-03T13:26:08.566Z",
+  "series_slug": "the-eclipse-crown",
+  "title": "THE ECLIPSE CROWN",
+  "fast_lookup": {
+    "bubble_style": "bubble-style-bible.json",
+    "character_assets": "characters/index.json",
+    "chapter_index": "chapters/chapter-001.index.json",
+    "characters_index": "characters.index.json",
+    "series_bible": "series-bible.json"
+  },
+  "retrieval_rules": [
+    "Use characters.index.json for speaker or character canon.",
+    "Use characters/<id>/profile.json and reference-plan.json before rendering recurring characters.",
+    "Use bubble-style-bible.json for global lettering and bubble shape.",
+    "Use chapter-XXX.index.json panel_lookup for panel-specific context.",
+    "Use visual_continuity_in before rendering a panel after another panel."
+  ]
+}

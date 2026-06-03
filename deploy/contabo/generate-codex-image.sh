@@ -5,6 +5,8 @@ codex_bin="${CODEX_IMAGE_CODEX_CLI_PATH:-codex}"
 codex_model="${CODEX_IMAGE_CODEX_MODEL:-gpt-5.5}"
 codex_reasoning_effort="${CODEX_IMAGE_CODEX_REASONING_EFFORT:-low}"
 min_bytes="${CODEX_IMAGE_MIN_BYTES:-500000}"
+min_width="${CODEX_IMAGE_MIN_WIDTH:-1000}"
+min_height="${CODEX_IMAGE_MIN_HEIGHT:-700}"
 output_file=""
 prompt_file=""
 work_dir=""
@@ -18,6 +20,8 @@ Environment:
   CODEX_IMAGE_CODEX_MODEL           Codex model, default gpt-5.5
   CODEX_IMAGE_CODEX_REASONING_EFFORT Reasoning effort, default low
   CODEX_IMAGE_MIN_BYTES             Minimum accepted PNG size, default 500000
+  CODEX_IMAGE_MIN_WIDTH             Minimum accepted PNG width, default 1000
+  CODEX_IMAGE_MIN_HEIGHT            Minimum accepted PNG height, default 700
 EOF
 }
 
@@ -75,6 +79,8 @@ cat >"${wrapped_prompt}" <<EOF
 Use the imagegen skill.
 
 Generate a real AI-created raster image with the built-in image_gen tool. Do not use Python, JavaScript, ffmpeg, ImageMagick, SVG, canvas, screenshots, procedural drawing, or placeholder generation.
+
+If the image prompt names local image reference files, inspect those local images before generation and use them as visual continuity references. If the built-in image generation surface supports reference images, use the inspected images as references; otherwise incorporate the inspected visual details into the final image prompt. Never duplicate the previous panel exactly; create the next original panel that continues it.
 
 After generation, the image may stay in \$CODEX_HOME/generated_images or ~/.codex/generated_images. If you can copy the generated PNG to this path, do it:
 ${output_file}
@@ -134,7 +140,7 @@ if [[ ! -s "${output_file}" ]]; then
   exit 17
 fi
 
-OUTPUT_FILE="${output_file}" MIN_BYTES="${min_bytes}" python3 - <<'PY'
+OUTPUT_FILE="${output_file}" MIN_BYTES="${min_bytes}" MIN_WIDTH="${min_width}" MIN_HEIGHT="${min_height}" python3 - <<'PY'
 import os
 import pathlib
 import struct
@@ -142,6 +148,8 @@ import sys
 
 path = pathlib.Path(os.environ["OUTPUT_FILE"])
 min_bytes = int(os.environ["MIN_BYTES"])
+min_width = int(os.environ["MIN_WIDTH"])
+min_height = int(os.environ["MIN_HEIGHT"])
 data = path.read_bytes()
 
 if len(data) < min_bytes:
@@ -160,9 +168,9 @@ if len(data) < 33 or data[12:16] != b"IHDR":
     raise SystemExit(18)
 
 width, height = struct.unpack(">II", data[16:24])
-if width < 1000 or height < 700:
+if width < min_width or height < min_height:
     print(
-        f"Codex image rejected: {path} is {width}x{height}; expected at least 1000x700.",
+        f"Codex image rejected: {path} is {width}x{height}; expected at least {min_width}x{min_height}.",
         file=sys.stderr,
     )
     raise SystemExit(18)

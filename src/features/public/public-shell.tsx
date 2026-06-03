@@ -4,7 +4,7 @@ import {
   CircleHelpIcon,
   DownloadIcon,
   HomeIcon,
-  TagsIcon,
+  LibraryBigIcon,
 } from 'lucide-react';
 import { ReactNode } from 'react';
 
@@ -26,6 +26,7 @@ const primaryLinks = [
   { href: '/#demo', label: 'Demo' },
   { href: '/#pricing', label: 'Plans' },
   { href: '/translate-manhwa-ai', label: 'Manhwa AI' },
+  { href: '/manhwa', label: 'Originals' },
   { href: '/blog', label: 'Blog' },
   { href: '/guides/mihon-tachiyomiat-setup', label: 'Guides' },
   { href: '/#contact', label: 'Contact' },
@@ -52,10 +53,10 @@ const mobileTabs = [
     isActive: (pathname: string) => pathname === '/download',
   },
   {
-    href: '/pricing',
-    label: 'Plans',
-    icon: TagsIcon,
-    isActive: (pathname: string) => pathname === '/pricing',
+    href: '/manhwa',
+    label: 'Manhwa',
+    icon: LibraryBigIcon,
+    isActive: (pathname: string) => pathname.startsWith('/manhwa'),
   },
   {
     href: '/blog',
@@ -160,6 +161,9 @@ export const PublicShell = (props: { children: ReactNode }) => {
                     className="hover:text-foreground"
                   >
                     TachiyomiAT setup guide
+                  </a>
+                  <a href="/manhwa" className="hover:text-foreground">
+                    Nayovi Originals
                   </a>
                   <a
                     href="/guides/translation-support-workflow"

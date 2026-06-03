@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { fallbackBlogArticleSummary } from '@/features/blog/fallback';
+import { getManhwaSitemapEntries } from '@/features/manhwa/data';
 import { buildPublicAbsoluteUrlFromRequest } from '@/features/public/head';
 import {
   BlogSitemapEntry,
@@ -16,7 +17,13 @@ interface SitemapEntry {
 }
 
 const routeModules = import.meta.glob(
-  ['./*.tsx', './blog/**/*.tsx', './guides/**/*.tsx', './legal/**/*.tsx'],
+  [
+    './*.tsx',
+    './blog/**/*.tsx',
+    './guides/**/*.tsx',
+    './legal/**/*.tsx',
+    './manhwa/**/*.tsx',
+  ],
   {
     eager: true,
     import: 'default',
@@ -44,6 +51,11 @@ const staticSitemapEntryOverrides: Record<
   '/download': {
     lastModified: '2026-05-31',
     priority: '0.8',
+  },
+  '/manhwa': {
+    changeFrequency: 'daily',
+    lastModified: '2026-06-02',
+    priority: '0.9',
   },
   '/translate-manhwa-ai': {
     changeFrequency: 'weekly',
@@ -128,6 +140,7 @@ const staticSitemapPathOrder = [
   '/',
   '/blog',
   '/download',
+  '/manhwa',
   '/translate-manhwa-ai',
   '/pricing',
   '/how-it-works',
@@ -208,6 +221,12 @@ function buildSitemapXml(
     .at(-1);
   const sitemapEntries = mergeSitemapEntries([
     ...buildStaticSitemapEntries(latestBlogDate ?? '2026-05-04'),
+    ...getManhwaSitemapEntries().map((entry) => ({
+      changeFrequency: 'weekly' as const,
+      lastModified: toSitemapDate(entry.lastModified),
+      path: entry.path,
+      priority: entry.path.includes('/chapter/') ? '0.75' : '0.85',
+    })),
     ...allBlogEntries.map((entry) => ({
       changeFrequency: 'monthly' as const,
       lastModified: toSitemapDate(entry.lastModified),

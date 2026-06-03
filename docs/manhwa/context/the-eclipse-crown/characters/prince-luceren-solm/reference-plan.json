@@ -1,0 +1,47 @@
+{
+  "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm",
+  "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference",
+  "required_before_chapter_render": true,
+  "reference_images": [
+    {
+      "id": "identity-front-full-body",
+      "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/identity-front-full-body.png",
+      "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-front-full-body",
+      "purpose": "Lock full body proportions, outfit, hair length, main silhouette, and costume details.",
+      "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-front-full-body",
+      "prompt_addendum": "Full-body front view, neutral readable pose, clean silhouette, complete costume visible from head to feet, no text."
+    },
+    {
+      "id": "identity-three-quarter",
+      "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/identity-three-quarter.png",
+      "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-three-quarter",
+      "purpose": "Lock face, body volume, hairstyle, and costume in premium manhwa perspective.",
+      "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/identity-three-quarter",
+      "prompt_addendum": "Three-quarter full-body view, cinematic but clear, same costume and face, no text."
+    },
+    {
+      "id": "face-expression-sheet",
+      "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/face-expression-sheet.png",
+      "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/face-expression-sheet",
+      "purpose": "Lock facial features and emotional range for close-ups.",
+      "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/face-expression-sheet",
+      "prompt_addendum": "Expression sheet with neutral, fear, anger, resolve, shock, and quiet sorrow; same face in every expression, no text labels."
+    },
+    {
+      "id": "hands-props-detail",
+      "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/hands-props-detail.png",
+      "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/hands-props-detail",
+      "purpose": "Lock important hands, scars, jewelry, relics, cuffs, weapons, or role-specific objects.",
+      "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/hands-props-detail",
+      "prompt_addendum": "Detail sheet for hands and role-specific props, consistent anatomy and materials, no text labels."
+    },
+    {
+      "id": "chapter-001-key-pose",
+      "local_file": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm/chapter-001-key-pose.png",
+      "protected_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/chapter-001-key-pose",
+      "purpose": "Lock the most important chapter-one pose for continuity in rendered panels.",
+      "public_path": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference/chapter-001-key-pose",
+      "prompt_addendum": "Chapter-one key pose for this character based on their role, full readable costume and face, no text."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "characters": [
+    {
+      "id": "elianor-veyr",
+      "name": "Elianor Veyr",
+      "role": "fallen princess and protagonist",
+      "canon_prompt": "Early twenties, tall slender fallen princess, moon-pale skin, long black hair with blue-black sheen, ash-gray eyes that turn silver during eclipse magic, sharp delicate features, torn white execution dress with faded silver embroidery, bruised wrists, restrained sorrowful expression, never sexualized.",
+      "bubble_style": "normal spoken lines use elegant ivory speech bubbles with thin black ink outline and refined serif text",
+      "thought_style": "internal thoughts may use black-silver bordered ivory bubbles with soft moonlight, placed close to her face or eye",
+      "bubble_placement_rule": "place Elianor-owned bubbles near her face, hand, eye reflection, or posture so the reader knows the thought belongs to her"
+    },
+    {
+      "id": "eclipse-crown",
+      "name": "Eclipse Crown",
+      "role": "living crown and supernatural inner voice",
+      "canon_prompt": "Living black-silver crown of thornlike lunar metal, visible only in reflections, shadows, blood, polished blades, or near Elianor's brow during eclipse magic.",
+      "bubble_style": "never use normal speech tails; use supernatural thought bubbles",
+      "thought_style": "warm ivory circular or oval thought bubble with thin black-silver ring, subtle moon glow, and a dotted chain toward Elianor's forehead, eye reflection, blood, shadow, or crown glint",
+      "bubble_placement_rule": "make the thought dots or glow point to the Crown's magical source, not randomly into empty space"
+    },
+    {
+      "id": "caelan-rhovir",
+      "name": "Caelan Rhovir",
+      "role": "regressed northern duke",
+      "canon_prompt": "Late twenties, tall broad-shouldered northern duke, winter-gray hair to jaw length, dark teal eyes, scar crossing left eyebrow, black high-collared ducal military coat, dark fur-lined cape, controlled haunted expression.",
+      "bubble_style": "firm ivory speech bubbles with crisp ink border and restrained cold-blue accent if useful",
+      "thought_style": "small sharp-edged internal monologue bubble with icy shadow and serif lettering",
+      "bubble_placement_rule": "place Caelan bubbles near his face, gloved hand, heart scar, or kneeling position"
+    },
+    {
+      "id": "archpriestess-maerith",
+      "name": "Maerith",
+      "role": "archpriestess antagonist",
+      "canon_prompt": "Ageless adult priestess, pearl-white hair under translucent silver-black veil, crescent tattoos on fingers, black and ivory temple robes, eerie serenity.",
+      "bubble_style": "ritual ivory speech bubbles with thin black-silver border and a subtle crescent ornament",
+      "thought_style": "dark ritual whisper bubble only when the scene implies occult speech",
+      "bubble_placement_rule": "place Maerith bubbles close to her veil, beads, tattooed fingers, or ritual gesture"
+    },
+    {
+      "id": "emperor-varrien-solm",
+      "name": "Varrien",
+      "role": "emperor antagonist",
+      "canon_prompt": "Late forties, refined golden-haired emperor, amber eyes, white and gold imperial robes, ringed hands, porcelain composure, cold public smile.",
+      "bubble_style": "formal ivory speech bubbles with clean imperial border, controlled and symmetrical",
+      "thought_style": "rare, narrow caption-like inner line if needed",
+      "bubble_placement_rule": "place Varrien bubbles near his elevated face, ringed hand, or imperial dais"
+    },
+    {
+      "id": "selene-voss",
+      "name": "Selene Voss",
+      "role": "loyal palace maid",
+      "canon_prompt": "Mid twenties, petite palace maid, chestnut bob haircut, warm brown eyes, gray servant uniform, broken-crescent hairpin, alert posture.",
+      "bubble_style": "small whisper bubbles with soft ivory fill and thin ink outline",
+      "thought_style": "small nervous thought bubble if needed",
+      "bubble_placement_rule": "place Selene bubbles close to her hidden face or warning gesture"
+    },
+    {
+      "id": "prince-luceren-solm",
+      "name": "Luceren",
+      "role": "guarded prince",
+      "canon_prompt": "Mid twenties, honey-blond hair, violet-brown eyes, pale blue court jacket with silver trim, jeweled ceremonial sword, charming guarded smile.",
+      "bubble_style": "polished ivory speech bubbles with subtle royal trim",
+      "thought_style": "small restrained inner caption only if needed",
+      "bubble_placement_rule": "place Luceren bubbles near his lowered eyes, careful hands, or ceremonial sword"
+    }
+  ]
+}

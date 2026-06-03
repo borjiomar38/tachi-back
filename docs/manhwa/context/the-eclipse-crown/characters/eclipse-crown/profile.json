@@ -1,0 +1,16 @@
+{
+  "age_label": "",
+  "bubble_placement_rule": "make the thought dots or glow point to the Crown's magical source, not randomly into empty space",
+  "bubble_style": "never use normal speech tails; use supernatural thought bubbles",
+  "canon_prompt": "Living black-silver crown of thornlike lunar metal, visible only in reflections, shadows, blood, polished blades, or near Elianor's brow during eclipse magic.",
+  "id": "eclipse-crown",
+  "name": "Eclipse Crown",
+  "role": "living crown and supernatural inner voice",
+  "thought_style": "warm ivory circular or oval thought bubble with thin black-silver ring, subtle moon glow, and a dotted chain toward Elianor's forehead, eye reflection, blood, shadow, or crown glint",
+  "visual_identity_lock": [
+    "Do not change face structure between panels.",
+    "Do not change body proportions between panels.",
+    "Do not change primary costume unless the chapter context explicitly says so.",
+    "Use reference images from this folder before rendering chapter panels."
+  ]
+}

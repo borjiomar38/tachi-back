@@ -1,0 +1,502 @@
+{
+  "active_season": {
+    "chapter_outline": [
+      {
+        "chapter_number": 1,
+        "purpose": "Elianor wakes before execution, hears the Crown, notices the chained moon sigil of an eastern moon-sword envoy, and survives Caelan's public challenge.",
+        "title": "The Moon Is Chained"
+      },
+      {
+        "chapter_number": 2,
+        "purpose": "Caelan forces a lawful stay by invoking the ancient Moon-Sword Witness Clause, proving the execution rite was procedurally tainted.",
+        "title": "A Verdict Contested"
+      },
+      {
+        "chapter_number": 3,
+        "purpose": "Selene smuggles Elianor into a sealed archive where temple records mention the first blade that chained the moon.",
+        "title": "The Broken Crescent Pin"
+      },
+      {
+        "chapter_number": 4,
+        "purpose": "Varrien offers mercy in exchange for confession, revealing his need for public legitimacy and his fear that Elianor's bloodline can unmake his reign.",
+        "title": "Mercy With Teeth"
+      },
+      {
+        "chapter_number": 5,
+        "purpose": "Maerith tests whether the Crown can be starved by prayer-iron, exposing that her rituals require willing witnesses and cannot work in secrecy.",
+        "title": "Prayer-Iron"
+      },
+      {
+        "chapter_number": 6,
+        "purpose": "Luceren tries to win Elianor's silence with political protection, showing that he is useful, compromised, and afraid of direct guilt.",
+        "title": "The Prince Who Looked Away"
+      },
+      {
+        "chapter_number": 7,
+        "purpose": "Caelan's prior-timeline knowledge saves Elianor from poison but changes a witness's testimony, proving memory is becoming unstable.",
+        "title": "Winter's False Memory"
+      },
+      {
+        "chapter_number": 8,
+        "purpose": "Elianor learns the Crown can devour oath-magic but leaves hunger marks in her veins whenever it feeds.",
+        "title": "The First Bite"
+      },
+      {
+        "chapter_number": 9,
+        "purpose": "A foreign envoy from the eastern Oath Halls arrives carrying a moon-sword tassel and recognizes Elianor's shadow as a forbidden royal seal.",
+        "title": "Envoy Under a Chained Moon"
+      },
+      {
+        "chapter_number": 10,
+        "purpose": "The emperor frames the envoy's warning as foreign interference, tightening Varrien's political limits: he must rule through law, ceremony, and consensus.",
+        "title": "Law for the Throne"
+      },
+      {
+        "chapter_number": 11,
+        "purpose": "Maerith sacrifices a lesser priest to hide a missing temple ledger, revealing her contradiction: gentle doctrine masking fear of the god she serves.",
+        "title": "The Missing Ledger"
+      },
+      {
+        "chapter_number": 12,
+        "purpose": "Selene identifies the forged confession's ink and gives Elianor a route into the palace supply court.",
+        "title": "Ink That Remembers Blood"
+      },
+      {
+        "chapter_number": 13,
+        "purpose": "Caelan and Elianor bargain as equals, agreeing that protection without truth is another kind of prison.",
+        "title": "No Cage Made of Snow"
+      },
+      {
+        "chapter_number": 14,
+        "purpose": "A trial banquet forces Elianor to appear before nobles who profited from her fall.",
+        "title": "The Banquet of Witnesses"
+      },
+      {
+        "chapter_number": 15,
+        "purpose": "The Crown whispers a way to break a noble's oath, but the cost is Elianor briefly forgetting Selene's face.",
+        "title": "A Name the Crown Ate"
+      },
+      {
+        "chapter_number": 16,
+        "purpose": "Luceren plants evidence that helps Elianor while protecting himself, sharpening his convenience-driven betrayal pattern.",
+        "title": "The Helpful Coward"
+      },
+      {
+        "chapter_number": 17,
+        "purpose": "Caelan investigates the eastern martial relic mentioned in the archive: the Moon-Severing Hilt, long missing from imperial custody.",
+        "title": "The Empty Hilt"
+      },
+      {
+        "chapter_number": 18,
+        "purpose": "Varrien's private grief for the old royal line surfaces, but he chooses empire myth over family truth.",
+        "title": "His Majesty's Favorite Lie"
+      },
+      {
+        "chapter_number": 19,
+        "purpose": "Maerith reveals the execution rite can only open under eclipse fear, so public terror is her required fuel, not mere cruelty.",
+        "title": "Fear as Worship"
+      },
+      {
+        "chapter_number": 20,
+        "purpose": "An assassination attempt at the northern embassy exposes a temple-ducal alliance.",
+        "title": "Snow on the Chapel Steps"
+      },
+      {
+        "chapter_number": 21,
+        "purpose": "Elianor uses court procedure to demand the right to cross-examine her accusers.",
+        "title": "The Fallen Princess Questions"
+      },
+      {
+        "chapter_number": 22,
+        "purpose": "The Crown feeds on a false testimony and stains Elianor's shadow with a crescent chain visible only in reflections.",
+        "title": "Reflected Chains"
+      },
+      {
+        "chapter_number": 23,
+        "purpose": "Caelan confesses the shape of his regression without revealing the intimate details he has no right to claim.",
+        "title": "The Winter He Remembers"
+      },
+      {
+        "chapter_number": 24,
+        "purpose": "The eastern envoy warns that every Crown feeding echoes in the Moon-Sword Oath Halls far beyond the empire.",
+        "title": "A Bell in the East"
+      },
+      {
+        "chapter_number": 25,
+        "purpose": "Selene risks exposure to secure the original charge ledger from the palace dead-letter room.",
+        "title": "Dead Letters"
+      },
+      {
+        "chapter_number": 26,
+        "purpose": "Luceren's faction tries to erase Selene, forcing him to choose a small act of courage that still avoids full confession.",
+        "title": "The Prince's Half-Step"
+      },
+      {
+        "chapter_number": 27,
+        "purpose": "Elianor proves one execution charge was forged, but Varrien reframes survival as rebellion.",
+        "title": "A Forgery in Open Court"
+      },
+      {
+        "chapter_number": 28,
+        "purpose": "Maerith opens a partial eclipse rite that the Crown devours at a painful cost to Elianor's memory and pulse.",
+        "title": "The Crown Goes Hungry"
+      },
+      {
+        "chapter_number": 29,
+        "purpose": "Caelan saves Elianor from the rite but loses a trusted northern captain because his changed choices created a new death.",
+        "title": "What Winter Costs"
+      },
+      {
+        "chapter_number": 30,
+        "purpose": "Elianor wins a public stay of condemnation, names the hidden lunar curse before the court, and vows to seek the first chain's origin.",
+        "title": "Before the Second Blade"
+      }
+    ],
+    "season_goal": "Elianor must survive the execution prepared for her, prove one layer of the conspiracy false, and seize enough political leverage to stop the empire from repeating the doomed future Caelan remembers while planting the legal, relic, and envoy clues that lead to the moon-sword clans.",
+    "season_number": 1,
+    "title": "The Princess Before the Blade"
+  },
+  "chapter": {
+    "chapter_number": 1,
+    "ending_cliffhanger": "Caelan kneels before the scaffold and says, loud enough for the emperor to hear, 'I contest the verdict because Princess Elianor Veyr was murdered once already.'",
+    "full_text_scenario": "On the morning of her execution, Elianor Veyr wakes three hours early on prison stone beneath a barred view of the moon, which hangs in the sky bound by visible silver chains. She remembers the execution that should have already happened: the blade, the crowd, the emperor's smile, and a cold voice inside her blood asking whether she wants to live. The Eclipse Crown is not yet visible to others; it appears only in her eye reflections and shadow. While Selene fails to reach the cell, Elianor studies the execution writ and notices an old moon-sword witness seal among the legal marks, a quiet hint that foreign Oath Hall law is tied to the rite. In a distant northern room, Caelan Rhovir wakes from the failed timeline with a bare hand pressed to the old heart scar that killed him once and the eyebrow scar he still carries in this life. He moves before servants can stop him. At the execution plaza, Maerith conducts a fear-fed rite that requires public witnesses, Varrien watches because he needs a lawful spectacle to secure legitimacy, and Luceren hides cowardice behind a polished smile. Elianor chooses not to beg. When the blade falls, the Crown feeds on the eclipse magic around the scaffold, briefly manifesting as a black-silver thorn halo in reflections. Before the court can name it witchcraft, Caelan arrives under northern banners and invokes a lawful contest, ending the chapter with the impossible claim that Elianor has already been murdered once.",
+    "hook": "On the morning of her execution, the fallen princess wakes three hours too early and hears her crown whisper from inside her blood.",
+    "slug": "the-moon-is-chained",
+    "title": "The Moon Is Chained"
+  },
+  "characters": [
+    {
+      "age_label": "early twenties",
+      "canon_prompt": "elianor-veyr: original Korean manhwa heroine, early twenties, tall slender fallen princess, moon-pale skin, long black hair with blue-black sheen falling to the waist unless bound by guards, ash-gray eyes that turn silver only during eclipse magic, sharp delicate features, restrained sorrowful expression, upright elegant posture even when injured, bruised wrists and collarbone from prison restraints, torn white execution dress with faded silver embroidery, bare feet or simple prison slippers in chapter 1, later a living black-silver crown of thornlike lunar metal hovering close to her brow or visible only in reflection, cinematic royal fantasy lighting, never sexualized",
+      "first_appears_in_chapter": 1,
+      "id": "elianor-veyr",
+      "name": "Elianor Veyr",
+      "personality": "Composed under terror, observant, proud without being reckless, slow to trust, merciless toward calculated cruelty, secretly lonely after years of political isolation.",
+      "role": "fallen princess and secret bearer of the living Eclipse Crown",
+      "visual_identity": "Tall, slender young woman with moon-pale skin, long black hair with a cold blue sheen, ash-gray eyes that turn silver during eclipse magic, elegant posture, prison bruises hidden beneath ruined royal dignity."
+    },
+    {
+      "age_label": "late twenties",
+      "canon_prompt": "caelan-rhovir: original Korean manhwa male lead, late twenties, tall broad-shouldered northern duke, winter-gray hair to jaw length, dark teal eyes, thin scar crossing left eyebrow, old pale scar over the heart from the death wound that ended his prior timeline, pale cool complexion, black high-collared ducal military coat, silver clasps, dark fur-lined cape, normally gloved hands in public but bare hands when waking from sleep, controlled haunted expression, cinematic noble intrigue style",
+      "first_appears_in_chapter": 1,
+      "id": "caelan-rhovir",
+      "name": "Caelan Rhovir",
+      "personality": "Disciplined, guilt-ridden, tactically brilliant, emotionally restrained, protective but careful not to cage Elianor, feared for his patience more than his temper.",
+      "role": "regressed northern duke who remembers failing Elianor",
+      "visual_identity": "Broad-shouldered nobleman with winter-gray hair cut neatly below the jaw, dark teal eyes, a thin scar through his left eyebrow, an old heart scar from his prior-timeline death, black ducal coat with silver clasps and fur-lined military cape."
+    },
+    {
+      "age_label": "ancient",
+      "canon_prompt": "eclipse-crown: original living magical crown, blackened silver lunar metal, crescent blade silhouette, fine chain filaments, faint dark halo, subtle eye-like gemstone voids without literal eyes, elegant and ominous, floats near elianor-veyr's brow only when magic escalates, otherwise appears in her eye reflection, shadow, water, polished blade, or blood sheen, casts eclipse-shaped shadow, no logos or readable symbols",
+      "first_appears_in_chapter": 1,
+      "id": "eclipse-crown",
+      "name": "The Eclipse Crown",
+      "personality": "Hungry, amused, possessive, poetic, cruelly honest, protective only because Elianor's survival serves its unknown purpose. Its help always leaves a cost: memory gaps, blood-debt marks, shadow distortion, or political consequences when magic witnesses respond.",
+      "role": "living royal relic bound to Elianor's blood",
+      "visual_identity": "A black-silver crown made of crescent blades and hair-thin chains, sometimes visible as a hovering relic, sometimes reflected only in Elianor's eyes or shadow."
+    },
+    {
+      "age_label": "late forties",
+      "canon_prompt": "emperor-varrien-solm: original royal fantasy antagonist, late forties, refined golden-haired emperor, amber eyes with visible fatigue, white and gold imperial robes, sunburst collar, ringed hands, porcelain composure, ceremonial authority, cold public smile, private tension in jaw and fingers, premium Korean manhwa villain design, no logos or readable insignia",
+      "first_appears_in_chapter": 1,
+      "id": "emperor-varrien-solm",
+      "name": "Emperor Varrien Solm",
+      "personality": "Polished, paranoid, ceremonial, obsessed with legitimacy, capable of affection only when it reinforces his own myth. He needs Elianor condemned through public law, not private murder, because his coalition will fracture without lawful spectacle; his contradiction is that he fears the old bloodline while craving its recognition.",
+      "role": "ruling emperor who condemned Elianor",
+      "visual_identity": "Golden-haired emperor with tired amber eyes, immaculate white-and-gold robes, sunburst collar, ring-heavy hands, beautiful public smile that never reaches his eyes."
+    },
+    {
+      "age_label": "ageless adult",
+      "canon_prompt": "archpriestess-maerith: original Korean manhwa priestess antagonist, ageless adult woman, pearl-white hair under translucent silver-black veil, calm pale face, crescent tattoos on fingers, layered black and ivory temple robes, dark glass prayer beads, soft ritual gestures, eerie serenity, moonlit cathedral lighting, no readable scripture or logos",
+      "first_appears_in_chapter": 1,
+      "id": "archpriestess-maerith",
+      "name": "Archpriestess Maerith",
+      "personality": "Serene, fanatical, patient, speaks gently while arranging atrocities, believes fear is a form of worship. Her rites require public dread, lawful witnesses, and eclipse-touched relics; she cannot simply kill Elianor in secret, and she hides that limitation behind sacred composure.",
+      "role": "head of the Eclipse Temple and keeper of the execution rite",
+      "visual_identity": "Silver-veiled priestess with pearl-white hair, black ceremonial veil, crescent tattoos along her fingers, layered temple robes with dark glass beads."
+    },
+    {
+      "age_label": "mid twenties",
+      "canon_prompt": "selene-voss: original Korean manhwa supporting character, mid twenties, petite palace maid, chestnut bob haircut, warm brown eyes, practical expression, plain gray servant uniform, small silver broken-crescent hairpin that is not a logo, alert posture, understated design, keeps shoulders narrow to pass unnoticed in palace corridors",
+      "first_appears_in_chapter": 1,
+      "id": "selene-voss",
+      "name": "Selene Voss",
+      "personality": "Quick-eyed, practical, loyal with boundaries, good at pretending to be harmless, carries grief as dry humor.",
+      "role": "Elianor's surviving maid and covert palace informant",
+      "visual_identity": "Petite woman with chestnut bobbed hair, warm brown eyes, plain gray servant uniform, hidden silver hairpin shaped like a broken crescent."
+    },
+    {
+      "age_label": "mid twenties",
+      "canon_prompt": "prince-luceren-solm: original Korean manhwa prince, mid twenties, honey-blond hair, violet-brown eyes, elegant pale blue court jacket with silver trim, jeweled ceremonial sword, charming guarded smile, graceful posture, careful hands that avoid touching incriminating objects, royal fantasy intrigue, no logos or readable heraldry",
+      "first_appears_in_chapter": 1,
+      "id": "prince-luceren-solm",
+      "name": "Prince Luceren Solm",
+      "personality": "Charming, evasive, politically gifted, frightened of direct guilt, dangerous because he prefers convenience over truth. He wants the succession secure and Elianor silent, but he cannot bear to personally order irreversible harm, so he launders guilt through procedure and favors.",
+      "role": "imperial heir and public witness to Elianor's execution",
+      "visual_identity": "Elegant prince with honey-blond hair, violet-brown eyes, pale blue court jacket, jeweled sword, soft smile that masks calculation."
+    },
+    {
+      "age_label": "thirties",
+      "canon_prompt": "envoy-yun-seoryeon: original moon-sword envoy, thirties, composed foreign diplomat-warrior, black hair tied with white cord, clear dark eyes, traveling robes layered under a formal indigo overcoat, narrow moon-sword tassel at belt, inkless bamboo record tube, calm martial posture, no readable script or real-world symbols",
+      "first_appears_in_chapter": 9,
+      "id": "envoy-yun-seoryeon",
+      "name": "Yun Seoryeon",
+      "personality": "Reserved, exacting, lawful, trained to treat silence as a blade, more loyal to the Oath Halls' ancient records than to any ruler.",
+      "role": "foreign envoy from the eastern moon-sword Oath Halls who foreshadows the pilgrimage arc",
+      "visual_identity": "Composed diplomat-warrior with black hair tied by white cord, indigo travel robes, a narrow ceremonial sword tassel, and a sealed bamboo record tube."
+    }
+  ],
+  "image_continuity_rules": {
+    "character_consistency": "Reuse each character's canon_prompt verbatim as the identity anchor. Elianor remains bruised, dignified, and in a torn white execution dress throughout chapter 1. Caelan wakes with bare hands in private and appears gloved only after dressing for the plaza; both eyebrow scar and old heart scar are canon. The Eclipse Crown is unseen by other characters unless a panel states magic escalation, and otherwise appears only in reflection, shadow, polished metal, water, or Elianor's silvering eyes.",
+    "global_style": "Original vertical-scroll dark royal fantasy manhwa with cinematic lighting, clean expressive faces, elegant palace architecture, chained moon motif, high-contrast black-silver eclipse magic, refined panel transitions, no named artist imitation, no named series references, no studio branding, no readable text.",
+    "negative_prompt": "No copyrighted characters, no logos, no real or fake readable text, no named series or artist style references, no modern objects, no sexualized execution imagery, no gore emphasis, no distorted hands, no inconsistent scars, no gloved sleeping hands, no random extra crowns, no one-note purple palette."
+  },
+  "panels": [
+    {
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [
+        "Eclipse Crown: Wake, little sovereign. The blade is still three hours away."
+      ],
+      "image_prompt": "Tall vertical opening panel, prison ceiling dissolving into a barred view of the chained moon, Elianor Veyr lying on cold stone in torn white execution dress, bruised wrists, long black hair spread like ink, faint crown shape only reflected in one ash-gray eye, original dark royal fantasy manhwa, no readable text",
+      "narration": "The moon was still chained when Elianor opened her eyes.",
+      "panel_number": 1,
+      "vertical_continuity_note": "Start with the sky above the prison so the chain motif can descend into the cell bars."
+    },
+    {
+      "characters_present": ["elianor-veyr", "eclipse-crown"],
+      "dialogue": [
+        "Elianor: I died.",
+        "Eclipse Crown: Briefly. Inefficiently."
+      ],
+      "image_prompt": "Close-up of Elianor's eye and trembling breath in cold air, silver glint in iris, black-silver thorn crown visible only in the wet reflection of her pupil, no physical crown seen by the room, prison darkness and moonlight bands",
+      "narration": "Memory returned as metal, crowd noise, and a smile from the throne.",
+      "panel_number": 2,
+      "vertical_continuity_note": "Move from moonlit bars into eye reflection; keep the Crown reflection-only."
+    },
+    {
+      "characters_present": ["elianor-veyr"],
+      "dialogue": ["Elianor: Then I still have time."],
+      "image_prompt": "Elianor pushing herself upright against stone wall, shoulders straight despite chains, torn white dress with faded silver embroidery, bruised wrists visible, moonlight crossing the floor like thin chains, no other characters",
+      "narration": "Terror asked her to kneel. Pride answered first.",
+      "panel_number": 3,
+      "vertical_continuity_note": "Her posture begins low and rises, supporting the chapter's survival arc."
+    },
+    {
+      "characters_present": ["elianor-veyr"],
+      "dialogue": [],
+      "image_prompt": "Insert atmosphere panel of the execution writ on the cell floor without readable text, wax seals abstract and blurred, one distinct non-readable broken crescent over a sword-shaped legal seal, Elianor's chained hand hovering near it, cold blue-gray moonlight",
+      "narration": "Among the imperial seals was an older mark: a crescent over a sword, from a law the palace had tried to bury.",
+      "panel_number": 4,
+      "vertical_continuity_note": "Quiet foreshadowing panel; symbol is visual only and not readable script."
+    },
+    {
+      "characters_present": ["caelan-rhovir"],
+      "dialogue": ["Caelan: No. Not again."],
+      "image_prompt": "Northern ducal bedroom before dawn, Caelan Rhovir jolting awake with bare hand pressed to old pale heart scar, thin scar crossing left eyebrow visible, winter-gray hair loose to jaw, dark teal eyes haunted, black gloves lying untouched on bedside table",
+      "narration": "Far north of the scaffold, another death woke with her.",
+      "panel_number": 5,
+      "vertical_continuity_note": "Correct body continuity: bare hand while waking, gloves nearby but not worn."
+    },
+    {
+      "characters_present": ["caelan-rhovir"],
+      "dialogue": [
+        "Caelan: Saddle the black relay. Wake no herald who cannot lie."
+      ],
+      "image_prompt": "Caelan half-dressed in black high-collared ducal coat, fastening silver clasp, fur-lined cape thrown over shoulder, gloved hands now being pulled on, dawn snow outside window, urgency controlled rather than frantic",
+      "narration": "He had arrived late once. His body remembered the cost before his mind finished screaming.",
+      "panel_number": 6,
+      "vertical_continuity_note": "Transition from private memory to public duke identity with gloves and coat."
+    },
+    {
+      "characters_present": [
+        "archpriestess-maerith",
+        "emperor-varrien-solm",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        "Maerith: Let every loyal heart witness the moon's correction.",
+        "Varrien: A lawful death leaves no ghosts.",
+        "Luceren: Then let it be lawful."
+      ],
+      "image_prompt": "Execution plaza from high angle, scaffold beneath chained moon, Maerith arranging dark glass beads and crescent-tattooed fingers, Emperor Varrien elevated in white-gold robes with ringed hands tense, Luceren in pale blue jacket smiling faintly but avoiding the blade, crowd below as indistinct witnesses",
+      "narration": "The rite needed fear. The emperor needed law. The prince needed distance.",
+      "panel_number": 7,
+      "vertical_continuity_note": "Establish antagonist motives and limits through placement: priest at rite, emperor at law-seat, prince apart."
+    },
+    {
+      "characters_present": ["elianor-veyr", "selene-voss"],
+      "dialogue": [
+        "Selene: Your Highness... look left when the bell rings.",
+        "Elianor: You should not be here."
+      ],
+      "image_prompt": "Narrow transition panel as guards lead Elianor through a shadowed corridor toward blinding plaza light, Selene partly hidden behind servants with chestnut bob and broken-crescent hairpin, quick warning glance, no readable signs",
+      "narration": "A loyal face survived where Elianor had expected only stone.",
+      "panel_number": 8,
+      "vertical_continuity_note": "Adds human reaction and a route from prison to plaza before the scaffold."
+    },
+    {
+      "characters_present": ["elianor-veyr", "archpriestess-maerith"],
+      "dialogue": [
+        "Maerith: Confess, child, and the crowd may remember you gently.",
+        "Elianor: I will not make your fear holy."
+      ],
+      "image_prompt": "Medium vertical panel on scaffold steps, Maerith serene under silver-black veil offering prayer beads, Elianor upright with chained wrists and ash-gray eyes, crowd blurred behind them, moon-chain shadows falling over both women",
+      "narration": "The priestess spoke softly because cruelty sounded cleaner that way.",
+      "panel_number": 9,
+      "vertical_continuity_note": "Builds direct confrontation before magic; keep Elianor standing."
+    },
+    {
+      "characters_present": [
+        "elianor-veyr",
+        "emperor-varrien-solm",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        "Varrien: Elianor Veyr, the empire offers one mercy: kneel.",
+        "Elianor: The empire has mistaken kneeling for truth."
+      ],
+      "image_prompt": "Long scaffold panel, Elianor framed below imperial dais, Varrien's cold public smile with tense ringed fingers, Luceren watching from behind with lowered eyes, execution blade implied as shadow only, no gore",
+      "narration": "She saw the contradiction at last: a tyrant who could kill her only if the world agreed to call it justice.",
+      "panel_number": 10,
+      "vertical_continuity_note": "Court hierarchy reads vertically from emperor above to Elianor below."
+    },
+    {
+      "characters_present": [
+        "elianor-veyr",
+        "eclipse-crown",
+        "archpriestess-maerith"
+      ],
+      "dialogue": [
+        "Eclipse Crown: Let me eat.",
+        "Elianor: Not all of it. Not me."
+      ],
+      "image_prompt": "Blade shadow crossing Elianor's throat without impact, eclipse darkness flaring around scaffold, black-silver Crown visible in the polished blade and Elianor's shadow but not on her head, Maerith's calm cracking for the first time, crowd silhouettes recoiling, elegant magical tension",
+      "narration": "The Crown opened its hunger like a second sky, and Elianor held the leash with both hands.",
+      "panel_number": 11,
+      "vertical_continuity_note": "Magic escalates but Crown remains reflection/shadow-based; reaction beat before rescue."
+    },
+    {
+      "characters_present": [
+        "elianor-veyr",
+        "caelan-rhovir",
+        "emperor-varrien-solm",
+        "archpriestess-maerith",
+        "prince-luceren-solm"
+      ],
+      "dialogue": [
+        "Caelan: I contest the verdict because Princess Elianor Veyr was murdered once already."
+      ],
+      "image_prompt": "Final cliffhanger panel, Caelan kneeling at base of scaffold beneath northern banner, black ducal coat and fur-lined cape, gloved hand over heart, eyebrow scar visible, Elianor above him stunned but upright, Varrien rigid on dais, Maerith's beads frozen mid-prayer, chained moon looming overhead, no readable banners",
+      "narration": "The plaza forgot how to breathe.",
+      "panel_number": 12,
+      "vertical_continuity_note": "End with vertical power reversal: duke kneels below, princess standing above, emperor exposed above them."
+    }
+  ],
+  "rights_log": {
+    "copyright_tracking_note": "All prompts use original character IDs, original empire and relic terminology, and broad genre descriptors only. No named manhwa, anime, manga, studios, artists, copyrighted characters, logos, readable sigils, or legible fake text are used. The moon-sword material is logged as original Oath Hall law, relics, and clan politics rather than a copy of any specific property.",
+    "human_review_replaced_by": "Expert AI review required fixes were applied: chapter 1 expanded from 9 to exactly 12 vertical panels; moon-sword foreshadowing added through legal seal, envoy setup, temple records, and Moon-Severing Hilt; Caelan's heart scar clarified; antagonist motives and limits stated; chapters 31-120 escalation spine embedded in season arc summaries.",
+    "originality_statement": "The package preserves the core premise of a chained moon, fallen princess before execution, living hungry crown, and regressed duke while developing an original legal-theological conspiracy, original moon-sword Oath Halls, and a cost-driven crown arc."
+  },
+  "seasons": [
+    {
+      "arc_summary": "Elianor wakes before her execution, forms a dangerous alliance with Duke Caelan, exposes the first false charge against her, and learns that the living crown inside her blood is linked to the chained moon. Season 1 plants the moon-sword arc through the buried Witness Clause, the crescent-over-sword legal seal, Yun Seoryeon's envoy mission, temple records, and the missing Moon-Severing Hilt.",
+      "chapter_end": 30,
+      "chapter_start": 1,
+      "season_number": 1,
+      "title": "The Princess Before the Blade"
+    },
+    {
+      "arc_summary": "Caelan's previous timeline memories become unreliable as Elianor's choices rewrite events. The ducal houses fracture, the emperor's eclipse priests move openly, and the Crown's hunger grows costlier chapter by chapter. Escalation spine: Ch31 Elianor's stay of execution triggers noble sanctions; Ch32 the Crown consumes a blood debt and numbs her hand; Ch33 Caelan's correct memory causes a wrong arrest; Ch34 Maerith reveals a public-fear quota for larger rites; Ch35 Varrien binds wavering nobles with succession law; Ch36 Elianor wins a duel of testimony but loses a childhood memory; Ch37 Selene maps the temple courier network; Ch38 Luceren secretly preserves evidence to protect himself; Ch39 the Crown marks Elianor's shadow with a visible chain; Ch40 a northern house defects after Caelan saves Elianor; Ch41 temple assassins use vow-knives that only cut oathbreakers; Ch42 Elianor feeds the Crown to survive and cannot taste food for a week; Ch43 Caelan confronts a memory that no longer happened; Ch44 Varrien admits he needs Elianor alive until the eclipse tribunal; Ch45 Maerith fails a secret killing attempt because her magic requires witnesses; Ch46 Selene is exposed as an informant; Ch47 Luceren rescues Selene indirectly while framing a rival; Ch48 the Crown offers command over royal shadows at the price of a name; Ch49 Elianor refuses and finds a procedural weakness instead; Ch50 a moon-sword record tube arrives empty except for a blade tassel; Ch51 Caelan's ally dies in the event he prevented last timeline; Ch52 Elianor uses Crown power and forgets her mother's voice; Ch53 ducal houses split into law, temple, and northern blocs; Ch54 Maerith sanctifies fear riots around the palace; Ch55 Varrien's coalition demands Elianor's exile rather than death; Ch56 the Crown begins whispering in court mirrors; Ch57 Caelan reveals his heart scar to prove regression to Elianor; Ch58 Elianor turns the tribunal by forcing Maerith to name the missing relic; Ch59 the Crown devours a partial eclipse and brands Elianor's pulse; Ch60 the season ends with Caelan's memories shattered and the eastern Oath Halls summoning Elianor.",
+      "chapter_end": 60,
+      "chapter_start": 31,
+      "season_number": 2,
+      "title": "The Duke Who Remembered Winter"
+    },
+    {
+      "arc_summary": "The story expands eastward into the original moon-sword Oath Halls, a confederation of clans whose martial law descends from the first chain placed on the moon. The Crown's hunger stops being only personal and begins disturbing foreign oaths. Escalation spine: Ch61 Elianor enters the eastern pass under envoy protection; Ch62 the first Oath Hall rejects imperial titles; Ch63 the Crown reacts to moon-sword breathing forms and steals Elianor's sleep; Ch64 Caelan recognizes the masked warrior who killed him before; Ch65 clan elders test Elianor with silent blade law; Ch66 the Moon-Severing Hilt is confirmed missing from the central hall; Ch67 Elianor learns each Crown feeding rings oath bells across the clans; Ch68 Maerith's agents buy a disgraced sword school; Ch69 Caelan wins a defensive duel but his memory of the killer changes mid-fight; Ch70 Elianor studies the First Chain Manual without readable text shown; Ch71 the Crown eats a technique imprint and gives her temporary shadow footwork; Ch72 the cost is losing one day of emotional warmth toward Caelan; Ch73 Yun Seoryeon reveals the clans once served the same royal ancestor as the Crown; Ch74 Varrien sends diplomats with legal extradition claims; Ch75 the clans split between returning Elianor and using her; Ch76 a vow hall collapses when the Crown feeds on ancient fear; Ch77 Selene uncovers an imperial bribe ledger hidden in a prayer bead shipment; Ch78 Luceren arrives as envoy and offers a succession bargain; Ch79 Caelan confronts the prior-timeline killer, now bound by Maerith's purchased vow; Ch80 Elianor refuses to let the Crown devour the killer's oath because it would erase a clan's history; Ch81 she wins by exposing the vow's false witness; Ch82 the Crown punishes restraint with blood-fever; Ch83 the Moon-Severing Hilt chooses no wielder and points toward the chained moon; Ch84 Maerith opens an eclipse gate over the eastern river; Ch85 Elianor uses a moon-sword form imperfectly and scars her shadow; Ch86 Caelan dies briefly in a ritual echo and returns without one memory of Elianor; Ch87 the clans agree to pilgrimage only if Elianor accepts their law as binding; Ch88 Varrien declares the pilgrimage treason; Ch89 the first chain's origin is revealed as a royal sacrifice, not a victory; Ch90 Elianor reaches the Moon-Severing Shrine and learns the Crown was made to eat the eclipse god, not wear the throne.",
+      "chapter_end": 90,
+      "chapter_start": 61,
+      "season_number": 3,
+      "title": "The Moon-Sword Pilgrimage"
+    },
+    {
+      "arc_summary": "The final season reveals the moon was chained to imprison a dead royal ancestor who became an eclipse god. Elianor must decide whether to free the moon, destroy the Crown, or become the living sovereign of the night before the empire's sky collapses. Escalation spine: Ch91 the empire's moon-chain becomes visible at noon; Ch92 the Crown hungers constantly and drains color from Elianor's reflection; Ch93 Varrien tries to crown Luceren early to stabilize law; Ch94 Maerith fractures from serene faith into panic because her god answers too directly; Ch95 Caelan rebuilds trust without full memory; Ch96 Selene leads a palace evacuation network; Ch97 the Crown devours an eclipse storm and erases Elianor from a minor noble's memory; Ch98 Luceren confesses one crime publicly but conceals another; Ch99 the eastern clans march under oath, not loyalty; Ch100 Varrien offers himself as lawful sacrifice to preserve the imperial myth; Ch101 Elianor refuses mythic convenience and forces a people's tribunal; Ch102 Maerith frees part of the dead ancestor, proving she feared worship more than death; Ch103 the Crown demands Elianor's name as payment for saving the capital; Ch104 Caelan offers his remaining prior-timeline memories instead; Ch105 the Crown accepts half and turns gentler but more powerful; Ch106 Elianor learns destroying the Crown also unchains every swallowed oath; Ch107 the moon-sword clans split over freedom versus catastrophe; Ch108 Luceren dies politically by naming the forged charges; Ch109 Varrien is stripped of sacred legitimacy but not human grief; Ch110 Maerith attempts final witness terror and finds the crowd no longer fears her; Ch111 Elianor feeds the Crown willingly on the empire's false oaths; Ch112 the cost is her shadow separating as a sovereign double; Ch113 Caelan duels the eclipse ancestor's vessel under falling chainlight; Ch114 Selene breaks the palace bell system to prevent mass panic; Ch115 Elianor reaches the chained moon through Crown reflection; Ch116 the dead ancestor offers a perfect throne without loneliness; Ch117 Elianor rejects inherited hunger and names moral authority above blood; Ch118 the Crown eats the eclipse god and begins consuming itself; Ch119 Caelan anchors Elianor with the memory he kept: her choice to stand; Ch120 the moon is freed, the Crown survives as a smaller living vow, and Elianor builds a throne limited by law rather than fear.",
+      "chapter_end": 120,
+      "chapter_start": 91,
+      "season_number": 4,
+      "title": "The Crown That Eats the Eclipse"
+    }
+  ],
+  "series": {
+    "core_themes": [
+      "survival after betrayal",
+      "power as burden and inheritance",
+      "love complicated by guilt and memory",
+      "the cost of changing fate",
+      "royal legitimacy versus moral authority",
+      "dark magic as hunger rather than evil",
+      "law as both weapon and shield",
+      "foreign martial tradition as buried lunar history"
+    ],
+    "full_premise": "On the morning before her execution, fallen Princess Elianor Veyr wakes with memories of dying and a living Eclipse Crown whispering inside her blood. The moon above the empire is visibly chained, the emperor needs her public death to secure his fragile legitimacy, and the serene archpriestess conducting the rite can only complete her magic through witnessed fear. Duke Caelan Rhovir also returns from a failed future, carrying both an eyebrow scar and the old heart scar from the wound that killed him in the prior timeline. Together they contest a lawful murder, uncover the Crown's hunger and its worsening costs, and follow buried moon-sword records toward the eastern Oath Halls where the first chain was forged. Every use of the Crown saves Elianor while consuming memory, vows, shadows, or political stability, forcing her to decide what kind of sovereign can survive without becoming another devouring myth.",
+    "logline": "A condemned princess wakes on the morning before her execution and discovers her living crown can devour eclipse magic, while the duke who failed to save her in another timeline returns with memories of treason, love, and the empire's hidden lunar curse.",
+    "slug": "the-eclipse-crown",
+    "tagline": "The moon is chained, the crown is hungry, and the princess who died once will not kneel twice.",
+    "target_reader_feeling": "Readers should feel the tension of a public execution overturned by impossible memory, the luxury and danger of court politics, the eerie pull of hungry lunar magic, and the slow-burn satisfaction of every rescue creating a sharper future cost.",
+    "title": "THE ECLIPSE CROWN"
+  },
+  "generated_at": "2026-06-02T00:34:48.588848Z",
+  "generation_model": "gpt-5.5",
+  "generation_reasoning_effort": "xhigh",
+  "revision_history": [
+    {
+      "revision_number": 1,
+      "review": {
+        "approved_for_publication": false,
+        "score": 86,
+        "expert_summary": "Strong commercial hook with clear emotional stakes, elegant dark-fantasy imagery, and a satisfying chapter-one reversal. Elianor, Caelan, and the Eclipse Crown have distinct roles and visual identities, and the chained moon motif gives the series a memorable central image. It is close to publication quality, but not fully autonomous-publication ready because the 120-chapter roadmap needs stronger mid-series causal scaffolding, the murim-inspired expansion needs earlier foreshadowing, and chapter 1's 9-panel layout is too compressed for a premium vertical manhwa episode.",
+        "required_fixes": [
+          "Expand chapter 1 into a fuller vertical-scroll episode with more reaction, transition, and atmosphere panels; 9 panels reads like a trailer, not a complete publishable webtoon chapter.",
+          "Foreshadow the season 3 moon-sword clans in season 1 through symbols, legal history, a foreign envoy, temple records, or a named martial relic so the murim-inspired arc does not feel grafted on later.",
+          "Clarify Caelan's body continuity: he has a canon eyebrow scar, but chapter text introduces an old heart scar; add the heart scar to his canon identity or remove it.",
+          "Strengthen antagonist specificity beyond elegant emperor and serene priestess archetypes by defining their concrete motives, limits, and personal contradictions earlier.",
+          "Add a chapter-by-chapter escalation spine for chapters 31-120, especially how the living crown's hunger creates worsening costs rather than only new powers."
+        ],
+        "continuity_notes": [
+          "The chained moon motif is visually and narratively consistent across panels and supports strong vertical continuity from sky to prison to execution plaza.",
+          "Elianor's posture progression works well: waking on stone, standing despite chains, walking without stumbling, then being framed above Caelan in the cliffhanger.",
+          "The Crown's introduction through reflection is effective and should remain a rule: unseen by others unless magic escalates.",
+          "Panel 5 slightly strains continuity because Caelan wakes in a bedroom while already using a gloved hand; revise to bare hand unless there is a reason he sleeps gloved.",
+          "The execution sequence compresses major beats too quickly; add crowd close-ups, Maerith's rite detail, Emperor/Luceren reaction panels, and Elianor's internal decision beat before Caelan's entrance."
+        ],
+        "copyright_notes": [
+          "No direct copyrighted characters, named settings, or protected scene copies are evident from the package.",
+          "The premise relies on familiar regression princess, condemned royal, cold duke, temple conspiracy, and dark relic tropes; this is genre-safe if future chapters avoid mirroring specific popular manhwa plot beats or character dynamics too closely.",
+          "Using 'premium Korean manhwa style' is a broad style reference, but prompts should continue avoiding named artists, named series, studio names, or character lookalikes.",
+          "The murim-inspired arc is acceptable as genre influence, but original clan names, techniques, visual motifs, and political rules should be logged before use."
+        ]
+      },
+      "requested_at": "2026-06-02T00:32:14.496248Z"
+    }
+  ],
+  "expert_review": {
+    "approved_for_publication": true,
+    "continuity_notes": [
+      "Chapter 1 has clear vertical flow: chained moon to prison bars, eye reflection, rising posture, legal seal, Caelan's parallel awakening, corridor transition, scaffold confrontation, magic flare, then public reversal.",
+      "Elianor's visual and emotional continuity is strong: bruised, dignified, restrained, never passive, with the Crown kept reflection/shadow-based until escalation.",
+      "Caelan's continuity issue from the prior review is resolved: bare hands while waking, gloves after dressing, eyebrow scar and heart scar both retained as canon.",
+      "The antagonist triangle is readable from the first chapter: Varrien needs lawful spectacle, Maerith needs witnessed fear, and Luceren needs distance from guilt.",
+      "The 120-chapter spine maintains escalating costs for Crown use through memory, pulse, shadow, oath, political legitimacy, and relational trust."
+    ],
+    "copyright_notes": [
+      "No direct copyrighted characters, named series, studio references, logos, or protected settings are present.",
+      "The work uses familiar regression-princess, cold-duke, execution-reversal, temple-conspiracy, and dark-relic tropes, but combines them through original law, witness-magic, Oath Halls, and Crown-cost mechanics.",
+      "The moon-sword material reads as broad martial-fantasy influence rather than a copied property, provided future technique names, clan symbols, and visual motifs remain original.",
+      "Image prompts appropriately avoid named artist imitation and request no readable text, logos, or real-world symbols."
+    ],
+    "expert_summary": "Approved for autonomous publication. The package has a strong immediate hook, a clean first-chapter reversal, distinct character motives, and enough legal, theological, and relic-based infrastructure to sustain 120 chapters. The previous structural weaknesses have been addressed: chapter 1 now has better vertical continuity, Caelan's scars and gloves are consistent, the moon-sword arc is foreshadowed early, and the long-range outline escalates the Crown's costs instead of only adding powers. Remaining risks are normal production risks, not blockers: future chapters must avoid over-relying on generic court-regression beats and must keep the Crown's costs emotionally irreversible enough to preserve tension.",
+    "required_fixes": [],
+    "score": 93
+  },
+  "publication_status": "approved_by_expert_ai"
+}

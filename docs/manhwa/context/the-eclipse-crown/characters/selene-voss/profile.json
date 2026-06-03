@@ -1,0 +1,16 @@
+{
+  "age_label": "",
+  "bubble_placement_rule": "place Selene bubbles close to her hidden face or warning gesture",
+  "bubble_style": "small whisper bubbles with soft ivory fill and thin ink outline",
+  "canon_prompt": "Mid twenties, petite palace maid, chestnut bob haircut, warm brown eyes, gray servant uniform, broken-crescent hairpin, alert posture.",
+  "id": "selene-voss",
+  "name": "Selene Voss",
+  "role": "loyal palace maid",
+  "thought_style": "small nervous thought bubble if needed",
+  "visual_identity_lock": [
+    "Do not change face structure between panels.",
+    "Do not change body proportions between panels.",
+    "Do not change primary costume unless the chapter context explicitly says so.",
+    "Use reference images from this folder before rendering chapter panels."
+  ]
+}

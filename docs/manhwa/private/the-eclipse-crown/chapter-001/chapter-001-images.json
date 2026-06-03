@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-03T11:50:04.468773Z",
+  "package_file": "docs/manhwa/generated/the-eclipse-crown-chapter-001.json",
+  "publication_status": "approved_by_expert_ai",
+  "series_slug": "the-eclipse-crown",
+  "chapter_number": 1,
+  "image_generator": "/Users/macbookpro/Documents/p2/tachi/tachi-back/deploy/contabo/generate-codex-image.sh",
+  "daily_mode": false,
+  "rendered": [
+    {
+      "panel_number": 1,
+      "image_path": "/api/manhwa-private/the-eclipse-crown/chapter/1/panel/1",
+      "source_prompt": "Tall vertical opening panel, prison ceiling dissolving into a barred view of the chained moon, Elianor Veyr lying on cold stone in torn white execution dress, bruised wrists, long black hair spread like ink, faint crown shape only reflected in one ash-gray eye, original dark royal fantasy manhwa, no readable text"
+    }
+  ],
+  "rendered_this_run": [
+    {
+      "panel_number": 1,
+      "image_path": "/api/manhwa-private/the-eclipse-crown/chapter/1/panel/1",
+      "source_prompt": "Tall vertical opening panel, prison ceiling dissolving into a barred view of the chained moon, Elianor Veyr lying on cold stone in torn white execution dress, bruised wrists, long black hair spread like ink, faint crown shape only reflected in one ash-gray eye, original dark royal fantasy manhwa, no readable text"
+    }
+  ],
+  "failed": []
+}

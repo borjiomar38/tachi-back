@@ -1,0 +1,16 @@
+{
+  "age_label": "",
+  "bubble_placement_rule": "place Caelan bubbles near his face, gloved hand, heart scar, or kneeling position",
+  "bubble_style": "firm ivory speech bubbles with crisp ink border and restrained cold-blue accent if useful",
+  "canon_prompt": "Late twenties, tall broad-shouldered northern duke, winter-gray hair to jaw length, dark teal eyes, scar crossing left eyebrow, black high-collared ducal military coat, dark fur-lined cape, controlled haunted expression.",
+  "id": "caelan-rhovir",
+  "name": "Caelan Rhovir",
+  "role": "regressed northern duke",
+  "thought_style": "small sharp-edged internal monologue bubble with icy shadow and serif lettering",
+  "visual_identity_lock": [
+    "Do not change face structure between panels.",
+    "Do not change body proportions between panels.",
+    "Do not change primary costume unless the chapter context explicitly says so.",
+    "Use reference images from this folder before rendering chapter panels."
+  ]
+}

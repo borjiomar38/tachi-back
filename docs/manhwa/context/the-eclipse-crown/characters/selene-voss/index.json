@@ -1,0 +1,62 @@
+{
+  "character_id": "selene-voss",
+  "profile": "characters/selene-voss/profile.json",
+  "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss",
+  "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference",
+  "reference_plan": "characters/selene-voss/reference-plan.json",
+  "reference_status": {
+    "generated_count": 0,
+    "missing_count": 5,
+    "missing_reference_ids": [
+      "identity-front-full-body",
+      "identity-three-quarter",
+      "face-expression-sheet",
+      "hands-props-detail",
+      "chapter-001-key-pose"
+    ],
+    "references": [
+      {
+        "generated": false,
+        "id": "identity-front-full-body",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/identity-front-full-body.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-front-full-body",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-front-full-body",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "identity-three-quarter",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/identity-three-quarter.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-three-quarter",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/identity-three-quarter",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "face-expression-sheet",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/face-expression-sheet.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/face-expression-sheet",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/face-expression-sheet",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "hands-props-detail",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/hands-props-detail.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/hands-props-detail",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/hands-props-detail",
+        "status": "missing"
+      },
+      {
+        "generated": false,
+        "id": "chapter-001-key-pose",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss/chapter-001-key-pose.png",
+        "protected_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/chapter-001-key-pose",
+        "public_path": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference/chapter-001-key-pose",
+        "status": "missing"
+      }
+    ],
+    "required_before_chapter_render": true
+  },
+  "pose_bank": "characters/selene-voss/pose-bank.json"
+}
