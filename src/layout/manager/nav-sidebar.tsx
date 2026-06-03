@@ -13,6 +13,7 @@ import {
   Share2Icon,
   ShieldAlertIcon,
   SmartphoneIcon,
+  SparklesIcon,
   UsersIcon,
   XIcon,
 } from 'lucide-react';
@@ -197,6 +198,23 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                         )}
                       </Link>
                     </SidebarMenuItem>
+                    <WithPermissions permissions={[permissionStaff.create]}>
+                      <SidebarMenuItem>
+                        <Link to="/manager/manhwa">
+                          {({ isActive }) => (
+                            <SidebarMenuButton
+                              isActive={isActive}
+                              render={
+                                <span>
+                                  <SparklesIcon />
+                                  <span>Manhwa studio</span>
+                                </span>
+                              }
+                            />
+                          )}
+                        </Link>
+                      </SidebarMenuItem>
+                    </WithPermissions>
                     <SidebarMenuItem>
                       <Link to="/manager/jobs">
                         {({ isActive }) => (

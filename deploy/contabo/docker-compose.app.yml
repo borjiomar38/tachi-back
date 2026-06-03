@@ -31,9 +31,11 @@ services:
       SEO_DISTRIBUTION_AGENT_STATE_DIR: /var/lib/tachi-seo-distribution-agent
       SEO_DISTRIBUTION_AGENT_TRIGGER_FILE: /var/lib/tachi-seo-distribution-agent/run-now
       SEO_DISTRIBUTION_DAILY_CRON_SCHEDULE: 0 3 * * *
+      MANHWA_CONTEXT_ROOT: /app/docs/manhwa/context
       MANHWA_PRIVATE_ROOT: /app/docs/manhwa/private
     volumes:
       - ${TACHI_SEO_AGENT_STATE_DIR:-/var/lib/tachi-seo-distribution-agent}:/var/lib/tachi-seo-distribution-agent:rw
+      - ${TACHI_MANHWA_CONTEXT_DIR:-/opt/tachi-back/docs/manhwa/context}:/app/docs/manhwa/context:ro
       - ${TACHI_MANHWA_PRIVATE_DIR:-/opt/tachi-back/docs/manhwa/private}:/app/docs/manhwa/private:ro
     depends_on:
       postgres:
