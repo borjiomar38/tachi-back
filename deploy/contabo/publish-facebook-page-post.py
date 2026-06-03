@@ -446,6 +446,115 @@ def post_photo_to_facebook(
   raise ValueError('post_photo_to_facebook requires image_path or image_url')
 
 
+def upload_unpublished_photo_to_facebook(
+  *,
+  page_id: str,
+  access_token: str,
+  graph_version: str,
+  image_path: pathlib.Path | None,
+  image_url: str | None,
+  alt_text: str | None,
+) -> dict[str, Any]:
+  fields: dict[str, Any] = {
+    'published': False,
+  }
+  if alt_text:
+    fields['alt_text_custom'] = alt_text
+
+  if image_url:
+    fields['url'] = image_url
+    return graph_request(
+      method='POST',
+      path=f'{urllib.parse.quote(page_id)}/photos',
+      access_token=access_token,
+      graph_version=graph_version,
+      fields=fields,
+    )
+
+  if image_path:
+    return graph_multipart_request(
+      path=f'{urllib.parse.quote(page_id)}/photos',
+      access_token=access_token,
+      graph_version=graph_version,
+      fields=fields,
+      file_field='source',
+      file_path=image_path,
+    )
+
+  raise ValueError('upload_unpublished_photo_to_facebook requires image_path or image_url')
+
+
+def post_attached_photo_to_facebook_feed(
+  *,
+  page_id: str,
+  access_token: str,
+  graph_version: str,
+  caption: str,
+  photo_id: str,
+) -> dict[str, Any]:
+  return graph_request(
+    method='POST',
+    path=f'{urllib.parse.quote(page_id)}/feed',
+    access_token=access_token,
+    graph_version=graph_version,
+    fields={
+      'message': caption,
+      'attached_media': [{'media_fbid': photo_id}],
+      'published': True,
+    },
+  )
+
+
+def post_image_to_facebook_feed(
+  *,
+  page_id: str,
+  access_token: str,
+  graph_version: str,
+  caption: str,
+  image_path: pathlib.Path | None,
+  image_url: str | None,
+  alt_text: str | None,
+) -> dict[str, Any]:
+  photo_result = upload_unpublished_photo_to_facebook(
+    page_id=page_id,
+    access_token=access_token,
+    graph_version=graph_version,
+    image_path=image_path,
+    image_url=image_url,
+    alt_text=alt_text,
+  )
+  photo_id = str(photo_result.get('id') or '').strip()
+  if not photo_id:
+    raise RuntimeError(f'Facebook unpublished photo upload did not return an id: {photo_result}')
+
+  post_result = post_attached_photo_to_facebook_feed(
+    page_id=page_id,
+    access_token=access_token,
+    graph_version=graph_version,
+    caption=caption,
+    photo_id=photo_id,
+  )
+  post_result['photo_id'] = photo_id
+  return post_result
+
+
+def verify_facebook_feed_post(
+  *,
+  remote_id: str,
+  access_token: str,
+  graph_version: str,
+) -> dict[str, Any]:
+  return graph_request(
+    method='GET',
+    path=urllib.parse.quote(remote_id),
+    access_token=access_token,
+    graph_version=graph_version,
+    fields={
+      'fields': 'id,permalink_url,is_published,is_hidden,privacy,status_type',
+    },
+  )
+
+
 def ensure_post_image(
   *,
   item: dict[str, Any],
@@ -696,8 +805,9 @@ def main() -> int:
       item=item,
       state=state,
     )
+    verification: dict[str, Any] = {}
     if image_path or image_url:
-      result = post_photo_to_facebook(
+      result = post_image_to_facebook_feed(
         page_id=page_id,
         access_token=access_token,
         graph_version=graph_version,
@@ -715,13 +825,38 @@ def main() -> int:
         link=str(item.get('link') or '').strip() or None,
       )
     remote_id = str(result.get('id') or '')
+    if remote_id:
+      try:
+        verification = verify_facebook_feed_post(
+          remote_id=remote_id,
+          access_token=access_token,
+          graph_version=graph_version,
+        )
+      except RuntimeError as exc:
+        verification = {'verification_error': str(exc)}
+
+    privacy = verification.get('privacy') if isinstance(verification.get('privacy'), dict) else {}
     published[post_id] = {
       'platform': 'facebook',
       'remote_id': remote_id,
+      'photo_id': result.get('photo_id'),
       'published_at': dt.datetime.now(dt.UTC).isoformat().replace('+00:00', 'Z'),
       'link': item.get('link'),
+      'permalink_url': verification.get('permalink_url'),
+      'is_published': verification.get('is_published'),
+      'is_hidden': verification.get('is_hidden'),
+      'privacy': privacy.get('value') or privacy.get('description'),
+      'status_type': verification.get('status_type'),
     }
-    print(f'published {post_id} as Facebook post {remote_id}')
+    print(f'published {post_id} as Facebook feed post {remote_id}')
+    if verification:
+      print(
+        'visibility '
+        f'is_published={verification.get("is_published")} '
+        f'is_hidden={verification.get("is_hidden")} '
+        f'privacy={privacy.get("value") or privacy.get("description")} '
+        f'permalink={verification.get("permalink_url")}'
+      )
     write_state(state_file, state)
 
   return 0
