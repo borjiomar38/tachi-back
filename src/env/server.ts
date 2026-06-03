@@ -192,6 +192,7 @@ const envServerBase = createEnv({
     BLOG_GENERATION_MODEL: z.string().optional(),
     BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(true),
     BLOG_IMAGE_PUBLIC_BASE_URL: z.url().optional(),
+    MANHWA_PRIVATE_ROOT: z.string().optional(),
     VITE_S3_BUCKET_PUBLIC_URL: z.url().optional(),
 
     SENTRY_DSN: z.url().optional(),

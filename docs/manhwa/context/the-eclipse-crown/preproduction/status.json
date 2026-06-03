@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-06-03T14:59:22.622300Z",
+  "series_slug": "the-eclipse-crown",
+  "chapter_number": 1,
+  "scenario_strategy_ready": false,
+  "season_scenario_ready": false,
+  "chapter_scenario_ready": false,
+  "character_dossiers": {
+    "elianor-veyr": false,
+    "eclipse-crown": false,
+    "caelan-rhovir": false,
+    "archpriestess-maerith": false,
+    "emperor-varrien-solm": false,
+    "selene-voss": false,
+    "prince-luceren-solm": false
+  },
+  "all_character_dossiers_ready": false,
+  "ready_for_character_references": false,
+  "ready_for_chapter_generation": false,
+  "next_missing_character_dossier": "elianor-veyr",
+  "next_task": {
+    "task_type": "scenario-strategy"
+  },
+  "daily_order": [
+    "Day 1: scenario-strategy",
+    "Day 2: season-scenario",
+    "Next days: one character-dossier per recurring character",
+    "Then: chapter-scenario",
+    "Then: character reference images",
+    "Then: one final chapter panel image per day"
+  ]
+}

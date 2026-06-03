@@ -12,15 +12,19 @@ import { buttonVariants } from '@/components/ui/button';
 
 import heroBackground from '@/features/auth/layout-login-background.webp';
 import heroCharacter from '@/features/auth/layout-login-character.webp';
-import { isManhwaChapterPublic } from '@/features/manhwa/data';
-import { ManhwaSeries } from '@/features/manhwa/schema';
+import { ManhwaSeriesView } from '@/features/manhwa/schema';
+import { isManhwaChapterPublic } from '@/features/manhwa/visibility';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 interface PageManhwaIndexProps {
-  series: ManhwaSeries[];
+  series: ManhwaSeriesView[];
+  showPrivateContext: boolean;
 }
 
-export const PageManhwaIndex = ({ series }: PageManhwaIndexProps) => {
+export const PageManhwaIndex = ({
+  series,
+  showPrivateContext,
+}: PageManhwaIndexProps) => {
   const featuredSeries = series[0];
 
   return (
@@ -89,12 +93,16 @@ export const PageManhwaIndex = ({ series }: PageManhwaIndexProps) => {
       <PublicSection
         eyebrow="Series"
         title="Nayovi original manhwa"
-        description="Each project keeps a story bible, character registry, chapter manifest, and AI expert continuity review before publication."
+        description="New original stories appear here when a chapter is ready for readers."
         className="pb-20"
       >
         <div className="grid gap-4 md:grid-cols-2">
           {series.map((item) => (
-            <SeriesCard key={item.slug} series={item} />
+            <SeriesCard
+              key={item.slug}
+              series={item}
+              showPrivateContext={showPrivateContext}
+            />
           ))}
         </div>
       </PublicSection>
@@ -102,7 +110,10 @@ export const PageManhwaIndex = ({ series }: PageManhwaIndexProps) => {
   );
 };
 
-function SeriesCard(props: { series: ManhwaSeries }) {
+function SeriesCard(props: {
+  series: ManhwaSeriesView;
+  showPrivateContext: boolean;
+}) {
   const firstChapter = props.series.chapters[0];
   const publicChapterCount = props.series.chapters.filter(
     isManhwaChapterPublic
@@ -138,14 +149,16 @@ function SeriesCard(props: { series: ManhwaSeries }) {
         <div className="grid gap-5 p-5">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-1">
-                <CrownIcon className="size-4" />
-                {props.series.totalPlannedChapters} planned chapters
-              </span>
+              {props.showPrivateContext ? (
+                <span className="inline-flex items-center gap-1">
+                  <CrownIcon className="size-4" />
+                  {props.series.totalPlannedChapters} planned chapters
+                </span>
+              ) : null}
               <span className="inline-flex items-center gap-1">
                 <BookOpenTextIcon className="size-4" />
                 {publicChapterCount} live
-                {privateChapterCount > 0
+                {props.showPrivateContext && privateChapterCount > 0
                   ? `, ${privateChapterCount} private`
                   : ''}
               </span>

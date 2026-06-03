@@ -2,13 +2,8 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { PageError } from '@/components/errors/page-error';
 
-import {
-  getManhwaSeriesBySlug,
-  getPublicManhwaSeriesBySlug,
-  isManhwaChapterPublic,
-} from '@/features/manhwa/data';
 import { PageManhwaSeries } from '@/features/manhwa/page-manhwa-series';
-import { canViewPrivateManhwaProgress } from '@/features/manhwa/server';
+import { getManhwaSeriesPageData } from '@/features/manhwa/server';
 import {
   buildPublicAbsoluteUrl,
   buildPublicPageHead,
@@ -16,21 +11,8 @@ import {
 
 export const Route = createFileRoute('/manhwa/$slug/')({
   component: RouteComponent,
-  loader: async ({ params }) => {
-    const canViewPrivate = await canViewPrivateManhwaProgress();
-    const series = canViewPrivate
-      ? getManhwaSeriesBySlug(params.slug)
-      : getPublicManhwaSeriesBySlug(params.slug);
-
-    return {
-      isPrivatePreview:
-        canViewPrivate &&
-        Boolean(
-          series?.chapters.some((chapter) => !isManhwaChapterPublic(chapter))
-        ),
-      series,
-    };
-  },
+  loader: async ({ params }) =>
+    await getManhwaSeriesPageData({ data: { slug: params.slug } }),
   head: ({ loaderData }) => {
     const series = loaderData?.series;
     const firstPublicChapter = series?.chapters[0];

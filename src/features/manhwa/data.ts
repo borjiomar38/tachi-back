@@ -1,8 +1,16 @@
 import {
   ManhwaChapter,
+  ManhwaReaderChapter,
+  ManhwaReaderPanel,
+  ManhwaReaderSeries,
   ManhwaSeries,
+  ManhwaSeriesView,
   ManhwaSitemapEntry,
 } from '@/features/manhwa/schema';
+import {
+  isManhwaChapterComplete,
+  isManhwaChapterPublic,
+} from '@/features/manhwa/visibility';
 
 const theEclipseCrownChapterOne: ManhwaChapter = {
   chapterNumber: 1,
@@ -301,38 +309,111 @@ export const manhwaSeries: ManhwaSeries[] = [
 
 export const getManhwaSeries = () => manhwaSeries;
 
-export const isManhwaChapterComplete = (chapter: ManhwaChapter) =>
-  chapter.panels.length > 0 &&
-  chapter.panels.every((panel) => Boolean(panel.imagePath));
-
-export const isManhwaChapterPublic = (chapter: ManhwaChapter) =>
-  chapter.status === 'published' && isManhwaChapterComplete(chapter);
+export { isManhwaChapterComplete, isManhwaChapterPublic };
 
 export const getPublicManhwaChapters = (series: ManhwaSeries) =>
   series.chapters.filter(isManhwaChapterPublic);
 
-const toPublicManhwaSeries = (series: ManhwaSeries): ManhwaSeries => {
-  const publicChapters = getPublicManhwaChapters(series);
+const toReaderPanel = (
+  panel: ManhwaChapter['panels'][number],
+  options?: { includeDraftText?: boolean }
+) => {
+  const readerPanel: ManhwaReaderPanel = {
+    alt: panel.alt,
+    id: panel.id,
+  };
+
+  if (panel.imagePath) {
+    readerPanel.imagePath = panel.imagePath;
+  }
+
+  if (options?.includeDraftText) {
+    readerPanel.dialogue = panel.dialogue;
+    readerPanel.narration = panel.narration;
+  }
+
+  return readerPanel;
+};
+
+const toReaderChapter = (
+  chapter: ManhwaChapter,
+  options?: { includeDraftText?: boolean }
+): ManhwaReaderChapter => ({
+  chapterNumber: chapter.chapterNumber,
+  excerpt: chapter.excerpt,
+  panels: chapter.panels.map((panel) => toReaderPanel(panel, options)),
+  publishedAt: chapter.publishedAt,
+  readingMinutes: chapter.readingMinutes,
+  seasonNumber: chapter.seasonNumber,
+  slug: chapter.slug,
+  status: chapter.status,
+  title: chapter.title,
+  updatedAt: chapter.updatedAt,
+});
+
+const toReaderManhwaSeries = (
+  series: ManhwaSeries,
+  options?: {
+    includeDraftText?: boolean;
+    includePrivateChapters?: boolean;
+  }
+): ManhwaReaderSeries => {
+  const chapters = (
+    options?.includePrivateChapters
+      ? series.chapters
+      : getPublicManhwaChapters(series)
+  ).map((chapter) => toReaderChapter(chapter, options));
   const publicCoverImagePath =
-    publicChapters
+    chapters
       .flatMap((chapter) => chapter.panels)
       .find((panel) => panel.imagePath)?.imagePath ?? undefined;
 
   return {
-    ...series,
-    chapters: publicChapters,
+    chapters,
+    coverAlt: series.coverAlt,
     coverImagePath: publicCoverImagePath,
+    description: series.description,
+    genres: series.genres,
+    lastModified: series.lastModified,
+    slug: series.slug,
+    status: series.status,
+    tagline: series.tagline,
+    title: series.title,
+    totalPlannedChapters: series.totalPlannedChapters,
   };
 };
 
 export const getPublicManhwaSeries = () =>
   manhwaSeries
     .filter((series) => series.status === 'active')
-    .map(toPublicManhwaSeries)
+    .map((series) => toReaderManhwaSeries(series))
     .filter((series) => series.chapters.length > 0);
 
 export const getManhwaSeriesBySlug = (slug: string) =>
   manhwaSeries.find((series) => series.slug === slug);
+
+export const getPrivateManhwaReaderSeries = () =>
+  manhwaSeries
+    .filter((series) => series.status === 'active')
+    .map((series) =>
+      toReaderManhwaSeries(series, {
+        includeDraftText: true,
+        includePrivateChapters: true,
+      })
+    );
+
+export const getPrivateManhwaReaderSeriesBySlug = (slug: string) => {
+  const series = getManhwaSeriesBySlug(slug);
+
+  if (series?.status !== 'active') {
+    return undefined;
+  }
+
+  return toReaderManhwaSeries(series, {
+    includeDraftText: true,
+    includePrivateChapters: true,
+  });
+};
 
 export const getPublicManhwaSeriesBySlug = (slug: string) => {
   const series = getManhwaSeriesBySlug(slug);
@@ -341,13 +422,13 @@ export const getPublicManhwaSeriesBySlug = (slug: string) => {
     return undefined;
   }
 
-  const publicSeries = toPublicManhwaSeries(series);
+  const publicSeries = toReaderManhwaSeries(series);
 
   return publicSeries.chapters.length > 0 ? publicSeries : undefined;
 };
 
 export const getManhwaChapter = (
-  series: ManhwaSeries,
+  series: ManhwaSeriesView,
   chapterNumber: number,
   options?: { includePrivate?: boolean }
 ) => {
@@ -363,7 +444,7 @@ export const getManhwaChapter = (
 };
 
 export const getNextManhwaChapter = (
-  series: ManhwaSeries,
+  series: ManhwaSeriesView,
   chapterNumber: number,
   options?: { includePrivate?: boolean }
 ) =>
@@ -375,7 +456,7 @@ export const getNextManhwaChapter = (
   });
 
 export const getPreviousManhwaChapter = (
-  series: ManhwaSeries,
+  series: ManhwaSeriesView,
   chapterNumber: number,
   options?: { includePrivate?: boolean }
 ) =>

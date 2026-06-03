@@ -1,21 +1,20 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { getManhwaSeries, getPublicManhwaSeries } from '@/features/manhwa/data';
 import { PageManhwaIndex } from '@/features/manhwa/page-manhwa-index';
-import { ManhwaSeries } from '@/features/manhwa/schema';
-import { canViewPrivateManhwaProgress } from '@/features/manhwa/server';
+import { ManhwaSeriesView } from '@/features/manhwa/schema';
+import { getManhwaIndexPageData } from '@/features/manhwa/server';
 import {
   buildPublicAbsoluteUrl,
   buildPublicPageHead,
 } from '@/features/public/head';
 
-const manhwaIndexStructuredData = (series: ManhwaSeries[]) => [
+const manhwaIndexStructuredData = (series: ManhwaSeriesView[]) => [
   {
     '@type': 'CollectionPage',
     '@id': `${buildPublicAbsoluteUrl('/manhwa')}#collection`,
     name: 'Nayovi Originals',
     description:
-      'Original Nayovi manhwa series with vertical reader pages, character registries, chapter manifests, and AI expert continuity review.',
+      'Original Nayovi manhwa series with vertical reader pages and Android reader handoff.',
     hasPart: series.map((item) => ({
       '@type': 'CreativeWorkSeries',
       name: item.title,
@@ -28,18 +27,11 @@ const manhwaIndexStructuredData = (series: ManhwaSeries[]) => [
 
 export const Route = createFileRoute('/manhwa/')({
   component: RouteComponent,
-  loader: async () => {
-    const canViewPrivate = await canViewPrivateManhwaProgress();
-
-    return {
-      isPrivatePreview: canViewPrivate,
-      series: canViewPrivate ? getManhwaSeries() : getPublicManhwaSeries(),
-    };
-  },
+  loader: () => getManhwaIndexPageData(),
   head: ({ loaderData }) =>
     buildPublicPageHead(
       'Original Manhwa Online',
-      'Read Nayovi original manhwa online with vertical chapters, story bibles, character continuity, and Android reader handoff.',
+      'Read Nayovi original manhwa online with vertical chapters and Android reader handoff.',
       '/manhwa',
       {
         keywords: [
@@ -49,7 +41,6 @@ export const Route = createFileRoute('/manhwa/')({
           'Nayovi Originals',
           'vertical manhwa reader',
           'webtoon reader',
-          'The Eclipse Crown manhwa',
         ],
         robots: loaderData?.isPrivatePreview
           ? 'noindex, nofollow'
@@ -62,7 +53,9 @@ export const Route = createFileRoute('/manhwa/')({
 });
 
 function RouteComponent() {
-  const { series } = Route.useLoaderData();
+  const { series, showPrivateContext } = Route.useLoaderData();
 
-  return <PageManhwaIndex series={series} />;
+  return (
+    <PageManhwaIndex series={series} showPrivateContext={showPrivateContext} />
+  );
 }

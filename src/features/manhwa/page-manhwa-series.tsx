@@ -1,33 +1,21 @@
-import {
-  ArrowRightIcon,
-  BookOpenTextIcon,
-  CalendarDaysIcon,
-  LockIcon,
-  ShieldCheckIcon,
-  SparklesIcon,
-  UsersIcon,
-} from 'lucide-react';
+import { ArrowRightIcon, LockIcon } from 'lucide-react';
 
 import { cn } from '@/lib/tailwind/utils';
 
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 
 import heroBackground from '@/features/auth/layout-login-background.webp';
-import { isManhwaChapterPublic } from '@/features/manhwa/data';
-import { ManhwaCharacter, ManhwaSeries } from '@/features/manhwa/schema';
+import { ManhwaSeriesView } from '@/features/manhwa/schema';
+import { isManhwaChapterPublic } from '@/features/manhwa/visibility';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 interface PageManhwaSeriesProps {
-  series: ManhwaSeries;
+  series: ManhwaSeriesView;
 }
 
 export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
   const firstChapter = series.chapters[0];
-  const publicChapterCount = series.chapters.filter(
-    isManhwaChapterPublic
-  ).length;
 
   return (
     <PublicShell>
@@ -100,76 +88,6 @@ export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
         </section>
 
         <PublicSection
-          title="Story plan"
-          description={series.audienceNote}
-          className="pb-8"
-        >
-          <div className="grid gap-4 md:grid-cols-3">
-            <MetricCard
-              icon={BookOpenTextIcon}
-              label="Planned chapters"
-              value={String(series.totalPlannedChapters)}
-            />
-            <MetricCard
-              icon={CalendarDaysIcon}
-              label="Published chapters"
-              value={String(publicChapterCount)}
-            />
-            <MetricCard
-              icon={ShieldCheckIcon}
-              label="Validation"
-              value="AI expert"
-            />
-          </div>
-        </PublicSection>
-
-        <PublicSection
-          eyebrow="Seasons"
-          title="The 120-chapter arc"
-          description="The story is split into four production arcs so the nightly agent can generate one chapter at a time without losing the long-term plot."
-          className="pt-4"
-        >
-          <div className="grid gap-4 md:grid-cols-2">
-            {series.seasons.map((season) => (
-              <Card key={season.seasonNumber} className="rounded-[1.5rem]">
-                <CardContent className="grid gap-3 p-5">
-                  <div className="flex items-center justify-between gap-3">
-                    <Badge variant="brand" size="sm">
-                      Season {season.seasonNumber}
-                    </Badge>
-                    <span className="text-sm text-muted-foreground">
-                      Chapters {season.chapterStart}-{season.chapterEnd}
-                    </span>
-                  </div>
-                  <h2 className="text-xl font-semibold tracking-normal">
-                    {season.title}
-                  </h2>
-                  <p className="text-sm leading-6 text-muted-foreground">
-                    {season.description}
-                  </p>
-                  <p className="text-sm leading-6 text-foreground">
-                    {season.arc}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </PublicSection>
-
-        <PublicSection
-          eyebrow="Characters"
-          title="Character registry"
-          description="Every recurring character keeps a canonical prompt and reference slot so future chapters do not redraw a different face or body."
-          className="pt-4"
-        >
-          <div className="grid gap-4 md:grid-cols-3">
-            {series.characters.map((character) => (
-              <CharacterCard key={character.id} character={character} />
-            ))}
-          </div>
-        </PublicSection>
-
-        <PublicSection
           eyebrow="Chapters"
           title="Start reading"
           description="Chapter pages use vertical manhwa panels, story text, and navigation that can grow as the nightly production agent publishes more chapters."
@@ -211,64 +129,3 @@ export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
     </PublicShell>
   );
 };
-
-function MetricCard(props: {
-  icon: typeof BookOpenTextIcon;
-  label: string;
-  value: string;
-}) {
-  const Icon = props.icon;
-
-  return (
-    <Card className="rounded-[1.5rem]">
-      <CardContent className="flex items-center gap-4 p-5">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-          <Icon className="size-5" />
-        </span>
-        <span>
-          <span className="block text-sm text-muted-foreground">
-            {props.label}
-          </span>
-          <span className="block text-2xl font-semibold tracking-normal">
-            {props.value}
-          </span>
-        </span>
-      </CardContent>
-    </Card>
-  );
-}
-
-function CharacterCard(props: { character: ManhwaCharacter }) {
-  return (
-    <Card className="overflow-hidden rounded-[1.5rem]">
-      <div className="aspect-[4/5] bg-neutral-950">
-        {props.character.imagePath ? (
-          <img
-            src={props.character.imagePath}
-            alt={props.character.name}
-            className="size-full object-cover"
-          />
-        ) : (
-          <div className="flex size-full items-center justify-center bg-[radial-gradient(circle_at_50%_28%,oklch(0.42_0.13_293),transparent_18rem),linear-gradient(155deg,oklch(0.16_0.02_293),oklch(0.08_0.01_260))] p-6 text-center text-neutral-200">
-            <UsersIcon className="size-10 opacity-80" />
-          </div>
-        )}
-      </div>
-      <CardContent className="grid gap-3 p-5">
-        <div>
-          <h2 className="text-xl font-semibold tracking-normal">
-            {props.character.name}
-          </h2>
-          <p className="text-sm text-primary">{props.character.role}</p>
-        </div>
-        <p className="text-sm leading-6 text-muted-foreground">
-          {props.character.description}
-        </p>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <SparklesIcon className="size-4 text-primary" />
-          {props.character.accent}
-        </div>
-      </CardContent>
-    </Card>
-  );
-}

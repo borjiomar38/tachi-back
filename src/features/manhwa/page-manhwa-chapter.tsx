@@ -11,19 +11,19 @@ import { cn } from '@/lib/tailwind/utils';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 
-import { isManhwaChapterPublic } from '@/features/manhwa/data';
 import {
-  ManhwaChapter,
-  ManhwaPanel,
-  ManhwaSeries,
+  ManhwaChapterView,
+  ManhwaPanelView,
+  ManhwaSeriesView,
 } from '@/features/manhwa/schema';
+import { isManhwaChapterPublic } from '@/features/manhwa/visibility';
 import { PublicShell } from '@/features/public/public-shell';
 
 interface PageManhwaChapterProps {
-  chapter: ManhwaChapter;
-  nextChapter?: ManhwaChapter;
-  previousChapter?: ManhwaChapter;
-  series: ManhwaSeries;
+  chapter: ManhwaChapterView;
+  nextChapter?: ManhwaChapterView;
+  previousChapter?: ManhwaChapterView;
+  series: ManhwaSeriesView;
 }
 
 export const PageManhwaChapter = ({
@@ -142,9 +142,9 @@ export const PageManhwaChapter = ({
 };
 
 function ChapterNav(props: {
-  nextChapter?: ManhwaChapter;
-  previousChapter?: ManhwaChapter;
-  series: ManhwaSeries;
+  nextChapter?: ManhwaChapterView;
+  previousChapter?: ManhwaChapterView;
+  series: ManhwaSeriesView;
 }) {
   return (
     <nav aria-label="Chapter navigation" className="flex items-center gap-2">
@@ -163,9 +163,9 @@ function ChapterNav(props: {
 }
 
 function CompactChapterLink(props: {
-  chapter?: ManhwaChapter;
+  chapter?: ManhwaChapterView;
   direction: 'next' | 'previous';
-  series: ManhwaSeries;
+  series: ManhwaSeriesView;
 }) {
   const label = props.direction === 'previous' ? 'Previous' : 'Next';
   const Icon =
@@ -196,9 +196,9 @@ function CompactChapterLink(props: {
 }
 
 function ChapterLink(props: {
-  chapter?: ManhwaChapter;
+  chapter?: ManhwaChapterView;
   direction: 'next' | 'previous';
-  series: ManhwaSeries;
+  series: ManhwaSeriesView;
 }) {
   const isPrevious = props.direction === 'previous';
   const Icon = isPrevious ? ChevronLeftIcon : ChevronRightIcon;
@@ -234,7 +234,7 @@ function ChapterLink(props: {
   );
 }
 
-function ReaderPanel(props: { panel: ManhwaPanel; panelNumber: number }) {
+function ReaderPanel(props: { panel: ManhwaPanelView; panelNumber: number }) {
   return (
     <figure className="border-b border-white/5 bg-black last:border-b-0">
       <div className="relative isolate">
@@ -263,11 +263,13 @@ function ReaderPanel(props: { panel: ManhwaPanel; panelNumber: number }) {
 
 function PanelTextLayer(props: {
   hasImage: boolean;
-  panel: ManhwaPanel;
+  panel: ManhwaPanelView;
   panelNumber: number;
 }) {
-  const hasDialogue = props.panel.dialogue.length > 0;
-  const hasNarration = props.panel.narration.trim().length > 0;
+  const dialogue = props.panel.dialogue ?? [];
+  const narration = props.panel.narration ?? '';
+  const hasDialogue = dialogue.length > 0;
+  const hasNarration = narration.trim().length > 0;
 
   if (props.hasImage || (!hasDialogue && !hasNarration)) {
     return null;
@@ -283,11 +285,11 @@ function PanelTextLayer(props: {
       {hasNarration ? (
         <NarrationCaption
           className={getNarrationPlacement(props.panelNumber)}
-          text={props.panel.narration}
+          text={narration}
         />
       ) : null}
       {hasDialogue
-        ? props.panel.dialogue.map((line, index) => (
+        ? dialogue.map((line, index) => (
             <DialogueBubble
               key={`${line}-${index}`}
               line={line}

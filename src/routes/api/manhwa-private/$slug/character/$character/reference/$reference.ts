@@ -2,9 +2,13 @@ import { createFileRoute } from '@tanstack/react-router';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
+import { envServer } from '@/env/server';
 import { auth } from '@/server/auth';
 
-const privateManhwaRoot = path.resolve(process.cwd(), 'docs/manhwa/private');
+const privateManhwaRoot = path.resolve(
+  envServer.MANHWA_PRIVATE_ROOT ??
+    path.join(process.cwd(), 'docs/manhwa/private')
+);
 const safeIdPattern = /^[a-z0-9-]+$/;
 
 export const Route = createFileRoute(

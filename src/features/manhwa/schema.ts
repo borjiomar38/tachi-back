@@ -57,6 +57,34 @@ export interface ManhwaSeries {
   totalPlannedChapters: number;
 }
 
+export interface ManhwaReaderPanel {
+  alt: string;
+  dialogue?: string[];
+  id: string;
+  imagePath?: string;
+  narration?: string;
+}
+
+export interface ManhwaReaderChapter extends Omit<ManhwaChapter, 'panels'> {
+  panels: ManhwaReaderPanel[];
+}
+
+export interface ManhwaReaderSeries extends Omit<
+  ManhwaSeries,
+  'audienceNote' | 'characters' | 'chapters' | 'seasons'
+> {
+  audienceNote?: string;
+  characters?: ManhwaCharacter[];
+  chapters: ManhwaReaderChapter[];
+  seasons?: ManhwaSeason[];
+}
+
+export type ManhwaChapterView = ManhwaChapter | ManhwaReaderChapter;
+
+export type ManhwaPanelView = ManhwaPanel | ManhwaReaderPanel;
+
+export type ManhwaSeriesView = ManhwaSeries | ManhwaReaderSeries;
+
 export interface ManhwaSitemapEntry {
   lastModified: string;
   path: string;

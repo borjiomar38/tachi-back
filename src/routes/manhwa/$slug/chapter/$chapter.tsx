@@ -2,16 +2,8 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { PageError } from '@/components/errors/page-error';
 
-import {
-  getManhwaChapter,
-  getManhwaSeriesBySlug,
-  getNextManhwaChapter,
-  getPreviousManhwaChapter,
-  getPublicManhwaSeriesBySlug,
-  isManhwaChapterPublic,
-} from '@/features/manhwa/data';
 import { PageManhwaChapter } from '@/features/manhwa/page-manhwa-chapter';
-import { canViewPrivateManhwaProgress } from '@/features/manhwa/server';
+import { getManhwaChapterPageData } from '@/features/manhwa/server';
 import {
   buildPublicAbsoluteUrl,
   buildPublicPageHead,
@@ -19,35 +11,13 @@ import {
 
 export const Route = createFileRoute('/manhwa/$slug/chapter/$chapter')({
   component: RouteComponent,
-  loader: async ({ params }) => {
-    const chapterNumber = Number.parseInt(params.chapter, 10);
-    const canViewPrivate = await canViewPrivateManhwaProgress();
-    const series = canViewPrivate
-      ? getManhwaSeriesBySlug(params.slug)
-      : getPublicManhwaSeriesBySlug(params.slug);
-    const chapter = series
-      ? getManhwaChapter(series, chapterNumber, {
-          includePrivate: canViewPrivate,
-        })
-      : undefined;
-
-    return {
-      chapter,
-      isPrivatePreview:
-        canViewPrivate && chapter ? !isManhwaChapterPublic(chapter) : false,
-      nextChapter: series
-        ? getNextManhwaChapter(series, chapterNumber, {
-            includePrivate: canViewPrivate,
-          })
-        : undefined,
-      previousChapter: series
-        ? getPreviousManhwaChapter(series, chapterNumber, {
-            includePrivate: canViewPrivate,
-          })
-        : undefined,
-      series,
-    };
-  },
+  loader: async ({ params }) =>
+    await getManhwaChapterPageData({
+      data: {
+        chapter: params.chapter,
+        slug: params.slug,
+      },
+    }),
   head: ({ loaderData }) => {
     const data = loaderData;
 

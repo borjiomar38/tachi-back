@@ -47,6 +47,7 @@ daily_limit="${MANHWA_IMAGE_DAILY_LIMIT:-1}"
 allow_unapproved="${MANHWA_IMAGE_ALLOW_UNAPPROVED:-false}"
 force="${MANHWA_IMAGE_FORCE:-false}"
 require_character_references="${MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES:-true}"
+require_preproduction="${MANHWA_IMAGE_REQUIRE_PREPRODUCTION:-true}"
 
 if ! acquire_lock; then
   log "Nayovi manhwa image cron is already running; skipping."
@@ -71,6 +72,31 @@ if [[ ! -f "${renderer}" ]]; then
 fi
 
 if [[ "${require_character_references}" == "true" ]]; then
+  if [[ "${require_preproduction}" == "true" ]]; then
+    preproduction_status="${context_dir%/}/preproduction/status.json"
+    if [[ ! -f "${preproduction_status}" ]]; then
+      echo "Preproduction status is missing: ${preproduction_status}" >&2
+      echo "Run the preproduction cron before chapter panel rendering." >&2
+      exit 45
+    fi
+
+    python3 - "${preproduction_status}" <<'PY'
+import json
+import pathlib
+import sys
+
+status_path = pathlib.Path(sys.argv[1])
+status = json.loads(status_path.read_text(encoding="utf-8"))
+if not status.get("ready_for_chapter_generation"):
+    print(
+        "Manhwa preproduction is not ready for chapter rendering. "
+        f"Next task: {status.get('next_task')}",
+        file=sys.stderr,
+    )
+    raise SystemExit(45)
+PY
+  fi
+
   character_index="${context_dir%/}/characters/index.json"
   if [[ ! -f "${character_index}" ]]; then
     echo "Character asset index is missing: ${character_index}" >&2

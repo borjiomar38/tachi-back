@@ -49,7 +49,7 @@ function asArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
-function referencePlanFor(character, seriesSlug, privateRoot) {
+function referencePlanFor(character, seriesSlug, privateRoot, dossier = {}) {
   const characterId = character.id;
   const protectedRoot = `/api/manhwa-private/${seriesSlug}/character/${characterId}/reference`;
   const privateReferenceRoot = path.join(
@@ -69,6 +69,30 @@ function referencePlanFor(character, seriesSlug, privateRoot) {
     public_path: `${protectedRoot}/${id}`,
     prompt_addendum: promptAddendum,
   });
+
+  const dossierReferences = asArray(dossier.reference_image_plan);
+  if (dossierReferences.length > 0) {
+    return {
+      private_reference_root: path.relative(
+        process.cwd(),
+        privateReferenceRoot
+      ),
+      protected_reference_root: protectedRoot,
+      required_before_chapter_render: true,
+      reference_images: dossierReferences.map((reference, index) => {
+        const id = String(reference.id || `reference-${index + 1}`).replace(
+          /[^a-zA-Z0-9-]+/g,
+          '-'
+        );
+        return referenceImage(
+          id,
+          reference.purpose || 'Character-specific canonical reference.',
+          reference.prompt_addendum ||
+            `Character-specific reference for ${character.name}; preserve dossier canon.`
+        );
+      }),
+    };
+  }
 
   return {
     private_reference_root: path.relative(process.cwd(), privateReferenceRoot),
@@ -235,21 +259,38 @@ function poseBankFor(character) {
   return base;
 }
 
-function profileFor(character) {
+function profileFor(character, dossier = {}) {
   return {
     age_label: character.age_label || '',
-    bubble_placement_rule: character.bubble_placement_rule || '',
-    bubble_style: character.bubble_style || '',
-    canon_prompt: character.canon_prompt || '',
+    body_lock: dossier.body_lock || '',
+    bubble_placement_rule:
+      character.bubble_placement_rule || dossier.bubble_placement_rule || '',
+    bubble_style: character.bubble_style || dossier.bubble_style || '',
+    canon_prompt: dossier.canon_prompt || character.canon_prompt || '',
+    character_dossier: dossier,
+    continuity_tags: asArray(dossier.continuity_tags),
+    costume_phases: asArray(dossier.costume_phases),
+    face_lock: dossier.face_lock || '',
+    forbidden_drift: asArray(dossier.forbidden_drift),
+    hair_lock: dossier.hair_lock || '',
     id: character.id,
     name: character.name,
-    role: character.role || '',
-    thought_style: character.thought_style || '',
+    narrative_function: dossier.narrative_function || '',
+    palette: asArray(dossier.palette),
+    pose_language: asArray(dossier.pose_language),
+    recurring_props: asArray(dossier.recurring_props),
+    role: dossier.role || character.role || '',
+    scenario_hooks: asArray(dossier.scenario_hooks),
+    thought_style: character.thought_style || dossier.thought_style || '',
+    voice_rules: asArray(dossier.voice_rules),
     visual_identity_lock: [
       'Do not change face structure between panels.',
       'Do not change body proportions between panels.',
       'Do not change primary costume unless the chapter context explicitly says so.',
       'Use reference images from this folder before rendering chapter panels.',
+      ...asArray(dossier.forbidden_drift).map(
+        (rule) => `Forbidden drift: ${rule}`
+      ),
     ],
   };
 }
@@ -277,7 +318,14 @@ async function main() {
     characterIds.push(character.id);
     const dir = path.join(characterRoot, character.id);
     const publicDir = path.join(publicCharacterRoot, character.id);
-    const referencePlan = referencePlanFor(character, seriesSlug, publicRoot);
+    const dossierPath = path.join(dir, 'dossier.json');
+    const dossier = await readJson(dossierPath, {});
+    const referencePlan = referencePlanFor(
+      character,
+      seriesSlug,
+      publicRoot,
+      dossier
+    );
     const referenceStatus = await referenceStatusFor({
       publicRoot,
       seriesSlug,
@@ -301,7 +349,10 @@ async function main() {
     }
     await mkdir(dir, { recursive: true });
     await mkdir(publicDir, { recursive: true });
-    await writeJson(path.join(dir, 'profile.json'), profileFor(character));
+    await writeJson(
+      path.join(dir, 'profile.json'),
+      profileFor(character, dossier)
+    );
     await writeJson(path.join(dir, 'reference-plan.json'), referencePlan);
     await writeJson(path.join(dir, 'pose-bank.json'), {
       character_id: character.id,
@@ -317,6 +368,10 @@ async function main() {
       pose_bank: `characters/${character.id}/pose-bank.json`,
     });
     characterSummaries[character.id] = {
+      dossier: (await pathExists(dossierPath))
+        ? `characters/${character.id}/dossier.json`
+        : null,
+      dossier_ready: await pathExists(dossierPath),
       name: character.name,
       private_reference_root: referencePlan.private_reference_root,
       protected_reference_root: referencePlan.protected_reference_root,
@@ -333,6 +388,19 @@ async function main() {
       missing_count: totalReferenceCount - generatedReferenceCount,
       next_missing_reference: nextMissingReference,
       total_count: totalReferenceCount,
+    },
+    dossier_status: {
+      generated_count: Object.values(characterSummaries).filter(
+        (summary) => summary.dossier_ready
+      ).length,
+      missing_count: Object.values(characterSummaries).filter(
+        (summary) => !summary.dossier_ready
+      ).length,
+      next_missing_dossier:
+        Object.entries(characterSummaries).find(
+          ([, summary]) => !summary.dossier_ready
+        )?.[0] || null,
+      total_count: Object.keys(characterSummaries).length,
     },
     rule: 'Each recurring character must have reference images generated before regular chapter panels use them.',
   });

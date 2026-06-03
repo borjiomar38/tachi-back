@@ -65,6 +65,7 @@ package_root="${MANHWA_PACKAGE_ROOT:-docs/manhwa/generated}"
 public_root="${MANHWA_PUBLIC_ROOT:-docs/manhwa/private}"
 daily_limit="${MANHWA_CHARACTER_REFERENCE_DAILY_LIMIT:-1}"
 character_id="${MANHWA_CHARACTER_REFERENCE_CHARACTER_ID:-}"
+require_dossiers="${MANHWA_CHARACTER_REFERENCE_REQUIRE_DOSSIERS:-true}"
 force="${MANHWA_CHARACTER_REFERENCE_FORCE:-false}"
 dry_run="${MANHWA_CHARACTER_REFERENCE_DRY_RUN:-false}"
 
@@ -91,6 +92,31 @@ run_script "${context_indexer}" \
   --chapter-number "${chapter_number}" \
   --context-root "${context_root}" \
   --package-root "${package_root}"
+
+if [[ "${require_dossiers}" == "true" ]]; then
+  preproduction_status="${context_root%/}/${series_slug}/preproduction/status.json"
+  if [[ ! -f "${preproduction_status}" ]]; then
+    echo "Preproduction status is missing: ${preproduction_status}" >&2
+    echo "Run the manhwa preproduction cron before character reference rendering." >&2
+    exit 45
+  fi
+
+  python3 - "${preproduction_status}" <<'PY'
+import json
+import pathlib
+import sys
+
+status_path = pathlib.Path(sys.argv[1])
+status = json.loads(status_path.read_text(encoding="utf-8"))
+if not status.get("ready_for_character_references"):
+    print(
+        "Character dossiers are not ready yet. "
+        f"Next task: {status.get('next_task')}",
+        file=sys.stderr,
+    )
+    raise SystemExit(45)
+PY
+fi
 
 renderer_args=(
   --series-slug

@@ -25,7 +25,6 @@ const primaryLinks = [
   { href: '/#hero', label: 'Home' },
   { href: '/#demo', label: 'Demo' },
   { href: '/#pricing', label: 'Plans' },
-  { href: '/translate-manhwa-ai', label: 'Manhwa AI' },
   { href: '/manhwa', label: 'Originals' },
   { href: '/blog', label: 'Blog' },
   { href: '/guides/mihon-tachiyomiat-setup', label: 'Guides' },

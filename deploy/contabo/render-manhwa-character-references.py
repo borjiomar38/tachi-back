@@ -42,6 +42,10 @@ def coerce_list(value: Any) -> list[Any]:
   return value if isinstance(value, list) else []
 
 
+def coerce_dict(value: Any) -> dict[str, Any]:
+  return value if isinstance(value, dict) else {}
+
+
 def public_path_to_file(public_path: str) -> pathlib.Path:
   normalized = public_path.lstrip('/')
   return pathlib.Path('public') / normalized
@@ -56,6 +60,7 @@ def reference_output_path(reference: dict[str, Any]) -> pathlib.Path:
 
 
 def build_prompt(profile: dict[str, Any], reference: dict[str, Any]) -> str:
+  dossier = coerce_dict(profile.get('character_dossier'))
   return '\n'.join(
     [
       'Use case: illustration-story',
@@ -65,6 +70,27 @@ def build_prompt(profile: dict[str, Any], reference: dict[str, Any]) -> str:
       '',
       'Stable character canon:',
       str(profile.get('canon_prompt') or '').strip(),
+      '',
+      'Full character dossier for this one character:',
+      json.dumps(
+        {
+          'narrative_function': profile.get('narrative_function'),
+          'voice_rules': profile.get('voice_rules'),
+          'visual_identity': dossier.get('visual_identity'),
+          'silhouette_lock': dossier.get('silhouette_lock'),
+          'face_lock': profile.get('face_lock'),
+          'body_lock': profile.get('body_lock'),
+          'hair_lock': profile.get('hair_lock'),
+          'costume_phases': profile.get('costume_phases'),
+          'palette': profile.get('palette'),
+          'recurring_props': profile.get('recurring_props'),
+          'pose_language': profile.get('pose_language'),
+          'forbidden_drift': profile.get('forbidden_drift'),
+          'scenario_hooks': profile.get('scenario_hooks'),
+        },
+        ensure_ascii=False,
+        indent=2,
+      ),
       '',
       'Reference image purpose:',
       str(reference.get('purpose') or '').strip(),

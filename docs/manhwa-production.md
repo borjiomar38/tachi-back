@@ -103,6 +103,12 @@ recorded in `chapter-001-images.json`. Draft images must not be written under
 `/api/manhwa-private/...` route. The backend must still not call OpenAI image
 APIs for Nayovi Originals images.
 
+On Contabo, the app container reads private manhwa images from
+`MANHWA_PRIVATE_ROOT=/app/docs/manhwa/private`. Docker mounts that path from the
+host directory `${TACHI_MANHWA_PRIVATE_DIR:-/opt/tachi-back/docs/manhwa/private}`
+as read-only, so cron-rendered panels become visible to the admin preview after
+generation without copying them into the image build.
+
 ## Daily Panel Cron
 
 The chapter image cron renders exactly the next missing approved panel image and
@@ -113,13 +119,17 @@ Install on Contabo from the deployed source tree:
 ```bash
 cd /opt/tachi-back
 sudo install -m 0755 deploy/contabo/generate-codex-image.sh /usr/local/bin/tachi-codex-image-generator
+sudo install -m 0755 deploy/contabo/run-manhwa-preproduction-task.py /usr/local/bin/tachi-manhwa-preproduction-task
 sudo install -m 0755 deploy/contabo/build-manhwa-character-assets.mjs /usr/local/bin/tachi-manhwa-character-assets
 sudo install -m 0755 deploy/contabo/build-manhwa-context-index.mjs /usr/local/bin/tachi-manhwa-context-index
 sudo install -m 0755 deploy/contabo/manhwa-context-mcp-server.mjs /usr/local/bin/tachi-manhwa-context-mcp
 sudo install -m 0755 deploy/contabo/render-manhwa-character-references.py /usr/local/bin/tachi-manhwa-character-references
 sudo install -m 0755 deploy/contabo/render-manhwa-chapter-images.py /usr/local/bin/tachi-manhwa-image-renderer
+sudo install -m 0755 deploy/contabo/build-manhwa-copyright-package.py /usr/local/bin/tachi-manhwa-copyright-package
+sudo install -m 0755 deploy/contabo/run-manhwa-preproduction-cron.sh /usr/local/bin/tachi-manhwa-preproduction-cron
 sudo install -m 0755 deploy/contabo/run-manhwa-character-reference-cron.sh /usr/local/bin/tachi-manhwa-character-reference-cron
 sudo install -m 0755 deploy/contabo/run-manhwa-image-cron.sh /usr/local/bin/tachi-manhwa-image-cron
+sudo install -m 0755 deploy/contabo/run-manhwa-copyright-cron.sh /usr/local/bin/tachi-manhwa-copyright-cron
 ```
 
 Suggested env file at `/opt/tachi-back/.env.manhwa-production`:
@@ -132,16 +142,24 @@ MANHWA_CHAPTER_NUMBER=1
 MANHWA_CONTEXT_ROOT=docs/manhwa/context
 MANHWA_PACKAGE_ROOT=docs/manhwa/generated
 MANHWA_PUBLIC_ROOT=docs/manhwa/private
+MANHWA_PREPRODUCTION_RUNNER_PATH=/usr/local/bin/tachi-manhwa-preproduction-task
+MANHWA_PREPRODUCTION_CODEX_MODEL=gpt-5.5
+MANHWA_PREPRODUCTION_CODEX_REASONING_EFFORT=extra-high
+MANHWA_PREPRODUCTION_TASK_TYPE=auto
+MANHWA_PREPRODUCTION_DRY_RUN=false
 MANHWA_CHARACTER_ASSET_BUILDER_PATH=/usr/local/bin/tachi-manhwa-character-assets
 MANHWA_CONTEXT_INDEXER_PATH=/usr/local/bin/tachi-manhwa-context-index
 MANHWA_CHARACTER_REFERENCE_RENDERER_PATH=/usr/local/bin/tachi-manhwa-character-references
 MANHWA_IMAGE_RENDERER_PATH=/usr/local/bin/tachi-manhwa-image-renderer
+MANHWA_COPYRIGHT_BUILDER_PATH=/usr/local/bin/tachi-manhwa-copyright-package
 MANHWA_IMAGE_SCRIPT_PATH=/usr/local/bin/tachi-codex-image-generator
 MANHWA_CONTEXT_DIR=docs/manhwa/context/the-eclipse-crown
 MANHWA_CHARACTER_REFERENCE_DAILY_LIMIT=1
+MANHWA_CHARACTER_REFERENCE_REQUIRE_DOSSIERS=true
 MANHWA_CHARACTER_REFERENCE_DRY_RUN=false
 MANHWA_CHARACTER_REFERENCE_FORCE=false
 MANHWA_IMAGE_DAILY_LIMIT=1
+MANHWA_IMAGE_REQUIRE_PREPRODUCTION=true
 MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES=true
 MANHWA_IMAGE_ALLOW_UNAPPROVED=false
 MANHWA_IMAGE_FORCE=false
@@ -149,6 +167,13 @@ CODEX_IMAGE_CODEX_MODEL=gpt-5.5
 CODEX_IMAGE_CODEX_REASONING_EFFORT=low
 CODEX_IMAGE_MIN_WIDTH=900
 CODEX_IMAGE_MIN_HEIGHT=1200
+MANHWA_COPYRIGHT_SERIES_SLUG=the-eclipse-crown
+MANHWA_COPYRIGHT_CHAPTER_NUMBER=1
+MANHWA_COPYRIGHT_SCOPE=auto
+MANHWA_COPYRIGHT_OUTPUT_ROOT=docs/manhwa/copyright
+MANHWA_COPYRIGHT_ALLOW_INCOMPLETE=true
+MANHWA_COPYRIGHT_APPEND_QUEUE=true
+MANHWA_COPYRIGHT_PAID_FILING_INTENT=false
 ```
 
 Rebuild fast context indexes after changing story context or chapter packages:
@@ -173,15 +198,29 @@ Useful MCP tools exposed:
 Cron entry:
 
 ```cron
+35 0 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-preproduction-cron >> /var/log/tachi-manhwa-preproduction-cron.log 2>&1
 05 1 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-character-reference-cron >> /var/log/tachi-manhwa-character-reference-cron.log 2>&1
 15 2 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-image-cron >> /var/log/tachi-manhwa-image-cron.log 2>&1
+45 2 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-copyright-cron >> /var/log/tachi-manhwa-copyright-cron.log 2>&1
 ```
 
-During the first days, the character reference cron will consume the nightly
-image slot by generating one missing reference image per run. The panel cron can
-stay scheduled: with `MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES=true`, it exits
-without rendering chapter panels until `characters/index.json` reports zero
-missing references.
+During the first days, production is intentionally not panel-first. The
+preproduction cron consumes the creative lane in this order:
+
+1. Day 1: build the series story engine and originality guardrails.
+2. Day 2: build the 120-chapter season scenario map.
+3. Next days: build one full character dossier per day, with voice, psychology,
+   visual locks, bubble rules, scenario hooks, forbidden drift, and a unique
+   reference image plan for that character.
+4. Then: build the chapter scenario.
+5. Then: generate character reference images.
+6. Then: generate one finished chapter panel image per day.
+
+The character reference cron refuses to run while character dossiers are
+missing. The panel cron refuses to run until preproduction is ready and
+`characters/index.json` reports zero missing references. This prevents a single
+generic character prompt from driving the whole manhwa and keeps scenarios
+managed before chapters are rendered.
 
 The cron intentionally renders `panel-XXX.png` as a finished manhwa image, not
 an HTML text overlay. It remains a private draft until the whole chapter is
@@ -221,3 +260,64 @@ published panel image against the complete package context:
 
 If the gate fails, the nightly job should regenerate the panel instead of asking
 the owner to approve a draft.
+
+## Copyright Package Automation
+
+The copyright cron prepares a private package after nightly production. Default
+mode is free evidence/provenance only. It does not submit, pay, or certify an
+official copyright application, and `MANHWA_COPYRIGHT_PAID_FILING_INTENT=false`
+keeps official filing readiness disabled. Official paid filing remains only an
+optional future admin decision because the U.S. Copyright Office application
+needs legal statements, deposit choices, payment, and certification.
+
+For each new series, run the package builder without `--chapter-number` to
+create a series-bible/treatment package:
+
+```bash
+/usr/local/bin/tachi-manhwa-copyright-package \
+  --series-slug the-eclipse-crown \
+  --scope series
+```
+
+For each chapter, run it with the chapter number:
+
+```bash
+/usr/local/bin/tachi-manhwa-copyright-package \
+  --series-slug the-eclipse-crown \
+  --chapter-number 1 \
+  --allow-incomplete
+```
+
+Outputs are written under `docs/manhwa/copyright/` and must stay private:
+
+- `work-deposit.zip`: reader-safe deposit package for admin review.
+- `evidence.zip`: private provenance package with source JSON, context, hashes,
+  git commit, prompt/originality records, and manifests.
+- `usco-application-draft.json`: filing draft and AI-authorship disclaimer
+  prompts for the admin to review.
+- `filing-checklist.md`: human filing checklist.
+- `copyright-action-queue.jsonl`: private queue of packages needing admin
+  review/submission.
+
+The chapter package marks `filing_ready=false` while planned panel images are
+missing or the chapter is not approved/published. This allows daily evidence
+snapshots without pretending an incomplete chapter is ready for official filing.
+The series package covers only the fixed series bible/treatment currently in
+the deposit; it does not cover future unwritten chapters.
+
+For the normal no-payment workflow, use the generated package as proof that
+Nayovi had the fixed expression first:
+
+- `package-summary.json` records generation time and package hashes.
+- `evidence/evidence-manifest.json` records git commit and source paths.
+- `evidence/hashes.sha256` records exact SHA-256 hashes for the package files.
+- `work-deposit.zip` is the reader-safe copy of the chapter/treatment.
+- `evidence.zip` is private provenance for disputes, takedowns, and ownership
+  claims.
+
+Official sources to review before filing:
+
+- U.S. Copyright Office registration portal: https://www.copyright.gov/registration/
+- U.S. Copyright Office AI initiative: https://www.copyright.gov/ai/
+- AI registration guidance PDF: https://www.copyright.gov/ai/ai_policy_guidance.pdf
+- Group Registration of Unpublished Works: https://www.copyright.gov/gruw/

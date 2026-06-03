@@ -10,6 +10,8 @@
   ],
   "characters": {
     "elianor-veyr": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Elianor Veyr",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/elianor-veyr",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference",
@@ -70,6 +72,8 @@
       "role": "fallen princess and protagonist"
     },
     "eclipse-crown": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Eclipse Crown",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/eclipse-crown",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/eclipse-crown/reference",
@@ -130,6 +134,8 @@
       "role": "living crown and supernatural inner voice"
     },
     "caelan-rhovir": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Caelan Rhovir",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/caelan-rhovir",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/caelan-rhovir/reference",
@@ -190,6 +196,8 @@
       "role": "regressed northern duke"
     },
     "archpriestess-maerith": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Maerith",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/archpriestess-maerith",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/archpriestess-maerith/reference",
@@ -250,6 +258,8 @@
       "role": "archpriestess antagonist"
     },
     "emperor-varrien-solm": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Varrien",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/emperor-varrien-solm",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/emperor-varrien-solm/reference",
@@ -310,6 +320,8 @@
       "role": "emperor antagonist"
     },
     "selene-voss": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Selene Voss",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/selene-voss",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/selene-voss/reference",
@@ -370,6 +382,8 @@
       "role": "loyal palace maid"
     },
     "prince-luceren-solm": {
+      "dossier": null,
+      "dossier_ready": false,
       "name": "Luceren",
       "private_reference_root": "docs/manhwa/private/the-eclipse-crown/characters/prince-luceren-solm",
       "protected_reference_root": "/api/manhwa-private/the-eclipse-crown/character/prince-luceren-solm/reference",
@@ -440,6 +454,12 @@
       "public_path": "/api/manhwa-private/the-eclipse-crown/character/elianor-veyr/reference/identity-front-full-body"
     },
     "total_count": 35
+  },
+  "dossier_status": {
+    "generated_count": 0,
+    "missing_count": 7,
+    "next_missing_dossier": "elianor-veyr",
+    "total_count": 7
   },
   "rule": "Each recurring character must have reference images generated before regular chapter panels use them."
 }
