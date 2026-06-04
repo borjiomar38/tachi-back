@@ -1,6 +1,18 @@
 {
   "style_name": "Eclipse Gothic Manhwa Lettering",
   "general_rule": "Keep one coherent bubble and lettering system across all panels. Bubbles must look generated as part of the illustrated manhwa panel, not UI overlays.",
+  "reference_toolkit": {
+    "rule": "This toolkit is a bubble-only context asset. Use it only for bubble/caption shape, fill, border, tail, thought-dot, glow, spacing, and lettering mood. It must not contain characters or scenes.",
+    "reference_images": [
+      {
+        "id": "eclipse-gothic-bubble-toolkit",
+        "local_file": "docs/manhwa/private/the-eclipse-crown/bubble-style/eclipse-gothic-bubble-toolkit.png",
+        "purpose": "Canonical bubble-only visual reference for generated chapter panels.",
+        "prompt_addendum": "Create a clean bubble-only manhwa lettering style sheet for THE ECLIPSE CROWN. No characters, no faces, no bodies, no hands, no costumes, no weapons, no background scene. Show reusable empty samples only: black gothic narration card with thin ivory/silver ornamental filigree border; warm ivory normal dialogue speech bubble with clean black ink outline and natural tail; warm ivory supernatural thought bubble with thin black-silver decorative ring, moonlit glow, and thought-dot chain; small engraved gothic background caption plaque. Keep the design close to the accepted chapter-1 style: elegant, readable, premium Korean manhwa, integrated artwork feel, not UI. Use blank interiors or tiny non-readable placeholder strokes only, no readable words, no labels, no logos, no watermarks.",
+        "reference_type": "bubble_style_toolkit"
+      }
+    ]
+  },
   "narration_caption": {
     "shape": "black gothic rectangular title-card box",
     "border": "thin ivory or silver ornamental filigree border",

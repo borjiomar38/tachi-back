@@ -16,6 +16,26 @@ DEFAULT_CODEX_IMAGE_SCRIPT = pathlib.Path('/usr/local/bin/tachi-codex-image-gene
 DEFAULT_CONTEXT_ROOT = pathlib.Path('docs/manhwa/context')
 
 
+def default_bubble_toolkit(series_slug: str) -> dict[str, Any]:
+  return {
+    'id': 'eclipse-gothic-bubble-toolkit',
+    'local_file': f'docs/manhwa/private/{series_slug}/bubble-style/eclipse-gothic-bubble-toolkit.png',
+    'purpose': 'Canonical bubble-only toolkit for chapter panel generation.',
+    'prompt_addendum': (
+      'Create a bubble-only manhwa lettering toolkit on a plain transparent-looking or clean dark '
+      'neutral background. No people, no faces, no bodies, no scenery, no character art. Show only '
+      'the reusable bubble/caption shapes for THE ECLIPSE CROWN: one black gothic narration card '
+      'with thin ivory/silver ornamental filigree border; one warm ivory normal dialogue bubble '
+      'with clean black ink outline and one tail sample; one warm ivory supernatural thought '
+      'bubble with thin black-silver decorative ring, moonlit glow, and thought-dot chain; one '
+      'small engraved background caption plaque. Keep every sample empty or with tiny placeholder '
+      'line strokes only, not readable words. The goal is a context reference for bubble shape, '
+      'border, fill, tail, glow, spacing, and typography mood only.'
+    ),
+    'reference_type': 'bubble_style_toolkit',
+  }
+
+
 def parse_args() -> argparse.Namespace:
   parser = argparse.ArgumentParser(
     description='Render missing character reference images before chapter panel generation.'
@@ -108,6 +128,38 @@ def build_prompt(profile: dict[str, Any], reference: dict[str, Any]) -> str:
   ).strip()
 
 
+def build_bubble_toolkit_prompt(
+  *,
+  series_slug: str,
+  style_bible: dict[str, Any],
+  reference: dict[str, Any],
+) -> str:
+  return '\n'.join(
+    [
+      'Use case: illustration-story',
+      'Asset type: original manhwa bubble and lettering style toolkit for Nayovi Originals',
+      f'Series slug: {series_slug}',
+      '',
+      'Series bubble style bible:',
+      json.dumps(style_bible, ensure_ascii=False, indent=2),
+      '',
+      'Reference image purpose:',
+      str(reference.get('purpose') or '').strip(),
+      '',
+      'Reference image request:',
+      str(reference.get('prompt_addendum') or '').strip(),
+      '',
+      'Hard requirements:',
+      '- Generate only reusable bubble, caption, border, tail, thought-dot, glow, and typography-shape samples.',
+      '- No characters, no faces, no bodies, no hands, no portraits, no costumes, no scenery, no weapons, no props, no chapter illustration.',
+      '- Do not render a final reader scene; this is a clean visual toolkit for future agents.',
+      '- Keep the toolkit visually close to the accepted chapter style: black ornamental gothic narration card plus ivory manhwa dialogue/thought bubbles.',
+      '- Avoid fake readable words, labels, logos, watermarks, scan-group marks, random letters, and long text.',
+      '- Leave enough padding around each bubble so a future model can analyze the shape, border, tail, glow, and fill without distraction.',
+    ]
+  ).strip()
+
+
 def run_image_generator(
   *,
   codex_image_script: pathlib.Path,
@@ -149,6 +201,7 @@ def main() -> int:
   context_root = pathlib.Path(args.context_root)
   series_dir = context_root / args.series_slug
   character_index = read_json(series_dir / 'characters' / 'index.json')
+  bubble_style_bible = read_json(series_dir / 'bubble-style-bible.json')
   codex_image_script = pathlib.Path(args.codex_image_script)
   if not codex_image_script.exists():
     local_script = pathlib.Path(__file__).with_name('generate-codex-image.sh')
@@ -158,6 +211,27 @@ def main() -> int:
       raise SystemExit(f'Codex image script is missing: {codex_image_script}')
 
   candidates: list[dict[str, Any]] = []
+  toolkit = coerce_dict(bubble_style_bible.get('reference_toolkit'))
+  toolkit_references = coerce_list(toolkit.get('reference_images'))
+  if not toolkit_references:
+    toolkit_references = [default_bubble_toolkit(args.series_slug)]
+
+  for reference in toolkit_references:
+    output_path = reference_output_path(reference)
+    if not output_path:
+      continue
+    if output_path.exists() and not args.force:
+      continue
+    candidates.append(
+      {
+        'character_id': None,
+        'output_path': output_path,
+        'profile': {},
+        'reference': reference,
+        'reference_type': 'bubble_style_toolkit',
+      }
+    )
+
   for character_id in coerce_list(character_index.get('character_ids')):
     if args.character_id and character_id != args.character_id:
       continue
@@ -176,6 +250,7 @@ def main() -> int:
           'output_path': output_path,
           'profile': profile,
           'reference': reference,
+          'reference_type': 'character_reference',
         }
       )
 
@@ -204,7 +279,14 @@ def main() -> int:
   rendered = []
   failed = []
   for item in candidates:
-    prompt = build_prompt(item['profile'], item['reference'])
+    if item.get('reference_type') == 'bubble_style_toolkit':
+      prompt = build_bubble_toolkit_prompt(
+        series_slug=args.series_slug,
+        style_bible=bubble_style_bible,
+        reference=item['reference'],
+      )
+    else:
+      prompt = build_prompt(item['profile'], item['reference'])
     try:
       run_image_generator(
         codex_image_script=codex_image_script,
@@ -216,6 +298,7 @@ def main() -> int:
           'character_id': item['character_id'],
           'output_path': str(item['output_path']),
           'reference_id': item['reference'].get('id'),
+          'reference_type': item.get('reference_type'),
         }
       )
     except subprocess.CalledProcessError as error:
@@ -224,6 +307,7 @@ def main() -> int:
           'character_id': item['character_id'],
           'exit_code': error.returncode,
           'reference_id': item['reference'].get('id'),
+          'reference_type': item.get('reference_type'),
         }
       )
 

@@ -49,6 +49,20 @@ function asArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
+function isBubbleStyleReference(reference = {}) {
+  const text = [reference.id, reference.purpose, reference.prompt_addendum]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+
+  return (
+    text.includes('bubble') ||
+    text.includes('lettering') ||
+    text.includes('speech balloon') ||
+    text.includes('caption style')
+  );
+}
+
 function referencePlanFor(character, seriesSlug, privateRoot, dossier = {}) {
   const characterId = character.id;
   const protectedRoot = `/api/manhwa-private/${seriesSlug}/character/${characterId}/reference`;
@@ -71,7 +85,10 @@ function referencePlanFor(character, seriesSlug, privateRoot, dossier = {}) {
   });
 
   const dossierReferences = asArray(dossier.reference_image_plan);
-  if (dossierReferences.length > 0) {
+  const visualIdentityReferences = dossierReferences.filter(
+    (reference) => !isBubbleStyleReference(reference)
+  );
+  if (visualIdentityReferences.length > 0) {
     return {
       private_reference_root: path.relative(
         process.cwd(),
@@ -79,7 +96,7 @@ function referencePlanFor(character, seriesSlug, privateRoot, dossier = {}) {
       ),
       protected_reference_root: protectedRoot,
       required_before_chapter_render: true,
-      reference_images: dossierReferences.map((reference, index) => {
+      reference_images: visualIdentityReferences.map((reference, index) => {
         const id = String(reference.id || `reference-${index + 1}`).replace(
           /[^a-zA-Z0-9-]+/g,
           '-'

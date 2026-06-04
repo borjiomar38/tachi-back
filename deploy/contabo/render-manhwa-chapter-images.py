@@ -266,6 +266,42 @@ def bubble_style_bible(package: dict[str, Any], context: dict[str, Any]) -> str:
   return custom_style or DEFAULT_BUBBLE_STYLE_BIBLE
 
 
+def bubble_style_reference_context(context: dict[str, Any]) -> str:
+  style_bible = coerce_dict(context.get('bubble_style_bible'))
+  toolkit = coerce_dict(style_bible.get('reference_toolkit'))
+  references = coerce_list(toolkit.get('reference_images'))
+  lines = []
+
+  for reference in references:
+    local_file = reference_local_file(reference)
+    protected_path = str(
+      reference.get('protected_path') or reference.get('public_path') or ''
+    ).strip()
+    lines.append(
+      (
+        f'- {reference.get("id")}: '
+        f'{"generated" if local_file and local_file.exists() else "missing"}; '
+        f'local_file={local_file.resolve() if local_file else "missing"}; '
+        f'protected={protected_path or "none"}; '
+        f'purpose={reference.get("purpose") or ""}'
+      )
+    )
+
+  if not lines:
+    return (
+      '- No separate bubble toolkit image is indexed yet. Follow the JSON style bible and '
+      'the previous panel bubble style.'
+    )
+
+  return '\n'.join(
+    [
+      'Inspect generated local bubble toolkit files when present. Use them only for bubble/caption shape, fill, border, tail, thought-dot, glow, spacing, and lettering mood.',
+      'Do not copy any character, scene, prop, or accidental artifact from a toolkit image. If a toolkit image contains a person, ignore the person completely and use only the bubble design.',
+      *lines,
+    ]
+  )
+
+
 def build_bubble_layout_plan(
   *,
   context: dict[str, Any],
@@ -535,6 +571,9 @@ def build_panel_prompt(
       '',
       'Series bubble and lettering style bible:',
       bubble_style_bible(package, context),
+      '',
+      'Indexed bubble style reference toolkit:',
+      bubble_style_reference_context(context),
       '',
       'Character-specific bubble context:',
       character_bubble_context(context=context, panel=panel),

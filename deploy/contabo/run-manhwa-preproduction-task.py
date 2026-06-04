@@ -397,8 +397,12 @@ Requirements:
   visual locks, body/face/hair/costume continuity, speech/bubble style, and
   forbidden drift.
 - Make the character useful for epic scenarios over many chapters.
-- Include a unique reference_image_plan; this is what the image cron will later
-  render for this character. Use more than one reference type when needed.
+- Include a unique reference_image_plan for character identity only; this is what
+  the image cron will later render for this character. Use more than one
+  identity/reference type when needed.
+- Do not include bubble, speech balloon, caption, or lettering style images in
+  reference_image_plan. Bubble art belongs to the series bubble-style-bible
+  toolkit, not to a character reference folder.
 - Keep all text in English.
 - Return JSON only.
 
