@@ -373,3 +373,10 @@ This file is maintained by the SEO distribution agent.
 | draft | no-link-first trust ladder | Android verification-aware crawler and crawl-claim language | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Add a crawler-safe crawl/readiness paragraph linking crawl claim order to official ownership checks without verification overclaims | Add a brief section with exact approved language and internal link to support + sitemap policy |
 | draft | high-intent directory eligibility | trial versus paid-token AI listing fit | docs/seo-distribution/platform-drafts.md + https://tooldirectory.ai/ | Build one reusable listing-fit copy that stays no-link-first unless form fields permit direct source-link ordering | Prepare one product-light draft and route links to checklist + pricing only if category match is approved |
 | draft | creator/platform due diligence | visual-storytelling OCR localization quality checkpoints | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Expand owned angle on approved-sample workflow and human review checkpoints for creator and localization audiences | Add a short section usable as a publisher-facing background note |
+
+## 2026-06-04 Cycle Content Calendar additions
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
+| draft | permissions-aware directory-ready content | `AI translation OCR Android tool listing`, `trial to token plan` | https://nayovi.com/guides/comic-ocr-translation-checklist | Add a short conversion-safe claim ladder for AI directory and app directory submissions (what to claim, what to hold, optional link escalation) | Prepare 4-line no-link-first block and align with `platform-drafts.md` ToolDirectory entry |
+| draft | build-in-public trust statement | `permission-safe comic OCR workflow`, `owned-source translation` | https://nayovi.com/guides/permission-safe-manga-translation-pilot | Add a founder/creator-facing no-link starter section focused on pilot scope, approvals, and support boundaries | Keep unpublished until official account setup for founder channels is confirmed |

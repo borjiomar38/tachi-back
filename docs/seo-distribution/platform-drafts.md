@@ -5786,3 +5786,21 @@ If this does not fit your policy, please reply "opt out".
   - `https://nayovi.com/guides/comic-ocr-translation-checklist`
 - Action intent:
   - Use only as a context note if outreach is explicitly requested by an official editorial path.
+
+### 2026-06-04 Best-ready draft: ToolDirectory.AI listing compatibility
+
+- Target: https://tooldirectory.ai/submit/
+- Category: AI directory submission
+- Audience: AI tooling curators and Android utility reviewers
+- Rules risk: medium (review/paid-tier mix, possible listing policy checks)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I am preparing a short compatibility packet for an Android-first OCR + translation utility. The fit is source-link first and includes free trial + paid token model, official support, responsible-use policy, and Android source path. Can I confirm accepted fields first?"
+- Link variant (conditional only if ToolDirectory accepts official-source fields and free/paid model):
+  - `https://nayovi.com/guides/comic-ocr-translation-checklist`
+  - `https://nayovi.com/pricing`
+  - `https://nayovi.com/guides/permission-safe-manga-translation-pilot`
+- Action intent:
+  1. Confirm listing requirements and free-vs-premium eligibility before sending any link.
+  2. Keep fit request no-link-first until policy fit is confirmed by the directory.
+  3. Move to link-variant only under owner-approved policy and posting authority.

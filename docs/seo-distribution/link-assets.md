@@ -420,3 +420,10 @@ This file is maintained by the SEO distribution agent.
 | ToolDirectory.AI listing metadata ladder | https://tooldirectory.ai/ | AI directory reviewers and Android utility editors | Reusable no-link-first field-compatibility text + conditional link order for free-trial and paid-token model | draft | Keep as draft until field schema is validated; then permit link-safe listing packet |
 | Android verifier trust ladder | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Android reviewers, app distributors, creators | Adds explicit `can state / cannot state / escalate to official links` language for policy-sensitive Android press and directory mentions | draft | Sync this block with `PageComicOcrChecklist` and use for all high-risk first-touch outreach |
 | ToolWorthy listing fit summary | https://www.toolworthy.ai/ | AI directory editors and launch-curious readers | Product-light comparison entry with paid-submission and token-model gating for a no-link-first first touch | draft | Verify submit terms; convert to conditional link variant only if terms allow safe source-link and paid-plan representation |
+
+## 2026-06-04 Asset updates
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| ToolDirectory-compatible listing packet | https://tooldirectory.ai/submit/ | AI directory editors and Android discoverability checkers | Product-light compatibility checklist: free-trial/paid token framing, official-source link policy, and no-mirror language for trust-first directory submissions | draft | Keep as no-link-first packet and only attach URLs if form fields explicitly support paid + trial split and official Android path |
+| Founder trust draft block | docs/seo-distribution/platform-drafts.md | Founder/community channels and startup readers | Reusable no-link-first article opening that maps to `LINK_STATUS=OWNER_REVIEW_REQUIRED` and avoids launch metrics before posting approval | draft | Keep this copy as the default founder posting baseline until LinkedIn profile policy is finalized |

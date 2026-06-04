@@ -1976,3 +1976,16 @@ Next actions:
 - Extended `docs/seo-distribution/content-calendar.md` and `docs/seo-distribution/link-assets.md` with one each 2026-06-02 row.
 - Added one new Facebook queue draft item in `docs/seo-distribution/social-post-queue.jsonl` for cycle-owned creator storytelling.
 - No external posting, account setup actions requiring manual verification, CAPTCHA, directory submissions, or API posts were performed; cycle remains OWNER_REVIEW_REQUIRED / AUTHORIZED_ACCOUNT_REQUIRED where appropriate.
+
+## 2026-06-04 Cycle (current)
+
+- Branch check: `seo/distribution-20260604T010048Z` confirmed before drafting this pass.
+- Read `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all required tracker docs before updating.
+- Advanced account-setup priority with two required rows in `docs/seo-distribution/account-setup.md`:
+  - LinkedIn official company/founder packet (`OWNER_ACTION_REQUIRED`)
+  - Google Search Console + Bing Webmaster ownership packet (`OWNER_ACTION_REQUIRED`)
+- Added 3 fresh authority opportunities in `docs/seo-distribution/authority-opportunities.md` across categories: AI directory, Android editorial, and founder community.
+- Prepared one best-ready no-link-first draft in `docs/seo-distribution/platform-drafts.md` for ToolDirectory.AI listing compatibility.
+- Added 1 linkable asset and 2 content-calendar entries to support reusable claim-safe no-link-first outreach.
+- Appended new entries to `docs/growth/backlink-prospects.csv` and one owner_review_required Facebook story queue item using strict story format requirements.
+- Posting posture remains draft-first; no account creation, login, CAPTCHA, form submission, or public posting executed because all high-impact accounts still require manual OWNER_ACTION_REQUIRED steps.
