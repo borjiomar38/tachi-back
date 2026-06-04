@@ -648,7 +648,7 @@ def run_image_generator(
         '--prompt-file',
         str(prompt_path),
         '--output-file',
-        str(output_path),
+        str(output_path.resolve()),
         '--work-dir',
         str(output_path.parent),
       ],
