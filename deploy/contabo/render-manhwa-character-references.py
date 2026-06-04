@@ -120,8 +120,11 @@ def run_image_generator(
     prompt_path = pathlib.Path(handle.name)
 
   env = os.environ.copy()
-  env.setdefault('CODEX_IMAGE_MIN_WIDTH', '900')
-  env.setdefault('CODEX_IMAGE_MIN_HEIGHT', '900')
+  # Character reference sheets can be portrait, square, or landscape lineups.
+  # Keep chapter panel vertical constraints in the chapter renderer, but validate
+  # reference sheets by usable resolution instead of forcing a tall aspect ratio.
+  env['CODEX_IMAGE_MIN_WIDTH'] = os.environ.get('MANHWA_CHARACTER_REFERENCE_MIN_WIDTH', '800')
+  env['CODEX_IMAGE_MIN_HEIGHT'] = os.environ.get('MANHWA_CHARACTER_REFERENCE_MIN_HEIGHT', '800')
 
   try:
     subprocess.run(

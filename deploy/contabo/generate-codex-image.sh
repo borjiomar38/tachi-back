@@ -4,6 +4,8 @@ set -euo pipefail
 codex_bin="${CODEX_IMAGE_CODEX_CLI_PATH:-codex}"
 codex_model="${CODEX_IMAGE_CODEX_MODEL:-gpt-5.5}"
 codex_reasoning_effort="${CODEX_IMAGE_CODEX_REASONING_EFFORT:-low}"
+max_attempts="${CODEX_IMAGE_MAX_ATTEMPTS:-3}"
+retry_delay_seconds="${CODEX_IMAGE_RETRY_DELAY_SECONDS:-20}"
 min_bytes="${CODEX_IMAGE_MIN_BYTES:-500000}"
 min_width="${CODEX_IMAGE_MIN_WIDTH:-1000}"
 min_height="${CODEX_IMAGE_MIN_HEIGHT:-700}"
@@ -19,6 +21,8 @@ Environment:
   CODEX_IMAGE_CODEX_CLI_PATH        Codex CLI path, default codex
   CODEX_IMAGE_CODEX_MODEL           Codex model, default gpt-5.5
   CODEX_IMAGE_CODEX_REASONING_EFFORT Reasoning effort, default low
+  CODEX_IMAGE_MAX_ATTEMPTS          Codex imagegen attempts before failing, default 3
+  CODEX_IMAGE_RETRY_DELAY_SECONDS   Delay between imagegen attempts, default 20
   CODEX_IMAGE_MIN_BYTES             Minimum accepted PNG size, default 500000
   CODEX_IMAGE_MIN_WIDTH             Minimum accepted PNG width, default 1000
   CODEX_IMAGE_MIN_HEIGHT            Minimum accepted PNG height, default 700
@@ -91,21 +95,37 @@ Image prompt:
 $(cat "${prompt_file}")
 EOF
 
-"${codex_bin}" --search -a never exec \
-  --skip-git-repo-check \
-  --ephemeral \
-  --sandbox workspace-write \
-  -C "${work_dir}" \
-  --model "${codex_model}" \
-  -c "model_reasoning_effort=\"${codex_reasoning_effort}\"" \
-  --output-last-message "${report_file}" \
-  <"${wrapped_prompt}"
+for ((attempt = 1; attempt <= max_attempts; attempt++)); do
+  if [[ -s "${output_file}" ]]; then
+    break
+  fi
 
-if [[ ! -s "${output_file}" ]]; then
-  candidate="$(
-    GENERATED_DIR="${CODEX_HOME:-${HOME}/.codex}/generated_images" \
-    MARKER="${marker}" \
-    python3 - <<'PY' || true
+  echo "Codex image attempt ${attempt}/${max_attempts} using ${codex_model}." >&2
+  : >"${report_file}"
+  touch "${marker}"
+
+  set +e
+  "${codex_bin}" --search -a never exec \
+    --skip-git-repo-check \
+    --ephemeral \
+    --sandbox workspace-write \
+    -C "${work_dir}" \
+    --model "${codex_model}" \
+    -c "model_reasoning_effort=\"${codex_reasoning_effort}\"" \
+    --output-last-message "${report_file}" \
+    <"${wrapped_prompt}"
+  codex_exit=$?
+  set -e
+
+  if ((codex_exit != 0)); then
+    echo "Codex image attempt ${attempt}/${max_attempts} exited with ${codex_exit}." >&2
+  fi
+
+  if [[ ! -s "${output_file}" ]]; then
+    candidate="$(
+      GENERATED_DIR="${CODEX_HOME:-${HOME}/.codex}/generated_images" \
+      MARKER="${marker}" \
+      python3 - <<'PY' || true
 import os
 import pathlib
 
@@ -127,15 +147,25 @@ if not candidates:
 
 print(max(candidates, key=lambda path: path.stat().st_mtime))
 PY
-  )"
+    )"
 
-  if [[ -n "${candidate}" ]]; then
-    cp "${candidate}" "${output_file}"
+    if [[ -n "${candidate}" ]]; then
+      cp "${candidate}" "${output_file}"
+    fi
   fi
-fi
+
+  if [[ -s "${output_file}" ]]; then
+    break
+  fi
+
+  if ((attempt < max_attempts)); then
+    echo "Codex image attempt ${attempt}/${max_attempts} produced no PNG; retrying in ${retry_delay_seconds}s." >&2
+    sleep "${retry_delay_seconds}"
+  fi
+done
 
 if [[ ! -s "${output_file}" ]]; then
-  echo "IMAGEGEN_TOOL_UNAVAILABLE: Codex CLI did not produce a built-in image_gen PNG." >&2
+  echo "IMAGEGEN_TOOL_UNAVAILABLE: Codex CLI did not produce a built-in image_gen PNG after ${max_attempts} attempt(s)." >&2
   cat "${report_file}" >&2 || true
   exit 17
 fi
