@@ -1,6 +1,7 @@
 import {
   BookOpenTextIcon,
   CheckCircle2Icon,
+  ExternalLinkIcon,
   ImageIcon,
   LockIcon,
   SparklesIcon,
@@ -14,6 +15,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogBody,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 import type {
   ManhwaManagerCharacter,
@@ -65,13 +75,21 @@ export const PageManhwaProduction = ({
     <PageLayout>
       <PageLayoutTopBar
         endActions={
-          <a
-            href={`/manhwa/${overview.seriesSlug}`}
-            className="inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition hover:bg-accent"
-          >
-            <BookOpenTextIcon className="size-4" />
-            Reader
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="/manager/manhwa"
+              className="inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition hover:bg-accent"
+            >
+              All manhwa
+            </a>
+            <a
+              href={`/manhwa/${overview.seriesSlug}`}
+              className="inline-flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition hover:bg-accent"
+            >
+              <BookOpenTextIcon className="size-4" />
+              Reader
+            </a>
+          </div>
         }
       >
         <PageLayoutTopBarTitle>Manhwa production</PageLayoutTopBarTitle>
@@ -295,22 +313,11 @@ function CharacterRow(props: { character: ManhwaManagerCharacter }) {
         </div>
         <div className="grid grid-cols-5 gap-2">
           {props.character.references.map((reference) => (
-            <div
-              className="flex aspect-square items-center justify-center overflow-hidden rounded-md border bg-muted text-muted-foreground"
+            <ReferenceTile
+              character={props.character}
               key={reference.id}
-              title={`${reference.id}: ${reference.status}`}
-            >
-              {reference.generated && reference.protectedPath ? (
-                <img
-                  alt=""
-                  className="size-full object-cover"
-                  loading="lazy"
-                  src={reference.protectedPath}
-                />
-              ) : (
-                <SparklesIcon className="size-4 opacity-60" />
-              )}
-            </div>
+              reference={reference}
+            />
           ))}
         </div>
         {props.character.missingReferenceIds.length ? (
@@ -320,6 +327,71 @@ function CharacterRow(props: { character: ManhwaManagerCharacter }) {
         ) : null}
       </div>
     </article>
+  );
+}
+
+function ReferenceTile(props: {
+  character: ManhwaManagerCharacter;
+  reference: ManhwaManagerCharacter['references'][number];
+}) {
+  if (!props.reference.generated || !props.reference.protectedPath) {
+    return (
+      <div
+        className="flex aspect-square items-center justify-center overflow-hidden rounded-md border bg-muted text-muted-foreground"
+        title={`${props.reference.id}: ${props.reference.status}`}
+      >
+        <SparklesIcon className="size-4 opacity-60" />
+      </div>
+    );
+  }
+
+  const title = `${props.character.name} - ${humanizeTask(props.reference.id)}`;
+
+  return (
+    <Dialog>
+      <DialogTrigger
+        render={
+          <button
+            className="group flex aspect-square items-center justify-center overflow-hidden rounded-md border bg-muted text-muted-foreground transition outline-none hover:border-primary/60 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+            title={`${props.reference.id}: ${props.reference.status}`}
+            type="button"
+          />
+        }
+      >
+        <img
+          alt={title}
+          className="size-full object-cover transition group-hover:scale-105"
+          loading="lazy"
+          src={props.reference.protectedPath}
+        />
+      </DialogTrigger>
+      <DialogContent className="max-h-[calc(100svh-2rem)] overflow-hidden p-0 sm:max-w-5xl">
+        <DialogHeader className="px-5 pt-5 pr-14">
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>
+            {props.reference.id} · {props.reference.status}
+          </DialogDescription>
+        </DialogHeader>
+        <DialogBody className="min-h-0 gap-3 px-5 pb-5">
+          <div className="flex max-h-[calc(100svh-13rem)] min-h-0 items-center justify-center overflow-auto rounded-md border bg-black/95">
+            <img
+              alt={title}
+              className="h-auto max-h-full w-auto max-w-full object-contain"
+              src={props.reference.protectedPath}
+            />
+          </div>
+          <a
+            className="inline-flex w-fit items-center gap-2 text-sm font-medium text-primary hover:underline"
+            href={props.reference.protectedPath}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <ExternalLinkIcon className="size-4" />
+            Open image
+          </a>
+        </DialogBody>
+      </DialogContent>
+    </Dialog>
   );
 }
 

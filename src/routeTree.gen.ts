@@ -83,6 +83,7 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth.$'
 import { Route as ApiActivationRedeemRouteImport } from './routes/api/activation/redeem'
 import { Route as ManagerUsersNewIndexRouteImport } from './routes/manager/users/new.index'
 import { Route as ManagerUsersIdIndexRouteImport } from './routes/manager/users/$id.index'
+import { Route as ManagerManhwaSlugIndexRouteImport } from './routes/manager/manhwa/$slug/index'
 import { Route as ManagerLicensesKeyIndexRouteImport } from './routes/manager/licenses/$key.index'
 import { Route as ManagerJobsIdIndexRouteImport } from './routes/manager/jobs/$id.index'
 import { Route as ManagerFreeTrialsIdIndexRouteImport } from './routes/manager/free-trials/$id.index'
@@ -502,6 +503,11 @@ const ManagerUsersIdIndexRoute = ManagerUsersIdIndexRouteImport.update({
   path: '/users/$id/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerManhwaSlugIndexRoute = ManagerManhwaSlugIndexRouteImport.update({
+  id: '/manhwa/$slug/',
+  path: '/manhwa/$slug/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerLicensesKeyIndexRoute = ManagerLicensesKeyIndexRouteImport.update({
   id: '/licenses/$key/',
   path: '/licenses/$key/',
@@ -784,6 +790,7 @@ export interface FileRoutesByFullPath {
   '/manager/free-trials/$id/': typeof ManagerFreeTrialsIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
+  '/manager/manhwa/$slug/': typeof ManagerManhwaSlugIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
@@ -889,6 +896,7 @@ export interface FileRoutesByTo {
   '/manager/free-trials/$id': typeof ManagerFreeTrialsIdIndexRoute
   '/manager/jobs/$id': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key': typeof ManagerLicensesKeyIndexRoute
+  '/manager/manhwa/$slug': typeof ManagerManhwaSlugIndexRoute
   '/manager/users/$id': typeof ManagerUsersIdIndexRoute
   '/manager/users/new': typeof ManagerUsersNewIndexRoute
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
@@ -999,6 +1007,7 @@ export interface FileRoutesById {
   '/manager/free-trials/$id/': typeof ManagerFreeTrialsIdIndexRoute
   '/manager/jobs/$id/': typeof ManagerJobsIdIndexRoute
   '/manager/licenses/$key/': typeof ManagerLicensesKeyIndexRoute
+  '/manager/manhwa/$slug/': typeof ManagerManhwaSlugIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
@@ -1110,6 +1119,7 @@ export interface FileRouteTypes {
     | '/manager/free-trials/$id/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
+    | '/manager/manhwa/$slug/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
     | '/api/mobile/auth/free-trial/eligibility'
@@ -1215,6 +1225,7 @@ export interface FileRouteTypes {
     | '/manager/free-trials/$id'
     | '/manager/jobs/$id'
     | '/manager/licenses/$key'
+    | '/manager/manhwa/$slug'
     | '/manager/users/$id'
     | '/manager/users/new'
     | '/api/mobile/auth/free-trial/eligibility'
@@ -1324,6 +1335,7 @@ export interface FileRouteTypes {
     | '/manager/free-trials/$id/'
     | '/manager/jobs/$id/'
     | '/manager/licenses/$key/'
+    | '/manager/manhwa/$slug/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
     | '/api/mobile/auth/free-trial/eligibility'
@@ -1927,6 +1939,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersIdIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/manhwa/$slug/': {
+      id: '/manager/manhwa/$slug/'
+      path: '/manhwa/$slug'
+      fullPath: '/manager/manhwa/$slug/'
+      preLoaderRoute: typeof ManagerManhwaSlugIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/licenses/$key/': {
       id: '/manager/licenses/$key/'
       path: '/licenses/$key'
@@ -2214,6 +2233,7 @@ interface ManagerRouteRouteChildren {
   ManagerFreeTrialsIdIndexRoute: typeof ManagerFreeTrialsIdIndexRoute
   ManagerJobsIdIndexRoute: typeof ManagerJobsIdIndexRoute
   ManagerLicensesKeyIndexRoute: typeof ManagerLicensesKeyIndexRoute
+  ManagerManhwaSlugIndexRoute: typeof ManagerManhwaSlugIndexRoute
   ManagerUsersIdIndexRoute: typeof ManagerUsersIdIndexRoute
   ManagerUsersNewIndexRoute: typeof ManagerUsersNewIndexRoute
   ManagerUsersIdUpdateIndexRoute: typeof ManagerUsersIdUpdateIndexRoute
@@ -2242,6 +2262,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerFreeTrialsIdIndexRoute: ManagerFreeTrialsIdIndexRoute,
   ManagerJobsIdIndexRoute: ManagerJobsIdIndexRoute,
   ManagerLicensesKeyIndexRoute: ManagerLicensesKeyIndexRoute,
+  ManagerManhwaSlugIndexRoute: ManagerManhwaSlugIndexRoute,
   ManagerUsersIdIndexRoute: ManagerUsersIdIndexRoute,
   ManagerUsersNewIndexRoute: ManagerUsersNewIndexRoute,
   ManagerUsersIdUpdateIndexRoute: ManagerUsersIdUpdateIndexRoute,

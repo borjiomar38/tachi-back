@@ -1,15 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { PageManhwaProduction } from '@/features/manhwa/manager/page-manhwa-production';
-import { getManhwaManagerOverview } from '@/features/manhwa/manager/server';
+import { PageManhwaSeriesList } from '@/features/manhwa/manager/page-manhwa-series-list';
+import { getManhwaManagerSeriesList } from '@/features/manhwa/manager/server';
 
 export const Route = createFileRoute('/manager/manhwa/')({
   component: RouteComponent,
-  loader: () => getManhwaManagerOverview(),
+  loader: () => getManhwaManagerSeriesList(),
 });
 
 function RouteComponent() {
-  const overview = Route.useLoaderData();
+  const data = Route.useLoaderData();
 
-  return <PageManhwaProduction overview={overview} />;
+  return <PageManhwaSeriesList data={data} />;
 }
