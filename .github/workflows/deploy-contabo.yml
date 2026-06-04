@@ -97,6 +97,10 @@ jobs:
             --exclude 'src/server/db/generated/' \
             --exclude 'deploy/contabo/postgres-backups/' \
             --exclude 'deploy/contabo/dns-backups/' \
+            --exclude 'docs/manhwa/context/' \
+            --exclude 'docs/manhwa/generated/' \
+            --exclude 'docs/manhwa/private/' \
+            --exclude 'docs/manhwa/copyright/' \
             -e "ssh -i ~/.ssh/contabo_key -p ${CONTABO_SSH_PORT}" \
             ./ "${CONTABO_SSH_USER}@${CONTABO_SSH_HOST}:${CONTABO_APP_DIR}/"
 
