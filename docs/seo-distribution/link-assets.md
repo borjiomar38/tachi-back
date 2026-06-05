@@ -1,3 +1,11 @@
+## 2026-06-05 Cycle Additions (discovery-backed reusable assets)
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| NavTools listing-readiness block | `https://navtools.ai/submit` + `docs/seo-distribution/platform-drafts.md` | AI tool directory curators and discovery reviewers | Adds a no-link-first listing-fit packet for paid + trial token labeling and official-source fields before any listing link is introduced | draft | Keep as default draft until category/pricing fields are confirmed; include link variant only if form accepts official APK/support/pricing metadata |
+| Futurepedia fit matrix | `https://www.futurepedia.io/submit-tool` + `https://www.futurepedia.io/update-a-tool` + owned trust guide pages | AI directory editors and conversion-safe contributors | Reusable fit-first language to verify source fields, trial/paid-token model, and no-mirror claims before asking for listing or update access | draft | Add final URL list only after form policy and category acceptance rules are owner-approved |
+| Android trust-media topic note | `https://www.nimdzi.com/nimdzi-live/` + `https://www.nimdzi.com/media/` | Localization media and technical audiences | Reusable value-first topic framing for workflow quality/quality-control discussions without app-install promotion | draft | Use only when a publisher request for topic angle appears; keep link variant behind explicit editorial permission |
+
 ## 2026-06-01 Cycle Additions
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |
