@@ -86,6 +86,8 @@ Generate a real AI-created raster image with the built-in image_gen tool. Do not
 
 If the image prompt names local image reference files, inspect those local images before generation and use them as visual continuity references. If the built-in image generation surface supports reference images, use the inspected images as references; otherwise incorporate the inspected visual details into the final image prompt. Never duplicate the previous panel exactly; create the next original panel that continues it.
 
+If the image prompt contains "Primary continuity edit/outpaint canvas", use that local canvas PNG as the main image-edit/outpaint input. Preserve the existing non-transparent top overlap from the canvas and fill the transparent/empty lower area as the continuation. If you cannot use the canvas as an edit/outpaint input, do not make an independent replacement image; return exactly IMAGEGEN_TOOL_UNAVAILABLE.
+
 After generation, the image may stay in \$CODEX_HOME/generated_images or ~/.codex/generated_images. If you can copy the generated PNG to this path, do it:
 ${output_file}
 

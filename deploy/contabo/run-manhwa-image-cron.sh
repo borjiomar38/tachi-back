@@ -260,6 +260,86 @@ tmp_path.replace(path)
 PY
 }
 
+refresh_render_plan() {
+  local post_plan
+
+  post_plan="$(
+    python3 - "${package_file}" "${chapter_output_dir}" "${daily_limit}" "${run_limit}" "${min_interval_minutes}" <<'PY'
+import datetime as dt
+import json
+import pathlib
+import re
+import sys
+
+package_path = pathlib.Path(sys.argv[1])
+chapter_dir = pathlib.Path(sys.argv[2])
+daily_limit = int(sys.argv[3])
+run_limit = int(sys.argv[4])
+min_interval_minutes = int(sys.argv[5])
+
+package = json.loads(package_path.read_text(encoding="utf-8"))
+today_start = dt.datetime.combine(dt.date.today(), dt.time.min).timestamp()
+now = dt.datetime.now().timestamp()
+rendered_today = 0
+latest_panel_time = 0.0
+
+if chapter_dir.exists():
+    for image_path in chapter_dir.iterdir():
+        if (
+            image_path.is_file()
+            and re.fullmatch(r"panel-\d+\.(?:png|jpe?g|webp)", image_path.name, re.I)
+        ):
+            panel_mtime = image_path.stat().st_mtime
+            latest_panel_time = max(latest_panel_time, panel_mtime)
+            if panel_mtime >= today_start:
+                rendered_today += 1
+
+remaining_today = max(daily_limit - rendered_today, 0)
+interval_remaining_seconds = 0
+if latest_panel_time and min_interval_minutes > 0:
+    interval_remaining_seconds = max(
+        int((min_interval_minutes * 60) - (now - latest_panel_time)),
+        0,
+    )
+
+planned_panels = []
+for panel in package.get("panels") or []:
+    try:
+        planned_panels.append(int(panel.get("panel_number") or 0))
+    except (AttributeError, TypeError, ValueError):
+        continue
+
+existing_panels = set()
+if chapter_dir.exists():
+    for image_path in chapter_dir.iterdir():
+        match = re.fullmatch(r"panel-(\d+)\.(?:png|jpe?g|webp)", image_path.name, re.I)
+        if image_path.is_file() and match:
+            existing_panels.add(int(match.group(1)))
+
+next_panel = next(
+    (panel_number for panel_number in planned_panels if panel_number not in existing_panels),
+    0,
+)
+skip_reason = ""
+if remaining_today < 1:
+    effective_limit = 0
+    skip_reason = "daily_limit_reached"
+elif interval_remaining_seconds > 0:
+    effective_limit = 0
+    skip_reason = "interval_wait"
+else:
+    effective_limit = min(run_limit, remaining_today)
+
+print(
+    f"{effective_limit}|{rendered_today}|{remaining_today}|"
+    f"{next_panel}|{skip_reason}|{interval_remaining_seconds}"
+)
+PY
+  )"
+
+  IFS='|' read -r effective_limit rendered_today remaining_today next_panel_number skip_reason interval_remaining_seconds <<<"${post_plan}"
+}
+
 if [[ "${effective_limit}" -lt 1 ]]; then
   write_render_status "${skip_reason:-waiting}" "0"
   if [[ "${skip_reason}" == "interval_wait" ]]; then
@@ -354,6 +434,7 @@ render_exit=$?
 set -e
 
 if ((render_exit == 0)); then
+  refresh_render_plan
   write_render_status "idle" "${render_exit}"
 else
   write_render_status "failed" "${render_exit}"

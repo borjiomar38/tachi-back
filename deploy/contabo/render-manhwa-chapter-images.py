@@ -15,6 +15,7 @@ import math
 import os
 import pathlib
 import re
+import struct
 import subprocess
 import tempfile
 from typing import Any
@@ -394,6 +395,7 @@ def previous_panel_reference_context(
   *,
   output_dir: pathlib.Path,
   panel_number: int,
+  overlap_canvas_path: pathlib.Path | None,
   overlap_reference_path: pathlib.Path | None,
   overlap_ratio: float,
 ) -> str:
@@ -418,12 +420,24 @@ def previous_panel_reference_context(
     lines.extend(
       [
         '',
-        'Continuity overlap edit/outpaint source:',
+        'Continuity overlap source:',
         f'- Bottom overlap crop from previous panel: {overlap_reference_path.resolve()}',
         f'- This crop is the bottom {round(overlap_ratio * 100)}% of the previous panel.',
-        '- Treat this crop as the top edit/outpaint source for the new draft image. The top of the generated draft must visually match and extend this crop downward: same body part placement, costume edges, chains, hair strands, floor texture, lighting direction, and camera angle.',
-        '- Generate the draft image as the expected next panel plus this overlap guide at the top. Important new story action and required text should begin below the overlap area because the pipeline removes the overlap after generation.',
-        '- The final saved reader panel will be trimmed by cutting off the generated top overlap, leaving only the new continuation. Because of that, the visible seam in the reader should feel like one continuous vertical image.',
+      ]
+    )
+
+  if overlap_canvas_path and overlap_canvas_path.exists():
+    lines.extend(
+      [
+        '',
+        'Primary continuity edit/outpaint canvas:',
+        f'- Use this local PNG as the main image-edit canvas: {overlap_canvas_path.resolve()}',
+        f'- The top {round(overlap_ratio * 100)}% is the exact pasted bottom crop from the previous panel.',
+        '- The lower transparent/empty area is the only area that should be completed with new art.',
+        '- Preserve the pasted top overlap visually: same body part placement, costume edges, chains, hair strands, floor texture, lighting direction, camera angle, and color grading.',
+        '- Outpaint downward from that fixed top overlap. Do not create a hard horizontal separator, double panel border, duplicated body, or unrelated new composition at the join.',
+        '- Important new story action and required text must start below the pasted overlap because the pipeline removes the overlap after generation.',
+        '- The final reader image will be made by trimming off the pasted top overlap. The first visible pixels of the saved panel must therefore continue the previous panel naturally.',
       ]
     )
 
@@ -568,6 +582,7 @@ def build_panel_prompt(
   chapter: dict[str, Any],
   context: dict[str, Any],
   output_dir: pathlib.Path,
+  overlap_canvas_path: pathlib.Path | None,
   overlap_reference_path: pathlib.Path | None,
   overlap_ratio: float,
 ) -> str:
@@ -599,6 +614,7 @@ def build_panel_prompt(
       previous_panel_reference_context(
         output_dir=output_dir,
         panel_number=panel_number,
+        overlap_canvas_path=overlap_canvas_path,
         overlap_reference_path=overlap_reference_path,
         overlap_ratio=overlap_ratio,
       ),
@@ -740,6 +756,10 @@ def overlap_source_path(output_dir: pathlib.Path, panel_number: int) -> pathlib.
   return continuity_work_dir(output_dir) / f'panel-{panel_number:03d}-overlap-source.png'
 
 
+def overlap_canvas_path(output_dir: pathlib.Path, panel_number: int) -> pathlib.Path:
+  return continuity_work_dir(output_dir) / f'panel-{panel_number:03d}-outpaint-canvas.png'
+
+
 def overlap_raw_path(output_dir: pathlib.Path, panel_number: int) -> pathlib.Path:
   return continuity_work_dir(output_dir) / f'panel-{panel_number:03d}-raw-extended.png'
 
@@ -752,32 +772,62 @@ def run_overlap_tool(
   subprocess.run(['node', str(overlap_tool), *args], check=True)
 
 
+def png_dimensions(path: pathlib.Path) -> tuple[int, int]:
+  data = path.read_bytes()
+  if len(data) < 33 or not data.startswith(b'\x89PNG\r\n\x1a\n') or data[12:16] != b'IHDR':
+    raise ValueError(f'{path}: expected a PNG with an IHDR chunk')
+  width, height = struct.unpack('>II', data[16:24])
+  return (int(width), int(height))
+
+
+def configured_target_panel_height(previous_path: pathlib.Path) -> int:
+  env_value = str(os.environ.get('MANHWA_IMAGE_TARGET_PANEL_HEIGHT') or '').strip()
+  if env_value:
+    try:
+      return max(configured_min_height(), int(env_value))
+    except ValueError as error:
+      raise ValueError('MANHWA_IMAGE_TARGET_PANEL_HEIGHT must be an integer.') from error
+
+  _width, previous_height = png_dimensions(previous_path)
+  return max(configured_min_height(), previous_height)
+
+
 def prepare_overlap_reference(
   *,
   output_dir: pathlib.Path,
   overlap_ratio: float,
   overlap_tool: pathlib.Path,
   panel_number: int,
-) -> pathlib.Path | None:
+) -> tuple[pathlib.Path, pathlib.Path, int] | None:
   previous_path = panel_output_path(output_dir, panel_number - 1)
   if not previous_path.exists():
     return None
 
   source_path = overlap_source_path(output_dir, panel_number)
+  canvas_path = overlap_canvas_path(output_dir, panel_number)
   source_path.parent.mkdir(parents=True, exist_ok=True)
+  target_height = configured_target_panel_height(previous_path)
   run_overlap_tool(
     overlap_tool=overlap_tool,
     args=[
-      'prepare',
+      'canvas',
       '--previous',
       str(previous_path.resolve()),
-      '--output',
+      '--overlap-output',
       str(source_path.resolve()),
+      '--canvas-output',
+      str(canvas_path.resolve()),
       '--ratio',
       str(overlap_ratio),
+      '--target-height',
+      str(target_height),
     ],
   )
-  return source_path
+  return (
+    source_path,
+    canvas_path,
+    math.ceil(target_height * (1 + overlap_ratio)),
+  )
 
 
 def trim_overlap_render(
@@ -907,17 +957,21 @@ def main() -> int:
     if output_path.exists() and not args.force:
       print(f'skipping panel {panel_number}: {output_path} already exists')
     else:
+      overlap_canvas_reference_path: pathlib.Path | None = None
       overlap_reference_path: pathlib.Path | None = None
+      raw_min_height: int | None = None
       raw_output_path = output_path
       overlap_extension = continuity_overlap_enabled(args, panel_number)
       if overlap_extension:
         try:
-          overlap_reference_path = prepare_overlap_reference(
+          overlap_prepared = prepare_overlap_reference(
             output_dir=output_dir,
             overlap_ratio=args.continuity_overlap_ratio,
             overlap_tool=overlap_tool,
             panel_number=panel_number,
           )
+          if overlap_prepared:
+            overlap_reference_path, overlap_canvas_reference_path, raw_min_height = overlap_prepared
         except subprocess.CalledProcessError as error:
           failed.append(
             {
@@ -931,7 +985,7 @@ def main() -> int:
           )
           continue
 
-        if overlap_reference_path:
+        if overlap_reference_path and overlap_canvas_reference_path:
           raw_output_path = overlap_raw_path(output_dir, panel_number)
           raw_output_path.unlink(missing_ok=True)
 
@@ -943,6 +997,7 @@ def main() -> int:
         chapter=chapter,
         context=context,
         output_dir=output_dir,
+        overlap_canvas_path=overlap_canvas_reference_path,
         overlap_reference_path=overlap_reference_path,
         overlap_ratio=args.continuity_overlap_ratio,
       )
@@ -950,14 +1005,14 @@ def main() -> int:
         run_image_generator(
           codex_image_script=codex_image_script,
           min_height=(
-            overlap_raw_min_height(args.continuity_overlap_ratio)
-            if overlap_extension and overlap_reference_path
+            raw_min_height
+            if overlap_extension and overlap_reference_path and overlap_canvas_reference_path
             else None
           ),
           output_path=raw_output_path,
           prompt=prompt,
         )
-        if overlap_extension and overlap_reference_path:
+        if overlap_extension and overlap_reference_path and overlap_canvas_reference_path:
           trim_overlap_render(
             final_path=output_path,
             overlap_ratio=args.continuity_overlap_ratio,
