@@ -2,6 +2,7 @@ import { createServerFn } from '@tanstack/react-start';
 import { getRequestHeaders } from '@tanstack/react-start/server';
 import { z } from 'zod';
 
+import { envServer } from '@/env/server';
 import {
   getManhwaChapter,
   getNextManhwaChapter,
@@ -11,7 +12,11 @@ import {
   getPublicManhwaSeries,
   getPublicManhwaSeriesBySlug,
 } from '@/features/manhwa/data';
-import { ManhwaChapterView, ManhwaSeriesView } from '@/features/manhwa/schema';
+import {
+  ManhwaChapterView,
+  ManhwaPanelView,
+  ManhwaSeriesView,
+} from '@/features/manhwa/schema';
 import { isManhwaChapterPublic } from '@/features/manhwa/visibility';
 import { auth } from '@/server/auth';
 
@@ -99,21 +104,127 @@ export const getManhwaChapterPageData = createServerFn({ method: 'GET' })
           includePrivate: canViewPrivate,
         })
       : undefined;
+    const privatePanelPaths =
+      canViewPrivate && chapter
+        ? await getPrivateRenderedPanelPaths(data.slug, data.chapter)
+        : new Map<number, string>();
+    const enrichedChapter =
+      canViewPrivate && chapter
+        ? withPrivateRenderedPanels(chapter, privatePanelPaths)
+        : chapter;
+    const enrichedSeries =
+      canViewPrivate && series
+        ? withPrivateRenderedSeries(series, data.chapter, privatePanelPaths)
+        : series;
 
     return {
-      chapter,
+      chapter: enrichedChapter,
       isPrivatePreview:
-        canViewPrivate && chapter ? !isManhwaChapterPublic(chapter) : false,
-      nextChapter: series
-        ? getNextManhwaChapter(series, data.chapter, {
+        canViewPrivate && enrichedChapter
+          ? !isManhwaChapterPublic(enrichedChapter)
+          : false,
+      nextChapter: enrichedSeries
+        ? getNextManhwaChapter(enrichedSeries, data.chapter, {
             includePrivate: canViewPrivate,
           })
         : undefined,
-      previousChapter: series
-        ? getPreviousManhwaChapter(series, data.chapter, {
+      previousChapter: enrichedSeries
+        ? getPreviousManhwaChapter(enrichedSeries, data.chapter, {
             includePrivate: canViewPrivate,
           })
         : undefined,
-      series,
+      series: enrichedSeries,
     };
   });
+
+function withPrivateRenderedSeries(
+  series: ManhwaSeriesView,
+  chapterNumber: number,
+  panelPaths: Map<number, string>
+): ManhwaSeriesView {
+  const chapters = series.chapters.map((chapter) =>
+    chapter.chapterNumber === chapterNumber
+      ? withPrivateRenderedPanels(chapter, panelPaths)
+      : chapter
+  );
+  const coverImagePath =
+    chapters
+      .flatMap((chapter) => chapter.panels)
+      .find((panel) => panel.imagePath)?.imagePath ?? series.coverImagePath;
+
+  return {
+    ...series,
+    chapters,
+    coverImagePath,
+  };
+}
+
+function withPrivateRenderedPanels(
+  chapter: ManhwaChapterView,
+  panelPaths: Map<number, string>
+): ManhwaChapterView {
+  if (panelPaths.size === 0) {
+    return chapter;
+  }
+
+  return {
+    ...chapter,
+    panels: chapter.panels.map((panel, index): ManhwaPanelView => {
+      const panelNumber = index + 1;
+      const imagePath = panelPaths.get(panelNumber) ?? panel.imagePath;
+
+      return imagePath
+        ? {
+            ...panel,
+            imagePath,
+          }
+        : panel;
+    }),
+  };
+}
+
+async function getPrivateRenderedPanelPaths(
+  slug: string,
+  chapterNumber: number
+) {
+  const path = await import('node:path');
+  const { readdir } = await import('node:fs/promises');
+  const privateRoot = path.resolve(
+    envServer.MANHWA_PRIVATE_ROOT ??
+      path.join(process.cwd(), 'docs/manhwa/private')
+  );
+  const chapterDir = path.resolve(
+    privateRoot,
+    slug,
+    `chapter-${String(chapterNumber).padStart(3, '0')}`
+  );
+
+  if (!chapterDir.startsWith(`${privateRoot}${path.sep}`)) {
+    return new Map<number, string>();
+  }
+
+  try {
+    const entries = await readdir(chapterDir, { withFileTypes: true });
+    const panelPaths = new Map<number, string>();
+
+    for (const entry of entries) {
+      if (!entry.isFile()) {
+        continue;
+      }
+
+      const match = /^panel-(\d+)\.(?:png|jpe?g|webp)$/i.exec(entry.name);
+      const panelNumber = match ? Number.parseInt(match[1] ?? '0', 10) : 0;
+
+      if (panelNumber > 0) {
+        panelPaths.set(
+          panelNumber,
+          `/api/manhwa-private/${slug}/chapter/${chapterNumber}/panel/${panelNumber}`
+        );
+      }
+    }
+
+    return panelPaths;
+  } catch {
+    return new Map<number, string>();
+  }
+}
