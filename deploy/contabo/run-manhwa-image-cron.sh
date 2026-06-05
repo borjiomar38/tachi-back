@@ -43,7 +43,8 @@ package_file="${MANHWA_IMAGE_PACKAGE_FILE:-docs/manhwa/generated/the-eclipse-cro
 output_root="${MANHWA_IMAGE_OUTPUT_ROOT:-docs/manhwa/private}"
 codex_image_script="${MANHWA_IMAGE_SCRIPT_PATH:-/usr/local/bin/tachi-codex-image-generator}"
 context_dir="${MANHWA_CONTEXT_DIR:-docs/manhwa/context/the-eclipse-crown}"
-daily_limit="${MANHWA_IMAGE_DAILY_LIMIT:-1}"
+daily_limit="${MANHWA_IMAGE_DAILY_LIMIT:-12}"
+run_limit="${MANHWA_IMAGE_RUN_LIMIT:-1}"
 allow_unapproved="${MANHWA_IMAGE_ALLOW_UNAPPROVED:-false}"
 force="${MANHWA_IMAGE_FORCE:-false}"
 require_character_references="${MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES:-true}"
@@ -69,6 +70,74 @@ fi
 if [[ ! -f "${renderer}" ]]; then
   echo "Manhwa image renderer is missing: ${renderer}" >&2
   exit 1
+fi
+
+limit_plan="$(
+  python3 - "${package_file}" "${output_root}" "${daily_limit}" "${run_limit}" <<'PY'
+import datetime as dt
+import json
+import pathlib
+import re
+import sys
+
+package_path = pathlib.Path(sys.argv[1])
+output_root = pathlib.Path(sys.argv[2])
+
+try:
+    daily_limit = int(sys.argv[3])
+except ValueError:
+    print(f"Invalid MANHWA_IMAGE_DAILY_LIMIT: {sys.argv[3]}", file=sys.stderr)
+    raise SystemExit(2)
+
+try:
+    run_limit = int(sys.argv[4])
+except ValueError:
+    print(f"Invalid MANHWA_IMAGE_RUN_LIMIT: {sys.argv[4]}", file=sys.stderr)
+    raise SystemExit(2)
+
+if daily_limit < 1:
+    print("MANHWA_IMAGE_DAILY_LIMIT must be at least 1.", file=sys.stderr)
+    raise SystemExit(2)
+
+if run_limit < 1:
+    print("MANHWA_IMAGE_RUN_LIMIT must be at least 1.", file=sys.stderr)
+    raise SystemExit(2)
+
+package = json.loads(package_path.read_text(encoding="utf-8"))
+series_slug = package.get("series_slug") or (package.get("series") or {}).get("slug")
+chapter = package.get("chapter") or {}
+chapter_number = int(
+    package.get("chapter_number") or chapter.get("chapter_number") or 1
+)
+
+if not series_slug:
+    print("Package is missing series_slug.", file=sys.stderr)
+    raise SystemExit(2)
+
+chapter_dir = output_root / series_slug / f"chapter-{chapter_number:03d}"
+today_start = dt.datetime.combine(dt.date.today(), dt.time.min).timestamp()
+rendered_today = 0
+
+if chapter_dir.exists():
+    for image_path in chapter_dir.iterdir():
+        if (
+            image_path.is_file()
+            and re.fullmatch(r"panel-\d+\.(?:png|jpe?g|webp)", image_path.name, re.I)
+            and image_path.stat().st_mtime >= today_start
+        ):
+            rendered_today += 1
+
+remaining_today = max(daily_limit - rendered_today, 0)
+effective_limit = min(run_limit, remaining_today)
+print(f"{effective_limit}|{rendered_today}|{remaining_today}|{chapter_dir}")
+PY
+)"
+
+IFS='|' read -r effective_limit rendered_today remaining_today chapter_output_dir <<<"${limit_plan}"
+
+if [[ "${effective_limit}" -lt 1 ]]; then
+  log "Daily manhwa image limit reached (${rendered_today}/${daily_limit}) for ${chapter_output_dir}; skipping."
+  exit 0
 fi
 
 if [[ "${require_character_references}" == "true" ]]; then
@@ -136,7 +205,7 @@ args=(
   "${context_dir}"
   --next-missing
   --limit
-  "${daily_limit}"
+  "${effective_limit}"
 )
 
 if [[ "${allow_unapproved}" == "true" ]]; then
@@ -147,5 +216,5 @@ if [[ "${force}" == "true" ]]; then
   args+=(--force)
 fi
 
-log "Rendering up to ${daily_limit} missing manhwa panel image(s) from ${package_file}."
+log "Rendering up to ${effective_limit} missing manhwa panel image(s) from ${package_file}; daily ${rendered_today}/${daily_limit}, run limit ${run_limit}."
 python3 "${renderer}" "${args[@]}"

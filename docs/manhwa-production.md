@@ -112,7 +112,10 @@ generation without copying them into the image build.
 ## Daily Panel Cron
 
 The chapter image cron renders exactly the next missing approved panel image and
-then stops. This keeps production predictable: one new panel image per day.
+then stops. `MANHWA_IMAGE_RUN_LIMIT=1` keeps each execution to one panel, while
+`MANHWA_IMAGE_DAILY_LIMIT=12` caps the total panels rendered in one server-local
+day. Running the cron every two hours gives the first chapter room to finish
+faster without letting one execution consume the whole queue.
 
 Install on Contabo from the deployed source tree:
 
@@ -158,7 +161,8 @@ MANHWA_CHARACTER_REFERENCE_DAILY_LIMIT=1
 MANHWA_CHARACTER_REFERENCE_REQUIRE_DOSSIERS=true
 MANHWA_CHARACTER_REFERENCE_DRY_RUN=false
 MANHWA_CHARACTER_REFERENCE_FORCE=false
-MANHWA_IMAGE_DAILY_LIMIT=1
+MANHWA_IMAGE_DAILY_LIMIT=12
+MANHWA_IMAGE_RUN_LIMIT=1
 MANHWA_IMAGE_REQUIRE_PREPRODUCTION=true
 MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES=true
 MANHWA_IMAGE_ALLOW_UNAPPROVED=false
@@ -200,7 +204,7 @@ Cron entry:
 ```cron
 35 0 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-preproduction-cron >> /var/log/tachi-manhwa-preproduction-cron.log 2>&1
 05 1 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-character-reference-cron >> /var/log/tachi-manhwa-character-reference-cron.log 2>&1
-15 2 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-image-cron >> /var/log/tachi-manhwa-image-cron.log 2>&1
+45 */2 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-image-cron >> /var/log/tachi-manhwa-image-cron.log 2>&1
 45 2 * * * TACHI_APP_DIR=/opt/tachi-back MANHWA_AGENT_ENV_FILE=/opt/tachi-back/.env.manhwa-production /usr/local/bin/tachi-manhwa-copyright-cron >> /var/log/tachi-manhwa-copyright-cron.log 2>&1
 ```
 
@@ -214,7 +218,8 @@ preproduction cron consumes the creative lane in this order:
    reference image plan for that character.
 4. Then: build the chapter scenario.
 5. Then: generate character reference images.
-6. Then: generate one finished chapter panel image per day.
+6. Then: generate one finished chapter panel image per run, capped at 12 per
+   day.
 
 The character reference cron refuses to run while character dossiers are
 missing. The panel cron refuses to run until preproduction is ready and

@@ -115,7 +115,7 @@ export const PageManhwaSeriesList = ({ data }: PageManhwaSeriesListProps) => {
                       icon={<BookOpenTextIcon className="size-4" />}
                       label="Chapter 1"
                       value={`${series.chapterImageCount}/${series.chapterPanelCount}`}
-                      subValue="panel images"
+                      subValue={chapterStatusLabel(series)}
                     />
                     <Metric
                       label="Updated"
@@ -165,6 +165,26 @@ function formatDateTime(value?: string) {
         .toISOString()
         .replace('T', ' ')
         .replace(/\.\d{3}Z$/, ' UTC');
+}
+
+function chapterStatusLabel(series: ManhwaManagerSeriesList['series'][number]) {
+  if (series.chapterRenderingActive) {
+    return `panel ${
+      series.chapterRenderingActivePanelNumber ??
+      series.chapterImageNextPanelNumber ??
+      'unknown'
+    } rendering`;
+  }
+
+  if (series.chapterFailedCount > 0) {
+    return `${series.chapterFailedCount} failed`;
+  }
+
+  if (series.chapterImageMissingCount === 0 && series.chapterPanelCount > 0) {
+    return 'all panels ready';
+  }
+
+  return `${series.chapterImageMissingCount} missing`;
 }
 
 function humanizeTask(value?: string) {

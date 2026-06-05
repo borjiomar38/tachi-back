@@ -41,6 +41,7 @@ export interface ManhwaManagerCharacter {
 
 export interface ManhwaManagerOverview {
   canView: boolean;
+  chapterRendering: ManhwaManagerChapterRendering;
   characters: ManhwaManagerCharacter[];
   contextRoot?: string;
   files: {
@@ -80,6 +81,25 @@ export interface ManhwaManagerOverview {
   seriesSlug: string;
 }
 
+export interface ManhwaManagerChapterRendering {
+  active: boolean;
+  activePanelNumber?: number;
+  activeProcessCount: number;
+  dailyLimit: number;
+  failedCount: number;
+  failedPanels: number[];
+  generatedAt?: string;
+  generatedCount: number;
+  lastPanelGeneratedAt?: string;
+  manifestAvailable: boolean;
+  missingCount: number;
+  nextPanelNumber?: number;
+  renderedPanels: number[];
+  renderedThisRun: number[];
+  runLimit: number;
+  totalPanels: number;
+}
+
 export interface ManhwaManagerSeriesList {
   canView: boolean;
   contextRoot?: string;
@@ -87,8 +107,13 @@ export interface ManhwaManagerSeriesList {
 }
 
 export interface ManhwaManagerSeriesSummary {
+  chapterFailedCount: number;
   chapterImageCount: number;
+  chapterImageMissingCount: number;
+  chapterImageNextPanelNumber?: number;
   chapterPanelCount: number;
+  chapterRenderingActive: boolean;
+  chapterRenderingActivePanelNumber?: number;
   coreHook?: string;
   generatedAt?: string;
   nextTask?: {
@@ -165,6 +190,7 @@ export const getManhwaManagerOverview = createServerFn({
     const { access } = await import('node:fs/promises');
     const path = await import('node:path');
     const contextRoot = await getContextRoot();
+    const privateRoot = await getPrivateRoot();
     const seriesSlug = data.seriesSlug;
     const seriesDir = path.join(contextRoot, seriesSlug);
     const preproductionDir = path.join(seriesDir, 'preproduction');
@@ -243,9 +269,17 @@ export const getManhwaManagerOverview = createServerFn({
       referenceOverview.next_missing_reference
     );
     const nextPanelHint = asRecord(chapterIndex.next_panel_hint);
+    const chapterRendering = await getChapterRenderingStatus({
+      chapterIndex,
+      chapterNumber: 1,
+      contextRoot,
+      privateRoot,
+      seriesSlug,
+    });
 
     return {
       canView: true,
+      chapterRendering,
       characters,
       contextRoot,
       files: {
@@ -323,11 +357,22 @@ async function getSeriesSummary(
   );
   const referenceOverview = asRecord(charactersIndex.reference_status);
   const nextTask = asRecord(status.next_task);
-  const chapterPanelCount = asArray(chapterIndex.panels).length;
+  const chapterRendering = await getChapterRenderingStatus({
+    chapterIndex,
+    chapterNumber: 1,
+    contextRoot,
+    privateRoot,
+    seriesSlug,
+  });
 
   return {
-    chapterImageCount: await countChapterImages(privateRoot, seriesSlug, 1),
-    chapterPanelCount,
+    chapterFailedCount: chapterRendering.failedCount,
+    chapterImageCount: chapterRendering.generatedCount,
+    chapterImageMissingCount: chapterRendering.missingCount,
+    chapterImageNextPanelNumber: chapterRendering.nextPanelNumber,
+    chapterPanelCount: chapterRendering.totalPanels,
+    chapterRenderingActive: chapterRendering.active,
+    chapterRenderingActivePanelNumber: chapterRendering.activePanelNumber,
     coreHook: stringValue(seriesBible.core_hook),
     generatedAt:
       stringValue(status.generated_at) || stringValue(index.generated_at),
@@ -344,31 +389,6 @@ async function getSeriesSummary(
   };
 }
 
-async function countChapterImages(
-  privateRoot: string,
-  seriesSlug: string,
-  chapterNumber: number
-) {
-  try {
-    const { readdir } = await import('node:fs/promises');
-    const path = await import('node:path');
-    const entries = await readdir(
-      path.join(
-        privateRoot,
-        seriesSlug,
-        `chapter-${String(chapterNumber).padStart(3, '0')}`
-      ),
-      { withFileTypes: true }
-    );
-
-    return entries.filter(
-      (entry) => entry.isFile() && /\.(?:png|jpe?g|webp)$/i.test(entry.name)
-    ).length;
-  } catch {
-    return 0;
-  }
-}
-
 async function getContextRoot() {
   const path = await import('node:path');
 
@@ -376,6 +396,170 @@ async function getContextRoot() {
     envServer.MANHWA_CONTEXT_ROOT ??
       path.join(process.cwd(), 'docs/manhwa/context')
   );
+}
+
+async function getChapterRenderingStatus(input: {
+  chapterIndex?: Record<string, unknown>;
+  chapterNumber: number;
+  contextRoot: string;
+  privateRoot: string;
+  seriesSlug: string;
+}): Promise<ManhwaManagerChapterRendering> {
+  const path = await import('node:path');
+  const chapterId = `chapter-${String(input.chapterNumber).padStart(3, '0')}`;
+  const chapterIndex =
+    input.chapterIndex ??
+    (await readJsonObject(
+      path.join(
+        input.contextRoot,
+        input.seriesSlug,
+        'chapters',
+        `${chapterId}.index.json`
+      )
+    ));
+  const plannedPanels = asArray(chapterIndex.panels)
+    .map((panel) => numberValue(asRecord(panel).panel_number))
+    .filter((panelNumber) => panelNumber > 0);
+  const totalPanels = plannedPanels.length;
+  const chapterDir = path.join(input.privateRoot, input.seriesSlug, chapterId);
+  const manifest = await readJsonObject(
+    path.join(chapterDir, `${chapterId}-images.json`)
+  );
+  const imageFiles = await listChapterPanelImages(chapterDir);
+  const filePanels = imageFiles.map((image) => image.panelNumber);
+  const manifestRenderedPanels = asArray(manifest.rendered)
+    .map((item) => numberValue(asRecord(item).panel_number))
+    .filter((panelNumber) => panelNumber > 0);
+  const renderedPanels = uniqueNumbers([
+    ...filePanels,
+    ...manifestRenderedPanels,
+  ]);
+  const plannedSet = new Set(plannedPanels);
+  const generatedCount = renderedPanels.filter((panelNumber) =>
+    plannedSet.has(panelNumber)
+  ).length;
+  const missingPanels = plannedPanels.filter(
+    (panelNumber) => !renderedPanels.includes(panelNumber)
+  );
+  const failedPanels = uniqueNumbers(
+    asArray(manifest.failed)
+      .map((item) => numberValue(asRecord(item).panel_number))
+      .filter((panelNumber) => panelNumber > 0)
+  );
+  const activeProcess = await getActiveManhwaImageProcessStatus({
+    chapterNumber: input.chapterNumber,
+    seriesSlug: input.seriesSlug,
+  });
+  const latestImage = imageFiles
+    .filter((image) => image.modifiedAt)
+    .sort((left, right) =>
+      String(right.modifiedAt).localeCompare(String(left.modifiedAt))
+    )[0];
+
+  return {
+    active: activeProcess.active,
+    activePanelNumber: activeProcess.panelNumber,
+    activeProcessCount: activeProcess.processCount,
+    dailyLimit: envServer.MANHWA_IMAGE_DAILY_LIMIT,
+    failedCount: failedPanels.length,
+    failedPanels,
+    generatedAt: stringValue(manifest.generated_at),
+    generatedCount,
+    lastPanelGeneratedAt: latestImage?.modifiedAt,
+    manifestAvailable: Object.keys(manifest).length > 0,
+    missingCount: missingPanels.length,
+    nextPanelNumber: missingPanels[0],
+    renderedPanels,
+    renderedThisRun: asArray(manifest.rendered_this_run)
+      .map((item) => numberValue(asRecord(item).panel_number))
+      .filter((panelNumber) => panelNumber > 0),
+    runLimit: envServer.MANHWA_IMAGE_RUN_LIMIT,
+    totalPanels,
+  };
+}
+
+async function listChapterPanelImages(chapterDir: string) {
+  try {
+    const { readdir, stat } = await import('node:fs/promises');
+    const path = await import('node:path');
+    const entries = await readdir(chapterDir, { withFileTypes: true });
+    const images = await Promise.all(
+      entries.map(async (entry) => {
+        const match = /^panel-(\d+)\.(?:png|jpe?g|webp)$/i.exec(entry.name);
+
+        if (!entry.isFile() || !match) {
+          return null;
+        }
+
+        const filePath = path.join(chapterDir, entry.name);
+        const fileStat = await stat(filePath);
+
+        return {
+          modifiedAt: fileStat.mtime.toISOString(),
+          panelNumber: Number.parseInt(match[1] ?? '0', 10),
+        };
+      })
+    );
+
+    return images
+      .filter(
+        (image): image is { modifiedAt: string; panelNumber: number } =>
+          image !== null && image.panelNumber > 0
+      )
+      .sort((left, right) => left.panelNumber - right.panelNumber);
+  } catch {
+    return [];
+  }
+}
+
+async function getActiveManhwaImageProcessStatus(input: {
+  chapterNumber: number;
+  seriesSlug: string;
+}) {
+  try {
+    const { execFile } = await import('node:child_process');
+    const { promisify } = await import('node:util');
+    const execFileAsync = promisify(execFile);
+    const { stdout } = await execFileAsync(
+      'ps',
+      ['-eo', 'pid=,etimes=,command='],
+      { maxBuffer: 1024 * 1024, timeout: 1000 }
+    );
+    const chapterId = `chapter-${String(input.chapterNumber).padStart(3, '0')}`;
+    const candidates = stdout
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) =>
+        /(?:tachi-manhwa-image-cron|tachi-manhwa-image-renderer|render-manhwa-chapter-images\.py|tachi-codex-image-generator)/.test(
+          line
+        )
+      )
+      .filter(
+        (line) =>
+          line.includes(input.seriesSlug) ||
+          line.includes(chapterId) ||
+          line.includes('tachi-manhwa-image-cron')
+      )
+      .filter((line) => !line.includes(' ps -eo '));
+
+    const panelNumber = candidates
+      .map((line) => /panel-(\d+)\.png/.exec(line)?.[1])
+      .filter((value): value is string => Boolean(value))
+      .map((value) => Number.parseInt(value, 10))
+      .find((value) => value > 0);
+
+    return {
+      active: candidates.length > 0,
+      panelNumber,
+      processCount: candidates.length,
+    };
+  } catch {
+    return {
+      active: false,
+      panelNumber: undefined,
+      processCount: 0,
+    };
+  }
 }
 
 async function getPrivateRoot() {
@@ -417,6 +601,7 @@ function emptyOverview(input: {
 }): ManhwaManagerOverview {
   return {
     canView: input.canView,
+    chapterRendering: emptyChapterRendering(),
     characters: [],
     files: {
       chapterScenario: false,
@@ -437,6 +622,23 @@ function emptyOverview(input: {
       totalCount: 0,
     },
     seriesSlug: input.seriesSlug,
+  };
+}
+
+function emptyChapterRendering(): ManhwaManagerChapterRendering {
+  return {
+    active: false,
+    activeProcessCount: 0,
+    dailyLimit: 12,
+    failedCount: 0,
+    failedPanels: [],
+    generatedCount: 0,
+    manifestAvailable: false,
+    missingCount: 0,
+    renderedPanels: [],
+    renderedThisRun: [],
+    runLimit: 1,
+    totalPanels: 0,
   };
 }
 
@@ -466,4 +668,8 @@ function numberValue(value: unknown) {
 
 function stringValue(value: unknown) {
   return typeof value === 'string' ? value : undefined;
+}
+
+function uniqueNumbers(values: number[]) {
+  return [...new Set(values)].sort((left, right) => left - right);
 }

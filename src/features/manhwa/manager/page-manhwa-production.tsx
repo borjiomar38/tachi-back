@@ -1,4 +1,6 @@
 import {
+  ActivityIcon,
+  AlertTriangleIcon,
   BookOpenTextIcon,
   CheckCircle2Icon,
   ExternalLinkIcon,
@@ -70,6 +72,13 @@ export const PageManhwaProduction = ({
   const dossierReadyCount = overview.characters.filter(
     (character) => character.dossierReady
   ).length;
+  const chapterRendering = overview.chapterRendering;
+  const chapterProgress =
+    chapterRendering.totalPanels > 0
+      ? Math.round(
+          (chapterRendering.generatedCount / chapterRendering.totalPanels) * 100
+        )
+      : 0;
 
   return (
     <PageLayout>
@@ -96,7 +105,7 @@ export const PageManhwaProduction = ({
       </PageLayoutTopBar>
       <PageLayoutContent containerClassName="max-w-7xl">
         <div className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
             <SummaryCard
               label="Series"
               subLabel={overview.seriesSlug}
@@ -130,6 +139,18 @@ export const PageManhwaProduction = ({
                 overview.referenceStatus.missingCount === 0
                   ? 'positive'
                   : 'warning'
+              }
+            />
+            <SummaryCard
+              label="Chapter 1"
+              subLabel={chapterSummaryLabel(chapterRendering)}
+              value={`${chapterRendering.generatedCount}/${chapterRendering.totalPanels}`}
+              variant={
+                chapterRendering.failedCount > 0
+                  ? 'warning'
+                  : chapterRendering.missingCount === 0
+                    ? 'positive'
+                    : 'warning'
               }
             />
           </div>
@@ -193,6 +214,119 @@ export const PageManhwaProduction = ({
             </div>
 
             <div className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-between gap-3">
+                    <span className="inline-flex items-center gap-2">
+                      <ActivityIcon className="size-4" />
+                      Chapter rendering
+                    </span>
+                    <Badge
+                      variant={
+                        chapterRendering.failedCount > 0
+                          ? 'warning'
+                          : chapterRendering.active
+                            ? 'brand'
+                            : chapterRendering.missingCount === 0
+                              ? 'positive'
+                              : 'secondary'
+                      }
+                      size="sm"
+                    >
+                      {chapterRendering.active
+                        ? 'rendering'
+                        : chapterRendering.missingCount === 0
+                          ? 'complete'
+                          : 'waiting'}
+                    </Badge>
+                  </CardTitle>
+                  <CardDescription>
+                    Private chapter panel state from the rendered image manifest
+                    and protected image folder.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4 text-sm">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground">
+                      <span>{chapterProgress}% ready</span>
+                      <span>
+                        {chapterRendering.generatedCount}/
+                        {chapterRendering.totalPanels} panels
+                      </span>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-full bg-muted">
+                      <div
+                        className="h-full rounded-full bg-primary"
+                        style={{ width: `${chapterProgress}%` }}
+                      />
+                    </div>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <KeyValue
+                      label="Active"
+                      value={
+                        chapterRendering.active
+                          ? `panel ${chapterRendering.activePanelNumber ?? 'unknown'}`
+                          : 'no active render'
+                      }
+                    />
+                    <KeyValue
+                      label="Next panel"
+                      value={
+                        chapterRendering.nextPanelNumber
+                          ? `panel ${chapterRendering.nextPanelNumber}`
+                          : 'none'
+                      }
+                    />
+                    <KeyValue
+                      label="Daily cap"
+                      value={`${chapterRendering.dailyLimit}/day`}
+                    />
+                    <KeyValue
+                      label="Run cap"
+                      value={`${chapterRendering.runLimit}/run`}
+                    />
+                    <KeyValue
+                      label="Last image"
+                      value={formatDateTime(
+                        chapterRendering.lastPanelGeneratedAt
+                      )}
+                    />
+                    <KeyValue
+                      label="Manifest"
+                      value={
+                        chapterRendering.manifestAvailable
+                          ? formatDateTime(chapterRendering.generatedAt)
+                          : 'missing'
+                      }
+                    />
+                  </div>
+                  {chapterRendering.renderedPanels.length ? (
+                    <PanelList
+                      label="Ready panels"
+                      panels={chapterRendering.renderedPanels}
+                    />
+                  ) : null}
+                  {chapterRendering.renderedThisRun.length ? (
+                    <PanelList
+                      label="Last run"
+                      panels={chapterRendering.renderedThisRun}
+                    />
+                  ) : null}
+                  {chapterRendering.failedPanels.length ? (
+                    <div className="flex items-start gap-2 rounded-md border border-warning-500/30 bg-warning-500/10 p-3 text-warning-800 dark:text-warning-100">
+                      <AlertTriangleIcon className="mt-0.5 size-4 shrink-0" />
+                      <div>
+                        <p className="font-medium">Failed panels</p>
+                        <p className="mt-1">
+                          {formatPanels(chapterRendering.failedPanels)}
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
+                </CardContent>
+              </Card>
+
               <Card>
                 <CardHeader>
                   <CardTitle>Private context</CardTitle>
@@ -460,6 +594,21 @@ function TextBlock(props: { label: string; value?: string }) {
   );
 }
 
+function PanelList(props: { label: string; panels: number[] }) {
+  return (
+    <div className="space-y-2">
+      <p className="text-xs font-medium text-muted-foreground">{props.label}</p>
+      <div className="flex flex-wrap gap-1.5">
+        {props.panels.map((panel) => (
+          <Badge key={panel} variant="secondary" size="sm">
+            panel {panel}
+          </Badge>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function formatDateTime(value?: string) {
   if (!value) {
     return 'missing';
@@ -473,6 +622,24 @@ function formatDateTime(value?: string) {
         .toISOString()
         .replace('T', ' ')
         .replace(/\.\d{3}Z$/, ' UTC');
+}
+
+function chapterSummaryLabel(
+  rendering: ManhwaManagerOverview['chapterRendering']
+) {
+  if (rendering.active) {
+    return `panel ${rendering.activePanelNumber ?? 'unknown'} rendering`;
+  }
+
+  if (rendering.missingCount === 0 && rendering.totalPanels > 0) {
+    return 'all panels ready';
+  }
+
+  return `${rendering.missingCount} missing`;
+}
+
+function formatPanels(panels: number[]) {
+  return panels.map((panel) => `panel ${panel}`).join(', ');
 }
 
 function humanizeTask(value?: string) {

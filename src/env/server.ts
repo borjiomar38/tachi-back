@@ -193,6 +193,8 @@ const envServerBase = createEnv({
     BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(true),
     BLOG_IMAGE_PUBLIC_BASE_URL: z.url().optional(),
     MANHWA_CONTEXT_ROOT: z.string().optional(),
+    MANHWA_IMAGE_DAILY_LIMIT: z.coerce.number().int().positive().default(12),
+    MANHWA_IMAGE_RUN_LIMIT: z.coerce.number().int().positive().default(1),
     MANHWA_PRIVATE_ROOT: z.string().optional(),
     VITE_S3_BUCKET_PUBLIC_URL: z.url().optional(),
 
