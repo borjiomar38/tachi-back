@@ -98,8 +98,11 @@ The renderer refuses unapproved packages unless `--allow-unapproved` is passed
 for a local smoke test. It writes draft panel images under
 `docs/manhwa/private/<series-slug>/chapter-XXX/` with narration captions and
 character-owned dialogue bubbles generated directly in the image. Outputs are
-recorded in `chapter-001-images.json`. Draft images must not be written under
-`public/`; admin preview reads them through the protected
+recorded in `chapter-001-images.json`. The cron also writes a private
+`render-status.json` marker in the same chapter folder so the Dockerized admin
+backoffice can show whether the host-side renderer is running, idle, failed, or
+daily-limit blocked. Draft images must not be written under `public/`; admin
+preview reads them through the protected
 `/api/manhwa-private/...` route. The backend must still not call OpenAI image
 APIs for Nayovi Originals images.
 

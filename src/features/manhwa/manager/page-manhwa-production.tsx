@@ -287,6 +287,14 @@ export const PageManhwaProduction = ({
                       value={`${chapterRendering.runLimit}/run`}
                     />
                     <KeyValue
+                      label="Status"
+                      value={humanizeTask(chapterRendering.status)}
+                    />
+                    <KeyValue
+                      label="Status updated"
+                      value={formatDateTime(chapterRendering.statusUpdatedAt)}
+                    />
+                    <KeyValue
                       label="Last image"
                       value={formatDateTime(
                         chapterRendering.lastPanelGeneratedAt
@@ -301,6 +309,18 @@ export const PageManhwaProduction = ({
                       }
                     />
                   </div>
+                  {chapterRendering.statusStale ? (
+                    <div className="flex items-start gap-2 rounded-md border border-warning-500/30 bg-warning-500/10 p-3 text-warning-800 dark:text-warning-100">
+                      <AlertTriangleIcon className="mt-0.5 size-4 shrink-0" />
+                      <div>
+                        <p className="font-medium">Stale render status</p>
+                        <p className="mt-1">
+                          The last running marker is older than expected; check
+                          the image cron log before forcing a retry.
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
                   {chapterRendering.renderedPanels.length ? (
                     <PanelList
                       label="Ready panels"

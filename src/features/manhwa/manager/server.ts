@@ -96,6 +96,9 @@ export interface ManhwaManagerChapterRendering {
   nextPanelNumber?: number;
   renderedPanels: number[];
   renderedThisRun: number[];
+  status: string;
+  statusStale: boolean;
+  statusUpdatedAt?: string;
   runLimit: number;
   totalPanels: number;
 }
@@ -425,6 +428,9 @@ async function getChapterRenderingStatus(input: {
   const manifest = await readJsonObject(
     path.join(chapterDir, `${chapterId}-images.json`)
   );
+  const renderStatus = await readJsonObject(
+    path.join(chapterDir, 'render-status.json')
+  );
   const imageFiles = await listChapterPanelImages(chapterDir);
   const filePanels = imageFiles.map((image) => image.panelNumber);
   const manifestRenderedPanels = asArray(manifest.rendered)
@@ -450,6 +456,14 @@ async function getChapterRenderingStatus(input: {
     chapterNumber: input.chapterNumber,
     seriesSlug: input.seriesSlug,
   });
+  const renderStatusValue = stringValue(renderStatus.status) ?? 'unknown';
+  const renderStatusUpdatedAt = stringValue(renderStatus.updated_at);
+  const renderStatusActive =
+    booleanValue(renderStatus.active) || renderStatusValue === 'running';
+  const renderStatusStale =
+    renderStatusActive &&
+    isOlderThan(renderStatusUpdatedAt, 4 * 60 * 60 * 1000);
+  const activeFromStatus = renderStatusActive && !renderStatusStale;
   const latestImage = imageFiles
     .filter((image) => image.modifiedAt)
     .sort((left, right) =>
@@ -457,10 +471,14 @@ async function getChapterRenderingStatus(input: {
     )[0];
 
   return {
-    active: activeProcess.active,
-    activePanelNumber: activeProcess.panelNumber,
+    active: activeFromStatus || activeProcess.active,
+    activePanelNumber:
+      numberValue(renderStatus.active_panel_number) ||
+      activeProcess.panelNumber,
     activeProcessCount: activeProcess.processCount,
-    dailyLimit: envServer.MANHWA_IMAGE_DAILY_LIMIT,
+    dailyLimit:
+      numberValue(renderStatus.daily_limit) ||
+      envServer.MANHWA_IMAGE_DAILY_LIMIT,
     failedCount: failedPanels.length,
     failedPanels,
     generatedAt: stringValue(manifest.generated_at),
@@ -473,7 +491,11 @@ async function getChapterRenderingStatus(input: {
     renderedThisRun: asArray(manifest.rendered_this_run)
       .map((item) => numberValue(asRecord(item).panel_number))
       .filter((panelNumber) => panelNumber > 0),
-    runLimit: envServer.MANHWA_IMAGE_RUN_LIMIT,
+    runLimit:
+      numberValue(renderStatus.run_limit) || envServer.MANHWA_IMAGE_RUN_LIMIT,
+    status: renderStatusValue,
+    statusStale: renderStatusStale,
+    statusUpdatedAt: renderStatusUpdatedAt,
     totalPanels,
   };
 }
@@ -638,6 +660,8 @@ function emptyChapterRendering(): ManhwaManagerChapterRendering {
     renderedPanels: [],
     renderedThisRun: [],
     runLimit: 1,
+    status: 'unknown',
+    statusStale: false,
     totalPanels: 0,
   };
 }
@@ -672,4 +696,14 @@ function stringValue(value: unknown) {
 
 function uniqueNumbers(values: number[]) {
   return [...new Set(values)].sort((left, right) => left - right);
+}
+
+function isOlderThan(value: string | undefined, maxAgeMs: number) {
+  if (!value) {
+    return true;
+  }
+
+  const timestamp = Date.parse(value);
+
+  return Number.isNaN(timestamp) || Date.now() - timestamp > maxAgeMs;
 }

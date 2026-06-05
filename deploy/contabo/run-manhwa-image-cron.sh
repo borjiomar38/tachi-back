@@ -128,14 +128,97 @@ if chapter_dir.exists():
             rendered_today += 1
 
 remaining_today = max(daily_limit - rendered_today, 0)
+planned_panels = []
+for panel in package.get("panels") or []:
+    try:
+        planned_panels.append(int(panel.get("panel_number") or 0))
+    except (AttributeError, TypeError, ValueError):
+        continue
+
+existing_panels = set()
+if chapter_dir.exists():
+    for image_path in chapter_dir.iterdir():
+        match = re.fullmatch(r"panel-(\d+)\.(?:png|jpe?g|webp)", image_path.name, re.I)
+        if image_path.is_file() and match:
+            existing_panels.add(int(match.group(1)))
+
+next_panel = next(
+    (panel_number for panel_number in planned_panels if panel_number not in existing_panels),
+    0,
+)
 effective_limit = min(run_limit, remaining_today)
-print(f"{effective_limit}|{rendered_today}|{remaining_today}|{chapter_dir}")
+print(f"{effective_limit}|{rendered_today}|{remaining_today}|{chapter_dir}|{next_panel}")
 PY
 )"
 
-IFS='|' read -r effective_limit rendered_today remaining_today chapter_output_dir <<<"${limit_plan}"
+IFS='|' read -r effective_limit rendered_today remaining_today chapter_output_dir next_panel_number <<<"${limit_plan}"
+status_file="${chapter_output_dir%/}/render-status.json"
+
+write_render_status() {
+  local status="$1"
+  local exit_code="${2:-}"
+
+  mkdir -p "${chapter_output_dir}"
+  python3 - \
+    "${status_file}" \
+    "${status}" \
+    "${exit_code}" \
+    "${package_file}" \
+    "${daily_limit}" \
+    "${run_limit}" \
+    "${effective_limit}" \
+    "${rendered_today}" \
+    "${remaining_today}" \
+    "${next_panel_number}" <<'PY'
+import datetime as dt
+import json
+import pathlib
+import sys
+
+(
+    status_file,
+    status,
+    exit_code,
+    package_file,
+    daily_limit,
+    run_limit,
+    effective_limit,
+    rendered_today,
+    remaining_today,
+    next_panel_number,
+) = sys.argv[1:11]
+
+def as_int(value, default=0):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+payload = {
+    "active": status == "running",
+    "active_panel_number": as_int(next_panel_number) or None,
+    "daily_limit": as_int(daily_limit),
+    "effective_limit": as_int(effective_limit),
+    "package_file": package_file,
+    "remaining_today": as_int(remaining_today),
+    "rendered_today": as_int(rendered_today),
+    "run_limit": as_int(run_limit),
+    "status": status,
+    "updated_at": dt.datetime.now(dt.timezone.utc).isoformat().replace("+00:00", "Z"),
+}
+
+if exit_code != "":
+    payload["exit_code"] = as_int(exit_code)
+
+path = pathlib.Path(status_file)
+tmp_path = path.with_suffix(path.suffix + ".tmp")
+tmp_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+tmp_path.replace(path)
+PY
+}
 
 if [[ "${effective_limit}" -lt 1 ]]; then
+  write_render_status "daily_limit_reached" "0"
   log "Daily manhwa image limit reached (${rendered_today}/${daily_limit}) for ${chapter_output_dir}; skipping."
   exit 0
 fi
@@ -217,4 +300,16 @@ if [[ "${force}" == "true" ]]; then
 fi
 
 log "Rendering up to ${effective_limit} missing manhwa panel image(s) from ${package_file}; daily ${rendered_today}/${daily_limit}, run limit ${run_limit}."
+write_render_status "running"
+set +e
 python3 "${renderer}" "${args[@]}"
+render_exit=$?
+set -e
+
+if ((render_exit == 0)); then
+  write_render_status "idle" "${render_exit}"
+else
+  write_render_status "failed" "${render_exit}"
+fi
+
+exit "${render_exit}"
