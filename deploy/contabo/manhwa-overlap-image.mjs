@@ -1,9 +1,41 @@
 #!/usr/bin/env node
+import { existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import path from 'node:path';
-import sharp from 'sharp';
 
 const args = process.argv.slice(2);
 const command = args.shift();
+const sharp = loadSharp();
+
+function loadSharp() {
+  const roots = [
+    process.env.MANHWA_APP_DIR,
+    process.env.TACHI_APP_DIR,
+    process.cwd(),
+    '/opt/tachi-back',
+  ].filter(Boolean);
+
+  for (const root of roots) {
+    const packageJson = path.join(root, 'package.json');
+    if (!existsSync(packageJson)) {
+      continue;
+    }
+
+    try {
+      return createRequire(packageJson)('sharp');
+    } catch {
+      // Try the next root.
+    }
+  }
+
+  try {
+    return createRequire(import.meta.url)('sharp');
+  } catch (error) {
+    throw new Error(
+      `Could not load sharp. Run from the app directory or set TACHI_APP_DIR. ${error instanceof Error ? error.message : String(error)}`
+    );
+  }
+}
 
 function usage() {
   console.error(`Usage:
