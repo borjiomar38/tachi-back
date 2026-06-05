@@ -1,4 +1,39 @@
+### 2026-06-05 Cycle-Added draft (best-ready: Futurepedia fit)
+
+- Target: `https://www.futurepedia.io/submit-tool`
+- Category: AI directory submission readiness + media-safe listing fit
+- Audience: AI directory curators and editorial reviewers
+- Rules risk: medium (listing policies and category fields must support APK/paid-token framing)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I prepared a source-safe listing-fit packet for an Android OCR + translation workflow. It supports official source links, permission-safe positioning, and explicit trial-to-paid-token disclosure. Can you confirm field compatibility before we share any links?"
+- Link variant (conditional if policy fit is accepted):
+  - `https://www.futurepedia.io/submit-tool`
+  - `https://www.futurepedia.io/`
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+- Action intent:
+  1. Confirm whether paid/trial and official-domain fields accept Android workflow tools without unsupported verification claims.
+  2. Keep no-link-first until a category match and tier acceptance are confirmed.
+  3. Add official link references only when form rules explicitly allow and owner-approved metadata is available.
+
 ### 2026-06-01 Cycle-Added Draft Priorities
+
+### 2026-06-05 Cycle priority draft (best-ready: NavTools)
+
+- Target: `https://navtools.ai/submit`
+- Category: AI directory listing fit
+- Audience: AI tooling curators and paid-token model reviewers
+- Rules risk: medium (pricing/tier fields and source-link policy likely gate)
+- Status: draft (OWNER_REVIEW_REQUIRED)
+- No-link-first draft:
+  - "I prepared a source-safe listing fit packet for an Android OCR + translation workflow. Can you confirm whether paid vs free-tier fields accept trial-to-paid-token models and whether source-linked tools are reviewed without affiliate-style restrictions?"
+- Link variant (conditional only if category and policy fit are clear):
+  - `https://tachiyomiat.com/guides/comic-ocr-translation-checklist`
+  - `https://tachiyomiat.com/download`
+- Action intent:
+  1. Confirm whether NavTools accepts Android utility workflows with official APK links and support + pricing fields.
+  2. Keep the draft no-link-first until the target accepts the listing policy.
+  3. Add links only if the form confirms source-link and trial-plan compatibility.
 
 - Target: https://www.indiehackers.com/
 - Category: founder community / startup trust notes

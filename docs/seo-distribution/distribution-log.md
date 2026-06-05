@@ -64,6 +64,19 @@
   - Owner review and manual approval of Product Hunt + webmaster assets.
   - Keep no-link-first drafts parked in `draft` until official account credentials and policy approvals are confirmed.
 
+## 2026-06-05 Cycle (current pass)
+
+- Branch check: `seo/distribution-20260605T010030Z` confirmed at the start of this cycle.
+- Read required inputs before drafting: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and all `docs/seo-distribution/*.md`.
+- Advanced account setup by adding official platform-readiness rows (Google Search Console/Bing Webmaster, YouTube official channel, AppBrain listing gate) in `docs/seo-distribution/account-setup.md`.
+- Added/updated 3+ authority opportunities in `docs/seo-distribution/authority-opportunities.md` across AI directory, localization media, and app-directory categories with risk-aware gates.
+- Added one best-ready platform draft in `docs/seo-distribution/platform-drafts.md` for Futurepedia form-fit with no-link-first and conditional link variant.
+- Added one new cycle section in `docs/seo-distribution/content-calendar.md` and `docs/seo-distribution/link-assets.md` for reusable owned-asset-first content and listing-fit packets.
+- Added 3+ backlink prospect rows in `docs/growth/backlink-prospects.csv` for current cycle opportunities and held as draft/owner-review due missing credentials and authorization.
+- Added one new Facebook story queue draft entry in `/var/lib/tachi-seo-distribution-agent/social-post-queue.jsonl` using `lead_archetype=male_hero`, with owner-review/asset pending because no image asset was generated for immediate publish.
+- Kept all actions manual/gated with `externalPostingMode=draft`, no account signup/login, no directory form submission, and no social/API posting automation beyond queue/draft artifact updates.
+- Next actions: wait for owner authorization on app-directory and social profile setup, generate image assets via CLI image renderer before any auto_publish promotion, then re-run cycle queue once queue limit allows.
+
 # Nayovi SEO Distribution Log
 
 This file is maintained by the SEO distribution agent.
