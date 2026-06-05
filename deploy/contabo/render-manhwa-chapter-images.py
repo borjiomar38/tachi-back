@@ -79,6 +79,11 @@ def parse_args() -> argparse.Namespace:
     action='store_true',
     help='Disable overlap crop/edit/trim continuity generation for panels after the first.',
   )
+  parser.add_argument(
+    '--enable-overlap-extension',
+    action='store_true',
+    help='Opt back into overlap crop/edit/trim continuity generation for panels after the first.',
+  )
   parser.add_argument('--force', action='store_true')
   parser.add_argument('--allow-unapproved', action='store_true')
   parser.add_argument(
@@ -385,7 +390,8 @@ def build_visual_continuity_plan(
 
 def continuity_overlap_enabled(args: argparse.Namespace, panel_number: int) -> bool:
   return (
-    not args.disable_overlap_extension
+    args.enable_overlap_extension
+    and not args.disable_overlap_extension
     and panel_number > 1
     and args.continuity_overlap_ratio > 0
   )
@@ -412,8 +418,9 @@ def previous_panel_reference_context(
   lines = [
     f'- Previous panel image file: {previous_path.resolve()}',
     '- Inspect this local image before generating the new panel.',
-    '- Continue from the bottom edge of the previous image: preserve the same scene, lighting, camera direction, visible cropped body parts, chains, hair, floor, architecture, bubble style, and vertical scroll rhythm.',
-    '- Do not copy the previous image as a duplicate; generate the next original panel that naturally extends it.',
+    '- Use it as a continuity reference for character identity, mood, lighting, camera language, bubble style, palette, and vertical scroll rhythm.',
+    '- Do not force a physical edge-merge with the previous image. Generate a complete new reader panel that reads after it without requiring pixel-perfect stitching.',
+    '- Do not copy the previous image as a duplicate; create the next original panel in the same manhwa sequence.',
   ]
 
   if overlap_reference_path and overlap_reference_path.exists():
@@ -547,6 +554,34 @@ def character_reference_context(
   return '\n'.join(lines) if lines else '- No recurring character reference folder is required for this panel.'
 
 
+def build_complete_panel_framing_plan(
+  *,
+  panel_number: int,
+  series: dict[str, Any],
+) -> str:
+  series_title = str(series.get('title') or 'Nayovi Original').strip()
+  base_rules = [
+    'Each output must be a complete self-contained manhwa reader image, not a cropped slice that depends on the next image to finish the body, face, prop, or key action.',
+    'Do not cut a character, face, hand, foot, weapon, dialogue bubble, caption box, crown, chain, or important scene element through the middle at the top or bottom edge.',
+    'If a full figure or large object would not fit, zoom out, change the camera angle, or choose a cleaner story moment so the panel ends intentionally.',
+    'Use a tasteful horizontal frame/separator only at the top and bottom edges: gothic moon-silver linework, dark ornamental webtoon trim, mist, chained moon motif, or soft fade-to-black matching THE ECLIPSE CROWN.',
+    'Do not draw a full rectangular border around all four sides. No left/right frame rails. The art should remain full-bleed horizontally except for natural shadows or vignette.',
+    'The bottom edge must close the page with a compatible visual finish that can sit above the next panel without a visible accidental cut: ornamental band, atmospheric darkness, floor shadow, moonlit fog, chain shadow, or clean negative space.',
+    'The top edge must also feel intentional, with a matching but lighter header/separator mood so consecutive panels look from the same chapter style.',
+  ]
+
+  if panel_number == 1:
+    base_rules.extend(
+      [
+        f'Opening panel special header: render the series title "{series_title}" as a beautiful in-image manhwa title design at the top, integrated into the artwork with gothic moon/crown lettering.',
+        'Add a small tasteful "Nayovi" mark near the title or top ornamental header. It must look like a publisher/series mark, subtle and premium, not a web UI button or watermark stamped across the art.',
+        'Keep the title/header readable on mobile but do not let it cover Elianor, the chained moon, or the main story action.',
+      ]
+    )
+
+  return '\n'.join(f'- {rule}' for rule in base_rules)
+
+
 def panel_has_required_text(panel: dict[str, Any]) -> bool:
   return bool(str(panel.get('narration') or '').strip()) or any(
     str(line).strip() for line in coerce_list(panel.get('dialogue'))
@@ -621,11 +656,14 @@ def build_panel_prompt(
       '',
       'Continuity priority:',
       (
-        'The previous panel visual reference, overlap crop if present, and indexed visual '
-        'continuity context are mandatory. If they conflict with the primary image request, '
-        'preserve the story beat but follow the reference image, overlap crop, and indexed '
-        'continuity so the vertical scroll feels like one connected manhwa sequence.'
+        'The previous panel visual reference and indexed visual continuity context are mandatory '
+        'for story/style continuity, but they do not require pixel-perfect edge merging. If any '
+        'old note asks for a body part or scene to continue out of frame, reinterpret it as '
+        'story continuity only and still render this panel as a complete intentional image.'
       ),
+      '',
+      'Complete panel framing rules:',
+      build_complete_panel_framing_plan(panel_number=panel_number, series=series),
       '',
       'Text override for this final reader panel:',
       (
@@ -679,18 +717,23 @@ def build_panel_prompt(
       character_reference_context(context=context, panel=panel),
       '',
       'Vertical continuity note:',
-      str(panel.get('vertical_continuity_note') or '').strip(),
+      (
+        str(panel.get('vertical_continuity_note') or '').strip()
+        + '\nThis note is subordinate to the complete panel framing rules above: do not leave important subjects cut in half at the image boundary.'
+      ).strip(),
       '',
       'Global style:',
       str(continuity.get('global_style') or '').strip(),
       '',
       'Composition:',
       (
-        'Tall 9:16 vertical webtoon/manhwa panel, cinematic crop, coherent with the previous '
-        'and next panel, premium Korean manhwa cover/panel finish, expressive faces, strong '
-        'value contrast, modest non-pin-up framing, no cleavage emphasis, no thigh exposure, '
-        'no sexualized prison or execution imagery. This is a finished reader panel with integrated '
-        'manhwa text bubbles and narration captions generated directly in the image.'
+        'Tall vertical webtoon/manhwa panel, cinematic complete composition, coherent with the '
+        'previous and next panel but not physically stitched to them, premium Korean manhwa '
+        'cover/panel finish, expressive faces, strong value contrast, modest non-pin-up framing, '
+        'no cleavage emphasis, no thigh exposure, no sexualized prison or execution imagery. '
+        'Choose whatever image height/composition the generator needs so the scene feels complete. '
+        'This is a finished reader panel with integrated manhwa text bubbles and narration captions '
+        'generated directly in the image, plus only top and bottom ornamental framing.'
       ),
       '',
       'Negative prompt:',
