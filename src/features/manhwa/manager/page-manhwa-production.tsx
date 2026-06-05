@@ -287,6 +287,20 @@ export const PageManhwaProduction = ({
                       value={`${chapterRendering.runLimit}/run`}
                     />
                     <KeyValue
+                      label="Min interval"
+                      value={`${chapterRendering.minIntervalMinutes} min`}
+                    />
+                    <KeyValue
+                      label="Interval wait"
+                      value={
+                        chapterRendering.intervalRemainingSeconds > 0
+                          ? `${Math.ceil(
+                              chapterRendering.intervalRemainingSeconds / 60
+                            )} min`
+                          : 'none'
+                      }
+                    />
+                    <KeyValue
                       label="Status"
                       value={humanizeTask(chapterRendering.status)}
                     />
@@ -668,7 +682,7 @@ function humanizeTask(value?: string) {
   }
 
   return value
-    .split('-')
+    .split(/[-_]/)
     .map((part) => part[0]?.toUpperCase() + part.slice(1))
     .join(' ');
 }

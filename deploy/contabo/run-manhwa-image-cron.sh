@@ -45,6 +45,7 @@ codex_image_script="${MANHWA_IMAGE_SCRIPT_PATH:-/usr/local/bin/tachi-codex-image
 context_dir="${MANHWA_CONTEXT_DIR:-docs/manhwa/context/the-eclipse-crown}"
 daily_limit="${MANHWA_IMAGE_DAILY_LIMIT:-12}"
 run_limit="${MANHWA_IMAGE_RUN_LIMIT:-1}"
+min_interval_minutes="${MANHWA_IMAGE_MIN_INTERVAL_MINUTES:-120}"
 allow_unapproved="${MANHWA_IMAGE_ALLOW_UNAPPROVED:-false}"
 force="${MANHWA_IMAGE_FORCE:-false}"
 require_character_references="${MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES:-true}"
@@ -73,7 +74,7 @@ if [[ ! -f "${renderer}" ]]; then
 fi
 
 limit_plan="$(
-  python3 - "${package_file}" "${output_root}" "${daily_limit}" "${run_limit}" <<'PY'
+  python3 - "${package_file}" "${output_root}" "${daily_limit}" "${run_limit}" "${min_interval_minutes}" <<'PY'
 import datetime as dt
 import json
 import pathlib
@@ -95,12 +96,22 @@ except ValueError:
     print(f"Invalid MANHWA_IMAGE_RUN_LIMIT: {sys.argv[4]}", file=sys.stderr)
     raise SystemExit(2)
 
+try:
+    min_interval_minutes = int(sys.argv[5])
+except ValueError:
+    print(f"Invalid MANHWA_IMAGE_MIN_INTERVAL_MINUTES: {sys.argv[5]}", file=sys.stderr)
+    raise SystemExit(2)
+
 if daily_limit < 1:
     print("MANHWA_IMAGE_DAILY_LIMIT must be at least 1.", file=sys.stderr)
     raise SystemExit(2)
 
 if run_limit < 1:
     print("MANHWA_IMAGE_RUN_LIMIT must be at least 1.", file=sys.stderr)
+    raise SystemExit(2)
+
+if min_interval_minutes < 0:
+    print("MANHWA_IMAGE_MIN_INTERVAL_MINUTES must be at least 0.", file=sys.stderr)
     raise SystemExit(2)
 
 package = json.loads(package_path.read_text(encoding="utf-8"))
@@ -116,18 +127,29 @@ if not series_slug:
 
 chapter_dir = output_root / series_slug / f"chapter-{chapter_number:03d}"
 today_start = dt.datetime.combine(dt.date.today(), dt.time.min).timestamp()
+now = dt.datetime.now().timestamp()
 rendered_today = 0
+latest_panel_time = 0.0
 
 if chapter_dir.exists():
     for image_path in chapter_dir.iterdir():
         if (
             image_path.is_file()
             and re.fullmatch(r"panel-\d+\.(?:png|jpe?g|webp)", image_path.name, re.I)
-            and image_path.stat().st_mtime >= today_start
         ):
-            rendered_today += 1
+            panel_mtime = image_path.stat().st_mtime
+            latest_panel_time = max(latest_panel_time, panel_mtime)
+            if panel_mtime >= today_start:
+                rendered_today += 1
 
 remaining_today = max(daily_limit - rendered_today, 0)
+interval_remaining_seconds = 0
+if latest_panel_time and min_interval_minutes > 0:
+    interval_remaining_seconds = max(
+        int((min_interval_minutes * 60) - (now - latest_panel_time)),
+        0,
+    )
+
 planned_panels = []
 for panel in package.get("panels") or []:
     try:
@@ -146,12 +168,24 @@ next_panel = next(
     (panel_number for panel_number in planned_panels if panel_number not in existing_panels),
     0,
 )
-effective_limit = min(run_limit, remaining_today)
-print(f"{effective_limit}|{rendered_today}|{remaining_today}|{chapter_dir}|{next_panel}")
+skip_reason = ""
+if remaining_today < 1:
+    effective_limit = 0
+    skip_reason = "daily_limit_reached"
+elif interval_remaining_seconds > 0:
+    effective_limit = 0
+    skip_reason = "interval_wait"
+else:
+    effective_limit = min(run_limit, remaining_today)
+
+print(
+    f"{effective_limit}|{rendered_today}|{remaining_today}|{chapter_dir}|"
+    f"{next_panel}|{skip_reason}|{interval_remaining_seconds}"
+)
 PY
 )"
 
-IFS='|' read -r effective_limit rendered_today remaining_today chapter_output_dir next_panel_number <<<"${limit_plan}"
+IFS='|' read -r effective_limit rendered_today remaining_today chapter_output_dir next_panel_number skip_reason interval_remaining_seconds <<<"${limit_plan}"
 status_file="${chapter_output_dir%/}/render-status.json"
 
 write_render_status() {
@@ -166,10 +200,13 @@ write_render_status() {
     "${package_file}" \
     "${daily_limit}" \
     "${run_limit}" \
+    "${min_interval_minutes}" \
     "${effective_limit}" \
     "${rendered_today}" \
     "${remaining_today}" \
-    "${next_panel_number}" <<'PY'
+    "${next_panel_number}" \
+    "${skip_reason}" \
+    "${interval_remaining_seconds}" <<'PY'
 import datetime as dt
 import json
 import pathlib
@@ -182,11 +219,14 @@ import sys
     package_file,
     daily_limit,
     run_limit,
+    min_interval_minutes,
     effective_limit,
     rendered_today,
     remaining_today,
     next_panel_number,
-) = sys.argv[1:11]
+    skip_reason,
+    interval_remaining_seconds,
+) = sys.argv[1:14]
 
 def as_int(value, default=0):
     try:
@@ -199,10 +239,13 @@ payload = {
     "active_panel_number": as_int(next_panel_number) or None,
     "daily_limit": as_int(daily_limit),
     "effective_limit": as_int(effective_limit),
+    "interval_remaining_seconds": as_int(interval_remaining_seconds),
+    "min_interval_minutes": as_int(min_interval_minutes),
     "package_file": package_file,
     "remaining_today": as_int(remaining_today),
     "rendered_today": as_int(rendered_today),
     "run_limit": as_int(run_limit),
+    "skip_reason": skip_reason or None,
     "status": status,
     "updated_at": dt.datetime.now(dt.timezone.utc).isoformat().replace("+00:00", "Z"),
 }
@@ -218,8 +261,12 @@ PY
 }
 
 if [[ "${effective_limit}" -lt 1 ]]; then
-  write_render_status "daily_limit_reached" "0"
-  log "Daily manhwa image limit reached (${rendered_today}/${daily_limit}) for ${chapter_output_dir}; skipping."
+  write_render_status "${skip_reason:-waiting}" "0"
+  if [[ "${skip_reason}" == "interval_wait" ]]; then
+    log "Manhwa image interval wait (${interval_remaining_seconds}s remaining) for ${chapter_output_dir}; skipping."
+  else
+    log "Daily manhwa image limit reached (${rendered_today}/${daily_limit}) for ${chapter_output_dir}; skipping."
+  fi
   exit 0
 fi
 

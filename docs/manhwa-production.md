@@ -117,8 +117,10 @@ generation without copying them into the image build.
 The chapter image cron renders exactly the next missing approved panel image and
 then stops. `MANHWA_IMAGE_RUN_LIMIT=1` keeps each execution to one panel, while
 `MANHWA_IMAGE_DAILY_LIMIT=12` caps the total panels rendered in one server-local
-day. Running the cron every two hours gives the first chapter room to finish
-faster without letting one execution consume the whole queue.
+day. `MANHWA_IMAGE_MIN_INTERVAL_MINUTES=120` prevents another panel from
+starting too soon if a manual run finishes near the next scheduled cron. Running
+the cron every two hours gives the first chapter room to finish faster without
+letting one execution consume the whole queue.
 
 Install on Contabo from the deployed source tree:
 
@@ -166,6 +168,7 @@ MANHWA_CHARACTER_REFERENCE_DRY_RUN=false
 MANHWA_CHARACTER_REFERENCE_FORCE=false
 MANHWA_IMAGE_DAILY_LIMIT=12
 MANHWA_IMAGE_RUN_LIMIT=1
+MANHWA_IMAGE_MIN_INTERVAL_MINUTES=120
 MANHWA_IMAGE_REQUIRE_PREPRODUCTION=true
 MANHWA_IMAGE_REQUIRE_CHARACTER_REFERENCES=true
 MANHWA_IMAGE_ALLOW_UNAPPROVED=false

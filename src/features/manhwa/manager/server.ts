@@ -92,6 +92,8 @@ export interface ManhwaManagerChapterRendering {
   generatedCount: number;
   lastPanelGeneratedAt?: string;
   manifestAvailable: boolean;
+  intervalRemainingSeconds: number;
+  minIntervalMinutes: number;
   missingCount: number;
   nextPanelNumber?: number;
   renderedPanels: number[];
@@ -485,6 +487,12 @@ async function getChapterRenderingStatus(input: {
     generatedCount,
     lastPanelGeneratedAt: latestImage?.modifiedAt,
     manifestAvailable: Object.keys(manifest).length > 0,
+    intervalRemainingSeconds: numberValue(
+      renderStatus.interval_remaining_seconds
+    ),
+    minIntervalMinutes:
+      numberValue(renderStatus.min_interval_minutes) ||
+      envServer.MANHWA_IMAGE_MIN_INTERVAL_MINUTES,
     missingCount: missingPanels.length,
     nextPanelNumber: missingPanels[0],
     renderedPanels,
@@ -656,6 +664,8 @@ function emptyChapterRendering(): ManhwaManagerChapterRendering {
     failedPanels: [],
     generatedCount: 0,
     manifestAvailable: false,
+    intervalRemainingSeconds: 0,
+    minIntervalMinutes: 120,
     missingCount: 0,
     renderedPanels: [],
     renderedThisRun: [],
