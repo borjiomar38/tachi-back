@@ -106,6 +106,17 @@ preview reads them through the protected
 `/api/manhwa-private/...` route. The backend must still not call OpenAI image
 APIs for Nayovi Originals images.
 
+Panels after the first use overlap continuity by default. Before rendering
+panel N, the renderer crops the bottom 30% of panel N-1 into a private
+`.continuity-work` reference image. The prompt asks Codex imagegen to treat that
+crop as the top edit/outpaint source and generate an extended draft containing
+that overlap plus the next panel. After generation, the renderer trims the top
+overlap away and saves only `panel-NNN.png`. This makes the final reader panels
+separate files while still forcing the AI to continue the previous image's
+floor, body crop, chains, lighting, bubble style, and camera angle. Tune with
+`MANHWA_IMAGE_CONTINUITY_OVERLAP_RATIO`; disable only for debugging with
+`--disable-overlap-extension`.
+
 On Contabo, the app container reads private manhwa images from
 `MANHWA_PRIVATE_ROOT=/app/docs/manhwa/private`. Docker mounts that path from the
 host directory `${TACHI_MANHWA_PRIVATE_DIR:-/opt/tachi-back/docs/manhwa/private}`
@@ -131,6 +142,7 @@ sudo install -m 0755 deploy/contabo/run-manhwa-preproduction-task.py /usr/local/
 sudo install -m 0755 deploy/contabo/build-manhwa-character-assets.mjs /usr/local/bin/tachi-manhwa-character-assets
 sudo install -m 0755 deploy/contabo/build-manhwa-context-index.mjs /usr/local/bin/tachi-manhwa-context-index
 sudo install -m 0755 deploy/contabo/manhwa-context-mcp-server.mjs /usr/local/bin/tachi-manhwa-context-mcp
+sudo install -m 0755 deploy/contabo/manhwa-overlap-image.mjs /usr/local/bin/tachi-manhwa-overlap-image
 sudo install -m 0755 deploy/contabo/render-manhwa-character-references.py /usr/local/bin/tachi-manhwa-character-references
 sudo install -m 0755 deploy/contabo/render-manhwa-chapter-images.py /usr/local/bin/tachi-manhwa-image-renderer
 sudo install -m 0755 deploy/contabo/build-manhwa-copyright-package.py /usr/local/bin/tachi-manhwa-copyright-package

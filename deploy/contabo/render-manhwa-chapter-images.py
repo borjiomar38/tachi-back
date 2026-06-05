@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import math
 import os
 import pathlib
 import re
@@ -20,7 +21,9 @@ from typing import Any
 
 
 DEFAULT_CODEX_IMAGE_SCRIPT = pathlib.Path('/usr/local/bin/tachi-codex-image-generator')
+DEFAULT_OVERLAP_TOOL = pathlib.Path('/usr/local/bin/tachi-manhwa-overlap-image')
 DEFAULT_OUTPUT_ROOT = pathlib.Path('docs/manhwa/private')
+DEFAULT_CONTINUITY_OVERLAP_RATIO = 0.3
 DEFAULT_BUBBLE_STYLE_BIBLE = (
   'Use one coherent THE ECLIPSE CROWN manhwa lettering system across all panels: '
   'narration uses black rectangular gothic title-card boxes with thin ivory/silver ornamental '
@@ -47,6 +50,33 @@ def parse_args() -> argparse.Namespace:
     '--context-dir',
     default=os.environ.get('MANHWA_CONTEXT_DIR', ''),
     help='Optional series context directory containing bubble and character style bibles.',
+  )
+  parser.add_argument(
+    '--overlap-tool',
+    default=os.environ.get(
+      'MANHWA_OVERLAP_TOOL_PATH',
+      str(
+        DEFAULT_OVERLAP_TOOL
+        if DEFAULT_OVERLAP_TOOL.exists()
+        else pathlib.Path(__file__).with_name('manhwa-overlap-image.mjs')
+      ),
+    ),
+  )
+  parser.add_argument(
+    '--continuity-overlap-ratio',
+    type=float,
+    default=float(
+      os.environ.get(
+        'MANHWA_IMAGE_CONTINUITY_OVERLAP_RATIO',
+        DEFAULT_CONTINUITY_OVERLAP_RATIO,
+      )
+    ),
+    help='Bottom slice ratio from the previous panel used as an outpaint/edit continuity guide.',
+  )
+  parser.add_argument(
+    '--disable-overlap-extension',
+    action='store_true',
+    help='Disable overlap crop/edit/trim continuity generation for panels after the first.',
   )
   parser.add_argument('--force', action='store_true')
   parser.add_argument('--allow-unapproved', action='store_true')
@@ -352,10 +382,20 @@ def build_visual_continuity_plan(
   return '\n'.join(parts)
 
 
+def continuity_overlap_enabled(args: argparse.Namespace, panel_number: int) -> bool:
+  return (
+    not args.disable_overlap_extension
+    and panel_number > 1
+    and args.continuity_overlap_ratio > 0
+  )
+
+
 def previous_panel_reference_context(
   *,
   output_dir: pathlib.Path,
   panel_number: int,
+  overlap_reference_path: pathlib.Path | None,
+  overlap_ratio: float,
 ) -> str:
   if panel_number <= 1:
     return '- No previous reader panel exists. Establish the opening image clearly.'
@@ -367,14 +407,27 @@ def previous_panel_reference_context(
       'Use indexed top/bottom anchors and written continuity context only.'
     )
 
-  return '\n'.join(
-    [
-      f'- Previous panel image file: {previous_path.resolve()}',
-      '- Inspect this local image before generating the new panel.',
-      '- Continue from the bottom edge of the previous image: preserve the same scene, lighting, camera direction, visible cropped body parts, chains, hair, floor, architecture, bubble style, and vertical scroll rhythm.',
-      '- Do not copy the previous image as a duplicate; generate the next original panel that naturally extends it.',
-    ]
-  )
+  lines = [
+    f'- Previous panel image file: {previous_path.resolve()}',
+    '- Inspect this local image before generating the new panel.',
+    '- Continue from the bottom edge of the previous image: preserve the same scene, lighting, camera direction, visible cropped body parts, chains, hair, floor, architecture, bubble style, and vertical scroll rhythm.',
+    '- Do not copy the previous image as a duplicate; generate the next original panel that naturally extends it.',
+  ]
+
+  if overlap_reference_path and overlap_reference_path.exists():
+    lines.extend(
+      [
+        '',
+        'Continuity overlap edit/outpaint source:',
+        f'- Bottom overlap crop from previous panel: {overlap_reference_path.resolve()}',
+        f'- This crop is the bottom {round(overlap_ratio * 100)}% of the previous panel.',
+        '- Treat this crop as the top edit/outpaint source for the new draft image. The top of the generated draft must visually match and extend this crop downward: same body part placement, costume edges, chains, hair strands, floor texture, lighting direction, and camera angle.',
+        '- Generate the draft image as the expected next panel plus this overlap guide at the top. Important new story action and required text should begin below the overlap area because the pipeline removes the overlap after generation.',
+        '- The final saved reader panel will be trimmed by cutting off the generated top overlap, leaving only the new continuation. Because of that, the visible seam in the reader should feel like one continuous vertical image.',
+      ]
+    )
+
+  return '\n'.join(lines)
 
 
 def character_bubble_context(
@@ -515,6 +568,8 @@ def build_panel_prompt(
   chapter: dict[str, Any],
   context: dict[str, Any],
   output_dir: pathlib.Path,
+  overlap_reference_path: pathlib.Path | None,
+  overlap_ratio: float,
 ) -> str:
   continuity = coerce_dict(package.get('image_continuity_rules'))
   panel_number = int(panel.get('panel_number') or 0)
@@ -541,14 +596,19 @@ def build_panel_prompt(
       build_visual_continuity_plan(context=context, panel_number=panel_number),
       '',
       'Previous panel visual reference:',
-      previous_panel_reference_context(output_dir=output_dir, panel_number=panel_number),
+      previous_panel_reference_context(
+        output_dir=output_dir,
+        panel_number=panel_number,
+        overlap_reference_path=overlap_reference_path,
+        overlap_ratio=overlap_ratio,
+      ),
       '',
       'Continuity priority:',
       (
-        'The previous panel visual reference and indexed visual continuity context are mandatory. '
-        'If they conflict with the primary image request, preserve the story beat but follow the '
-        'reference image and indexed continuity so the vertical scroll feels like one connected '
-        'manhwa sequence.'
+        'The previous panel visual reference, overlap crop if present, and indexed visual '
+        'continuity context are mandatory. If they conflict with the primary image request, '
+        'preserve the story beat but follow the reference image, overlap crop, and indexed '
+        'continuity so the vertical scroll feels like one connected manhwa sequence.'
       ),
       '',
       'Text override for this final reader panel:',
@@ -629,6 +689,7 @@ def build_panel_prompt(
 def run_image_generator(
   *,
   codex_image_script: pathlib.Path,
+  min_height: int | None = None,
   output_path: pathlib.Path,
   prompt: str,
 ) -> None:
@@ -640,6 +701,10 @@ def run_image_generator(
   env = os.environ.copy()
   env.setdefault('CODEX_IMAGE_MIN_WIDTH', '900')
   env.setdefault('CODEX_IMAGE_MIN_HEIGHT', '1200')
+  if min_height:
+    current_min_height = int(env.get('CODEX_IMAGE_MIN_HEIGHT') or '0')
+    if current_min_height < min_height:
+      env['CODEX_IMAGE_MIN_HEIGHT'] = str(min_height)
 
   try:
     subprocess.run(
@@ -665,6 +730,87 @@ def manifest_path(output_dir: pathlib.Path, chapter_number: int) -> pathlib.Path
 
 def panel_output_path(output_dir: pathlib.Path, panel_number: int) -> pathlib.Path:
   return output_dir / f'panel-{panel_number:03d}.png'
+
+
+def continuity_work_dir(output_dir: pathlib.Path) -> pathlib.Path:
+  return output_dir / '.continuity-work'
+
+
+def overlap_source_path(output_dir: pathlib.Path, panel_number: int) -> pathlib.Path:
+  return continuity_work_dir(output_dir) / f'panel-{panel_number:03d}-overlap-source.png'
+
+
+def overlap_raw_path(output_dir: pathlib.Path, panel_number: int) -> pathlib.Path:
+  return continuity_work_dir(output_dir) / f'panel-{panel_number:03d}-raw-extended.png'
+
+
+def run_overlap_tool(
+  *,
+  args: list[str],
+  overlap_tool: pathlib.Path,
+) -> None:
+  subprocess.run(['node', str(overlap_tool), *args], check=True)
+
+
+def prepare_overlap_reference(
+  *,
+  output_dir: pathlib.Path,
+  overlap_ratio: float,
+  overlap_tool: pathlib.Path,
+  panel_number: int,
+) -> pathlib.Path | None:
+  previous_path = panel_output_path(output_dir, panel_number - 1)
+  if not previous_path.exists():
+    return None
+
+  source_path = overlap_source_path(output_dir, panel_number)
+  source_path.parent.mkdir(parents=True, exist_ok=True)
+  run_overlap_tool(
+    overlap_tool=overlap_tool,
+    args=[
+      'prepare',
+      '--previous',
+      str(previous_path.resolve()),
+      '--output',
+      str(source_path.resolve()),
+      '--ratio',
+      str(overlap_ratio),
+    ],
+  )
+  return source_path
+
+
+def trim_overlap_render(
+  *,
+  final_path: pathlib.Path,
+  overlap_ratio: float,
+  overlap_tool: pathlib.Path,
+  raw_path: pathlib.Path,
+) -> None:
+  run_overlap_tool(
+    overlap_tool=overlap_tool,
+    args=[
+      'trim',
+      '--input',
+      str(raw_path.resolve()),
+      '--output',
+      str(final_path.resolve()),
+      '--ratio',
+      str(overlap_ratio),
+      '--min-width',
+      os.environ.get('CODEX_IMAGE_MIN_WIDTH', '900'),
+      '--min-height',
+      os.environ.get('CODEX_IMAGE_MIN_HEIGHT', '1200'),
+    ],
+  )
+
+
+def configured_min_height() -> int:
+  return int(os.environ.get('CODEX_IMAGE_MIN_HEIGHT') or '1200')
+
+
+def overlap_raw_min_height(overlap_ratio: float) -> int:
+  return math.ceil(configured_min_height() * (1 + overlap_ratio))
 
 
 def public_path(path: pathlib.Path) -> str:
@@ -717,6 +863,7 @@ def main() -> int:
   characters = character_map(package)
   context_dir = resolve_context_dir(args, series_slug)
   context = load_context(context_dir, chapter_number) if context_dir else {}
+  overlap_tool = pathlib.Path(args.overlap_tool)
   rendered_this_run: list[dict[str, Any]] = []
   failed: list[dict[str, Any]] = []
 
@@ -760,6 +907,34 @@ def main() -> int:
     if output_path.exists() and not args.force:
       print(f'skipping panel {panel_number}: {output_path} already exists')
     else:
+      overlap_reference_path: pathlib.Path | None = None
+      raw_output_path = output_path
+      overlap_extension = continuity_overlap_enabled(args, panel_number)
+      if overlap_extension:
+        try:
+          overlap_reference_path = prepare_overlap_reference(
+            output_dir=output_dir,
+            overlap_ratio=args.continuity_overlap_ratio,
+            overlap_tool=overlap_tool,
+            panel_number=panel_number,
+          )
+        except subprocess.CalledProcessError as error:
+          failed.append(
+            {
+              'panel_number': panel_number,
+              'phase': 'continuity_overlap_prepare',
+              'exit_code': error.returncode,
+            }
+          )
+          print(
+            f'failed panel {panel_number}: overlap prepare exited {error.returncode}'
+          )
+          continue
+
+        if overlap_reference_path:
+          raw_output_path = overlap_raw_path(output_dir, panel_number)
+          raw_output_path.unlink(missing_ok=True)
+
       prompt = build_panel_prompt(
         characters=characters,
         package=package,
@@ -768,18 +943,32 @@ def main() -> int:
         chapter=chapter,
         context=context,
         output_dir=output_dir,
+        overlap_reference_path=overlap_reference_path,
+        overlap_ratio=args.continuity_overlap_ratio,
       )
       try:
         run_image_generator(
           codex_image_script=codex_image_script,
-          output_path=output_path,
+          min_height=(
+            overlap_raw_min_height(args.continuity_overlap_ratio)
+            if overlap_extension and overlap_reference_path
+            else None
+          ),
+          output_path=raw_output_path,
           prompt=prompt,
         )
+        if overlap_extension and overlap_reference_path:
+          trim_overlap_render(
+            final_path=output_path,
+            overlap_ratio=args.continuity_overlap_ratio,
+            overlap_tool=overlap_tool,
+            raw_path=raw_output_path,
+          )
       except subprocess.CalledProcessError as error:
         failed.append(
           {
             'panel_number': panel_number,
-            'phase': 'image_generation',
+            'phase': 'image_generation_or_overlap_trim',
             'exit_code': error.returncode,
           }
         )
