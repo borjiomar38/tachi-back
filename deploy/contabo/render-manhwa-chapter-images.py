@@ -1026,7 +1026,7 @@ def main() -> int:
           print(
             f'failed panel {panel_number}: overlap prepare exited {error.returncode}'
           )
-          continue
+          break
 
         if overlap_reference_path and overlap_canvas_reference_path:
           raw_output_path = overlap_raw_path(output_dir, panel_number)
@@ -1071,7 +1071,7 @@ def main() -> int:
           }
         )
         print(f'failed panel {panel_number}: image generator exited {error.returncode}')
-        continue
+        break
 
     if output_path.exists():
       rendered_this_run.append(
