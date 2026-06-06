@@ -564,10 +564,11 @@ def build_complete_panel_framing_plan(
     'Each output must be a complete self-contained manhwa reader image, not a cropped slice that depends on the next image to finish the body, face, prop, or key action.',
     'Do not cut a character, face, hand, foot, weapon, dialogue bubble, caption box, crown, chain, or important scene element through the middle at the top or bottom edge.',
     'If a full figure or large object would not fit, zoom out, change the camera angle, or choose a cleaner story moment so the panel ends intentionally.',
-    'Use a tasteful horizontal frame/separator only at the top and bottom edges: gothic moon-silver linework, dark ornamental webtoon trim, mist, chained moon motif, or soft fade-to-black matching THE ECLIPSE CROWN.',
-    'Do not draw a full rectangular border around all four sides. No left/right frame rails. The art should remain full-bleed horizontally except for natural shadows or vignette.',
-    'The bottom edge must close the page with a compatible visual finish that can sit above the next panel without a visible accidental cut: ornamental band, atmospheric darkness, floor shadow, moonlit fog, chain shadow, or clean negative space.',
-    'The top edge must also feel intentional, with a matching but lighter header/separator mood so consecutive panels look from the same chapter style.',
+    'Generate the ornamental chapter separator only once, at the very bottom edge of this image. Use a tasteful gothic moon-silver horizontal divider, dark ornamental webtoon trim, mist, chained moon motif, or soft fade-to-black matching THE ECLIPSE CROWN.',
+    'Do not generate a decorative horizontal separator, header line, ornamental trim, frame, or divider at the top edge. The page break above this panel is already provided by the previous panel bottom separator.',
+    'Do not draw a full rectangular border around all four sides. No left/right frame rails, no top frame rail, no duplicate divider near the top. The art should remain full-bleed horizontally except for natural shadows or vignette.',
+    'The bottom separator must close the panel and sit at the bottom only; do not place a second decorative line inside the lower third unless it is clearly part of a bubble or object.',
+    'The top edge must begin directly with story artwork, atmosphere, scene content, or darkness/fog. Top edge anchors describe story content only, not a decorative separator.',
   ]
 
   if panel_number == 1:
@@ -576,6 +577,7 @@ def build_complete_panel_framing_plan(
         f'Opening panel special header: render the series title "{series_title}" as a beautiful in-image manhwa title design at the top, integrated into the artwork with gothic moon/crown lettering.',
         'Add a small tasteful "Nayovi" mark near the title or top ornamental header. It must look like a publisher/series mark, subtle and premium, not a web UI button or watermark stamped across the art.',
         'Keep the title/header readable on mobile but do not let it cover Elianor, the chained moon, or the main story action.',
+        'This opening title header is the only allowed top design exception in the chapter; later panels must not add top separators.',
       ]
     )
 
@@ -733,7 +735,7 @@ def build_panel_prompt(
         'no cleavage emphasis, no thigh exposure, no sexualized prison or execution imagery. '
         'Choose whatever image height/composition the generator needs so the scene feels complete. '
         'This is a finished reader panel with integrated manhwa text bubbles and narration captions '
-        'generated directly in the image, plus only top and bottom ornamental framing.'
+        'generated directly in the image, plus one bottom-only ornamental separator.'
       ),
       '',
       'Negative prompt:',
