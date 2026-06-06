@@ -12,15 +12,30 @@ import {
   isManhwaChapterPublic,
 } from '@/features/manhwa/visibility';
 
+const publicManhwaPanelImagePath = (
+  seriesSlug: string,
+  chapterNumber: number,
+  panelNumber: number
+) => `/api/manhwa/${seriesSlug}/chapter/${chapterNumber}/panel/${panelNumber}`;
+
+const withPublicPanelImagePaths = (
+  seriesSlug: string,
+  chapterNumber: number,
+  panels: ManhwaChapter['panels']
+): ManhwaChapter['panels'] =>
+  panels.map((panel, index) => ({
+    ...panel,
+    imagePath: publicManhwaPanelImagePath(seriesSlug, chapterNumber, index + 1),
+  }));
+
 const theEclipseCrownChapterOne: ManhwaChapter = {
   chapterNumber: 1,
   excerpt:
     'On the morning of her execution, Elianor wakes three hours too early and hears her crown whisper from inside her blood.',
-  panels: [
+  panels: withPublicPanelImagePaths('the-eclipse-crown', 1, [
     {
       id: 'tec-001-001',
       alt: 'Elianor wakes in a prison cell beneath a view of the chained moon.',
-      imagePath: '/api/manhwa-private/the-eclipse-crown/chapter/1/panel/1',
       narration: 'The moon was still chained when Elianor opened her eyes.',
       dialogue: [
         'Eclipse Crown: Wake, little sovereign. The blade is still three hours away.',
@@ -143,14 +158,14 @@ const theEclipseCrownChapterOne: ManhwaChapter = {
       prompt:
         'Final cliffhanger panel, Caelan kneeling at base of scaffold beneath northern banner, black ducal coat and fur-lined cape, gloved hand over heart, eyebrow scar visible, Elianor above him stunned but upright, Varrien rigid on dais, Maerith beads frozen mid-prayer, chained moon looming overhead, no readable banners.',
     },
-  ],
-  publishedAt: '2026-06-02',
+  ]),
+  publishedAt: '2026-06-06',
   readingMinutes: 8,
   seasonNumber: 1,
   slug: 'the-moon-is-chained',
-  status: 'private',
+  status: 'published',
   title: 'The Moon Is Chained',
-  updatedAt: '2026-06-02',
+  updatedAt: '2026-06-06',
 };
 
 export const manhwaSeries: ManhwaSeries[] = [
@@ -251,6 +266,7 @@ export const manhwaSeries: ManhwaSeries[] = [
     chapters: [theEclipseCrownChapterOne],
     coverAlt:
       'Elianor Veyr stands under a chained moon with the living Eclipse Crown visible only in reflection.',
+    coverImagePath: '/api/manhwa/the-eclipse-crown/poster',
     description:
       'A condemned princess wakes before her execution and discovers her living crown can devour eclipse magic, while the duke who failed to save her in another timeline returns with memories of the empire hidden lunar curse.',
     genres: [
@@ -259,7 +275,7 @@ export const manhwaSeries: ManhwaSeries[] = [
       'Dark court intrigue',
       'Eclipse magic',
     ],
-    lastModified: '2026-06-02',
+    lastModified: '2026-06-06',
     seasons: [
       {
         arc: 'Elianor survives the execution, exposes the first false charge, and follows buried moon-sword law toward the origin of the chained moon.',
@@ -364,9 +380,11 @@ const toReaderManhwaSeries = (
       : getPublicManhwaChapters(series)
   ).map((chapter) => toReaderChapter(chapter, options));
   const publicCoverImagePath =
+    series.coverImagePath ??
     chapters
       .flatMap((chapter) => chapter.panels)
-      .find((panel) => panel.imagePath)?.imagePath ?? undefined;
+      .find((panel) => panel.imagePath)?.imagePath ??
+    undefined;
 
   return {
     chapters,

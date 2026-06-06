@@ -24,7 +24,10 @@ export const Route = createFileRoute('/manhwa/$slug/')({
           `/manhwa/${series.slug}`,
           {
             imageAlt: series.coverAlt,
+            imageHeight: 1600,
             imagePath: series.coverImagePath,
+            imageType: 'image/png',
+            imageWidth: 1200,
             keywords: [
               series.title,
               ...(firstPublicChapter

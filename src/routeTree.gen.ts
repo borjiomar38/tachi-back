@@ -106,6 +106,7 @@ import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/au
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
 import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
+import { Route as ApiManhwaSlugPosterRouteImport } from './routes/api/manhwa/$slug/poster'
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
 import { Route as ApiBlogHeroesSlugRouteImport } from './routes/api/blog/heroes/$slug'
 import { Route as ManagerUsersIdUpdateIndexRouteImport } from './routes/manager/users/$id.update.index'
@@ -115,6 +116,7 @@ import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mob
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 import { Route as ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
+import { Route as ApiManhwaSlugChapterChapterPanelPanelRouteImport } from './routes/api/manhwa/$slug/chapter/$chapter/panel/$panel'
 import { Route as ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRouteImport } from './routes/api/manhwa-private/$slug/character/$character/reference/$reference'
 import { Route as ApiManhwaPrivateSlugChapterChapterPanelPanelRouteImport } from './routes/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
 
@@ -629,6 +631,11 @@ const ApiMobileAuthActivateRoute = ApiMobileAuthActivateRouteImport.update({
   path: '/api/mobile/auth/activate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiManhwaSlugPosterRoute = ApiManhwaSlugPosterRouteImport.update({
+  id: '/api/manhwa/$slug/poster',
+  path: '/api/manhwa/$slug/poster',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiDevEmailTemplateRoute = ApiDevEmailTemplateRouteImport.update({
   id: '/api/dev/email/$template',
   path: '/api/dev/email/$template',
@@ -679,6 +686,12 @@ const ApiMobileJobsJobIdPagesPageNumberCompleteRoute =
     id: '/complete',
     path: '/complete',
     getParentRoute: () => ApiMobileJobsJobIdPagesPageNumberRoute,
+  } as any)
+const ApiManhwaSlugChapterChapterPanelPanelRoute =
+  ApiManhwaSlugChapterChapterPanelPanelRouteImport.update({
+    id: '/api/manhwa/$slug/chapter/$chapter/panel/$panel',
+    path: '/api/manhwa/$slug/chapter/$chapter/panel/$panel',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute =
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRouteImport.update({
@@ -768,6 +781,7 @@ export interface FileRoutesByFullPath {
   '/manhwa/$slug/': typeof ManhwaSlugIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
+  '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
@@ -801,6 +815,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
   '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
+  '/api/manhwa/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaSlugChapterChapterPanelPanelRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRoutesByTo {
@@ -874,6 +889,7 @@ export interface FileRoutesByTo {
   '/manhwa/$slug': typeof ManhwaSlugIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
+  '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
@@ -907,6 +923,7 @@ export interface FileRoutesByTo {
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
   '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
+  '/api/manhwa/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaSlugChapterChapterPanelPanelRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRoutesById {
@@ -985,6 +1002,7 @@ export interface FileRoutesById {
   '/manhwa/$slug/': typeof ManhwaSlugIndexRoute
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
+  '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
@@ -1018,6 +1036,7 @@ export interface FileRoutesById {
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
   '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
+  '/api/manhwa/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaSlugChapterChapterPanelPanelRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber/complete': typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
 export interface FileRouteTypes {
@@ -1097,6 +1116,7 @@ export interface FileRouteTypes {
     | '/manhwa/$slug/'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
+    | '/api/manhwa/$slug/poster'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
@@ -1130,6 +1150,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
     | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
     | '/api/manhwa-private/$slug/character/$character/reference/$reference'
+    | '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -1203,6 +1224,7 @@ export interface FileRouteTypes {
     | '/manhwa/$slug'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
+    | '/api/manhwa/$slug/poster'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
@@ -1236,6 +1258,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
     | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
     | '/api/manhwa-private/$slug/character/$character/reference/$reference'
+    | '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   id:
     | '__root__'
@@ -1313,6 +1336,7 @@ export interface FileRouteTypes {
     | '/manhwa/$slug/'
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
+    | '/api/manhwa/$slug/poster'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
@@ -1346,6 +1370,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
     | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
     | '/api/manhwa-private/$slug/character/$character/reference/$reference'
+    | '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
   fileRoutesById: FileRoutesById
 }
@@ -1403,6 +1428,7 @@ export interface RootRouteChildren {
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
   ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
+  ApiManhwaSlugPosterRoute: typeof ApiManhwaSlugPosterRoute
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
   ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRouteWithChildren
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
@@ -1417,6 +1443,7 @@ export interface RootRouteChildren {
   ApiMobileSubscriptionUpgradeRoute: typeof ApiMobileSubscriptionUpgradeRoute
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute: typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute: typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
+  ApiManhwaSlugChapterChapterPanelPanelRoute: typeof ApiManhwaSlugChapterChapterPanelPanelRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2100,6 +2127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileAuthActivateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/manhwa/$slug/poster': {
+      id: '/api/manhwa/$slug/poster'
+      path: '/api/manhwa/$slug/poster'
+      fullPath: '/api/manhwa/$slug/poster'
+      preLoaderRoute: typeof ApiManhwaSlugPosterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/dev/email/$template': {
       id: '/api/dev/email/$template'
       path: '/api/dev/email/$template'
@@ -2162,6 +2196,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
       preLoaderRoute: typeof ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport
       parentRoute: typeof ApiMobileJobsJobIdPagesPageNumberRoute
+    }
+    '/api/manhwa/$slug/chapter/$chapter/panel/$panel': {
+      id: '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
+      path: '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
+      fullPath: '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
+      preLoaderRoute: typeof ApiManhwaSlugChapterChapterPanelPanelRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/manhwa-private/$slug/character/$character/reference/$reference': {
       id: '/api/manhwa-private/$slug/character/$character/reference/$reference'
@@ -2417,6 +2458,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRpcSplatRoute: ApiRpcSplatRoute,
   ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
+  ApiManhwaSlugPosterRoute: ApiManhwaSlugPosterRoute,
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
   ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRouteWithChildren,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
@@ -2435,6 +2477,8 @@ const rootRouteChildren: RootRouteChildren = {
     ApiManhwaPrivateSlugChapterChapterPanelPanelRoute,
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute:
     ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute,
+  ApiManhwaSlugChapterChapterPanelPanelRoute:
+    ApiManhwaSlugChapterChapterPanelPanelRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

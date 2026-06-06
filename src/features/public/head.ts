@@ -227,8 +227,10 @@ export const buildPublicPageHead = (
   options?: {
     keywords?: readonly string[];
     imageAlt?: string;
+    imageHeight?: number | string;
     imagePath?: string;
     imageType?: string;
+    imageWidth?: number | string;
     structuredDataGraph?: readonly Record<string, unknown>[];
     robots?: string;
     type?: string | null;
@@ -316,11 +318,11 @@ export const buildPublicPageHead = (
       },
       {
         property: 'og:image:width',
-        content: '1200',
+        content: String(options?.imageWidth ?? 1200),
       },
       {
         property: 'og:image:height',
-        content: '630',
+        content: String(options?.imageHeight ?? 630),
       },
       {
         property: 'og:image:alt',

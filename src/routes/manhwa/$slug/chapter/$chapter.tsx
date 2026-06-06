@@ -38,9 +38,12 @@ export const Route = createFileRoute('/manhwa/$slug/chapter/$chapter')({
       path,
       {
         imageAlt: data.series.coverAlt,
+        imageHeight: 1821,
         imagePath:
           data.chapter.panels.find((panel) => panel.imagePath)?.imagePath ??
           data.series.coverImagePath,
+        imageType: 'image/png',
+        imageWidth: 864,
         keywords: [
           data.series.title,
           `${data.series.title} chapter ${data.chapter.chapterNumber}`,
