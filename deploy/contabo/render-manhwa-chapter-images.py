@@ -564,17 +564,17 @@ def build_complete_panel_framing_plan(
     'Each output must be a complete self-contained manhwa reader image, not a cropped slice that depends on the next image to finish the body, face, prop, or key action.',
     'Do not cut a character, face, hand, foot, weapon, dialogue bubble, caption box, crown, chain, or important scene element through the middle at the top or bottom edge.',
     'If a full figure or large object would not fit, zoom out, change the camera angle, or choose a cleaner story moment so the panel ends intentionally.',
-    'Generate the ornamental chapter separator only once, at the very bottom edge of this image. Use a tasteful gothic moon-silver horizontal divider, dark ornamental webtoon trim, mist, chained moon motif, or soft fade-to-black matching THE ECLIPSE CROWN.',
-    'Do not generate a decorative horizontal separator, header line, ornamental trim, frame, or divider at the top edge. The page break above this panel is already provided by the previous panel bottom separator.',
-    'Do not draw a full rectangular border around all four sides. No left/right frame rails, no top frame rail, no duplicate divider near the top. The art should remain full-bleed horizontally except for natural shadows or vignette.',
-    'The bottom separator must close the panel and sit at the bottom only; do not place a second decorative line inside the lower third unless it is clearly part of a bubble or object.',
+    'At the bottom edge, use only a soft black smoky fade-to-black transition matching THE ECLIPSE CROWN. No gold/silver ornamental separator, no crescent divider, no horizontal line, no filigree trim, and no symbolic center ornament.',
+    'Do not generate a decorative horizontal separator, header line, ornamental trim, frame, or divider at the top edge. The page break above this panel is handled by a soft black smoky fade, not by a line.',
+    'Do not draw a full rectangular border around all four sides. No left/right frame rails, no top frame rail, no duplicate divider near the top. The art should remain full-bleed horizontally except for natural shadows, vignette, smoke, or fade.',
+    'The bottom transition must close the panel as black smoke/fade only; do not place a decorative line inside the lower third unless it is clearly part of a bubble or story object.',
   ]
 
   if panel_number > 1:
     base_rules.append(
       'At the top edge, add only a soft black smoky gradient/fade matching the bottom fade mood, '
       'with no gold/silver ornamental line. This top fade should visually connect to the previous '
-      'panel bottom separator while keeping the new panel story art visible.'
+      'panel bottom smoky fade while keeping the new panel story art visible.'
     )
   else:
     base_rules.append(
@@ -745,7 +745,7 @@ def build_panel_prompt(
         'no cleavage emphasis, no thigh exposure, no sexualized prison or execution imagery. '
         'Choose whatever image height/composition the generator needs so the scene feels complete. '
         'This is a finished reader panel with integrated manhwa text bubbles and narration captions '
-        'generated directly in the image, plus one bottom-only ornamental separator.'
+        'generated directly in the image, with soft black smoky top/bottom transition fades only and no ornamental separator.'
       ),
       '',
       'Negative prompt:',
