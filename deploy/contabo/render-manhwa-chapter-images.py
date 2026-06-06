@@ -568,8 +568,18 @@ def build_complete_panel_framing_plan(
     'Do not generate a decorative horizontal separator, header line, ornamental trim, frame, or divider at the top edge. The page break above this panel is already provided by the previous panel bottom separator.',
     'Do not draw a full rectangular border around all four sides. No left/right frame rails, no top frame rail, no duplicate divider near the top. The art should remain full-bleed horizontally except for natural shadows or vignette.',
     'The bottom separator must close the panel and sit at the bottom only; do not place a second decorative line inside the lower third unless it is clearly part of a bubble or object.',
-    'The top edge must begin directly with story artwork, atmosphere, scene content, or darkness/fog. Top edge anchors describe story content only, not a decorative separator.',
   ]
+
+  if panel_number > 1:
+    base_rules.append(
+      'At the top edge, add only a soft black smoky gradient/fade matching the bottom fade mood, '
+      'with no gold/silver ornamental line. This top fade should visually connect to the previous '
+      'panel bottom separator while keeping the new panel story art visible.'
+    )
+  else:
+    base_rules.append(
+      'Do not add a generic black top fade on panel 1 because it opens the chapter and has no image above it.'
+    )
 
   if panel_number == 1:
     base_rules.extend(
