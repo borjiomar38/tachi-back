@@ -8,6 +8,12 @@ const zPageMimeType = z
   .min(1)
   .regex(/^image\/[a-z0-9.+-]+$/i);
 
+const zPageChecksumSha256 = z
+  .string()
+  .trim()
+  .length(64)
+  .regex(/^[a-f0-9]+$/i);
+
 export const zTranslationChapterIdentity = z
   .object({
     chapterName: z.string().trim().min(1).max(255).optional(),
@@ -48,6 +54,23 @@ export const zMobileOcrRegionHints = z
   })
   .strict();
 
+export const zTranslationJobUploadSourcePage = z
+  .object({
+    checksumSha256: zPageChecksumSha256.optional(),
+    fileName: z.string().trim().min(1).max(255),
+    height: z.number().int().positive().max(100_000),
+    offsetX: z.number().int().nonnegative().max(1_000_000),
+    offsetY: z.number().int().nonnegative().max(1_000_000),
+    originalPageNumber: z.number().int().positive().max(200).optional(),
+    width: z.number().int().positive().max(100_000),
+  })
+  .strict();
+
+export const zTranslationJobUploadSourcePages = z
+  .array(zTranslationJobUploadSourcePage)
+  .min(1)
+  .max(200);
+
 export const zCreateTranslationJobInput = z
   .object({
     chapterIdentity: zTranslationChapterIdentity.optional(),
@@ -55,16 +78,12 @@ export const zCreateTranslationJobInput = z
     pages: z
       .array(
         z.object({
-          checksumSha256: z
-            .string()
-            .trim()
-            .length(64)
-            .regex(/^[a-f0-9]+$/i)
-            .optional(),
+          checksumSha256: zPageChecksumSha256.optional(),
           fileName: z.string().trim().min(1).max(255),
           mimeType: zPageMimeType,
           mobileOcrRegionHints: zMobileOcrRegionHints.optional(),
           sizeBytes: z.number().int().positive().max(50_000_000),
+          sourcePages: zTranslationJobUploadSourcePages.optional(),
         })
       )
       .min(1)
@@ -74,19 +93,50 @@ export const zCreateTranslationJobInput = z
     translationProvider: z.enum(['anthropic', 'gemini', 'openai']).optional(),
   })
   .superRefine((input, context) => {
-    const seenFileNames = new Set<string>();
+    const seenUploadFileNames = new Set<string>();
+    const seenLogicalFileNames = new Set<string>();
+    let logicalPageCount = 0;
 
     for (const [index, page] of input.pages.entries()) {
-      if (seenFileNames.has(page.fileName)) {
+      if (seenUploadFileNames.has(page.fileName)) {
         context.addIssue({
           code: 'custom',
-          message: 'Page file names must be unique within a job.',
+          message: 'Upload file names must be unique within a job.',
           path: ['pages', index, 'fileName'],
         });
-        continue;
+      } else {
+        seenUploadFileNames.add(page.fileName);
       }
 
-      seenFileNames.add(page.fileName);
+      const sourcePages = page.sourcePages ?? [
+        {
+          fileName: page.fileName,
+        },
+      ];
+      logicalPageCount += sourcePages.length;
+
+      for (const [sourceIndex, sourcePage] of sourcePages.entries()) {
+        if (seenLogicalFileNames.has(sourcePage.fileName)) {
+          context.addIssue({
+            code: 'custom',
+            message: 'Source page file names must be unique within a job.',
+            path: page.sourcePages
+              ? ['pages', index, 'sourcePages', sourceIndex, 'fileName']
+              : ['pages', index, 'fileName'],
+          });
+          continue;
+        }
+
+        seenLogicalFileNames.add(sourcePage.fileName);
+      }
+    }
+
+    if (logicalPageCount > 200) {
+      context.addIssue({
+        code: 'custom',
+        message: 'A job can contain at most 200 source pages.',
+        path: ['pages'],
+      });
     }
   });
 

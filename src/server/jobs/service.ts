@@ -39,6 +39,7 @@ import {
   zTranslationJobPageUploadInput,
   zTranslationJobResultManifest,
   zTranslationJobSummary,
+  zTranslationJobUploadSourcePages,
 } from './schema';
 import {
   buildJobUploadObjectStorageTarget,
@@ -110,6 +111,9 @@ type JobRecord = {
 type UploadedOcrPage = {
   fileName: string;
   imageBytes: Uint8Array;
+  imageHeight?: number;
+  imageWidth?: number;
+  placements?: OcrBatchPlacement[];
 };
 
 type UploadedOcrPageWithDimensions = UploadedOcrPage & {
@@ -138,6 +142,12 @@ type OcrBatchPlacement = {
   offsetX: number;
   offsetY: number;
   width: number;
+};
+
+type UploadLogicalPage = {
+  checksumSha256: string | null;
+  fileName: string;
+  pageNumber: number;
 };
 
 type OcrBatch = {
@@ -221,7 +231,11 @@ export async function createTranslationJob(
       dbClient,
     }
   );
-  const reservedTokens = calculateReservedTokens(input.pages.length);
+  const logicalPageCount = input.pages.reduce(
+    (count, page) => count + (page.sourcePages?.length ?? 1),
+    0
+  );
+  const reservedTokens = calculateReservedTokens(logicalPageCount);
   const availableTokens = await getAvailableLicenseTokenBalance(
     {
       licenseId: deps.actor.licenseId,
@@ -280,7 +294,7 @@ export async function createTranslationJob(
         deviceId: deps.actor.deviceId,
         expiresAt,
         licenseId: deps.actor.licenseId,
-        pageCount: input.pages.length,
+        pageCount: logicalPageCount,
         requestedOcrProvider: providers.requestedOcrProvider,
         requestedTranslationProvider: providers.requestedTranslationProvider,
         resolvedOcrProvider: providers.resolvedOcrProvider,
@@ -299,9 +313,7 @@ export async function createTranslationJob(
         checksumSha256: page.checksumSha256 ?? null,
         jobId: createdJob.id,
         kind: 'page_upload',
-        metadata: {
-          uploadStatus: 'pending',
-        },
+        metadata: buildPendingUploadAssetMetadata(page),
         mimeType: page.mimeType,
         originalFileName: page.fileName,
         pageNumber: index + 1,
@@ -405,6 +417,22 @@ function buildServerTranslationJobUpload(job: Pick<JobRecord, 'expiresAt'>) {
     method: 'PUT' as const,
     mode: 'server_multipart' as const,
   };
+}
+
+function buildPendingUploadAssetMetadata(page: {
+  sourcePages?: unknown[] | undefined;
+}): Prisma.InputJsonValue {
+  const metadata: Record<string, unknown> = {
+    uploadStatus: 'pending',
+  };
+
+  if (page.sourcePages?.length) {
+    metadata.uploadBatchVersion = 'mobile_ocr_batch.v1';
+    metadata.logicalPageCount = page.sourcePages.length;
+    metadata.sourcePages = page.sourcePages;
+  }
+
+  return metadata as Prisma.InputJsonValue;
 }
 
 async function buildTranslationJobUploadInstructions(
@@ -807,10 +835,7 @@ export async function completeTranslationJobUpload(
     .filter((asset) => asset.kind === 'page_upload')
     .sort((left, right) => (left.pageNumber ?? 0) - (right.pageNumber ?? 0));
 
-  if (
-    uploadAssets.length !== job.pageCount ||
-    uploadAssets.some((asset) => !asset.objectKey || !asset.bucketName)
-  ) {
+  if (!areUploadAssetsCompleteForJob(job, uploadAssets)) {
     throw new TranslationJobError('invalid_upload', 409);
   }
 
@@ -1324,7 +1349,7 @@ async function processStartedTranslationJob(
         status: 'reused_cached_ocr',
       });
     } else {
-      if (uploadAssets.length !== startedJob.pageCount) {
+      if (!areUploadAssetsCompleteForJob(startedJob, uploadAssets)) {
         throw new TranslationJobError('invalid_upload', 409);
       }
 
@@ -1342,9 +1367,18 @@ async function processStartedTranslationJob(
         const imageBytes = new Uint8Array(
           await uploadedPage.blob.arrayBuffer()
         );
+        const sourcePages = readAssetSourcePagesOrThrow(asset);
+
         uploadedOcrPages.push({
           fileName: asset.originalFileName,
           imageBytes,
+          placements: sourcePages?.map((sourcePage) => ({
+            fileName: sourcePage.fileName,
+            height: sourcePage.height,
+            offsetX: sourcePage.offsetX,
+            offsetY: sourcePage.offsetY,
+            width: sourcePage.width,
+          })),
         });
       }
 
@@ -1836,9 +1870,10 @@ function buildTranslationJobSummary(job: JobRecord) {
         ? ('uploaded' as const)
         : ('pending' as const),
     }));
-  const uploadedPageCount = pages.filter(
-    (page) => page.uploadStatus === 'uploaded'
-  ).length;
+  const uploadedPageCount = job.assets
+    .filter((asset) => asset.kind === 'page_upload')
+    .filter((asset) => asset.objectKey && asset.bucketName)
+    .reduce((count, asset) => count + getUploadAssetLogicalPageCount(asset), 0);
   const storedProgress = getStoredJobProgress(job);
   const resultPath =
     job.status === 'completed' ? `/api/mobile/jobs/${job.id}/result` : null;
@@ -2372,25 +2407,138 @@ function buildUploadedPageFingerprints(input: {
   pageCount: number;
   uploadAssets: JobAssetRecord[];
 }) {
-  const pageFingerprints = input.uploadAssets
-    .map((asset) => {
-      if (
-        !asset.checksumSha256 ||
-        !asset.originalFileName ||
-        !asset.pageNumber
-      ) {
+  const logicalPages = buildUploadLogicalPages(input.uploadAssets);
+
+  if (!logicalPages) {
+    return null;
+  }
+
+  const pageFingerprints = logicalPages
+    .map((page) => {
+      if (!page.checksumSha256) {
         return null;
       }
 
       return {
-        checksumSha256: asset.checksumSha256.toLowerCase(),
-        fileName: asset.originalFileName,
-        pageNumber: asset.pageNumber,
+        checksumSha256: page.checksumSha256.toLowerCase(),
+        fileName: page.fileName,
+        pageNumber: page.pageNumber,
       };
     })
     .filter((page): page is NonNullable<typeof page> => Boolean(page));
 
   return pageFingerprints.length === input.pageCount ? pageFingerprints : null;
+}
+
+function areUploadAssetsCompleteForJob(
+  job: Pick<JobRecord, 'pageCount'>,
+  uploadAssets: JobAssetRecord[]
+) {
+  return (
+    uploadAssets.every((asset) => asset.objectKey && asset.bucketName) &&
+    getUploadAssetsLogicalPageCount(uploadAssets) === job.pageCount
+  );
+}
+
+function getUploadAssetsLogicalPageCount(uploadAssets: JobAssetRecord[]) {
+  return uploadAssets.reduce(
+    (count, asset) => count + getUploadAssetLogicalPageCount(asset),
+    0
+  );
+}
+
+function getUploadAssetLogicalPageCount(asset: JobAssetRecord) {
+  const sourcePages = getAssetSourcePages(asset);
+  if (sourcePages) {
+    return sourcePages.length;
+  }
+
+  return hasAssetSourcePagesMetadata(asset) ? 0 : 1;
+}
+
+function buildUploadLogicalPages(
+  uploadAssets: JobAssetRecord[]
+): UploadLogicalPage[] | null {
+  const logicalPages: UploadLogicalPage[] = [];
+
+  for (const asset of uploadAssets) {
+    const sourcePages = getAssetSourcePages(asset);
+
+    if (sourcePages) {
+      for (const sourcePage of sourcePages) {
+        logicalPages.push({
+          checksumSha256: sourcePage.checksumSha256?.toLowerCase() ?? null,
+          fileName: sourcePage.fileName,
+          pageNumber: logicalPages.length + 1,
+        });
+      }
+      continue;
+    }
+
+    if (hasAssetSourcePagesMetadata(asset)) {
+      return null;
+    }
+
+    if (!asset.originalFileName || !asset.pageNumber) {
+      return null;
+    }
+
+    logicalPages.push({
+      checksumSha256: asset.checksumSha256?.toLowerCase() ?? null,
+      fileName: asset.originalFileName,
+      pageNumber: logicalPages.length + 1,
+    });
+  }
+
+  return logicalPages;
+}
+
+function readAssetSourcePagesOrThrow(asset: JobAssetRecord) {
+  const metadata = getRecord(asset.metadata);
+
+  if (!metadata || !('sourcePages' in metadata)) {
+    return null;
+  }
+
+  const parsed = zTranslationJobUploadSourcePages.safeParse(
+    metadata.sourcePages
+  );
+
+  if (!parsed.success) {
+    throw new TranslationJobError('invalid_upload', 409, {
+      details: parsed.error.issues,
+      message: 'The uploaded OCR batch metadata is invalid.',
+    });
+  }
+
+  return parsed.data;
+}
+
+function getAssetSourcePages(asset: JobAssetRecord) {
+  const metadata = getRecord(asset.metadata);
+
+  if (!metadata || !('sourcePages' in metadata)) {
+    return null;
+  }
+
+  const parsed = zTranslationJobUploadSourcePages.safeParse(
+    metadata.sourcePages
+  );
+
+  return parsed.success ? parsed.data : null;
+}
+
+function hasAssetSourcePagesMetadata(asset: JobAssetRecord) {
+  const metadata = getRecord(asset.metadata);
+  return Boolean(metadata && 'sourcePages' in metadata);
+}
+
+function getRecord(value: unknown): Record<string, unknown> | null {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return null;
+  }
+
+  return value as Record<string, unknown>;
 }
 
 async function getCachedTranslationResultManifest(input: {
@@ -2695,14 +2843,18 @@ function mapCachedManifestToOcrLayoutPages(input: {
       )
   );
   const layoutPages: LayoutOcrPage[] = [];
+  const logicalPages = buildUploadLogicalPages(input.uploadAssets);
 
-  for (const [index, asset] of input.uploadAssets.entries()) {
+  if (!logicalPages) {
+    return null;
+  }
+
+  for (const [index, logicalPage] of logicalPages.entries()) {
     const cachedPage =
-      (asset.originalFileName
-        ? cachedPagesByFileName.get(asset.originalFileName)
-        : null) ?? input.manifest.pages[input.manifest.pageOrder[index] ?? ''];
+      cachedPagesByFileName.get(logicalPage.fileName) ??
+      input.manifest.pages[input.manifest.pageOrder[index] ?? ''];
 
-    if (!asset.originalFileName || !cachedPage) {
+    if (!cachedPage) {
       return null;
     }
 
@@ -2737,7 +2889,7 @@ function mapCachedManifestToOcrLayoutPages(input: {
     });
 
     layoutPages.push({
-      fileName: asset.originalFileName,
+      fileName: logicalPage.fileName,
       ocrPage: coalesceOcrLineBlocks(ocrPage),
     });
   }
@@ -2766,6 +2918,12 @@ function rebindCachedManifestToJob(input: {
 
   const pages: Record<string, HostedPageTranslation> = {};
   const pageOrder: string[] = [];
+  const logicalPages = buildUploadLogicalPages(input.uploadAssets);
+
+  if (!logicalPages) {
+    return null;
+  }
+
   const cachedPagesByFileName = new Map(
     input.manifest.pageOrder
       .map((pageKey) => [pageKey, input.manifest.pages[pageKey]] as const)
@@ -2774,18 +2932,17 @@ function rebindCachedManifestToJob(input: {
       )
   );
 
-  for (const [index, asset] of input.uploadAssets.entries()) {
+  for (const [index, logicalPage] of logicalPages.entries()) {
     const cachedPage =
-      (asset.originalFileName
-        ? cachedPagesByFileName.get(asset.originalFileName)
-        : null) ?? input.manifest.pages[input.manifest.pageOrder[index] ?? ''];
+      cachedPagesByFileName.get(logicalPage.fileName) ??
+      input.manifest.pages[input.manifest.pageOrder[index] ?? ''];
 
-    if (!asset.originalFileName || !cachedPage) {
+    if (!cachedPage) {
       return null;
     }
 
-    pageOrder.push(asset.originalFileName);
-    pages[asset.originalFileName] = sanitizeHostedPageTranslation(
+    pageOrder.push(logicalPage.fileName);
+    pages[logicalPage.fileName] = sanitizeHostedPageTranslation(
       cachedPage,
       resolveCachedPageSourceLanguage({
         jobSourceLanguage: input.job.sourceLanguage,
@@ -2816,8 +2973,9 @@ function getCachedManifestCompatibilityIssue(input: {
   if (input.manifest.pageCount !== input.job.pageCount) {
     return `page_count_mismatch:${input.manifest.pageCount}:${input.job.pageCount}`;
   }
-  if (input.uploadAssets.length !== input.job.pageCount) {
-    return `upload_asset_count_mismatch:${input.uploadAssets.length}:${input.job.pageCount}`;
+  const logicalPageCount = getUploadAssetsLogicalPageCount(input.uploadAssets);
+  if (logicalPageCount !== input.job.pageCount) {
+    return `upload_logical_page_count_mismatch:${logicalPageCount}:${input.job.pageCount}`;
   }
   if (input.manifest.pageOrder.length !== input.job.pageCount) {
     return `manifest_page_order_mismatch:${input.manifest.pageOrder.length}:${input.job.pageCount}`;
@@ -3213,10 +3371,18 @@ async function performHostedOcrForUploadedPages(input: {
     ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
   }>
 > {
+  const prebatchedPages = input.pages.filter(
+    (
+      page
+    ): page is UploadedOcrPage & {
+      placements: OcrBatchPlacement[];
+    } => Boolean(page.placements?.length)
+  );
+  const unbatchedPages = input.pages.filter((page) => !page.placements?.length);
   const dimensionedPages: UploadedOcrPageWithDimensions[] = [];
   const fallbackPages: UploadedOcrPage[] = [];
 
-  for (const page of input.pages) {
+  for (const page of unbatchedPages) {
     const dimensions = await getUploadedPageImageDimensions(page.imageBytes);
     if (!dimensions) {
       fallbackPages.push(page);
@@ -3236,7 +3402,49 @@ async function performHostedOcrForUploadedPages(input: {
   }> = [];
 
   let completedPages = 0;
-  const totalPages = input.pages.length;
+  const totalPages = input.pages.reduce(
+    (count, page) => count + (page.placements?.length ?? 1),
+    0
+  );
+
+  for (const page of prebatchedPages) {
+    const dimensions =
+      page.imageWidth && page.imageHeight
+        ? {
+            height: page.imageHeight,
+            width: page.imageWidth,
+          }
+        : await getUploadedPageImageDimensions(page.imageBytes);
+    const batch = {
+      height:
+        dimensions?.height ??
+        Math.max(
+          ...page.placements.map(
+            (placement) => placement.offsetY + placement.height
+          )
+        ),
+      imageBytes: page.imageBytes,
+      placements: page.placements,
+      width:
+        dimensions?.width ??
+        Math.max(
+          ...page.placements.map(
+            (placement) => placement.offsetX + placement.width
+          )
+        ),
+    };
+    const batchOcrPage = await performHostedOcr({
+      imageBytes: batch.imageBytes,
+      imageHeight: batch.height,
+      imageWidth: batch.width,
+      jobId: input.jobId,
+      pageCount: batch.placements.length,
+    });
+    ocrPages.push(...mapBatchOcrPageToOriginalPages(batch, batchOcrPage));
+    completedPages += batch.placements.length;
+    await input.onProgress?.({ completedPages, totalPages });
+  }
+
   const ocrBatches = await buildHostedOcrBatches(dimensionedPages);
 
   for (const batch of ocrBatches) {
@@ -3265,11 +3473,16 @@ async function performHostedOcrForUploadedPages(input: {
   }
 
   const byFileName = new Map(ocrPages.map((page) => [page.fileName, page]));
+  const expectedFileNames = input.pages.flatMap((page) =>
+    page.placements?.length
+      ? page.placements.map((placement) => placement.fileName)
+      : [page.fileName]
+  );
 
-  return input.pages.map((page) => {
-    const ocrPage = byFileName.get(page.fileName);
+  return expectedFileNames.map((fileName) => {
+    const ocrPage = byFileName.get(fileName);
     if (!ocrPage) {
-      throw new Error(`Missing OCR page for ${page.fileName}`);
+      throw new Error(`Missing OCR page for ${fileName}`);
     }
     return ocrPage;
   });

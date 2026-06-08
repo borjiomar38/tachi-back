@@ -102,9 +102,9 @@ pnpm dev
 
 ## Development URLs
 
-- app: `http://localhost:3000`
-- OpenAPI: `http://localhost:3000/api/openapi/app`
-- Maildev UI: `http://localhost:${DOCKER_MAILDEV_UI_PORT}` from your local `.env` (default example: `http://localhost:1080`)
+- app: `http://localhost:3009`
+- OpenAPI: `http://localhost:3009/api/openapi/app`
+- Maildev UI: `http://localhost:${DOCKER_MAILDEV_UI_PORT}` from your local `.env` (default example: `http://localhost:1070`)
 - Storybook: `http://localhost:6006`
 
 ## Test Accounts

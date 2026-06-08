@@ -1858,6 +1858,200 @@ describe('job service', () => {
     expect(mockDb.translationResultCache.upsert).toHaveBeenCalledOnce();
   });
 
+  it('processes a mobile OCR batch upload without rebuilding the batch', async () => {
+    const batchedJob = buildJobRecord({
+      id: 'job-mobile-batch',
+      objectChecksums: ['e'.repeat(64)],
+      objectKeys: ['jobs/job-mobile-batch/uploads/0001-ocr-batch-0001.jpg'],
+      pageCount: 2,
+      reservedTokens: 10,
+      startedAt: new Date('2026-03-20T10:10:00.000Z'),
+      status: 'processing',
+      uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
+    });
+    batchedJob.assets[0] = {
+      ...batchedJob.assets[0]!,
+      metadata: {
+        logicalPageCount: 2,
+        sourcePages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001.jpg',
+            height: 100,
+            offsetX: 0,
+            offsetY: 0,
+            originalPageNumber: 1,
+            width: 80,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: '002.jpg',
+            height: 100,
+            offsetX: 0,
+            offsetY: 100,
+            originalPageNumber: 2,
+            width: 80,
+          },
+        ],
+        uploadBatchVersion: 'mobile_ocr_batch.v1',
+        uploadedAt: '2026-03-20T10:00:00.000Z',
+        uploadStatus: 'uploaded',
+      },
+      originalFileName: 'ocr-batch-0001.jpg',
+    };
+
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUnique: vi.fn().mockResolvedValue(batchedJob),
+            updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+            updateMany: mockDb.tokenLedger.updateMany,
+          },
+          translationJob: {
+            update: vi.fn(),
+          },
+        };
+
+        return await callback(tx);
+      });
+
+    mockGetTranslationJobPageUpload.mockResolvedValue({
+      blob: new Blob([new Uint8Array([1, 2, 3])]),
+    });
+    mockPerformHostedOcr.mockResolvedValue({
+      blocks: [
+        {
+          angle: 0,
+          height: 10,
+          symHeight: 5,
+          symWidth: 5,
+          text: 'hello',
+          width: 20,
+          x: 1,
+          y: 2,
+        },
+        {
+          angle: 0,
+          height: 10,
+          symHeight: 5,
+          symWidth: 5,
+          text: 'world',
+          width: 20,
+          x: 1,
+          y: 112,
+        },
+      ],
+      imgHeight: 200,
+      imgWidth: 80,
+      provider: 'google_cloud_vision',
+      providerModel: 'TEXT_DETECTION',
+      providerRequestId: 'ocr-batch-1',
+      sourceLanguage: 'ja',
+      usage: {
+        inputTokens: null,
+        latencyMs: 100,
+        outputTokens: null,
+        pageCount: 2,
+        providerRequestId: 'ocr-batch-1',
+        requestCount: 1,
+      },
+    });
+    mockPerformHostedTranslation.mockResolvedValue({
+      pages: [
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText: 'hello',
+              translation: 'bonjour',
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText: 'world',
+              translation: 'monde',
+            },
+          ],
+          pageKey: '002.jpg',
+        },
+      ],
+      promptProfile: 'manga',
+      promptVersion: '2026-03-20.v1',
+      provider: 'gemini',
+      providerModel: 'gemini-test',
+      sourceLanguage: 'ja',
+      targetLanguage: 'fr',
+      usage: {
+        finishReason: 'stop',
+        inputTokens: 10,
+        latencyMs: 200,
+        outputTokens: 5,
+        pageCount: 2,
+        providerRequestId: 'tr-batch-1',
+        requestCount: 1,
+        stopReason: 'stop',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey: 'jobs/job-mobile-batch/results/translation-manifest.json',
+    });
+    mockPutTranslationResultCacheManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'cache/translation-results/mobile-batch/translation-manifest.json',
+    });
+
+    const result = await processTranslationJob(
+      { jobId: 'job-mobile-batch' },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+      }
+    );
+
+    expect(result?.pageOrder).toEqual(['001.jpg', '002.jpg']);
+    expect(result?.pages['001.jpg']?.blocks[0]?.translation).toBe('bonjour');
+    expect(result?.pages['002.jpg']?.blocks[0]?.translation).toBe('monde');
+    expect(result?.pages['002.jpg']?.blocks[0]?.y).toBe(12);
+    expect(mockPerformHostedOcr).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pageCount: 2,
+      })
+    );
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          expect.objectContaining({
+            pageKey: '001.jpg',
+          }),
+          expect.objectContaining({
+            pageKey: '002.jpg',
+          }),
+        ],
+      })
+    );
+  });
+
   it('processes uploaded OCR and coalesces dialogue columns before translation', async () => {
     mockDb.$transaction
       .mockImplementationOnce(async (callback) => {
@@ -2982,14 +3176,14 @@ function buildJobRecord(
     createdAt: new Date('2026-03-20T09:59:00.000Z'),
     id: `asset-${index + 1}`,
     kind: 'page_upload' as const,
-    metadata: objectKey
+    metadata: (objectKey
       ? {
           uploadedAt: '2026-03-20T10:00:00.000Z',
           uploadStatus: 'uploaded',
         }
       : {
           uploadStatus: 'pending',
-        },
+        }) as unknown,
     mimeType: 'image/jpeg',
     objectKey,
     originalFileName: `${String(index + 1).padStart(3, '0')}.jpg`,
