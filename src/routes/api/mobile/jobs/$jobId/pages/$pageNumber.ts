@@ -28,8 +28,9 @@ export const Route = createFileRoute(
         try {
           const { auth, rateLimit } =
             await authenticateAndRateLimitMobileJobRequest(request, {
-              bucket: 'write',
+              bucket: 'page_upload',
               context,
+              scopeId: params.jobId,
             });
 
           if (!rateLimit.allowed) {

@@ -5,6 +5,7 @@ vi.mock('@/env/server', () => ({
     CHECKOUT_RATE_LIMIT_MAX_ATTEMPTS: 2,
     CHECKOUT_RATE_LIMIT_WINDOW_SECONDS: 60,
     MOBILE_JOB_CREATE_RATE_LIMIT_MAX_REQUESTS: 2,
+    MOBILE_JOB_PAGE_UPLOAD_RATE_LIMIT_MAX_REQUESTS: 5,
     MOBILE_JOB_READ_RATE_LIMIT_MAX_REQUESTS: 4,
     MOBILE_JOB_RATE_LIMIT_WINDOW_SECONDS: 60,
     MOBILE_JOB_WRITE_RATE_LIMIT_MAX_REQUESTS: 3,
@@ -36,7 +37,7 @@ describe('hardening rate limits', () => {
     expect(third.allowed).toBe(false);
   });
 
-  it('uses separate mobile job budgets for create, write, and read buckets', () => {
+  it('uses separate mobile job budgets for create, write, page upload, and read buckets', () => {
     const baseInput = {
       clientIp: '203.0.113.10',
       deviceId: 'device-1',
@@ -95,8 +96,64 @@ describe('hardening rate limits', () => {
       now: now + 4_000,
     });
 
+    for (const offset of [0, 1_000, 2_000, 3_000, 4_000]) {
+      consumeMobileJobRouteRateLimit({
+        ...baseInput,
+        bucket: 'page_upload',
+        now: now + offset,
+        scopeId: 'job-1',
+      });
+    }
+    const pageUploadSixth = consumeMobileJobRouteRateLimit({
+      ...baseInput,
+      bucket: 'page_upload',
+      now: now + 5_000,
+      scopeId: 'job-1',
+    });
+
     expect(createThird.allowed).toBe(false);
     expect(writeFourth.allowed).toBe(false);
+    expect(pageUploadSixth.allowed).toBe(false);
     expect(readFifth.allowed).toBe(false);
+  });
+
+  it('scopes page upload budgets by job without consuming the global write budget', () => {
+    const baseInput = {
+      clientIp: '203.0.113.11',
+      deviceId: 'device-2',
+      licenseId: 'license-2',
+    };
+    const now = Date.UTC(2026, 2, 20, 12, 0, 0);
+
+    for (const offset of [0, 1_000, 2_000, 3_000, 4_000]) {
+      consumeMobileJobRouteRateLimit({
+        ...baseInput,
+        bucket: 'page_upload',
+        now: now + offset,
+        scopeId: 'job-a',
+      });
+    }
+
+    const sameJobSixth = consumeMobileJobRouteRateLimit({
+      ...baseInput,
+      bucket: 'page_upload',
+      now: now + 5_000,
+      scopeId: 'job-a',
+    });
+    const nextJobFirst = consumeMobileJobRouteRateLimit({
+      ...baseInput,
+      bucket: 'page_upload',
+      now: now + 6_000,
+      scopeId: 'job-b',
+    });
+    const writeFirst = consumeMobileJobRouteRateLimit({
+      ...baseInput,
+      bucket: 'write',
+      now: now + 7_000,
+    });
+
+    expect(sameJobSixth.allowed).toBe(false);
+    expect(nextJobFirst.allowed).toBe(true);
+    expect(writeFirst.allowed).toBe(true);
   });
 });

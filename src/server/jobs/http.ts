@@ -1,5 +1,8 @@
 import { db } from '@/server/db';
-import { consumeMobileJobRouteRateLimit } from '@/server/hardening/rate-limit';
+import {
+  consumeMobileJobRouteRateLimit,
+  type MobileJobRateLimitBucket,
+} from '@/server/hardening/rate-limit';
 import {
   buildApiErrorResponse,
   buildRateLimitedResponse,
@@ -20,8 +23,9 @@ import { TranslationJobError } from './service';
 export async function authenticateAndRateLimitMobileJobRequest(
   request: Request,
   input: {
-    bucket: 'create' | 'read' | 'write';
+    bucket: MobileJobRateLimitBucket;
     context: HttpRequestContext;
+    scopeId?: string;
   }
 ) {
   const auth = await authenticateMobileAccessToken(request);
@@ -30,6 +34,7 @@ export async function authenticateAndRateLimitMobileJobRequest(
     clientIp: input.context.clientIp,
     deviceId: auth.device.id,
     licenseId: auth.license.id,
+    scopeId: input.scopeId,
   });
 
   return {

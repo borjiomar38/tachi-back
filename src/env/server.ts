@@ -166,6 +166,11 @@ const envServerBase = createEnv({
       .int()
       .positive()
       .default(180),
+    MOBILE_JOB_PAGE_UPLOAD_RATE_LIMIT_MAX_REQUESTS: z.coerce
+      .number()
+      .int()
+      .positive()
+      .default(720),
     MOBILE_JOB_READ_RATE_LIMIT_MAX_REQUESTS: z.coerce
       .number()
       .int()
