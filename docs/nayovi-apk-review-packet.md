@@ -17,9 +17,9 @@ Use this packet when an Android reviewer, app directory, newsletter editor, test
 ## Current APK Metadata
 
 - Filename: `nayovi-latest.apk`
-- Build label: `Android arm64 signed release 0.17.20`
+- Build label: `Android arm64 signed release 0.17.21`
 - Size label: `64 MB`
-- SHA-256: `3ca6d69973da325f8ec03ef1c71d7cd8f4b63b8958498ef7bb8633cc9dc62bef`
+- SHA-256: `06c029b34a27fb1a151f15cba2b7cd3f460f1da7ff7be3c0af43fb6ea0af6328`
 
 Owner-confirmed fields still needed before stronger directory or security-review claims:
 
@@ -62,4 +62,3 @@ Skip listings that require:
 - Review swaps or incentivized ratings.
 - Mirror-first APK pages that hide support, pricing, or policy links.
 - Misleading "forever free" or "open source" labels.
-
