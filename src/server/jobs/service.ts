@@ -131,6 +131,17 @@ type OcrDebugPage = {
   ocrPage: NormalizedOcrPage;
 };
 
+type HostedOcrPageResult = {
+  fileName: string;
+  logicalFileName?: string;
+  logicalHeight?: number;
+  logicalOffsetX?: number;
+  logicalOffsetY?: number;
+  logicalPageNumber?: number;
+  logicalWidth?: number;
+  ocrPage: NormalizedOcrPage;
+};
+
 type ReusableCachedOcrSource = {
   cacheKey: string;
   layoutPages: LayoutOcrPage[];
@@ -139,6 +150,12 @@ type ReusableCachedOcrSource = {
 type OcrBatchPlacement = {
   fileName: string;
   height: number;
+  logicalFileName?: string;
+  logicalHeight?: number;
+  logicalOffsetX?: number;
+  logicalOffsetY?: number;
+  logicalPageNumber?: number;
+  logicalWidth?: number;
   offsetX: number;
   offsetY: number;
   width: number;
@@ -231,10 +248,7 @@ export async function createTranslationJob(
       dbClient,
     }
   );
-  const logicalPageCount = input.pages.reduce(
-    (count, page) => count + (page.sourcePages?.length ?? 1),
-    0
-  );
+  const logicalPageCount = getInputLogicalPageCount(input.pages);
   const reservedTokens = calculateReservedTokens(logicalPageCount);
   const availableTokens = await getAvailableLicenseTokenBalance(
     {
@@ -420,19 +434,73 @@ function buildServerTranslationJobUpload(job: Pick<JobRecord, 'expiresAt'>) {
 }
 
 function buildPendingUploadAssetMetadata(page: {
-  sourcePages?: unknown[] | undefined;
+  sourcePages?:
+    | Array<{
+        fileName: string;
+        logicalFileName?: string;
+      }>
+    | undefined;
 }): Prisma.InputJsonValue {
   const metadata: Record<string, unknown> = {
     uploadStatus: 'pending',
   };
 
   if (page.sourcePages?.length) {
-    metadata.uploadBatchVersion = 'mobile_ocr_batch.v1';
-    metadata.logicalPageCount = page.sourcePages.length;
+    metadata.uploadBatchVersion = page.sourcePages.some(
+      (sourcePage) => sourcePage.logicalFileName
+    )
+      ? 'mobile_ocr_batch.v2'
+      : 'mobile_ocr_batch.v1';
+    metadata.logicalPageCount = getSourcePagesLogicalPageCount(
+      page.sourcePages
+    );
     metadata.sourcePages = page.sourcePages;
   }
 
   return metadata as Prisma.InputJsonValue;
+}
+
+function getInputLogicalPageCount(
+  pages: Array<{
+    fileName: string;
+    sourcePages?:
+      | Array<{
+          fileName: string;
+          logicalFileName?: string;
+        }>
+      | undefined;
+  }>
+) {
+  const logicalPageNames = new Set<string>();
+
+  for (const page of pages) {
+    if (!page.sourcePages?.length) {
+      logicalPageNames.add(page.fileName);
+      continue;
+    }
+
+    for (const sourcePage of page.sourcePages) {
+      logicalPageNames.add(getSourcePageLogicalFileName(sourcePage));
+    }
+  }
+
+  return logicalPageNames.size;
+}
+
+function getSourcePagesLogicalPageCount(
+  sourcePages: Array<{
+    fileName: string;
+    logicalFileName?: string;
+  }>
+) {
+  return new Set(sourcePages.map(getSourcePageLogicalFileName)).size;
+}
+
+function getSourcePageLogicalFileName(sourcePage: {
+  fileName: string;
+  logicalFileName?: string;
+}) {
+  return sourcePage.logicalFileName ?? sourcePage.fileName;
 }
 
 async function buildTranslationJobUploadInstructions(
@@ -1375,6 +1443,12 @@ async function processStartedTranslationJob(
           placements: sourcePages?.map((sourcePage) => ({
             fileName: sourcePage.fileName,
             height: sourcePage.height,
+            logicalFileName: sourcePage.logicalFileName,
+            logicalHeight: sourcePage.logicalHeight,
+            logicalOffsetX: sourcePage.logicalOffsetX,
+            logicalOffsetY: sourcePage.logicalOffsetY,
+            logicalPageNumber: sourcePage.logicalPageNumber,
+            logicalWidth: sourcePage.logicalWidth,
             offsetX: sourcePage.offsetX,
             offsetY: sourcePage.offsetY,
             width: sourcePage.width,
@@ -1393,7 +1467,7 @@ async function processStartedTranslationJob(
         },
       });
 
-      const ocrPages = await performHostedOcrForUploadedPages({
+      const physicalOcrPages = await performHostedOcrForUploadedPages({
         jobId: startedJob.id,
         onProgress: async ({ completedPages, totalPages }) => {
           const progressRatio =
@@ -1411,6 +1485,7 @@ async function processStartedTranslationJob(
         },
         pages: uploadedOcrPages,
       });
+      const ocrPages = mergeHostedLogicalOcrPageFragments(physicalOcrPages);
       rawOcrDebugPages = cloneOcrDebugPages(ocrPages);
 
       layoutPages = ocrPages.map((page) => {
@@ -1870,10 +1945,10 @@ function buildTranslationJobSummary(job: JobRecord) {
         ? ('uploaded' as const)
         : ('pending' as const),
     }));
-  const uploadedPageCount = job.assets
+  const uploadedAssets = job.assets
     .filter((asset) => asset.kind === 'page_upload')
-    .filter((asset) => asset.objectKey && asset.bucketName)
-    .reduce((count, asset) => count + getUploadAssetLogicalPageCount(asset), 0);
+    .filter((asset) => asset.objectKey && asset.bucketName);
+  const uploadedPageCount = getUploadAssetsLogicalPageCount(uploadedAssets);
   const storedProgress = getStoredJobProgress(job);
   const resultPath =
     job.status === 'completed' ? `/api/mobile/jobs/${job.id}/result` : null;
@@ -2441,35 +2516,47 @@ function areUploadAssetsCompleteForJob(
 }
 
 function getUploadAssetsLogicalPageCount(uploadAssets: JobAssetRecord[]) {
-  return uploadAssets.reduce(
-    (count, asset) => count + getUploadAssetLogicalPageCount(asset),
-    0
-  );
-}
-
-function getUploadAssetLogicalPageCount(asset: JobAssetRecord) {
-  const sourcePages = getAssetSourcePages(asset);
-  if (sourcePages) {
-    return sourcePages.length;
-  }
-
-  return hasAssetSourcePagesMetadata(asset) ? 0 : 1;
+  return buildUploadLogicalPages(uploadAssets)?.length ?? 0;
 }
 
 function buildUploadLogicalPages(
   uploadAssets: JobAssetRecord[]
 ): UploadLogicalPage[] | null {
   const logicalPages: UploadLogicalPage[] = [];
+  const logicalPagesByFileName = new Map<string, UploadLogicalPage>();
+
+  const addLogicalPage = (page: {
+    checksumSha256: string | null;
+    fileName: string;
+  }) => {
+    const existingPage = logicalPagesByFileName.get(page.fileName);
+
+    if (existingPage) {
+      if (existingPage.checksumSha256 !== page.checksumSha256) {
+        existingPage.checksumSha256 = null;
+      }
+      return;
+    }
+
+    const logicalPage = {
+      checksumSha256: page.checksumSha256,
+      fileName: page.fileName,
+      pageNumber: logicalPages.length + 1,
+    };
+    logicalPagesByFileName.set(page.fileName, logicalPage);
+    logicalPages.push(logicalPage);
+  };
 
   for (const asset of uploadAssets) {
     const sourcePages = getAssetSourcePages(asset);
 
     if (sourcePages) {
       for (const sourcePage of sourcePages) {
-        logicalPages.push({
-          checksumSha256: sourcePage.checksumSha256?.toLowerCase() ?? null,
-          fileName: sourcePage.fileName,
-          pageNumber: logicalPages.length + 1,
+        addLogicalPage({
+          checksumSha256: sourcePage.logicalFileName
+            ? null
+            : (sourcePage.checksumSha256?.toLowerCase() ?? null),
+          fileName: getSourcePageLogicalFileName(sourcePage),
         });
       }
       continue;
@@ -2483,10 +2570,9 @@ function buildUploadLogicalPages(
       return null;
     }
 
-    logicalPages.push({
+    addLogicalPage({
       checksumSha256: asset.checksumSha256?.toLowerCase() ?? null,
       fileName: asset.originalFileName,
-      pageNumber: logicalPages.length + 1,
     });
   }
 
@@ -3365,12 +3451,7 @@ async function performHostedOcrForUploadedPages(input: {
     totalPages: number;
   }) => Promise<void>;
   pages: UploadedOcrPage[];
-}): Promise<
-  Array<{
-    fileName: string;
-    ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
-  }>
-> {
+}): Promise<HostedOcrPageResult[]> {
   const prebatchedPages = input.pages.filter(
     (
       page
@@ -3396,10 +3477,7 @@ async function performHostedOcrForUploadedPages(input: {
     });
   }
 
-  const ocrPages: Array<{
-    fileName: string;
-    ocrPage: Awaited<ReturnType<typeof performHostedOcr>>;
-  }> = [];
+  const ocrPages: HostedOcrPageResult[] = [];
 
   let completedPages = 0;
   const totalPages = input.pages.reduce(
@@ -3486,6 +3564,153 @@ async function performHostedOcrForUploadedPages(input: {
     }
     return ocrPage;
   });
+}
+
+function mergeHostedLogicalOcrPageFragments(
+  pages: HostedOcrPageResult[]
+): LayoutOcrPage[] {
+  if (!pages.some((page) => page.logicalFileName)) {
+    return pages.map((page) => ({
+      fileName: page.fileName,
+      ocrPage: page.ocrPage,
+    }));
+  }
+
+  const groups = new Map<
+    string,
+    {
+      fileName: string;
+      firstIndex: number;
+      pages: HostedOcrPageResult[];
+    }
+  >();
+
+  for (const [index, page] of pages.entries()) {
+    const fileName = page.logicalFileName ?? page.fileName;
+    const groupKey = page.logicalFileName
+      ? `logical:${page.logicalFileName}`
+      : `physical:${index}:${page.fileName}`;
+    const group = groups.get(groupKey);
+
+    if (group) {
+      group.pages.push(page);
+    } else {
+      groups.set(groupKey, {
+        fileName,
+        firstIndex: index,
+        pages: [page],
+      });
+    }
+  }
+
+  return [...groups.values()]
+    .sort((left, right) => left.firstIndex - right.firstIndex)
+    .map((group) => {
+      if (!group.pages.some((page) => page.logicalFileName)) {
+        const page = group.pages[0]!;
+        return {
+          fileName: page.fileName,
+          ocrPage: page.ocrPage,
+        };
+      }
+
+      return mergeHostedLogicalOcrPageFragmentGroup(
+        group.fileName,
+        group.pages
+      );
+    });
+}
+
+function mergeHostedLogicalOcrPageFragmentGroup(
+  fileName: string,
+  pages: HostedOcrPageResult[]
+): LayoutOcrPage {
+  const sortedPages = [...pages].sort(
+    (left, right) =>
+      (left.logicalPageNumber ?? 0) - (right.logicalPageNumber ?? 0) ||
+      (left.logicalOffsetY ?? 0) - (right.logicalOffsetY ?? 0) ||
+      (left.logicalOffsetX ?? 0) - (right.logicalOffsetX ?? 0)
+  );
+  const firstPage = sortedPages[0]!.ocrPage;
+  const imgWidth =
+    sortedPages.find((page) => page.logicalWidth)?.logicalWidth ??
+    Math.max(
+      ...sortedPages.map(
+        (page) => (page.logicalOffsetX ?? 0) + page.ocrPage.imgWidth
+      )
+    );
+  const imgHeight =
+    sortedPages.find((page) => page.logicalHeight)?.logicalHeight ??
+    Math.max(
+      ...sortedPages.map(
+        (page) => (page.logicalOffsetY ?? 0) + page.ocrPage.imgHeight
+      )
+    );
+  const blocks = sortedPages
+    .flatMap((page) =>
+      page.ocrPage.blocks.map((block) => ({
+        ...block,
+        x: block.x + (page.logicalOffsetX ?? 0),
+        y: block.y + (page.logicalOffsetY ?? 0),
+      }))
+    )
+    .sort((left, right) => left.y - right.y || left.x - right.x);
+
+  return {
+    fileName,
+    ocrPage: zNormalizedOcrPage.parse({
+      ...firstPage,
+      blocks,
+      imgHeight,
+      imgWidth,
+      providerRequestId:
+        firstPage.providerRequestId ??
+        sortedPages
+          .map((page) => page.ocrPage.providerRequestId)
+          .find((requestId): requestId is string => Boolean(requestId)) ??
+        null,
+      sourceLanguage: resolveEffectiveSourceLanguage(
+        'auto',
+        sortedPages.map((page) => page.ocrPage.sourceLanguage)
+      ),
+      usage: {
+        inputTokens: sumNullableUsageValues(
+          sortedPages.map((page) => page.ocrPage.usage.inputTokens)
+        ),
+        latencyMs: sortedPages.reduce(
+          (sum, page) => sum + page.ocrPage.usage.latencyMs,
+          0
+        ),
+        outputTokens: sumNullableUsageValues(
+          sortedPages.map((page) => page.ocrPage.usage.outputTokens)
+        ),
+        pageCount: sortedPages.reduce(
+          (sum, page) => sum + page.ocrPage.usage.pageCount,
+          0
+        ),
+        providerRequestId:
+          firstPage.usage.providerRequestId ??
+          sortedPages
+            .map((page) => page.ocrPage.usage.providerRequestId)
+            .find((requestId): requestId is string => Boolean(requestId)) ??
+          null,
+        requestCount: sortedPages.reduce(
+          (sum, page) => sum + page.ocrPage.usage.requestCount,
+          0
+        ),
+      },
+    }),
+  };
+}
+
+function sumNullableUsageValues(values: Array<number | null | undefined>) {
+  const presentValues = values.filter(
+    (value): value is number => typeof value === 'number'
+  );
+
+  return presentValues.length > 0
+    ? presentValues.reduce((sum, value) => sum + value, 0)
+    : null;
 }
 
 async function getUploadedPageImageDimensions(imageBytes: Uint8Array) {
@@ -3651,6 +3876,12 @@ function mapBatchOcrPageToOriginalPages(
 
   return batch.placements.map((placement) => ({
     fileName: placement.fileName,
+    logicalFileName: placement.logicalFileName,
+    logicalHeight: placement.logicalHeight,
+    logicalOffsetX: placement.logicalOffsetX,
+    logicalOffsetY: placement.logicalOffsetY,
+    logicalPageNumber: placement.logicalPageNumber,
+    logicalWidth: placement.logicalWidth,
     ocrPage: pages.get(placement.fileName)!,
   }));
 }

@@ -59,6 +59,12 @@ export const zTranslationJobUploadSourcePage = z
     checksumSha256: zPageChecksumSha256.optional(),
     fileName: z.string().trim().min(1).max(255),
     height: z.number().int().positive().max(100_000),
+    logicalFileName: z.string().trim().min(1).max(255).optional(),
+    logicalHeight: z.number().int().positive().max(100_000).optional(),
+    logicalOffsetX: z.number().int().nonnegative().max(1_000_000).optional(),
+    logicalOffsetY: z.number().int().nonnegative().max(1_000_000).optional(),
+    logicalPageNumber: z.number().int().positive().max(200).optional(),
+    logicalWidth: z.number().int().positive().max(100_000).optional(),
     offsetX: z.number().int().nonnegative().max(1_000_000),
     offsetY: z.number().int().nonnegative().max(1_000_000),
     originalPageNumber: z.number().int().positive().max(200).optional(),
@@ -94,8 +100,8 @@ export const zCreateTranslationJobInput = z
   })
   .superRefine((input, context) => {
     const seenUploadFileNames = new Set<string>();
-    const seenLogicalFileNames = new Set<string>();
-    let logicalPageCount = 0;
+    const seenSourceFileNames = new Set<string>();
+    const seenLogicalPageNames = new Set<string>();
 
     for (const [index, page] of input.pages.entries()) {
       if (seenUploadFileNames.has(page.fileName)) {
@@ -108,15 +114,22 @@ export const zCreateTranslationJobInput = z
         seenUploadFileNames.add(page.fileName);
       }
 
-      const sourcePages = page.sourcePages ?? [
+      const sourcePages: Array<{
+        fileName: string;
+        logicalFileName?: string;
+        logicalHeight?: number;
+        logicalOffsetX?: number;
+        logicalOffsetY?: number;
+        logicalPageNumber?: number;
+        logicalWidth?: number;
+      }> = page.sourcePages ?? [
         {
           fileName: page.fileName,
         },
       ];
-      logicalPageCount += sourcePages.length;
 
       for (const [sourceIndex, sourcePage] of sourcePages.entries()) {
-        if (seenLogicalFileNames.has(sourcePage.fileName)) {
+        if (seenSourceFileNames.has(sourcePage.fileName)) {
           context.addIssue({
             code: 'custom',
             message: 'Source page file names must be unique within a job.',
@@ -127,11 +140,38 @@ export const zCreateTranslationJobInput = z
           continue;
         }
 
-        seenLogicalFileNames.add(sourcePage.fileName);
+        seenSourceFileNames.add(sourcePage.fileName);
+
+        const logicalFileName =
+          'logicalFileName' in sourcePage
+            ? sourcePage.logicalFileName
+            : undefined;
+        if (logicalFileName) {
+          const requiredLogicalFields = [
+            'logicalHeight',
+            'logicalOffsetX',
+            'logicalOffsetY',
+            'logicalPageNumber',
+            'logicalWidth',
+          ] as const;
+
+          for (const field of requiredLogicalFields) {
+            if (!(field in sourcePage) || sourcePage[field] == null) {
+              context.addIssue({
+                code: 'custom',
+                message:
+                  'Logical split page metadata must include all logical dimensions and offsets.',
+                path: ['pages', index, 'sourcePages', sourceIndex, field],
+              });
+            }
+          }
+        }
+
+        seenLogicalPageNames.add(logicalFileName ?? sourcePage.fileName);
       }
     }
 
-    if (logicalPageCount > 200) {
+    if (seenLogicalPageNames.size > 200) {
       context.addIssue({
         code: 'custom',
         message: 'A job can contain at most 200 source pages.',

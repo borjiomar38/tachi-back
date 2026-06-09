@@ -295,6 +295,108 @@ describe('job service', () => {
     );
   });
 
+  it('counts downloaded split source fragments as one logical job page', async () => {
+    const createMany = vi.fn();
+    const createJob = vi.fn().mockResolvedValue({
+      id: 'job-split-logical',
+    });
+
+    mockDb.$transaction.mockImplementation(async (callback) => {
+      const tx = {
+        jobAsset: {
+          createMany,
+        },
+        translationJob: {
+          create: createJob,
+          findUniqueOrThrow: vi.fn().mockResolvedValue(
+            buildJobRecord({
+              id: 'job-split-logical',
+              objectKeys: [null],
+              pageCount: 1,
+              status: 'awaiting_upload',
+            })
+          ),
+        },
+      };
+
+      return await callback(tx);
+    });
+
+    const result = await createTranslationJob(
+      {
+        pages: [
+          {
+            checksumSha256: 'e'.repeat(64),
+            fileName: 'ocr-batch-0001.jpg',
+            mimeType: 'image/jpeg',
+            sizeBytes: 2048,
+            sourcePages: [
+              {
+                checksumSha256: 'a'.repeat(64),
+                fileName: '001__001.jpg',
+                height: 100,
+                logicalFileName: '001.jpg',
+                logicalHeight: 200,
+                logicalOffsetX: 0,
+                logicalOffsetY: 0,
+                logicalPageNumber: 1,
+                logicalWidth: 80,
+                offsetX: 0,
+                offsetY: 0,
+                originalPageNumber: 1,
+                width: 80,
+              },
+              {
+                checksumSha256: 'b'.repeat(64),
+                fileName: '001__002.jpg',
+                height: 100,
+                logicalFileName: '001.jpg',
+                logicalHeight: 200,
+                logicalOffsetX: 0,
+                logicalOffsetY: 100,
+                logicalPageNumber: 1,
+                logicalWidth: 80,
+                offsetX: 0,
+                offsetY: 100,
+                originalPageNumber: 1,
+                width: 80,
+              },
+            ],
+          },
+        ],
+        targetLanguage: 'ar',
+      },
+      {
+        actor: {
+          deviceId: 'device-1',
+          licenseId: 'license-1',
+        },
+        dbClient: mockDb as never,
+      }
+    );
+
+    expect(result.job.pageCount).toBe(1);
+    expect(createJob).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          pageCount: 1,
+        }),
+      })
+    );
+    expect(createMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: [
+          expect.objectContaining({
+            metadata: expect.objectContaining({
+              logicalPageCount: 1,
+              uploadBatchVersion: 'mobile_ocr_batch.v2',
+            }),
+          }),
+        ],
+      })
+    );
+  });
+
   it('returns direct object storage upload URLs for new upload jobs', async () => {
     mockPresignTranslationJobPageUpload.mockImplementation(
       async (input: {
@@ -2046,6 +2148,223 @@ describe('job service', () => {
           }),
           expect.objectContaining({
             pageKey: '002.jpg',
+          }),
+        ],
+      })
+    );
+  });
+
+  it('merges downloaded split OCR fragments into one logical translated page', async () => {
+    const batchedJob = buildJobRecord({
+      id: 'job-mobile-split-batch',
+      objectChecksums: ['e'.repeat(64)],
+      objectKeys: [
+        'jobs/job-mobile-split-batch/uploads/0001-ocr-batch-0001.jpg',
+      ],
+      pageCount: 1,
+      reservedTokens: 10,
+      startedAt: new Date('2026-03-20T10:10:00.000Z'),
+      status: 'processing',
+      uploadCompletedAt: new Date('2026-03-20T10:09:00.000Z'),
+    });
+    batchedJob.assets[0] = {
+      ...batchedJob.assets[0]!,
+      metadata: {
+        logicalPageCount: 1,
+        sourcePages: [
+          {
+            checksumSha256: 'a'.repeat(64),
+            fileName: '001__001.jpg',
+            height: 100,
+            logicalFileName: '001.jpg',
+            logicalHeight: 200,
+            logicalOffsetX: 0,
+            logicalOffsetY: 0,
+            logicalPageNumber: 1,
+            logicalWidth: 80,
+            offsetX: 0,
+            offsetY: 0,
+            originalPageNumber: 1,
+            width: 80,
+          },
+          {
+            checksumSha256: 'b'.repeat(64),
+            fileName: '001__002.jpg',
+            height: 100,
+            logicalFileName: '001.jpg',
+            logicalHeight: 200,
+            logicalOffsetX: 0,
+            logicalOffsetY: 100,
+            logicalPageNumber: 1,
+            logicalWidth: 80,
+            offsetX: 0,
+            offsetY: 100,
+            originalPageNumber: 1,
+            width: 80,
+          },
+        ],
+        uploadBatchVersion: 'mobile_ocr_batch.v2',
+        uploadedAt: '2026-03-20T10:00:00.000Z',
+        uploadStatus: 'uploaded',
+      },
+      originalFileName: 'ocr-batch-0001.jpg',
+    };
+
+    mockDb.$transaction
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          translationJob: {
+            findUnique: vi.fn().mockResolvedValue(batchedJob),
+            updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+          },
+        };
+
+        return await callback(tx);
+      })
+      .mockImplementationOnce(async (callback) => {
+        const tx = {
+          jobAsset: {
+            create: vi.fn(),
+            findFirst: vi.fn().mockResolvedValue(null),
+            update: vi.fn(),
+          },
+          tokenLedger: {
+            create: mockDb.tokenLedger.create,
+            updateMany: mockDb.tokenLedger.updateMany,
+          },
+          translationJob: {
+            update: vi.fn(),
+          },
+        };
+
+        return await callback(tx);
+      });
+
+    mockGetTranslationJobPageUpload.mockResolvedValue({
+      blob: new Blob([new Uint8Array([1, 2, 3])]),
+    });
+    mockPerformHostedOcr.mockResolvedValue({
+      blocks: [
+        {
+          angle: 0,
+          height: 10,
+          symHeight: 5,
+          symWidth: 5,
+          text: 'top',
+          width: 20,
+          x: 1,
+          y: 2,
+        },
+        {
+          angle: 0,
+          height: 10,
+          symHeight: 5,
+          symWidth: 5,
+          text: 'bottom',
+          width: 20,
+          x: 1,
+          y: 112,
+        },
+      ],
+      imgHeight: 200,
+      imgWidth: 80,
+      provider: 'google_cloud_vision',
+      providerModel: 'TEXT_DETECTION',
+      providerRequestId: 'ocr-split-batch-1',
+      sourceLanguage: 'ja',
+      usage: {
+        inputTokens: null,
+        latencyMs: 100,
+        outputTokens: null,
+        pageCount: 2,
+        providerRequestId: 'ocr-split-batch-1',
+        requestCount: 1,
+      },
+    });
+    mockPerformHostedTranslation.mockResolvedValue({
+      pages: [
+        {
+          blocks: [
+            {
+              index: 0,
+              sourceText: 'top',
+              translation: 'haut',
+            },
+            {
+              index: 1,
+              sourceText: 'bottom',
+              translation: 'bas',
+            },
+          ],
+          pageKey: '001.jpg',
+        },
+      ],
+      promptProfile: 'manga',
+      promptVersion: '2026-03-20.v1',
+      provider: 'gemini',
+      providerModel: 'gemini-test',
+      sourceLanguage: 'ja',
+      targetLanguage: 'fr',
+      usage: {
+        finishReason: 'stop',
+        inputTokens: 10,
+        latencyMs: 200,
+        outputTokens: 5,
+        pageCount: 1,
+        providerRequestId: 'tr-split-batch-1',
+        requestCount: 1,
+        stopReason: 'stop',
+      },
+    });
+    mockPutTranslationJobResultManifest.mockResolvedValue({
+      bucketName: 'results',
+      objectKey:
+        'jobs/job-mobile-split-batch/results/translation-manifest.json',
+    });
+
+    const result = await processTranslationJob(
+      { jobId: 'job-mobile-split-batch' },
+      {
+        dbClient: mockDb as never,
+        log: mockLogger,
+      }
+    );
+
+    expect(result?.pageCount).toBe(1);
+    expect(result?.pageOrder).toEqual(['001.jpg']);
+    expect(result?.pages['001.jpg']?.imgHeight).toBe(200);
+    expect(result?.pages['001.jpg']?.blocks).toEqual([
+      expect.objectContaining({
+        text: 'top',
+        translation: 'haut',
+        y: 2,
+      }),
+      expect.objectContaining({
+        text: 'bottom',
+        translation: 'bas',
+        y: 112,
+      }),
+    ]);
+    expect(mockPerformHostedOcr).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pageCount: 2,
+      })
+    );
+    expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
+      expect.objectContaining({
+        pages: [
+          expect.objectContaining({
+            blocks: [
+              expect.objectContaining({
+                text: 'top',
+                y: 2,
+              }),
+              expect.objectContaining({
+                text: 'bottom',
+                y: 112,
+              }),
+            ],
+            pageKey: '001.jpg',
           }),
         ],
       })
