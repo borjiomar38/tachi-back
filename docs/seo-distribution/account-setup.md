@@ -1,3 +1,10 @@
+## 2026-06-11 Cycle setup advancement
+
+| Priority | Platform | Purpose | Status | Owner/manual step | Required assets | Secret/API variable or credential reference | Publish capability after connection | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| high | X/Twitter official profile | Build a compliant founder-owned public trust surface for short updates and policy-first outreach | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: claim/create the official Nayovi X/Twitter account manually, approve profile bio and anti-spam policy, and confirm no-link-first defaults for outbound replies | `docs/seo-distribution/official-launch-profile-packet.md`, profile bio, avatar/banner, support/contact links, canonical URL list | `SEO_AGENT_X_ACCESS_TOKEN` | Owner may publish policy-first posts and responses only after profile identity is approved; no community link drops before field verification | OWNER_ACTION_REQUIRED: finalize profile ownership, then confirm can use no-link-first + optional official link escalation |
+| medium | Bluesky official open-social profile | Create an official open-web social signal for ethical support and creator trust without hard sales language | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/claim official handle on an approved instance, approve profile identity, and approve first posts | `docs/seo-distribution/open-social-profile-packet.md`, profile links, logo/avatar, bio, no-chapter-hosting policy text | `SEO_AGENT_BLUESKY_HANDLE`, `SEO_AGENT_BLUESKY_APP_PASSWORD` | Owner can enable watch-only profile visibility and policy-safe responses after approval; keep posting in draft until owner confirms account rules | OWNER_ACTION_REQUIRED: confirm handle, bio, and posting policy for official responses |
+
 ## 2026-06-05 Cycle Setup Advancement (priority refresh)
 
 ### 2026-06-05 official account setup tasks
