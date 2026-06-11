@@ -32,6 +32,13 @@
 
 This file is maintained by the SEO distribution agent.
 
+## 2026-06-11 Cycle Linkable Asset Additions
+
+| Asset | Target URL/file | Audience | Use | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| AITools directory listing-readiness block | `https://aitools.inc/submit` + `https://nayovi.com/guides/comic-ocr-translation-checklist` + `https://nayovi.com/download` | AI directory curators and reviewer networks | Product-light fit-first packet for listing policy and field compatibility; keeps links gated until trial/paid-field fit is confirmed | draft | Keep as no-link-first draft until category and pricing fields are verified |
+| XDA-compatible review language package | `https://www.xda-developers.com/how-we-review/` + `https://nayovi.com/guides/comic-ocr-translation-checklist` | Android technical readers and app reviewers | Reusable no-link-first language for review-readiness claims and evidence escalation in case review-path rules accept independent APK sources | draft | Keep no-link-first and share links only after owner confirms package/screenshot/policy language |
+
 ## 2026-06-01 Linkable Assets Added
 
 | Asset | Target URL/file | Audience | Use | Status | Next action |

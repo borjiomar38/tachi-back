@@ -1,3 +1,11 @@
+## 2026-06-11 Discovery Additions (fresh authoritative sources)
+
+| Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| draft | high | AI directory | NavTools AI tool submission form | https://navtools.ai/submit | High topical fit for paid-trial + paid-token model plus mobile utility metadata if category supports Android workflow tools | Metadata-fit check + policy-safe listing draft | AUTHORIZED_ACCOUNT_REQUIRED (manual workflow likely) | medium | Confirm accepted category and pricing fields before enabling any link variant |
+| draft | high | Technical publishing | AITools .inc submit flow | https://aitools.inc/submit | Strong category fit for a short process-first OCR utility listing if listing fields preserve official APK source + support + pricing | Listing-fit request with no-link first | OWNER_REVIEW_REQUIRED | medium | Keep no-link-first fit request until owner approves official links and non-promotional language |
+| draft | medium | Android editorial/community | XDA tag/official review standards | https://www.xda-developers.com/tag/app-review/ and https://www.xda-developers.com/how-we-review/ | Moderate fit for source-first app-review readiness notes if no promotional tone and no unsupported verification claims | Keep fit-check + response template ready for authorized account/channel | AUTHORIZED_ACCOUNT_REQUIRED for manual community participation | medium-high | Use as a technical policy-first angle only; move to link variant after platform-specific posting gate is cleared |
+
 ## 2026-06-05 Discovery Additions (cycle refresh)
 
 | Status | Authority tier | Category | Target | URL | Fit | Action type | Account/API requirement | Risk | Next action |

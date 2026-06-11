@@ -65,6 +65,25 @@
 
 # Nayovi Platform Drafts
 
+## 2026-06-11 Priority draft: AITools .inc listing fit (highest-ready for this cycle)
+
+- Target: `https://aitools.inc/submit`
+- Category: AI directory listing fit / metadata compatibility
+- Audience: AI tools directory reviewers and crawler-curation editors
+- Rules risk: medium (requires field compatibility on trial vs paid framing)
+- Status: draft (AUTHORIZED_ACCOUNT_REQUIRED)
+- No-link-first draft:
+  - "I prepared a compact listing-fit packet for an Android-only OCR and translation workflow. It supports official source links, trial-to-paid-token framing, permissions-safe scope, and support transparency. I can share exact required fields first and confirm category compatibility before any public link sharing."
+- Link variant (conditional if field acceptance is confirmed):
+  - `https://nayovi.com/guides/comic-ocr-translation-checklist`
+  - `https://nayovi.com/download`
+- Action intent:
+  1. Confirm the directory accepts official-source Android utility tools with explicit trial and paid-token separation.
+  2. Validate that listing fields do not force unsupported verification or ranking claims.
+  3. Add links only after owner confirms package/screenshot/policy language and account access is approved.
+
+## 2026-06-01 Priority Draft (best-ready): ToolIndex listing fit with account-setup gate
+
 This file is maintained by the SEO distribution agent.
 
 External platform drafts are for authorized-account posting only. Do not create accounts, bypass platform login, or post promotional backlinks automatically. Every draft should be useful without the backlink and should include a no-link variant when the community may reject links.

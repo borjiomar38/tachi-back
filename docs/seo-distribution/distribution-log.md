@@ -79,6 +79,20 @@
 
 # Nayovi SEO Distribution Log
 
+## 2026-06-11 Cycle (active pass)
+
+- Branch check: `seo/distribution-20260611T010013Z` confirmed before edits.
+- Read inputs before drafting: `docs/growth/backlink-prospects.csv`, `docs/growth/outreach-drafts.md`, `/var/lib/tachi-seo-distribution-agent/accounts.json`, and active `docs/seo-distribution/*.md` trackers.
+- Advanced account setup queue (2+ tasks) in `docs/seo-distribution/account-setup.md` with explicit owner-action requirements for X/Twitter and Bluesky because required credentials/workflow are not yet configured.
+- Added 3 new authority opportunities in `docs/seo-distribution/authority-opportunities.md` from different categories: AI directory (NavTools + AITools), and Android editorial (XDA standards path).
+- Added a best-ready `AITools .inc` draft and conditional link-safe variant to `docs/seo-distribution/platform-drafts.md` after confirming no-link-first posture.
+- Added one cycle-owned-content row (`content-calendar.md`) and 2 reusable linkable-asset rows (`link-assets.md`) to keep drafts reusable and account-gated.
+- Added 3 backlink-prospect CSV rows in `docs/growth/backlink-prospects.csv` mirroring the same opportunity set.
+- Added one Facebook queue draft entry (male_hero + duel-ready style rules) with story-title/story-hook/message/story question and no unresolved automation risk (no image asset yet, status kept draft).
+- Next actions:
+  - Keep all listed channels in owner-review or account-setup-required status until credentials and official account ownership are confirmed.
+  - Generate/manually attach image assets before any `auto_publish` for Facebook and then promote only if approval + image quality are ready.
+
 This file is maintained by the SEO distribution agent.
 
 ## 2026-06-01 Cycle (current pass)

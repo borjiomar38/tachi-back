@@ -35,6 +35,11 @@ This file is maintained by the SEO distribution agent.
 
 | Status | Search intent | Target keyword | Target URL | Angle | Next action |
 | --- | --- | --- | --- | --- | --- |
+| draft | AI directory fit packet maintenance | AI tool submission fields + trial/paid token separation | https://aitools.inc/submit | Build a reusable no-link-first directory-fit block that maps required listing fields to Nayovi-accurate claims, with a conditional link block for approved fields | Add the block to `docs/seo-distribution/platform-drafts.md` and reuse it in future listing check cycles |
+| draft | Android reviewer fit for app media | Android APK source, permissions, and policy language for app review-facing audiences | https://www.xda-developers.com/how-we-review/ | Create a short citation ladder for review readiness (no chapter-hosting, no unsupported verification claims) for use in authorized comments or media conversations | Keep the ladder in draft until posting is allowed by official account setup |
+
+| Status | Search intent | Target keyword | Target URL | Angle | Next action |
+| --- | --- | --- | --- | --- | --- |
 | draft | launch trust + directory alignment | manga OCR checklist citation-ladder source-of-truth | https://tachiyomiat.com/guides/comic-ocr-translation-checklist | Add a short ownership + link escalation section that locks the default no-link-first sequence before any external directories or media links | Update FAQ and link-order blocks so every draft points first to checklist and pilot brief |
 | draft | technical publishing readiness | OCR translation workflow transparency, trial/token disclosures | https://translate-manhwa-ai.com/ocr-translation-trust-matrix-guide | Publish a claim-safe technical section with "can state / should omit / share after request" language to support non-promotional backlinks | Convert this section into the default pre-draft block for HN/DEV/Medium/LinkedIn owner reviews |
 | draft | creator/language industry positioning | creator-approved sample OCR QA process | https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot | Create a one-page “approved-sample and localization QA” route summary for creator, localization, and partner queries | Keep this as no-link-first until partner category fit is owner-approved |
