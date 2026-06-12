@@ -5858,3 +5858,36 @@ If this does not fit your policy, please reply "opt out".
   1. Confirm listing requirements and free-vs-premium eligibility before sending any link.
   2. Keep fit request no-link-first until policy fit is confirmed by the directory.
   3. Move to link-variant only under owner-approved policy and posting authority.
+
+## 2026-06-12 Draft opportunities and posting packets
+
+### 1) Android press / launch community note (author review, no-link-first variant)
+- Platform: Android Authority (or equivalent Android editorial surface)
+- Category: Android press + creator workflow feature fit
+- Target: `androidauthority.com` / editorial submission/contact pathways
+- Audience: Android readers, OCR/translation setup users, indie tooling audience
+- Rules risk: medium. Must avoid hard claims, no ranking promises, no unverifiable install metrics
+- Post angle: process-first and policy-first; frame as a non-promotional workflow transparency piece
+- No-link variant: discuss responsible-source workflow, support path, and legal-safe translation setup without any outbound link
+- Link variant: add `https://nayovi.com/download`, `/support`, `/pricing` only after owner approves editorial policy
+
+Draft message:
+"We are collecting permission-safe practices for mobile-first manga and manhwa translation workflows. A growing challenge is readers asking for OCR speed without compromising source ownership. We published a short guide on how to test readability, verify source rights, and handle support handoff cleanly for user-owned, public-domain, or officially cleared content."
+
+### 2) Reddit / creator discussion (value-first comment draft)
+- Platform: Reddit (`r/manga`, `r/webtoons`, `r/translation`)
+- Category: community value contribution
+- Status: AUTHORIZED_ACCOUNT_REQUIRED
+- Rules risk: high (moderation varies, promotional links can be flagged)
+- Target: value-first answers in Q&A threads about OCR quality and translated manga readability
+- No-link variant: provide practical checklist steps only, one-sentence policy reminder about ownership
+- Link variant: add one optional line with `/guides/comic-ocr-translation-checklist` after explicit community permission and if thread policy allows
+
+### 3) GitHub technical note draft
+- Platform: GitHub (owned repo documentation)
+- Category: technical trust surface
+- Status: ready_for_owner_review
+- Target: `github.com` docs and README for owned repository
+- Audience: contributors, Android users, technical reviewers
+- Rules risk: low if limited to owned repo content
+- Draft direction: add a short section to docs on permission-safe use cases and release transparency. Keep it practical and no external claim language.

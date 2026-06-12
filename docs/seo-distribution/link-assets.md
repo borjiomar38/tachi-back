@@ -442,3 +442,10 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | ToolDirectory-compatible listing packet | https://tooldirectory.ai/submit/ | AI directory editors and Android discoverability checkers | Product-light compatibility checklist: free-trial/paid token framing, official-source link policy, and no-mirror language for trust-first directory submissions | draft | Keep as no-link-first packet and only attach URLs if form fields explicitly support paid + trial split and official Android path |
 | Founder trust draft block | docs/seo-distribution/platform-drafts.md | Founder/community channels and startup readers | Reusable no-link-first article opening that maps to `LINK_STATUS=OWNER_REVIEW_REQUIRED` and avoids launch metrics before posting approval | draft | Keep this copy as the default founder posting baseline until LinkedIn profile policy is finalized |
+
+## 2026-06-12 Linkable asset notes
+
+- Added trustable owned asset concept: `https://nayovi.com/guides/comic-ocr-translation-checklist` updated with stronger policy-first section emphasizing ownership, public-domain safety, and no chapter-hosting claims.
+- Added citation asset concept for launch conversations: `/guides/permission-safe-manga-translation-pilot` + `/guides/translation-support-workflow` cross-links to support evidence chain and pricing transparency.
+- Screenshot and demo angle added: one high-signal screenshot lane should show checklist pass/fail states (blur sensitivity, reading order, glossary stability) without app UI claims beyond support-safe pages.
+- Outreach angle package in draft form: AI+localization partner deck centered on “permission-safe OCR quality checks” for creators and indie translators.

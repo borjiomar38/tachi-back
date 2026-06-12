@@ -393,3 +393,11 @@ This file is maintained by the SEO distribution agent.
 | --- | --- | --- | --- | --- | --- |
 | draft | permissions-aware directory-ready content | `AI translation OCR Android tool listing`, `trial to token plan` | https://nayovi.com/guides/comic-ocr-translation-checklist | Add a short conversion-safe claim ladder for AI directory and app directory submissions (what to claim, what to hold, optional link escalation) | Prepare 4-line no-link-first block and align with `platform-drafts.md` ToolDirectory entry |
 | draft | build-in-public trust statement | `permission-safe comic OCR workflow`, `owned-source translation` | https://nayovi.com/guides/permission-safe-manga-translation-pilot | Add a founder/creator-facing no-link starter section focused on pilot scope, approvals, and support boundaries | Keep unpublished until official account setup for founder channels is confirmed |
+
+## 2026-06-12 Cycle content plan
+
+| Published date | Topic | Keywords | Search intent | Target URL | Status | Next action |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2026-06-12 | Permission-safe OCR translation workflows for manga, manhwa, and manhua | permission-safe manga OCR, OCR translation checklist, legal reading workflow | Informational + trust | /guides/permission-safe-manga-translation-pilot | draft_update | Publish practical checklist section and anchor internal links to support/pricing pages |
+| 2026-06-12 | How hosted OCR differs from chapter hosting in mobile translation | manga OCR app trust, hosted OCR vs chapter hosting, mobile translator ethics | Informational / trust verification | /guides/comic-ocr-translation-checklist | draft_update | Add clear policy box and update schema metadata for anti-misuse language |
+| 2026-06-12 | APK release transparency for OCR + translation users | Nayovi APK update, redemption flow, token plans, support paths | Transactional + trust | /guides/translation-support-workflow | draft_update | Draft a release-safe explainer section and internal link map to /pricing and /support |
