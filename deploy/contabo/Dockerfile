@@ -52,7 +52,7 @@ ENV NODE_ENV=production
 
 COPY prisma ./prisma
 
-CMD ["pnpm", "db:migrate:deploy"]
+CMD ["./node_modules/.bin/prisma", "migrate", "deploy"]
 
 FROM node:22-bookworm-slim AS runner
 
