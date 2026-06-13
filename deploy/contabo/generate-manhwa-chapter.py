@@ -22,6 +22,7 @@ from typing import Any
 DEFAULT_CODEX_BIN = 'codex'
 DEFAULT_MODEL = 'gpt-5.5'
 DEFAULT_REASONING_EFFORT = 'extra-high'
+DEFAULT_CONTEXT_ROOT = pathlib.Path('docs/manhwa/context')
 DEFAULT_OUTPUT_DIR = pathlib.Path('docs/manhwa/generated')
 MIN_PANELS = 12
 MAX_PANELS = 12
@@ -129,6 +130,7 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument('--series-title', default='THE ECLIPSE CROWN')
   parser.add_argument('--series-slug', default='the-eclipse-crown')
   parser.add_argument('--chapter-number', type=int, default=1)
+  parser.add_argument('--context-root', default=os.environ.get('MANHWA_CONTEXT_ROOT', str(DEFAULT_CONTEXT_ROOT)))
   parser.add_argument('--output-dir', default=os.environ.get('MANHWA_AGENT_OUTPUT_DIR', str(DEFAULT_OUTPUT_DIR)))
   parser.add_argument('--input-package', default='')
   parser.add_argument('--codex-bin', default=os.environ.get('MANHWA_AGENT_CODEX_CLI_PATH', DEFAULT_CODEX_BIN))
@@ -262,7 +264,7 @@ def validate_package(
       'background_text',
       'vertical_continuity_note',
     ):
-      if not str(panel.get(key) or '').strip() and key not in ('dialogue', 'background_text'):
+      if not str(panel.get(key) or '').strip() and key not in ('dialogue', 'background_text', 'narration'):
         raise ValueError(f'Panel {index} missing {key}.')
     if not isinstance(panel.get('dialogue'), list):
       raise ValueError(f'Panel {index} dialogue must be a list.')
@@ -272,7 +274,50 @@ def validate_package(
   return payload
 
 
-def build_generation_prompt(series_title: str, chapter_number: int) -> str:
+def read_json_file(path: pathlib.Path, fallback: Any) -> Any:
+  try:
+    return json.loads(path.read_text(encoding='utf-8'))
+  except (FileNotFoundError, json.JSONDecodeError):
+    return fallback
+
+
+def chapter_package_path(args: argparse.Namespace, chapter_number: int) -> pathlib.Path:
+  return (
+    pathlib.Path(args.output_dir)
+    / f'{args.series_slug}-chapter-{chapter_number:03d}.json'
+  )
+
+
+def build_prompt_context(args: argparse.Namespace) -> dict[str, Any]:
+  context_root = pathlib.Path(args.context_root)
+  series_dir = context_root / args.series_slug
+  preproduction_dir = series_dir / 'preproduction'
+  previous_chapter_number = args.chapter_number - 1
+
+  return {
+    'series_bible': read_json_file(series_dir / 'series-bible.json', {}),
+    'characters': read_json_file(series_dir / 'characters.json', {'characters': []}),
+    'bubble_style_bible': read_json_file(series_dir / 'bubble-style-bible.json', {}),
+    'story_engine': read_json_file(preproduction_dir / 'story-engine.json', {}),
+    'season_map': read_json_file(preproduction_dir / 'season-map.json', {}),
+    'current_chapter_scenario': read_json_file(
+      preproduction_dir
+      / 'chapters'
+      / f'chapter-{args.chapter_number:03d}-scenario.json',
+      {},
+    ),
+    'previous_chapter_package': (
+      read_json_file(chapter_package_path(args, previous_chapter_number), {})
+      if previous_chapter_number > 0
+      else {}
+    ),
+  }
+
+
+def build_generation_prompt(args: argparse.Namespace, prompt_context: dict[str, Any]) -> str:
+  series_title = args.series_title
+  chapter_number = args.chapter_number
+
   return f"""You are the autonomous Nayovi Originals showrunner.
 
 Use model-level reasoning to create an original premium Korean manhwa/webtoon package.
@@ -292,6 +337,20 @@ Story seed to preserve:
 - The heroine is a fallen princess who wakes before her execution.
 - Her crown is alive.
 - A regressed duke remembers failing her in a previous timeline.
+
+Canonical continuity context:
+{json.dumps(prompt_context, ensure_ascii=False, indent=2)}
+
+Continuity requirements:
+- Reuse established series, character IDs, character names, canon prompts,
+  bubble rules, and visual identities from the continuity context.
+- For chapter {chapter_number}, continue from the previous chapter package and
+  current chapter scenario when they are present. Do not restart chapter 1 and
+  do not invent replacement protagonists for established recurring roles.
+- New characters are allowed only when the chapter scenario needs them; keep
+  recurring characters stable.
+- A panel may use an empty narration string when the image and dialogue carry
+  the story beat. Background text may also be empty.
 
 Return JSON only. The first character must be {{ and the last character must be }}.
 Return exactly one JSON object with this shape:
@@ -412,6 +471,8 @@ Package:
 
 def build_revision_prompt(payload: dict[str, Any], review: dict[str, Any]) -> str:
   revision_seed = build_revision_seed(payload)
+  chapter = payload.get('chapter') if isinstance(payload.get('chapter'), dict) else {}
+  chapter_number = int(chapter.get('chapter_number') or 1)
 
   return f"""You are the autonomous Nayovi Originals showrunner revising a manhwa package after expert AI review.
 
@@ -419,10 +480,10 @@ Revise the package so it can pass autonomous publication review.
 
 Mandatory fixes:
 - Apply every required_fixes item from the expert review.
-- Expand chapter 1 into exactly {MIN_PANELS} vertical panels.
+- Expand chapter {chapter_number} into exactly {MIN_PANELS} vertical panels.
 - Keep all recurring character IDs stable unless a new character is truly needed.
 - Preserve the core premise: chained moon, fallen princess before execution, living crown, regressed duke.
-- Improve foreshadowing for the future moon-sword/murim arc without making chapter 1 feel overloaded.
+- Improve foreshadowing for the future moon-sword/murim arc without making chapter {chapter_number} feel overloaded.
 - Clarify visual/body continuity in canon prompts.
 - Strengthen antagonist motives and limits.
 - Keep the story original and avoid named series, artists, studios, copyrighted characters, logos, or readable fake text outside the approved manhwa lettering, bubbles, captions, and background_text fields.
@@ -545,11 +606,12 @@ def load_initial_package(args: argparse.Namespace, work_dir: pathlib.Path) -> di
       min_panels=1,
     )
   else:
+    prompt_context = build_prompt_context(args)
     raw_generation = call_codex(
       codex_bin=args.codex_bin,
       model=args.model,
       output_schema=PACKAGE_OUTPUT_SCHEMA,
-      prompt=build_generation_prompt(args.series_title, args.chapter_number),
+      prompt=build_generation_prompt(args, prompt_context),
       reasoning_effort=args.reasoning_effort,
       work_dir=work_dir,
     )
