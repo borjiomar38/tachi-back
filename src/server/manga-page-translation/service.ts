@@ -27,8 +27,12 @@ export const zTranslateMangaPageInput = z.object({
   manga: z.object({
     artist: zOptionalText,
     author: zOptionalText,
+    categories: z.array(z.string().trim().min(1).max(100)).max(50).nullish(),
+    contentRating: zOptionalText,
     description: zOptionalText,
     genres: z.array(z.string().trim().min(1).max(100)).max(50).nullish(),
+    rating: zOptionalText,
+    tags: z.array(z.string().trim().min(1).max(100)).max(50).nullish(),
     title: z.string().trim().min(1).max(500),
     url: z.string().trim().min(1).max(2_000),
   }),
