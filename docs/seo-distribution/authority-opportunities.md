@@ -591,3 +591,48 @@ GitHub contribution workflow | Standard GitHub auth + maintainer-friendly PR tit
 | high | App directory | AI tools directory with editorial submission review | https://www.futuretools.io | Strong topical fit for hosted OCR+AI translation workflow if no paid reciprocal placement required | monitor_and_prepare_submission_packet | `SEO_AGENT_DIRECTORIES_TOKEN optional` | medium (submission policy changes) | discovered | Verify current form path, keep link only if source-of-truth fields are allowed |
 | high | Android press / editorial | Android tooling and reader workflow publication | https://www.androidpolice.com | Medium fit for permission-safe Android workflow transparency; useful for credibility and traffic quality | prepare_editorial_pitch_draft | none (manual contact page only) | medium | owned_draft | Draft founder-safe one-pager; no direct contact submission until official channel approved |
 | medium | Publisher directory | AI app comparison / alternatives roundup | https://www.producthunt.com/products/torii-image-translator/alternatives | Good fit for contextual alternatives narrative once maker account is ready | draft_positioning_packet | `SEO_AGENT_PRODUCTHUNT_TOKEN` | low-moderate (community guidelines) | draft_pending | Keep as draft and move to owner review after creator profile confirmation |
+## 2026-06-13 discovered high-authority opportunities
+
+- authority_tier: A
+  category: app_media
+  target: Android Authority
+  url: https://www.androidauthority.com/contact/
+  fit: Mobile/Android creator tooling audience + explicit product promotion contact path.
+  action_type: editorial_pitch
+  account_or_api_requirement: OWNER action required; no official account configured in accounts.json.
+  risk: low (requires clear editorial fit and non-promotional framing)
+  status: pending_review
+  next_action: draft one editor-focused value piece on safe on-device OCR, OCR quality benchmarks, and bilingual workflow for manga readers; submit as OWNER_REVIEW_REQUIRED pitch.
+
+- authority_tier: A
+  category: launch_community
+  target: Product Hunt (makers)
+  url: https://help.producthunt.com/en/articles/6684701-how-do-i-claim-my-product-page
+  fit: Strong app-discovery channel for Android tools with explicit product page ownership flow.
+  action_type: profile_setup + launch_preparation + listing_update
+  account_or_api_requirement: personal PH account + email verification; product maker profile permissions.
+  risk: medium (community-first post quality and launch-window expectations).
+  status: owner_review_required
+  next_action: complete maker account setup, claim product page, prepare launch copy and maker first comment without overpromotional claims.
+
+- authority_tier: B
+  category: ai_tool_directory
+  target: Future Tools
+  url: https://www.futuretools.io/submit-a-tool
+  fit: Curated AI directory audience aligns with OCR/translation workflow value and monthly token product context.
+  action_type: directory_submission
+  account_or_api_requirement: manual form submission; no API token documented.
+  risk: medium (rejection if judged as duplicate/tool aggregator).
+  status: pending_review
+  next_action: submit with official brand description, screenshots, pricing transparency, and clear no-piracy statement.
+
+- authority_tier: B
+  category: developer_resource
+  target: Awesome ACG
+  url: https://open-awesome.com/projects/awesome-acg
+  fit: High topical relevance for manga/comic/game ecosystem resource discovery.
+  action_type: documentation/contribution_draft
+  account_or_api_requirement: OWNER_REVIEW_REQUIRED before pull request; maintainers may have custom contribution rules.
+  risk: medium (list quality constraints and anti-spam checks).
+  status: in_progress
+  next_action: add a dedicated "Nayovi official docs and guides" resource suggestion package with non-promotional framing in a forked PR draft.

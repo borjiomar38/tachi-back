@@ -3482,3 +3482,24 @@ Next action:
 | high | LinkedIn official company/founder page | Build official founder trust signal for partnerships, investors, and creator credibility | ready_for_owner_review | OWNER_ACTION_REQUIRED: confirm official `Nayovi` company page ownership and founder role, publish mission + anti-spam policy in page bio, and approve outbound post rules | `docs/seo-distribution/official-launch-profile-packet.md`, logo/avatar files, mission text, support and download links, legal-safe one-pagers | `SEO_AGENT_LINKEDIN_ACCESS_TOKEN`, `SEO_AGENT_LINKEDIN_ORGANIZATION_ID` | Authorized status updates, founder notes, and comments only after identity and policy lock are complete; keep all posts no-link-first by default | Add page copy + post-safe templates in `docs/seo-distribution/platform-drafts.md`, then request OWNER_REVIEW before posting |
 | medium | Product Hunt maker/company profile | Preserve launch trust path and launch cadence under official ownership rules | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: create/confirm maker profile, approve launch policy, and define moderation-friendly posting rhythm for future launch + launch follower management | `docs/seo-distribution/official-launch-profile-packet.md`, pricing summary, support URL pack, anti-manipulation posting checklist | `SEO_AGENT_PRODUCTHUNT_TOKEN`, `SEO_AGENT_PRODUCTHUNT_PROFILE_REFERENCE` | Owner can publish founder-led launch updates only after launch-day and policy gates are approved; keep comments in draft until manual confirmation | Prepare launch-safe no-link and link-optional post variants in `docs/seo-distribution/platform-drafts.md` |
 | medium | AppBrain and alternative app-index profiles | Open optional app-index review lane for Android readers and technical directories | setup_packet_prepared_owner_action_required | OWNER_ACTION_REQUIRED: verify official package-safe submission policy and confirm whether a Play-linked or equivalent trust lane is allowed for the APK path used by Nayovi | `docs/seo-distribution/app-store-source-eligibility-packet.md`, support/permissions policy pack, official APK package metadata | `SEO_AGENT_ANDROID_PACKAGE_REFERENCE` | No external submission until owner confirms package facts, support policy, and source-link handling | Keep in owner-review queue; move to draft listing only with explicit policy confirmation |
+## 2026-06-13 cycle additions
+
+- priority: high
+  platform: product_hunt
+  purpose: Maintain official maker/product trust channel and listing control for future launch campaigns.
+  status: in_progress
+  owner_manual_step: OWNER_ACTION_REQUIRED: create producthunt personal maker account at producthunt.com using verified official email and request access to claim Nayovi product page.
+  required_assets: Product page text in English, 2x screenshot assets, short founder bio, founder profile photo, official logo, direct download page URL.
+  secret_or_api_reference: SEO_AGENT_PRODUCTHUNT_ACCESS_TOKEN (must be provisioned in /opt/tachi-seo-distribution-agent/.env.seo-distribution-agent)
+  publish_capability_after_connection: claim product page, post Nayovi launch, add maker comments with context-first update, request maker badge, track listing health.
+  next_action: AUTHORIZE_ACCOUNT_REQUIRED and then submit claim request using https://help.producthunt.com/en/articles/6684701-how-do-i-claim-my-product-page.
+
+- priority: high
+  platform: google_search_console
+  purpose: Core ownership proof for search index health signals and crawl issue visibility.
+  status: in_progress
+  owner_manual_step: OWNER_ACTION_REQUIRED: verify nayovi.com in Google Search Console and file ownership verification for all canonical host variants.
+  required_assets: DNS TXT/HTML verification file or domain ownership method, canonical homepage URL set, robots.xml and sitemap.xml links, brand logo and privacy/contact URLs.
+  secret_or_api_reference: SEO_AGENT_GSC_VERIFICATION_TOKEN (do not store value in docs)
+  publish_capability_after_connection: retrieve index coverage alerts, submit sitemap, monitor crawl/frequency for translation/landing pages.
+  next_action: run canonical URL audit in owned site and prepare Google Search Console admin handoff checklist for owner.

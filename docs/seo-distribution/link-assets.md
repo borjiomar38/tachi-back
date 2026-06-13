@@ -449,3 +449,26 @@ This file is maintained by the SEO distribution agent.
 - Added citation asset concept for launch conversations: `/guides/permission-safe-manga-translation-pilot` + `/guides/translation-support-workflow` cross-links to support evidence chain and pricing transparency.
 - Screenshot and demo angle added: one high-signal screenshot lane should show checklist pass/fail states (blur sensitivity, reading order, glossary stability) without app UI claims beyond support-safe pages.
 - Outreach angle package in draft form: AI+localization partner deck centered on “permission-safe OCR quality checks” for creators and indie translators.
+## 2026-06-13 trust and linking assets to build
+
+- asset_name: OCR Translation Trust Matrix (owned page)
+  type: page
+  url: /blog/ocr-translation-trust-matrix
+  angle: practical compliance and quality signals for OCR+translation on Android.
+  evidence: internal test matrix, troubleshooting checklist, model limitations, permission-safety statement.
+  usage: useful for directory listing citations and technical communities.
+  status: draft
+
+- asset_name: Android Reader Workflow Cheat Sheet
+  type: downloadable_guide
+  url: /assets/downloads/ocr-reader-workflow-cheat-sheet.pdf
+  angle: practical steps for high-contrast capture, glossary handling, and correction flow.
+  usage: good attachment for Product Hunt maker post + Android authority pitch.
+  status: draft
+
+- asset_name: Community FAQ bundle for publishers
+  type: docs
+  url: /blog/manga-translation-permissions-and-risks
+  angle: non-piracy boundaries, ownership assumptions, and user-owned content policy.
+  usage: backlink-ready response point for Reddit and community comments.
+  status: in_progress

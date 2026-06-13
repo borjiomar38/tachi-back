@@ -5891,3 +5891,33 @@ Draft message:
 - Audience: contributors, Android users, technical reviewers
 - Rules risk: low if limited to owned repo content
 - Draft direction: add a short section to docs on permission-safe use cases and release transparency. Keep it practical and no external claim language.
+## 2026-06-13 ready draft: High-fit target action
+
+- platform: Product Hunt (if authorized)
+  target: Product Hunt "Product Hunt Makers" product ecosystem + launch page
+  audience: creator builders, AI product builders, translation/language tool early adopters, Android reader communities
+  rules_risk: medium
+  value_first_angle: "Nayovi helps readers process manga/manhwa/manhua they already own with OCR + AI translation workflows that preserve source ownership assumptions and licensing boundaries."
+  no_link_variant: |
+    "I built a permission-safe Android OCR + translation workflow for manga readers who want clean subtitle-style reading for local/private content without cloud uploads by default. I’ll share the lessons learned from mobile OCR edge cases, prompt governance, and error correction UX in an upcoming teardown."
+  link_variant: |
+    "If useful, I can share the structured setup notes plus workflow examples from this build: https://nayovi.com/compare?focus=ocr-translation-trust"
+  post_or_comment_notes: |
+    - Avoid link unless response indicates context fit and explicit value request.
+    - No policy-unsafe claims; no piracy framing.
+    - Keep first comment as maker context and rationale, not ad copy.
+  next_action: set status to OWNER_REVIEW_REQUIRED until maker account verified; include one image mock only if official image policy allows.
+
+- platform: androidauthority.com
+  target: Android Authority "contact / promotion" channel
+  audience: Android user acquisition and app feature readers
+  rules_risk: medium-low
+  value_first_angle: "Offer a practical editorial angle: how OCR capture quality differs across Android screen types, battery tuning, and reader usability for manga/manhua workflows."
+  no_link_variant: |
+    "We see readers struggle with small text and mixed-font speech bubbles in long-form vertical content; I’d like to publish a practical guide on camera settings + OCR cleanup for manga and webtoon layouts."
+  link_variant: |
+    "If helpful, editorial draft and screenshots can reference https://nayovi.com/ocr-translation-trust-matrix and https://nayovi.com/use-cases/manga-reader-faq"
+  post_or_comment_notes: |
+    - Contact first: editorial pitch, not a cold ad.
+    - Include reproducible examples and data points from owned assets.
+  next_action: keep as DRAFT until ownership verification for Android Authority promotion path is confirmed.
