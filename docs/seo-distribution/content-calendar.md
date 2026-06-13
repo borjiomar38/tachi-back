@@ -401,3 +401,20 @@ This file is maintained by the SEO distribution agent.
 | 2026-06-12 | Permission-safe OCR translation workflows for manga, manhwa, and manhua | permission-safe manga OCR, OCR translation checklist, legal reading workflow | Informational + trust | /guides/permission-safe-manga-translation-pilot | draft_update | Publish practical checklist section and anchor internal links to support/pricing pages |
 | 2026-06-12 | How hosted OCR differs from chapter hosting in mobile translation | manga OCR app trust, hosted OCR vs chapter hosting, mobile translator ethics | Informational / trust verification | /guides/comic-ocr-translation-checklist | draft_update | Add clear policy box and update schema metadata for anti-misuse language |
 | 2026-06-12 | APK release transparency for OCR + translation users | Nayovi APK update, redemption flow, token plans, support paths | Transactional + trust | /guides/translation-support-workflow | draft_update | Draft a release-safe explainer section and internal link map to /pricing and /support |
+## 2026-06-13
+
+- target_date: 2026-06-18
+  topic: "Safe OCR-translation workflows for manga/manhwa readers on Android"
+  keywords: ["OCR manga Android", "translation workflow", "reader-safe OCR", "offline text extraction"]
+  search_intent: transactional, how_to
+  target_url: /blog/ocr-translation-trust-matrix
+  status: planned
+  next_action: publish draft in markdown with short checklist and schema support references.
+
+- target_date: 2026-06-21
+  topic: "Nayovi compare guide: OCR options for creators and readers"
+  keywords: ["Nayovi OCR", "AI manga translation", "best OCR app for manga", "mobile translation app"]
+  search_intent: commercial
+  target_url: /compare/ocr-reader-tools
+  status: in_progress
+  next_action: draft section with 3 competitor-comparison scenarios and no-claim policy note.

@@ -311,3 +311,14 @@ Use this block when the first contact is uncertain:
 | Trust posture | "official APK source + official support + clear pricing split" | "officially verified on all stores", "no limitations", "all chapter-safe" |
 | Quality scope | "first-pass OCR/trans output for review workflows" | "final publish-grade output", "perfect accuracy guarantee" |
 | Distribution model | "user-owned workflow, explicit source-policy boundaries" | "complete catalog processing", "publisher-scale conversion service" |
+## 2026-06-13 trust addendum
+
+### Practical owner-first trust signals for Nayovi users
+
+- Use only user-owned material and public-domain samples for all OCR/translation workflows.
+- Document the capture limitations explicitly: blur, stylized fonts, vertical text, and compressed screenshots can reduce OCR quality.
+- Offer a transparent fallback: manual correction path first, AI polish second.
+- Keep privacy defaults predictable: optional cloud enhancement and local-first operations should be spelled out with retention expectations.
+- Add a short verification section in onboarding docs linking to legal and permissions guidance.
+
+This addendum should be reflected in any outreach copy so channels and directories understand the product’s safety and licensing posture before backlink consideration.
