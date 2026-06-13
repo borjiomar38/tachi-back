@@ -168,6 +168,161 @@ const theEclipseCrownChapterOne: ManhwaChapter = {
   updatedAt: '2026-06-06',
 };
 
+const theEclipseCrownChapterTwo: ManhwaChapter = {
+  chapterNumber: 2,
+  excerpt:
+    "Caelan's challenge stops the execution rhythm, but only Elianor can turn that interruption into law before the Crown in her blood chooses survival for her.",
+  panels: withPublicPanelImagePaths('the-eclipse-crown', 2, [
+    {
+      id: 'tec-002-001',
+      alt: 'Caelan stops the execution blade while Elianor lifts her head on the scaffold.',
+      narration:
+        "The duke's voice breaks the rhythm of death. Elianor refuses to let it become another chain.",
+      dialogue: [
+        'Caelan: Stop the blade. The witness hour is false.',
+        'Elianor: Do not speak over me, Duke.',
+      ],
+      prompt:
+        'Vertical panel artwork only, no rendered text or bubbles: wide execution scaffold beneath a chained moon, axe halted inches above the block, Elianor kneeling but lifting her head with bruised wrists visible, Caelan at the lower scaffold rail in black fur-lined ducal coat, imperial seating above with Varrien rigid and Maerith serene, crowd as indistinct silhouettes, strong downward moonlight and blood-red ceremonial cloth, no readable signage.',
+    },
+    {
+      id: 'tec-002-002',
+      alt: 'Elianor invokes the Moon Witness Clause as the Crown reflects in her eye.',
+      narration: '',
+      dialogue: [
+        "Elianor: Under the chained moon, I invoke the Moon's Witness Clause.",
+        'Eclipse Crown: At last, you choose a door with teeth.',
+      ],
+      prompt:
+        "Vertical close-up artwork only, no rendered text or bubbles: Elianor's bruised mouth and ash-gray eyes in profile as she speaks, a thin blood line at her lower lip, the Eclipse Crown visible only as a dark crescent reflection in her tear-bright eye, blurred scaffold rope behind her, cold silver light, no inscriptions.",
+    },
+    {
+      id: 'tec-002-003',
+      alt: 'Orran opens the decree case while Maerith orders him to read the witness hour.',
+      narration: 'Procedure answers only when someone dares to make it speak.',
+      dialogue: [
+        'Orran: The decree was sealed at the ninth imperial hour.',
+        'Maerith: Read the witness hour as well, Scribe.',
+      ],
+      prompt:
+        "Vertical panel artwork only, no rendered text or bubbles: Orran opens a black lacquer decree case, gloved fingers trembling over blank or obscured parchment, polished silver wax catching moonlight with a faint crown-like reflection, Maerith's veiled hand hovering near dark prayer beads, Varrien's ringed fingers tightening on a white-gold armrest in the background, no readable writing.",
+    },
+    {
+      id: 'tec-002-004',
+      alt: 'The temple bell rope snaps taut as the impossible witness hour is revealed.',
+      narration:
+        'The signed hour came before the ritual hour that made the execution lawful.',
+      dialogue: [
+        'Orran: Witness registration began at moonrise.',
+        'Crowd: Before the moon had a shadow?',
+        'Caelan: That is impossible in this season.',
+      ],
+      prompt:
+        "Vertical panel artwork only, no rendered text or bubbles: the temple bell rope snaps taut, Orran recoils from the decree case, Luceren's guarded smile fades in the witness row, Caelan looks up sharply from below the platform, chained moonlight slicing across the scaffold boards, no readable documents or plaques.",
+    },
+    {
+      id: 'tec-002-005',
+      alt: 'Maerith presses a silver Purity Pin toward Elianor palm.',
+      narration: '',
+      dialogue: [
+        'Maerith: A flaw delays the blade. It does not cleanse treason.',
+        'Elianor: Then test the flaw in public.',
+      ],
+      prompt:
+        "Vertical panel artwork only, no rendered text or bubbles: Maerith presses a slender silver Purity Pin toward Elianor's right palm, Elianor extends her hand without bowing, tiny blood bead forming, the Eclipse Crown appears only as a black-silver glint within the blood bead, crescent tattoos on Maerith's fingers shown as decorative marks without script, temple attendants blurred behind them.",
+    },
+    {
+      id: 'tec-002-006',
+      alt: 'Varrien argues from the imperial dais while Maerith answers beneath him.',
+      narration:
+        'The emperor can command armies. He cannot unring a witnessed bell.',
+      dialogue: [
+        'Varrien: The empire will not be ruled by a clerical hesitation.',
+        'Maerith: Majesty, the bell answered before the crowd.',
+      ],
+      prompt:
+        'Vertical panel artwork only, no rendered text or bubbles: Varrien seated high in white-and-gold robes, public smile frozen while his ringed hand digs into the armrest, Maerith below with calm lowered eyes, Luceren between them looking away from the decree case, crowd silhouettes staring upward, chained moonlight forming hard bars across imperial steps, no readable banners.',
+    },
+    {
+      id: 'tec-002-007',
+      alt: 'Selene signals from the east arch as Elianor remembers her mother song.',
+      narration:
+        "For one breath, the scaffold remembers a corridor, a mother's sleeve, and a song before politics had names.",
+      dialogue: [
+        'Selene: East arch. Still open.',
+        'Elianor: Mother hummed there before every ceremony.',
+      ],
+      prompt:
+        'Vertical panel artwork only, no rendered text or bubbles: emotional contrast after legal tension, Selene half-hidden by the east arch in a plain gray servant uniform, fingers touching a small broken-crescent hairpin and folded handkerchief signal, Elianor turns slightly from the scaffold with a softened expression despite blood on her palm, a brief warm lantern glow cutting through cold moonlight, no readable signs.',
+    },
+    {
+      id: 'tec-002-008',
+      alt: 'Orran announces a one bell cycle stay while Caelan blocks the imperial guard.',
+      narration: 'A stay is not mercy. It is a deadline with witnesses.',
+      dialogue: [
+        'Orran: The sentence stands. The execution is stayed for one bell cycle.',
+        'Elianor: Who holds custody?',
+        'Caelan: Not the imperial guard.',
+      ],
+      prompt:
+        "Vertical panel artwork only, no rendered text or bubbles: Orran raises one gloved hand with ritual dread, Maerith's dark beads loop like a boundary around the review dais, imperial guards hesitate at the scaffold steps, Caelan blocks one step with his shoulder without drawing a weapon, Elianor stands unsteadily with cut palm closed, no readable decree text.",
+    },
+    {
+      id: 'tec-002-009',
+      alt: 'Maerith marks temple custody as blood reflects a distant moon-sword hall.',
+      narration:
+        'Far beyond the capital, older laws wait in forms the empire stopped naming.',
+      dialogue: [
+        'Maerith: Until next moonrise, the temple reviews the polluted rite.',
+        'Eclipse Crown: Old halls hear old blood.',
+      ],
+      prompt:
+        "Vertical panel artwork only, no rendered text or bubbles: Maerith draws a chalkless ritual boundary with her beads around Elianor's feet, the blood drop on the scaffold stretches into a thin crescent shadow, inside the blood reflection appears a distant abstract silhouette of a moon-sword practice hall with curved training blades but no readable markings, Elianor notices only a flicker, subtle and not dominant.",
+    },
+    {
+      id: 'tec-002-010',
+      alt: 'Caelan and Elianor face each other on the scaffold steps without touching.',
+      narration:
+        'His past has already failed her. Her present has no room for borrowed chains.',
+      dialogue: [
+        'Caelan: In the winter I remember, no bell rang.',
+        'Elianor: Then remember less loudly. I need the truth, not your grief.',
+      ],
+      prompt:
+        'Vertical panel artwork only, no rendered text or bubbles: Caelan and Elianor face each other at different heights on the scaffold steps, his gloved hand stops short of touching her injured wrist, her cut palm held against her torn dress, winter teal shadow around him and moon-silver light around her, a faint curved-blade silhouette reflected in his dark glove buckle, no readable insignia.',
+    },
+    {
+      id: 'tec-002-011',
+      alt: 'Varrien, Maerith, and Luceren stand in separate tiers of power under the bell.',
+      narration:
+        'The stay divides them because each needs the same day for a different crime.',
+      dialogue: [
+        'Varrien: One day, Archpriestess. No more.',
+        'Maerith: One day is enough for the moon to choose custody.',
+        'Luceren: And enough for witnesses to remember they were seen.',
+      ],
+      prompt:
+        'Vertical panel artwork only, no rendered text or bubbles: three-tier power composition, Varrien above in white-gold anger, Maerith centered in silver-black calm, Luceren lower and half-turned among witnesses, Orran clutching the black decree case, the temple bell looming behind them with no inscription, moon chains visible through mist.',
+    },
+    {
+      id: 'tec-002-012',
+      alt: 'Blood on the scaffold reflects the Eclipse Crown above Elianor bare brow.',
+      narration:
+        'Elianor searches for the lullaby her mother hummed at the east arch. The shape of it is there. The sound is gone.',
+      dialogue: ['Eclipse Crown: Paid.'],
+      prompt:
+        "Vertical cliffhanger artwork only, no rendered text or bubbles: close view of scaffold blood spreading between floorboards, Elianor's bare or slippered feet at the edge, her right palm dripping one more bead, the blood reflection shows the black-silver Eclipse Crown hovering above her bare brow while her actual head has no crown, a faint warm memory glow dissolving into silver static, chained moon reflected in the blood, no readable text.",
+    },
+  ]),
+  publishedAt: '2026-06-13',
+  readingMinutes: 8,
+  seasonNumber: 1,
+  slug: 'the-blood-that-answered',
+  status: 'published',
+  title: 'The Blood That Answered',
+  updatedAt: '2026-06-13',
+};
+
 export const manhwaSeries: ManhwaSeries[] = [
   {
     audienceNote:
@@ -263,7 +418,7 @@ export const manhwaSeries: ManhwaSeries[] = [
         role: 'Moon-sword envoy',
       },
     ],
-    chapters: [theEclipseCrownChapterOne],
+    chapters: [theEclipseCrownChapterOne, theEclipseCrownChapterTwo],
     coverAlt:
       'Elianor Veyr stands under a chained moon with the living Eclipse Crown visible only in reflection.',
     coverImagePath: '/api/manhwa/the-eclipse-crown/poster',
@@ -275,7 +430,7 @@ export const manhwaSeries: ManhwaSeries[] = [
       'Dark court intrigue',
       'Eclipse magic',
     ],
-    lastModified: '2026-06-06',
+    lastModified: '2026-06-13',
     seasons: [
       {
         arc: 'Elianor survives the execution, exposes the first false charge, and follows buried moon-sword law toward the origin of the chained moon.',
