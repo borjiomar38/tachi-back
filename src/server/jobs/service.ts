@@ -1,6 +1,10 @@
 import { createHash } from 'node:crypto';
 
 import { envServer } from '@/env/server';
+import {
+  buildExplicitAdultContentBlockDetails,
+  getExplicitAdultContentGateResult,
+} from '@/server/content-policy/explicit-adult-content-gate';
 import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
 import {
@@ -180,6 +184,7 @@ export class TranslationJobError extends Error {
       | 'checksum_mismatch'
       | 'free_trial_daily_limit_exceeded'
       | 'insufficient_tokens'
+      | 'explicit_adult_content_blocked'
       | 'invalid_job'
       | 'invalid_job_state'
       | 'invalid_provider'
@@ -212,6 +217,18 @@ export async function createTranslationJob(
   const dbClient = deps.dbClient ?? db;
   const log = deps.log ?? logger;
   const now = deps.now ?? new Date();
+  const gateResult = input.chapterIdentity
+    ? getExplicitAdultContentGateResult({
+        manga: input.chapterIdentity,
+      })
+    : null;
+
+  if (gateResult) {
+    throw new TranslationJobError('explicit_adult_content_blocked', 451, {
+      details: buildExplicitAdultContentBlockDetails(gateResult),
+    });
+  }
+
   const providers = await resolveProviderSelection(
     {
       ocrProvider: input.ocrProvider,

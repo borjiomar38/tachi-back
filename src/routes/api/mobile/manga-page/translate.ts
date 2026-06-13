@@ -1,5 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import {
+  buildExplicitAdultContentBlockDetails,
+  getExplicitAdultContentGateResult,
+} from '@/server/content-policy/explicit-adult-content-gate';
 import { db } from '@/server/db';
 import {
   buildApiErrorResponse,
@@ -81,6 +85,29 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
               context.requestId,
               rateLimit.retryAfterMs
             );
+          }
+
+          const gateResult = getExplicitAdultContentGateResult({
+            manga: parsedInput.data.manga,
+          });
+
+          if (gateResult) {
+            routeLog.warn({
+              clientIp: context.clientIp,
+              deviceId: auth.device.id,
+              licenseId: auth.license.id,
+              mangaTitle: parsedInput.data.manga.title,
+              message: 'Blocked explicit adult manga page translation request',
+              signal: gateResult.signal,
+              type: 'explicit_adult_content_blocked',
+            });
+
+            return buildApiErrorResponse({
+              code: 'explicit_adult_content_blocked',
+              details: buildExplicitAdultContentBlockDetails(gateResult),
+              requestId: context.requestId,
+              status: 451,
+            });
           }
 
           const now = new Date();

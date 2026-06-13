@@ -10,12 +10,17 @@ const zPageMimeType = z
 
 export const zTranslationChapterIdentity = z
   .object({
+    categories: z.array(z.string().trim().min(1).max(100)).max(50).optional(),
     chapterName: z.string().trim().min(1).max(255).optional(),
     chapterUrl: z.string().trim().min(1).max(2048),
+    contentRating: z.string().trim().min(1).max(255).optional(),
+    genres: z.array(z.string().trim().min(1).max(100)).max(50).optional(),
     mangaTitle: z.string().trim().min(1).max(255).optional(),
     mangaUrl: z.string().trim().min(1).max(2048).optional(),
+    rating: z.string().trim().min(1).max(255).optional(),
     sourceId: z.string().trim().min(1).max(64).optional(),
     sourceName: z.string().trim().min(1).max(255).optional(),
+    tags: z.array(z.string().trim().min(1).max(100)).max(50).optional(),
   })
   .strict();
 

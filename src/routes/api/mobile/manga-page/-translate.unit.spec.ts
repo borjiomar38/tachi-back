@@ -304,4 +304,67 @@ describe('POST /api/mobile/manga-page/translate', () => {
     expect(queryRaw).toHaveBeenCalledTimes(3);
     expect(mockTranslateMangaPage).not.toHaveBeenCalled();
   });
+
+  it('blocks explicit adult manga page metadata before token and translation work', async () => {
+    const handler = (
+      Route as never as {
+        options: {
+          server: {
+            handlers: {
+              POST: (input: { request: Request }) => Promise<Response>;
+            };
+          };
+        };
+      }
+    ).options.server.handlers.POST;
+    const response = await handler({
+      request: new Request('http://localhost/api/mobile/manga-page/translate', {
+        body: JSON.stringify({
+          chapters: [
+            {
+              key: 'chapter-1',
+              name: 'Chapter 1',
+              url: 'https://example.test/manga/chapter-1',
+            },
+          ],
+          manga: {
+            genres: ['BL', 'Romance'],
+            tags: ['Pornographic'],
+            title: 'Blocked Test',
+            url: 'https://example.test/manga',
+          },
+          sourceId: 'source-1',
+          sourceLanguage: 'auto',
+          targetLanguage: 'fr',
+        }),
+        headers: {
+          authorization: 'Bearer test-token',
+          'content-type': 'application/json',
+        },
+        method: 'POST',
+      }),
+    });
+
+    expect(response.status).toBe(451);
+    await expect(response.json()).resolves.toMatchObject({
+      error: {
+        code: 'explicit_adult_content_blocked',
+        details: {
+          i18n: {
+            fallbackBody: 'This is haram',
+            fallbackTitle: 'Warning, this is haram',
+          },
+          reason: 'official_explicit_adult_metadata',
+          signal: {
+            field: 'tags',
+            value: 'Pornographic',
+          },
+        },
+      },
+      ok: false,
+    });
+    expect(mockGetAvailableLicenseTokenBalance).not.toHaveBeenCalled();
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
+    expect(mockTranslateMangaPage).not.toHaveBeenCalled();
+  });
 });

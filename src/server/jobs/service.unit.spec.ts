@@ -204,6 +204,56 @@ describe('job service', () => {
     mockDb.order.findFirst.mockResolvedValue(null);
   });
 
+  it('blocks explicit adult chapter jobs before provider or token work', async () => {
+    await expect(
+      createTranslationJob(
+        {
+          chapterIdentity: {
+            chapterUrl: 'https://example.test/manga/chapter-1',
+            genres: ['Yaoi', 'Romance'],
+            mangaTitle: 'Explicit Test',
+            tags: ['Explicit sex'],
+          },
+          pages: [
+            {
+              fileName: '001.jpg',
+              mimeType: 'image/jpeg',
+              sizeBytes: 1024,
+            },
+          ],
+          targetLanguage: 'en',
+        },
+        {
+          actor: {
+            deviceId: 'device-1',
+            licenseId: 'license-1',
+          },
+          dbClient: mockDb as never,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'explicit_adult_content_blocked',
+      details: {
+        i18n: {
+          fallbackBody: 'This is haram',
+          fallbackTitle: 'Warning, this is haram',
+        },
+        reason: 'official_explicit_adult_metadata',
+        signal: {
+          field: 'tags',
+          value: 'Explicit sex',
+        },
+      },
+      statusCode: 451,
+    });
+
+    expect(
+      mockGetProviderGatewayManifestWithRuntimeConfig
+    ).not.toHaveBeenCalled();
+    expect(mockDb.tokenLedger.aggregate).not.toHaveBeenCalled();
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
+  });
+
   it('creates an awaiting-upload job with page placeholders', async () => {
     const createMany = vi.fn();
 
