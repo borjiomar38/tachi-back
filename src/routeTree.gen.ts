@@ -51,6 +51,7 @@ import { Route as ManhwaSlugIndexRouteImport } from './routes/manhwa/$slug/index
 import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
 import { Route as ManagerTranslationQaIndexRouteImport } from './routes/manager/translation-qa/index'
+import { Route as ManagerTranslationFeedbackIndexRouteImport } from './routes/manager/translation-feedback/index'
 import { Route as ManagerSeoDistributionIndexRouteImport } from './routes/manager/seo-distribution/index'
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerManhwaIndexRouteImport } from './routes/manager/manhwa/index'
@@ -71,6 +72,7 @@ import { Route as ApiPaymentsWebhookRouteImport } from './routes/api/payments/we
 import { Route as ApiPaymentsCheckoutRouteImport } from './routes/api/payments/checkout'
 import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
+import { Route as ApiMobileTranslationRatingFeedbackRouteImport } from './routes/api/mobile/translation-rating-feedback'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
@@ -340,6 +342,12 @@ const ManagerTranslationQaIndexRoute =
     path: '/translation-qa/',
     getParentRoute: () => ManagerRouteRoute,
   } as any)
+const ManagerTranslationFeedbackIndexRoute =
+  ManagerTranslationFeedbackIndexRouteImport.update({
+    id: '/translation-feedback/',
+    path: '/translation-feedback/',
+    getParentRoute: () => ManagerRouteRoute,
+  } as any)
 const ManagerSeoDistributionIndexRoute =
   ManagerSeoDistributionIndexRouteImport.update({
     id: '/seo-distribution/',
@@ -441,6 +449,12 @@ const ApiOpenapiAppRoute = ApiOpenapiAppRouteImport.update({
   path: '/api/openapi/app',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileTranslationRatingFeedbackRoute =
+  ApiMobileTranslationRatingFeedbackRouteImport.update({
+    id: '/api/mobile/translation-rating-feedback',
+    path: '/api/mobile/translation-rating-feedback',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileJobsRoute = ApiMobileJobsRouteImport.update({
   id: '/api/mobile/jobs',
   path: '/api/mobile/jobs',
@@ -755,6 +769,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
@@ -775,6 +790,7 @@ export interface FileRoutesByFullPath {
   '/manager/manhwa/': typeof ManagerManhwaIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/seo-distribution/': typeof ManagerSeoDistributionIndexRoute
+  '/manager/translation-feedback/': typeof ManagerTranslationFeedbackIndexRoute
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
@@ -863,6 +879,7 @@ export interface FileRoutesByTo {
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
@@ -883,6 +900,7 @@ export interface FileRoutesByTo {
   '/manager/manhwa': typeof ManagerManhwaIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
   '/manager/seo-distribution': typeof ManagerSeoDistributionIndexRoute
+  '/manager/translation-feedback': typeof ManagerTranslationFeedbackIndexRoute
   '/manager/translation-qa': typeof ManagerTranslationQaIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/versions': typeof ManagerVersionsIndexRoute
@@ -976,6 +994,7 @@ export interface FileRoutesById {
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
@@ -996,6 +1015,7 @@ export interface FileRoutesById {
   '/manager/manhwa/': typeof ManagerManhwaIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/seo-distribution/': typeof ManagerSeoDistributionIndexRoute
+  '/manager/translation-feedback/': typeof ManagerTranslationFeedbackIndexRoute
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
@@ -1090,6 +1110,7 @@ export interface FileRouteTypes {
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
@@ -1110,6 +1131,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/'
     | '/manager/providers/'
     | '/manager/seo-distribution/'
+    | '/manager/translation-feedback/'
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
@@ -1198,6 +1220,7 @@ export interface FileRouteTypes {
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
@@ -1218,6 +1241,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa'
     | '/manager/providers'
     | '/manager/seo-distribution'
+    | '/manager/translation-feedback'
     | '/manager/translation-qa'
     | '/manager/users'
     | '/manager/versions'
@@ -1310,6 +1334,7 @@ export interface FileRouteTypes {
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
@@ -1330,6 +1355,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/'
     | '/manager/providers/'
     | '/manager/seo-distribution/'
+    | '/manager/translation-feedback/'
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
@@ -1420,6 +1446,7 @@ export interface RootRouteChildren {
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
+  ApiMobileTranslationRatingFeedbackRoute: typeof ApiMobileTranslationRatingFeedbackRoute
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
   ApiOpenapiAuthRoute: typeof ApiOpenapiAuthRouteWithChildren
   ApiPaymentsCheckoutRoute: typeof ApiPaymentsCheckoutRoute
@@ -1742,6 +1769,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerTranslationQaIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/translation-feedback/': {
+      id: '/manager/translation-feedback/'
+      path: '/translation-feedback'
+      fullPath: '/manager/translation-feedback/'
+      preLoaderRoute: typeof ManagerTranslationFeedbackIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/seo-distribution/': {
       id: '/manager/seo-distribution/'
       path: '/seo-distribution'
@@ -1880,6 +1914,13 @@ declare module '@tanstack/react-router' {
       path: '/api/openapi/app'
       fullPath: '/api/openapi/app'
       preLoaderRoute: typeof ApiOpenapiAppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/translation-rating-feedback': {
+      id: '/api/mobile/translation-rating-feedback'
+      path: '/api/mobile/translation-rating-feedback'
+      fullPath: '/api/mobile/translation-rating-feedback'
+      preLoaderRoute: typeof ApiMobileTranslationRatingFeedbackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/jobs': {
@@ -2264,6 +2305,7 @@ interface ManagerRouteRouteChildren {
   ManagerManhwaIndexRoute: typeof ManagerManhwaIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
   ManagerSeoDistributionIndexRoute: typeof ManagerSeoDistributionIndexRoute
+  ManagerTranslationFeedbackIndexRoute: typeof ManagerTranslationFeedbackIndexRoute
   ManagerTranslationQaIndexRoute: typeof ManagerTranslationQaIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
   ManagerVersionsIndexRoute: typeof ManagerVersionsIndexRoute
@@ -2293,6 +2335,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerManhwaIndexRoute: ManagerManhwaIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
   ManagerSeoDistributionIndexRoute: ManagerSeoDistributionIndexRoute,
+  ManagerTranslationFeedbackIndexRoute: ManagerTranslationFeedbackIndexRoute,
   ManagerTranslationQaIndexRoute: ManagerTranslationQaIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
   ManagerVersionsIndexRoute: ManagerVersionsIndexRoute,
@@ -2450,6 +2493,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
+  ApiMobileTranslationRatingFeedbackRoute:
+    ApiMobileTranslationRatingFeedbackRoute,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,
   ApiOpenapiAuthRoute: ApiOpenapiAuthRouteWithChildren,
   ApiPaymentsCheckoutRoute: ApiPaymentsCheckoutRoute,
@@ -2483,12 +2528,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

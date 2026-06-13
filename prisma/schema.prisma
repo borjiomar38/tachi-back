@@ -242,14 +242,15 @@ model License {
   activatedAt    DateTime?
   revokedAt      DateTime?
 
-  devices           LicenseDevice[]
-  redeemCodes       RedeemCode[]
-  redeemActivations RedeemActivation[]
-  orders            Order[]
-  ledgerEntries     TokenLedger[]
-  mobileSessions    MobileSession[]
-  jobs              TranslationJob[]
-  freeTrialClaim    FreeTrialClaim?
+  devices                   LicenseDevice[]
+  redeemCodes               RedeemCode[]
+  redeemActivations         RedeemActivation[]
+  orders                    Order[]
+  ledgerEntries             TokenLedger[]
+  mobileSessions            MobileSession[]
+  jobs                      TranslationJob[]
+  translationRatingFeedback TranslationRatingFeedback[]
+  freeTrialClaim            FreeTrialClaim?
 
   @@index([status, createdAt])
   @@index([ownerEmail])
@@ -270,12 +271,13 @@ model Device {
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @updatedAt
 
-  licenseBindings   LicenseDevice[]
-  mobileSessions    MobileSession[]
-  redeemedCodes     RedeemCode[]
-  redeemActivations RedeemActivation[]
-  jobs              TranslationJob[]
-  ledgerEntries     TokenLedger[]
+  licenseBindings           LicenseDevice[]
+  mobileSessions            MobileSession[]
+  redeemedCodes             RedeemCode[]
+  redeemActivations         RedeemActivation[]
+  jobs                      TranslationJob[]
+  ledgerEntries             TokenLedger[]
+  translationRatingFeedback TranslationRatingFeedback[]
 
   @@index([status, lastSeenAt])
   @@map("devices")
@@ -562,8 +564,9 @@ model MobileSession {
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
 
-  device  Device  @relation(fields: [deviceId], references: [id], onDelete: Cascade)
-  license License @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device                    Device                      @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  license                   License                     @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  translationRatingFeedback TranslationRatingFeedback[]
 
   @@index([deviceId, revokedAt, expiresAt])
   @@index([licenseId, revokedAt, expiresAt])
@@ -599,17 +602,63 @@ model TranslationJob {
   createdAt                    DateTime             @default(now())
   updatedAt                    DateTime             @updatedAt
 
-  license        License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  device         Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
-  assets         JobAsset[]
-  providerUsages ProviderUsage[]
-  ledgerEntries  TokenLedger[]
+  license                   License                     @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device                    Device                      @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  assets                    JobAsset[]
+  providerUsages            ProviderUsage[]
+  ledgerEntries             TokenLedger[]
+  translationRatingFeedback TranslationRatingFeedback[]
 
   @@index([licenseId, createdAt])
   @@index([deviceId, createdAt])
   @@index([status, createdAt])
   @@index([chapterCacheKey, targetLanguage, createdAt])
   @@map("translation_jobs")
+}
+
+model TranslationRatingFeedback {
+  id                  String   @id @default(cuid())
+  rating              Int
+  comment             String?
+  chapterFingerprint  String
+  chapterCacheKey     String?
+  chapterIdentity     Json?
+  mangaTitle          String?
+  chapterName         String?
+  chapterUrl          String?
+  sourceId            String?
+  sourceName          String?
+  sourceLanguage      String?
+  targetLanguage      String
+  translationJobId    String?
+  translationCacheKey String?
+  providerSignature   String?
+  licenseId           String
+  deviceId            String
+  mobileSessionId     String?
+  clientSessionId     String?
+  readDurationMs      Int?
+  pageCount           Int?
+  appVersion          String?
+  appBuild            String?
+  locale              String?
+  ipAddress           String?
+  userAgent           String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  license       License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device        Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  mobileSession MobileSession?  @relation(fields: [mobileSessionId], references: [id], onDelete: SetNull)
+  job           TranslationJob? @relation(fields: [translationJobId], references: [id], onDelete: SetNull)
+
+  @@unique([licenseId, deviceId, chapterFingerprint, targetLanguage])
+  @@index([rating, createdAt])
+  @@index([chapterCacheKey, targetLanguage])
+  @@index([translationJobId])
+  @@index([licenseId, createdAt])
+  @@index([deviceId, createdAt])
+  @@map("translation_rating_feedback")
 }
 
 model TranslationResultCache {

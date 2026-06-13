@@ -11,6 +11,7 @@ import licenseRouter from './routers/license';
 import providerRouter from './routers/provider';
 import seoDistributionRouter from './routers/seo-distribution';
 import translationQaRouter from './routers/translation-qa';
+import translationRatingFeedbackRouter from './routers/translation-rating-feedback';
 import userRouter from './routers/user';
 
 export type Router = typeof router;
@@ -29,4 +30,5 @@ export const router = {
   job: jobRouter,
   seoDistribution: seoDistributionRouter,
   translationQa: translationQaRouter,
+  translationRatingFeedback: translationRatingFeedbackRouter,
 };

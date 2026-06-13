@@ -14,6 +14,7 @@ import {
   ShieldAlertIcon,
   SmartphoneIcon,
   SparklesIcon,
+  StarIcon,
   UsersIcon,
   XIcon,
 } from 'lucide-react';
@@ -239,6 +240,23 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                               <span>
                                 <FileSearchIcon />
                                 <span>{t('layout:nav.translationQa')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                    <SidebarMenuItem>
+                      <Link to="/manager/translation-feedback">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <StarIcon />
+                                <span>
+                                  {t('layout:nav.translationFeedback')}
+                                </span>
                               </span>
                             }
                           />
