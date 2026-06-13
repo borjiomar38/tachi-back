@@ -22,7 +22,6 @@ interface PageManhwaSeriesProps {
 }
 
 export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
-  const firstChapter = series.chapters[0];
   const publicChapters = series.chapters.filter(isManhwaChapterPublic);
   const latestChapter = publicChapters.at(-1);
 
@@ -90,16 +89,16 @@ export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
                   />
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  {firstChapter ? (
+                  {latestChapter ? (
                     <a
-                      href={`/manhwa/${series.slug}/chapter/${firstChapter.chapterNumber}`}
+                      href={`/manhwa/${series.slug}/chapter/${latestChapter.chapterNumber}`}
                       className={cn(
                         buttonVariants({ variant: 'default', size: 'lg' }),
                         'bg-brand-300 text-brand-950 hover:bg-brand-200'
                       )}
                     >
                       <span className="flex items-center gap-2">
-                        Read chapter {firstChapter.chapterNumber}
+                        Read chapter {latestChapter.chapterNumber}
                         <ArrowRightIcon className="size-4" />
                       </span>
                     </a>
@@ -131,7 +130,11 @@ export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
         <PublicSection
           eyebrow="Series info"
           title="A royal regression fantasy built as a Nayovi Original"
-          description="The Eclipse Crown starts with a condemned princess, a living relic, and a duke who remembers the first timeline too late. Chapter 1 is now available in the vertical webtoon reader."
+          description={
+            latestChapter
+              ? `The Eclipse Crown starts with a condemned princess, a living relic, and a duke who remembers the first timeline too late. Chapter ${latestChapter.chapterNumber} is now available in the vertical webtoon reader.`
+              : 'The Eclipse Crown starts with a condemned princess, a living relic, and a duke who remembers the first timeline too late.'
+          }
           className="pb-4"
         >
           <div className="grid gap-4 md:grid-cols-3">
@@ -145,7 +148,11 @@ export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
             />
             <InfoPanel
               label="Release status"
-              value={latestChapter ? 'Chapter 1 live' : 'In production'}
+              value={
+                latestChapter
+                  ? `Chapter ${latestChapter.chapterNumber} live`
+                  : 'In production'
+              }
             />
             <InfoPanel
               label="Updated"

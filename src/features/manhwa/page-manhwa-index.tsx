@@ -114,10 +114,9 @@ function SeriesCard(props: {
   series: ManhwaSeriesView;
   showPrivateContext: boolean;
 }) {
-  const firstChapter = props.series.chapters[0];
-  const publicChapterCount = props.series.chapters.filter(
-    isManhwaChapterPublic
-  ).length;
+  const publicChapters = props.series.chapters.filter(isManhwaChapterPublic);
+  const latestPublicChapter = publicChapters.at(-1);
+  const publicChapterCount = publicChapters.length;
   const privateChapterCount = props.series.chapters.length - publicChapterCount;
 
   return (
@@ -180,9 +179,9 @@ function SeriesCard(props: {
               <ShieldCheckIcon className="size-4 text-primary" />
               Expert AI continuity review
             </span>
-            {firstChapter ? (
+            {latestPublicChapter ? (
               <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
-                Read chapter {firstChapter.chapterNumber}
+                Read chapter {latestPublicChapter.chapterNumber}
                 <ArrowRightIcon className="size-4" />
               </span>
             ) : null}

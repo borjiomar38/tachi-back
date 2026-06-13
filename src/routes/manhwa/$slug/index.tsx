@@ -4,6 +4,7 @@ import { PageError } from '@/components/errors/page-error';
 
 import { PageManhwaSeries } from '@/features/manhwa/page-manhwa-series';
 import { getManhwaSeriesPageData } from '@/features/manhwa/server';
+import { isManhwaChapterPublic } from '@/features/manhwa/visibility';
 import {
   buildPublicAbsoluteUrl,
   buildPublicPageHead,
@@ -15,7 +16,9 @@ export const Route = createFileRoute('/manhwa/$slug/')({
     await getManhwaSeriesPageData({ data: { slug: params.slug } }),
   head: ({ loaderData }) => {
     const series = loaderData?.series;
-    const firstPublicChapter = series?.chapters[0];
+    const latestPublicChapter = series?.chapters
+      .filter(isManhwaChapterPublic)
+      .at(-1);
 
     return series
       ? buildPublicPageHead(
@@ -30,9 +33,9 @@ export const Route = createFileRoute('/manhwa/$slug/')({
             imageWidth: 1200,
             keywords: [
               series.title,
-              ...(firstPublicChapter
+              ...(latestPublicChapter
                 ? [
-                    `${series.title} chapter ${firstPublicChapter.chapterNumber}`,
+                    `${series.title} chapter ${latestPublicChapter.chapterNumber}`,
                   ]
                 : []),
               'read original manhwa',
