@@ -22,6 +22,14 @@ dist
 .tanstack
 .nitro
 
+# Contabo mounts these generated/runtime assets. They can be many GB on the VPS
+# and must not be copied into Docker build context.
+/docs/manhwa/context/
+/docs/manhwa/copyright/
+/docs/manhwa/generated/
+/docs/manhwa/private/
+/docs/manhwa/private-backups/
+
 # misc
 .DS_Store
 *.pem
