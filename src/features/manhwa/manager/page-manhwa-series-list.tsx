@@ -113,7 +113,7 @@ export const PageManhwaSeriesList = ({ data }: PageManhwaSeriesListProps) => {
                     />
                     <Metric
                       icon={<BookOpenTextIcon className="size-4" />}
-                      label="Chapter 1"
+                      label={`Chapter ${series.chapterNumber}`}
                       value={`${series.chapterImageCount}/${series.chapterPanelCount}`}
                       subValue={chapterStatusLabel(series)}
                     />

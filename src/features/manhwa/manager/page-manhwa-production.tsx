@@ -142,7 +142,7 @@ export const PageManhwaProduction = ({
               }
             />
             <SummaryCard
-              label="Chapter 1"
+              label={`Chapter ${overview.chapterNumber}`}
               subLabel={chapterSummaryLabel(chapterRendering)}
               value={`${chapterRendering.generatedCount}/${chapterRendering.totalPanels}`}
               variant={

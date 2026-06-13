@@ -41,6 +41,7 @@ export interface ManhwaManagerCharacter {
 
 export interface ManhwaManagerOverview {
   canView: boolean;
+  chapterNumber: number;
   chapterRendering: ManhwaManagerChapterRendering;
   characters: ManhwaManagerCharacter[];
   contextRoot?: string;
@@ -116,6 +117,7 @@ export interface ManhwaManagerSeriesSummary {
   chapterImageCount: number;
   chapterImageMissingCount: number;
   chapterImageNextPanelNumber?: number;
+  chapterNumber: number;
   chapterPanelCount: number;
   chapterRenderingActive: boolean;
   chapterRenderingActivePanelNumber?: number;
@@ -202,11 +204,21 @@ export const getManhwaManagerOverview = createServerFn({
     const status = await readJsonObject(
       path.join(preproductionDir, 'status.json')
     );
+    const index = await readJsonObject(path.join(seriesDir, 'index.json'));
+    const chapterNumber = await resolveCurrentChapterNumber({
+      index,
+      path,
+      privateRoot,
+      seriesDir,
+      seriesSlug,
+      status,
+    });
+    const chapterId = formatChapterId(chapterNumber);
     const charactersIndex = await readJsonObject(
       path.join(seriesDir, 'characters', 'index.json')
     );
     const chapterIndex = await readJsonObject(
-      path.join(seriesDir, 'chapters', 'chapter-001.index.json')
+      path.join(seriesDir, 'chapters', `${chapterId}.index.json`)
     );
     const charactersRecord = asRecord(charactersIndex.characters);
     const characterIds =
@@ -276,7 +288,7 @@ export const getManhwaManagerOverview = createServerFn({
     const nextPanelHint = asRecord(chapterIndex.next_panel_hint);
     const chapterRendering = await getChapterRenderingStatus({
       chapterIndex,
-      chapterNumber: 1,
+      chapterNumber,
       contextRoot,
       privateRoot,
       seriesSlug,
@@ -284,12 +296,13 @@ export const getManhwaManagerOverview = createServerFn({
 
     return {
       canView: true,
+      chapterNumber,
       chapterRendering,
       characters,
       contextRoot,
       files: {
         chapterScenario: await fileExists(
-          path.join(preproductionDir, 'chapters', 'chapter-001-scenario.json'),
+          path.join(preproductionDir, 'chapters', `${chapterId}-scenario.json`),
           access
         ),
         seasonMap: await fileExists(
@@ -360,11 +373,29 @@ async function getSeriesSummary(
   const chapterIndex = await readJsonObject(
     path.join(seriesDir, 'chapters', 'chapter-001.index.json')
   );
+  const chapterNumber = await resolveCurrentChapterNumber({
+    index,
+    path,
+    privateRoot,
+    seriesDir,
+    seriesSlug,
+    status,
+  });
+  const currentChapterIndex =
+    chapterNumber === 1
+      ? chapterIndex
+      : await readJsonObject(
+          path.join(
+            seriesDir,
+            'chapters',
+            `${formatChapterId(chapterNumber)}.index.json`
+          )
+        );
   const referenceOverview = asRecord(charactersIndex.reference_status);
   const nextTask = asRecord(status.next_task);
   const chapterRendering = await getChapterRenderingStatus({
-    chapterIndex,
-    chapterNumber: 1,
+    chapterIndex: currentChapterIndex,
+    chapterNumber,
     contextRoot,
     privateRoot,
     seriesSlug,
@@ -375,6 +406,7 @@ async function getSeriesSummary(
     chapterImageCount: chapterRendering.generatedCount,
     chapterImageMissingCount: chapterRendering.missingCount,
     chapterImageNextPanelNumber: chapterRendering.nextPanelNumber,
+    chapterNumber,
     chapterPanelCount: chapterRendering.totalPanels,
     chapterRenderingActive: chapterRendering.active,
     chapterRenderingActivePanelNumber: chapterRendering.activePanelNumber,
@@ -601,6 +633,56 @@ async function getPrivateRoot() {
   );
 }
 
+function formatChapterId(chapterNumber: number) {
+  return `chapter-${String(Math.max(1, chapterNumber)).padStart(3, '0')}`;
+}
+
+async function resolveCurrentChapterNumber(input: {
+  index: Record<string, unknown>;
+  path: typeof import('node:path');
+  privateRoot: string;
+  seriesDir: string;
+  seriesSlug: string;
+  status: Record<string, unknown>;
+}) {
+  const fastLookup = asRecord(input.index.fast_lookup);
+  const candidates = [
+    numberValue(input.status.chapter_number),
+    extractChapterNumber(stringValue(fastLookup.chapter_index)),
+    ...(await listChapterNumbers(
+      input.path.join(input.seriesDir, 'chapters'),
+      /^chapter-(\d+)(?:\.index)?\.json$/i
+    )),
+    ...(await listChapterNumbers(
+      input.path.join(input.privateRoot, input.seriesSlug),
+      /^chapter-(\d+)$/i
+    )),
+  ].filter((chapterNumber) => chapterNumber > 0);
+
+  return candidates.length ? Math.max(...candidates) : 1;
+}
+
+async function listChapterNumbers(directory: string, pattern: RegExp) {
+  try {
+    const { readdir } = await import('node:fs/promises');
+    const entries = await readdir(directory, { withFileTypes: true });
+
+    return entries
+      .map((entry) => pattern.exec(entry.name)?.[1])
+      .filter((value): value is string => Boolean(value))
+      .map((value) => Number.parseInt(value, 10))
+      .filter((value) => Number.isFinite(value) && value > 0);
+  } catch {
+    return [];
+  }
+}
+
+function extractChapterNumber(value: string | undefined) {
+  const match = value ? /chapter-(\d+)/i.exec(value) : null;
+
+  return match ? Number.parseInt(match[1] ?? '0', 10) : 0;
+}
+
 async function readJsonObject(filePath: string) {
   try {
     const { readFile } = await import('node:fs/promises');
@@ -631,6 +713,7 @@ function emptyOverview(input: {
 }): ManhwaManagerOverview {
   return {
     canView: input.canView,
+    chapterNumber: 1,
     chapterRendering: emptyChapterRendering(),
     characters: [],
     files: {
