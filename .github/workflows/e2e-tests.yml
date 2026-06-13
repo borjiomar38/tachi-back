@@ -19,6 +19,7 @@ jobs:
         browser: [chromium, firefox, webkit]
     env:
       VITE_BASE_URL: http://localhost:3000
+      VITE_PORT: 3000
       VITE_ENV_NAME: tests
       DATABASE_URL: postgres://startui:startui@localhost:5432/startui
       VITE_IS_DEMO: false
