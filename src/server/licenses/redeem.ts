@@ -6,6 +6,7 @@ import {
 } from '@/server/licenses/free-access-ip-block';
 import {
   buildFreeTrialIdentitySignals,
+  ensureFreeTrialClaimDeviceFingerprint,
   ensureFreeTrialIdentitySignals,
   findFreeTrialIdentityConflict,
   throwFreeTrialIdentityUnavailable,
@@ -144,11 +145,7 @@ export async function redeemLicenseToDevice(
         });
       }
 
-      if (
-        redeemCode.freeTrialClaim?.deviceFingerprintHash &&
-        redeemCode.freeTrialClaim.deviceFingerprintHash !==
-          deviceFingerprintHash
-      ) {
+      if (!redeemCode.freeTrialClaim) {
         throwFreeTrialIdentityUnavailable({
           ipAddress: clientIp,
           now,
@@ -192,6 +189,14 @@ export async function redeemLicenseToDevice(
       }
 
       if (redeemCode.freeTrialClaim) {
+        await ensureFreeTrialClaimDeviceFingerprint(tx, {
+          claimId: redeemCode.freeTrialClaim.id,
+          currentDeviceFingerprintHash:
+            redeemCode.freeTrialClaim.deviceFingerprintHash,
+          deviceFingerprintHash,
+          ipAddress: clientIp,
+          now,
+        });
         await ensureFreeTrialIdentitySignals(tx, {
           claimId: redeemCode.freeTrialClaim.id,
           ipAddress: clientIp,

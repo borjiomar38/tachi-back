@@ -23,6 +23,10 @@ export type FreeTrialIdentitySignal = {
 };
 
 type FreeTrialIdentityDbClient = Pick<typeof db, 'freeTrialIdentity'>;
+type FreeTrialClaimDeviceFingerprintDbClient = Pick<
+  typeof db,
+  'freeTrialClaim' | 'freeTrialIdentity'
+>;
 type FreeTrialIdentityClaimDbClient = Pick<
   typeof db,
   'freeTrialClaim' | 'freeTrialIdentity' | 'order'
@@ -159,6 +163,98 @@ export async function ensureFreeTrialIdentitySignals(
       ipAddress: input.ipAddress ?? null,
       now: input.now,
     });
+  }
+}
+
+export async function ensureFreeTrialClaimDeviceFingerprint(
+  dbClient: FreeTrialClaimDeviceFingerprintDbClient,
+  input: {
+    claimId: string;
+    currentDeviceFingerprintHash?: string | null;
+    deviceFingerprintHash: string;
+    ipAddress?: string | null;
+    now: Date;
+  }
+) {
+  const deviceFingerprintHash = input.deviceFingerprintHash
+    .trim()
+    .toLowerCase();
+  const currentDeviceFingerprintHash =
+    input.currentDeviceFingerprintHash?.trim().toLowerCase() ?? null;
+
+  if (!deviceFingerprintHash) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress: input.ipAddress ?? null,
+      now: input.now,
+    });
+  }
+
+  if (
+    currentDeviceFingerprintHash &&
+    currentDeviceFingerprintHash !== deviceFingerprintHash
+  ) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress: input.ipAddress ?? null,
+      now: input.now,
+    });
+  }
+
+  const existingClaimFingerprint = await dbClient.freeTrialIdentity.findFirst({
+    where: {
+      claimId: input.claimId,
+      kind: FREE_TRIAL_IDENTITY_KINDS.deviceFingerprint,
+    },
+    select: {
+      value: true,
+    },
+  });
+
+  if (
+    existingClaimFingerprint &&
+    existingClaimFingerprint.value.trim().toLowerCase() !==
+      deviceFingerprintHash
+  ) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress: input.ipAddress ?? null,
+      now: input.now,
+    });
+  }
+
+  await ensureFreeTrialIdentitySignals(dbClient, {
+    claimId: input.claimId,
+    ipAddress: input.ipAddress ?? null,
+    now: input.now,
+    signals: [
+      {
+        kind: FREE_TRIAL_IDENTITY_KINDS.deviceFingerprint,
+        value: deviceFingerprintHash,
+      },
+    ],
+  });
+
+  if (!currentDeviceFingerprintHash) {
+    try {
+      await dbClient.freeTrialClaim.update({
+        where: {
+          id: input.claimId,
+        },
+        data: {
+          deviceFingerprintHash,
+        },
+        select: {
+          id: true,
+        },
+      });
+    } catch (error) {
+      if (isPrismaUniqueIdentityConstraintError(error)) {
+        throwFreeTrialIdentityUnavailable({
+          ipAddress: input.ipAddress ?? null,
+          now: input.now,
+        });
+      }
+
+      throw error;
+    }
   }
 }
 

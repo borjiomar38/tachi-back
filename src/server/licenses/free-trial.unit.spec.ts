@@ -230,6 +230,102 @@ describe('free trial redeem creation', () => {
       statusCode: 402,
     });
   });
+
+  it('binds a legacy existing claim to the first matching device fingerprint', async () => {
+    const tx = {
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue({
+          deviceFingerprintHash: null,
+          emailNormalized: 'reader@example.com',
+          id: 'claim-legacy',
+          installationId: 'install-1234567890abcd',
+          ipAddress: null,
+          redeemCode: {
+            code: 'TB-FREE-AAAA-BBBB',
+          },
+        }),
+        update: vi.fn().mockResolvedValue({ id: 'claim-legacy' }),
+      },
+      freeTrialIdentity: {
+        createMany: vi.fn().mockResolvedValue({ count: 4 }),
+        findFirst: vi.fn().mockResolvedValue(null),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await createFreeTrialRedeemCode(
+      {
+        deviceFingerprintHash:
+          '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+        email: 'reader@example.com',
+        installationId: 'install-1234567890abcd',
+        platform: 'android',
+      },
+      {
+        clientIp: '203.0.113.30',
+        dbClient: mockDb as never,
+        now: new Date('2026-05-12T10:00:00.000Z'),
+      }
+    );
+
+    expect(result).toEqual({
+      redeemCode: 'TB-FREE-AAAA-BBBB',
+      tokenAmount: 100,
+    });
+    expect(tx.freeTrialClaim.update).toHaveBeenCalledWith({
+      where: {
+        id: 'claim-legacy',
+      },
+      data: {
+        deviceFingerprintHash:
+          '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+      },
+      select: {
+        id: true,
+      },
+    });
+  });
+
+  it('rejects an existing claim retry with a different device fingerprint', async () => {
+    const tx = {
+      freeTrialClaim: {
+        findFirst: vi.fn().mockResolvedValue({
+          deviceFingerprintHash:
+            'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff',
+          emailNormalized: 'reader@example.com',
+          id: 'claim-1',
+          installationId: 'install-1234567890abcd',
+          ipAddress: null,
+          redeemCode: {
+            code: 'TB-FREE-AAAA-BBBB',
+          },
+        }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    await expect(
+      createFreeTrialRedeemCode(
+        {
+          deviceFingerprintHash:
+            '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+          email: 'reader@example.com',
+          installationId: 'install-1234567890abcd',
+          platform: 'android',
+        },
+        {
+          clientIp: '203.0.113.31',
+          dbClient: mockDb as never,
+          now: new Date('2026-05-12T10:05:00.000Z'),
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_access_unavailable',
+      statusCode: 402,
+    });
+  });
 });
 
 describe('free trial eligibility', () => {

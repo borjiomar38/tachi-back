@@ -7,6 +7,8 @@ import {
 import {
   buildFreeTrialIdentitySignals,
   createFreeTrialIdentitySignals,
+  ensureFreeTrialClaimDeviceFingerprint,
+  ensureFreeTrialIdentitySignals,
   findFreeTrialIdentityConflict,
   throwFreeTrialIdentityUnavailable,
 } from '@/server/licenses/free-trial-identity';
@@ -79,6 +81,7 @@ export async function createFreeTrialRedeemCode(
         select: {
           deviceFingerprintHash: true,
           emailNormalized: true,
+          id: true,
           installationId: true,
           ipAddress: true,
           redeemCode: {
@@ -94,6 +97,20 @@ export async function createFreeTrialRedeemCode(
           existingClaim.emailNormalized === emailNormalized &&
           existingClaim.installationId === installationId
         ) {
+          await ensureFreeTrialClaimDeviceFingerprint(tx, {
+            claimId: existingClaim.id,
+            currentDeviceFingerprintHash: existingClaim.deviceFingerprintHash,
+            deviceFingerprintHash,
+            ipAddress,
+            now,
+          });
+          await ensureFreeTrialIdentitySignals(tx, {
+            claimId: existingClaim.id,
+            ipAddress,
+            now,
+            signals: identitySignals,
+          });
+
           return {
             redeemCode: existingClaim.redeemCode.code,
             tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
