@@ -12,6 +12,7 @@ import {
   PanelLeftIcon,
   Share2Icon,
   ShieldAlertIcon,
+  ShieldCheckIcon,
   SmartphoneIcon,
   UsersIcon,
   XIcon,
@@ -318,6 +319,21 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
               </SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
+                  <SidebarMenuItem>
+                    <Link to="/manager/content-policy">
+                      {({ isActive }) => (
+                        <SidebarMenuButton
+                          isActive={isActive}
+                          render={
+                            <span>
+                              <ShieldCheckIcon />
+                              <span>{t('layout:nav.contentPolicy')}</span>
+                            </span>
+                          }
+                        />
+                      )}
+                    </Link>
+                  </SidebarMenuItem>
                   <SidebarMenuItem>
                     <Link to="/manager/users">
                       {({ isActive }) => (

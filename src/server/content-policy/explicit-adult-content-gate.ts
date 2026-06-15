@@ -1,3 +1,11 @@
+import { db } from '@/server/db';
+
+import {
+  type BlockedContentMetadataValue,
+  getContentMetadataPolicy,
+  normalizeContentMetadataValue,
+} from './metadata-policy';
+
 const EXPLICIT_ADULT_BLOCK_REASON = 'official_explicit_adult_metadata';
 
 const EXPLICIT_ADULT_FIELD_LABELS = new Set([
@@ -68,13 +76,30 @@ export interface ExplicitAdultContentBlockDetails {
   };
 }
 
-export function getExplicitAdultContentGateResult(
+export async function getExplicitAdultContentGateResult(
+  input: ExplicitAdultContentGateInput,
+  deps?: {
+    dbClient?: typeof db;
+  }
+): Promise<ExplicitAdultContentGateResult | null> {
+  const policy = await getContentMetadataPolicy(deps);
+  if (policy.mode === 'default') {
+    return getDefaultExplicitAdultContentGateResult(input);
+  }
+
+  return getExplicitAdultContentGateResultForPolicy(
+    input,
+    policy.blockedValues
+  );
+}
+
+export function getDefaultExplicitAdultContentGateResult(
   input: ExplicitAdultContentGateInput
 ): ExplicitAdultContentGateResult | null {
   const signals = buildMetadataSignals(input.manga);
 
   for (const signal of signals) {
-    if (isExplicitAdultSignal(signal)) {
+    if (isDefaultExplicitAdultMetadataSignal(signal)) {
       return {
         reason: EXPLICIT_ADULT_BLOCK_REASON,
         signal,
@@ -85,10 +110,40 @@ export function getExplicitAdultContentGateResult(
   return null;
 }
 
-export function isExplicitAdultContentBlocked(
-  input: ExplicitAdultContentGateInput
+export function getExplicitAdultContentGateResultForPolicy(
+  input: ExplicitAdultContentGateInput,
+  blockedValues: readonly BlockedContentMetadataValue[]
+): ExplicitAdultContentGateResult | null {
+  const signals = buildMetadataSignals(input.manga);
+
+  for (const signal of signals) {
+    if (isBlockedByMetadataPolicy(signal, blockedValues)) {
+      return {
+        reason: EXPLICIT_ADULT_BLOCK_REASON,
+        signal,
+      };
+    }
+  }
+
+  return null;
+}
+
+export async function isExplicitAdultContentBlocked(
+  input: ExplicitAdultContentGateInput,
+  deps?: {
+    dbClient?: typeof db;
+  }
 ) {
-  return getExplicitAdultContentGateResult(input) !== null;
+  return (await getExplicitAdultContentGateResult(input, deps)) !== null;
+}
+
+export function isExplicitAdultContentBlockedForPolicy(
+  input: ExplicitAdultContentGateInput,
+  blockedValues: readonly BlockedContentMetadataValue[]
+) {
+  return (
+    getExplicitAdultContentGateResultForPolicy(input, blockedValues) !== null
+  );
 }
 
 export function buildExplicitAdultContentBlockDetails(
@@ -152,8 +207,11 @@ function buildMetadataSignals(input: ExplicitAdultContentMetadata) {
   ];
 }
 
-function isExplicitAdultSignal(input: { field: string; value: string }) {
-  const value = normalizeMetadataValue(input.value);
+export function isDefaultExplicitAdultMetadataSignal(input: {
+  field: string;
+  value: string;
+}) {
+  const value = normalizeContentMetadataValue(input.value);
 
   if (!value) {
     return false;
@@ -172,7 +230,7 @@ function isExplicitAdultSignal(input: { field: string; value: string }) {
 
 function isExplicitRatingSignal(field: string, value: string) {
   return (
-    EXPLICIT_ADULT_FIELD_LABELS.has(normalizeMetadataValue(field)) &&
+    EXPLICIT_ADULT_FIELD_LABELS.has(normalizeContentMetadataValue(field)) &&
     /\b(?:18\+|adult|explicit)\b/i.test(value) &&
     !/\b(?:mature|suggestive|teen|all\s+ages|safe)\b/i.test(value)
   );
@@ -188,11 +246,16 @@ function isContextualExplicitSignal(value: string) {
   return EXPLICIT_CONTEXT_PATTERNS.some((pattern) => pattern.test(value));
 }
 
-function normalizeMetadataValue(input: string) {
-  return input
-    .normalize('NFKC')
-    .replaceAll(/[_-]+/g, ' ')
-    .replaceAll(/\s+/g, ' ')
-    .trim()
-    .toLowerCase();
+function isBlockedByMetadataPolicy(
+  input: { field: string; value: string },
+  blockedValues: readonly BlockedContentMetadataValue[]
+) {
+  const normalizedField = input.field;
+  const normalizedValue = normalizeContentMetadataValue(input.value);
+
+  return blockedValues.some(
+    (blockedValue) =>
+      blockedValue.field === normalizedField &&
+      blockedValue.normalizedValue === normalizedValue
+  );
 }

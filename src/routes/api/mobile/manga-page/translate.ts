@@ -87,9 +87,14 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             );
           }
 
-          const gateResult = getExplicitAdultContentGateResult({
-            manga: parsedInput.data.manga,
-          });
+          const gateResult = await getExplicitAdultContentGateResult(
+            {
+              manga: parsedInput.data.manga,
+            },
+            {
+              dbClient: db,
+            }
+          );
 
           if (gateResult) {
             routeLog.warn({

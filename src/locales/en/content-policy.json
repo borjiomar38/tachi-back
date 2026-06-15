@@ -1,0 +1,35 @@
+{
+  "manager": {
+    "title": "Content Policy",
+    "saved": "Content policy saved.",
+    "saveFailed": "Failed to save content policy.",
+    "search": "Search metadata values...",
+    "empty": "No metadata values match this search.",
+    "selectedCount": "{{count}} selected",
+    "mode": {
+      "default": "Default policy",
+      "saved": "Saved policy"
+    },
+    "notice": {
+      "title": "Metadata-only translation blocking",
+      "description": "This checklist blocks translation by official title metadata only. Keep selections focused on explicit pornographic adult content, not reader identity or orientation."
+    },
+    "checklist": {
+      "title": "Blocked official metadata",
+      "description": "Review discovered genres, tags, categories, rating, and content rating values. Checked values block chapter translation."
+    },
+    "actions": {
+      "clear": "Clear",
+      "resetDefaults": "Reset defaults",
+      "save": "Save",
+      "selectAll": "Select all"
+    },
+    "fields": {
+      "categories": "Categories",
+      "contentRating": "Content rating",
+      "genres": "Genres",
+      "rating": "Rating",
+      "tags": "Tags"
+    }
+  }
+}

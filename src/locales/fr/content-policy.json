@@ -1,0 +1,35 @@
+{
+  "manager": {
+    "title": "Politique de contenu",
+    "saved": "Politique de contenu enregistrée.",
+    "saveFailed": "Échec de l'enregistrement de la politique de contenu.",
+    "search": "Rechercher des valeurs de métadonnées...",
+    "empty": "Aucune valeur de métadonnées ne correspond à cette recherche.",
+    "selectedCount": "{{count}} sélectionnées",
+    "mode": {
+      "default": "Politique par défaut",
+      "saved": "Politique enregistrée"
+    },
+    "notice": {
+      "title": "Blocage de traduction par métadonnées",
+      "description": "Cette liste bloque la traduction uniquement selon les métadonnées officielles du titre. Gardez les sélections centrées sur le contenu pornographique adulte explicite, pas sur l'identité ou l'orientation des lecteurs."
+    },
+    "checklist": {
+      "title": "Métadonnées officielles bloquées",
+      "description": "Passez en revue les genres, tags, catégories, notes et classifications découverts. Les valeurs cochées bloquent la traduction des chapitres."
+    },
+    "actions": {
+      "clear": "Effacer",
+      "resetDefaults": "Réinitialiser",
+      "save": "Enregistrer",
+      "selectAll": "Tout sélectionner"
+    },
+    "fields": {
+      "categories": "Catégories",
+      "contentRating": "Classification",
+      "genres": "Genres",
+      "rating": "Note",
+      "tags": "Tags"
+    }
+  }
+}

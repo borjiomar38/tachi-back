@@ -218,9 +218,14 @@ export async function createTranslationJob(
   const log = deps.log ?? logger;
   const now = deps.now ?? new Date();
   const gateResult = input.chapterIdentity
-    ? getExplicitAdultContentGateResult({
-        manga: input.chapterIdentity,
-      })
+    ? await getExplicitAdultContentGateResult(
+        {
+          manga: input.chapterIdentity,
+        },
+        {
+          dbClient,
+        }
+      )
     : null;
 
   if (gateResult) {
