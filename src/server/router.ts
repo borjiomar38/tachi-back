@@ -4,6 +4,7 @@ import accountRouter from './routers/account';
 import chapterRouter from './routers/chapter';
 import configRouter from './routers/config';
 import contactRouter from './routers/contact';
+import contentPolicyRouter from './routers/content-policy';
 import deviceRouter from './routers/device';
 import freeTrialRouter from './routers/free-trial';
 import jobRouter from './routers/job';
@@ -20,6 +21,7 @@ export const router = {
   account: accountRouter,
   user: userRouter,
   config: configRouter,
+  contentPolicy: contentPolicyRouter,
   contact: contactRouter,
   chapter: chapterRouter,
   provider: providerRouter,

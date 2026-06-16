@@ -59,6 +59,7 @@ import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/inde
 import { Route as ManagerFreeTrialsIndexRouteImport } from './routes/manager/free-trials/index'
 import { Route as ManagerDevicesIndexRouteImport } from './routes/manager/devices/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
+import { Route as ManagerContentPolicyIndexRouteImport } from './routes/manager/content-policy/index'
 import { Route as ManagerContactsIndexRouteImport } from './routes/manager/contacts/index'
 import { Route as ManagerChaptersIndexRouteImport } from './routes/manager/chapters/index'
 import { Route as ManagerAccountIndexRouteImport } from './routes/manager/account.index'
@@ -381,6 +382,12 @@ const ManagerDashboardIndexRoute = ManagerDashboardIndexRouteImport.update({
   path: '/dashboard/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerContentPolicyIndexRoute =
+  ManagerContentPolicyIndexRouteImport.update({
+    id: '/content-policy/',
+    path: '/content-policy/',
+    getParentRoute: () => ManagerRouteRoute,
+  } as any)
 const ManagerContactsIndexRoute = ManagerContactsIndexRouteImport.update({
   id: '/contacts/',
   path: '/contacts/',
@@ -767,6 +774,7 @@ export interface FileRoutesByFullPath {
   '/manager/account/': typeof ManagerAccountIndexRoute
   '/manager/chapters/': typeof ManagerChaptersIndexRoute
   '/manager/contacts/': typeof ManagerContactsIndexRoute
+  '/manager/content-policy/': typeof ManagerContentPolicyIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/devices/': typeof ManagerDevicesIndexRoute
   '/manager/free-trials/': typeof ManagerFreeTrialsIndexRoute
@@ -875,6 +883,7 @@ export interface FileRoutesByTo {
   '/manager/account': typeof ManagerAccountIndexRoute
   '/manager/chapters': typeof ManagerChaptersIndexRoute
   '/manager/contacts': typeof ManagerContactsIndexRoute
+  '/manager/content-policy': typeof ManagerContentPolicyIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
   '/manager/devices': typeof ManagerDevicesIndexRoute
   '/manager/free-trials': typeof ManagerFreeTrialsIndexRoute
@@ -988,6 +997,7 @@ export interface FileRoutesById {
   '/manager/account/': typeof ManagerAccountIndexRoute
   '/manager/chapters/': typeof ManagerChaptersIndexRoute
   '/manager/contacts/': typeof ManagerContactsIndexRoute
+  '/manager/content-policy/': typeof ManagerContentPolicyIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/devices/': typeof ManagerDevicesIndexRoute
   '/manager/free-trials/': typeof ManagerFreeTrialsIndexRoute
@@ -1102,6 +1112,7 @@ export interface FileRouteTypes {
     | '/manager/account/'
     | '/manager/chapters/'
     | '/manager/contacts/'
+    | '/manager/content-policy/'
     | '/manager/dashboard/'
     | '/manager/devices/'
     | '/manager/free-trials/'
@@ -1210,6 +1221,7 @@ export interface FileRouteTypes {
     | '/manager/account'
     | '/manager/chapters'
     | '/manager/contacts'
+    | '/manager/content-policy'
     | '/manager/dashboard'
     | '/manager/devices'
     | '/manager/free-trials'
@@ -1322,6 +1334,7 @@ export interface FileRouteTypes {
     | '/manager/account/'
     | '/manager/chapters/'
     | '/manager/contacts/'
+    | '/manager/content-policy/'
     | '/manager/dashboard/'
     | '/manager/devices/'
     | '/manager/free-trials/'
@@ -1798,6 +1811,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerDashboardIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/content-policy/': {
+      id: '/manager/content-policy/'
+      path: '/content-policy'
+      fullPath: '/manager/content-policy/'
+      preLoaderRoute: typeof ManagerContentPolicyIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/contacts/': {
       id: '/manager/contacts/'
       path: '/contacts'
@@ -2256,6 +2276,7 @@ interface ManagerRouteRouteChildren {
   ManagerAccountIndexRoute: typeof ManagerAccountIndexRoute
   ManagerChaptersIndexRoute: typeof ManagerChaptersIndexRoute
   ManagerContactsIndexRoute: typeof ManagerContactsIndexRoute
+  ManagerContentPolicyIndexRoute: typeof ManagerContentPolicyIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
   ManagerDevicesIndexRoute: typeof ManagerDevicesIndexRoute
   ManagerFreeTrialsIndexRoute: typeof ManagerFreeTrialsIndexRoute
@@ -2285,6 +2306,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerAccountIndexRoute: ManagerAccountIndexRoute,
   ManagerChaptersIndexRoute: ManagerChaptersIndexRoute,
   ManagerContactsIndexRoute: ManagerContactsIndexRoute,
+  ManagerContentPolicyIndexRoute: ManagerContentPolicyIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
   ManagerDevicesIndexRoute: ManagerDevicesIndexRoute,
   ManagerFreeTrialsIndexRoute: ManagerFreeTrialsIndexRoute,

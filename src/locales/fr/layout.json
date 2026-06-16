@@ -2,6 +2,7 @@
   "nav": {
     "application": "Application",
     "configuration": "Configuration",
+    "contentPolicy": "Politique de contenu",
     "dashboard": "Tableau de bord",
     "support": "Support",
     "contacts": "Contacts",
