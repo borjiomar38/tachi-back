@@ -6,7 +6,12 @@ import {
   publicFreeTokenPack,
   type PublicTokenPack,
 } from '@/features/public/data';
+import {
+  type AndroidApkDownload,
+  getAndroidApkDownloadMetadata,
+} from '@/features/public/download-assets';
 import { db } from '@/server/db';
+import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
 
 const publicTokenPackSelect = {
   id: true,
@@ -76,6 +81,16 @@ export const getPublicTokenPackByKey = createServerFn({ method: 'GET' })
 
     return tokenPack ? mapPublicTokenPack(tokenPack) : null;
   });
+
+export const getPublicAndroidApkDownload = createServerFn({
+  method: 'GET',
+}).handler(async (): Promise<AndroidApkDownload> => {
+  const policy = await getPublicMobileAppUpdatePolicy();
+
+  return getAndroidApkDownloadMetadata({
+    versionName: policy.currentVersionName ?? policy.latestVersionName,
+  });
+});
 
 function mapPublicTokenPack(tokenPack: PublicTokenPackRow): PublicTokenPack {
   const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;

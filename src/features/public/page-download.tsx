@@ -20,7 +20,10 @@ import {
 } from '@/components/ui/card';
 
 import { DemoVideo } from '@/features/public/demo-video';
-import { androidApkDownload } from '@/features/public/download-assets';
+import {
+  type AndroidApkDownload,
+  androidApkDownload as defaultAndroidApkDownload,
+} from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 const verificationRows = [
@@ -38,25 +41,6 @@ const verificationRows = [
     title: 'Usage boundary',
     description:
       'Describe Nayovi as hosted OCR and translation support for owned, public-domain, official-sample, or permission-approved content.',
-  },
-] as const;
-
-const appMetadataRows = [
-  {
-    label: 'File name',
-    value: androidApkDownload.filename,
-  },
-  {
-    label: 'Build',
-    value: androidApkDownload.buildLabel,
-  },
-  {
-    label: 'APK size',
-    value: androidApkDownload.sizeLabel,
-  },
-  {
-    label: 'SHA-256',
-    value: androidApkDownload.sha256,
   },
 ] as const;
 
@@ -260,25 +244,6 @@ const updateSourceRows = [
   },
 ] as const;
 
-const updateRecipeRows = [
-  {
-    label: 'Download page',
-    value: 'https://tachiyomiat.com/download',
-  },
-  {
-    label: 'APK endpoint',
-    value: '/api/download/apk',
-  },
-  {
-    label: 'SHA-256',
-    value: androidApkDownload.sha256,
-  },
-  {
-    label: 'Support',
-    value: 'https://tachiyomiat.com/support',
-  },
-] as const;
-
 const ownerConfirmationRows = [
   {
     label: 'Confirmed now',
@@ -371,7 +336,50 @@ const newsletterSubmissionRows = [
   },
 ] as const;
 
-export const PageDownload = () => {
+interface PageDownloadProps {
+  androidApkDownload?: AndroidApkDownload;
+}
+
+export const PageDownload = ({
+  androidApkDownload = defaultAndroidApkDownload,
+}: PageDownloadProps) => {
+  const appMetadataRows = [
+    {
+      label: 'File name',
+      value: androidApkDownload.filename,
+    },
+    {
+      label: 'Build',
+      value: androidApkDownload.buildLabel,
+    },
+    {
+      label: 'APK size',
+      value: androidApkDownload.sizeLabel,
+    },
+    {
+      label: 'SHA-256',
+      value: androidApkDownload.sha256,
+    },
+  ] as const;
+  const updateRecipeRows = [
+    {
+      label: 'Download page',
+      value: 'https://tachiyomiat.com/download',
+    },
+    {
+      label: 'APK endpoint',
+      value: '/api/download/apk',
+    },
+    {
+      label: 'SHA-256',
+      value: androidApkDownload.sha256,
+    },
+    {
+      label: 'Support',
+      value: 'https://tachiyomiat.com/support',
+    },
+  ] as const;
+
   return (
     <PublicShell>
       <PublicSection

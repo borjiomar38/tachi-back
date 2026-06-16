@@ -7,6 +7,7 @@ import {
   buildPublicPageHead,
 } from '@/features/public/head';
 import { PageDownload } from '@/features/public/page-download';
+import { getPublicAndroidApkDownload } from '@/features/public/server';
 
 const downloadStructuredData = () => {
   const url = buildPublicAbsoluteUrl('/download');
@@ -320,6 +321,7 @@ const downloadStructuredData = () => {
 
 export const Route = createFileRoute('/download')({
   component: RouteComponent,
+  loader: () => getPublicAndroidApkDownload(),
   head: () =>
     buildPublicPageHead(
       'TachiyomiAT APK Download for Android',
@@ -345,5 +347,7 @@ export const Route = createFileRoute('/download')({
 });
 
 function RouteComponent() {
-  return <PageDownload />;
+  const apkDownload = Route.useLoaderData();
+
+  return <PageDownload androidApkDownload={apkDownload} />;
 }
