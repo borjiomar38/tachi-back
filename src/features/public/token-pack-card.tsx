@@ -19,6 +19,7 @@ import {
 interface TokenPackCardProps {
   tokenPack: PublicTokenPack;
   featured?: boolean;
+  id?: string;
 }
 
 export const TokenPackCard = (props: TokenPackCardProps) => {
@@ -40,8 +41,9 @@ export const TokenPackCard = (props: TokenPackCardProps) => {
 
   return (
     <Card
+      id={props.id}
       className={cn(
-        'h-full rounded-[1.5rem] border-border/80 bg-background/90 shadow-sm backdrop-blur',
+        'h-full scroll-mt-28 rounded-[1.5rem] border-border/80 bg-background/90 shadow-sm backdrop-blur',
         featured &&
           'public-brand-panel text-neutral-50 ring-1 ring-brand-400/30'
       )}

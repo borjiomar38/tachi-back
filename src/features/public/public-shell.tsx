@@ -1,10 +1,10 @@
 import { useRouterState } from '@tanstack/react-router';
 import {
+  BadgeDollarSignIcon,
   BookOpenTextIcon,
   CircleHelpIcon,
   DownloadIcon,
   HomeIcon,
-  LibraryBigIcon,
 } from 'lucide-react';
 import { ReactNode } from 'react';
 
@@ -52,10 +52,10 @@ const mobileTabs = [
     isActive: (pathname: string) => pathname === '/download',
   },
   {
-    href: '/manhwa',
-    label: 'Manhwa',
-    icon: LibraryBigIcon,
-    isActive: (pathname: string) => pathname.startsWith('/manhwa'),
+    href: '/pricing#starter-plan',
+    label: 'Plans',
+    icon: BadgeDollarSignIcon,
+    isActive: (pathname: string) => pathname === '/pricing',
   },
   {
     href: '/blog',

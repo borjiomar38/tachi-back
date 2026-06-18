@@ -200,10 +200,17 @@ export const PagePricing = (props: PagePricingProps) => {
   const paidTokenPacks = props.tokenPacks.filter(
     (tokenPack) => tokenPack.key !== 'free'
   );
+  const starterTokenPack =
+    paidTokenPacks.find((tokenPack) => tokenPack.key === 'starter') ??
+    paidTokenPacks.find((tokenPack) => tokenPack.priceAmountCents === 200) ??
+    paidTokenPacks[0];
+  const secondaryPaidTokenPacks = paidTokenPacks.filter(
+    (tokenPack) => tokenPack.id !== starterTokenPack?.id
+  );
   const featuredTokenPack =
     paidTokenPacks.find((tokenPack) => tokenPack.key === 'pro') ??
-    paidTokenPacks[1] ??
-    paidTokenPacks[0];
+    secondaryPaidTokenPacks[0] ??
+    starterTokenPack;
   const powerTokenPack =
     paidTokenPacks.find((tokenPack) => tokenPack.key === 'power') ??
     paidTokenPacks.at(-1);
@@ -216,10 +223,50 @@ export const PagePricing = (props: PagePricingProps) => {
   return (
     <PublicShell>
       <PublicSection
+        eyebrow="Plans"
+        title="Start with the $2 monthly plan"
+        description="The Starter offer is the direct paid entry point for hosted OCR, AI translation, redeem-code activation, and a recurring monthly token plan."
+        className="pt-10"
+        titleAs="h1"
+      >
+        {starterTokenPack ? (
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-center">
+            <div className="space-y-4">
+              <p className="text-sm leading-6 text-muted-foreground">
+                Use Starter when the free trial has proven the workflow and you
+                want the smallest recurring checkout path before moving into
+                higher monthly chapter volume.
+              </p>
+              <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
+                <div className="rounded-2xl border border-border/70 bg-background/70 p-4">
+                  <p className="font-medium text-foreground">
+                    {starterTokenPack.marketedChaptersPerMonth} chapters
+                  </p>
+                  <p>Estimated monthly volume</p>
+                </div>
+                <div className="rounded-2xl border border-border/70 bg-background/70 p-4">
+                  <p className="font-medium text-foreground">Redeem code</p>
+                  <p>Activate once in the app</p>
+                </div>
+                <div className="rounded-2xl border border-border/70 bg-background/70 p-4">
+                  <p className="font-medium text-foreground">Monthly</p>
+                  <p>Renewable hosted access</p>
+                </div>
+              </div>
+            </div>
+            <TokenPackCard
+              id="starter-plan"
+              tokenPack={starterTokenPack}
+              featured
+            />
+          </div>
+        ) : null}
+      </PublicSection>
+
+      <PublicSection
         eyebrow="Pricing"
         title="Monthly plans for hosted OCR and translation"
         description="These plans support readers coming from TachiyomiAT, Tachiyomi, or Mihon-style workflows who need hosted OCR, AI translation, redeem-code activation, and recurring monthly token access."
-        className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {pricingNotes.map((item) => {
@@ -359,7 +406,7 @@ export const PagePricing = (props: PagePricingProps) => {
           </div>
         ) : null}
         <div className="grid gap-4 lg:grid-cols-3">
-          {paidTokenPacks.map((tokenPack) => (
+          {secondaryPaidTokenPacks.map((tokenPack) => (
             <TokenPackCard
               key={tokenPack.id}
               tokenPack={tokenPack}
