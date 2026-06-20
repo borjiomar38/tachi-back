@@ -385,6 +385,14 @@ export const zBackofficeTranslatedChapterListInput = z.object({
   searchTerm: z.string().trim().max(128).optional().default(''),
 });
 
+export const zBackofficeUserRatingSummary = z.object({
+  averageRating: z.number().min(1).max(5).nullish(),
+  latestRatedAt: z.date().nullish(),
+  latestRating: z.number().int().min(1).max(5).nullish(),
+  ratingCount: z.number().int().nonnegative(),
+  skippedCount: z.number().int().nonnegative(),
+});
+
 export const zBackofficeTranslatedChapterListItem = z.object({
   cacheHitCount: z.number().int().nonnegative(),
   cachedTranslationCount: z.number().int().nonnegative(),
@@ -395,6 +403,7 @@ export const zBackofficeTranslatedChapterListItem = z.object({
   lastCachedAt: z.date(),
   latestJobAt: z.date().nullish(),
   pageCount: z.number().int().nonnegative(),
+  rating: zBackofficeUserRatingSummary,
   sourceLanguages: z.array(z.string()),
   targetLanguages: z.array(z.string()),
   totalJobCount: z.number().int().nonnegative(),

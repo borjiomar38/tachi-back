@@ -203,6 +203,15 @@ export const PageChapters = (props: {
                           ))}
                         </div>
                       </DataListCell>
+                      <DataListCell className="flex-[0.65] max-lg:hidden">
+                        <DataListTextHeader>User Rating</DataListTextHeader>
+                        <DataListText className="text-xs">
+                          {formatRatingValue(chapter.rating)}
+                        </DataListText>
+                        <DataListText className="text-xs text-muted-foreground">
+                          {formatRatingMeta(chapter.rating)}
+                        </DataListText>
+                      </DataListCell>
                       <DataListCell className="max-lg:hidden">
                         <DataListTextHeader>Usage</DataListTextHeader>
                         <DataListText className="text-xs">
@@ -256,4 +265,37 @@ function SummaryCard(props: {
 
 function sum(values: number[]) {
   return values.reduce((total, value) => total + value, 0);
+}
+
+function formatRatingValue(rating: {
+  averageRating?: number | null;
+  latestRating?: number | null;
+  ratingCount: number;
+  skippedCount: number;
+}) {
+  if (rating.ratingCount > 0 && rating.averageRating) {
+    return `${rating.averageRating.toFixed(1)} / 5 avg`;
+  }
+
+  if (rating.skippedCount > 0) {
+    return 'Skipped';
+  }
+
+  return 'No rating';
+}
+
+function formatRatingMeta(rating: {
+  latestRating?: number | null;
+  ratingCount: number;
+  skippedCount: number;
+}) {
+  if (rating.ratingCount > 0) {
+    return `${rating.ratingCount} rating${rating.ratingCount === 1 ? '' : 's'} · latest ${rating.latestRating ?? '-'}/5`;
+  }
+
+  if (rating.skippedCount > 0) {
+    return `${rating.skippedCount} skip${rating.skippedCount === 1 ? '' : 's'}`;
+  }
+
+  return 'No feedback yet';
 }

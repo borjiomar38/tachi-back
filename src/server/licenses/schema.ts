@@ -190,6 +190,45 @@ export const zLicenseLedgerEntry = z.object({
   ]),
 });
 
+export const zLicenseTranslatedChapterFeedback = z
+  .object({
+    comment: z.string().nullish(),
+    createdAt: z.date(),
+    rating: z.number().int().min(1).max(5).nullish(),
+    status: z.enum(['rated', 'skipped']),
+  })
+  .nullish();
+
+export const zLicenseTranslatedChapter = z.object({
+  chapterCacheKey: z.string().nullish(),
+  chapterName: z.string().nullish(),
+  chapterUrl: z.string().nullish(),
+  completedAt: z.date().nullish(),
+  createdAt: z.date(),
+  deviceId: z.string(),
+  installationId: z.string(),
+  jobId: z.string(),
+  mangaTitle: z.string().nullish(),
+  mangaUrl: z.string().nullish(),
+  pageCount: z.number().int().nonnegative(),
+  redeemCode: z.string().nullish(),
+  sourceLanguage: z.string(),
+  sourceName: z.string().nullish(),
+  spentTokens: z.number().int().nonnegative(),
+  status: z.enum([
+    'created',
+    'awaiting_upload',
+    'queued',
+    'processing',
+    'completed',
+    'failed',
+    'canceled',
+    'expired',
+  ]),
+  targetLanguage: z.string(),
+  ratingFeedback: zLicenseTranslatedChapterFeedback,
+});
+
 export const zRedeemCodeListInput = z.object({
   limit: z.coerce.number().int().positive().max(100).default(50),
   query: z.string().trim().max(128).optional(),

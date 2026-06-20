@@ -1,6 +1,7 @@
 import { ORPCError } from '@orpc/client';
 import { z } from 'zod';
 
+import { normalizeTranslationChapterIdentity } from '@/server/jobs/chapter-identity';
 import { createManualLicenseGrant } from '@/server/licenses/manual-grant';
 import {
   zAdjustRedeemCodeInput,
@@ -13,6 +14,7 @@ import {
   zLicenseLedgerEntry,
   zLicenseOrderSummary,
   zLicenseSummary,
+  zLicenseTranslatedChapter,
   zRedeemCodeActionInput,
   zRedeemCodeActionResponse,
   zRedeemCodeListInput,
@@ -632,6 +634,243 @@ export default {
       }));
     }),
 
+  getTranslatedChapters: protectedProcedure({
+    permissions: {
+      license: ['read'],
+    },
+  })
+    .route({
+      method: 'GET',
+      path: '/licenses/{key}/translated-chapters',
+      tags,
+    })
+    .input(
+      z.object({
+        key: z.string(),
+        limit: z.coerce.number().int().positive().max(200).default(100),
+      })
+    )
+    .output(z.array(zLicenseTranslatedChapter))
+    .handler(async ({ context, input }) => {
+      const license = await context.db.license.findUnique({
+        where: { key: input.key },
+        select: {
+          id: true,
+        },
+      });
+
+      if (!license) {
+        throw new ORPCError('NOT_FOUND');
+      }
+
+      const jobs = await context.db.translationJob.findMany({
+        orderBy: [
+          {
+            completedAt: 'desc',
+          },
+          {
+            createdAt: 'desc',
+          },
+        ],
+        select: {
+          chapterCacheKey: true,
+          chapterIdentity: true,
+          completedAt: true,
+          createdAt: true,
+          device: {
+            select: {
+              installationId: true,
+            },
+          },
+          deviceId: true,
+          id: true,
+          pageCount: true,
+          sourceLanguage: true,
+          spentTokens: true,
+          status: true,
+          targetLanguage: true,
+        },
+        take: input.limit,
+        where: {
+          licenseId: license.id,
+          status: 'completed',
+        },
+      });
+
+      if (!jobs.length) {
+        return [];
+      }
+
+      const deviceIds = uniqueSorted(jobs.map((job) => job.deviceId));
+      const jobIds = jobs.map((job) => job.id);
+      const chapterCacheKeys = uniqueSorted(
+        jobs
+          .map((job) => job.chapterCacheKey)
+          .filter((value): value is string => Boolean(value))
+      );
+      const [activations, redeemedCodes, feedbackRows] = await Promise.all([
+        context.db.redeemActivation.findMany({
+          orderBy: {
+            lastActivatedAt: 'desc',
+          },
+          select: {
+            deviceId: true,
+            redeemCode: {
+              select: {
+                code: true,
+              },
+            },
+          },
+          where: {
+            deviceId: {
+              in: deviceIds,
+            },
+            licenseId: license.id,
+          },
+        }),
+        context.db.redeemCode.findMany({
+          orderBy: {
+            redeemedAt: 'desc',
+          },
+          select: {
+            code: true,
+            redeemedByDeviceId: true,
+          },
+          where: {
+            licenseId: license.id,
+            redeemedByDeviceId: {
+              in: deviceIds,
+            },
+          },
+        }),
+        context.db.translationRatingFeedback.findMany({
+          orderBy: {
+            createdAt: 'desc',
+          },
+          select: {
+            chapterCacheKey: true,
+            comment: true,
+            createdAt: true,
+            deviceId: true,
+            jobId: true,
+            rating: true,
+            status: true,
+            targetLanguage: true,
+          },
+          where: {
+            licenseId: license.id,
+            OR: [
+              {
+                jobId: {
+                  in: jobIds,
+                },
+              },
+              ...(chapterCacheKeys.length
+                ? [
+                    {
+                      chapterCacheKey: {
+                        in: chapterCacheKeys,
+                      },
+                    },
+                  ]
+                : []),
+            ],
+          },
+        }),
+      ]);
+
+      const redeemCodeByDeviceId = new Map<string, string>();
+      for (const activation of activations) {
+        if (!redeemCodeByDeviceId.has(activation.deviceId)) {
+          redeemCodeByDeviceId.set(
+            activation.deviceId,
+            activation.redeemCode.code
+          );
+        }
+      }
+
+      for (const redeemCode of redeemedCodes) {
+        if (
+          redeemCode.redeemedByDeviceId &&
+          !redeemCodeByDeviceId.has(redeemCode.redeemedByDeviceId)
+        ) {
+          redeemCodeByDeviceId.set(
+            redeemCode.redeemedByDeviceId,
+            redeemCode.code
+          );
+        }
+      }
+
+      const feedbackByJobId = new Map<string, (typeof feedbackRows)[number]>();
+      const feedbackByChapter = new Map<
+        string,
+        (typeof feedbackRows)[number]
+      >();
+
+      for (const feedback of feedbackRows) {
+        if (feedback.jobId && !feedbackByJobId.has(feedback.jobId)) {
+          feedbackByJobId.set(feedback.jobId, feedback);
+        }
+
+        if (feedback.chapterCacheKey) {
+          const feedbackKey = buildChapterFeedbackLookupKey({
+            chapterCacheKey: feedback.chapterCacheKey,
+            deviceId: feedback.deviceId,
+            targetLanguage: feedback.targetLanguage,
+          });
+
+          if (!feedbackByChapter.has(feedbackKey)) {
+            feedbackByChapter.set(feedbackKey, feedback);
+          }
+        }
+      }
+
+      return jobs.map((job) => {
+        const identity = normalizeTranslationChapterIdentity(
+          job.chapterIdentity
+        );
+        const ratingFeedback =
+          feedbackByJobId.get(job.id) ??
+          (job.chapterCacheKey
+            ? feedbackByChapter.get(
+                buildChapterFeedbackLookupKey({
+                  chapterCacheKey: job.chapterCacheKey,
+                  deviceId: job.deviceId,
+                  targetLanguage: job.targetLanguage,
+                })
+              )
+            : null);
+
+        return {
+          chapterCacheKey: job.chapterCacheKey,
+          chapterName: identity?.chapterName ?? null,
+          chapterUrl: identity?.chapterUrl ?? null,
+          completedAt: job.completedAt,
+          createdAt: job.createdAt,
+          deviceId: job.deviceId,
+          installationId: job.device.installationId,
+          jobId: job.id,
+          mangaTitle: identity?.mangaTitle ?? null,
+          mangaUrl: identity?.mangaUrl ?? null,
+          pageCount: job.pageCount,
+          redeemCode: redeemCodeByDeviceId.get(job.deviceId) ?? null,
+          ratingFeedback: ratingFeedback
+            ? {
+                comment: ratingFeedback.comment,
+                createdAt: ratingFeedback.createdAt,
+                rating: ratingFeedback.rating,
+                status: ratingFeedback.status,
+              }
+            : null,
+          sourceLanguage: job.sourceLanguage,
+          sourceName: identity?.sourceName ?? null,
+          spentTokens: job.spentTokens,
+          status: job.status,
+          targetLanguage: job.targetLanguage,
+        };
+      });
+    }),
+
   getOrders: protectedProcedure({
     permissions: {
       order: ['read'],
@@ -1198,3 +1437,15 @@ export default {
       });
     }),
 };
+
+function buildChapterFeedbackLookupKey(input: {
+  chapterCacheKey: string;
+  deviceId: string;
+  targetLanguage: string;
+}) {
+  return `${input.deviceId}:${input.chapterCacheKey}:${input.targetLanguage}`;
+}
+
+function uniqueSorted(values: string[]) {
+  return Array.from(new Set(values)).sort();
+}

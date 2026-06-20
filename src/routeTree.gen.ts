@@ -72,6 +72,7 @@ import { Route as ApiPaymentsWebhookRouteImport } from './routes/api/payments/we
 import { Route as ApiPaymentsCheckoutRouteImport } from './routes/api/payments/checkout'
 import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
+import { Route as ApiMobileTranslationRatingFeedbackRouteImport } from './routes/api/mobile/translation-rating-feedback'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
@@ -103,6 +104,7 @@ import { Route as ApiMobileSourceDiscoveryResultsRouteImport } from './routes/ap
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
+import { Route as ApiMobileContentPolicyCheckRouteImport } from './routes/api/mobile/content-policy/check'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
 import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
@@ -448,6 +450,12 @@ const ApiOpenapiAppRoute = ApiOpenapiAppRouteImport.update({
   path: '/api/openapi/app',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileTranslationRatingFeedbackRoute =
+  ApiMobileTranslationRatingFeedbackRouteImport.update({
+    id: '/api/mobile/translation-rating-feedback',
+    path: '/api/mobile/translation-rating-feedback',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileJobsRoute = ApiMobileJobsRouteImport.update({
   id: '/api/mobile/jobs',
   path: '/api/mobile/jobs',
@@ -618,6 +626,12 @@ const ApiMobileMangaPageTranslateRoute =
     path: '/api/mobile/manga-page/translate',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileContentPolicyCheckRoute =
+  ApiMobileContentPolicyCheckRouteImport.update({
+    id: '/api/mobile/content-policy/check',
+    path: '/api/mobile/content-policy/check',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileAuthSessionRoute = ApiMobileAuthSessionRouteImport.update({
   id: '/api/mobile/auth/session',
   path: '/api/mobile/auth/session',
@@ -762,6 +776,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
@@ -794,6 +809,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
+  '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -871,6 +887,7 @@ export interface FileRoutesByTo {
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
@@ -903,6 +920,7 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
+  '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -985,6 +1003,7 @@ export interface FileRoutesById {
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
@@ -1017,6 +1036,7 @@ export interface FileRoutesById {
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
+  '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1100,6 +1120,7 @@ export interface FileRouteTypes {
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
@@ -1132,6 +1153,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
+    | '/api/mobile/content-policy/check'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1209,6 +1231,7 @@ export interface FileRouteTypes {
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
@@ -1241,6 +1264,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
+    | '/api/mobile/content-policy/check'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1322,6 +1346,7 @@ export interface FileRouteTypes {
     | '/api/mobile/app-update-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
@@ -1354,6 +1379,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
+    | '/api/mobile/content-policy/check'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1433,6 +1459,7 @@ export interface RootRouteChildren {
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
+  ApiMobileTranslationRatingFeedbackRoute: typeof ApiMobileTranslationRatingFeedbackRoute
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
   ApiOpenapiAuthRoute: typeof ApiOpenapiAuthRouteWithChildren
   ApiPaymentsCheckoutRoute: typeof ApiPaymentsCheckoutRoute
@@ -1446,6 +1473,7 @@ export interface RootRouteChildren {
   ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRouteWithChildren
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
+  ApiMobileContentPolicyCheckRoute: typeof ApiMobileContentPolicyCheckRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
   ApiMobileSourceDiscoveryMethodFeedbackRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1902,6 +1930,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOpenapiAppRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/translation-rating-feedback': {
+      id: '/api/mobile/translation-rating-feedback'
+      path: '/api/mobile/translation-rating-feedback'
+      fullPath: '/api/mobile/translation-rating-feedback'
+      preLoaderRoute: typeof ApiMobileTranslationRatingFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/jobs': {
       id: '/api/mobile/jobs'
       path: '/api/mobile/jobs'
@@ -2117,6 +2152,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/manga-page/translate'
       fullPath: '/api/mobile/manga-page/translate'
       preLoaderRoute: typeof ApiMobileMangaPageTranslateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/content-policy/check': {
+      id: '/api/mobile/content-policy/check'
+      path: '/api/mobile/content-policy/check'
+      fullPath: '/api/mobile/content-policy/check'
+      preLoaderRoute: typeof ApiMobileContentPolicyCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/auth/session': {
@@ -2472,6 +2514,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
+  ApiMobileTranslationRatingFeedbackRoute:
+    ApiMobileTranslationRatingFeedbackRoute,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,
   ApiOpenapiAuthRoute: ApiOpenapiAuthRouteWithChildren,
   ApiPaymentsCheckoutRoute: ApiPaymentsCheckoutRoute,
@@ -2485,6 +2529,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRouteWithChildren,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
+  ApiMobileContentPolicyCheckRoute: ApiMobileContentPolicyCheckRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,
   ApiMobileSourceDiscoveryMethodFeedbackRoute:
     ApiMobileSourceDiscoveryMethodFeedbackRoute,

@@ -97,6 +97,11 @@ enum TranslationJobStatus {
   expired
 }
 
+enum TranslationRatingFeedbackStatus {
+  rated
+  skipped
+}
+
 enum JobAssetKind {
   page_upload
   result_manifest
@@ -250,6 +255,7 @@ model License {
   mobileSessions    MobileSession[]
   jobs              TranslationJob[]
   freeTrialClaim    FreeTrialClaim?
+  ratingFeedback    TranslationRatingFeedback[]
 
   @@index([status, createdAt])
   @@index([ownerEmail])
@@ -276,6 +282,7 @@ model Device {
   redeemActivations RedeemActivation[]
   jobs              TranslationJob[]
   ledgerEntries     TokenLedger[]
+  ratingFeedback    TranslationRatingFeedback[]
 
   @@index([status, lastSeenAt])
   @@map("devices")
@@ -599,11 +606,12 @@ model TranslationJob {
   createdAt                    DateTime             @default(now())
   updatedAt                    DateTime             @updatedAt
 
-  license        License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  device         Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  license        License                     @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device         Device                      @relation(fields: [deviceId], references: [id], onDelete: Cascade)
   assets         JobAsset[]
   providerUsages ProviderUsage[]
   ledgerEntries  TokenLedger[]
+  ratingFeedback TranslationRatingFeedback[]
 
   @@index([licenseId, createdAt])
   @@index([deviceId, createdAt])
@@ -634,6 +642,42 @@ model TranslationResultCache {
   @@index([targetLanguage, createdAt])
   @@index([chapterCacheKey, targetLanguage, updatedAt])
   @@map("translation_result_caches")
+}
+
+model TranslationRatingFeedback {
+  id                  String                          @id @default(cuid())
+  licenseId           String
+  deviceId            String
+  jobId               String?
+  clientSessionId     String?
+  translationCacheKey String?
+  chapterCacheKey     String?
+  chapterIdentity     Json?
+  sourceLanguage      String?
+  targetLanguage      String
+  status              TranslationRatingFeedbackStatus @default(rated)
+  rating              Int?
+  comment             String?
+  pageCount           Int?
+  readDurationMs      Int?
+  ipAddress           String?
+  userAgent           String?
+  metadata            Json?
+  createdAt           DateTime                        @default(now())
+  updatedAt           DateTime                        @updatedAt
+
+  license License         @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  device  Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  job     TranslationJob? @relation(fields: [jobId], references: [id], onDelete: SetNull)
+
+  @@unique([clientSessionId, licenseId, deviceId])
+  @@unique([jobId, licenseId, deviceId])
+  @@unique([licenseId, deviceId, chapterCacheKey, targetLanguage])
+  @@index([chapterCacheKey, targetLanguage, createdAt])
+  @@index([translationCacheKey])
+  @@index([licenseId, createdAt])
+  @@index([deviceId, createdAt])
+  @@map("translation_rating_feedback")
 }
 
 model JobAsset {

@@ -71,6 +71,14 @@ export const PageLicense = (props: { params: { key: string } }) => {
     }),
     enabled: summaryQuery.status === 'success',
   });
+  const translatedChaptersQuery = useQuery({
+    ...orpc.license.getTranslatedChapters.queryOptions({
+      input: {
+        key: props.params.key,
+      },
+    }),
+    enabled: summaryQuery.status === 'success',
+  });
 
   const ui = getUiState((set) => {
     if (summaryQuery.status === 'pending') {
@@ -306,6 +314,100 @@ export const PageLicense = (props: { params: { key: string } }) => {
                 </div>
 
                 <SectionCard
+                  description="Completed hosted chapter translations for this license."
+                  query={translatedChaptersQuery}
+                  title="Translated Chapters"
+                >
+                  {(chapters) => (
+                    <DataList>
+                      {!chapters.length ? (
+                        <DataListEmptyState>
+                          No translated chapters were found for this license.
+                        </DataListEmptyState>
+                      ) : (
+                        chapters.map((chapter) => (
+                          <DataListRow key={chapter.jobId} withHover>
+                            <DataListCell>
+                              <DataListText className="font-medium">
+                                {chapter.chapterCacheKey ? (
+                                  <Link
+                                    params={{
+                                      cacheKey: chapter.chapterCacheKey,
+                                    }}
+                                    to="/manager/chapters/$cacheKey"
+                                  >
+                                    {chapter.mangaTitle ?? 'Unknown manga'}
+                                    <span className="absolute inset-0" />
+                                  </Link>
+                                ) : (
+                                  (chapter.mangaTitle ?? 'Unknown manga')
+                                )}
+                              </DataListText>
+                              <DataListText className="text-xs text-muted-foreground">
+                                {chapter.chapterName ?? 'Unknown chapter'}
+                              </DataListText>
+                              <DataListText className="truncate text-xs text-muted-foreground">
+                                {chapter.sourceName ?? 'Unknown source'} -{' '}
+                                {chapter.chapterUrl ?? chapter.jobId}
+                              </DataListText>
+                            </DataListCell>
+                            <DataListCell className="flex-[0.55]">
+                              <DataListTextHeader>
+                                Redeem Code
+                              </DataListTextHeader>
+                              <DataListText className="text-xs">
+                                {chapter.redeemCode ?? 'Unknown'}
+                              </DataListText>
+                              <DataListText className="truncate text-xs text-muted-foreground">
+                                {chapter.installationId}
+                              </DataListText>
+                            </DataListCell>
+                            <DataListCell className="flex-[0.45]">
+                              <DataListTextHeader>
+                                User Rating
+                              </DataListTextHeader>
+                              <DataListText className="text-xs">
+                                {formatChapterRating(chapter.ratingFeedback)}
+                              </DataListText>
+                              <DataListText className="text-xs text-muted-foreground">
+                                {chapter.ratingFeedback
+                                  ? dayjs(
+                                      chapter.ratingFeedback.createdAt
+                                    ).fromNow()
+                                  : 'No feedback yet'}
+                              </DataListText>
+                            </DataListCell>
+                            <DataListCell className="flex-[0.5] max-md:hidden">
+                              <DataListTextHeader>Language</DataListTextHeader>
+                              <DataListText className="text-xs">
+                                {chapter.sourceLanguage} -&gt;{' '}
+                                {chapter.targetLanguage}
+                              </DataListText>
+                              <DataListText className="text-xs text-muted-foreground">
+                                {chapter.pageCount} pages -{' '}
+                                {chapter.spentTokens} tokens
+                              </DataListText>
+                            </DataListCell>
+                            <DataListCell className="flex-[0.5] max-lg:hidden">
+                              <DataListTextHeader>Completed</DataListTextHeader>
+                              <DataListText className="text-xs">
+                                {chapter.completedAt
+                                  ? dayjs(chapter.completedAt).format(
+                                      'DD/MM/YYYY HH:mm'
+                                    )
+                                  : dayjs(chapter.createdAt).format(
+                                      'DD/MM/YYYY HH:mm'
+                                    )}
+                              </DataListText>
+                            </DataListCell>
+                          </DataListRow>
+                        ))
+                      )}
+                    </DataList>
+                  )}
+                </SectionCard>
+
+                <SectionCard
                   description="Append-only token ledger for this license."
                   query={ledgerQuery}
                   title="Token Ledger"
@@ -447,4 +549,24 @@ function getStatusBadgeVariant(status: string) {
     default:
       return 'secondary' as const;
   }
+}
+
+function formatChapterRating(
+  feedback:
+    | {
+        rating?: number | null;
+        status: 'rated' | 'skipped';
+      }
+    | null
+    | undefined
+) {
+  if (!feedback) {
+    return 'No rating';
+  }
+
+  if (feedback.status === 'skipped') {
+    return 'Skipped';
+  }
+
+  return feedback.rating ? `${feedback.rating} / 5` : 'Rated';
 }

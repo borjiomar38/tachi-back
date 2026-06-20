@@ -6,7 +6,7 @@ import {
   zBackofficeTranslatedChapterListInput,
   zBackofficeTranslatedChapterListResponse,
 } from '@/server/jobs/backoffice-schema';
-import { zTranslationChapterIdentity } from '@/server/jobs/schema';
+import { normalizeTranslationChapterIdentity } from '@/server/jobs/chapter-identity';
 import { protectedProcedure } from '@/server/orpc';
 import {
   cleanProviderTranslationText,
@@ -100,10 +100,13 @@ export default {
         matchesSearch(group, searchTerm)
       );
       const visibleGroups = filteredGroups.slice(0, input.limit);
-      const jobStats = await getJobStatsForChapterKeys(
-        context.db,
-        visibleGroups.map((group) => group.chapterCacheKey)
+      const visibleChapterCacheKeys = visibleGroups.map(
+        (group) => group.chapterCacheKey
       );
+      const [jobStats, ratingStats] = await Promise.all([
+        getJobStatsForChapterKeys(context.db, visibleChapterCacheKeys),
+        getRatingStatsForChapterKeys(context.db, visibleChapterCacheKeys),
+      ]);
 
       return {
         items: visibleGroups.map((group) => {
@@ -119,6 +122,8 @@ export default {
             lastCachedAt: group.lastCachedAt,
             latestJobAt: stats?.latestJobAt ?? null,
             pageCount: group.pageCount,
+            rating:
+              ratingStats.get(group.chapterCacheKey) ?? emptyRatingSummary(),
             sourceLanguages: Array.from(group.sourceLanguages).sort(),
             targetLanguages: Array.from(group.targetLanguages).sort(),
             totalJobCount: stats?.totalJobCount ?? 0,
@@ -216,7 +221,9 @@ export default {
         null;
       const identity =
         cacheEntries
-          .map((entry) => normalizeChapterIdentity(entry.chapterIdentity))
+          .map((entry) =>
+            normalizeTranslationChapterIdentity(entry.chapterIdentity)
+          )
           .find((entry) => entry) ?? null;
       const completedJobCount = jobRowsForStats.filter(
         (job) => job.status === 'completed'
@@ -285,7 +292,7 @@ function groupCacheRows(cacheRows: CacheRow[]) {
         chapterCacheKey: row.chapterCacheKey,
         completedJobCount: 0,
         firstCachedAt: row.createdAt,
-        identity: normalizeChapterIdentity(row.chapterIdentity),
+        identity: normalizeTranslationChapterIdentity(row.chapterIdentity),
         lastCachedAt: row.updatedAt,
         latestJobAt: null,
         pageCount: row.pageCount,
@@ -311,7 +318,9 @@ function groupCacheRows(cacheRows: CacheRow[]) {
     current.targetLanguages.add(row.targetLanguage);
 
     if (!current.identity) {
-      current.identity = normalizeChapterIdentity(row.chapterIdentity);
+      current.identity = normalizeTranslationChapterIdentity(
+        row.chapterIdentity
+      );
     }
   }
 
@@ -386,6 +395,108 @@ async function getJobStatsForChapterKeys(
   return stats;
 }
 
+async function getRatingStatsForChapterKeys(
+  dbClient: {
+    translationRatingFeedback: {
+      findMany: typeof import('@/server/db').db.translationRatingFeedback.findMany;
+    };
+  },
+  chapterCacheKeys: string[]
+) {
+  const stats = new Map<
+    string,
+    {
+      latestRatedAt: Date | null;
+      latestRating: number | null;
+      ratingCount: number;
+      ratingSum: number;
+      skippedCount: number;
+    }
+  >();
+
+  if (!chapterCacheKeys.length) {
+    return new Map<string, ReturnType<typeof emptyRatingSummary>>();
+  }
+
+  const feedbackRows = await dbClient.translationRatingFeedback.findMany({
+    orderBy: {
+      createdAt: 'desc',
+    },
+    select: {
+      chapterCacheKey: true,
+      createdAt: true,
+      rating: true,
+      status: true,
+    },
+    where: {
+      chapterCacheKey: {
+        in: chapterCacheKeys,
+      },
+    },
+  });
+
+  for (const feedback of feedbackRows) {
+    if (!feedback.chapterCacheKey) {
+      continue;
+    }
+
+    const current =
+      stats.get(feedback.chapterCacheKey) ??
+      ({
+        latestRatedAt: null,
+        latestRating: null,
+        ratingCount: 0,
+        ratingSum: 0,
+        skippedCount: 0,
+      } satisfies {
+        latestRatedAt: Date | null;
+        latestRating: number | null;
+        ratingCount: number;
+        ratingSum: number;
+        skippedCount: number;
+      });
+
+    if (feedback.status === 'skipped') {
+      current.skippedCount += 1;
+    } else if (feedback.rating !== null) {
+      current.ratingCount += 1;
+      current.ratingSum += feedback.rating;
+
+      if (!current.latestRatedAt) {
+        current.latestRatedAt = feedback.createdAt;
+        current.latestRating = feedback.rating;
+      }
+    }
+
+    stats.set(feedback.chapterCacheKey, current);
+  }
+
+  return new Map(
+    Array.from(stats.entries()).map(([chapterCacheKey, rating]) => [
+      chapterCacheKey,
+      {
+        averageRating: rating.ratingCount
+          ? rating.ratingSum / rating.ratingCount
+          : null,
+        latestRatedAt: rating.latestRatedAt,
+        latestRating: rating.latestRating,
+        ratingCount: rating.ratingCount,
+        skippedCount: rating.skippedCount,
+      },
+    ])
+  );
+}
+
+function emptyRatingSummary() {
+  return {
+    averageRating: null,
+    latestRatedAt: null,
+    latestRating: null,
+    ratingCount: 0,
+    skippedCount: 0,
+  };
+}
+
 function matchesSearch(group: ChapterGroup, searchTerm: string) {
   if (!searchTerm) {
     return true;
@@ -400,23 +511,6 @@ function matchesSearch(group: ChapterGroup, searchTerm: string) {
     group.identity?.sourceId,
     group.identity?.sourceName,
   ].some((value) => value?.toLowerCase().includes(searchTerm));
-}
-
-function normalizeChapterIdentity(rawIdentity: unknown) {
-  const identity = zTranslationChapterIdentity.safeParse(rawIdentity);
-
-  if (!identity.success) {
-    return null;
-  }
-
-  return {
-    chapterName: identity.data.chapterName ?? null,
-    chapterUrl: identity.data.chapterUrl,
-    mangaTitle: identity.data.mangaTitle ?? null,
-    mangaUrl: identity.data.mangaUrl ?? null,
-    sourceId: identity.data.sourceId ?? null,
-    sourceName: identity.data.sourceName ?? null,
-  };
 }
 
 function buildPagePreviews(rawManifest: unknown) {

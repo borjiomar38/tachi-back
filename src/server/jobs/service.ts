@@ -31,6 +31,10 @@ import {
 } from '@/server/provider-gateway/translation-cleanup';
 
 import {
+  buildTranslationChapterCacheKey,
+  normalizeTranslationChapterIdentity,
+} from './chapter-identity';
+import {
   coalesceOcrLineBlocks,
   coalesceOcrPageContinuations,
 } from './ocr-block-grouping';
@@ -38,7 +42,6 @@ import {
   type TranslationJobResultManifest,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
-  zTranslationChapterIdentity,
   zTranslationJobControlInput,
   zTranslationJobPageUploadInput,
   zTranslationJobResultManifest,
@@ -323,7 +326,7 @@ export async function createTranslationJob(
 
     const createdJob = await tx.translationJob.create({
       data: {
-        chapterCacheKey: buildChapterCacheKey(input.chapterIdentity),
+        chapterCacheKey: buildTranslationChapterCacheKey(input.chapterIdentity),
         chapterIdentity: input.chapterIdentity
           ? (input.chapterIdentity as Prisma.InputJsonValue)
           : undefined,
@@ -2436,42 +2439,6 @@ function buildTranslationCacheProviderSignature(job: JobRecord) {
   });
 }
 
-function normalizeChapterIdentity(rawIdentity: unknown) {
-  const identity = zTranslationChapterIdentity.safeParse(rawIdentity);
-
-  if (!identity.success) {
-    return null;
-  }
-
-  return {
-    chapterName: identity.data.chapterName?.trim() || null,
-    chapterUrl: identity.data.chapterUrl.trim(),
-    mangaTitle: identity.data.mangaTitle?.trim() || null,
-    mangaUrl: identity.data.mangaUrl?.trim() || null,
-    sourceId: identity.data.sourceId?.trim() || null,
-    sourceName: identity.data.sourceName?.trim() || null,
-  };
-}
-
-function buildChapterCacheKey(rawIdentity: unknown) {
-  const identity = normalizeChapterIdentity(rawIdentity);
-
-  if (!identity) {
-    return null;
-  }
-
-  return createHash('sha256')
-    .update(
-      JSON.stringify({
-        algorithm: '2026-04-24.chapter-url.v1',
-        chapterUrl: identity.chapterUrl,
-        sourceId: identity.sourceId,
-        sourceName: identity.sourceName,
-      })
-    )
-    .digest('hex');
-}
-
 function buildTranslationResultCacheKey(input: {
   job: JobRecord;
   sourceLanguage?: string;
@@ -3266,9 +3233,9 @@ async function storeTranslationResultCache(input: {
       bucketName: storedCacheResult.bucketName,
       cacheKey: input.cacheKey,
       chapterCacheKey: input.job.chapterCacheKey,
-      chapterIdentity: normalizeChapterIdentity(input.job.chapterIdentity) as
-        | Prisma.InputJsonValue
-        | undefined,
+      chapterIdentity: normalizeTranslationChapterIdentity(
+        input.job.chapterIdentity
+      ) as Prisma.InputJsonValue | undefined,
       objectKey: storedCacheResult.objectKey,
       pageCount: input.manifest.pageCount,
       providerSignature: input.providerSignature,
@@ -3281,9 +3248,9 @@ async function storeTranslationResultCache(input: {
     update: {
       bucketName: storedCacheResult.bucketName,
       chapterCacheKey: input.job.chapterCacheKey,
-      chapterIdentity: normalizeChapterIdentity(input.job.chapterIdentity) as
-        | Prisma.InputJsonValue
-        | undefined,
+      chapterIdentity: normalizeTranslationChapterIdentity(
+        input.job.chapterIdentity
+      ) as Prisma.InputJsonValue | undefined,
       objectKey: storedCacheResult.objectKey,
       pageCount: input.manifest.pageCount,
       providerSignature: input.providerSignature,
@@ -3325,7 +3292,9 @@ async function storeOcrDebugArtifact(input: {
     groupedOcrPages: input.groupedOcrPages,
     job: {
       chapterCacheKey: input.job.chapterCacheKey,
-      chapterIdentity: normalizeChapterIdentity(input.job.chapterIdentity),
+      chapterIdentity: normalizeTranslationChapterIdentity(
+        input.job.chapterIdentity
+      ),
       id: input.job.id,
       pageCount: input.job.pageCount,
       requestedSourceLanguage: input.job.sourceLanguage,
