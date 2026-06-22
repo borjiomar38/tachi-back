@@ -10,6 +10,7 @@ import { getProviderGatewayManifest } from '@/server/provider-gateway/manifest';
 import {
   buildBlockSourceHash,
   buildBlockTranslationKey,
+  buildTranslationPayloadEntries,
   buildTranslationPrompt,
 } from '@/server/provider-gateway/prompts';
 import {
@@ -464,6 +465,67 @@ function normalizeTranslationPayload(
     }
   })();
 
+  const compactEntries = buildTranslationPayloadEntries(pages);
+  const hasCompactKey = compactEntries.some((entry) => entry.key in json);
+  const hasLegacyPageKey = pages.some((page) => page.pageKey in json);
+
+  if (hasCompactKey || !hasLegacyPageKey) {
+    return normalizeCompactTranslationPayload(
+      provider,
+      pages,
+      compactEntries,
+      json
+    );
+  }
+
+  return normalizeLegacyTranslationPayload(provider, pages, json);
+}
+
+function normalizeCompactTranslationPayload(
+  provider: TranslationProvider,
+  pages: TranslationGatewayInput['pages'],
+  entries: ReturnType<typeof buildTranslationPayloadEntries>,
+  json: Record<string, unknown>
+) {
+  const blocksByPageKey = new Map<
+    string,
+    NormalizedTranslationBatch['pages'][number]['blocks']
+  >();
+
+  for (const entry of entries) {
+    if (!(entry.key in json)) {
+      throw createRetryableInvalidProviderResponseError(
+        provider,
+        `Provider response is missing temporary block key "${entry.key}".`
+      );
+    }
+
+    const translation = normalizeTranslationValue({
+      blockKey: entry.key,
+      blockText: entry.block.text,
+      provider,
+      value: json[entry.key],
+    });
+    const pageBlocks = blocksByPageKey.get(entry.pageKey) ?? [];
+    pageBlocks.push({
+      index: entry.blockIndex,
+      sourceText: entry.block.text,
+      translation,
+    });
+    blocksByPageKey.set(entry.pageKey, pageBlocks);
+  }
+
+  return pages.map((page) => ({
+    blocks: blocksByPageKey.get(page.pageKey) ?? [],
+    pageKey: page.pageKey,
+  }));
+}
+
+function normalizeLegacyTranslationPayload(
+  provider: TranslationProvider,
+  pages: TranslationGatewayInput['pages'],
+  json: Record<string, unknown>
+) {
   return pages.map((page) => {
     const translationMap = json[page.pageKey];
 
@@ -493,82 +555,87 @@ function normalizeTranslationPayload(
 
         const translation = translationRecord[blockKey];
 
-        if (translation === undefined || translation === null) {
-          throw createRetryableInvalidProviderResponseError(
+        return {
+          index,
+          sourceText: block.text,
+          translation: normalizeTranslationValue({
+            blockKey: `${page.pageKey}" block key "${blockKey}`,
+            blockText: block.text,
             provider,
-            `Provider response for "${page.pageKey}" block key "${blockKey}" is empty.`
-          );
-        }
-
-        if (typeof translation === 'string') {
-          return {
-            index,
-            sourceText: block.text,
-            translation: cleanProviderTranslationText(translation),
-          };
-        }
-
-        if (typeof translation === 'object' && !Array.isArray(translation)) {
-          const translationObject = translation as Record<string, unknown>;
-          const returnedSourceHash = translationObject.sourceHash;
-          const returnedSourceText = translationObject.sourceText;
-          const returnedTranslation = translationObject.translation;
-
-          if (
-            typeof returnedSourceHash === 'string' &&
-            returnedSourceHash !== buildBlockSourceHash(block.text)
-          ) {
-            throw createRetryableInvalidProviderResponseError(
-              provider,
-              `Provider response for "${page.pageKey}" block key "${blockKey}" echoed sourceHash for a different OCR block.`
-            );
-          }
-
-          if (
-            typeof returnedSourceText === 'string' &&
-            normalizeSourceText(returnedSourceText) !==
-              normalizeSourceText(block.text)
-          ) {
-            throw createRetryableInvalidProviderResponseError(
-              provider,
-              `Provider response for "${page.pageKey}" block key "${blockKey}" echoed sourceText for a different OCR block.`
-            );
-          }
-
-          if (
-            returnedTranslation === undefined ||
-            returnedTranslation === null
-          ) {
-            throw createRetryableInvalidProviderResponseError(
-              provider,
-              `Provider response for "${page.pageKey}" block key "${blockKey}" translation is empty.`
-            );
-          }
-
-          if (typeof returnedTranslation !== 'string') {
-            throw createRetryableInvalidProviderResponseError(
-              provider,
-              `Provider response for "${page.pageKey}" block key "${blockKey}" translation is not a string.`
-            );
-          }
-
-          return {
-            index,
-            sourceText: block.text,
-            translation: cleanProviderTranslationText(returnedTranslation),
-          };
-        }
-
-        if (typeof translation !== 'string') {
-          throw createRetryableInvalidProviderResponseError(
-            provider,
-            `Provider response for "${page.pageKey}" block key "${blockKey}" is not a string or translation object.`
-          );
-        }
+            value: translation,
+          }),
+        };
       }),
       pageKey: page.pageKey,
     };
   });
+}
+
+function normalizeTranslationValue(input: {
+  blockKey: string;
+  blockText: string;
+  provider: TranslationProvider;
+  value: unknown;
+}) {
+  if (input.value === undefined || input.value === null) {
+    throw createRetryableInvalidProviderResponseError(
+      input.provider,
+      `Provider response for "${input.blockKey}" is empty.`
+    );
+  }
+
+  if (typeof input.value === 'string') {
+    return cleanProviderTranslationText(input.value);
+  }
+
+  if (typeof input.value === 'object' && !Array.isArray(input.value)) {
+    const translationObject = input.value as Record<string, unknown>;
+    const returnedSourceHash = translationObject.sourceHash;
+    const returnedSourceText = translationObject.sourceText;
+    const returnedTranslation = translationObject.translation;
+
+    if (
+      typeof returnedSourceHash === 'string' &&
+      returnedSourceHash !== buildBlockSourceHash(input.blockText)
+    ) {
+      throw createRetryableInvalidProviderResponseError(
+        input.provider,
+        `Provider response for "${input.blockKey}" echoed sourceHash for a different OCR block.`
+      );
+    }
+
+    if (
+      typeof returnedSourceText === 'string' &&
+      normalizeSourceText(returnedSourceText) !==
+        normalizeSourceText(input.blockText)
+    ) {
+      throw createRetryableInvalidProviderResponseError(
+        input.provider,
+        `Provider response for "${input.blockKey}" echoed sourceText for a different OCR block.`
+      );
+    }
+
+    if (returnedTranslation === undefined || returnedTranslation === null) {
+      throw createRetryableInvalidProviderResponseError(
+        input.provider,
+        `Provider response for "${input.blockKey}" translation is empty.`
+      );
+    }
+
+    if (typeof returnedTranslation !== 'string') {
+      throw createRetryableInvalidProviderResponseError(
+        input.provider,
+        `Provider response for "${input.blockKey}" translation is not a string.`
+      );
+    }
+
+    return cleanProviderTranslationText(returnedTranslation);
+  }
+
+  throw createRetryableInvalidProviderResponseError(
+    input.provider,
+    `Provider response for "${input.blockKey}" is not a string or translation object.`
+  );
 }
 
 function normalizeSourceText(text: string) {

@@ -7,7 +7,6 @@ vi.mock('@/env/server', () => ({
 }));
 
 import {
-  buildBlockSourceHash,
   buildTranslationJsonPayload,
   buildTranslationPrompt,
   selectPromptProfile,
@@ -30,7 +29,7 @@ describe('provider gateway prompts', () => {
     ).toBe('arabic_target');
   });
 
-  it('builds a stable JSON payload keyed by page filename', () => {
+  it('builds a compact stable JSON payload keyed by temporary block id', () => {
     expect(
       buildTranslationJsonPayload([
         {
@@ -39,20 +38,12 @@ describe('provider gateway prompts', () => {
         },
       ])
     ).toEqual({
-      '001.jpg': {
-        block_0000: {
-          sourceHash: buildBlockSourceHash('안녕'),
-          sourceText: '안녕',
-        },
-        block_0001: {
-          sourceHash: buildBlockSourceHash('하세요'),
-          sourceText: '하세요',
-        },
-      },
+      b000000: '안녕',
+      b000001: '하세요',
     });
   });
 
-  it('normalizes OCR line breaks and includes visual layout metadata when available', () => {
+  it('normalizes OCR line breaks and omits visual layout metadata', () => {
     expect(
       buildTranslationJsonPayload([
         {
@@ -72,21 +63,7 @@ describe('provider gateway prompts', () => {
         },
       ])
     ).toEqual({
-      '001.jpg': {
-        block_0000: {
-          layout: {
-            angle: 0,
-            height: 40,
-            symHeight: 18,
-            symWidth: 10,
-            width: 120,
-            x: 25,
-            y: 50,
-          },
-          sourceHash: buildBlockSourceHash('WAS THAT\nLIGHTNING'),
-          sourceText: 'WAS THAT LIGHTNING',
-        },
-      },
+      b000000: 'WAS THAT LIGHTNING',
     });
   });
 
@@ -106,14 +83,15 @@ describe('provider gateway prompts', () => {
     expect(prompt.promptProfile).toBe('japanese_to_english');
     expect(prompt.promptVersion).toBe('2026-03-20.v1');
     expect(prompt.systemPrompt).toContain('Return only valid JSON');
-    expect(prompt.systemPrompt).toContain('visual layout metadata');
+    expect(prompt.systemPrompt).toContain('temporary block ids');
     expect(prompt.systemPrompt).toContain(
       'Do not preserve, copy, or recreate OCR line breaks'
     );
     expect(prompt.userPrompt).toContain('Chapter recap');
-    expect(prompt.userPrompt).toContain('"001.jpg":{"block_0000":');
-    expect(prompt.userPrompt).toContain('"sourceHash":');
-    expect(prompt.userPrompt).toContain('"sourceText":"こんにちは"');
+    expect(prompt.userPrompt).toContain('"b000000":"こんにちは"');
+    expect(prompt.userPrompt).not.toContain('"001.jpg"');
+    expect(prompt.userPrompt).not.toContain('"sourceHash"');
+    expect(prompt.userPrompt).not.toContain('"layout"');
   });
 
   it('uses elevated literary scanlation guidance for Arabic targets', () => {

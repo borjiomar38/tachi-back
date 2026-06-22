@@ -50,7 +50,7 @@ describe('provider gateway translation', () => {
                 content: {
                   parts: [
                     {
-                      text: '{"001.jpg":{"block_0000":"Hello there"}}',
+                      text: '{"b000000":"Hello there"}',
                     },
                   ],
                 },
@@ -89,6 +89,17 @@ describe('provider gateway translation', () => {
     expect(result.pages[0]?.blocks[0]?.translation).toBe('Hello there');
     expect(result.usage.inputTokens).toBe(21);
     expect(result.usage.outputTokens).toBe(7);
+
+    const requestBody = JSON.parse(
+      String(fetchFn.mock.calls[1]?.[1]?.body)
+    ) as {
+      contents: Array<{ parts: Array<{ text: string }> }>;
+    };
+    const userPrompt = requestBody.contents[0]?.parts[0]?.text ?? '';
+    expect(userPrompt).toContain('"b000000":"안녕하세요"');
+    expect(userPrompt).not.toContain('"001.jpg"');
+    expect(userPrompt).not.toContain('sourceHash');
+    expect(userPrompt).not.toContain('layout');
   });
 
   it('strips the watermark removal marker from provider translations', async () => {
@@ -100,7 +111,7 @@ describe('provider gateway translation', () => {
               content: {
                 parts: [
                   {
-                    text: '{"001.jpg":{"block_0000":"RTMTH أين مركز السر المقدس؟ RTMTH","block_0001":"RTMTH"}}',
+                    text: '{"b000000":"RTMTH أين مركز السر المقدس؟ RTMTH","b000001":"RTMTH"}',
                   },
                 ],
               },
@@ -151,7 +162,7 @@ describe('provider gateway translation', () => {
               content: {
                 parts: [
                   {
-                    text: '{"001.jpg":{"block_0000":"The first blow\\nwill decide it."}}',
+                    text: '{"b000000":"The first blow\\nwill decide it."}',
                   },
                 ],
               },
@@ -187,6 +198,85 @@ describe('provider gateway translation', () => {
     expect(result.pages[0]?.blocks[0]?.translation).toBe(
       'The first blow\nwill decide it.'
     );
+  });
+
+  it('sends compact temporary id text payloads to OpenAI', async () => {
+    const fetchFn = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              finish_reason: 'stop',
+              message: {
+                content:
+                  '{"b000000":"Will you show me? Take it off.","b000001":"Next line."}',
+              },
+            },
+          ],
+          usage: {
+            completion_tokens: 5,
+            prompt_tokens: 10,
+          },
+        }),
+        { status: 200 }
+      )
+    );
+
+    const result = await performTranslationWithProvider(
+      {
+        pages: [
+          {
+            blocks: [
+              {
+                height: 241,
+                text: '見せてくれる？脱いで',
+                width: 70,
+                x: 564,
+                y: 6797,
+              },
+              { text: '次の行' },
+            ],
+            pageKey: '001__001.jpg',
+          },
+        ],
+        preferredProvider: 'openai',
+        sourceLanguage: 'ja',
+        targetLanguage: 'en',
+      },
+      {
+        fetchFn,
+        preferredProvider: 'openai',
+      }
+    );
+
+    expect(result.pages[0]?.blocks).toEqual([
+      {
+        index: 0,
+        sourceText: '見せてくれる？脱いで',
+        translation: 'Will you show me? Take it off.',
+      },
+      {
+        index: 1,
+        sourceText: '次の行',
+        translation: 'Next line.',
+      },
+    ]);
+
+    const requestBody = JSON.parse(
+      String(fetchFn.mock.calls[0]?.[1]?.body)
+    ) as {
+      messages: Array<{ content: string; role: string }>;
+    };
+    const userPrompt =
+      requestBody.messages.find((message) => message.role === 'user')
+        ?.content ?? '';
+    expect(userPrompt).toContain('"b000000":"見せてくれる？脱いで"');
+    expect(userPrompt).toContain('"b000001":"次の行"');
+    expect(userPrompt).not.toContain('001__001.jpg');
+    expect(userPrompt).not.toContain('sourceHash');
+    expect(userPrompt).not.toContain('layout');
+    expect(userPrompt).not.toContain('"x"');
+    expect(userPrompt).not.toContain('"width"');
   });
 
   it('maps malformed model JSON to a stable invalid_response error', async () => {

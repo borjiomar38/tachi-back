@@ -69,15 +69,29 @@ export function buildTranslationJsonPayload(
   }>
 ) {
   return Object.fromEntries(
-    pages.map((page) => [
-      page.pageKey,
-      Object.fromEntries(
-        page.blocks.map((block, index) => [
-          buildBlockTranslationKey(index),
-          buildBlockPayload(block),
-        ])
-      ),
+    buildTranslationPayloadEntries(pages).map((entry) => [
+      entry.key,
+      entry.sourceText,
     ])
+  );
+}
+
+export function buildTranslationPayloadEntries(
+  pages: Array<{
+    blocks: TranslationPromptBlock[];
+    pageKey: string;
+  }>
+) {
+  let nextKeyIndex = 0;
+
+  return pages.flatMap((page) =>
+    page.blocks.map((block, blockIndex) => ({
+      block,
+      blockIndex,
+      key: buildCompactTranslationKey(nextKeyIndex++),
+      pageKey: page.pageKey,
+      sourceText: normalizePromptSourceText(block.text),
+    }))
   );
 }
 
@@ -92,36 +106,12 @@ type TranslationPromptBlock = {
   y?: number;
 };
 
-function buildBlockPayload(block: TranslationPromptBlock) {
-  const layout = buildBlockLayout(block);
-
-  return {
-    sourceHash: buildBlockSourceHash(block.text),
-    sourceText: normalizePromptSourceText(block.text),
-    ...(layout ? { layout } : {}),
-  };
-}
-
-function buildBlockLayout(block: TranslationPromptBlock) {
-  const layout = {
-    angle: block.angle,
-    height: block.height,
-    symHeight: block.symHeight,
-    symWidth: block.symWidth,
-    width: block.width,
-    x: block.x,
-    y: block.y,
-  };
-  const entries = Object.entries(layout).filter(
-    (entry): entry is [keyof typeof layout, number] =>
-      typeof entry[1] === 'number' && Number.isFinite(entry[1])
-  );
-
-  return entries.length > 0 ? Object.fromEntries(entries) : null;
-}
-
 export function buildBlockTranslationKey(index: number) {
   return `block_${String(index).padStart(4, '0')}`;
+}
+
+export function buildCompactTranslationKey(index: number) {
+  return `b${String(index).padStart(6, '0')}`;
 }
 
 export function buildBlockSourceHash(text: string) {
@@ -168,17 +158,15 @@ function buildSystemPrompt(input: {
 }) {
   const commonRules = [
     `Translate OCR text from ${input.sourceLanguage} to ${input.targetLanguage} for manga or comic dialogue.`,
-    'The input is a JSON object keyed by page filename, then by stable OCR block id. Each block value is an object with sourceHash and sourceText.',
-    'sourceText is whitespace-normalized OCR text; OCR line breaks and spacing are noisy extraction artifacts, not layout instructions.',
-    'When present, layout contains approximate OCR block geometry in source-image pixels: x, y, width, height, angle, symWidth, and symHeight.',
-    'Return only valid JSON with the exact same page keys and block id keys as the input.',
-    'Return each block as an object at the same block id key: keep sourceHash unchanged and add translation as a string.',
-    'Do not echo sourceText in the response.',
-    'Never put a translation under a block id unless the sourceHash and sourceText for that block id match the input block.',
-    'Never merge, drop, reorder, rename, or split block ids, even when multiple blocks look like one sentence.',
+    'The input is a compact JSON object keyed by temporary OCR block id. Each value is whitespace-normalized source text.',
+    'OCR line breaks and spacing are noisy extraction artifacts, not layout instructions.',
+    'Return only valid JSON with the exact same temporary block ids as the input.',
+    'Return each temporary block id with a translated string value.',
+    'Do not echo source text, metadata, notes, or wrapper objects in the response.',
+    'Never merge, drop, reorder, rename, or split temporary block ids, even when multiple blocks look like one sentence.',
     'Do not add notes, speaker labels, markdown, code fences, or explanations.',
     'Keep translations concise enough to fit speech bubbles.',
-    'Choose line breaks inside each translation yourself based on target-language readability, bubble rhythm, and visual layout metadata when available.',
+    'Choose line breaks inside each translation yourself based on target-language readability and bubble rhythm.',
     'Use "\\n" in a translation only where it improves visual fit; otherwise return the translation as one line.',
     'Do not preserve, copy, or recreate OCR line breaks just because they appeared in source text.',
     'Translate like a premium scanlation localizer, not a literal subtitle engine.',
