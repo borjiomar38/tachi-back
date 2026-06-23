@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildBlogTopicHeroImagePrompt } from '@/server/blog/images';
+import {
+  buildBlogTopicHeroImagePrompt,
+  normalizeBlogHeroObjectMetadata,
+} from '@/server/blog/images';
 import {
   combineBlogImageReviews,
   runAnimeMangaImageReviewAgent,
@@ -31,5 +34,15 @@ describe('blog hero image prompts', () => {
     ]);
 
     expect(review.passed).toBe(true);
+  });
+
+  it('normalizes object metadata values for HTTP headers', () => {
+    expect(
+      normalizeBlogHeroObjectMetadata({
+        'blog-image-prompt': 'Line one\nLine two\r\nCafé \u0000 value',
+      })
+    ).toEqual({
+      'blog-image-prompt': 'Line one Line two Cafe value',
+    });
   });
 });

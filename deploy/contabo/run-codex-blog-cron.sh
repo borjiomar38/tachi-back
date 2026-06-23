@@ -153,7 +153,7 @@ PY
   fi
 fi
 
-if ! curl -fsS \
+publish_status="$(curl -sS \
   -X POST \
   -H "Authorization: Bearer ${cron_secret}" \
   -H "Content-Type: application/json" \
@@ -161,9 +161,11 @@ if ! curl -fsS \
   -H "X-Codex-Reasoning-Effort: ${codex_reasoning_effort}" \
   --data-binary "@${payload_file}" \
   -o "${publish_response_file}" \
-  "${base_url%/}/api/cron/publish-codex-blog-article"; then
-  curl_rc=$?
-  echo "Codex blog publish request failed with curl rc=${curl_rc}." >&2
+  -w "%{http_code}" \
+  "${base_url%/}/api/cron/publish-codex-blog-article")"
+
+if [[ ! "${publish_status}" =~ ^2 ]]; then
+  echo "Codex blog publish request failed with HTTP ${publish_status}." >&2
 
   if [[ -s "${publish_response_file}" ]]; then
     echo "Publish response body:" >&2
@@ -171,7 +173,7 @@ if ! curl -fsS \
     echo >&2
   fi
 
-  exit "${curl_rc}"
+  exit 1
 fi
 
 cat "${publish_response_file}"

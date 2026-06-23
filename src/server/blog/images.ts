@@ -44,7 +44,7 @@ export async function uploadGeneratedBlogHeroImage(input: {
     cacheControl: 'public, max-age=31536000, immutable',
     contentType: 'image/png',
     key: objectKey,
-    metadata: input.metadata,
+    metadata: normalizeBlogHeroObjectMetadata(input.metadata),
   });
 
   return {
@@ -111,13 +111,13 @@ export async function uploadPrebuiltBlogHeroImage(input: {
     cacheControl: 'public, max-age=31536000, immutable',
     contentType: 'image/png',
     key: objectKey,
-    metadata: {
+    metadata: normalizeBlogHeroObjectMetadata({
       'blog-image-alt': buildBlogTopicHeroImageAlt(input.topic),
       'blog-image-generated-by': 'codex-cli',
       'blog-search-intent': input.topic.searchIntent,
       'blog-topic': input.topic.manhwaTitle,
       'blog-type': input.topic.manhwaType,
-    },
+    }),
   });
 
   return {
@@ -215,6 +215,27 @@ function assertBlogImageGenerationEnabled() {
       'BLOG_IMAGE_GENERATION_ENABLED is false.'
     );
   }
+}
+
+export function normalizeBlogHeroObjectMetadata(
+  metadata: Record<string, string> | undefined
+) {
+  if (!metadata) {
+    return undefined;
+  }
+
+  return Object.fromEntries(
+    Object.entries(metadata).map(([key, value]) => [
+      key,
+      value
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^\x20-\x7E]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 1_024),
+    ])
+  );
 }
 
 function getTopicVisualHint(title: string) {
