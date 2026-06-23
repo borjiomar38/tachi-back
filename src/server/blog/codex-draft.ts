@@ -3,10 +3,11 @@ import { z } from 'zod';
 import { zBlogArticleBody } from '@/features/blog/schema';
 import {
   buildRequiredBlogSeoKeyword,
+  campaignBlogSeoKeywords,
   highIntentBlogSeoKeywords,
 } from '@/features/blog/seo';
 
-export const BLOG_CODEX_PROMPT_VERSION = '2026-05-22.codex-trends.v1';
+export const BLOG_CODEX_PROMPT_VERSION = '2026-06-24.codex-manhwa-focus.v1';
 
 export const zCodexBlogSourceNote = z
   .object({
@@ -72,7 +73,7 @@ export const buildCodexBlogArticlePrompt = (
     `Publication date: ${input.date}`,
     '',
     'You are generating one production-ready Nayovi SEO blog article.',
-    'Use live web search before choosing the subject. Prefer a currently discussed manhwa first, especially new seasons, rankings, adaptations, awards, or release momentum that can support organic search demand. Choose manga or manhua only when the live trend signal is clearly stronger.',
+    'Use live web search before choosing the subject. Default to a currently discussed manhwa topic, especially new seasons, rankings, adaptations, awards, or release momentum that can support organic search demand. Choose manga or manhua only when no credible current manhwa topic has a comparable trend signal.',
     '',
     'Hard constraints:',
     '- Return only one valid JSON object. No markdown fences, no commentary, no trailing prose.',
@@ -85,6 +86,7 @@ export const buildCodexBlogArticlePrompt = (
     '- The disclaimer must say that Nayovi does not host manga, manhwa, or manhua chapters and users should respect official releases and rights holders.',
     '',
     'SEO constraints:',
+    `- Campaign focus phrases: ${campaignBlogSeoKeywords.join(', ')}. For manhwa articles, include both exact phrases naturally in the keywords array and use at least one in the title or meta description when it reads cleanly.`,
     `- Include the exact primary phrase returned by type: manga => "${buildRequiredBlogSeoKeyword('manga')}", manhwa => "${buildRequiredBlogSeoKeyword('manhwa')}", manhua => "${buildRequiredBlogSeoKeyword('manhua')}".`,
     `- Work naturally across this cluster without stuffing: ${highIntentBlogSeoKeywords.join(', ')}.`,
     '- The keywords array must contain 6 to 12 strings. Do not dump the full keyword cluster into keywords; choose only the strongest phrases for this one article.',

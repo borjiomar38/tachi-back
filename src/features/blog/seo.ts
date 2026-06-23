@@ -3,10 +3,17 @@ export type BlogSeoContentType = 'manga' | 'manhua' | 'manhwa';
 export const coreBlogSeoKeywords = [
   'manga translate ai',
   'manhwa translate ai',
+  'translate manhwa ai',
+  'translate manhwa apk',
   'manhua translate ai',
 ] as const;
 
 export const requiredBlogSeoKeyword = 'manhwa translate ai';
+
+export const campaignBlogSeoKeywords = [
+  'translate manhwa apk',
+  'translate manhwa ai',
+] as const;
 
 export const legacyReaderSeoKeywords = [
   'TachiyomiAT',
@@ -100,6 +107,7 @@ export const buildBlogSeoKeywords = (
   const requiredKeyword = buildRequiredBlogSeoKeyword(options.type);
   const candidates = [
     requiredKeyword,
+    ...campaignBlogSeoKeywords,
     ...keywords,
     ...highIntentBlogSeoKeywords,
   ];

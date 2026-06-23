@@ -29,7 +29,7 @@ codex_image_required="$(read_env_value BLOG_CODEX_IMAGE_REQUIRED)"
 codex_image_script="$(read_env_value BLOG_CODEX_IMAGE_SCRIPT_PATH)"
 
 codex_bin="${codex_bin:-codex}"
-codex_model="${codex_model:-gpt-5.3-codex-spark}"
+codex_model="${codex_model:-gpt-5.5}"
 codex_reasoning_effort="${codex_reasoning_effort:-xhigh}"
 codex_search_enabled="${codex_search_enabled:-true}"
 codex_image_enabled="${codex_image_enabled:-true}"
@@ -47,6 +47,7 @@ draft_file="${tmp_dir}/codex-blog-draft.json"
 image_prompt_file="${tmp_dir}/codex-blog-image-prompt.md"
 image_file="${tmp_dir}/codex-blog-hero.png"
 payload_file="${tmp_dir}/codex-blog-payload.json"
+publish_response_file="${tmp_dir}/codex-blog-publish-response.json"
 
 cleanup() {
   rm -rf "${tmp_dir}"
@@ -152,11 +153,25 @@ PY
   fi
 fi
 
-curl -fsS \
+if ! curl -fsS \
   -X POST \
   -H "Authorization: Bearer ${cron_secret}" \
   -H "Content-Type: application/json" \
   -H "X-Codex-Model: ${codex_model}" \
   -H "X-Codex-Reasoning-Effort: ${codex_reasoning_effort}" \
   --data-binary "@${payload_file}" \
-  "${base_url%/}/api/cron/publish-codex-blog-article"
+  -o "${publish_response_file}" \
+  "${base_url%/}/api/cron/publish-codex-blog-article"; then
+  curl_rc=$?
+  echo "Codex blog publish request failed with curl rc=${curl_rc}." >&2
+
+  if [[ -s "${publish_response_file}" ]]; then
+    echo "Publish response body:" >&2
+    cat "${publish_response_file}" >&2
+    echo >&2
+  fi
+
+  exit "${curl_rc}"
+fi
+
+cat "${publish_response_file}"
