@@ -9,6 +9,7 @@ import {
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
+import { useState } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
 
@@ -39,6 +40,7 @@ import { DemoVideo } from '@/features/public/demo-video';
 import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 import { TokenPackCard } from '@/features/public/token-pack-card';
+import { useSequentialImageSources } from '@/features/public/use-sequential-image-sources';
 
 const highlightIcons = [
   LanguagesIcon,
@@ -136,10 +138,27 @@ const partnerProofRows = [
   },
 ] as const;
 
-export const PageLanding = (props: {
+interface PageLandingProps {
   contactStatus?: 'sent' | 'error' | 'invalid';
   tokenPacks: PublicTokenPack[];
-}) => {
+}
+
+interface HeroSectionProps {
+  heroPlan?: PublicTokenPack;
+}
+
+interface HeroImageProps {
+  alt: string;
+  className: string;
+  onComplete: () => void;
+  src?: string;
+}
+
+interface HeroOverlayCardsProps {
+  heroPlan?: PublicTokenPack;
+}
+
+export const PageLanding = (props: PageLandingProps) => {
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
   );
@@ -154,136 +173,7 @@ export const PageLanding = (props: {
 
   return (
     <PublicShell>
-      <section
-        id="hero"
-        className="relative w-full scroll-mt-24"
-      >
-        <div className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-neutral-950 px-4 py-8 text-neutral-50 sm:px-7 md:px-10 md:py-10">
-          <img
-            src={heroBackground}
-            alt=""
-            className="absolute inset-0 -z-20 size-full object-cover object-[62%_center]"
-          />
-          <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/82 to-neutral-950/25" />
-          <div className="absolute inset-0 -z-10 bg-linear-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/20" />
-          <div className="absolute inset-y-0 left-0 -z-10 w-[clamp(5rem,14vw,18rem)] bg-linear-to-r from-neutral-950 via-neutral-950/82 to-transparent" />
-          <div className="absolute inset-y-0 right-0 -z-10 w-[clamp(5rem,14vw,18rem)] bg-linear-to-l from-neutral-950 via-neutral-950/78 to-transparent" />
-          <img
-            src={heroCharacter}
-            alt=""
-            className="public-hero-character"
-          />
-
-          <div className="relative z-10 mx-auto flex min-h-[calc(100svh-11rem)] max-w-6xl flex-col justify-center gap-7 md:min-h-[calc(100svh-13rem)]">
-            <Badge
-              variant="brand"
-              size="lg"
-              className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
-            >
-              TachiyomiAT APK + hosted OCR trial
-            </Badge>
-
-            <div className="space-y-5">
-              <p className="text-sm font-semibold tracking-[0.22em] text-brand-100 uppercase">
-                For TachiyomiAT, Tachiyomi and Mihon readers
-              </p>
-              <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
-                TachiyomiAT APK with free trial and monthly token plans
-              </h1>
-              <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                Install the Nayovi Android APK from tachiyomiat.com when you
-                search for TachiyomiAT, Tachiyomi AT, or Tachiyomi download.
-                The app keeps a familiar reader flow while adding hosted OCR,
-                paid token plans, redeem-code activation, and
-                Mihon-style setup guidance.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={androidApkDownload.href}
-                className={cn(
-                  buttonVariants({ variant: 'default', size: 'lg' }),
-                  'min-h-11 bg-brand-300 text-brand-950 hover:bg-brand-200'
-                )}
-              >
-                <span className="flex items-center gap-2">
-                  Download Nayovi APK
-                  <DownloadIcon className="size-4" />
-                </span>
-              </a>
-              <a
-                href="/#pricing"
-                className={cn(
-                  buttonVariants({ variant: 'secondary', size: 'lg' }),
-                  'min-h-11 border-white/20 bg-white/10 text-neutral-50 hover:bg-white/15'
-                )}
-              >
-                <span className="flex items-center gap-2">
-                  See monthly plans
-                  <ArrowRightIcon className="size-4" />
-                </span>
-              </a>
-            </div>
-
-            <div className="flex max-w-2xl flex-nowrap gap-2 overflow-x-auto pb-1 text-xs text-neutral-200 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:pb-0 sm:text-sm">
-              <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
-                <p className="font-semibold text-neutral-50">APK</p>
-                <p className="text-neutral-300 sm:mt-1">
-                  {androidApkDownload.sizeLabel}
-                </p>
-              </div>
-              <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
-                <p className="font-semibold text-neutral-50">Redeem code</p>
-                <p className="text-neutral-300 sm:mt-1">Email delivery</p>
-              </div>
-              <div className="hidden shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
-                <p className="font-semibold text-neutral-50">Hosted OCR</p>
-                <p className="mt-1 text-neutral-300">Clean detection</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="public-hero-overlay-cards">
-            <div className="rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
-              <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-300 text-brand-950">
-                  <KeyRoundIcon className="size-5" />
-                </span>
-                <div>
-                  <p className="text-sm font-semibold">Redeem code ready</p>
-                  <p className="text-xs text-neutral-300">
-                    Activate once in Nayovi.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
-              <div className="public-hero-scanline" />
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs font-semibold tracking-[0.18em] text-brand-100 uppercase">
-                    Translation
-                  </p>
-                  <p className="mt-1 text-lg font-semibold">OCR complete</p>
-                </div>
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-positive-400/20 text-positive-200">
-                  <ShieldCheckIcon className="size-5" />
-                </span>
-              </div>
-              <div className="mt-4 h-2 rounded-full bg-white/10">
-                <div className="h-full w-[82%] rounded-full bg-brand-300" />
-              </div>
-              <p className="mt-3 text-xs leading-5 text-neutral-300">
-                {heroPlan
-                  ? `${heroPlan.name} plan, ${heroPlan.marketedChaptersPerMonth} chapters/month estimate.`
-                  : 'Monthly plans and hosted text detection.'}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection heroPlan={heroPlan} />
 
       <PublicSection
         id="demo"
@@ -790,3 +680,171 @@ export const PageLanding = (props: {
     </PublicShell>
   );
 };
+
+export const HeroSection = (props: HeroSectionProps) => {
+  const heroImages = [heroBackground, heroCharacter] as const;
+  const sequencedImages = useSequentialImageSources({ sources: heroImages });
+
+  return (
+    <section
+      id="hero"
+      className="relative w-full scroll-mt-24"
+    >
+      <div className="relative isolate min-h-[calc(100svh-5rem)] overflow-hidden bg-neutral-950 px-4 py-8 text-neutral-50 sm:px-7 md:px-10 md:py-10">
+        <HeroImage
+          src={sequencedImages.sources[0]}
+          alt=""
+          className="absolute inset-0 -z-20 size-full object-cover object-[62%_center]"
+          onComplete={() => sequencedImages.completeImage(0)}
+        />
+        <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/82 to-neutral-950/25" />
+        <div className="absolute inset-0 -z-10 bg-linear-to-t from-neutral-950 via-neutral-950/20 to-neutral-950/20" />
+        <div className="absolute inset-y-0 left-0 -z-10 w-[clamp(5rem,14vw,18rem)] bg-linear-to-r from-neutral-950 via-neutral-950/82 to-transparent" />
+        <div className="absolute inset-y-0 right-0 -z-10 w-[clamp(5rem,14vw,18rem)] bg-linear-to-l from-neutral-950 via-neutral-950/78 to-transparent" />
+        <HeroImage
+          src={sequencedImages.sources[1]}
+          alt=""
+          className="public-hero-character"
+          onComplete={() => sequencedImages.completeImage(1)}
+        />
+
+        <HeroContent />
+
+        <HeroOverlayCards heroPlan={props.heroPlan} />
+      </div>
+    </section>
+  );
+};
+
+export const HeroImage = (props: HeroImageProps) => {
+  const [hasFailed, setHasFailed] = useState(false);
+
+  if (!props.src || hasFailed) {
+    return null;
+  }
+
+  const handleError = () => {
+    setHasFailed(true);
+    props.onComplete();
+  };
+
+  return (
+    <img
+      src={props.src}
+      alt={props.alt}
+      className={props.className}
+      onLoad={props.onComplete}
+      onError={handleError}
+    />
+  );
+};
+
+export const HeroContent = () => (
+  <div className="relative z-10 mx-auto flex min-h-[calc(100svh-11rem)] max-w-6xl flex-col justify-center gap-7 md:min-h-[calc(100svh-13rem)]">
+    <Badge
+      variant="brand"
+      size="lg"
+      className="border-white/15 bg-white/10 text-neutral-50 backdrop-blur"
+    >
+      TachiyomiAT APK + hosted OCR trial
+    </Badge>
+
+    <div className="space-y-5">
+      <p className="text-sm font-semibold tracking-[0.22em] text-brand-100 uppercase">
+        For TachiyomiAT, Tachiyomi and Mihon readers
+      </p>
+      <h1 className="max-w-3xl text-4xl leading-[1.03] font-semibold tracking-normal text-balance md:text-6xl">
+        TachiyomiAT APK with free trial and monthly token plans
+      </h1>
+      <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
+        Install the Nayovi Android APK from tachiyomiat.com when you search for
+        TachiyomiAT, Tachiyomi AT, or Tachiyomi download. The app keeps a
+        familiar reader flow while adding hosted OCR, paid token plans,
+        redeem-code activation, and Mihon-style setup guidance.
+      </p>
+    </div>
+
+    <div className="flex flex-wrap gap-3">
+      <a
+        href={androidApkDownload.href}
+        className={cn(
+          buttonVariants({ variant: 'default', size: 'lg' }),
+          'min-h-11 bg-brand-300 text-brand-950 hover:bg-brand-200'
+        )}
+      >
+        <span className="flex items-center gap-2">
+          Download Nayovi APK
+          <DownloadIcon className="size-4" />
+        </span>
+      </a>
+      <a
+        href="/#pricing"
+        className={cn(
+          buttonVariants({ variant: 'secondary', size: 'lg' }),
+          'min-h-11 border-white/20 bg-white/10 text-neutral-50 hover:bg-white/15'
+        )}
+      >
+        <span className="flex items-center gap-2">
+          See monthly plans
+          <ArrowRightIcon className="size-4" />
+        </span>
+      </a>
+    </div>
+
+    <div className="flex max-w-2xl flex-nowrap gap-2 overflow-x-auto pb-1 text-xs text-neutral-200 sm:grid sm:grid-cols-3 sm:gap-3 sm:overflow-visible sm:pb-0 sm:text-sm">
+      <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
+        <p className="font-semibold text-neutral-50">APK</p>
+        <p className="text-neutral-300 sm:mt-1">
+          {androidApkDownload.sizeLabel}
+        </p>
+      </div>
+      <div className="flex shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
+        <p className="font-semibold text-neutral-50">Redeem code</p>
+        <p className="text-neutral-300 sm:mt-1">Email delivery</p>
+      </div>
+      <div className="hidden shrink-0 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 backdrop-blur sm:block sm:rounded-2xl sm:px-4 sm:py-3">
+        <p className="font-semibold text-neutral-50">Hosted OCR</p>
+        <p className="mt-1 text-neutral-300">Clean detection</p>
+      </div>
+    </div>
+  </div>
+);
+
+export const HeroOverlayCards = (props: HeroOverlayCardsProps) => (
+  <div className="public-hero-overlay-cards">
+    <div className="rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
+      <div className="flex items-center gap-3">
+        <span className="flex size-10 items-center justify-center rounded-2xl bg-brand-300 text-brand-950">
+          <KeyRoundIcon className="size-5" />
+        </span>
+        <div>
+          <p className="text-sm font-semibold">Redeem code ready</p>
+          <p className="text-xs text-neutral-300">Activate once in Nayovi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-neutral-950/72 p-4 shadow-2xl backdrop-blur">
+      <div className="public-hero-scanline" />
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold tracking-[0.18em] text-brand-100 uppercase">
+            Translation
+          </p>
+          <p className="mt-1 text-lg font-semibold">OCR complete</p>
+        </div>
+        <span className="flex size-10 items-center justify-center rounded-2xl bg-positive-400/20 text-positive-200">
+          <ShieldCheckIcon className="size-5" />
+        </span>
+      </div>
+      <div className="mt-4 h-2 rounded-full bg-white/10">
+        <div className="h-full w-[82%] rounded-full bg-brand-300" />
+      </div>
+      <p className="mt-3 text-xs leading-5 text-neutral-300">
+        {props.heroPlan
+          ? `${props.heroPlan.name} plan, ${props.heroPlan.marketedChaptersPerMonth} chapters/month estimate.`
+          : 'Monthly plans and hosted text detection.'}
+      </p>
+    </div>
+  </div>
+);
