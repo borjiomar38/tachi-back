@@ -8,14 +8,9 @@ import {
 } from '@/server/jobs/backoffice-schema';
 import { normalizeTranslationChapterIdentity } from '@/server/jobs/chapter-identity';
 import { protectedProcedure } from '@/server/orpc';
-import {
-  cleanProviderTranslationText,
-  shouldDropProviderTranslationBlock,
-} from '@/server/provider-gateway/translation-cleanup';
 
 const tags = ['chapters'];
 const MAX_CACHE_ROWS_TO_SCAN = 5000;
-const PAGE_PREVIEW_LIMIT = 100;
 
 type CacheRow = {
   cacheKey: string;
@@ -24,7 +19,6 @@ type CacheRow = {
   createdAt: Date;
   hitCount: number;
   pageCount: number;
-  resultManifest: unknown;
   resultPayloadVersion: string;
   sourceLanguage: string;
   targetLanguage: string;
@@ -81,7 +75,6 @@ export default {
           createdAt: true,
           hitCount: true,
           pageCount: true,
-          resultManifest: true,
           resultPayloadVersion: true,
           sourceLanguage: true,
           targetLanguage: true,
@@ -163,7 +156,6 @@ export default {
           createdAt: true,
           hitCount: true,
           pageCount: true,
-          resultManifest: true,
           resultPayloadVersion: true,
           sourceLanguage: true,
           targetLanguage: true,
@@ -216,9 +208,6 @@ export default {
           },
         }),
       ]);
-      const latestManifest =
-        cacheEntries.find((entry) => entry.resultManifest)?.resultManifest ??
-        null;
       const identity =
         cacheEntries
           .map((entry) =>
@@ -235,7 +224,6 @@ export default {
           cacheKey: entry.cacheKey,
           createdAt: entry.createdAt,
           pageCount: entry.pageCount,
-          resultManifest: entry.resultManifest,
           resultPayloadVersion: entry.resultPayloadVersion,
           sourceLanguage: entry.sourceLanguage,
           targetLanguage: entry.targetLanguage,
@@ -254,8 +242,6 @@ export default {
           status: job.status,
           targetLanguage: job.targetLanguage,
         })),
-        latestManifest,
-        pagePreviews: buildPagePreviews(latestManifest),
         stats: {
           cacheHitCount: cacheEntries.reduce(
             (sum, entry) => sum + entry.hitCount,
@@ -513,85 +499,6 @@ function matchesSearch(group: ChapterGroup, searchTerm: string) {
   ].some((value) => value?.toLowerCase().includes(searchTerm));
 }
 
-function buildPagePreviews(rawManifest: unknown) {
-  const manifest =
-    rawManifest &&
-    typeof rawManifest === 'object' &&
-    !Array.isArray(rawManifest)
-      ? (rawManifest as Record<string, unknown>)
-      : null;
-  const pageOrder = Array.isArray(manifest?.pageOrder)
-    ? manifest.pageOrder.filter(
-        (item): item is string => typeof item === 'string'
-      )
-    : [];
-  const pages =
-    manifest?.pages &&
-    typeof manifest.pages === 'object' &&
-    !Array.isArray(manifest.pages)
-      ? (manifest.pages as Record<string, unknown>)
-      : {};
-
-  return pageOrder.slice(0, PAGE_PREVIEW_LIMIT).map((pageKey) => {
-    const page =
-      pages[pageKey] && typeof pages[pageKey] === 'object'
-        ? (pages[pageKey] as Record<string, unknown>)
-        : {};
-    const blocks = Array.isArray(page.blocks) ? page.blocks : [];
-    let blockCount = 0;
-    const sourceTexts: string[] = [];
-    const translations: string[] = [];
-
-    for (const block of blocks) {
-      if (!block || typeof block !== 'object') {
-        continue;
-      }
-
-      const record = block as Record<string, unknown>;
-      const sourceText = typeof record.text === 'string' ? record.text : '';
-      const translation =
-        typeof record.translation === 'string'
-          ? cleanProviderTranslationText(record.translation)
-          : '';
-
-      if (
-        shouldDropProviderTranslationBlock({
-          sourceLanguage:
-            typeof page.sourceLanguage === 'string' ? page.sourceLanguage : '',
-          sourceText,
-          translation:
-            typeof record.translation === 'string' ? record.translation : '',
-        })
-      ) {
-        continue;
-      }
-
-      blockCount += 1;
-      if (sourceText) {
-        sourceTexts.push(sourceText);
-      }
-      if (translation) {
-        translations.push(translation);
-      }
-    }
-
-    return {
-      blockCount,
-      imageHeight: typeof page.imgHeight === 'number' ? page.imgHeight : null,
-      imageWidth: typeof page.imgWidth === 'number' ? page.imgWidth : null,
-      pageKey,
-      sourcePreview: truncate(sourceTexts.join(' '), 220),
-      translationPreview: truncate(translations.join(' '), 220),
-    };
-  });
-}
-
 function uniqueSorted(values: string[]) {
   return Array.from(new Set(values)).sort();
-}
-
-function truncate(value: string, maxLength: number) {
-  return value.length > maxLength
-    ? `${value.slice(0, Math.max(0, maxLength - 1))}...`
-    : value;
 }

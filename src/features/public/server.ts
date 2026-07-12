@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 import { envServer } from '@/env/server';
 import {
-  publicFreeTokenPack,
+  buildPublicFreeTokenPack,
   type PublicTokenPack,
 } from '@/features/public/data';
 import {
@@ -11,6 +11,7 @@ import {
   getAndroidApkDownloadMetadata,
 } from '@/features/public/download-assets';
 import { db } from '@/server/db';
+import { getFreeTrialRuntimeConfig } from '@/server/licenses/free-trial-settings';
 import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
 
 const publicTokenPackSelect = {
@@ -56,15 +57,23 @@ const tokenPackMarketingSummaries: Record<string, string> = {
 
 export const getPublicTokenPacks = createServerFn({ method: 'GET' }).handler(
   async (): Promise<PublicTokenPack[]> => {
-    const tokenPacks = await db.tokenPack.findMany({
-      where: {
-        active: true,
-      },
-      orderBy: [{ sortOrder: 'asc' }, { createdAt: 'asc' }],
-      select: publicTokenPackSelect,
-    });
+    const [tokenPacks, freeTrialConfig] = await Promise.all([
+      db.tokenPack.findMany({
+        where: {
+          active: true,
+        },
+        orderBy: [{ sortOrder: 'asc' }, { createdAt: 'asc' }],
+        select: publicTokenPackSelect,
+      }),
+      getFreeTrialRuntimeConfig(),
+    ]);
 
-    return [publicFreeTokenPack, ...tokenPacks.map(mapPublicTokenPack)];
+    return [
+      ...(freeTrialConfig.current.enabled
+        ? [buildPublicFreeTokenPack(freeTrialConfig.current.tokenAmount)]
+        : []),
+      ...tokenPacks.map(mapPublicTokenPack),
+    ];
   }
 );
 

@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link } from '@tanstack/react-router';
 import dayjs from 'dayjs';
 import { ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { orpc } from '@/lib/orpc/client';
 
@@ -32,6 +33,8 @@ import { Spinner } from '@/components/ui/spinner';
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionLicense } from '@/features/auth/permissions';
+import { ContentPolicyMetadataCard } from '@/features/content-policy/manager/content-policy-metadata-card';
+import { useContentPolicyActions } from '@/features/content-policy/manager/use-content-policy-actions';
 import {
   PageLayout,
   PageLayoutContent,
@@ -40,6 +43,8 @@ import {
 } from '@/layout/manager/page-layout';
 
 export const PageLicense = (props: { params: { key: string } }) => {
+  const { t } = useTranslation(['contentPolicy']);
+  const contentPolicyActions = useContentPolicyActions();
   const summaryQuery = useQuery(
     orpc.license.getByKey.queryOptions({
       input: {
@@ -55,8 +60,8 @@ export const PageLicense = (props: { params: { key: string } }) => {
     }),
     enabled: summaryQuery.status === 'success',
   });
-  const ordersQuery = useQuery({
-    ...orpc.license.getOrders.queryOptions({
+  const contentPolicyQuery = useQuery({
+    ...orpc.contentPolicy.licenseOverview.queryOptions({
       input: {
         key: props.params.key,
       },
@@ -206,112 +211,73 @@ export const PageLicense = (props: { params: { key: string } }) => {
                   </CardContent>
                 </Card>
 
-                <div className="grid gap-4 xl:grid-cols-2">
-                  <SectionCard
-                    description="Orders that created or funded this license."
-                    query={ordersQuery}
-                    title="Orders"
-                  >
-                    {(orders) => (
-                      <DataList>
-                        {!orders.length ? (
-                          <DataListEmptyState>
-                            No paid orders are attached to this license yet.
-                          </DataListEmptyState>
-                        ) : (
-                          orders.map((order) => (
-                            <DataListRow key={order.id}>
-                              <DataListCell>
-                                <DataListText className="font-medium">
-                                  {order.id}
-                                </DataListText>
-                                <DataListText className="text-xs text-muted-foreground">
-                                  {order.payerEmail ?? 'No payer email'}
-                                </DataListText>
-                              </DataListCell>
-                              <DataListCell className="flex-[0.6]">
-                                <DataListTextHeader>Amount</DataListTextHeader>
-                                <DataListText className="text-xs">
-                                  {(order.amountTotalCents / 100).toFixed(2)}{' '}
-                                  {order.currency.toUpperCase()}
-                                </DataListText>
-                              </DataListCell>
-                              <DataListCell className="flex-[0.6]">
-                                <DataListTextHeader>Status</DataListTextHeader>
-                                <Badge
-                                  variant={getStatusBadgeVariant(order.status)}
-                                >
-                                  {order.status}
-                                </Badge>
-                              </DataListCell>
-                            </DataListRow>
-                          ))
-                        )}
-                      </DataList>
-                    )}
-                  </SectionCard>
+                <ContentPolicyMetadataCard
+                  description={t('contentPolicy:context.license.description')}
+                  pendingMetadataKey={contentPolicyActions.pendingMetadataKey}
+                  status={contentPolicyQuery.status}
+                  title={t('contentPolicy:context.title')}
+                  values={contentPolicyQuery.data?.discoveredValues ?? []}
+                  onMetadataValueChange={
+                    contentPolicyActions.setMetadataValueBlocked
+                  }
+                  onRetry={() => contentPolicyQuery.refetch()}
+                />
 
-                  <SectionCard
-                    description="Devices currently or previously bound to this license."
-                    query={devicesQuery}
-                    title="Devices"
-                  >
-                    {(devices) => (
-                      <DataList>
-                        {!devices.length ? (
-                          <DataListEmptyState>
-                            No devices have redeemed this license yet.
-                          </DataListEmptyState>
-                        ) : (
-                          devices.map((device) => (
-                            <DataListRow
-                              key={device.licenseBindingId}
-                              withHover
-                            >
-                              <DataListCell>
-                                <DataListText className="font-medium">
-                                  <Link
-                                    params={{ id: device.deviceId }}
-                                    to="/manager/devices/$id"
-                                  >
-                                    {device.installationId}
-                                    <span className="absolute inset-0" />
-                                  </Link>
-                                </DataListText>
-                                <DataListText className="text-xs text-muted-foreground">
-                                  Bound{' '}
-                                  {dayjs(device.boundAt).format(
-                                    'DD/MM/YYYY HH:mm'
-                                  )}
-                                </DataListText>
-                              </DataListCell>
-                              <DataListCell className="flex-[0.6]">
-                                <DataListTextHeader>Status</DataListTextHeader>
-                                <Badge
-                                  variant={getStatusBadgeVariant(
-                                    device.deviceStatus
-                                  )}
+                <SectionCard
+                  description="Devices currently or previously bound to this license."
+                  query={devicesQuery}
+                  title="Devices"
+                >
+                  {(devices) => (
+                    <DataList>
+                      {!devices.length ? (
+                        <DataListEmptyState>
+                          No devices have redeemed this license yet.
+                        </DataListEmptyState>
+                      ) : (
+                        devices.map((device) => (
+                          <DataListRow key={device.licenseBindingId} withHover>
+                            <DataListCell>
+                              <DataListText className="font-medium">
+                                <Link
+                                  params={{ id: device.deviceId }}
+                                  to="/manager/devices/$id"
                                 >
-                                  {device.deviceStatus}
-                                </Badge>
-                              </DataListCell>
-                              <DataListCell className="max-md:hidden">
-                                <DataListTextHeader>
-                                  Last Seen
-                                </DataListTextHeader>
-                                <DataListText className="text-xs">
-                                  {device.lastSeenAt
-                                    ? dayjs(device.lastSeenAt).fromNow()
-                                    : 'No heartbeat yet'}
-                                </DataListText>
-                              </DataListCell>
-                            </DataListRow>
-                          ))
-                        )}
-                      </DataList>
-                    )}
-                  </SectionCard>
-                </div>
+                                  {device.installationId}
+                                  <span className="absolute inset-0" />
+                                </Link>
+                              </DataListText>
+                              <DataListText className="text-xs text-muted-foreground">
+                                Bound{' '}
+                                {dayjs(device.boundAt).format(
+                                  'DD/MM/YYYY HH:mm'
+                                )}
+                              </DataListText>
+                            </DataListCell>
+                            <DataListCell className="flex-[0.6]">
+                              <DataListTextHeader>Status</DataListTextHeader>
+                              <Badge
+                                variant={getStatusBadgeVariant(
+                                  device.deviceStatus
+                                )}
+                              >
+                                {device.deviceStatus}
+                              </Badge>
+                            </DataListCell>
+                            <DataListCell className="max-md:hidden">
+                              <DataListTextHeader>Last Seen</DataListTextHeader>
+                              <DataListText className="text-xs">
+                                {device.lastSeenAt
+                                  ? dayjs(device.lastSeenAt).fromNow()
+                                  : 'No heartbeat yet'}
+                              </DataListText>
+                            </DataListCell>
+                          </DataListRow>
+                        ))
+                      )}
+                    </DataList>
+                  )}
+                </SectionCard>
 
                 <SectionCard
                   description="Completed hosted chapter translations for this license."

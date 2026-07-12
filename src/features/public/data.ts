@@ -28,20 +28,34 @@ export const PUBLIC_OWNER_WHATSAPP_HREF =
 export const publicFreeTokenPack: PublicTokenPack = {
   id: 'public-free',
   key: 'free',
-  name: 'Free 10',
+  name: 'Free trial',
   description:
     'Free trial access for trying manga, manhwa, and manhua AI translation, limited to two chapters per day.',
-  tokenAmount: 100,
+  tokenAmount: 25,
   bonusTokenAmount: 0,
   priceAmountCents: 0,
   currency: 'USD',
-  totalTokens: 100,
+  totalTokens: 25,
   checkoutEnabled: false,
-  estimatedPages: 200,
-  estimatedChapters: 10,
+  estimatedPages: 40,
+  estimatedChapters: 2,
   marketingSummary: 'Free trial access',
-  marketedChaptersPerMonth: 10,
+  marketedChaptersPerMonth: 2,
 };
+
+export function buildPublicFreeTokenPack(tokenAmount: number): PublicTokenPack {
+  const safeTokenAmount = Math.max(1, Math.floor(tokenAmount));
+  const estimatedChapters = Math.max(1, Math.floor(safeTokenAmount / 10));
+
+  return {
+    ...publicFreeTokenPack,
+    estimatedChapters,
+    estimatedPages: estimatedChapters * 20,
+    marketedChaptersPerMonth: estimatedChapters,
+    tokenAmount: safeTokenAmount,
+    totalTokens: safeTokenAmount,
+  };
+}
 
 export const fallbackPublicTokenPacks: PublicTokenPack[] = [
   publicFreeTokenPack,

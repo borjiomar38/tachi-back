@@ -79,6 +79,12 @@ export const zMobileActivationResponse = z.object({
   auth: zMobileAuthBundle,
 });
 
+export const zFreeTrialEmailCodeResponse = z.object({
+  deliveryMode: z.literal('email_code'),
+  email: z.email(),
+  tokenAmount: z.number().int().positive(),
+});
+
 export const zMobileSessionSummaryResponse = z.object({
   device: z.object({
     appBuild: z.string().nullish(),

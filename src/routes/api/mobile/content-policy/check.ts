@@ -2,9 +2,9 @@ import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
 
 import {
-  buildExplicitAdultContentBlockDetails,
-  getExplicitAdultContentGateResult,
-} from '@/server/content-policy/explicit-adult-content-gate';
+  buildContentPolicyBlockDetails,
+  getContentPolicyGateResult,
+} from '@/server/content-policy/translation-gate';
 import { db } from '@/server/db';
 import {
   buildApiOkResponse,
@@ -60,7 +60,7 @@ export const Route = createFileRoute('/api/mobile/content-policy/check')({
           requestId: context.requestId,
           scope: 'content-policy',
         });
-        const gateResult = await getExplicitAdultContentGateResult(
+        const gateResult = await getContentPolicyGateResult(
           {
             manga: parsedInput.data.manga,
           },
@@ -86,18 +86,18 @@ export const Route = createFileRoute('/api/mobile/content-policy/check')({
         routeLog.warn({
           clientIp: context.clientIp,
           mangaTitle: parsedInput.data.manga.mangaTitle,
-          message: 'Blocked explicit adult mobile content policy check',
+          message: 'Blocked mobile content policy check',
           signal: gateResult.signal,
           sourceId: parsedInput.data.manga.sourceId,
           sourceName: parsedInput.data.manga.sourceName,
-          type: 'explicit_adult_content_blocked',
+          type: 'content_policy_blocked',
           userAgent: context.userAgent,
         });
 
         return buildApiOkResponse(
           {
             blocked: true,
-            details: buildExplicitAdultContentBlockDetails(gateResult),
+            details: buildContentPolicyBlockDetails(gateResult),
             reason: gateResult.reason,
             signal: gateResult.signal,
           },

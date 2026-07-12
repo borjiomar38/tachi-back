@@ -170,6 +170,36 @@ export async function updateContentMetadataPolicy(
   };
 }
 
+export async function updateContentMetadataValueBlock(
+  input: {
+    blocked: boolean;
+    value: BlockedContentMetadataValue;
+  },
+  deps?: {
+    dbClient?: typeof db;
+  }
+) {
+  const dbClient = deps?.dbClient ?? db;
+  const policy = await getContentMetadataPolicy({ dbClient });
+  const value = zBlockedContentMetadataValue.parse(input.value);
+  const valueKey = buildMetadataKey(value);
+  const remainingValues = policy.blockedValues.filter(
+    (blockedValue) => buildMetadataKey(blockedValue) !== valueKey
+  );
+  const blockedValues = input.blocked
+    ? [...remainingValues, value]
+    : remainingValues;
+
+  return await updateContentMetadataPolicy(
+    {
+      blockedValues,
+    },
+    {
+      dbClient,
+    }
+  );
+}
+
 export async function discoverContentMetadataValues(deps?: {
   dbClient?: typeof db;
   policy?: ContentMetadataPolicy;
@@ -225,6 +255,38 @@ export async function discoverContentMetadataValues(deps?: {
 
   for (const row of discoveryRows) {
     addMetadataRecord(accumulator, row.metadata);
+  }
+
+  const blockedKeys = new Set(
+    policy.blockedValues.map((value) => buildMetadataKey(value))
+  );
+
+  return [...accumulator.values()]
+    .map((item) => ({
+      ...item,
+      isBlocked: blockedKeys.has(buildMetadataKey(item)),
+    }))
+    .sort((first, second) => {
+      const fieldOrder =
+        contentMetadataFields.indexOf(first.field) -
+        contentMetadataFields.indexOf(second.field);
+
+      if (fieldOrder !== 0) {
+        return fieldOrder;
+      }
+
+      return first.value.localeCompare(second.value);
+    });
+}
+
+export function discoverContentMetadataValuesFromRecords(
+  records: readonly unknown[],
+  policy: ContentMetadataPolicy
+): DiscoveredContentMetadataValue[] {
+  const accumulator = new Map<string, DiscoveredContentMetadataValue>();
+
+  for (const record of records) {
+    addMetadataRecord(accumulator, record);
   }
 
   const blockedKeys = new Set(

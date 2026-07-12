@@ -18,6 +18,9 @@ const {
 } = vi.hoisted(() => ({
   mockDb: {
     $transaction: vi.fn(),
+    appConfig: {
+      findUnique: vi.fn(),
+    },
     freeTrialClaim: {
       findUnique: vi.fn(),
     },
@@ -136,6 +139,7 @@ import {
 describe('job service', () => {
   beforeEach(() => {
     mockDb.$transaction.mockReset();
+    mockDb.appConfig.findUnique.mockReset();
     mockDb.freeTrialClaim.findUnique.mockReset();
     mockDb.jobAsset.create.mockReset();
     mockDb.jobAsset.findFirst.mockReset();
@@ -165,6 +169,7 @@ describe('job service', () => {
     mockPutTranslationJobResultManifest.mockReset();
     mockPutTranslationResultCacheManifest.mockReset();
     mockDb.jobAsset.findFirst.mockResolvedValue(null);
+    mockDb.appConfig.findUnique.mockResolvedValue(null);
     mockPutTranslationJobDebugArtifact.mockResolvedValue({
       bucketName: 'results',
       objectKey: 'jobs/job/debug/ocr-pages.json',
@@ -242,6 +247,71 @@ describe('job service', () => {
         signal: {
           field: 'tags',
           value: 'Explicit sex',
+        },
+      },
+      statusCode: 451,
+    });
+
+    expect(
+      mockGetProviderGatewayManifestWithRuntimeConfig
+    ).not.toHaveBeenCalled();
+    expect(mockDb.tokenLedger.aggregate).not.toHaveBeenCalled();
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
+  });
+
+  it('blocks manually disabled manhwa before provider or token work', async () => {
+    mockDb.appConfig.findUnique.mockImplementation(async ({ where }) =>
+      where.key.startsWith('content_policy_manual_manga_block:')
+        ? {
+            updatedAt: new Date('2026-07-12T10:00:00.000Z'),
+            value: {
+              blocked: true,
+              identity: {
+                mangaTitle: 'Blocked Manhwa',
+                mangaUrl: 'https://example.test/manga/blocked',
+                sourceId: 'source-1',
+                sourceName: 'Example',
+              },
+            },
+          }
+        : null
+    );
+
+    await expect(
+      createTranslationJob(
+        {
+          chapterIdentity: {
+            chapterUrl: 'https://example.test/manga/blocked/chapter-1',
+            genres: ['Action'],
+            mangaTitle: 'Blocked Manhwa',
+            mangaUrl: 'https://example.test/manga/blocked',
+            sourceId: 'source-1',
+            sourceName: 'Example',
+          },
+          pages: [
+            {
+              fileName: '001.jpg',
+              mimeType: 'image/jpeg',
+              sizeBytes: 1024,
+            },
+          ],
+          targetLanguage: 'en',
+        },
+        {
+          actor: {
+            deviceId: 'device-1',
+            licenseId: 'license-1',
+          },
+          dbClient: mockDb as never,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'explicit_adult_content_blocked',
+      details: {
+        reason: 'manual_manga_block',
+        signal: {
+          field: 'manga',
+          value: 'Blocked Manhwa',
         },
       },
       statusCode: 451,

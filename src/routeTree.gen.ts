@@ -51,6 +51,7 @@ import { Route as ManhwaSlugIndexRouteImport } from './routes/manhwa/$slug/index
 import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
 import { Route as ManagerUsersIndexRouteImport } from './routes/manager/users/index'
 import { Route as ManagerTranslationQaIndexRouteImport } from './routes/manager/translation-qa/index'
+import { Route as ManagerSettingsIndexRouteImport } from './routes/manager/settings/index'
 import { Route as ManagerSeoDistributionIndexRouteImport } from './routes/manager/seo-distribution/index'
 import { Route as ManagerProvidersIndexRouteImport } from './routes/manager/providers/index'
 import { Route as ManagerManhwaIndexRouteImport } from './routes/manager/manhwa/index'
@@ -343,6 +344,11 @@ const ManagerTranslationQaIndexRoute =
     path: '/translation-qa/',
     getParentRoute: () => ManagerRouteRoute,
   } as any)
+const ManagerSettingsIndexRoute = ManagerSettingsIndexRouteImport.update({
+  id: '/settings/',
+  path: '/settings/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerSeoDistributionIndexRoute =
   ManagerSeoDistributionIndexRouteImport.update({
     id: '/seo-distribution/',
@@ -798,6 +804,7 @@ export interface FileRoutesByFullPath {
   '/manager/manhwa/': typeof ManagerManhwaIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/seo-distribution/': typeof ManagerSeoDistributionIndexRoute
+  '/manager/settings/': typeof ManagerSettingsIndexRoute
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
@@ -909,6 +916,7 @@ export interface FileRoutesByTo {
   '/manager/manhwa': typeof ManagerManhwaIndexRoute
   '/manager/providers': typeof ManagerProvidersIndexRoute
   '/manager/seo-distribution': typeof ManagerSeoDistributionIndexRoute
+  '/manager/settings': typeof ManagerSettingsIndexRoute
   '/manager/translation-qa': typeof ManagerTranslationQaIndexRoute
   '/manager/users': typeof ManagerUsersIndexRoute
   '/manager/versions': typeof ManagerVersionsIndexRoute
@@ -1025,6 +1033,7 @@ export interface FileRoutesById {
   '/manager/manhwa/': typeof ManagerManhwaIndexRoute
   '/manager/providers/': typeof ManagerProvidersIndexRoute
   '/manager/seo-distribution/': typeof ManagerSeoDistributionIndexRoute
+  '/manager/settings/': typeof ManagerSettingsIndexRoute
   '/manager/translation-qa/': typeof ManagerTranslationQaIndexRoute
   '/manager/users/': typeof ManagerUsersIndexRoute
   '/manager/versions/': typeof ManagerVersionsIndexRoute
@@ -1142,6 +1151,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/'
     | '/manager/providers/'
     | '/manager/seo-distribution/'
+    | '/manager/settings/'
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
@@ -1253,6 +1263,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa'
     | '/manager/providers'
     | '/manager/seo-distribution'
+    | '/manager/settings'
     | '/manager/translation-qa'
     | '/manager/users'
     | '/manager/versions'
@@ -1368,6 +1379,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/'
     | '/manager/providers/'
     | '/manager/seo-distribution/'
+    | '/manager/settings/'
     | '/manager/translation-qa/'
     | '/manager/users/'
     | '/manager/versions/'
@@ -1781,6 +1793,13 @@ declare module '@tanstack/react-router' {
       path: '/translation-qa'
       fullPath: '/manager/translation-qa/'
       preLoaderRoute: typeof ManagerTranslationQaIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
+    '/manager/settings/': {
+      id: '/manager/settings/'
+      path: '/settings'
+      fullPath: '/manager/settings/'
+      preLoaderRoute: typeof ManagerSettingsIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
     '/manager/seo-distribution/': {
@@ -2327,6 +2346,7 @@ interface ManagerRouteRouteChildren {
   ManagerManhwaIndexRoute: typeof ManagerManhwaIndexRoute
   ManagerProvidersIndexRoute: typeof ManagerProvidersIndexRoute
   ManagerSeoDistributionIndexRoute: typeof ManagerSeoDistributionIndexRoute
+  ManagerSettingsIndexRoute: typeof ManagerSettingsIndexRoute
   ManagerTranslationQaIndexRoute: typeof ManagerTranslationQaIndexRoute
   ManagerUsersIndexRoute: typeof ManagerUsersIndexRoute
   ManagerVersionsIndexRoute: typeof ManagerVersionsIndexRoute
@@ -2357,6 +2377,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerManhwaIndexRoute: ManagerManhwaIndexRoute,
   ManagerProvidersIndexRoute: ManagerProvidersIndexRoute,
   ManagerSeoDistributionIndexRoute: ManagerSeoDistributionIndexRoute,
+  ManagerSettingsIndexRoute: ManagerSettingsIndexRoute,
   ManagerTranslationQaIndexRoute: ManagerTranslationQaIndexRoute,
   ManagerUsersIndexRoute: ManagerUsersIndexRoute,
   ManagerVersionsIndexRoute: ManagerVersionsIndexRoute,

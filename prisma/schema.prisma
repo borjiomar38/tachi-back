@@ -376,7 +376,7 @@ model FreeTrialClaim {
   deviceFingerprintHash String?  @unique
   licenseId             String   @unique
   redeemCodeId          String   @unique
-  tokenAmount           Int      @default(100)
+  tokenAmount           Int      @default(25)
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
 

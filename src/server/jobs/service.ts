@@ -2,9 +2,9 @@ import { createHash } from 'node:crypto';
 
 import { envServer } from '@/env/server';
 import {
-  buildExplicitAdultContentBlockDetails,
-  getExplicitAdultContentGateResult,
-} from '@/server/content-policy/explicit-adult-content-gate';
+  buildContentPolicyBlockDetails,
+  getContentPolicyGateResult,
+} from '@/server/content-policy/translation-gate';
 import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
 import {
@@ -248,7 +248,7 @@ export async function createTranslationJob(
   const log = deps.log ?? logger;
   const now = deps.now ?? new Date();
   const gateResult = input.chapterIdentity
-    ? await getExplicitAdultContentGateResult(
+    ? await getContentPolicyGateResult(
         {
           manga: input.chapterIdentity,
         },
@@ -260,7 +260,7 @@ export async function createTranslationJob(
 
   if (gateResult) {
     throw new TranslationJobError('explicit_adult_content_blocked', 451, {
-      details: buildExplicitAdultContentBlockDetails(gateResult),
+      details: buildContentPolicyBlockDetails(gateResult),
     });
   }
 

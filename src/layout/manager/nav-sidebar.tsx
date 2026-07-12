@@ -10,6 +10,7 @@ import {
   LayoutDashboardIcon,
   MapPinnedIcon,
   PanelLeftIcon,
+  SettingsIcon,
   Share2Icon,
   ShieldAlertIcon,
   ShieldCheckIcon,
@@ -346,6 +347,21 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                             <span>
                               <ShieldCheckIcon />
                               <span>{t('layout:nav.contentPolicy')}</span>
+                            </span>
+                          }
+                        />
+                      )}
+                    </Link>
+                  </SidebarMenuItem>
+                  <SidebarMenuItem>
+                    <Link to="/manager/settings">
+                      {({ isActive }) => (
+                        <SidebarMenuButton
+                          isActive={isActive}
+                          render={
+                            <span>
+                              <SettingsIcon />
+                              <span>{t('layout:nav.settings')}</span>
                             </span>
                           }
                         />

@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import {
-  buildExplicitAdultContentBlockDetails,
-  getExplicitAdultContentGateResult,
-} from '@/server/content-policy/explicit-adult-content-gate';
+  buildContentPolicyBlockDetails,
+  getContentPolicyGateResult,
+} from '@/server/content-policy/translation-gate';
 import { db } from '@/server/db';
 import {
   buildApiErrorResponse,
@@ -87,9 +87,15 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             );
           }
 
-          const gateResult = await getExplicitAdultContentGateResult(
+          const gateResult = await getContentPolicyGateResult(
             {
-              manga: parsedInput.data.manga,
+              manga: {
+                ...parsedInput.data.manga,
+                mangaTitle: parsedInput.data.manga.title,
+                mangaUrl: parsedInput.data.manga.url,
+                sourceId: parsedInput.data.sourceId,
+                sourceName: parsedInput.data.sourceName,
+              },
             },
             {
               dbClient: db,
@@ -102,14 +108,14 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
               deviceId: auth.device.id,
               licenseId: auth.license.id,
               mangaTitle: parsedInput.data.manga.title,
-              message: 'Blocked explicit adult manga page translation request',
+              message: 'Blocked manga page translation by content policy',
               signal: gateResult.signal,
-              type: 'explicit_adult_content_blocked',
+              type: 'content_policy_blocked',
             });
 
             return buildApiErrorResponse({
               code: 'explicit_adult_content_blocked',
-              details: buildExplicitAdultContentBlockDetails(gateResult),
+              details: buildContentPolicyBlockDetails(gateResult),
               requestId: context.requestId,
               status: 451,
             });

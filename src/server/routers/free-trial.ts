@@ -1,4 +1,5 @@
 import { ORPCError } from '@orpc/client';
+import { z } from 'zod';
 
 import { Prisma } from '@/server/db/generated/client';
 import { listFreeAccessIpBlocks } from '@/server/licenses/free-access-ip-block';
@@ -8,6 +9,11 @@ import {
   zBackofficeFreeTrialListInput,
   zBackofficeFreeTrialListResponse,
 } from '@/server/licenses/free-trial-backoffice-schema';
+import {
+  getFreeTrialRuntimeConfig,
+  updateFreeTrialRuntimeConfig,
+  zFreeTrialRuntimeConfig,
+} from '@/server/licenses/free-trial-settings';
 import { protectedProcedure } from '@/server/orpc';
 
 const tags = ['free-trials'];
@@ -158,6 +164,49 @@ type LicenseTokenBalance = {
 };
 
 export default {
+  getRuntimeConfig: protectedProcedure({
+    permissions: {
+      staff: ['list'],
+    },
+  })
+    .route({
+      method: 'GET',
+      path: '/free-trials/runtime-config',
+      tags,
+    })
+    .output(
+      z.object({
+        current: zFreeTrialRuntimeConfig,
+        updatedAt: z.date().nullable(),
+      })
+    )
+    .handler(async ({ context }) => {
+      return await getFreeTrialRuntimeConfig({ dbClient: context.db });
+    }),
+
+  updateRuntimeConfig: protectedProcedure({
+    permissions: {
+      staff: ['update'],
+    },
+  })
+    .route({
+      method: 'POST',
+      path: '/free-trials/runtime-config',
+      tags,
+    })
+    .input(zFreeTrialRuntimeConfig)
+    .output(
+      z.object({
+        current: zFreeTrialRuntimeConfig,
+        updatedAt: z.date(),
+      })
+    )
+    .handler(async ({ context, input }) => {
+      return await updateFreeTrialRuntimeConfig(input, {
+        dbClient: context.db,
+      });
+    }),
+
   list: protectedProcedure({
     permissions: {
       device: ['read'],

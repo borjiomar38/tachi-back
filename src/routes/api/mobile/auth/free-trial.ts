@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { waitUntil } from '@vercel/functions';
 
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
@@ -11,12 +12,15 @@ import {
   createFreeTrialRedeemCode,
   isFreeTrialActivationError,
 } from '@/server/licenses/free-trial';
+import { sendFreeTrialRedeemCodeEmail } from '@/server/licenses/free-trial-email';
+import { reviewFreeTrialEmailRisk } from '@/server/licenses/free-trial-email-risk';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import { redeemLicenseToDevice } from '@/server/licenses/redeem';
 import { getClientIp } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 import {
   zCreateFreeTrialMobileSessionInput,
+  zFreeTrialEmailCodeResponse,
   zMobileActivationResponse,
 } from '@/server/mobile-auth/schema';
 import {
@@ -114,6 +118,66 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
           const trial = await createFreeTrialRedeemCode(parsedInput.data, {
             clientIp,
           });
+          routeLog.info({
+            deliveryMode: trial.deliveryMode,
+            emailRiskReviewEnabled: trial.emailRiskReviewEnabled,
+            installationId: parsedInput.data.installationId,
+            message: 'Free trial runtime configuration resolved',
+            tokenAmount: trial.tokenAmount,
+            type: 'free_trial_configuration_resolved',
+          });
+
+          if (trial.deliveryMode === 'email_code') {
+            try {
+              await sendFreeTrialRedeemCodeEmail({
+                redeemCode: trial.redeemCode,
+                to: parsedInput.data.email,
+                tokenAmount: trial.tokenAmount,
+              });
+            } catch (error) {
+              routeLog.error({
+                clientIp,
+                email: maskEmailForLog(parsedInput.data.email),
+                errorMessage:
+                  error instanceof Error ? error.message : 'Unknown error',
+                installationId: parsedInput.data.installationId,
+                message: 'Free trial redeem email delivery failed',
+                type: 'free_trial_email_delivery_error',
+              });
+              return Response.json(
+                {
+                  error: {
+                    code: 'free_trial_email_delivery_failed',
+                  },
+                  ok: false,
+                },
+                { status: 502 }
+              );
+            }
+
+            scheduleEmailRiskReview({
+              claimId: trial.claimId,
+              enabled: trial.emailRiskReviewEnabled,
+            });
+            routeLog.info({
+              clientIp,
+              email: maskEmailForLog(parsedInput.data.email),
+              installationId: parsedInput.data.installationId,
+              message: 'Free trial redeem code sent by email',
+              tokenAmount: trial.tokenAmount,
+              type: 'free_trial_email_delivery_success',
+            });
+
+            return Response.json({
+              data: zFreeTrialEmailCodeResponse.parse({
+                deliveryMode: 'email_code',
+                email: parsedInput.data.email.trim(),
+                tokenAmount: trial.tokenAmount,
+              }),
+              ok: true,
+            });
+          }
+
           const activation = await redeemLicenseToDevice(
             {
               ...parsedInput.data,
@@ -147,6 +211,11 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
             message: 'Mobile free trial activation succeeded',
             redeemCode: maskRedeemCodeForLog(activation.redeemCode.code),
             type: 'free_trial_activation_success',
+          });
+
+          scheduleEmailRiskReview({
+            claimId: trial.claimId,
+            enabled: trial.emailRiskReviewEnabled,
           });
 
           return Response.json({
@@ -292,4 +361,21 @@ function maskRedeemCodeForLog(code: string) {
   }
 
   return `${normalized.slice(0, 6)}...${normalized.slice(-4)}`;
+}
+
+function scheduleEmailRiskReview(input: { claimId: string; enabled: boolean }) {
+  if (!input.enabled) {
+    return;
+  }
+
+  waitUntil(
+    reviewFreeTrialEmailRisk({ claimId: input.claimId }).catch((error) => {
+      logger.error({
+        claimId: input.claimId,
+        errorMessage: error instanceof Error ? error.message : 'Unknown error',
+        message: 'Asynchronous free trial email review failed',
+        type: 'free_trial_email_review_error',
+      });
+    })
+  );
 }

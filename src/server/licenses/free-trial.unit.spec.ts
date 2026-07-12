@@ -240,9 +240,11 @@ describe('free trial redeem creation', () => {
           id: 'claim-legacy',
           installationId: 'install-1234567890abcd',
           ipAddress: null,
+          licenseId: 'license-legacy',
           redeemCode: {
             code: 'TB-FREE-AAAA-BBBB',
           },
+          tokenAmount: 100,
         }),
         update: vi.fn().mockResolvedValue({ id: 'claim-legacy' }),
       },
@@ -270,6 +272,10 @@ describe('free trial redeem creation', () => {
     );
 
     expect(result).toEqual({
+      claimId: 'claim-legacy',
+      deliveryMode: 'direct',
+      emailRiskReviewEnabled: false,
+      licenseId: 'license-legacy',
       redeemCode: 'TB-FREE-AAAA-BBBB',
       tokenAmount: 100,
     });

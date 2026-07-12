@@ -31,5 +31,23 @@
       "rating": "Rating",
       "tags": "Tags"
     }
+  },
+  "context": {
+    "title": "Content Policy",
+    "checkedBlockedGlobally": "Checked values are blocked globally.",
+    "empty": "No content-policy metadata was recorded here.",
+    "metadataUpdated": "Global content policy updated.",
+    "manualBlockUpdated": "Manual manhwa rule updated.",
+    "updateFailed": "Failed to update content policy.",
+    "license": {
+      "description": "Metadata observed across chapters translated with this license."
+    },
+    "chapter": {
+      "description": "Metadata recorded for this chapter and its manhwa."
+    },
+    "manualBlock": {
+      "label": "Block this manhwa",
+      "description": "Stops every new translation for this title."
+    }
   }
 }

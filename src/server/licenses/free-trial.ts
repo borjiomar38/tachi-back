@@ -12,13 +12,13 @@ import {
   findFreeTrialIdentityConflict,
   throwFreeTrialIdentityUnavailable,
 } from '@/server/licenses/free-trial-identity';
+import { getFreeTrialRuntimeConfig } from '@/server/licenses/free-trial-settings';
 import { generateRedeemCode } from '@/server/licenses/utils';
 import {
   zCheckFreeTrialEligibilityInput,
   zCreateFreeTrialMobileSessionInput,
 } from '@/server/mobile-auth/schema';
 
-const FREE_TRIAL_TOKEN_AMOUNT = 100;
 type FreeTrialEligibilityReasonCode =
   | 'free_access_ip_blocked'
   | 'free_access_unavailable'
@@ -52,6 +52,18 @@ export async function createFreeTrialRedeemCode(
   const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
   const installationId = input.installationId.trim();
   const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
+  const runtimeConfig = await getFreeTrialRuntimeConfig({ dbClient });
+  const tokenAmount = runtimeConfig.current.tokenAmount;
+  const deliveryMode = runtimeConfig.current.deliveryMode;
+  const emailRiskReviewEnabled = runtimeConfig.current.emailRiskReviewEnabled;
+
+  if (!runtimeConfig.current.enabled) {
+    throw new FreeTrialActivationError(
+      'free_trial_unavailable',
+      403,
+      'Free trial access is disabled.'
+    );
+  }
 
   if (!deviceFingerprintHash) {
     throwFreeTrialIdentityUnavailable({
@@ -84,11 +96,13 @@ export async function createFreeTrialRedeemCode(
           id: true,
           installationId: true,
           ipAddress: true,
+          licenseId: true,
           redeemCode: {
             select: {
               code: true,
             },
           },
+          tokenAmount: true,
         },
       });
 
@@ -112,8 +126,12 @@ export async function createFreeTrialRedeemCode(
           });
 
           return {
+            claimId: existingClaim.id,
+            deliveryMode,
+            emailRiskReviewEnabled,
+            licenseId: existingClaim.licenseId,
             redeemCode: existingClaim.redeemCode.code,
-            tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
+            tokenAmount: existingClaim.tokenAmount,
           };
         }
 
@@ -158,7 +176,7 @@ export async function createFreeTrialRedeemCode(
             installationId,
             ...(ipAddress ? { ipAddress } : {}),
             source: 'free_trial',
-            tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
+            tokenAmount,
           } satisfies Prisma.InputJsonObject,
         },
         select: {
@@ -169,7 +187,7 @@ export async function createFreeTrialRedeemCode(
 
       await tx.tokenLedger.create({
         data: {
-          deltaTokens: FREE_TRIAL_TOKEN_AMOUNT,
+          deltaTokens: tokenAmount,
           description: 'Free trial credit',
           idempotencyKey: `free-trial:${installationId}:${emailNormalized}`,
           licenseId: license.id,
@@ -197,7 +215,7 @@ export async function createFreeTrialRedeemCode(
           ipAddress,
           licenseId: license.id,
           redeemCodeId: redeemCode.id,
-          tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
+          tokenAmount,
         },
         select: {
           id: true,
@@ -210,8 +228,12 @@ export async function createFreeTrialRedeemCode(
       });
 
       return {
+        claimId: freeTrialClaim.id,
+        deliveryMode,
+        emailRiskReviewEnabled,
+        licenseId: license.id,
         redeemCode: redeemCode.code,
-        tokenAmount: FREE_TRIAL_TOKEN_AMOUNT,
+        tokenAmount,
       };
     });
   } catch (error) {
@@ -246,6 +268,15 @@ export async function checkFreeTrialEligibility(
   const installationId = input.installationId.trim();
   const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
   const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
+  const runtimeConfig = await getFreeTrialRuntimeConfig({ dbClient });
+
+  if (!runtimeConfig.current.enabled) {
+    return {
+      eligible: false,
+      reasonCode:
+        'free_trial_unavailable' satisfies FreeTrialEligibilityReasonCode,
+    };
+  }
 
   if (!deviceFingerprintHash) {
     return {

@@ -31,5 +31,23 @@
       "rating": "Note",
       "tags": "Tags"
     }
+  },
+  "context": {
+    "title": "Politique de contenu",
+    "checkedBlockedGlobally": "Les valeurs cochées sont bloquées globalement.",
+    "empty": "Aucune métadonnée de politique de contenu n’a été enregistrée ici.",
+    "metadataUpdated": "Politique de contenu globale mise à jour.",
+    "manualBlockUpdated": "Règle manuelle du manhwa mise à jour.",
+    "updateFailed": "Échec de la mise à jour de la politique de contenu.",
+    "license": {
+      "description": "Métadonnées observées dans les chapitres traduits avec cette licence."
+    },
+    "chapter": {
+      "description": "Métadonnées enregistrées pour ce chapitre et son manhwa."
+    },
+    "manualBlock": {
+      "label": "Bloquer ce manhwa",
+      "description": "Arrête toute nouvelle traduction de ce titre."
+    }
   }
 }

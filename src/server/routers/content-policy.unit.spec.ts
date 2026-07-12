@@ -11,6 +11,62 @@ import {
 const now = new Date('2026-06-15T10:00:00.000Z');
 
 describe('content policy router', () => {
+  describe('context overviews', () => {
+    it('returns license metadata with global blocked state', async () => {
+      mockDb.appConfig.findUnique.mockResolvedValue({
+        updatedAt: now,
+        value: {
+          blockedValues: [
+            {
+              field: 'genres',
+              normalizedValue: 'action',
+              value: 'Action',
+            },
+          ],
+        },
+      });
+      mockDb.translationJob.findMany.mockResolvedValue([
+        {
+          chapterIdentity: {
+            categories: ['Manhwa'],
+            chapterUrl: 'https://example.test/chapter-1',
+            genres: ['Action', 'Fantasy'],
+            mangaTitle: 'Example',
+          },
+        },
+        {
+          chapterIdentity: {
+            chapterUrl: 'https://example.test/chapter-2',
+            genres: ['Action'],
+            mangaTitle: 'Example',
+            tags: ['Reincarnation'],
+          },
+        },
+      ]);
+
+      const result = await call(contentPolicyRouter.licenseOverview, {
+        key: 'license-key',
+      });
+
+      expect(result.discoveredValues).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            count: 2,
+            field: 'genres',
+            isBlocked: true,
+            value: 'Action',
+          }),
+          expect.objectContaining({
+            field: 'tags',
+            isBlocked: false,
+            value: 'Reincarnation',
+          }),
+        ])
+      );
+      expect(result.manualMangaBlock).toBeNull();
+    });
+  });
+
   describe('metadataTranslationGate', () => {
     it('returns default explicit policy with discovered metadata values', async () => {
       mockDb.appConfig.findUnique.mockResolvedValue(null);
@@ -141,6 +197,75 @@ describe('content policy router', () => {
           userId: mockUser.id,
         },
       });
+    });
+  });
+
+  describe('updateMetadataValueBlock', () => {
+    it('unchecks a value in the authoritative global policy', async () => {
+      mockDb.appConfig.findUnique.mockResolvedValue({
+        updatedAt: now,
+        value: {
+          blockedValues: [
+            {
+              field: 'genres',
+              normalizedValue: 'action',
+              value: 'Action',
+            },
+            {
+              field: 'tags',
+              normalizedValue: 'publisher blocked',
+              value: 'Publisher blocked',
+            },
+          ],
+        },
+      });
+      mockDb.appConfig.upsert.mockResolvedValue({
+        updatedAt: now,
+        value: {
+          blockedValues: [
+            {
+              field: 'tags',
+              normalizedValue: 'publisher blocked',
+              value: 'Publisher blocked',
+            },
+          ],
+        },
+      });
+      mockDb.translationJob.findMany.mockResolvedValue([]);
+      mockDb.translationResultCache.findMany.mockResolvedValue([]);
+      mockDb.sourceDiscoveryResult.findMany.mockResolvedValue([]);
+
+      const result = await call(contentPolicyRouter.updateMetadataValueBlock, {
+        blocked: false,
+        value: {
+          field: 'genres',
+          normalizedValue: 'action',
+          value: 'Action',
+        },
+      });
+
+      expect(result.blockedValues).toEqual([
+        {
+          field: 'tags',
+          normalizedValue: 'publisher blocked',
+          value: 'Publisher blocked',
+        },
+      ]);
+      expect(mockDb.appConfig.upsert).toHaveBeenCalledWith(
+        expect.objectContaining({
+          update: {
+            value: {
+              blockedValues: [
+                {
+                  field: 'tags',
+                  normalizedValue: 'publisher blocked',
+                  value: 'Publisher blocked',
+                },
+              ],
+            },
+          },
+        })
+      );
     });
   });
 });

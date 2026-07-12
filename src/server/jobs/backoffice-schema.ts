@@ -420,7 +420,6 @@ export const zBackofficeTranslatedChapterCacheEntry = z.object({
   cacheKey: z.string(),
   createdAt: z.date(),
   pageCount: z.number().int().nonnegative(),
-  resultManifest: z.unknown().nullish(),
   resultPayloadVersion: z.string(),
   sourceLanguage: z.string(),
   targetLanguage: z.string(),
@@ -439,22 +438,11 @@ export const zBackofficeTranslatedChapterJob = z.object({
   targetLanguage: z.string(),
 });
 
-export const zBackofficeTranslatedChapterPagePreview = z.object({
-  blockCount: z.number().int().nonnegative(),
-  imageHeight: z.number().int().positive().nullish(),
-  imageWidth: z.number().int().positive().nullish(),
-  pageKey: z.string(),
-  sourcePreview: z.string(),
-  translationPreview: z.string(),
-});
-
 export const zBackofficeTranslatedChapterDetail = z.object({
   cacheEntries: z.array(zBackofficeTranslatedChapterCacheEntry),
   chapterCacheKey: z.string(),
   identity: zBackofficeChapterIdentity.nullish(),
   jobs: z.array(zBackofficeTranslatedChapterJob),
-  latestManifest: z.unknown().nullish(),
-  pagePreviews: z.array(zBackofficeTranslatedChapterPagePreview),
   stats: z.object({
     cacheHitCount: z.number().int().nonnegative(),
     cachedTranslationCount: z.number().int().nonnegative(),
