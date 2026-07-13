@@ -54,9 +54,18 @@ export function mergeJsonObject(
 }
 
 export function getClientIp(request: Request) {
-  return normalizeTrustedClientIp(
-    getVercelIpAddress(request) ?? request.headers.get('cf-connecting-ip')
-  );
+  const forwardedFor = request.headers.get('x-forwarded-for');
+
+  if (forwardedFor !== null) {
+    return getLastForwardedClientIp(forwardedFor);
+  }
+
+  return normalizeTrustedClientIp(getVercelIpAddress(request));
+}
+
+function getLastForwardedClientIp(forwardedFor: string | null) {
+  const lastHop = forwardedFor?.split(',').at(-1);
+  return normalizeTrustedClientIp(lastHop);
 }
 
 function normalizeTrustedClientIp(ipAddress: string | null | undefined) {

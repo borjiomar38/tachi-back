@@ -12,6 +12,7 @@ import {
   FreeTrialDailyLimitError,
   resolveFreeTrialDailyLimitScope,
 } from '@/server/licenses/free-trial-daily-limit';
+import { recordFreeTrialNetworkIdentityForLicense } from '@/server/licenses/free-trial-identity';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-gateway/manifest';
@@ -237,6 +238,7 @@ export async function createTranslationJob(
   rawInput: unknown,
   deps: {
     actor: MobileJobActor;
+    clientIp?: string | null;
     dbClient?: typeof db;
     log?: Pick<typeof logger, 'error' | 'info'>;
     now?: Date;
@@ -263,6 +265,17 @@ export async function createTranslationJob(
       details: buildContentPolicyBlockDetails(gateResult),
     });
   }
+
+  await recordFreeTrialNetworkIdentityForLicense(
+    {
+      ipAddress: deps.clientIp,
+      licenseId: deps.actor.licenseId,
+      now,
+    },
+    {
+      dbClient,
+    }
+  );
 
   const providers = await resolveProviderSelection(
     {

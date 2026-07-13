@@ -73,6 +73,7 @@ export const Route = createFileRoute('/api/mobile/jobs')({
               deviceId: auth.device.id,
               licenseId: auth.license.id,
             },
+            clientIp: context.clientIp === 'unknown' ? null : context.clientIp,
             scheduleProcessing: (jobId) => {
               waitUntil(
                 drainTranslationJobQueue({ log: routeLog }).catch((error) => {

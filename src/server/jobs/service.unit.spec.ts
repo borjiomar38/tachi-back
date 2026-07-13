@@ -24,6 +24,10 @@ const {
     freeTrialClaim: {
       findUnique: vi.fn(),
     },
+    freeTrialIdentity: {
+      createMany: vi.fn(),
+      findFirst: vi.fn(),
+    },
     jobAsset: {
       create: vi.fn(),
       findFirst: vi.fn(),
@@ -141,6 +145,8 @@ describe('job service', () => {
     mockDb.$transaction.mockReset();
     mockDb.appConfig.findUnique.mockReset();
     mockDb.freeTrialClaim.findUnique.mockReset();
+    mockDb.freeTrialIdentity.createMany.mockReset();
+    mockDb.freeTrialIdentity.findFirst.mockReset();
     mockDb.jobAsset.create.mockReset();
     mockDb.jobAsset.findFirst.mockReset();
     mockDb.jobAsset.update.mockReset();
@@ -206,7 +212,56 @@ describe('job service', () => {
       },
     });
     mockDb.freeTrialClaim.findUnique.mockResolvedValue(null);
+    mockDb.freeTrialIdentity.findFirst.mockResolvedValue(null);
     mockDb.order.findFirst.mockResolvedValue(null);
+  });
+
+  it('rejects a translation when another free trial already used the current network', async () => {
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue({
+      id: 'claim-current',
+    });
+    mockDb.freeTrialIdentity.findFirst.mockResolvedValue({
+      claimId: 'claim-other',
+      kind: 'ip_address',
+      value: '203.0.113.77',
+    });
+
+    await expect(
+      createTranslationJob(
+        {
+          chapterIdentity: {
+            chapterName: 'Episode 67',
+            chapterUrl: 'https://example.test/manga/chapter-67',
+            mangaTitle: 'Shared Trial Test',
+          },
+          pages: [
+            {
+              fileName: '001.jpg',
+              mimeType: 'image/jpeg',
+              sizeBytes: 1024,
+            },
+          ],
+          targetLanguage: 'ar',
+        },
+        {
+          actor: {
+            deviceId: 'device-current',
+            licenseId: 'license-current',
+          },
+          clientIp: '203.0.113.77',
+          dbClient: mockDb as never,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'free_access_unavailable',
+      statusCode: 402,
+    });
+
+    expect(
+      mockGetProviderGatewayManifestWithRuntimeConfig
+    ).not.toHaveBeenCalled();
+    expect(mockDb.tokenLedger.aggregate).not.toHaveBeenCalled();
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
   });
 
   it('blocks explicit adult chapter jobs before provider or token work', async () => {

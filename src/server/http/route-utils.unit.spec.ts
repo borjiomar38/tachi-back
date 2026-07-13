@@ -24,6 +24,28 @@ describe('route utils', () => {
     expect(context.requestId).toBe('req-123');
   });
 
+  it('uses the proxy-appended final forwarded address behind Caddy', () => {
+    const request = new Request('https://example.com/api/test', {
+      headers: {
+        'x-forwarded-for': '198.51.100.10, 203.0.113.77',
+        'x-real-ip': '192.0.2.15',
+      },
+    });
+
+    expect(buildHttpRequestContext(request).clientIp).toBe('203.0.113.77');
+  });
+
+  it('does not accept an invalid final forwarded address', () => {
+    const request = new Request('https://example.com/api/test', {
+      headers: {
+        'x-forwarded-for': '203.0.113.77, not-an-ip',
+        'x-real-ip': '192.0.2.15',
+      },
+    });
+
+    expect(buildHttpRequestContext(request).clientIp).toBe('unknown');
+  });
+
   it('adds the request id header to success and error responses', async () => {
     const okResponse = buildApiOkResponse(
       { hello: 'world' },

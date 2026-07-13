@@ -9,6 +9,10 @@ import {
   HttpRequestContext,
 } from '@/server/http/route-utils';
 import {
+  buildFreeAccessIpBlockedErrorBody,
+  isFreeAccessIpBlockedError,
+} from '@/server/licenses/free-access-ip-block';
+import {
   FreeTrialDailyLimitError,
   type FreeTrialDailyUsageReservation,
   voidFreeTrialDailyUsageReservation,
@@ -44,6 +48,20 @@ export async function authenticateAndRateLimitMobileJobRequest(
 }
 
 export function buildMobileJobErrorResponse(error: unknown, requestId: string) {
+  if (isFreeAccessIpBlockedError(error)) {
+    const blockedError = buildFreeAccessIpBlockedErrorBody(error);
+
+    return buildApiErrorResponse({
+      code: blockedError.code,
+      details: {
+        message: blockedError.message,
+        pricingUrl: blockedError.pricingUrl,
+      },
+      requestId,
+      status: error.statusCode,
+    });
+  }
+
   if (error instanceof MobileAuthError) {
     return buildApiErrorResponse({
       code: error.code,
