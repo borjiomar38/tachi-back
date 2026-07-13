@@ -19,6 +19,24 @@ import {
   zCreateFreeTrialMobileSessionInput,
 } from '@/server/mobile-auth/schema';
 
+const FREE_TRIAL_VERIFICATION_TTL_MS = 30 * 60 * 1000;
+const FREE_TRIAL_IDENTITY_LOCK_NAMESPACE = 74_224_303;
+const FREE_TRIAL_EMAIL_CODE_MIN_APP_BUILD = 40;
+
+type FreeTrialIdentityLockClient = {
+  $queryRaw?: <T = unknown>(
+    strings: TemplateStringsArray,
+    ...values: unknown[]
+  ) => Promise<T>;
+};
+type FreeTrialClaimTx = Pick<
+  typeof db,
+  | 'freeTrialClaim'
+  | 'freeTrialIdentity'
+  | 'freeTrialVerification'
+  | 'tokenLedger'
+>;
+
 type FreeTrialEligibilityReasonCode =
   | 'free_access_ip_blocked'
   | 'free_access_unavailable'
@@ -27,7 +45,7 @@ type FreeTrialEligibilityReasonCode =
 
 export class FreeTrialActivationError extends Error {
   constructor(
-    readonly code: 'free_trial_unavailable',
+    readonly code: 'client_update_required' | 'free_trial_unavailable',
     readonly statusCode: number,
     message?: string
   ) {
@@ -54,7 +72,6 @@ export async function createFreeTrialRedeemCode(
   const ipAddress = normalizeFreeAccessIpAddress(deps.clientIp);
   const runtimeConfig = await getFreeTrialRuntimeConfig({ dbClient });
   const tokenAmount = runtimeConfig.current.tokenAmount;
-  const deliveryMode = runtimeConfig.current.deliveryMode;
   const emailRiskReviewEnabled = runtimeConfig.current.emailRiskReviewEnabled;
 
   if (!runtimeConfig.current.enabled) {
@@ -64,6 +81,12 @@ export async function createFreeTrialRedeemCode(
       'Free trial access is disabled.'
     );
   }
+
+  assertFreeTrialDeliveryCompatible({
+    appBuild: input.appBuild,
+    deliveryMode: runtimeConfig.current.deliveryMode,
+  });
+  const deliveryMode = runtimeConfig.current.deliveryMode;
 
   if (!deviceFingerprintHash) {
     throwFreeTrialIdentityUnavailable({
@@ -81,6 +104,13 @@ export async function createFreeTrialRedeemCode(
 
   try {
     return await dbClient.$transaction(async (tx) => {
+      await acquireFreeTrialIdentityLocks(tx, {
+        deviceFingerprintHash,
+        emailNormalized,
+        installationId,
+        ipAddress,
+      });
+
       const existingClaim = await tx.freeTrialClaim.findFirst({
         where: {
           OR: [
@@ -153,6 +183,139 @@ export async function createFreeTrialRedeemCode(
         });
       }
 
+      const existingVerification = await tx.freeTrialVerification.findFirst({
+        where: {
+          OR: [{ installationId }, { deviceFingerprintHash }],
+        },
+        select: {
+          canceledAt: true,
+          consumedAt: true,
+          deviceFingerprintHash: true,
+          deliveryMode: true,
+          emailNormalized: true,
+          expiresAt: true,
+          id: true,
+          installationId: true,
+          licenseId: true,
+          redeemCode: {
+            select: {
+              code: true,
+              expiresAt: true,
+              id: true,
+              status: true,
+            },
+          },
+          tokenAmount: true,
+        },
+      });
+
+      if (existingVerification) {
+        assertFreeTrialDeliveryCompatible({
+          appBuild: input.appBuild,
+          deliveryMode: existingVerification.deliveryMode,
+        });
+
+        if (
+          existingVerification.consumedAt ||
+          existingVerification.deviceFingerprintHash !== deviceFingerprintHash
+        ) {
+          throwFreeTrialIdentityUnavailable({
+            ipAddress,
+            now,
+          });
+        }
+
+        const canReuseCurrentCode =
+          !existingVerification.canceledAt &&
+          existingVerification.emailNormalized === emailNormalized &&
+          existingVerification.installationId === installationId &&
+          existingVerification.expiresAt > now &&
+          existingVerification.redeemCode.status === 'available' &&
+          (!existingVerification.redeemCode.expiresAt ||
+            existingVerification.redeemCode.expiresAt > now);
+
+        if (canReuseCurrentCode) {
+          return {
+            claimId: null,
+            deliveryMode: existingVerification.deliveryMode,
+            emailRiskReviewEnabled,
+            licenseId: existingVerification.licenseId,
+            redeemCode: existingVerification.redeemCode.code,
+            tokenAmount: existingVerification.tokenAmount,
+          };
+        }
+
+        const expiresAt = getFreeTrialVerificationExpiry(now);
+        await tx.redeemCode.updateMany({
+          where: {
+            id: existingVerification.redeemCode.id,
+            status: 'available',
+          },
+          data: {
+            status: 'canceled',
+          },
+        });
+        const replacementCode = await tx.redeemCode.create({
+          data: {
+            code: generateRedeemCode(),
+            expiresAt,
+            licenseId: existingVerification.licenseId,
+            metadata: buildFreeTrialRedeemMetadata({
+              deviceFingerprintHash,
+              email,
+              emailNormalized,
+              installationId,
+              ipAddress,
+              tokenAmount: existingVerification.tokenAmount,
+            }),
+          },
+          select: {
+            code: true,
+            id: true,
+          },
+        });
+
+        await tx.license.update({
+          where: {
+            id: existingVerification.licenseId,
+          },
+          data: {
+            ownerEmail: email,
+          },
+          select: {
+            id: true,
+          },
+        });
+        await tx.freeTrialVerification.update({
+          where: {
+            id: existingVerification.id,
+          },
+          data: {
+            canceledAt: null,
+            deliveryMode: existingVerification.deliveryMode,
+            email,
+            emailNormalized,
+            expiresAt,
+            installationId,
+            ipAddress,
+            redeemCodeId: replacementCode.id,
+            tokenAmount: existingVerification.tokenAmount,
+          },
+          select: {
+            id: true,
+          },
+        });
+
+        return {
+          claimId: null,
+          deliveryMode: existingVerification.deliveryMode,
+          emailRiskReviewEnabled,
+          licenseId: existingVerification.licenseId,
+          redeemCode: replacementCode.code,
+          tokenAmount: existingVerification.tokenAmount,
+        };
+      }
+
       const license = await tx.license.create({
         data: {
           deviceLimit: 1,
@@ -168,16 +331,16 @@ export async function createFreeTrialRedeemCode(
       const redeemCode = await tx.redeemCode.create({
         data: {
           code: generateRedeemCode(),
+          expiresAt: getFreeTrialVerificationExpiry(now),
           licenseId: license.id,
-          metadata: {
+          metadata: buildFreeTrialRedeemMetadata({
+            deviceFingerprintHash,
             email,
             emailNormalized,
-            ...(deviceFingerprintHash ? { deviceFingerprintHash } : {}),
             installationId,
-            ...(ipAddress ? { ipAddress } : {}),
-            source: 'free_trial',
+            ipAddress,
             tokenAmount,
-          } satisfies Prisma.InputJsonObject,
+          }),
         },
         select: {
           id: true,
@@ -185,32 +348,13 @@ export async function createFreeTrialRedeemCode(
         },
       });
 
-      await tx.tokenLedger.create({
+      await tx.freeTrialVerification.create({
         data: {
-          deltaTokens: tokenAmount,
-          description: 'Free trial credit',
-          idempotencyKey: `free-trial:${installationId}:${emailNormalized}`,
-          licenseId: license.id,
-          metadata: {
-            email,
-            emailNormalized,
-            ...(deviceFingerprintHash ? { deviceFingerprintHash } : {}),
-            grantedAt: now.toISOString(),
-            installationId,
-            ...(ipAddress ? { ipAddress } : {}),
-            source: 'free_trial',
-          } satisfies Prisma.InputJsonObject,
-          redeemCodeId: redeemCode.id,
-          status: 'posted',
-          type: 'redeem_credit',
-        },
-      });
-
-      const freeTrialClaim = await tx.freeTrialClaim.create({
-        data: {
+          deviceFingerprintHash,
+          deliveryMode,
           email,
           emailNormalized,
-          deviceFingerprintHash,
+          expiresAt: getFreeTrialVerificationExpiry(now),
           installationId,
           ipAddress,
           licenseId: license.id,
@@ -222,13 +366,8 @@ export async function createFreeTrialRedeemCode(
         },
       });
 
-      await createFreeTrialIdentitySignals(tx, {
-        claimId: freeTrialClaim.id,
-        signals: identitySignals,
-      });
-
       return {
-        claimId: freeTrialClaim.id,
+        claimId: null,
         deliveryMode,
         emailRiskReviewEnabled,
         licenseId: license.id,
@@ -253,6 +392,216 @@ export async function createFreeTrialRedeemCode(
     }
 
     throw error;
+  }
+}
+
+export async function claimFreeTrialVerification(
+  tx: FreeTrialClaimTx,
+  input: {
+    deviceFingerprintHash: string;
+    installationId: string;
+    ipAddress: string | null;
+    licenseId: string;
+    now: Date;
+    redeemCodeId: string;
+    verification: {
+      canceledAt: Date | null;
+      consumedAt: Date | null;
+      deviceFingerprintHash: string;
+      email: string;
+      emailNormalized: string;
+      expiresAt: Date;
+      id: string;
+      installationId: string;
+      licenseId: string;
+      redeemCodeId: string;
+      tokenAmount: number;
+    };
+  }
+) {
+  const { verification } = input;
+
+  assertFreeTrialVerificationRedeemable({
+    deviceFingerprintHash: input.deviceFingerprintHash,
+    installationId: input.installationId,
+    ipAddress: input.ipAddress,
+    licenseId: input.licenseId,
+    now: input.now,
+    redeemCodeId: input.redeemCodeId,
+    verification,
+  });
+
+  const identitySignals = buildFreeTrialIdentitySignals({
+    deviceFingerprintHash: input.deviceFingerprintHash,
+    emailNormalized: verification.emailNormalized,
+    installationId: input.installationId,
+    ipAddress: input.ipAddress,
+  });
+  const claim = await tx.freeTrialClaim.create({
+    data: {
+      deviceFingerprintHash: input.deviceFingerprintHash,
+      email: verification.email,
+      emailNormalized: verification.emailNormalized,
+      installationId: input.installationId,
+      ipAddress: input.ipAddress,
+      licenseId: verification.licenseId,
+      redeemCodeId: input.redeemCodeId,
+      tokenAmount: verification.tokenAmount,
+    },
+    select: {
+      deviceFingerprintHash: true,
+      id: true,
+      installationId: true,
+      ipAddress: true,
+    },
+  });
+
+  await createFreeTrialIdentitySignals(tx, {
+    claimId: claim.id,
+    signals: identitySignals,
+  });
+  await tx.tokenLedger.create({
+    data: {
+      deltaTokens: verification.tokenAmount,
+      description: 'Free trial credit',
+      idempotencyKey: `free-trial-verification:${verification.id}`,
+      licenseId: verification.licenseId,
+      metadata: {
+        deviceFingerprintHash: input.deviceFingerprintHash,
+        email: verification.email,
+        emailNormalized: verification.emailNormalized,
+        grantedAt: input.now.toISOString(),
+        installationId: input.installationId,
+        ...(input.ipAddress ? { ipAddress: input.ipAddress } : {}),
+        source: 'free_trial',
+        verificationId: verification.id,
+      } satisfies Prisma.InputJsonObject,
+      redeemCodeId: input.redeemCodeId,
+      status: 'posted',
+      type: 'redeem_credit',
+    },
+  });
+  const consumedVerification = await tx.freeTrialVerification.updateMany({
+    where: {
+      canceledAt: null,
+      consumedAt: null,
+      id: verification.id,
+      redeemCodeId: input.redeemCodeId,
+    },
+    data: {
+      consumedAt: input.now,
+    },
+  });
+
+  if (consumedVerification.count !== 1) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress: input.ipAddress,
+      now: input.now,
+    });
+  }
+
+  return claim;
+}
+
+export function assertFreeTrialVerificationRedeemable(input: {
+  deviceFingerprintHash?: string | null;
+  installationId: string;
+  ipAddress: string | null;
+  licenseId: string;
+  now: Date;
+  redeemCodeId: string;
+  verification: {
+    canceledAt: Date | null;
+    consumedAt: Date | null;
+    deviceFingerprintHash: string;
+    expiresAt: Date;
+    installationId: string;
+    licenseId: string;
+    redeemCodeId: string;
+  };
+}) {
+  const { verification } = input;
+
+  if (
+    !input.deviceFingerprintHash ||
+    verification.canceledAt ||
+    verification.consumedAt ||
+    verification.expiresAt <= input.now ||
+    verification.installationId !== input.installationId ||
+    verification.deviceFingerprintHash !== input.deviceFingerprintHash ||
+    verification.licenseId !== input.licenseId ||
+    verification.redeemCodeId !== input.redeemCodeId
+  ) {
+    throwFreeTrialIdentityUnavailable({
+      ipAddress: input.ipAddress,
+      now: input.now,
+    });
+  }
+}
+
+export function assertFreeTrialDeliveryCompatible(input: {
+  appBuild?: string | null;
+  deliveryMode: string;
+}) {
+  if (
+    input.deliveryMode === 'email_code' &&
+    !supportsFreeTrialEmailCodeDelivery(input.appBuild)
+  ) {
+    throw new FreeTrialActivationError(
+      'client_update_required',
+      426,
+      'Update the app to continue email verification.'
+    );
+  }
+}
+
+function supportsFreeTrialEmailCodeDelivery(appBuild?: string | null) {
+  const normalized = appBuild?.trim();
+
+  if (!normalized || !/^\d+$/.test(normalized)) {
+    return false;
+  }
+
+  return Number(normalized) >= FREE_TRIAL_EMAIL_CODE_MIN_APP_BUILD;
+}
+
+export async function acquireFreeTrialIdentityLocks(
+  tx: FreeTrialIdentityLockClient,
+  input: {
+    deviceFingerprintHash?: string | null;
+    emailNormalized?: string | null;
+    installationId?: string | null;
+    ipAddress?: string | null;
+  }
+) {
+  if (!tx.$queryRaw) {
+    return;
+  }
+
+  const lockKeys = [
+    input.deviceFingerprintHash
+      ? `device:${input.deviceFingerprintHash.trim().toLowerCase()}`
+      : null,
+    input.emailNormalized
+      ? `email:${input.emailNormalized.trim().toLowerCase()}`
+      : null,
+    input.installationId ? `installation:${input.installationId.trim()}` : null,
+    input.ipAddress ? `ip:${input.ipAddress}` : null,
+  ]
+    .filter((value): value is string => Boolean(value))
+    .sort();
+
+  for (const lockKey of lockKeys) {
+    await tx.$queryRaw`
+      WITH lock AS (
+        SELECT pg_advisory_xact_lock(
+          ${FREE_TRIAL_IDENTITY_LOCK_NAMESPACE}::integer,
+          hashtext(${lockKey})::integer
+        )
+      )
+      SELECT true AS "locked"
+      FROM lock
+    `;
   }
 }
 
@@ -385,4 +734,28 @@ function isPrismaUniqueConstraintError(error: unknown) {
     error instanceof Prisma.PrismaClientKnownRequestError &&
     error.code === 'P2002'
   );
+}
+
+function getFreeTrialVerificationExpiry(now: Date) {
+  return new Date(now.getTime() + FREE_TRIAL_VERIFICATION_TTL_MS);
+}
+
+function buildFreeTrialRedeemMetadata(input: {
+  deviceFingerprintHash: string;
+  email: string;
+  emailNormalized: string;
+  installationId: string;
+  ipAddress: string | null;
+  tokenAmount: number;
+}) {
+  return {
+    deviceFingerprintHash: input.deviceFingerprintHash,
+    email: input.email,
+    emailNormalized: input.emailNormalized,
+    installationId: input.installationId,
+    ...(input.ipAddress ? { ipAddress: input.ipAddress } : {}),
+    source: 'free_trial',
+    tokenAmount: input.tokenAmount,
+    verification: 'pending',
+  } satisfies Prisma.InputJsonObject;
 }

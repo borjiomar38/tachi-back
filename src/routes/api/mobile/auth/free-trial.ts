@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { waitUntil } from '@vercel/functions';
 
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
@@ -13,9 +12,9 @@ import {
   isFreeTrialActivationError,
 } from '@/server/licenses/free-trial';
 import { sendFreeTrialRedeemCodeEmail } from '@/server/licenses/free-trial-email';
-import { reviewFreeTrialEmailRisk } from '@/server/licenses/free-trial-email-risk';
+import { scheduleFreeTrialEmailRiskReview } from '@/server/licenses/free-trial-email-risk-schedule';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
-import { redeemLicenseToDevice } from '@/server/licenses/redeem';
+import { redeemLicenseToDeviceWithContext } from '@/server/licenses/redeem';
 import { getClientIp } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 import {
@@ -155,10 +154,6 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
               );
             }
 
-            scheduleEmailRiskReview({
-              claimId: trial.claimId,
-              enabled: trial.emailRiskReviewEnabled,
-            });
             routeLog.info({
               clientIp,
               email: maskEmailForLog(parsedInput.data.email),
@@ -178,7 +173,7 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
             });
           }
 
-          const activation = await redeemLicenseToDevice(
+          const redemption = await redeemLicenseToDeviceWithContext(
             {
               ...parsedInput.data,
               redeemCode: trial.redeemCode,
@@ -187,6 +182,8 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
               clientIp,
             }
           );
+          const { activation } = redemption;
+          scheduleFreeTrialEmailRiskReview(redemption.freeTrialClaimId);
           const auth = await createMobileSession(
             {
               appBuild: parsedInput.data.appBuild,
@@ -211,11 +208,6 @@ export const Route = createFileRoute('/api/mobile/auth/free-trial')({
             message: 'Mobile free trial activation succeeded',
             redeemCode: maskRedeemCodeForLog(activation.redeemCode.code),
             type: 'free_trial_activation_success',
-          });
-
-          scheduleEmailRiskReview({
-            claimId: trial.claimId,
-            enabled: trial.emailRiskReviewEnabled,
           });
 
           return Response.json({
@@ -361,21 +353,4 @@ function maskRedeemCodeForLog(code: string) {
   }
 
   return `${normalized.slice(0, 6)}...${normalized.slice(-4)}`;
-}
-
-function scheduleEmailRiskReview(input: { claimId: string; enabled: boolean }) {
-  if (!input.enabled) {
-    return;
-  }
-
-  waitUntil(
-    reviewFreeTrialEmailRisk({ claimId: input.claimId }).catch((error) => {
-      logger.error({
-        claimId: input.claimId,
-        errorMessage: error instanceof Error ? error.message : 'Unknown error',
-        message: 'Asynchronous free trial email review failed',
-        type: 'free_trial_email_review_error',
-      });
-    })
-  );
 }

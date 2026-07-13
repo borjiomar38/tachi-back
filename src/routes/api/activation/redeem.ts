@@ -6,10 +6,11 @@ import {
   buildFreeAccessIpBlockedErrorBody,
   isFreeAccessIpBlockedError,
 } from '@/server/licenses/free-access-ip-block';
+import { scheduleFreeTrialEmailRiskReview } from '@/server/licenses/free-trial-email-risk-schedule';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import {
   isRedeemActivationError,
-  redeemLicenseToDevice,
+  redeemLicenseToDeviceWithContext,
 } from '@/server/licenses/redeem';
 import { zRedeemActivationInput } from '@/server/licenses/schema';
 import { getClientIp } from '@/server/licenses/utils';
@@ -78,12 +79,16 @@ export const Route = createFileRoute('/api/activation/redeem')({
         }
 
         try {
-          const result = await redeemLicenseToDevice(parsedInput.data, {
-            clientIp,
-          });
+          const result = await redeemLicenseToDeviceWithContext(
+            parsedInput.data,
+            {
+              clientIp,
+            }
+          );
+          scheduleFreeTrialEmailRiskReview(result.freeTrialClaimId);
 
           return Response.json({
-            data: result,
+            data: result.activation,
             ok: true,
           });
         } catch (error) {

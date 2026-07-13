@@ -6,8 +6,9 @@ import {
   buildFreeAccessIpBlockedErrorBody,
   isFreeAccessIpBlockedError,
 } from '@/server/licenses/free-access-ip-block';
+import { scheduleFreeTrialEmailRiskReview } from '@/server/licenses/free-trial-email-risk-schedule';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
-import { redeemLicenseToDevice } from '@/server/licenses/redeem';
+import { redeemLicenseToDeviceWithContext } from '@/server/licenses/redeem';
 import { getClientIp } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 import {
@@ -94,10 +95,15 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
         }
 
         try {
-          const activation = await redeemLicenseToDevice(parsedInput.data, {
-            clientIp,
-            userAgent,
-          });
+          const redemption = await redeemLicenseToDeviceWithContext(
+            parsedInput.data,
+            {
+              clientIp,
+              userAgent,
+            }
+          );
+          const { activation } = redemption;
+          scheduleFreeTrialEmailRiskReview(redemption.freeTrialClaimId);
           const auth = await createMobileSession(
             {
               appBuild: parsedInput.data.appBuild,

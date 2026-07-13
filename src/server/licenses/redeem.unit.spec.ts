@@ -18,7 +18,10 @@ vi.mock('@/server/logger', () => ({
   logger: mockLogger,
 }));
 
-import { redeemLicenseToDevice } from '@/server/licenses/redeem';
+import {
+  redeemLicenseToDevice,
+  redeemLicenseToDeviceWithContext,
+} from '@/server/licenses/redeem';
 
 describe('license redeem activation', () => {
   beforeEach(() => {
@@ -139,6 +142,255 @@ describe('license redeem activation', () => {
       })
     );
     expect(mockLogger.info).toHaveBeenCalledOnce();
+  });
+
+  it('claims a pending free trial and grants tokens only when its code is redeemed', async () => {
+    const now = new Date('2026-03-19T21:05:00.000Z');
+    const deviceFingerprintHash =
+      '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef';
+    const tx = {
+      appConfig: {
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      device: {
+        create: vi.fn().mockResolvedValue({
+          appBuild: '100',
+          appVersion: '1.0.0',
+          id: 'device-1',
+          installationId: 'install-1234567890abcd',
+          lastSeenAt: now,
+          locale: 'en',
+          platform: 'android',
+          status: 'active',
+        }),
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      freeTrialClaim: {
+        create: vi.fn().mockResolvedValue({
+          deviceFingerprintHash,
+          id: 'claim-1',
+          installationId: 'install-1234567890abcd',
+          ipAddress: '203.0.113.10',
+        }),
+        findFirst: vi.fn().mockResolvedValue(null),
+      },
+      freeTrialIdentity: {
+        createMany: vi.fn().mockResolvedValue({ count: 4 }),
+        findFirst: vi.fn().mockResolvedValue(null),
+      },
+      freeTrialVerification: {
+        updateMany: vi.fn().mockResolvedValue({ count: 1 }),
+      },
+      license: {
+        update: vi.fn().mockResolvedValue({
+          activatedAt: now,
+          deviceLimit: 1,
+          id: 'license-free',
+          key: 'license-key-free',
+          status: 'active',
+        }),
+      },
+      licenseDevice: {
+        count: vi.fn().mockResolvedValue(1),
+        create: vi.fn().mockResolvedValue({
+          boundAt: now,
+          id: 'binding-1',
+        }),
+        findUnique: vi.fn().mockResolvedValue(null),
+      },
+      redeemActivation: {
+        upsert: vi.fn().mockResolvedValue({ id: 'activation-1' }),
+      },
+      redeemCode: {
+        findUnique: vi.fn().mockResolvedValue({
+          code: 'TB-FREE-1111-2222',
+          createdAt: new Date('2026-03-19T21:00:00.000Z'),
+          expiresAt: new Date('2026-03-19T21:30:00.000Z'),
+          freeTrialClaim: null,
+          freeTrialVerification: {
+            canceledAt: null,
+            consumedAt: null,
+            deviceFingerprintHash,
+            deliveryMode: 'email_code',
+            email: 'reader@example.com',
+            emailNormalized: 'reader@example.com',
+            expiresAt: new Date('2026-03-19T21:30:00.000Z'),
+            id: 'verification-1',
+            installationId: 'install-1234567890abcd',
+            licenseId: 'license-free',
+            redeemCodeId: 'redeem-free',
+            tokenAmount: 25,
+          },
+          id: 'redeem-free',
+          license: {
+            activatedAt: null,
+            deviceLimit: 1,
+            id: 'license-free',
+            key: 'license-key-free',
+            status: 'pending',
+          },
+          metadata: {
+            source: 'free_trial',
+          },
+          redeemedAt: null,
+          redeemedByDevice: null,
+          redeemedByDeviceId: null,
+          status: 'available',
+        }),
+        update: vi.fn().mockResolvedValue({
+          code: 'TB-FREE-1111-2222',
+          redeemedAt: now,
+          status: 'redeemed',
+        }),
+      },
+      tokenLedger: {
+        aggregate: vi.fn().mockResolvedValue({
+          _sum: {
+            deltaTokens: 25,
+          },
+        }),
+        create: vi.fn().mockResolvedValue({ id: 'ledger-1' }),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    const result = await redeemLicenseToDeviceWithContext(
+      {
+        appBuild: '100',
+        appVersion: '1.0.0',
+        deviceFingerprintHash,
+        installationId: 'install-1234567890abcd',
+        locale: 'en',
+        platform: 'android',
+        redeemCode: 'TB-FREE-1111-2222',
+      },
+      {
+        clientIp: '203.0.113.10',
+        dbClient: mockDb as never,
+        log: mockLogger,
+        now,
+      }
+    );
+
+    expect(result.freeTrialClaimId).toBe('claim-1');
+    expect(result.activation.license.availableTokens).toBe(25);
+    expect(tx.freeTrialClaim.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          emailNormalized: 'reader@example.com',
+          installationId: 'install-1234567890abcd',
+          tokenAmount: 25,
+        }),
+      })
+    );
+    expect(tx.tokenLedger.create).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          deltaTokens: 25,
+          idempotencyKey: 'free-trial-verification:verification-1',
+          status: 'posted',
+        }),
+      })
+    );
+    expect(tx.freeTrialVerification.updateMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: { consumedAt: now },
+      })
+    );
+    expect(tx.redeemCode.update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        data: expect.objectContaining({
+          expiresAt: null,
+          status: 'redeemed',
+        }),
+      })
+    );
+  });
+
+  it('rejects an old code when email correction wins before the redeem lock', async () => {
+    const now = new Date('2026-03-19T21:05:00.000Z');
+    const deviceFingerprintHash =
+      '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef';
+    const pendingCode = {
+      code: 'TB-FREE-OLD1-2222',
+      createdAt: new Date('2026-03-19T21:00:00.000Z'),
+      expiresAt: new Date('2026-03-19T21:30:00.000Z'),
+      freeTrialClaim: null,
+      freeTrialVerification: {
+        canceledAt: null,
+        consumedAt: null,
+        deviceFingerprintHash,
+        deliveryMode: 'email_code',
+        email: 'wrong@example.com',
+        emailNormalized: 'wrong@example.com',
+        expiresAt: new Date('2026-03-19T21:30:00.000Z'),
+        id: 'verification-1',
+        installationId: 'install-1234567890abcd',
+        licenseId: 'license-free',
+        redeemCodeId: 'redeem-old',
+        tokenAmount: 25,
+      },
+      id: 'redeem-old',
+      license: {
+        activatedAt: null,
+        deviceLimit: 1,
+        id: 'license-free',
+        key: 'license-key-free',
+        status: 'pending',
+      },
+      metadata: { source: 'free_trial' },
+      redeemedAt: null,
+      redeemedByDevice: null,
+      redeemedByDeviceId: null,
+      status: 'available',
+    };
+    const tx = {
+      device: {
+        findUnique: vi.fn(),
+      },
+      freeTrialClaim: {
+        create: vi.fn(),
+      },
+      redeemCode: {
+        findUnique: vi
+          .fn()
+          .mockResolvedValueOnce(pendingCode)
+          .mockResolvedValueOnce({
+            ...pendingCode,
+            freeTrialVerification: null,
+            status: 'canceled',
+          }),
+      },
+      tokenLedger: {
+        create: vi.fn(),
+      },
+    };
+
+    mockDb.$transaction.mockImplementation((callback) => callback(tx));
+
+    await expect(
+      redeemLicenseToDevice(
+        {
+          deviceFingerprintHash,
+          installationId: 'install-1234567890abcd',
+          platform: 'android',
+          redeemCode: 'TB-FREE-OLD1-2222',
+        },
+        {
+          clientIp: '203.0.113.10',
+          dbClient: mockDb as never,
+          log: mockLogger,
+          now,
+        }
+      )
+    ).rejects.toMatchObject({
+      code: 'redeem_code_unavailable',
+      statusCode: 409,
+    });
+    expect(tx.freeTrialClaim.create).not.toHaveBeenCalled();
+    expect(tx.tokenLedger.create).not.toHaveBeenCalled();
+    expect(tx.device.findUnique).not.toHaveBeenCalled();
   });
 
   it('treats a retry from the same installation as idempotent', async () => {

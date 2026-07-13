@@ -1,9 +1,15 @@
 import { db } from '@/server/db';
+import { Prisma } from '@/server/db/generated/client';
 import {
   FreeAccessIpBlockedError,
   getFreeAccessIpBlock,
   normalizeFreeAccessIpAddress,
 } from '@/server/licenses/free-access-ip-block';
+import {
+  acquireFreeTrialIdentityLocks,
+  assertFreeTrialVerificationRedeemable,
+  claimFreeTrialVerification,
+} from '@/server/licenses/free-trial';
 import {
   buildFreeTrialIdentitySignals,
   ensureFreeTrialClaimDeviceFingerprint,
@@ -18,6 +24,56 @@ import {
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { mergeJsonObject, normalizeRedeemCode } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
+
+const redeemCodeActivationSelect = {
+  code: true,
+  createdAt: true,
+  expiresAt: true,
+  freeTrialClaim: {
+    select: {
+      deviceFingerprintHash: true,
+      id: true,
+      installationId: true,
+      ipAddress: true,
+    },
+  },
+  freeTrialVerification: {
+    select: {
+      canceledAt: true,
+      consumedAt: true,
+      deviceFingerprintHash: true,
+      email: true,
+      emailNormalized: true,
+      expiresAt: true,
+      id: true,
+      installationId: true,
+      licenseId: true,
+      redeemCodeId: true,
+      tokenAmount: true,
+    },
+  },
+  id: true,
+  license: {
+    select: {
+      activatedAt: true,
+      deviceLimit: true,
+      id: true,
+      key: true,
+      status: true,
+    },
+  },
+  metadata: true,
+  redeemedAt: true,
+  redeemedByDevice: {
+    select: {
+      id: true,
+      installationId: true,
+      status: true,
+    },
+  },
+  redeemedByDeviceId: true,
+  status: true,
+} satisfies Prisma.RedeemCodeSelect;
 
 export class RedeemActivationError extends Error {
   constructor(
@@ -35,15 +91,25 @@ export class RedeemActivationError extends Error {
   }
 }
 
+type RedeemLicenseToDeviceDeps = {
+  clientIp?: string | null;
+  dbClient?: typeof db;
+  log?: Pick<typeof logger, 'info' | 'warn'>;
+  now?: Date;
+  userAgent?: string | null;
+};
+
 export async function redeemLicenseToDevice(
   rawInput: unknown,
-  deps: {
-    clientIp?: string | null;
-    dbClient?: typeof db;
-    log?: Pick<typeof logger, 'info' | 'warn'>;
-    now?: Date;
-    userAgent?: string | null;
-  } = {}
+  deps: RedeemLicenseToDeviceDeps = {}
+) {
+  const result = await redeemLicenseToDeviceWithContext(rawInput, deps);
+  return result.activation;
+}
+
+export async function redeemLicenseToDeviceWithContext(
+  rawInput: unknown,
+  deps: RedeemLicenseToDeviceDeps = {}
 ) {
   const input = zRedeemActivationInput.parse(rawInput);
   const dbClient = deps.dbClient ?? db;
@@ -52,75 +118,71 @@ export async function redeemLicenseToDevice(
   const deviceFingerprintHash = input.deviceFingerprintHash?.trim();
   const normalizedCode = normalizeRedeemCode(input.redeemCode);
   const clientIp = normalizeFreeAccessIpAddress(deps.clientIp);
-  const freeTrialIdentitySignals = buildFreeTrialIdentitySignals({
-    deviceFingerprintHash,
-    installationId: input.installationId,
-    ipAddress: clientIp,
-  });
-
   const result = await dbClient.$transaction(
     async (tx) => {
-      const redeemCode = await tx.redeemCode.findUnique({
+      let redeemCode = await tx.redeemCode.findUnique({
         where: { code: normalizedCode },
-        select: {
-          code: true,
-          createdAt: true,
-          expiresAt: true,
-          freeTrialClaim: {
-            select: {
-              deviceFingerprintHash: true,
-              id: true,
-              installationId: true,
-              ipAddress: true,
-            },
-          },
-          id: true,
-          metadata: true,
-          redeemedAt: true,
-          redeemedByDevice: {
-            select: {
-              id: true,
-              installationId: true,
-              status: true,
-            },
-          },
-          redeemedByDeviceId: true,
-          status: true,
-          license: {
-            select: {
-              activatedAt: true,
-              deviceLimit: true,
-              id: true,
-              key: true,
-              status: true,
-            },
-          },
-        },
+        select: redeemCodeActivationSelect,
       });
 
       if (!redeemCode) {
         throw new RedeemActivationError('invalid_redeem_code', 404);
       }
 
-      if (
-        redeemCode.status === 'expired' ||
-        redeemCode.status === 'canceled' ||
-        (redeemCode.expiresAt && redeemCode.expiresAt <= now)
-      ) {
-        throw new RedeemActivationError('redeem_code_unavailable', 409);
-      }
-
-      if (
-        redeemCode.license.status === 'revoked' ||
-        redeemCode.license.status === 'expired' ||
-        redeemCode.license.status === 'suspended'
-      ) {
-        throw new RedeemActivationError('license_unavailable', 409);
-      }
+      assertRedeemCodeAvailableForActivation(redeemCode, now);
 
       const isFreeTrialCode = isFreeTrialRedeemCode(redeemCode.metadata);
+      let freeTrialClaim = redeemCode.freeTrialClaim;
 
       if (isFreeTrialCode) {
+        const initialVerification = redeemCode.freeTrialVerification;
+
+        if (!freeTrialClaim && !initialVerification) {
+          throw new RedeemActivationError('redeem_code_unavailable', 409);
+        }
+
+        await acquireFreeTrialIdentityLocks(tx, {
+          deviceFingerprintHash,
+          emailNormalized: initialVerification?.emailNormalized,
+          installationId: input.installationId,
+          ipAddress: clientIp,
+        });
+
+        const refreshedRedeemCode = await tx.redeemCode.findUnique({
+          where: { id: redeemCode.id },
+          select: redeemCodeActivationSelect,
+        });
+
+        if (!refreshedRedeemCode) {
+          throw new RedeemActivationError('invalid_redeem_code', 404);
+        }
+
+        redeemCode = refreshedRedeemCode;
+        freeTrialClaim = redeemCode.freeTrialClaim;
+        const verification = redeemCode.freeTrialVerification;
+
+        assertRedeemCodeAvailableForActivation(redeemCode, now);
+
+        if (!isFreeTrialRedeemCode(redeemCode.metadata)) {
+          throw new RedeemActivationError('redeem_code_unavailable', 409);
+        }
+
+        if (!freeTrialClaim && !verification) {
+          throw new RedeemActivationError('redeem_code_unavailable', 409);
+        }
+
+        if (!freeTrialClaim && verification) {
+          assertFreeTrialVerificationRedeemable({
+            deviceFingerprintHash,
+            installationId: input.installationId,
+            ipAddress: clientIp,
+            licenseId: redeemCode.license.id,
+            now,
+            redeemCodeId: redeemCode.id,
+            verification,
+          });
+        }
+
         const freeAccessIpBlock = await getFreeAccessIpBlock(clientIp, {
           dbClient: tx as unknown as typeof db,
         });
@@ -137,8 +199,8 @@ export async function redeemLicenseToDevice(
         }
 
         if (
-          redeemCode.freeTrialClaim &&
-          redeemCode.freeTrialClaim.installationId !== input.installationId
+          freeTrialClaim &&
+          freeTrialClaim.installationId !== input.installationId
         ) {
           throwFreeTrialIdentityUnavailable({
             ipAddress: clientIp,
@@ -146,18 +208,18 @@ export async function redeemLicenseToDevice(
           });
         }
 
-        if (!redeemCode.freeTrialClaim) {
-          throwFreeTrialIdentityUnavailable({
-            ipAddress: clientIp,
-            now,
-          });
-        }
+        const freeTrialIdentitySignals = buildFreeTrialIdentitySignals({
+          deviceFingerprintHash,
+          emailNormalized: verification?.emailNormalized,
+          installationId: input.installationId,
+          ipAddress: clientIp,
+        });
 
-        const persistedIdentityConflict = redeemCode.freeTrialClaim
+        const persistedIdentityConflict = freeTrialClaim
           ? await findFreeTrialIdentityConflict(tx, freeTrialIdentitySignals, {
-              excludeClaimId: redeemCode.freeTrialClaim.id,
+              excludeClaimId: freeTrialClaim.id,
             })
-          : null;
+          : await findFreeTrialIdentityConflict(tx, freeTrialIdentitySignals);
 
         if (persistedIdentityConflict) {
           throwFreeTrialIdentityUnavailable({
@@ -169,6 +231,9 @@ export async function redeemLicenseToDevice(
         const freeTrialIdentityConflict = await tx.freeTrialClaim.findFirst({
           where: {
             OR: [
+              ...(verification
+                ? [{ emailNormalized: verification.emailNormalized }]
+                : []),
               { installationId: input.installationId },
               ...(clientIp ? [{ ipAddress: clientIp }] : []),
               ...(deviceFingerprintHash ? [{ deviceFingerprintHash }] : []),
@@ -189,20 +254,29 @@ export async function redeemLicenseToDevice(
           });
         }
 
-        if (redeemCode.freeTrialClaim) {
+        if (freeTrialClaim) {
           await ensureFreeTrialClaimDeviceFingerprint(tx, {
-            claimId: redeemCode.freeTrialClaim.id,
-            currentDeviceFingerprintHash:
-              redeemCode.freeTrialClaim.deviceFingerprintHash,
+            claimId: freeTrialClaim.id,
+            currentDeviceFingerprintHash: freeTrialClaim.deviceFingerprintHash,
             deviceFingerprintHash,
             ipAddress: clientIp,
             now,
           });
           await ensureFreeTrialIdentitySignals(tx, {
-            claimId: redeemCode.freeTrialClaim.id,
+            claimId: freeTrialClaim.id,
             ipAddress: clientIp,
             now,
             signals: freeTrialIdentitySignals,
+          });
+        } else if (verification && deviceFingerprintHash) {
+          freeTrialClaim = await claimFreeTrialVerification(tx, {
+            deviceFingerprintHash,
+            installationId: input.installationId,
+            ipAddress: clientIp,
+            licenseId: redeemCode.license.id,
+            now,
+            redeemCodeId: redeemCode.id,
+            verification,
           });
         }
       }
@@ -370,6 +444,7 @@ export async function redeemLicenseToDevice(
       const updatedRedeemCode = await tx.redeemCode.update({
         where: { id: redeemCode.id },
         data: {
+          expiresAt: isFreeTrialCode ? null : undefined,
           metadata: mergeJsonObject(redeemCode.metadata, {
             buildChannel: input.buildChannel,
             integrityVerdict: input.integrityVerdict,
@@ -484,6 +559,7 @@ export async function redeemLicenseToDevice(
           availableTokens: tokenBalance,
         },
         redeemCode: updatedRedeemCode,
+        freeTrialClaimId: freeTrialClaim?.id ?? null,
       };
     },
     {
@@ -500,7 +576,10 @@ export async function redeemLicenseToDevice(
     scope: 'activation',
   });
 
-  return zRedeemActivationResponse.parse(result);
+  return {
+    activation: zRedeemActivationResponse.parse(result),
+    freeTrialClaimId: result.freeTrialClaimId,
+  };
 }
 
 export function isRedeemActivationError(
@@ -517,6 +596,33 @@ function isFreeTrialRedeemCode(metadata: unknown) {
     'source' in metadata &&
     metadata.source === 'free_trial'
   );
+}
+
+function assertRedeemCodeAvailableForActivation(
+  redeemCode: {
+    expiresAt: Date | null;
+    license: {
+      status: string;
+    };
+    status: string;
+  },
+  now: Date
+) {
+  if (
+    redeemCode.status === 'expired' ||
+    redeemCode.status === 'canceled' ||
+    (redeemCode.expiresAt && redeemCode.expiresAt <= now)
+  ) {
+    throw new RedeemActivationError('redeem_code_unavailable', 409);
+  }
+
+  if (
+    redeemCode.license.status === 'revoked' ||
+    redeemCode.license.status === 'expired' ||
+    redeemCode.license.status === 'suspended'
+  ) {
+    throw new RedeemActivationError('license_unavailable', 409);
+  }
 }
 
 function maskRedeemCodeForLog(code: string) {

@@ -247,15 +247,16 @@ model License {
   activatedAt    DateTime?
   revokedAt      DateTime?
 
-  devices           LicenseDevice[]
-  redeemCodes       RedeemCode[]
-  redeemActivations RedeemActivation[]
-  orders            Order[]
-  ledgerEntries     TokenLedger[]
-  mobileSessions    MobileSession[]
-  jobs              TranslationJob[]
-  freeTrialClaim    FreeTrialClaim?
-  ratingFeedback    TranslationRatingFeedback[]
+  devices               LicenseDevice[]
+  redeemCodes           RedeemCode[]
+  redeemActivations     RedeemActivation[]
+  orders                Order[]
+  ledgerEntries         TokenLedger[]
+  mobileSessions        MobileSession[]
+  jobs                  TranslationJob[]
+  freeTrialClaim        FreeTrialClaim?
+  freeTrialVerification FreeTrialVerification?
+  ratingFeedback        TranslationRatingFeedback[]
 
   @@index([status, createdAt])
   @@index([ownerEmail])
@@ -322,14 +323,16 @@ model RedeemCode {
   createdAt          DateTime         @default(now())
   updatedAt          DateTime         @updatedAt
 
-  license          License            @relation(fields: [licenseId], references: [id], onDelete: Cascade)
-  order            Order?             @relation(fields: [orderId], references: [id], onDelete: SetNull)
-  createdByUser    User?              @relation("RedeemCodeCreatedByUser", fields: [createdByUserId], references: [id], onDelete: SetNull)
-  redeemedByDevice Device?            @relation(fields: [redeemedByDeviceId], references: [id], onDelete: SetNull)
-  ledgerEntries    TokenLedger[]
-  freeTrialClaim   FreeTrialClaim?
-  activations      RedeemActivation[]
+  license               License                @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  order                 Order?                 @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  createdByUser         User?                  @relation("RedeemCodeCreatedByUser", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  redeemedByDevice      Device?                @relation(fields: [redeemedByDeviceId], references: [id], onDelete: SetNull)
+  ledgerEntries         TokenLedger[]
+  freeTrialClaim        FreeTrialClaim?
+  freeTrialVerification FreeTrialVerification?
+  activations           RedeemActivation[]
 
+  @@unique([id, licenseId])
   @@index([licenseId, status])
   @@index([orderId])
   @@index([redeemedByDeviceId])
@@ -386,6 +389,32 @@ model FreeTrialClaim {
 
   @@index([createdAt])
   @@map("free_trial_claims")
+}
+
+model FreeTrialVerification {
+  id                    String    @id @default(cuid())
+  email                 String
+  emailNormalized       String
+  installationId        String    @unique
+  ipAddress             String?
+  deviceFingerprintHash String    @unique
+  licenseId             String    @unique
+  redeemCodeId          String    @unique
+  tokenAmount           Int       @default(25)
+  deliveryMode          String
+  expiresAt             DateTime
+  consumedAt            DateTime?
+  canceledAt            DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  license    License    @relation(fields: [licenseId], references: [id], onDelete: Cascade)
+  redeemCode RedeemCode @relation(fields: [redeemCodeId, licenseId], references: [id, licenseId], onDelete: Cascade)
+
+  @@unique([redeemCodeId, licenseId])
+  @@index([emailNormalized, expiresAt])
+  @@index([expiresAt, consumedAt, canceledAt])
+  @@map("free_trial_verifications")
 }
 
 model FreeTrialIdentity {
