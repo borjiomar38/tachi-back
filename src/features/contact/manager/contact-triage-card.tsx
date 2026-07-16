@@ -2,6 +2,7 @@ import {
   BellOffIcon,
   BellRingIcon,
   Clock3Icon,
+  MailCheckIcon,
   ShieldAlertIcon,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
@@ -31,9 +32,11 @@ export const ContactTriageCard = ({
   const RoutingIcon =
     triage.notification === 'suppressed'
       ? BellOffIcon
-      : triage.notification === 'unknown'
-        ? ShieldAlertIcon
-        : BellRingIcon;
+      : triage.notification === 'replied'
+        ? MailCheckIcon
+        : triage.notification === 'unknown'
+          ? ShieldAlertIcon
+          : BellRingIcon;
 
   return (
     <Card
@@ -69,6 +72,42 @@ export const ContactTriageCard = ({
           </div>
         ) : null}
 
+        {triage.replyIntent && triage.replyIntent !== 'none' ? (
+          <div className="space-y-2 rounded-lg border border-positive-500/25 bg-positive-500/5 px-3 py-3 text-sm">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-2 font-medium">
+                <MailCheckIcon className="size-4 text-positive-600 dark:text-positive-300" />
+                {t('contact:triage.customerReply')}
+              </span>
+              <Badge variant="positive" size="sm">
+                {t(`contact:triage.replyIntent.${triage.replyIntent}`)}
+              </Badge>
+            </div>
+            {triage.replySubject ? (
+              <p className="text-xs leading-5 text-muted-foreground">
+                {t('contact:triage.replySubject', {
+                  subject: triage.replySubject,
+                })}
+              </p>
+            ) : null}
+            {triage.repliedAt ? (
+              <p className="text-xs text-muted-foreground">
+                {t('contact:triage.repliedAutomatically', {
+                  date: new Intl.DateTimeFormat(undefined, {
+                    dateStyle: 'short',
+                    timeStyle: 'short',
+                  }).format(triage.repliedAt),
+                })}
+              </p>
+            ) : null}
+            {triage.notification === 'replied' ? (
+              <p className="text-xs leading-5 text-muted-foreground">
+                {t('contact:triage.routing.replied')}
+              </p>
+            ) : null}
+          </div>
+        ) : null}
+
         <div className="flex flex-wrap items-center justify-between gap-2 border-y border-border/70 py-3 text-xs text-muted-foreground">
           <div className="inline-flex items-center gap-2">
             <Clock3Icon className="size-3.5" />
@@ -86,15 +125,17 @@ export const ContactTriageCard = ({
           </span>
         </div>
 
-        <div className="flex items-center justify-between gap-4 rounded-lg border border-border/70 bg-muted/20 px-3 py-3 text-sm">
-          <span className="inline-flex items-center gap-2 font-medium">
-            <RoutingIcon className="size-4 text-muted-foreground" />
-            {t('contact:triage.supportNotification')}
-          </span>
-          <span className="text-right text-muted-foreground">
-            {t(`contact:triage.routing.${triage.notification}`)}
-          </span>
-        </div>
+        {triage.notification !== 'replied' ? (
+          <div className="flex items-center justify-between gap-4 rounded-lg border border-border/70 bg-muted/20 px-3 py-3 text-sm">
+            <span className="inline-flex items-center gap-2 font-medium">
+              <RoutingIcon className="size-4 text-muted-foreground" />
+              {t('contact:triage.supportNotification')}
+            </span>
+            <span className="text-right text-muted-foreground">
+              {t(`contact:triage.routing.${triage.notification}`)}
+            </span>
+          </div>
+        ) : null}
 
         {actions}
       </CardContent>

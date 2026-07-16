@@ -93,18 +93,25 @@ const buildTriageWhere = (
             source('pending'),
             source('processing'),
             source('retry'),
+            source('customer_reply_sending'),
             source('notification_sending'),
           ],
         },
       },
       filtered: { source: source('ignored') },
       forwarded: {
-        internalNotes: { contains: '"classification":"actionable"' },
-        source: source('notified'),
+        OR: [
+          {
+            internalNotes: { contains: '"classification":"actionable"' },
+            source: source('notified'),
+          },
+          { source: source('customer_replied') },
+        ],
       },
       needs_review: {
         OR: [
           { source: source('failed') },
+          { source: source('customer_reply_unknown') },
           { source: source('notification_unknown') },
           {
             internalNotes: { contains: '"classification":"uncertain"' },
@@ -158,7 +165,7 @@ const getTriageCounts = (
       if (triage.state === 'delivery_unknown') counts.needsReview += 1;
       if (triage.state === 'filtered') counts.filtered += 1;
       if (
-        triage.state === 'forwarded' &&
+        ['forwarded', 'replied'].includes(triage.state) &&
         triage.classification === 'actionable'
       ) {
         counts.forwarded += 1;

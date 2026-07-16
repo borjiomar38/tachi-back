@@ -29,6 +29,7 @@ const stateVariants = {
   filtered: 'secondary',
   forwarded: 'positive',
   processing: 'brand',
+  replied: 'positive',
   retrying: 'warning',
 } as const;
 
@@ -39,6 +40,7 @@ const stateIcons = {
   filtered: ShieldAlertIcon,
   forwarded: CircleCheckIcon,
   processing: RefreshCwIcon,
+  replied: CircleCheckIcon,
   retrying: RefreshCwIcon,
 } as const;
 

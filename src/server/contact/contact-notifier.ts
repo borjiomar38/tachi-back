@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer';
+import { z } from 'zod';
 
 import { envServer } from '@/env/server';
+import type { ContactReplyDraft } from '@/server/contact/codex-reply';
 
 export interface ContactNotificationInput {
   classification: string;
@@ -17,6 +19,9 @@ const sanitizeHeader = (value: string) => value.replace(/[\r\n]+/g, ' ').trim();
 
 export const getContactNotificationId = (contactId: string) =>
   `contact-${contactId.replaceAll(/[^a-zA-Z0-9._-]/g, '-')}`;
+
+export const getContactReplyId = (contactId: string) =>
+  `contact-reply-${contactId.replaceAll(/[^a-zA-Z0-9._-]/g, '-')}`;
 
 export const sendContactNotification = async (
   input: ContactNotificationInput
@@ -35,4 +40,21 @@ export const sendContactNotification = async (
       input.message,
     ].join('\n'),
     to: envServer.SUPPORT_EMAIL,
+  });
+
+export interface ContactReplyEmailInput {
+  contactId: string;
+  draft: ContactReplyDraft;
+  email: string;
+}
+
+export const sendContactReply = async (input: ContactReplyEmailInput) =>
+  await transport.sendMail({
+    bcc: envServer.SUPPORT_EMAIL,
+    from: envServer.EMAIL_FROM,
+    messageId: `<${getContactReplyId(input.contactId)}@nayovi.com>`,
+    replyTo: envServer.SUPPORT_EMAIL,
+    subject: sanitizeHeader(input.draft.subject),
+    text: input.draft.text,
+    to: z.email().parse(input.email.trim()),
   });

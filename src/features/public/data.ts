@@ -20,7 +20,7 @@ export interface ContentBlock {
   description: string;
 }
 
-export const PUBLIC_SUPPORT_EMAIL = 'support@nayovi.com';
+export const PUBLIC_SUPPORT_EMAIL = 'contact@nayovi.com';
 export const PUBLIC_OWNER_WHATSAPP_DISPLAY = '+216 23 655 086';
 export const PUBLIC_OWNER_WHATSAPP_HREF =
   'https://wa.me/21623655086?text=Hello%20Nayovi%2C%20I%20need%20help%20with%20the%20app.';

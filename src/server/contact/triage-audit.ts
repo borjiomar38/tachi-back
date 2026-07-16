@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 import {
   CONTACT_TRIAGE_TAGS,
+  zContactReplyIntent,
   zContactTriageClassification,
 } from '@/server/contact/triage-policy';
 
@@ -23,6 +24,7 @@ export const zContactTriageState = z.enum([
   'delivery_unknown',
   'filtered',
   'forwarded',
+  'replied',
 ]);
 
 const zContactTriageAudit = z.object({
@@ -34,6 +36,11 @@ const zContactTriageAudit = z.object({
   notifiedAt: z.iso.datetime().optional(),
   processedAt: z.iso.datetime().optional(),
   reason: z.string().max(500).optional(),
+  repliedAt: z.iso.datetime().optional(),
+  replyAttemptedAt: z.iso.datetime().optional(),
+  replyId: z.string().max(200).optional(),
+  replyIntent: zContactReplyIntent.optional(),
+  replySubject: z.string().max(200).optional(),
   tags: z.array(z.enum(CONTACT_TRIAGE_TAGS)).optional(),
 });
 
@@ -51,6 +58,8 @@ export const canQueueContactReanalysis = (source: string) =>
   ![
     getContactTriageSource('notification_sending'),
     getContactTriageSource('notification_unknown'),
+    getContactTriageSource('customer_reply_sending'),
+    getContactTriageSource('customer_reply_unknown'),
   ].includes(source);
 
 export const getContactSourceOrigin = (source: string) =>
@@ -64,6 +73,9 @@ export const getContactTriageState = (source: string) => {
     : 'pending';
   const states = {
     failed: 'failed',
+    customer_replied: 'replied',
+    customer_reply_sending: 'processing',
+    customer_reply_unknown: 'delivery_unknown',
     ignored: 'filtered',
     notification_unknown: 'delivery_unknown',
     notification_sending: 'processing',
@@ -141,17 +153,22 @@ export const getContactTriageView = (
     classification: audit.classification ?? null,
     error: audit.error ?? null,
     notification:
-      state === 'forwarded'
-        ? ('forwarded' as const)
-        : state === 'filtered'
-          ? ('suppressed' as const)
-          : state === 'delivery_unknown'
-            ? ('unknown' as const)
-            : state === 'failed'
-              ? ('failed' as const)
-              : ('pending' as const),
+      state === 'replied'
+        ? ('replied' as const)
+        : state === 'forwarded'
+          ? ('forwarded' as const)
+          : state === 'filtered'
+            ? ('suppressed' as const)
+            : state === 'delivery_unknown'
+              ? ('unknown' as const)
+              : state === 'failed'
+                ? ('failed' as const)
+                : ('pending' as const),
     notifiedAt: audit.notifiedAt ? new Date(audit.notifiedAt) : null,
     reason: audit.reason ?? null,
+    repliedAt: audit.repliedAt ? new Date(audit.repliedAt) : null,
+    replyIntent: audit.replyIntent ?? null,
+    replySubject: audit.replySubject ?? null,
     state,
     tags: audit.tags ?? [],
   };

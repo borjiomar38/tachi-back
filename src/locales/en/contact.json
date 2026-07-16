@@ -15,8 +15,8 @@
       "awaitingDescription": "Queued or currently analyzing",
       "needsReview": "Needs review",
       "needsReviewDescription": "Uncertain or failed classifications",
-      "forwarded": "Forwarded",
-      "forwardedDescription": "Legitimate messages sent to support",
+      "forwarded": "Handled",
+      "forwardedDescription": "Legitimate messages forwarded or answered automatically",
       "filtered": "Filtered",
       "filteredDescription": "Spam, scams, or not useful"
     },
@@ -33,7 +33,7 @@
       "all": "All",
       "awaiting": "Awaiting",
       "needsReview": "Needs review",
-      "forwarded": "Forwarded",
+      "forwarded": "Handled",
       "filtered": "Spam & ignored"
     },
     "columns": {
@@ -66,7 +66,8 @@
       "failed": "Analysis failed",
       "delivery_unknown": "Check email delivery",
       "filtered": "Filtered",
-      "forwarded": "Forwarded"
+      "forwarded": "Forwarded",
+      "replied": "Customer replied"
     },
     "tags": {
       "spam": "Spam",
@@ -79,12 +80,21 @@
     "attempts": "{{count}} attempt",
     "attempts_other": "{{count}} attempts",
     "supportNotification": "Support notification",
+    "customerReply": "Automatic customer reply",
+    "replyIntent": {
+      "help": "App help",
+      "pricing": "Plans & pricing",
+      "help_and_pricing": "Help & pricing"
+    },
+    "replySubject": "Subject: {{subject}}",
+    "repliedAutomatically": "Sent automatically · {{date}}",
     "routing": {
       "pending": "Pending analysis",
       "suppressed": "Suppressed — obvious spam or not useful",
-      "forwarded": "Sent to support@nayovi.com",
+      "forwarded": "Sent to contact@nayovi.com",
+      "replied": "Personalized reply sent to the customer and copied to contact@nayovi.com",
       "failed": "Needs manual review",
-      "unknown": "Delivery uncertain — check the support inbox before any action"
+      "unknown": "Delivery uncertain — check contact@nayovi.com before any action"
     },
     "analyzeAgain": "Analyze again",
     "reanalyzeQueued": "Contact queued for automatic analysis",

@@ -15,8 +15,8 @@
       "awaitingDescription": "En file ou en cours d’analyse",
       "needsReview": "À vérifier",
       "needsReviewDescription": "Classifications incertaines ou échouées",
-      "forwarded": "Transmis",
-      "forwardedDescription": "Messages légitimes envoyés au support",
+      "forwarded": "Traités",
+      "forwardedDescription": "Messages légitimes transmis ou répondus automatiquement",
       "filtered": "Filtrés",
       "filteredDescription": "Spam, arnaques ou messages inutiles"
     },
@@ -33,7 +33,7 @@
       "all": "Tous",
       "awaiting": "En attente",
       "needsReview": "À vérifier",
-      "forwarded": "Transmis",
+      "forwarded": "Traités",
       "filtered": "Spam et ignorés"
     },
     "columns": {
@@ -66,7 +66,8 @@
       "failed": "Échec de l’analyse",
       "delivery_unknown": "Vérifier la livraison e-mail",
       "filtered": "Filtré",
-      "forwarded": "Transmis"
+      "forwarded": "Transmis",
+      "replied": "Réponse client envoyée"
     },
     "tags": {
       "spam": "Spam",
@@ -79,12 +80,21 @@
     "attempts": "{{count}} tentative",
     "attempts_other": "{{count}} tentatives",
     "supportNotification": "Notification du support",
+    "customerReply": "Réponse client automatique",
+    "replyIntent": {
+      "help": "Aide application",
+      "pricing": "Offres et prix",
+      "help_and_pricing": "Aide et prix"
+    },
+    "replySubject": "Objet : {{subject}}",
+    "repliedAutomatically": "Envoyée automatiquement · {{date}}",
     "routing": {
       "pending": "Analyse en attente",
       "suppressed": "Bloquée — spam évident ou message inutile",
-      "forwarded": "Envoyée à support@nayovi.com",
+      "forwarded": "Envoyée à contact@nayovi.com",
+      "replied": "Réponse personnalisée envoyée au client avec copie à contact@nayovi.com",
       "failed": "Vérification manuelle nécessaire",
-      "unknown": "Livraison incertaine — vérifier la boîte support avant toute action"
+      "unknown": "Livraison incertaine — vérifier contact@nayovi.com avant toute action"
     },
     "analyzeAgain": "Analyser à nouveau",
     "reanalyzeQueued": "Contact remis en file d’analyse automatique",
