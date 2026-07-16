@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   buildContactReplyPrompt,
   buildContactReplySubject,
+  isOfficialContactReplyUrl,
 } from '@/server/contact/codex-reply';
 
 describe('Codex contact reply prompt', () => {
@@ -30,5 +31,20 @@ describe('Codex contact reply prompt', () => {
   it('builds a safe reply subject without duplicating the reply prefix', () => {
     expect(buildContactReplySubject('Plans')).toBe('Re: Plans');
     expect(buildContactReplySubject('Re: Plans')).toBe('Re: Plans');
+  });
+
+  it('accepts only canonical official links with an optional trailing slash', () => {
+    expect(isOfficialContactReplyUrl('https://tachiyomiat.com/pricing/')).toBe(
+      true
+    );
+    expect(
+      isOfficialContactReplyUrl('https://tachiyomiat.com/how-it-works.')
+    ).toBe(true);
+    expect(
+      isOfficialContactReplyUrl('https://tachiyomiat.com/pricing?coupon=1')
+    ).toBe(false);
+    expect(
+      isOfficialContactReplyUrl('https://tachiyomiat.com.evil.example/pricing')
+    ).toBe(false);
   });
 });
