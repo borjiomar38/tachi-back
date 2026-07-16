@@ -11,6 +11,8 @@ export const getContactTriagePersistence = (result: ContactTriageResult) => {
         ? ('spam' as const)
         : result.classification === 'irrelevant'
           ? ('resolved' as const)
-          : undefined,
+          : decision.replyToCustomer
+            ? ('resolved' as const)
+            : undefined,
   };
 };

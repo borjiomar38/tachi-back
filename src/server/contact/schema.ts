@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { zContactTriageState } from '@/server/contact/triage-audit';
 import {
   CONTACT_TRIAGE_TAGS,
+  zContactReplyIntent,
   zContactTriageClassification,
 } from '@/server/contact/triage-policy';
 
@@ -29,11 +30,15 @@ export const zContactTriageView = z.object({
     'pending',
     'suppressed',
     'forwarded',
+    'replied',
     'failed',
     'unknown',
   ]),
   notifiedAt: z.date().nullish(),
   reason: z.string().nullish(),
+  repliedAt: z.date().nullish(),
+  replyIntent: zContactReplyIntent.nullish(),
+  replySubject: z.string().nullish(),
   state: zContactTriageState,
   tags: z.array(z.enum(CONTACT_TRIAGE_TAGS)),
 });

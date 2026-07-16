@@ -212,7 +212,9 @@ export const PageContact = ({ params }: PageContactProps) => {
                         <Button
                           className="w-full"
                           variant="secondary"
-                          disabled={item.triage.state === 'processing'}
+                          disabled={['processing', 'delivery_unknown'].includes(
+                            item.triage.state
+                          )}
                           loading={reanalyzeMutation.isPending}
                           onClick={() => reanalyzeMutation.mutate()}
                         >

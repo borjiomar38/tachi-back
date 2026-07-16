@@ -163,14 +163,14 @@ const buildStructuredData = (
           {
             '@type': 'ContactPoint',
             contactType: 'customer support',
-            email: 'support@nayovi.com',
+    email: 'contact@nayovi.com',
             url: buildAbsoluteUrl('/support'),
             availableLanguage: ['en', 'fr'],
           },
           {
             '@type': 'ContactPoint',
             contactType: 'partnerships and review access',
-            email: 'support@nayovi.com',
+    email: 'contact@nayovi.com',
             url: buildAbsoluteUrl('/guides/permission-safe-manga-translation-pilot'),
             availableLanguage: ['en', 'fr'],
           },

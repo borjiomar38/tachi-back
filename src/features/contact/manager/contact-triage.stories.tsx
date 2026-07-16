@@ -33,10 +33,13 @@ const actionableTriage = {
   attempts: 1,
   classification: 'actionable',
   error: null,
-  notification: 'forwarded',
-  notifiedAt: new Date('2026-07-16T11:02:05.000Z'),
-  reason: 'A legitimate reseller pricing question.',
-  state: 'forwarded',
+  notification: 'replied',
+  notifiedAt: null,
+  reason: 'A legitimate reader asking how to choose and buy a Nayovi plan.',
+  repliedAt: new Date('2026-07-16T11:02:05.000Z'),
+  replyIntent: 'pricing',
+  replySubject: 'Re: Which Nayovi plan should I choose?',
+  state: 'replied',
   tags: [],
 } satisfies ContactTriageView;
 
@@ -94,7 +97,7 @@ export const InboxAndDetail = () => {
               {t('contact:triage.analyzeAgain')}
             </Button>
           }
-          triage={maliciousTriage}
+          triage={actionableTriage}
         />
       </div>
     </div>

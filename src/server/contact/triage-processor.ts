@@ -1,10 +1,17 @@
 import { classifyContactWithCodex } from '@/server/contact/codex-classifier';
 import {
+  type ContactReplyDraft,
+  generateContactReplyWithCodex,
+} from '@/server/contact/codex-reply';
+import {
   getContactNotificationId,
+  getContactReplyId,
   sendContactNotification,
+  sendContactReply,
 } from '@/server/contact/contact-notifier';
 import {
   CONTACT_TRIAGE_CLAIMABLE_SOURCES,
+  type ContactTriageAudit,
   getContactTriageSource,
   parseContactTriageMetadata,
   writeContactTriageMetadata,
@@ -16,16 +23,27 @@ import { logger } from '@/server/logger';
 const MAX_ATTEMPTS = 5;
 const NOTIFICATION_STALE_AFTER_MS = 10 * 60 * 1000;
 
-export const quarantineStaleContactNotifications = async (now = new Date()) =>
-  await db.contactMessage.updateMany({
-    data: { source: getContactTriageSource('notification_unknown') },
-    where: {
-      source: getContactTriageSource('notification_sending'),
-      updatedAt: {
-        lt: new Date(now.getTime() - NOTIFICATION_STALE_AFTER_MS),
+export const quarantineStaleContactNotifications = async (now = new Date()) => {
+  const staleBefore = new Date(now.getTime() - NOTIFICATION_STALE_AFTER_MS);
+  const [notifications, customerReplies] = await Promise.all([
+    db.contactMessage.updateMany({
+      data: { source: getContactTriageSource('notification_unknown') },
+      where: {
+        source: getContactTriageSource('notification_sending'),
+        updatedAt: { lt: staleBefore },
       },
-    },
-  });
+    }),
+    db.contactMessage.updateMany({
+      data: { source: getContactTriageSource('customer_reply_unknown') },
+      where: {
+        source: getContactTriageSource('customer_reply_sending'),
+        updatedAt: { lt: staleBefore },
+      },
+    }),
+  ]);
+
+  return { count: notifications.count + customerReplies.count };
+};
 
 const findAndClaimContact = async (onlyId?: string) => {
   const contact = await db.contactMessage.findFirst({
@@ -61,6 +79,8 @@ const recordFailure = async (
   });
   const notificationOutcomeUnknown =
     current?.source === getContactTriageSource('notification_sending');
+  const replyOutcomeUnknown =
+    current?.source === getContactTriageSource('customer_reply_sending');
   const shouldStop = attempts >= MAX_ATTEMPTS;
 
   await db.contactMessage.update({
@@ -76,9 +96,11 @@ const recordFailure = async (
       source: getContactTriageSource(
         notificationOutcomeUnknown
           ? 'notification_unknown'
-          : shouldStop
-            ? 'failed'
-            : 'retry'
+          : replyOutcomeUnknown
+            ? 'customer_reply_unknown'
+            : shouldStop
+              ? 'failed'
+              : 'retry'
       ),
     },
     where: { id },
@@ -105,19 +127,23 @@ export const processNextContactTriage = async (onlyId?: string) => {
     });
     const persistence = getContactTriagePersistence(result);
     const now = new Date();
+    let replyDraft: ContactReplyDraft | undefined;
     const notificationAttemptedAt = persistence.decision.notifySupport
       ? now.toISOString()
       : undefined;
     const notificationId = persistence.decision.notifySupport
       ? getContactNotificationId(contact.id)
       : undefined;
-    const audit = {
+    let audit: ContactTriageAudit = {
       attempts: previousMetadata.audit.attempts + 1,
       classification: result.classification,
       notificationAttemptedAt,
       notificationId,
       processedAt: now.toISOString(),
       reason: result.reason,
+      replyIntent: persistence.decision.replyToCustomer
+        ? result.replyIntent
+        : 'none',
       tags: persistence.decision.tags,
     };
     failureNotes = writeContactTriageMetadata(
@@ -125,19 +151,45 @@ export const processNextContactTriage = async (onlyId?: string) => {
       audit
     );
     attemptAlreadyRecorded = true;
-    const filtered = !persistence.decision.notifySupport;
+
+    if (persistence.decision.replyToCustomer) {
+      if (result.replyIntent === 'none') {
+        throw new Error('Customer reply requested without a reply intent');
+      }
+      replyDraft = await generateContactReplyWithCodex({
+        message: contact.message,
+        name: contact.name,
+        replyIntent: result.replyIntent,
+        subject: contact.subject,
+      });
+      audit = {
+        ...audit,
+        replyAttemptedAt: now.toISOString(),
+        replyId: getContactReplyId(contact.id),
+        replySubject: replyDraft.subject,
+      };
+      failureNotes = writeContactTriageMetadata(
+        previousMetadata.humanNotes,
+        audit
+      );
+    }
+
+    const filtered = persistence.decision.routing === 'suppress';
+    const sourceState = persistence.decision.notifySupport
+      ? 'notification_sending'
+      : persistence.decision.replyToCustomer
+        ? 'customer_reply_sending'
+        : 'ignored';
 
     await db.contactMessage.update({
       data: {
         internalNotes: failureNotes,
         ...(filtered ? { readAt: contact.readAt ?? now } : {}),
         ...(result.classification === 'irrelevant' ? { resolvedAt: now } : {}),
-        source: getContactTriageSource(
-          persistence.decision.notifySupport
-            ? 'notification_sending'
-            : 'ignored'
-        ),
-        status: persistence.status,
+        source: getContactTriageSource(sourceState),
+        status: persistence.decision.replyToCustomer
+          ? undefined
+          : persistence.status,
       },
       where: { id: contact.id },
     });
@@ -169,10 +221,39 @@ export const processNextContactTriage = async (onlyId?: string) => {
       });
     }
 
+    if (persistence.decision.replyToCustomer && replyDraft) {
+      await sendContactReply({
+        contactId: contact.id,
+        draft: replyDraft,
+        email: contact.email,
+      });
+      const repliedAt = new Date();
+      await db.contactMessage.update({
+        data: {
+          internalNotes: writeContactTriageMetadata(
+            previousMetadata.humanNotes,
+            {
+              ...audit,
+              repliedAt: repliedAt.toISOString(),
+            }
+          ),
+          readAt: contact.readAt ?? repliedAt,
+          resolvedAt: repliedAt,
+          source: getContactTriageSource('customer_replied'),
+          status: persistence.status,
+        },
+        where: {
+          id: contact.id,
+          source: getContactTriageSource('customer_reply_sending'),
+        },
+      });
+    }
+
     return {
       classification: result.classification,
       outcome: 'processed',
       processed: true,
+      routing: persistence.decision.routing,
     } as const;
   } catch (error) {
     await recordFailure(

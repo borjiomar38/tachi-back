@@ -69,6 +69,29 @@ describe('contact triage audit', () => {
     });
   });
 
+  it('maps an automatic customer reply into clean delivery details', () => {
+    const stored = writeContactTriageMetadata('', {
+      ...audit,
+      repliedAt: '2026-07-16T10:28:00.000Z',
+      replyAttemptedAt: '2026-07-16T10:27:00.000Z',
+      replyId: 'contact-reply-contact-1',
+      replyIntent: 'pricing',
+      replySubject: 'Re: Nayovi plans',
+    });
+
+    expect(
+      getContactTriageView(
+        'public_landing_form:triage_customer_replied',
+        stored
+      )
+    ).toMatchObject({
+      notification: 'replied',
+      replyIntent: 'pricing',
+      replySubject: 'Re: Nayovi plans',
+      state: 'replied',
+    });
+  });
+
   it('prevents reanalysis while an email delivery is in flight or unknown', () => {
     expect(
       canQueueContactReanalysis(
@@ -78,6 +101,16 @@ describe('contact triage audit', () => {
     expect(
       canQueueContactReanalysis(
         'public_landing_form:triage_notification_unknown'
+      )
+    ).toBe(false);
+    expect(
+      canQueueContactReanalysis(
+        'public_landing_form:triage_customer_reply_sending'
+      )
+    ).toBe(false);
+    expect(
+      canQueueContactReanalysis(
+        'public_landing_form:triage_customer_reply_unknown'
       )
     ).toBe(false);
     expect(canQueueContactReanalysis('public_landing_form:triage_failed')).toBe(
