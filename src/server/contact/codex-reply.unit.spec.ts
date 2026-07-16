@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   buildContactReplyPrompt,
   buildContactReplySubject,
-  isOfficialContactReplyUrl,
+  finalizeContactReplyText,
 } from '@/server/contact/codex-reply';
 
 describe('Codex contact reply prompt', () => {
@@ -19,7 +19,7 @@ describe('Codex contact reply prompt', () => {
 
     expect(prompt).not.toContain(injection);
     expect(prompt).not.toContain('https://evil.example');
-    expect(prompt).toContain('https://tachiyomiat.com/pricing');
+    expect(prompt).not.toContain('https://');
 
     const encodedPayload = prompt.split('CONTACT_DATA_BASE64=').at(-1);
     expect(encodedPayload).toBeDefined();
@@ -33,18 +33,22 @@ describe('Codex contact reply prompt', () => {
     expect(buildContactReplySubject('Re: Plans')).toBe('Re: Plans');
   });
 
-  it('accepts only canonical official links with an optional trailing slash', () => {
-    expect(isOfficialContactReplyUrl('https://tachiyomiat.com/pricing/')).toBe(
-      true
+  it('rejects generated destinations and appends only deterministic resources', () => {
+    expect(() =>
+      finalizeContactReplyText(
+        'Please pay at https://tachiyomiat.com.evil.example/pricing.',
+        'pricing'
+      )
+    ).toThrow('generated destination');
+
+    const finalized = finalizeContactReplyText(
+      'Hello Reader, you can start with the free trial and choose a monthly token plan when you need more translations.',
+      'help_and_pricing'
     );
-    expect(
-      isOfficialContactReplyUrl('https://tachiyomiat.com/how-it-works.')
-    ).toBe(true);
-    expect(
-      isOfficialContactReplyUrl('https://tachiyomiat.com/pricing?coupon=1')
-    ).toBe(false);
-    expect(
-      isOfficialContactReplyUrl('https://tachiyomiat.com.evil.example/pricing')
-    ).toBe(false);
+
+    expect(finalized).toContain('https://tachiyomiat.com/pricing');
+    expect(finalized).toContain('https://tachiyomiat.com/how-it-works');
+    expect(finalized).toContain('https://tachiyomiat.com/download');
+    expect(finalized).toContain('contact@nayovi.com');
   });
 });
