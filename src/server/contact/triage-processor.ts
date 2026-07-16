@@ -1,5 +1,8 @@
 import { classifyContactWithCodex } from '@/server/contact/codex-classifier';
-import { sendContactNotification } from '@/server/contact/contact-notifier';
+import {
+  getContactNotificationId,
+  sendContactNotification,
+} from '@/server/contact/contact-notifier';
 import {
   CONTACT_TRIAGE_CLAIMABLE_SOURCES,
   getContactTriageSource,
@@ -11,6 +14,18 @@ import { db } from '@/server/db';
 import { logger } from '@/server/logger';
 
 const MAX_ATTEMPTS = 5;
+const NOTIFICATION_STALE_AFTER_MS = 10 * 60 * 1000;
+
+export const quarantineStaleContactNotifications = async (now = new Date()) =>
+  await db.contactMessage.updateMany({
+    data: { source: getContactTriageSource('notification_unknown') },
+    where: {
+      source: getContactTriageSource('notification_sending'),
+      updatedAt: {
+        lt: new Date(now.getTime() - NOTIFICATION_STALE_AFTER_MS),
+      },
+    },
+  });
 
 const findAndClaimContact = async (onlyId?: string) => {
   const contact = await db.contactMessage.findFirst({
@@ -46,7 +61,7 @@ const recordFailure = async (
   });
   const notificationOutcomeUnknown =
     current?.source === getContactTriageSource('notification_sending');
-  const shouldStop = notificationOutcomeUnknown || attempts >= MAX_ATTEMPTS;
+  const shouldStop = attempts >= MAX_ATTEMPTS;
 
   await db.contactMessage.update({
     data: {
@@ -58,7 +73,13 @@ const recordFailure = async (
             ? error.message.slice(0, 500)
             : 'Unknown error',
       }),
-      source: getContactTriageSource(shouldStop ? 'failed' : 'retry'),
+      source: getContactTriageSource(
+        notificationOutcomeUnknown
+          ? 'notification_unknown'
+          : shouldStop
+            ? 'failed'
+            : 'retry'
+      ),
     },
     where: { id },
   });
@@ -84,9 +105,17 @@ export const processNextContactTriage = async (onlyId?: string) => {
     });
     const persistence = getContactTriagePersistence(result);
     const now = new Date();
+    const notificationAttemptedAt = persistence.decision.notifySupport
+      ? now.toISOString()
+      : undefined;
+    const notificationId = persistence.decision.notifySupport
+      ? getContactNotificationId(contact.id)
+      : undefined;
     const audit = {
       attempts: previousMetadata.audit.attempts + 1,
       classification: result.classification,
+      notificationAttemptedAt,
+      notificationId,
       processedAt: now.toISOString(),
       reason: result.reason,
       tags: persistence.decision.tags,
@@ -116,6 +145,7 @@ export const processNextContactTriage = async (onlyId?: string) => {
     if (persistence.decision.notifySupport) {
       await sendContactNotification({
         classification: result.classification,
+        contactId: contact.id,
         email: contact.email,
         message: contact.message,
         name: contact.name,

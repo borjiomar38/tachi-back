@@ -64,6 +64,7 @@
       "processing": "Analyse en cours",
       "retrying": "Nouvelle tentative",
       "failed": "Échec de l’analyse",
+      "delivery_unknown": "Vérifier la livraison e-mail",
       "filtered": "Filtré",
       "forwarded": "Transmis"
     },
@@ -82,7 +83,8 @@
       "pending": "Analyse en attente",
       "suppressed": "Bloquée — spam évident ou message inutile",
       "forwarded": "Envoyée à support@nayovi.com",
-      "failed": "Vérification manuelle nécessaire"
+      "failed": "Vérification manuelle nécessaire",
+      "unknown": "Livraison incertaine — vérifier la boîte support avant toute action"
     },
     "analyzeAgain": "Analyser à nouveau",
     "reanalyzeQueued": "Contact remis en file d’analyse automatique",

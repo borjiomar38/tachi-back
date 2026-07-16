@@ -11,6 +11,7 @@ import {
   zUpdateContactMessageInput,
 } from '@/server/contact/schema';
 import {
+  canQueueContactReanalysis,
   CONTACT_TRIAGE_LEGACY_SOURCE,
   CONTACT_TRIAGE_SOURCE_PREFIX,
   getContactSourceOrigin,
@@ -104,6 +105,7 @@ const buildTriageWhere = (
       needs_review: {
         OR: [
           { source: source('failed') },
+          { source: source('notification_unknown') },
           {
             internalNotes: { contains: '"classification":"uncertain"' },
             source: source('notified'),
@@ -153,6 +155,7 @@ const getTriageCounts = (
         counts.failed += 1;
         counts.needsReview += 1;
       }
+      if (triage.state === 'delivery_unknown') counts.needsReview += 1;
       if (triage.state === 'filtered') counts.filtered += 1;
       if (
         triage.state === 'forwarded' &&
@@ -306,7 +309,7 @@ export const contactRouter = {
       });
 
       if (!existing) throw new ORPCError('NOT_FOUND');
-      if (existing.source === getContactTriageSource('notification_sending')) {
+      if (!canQueueContactReanalysis(existing.source)) {
         throw new ORPCError('CONFLICT');
       }
 

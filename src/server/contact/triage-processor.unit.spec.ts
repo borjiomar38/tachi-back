@@ -14,6 +14,7 @@ vi.mock('@/server/contact/codex-classifier', () => ({
 }));
 
 vi.mock('@/server/contact/contact-notifier', () => ({
+  getContactNotificationId: (contactId: string) => `contact-${contactId}`,
   sendContactNotification: mocks.sendNotification,
 }));
 
@@ -32,7 +33,10 @@ vi.mock('@/server/logger', () => ({
   logger: { error: vi.fn() },
 }));
 
-import { processNextContactTriage } from '@/server/contact/triage-processor';
+import {
+  processNextContactTriage,
+  quarantineStaleContactNotifications,
+} from '@/server/contact/triage-processor';
 
 const legacyContact = {
   email: 'reader@example.com',
@@ -138,12 +142,42 @@ describe('processNextContactTriage', () => {
           internalNotes: expect.stringContaining(
             '"classification":"actionable"'
           ),
-          source: 'public_landing_form:triage_failed',
+          source: 'public_landing_form:triage_notification_unknown',
         }),
       })
     );
     expect(mocks.update.mock.calls.at(-1)?.[0].data.internalNotes).toContain(
       '"attempts":1'
     );
+    expect(mocks.update.mock.calls.at(-1)?.[0].data.internalNotes).toContain(
+      '"notificationId":"contact-contact-1"'
+    );
+
+    mocks.findFirst.mockResolvedValue(null);
+    await expect(processNextContactTriage()).resolves.toEqual({
+      outcome: 'empty',
+      processed: false,
+    });
+    expect(mocks.sendNotification).toHaveBeenCalledTimes(1);
+  });
+
+  it('quarantines a stale in-flight notification without resending it', async () => {
+    mocks.updateMany.mockResolvedValue({ count: 1 });
+    const now = new Date('2026-07-16T12:00:00.000Z');
+
+    await expect(quarantineStaleContactNotifications(now)).resolves.toEqual({
+      count: 1,
+    });
+
+    expect(mocks.updateMany).toHaveBeenCalledWith({
+      data: {
+        source: 'public_landing_form:triage_notification_unknown',
+      },
+      where: {
+        source: 'public_landing_form:triage_notification_sending',
+        updatedAt: { lt: new Date('2026-07-16T11:50:00.000Z') },
+      },
+    });
+    expect(mocks.sendNotification).not.toHaveBeenCalled();
   });
 });

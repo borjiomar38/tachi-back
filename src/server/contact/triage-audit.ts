@@ -20,6 +20,7 @@ export const zContactTriageState = z.enum([
   'processing',
   'retrying',
   'failed',
+  'delivery_unknown',
   'filtered',
   'forwarded',
 ]);
@@ -28,6 +29,8 @@ const zContactTriageAudit = z.object({
   attempts: z.number().int().nonnegative().catch(0),
   classification: zContactTriageClassification.optional(),
   error: z.string().max(500).optional(),
+  notificationAttemptedAt: z.iso.datetime().optional(),
+  notificationId: z.string().max(200).optional(),
   notifiedAt: z.iso.datetime().optional(),
   processedAt: z.iso.datetime().optional(),
   reason: z.string().max(500).optional(),
@@ -44,6 +47,12 @@ export interface ContactTriageMetadata {
 export const getContactTriageSource = (state: string) =>
   `${CONTACT_TRIAGE_SOURCE_PREFIX}${state}`;
 
+export const canQueueContactReanalysis = (source: string) =>
+  ![
+    getContactTriageSource('notification_sending'),
+    getContactTriageSource('notification_unknown'),
+  ].includes(source);
+
 export const getContactSourceOrigin = (source: string) =>
   source.startsWith(CONTACT_TRIAGE_SOURCE_PREFIX)
     ? CONTACT_TRIAGE_LEGACY_SOURCE
@@ -56,6 +65,7 @@ export const getContactTriageState = (source: string) => {
   const states = {
     failed: 'failed',
     ignored: 'filtered',
+    notification_unknown: 'delivery_unknown',
     notification_sending: 'processing',
     notified: 'forwarded',
     pending: 'awaiting',
@@ -135,9 +145,11 @@ export const getContactTriageView = (
         ? ('forwarded' as const)
         : state === 'filtered'
           ? ('suppressed' as const)
-          : state === 'failed'
-            ? ('failed' as const)
-            : ('pending' as const),
+          : state === 'delivery_unknown'
+            ? ('unknown' as const)
+            : state === 'failed'
+              ? ('failed' as const)
+              : ('pending' as const),
     notifiedAt: audit.notifiedAt ? new Date(audit.notifiedAt) : null,
     reason: audit.reason ?? null,
     state,

@@ -24,6 +24,7 @@ const classificationVariants = {
 
 const stateVariants = {
   awaiting: 'secondary',
+  delivery_unknown: 'warning',
   failed: 'negative',
   filtered: 'secondary',
   forwarded: 'positive',
@@ -33,6 +34,7 @@ const stateVariants = {
 
 const stateIcons = {
   awaiting: Clock3Icon,
+  delivery_unknown: CircleHelpIcon,
   failed: ShieldAlertIcon,
   filtered: ShieldAlertIcon,
   forwarded: CircleCheckIcon,
@@ -42,24 +44,32 @@ const stateIcons = {
 
 export const ContactTriageBadge = ({ triage }: ContactTriageBadgeProps) => {
   const { t } = useTranslation(['contact']);
-  const Icon = triage.classification
-    ? triage.classification === 'malicious'
+  if (
+    !triage.classification ||
+    triage.state === 'failed' ||
+    triage.state === 'delivery_unknown'
+  ) {
+    const StateIcon = stateIcons[triage.state];
+
+    return (
+      <Badge variant={stateVariants[triage.state]}>
+        <StateIcon />
+        {t(`contact:triage.state.${triage.state}`)}
+      </Badge>
+    );
+  }
+
+  const Icon =
+    triage.classification === 'malicious'
       ? ShieldAlertIcon
       : triage.classification === 'actionable'
         ? CircleCheckIcon
-        : CircleHelpIcon
-    : stateIcons[triage.state];
-  const label = triage.classification
-    ? t(`contact:triage.classification.${triage.classification}`)
-    : t(`contact:triage.state.${triage.state}`);
-  const variant = triage.classification
-    ? classificationVariants[triage.classification]
-    : stateVariants[triage.state];
+        : CircleHelpIcon;
 
   return (
-    <Badge variant={variant}>
+    <Badge variant={classificationVariants[triage.classification]}>
       <Icon />
-      {label}
+      {t(`contact:triage.classification.${triage.classification}`)}
     </Badge>
   );
 };

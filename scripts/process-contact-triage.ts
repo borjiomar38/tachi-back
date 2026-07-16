@@ -1,5 +1,8 @@
 import { CONTACT_TRIAGE_CLAIMABLE_SOURCES } from '@/server/contact/triage-audit';
-import { processNextContactTriage } from '@/server/contact/triage-processor';
+import {
+  processNextContactTriage,
+  quarantineStaleContactNotifications,
+} from '@/server/contact/triage-processor';
 import { db } from '@/server/db';
 
 const getArgument = (name: string) =>
@@ -33,6 +36,7 @@ const runBatch = async () => {
 };
 
 const run = async () => {
+  const quarantinedNotifications = await quarantineStaleContactNotifications();
   const queuedBefore = await db.contactMessage.count({
     where: { source: { in: [...CONTACT_TRIAGE_CLAIMABLE_SOURCES] } },
   });
@@ -45,6 +49,7 @@ const run = async () => {
     JSON.stringify({
       failed: results.filter((result) => result.outcome === 'failed').length,
       processed: results.filter((result) => result.processed).length,
+      quarantinedNotifications: quarantinedNotifications.count,
       queuedAfter,
       queuedBefore,
     })

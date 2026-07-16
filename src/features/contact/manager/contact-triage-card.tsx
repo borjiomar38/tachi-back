@@ -27,13 +27,19 @@ export const ContactTriageCard = ({
   const { t } = useTranslation(['contact']);
   const isDanger =
     triage.classification === 'malicious' || triage.state === 'failed';
+  const isWarning = triage.state === 'delivery_unknown';
   const RoutingIcon =
-    triage.notification === 'suppressed' ? BellOffIcon : BellRingIcon;
+    triage.notification === 'suppressed'
+      ? BellOffIcon
+      : triage.notification === 'unknown'
+        ? ShieldAlertIcon
+        : BellRingIcon;
 
   return (
     <Card
       className={cn(
-        isDanger && 'border-negative-500/45 dark:border-negative-500/55'
+        isDanger && 'border-negative-500/45 dark:border-negative-500/55',
+        isWarning && 'border-warning-500/45 dark:border-warning-500/55'
       )}
     >
       <CardHeader className="gap-3">

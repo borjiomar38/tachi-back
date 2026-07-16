@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  canQueueContactReanalysis,
   type ContactTriageAudit,
   getContactTriageView,
   parseContactTriageMetadata,
@@ -48,5 +49,39 @@ describe('contact triage audit', () => {
       state: 'filtered',
       tags: ['spam', 'scam'],
     });
+  });
+
+  it('marks an ambiguous email outcome as non-retryable manual review', () => {
+    const stored = writeContactTriageMetadata('', {
+      ...audit,
+      notificationAttemptedAt: '2026-07-16T10:27:00.000Z',
+      notificationId: 'contact-contact-1',
+    });
+
+    expect(
+      getContactTriageView(
+        'public_landing_form:triage_notification_unknown',
+        stored
+      )
+    ).toMatchObject({
+      notification: 'unknown',
+      state: 'delivery_unknown',
+    });
+  });
+
+  it('prevents reanalysis while an email delivery is in flight or unknown', () => {
+    expect(
+      canQueueContactReanalysis(
+        'public_landing_form:triage_notification_sending'
+      )
+    ).toBe(false);
+    expect(
+      canQueueContactReanalysis(
+        'public_landing_form:triage_notification_unknown'
+      )
+    ).toBe(false);
+    expect(canQueueContactReanalysis('public_landing_form:triage_failed')).toBe(
+      true
+    );
   });
 });

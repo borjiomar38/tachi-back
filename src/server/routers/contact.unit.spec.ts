@@ -225,6 +225,33 @@ describe('contact router', () => {
     });
   });
 
+  describe('reanalyzeById', () => {
+    it('refuses to resend when the email delivery outcome is unknown', async () => {
+      mockDb.contactMessage.findUnique.mockResolvedValue({
+        source: 'public_landing_form:triage_notification_unknown',
+      });
+
+      await expect(
+        call(contactRouter.reanalyzeById, { id: 'contact-1' })
+      ).rejects.toMatchObject({ code: 'CONFLICT' });
+      expect(mockDb.contactMessage.update).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('retryFailed', () => {
+    it('retries analysis failures without retrying uncertain email delivery', async () => {
+      mockDb.contactMessage.updateMany.mockResolvedValue({ count: 2 });
+
+      await expect(call(contactRouter.retryFailed, {})).resolves.toEqual({
+        count: 2,
+      });
+      expect(mockDb.contactMessage.updateMany).toHaveBeenCalledWith({
+        data: { source: 'public_landing_form:triage_retry' },
+        where: { source: 'public_landing_form:triage_failed' },
+      });
+    });
+  });
+
   describe('deleteById', () => {
     it('deletes a contact message', async () => {
       mockDb.contactMessage.delete.mockResolvedValue({
