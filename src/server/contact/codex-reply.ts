@@ -26,6 +26,10 @@ const OFFICIAL_LINKS = {
   pricing: 'https://tachiyomiat.com/pricing',
 } as const;
 
+const OFFICIAL_LINK_PATHS = new Set(
+  Object.values(OFFICIAL_LINKS).map((url) => new URL(url).pathname)
+);
+
 const zContactReplyOutput = z.object({
   text: z.string().trim().min(40).max(3000),
 });
@@ -39,6 +43,26 @@ const outputSchema = {
   type: 'object',
 } as const;
 
+export const isOfficialContactReplyUrl = (rawUrl: string) => {
+  try {
+    const parsed = new URL(rawUrl.replace(/[.,;:!?]+$/, ''));
+    const pathname = parsed.pathname.replace(/\/+$/, '') || '/';
+
+    return (
+      parsed.protocol === 'https:' &&
+      parsed.hostname === 'tachiyomiat.com' &&
+      !parsed.port &&
+      !parsed.username &&
+      !parsed.password &&
+      !parsed.search &&
+      !parsed.hash &&
+      OFFICIAL_LINK_PATHS.has(pathname)
+    );
+  } catch {
+    return false;
+  }
+};
+
 export const buildContactReplyPrompt = (input: ContactReplyInput) => {
   const encodedPayload = Buffer.from(JSON.stringify(input), 'utf8').toString(
     'base64'
@@ -48,7 +72,6 @@ export const buildContactReplyPrompt = (input: ContactReplyInput) => {
 };
 
 const assertOnlyOfficialUrls = (text: string) => {
-  const allowed = new Set<string>(Object.values(OFFICIAL_LINKS));
   const urls = text.match(/https?:\/\/[^\s)>]+/g) ?? [];
   const emails = Array.from(
     text.matchAll(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/gi),
@@ -56,8 +79,7 @@ const assertOnlyOfficialUrls = (text: string) => {
   );
 
   for (const rawUrl of urls) {
-    const normalized = rawUrl.replace(/[.,;:!?]+$/, '');
-    if (!allowed.has(normalized)) {
+    if (!isOfficialContactReplyUrl(rawUrl)) {
       throw new Error('Codex contact reply contained a non-official URL');
     }
   }
