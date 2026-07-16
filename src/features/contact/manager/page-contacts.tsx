@@ -1,7 +1,9 @@
 import { getUiState } from '@bearstudio/ui-state';
-import { useInfiniteQuery } from '@tanstack/react-query';
+import { useInfiniteQuery, useMutation } from '@tanstack/react-query';
 import { Link, useRouter } from '@tanstack/react-router';
 import dayjs from 'dayjs';
+import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
 
 import { orpc } from '@/lib/orpc/client';
 
@@ -37,6 +39,8 @@ import {
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionContact } from '@/features/auth/permissions';
+import { ContactTriageAutomationCard } from '@/features/contact/manager/contact-triage-automation-card';
+import { ContactTriageBadge } from '@/features/contact/manager/contact-triage-badge';
 import {
   PageLayout,
   PageLayoutContent,
@@ -45,101 +49,142 @@ import {
 } from '@/layout/manager/page-layout';
 
 const CONTACT_STATUS_OPTIONS = [
-  { label: 'All statuses', value: 'all' },
-  { label: 'Unread', value: 'unread' },
-  { label: 'In progress', value: 'in_progress' },
-  { label: 'Resolved', value: 'resolved' },
-  { label: 'Spam', value: 'spam' },
+  'all',
+  'unread',
+  'in_progress',
+  'resolved',
+  'spam',
 ] as const;
 
-type ContactStatusFilter = (typeof CONTACT_STATUS_OPTIONS)[number]['value'];
+const TRIAGE_FILTERS = [
+  'all',
+  'awaiting',
+  'needs_review',
+  'forwarded',
+  'filtered',
+] as const;
 
-export const PageContacts = (props: {
+type ContactStatusFilter = (typeof CONTACT_STATUS_OPTIONS)[number];
+type ContactTriageFilter = (typeof TRIAGE_FILTERS)[number];
+
+interface PageContactsProps {
   search: {
     searchTerm?: string;
     status?: ContactStatusFilter;
+    triage?: ContactTriageFilter;
   };
-}) => {
+}
+
+export const PageContacts = ({ search }: PageContactsProps) => {
+  const { t } = useTranslation(['contact']);
   const router = useRouter();
-  const searchTerm = props.search.searchTerm ?? '';
-  const status = props.search.status ?? 'all';
+  const searchTerm = search.searchTerm ?? '';
+  const status = search.status ?? 'all';
+  const triage = search.triage ?? 'all';
+
+  const navigateWithFilters = (next: {
+    searchTerm?: string;
+    status?: ContactStatusFilter;
+    triage?: ContactTriageFilter;
+  }) =>
+    router.navigate({
+      replace: true,
+      search: {
+        searchTerm,
+        status,
+        triage,
+        ...next,
+      },
+      to: '.',
+    });
 
   const searchInputProps = {
     value: searchTerm,
-    onChange: (value: string) =>
-      router.navigate({
-        replace: true,
-        search: {
-          searchTerm: value,
-          status,
-        },
-        to: '.',
-      }),
+    onChange: (value: string) => navigateWithFilters({ searchTerm: value }),
   };
 
   const contactsQuery = useInfiniteQuery(
     orpc.contact.getAll.infiniteOptions({
+      getNextPageParam: (lastPage) => lastPage.nextCursor,
+      initialPageParam: undefined,
       input: (cursor: string | undefined) => ({
         cursor,
         searchTerm,
         status,
+        triage,
       }),
-      initialPageParam: undefined,
       maxPages: 10,
-      getNextPageParam: (lastPage) => lastPage.nextCursor,
     })
   );
 
+  const retryFailedMutation = useMutation({
+    mutationFn: async () => await orpc.contact.retryFailed.call({}),
+    onSuccess: async ({ count }) => {
+      await contactsQuery.refetch();
+      toast.success(t('contact:inbox.automation.retrySuccess', { count }));
+    },
+    onError: () => toast.error(t('contact:inbox.automation.retryError')),
+  });
+
   const items = contactsQuery.data?.pages.flatMap((page) => page.items) ?? [];
-  const statusCounts = contactsQuery.data?.pages[0]?.statusCounts;
+  const triageCounts = contactsQuery.data?.pages[0]?.triageCounts;
   const total = contactsQuery.data?.pages[0]?.total ?? 0;
 
   const ui = getUiState((set) => {
     if (contactsQuery.status === 'pending') return set('pending');
     if (contactsQuery.status === 'error') return set('error');
-    if (!items.length && (searchTerm || status !== 'all')) {
-      return set('empty-search', { searchTerm, status });
+    if (!items.length && (searchTerm || status !== 'all' || triage !== 'all')) {
+      return set('empty-search', { searchTerm });
     }
     if (!items.length) return set('empty');
     return set('default');
   });
 
-  const hasFilters = Boolean(searchTerm.trim()) || status !== 'all';
+  const hasFilters =
+    Boolean(searchTerm.trim()) || status !== 'all' || triage !== 'all';
 
   return (
     <GuardPermissions permissions={[permissionContact.read]}>
       <PageLayout>
         <PageLayoutTopBar>
-          <PageLayoutTopBarTitle>Contact Inbox</PageLayoutTopBarTitle>
+          <PageLayoutTopBarTitle>
+            {t('contact:inbox.title')}
+          </PageLayoutTopBarTitle>
           <SearchButton
             {...searchInputProps}
             className="-mx-2 md:hidden"
             size="icon-sm"
           />
           <div className="hidden items-center gap-2 md:flex">
-            <SearchInput {...searchInputProps} className="w-72" size="sm" />
+            <SearchInput
+              {...searchInputProps}
+              className="w-72"
+              size="sm"
+              placeholder={t('contact:inbox.searchPlaceholder')}
+            />
             <Select
-              items={CONTACT_STATUS_OPTIONS}
+              items={CONTACT_STATUS_OPTIONS.map((value) => ({
+                label:
+                  value === 'all'
+                    ? t('contact:inbox.allStatuses')
+                    : t(`contact:status.${value}`),
+                value,
+              }))}
               value={status}
               onValueChange={(value) =>
-                router.navigate({
-                  replace: true,
-                  search: {
-                    searchTerm,
-                    status: value as ContactStatusFilter,
-                  },
-                  to: '.',
-                })
+                navigateWithFilters({ status: value as ContactStatusFilter })
               }
             >
               <SelectTrigger size="sm" className="w-44">
-                <SelectValue placeholder="Status" />
+                <SelectValue placeholder={t('contact:inbox.statusFilter')} />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  {CONTACT_STATUS_OPTIONS.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
+                  {CONTACT_STATUS_OPTIONS.map((value) => (
+                    <SelectItem key={value} value={value}>
+                      {value === 'all'
+                        ? t('contact:inbox.allStatuses')
+                        : t(`contact:status.${value}`)}
                     </SelectItem>
                   ))}
                 </SelectGroup>
@@ -147,28 +192,59 @@ export const PageContacts = (props: {
             </Select>
           </div>
         </PageLayoutTopBar>
-        <PageLayoutContent className="pb-20" containerClassName="max-w-6xl">
-          <div className="mb-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <PageLayoutContent className="pb-20" containerClassName="max-w-7xl">
+          <div className="mb-4 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             <SummaryCard
-              label="Unread"
-              value={statusCounts?.unread ?? 0}
-              description="New messages waiting for triage"
+              label={t('contact:inbox.summary.total')}
+              value={triageCounts?.total ?? 0}
+              description={t('contact:inbox.summary.totalDescription')}
             />
             <SummaryCard
-              label="In progress"
-              value={statusCounts?.inProgress ?? 0}
-              description="Messages currently being handled"
+              label={t('contact:inbox.summary.awaiting')}
+              value={triageCounts?.awaiting ?? 0}
+              description={t('contact:inbox.summary.awaitingDescription')}
             />
             <SummaryCard
-              label="Resolved"
-              value={statusCounts?.resolved ?? 0}
-              description="Closed messages in the current view"
+              label={t('contact:inbox.summary.needsReview')}
+              value={triageCounts?.needsReview ?? 0}
+              description={t('contact:inbox.summary.needsReviewDescription')}
             />
             <SummaryCard
-              label="Spam"
-              value={statusCounts?.spam ?? 0}
-              description="Spam or irrelevant submissions"
+              label={t('contact:inbox.summary.forwarded')}
+              value={triageCounts?.forwarded ?? 0}
+              description={t('contact:inbox.summary.forwardedDescription')}
             />
+            <SummaryCard
+              label={t('contact:inbox.summary.filtered')}
+              value={triageCounts?.filtered ?? 0}
+              description={t('contact:inbox.summary.filteredDescription')}
+            />
+          </div>
+
+          <div className="mb-4">
+            <ContactTriageAutomationCard
+              analyzed={triageCounts?.analyzed ?? 0}
+              failed={triageCounts?.failed ?? 0}
+              lastAnalyzedAt={triageCounts?.lastAnalyzedAt}
+              loading={retryFailedMutation.isPending}
+              onRetryFailed={() => retryFailedMutation.mutate()}
+              total={triageCounts?.total ?? 0}
+            />
+          </div>
+
+          <div className="mb-4 flex flex-wrap gap-2 rounded-xl border border-border bg-card p-2">
+            {TRIAGE_FILTERS.map((value) => (
+              <Button
+                key={value}
+                size="sm"
+                variant={triage === value ? 'default' : 'ghost'}
+                onClick={() => navigateWithFilters({ triage: value })}
+              >
+                {t(
+                  `contact:inbox.filters.${value === 'needs_review' ? 'needsReview' : value}`
+                )}
+              </Button>
+            ))}
           </div>
 
           <DataList>
@@ -179,12 +255,12 @@ export const PageContacts = (props: {
               ))
               .match('empty', () => (
                 <DataListEmptyState>
-                  No public contact messages have been stored yet.
+                  {t('contact:inbox.empty')}
                 </DataListEmptyState>
               ))
               .match('empty-search', ({ searchTerm: currentSearchTerm }) => (
                 <DataListEmptyState searchTerm={currentSearchTerm || undefined}>
-                  No contact messages match the current filters.
+                  {t('contact:inbox.emptySearch')}
                 </DataListEmptyState>
               ))
               .match('default', () => (
@@ -193,20 +269,21 @@ export const PageContacts = (props: {
                     <DataListRowResults
                       withClearButton
                       onClear={() =>
-                        router.navigate({
-                          replace: true,
-                          search: {
-                            searchTerm: '',
-                            status: 'all',
-                          },
-                          to: '.',
+                        navigateWithFilters({
+                          searchTerm: '',
+                          status: 'all',
+                          triage: 'all',
                         })
                       }
                     >
-                      {`Showing ${items.length} of ${total} messages`}
+                      {t('contact:inbox.showing', {
+                        total,
+                        visible: items.length,
+                      })}
                     </DataListRowResults>
                   ) : null}
 
+                  <ContactListHeader />
                   {items.map((item) => (
                     <DataListRow key={item.id} withHover>
                       <DataListCell>
@@ -223,16 +300,19 @@ export const PageContacts = (props: {
                           {item.name} • {item.email}
                         </DataListText>
                       </DataListCell>
-                      <DataListCell className="flex-[0.5] max-md:hidden">
+                      <DataListCell className="flex-[0.65] max-md:hidden">
+                        <ContactTriageBadge triage={item.triage} />
+                      </DataListCell>
+                      <DataListCell className="flex-[0.55] max-lg:hidden">
                         <Badge variant={getStatusBadgeVariant(item.status)}>
-                          {formatStatus(item.status)}
+                          {t(`contact:status.${item.status}`)}
                         </Badge>
                       </DataListCell>
-                      <DataListCell className="flex-[0.8] max-xl:hidden">
+                      <DataListCell className="flex-[0.85] max-xl:hidden">
                         <DataListText className="text-xs text-muted-foreground">
-                          {item.assignedTo
-                            ? `${item.assignedTo.name} · ${item.assignedTo.email}`
-                            : 'Unassigned'}
+                          {t(
+                            `contact:triage.routing.${item.triage.notification}`
+                          )}
                         </DataListText>
                       </DataListCell>
                       <DataListCell className="flex-[0.55] max-md:hidden">
@@ -251,12 +331,15 @@ export const PageContacts = (props: {
                         loading={contactsQuery.isFetchingNextPage}
                         onClick={() => contactsQuery.fetchNextPage()}
                       >
-                        Load more
+                        {t('contact:inbox.loadMore')}
                       </Button>
                     </DataListCell>
                     <DataListCell>
                       <DataListText className="text-xs text-muted-foreground">
-                        Showing {items.length} of {total} messages
+                        {t('contact:inbox.showing', {
+                          total,
+                          visible: items.length,
+                        })}
                       </DataListText>
                     </DataListCell>
                   </DataListRow>
@@ -270,30 +353,61 @@ export const PageContacts = (props: {
   );
 };
 
-const SummaryCard = (props: {
+const ContactListHeader = () => {
+  const { t } = useTranslation(['contact']);
+
+  return (
+    <DataListRow className="hidden bg-muted/30 md:flex">
+      <DataListCell>
+        <DataListText className="text-xs font-medium text-muted-foreground">
+          {t('contact:inbox.columns.message')}
+        </DataListText>
+      </DataListCell>
+      <DataListCell className="flex-[0.65]">
+        <DataListText className="text-xs font-medium text-muted-foreground">
+          {t('contact:inbox.columns.verdict')}
+        </DataListText>
+      </DataListCell>
+      <DataListCell className="flex-[0.55] max-lg:hidden">
+        <DataListText className="text-xs font-medium text-muted-foreground">
+          {t('contact:inbox.columns.workflow')}
+        </DataListText>
+      </DataListCell>
+      <DataListCell className="flex-[0.85] max-xl:hidden">
+        <DataListText className="text-xs font-medium text-muted-foreground">
+          {t('contact:inbox.columns.routing')}
+        </DataListText>
+      </DataListCell>
+      <DataListCell className="flex-[0.55]">
+        <DataListText className="text-xs font-medium text-muted-foreground">
+          {t('contact:inbox.columns.date')}
+        </DataListText>
+      </DataListCell>
+    </DataListRow>
+  );
+};
+
+interface SummaryCardProps {
   description: string;
   label: string;
   value: number;
-}) => (
+}
+
+const SummaryCard = ({ description, label, value }: SummaryCardProps) => (
   <Card>
     <CardHeader className="gap-2">
-      <CardTitle className="text-base">{props.label}</CardTitle>
-      <CardDescription>{props.description}</CardDescription>
+      <CardTitle className="text-sm">{label}</CardTitle>
+      <CardDescription className="min-h-10 text-xs">
+        {description}
+      </CardDescription>
     </CardHeader>
     <CardContent>
       <div className="text-3xl font-semibold tracking-tight">
-        {props.value.toLocaleString()}
+        {value.toLocaleString()}
       </div>
     </CardContent>
   </Card>
 );
-
-const formatStatus = (status: ContactStatusFilter) =>
-  status === 'all'
-    ? 'All'
-    : status === 'in_progress'
-      ? 'In progress'
-      : status.charAt(0).toUpperCase() + status.slice(1);
 
 const getStatusBadgeVariant = (status: Exclude<ContactStatusFilter, 'all'>) => {
   if (status === 'unread') return 'warning';

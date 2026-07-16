@@ -1,0 +1,132 @@
+{
+  "inbox": {
+    "title": "Contact inbox",
+    "searchPlaceholder": "Search messages or senders…",
+    "statusFilter": "Status",
+    "allStatuses": "All statuses",
+    "showing": "Showing {{visible}} of {{total}} messages",
+    "loadMore": "Load more",
+    "empty": "No public contact messages have been stored yet.",
+    "emptySearch": "No contact messages match the current filters.",
+    "summary": {
+      "total": "Total",
+      "totalDescription": "All contact messages",
+      "awaiting": "Awaiting analysis",
+      "awaitingDescription": "Queued or currently analyzing",
+      "needsReview": "Needs review",
+      "needsReviewDescription": "Uncertain or failed classifications",
+      "forwarded": "Forwarded",
+      "forwardedDescription": "Legitimate messages sent to support",
+      "filtered": "Filtered",
+      "filteredDescription": "Spam, scams, or not useful"
+    },
+    "automation": {
+      "active": "Automatic triage active",
+      "analyzed": "{{analyzed}} of {{total}} analyzed",
+      "lastRun": "Last analysis {{relativeTime}}",
+      "waiting": "Waiting for the first analysis",
+      "retryFailed": "Re-run failed",
+      "retrySuccess": "{{count}} failed message queued again",
+      "retryError": "Failed to queue messages again"
+    },
+    "filters": {
+      "all": "All",
+      "awaiting": "Awaiting",
+      "needsReview": "Needs review",
+      "forwarded": "Forwarded",
+      "filtered": "Spam & ignored"
+    },
+    "columns": {
+      "message": "Message",
+      "verdict": "AI verdict",
+      "workflow": "Workflow",
+      "routing": "Email routing",
+      "date": "Date"
+    }
+  },
+  "status": {
+    "unread": "Unread",
+    "in_progress": "In progress",
+    "resolved": "Resolved",
+    "spam": "Spam"
+  },
+  "triage": {
+    "title": "AI triage",
+    "classification": {
+      "malicious": "Scam detected",
+      "irrelevant": "Not useful",
+      "actionable": "Legitimate",
+      "uncertain": "Needs review",
+      "pending": "Awaiting analysis"
+    },
+    "state": {
+      "awaiting": "Awaiting",
+      "processing": "Analyzing",
+      "retrying": "Retrying",
+      "failed": "Analysis failed",
+      "filtered": "Filtered",
+      "forwarded": "Forwarded"
+    },
+    "tags": {
+      "spam": "Spam",
+      "scam": "Scam",
+      "phishing": "Phishing",
+      "fraud": "Fraud"
+    },
+    "analyzedAutomatically": "Analyzed automatically · {{date}}",
+    "notAnalyzed": "This message is queued for automatic analysis.",
+    "attempts": "{{count}} attempt",
+    "attempts_other": "{{count}} attempts",
+    "supportNotification": "Support notification",
+    "routing": {
+      "pending": "Pending analysis",
+      "suppressed": "Suppressed — obvious spam or not useful",
+      "forwarded": "Sent to support@nayovi.com",
+      "failed": "Needs manual review"
+    },
+    "analyzeAgain": "Analyze again",
+    "reanalyzeQueued": "Contact queued for automatic analysis",
+    "reanalyzeError": "Failed to queue this contact again"
+  },
+  "detail": {
+    "deleteTitle": "Delete contact message?",
+    "deleteDescription": "This permanently removes the submission from the backoffice inbox.",
+    "deleteConfirm": "Delete message",
+    "delete": "Delete",
+    "updated": "Contact message updated",
+    "updateError": "Failed to update the contact message",
+    "deleted": "Contact message deleted",
+    "deleteError": "Failed to delete the contact message",
+    "summary": {
+      "status": "Status",
+      "sender": "Sender",
+      "assigned": "Assigned",
+      "source": "Source",
+      "created": "Created {{date}}",
+      "unassigned": "Unassigned",
+      "assignOnUpdate": "Will be assigned on update",
+      "read": "Read {{relativeTime}}",
+      "unread": "Unread"
+    },
+    "message": {
+      "title": "Customer message",
+      "description": "Submitted from the public contact form and stored directly in the database.",
+      "reply": "Reply by email",
+      "ip": "IP address",
+      "userAgent": "User agent",
+      "notCaptured": "Not captured"
+    },
+    "workflow": {
+      "title": "Workflow",
+      "description": "Update status, add private notes, and assign the message to yourself for follow-up.",
+      "status": "Status",
+      "selectStatus": "Select a status",
+      "notes": "Internal notes",
+      "notesPlaceholder": "Add a private note for your team…",
+      "resolvedAt": "Resolved at",
+      "notResolved": "Not resolved yet",
+      "lastUpdated": "Last updated",
+      "save": "Save changes"
+    }
+  }
+}

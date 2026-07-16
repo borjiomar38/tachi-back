@@ -12,6 +12,9 @@ export const Route = createFileRoute('/manager/contacts/')({
       status: z
         .enum(['all', 'unread', 'in_progress', 'resolved', 'spam'])
         .prefault('all'),
+      triage: z
+        .enum(['all', 'awaiting', 'needs_review', 'forwarded', 'filtered'])
+        .prefault('all'),
     })
   ),
   search: {
@@ -19,6 +22,7 @@ export const Route = createFileRoute('/manager/contacts/')({
       stripSearchParams({
         searchTerm: '',
         status: 'all',
+        triage: 'all',
       }),
     ],
   },

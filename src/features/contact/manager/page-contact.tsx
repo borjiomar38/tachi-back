@@ -2,8 +2,14 @@ import { getUiState } from '@bearstudio/ui-state';
 import { ORPCError } from '@orpc/client';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
-import { AlertCircleIcon, MailIcon, Trash2Icon } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import {
+  AlertCircleIcon,
+  MailIcon,
+  RefreshCwIcon,
+  Trash2Icon,
+} from 'lucide-react';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
 
 import { orpc } from '@/lib/orpc/client';
@@ -36,74 +42,93 @@ import { Textarea } from '@/components/ui/textarea';
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionContact } from '@/features/auth/permissions';
 import { WithPermissions } from '@/features/auth/with-permissions';
+import { ContactTriageCard } from '@/features/contact/manager/contact-triage-card';
+import { useContactWorkflowStore } from '@/features/contact/manager/use-contact-workflow-store';
 import {
   PageLayout,
   PageLayoutContent,
   PageLayoutTopBar,
   PageLayoutTopBarTitle,
 } from '@/layout/manager/page-layout';
+import type { Outputs } from '@/server/router';
 
 const CONTACT_STATUS_OPTIONS = [
-  { label: 'Unread', value: 'unread' },
-  { label: 'In progress', value: 'in_progress' },
-  { label: 'Resolved', value: 'resolved' },
-  { label: 'Spam', value: 'spam' },
+  'unread',
+  'in_progress',
+  'resolved',
+  'spam',
 ] as const;
 
-type ContactStatus = (typeof CONTACT_STATUS_OPTIONS)[number]['value'];
+type ContactDetail = Outputs['contact']['getById'];
+type ContactStatus = ContactDetail['status'];
 
-export const PageContact = (props: { params: { id: string } }) => {
+interface PageContactProps {
+  params: { id: string };
+}
+
+export const PageContact = ({ params }: PageContactProps) => {
+  const { t } = useTranslation(['contact']);
   const queryClient = useQueryClient();
   const { navigateBack } = useNavigateBack();
   const detailQuery = useQuery(
-    orpc.contact.getById.queryOptions({
-      input: {
-        id: props.params.id,
-      },
-    })
+    orpc.contact.getById.queryOptions({ input: { id: params.id } })
   );
-
-  const [status, setStatus] = useState<ContactStatus>('unread');
-  const [internalNotes, setInternalNotes] = useState('');
+  const internalNotes = useContactWorkflowStore((state) => state.internalNotes);
+  const setInternalNotes = useContactWorkflowStore(
+    (state) => state.setInternalNotes
+  );
+  const status = useContactWorkflowStore((state) => state.status);
+  const setStatus = useContactWorkflowStore((state) => state.setStatus);
+  const hydrate = useContactWorkflowStore((state) => state.hydrate);
 
   useEffect(() => {
     if (detailQuery.status !== 'success') return;
-    setStatus(detailQuery.data.status);
-    setInternalNotes(detailQuery.data.internalNotes ?? '');
-  }, [detailQuery.data, detailQuery.status]);
+    hydrate({
+      internalNotes: detailQuery.data.internalNotes,
+      status: detailQuery.data.status,
+    });
+  }, [detailQuery.data, detailQuery.status, hydrate]);
+
+  const refreshContactQueries = async (updated: ContactDetail) => {
+    await Promise.all([
+      queryClient.invalidateQueries({
+        queryKey: orpc.contact.getAll.key(),
+        type: 'all',
+      }),
+      queryClient.setQueryData(
+        orpc.contact.getById.key({ input: { id: params.id } }),
+        updated
+      ),
+    ]);
+  };
 
   const updateMutation = useMutation({
     mutationFn: async () =>
       await orpc.contact.updateById.call({
-        id: props.params.id,
+        id: params.id,
         internalNotes,
         status,
       }),
     onSuccess: async (updated) => {
-      await Promise.all([
-        queryClient.invalidateQueries({
-          queryKey: orpc.contact.getAll.key(),
-          type: 'all',
-        }),
-        queryClient.setQueryData(
-          orpc.contact.getById.key({
-            input: { id: props.params.id },
-          }),
-          updated
-        ),
-      ]);
-      toast.success('Contact message updated');
+      await refreshContactQueries(updated);
+      toast.success(t('contact:detail.updated'));
     },
-    onError: () => {
-      toast.error('Failed to update the contact message');
+    onError: () => toast.error(t('contact:detail.updateError')),
+  });
+
+  const reanalyzeMutation = useMutation({
+    mutationFn: async () =>
+      await orpc.contact.reanalyzeById.call({ id: params.id }),
+    onSuccess: async (updated) => {
+      await refreshContactQueries(updated);
+      toast.success(t('contact:triage.reanalyzeQueued'));
     },
+    onError: () => toast.error(t('contact:triage.reanalyzeError')),
   });
 
   const deleteMutation = useMutation({
     mutationFn: async () =>
-      await orpc.contact.deleteById.call({
-        id: props.params.id,
-      }),
+      await orpc.contact.deleteById.call({ id: params.id }),
     onSuccess: async () => {
       await Promise.all([
         queryClient.invalidateQueries({
@@ -111,17 +136,13 @@ export const PageContact = (props: { params: { id: string } }) => {
           type: 'all',
         }),
         queryClient.removeQueries({
-          queryKey: orpc.contact.getById.key({
-            input: { id: props.params.id },
-          }),
+          queryKey: orpc.contact.getById.key({ input: { id: params.id } }),
         }),
       ]);
-      toast.success('Contact message deleted');
+      toast.success(t('contact:detail.deleted'));
       navigateBack();
     },
-    onError: () => {
-      toast.error('Failed to delete the contact message');
-    },
+    onError: () => toast.error(t('contact:detail.deleteError')),
   });
 
   const ui = getUiState((set) => {
@@ -146,9 +167,9 @@ export const PageContact = (props: { params: { id: string } }) => {
             <WithPermissions permissions={[permissionContact.delete]}>
               <ConfirmResponsiveDrawer
                 onConfirm={() => deleteMutation.mutate()}
-                title="Delete contact message?"
-                description="This permanently removes the submission from the backoffice inbox."
-                confirmText="Delete message"
+                title={t('contact:detail.deleteTitle')}
+                description={t('contact:detail.deleteDescription')}
+                confirmText={t('contact:detail.deleteConfirm')}
                 confirmVariant="destructive"
               >
                 <Button
@@ -157,7 +178,7 @@ export const PageContact = (props: { params: { id: string } }) => {
                   loading={deleteMutation.isPending}
                 >
                   <Trash2Icon />
-                  Delete
+                  {t('contact:detail.delete')}
                 </Button>
               </ConfirmResponsiveDrawer>
             </WithPermissions>
@@ -181,163 +202,39 @@ export const PageContact = (props: { params: { id: string } }) => {
             .match('default', ({ item }) => (
               <div className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
                 <div className="space-y-4">
-                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                    <SummaryCard
-                      label="Status"
-                      value={formatStatus(item.status)}
-                      subLabel={`Created ${dayjs(item.createdAt).format('DD/MM/YYYY HH:mm')}`}
-                    />
-                    <SummaryCard
-                      label="Sender"
-                      value={item.name}
-                      subLabel={item.email}
-                    />
-                    <SummaryCard
-                      label="Assigned"
-                      value={item.assignedTo?.name ?? 'Unassigned'}
-                      subLabel={
-                        item.assignedTo?.email ?? 'Will be assigned on update'
-                      }
-                    />
-                    <SummaryCard
-                      label="Source"
-                      value={item.source}
-                      subLabel={
-                        item.readAt
-                          ? `Read ${dayjs(item.readAt).fromNow()}`
-                          : 'Unread'
-                      }
-                    />
-                  </div>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Customer message</CardTitle>
-                      <CardDescription>
-                        Submitted from the public contact form and stored
-                        directly in the database.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="flex flex-wrap items-center gap-3">
-                        <Badge variant={getStatusBadgeVariant(item.status)}>
-                          {formatStatus(item.status)}
-                        </Badge>
-                        <a
-                          href={`mailto:${item.email}?subject=${encodeURIComponent(`Re: ${item.subject}`)}`}
-                          className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-primary"
-                        >
-                          <MailIcon className="size-4" />
-                          Reply by email
-                        </a>
-                      </div>
-                      <div className="rounded-xl border border-border/70 bg-muted/20 px-4 py-4">
-                        <p className="text-sm leading-7 whitespace-pre-wrap">
-                          {item.message}
-                        </p>
-                      </div>
-                      <div className="grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
-                        <div>
-                          <div className="font-medium text-foreground">
-                            IP address
-                          </div>
-                          <div>{item.ipAddress ?? 'Not captured'}</div>
-                        </div>
-                        <div>
-                          <div className="font-medium text-foreground">
-                            User agent
-                          </div>
-                          <div className="break-all">
-                            {item.userAgent ?? 'Not captured'}
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <ContactSummaryGrid item={item} />
+                  <CustomerMessageCard item={item} />
                 </div>
-
-                <WithPermissions permissions={[permissionContact.update]}>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Workflow</CardTitle>
-                      <CardDescription>
-                        Update status, add internal notes, and assign the
-                        message to yourself for follow-up.
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="space-y-2">
-                        <p className="text-sm font-medium">Status</p>
-                        <Select
-                          items={CONTACT_STATUS_OPTIONS}
-                          value={status}
-                          onValueChange={(value) =>
-                            setStatus(value as ContactStatus)
-                          }
+                <div className="space-y-4">
+                  <ContactTriageCard
+                    actions={
+                      <WithPermissions permissions={[permissionContact.update]}>
+                        <Button
+                          className="w-full"
+                          variant="secondary"
+                          disabled={item.triage.state === 'processing'}
+                          loading={reanalyzeMutation.isPending}
+                          onClick={() => reanalyzeMutation.mutate()}
                         >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a status" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectGroup>
-                              {CONTACT_STATUS_OPTIONS.map((option) => (
-                                <SelectItem
-                                  key={option.value}
-                                  value={option.value}
-                                >
-                                  {option.label}
-                                </SelectItem>
-                              ))}
-                            </SelectGroup>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      <div className="space-y-2">
-                        <p className="text-sm font-medium">Internal notes</p>
-                        <Textarea
-                          rows={10}
-                          value={internalNotes}
-                          onChange={(event) =>
-                            setInternalNotes(event.currentTarget.value)
-                          }
-                          placeholder="Summarize what support learned, what was promised, or why the message was marked as spam."
-                        />
-                      </div>
-
-                      <div className="grid gap-3 rounded-xl border border-border/70 bg-muted/20 px-4 py-4 text-sm">
-                        <div>
-                          <div className="font-medium text-foreground">
-                            Resolved at
-                          </div>
-                          <div className="text-muted-foreground">
-                            {item.resolvedAt
-                              ? dayjs(item.resolvedAt).format(
-                                  'DD/MM/YYYY HH:mm'
-                                )
-                              : 'Not resolved yet'}
-                          </div>
-                        </div>
-                        <div>
-                          <div className="font-medium text-foreground">
-                            Last updated
-                          </div>
-                          <div className="text-muted-foreground">
-                            {dayjs(item.updatedAt).format('DD/MM/YYYY HH:mm')}
-                          </div>
-                        </div>
-                      </div>
-
-                      <Button
-                        className="w-full"
-                        onClick={() => updateMutation.mutate()}
-                        loading={updateMutation.isPending}
-                      >
-                        Save changes
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </WithPermissions>
+                          <RefreshCwIcon />
+                          {t('contact:triage.analyzeAgain')}
+                        </Button>
+                      </WithPermissions>
+                    }
+                    triage={item.triage}
+                  />
+                  <WithPermissions permissions={[permissionContact.update]}>
+                    <ContactWorkflowCard
+                      internalNotes={internalNotes}
+                      loading={updateMutation.isPending}
+                      item={item}
+                      status={status}
+                      onInternalNotesChange={setInternalNotes}
+                      onSave={() => updateMutation.mutate()}
+                      onStatusChange={setStatus}
+                    />
+                  </WithPermissions>
+                </div>
               </div>
             ))
             .exhaustive()}
@@ -347,26 +244,221 @@ export const PageContact = (props: { params: { id: string } }) => {
   );
 };
 
-const SummaryCard = (props: {
+interface ContactBlockProps {
+  item: ContactDetail;
+}
+
+const ContactSummaryGrid = ({ item }: ContactBlockProps) => {
+  const { t } = useTranslation(['contact']);
+
+  return (
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <SummaryCard
+        label={t('contact:detail.summary.status')}
+        value={t(`contact:status.${item.status}`)}
+        subLabel={t('contact:detail.summary.created', {
+          date: dayjs(item.createdAt).format('DD/MM/YYYY HH:mm'),
+        })}
+      />
+      <SummaryCard
+        label={t('contact:detail.summary.sender')}
+        value={item.name}
+        subLabel={item.email}
+      />
+      <SummaryCard
+        label={t('contact:detail.summary.assigned')}
+        value={item.assignedTo?.name ?? t('contact:detail.summary.unassigned')}
+        subLabel={
+          item.assignedTo?.email ?? t('contact:detail.summary.assignOnUpdate')
+        }
+      />
+      <SummaryCard
+        label={t('contact:detail.summary.source')}
+        value={item.source}
+        subLabel={
+          item.readAt
+            ? t('contact:detail.summary.read', {
+                relativeTime: dayjs(item.readAt).fromNow(),
+              })
+            : t('contact:detail.summary.unread')
+        }
+      />
+    </div>
+  );
+};
+
+const CustomerMessageCard = ({ item }: ContactBlockProps) => {
+  const { t } = useTranslation(['contact']);
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{t('contact:detail.message.title')}</CardTitle>
+        <CardDescription>
+          {t('contact:detail.message.description')}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <Badge variant={getStatusBadgeVariant(item.status)}>
+            {t(`contact:status.${item.status}`)}
+          </Badge>
+          <a
+            href={`mailto:${item.email}?subject=${encodeURIComponent(`Re: ${item.subject}`)}`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-primary"
+          >
+            <MailIcon className="size-4" />
+            {t('contact:detail.message.reply')}
+          </a>
+        </div>
+        <div className="rounded-xl border border-border/70 bg-muted/20 px-4 py-4">
+          <p className="text-sm leading-7 whitespace-pre-wrap">
+            {item.message}
+          </p>
+        </div>
+        <div className="grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
+          <div>
+            <div className="font-medium text-foreground">
+              {t('contact:detail.message.ip')}
+            </div>
+            <div>
+              {item.ipAddress ?? t('contact:detail.message.notCaptured')}
+            </div>
+          </div>
+          <div>
+            <div className="font-medium text-foreground">
+              {t('contact:detail.message.userAgent')}
+            </div>
+            <div className="break-all">
+              {item.userAgent ?? t('contact:detail.message.notCaptured')}
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+interface ContactWorkflowCardProps extends ContactBlockProps {
+  internalNotes: string;
+  loading: boolean;
+  onInternalNotesChange: (value: string) => void;
+  onSave: () => void;
+  onStatusChange: (status: ContactStatus) => void;
+  status: ContactStatus;
+}
+
+const ContactWorkflowCard = ({
+  internalNotes,
+  item,
+  loading,
+  onInternalNotesChange,
+  onSave,
+  onStatusChange,
+  status,
+}: ContactWorkflowCardProps) => {
+  const { t } = useTranslation(['contact']);
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{t('contact:detail.workflow.title')}</CardTitle>
+        <CardDescription>
+          {t('contact:detail.workflow.description')}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <p className="text-sm font-medium">
+            {t('contact:detail.workflow.status')}
+          </p>
+          <Select
+            items={CONTACT_STATUS_OPTIONS.map((value) => ({
+              label: t(`contact:status.${value}`),
+              value,
+            }))}
+            value={status}
+            onValueChange={(value) => onStatusChange(value as ContactStatus)}
+          >
+            <SelectTrigger>
+              <SelectValue
+                placeholder={t('contact:detail.workflow.selectStatus')}
+              />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {CONTACT_STATUS_OPTIONS.map((value) => (
+                  <SelectItem key={value} value={value}>
+                    {t(`contact:status.${value}`)}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">
+            {t('contact:detail.workflow.notes')}
+          </p>
+          <Textarea
+            rows={6}
+            value={internalNotes}
+            onChange={(event) =>
+              onInternalNotesChange(event.currentTarget.value)
+            }
+            placeholder={t('contact:detail.workflow.notesPlaceholder')}
+          />
+        </div>
+
+        <div className="grid gap-3 rounded-xl border border-border/70 bg-muted/20 px-4 py-4 text-sm md:grid-cols-2">
+          <div>
+            <div className="font-medium text-foreground">
+              {t('contact:detail.workflow.resolvedAt')}
+            </div>
+            <div className="text-muted-foreground">
+              {item.resolvedAt
+                ? dayjs(item.resolvedAt).format('DD/MM/YYYY HH:mm')
+                : t('contact:detail.workflow.notResolved')}
+            </div>
+          </div>
+          <div>
+            <div className="font-medium text-foreground">
+              {t('contact:detail.workflow.lastUpdated')}
+            </div>
+            <div className="text-muted-foreground">
+              {dayjs(item.updatedAt).format('DD/MM/YYYY HH:mm')}
+            </div>
+          </div>
+        </div>
+
+        <Button className="w-full" onClick={onSave} loading={loading}>
+          {t('contact:detail.workflow.save')}
+        </Button>
+      </CardContent>
+    </Card>
+  );
+};
+
+interface SummaryCardProps {
   label: string;
   subLabel: string;
   value: string;
-}) => (
+}
+
+const SummaryCard = ({ label, subLabel, value }: SummaryCardProps) => (
   <Card>
     <CardHeader className="gap-2">
-      <CardTitle className="text-base">{props.label}</CardTitle>
-      <CardDescription>{props.subLabel}</CardDescription>
+      <CardTitle className="text-base">{label}</CardTitle>
+      <CardDescription className="truncate">{subLabel}</CardDescription>
     </CardHeader>
     <CardContent>
-      <div className="text-lg font-semibold tracking-tight">{props.value}</div>
+      <div className="text-lg font-semibold tracking-tight break-words">
+        {value}
+      </div>
     </CardContent>
   </Card>
 );
-
-const formatStatus = (status: ContactStatus) =>
-  status === 'in_progress'
-    ? 'In progress'
-    : status.charAt(0).toUpperCase() + status.slice(1);
 
 const getStatusBadgeVariant = (status: ContactStatus) => {
   if (status === 'unread') return 'warning';

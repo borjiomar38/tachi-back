@@ -16,7 +16,7 @@ export async function createPublicContactMessage(
       ipAddress: metadata?.ipAddress ?? null,
       message: data.message,
       name: data.name,
-      source: 'public_landing_form',
+      source: 'public_landing_form:triage_pending',
       subject: data.subject,
       userAgent: metadata?.userAgent ?? null,
     },

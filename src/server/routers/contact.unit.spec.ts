@@ -10,6 +10,8 @@ import {
 } from '@/server/routers/test-utils';
 
 const now = new Date('2026-03-20T10:00:00.000Z');
+const triageAuditLine =
+  '[contact-triage:v1] {"attempts":1,"classification":"malicious","processedAt":"2026-03-20T09:00:00.000Z","reason":"Obvious scam.","tags":["spam","scam"]}';
 
 describe('contact router', () => {
   beforeEach(() => {
@@ -26,24 +28,33 @@ describe('contact router', () => {
   describe('getAll', () => {
     it('returns paginated contact messages with status counts', async () => {
       mockDb.contactMessage.count.mockResolvedValue(1);
-      mockDb.contactMessage.findMany.mockResolvedValue([
-        {
-          assignedToUser: {
-            email: 'support@tachi-back.local',
-            id: 'support-1',
-            name: 'Support',
+      mockDb.contactMessage.findMany
+        .mockResolvedValueOnce([
+          {
+            assignedToUser: {
+              email: 'support@tachi-back.local',
+              id: 'support-1',
+              name: 'Support',
+            },
+            createdAt: now,
+            email: 'reader@example.com',
+            id: 'contact-1',
+            internalNotes: null,
+            name: 'Reader',
+            readAt: now,
+            resolvedAt: null,
+            source: 'public_landing_form',
+            status: 'in_progress',
+            subject: 'Need help with activation',
+            updatedAt: now,
           },
-          createdAt: now,
-          email: 'reader@example.com',
-          id: 'contact-1',
-          name: 'Reader',
-          readAt: now,
-          resolvedAt: null,
-          status: 'in_progress',
-          subject: 'Need help with activation',
-          updatedAt: now,
-        },
-      ]);
+        ])
+        .mockResolvedValueOnce([
+          {
+            internalNotes: null,
+            source: 'public_landing_form',
+          },
+        ]);
       mockDb.contactMessage.groupBy.mockResolvedValue([
         {
           _count: {
@@ -73,6 +84,17 @@ describe('contact router', () => {
             resolvedAt: null,
             status: 'in_progress',
             subject: 'Need help with activation',
+            triage: {
+              analyzedAt: null,
+              attempts: 0,
+              classification: null,
+              error: null,
+              notification: 'pending',
+              notifiedAt: null,
+              reason: null,
+              state: 'awaiting',
+              tags: [],
+            },
             updatedAt: now,
           },
         ],
@@ -85,6 +107,16 @@ describe('contact router', () => {
           unread: 0,
         },
         total: 1,
+        triageCounts: {
+          analyzed: 0,
+          awaiting: 1,
+          failed: 0,
+          filtered: 0,
+          forwarded: 0,
+          lastAnalyzedAt: null,
+          needsReview: 0,
+          total: 1,
+        },
       });
     });
 
@@ -113,7 +145,7 @@ describe('contact router', () => {
         createdAt: now,
         email: 'reader@example.com',
         id: 'contact-1',
-        internalNotes: null,
+        internalNotes: triageAuditLine,
         ipAddress: '10.0.0.1',
         message: 'Need help with setup and redeeming my code.',
         name: 'Reader',
@@ -133,8 +165,14 @@ describe('contact router', () => {
       expect(result).toMatchObject({
         email: 'reader@example.com',
         id: 'contact-1',
+        internalNotes: '',
         status: 'unread',
         subject: 'Need help with setup',
+        triage: {
+          classification: 'malicious',
+          reason: 'Obvious scam.',
+          tags: ['spam', 'scam'],
+        },
       });
     });
   });
@@ -142,6 +180,7 @@ describe('contact router', () => {
   describe('updateById', () => {
     it('updates status and notes while assigning the current staff user', async () => {
       mockDb.contactMessage.findUnique.mockResolvedValue({
+        internalNotes: `Old team note\n${triageAuditLine}`,
         readAt: null,
       });
       mockDb.contactMessage.update.mockResolvedValue({
@@ -153,7 +192,7 @@ describe('contact router', () => {
         createdAt: now,
         email: 'reader@example.com',
         id: 'contact-1',
-        internalNotes: 'Customer needs a device transfer.',
+        internalNotes: `Customer needs a device transfer.\n${triageAuditLine}`,
         ipAddress: '10.0.0.1',
         message: 'Need help with setup and redeeming my code.',
         name: 'Reader',
@@ -176,7 +215,7 @@ describe('contact router', () => {
         expect.objectContaining({
           data: expect.objectContaining({
             assignedToUserId: mockUser.id,
-            internalNotes: 'Customer needs a device transfer.',
+            internalNotes: `Customer needs a device transfer.\n${triageAuditLine}`,
             status: 'resolved',
           }),
         })

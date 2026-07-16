@@ -1,0 +1,132 @@
+{
+  "inbox": {
+    "title": "Boîte de réception",
+    "searchPlaceholder": "Rechercher un message ou un expéditeur…",
+    "statusFilter": "Statut",
+    "allStatuses": "Tous les statuts",
+    "showing": "{{visible}} messages affichés sur {{total}}",
+    "loadMore": "Charger plus",
+    "empty": "Aucun message de contact public n’a encore été enregistré.",
+    "emptySearch": "Aucun message ne correspond aux filtres.",
+    "summary": {
+      "total": "Total",
+      "totalDescription": "Tous les messages de contact",
+      "awaiting": "En attente d’analyse",
+      "awaitingDescription": "En file ou en cours d’analyse",
+      "needsReview": "À vérifier",
+      "needsReviewDescription": "Classifications incertaines ou échouées",
+      "forwarded": "Transmis",
+      "forwardedDescription": "Messages légitimes envoyés au support",
+      "filtered": "Filtrés",
+      "filteredDescription": "Spam, arnaques ou messages inutiles"
+    },
+    "automation": {
+      "active": "Tri automatique actif",
+      "analyzed": "{{analyzed}} sur {{total}} analysés",
+      "lastRun": "Dernière analyse {{relativeTime}}",
+      "waiting": "En attente de la première analyse",
+      "retryFailed": "Relancer les échecs",
+      "retrySuccess": "{{count}} message en échec remis en file",
+      "retryError": "Impossible de remettre les messages en file"
+    },
+    "filters": {
+      "all": "Tous",
+      "awaiting": "En attente",
+      "needsReview": "À vérifier",
+      "forwarded": "Transmis",
+      "filtered": "Spam et ignorés"
+    },
+    "columns": {
+      "message": "Message",
+      "verdict": "Verdict IA",
+      "workflow": "Traitement",
+      "routing": "Routage e-mail",
+      "date": "Date"
+    }
+  },
+  "status": {
+    "unread": "Non lu",
+    "in_progress": "En cours",
+    "resolved": "Résolu",
+    "spam": "Spam"
+  },
+  "triage": {
+    "title": "Tri IA",
+    "classification": {
+      "malicious": "Arnaque détectée",
+      "irrelevant": "Inutile",
+      "actionable": "Légitime",
+      "uncertain": "À vérifier",
+      "pending": "En attente d’analyse"
+    },
+    "state": {
+      "awaiting": "En attente",
+      "processing": "Analyse en cours",
+      "retrying": "Nouvelle tentative",
+      "failed": "Échec de l’analyse",
+      "filtered": "Filtré",
+      "forwarded": "Transmis"
+    },
+    "tags": {
+      "spam": "Spam",
+      "scam": "Arnaque",
+      "phishing": "Hameçonnage",
+      "fraud": "Fraude"
+    },
+    "analyzedAutomatically": "Analysé automatiquement · {{date}}",
+    "notAnalyzed": "Ce message est en attente d’analyse automatique.",
+    "attempts": "{{count}} tentative",
+    "attempts_other": "{{count}} tentatives",
+    "supportNotification": "Notification du support",
+    "routing": {
+      "pending": "Analyse en attente",
+      "suppressed": "Bloquée — spam évident ou message inutile",
+      "forwarded": "Envoyée à support@nayovi.com",
+      "failed": "Vérification manuelle nécessaire"
+    },
+    "analyzeAgain": "Analyser à nouveau",
+    "reanalyzeQueued": "Contact remis en file d’analyse automatique",
+    "reanalyzeError": "Impossible de remettre ce contact en file"
+  },
+  "detail": {
+    "deleteTitle": "Supprimer ce message ?",
+    "deleteDescription": "Cette action supprime définitivement le message de la boîte de réception.",
+    "deleteConfirm": "Supprimer le message",
+    "delete": "Supprimer",
+    "updated": "Message mis à jour",
+    "updateError": "Impossible de mettre le message à jour",
+    "deleted": "Message supprimé",
+    "deleteError": "Impossible de supprimer le message",
+    "summary": {
+      "status": "Statut",
+      "sender": "Expéditeur",
+      "assigned": "Assigné",
+      "source": "Source",
+      "created": "Créé le {{date}}",
+      "unassigned": "Non assigné",
+      "assignOnUpdate": "Sera assigné à la mise à jour",
+      "read": "Lu {{relativeTime}}",
+      "unread": "Non lu"
+    },
+    "message": {
+      "title": "Message du client",
+      "description": "Envoyé depuis le formulaire public et stocké directement en base de données.",
+      "reply": "Répondre par e-mail",
+      "ip": "Adresse IP",
+      "userAgent": "Agent utilisateur",
+      "notCaptured": "Non capturé"
+    },
+    "workflow": {
+      "title": "Traitement",
+      "description": "Mettez à jour le statut, ajoutez des notes privées et assignez-vous le message.",
+      "status": "Statut",
+      "selectStatus": "Sélectionner un statut",
+      "notes": "Notes internes",
+      "notesPlaceholder": "Ajouter une note privée pour votre équipe…",
+      "resolvedAt": "Résolu le",
+      "notResolved": "Pas encore résolu",
+      "lastUpdated": "Dernière mise à jour",
+      "save": "Enregistrer"
+    }
+  }
+}
