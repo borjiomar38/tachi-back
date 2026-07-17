@@ -59,6 +59,17 @@ curl -fsS \
   "${base_url%/}/api/cron/generate-codex-blog-prompt" \
   >"${prompt_file}"
 
+if [[ ! -s "${prompt_file}" ]]; then
+  echo "Codex blog prompt endpoint returned no eligible article prompt; skipping."
+  exit 0
+fi
+
+if head -n 1 "${prompt_file}" | grep -qx "TACHI_CODEX_BLOG_NOOP"; then
+  echo "Codex blog generation skipped by server policy."
+  cat "${prompt_file}"
+  exit 0
+fi
+
 codex_args=(
   exec
   --skip-git-repo-check

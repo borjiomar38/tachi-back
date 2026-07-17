@@ -3,6 +3,7 @@ import { buildBlogSeoKeywords } from '@/features/blog/seo';
 import {
   BLOG_CODEX_PROMPT_VERSION,
   buildCodexBlogArticlePrompt,
+  buildCodexBlogNoopPrompt,
   CodexBlogArticleDraft,
   ExistingBlogTopic,
   findDuplicateBlogTopic,
@@ -19,8 +20,17 @@ import {
   runHeroImageUxReviewAgent,
 } from '@/server/blog/review-agents';
 import { BlogGenerationTopic } from '@/server/blog/topics';
+import {
+  resolveTrendingMangaCandidates,
+  TrendingMangaCandidate,
+  validateTrendingMangaSelection,
+} from '@/server/blog/trending-topic-resolver';
 import { db } from '@/server/db';
-import { BlogArticleStatus, ProviderType } from '@/server/db/generated/client';
+import {
+  BlogArticleStatus,
+  Prisma,
+  ProviderType,
+} from '@/server/db/generated/client';
 
 export class CodexBlogDuplicateTopicError extends Error {
   readonly duplicate: ExistingBlogTopic;
@@ -29,6 +39,16 @@ export class CodexBlogDuplicateTopicError extends Error {
     super(`Codex selected an already used blog topic: ${input.manhwaTitle}.`);
     this.name = 'CodexBlogDuplicateTopicError';
     this.duplicate = input.duplicate;
+  }
+}
+
+export class CodexBlogTopicSelectionError extends Error {
+  readonly details: Record<string, unknown>;
+
+  constructor(input: { details?: Record<string, unknown>; message: string }) {
+    super(input.message);
+    this.name = 'CodexBlogTopicSelectionError';
+    this.details = input.details ?? {};
   }
 }
 
@@ -56,8 +76,18 @@ export async function buildDailyCodexBlogArticlePrompt(
   const publicationDate = input.date ?? new Date();
   const generationDate = publicationDate.toISOString().slice(0, 10);
   const existingTopics = await getExistingBlogTopics();
+  const trendResult = await resolveTrendingCandidatesForPrompt(existingTopics);
+
+  if (trendResult.candidates.length === 0) {
+    return buildCodexBlogNoopPrompt({
+      reason:
+        'No real, currently trending, verified, and unpublished manga/manhwa/manhua candidate passed validation.',
+      rejectedCandidates: trendResult.rejected,
+    });
+  }
 
   return buildCodexBlogArticlePrompt({
+    candidates: trendResult.candidates,
     date: generationDate,
     existingTopics,
   });
@@ -90,14 +120,10 @@ export async function publishCodexBlogArticleDraft(input: {
   }
 
   const existingTopics = await getExistingBlogTopics();
-  const duplicate = findDuplicateBlogTopic(input.draft, existingTopics);
-
-  if (duplicate) {
-    throw new CodexBlogDuplicateTopicError({
-      duplicate,
-      manhwaTitle: input.draft.manhwaTitle,
-    });
-  }
+  const verifiedCandidate = await validateDraftTopicSelection({
+    draft: input.draft,
+    existingTopics,
+  });
 
   const topic = buildTopicFromDraft(input.draft);
   const imagePrompt = buildBlogTopicHeroImagePrompt(topic);
@@ -112,13 +138,21 @@ export async function publishCodexBlogArticleDraft(input: {
       imagePrompt,
     }),
   ]);
-  const uxReview = runArticleUxReviewAgent({
+  const articleUxReview = runArticleUxReviewAgent({
     body: input.draft.body,
     excerpt: input.draft.excerpt,
     keywords: input.draft.keywords,
     metaDescription: input.draft.metaDescription,
     title: input.draft.title,
   });
+  const uxReview = {
+    ...articleUxReview,
+    topicSelection: buildTopicSelectionAudit({
+      candidate: verifiedCandidate,
+      draft: input.draft,
+      validatedAt: publicationDate.toISOString(),
+    }),
+  };
   const slug = await buildUniqueSlug(input.draft.slugBase, generationDate);
   const heroImage = input.heroImage
     ? await uploadGeneratedBlogHeroImage({
@@ -167,7 +201,7 @@ export async function publishCodexBlogArticleDraft(input: {
         ? BlogArticleStatus.published
         : BlogArticleStatus.draft,
       title: input.draft.title,
-      uxReview,
+      uxReview: toPrismaJson(uxReview),
     },
     select: codexBlogArticleSelect,
   });
@@ -198,14 +232,158 @@ async function getExistingBlogTopics(): Promise<ExistingBlogTopic[]> {
     orderBy: [{ createdAt: 'desc' }],
     select: {
       manhwaTitle: true,
+      slug: true,
       title: true,
     },
   });
 
   return rows.map((row) => ({
     manhwaTitle: row.manhwaTitle,
+    slug: row.slug,
     title: row.title,
   }));
+}
+
+async function resolveTrendingCandidatesForPrompt(
+  existingTopics: ExistingBlogTopic[]
+) {
+  try {
+    return await resolveTrendingMangaCandidates({
+      existingTopics,
+    });
+  } catch (error) {
+    return {
+      candidates: [],
+      rejected: [
+        {
+          reason:
+            error instanceof Error
+              ? `Trend resolver failed: ${error.message}`
+              : 'Trend resolver failed with an unknown error.',
+          title: 'trend-resolver',
+        },
+      ],
+      resolvedAt: new Date().toISOString(),
+    };
+  }
+}
+
+async function validateDraftTopicSelection(input: {
+  draft: CodexBlogArticleDraft;
+  existingTopics: ExistingBlogTopic[];
+}): Promise<TrendingMangaCandidate> {
+  const duplicate = findDuplicateBlogTopic(
+    {
+      aliases: input.draft.topicEvidence.titleAliases,
+      manhwaTitle: input.draft.manhwaTitle,
+      slugBase: input.draft.slugBase,
+      title: input.draft.title,
+    },
+    input.existingTopics
+  );
+
+  if (duplicate) {
+    throw new CodexBlogDuplicateTopicError({
+      duplicate,
+      manhwaTitle: input.draft.manhwaTitle,
+    });
+  }
+
+  const verifiedCandidate = await validateTrendingMangaSelection({
+    claim: {
+      aliases: input.draft.topicEvidence.titleAliases,
+      anilistId: input.draft.topicEvidence.anilistId,
+      canonicalId: input.draft.topicEvidence.canonicalId,
+      kitsuId: input.draft.topicEvidence.kitsuId,
+      malId: input.draft.topicEvidence.myAnimeListId,
+      sourceUrls: input.draft.topicEvidence.sourceUrls,
+      title: input.draft.manhwaTitle,
+      type: input.draft.manhwaType,
+    },
+  }).catch((error: unknown) => {
+    throw new CodexBlogTopicSelectionError({
+      details: {
+        canonicalId: input.draft.topicEvidence.canonicalId,
+        reason: error instanceof Error ? error.message : 'Unknown error',
+      },
+      message:
+        'Codex blog draft selected a topic that is not currently verified.',
+    });
+  });
+  const candidateDuplicate = findDuplicateBlogTopic(
+    {
+      aliases: [
+        ...verifiedCandidate.aliases,
+        ...input.draft.topicEvidence.titleAliases,
+      ],
+      manhwaTitle: input.draft.manhwaTitle,
+      slugBase: input.draft.slugBase,
+      title: input.draft.title,
+    },
+    input.existingTopics
+  );
+
+  if (candidateDuplicate) {
+    throw new CodexBlogDuplicateTopicError({
+      duplicate: candidateDuplicate,
+      manhwaTitle: input.draft.manhwaTitle,
+    });
+  }
+
+  assertDraftSourceNotesUseVerifiedSources({
+    candidate: verifiedCandidate,
+    draft: input.draft,
+  });
+
+  return verifiedCandidate;
+}
+
+function assertDraftSourceNotesUseVerifiedSources(input: {
+  candidate: TrendingMangaCandidate;
+  draft: CodexBlogArticleDraft;
+}) {
+  const verifiedUrls = new Set(
+    input.candidate.sourceEvidence.map((source) => source.url)
+  );
+  const matchingSourceCount = input.draft.sourceNotes.filter((source) =>
+    verifiedUrls.has(source.url)
+  ).length;
+
+  if (matchingSourceCount < 2) {
+    throw new CodexBlogTopicSelectionError({
+      details: {
+        canonicalId: input.draft.topicEvidence.canonicalId,
+        sourceNoteUrls: input.draft.sourceNotes.map((source) => source.url),
+        verifiedUrls: [...verifiedUrls],
+      },
+      message:
+        'Codex blog draft sourceNotes do not include the verified topic sources.',
+    });
+  }
+}
+
+function buildTopicSelectionAudit(input: {
+  candidate: TrendingMangaCandidate;
+  draft: CodexBlogArticleDraft;
+  validatedAt: string;
+}) {
+  return {
+    aliases: input.candidate.aliases,
+    anilistId: input.candidate.anilistId,
+    canonicalId: input.candidate.canonicalId,
+    duplicatePolicy: 'alias-title-slug-canonical-topic',
+    draftEvidence: input.draft.topicEvidence,
+    kitsuId: input.candidate.kitsuId,
+    myAnimeListId: input.candidate.malId,
+    sourceEvidence: input.candidate.sourceEvidence,
+    trendRank: input.candidate.trendRank,
+    trendScore: input.candidate.trendScore,
+    validatedAt: input.validatedAt,
+  };
+}
+
+function toPrismaJson(value: unknown): Prisma.InputJsonValue {
+  return JSON.parse(JSON.stringify(value)) as Prisma.InputJsonValue;
 }
 
 function buildTopicFromDraft(

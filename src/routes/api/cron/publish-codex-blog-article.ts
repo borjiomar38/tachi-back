@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { envServer } from '@/env/server';
 import {
   CodexBlogDuplicateTopicError,
+  CodexBlogTopicSelectionError,
   publishCodexBlogArticleDraft,
 } from '@/server/blog/codex';
 import { zCodexBlogArticlePublishPayload } from '@/server/blog/codex-draft';
@@ -67,14 +68,33 @@ export const Route = createFileRoute('/api/cron/publish-codex-blog-article')({
           }
 
           if (error instanceof CodexBlogDuplicateTopicError) {
-            return buildApiErrorResponse({
-              code: 'duplicate_blog_topic',
-              details: {
-                duplicate: error.duplicate,
+            return buildApiOkResponse(
+              {
+                details: {
+                  duplicate: error.duplicate,
+                },
+                published: false,
+                reason: 'duplicate_blog_topic',
+                status: 'skipped',
               },
-              requestId: context.requestId,
-              status: 409,
-            });
+              {
+                requestId: context.requestId,
+              }
+            );
+          }
+
+          if (error instanceof CodexBlogTopicSelectionError) {
+            return buildApiOkResponse(
+              {
+                details: error.details,
+                published: false,
+                reason: 'invalid_or_unverified_blog_topic',
+                status: 'skipped',
+              },
+              {
+                requestId: context.requestId,
+              }
+            );
           }
 
           logger.error({
