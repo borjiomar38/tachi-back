@@ -78,6 +78,7 @@ import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiMobileExtensionPolicyRouteImport } from './routes/api/mobile/extension-policy'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
+import { Route as ApiDownloadTachiyomiatLatestDotapkRouteImport } from './routes/api/download/tachiyomiat-latest[.]apk'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiCronSeoDistributionRouteImport } from './routes/api/cron/seo-distribution'
 import { Route as ApiCronPublishCodexBlogArticleRouteImport } from './routes/api/cron/publish-codex-blog-article'
@@ -487,6 +488,12 @@ const ApiMobileAppUpdatePolicyRoute =
     path: '/api/mobile/app-update-policy',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiDownloadTachiyomiatLatestDotapkRoute =
+  ApiDownloadTachiyomiatLatestDotapkRouteImport.update({
+    id: '/api/download/tachiyomiat-latest.apk',
+    path: '/api/download/tachiyomiat-latest.apk',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
   id: '/api/download/apk',
   path: '/api/download/apk',
@@ -799,6 +806,7 @@ export interface FileRoutesByFullPath {
   '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
+  '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -914,6 +922,7 @@ export interface FileRoutesByTo {
   '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
+  '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -1034,6 +1043,7 @@ export interface FileRoutesById {
   '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
+  '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -1155,6 +1165,7 @@ export interface FileRouteTypes {
     | '/api/cron/publish-codex-blog-article'
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
+    | '/api/download/tachiyomiat-latest.apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
     | '/api/mobile/heartbeat'
@@ -1270,6 +1281,7 @@ export interface FileRouteTypes {
     | '/api/cron/publish-codex-blog-article'
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
+    | '/api/download/tachiyomiat-latest.apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
     | '/api/mobile/heartbeat'
@@ -1389,6 +1401,7 @@ export interface FileRouteTypes {
     | '/api/cron/publish-codex-blog-article'
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
+    | '/api/download/tachiyomiat-latest.apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
     | '/api/mobile/heartbeat'
@@ -1506,6 +1519,7 @@ export interface RootRouteChildren {
   ApiCronPublishCodexBlogArticleRoute: typeof ApiCronPublishCodexBlogArticleRoute
   ApiCronSeoDistributionRoute: typeof ApiCronSeoDistributionRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
+  ApiDownloadTachiyomiatLatestDotapkRoute: typeof ApiDownloadTachiyomiatLatestDotapkRoute
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
   ApiMobileExtensionPolicyRoute: typeof ApiMobileExtensionPolicyRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
@@ -2023,6 +2037,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/app-update-policy'
       fullPath: '/api/mobile/app-update-policy'
       preLoaderRoute: typeof ApiMobileAppUpdatePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/download/tachiyomiat-latest.apk': {
+      id: '/api/download/tachiyomiat-latest.apk'
+      path: '/api/download/tachiyomiat-latest.apk'
+      fullPath: '/api/download/tachiyomiat-latest.apk'
+      preLoaderRoute: typeof ApiDownloadTachiyomiatLatestDotapkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/download/apk': {
@@ -2594,6 +2615,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCronPublishCodexBlogArticleRoute: ApiCronPublishCodexBlogArticleRoute,
   ApiCronSeoDistributionRoute: ApiCronSeoDistributionRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
+  ApiDownloadTachiyomiatLatestDotapkRoute:
+    ApiDownloadTachiyomiatLatestDotapkRoute,
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
   ApiMobileExtensionPolicyRoute: ApiMobileExtensionPolicyRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
