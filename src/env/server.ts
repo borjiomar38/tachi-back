@@ -29,6 +29,9 @@ const envServerBase = createEnv({
     EMAIL_SERVER: z.url(),
     EMAIL_FROM: z.string(),
     SUPPORT_EMAIL: z.email().default('contact@nayovi.com'),
+    CONTACT_SMTP_SERVER: z.url().optional(),
+    CONTACT_IMAP_SERVER: z.url().optional(),
+    CONTACT_IMAP_MAILBOX: z.string().trim().min(1).default('INBOX'),
 
     LEMONSQUEEZY_ENABLED: z.stringbool().default(false),
     LEMONSQUEEZY_API_KEY: z.string().optional(),

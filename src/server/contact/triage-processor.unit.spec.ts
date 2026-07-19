@@ -2,13 +2,19 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const mocks = vi.hoisted(() => ({
   classify: vi.fn(),
-  findFirst: vi.fn(),
-  findUnique: vi.fn(),
+  contactFindMany: vi.fn(),
+  contactFindUnique: vi.fn(),
+  contactUpdate: vi.fn(),
+  conversationCreate: vi.fn(),
+  conversationFindFirst: vi.fn(),
+  conversationFindMany: vi.fn(),
+  conversationUpdate: vi.fn(),
+  conversationUpdateMany: vi.fn(),
   generateReply: vi.fn(),
-  sendReply: vi.fn(),
+  getProductFacts: vi.fn(),
   sendNotification: vi.fn(),
-  update: vi.fn(),
-  updateMany: vi.fn(),
+  sendReply: vi.fn(),
+  transaction: vi.fn(),
 }));
 
 vi.mock('@/server/contact/codex-classifier', () => ({
@@ -21,18 +27,34 @@ vi.mock('@/server/contact/codex-reply', () => ({
 
 vi.mock('@/server/contact/contact-notifier', () => ({
   getContactNotificationId: (contactId: string) => `contact-${contactId}`,
-  getContactReplyId: (contactId: string) => `contact-reply-${contactId}`,
-  sendContactReply: mocks.sendReply,
   sendContactNotification: mocks.sendNotification,
+  sendContactReply: mocks.sendReply,
+}));
+
+vi.mock('@/server/contact/product-facts', () => ({
+  getContactProductFacts: mocks.getProductFacts,
+}));
+
+vi.mock('@/server/contact/thread-policy', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@/server/contact/thread-policy')>()),
+  getContactReplyMessageId: (contactId: string, messageId: string) =>
+    `<contact-reply-${contactId}-${messageId}@nayovi.com>`,
 }));
 
 vi.mock('@/server/db', () => ({
   db: {
+    $transaction: mocks.transaction,
+    contactConversationMessage: {
+      create: mocks.conversationCreate,
+      findFirst: mocks.conversationFindFirst,
+      findMany: mocks.conversationFindMany,
+      update: mocks.conversationUpdate,
+      updateMany: mocks.conversationUpdateMany,
+    },
     contactMessage: {
-      findFirst: mocks.findFirst,
-      findUnique: mocks.findUnique,
-      update: mocks.update,
-      updateMany: mocks.updateMany,
+      findMany: mocks.contactFindMany,
+      findUnique: mocks.contactFindUnique,
+      update: mocks.contactUpdate,
     },
   },
 }));
@@ -53,19 +75,45 @@ const legacyContact = {
   message: 'I need help activating the application on my phone.',
   name: 'Reader',
   readAt: null,
-  source: 'public_landing_form',
+  source: 'public_landing_form:triage_pending',
   subject: 'Activation help',
+};
+
+const inbound = {
+  automationStatus: 'pending',
+  bodyText: legacyContact.message,
+  contactId: legacyContact.id,
+  createdAt: new Date('2026-07-16T10:00:00.000Z'),
+  direction: 'inbound',
+  id: 'inbound-1',
+  messageId: '<contact-form-contact-1@nayovi.com>',
+  receivedAt: new Date('2026-07-16T10:00:00.000Z'),
+  references: [],
+  senderEmail: legacyContact.email,
+  sentAt: null,
+  source: 'contact_form',
+  subject: legacyContact.subject,
 };
 
 describe('processNextContactTriage', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mocks.findFirst.mockResolvedValue(legacyContact);
-    mocks.updateMany.mockResolvedValue({ count: 1 });
-    mocks.update.mockResolvedValue(legacyContact);
+    mocks.transaction.mockImplementation(
+      async (operations: Promise<unknown>[]) => await Promise.all(operations)
+    );
+    mocks.conversationFindFirst.mockResolvedValue(inbound);
+    mocks.conversationFindMany.mockResolvedValue([inbound]);
+    mocks.conversationUpdateMany.mockResolvedValue({ count: 1 });
+    mocks.conversationUpdate.mockResolvedValue(inbound);
+    mocks.conversationCreate.mockResolvedValue({ id: 'outbound-1' });
+    mocks.contactFindUnique.mockResolvedValue(legacyContact);
+    mocks.contactUpdate.mockResolvedValue(legacyContact);
+    mocks.getProductFacts.mockResolvedValue({
+      plans: [{ currency: 'USD', priceCents: 999, tokens: 100_000 }],
+    });
   });
 
-  it('automatically claims and filters a legacy contact', async () => {
+  it('automatically claims and filters an obvious scam', async () => {
     mocks.classify.mockResolvedValue({
       classification: 'malicious',
       reason: 'Obvious investment scam.',
@@ -79,22 +127,20 @@ describe('processNextContactTriage', () => {
       processed: true,
     });
 
-    expect(mocks.findFirst).toHaveBeenCalledWith(
+    expect(mocks.conversationFindFirst).toHaveBeenCalledWith(
       expect.objectContaining({
         where: expect.objectContaining({
-          source: expect.objectContaining({
-            in: expect.arrayContaining(['public_landing_form']),
-          }),
+          automationStatus: 'pending',
+          direction: 'inbound',
         }),
       })
     );
-    expect(mocks.updateMany).toHaveBeenCalledWith(
-      expect.objectContaining({
-        data: { source: 'public_landing_form:triage_processing' },
-      })
-    );
+    expect(mocks.conversationUpdateMany).toHaveBeenCalledWith({
+      data: { automationStatus: 'processing' },
+      where: { automationStatus: 'pending', id: 'inbound-1' },
+    });
     expect(mocks.sendNotification).not.toHaveBeenCalled();
-    expect(mocks.update).toHaveBeenCalledWith(
+    expect(mocks.contactUpdate).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
           source: 'public_landing_form:triage_ignored',
@@ -102,6 +148,10 @@ describe('processNextContactTriage', () => {
         }),
       })
     );
+    expect(mocks.conversationUpdate).toHaveBeenCalledWith({
+      data: { automationStatus: 'filtered' },
+      where: { id: 'inbound-1' },
+    });
   });
 
   it('forwards an actionable contact to support exactly once', async () => {
@@ -120,7 +170,7 @@ describe('processNextContactTriage', () => {
     });
 
     expect(mocks.sendNotification).toHaveBeenCalledTimes(1);
-    expect(mocks.update).toHaveBeenLastCalledWith(
+    expect(mocks.contactUpdate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
           source: 'public_landing_form:triage_notified',
@@ -130,19 +180,52 @@ describe('processNextContactTriage', () => {
         }),
       })
     );
+    expect(mocks.conversationUpdate).toHaveBeenCalledWith({
+      data: { automationStatus: 'forwarded' },
+      where: { id: 'inbound-1' },
+    });
   });
 
-  it('sends a Codex-written reply to an explicit pricing customer and resolves it', async () => {
+  it('uses the full thread to reply to a pricing follow-up in the same email thread', async () => {
+    const previousReply = {
+      ...inbound,
+      bodyText: 'Our Pro plan is available on the plans page.',
+      createdAt: new Date('2026-07-16T10:05:00.000Z'),
+      direction: 'outbound',
+      id: 'outbound-existing',
+      messageId: '<contact-reply-existing@nayovi.com>',
+      receivedAt: null,
+      senderEmail: 'contact@nayovi.com',
+      sentAt: new Date('2026-07-16T10:05:00.000Z'),
+      source: 'codex',
+    };
+    const followUp = {
+      ...inbound,
+      bodyText: 'Can I use it on two phones?',
+      createdAt: new Date('2026-07-16T10:10:00.000Z'),
+      id: 'inbound-follow-up',
+      inReplyTo: previousReply.messageId,
+      messageId: '<customer-follow-up@example.com>',
+      receivedAt: new Date('2026-07-16T10:10:00.000Z'),
+      references: [inbound.messageId, previousReply.messageId],
+      source: 'email',
+    };
+    mocks.conversationFindFirst.mockResolvedValue(followUp);
+    mocks.conversationFindMany.mockResolvedValue([
+      inbound,
+      previousReply,
+      followUp,
+    ]);
     mocks.classify.mockResolvedValue({
       classification: 'actionable',
-      reason: 'The reader explicitly asks how to buy a plan.',
+      reason: 'A customer asks a follow-up usage question.',
       replyConfidence: 'high',
-      replyIntent: 'pricing',
+      replyIntent: 'help',
       tags: [],
     });
     mocks.generateReply.mockResolvedValue({
       subject: 'Re: Activation help',
-      text: 'Hello Reader, here are the current plans.',
+      text: 'Hello Reader, here is how device access works.',
     });
     mocks.sendReply.mockResolvedValue({ messageId: 'reply-1' });
 
@@ -152,30 +235,48 @@ describe('processNextContactTriage', () => {
       routing: 'reply',
     });
 
-    expect(mocks.sendNotification).not.toHaveBeenCalled();
+    expect(mocks.classify).toHaveBeenCalledWith(
+      expect.objectContaining({
+        conversation: expect.arrayContaining([
+          expect.objectContaining({ bodyText: legacyContact.message }),
+          expect.objectContaining({ bodyText: previousReply.bodyText }),
+          expect.objectContaining({ bodyText: followUp.bodyText }),
+        ]),
+        message: followUp.bodyText,
+      })
+    );
+    expect(mocks.generateReply).toHaveBeenCalledWith(
+      expect.objectContaining({
+        conversation: expect.arrayContaining([
+          expect.objectContaining({ bodyText: previousReply.bodyText }),
+        ]),
+        productFacts: expect.any(Object),
+      })
+    );
     expect(mocks.sendReply).toHaveBeenCalledWith(
       expect.objectContaining({
         contactId: 'contact-1',
         email: 'reader@example.com',
+        inReplyTo: followUp.messageId,
+        references: expect.arrayContaining([
+          followUp.messageId,
+          ...followUp.references,
+        ]),
       })
     );
-    expect(mocks.update).toHaveBeenLastCalledWith(
+    expect(mocks.conversationCreate).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
-          source: 'public_landing_form:triage_customer_replied',
-          status: 'resolved',
-        }),
-        where: expect.objectContaining({
-          source: 'public_landing_form:triage_customer_reply_sending',
+          bodyText: 'Hello Reader, here is how device access works.',
+          direction: 'outbound',
+          inReplyTo: followUp.messageId,
+          source: 'codex',
         }),
       })
-    );
-    expect(mocks.update.mock.calls.at(-1)?.[0].data.internalNotes).toContain(
-      '"replyIntent":"pricing"'
     );
   });
 
-  it('preserves the verdict when support notification fails', async () => {
+  it('preserves the verdict and prevents resend when support delivery is uncertain', async () => {
     mocks.classify.mockResolvedValue({
       classification: 'actionable',
       reason: 'A legitimate activation support request.',
@@ -184,16 +285,18 @@ describe('processNextContactTriage', () => {
       tags: [],
     });
     mocks.sendNotification.mockRejectedValue(new Error('SMTP unavailable'));
-    mocks.findUnique.mockResolvedValue({
-      source: 'public_landing_form:triage_notification_sending',
-    });
+    mocks.contactFindUnique
+      .mockResolvedValueOnce(legacyContact)
+      .mockResolvedValueOnce({
+        source: 'public_landing_form:triage_notification_sending',
+      });
 
     await expect(processNextContactTriage()).resolves.toEqual({
       outcome: 'failed',
       processed: false,
     });
 
-    expect(mocks.update).toHaveBeenLastCalledWith(
+    expect(mocks.contactUpdate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
           internalNotes: expect.stringContaining(
@@ -203,14 +306,12 @@ describe('processNextContactTriage', () => {
         }),
       })
     );
-    expect(mocks.update.mock.calls.at(-1)?.[0].data.internalNotes).toContain(
-      '"attempts":1'
-    );
-    expect(mocks.update.mock.calls.at(-1)?.[0].data.internalNotes).toContain(
-      '"notificationId":"contact-contact-1"'
-    );
+    expect(mocks.conversationUpdate).toHaveBeenLastCalledWith({
+      data: { automationStatus: 'delivery_unknown' },
+      where: { id: 'inbound-1' },
+    });
 
-    mocks.findFirst.mockResolvedValue(null);
+    mocks.conversationFindFirst.mockResolvedValue(null);
     await expect(processNextContactTriage()).resolves.toEqual({
       outcome: 'empty',
       processed: false,
@@ -218,7 +319,7 @@ describe('processNextContactTriage', () => {
     expect(mocks.sendNotification).toHaveBeenCalledTimes(1);
   });
 
-  it('quarantines an ambiguous customer reply outcome without resending it', async () => {
+  it('quarantines an ambiguous customer reply without resending it', async () => {
     mocks.classify.mockResolvedValue({
       classification: 'actionable',
       reason: 'The reader explicitly requests activation help.',
@@ -231,24 +332,31 @@ describe('processNextContactTriage', () => {
       text: 'Hello Reader, here is how to activate Nayovi.',
     });
     mocks.sendReply.mockRejectedValue(new Error('SMTP unavailable'));
-    mocks.findUnique.mockResolvedValue({
-      source: 'public_landing_form:triage_customer_reply_sending',
-    });
+    mocks.contactFindUnique
+      .mockResolvedValueOnce(legacyContact)
+      .mockResolvedValueOnce({
+        source: 'public_landing_form:triage_customer_reply_sending',
+      });
 
     await expect(processNextContactTriage()).resolves.toEqual({
       outcome: 'failed',
       processed: false,
     });
 
-    expect(mocks.update).toHaveBeenLastCalledWith(
+    expect(mocks.contactUpdate).toHaveBeenLastCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({
           source: 'public_landing_form:triage_customer_reply_unknown',
         }),
       })
     );
+    expect(mocks.conversationUpdate).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        data: { deliveryStatus: 'delivery_unknown' },
+      })
+    );
 
-    mocks.findFirst.mockResolvedValue(null);
+    mocks.conversationFindFirst.mockResolvedValue(null);
     await expect(processNextContactTriage()).resolves.toEqual({
       outcome: 'empty',
       processed: false,
@@ -256,33 +364,29 @@ describe('processNextContactTriage', () => {
     expect(mocks.sendReply).toHaveBeenCalledTimes(1);
   });
 
-  it('quarantines a stale in-flight notification without resending it', async () => {
-    mocks.updateMany
-      .mockResolvedValueOnce({ count: 1 })
-      .mockResolvedValueOnce({ count: 0 });
+  it('quarantines stale in-flight delivery states without resending', async () => {
+    mocks.contactFindMany.mockResolvedValue([
+      {
+        id: 'contact-stale',
+        source: 'public_landing_form:triage_notification_sending',
+      },
+    ]);
     const now = new Date('2026-07-16T12:00:00.000Z');
 
     await expect(quarantineStaleContactNotifications(now)).resolves.toEqual({
       count: 1,
     });
 
-    expect(mocks.updateMany).toHaveBeenCalledWith({
-      data: {
-        source: 'public_landing_form:triage_notification_unknown',
-      },
-      where: {
-        source: 'public_landing_form:triage_notification_sending',
-        updatedAt: { lt: new Date('2026-07-16T11:50:00.000Z') },
-      },
-    });
-    expect(mocks.updateMany).toHaveBeenCalledWith({
-      data: {
-        source: 'public_landing_form:triage_customer_reply_unknown',
-      },
-      where: {
-        source: 'public_landing_form:triage_customer_reply_sending',
-        updatedAt: { lt: new Date('2026-07-16T11:50:00.000Z') },
-      },
+    expect(mocks.contactFindMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        where: expect.objectContaining({
+          updatedAt: { lt: new Date('2026-07-16T11:50:00.000Z') },
+        }),
+      })
+    );
+    expect(mocks.contactUpdate).toHaveBeenCalledWith({
+      data: { source: 'public_landing_form:triage_notification_unknown' },
+      where: { id: 'contact-stale' },
     });
     expect(mocks.sendNotification).not.toHaveBeenCalled();
     expect(mocks.sendReply).not.toHaveBeenCalled();

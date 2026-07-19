@@ -4,7 +4,12 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import {
   AlertCircleIcon,
-  MailIcon,
+  BotIcon,
+  CheckCheckIcon,
+  CircleAlertIcon,
+  Clock3Icon,
+  LoaderCircleIcon,
+  MessageCircleIcon,
   RefreshCwIcon,
   Trash2Icon,
 } from 'lucide-react';
@@ -13,10 +18,12 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
 
 import { orpc } from '@/lib/orpc/client';
+import { cn } from '@/lib/tailwind/utils';
 import { useNavigateBack } from '@/hooks/use-navigate-back';
 
 import { BackButton } from '@/components/back-button';
 import { PageError } from '@/components/errors/page-error';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -203,7 +210,7 @@ export const PageContact = ({ params }: PageContactProps) => {
               <div className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
                 <div className="space-y-4">
                   <ContactSummaryGrid item={item} />
-                  <CustomerMessageCard item={item} />
+                  <ContactConversationCard item={item} />
                 </div>
                 <div className="space-y-4">
                   <ContactTriageCard
@@ -289,55 +296,180 @@ const ContactSummaryGrid = ({ item }: ContactBlockProps) => {
   );
 };
 
-const CustomerMessageCard = ({ item }: ContactBlockProps) => {
+type ContactConversationMessage = ContactDetail['conversation'][number];
+
+const ContactConversationCard = ({ item }: ContactBlockProps) => {
   const { t } = useTranslation(['contact']);
+  const latestInbound = [...item.conversation]
+    .reverse()
+    .find((message) => message.direction === 'inbound');
+  const isAwaitingAutomation =
+    latestInbound &&
+    ['pending', 'processing'].includes(latestInbound.automationStatus);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{t('contact:detail.message.title')}</CardTitle>
-        <CardDescription>
-          {t('contact:detail.message.description')}
-        </CardDescription>
+    <Card className="overflow-hidden">
+      <CardHeader className="flex-row items-start justify-between gap-4">
+        <div className="space-y-1.5">
+          <CardTitle className="flex items-center gap-2">
+            <MessageCircleIcon className="size-5 text-muted-foreground" />
+            {t('contact:detail.conversation.title')}
+          </CardTitle>
+          <CardDescription>
+            {t('contact:detail.conversation.description')}
+          </CardDescription>
+        </div>
+        <Badge variant="secondary">
+          {t('contact:detail.conversation.messageCount', {
+            count: item.conversation.length,
+          })}
+        </Badge>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="flex flex-wrap items-center gap-3">
-          <Badge variant={getStatusBadgeVariant(item.status)}>
-            {t(`contact:status.${item.status}`)}
-          </Badge>
-          <a
-            href={`mailto:${item.email}?subject=${encodeURIComponent(`Re: ${item.subject}`)}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:text-primary"
-          >
-            <MailIcon className="size-4" />
-            {t('contact:detail.message.reply')}
-          </a>
-        </div>
-        <div className="rounded-xl border border-border/70 bg-muted/20 px-4 py-4">
-          <p className="text-sm leading-7 whitespace-pre-wrap">
-            {item.message}
-          </p>
-        </div>
-        <div className="grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
-          <div>
-            <div className="font-medium text-foreground">
-              {t('contact:detail.message.ip')}
+      <CardContent className="p-0">
+        <div className="divide-y divide-border/70 border-t border-border/70">
+          {item.conversation.map((message) => (
+            <ConversationTurn
+              key={message.id}
+              customerName={item.name}
+              message={message}
+            />
+          ))}
+          {item.conversation.length === 0 ? (
+            <div className="px-5 py-10 text-center text-sm text-muted-foreground">
+              {t('contact:detail.conversation.empty')}
             </div>
+          ) : null}
+        </div>
+        {isAwaitingAutomation ? (
+          <div className="flex items-center gap-3 border-t border-warning-500/20 bg-warning-500/5 px-5 py-3 text-sm">
+            <LoaderCircleIcon className="size-4 animate-spin text-warning-600 dark:text-warning-300" />
             <div>
-              {item.ipAddress ?? t('contact:detail.message.notCaptured')}
+              <div className="font-medium">
+                {latestInbound.automationStatus === 'processing'
+                  ? t('contact:detail.conversation.analyzing')
+                  : t('contact:detail.conversation.awaitingAnalysis')}
+              </div>
+              <div className="text-xs text-muted-foreground">
+                {t('contact:detail.conversation.analysisDescription')}
+              </div>
             </div>
           </div>
-          <div>
-            <div className="font-medium text-foreground">
-              {t('contact:detail.message.userAgent')}
-            </div>
-            <div className="break-all">
-              {item.userAgent ?? t('contact:detail.message.notCaptured')}
-            </div>
+        ) : null}
+        <div className="grid gap-2 border-t border-border/70 bg-muted/15 px-5 py-3 text-xs text-muted-foreground sm:grid-cols-2">
+          <div className="truncate">
+            {t('contact:detail.conversation.ip', {
+              value:
+                item.ipAddress ?? t('contact:detail.conversation.notCaptured'),
+            })}
+          </div>
+          <div
+            className="truncate sm:text-right"
+            title={item.userAgent ?? undefined}
+          >
+            {t('contact:detail.conversation.userAgent', {
+              value:
+                item.userAgent ?? t('contact:detail.conversation.notCaptured'),
+            })}
           </div>
         </div>
       </CardContent>
     </Card>
+  );
+};
+
+const ConversationTurn = ({
+  customerName,
+  message,
+}: {
+  customerName: string;
+  message: ContactConversationMessage;
+}) => {
+  const { t } = useTranslation(['contact']);
+  const isCustomer = message.direction === 'inbound';
+  const occurredAt = message.sentAt ?? message.receivedAt ?? message.createdAt;
+  const deliveryVariant =
+    message.deliveryStatus === 'sent'
+      ? 'positive'
+      : message.deliveryStatus === 'failed'
+        ? 'negative'
+        : ['sending', 'delivery_unknown'].includes(message.deliveryStatus)
+          ? 'warning'
+          : 'secondary';
+  const DeliveryIcon =
+    message.deliveryStatus === 'sent' || message.deliveryStatus === 'received'
+      ? CheckCheckIcon
+      : message.deliveryStatus === 'failed'
+        ? CircleAlertIcon
+        : Clock3Icon;
+
+  return (
+    <article className="relative flex gap-3 px-5 py-5 sm:gap-4">
+      <Avatar
+        className={cn(
+          'mt-0.5 ring-2 ring-background',
+          !isCustomer && 'bg-brand-500 text-white'
+        )}
+        size="lg"
+      >
+        {isCustomer ? (
+          <AvatarFallback name={customerName} variant="boring" />
+        ) : (
+          <AvatarFallback className="bg-brand-500 text-white">
+            <BotIcon className="size-5" />
+          </AvatarFallback>
+        )}
+      </Avatar>
+      <div className="min-w-0 flex-1 space-y-3">
+        <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="font-semibold">
+                {isCustomer
+                  ? customerName
+                  : t('contact:detail.conversation.nayoviSupport')}
+              </h3>
+              <Badge variant={isCustomer ? 'secondary' : 'positive'} size="sm">
+                {isCustomer
+                  ? t('contact:detail.conversation.customer')
+                  : message.aiGenerated
+                    ? t('contact:detail.conversation.aiAssisted')
+                    : t('contact:detail.conversation.support')}
+              </Badge>
+            </div>
+            <div className="mt-0.5 truncate text-xs text-muted-foreground">
+              {message.senderEmail}
+            </div>
+          </div>
+          <time
+            className="shrink-0 text-xs text-muted-foreground"
+            dateTime={dayjs(occurredAt).toISOString()}
+          >
+            {dayjs(occurredAt).format('DD/MM/YYYY HH:mm')}
+          </time>
+        </div>
+        <div className="rounded-xl border border-border/70 bg-muted/20 px-4 py-3.5">
+          <div className="mb-2 text-xs font-medium text-muted-foreground">
+            {message.subject}
+          </div>
+          <p className="text-sm leading-6 whitespace-pre-wrap">
+            {message.bodyText}
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+          <span>
+            {t(`contact:detail.conversation.source.${message.source}`)}
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <DeliveryIcon className="size-3.5" />
+            <Badge variant={deliveryVariant} size="sm">
+              {t(
+                `contact:detail.conversation.delivery.${message.deliveryStatus}`
+              )}
+            </Badge>
+          </span>
+        </div>
+      </div>
+    </article>
   );
 };
 
@@ -461,10 +593,3 @@ const SummaryCard = ({ label, subLabel, value }: SummaryCardProps) => (
     </CardContent>
   </Card>
 );
-
-const getStatusBadgeVariant = (status: ContactStatus) => {
-  if (status === 'unread') return 'warning';
-  if (status === 'in_progress') return 'default';
-  if (status === 'resolved') return 'positive';
-  return 'negative';
-};

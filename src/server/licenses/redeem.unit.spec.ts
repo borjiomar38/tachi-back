@@ -34,7 +34,7 @@ describe('license redeem activation', () => {
     const now = new Date('2026-03-19T21:00:00.000Z');
     const tx = {
       device: {
-        create: vi.fn().mockResolvedValue({
+        upsert: vi.fn().mockResolvedValue({
           appBuild: '100',
           appVersion: '1.0.0',
           id: 'device-1',
@@ -153,7 +153,7 @@ describe('license redeem activation', () => {
         findUnique: vi.fn().mockResolvedValue(null),
       },
       device: {
-        create: vi.fn().mockResolvedValue({
+        upsert: vi.fn().mockResolvedValue({
           appBuild: '100',
           appVersion: '1.0.0',
           id: 'device-1',
@@ -670,7 +670,7 @@ describe('license redeem activation', () => {
     const now = new Date('2026-03-19T21:20:00.000Z');
     const tx = {
       device: {
-        create: vi.fn().mockResolvedValue({
+        upsert: vi.fn().mockResolvedValue({
           appBuild: null,
           appVersion: null,
           id: 'device-2',
@@ -1077,7 +1077,7 @@ describe('license redeem activation', () => {
     const now = new Date('2026-03-19T21:30:00.000Z');
     const tx = {
       device: {
-        create: vi.fn().mockResolvedValue({
+        upsert: vi.fn().mockResolvedValue({
           appBuild: null,
           appVersion: null,
           id: 'device-2',
@@ -1171,7 +1171,7 @@ describe('license redeem activation', () => {
     const now = new Date('2026-03-19T21:40:00.000Z');
     const tx = {
       device: {
-        create: vi.fn().mockResolvedValue({
+        upsert: vi.fn().mockResolvedValue({
           appBuild: null,
           appVersion: null,
           id: 'device-3',

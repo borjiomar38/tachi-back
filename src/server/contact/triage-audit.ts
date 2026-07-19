@@ -30,6 +30,7 @@ export const zContactTriageState = z.enum([
 const zContactTriageAudit = z.object({
   attempts: z.number().int().nonnegative().catch(0),
   classification: zContactTriageClassification.optional(),
+  conversationMessageId: z.string().max(200).optional(),
   error: z.string().max(500).optional(),
   notificationAttemptedAt: z.iso.datetime().optional(),
   notificationId: z.string().max(200).optional(),

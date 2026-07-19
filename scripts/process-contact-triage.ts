@@ -1,4 +1,4 @@
-import { CONTACT_TRIAGE_CLAIMABLE_SOURCES } from '@/server/contact/triage-audit';
+import { syncContactInbox } from '@/server/contact/inbox-sync';
 import {
   processNextContactTriage,
   quarantineStaleContactNotifications,
@@ -36,18 +36,20 @@ const runBatch = async () => {
 };
 
 const run = async () => {
+  const inbox = await syncContactInbox();
   const quarantinedNotifications = await quarantineStaleContactNotifications();
-  const queuedBefore = await db.contactMessage.count({
-    where: { source: { in: [...CONTACT_TRIAGE_CLAIMABLE_SOURCES] } },
+  const queuedBefore = await db.contactConversationMessage.count({
+    where: { automationStatus: 'pending', direction: 'inbound' },
   });
   const results = await runBatch();
-  const queuedAfter = await db.contactMessage.count({
-    where: { source: { in: [...CONTACT_TRIAGE_CLAIMABLE_SOURCES] } },
+  const queuedAfter = await db.contactConversationMessage.count({
+    where: { automationStatus: 'pending', direction: 'inbound' },
   });
 
   console.info(
     JSON.stringify({
       failed: results.filter((result) => result.outcome === 'failed').length,
+      inbox,
       processed: results.filter((result) => result.processed).length,
       quarantinedNotifications: quarantinedNotifications.count,
       queuedAfter,

@@ -343,8 +343,11 @@ export async function redeemLicenseToDeviceWithContext(
               status: true,
             },
           })
-        : await tx.device.create({
-            data: {
+        : await tx.device.upsert({
+            where: {
+              installationId: input.installationId,
+            },
+            create: {
               appBuild: input.appBuild,
               appVersion: input.appVersion,
               installationId: input.installationId,
@@ -356,6 +359,15 @@ export async function redeemLicenseToDeviceWithContext(
                 integrityVerdict: input.integrityVerdict,
                 lastRedeemedAt: now.toISOString(),
               }),
+              platform: input.platform,
+              status: 'active',
+            },
+            update: {
+              appBuild: input.appBuild,
+              appVersion: input.appVersion,
+              lastIpAddress: deps.clientIp ?? undefined,
+              lastSeenAt: now,
+              locale: input.locale,
               platform: input.platform,
               status: 'active',
             },

@@ -128,6 +128,36 @@
       "userAgent": "User agent",
       "notCaptured": "Not captured"
     },
+    "conversation": {
+      "title": "Conversation",
+      "description": "Complete email history between this customer and Nayovi Support.",
+      "messageCount": "{{count}} message",
+      "messageCount_other": "{{count}} messages",
+      "empty": "No conversation message has been recorded yet.",
+      "customer": "Customer",
+      "support": "Support",
+      "aiAssisted": "AI-assisted",
+      "nayoviSupport": "Nayovi Support",
+      "awaitingAnalysis": "Awaiting automatic analysis",
+      "analyzing": "Codex is analyzing this reply",
+      "analysisDescription": "The response will use the complete conversation context.",
+      "ip": "IP: {{value}}",
+      "userAgent": "User agent: {{value}}",
+      "notCaptured": "Not captured",
+      "source": {
+        "contact_form": "Contact form",
+        "email": "Email reply",
+        "codex": "Codex CLI",
+        "support": "Support team"
+      },
+      "delivery": {
+        "received": "Received",
+        "sending": "Sending",
+        "sent": "Sent",
+        "delivery_unknown": "Delivery uncertain",
+        "failed": "Failed"
+      }
+    },
     "workflow": {
       "title": "Workflow",
       "description": "Update status, add private notes, and assign the message to yourself for follow-up.",

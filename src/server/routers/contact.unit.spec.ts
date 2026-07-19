@@ -146,6 +146,23 @@ describe('contact router', () => {
       mockDb.contactMessage.findUnique.mockResolvedValue({
         assignedToUser: null,
         createdAt: now,
+        conversationMessages: [
+          {
+            aiGenerated: false,
+            automationStatus: 'pending',
+            bodyText: 'Need help with setup and redeeming my code.',
+            createdAt: now,
+            deliveryStatus: 'received',
+            direction: 'inbound',
+            id: 'conversation-1',
+            receivedAt: now,
+            recipientEmail: 'contact@nayovi.com',
+            senderEmail: 'reader@example.com',
+            sentAt: null,
+            source: 'contact_form',
+            subject: 'Need help with setup',
+          },
+        ],
         email: 'reader@example.com',
         id: 'contact-1',
         internalNotes: triageAuditLine,
@@ -193,6 +210,7 @@ describe('contact router', () => {
           name: mockUser.name,
         },
         createdAt: now,
+        conversationMessages: [],
         email: 'reader@example.com',
         id: 'contact-1',
         internalNotes: `Customer needs a device transfer.\n${triageAuditLine}`,
@@ -243,15 +261,32 @@ describe('contact router', () => {
 
   describe('retryFailed', () => {
     it('retries analysis failures without retrying uncertain email delivery', async () => {
+      mockDb.contactMessage.findMany.mockResolvedValue([
+        { id: 'contact-1' },
+        { id: 'contact-2' },
+      ]);
       mockDb.contactMessage.updateMany.mockResolvedValue({ count: 2 });
+      mockDb.contactConversationMessage.updateMany.mockResolvedValue({
+        count: 2,
+      });
 
       await expect(call(contactRouter.retryFailed, {})).resolves.toEqual({
         count: 2,
       });
       expect(mockDb.contactMessage.updateMany).toHaveBeenCalledWith({
         data: { source: 'public_landing_form:triage_retry' },
-        where: { source: 'public_landing_form:triage_failed' },
+        where: { id: { in: ['contact-1', 'contact-2'] } },
       });
+      expect(mockDb.contactConversationMessage.updateMany).toHaveBeenCalledWith(
+        {
+          data: { automationStatus: 'pending' },
+          where: {
+            automationStatus: 'failed',
+            contactId: { in: ['contact-1', 'contact-2'] },
+            direction: 'inbound',
+          },
+        }
+      );
     });
   });
 

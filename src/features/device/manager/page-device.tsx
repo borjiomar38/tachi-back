@@ -41,6 +41,10 @@ import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionDevice } from '@/features/auth/permissions';
 import { WithPermissions } from '@/features/auth/with-permissions';
 import {
+  VisitedExtensionsCard,
+  VisitedTitlesCard,
+} from '@/features/device/manager/device-content-activity';
+import {
   PageLayout,
   PageLayoutContent,
   PageLayoutTopBar,
@@ -106,6 +110,31 @@ export const PageDevice = (props: { params: { id: string } }) => {
     },
     onError: () => {
       toast.error('Failed to revoke the device.');
+    },
+  });
+
+  const setExtensionBlockMutation = useMutation({
+    mutationFn: async (input: {
+      blocked: boolean;
+      extensionName: string;
+      packageName: string;
+    }) => await orpc.device.setExtensionBlock.call(input),
+    onSuccess: async (result) => {
+      toast.success(
+        result.blocked
+          ? 'Extension blocked globally.'
+          : 'Extension unblocked globally.'
+      );
+      await queryClient.invalidateQueries({
+        queryKey: orpc.device.getById.key({
+          input: {
+            deviceId: props.params.id,
+          },
+        }),
+      });
+    },
+    onError: () => {
+      toast.error('Failed to update the extension block.');
     },
   });
 
@@ -245,6 +274,24 @@ export const PageDevice = (props: { params: { id: string } }) => {
                 </Card>
 
                 <ReadingActivityCard activity={device.readingActivity} />
+
+                <VisitedTitlesCard titles={device.visitedTitles} />
+
+                <VisitedExtensionsCard
+                  extensions={device.visitedExtensions}
+                  isUpdatingPackage={
+                    setExtensionBlockMutation.isPending
+                      ? setExtensionBlockMutation.variables?.packageName
+                      : undefined
+                  }
+                  onSetBlocked={async (extension, blocked) => {
+                    await setExtensionBlockMutation.mutateAsync({
+                      blocked,
+                      extensionName: extension.extensionName,
+                      packageName: extension.packageName,
+                    });
+                  }}
+                />
 
                 <Card>
                   <CardHeader>

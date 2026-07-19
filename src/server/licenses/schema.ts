@@ -393,6 +393,40 @@ export const zBackofficeDeviceDetail = z.object({
       targetLanguage: z.string().nullish(),
     })
   ),
+  visitedExtensions: z.array(
+    z.object({
+      blocked: z.boolean(),
+      extensionLang: z.string().nullish(),
+      extensionName: z.string(),
+      firstVisitedAt: z.date(),
+      iconUrl: z.string().nullish(),
+      id: z.string(),
+      lastVisitedAt: z.date(),
+      packageName: z.string(),
+      sourceId: z.string().nullish(),
+      sourceLanguage: z.string().nullish(),
+      sourceName: z.string().nullish(),
+      titlesOpened: z.number().int().nonnegative(),
+      visitCount: z.number().int().positive(),
+    })
+  ),
+  visitedTitles: z.array(
+    z.object({
+      extensionLang: z.string().nullish(),
+      extensionName: z.string().nullish(),
+      extensionPackageName: z.string().nullish(),
+      firstVisitedAt: z.date(),
+      id: z.string(),
+      lastVisitedAt: z.date(),
+      mangaUrl: z.string(),
+      sourceId: z.string(),
+      sourceLanguage: z.string().nullish(),
+      sourceName: z.string().nullish(),
+      thumbnailUrl: z.string().nullish(),
+      title: z.string(),
+      visitCount: z.number().int().positive(),
+    })
+  ),
   createdAt: z.date(),
   id: z.string(),
   installationId: z.string(),
@@ -402,6 +436,19 @@ export const zBackofficeDeviceDetail = z.object({
   metadata: z.unknown().nullish(),
   platform: z.literal('android'),
   status: z.enum(['pending', 'active', 'revoked', 'blocked']),
+});
+
+export const zSetExtensionBlockInput = z.object({
+  blocked: z.boolean(),
+  extensionName: z.string().trim().min(1).max(200).optional(),
+  packageName: z.string().trim().min(1).max(300),
+  reason: z.string().trim().max(500).optional(),
+});
+
+export const zSetExtensionBlockResponse = z.object({
+  blocked: z.boolean(),
+  packageName: z.string(),
+  removed: z.boolean(),
 });
 
 export const zCreateManualLicenseGrantInput = z.object({

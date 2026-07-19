@@ -133,6 +133,37 @@ enum ContactMessageStatus {
   spam
 }
 
+enum ContactConversationDirection {
+  inbound
+  outbound
+}
+
+enum ContactConversationSource {
+  contact_form
+  email
+  codex
+  support
+}
+
+enum ContactConversationDeliveryStatus {
+  received
+  sending
+  sent
+  delivery_unknown
+  failed
+}
+
+enum ContactConversationAutomationStatus {
+  pending
+  processing
+  replied
+  forwarded
+  filtered
+  failed
+  delivery_unknown
+  skipped
+}
+
 enum SourceSearchMethodType {
   installed_native
   http_template
@@ -284,9 +315,74 @@ model Device {
   jobs              TranslationJob[]
   ledgerEntries     TokenLedger[]
   ratingFeedback    TranslationRatingFeedback[]
+  mangaVisits       DeviceMangaVisit[]
+  extensionVisits   DeviceExtensionVisit[]
 
   @@index([status, lastSeenAt])
   @@map("devices")
+}
+
+model DeviceMangaVisit {
+  id                   String   @id @default(cuid())
+  deviceId             String
+  sourceId             String
+  mangaUrl             String
+  title                String
+  thumbnailUrl         String?
+  extensionPackageName String?
+  extensionName        String?
+  extensionLang        String?
+  sourceName           String?
+  sourceLanguage       String?
+  visitCount           Int      @default(1)
+  firstVisitedAt       DateTime @default(now())
+  lastVisitedAt        DateTime @default(now())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([deviceId, sourceId, mangaUrl])
+  @@index([deviceId, lastVisitedAt])
+  @@index([extensionPackageName, lastVisitedAt])
+  @@map("device_manga_visits")
+}
+
+model DeviceExtensionVisit {
+  id             String   @id @default(cuid())
+  deviceId       String
+  packageName    String
+  extensionName  String
+  extensionLang  String?
+  iconUrl        String?
+  sourceId       String?
+  sourceName     String?
+  sourceLanguage String?
+  visitCount     Int      @default(1)
+  firstVisitedAt DateTime @default(now())
+  lastVisitedAt  DateTime @default(now())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([deviceId, packageName])
+  @@index([deviceId, lastVisitedAt])
+  @@index([packageName, lastVisitedAt])
+  @@map("device_extension_visits")
+}
+
+model ExtensionBlock {
+  id            String   @id @default(cuid())
+  packageName   String   @unique
+  extensionName String?
+  reason        String?
+  blockedAt     DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([blockedAt])
+  @@map("extension_blocks")
 }
 
 model LicenseDevice {
@@ -774,11 +870,40 @@ model ContactMessage {
   updatedAt        DateTime             @updatedAt
 
   assignedToUser User? @relation("ContactMessageAssignedToUser", fields: [assignedToUserId], references: [id], onDelete: SetNull)
+  conversationMessages ContactConversationMessage[]
 
   @@index([status, createdAt])
   @@index([email])
   @@index([assignedToUserId, status])
   @@map("contact_messages")
+}
+
+model ContactConversationMessage {
+  id               String                              @id @default(cuid())
+  contactId        String
+  direction        ContactConversationDirection
+  source           ContactConversationSource
+  deliveryStatus   ContactConversationDeliveryStatus
+  automationStatus ContactConversationAutomationStatus
+  senderEmail      String
+  recipientEmail   String
+  subject          String
+  bodyText         String
+  messageId        String                              @unique
+  inReplyTo        String?
+  references       String[]
+  providerUid      Int?
+  aiGenerated      Boolean                             @default(false)
+  receivedAt       DateTime?
+  sentAt           DateTime?
+  createdAt        DateTime                            @default(now())
+  updatedAt        DateTime                            @updatedAt
+
+  contact ContactMessage @relation(fields: [contactId], references: [id], onDelete: Cascade)
+
+  @@index([contactId, createdAt])
+  @@index([direction, automationStatus, createdAt])
+  @@map("contact_conversation_messages")
 }
 
 model SourceSearchMethod {

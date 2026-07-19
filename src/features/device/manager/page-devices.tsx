@@ -72,6 +72,7 @@ const DEFAULT_SEARCH_FILTERS = {
   status: 'all',
 } as const;
 const PAGE_SIZE = 10;
+const INSTALL_LIST_REFRESH_INTERVAL_MS = 15_000;
 
 const numberFormatter = new Intl.NumberFormat();
 const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
@@ -257,6 +258,7 @@ export const PageDevices = (props: {
         searchTerm: normalizedSearchTerm,
         status,
       },
+      refetchInterval: INSTALL_LIST_REFRESH_INTERVAL_MS,
     })
   );
   const countryOptionsQuery = useQuery(

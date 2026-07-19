@@ -76,6 +76,7 @@ import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileTranslationRatingFeedbackRouteImport } from './routes/api/mobile/translation-rating-feedback'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
+import { Route as ApiMobileExtensionPolicyRouteImport } from './routes/api/mobile/extension-policy'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiCronSeoDistributionRouteImport } from './routes/api/cron/seo-distribution'
@@ -105,11 +106,13 @@ import { Route as ApiMobileSourceDiscoveryResultsRouteImport } from './routes/ap
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
+import { Route as ApiMobileInstallationsRegisterRouteImport } from './routes/api/mobile/installations/register'
 import { Route as ApiMobileContentPolicyCheckRouteImport } from './routes/api/mobile/content-policy/check'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
 import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
+import { Route as ApiMobileActivityVisitRouteImport } from './routes/api/mobile/activity/visit'
 import { Route as ApiManhwaSlugPosterRouteImport } from './routes/api/manhwa/$slug/poster'
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
 import { Route as ApiBlogHeroesSlugRouteImport } from './routes/api/blog/heroes/$slug'
@@ -472,6 +475,12 @@ const ApiMobileHeartbeatRoute = ApiMobileHeartbeatRouteImport.update({
   path: '/api/mobile/heartbeat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileExtensionPolicyRoute =
+  ApiMobileExtensionPolicyRouteImport.update({
+    id: '/api/mobile/extension-policy',
+    path: '/api/mobile/extension-policy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileAppUpdatePolicyRoute =
   ApiMobileAppUpdatePolicyRouteImport.update({
     id: '/api/mobile/app-update-policy',
@@ -632,6 +641,12 @@ const ApiMobileMangaPageTranslateRoute =
     path: '/api/mobile/manga-page/translate',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileInstallationsRegisterRoute =
+  ApiMobileInstallationsRegisterRouteImport.update({
+    id: '/api/mobile/installations/register',
+    path: '/api/mobile/installations/register',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileContentPolicyCheckRoute =
   ApiMobileContentPolicyCheckRouteImport.update({
     id: '/api/mobile/content-policy/check',
@@ -656,6 +671,11 @@ const ApiMobileAuthFreeTrialRoute = ApiMobileAuthFreeTrialRouteImport.update({
 const ApiMobileAuthActivateRoute = ApiMobileAuthActivateRouteImport.update({
   id: '/api/mobile/auth/activate',
   path: '/api/mobile/auth/activate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMobileActivityVisitRoute = ApiMobileActivityVisitRouteImport.update({
+  id: '/api/mobile/activity/visit',
+  path: '/api/mobile/activity/visit',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiManhwaSlugPosterRoute = ApiManhwaSlugPosterRouteImport.update({
@@ -780,6 +800,7 @@ export interface FileRoutesByFullPath {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
+  '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
@@ -812,11 +833,13 @@ export interface FileRoutesByFullPath {
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
+  '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
+  '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -892,6 +915,7 @@ export interface FileRoutesByTo {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
+  '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
@@ -924,11 +948,13 @@ export interface FileRoutesByTo {
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
+  '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
+  '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1009,6 +1035,7 @@ export interface FileRoutesById {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
+  '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
@@ -1041,11 +1068,13 @@ export interface FileRoutesById {
   '/api/blog/heroes/$slug': typeof ApiBlogHeroesSlugRoute
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
+  '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
+  '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1127,6 +1156,7 @@ export interface FileRouteTypes {
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
+    | '/api/mobile/extension-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/mobile/translation-rating-feedback'
@@ -1159,11 +1189,13 @@ export interface FileRouteTypes {
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/manhwa/$slug/poster'
+    | '/api/mobile/activity/visit'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/content-policy/check'
+    | '/api/mobile/installations/register'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1239,6 +1271,7 @@ export interface FileRouteTypes {
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
+    | '/api/mobile/extension-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/mobile/translation-rating-feedback'
@@ -1271,11 +1304,13 @@ export interface FileRouteTypes {
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/manhwa/$slug/poster'
+    | '/api/mobile/activity/visit'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/content-policy/check'
+    | '/api/mobile/installations/register'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1355,6 +1390,7 @@ export interface FileRouteTypes {
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/mobile/app-update-policy'
+    | '/api/mobile/extension-policy'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/mobile/translation-rating-feedback'
@@ -1387,11 +1423,13 @@ export interface FileRouteTypes {
     | '/api/blog/heroes/$slug'
     | '/api/dev/email/$template'
     | '/api/manhwa/$slug/poster'
+    | '/api/mobile/activity/visit'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
     | '/api/mobile/content-policy/check'
+    | '/api/mobile/installations/register'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1469,6 +1507,7 @@ export interface RootRouteChildren {
   ApiCronSeoDistributionRoute: typeof ApiCronSeoDistributionRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
+  ApiMobileExtensionPolicyRoute: typeof ApiMobileExtensionPolicyRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
   ApiMobileTranslationRatingFeedbackRoute: typeof ApiMobileTranslationRatingFeedbackRoute
@@ -1481,11 +1520,13 @@ export interface RootRouteChildren {
   ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
   ApiManhwaSlugPosterRoute: typeof ApiManhwaSlugPosterRoute
+  ApiMobileActivityVisitRoute: typeof ApiMobileActivityVisitRoute
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
   ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRouteWithChildren
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
   ApiMobileContentPolicyCheckRoute: typeof ApiMobileContentPolicyCheckRoute
+  ApiMobileInstallationsRegisterRoute: typeof ApiMobileInstallationsRegisterRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
   ApiMobileSourceDiscoveryMethodFeedbackRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1970,6 +2011,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileHeartbeatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/extension-policy': {
+      id: '/api/mobile/extension-policy'
+      path: '/api/mobile/extension-policy'
+      fullPath: '/api/mobile/extension-policy'
+      preLoaderRoute: typeof ApiMobileExtensionPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/app-update-policy': {
       id: '/api/mobile/app-update-policy'
       path: '/api/mobile/app-update-policy'
@@ -2173,6 +2221,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileMangaPageTranslateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/installations/register': {
+      id: '/api/mobile/installations/register'
+      path: '/api/mobile/installations/register'
+      fullPath: '/api/mobile/installations/register'
+      preLoaderRoute: typeof ApiMobileInstallationsRegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/content-policy/check': {
       id: '/api/mobile/content-policy/check'
       path: '/api/mobile/content-policy/check'
@@ -2206,6 +2261,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/auth/activate'
       fullPath: '/api/mobile/auth/activate'
       preLoaderRoute: typeof ApiMobileAuthActivateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/activity/visit': {
+      id: '/api/mobile/activity/visit'
+      path: '/api/mobile/activity/visit'
+      fullPath: '/api/mobile/activity/visit'
+      preLoaderRoute: typeof ApiMobileActivityVisitRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/manhwa/$slug/poster': {
@@ -2533,6 +2595,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCronSeoDistributionRoute: ApiCronSeoDistributionRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
+  ApiMobileExtensionPolicyRoute: ApiMobileExtensionPolicyRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
   ApiMobileTranslationRatingFeedbackRoute:
@@ -2546,11 +2609,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
   ApiManhwaSlugPosterRoute: ApiManhwaSlugPosterRoute,
+  ApiMobileActivityVisitRoute: ApiMobileActivityVisitRoute,
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
   ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRouteWithChildren,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
   ApiMobileContentPolicyCheckRoute: ApiMobileContentPolicyCheckRoute,
+  ApiMobileInstallationsRegisterRoute: ApiMobileInstallationsRegisterRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,
   ApiMobileSourceDiscoveryMethodFeedbackRoute:
     ApiMobileSourceDiscoveryMethodFeedbackRoute,

@@ -18,9 +18,12 @@ import {
   zBackofficeDeviceDetail,
   zRevokeDeviceInput,
   zRevokeDeviceResponse,
+  zSetExtensionBlockInput,
+  zSetExtensionBlockResponse,
 } from '@/server/licenses/schema';
 import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
 import { protectedProcedure } from '@/server/orpc';
+import { setExtensionBlocked } from '@/server/services/extension-access-policy';
 
 const tags = ['devices'];
 const VERSION_ACTIVITY_WINDOW_DAYS = 30;
@@ -1277,9 +1280,47 @@ export default {
               type: 'job_spend',
             },
           },
+          mangaVisits: {
+            orderBy: {
+              lastVisitedAt: 'desc',
+            },
+            select: {
+              extensionLang: true,
+              extensionName: true,
+              extensionPackageName: true,
+              firstVisitedAt: true,
+              id: true,
+              lastVisitedAt: true,
+              mangaUrl: true,
+              sourceId: true,
+              sourceLanguage: true,
+              sourceName: true,
+              thumbnailUrl: true,
+              title: true,
+              visitCount: true,
+            },
+          },
           metadata: true,
           platform: true,
           status: true,
+          extensionVisits: {
+            orderBy: {
+              lastVisitedAt: 'desc',
+            },
+            select: {
+              extensionLang: true,
+              extensionName: true,
+              firstVisitedAt: true,
+              iconUrl: true,
+              id: true,
+              lastVisitedAt: true,
+              packageName: true,
+              sourceId: true,
+              sourceLanguage: true,
+              sourceName: true,
+              visitCount: true,
+            },
+          },
         },
       });
 
@@ -1290,6 +1331,36 @@ export default {
       const activeBinding =
         device.licenseBindings.find((binding) => binding.status === 'active') ??
         null;
+      const extensionPackages = device.extensionVisits.map(
+        (visit) => visit.packageName
+      );
+      const extensionBlocks = extensionPackages.length
+        ? await context.db.extensionBlock.findMany({
+            where: {
+              packageName: {
+                in: extensionPackages,
+              },
+            },
+            select: {
+              packageName: true,
+            },
+          })
+        : [];
+      const blockedPackages = new Set(
+        extensionBlocks.map((block) => block.packageName)
+      );
+      const titleCountsByPackage = device.mangaVisits.reduce(
+        (counts, visit) => {
+          if (visit.extensionPackageName) {
+            counts.set(
+              visit.extensionPackageName,
+              (counts.get(visit.extensionPackageName) ?? 0) + 1
+            );
+          }
+          return counts;
+        },
+        new Map<string, number>()
+      );
 
       return {
         activeLicense: activeBinding
@@ -1317,6 +1388,12 @@ export default {
           jobs: device.jobs ?? [],
           ledgerEntries: device.ledgerEntries ?? [],
         }),
+        visitedExtensions: device.extensionVisits.map((visit) => ({
+          ...visit,
+          blocked: blockedPackages.has(visit.packageName),
+          titlesOpened: titleCountsByPackage.get(visit.packageName) ?? 0,
+        })),
+        visitedTitles: device.mangaVisits,
         createdAt: device.createdAt,
         id: device.id,
         installationId: device.installationId,
@@ -1327,6 +1404,24 @@ export default {
         platform: device.platform,
         status: device.status,
       };
+    }),
+
+  setExtensionBlock: protectedProcedure({
+    permissions: {
+      device: ['revoke'],
+    },
+  })
+    .route({
+      method: 'POST',
+      path: '/devices/extensions/block',
+      tags,
+    })
+    .input(zSetExtensionBlockInput)
+    .output(zSetExtensionBlockResponse)
+    .handler(async ({ context, input }) => {
+      return await setExtensionBlocked(input, {
+        dbClient: context.db,
+      });
     }),
 
   revokeById: protectedProcedure({

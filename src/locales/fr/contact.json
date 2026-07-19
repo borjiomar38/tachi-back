@@ -128,6 +128,36 @@
       "userAgent": "Agent utilisateur",
       "notCaptured": "Non capturé"
     },
+    "conversation": {
+      "title": "Conversation",
+      "description": "Historique complet des e-mails entre ce client et le support Nayovi.",
+      "messageCount": "{{count}} message",
+      "messageCount_other": "{{count}} messages",
+      "empty": "Aucun message n’a encore été enregistré dans cette conversation.",
+      "customer": "Client",
+      "support": "Support",
+      "aiAssisted": "Assisté par l’IA",
+      "nayoviSupport": "Support Nayovi",
+      "awaitingAnalysis": "Analyse automatique en attente",
+      "analyzing": "Codex analyse cette réponse",
+      "analysisDescription": "La réponse utilisera le contexte complet de la conversation.",
+      "ip": "IP : {{value}}",
+      "userAgent": "Agent utilisateur : {{value}}",
+      "notCaptured": "Non capturé",
+      "source": {
+        "contact_form": "Formulaire de contact",
+        "email": "Réponse par e-mail",
+        "codex": "Codex CLI",
+        "support": "Équipe support"
+      },
+      "delivery": {
+        "received": "Reçu",
+        "sending": "Envoi en cours",
+        "sent": "Envoyé",
+        "delivery_unknown": "Livraison incertaine",
+        "failed": "Échec"
+      }
+    },
     "workflow": {
       "title": "Traitement",
       "description": "Mettez à jour le statut, ajoutez des notes privées et assignez-vous le message.",

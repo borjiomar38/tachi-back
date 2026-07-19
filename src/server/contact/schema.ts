@@ -45,6 +45,37 @@ export const zContactTriageView = z.object({
 
 export type ContactTriageView = z.infer<typeof zContactTriageView>;
 
+export const zContactConversationMessage = z.object({
+  aiGenerated: z.boolean(),
+  automationStatus: z.enum([
+    'pending',
+    'processing',
+    'replied',
+    'forwarded',
+    'filtered',
+    'failed',
+    'delivery_unknown',
+    'skipped',
+  ]),
+  bodyText: z.string(),
+  createdAt: z.date(),
+  deliveryStatus: z.enum([
+    'received',
+    'sending',
+    'sent',
+    'delivery_unknown',
+    'failed',
+  ]),
+  direction: z.enum(['inbound', 'outbound']),
+  id: z.string(),
+  receivedAt: z.date().nullish(),
+  recipientEmail: z.string(),
+  senderEmail: z.string(),
+  sentAt: z.date().nullish(),
+  source: z.enum(['contact_form', 'email', 'codex', 'support']),
+  subject: z.string(),
+});
+
 export const zContactMessageSummary = z.object({
   assignedTo: z
     .object({
@@ -66,6 +97,7 @@ export const zContactMessageSummary = z.object({
 });
 
 export const zContactMessageDetail = zContactMessageSummary.extend({
+  conversation: z.array(zContactConversationMessage),
   internalNotes: z.string().nullish(),
   ipAddress: z.string().nullish(),
   message: z.string(),

@@ -24,6 +24,34 @@ export const zCheckFreeTrialEligibilityInput =
     email: true,
   });
 
+export const zRegisterMobileInstallationInput = z.object({
+  appBuild: z.string().trim().max(64).optional(),
+  appVersion: z.string().trim().max(64).optional(),
+  buildChannel: z.string().trim().max(32).optional(),
+  installationId: z
+    .string()
+    .trim()
+    .regex(
+      /^android-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+    ),
+  locale: z.string().trim().max(32).optional(),
+  platform: z.literal('android').default('android'),
+});
+
+export const zRegisterMobileInstallationResponse = z.object({
+  device: z.object({
+    appBuild: z.string().nullish(),
+    appVersion: z.string().nullish(),
+    id: z.string(),
+    installationId: z.string(),
+    lastSeenAt: z.date(),
+    locale: z.string().nullish(),
+    platform: z.literal('android'),
+    status: z.enum(['pending', 'active', 'revoked', 'blocked']),
+  }),
+  registrationStatus: z.enum(['registered', 'updated']),
+});
+
 export const zFreeTrialEligibilityResponse = z.object({
   eligible: z.boolean(),
   reasonCode: z

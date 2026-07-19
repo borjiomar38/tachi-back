@@ -14,14 +14,14 @@ export interface ContactNotificationInput {
 }
 
 const transport = nodemailer.createTransport(envServer.EMAIL_SERVER);
+const replyTransport = nodemailer.createTransport(
+  envServer.CONTACT_SMTP_SERVER ?? envServer.EMAIL_SERVER
+);
 
 const sanitizeHeader = (value: string) => value.replace(/[\r\n]+/g, ' ').trim();
 
 export const getContactNotificationId = (contactId: string) =>
   `contact-${contactId.replaceAll(/[^a-zA-Z0-9._-]/g, '-')}`;
-
-export const getContactReplyId = (contactId: string) =>
-  `contact-reply-${contactId.replaceAll(/[^a-zA-Z0-9._-]/g, '-')}`;
 
 export const sendContactNotification = async (
   input: ContactNotificationInput
@@ -46,13 +46,18 @@ export interface ContactReplyEmailInput {
   contactId: string;
   draft: ContactReplyDraft;
   email: string;
+  inReplyTo?: string;
+  messageId: string;
+  references: string[];
 }
 
 export const sendContactReply = async (input: ContactReplyEmailInput) =>
-  await transport.sendMail({
+  await replyTransport.sendMail({
     bcc: envServer.SUPPORT_EMAIL,
-    from: envServer.EMAIL_FROM,
-    messageId: `<${getContactReplyId(input.contactId)}@nayovi.com>`,
+    from: `Nayovi Support <${envServer.SUPPORT_EMAIL}>`,
+    inReplyTo: input.inReplyTo,
+    messageId: input.messageId,
+    references: input.references,
     replyTo: envServer.SUPPORT_EMAIL,
     subject: sanitizeHeader(input.draft.subject),
     text: input.draft.text,

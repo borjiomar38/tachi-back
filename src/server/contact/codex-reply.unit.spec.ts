@@ -15,6 +15,19 @@ describe('Codex contact reply prompt', () => {
       name: 'Reader',
       replyIntent: 'pricing',
       subject: 'How can I subscribe?',
+      productFacts: {
+        billingCadence: 'monthly',
+        freeTrial: { enabled: true, tokenAmount: 25 },
+        plans: [
+          {
+            bonusTokenAmount: 0,
+            currency: 'USD',
+            name: 'Starter',
+            priceAmountCents: 200,
+            tokenAmount: 500,
+          },
+        ],
+      },
     });
 
     expect(prompt).not.toContain(injection);
@@ -26,6 +39,16 @@ describe('Codex contact reply prompt', () => {
     expect(
       JSON.parse(Buffer.from(encodedPayload!, 'base64').toString('utf8'))
     ).toMatchObject({ message: injection, replyIntent: 'pricing' });
+    const encodedFacts = prompt
+      .split('TRUSTED_PRODUCT_FACTS_BASE64=')
+      .at(-1)
+      ?.split('\nCONTACT_DATA_BASE64=')[0];
+    expect(
+      JSON.parse(Buffer.from(encodedFacts!, 'base64').toString('utf8'))
+    ).toMatchObject({
+      billingCadence: 'monthly',
+      plans: [{ priceAmountCents: 200, tokenAmount: 500 }],
+    });
   });
 
   it('builds a safe reply subject without duplicating the reply prefix', () => {

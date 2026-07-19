@@ -49,6 +49,24 @@ const contactSummarySelect = {
 
 const contactDetailSelect = {
   ...contactSummarySelect,
+  conversationMessages: {
+    orderBy: { createdAt: 'asc' },
+    select: {
+      aiGenerated: true,
+      automationStatus: true,
+      bodyText: true,
+      createdAt: true,
+      deliveryStatus: true,
+      direction: true,
+      id: true,
+      receivedAt: true,
+      recipientEmail: true,
+      senderEmail: true,
+      sentAt: true,
+      source: true,
+      subject: true,
+    },
+  },
   ipAddress: true,
   message: true,
   userAgent: true,
@@ -140,6 +158,7 @@ const mapContactSummary = (item: ContactSummaryRecord) => ({
 
 const mapContactDetail = (item: ContactDetailRecord) => ({
   ...mapContactSummary(item),
+  conversation: item.conversationMessages,
   internalNotes: parseContactTriageMetadata(item.internalNotes).humanNotes,
   ipAddress: item.ipAddress,
   message: item.message,
@@ -321,6 +340,14 @@ export const contactRouter = {
       }
 
       const metadata = parseContactTriageMetadata(existing.internalNotes);
+      const latestInbound = [...existing.conversationMessages]
+        .reverse()
+        .find((message) => message.direction === 'inbound');
+      if (!latestInbound) throw new ORPCError('CONFLICT');
+      await context.db.contactConversationMessage.update({
+        data: { automationStatus: 'pending' },
+        where: { id: latestInbound.id },
+      });
       const updated = await context.db.contactMessage.update({
         data: {
           internalNotes: writeContactTriageMetadata(metadata.humanNotes, {
@@ -341,10 +368,25 @@ export const contactRouter = {
     .input(z.object({}))
     .output(z.object({ count: z.number().int().nonnegative() }))
     .handler(async ({ context }) => {
-      const result = await context.db.contactMessage.updateMany({
-        data: { source: getContactTriageSource('retry') },
+      const failedContacts = await context.db.contactMessage.findMany({
+        select: { id: true },
         where: { source: getContactTriageSource('failed') },
       });
+      const ids = failedContacts.map((contact) => contact.id);
+      const [result] = await Promise.all([
+        context.db.contactMessage.updateMany({
+          data: { source: getContactTriageSource('retry') },
+          where: { id: { in: ids } },
+        }),
+        context.db.contactConversationMessage.updateMany({
+          data: { automationStatus: 'pending' },
+          where: {
+            automationStatus: 'failed',
+            contactId: { in: ids },
+            direction: 'inbound',
+          },
+        }),
+      ]);
       return { count: result.count };
     }),
 
