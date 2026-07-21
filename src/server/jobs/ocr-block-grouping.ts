@@ -194,7 +194,20 @@ function shouldCoalesceVertically(
 ) {
   const averageSymbolHeight = getAverageSymbolHeight(previousBlock, nextBlock);
   const verticalGap = nextBlock.y - (previousBlock.y + previousBlock.height);
-  const maxVerticalGap = getMaxVerticalGap(previousBlock, nextBlock, page);
+  const standardMaxVerticalGap = getMaxVerticalGap(
+    previousBlock,
+    nextBlock,
+    page
+  );
+  const resolutionScaledMaxVerticalGap = getResolutionScaledMaxVerticalGap(
+    previousBlock,
+    nextBlock,
+    page
+  );
+  const maxVerticalGap = Math.max(
+    standardMaxVerticalGap,
+    resolutionScaledMaxVerticalGap
+  );
   const maxVerticalOverlap = Math.max(10, averageSymbolHeight * 1.2);
   const previousCenterY = previousBlock.y + previousBlock.height / 2;
   const nextCenterY = nextBlock.y + nextBlock.height / 2;
@@ -232,10 +245,29 @@ function shouldCoalesceVertically(
     Math.min(previousBlock.width, nextBlock.width) * 0.55
   );
 
-  return (
+  const hasStandardHorizontalAlignment =
     overlapRatio >= 0.25 ||
-    Math.abs(previousCenter - nextCenter) <= maxCenterDistance
-  );
+    Math.abs(previousCenter - nextCenter) <= maxCenterDistance;
+
+  if (!hasStandardHorizontalAlignment) {
+    return false;
+  }
+
+  if (verticalGap <= standardMaxVerticalGap) {
+    return true;
+  }
+
+  return page
+    ? canUseResolutionScaledVerticalGap({
+        averageSymbolHeight,
+        nextBlock,
+        nextCenter,
+        overlapRatio,
+        page,
+        previousBlock,
+        previousCenter,
+      })
+    : false;
 }
 
 function getMaxVerticalGap(
@@ -256,14 +288,94 @@ function getMaxVerticalGap(
     0.82,
     0.99
   );
-  const scaleAwareCap = isAsianSourceLanguage(page.sourceLanguage) ? 44 : 40;
-  const scaleAwareGap = Math.min(
-    scaleAwareCap,
+  const resolutionScaledGap = Math.min(
     averageSymbolHeight * verticalScaleRate,
     pageWidth * 0.04
   );
+  const scaleAwareCap = isAsianSourceLanguage(page.sourceLanguage) ? 44 : 40;
+  const scaleAwareGap = Math.min(scaleAwareCap, resolutionScaledGap);
 
   return Math.max(currentGap, scaleAwareGap);
+}
+
+function getResolutionScaledMaxVerticalGap(
+  previousBlock: NormalizedOcrPage['blocks'][number],
+  nextBlock: NormalizedOcrPage['blocks'][number],
+  page?: NormalizedOcrPage
+) {
+  if (!page) {
+    return getMaxVerticalGap(previousBlock, nextBlock);
+  }
+
+  const averageSymbolHeight = getAverageSymbolHeight(previousBlock, nextBlock);
+  const pageWidth = Math.max(1, page.imgWidth);
+  const verticalScaleRate = clampNumber(
+    1.12 - 4.8 * (averageSymbolHeight / pageWidth),
+    0.82,
+    0.99
+  );
+
+  return Math.min(averageSymbolHeight * verticalScaleRate, pageWidth * 0.04);
+}
+
+function canUseResolutionScaledVerticalGap(input: {
+  averageSymbolHeight: number;
+  nextBlock: NormalizedOcrPage['blocks'][number];
+  nextCenter: number;
+  overlapRatio: number;
+  page: NormalizedOcrPage;
+  previousBlock: NormalizedOcrPage['blocks'][number];
+  previousCenter: number;
+}) {
+  const {
+    averageSymbolHeight,
+    nextBlock,
+    nextCenter,
+    overlapRatio,
+    page,
+    previousBlock,
+    previousCenter,
+  } = input;
+  const pageWidth = Math.max(1, page.imgWidth);
+  const centerDistance = Math.abs(previousCenter - nextCenter);
+  const maxCenterDistance = Math.max(
+    12,
+    Math.min(pageWidth * 0.02, averageSymbolHeight * 0.5)
+  );
+  const symbolHeightRatio =
+    Math.min(previousBlock.symHeight, nextBlock.symHeight) /
+    Math.max(1, previousBlock.symHeight, nextBlock.symHeight);
+  const widthGrowth = nextBlock.width - previousBlock.width;
+  const hasCompatibleWidth =
+    widthGrowth <= 0 ||
+    (widthGrowth <= Math.max(50, pageWidth * 0.08) &&
+      widthGrowth <= Math.max(50, previousBlock.width * 0.2));
+  const groupLeft = Math.min(previousBlock.x, nextBlock.x);
+  const groupTop = Math.min(previousBlock.y, nextBlock.y);
+  const groupRight = Math.max(
+    previousBlock.x + previousBlock.width,
+    nextBlock.x + nextBlock.width
+  );
+  const groupBottom = Math.max(
+    previousBlock.y + previousBlock.height,
+    nextBlock.y + nextBlock.height
+  );
+  const boundingArea = Math.max(
+    1,
+    (groupRight - groupLeft) * (groupBottom - groupTop)
+  );
+  const fillRatio =
+    (previousBlock.width * previousBlock.height +
+      nextBlock.width * nextBlock.height) /
+    boundingArea;
+
+  return (
+    overlapRatio >= 0.7 &&
+    centerDistance <= maxCenterDistance &&
+    symbolHeightRatio >= 0.8 &&
+    fillRatio >= 0.55 &&
+    hasCompatibleWidth
+  );
 }
 
 function shouldCoalesceHorizontalRowFragments(

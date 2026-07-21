@@ -124,6 +124,213 @@ describe('OCR block grouping', () => {
     ]);
   });
 
+  it('merges Chapter 338 page 44 dialogue without absorbing ManhwaNex', () => {
+    const page = {
+      ...buildOcrPage([
+        block({
+          height: 214,
+          symHeight: 168,
+          symWidth: 122.6666666666667,
+          text: 'Manhwa Nex',
+          width: 916,
+          x: 508,
+          y: 1868,
+        }),
+        block({
+          height: 128,
+          symHeight: 128,
+          symWidth: 125,
+          text: 'WHAT  KIND  OF',
+          width: 1251,
+          x: 932,
+          y: 2843,
+        }),
+        block({
+          height: 306,
+          symHeight: 125.2727272727273,
+          symWidth: 120.9545454545455,
+          text: 'COSMIC  JOKE ARE  YOU  TRYING',
+          width: 1442,
+          x: 828,
+          y: 3033,
+        }),
+        block({
+          height: 123,
+          symHeight: 123,
+          symWidth: 104.5,
+          text: 'TO  PULL ?!',
+          width: 850,
+          x: 1127,
+          y: 3395,
+        }),
+      ]),
+      imgHeight: 4850,
+      imgWidth: 2500,
+    };
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'Manhwa Nex',
+      'WHAT  KIND  OF COSMIC  JOKE ARE  YOU  TRYING TO  PULL ?!',
+    ]);
+  });
+
+  it('keeps the distant Chapter 338 page 28 text blocks separate', () => {
+    const page = {
+      ...buildOcrPage([
+        block({
+          height: 83,
+          symHeight: 83,
+          symWidth: 58.41666666666666,
+          text: 'COULD  IT  BE ...',
+          width: 799,
+          x: 410,
+          y: 3619,
+        }),
+        block({
+          height: 437,
+          symHeight: 81.12893081761007,
+          symWidth: 60.46666666666667,
+          text: "WILL  THIS  GAMBLE , WHICH  I  WAS  CERTAIN  I'D WIN ,  END  IN  COMPLETE DEFEAT  INSTEAD ... ?",
+          width: 1338,
+          x: 965,
+          y: 4142,
+        }),
+      ]),
+      imgHeight: 5351,
+      imgWidth: 2500,
+    };
+
+    const result = coalesceOcrLineBlocks(page);
+
+    expect(result.blocks).toHaveLength(2);
+  });
+
+  it('scales the centered-line gap when page width and OCR geometry double', () => {
+    const first = block({
+      height: 128,
+      symHeight: 128,
+      symWidth: 125,
+      text: 'WHAT KIND OF',
+      width: 1251,
+      x: 932,
+      y: 2843,
+    });
+    const second = block({
+      height: 306,
+      symHeight: 125.2727272727273,
+      symWidth: 120.9545454545455,
+      text: 'COSMIC JOKE ARE YOU TRYING',
+      width: 1442,
+      x: 828,
+      y: 3033,
+    });
+    const page = {
+      ...buildOcrPage([first, second]),
+      imgHeight: 4850,
+      imgWidth: 2500,
+    };
+    const scaledFirst = scaleBlock(first, 2);
+    const scaledSecond = scaleBlock(second, 2);
+    const scaledPage = {
+      ...buildOcrPage([scaledFirst, scaledSecond]),
+      imgHeight: 9700,
+      imgWidth: 5000,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(true);
+    expect(shouldCoalesceOcrBlocks(scaledFirst, scaledSecond, scaledPage)).toBe(
+      true
+    );
+  });
+
+  it('does not use page height as OCR pixel scale', () => {
+    const first = block({
+      height: 128,
+      symHeight: 128,
+      text: 'FIRST LINE',
+      width: 1250,
+      x: 625,
+      y: 1000,
+    });
+    const second = block({
+      height: 128,
+      symHeight: 128,
+      text: 'SECOND LINE',
+      width: 1250,
+      x: 625,
+      y: 1229,
+    });
+    const shortPage = {
+      ...buildOcrPage([first, second]),
+      imgHeight: 2000,
+      imgWidth: 2500,
+    };
+    const longPage = {
+      ...shortPage,
+      imgHeight: 20_000,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second, shortPage)).toBe(false);
+    expect(shouldCoalesceOcrBlocks(first, second, longPage)).toBe(false);
+  });
+
+  it('does not merge contained high-resolution promo labels with distant centers', () => {
+    const first = block({
+      height: 95,
+      symHeight: 95,
+      symWidth: 76.11538461538461,
+      text: 'READ FISRT AT',
+      width: 2210,
+      x: 192,
+      y: 1080,
+    });
+    const second = block({
+      height: 61,
+      symHeight: 59,
+      symWidth: 60.5,
+      text: 'EASY',
+      width: 261,
+      x: 771,
+      y: 1234,
+    });
+    const page = {
+      ...buildOcrPage([first, second]),
+      imgHeight: 1435,
+      imgWidth: 2560,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(false);
+    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(2);
+  });
+
+  it('rejects excessive width growth in the resolution-scaled gap path', () => {
+    const first = block({
+      height: 100,
+      symHeight: 100,
+      text: 'NARROWER FIRST LINE',
+      width: 1000,
+      x: 750,
+      y: 1000,
+    });
+    const second = block({
+      height: 100,
+      symHeight: 100,
+      text: 'EXCESSIVELY WIDER SECOND LINE',
+      width: 1300,
+      x: 600,
+      y: 1160,
+    });
+    const page = {
+      ...buildOcrPage([first, second]),
+      imgHeight: 3000,
+      imgWidth: 2500,
+    };
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(false);
+  });
+
   it('does not use a fixed vertical floor for tiny OCR artifacts', () => {
     const first = block({
       height: 7,
@@ -983,6 +1190,21 @@ function block(
     x: 100,
     y: 100,
     ...overrides,
+  };
+}
+
+function scaleBlock(
+  input: NormalizedOcrPage['blocks'][number],
+  scale: number
+): NormalizedOcrPage['blocks'][number] {
+  return {
+    ...input,
+    height: input.height * scale,
+    symHeight: input.symHeight * scale,
+    symWidth: input.symWidth * scale,
+    width: input.width * scale,
+    x: input.x * scale,
+    y: input.y * scale,
   };
 }
 
