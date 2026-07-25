@@ -15,6 +15,7 @@ import {
 } from '@/server/provider-gateway/prompts';
 import {
   getEffectiveTranslationModel,
+  getOpenAIReasoningEffortForModel,
   getProviderGatewayRuntimeConfig,
   ProviderGatewayRuntimeConfig,
 } from '@/server/provider-gateway/runtime-config';
@@ -250,6 +251,7 @@ async function translateWithOpenAI(
         },
       ],
       model: modelName,
+      reasoning_effort: getOpenAIReasoningEffortForModel(modelName),
       response_format: {
         type: 'json_object',
       },
@@ -421,6 +423,7 @@ function buildNormalizedTranslationResult(input: {
       inputTokens: getUsageValue(
         input.usage,
         'promptTokenCount',
+        'prompt_tokens',
         'input_tokens'
       ),
       latencyMs: input.usageDefaults.latencyMs,

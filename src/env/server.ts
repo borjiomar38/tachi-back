@@ -46,7 +46,7 @@ const envServerBase = createEnv({
     GEMINI_API_KEY: z.string().optional(),
     GEMINI_TRANSLATION_MODEL: z.string().default('gemini-2.5-flash'),
     OPENAI_API_KEY: z.string().optional(),
-    OPENAI_TRANSLATION_MODEL: z.string().default('gpt-4.1-mini'),
+    OPENAI_TRANSLATION_MODEL: z.string().default('gpt-5-mini'),
     OPENROUTER_API_KEY: z.string().optional(),
     ANTHROPIC_API_KEY: z.string().optional(),
     ANTHROPIC_TRANSLATION_MODEL: z.string().default('claude-3-5-sonnet-latest'),

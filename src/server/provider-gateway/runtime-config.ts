@@ -15,6 +15,7 @@ export const GEMINI_MODEL_OPTIONS = [
 ] as const;
 
 export const OPENAI_MODEL_OPTIONS = [
+  'gpt-5-mini',
   'gpt-4.1-mini',
   'gpt-4.1',
   'gpt-4o-mini',
@@ -131,6 +132,18 @@ export function getEffectiveTranslationModel(input: {
   return input.provider === 'gemini'
     ? input.config.geminiTranslationModel
     : input.config.openaiTranslationModel;
+}
+
+export function getOpenAIReasoningEffortForModel(
+  modelName: string
+): 'minimal' | undefined {
+  const normalizedModelName = modelName.trim();
+  const supportsMinimalReasoning =
+    /^gpt-5(?:-(?:mini|nano))?(?:-20\d{2}-\d{2}-\d{2})?$/.test(
+      normalizedModelName
+    );
+
+  return supportsMinimalReasoning ? 'minimal' : undefined;
 }
 
 export function getProviderGatewayRuntimeState(input: {

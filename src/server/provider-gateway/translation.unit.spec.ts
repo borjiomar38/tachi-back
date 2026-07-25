@@ -7,7 +7,7 @@ vi.mock('@/env/server', () => ({
     GEMINI_API_KEY: 'gemini-key',
     GEMINI_TRANSLATION_MODEL: 'gemini-test',
     OPENAI_API_KEY: 'openai-key',
-    OPENAI_TRANSLATION_MODEL: 'gpt-test',
+    OPENAI_TRANSLATION_MODEL: 'gpt-5-mini',
     PROVIDER_REQUEST_TIMEOUT_MS: 5000,
     PROVIDER_RETRY_MAX_ATTEMPTS: 2,
     TRANSLATION_BATCH_CONCURRENCY: 40,
@@ -25,6 +25,7 @@ vi.mock('@/env/server', () => ({
 
 import { ProviderGatewayError } from '@/server/provider-gateway/errors';
 import { buildBlockSourceHash } from '@/server/provider-gateway/prompts';
+import { getOpenAIReasoningEffortForModel } from '@/server/provider-gateway/runtime-config';
 import { performHostedTranslation } from '@/server/provider-gateway/service';
 import { performTranslationWithProvider } from '@/server/provider-gateway/translation';
 
@@ -266,6 +267,7 @@ describe('provider gateway translation', () => {
       String(fetchFn.mock.calls[0]?.[1]?.body)
     ) as {
       messages: Array<{ content: string; role: string }>;
+      reasoning_effort?: string;
     };
     const userPrompt =
       requestBody.messages.find((message) => message.role === 'user')
@@ -277,6 +279,19 @@ describe('provider gateway translation', () => {
     expect(userPrompt).not.toContain('layout');
     expect(userPrompt).not.toContain('"x"');
     expect(userPrompt).not.toContain('"width"');
+    expect(requestBody.reasoning_effort).toBe('minimal');
+    expect(result.usage.inputTokens).toBe(10);
+  });
+
+  it('uses minimal reasoning only for compatible GPT-5 model ids', () => {
+    expect(getOpenAIReasoningEffortForModel('gpt-5')).toBe('minimal');
+    expect(getOpenAIReasoningEffortForModel('gpt-5-mini')).toBe('minimal');
+    expect(getOpenAIReasoningEffortForModel('gpt-5-mini-2025-08-07')).toBe(
+      'minimal'
+    );
+    expect(getOpenAIReasoningEffortForModel('gpt-5-nano')).toBe('minimal');
+    expect(getOpenAIReasoningEffortForModel('gpt-4.1-mini')).toBeUndefined();
+    expect(getOpenAIReasoningEffortForModel('gpt-5.4-mini')).toBeUndefined();
   });
 
   it('maps malformed model JSON to a stable invalid_response error', async () => {

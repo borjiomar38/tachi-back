@@ -14,7 +14,10 @@ import {
   createInvalidProviderResponseError,
   createProviderConfigError,
 } from '@/server/provider-gateway/errors';
-import { getProviderGatewayRuntimeConfig } from '@/server/provider-gateway/runtime-config';
+import {
+  getOpenAIReasoningEffortForModel,
+  getProviderGatewayRuntimeConfig,
+} from '@/server/provider-gateway/runtime-config';
 import {
   fetchTextWithTimeout,
   parseJsonObjectText,
@@ -1824,6 +1827,7 @@ async function generateJsonWithOpenAI(input: {
         },
       ],
       model: modelName,
+      reasoning_effort: getOpenAIReasoningEffortForModel(modelName),
       response_format: {
         type: 'json_object',
       },
