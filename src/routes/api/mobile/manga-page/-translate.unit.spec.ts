@@ -6,7 +6,6 @@ const {
   mockGetAvailableLicenseTokenBalance,
   mockLogger,
   mockTranslateMangaPage,
-  mockVoidMobileJobReservationOnError,
 } = vi.hoisted(() => ({
   mockAuthenticateAndRateLimitMobileJobRequest: vi.fn(),
   mockDb: {
@@ -30,7 +29,6 @@ const {
     warn: vi.fn(),
   },
   mockTranslateMangaPage: vi.fn(),
-  mockVoidMobileJobReservationOnError: vi.fn(),
 }));
 
 vi.mock('@tanstack/react-router', () => ({
@@ -76,7 +74,6 @@ vi.mock('@/server/jobs/http', () => {
           status: 429,
         }
       ),
-    voidMobileJobReservationOnError: mockVoidMobileJobReservationOnError,
   };
 });
 
@@ -116,7 +113,6 @@ describe('POST /api/mobile/manga-page/translate', () => {
     mockLogger.info.mockReset();
     mockLogger.warn.mockReset();
     mockTranslateMangaPage.mockReset();
-    mockVoidMobileJobReservationOnError.mockReset();
 
     mockLogger.child.mockReturnValue({
       info: mockLogger.info,
@@ -143,29 +139,21 @@ describe('POST /api/mobile/manga-page/translate', () => {
     mockGetAvailableLicenseTokenBalance.mockResolvedValue(100);
   });
 
-  it('returns the free trial daily limit modal contract before translating a third chapter', async () => {
-    const queryRaw = vi
-      .fn()
-      .mockResolvedValueOnce([{ locked: true }])
-      .mockResolvedValueOnce([{ chapterCount: 2 }])
-      .mockResolvedValueOnce([{ chapterCount: 0 }]);
-    const countDailyJobs = vi.fn().mockResolvedValue(2);
-
-    mockDb.$transaction.mockImplementation(async (callback) => {
-      const tx = {
-        $queryRaw: queryRaw,
-        order: {
-          findFirst: vi.fn().mockResolvedValue(null),
+  it('allows another free-trial chapter while the one-time balance remains', async () => {
+    mockDb.tokenLedger.createMany.mockResolvedValue({ count: 1 });
+    mockTranslateMangaPage.mockResolvedValue({
+      chapters: [
+        {
+          key: 'chapter-3',
+          name: 'Chapitre 3',
+          url: 'https://example.test/manga/chapter-3',
         },
-        tokenLedger: {
-          createMany: vi.fn(),
-        },
-        translationJob: {
-          count: countDailyJobs,
-        },
-      };
-
-      return await callback(tx);
+      ],
+      manga: {
+        title: 'Test de solde',
+        url: 'https://example.test/manga',
+      },
+      targetLanguage: 'fr',
     });
 
     const handler = (
@@ -205,49 +193,21 @@ describe('POST /api/mobile/manga-page/translate', () => {
       }),
     });
 
-    expect(response.status).toBe(429);
+    expect(response.status).toBe(200);
     await expect(response.json()).resolves.toMatchObject({
-      error: {
-        code: 'free_trial_daily_limit_exceeded',
-        details: {
-          dailyLimit: 2,
-          remainingChapters: 0,
-          requestedChapters: 1,
-          resetsAt: expect.any(String),
-          usedChapters: 2,
-        },
+      data: {
+        targetLanguage: 'fr',
       },
-      ok: false,
+      ok: true,
     });
-    expect(mockTranslateMangaPage).not.toHaveBeenCalled();
-    expect(queryRaw).toHaveBeenCalledTimes(3);
-    expect(countDailyJobs).not.toHaveBeenCalled();
+    expect(mockTranslateMangaPage).toHaveBeenCalledOnce();
+    expect(mockDb.tokenLedger.createMany).toHaveBeenCalledOnce();
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
+    expect(mockDb.freeTrialClaim.findUnique).not.toHaveBeenCalled();
   });
 
-  it('counts same-day manga-page usage before allowing another free trial chapter', async () => {
-    const queryRaw = vi
-      .fn()
-      .mockResolvedValueOnce([{ locked: true }])
-      .mockResolvedValueOnce([{ chapterCount: 0 }])
-      .mockResolvedValueOnce([{ chapterCount: 2 }]);
-    const countDailyJobs = vi.fn().mockResolvedValue(0);
-
-    mockDb.$transaction.mockImplementation(async (callback) => {
-      const tx = {
-        $queryRaw: queryRaw,
-        order: {
-          findFirst: vi.fn().mockResolvedValue(null),
-        },
-        tokenLedger: {
-          createMany: vi.fn(),
-        },
-        translationJob: {
-          count: countDailyJobs,
-        },
-      };
-
-      return await callback(tx);
-    });
+  it('uses the one-time token balance as the only free-trial limit', async () => {
+    mockGetAvailableLicenseTokenBalance.mockResolvedValue(0);
 
     const handler = (
       Route as never as {
@@ -286,23 +246,23 @@ describe('POST /api/mobile/manga-page/translate', () => {
       }),
     });
 
-    expect(response.status).toBe(429);
+    expect(response.status).toBe(409);
     await expect(response.json()).resolves.toMatchObject({
       error: {
-        code: 'free_trial_daily_limit_exceeded',
+        code: 'insufficient_tokens',
         details: {
-          dailyLimit: 2,
-          remainingChapters: 0,
-          requestedChapters: 1,
-          resetsAt: expect.any(String),
-          usedChapters: 2,
+          availableTokens: 0,
+          isTrialOnly: true,
+          requiredTokens: 5,
         },
       },
       ok: false,
     });
-    expect(countDailyJobs).not.toHaveBeenCalled();
-    expect(queryRaw).toHaveBeenCalledTimes(3);
     expect(mockTranslateMangaPage).not.toHaveBeenCalled();
+    expect(mockDb.tokenLedger.createMany).not.toHaveBeenCalled();
+    expect(mockDb.$transaction).not.toHaveBeenCalled();
+    expect(mockDb.freeTrialClaim.findUnique).toHaveBeenCalledOnce();
+    expect(mockDb.order.findFirst).toHaveBeenCalledOnce();
   });
 
   it('blocks explicit adult manga page metadata before token and translation work', async () => {

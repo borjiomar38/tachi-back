@@ -1,5 +1,6 @@
 import {
   ArrowLeftIcon,
+  ArrowRightIcon,
   BookMarkedIcon,
   CheckCircle2Icon,
   DownloadIcon,
@@ -105,13 +106,16 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
                   </span>
                 </a>
                 <a
-                  href="/download"
+                  href="/pricing"
                   className={cn(
                     buttonVariants({ variant: 'secondary', size: 'lg' }),
                     'border-white/20 bg-white/10 text-neutral-50 hover:bg-white/15'
                   )}
                 >
-                  Install guide
+                  <span className="flex items-center gap-2">
+                    See monthly plans
+                    <ArrowRightIcon className="size-4" />
+                  </span>
                 </a>
               </div>
             </div>

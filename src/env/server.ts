@@ -46,6 +46,7 @@ const envServerBase = createEnv({
     GEMINI_API_KEY: z.string().optional(),
     GEMINI_TRANSLATION_MODEL: z.string().default('gemini-2.5-flash'),
     OPENAI_API_KEY: z.string().optional(),
+    OPENAI_BASE_URL: z.url().default('https://api.openai.com/v1'),
     OPENAI_TRANSLATION_MODEL: z.string().default('gpt-5-mini'),
     OPENROUTER_API_KEY: z.string().optional(),
     ANTHROPIC_API_KEY: z.string().optional(),

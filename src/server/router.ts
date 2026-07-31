@@ -10,6 +10,7 @@ import freeTrialRouter from './routers/free-trial';
 import jobRouter from './routers/job';
 import licenseRouter from './routers/license';
 import mobileOcrUploadRouter from './routers/mobile-ocr-upload';
+import productAnalyticsRouter from './routers/product-analytics';
 import providerRouter from './routers/provider';
 import seoDistributionRouter from './routers/seo-distribution';
 import translationQaRouter from './routers/translation-qa';
@@ -30,6 +31,7 @@ export const router = {
   device: deviceRouter,
   freeTrial: freeTrialRouter,
   mobileOcrUpload: mobileOcrUploadRouter,
+  productAnalytics: productAnalyticsRouter,
   job: jobRouter,
   seoDistribution: seoDistributionRouter,
   translationQa: translationQaRouter,

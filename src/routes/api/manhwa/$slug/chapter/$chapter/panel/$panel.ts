@@ -5,7 +5,7 @@ import path from 'node:path';
 import { envServer } from '@/env/server';
 import {
   getManhwaChapter,
-  getPublicManhwaSeriesBySlug,
+  getManhwaSeriesBySlug,
 } from '@/features/manhwa/data';
 
 const privateManhwaRoot = path.resolve(
@@ -83,12 +83,18 @@ function resolvePublishedPanelPath(params: {
     return null;
   }
 
-  const series = getPublicManhwaSeriesBySlug(params.slug);
+  const series = getManhwaSeriesBySlug(params.slug);
   const chapter = series
-    ? getManhwaChapter(series, chapterNumber, { includePrivate: false })
+    ? getManhwaChapter(series, chapterNumber, { includePrivate: true })
     : undefined;
+  const requestedPanel = chapter?.panels[panelNumber - 1];
+  const publicImagePath = `/api/manhwa/${params.slug}/chapter/${chapterNumber}/panel/${panelNumber}`;
 
-  if (!chapter || panelNumber > chapter.panels.length) {
+  if (
+    series?.status !== 'active' ||
+    chapter?.status !== 'published' ||
+    requestedPanel?.imagePath !== publicImagePath
+  ) {
     return null;
   }
 

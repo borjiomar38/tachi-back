@@ -34,7 +34,7 @@ export function getAndroidApkDownloadMetadata(input?: {
 }
 
 export const demoVideo = {
-  label: 'Nayovi narrated translation demo',
-  posterUrl: '/videos/nayovi-translation-demo-narrated-poster.jpg',
-  src: '/videos/nayovi-translation-demo-narrated.mp4',
+  embedUrl: 'https://www.youtube-nocookie.com/embed/8_5sqq7Yl7g?rel=0',
+  label: 'How to Translate Korean Manhwa to English on Android with Nayovi',
+  watchUrl: 'https://www.youtube.com/shorts/8_5sqq7Yl7g',
 } as const;

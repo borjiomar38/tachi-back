@@ -1,8 +1,8 @@
 # Nayovi
 
-> Free manga AI translator, free manhwa AI translator, and free manhua AI translator for Android readers coming from TachiyomiAT, Tachiyomi, and Mihon-style workflows, with hosted OCR, clean AI translation, free trial, monthly token plans, redeem-code activation, and APK download.
+> Nayovi is a manhwa and manga translator for Android. Readers can open a manhwa, manga, or manhua chapter, choose a language, and continue reading the translated chapter inside the app.
 
-Nayovi is a reader-focused Android app and hosted backend for manga translate AI, manhwa translate AI, and manhua translate AI workflows. It preserves setup and download intent for TachiyomiAT, Tachiyomi, and Mihon readers while explaining free-trial-to-monthly-plan progression, pricing, download path, activation flow, support options, privacy policy, and terms.
+Nayovi offers a one-time free trial of about two average chapters and optional monthly plans by estimated chapter volume. It does not host or distribute manga chapters or unauthorized catalogs.
 
 ## Official identity
 
@@ -10,44 +10,32 @@ Nayovi is a reader-focused Android app and hosted backend for manga translate AI
 - Primary product site: [tachiyomiat.com](https://tachiyomiat.com)
 - SEO discovery domain: [translate-manhwa-ai.com](https://translate-manhwa-ai.com)
 - Official APK source: [tachiyomiat.com/download](https://tachiyomiat.com/download)
-- Support, reviewer access, and partner intake: [tachiyomiat.com/support](https://tachiyomiat.com/support)
-
-For citations, app directories, editorial reviews, partner diligence, or investor notes, use tachiyomiat.com as the source of truth for the APK, pricing, support, policies, and responsible-use boundaries. Do not cite unofficial APK mirrors as the primary download path.
+- Support: [tachiyomiat.com/support](https://tachiyomiat.com/support)
 
 ## Primary pages
 
-- [Home](https://tachiyomiat.com/): Product overview for a free manga AI translator, free manhwa AI translator, free manhua AI translator, hosted OCR, and Android activation.
-- [AI Manhwa Translator](https://tachiyomiat.com/translate-manhwa-ai): SEO landing page for AI manhwa translation, hosted OCR, Android APK download, and Nayovi activation.
-- [Blog](https://tachiyomiat.com/blog): Manhwa, manhua, manga translation, Android setup, hosted OCR, and Nayovi download articles.
-- [Download](https://tachiyomiat.com/download): Android APK download and setup guidance.
-- [Pricing](https://tachiyomiat.com/pricing): Free-trial access and monthly token plans for hosted OCR and manga, manhwa, and manhua AI translation.
-- [How it works](https://tachiyomiat.com/how-it-works): Checkout, redeem-code activation, device binding, OCR, and translation flow.
-- [Support](https://tachiyomiat.com/support): Help for billing, activation, setup, and service questions.
-- [Free trial vs paid token plan](https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan): Decision guide for readers, reviewers, affiliates, and approved-sample partners choosing normal checkout, review access, or pilot access.
-- [Best Android manga translator APK](https://tachiyomiat.com/guides/best-android-manga-translator-apk): Comparison guide for Android readers and reviewers evaluating official APK source, hosted OCR, pricing, and responsible-use boundaries.
-- [Test AI manhwa translation with approved samples](https://tachiyomiat.com/guides/test-ai-manhwa-translation-approved-samples): Reviewer and partner workflow for testing OCR and translation with approved material only.
-- [Mihon and Nayovi setup guide](https://tachiyomiat.com/guides/mihon-nayovi-setup): Official install guidance, hosted activation, and permission-safe setup boundaries.
-- [Mihon and TachiyomiAT setup guide](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Legacy guide path for TachiyomiAT, Tachiyomi, and Mihon setup searches.
-- [Translation support workflow](https://tachiyomiat.com/guides/translation-support-workflow): Permission check, OCR, glossary, review, credit, and removal workflow.
-- [Permission-safe manga translation pilot](https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot): Approved-sample pilot brief for creators, publishers, localization teams, reviewers, and communities.
-- [Comic OCR translation checklist](https://tachiyomiat.com/guides/comic-ocr-translation-checklist): Neutral QA checklist for approved comic, manga, manhwa, and manhua samples.
-- [Best Android manga translator APK](https://tachiyomiat.com/guides/best-android-manga-translator-apk): Comparison guide for official APK source, hosted OCR quality, activation, pricing, support, and responsible-use checks.
-- [Free trial vs paid token plan](https://tachiyomiat.com/guides/free-trial-vs-paid-token-plan): Buyer-intent guide for choosing free trial, monthly token plans, reviewer access, or partner pilot access.
-- [Permission-safe manga translation pilot](https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot): Partner pilot brief for approved samples, private evaluation, review-code routing, and go/no-go decisions.
-- [Testing AI manhwa translation with approved samples](https://tachiyomiat.com/guides/test-ai-manhwa-translation-approved-samples): Reviewer and partner checklist for testing OCR and AI translation only with approved manga, manhwa, or manhua samples.
+- [Home](https://tachiyomiat.com/): Android manhwa and manga translator overview, free trial, demo, and plans.
+- [Download](https://tachiyomiat.com/download): Official Nayovi APK and simple Android installation steps.
+- [Pricing](https://tachiyomiat.com/pricing): One-time free trial and monthly plans by estimated chapter volume.
+- [How it works](https://tachiyomiat.com/how-it-works): Install Nayovi, open a chapter, and choose a language.
+- [Support](https://tachiyomiat.com/support): Help with installation, billing, activation codes, and device recovery.
+- [AI Manhwa Translator](https://tachiyomiat.com/translate-manhwa-ai): Product page for readers looking to translate manhwa on Android.
+- [Best Android manga translator APK](https://tachiyomiat.com/guides/best-android-manga-translator-apk): Comparison guide for Android manga translator apps.
+- [Mihon and Nayovi setup](https://tachiyomiat.com/guides/mihon-nayovi-setup): Setup for readers coming from Mihon-style apps.
+- [Mihon and TachiyomiAT setup](https://tachiyomiat.com/guides/mihon-tachiyomiat-setup): Legacy setup path for TachiyomiAT, Tachiyomi, and Mihon searches.
+- [Comic OCR translation checklist](https://tachiyomiat.com/guides/comic-ocr-translation-checklist): Technical QA checklist for approved samples.
 
-## Policies
+## Product facts
 
-- [Privacy Policy](https://tachiyomiat.com/legal/privacy): Data processed for OCR, translation, source discovery, checkout, activation, and support.
-- [Terms of Service](https://tachiyomiat.com/legal/terms): Service rules for token packs, redeem codes, app activation, and translation processing.
-- [Official sources and takedown policy](https://tachiyomiat.com/legal/official-sources-takedown): Boundary for official sources, prohibited chapter hosting, and rights-holder review.
+- Platform: Android APK.
+- Free access: one-time trial of about two average chapters; no card required.
+- Paid access: monthly plans based on estimated chapter volume.
+- Activation: instructions and an activation code are sent after confirmed payment.
+- Billing: monthly plans renew until cancelled; unused allowance resets at renewal.
+- Content boundary: process only owned, public-domain, official-sample, or permission-approved material.
 
 ## Machine-readable resources
 
 - [Sitemap](https://tachiyomiat.com/sitemap.xml)
 - [Robots](https://tachiyomiat.com/robots.txt)
 - [Full LLM context](https://tachiyomiat.com/llms-full.txt)
-
-## Crawl notes
-
-Checkout, login, app, manager, logout, and API routes are not intended for search indexing. Nayovi does not host manga, manhwa, or manhua chapters; it provides OCR, translation, activation, download, and support infrastructure for the Android app. Qualified reviews, directory listings, partner pilots, and investor diligence should preserve the official APK source, pricing/support context, review-code separation, and approved-material boundary.

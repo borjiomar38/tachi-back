@@ -11,18 +11,15 @@ export const TemplateFreeTrialRedeemCode = (props: {
 }) => {
   return (
     <EmailLayout
-      preview={`Your ${props.tokenAmount}-token Nayovi free trial code`}
+      preview="Your Nayovi free trial activation code"
       language={props.language}
     >
       <Container style={styles.container}>
-        <Heading style={styles.h1}>Your Nayovi free trial code</Heading>
+        <Heading style={styles.h1}>Your Nayovi free trial is ready</Heading>
         <Section style={styles.section}>
+          <Text style={styles.text}>Your one-time free trial is ready.</Text>
           <Text style={styles.text}>
-            Your protected free trial includes{' '}
-            <strong>{props.tokenAmount} tokens</strong>.
-          </Text>
-          <Text style={styles.text}>
-            Enter this redeem code in Nayovi to activate the trial on your
+            Enter this activation code in Nayovi to start translating on your
             device:
           </Text>
           <Text style={styles.code}>{props.redeemCode}</Text>

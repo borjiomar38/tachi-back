@@ -164,40 +164,59 @@ export const PageManhwaSeries = ({ series }: PageManhwaSeriesProps) => {
         <PublicSection
           eyebrow="Chapters"
           title="Chapter list"
-          description="Read the published chapters online. New chapters will appear here when the production review marks them ready."
+          description={
+            publicChapters.length > 0
+              ? 'Read the published chapters online. New chapters will appear here when the production review marks them ready.'
+              : 'The first complete chapter is still in production. It will appear here after every panel passes the visual review.'
+          }
           className="pt-4 pb-20"
         >
-          <div className="grid gap-3">
-            {series.chapters.map((chapter) => (
+          {publicChapters.length > 0 ? (
+            <div className="grid gap-3">
+              {publicChapters.map((chapter) => (
+                <a
+                  key={chapter.chapterNumber}
+                  href={`/manhwa/${series.slug}/chapter/${chapter.chapterNumber}`}
+                  className="group grid gap-3 rounded-[1.25rem] border border-border/80 bg-card/88 p-4 shadow-sm transition hover:border-primary/50 md:grid-cols-[auto_1fr_auto] md:items-center"
+                >
+                  <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-lg font-semibold text-primary-foreground">
+                    {chapter.chapterNumber}
+                  </span>
+                  <span className="space-y-1">
+                    <span className="block font-semibold tracking-normal">
+                      {chapter.title}
+                    </span>
+                    <span className="block text-sm leading-6 text-muted-foreground">
+                      {chapter.excerpt}
+                    </span>
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                    Read chapter
+                    <ArrowRightIcon className="size-4 transition group-hover:translate-x-0.5" />
+                  </span>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-[1.5rem] border border-border/80 bg-card/88 p-6 text-center shadow-sm md:p-8">
+              <LockIcon className="mx-auto size-8 text-primary" />
+              <p className="mt-3 text-lg font-semibold">Coming soon</p>
+              <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
+                We only publish a chapter after all of its artwork is ready. In
+                the meantime, you can use Nayovi to read and translate your own
+                supported chapters on Android.
+              </p>
               <a
-                key={chapter.chapterNumber}
-                href={`/manhwa/${series.slug}/chapter/${chapter.chapterNumber}`}
-                className="group grid gap-3 rounded-[1.25rem] border border-border/80 bg-card/88 p-4 shadow-sm transition hover:border-primary/50 md:grid-cols-[auto_1fr_auto] md:items-center"
+                href="/download"
+                className={cn(
+                  buttonVariants({ variant: 'default', size: 'lg' }),
+                  'mt-5'
+                )}
               >
-                <span className="flex size-12 items-center justify-center rounded-xl bg-primary text-lg font-semibold text-primary-foreground">
-                  {chapter.chapterNumber}
-                </span>
-                <span className="space-y-1">
-                  <span className="block font-semibold tracking-normal">
-                    {chapter.title}
-                  </span>
-                  {!isManhwaChapterPublic(chapter) ? (
-                    <Badge variant="secondary" size="sm" className="w-fit">
-                      <LockIcon className="size-3" />
-                      Private progress
-                    </Badge>
-                  ) : null}
-                  <span className="block text-sm leading-6 text-muted-foreground">
-                    {chapter.excerpt}
-                  </span>
-                </span>
-                <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                  Read chapter
-                  <ArrowRightIcon className="size-4 transition group-hover:translate-x-0.5" />
-                </span>
+                Download Nayovi
               </a>
-            ))}
-          </div>
+            </div>
+          )}
         </PublicSection>
       </article>
     </PublicShell>

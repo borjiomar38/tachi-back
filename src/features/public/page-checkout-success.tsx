@@ -5,32 +5,33 @@ import {
   KeyRoundIcon,
   LifeBuoyIcon,
   MailCheckIcon,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 
-import { PublicSection, PublicShell } from '@/features/public/public-shell';
+import { PublicSection, PublicShell } from "@/features/public/public-shell";
 
 export const PageCheckoutSuccess = (props: {
   search: {
     tokenPack?: string;
   };
 }) => {
-  const selectedPlan = props.search.tokenPack ?? 'your selected plan';
+  const selectedPlan = props.search.tokenPack ?? "your selected plan";
 
   return (
     <PublicShell>
       <PublicSection
         eyebrow="Checkout"
-        title="Checkout completed"
-        description="Lemon Squeezy accepted the checkout handoff. Tokens and activation finish after the payment webhook is confirmed."
+        title="Payment is being confirmed"
+        titleAs="h1"
+        description="Your plan and activation code are issued after payment confirmation."
         className="pb-20 pt-10"
       >
         <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
@@ -41,11 +42,13 @@ export const PageCheckoutSuccess = (props: {
               </div>
               <div className="space-y-2">
                 <CardTitle className="text-2xl text-neutral-50">
-                  Subscription checkout received
+                  Checkout received
                 </CardTitle>
                 <CardDescription className="text-base leading-7 text-neutral-300">
-                  Plan <strong className="text-neutral-50">{selectedPlan}</strong>{' '}
-                  is now waiting for Lemon Squeezy webhook confirmation.
+                  Plan{" "}
+                  <strong className="text-neutral-50">{selectedPlan}</strong> is
+                  being confirmed. This usually finishes shortly after the
+                  payment is accepted.
                 </CardDescription>
               </div>
             </CardHeader>
@@ -53,21 +56,21 @@ export const PageCheckoutSuccess = (props: {
               {[
                 {
                   icon: Clock3Icon,
-                  title: 'Payment confirmation',
+                  title: "Payment confirmation",
                   description:
-                    'The backend waits for the first paid invoice webhook before crediting monthly tokens.',
+                    "Nayovi waits for the confirmed payment before activating the plan.",
                 },
                 {
                   icon: KeyRoundIcon,
-                  title: 'Redeem code delivery',
+                  title: "Activation code delivery",
                   description:
-                    'The activation code is sent only after the webhook has been processed.',
+                    "The activation code is emailed after payment is confirmed.",
                 },
                 {
                   icon: MailCheckIcon,
-                  title: 'Receipt as fallback',
+                  title: "Receipt as fallback",
                   description:
-                    'Keep the Lemon Squeezy receipt email in case support needs to reconcile the purchase.',
+                    "Keep the Lemon Squeezy receipt email in case support needs to reconcile the purchase.",
                 },
               ].map((item) => {
                 const Icon = item.icon;
@@ -98,8 +101,9 @@ export const PageCheckoutSuccess = (props: {
             <CardHeader className="gap-2">
               <CardTitle>What to keep for support</CardTitle>
               <CardDescription>
-                If webhook processing or redeem-code delivery is delayed, keep
-                your Lemon Squeezy receipt email and the selected plan name.
+                If payment confirmation or activation-code delivery is delayed,
+                keep your Lemon Squeezy receipt email and the selected plan
+                name.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
@@ -116,7 +120,7 @@ export const PageCheckoutSuccess = (props: {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="/support"
-                  className={buttonVariants({ variant: 'default', size: 'lg' })}
+                  className={buttonVariants({ variant: "default", size: "lg" })}
                 >
                   <span className="flex items-center gap-2">
                     Support
@@ -125,7 +129,10 @@ export const PageCheckoutSuccess = (props: {
                 </a>
                 <a
                   href="/how-it-works"
-                  className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+                  className={buttonVariants({
+                    variant: "secondary",
+                    size: "lg",
+                  })}
                 >
                   <span className="flex items-center gap-2">
                     Activation plan

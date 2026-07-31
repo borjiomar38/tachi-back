@@ -3,7 +3,11 @@ import { zodValidator } from '@tanstack/zod-adapter';
 import { z } from 'zod';
 
 import { publicSeoKeywords } from '@/features/blog/seo';
-import { fallbackPublicTokenPacks, supportFaqs } from '@/features/public/data';
+import {
+  activationSteps,
+  fallbackPublicTokenPacks,
+  supportFaqs,
+} from '@/features/public/data';
 import {
   buildPublicAbsoluteUrl,
   buildPublicFaqStructuredData,
@@ -15,38 +19,14 @@ import { getPublicTokenPacks } from '@/features/public/server';
 const homeStructuredData = () => [
   {
     '@type': 'ItemList',
-    '@id': `${buildPublicAbsoluteUrl('/')}#official-reader-handoff`,
-    name: 'Nayovi official Android reader handoff',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Verify the official APK',
-        description:
-          'Use the Nayovi download page as the source of truth for Android APK access, metadata, and setup context.',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Start with trial or review access',
-        description:
-          'Use free trial access, a redeem code, or a dedicated reviewer code before recommending a paid plan.',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Route repeat readers to pricing',
-        description:
-          'Send readers with repeat manga, manhwa, or manhua translation needs to monthly token plans only after install and activation are clear.',
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Qualify partner proof before escalation',
-        description:
-          'Route press, directory, creator, publisher, and investor contacts through APK proof, approved-sample scope, and measurable activation context before codes, calls, or custom terms.',
-      },
-    ],
+    '@id': `${buildPublicAbsoluteUrl('/')}#how-nayovi-works`,
+    name: 'How to translate manhwa and manga on Android with Nayovi',
+    itemListElement: activationSteps.map((step, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: step.title,
+      description: step.description,
+    })),
   },
 ];
 
@@ -67,8 +47,8 @@ export const Route = createFileRoute('/')({
   },
   head: () =>
     buildPublicPageHead(
-      'TachiyomiAT APK and AI Manga Translator',
-      'TachiyomiAT Android readers can install Nayovi for free manga, manhwa, and manhua AI translation with hosted OCR, APK download, redeem-code activation, and Mihon-style setup.',
+      'Manhwa & Manga Translator App for Android',
+      'Read manhwa, manga, and manhua in your language on Android with Nayovi. Download the APK and try about two average chapters free—no card required.',
       '/',
       {
         keywords: [
@@ -88,7 +68,15 @@ export const Route = createFileRoute('/')({
           'AI manhua translator',
           'Nayovi download',
           'Android manga translator app',
+          'Android manhwa translator app',
         ],
+        imageAlt:
+          'Nayovi Android manhwa and manga translator showing Korean before and English after inside the reader.',
+        imageHeight: 630,
+        imagePath: '/og/nayovi-manhwa-translator-preview.jpg',
+        imageType: 'image/jpeg',
+        imageWidth: 1200,
+        titleSuffix: 'Nayovi',
         structuredDataGraph: [
           ...buildPublicFaqStructuredData('/', supportFaqs),
           ...homeStructuredData(),

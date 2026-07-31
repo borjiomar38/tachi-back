@@ -76,6 +76,7 @@ import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileTranslationRatingFeedbackRouteImport } from './routes/api/mobile/translation-rating-feedback'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
+import { Route as ApiMobileFunnelEventsRouteImport } from './routes/api/mobile/funnel-events'
 import { Route as ApiMobileExtensionPolicyRouteImport } from './routes/api/mobile/extension-policy'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
 import { Route as ApiDownloadTachiyomiatLatestDotapkRouteImport } from './routes/api/download/tachiyomiat-latest[.]apk'
@@ -477,6 +478,11 @@ const ApiMobileHeartbeatRoute = ApiMobileHeartbeatRouteImport.update({
   path: '/api/mobile/heartbeat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileFunnelEventsRoute = ApiMobileFunnelEventsRouteImport.update({
+  id: '/api/mobile/funnel-events',
+  path: '/api/mobile/funnel-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiMobileExtensionPolicyRoute =
   ApiMobileExtensionPolicyRouteImport.update({
     id: '/api/mobile/extension-policy',
@@ -816,6 +822,7 @@ export interface FileRoutesByFullPath {
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
+  '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
@@ -933,6 +940,7 @@ export interface FileRoutesByTo {
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
+  '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
@@ -1055,6 +1063,7 @@ export interface FileRoutesById {
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
+  '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
@@ -1178,6 +1187,7 @@ export interface FileRouteTypes {
     | '/api/download/tachiyomiat-latest.apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
+    | '/api/mobile/funnel-events'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/mobile/translation-rating-feedback'
@@ -1295,6 +1305,7 @@ export interface FileRouteTypes {
     | '/api/download/tachiyomiat-latest.apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
+    | '/api/mobile/funnel-events'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/mobile/translation-rating-feedback'
@@ -1416,6 +1427,7 @@ export interface FileRouteTypes {
     | '/api/download/tachiyomiat-latest.apk'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
+    | '/api/mobile/funnel-events'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
     | '/api/mobile/translation-rating-feedback'
@@ -1535,6 +1547,7 @@ export interface RootRouteChildren {
   ApiDownloadTachiyomiatLatestDotapkRoute: typeof ApiDownloadTachiyomiatLatestDotapkRoute
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
   ApiMobileExtensionPolicyRoute: typeof ApiMobileExtensionPolicyRoute
+  ApiMobileFunnelEventsRoute: typeof ApiMobileFunnelEventsRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
   ApiMobileTranslationRatingFeedbackRoute: typeof ApiMobileTranslationRatingFeedbackRoute
@@ -2036,6 +2049,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/heartbeat'
       fullPath: '/api/mobile/heartbeat'
       preLoaderRoute: typeof ApiMobileHeartbeatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/funnel-events': {
+      id: '/api/mobile/funnel-events'
+      path: '/api/mobile/funnel-events'
+      fullPath: '/api/mobile/funnel-events'
+      preLoaderRoute: typeof ApiMobileFunnelEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/extension-policy': {
@@ -2641,6 +2661,7 @@ const rootRouteChildren: RootRouteChildren = {
     ApiDownloadTachiyomiatLatestDotapkRoute,
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
   ApiMobileExtensionPolicyRoute: ApiMobileExtensionPolicyRoute,
+  ApiMobileFunnelEventsRoute: ApiMobileFunnelEventsRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
   ApiMobileTranslationRatingFeedbackRoute:

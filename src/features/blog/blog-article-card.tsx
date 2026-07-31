@@ -1,4 +1,4 @@
-import { ArrowRightIcon, BookOpenTextIcon, SparklesIcon } from 'lucide-react';
+import { ArrowRightIcon, BookOpenTextIcon } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
@@ -64,11 +64,7 @@ export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
             {article.excerpt}
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <SparklesIcon className="size-3.5" />
-            <span>{article.keywords.slice(0, 2).join(' / ')}</span>
-          </div>
+        <div className="flex justify-end">
           <a
             href={`/blog/${article.slug}`}
             className={buttonVariants({ variant: 'ghost', size: 'sm' })}

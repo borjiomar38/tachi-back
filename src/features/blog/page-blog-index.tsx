@@ -1,4 +1,9 @@
-import { ChevronLeftIcon, ChevronRightIcon, DownloadIcon } from 'lucide-react';
+import {
+  ArrowRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  DownloadIcon,
+} from 'lucide-react';
 import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/tailwind/utils';
@@ -52,8 +57,8 @@ export const PageBlogIndex = ({ articles, pagination }: PageBlogIndexProps) => {
                 Manhwa, manhua, and manga translation guides.
               </h1>
               <p className="max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
-                Search-friendly articles about reading workflows, hosted OCR,
-                translation quality, and the official Nayovi Android download.
+                Practical guides for translating manhwa, manhua, and manga,
+                setting up Nayovi, and reading comfortably on Android.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -70,13 +75,16 @@ export const PageBlogIndex = ({ articles, pagination }: PageBlogIndexProps) => {
                 </span>
               </a>
               <a
-                href="/download"
+                href="/pricing"
                 className={cn(
                   buttonVariants({ variant: 'secondary', size: 'lg' }),
                   'border-white/20 bg-white/10 text-neutral-50 hover:bg-white/15'
                 )}
               >
-                Install guide
+                <span className="flex items-center gap-2">
+                  See monthly plans
+                  <ArrowRightIcon className="size-4" />
+                </span>
               </a>
             </div>
           </div>

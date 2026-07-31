@@ -15,29 +15,29 @@ export const Route = createFileRoute('/api/manhwa/$slug/poster')({
   server: {
     handlers: {
       GET: async ({ params }) => {
-        const imagePath = resolvePublishedPosterPath(params.slug);
-        if (!imagePath) {
+        const imagePaths = resolvePublishedPosterPaths(params.slug);
+        if (!imagePaths) {
           return notFound();
         }
 
-        try {
-          const image = await readFile(imagePath);
+        const image = await readFirstAvailableFile(imagePaths);
 
+        if (image) {
           return new Response(image, {
             headers: publicPngHeaders(),
           });
-        } catch {
-          return notFound();
         }
+
+        return notFound();
       },
       HEAD: async ({ params }) => {
-        const imagePath = resolvePublishedPosterPath(params.slug);
-        if (!imagePath) {
+        const imagePaths = resolvePublishedPosterPaths(params.slug);
+        if (!imagePaths) {
           return notFound();
         }
 
         try {
-          await access(imagePath);
+          await Promise.any(imagePaths.map((imagePath) => access(imagePath)));
 
           return new Response(null, {
             headers: publicPngHeaders(),
@@ -58,18 +58,38 @@ function publicPngHeaders() {
   };
 }
 
-function resolvePublishedPosterPath(slug: string) {
+function resolvePublishedPosterPaths(slug: string) {
   if (!safeSlugPattern.test(slug) || !getPublicManhwaSeriesBySlug(slug)) {
     return null;
   }
 
-  const imagePath = path.resolve(privateManhwaRoot, slug, 'poster.png');
+  const imagePaths = [
+    path.resolve(privateManhwaRoot, slug, 'poster.png'),
+    path.resolve(privateManhwaRoot, slug, 'chapter-001', 'panel-001.png'),
+  ];
 
-  if (!imagePath.startsWith(`${privateManhwaRoot}${path.sep}`)) {
+  if (
+    imagePaths.some(
+      (imagePath) => !imagePath.startsWith(`${privateManhwaRoot}${path.sep}`)
+    )
+  ) {
     return null;
   }
 
-  return imagePath;
+  return imagePaths;
+}
+
+async function readFirstAvailableFile(imagePaths: string[]) {
+  const attempts = await Promise.allSettled(
+    imagePaths.map((imagePath) => readFile(imagePath))
+  );
+  const successfulAttempt = attempts.find(
+    (attempt) => attempt.status === 'fulfilled'
+  );
+
+  return successfulAttempt?.status === 'fulfilled'
+    ? successfulAttempt.value
+    : undefined;
 }
 
 function notFound() {

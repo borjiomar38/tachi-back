@@ -21,7 +21,8 @@ export const Route = createFileRoute('/blog/')({
   }),
   loader: async ({ deps }) =>
     await getPublicBlogArticlePage({ data: { page: deps.page } }),
-  head: () => buildPublicBlogIndexHead(),
+  head: ({ loaderData }) =>
+    buildPublicBlogIndexHead(loaderData?.pagination.page ?? 1),
 });
 
 function RouteComponent() {

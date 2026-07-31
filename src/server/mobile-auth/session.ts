@@ -336,20 +336,29 @@ export async function buildMobileSessionSummary(
   } = {}
 ) {
   const dbClient = deps.dbClient ?? db;
-  const tokenBalance = await getAvailableLicenseTokenBalance(
-    {
-      licenseId: auth.license.id,
-    },
-    {
+  const now = new Date();
+  const [tokenBalance, subscription, trialOnlyClaim] = await Promise.all([
+    getAvailableLicenseTokenBalance(
+      {
+        licenseId: auth.license.id,
+      },
+      {
+        dbClient,
+      }
+    ),
+    getMobileLicenseSubscriptionSummary(auth.license.id, {
       dbClient,
-    }
-  );
-  const subscription = await getMobileLicenseSubscriptionSummary(
-    auth.license.id,
-    {
-      dbClient,
-    }
-  );
+    }),
+    findTrialOnlyFreeTrialClaimForLicense(
+      {
+        licenseId: auth.license.id,
+        now,
+      },
+      {
+        dbClient,
+      }
+    ),
+  ]);
 
   return zMobileSessionSummaryResponse.parse({
     device: auth.device,
@@ -358,6 +367,7 @@ export async function buildMobileSessionSummary(
       availableTokens: tokenBalance,
       deviceLimit: auth.license.deviceLimit,
       id: auth.license.id,
+      isTrialOnly: Boolean(trialOnlyClaim),
       key: auth.license.key,
       ownerEmail: auth.license.ownerEmail,
       status: auth.license.status,

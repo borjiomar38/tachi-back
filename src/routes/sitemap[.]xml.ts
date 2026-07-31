@@ -32,7 +32,7 @@ const routeModules = import.meta.glob(
 );
 const defaultStaticSitemapEntry = {
   changeFrequency: 'monthly',
-  lastModified: '2026-05-04',
+  lastModified: '2026-07-31',
   priority: '0.7',
 } satisfies Omit<SitemapEntry, 'path'>;
 const staticSitemapEntryOverrides: Record<
@@ -41,7 +41,7 @@ const staticSitemapEntryOverrides: Record<
 > = {
   '/': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '1.0',
   },
   '/blog': {
@@ -49,7 +49,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/download': {
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/manhwa': {
@@ -59,68 +59,68 @@ const staticSitemapEntryOverrides: Record<
   },
   '/translate-manhwa-ai': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.9',
   },
   '/pricing': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.9',
   },
   '/how-it-works': {
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/guides/translation-support-workflow': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/support': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/media-kit': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-29',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/guides/mihon-nayovi-setup': {
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/guides/mihon-tachiyomiat-setup': {
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/guides/permission-safe-manga-translation-pilot': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.85',
   },
   '/guides/comic-ocr-translation-checklist': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.85',
   },
   '/guides/best-android-manga-translator-apk': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.85',
   },
   '/guides/test-ai-manhwa-translation-approved-samples': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.85',
   },
   '/guides/free-trial-vs-paid-token-plan': {
     changeFrequency: 'weekly',
-    lastModified: '2026-05-31',
+    lastModified: '2026-07-31',
     priority: '0.85',
   },
   '/guides/manhwa-ocr-glossary-checklist': {
-    lastModified: '2026-05-28',
+    lastModified: '2026-07-31',
     priority: '0.8',
   },
   '/legal/privacy': {

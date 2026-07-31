@@ -4,9 +4,6 @@ import { EmailFooter } from '@/emails/components/email-footer';
 import { EmailLayout } from '@/emails/components/email-layout';
 import { styles } from '@/emails/styles';
 
-const formatTokenCount = (value: number) =>
-  new Intl.NumberFormat('en-US').format(value);
-
 export const TemplatePurchaseReceipt = (props: {
   language: string;
   packName: string;
@@ -15,7 +12,7 @@ export const TemplatePurchaseReceipt = (props: {
 }) => {
   return (
     <EmailLayout
-      preview={`Your Nayovi redeem code for ${props.packName}`}
+      preview={`Your Nayovi activation code for ${props.packName}`}
       language={props.language}
     >
       <Container style={styles.container}>
@@ -24,20 +21,15 @@ export const TemplatePurchaseReceipt = (props: {
         </Heading>
         <Section style={styles.section}>
           <Text style={styles.text}>
-            Lemon Squeezy billing for <strong>{props.packName}</strong> is now
-            linked to a Nayovi license with{' '}
-            <strong>
-              {formatTokenCount(props.totalTokens)} monthly tokens
-            </strong>
-            .
+            Your <strong>{props.packName}</strong> monthly plan is now active.
           </Text>
           <Text style={styles.text}>
-            Use this redeem code in Nayovi to activate hosted access on your
+            Use this activation code in Nayovi to activate the app on your
             device:
           </Text>
           <Text style={styles.code}>{props.redeemCode}</Text>
           <Text style={styles.textMuted}>
-            Open the Nayovi settings in the app, enter the redeem code, and
+            Open the Nayovi settings in the app, enter the activation code, and
             complete device activation. Keep this email for support if you need
             recovery help later.
           </Text>

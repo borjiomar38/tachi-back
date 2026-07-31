@@ -1,77 +1,77 @@
-import { useRouterState } from '@tanstack/react-router';
+import { useRouterState } from "@tanstack/react-router";
 import {
   BadgeDollarSignIcon,
   BookOpenTextIcon,
   CircleHelpIcon,
   DownloadIcon,
   HomeIcon,
-} from 'lucide-react';
-import { ReactNode } from 'react';
+} from "lucide-react";
+import { ReactNode } from "react";
 
-import { cn } from '@/lib/tailwind/utils';
+import { cn } from "@/lib/tailwind/utils";
 
-import { Logo } from '@/components/brand/logo';
-import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
+import { Logo } from "@/components/brand/logo";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 
 import {
   PUBLIC_OWNER_WHATSAPP_DISPLAY,
   PUBLIC_OWNER_WHATSAPP_HREF,
   PUBLIC_SUPPORT_EMAIL,
-} from '@/features/public/data';
-import { androidApkDownload } from '@/features/public/download-assets';
+} from "@/features/public/data";
+import { androidApkDownload } from "@/features/public/download-assets";
 
 const primaryLinks = [
-  { href: '/#hero', label: 'Home' },
-  { href: '/#demo', label: 'Demo' },
-  { href: '/#pricing', label: 'Plans' },
-  { href: '/manhwa', label: 'Originals' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/guides/mihon-tachiyomiat-setup', label: 'Guides' },
-  { href: '/#contact', label: 'Contact' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/pricing", label: "Plans" },
+  { href: "/guides/mihon-tachiyomiat-setup", label: "Guides" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#faq", label: "FAQ" },
 ] as const;
 
 const legalLinks = [
-  { href: '/legal/privacy', label: 'Privacy' },
-  { href: '/legal/terms', label: 'Terms' },
-  { href: '/legal/official-sources-takedown', label: 'Sources & takedown' },
+  { href: "/legal/privacy", label: "Privacy" },
+  { href: "/legal/terms", label: "Terms" },
+  { href: "/legal/official-sources-takedown", label: "Sources & takedown" },
 ] as const;
 
 const mobileTabs = [
   {
-    href: '/',
-    label: 'Home',
+    href: "/",
+    label: "Home",
     icon: HomeIcon,
-    isActive: (pathname: string) => pathname === '/',
+    isActive: (pathname: string) => pathname === "/",
   },
   {
-    href: '/download',
-    label: 'Download',
+    href: "/download",
+    label: "Download",
     icon: DownloadIcon,
-    isActive: (pathname: string) => pathname === '/download',
+    isActive: (pathname: string) => pathname === "/download",
   },
   {
-    href: '/pricing#starter-plan',
-    label: 'Plans',
+    href: "/pricing#starter-plan",
+    label: "Plans",
     icon: BadgeDollarSignIcon,
-    isActive: (pathname: string) => pathname === '/pricing',
+    isActive: (pathname: string) => pathname === "/pricing",
   },
   {
-    href: '/blog',
-    label: 'Blog',
+    href: "/blog",
+    label: "Blog",
     icon: BookOpenTextIcon,
-    isActive: (pathname: string) => pathname.startsWith('/blog'),
+    isActive: (pathname: string) => pathname.startsWith("/blog"),
   },
   {
-    href: '/support',
-    label: 'Support',
+    href: "/support",
+    label: "Support",
     icon: CircleHelpIcon,
-    isActive: (pathname: string) => pathname === '/support',
+    isActive: (pathname: string) => pathname === "/support",
   },
 ] as const;
 
-export const PublicShell = (props: { children: ReactNode }) => {
+export const PublicShell = (props: {
+  children: ReactNode;
+  compactFooter?: boolean;
+}) => {
   const pathname = useRouterState({
     select: (state) => state.location.pathname,
   });
@@ -87,8 +87,8 @@ export const PublicShell = (props: { children: ReactNode }) => {
               className="inline-flex items-center justify-center gap-3 md:justify-start"
               aria-label="Nayovi"
             >
-              <Logo variant="mark" className="size-14 shrink-0" />
-              <span className="text-2xl font-extrabold tracking-normal text-foreground">
+              <Logo variant="mark" className="size-10 shrink-0" />
+              <span className="text-xl font-extrabold tracking-normal text-foreground">
                 Nayovi
               </span>
             </a>
@@ -106,83 +106,104 @@ export const PublicShell = (props: { children: ReactNode }) => {
             <div className="hidden items-center justify-end gap-2 md:flex">
               <a
                 href={androidApkDownload.href}
-                className={buttonVariants({ variant: 'default', size: 'sm' })}
+                className={buttonVariants({ variant: "default", size: "sm" })}
               >
                 Download APK
-              </a>
-              <a
-                href="/login"
-                className={buttonVariants({ variant: 'ghost', size: 'sm' })}
-              >
-                Sign in
               </a>
             </div>
           </div>
         </header>
         <main className="relative">{props.children}</main>
         <footer className="relative border-t border-border/70 bg-background/95">
-          <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 md:flex-row md:justify-between">
+          <div
+            className={cn(
+              "mx-auto max-w-6xl px-4",
+              props.compactFooter
+                ? "grid gap-6 py-6 sm:grid-cols-2 md:grid-cols-[1.35fr_1fr_0.8fr_0.9fr] md:py-7"
+                : "flex flex-col gap-8 py-10 md:flex-row md:justify-between",
+            )}
+          >
             <div className="max-w-xl space-y-3">
               <Logo className="w-32" />
-              <p className="text-sm text-muted-foreground">
-                Nayovi is the hosted Android reader and translation service.
-                Fork lineage: Mihon, Tachiyomi, and TachiyomiAT; app branding:
-                Nayovi.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                The Android app connects to hosted plans through redeem codes,
-                device activation, token accounting, and forced update checks.
+              <p
+                className={cn(
+                  "text-muted-foreground",
+                  props.compactFooter ? "text-xs leading-5" : "text-sm",
+                )}
+              >
+                Read manhwa, manga, and manhua in your language on Android.
+                Nayovi brings full-chapter translation into a familiar reader.
               </p>
             </div>
-            <div className="grid gap-8 sm:grid-cols-3">
+            <div
+              className={cn(
+                "grid",
+                props.compactFooter
+                  ? "contents"
+                  : "gap-8 sm:grid-cols-3",
+              )}
+            >
               <div className="space-y-3">
                 <h2 className="text-sm font-semibold">Product</h2>
-                <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                <div
+                  className={cn(
+                    "flex flex-col text-muted-foreground",
+                    props.compactFooter ? "gap-1.5 text-xs" : "gap-2 text-sm",
+                  )}
+                >
                   {primaryLinks.map((item) => (
-                    <a key={item.href} href={item.href} className="hover:text-foreground">
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="hover:text-foreground"
+                    >
                       {item.label}
                     </a>
                   ))}
-                  <a href={androidApkDownload.href} className="hover:text-foreground">
+                  <a
+                    href={androidApkDownload.href}
+                    className="hover:text-foreground"
+                  >
                     Download APK
                   </a>
-                  <a href="/download" className="hover:text-foreground">
-                    Install guide
-                  </a>
-                  <a
-                    href="/guides/mihon-nayovi-setup"
-                    className="hover:text-foreground"
-                  >
-                    Mihon setup guide
-                  </a>
-                  <a
-                    href="/guides/mihon-tachiyomiat-setup"
-                    className="hover:text-foreground"
-                  >
-                    TachiyomiAT setup guide
-                  </a>
-                  <a href="/manhwa" className="hover:text-foreground">
-                    Nayovi Originals
-                  </a>
-                  <a
-                    href="/guides/translation-support-workflow"
-                    className="hover:text-foreground"
-                  >
-                    Translation workflow
-                  </a>
-                  <a
-                    href="/guides/manhwa-ocr-glossary-checklist"
-                    className="hover:text-foreground"
-                  >
-                    OCR glossary checklist
-                  </a>
+                  {!props.compactFooter ? (
+                    <>
+                      <a href="/manhwa" className="hover:text-foreground">
+                        Nayovi Originals
+                      </a>
+                      <a href="/download" className="hover:text-foreground">
+                        Install guide
+                      </a>
+                      <a
+                        href="/guides/mihon-nayovi-setup"
+                        className="hover:text-foreground"
+                      >
+                        Mihon setup guide
+                      </a>
+                      <a
+                        href="/guides/mihon-tachiyomiat-setup"
+                        className="hover:text-foreground"
+                      >
+                        TachiyomiAT setup guide
+                      </a>
+                    </>
+                  ) : null}
                 </div>
               </div>
               <div className="space-y-3">
                 <h2 className="text-sm font-semibold">Legal</h2>
-                <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                <div
+                  className={cn(
+                    "flex flex-col text-muted-foreground",
+                    props.compactFooter ? "gap-1.5 text-xs" : "gap-2 text-sm",
+                  )}
+                >
                   {legalLinks.map((item) => (
-                    <a key={item.href} href={item.href} className="hover:text-foreground">
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="hover:text-foreground"
+                    >
                       {item.label}
                     </a>
                   ))}
@@ -190,15 +211,22 @@ export const PublicShell = (props: { children: ReactNode }) => {
               </div>
               <div className="space-y-3">
                 <h2 className="text-sm font-semibold">Support</h2>
-                <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-                  <a
-                    href={PUBLIC_OWNER_WHATSAPP_HREF}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-foreground"
-                  >
-                    WhatsApp {PUBLIC_OWNER_WHATSAPP_DISPLAY}
-                  </a>
+                <div
+                  className={cn(
+                    "flex flex-col text-muted-foreground",
+                    props.compactFooter ? "gap-1.5 text-xs" : "gap-2 text-sm",
+                  )}
+                >
+                  {!props.compactFooter ? (
+                    <a
+                      href={PUBLIC_OWNER_WHATSAPP_HREF}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-foreground"
+                    >
+                      WhatsApp {PUBLIC_OWNER_WHATSAPP_DISPLAY}
+                    </a>
+                  ) : null}
                   <a href="/support" className="hover:text-foreground">
                     Support center
                   </a>
@@ -224,8 +252,9 @@ export const PublicShell = (props: { children: ReactNode }) => {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'flex min-w-0 flex-col items-center justify-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground',
-                    active && 'bg-primary/10 text-primary ring-1 ring-primary/15'
+                    "flex min-w-0 flex-col items-center justify-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground",
+                    active &&
+                      "bg-primary/10 text-primary ring-1 ring-primary/15",
                   )}
                 >
                   <Icon className="size-5" />
@@ -247,14 +276,14 @@ export const PublicSection = (props: {
   description?: string;
   children: ReactNode;
   className?: string;
-  titleAs?: 'h1' | 'h2';
+  titleAs?: "h1" | "h2";
 }) => {
   return (
     <section
       id={props.id}
       className={cn(
-        'mx-auto w-full max-w-6xl scroll-mt-24 px-4 py-12 md:py-16',
-        props.className
+        "mx-auto w-full max-w-6xl scroll-mt-24 px-4 py-12 md:py-16",
+        props.className,
       )}
     >
       <div className="mb-8 max-w-3xl space-y-3">
@@ -263,7 +292,7 @@ export const PublicSection = (props: {
             {props.eyebrow}
           </Badge>
         ) : null}
-        {props.titleAs === 'h1' ? (
+        {props.titleAs === "h1" ? (
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
             {props.title}
           </h1>

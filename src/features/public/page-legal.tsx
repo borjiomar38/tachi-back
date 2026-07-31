@@ -27,6 +27,7 @@ const LegalPage = (props: {
       <PublicSection
         eyebrow={props.eyebrow}
         title={props.title}
+        titleAs="h1"
         description={props.description}
         className="pt-10 pb-20"
       >
@@ -99,6 +100,26 @@ export const PageLegalPrivacy = () => {
                 We store the payment and subscription records needed to match a
                 paid invoice to a redeem code, token credit, device activation,
                 customer support request, or refund review.
+              </p>
+            </>
+          ),
+        },
+        {
+          title: 'Optional usage statistics',
+          children: (
+            <>
+              <p>
+                Usage statistics are off by default in the Android app. You can
+                choose whether to share them during setup and change that choice
+                later in the app settings.
+              </p>
+              <p>
+                If you opt in, Nayovi can record limited product events such as
+                seeing a subscription prompt or choosing to view a plan. These
+                events use a pseudonymous installation identifier, a timestamp,
+                and predefined event categories. They do not include manga or
+                chapter titles, source URLs, page images, translated text, email
+                addresses, or activation codes.
               </p>
             </>
           ),

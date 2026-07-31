@@ -1,6 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
-
-import { PageError } from '@/components/errors/page-error';
+import { createFileRoute, notFound } from '@tanstack/react-router';
 
 import { PageBlogArticle } from '@/features/blog/page-blog-article';
 import { getPublicBlogArticleBySlug } from '@/features/blog/server';
@@ -11,8 +9,17 @@ import {
 
 export const Route = createFileRoute('/blog/$slug')({
   component: RouteComponent,
-  loader: async ({ params }) =>
-    await getPublicBlogArticleBySlug({ data: { slug: params.slug } }),
+  loader: async ({ params }) => {
+    const article = await getPublicBlogArticleBySlug({
+      data: { slug: params.slug },
+    });
+
+    if (!article) {
+      throw notFound();
+    }
+
+    return article;
+  },
   head: ({ loaderData }) =>
     loaderData
       ? buildPublicBlogArticleHead(loaderData)
@@ -25,10 +32,6 @@ export const Route = createFileRoute('/blog/$slug')({
 
 function RouteComponent() {
   const article = Route.useLoaderData();
-
-  if (!article) {
-    return <PageError type="404" />;
-  }
 
   return <PageBlogArticle article={article} />;
 }

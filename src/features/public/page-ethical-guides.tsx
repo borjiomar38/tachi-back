@@ -5,7 +5,6 @@ import {
   FileCheck2Icon,
   LanguagesIcon,
   MessageSquareTextIcon,
-  ScaleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
@@ -90,56 +89,7 @@ const reviewerActivationChecks = [
   },
 ] as const;
 
-const workflowSteps = [
-  {
-    title: '1. Check permission first',
-    description:
-      'Confirm that the page, sample, or chapter can be processed before uploading it for OCR or translation. Do not use the workflow for licensed rips, paywalled chapters, or unauthorized uploads.',
-  },
-  {
-    title: '2. Prepare clean inputs',
-    description:
-      'Use readable pages, avoid unnecessary crops, and keep the original context available so reviewers can compare the OCR result against the source material.',
-  },
-  {
-    title: '3. Keep a glossary',
-    description:
-      'Record character names, place names, technique terms, honorific choices, and recurring UI text so future chapters stay consistent.',
-  },
-  {
-    title: '4. Review before sharing',
-    description:
-      'A human reviewer should check tone, missing bubbles, mistranslated names, and layout issues before any permission-safe translation note is shared publicly.',
-  },
-  {
-    title: '5. Credit and remove quickly',
-    description:
-      'Credit contributors where appropriate and keep a clear route for rights holders or creators to request removal, correction, or review.',
-  },
-] as const;
 
-const ocrChecklistRows = [
-  {
-    checkpoint: 'Text detection',
-    detail:
-      'Confirm speech bubbles, narration boxes, vertical text, sound effects, and small UI labels are captured before judging translation quality.',
-  },
-  {
-    checkpoint: 'Reading order',
-    detail:
-      'Compare the OCR blocks against panel order so short replies, side comments, and long-strip manhwa panels do not get translated out of context.',
-  },
-  {
-    checkpoint: 'Glossary consistency',
-    detail:
-      'Track names, places, ranks, attacks, honorifics, and recurring terms in one reviewer note before processing another chapter or sample.',
-  },
-  {
-    checkpoint: 'Human review decision',
-    detail:
-      'Mark whether the result is ready for private reading, needs correction, or should not be shared because permission or source quality is unclear.',
-  },
-] as const;
 
 const glossaryChecklistRows = [
   {
@@ -172,130 +122,10 @@ const glossaryChecklistRows = [
   },
 ] as const;
 
-const researchCitationRows = [
-  {
-    label: 'Missing regions',
-    detail:
-      'Compare detected OCR blocks against the full page so dialogue, captions, sound effects, and small notes are not silently skipped.',
-  },
-  {
-    label: 'Under-segmented balloons',
-    detail:
-      'Flag bubbles that combine multiple speakers or dialogue turns before sending the text to translation.',
-  },
-  {
-    label: 'Transcription drift',
-    detail:
-      'Keep the original OCR text visible for reviewer correction when a model reads stylized lettering, vertical text, or low-contrast pages incorrectly.',
-  },
-  {
-    label: 'Research context',
-    detail:
-      'Recent manga-understanding research has called out transcription errors, missing text regions, overlapping dialogue, onomatopoeia, and under-segmented speech balloons as OCR annotation problems worth checking explicitly.',
-  },
-  {
-    label: 'Citation handoff',
-    detail:
-      'When citing this checklist in a technical note, frame Nayovi as an Android workflow that turns these known OCR risks into reviewer checks for approved samples, not as a claim that any external paper endorses the product.',
-  },
-] as const;
 
-const transparencyRows = [
-  {
-    label: 'Human review stays visible',
-    detail:
-      'Treat AI output as a draft for permitted samples. Keep reviewer notes, corrected OCR text, glossary choices, and unresolved quality issues visible before anyone cites the result.',
-  },
-  {
-    label: 'Do not replace credits',
-    detail:
-      'If a creator, translator, letterer, editor, or publisher contributed to the sample, keep that credit context attached and avoid presenting machine output as official localization.',
-  },
-  {
-    label: 'Say what was automated',
-    detail:
-      'When sharing a test, explain whether Nayovi helped with OCR detection, block grouping, translation drafting, glossary review, or Android workflow testing.',
-  },
-  {
-    label: 'Block public sharing when unclear',
-    detail:
-      'Do not publish translated pages, screenshots, or before-and-after examples when source permission, reviewer approval, or output quality is uncertain.',
-  },
-] as const;
 
-const technicalEvaluationRows = [
-  {
-    label: 'Sample manifest',
-    detail:
-      'Record the sample title, page count, language pair, rights context, source quality, and reviewer before running OCR or translation.',
-  },
-  {
-    label: 'Error counts',
-    detail:
-      'Count missed text regions, merged speakers, incorrect reading order, transcription errors, glossary misses, and output lines that need human correction.',
-  },
-  {
-    label: 'Before and after',
-    detail:
-      'Keep the original page, OCR text, corrected OCR text, glossary notes, and final translation together so a reviewer can reproduce the decision.',
-  },
-  {
-    label: 'Go or no-go',
-    detail:
-      'Publish or cite the sample only when rights are clear, OCR coverage is acceptable, correction notes are preserved, and support can answer follow-up questions.',
-  },
-] as const;
 
-const reviewerFailureModes = [
-  {
-    title: 'Merged unrelated bubbles',
-    description:
-      'Two nearby bubbles, captions, or sound effects are grouped into one translation unit and change the speaker or timing.',
-  },
-  {
-    title: 'Lost vertical or small text',
-    description:
-      'Vertical dialogue, handwritten notes, small UI labels, or side comments are skipped even though they affect the page meaning.',
-  },
-  {
-    title: 'Broken name continuity',
-    description:
-      'A character, place, rank, or technique appears under multiple translations because the glossary was not checked before output.',
-  },
-  {
-    title: 'Unclear sharing permission',
-    description:
-      'The translated result looks technically readable, but the source material is not owned, public-domain, an official sample, or otherwise approved.',
-  },
-] as const;
 
-const trustPacketRows = [
-  {
-    label: 'Official install path',
-    detail:
-      'Use the Nayovi download page as the source of truth for APK access, build context, setup help, and support.',
-  },
-  {
-    label: 'Reviewer access',
-    detail:
-      'Use redeem codes, free trial access, screenshots, and the narrated demo when editors need to test without guessing how activation works.',
-  },
-  {
-    label: 'Public policy link',
-    detail:
-      'Use the official sources and takedown policy when a moderator, creator, or directory reviewer needs the content boundary in writing.',
-  },
-  {
-    label: 'No chapter hosting',
-    detail:
-      'Describe Nayovi as hosted OCR and translation support. Do not describe it as a manga source, chapter mirror, extension index, or library.',
-  },
-  {
-    label: 'Shareable review packet',
-    detail:
-      'Use a no-spam, permission-safe review packet with sample manifest, rights status, correction log, and source-of-truth links so partner blogs, directories, and creator channels can verify fit before recommending Nayovi.',
-  },
-] as const;
 
 const mediaKitSourceRows = [
   {
@@ -592,28 +422,6 @@ const approvedSampleReadinessRows = [
   },
 ] as const;
 
-const approvedSamplePacketRows = [
-  {
-    label: 'Sample source',
-    detail:
-      'Name whether the pages are owned, public-domain, official previews, creator-provided samples, or otherwise approved for OCR and translation testing.',
-  },
-  {
-    label: 'Review evidence',
-    detail:
-      'Keep original pages, OCR text, corrections, glossary notes, translated output, and reviewer decision together before sharing anything publicly.',
-  },
-  {
-    label: 'Public boundary',
-    detail:
-      'Publish only screenshots, excerpts, summaries, or partner names that the rights holder or sample owner approved.',
-  },
-  {
-    label: 'Next action',
-    detail:
-      'Route useful tests toward review access, support follow-up, paid-use evidence, or a private partner pilot instead of generic backlink outreach.',
-  },
-] as const;
 
 const trialTokenDecisionRows = [
   {
@@ -807,93 +615,9 @@ const tokenPlanAccessGuardrailRows = [
   },
 ] as const;
 
-const directoryPacketRows = [
-  {
-    item: 'One-line listing description',
-    copy: 'Nayovi is an Android APK for hosted OCR and AI translation support in manga, manhwa, and manhua reader workflows.',
-  },
-  {
-    item: 'Primary link',
-    copy: 'Use https://tachiyomiat.com/download for installs and keep pricing, support, and activation questions on the official Nayovi site.',
-  },
-  {
-    item: 'Review-code path',
-    copy: 'Editors, directory reviewers, and affiliate testers can request a redeem code through support before publishing a hands-on walkthrough.',
-  },
-  {
-    item: 'Responsible-use wording',
-    copy: 'Nayovi should be tested only with owned material, public-domain works, official samples, or content the user has permission to process.',
-  },
-] as const;
 
-const demoPacketRows = [
-  {
-    item: 'Narrated demo',
-    detail:
-      'Offer the current short demo when an editor wants to see source page context, language choice, hosted translation progress, and the final English result before requesting access.',
-  },
-  {
-    item: 'Screenshots',
-    detail:
-      'Use official Android screenshots that show install confidence, activation, translation flow, support, and pricing context without exposing unrelated reader libraries.',
-  },
-  {
-    item: 'Reviewer code',
-    detail:
-      'Provide a dedicated redeem code only for hands-on evaluation, with no promise of coverage, ranking, link placement, or positive review.',
-  },
-  {
-    item: 'Decision links',
-    detail:
-      'Include download, pricing, support, workflow, privacy, terms, and takedown-policy links so readers can verify the product before installing or paying.',
-  },
-] as const;
 
-const aiDirectoryProofRows = [
-  {
-    label: 'Screenshot set',
-    detail:
-      'Use a short Android screenshot set that proves install confidence, redeem-code activation, translation progress, output review, pricing, and support paths.',
-  },
-  {
-    label: 'Demo link',
-    detail:
-      'Pair screenshots with the narrated demo so AI-tool directories can verify the workflow without guessing whether Nayovi is only a generic upload site.',
-  },
-  {
-    label: 'Listing metadata',
-    detail:
-      'Classify Nayovi as an Android app, AI OCR workflow, manga translation support, manhwa translation support, and hosted reader utility.',
-  },
-  {
-    label: 'Conversion handoff',
-    detail:
-      'Send directory visitors to the official download, pricing, support, and workflow pages so qualified traffic can move from trial to paid token plans.',
-  },
-  {
-    label: 'Responsible boundary',
-    detail:
-      'Keep every listing clear that Nayovi does not host or distribute chapters and should be tested with owned, public-domain, official-sample, or permission-approved content.',
-  },
-] as const;
 
-const pilotBriefRows = [
-  {
-    label: 'Approved sample',
-    detail:
-      'Name the pages, language pair, rights context, and reviewer before Nayovi processes a publisher, creator, or community pilot.',
-  },
-  {
-    label: 'Dedicated access',
-    detail:
-      'Use a review or pilot redeem code so support questions, trial usage, and follow-up conversion can be separated from normal readers.',
-  },
-  {
-    label: 'Success signal',
-    detail:
-      'Continue only when the pilot shows useful OCR review, qualified Android installs, affiliate interest, or repeat paid token demand.',
-  },
-] as const;
 
 const pilotOnePagerRows = [
   {
@@ -1033,379 +757,21 @@ const pilotContactPathRows = [
   },
 ] as const;
 
-const communitySubmissionRows = [
-  {
-    channel: 'Startup launch communities',
-    readiness:
-      'Use only founder-owned accounts for BetaList, Product Hunt, or Show HN-style launches, and send people to a working Nayovi page with APK access, demo context, pricing, and support.',
-  },
-  {
-    channel: 'Q&A and forum communities',
-    readiness:
-      'Answer only when the question is genuinely about OCR workflow, Android setup, or permission-safe translation. Disclose Nayovi affiliation and omit links unless the rules clearly allow a relevant source.',
-  },
-  {
-    channel: 'GitHub resource lists',
-    readiness:
-      'Ask maintainers whether a neutral OCR checklist or documentation page fits before opening a pull request. Do not submit a product link as a generic resource.',
-  },
-  {
-    channel: 'Newsletters and resource pages',
-    readiness:
-      'Pitch the workflow checklist, reviewer packet, or approved-sample brief as a useful reader resource. Skip any placement that requires paid link insertion or weak directory pages.',
-  },
-  {
-    channel: 'Reddit and social posts',
-    readiness:
-      'Use no-link feedback drafts first, check community rules, and avoid generated or repeated comments. A link belongs only when it helps the discussion and is allowed.',
-  },
-] as const;
 
-const submissionReadinessRows = [
-  {
-    item: 'Submit only official links',
-    detail:
-      'Use tachiyomiat.com download, pricing, support, workflow, privacy, terms, and takedown URLs so a listing does not become a mirror-first install path.',
-  },
-  {
-    item: 'Package evidence',
-    detail:
-      'Include the APK build label, SHA-256, screenshots, narrated demo, review-code path, and a concise pricing summary before asking an editor to test Nayovi.',
-  },
-  {
-    item: 'Qualify the audience',
-    detail:
-      'Prioritize Android readers, AI-tool directories, localization operators, and creator-platform partners who can send trial activations or pilot conversations.',
-  },
-  {
-    item: 'Avoid weak placements',
-    detail:
-      'Skip paid link insertion, scraped directories, listings that hide official support links, or communities where product links would not help the discussion.',
-  },
-] as const;
 
-const submissionQueueRows = [
-  {
-    lane: 'Ready after cap reset',
-    fit: 'Approved-sample partner inquiries where the public contact path is official and the message asks for workflow feedback, not catalog access or backlink placement.',
-  },
-  {
-    lane: 'Needs packet first',
-    fit: 'AI-tool directories, Android app directories, and newsletters that require screenshots, package metadata, pricing, and review-code context before a useful submission.',
-  },
-  {
-    lane: 'Use as context only',
-    fit: 'Policy discussions, research papers, and community threads that can improve Nayovi copy or QA standards but should not receive a product pitch.',
-  },
-  {
-    lane: 'Hold or skip',
-    fit: 'Any listing that requires paid placement, reciprocal links, hidden support links, private data scraping, or a claim that Nayovi can translate unauthorized catalogs.',
-  },
-] as const;
 
-const capResetPacketRows = [
-  {
-    field: 'First outreach lane',
-    detail:
-      'Handle reply-driven follow-ups first, then approved-sample partner inquiries such as creator platforms, publishers, localization teams, or manga communities with official public contact paths.',
-  },
-  {
-    field: 'Proof links to include',
-    detail:
-      'Use the permission-safe pilot brief, comic OCR checklist, official download page, support path, and pricing page so every recipient can verify scope before replying.',
-  },
-  {
-    field: 'Message boundary',
-    detail:
-      'Ask for feedback on a small approved-sample workflow; do not ask for catalog access, unpaid labor, a guaranteed article, paid placement, or a backlink as the first outcome.',
-  },
-  {
-    field: 'Revenue signal to track',
-    detail:
-      'Log whether the conversation can create a review code request, partner pilot, qualified install path, affiliate test, investor introduction, or paid-plan signal.',
-  },
-] as const;
 
-const outreachThrottleRows = [
-  {
-    field: 'Same-day cap check',
-    detail:
-      'Count today\'s outreach sends before approving a new message so reply handling, review-code requests, and high-fit official contact paths are not crowded out.',
-  },
-  {
-    field: 'Duplicate guardrail',
-    detail:
-      'Skip prospects already contacted, form-only approved, or queued by the SEO distribution agent unless a reply creates a new concrete next action.',
-  },
-  {
-    field: 'Capacity priority',
-    detail:
-      'Use remaining capacity for contacts that can create review access, approved-sample pilots, credible listings, paid-plan evidence, or commercial diligence.',
-  },
-  {
-    field: 'Wait log',
-    detail:
-      'When the cap is full, log the next best action and follow-up guardrail instead of sending weaker outreach or drafting another generic cold email.',
-  },
-] as const;
 
-const replyTriageRows = [
-  {
-    reply: 'Review-code request',
-    response:
-      'Send the support path with official APK source, screenshots, narrated demo context, pricing, and responsible-use language so the reviewer can test without guessing activation details.',
-  },
-  {
-    reply: 'Approved-sample pilot',
-    response:
-      'Keep the first test private and limited to owned, public-domain, official preview, creator-provided, or otherwise approved samples before any public mention is discussed.',
-  },
-  {
-    reply: 'Call or interview request',
-    response:
-      'Use owner-provided contact details or ask for concrete availability only when the reply indicates a real editorial, partnership, investor, or commercial conversation.',
-  },
-  {
-    reply: 'Weak or noncompliant reply',
-    response:
-      'Decline paid link placement, reciprocal backlink gates, mirror-first APK uploads, hidden pricing or support links, and claims about unauthorized catalog translation.',
-  },
-] as const;
 
-const replyQualificationRows = [
-  {
-    signal: 'High-value reply',
-    action:
-      'Advance when the contact asks for review access, an approved-sample pilot, a technical listing packet, a founder interview, or commercial diligence tied to real testing.',
-  },
-  {
-    signal: 'Needs one clarifier',
-    action:
-      'Ask for the exact sample scope, listing requirements, audience, timeline, or review-code need before sending assets, scheduling time, or involving the owner.',
-  },
-  {
-    signal: 'Owner escalation',
-    action:
-      'Escalate only when the next step requires a live call, commercial commitment, legal decision, custom pricing, investor materials, or the owner choosing a time.',
-  },
-  {
-    signal: 'Decline cleanly',
-    action:
-      'Close the thread when the reply asks for paid backlinks, reciprocal links, scraped listings, mirror-first APK uploads, hidden pricing, or unauthorized catalog translation.',
-  },
-] as const;
 
-const replySlaRows = [
-  {
-    moment: 'Same day',
-    action:
-      'Confirm whether the reply is a listing, review, approved-sample pilot, investor, commercial, or decline path before sending links or access.',
-  },
-  {
-    moment: 'First useful response',
-    action:
-      'Send one matched packet with official APK, pricing, support, responsible-use, and proof links instead of a broad collection of assets.',
-  },
-  {
-    moment: 'Before codes or calls',
-    action:
-      'Ask for sample scope, audience, timeline, and success signal when they are missing so review codes and founder time are not spent on vague interest.',
-  },
-  {
-    moment: 'After handoff',
-    action:
-      'Log the next decision, follow-up date, and revenue signal, then stop if the thread asks for paid links, hidden pricing, mirror uploads, or unauthorized content.',
-  },
-] as const;
 
-const qualifiedReplyAssetRows = [
-  {
-    packet: 'Reviewer or directory',
-    contents:
-      'Send the official APK source, narrated demo, screenshots, pricing summary, support path, responsible-use note, and a dedicated review-code route.',
-  },
-  {
-    packet: 'Approved-sample partner',
-    contents:
-      'Send the pilot brief, OCR checklist, sample intake fields, private-result boundary, stop conditions, and support route before issuing a pilot code.',
-  },
-  {
-    packet: 'Investor or commercial',
-    contents:
-      'Send only qualified traction, activation, retention, paid-plan, and partner-signal context. Escalate when custom terms, legal review, or founder time is required.',
-  },
-  {
-    packet: 'Clean decline',
-    contents:
-      'Close requests that depend on paid links, reciprocal placement, hidden pricing, mirror-first APK distribution, or unauthorized catalog processing.',
-  },
-] as const;
 
-const revenueRoutingRows = [
-  {
-    signal: 'Review access',
-    route:
-      'Issue review access only when the contact can test, list, compare, or publish with official APK, support, pricing, demo, and responsible-use links intact.',
-  },
-  {
-    signal: 'Partner pilot',
-    route:
-      'Use a pilot code when a creator platform, publisher, localization team, or community can define approved samples, evaluation goals, private-result boundaries, and a feedback owner.',
-  },
-  {
-    signal: 'Paid-plan evidence',
-    route:
-      'Treat a placement as qualified only when it can send readers toward free trial, pricing, monthly token-plan fit, support recovery, or repeat-use feedback.',
-  },
-  {
-    signal: 'Investor or commercial',
-    route:
-      'Escalate when a reply asks for traction, retention, partner economics, custom terms, founder time, or a decision that changes legal, pricing, or commercial commitments.',
-  },
-] as const;
 
-const reviewCodeGateRows = [
-  {
-    gate: 'Public context',
-    detail:
-      'Confirm the reviewer, directory, partner, or affiliate can keep the official APK, pricing, support, and responsible-use links attached to any public note.',
-  },
-  {
-    gate: 'Test scope',
-    detail:
-      'Ask what they will test, which approved samples they can use, and whether the result is a private evaluation, listing check, article, or partner pilot.',
-  },
-  {
-    gate: 'Tracking need',
-    detail:
-      'Issue a dedicated code only when separating reviewer usage, pilot access, support questions, and conversion evidence will improve the follow-up decision.',
-  },
-  {
-    gate: 'Stop condition',
-    detail:
-      'Do not issue a code when the request depends on hidden pricing, mirror-first APK distribution, unauthorized content, paid placement, or guaranteed coverage.',
-  },
-] as const;
 
-const officialFormHandoffRows = [
-  {
-    rule: 'Use official forms only',
-    detail:
-      'When a studio, legal manga platform, or creator service has no verified public business email, submit only through its official contact, partnership, or business form.',
-  },
-  {
-    rule: 'Lead with a useful asset',
-    detail:
-      'Reference the approved-sample pilot brief, OCR checklist, or reviewer packet so the note helps the recipient evaluate workflow fit without needing a product pitch.',
-  },
-  {
-    rule: 'Ask for one next step',
-    detail:
-      'Ask whether a small approved-sample workflow note or private pilot would be useful. Do not ask for catalog access, replacement localization, a guaranteed backlink, or paid placement.',
-  },
-  {
-    rule: 'Log without secrets',
-    detail:
-      'Record the public form URL, rationale, message summary, date, and follow-up guardrail. Do not store form-session tokens, private confirmation links, or personal contact data.',
-  },
-] as const;
 
-const formSubmissionProofRows = [
-  {
-    field: 'Public form path',
-    detail:
-      'Log the public contact, partner, or business form URL used for a form-only prospect such as a studio, legal manga platform, or creator-service team.',
-  },
-  {
-    field: 'Fit rationale',
-    detail:
-      'Record the specific reason the recipient fits approved-sample OCR, reviewer access, localization QA, creator workflows, or legal manga distribution.',
-  },
-  {
-    field: 'Message summary',
-    detail:
-      'Keep the asset offered, one next-step ask, and responsible-use boundary. Do not save hidden confirmation URLs, form-session tokens, or private personal data.',
-  },
-  {
-    field: 'Follow-up guardrail',
-    detail:
-      'Wait for a reply or send at most one useful follow-up after the normal interval. Skip follow-up if form terms disallow it or the fit becomes weak.',
-  },
-] as const;
 
-const replyPipelineRows = [
-  {
-    state: 'Waiting',
-    nextStep:
-      'Do nothing when there is no reply, the daily cap is full, or the only available move is another low-context follow-up.',
-  },
-  {
-    state: 'Send assets',
-    nextStep:
-      'Send the smallest relevant packet when the contact asks for listing fields, screenshots, demo context, reviewer access, or approved-sample pilot details.',
-  },
-  {
-    state: 'Issue tracked access',
-    nextStep:
-      'Use a dedicated review or pilot code only when source context, sample scope, public link handling, and support routing are clear enough to measure.',
-  },
-  {
-    state: 'Escalate or stop',
-    nextStep:
-      'Escalate meetings, custom terms, legal or financial commitments, and investor materials. Stop paid-link, mirror-first, hidden-pricing, or unauthorized-catalog threads.',
-  },
-] as const;
 
-const comparisonPacketRows = [
-  {
-    format: 'Android APK workflow',
-    check:
-      'Verify the official download page, APK metadata, redeem-code activation, support path, and hosted OCR behavior before sending readers to install.',
-  },
-  {
-    format: 'Browser comic translator',
-    check:
-      'Compare upload handling, text-block editing, layout preservation, version history, and whether the tool can document human review before sharing output.',
-  },
-  {
-    format: 'Creator or publisher pilot',
-    check:
-      'Start with creator-controlled samples, official previews, public-domain pages, or explicit written permission before evaluating localization quality.',
-  },
-  {
-    format: 'Directory or roundup mention',
-    check:
-      'Prefer listings that preserve source-of-truth links, pricing, support, and the no-chapter-hosting boundary instead of treating the app as a mirror.',
-  },
-] as const;
 
-const neutralChecklistRows = [
-  {
-    prompt: 'Permission status',
-    checklist:
-      'Name whether the sample is owned, public-domain, an official preview, creator-provided, or otherwise approved before reviewing OCR or translation quality.',
-  },
-  {
-    prompt: 'OCR completeness',
-    checklist:
-      'Compare detected text against the full page and mark missed bubbles, captions, sound effects, small labels, vertical text, or handwritten notes.',
-  },
-  {
-    prompt: 'Block order and grouping',
-    checklist:
-      'Confirm reading order and flag unrelated bubbles, captions, or speakers that were merged into one translation unit.',
-  },
-  {
-    prompt: 'Reviewer correction path',
-    checklist:
-      'Keep original OCR text, merged blocks, glossary notes, and final output visible enough for a human reviewer to correct names, terms, and tone.',
-  },
-  {
-    prompt: 'Share decision',
-    checklist:
-      'Record whether the result is private-use only, ready for an approved sample note, or blocked because source rights or output quality are unclear.',
-  },
-] as const;
 
 const standaloneChecklistSections = [
   {
@@ -1625,24 +991,24 @@ const takedownSteps = [
 
 export const translationSupportWorkflowFaqs = [
   {
-    title: 'Can an agency use this workflow for approved client samples?',
+    title: 'What should I include in a support request?',
     description:
-      'Yes, if the client owns the material or has explicit permission to process it. Nayovi is best positioned for scoped samples, glossary review, and hosted OCR or translation support rather than bulk unauthorized chapter distribution.',
+      'Include your Nayovi app version, Android version, language pair, the exact error, and when it happened. Share the smallest safe example needed to explain the problem.',
   },
   {
-    title: 'Can reviewers test Nayovi without publishing private content?',
+    title: 'Do I need to send a full chapter?',
     description:
-      'Yes. Reviewers can use public-domain pages, creator-approved samples, or their own test material, then focus coverage on APK install, redeem-code activation, OCR quality, pricing, and support flow.',
+      'No. Start by describing the issue. If an image is truly necessary, use one cropped panel or a small sample you are allowed to share.',
   },
   {
-    title: 'Does Nayovi host manga, manhwa, or manhua chapters?',
+    title: 'Can support help with my trial, plan, or activation?',
     description:
-      'No. Nayovi provides Android setup, hosted OCR, AI translation support, activation, and customer support. It does not host chapter libraries, extension indexes, or unauthorized source lists.',
+      'Yes. The same official support page handles free-chapter access, monthly plans, billing, installation, account access, and activation questions.',
   },
   {
-    title: 'What should a publisher or creator do if they have a concern?',
+    title: 'How can a rights holder contact Nayovi?',
     description:
-      'Use the official sources and takedown policy page or contact support with the work title, affected URL or feature, rights-holder relationship, and reliable contact address.',
+      'Use the official sources and takedown page or contact support with the work title, affected URL or feature, your relationship to the work, and a reliable contact address.',
   },
 ] as const;
 
@@ -1685,6 +1051,7 @@ export const PageComicOcrChecklist = () => {
       <PublicSection
         eyebrow="OCR checklist"
         title="Comic OCR translation QA checklist"
+        titleAs="h1"
         description="A neutral review checklist for manga, manhwa, manhua, webtoon, and comic OCR translation tests. Use it before sending samples to editors, maintainers, moderators, directories, or partners."
         className="pt-10"
       >
@@ -1898,6 +1265,7 @@ export const PageMediaKit = () => {
       <PublicSection
         eyebrow="Media kit"
         title="Nayovi source-of-truth packet"
+        titleAs="h1"
         description="Official profile, citation, and review context for Android reviewers, app directories, podcasts, newsletters, creator platforms, localization teams, and partners."
         className="pt-10"
       >
@@ -1961,6 +1329,7 @@ export const PagePermissionSafePilotBrief = () => {
       <PublicSection
         eyebrow="Pilot brief"
         title="Permission-safe manga translation pilot brief"
+        titleAs="h1"
         description="A short evaluation plan for creators, publishers, communities, reviewers, and localization partners who want to test Nayovi with approved samples before any public mention."
         className="pt-10"
       >
@@ -2147,6 +1516,7 @@ export const PageBestAndroidMangaTranslatorApk = () => {
       <PublicSection
         eyebrow="Android APK guide"
         title="Best Android manga translator APK: what to check"
+        titleAs="h1"
         description="A practical checklist for readers, reviewers, directories, and communities comparing Android manga, manhwa, and manhua translation apps without relying on unofficial mirrors."
         className="pt-10"
       >
@@ -2314,6 +1684,7 @@ export const PageApprovedSampleTestingGuide = () => {
       <PublicSection
         eyebrow="Approved samples"
         title="How to test AI manhwa translation safely"
+        titleAs="h1"
         description="A practical guide for reviewers, creators, communities, and partner teams testing Nayovi OCR and AI translation with approved manga, manhwa, or manhua samples."
         className="pt-10"
       >
@@ -2438,6 +1809,7 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
       <PublicSection
         eyebrow="Pricing guide"
         title="Free trial vs paid token plan for manga translation"
+        titleAs="h1"
         description="A practical decision guide for Android readers, reviewers, affiliates, and approved-sample pilots deciding when Nayovi should stay a trial, become a paid plan, or use a dedicated code."
         className="pt-10"
       >
@@ -2661,6 +2033,7 @@ const SetupGuidePage = (props: { copy: SetupGuideCopy }) => {
       <PublicSection
         eyebrow={props.copy.eyebrow}
         title={props.copy.title}
+        titleAs="h1"
         description={props.copy.description}
         className="pt-10"
       >
@@ -2880,160 +2253,109 @@ export const PageFreeTrialVsPaidTokenPlan = () => {
 };
 
 export const PageTranslationSupportWorkflow = () => {
+  const problemDetails = [
+    {
+      icon: SmartphoneIcon,
+      title: 'Where the problem appears',
+      description:
+        'Tell us whether the issue happens during installation, while opening a chapter, when detecting text, or after choosing the translation language.',
+    },
+    {
+      icon: MessageSquareTextIcon,
+      title: 'What you expected',
+      description:
+        'Describe what you expected to see and what happened instead. Include the exact error message when one is shown.',
+    },
+    {
+      icon: LanguagesIcon,
+      title: 'Language and reading context',
+      description:
+        'Share the original and target languages, and say whether you are reading manhwa, manga, or manhua on Android.',
+    },
+    {
+      icon: BookOpenCheckIcon,
+      title: 'How to reproduce it',
+      description:
+        'List the shortest steps that make the issue happen again so support can check the same workflow.',
+    },
+  ] as const;
+
+  const diagnosticRows = [
+    {
+      label: 'App and Android',
+      detail:
+        'Include the Nayovi version, Android version, and device model. These details often explain installation or display differences.',
+    },
+    {
+      label: 'Translation context',
+      detail:
+        'Include the source language, target language, page number, and whether the problem affects one page or the whole chapter.',
+    },
+    {
+      label: 'Error and timing',
+      detail:
+        'Copy the exact error text and give the approximate time it happened. This helps support find the matching request.',
+    },
+    {
+      label: 'Small screenshot',
+      detail:
+        'Attach a cropped screenshot only when it makes the issue clearer. Hide email addresses, activation codes, payment details, and other private information.',
+    },
+  ] as const;
+
+  const responseSteps = [
+    {
+      title: 'Your request is reviewed',
+      description:
+        'Support checks the details and identifies whether the issue concerns the app, OCR, translation, account access, or billing.',
+    },
+    {
+      title: 'We may ask one follow-up question',
+      description:
+        'If the issue cannot be reproduced safely, support may ask for an app version, exact error, or a smaller approved sample.',
+    },
+    {
+      title: 'You receive the next useful action',
+      description:
+        'The reply may include setup steps, an account check, plan guidance, or confirmation that a translation issue needs more investigation.',
+    },
+  ] as const;
+
+  const helpTopics = [
+    {
+      title: 'Free chapters and trial access',
+      description:
+        'Ask what is included, why trial access is not appearing, or how to start testing Nayovi before choosing a plan.',
+    },
+    {
+      title: 'Monthly plans and billing',
+      description:
+        'Include the billing email and a non-sensitive payment reference when support needs to locate a purchase. Never post payment details publicly.',
+    },
+    {
+      title: 'Account or activation',
+      description:
+        'Share the app version and error message, but keep activation codes and private account details out of screenshots and public messages.',
+    },
+  ] as const;
+
   return (
     <PublicShell>
       <PublicSection
-        eyebrow="Translation workflow"
-        title="Translation support workflow"
-        description="Use this workflow for permission-safe review, glossary control, and hosted OCR or translation support. It is not a guide for distributing unauthorized chapters."
+        eyebrow="Nayovi support"
+        title="Get help with Nayovi manhwa translation"
+        titleAs="h1"
+        description="A simple support workflow for Android readers who need help with manhwa, manga, or manhua translation, text detection, installation, trial access, or a monthly plan."
         className="pt-10"
       >
-        <div className="grid gap-4">
-          {workflowSteps.map((step) => (
-            <Card key={step.title} className="rounded-[1.5rem]">
-              <CardHeader className="gap-2">
-                <CardTitle className="text-lg">{step.title}</CardTitle>
-                <CardDescription>{step.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="OCR checklist"
-        title="Manhwa OCR review before translation"
-        description="Use this checklist when a reviewer, directory editor, or partner needs a concrete way to evaluate Nayovi output on approved samples."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {ocrChecklistRows.map((row) => (
-              <div
-                key={row.checkpoint}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.checkpoint}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Research-backed QA"
-        title="Checks that match modern manga OCR research"
-        description="Use this section when technical reviewers, localization editors, or GitHub maintainers need a non-promotional reason to cite the workflow checklist."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {researchCitationRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-            <div className="rounded-xl border border-border/70 px-4 py-3">
-              <p>
-                Research reference for context:{' '}
-                <a
-                  href="https://arxiv.org/abs/2605.21182"
-                  className="font-semibold text-foreground underline-offset-4 hover:underline"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Manga109-v2026 on arXiv
-                </a>
-                . Use it as background for OCR QA language only; it is not a
-                Nayovi endorsement.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Transparency"
-        title="Human-review and credit safeguards"
-        description="Use this section when manga media, creator platforms, or localization communities need to see that Nayovi is not positioning AI output as a replacement for professional translation work."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {transparencyRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Technical packet"
-        title="A reproducible review packet for OCR maintainers"
-        description="Use this packet when a GitHub maintainer, newsletter editor, or localization operator wants evidence rather than a product pitch."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {technicalEvaluationRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Quality bar"
-        title="Review standards"
-        description="Good translation support is slower than a raw OCR pass, but it avoids confusing names, missing bubbles, and policy problems."
-      >
-        <div className="grid gap-4 lg:grid-cols-3">
-          {[
-            {
-              icon: LanguagesIcon,
-              title: 'Terminology',
-              description:
-                'Keep recurring names, ranks, techniques, locations, and honorific choices stable across pages.',
-            },
-            {
-              icon: ShieldCheckIcon,
-              title: 'Permission',
-              description:
-                'Stop the workflow when permission is unclear or a source looks like a rip, mirror, or paywall bypass.',
-            },
-            {
-              icon: ScaleIcon,
-              title: 'Accountability',
-              description:
-                'Keep credits, reviewer notes, and removal routes easy to find for contributors and rights holders.',
-            },
-          ].map((item) => {
+        <div className="grid gap-4 md:grid-cols-2">
+          {problemDetails.map((item) => {
             const Icon = item.icon;
+
             return (
               <Card key={item.title} className="rounded-[1.5rem]">
                 <CardHeader className="gap-3">
-                  <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <div className="flex size-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                     <Icon className="size-5" />
                   </div>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
@@ -3046,14 +2368,55 @@ export const PageTranslationSupportWorkflow = () => {
       </PublicSection>
 
       <PublicSection
-        eyebrow="Reviewer checklist"
-        title="Common OCR translation failure modes"
-        description="These are the checks Nayovi reviewers, Android app editors, and partner teams can use when judging an approved sample."
+        eyebrow="Useful details"
+        title="Share only what support needs"
+        description="A short, precise report is usually more useful than a long upload and helps us understand the translation problem faster."
       >
-        <div className="grid gap-4 lg:grid-cols-2">
-          {reviewerFailureModes.map((item) => (
+        <Card className="rounded-[1.5rem]">
+          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
+            {diagnosticRows.map((row) => (
+              <div
+                key={row.label}
+                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
+              >
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
+                <span>{row.detail}</span>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Privacy and rights"
+        title="Protect the chapter and your account"
+        description="Start by describing the issue. You usually do not need to upload copyrighted pages or private account information."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {[
+            {
+              title: 'Do not send a full chapter',
+              description:
+                'If an image is truly necessary, send one cropped panel or a small approved sample instead of a complete chapter.',
+            },
+            {
+              title: 'Use content you can access legally',
+              description:
+                'Only share content you own, public-domain material, an official sample, or pages you have permission to process.',
+            },
+            {
+              title: 'Remove private information',
+              description:
+                'Hide email addresses, activation codes, receipts, payment details, and other identifiers before attaching a screenshot.',
+            },
+          ].map((item) => (
             <Card key={item.title} className="rounded-[1.5rem]">
-              <CardHeader className="gap-2">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
+                  <ShieldCheckIcon className="size-5" />
+                </div>
                 <CardTitle className="text-lg">{item.title}</CardTitle>
                 <CardDescription>{item.description}</CardDescription>
               </CardHeader>
@@ -3063,520 +2426,81 @@ export const PageTranslationSupportWorkflow = () => {
       </PublicSection>
 
       <PublicSection
-        eyebrow="Trust packet"
-        title="What to include in a review, listing, or partner note"
-        description="A clear source-of-truth packet makes Nayovi easier to evaluate without sending people to unofficial mirrors or unsupported communities."
+        eyebrow="After you contact us"
+        title="What happens after you send a request"
+        description="Response time depends on the issue and the details available. Translation problems may take longer when they need a safe, reproducible sample."
       >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {trustPacketRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Directory packet"
-        title="Citation-ready app listing details"
-        description="Use these details when an Android directory, app reviewer, newsletter, or partner needs a short, accurate description before deciding whether Nayovi belongs in a listing."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {directoryPacketRows.map((row) => (
-              <div
-                key={row.item}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.item}
-                </span>
-                <span>{row.copy}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Demo packet"
-        title="Review assets for editors and directory teams"
-        description="Use this packet when an Android reviewer, app directory, AI-tool directory, or partner asks for proof before testing Nayovi or publishing a listing."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {demoPacketRows.map((row) => (
-              <div
-                key={row.item}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.item}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="AI directory proof"
-        title="Screenshot packet for AI-tool listings"
-        description="Use this packet when AI-tool directories, startup directories, or SaaS roundups need visual proof and category metadata before sending qualified visitors to Nayovi."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {aiDirectoryProofRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Pilot brief"
-        title="A clean starting point for publisher and community tests"
-        description="Use this brief when a partner wants to evaluate Nayovi with approved material before any public mention, directory listing, or affiliate test."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {pilotBriefRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Approved sample packet"
-        title="Proof to collect before asking creators or platforms for feedback"
-        description="Use this packet when a creator platform, webtoon studio, localization team, newsletter, or manga media outlet wants to understand the workflow without processing unauthorized catalog content."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {approvedSamplePacketRows.map((row) => (
-              <div
-                key={row.label}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.label}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Community readiness"
-        title="Where Nayovi can be mentioned without looking like a link drop"
-        description="Use this section before submitting Nayovi to launch communities, Q&A sites, GitHub resource lists, newsletters, or social discussions."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {communitySubmissionRows.map((row) => (
-              <div
-                key={row.channel}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.channel}
-                </span>
-                <span>{row.readiness}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Submission checklist"
-        title="Before sending Nayovi to a directory or resource page"
-        description="Use this checklist to decide whether a public listing, resource-page pitch, or official submit form is likely to create qualified installs instead of low-quality links."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {submissionReadinessRows.map((row) => (
-              <div
-                key={row.item}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.item}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Submission queue"
-        title="Which outreach should happen next"
-        description="Use this queue after the daily cap resets so partner, directory, and resource-page work starts with the strongest revenue signal and the cleanest compliance path."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {submissionQueueRows.map((row) => (
-              <div
-                key={row.lane}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.lane}
-                </span>
-                <span>{row.fit}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Cap-reset packet"
-        title="What to send when outreach capacity opens"
-        description="Use this packet to keep the next email or official-form submission focused on reply quality, approved samples, and paid-use evidence instead of generic backlink collection."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {capResetPacketRows.map((row) => (
-              <div
-                key={row.field}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.field}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Throttle guardrail"
-        title="How to avoid cap waste and duplicate outreach"
-        description="Use this check before sending new messages so the daily cap stays reserved for replies, official contact paths, and prospects that can create revenue-relevant evidence."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {outreachThrottleRows.map((row) => (
-              <div
-                key={row.field}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.field}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Reply triage"
-        title="How to handle qualified replies"
-        description="Use this packet after an editor, directory, partner, or investor replies so routine follow-up moves forward while true owner decisions stay visible."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {replyTriageRows.map((row) => (
-              <div
-                key={row.reply}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.reply}
-                </span>
-                <span>{row.response}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Reply qualification"
-        title="Which replies deserve the next action"
-        description="Use this matrix before spending review codes, founder time, or outreach capacity so replies move toward paid use, credible listings, or clean partner tests."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {replyQualificationRows.map((row) => (
-              <div
-                key={row.signal}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.signal}
-                </span>
-                <span>{row.action}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Reply SLA"
-        title="What to do in the first reply window"
-        description="Use this handoff when a real contact replies so the first response is useful, proportional, and tied to review access, partner pilots, paid-plan evidence, or a clean stop."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {replySlaRows.map((row) => (
-              <div
-                key={row.moment}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.moment}
-                </span>
-                <span>{row.action}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Qualified assets"
-        title="What to send after a useful reply"
-        description="Use this bundle when a reply is real enough to deserve assets, but still needs a clear path toward review access, approved-sample testing, paid-plan evidence, or a clean decline."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {qualifiedReplyAssetRows.map((row) => (
-              <div
-                key={row.packet}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.packet}
-                </span>
-                <span>{row.contents}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Revenue routing"
-        title="How a reply becomes qualified growth"
-        description="Use this routing check before sending codes or scheduling calls so outreach creates review access, approved-sample pilots, paid-plan evidence, or real commercial diligence."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {revenueRoutingRows.map((row) => (
-              <div
-                key={row.signal}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.signal}
-                </span>
-                <span>{row.route}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Review-code gate"
-        title="When to issue reviewer or pilot access"
-        description="Use this gate before spending redeem codes so access goes to contacts that can produce review evidence, approved-sample feedback, qualified listings, or paid-plan signal."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {reviewCodeGateRows.map((row) => (
-              <div
-                key={row.gate}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.gate}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Official forms"
-        title="How to handle form-only partner prospects"
-        description="Use this handoff when a high-fit studio, legal manga platform, creator service, or localization team exposes an official form but no verified public business email."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {officialFormHandoffRows.map((row) => (
-              <div
-                key={row.rule}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.rule}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Form proof"
-        title="What to log after an official-form submission"
-        description="Use this proof packet after a public form submission so future cycles can see what happened without storing private form data or reopening duplicate outreach."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {formSubmissionProofRows.map((row) => (
-              <div
-                key={row.field}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.field}
-                </span>
-                <span>{row.detail}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Reply pipeline"
-        title="How to move a reply without wasting access"
-        description="Use this ledger after a qualified reply so follow-up stays tied to source-preserving links, measured review access, paid-plan evidence, and true owner decisions."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {replyPipelineRows.map((row) => (
-              <div
-                key={row.state}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.state}
-                </span>
-                <span>{row.nextStep}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Comparison packet"
-        title="How to compare Nayovi with adjacent OCR translation tools"
-        description="Use this product-light checklist when an editor, creator platform, adjacent tool, or directory wants a fair comparison instead of a promotional claim."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {comparisonPacketRows.map((row) => (
-              <div
-                key={row.format}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.format}
-                </span>
-                <span>{row.check}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Neutral excerpt"
-        title="Markdown checklist for maintainers and editors"
-        description="Use this value-first version when a GitHub maintainer, newsletter editor, moderator, or localization community wants the checklist without product-first copy."
-      >
-        <Card className="rounded-[1.5rem]">
-          <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
-            {neutralChecklistRows.map((row) => (
-              <div
-                key={row.prompt}
-                className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[12rem_1fr] md:gap-4"
-              >
-                <span className="font-semibold text-foreground">
-                  {row.prompt}
-                </span>
-                <span>{row.checklist}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      </PublicSection>
-
-      <PublicSection
-        eyebrow="Policy"
-        title="Keep the workflow linkable"
-        description="Directories and communities are more likely to accept a project when the public pages make the legal boundary clear."
-      >
-        <div className="mb-8 grid gap-4 lg:grid-cols-2">
-          {translationSupportWorkflowFaqs.map((item) => (
-            <Card key={item.title} className="rounded-[1.5rem]">
-              <CardHeader className="gap-2">
-                <CardTitle className="text-lg">{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
+        <div className="grid gap-4 lg:grid-cols-3">
+          {responseSteps.map((step, index) => (
+            <Card key={step.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-2xl bg-primary font-semibold text-primary-foreground">
+                  {index + 1}
+                </div>
+                <CardTitle className="text-lg">{step.title}</CardTitle>
+                <CardDescription>{step.description}</CardDescription>
               </CardHeader>
             </Card>
           ))}
         </div>
+      </PublicSection>
 
-        <div className="flex flex-wrap gap-3">
+      <PublicSection
+        eyebrow="Access help"
+        title="Help with trials, plans, and accounts"
+        description="Use the same official support page for free-chapter access, monthly subscriptions, billing questions, installation, and activation."
+      >
+        <div className="grid gap-4 lg:grid-cols-3">
+          {helpTopics.map((topic) => (
+            <Card key={topic.title} className="rounded-[1.5rem]">
+              <CardHeader className="gap-2">
+                <CardTitle className="text-lg">{topic.title}</CardTitle>
+                <CardDescription>{topic.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-5 flex flex-wrap gap-3">
           <a
-            href="/legal/official-sources-takedown"
+            href="/pricing"
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+          >
+            See monthly plans
+          </a>
+          <a
+            href="/download"
+            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
+          >
+            Installation guide
+          </a>
+        </div>
+      </PublicSection>
+
+      <PublicSection
+        eyebrow="Official contact"
+        title="Contact Nayovi support"
+        description="Send your request through the official support page so translation, Android, plan, and account questions reach the right place."
+        className="pb-20"
+      >
+        <div className="public-brand-panel-muted flex flex-wrap items-center justify-between gap-4 rounded-[1.5rem] border p-5 md:p-6">
+          <div className="max-w-2xl space-y-1">
+            <p className="font-medium text-brand-950 dark:text-brand-100">
+              Include the problem, device details, language pair, and the
+              smallest safe example needed to explain it.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Do not include a full chapter, password, activation code, or
+              payment details.
+            </p>
+          </div>
+          <a
+            href="/support"
             className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
           >
             <span className="flex items-center gap-2">
-              Official sources policy
+              Contact support
               <ArrowRightIcon className="size-4" />
             </span>
-          </a>
-          <a
-            href="/guides/mihon-nayovi-setup"
-            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
-          >
-            Setup guide
           </a>
         </div>
       </PublicSection>
@@ -3590,6 +2514,7 @@ export const PageManhwaOcrGlossaryChecklist = () => {
       <PublicSection
         eyebrow="OCR checklist"
         title="Manhwa OCR glossary checklist"
+        titleAs="h1"
         description="A reviewer-ready checklist for approved manhwa samples before Nayovi output is cited, shared with partners, or used to judge paid translation fit."
         className="pt-10"
       >
@@ -3672,6 +2597,7 @@ export const PageOfficialSourcesTakedown = () => {
       <PublicSection
         eyebrow="Policy"
         title="Official sources and takedown policy"
+        titleAs="h1"
         description="Nayovi is for hosted OCR, translation support, activation, and troubleshooting. It does not host manga chapters or promote unauthorized chapter access."
         className="pt-10"
       >

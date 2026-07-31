@@ -12,8 +12,8 @@ export const Route = createFileRoute('/support')({
   component: RouteComponent,
   head: () =>
     buildPublicPageHead(
-      'Manga AI Translator Support',
-      'Get Nayovi support for TachiyomiAT, Tachiyomi, and Mihon-style Android setup, redeem codes, free manga AI translator access, manhwa translation plans, billing questions, device activation, and hosted OCR issues.',
+      'Manhwa & Manga Translator Support for Android',
+      'Get help installing Nayovi, choosing a manhwa or manga translation plan, using an activation code, or recovering access on Android.',
       '/support',
       {
         keywords: [
@@ -23,13 +23,14 @@ export const Route = createFileRoute('/support')({
           'Mihon setup support',
           'manga ai translator support',
           'manhwa ai translator support',
-          'Nayovi redeem code support',
+          'Nayovi activation code support',
           'Android manga translator help',
         ],
         structuredDataGraph: buildPublicFaqStructuredData(
           '/support',
           supportFaqs
         ),
+        titleSuffix: 'Nayovi',
       }
     ),
 });

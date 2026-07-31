@@ -9,7 +9,7 @@ export async function sendFreeTrialRedeemCodeEmail(input: {
   tokenAmount: number;
 }) {
   return sendEmail({
-    subject: `Your ${input.tokenAmount}-token Nayovi free trial code`,
+    subject: 'Your Nayovi free trial activation code',
     template: (
       <TemplateFreeTrialRedeemCode
         language={DEFAULT_LANGUAGE_KEY}

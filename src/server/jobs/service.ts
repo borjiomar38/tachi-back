@@ -8,11 +8,9 @@ import {
 import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
 import {
-  enforceFreeTrialDailyChapterLimit,
-  FreeTrialDailyLimitError,
-  resolveFreeTrialDailyLimitScope,
-} from '@/server/licenses/free-trial-daily-limit';
-import { recordFreeTrialNetworkIdentityForLicense } from '@/server/licenses/free-trial-identity';
+  findTrialOnlyFreeTrialClaimForLicense,
+  recordFreeTrialNetworkIdentityForLicense,
+} from '@/server/licenses/free-trial-identity';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 import { logger } from '@/server/logger';
 import { getProviderGatewayManifestWithRuntimeConfig } from '@/server/provider-gateway/manifest';
@@ -323,45 +321,30 @@ export async function createTranslationJob(
   );
 
   if (availableTokens < reservedTokens) {
+    const trialOnlyClaim = await findTrialOnlyFreeTrialClaimForLicense(
+      {
+        licenseId: deps.actor.licenseId,
+        now,
+      },
+      {
+        dbClient,
+      }
+    );
+
     throw new TranslationJobError('insufficient_tokens', 409, {
       details: {
         availableTokens,
+        isTrialOnly: Boolean(trialOnlyClaim),
         requiredTokens: reservedTokens,
       },
     });
   }
 
-  const freeTrialDailyLimitScope = await resolveFreeTrialDailyLimitScope({
-    dbClient,
-    licenseId: deps.actor.licenseId,
-    now,
-  });
   const expiresAt = new Date(
     now.getTime() + envServer.JOB_PAGE_UPLOAD_URL_TTL_SECONDS * 1000
   );
 
   const job = await dbClient.$transaction(async (tx) => {
-    try {
-      await enforceFreeTrialDailyChapterLimit({
-        actor: deps.actor,
-        scope: freeTrialDailyLimitScope,
-        tx,
-      });
-    } catch (error) {
-      if (error instanceof FreeTrialDailyLimitError) {
-        log.info({
-          details: error.details,
-          deviceId: deps.actor.deviceId,
-          licenseId: deps.actor.licenseId,
-          message: 'Rejected hosted translation job by free trial daily limit',
-          scope: 'jobs',
-          type: 'free_trial_daily_limit_exceeded',
-        });
-      }
-
-      throw error;
-    }
-
     const createdJob = await tx.translationJob.create({
       data: {
         chapterCacheKey: buildTranslationChapterCacheKey(input.chapterIdentity),

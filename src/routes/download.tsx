@@ -11,193 +11,28 @@ import { getPublicAndroidApkDownload } from '@/features/public/server';
 
 const downloadStructuredData = () => {
   const url = buildPublicAbsoluteUrl('/download');
-  const steps = [
+  const installSteps = [
     {
       name: 'Download the official Nayovi APK',
-      description:
-        'Use the official tachiyomiat.com download endpoint for the current Nayovi Android APK.',
+      description: 'Use the download button on tachiyomiat.com.',
     },
     {
-      name: 'Verify the APK metadata',
-      description: `Compare the APK filename, build label, size, and SHA-256 hash before reviewing or listing the app. Current SHA-256: ${androidApkDownload.sha256}.`,
+      name: 'Allow installation when Android asks',
+      description:
+        'Approve installation from your browser or file manager when prompted.',
     },
     {
-      name: 'Activate hosted translation',
+      name: 'Open Nayovi',
       description:
-        'Open the Android app, enter a redeem code, and use hosted OCR and AI translation for approved manga, manhwa, or manhua content.',
-    },
-    {
-      name: 'Check official updates',
-      description:
-        'Return to the official Nayovi download page before updating so the APK URL, build label, size, hash, support links, and responsible-use notes stay attached.',
+        'Launch the app, open a manhwa or manga chapter, and choose your reading language.',
     },
   ] as const;
-  const reviewerPacketItems = [
-    {
-      name: 'Confirm the official APK source',
-      description:
-        'Start from tachiyomiat.com or nayovi.com, then keep the official download, pricing, support, privacy, terms, and responsible-use links attached to the listing.',
-    },
-    {
-      name: 'Record release proof',
-      description:
-        'Attach the APK filename, build label, size, SHA-256 hash, package ownership notes, signing evidence, and Android developer verification status when those details are available.',
-    },
-    {
-      name: 'Test only approved samples',
-      description:
-        'Use public-domain, official-sample, owned, or permission-approved pages when checking OCR coverage, reading order, translation latency, and review screenshots.',
-    },
-    {
-      name: 'Route serious testers through support',
-      description:
-        'Ask support for a redeem code, screenshot context, narrated demo, and sample-safe review scope before publishing a hands-on article, directory listing, or partner note.',
-    },
-  ] as const;
-  const thirdPartyCitationItems = [
-    {
-      name: 'Directory listing citation',
-      description:
-        'Point installation traffic to the official Nayovi download page, keep the APK hash and support links visible, and avoid mirror-first APK redistribution.',
-    },
-    {
-      name: 'Editorial review citation',
-      description:
-        'Request redeem-code access, approved-sample scope, device notes, and release metadata before publishing a hands-on Android OCR translation review.',
-    },
-    {
-      name: 'Partner pilot citation',
-      description:
-        'Limit partner pilots to creator-approved, official-sample, public-domain, or owner-provided pages, then confirm which results can be cited publicly.',
-    },
-  ] as const;
-  const directoryQualityItems = [
-    {
-      name: 'Preserve official source links',
-      description:
-        'Accept only listings that keep the official download, pricing, support, privacy, terms, and responsible-use links visible.',
-    },
-    {
-      name: 'Reject paid or reciprocal link gates',
-      description:
-        'Do not use directories that require dofollow backlinks, paid placement, review swaps, or badges as a condition for listing.',
-    },
-    {
-      name: 'Represent access and pricing accurately',
-      description:
-        'Describe Nayovi as free trial plus redeem-code access and paid hosted OCR/AI translation token plans.',
-    },
-  ] as const;
-  const apkSourceSetupItems = [
-    {
-      name: 'Keep the download page as the source of truth',
-      description:
-        'Store the official Nayovi download page with the APK endpoint so support, pricing, privacy, terms, and responsible-use context stay attached to the file.',
-    },
-    {
-      name: 'Verify each update before citing it',
-      description:
-        'Compare the published build label, file name, size, and SHA-256 hash before accepting an update from an APK tracker, directory, or review packet.',
-    },
-    {
-      name: 'Avoid mirror-first references',
-      description:
-        'Treat third-party APK pages as discovery surfaces only unless they preserve the official source links, metadata, support route, and no-chapter-hosting boundary.',
-    },
-    {
-      name: 'Mark unconfirmed package fields as pending',
-      description:
-        'Include package name, signing-certificate fingerprint, and Android developer verification details only after the release packet confirms them.',
-    },
-  ] as const;
-  const ownerConfirmationItems = [
-    {
-      name: 'Use confirmed fields now',
-      description:
-        'Cite official domains, the current download URL, APK file metadata, pricing, support, privacy, terms, and responsible-use links.',
-    },
-    {
-      name: 'Wait for owner-confirmed release identity',
-      description:
-        'Do not publish package name, signing-certificate fingerprint, Android developer verification status, screenshots, or public tester report claims until the owner confirms them.',
-    },
-    {
-      name: 'Keep pending fields explicit',
-      description:
-        'Mark missing package, signing, and verification details as owner-confirmation required instead of copying claims from mirrors or third-party pages.',
-    },
-    {
-      name: 'Prepare Android 2026 verification language',
-      description:
-        'For Android developer verification coverage, cite package, signing, registration, and verification status as pending owner confirmation until the official owner supplies exact public facts.',
-    },
-  ] as const;
-  const androidVerificationItems = [
-    {
-      name: 'Use pending-language readiness',
-      description:
-        'Nayovi can cite official APK source links and current file metadata now, while package name, signing fingerprint, developer verification status, and package registration state remain owner-confirmation required.',
-    },
-    {
-      name: 'Avoid unsupported verification claims',
-      description:
-        'Do not imply Google Play approval, Android developer verification, store availability, or third-party endorsement before the owner confirms those public facts.',
-    },
-    {
-      name: 'Preserve source-of-truth context',
-      description:
-        'Reviewer and directory citations should keep download, pricing, support, privacy, terms, responsible-use, and screenshot-policy context attached to the APK metadata.',
-    },
-  ] as const;
-  const citationReadinessItems = [
-    {
-      name: 'Media or podcast citation',
-      description:
-        'Lead with the OCR QA checklist, approved-sample boundary, and human-review notes before mentioning install links or review codes.',
-    },
-    {
-      name: 'Directory citation',
-      description:
-        'Confirm the listing can show trial plus paid-token pricing, source-of-truth links, support, privacy, terms, and no-chapter-hosting language.',
-    },
-    {
-      name: 'Localization partner citation',
-      description:
-        'Use a no-link resource note first and ask whether approved-sample OCR observations are useful without implying catalog access or replacement of professional localization.',
-    },
-    {
-      name: 'Android policy citation',
-      description:
-        'Keep package name, signing fingerprint, and developer verification status marked owner-confirmation required until the exact public facts are confirmed.',
-    },
-  ] as const;
-  const submissionGateItems = [
-    {
-      name: 'Android newsletter submission',
-      description:
-        'Use a developer-facing checklist about independent APK trust, hosted OCR testing, and reviewer-safe screenshots before any consumer app pitch.',
-    },
-    {
-      name: 'Creator platform submission',
-      description:
-        'Use only approved-sample language and avoid implying platform, publisher, or creator catalog pages may be processed without explicit permission.',
-    },
-    {
-      name: 'AI directory submission',
-      description:
-        'Preserve trial plus paid-token wording, official source links, support, privacy, terms, and responsible-use context.',
-    },
-    {
-      name: 'Owner confirmation gate',
-      description:
-        'Wait when a submission requires package name, signing fingerprint, verification status, screenshots, login, form acceptance, or public metrics.',
-    },
-  ] as const;
+
   return [
     {
       '@type': 'SoftwareApplication',
       '@id': `${url}#apk`,
-      name: 'Nayovi Android APK',
+      name: 'Nayovi Android Manhwa and Manga Translator',
       alternateName: ['TachiyomiAT APK', 'Tachiyomi AT APK'],
       applicationCategory: 'MultimediaApplication',
       operatingSystem: 'Android',
@@ -205,115 +40,23 @@ const downloadStructuredData = () => {
       fileSize: androidApkDownload.sizeLabel,
       softwareVersion: androidApkDownload.buildLabel,
       url,
-      offers: [
-        {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-          description:
-            'Free trial access before monthly hosted OCR and AI translation token plans.',
-          url: buildPublicAbsoluteUrl('/pricing'),
-        },
-      ],
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        description: 'One-time free trial before optional monthly plans.',
+      },
     },
     {
       '@type': 'HowTo',
       '@id': `${url}#install-howto`,
-      name: 'How to install and activate the Nayovi Android APK',
+      name: 'How to install the Nayovi manhwa and manga translator APK on Android',
       description:
-        'Download the official Nayovi APK, verify source-of-truth metadata, then activate hosted OCR and AI translation with a redeem code.',
-      step: steps.map((step) => ({
+        'Download the official APK, approve the Android installation prompt, and open Nayovi.',
+      step: installSteps.map((step) => ({
         '@type': 'HowToStep',
         name: step.name,
         text: step.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#reviewer-verification-packet`,
-      name: 'Nayovi APK reviewer verification packet',
-      itemListElement: reviewerPacketItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#third-party-citation-handoff`,
-      name: 'How third parties should cite Nayovi',
-      itemListElement: thirdPartyCitationItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#directory-quality-filter`,
-      name: 'Nayovi directory listing quality filter',
-      itemListElement: directoryQualityItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#apk-source-setup-note`,
-      name: 'Nayovi APK source setup note',
-      itemListElement: apkSourceSetupItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#owner-confirmed-apk-fields`,
-      name: 'Nayovi owner-confirmed APK trust fields',
-      itemListElement: ownerConfirmationItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#android-developer-verification-readiness`,
-      name: 'Nayovi Android developer verification readiness',
-      itemListElement: androidVerificationItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#third-party-citation-readiness`,
-      name: 'Nayovi third-party citation readiness packet',
-      itemListElement: citationReadinessItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
-      })),
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#submission-gate`,
-      name: 'Nayovi newsletter and platform submission gate',
-      itemListElement: submissionGateItems.map((item, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: item.name,
-        description: item.description,
       })),
     },
   ];
@@ -324,8 +67,8 @@ export const Route = createFileRoute('/download')({
   loader: () => getPublicAndroidApkDownload(),
   head: () =>
     buildPublicPageHead(
-      'TachiyomiAT APK Download for Android',
-      'Download the TachiyomiAT-style Nayovi APK for Android, then activate hosted OCR and free manga, manhwa, or manhua AI translation with a redeem code.',
+      'TachiyomiAT APK Download - Manhwa & Manga Translator',
+      'Download the official Nayovi manhwa and manga translator APK for Android. Install it, open a chapter, and try about two average chapters free.',
       '/download',
       {
         keywords: [
@@ -336,12 +79,14 @@ export const Route = createFileRoute('/download')({
           'Tachiyomi AT download',
           'Tachiyomi download',
           'Mihon Android reader',
-          'download free manga ai translator',
-          'download free manhwa ai translator',
           'Nayovi APK download',
-          'Android manga translator APK',
+          'manga translator APK',
+          'Android manga translator app',
+          'manhwa translator Android',
+          'manhua translator Android',
         ],
         structuredDataGraph: downloadStructuredData(),
+        titleSuffix: 'Nayovi',
       }
     ),
 });

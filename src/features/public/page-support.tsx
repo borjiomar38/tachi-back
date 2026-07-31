@@ -1,57 +1,39 @@
 import {
   ArrowRightIcon,
-  FileCheck2Icon,
   MailIcon,
   MessageCircleIcon,
   ShieldCheckIcon,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { cn } from '@/lib/tailwind/utils';
+import { cn } from "@/lib/tailwind/utils";
 
-import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 
 import {
   PUBLIC_OWNER_WHATSAPP_DISPLAY,
   PUBLIC_OWNER_WHATSAPP_HREF,
   PUBLIC_SUPPORT_EMAIL,
   supportFaqs,
-} from '@/features/public/data';
-import { PublicSection, PublicShell } from '@/features/public/public-shell';
-
-const reviewerRequestItems = [
-  {
-    title: 'Review-code access',
-    description:
-      'Android blogs, affiliates, communities, and directory editors can request a dedicated redeem code before testing the APK, free trial, token plans, or hosted translation flow.',
-  },
-  {
-    title: 'Evidence pack',
-    description:
-      'Ask for current screenshots, narrated demo context, pricing notes, APK source details, and permission-safe usage language before publishing a review or listing.',
-  },
-  {
-    title: 'Qualified pilot routing',
-    description:
-      'Use this support path for small reading-group pilots, publisher-approved samples, or affiliate tests that need clear disclosure and measurable install-to-paid signals.',
-  },
-] as const;
+} from "@/features/public/data";
+import { PublicSection, PublicShell } from "@/features/public/public-shell";
 
 export const PageSupport = () => {
   return (
     <PublicShell>
       <PublicSection
         eyebrow="Support"
-        title="Support and policy routes"
-        description="Use this page for TachiyomiAT, Tachiyomi, Mihon, and Nayovi setup questions, billing questions, redeem-code help, device recovery guidance, and policy links."
+        title="How can we help?"
+        description="Get help with installing Nayovi, paying for a plan, using an activation code, or recovering access on your Android phone."
         className="pt-10"
+        titleAs="h1"
       >
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
           <Card className="public-brand-panel rounded-[1.5rem] text-neutral-50">
@@ -71,7 +53,7 @@ export const PageSupport = () => {
                   </div>
                   <CardTitle className="text-xl">WhatsApp support</CardTitle>
                   <CardDescription className="text-neutral-300">
-                    Fastest for payment, redeem-code, activation, and setup help.
+                    Fastest for payment, activation-code, and setup help.
                   </CardDescription>
                 </div>
               </div>
@@ -81,7 +63,10 @@ export const PageSupport = () => {
                 href={PUBLIC_OWNER_WHATSAPP_HREF}
                 target="_blank"
                 rel="noreferrer"
-                className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }), 'w-full')}
+                className={cn(
+                  buttonVariants({ variant: "secondary", size: "lg" }),
+                  "w-full",
+                )}
               >
                 <span className="flex items-center gap-2">
                   Message on WhatsApp
@@ -99,8 +84,8 @@ export const PageSupport = () => {
                 Prefer email? {PUBLIC_SUPPORT_EMAIL}
               </a>
               <p className="text-sm leading-6 text-neutral-300">
-                Use support for device recovery, manual token adjustments,
-                billing questions, privacy, or legal requests.
+                Use support for device recovery, plan questions, billing,
+                privacy, or legal requests.
               </p>
             </CardContent>
           </Card>
@@ -110,23 +95,21 @@ export const PageSupport = () => {
               <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
                 <ShieldCheckIcon className="size-5" />
               </div>
-              <CardTitle className="text-xl">Support flow notes</CardTitle>
+              <CardTitle className="text-xl">Before you contact us</CardTitle>
               <CardDescription>
-                Keep receipt, redeem-code, and device-recovery guidance
-                consistent here so customers know what to do next.
+                A few simple details help us solve the problem faster.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-3 text-sm text-muted-foreground">
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Include the receipt email and redeem code when asking for billing help.
+                For billing help, include the email used at checkout.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Use Lemon Squeezy receipts and redeem-code emails to reconcile
-                orders quickly.
+                For activation help, include the error message shown in Nayovi.
               </div>
               <div className="rounded-xl border border-border/70 px-3 py-3">
-                Device recovery, refund handling, and privacy requests are routed
-                through the backoffice.
+                For installation help, include your Android version and app
+                version.
               </div>
             </CardContent>
           </Card>
@@ -134,53 +117,9 @@ export const PageSupport = () => {
       </PublicSection>
 
       <PublicSection
-        eyebrow="Review access"
-        title="Reviewer and partner requests"
-        description="Use support when a public review, directory listing, affiliate test, or approved sample pilot needs a verifiable Nayovi contact path."
-      >
-        <div className="grid gap-4 lg:grid-cols-3">
-          {reviewerRequestItems.map((item) => (
-            <Card key={item.title} className="rounded-[1.5rem]">
-              <CardHeader className="gap-3">
-                <div className="flex size-11 items-center justify-center rounded-2xl bg-neutral-950 text-neutral-50 dark:bg-neutral-100 dark:text-neutral-950">
-                  <FileCheck2Icon className="size-5" />
-                </div>
-                <CardTitle className="text-lg">{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href={`mailto:${PUBLIC_SUPPORT_EMAIL}?subject=Nayovi%20review%20code%20request`}
-            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
-          >
-            <span className="flex items-center gap-2">
-              Request review code
-              <MailIcon className="size-4" />
-            </span>
-          </a>
-          <a
-            href="/translate-manhwa-ai"
-            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
-          >
-            Product evidence
-          </a>
-          <a
-            href="/guides/translation-support-workflow"
-            className={buttonVariants({ variant: 'ghost', size: 'lg' })}
-          >
-            Translation workflow
-          </a>
-        </div>
-      </PublicSection>
-
-      <PublicSection
         eyebrow="FAQ"
-        title="Customer-facing questions"
-        description="These answers stay consistent with the current Android app reality while still explaining the hosted direction."
+        title="Quick answers"
+        description="Common questions about the free trial, monthly plans, and Android setup."
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {supportFaqs.map((item) => (
@@ -196,7 +135,7 @@ export const PageSupport = () => {
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="/legal/privacy"
-            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+            className={cn(buttonVariants({ variant: "default", size: "lg" }))}
           >
             <span className="flex items-center gap-2">
               Privacy policy
@@ -205,7 +144,7 @@ export const PageSupport = () => {
           </a>
           <a
             href="/legal/terms"
-            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+            className={buttonVariants({ variant: "secondary", size: "lg" })}
           >
             Terms of service
           </a>

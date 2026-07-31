@@ -51,6 +51,7 @@ vi.mock('@/server/logger', () => ({
 
 import {
   authenticateMobileAccessToken,
+  buildMobileSessionSummary,
   createMobileSession,
   MobileAuthError,
   refreshMobileSession,
@@ -69,6 +70,56 @@ describe('mobile auth session service', () => {
     mockDb.order.findFirst.mockReset();
     mockDb.tokenLedger.aggregate.mockReset();
     mockLogger.info.mockReset();
+  });
+
+  it('marks a session summary when the license is trial-only', async () => {
+    const now = new Date('2026-03-19T23:00:00.000Z');
+    mockDb.tokenLedger.aggregate.mockResolvedValue({
+      _sum: {
+        deltaTokens: 0,
+      },
+    });
+    mockDb.freeTrialClaim.findUnique.mockResolvedValue({
+      id: 'claim-1',
+    });
+    mockDb.order.findFirst.mockResolvedValue(null);
+
+    const result = await buildMobileSessionSummary(
+      {
+        accessTokenExpiresAt: new Date('2026-03-20T00:00:00.000Z'),
+        device: {
+          appBuild: '100',
+          appVersion: '1.0.0',
+          id: 'device-1',
+          installationId: 'install-1234567890abcd',
+          lastSeenAt: now,
+          locale: 'fr',
+          platform: 'android',
+          status: 'active',
+        },
+        license: {
+          activatedAt: now,
+          deviceLimit: 1,
+          id: 'license-trial-1',
+          key: 'trial-key',
+          ownerEmail: 'reader@example.test',
+          status: 'active',
+        },
+        session: {
+          expiresAt: new Date('2026-04-18T23:00:00.000Z'),
+          id: 'session-1',
+          lastUsedAt: now,
+        },
+      } as never,
+      {
+        dbClient: mockDb as never,
+      }
+    );
+
+    expect(result.license).toMatchObject({
+      availableTokens: 0,
+      isTrialOnly: true,
+    });
   });
 
   it('creates a device-bound access and refresh token bundle', async () => {

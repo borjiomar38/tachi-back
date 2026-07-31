@@ -317,9 +317,29 @@ model Device {
   ratingFeedback    TranslationRatingFeedback[]
   mangaVisits       DeviceMangaVisit[]
   extensionVisits   DeviceExtensionVisit[]
+  funnelEvents      FunnelEvent[]
 
   @@index([status, lastSeenAt])
   @@map("devices")
+}
+
+model FunnelEvent {
+  id             String   @id @default(cuid())
+  eventKey       String   @unique
+  name           String
+  source         String
+  schemaVersion  Int      @default(1)
+  deviceId       String
+  occurredAt     DateTime
+  properties     Json?
+  consentVersion String
+  createdAt      DateTime @default(now())
+
+  device Device @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@index([name, occurredAt])
+  @@index([deviceId, name, occurredAt])
+  @@map("funnel_events")
 }
 
 model DeviceMangaVisit {

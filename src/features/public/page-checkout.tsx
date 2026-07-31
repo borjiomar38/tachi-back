@@ -4,40 +4,35 @@ import {
   KeyRoundIcon,
   MailIcon,
   ShieldCheckIcon,
-} from 'lucide-react';
+} from "lucide-react";
 
-import { cn } from '@/lib/tailwind/utils';
+import { cn } from "@/lib/tailwind/utils";
 
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Badge } from '@/components/ui/badge';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
-import {
-  formatCurrency,
-  formatTokenCount,
-  type PublicTokenPack,
-} from '@/features/public/data';
-import { PublicSection, PublicShell } from '@/features/public/public-shell';
+import { formatCurrency, type PublicTokenPack } from "@/features/public/data";
+import { PublicSection, PublicShell } from "@/features/public/public-shell";
 
 const checkoutErrorMessages: Record<string, string> = {
   checkout_unavailable:
-    'Lemon Squeezy did not return a checkout URL. Please try again.',
+    "Lemon Squeezy did not return a checkout URL. Please try again.",
   checkout_test_mode:
-    'Live checkout is not available yet because the Lemon Squeezy product is still in test mode.',
-  invalid_request:
-    'Enter a valid payer email before continuing to checkout.',
-  ls_disabled: 'Checkout is disabled in this environment.',
-  token_pack_not_found: 'The selected monthly plan is not available anymore.',
+    "Live checkout is not available yet because the Lemon Squeezy product is still in test mode.",
+  invalid_request: "Enter a valid email address before continuing to checkout.",
+  ls_disabled: "Checkout is disabled in this environment.",
+  token_pack_not_found: "The selected monthly plan is not available anymore.",
   token_pack_unavailable:
-    'This monthly plan is visible publicly, but its Lemon Squeezy variant is not configured yet.',
+    "This monthly plan is visible publicly, but its Lemon Squeezy variant is not configured yet.",
 };
 
 export const PageCheckout = (props: {
@@ -49,8 +44,8 @@ export const PageCheckout = (props: {
   tokenPackKey: string;
 }) => {
   const errorMessage = props.search.error
-    ? checkoutErrorMessages[props.search.error] ??
-      'The checkout request could not be prepared. Please try again.'
+    ? (checkoutErrorMessages[props.search.error] ??
+      "The checkout request could not be prepared. Please try again.")
     : null;
 
   if (!props.tokenPack) {
@@ -66,20 +61,20 @@ export const PageCheckout = (props: {
             <CardHeader className="gap-3">
               <CardTitle>Unavailable selection</CardTitle>
               <CardDescription>
-                The plan key <code>{props.tokenPackKey}</code> does not match
-                an active public monthly plan.
+                The plan key <code>{props.tokenPackKey}</code> does not match an
+                active public monthly plan.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-3">
               <a
                 href="/pricing"
-                className={buttonVariants({ variant: 'default', size: 'lg' })}
+                className={buttonVariants({ variant: "default", size: "lg" })}
               >
                 Back to pricing
               </a>
               <a
                 href="/support"
-                className={buttonVariants({ variant: 'secondary', size: 'lg' })}
+                className={buttonVariants({ variant: "secondary", size: "lg" })}
               >
                 Contact support
               </a>
@@ -95,7 +90,8 @@ export const PageCheckout = (props: {
       <PublicSection
         eyebrow="Checkout"
         title={`Subscribe to ${props.tokenPack.name}`}
-        description="Lemon Squeezy handles recurring payment. Monthly token crediting, redeem-code delivery, and device activation are finalized after webhook confirmation."
+        titleAs="h1"
+        description="Your monthly chapter allowance and activation code are issued after payment is confirmed."
         className="pb-20 pt-10"
       >
         <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
@@ -107,8 +103,7 @@ export const PageCheckout = (props: {
                     {props.tokenPack.name}
                   </CardTitle>
                   <CardDescription className="text-neutral-300">
-                    {props.tokenPack.description ??
-                      'Hosted OCR and translation tokens.'}
+                    Full-chapter AI translation in Nayovi.
                   </CardDescription>
                 </div>
                 <Badge variant="brand" size="sm">
@@ -122,38 +117,34 @@ export const PageCheckout = (props: {
                 <p className="mt-1 text-3xl font-semibold">
                   {formatCurrency(
                     props.tokenPack.priceAmountCents,
-                    props.tokenPack.currency
+                    props.tokenPack.currency,
                   )}
                 </p>
                 <p className="mt-2 text-sm text-neutral-300">
-                  {formatTokenCount(props.tokenPack.totalTokens)} monthly tokens
+                  About {props.tokenPack.marketedChaptersPerMonth} chapters per
+                  month
                 </p>
               </div>
 
               <div className="grid gap-3 text-sm">
                 <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3">
-                  <span className="text-neutral-300">Base tokens</span>
-                  <span>{formatTokenCount(props.tokenPack.tokenAmount)}</span>
-                </div>
-                <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3">
-                  <span className="text-neutral-300">Bonus tokens</span>
+                  <span className="text-neutral-300">Included chapters</span>
                   <span>
-                    {formatTokenCount(props.tokenPack.bonusTokenAmount)}
+                    About {props.tokenPack.marketedChaptersPerMonth} per month
                   </span>
                 </div>
                 <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3">
                   <span className="text-neutral-300">Billing</span>
-                  <span>Recurring monthly renewal</span>
+                  <span>Renews monthly · allowance resets</span>
                 </div>
               </div>
 
               <Alert className="border-white/10 bg-white/5 text-neutral-50">
                 <CreditCardIcon />
-                <AlertTitle>What this page does</AlertTitle>
+                <AlertTitle>Secure checkout</AlertTitle>
                 <AlertDescription className="text-neutral-300">
-                  This step only creates a checkout session. It does not
-                  credit monthly tokens immediately, and it does not activate a
-                  device yet.
+                  This step creates the checkout session. Your plan becomes
+                  active after payment confirmation.
                 </AlertDescription>
               </Alert>
             </CardContent>
@@ -173,10 +164,8 @@ export const PageCheckout = (props: {
                 <KeyRoundIcon />
                 <AlertTitle>Checkout not configured</AlertTitle>
                 <AlertDescription>
-                  This environment does not have a Lemon Squeezy variant
-                  mapped for {props.tokenPack.name} yet. Keep the plan visible
-                  publicly, but route customers to support until the mapping is
-                  in place.
+                  {props.tokenPack.name} cannot be purchased right now. Contact
+                  support and we will help you.
                 </AlertDescription>
               </Alert>
             ) : null}
@@ -185,8 +174,8 @@ export const PageCheckout = (props: {
               <CardHeader className="gap-2">
                 <CardTitle>Continue to checkout</CardTitle>
                 <CardDescription>
-                  Use the payer email you want receipts and redeem-code
-                  instructions tied to.
+                  Use the email where you want to receive receipts and
+                  activation instructions.
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4">
@@ -202,11 +191,8 @@ export const PageCheckout = (props: {
                   />
 
                   <div className="grid gap-2">
-                    <label
-                      htmlFor="payerEmail"
-                      className="text-sm font-medium"
-                    >
-                      Payer email
+                    <label htmlFor="payerEmail" className="text-sm font-medium">
+                      Email address
                     </label>
                     <Input
                       id="payerEmail"
@@ -215,13 +201,11 @@ export const PageCheckout = (props: {
                       size="lg"
                       required
                       autoComplete="email"
-                      defaultValue={props.search.email ?? ''}
+                      defaultValue={props.search.email ?? ""}
                       startAddon={<MailIcon className="size-4" />}
                     />
                     <p className="text-sm text-muted-foreground">
-                      Subscription checkout starts here. After the first paid
-                      invoice, we email the redeem code used to activate the
-                      app.
+                      After payment, we email the code used to activate Nayovi.
                     </p>
                   </div>
 
@@ -239,7 +223,7 @@ export const PageCheckout = (props: {
                   <a
                     href="/pricing"
                     className={cn(
-                      buttonVariants({ variant: 'ghost', size: 'default' })
+                      buttonVariants({ variant: "ghost", size: "default" }),
                     )}
                   >
                     <span className="flex items-center gap-2">
@@ -249,7 +233,7 @@ export const PageCheckout = (props: {
                   </a>
                   <a
                     href="/how-it-works"
-                    className={buttonVariants({ variant: 'secondary' })}
+                    className={buttonVariants({ variant: "secondary" })}
                   >
                     How activation works
                   </a>

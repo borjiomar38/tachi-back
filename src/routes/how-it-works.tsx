@@ -15,7 +15,7 @@ const activationStructuredData = () => {
     {
       '@type': 'ItemList',
       '@id': `${url}#activation-sequence`,
-      name: 'Nayovi hosted manga translation activation sequence',
+      name: 'How to translate manhwa and manga on Android with Nayovi',
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: activationSteps.map((step, index) => ({
         '@type': 'ListItem',
@@ -27,9 +27,9 @@ const activationStructuredData = () => {
     {
       '@type': 'HowTo',
       '@id': `${url}#howto`,
-      name: 'How to activate Nayovi hosted manga translation on Android',
+      name: 'How to translate manhwa and manga chapters on Android with Nayovi',
       description:
-        'Install Nayovi, choose a free or monthly token plan, receive a redeem code, activate hosted OCR and AI translation in the Android app, and translate approved manga, manhwa, or manhua chapters.',
+        'Install Nayovi, open a manhwa, manga, or manhua chapter, choose your language, and read the translation in the Android app.',
       step: activationSteps.map((step) => ({
         '@type': 'HowToStep',
         name: step.title,
@@ -43,8 +43,8 @@ export const Route = createFileRoute('/how-it-works')({
   component: RouteComponent,
   head: () =>
     buildPublicPageHead(
-      'How Manga Translate AI Works',
-      'Learn how Nayovi manga translate ai works for TachiyomiAT, Tachiyomi, and Mihon-style Android readers: choose a plan, receive a redeem code, run hosted OCR, and translate manga, manhwa, or manhua chapters.',
+      'How to Translate Manhwa & Manga on Android',
+      'Install Nayovi, open a manhwa, manga, or manhua chapter, choose your language, and keep reading the translation inside the Android app.',
       '/how-it-works',
       {
         keywords: [
@@ -54,10 +54,11 @@ export const Route = createFileRoute('/how-it-works')({
           'Mihon AI translator setup',
           'how manga translate ai works',
           'how manhwa translate ai works',
-          'hosted OCR manga translator',
-          'redeem code manga translator',
+          'translate manga on Android',
+          'Android manhua translator',
         ],
         structuredDataGraph: activationStructuredData(),
+        titleSuffix: 'Nayovi',
       }
     ),
 });

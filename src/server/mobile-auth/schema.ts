@@ -129,6 +129,7 @@ export const zMobileSessionSummaryResponse = z.object({
     availableTokens: z.number().int(),
     deviceLimit: z.number().int().nonnegative(),
     id: z.string(),
+    isTrialOnly: z.boolean(),
     key: z.string(),
     ownerEmail: z.string().nullish(),
     status: z.enum(['pending', 'active', 'suspended', 'revoked', 'expired']),

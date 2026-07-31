@@ -263,7 +263,7 @@ async function translateWithOpenAI(
     },
     provider: ProviderType.openai,
     timeoutMs: deps.timeoutMs ?? envServer.PROVIDER_REQUEST_TIMEOUT_MS,
-    url: 'https://api.openai.com/v1/chat/completions',
+    url: `${envServer.OPENAI_BASE_URL.replace(/\/$/, '')}/chat/completions`,
   });
 
   const json = parseJsonResponse<Record<string, unknown>>(

@@ -1,6 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
-
-import { PageError } from '@/components/errors/page-error';
+import { createFileRoute, notFound } from '@tanstack/react-router';
 
 import { PageManhwaSeries } from '@/features/manhwa/page-manhwa-series';
 import { getManhwaSeriesPageData } from '@/features/manhwa/server';
@@ -12,8 +10,19 @@ import {
 
 export const Route = createFileRoute('/manhwa/$slug/')({
   component: RouteComponent,
-  loader: async ({ params }) =>
-    await getManhwaSeriesPageData({ data: { slug: params.slug } }),
+  loader: async ({ params }) => {
+    const data = await getManhwaSeriesPageData({
+      data: { slug: params.slug },
+    });
+
+    const series = data.series;
+
+    if (!series) {
+      throw notFound();
+    }
+
+    return { ...data, series };
+  },
   head: ({ loaderData }) => {
     const series = loaderData?.series;
     const latestPublicChapter = series?.chapters
@@ -71,10 +80,6 @@ export const Route = createFileRoute('/manhwa/$slug/')({
 
 function RouteComponent() {
   const { series } = Route.useLoaderData();
-
-  if (!series) {
-    return <PageError type="404" />;
-  }
 
   return <PageManhwaSeries series={series} />;
 }

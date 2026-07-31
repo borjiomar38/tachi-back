@@ -6,14 +6,14 @@ export const fallbackBlogArticle: BlogArticleDetail = {
     disclaimer:
       'Nayovi does not host manga, manhwa, or manhua chapters. Use the app only with content you own, content in the public domain, or content you have permission to process, and respect official releases and rights holders.',
     downloadCallout: {
-      body: 'Install the Android APK from the official Nayovi download page, activate hosted mode with your redeem code, and keep the same dark reader-focused workflow across manga, manhwa, manhua, TachiyomiAT, Tachiyomi, and Mihon-style translation tasks.',
+      body: 'Install the Android APK from the official Nayovi page, choose your reading language, and translate manhwa, manga, or manhua without a complicated setup.',
       buttonLabel: 'Download Nayovi',
       title: 'Download Nayovi for Android',
     },
     faqs: [
       {
         answer:
-          'No. Nayovi is focused on the app, hosted OCR, translation workflow, activation, and support. It does not publish or distribute manga, manhwa, or manhua chapters.',
+          'No. Nayovi helps you translate chapters that you can legally access. It does not publish or distribute manga, manhwa, or manhua chapters.',
         question: 'Does Nayovi host manhwa chapters?',
       },
       {
@@ -23,51 +23,51 @@ export const fallbackBlogArticle: BlogArticleDetail = {
       },
       {
         answer:
-          'Use the official download page or APK CTA in each article. The link points to the Nayovi backend so readers get the current Android build instead of a random mirror.',
+          'Use the official download button in this guide or visit the Nayovi download page. Both lead to the current Android build instead of an unknown mirror.',
         question: 'Where is the Nayovi download link?',
       },
     ],
     introduction:
-      'Readers searching for manhwa, manhua, manga translation, manhwa translate ai, TachiyomiAT, Tachiyomi, Mihon, or a Tachiyomi-style Android workflow usually want the same thing: a clean way to keep reading without fighting messy text, confusing setup, or scattered download links. Nayovi keeps that flow focused on the app, hosted OCR, AI-assisted translation, redeem-code activation, and a consistent Android APK download path.',
+      'When a manhwa, manga, or manhua chapter is not available in your language, Nayovi gives you a simple way to keep reading on Android. Open a chapter you can legally access, choose your language, and read the translated text in a familiar reader without juggling several tools.',
     readingProfile: {
       bestFor:
         'Android readers who already have legal access to chapters and want a simpler hosted translation workflow.',
       pacing:
         'Best for fast vertical chapters, recurring terminology, and scenes where OCR needs to separate dialogue from effects.',
-      tone: 'Dark, cinematic, reader-first, and practical rather than promotional or noisy.',
+      tone: 'A focused reading experience that keeps the chapter, dialogue, and translation easy to follow.',
     },
     sections: [
       {
-        body: 'Manhwa and manhua pages often mix tall-panel composition, sound effects, narration boxes, and short dialogue bursts. A good translation workflow has to preserve that rhythm. Nayovi is designed around opening the app, activating hosted mode once, and sending page text through the backend when a chapter needs help.',
-        heading: 'Why manhwa translation needs a stable workflow',
+        body: 'Manhwa and manhua often combine tall panels, sound effects, narration boxes, and short lines of dialogue. Nayovi keeps the pages in reading order so the translated chapter remains comfortable to follow from one panel to the next.',
+        heading: 'Keep vertical chapters easy to follow',
         takeaways: [
-          'Vertical chapters benefit from clean OCR ordering.',
-          'Short dialogue should stay compact enough for reading flow.',
-          'Recurring names and techniques need consistent wording.',
+          'Read tall chapters in their natural order.',
+          'Keep short dialogue clear and easy to scan.',
+          'Follow recurring names and terms consistently.',
         ],
       },
       {
-        body: 'Every blog article uses the same download CTA so visitors do not have to hunt for the APK. The main path is the official Nayovi download page, with the direct APK endpoint behind the button. That keeps the site consistent for search visitors and safer than sending readers to third-party mirrors.',
-        heading: 'Keep the Nayovi download link consistent',
+        body: 'Download Nayovi from the official page so you receive the current Android build and clear installation instructions. This is safer and easier than searching through unrelated APK mirrors or old reposted versions.',
+        heading: 'Install Nayovi from the official page',
         takeaways: [
-          'Use the official site download page.',
-          'Avoid random mirrors or reposted APKs.',
-          'Pair download guidance with setup and activation context.',
+          'Use the official Nayovi download page.',
+          'Avoid unknown mirrors and outdated builds.',
+          'Follow the Android installation steps on the site.',
         ],
       },
       {
-        body: 'The strongest traffic pages should be useful before they are promotional. Articles can explain a manhwa reading problem, describe how OCR and translation affect the reading experience, then point to Nayovi as the app workflow. That is better for readers and safer for long-term SEO.',
-        heading: 'Write useful articles before chasing traffic',
+        body: 'Start with the free chapters to see how translation feels with the series you read. If you want to continue, compare the monthly plans and choose the amount of reading that suits you instead of paying for more than you need.',
+        heading: 'Choose a plan that fits your reading',
         takeaways: [
-          'Answer a real reader search intent.',
-          'Avoid links to unauthorized chapter sources.',
-          'Make the app CTA visible but not disruptive.',
+          'Try two chapters before choosing a plan.',
+          'Compare monthly options in one place.',
+          'Use only chapters you can legally access.',
         ],
       },
     ],
   },
   excerpt:
-    'A practical guide to Nayovi for readers searching for manhwa, manhua, manga translation, and a consistent Android APK download path from free trial to monthly token plans.',
+    'Learn how to install Nayovi on Android, translate manhwa, manga, and manhua, and choose a reading plan after trying two chapters free.',
   heroImageUrl: null,
   imageAlt:
     'Dark cinematic manhwa-style Nayovi reader scene with an Android translation workflow.',
@@ -99,16 +99,16 @@ export const fallbackBlogArticle: BlogArticleDetail = {
   manhwaTitle: 'Nayovi',
   manhwaType: 'manhwa',
   metaDescription:
-    'Download Nayovi for Android and learn how the app supports TachiyomiAT, Tachiyomi, Mihon, manga, manhwa, and manhua translation with free trial, redeem-code activation, and monthly token plans.',
+    'Install Nayovi on Android and learn how to translate manhwa, manga, and manhua chapters in your language with a simple reader-first workflow.',
   publishedAt: '2026-05-01T00:00:00.000Z',
-  searchIntent: 'TachiyomiAT Tachiyomi Mihon download manhwa translation app',
+  searchIntent: 'download an Android app to translate manhwa and manga',
   slug: 'download-nayovi-for-manhwa-translation',
   title: 'Download Nayovi for Manhwa and Manga Translation',
   updatedAt: '2026-05-31T00:00:00.000Z',
   uxReview: {
     notes: [
-      'Article uses the fixed introduction, section, reading profile, CTA, FAQ, and disclaimer structure.',
-      'Download CTA is consistent across generated articles.',
+      'Article uses a clear introduction, reading profile, guide, FAQ, and disclaimer structure.',
+      'The official download path is clear and easy for readers to find.',
       'Legal disclaimer protects the site from appearing to host chapters.',
     ],
     passed: true,

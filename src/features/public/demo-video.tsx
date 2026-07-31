@@ -10,20 +10,29 @@ export const DemoVideo = (props: DemoVideoProps) => {
   return (
     <div
       className={cn(
-        'flex w-full justify-center bg-black px-3 py-4 sm:px-5',
+        'flex w-full flex-col items-center gap-3 bg-black px-3 py-4 sm:px-5',
         props.className,
       )}
     >
-      <video
-        aria-label={demoVideo.label}
-        className="aspect-[9/16] max-h-[76vh] w-full max-w-[22rem] rounded-2xl bg-black object-contain shadow-2xl ring-1 ring-white/10"
-        controls
-        playsInline
-        poster={demoVideo.posterUrl}
-        preload="metadata"
+      <div className="aspect-[9/16] max-h-[76vh] w-full max-w-[22rem] overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/10">
+        <iframe
+          src={demoVideo.embedUrl}
+          title={demoVideo.label}
+          className="size-full border-0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+      <a
+        href={demoVideo.watchUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="text-sm font-medium text-brand-100 underline-offset-4 hover:underline"
       >
-        <source src={demoVideo.src} type="video/mp4" />
-      </video>
+        Watch the full tutorial on YouTube
+      </a>
     </div>
   );
 };

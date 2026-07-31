@@ -7,6 +7,7 @@ vi.mock('@/env/server', () => ({
     GEMINI_API_KEY: 'gemini-key',
     GEMINI_TRANSLATION_MODEL: 'gemini-test',
     OPENAI_API_KEY: 'openai-key',
+    OPENAI_BASE_URL: 'https://api.openai.com/v1',
     OPENAI_TRANSLATION_MODEL: 'gpt-5-mini',
     PROVIDER_REQUEST_TIMEOUT_MS: 5000,
     PROVIDER_RETRY_MAX_ATTEMPTS: 2,
@@ -279,6 +280,9 @@ describe('provider gateway translation', () => {
     expect(userPrompt).not.toContain('layout');
     expect(userPrompt).not.toContain('"x"');
     expect(userPrompt).not.toContain('"width"');
+    expect(fetchFn.mock.calls[0]?.[0]).toBe(
+      'https://api.openai.com/v1/chat/completions'
+    );
     expect(requestBody.reasoning_effort).toBe('minimal');
     expect(result.usage.inputTokens).toBe(10);
   });
