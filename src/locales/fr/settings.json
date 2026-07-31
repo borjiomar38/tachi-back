@@ -1,0 +1,127 @@
+{
+  "page": {
+    "title": "Paramètres",
+    "save": "Enregistrer",
+    "saved": "Paramètres mis à jour.",
+    "saveFailed": "Impossible de mettre à jour les paramètres.",
+    "loadFailed": "Impossible de charger les paramètres."
+  },
+  "freeTrial": {
+    "title": "Essai gratuit",
+    "description": "Contrôlez l’accès, la livraison et la protection des e-mails.",
+    "enabled": {
+      "label": "Activer l’essai gratuit",
+      "description": "Autorise un essai protégé par utilisateur et appareil éligible."
+    },
+    "emailCode": {
+      "label": "Envoyer le code par e-mail",
+      "description": "Les utilisateurs saisissent le code reçu avant l’activation."
+    },
+    "emailRisk": {
+      "label": "Analyse de risque par IA",
+      "description": "Analyse les domaines suspects de façon asynchrone. L’IA seule ne bloque jamais une adresse."
+    },
+    "allowance": {
+      "label": "Crédit d’essai",
+      "description": "Appliqué à chaque nouvel essai gratuit.",
+      "unit": "jetons"
+    },
+    "status": {
+      "mode": "Mode actuel",
+      "emailCode": "Code par e-mail",
+      "direct": "Activation directe",
+      "antiAbuse": "Protection anti-abus",
+      "active": "Active",
+      "emailReview": "Analyse e-mail",
+      "enabled": "Activée",
+      "disabled": "Désactivée"
+    }
+  },
+  "ocrUpload": {
+    "title": "Compression pour l’OCR",
+    "description": "Contrôlez la préparation des images sur le téléphone avant l’envoi OCR.",
+    "master": {
+      "label": "Compresser les images sur le téléphone",
+      "enabled": "Un profil de compression est appliqué avant l’envoi.",
+      "disabled": "Les images originales sont envoyées sans redimensionnement ni réencodage WebP."
+    },
+    "profilesTitle": "Profil de compression",
+    "profiles": {
+      "original": {
+        "name": "Original",
+        "description": "Aucune compression",
+        "detail": "Fichiers originaux et flux historique"
+      },
+      "safe": {
+        "name": "Sûr",
+        "description": "Qualité OCR validée"
+      },
+      "balanced": {
+        "name": "Équilibré",
+        "description": "Compression renforcée"
+      },
+      "strong": {
+        "name": "Forte",
+        "description": "Réduction maximale"
+      },
+      "custom": {
+        "name": "Personnalisé",
+        "description": "Choisir la dimension et la qualité",
+        "detail": "Tests avancés"
+      }
+    },
+    "badges": {
+      "validated": "Validé",
+      "experimental": "Expérimental",
+      "original": "Bypass"
+    },
+    "reduction": {
+      "exact": "{{percent}} % de réduction",
+      "measured": "{{percent}} % mesuré sur le chapitre 339",
+      "pending": "Mesure en attente",
+      "variable": "Variable",
+      "reference": "Réductions de référence mesurées sur le chapitre 339. La taille réelle varie selon le chapitre."
+    },
+    "profileParameters": "{{width}} px · WebP {{quality}}",
+    "custom": {
+      "title": "Profil personnalisé",
+      "maximumWidth": "Largeur OCR maximale",
+      "maximumWidthHelp": "Plage 800–2 400 px. Une largeur plus faible peut supprimer les petits textes.",
+      "quality": "Qualité WebP",
+      "qualityHelp": "Plage 40–90. Une qualité plus faible augmente la compression.",
+      "format": "Format de sortie",
+      "formatHelp": "Encodé une seule fois sur le téléphone.",
+      "coordinateTitle": "Correspondance avec les coordonnées originales conservée",
+      "coordinateDescription": "Les blocs OCR sont automatiquement replacés sur les images source en haute qualité.",
+      "sizeWarning": "La taille finale ne peut pas être garantie. Elle dépend de chaque chapitre."
+    },
+    "rollout": {
+      "title": "Portée du déploiement",
+      "testDevices": "Installations de test",
+      "percentage": "{{percentage}} % des utilisateurs",
+      "percentageLabel": "Pourcentage de déploiement",
+      "all": "Tous les utilisateurs",
+      "testHelp": "Commencez par les appareils internes avant d’appliquer le profil globalement.",
+      "percentageHelp": "Le même groupe déterministe d’installations reçoit la politique.",
+      "allHelp": "Applique ce profil à tous les téléphones compatibles.",
+      "installationIds": "IDs d’installation de test",
+      "installationIdsHelp": "Un ID d’installation par ligne, jusqu’à 20 appareils.",
+      "installationIdsPlaceholder": "installation-id"
+    },
+    "warnings": {
+      "experimental": "Une image lisible à l’œil peut quand même perdre un petit texte OCR. Validez les profils expérimentaux avant leur promotion.",
+      "original": "Le bypass Original est actif. Le téléphone envoie les images source sans compression."
+    },
+    "status": {
+      "title": "Politique effective",
+      "profile": "Profil",
+      "profileWithParameters": "{{profile}} · {{parameters}}",
+      "reduction": "Réduction mesurée",
+      "revision": "Révision de la politique",
+      "scope": "Portée",
+      "fallback": "Repli de sécurité",
+      "originalUpload": "Envoi original",
+      "notMeasured": "Non mesurée"
+    }
+  }
+}

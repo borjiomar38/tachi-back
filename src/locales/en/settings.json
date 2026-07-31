@@ -1,0 +1,127 @@
+{
+  "page": {
+    "title": "Settings",
+    "save": "Save changes",
+    "saved": "Settings updated.",
+    "saveFailed": "Unable to update settings.",
+    "loadFailed": "Unable to load settings."
+  },
+  "freeTrial": {
+    "title": "Free trial",
+    "description": "Control access, delivery and email protection.",
+    "enabled": {
+      "label": "Enable free trial",
+      "description": "Allow one protected trial per eligible user and device."
+    },
+    "emailCode": {
+      "label": "Send redeem code by email",
+      "description": "Users enter the code from their inbox before activation."
+    },
+    "emailRisk": {
+      "label": "AI email risk review",
+      "description": "Review suspicious domains asynchronously. AI alone never blocks an address."
+    },
+    "allowance": {
+      "label": "Trial allowance",
+      "description": "Applied to every new free trial.",
+      "unit": "tokens"
+    },
+    "status": {
+      "mode": "Current mode",
+      "emailCode": "Email code",
+      "direct": "Direct activation",
+      "antiAbuse": "Anti-abuse protection",
+      "active": "Active",
+      "emailReview": "Email review",
+      "enabled": "Enabled",
+      "disabled": "Disabled"
+    }
+  },
+  "ocrUpload": {
+    "title": "OCR upload compression",
+    "description": "Control how chapter images are prepared on the phone before OCR upload.",
+    "master": {
+      "label": "Compress images on phone",
+      "enabled": "A compression profile is applied before upload.",
+      "disabled": "Original images are uploaded without resizing or WebP re-encoding."
+    },
+    "profilesTitle": "Compression profile",
+    "profiles": {
+      "original": {
+        "name": "Original",
+        "description": "No compression",
+        "detail": "Original files and legacy flow"
+      },
+      "safe": {
+        "name": "Safe",
+        "description": "Validated OCR quality"
+      },
+      "balanced": {
+        "name": "Balanced",
+        "description": "More compression"
+      },
+      "strong": {
+        "name": "Strong",
+        "description": "Maximum reduction"
+      },
+      "custom": {
+        "name": "Custom",
+        "description": "Choose width and quality",
+        "detail": "Advanced testing"
+      }
+    },
+    "badges": {
+      "validated": "Validated",
+      "experimental": "Experimental",
+      "original": "Bypass"
+    },
+    "reduction": {
+      "exact": "{{percent}}% reduction",
+      "measured": "{{percent}}% measured on Chapter 339",
+      "pending": "Pending measurement",
+      "variable": "Variable",
+      "reference": "Reference reductions measured on Chapter 339. Actual size varies by chapter."
+    },
+    "profileParameters": "{{width}} px · WebP {{quality}}",
+    "custom": {
+      "title": "Custom profile",
+      "maximumWidth": "Maximum OCR width",
+      "maximumWidthHelp": "Range 800–2400 px. Smaller widths may remove small text.",
+      "quality": "WebP quality",
+      "qualityHelp": "Range 40–90. Lower quality increases compression.",
+      "format": "Output format",
+      "formatHelp": "Encoded once on the phone.",
+      "coordinateTitle": "Original coordinate mapping preserved",
+      "coordinateDescription": "OCR blocks are automatically mapped back to the high-quality source images.",
+      "sizeWarning": "Final file size cannot be guaranteed. It depends on each chapter."
+    },
+    "rollout": {
+      "title": "Rollout scope",
+      "testDevices": "Test installations",
+      "percentage": "{{percentage}}% of users",
+      "percentageLabel": "Rollout percentage",
+      "all": "All users",
+      "testHelp": "Start with internal devices before applying the profile globally.",
+      "percentageHelp": "The same deterministic group of installations receives the policy.",
+      "allHelp": "Apply this profile to every compatible phone.",
+      "installationIds": "Test installation IDs",
+      "installationIdsHelp": "One installation ID per line, up to 20 devices.",
+      "installationIdsPlaceholder": "installation-id"
+    },
+    "warnings": {
+      "experimental": "A visually readable image can still lose small OCR text. Validate experimental profiles before promotion.",
+      "original": "Original bypass is active. The phone uploads the source images without compression."
+    },
+    "status": {
+      "title": "Effective policy",
+      "profile": "Profile",
+      "profileWithParameters": "{{profile}} · {{parameters}}",
+      "reduction": "Measured reduction",
+      "revision": "Policy revision",
+      "scope": "Scope",
+      "fallback": "Fallback",
+      "originalUpload": "Original upload",
+      "notMeasured": "Not measured"
+    }
+  }
+}

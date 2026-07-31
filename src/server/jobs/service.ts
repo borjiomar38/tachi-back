@@ -40,10 +40,14 @@ import {
   coalesceOcrPageContinuations,
 } from './ocr-block-grouping';
 import {
+  getTranslationJobLogicalGeometryConflicts,
+  type TranslationJobOcrUploadMetadata,
   type TranslationJobResultManifest,
+  type TranslationJobUploadSourcePage,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
   zTranslationJobControlInput,
+  zTranslationJobOcrUploadMetadata,
   zTranslationJobPageUploadInput,
   zTranslationJobResultManifest,
   zTranslationJobSummary,
@@ -166,6 +170,8 @@ type OcrBatchPlacement = {
   logicalWidth?: number;
   offsetX: number;
   offsetY: number;
+  originalHeight?: number;
+  originalWidth?: number;
   width: number;
 };
 
@@ -234,13 +240,32 @@ export class TranslationJobError extends Error {
   readonly details?: unknown;
 }
 
+export const assertConsistentLogicalOcrFragmentGeometry = (
+  sourcePages: readonly TranslationJobUploadSourcePage[]
+): void => {
+  const conflicts = getTranslationJobLogicalGeometryConflicts(sourcePages);
+
+  if (conflicts.length === 0) {
+    return;
+  }
+
+  throw new TranslationJobError('invalid_upload', 409, {
+    details: {
+      conflicts,
+    },
+    message:
+      'Fragments of the same logical OCR page have inconsistent canvas geometry.',
+  });
+};
+
 export async function createTranslationJob(
   rawInput: unknown,
   deps: {
     actor: MobileJobActor;
     clientIp?: string | null;
     dbClient?: typeof db;
-    log?: Pick<typeof logger, 'error' | 'info'>;
+    log?: Pick<typeof logger, 'error' | 'info'> &
+      Partial<Pick<typeof logger, 'warn'>>;
     now?: Date;
     scheduleProcessing?: (jobId: string) => void;
   }
@@ -365,7 +390,10 @@ export async function createTranslationJob(
         checksumSha256: page.checksumSha256 ?? null,
         jobId: createdJob.id,
         kind: 'page_upload',
-        metadata: buildPendingUploadAssetMetadata(page),
+        metadata: buildPendingUploadAssetMetadata({
+          ocrUpload: input.ocrUpload,
+          sourcePages: page.sourcePages,
+        }),
         mimeType: page.mimeType,
         originalFileName: page.fileName,
         pageNumber: index + 1,
@@ -378,6 +406,17 @@ export async function createTranslationJob(
       select: translationJobSelect,
     });
   });
+
+  if (input.ocrUpload) {
+    logOcrUploadPreparation({
+      nonWebpPreparedPageCount: input.pages.filter(
+        (page) => page.mimeType.toLowerCase() !== 'image/webp'
+      ).length,
+      jobId: job.id,
+      log,
+      metadata: input.ocrUpload,
+    });
+  }
 
   const uploadAssets = job.assets
     .filter((asset) => asset.kind === 'page_upload')
@@ -472,23 +511,19 @@ function buildServerTranslationJobUpload(job: Pick<JobRecord, 'expiresAt'>) {
 }
 
 function buildPendingUploadAssetMetadata(page: {
-  sourcePages?:
-    | Array<{
-        fileName: string;
-        logicalFileName?: string;
-      }>
-    | undefined;
+  ocrUpload?: TranslationJobOcrUploadMetadata | undefined;
+  sourcePages?: TranslationJobUploadSourcePage[] | undefined;
 }): Prisma.InputJsonValue {
   const metadata: Record<string, unknown> = {
     uploadStatus: 'pending',
   };
 
+  if (page.ocrUpload) {
+    metadata.ocrUpload = page.ocrUpload;
+  }
+
   if (page.sourcePages?.length) {
-    metadata.uploadBatchVersion = page.sourcePages.some(
-      (sourcePage) => sourcePage.logicalFileName
-    )
-      ? 'mobile_ocr_batch.v2'
-      : 'mobile_ocr_batch.v1';
+    metadata.uploadBatchVersion = getMobileOcrBatchVersion(page.sourcePages);
     metadata.logicalPageCount = getSourcePagesLogicalPageCount(
       page.sourcePages
     );
@@ -496,6 +531,55 @@ function buildPendingUploadAssetMetadata(page: {
   }
 
   return metadata as Prisma.InputJsonValue;
+}
+
+function logOcrUploadPreparation(input: {
+  jobId: string;
+  log: Pick<typeof logger, 'info'> & Partial<Pick<typeof logger, 'warn'>>;
+  metadata: TranslationJobOcrUploadMetadata;
+  nonWebpPreparedPageCount: number;
+}) {
+  const isOriginalLegacyFallback =
+    input.metadata.mode === 'original' &&
+    input.metadata.preparedTotalBytes !== input.metadata.originalTotalBytes;
+  const fields = {
+    ...buildOcrUploadLogContext(input.metadata),
+    jobId: input.jobId,
+    ocrUploadLegacyFallback: isOriginalLegacyFallback,
+    ocrUploadNonWebpPreparedPageCount: input.nonWebpPreparedPageCount,
+    scope: 'jobs',
+    status: isOriginalLegacyFallback
+      ? 'ocr_upload_original_legacy_fallback'
+      : 'ocr_upload_prepared',
+  };
+
+  if (
+    (isOriginalLegacyFallback ||
+      input.metadata.preparedTotalBytes > input.metadata.originalTotalBytes) &&
+    input.log.warn
+  ) {
+    input.log.warn(fields);
+    return;
+  }
+
+  input.log.info(fields);
+}
+
+function getMobileOcrBatchVersion(
+  sourcePages: TranslationJobUploadSourcePage[]
+) {
+  if (
+    sourcePages.every(
+      (sourcePage) =>
+        sourcePage.originalHeight != null && sourcePage.originalWidth != null
+    )
+  ) {
+    return 'mobile_ocr_batch.v3' as const;
+  }
+
+  return sourcePages.some((sourcePage) => sourcePage.logicalFileName)
+    ? ('mobile_ocr_batch.v2' as const)
+    : ('mobile_ocr_batch.v1' as const);
 }
 
 function getInputLogicalPageCount(
@@ -710,6 +794,7 @@ export async function uploadTranslationJobPage(
   }
 
   log.info({
+    ...buildOcrUploadLogContext(getAssetOcrUploadMetadata(pageAsset.metadata)),
     bucketName: upload.bucketName,
     contentLengthHeader: deps.contentLength,
     contentType,
@@ -873,6 +958,7 @@ export async function completeDirectTranslationJobPageUpload(
   });
 
   log.info({
+    ...buildOcrUploadLogContext(getAssetOcrUploadMetadata(pageAsset.metadata)),
     bucketName: upload.bucketName,
     contentType: storedContentType,
     jobId: job.id,
@@ -1460,12 +1546,39 @@ async function processStartedTranslationJob(
       }
 
       const uploadedOcrPages: UploadedOcrPage[] = [];
+      const preparationProgressStride = Math.max(
+        1,
+        Math.ceil(uploadAssets.length / 10)
+      );
 
-      for (const asset of uploadAssets) {
+      for (const [assetIndex, asset] of uploadAssets.entries()) {
         if (!asset.bucketName || !asset.objectKey || !asset.originalFileName) {
           throw new TranslationJobError('invalid_upload', 409);
         }
 
+        if (
+          assetIndex % preparationProgressStride === 0 ||
+          assetIndex === uploadAssets.length - 1
+        ) {
+          await updateTranslationJobProgress({
+            dbClient,
+            jobId: startedJob.id,
+            progress: {
+              message: `Preparing OCR batch ${assetIndex + 1}/${uploadAssets.length}.`,
+              percent: Math.min(
+                44,
+                43 +
+                  Math.floor(
+                    (assetIndex / Math.max(uploadAssets.length, 1)) * 2
+                  )
+              ),
+              stage: 'ocr',
+              updatedAt: new Date().toISOString(),
+            },
+          });
+        }
+
+        const downloadStartedAt = Date.now();
         const uploadedPage = await getTranslationJobPageUpload({
           bucketName: asset.bucketName,
           objectKey: asset.objectKey,
@@ -1474,6 +1587,21 @@ async function processStartedTranslationJob(
           await uploadedPage.blob.arrayBuffer()
         );
         const sourcePages = readAssetSourcePagesOrThrow(asset);
+
+        log.info({
+          ...buildOcrUploadLogContext(
+            getAssetOcrUploadMetadata(asset.metadata)
+          ),
+          downloadDurationMs: Date.now() - downloadStartedAt,
+          fileName: asset.originalFileName,
+          jobId: startedJob.id,
+          objectKey: asset.objectKey,
+          pageNumber: asset.pageNumber,
+          scope: 'jobs',
+          sizeBytes: imageBytes.byteLength,
+          status: 'downloaded_ocr_upload',
+          uploadBatchVersion: getAssetUploadBatchVersion(asset.metadata),
+        });
 
         uploadedOcrPages.push({
           fileName: asset.originalFileName,
@@ -1489,10 +1617,16 @@ async function processStartedTranslationJob(
             logicalWidth: sourcePage.logicalWidth,
             offsetX: sourcePage.offsetX,
             offsetY: sourcePage.offsetY,
+            originalHeight: sourcePage.originalHeight,
+            originalWidth: sourcePage.originalWidth,
             width: sourcePage.width,
           })),
         });
       }
+
+      assertConsistentLogicalOcrFragmentGeometry(
+        uploadedOcrPages.flatMap((page) => page.placements ?? [])
+      );
 
       await updateTranslationJobProgress({
         dbClient,
@@ -2621,6 +2755,42 @@ function hasAssetSourcePagesMetadata(asset: JobAssetRecord) {
   return Boolean(metadata && 'sourcePages' in metadata);
 }
 
+function getAssetUploadBatchVersion(metadata: unknown) {
+  const uploadBatchVersion = getRecord(metadata)?.uploadBatchVersion;
+  return typeof uploadBatchVersion === 'string' ? uploadBatchVersion : null;
+}
+
+function getAssetOcrUploadMetadata(
+  metadata: unknown
+): TranslationJobOcrUploadMetadata | null {
+  const parsed = zTranslationJobOcrUploadMetadata.safeParse(
+    getRecord(metadata)?.ocrUpload
+  );
+
+  return parsed.success ? parsed.data : null;
+}
+
+function buildOcrUploadLogContext(
+  metadata: TranslationJobOcrUploadMetadata | null
+) {
+  if (!metadata) {
+    return {};
+  }
+
+  return {
+    ocrUploadMode: metadata.mode,
+    ocrUploadOriginalTotalBytes: metadata.originalTotalBytes,
+    ocrUploadPolicyRevision: metadata.policyRevision,
+    ocrUploadPolicyVersion: metadata.policyVersion,
+    ocrUploadPreparedTotalBytes: metadata.preparedTotalBytes,
+    ocrUploadProfile: metadata.profile,
+    ocrUploadReductionPercent:
+      ((metadata.originalTotalBytes - metadata.preparedTotalBytes) /
+        metadata.originalTotalBytes) *
+      100,
+  };
+}
+
 function getRecord(value: unknown): Record<string, unknown> | null {
   if (!value || typeof value !== 'object' || Array.isArray(value)) {
     return null;
@@ -3515,6 +3685,11 @@ async function performHostedOcrForUploadedPages(input: {
           )
         ),
     };
+    assertValidUploadedOcrBatch({
+      batch,
+      decodedDimensions: dimensions,
+      fileName: page.fileName,
+    });
     const batchOcrPage = await performHostedOcr({
       imageBytes: batch.imageBytes,
       imageHeight: batch.height,
@@ -3859,8 +4034,8 @@ function mapBatchOcrPageToOriginalPages(
     pages.set(placement.fileName, {
       ...ocrPage,
       blocks: [],
-      imgHeight: placement.height,
-      imgWidth: placement.width,
+      imgHeight: placement.originalHeight ?? placement.height,
+      imgWidth: placement.originalWidth ?? placement.width,
     });
   }
 
@@ -3870,7 +4045,11 @@ function mapBatchOcrPageToOriginalPages(
       continue;
     }
 
-    const mappedBlock = mapOcrBlockToPlacement(block, placement);
+    const mappedBlock = mapOcrBlockToPlacement(
+      block,
+      placement,
+      batch.placements
+    );
     if (!mappedBlock) {
       continue;
     }
@@ -3920,14 +4099,25 @@ function findPlacementForOcrBlock(
 
 function mapOcrBlockToPlacement(
   block: NormalizedOcrPage['blocks'][number],
-  placement: OcrBatchPlacement
+  placement: OcrBatchPlacement,
+  placements: OcrBatchPlacement[]
 ): NormalizedOcrPage['blocks'][number] | null {
   const localLeft = block.x - placement.offsetX;
   const localTop = block.y - placement.offsetY;
-  const left = Math.max(localLeft, 0);
-  const top = Math.max(localTop, 0);
-  const right = Math.min(localLeft + block.width, placement.width);
-  const bottom = Math.min(localTop + block.height, placement.height);
+  const scaleX = (placement.originalWidth ?? placement.width) / placement.width;
+  const scaleY =
+    (placement.originalHeight ?? placement.height) / placement.height;
+  const clipBounds = resolveOcrBlockPlacementClipBounds({
+    block,
+    placement,
+    placements,
+    scaleX,
+    scaleY,
+  });
+  const left = Math.max(localLeft, clipBounds.left);
+  const top = Math.max(localTop, clipBounds.top);
+  const right = Math.min(localLeft + block.width, clipBounds.right);
+  const bottom = Math.min(localTop + block.height, clipBounds.bottom);
   const width = right - left;
   const height = bottom - top;
 
@@ -3935,13 +4125,176 @@ function mapOcrBlockToPlacement(
     return null;
   }
 
+  // Clip at outer page boundaries, then restore the physical source space.
+  const scaledRight = right * scaleX;
+  const scaledBottom = bottom * scaleY;
+  const scaledLeft = left * scaleX;
+  const scaledTop = top * scaleY;
+
   return {
     ...block,
-    height,
-    width,
-    x: left,
-    y: top,
+    height: scaledBottom - scaledTop,
+    symHeight: block.symHeight * scaleY,
+    symWidth: block.symWidth * scaleX,
+    width: scaledRight - scaledLeft,
+    x: scaledLeft,
+    y: scaledTop,
   };
+}
+
+function resolveOcrBlockPlacementClipBounds(input: {
+  block: NormalizedOcrPage['blocks'][number];
+  placement: OcrBatchPlacement;
+  placements: OcrBatchPlacement[];
+  scaleX: number;
+  scaleY: number;
+}) {
+  const physicalBounds = {
+    bottom: input.placement.height,
+    left: 0,
+    right: input.placement.width,
+    top: 0,
+  };
+
+  if (!hasCompleteLogicalPlacementGeometry(input.placement)) {
+    return physicalBounds;
+  }
+
+  const crossesSiblingFragment = input.placements.some(
+    (candidate) =>
+      candidate !== input.placement &&
+      candidate.logicalFileName === input.placement.logicalFileName &&
+      candidate.logicalPageNumber === input.placement.logicalPageNumber &&
+      horizontalOverlap(
+        input.block.x,
+        input.block.x + input.block.width,
+        candidate.offsetX,
+        candidate.offsetX + candidate.width
+      ) > 0 &&
+      verticalOverlap(
+        input.block.y,
+        input.block.y + input.block.height,
+        candidate.offsetY,
+        candidate.offsetY + candidate.height
+      ) > 0
+  );
+
+  if (!crossesSiblingFragment) {
+    return physicalBounds;
+  }
+
+  // Keep one OCR text block, owned by its center placement, while retaining
+  // geometry that crosses an internal seam of the same logical manga page.
+  return {
+    bottom:
+      (input.placement.logicalHeight - input.placement.logicalOffsetY) /
+      input.scaleY,
+    left: -input.placement.logicalOffsetX / input.scaleX,
+    right:
+      (input.placement.logicalWidth - input.placement.logicalOffsetX) /
+      input.scaleX,
+    top: -input.placement.logicalOffsetY / input.scaleY,
+  };
+}
+
+function hasCompleteLogicalPlacementGeometry(
+  placement: OcrBatchPlacement
+): placement is OcrBatchPlacement & {
+  logicalFileName: string;
+  logicalHeight: number;
+  logicalOffsetX: number;
+  logicalOffsetY: number;
+  logicalPageNumber: number;
+  logicalWidth: number;
+} {
+  return (
+    placement.logicalFileName != null &&
+    placement.logicalHeight != null &&
+    placement.logicalOffsetX != null &&
+    placement.logicalOffsetY != null &&
+    placement.logicalPageNumber != null &&
+    placement.logicalWidth != null
+  );
+}
+
+function assertValidUploadedOcrBatch(input: {
+  batch: OcrBatch;
+  decodedDimensions: { height: number; width: number } | null;
+  fileName: string;
+}) {
+  if (!isOriginalDimensionOcrBatch(input.batch.placements)) {
+    return;
+  }
+
+  if (!input.decodedDimensions) {
+    throw new TranslationJobError('invalid_upload', 409, {
+      message: `The resized OCR batch ${input.fileName} could not be decoded.`,
+    });
+  }
+
+  if (
+    input.batch.height > HOSTED_OCR_MAX_BATCH_HEIGHT ||
+    input.batch.width * input.batch.height > HOSTED_OCR_MAX_BATCH_PIXELS
+  ) {
+    throw new TranslationJobError('invalid_upload', 409, {
+      details: {
+        height: input.batch.height,
+        maxHeight: HOSTED_OCR_MAX_BATCH_HEIGHT,
+        maxPixels: HOSTED_OCR_MAX_BATCH_PIXELS,
+        pixels: input.batch.width * input.batch.height,
+        width: input.batch.width,
+      },
+      message: `The resized OCR batch ${input.fileName} exceeds the OCR image limits.`,
+    });
+  }
+
+  if (input.batch.imageBytes.byteLength > HOSTED_OCR_MAX_INLINE_IMAGE_BYTES) {
+    throw new TranslationJobError('invalid_upload', 409, {
+      details: {
+        maxSizeBytes: HOSTED_OCR_MAX_INLINE_IMAGE_BYTES,
+        sizeBytes: input.batch.imageBytes.byteLength,
+      },
+      message: `The resized OCR batch ${input.fileName} exceeds the OCR request size limit.`,
+    });
+  }
+
+  const outOfBoundsPlacement = input.batch.placements.find(
+    (placement) =>
+      placement.offsetX + placement.width > input.batch.width ||
+      placement.offsetY + placement.height > input.batch.height
+  );
+
+  if (outOfBoundsPlacement) {
+    throw new TranslationJobError('invalid_upload', 409, {
+      details: {
+        batchHeight: input.batch.height,
+        batchWidth: input.batch.width,
+        fileName: outOfBoundsPlacement.fileName,
+        height: outOfBoundsPlacement.height,
+        offsetX: outOfBoundsPlacement.offsetX,
+        offsetY: outOfBoundsPlacement.offsetY,
+        width: outOfBoundsPlacement.width,
+      },
+      message: `The resized OCR batch placement for ${outOfBoundsPlacement.fileName} is outside the decoded image.`,
+    });
+  }
+}
+
+function isOriginalDimensionOcrBatch(
+  placements: OcrBatchPlacement[]
+): placements is Array<
+  OcrBatchPlacement & {
+    originalHeight: number;
+    originalWidth: number;
+  }
+> {
+  return (
+    placements.length > 0 &&
+    placements.every(
+      (placement) =>
+        placement.originalHeight != null && placement.originalWidth != null
+    )
+  );
 }
 
 function verticalOverlap(
@@ -3951,6 +4304,15 @@ function verticalOverlap(
   bottomB: number
 ) {
   return Math.max(0, Math.min(bottomA, bottomB) - Math.max(topA, topB));
+}
+
+function horizontalOverlap(
+  leftA: number,
+  rightA: number,
+  leftB: number,
+  rightB: number
+) {
+  return Math.max(0, Math.min(rightA, rightB) - Math.max(leftA, leftB));
 }
 
 function resolveEffectiveSourceLanguage(

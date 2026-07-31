@@ -1,33 +1,21 @@
-import { z } from 'zod';
-
 import { db } from '@/server/db';
+import {
+  FREE_TRIAL_CONFIG_KEY,
+  type FreeTrialRuntimeConfig,
+  getDefaultFreeTrialRuntimeConfig,
+  zFreeTrialRuntimeConfig,
+} from '@/server/licenses/free-trial-settings-schema';
 
-export const DEFAULT_FREE_TRIAL_TOKEN_AMOUNT = 25;
-export const FREE_TRIAL_CONFIG_KEY = 'free_trial_runtime_config';
-
-export const zFreeTrialDeliveryMode = z.enum(['direct', 'email_code']);
-
-export const zFreeTrialRuntimeConfig = z
-  .object({
-    deliveryMode: zFreeTrialDeliveryMode,
-    emailRiskReviewEnabled: z.boolean(),
-    enabled: z.boolean(),
-    tokenAmount: z.number().int().min(1).max(10_000),
-  })
-  .strict();
+export type { FreeTrialRuntimeConfig } from '@/server/licenses/free-trial-settings-schema';
+export {
+  DEFAULT_FREE_TRIAL_TOKEN_AMOUNT,
+  FREE_TRIAL_CONFIG_KEY,
+  getDefaultFreeTrialRuntimeConfig,
+  zFreeTrialDeliveryMode,
+  zFreeTrialRuntimeConfig,
+} from '@/server/licenses/free-trial-settings-schema';
 
 const zStoredFreeTrialRuntimeConfig = zFreeTrialRuntimeConfig.partial();
-
-export type FreeTrialRuntimeConfig = z.infer<typeof zFreeTrialRuntimeConfig>;
-
-export function getDefaultFreeTrialRuntimeConfig(): FreeTrialRuntimeConfig {
-  return {
-    deliveryMode: 'direct',
-    emailRiskReviewEnabled: false,
-    enabled: true,
-    tokenAmount: DEFAULT_FREE_TRIAL_TOKEN_AMOUNT,
-  };
-}
 
 export async function getFreeTrialRuntimeConfig(deps?: {
   dbClient?: typeof db;

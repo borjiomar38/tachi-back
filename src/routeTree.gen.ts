@@ -107,6 +107,7 @@ import { Route as ApiMobileSourceDiscoveryResultsRouteImport } from './routes/ap
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
+import { Route as ApiMobileJobsUploadPolicyRouteImport } from './routes/api/mobile/jobs/upload-policy'
 import { Route as ApiMobileInstallationsRegisterRouteImport } from './routes/api/mobile/installations/register'
 import { Route as ApiMobileContentPolicyCheckRouteImport } from './routes/api/mobile/content-policy/check'
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
@@ -648,6 +649,12 @@ const ApiMobileMangaPageTranslateRoute =
     path: '/api/mobile/manga-page/translate',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileJobsUploadPolicyRoute =
+  ApiMobileJobsUploadPolicyRouteImport.update({
+    id: '/upload-policy',
+    path: '/upload-policy',
+    getParentRoute: () => ApiMobileJobsRoute,
+  } as any)
 const ApiMobileInstallationsRegisterRoute =
   ApiMobileInstallationsRegisterRouteImport.update({
     id: '/api/mobile/installations/register',
@@ -848,6 +855,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
   '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
+  '/api/mobile/jobs/upload-policy': typeof ApiMobileJobsUploadPolicyRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -964,6 +972,7 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
   '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
+  '/api/mobile/jobs/upload-policy': typeof ApiMobileJobsUploadPolicyRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1085,6 +1094,7 @@ export interface FileRoutesById {
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
   '/api/mobile/content-policy/check': typeof ApiMobileContentPolicyCheckRoute
   '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
+  '/api/mobile/jobs/upload-policy': typeof ApiMobileJobsUploadPolicyRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
@@ -1207,6 +1217,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/mobile/content-policy/check'
     | '/api/mobile/installations/register'
+    | '/api/mobile/jobs/upload-policy'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1323,6 +1334,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/mobile/content-policy/check'
     | '/api/mobile/installations/register'
+    | '/api/mobile/jobs/upload-policy'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -1443,6 +1455,7 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/session'
     | '/api/mobile/content-policy/check'
     | '/api/mobile/installations/register'
+    | '/api/mobile/jobs/upload-policy'
     | '/api/mobile/manga-page/translate'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
@@ -2242,6 +2255,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileMangaPageTranslateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/jobs/upload-policy': {
+      id: '/api/mobile/jobs/upload-policy'
+      path: '/upload-policy'
+      fullPath: '/api/mobile/jobs/upload-policy'
+      preLoaderRoute: typeof ApiMobileJobsUploadPolicyRouteImport
+      parentRoute: typeof ApiMobileJobsRoute
+    }
     '/api/mobile/installations/register': {
       id: '/api/mobile/installations/register'
       path: '/api/mobile/installations/register'
@@ -2511,6 +2531,7 @@ const ApiMobileJobsJobIdPagesPageNumberRouteWithChildren =
   )
 
 interface ApiMobileJobsRouteChildren {
+  ApiMobileJobsUploadPolicyRoute: typeof ApiMobileJobsUploadPolicyRoute
   ApiMobileJobsJobIdCompleteRoute: typeof ApiMobileJobsJobIdCompleteRoute
   ApiMobileJobsJobIdResultRoute: typeof ApiMobileJobsJobIdResultRoute
   ApiMobileJobsJobIdIndexRoute: typeof ApiMobileJobsJobIdIndexRoute
@@ -2518,6 +2539,7 @@ interface ApiMobileJobsRouteChildren {
 }
 
 const ApiMobileJobsRouteChildren: ApiMobileJobsRouteChildren = {
+  ApiMobileJobsUploadPolicyRoute: ApiMobileJobsUploadPolicyRoute,
   ApiMobileJobsJobIdCompleteRoute: ApiMobileJobsJobIdCompleteRoute,
   ApiMobileJobsJobIdResultRoute: ApiMobileJobsJobIdResultRoute,
   ApiMobileJobsJobIdIndexRoute: ApiMobileJobsJobIdIndexRoute,

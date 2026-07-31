@@ -9,6 +9,7 @@ import contact from './contact.json' with { type: 'json' };
 import contentPolicy from './content-policy.json' with { type: 'json' };
 import emails from './emails.json' with { type: 'json' };
 import layout from './layout.json' with { type: 'json' };
+import settings from './settings.json' with { type: 'json' };
 import user from './user.json' with { type: 'json' };
 
 export default {
@@ -21,5 +22,6 @@ export default {
   contentPolicy,
   emails,
   layout,
+  settings,
   user,
 } as const;
