@@ -16,6 +16,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import heroBackground from '@/features/auth/layout-login-background.webp';
 import heroCharacter from '@/features/auth/layout-login-character.webp';
 import { BlogProfileLine } from '@/features/blog/blog-profile-line';
+import { buildBlogHeroImageVariantUrl } from '@/features/blog/image-variants';
 import { BlogArticleDetail } from '@/features/blog/schema';
 import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
@@ -26,6 +27,9 @@ interface PageBlogArticleProps {
 
 export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
   const hasGeneratedHeroImage = Boolean(article.heroImageUrl);
+  const responsiveImage = article.heroImageUrl
+    ? buildArticleImageSources(article.heroImageUrl)
+    : null;
 
   return (
     <PublicShell>
@@ -34,7 +38,14 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
           <div className="public-ink-panel relative isolate min-h-[34rem] overflow-hidden rounded-[1.75rem] border px-5 py-8 text-neutral-50 md:min-h-[36rem] md:px-8 md:py-10">
             <img
               src={article.heroImageUrl ?? heroBackground}
+              srcSet={responsiveImage?.srcSet}
+              sizes={responsiveImage?.sizes}
               alt={hasGeneratedHeroImage ? article.imageAlt : ''}
+              width={1_440}
+              height={810}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className={cn(
                 'absolute inset-0 -z-20 size-full object-cover transition',
                 hasGeneratedHeroImage
@@ -54,6 +65,10 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
               <img
                 src={heroCharacter}
                 alt=""
+                width={1_024}
+                height={1_536}
+                loading="lazy"
+                decoding="async"
                 className="animate-float-in-space pointer-events-none absolute right-[-5rem] bottom-[-7rem] hidden w-[min(28rem,44%)] opacity-92 drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block"
               />
             ) : null}
@@ -264,6 +279,26 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
     </PublicShell>
   );
 };
+
+function buildArticleImageSources(sourceUrl: string) {
+  const mediumUrl = buildBlogHeroImageVariantUrl({
+    sourceUrl,
+    variant: 'article-md',
+  });
+  const largeUrl = buildBlogHeroImageVariantUrl({
+    sourceUrl,
+    variant: 'article-lg',
+  });
+
+  if (!mediumUrl || !largeUrl) {
+    return null;
+  }
+
+  return {
+    sizes: '(min-width: 1152px) 1088px, calc(100vw - 2rem)',
+    srcSet: `${mediumUrl} 960w, ${largeUrl} 1440w`,
+  };
+}
 
 function formatArticleDate(value: string) {
   return new Intl.DateTimeFormat('en-US', {

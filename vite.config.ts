@@ -8,6 +8,8 @@ import { resolve } from 'node:path';
 import { defineConfig, loadEnv } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 
+import { publicMarketingAssetRouteRules } from './src/features/public/cache-policy';
+
 const { nitroRetrieveServerDirHook, prismaCopyBinariesPlugin } =
   createPrismaCopyBinariesPlugin();
 
@@ -32,6 +34,7 @@ export default defineConfig(({ mode }) => {
           },
         ],
         routeRules: {
+          ...publicMarketingAssetRouteRules,
           '/storybook': { redirect: '/storybook/' },
           '/tachiyomiat': {
             redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },

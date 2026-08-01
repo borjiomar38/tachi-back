@@ -22,15 +22,7 @@ export const Logo = ({ variant = 'full', ...props }: LogoProps) => (
   >
     <title>Nayovi</title>
     <image
-      href="/nayovi-mark-light.png"
-      className="dark:hidden"
-      width="108"
-      height="108"
-      preserveAspectRatio="xMinYMid meet"
-    />
-    <image
-      href="/nayovi-mark-dark.png"
-      className="hidden dark:block"
+      href="/marketing/nayovi-mark.webp"
       width="108"
       height="108"
       preserveAspectRatio="xMinYMid meet"

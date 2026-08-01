@@ -95,6 +95,10 @@ export const PageTranslateManhwaAi = () => {
         <img
           src={heroBackground}
           alt=""
+          width={1_536}
+          height={1_024}
+          loading="eager"
+          fetchPriority="high"
           className="absolute inset-0 size-full object-cover object-[62%_center] opacity-75"
         />
         <div className="absolute inset-0 bg-linear-to-r from-neutral-950 via-neutral-950/94 to-neutral-950/65" />
@@ -172,7 +176,6 @@ export const PageTranslateManhwaAi = () => {
               alt="Nayovi Android app showing a Korean manhwa page before translation and the English translation directly on the same chapter"
               width={682}
               height={1565}
-              fetchPriority="high"
               className="relative h-auto max-h-[610px] w-auto max-w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)]"
             />
           </div>

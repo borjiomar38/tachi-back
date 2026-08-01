@@ -124,6 +124,7 @@ import { Route as ApiMobileJobsJobIdIndexRouteImport } from './routes/api/mobile
 import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobile/jobs/$jobId/result'
 import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/complete'
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
+import { Route as MediaBlogHeroesV3SlugSplatRouteImport } from './routes/media/blog/heroes/v3/$slug/$'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 import { Route as ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
 import { Route as ApiManhwaSlugChapterChapterPanelPanelRouteImport } from './routes/api/manhwa/$slug/chapter/$chapter/panel/$panel'
@@ -742,6 +743,12 @@ const ApiMobileAuthFreeTrialEligibilityRoute =
     path: '/eligibility',
     getParentRoute: () => ApiMobileAuthFreeTrialRoute,
   } as any)
+const MediaBlogHeroesV3SlugSplatRoute =
+  MediaBlogHeroesV3SlugSplatRouteImport.update({
+    id: '/media/blog/heroes/v3/$slug/$',
+    path: '/media/blog/heroes/v3/$slug/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileJobsJobIdPagesPageNumberRoute =
   ApiMobileJobsJobIdPagesPageNumberRouteImport.update({
     id: '/$jobId/pages/$pageNumber',
@@ -890,6 +897,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/media/blog/heroes/v3/$slug/$': typeof MediaBlogHeroesV3SlugSplatRoute
   '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   '/api/manhwa/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaSlugChapterChapterPanelPanelRoute
@@ -1008,6 +1016,7 @@ export interface FileRoutesByTo {
   '/api/mobile/jobs/$jobId': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/media/blog/heroes/v3/$slug/$': typeof MediaBlogHeroesV3SlugSplatRoute
   '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   '/api/manhwa/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaSlugChapterChapterPanelPanelRoute
@@ -1131,6 +1140,7 @@ export interface FileRoutesById {
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
+  '/media/blog/heroes/v3/$slug/$': typeof MediaBlogHeroesV3SlugSplatRoute
   '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   '/api/manhwa-private/$slug/character/$character/reference/$reference': typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   '/api/manhwa/$slug/chapter/$chapter/panel/$panel': typeof ApiManhwaSlugChapterChapterPanelPanelRoute
@@ -1255,6 +1265,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/media/blog/heroes/v3/$slug/$'
     | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
     | '/api/manhwa-private/$slug/character/$character/reference/$reference'
     | '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
@@ -1373,6 +1384,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId'
     | '/manager/users/$id/update'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/media/blog/heroes/v3/$slug/$'
     | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
     | '/api/manhwa-private/$slug/character/$character/reference/$reference'
     | '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
@@ -1495,6 +1507,7 @@ export interface FileRouteTypes {
     | '/api/mobile/jobs/$jobId/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
+    | '/media/blog/heroes/v3/$slug/$'
     | '/api/manhwa-private/$slug/chapter/$chapter/panel/$panel'
     | '/api/manhwa-private/$slug/character/$character/reference/$reference'
     | '/api/manhwa/$slug/chapter/$chapter/panel/$panel'
@@ -1575,6 +1588,7 @@ export interface RootRouteChildren {
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
   ApiMobileSubscriptionUpgradeRoute: typeof ApiMobileSubscriptionUpgradeRoute
+  MediaBlogHeroesV3SlugSplatRoute: typeof MediaBlogHeroesV3SlugSplatRoute
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute: typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute: typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
   ApiManhwaSlugChapterChapterPanelPanelRoute: typeof ApiManhwaSlugChapterChapterPanelPanelRoute
@@ -2387,6 +2401,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileAuthFreeTrialEligibilityRouteImport
       parentRoute: typeof ApiMobileAuthFreeTrialRoute
     }
+    '/media/blog/heroes/v3/$slug/$': {
+      id: '/media/blog/heroes/v3/$slug/$'
+      path: '/media/blog/heroes/v3/$slug/$'
+      fullPath: '/media/blog/heroes/v3/$slug/$'
+      preLoaderRoute: typeof MediaBlogHeroesV3SlugSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/jobs/$jobId/pages/$pageNumber': {
       id: '/api/mobile/jobs/$jobId/pages/$pageNumber'
       path: '/$jobId/pages/$pageNumber'
@@ -2692,6 +2713,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
   ApiMobileSubscriptionUpgradeRoute: ApiMobileSubscriptionUpgradeRoute,
+  MediaBlogHeroesV3SlugSplatRoute: MediaBlogHeroesV3SlugSplatRoute,
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute:
     ApiManhwaPrivateSlugChapterChapterPanelPanelRoute,
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute:

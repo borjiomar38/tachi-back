@@ -74,6 +74,10 @@ export const PageLanding = (props: {
           <img
             src={heroBackground}
             alt=""
+            width="1536"
+            height="1024"
+            loading="eager"
+            fetchPriority="high"
             className="absolute inset-0 -z-20 size-full object-cover object-[62%_center]"
           />
           <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/92 to-neutral-950/45" />
@@ -157,7 +161,6 @@ export const PageLanding = (props: {
                 alt="Nayovi Android reader showing the same manhwa scene in Korean before translation and in English after translation"
                 width="682"
                 height="1565"
-                fetchPriority="high"
                 className="absolute bottom-0 left-[46%] h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom drop-shadow-2xl sm:left-[43%]"
               />
             </div>
@@ -236,8 +239,15 @@ export const PageLanding = (props: {
 
             <div className="relative flex min-h-[24rem] items-end justify-center overflow-hidden border-t border-white/10 bg-[radial-gradient(circle_at_50%_25%,rgba(168,85,247,0.22),transparent_48%)] px-6 pt-6 lg:h-[28rem] lg:min-h-0 lg:self-start lg:border-t-0 lg:border-l">
               <img
-                src="/marketing/nayovi-history-phone.png"
+                src="/marketing/nayovi-history-phone.webp"
+                srcSet="/marketing/nayovi-history-phone-480w.webp 480w, /marketing/nayovi-history-phone.webp 864w"
+                sizes="197px"
                 alt="Real Nayovi Android history screen showing recently read chapters"
+                width="864"
+                height="1821"
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
                 className="max-h-[26rem] w-auto max-w-full object-contain object-bottom drop-shadow-2xl"
               />
             </div>

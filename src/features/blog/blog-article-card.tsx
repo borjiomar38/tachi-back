@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 import heroBackground from '@/features/auth/layout-login-background.webp';
 import heroCharacter from '@/features/auth/layout-login-character.webp';
+import { buildBlogHeroImageVariantUrl } from '@/features/blog/image-variants';
 import { BlogArticleSummary } from '@/features/blog/schema';
 
 interface BlogArticleCardProps {
@@ -15,6 +16,9 @@ interface BlogArticleCardProps {
 export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
   const formattedDate = formatArticleDate(article.publishedAt);
   const hasGeneratedHeroImage = Boolean(article.heroImageUrl);
+  const responsiveImage = article.heroImageUrl
+    ? buildCardImageSources(article.heroImageUrl)
+    : null;
 
   return (
     <Card className="group overflow-hidden rounded-[1.5rem] border-border/80 bg-card/88 transition hover:border-primary/55">
@@ -22,7 +26,13 @@ export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
         <div className="relative min-h-44 overflow-hidden rounded-[1.15rem] border border-white/10 bg-neutral-950">
           <img
             src={article.heroImageUrl ?? heroBackground}
+            srcSet={responsiveImage?.srcSet}
+            sizes={responsiveImage?.sizes}
             alt={hasGeneratedHeroImage ? article.imageAlt : ''}
+            width={768}
+            height={432}
+            loading="lazy"
+            decoding="async"
             className={
               hasGeneratedHeroImage
                 ? 'absolute inset-0 size-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.03]'
@@ -34,6 +44,10 @@ export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
             <img
               src={heroCharacter}
               alt=""
+              width={1_024}
+              height={1_536}
+              loading="lazy"
+              decoding="async"
               className="animate-float-in-space absolute right-[-1.5rem] bottom-[-3rem] w-44 opacity-90"
             />
           ) : null}
@@ -79,6 +93,26 @@ export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
     </Card>
   );
 };
+
+function buildCardImageSources(sourceUrl: string) {
+  const smallUrl = buildBlogHeroImageVariantUrl({
+    sourceUrl,
+    variant: 'card-sm',
+  });
+  const largeUrl = buildBlogHeroImageVariantUrl({
+    sourceUrl,
+    variant: 'card-lg',
+  });
+
+  if (!smallUrl || !largeUrl) {
+    return null;
+  }
+
+  return {
+    sizes: '(min-width: 768px) calc(50vw - 2.5rem), calc(100vw - 2.5rem)',
+    srcSet: `${smallUrl} 480w, ${largeUrl} 768w`,
+  };
+}
 
 function formatArticleDate(value: string) {
   return new Intl.DateTimeFormat('en-US', {

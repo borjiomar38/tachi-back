@@ -36,12 +36,21 @@ export const PageBlogIndex = ({ articles, pagination }: PageBlogIndexProps) => {
           <img
             src={heroBackground}
             alt=""
+            width={1_536}
+            height={1_024}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             className="absolute inset-0 -z-20 size-full object-cover object-[62%_center] opacity-42"
           />
           <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/88 to-neutral-950/45" />
           <img
             src={heroCharacter}
             alt=""
+            width={1_024}
+            height={1_536}
+            loading="lazy"
+            decoding="async"
             className="animate-float-in-space pointer-events-none absolute right-[-5rem] bottom-[-7rem] hidden w-[min(26rem,42%)] opacity-92 drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block"
           />
           <div className="max-w-3xl space-y-5">

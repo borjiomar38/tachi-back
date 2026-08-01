@@ -134,10 +134,15 @@ export const PageDownload = ({
           <div className="relative mx-auto w-full max-w-[12.5rem] lg:max-w-[13rem]">
             <div className="absolute inset-8 -z-10 rounded-full bg-brand-500/20 blur-3xl" />
             <img
-              src="/marketing/nayovi-history-phone.png"
+              src="/marketing/nayovi-history-phone.webp"
+              srcSet="/marketing/nayovi-history-phone-480w.webp 480w, /marketing/nayovi-history-phone.webp 864w"
+              sizes="(min-width: 1024px) 208px, 200px"
               alt="Nayovi Android reader history with recently read manhwa and manga chapters"
               width="864"
               height="1821"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-auto w-full object-contain drop-shadow-[0_28px_48px_rgba(0,0,0,0.55)]"
             />
           </div>

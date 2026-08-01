@@ -2,6 +2,7 @@ import { headObject, putObject } from '@better-upload/server/helpers';
 import sharp from 'sharp';
 
 import { envServer } from '@/env/server';
+import { putAllBlogHeroImageVariants } from '@/server/blog/image-variants';
 import { runGeneratedHeroImageAssetReviewAgent } from '@/server/blog/review-agents';
 import { BlogGenerationTopic } from '@/server/blog/topics';
 import { ProviderType } from '@/server/db/generated/client';
@@ -45,6 +46,10 @@ export async function uploadGeneratedBlogHeroImage(input: {
     contentType: 'image/png',
     key: objectKey,
     metadata: normalizeBlogHeroObjectMetadata(input.metadata),
+  });
+  await putAllBlogHeroImageVariants({
+    image,
+    slug: input.slug,
   });
 
   return {
@@ -118,6 +123,10 @@ export async function uploadPrebuiltBlogHeroImage(input: {
       'blog-topic': input.topic.manhwaTitle,
       'blog-type': input.topic.manhwaType,
     }),
+  });
+  await putAllBlogHeroImageVariants({
+    image,
+    slug,
   });
 
   return {
