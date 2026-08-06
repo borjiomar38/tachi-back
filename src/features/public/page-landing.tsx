@@ -70,7 +70,7 @@ export const PageLanding = (props: {
   return (
     <PublicShell compactFooter>
       <section id="hero" className="relative w-full scroll-mt-24">
-        <div className="relative isolate overflow-hidden bg-neutral-950 px-4 py-10 text-neutral-50 sm:px-7 md:px-10 md:py-12 lg:py-14">
+        <div className="relative isolate overflow-hidden bg-neutral-950 px-4 py-10 text-neutral-50 sm:px-7 md:px-10 md:py-12">
           <img
             src={heroBackground}
             alt=""
@@ -78,12 +78,25 @@ export const PageLanding = (props: {
             height="1024"
             loading="eager"
             fetchPriority="high"
-            className="absolute inset-0 -z-20 size-full object-cover object-[62%_center]"
+            className="absolute inset-0 z-[-30] size-full object-cover object-[62%_center]"
           />
-          <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/92 to-neutral-950/45" />
-          <div className="absolute inset-0 -z-10 bg-linear-to-t from-neutral-950 via-neutral-950/15 to-neutral-950/35" />
+          <div className="absolute inset-0 z-[-20] bg-linear-to-r from-neutral-950 via-neutral-950/78 to-neutral-950/35" />
+          <div className="absolute inset-0 z-[-20] bg-[radial-gradient(ellipse_at_52%_46%,rgba(126,34,206,0.14),transparent_58%)]" />
+          <div className="absolute inset-0 z-[-20] bg-linear-to-t from-neutral-950 via-neutral-950/15 to-neutral-950/35" />
+          <img
+            src={heroCharacter}
+            alt=""
+            width="1024"
+            height="1536"
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="pointer-events-none absolute top-[8%] left-[64%] z-[-10] h-auto w-[160vw] max-w-none -translate-x-1/2 opacity-[0.06] contrast-75 saturate-[0.55] blur-[0.4px] sm:left-[58%] sm:w-[115vw] sm:opacity-[0.07] md:top-[2%] md:left-[52%] md:w-[78vw] md:opacity-[0.09] lg:top-[-5%] lg:left-[45%] lg:w-[min(48vw,46rem)] lg:opacity-[0.11]"
+          />
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[58%] bg-linear-to-b from-neutral-950/88 via-neutral-950/55 to-transparent lg:hidden" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-0 hidden w-[58%] bg-linear-to-r from-neutral-950 via-neutral-950/65 to-transparent lg:block" />
 
-          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 lg:min-h-[560px] lg:grid-cols-[0.96fr_1.04fr]">
+          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 lg:min-h-[580px] lg:grid-cols-[0.96fr_1.04fr]">
             <div className="flex flex-col gap-6">
               <Badge
                 variant="brand"
@@ -147,21 +160,18 @@ export const PageLanding = (props: {
             </div>
 
             <div
-              className="relative mx-auto min-h-[560px] w-full max-w-[35rem] overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-950/55 shadow-2xl ring-1 ring-brand-300/10 backdrop-blur sm:min-h-[580px] lg:min-h-[560px]"
+              className="relative mx-auto flex min-h-[33rem] w-full max-w-[35rem] items-center justify-center sm:min-h-[35rem] lg:min-h-[580px]"
               aria-label="Nayovi Android manhwa translation preview"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_28%,rgba(168,85,247,0.22),transparent_42%)]" />
-              <img
-                src={heroCharacter}
-                alt=""
-                className="absolute -right-16 bottom-0 h-[82%] max-w-none object-contain opacity-45 sm:-right-8"
-              />
+              <div className="pointer-events-none absolute inset-x-[18%] top-[14%] bottom-[7%] rounded-full bg-brand-400/20 blur-3xl" />
               <img
                 src="/marketing/nayovi-manhwa-translation-phone.webp"
                 alt="Nayovi Android reader showing the same manhwa scene in Korean before translation and in English after translation"
                 width="682"
                 height="1565"
-                className="absolute bottom-0 left-[46%] h-full w-auto max-w-none -translate-x-1/2 object-contain object-bottom drop-shadow-2xl sm:left-[43%]"
+                loading="eager"
+                decoding="async"
+                className="relative z-10 h-auto max-h-[33rem] w-auto max-w-full object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.58)] sm:max-h-[35rem] lg:max-h-[580px] lg:-translate-x-10"
               />
             </div>
           </div>
