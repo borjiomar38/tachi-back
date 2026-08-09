@@ -5,6 +5,7 @@ import { getManhwaSeriesPageData } from '@/features/manhwa/server';
 import { isManhwaChapterPublic } from '@/features/manhwa/visibility';
 import {
   buildPublicAbsoluteUrl,
+  buildPublicNotFoundHead,
   buildPublicPageHead,
 } from '@/features/public/head';
 
@@ -69,11 +70,9 @@ export const Route = createFileRoute('/manhwa/$slug/')({
             ],
           }
         )
-      : buildPublicPageHead(
+      : buildPublicNotFoundHead(
           'Manhwa not found',
-          'This Nayovi original manhwa is not available.',
-          '/manhwa',
-          { robots: 'noindex, nofollow' }
+          'This Nayovi original manhwa is not available.'
         );
   },
 });

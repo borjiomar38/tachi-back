@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { fallbackBlogArticleSummary } from '@/features/blog/fallback';
 import { getManhwaSitemapEntries } from '@/features/manhwa/data';
-import { buildPublicAbsoluteUrlFromRequest } from '@/features/public/head';
+import { buildPublicAbsoluteUrl } from '@/features/public/head';
 import {
   BlogSitemapEntry,
   getPublishedBlogSitemapEntries,
@@ -175,11 +175,9 @@ const excludedStaticSitemapPrefixes = [
 export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
-      GET: async ({ request }) => {
+      GET: async () => {
         const blogEntries = await loadBlogSitemapEntries();
-        const sitemap = buildSitemapXml(blogEntries, (path) =>
-          buildPublicAbsoluteUrlFromRequest(request, path)
-        );
+        const sitemap = buildSitemapXml(blogEntries, buildPublicAbsoluteUrl);
 
         return new Response(sitemap, {
           headers: {

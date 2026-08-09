@@ -9,6 +9,7 @@ import { defineConfig, loadEnv } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 
 import { publicMarketingAssetRouteRules } from './src/features/public/cache-policy';
+import { publicSeoRedirectRouteRules } from './src/features/public/redirect-policy';
 
 const { nitroRetrieveServerDirHook, prismaCopyBinariesPlugin } =
   createPrismaCopyBinariesPlugin();
@@ -35,31 +36,8 @@ export default defineConfig(({ mode }) => {
         ],
         routeRules: {
           ...publicMarketingAssetRouteRules,
+          ...publicSeoRedirectRouteRules,
           '/storybook': { redirect: '/storybook/' },
-          '/tachiyomiat': {
-            redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },
-          },
-          '/tachiyomi-at': {
-            redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },
-          },
-          '/tachiyomi': {
-            redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },
-          },
-          '/mihon': {
-            redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
-          },
-          '/tachiyomiat-download': {
-            redirect: { status: 301, to: '/download' },
-          },
-          '/download-tachiyomiat': {
-            redirect: { status: 301, to: '/download' },
-          },
-          '/tachiyomi-download': {
-            redirect: { status: 301, to: '/download' },
-          },
-          '/download-tachiyomi': {
-            redirect: { status: 301, to: '/download' },
-          },
         },
       }),
       // react's vite plugin must come after start's vite plugin

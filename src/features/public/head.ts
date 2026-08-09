@@ -28,12 +28,6 @@ const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, "");
 const normalizePath = (path: string) =>
   path.startsWith("/") ? path : `/${path}`;
 
-const getFirstHeaderValue = (value: string | null) =>
-  value
-    ?.split(",")
-    .map((part) => part.trim())
-    .find(Boolean);
-
 const isLocalBaseUrl = (url: string) => {
   try {
     const hostname = new URL(url).hostname;
@@ -87,25 +81,6 @@ const buildPublicAppOffers = () =>
         ? buildAbsoluteUrl("/")
         : buildAbsoluteUrl("/pricing"),
   }));
-
-export const buildPublicAbsoluteUrlFromRequest = (
-  request: Request,
-  path: string,
-) => {
-  const requestUrl = new URL(request.url);
-  const forwardedHost = getFirstHeaderValue(
-    request.headers.get("x-forwarded-host"),
-  );
-  const host =
-    forwardedHost ?? getFirstHeaderValue(request.headers.get("host"));
-  const forwardedProto = getFirstHeaderValue(
-    request.headers.get("x-forwarded-proto"),
-  );
-  const protocol = forwardedProto ?? requestUrl.protocol.replace(/:$/, "");
-  const origin = `${protocol}://${host ?? requestUrl.host}`;
-
-  return `${normalizeBaseUrl(origin)}${normalizePath(path)}`;
-};
 
 export const buildPublicFaqStructuredData = (
   path: string,
@@ -224,6 +199,26 @@ const buildPublicTitle = (
   pageTitle: string,
   titleSuffix = "Nayovi Manga Translator",
 ) => `${pageTitle} | ${titleSuffix}`;
+
+export const buildPublicNotFoundHead = (
+  pageTitle: string,
+  description: string,
+) => ({
+  links: [],
+  meta: [
+    {
+      title: buildPublicTitle(pageTitle),
+    },
+    {
+      name: "description",
+      content: description,
+    },
+    {
+      name: "robots",
+      content: "noindex, nofollow",
+    },
+  ],
+});
 
 export const buildPublicPageHead = (
   pageTitle: string,

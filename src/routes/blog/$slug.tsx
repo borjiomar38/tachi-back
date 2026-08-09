@@ -4,7 +4,7 @@ import { PageBlogArticle } from '@/features/blog/page-blog-article';
 import { getPublicBlogArticleBySlug } from '@/features/blog/server';
 import {
   buildPublicBlogArticleHead,
-  buildPublicPageHead,
+  buildPublicNotFoundHead,
 } from '@/features/public/head';
 
 export const Route = createFileRoute('/blog/$slug')({
@@ -23,10 +23,9 @@ export const Route = createFileRoute('/blog/$slug')({
   head: ({ loaderData }) =>
     loaderData
       ? buildPublicBlogArticleHead(loaderData)
-      : buildPublicPageHead(
+      : buildPublicNotFoundHead(
           'Article not found',
-          'This Nayovi blog article is not available.',
-          '/blog'
+          'This Nayovi blog article is not available.'
         ),
 });
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { buildPublicAbsoluteUrlFromRequest } from '@/features/public/head';
+import { buildPublicAbsoluteUrl } from '@/features/public/head';
 
 interface LlmsTxtLink {
   description: string;
@@ -83,17 +83,12 @@ const guideLinks = [
 export const Route = createFileRoute('/llms.txt')({
   server: {
     handlers: {
-      GET: ({ request }) =>
-        new Response(
-          buildLlmsTxt((path) =>
-            buildPublicAbsoluteUrlFromRequest(request, path)
-          ),
-          {
-            headers: {
-              'content-type': 'text/plain; charset=utf-8',
-            },
-          }
-        ),
+      GET: () =>
+        new Response(buildLlmsTxt(buildPublicAbsoluteUrl), {
+          headers: {
+            'content-type': 'text/plain; charset=utf-8',
+          },
+        }),
     },
   },
 });
