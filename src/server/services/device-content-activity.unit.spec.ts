@@ -9,6 +9,14 @@ describe('device content activity', () => {
   const deviceUpdate = vi.fn();
   const extensionVisitUpsert = vi.fn();
   const mangaVisitUpsert = vi.fn();
+  const registerPornographyAssessment = vi.fn();
+  const schedulePornographyAssessment = vi.fn();
+  const policyLog = {
+    debug: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+  };
   const dbClient = {
     device: {
       create: deviceCreate,
@@ -33,6 +41,8 @@ describe('device content activity', () => {
     deviceUpdate.mockReset();
     extensionVisitUpsert.mockReset();
     mangaVisitUpsert.mockReset();
+    registerPornographyAssessment.mockReset();
+    schedulePornographyAssessment.mockReset();
   });
 
   it('records exact remote image URLs before the installation redeems', async () => {
@@ -41,6 +51,13 @@ describe('device content activity', () => {
     deviceCreate.mockResolvedValue({ id: 'device-pending-1' });
     extensionVisitUpsert.mockResolvedValue({ id: 'extension-visit-1' });
     mangaVisitUpsert.mockResolvedValue({ id: 'manga-visit-1' });
+    registerPornographyAssessment.mockResolvedValue({
+      assessmentId: 'assessment-1',
+      identityKey: 'identity-1',
+      inputFingerprint: 'fingerprint-1',
+      shouldSchedule: true,
+      status: 'pending',
+    });
 
     const result = await recordDeviceContentVisit(
       {
@@ -64,7 +81,10 @@ describe('device content activity', () => {
       },
       {
         dbClient: dbClient as never,
+        log: policyLog,
         now: new Date('2026-07-19T15:30:00.000Z'),
+        registerPornographyAssessment,
+        schedulePornographyAssessment,
       }
     );
 
@@ -91,5 +111,22 @@ describe('device content activity', () => {
         }),
       })
     );
+    expect(registerPornographyAssessment).toHaveBeenCalledWith(
+      {
+        extensionName: 'Webtoon',
+        extensionPackageName: 'eu.kanade.tachiyomi.extension.en.webtoon',
+        mangaUrl: 'https://example.com/title/omniscient-reader',
+        sourceId: '123456789',
+        sourceName: 'Webtoon',
+        thumbnailUrl: 'https://cdn.example/cover.jpg',
+        title: 'Omniscient Reader',
+      },
+      expect.objectContaining({
+        dbClient,
+        log: policyLog,
+        now: expect.any(Function),
+      })
+    );
+    expect(schedulePornographyAssessment).toHaveBeenCalledWith('assessment-1');
   });
 });

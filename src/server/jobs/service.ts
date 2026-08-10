@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 
 import { envServer } from '@/env/server';
+import type { MangaPornographyPolicyLogger } from '@/server/content-policy/manga-pornography-policy';
 import {
   buildContentPolicyBlockDetails,
   getContentPolicyGateResult,
@@ -262,8 +263,7 @@ export async function createTranslationJob(
     actor: MobileJobActor;
     clientIp?: string | null;
     dbClient?: typeof db;
-    log?: Pick<typeof logger, 'error' | 'info'> &
-      Partial<Pick<typeof logger, 'warn'>>;
+    log?: MangaPornographyPolicyLogger;
     now?: Date;
     scheduleProcessing?: (jobId: string) => void;
   }
@@ -279,11 +279,20 @@ export async function createTranslationJob(
         },
         {
           dbClient,
+          log,
         }
       )
     : null;
 
   if (gateResult) {
+    log.warn({
+      assessmentId:
+        'assessmentId' in gateResult ? gateResult.assessmentId : undefined,
+      message: 'Blocked translation job creation by content policy',
+      reason: gateResult.reason,
+      scope: 'content-policy',
+      type: 'content_policy_job_blocked',
+    });
     throw new TranslationJobError('explicit_adult_content_blocked', 451, {
       details: buildContentPolicyBlockDetails(gateResult),
     });

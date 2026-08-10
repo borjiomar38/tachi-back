@@ -58,8 +58,10 @@ const {
   mockGetTranslationJobResultManifest: vi.fn(),
   mockHeadTranslationJobPageUpload: vi.fn(),
   mockLogger: {
+    debug: vi.fn(),
     error: vi.fn(),
     info: vi.fn(),
+    warn: vi.fn(),
   },
   mockPerformHostedOcr: vi.fn(),
   mockPerformHostedTranslation: vi.fn(),
@@ -166,8 +168,10 @@ describe('job service', () => {
     mockGetTranslationJobPageUpload.mockReset();
     mockGetTranslationJobResultManifest.mockReset();
     mockHeadTranslationJobPageUpload.mockReset();
+    mockLogger.debug.mockReset();
     mockLogger.error.mockReset();
     mockLogger.info.mockReset();
+    mockLogger.warn.mockReset();
     mockPerformHostedOcr.mockReset();
     mockPerformHostedTranslation.mockReset();
     mockPresignTranslationJobPageUpload.mockReset();
@@ -365,6 +369,15 @@ describe('job service', () => {
     ).not.toHaveBeenCalled();
     expect(mockDb.tokenLedger.aggregate).not.toHaveBeenCalled();
     expect(mockDb.$transaction).not.toHaveBeenCalled();
+    expect(mockLogger.warn).toHaveBeenCalledWith(
+      expect.objectContaining({
+        reason: 'official_explicit_adult_metadata',
+        type: 'content_policy_job_blocked',
+      })
+    );
+    expect(JSON.stringify(mockLogger.warn.mock.calls)).not.toMatch(
+      /Explicit Test|Explicit sex|device-1|license-1/
+    );
   });
 
   it('blocks manually disabled manhwa before provider or token work', async () => {

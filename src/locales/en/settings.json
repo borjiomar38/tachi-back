@@ -37,6 +37,38 @@
       "disabled": "Disabled"
     }
   },
+  "pornographyAutomation": {
+    "title": "AI pornography protection",
+    "description": "Control the additional OpenAI check applied to manga titles and poster URLs reported by extensions.",
+    "toggle": {
+      "label": "Automatic pornography detection",
+      "enabledDescription": "New manga visits can be checked by OpenAI, and confirmed pornography signals can block access.",
+      "disabledDescription": "New OpenAI checks and AI-based blocks are paused. Existing assessments remain stored."
+    },
+    "status": {
+      "enabled": "Enabled",
+      "disabled": "Disabled"
+    },
+    "preserved": {
+      "title": "Existing protections remain active",
+      "description": "Metadata rules, manual manga blocks and allows, and the existing policy cache are not changed by this switch."
+    },
+    "defaultValue": "No manual override yet. Server default: {{status}}.",
+    "confirmDisable": {
+      "title": "Disable automatic pornography detection?",
+      "description": "This stops new OpenAI calls and ignores AI-based blocks until the option is enabled again. Metadata rules, manual decisions, and stored assessments remain intact.",
+      "confirm": "Disable AI protection"
+    },
+    "actions": {
+      "retry": "Try again"
+    },
+    "feedback": {
+      "enabled": "Automatic pornography detection enabled.",
+      "disabled": "Automatic pornography detection disabled.",
+      "updateFailed": "Unable to update automatic pornography detection.",
+      "loadFailed": "Unable to load automatic pornography detection settings."
+    }
+  },
   "ocrUpload": {
     "title": "OCR upload compression",
     "description": "Control how chapter images are prepared on the phone before OCR upload.",

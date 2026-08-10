@@ -1,7 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { waitUntil } from '@vercel/functions';
 
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
+import {
+  getSafeMangaPornographyLogError,
+  processMangaPornographyAssessment,
+} from '@/server/content-policy/manga-pornography-policy';
 import {
   buildApiErrorResponse,
   buildApiOkResponse,
@@ -10,6 +15,7 @@ import {
   buildRateLimitedResponse,
 } from '@/server/http/route-utils';
 import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
+import { logger } from '@/server/logger';
 import {
   recordDeviceContentVisit,
   zDeviceContentVisitInput,
@@ -49,18 +55,49 @@ export const Route = createFileRoute('/api/mobile/activity/visit')({
 
         const rateLimit = consumeInMemoryRateLimit({
           key: `mobile-content-visit:${parsed.data.installationId}`,
-          limit: 120,
+          limit: 30,
           windowMs: 60_000,
         });
+        const ipRateLimit =
+          context.clientIp === 'unknown'
+            ? null
+            : consumeInMemoryRateLimit({
+                key: `mobile-content-visit-ip:${context.clientIp}`,
+                limit: 60,
+                windowMs: 60_000,
+              });
 
-        if (!rateLimit.allowed) {
+        if (!rateLimit.allowed || ipRateLimit?.allowed === false) {
           return buildRateLimitedResponse(
             context.requestId,
-            rateLimit.retryAfterMs
+            Math.max(rateLimit.retryAfterMs, ipRateLimit?.retryAfterMs ?? 0)
           );
         }
 
-        const result = await recordDeviceContentVisit(parsed.data);
+        const routeLog = logger.child({
+          path: '/api/mobile/activity/visit',
+          requestId: context.requestId,
+          scope: 'content-policy',
+        });
+        const result = await recordDeviceContentVisit(parsed.data, {
+          log: routeLog,
+          schedulePornographyAssessment: (assessmentId) => {
+            waitUntil(
+              processMangaPornographyAssessment(
+                { assessmentId },
+                { log: routeLog }
+              ).catch((error) => {
+                routeLog.error({
+                  ...getSafeMangaPornographyLogError(error),
+                  assessmentId,
+                  message:
+                    'Automatic pornography moderation background task failed',
+                  type: 'pornography_moderation_processing_failure',
+                });
+              })
+            );
+          },
+        });
 
         return buildApiOkResponse(result, {
           requestId: context.requestId,

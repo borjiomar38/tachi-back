@@ -59,7 +59,9 @@ export function VisitedTitlesCard(props: { titles: VisitedTitle[] }) {
             <CardTitle>Visited titles</CardTitle>
             <CardDescription>
               Manhwa and manga pages opened on this installation. Covers are
-              loaded directly from the extension URL and are never uploaded.
+              loaded from the extension URL; that URL may be sent to the
+              configured moderation provider, while image bytes are not stored
+              here.
             </CardDescription>
           </div>
           <Badge variant="secondary">{props.titles.length} titles</Badge>

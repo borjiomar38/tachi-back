@@ -10,6 +10,7 @@ import { permissionStaff } from '@/features/auth/permissions';
 import { WithPermissions } from '@/features/auth/with-permissions';
 import { FreeTrialSettingsSection } from '@/features/settings/manager/free-trial-settings-section';
 import { OcrUploadCompressionSettingsSection } from '@/features/settings/manager/ocr-upload-compression-settings-section';
+import { PornographyAutomationSettingsSection } from '@/features/settings/manager/pornography-automation-settings-section';
 import { useSettingsPageForm } from '@/features/settings/manager/use-settings-page-form';
 import {
   PageLayout,
@@ -71,25 +72,24 @@ interface SettingsPageBodyProps {
 const SettingsPageBody = ({ settings }: SettingsPageBodyProps) => {
   const { t } = useTranslation(['settings']);
 
-  if (settings.isLoading) {
-    return <Spinner full className="opacity-60" />;
-  }
-
-  if (settings.isError) {
-    return (
-      <p className="text-sm text-negative-600">
-        {t('settings:page.loadFailed')}
-      </p>
-    );
-  }
-
   return (
     <div className="space-y-8">
-      <FreeTrialSettingsSection />
-      <OcrUploadCompressionSettingsSection
-        catalog={settings.catalog}
-        policyRevision={settings.policyRevision}
-      />
+      <PornographyAutomationSettingsSection />
+      {settings.isLoading ? (
+        <Spinner full className="opacity-60" />
+      ) : settings.isError ? (
+        <p className="text-sm text-negative-600">
+          {t('settings:page.loadFailed')}
+        </p>
+      ) : (
+        <>
+          <FreeTrialSettingsSection />
+          <OcrUploadCompressionSettingsSection
+            catalog={settings.catalog}
+            policyRevision={settings.policyRevision}
+          />
+        </>
+      )}
     </div>
   );
 };

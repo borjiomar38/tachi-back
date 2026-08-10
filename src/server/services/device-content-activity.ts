@@ -1,5 +1,9 @@
 import { z } from 'zod';
 
+import {
+  type MangaPornographyPolicyLogger,
+  registerMangaPornographyAssessment,
+} from '@/server/content-policy/manga-pornography-policy';
 import { db } from '@/server/db';
 import { mergeJsonObject } from '@/server/licenses/utils';
 
@@ -34,7 +38,10 @@ export const recordDeviceContentVisit = async (
   rawInput: unknown,
   dependencies: {
     dbClient?: typeof db;
+    log?: MangaPornographyPolicyLogger;
     now?: Date;
+    registerPornographyAssessment?: typeof registerMangaPornographyAssessment;
+    schedulePornographyAssessment?: (assessmentId: string) => void;
   } = {}
 ) => {
   const input = zDeviceContentVisitInput.parse(rawInput);
@@ -153,6 +160,34 @@ export const recordDeviceContentVisit = async (
         },
       },
     });
+
+    // Persist the shared pending row before the visit endpoint responds. The
+    // mobile client immediately performs a content-policy check and does not
+    // poll again, so creating the assessment only in a background task would
+    // leave a race where the title could be incorrectly allowed.
+    const registration = await (
+      dependencies.registerPornographyAssessment ??
+      registerMangaPornographyAssessment
+    )(
+      {
+        extensionName: input.extension.name,
+        extensionPackageName: input.extension.packageName,
+        mangaUrl: input.manga.url,
+        sourceId: input.source.id,
+        sourceName: input.source.name,
+        thumbnailUrl: input.manga.thumbnailUrl,
+        title: input.manga.title,
+      },
+      {
+        dbClient,
+        log: dependencies.log,
+        now: () => visitedAt,
+      }
+    );
+
+    if (registration.assessmentId && registration.shouldSchedule) {
+      dependencies.schedulePornographyAssessment?.(registration.assessmentId);
+    }
   }
 
   return {

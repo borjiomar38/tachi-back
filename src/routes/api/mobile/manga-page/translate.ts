@@ -89,17 +89,18 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
             },
             {
               dbClient: db,
+              log: routeLog,
             }
           );
 
           if (gateResult) {
             routeLog.warn({
-              clientIp: context.clientIp,
-              deviceId: auth.device.id,
-              licenseId: auth.license.id,
-              mangaTitle: parsedInput.data.manga.title,
+              assessmentId:
+                'assessmentId' in gateResult
+                  ? gateResult.assessmentId
+                  : undefined,
               message: 'Blocked manga page translation by content policy',
-              signal: gateResult.signal,
+              reason: gateResult.reason,
               type: 'content_policy_blocked',
             });
 

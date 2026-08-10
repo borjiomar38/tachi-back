@@ -25,6 +25,8 @@ const {
   mockGetAvailableLicenseTokenBalance: vi.fn(),
   mockLogger: {
     child: vi.fn(),
+    debug: vi.fn(),
+    error: vi.fn(),
     info: vi.fn(),
     warn: vi.fn(),
   },
@@ -110,11 +112,15 @@ describe('POST /api/mobile/manga-page/translate', () => {
     mockDb.tokenLedger.updateMany.mockReset();
     mockGetAvailableLicenseTokenBalance.mockReset();
     mockLogger.child.mockReset();
+    mockLogger.debug.mockReset();
+    mockLogger.error.mockReset();
     mockLogger.info.mockReset();
     mockLogger.warn.mockReset();
     mockTranslateMangaPage.mockReset();
 
     mockLogger.child.mockReturnValue({
+      debug: mockLogger.debug,
+      error: mockLogger.error,
       info: mockLogger.info,
       warn: mockLogger.warn,
     });
@@ -326,5 +332,14 @@ describe('POST /api/mobile/manga-page/translate', () => {
     expect(mockGetAvailableLicenseTokenBalance).not.toHaveBeenCalled();
     expect(mockDb.$transaction).not.toHaveBeenCalled();
     expect(mockTranslateMangaPage).not.toHaveBeenCalled();
+    expect(mockLogger.warn).toHaveBeenCalledWith(
+      expect.objectContaining({
+        reason: 'official_explicit_adult_metadata',
+        type: 'content_policy_blocked',
+      })
+    );
+    expect(JSON.stringify(mockLogger.warn.mock.calls)).not.toMatch(
+      /Blocked Test|Pornographic|device-1|license-1/
+    );
   });
 });

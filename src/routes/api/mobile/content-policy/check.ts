@@ -10,7 +10,9 @@ import {
   buildApiOkResponse,
   buildHttpRequestContext,
   buildInvalidRequestResponse,
+  buildRateLimitedResponse,
 } from '@/server/http/route-utils';
+import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 import { logger } from '@/server/logger';
 
 const zMobileContentPolicyMangaInput = z
@@ -18,10 +20,10 @@ const zMobileContentPolicyMangaInput = z
     categories: z.array(z.string().trim().min(1).max(100)).max(50).optional(),
     contentRating: z.string().trim().min(1).max(255).optional(),
     genres: z.array(z.string().trim().min(1).max(100)).max(50).optional(),
-    mangaTitle: z.string().trim().min(1).max(255).optional(),
+    mangaTitle: z.string().trim().min(1).max(500).optional(),
     mangaUrl: z.string().trim().min(1).max(2048).optional(),
     rating: z.string().trim().min(1).max(255).optional(),
-    sourceId: z.string().trim().min(1).max(64).optional(),
+    sourceId: z.string().trim().min(1).max(100).optional(),
     sourceName: z.string().trim().min(1).max(255).optional(),
     tags: z.array(z.string().trim().min(1).max(100)).max(50).optional(),
   })
@@ -55,6 +57,20 @@ export const Route = createFileRoute('/api/mobile/content-policy/check')({
           );
         }
 
+        if (context.clientIp !== 'unknown') {
+          const rateLimit = consumeInMemoryRateLimit({
+            key: `mobile-content-policy-check-ip:${context.clientIp}`,
+            limit: 120,
+            windowMs: 60_000,
+          });
+          if (!rateLimit.allowed) {
+            return buildRateLimitedResponse(
+              context.requestId,
+              rateLimit.retryAfterMs
+            );
+          }
+        }
+
         const routeLog = logger.child({
           path: '/api/mobile/content-policy/check',
           requestId: context.requestId,
@@ -66,6 +82,7 @@ export const Route = createFileRoute('/api/mobile/content-policy/check')({
           },
           {
             dbClient: db,
+            log: routeLog,
           }
         );
 
@@ -84,14 +101,11 @@ export const Route = createFileRoute('/api/mobile/content-policy/check')({
         }
 
         routeLog.warn({
-          clientIp: context.clientIp,
-          mangaTitle: parsedInput.data.manga.mangaTitle,
+          assessmentId:
+            'assessmentId' in gateResult ? gateResult.assessmentId : undefined,
           message: 'Blocked mobile content policy check',
-          signal: gateResult.signal,
-          sourceId: parsedInput.data.manga.sourceId,
-          sourceName: parsedInput.data.manga.sourceName,
+          reason: gateResult.reason,
           type: 'content_policy_blocked',
-          userAgent: context.userAgent,
         });
 
         return buildApiOkResponse(

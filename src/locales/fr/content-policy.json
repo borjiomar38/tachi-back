@@ -11,8 +11,105 @@
       "saved": "Politique enregistrée"
     },
     "notice": {
-      "title": "Blocage de traduction par métadonnées",
-      "description": "Cette liste bloque la traduction uniquement selon les métadonnées officielles du titre. Gardez les sélections centrées sur le contenu pornographique adulte explicite, pas sur l'identité ou l'orientation des lecteurs."
+      "title": "Protection contre la pornographie explicite",
+      "description": "La protection combine les métadonnées officielles, l’analyse du titre et de l’affiche, et les décisions manuelles. Gardez le filtrage centré sur la pornographie explicite — pas sur le contenu mature en général, l’identité ou l’orientation des lecteurs."
+    },
+    "automatic": {
+      "title": "Détection automatique de pornographie",
+      "description": "OpenAI analyse le titre et l’affiche une seule fois. Les décisions sont mises en cache pour éviter les vérifications en double.",
+      "cacheNotice": "L’URL de l’affiche est transmise au service de modération ; les affiches restent floutées ici par défaut.",
+      "automationEnabled": "Automatisation active",
+      "automationDisabled": "Automatisation désactivée",
+      "disabledNotice": "Les statuts et compteurs ci-dessous reflètent les analyses IA en cache, mais elles ne bloquent plus les titres et aucun nouvel appel OpenAI n’est lancé. Les règles de métadonnées et les décisions manuelles restent actives.",
+      "search": "Rechercher un titre, une source ou une extension...",
+      "empty": "Aucune évaluation automatique ne correspond à ces filtres.",
+      "unknownSource": "Source inconnue",
+      "manualOverride": "Décision manuelle",
+      "notApplied": "En cache — non appliqué",
+      "assessmentId": "ID : {{id}}",
+      "results": "Affichage de {{count}} évaluations sur {{total}}",
+      "scoreDescription": "Score de confiance d’OpenAI pour le contenu sexuel, de 0 à 1. Le seuil configuré dans la politique détermine la décision automatique finale.",
+      "columns": {
+        "title": "Titre",
+        "source": "Source / extension",
+        "status": "Statut",
+        "score": "Score sexuel",
+        "model": "Modèle",
+        "checkedAt": "Dernière vérification",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending": "En attente",
+        "blocked": "Bloqué",
+        "review": "À vérifier",
+        "errors": "Erreur",
+        "allowed": "Autorisé"
+      },
+      "summary": {
+        "pending": "En attente",
+        "blocked": "Bloqués",
+        "blockedCached": "Blocages IA en cache",
+        "review": "À vérifier",
+        "errors": "Erreurs",
+        "allowed": "Autorisés"
+      },
+      "filters": {
+        "all": "Statut : tous",
+        "pending": "Statut : en attente",
+        "blocked": "Statut : bloqués",
+        "review": "Statut : à vérifier",
+        "errors": "Statut : erreurs",
+        "allowed": "Statut : autorisés"
+      },
+      "poster": {
+        "reveal": "Afficher l’affiche de {{title}}",
+        "hide": "Flouter l’affiche de {{title}}",
+        "revealShort": "Afficher l’affiche",
+        "hideShort": "Flouter l’affiche"
+      },
+      "actions": {
+        "refresh": "Actualiser les évaluations",
+        "backfill": "Analyser l’historique",
+        "retry": "Réessayer",
+        "allow": "Autoriser",
+        "block": "Bloquer",
+        "restore": "Utiliser la décision IA",
+        "retryTitle": "Réessayer l’évaluation de {{title}}",
+        "allowTitle": "Autoriser manuellement {{title}}",
+        "blockTitle": "Bloquer manuellement {{title}}",
+        "restoreTitle": "Rétablir la décision IA pour {{title}}",
+        "readOnly": "Lecture seule",
+        "backfillSuccess": "Évaluations mises en file depuis l’historique : {{count}}.",
+        "backfillFailed": "Impossible de mettre l’historique en file d’attente.",
+        "retrySuccess": "L’évaluation est en file d’attente pour un nouvel essai.",
+        "retryFailed": "Impossible de relancer l’évaluation.",
+        "allowedSuccess": "La politique IA est maintenant réglée manuellement pour autoriser ce titre.",
+        "blockedSuccess": "La politique IA est maintenant réglée manuellement pour bloquer ce titre.",
+        "restoredSuccess": "La décision automatique de l’IA a été rétablie.",
+        "updateFailed": "Impossible de mettre à jour la décision de l’évaluation."
+      },
+      "confirm": {
+        "allow": {
+          "title": "Autoriser ce titre ?",
+          "description": "La décision manuelle remplacera l’évaluation IA pour {{title}}. Les métadonnées et les autres règles de contenu restent applicables.",
+          "confirm": "Autoriser le titre"
+        },
+        "block": {
+          "title": "Bloquer ce titre ?",
+          "description": "{{title}} sera immédiatement bloqué lors des prochaines vérifications du reader et des traductions.",
+          "confirm": "Bloquer le titre"
+        },
+        "restore": {
+          "title": "Rétablir la décision IA ?",
+          "description": "La décision manuelle pour {{title}} sera supprimée et la dernière décision automatique s’appliquera.",
+          "confirm": "Utiliser la décision IA"
+        },
+        "backfill": {
+          "title": "Analyser l’historique récent ?",
+          "description": "Jusqu’à 50 visites de mangas enregistrées sans évaluation actuelle seront mises en file d’attente. Les décisions déjà en cache ne seront pas dupliquées.",
+          "confirm": "Analyser l’historique"
+        }
+      }
     },
     "checklist": {
       "title": "Métadonnées officielles bloquées",

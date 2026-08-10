@@ -37,6 +37,38 @@
       "disabled": "Désactivée"
     }
   },
+  "pornographyAutomation": {
+    "title": "Protection IA contre la pornographie",
+    "description": "Contrôlez la vérification OpenAI additionnelle appliquée aux titres et aux URL de posters transmis par les extensions.",
+    "toggle": {
+      "label": "Détection automatique de pornographie",
+      "enabledDescription": "Les nouveaux mangas visités peuvent être vérifiés par OpenAI et les signaux de pornographie confirmés peuvent bloquer l’accès.",
+      "disabledDescription": "Les nouveaux contrôles OpenAI et les blocages basés sur l’IA sont suspendus. Les analyses existantes restent enregistrées."
+    },
+    "status": {
+      "enabled": "Activée",
+      "disabled": "Désactivée"
+    },
+    "preserved": {
+      "title": "Les protections existantes restent actives",
+      "description": "Les règles metadata, les blocages et autorisations manuels de mangas ainsi que le cache de politique existant ne sont pas modifiés par cet interrupteur."
+    },
+    "defaultValue": "Aucune surcharge manuelle. Valeur par défaut du serveur : {{status}}.",
+    "confirmDisable": {
+      "title": "Désactiver la détection automatique de pornographie ?",
+      "description": "Cela arrête les nouveaux appels OpenAI et ignore les blocages basés sur l’IA jusqu’à la prochaine activation. Les règles metadata, les décisions manuelles et les analyses enregistrées restent intactes.",
+      "confirm": "Désactiver la protection IA"
+    },
+    "actions": {
+      "retry": "Réessayer"
+    },
+    "feedback": {
+      "enabled": "Détection automatique de pornographie activée.",
+      "disabled": "Détection automatique de pornographie désactivée.",
+      "updateFailed": "Impossible de mettre à jour la détection automatique de pornographie.",
+      "loadFailed": "Impossible de charger les paramètres de détection automatique de pornographie."
+    }
+  },
   "ocrUpload": {
     "title": "Compression pour l’OCR",
     "description": "Contrôlez la préparation des images sur le téléphone avant l’envoi OCR.",

@@ -193,6 +193,25 @@ enum BlogArticleStatus {
   failed
 }
 
+enum MangaPornographyAssessmentStatus {
+  pending
+  processing
+  completed
+  retryable_error
+  permanent_error
+}
+
+enum MangaPornographyAssessmentVerdict {
+  no_explicit_signal
+  review
+  block
+}
+
+enum MangaPornographyManualDecision {
+  allow
+  block
+}
+
 // Better Auth users are internal backoffice identities only.
 // Mobile customers are represented by licenses, redeem codes, and devices.
 model User {
@@ -403,6 +422,54 @@ model ExtensionBlock {
 
   @@index([blockedAt])
   @@map("extension_blocks")
+}
+
+model MangaPornographyAssessment {
+  id                       String                             @id @default(cuid())
+  identityKey              String                             @unique
+  title                    String
+  normalizedTitle          String
+  mangaUrl                 String?
+  sourceId                 String?
+  sourceName               String?
+  extensionPackageName     String?
+  extensionName            String?
+  thumbnailUrl             String?
+  inputFingerprint         String
+  status                   MangaPornographyAssessmentStatus   @default(pending)
+  verdict                  MangaPornographyAssessmentVerdict?
+  manualDecision           MangaPornographyManualDecision?
+  manualReviewerId         String?
+  manualReason             String?
+  manualDecidedAt          DateTime?
+  sexualFlag               Boolean?
+  sexualScore              Float?
+  sexualAppliedInputTypes  String[]                           @default([])
+  imageInputIncluded       Boolean                            @default(false)
+  model                    String
+  policyVersion            String
+  providerRequestId        String?
+  resultPayload            Json?
+  attemptCount             Int                                @default(0)
+  lastAttemptAt            DateTime?
+  nextAttemptAt            DateTime?
+  processingStartedAt      DateTime?
+  processingLeaseExpiresAt DateTime?
+  classifiedAt             DateTime?
+  lastErrorCode            String?
+  lastErrorMessage         String?
+  lastErrorAt              DateTime?
+  firstSeenAt              DateTime                           @default(now())
+  lastSeenAt               DateTime                           @default(now())
+  createdAt                DateTime                           @default(now())
+  updatedAt                DateTime                           @updatedAt
+
+  @@index([status, nextAttemptAt])
+  @@index([verdict, updatedAt])
+  @@index([sourceId, normalizedTitle])
+  @@index([manualDecision])
+  @@index([lastSeenAt])
+  @@map("manga_pornography_assessments")
 }
 
 model LicenseDevice {

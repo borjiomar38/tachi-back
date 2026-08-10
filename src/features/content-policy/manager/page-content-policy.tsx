@@ -29,6 +29,7 @@ import { SearchInput } from '@/components/ui/search-input';
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionProvider } from '@/features/auth/permissions';
+import { ContentPolicyPornographyAssessmentsCard } from '@/features/content-policy/manager/content-policy-pornography-assessments-card';
 import {
   buildMetadataValueKey,
   useContentPolicySelectionStore,
@@ -169,29 +170,29 @@ export const PageContentPolicy = () => {
           </PageLayoutTopBarTitle>
         </PageLayoutTopBar>
         <PageLayoutContent containerClassName="max-w-7xl">
-          {ui
-            .match('pending', () => (
-              <DataList>
-                <DataListLoadingState />
-              </DataList>
-            ))
-            .match('error', () => (
-              <DataList>
-                <DataListErrorState retry={() => policyQuery.refetch()} />
-              </DataList>
-            ))
-            .match('default', ({ policy }) => (
-              <div className="space-y-4">
-                <Alert>
-                  <ShieldCheckIcon />
-                  <AlertTitle>
-                    {t('contentPolicy:manager.notice.title')}
-                  </AlertTitle>
-                  <AlertDescription>
-                    {t('contentPolicy:manager.notice.description')}
-                  </AlertDescription>
-                </Alert>
+          <div className="space-y-4">
+            <Alert>
+              <ShieldCheckIcon />
+              <AlertTitle>{t('contentPolicy:manager.notice.title')}</AlertTitle>
+              <AlertDescription>
+                {t('contentPolicy:manager.notice.description')}
+              </AlertDescription>
+            </Alert>
 
+            <ContentPolicyPornographyAssessmentsCard />
+
+            {ui
+              .match('pending', () => (
+                <DataList>
+                  <DataListLoadingState />
+                </DataList>
+              ))
+              .match('error', () => (
+                <DataList>
+                  <DataListErrorState retry={() => policyQuery.refetch()} />
+                </DataList>
+              ))
+              .match('default', ({ policy }) => (
                 <Card>
                   <CardHeader>
                     <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
@@ -295,9 +296,9 @@ export const PageContentPolicy = () => {
                     )}
                   </CardContent>
                 </Card>
-              </div>
-            ))
-            .exhaustive()}
+              ))
+              .exhaustive()}
+          </div>
         </PageLayoutContent>
       </PageLayout>
     </GuardPermissions>

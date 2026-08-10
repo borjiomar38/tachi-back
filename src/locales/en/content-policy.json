@@ -11,8 +11,105 @@
       "saved": "Saved policy"
     },
     "notice": {
-      "title": "Metadata-only translation blocking",
-      "description": "This checklist blocks translation by official title metadata only. Keep selections focused on explicit pornographic adult content, not reader identity or orientation."
+      "title": "Protection from explicit pornography",
+      "description": "Protection combines official metadata, title-and-poster analysis, and manual decisions. Keep enforcement focused on explicit pornography—not mature content in general, reader identity, or orientation."
+    },
+    "automatic": {
+      "title": "Automatic pornography detection",
+      "description": "OpenAI analyzes the title and poster once. Decisions are cached to prevent duplicate checks.",
+      "cacheNotice": "The poster URL is sent to the moderation service; posters remain blurred here by default.",
+      "automationEnabled": "Automation enabled",
+      "automationDisabled": "Automation disabled",
+      "disabledNotice": "The statuses and counts below reflect cached AI assessments, but they no longer block titles and no new OpenAI calls are started. Metadata rules and manual decisions remain active.",
+      "search": "Search a title, source, or extension...",
+      "empty": "No automatic assessment matches these filters.",
+      "unknownSource": "Unknown source",
+      "manualOverride": "Manual override",
+      "notApplied": "Cached — not applied",
+      "assessmentId": "ID: {{id}}",
+      "results": "Showing {{count}} of {{total}} assessments",
+      "scoreDescription": "OpenAI's sexual-content confidence score from 0 to 1. The configured policy threshold determines the final automatic decision.",
+      "columns": {
+        "title": "Title",
+        "source": "Source / extension",
+        "status": "Status",
+        "score": "Sexual score",
+        "model": "Model",
+        "checkedAt": "Last check",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending": "Pending",
+        "blocked": "Blocked",
+        "review": "Needs review",
+        "errors": "Error",
+        "allowed": "Allowed"
+      },
+      "summary": {
+        "pending": "Pending",
+        "blocked": "Blocked",
+        "blockedCached": "Cached AI blocks",
+        "review": "Needs review",
+        "errors": "Errors",
+        "allowed": "Allowed"
+      },
+      "filters": {
+        "all": "Status: all",
+        "pending": "Status: pending",
+        "blocked": "Status: blocked",
+        "review": "Status: needs review",
+        "errors": "Status: errors",
+        "allowed": "Status: allowed"
+      },
+      "poster": {
+        "reveal": "Reveal the poster for {{title}}",
+        "hide": "Blur the poster for {{title}}",
+        "revealShort": "Reveal poster",
+        "hideShort": "Blur poster"
+      },
+      "actions": {
+        "refresh": "Refresh assessments",
+        "backfill": "Analyze history",
+        "retry": "Retry",
+        "allow": "Allow",
+        "block": "Block",
+        "restore": "Use AI decision",
+        "retryTitle": "Retry the assessment for {{title}}",
+        "allowTitle": "Allow {{title}} manually",
+        "blockTitle": "Block {{title}} manually",
+        "restoreTitle": "Restore the AI decision for {{title}}",
+        "readOnly": "Read only",
+        "backfillSuccess": "Queued from history: {{count}}.",
+        "backfillFailed": "Failed to queue historical assessments.",
+        "retrySuccess": "Assessment queued for another attempt.",
+        "retryFailed": "Failed to retry the assessment.",
+        "allowedSuccess": "The AI policy is now manually set to allow this title.",
+        "blockedSuccess": "The AI policy is now manually set to block this title.",
+        "restoredSuccess": "The automatic AI decision has been restored.",
+        "updateFailed": "Failed to update the assessment decision."
+      },
+      "confirm": {
+        "allow": {
+          "title": "Allow this title?",
+          "description": "The manual decision will override the AI assessment for {{title}}. Metadata and other content-policy rules still apply.",
+          "confirm": "Allow title"
+        },
+        "block": {
+          "title": "Block this title?",
+          "description": "{{title}} will be blocked immediately for new reader and translation checks.",
+          "confirm": "Block title"
+        },
+        "restore": {
+          "title": "Restore the AI decision?",
+          "description": "The manual override for {{title}} will be removed and the latest automatic decision will apply.",
+          "confirm": "Use AI decision"
+        },
+        "backfill": {
+          "title": "Analyze recent history?",
+          "description": "Up to 50 stored manga visits without a current assessment will be queued. Existing cached decisions will not be duplicated.",
+          "confirm": "Analyze history"
+        }
+      }
     },
     "checklist": {
       "title": "Blocked official metadata",

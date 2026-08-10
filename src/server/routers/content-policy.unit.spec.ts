@@ -11,6 +11,127 @@ import {
 const now = new Date('2026-06-15T10:00:00.000Z');
 
 describe('content policy router', () => {
+  describe('pornography automation', () => {
+    it('lists cached assessments with effective statuses and global counts', async () => {
+      mockDb.mangaPornographyAssessment.findMany.mockResolvedValue([
+        {
+          attemptCount: 1,
+          classifiedAt: now,
+          extensionName: 'Example extension',
+          extensionPackageName: 'com.example.extension',
+          id: 'assessment-blocked',
+          imageInputIncluded: true,
+          lastErrorCode: null,
+          lastSeenAt: now,
+          mangaUrl: '/blocked',
+          manualDecision: null,
+          model: 'omni-moderation-2024-09-26',
+          policyVersion: 'test-policy-v1',
+          sexualScore: 0.98,
+          sourceId: 'source-1',
+          sourceName: 'Example source',
+          status: 'completed',
+          thumbnailUrl: 'https://cdn.example/blocked.jpg',
+          title: 'Blocked example',
+          updatedAt: now,
+          verdict: 'block',
+        },
+        {
+          attemptCount: 1,
+          classifiedAt: now,
+          extensionName: 'Example extension',
+          extensionPackageName: 'com.example.extension',
+          id: 'assessment-allowed',
+          imageInputIncluded: true,
+          lastErrorCode: null,
+          lastSeenAt: now,
+          mangaUrl: '/allowed',
+          manualDecision: 'allow',
+          model: 'omni-moderation-2024-09-26',
+          policyVersion: 'test-policy-v1',
+          sexualScore: 0.96,
+          sourceId: 'source-1',
+          sourceName: 'Example source',
+          status: 'completed',
+          thumbnailUrl: null,
+          title: 'Manually allowed example',
+          updatedAt: now,
+          verdict: 'block',
+        },
+      ]);
+      mockDb.mangaPornographyAssessment.count
+        .mockResolvedValueOnce(2)
+        .mockResolvedValueOnce(0)
+        .mockResolvedValueOnce(1)
+        .mockResolvedValueOnce(0)
+        .mockResolvedValueOnce(0)
+        .mockResolvedValueOnce(1);
+
+      const result = await call(contentPolicyRouter.pornographyAssessments, {
+        limit: 50,
+        status: 'all',
+      });
+
+      expect(result.counts).toEqual({
+        allowed: 1,
+        blocked: 1,
+        errors: 0,
+        pending: 0,
+        review: 0,
+        total: 2,
+      });
+      expect(result.items.map((item) => item.effectiveStatus)).toEqual([
+        'blocked',
+        'allowed',
+      ]);
+      expect(mockUserHasPermission).toHaveBeenCalledWith({
+        body: {
+          permissions: { provider: ['read'] },
+          userId: mockUser.id,
+        },
+      });
+    });
+
+    it('reads the environment default and persists a manager override', async () => {
+      mockDb.appConfig.findUnique.mockResolvedValue(null);
+
+      await expect(
+        call(contentPolicyRouter.pornographyAutomationSettings, undefined)
+      ).resolves.toEqual({
+        defaultEnabled: true,
+        enabled: true,
+        updatedAt: null,
+      });
+
+      mockDb.appConfig.upsert.mockResolvedValue({ updatedAt: now });
+      await expect(
+        call(contentPolicyRouter.updatePornographyAutomationSettings, {
+          enabled: false,
+        })
+      ).resolves.toEqual({
+        defaultEnabled: true,
+        enabled: false,
+        updatedAt: now,
+      });
+      expect(mockDb.appConfig.upsert).toHaveBeenCalledWith(
+        expect.objectContaining({
+          update: {
+            value: {
+              enabled: false,
+              updatedBy: mockUser.id,
+            },
+          },
+        })
+      );
+      expect(mockUserHasPermission).toHaveBeenLastCalledWith({
+        body: {
+          permissions: { provider: ['update'] },
+          userId: mockUser.id,
+        },
+      });
+    });
+  });
+
   describe('context overviews', () => {
     it('returns license metadata with global blocked state', async () => {
       mockDb.appConfig.findUnique.mockResolvedValue({

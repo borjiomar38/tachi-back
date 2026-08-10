@@ -47,6 +47,45 @@ const envServerBase = createEnv({
     GEMINI_TRANSLATION_MODEL: z.string().default('gemini-2.5-flash'),
     OPENAI_API_KEY: z.string().optional(),
     OPENAI_BASE_URL: z.url().default('https://api.openai.com/v1'),
+    OPENAI_PORNOGRAPHY_MODERATION_BLOCK_THRESHOLD: z.coerce
+      .number()
+      .min(0)
+      .max(1)
+      .default(0.9),
+    // Opt-in by default: a Manager must explicitly enable external moderation
+    // after configuring and validating the OpenAI project quota.
+    OPENAI_PORNOGRAPHY_MODERATION_ENABLED: z.stringbool().default(false),
+    OPENAI_PORNOGRAPHY_MODERATION_GATE_WAIT_MS: z.coerce
+      .number()
+      .int()
+      .min(1_000)
+      // The Android client has a 30-second read timeout. Keep enough margin for
+      // the surrounding HTTP request and database work.
+      .max(25_000)
+      .default(20_000),
+    OPENAI_PORNOGRAPHY_MODERATION_MAX_ATTEMPTS: z.coerce
+      .number()
+      .int()
+      .min(1)
+      .max(5)
+      .default(3),
+    OPENAI_PORNOGRAPHY_MODERATION_MODEL: z
+      .string()
+      .default('omni-moderation-2024-09-26'),
+    OPENAI_PORNOGRAPHY_MODERATION_POLICY_VERSION: z
+      .string()
+      .default('2026-08-09.explicit-pornography.v1'),
+    OPENAI_PORNOGRAPHY_MODERATION_REVIEW_THRESHOLD: z.coerce
+      .number()
+      .min(0)
+      .max(1)
+      .default(0.15),
+    OPENAI_PORNOGRAPHY_MODERATION_TIMEOUT_MS: z.coerce
+      .number()
+      .int()
+      .min(1_000)
+      .max(60_000)
+      .default(15_000),
     OPENAI_TRANSLATION_MODEL: z.string().default('gpt-5-mini'),
     OPENROUTER_API_KEY: z.string().optional(),
     ANTHROPIC_API_KEY: z.string().optional(),
@@ -274,6 +313,15 @@ function validateServerEnv(env: typeof envServerBase) {
     } else if (env.MOBILE_API_JWT_SECRET.length < 32) {
       errors.push('MOBILE_API_JWT_SECRET must be at least 32 characters long');
     }
+  }
+
+  if (
+    env.OPENAI_PORNOGRAPHY_MODERATION_REVIEW_THRESHOLD >=
+    env.OPENAI_PORNOGRAPHY_MODERATION_BLOCK_THRESHOLD
+  ) {
+    errors.push(
+      'OPENAI_PORNOGRAPHY_MODERATION_REVIEW_THRESHOLD must be lower than OPENAI_PORNOGRAPHY_MODERATION_BLOCK_THRESHOLD'
+    );
   }
 
   if (errors.length) {
