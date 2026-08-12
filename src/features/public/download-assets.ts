@@ -12,24 +12,31 @@ export const androidApkDownload = {
   href: '/api/download/apk',
   filename: 'nayovi-latest.apk',
   label: 'Download Android APK',
-  sizeLabel: '64 MB',
+  sizeLabel: '64.32 MB',
   buildLabel: 'Android arm64 signed release',
   sha256:
-    '06c029b34a27fb1a151f15cba2b7cd3f460f1da7ff7be3c0af43fb6ea0af6328',
+    '44bd5ebb96af5c81403290b09cc4edd242267d2d418aec5b330bcfb028b19b93',
   // Keep the existing blob key until the signed APK is reuploaded under the Nayovi name.
   objectKey: 'public/downloads/tachiyomiat-latest.apk',
 } as const satisfies AndroidApkDownload;
 
 export function getAndroidApkDownloadMetadata(input?: {
+  sha256?: null | string;
+  sizeBytes?: null | number;
+  variant?: 'arm64-v8a' | 'universal';
   versionName?: null | string;
 }): AndroidApkDownload {
   const versionName = input?.versionName?.trim();
+  const variantLabel =
+    input?.variant === 'universal' ? 'Android universal' : 'Android arm64';
 
   return {
     ...androidApkDownload,
-    buildLabel: versionName
-      ? `Android arm64 signed release ${versionName}`
-      : androidApkDownload.buildLabel,
+    buildLabel: `${variantLabel} signed release${versionName ? ` ${versionName}` : ''}`,
+    sha256: input?.sha256 ?? androidApkDownload.sha256,
+    sizeLabel: input?.sizeBytes
+      ? `${(input.sizeBytes / 1024 / 1024).toFixed(2)} MB`
+      : androidApkDownload.sizeLabel,
   };
 }
 

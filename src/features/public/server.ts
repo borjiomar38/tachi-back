@@ -97,6 +97,9 @@ export const getPublicAndroidApkDownload = createServerFn({
   const policy = await getPublicMobileAppUpdatePolicy();
 
   return getAndroidApkDownloadMetadata({
+    sha256: policy.apkSha256,
+    sizeBytes: policy.apkSizeBytes,
+    variant: policy.apkVariant,
     versionName: policy.currentVersionName ?? policy.latestVersionName,
   });
 });

@@ -7,6 +7,12 @@ import { objectStorageBuckets, uploadClient } from '@/server/s3';
 const APP_UPDATE_POLICY_OBJECT_KEY = 'android/latest/app-update-policy.json';
 
 export const zMobileAppUpdatePolicy = z.object({
+  apkSha256: z
+    .string()
+    .regex(/^[a-f0-9]{64}$/)
+    .optional(),
+  apkSizeBytes: z.coerce.number().int().positive().optional(),
+  apkVariant: z.enum(['arm64-v8a', 'universal']).optional(),
   channel: z.string().trim().min(1).default('standard-release'),
   checkedAt: z.string().trim().min(1),
   currentVersionCode: z.coerce.number().int().min(0).default(0),
