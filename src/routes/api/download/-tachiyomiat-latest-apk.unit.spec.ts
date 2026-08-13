@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
-const { mockCreateAndroidApkDownloadResponse } = vi.hoisted(() => ({
-  mockCreateAndroidApkDownloadResponse: vi.fn(),
+const { mockCreateLegacyMobileUpdateDownloadResponse } = vi.hoisted(() => ({
+  mockCreateLegacyMobileUpdateDownloadResponse: vi.fn(),
 }));
 
 vi.mock('@tanstack/react-router', () => ({
@@ -11,7 +11,8 @@ vi.mock('@tanstack/react-router', () => ({
 }));
 
 vi.mock('@/server/services/android-apk-download', () => ({
-  createAndroidApkDownloadResponse: mockCreateAndroidApkDownloadResponse,
+  createLegacyMobileUpdateDownloadResponse:
+    mockCreateLegacyMobileUpdateDownloadResponse,
 }));
 
 import { Route } from './tachiyomiat-latest[.]apk';
@@ -22,7 +23,9 @@ describe('GET /api/download/tachiyomiat-latest.apk', () => {
       'https://objects.example.test/tachiyomiat-latest.apk?signature=test',
       302
     );
-    mockCreateAndroidApkDownloadResponse.mockResolvedValue(expectedResponse);
+    mockCreateLegacyMobileUpdateDownloadResponse.mockResolvedValue(
+      expectedResponse
+    );
     const handler = (
       Route as never as {
         options: {
@@ -36,6 +39,8 @@ describe('GET /api/download/tachiyomiat-latest.apk', () => {
     ).options.server.handlers.GET;
 
     await expect(handler()).resolves.toBe(expectedResponse);
-    expect(mockCreateAndroidApkDownloadResponse).toHaveBeenCalledTimes(1);
+    expect(mockCreateLegacyMobileUpdateDownloadResponse).toHaveBeenCalledTimes(
+      1
+    );
   });
 });
