@@ -125,6 +125,7 @@ import { Route as ApiMobileJobsJobIdIndexRouteImport } from './routes/api/mobile
 import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobile/jobs/$jobId/result'
 import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/complete'
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
+import { Route as ApiDownloadAndroidVersionFilenameRouteImport } from './routes/api/download/android/$version/$filename'
 import { Route as MediaBlogHeroesV3SlugSplatRouteImport } from './routes/media/blog/heroes/v3/$slug/$'
 import { Route as ApiMobileJobsJobIdPagesPageNumberRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber'
 import { Route as ApiMobileJobsJobIdPagesPageNumberCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/pages/$pageNumber/complete'
@@ -750,6 +751,12 @@ const ApiMobileAuthFreeTrialEligibilityRoute =
     path: '/eligibility',
     getParentRoute: () => ApiMobileAuthFreeTrialRoute,
   } as any)
+const ApiDownloadAndroidVersionFilenameRoute =
+  ApiDownloadAndroidVersionFilenameRouteImport.update({
+    id: '/api/download/android/$version/$filename',
+    path: '/api/download/android/$version/$filename',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MediaBlogHeroesV3SlugSplatRoute =
   MediaBlogHeroesV3SlugSplatRouteImport.update({
     id: '/media/blog/heroes/v3/$slug/$',
@@ -899,6 +906,7 @@ export interface FileRoutesByFullPath {
   '/manager/manhwa/$slug/': typeof ManagerManhwaSlugIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
+  '/api/download/android/$version/$filename': typeof ApiDownloadAndroidVersionFilenameRoute
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
@@ -1019,6 +1027,7 @@ export interface FileRoutesByTo {
   '/manager/manhwa/$slug': typeof ManagerManhwaSlugIndexRoute
   '/manager/users/$id': typeof ManagerUsersIdIndexRoute
   '/manager/users/new': typeof ManagerUsersNewIndexRoute
+  '/api/download/android/$version/$filename': typeof ApiDownloadAndroidVersionFilenameRoute
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
@@ -1144,6 +1153,7 @@ export interface FileRoutesById {
   '/manager/manhwa/$slug/': typeof ManagerManhwaSlugIndexRoute
   '/manager/users/$id/': typeof ManagerUsersIdIndexRoute
   '/manager/users/new/': typeof ManagerUsersNewIndexRoute
+  '/api/download/android/$version/$filename': typeof ApiDownloadAndroidVersionFilenameRoute
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
@@ -1270,6 +1280,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/$slug/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
+    | '/api/download/android/$version/$filename'
     | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
@@ -1390,6 +1401,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/$slug'
     | '/manager/users/$id'
     | '/manager/users/new'
+    | '/api/download/android/$version/$filename'
     | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
@@ -1514,6 +1526,7 @@ export interface FileRouteTypes {
     | '/manager/manhwa/$slug/'
     | '/manager/users/$id/'
     | '/manager/users/new/'
+    | '/api/download/android/$version/$filename'
     | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
@@ -1601,6 +1614,7 @@ export interface RootRouteChildren {
   ApiMobileSourceDiscoveryVerifyRoute: typeof ApiMobileSourceDiscoveryVerifyRoute
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
   ApiMobileSubscriptionUpgradeRoute: typeof ApiMobileSubscriptionUpgradeRoute
+  ApiDownloadAndroidVersionFilenameRoute: typeof ApiDownloadAndroidVersionFilenameRoute
   MediaBlogHeroesV3SlugSplatRoute: typeof MediaBlogHeroesV3SlugSplatRoute
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute: typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute: typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
@@ -2421,6 +2435,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileAuthFreeTrialEligibilityRouteImport
       parentRoute: typeof ApiMobileAuthFreeTrialRoute
     }
+    '/api/download/android/$version/$filename': {
+      id: '/api/download/android/$version/$filename'
+      path: '/api/download/android/$version/$filename'
+      fullPath: '/api/download/android/$version/$filename'
+      preLoaderRoute: typeof ApiDownloadAndroidVersionFilenameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/media/blog/heroes/v3/$slug/$': {
       id: '/media/blog/heroes/v3/$slug/$'
       path: '/media/blog/heroes/v3/$slug/$'
@@ -2747,6 +2768,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileSourceDiscoveryVerifyRoute: ApiMobileSourceDiscoveryVerifyRoute,
   ApiMobileSubscriptionCancelRoute: ApiMobileSubscriptionCancelRoute,
   ApiMobileSubscriptionUpgradeRoute: ApiMobileSubscriptionUpgradeRoute,
+  ApiDownloadAndroidVersionFilenameRoute:
+    ApiDownloadAndroidVersionFilenameRoute,
   MediaBlogHeroesV3SlugSplatRoute: MediaBlogHeroesV3SlugSplatRoute,
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute:
     ApiManhwaPrivateSlugChapterChapterPanelPanelRoute,
