@@ -115,6 +115,7 @@ import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/au
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
 import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
+import { Route as ApiMobileAppUpdatePolicyAbiRouteImport } from './routes/api/mobile/app-update-policy/abi'
 import { Route as ApiMobileActivityVisitRouteImport } from './routes/api/mobile/activity/visit'
 import { Route as ApiManhwaSlugPosterRouteImport } from './routes/api/manhwa/$slug/poster'
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
@@ -694,6 +695,12 @@ const ApiMobileAuthActivateRoute = ApiMobileAuthActivateRouteImport.update({
   path: '/api/mobile/auth/activate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileAppUpdatePolicyAbiRoute =
+  ApiMobileAppUpdatePolicyAbiRouteImport.update({
+    id: '/abi',
+    path: '/abi',
+    getParentRoute: () => ApiMobileAppUpdatePolicyRoute,
+  } as any)
 const ApiMobileActivityVisitRoute = ApiMobileActivityVisitRouteImport.update({
   id: '/api/mobile/activity/visit',
   path: '/api/mobile/activity/visit',
@@ -827,7 +834,7 @@ export interface FileRoutesByFullPath {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
-  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
+  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRouteWithChildren
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -863,6 +870,7 @@ export interface FileRoutesByFullPath {
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
   '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
+  '/api/mobile/app-update-policy/abi': typeof ApiMobileAppUpdatePolicyAbiRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
@@ -946,7 +954,7 @@ export interface FileRoutesByTo {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
-  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
+  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRouteWithChildren
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -982,6 +990,7 @@ export interface FileRoutesByTo {
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
   '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
+  '/api/mobile/app-update-policy/abi': typeof ApiMobileAppUpdatePolicyAbiRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
@@ -1070,7 +1079,7 @@ export interface FileRoutesById {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
-  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRoute
+  '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRouteWithChildren
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
@@ -1106,6 +1115,7 @@ export interface FileRoutesById {
   '/api/dev/email/$template': typeof ApiDevEmailTemplateRoute
   '/api/manhwa/$slug/poster': typeof ApiManhwaSlugPosterRoute
   '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
+  '/api/mobile/app-update-policy/abi': typeof ApiMobileAppUpdatePolicyAbiRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
@@ -1231,6 +1241,7 @@ export interface FileRouteTypes {
     | '/api/dev/email/$template'
     | '/api/manhwa/$slug/poster'
     | '/api/mobile/activity/visit'
+    | '/api/mobile/app-update-policy/abi'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
@@ -1350,6 +1361,7 @@ export interface FileRouteTypes {
     | '/api/dev/email/$template'
     | '/api/manhwa/$slug/poster'
     | '/api/mobile/activity/visit'
+    | '/api/mobile/app-update-policy/abi'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
@@ -1473,6 +1485,7 @@ export interface FileRouteTypes {
     | '/api/dev/email/$template'
     | '/api/manhwa/$slug/poster'
     | '/api/mobile/activity/visit'
+    | '/api/mobile/app-update-policy/abi'
     | '/api/mobile/auth/activate'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
@@ -1558,7 +1571,7 @@ export interface RootRouteChildren {
   ApiCronSeoDistributionRoute: typeof ApiCronSeoDistributionRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiDownloadTachiyomiatLatestDotapkRoute: typeof ApiDownloadTachiyomiatLatestDotapkRoute
-  ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRoute
+  ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRouteWithChildren
   ApiMobileExtensionPolicyRoute: typeof ApiMobileExtensionPolicyRoute
   ApiMobileFunnelEventsRoute: typeof ApiMobileFunnelEventsRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
@@ -2338,6 +2351,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileAuthActivateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/app-update-policy/abi': {
+      id: '/api/mobile/app-update-policy/abi'
+      path: '/abi'
+      fullPath: '/api/mobile/app-update-policy/abi'
+      preLoaderRoute: typeof ApiMobileAppUpdatePolicyAbiRouteImport
+      parentRoute: typeof ApiMobileAppUpdatePolicyRoute
+    }
     '/api/mobile/activity/visit': {
       id: '/api/mobile/activity/visit'
       path: '/api/mobile/activity/visit'
@@ -2556,6 +2576,20 @@ const ManhwaSlugRouteRouteWithChildren = ManhwaSlugRouteRoute._addFileChildren(
   ManhwaSlugRouteRouteChildren,
 )
 
+interface ApiMobileAppUpdatePolicyRouteChildren {
+  ApiMobileAppUpdatePolicyAbiRoute: typeof ApiMobileAppUpdatePolicyAbiRoute
+}
+
+const ApiMobileAppUpdatePolicyRouteChildren: ApiMobileAppUpdatePolicyRouteChildren =
+  {
+    ApiMobileAppUpdatePolicyAbiRoute: ApiMobileAppUpdatePolicyAbiRoute,
+  }
+
+const ApiMobileAppUpdatePolicyRouteWithChildren =
+  ApiMobileAppUpdatePolicyRoute._addFileChildren(
+    ApiMobileAppUpdatePolicyRouteChildren,
+  )
+
 interface ApiMobileJobsJobIdPagesPageNumberRouteChildren {
   ApiMobileJobsJobIdPagesPageNumberCompleteRoute: typeof ApiMobileJobsJobIdPagesPageNumberCompleteRoute
 }
@@ -2680,7 +2714,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiDownloadTachiyomiatLatestDotapkRoute:
     ApiDownloadTachiyomiatLatestDotapkRoute,
-  ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRoute,
+  ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRouteWithChildren,
   ApiMobileExtensionPolicyRoute: ApiMobileExtensionPolicyRoute,
   ApiMobileFunnelEventsRoute: ApiMobileFunnelEventsRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
