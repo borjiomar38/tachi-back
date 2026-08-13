@@ -7,10 +7,6 @@ const ANDROID_APK_DOWNLOAD_URL_TTL_SECONDS = 60 * 10;
 const LEGACY_MOBILE_UPDATE_OBJECT_KEY =
   'public/downloads/tachiyomiat-latest.apk';
 
-const SUPPORTED_ANDROID_APK_RELEASE_VERSIONS = [
-  'v0.17.38',
-  'v0.17.40',
-] as const;
 const SUPPORTED_ANDROID_APK_ABIS = [
   'arm64-v8a',
   'armeabi-v7a',
@@ -18,16 +14,10 @@ const SUPPORTED_ANDROID_APK_ABIS = [
   'x86_64',
 ] as const;
 
-type SupportedAndroidApkReleaseVersion =
-  (typeof SUPPORTED_ANDROID_APK_RELEASE_VERSIONS)[number];
 type SupportedAndroidApkAbi = (typeof SUPPORTED_ANDROID_APK_ABIS)[number];
 
-const isSupportedAndroidApkReleaseVersion = (
-  version: string
-): version is SupportedAndroidApkReleaseVersion =>
-  SUPPORTED_ANDROID_APK_RELEASE_VERSIONS.some(
-    (supportedVersion) => supportedVersion === version
-  );
+const isSupportedAndroidApkReleaseVersion = (version: string): boolean =>
+  /^v\d+\.\d+\.\d+$/.test(version);
 
 const isSupportedAndroidApkAbi = (abi: string): abi is SupportedAndroidApkAbi =>
   SUPPORTED_ANDROID_APK_ABIS.some((supportedAbi) => supportedAbi === abi);

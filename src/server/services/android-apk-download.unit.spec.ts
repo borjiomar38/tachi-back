@@ -84,13 +84,13 @@ describe('Android APK download responses', () => {
     }
   );
 
-  it('supports the explicitly reserved v0.17.40 release path', () => {
+  it('supports future strict semantic-version release paths', () => {
     expect(
       resolveVersionedAndroidAbiApkObjectKey({
-        filename: 'TachiyomiAT-x86_64-v0.17.40.apk',
-        version: 'v0.17.40',
+        filename: 'TachiyomiAT-x86_64-v0.18.123.apk',
+        version: 'v0.18.123',
       })
-    ).toBe('android/releases/v0.17.40/TachiyomiAT-x86_64-v0.17.40.apk');
+    ).toBe('android/releases/v0.18.123/TachiyomiAT-x86_64-v0.18.123.apk');
   });
 
   it.each([
@@ -110,7 +110,15 @@ describe('Android APK download responses', () => {
       filename: '../TachiyomiAT-arm64-v8a-v0.17.38.apk',
       version: 'v0.17.38',
     },
-  ])('rejects an unapproved release path: $filename', async (input) => {
+    {
+      filename: 'TachiyomiAT-arm64-v8a-v0.17.38.apk',
+      version: 'v0.17.38/../../private',
+    },
+    {
+      filename: 'TachiyomiAT-arm64-v8a-release.apk',
+      version: 'release',
+    },
+  ])('rejects an invalid release path: $filename', async (input) => {
     const response = await createVersionedAndroidAbiApkDownloadResponse(input);
 
     expect(response.status).toBe(404);
