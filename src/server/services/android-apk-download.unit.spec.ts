@@ -1,6 +1,11 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-const { mockPresignGetObject, mockUploadClient } = vi.hoisted(() => ({
+const {
+  mockGetPublicMobileAbiAppUpdatePolicy,
+  mockPresignGetObject,
+  mockUploadClient,
+} = vi.hoisted(() => ({
+  mockGetPublicMobileAbiAppUpdatePolicy: vi.fn(),
   mockPresignGetObject: vi.fn(),
   mockUploadClient: { name: 'test-upload-client' },
 }));
@@ -16,6 +21,10 @@ vi.mock('@/server/s3', () => ({
   uploadClient: mockUploadClient,
 }));
 
+vi.mock('@/server/mobile-abi-update-policy', () => ({
+  getPublicMobileAbiAppUpdatePolicy: mockGetPublicMobileAbiAppUpdatePolicy,
+}));
+
 import { androidApkDownload } from '@/features/public/download-assets';
 import {
   createLegacyMobileUpdateDownloadResponse,
@@ -26,6 +35,8 @@ import {
 
 describe('Android APK download responses', () => {
   beforeEach(() => {
+    mockGetPublicMobileAbiAppUpdatePolicy.mockReset();
+    mockGetPublicMobileAbiAppUpdatePolicy.mockResolvedValue(null);
     mockPresignGetObject.mockReset();
   });
 
@@ -40,6 +51,28 @@ describe('Android APK download responses', () => {
       bucket: 'legacy-public-test',
       expiresIn: 600,
       key: androidApkDownload.objectKey,
+    });
+    expect(response.status).toBe(302);
+    expect(response.headers.get('location')).toBe(signedUrl);
+  });
+
+  it('redirects the website to the ARM64 APK from the latest ABI policy', async () => {
+    const filename = 'TachiyomiAT-arm64-v8a-v0.17.39.apk';
+    const signedUrl = `https://objects.example.test/${filename}?signature=test`;
+    mockGetPublicMobileAbiAppUpdatePolicy.mockResolvedValue({
+      apkByAbi: {
+        'arm64-v8a': { filename },
+      },
+      latestVersionName: '0.17.39',
+    });
+    mockPresignGetObject.mockResolvedValue(signedUrl);
+
+    const response = await createWebsiteAndroidApkDownloadResponse();
+
+    expect(mockPresignGetObject).toHaveBeenCalledWith(mockUploadClient, {
+      bucket: 'legacy-public-test',
+      expiresIn: 600,
+      key: `android/releases/v0.17.39/${filename}`,
     });
     expect(response.status).toBe(302);
     expect(response.headers.get('location')).toBe(signedUrl);

@@ -12,6 +12,7 @@ import {
 } from '@/features/public/download-assets';
 import { db } from '@/server/db';
 import { getFreeTrialRuntimeConfig } from '@/server/licenses/free-trial-settings';
+import { getPublicMobileAbiAppUpdatePolicy } from '@/server/mobile-abi-update-policy';
 import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
 
 const publicTokenPackSelect = {
@@ -94,13 +95,27 @@ export const getPublicTokenPackByKey = createServerFn({ method: 'GET' })
 export const getPublicAndroidApkDownload = createServerFn({
   method: 'GET',
 }).handler(async (): Promise<AndroidApkDownload> => {
-  const policy = await getPublicMobileAppUpdatePolicy();
+  const abiPolicy = await getPublicMobileAbiAppUpdatePolicy();
+
+  if (abiPolicy) {
+    const arm64Apk = abiPolicy.apkByAbi['arm64-v8a'];
+
+    return getAndroidApkDownloadMetadata({
+      sha256: arm64Apk.sha256,
+      sizeBytes: arm64Apk.sizeBytes,
+      variant: 'arm64-v8a',
+      versionName: abiPolicy.latestVersionName,
+    });
+  }
+
+  const legacyPolicy = await getPublicMobileAppUpdatePolicy();
 
   return getAndroidApkDownloadMetadata({
-    sha256: policy.apkSha256,
-    sizeBytes: policy.apkSizeBytes,
-    variant: policy.apkVariant,
-    versionName: policy.currentVersionName ?? policy.latestVersionName,
+    sha256: legacyPolicy.apkSha256,
+    sizeBytes: legacyPolicy.apkSizeBytes,
+    variant: legacyPolicy.apkVariant,
+    versionName:
+      legacyPolicy.currentVersionName ?? legacyPolicy.latestVersionName,
   });
 });
 

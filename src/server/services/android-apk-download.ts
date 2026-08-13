@@ -1,6 +1,7 @@
 import { presignGetObject } from '@better-upload/server/helpers';
 
 import { androidApkDownload } from '@/features/public/download-assets';
+import { getPublicMobileAbiAppUpdatePolicy } from '@/server/mobile-abi-update-policy';
 import { objectStorageBuckets, uploadClient } from '@/server/s3';
 
 const ANDROID_APK_DOWNLOAD_URL_TTL_SECONDS = 60 * 10;
@@ -65,8 +66,22 @@ const createAndroidApkDownloadResponseForKey = async (
 };
 
 export const createWebsiteAndroidApkDownloadResponse =
-  async (): Promise<Response> =>
-    createAndroidApkDownloadResponseForKey(androidApkDownload.objectKey);
+  async (): Promise<Response> => {
+    const abiPolicy = await getPublicMobileAbiAppUpdatePolicy();
+    const arm64Apk = abiPolicy?.apkByAbi['arm64-v8a'];
+    const version = abiPolicy ? `v${abiPolicy.latestVersionName}` : null;
+    const versionedKey =
+      arm64Apk && version
+        ? resolveVersionedAndroidAbiApkObjectKey({
+            filename: arm64Apk.filename,
+            version,
+          })
+        : null;
+
+    return createAndroidApkDownloadResponseForKey(
+      versionedKey ?? androidApkDownload.objectKey
+    );
+  };
 
 export const createLegacyMobileUpdateDownloadResponse =
   async (): Promise<Response> =>

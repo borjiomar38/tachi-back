@@ -130,6 +130,10 @@ export async function getEffectiveMobileAbiAppUpdatePolicy(
   return policy ? withMobileAbiAppUpdateRequestContext(policy, input) : null;
 }
 
+export async function getPublicMobileAbiAppUpdatePolicy(): Promise<MobileAbiAppUpdatePolicy | null> {
+  return getStoredMobileAbiAppUpdatePolicy();
+}
+
 export async function putMobileAbiAppUpdatePolicy(
   rawPolicy: unknown
 ): Promise<MobileAbiAppUpdatePolicy> {
