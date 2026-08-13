@@ -12,9 +12,9 @@ export const androidApkDownload = {
   href: "/api/download/apk",
   filename: "nayovi-latest.apk",
   label: "Download Android APK",
-  sizeLabel: "65.33 MB",
-  buildLabel: "Android arm64 signed release 0.17.37",
-  sha256: "c341812d9ee3dca4773f0307d32c466944c50861ff76e4f79169ed536a643b62",
+  sizeLabel: "65.14 MB",
+  buildLabel: "Android arm64 signed release 0.17.38",
+  sha256: "a43788e5c5b21366d7b1c82c1a92b58ef9dcba9fbd4b2300dfcd427073dc8793",
   objectKey: "android/latest/TachiyomiAT-arm64-v8a.apk",
 } as const satisfies AndroidApkDownload;
 

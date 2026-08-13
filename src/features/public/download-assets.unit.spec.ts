@@ -16,8 +16,8 @@ describe("getAndroidApkDownloadMetadata", () => {
     });
 
     expect(metadata).toBe(androidApkDownload);
-    expect(metadata.buildLabel).toBe("Android arm64 signed release 0.17.37");
-    expect(metadata.sizeLabel).toBe("65.33 MB");
+    expect(metadata.buildLabel).toBe("Android arm64 signed release 0.17.38");
+    expect(metadata.sizeLabel).toBe("65.14 MB");
   });
 
   it("keeps accurate live fallback metadata before the next policy promotion", () => {
