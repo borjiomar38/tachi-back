@@ -15,7 +15,7 @@ export const mobileUpdateAbis = [
 
 export type MobileUpdateAbi = (typeof mobileUpdateAbis)[number];
 
-const MAX_ROUTED_APK_SIZE_BYTES = 75 * 1024 * 1024;
+const MAX_ROUTED_APK_SIZE_BYTES = 75_000_000;
 const zSha256 = z.string().regex(/^[a-f0-9]{64}$/);
 const zHttpsUrl = z
   .url()
@@ -63,6 +63,19 @@ export const zMobileAbiAppUpdatePolicy = z
   })
   .strict()
   .superRefine((policy, context) => {
+    if (
+      policy.forceUpdate &&
+      (policy.minimumSupportedVersionCode <= 0 ||
+        policy.minimumSupportedVersionCode > policy.latestVersionCode)
+    ) {
+      context.addIssue({
+        code: 'custom',
+        message:
+          'A forced policy requires a positive minimum version no newer than the latest release',
+        path: ['minimumSupportedVersionCode'],
+      });
+    }
+
     for (const abi of mobileUpdateAbis) {
       const expectedFilename = getMobileAbiApkFilename(
         abi,

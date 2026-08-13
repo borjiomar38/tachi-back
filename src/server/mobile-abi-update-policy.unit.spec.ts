@@ -145,13 +145,32 @@ describe('mobile ABI app update policy', () => {
         ...policy.apkByAbi,
         'arm64-v8a': {
           ...policy.apkByAbi['arm64-v8a'],
-          sizeBytes: 183_098_903,
+          sizeBytes: 75_000_001,
         },
       },
     });
 
     expect(duplicateArtifact.success).toBe(false);
     expect(oversizedArtifact.success).toBe(false);
+  });
+
+  it('rejects a forced policy that cannot lead to a newer release', () => {
+    const policy = buildPolicy();
+
+    expect(
+      zMobileAbiAppUpdatePolicy.safeParse({
+        ...policy,
+        forceUpdate: true,
+        minimumSupportedVersionCode: 49,
+      }).success
+    ).toBe(false);
+    expect(
+      zMobileAbiAppUpdatePolicy.safeParse({
+        ...policy,
+        forceUpdate: true,
+        minimumSupportedVersionCode: 0,
+      }).success
+    ).toBe(false);
   });
 
   it('computes requiresUpdate from the requesting client version', () => {
