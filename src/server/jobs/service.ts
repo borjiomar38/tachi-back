@@ -1172,24 +1172,49 @@ function scheduleTranslationJobProcessing(input: {
   const scheduleProcessing =
     input.scheduleProcessing ??
     ((jobId: string) => {
-      if (envServer.JOB_RUNTIME_MODE !== 'inline') {
-        return;
-      }
-
-      void drainTranslationJobQueue({
+      scheduleTranslationJobQueueDrain({
         dbClient: input.dbClient,
+        jobId,
         log: input.log,
-      }).catch((error) => {
-        input.log.error({
-          errorMessage:
-            error instanceof Error ? error.message : 'Unknown error',
-          jobId,
-          scope: 'jobs',
-        });
       });
     });
 
   scheduleProcessing(input.jobId);
+}
+
+export function scheduleTranslationJobQueueDrain(input: {
+  dbClient?: typeof db;
+  jobId: string;
+  log?: Pick<typeof logger, 'error' | 'info'>;
+}) {
+  if (envServer.JOB_RUNTIME_MODE !== 'inline') {
+    return;
+  }
+
+  const dbClient = input.dbClient ?? db;
+  const log = input.log ?? logger;
+
+  scheduleDetachedTranslationJobTask(() => {
+    void drainTranslationJobQueue({
+      dbClient,
+      log,
+    }).catch((error) => {
+      log.error({
+        errorMessage: error instanceof Error ? error.message : 'Unknown error',
+        jobId: input.jobId,
+        scope: 'jobs',
+      });
+    });
+  });
+}
+
+function scheduleDetachedTranslationJobTask(callback: () => void) {
+  if (typeof setImmediate === 'function') {
+    setImmediate(callback);
+    return;
+  }
+
+  setTimeout(callback, 0);
 }
 
 export async function getTranslationJobSummary(
