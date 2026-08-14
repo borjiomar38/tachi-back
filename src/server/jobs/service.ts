@@ -1187,24 +1187,59 @@ export function scheduleTranslationJobQueueDrain(input: {
   jobId: string;
   log?: Pick<typeof logger, 'error' | 'info'>;
 }) {
+  const log = input.log ?? logger;
+
   if (envServer.JOB_RUNTIME_MODE !== 'inline') {
+    log.info({
+      jobId: input.jobId,
+      jobRuntimeMode: envServer.JOB_RUNTIME_MODE,
+      scope: 'jobs',
+      status: 'skipped_inline_queue_drain',
+    });
     return;
   }
 
   const dbClient = input.dbClient ?? db;
-  const log = input.log ?? logger;
+
+  log.info({
+    jobId: input.jobId,
+    jobRuntimeMode: envServer.JOB_RUNTIME_MODE,
+    scope: 'jobs',
+    status: 'scheduled_detached_queue_drain',
+  });
 
   scheduleDetachedTranslationJobTask(() => {
+    const startedAt = Date.now();
+
+    log.info({
+      jobId: input.jobId,
+      scope: 'jobs',
+      status: 'started_detached_queue_drain',
+    });
+
     void drainTranslationJobQueue({
       dbClient,
       log,
-    }).catch((error) => {
-      log.error({
-        errorMessage: error instanceof Error ? error.message : 'Unknown error',
-        jobId: input.jobId,
-        scope: 'jobs',
+    })
+      .then((result) => {
+        log.info({
+          durationMs: Date.now() - startedAt,
+          jobId: input.jobId,
+          scope: 'jobs',
+          startedJobIds: result.startedJobIds,
+          status: 'completed_detached_queue_drain',
+        });
+      })
+      .catch((error) => {
+        log.error({
+          durationMs: Date.now() - startedAt,
+          errorMessage:
+            error instanceof Error ? error.message : 'Unknown error',
+          jobId: input.jobId,
+          scope: 'jobs',
+          status: 'failed_detached_queue_drain',
+        });
       });
-    });
   });
 }
 
