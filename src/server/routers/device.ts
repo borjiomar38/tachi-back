@@ -21,7 +21,7 @@ import {
   zSetExtensionBlockInput,
   zSetExtensionBlockResponse,
 } from '@/server/licenses/schema';
-import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
+import { getPublicMobileAbiAppUpdatePolicy } from '@/server/mobile-abi-update-policy';
 import { protectedProcedure } from '@/server/orpc';
 import { setExtensionBlocked } from '@/server/services/extension-access-policy';
 
@@ -696,7 +696,7 @@ export default {
 
       const [policy, versionGroups, activeGroups, linkedGroups] =
         await Promise.all([
-          getPublicMobileAppUpdatePolicy(),
+          getPublicMobileAbiAppUpdatePolicy(),
           context.db.device.groupBy({
             by: ['appVersion', 'appBuild'],
             _count: {
@@ -734,6 +734,12 @@ export default {
             },
           }),
         ]);
+
+      if (!policy) {
+        throw new ORPCError('INTERNAL_SERVER_ERROR', {
+          message: 'The current Android ABI update policy is unavailable.',
+        });
+      }
 
       const activeCountByVersion = buildVersionCountMap(activeGroups);
       const linkedCountByVersion = buildVersionCountMap(linkedGroups);

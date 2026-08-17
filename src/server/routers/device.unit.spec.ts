@@ -1,10 +1,10 @@
 import { call } from '@orpc/server';
 import { describe, expect, it, vi } from 'vitest';
 
-const mockGetPublicMobileAppUpdatePolicy = vi.hoisted(() => vi.fn());
+const mockGetPublicMobileAbiAppUpdatePolicy = vi.hoisted(() => vi.fn());
 
-vi.mock('@/server/mobile-update-policy', () => ({
-  getPublicMobileAppUpdatePolicy: mockGetPublicMobileAppUpdatePolicy,
+vi.mock('@/server/mobile-abi-update-policy', () => ({
+  getPublicMobileAbiAppUpdatePolicy: mockGetPublicMobileAbiAppUpdatePolicy,
 }));
 
 import deviceRouter from '@/server/routers/device';
@@ -19,17 +19,17 @@ const now = new Date('2026-03-19T20:00:00.000Z');
 
 describe('device router', () => {
   describe('getVersionSummary', () => {
-    it('summarizes installed version groups against the update policy', async () => {
-      mockGetPublicMobileAppUpdatePolicy.mockResolvedValue({
+    it('summarizes installed version groups against the current ABI update policy', async () => {
+      mockGetPublicMobileAbiAppUpdatePolicy.mockResolvedValue({
         channel: 'standard-release',
-        checkedAt: '2026-05-12T07:00:00.000Z',
+        checkedAt: '2026-08-17T11:29:33.282Z',
         currentVersionCode: 0,
         currentVersionName: null,
         forceUpdate: true,
-        latestVersionCode: 27,
-        latestVersionName: '0.17.17',
+        latestVersionCode: 50,
+        latestVersionName: '0.17.40',
         message: 'Update to continue.',
-        minimumSupportedVersionCode: 25,
+        minimumSupportedVersionCode: 50,
         platform: 'android',
         releaseUrl: 'https://example.com/releases',
         requiresUpdate: false,
@@ -38,8 +38,8 @@ describe('device router', () => {
       mockDb.device.groupBy
         .mockResolvedValueOnce([
           {
-            appBuild: '27',
-            appVersion: '0.17.17',
+            appBuild: '50',
+            appVersion: '0.17.40',
             _count: {
               _all: 3,
             },
@@ -51,8 +51,8 @@ describe('device router', () => {
             },
           },
           {
-            appBuild: '20',
-            appVersion: '0.17.10',
+            appBuild: '49',
+            appVersion: '0.17.39',
             _count: {
               _all: 2,
             },
@@ -79,8 +79,8 @@ describe('device router', () => {
         ])
         .mockResolvedValueOnce([
           {
-            appBuild: '27',
-            appVersion: '0.17.17',
+            appBuild: '50',
+            appVersion: '0.17.40',
             _count: {
               _all: 2,
             },
@@ -88,15 +88,15 @@ describe('device router', () => {
         ])
         .mockResolvedValueOnce([
           {
-            appBuild: '27',
-            appVersion: '0.17.17',
+            appBuild: '50',
+            appVersion: '0.17.40',
             _count: {
               _all: 1,
             },
           },
           {
-            appBuild: '20',
-            appVersion: '0.17.10',
+            appBuild: '49',
+            appVersion: '0.17.39',
             _count: {
               _all: 1,
             },
@@ -124,14 +124,14 @@ describe('device router', () => {
         }))
       ).toEqual([
         {
-          appBuild: '27',
-          appVersion: '0.17.17',
+          appBuild: '50',
+          appVersion: '0.17.40',
           installCount: 3,
           status: 'latest',
         },
         {
-          appBuild: '20',
-          appVersion: '0.17.10',
+          appBuild: '49',
+          appVersion: '0.17.39',
           installCount: 2,
           status: 'unsupported',
         },
@@ -149,6 +149,17 @@ describe('device router', () => {
           },
           userId: mockUser.id,
         },
+      });
+    });
+
+    it('fails instead of presenting the legacy policy when the ABI policy is unavailable', async () => {
+      mockGetPublicMobileAbiAppUpdatePolicy.mockResolvedValue(null);
+
+      await expect(
+        call(deviceRouter.getVersionSummary, undefined)
+      ).rejects.toMatchObject({
+        code: 'INTERNAL_SERVER_ERROR',
+        message: 'The current Android ABI update policy is unavailable.',
       });
     });
   });
