@@ -18,7 +18,7 @@ import {
   MobileAuthError,
   recordMobileHeartbeat,
 } from '@/server/mobile-auth/session';
-import { getEffectiveMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
+import { getEffectiveMobileUpdatePolicyForClient } from '@/server/mobile-update-policy-resolver';
 
 export const Route = createFileRoute('/api/mobile/heartbeat')({
   server: {
@@ -31,7 +31,7 @@ export const Route = createFileRoute('/api/mobile/heartbeat')({
           url.searchParams.get('versionCode') ?? '0',
           10
         );
-        const policy = await getEffectiveMobileAppUpdatePolicy({
+        const policy = await getEffectiveMobileUpdatePolicyForClient({
           channel,
           currentVersionCode: Number.isFinite(currentVersionCode)
             ? currentVersionCode
