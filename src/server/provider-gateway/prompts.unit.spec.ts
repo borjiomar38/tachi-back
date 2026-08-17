@@ -112,4 +112,23 @@ describe('provider gateway prompts', () => {
     expect(prompt.systemPrompt).toContain('Arabic scanlation bubbles');
     expect(prompt.systemPrompt).toContain('العظمة، الهيبة، القدر');
   });
+
+  it('uses Sorani Arabic-script guidance for ckb targets', () => {
+    const prompt = buildTranslationPrompt({
+      pages: [
+        {
+          blocks: [{ text: 'Where are you going?' }],
+          pageKey: '001.jpg',
+        },
+      ],
+      sourceLanguage: 'en',
+      targetLanguage: 'ckb',
+    });
+
+    expect(prompt.promptProfile).toBe('sorani_target');
+    expect(prompt.systemPrompt).toContain('Central Kurdish (Sorani)');
+    expect(prompt.systemPrompt).toContain('not Kurmanji Kurdish');
+    expect(prompt.systemPrompt).toContain('کوردی سۆرانی');
+    expect(prompt.systemPrompt).toContain('right-to-left flow');
+  });
 });

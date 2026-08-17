@@ -9,7 +9,8 @@ type PromptProfile =
   | 'generic'
   | 'japanese_to_english'
   | 'korean_to_english'
-  | 'latin_source_to_english';
+  | 'latin_source_to_english'
+  | 'sorani_target';
 
 const LATIN_SOURCE_LANGUAGES = new Set([
   'de',
@@ -132,6 +133,10 @@ export function selectPromptProfile(input: {
     return 'arabic_target';
   }
 
+  if (targetLanguage === 'ckb') {
+    return 'sorani_target';
+  }
+
   if (sourceLanguage === 'ko' && targetLanguage === 'en') {
     return 'korean_to_english';
   }
@@ -210,6 +215,13 @@ function buildSystemPrompt(input: {
         return [
           'Prefer fluent natural English over literal wording for Latin-alphabet source languages.',
           'Keep jokes, insults, and emotional turns idiomatic in English while preserving the panel rhythm.',
+        ];
+      case 'sorani_target':
+        return [
+          'Translate into Central Kurdish (Sorani), not Kurmanji Kurdish.',
+          'Write every translated line in the Sorani Arabic-based script (کوردی سۆرانی); do not use the Kurmanji Latin alphabet.',
+          'Use natural contemporary Sorani phrasing that is clear to readers in Iraqi Kurdistan and Iran.',
+          'Keep right-to-left flow and Sorani punctuation natural inside speech bubbles.',
         ];
       case 'generic':
       default:
