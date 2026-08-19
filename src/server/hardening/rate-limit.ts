@@ -3,6 +3,7 @@ import { consumeInMemoryRateLimit } from '@/server/licenses/rate-limit';
 
 export type MobileJobRateLimitBucket =
   | 'create'
+  | 'manga_page'
   | 'page_upload'
   | 'read'
   | 'write';
@@ -63,6 +64,7 @@ const mobileJobRateLimitByBucket: Record<
   () => number
 > = {
   create: () => envServer.MOBILE_JOB_CREATE_RATE_LIMIT_MAX_REQUESTS,
+  manga_page: () => envServer.MOBILE_JOB_CREATE_RATE_LIMIT_MAX_REQUESTS,
   page_upload: () => envServer.MOBILE_JOB_PAGE_UPLOAD_RATE_LIMIT_MAX_REQUESTS,
   read: () => envServer.MOBILE_JOB_READ_RATE_LIMIT_MAX_REQUESTS,
   write: () => envServer.MOBILE_JOB_WRITE_RATE_LIMIT_MAX_REQUESTS,

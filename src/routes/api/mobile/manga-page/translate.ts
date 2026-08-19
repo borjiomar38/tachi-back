@@ -57,7 +57,7 @@ export const Route = createFileRoute('/api/mobile/manga-page/translate')({
         try {
           const { auth, rateLimit } =
             await authenticateAndRateLimitMobileJobRequest(request, {
-              bucket: 'create',
+              bucket: 'manga_page',
               context,
             });
 
