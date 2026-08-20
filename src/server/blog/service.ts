@@ -1,8 +1,10 @@
 import { envServer } from '@/env/server';
 import {
   BlogAgentReview,
+  BlogArticleCategory,
   BlogArticleDetail,
   BlogArticleSummary,
+  isEditorialBlogArticleBody,
   zBlogAgentReview,
   zBlogArticleBody,
 } from '@/features/blog/schema';
@@ -23,6 +25,7 @@ import { db } from '@/server/db';
 import { BlogArticleStatus } from '@/server/db/generated/client';
 
 interface BlogArticleSummaryRow {
+  body: unknown;
   excerpt: string;
   heroImageUrl: string | null;
   imageAlt: string;
@@ -37,7 +40,6 @@ interface BlogArticleSummaryRow {
 }
 
 interface BlogArticleDetailRow extends BlogArticleSummaryRow {
-  body: unknown;
   heroImageUrl: string | null;
   imageReview: unknown;
   metaDescription: string;
@@ -46,12 +48,14 @@ interface BlogArticleDetailRow extends BlogArticleSummaryRow {
 }
 
 interface BlogSitemapEntryRow {
+  body: unknown;
   publishedAt: Date | null;
   slug: string;
   updatedAt: Date;
 }
 
 interface BlogArticleSummaryQueryOptions {
+  category?: BlogArticleCategory;
   excludedSlugs?: string[];
   publishedAtFrom?: Date;
   skip?: number;
@@ -59,11 +63,13 @@ interface BlogArticleSummaryQueryOptions {
 }
 
 export interface BlogSitemapEntry {
+  category: BlogArticleCategory | null;
   lastModified: string;
   slug: string;
 }
 
 const blogArticleSummarySelect = {
+  body: true,
   excerpt: true,
   heroImageUrl: true,
   imageAlt: true,
@@ -97,6 +103,7 @@ export async function getPublishedBlogArticleSummaries(
   options: BlogArticleSummaryQueryOptions = {}
 ): Promise<BlogArticleSummary[]> {
   const where = buildPublishedBlogArticleWhere({
+    category: options.category,
     excludedSlugs: options.excludedSlugs,
     now: new Date(),
     publishedAtFrom: options.publishedAtFrom,
@@ -115,11 +122,12 @@ export async function getPublishedBlogArticleSummaries(
 export async function getPublishedBlogArticleSummaryCount(
   options: Pick<
     BlogArticleSummaryQueryOptions,
-    'excludedSlugs' | 'publishedAtFrom'
+    'category' | 'excludedSlugs' | 'publishedAtFrom'
   > = {}
 ): Promise<number> {
   return await db.blogArticle.count({
     where: buildPublishedBlogArticleWhere({
+      category: options.category,
       excludedSlugs: options.excludedSlugs,
       now: new Date(),
       publishedAtFrom: options.publishedAtFrom,
@@ -150,6 +158,7 @@ export async function getPublishedBlogSitemapEntries(): Promise<
   const rows = await db.blogArticle.findMany({
     orderBy: [{ publishedAt: 'desc' }, { createdAt: 'desc' }],
     select: {
+      body: true,
       publishedAt: true,
       slug: true,
       updatedAt: true,
@@ -423,6 +432,7 @@ function buildBlogHeroImageRouteUrl(slug: string) {
 }
 
 function buildPublishedBlogArticleWhere(input: {
+  category?: BlogArticleCategory;
   excludedSlugs?: string[];
   now: Date;
   publishedAtFrom?: Date;
@@ -430,6 +440,14 @@ function buildPublishedBlogArticleWhere(input: {
   const excludedSlugs = input.excludedSlugs?.filter(Boolean) ?? [];
 
   return {
+    ...(input.category
+      ? {
+          body: {
+            equals: input.category,
+            path: ['category'],
+          },
+        }
+      : {}),
     ...(excludedSlugs.length > 0 ? { slug: { notIn: excludedSlugs } } : {}),
     publishedAt: {
       ...(input.publishedAtFrom ? { gte: input.publishedAtFrom } : {}),
@@ -443,15 +461,24 @@ function mapBlogArticleSummaryRow(
   row: BlogArticleSummaryRow
 ): BlogArticleSummary {
   const publishedAt = row.publishedAt ?? row.updatedAt;
+  const body = zBlogArticleBody.safeParse(row.body);
+  const category =
+    body.success && isEditorialBlogArticleBody(body.data)
+      ? body.data.category
+      : null;
 
   return {
+    category,
     excerpt: row.excerpt,
     heroImageUrl: row.heroImageUrl,
     imageAlt: row.imageAlt,
     imagePrompt: row.imagePrompt,
-    keywords: buildBlogSeoKeywords(row.keywords, {
-      type: row.manhwaType,
-    }),
+    keywords:
+      category === 'app_updates'
+        ? [...new Set(row.keywords)].slice(0, 12)
+        : buildBlogSeoKeywords(row.keywords, {
+            type: row.manhwaType,
+          }),
     manhwaTitle: row.manhwaTitle,
     manhwaType: row.manhwaType,
     publishedAt: publishedAt.toISOString(),
@@ -475,8 +502,14 @@ function mapBlogArticleDetailRow(row: BlogArticleDetailRow): BlogArticleDetail {
 
 function mapBlogSitemapEntryRow(row: BlogSitemapEntryRow): BlogSitemapEntry {
   const lastModified = row.updatedAt ?? row.publishedAt ?? new Date();
+  const body = zBlogArticleBody.safeParse(row.body);
+  const category =
+    body.success && isEditorialBlogArticleBody(body.data)
+      ? body.data.category
+      : null;
 
   return {
+    category,
     lastModified: lastModified.toISOString(),
     slug: row.slug,
   };

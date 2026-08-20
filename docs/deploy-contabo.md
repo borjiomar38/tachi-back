@@ -101,8 +101,8 @@ Expected: HTTP `401` with `{"error":{"code":"invalid_session"},"ok":false}`.
 
 ## Cron Replacement
 
-Vercel currently runs `/api/cron/generate-blog-article` daily. On Contabo,
-prefer the Codex CLI cron so the host asks Codex to research a current topic,
+The legacy Vercel `/api/cron/generate-blog-article` schedule is disabled. On
+Contabo, use the Codex CLI cron so the host asks Codex to research a current topic,
 generate a Codex CLI image, then lets the app validate the JSON draft with Zod,
 reject duplicate titles from the database, upload the provided hero image, and
 publish. The backend must not call OpenAI image APIs for blog heroes.
@@ -119,22 +119,33 @@ Cron entry:
 0 1 * * * TACHI_ENV_FILE=/opt/tachi-back/.env.production /usr/local/bin/tachi-back-codex-blog-cron >> /var/log/tachi-back-codex-blog-cron.log 2>&1
 ```
 
-The Codex cron defaults to `gpt-5.3-codex-spark` with `model_reasoning_effort="xhigh"` and
+The Codex cron defaults to `gpt-5.5` with `model_reasoning_effort="xhigh"` and
 enables Codex web search. Override only if needed:
 
 ```env
-BLOG_CODEX_MODEL=gpt-5.3-codex-spark
+BLOG_CODEX_MODEL=gpt-5.5
 BLOG_CODEX_REASONING_EFFORT=xhigh
 BLOG_CODEX_SEARCH_ENABLED=true
 BLOG_CODEX_CLI_PATH=codex
 BLOG_CODEX_IMAGE_GENERATION_ENABLED=true
 BLOG_CODEX_IMAGE_REQUIRED=true
 BLOG_CODEX_IMAGE_SCRIPT_PATH=/usr/local/bin/tachi-codex-image-generator
+BLOG_GITHUB_REPOSITORY=borjiomar38/tachi-mobile
+BLOG_GITHUB_BRANCH=main
+# Optional for a private repository or higher GitHub API rate limits.
+BLOG_GITHUB_TOKEN=
 ```
 
-The old curl-only script remains available as `/usr/local/bin/tachi-back-blog-cron`
-if you explicitly want the app to call its configured LLM API provider instead
-of Codex CLI.
+The old curl-only `/usr/local/bin/tachi-back-blog-cron` path now receives HTTP
+410 and must not be scheduled. Future automatic articles are generated only by
+the Codex CLI workflow.
+
+The blog agent checks GitHub before selecting a normal editorial topic. On the
+first run it records the current app repository head without publishing old
+history. Later runs create one `app_updates` article only when new user-facing
+commits exist. Internal maintenance advances the checkpoint without publishing;
+eligible commits advance it only inside the successful article publication
+transaction, so failed generations retry safely.
 
 ## SEO Distribution Agent
 

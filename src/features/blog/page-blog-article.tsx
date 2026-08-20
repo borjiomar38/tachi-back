@@ -13,11 +13,14 @@ import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-import heroBackground from '@/features/auth/layout-login-background.webp';
-import heroCharacter from '@/features/auth/layout-login-character.webp';
+import { BlogDefaultHeroVisual } from '@/features/blog/blog-default-hero-visual';
+import { BlogEditorialArticle } from '@/features/blog/blog-editorial-article';
 import { BlogProfileLine } from '@/features/blog/blog-profile-line';
 import { buildBlogHeroImageVariantUrl } from '@/features/blog/image-variants';
-import { BlogArticleDetail } from '@/features/blog/schema';
+import {
+  BlogArticleDetail,
+  isEditorialBlogArticleBody,
+} from '@/features/blog/schema';
 import { androidApkDownload } from '@/features/public/download-assets';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
@@ -26,7 +29,17 @@ interface PageBlogArticleProps {
 }
 
 export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
-  const hasGeneratedHeroImage = Boolean(article.heroImageUrl);
+  if (isEditorialBlogArticleBody(article.body)) {
+    return (
+      <BlogEditorialArticle
+        article={{
+          ...article,
+          body: article.body,
+        }}
+      />
+    );
+  }
+
   const responsiveImage = article.heroImageUrl
     ? buildArticleImageSources(article.heroImageUrl)
     : null;
@@ -34,45 +47,29 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
   return (
     <PublicShell>
       <article>
-        <section className="mx-auto w-full max-w-6xl px-4 pt-7 md:pt-10">
-          <div className="public-ink-panel relative isolate min-h-[34rem] overflow-hidden rounded-[1.75rem] border px-5 py-8 text-neutral-50 md:min-h-[36rem] md:px-8 md:py-10">
-            <img
-              src={article.heroImageUrl ?? heroBackground}
-              srcSet={responsiveImage?.srcSet}
-              sizes={responsiveImage?.sizes}
-              alt={hasGeneratedHeroImage ? article.imageAlt : ''}
-              width={1_440}
-              height={810}
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
-              className={cn(
-                'absolute inset-0 -z-20 size-full object-cover transition',
-                hasGeneratedHeroImage
-                  ? 'object-[68%_center] opacity-90'
-                  : 'object-[62%_center] opacity-45'
-              )}
-            />
-            <div
-              className={cn(
-                'absolute inset-0 -z-10',
-                hasGeneratedHeroImage
-                  ? 'bg-linear-to-r from-neutral-950 via-neutral-950/78 to-neutral-950/10'
-                  : 'bg-linear-to-r from-neutral-950 via-neutral-950/88 to-neutral-950/42'
-              )}
-            />
-            {!hasGeneratedHeroImage ? (
+        <section className="relative isolate min-h-[38rem] w-full overflow-hidden border-y border-white/10 bg-neutral-950 text-neutral-50 md:min-h-[40rem]">
+          {article.heroImageUrl ? (
+            <>
               <img
-                src={heroCharacter}
-                alt=""
-                width={1_024}
-                height={1_536}
-                loading="lazy"
+                src={article.heroImageUrl}
+                srcSet={responsiveImage?.srcSet}
+                sizes={responsiveImage?.sizes}
+                alt={article.imageAlt}
+                width={1_642}
+                height={958}
+                loading="eager"
                 decoding="async"
-                className="animate-float-in-space pointer-events-none absolute right-[-5rem] bottom-[-7rem] hidden w-[min(28rem,44%)] opacity-92 drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block"
+                fetchPriority="high"
+                className="absolute inset-0 -z-20 size-full object-cover object-[68%_center] opacity-90"
               />
-            ) : null}
-            <div className="max-w-3xl space-y-5">
+              <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/82 to-neutral-950/18" />
+              <div className="absolute inset-0 -z-10 bg-linear-to-t from-neutral-950/55 via-transparent to-neutral-950/20" />
+            </>
+          ) : (
+            <BlogDefaultHeroVisual />
+          )}
+          <div className="mx-auto flex min-h-[38rem] w-full max-w-6xl items-center px-4 py-10 md:min-h-[40rem] md:py-14">
+            <div className="max-w-3xl space-y-5 lg:max-w-[56%]">
               <a
                 href="/blog"
                 className="inline-flex items-center gap-2 text-sm text-neutral-300 transition hover:text-neutral-50"

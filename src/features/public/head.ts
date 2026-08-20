@@ -1,4 +1,11 @@
-import { BlogArticleDetail } from "@/features/blog/schema";
+import {
+  type BlogCategoryConfig,
+  getBlogCategoryPath,
+} from "@/features/blog/category";
+import {
+  blogArticleCategoryLabels,
+  BlogArticleDetail,
+} from "@/features/blog/schema";
 import {
   buildBlogSeoKeywords,
   buildPublicSeoKeywords,
@@ -386,16 +393,71 @@ export const buildPublicBlogIndexHead = (
   );
 };
 
+export const buildPublicBlogCategoryHead = (
+  category: BlogCategoryConfig,
+  page = 1,
+  totalItems = 0,
+): ReturnType<typeof buildPublicPageHead> => {
+  const isFirstPage = page <= 1;
+  const categoryPath = getBlogCategoryPath(category.category);
+  const canonicalPath = isFirstPage
+    ? categoryPath
+    : `${categoryPath}?page=${page}`;
+  const pageTitle = isFirstPage
+    ? category.title
+    : `${category.title} - Page ${page}`;
+  const categoryUrl = buildAbsoluteUrl(categoryPath);
+
+  return buildPublicPageHead(pageTitle, category.description, canonicalPath, {
+    keywords: category.keywords,
+    robots:
+      totalItems > 0
+        ? "index, follow, max-image-preview:large"
+        : "noindex, follow",
+    structuredDataGraph: [
+      {
+        "@type": "CollectionPage",
+        "@id": `${categoryUrl}#collection`,
+        name: category.title,
+        description: category.description,
+        url: categoryUrl,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${categoryUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Blog",
+            item: buildAbsoluteUrl("/blog"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: category.label,
+            item: categoryUrl,
+          },
+        ],
+      },
+    ],
+    titleSuffix: "Nayovi",
+  });
+};
+
 export const buildPublicBlogArticleHead = (
   article: BlogArticleDetail,
 ): ReturnType<typeof buildPublicPageHead> => {
   const seoTitle = buildConciseBlogArticleTitle(article);
+  const articleSection = article.category
+    ? blogArticleCategoryLabels[article.category]
+    : article.manhwaType;
   const baseHead = buildPublicPageHead(
     seoTitle,
     article.metaDescription,
     `/blog/${article.slug}`,
     {
-      imageAlt: `${article.title} hero image for Nayovi ${article.manhwaType} AI translation.`,
+      imageAlt: article.imageAlt,
       imagePath: article.heroImageUrl ?? undefined,
       imageType: article.heroImageUrl ? "image/png" : undefined,
       keywords: article.keywords,
@@ -404,9 +466,12 @@ export const buildPublicBlogArticleHead = (
       type: article.manhwaType,
     },
   );
-  const keywords = buildBlogSeoKeywords(article.keywords, {
-    type: article.manhwaType,
-  });
+  const keywords =
+    article.category === "app_updates"
+      ? article.keywords
+      : buildBlogSeoKeywords(article.keywords, {
+          type: article.manhwaType,
+        });
 
   return {
     ...baseHead,
@@ -428,7 +493,7 @@ export const buildPublicBlogArticleHead = (
       },
       {
         property: "article:section",
-        content: article.manhwaType,
+        content: articleSection,
       },
       ...keywords.slice(0, 8).map((keyword) => ({
         property: "article:tag",
@@ -444,6 +509,10 @@ const buildConciseBlogArticleTitle = (article: BlogArticleDetail) => {
     month: "short",
     timeZone: "UTC",
   }).format(new Date(article.publishedAt));
+
+  if (article.category) {
+    return truncateAtWord(article.title.trim(), 51);
+  }
 
   if (article.manhwaTitle.trim().toLowerCase() === "nayovi") {
     return `Android Manhwa Translation Guide · ${publishedDate}`;
@@ -492,6 +561,9 @@ const buildArticleStructuredData = (article: BlogArticleDetail) => {
     ? toAbsoluteAssetUrl(article.heroImageUrl)
     : buildAbsoluteUrl(socialImagePath);
   const baseUrl = buildAbsoluteUrl("/");
+  const articleSection = article.category
+    ? blogArticleCategoryLabels[article.category]
+    : article.manhwaType;
   const graph: Record<string, unknown>[] = [
     {
       "@type": "BlogPosting",
@@ -501,11 +573,14 @@ const buildArticleStructuredData = (article: BlogArticleDetail) => {
       image: imageUrl,
       datePublished: article.publishedAt,
       dateModified: article.updatedAt,
-      articleSection: article.manhwaType,
-      keywords: buildBlogSeoKeywords(article.keywords, {
-        limit: 12,
-        type: article.manhwaType,
-      }).join(", "),
+      articleSection,
+      keywords: (article.category === "app_updates"
+        ? article.keywords.slice(0, 12)
+        : buildBlogSeoKeywords(article.keywords, {
+            limit: 12,
+            type: article.manhwaType,
+          })
+      ).join(", "),
       mainEntityOfPage: {
         "@id": `${articleUrl}#webpage`,
       },

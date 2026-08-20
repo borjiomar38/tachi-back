@@ -1,13 +1,27 @@
 import { envServer } from '@/env/server';
+import type { BlogArticleCategory } from '@/features/blog/schema';
 import { buildBlogSeoKeywords } from '@/features/blog/seo';
+import { shouldAdvanceBlogAppUpdateCheckpoint } from '@/server/blog/app-update-policy';
+import {
+  advanceBlogAppUpdateCheckpoint,
+  assertCurrentBlogAppUpdateEvidence,
+  prepareBlogAppUpdatePromptContext,
+} from '@/server/blog/app-update-source';
 import {
   BLOG_CODEX_PROMPT_VERSION,
+  buildCodexAppUpdateArticlePrompt,
   buildCodexBlogArticlePrompt,
   buildCodexBlogNoopPrompt,
-  CodexBlogArticleDraft,
-  ExistingBlogTopic,
+  type CodexBlogArticleDraft,
+  type ExistingBlogTopic,
   findDuplicateBlogTopic,
 } from '@/server/blog/codex-draft';
+import {
+  assertFutureBlogArticlePolicy,
+  assertSafeAppUpdateCopy,
+  hasRecentNewsSource,
+  resolveScheduledBlogCategory,
+} from '@/server/blog/editorial-policy';
 import {
   buildBlogTopicHeroImageAlt,
   buildBlogTopicHeroImagePrompt,
@@ -19,10 +33,10 @@ import {
   runArticleUxReviewAgent,
   runHeroImageUxReviewAgent,
 } from '@/server/blog/review-agents';
-import { BlogGenerationTopic } from '@/server/blog/topics';
+import type { BlogGenerationTopic } from '@/server/blog/topics';
 import {
   resolveTrendingMangaCandidates,
-  TrendingMangaCandidate,
+  type TrendingMangaCandidate,
   validateTrendingMangaSelection,
 } from '@/server/blog/trending-topic-resolver';
 import { db } from '@/server/db';
@@ -60,6 +74,11 @@ export interface CodexBlogPublishResult {
   title: string;
 }
 
+interface VerifiedTopicSelection {
+  candidate: TrendingMangaCandidate;
+  title: string;
+}
+
 const codexBlogArticleSelect = {
   heroImageUrl: true,
   publishedAt: true,
@@ -68,15 +87,36 @@ const codexBlogArticleSelect = {
   title: true,
 } as const;
 
+const codexBlogArticleInternalSelect = {
+  ...codexBlogArticleSelect,
+  id: true,
+} as const;
+
 export async function buildDailyCodexBlogArticlePrompt(
   input: {
     date?: Date;
+    fetchImpl?: typeof fetch;
   } = {}
-) {
+): Promise<string> {
   const publicationDate = input.date ?? new Date();
   const generationDate = publicationDate.toISOString().slice(0, 10);
+  const appUpdateContext = await resolveAppUpdatePromptContext({
+    fetchImpl: input.fetchImpl,
+    now: publicationDate,
+  });
+
+  if (appUpdateContext.kind === 'ready') {
+    return buildCodexAppUpdateArticlePrompt({
+      date: generationDate,
+      evidence: appUpdateContext.evidence,
+    });
+  }
+
   const existingTopics = await getExistingBlogTopics();
-  const trendResult = await resolveTrendingCandidatesForPrompt(existingTopics);
+  const trendResult = await resolveTrendingCandidatesForPrompt(
+    existingTopics,
+    input.fetchImpl
+  );
 
   if (trendResult.candidates.length === 0) {
     return buildCodexBlogNoopPrompt({
@@ -86,8 +126,21 @@ export async function buildDailyCodexBlogArticlePrompt(
     });
   }
 
+  const counts = await getEditorialCategoryCounts();
+  const category = resolveScheduledBlogCategory({
+    candidateCount: trendResult.candidates.length,
+    counts,
+  });
+
+  if (!category) {
+    return buildCodexBlogNoopPrompt({
+      reason: 'No editorial category has enough verified source material.',
+    });
+  }
+
   return buildCodexBlogArticlePrompt({
     candidates: trendResult.candidates,
+    category,
     date: generationDate,
     existingTopics,
   });
@@ -107,27 +160,38 @@ export async function publishCodexBlogArticleDraft(input: {
 }): Promise<CodexBlogPublishResult> {
   const publicationDate = input.date ?? new Date();
   const generationDate = publicationDate.toISOString().slice(0, 10);
-  const generationKey = buildDailyGenerationKey(generationDate);
-  const existingDailyArticle = await db.blogArticle.findFirst({
-    select: codexBlogArticleSelect,
+  const generationKey = buildGenerationKey(input.draft, generationDate);
+  const existingArticle = await db.blogArticle.findFirst({
+    select: codexBlogArticleInternalSelect,
     where: {
       generationKey,
     },
   });
 
-  if (existingDailyArticle) {
-    return existingDailyArticle;
+  if (
+    existingArticle?.status === BlogArticleStatus.published ||
+    (existingArticle && input.draft.category !== 'app_updates')
+  ) {
+    return mapCodexBlogPublishResult(existingArticle);
   }
 
-  const existingTopics = await getExistingBlogTopics();
-  const verifiedCandidate = await validateDraftTopicSelection({
+  assertFutureBlogArticlePolicy({
+    body: input.draft.body,
+    category: input.draft.category,
+  });
+  const topicSelectionAudit = await validateDraftEvidence({
     draft: input.draft,
-    existingTopics,
+    publicationDate,
   });
 
+  if (input.draft.category === 'app_updates') {
+    assertSafeAppUpdateCopy(input.draft.body);
+    await assertCurrentBlogAppUpdateEvidence(input.draft.appUpdateEvidence);
+  }
+
   const topic = buildTopicFromDraft(input.draft);
-  const imagePrompt = buildBlogTopicHeroImagePrompt(topic);
-  const imageAlt = buildBlogTopicHeroImageAlt(topic);
+  const imagePrompt = buildEditorialHeroImagePrompt(input.draft, topic);
+  const imageAlt = buildEditorialHeroImageAlt(input.draft, topic);
   const imageReview = combineBlogImageReviews([
     runAnimeMangaImageReviewAgent({
       imageAlt,
@@ -147,17 +211,17 @@ export async function publishCodexBlogArticleDraft(input: {
   });
   const uxReview = {
     ...articleUxReview,
-    topicSelection: buildTopicSelectionAudit({
-      candidate: verifiedCandidate,
-      draft: input.draft,
-      validatedAt: publicationDate.toISOString(),
-    }),
+    editorialCategory: input.draft.category,
+    topicSelection: topicSelectionAudit,
   };
-  const slug = await buildUniqueSlug(input.draft.slugBase, generationDate);
+  const slug =
+    existingArticle?.slug ??
+    (await buildUniqueSlug(input.draft.slugBase, generationDate));
   const heroImage = input.heroImage
     ? await uploadGeneratedBlogHeroImage({
         image: decodeCodexHeroImage(input.heroImage.dataBase64),
         metadata: {
+          'blog-category': input.draft.category,
           'blog-image-alt': imageAlt,
           'blog-image-generated-by': input.heroImage.generatedBy,
           'blog-image-prompt': input.heroImage.prompt.slice(0, 1_024),
@@ -172,46 +236,86 @@ export async function publishCodexBlogArticleDraft(input: {
     imageReview.score >= 80 &&
     uxReview.score >= 80 &&
     (!envServer.BLOG_IMAGE_GENERATION_ENABLED || Boolean(heroImage));
+  const data = {
+    body: toPrismaJson(input.draft.body),
+    excerpt: input.draft.excerpt,
+    generatedAt: publicationDate,
+    generationKey,
+    generationModel: buildCodexGenerationModel(input),
+    generationPromptVersion: BLOG_CODEX_PROMPT_VERSION,
+    generationProvider: ProviderType.internal,
+    generationSource: buildGenerationSource(input.draft.category),
+    heroImageObjectKey: heroImage?.heroImageObjectKey,
+    heroImageUrl: heroImage?.heroImageUrl,
+    imageAlt,
+    imagePrompt,
+    imageReview: toPrismaJson(imageReview),
+    keywords: buildEditorialKeywords(input.draft),
+    manhwaTitle: input.draft.manhwaTitle.trim(),
+    manhwaType: input.draft.manhwaType,
+    metaDescription: input.draft.metaDescription,
+    publishedAt: publishable ? publicationDate : null,
+    searchIntent: input.draft.searchIntent,
+    slug,
+    status: publishable ? BlogArticleStatus.published : BlogArticleStatus.draft,
+    title: input.draft.title,
+    uxReview: toPrismaJson(uxReview),
+  } satisfies Prisma.BlogArticleUncheckedCreateInput;
 
-  return await db.blogArticle.create({
-    data: {
-      body: input.draft.body,
-      excerpt: input.draft.excerpt,
-      generatedAt: publicationDate,
-      generationKey,
-      generationModel: buildCodexGenerationModel(input),
-      generationPromptVersion: BLOG_CODEX_PROMPT_VERSION,
-      generationProvider: ProviderType.internal,
-      generationSource: 'codex-cli-cron',
-      heroImageObjectKey: heroImage?.heroImageObjectKey,
-      heroImageUrl: heroImage?.heroImageUrl,
-      imageAlt,
-      imagePrompt,
-      imageReview,
-      keywords: buildBlogSeoKeywords(input.draft.keywords, {
-        type: input.draft.manhwaType,
-      }),
-      manhwaTitle: input.draft.manhwaTitle.trim(),
-      manhwaType: input.draft.manhwaType,
-      metaDescription: input.draft.metaDescription,
-      publishedAt: publishable ? publicationDate : null,
-      searchIntent: input.draft.searchIntent,
-      slug,
-      status: publishable
-        ? BlogArticleStatus.published
-        : BlogArticleStatus.draft,
-      title: input.draft.title,
-      uxReview: toPrismaJson(uxReview),
+  if (
+    input.draft.category !== 'app_updates' ||
+    !shouldAdvanceBlogAppUpdateCheckpoint(data.status)
+  ) {
+    return existingArticle
+      ? await db.blogArticle.update({
+          data,
+          select: codexBlogArticleSelect,
+          where: {
+            id: existingArticle.id,
+          },
+        })
+      : await db.blogArticle.create({
+          data,
+          select: codexBlogArticleSelect,
+        });
+  }
+
+  const appUpdateEvidence = input.draft.appUpdateEvidence;
+
+  return await db.$transaction(
+    async (transaction) => {
+      const article = existingArticle
+        ? await transaction.blogArticle.update({
+            data,
+            select: codexBlogArticleSelect,
+            where: {
+              id: existingArticle.id,
+            },
+          })
+        : await transaction.blogArticle.create({
+            data,
+            select: codexBlogArticleSelect,
+          });
+
+      await advanceBlogAppUpdateCheckpoint(
+        appUpdateEvidence,
+        transaction,
+        publicationDate
+      );
+
+      return article;
     },
-    select: codexBlogArticleSelect,
-  });
+    {
+      isolationLevel: Prisma.TransactionIsolationLevel.Serializable,
+    }
+  );
 }
 
 function buildCodexGenerationModel(input: {
   codexModel?: string | null;
   codexReasoningEffort?: string | null;
 }) {
-  const model = input.codexModel?.trim() || 'gpt-5.3-codex-spark';
+  const model = input.codexModel?.trim() || 'gpt-5.5';
   const reasoningEffort = input.codexReasoningEffort?.trim() || 'xhigh';
 
   return `codex-cli:${model}:${reasoningEffort}`;
@@ -244,12 +348,54 @@ async function getExistingBlogTopics(): Promise<ExistingBlogTopic[]> {
   }));
 }
 
+async function getEditorialCategoryCounts() {
+  const [recommendations, manhwaNews] = await Promise.all([
+    db.blogArticle.count({
+      where: {
+        generationSource: buildGenerationSource('recommendations'),
+      },
+    }),
+    db.blogArticle.count({
+      where: {
+        generationSource: buildGenerationSource('manhwa_news'),
+      },
+    }),
+  ]);
+
+  return {
+    manhwaNews,
+    recommendations,
+  };
+}
+
+async function resolveAppUpdatePromptContext(input: {
+  fetchImpl?: typeof fetch;
+  now: Date;
+}) {
+  try {
+    return await prepareBlogAppUpdatePromptContext({
+      fetchImpl: input.fetchImpl,
+      now: input.now,
+    });
+  } catch (error) {
+    return {
+      kind: 'noop' as const,
+      reason:
+        error instanceof Error
+          ? `GitHub app update discovery is temporarily unavailable: ${error.message}`
+          : 'GitHub app update discovery is temporarily unavailable.',
+    };
+  }
+}
+
 async function resolveTrendingCandidatesForPrompt(
-  existingTopics: ExistingBlogTopic[]
+  existingTopics: ExistingBlogTopic[],
+  fetchImpl?: typeof fetch
 ) {
   try {
     return await resolveTrendingMangaCandidates({
       existingTopics,
+      fetchImpl,
     });
   } catch (error) {
     return {
@@ -268,16 +414,150 @@ async function resolveTrendingCandidatesForPrompt(
   }
 }
 
-async function validateDraftTopicSelection(input: {
+async function validateDraftEvidence(input: {
   draft: CodexBlogArticleDraft;
+  publicationDate: Date;
+}): Promise<Record<string, unknown>> {
+  if (input.draft.category === 'app_updates') {
+    return validateAppUpdateSources(input.draft);
+  }
+
+  if (input.draft.category === 'manhwa_news') {
+    return await validateManhwaNewsSelection(
+      input.draft,
+      input.publicationDate
+    );
+  }
+
+  return await validateRecommendationSelections(input.draft);
+}
+
+async function validateRecommendationSelections(
+  draft: Extract<CodexBlogArticleDraft, { category: 'recommendations' }>
+): Promise<Record<string, unknown>> {
+  const existingTopics = await getExistingBlogTopics();
+  const selections: VerifiedTopicSelection[] = [];
+
+  for (const [index, evidence] of draft.recommendationEvidence.entries()) {
+    const title = draft.featuredTitles[index];
+
+    if (!title) {
+      throw new CodexBlogTopicSelectionError({
+        message: 'A recommendation evidence item has no matching title.',
+      });
+    }
+
+    const candidate = await validateTopicEvidence({
+      evidence,
+      existingTopics,
+      slugBase: draft.slugBase,
+      title,
+    });
+    assertBodyUsesCandidateSource(draft.body.sources, candidate, title);
+    selections.push({ candidate, title });
+  }
+
+  return {
+    category: draft.category,
+    duplicatePolicy: 'all-featured-title-aliases',
+    selections: selections.map((selection) => ({
+      aliases: selection.candidate.aliases,
+      canonicalId: selection.candidate.canonicalId,
+      sourceEvidence: selection.candidate.sourceEvidence,
+      title: selection.title,
+    })),
+    validatedAt: new Date().toISOString(),
+  };
+}
+
+async function validateManhwaNewsSelection(
+  draft: Extract<CodexBlogArticleDraft, { category: 'manhwa_news' }>,
+  publicationDate: Date
+): Promise<Record<string, unknown>> {
+  const existingTopics = await getExistingBlogTopics();
+  const candidate = await validateTopicEvidence({
+    evidence: draft.topicEvidence,
+    existingTopics,
+    slugBase: draft.slugBase,
+    title: draft.manhwaTitle,
+  });
+  assertBodyUsesCandidateSource(
+    draft.body.sources,
+    candidate,
+    draft.manhwaTitle
+  );
+
+  if (
+    !hasRecentNewsSource({
+      body: draft.body,
+      publicationDate,
+    })
+  ) {
+    throw new CodexBlogTopicSelectionError({
+      message:
+        'Manhwa news drafts require at least one dated source from the previous 120 days.',
+    });
+  }
+
+  return {
+    aliases: candidate.aliases,
+    canonicalId: candidate.canonicalId,
+    category: draft.category,
+    sourceEvidence: candidate.sourceEvidence,
+    validatedAt: publicationDate.toISOString(),
+  };
+}
+
+function validateAppUpdateSources(
+  draft: Extract<CodexBlogArticleDraft, { category: 'app_updates' }>
+): Record<string, unknown> {
+  const commitUrls = new Set(
+    draft.appUpdateEvidence.commits.map((commit) => commit.url)
+  );
+  const invalidSource = draft.body.sources.find(
+    (source) => !commitUrls.has(source.url)
+  );
+
+  if (invalidSource) {
+    throw new CodexBlogTopicSelectionError({
+      details: {
+        invalidSource: invalidSource.url,
+      },
+      message:
+        'App update article sources must use only verified GitHub commit URLs.',
+    });
+  }
+
+  return {
+    category: draft.category,
+    commitCount: draft.appUpdateEvidence.commits.length,
+    fromSha: draft.appUpdateEvidence.fromSha,
+    repository: draft.appUpdateEvidence.repository,
+    toSha: draft.appUpdateEvidence.toSha,
+    validatedAt: new Date().toISOString(),
+  };
+}
+
+async function validateTopicEvidence(input: {
+  evidence: {
+    anilistId: number;
+    canonicalId: string;
+    kitsuId: string | null;
+    myAnimeListId: number | null;
+    sourceUrls: string[];
+    titleAliases: string[];
+    type: 'manga' | 'manhua' | 'manhwa';
+  };
   existingTopics: ExistingBlogTopic[];
+  slugBase: string;
+  title: string;
 }): Promise<TrendingMangaCandidate> {
   const duplicate = findDuplicateBlogTopic(
     {
-      aliases: input.draft.topicEvidence.titleAliases,
-      manhwaTitle: input.draft.manhwaTitle,
-      slugBase: input.draft.slugBase,
-      title: input.draft.title,
+      aliases: input.evidence.titleAliases,
+      manhwaTitle: input.title,
+      slugBase: input.slugBase,
+      title: input.title,
     },
     input.existingTopics
   );
@@ -285,116 +565,104 @@ async function validateDraftTopicSelection(input: {
   if (duplicate) {
     throw new CodexBlogDuplicateTopicError({
       duplicate,
-      manhwaTitle: input.draft.manhwaTitle,
+      manhwaTitle: input.title,
     });
   }
 
-  const verifiedCandidate = await validateTrendingMangaSelection({
+  return await validateTrendingMangaSelection({
     claim: {
-      aliases: input.draft.topicEvidence.titleAliases,
-      anilistId: input.draft.topicEvidence.anilistId,
-      canonicalId: input.draft.topicEvidence.canonicalId,
-      kitsuId: input.draft.topicEvidence.kitsuId,
-      malId: input.draft.topicEvidence.myAnimeListId,
-      sourceUrls: input.draft.topicEvidence.sourceUrls,
-      title: input.draft.manhwaTitle,
-      type: input.draft.manhwaType,
+      aliases: input.evidence.titleAliases,
+      anilistId: input.evidence.anilistId,
+      canonicalId: input.evidence.canonicalId,
+      kitsuId: input.evidence.kitsuId,
+      malId: input.evidence.myAnimeListId,
+      sourceUrls: input.evidence.sourceUrls,
+      title: input.title,
+      type: input.evidence.type,
     },
   }).catch((error: unknown) => {
     throw new CodexBlogTopicSelectionError({
       details: {
-        canonicalId: input.draft.topicEvidence.canonicalId,
+        canonicalId: input.evidence.canonicalId,
         reason: error instanceof Error ? error.message : 'Unknown error',
       },
       message:
         'Codex blog draft selected a topic that is not currently verified.',
     });
   });
-  const candidateDuplicate = findDuplicateBlogTopic(
-    {
-      aliases: [
-        ...verifiedCandidate.aliases,
-        ...input.draft.topicEvidence.titleAliases,
-      ],
-      manhwaTitle: input.draft.manhwaTitle,
-      slugBase: input.draft.slugBase,
-      title: input.draft.title,
-    },
-    input.existingTopics
-  );
-
-  if (candidateDuplicate) {
-    throw new CodexBlogDuplicateTopicError({
-      duplicate: candidateDuplicate,
-      manhwaTitle: input.draft.manhwaTitle,
-    });
-  }
-
-  assertDraftSourceNotesUseVerifiedSources({
-    candidate: verifiedCandidate,
-    draft: input.draft,
-  });
-
-  return verifiedCandidate;
 }
 
-function assertDraftSourceNotesUseVerifiedSources(input: {
-  candidate: TrendingMangaCandidate;
-  draft: CodexBlogArticleDraft;
-}) {
+function assertBodyUsesCandidateSource(
+  sources: CodexBlogArticleDraft['body']['sources'],
+  candidate: TrendingMangaCandidate,
+  title: string
+): void {
   const verifiedUrls = new Set(
-    input.candidate.sourceEvidence.map((source) => source.url)
+    candidate.sourceEvidence.map((source) => source.url)
   );
-  const matchingSourceCount = input.draft.sourceNotes.filter((source) =>
+  const hasVerifiedSource = sources.some((source) =>
     verifiedUrls.has(source.url)
-  ).length;
+  );
 
-  if (matchingSourceCount < 2) {
+  if (!hasVerifiedSource) {
     throw new CodexBlogTopicSelectionError({
       details: {
-        canonicalId: input.draft.topicEvidence.canonicalId,
-        sourceNoteUrls: input.draft.sourceNotes.map((source) => source.url),
+        sourceUrls: sources.map((source) => source.url),
+        title,
         verifiedUrls: [...verifiedUrls],
       },
-      message:
-        'Codex blog draft sourceNotes do not include the verified topic sources.',
+      message: 'The article does not cite a verified source for its topic.',
     });
   }
-}
-
-function buildTopicSelectionAudit(input: {
-  candidate: TrendingMangaCandidate;
-  draft: CodexBlogArticleDraft;
-  validatedAt: string;
-}) {
-  return {
-    aliases: input.candidate.aliases,
-    anilistId: input.candidate.anilistId,
-    canonicalId: input.candidate.canonicalId,
-    duplicatePolicy: 'alias-title-slug-canonical-topic',
-    draftEvidence: input.draft.topicEvidence,
-    kitsuId: input.candidate.kitsuId,
-    myAnimeListId: input.candidate.malId,
-    sourceEvidence: input.candidate.sourceEvidence,
-    trendRank: input.candidate.trendRank,
-    trendScore: input.candidate.trendScore,
-    validatedAt: input.validatedAt,
-  };
-}
-
-function toPrismaJson(value: unknown): Prisma.InputJsonValue {
-  return JSON.parse(JSON.stringify(value)) as Prisma.InputJsonValue;
 }
 
 function buildTopicFromDraft(
   draft: CodexBlogArticleDraft
 ): BlogGenerationTopic {
   return {
-    angle: draft.trendRationale,
+    angle: draft.editorialRationale,
     manhwaTitle: draft.manhwaTitle.trim(),
     manhwaType: draft.manhwaType,
     searchIntent: draft.searchIntent,
   };
+}
+
+function buildEditorialHeroImagePrompt(
+  draft: CodexBlogArticleDraft,
+  topic: BlogGenerationTopic
+): string {
+  if (draft.category !== 'app_updates') {
+    return buildBlogTopicHeroImagePrompt(topic);
+  }
+
+  return [
+    'Create an original cinematic manhwa-style hero illustration for a Nayovi application update article.',
+    `Update theme: ${draft.editorialRationale}`,
+    'Show an original reader in a dark modern setting noticing a smoother mobile reading experience.',
+    'Use a 16:9 landscape composition with readable negative space, premium violet-blue lighting, and no copied characters.',
+    'Do not show readable UI, release notes, source code, logos, watermarks, credentials, security details, or fake screenshots.',
+  ].join(' ');
+}
+
+function buildEditorialHeroImageAlt(
+  draft: CodexBlogArticleDraft,
+  topic: BlogGenerationTopic
+): string {
+  return draft.category === 'app_updates'
+    ? `Original illustration for the Nayovi app update: ${draft.title}`
+    : buildBlogTopicHeroImageAlt(topic);
+}
+
+function buildEditorialKeywords(draft: CodexBlogArticleDraft): string[] {
+  if (draft.category !== 'app_updates') {
+    return buildBlogSeoKeywords(draft.keywords, {
+      type: draft.manhwaType,
+    });
+  }
+
+  return [...new Set([...draft.keywords, 'Nayovi update', 'Nayovi Android'])]
+    .filter(Boolean)
+    .slice(0, 12);
 }
 
 async function buildUniqueSlug(slugBase: string, generationDate: string) {
@@ -416,8 +684,37 @@ async function buildUniqueSlug(slugBase: string, generationDate: string) {
   return `${base}-${Date.now().toString(36)}`;
 }
 
-function buildDailyGenerationKey(generationDate: string) {
-  return `daily-blog-${generationDate}`;
+function buildGenerationKey(
+  draft: CodexBlogArticleDraft,
+  generationDate: string
+): string {
+  return draft.category === 'app_updates'
+    ? `codex-blog:app-updates:${draft.appUpdateEvidence.toSha}`
+    : `daily-blog:${draft.category}:${generationDate}`;
+}
+
+function buildGenerationSource(category: BlogArticleCategory): string {
+  return `codex-cli-cron:${category}`;
+}
+
+function mapCodexBlogPublishResult(input: {
+  heroImageUrl: string | null;
+  publishedAt: Date | null;
+  slug: string;
+  status: BlogArticleStatus;
+  title: string;
+}): CodexBlogPublishResult {
+  return {
+    heroImageUrl: input.heroImageUrl,
+    publishedAt: input.publishedAt,
+    slug: input.slug,
+    status: input.status,
+    title: input.title,
+  };
+}
+
+function toPrismaJson(value: unknown): Prisma.InputJsonValue {
+  return JSON.parse(JSON.stringify(value)) as Prisma.InputJsonValue;
 }
 
 function slugify(value: string) {
@@ -429,5 +726,5 @@ function slugify(value: string) {
     .replace(/^-+|-+$/g, '')
     .slice(0, 80);
 
-  return slug || 'nayovi-manhwa-guide';
+  return slug || 'nayovi-editorial';
 }

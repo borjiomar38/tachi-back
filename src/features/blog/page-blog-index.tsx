@@ -11,9 +11,8 @@ import { cn } from '@/lib/tailwind/utils';
 import { Badge } from '@/components/ui/badge';
 import { buttonVariants } from '@/components/ui/button';
 
-import heroBackground from '@/features/auth/layout-login-background.webp';
-import heroCharacter from '@/features/auth/layout-login-character.webp';
 import { BlogArticleCard } from '@/features/blog/blog-article-card';
+import { BlogDefaultHeroVisual } from '@/features/blog/blog-default-hero-visual';
 import {
   BlogArticlePagination,
   BlogArticleSummary,
@@ -31,29 +30,10 @@ const formatBlogCount = new Intl.NumberFormat('en-US');
 export const PageBlogIndex = ({ articles, pagination }: PageBlogIndexProps) => {
   return (
     <PublicShell>
-      <section className="mx-auto w-full max-w-6xl px-4 pt-7 md:pt-10">
-        <div className="public-ink-panel relative isolate overflow-hidden rounded-[1.75rem] border px-5 py-8 text-neutral-50 md:px-8 md:py-10">
-          <img
-            src={heroBackground}
-            alt=""
-            width={1_536}
-            height={1_024}
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            className="absolute inset-0 -z-20 size-full object-cover object-[62%_center] opacity-42"
-          />
-          <div className="absolute inset-0 -z-10 bg-linear-to-r from-neutral-950 via-neutral-950/88 to-neutral-950/45" />
-          <img
-            src={heroCharacter}
-            alt=""
-            width={1_024}
-            height={1_536}
-            loading="lazy"
-            decoding="async"
-            className="animate-float-in-space pointer-events-none absolute right-[-5rem] bottom-[-7rem] hidden w-[min(26rem,42%)] opacity-92 drop-shadow-[0_30px_56px_rgba(0,0,0,0.55)] md:block"
-          />
-          <div className="max-w-3xl space-y-5">
+      <section className="relative isolate min-h-[34rem] w-full overflow-hidden border-y border-white/10 bg-neutral-950 text-neutral-50 md:min-h-[38rem]">
+        <BlogDefaultHeroVisual />
+        <div className="mx-auto flex min-h-[34rem] w-full max-w-6xl items-center px-4 py-10 md:min-h-[38rem] md:py-14">
+          <div className="max-w-3xl space-y-5 lg:max-w-[56%]">
             <Badge
               variant="brand"
               size="lg"
@@ -117,7 +97,10 @@ export const PageBlogIndex = ({ articles, pagination }: PageBlogIndexProps) => {
   );
 };
 
-function BlogPagination(props: { pagination: BlogArticlePagination }) {
+export function BlogPagination(props: {
+  basePath?: string;
+  pagination: BlogArticlePagination;
+}) {
   if (props.pagination.totalPages <= 1) {
     return null;
   }
@@ -143,14 +126,14 @@ function BlogPagination(props: { pagination: BlogArticlePagination }) {
       <div className="flex flex-wrap items-center gap-2">
         <PaginationLink
           disabled={!props.pagination.hasPreviousPage}
-          href={buildBlogPageHref(previousPage)}
+          href={buildBlogPageHref(previousPage, props.basePath)}
         >
           <ChevronLeftIcon className="size-4" />
           Previous
         </PaginationLink>
         <PaginationLink
           disabled={!props.pagination.hasNextPage}
-          href={buildBlogPageHref(nextPage)}
+          href={buildBlogPageHref(nextPage, props.basePath)}
         >
           Next
           <ChevronRightIcon className="size-4" />
@@ -191,6 +174,6 @@ function PaginationLink(props: {
   );
 }
 
-function buildBlogPageHref(page: number) {
-  return page <= 1 ? '/blog' : `/blog?page=${page}`;
+function buildBlogPageHref(page: number, basePath = '/blog') {
+  return page <= 1 ? basePath : `${basePath}?page=${page}`;
 }

@@ -1,5 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import {
+  blogCategoryConfigs,
+  getBlogCategoryPath,
+} from '@/features/blog/category';
 import { fallbackBlogArticleSummary } from '@/features/blog/fallback';
 import { getManhwaSitemapEntries } from '@/features/manhwa/data';
 import { buildPublicAbsoluteUrl } from '@/features/public/head';
@@ -208,6 +212,7 @@ function buildSitemapXml(
 ) {
   const allBlogEntries = mergeBlogEntries([
     {
+      category: null,
       lastModified: fallbackBlogArticleSummary.updatedAt,
       slug: fallbackBlogArticleSummary.slug,
     },
@@ -225,6 +230,7 @@ function buildSitemapXml(
       path: entry.path,
       priority: entry.path.includes('/chapter/') ? '0.75' : '0.85',
     })),
+    ...buildBlogCategorySitemapEntries(allBlogEntries),
     ...allBlogEntries.map((entry) => ({
       changeFrequency: 'monthly' as const,
       lastModified: toSitemapDate(entry.lastModified),
@@ -241,6 +247,34 @@ function buildSitemapXml(
     ),
     '</urlset>',
   ].join('\n');
+}
+
+function buildBlogCategorySitemapEntries(
+  blogEntries: BlogSitemapEntry[]
+): SitemapEntry[] {
+  return blogCategoryConfigs.flatMap((config) => {
+    const categoryEntries = blogEntries.filter(
+      (entry) => entry.category === config.category
+    );
+
+    if (categoryEntries.length === 0) {
+      return [];
+    }
+
+    const lastModified = categoryEntries
+      .map((entry) => entry.lastModified)
+      .sort()
+      .at(-1);
+
+    return [
+      {
+        changeFrequency: 'weekly',
+        lastModified: toSitemapDate(lastModified ?? new Date().toISOString()),
+        path: getBlogCategoryPath(config.category),
+        priority: '0.8',
+      },
+    ];
+  });
 }
 
 function buildStaticSitemapEntries(blogLastModified: string): SitemapEntry[] {

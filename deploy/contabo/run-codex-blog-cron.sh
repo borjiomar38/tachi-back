@@ -70,6 +70,13 @@ if head -n 1 "${prompt_file}" | grep -qx "TACHI_CODEX_BLOG_NOOP"; then
   exit 0
 fi
 
+prompt_category="$(sed -n 's/^Editorial category: //p' "${prompt_file}" | head -n 1)"
+
+if [[ "${codex_search_enabled}" == "false" && "${prompt_category}" != "app_updates" ]]; then
+  echo "BLOG_CODEX_SEARCH_ENABLED must stay enabled for recommendation and manhwa news research." >&2
+  exit 1
+fi
+
 codex_args=(
   exec
   --skip-git-repo-check
@@ -111,14 +118,24 @@ manhwa_title = str(draft.get("manhwaTitle") or "").strip()
 manhwa_type = str(draft.get("manhwaType") or "manhwa").strip()
 search_intent = str(draft.get("searchIntent") or "").strip()
 trend = str(draft.get("trendRationale") or "").strip()
+category = str(draft.get("category") or "recommendations").strip()
+editorial_rationale = str(draft.get("editorialRationale") or trend).strip()
+
+category_requests = {
+    "app_updates": "original cinematic manhwa-style hero illustration for a Nayovi application update article",
+    "manhwa_news": "original cinematic manhwa-style news editorial hero illustration",
+    "recommendations": "original cinematic manhwa-style discovery and recommendation hero illustration",
+}
+primary_request = category_requests.get(category, category_requests["recommendations"])
 
 prompt = "\n".join([
     "Use case: illustration-story",
     "Asset type: Nayovi blog hero image",
-    f"Primary request: original cinematic {manhwa_type}-style blog hero illustration for an article titled {title}.",
+    f"Primary request: {primary_request} for an article titled {title}.",
+    f"Editorial category: {category}",
     f"Topic: {manhwa_title}",
     f"Search intent: {search_intent}",
-    f"Trend context: {trend}",
+    f"Editorial context: {editorial_rationale}",
     "Scene/backdrop: genre-specific manga/manhwa/manhua atmosphere inspired by the topic without copying any official character, logo, costume, panel, symbol, or artwork.",
     "Subject: one original reader-facing hero or heroine, dramatic manga/manhwa energy, strong silhouette, expressive powers or setting cues connected to the article topic.",
     "Composition/framing: 16:9 landscape hero crop, strong focal area on the right, dark readable negative space on the left for article headline overlay, polished social/blog key art.",

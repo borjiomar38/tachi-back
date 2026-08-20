@@ -239,6 +239,13 @@ const envServerBase = createEnv({
     BLOG_GENERATION_ENABLED: z.stringbool().default(true),
     BLOG_GENERATION_PROVIDER: z.enum(['anthropic', 'gemini']).optional(),
     BLOG_GENERATION_MODEL: z.string().optional(),
+    BLOG_GITHUB_BRANCH: z.string().trim().min(1).default('main'),
+    BLOG_GITHUB_REPOSITORY: z
+      .string()
+      .trim()
+      .regex(/^[^/\s]+\/[^/\s]+$/)
+      .default('borjiomar38/tachi-mobile'),
+    BLOG_GITHUB_TOKEN: z.string().trim().min(1).optional(),
     BLOG_IMAGE_GENERATION_ENABLED: z.stringbool().default(true),
     BLOG_IMAGE_PUBLIC_BASE_URL: z.url().optional(),
     MANHWA_CONTEXT_ROOT: z.string().optional(),

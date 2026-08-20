@@ -6,8 +6,12 @@ import { Card, CardContent } from '@/components/ui/card';
 
 import heroBackground from '@/features/auth/layout-login-background.webp';
 import heroCharacter from '@/features/auth/layout-login-character.webp';
+import { getBlogCategoryPath } from '@/features/blog/category';
 import { buildBlogHeroImageVariantUrl } from '@/features/blog/image-variants';
-import { BlogArticleSummary } from '@/features/blog/schema';
+import {
+  blogArticleCategoryLabels,
+  BlogArticleSummary,
+} from '@/features/blog/schema';
 
 interface BlogArticleCardProps {
   article: BlogArticleSummary;
@@ -52,13 +56,29 @@ export const BlogArticleCard = ({ article }: BlogArticleCardProps) => {
             />
           ) : null}
           <div className="absolute inset-x-0 bottom-0 p-4">
-            <Badge
-              variant="brand"
-              size="sm"
-              className="border-white/15 bg-white/10 text-neutral-50"
-            >
-              {article.manhwaType}
-            </Badge>
+            {article.category ? (
+              <a
+                href={getBlogCategoryPath(article.category)}
+                aria-label={`Browse ${blogArticleCategoryLabels[article.category]} articles`}
+                className="inline-flex rounded-full focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              >
+                <Badge
+                  variant="brand"
+                  size="sm"
+                  className="border-white/15 bg-white/10 text-neutral-50 transition hover:bg-white/20"
+                >
+                  {blogArticleCategoryLabels[article.category]}
+                </Badge>
+              </a>
+            ) : (
+              <Badge
+                variant="brand"
+                size="sm"
+                className="border-white/15 bg-white/10 text-neutral-50"
+              >
+                {article.manhwaType}
+              </Badge>
+            )}
           </div>
         </div>
         <div className="space-y-3">

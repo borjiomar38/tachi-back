@@ -9,6 +9,7 @@ import {
   BlogArticleDetail,
   BlogArticlePagination,
   BlogArticleSummaryPage,
+  zBlogArticleCategory,
 } from '@/features/blog/schema';
 import {
   getPublishedBlogArticleBySlug,
@@ -19,6 +20,11 @@ import {
 const publicBlogArticlesPageSize = 14;
 
 const zPublicBlogArticlesInput = z.object({
+  page: z.number().int().min(1).max(10_000).catch(1),
+});
+
+const zPublicBlogCategoryArticlesInput = z.object({
+  category: zBlogArticleCategory,
   page: z.number().int().min(1).max(10_000).catch(1),
 });
 
@@ -37,6 +43,40 @@ export const getPublicBlogArticlePage = createServerFn({ method: 'GET' })
     async ({ data }): Promise<BlogArticleSummaryPage> =>
       await loadPublicBlogArticlePage(data.page)
   );
+
+export const getPublicBlogCategoryArticlePage = createServerFn({
+  method: 'GET',
+})
+  .inputValidator(zPublicBlogCategoryArticlesInput)
+  .handler(async ({ data }): Promise<BlogArticleSummaryPage> => {
+    try {
+      const totalItems = await getPublishedBlogArticleSummaryCount({
+        category: data.category,
+      });
+      const pagination = buildBlogArticlePagination({
+        page: data.page,
+        pageSize: publicBlogArticlesPageSize,
+        totalItems,
+      });
+      const articles = await getPublishedBlogArticleSummaries({
+        category: data.category,
+        skip: (pagination.page - 1) * pagination.pageSize,
+        take: pagination.pageSize,
+      });
+
+      return { articles, pagination };
+    } catch (error) {
+      console.error('Failed to load public blog category articles', error);
+      return {
+        articles: [],
+        pagination: buildBlogArticlePagination({
+          page: 1,
+          pageSize: publicBlogArticlesPageSize,
+          totalItems: 0,
+        }),
+      };
+    }
+  });
 
 async function loadPublicBlogArticlePage(
   requestedPage: number

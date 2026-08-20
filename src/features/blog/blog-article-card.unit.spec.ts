@@ -6,6 +6,7 @@ import { BlogArticleCard } from '@/features/blog/blog-article-card';
 import { BlogArticleSummary } from '@/features/blog/schema';
 
 const article: BlogArticleSummary = {
+  category: null,
   excerpt: 'A practical translation guide for Android readers.',
   heroImageUrl: '/api/blog/heroes/solo-leveling-guide',
   imageAlt: 'Solo Leveling translation guide',
@@ -37,5 +38,16 @@ describe('BlogArticleCard image delivery', () => {
     expect(html).toContain('loading="lazy"');
     expect(html).toContain('decoding="async"');
     expect(html).not.toContain('rel="preload"');
+  });
+
+  it('links editorial category badges to their dedicated archive', () => {
+    const html = renderToStaticMarkup(
+      createElement(BlogArticleCard, {
+        article: { ...article, category: 'manhwa_news' },
+      })
+    );
+
+    expect(html).toContain('href="/blog/category/manhwa-news"');
+    expect(html).toContain('Browse Manhwa news articles');
   });
 });

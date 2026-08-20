@@ -3,6 +3,7 @@ import sharp from 'sharp';
 import {
   BlogAgentReview,
   BlogArticleBody,
+  isEditorialBlogArticleBody,
   zBlogAgentReview,
 } from '@/features/blog/schema';
 import { BlogGenerationTopic } from '@/server/blog/topics';
@@ -204,13 +205,13 @@ export function runArticleUxReviewAgent(input: {
   metaDescription: string;
   title: string;
 }): BlogAgentReview {
+  const simpleEditorialStructure = isEditorialBlogArticleBody(input.body);
   const checks = [
     {
-      note: 'Article uses the fixed introduction, section, reading profile, CTA, FAQ, and disclaimer structure.',
-      passed:
-        input.body.sections.length >= 3 &&
-        input.body.faqs.length >= 3 &&
-        Boolean(input.body.downloadCallout.title),
+      note: simpleEditorialStructure
+        ? 'Future article uses a simple introduction, two to four prose sections, an optional topic-specific FAQ, sources, one CTA, and a disclaimer.'
+        : 'Legacy article keeps its original introduction, section, reading profile, CTA, FAQ, and disclaimer structure.',
+      passed: hasValidArticleStructure(input.body),
     },
     {
       note: 'Download CTA is consistent across generated articles.',
@@ -238,6 +239,24 @@ export function runArticleUxReviewAgent(input: {
   ];
 
   return buildReview(checks);
+}
+
+function hasValidArticleStructure(body: BlogArticleBody): boolean {
+  if (isEditorialBlogArticleBody(body)) {
+    return (
+      body.sections.length >= 2 &&
+      body.sections.length <= 4 &&
+      body.faqs.length <= 2 &&
+      body.sources.length >= 1 &&
+      Boolean(body.downloadCallout.title)
+    );
+  }
+
+  return (
+    body.sections.length >= 3 &&
+    body.faqs.length >= 3 &&
+    Boolean(body.downloadCallout.title)
+  );
 }
 
 function buildReview(

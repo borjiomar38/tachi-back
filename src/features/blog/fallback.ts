@@ -2,6 +2,7 @@ import { BlogArticleDetail, BlogArticleSummary } from '@/features/blog/schema';
 import { buildBlogSeoKeywords } from '@/features/blog/seo';
 
 export const fallbackBlogArticle: BlogArticleDetail = {
+  category: null,
   body: {
     disclaimer:
       'Nayovi does not host manga, manhwa, or manhua chapters. Use the app only with content you own, content in the public domain, or content you have permission to process, and respect official releases and rights holders.',
@@ -117,6 +118,7 @@ export const fallbackBlogArticle: BlogArticleDetail = {
 };
 
 export const fallbackBlogArticleSummary: BlogArticleSummary = {
+  category: fallbackBlogArticle.category,
   excerpt: fallbackBlogArticle.excerpt,
   heroImageUrl: fallbackBlogArticle.heroImageUrl,
   imageAlt: fallbackBlogArticle.imageAlt,

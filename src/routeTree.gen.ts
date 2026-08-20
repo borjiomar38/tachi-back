@@ -67,6 +67,7 @@ import { Route as ManagerAccountIndexRouteImport } from './routes/manager/accoun
 import { Route as LoginVerifyIndexRouteImport } from './routes/login/verify.index'
 import { Route as LoginErrorIndexRouteImport } from './routes/login/error.index'
 import { Route as AppAccountIndexRouteImport } from './routes/app/account.index'
+import { Route as BlogCategoryCategoryRouteImport } from './routes/blog/category/$category'
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
 import { Route as ApiRestSplatRouteImport } from './routes/api/rest.$'
 import { Route as ApiPaymentsWebhookRouteImport } from './routes/api/payments/webhook'
@@ -434,6 +435,11 @@ const AppAccountIndexRoute = AppAccountIndexRouteImport.update({
   id: '/account/',
   path: '/account/',
   getParentRoute: () => AppRouteRoute,
+} as any)
+const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
+  id: '/blog/category/$category',
+  path: '/blog/category/$category',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
   id: '/api/rpc/$',
@@ -853,6 +859,7 @@ export interface FileRoutesByFullPath {
   '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
+  '/blog/category/$category': typeof BlogCategoryCategoryRoute
   '/app/account/': typeof AppAccountIndexRoute
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
@@ -974,6 +981,7 @@ export interface FileRoutesByTo {
   '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
+  '/blog/category/$category': typeof BlogCategoryCategoryRoute
   '/app/account': typeof AppAccountIndexRoute
   '/login/error': typeof LoginErrorIndexRoute
   '/login/verify': typeof LoginVerifyIndexRoute
@@ -1100,6 +1108,7 @@ export interface FileRoutesById {
   '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
+  '/blog/category/$category': typeof BlogCategoryCategoryRoute
   '/app/account/': typeof AppAccountIndexRoute
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
@@ -1227,6 +1236,7 @@ export interface FileRouteTypes {
     | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
+    | '/blog/category/$category'
     | '/app/account/'
     | '/login/error/'
     | '/login/verify/'
@@ -1348,6 +1358,7 @@ export interface FileRouteTypes {
     | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
+    | '/blog/category/$category'
     | '/app/account'
     | '/login/error'
     | '/login/verify'
@@ -1473,6 +1484,7 @@ export interface FileRouteTypes {
     | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
+    | '/blog/category/$category'
     | '/app/account/'
     | '/login/error/'
     | '/login/verify/'
@@ -1596,6 +1608,7 @@ export interface RootRouteChildren {
   ApiPaymentsWebhookRoute: typeof ApiPaymentsWebhookRoute
   ApiRestSplatRoute: typeof ApiRestSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
+  BlogCategoryCategoryRoute: typeof BlogCategoryCategoryRoute
   ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
   ApiManhwaSlugPosterRoute: typeof ApiManhwaSlugPosterRoute
@@ -2028,6 +2041,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/app/account/'
       preLoaderRoute: typeof AppAccountIndexRouteImport
       parentRoute: typeof AppRouteRoute
+    }
+    '/blog/category/$category': {
+      id: '/blog/category/$category'
+      path: '/blog/category/$category'
+      fullPath: '/blog/category/$category'
+      preLoaderRoute: typeof BlogCategoryCategoryRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/rpc/$': {
       id: '/api/rpc/$'
@@ -2748,6 +2768,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPaymentsWebhookRoute: ApiPaymentsWebhookRoute,
   ApiRestSplatRoute: ApiRestSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
+  BlogCategoryCategoryRoute: BlogCategoryCategoryRoute,
   ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
   ApiManhwaSlugPosterRoute: ApiManhwaSlugPosterRoute,

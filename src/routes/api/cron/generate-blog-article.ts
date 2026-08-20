@@ -1,13 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { envServer } from '@/env/server';
-import { generateDailyBlogArticle } from '@/server/blog/service';
 import {
   buildApiErrorResponse,
-  buildApiOkResponse,
   buildHttpRequestContext,
 } from '@/server/http/route-utils';
-import { logger } from '@/server/logger';
 
 export const Route = createFileRoute('/api/cron/generate-blog-article')({
   server: {
@@ -27,33 +24,14 @@ export const Route = createFileRoute('/api/cron/generate-blog-article')({
           });
         }
 
-        try {
-          const article = await generateDailyBlogArticle();
-
-          return buildApiOkResponse(
-            {
-              publishedAt: article.publishedAt,
-              slug: article.slug,
-              title: article.title,
-            },
-            {
-              requestId: context.requestId,
-            }
-          );
-        } catch (error) {
-          logger.error({
-            errorMessage:
-              error instanceof Error ? error.message : 'Unknown error',
-            requestId: context.requestId,
-            scope: 'blog-cron',
-          });
-
-          return buildApiErrorResponse({
-            code: 'blog_generation_failed',
-            requestId: context.requestId,
-            status: 500,
-          });
-        }
+        return buildApiErrorResponse({
+          code: 'legacy_blog_generator_disabled',
+          details: {
+            replacement: '/api/cron/generate-codex-blog-prompt',
+          },
+          requestId: context.requestId,
+          status: 410,
+        });
       },
     },
   },
