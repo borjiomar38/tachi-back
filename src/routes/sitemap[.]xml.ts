@@ -91,11 +91,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.8',
   },
   '/guides/mihon-nayovi-setup': {
-    lastModified: '2026-07-31',
-    priority: '0.8',
-  },
-  '/guides/mihon-tachiyomiat-setup': {
-    lastModified: '2026-07-31',
+    lastModified: '2026-08-23',
     priority: '0.8',
   },
   '/guides/permission-safe-manga-translation-pilot': {
@@ -151,7 +147,6 @@ const staticSitemapPathOrder = [
   '/support',
   '/media-kit',
   '/guides/mihon-nayovi-setup',
-  '/guides/mihon-tachiyomiat-setup',
   '/guides/translation-support-workflow',
   '/guides/comic-ocr-translation-checklist',
   '/guides/permission-safe-manga-translation-pilot',

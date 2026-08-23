@@ -22,6 +22,9 @@ export const publicSeoRedirectRouteRules = {
   '/download-tachiyomiat': {
     redirect: { status: 301, to: '/download' },
   },
+  '/guides/mihon-tachiyomiat-setup': {
+    redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
+  },
   '/manhwa/the-eclipse-crown/chapter/1': {
     redirect: { status: 302, to: '/manhwa/the-eclipse-crown' },
   },
@@ -38,10 +41,10 @@ export const publicSeoRedirectRouteRules = {
     },
   },
   '/tachiyomi': {
-    redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },
+    redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
   },
   '/tachiyomi-at': {
-    redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },
+    redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
   },
   '/tachiyomi-back-hero.svg': {
     redirect: { status: 301, to: '/nayovi-hero.svg' },
@@ -50,7 +53,7 @@ export const publicSeoRedirectRouteRules = {
     redirect: { status: 301, to: '/download' },
   },
   '/tachiyomiat': {
-    redirect: { status: 301, to: '/guides/mihon-tachiyomiat-setup' },
+    redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
   },
   '/tachiyomiat-download': {
     redirect: { status: 301, to: '/download' },

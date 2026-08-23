@@ -24,7 +24,7 @@ import { androidApkDownload } from "@/features/public/download-assets";
 const primaryLinks = [
   { href: "/how-it-works", label: "How it works" },
   { href: "/pricing", label: "Plans" },
-  { href: "/guides/mihon-tachiyomiat-setup", label: "Guides" },
+  { href: "/guides/mihon-nayovi-setup", label: "Guides" },
   { href: "/blog", label: "Blog" },
   { href: "/#faq", label: "FAQ" },
 ] as const;
@@ -178,13 +178,7 @@ export const PublicShell = (props: {
                         href="/guides/mihon-nayovi-setup"
                         className="hover:text-foreground"
                       >
-                        Mihon setup guide
-                      </a>
-                      <a
-                        href="/guides/mihon-tachiyomiat-setup"
-                        className="hover:text-foreground"
-                      >
-                        TachiyomiAT setup guide
+                        Mihon &amp; TachiyomiAT setup guide
                       </a>
                     </>
                   ) : null}

@@ -34,7 +34,6 @@ import { Route as LegalOfficialSourcesTakedownRouteImport } from './routes/legal
 import { Route as GuidesTranslationSupportWorkflowRouteImport } from './routes/guides/translation-support-workflow'
 import { Route as GuidesTestAiManhwaTranslationApprovedSamplesRouteImport } from './routes/guides/test-ai-manhwa-translation-approved-samples'
 import { Route as GuidesPermissionSafeMangaTranslationPilotRouteImport } from './routes/guides/permission-safe-manga-translation-pilot'
-import { Route as GuidesMihonTachiyomiatSetupRouteImport } from './routes/guides/mihon-tachiyomiat-setup'
 import { Route as GuidesMihonNayoviSetupRouteImport } from './routes/guides/mihon-nayovi-setup'
 import { Route as GuidesManhwaOcrGlossaryChecklistRouteImport } from './routes/guides/manhwa-ocr-glossary-checklist'
 import { Route as GuidesFreeTrialVsPaidTokenPlanRouteImport } from './routes/guides/free-trial-vs-paid-token-plan'
@@ -261,12 +260,6 @@ const GuidesPermissionSafeMangaTranslationPilotRoute =
   GuidesPermissionSafeMangaTranslationPilotRouteImport.update({
     id: '/guides/permission-safe-manga-translation-pilot',
     path: '/guides/permission-safe-manga-translation-pilot',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const GuidesMihonTachiyomiatSetupRoute =
-  GuidesMihonTachiyomiatSetupRouteImport.update({
-    id: '/guides/mihon-tachiyomiat-setup',
-    path: '/guides/mihon-tachiyomiat-setup',
     getParentRoute: () => rootRouteImport,
   } as any)
 const GuidesMihonNayoviSetupRoute = GuidesMihonNayoviSetupRouteImport.update({
@@ -827,7 +820,6 @@ export interface FileRoutesByFullPath {
   '/guides/free-trial-vs-paid-token-plan': typeof GuidesFreeTrialVsPaidTokenPlanRoute
   '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
-  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
   '/guides/test-ai-manhwa-translation-approved-samples': typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
@@ -949,7 +941,6 @@ export interface FileRoutesByTo {
   '/guides/free-trial-vs-paid-token-plan': typeof GuidesFreeTrialVsPaidTokenPlanRoute
   '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
-  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
   '/guides/test-ai-manhwa-translation-approved-samples': typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
@@ -1076,7 +1067,6 @@ export interface FileRoutesById {
   '/guides/free-trial-vs-paid-token-plan': typeof GuidesFreeTrialVsPaidTokenPlanRoute
   '/guides/manhwa-ocr-glossary-checklist': typeof GuidesManhwaOcrGlossaryChecklistRoute
   '/guides/mihon-nayovi-setup': typeof GuidesMihonNayoviSetupRoute
-  '/guides/mihon-tachiyomiat-setup': typeof GuidesMihonTachiyomiatSetupRoute
   '/guides/permission-safe-manga-translation-pilot': typeof GuidesPermissionSafeMangaTranslationPilotRoute
   '/guides/test-ai-manhwa-translation-approved-samples': typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   '/guides/translation-support-workflow': typeof GuidesTranslationSupportWorkflowRoute
@@ -1204,7 +1194,6 @@ export interface FileRouteTypes {
     | '/guides/free-trial-vs-paid-token-plan'
     | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/mihon-nayovi-setup'
-    | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
     | '/guides/test-ai-manhwa-translation-approved-samples'
     | '/guides/translation-support-workflow'
@@ -1326,7 +1315,6 @@ export interface FileRouteTypes {
     | '/guides/free-trial-vs-paid-token-plan'
     | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/mihon-nayovi-setup'
-    | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
     | '/guides/test-ai-manhwa-translation-approved-samples'
     | '/guides/translation-support-workflow'
@@ -1452,7 +1440,6 @@ export interface FileRouteTypes {
     | '/guides/free-trial-vs-paid-token-plan'
     | '/guides/manhwa-ocr-glossary-checklist'
     | '/guides/mihon-nayovi-setup'
-    | '/guides/mihon-tachiyomiat-setup'
     | '/guides/permission-safe-manga-translation-pilot'
     | '/guides/test-ai-manhwa-translation-approved-samples'
     | '/guides/translation-support-workflow'
@@ -1579,7 +1566,6 @@ export interface RootRouteChildren {
   GuidesFreeTrialVsPaidTokenPlanRoute: typeof GuidesFreeTrialVsPaidTokenPlanRoute
   GuidesManhwaOcrGlossaryChecklistRoute: typeof GuidesManhwaOcrGlossaryChecklistRoute
   GuidesMihonNayoviSetupRoute: typeof GuidesMihonNayoviSetupRoute
-  GuidesMihonTachiyomiatSetupRoute: typeof GuidesMihonTachiyomiatSetupRoute
   GuidesPermissionSafeMangaTranslationPilotRoute: typeof GuidesPermissionSafeMangaTranslationPilotRoute
   GuidesTestAiManhwaTranslationApprovedSamplesRoute: typeof GuidesTestAiManhwaTranslationApprovedSamplesRoute
   GuidesTranslationSupportWorkflowRoute: typeof GuidesTranslationSupportWorkflowRoute
@@ -1809,13 +1795,6 @@ declare module '@tanstack/react-router' {
       path: '/guides/permission-safe-manga-translation-pilot'
       fullPath: '/guides/permission-safe-manga-translation-pilot'
       preLoaderRoute: typeof GuidesPermissionSafeMangaTranslationPilotRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/guides/mihon-tachiyomiat-setup': {
-      id: '/guides/mihon-tachiyomiat-setup'
-      path: '/guides/mihon-tachiyomiat-setup'
-      fullPath: '/guides/mihon-tachiyomiat-setup'
-      preLoaderRoute: typeof GuidesMihonTachiyomiatSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/guides/mihon-nayovi-setup': {
@@ -2735,7 +2714,6 @@ const rootRouteChildren: RootRouteChildren = {
   GuidesFreeTrialVsPaidTokenPlanRoute: GuidesFreeTrialVsPaidTokenPlanRoute,
   GuidesManhwaOcrGlossaryChecklistRoute: GuidesManhwaOcrGlossaryChecklistRoute,
   GuidesMihonNayoviSetupRoute: GuidesMihonNayoviSetupRoute,
-  GuidesMihonTachiyomiatSetupRoute: GuidesMihonTachiyomiatSetupRoute,
   GuidesPermissionSafeMangaTranslationPilotRoute:
     GuidesPermissionSafeMangaTranslationPilotRoute,
   GuidesTestAiManhwaTranslationApprovedSamplesRoute:

@@ -23,6 +23,20 @@ describe('public SEO redirect policy', () => {
     ).toEqual({
       redirect: { status: 301, to: '/og/nayovi-social-preview.jpg' },
     });
+    expect(
+      publicSeoRedirectRouteRules['/guides/mihon-tachiyomiat-setup']
+    ).toEqual({
+      redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
+    });
+    expect(publicSeoRedirectRouteRules['/tachiyomi']).toEqual({
+      redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
+    });
+    expect(publicSeoRedirectRouteRules['/tachiyomi-at']).toEqual({
+      redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
+    });
+    expect(publicSeoRedirectRouteRules['/tachiyomiat']).toEqual({
+      redirect: { status: 301, to: '/guides/mihon-nayovi-setup' },
+    });
   });
 
   it('uses a temporary redirect while the original manhwa chapter is rebuilt', () => {

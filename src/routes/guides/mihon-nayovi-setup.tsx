@@ -84,8 +84,8 @@ export const Route = createFileRoute('/guides/mihon-nayovi-setup')({
   component: RouteComponent,
   head: () =>
     buildPublicPageHead(
-      'Mihon, TachiyomiAT and Nayovi AI Translator Setup',
-      'Set up Nayovi for Mihon, Tachiyomi, and TachiyomiAT-style Android reading workflows with manga translate ai, manhwa translate ai, hosted OCR, redeem-code activation, official install guidance, and permission-safe content boundaries.',
+      'Mihon & TachiyomiAT Setup Guide',
+      'Set up Nayovi for Mihon and TachiyomiAT-style Android reading with the official APK, hosted OCR, AI translation, activation, and support steps.',
       '/guides/mihon-nayovi-setup',
       {
         keywords: [
@@ -99,6 +99,7 @@ export const Route = createFileRoute('/guides/mihon-nayovi-setup')({
           'free manga ai translator setup',
         ],
         structuredDataGraph: setupStructuredData(),
+        titleSuffix: 'Nayovi',
       }
     ),
 });
