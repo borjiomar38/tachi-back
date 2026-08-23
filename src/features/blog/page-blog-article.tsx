@@ -16,8 +16,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { BlogDefaultHeroVisual } from '@/features/blog/blog-default-hero-visual';
 import { BlogEditorialArticle } from '@/features/blog/blog-editorial-article';
 import { BlogProfileLine } from '@/features/blog/blog-profile-line';
+import { getBlogCategoryPath } from '@/features/blog/category';
 import { buildBlogHeroImageVariantUrl } from '@/features/blog/image-variants';
 import {
+  blogArticleCategoryLabels,
   BlogArticleDetail,
   isEditorialBlogArticleBody,
 } from '@/features/blog/schema';
@@ -78,13 +80,29 @@ export const PageBlogArticle = ({ article }: PageBlogArticleProps) => {
                 Blog
               </a>
               <div className="flex flex-wrap gap-2">
-                <Badge
-                  variant="brand"
-                  size="lg"
-                  className="border-white/15 bg-white/10 text-neutral-50"
-                >
-                  {article.manhwaType}
-                </Badge>
+                {article.category ? (
+                  <a
+                    href={getBlogCategoryPath(article.category)}
+                    aria-label={`Browse ${blogArticleCategoryLabels[article.category]} articles`}
+                    className="inline-flex rounded-full focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+                  >
+                    <Badge
+                      variant="brand"
+                      size="lg"
+                      className="border-white/15 bg-white/10 text-neutral-50 transition hover:bg-white/20"
+                    >
+                      {blogArticleCategoryLabels[article.category]}
+                    </Badge>
+                  </a>
+                ) : (
+                  <Badge
+                    variant="brand"
+                    size="lg"
+                    className="border-white/15 bg-white/10 text-neutral-50"
+                  >
+                    {article.manhwaType}
+                  </Badge>
+                )}
                 <Badge
                   variant="secondary"
                   size="lg"

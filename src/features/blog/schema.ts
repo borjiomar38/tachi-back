@@ -28,6 +28,7 @@ export const zBlogArticleFaq = z.object({
 });
 
 export const zLegacyBlogArticleBody = z.object({
+  category: zBlogArticleCategory.optional(),
   disclaimer: z.string().min(40).max(520),
   downloadCallout: z.object({
     body: z.string().min(40).max(420),
@@ -139,3 +140,7 @@ export type LegacyBlogArticleBody = z.infer<typeof zLegacyBlogArticleBody>;
 export const isEditorialBlogArticleBody = (
   body: BlogArticleBody
 ): body is EditorialBlogArticleBody => 'version' in body && body.version === 2;
+
+export const getBlogArticleBodyCategory = (
+  body: BlogArticleBody
+): BlogArticleCategory | null => body.category ?? null;

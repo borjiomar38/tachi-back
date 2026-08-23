@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -8,6 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
+import { openAnalyticsPreferences } from '@/features/analytics/consent';
 import { legalEffectiveDate } from '@/features/public/data';
 import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
@@ -121,6 +123,34 @@ export const PageLegalPrivacy = () => {
                 chapter titles, source URLs, page images, translated text, email
                 addresses, or activation codes.
               </p>
+            </>
+          ),
+        },
+        {
+          title: 'Optional website analytics',
+          children: (
+            <>
+              <p>
+                Where prior consent is required, Google Analytics is disabled
+                until you choose Accept all. You can open these preferences at
+                any time. If you choose Only necessary, Nayovi does not load the
+                Google tag and sends no website analytics data to Google.
+              </p>
+              <p>
+                If you accept, Google Analytics can process the page URL,
+                referrer, general browser and device information, and website
+                interactions such as page views, scrolling, and outbound
+                clicks. We do not intentionally send uploaded pages,
+                translated text, email addresses, activation codes, or payment
+                details to Google Analytics.
+              </p>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={openAnalyticsPreferences}
+              >
+                Change analytics preference
+              </Button>
             </>
           ),
         },

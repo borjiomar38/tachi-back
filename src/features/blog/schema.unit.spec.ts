@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  getBlogArticleBodyCategory,
   isEditorialBlogArticleBody,
   zBlogArticleBody,
 } from '@/features/blog/schema';
@@ -63,6 +64,18 @@ describe('blog article body compatibility', () => {
     const parsed = zBlogArticleBody.parse(legacyBody);
 
     expect(isEditorialBlogArticleBody(parsed)).toBe(false);
+    expect(getBlogArticleBodyCategory(parsed)).toBeNull();
+    expect(parsed.faqs).toHaveLength(3);
+  });
+
+  it('keeps an editorial category on a legacy article without changing its layout', () => {
+    const parsed = zBlogArticleBody.parse({
+      ...legacyBody,
+      category: 'recommendations',
+    });
+
+    expect(isEditorialBlogArticleBody(parsed)).toBe(false);
+    expect(getBlogArticleBodyCategory(parsed)).toBe('recommendations');
     expect(parsed.faqs).toHaveLength(3);
   });
 });

@@ -20,6 +20,7 @@ import { AVAILABLE_LANGUAGES } from '@/lib/i18n/constants';
 import { PageError } from '@/components/errors/page-error';
 
 import { MailDevDevtoolPanel } from '@/devtools/maildev';
+import { AnalyticsConsentManager } from '@/features/analytics/analytics-consent';
 import { EnvHint } from '@/features/devtools/env-hint';
 import { Providers } from '@/providers';
 import { getUserLanguage } from '@/server/utils';
@@ -171,6 +172,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       </head>
       <body className="flex min-h-dvh flex-col">
         {children}
+        <AnalyticsConsentManager />
         <EnvHint />
         <Scripts />
       </body>

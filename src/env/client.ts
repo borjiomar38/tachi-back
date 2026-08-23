@@ -42,6 +42,10 @@ export const envClient = createEnv({
       .string()
       .optional()
       .transform((value) => value ?? (isDev ? 'gold' : 'plum')),
+    VITE_GOOGLE_ANALYTICS_ID: z
+      .string()
+      .regex(/^G-[A-Z0-9]+$/)
+      .optional(),
     VITE_LEMONSQUEEZY_STORE_URL: z.string().optional(),
     VITE_S3_BUCKET_PUBLIC_URL: z.url(),
   },

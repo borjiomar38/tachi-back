@@ -4,7 +4,7 @@ import {
   BlogArticleCategory,
   BlogArticleDetail,
   BlogArticleSummary,
-  isEditorialBlogArticleBody,
+  getBlogArticleBodyCategory,
   zBlogAgentReview,
   zBlogArticleBody,
 } from '@/features/blog/schema';
@@ -462,10 +462,7 @@ function mapBlogArticleSummaryRow(
 ): BlogArticleSummary {
   const publishedAt = row.publishedAt ?? row.updatedAt;
   const body = zBlogArticleBody.safeParse(row.body);
-  const category =
-    body.success && isEditorialBlogArticleBody(body.data)
-      ? body.data.category
-      : null;
+  const category = body.success ? getBlogArticleBodyCategory(body.data) : null;
 
   return {
     category,
@@ -503,10 +500,7 @@ function mapBlogArticleDetailRow(row: BlogArticleDetailRow): BlogArticleDetail {
 function mapBlogSitemapEntryRow(row: BlogSitemapEntryRow): BlogSitemapEntry {
   const lastModified = row.updatedAt ?? row.publishedAt ?? new Date();
   const body = zBlogArticleBody.safeParse(row.body);
-  const category =
-    body.success && isEditorialBlogArticleBody(body.data)
-      ? body.data.category
-      : null;
+  const category = body.success ? getBlogArticleBodyCategory(body.data) : null;
 
   return {
     category,

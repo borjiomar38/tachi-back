@@ -190,7 +190,7 @@ export const supportFaqs: ContentBlock[] = [
   },
 ];
 
-export const legalEffectiveDate = "July 31, 2026";
+export const legalEffectiveDate = "August 23, 2026";
 
 export const formatTokenCount = (value: number) =>
   new Intl.NumberFormat("en-US").format(value);
