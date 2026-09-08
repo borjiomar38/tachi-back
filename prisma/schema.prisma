@@ -68,6 +68,13 @@ enum WebhookEventStatus {
   failed
 }
 
+enum MobileCheckoutStatus {
+  pending
+  paid
+  canceled
+  expired
+}
+
 enum TokenLedgerEntryType {
   purchase_credit
   manual_credit
@@ -307,6 +314,7 @@ model License {
   freeTrialClaim        FreeTrialClaim?
   freeTrialVerification FreeTrialVerification?
   ratingFeedback        TranslationRatingFeedback[]
+  mobileCheckoutIntents MobileCheckoutIntent[]
 
   @@index([status, createdAt])
   @@index([ownerEmail])
@@ -337,6 +345,7 @@ model Device {
   mangaVisits       DeviceMangaVisit[]
   extensionVisits   DeviceExtensionVisit[]
   funnelEvents      FunnelEvent[]
+  checkoutIntents   MobileCheckoutIntent[]
 
   @@index([status, lastSeenAt])
   @@map("devices")
@@ -673,7 +682,8 @@ model TokenPack {
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
-  orders Order[]
+  orders                Order[]
+  mobileCheckoutIntents MobileCheckoutIntent[]
 
   @@index([active, sortOrder])
   @@map("token_packs")
@@ -701,11 +711,12 @@ model Order {
   createdAt           DateTime        @default(now())
   updatedAt           DateTime        @updatedAt
 
-  tokenPack     TokenPack?     @relation(fields: [tokenPackId], references: [id], onDelete: SetNull)
-  license       License?       @relation(fields: [licenseId], references: [id], onDelete: SetNull)
-  redeemCodes   RedeemCode[]
-  ledgerEntries TokenLedger[]
-  webhookEvents WebhookEvent[]
+  tokenPack            TokenPack?            @relation(fields: [tokenPackId], references: [id], onDelete: SetNull)
+  license              License?              @relation(fields: [licenseId], references: [id], onDelete: SetNull)
+  redeemCodes          RedeemCode[]
+  ledgerEntries        TokenLedger[]
+  webhookEvents        WebhookEvent[]
+  mobileCheckoutIntent MobileCheckoutIntent?
 
   @@index([status, createdAt])
   @@index([payerEmail])
@@ -713,6 +724,35 @@ model Order {
   @@index([licenseId])
   @@index([lsSubscriptionId])
   @@map("orders")
+}
+
+model MobileCheckoutIntent {
+  id                  String               @id @default(cuid())
+  tokenHash           String               @unique
+  deviceId            String
+  licenseId           String?
+  tokenPackId         String
+  initiatingSessionId String?
+  orderId             String?              @unique
+  lsCheckoutId        String?              @unique
+  payerEmail          String?
+  status              MobileCheckoutStatus @default(pending)
+  expiresAt           DateTime
+  paidAt              DateTime?
+  lastClaimedAt       DateTime?
+  claimCount          Int                  @default(0)
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+
+  device    Device    @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  license   License?  @relation(fields: [licenseId], references: [id], onDelete: SetNull)
+  tokenPack TokenPack @relation(fields: [tokenPackId], references: [id], onDelete: Restrict)
+  order     Order?    @relation(fields: [orderId], references: [id], onDelete: SetNull)
+
+  @@index([deviceId, status, createdAt])
+  @@index([licenseId, status, createdAt])
+  @@index([tokenPackId, status, createdAt])
+  @@map("mobile_checkout_intents")
 }
 
 model WebhookEvent {
@@ -956,7 +996,7 @@ model ContactMessage {
   createdAt        DateTime             @default(now())
   updatedAt        DateTime             @updatedAt
 
-  assignedToUser User? @relation("ContactMessageAssignedToUser", fields: [assignedToUserId], references: [id], onDelete: SetNull)
+  assignedToUser       User?                        @relation("ContactMessageAssignedToUser", fields: [assignedToUserId], references: [id], onDelete: SetNull)
   conversationMessages ContactConversationMessage[]
 
   @@index([status, createdAt])

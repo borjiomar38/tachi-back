@@ -30,7 +30,10 @@ export const zCreateCheckoutInput = z.object({
   payerEmail: z.string().trim().email().max(320),
 });
 
-export type CreateCheckoutInput = z.infer<typeof zCreateCheckoutInput>;
+export type CreateCheckoutInput = {
+  payerEmail?: string | null;
+  tokenPackKey: string;
+};
 
 export type CheckoutErrorCode =
   | 'checkout_unavailable'
@@ -95,6 +98,10 @@ export async function createLemonSqueezyCheckout(
     log?: Pick<typeof logger, 'info'>;
     allowTestMode?: boolean;
     lsEnabled?: boolean;
+    mobileCheckout?: {
+      intentId: string;
+      returnToken: string;
+    };
   } = {}
 ) {
   const lsEnabled = deps.lsEnabled ?? envServer.LEMONSQUEEZY_ENABLED;
@@ -155,18 +162,25 @@ export async function createLemonSqueezyCheckout(
   const allowTestMode = deps.allowTestMode ?? !isProduction;
   const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
 
-  const successUrl = new URL('/checkout/success', baseUrl);
-  successUrl.searchParams.set('tokenPack', tokenPack.key);
-
-  const cancelUrl = new URL('/checkout/cancel', baseUrl);
-  cancelUrl.searchParams.set('tokenPack', tokenPack.key);
+  const successUrl = new URL(
+    deps.mobileCheckout ? '/checkout/mobile/success' : '/checkout/success',
+    baseUrl
+  );
+  if (deps.mobileCheckout) {
+    successUrl.searchParams.set('intent', deps.mobileCheckout.returnToken);
+  } else {
+    successUrl.searchParams.set('tokenPack', tokenPack.key);
+  }
 
   const { data, error } = await createCheckout(storeId, lsVariantId, {
     checkoutData: {
-      email: input.payerEmail,
+      ...(input.payerEmail ? { email: input.payerEmail } : {}),
       custom: {
         environment: envName,
-        purchase_source: 'public-web',
+        purchase_source: deps.mobileCheckout ? 'mobile-app' : 'public-web',
+        ...(deps.mobileCheckout
+          ? { mobile_checkout_intent_id: deps.mobileCheckout.intentId }
+          : {}),
         token_pack_id: tokenPack.id,
         token_pack_key: tokenPack.key,
         token_pack_name: tokenPack.name,

@@ -66,6 +66,7 @@ import { Route as ManagerAccountIndexRouteImport } from './routes/manager/accoun
 import { Route as LoginVerifyIndexRouteImport } from './routes/login/verify.index'
 import { Route as LoginErrorIndexRouteImport } from './routes/login/error.index'
 import { Route as AppAccountIndexRouteImport } from './routes/app/account.index'
+import { Route as CheckoutMobileSuccessRouteImport } from './routes/checkout/mobile/success'
 import { Route as BlogCategoryCategoryRouteImport } from './routes/blog/category/$category'
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
 import { Route as ApiRestSplatRouteImport } from './routes/api/rest.$'
@@ -121,7 +122,9 @@ import { Route as ApiManhwaSlugPosterRouteImport } from './routes/api/manhwa/$sl
 import { Route as ApiDevEmailTemplateRouteImport } from './routes/api/dev.email.$template'
 import { Route as ApiBlogHeroesSlugRouteImport } from './routes/api/blog/heroes/$slug'
 import { Route as ManagerUsersIdUpdateIndexRouteImport } from './routes/manager/users/$id.update.index'
+import { Route as ApiMobileSubscriptionCheckoutIndexRouteImport } from './routes/api/mobile/subscription/checkout.index'
 import { Route as ApiMobileJobsJobIdIndexRouteImport } from './routes/api/mobile/jobs/$jobId.index'
+import { Route as ApiMobileSubscriptionCheckoutClaimRouteImport } from './routes/api/mobile/subscription/checkout/claim'
 import { Route as ApiMobileJobsJobIdResultRouteImport } from './routes/api/mobile/jobs/$jobId/result'
 import { Route as ApiMobileJobsJobIdCompleteRouteImport } from './routes/api/mobile/jobs/$jobId/complete'
 import { Route as ApiMobileAuthFreeTrialEligibilityRouteImport } from './routes/api/mobile/auth/free-trial/eligibility'
@@ -429,6 +432,11 @@ const AppAccountIndexRoute = AppAccountIndexRouteImport.update({
   path: '/account/',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const CheckoutMobileSuccessRoute = CheckoutMobileSuccessRouteImport.update({
+  id: '/checkout/mobile/success',
+  path: '/checkout/mobile/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogCategoryCategoryRoute = BlogCategoryCategoryRouteImport.update({
   id: '/blog/category/$category',
   path: '/blog/category/$category',
@@ -727,11 +735,23 @@ const ManagerUsersIdUpdateIndexRoute =
     path: '/users/$id/update/',
     getParentRoute: () => ManagerRouteRoute,
   } as any)
+const ApiMobileSubscriptionCheckoutIndexRoute =
+  ApiMobileSubscriptionCheckoutIndexRouteImport.update({
+    id: '/api/mobile/subscription/checkout/',
+    path: '/api/mobile/subscription/checkout/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileJobsJobIdIndexRoute = ApiMobileJobsJobIdIndexRouteImport.update({
   id: '/$jobId/',
   path: '/$jobId/',
   getParentRoute: () => ApiMobileJobsRoute,
 } as any)
+const ApiMobileSubscriptionCheckoutClaimRoute =
+  ApiMobileSubscriptionCheckoutClaimRouteImport.update({
+    id: '/api/mobile/subscription/checkout/claim',
+    path: '/api/mobile/subscription/checkout/claim',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiMobileJobsJobIdResultRoute =
   ApiMobileJobsJobIdResultRouteImport.update({
     id: '/$jobId/result',
@@ -852,6 +872,7 @@ export interface FileRoutesByFullPath {
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
   '/blog/category/$category': typeof BlogCategoryCategoryRoute
+  '/checkout/mobile/success': typeof CheckoutMobileSuccessRoute
   '/app/account/': typeof AppAccountIndexRoute
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
@@ -909,7 +930,9 @@ export interface FileRoutesByFullPath {
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
+  '/api/mobile/subscription/checkout/claim': typeof ApiMobileSubscriptionCheckoutClaimRoute
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
+  '/api/mobile/subscription/checkout/': typeof ApiMobileSubscriptionCheckoutIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
   '/media/blog/heroes/v3/$slug/$': typeof MediaBlogHeroesV3SlugSplatRoute
@@ -973,6 +996,7 @@ export interface FileRoutesByTo {
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
   '/blog/category/$category': typeof BlogCategoryCategoryRoute
+  '/checkout/mobile/success': typeof CheckoutMobileSuccessRoute
   '/app/account': typeof AppAccountIndexRoute
   '/login/error': typeof LoginErrorIndexRoute
   '/login/verify': typeof LoginVerifyIndexRoute
@@ -1030,7 +1054,9 @@ export interface FileRoutesByTo {
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
+  '/api/mobile/subscription/checkout/claim': typeof ApiMobileSubscriptionCheckoutClaimRoute
   '/api/mobile/jobs/$jobId': typeof ApiMobileJobsJobIdIndexRoute
+  '/api/mobile/subscription/checkout': typeof ApiMobileSubscriptionCheckoutIndexRoute
   '/manager/users/$id/update': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
   '/media/blog/heroes/v3/$slug/$': typeof MediaBlogHeroesV3SlugSplatRoute
@@ -1099,6 +1125,7 @@ export interface FileRoutesById {
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
   '/blog/category/$category': typeof BlogCategoryCategoryRoute
+  '/checkout/mobile/success': typeof CheckoutMobileSuccessRoute
   '/app/account/': typeof AppAccountIndexRoute
   '/login/error/': typeof LoginErrorIndexRoute
   '/login/verify/': typeof LoginVerifyIndexRoute
@@ -1156,7 +1183,9 @@ export interface FileRoutesById {
   '/api/mobile/auth/free-trial/eligibility': typeof ApiMobileAuthFreeTrialEligibilityRoute
   '/api/mobile/jobs/$jobId/complete': typeof ApiMobileJobsJobIdCompleteRoute
   '/api/mobile/jobs/$jobId/result': typeof ApiMobileJobsJobIdResultRoute
+  '/api/mobile/subscription/checkout/claim': typeof ApiMobileSubscriptionCheckoutClaimRoute
   '/api/mobile/jobs/$jobId/': typeof ApiMobileJobsJobIdIndexRoute
+  '/api/mobile/subscription/checkout/': typeof ApiMobileSubscriptionCheckoutIndexRoute
   '/manager/users/$id/update/': typeof ManagerUsersIdUpdateIndexRoute
   '/api/mobile/jobs/$jobId/pages/$pageNumber': typeof ApiMobileJobsJobIdPagesPageNumberRouteWithChildren
   '/media/blog/heroes/v3/$slug/$': typeof MediaBlogHeroesV3SlugSplatRoute
@@ -1226,6 +1255,7 @@ export interface FileRouteTypes {
     | '/api/rest/$'
     | '/api/rpc/$'
     | '/blog/category/$category'
+    | '/checkout/mobile/success'
     | '/app/account/'
     | '/login/error/'
     | '/login/verify/'
@@ -1283,7 +1313,9 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
+    | '/api/mobile/subscription/checkout/claim'
     | '/api/mobile/jobs/$jobId/'
+    | '/api/mobile/subscription/checkout/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
     | '/media/blog/heroes/v3/$slug/$'
@@ -1347,6 +1379,7 @@ export interface FileRouteTypes {
     | '/api/rest/$'
     | '/api/rpc/$'
     | '/blog/category/$category'
+    | '/checkout/mobile/success'
     | '/app/account'
     | '/login/error'
     | '/login/verify'
@@ -1404,7 +1437,9 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
+    | '/api/mobile/subscription/checkout/claim'
     | '/api/mobile/jobs/$jobId'
+    | '/api/mobile/subscription/checkout'
     | '/manager/users/$id/update'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
     | '/media/blog/heroes/v3/$slug/$'
@@ -1472,6 +1507,7 @@ export interface FileRouteTypes {
     | '/api/rest/$'
     | '/api/rpc/$'
     | '/blog/category/$category'
+    | '/checkout/mobile/success'
     | '/app/account/'
     | '/login/error/'
     | '/login/verify/'
@@ -1529,7 +1565,9 @@ export interface FileRouteTypes {
     | '/api/mobile/auth/free-trial/eligibility'
     | '/api/mobile/jobs/$jobId/complete'
     | '/api/mobile/jobs/$jobId/result'
+    | '/api/mobile/subscription/checkout/claim'
     | '/api/mobile/jobs/$jobId/'
+    | '/api/mobile/subscription/checkout/'
     | '/manager/users/$id/update/'
     | '/api/mobile/jobs/$jobId/pages/$pageNumber'
     | '/media/blog/heroes/v3/$slug/$'
@@ -1595,6 +1633,7 @@ export interface RootRouteChildren {
   ApiRestSplatRoute: typeof ApiRestSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
   BlogCategoryCategoryRoute: typeof BlogCategoryCategoryRoute
+  CheckoutMobileSuccessRoute: typeof CheckoutMobileSuccessRoute
   ApiBlogHeroesSlugRoute: typeof ApiBlogHeroesSlugRoute
   ApiDevEmailTemplateRoute: typeof ApiDevEmailTemplateRoute
   ApiManhwaSlugPosterRoute: typeof ApiManhwaSlugPosterRoute
@@ -1614,6 +1653,8 @@ export interface RootRouteChildren {
   ApiMobileSubscriptionCancelRoute: typeof ApiMobileSubscriptionCancelRoute
   ApiMobileSubscriptionUpgradeRoute: typeof ApiMobileSubscriptionUpgradeRoute
   ApiDownloadAndroidVersionFilenameRoute: typeof ApiDownloadAndroidVersionFilenameRoute
+  ApiMobileSubscriptionCheckoutClaimRoute: typeof ApiMobileSubscriptionCheckoutClaimRoute
+  ApiMobileSubscriptionCheckoutIndexRoute: typeof ApiMobileSubscriptionCheckoutIndexRoute
   MediaBlogHeroesV3SlugSplatRoute: typeof MediaBlogHeroesV3SlugSplatRoute
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute: typeof ApiManhwaPrivateSlugChapterChapterPanelPanelRoute
   ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute: typeof ApiManhwaPrivateSlugCharacterCharacterReferenceReferenceRoute
@@ -2021,6 +2062,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAccountIndexRouteImport
       parentRoute: typeof AppRouteRoute
     }
+    '/checkout/mobile/success': {
+      id: '/checkout/mobile/success'
+      path: '/checkout/mobile/success'
+      fullPath: '/checkout/mobile/success'
+      preLoaderRoute: typeof CheckoutMobileSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/category/$category': {
       id: '/blog/category/$category'
       path: '/blog/category/$category'
@@ -2406,12 +2454,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerUsersIdUpdateIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/api/mobile/subscription/checkout/': {
+      id: '/api/mobile/subscription/checkout/'
+      path: '/api/mobile/subscription/checkout'
+      fullPath: '/api/mobile/subscription/checkout/'
+      preLoaderRoute: typeof ApiMobileSubscriptionCheckoutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/jobs/$jobId/': {
       id: '/api/mobile/jobs/$jobId/'
       path: '/$jobId'
       fullPath: '/api/mobile/jobs/$jobId/'
       preLoaderRoute: typeof ApiMobileJobsJobIdIndexRouteImport
       parentRoute: typeof ApiMobileJobsRoute
+    }
+    '/api/mobile/subscription/checkout/claim': {
+      id: '/api/mobile/subscription/checkout/claim'
+      path: '/api/mobile/subscription/checkout/claim'
+      fullPath: '/api/mobile/subscription/checkout/claim'
+      preLoaderRoute: typeof ApiMobileSubscriptionCheckoutClaimRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/mobile/jobs/$jobId/result': {
       id: '/api/mobile/jobs/$jobId/result'
@@ -2747,6 +2809,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRestSplatRoute: ApiRestSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
   BlogCategoryCategoryRoute: BlogCategoryCategoryRoute,
+  CheckoutMobileSuccessRoute: CheckoutMobileSuccessRoute,
   ApiBlogHeroesSlugRoute: ApiBlogHeroesSlugRoute,
   ApiDevEmailTemplateRoute: ApiDevEmailTemplateRoute,
   ApiManhwaSlugPosterRoute: ApiManhwaSlugPosterRoute,
@@ -2769,6 +2832,10 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileSubscriptionUpgradeRoute: ApiMobileSubscriptionUpgradeRoute,
   ApiDownloadAndroidVersionFilenameRoute:
     ApiDownloadAndroidVersionFilenameRoute,
+  ApiMobileSubscriptionCheckoutClaimRoute:
+    ApiMobileSubscriptionCheckoutClaimRoute,
+  ApiMobileSubscriptionCheckoutIndexRoute:
+    ApiMobileSubscriptionCheckoutIndexRoute,
   MediaBlogHeroesV3SlugSplatRoute: MediaBlogHeroesV3SlugSplatRoute,
   ApiManhwaPrivateSlugChapterChapterPanelPanelRoute:
     ApiManhwaPrivateSlugChapterChapterPanelPanelRoute,

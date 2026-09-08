@@ -2,5 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "pnpm db:migrate:deploy && pnpm build",
   "framework": null,
+  "git": {
+    "deploymentEnabled": {
+      "codex/automatic-subscription-backend-20260908": false
+    }
+  },
   "installCommand": "pnpm install"
 }

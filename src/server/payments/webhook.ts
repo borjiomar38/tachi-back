@@ -59,7 +59,9 @@ type PaymentTx = {
     update: (args: {
       where: { id: string };
       data: {
+        activatedAt?: Date | null;
         notes?: string | null;
+        ownerEmail?: string | null;
         revokedAt?: Date | null;
         status?: 'active' | 'expired' | 'pending' | 'revoked' | 'suspended';
       };
@@ -71,6 +73,89 @@ type PaymentTx = {
       id: string;
       status: 'active' | 'expired' | 'pending' | 'revoked' | 'suspended';
     }>;
+  };
+  device: {
+    update: (args: {
+      where: { id: string };
+      data: {
+        lastSeenAt?: Date;
+        status?: 'active' | 'blocked' | 'pending' | 'revoked';
+      };
+      select: { id: true };
+    }) => Promise<{ id: string }>;
+  };
+  licenseDevice: {
+    upsert: (args: {
+      where: {
+        licenseId_deviceId: {
+          deviceId: string;
+          licenseId: string;
+        };
+      };
+      create: {
+        boundAt: Date;
+        deviceId: string;
+        licenseId: string;
+        status: 'active';
+      };
+      update: {
+        boundAt: Date;
+        status: 'active';
+        unboundAt: null;
+      };
+      select: { id: true };
+    }) => Promise<{ id: string }>;
+  };
+  mobileCheckoutIntent: {
+    findUnique: (args: {
+      where: { id: string };
+      select: {
+        device: {
+          select: {
+            id: true;
+            status: true;
+          };
+        };
+        deviceId: true;
+        id: true;
+        license: {
+          select: {
+            activatedAt: true;
+            id: true;
+            status: true;
+          };
+        };
+        licenseId: true;
+        status: true;
+        tokenPackId: true;
+      };
+    }) => Promise<{
+      device: {
+        id: string;
+        status: 'active' | 'blocked' | 'pending' | 'revoked';
+      };
+      deviceId: string;
+      id: string;
+      license: {
+        activatedAt: Date | null;
+        id: string;
+        status: 'active' | 'expired' | 'pending' | 'revoked' | 'suspended';
+      } | null;
+      licenseId: string | null;
+      status: 'canceled' | 'expired' | 'paid' | 'pending';
+      tokenPackId: string;
+    } | null>;
+    update: (args: {
+      where: { id: string };
+      data: {
+        licenseId: string;
+        orderId: string;
+        paidAt: Date;
+        payerEmail: string | null;
+        status: 'paid';
+      };
+      select: { id: true };
+    }) => Promise<{ id: string }>;
   };
   order: {
     create: (args: {
@@ -579,6 +664,11 @@ async function fulfillPaidOrder(input: {
   ]);
 
   const tokenPack = await resolveTokenPack(input.tx, customData);
+  const mobileCheckoutIntent = await resolveMobileCheckoutIntent(
+    input.tx,
+    customData,
+    tokenPack.id
+  );
 
   const existingOrder = await input.tx.order.findUnique({
     where: { lsOrderId },
@@ -602,6 +692,10 @@ async function fulfillPaidOrder(input: {
           lsCustomerId,
           lsSubscriptionId: lsSubscriptionId || undefined,
           tokenPackId: tokenPack.id,
+          licenseId:
+            existingOrder.licenseId ??
+            mobileCheckoutIntent?.licenseId ??
+            undefined,
         },
         select: orderSelect,
       })
@@ -621,6 +715,7 @@ async function fulfillPaidOrder(input: {
           lsCustomerId,
           lsSubscriptionId: lsSubscriptionId || undefined,
           tokenPackId: tokenPack.id,
+          licenseId: mobileCheckoutIntent?.licenseId ?? undefined,
         },
         select: orderSelect,
       });
@@ -643,6 +738,62 @@ async function fulfillPaidOrder(input: {
       select: orderSelect,
     });
     licenseId = license.id;
+  }
+
+  if (mobileCheckoutIntent) {
+    if (
+      mobileCheckoutIntent.device.status === 'blocked' ||
+      mobileCheckoutIntent.device.status === 'revoked'
+    ) {
+      throw new Error('Mobile checkout device is no longer available.');
+    }
+    if (
+      mobileCheckoutIntent.license &&
+      !['active', 'pending'].includes(mobileCheckoutIntent.license.status)
+    ) {
+      throw new Error('Mobile checkout license is no longer available.');
+    }
+
+    await input.tx.license.update({
+      where: { id: licenseId },
+      data: {
+        activatedAt: mobileCheckoutIntent.license?.activatedAt ?? orderPaidAt,
+        ownerEmail: payerEmail,
+        status: 'active',
+      },
+      select: {
+        id: true,
+        status: true,
+      },
+    });
+    await input.tx.device.update({
+      where: { id: mobileCheckoutIntent.deviceId },
+      data: {
+        lastSeenAt: orderPaidAt,
+        status: 'active',
+      },
+      select: { id: true },
+    });
+    await input.tx.licenseDevice.upsert({
+      where: {
+        licenseId_deviceId: {
+          deviceId: mobileCheckoutIntent.deviceId,
+          licenseId,
+        },
+      },
+      create: {
+        boundAt: orderPaidAt,
+        deviceId: mobileCheckoutIntent.deviceId,
+        licenseId,
+        status: 'active',
+      },
+      update: {
+        boundAt: orderPaidAt,
+        status: 'active',
+        unboundAt: null,
+      },
+      select: { id: true },
+    });
   }
 
   const redeemFulfillmentKey = `ls:order:${lsOrderId}:redeem`;
@@ -713,6 +864,20 @@ async function fulfillPaidOrder(input: {
     },
     select: { id: true },
   });
+
+  if (mobileCheckoutIntent) {
+    await input.tx.mobileCheckoutIntent.update({
+      where: { id: mobileCheckoutIntent.id },
+      data: {
+        licenseId,
+        orderId: order.id,
+        paidAt: orderPaidAt,
+        payerEmail,
+        status: 'paid',
+      },
+      select: { id: true },
+    });
+  }
 
   await input.tx.webhookEvent.update({
     where: { id: input.eventRecordId },
@@ -1333,6 +1498,51 @@ function mapLsStatusToLicenseStatus(
     default:
       return 'pending';
   }
+}
+
+async function resolveMobileCheckoutIntent(
+  tx: PaymentTx,
+  customData: Record<string, string>,
+  tokenPackId: string
+) {
+  const intentId = customData.mobile_checkout_intent_id?.trim();
+  if (!intentId) return null;
+
+  const intent = await tx.mobileCheckoutIntent.findUnique({
+    where: { id: intentId },
+    select: {
+      device: {
+        select: {
+          id: true,
+          status: true,
+        },
+      },
+      deviceId: true,
+      id: true,
+      license: {
+        select: {
+          activatedAt: true,
+          id: true,
+          status: true,
+        },
+      },
+      licenseId: true,
+      status: true,
+      tokenPackId: true,
+    },
+  });
+
+  if (!intent) {
+    throw new Error('Mobile checkout intent was not found.');
+  }
+  if (intent.tokenPackId !== tokenPackId) {
+    throw new Error('Mobile checkout token pack does not match the order.');
+  }
+  if (intent.status === 'canceled' || intent.status === 'expired') {
+    throw new Error('Mobile checkout intent is no longer active.');
+  }
+
+  return intent;
 }
 
 async function resolveTokenPack(
