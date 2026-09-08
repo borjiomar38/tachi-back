@@ -7,6 +7,7 @@ import common from './common.json' with { type: 'json' };
 import components from './components.json' with { type: 'json' };
 import contact from './contact.json' with { type: 'json' };
 import contentPolicy from './content-policy.json' with { type: 'json' };
+import dashboard from './dashboard.json' with { type: 'json' };
 import emails from './emails.json' with { type: 'json' };
 import layout from './layout.json' with { type: 'json' };
 import settings from './settings.json' with { type: 'json' };
@@ -20,6 +21,7 @@ export default {
   components,
   contact,
   contentPolicy,
+  dashboard,
   emails,
   layout,
   settings,

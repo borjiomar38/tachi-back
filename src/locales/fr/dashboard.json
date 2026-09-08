@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Vue d’ensemble du backoffice",
+  "installations": {
+    "title": "Installations",
+    "definition": "Premières installations uniquement · mises à jour de l’app exclues",
+    "allTime": "Total des installations",
+    "last24Hours": "Dernières 24 h",
+    "last7Days": "7 derniers jours",
+    "last30Days": "30 derniers jours",
+    "viewAll": "Voir toutes les installations",
+    "latestTitle": "Dernières premières installations",
+    "latestDescription": "Triées par date de première installation, jamais par mise à jour.",
+    "empty": "Aucune installation n’a encore été enregistrée.",
+    "version": "Version {{version}}",
+    "unknownVersion": "Version inconnue",
+    "unknownLocale": "Langue inconnue",
+    "firstInstalledAt": "Première installation le {{date}}"
+  },
+  "shortcuts": {
+    "support": {
+      "title": "Recherche support",
+      "description": "Recherchez par clé de licence, code d’activation, ID d’installation, ID de commande, identifiants Lemon Squeezy ou e-mail.",
+      "action": "Ouvrir la recherche support"
+    },
+    "staff": {
+      "title": "Comptes de l’équipe",
+      "description": "Gérez les accès administrateur et support internes du backoffice.",
+      "content": "La gestion de l’équipe reste disponible pendant l’ajout des outils de support produit."
+    },
+    "operations": {
+      "title": "Jobs et fournisseurs",
+      "description": "La visibilité opérationnelle commence ici pendant la construction des outils avancés de relance et d’incident.",
+      "jobs": "Ouvrir les jobs",
+      "providers": "Ouvrir les fournisseurs",
+      "versions": "Ouvrir les versions"
+    }
+  }
+}

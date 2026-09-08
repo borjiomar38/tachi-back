@@ -131,6 +131,32 @@ export const createFunnelOverviewSchema = () =>
     })
     .strict();
 
+export const createInstallationOverviewSchema = () =>
+  z
+    .object({
+      counts: z
+        .object({
+          last24Hours: z.number().int().nonnegative(),
+          last30Days: z.number().int().nonnegative(),
+          last7Days: z.number().int().nonnegative(),
+          total: z.number().int().nonnegative(),
+        })
+        .strict(),
+      generatedAt: z.date(),
+      recentFirstInstallations: z.array(
+        z
+          .object({
+            appVersion: z.string().nullable(),
+            firstInstalledAt: z.date(),
+            id: z.string(),
+            installationId: z.string(),
+            locale: z.string().nullable(),
+          })
+          .strict()
+      ),
+    })
+    .strict();
+
 export type MobileFunnelEventInput = z.infer<
   ReturnType<typeof createMobileFunnelEventInputSchema>
 >;
@@ -145,4 +171,8 @@ export type FunnelOverviewInput = z.infer<
 
 export type FunnelOverview = z.infer<
   ReturnType<typeof createFunnelOverviewSchema>
+>;
+
+export type InstallationOverview = z.infer<
+  ReturnType<typeof createInstallationOverviewSchema>
 >;

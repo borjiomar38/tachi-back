@@ -1,12 +1,7 @@
-import { ButtonLink } from '@/components/ui/button-link';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { useTranslation } from 'react-i18next';
 
+import { DashboardInstallationOverview } from '@/features/dashboard/manager/dashboard-installation-overview';
+import { DashboardShortcuts } from '@/features/dashboard/manager/dashboard-shortcuts';
 import {
   PageLayout,
   PageLayoutContent,
@@ -15,59 +10,19 @@ import {
 } from '@/layout/manager/page-layout';
 
 export const PageDashboard = () => {
+  const { t } = useTranslation(['dashboard']);
+
   return (
     <PageLayout>
       <PageLayoutTopBar>
-        <PageLayoutTopBarTitle>Backoffice Overview</PageLayoutTopBarTitle>
+        <PageLayoutTopBarTitle>
+          {t('dashboard:pageTitle')}
+        </PageLayoutTopBarTitle>
       </PageLayoutTopBar>
-      <PageLayoutContent containerClassName="max-w-4xl">
-        <div className="grid gap-4 md:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <CardTitle>Support Lookup</CardTitle>
-              <CardDescription>
-                Search by license key, redeem code, installation ID, order ID,
-                Lemon Squeezy IDs, or email.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ButtonLink to="/manager/licenses" variant="secondary">
-                Open support lookup
-              </ButtonLink>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Staff Accounts</CardTitle>
-              <CardDescription>
-                Manage internal admin and support access for the backoffice.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Staff management remains available while the product-facing
-              support tooling is being added.
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Jobs And Provider Ops</CardTitle>
-              <CardDescription>
-                Operational visibility now starts here while deeper retry and
-                incident tooling is still being built.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
-              <ButtonLink to="/manager/jobs" variant="secondary">
-                Open jobs
-              </ButtonLink>
-              <ButtonLink to="/manager/providers" variant="secondary">
-                Open provider ops
-              </ButtonLink>
-              <ButtonLink to="/manager/versions" variant="secondary">
-                Open versions
-              </ButtonLink>
-            </CardContent>
-          </Card>
+      <PageLayoutContent containerClassName="max-w-7xl pb-8">
+        <div className="space-y-4">
+          <DashboardInstallationOverview />
+          <DashboardShortcuts />
         </div>
       </PageLayoutContent>
     </PageLayout>

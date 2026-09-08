@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Backoffice Overview",
+  "installations": {
+    "title": "Installations",
+    "definition": "First-time installations only · app updates excluded",
+    "allTime": "All-time installations",
+    "last24Hours": "Last 24 hours",
+    "last7Days": "Last 7 days",
+    "last30Days": "Last 30 days",
+    "viewAll": "View all installations",
+    "latestTitle": "Latest first installs",
+    "latestDescription": "Ordered by first installation time, never by an app update.",
+    "empty": "No installation has been registered yet.",
+    "version": "Version {{version}}",
+    "unknownVersion": "Unknown version",
+    "unknownLocale": "Unknown locale",
+    "firstInstalledAt": "First installed {{date}}"
+  },
+  "shortcuts": {
+    "support": {
+      "title": "Support Lookup",
+      "description": "Search by license key, redeem code, installation ID, order ID, Lemon Squeezy IDs, or email.",
+      "action": "Open support lookup"
+    },
+    "staff": {
+      "title": "Staff Accounts",
+      "description": "Manage internal admin and support access for the backoffice.",
+      "content": "Staff management remains available while the product-facing support tooling is being added."
+    },
+    "operations": {
+      "title": "Jobs And Provider Ops",
+      "description": "Operational visibility now starts here while deeper retry and incident tooling is still being built.",
+      "jobs": "Open jobs",
+      "providers": "Open provider ops",
+      "versions": "Open versions"
+    }
+  }
+}

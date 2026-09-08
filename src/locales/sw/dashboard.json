@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Muhtasari wa Backoffice",
+  "installations": {
+    "title": "Usakinishaji",
+    "definition": "Usakinishaji wa kwanza pekee · masasisho ya programu hayajahesabiwa",
+    "allTime": "Jumla ya usakinishaji",
+    "last24Hours": "Saa 24 zilizopita",
+    "last7Days": "Siku 7 zilizopita",
+    "last30Days": "Siku 30 zilizopita",
+    "viewAll": "Angalia usakinishaji wote",
+    "latestTitle": "Usakinishaji mpya zaidi",
+    "latestDescription": "Umepangwa kwa muda wa usakinishaji wa kwanza, si kwa sasisho la programu.",
+    "empty": "Hakuna usakinishaji uliosajiliwa bado.",
+    "version": "Toleo {{version}}",
+    "unknownVersion": "Toleo halijulikani",
+    "unknownLocale": "Lugha haijulikani",
+    "firstInstalledAt": "Ulisakinishwa kwanza {{date}}"
+  },
+  "shortcuts": {
+    "support": {
+      "title": "Utafutaji wa Usaidizi",
+      "description": "Tafuta kwa ufunguo wa leseni, msimbo wa ukombozi, kitambulisho cha usakinishaji, kitambulisho cha oda, vitambulisho vya Lemon Squeezy au barua pepe.",
+      "action": "Fungua utafutaji wa usaidizi"
+    },
+    "staff": {
+      "title": "Akaunti za Wafanyakazi",
+      "description": "Dhibiti ruhusa za ndani za wasimamizi na usaidizi wa backoffice.",
+      "content": "Usimamizi wa wafanyakazi utaendelea kupatikana wakati zana za usaidizi wa bidhaa zinaongezwa."
+    },
+    "operations": {
+      "title": "Kazi na Uendeshaji wa Watoa Huduma",
+      "description": "Mwonekano wa uendeshaji unaanzia hapa wakati zana za kina za kujaribu tena na matukio zinaendelea kujengwa.",
+      "jobs": "Fungua kazi",
+      "providers": "Fungua watoa huduma",
+      "versions": "Fungua matoleo"
+    }
+  }
+}
