@@ -71,6 +71,64 @@ describe('trending manga topic resolver', () => {
       })
     ).rejects.toThrow(/not currently eligible/i);
   });
+
+  it('falls back to the Kitsu trend feed when the AniList API is unavailable', async () => {
+    const result = await resolveTrendingMangaCandidates({
+      candidateLimit: 1,
+      existingTopics: [],
+      fetchImpl: buildKitsuFallbackFetchMock(),
+      now: resolvedAt,
+    });
+
+    expect(result.candidates).toHaveLength(1);
+    expect(result.candidates[0]).toMatchObject({
+      anilistId: 116_353,
+      canonicalId: 'anilist:116353',
+      kitsuId: '55900',
+      malId: null,
+      title: 'The Devil Butler',
+      trendRank: 1,
+      trendScore: 4_075,
+      type: 'manhua',
+    });
+    expect(
+      result.candidates[0]?.sourceEvidence.map((source) => source.kind)
+    ).toEqual(['kitsu', 'anilist']);
+    expect(result.rejected[0]).toMatchObject({
+      title: 'AniList trend feed',
+    });
+  });
+
+  it('revalidates a Kitsu fallback selection while the AniList API remains unavailable', async () => {
+    const fetchImpl = buildKitsuFallbackFetchMock();
+    const result = await resolveTrendingMangaCandidates({
+      candidateLimit: 1,
+      existingTopics: [],
+      fetchImpl,
+      now: resolvedAt,
+    });
+    const selected = result.candidates[0];
+
+    expect(selected).toBeDefined();
+
+    const validated = await validateTrendingMangaSelection({
+      claim: {
+        aliases: selected?.aliases ?? [],
+        anilistId: selected?.anilistId ?? 0,
+        canonicalId: selected?.canonicalId ?? '',
+        kitsuId: selected?.kitsuId ?? null,
+        malId: selected?.malId ?? null,
+        sourceUrls: selected?.sourceEvidence.map((source) => source.url) ?? [],
+        title: selected?.title ?? '',
+        type: selected?.type ?? 'manga',
+      },
+      fetchImpl,
+      now: resolvedAt,
+    });
+
+    expect(validated.canonicalId).toBe('anilist:116353');
+    expect(validated.sourceEvidence).toHaveLength(2);
+  });
 });
 
 function buildFetchMock(): typeof fetch {
@@ -87,6 +145,88 @@ function buildFetchMock(): typeof fetch {
 
     if (url === 'https://api.jikan.moe/v4/manga/13') {
       return Response.json(buildJikanOnePieceResponse());
+    }
+
+    return new Response('not found', {
+      status: 404,
+    });
+  };
+}
+
+function buildKitsuFallbackFetchMock(): typeof fetch {
+  return async (input: RequestInfo | URL): Promise<Response> => {
+    const url = typeof input === 'string' ? input : input.toString();
+
+    if (url === 'https://graphql.anilist.co') {
+      return Response.json(
+        {
+          errors: [
+            {
+              message:
+                'The AniList API has been temporarily disabled due to severe stability issues.',
+            },
+          ],
+        },
+        {
+          status: 403,
+        }
+      );
+    }
+
+    if (url === 'https://kitsu.io/api/edge/trending/manga?limit=30') {
+      return Response.json({
+        data: [
+          {
+            attributes: {
+              abbreviatedTitles: ['Demon Magic Emperor', 'The Devil Butler'],
+              ageRating: 'PG',
+              averageRating: '81.11',
+              canonicalTitle: 'Mo Huang Da Guanjia',
+              favoritesCount: 53,
+              popularityRank: 405,
+              ratingRank: 686,
+              slug: 'mo-huang-da-guanjia',
+              status: 'current',
+              subtype: 'manhua',
+              titles: {
+                en: 'The Devil Butler',
+                en_cn: 'Mo Huang Da Guanjia',
+                zh_cn: '魔皇大管家',
+              },
+              updatedAt: '2026-07-16T12:00:00.000Z',
+              userCount: 4_075,
+            },
+            id: '55900',
+            type: 'manga',
+          },
+        ],
+      });
+    }
+
+    if (url === 'https://kitsu.io/api/edge/manga/55900/mappings') {
+      return Response.json({
+        data: [
+          {
+            attributes: {
+              externalId: '116353',
+              externalSite: 'anilist/manga',
+            },
+            id: '289131',
+            type: 'mappings',
+          },
+        ],
+      });
+    }
+
+    if (url === 'https://anilist.co/manga/116353') {
+      return new Response(
+        '<html><head><meta data-vue-meta="true" property="og:title" content="The Devil Butler"></head></html>',
+        {
+          headers: {
+            'Content-Type': 'text/html',
+          },
+        }
+      );
     }
 
     return new Response('not found', {

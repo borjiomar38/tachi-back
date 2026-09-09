@@ -76,9 +76,12 @@ export interface ValidateTrendingMangaSelectionOptions {
 }
 
 const ANILIST_GRAPHQL_URL = 'https://graphql.anilist.co';
+const ANILIST_MANGA_PAGE_URL = 'https://anilist.co/manga';
+const BLOG_RESOLVER_USER_AGENT = 'NayoviBlogBot/1.0 (+https://nayovi.com)';
 const DEFAULT_CANDIDATE_LIMIT = 6;
 const DEFAULT_SEARCH_LIMIT = 30;
 const FETCH_TIMEOUT_MS = 12_000;
+const KITSU_TRENDING_MANGA_URL = 'https://kitsu.io/api/edge/trending/manga';
 const SECONDARY_SOURCE_LIMIT = 18;
 
 const workTypeByCountry: Record<string, BlogWorkType> = {
@@ -168,13 +171,19 @@ const zKitsuManga = z
     attributes: z
       .object({
         abbreviatedTitles: z.array(z.string()).nullable().optional(),
+        ageRating: z.string().nullable().optional(),
+        averageRating: z.string().nullable().optional(),
         canonicalTitle: z.string(),
+        favoritesCount: z.number().int().nonnegative().optional(),
         mangaType: z.string().nullable().optional(),
         popularityRank: z.number().int().positive().nullable().optional(),
         ratingRank: z.number().int().positive().nullable().optional(),
         slug: z.string().nullable().optional(),
         status: z.string().nullable().optional(),
+        subtype: z.string().nullable().optional(),
         titles: z.record(z.string(), z.string()).nullable().optional(),
+        updatedAt: z.string().nullable().optional(),
+        userCount: z.number().int().nonnegative().optional(),
       })
       .passthrough(),
     id: z.string().min(1),
@@ -185,6 +194,25 @@ const zKitsuManga = z
 const zKitsuSearchResponse = z
   .object({
     data: z.array(zKitsuManga),
+  })
+  .passthrough();
+
+const zKitsuMapping = z
+  .object({
+    attributes: z
+      .object({
+        externalId: z.string().min(1),
+        externalSite: z.string().min(1),
+      })
+      .passthrough(),
+    id: z.string().min(1),
+    type: z.literal('mappings'),
+  })
+  .passthrough();
+
+const zKitsuMappingsResponse = z
+  .object({
+    data: z.array(zKitsuMapping),
   })
   .passthrough();
 
@@ -210,10 +238,30 @@ export async function resolveTrendingMangaCandidates(
   const resolvedAt = (options.now ?? new Date()).toISOString();
   const candidateLimit = options.candidateLimit ?? DEFAULT_CANDIDATE_LIMIT;
   const searchLimit = options.searchLimit ?? DEFAULT_SEARCH_LIMIT;
-  const media = await fetchAnilistTrendingManga({
-    fetchImpl,
-    limit: searchLimit,
-  });
+  let media: z.infer<typeof zAnilistMedia>[];
+
+  try {
+    media = await fetchAnilistTrendingManga({
+      fetchImpl,
+      limit: searchLimit,
+    });
+  } catch (anilistError) {
+    try {
+      return await resolveKitsuTrendingMangaCandidates({
+        anilistError,
+        candidateLimit,
+        existingTopics: options.existingTopics,
+        fetchImpl,
+        resolvedAt,
+        searchLimit,
+      });
+    } catch (kitsuError) {
+      throw new Error(
+        `AniList trend source failed (${toErrorMessage(anilistError)}); Kitsu fallback failed (${toErrorMessage(kitsuError)}).`
+      );
+    }
+  }
+
   const candidates: TrendingMangaCandidate[] = [];
   const rejected: TrendingMangaCandidateRejection[] = [];
 
@@ -277,6 +325,91 @@ export async function resolveTrendingMangaCandidates(
   };
 }
 
+async function resolveKitsuTrendingMangaCandidates(input: {
+  anilistError: unknown;
+  candidateLimit: number;
+  existingTopics: readonly ExistingBlogTopic[];
+  fetchImpl: typeof fetch;
+  resolvedAt: string;
+  searchLimit: number;
+}): Promise<TrendingMangaResolverResult> {
+  const manga = await fetchKitsuTrendingManga({
+    fetchImpl: input.fetchImpl,
+    limit: input.searchLimit,
+  });
+  const candidates: TrendingMangaCandidate[] = [];
+  const rejected: TrendingMangaCandidateRejection[] = [
+    {
+      reason: `Primary trend source unavailable; Kitsu fallback activated: ${toErrorMessage(input.anilistError)}`,
+      title: 'AniList trend feed',
+    },
+  ];
+
+  for (const [index, item] of manga.entries()) {
+    const title = getKitsuTitle(item);
+    const aliases = buildKitsuAliases(item);
+    const subtype =
+      item.attributes.subtype ?? item.attributes.mangaType ?? null;
+
+    if (
+      !isAllowedKitsuManga({
+        ageRating: item.attributes.ageRating ?? null,
+        subtype,
+      })
+    ) {
+      rejected.push({
+        reason: `Unsupported Kitsu manga subtype or age rating: ${subtype ?? 'unknown'} / ${item.attributes.ageRating ?? 'unknown'}`,
+        title,
+      });
+      continue;
+    }
+
+    const duplicate = findDuplicateBlogTopic(
+      {
+        aliases,
+        manhwaTitle: title,
+        title,
+      },
+      input.existingTopics
+    );
+
+    if (duplicate) {
+      rejected.push({
+        reason: `Already covered as ${duplicate.manhwaTitle}`,
+        title,
+      });
+      continue;
+    }
+
+    try {
+      candidates.push(
+        await buildKitsuTrendingCandidate({
+          fetchImpl: input.fetchImpl,
+          item,
+          resolvedAt: input.resolvedAt,
+          trendRank: index + 1,
+        })
+      );
+    } catch (error) {
+      rejected.push({
+        reason: `Kitsu fallback verification failed: ${toErrorMessage(error)}`,
+        title,
+      });
+      continue;
+    }
+
+    if (candidates.length >= input.candidateLimit) {
+      break;
+    }
+  }
+
+  return {
+    candidates,
+    rejected,
+    resolvedAt: input.resolvedAt,
+  };
+}
+
 export async function validateTrendingMangaSelection(
   options: ValidateTrendingMangaSelectionOptions
 ): Promise<TrendingMangaCandidate> {
@@ -289,10 +422,22 @@ export async function validateTrendingMangaSelection(
     throw new Error('The draft canonicalId does not match the AniList id.');
   }
 
-  const media = await fetchAnilistTrendingManga({
-    fetchImpl,
-    limit: searchLimit,
-  });
+  let media: z.infer<typeof zAnilistMedia>[];
+
+  try {
+    media = await fetchAnilistTrendingManga({
+      fetchImpl,
+      limit: searchLimit,
+    });
+  } catch {
+    return await validateKitsuTrendingMangaSelection({
+      claim: options.claim,
+      fetchImpl,
+      resolvedAt,
+      searchLimit,
+    });
+  }
+
   const matchingMedia = media
     .map((item, index) => ({
       item,
@@ -326,24 +471,76 @@ export async function validateTrendingMangaSelection(
     throw new Error('The selected title is not confirmed by a second source.');
   }
 
-  if (candidate.type !== options.claim.type) {
+  assertClaimMatchesCandidate(options.claim, candidate);
+
+  return candidate;
+}
+
+async function validateKitsuTrendingMangaSelection(input: {
+  claim: BlogTopicSelectionClaim;
+  fetchImpl: typeof fetch;
+  resolvedAt: string;
+  searchLimit: number;
+}): Promise<TrendingMangaCandidate> {
+  if (!input.claim.kitsuId) {
+    throw new Error(
+      'AniList is unavailable and the draft has no Kitsu fallback id.'
+    );
+  }
+
+  const manga = await fetchKitsuTrendingManga({
+    fetchImpl: input.fetchImpl,
+    limit: input.searchLimit,
+  });
+  const matchingManga = manga
+    .map((item, index) => ({
+      item,
+      trendRank: index + 1,
+    }))
+    .find((entry) => entry.item.id === input.claim.kitsuId);
+
+  if (!matchingManga) {
+    throw new Error(
+      'The selected title is not currently eligible in the Kitsu fallback trend resolver.'
+    );
+  }
+
+  const candidate = await buildKitsuTrendingCandidate({
+    expectedAnilistId: input.claim.anilistId,
+    fetchImpl: input.fetchImpl,
+    item: matchingManga.item,
+    resolvedAt: input.resolvedAt,
+    trendRank: matchingManga.trendRank,
+  });
+
+  assertClaimMatchesCandidate(input.claim, candidate);
+
+  return candidate;
+}
+
+function assertClaimMatchesCandidate(
+  claim: BlogTopicSelectionClaim,
+  candidate: TrendingMangaCandidate
+): void {
+  if (candidate.anilistId !== claim.anilistId) {
+    throw new Error('The draft AniList id does not match sources.');
+  }
+
+  if (candidate.type !== claim.type) {
     throw new Error(
       'The draft manga/manhwa/manhua type does not match sources.'
     );
   }
 
-  if (candidate.malId && options.claim.malId !== candidate.malId) {
+  if (candidate.malId && claim.malId !== candidate.malId) {
     throw new Error('The draft MyAnimeList id does not match sources.');
   }
 
-  if (candidate.kitsuId && options.claim.kitsuId !== candidate.kitsuId) {
+  if (candidate.kitsuId && claim.kitsuId !== candidate.kitsuId) {
     throw new Error('The draft Kitsu id does not match sources.');
   }
 
-  const claimAliases = buildBlogTopicAliases([
-    options.claim.title,
-    ...options.claim.aliases,
-  ]);
+  const claimAliases = buildBlogTopicAliases([claim.title, ...claim.aliases]);
 
   if (!hasBlogTopicAliasOverlap(candidate.aliases, claimAliases)) {
     throw new Error('The draft title aliases do not match the verified title.');
@@ -352,15 +549,13 @@ export async function validateTrendingMangaSelection(
   const verifiedUrls = new Set(
     candidate.sourceEvidence.map((source) => source.url)
   );
-  const matchingSourceCount = options.claim.sourceUrls.filter((url) =>
+  const matchingSourceCount = claim.sourceUrls.filter((url) =>
     verifiedUrls.has(url)
   ).length;
 
   if (matchingSourceCount < 2) {
     throw new Error('The draft does not cite both verified source URLs.');
   }
-
-  return candidate;
 }
 
 function buildBaseTrendingCandidate(input: {
@@ -507,6 +702,7 @@ async function fetchAnilistTrendingManga(input: {
     fetchImpl: input.fetchImpl,
     headers: {
       'Content-Type': 'application/json',
+      'User-Agent': BLOG_RESOLVER_USER_AGENT,
     },
     method: 'POST',
     url: ANILIST_GRAPHQL_URL,
@@ -514,6 +710,161 @@ async function fetchAnilistTrendingManga(input: {
   const parsed = zAnilistTrendingResponse.parse(responseJson);
 
   return parsed.data.Page.media.filter((item) => item.trending > 0);
+}
+
+async function fetchKitsuTrendingManga(input: {
+  fetchImpl: typeof fetch;
+  limit: number;
+}): Promise<z.infer<typeof zKitsuManga>[]> {
+  const responseJson = await fetchJson({
+    fetchImpl: input.fetchImpl,
+    url: `${KITSU_TRENDING_MANGA_URL}?limit=${input.limit}`,
+  });
+  const parsed = zKitsuSearchResponse.parse(responseJson);
+
+  return parsed.data;
+}
+
+async function buildKitsuTrendingCandidate(input: {
+  expectedAnilistId?: number;
+  fetchImpl: typeof fetch;
+  item: z.infer<typeof zKitsuManga>;
+  resolvedAt: string;
+  trendRank: number;
+}): Promise<TrendingMangaCandidate> {
+  const title = getKitsuTitle(input.item);
+  const kitsuAliases = buildKitsuAliases(input.item);
+  const mappings = await fetchKitsuMappings({
+    fetchImpl: input.fetchImpl,
+    kitsuId: input.item.id,
+  });
+  const anilistId = findMappedInteger(mappings, 'anilist/manga');
+
+  if (!anilistId) {
+    throw new Error('Kitsu has no AniList manga mapping for this title.');
+  }
+
+  if (input.expectedAnilistId && input.expectedAnilistId !== anilistId) {
+    throw new Error('The Kitsu mapping does not match the draft AniList id.');
+  }
+
+  const anilistUrl = `${ANILIST_MANGA_PAGE_URL}/${anilistId}`;
+  const anilistTitle = await fetchAnilistPageTitle({
+    fetchImpl: input.fetchImpl,
+    url: anilistUrl,
+  });
+  const anilistAliases = buildBlogTopicAliases([anilistTitle]);
+
+  if (!hasBlogTopicAliasOverlap(kitsuAliases, anilistAliases)) {
+    throw new Error(
+      'The mapped AniList page does not confirm the Kitsu title.'
+    );
+  }
+
+  const aliases = buildBlogTopicAliases([...kitsuAliases, anilistTitle]);
+
+  if (aliases.length < 2) {
+    throw new Error('The verified title does not expose enough aliases.');
+  }
+
+  const subtype =
+    input.item.attributes.subtype ?? input.item.attributes.mangaType ?? null;
+  const type = resolveKitsuWorkType(subtype);
+  const canonicalId = `anilist:${anilistId}`;
+  const trendScore = Math.max(1, input.item.attributes.userCount ?? 1);
+  const malId = findMappedInteger(mappings, 'myanimelist/manga');
+
+  return {
+    aliases,
+    anilistId,
+    canonicalId,
+    countryOfOrigin: resolveKitsuCountryOfOrigin(type),
+    kitsuId: input.item.id,
+    malId,
+    sourceEvidence: [
+      {
+        canonicalId: `kitsu:${input.item.id}`,
+        kind: 'kitsu',
+        metadata: compactMetadata({
+          ageRating: input.item.attributes.ageRating ?? null,
+          averageRating: input.item.attributes.averageRating ?? null,
+          favoritesCount: input.item.attributes.favoritesCount,
+          popularityRank: input.item.attributes.popularityRank ?? null,
+          ratingRank: input.item.attributes.ratingRank ?? null,
+          status: input.item.attributes.status ?? null,
+          subtype,
+          trendRank: input.trendRank,
+          updatedAt: input.item.attributes.updatedAt ?? null,
+          userCount: input.item.attributes.userCount,
+        }),
+        retrievedAt: input.resolvedAt,
+        role: 'trend',
+        sourceName: 'Kitsu',
+        title,
+        url: `https://kitsu.io/manga/${input.item.id}`,
+      },
+      {
+        canonicalId,
+        kind: 'anilist',
+        metadata: compactMetadata({
+          anilistId,
+          mappedBy: 'Kitsu',
+          pageTitle: anilistTitle,
+        }),
+        retrievedAt: input.resolvedAt,
+        role: 'canonical',
+        sourceName: 'AniList',
+        title: anilistTitle,
+        url: anilistUrl,
+      },
+    ],
+    title,
+    trendRank: input.trendRank,
+    trendRationale: buildKitsuTrendRationale({
+      title,
+      trendRank: input.trendRank,
+      type,
+    }),
+    trendScore,
+    type,
+  };
+}
+
+async function fetchKitsuMappings(input: {
+  fetchImpl: typeof fetch;
+  kitsuId: string;
+}): Promise<z.infer<typeof zKitsuMapping>[]> {
+  const responseJson = await fetchJson({
+    fetchImpl: input.fetchImpl,
+    url: `https://kitsu.io/api/edge/manga/${encodeURIComponent(input.kitsuId)}/mappings`,
+  });
+  const parsed = zKitsuMappingsResponse.parse(responseJson);
+
+  return parsed.data;
+}
+
+async function fetchAnilistPageTitle(input: {
+  fetchImpl: typeof fetch;
+  url: string;
+}): Promise<string> {
+  const html = await fetchText(input);
+  const metaTags = html.match(/<meta\b[^>]*>/gi) ?? [];
+
+  for (const tag of metaTags) {
+    const property = readHtmlAttribute(tag, 'property');
+
+    if (property?.toLowerCase() !== 'og:title') {
+      continue;
+    }
+
+    const content = readHtmlAttribute(tag, 'content');
+
+    if (content?.trim()) {
+      return decodeHtmlEntities(content.trim());
+    }
+  }
+
+  throw new Error('The mapped AniList page has no readable title metadata.');
 }
 
 async function fetchJikanEvidence(input: {
@@ -647,6 +998,34 @@ async function fetchJson(input: {
   }
 }
 
+async function fetchText(input: {
+  fetchImpl: typeof fetch;
+  url: string;
+}): Promise<string> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+  try {
+    const response = await input.fetchImpl(input.url, {
+      headers: {
+        Accept: 'text/html,application/xhtml+xml',
+        'User-Agent': BLOG_RESOLVER_USER_AGENT,
+      },
+      signal: controller.signal,
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `Fetch failed with HTTP ${response.status}: ${input.url}`
+      );
+    }
+
+    return await response.text();
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function buildKitsuAliases(item: z.infer<typeof zKitsuManga>): string[] {
   return buildBlogTopicAliases([
     item.attributes.canonicalTitle,
@@ -654,6 +1033,98 @@ function buildKitsuAliases(item: z.infer<typeof zKitsuManga>): string[] {
     ...(item.attributes.abbreviatedTitles ?? []),
     ...Object.values(item.attributes.titles ?? {}),
   ]);
+}
+
+function getKitsuTitle(item: z.infer<typeof zKitsuManga>): string {
+  return (
+    item.attributes.titles?.['en'] ??
+    item.attributes.titles?.['en_us'] ??
+    item.attributes.canonicalTitle
+  );
+}
+
+function findMappedInteger(
+  mappings: readonly z.infer<typeof zKitsuMapping>[],
+  externalSite: string
+): number | null {
+  const value = mappings.find(
+    (mapping) =>
+      mapping.attributes.externalSite.toLowerCase() ===
+      externalSite.toLowerCase()
+  )?.attributes.externalId;
+
+  if (!value || !/^\d+$/.test(value)) {
+    return null;
+  }
+
+  const parsed = Number.parseInt(value, 10);
+
+  return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
+}
+
+function resolveKitsuWorkType(subtype: string | null): BlogWorkType {
+  const normalizedSubtype = subtype?.trim().toLowerCase();
+
+  if (normalizedSubtype === 'manhwa') {
+    return 'manhwa';
+  }
+
+  if (normalizedSubtype === 'manhua') {
+    return 'manhua';
+  }
+
+  return 'manga';
+}
+
+function resolveKitsuCountryOfOrigin(type: BlogWorkType): string | null {
+  const countries = {
+    manga: null,
+    manhua: 'CN',
+    manhwa: 'KR',
+  } satisfies Record<BlogWorkType, string | null>;
+
+  return countries[type];
+}
+
+function isAllowedKitsuManga(input: {
+  ageRating: string | null;
+  subtype: string | null;
+}): boolean {
+  return (
+    input.subtype?.trim().toLowerCase() !== 'novel' &&
+    input.ageRating?.trim().toUpperCase() !== 'R18'
+  );
+}
+
+function readHtmlAttribute(tag: string, name: string): string | null {
+  const match = new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`, 'i').exec(tag);
+
+  return match?.[2] ?? null;
+}
+
+function decodeHtmlEntities(value: string): string {
+  const namedEntities: Record<string, string> = {
+    amp: '&',
+    apos: "'",
+    gt: '>',
+    lt: '<',
+    quot: '"',
+  };
+
+  return value.replace(
+    /&(?:#(\d+)|#x([\da-f]+)|([a-z]+));/gi,
+    (entity, decimal: string, hexadecimal: string, named: string) => {
+      if (decimal) {
+        return String.fromCodePoint(Number.parseInt(decimal, 10));
+      }
+
+      if (hexadecimal) {
+        return String.fromCodePoint(Number.parseInt(hexadecimal, 16));
+      }
+
+      return namedEntities[named.toLowerCase()] ?? entity;
+    }
+  );
 }
 
 function buildTrendRationale(candidate: BaseTrendingCandidate): string {
@@ -664,6 +1135,18 @@ function buildTrendRationale(candidate: BaseTrendingCandidate): string {
   } satisfies Record<BlogWorkType, string>;
 
   return `${candidate.title} is currently in AniList's manga trend feed at rank ${candidate.trendRank} with trend score ${candidate.trendScore}, then confirmed against a second canonical metadata source before article generation. Treat it as a ${typeLabels[candidate.type]} topic and avoid unsourced claims beyond the verified metadata.`;
+}
+
+function buildKitsuTrendRationale(input: {
+  title: string;
+  trendRank: number;
+  type: BlogWorkType;
+}): string {
+  return `${input.title} is currently in Kitsu's manga trend feed at rank ${input.trendRank}, and Kitsu's external mapping was confirmed against the title metadata on the canonical AniList page. Treat it as a ${input.type} topic and avoid unsourced claims beyond the verified metadata.`;
+}
+
+function toErrorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : 'Unknown error';
 }
 
 function compactMetadata(
