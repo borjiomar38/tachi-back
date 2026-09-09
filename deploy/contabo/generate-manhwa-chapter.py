@@ -132,7 +132,14 @@ def parse_args() -> argparse.Namespace:
   parser.add_argument('--chapter-number', type=int, default=1)
   parser.add_argument('--context-root', default=os.environ.get('MANHWA_CONTEXT_ROOT', str(DEFAULT_CONTEXT_ROOT)))
   parser.add_argument('--output-dir', default=os.environ.get('MANHWA_AGENT_OUTPUT_DIR', str(DEFAULT_OUTPUT_DIR)))
-  parser.add_argument('--input-package', default='')
+  parser.add_argument(
+    '--input-package',
+    default='',
+    help=(
+      'Existing draft package for the requested chapter. Do not pass the '
+      'previous chapter; previous continuity is loaded automatically.'
+    ),
+  )
   parser.add_argument('--codex-bin', default=os.environ.get('MANHWA_AGENT_CODEX_CLI_PATH', DEFAULT_CODEX_BIN))
   parser.add_argument('--model', default=os.environ.get('MANHWA_CREATIVE_CODEX_MODEL', DEFAULT_MODEL))
   parser.add_argument(
@@ -272,6 +279,35 @@ def validate_package(
   payload['generated_at'] = dt.datetime.now(dt.UTC).isoformat().replace('+00:00', 'Z')
   payload['generation_model'] = payload.get('generation_model') or DEFAULT_MODEL
   return payload
+
+
+def assert_target_package_identity(
+  payload: dict[str, Any],
+  *,
+  chapter_number: int,
+  series_slug: str,
+) -> None:
+  series = payload.get('series') if isinstance(payload.get('series'), dict) else {}
+  chapter = payload.get('chapter') if isinstance(payload.get('chapter'), dict) else {}
+  actual_series_slug = str(series.get('slug') or '').strip()
+
+  try:
+    actual_chapter_number = int(chapter.get('chapter_number'))
+  except (TypeError, ValueError):
+    actual_chapter_number = 0
+
+  if actual_series_slug != series_slug:
+    raise ValueError(
+      f'Package series slug {actual_series_slug or "<missing>"!r} does not match '
+      f'requested series {series_slug!r}.'
+    )
+
+  if actual_chapter_number != chapter_number:
+    raise ValueError(
+      f'Package chapter {actual_chapter_number or "<missing>"} does not match '
+      f'requested chapter {chapter_number}. --input-package must be a draft for '
+      'the requested chapter; previous chapter continuity is loaded automatically.'
+    )
 
 
 def read_json_file(path: pathlib.Path, fallback: Any) -> Any:
@@ -583,6 +619,11 @@ def revise_package(
     work_dir=work_dir,
   )
   revised = validate_package(extract_json_object(raw_revision))
+  assert_target_package_identity(
+    revised,
+    chapter_number=args.chapter_number,
+    series_slug=args.series_slug,
+  )
   revised['generation_model'] = args.model
   revised['generation_reasoning_effort'] = normalize_reasoning_effort(args.reasoning_effort)
   return revised
@@ -629,6 +670,11 @@ def main() -> int:
   work_dir = pathlib.Path.cwd()
 
   package = load_initial_package(args, work_dir)
+  assert_target_package_identity(
+    package,
+    chapter_number=args.chapter_number,
+    series_slug=args.series_slug,
+  )
 
   if args.skip_review:
     package['expert_review'] = {
