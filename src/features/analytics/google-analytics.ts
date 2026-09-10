@@ -4,7 +4,7 @@ type GoogleTag = (...args: unknown[]) => void;
 
 declare global {
   interface Window {
-    dataLayer?: unknown[][];
+    dataLayer?: unknown[];
     gtag?: GoogleTag;
   }
 }
@@ -14,11 +14,17 @@ const GOOGLE_TAG_SCRIPT_ID = 'nayovi-google-analytics';
 let initializedMeasurementId: string | null = null;
 let loadingGoogleAnalytics: Promise<void> | null = null;
 
+export const createGoogleTag = (dataLayer: unknown[]): GoogleTag => {
+  // gtag.js expects the native Arguments object from Google's official snippet.
+  // A rest-parameter array is left in the queue and the commands are ignored.
+  return function googleTag() {
+    dataLayer.push(arguments);
+  };
+};
+
 const getGoogleTag = (): GoogleTag => {
   window.dataLayer ??= [];
-  window.gtag ??= (...args: unknown[]) => {
-    window.dataLayer?.push(args);
-  };
+  window.gtag ??= createGoogleTag(window.dataLayer);
 
   return window.gtag;
 };
