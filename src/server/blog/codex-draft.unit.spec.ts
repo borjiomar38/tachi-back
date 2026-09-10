@@ -129,6 +129,23 @@ describe('Codex blog draft validation', () => {
     expect(draft.featuredTitles).toHaveLength(2);
   });
 
+  it('clips an overlong generated search intent at a word boundary', () => {
+    const draft = zCodexBlogArticleDraft.parse({
+      ...commonDraft,
+      body: buildBody('manhwa_news'),
+      category: 'manhwa_news',
+      searchIntent:
+        'current manga and manhwa readers comparing verified fantasy recommendations with practical translation workflows and official release information '.repeat(
+          2
+        ),
+      topicEvidence,
+    });
+
+    expect(draft.searchIntent.length).toBeLessThanOrEqual(160);
+    expect(draft.searchIntent).not.toMatch(/\s$/);
+    expect(draft.searchIntent).not.toMatch(/[,:;.!?-]$/);
+  });
+
   it('accepts an app update tied to an exact GitHub commit range', () => {
     const commitUrl =
       'https://github.com/borjiomar38/tachi-mobile/commit/abcdef1234567890';

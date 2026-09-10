@@ -18,8 +18,15 @@ import {
 import type { TrendingMangaCandidate } from '@/server/blog/trending-topic-resolver';
 
 export const BLOG_CODEX_PROMPT_VERSION =
-  '2026-08-20.editorial-categories-simple-articles.v1';
+  '2026-09-10.editorial-categories-simple-articles.v2';
 export const CODEX_BLOG_NOOP_MARKER = 'TACHI_CODEX_BLOG_NOOP';
+
+const CODEX_BLOG_SEARCH_INTENT_MAX_LENGTH = 160;
+
+const zCodexBlogSearchIntent = z.preprocess(
+  normalizeCodexBlogSearchIntent,
+  z.string().min(12).max(CODEX_BLOG_SEARCH_INTENT_MAX_LENGTH)
+);
 
 export { findDuplicateBlogTopic, normalizeBlogTopicName };
 export type { ExistingBlogTopic };
@@ -56,10 +63,30 @@ const commonDraftFields = {
   manhwaTitle: z.string().min(2).max(120),
   manhwaType: z.enum(['manga', 'manhua', 'manhwa']),
   metaDescription: z.string().min(120).max(165),
-  searchIntent: z.string().min(12).max(160),
+  searchIntent: zCodexBlogSearchIntent,
   slugBase: z.string().min(8).max(86),
   title: z.string().min(18).max(86),
 };
+
+function normalizeCodexBlogSearchIntent(value: unknown) {
+  if (typeof value !== 'string') {
+    return value;
+  }
+
+  const normalized = value.trim().replace(/\s+/g, ' ');
+  if (normalized.length <= CODEX_BLOG_SEARCH_INTENT_MAX_LENGTH) {
+    return normalized;
+  }
+
+  const clipped = normalized
+    .slice(0, CODEX_BLOG_SEARCH_INTENT_MAX_LENGTH)
+    .trim();
+  const lastWordBoundary = clipped.lastIndexOf(' ');
+
+  return (
+    lastWordBoundary >= 12 ? clipped.slice(0, lastWordBoundary) : clipped
+  ).replace(/[,:;.!?-]+$/, '');
+}
 
 const recommendationDraftFields = {
   ...commonDraftFields,
@@ -273,6 +300,7 @@ function buildCommonPromptHeader(input: {
     `- Campaign focus phrases for manga content: ${campaignBlogSeoKeywords.join(', ')}.`,
     `- Relevant search cluster: ${highIntentBlogSeoKeywords.join(', ')}. Use only phrases that fit naturally.`,
     '- Keep title under 86 characters and metaDescription between 120 and 165 characters.',
+    '- Keep searchIntent between 12 and 160 characters as one concise reader search query.',
     '- Use 6 to 12 focused keywords without stuffing.',
   ];
 }
