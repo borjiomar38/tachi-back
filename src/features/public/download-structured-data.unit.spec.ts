@@ -10,7 +10,7 @@ const getSoftwareApplication = (apkDownload?: AndroidApkDownload) => {
   const structuredData = buildDownloadStructuredData(apkDownload);
 
   return structuredData.find(
-    (entry) => entry['@type'] === 'SoftwareApplication'
+    (entry) => entry['@type'] === 'MobileApplication'
   );
 };
 
@@ -25,8 +25,10 @@ describe('buildDownloadStructuredData', () => {
     };
 
     expect(getSoftwareApplication(liveApkDownload)).toMatchObject({
+      '@id': expect.stringMatching(/\/#android-app$/),
       downloadUrl: expect.stringMatching(/\/api\/download\/apk$/),
       fileSize: liveApkDownload.sizeLabel,
+      installUrl: expect.stringMatching(/\/download$/),
       softwareVersion: liveApkDownload.buildLabel,
     });
   });

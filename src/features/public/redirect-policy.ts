@@ -1,7 +1,13 @@
 import type { NitroRouteConfig } from 'nitro/types';
 
 const canonicalPublicHostname = 'tachiyomiat.com';
-const legacyPublicHostname = `www.${canonicalPublicHostname}`;
+const publicAliasHostnames = new Set([
+  `www.${canonicalPublicHostname}`,
+  'nayovi.com',
+  'www.nayovi.com',
+  'translate-manhwa-ai.com',
+  'www.translate-manhwa-ai.com',
+]);
 
 export const publicSeoRedirectRouteRules = {
   '/blog/download-tachiyomiat-for-manhwa-translation': {
@@ -77,18 +83,25 @@ export const publicSeoRedirectRouteRules = {
 
 export const getCanonicalHostRedirectLocation = (request: Request) => {
   const hostname = resolveRequestHostname(request);
+  const requestUrl = new URL(request.url);
 
-  if (hostname !== legacyPublicHostname) {
+  if (
+    !publicAliasHostnames.has(hostname) ||
+    isApiPath(requestUrl.pathname)
+  ) {
     return null;
   }
 
-  const canonicalUrl = new URL(request.url);
+  const canonicalUrl = requestUrl;
   canonicalUrl.protocol = 'https:';
   canonicalUrl.hostname = canonicalPublicHostname;
   canonicalUrl.port = '';
 
   return canonicalUrl.toString();
 };
+
+const isApiPath = (pathname: string) =>
+  pathname === '/api' || pathname.startsWith('/api/');
 
 export const createCanonicalHostRedirectResponse = (request: Request) => {
   const location = getCanonicalHostRedirectLocation(request);

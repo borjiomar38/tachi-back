@@ -1,13 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { buildLlmsTxt } from '@/features/public/ai-discovery';
+import { buildLlmsFullTxt } from '@/features/public/ai-discovery';
 import { buildPublicAbsoluteUrl } from '@/features/public/head';
 
-export const Route = createFileRoute('/llms.txt')({
+export const Route = createFileRoute('/llms-full.txt')({
   server: {
     handlers: {
       GET: () =>
-        new Response(buildLlmsTxt(buildPublicAbsoluteUrl), {
+        new Response(buildLlmsFullTxt(buildPublicAbsoluteUrl), {
           headers: {
             'cache-control':
               'public, max-age=3600, stale-while-revalidate=86400',

@@ -47,7 +47,7 @@ describe('public SEO redirect policy', () => {
     });
   });
 
-  it('redirects www to HTTPS apex while preserving the full request target', () => {
+  it('redirects every public alias to the canonical host while preserving the request target', () => {
     const request = new Request(
       'http://internal.test/guides/mihon-nayovi-setup?source=google',
       {
@@ -67,9 +67,24 @@ describe('public SEO redirect policy', () => {
     expect(response?.headers.get('location')).toBe(
       'https://tachiyomiat.com/guides/mihon-nayovi-setup?source=google'
     );
+
+    for (const alias of [
+      'nayovi.com',
+      'www.nayovi.com',
+      'translate-manhwa-ai.com',
+      'www.translate-manhwa-ai.com',
+    ]) {
+      expect(
+        getCanonicalHostRedirectLocation(
+          new Request('http://internal.test/translate-manhwa-ai', {
+            headers: { 'x-forwarded-host': alias },
+          })
+        )
+      ).toBe('https://tachiyomiat.com/translate-manhwa-ai');
+    }
   });
 
-  it('does not redirect the canonical domain or local development', () => {
+  it('does not redirect the canonical domain, local development, or API traffic', () => {
     expect(
       createCanonicalHostRedirectResponse(
         new Request('https://tachiyomiat.com/download')
@@ -78,6 +93,13 @@ describe('public SEO redirect policy', () => {
     expect(
       createCanonicalHostRedirectResponse(
         new Request('http://localhost:3009/download')
+      )
+    ).toBeNull();
+    expect(
+      getCanonicalHostRedirectLocation(
+        new Request('https://internal.test/api/mobile/heartbeat', {
+          headers: { 'x-forwarded-host': 'nayovi.com' },
+        })
       )
     ).toBeNull();
   });

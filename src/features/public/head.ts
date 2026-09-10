@@ -12,24 +12,27 @@ import {
   highIntentBlogSeoKeywords,
 } from "@/features/blog/seo";
 import {
+  PUBLIC_PRODUCT_ALIASES,
+  PUBLIC_PRODUCT_DESCRIPTION,
+  PUBLIC_PRODUCT_FEATURES,
+  PUBLIC_PRODUCT_NAME,
+} from "@/features/public/ai-discovery";
+import {
   fallbackPublicTokenPacks,
   formatCurrency,
 } from "@/features/public/data";
 
-const publicSiteName = "Nayovi";
+const publicSiteName = PUBLIC_PRODUCT_NAME;
 const publicBaseUrlFallback = "https://tachiyomiat.com";
 const publicBrandUrl = "https://nayovi.com";
 const publicSeoUrl = "https://translate-manhwa-ai.com";
 const socialImagePath = "/og/nayovi-social-preview.jpg";
 const publicBrandAliases = [
-  "TachiyomiAT",
-  "Tachiyomi AT",
-  "tachiyomiat.com",
-  "nayovi.com",
-  "translate-manhwa-ai.com",
+  ...PUBLIC_PRODUCT_ALIASES,
 ];
-const publicSiteDescription =
-  "Nayovi is a manhwa and manga translator for Android that lets readers translate manhwa, manga, and manhua chapters inside a familiar reading app.";
+const publicSiteDescription = PUBLIC_PRODUCT_DESCRIPTION;
+const publicIndexingPolicy =
+  "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
 
 const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, "");
 const normalizePath = (path: string) =>
@@ -181,20 +184,43 @@ const buildStructuredData = (
         url,
         description,
         image: imageUrl,
+        about: {
+          "@id": `${baseUrl}#android-app`,
+        },
         isPartOf: {
           "@id": websiteId,
         },
         inLanguage: "en",
       },
       {
-        "@type": "SoftwareApplication",
+        "@type": "MobileApplication",
         "@id": `${baseUrl}#android-app`,
         name: publicSiteName,
         alternateName: publicBrandAliases,
         applicationCategory: "MultimediaApplication",
+        applicationSubCategory: "Manhwa, manga, and manhua translation",
         operatingSystem: "Android",
         url: buildAbsoluteUrl("/download"),
         description: publicSiteDescription,
+        downloadUrl: buildAbsoluteUrl("/api/download/apk"),
+        installUrl: buildAbsoluteUrl("/download"),
+        featureList: PUBLIC_PRODUCT_FEATURES,
+        isAccessibleForFree: true,
+        screenshot: [
+          buildAbsoluteUrl("/marketing/nayovi-manhwa-translation-phone.webp"),
+          buildAbsoluteUrl("/og/nayovi-manhwa-translator-preview.jpg"),
+        ],
+        softwareHelp: {
+          "@type": "CreativeWork",
+          url: buildAbsoluteUrl("/support"),
+        },
+        provider: {
+          "@id": organizationId,
+        },
+        potentialAction: {
+          "@type": "DownloadAction",
+          target: buildAbsoluteUrl("/download"),
+        },
         offers: buildPublicAppOffers(),
       },
       ...extraGraph,
@@ -274,7 +300,7 @@ export const buildPublicPageHead = (
       },
       {
         name: "robots",
-        content: options?.robots ?? "index, follow, max-image-preview:large",
+        content: options?.robots ?? publicIndexingPolicy,
       },
       ...(keywords.length > 0
         ? [
@@ -412,7 +438,7 @@ export const buildPublicBlogCategoryHead = (
     keywords: category.keywords,
     robots:
       totalItems > 0
-        ? "index, follow, max-image-preview:large"
+        ? publicIndexingPolicy
         : "noindex, follow",
     structuredDataGraph: [
       {

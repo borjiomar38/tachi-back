@@ -13,10 +13,12 @@ import { Route as TranslateManhwaAiRouteImport } from './routes/translate-manhwa
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as ProductDotjsonRouteImport } from './routes/product[.]json'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as MediaKitRouteImport } from './routes/media-kit'
 import { Route as LogoutRouteImport } from './routes/logout'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as ManagerRouteRouteImport } from './routes/manager/route'
@@ -153,6 +155,11 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductDotjsonRoute = ProductDotjsonRouteImport.update({
+  id: '/product.json',
+  path: '/product.json',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -171,6 +178,11 @@ const LogoutRoute = LogoutRouteImport.update({
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
+  id: '/llms-full.txt',
+  path: '/llms-full.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -800,10 +812,12 @@ export interface FileRoutesByFullPath {
   '/manager': typeof ManagerRouteRouteWithChildren
   '/download': typeof DownloadRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
   '/media-kit': typeof MediaKitRoute
   '/pricing': typeof PricingRoute
+  '/product.json': typeof ProductDotjsonRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
@@ -922,10 +936,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/download': typeof DownloadRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
   '/media-kit': typeof MediaKitRoute
   '/pricing': typeof PricingRoute
+  '/product.json': typeof ProductDotjsonRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
@@ -1047,10 +1063,12 @@ export interface FileRoutesById {
   '/manager': typeof ManagerRouteRouteWithChildren
   '/download': typeof DownloadRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/logout': typeof LogoutRoute
   '/media-kit': typeof MediaKitRoute
   '/pricing': typeof PricingRoute
+  '/product.json': typeof ProductDotjsonRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
@@ -1174,10 +1192,12 @@ export interface FileRouteTypes {
     | '/manager'
     | '/download'
     | '/how-it-works'
+    | '/llms-full.txt'
     | '/llms.txt'
     | '/logout'
     | '/media-kit'
     | '/pricing'
+    | '/product.json'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/support'
@@ -1296,10 +1316,12 @@ export interface FileRouteTypes {
     | '/'
     | '/download'
     | '/how-it-works'
+    | '/llms-full.txt'
     | '/llms.txt'
     | '/logout'
     | '/media-kit'
     | '/pricing'
+    | '/product.json'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/support'
@@ -1420,10 +1442,12 @@ export interface FileRouteTypes {
     | '/manager'
     | '/download'
     | '/how-it-works'
+    | '/llms-full.txt'
     | '/llms.txt'
     | '/logout'
     | '/media-kit'
     | '/pricing'
+    | '/product.json'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/support'
@@ -1546,10 +1570,12 @@ export interface RootRouteChildren {
   ManagerRouteRoute: typeof ManagerRouteRouteWithChildren
   DownloadRoute: typeof DownloadRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   LogoutRoute: typeof LogoutRoute
   MediaKitRoute: typeof MediaKitRoute
   PricingRoute: typeof PricingRoute
+  ProductDotjsonRoute: typeof ProductDotjsonRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportRoute: typeof SupportRoute
@@ -1650,6 +1676,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product.json': {
+      id: '/product.json'
+      path: '/product.json'
+      fullPath: '/product.json'
+      preLoaderRoute: typeof ProductDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -1676,6 +1709,13 @@ declare module '@tanstack/react-router' {
       path: '/llms.txt'
       fullPath: '/llms.txt'
       preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms-full.txt': {
+      id: '/llms-full.txt'
+      path: '/llms-full.txt'
+      fullPath: '/llms-full.txt'
+      preLoaderRoute: typeof LlmsFullDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -2692,10 +2732,12 @@ const rootRouteChildren: RootRouteChildren = {
   ManagerRouteRoute: ManagerRouteRouteWithChildren,
   DownloadRoute: DownloadRoute,
   HowItWorksRoute: HowItWorksRoute,
+  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   LogoutRoute: LogoutRoute,
   MediaKitRoute: MediaKitRoute,
   PricingRoute: PricingRoute,
+  ProductDotjsonRoute: ProductDotjsonRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportRoute: SupportRoute,

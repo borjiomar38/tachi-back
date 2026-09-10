@@ -24,7 +24,9 @@ export const buildPublicRobotsTxt = (
     '',
     `Sitemap: ${buildAbsoluteUrl('/sitemap.xml')}`,
     '',
-    '# LLM-friendly site summary:',
+    '# Public product context for assistants and other machine clients:',
     `# ${buildAbsoluteUrl('/llms.txt')}`,
+    `# ${buildAbsoluteUrl('/llms-full.txt')}`,
+    `# ${buildAbsoluteUrl('/product.json')}`,
     '',
   ].join('\n');

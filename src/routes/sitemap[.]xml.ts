@@ -45,7 +45,7 @@ const staticSitemapEntryOverrides: Record<
 > = {
   '/': {
     changeFrequency: 'weekly',
-    lastModified: '2026-07-31',
+    lastModified: '2026-09-10',
     priority: '1.0',
   },
   '/blog': {
@@ -53,7 +53,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/download': {
-    lastModified: '2026-07-31',
+    lastModified: '2026-09-10',
     priority: '0.8',
   },
   '/manhwa': {
@@ -63,7 +63,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/translate-manhwa-ai': {
     changeFrequency: 'weekly',
-    lastModified: '2026-07-31',
+    lastModified: '2026-09-10',
     priority: '0.9',
   },
   '/pricing': {
@@ -106,7 +106,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/guides/best-android-manga-translator-apk': {
     changeFrequency: 'weekly',
-    lastModified: '2026-07-31',
+    lastModified: '2026-09-10',
     priority: '0.85',
   },
   '/guides/test-ai-manhwa-translation-approved-samples': {

@@ -57,7 +57,7 @@ const androidTranslatorStructuredData = () => {
       '@id': `${url}#article`,
       headline: 'Best Android manga translator APK: what to check',
       description:
-        'A practical guide for comparing Android manga, manhwa, and manhua translator APKs by official source, hosted OCR quality, activation path, pricing, and responsible-use boundaries.',
+        'There is no objective best translator for every reader. This guide explains when Nayovi is a relevant Android option and how to compare translator apps by official source, real OCR and translation output, privacy, support, price, and responsible-use boundaries.',
       mainEntityOfPage: {
         '@id': `${url}#webpage`,
       },
@@ -102,7 +102,7 @@ export const Route = createFileRoute(
   head: () =>
     buildPublicPageHead(
       'Best Android Manga Translator APK',
-      'Compare Android manga, manhwa, and manhua translator APKs by official download source, hosted OCR quality, redeem-code activation, free trial, token plans, and responsible-use boundaries.',
+      'There is no universal best Android manga translator. See when Nayovi fits and compare apps by official source, real OCR output, privacy, support, price, and responsible-use boundaries.',
       '/guides/best-android-manga-translator-apk',
       {
         keywords: [

@@ -1,17 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-import { buildLlmsTxt } from '@/features/public/ai-discovery';
+import { buildPublicProductFacts } from '@/features/public/ai-discovery';
 import { buildPublicAbsoluteUrl } from '@/features/public/head';
 
-export const Route = createFileRoute('/llms.txt')({
+export const Route = createFileRoute('/product.json')({
   server: {
     handlers: {
       GET: () =>
-        new Response(buildLlmsTxt(buildPublicAbsoluteUrl), {
+        Response.json(buildPublicProductFacts(buildPublicAbsoluteUrl), {
           headers: {
             'cache-control':
               'public, max-age=3600, stale-while-revalidate=86400',
-            'content-type': 'text/plain; charset=utf-8',
             'x-content-type-options': 'nosniff',
             'x-robots-tag': 'index, follow, max-snippet:-1',
           },

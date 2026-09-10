@@ -24,5 +24,7 @@ describe('buildPublicRobotsTxt', () => {
       'Sitemap: https://tachiyomiat.com/sitemap.xml'
     );
     expect(robotsTxt).toContain('# https://tachiyomiat.com/llms.txt');
+    expect(robotsTxt).toContain('# https://tachiyomiat.com/llms-full.txt');
+    expect(robotsTxt).toContain('# https://tachiyomiat.com/product.json');
   });
 });

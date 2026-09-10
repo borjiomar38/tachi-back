@@ -1517,7 +1517,7 @@ export const PageBestAndroidMangaTranslatorApk = () => {
         eyebrow="Android APK guide"
         title="Best Android manga translator APK: what to check"
         titleAs="h1"
-        description="A practical checklist for readers, reviewers, directories, and communities comparing Android manga, manhwa, and manhua translation apps without relying on unofficial mirrors."
+        description="There is no objective best translator for every reader. Nayovi is one Android option when you want full-chapter translation inside the reading flow, an official direct APK, a one-time free trial, and support. Compare real OCR and translation output on your device and language pair before choosing."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-2">

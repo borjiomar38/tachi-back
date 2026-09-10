@@ -24,25 +24,26 @@ const installSteps = [
 export const buildDownloadStructuredData = (
   apkDownload: AndroidApkDownload = androidApkDownload
 ) => {
+  const appId = `${buildPublicAbsoluteUrl('/')}#android-app`;
   const url = buildPublicAbsoluteUrl('/download');
 
   return [
     {
-      '@type': 'SoftwareApplication',
-      '@id': `${url}#apk`,
+      '@type': 'MobileApplication',
+      '@id': appId,
       name: 'Nayovi Android Manhwa and Manga Translator',
       alternateName: ['TachiyomiAT APK', 'Tachiyomi AT APK'],
       applicationCategory: 'MultimediaApplication',
+      applicationSubCategory: 'Manhwa, manga, and manhua translation',
       operatingSystem: 'Android',
       downloadUrl: buildPublicAbsoluteUrl(apkDownload.href),
       fileSize: apkDownload.sizeLabel,
+      installUrl: url,
+      softwareRequirements: 'Android device with ARM64 (arm64-v8a) support',
       softwareVersion: apkDownload.buildLabel,
       url,
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-        description: 'One-time free trial before optional monthly plans.',
+      mainEntityOfPage: {
+        '@id': `${url}#webpage`,
       },
     },
     {

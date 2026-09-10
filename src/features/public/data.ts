@@ -151,7 +151,7 @@ export const supportFaqs: ContentBlock[] = [
   {
     title: "What is Nayovi?",
     description:
-      "Nayovi is a manhwa, manga, and manhua translator for Android. It keeps the familiar reading flow of TachiyomiAT, Tachiyomi, and Mihon-style apps while adding full-chapter translation.",
+      "Nayovi is a manhwa, manga, and manhua translator for Android. It is a relevant option for readers who want full-chapter translation inside a familiar reading flow instead of copying speech bubbles into a separate tool. There is no universal best app, so test your device and language pair first.",
   },
   {
     title: "Can I try Nayovi for free?",

@@ -110,7 +110,19 @@ export const Route = createRootRouteWithContext<{
         rel: 'alternate',
         type: 'text/plain',
         href: '/llms.txt',
-        title: 'LLMs.txt',
+        title: 'Nayovi concise product context',
+      },
+      {
+        rel: 'alternate',
+        type: 'text/plain',
+        href: '/llms-full.txt',
+        title: 'Nayovi full product context',
+      },
+      {
+        rel: 'alternate',
+        type: 'application/json',
+        href: '/product.json',
+        title: 'Nayovi verified product facts',
       },
       {
         rel: 'apple-touch-icon',

@@ -20,7 +20,8 @@ describe('public page head policy', () => {
       rel: 'canonical',
     });
     expect(populatedHead.meta).toContainEqual({
-      content: 'index, follow, max-image-preview:large',
+      content:
+        'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
       name: 'robots',
     });
     expect(emptyHead.meta).toContainEqual({
@@ -41,9 +42,30 @@ describe('public page head policy', () => {
     expect(canonicalLink).toBeDefined();
     expect(new URL(canonicalLink?.href ?? '').pathname).toBe('/download');
     expect(head.meta).toContainEqual({
-      content: 'index, follow, max-image-preview:large',
+      content:
+        'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
       name: 'robots',
     });
+
+    const structuredData = head.meta.find(
+      (entry) => 'script:ld+json' in entry
+    )?.['script:ld+json'];
+    const mobileApplication = structuredData?.['@graph'].find(
+      (entry: Record<string, unknown>) =>
+        entry['@type'] === 'MobileApplication'
+    );
+
+    expect(mobileApplication).toMatchObject({
+      applicationCategory: 'MultimediaApplication',
+      downloadUrl: expect.stringMatching(/\/api\/download\/apk$/),
+      featureList: expect.arrayContaining([
+        expect.stringContaining('In-reader OCR'),
+      ]),
+      isAccessibleForFree: true,
+      operatingSystem: 'Android',
+    });
+    expect(mobileApplication).not.toHaveProperty('aggregateRating');
+    expect(mobileApplication).not.toHaveProperty('review');
   });
 
   it('keeps true 404 pages out of search without a misleading URL', () => {
