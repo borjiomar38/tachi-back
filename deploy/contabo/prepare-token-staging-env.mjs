@@ -1,5 +1,6 @@
 // Run on Contabo only: node --input-type=module - --apply < this-file
 // Existing staging credentials stay on the VPS and are never printed.
+import { execFileSync } from 'node:child_process';
 import { randomBytes } from 'node:crypto';
 import {
   copyFileSync,
@@ -36,7 +37,7 @@ const updates = {
   TACHI_MANHWA_PRIVATE_DIR: `${root}/runtime/manhwa-private`,
   TRANSLATION_QA_AGENT_ENABLED: 'false',
   OPENAI_PORNOGRAPHY_MODERATION_ENABLED: 'false',
-  // Payment-only staging must not write to production R2 or call paid AI providers.
+  // Default payment-only staging disables paid providers and uses DB-inline storage, never production R2.
   S3_HOST: '127.0.0.1:9',
   S3_SECURE: 'false',
   S3_ACCESS_KEY_ID: 'staging-storage-disabled',
@@ -52,9 +53,40 @@ if (process.argv.includes('--with-openai')) {
   const existing = parseEnv(readFileSync(source, 'utf8'));
   if (!existing.OPENAI_API_KEY?.startsWith('sk-'))
     throw new Error('No existing staging OpenAI key to reuse');
+  if (!existing.GOOGLE_CLOUD_VISION_API_KEY)
+    throw new Error(
+      'No existing staging OCR key for the hosted chapter pipeline'
+    );
   updates.OPENAI_API_KEY = existing.OPENAI_API_KEY;
+  // Hosted translation first reads the chapter text with the existing OCR provider.
+  updates.GOOGLE_CLOUD_VISION_API_KEY = existing.GOOGLE_CLOUD_VISION_API_KEY;
+  updates.OCR_PROVIDER_PRIMARY = 'google_cloud_vision';
   updates.TRANSLATION_PROVIDER_PRIMARY = 'openai';
   updates.OPENAI_TRANSLATION_MODEL = 'gpt-5-mini';
+}
+if (process.argv.includes('--with-current-ocr')) {
+  if (!process.argv.includes('--with-openai'))
+    throw new Error(
+      'Current OCR reuse requires an authorized hosted translation test'
+    );
+  // Read one working provider credential; never mutate production or copy its storage/database settings.
+  const runtime = JSON.parse(
+    execFileSync(
+      'docker',
+      ['inspect', 'tachi-production-app', '--format', '{{json .Config.Env}}'],
+      {
+        encoding: 'utf8',
+      }
+    )
+  );
+  const currentOcr = runtime
+    .find((entry) => entry.startsWith('GOOGLE_CLOUD_VISION_API_KEY='))
+    ?.split('=')
+    .slice(1)
+    .join('=');
+  if (!currentOcr)
+    throw new Error('Current Nayovi OCR credential is unavailable');
+  updates.GOOGLE_CLOUD_VISION_API_KEY = currentOcr;
 }
 if (!parseEnv(original).CRON_SECRET)
   updates.CRON_SECRET = randomBytes(32).toString('hex');
