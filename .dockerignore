@@ -21,6 +21,7 @@
 dist
 .tanstack
 .nitro
+/runtime/
 
 # Contabo mounts these generated/runtime assets. They can be many GB on the VPS
 # and must not be copied into Docker build context.

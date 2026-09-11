@@ -94,6 +94,7 @@ jobs:
             --exclude 'playwright-report/' \
             --exclude 'test-results/' \
             --exclude 'tmp/' \
+            --exclude 'runtime/' \
             --exclude 'src/server/db/generated/' \
             --exclude 'deploy/contabo/postgres-backups/' \
             --exclude 'deploy/contabo/dns-backups/' \

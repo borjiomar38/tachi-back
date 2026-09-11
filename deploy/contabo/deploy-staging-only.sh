@@ -10,7 +10,7 @@ exec 9>/tmp/tachi-back-deploy.lock
 flock 9
 
 compose=(docker compose --env-file "${app_dir}/.env.staging" -p tachi-staging -f deploy/contabo/docker-compose.app.yml)
-"${compose[@]}" config --format json | jq -e '
+"${compose[@]}" --profile tools config --format json | jq -e '
   .services.app.container_name == "tachi-staging-app" and
   .services.postgres.container_name == "tachi-staging-postgres" and
   .volumes["postgres-data"].name == "tachi-staging-postgres-data" and

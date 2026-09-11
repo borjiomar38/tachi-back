@@ -9,6 +9,7 @@ import {
   realpathSync,
   writeFileSync,
 } from 'node:fs';
+import { parseEnv } from 'node:util';
 
 const root = '/opt/tachi-back-staging';
 const source = '/opt/tachi-back/.env.staging';
@@ -47,7 +48,15 @@ const updates = {
   OPENROUTER_API_KEY: '',
   ANTHROPIC_API_KEY: '',
 };
-if (!/^CRON_SECRET=.+$/m.test(original))
+if (process.argv.includes('--with-openai')) {
+  const existing = parseEnv(readFileSync(source, 'utf8'));
+  if (!existing.OPENAI_API_KEY?.startsWith('sk-'))
+    throw new Error('No existing staging OpenAI key to reuse');
+  updates.OPENAI_API_KEY = existing.OPENAI_API_KEY;
+  updates.TRANSLATION_PROVIDER_PRIMARY = 'openai';
+  updates.OPENAI_TRANSLATION_MODEL = 'gpt-5-mini';
+}
+if (!parseEnv(original).CRON_SECRET)
   updates.CRON_SECRET = randomBytes(32).toString('hex');
 console.log(
   JSON.stringify({

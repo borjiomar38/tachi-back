@@ -45,6 +45,41 @@ function daysAgo(value: number) {
 export async function createBackofficeDemoData() {
   console.log('⏳ Seeding backoffice demo data');
 
+  // Historical demo orders still reference subscription packs. Keep these
+  // fixtures separate and hidden from the new one-time purchase catalog.
+  for (const pack of [
+    {
+      key: 'starter',
+      name: 'Legacy Starter',
+      tokenAmount: 500,
+      priceAmountCents: 200,
+    },
+    {
+      key: 'pro',
+      name: 'Legacy Pro',
+      tokenAmount: 2500,
+      priceAmountCents: 1000,
+    },
+    {
+      key: 'power',
+      name: 'Legacy Power',
+      tokenAmount: 5500,
+      priceAmountCents: 2000,
+    },
+  ]) {
+    await db.tokenPack.upsert({
+      where: { key: pack.key },
+      create: {
+        ...pack,
+        active: false,
+        billingType: 'subscription',
+        currency: 'usd',
+        bonusTokenAmount: 0,
+      },
+      update: {},
+    });
+  }
+
   const [admin, support, starterPack, proPack, powerPack] = await Promise.all([
     db.user.findUniqueOrThrow({
       where: { email: 'admin@tachi-back.local' },
