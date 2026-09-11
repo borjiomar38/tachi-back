@@ -17,6 +17,7 @@ import {
   findFreeTrialIdentityConflict,
   throwFreeTrialIdentityUnavailable,
 } from '@/server/licenses/free-trial-identity';
+import { hasPaidLicenseEntitlement } from '@/server/licenses/paid-entitlement';
 import {
   zRedeemActivationInput,
   zRedeemActivationResponse,
@@ -131,7 +132,12 @@ export async function redeemLicenseToDeviceWithContext(
 
       assertRedeemCodeAvailableForActivation(redeemCode, now);
 
-      const isFreeTrialCode = isFreeTrialRedeemCode(redeemCode.metadata);
+      const isFreeTrialCode =
+        isFreeTrialRedeemCode(redeemCode.metadata) &&
+        !(await hasPaidLicenseEntitlement(
+          { licenseId: redeemCode.license.id, now },
+          { dbClient: tx }
+        ));
       let freeTrialClaim = redeemCode.freeTrialClaim;
 
       if (isFreeTrialCode) {

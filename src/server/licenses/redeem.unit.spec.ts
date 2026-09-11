@@ -18,6 +18,12 @@ vi.mock('@/server/logger', () => ({
   logger: mockLogger,
 }));
 
+// Trial-only fixtures have no paid order. The real in-place promotion is
+// covered against PostgreSQL in token-purchase.integration.unit.spec.ts.
+vi.mock('@/server/licenses/paid-entitlement', () => ({
+  hasPaidLicenseEntitlement: vi.fn().mockResolvedValue(false),
+}));
+
 import {
   redeemLicenseToDevice,
   redeemLicenseToDeviceWithContext,

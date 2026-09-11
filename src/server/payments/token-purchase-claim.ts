@@ -27,7 +27,10 @@ export const prepareTokenPurchaseClaim = async (input: {
   const where = input.ticket
     ? { ticketHash: hashPurchaseTicket(input.ticket) }
     : { redeemCode: { code: normalizeRedeemCode(input.redeemCode ?? '') } };
-  const found = await db.tokenPurchase.findFirst({ where });
+  const found = await db.tokenPurchase.findFirst({
+    where,
+    orderBy: { createdAt: 'desc' },
+  });
   if (!found) {
     if (input.ticket) throw new PurchaseError('purchase_not_found', 404);
     return null; // Preserve the existing free-trial / legacy redeem workflow.
@@ -65,31 +68,11 @@ export const prepareTokenPurchaseClaim = async (input: {
     if (!['available', 'redeemed'].includes(purchase.redeemCode.status)) {
       throw new PurchaseError('redeem_code_unavailable', 409);
     }
-    if (licenseId !== purchase.order.licenseId) {
-      // A web purchase may have no account until the buyer returns to the app.
-      // Move only this unclaimed purchase, never another license's balance.
-      if (
-        purchase.claimedAt ||
-        purchase.targetLicenseId ||
-        purchase.redeemCode.redeemedAt ||
-        (await tx.mobileSession.count({
-          where: { licenseId: purchase.order.licenseId },
-        }))
-      ) {
-        throw new PurchaseError('purchase_account_mismatch', 403);
-      }
-      await tx.tokenLedger.update({
-        where: { idempotencyKey: `token-purchase:${purchase.id}:credit` },
-        data: { licenseId },
-      });
-      await tx.order.update({
-        where: { id: purchase.order.id },
-        data: { licenseId },
-      });
-      await tx.redeemCode.update({
-        where: { id: purchase.redeemCode.id },
-        data: { licenseId },
-      });
+    if (
+      licenseId !== purchase.order.licenseId ||
+      purchase.redeemCode.licenseId !== licenseId
+    ) {
+      throw new PurchaseError('purchase_account_mismatch', 403);
     }
     await tx.tokenPurchase.update({
       where: { id: purchase.id },
@@ -160,7 +143,7 @@ export const getTokenPurchaseStatus = async (rawInput: unknown) => {
     throw new PurchaseError('purchase_ticket_expired', 410);
   return {
     state: purchase.status,
-    activated: Boolean(purchase.redeemCode?.redeemedAt),
+    activated: Boolean(purchase.claimedAt),
     packName: purchase.packName,
     totalTokens: purchase.totalTokens,
     emailSent: Boolean(purchase.emailSentAt),

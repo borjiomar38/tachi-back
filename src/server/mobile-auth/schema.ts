@@ -127,6 +127,7 @@ export const zMobileSessionSummaryResponse = z.object({
   license: z.object({
     activatedAt: z.date().nullish(),
     availableTokens: z.number().int(),
+    activeDeviceCount: z.number().int().nonnegative(),
     deviceLimit: z.number().int().nonnegative(),
     id: z.string(),
     isTrialOnly: z.boolean(),

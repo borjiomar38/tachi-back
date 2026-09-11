@@ -3,6 +3,7 @@ import { createCheckout, getVariant } from '@lemonsqueezy/lemonsqueezy.js';
 import { envClient } from '@/env/client';
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
+import { normalizeRedeemCode } from '@/server/licenses/utils';
 import { initLemonSqueezy } from '@/server/payments/lemonsqueezy';
 import {
   buildPurchaseReturnUrl,
@@ -10,6 +11,7 @@ import {
   hashPurchaseTicket,
   PURCHASE_TICKET_TTL_MS,
   PurchaseError,
+  resolvePurchaseDestination,
   resolvePurchaseTestMode,
   zPurchaseCheckoutInput,
 } from '@/server/payments/purchase-policy';
@@ -35,6 +37,17 @@ export const createTokenPurchaseCheckout = async (
   ) {
     throw new PurchaseError('purchase_device_mismatch', 403);
   }
+  const destination = resolvePurchaseDestination({
+    destination: input.destination,
+    currentLicenseId: context.licenseId,
+    redeem:
+      input.destination === 'recharge' && input.redeemCode
+        ? await db.redeemCode.findUnique({
+            where: { code: normalizeRedeemCode(input.redeemCode) },
+          })
+        : null,
+    now: new Date(),
+  });
   const pack = await db.tokenPack.findFirst({
     where: { key: input.tokenPackKey, active: true, billingType: 'one_time' },
   });
@@ -72,7 +85,7 @@ export const createTokenPurchaseCheckout = async (
       lsVariantId: pack.lsVariantId,
       testMode,
       payerEmail: input.payerEmail,
-      targetLicenseId: context.licenseId,
+      ...destination,
       installationId: input.installationId,
       ticketHash: hashPurchaseTicket(ticket),
       ticketExpiresAt: expiresAt,

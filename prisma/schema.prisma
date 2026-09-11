@@ -521,7 +521,8 @@ model RedeemCode {
   freeTrialClaim        FreeTrialClaim?
   freeTrialVerification FreeTrialVerification?
   activations           RedeemActivation[]
-  tokenPurchase         TokenPurchase?
+  tokenPurchases        TokenPurchase[] @relation("PurchaseResultCode")
+  rechargePurchases     TokenPurchase[] @relation("PurchaseRechargeCode")
 
   @@unique([id, licenseId])
   @@index([licenseId, status])
@@ -741,6 +742,7 @@ model TokenPurchase {
   testMode              Boolean
   payerEmail            String?
   targetLicenseId       String?
+  targetRedeemCodeId    String?
   claimedLicenseId      String?
   installationId        String?
   claimedInstallationId String?
@@ -749,7 +751,7 @@ model TokenPurchase {
   ticketConsumedAt      DateTime?
   checkoutId            String?     @unique
   orderId               String?     @unique
-  redeemCodeId          String?     @unique
+  redeemCodeId          String?
   status                OrderStatus @default(pending)
   claimedAt             DateTime?
   emailSentAt           DateTime?
@@ -764,10 +766,13 @@ model TokenPurchase {
   targetLicense  License?   @relation("PurchaseTargetLicense", fields: [targetLicenseId], references: [id])
   claimedLicense License?   @relation("PurchaseClaimedLicense", fields: [claimedLicenseId], references: [id])
   order          Order?     @relation(fields: [orderId], references: [id])
-  redeemCode     RedeemCode? @relation(fields: [redeemCodeId], references: [id])
+  redeemCode     RedeemCode? @relation("PurchaseResultCode", fields: [redeemCodeId], references: [id])
+  targetRedeemCode RedeemCode? @relation("PurchaseRechargeCode", fields: [targetRedeemCodeId], references: [id])
 
   @@index([status, emailSentAt, emailNextAttemptAt])
   @@index([targetLicenseId, createdAt])
+  @@index([redeemCodeId])
+  @@index([targetRedeemCodeId])
   @@map("token_purchases")
 }
 

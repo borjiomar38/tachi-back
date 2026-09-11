@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   isTokenPurchaseEvent,
+  resolvePurchaseDestination,
   resolvePurchaseTestMode,
 } from '@/server/payments/purchase-policy';
 
@@ -26,6 +27,71 @@ describe('one-time checkout environment isolation', () => {
         environmentName: 'PRODUCTION',
       })
     ).toBe(false);
+  });
+});
+
+describe('explicit code destination', () => {
+  const now = new Date('2026-09-11');
+  const redeem = {
+    id: 'code-a',
+    licenseId: 'wallet-a',
+    status: 'redeemed',
+    expiresAt: null,
+  };
+  it('creates an independent code even when a wallet is active', () => {
+    expect(
+      resolvePurchaseDestination({
+        destination: 'new_code',
+        currentLicenseId: 'wallet-a',
+        redeem,
+        now,
+      })
+    ).toEqual({ targetLicenseId: null, targetRedeemCodeId: null });
+  });
+  it('requires explicit destination from old authenticated clients, but guests get a new code', () => {
+    expect(() =>
+      resolvePurchaseDestination({ currentLicenseId: 'wallet-a', now })
+    ).toThrow('purchase_destination_required');
+    expect(resolvePurchaseDestination({ now })).toEqual({
+      targetLicenseId: null,
+      targetRedeemCodeId: null,
+    });
+  });
+  it('freezes both the exact redeem and its wallet for recharge', () => {
+    expect(
+      resolvePurchaseDestination({
+        destination: 'recharge',
+        currentLicenseId: 'wallet-a',
+        redeem,
+        now,
+      })
+    ).toEqual({ targetLicenseId: 'wallet-a', targetRedeemCodeId: 'code-a' });
+  });
+  it('rejects recharge without the current authenticated code', () => {
+    for (const data of [
+      {},
+      { currentLicenseId: 'wallet-a' },
+      { currentLicenseId: 'wallet-b', redeem },
+    ]) {
+      expect(() =>
+        resolvePurchaseDestination({ destination: 'recharge', ...data, now })
+      ).toThrow('purchase_code_mismatch');
+    }
+  });
+  it('rejects revoked or expired codes before creating a checkout', () => {
+    for (const code of [
+      { ...redeem, status: 'revoked' },
+      { ...redeem, expiresAt: new Date(0) },
+    ]) {
+      expect(() =>
+        resolvePurchaseDestination({
+          destination: 'recharge',
+          currentLicenseId: 'wallet-a',
+          redeem: code,
+          now,
+        })
+      ).toThrow('redeem_code_unavailable');
+    }
   });
 });
 

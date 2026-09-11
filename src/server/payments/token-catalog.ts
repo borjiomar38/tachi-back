@@ -22,6 +22,7 @@ export const getTokenCatalog = async () => {
     getFreeTrialRuntimeConfig(),
   ]);
   return {
+    purchaseFlowVersion: 2,
     packs: packs.map(({ lsVariantId, ...pack }) => ({
       ...pack,
       totalTokens: pack.tokenAmount + pack.bonusTokenAmount,

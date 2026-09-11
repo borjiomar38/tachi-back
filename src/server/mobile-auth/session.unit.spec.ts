@@ -21,6 +21,7 @@ const { mockDb, mockLogger } = vi.hoisted(() => ({
     order: {
       findFirst: vi.fn(),
     },
+    licenseDevice: { count: vi.fn().mockResolvedValue(2) },
     tokenLedger: {
       aggregate: vi.fn(),
     },

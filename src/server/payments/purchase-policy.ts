@@ -12,6 +12,8 @@ export const zPurchaseCheckoutInput = () =>
       .trim()
       .regex(/^[a-z0-9-]{1,64}$/),
     payerEmail: z.email().max(320).optional(),
+    destination: z.enum(['new_code', 'recharge']).optional(),
+    redeemCode: z.string().trim().min(8).max(128).optional(),
     installationId: z
       .string()
       .trim()
@@ -64,7 +66,7 @@ export const assertPurchaseClaimable = (input: {
   viaTicket: boolean;
   now: Date;
 }) => {
-  const { purchase, installationId, currentLicenseId, viaTicket, now } = input;
+  const { purchase, installationId, viaTicket, now } = input;
   if (purchase.status !== 'paid') {
     throw new PurchaseError(
       purchase.status === 'pending' ? 'payment_pending' : 'purchase_unavailable'
@@ -83,14 +85,8 @@ export const assertPurchaseClaimable = (input: {
       throw new PurchaseError('purchase_ticket_used', 409);
     }
   }
-  const boundLicenseId = purchase.claimedLicenseId ?? purchase.targetLicenseId;
-  if (
-    boundLicenseId &&
-    currentLicenseId &&
-    boundLicenseId !== currentLicenseId
-  ) {
-    throw new PurchaseError('purchase_account_mismatch', 403);
-  }
+  // The return ticket identifies its fixed purchase destination. The app may
+  // have switched codes meanwhile; that must never move credits to that code.
 };
 
 export const resolvePurchaseLicenseId = (input: {
@@ -100,8 +96,41 @@ export const resolvePurchaseLicenseId = (input: {
 }) =>
   input.purchase.claimedLicenseId ??
   input.purchase.targetLicenseId ??
-  input.currentLicenseId ??
   input.fundedLicenseId;
+
+export const resolvePurchaseDestination = (input: {
+  destination?: 'new_code' | 'recharge';
+  currentLicenseId?: string;
+  redeem?: {
+    id: string;
+    licenseId: string;
+    status: string;
+    expiresAt: Date | null;
+  } | null;
+  now: Date;
+}) => {
+  if (!input.destination && input.currentLicenseId) {
+    throw new PurchaseError('purchase_destination_required', 409);
+  }
+  if (!input.destination || input.destination === 'new_code') {
+    return { targetLicenseId: null, targetRedeemCodeId: null };
+  }
+  const redeem = input.redeem;
+  if (
+    !input.currentLicenseId ||
+    !redeem ||
+    redeem.licenseId !== input.currentLicenseId
+  ) {
+    throw new PurchaseError('purchase_code_mismatch', 403);
+  }
+  if (
+    !['available', 'redeemed'].includes(redeem.status) ||
+    (redeem.expiresAt && redeem.expiresAt <= input.now)
+  ) {
+    throw new PurchaseError('redeem_code_unavailable', 409);
+  }
+  return { targetLicenseId: redeem.licenseId, targetRedeemCodeId: redeem.id };
+};
 
 export const zPaidPurchaseEvent = () =>
   z.object({

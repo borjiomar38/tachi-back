@@ -76,15 +76,42 @@ export const processTokenPurchaseEvent = async (rawEvent: unknown) => {
         rawPayload: event as unknown as Prisma.InputJsonValue,
       },
     });
-    const redeem = await tx.redeemCode.create({
-      data: {
-        code: generateRedeemCode(),
-        fulfillmentKey: `token-purchase:${purchase.id}:redeem`,
-        licenseId: license.id,
-        orderId: order.id,
-        metadata: { tokenPurchaseId: purchase.id, purchaseType: 'one_time' },
-      },
-    });
+    const rechargeCode = purchase.targetRedeemCodeId
+      ? await tx.redeemCode.findUnique({
+          where: { id: purchase.targetRedeemCodeId },
+        })
+      : null;
+    if (
+      purchase.targetRedeemCodeId &&
+      (!rechargeCode ||
+        rechargeCode.licenseId !== license.id ||
+        !['available', 'redeemed'].includes(rechargeCode.status))
+    ) {
+      throw new PurchaseError('redeem_code_unavailable', 409);
+    }
+    const redeem =
+      rechargeCode ??
+      (await tx.redeemCode.create({
+        data: {
+          code: generateRedeemCode(),
+          fulfillmentKey: `token-purchase:${purchase.id}:redeem`,
+          licenseId: license.id,
+          orderId: order.id,
+          metadata: { tokenPurchaseId: purchase.id, purchaseType: 'one_time' },
+        },
+      }));
+    if (rechargeCode) {
+      // Paid recharge promotes the existing trial code without deleting its
+      // trial identity/history (which must still block another free trial).
+      await tx.license.update({
+        where: { id: license.id },
+        data: { deviceLimit: UNLIMITED_DEVICE_LIMIT },
+      });
+      await tx.redeemCode.update({
+        where: { id: redeem.id },
+        data: { expiresAt: null },
+      });
+    }
     await tx.tokenLedger.create({
       data: {
         idempotencyKey: `token-purchase:${purchase.id}:credit`,

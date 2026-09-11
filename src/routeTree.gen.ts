@@ -123,6 +123,7 @@ import { Route as ApiMobileContentPolicyCheckRouteImport } from './routes/api/mo
 import { Route as ApiMobileAuthSessionRouteImport } from './routes/api/mobile/auth/session'
 import { Route as ApiMobileAuthRefreshRouteImport } from './routes/api/mobile/auth/refresh'
 import { Route as ApiMobileAuthFreeTrialRouteImport } from './routes/api/mobile/auth/free-trial'
+import { Route as ApiMobileAuthCodesRouteImport } from './routes/api/mobile/auth/codes'
 import { Route as ApiMobileAuthActivateRouteImport } from './routes/api/mobile/auth/activate'
 import { Route as ApiMobileAppUpdatePolicyAbiRouteImport } from './routes/api/mobile/app-update-policy/abi'
 import { Route as ApiMobileActivityVisitRouteImport } from './routes/api/mobile/activity/visit'
@@ -747,6 +748,11 @@ const ApiMobileAuthFreeTrialRoute = ApiMobileAuthFreeTrialRouteImport.update({
   path: '/api/mobile/auth/free-trial',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiMobileAuthCodesRoute = ApiMobileAuthCodesRouteImport.update({
+  id: '/api/mobile/auth/codes',
+  path: '/api/mobile/auth/codes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiMobileAuthActivateRoute = ApiMobileAuthActivateRouteImport.update({
   id: '/api/mobile/auth/activate',
   path: '/api/mobile/auth/activate',
@@ -942,6 +948,7 @@ export interface FileRoutesByFullPath {
   '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
   '/api/mobile/app-update-policy/abi': typeof ApiMobileAppUpdatePolicyAbiRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/codes': typeof ApiMobileAuthCodesRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
@@ -1072,6 +1079,7 @@ export interface FileRoutesByTo {
   '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
   '/api/mobile/app-update-policy/abi': typeof ApiMobileAppUpdatePolicyAbiRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/codes': typeof ApiMobileAuthCodesRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
@@ -1207,6 +1215,7 @@ export interface FileRoutesById {
   '/api/mobile/activity/visit': typeof ApiMobileActivityVisitRoute
   '/api/mobile/app-update-policy/abi': typeof ApiMobileAppUpdatePolicyAbiRoute
   '/api/mobile/auth/activate': typeof ApiMobileAuthActivateRoute
+  '/api/mobile/auth/codes': typeof ApiMobileAuthCodesRoute
   '/api/mobile/auth/free-trial': typeof ApiMobileAuthFreeTrialRouteWithChildren
   '/api/mobile/auth/refresh': typeof ApiMobileAuthRefreshRoute
   '/api/mobile/auth/session': typeof ApiMobileAuthSessionRoute
@@ -1343,6 +1352,7 @@ export interface FileRouteTypes {
     | '/api/mobile/activity/visit'
     | '/api/mobile/app-update-policy/abi'
     | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/codes'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
@@ -1473,6 +1483,7 @@ export interface FileRouteTypes {
     | '/api/mobile/activity/visit'
     | '/api/mobile/app-update-policy/abi'
     | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/codes'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
@@ -1607,6 +1618,7 @@ export interface FileRouteTypes {
     | '/api/mobile/activity/visit'
     | '/api/mobile/app-update-policy/abi'
     | '/api/mobile/auth/activate'
+    | '/api/mobile/auth/codes'
     | '/api/mobile/auth/free-trial'
     | '/api/mobile/auth/refresh'
     | '/api/mobile/auth/session'
@@ -1718,6 +1730,7 @@ export interface RootRouteChildren {
   ApiManhwaSlugPosterRoute: typeof ApiManhwaSlugPosterRoute
   ApiMobileActivityVisitRoute: typeof ApiMobileActivityVisitRoute
   ApiMobileAuthActivateRoute: typeof ApiMobileAuthActivateRoute
+  ApiMobileAuthCodesRoute: typeof ApiMobileAuthCodesRoute
   ApiMobileAuthFreeTrialRoute: typeof ApiMobileAuthFreeTrialRouteWithChildren
   ApiMobileAuthRefreshRoute: typeof ApiMobileAuthRefreshRoute
   ApiMobileAuthSessionRoute: typeof ApiMobileAuthSessionRoute
@@ -2540,6 +2553,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiMobileAuthFreeTrialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/mobile/auth/codes': {
+      id: '/api/mobile/auth/codes'
+      path: '/api/mobile/auth/codes'
+      fullPath: '/api/mobile/auth/codes'
+      preLoaderRoute: typeof ApiMobileAuthCodesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/mobile/auth/activate': {
       id: '/api/mobile/auth/activate'
       path: '/api/mobile/auth/activate'
@@ -2942,6 +2962,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiManhwaSlugPosterRoute: ApiManhwaSlugPosterRoute,
   ApiMobileActivityVisitRoute: ApiMobileActivityVisitRoute,
   ApiMobileAuthActivateRoute: ApiMobileAuthActivateRoute,
+  ApiMobileAuthCodesRoute: ApiMobileAuthCodesRoute,
   ApiMobileAuthFreeTrialRoute: ApiMobileAuthFreeTrialRouteWithChildren,
   ApiMobileAuthRefreshRoute: ApiMobileAuthRefreshRoute,
   ApiMobileAuthSessionRoute: ApiMobileAuthSessionRoute,
