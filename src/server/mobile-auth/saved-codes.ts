@@ -1,11 +1,24 @@
+import { z } from 'zod';
+
 import { db } from '@/server/db';
 import { getAvailableLicenseTokenBalance } from '@/server/licenses/token-balance';
 
 // Possessing a code grants its wallet, not the other wallets of its payer.
-// Only activation history on this authenticated device may reveal saved codes.
-export const getDeviceSavedCodes = async (deviceId: string) => {
+// Activation history is scoped to the device, but a client-supplied installation
+// identifier is not proof of possession of every historical redeem. Refresh only
+// codes the app already holds; never disclose an unknown bearer credential.
+export const zSavedCodesRequest = () =>
+  z.object({
+    codes: z.array(z.string().trim().min(1).max(128)).max(200).default([]),
+  });
+
+export const getDeviceSavedCodes = async (
+  deviceId: string,
+  knownCodes: string[]
+) => {
+  if (knownCodes.length === 0) return { codes: [] };
   const activations = await db.redeemActivation.findMany({
-    where: { deviceId },
+    where: { deviceId, redeemCode: { code: { in: knownCodes } } },
     orderBy: [{ lastActivatedAt: 'desc' }, { id: 'desc' }],
     select: {
       redeemCode: {

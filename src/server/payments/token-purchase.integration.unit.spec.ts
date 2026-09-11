@@ -344,13 +344,26 @@ describe.skipIf(!process.env.NAYOVI_PURCHASE_TEST_DB)(
           licenseId: activatedA.license.id,
         })
       ).toBe(4250);
-      const buyerCodes = await getDeviceSavedCodes(activatedB.device.id);
+      const buyerCodes = await getDeviceSavedCodes(activatedB.device.id, [
+        activatedA.redeemCode.code,
+        activatedB.redeemCode.code,
+      ]);
       expect(buyerCodes.codes).toHaveLength(2);
       expect(
         buyerCodes.codes
           .map((code) => code.availableTokens)
           .sort((x, y) => x - y)
       ).toEqual([1250, 4250]);
+      // Even knowledge of the buyer's device identifier plus A must not reveal B.
+      const onlyKnownA = await getDeviceSavedCodes(activatedB.device.id, [
+        activatedA.redeemCode.code,
+      ]);
+      expect(onlyKnownA.codes.map((code) => code.licenseId)).toEqual([
+        activatedA.license.id,
+      ]);
+      expect(
+        (await getDeviceSavedCodes(activatedB.device.id, [])).codes
+      ).toEqual([]);
 
       const salim = installation();
       await prepareTokenPurchaseClaim({
@@ -366,7 +379,9 @@ describe.skipIf(!process.env.NAYOVI_PURCHASE_TEST_DB)(
         })
       ).activation;
       expect(shared.license.id).toBe(activatedA.license.id);
-      const salimCodes = await getDeviceSavedCodes(shared.device.id);
+      const salimCodes = await getDeviceSavedCodes(shared.device.id, [
+        activatedA.redeemCode.code,
+      ]);
       expect(salimCodes.codes.map((code) => code.licenseId)).toEqual([
         activatedA.license.id,
       ]);
